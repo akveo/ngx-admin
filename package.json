@@ -13,46 +13,35 @@
     "webpack": "webpack",
     "webpack-dev-server": "webpack-dev-server",
     "webdriver-manager": "webdriver-manager",
-
     "clean": "npm cache clean && npm run rimraf -- node_modules doc typings coverage dist",
-      "clean:dist": "npm run rimraf -- dist",
-        "preclean:install": "npm run clean",
-      "clean:install": "npm set progress=false && npm install",
-        "preclean:start": "npm run clean",
-      "clean:start": "npm start",
-
+    "clean:dist": "npm run rimraf -- dist",
+    "preclean:install": "npm run clean",
+    "clean:install": "npm set progress=false && npm install",
+    "preclean:start": "npm run clean",
+    "clean:start": "npm start",
     "watch": "npm run watch:dev",
-      "watch:dev": "npm run build:dev -- --watch",
-      "watch:dev:hmr": "npm run watch:dev -- --hot",
-      "watch:prod": "npm run build:prod -- --watch",
-
+    "watch:dev": "npm run build:dev -- --watch",
+    "watch:dev:hmr": "npm run watch:dev -- --hot",
+    "watch:prod": "npm run build:prod -- --watch",
     "build": "npm run build:dev",
-        "prebuild:dev": "npm run clean:dist",
-      "build:dev": "webpack --config config/webpack.dev.js --progress --profile --colors --display-error-details --display-cached",
-        "prebuild:prod": "npm run clean:dist",
-      "build:prod": "webpack --config config/webpack.prod.js  --progress --profile --colors --display-error-details --display-cached --bail",
-
+    "prebuild:dev": "npm run clean:dist",
+    "build:dev": "webpack --config config/webpack.dev.js --progress --profile --colors --display-error-details --display-cached",
+    "prebuild:prod": "npm run clean:dist",
+    "build:prod": "webpack --config config/webpack.prod.js  --progress --profile --colors --display-error-details --display-cached --bail",
     "server": "npm run server:dev",
-      "server:dev": "webpack-dev-server --config config/webpack.dev.js --inline --progress --profile --colors --watch --display-error-details --display-cached --content-base src/",
-      "server:dev:hmr": "npm run server:dev -- --hot",
-      "server:prod": "http-server dist --cors",
-
+    "server:dev": "webpack-dev-server --config config/webpack.dev.js --inline --progress --profile --colors --watch --display-error-details --display-cached --content-base src/",
+    "server:dev:hmr": "npm run server:dev -- --hot",
+    "server:prod": "http-server dist --cors",
     "webdriver:update": "npm run webdriver-manager update",
     "webdriver:start": "npm run webdriver-manager start",
-
     "lint": "npm run tslint 'src/**/*.ts'",
-
     "docs": "npm run typedoc -- --options typedoc.json --exclude '**/*.spec.ts' ./src/",
-
     "start": "npm run server:dev",
-      "start:hmr": "npm run server:dev:hmr",
-
+    "start:hmr": "npm run server:dev:hmr",
     "postinstall": "npm run typings -- install",
-
-      "preversion": "npm run build",
+    "preversion": "npm run build",
     "version": "npm run build",
-      "postversion": "git push && git push --tags"
-
+    "postversion": "git push && git push --tags"
   },
   "dependencies": {
     "@angular2-material/button": "2.0.0-alpha.2",
@@ -90,12 +79,14 @@
     "imports-loader": "^0.6.5",
     "istanbul-instrumenter-loader": "^0.2.0",
     "json-loader": "^0.5.4",
+    "node-sass": "^3.4.2",
     "parse5": "^2.1.5",
     "phantomjs-polyfill": "0.0.2",
     "phantomjs-prebuilt": "^2.1.7",
     "raw-loader": "0.5.1",
     "remap-istanbul": "^0.5.1",
     "rimraf": "^2.5.2",
+    "sass-loader": "^3.2.0",
     "source-map-loader": "^0.1.5",
     "style-loader": "^0.13.1",
     "ts-helpers": "1.1.0",

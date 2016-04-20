@@ -18,23 +18,7 @@ import {RouterActive} from './router-active';
   providers: [ ],
   directives: [ RouterActive ],
   encapsulation: ViewEncapsulation.None,
-  styles: [
-    require('normalize.css'),
-    `
-    md-toolbar ul {
-      display: inline;
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-      width: 60px;
-    }
-    md-toolbar li {
-      display: inline;
-    }
-    md-toolbar li.active {
-      background-color: lightgray;
-    }
-  `],
+  styles: [ require('normalize.css'), require('../assets/scss/app.scss') ],
   template: `
     <header>
       <md-toolbar color="primary">
