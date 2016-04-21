@@ -7,7 +7,6 @@ import {RouteConfig, Router} from 'angular2/router';
 import {Home} from './home';
 import {Pages} from './pages';
 import {AppState} from './app.service';
-import {RouterActive} from './router-active';
 
 /*
  * App Component
@@ -17,7 +16,6 @@ import {RouterActive} from './router-active';
   selector: 'app',
   pipes: [ ],
   providers: [ ],
-  directives: [ RouterActive ],
   encapsulation: ViewEncapsulation.None,
   styles: [ require('normalize.css'), require('./app.scss') ],
   template: `
