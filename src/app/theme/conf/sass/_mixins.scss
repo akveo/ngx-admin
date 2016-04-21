@@ -1,0 +1,128 @@
+/// Slightly lighten a color
+/// @access public
+/// @param {Color} $color - color to tint
+/// @param {Number} $percentage - percentage of `$color` in returned color
+/// @return {Color}
+@function tint($color, $percentage) {
+  @return mix(white, $color, $percentage);
+}
+
+/// Slightly darken a color
+/// @access public
+/// @param {Color} $color - color to shade
+/// @param {Number} $percentage - percentage of `$color` in returned color
+/// @return {Color}
+@function shade($color, $percentage) {
+  @return mix(black, $color, $percentage);
+}
+
+@mixin scrollbars($size, $foreground-color, $background-color: mix($foreground-color, white, 50%)) {
+  ::-webkit-scrollbar {
+    width: $size;
+    height: $size;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: $foreground-color;
+    cursor: pointer;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: $background-color;
+  }
+
+  // For Internet Explorer
+  body {
+    scrollbar-face-color: $foreground-color;
+    scrollbar-track-color: $background-color;
+  }
+}
+
+@mixin bg-nr($relativeUrl) {
+  background: url($images-root + $relativeUrl) no-repeat 0 0;
+}
+@mixin bg($relativeUrl) {
+  background: url($images-root + $relativeUrl);
+}
+
+@mixin bg-image($relativeUrl) {
+  background-image: url($images-root + $relativeUrl);
+}
+
+@mixin main-background() {
+  $mainBgUrl: $images-root + 'blur-bg.jpg';
+
+  &::before {
+    content: '';
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: url($mainBgUrl) no-repeat center center;
+    background-size: cover;
+    will-change: transform;
+    z-index: -1;
+  }
+}
+
+@mixin bg-translucent-dark($opacity) {
+  background: rgba(0, 0, 0, $opacity);
+}
+
+@mixin placeholderStyle($color, $opacity) {
+  &::-webkit-input-placeholder {
+    color: $color;
+    opacity: $opacity;
+  }
+  &:-moz-placeholder {
+    /* Firefox 18- */
+    color: $color;
+    opacity: $opacity;
+  }
+  &::-moz-placeholder {
+    /* Firefox 19+ */
+    color: $color;
+    opacity: $opacity;
+  }
+  &:-ms-input-placeholder {
+    color: $color;
+    opacity: $opacity;
+  }
+}
+
+@mixin overrideColors($color) {
+  p,
+  h1,h2,h3,h4,h5,h6,
+  .pie-chart-item,
+  .panel-heading>.dropdown .dropdown-toggle,
+  .panel-title,
+  ol.blur span,
+  ul.blur,
+  .popular-app-cost,
+  .popular-app-info,
+  .panel-title>.small,
+  .panel-title>.small>a,
+  .panel-title>a,
+  .panel-title>small,
+  .panel-title>small>a,
+  .traffic-text span,
+  .form-group label,
+  .help-block{
+    color: $color;
+  }
+  .feed-message .message-time, .text-muted {
+    color: darken($color, 20);
+  }
+}
+
+@mixin overridePanelBg($color, $borderColor, $dropdownColor) {
+  .panel.panel-blur, .panel.panel-blur:hover {
+    border-color: $borderColor;
+    background-color: $color;
+  }
+
+  .progress {
+    background: $color;
+  }
+}
