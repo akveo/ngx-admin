@@ -18,7 +18,7 @@ import {RouterActive} from './router-active';
   providers: [ ],
   directives: [ RouterActive ],
   encapsulation: ViewEncapsulation.None,
-  styles: [ require('normalize.css'), require('../assets/scss/app.scss') ],
+  styles: [ require('normalize.css'), require('./app.scss') ],
   template: `
     <header>
       <md-toolbar color="primary">
@@ -44,6 +44,37 @@ import {RouterActive} from './router-active';
     <main>
       <router-outlet></router-outlet>
     </main>
+
+    <table class="table table-inverse">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Username</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Larry</td>
+      <td>the Bird</td>
+      <td>@twitter</td>
+    </tr>
+  </tbody>
+</table>
 
     <pre>this.appState.state = {{ appState.state | json }}</pre>
 

@@ -1,37 +1,18 @@
-/**
- * @author: @AngularClass
- */
-
 const webpack = require('webpack');
 const helpers = require('./helpers');
 
-/*
- * Webpack Plugins
- */
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ForkCheckerPlugin = require('awesome-typescript-loader').ForkCheckerPlugin;
 
-/*
- * Webpack Constants
- */
 const METADATA = {
   title: 'Angular2 Webpack Starter by @gdi2290 from @AngularClass',
   baseUrl: '/'
 };
 
-/*
- * Webpack configuration
- *
- * See: http://webpack.github.io/docs/configuration.html#cli
- */
+
 module.exports = {
 
-  /*
-   * Static metadata for index.html
-   *
-   * See: (custom attribute)
-   */
   metadata: METADATA,
 
   /*
@@ -77,11 +58,6 @@ module.exports = {
 
   },
 
-  /*
-   * Options affecting the normal modules.
-   *
-   * See: http://webpack.github.io/docs/configuration.html#module
-   */
   module: {
 
     /*
@@ -116,14 +92,6 @@ module.exports = {
 
     ],
 
-    /*
-     * An array of automatically applied loaders.
-     *
-     * IMPORTANT: The loaders here are resolved relative to the resource which they are applied to.
-     * This means they are not resolved relative to the configuration file.
-     *
-     * See: http://webpack.github.io/docs/configuration.html#module-loaders
-     */
     loaders: [
 
       /*
@@ -160,8 +128,17 @@ module.exports = {
 
       {
         test: /\.scss$/,
-        exclude: /node_modules/,
-        loader: 'raw-loader!sass-loader'
+        loaders: ['raw-loader','sass-loader']
+      },
+
+      {
+        test: /\.(woff2?|ttf|eot|svg)$/,
+        loader: 'url?limit=10000'
+      },
+
+      {
+        test: /bootstrap\/dist\/js\/umd\//,
+        loader: 'imports?jQuery=jquery'
       },
 
       /* Raw loader support for *.html
@@ -240,8 +217,15 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: 'src/index.html',
       chunksSortMode: helpers.packageSort(['polyfills', 'vendor', 'main'])
-    })
+    }),
 
+    new webpack.ProvidePlugin({
+      jQuery: 'jquery',
+      $: 'jquery',
+      jquery: 'jquery',
+      "Tether": 'tether',
+      "window.Tether": "tether"
+    })
   ],
 
   /*

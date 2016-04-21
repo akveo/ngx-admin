@@ -1,0 +1,115 @@
+---
+# Output debugging info
+# loglevel: debug
+
+# Major version of Bootstrap: 3 or 4
+bootstrapVersion: 4
+
+# If Bootstrap version 4 is used - turn on/off flexbox model
+useFlexbox: true
+
+# Webpack loaders, order matters
+styleLoaders:
+  - style
+  - css
+  - sass
+
+# Extract styles to stand-alone css file
+# Different settings for different environments can be used,
+# It depends on value of NODE_ENV environment variable
+# This param can also be set in webpack config:
+#   entry: 'bootstrap-loader/extractStyles'
+extractStyles: false
+# env:
+#   development:
+#     extractStyles: false
+#   production:
+#     extractStyles: true
+
+
+# Customize Bootstrap variables that get imported before the original Bootstrap variables.
+# Thus, derived Bootstrap variables can depend on values from here.
+# See the Bootstrap _variables.scss file for examples of derived Bootstrap variables.
+#
+# preBootstrapCustomizations: ./path/to/bootstrap/pre-customizations.scss
+
+
+# This gets loaded after bootstrap/variables is loaded
+# Thus, you may customize Bootstrap variables
+# based on the values established in the Bootstrap _variables.scss file
+#
+# bootstrapCustomizations: ./path/to/bootstrap/customizations.scss
+
+
+# Import your custom styles here
+# Usually this endpoint-file contains list of @imports of your application styles
+#
+# appStyles: ./path/to/your/app/styles/endpoint.scss
+
+
+### Bootstrap styles
+styles:
+
+  # Mixins
+  mixins: true
+
+  # Reset and dependencies
+  normalize: true
+  print: true
+
+  # Core CSS
+  reboot: true
+  type: true
+  images: true
+  code: true
+  grid: true
+  tables: true
+  forms: true
+  buttons: true
+
+  # Components
+  animation: true
+  dropdown: true
+  button-group: true
+  input-group: true
+  custom-forms: true
+  nav: true
+  navbar: true
+  card: true
+  breadcrumb: true
+  pagination: true
+  pager: true
+  labels: true
+  jumbotron: true
+  alert: true
+  progress: true
+  media: true
+  list-group: true
+  responsive-embed: true
+  close: true
+
+  # Components w/ JavaScript
+  modal: true
+  tooltip: true
+  popover: true
+  carousel: true
+
+  # Utility classes
+  utilities: true
+  utilities-background: true
+  utilities-spacing: true
+  utilities-responsive: true
+
+### Bootstrap scripts
+scripts:
+  alert: true
+  button: true
+  carousel: true
+  collapse: true
+  dropdown: true
+  modal: true
+  popover: true
+  scrollspy: true
+  tab: true
+  tooltip: true
+  util: true
