@@ -1,0 +1,185 @@
+$panel-title-height: 44px;
+$panel-heading-font-size: 16px;
+
+.panel {
+  border: none;
+  background-color: $panel-bg;
+  color: $default-text;
+  position: relative;
+  //transition: all 0.2s ease;
+  margin-bottom: 24px;
+  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.25);
+  /*&:hover {
+    background: $panel-bg-hover;
+  }*/
+  &.animated {
+    animation-duration: 0.5s;
+  }
+  &.small-panel {
+    height: $small-panel-height;
+  }
+  &.xsmall-panel {
+    height: $xsmall-panel-height;
+  }
+  &.medium-panel {
+    height: $medium-panel-height;
+  }
+  &.xmedium-panel {
+    height: $extra-medium-panel-height;
+  }
+  &.large-panel {
+    height: $large-panel-height;
+  }
+  &.viewport100 {
+    height: calc(100vh - 218px);
+  }
+
+  &.with-scroll {
+    .panel-body {
+      height: calc(100% - #{$panel-title-height});
+      overflow-y: auto;
+    }
+  }
+}
+
+.panel > .panel-body {
+  padding: 15px 22px;
+  height: 100%;
+}
+
+.panel-heading, .panel-footer {
+  height: $panel-title-height;
+  font-size: $panel-heading-font-size;
+
+  $vertical-padding: ($panel-title-height - $panel-heading-font-size) / 2;
+  padding: $vertical-padding 22px;
+
+}
+
+.panel-title {
+  font-weight: $font-normal;
+  text-transform: uppercase;
+  opacity: 0.9;
+  //text-transform: uppercase;
+}
+
+.panel-white, .panel-blur {
+  background-size: cover;
+  > .panel-heading {
+    background-color: transparent;
+    border: none;
+    color: $default-text;
+  }
+}
+
+.panel-white {
+  background-color: $panel-bg;
+}
+
+.panel-blur {
+  $blurredBgUrl: $images-root + 'blur-bg-blurred.jpg';
+  background: url($blurredBgUrl);
+  transition: none;
+}
+
+.panel-primary {
+  > .panel-heading {
+    color: $primary;
+    background-color: $primary-bg;
+    border-color: $primary-bg;
+  }
+}
+
+.panel-success {
+  > .panel-heading {
+    color: $success;
+    background-color: $success-bg;
+    border-color: $success-bg;
+  }
+}
+
+.panel-info {
+  > .panel-heading {
+    color: $info;
+    background-color: $info-bg;
+    border-color: $info-bg;
+  }
+}
+
+.panel-warning {
+  > .panel-heading {
+    color: $warning;
+    background-color: $warning-bg;
+    border-color: $warning-bg;
+  }
+}
+
+.panel-danger {
+  > .panel-heading {
+    color: $danger;
+    background-color: $danger-bg;
+    border-color: $danger-bg;
+  }
+}
+
+.panel-primary, .panel-success, .panel-info, .panel-warning, .panel-danger {
+  .panel-heading {
+    color: rgba(255, 255, 255, 0.8);
+  }
+}
+
+.panel.bootstrap-panel{
+  .panel-body, .panel-heading {
+    p, div, span {
+      color: $default-text;
+    }
+  }
+}
+
+.accordion-panel.panel.bootstrap-panel{
+  &.panel-primary,
+  &.panel-success,
+  &.panel-info,
+  &.panel-warning,
+  &.panel-danger{
+    .panel-heading {
+      p, div, span {
+        color: rgba(255, 255, 255, 0.8);
+      }
+    }
+  }
+}
+
+.panel-group .panel.accordion-panel{
+  .panel-heading{
+    border-bottom: 0;
+  }
+}
+
+.panel-group .panel {
+  .panel-heading {
+    border-bottom: 1px solid #ddd;
+  }
+}
+
+.p-with-code {
+  line-height: 1.5em;
+}
+
+.contextual-example-panel {
+  height: 120px;
+}
+
+.footer-panel{
+  height: 142px;
+}
+
+.light-text{
+  font-weight: $font-light;
+}
+
+
+/*
+.panel-group .panel {
+  border-radius: 0;
+}*/
