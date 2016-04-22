@@ -4,9 +4,7 @@
 import {Component, ViewEncapsulation} from 'angular2/core';
 import {RouteConfig, Router} from 'angular2/router';
 
-import {Home} from './home';
 import {Pages} from './pages';
-import {AppState} from './app.service';
 
 /*
  * App Component
@@ -44,10 +42,10 @@ export class App {
   name = 'Angular 2 Webpack Starter';
   url = 'https://twitter.com/AngularClass';
 
-  constructor(public appState: AppState) {}
+  constructor() {}
 
   ngOnInit() {
-    console.log('Initial App State', this.appState.state);
+    console.log('Initial App State');
   }
 
 }

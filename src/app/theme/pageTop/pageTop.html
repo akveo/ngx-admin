@@ -8,16 +8,16 @@
     </div>
 
     <div class="user-profile clearfix">
-        <div class="al-user-profile" uib-dropdown>
-            <a uib-dropdown-toggle class="profile-toggle-link">
-                <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcT7vR66BWT_HdVJpwxGJoGBJl5HYfiSKDrsYrzw7kqf2yP6sNyJtHdaAQ"/>
+        <div class="dropdown al-user-profile">
+            <a class="profile-toggle-link dropdown-toggle" id="user-profile-dd" data-toggle="dropdown" aria-expanded="false">
+                Dropdown
             </a>
-            <ul  class="top-dropdown-menu profile-dropdown" uib-dropdown-menu>
-                <li><i class="dropdown-arr"></i></li>
-                <li><a href="#/profile"><i class="fa fa-user"></i>Profile</a></li>
-                <li><a href><i class="fa fa-cog"></i>Settings</a></li>
-                <li><a href class="signout"><i class="fa fa-power-off"></i>Sign out</a></li>
-            </ul>
+            <div class="dropdown-menu top-dropdown-menu profile-dropdown" aria-labelledby="user-profile-dd">
+                <li class="dropdown-item"><i class="dropdown-arr"></i></li>
+                <li class="dropdown-item"><a href="#/profile"><i class="fa fa-user"></i>Profile</a></li>
+                <li class="dropdown-item"><a href><i class="fa fa-cog"></i>Settings</a></li>
+                <li class="dropdown-item"><a href class="signout"><i class="fa fa-power-off"></i>Sign out</a></li>
+            </div>
         </div>
         <msg-center></msg-center>
     </div>
