@@ -1,0 +1,11 @@
+.dropdown-item {
+  line-height: 1;
+}
+
+.dropdown-menu {
+  font-size: inherit;
+}
+
+.dropdown-toggle::after {
+  display: none;
+}
