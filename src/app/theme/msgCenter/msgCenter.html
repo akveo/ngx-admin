@@ -1,0 +1,53 @@
+<ul class="al-msg-center clearfix">
+  <li class="dropdown">
+    <a href class="dropdown-toggle" id="msg-dd1" data-toggle="dropdown" aria-expanded="false">
+      <i class="fa fa-bell-o"></i><span>5</span>
+
+      <div class="notification-ring"></div>
+    </a>
+
+    <div class="top-dropdown-menu dropdown-menu" aria-labelledby="msg-dd1">
+      <i class="dropdown-arr"></i>
+
+      <div class="header clearfix">
+        <strong>Notifications</strong>
+        <a href>Mark All as Read</a>
+        <a href>Settings</a>
+      </div>
+      <div class="msg-list">
+        <!--<a href class="clearfix" ng-repeat="msg in notifications">-->
+          <!--<div class="img-area"><img ng-class="{'photo-msg-item' : !msg.image}" ng-src="{{::( msg.image ||  (users[msg.userId].name | profilePicture) )}}"></div>-->
+          <!--<div class="msg-area">-->
+            <!--<div ng-bind-html="getMessage(msg)"></div>-->
+            <!--<span>{{ msg.time }}</span>-->
+          <!--</div>-->
+        <!--</a>-->
+      </div>
+      <a href>See all notifications</a>
+    </div>
+  </li>
+  <li class="dropdown">
+    <a href class="msg dropdown-toggle" id="msg-dd2" data-toggle="dropdown" aria-expanded="false">
+      <i class="fa fa-envelope-o"></i><span>5</span>
+      <div class="notification-ring"></div>
+    </a>
+    <div class="top-dropdown-menu dropdown-menu" aria-labelledby="msg-dd2">
+      <i class="dropdown-arr"></i>
+      <div class="header clearfix">
+        <strong>Messages</strong>
+        <a href>Mark All as Read</a>
+        <a href>Settings</a>
+      </div>
+      <div class="msg-list">
+        <!--<a href class="clearfix" ng-repeat="msg in messages">-->
+          <!--<div class="img-area"><img class="photo-msg-item" ng-src="{{::( users[msg.userId].name | profilePicture )}}"></div>-->
+          <!--<div class="msg-area">-->
+            <!--<div>{{ msg.text }}</div>-->
+            <!--<span>{{ msg.time }}</span>-->
+          <!--</div>-->
+        <!--</a>-->
+      </div>
+      <a href>See all messages</a>
+    </div>
+  </li>
+</ul>
