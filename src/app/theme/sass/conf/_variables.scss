@@ -57,3 +57,7 @@ $font-light: 300;
 $font-normal: 400;
 $font-bold: 700;
 $font-ultraBold: 900;
+
+// overrides default font awesome fonts path
+// not needed in case of copying fonts into assets path
+$fa-font-path: $fonts-root;
