@@ -1,5 +1,6 @@
 import 'jquery';
 import 'bootstrap-loader';
+import 'font-awesome-sass-loader';
 
 /*
  * Providers provided by Angular
