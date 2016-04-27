@@ -1,5 +1,12 @@
 <aside class="al-sidebar">
   <ul class="al-sidebar-list">
+    <li *ngFor="#item of menuItems" class="al-sidebar-list-item"
+        ngClass="{'selected': item.selected, 'with-sub-menu': item.subMenu}">
+
+      <a *ngIf="item.subMenu" href="{{ item.root }}" class="al-sidebar-list-link">
+        <i class="{{ item.icon }}"></i><span>{{ item.title }}</span>
+      </a>
+    </li>
   </ul>
   <div class="sidebar-hover-elem"></div>
 </aside>
