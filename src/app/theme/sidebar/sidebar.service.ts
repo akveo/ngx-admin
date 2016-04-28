@@ -12,21 +12,21 @@ export class SidebarService {
       subMenu: [
         {
           title: 'Sign In',
-          root: 'auth.html',
+          // name: 'SignIn',
           blank: true
         },
         {
           title: 'Sign Up',
-          root: 'reg.html',
+          // name: 'SignUp',
           blank: true
         },
         {
           title: 'User Profile',
-          root: '#/profile'
+          // name: 'UserProfile'
         },
         {
           title: '404 Page',
-          root: '404.html',
+          // name: 'NotFound',
           blank: true
         }
       ]
@@ -39,14 +39,12 @@ export class SidebarService {
       subMenu: [
         {
           title: 'Menu Level 1.1',
-          root: '#',
           disabled: true
         },
         {
           title: 'Menu Level 1.2',
           subMenu: [{
             title: 'Menu Level 1.2.1',
-            root: '#',
             disabled: true
           }]
         }
@@ -73,12 +71,10 @@ export class SidebarService {
 
     // TODO mock state object
     var state = [{
-      name: 'dashboard',
+      name: 'Dashboard',
       title: 'Dashboard',
       selected: false,
       expanded: false,
-      url: '/pages/dashboard',
-      templateUrl: 'app/pages/dashboard/dashboard.html',
       sidebarMeta: {
         icon: 'ion-android-home',
         order: 0,
@@ -96,8 +92,7 @@ export class SidebarService {
           title: s.title,
           level: (s.name.match(/\./g) || []).length,
           order: meta.order,
-          icon: meta.icon,
-          root: '#/' + s.name.replace('.', '/'),
+          icon: meta.icon
         };
       })
       .sort(function(a, b) {

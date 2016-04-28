@@ -1,7 +1,7 @@
 import {Component, ElementRef} from 'angular2/core';
 
 import {SidebarService} from './sidebar.service';
-import {Location} from 'angular2/router';
+import {Router} from 'angular2/router';
 
 @Component({
     selector: 'sidebar',
@@ -13,17 +13,19 @@ import {Location} from 'angular2/router';
 })
 export class Sidebar {
   elementRef: ElementRef;
-  location: Location;
+  router: Router;
 
   menuItems: Array<any>;
   menuHeight: number;
   isMenuCollapsed: boolean;
 
-  constructor(el: ElementRef, location: Location, private _sidebarService: SidebarService) {
+  constructor(el: ElementRef, router: Router, private _sidebarService: SidebarService) {
     this.elementRef = el;
-    this.location = location;
+    this.router = router;
     this.menuItems = this._sidebarService.getMenuItems();
+  }
 
+  ngOnInit() {
     this.selectMenuItem();
   }
 
@@ -63,17 +65,21 @@ export class Sidebar {
     return false;
   }
 
+  private isActive(instruction: any[]): boolean {
+    return ;
+  }
+
   private selectMenuItem() {
-    let currentPath = this.location.path();
-    let isCurrent = (root) => (('#' + currentPath).indexOf(root) == 0);
+    let isCurrent = (instruction) => (this.router.isRouteActive(this.router.generate([instruction])));
 
     this.menuItems.forEach(function (menu) {
-      menu.selected = isCurrent(menu.root);
+
+      menu.selected = isCurrent(menu.name);
       menu.expanded = menu.expanded || menu.selected;
-      console.log(menu);
+
       if (menu.subMenu) {
         menu.subMenu.forEach(function (subMenu) {
-          subMenu.selected = isCurrent(subMenu.root) && !subMenu.disabled;
+          subMenu.selected = isCurrent(subMenu.name) && !subMenu.disabled;
         });
       }
     });

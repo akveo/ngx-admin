@@ -12,6 +12,7 @@ require("!style!css!sass!./theme/sass/_ionicons.scss");
   /*
    * App Component
    * Top Level Component
+   * TODO: whey the header and footer are not implemented?
    */
 @Component({
   selector: 'app',
@@ -34,7 +35,7 @@ require("!style!css!sass!./theme/sass/_ionicons.scss");
 })
 @RouteConfig([
   {
-    path: '/...',
+    path: '/pages/...',
     name: 'Pages',
     component: Pages,
     useAsDefault: true
