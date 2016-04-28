@@ -1,4 +1,4 @@
-<div class="page-top clearfix" scroll-position="scrolled" max-height="50" ng-class="{'scrolled': scrolled}">
+<div class="page-top clearfix" scrollPosition maxHeight="50" (scrollChange)="scrolledChanged($event)" [ngClass]="{scrolled: isScrolled}">
     <a href="#/dashboard" class="al-logo clearfix"><span>Blur</span>Admin</a>
     <a href class="collapse-menu-link ion-navicon" ng-click="isMenuCollapsed=!isMenuCollapsed"></a>
 
