@@ -1,5 +1,6 @@
-import {Component, ElementRef} from 'angular2/core';
+import {Component, ElementRef, HostListener} from 'angular2/core';
 
+import {layoutSizes} from '../theme.constants';
 import {SidebarService} from './sidebar.service';
 import {Router} from 'angular2/router';
 
@@ -23,6 +24,8 @@ export class Sidebar {
   hoverElemHeight: number;
   hoverElemTop: number;
 
+  isMenuShouldCollapsed: boolean = false;
+
   constructor(el: ElementRef, router: Router, private _sidebarService: SidebarService) {
     this.elementRef = el;
     this.router = router;
@@ -37,6 +40,23 @@ export class Sidebar {
   ngAfterViewInit() {
     // TODO: get rid of magic 84 constant
     this.menuHeight = this.elementRef.nativeElement.childNodes[0].clientHeight - 84;
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onWindowResize($event) {
+
+    var isMenuShouldCollapsed = $event.target.innerWidth <= layoutSizes.resWidthCollapseSidebar;
+    var scopeApplied = false;
+
+    if (this.isMenuShouldCollapsed !== isMenuShouldCollapsed) {
+      this.menuHeight = this.elementRef.nativeElement.childNodes[0].clientHeight - 84;
+      this.isMenuCollapsed = isMenuShouldCollapsed;
+      scopeApplied = true;
+    }
+    if (!scopeApplied) {
+      this.menuHeight = this.elementRef.nativeElement.childNodes[0].clientHeight - 84;
+    }
+    this.isMenuShouldCollapsed = isMenuShouldCollapsed;
   }
 
   menuExpand () {
