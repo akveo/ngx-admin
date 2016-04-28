@@ -39,13 +39,17 @@ export class SidebarService {
       subMenu: [
         {
           title: 'Menu Level 1.1',
-          disabled: true
+          disabled: true,
+          selected: false,
+          expanded: false
         },
         {
           title: 'Menu Level 1.2',
           subMenu: [{
             title: 'Menu Level 1.2.1',
-            disabled: true
+            disabled: true,
+            selected: false,
+            expanded: false
           }]
         }
       ]

@@ -49,28 +49,18 @@ export class Sidebar {
     if (this.isMenuCollapsed) {
       this.menuExpand();
       if (!item.expanded) {
-        setTimeout(function () {
-          item.expanded = !item.expanded;
-
-          // TODO: incomplete
-          // submenu.slideToggle();
-        }, 0);
+        item.expanded = !item.expanded;
+        submenu.slideToggle();
       }
     } else {
       item.expanded = !item.expanded;
-
-      // TODO: incomplete
-      // submenu.slideToggle();
+      submenu.slideToggle();
     }
     return false;
   }
 
-  private isActive(instruction: any[]): boolean {
-    return ;
-  }
-
   private selectMenuItem() {
-    let isCurrent = (instruction) => (this.router.isRouteActive(this.router.generate([instruction])));
+    let isCurrent = (instruction) => (instruction ? this.router.isRouteActive(this.router.generate([instruction])): false);
 
     this.menuItems.forEach(function (menu) {
 
