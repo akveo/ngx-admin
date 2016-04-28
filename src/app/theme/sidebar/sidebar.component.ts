@@ -19,6 +19,10 @@ export class Sidebar {
   menuHeight: number;
   isMenuCollapsed: boolean;
 
+  showHoverElem: boolean;
+  hoverElemHeight: number;
+  hoverElemTop: number;
+
   constructor(el: ElementRef, router: Router, private _sidebarService: SidebarService) {
     this.elementRef = el;
     this.router = router;
@@ -41,6 +45,13 @@ export class Sidebar {
 
   menuCollapse () {
     this.isMenuCollapsed = true;
+  }
+
+  hoverItem = function ($event) {
+    this.showHoverElem = true;
+    this.hoverElemHeight =  $event.currentTarget.clientHeight;
+    // TODO: get rid of magic 66 constant
+    this.hoverElemTop = $event.currentTarget.getBoundingClientRect().top - 66;
   }
 
   toggleSubMenu ($event, item) {

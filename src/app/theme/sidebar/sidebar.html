@@ -7,7 +7,7 @@
         <i class="{{ item.icon }}"></i><span>{{ item.title }}</span>
       </a>
 
-      <a *ngIf="item.subMenu" ng-mouseenter="hoverItem($event, item)" (click)="toggleSubMenu($event, item)" class="al-sidebar-list-link">
+      <a *ngIf="item.subMenu" (mouseenter)="hoverItem($event, item)" (click)="toggleSubMenu($event, item)" class="al-sidebar-list-link">
         <i class="{{ item.icon }}"></i><span>{{ item.title }}</span>
         <b class="fa" [ngClass]="{'fa-angle-up': item.expanded, 'fa-angle-down': !item.expanded}" *ngIf="item.subMenu"></b>
       </a>
@@ -15,19 +15,19 @@
       <ul *ngIf="item.subMenu" class="al-sidebar-sublist"
           [ngClass]="{expanded: item.expanded, 'slide-right': item.slideRight}">
         <li *ngFor="#subitem of item.subMenu" [ngClass]="{'selected': subitem.selected, 'with-sub-menu': subitem.subMenu}">
-          <a ng-mouseenter="hoverItem($event, item)" *ngIf="subitem.subMenu" (click)="toggleSubMenu($event, subitem);"
+          <a (mouseenter)="hoverItem($event, item)" *ngIf="subitem.subMenu" (click)="toggleSubMenu($event, subitem);"
              class="al-sidebar-list-link subitem-submenu-link"><span>{{ subitem.title }}</span>
             <b class="fa" *ngIf="subitem.subMenu" [ngClass]="{'fa-angle-up': subitem.expanded, 'fa-angle-down': !subitem.expanded}"></b>
           </a>
           <ul *ngIf="subitem.subMenu" class="al-sidebar-sublist subitem-submenu-list"
               [ngClass]="{expanded: subitem.expanded, 'slide-right': subitem.slideRight}">
-            <li *ngFor="#subSubitem of subitem.subMenu" ng-mouseenter="hoverItem($event, item)" [ngClass]="{selected: subitem.selected}">
-              <a  ng-mouseenter="hoverItem($event, item)" [routerLink]="[subSubitem.name]">
+            <li *ngFor="#subSubitem of subitem.subMenu" (mouseenter)="hoverItem($event, item)" [ngClass]="{selected: subitem.selected}">
+              <a  (mouseenter)="hoverItem($event, item)" [routerLink]="[subSubitem.name]">
                 {{ subSubitem.title }}</a>
             </li>
           </ul>
           <a *ngIf="!subitem.subMenu" [routerLink]="[subitem.name]"
-             ng-mouseenter="hoverItem($event, item)" target="{{subitem.blank ? '_blank' : '_self'}}">
+             (mouseenter)="hoverItem($event, item)" target="{{subitem.blank ? '_blank' : '_self'}}">
             {{ subitem.title}}
           </a>
         </li>
@@ -35,5 +35,6 @@
 
     </li>
   </ul>
-  <div class="sidebar-hover-elem"></div>
+  <div class="sidebar-hover-elem" [ngStyle]="{top: hoverElemTop + 'px', height: hoverElemHeight + 'px'}"
+       [ngClass]="{'show-hover-elem': showHoverElem }"></div>
 </aside>
