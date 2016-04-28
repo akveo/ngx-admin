@@ -6,10 +6,13 @@ import {RouteConfig, Router} from 'angular2/router';
 
 import {Pages} from './pages';
 
-/*
- * App Component
- * Top Level Component
- */
+// TODO: is it really the best place to globally require that dependency?
+require("!style!css!sass!./theme/sass/_ionicons.scss");
+
+  /*
+   * App Component
+   * Top Level Component
+   */
 @Component({
   selector: 'app',
   pipes: [ ],
@@ -31,7 +34,7 @@ import {Pages} from './pages';
 })
 @RouteConfig([
   {
-    path: '/pages/...',
+    path: '/...',
     name: 'Pages',
     component: Pages,
     useAsDefault: true

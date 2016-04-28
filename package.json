@@ -38,7 +38,7 @@
     "docs": "npm run typedoc -- --options typedoc.json --exclude '**/*.spec.ts' ./src/",
     "start": "npm run server:dev",
     "start:hmr": "npm run server:dev:hmr",
-    "postinstall": "npm run typings -- install",
+    "postinstall": "npm run typings -- install && bower install",
     "preversion": "npm run build",
     "version": "npm run build",
     "postversion": "git push && git push --tags"

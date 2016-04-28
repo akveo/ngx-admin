@@ -1,0 +1,24 @@
+{
+  "name": "angular2-webpack-starter",
+  "description": "Angular 2 admin template.",
+  "main": "",
+  "authors": [
+    "Patrick Stapleton <patrick@angularclass.com>"
+  ],
+  "license": "MIT",
+  "moduleType": [
+    "es6"
+  ],
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "Ionicons": "ionicons#~2.0.1"
+  }
+}

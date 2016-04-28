@@ -48,13 +48,13 @@ module.exports = {
      *
      * See: http://webpack.github.io/docs/configuration.html#resolve-extensions
      */
-    extensions: ['', '.ts', '.js'],
+    extensions: ['', '.ts', '.js', '.css', '.scss'],
 
     // Make sure root is src
     root: helpers.root('src'),
 
     // remove other default values
-    modulesDirectories: ['node_modules']
+    modulesDirectories: ['node_modules', 'bower_components']
 
   },
 
@@ -128,15 +128,15 @@ module.exports = {
 
       {
         test: /\.scss$/,
-        loaders: ['raw-loader','sass-loader']
+        loaders: ['raw-loader', 'sass-loader']
       },
 
       {
-        test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "url-loader?limit=10000&mimetype=application/font-woff"
+        test: /\.woff(2)?(\?v=.+)?$/, loader: "url-loader?limit=10000&mimetype=application/font-woff"
       },
 
       {
-        test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "file-loader"
+        test: /\.(ttf|eot|svg)(\?v=.+)?$/, loader: "file-loader"
       },
 
       {

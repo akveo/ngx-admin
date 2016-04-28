@@ -1,11 +1,17 @@
 <aside class="al-sidebar">
   <ul class="al-sidebar-list">
     <li *ngFor="#item of menuItems" class="al-sidebar-list-item"
-        ngClass="{'selected': item.selected, 'with-sub-menu': item.subMenu}">
+        [ngClass]="{'selected': item.selected, 'with-sub-menu': item.subMenu}">
 
-      <a *ngIf="item.subMenu" href="{{ item.root }}" class="al-sidebar-list-link">
+      <a *ngIf="!item.subMenu" href="{{ item.root }}" class="al-sidebar-list-link">
         <i class="{{ item.icon }}"></i><span>{{ item.title }}</span>
       </a>
+
+      <a *ngIf="item.subMenu" ng-mouseenter="hoverItem($event, item)" (click)="toggleSubMenu($event, item)" class="al-sidebar-list-link" href>
+        <i class="{{ item.icon }}"></i><span>{{ item.title }}</span>
+        <b class="fa" [ngClass]="{'fa-angle-up': item.expanded, 'fa-angle-down': !item.expanded}" *ngIf="item.subMenu"></b>
+      </a>
+
     </li>
   </ul>
   <div class="sidebar-hover-elem"></div>
