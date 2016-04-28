@@ -7,6 +7,8 @@ export class SidebarService {
     {
       title: 'Pages',
       icon: 'ion-document',
+      selected: false,
+      expanded: false,
       subMenu: [
         {
           title: 'Sign In',
@@ -32,6 +34,8 @@ export class SidebarService {
     {
       title: 'Menu Level 1',
       icon: 'ion-ios-more',
+      selected: false,
+      expanded: false,
       subMenu: [
         {
           title: 'Menu Level 1.1',
@@ -71,7 +75,8 @@ export class SidebarService {
     var state = [{
       name: 'dashboard',
       title: 'Dashboard',
-      selected: true,
+      selected: false,
+      expanded: false,
       url: '/pages/dashboard',
       templateUrl: 'app/pages/dashboard/dashboard.html',
       sidebarMeta: {
