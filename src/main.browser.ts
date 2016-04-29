@@ -34,9 +34,6 @@ export function main(initialHmrState?: any): Promise<any> {
 }
 
 
-
-
-
 /*
  * Vendors
  * For vendors for example jQuery, Lodash, angular2-jwt just import them anywhere in your app

@@ -6,7 +6,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ForkCheckerPlugin = require('awesome-typescript-loader').ForkCheckerPlugin;
 
 const METADATA = {
-  title: 'Angular2 Webpack Starter by @gdi2290 from @AngularClass',
+  title: 'Blur Admin on Angular2',
+  description: 'Free Angular 2 Bootstrap 4 Admin Dashboard Template',
   baseUrl: '/'
 };
 
