@@ -3,6 +3,9 @@
  */
 import {Component, ViewEncapsulation} from 'angular2/core';
 import {RouteConfig, Router} from 'angular2/router';
+import {Subscription} from 'rxjs/Subscription';
+
+import {SidebarStateService} from './theme/sidebar/sidebarState.service';
 
 import {Pages} from './pages';
 
@@ -17,14 +20,14 @@ require("!style!css!sass!./theme/sass/_ionicons.scss");
 @Component({
   selector: 'app',
   pipes: [ ],
-  providers: [ ],
+  providers: [SidebarStateService],
   encapsulation: ViewEncapsulation.None,
   styles: [ require('normalize.css'), require('./app.scss') ],
   template: `
     <header>
     </header>
 
-    <main>
+    <main [ngClass]="{'menu-collapsed': isMenuCollapsed}">
       <router-outlet></router-outlet>
     </main>
 
@@ -45,11 +48,21 @@ export class App {
   angularclassLogo = 'assets/img/angularclass-avatar.png';
   name = 'Angular 2 Webpack Starter';
   url = 'https://twitter.com/AngularClass';
+  isMenuCollapsed: boolean = false;
 
-  constructor() {}
+  private _sidebarStateSubscription: Subscription;
+
+  constructor(private _sidebarStateService:SidebarStateService) {
+    this._sidebarStateSubscription = this._sidebarStateService.getStateStream().subscribe((isCollapsed) => this.isMenuCollapsed = isCollapsed);
+  }
 
   ngOnInit() {
     console.log('Initial App State');
+  }
+
+  ngOnDestroy(){
+    // prevent memory leak when component destroyed
+    this._sidebarStateSubscription.unsubscribe();
   }
 
 }

@@ -1,8 +1,9 @@
 import {Component, ElementRef, HostListener} from 'angular2/core';
+import {Router} from 'angular2/router';
 
 import {layoutSizes} from '../theme.constants';
 import {SidebarService} from './sidebar.service';
-import {Router} from 'angular2/router';
+import {SidebarStateService} from './sidebarState.service';
 
 @Component({
     selector: 'sidebar',
@@ -13,8 +14,6 @@ import {Router} from 'angular2/router';
     pipes: []
 })
 export class Sidebar {
-  elementRef: ElementRef;
-  router: Router;
 
   menuItems: Array<any>;
   menuHeight: number;
@@ -26,9 +25,8 @@ export class Sidebar {
 
   isMenuShouldCollapsed: boolean = false;
 
-  constructor(el: ElementRef, router: Router, private _sidebarService: SidebarService) {
-    this.elementRef = el;
-    this.router = router;
+  constructor(private elementRef: ElementRef, private router: Router, private _sidebarService: SidebarService, private _sidebarStateService: SidebarStateService) {
+
     this.menuItems = this._sidebarService.getMenuItems();
   }
 
@@ -38,40 +36,44 @@ export class Sidebar {
 
   // TODO: is it really the best event for this kind of things?
   ngAfterViewInit() {
-    // TODO: get rid of magic 84 constant
-    this.menuHeight = this.elementRef.nativeElement.childNodes[0].clientHeight - 84;
+    this.updateSidebarHeight();
   }
 
   @HostListener('window:resize', ['$event'])
   onWindowResize($event) {
 
     var isMenuShouldCollapsed = $event.target.innerWidth <= layoutSizes.resWidthCollapseSidebar;
-    var scopeApplied = false;
 
     if (this.isMenuShouldCollapsed !== isMenuShouldCollapsed) {
-      this.menuHeight = this.elementRef.nativeElement.childNodes[0].clientHeight - 84;
-      this.isMenuCollapsed = isMenuShouldCollapsed;
-      scopeApplied = true;
-    }
-    if (!scopeApplied) {
-      this.menuHeight = this.elementRef.nativeElement.childNodes[0].clientHeight - 84;
+      this.menuCollapseStateChange(isMenuShouldCollapsed);
     }
     this.isMenuShouldCollapsed = isMenuShouldCollapsed;
+    this.updateSidebarHeight();
   }
 
   menuExpand () {
-    this.isMenuCollapsed = false;
+    this.menuCollapseStateChange(false);
   }
 
   menuCollapse () {
-    this.isMenuCollapsed = true;
+    this.menuCollapseStateChange(true);
   }
 
-  hoverItem = function ($event) {
+  menuCollapseStateChange(isCollapsed) {
+    this.isMenuCollapsed = isCollapsed;
+    this._sidebarStateService.stateChanged(this.isMenuCollapsed);
+  }
+
+  hoverItem ($event) {
     this.showHoverElem = true;
     this.hoverElemHeight =  $event.currentTarget.clientHeight;
     // TODO: get rid of magic 66 constant
     this.hoverElemTop = $event.currentTarget.getBoundingClientRect().top - 66;
+  }
+
+  updateSidebarHeight() {
+    // TODO: get rid of magic 84 constant
+    this.menuHeight = this.elementRef.nativeElement.childNodes[0].clientHeight - 84;
   }
 
   toggleSubMenu ($event, item) {
