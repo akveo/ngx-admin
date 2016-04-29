@@ -7,19 +7,20 @@ import {Component, ViewEncapsulation} from 'angular2/core';
  * Top Level Component
  */
 @Component({
-    selector: 'dashboard',
-    pipes: [ ],
-    providers: [ ],
-    encapsulation: ViewEncapsulation.None,
-    styles: [require('./dashboard.scss') ],
-    template: 'DASHBOARD'
+  selector: 'dashboard',
+  pipes: [],
+  providers: [],
+  encapsulation: ViewEncapsulation.None,
+  styles: [require('./dashboard.scss')],
+  template: 'DASHBOARD'
 })
 export class Dashboard {
 
-    constructor() {}
+  constructor() {
+  }
 
-    ngOnInit() {
-        console.log('DASHBOARD');
-    }
+  ngOnInit() {
+    console.log('DASHBOARD');
+  }
 
 }

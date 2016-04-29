@@ -2,12 +2,12 @@ import {Component, ViewEncapsulation} from 'angular2/core';
 import {ProfilePicturePipe} from '../pipes/image/profile-picture.pipe';
 
 @Component({
-    selector: 'msg-center',
-    styles: [ require('./msgCenter.scss') ],
-    template: require('./msgCenter.html'),
-    pipes: [ProfilePicturePipe]
+  selector: 'msg-center',
+  styles: [require('./msgCenter.scss')],
+  template: require('./msgCenter.html'),
+  pipes: [ProfilePicturePipe]
 })
-export class MsgCenter  {
+export class MsgCenter {
 
   notifications = [
     {

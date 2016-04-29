@@ -1,24 +1,25 @@
-<div class="page-top clearfix" scrollPosition maxHeight="50" (scrollChange)="scrolledChanged($event)" [ngClass]="{scrolled: isScrolled}">
-    <a href="#/dashboard" class="al-logo clearfix"><span>Blur</span>Admin</a>
-    <a (click)="toggleMenu()" class="collapse-menu-link ion-navicon"></a>
+<div class="page-top clearfix" scrollPosition maxHeight="50" (scrollChange)="scrolledChanged($event)"
+     [ngClass]="{scrolled: isScrolled}">
+  <a href="#/dashboard" class="al-logo clearfix"><span>Blur</span>Admin</a>
+  <a (click)="toggleMenu()" class="collapse-menu-link ion-navicon"></a>
 
-    <div class="search">
-        <i class="ion-ios-search-strong" ng-click="startSearch()"></i>
-        <input id="searchInput" type="text" placeholder="Search for...">
-    </div>
+  <div class="search">
+    <i class="ion-ios-search-strong" ng-click="startSearch()"></i>
+    <input id="searchInput" type="text" placeholder="Search for...">
+  </div>
 
-    <div class="user-profile clearfix">
-        <div class="dropdown al-user-profile">
-            <a class="profile-toggle-link dropdown-toggle" id="user-profile-dd" data-toggle="dropdown" aria-expanded="false">
-                <img src="{{ ( 'Nasta' | profilePicture ) }}">
-            </a>
-            <div class="dropdown-menu top-dropdown-menu profile-dropdown" aria-labelledby="user-profile-dd">
-                <li class="dropdown-item"><i class="dropdown-arr"></i></li>
-                <li class="dropdown-item"><a href="#/profile"><i class="fa fa-user"></i>Profile</a></li>
-                <li class="dropdown-item"><a href><i class="fa fa-cog"></i>Settings</a></li>
-                <li class="dropdown-item"><a href class="signout"><i class="fa fa-power-off"></i>Sign out</a></li>
-            </div>
-        </div>
-        <msg-center></msg-center>
+  <div class="user-profile clearfix">
+    <div class="dropdown al-user-profile">
+      <a class="profile-toggle-link dropdown-toggle" id="user-profile-dd" data-toggle="dropdown" aria-expanded="false">
+        <img src="{{ ( 'Nasta' | profilePicture ) }}">
+      </a>
+      <div class="dropdown-menu top-dropdown-menu profile-dropdown" aria-labelledby="user-profile-dd">
+        <li class="dropdown-item"><i class="dropdown-arr"></i></li>
+        <li class="dropdown-item"><a href="#/profile"><i class="fa fa-user"></i>Profile</a></li>
+        <li class="dropdown-item"><a href><i class="fa fa-cog"></i>Settings</a></li>
+        <li class="dropdown-item"><a href class="signout"><i class="fa fa-power-off"></i>Sign out</a></li>
+      </div>
     </div>
+    <msg-center></msg-center>
+  </div>
 </div>

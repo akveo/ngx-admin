@@ -45,7 +45,7 @@ $hover: 24;
   }
   &.btn-default {
     @include styleButton(transparent, $default);
-    &:focus, &:active:hover, &.active:hover, &:hover{
+    &:focus, &:active:hover, &.active:hover, &:hover {
       background-color: rgba(0, 0, 0, 0.2);
       color: $default;
     }
@@ -124,7 +124,6 @@ button.btn.btn-danger {
   }
 }
 
-
 button.btn.btn-inverse {
   @include buttonColor($help-text, $help-text);
   color: $default;
@@ -133,8 +132,6 @@ button.btn.btn-inverse {
     color: $default;
   }
 }
-
-
 
 .btn-with-icon {
   i {

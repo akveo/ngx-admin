@@ -11,7 +11,7 @@ export class SidebarStateService {
   isCollapsedStream$ = this._isCollapsed.asObservable();
 
   // Service message commands
-  stateChanged(isCollapsed: boolean) {
+  stateChanged(isCollapsed:boolean) {
     this._isCollapsed.next(isCollapsed)
   }
 

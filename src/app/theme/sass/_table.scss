@@ -241,23 +241,23 @@ body.badmin-transparent {
     background-color: rgba(0, 0, 0, 0.1);
   }
   .table > tbody > tr.primary > td {
-    background-color: rgba($primary,0.7);
+    background-color: rgba($primary, 0.7);
     border: none;
   }
   .table > tbody > tr.success > td {
-    background-color: rgba($success,0.7);
+    background-color: rgba($success, 0.7);
     border: none;
   }
   .table > tbody > tr.warning > td {
-    background-color: rgba($warning,0.7);
+    background-color: rgba($warning, 0.7);
     border: none;
   }
   .table > tbody > tr.danger > td {
-    background-color: rgba($danger,0.7);
+    background-color: rgba($danger, 0.7);
     border: none;
   }
   .table > tbody > tr.info > td {
-    background-color: rgba($info,0.7);
+    background-color: rgba($info, 0.7);
     border: none;
   }
 
@@ -282,21 +282,21 @@ th {
 .table-striped > tbody > tr > td {
   border: none;
 }
+
 .pagination > li > a,
-.pagination > li > span{
+.pagination > li > span {
   color: $default;
   border-color: $default;
 }
 
-
 .pagination > li:first-of-type > a,
-.pagination > li:first-of-type > span{
+.pagination > li:first-of-type > span {
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
 }
 
 .pagination > li:last-of-type > a,
-.pagination > li:last-of-type > span{
+.pagination > li:last-of-type > span {
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
 }
@@ -314,11 +314,11 @@ th {
 .pagination > li > a:hover,
 .pagination > li > span:hover,
 .pagination > li > a:focus,
-.pagination > li > span:focus{
-  background-color: rgba(0,0,0,.2);
+.pagination > li > span:focus {
+  background-color: rgba(0, 0, 0, .2);
   color: $default;
 }
 
 .editable-buttons .btn-with-icon i {
-   margin-right: 0;
+  margin-right: 0;
 }

@@ -6,34 +6,35 @@ import {SidebarService} from './sidebar.service';
 import {SidebarStateService} from './sidebarState.service';
 
 @Component({
-    selector: 'sidebar',
-    encapsulation: ViewEncapsulation.None,
-    styles: [ require('./sidebar.scss') ],
-    template: require('./sidebar.html'),
-    providers: [SidebarService],
-    directives: [],
-    pipes: []
+  selector: 'sidebar',
+  encapsulation: ViewEncapsulation.None,
+  styles: [require('./sidebar.scss')],
+  template: require('./sidebar.html'),
+  providers: [SidebarService],
+  directives: [],
+  pipes: []
 })
 export class Sidebar {
 
   @Input('routes') routes;
 
-  menuItems: Array<any>;
-  menuHeight: number;
-  isMenuCollapsed: boolean;
+  menuItems:Array<any>;
+  menuHeight:number;
+  isMenuCollapsed:boolean;
 
-  showHoverElem: boolean;
-  hoverElemHeight: number;
-  hoverElemTop: number;
+  showHoverElem:boolean;
+  hoverElemHeight:number;
+  hoverElemTop:number;
 
-  outOfArea: number = -200;
+  outOfArea:number = -200;
 
-  isMenuShouldCollapsed: boolean = false;
+  isMenuShouldCollapsed:boolean = false;
 
-  constructor(private elementRef: ElementRef,
-              private router: Router,
-              private _sidebarService: SidebarService,
-              private _sidebarStateService: SidebarStateService) { }
+  constructor(private elementRef:ElementRef,
+              private router:Router,
+              private _sidebarService:SidebarService,
+              private _sidebarStateService:SidebarStateService) {
+  }
 
   ngOnInit() {
     this.menuItems = this._sidebarService.getMenuItems(this.routes);
@@ -57,11 +58,11 @@ export class Sidebar {
     this.updateSidebarHeight();
   }
 
-  menuExpand () {
+  menuExpand() {
     this.menuCollapseStateChange(false);
   }
 
-  menuCollapse () {
+  menuCollapse() {
     this.menuCollapseStateChange(true);
   }
 
@@ -70,9 +71,9 @@ export class Sidebar {
     this._sidebarStateService.stateChanged(this.isMenuCollapsed);
   }
 
-  hoverItem ($event) {
+  hoverItem($event) {
     this.showHoverElem = true;
-    this.hoverElemHeight =  $event.currentTarget.clientHeight;
+    this.hoverElemHeight = $event.currentTarget.clientHeight;
     // TODO: get rid of magic 66 constant
     this.hoverElemTop = $event.currentTarget.getBoundingClientRect().top - 66;
   }
@@ -82,7 +83,7 @@ export class Sidebar {
     this.menuHeight = this.elementRef.nativeElement.childNodes[0].clientHeight - 84;
   }
 
-  toggleSubMenu ($event, item) {
+  toggleSubMenu($event, item) {
     var submenu = $($event.currentTarget).next();
 
     if (this.isMenuCollapsed) {
@@ -99,7 +100,7 @@ export class Sidebar {
   }
 
   private selectMenuItem() {
-    let isCurrent = (instruction) => (instruction ? this.router.isRouteActive(this.router.generate([instruction])): false);
+    let isCurrent = (instruction) => (instruction ? this.router.isRouteActive(this.router.generate([instruction])) : false);
 
     this.menuItems.forEach(function (menu) {
 

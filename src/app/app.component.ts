@@ -1,6 +1,3 @@
-/*
- * Angular 2 decorators and services
- */
 import {Component, ViewEncapsulation} from 'angular2/core';
 import {RouteConfig, Router} from 'angular2/router';
 import {Subscription} from 'rxjs/Subscription';
@@ -12,17 +9,17 @@ import {Pages} from './pages';
 // TODO: is it really the best place to globally require that dependency?
 require("!style!css!sass!./theme/sass/_ionicons.scss");
 
-  /*
-   * App Component
-   * Top Level Component
-   * TODO: why the header and footer are not implemented?
-   */
+/*
+ * App Component
+ * Top Level Component
+ * TODO: why the header and footer are not implemented?
+ */
 @Component({
   selector: 'app',
-  pipes: [ ],
+  pipes: [],
   providers: [SidebarStateService],
   encapsulation: ViewEncapsulation.None,
-  styles: [ require('normalize.css'), require('./app.scss') ],
+  styles: [require('normalize.css'), require('./app.scss')],
   template: `
     <header>
     </header>
@@ -46,15 +43,15 @@ require("!style!css!sass!./theme/sass/_ionicons.scss");
 ])
 export class App {
 
-  isMenuCollapsed: boolean = false;
+  isMenuCollapsed:boolean = false;
 
-  private _sidebarStateSubscription: Subscription;
+  private _sidebarStateSubscription:Subscription;
 
   constructor(private _sidebarStateService:SidebarStateService) {
     this._sidebarStateSubscription = this._sidebarStateService.getStateStream().subscribe((isCollapsed) => this.isMenuCollapsed = isCollapsed);
   }
 
-  ngOnDestroy(){
+  ngOnDestroy() {
     // prevent memory leak when component destroyed
     this._sidebarStateSubscription.unsubscribe();
   }

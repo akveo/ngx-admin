@@ -36,9 +36,11 @@ export class Pages {
 
   private _routeConfig;
 
-  constructor(private _router: Router) { }
+  constructor(private _router:Router) {
+  }
 
-  ngOnInit() { }
+  ngOnInit() {
+  }
 
   getRoutes() {
 

@@ -7,28 +7,28 @@ import {ScrollPosition} from '../directives/scrollPosition.directive';
 import {SidebarStateService} from '../sidebar/sidebarState.service'
 
 @Component({
-    selector: 'page-top',
-    styles: [ require('./pageTop.scss') ],
-    template: require('./pageTop.html'),
-    directives: [MsgCenter, ScrollPosition],
-    pipes: [ProfilePicturePipe]
+  selector: 'page-top',
+  styles: [require('./pageTop.scss')],
+  template: require('./pageTop.html'),
+  directives: [MsgCenter, ScrollPosition],
+  pipes: [ProfilePicturePipe]
 })
 export class PageTop {
-    isScrolled: Boolean = false;
-    isMenuCollapsed: boolean = false;
+  isScrolled:Boolean = false;
+  isMenuCollapsed:boolean = false;
 
-    private _sidebarStateSubscription: Subscription;
+  private _sidebarStateSubscription:Subscription;
 
-    constructor(private _sidebarStateService: SidebarStateService) {
-      this._sidebarStateSubscription = this._sidebarStateService.getStateStream().subscribe((isCollapsed) => this.isMenuCollapsed = isCollapsed);
-    }
+  constructor(private _sidebarStateService:SidebarStateService) {
+    this._sidebarStateSubscription = this._sidebarStateService.getStateStream().subscribe((isCollapsed) => this.isMenuCollapsed = isCollapsed);
+  }
 
-    toggleMenu() {
-      this.isMenuCollapsed = !this.isMenuCollapsed;
-      this._sidebarStateService.stateChanged(this.isMenuCollapsed);
-    }
+  toggleMenu() {
+    this.isMenuCollapsed = !this.isMenuCollapsed;
+    this._sidebarStateService.stateChanged(this.isMenuCollapsed);
+  }
 
-    scrolledChanged(isScrolled) {
-      this.isScrolled = isScrolled;
-    }
+  scrolledChanged(isScrolled) {
+    this.isScrolled = isScrolled;
+  }
 }

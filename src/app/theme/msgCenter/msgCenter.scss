@@ -113,7 +113,7 @@
   left: auto;
   right: -47px;
   top: 26px;
-  @include scrollbars(.4em, rgba(0,0,0,0.5), #fff);
+  @include scrollbars(.4em, rgba(0, 0, 0, 0.5), #fff);
   .header {
     padding: 10px 12px;
     border-bottom: 1px solid $border-light;
@@ -150,7 +150,7 @@
         img {
           width: 36px;
           height: 36px;
-          &.photo-msg-item{
+          &.photo-msg-item {
             border-radius: 18px;
           }
         }

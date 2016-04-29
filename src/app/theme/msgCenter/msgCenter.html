@@ -15,8 +15,9 @@
         <a href>Settings</a>
       </div>
       <div class="msg-list">
-        <a *ngFor="#msg of notifications" href class="clearfix" >
-          <div class="img-area"><img [ngClass]="{'photo-msg-item': !msg.image}" src="{{ ( msg.image ||  (msg.name | profilePicture)) }}"></div>
+        <a *ngFor="#msg of notifications" href class="clearfix">
+          <div class="img-area"><img [ngClass]="{'photo-msg-item': !msg.image}"
+                                     src="{{ ( msg.image ||  (msg.name | profilePicture)) }}"></div>
           <div class="msg-area">
             <div>{{ msg.text }}</div>
             <span>{{ msg.time }}</span>
@@ -40,7 +41,8 @@
       </div>
       <div class="msg-list">
         <a *ngFor="#msg of messages" href class="clearfix">
-          <div class="img-area"><img [ngClass]="{'photo-msg-item': !msg.image}" src="{{ ( msg.image ||  (msg.name | profilePicture)) }}"></div>
+          <div class="img-area"><img [ngClass]="{'photo-msg-item': !msg.image}"
+                                     src="{{ ( msg.image ||  (msg.name | profilePicture)) }}"></div>
           <div class="msg-area">
             <div>{{ msg.text }}</div>
             <span>{{ msg.time }}</span>

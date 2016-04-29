@@ -128,7 +128,7 @@ $panel-heading-font-size: 16px;
   }
 }
 
-.panel.bootstrap-panel{
+.panel.bootstrap-panel {
   .panel-body, .panel-heading {
     p, div, span {
       color: $default-text;
@@ -136,12 +136,12 @@ $panel-heading-font-size: 16px;
   }
 }
 
-.accordion-panel.panel.bootstrap-panel{
+.accordion-panel.panel.bootstrap-panel {
   &.panel-primary,
   &.panel-success,
   &.panel-info,
   &.panel-warning,
-  &.panel-danger{
+  &.panel-danger {
     .panel-heading {
       p, div, span {
         color: rgba(255, 255, 255, 0.8);
@@ -150,8 +150,8 @@ $panel-heading-font-size: 16px;
   }
 }
 
-.panel-group .panel.accordion-panel{
-  .panel-heading{
+.panel-group .panel.accordion-panel {
+  .panel-heading {
     border-bottom: 0;
   }
 }
@@ -170,14 +170,13 @@ $panel-heading-font-size: 16px;
   height: 120px;
 }
 
-.footer-panel{
+.footer-panel {
   height: 142px;
 }
 
-.light-text{
+.light-text {
   font-weight: $font-light;
 }
-
 
 /*
 .panel-group .panel {

@@ -41,6 +41,7 @@
 @mixin bg-nr($relativeUrl) {
   background: url($images-root + $relativeUrl) no-repeat 0 0;
 }
+
 @mixin bg($relativeUrl) {
   background: url($images-root + $relativeUrl);
 }
@@ -93,22 +94,22 @@
 
 @mixin overrideColors($color) {
   p,
-  h1,h2,h3,h4,h5,h6,
+  h1, h2, h3, h4, h5, h6,
   .pie-chart-item,
-  .panel-heading>.dropdown .dropdown-toggle,
+  .panel-heading > .dropdown .dropdown-toggle,
   .panel-title,
   ol.blur span,
   ul.blur,
   .popular-app-cost,
   .popular-app-info,
-  .panel-title>.small,
-  .panel-title>.small>a,
-  .panel-title>a,
-  .panel-title>small,
-  .panel-title>small>a,
+  .panel-title > .small,
+  .panel-title > .small > a,
+  .panel-title > a,
+  .panel-title > small,
+  .panel-title > small > a,
   .traffic-text span,
   .form-group label,
-  .help-block{
+  .help-block {
     color: $color;
   }
   .feed-message .message-time, .text-muted {

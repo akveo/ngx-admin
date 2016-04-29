@@ -22,7 +22,6 @@
 @include svg-icon-class('person', 80, 80);
 @include svg-icon-class('refresh', 80, 80);
 
-
 @mixin png-icon($url, $width, $height) {
   display: inline-block;
   width: $width + px;

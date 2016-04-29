@@ -53,17 +53,18 @@ export class SidebarService {
           }]
         }
       ]
-  }];
+    }];
 
-  constructor() { }
+  constructor() {
+  }
 
   getMenuItems(routes) {
 
     let menuItems = routes.configs
-      .filter(function(s) {
+      .filter(function (s) {
         return s.data.sidebarMeta != null;
       })
-      .map(function(s) {
+      .map(function (s) {
         var meta = s.data.sidebarMeta;
         return {
           title: s.data.title,
@@ -73,10 +74,10 @@ export class SidebarService {
           icon: meta.icon
         };
       })
-      .sort(function(a, b) {
+      .sort(function (a, b) {
         return (a.level - b.level) * 100 + a.order - b.order;
       })
-      .filter(function(item) {
+      .filter(function (item) {
         return item.level == 0;
       });
 
