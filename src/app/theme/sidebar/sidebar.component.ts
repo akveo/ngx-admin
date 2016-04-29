@@ -24,6 +24,8 @@ export class Sidebar {
   hoverElemHeight: number;
   hoverElemTop: number;
 
+  outOfArea: number = -200;
+
   isMenuShouldCollapsed: boolean = false;
 
   constructor(private elementRef: ElementRef, private router: Router, private _sidebarService: SidebarService, private _sidebarStateService: SidebarStateService) {

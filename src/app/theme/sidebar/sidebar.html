@@ -1,4 +1,4 @@
-<aside class="al-sidebar">
+<aside class="al-sidebar" (mouseleave)="hoverElemTop=outOfArea">
   <ul class="al-sidebar-list">
     <li *ngFor="#item of menuItems" class="al-sidebar-list-item"
         [ngClass]="{'selected': item.selected, 'with-sub-menu': item.subMenu}">
