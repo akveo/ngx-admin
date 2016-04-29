@@ -2,12 +2,9 @@ import {Component, ViewEncapsulation} from 'angular2/core';
 import {RouteConfig, Router} from 'angular2/router';
 
 import {Dashboard} from './dashboard';
+import {Ui} from './ui';
 import {PageTop, Sidebar} from '../theme';
 
-/*
- * App Component
- * Top Level Component
- */
 @Component({
   selector: 'pages',
   encapsulation: ViewEncapsulation.None,
@@ -17,17 +14,31 @@ import {PageTop, Sidebar} from '../theme';
 })
 @RouteConfig([
   {
-    path: '/dashboard',
     name: 'Dashboard',
     component: Dashboard,
+    path: '/dashboard',
     useAsDefault: true,
     data: {
       title: 'Dashboard',
-      selected: true,
-      expanded: true,
+      selected: false,
+      expanded: false,
       sidebarMeta: {
         icon: 'ion-android-home',
         order: 0,
+      }
+    }
+  },
+  {
+    name: 'Ui',
+    component: Ui,
+    path: '/ui/...',
+    data: {
+      title: 'UI Features',
+      selected: false,
+      expanded: false,
+      sidebarMeta: {
+        icon: 'ion-android-laptop',
+        order: 200,
       }
     }
   },
