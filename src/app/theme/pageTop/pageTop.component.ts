@@ -15,7 +15,7 @@ import {SidebarStateService} from '../sidebar/sidebarState.service'
 })
 export class PageTop {
     isScrolled: Boolean = false;
-    isMenuCollapsed: Boolean = false;
+    isMenuCollapsed: boolean = false;
 
     private _sidebarStateSubscription: Subscription;
 

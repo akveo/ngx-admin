@@ -1,4 +1,4 @@
-import {Component, ElementRef, HostListener} from 'angular2/core';
+import {Component, ElementRef, HostListener, ViewEncapsulation} from 'angular2/core';
 import {Router} from 'angular2/router';
 
 import {layoutSizes} from '../theme.constants';
@@ -7,6 +7,7 @@ import {SidebarStateService} from './sidebarState.service';
 
 @Component({
     selector: 'sidebar',
+    encapsulation: ViewEncapsulation.None,
     styles: [ require('./sidebar.scss') ],
     template: require('./sidebar.html'),
     providers: [SidebarService],
