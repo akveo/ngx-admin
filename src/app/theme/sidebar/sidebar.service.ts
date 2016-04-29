@@ -53,54 +53,33 @@ export class SidebarService {
           }]
         }
       ]
-    }];
+  }];
 
-  getMenuItems() {
-    var states = this.defineMenuItemStates();
-    var menuItems = states.filter(function(item) {
-      return item.level == 0;
-    });
+  constructor() { }
 
-    menuItems.forEach(function(item) {
-      var children = states.filter(function(child) {
-        return child.level == 1 && child.name.indexOf(item.name) === 0;
-      });
-      item.subMenu = children.length ? children : null;
-    });
+  getMenuItems(routes) {
 
-    return menuItems.concat(this.staticMenuItems);
-  };
-
-  defineMenuItemStates() {
-
-    // TODO mock state object
-    var state = [{
-      name: 'Dashboard',
-      title: 'Dashboard',
-      selected: false,
-      expanded: false,
-      sidebarMeta: {
-        icon: 'ion-android-home',
-        order: 0,
-      }
-    }];
-
-    return state
+    let menuItems = routes.configs
       .filter(function(s) {
-        return s.sidebarMeta != null;
+        return s.data.sidebarMeta != null;
       })
       .map(function(s) {
-        var meta = s.sidebarMeta;
+        var meta = s.data.sidebarMeta;
         return {
+          title: s.data.title,
           name: s.name,
-          title: s.title,
-          level: (s.name.match(/\./g) || []).length,
+          level: 0,
           order: meta.order,
           icon: meta.icon
         };
       })
       .sort(function(a, b) {
         return (a.level - b.level) * 100 + a.order - b.order;
+      })
+      .filter(function(item) {
+        return item.level == 0;
       });
+
+    return menuItems.concat(this.staticMenuItems);
   }
 }

@@ -1,4 +1,4 @@
-import {Component, ElementRef, HostListener, ViewEncapsulation} from 'angular2/core';
+import {Component, ElementRef, HostListener, ViewEncapsulation, Input} from 'angular2/core';
 import {Router} from 'angular2/router';
 
 import {layoutSizes} from '../theme.constants';
@@ -16,6 +16,8 @@ import {SidebarStateService} from './sidebarState.service';
 })
 export class Sidebar {
 
+  @Input('routes') routes;
+
   menuItems: Array<any>;
   menuHeight: number;
   isMenuCollapsed: boolean;
@@ -28,12 +30,13 @@ export class Sidebar {
 
   isMenuShouldCollapsed: boolean = false;
 
-  constructor(private elementRef: ElementRef, private router: Router, private _sidebarService: SidebarService, private _sidebarStateService: SidebarStateService) {
-
-    this.menuItems = this._sidebarService.getMenuItems();
-  }
+  constructor(private elementRef: ElementRef,
+              private router: Router,
+              private _sidebarService: SidebarService,
+              private _sidebarStateService: SidebarStateService) { }
 
   ngOnInit() {
+    this.menuItems = this._sidebarService.getMenuItems(this.routes);
     this.selectMenuItem();
   }
 
