@@ -3,13 +3,13 @@ import {RouteConfig, Router} from 'angular2/router';
 
 import {Dashboard} from './dashboard';
 import {Ui} from './ui';
-import {PageTop, Sidebar} from '../theme';
+import {PageTop, ContentTop, Sidebar} from '../theme';
 
 @Component({
   selector: 'pages',
   encapsulation: ViewEncapsulation.None,
   styles: [],
-  directives: [PageTop, Sidebar],
+  directives: [PageTop, Sidebar, ContentTop],
   template: `
     <sidebar></sidebar>
     <page-top></page-top>
