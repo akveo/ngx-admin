@@ -27,6 +27,10 @@ a.al-logo {
   line-height: 60px;
   text-decoration: none;
 
+  &:hover {
+    color: $hoverlink;
+  }
+
   span {
     color: $primary;
   }
