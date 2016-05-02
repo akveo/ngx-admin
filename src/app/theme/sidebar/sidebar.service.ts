@@ -31,6 +31,10 @@ export class SidebarService {
         {
           title: 'Google Maps',
           name: 'GoogleMaps',
+        },
+        {
+          title: 'Leaflet Maps',
+          name: 'LeafletMaps',
         }
       ]
     },

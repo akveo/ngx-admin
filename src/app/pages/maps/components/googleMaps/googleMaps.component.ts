@@ -15,12 +15,11 @@ export class GoogleMaps {
   constructor(private _elementRef:ElementRef) {
   }
 
-  ngOnInit() {
-  }
-
   ngAfterViewInit() {
+    let el = DOM.querySelector(this._elementRef.nativeElement, '.google-maps');
+
     GoogleMapsLoader.load((google) => {
-      new google.maps.Map(DOM.querySelector(this._elementRef.nativeElement, '.google-maps'), {
+      new google.maps.Map(el, {
         center: new google.maps.LatLng(44.5403, -78.5463),
         zoom: 8,
         mapTypeId: google.maps.MapTypeId.ROADMAP
