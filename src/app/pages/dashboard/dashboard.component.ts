@@ -1,13 +1,13 @@
 import {Component, ViewEncapsulation} from 'angular2/core';
 
 import {PopularApp} from './popularApp';
-import {BaPanel} from '../../theme';
+import {BaCard} from '../../theme';
 
 
 @Component({
   selector: 'dashboard',
   pipes: [],
-  directives: [PopularApp, BaPanel],
+  directives: [PopularApp, BaCard],
   encapsulation: ViewEncapsulation.None,
   styles: [require('./dashboard.scss')],
   template: require('./dashboard.html')

@@ -1,5 +1,5 @@
 $card-title-height: 44px;
-$card-heading-font-size: 16px;
+$card-header-font-size: 16px;
 
 .card {
   border: none;
@@ -47,11 +47,11 @@ $card-heading-font-size: 16px;
   height: 100%;
 }
 
-.card-heading, .card-footer {
+.card-header, .card-footer {
   height: $card-title-height;
-  font-size: $card-heading-font-size;
+  font-size: $card-header-font-size;
 
-  $vertical-padding: ($card-title-height - $card-heading-font-size) / 2;
+  $vertical-padding: ($card-title-height - $card-header-font-size) / 2;
   padding: $vertical-padding 22px;
 
 }
@@ -65,7 +65,7 @@ $card-heading-font-size: 16px;
 
 .card-white, .card-blur {
   background-size: cover;
-  > .card-heading {
+  > .card-header {
     background-color: transparent;
     border: none;
     color: $default-text;
@@ -83,7 +83,7 @@ $card-heading-font-size: 16px;
 }
 
 .card-primary {
-  > .card-heading {
+  > .card-header {
     color: $primary;
     background-color: $primary-bg;
     border-color: $primary-bg;
@@ -91,7 +91,7 @@ $card-heading-font-size: 16px;
 }
 
 .card-success {
-  > .card-heading {
+  > .card-header {
     color: $success;
     background-color: $success-bg;
     border-color: $success-bg;
@@ -99,7 +99,7 @@ $card-heading-font-size: 16px;
 }
 
 .card-info {
-  > .card-heading {
+  > .card-header {
     color: $info;
     background-color: $info-bg;
     border-color: $info-bg;
@@ -107,7 +107,7 @@ $card-heading-font-size: 16px;
 }
 
 .card-warning {
-  > .card-heading {
+  > .card-header {
     color: $warning;
     background-color: $warning-bg;
     border-color: $warning-bg;
@@ -115,7 +115,7 @@ $card-heading-font-size: 16px;
 }
 
 .card-danger {
-  > .card-heading {
+  > .card-header {
     color: $danger;
     background-color: $danger-bg;
     border-color: $danger-bg;
@@ -123,13 +123,13 @@ $card-heading-font-size: 16px;
 }
 
 .card-primary, .card-success, .card-info, .card-warning, .card-danger {
-  .card-heading {
+  .card-header {
     color: rgba(255, 255, 255, 0.8);
   }
 }
 
 .card.bootstrap-card {
-  .card-body, .card-heading {
+  .card-body, .card-header {
     p, div, span {
       color: $default-text;
     }
@@ -142,7 +142,7 @@ $card-heading-font-size: 16px;
   &.card-info,
   &.card-warning,
   &.card-danger {
-    .card-heading {
+    .card-header {
       p, div, span {
         color: rgba(255, 255, 255, 0.8);
       }
@@ -151,13 +151,13 @@ $card-heading-font-size: 16px;
 }
 
 .card-group .card.accordion-card {
-  .card-heading {
+  .card-header {
     border-bottom: 0;
   }
 }
 
 .card-group .card {
-  .card-heading {
+  .card-header {
     border-bottom: 1px solid #ddd;
   }
 }

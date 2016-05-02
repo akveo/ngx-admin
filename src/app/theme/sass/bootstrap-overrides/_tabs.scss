@@ -168,26 +168,26 @@
   border: none;
 }
 
-.panel-primary, .panel-info, .panel-success, .panel-warning, .panel-danger, {
-  .panel-heading {
+.card-primary, .card-info, .card-success, .card-warning, .card-danger, {
+  .card-header {
     border-radius: 4px;
   }
 
-  &.panel-open .panel-heading {
+  &.card-open .card-header {
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
   }
 
-  &:not(.panel-open) .panel-heading {
+  &:not(.card-open) .card-header {
     transition-delay: .3s;
   }
 
-  > .panel-heading + .panel-collapse > .panel-body {
+  > .card-header + .card-collapse > .card-body {
     border-top: none;
   }
 }
 
-.accordion-panel .panel-heading {
+.accordion-card .card-header {
   padding: 0;
   .accordion-toggle {
     display: inline-block;
