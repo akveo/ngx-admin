@@ -10,7 +10,7 @@ import {PageTop, Sidebar} from '../theme';
   encapsulation: ViewEncapsulation.None,
   styles: [],
   directives: [PageTop, Sidebar],
-  template: `<sidebar [routes]="getRoutes()"></sidebar><page-top></page-top><router-outlet></router-outlet>`
+  template: `<sidebar></sidebar><page-top></page-top><router-outlet></router-outlet>`
 })
 @RouteConfig([
   {
@@ -18,51 +18,18 @@ import {PageTop, Sidebar} from '../theme';
     component: Dashboard,
     path: '/dashboard',
     useAsDefault: true,
-    data: {
-      title: 'Dashboard',
-      selected: false,
-      expanded: false,
-      sidebarMeta: {
-        icon: 'ion-android-home',
-        order: 0,
-      }
-    }
   },
   {
     name: 'Ui',
     component: Ui,
     path: '/ui/...',
-    data: {
-      title: 'UI Features',
-      selected: false,
-      expanded: false,
-      sidebarMeta: {
-        icon: 'ion-android-laptop',
-        order: 200,
-      }
-    }
   },
 ])
 export class Pages {
 
-  private _routeConfig;
-
-  constructor(private _router:Router) {
+  constructor() {
   }
 
   ngOnInit() {
-  }
-
-  getRoutes() {
-
-    if (!this._routeConfig) {
-      this._routeConfig = Reflect.getMetadata('annotations', this.constructor)
-        .filter(a => {
-          return a.constructor.name === 'RouteConfig';
-        })
-        .pop();
-    }
-
-    return this._routeConfig;
   }
 }

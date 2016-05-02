@@ -5,6 +5,22 @@ export class SidebarService {
 
   staticMenuItems = [
     {
+      title: 'Dashboard',
+      name: 'Dashboard',
+      icon: 'ion-android-home',
+      selected: false,
+      expanded: false,
+      order: 0
+    },
+    {
+      title: 'UI Features',
+      name: 'Ui',
+      icon: 'ion-android-laptop',
+      selected: false,
+      expanded: false,
+      order: 200
+    },
+    {
       title: 'Pages',
       icon: 'ion-document',
       selected: false,
@@ -58,29 +74,7 @@ export class SidebarService {
   constructor() {
   }
 
-  getMenuItems(routes) {
-
-    let menuItems = routes.configs
-      .filter(function (s) {
-        return s.data.sidebarMeta != null;
-      })
-      .map(function (s) {
-        var meta = s.data.sidebarMeta;
-        return {
-          title: s.data.title,
-          name: s.name,
-          level: 0,
-          order: meta.order,
-          icon: meta.icon
-        };
-      })
-      .sort(function (a, b) {
-        return (a.level - b.level) * 100 + a.order - b.order;
-      })
-      .filter(function (item) {
-        return item.level == 0;
-      });
-
-    return menuItems.concat(this.staticMenuItems);
+  getMenuItems() {
+    return this.staticMenuItems;
   }
 }

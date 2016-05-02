@@ -16,8 +16,6 @@ import {SidebarStateService} from './sidebarState.service';
 })
 export class Sidebar {
 
-  @Input('routes') routes;
-
   menuItems:Array<any>;
   menuHeight:number;
   isMenuCollapsed:boolean;
@@ -30,15 +28,17 @@ export class Sidebar {
 
   isMenuShouldCollapsed:boolean = false;
 
-  constructor(private elementRef:ElementRef,
-              private router:Router,
+  constructor(private _elementRef:ElementRef,
+              private _router:Router,
               private _sidebarService:SidebarService,
               private _sidebarStateService:SidebarStateService) {
+
   }
 
   ngOnInit() {
-    this.menuItems = this._sidebarService.getMenuItems(this.routes);
+    this.menuItems = this._sidebarService.getMenuItems();
     this.selectMenuItem();
+    this._router.root.subscribe(() => this.selectMenuItem());
   }
 
   // TODO: is it really the best event for this kind of things?
@@ -80,7 +80,7 @@ export class Sidebar {
 
   updateSidebarHeight() {
     // TODO: get rid of magic 84 constant
-    this.menuHeight = this.elementRef.nativeElement.childNodes[0].clientHeight - 84;
+    this.menuHeight = this._elementRef.nativeElement.childNodes[0].clientHeight - 84;
   }
 
   toggleSubMenu($event, item) {
@@ -100,9 +100,9 @@ export class Sidebar {
   }
 
   private selectMenuItem() {
-    let isCurrent = (instruction) => (instruction ? this.router.isRouteActive(this.router.generate([instruction])) : false);
+    let isCurrent = (instruction) => (instruction ? this._router.isRouteActive(this._router.generate([instruction])) : false);
 
-    this.menuItems.forEach(function (menu) {
+    this.menuItems.forEach(function (menu: any) {
 
       menu.selected = isCurrent(menu.name);
       menu.expanded = menu.expanded || menu.selected;
