@@ -32,6 +32,7 @@ import * as _ from 'lodash'
 declare var $:any;
 declare var GoogleMapsLoader:any;
 declare var L:any;
+declare var AmCharts:any;
 
 // Extra variables that live on Global that will be replaced by webpack DefinePlugin
 declare var ENV: string;

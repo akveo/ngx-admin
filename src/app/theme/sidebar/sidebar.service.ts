@@ -35,6 +35,10 @@ export class SidebarService {
         {
           title: 'Leaflet Maps',
           name: 'LeafletMaps',
+        },
+        {
+          title: 'Bubble Maps',
+          name: 'BubbleMaps',
         }
       ]
     },

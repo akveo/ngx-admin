@@ -3,6 +3,7 @@ import {RouteConfig} from 'angular2/router';
 
 import {GoogleMaps} from './components/googleMaps';
 import {LeafletMaps} from "./components/leafletMaps";
+import {BubbleMaps} from "./components/bubbleMaps/bubbleMaps.component";
 
 @Component({
   selector: 'maps',
@@ -22,6 +23,11 @@ import {LeafletMaps} from "./components/leafletMaps";
     name: 'LeafletMaps',
     component: LeafletMaps,
     path: '/leaflet-maps',
+  },
+  {
+    name: 'BubbleMaps',
+    component: BubbleMaps,
+    path: '/bubble-maps',
   },
 ])
 export class Maps {
