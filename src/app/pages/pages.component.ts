@@ -10,7 +10,15 @@ import {PageTop, Sidebar} from '../theme';
   encapsulation: ViewEncapsulation.None,
   styles: [],
   directives: [PageTop, Sidebar],
-  template: `<sidebar></sidebar><page-top></page-top><router-outlet></router-outlet>`
+  template: `
+    <sidebar></sidebar>
+    <page-top></page-top>
+    <div class="al-main">
+      <div class="al-content">
+        <content-top></content-top>
+        <router-outlet></router-outlet>
+      </div>
+    </div>`
 })
 @RouteConfig([
   {

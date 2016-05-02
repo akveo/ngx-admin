@@ -12,7 +12,6 @@ require("!style!css!sass!./theme/sass/_ionicons.scss");
 /*
  * App Component
  * Top Level Component
- * TODO: why the header and footer are not implemented?
  */
 @Component({
   selector: 'app',
@@ -21,16 +20,9 @@ require("!style!css!sass!./theme/sass/_ionicons.scss");
   encapsulation: ViewEncapsulation.None,
   styles: [require('normalize.css'), require('./app.scss')],
   template: `
-    <header>
-    </header>
-
     <main [ngClass]="{'menu-collapsed': isMenuCollapsed}">
       <router-outlet></router-outlet>
     </main>
-
-
-    <footer>
-    </footer>
   `
 })
 @RouteConfig([
