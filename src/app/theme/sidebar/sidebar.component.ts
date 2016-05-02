@@ -102,22 +102,23 @@ export class Sidebar {
   private selectMenuItem() {
     let currentMenu;
 
-    let isCurrent = (instruction) => (instruction ? this._router.isRouteActive(this._router.generate([instruction])) : false);
+    let isCurrent = (instructions) => (instructions.filter(i => typeof i !== 'undefined').length > 0 ? this._router.isRouteActive(this._router.generate(instructions)) : false);
     let assignCurrent = (menu) => (menu.selected ? currentMenu = menu : null);
 
     this.menuItems.forEach(function (menu: any) {
 
-      menu.selected = isCurrent(menu.name);
+      menu.selected = isCurrent([menu.name]);
       menu.expanded = menu.expanded || menu.selected;
       assignCurrent(menu);
 
       if (menu.subMenu) {
         menu.subMenu.forEach(function (subMenu) {
-          subMenu.selected = isCurrent(subMenu.name) && !subMenu.disabled;
+          subMenu.selected = isCurrent([menu.name, subMenu.name]) && !subMenu.disabled;
           assignCurrent(menu);
         });
       }
     });
+    
     // notifies all subscribers
     this._themeGlobal.setData('menu.activeLink', currentMenu);
   }

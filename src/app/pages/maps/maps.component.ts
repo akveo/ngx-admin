@@ -1,10 +1,10 @@
 import {Component, ViewEncapsulation} from 'angular2/core';
 import {RouteConfig} from 'angular2/router';
 
-import {Typography} from './components/typography';
+import {GoogleMaps} from './components/googleMaps';
 
 @Component({
-  selector: 'ui',
+  selector: 'maps',
   pipes: [],
   providers: [],
   styles: [],
@@ -12,13 +12,13 @@ import {Typography} from './components/typography';
 })
 @RouteConfig([
   {
-    name: 'Typography',
-    component: Typography,
-    path: '/typography',
+    name: 'GoogleMaps',
+    component: GoogleMaps,
+    path: '/google-maps',
     useAsDefault: true
   },
 ])
-export class Ui {
+export class Maps {
 
   constructor() {
   }

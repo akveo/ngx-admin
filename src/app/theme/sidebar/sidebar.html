@@ -27,11 +27,11 @@
               [ngClass]="{expanded: subitem.expanded, 'slide-right': subitem.slideRight}">
             <li *ngFor="#subSubitem of subitem.subMenu" (mouseenter)="hoverItem($event, item)"
                 [ngClass]="{selected: subitem.selected}">
-              <a (mouseenter)="hoverItem($event, item)" [routerLink]="[subSubitem.name]">
+              <a (mouseenter)="hoverItem($event, item)" [routerLink]="[item.name, subitem.name, subSubitem.name]">
                 {{ subSubitem.title }}</a>
             </li>
           </ul>
-          <a *ngIf="!subitem.subMenu" [routerLink]="[subitem.name]"
+          <a *ngIf="!subitem.subMenu" [routerLink]="[item.name, subitem.name]"
              (mouseenter)="hoverItem($event, item)" target="{{subitem.blank ? '_blank' : '_self'}}">
             {{ subitem.title}}
           </a>

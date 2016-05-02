@@ -21,6 +21,20 @@ export class SidebarService {
       order: 200
     },
     {
+      title: 'Maps',
+      name: 'Maps',
+      icon: 'ion-ios-location-outline',
+      selected: false,
+      expanded: false,
+      order: 300,
+      subMenu: [
+        {
+          title: 'Google Maps',
+          name: 'GoogleMaps',
+        }
+      ]
+    },
+    {
       title: 'Pages',
       icon: 'ion-document',
       selected: false,

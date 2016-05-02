@@ -1,9 +1,10 @@
 import {Component, ViewEncapsulation} from 'angular2/core';
 import {RouteConfig, Router} from 'angular2/router';
 
+import {PageTop, ContentTop, Sidebar} from '../theme';
 import {Dashboard} from './dashboard';
 import {Ui} from './ui';
-import {PageTop, ContentTop, Sidebar} from '../theme';
+import {Maps} from './maps';
 
 @Component({
   selector: 'pages',
@@ -31,6 +32,11 @@ import {PageTop, ContentTop, Sidebar} from '../theme';
     name: 'Ui',
     component: Ui,
     path: '/ui/...',
+  },
+  {
+    name: 'Maps',
+    component: Maps,
+    path: '/maps/...',
   },
 ])
 export class Pages {
