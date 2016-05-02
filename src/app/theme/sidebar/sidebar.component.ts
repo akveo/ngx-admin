@@ -3,7 +3,7 @@ import {Router} from 'angular2/router';
 
 import {layoutSizes} from '../theme.constants';
 import {SidebarService} from './sidebar.service';
-import {SidebarStateService} from './sidebarState.service';
+import {ThemeGlobal} from "../theme.global";
 
 @Component({
   selector: 'sidebar',
@@ -31,7 +31,7 @@ export class Sidebar {
   constructor(private _elementRef:ElementRef,
               private _router:Router,
               private _sidebarService:SidebarService,
-              private _sidebarStateService:SidebarStateService) {
+              private _themeGlobal:ThemeGlobal) {
 
   }
 
@@ -68,7 +68,7 @@ export class Sidebar {
 
   menuCollapseStateChange(isCollapsed) {
     this.isMenuCollapsed = isCollapsed;
-    this._sidebarStateService.stateChanged(this.isMenuCollapsed);
+    this._themeGlobal.setData('menu.isCollapsed', this.isMenuCollapsed);
   }
 
   hoverItem($event) {
@@ -100,18 +100,25 @@ export class Sidebar {
   }
 
   private selectMenuItem() {
+    let currentMenu;
+
     let isCurrent = (instruction) => (instruction ? this._router.isRouteActive(this._router.generate([instruction])) : false);
+    let assignCurrent = (menu) => (menu.selected ? currentMenu = menu : null);
 
     this.menuItems.forEach(function (menu: any) {
 
       menu.selected = isCurrent(menu.name);
       menu.expanded = menu.expanded || menu.selected;
+      assignCurrent(menu);
 
       if (menu.subMenu) {
         menu.subMenu.forEach(function (subMenu) {
           subMenu.selected = isCurrent(subMenu.name) && !subMenu.disabled;
+          assignCurrent(menu);
         });
       }
     });
+    // notifies all subscribers
+    this._themeGlobal.setData('menu.activeLink', currentMenu);
   }
 }
