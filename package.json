@@ -60,6 +60,7 @@
     "core-js": "^2.2.2",
     "font-awesome": "^4.6.1",
     "font-awesome-sass-loader": "^1.0.1",
+    "google-maps": "^3.2.1",
     "jquery": "^2.2.3",
     "normalize.css": "^4.1.1",
     "rxjs": "5.0.0-beta.2",

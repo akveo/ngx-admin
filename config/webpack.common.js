@@ -228,7 +228,8 @@ module.exports = {
       $: 'jquery',
       jquery: 'jquery',
       "Tether": 'tether',
-      "window.Tether": "tether"
+      "window.Tether": "tether",
+      "GoogleMapsLoader": "google-maps",
     })
   ],
 
