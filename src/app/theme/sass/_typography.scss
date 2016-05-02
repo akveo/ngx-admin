@@ -47,20 +47,20 @@ h5 {
   .typography-widget {
     height: 100%;
 
-    .panel {
+    .card {
       height: 620px;
     }
 
-    .panel-title{
+    .card-title{
       text-align: center;
       width: 100%;
     }
 
-    .panel.with-scroll .panel-body{
+    .card.with-scroll .card-body{
       height: calc(100% - 45px);
     }
 
-    .panel-content{
+    .card-content{
       padding: 15px 22px 5px 22px;
     }
 
@@ -421,11 +421,11 @@ a.learn-more {
   padding: 0 20px 50px 20px;
 }
 
-.panel.banner-column-panel {
+.card.banner-column-card {
   padding: 0;
   margin-bottom: 90px;
 
-  .panel-body{
+  .card-body{
     padding: 0;
   }
 }
