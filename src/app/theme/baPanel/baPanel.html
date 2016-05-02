@@ -1,0 +1,8 @@
+<div  class="card {{panelType}} {{baPanelClass || ''}}" zoom-in ba-panel-blur>
+    <div *ngIf="title" class="card-header clearfix">
+        <h3 class="card-title">{{title}}</h3>
+    </div>
+    <div class="card-body">
+        <ng-content></ng-content>
+    </div>
+</div>

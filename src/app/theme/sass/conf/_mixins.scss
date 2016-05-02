@@ -96,17 +96,17 @@
   p,
   h1, h2, h3, h4, h5, h6,
   .pie-chart-item,
-  .panel-heading > .dropdown .dropdown-toggle,
-  .panel-title,
+  .card-heading > .dropdown .dropdown-toggle,
+  .card-title,
   ol.blur span,
   ul.blur,
   .popular-app-cost,
   .popular-app-info,
-  .panel-title > .small,
-  .panel-title > .small > a,
-  .panel-title > a,
-  .panel-title > small,
-  .panel-title > small > a,
+  .card-title > .small,
+  .card-title > .small > a,
+  .card-title > a,
+  .card-title > small,
+  .card-title > small > a,
   .traffic-text span,
   .form-group label,
   .help-block {
@@ -117,8 +117,8 @@
   }
 }
 
-@mixin overridePanelBg($color, $borderColor, $dropdownColor) {
-  .panel.panel-blur, .panel.panel-blur:hover {
+@mixin overridecardBg($color, $borderColor, $dropdownColor) {
+  .card.card-blur, .card.card-blur:hover {
     border-color: $borderColor;
     background-color: $color;
   }
