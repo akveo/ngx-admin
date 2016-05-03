@@ -18,7 +18,13 @@ export class SidebarService {
       icon: 'ion-android-laptop',
       selected: false,
       expanded: false,
-      order: 200
+      order: 200,
+      subMenu: [
+        {
+          title: 'Typography',
+          name: 'Typography',
+        },
+      ]
     },
     {
       title: 'Maps',
