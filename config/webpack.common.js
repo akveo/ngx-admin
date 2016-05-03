@@ -231,7 +231,8 @@ module.exports = {
       "window.Tether": "tether",
       "GoogleMapsLoader": "google-maps",
       "L": "leaflet",
-      "Chart": "chart.js"
+      "Chart": "chart.js",
+      "Chartist": "chartist",
     })
   ],
 

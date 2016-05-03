@@ -1,49 +1,56 @@
-.chart-legend,
-.bar-legend,
-.line-legend,
-.pie-legend,
-.radar-legend,
-.polararea-legend,
-.doughnut-legend {
-  list-style-type: none;
-  margin-top: 5px;
-  text-align: center;
-  /* NOTE: Browsers automatically add 40px of padding-left to all lists, so we should offset that, otherwise the legend is off-center */
-  -webkit-padding-start: 0;
-  /* Webkit */
-  -moz-padding-start: 0;
-  /* Mozilla */
-  padding-left: 0;
-  /* IE (handles all cases, really, but we should also include the vendor-specific properties just to be safe) */
+@import "../../../../theme/sass/conf/conf";
+
+.ct-chart .ct-label{
+  font-size: 1em;
 }
-.chart-legend li,
-.bar-legend li,
-.line-legend li,
-.pie-legend li,
-.radar-legend li,
-.polararea-legend li,
-.doughnut-legend li {
-  display: inline-block;
-  white-space: nowrap;
-  position: relative;
-  margin-bottom: 4px;
-  border-radius: 5px;
-  padding: 2px 8px 2px 28px;
-  font-size: smaller;
-  cursor: default;
-}
-.chart-legend li span,
-.bar-legend li span,
-.line-legend li span,
-.pie-legend li span,
-.radar-legend li span,
-.polararea-legend li span,
-.doughnut-legend li span {
+
+.ct-chart svg{
+  width: 100%;
   display: block;
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 20px;
-  height: 20px;
-  border-radius: 5px;
+}
+
+.ct-series-a {
+  .ct-bar,  .ct-line, .ct-point, .ct-slice-donut, .ct-slice-pie {
+    stroke: $primary;
+  }
+  .ct-slice-pie, .ct-area{
+    fill: $primary;
+  }
+}
+
+.ct-series-b {
+  .ct-bar,  .ct-line, .ct-point, .ct-slice-donut, .ct-slice-pie {
+    stroke: $success;
+  }
+  .ct-slice-pie, .ct-area{
+    fill: $success;
+  }
+}
+
+.ct-series-c {
+  .ct-bar,  .ct-line, .ct-point, .ct-slice-donut, .ct-slice-pie {
+    stroke: $danger;
+  }
+  .ct-slice-pie, .ct-area{
+    fill: $danger;
+  }
+}
+
+.ct-series-d {
+  .ct-bar,  .ct-line, .ct-point, .ct-slice-donut, .ct-slice-pie {
+    stroke: $warning;
+  }
+  .ct-slice-pie, .ct-area{
+    fill: $warning;
+  }
+
+}
+
+.ct-series-e {
+  .ct-bar,  .ct-line, .ct-point, .ct-slice-donut, .ct-slice-pie {
+    stroke: $info;
+  }
+  .ct-slice-pie, .ct-area{
+    fill: $info;
+  }
 }
