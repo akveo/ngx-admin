@@ -40,3 +40,27 @@
     </ba-card>
   </div>
 </div>
+
+<div class="row ">
+  <div class="col-lg-4 col-md-6">
+    <ba-card title="Radar" baCardClass="with-scroll ">
+      <base-chart id="radar" class="chart chart-radar"
+                  [legend]="false" [series]="series" [colours]="colours" [options]="options" [data]="data.three" [chartType]="chartType('Radar')" [labels]="labels.three" (chartClick)="changeData($event)">
+      </base-chart>
+    </ba-card>
+  </div>
+  <div class="col-lg-4 col-md-6">
+    <ba-card title="Line" baCardClass="with-scroll ">
+      <base-chart id="line" class="chart chart-line"
+                  [legend]="false" [series]="series" [colours]="colours" [options]="options" [data]="data.three" [chartType]="chartType('Line')" [labels]="labels.two" (chartClick)="changeData($event)">
+      </base-chart>
+    </ba-card>
+  </div>
+  <div class="col-lg-4 col-md-12">
+    <ba-card title="Bars" baCardClass="with-scroll ">
+      <base-chart id="bar" class="chart chart-bar"
+                  [legend]="false" [series]="series" [colours]="colours" [options]="options" [data]="data.three" [chartType]="chartType('Bar')" [labels]="labels.two" (chartClick)="changeData($event)">
+      </base-chart>
+    </ba-card>
+  </div>
+</div>

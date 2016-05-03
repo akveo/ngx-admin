@@ -19,12 +19,18 @@ export class ChartJs {
 
   public labels = {
     one: ["Sleeping", "Designing", "Coding", "Cycling"],
-    two: ["April", "May", "June", "Jule", "August", "September", "October", "November", "December"]
+    two: ["April", "May", "June", "Jule", "August", "September", "October", "November", "December"],
+    three: ["May", "June", "Jule", "August", "September", "October", "November"]
   };
   public data = {
     one: [20, 40, 5, 35],
-    two: [[1, 9, 3, 4, 5, 6, 7, 8, 2].map((e) => {return Math.sin(e) * 25 + 25})]
+    two: [[1, 9, 3, 4, 5, 6, 7, 8, 2].map((e) => {return Math.sin(e) * 25 + 25})],
+    three: [
+      [65, 59, 90, 81, 56, 55, 40],
+      [28, 48, 40, 19, 88, 27, 45]
+    ]
   };
+  public series = ['Product A', 'Product B'];
   public colours = chartColors;
   public options = {
     scaleShowLabelBackdrop : false,
