@@ -1,0 +1,9 @@
+<div class="row">
+  <div class="col-md-4">
+    <div ba-panel ba-panel-title="Pie">
+      <base-chart class="chart chart-pie"
+              [legend]="true" [colours]="pieColours" [options]="pieOptions" [data]="pieData" [chartType]="pieChartType" [labels]="pieLabels" (chartClick)="pieChangeData($event)">
+      </base-chart>
+    </div>
+  </div>
+</div>

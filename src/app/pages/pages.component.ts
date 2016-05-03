@@ -5,6 +5,7 @@ import {PageTop, ContentTop, Sidebar} from '../theme';
 import {Dashboard} from './dashboard';
 import {Ui} from './ui';
 import {Maps} from './maps';
+import {Charts} from './charts';
 
 @Component({
   selector: 'pages',
@@ -37,6 +38,11 @@ import {Maps} from './maps';
     name: 'Maps',
     component: Maps,
     path: '/maps/...',
+  },
+  {
+    name: 'Charts',
+    component: Charts,
+    path: '/charts/...',
   },
 ])
 export class Pages {

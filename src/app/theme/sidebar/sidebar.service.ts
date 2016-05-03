@@ -53,6 +53,20 @@ export class SidebarService {
       ]
     },
     {
+      title: 'Charts',
+      name: 'Charts',
+      icon: 'ion-stats-bars',
+      selected: false,
+      expanded: false,
+      order: 400,
+      subMenu: [
+        {
+          title: 'Chart Js',
+          name: 'ChartJs',
+        },
+      ]
+    },
+    {
       title: 'Pages',
       icon: 'ion-document',
       selected: false,
