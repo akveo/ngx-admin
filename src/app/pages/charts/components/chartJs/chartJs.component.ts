@@ -17,8 +17,14 @@ import {chartColors} from "../../../../theme/theme.constants";
 })
 export class ChartJs {
 
-  public labels = ["Sleeping", "Designing", "Coding", "Cycling"];
-  public data = [20, 40, 5, 35];
+  public labels = {
+    one: ["Sleeping", "Designing", "Coding", "Cycling"],
+    two: ["April", "May", "June", "Jule", "August", "September", "October", "November", "December"]
+  };
+  public data = {
+    one: [20, 40, 5, 35],
+    two: [[1, 9, 3, 4, 5, 6, 7, 8, 2].map((e) => {return Math.sin(e) * 25 + 25})]
+  };
   public colours = chartColors;
   public options = {
     scaleShowLabelBackdrop : false,
@@ -30,6 +36,17 @@ export class ChartJs {
   };
 
   constructor(private _chartJsService:ChartJsService) {
+  }
+
+  ngOnInit() {
+    // var self = this;
+    // setInterval(() => {
+    //
+    //   var temp = [...this.data.two];
+    //   temp[0].unshift(temp[0].pop());
+    //   this.data.two = temp;
+    //
+    // }, 300);
   }
 
   chartType(type) {
