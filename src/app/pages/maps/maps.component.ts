@@ -3,7 +3,8 @@ import {RouteConfig} from 'angular2/router';
 
 import {GoogleMaps} from './components/googleMaps';
 import {LeafletMaps} from "./components/leafletMaps";
-import {BubbleMaps} from "./components/bubbleMaps/bubbleMaps.component";
+import {BubbleMaps} from "./components/bubbleMaps";
+import {LineMaps} from "./components/lineMaps";
 
 @Component({
   selector: 'maps',
@@ -28,6 +29,11 @@ import {BubbleMaps} from "./components/bubbleMaps/bubbleMaps.component";
     name: 'BubbleMaps',
     component: BubbleMaps,
     path: '/bubble-maps',
+  },
+  {
+    name: 'LineMaps',
+    component: LineMaps,
+    path: '/line-maps',
   },
 ])
 export class Maps {

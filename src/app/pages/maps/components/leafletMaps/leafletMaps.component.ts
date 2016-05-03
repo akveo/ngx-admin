@@ -3,7 +3,7 @@ import {BaCard} from '../../../../theme';
 import {DOM} from "angular2/src/platform/dom/dom_adapter";
 
 @Component({
-  selector: 'google-maps',
+  selector: 'leaflet-maps',
   pipes: [],
   providers: [],
   // otherwise maps won't work

@@ -39,6 +39,10 @@ export class SidebarService {
         {
           title: 'Bubble Maps',
           name: 'BubbleMaps',
+        },
+        {
+          title: 'Line Maps',
+          name: 'LineMaps',
         }
       ]
     },

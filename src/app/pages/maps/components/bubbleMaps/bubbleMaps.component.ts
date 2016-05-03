@@ -1,7 +1,7 @@
 import {Component, ViewEncapsulation} from 'angular2/core';
 import {BaCard} from '../../../../theme';
 
-import {layoutColors, layoutPaths} from "../../../../theme/theme.constants";
+import {layoutPaths} from "../../../../theme/theme.constants";
 import {BubbleMapsService} from "./bubbleMaps.service";
 
 require('ammap3');
