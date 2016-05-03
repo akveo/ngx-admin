@@ -99,6 +99,7 @@ export class Sidebar {
     return false;
   }
 
+  // TODO: there is a bug in the router thus all child routers are considered as active
   private selectMenuItem() {
     let currentMenu;
 
@@ -118,7 +119,7 @@ export class Sidebar {
         });
       }
     });
-    
+
     // notifies all subscribers
     this._themeGlobal.setData('menu.activeLink', currentMenu);
   }
