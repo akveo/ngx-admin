@@ -16,11 +16,12 @@ import {chartColors} from "../../../../theme/theme.constants";
   template: require('./chartJs.html'),
 })
 export class ChartJs {
-  public pieLabels = ["Sleeping", "Designing", "Coding", "Cycling"];
-  public pieChartType = 'Pie';
-  public pieData = [20, 40, 5, 35];
-  public pieColours = chartColors;
-  public pieOptions = {
+
+  public labels = ["Sleeping", "Designing", "Coding", "Cycling"];
+  public data = [20, 40, 5, 35];
+  public colours = chartColors;
+  public options = {
+    scaleShowLabelBackdrop : false,
     segmentShowStroke : false,
     // responsive: true,
     scaleFontColor: "rgba(255,255,255,.7)",
@@ -31,16 +32,16 @@ export class ChartJs {
   constructor(private _chartJsService:ChartJsService) {
   }
 
-  ngAfterViewInit() {
-
+  chartType(type) {
+    return type;
   }
 
-  pieChangeData () {
+  changeData ($event) {
     let shuffle = (o) => {
       for(var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x){}
       return o;
     };
 
-    this.pieData = shuffle(this.pieData);
+    this.data = shuffle(this.data);
   }
 }

@@ -1,9 +1,25 @@
 <div class="row">
   <div class="col-md-4">
-    <div ba-panel ba-panel-title="Pie">
+    <ba-card title="Pie" baCardClass="medium-card">
       <base-chart class="chart chart-pie"
-              [legend]="true" [colours]="pieColours" [options]="pieOptions" [data]="pieData" [chartType]="pieChartType" [labels]="pieLabels" (chartClick)="pieChangeData($event)">
+              [legend]="true" [colours]="colours" [options]="options" [data]="data" [chartType]="chartType('Pie')" [labels]="labels" (chartClick)="changeData($event)">
       </base-chart>
-    </div>
+    </ba-card>
+  </div>
+
+  <div class="col-md-4">
+    <ba-card title="Doughnut" baCardClass="medium-card">
+      <base-chart class="doughnut chart-doughnut"
+                  [legend]="true" [colours]="colours" [options]="options" [data]="data" [chartType]="chartType('Doughnut')" [labels]="labels" (chartClick)="changeData($event)">
+      </base-chart>
+    </ba-card>
+  </div>
+
+  <div class="col-md-4">
+    <ba-card title="Polar" baCardClass="medium-card">
+      <base-chart class="polar chart-polar"
+                  [legend]="true" [colours]="colours" [options]="options" [data]="data" [chartType]="chartType('PolarArea')" [labels]="labels" (chartClick)="changeData($event)">
+      </base-chart>
+      </ba-card>
   </div>
 </div>
