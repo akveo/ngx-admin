@@ -59,6 +59,7 @@
     "angular2": "2.0.0-beta.15",
     "bootstrap": "^4.0.0-alpha.2",
     "bootstrap-loader": "^1.0.8",
+    "chartist": "^0.9.7",
     "core-js": "^2.2.2",
     "font-awesome": "^4.6.1",
     "font-awesome-sass-loader": "^1.0.1",

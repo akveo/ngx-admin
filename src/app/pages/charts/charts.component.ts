@@ -2,6 +2,7 @@ import {Component} from 'angular2/core';
 import {RouteConfig} from 'angular2/router';
 
 import {ChartJs} from "./components/chartJs";
+import {ChartistJs} from "./components/chartistJs/chartistJs.component";
 
 @Component({
   selector: 'maps',
@@ -15,7 +16,12 @@ import {ChartJs} from "./components/chartJs";
     name: 'ChartJs',
     component: ChartJs,
     path: '/chart-js',
-    useAsDefault: true
+    useAsDefault: true,
+  },
+  {
+    name: 'ChartistJs',
+    component: ChartistJs,
+    path: '/chartist-js',
   }
 ])
 export class Charts {

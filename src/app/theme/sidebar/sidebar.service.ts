@@ -64,6 +64,10 @@ export class SidebarService {
           title: 'Chart Js',
           name: 'ChartJs',
         },
+        {
+          title: 'ChartistJs',
+          name: 'ChartistJs',
+        },
       ]
     },
     {
