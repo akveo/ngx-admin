@@ -1,0 +1,209 @@
+@import '../../../theme/sass/conf/conf';
+
+.chart-area {
+  width: 300px;
+  height: 300px;
+}
+
+.channels-block {
+  width: 100%;
+  position: relative;
+}
+
+.channels-info {
+  display: inline-block;
+  width: calc(100% - 400px);
+  margin-left: 70px;
+  margin-top: -20px;
+}
+.small-container {
+  .channels-info {
+    display: none;
+  }
+}
+
+.channels-info-item {
+  p {
+    margin-bottom: 9px;
+    font-size: 18px;
+    opacity: 0.9;
+  }
+  .channel-number{
+    display: inline-block;
+    float: right;
+  }
+}
+
+.traffic-chart {
+  width: 300px;
+  position: relative;
+  min-height: 300px;
+  float: left;
+}
+
+.traffic-legend {
+  display: inline-block;
+  padding: 70px 0 0 0px;
+  width: 160px;
+}
+
+.traffic-legend ul.doughnut-legend {
+  li {
+    list-style: none;
+    font-size: 12px;
+    margin-bottom: 12px;
+    line-height: 16px;
+    position: relative;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 120px;
+    span {
+      float: left;
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      margin-right: 10px;
+    }
+  }
+}
+
+.canvas-holder {
+  display: inline-block;
+  width: 300px;
+  height: 300px;
+  position: relative;
+  float: left;
+  //canvas{
+  //  border: 10px solid rgba(0, 0, 0, 0.34902);
+  //  border-radius: 180px;
+  //}
+}
+
+.traffic-text {
+  width: 100%;
+  height: 40px;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  margin-top: -24px;
+  line-height: 24px;
+  text-align: center;
+  font-size: 18px;
+  //color: $danger;
+  span {
+    display: block;
+    font-size: 18px;
+    color: $default-text;
+  }
+}
+
+.channel-change {
+  display: block;
+  margin-bottom: 12px;
+}
+
+.channel-progress {
+  height: 4px;
+  border-radius: 0;
+  width: 100%;
+  margin-bottom: 0;
+  background-color: rgba(0, 0, 0, 0.25);
+  .progress-bar{
+    height: 4px;
+    background-color: white;
+  }
+}
+
+.legend-color{
+  width: 30px;
+  height: 30px;
+  box-shadow:0 2px 2px 0 rgba(0, 0, 0, 0.25);
+  position: relative;
+  top: 27px;
+  border-radius: 15px;
+  left: -45px;
+}
+
+.traffic-chart canvas{
+  border: 10px solid rgba(0,0,0,0.0);
+  border-radius: 150px;
+}
+
+.chart-bg{
+  background-color: $view-total;
+  position: absolute;
+  border-radius: 100px;
+  width: 180px;
+  height: 180px;
+  left: 60px;
+  top: 60px;
+}
+
+@media (max-width: $resM) {
+  div.channels-info{
+    display: block;
+    width: calc(100% - 88px);
+    margin-top: -65px;
+    margin-bottom: 10px;
+  }
+  .panel.medium-panel.traffic-panel{
+    height: auto;
+  }
+  .traffic-chart{
+    position: inherit;
+    float: none;
+    margin: 0 auto;
+  }
+  .chart-bg{
+    left: calc(50% - 90px);
+  }
+}
+
+@media (max-width: 1465px) and (min-width: 1199px){
+  .channels-info{
+    display: none;
+  }
+  .traffic-chart{
+    position: inherit;
+    float: none;
+    margin: 0 auto;
+  }
+  .chart-bg{
+    left: calc(50% - 90px);
+  }
+}
+
+
+@media (max-width: 380px){
+
+  .traffic-chart{
+    width: 240px;
+  }
+
+  .canvas-holder{
+    width: 240px;
+    height: 240px;
+  }
+
+  .chart-bg {
+    top: 30px;
+  }
+}
+@media (max-width: 320px){
+  .chart-bg {
+    left: 50px;
+    top: 50px;
+    width: 142px;
+    height: 142px;
+  }
+}
+
+
+body.badmin-transparent{
+  .traffic-chart canvas{
+    border: 10px solid rgba(0,0,0,0.35);
+    box-shadow: 0 0 5px 0 rgb(0, 0, 0) inset;
+    border-radius: 150px;
+  }
+}
