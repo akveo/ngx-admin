@@ -20,17 +20,17 @@ body.badmin-transparent {
   .default-color {
     color: $default-text !important;;
   }
-  .panel.panel-blur {
+  .card.card-blur {
     background-attachment: fixed;
     @include scrollbars(.4em, rgba(0, 0, 0, 0.7), rgba(255, 255, 255, 0.8));
     border-radius: 5px;
     color: $default;
-    .panel-heading {
+    .card-header {
       border-bottom: 1px solid rgba(0, 0, 0, 0.12);
       box-shadow: 0px 1px 0px 0px rgba(255, 255, 255, 0.12);
       transform: translate3d(0,0,0);
     }
-    .panel-body {
+    .card-body {
       transform: translate3d(0,0,0);
     }
   }
