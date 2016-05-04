@@ -22,15 +22,15 @@ export class BaCardBlur {
   }
 
   private _getBodyImageSizesOnBgLoad():void {
-    this._baCardBlurHelper.bodyBgLoad().then(function() {
+    this._baCardBlurHelper.bodyBgLoad().subscribe(() => {
       this._bodyBgSize = this._baCardBlurHelper.getBodyBgImageSizes();
     });
   }
 
   private _recalculateCardStylesOnBgLoad():void {
-    this._baCardBlurHelper.bodyBgLoad().then(() => {
-      setTimeout(this._recalculateCardStyle);
-    });
+    this._baCardBlurHelper.bodyBgLoad().subscribe((event) => {
+      setTimeout(this._recalculateCardStyle.bind(this));
+    })
   }
 
   private _recalculateCardStyle():void {

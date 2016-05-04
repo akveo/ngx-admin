@@ -1,15 +1,15 @@
 import {Injectable} from 'angular2/core'
-
 import {BgMetrics} from './bgMetrics';
+import {Subject} from 'rxjs/Subject';
 
 @Injectable()
 export class BaCardBlurHelper {
   private image:HTMLImageElement;
-  private imageLoadDeferred = Promise.defer(); //TODO: Promises or Observables refactor
+  private imageLoadSubject:Subject<void>;
 
   constructor() {
     this._genBgImage();
-    this._setImageLoadResolves()
+    this._genImageLoadSubject();
   }
 
   private _genBgImage():void {
@@ -18,17 +18,20 @@ export class BaCardBlurHelper {
     this.image.src = computedStyle.backgroundImage.replace(/url\((['"])?(.*?)\1\)/gi, '$2');
   }
 
-  private _setImageLoadResolves():void {
+  private _genImageLoadSubject():void {
+    this.imageLoadSubject = new Subject<void>();
     this.image.onerror = () => {
-      this.imageLoadDeferred.reject();
+      this.imageLoadSubject.error();
+      this.imageLoadSubject.complete();
     };
     this.image.onload = () => {
-      this.imageLoadDeferred.resolve();
+      this.imageLoadSubject.next(null);
+      this.imageLoadSubject.complete();
     };
   }
 
-  public bodyBgLoad():Promise {
-    return this.imageLoadDeferred.promise;
+  public bodyBgLoad():Subject<void> {
+    return this.imageLoadSubject;
   }
 
   public getBodyBgImageSizes():BgMetrics {
