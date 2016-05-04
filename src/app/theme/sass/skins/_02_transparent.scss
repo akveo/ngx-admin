@@ -1,0 +1,52 @@
+body.badmin-transparent {
+  &.mobile{
+    background: none;
+    .body-bg{
+      display: block;
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      @include main-background();
+      background-attachment: inherit;
+    }
+    .panel-blur {
+      background: transparent;
+    }
+  }
+  @include overrideColors(#fff);
+  @include overrideCardBg(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9));
+  .default-color {
+    color: $default-text !important;;
+  }
+  .panel.panel-blur {
+    background-attachment: fixed;
+    @include scrollbars(.4em, rgba(0, 0, 0, 0.7), rgba(255, 255, 255, 0.8));
+    border-radius: 5px;
+    color: $default;
+    .panel-heading {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+      box-shadow: 0px 1px 0px 0px rgba(255, 255, 255, 0.12);
+      transform: translate3d(0,0,0);
+    }
+    .panel-body {
+      transform: translate3d(0,0,0);
+    }
+  }
+  .btn-default {
+    color: $default;
+  }
+  .form-control, .bootstrap-tagsinput input {
+    @include placeholderStyle($default, 0.7);
+    background-color: rgba(0, 0, 0, .15);
+    border-radius: 5px;
+    color: $default;
+  }
+  .form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control {
+    @include placeholderStyle($default, 0.5);
+  }
+  .irs-grid-text {
+    color: $default;
+  }
+}
