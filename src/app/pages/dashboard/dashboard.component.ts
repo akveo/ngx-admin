@@ -4,12 +4,13 @@ import {PopularApp} from './popularApp';
 import {PieChart} from './pieChart';
 import {TrafficChart} from './trafficChart';
 import {UsersMap} from './usersMap';
+import {LineChart} from './lineChart';
 import {BaCard} from '../../theme/components';
 
 @Component({
   selector: 'dashboard',
   pipes: [],
-  directives: [PopularApp, PieChart, TrafficChart, UsersMap, BaCard],
+  directives: [PopularApp, PieChart, TrafficChart, UsersMap, LineChart, BaCard],
   encapsulation: ViewEncapsulation.None,
   styles: [require('./dashboard.scss')],
   template: require('./dashboard.html')
