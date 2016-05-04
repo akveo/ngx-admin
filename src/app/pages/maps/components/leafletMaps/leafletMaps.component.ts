@@ -1,5 +1,5 @@
 import {Component, ViewEncapsulation, ElementRef} from 'angular2/core';
-import {BaCard} from '../../../../theme';
+import {BaCard} from '../../../../theme/components';
 import {DOM} from "angular2/src/platform/dom/dom_adapter";
 
 @Component({

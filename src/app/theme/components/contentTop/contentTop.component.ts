@@ -1,7 +1,7 @@
-import {Component, ViewEncapsulation} from 'angular2/core';
-
-import {ThemeGlobal} from "../theme.global";
+import {Component} from 'angular2/core';
 import {Subscription} from "rxjs/Subscription";
+
+import {ThemeGlobal} from "../../../theme";
 
 @Component({
   selector: 'content-top',

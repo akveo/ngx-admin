@@ -1,9 +1,9 @@
-import {Component, ViewEncapsulation} from 'angular2/core';
+import {Component} from 'angular2/core';
 
-import {MsgCenter} from '../msgCenter';
-import {ProfilePicturePipe} from '../pipes/image/profile-picture.pipe';
-import {ScrollPosition} from '../directives/scrollPosition.directive';
-import {ThemeGlobal} from "../theme.global";
+import {ThemeGlobal} from '../../../theme';
+import {ProfilePicturePipe} from '../../pipes';
+import {MsgCenter} from '../../components/msgCenter';
+import {ScrollPosition} from '../../directives';
 
 @Component({
   selector: 'page-top',
@@ -18,7 +18,6 @@ export class PageTop {
 
 
   constructor(private _themeGlobal:ThemeGlobal) {
-
   }
 
   toggleMenu() {

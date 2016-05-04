@@ -1,9 +1,8 @@
-import {Component, ElementRef, HostListener, ViewEncapsulation, Input} from 'angular2/core';
+import {Component, ElementRef, HostListener, ViewEncapsulation} from 'angular2/core';
 import {Router} from 'angular2/router';
 
-import {layoutSizes} from '../theme.constants';
+import {ThemeGlobal, layoutSizes} from '../../../theme';
 import {SidebarService} from './sidebar.service';
-import {ThemeGlobal} from "../theme.global";
 
 @Component({
   selector: 'sidebar',

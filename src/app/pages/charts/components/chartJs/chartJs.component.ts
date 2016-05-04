@@ -1,5 +1,5 @@
 import {Component, ViewEncapsulation} from 'angular2/core';
-import {BaCard} from '../../../../theme';
+import {BaCard} from '../../../../theme/components';
 
 import {ChartJsService} from "./chartJs.service";
 

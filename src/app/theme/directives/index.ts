@@ -1,1 +1,1 @@
-export * from './scrollPosition.directive';
+export * from './scrollPosition';

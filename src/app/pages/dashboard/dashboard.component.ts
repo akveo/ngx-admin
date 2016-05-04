@@ -1,7 +1,7 @@
 import {Component, ViewEncapsulation} from 'angular2/core';
 
 import {PopularApp} from './popularApp';
-import {BaCard} from '../../theme';
+import {BaCard} from '../../theme/components';
 
 
 @Component({

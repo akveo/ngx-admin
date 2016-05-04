@@ -1,7 +1,8 @@
 import {Component, ViewEncapsulation} from 'angular2/core';
-import {RouteConfig, Router} from 'angular2/router';
+import {RouteConfig} from 'angular2/router';
 
-import {PageTop, ContentTop, Sidebar} from '../theme';
+import {PageTop, ContentTop, Sidebar} from '../theme/components';
+
 import {Dashboard} from './dashboard';
 import {Ui} from './ui';
 import {Maps} from './maps';

@@ -1,4 +1,4 @@
-import {Directive, Input, Output, EventEmitter, HostListener, ElementRef} from 'angular2/core';
+import {Directive, Input, Output, EventEmitter, HostListener} from 'angular2/core';
 
 @Directive({
   selector: '[scrollPosition]'

@@ -1,5 +1,5 @@
-@import '../sass/conf/conf';
-@import '../msgCenter/msgCenter';
+@import '../../sass/conf/conf';
+@import '../../components/msgCenter/msgCenter';
 
 .page-top {
   @include bg-translucent-dark(0.5);

@@ -1,5 +1,6 @@
-import {Component, ViewEncapsulation} from 'angular2/core';
-import {ProfilePicturePipe} from '../pipes/image/profile-picture.pipe';
+import {Component} from 'angular2/core';
+
+import {ProfilePicturePipe} from '../../pipes';
 
 @Component({
   selector: 'msg-center',

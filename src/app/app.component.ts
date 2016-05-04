@@ -3,7 +3,7 @@ import {RouteConfig, Router} from 'angular2/router';
 import {Subscription} from 'rxjs/Subscription';
 
 import {Pages} from './pages';
-import {ThemeGlobal} from "./theme/theme.global";
+import {ThemeGlobal} from "./theme";
 
 // TODO: is it really the best place to globally require that dependency?
 require("!style!css!sass!./theme/sass/_ionicons.scss");
