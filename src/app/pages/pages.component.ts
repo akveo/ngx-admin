@@ -1,15 +1,17 @@
 import {Component, ViewEncapsulation} from 'angular2/core';
 import {RouteConfig, Router} from 'angular2/router';
 
+import {PageTop, ContentTop, Sidebar} from '../theme';
 import {Dashboard} from './dashboard';
 import {Ui} from './ui';
-import {PageTop, Sidebar} from '../theme';
+import {Maps} from './maps';
+import {Charts} from './charts';
 
 @Component({
   selector: 'pages',
   encapsulation: ViewEncapsulation.None,
   styles: [],
-  directives: [PageTop, Sidebar],
+  directives: [PageTop, Sidebar, ContentTop],
   template: `
     <sidebar></sidebar>
     <page-top></page-top>
@@ -31,6 +33,16 @@ import {PageTop, Sidebar} from '../theme';
     name: 'Ui',
     component: Ui,
     path: '/ui/...',
+  },
+  {
+    name: 'Maps',
+    component: Maps,
+    path: '/maps/...',
+  },
+  {
+    name: 'Charts',
+    component: Charts,
+    path: '/charts/...',
   },
 ])
 export class Pages {

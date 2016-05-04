@@ -15,15 +15,7 @@ import {Typography} from './components/typography';
     name: 'Typography',
     component: Typography,
     path: '/typography',
-    useAsDefault: true,
-    data: {
-      title: 'Typography',
-      selected: false,
-      expanded: false,
-      sidebarMeta: {
-        order: 0,
-      }
-    }
+    useAsDefault: true
   },
 ])
 export class Ui {

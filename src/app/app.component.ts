@@ -2,9 +2,8 @@ import {Component, ViewEncapsulation} from 'angular2/core';
 import {RouteConfig, Router} from 'angular2/router';
 import {Subscription} from 'rxjs/Subscription';
 
-import {SidebarStateService} from './theme/sidebar/sidebarState.service';
-
 import {Pages} from './pages';
+import {ThemeGlobal} from "./theme/theme.global";
 
 // TODO: is it really the best place to globally require that dependency?
 require("!style!css!sass!./theme/sass/_ionicons.scss");
@@ -16,7 +15,7 @@ require("!style!css!sass!./theme/sass/_ionicons.scss");
 @Component({
   selector: 'app',
   pipes: [],
-  providers: [SidebarStateService],
+  providers: [],
   encapsulation: ViewEncapsulation.None,
   styles: [require('normalize.css'), require('./app.scss')],
   template: `
@@ -37,14 +36,16 @@ export class App {
 
   isMenuCollapsed:boolean = false;
 
-  private _sidebarStateSubscription:Subscription;
+  private _themeGlobalSubscription:Subscription;
 
-  constructor(private _sidebarStateService:SidebarStateService) {
-    this._sidebarStateSubscription = this._sidebarStateService.getStateStream().subscribe((isCollapsed) => this.isMenuCollapsed = isCollapsed);
+  constructor(private _themeGlobal:ThemeGlobal) {
+    this._themeGlobalSubscription = this._themeGlobal.getDataStream().subscribe((data) => {
+      this.isMenuCollapsed = data['menu.isCollapsed'] != null ? data['menu.isCollapsed'] : this.isMenuCollapsed;
+    });
   }
 
   ngOnDestroy() {
     // prevent memory leak when component destroyed
-    this._sidebarStateSubscription.unsubscribe();
+    this._themeGlobalSubscription.unsubscribe();
   }
 }

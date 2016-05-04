@@ -5,7 +5,7 @@ import {Component, ViewEncapsulation} from 'angular2/core';
   pipes: [],
   providers: [],
   styles: [],
-  template: 'typography'
+  template: require('./typography.html'),
 })
 export class Typography {
 
