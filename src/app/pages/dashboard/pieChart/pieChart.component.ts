@@ -1,44 +1,25 @@
 import {Component, ViewEncapsulation} from 'angular2/core';
 
 import {BaCard} from '../../../theme/components';
+import {PieChartService} from './pieChart.service';
+
 import './pieChart.loader.ts';
 
 @Component({
   selector: 'pie-chart',
   encapsulation: ViewEncapsulation.None,
   directives: [BaCard],
+  providers: [PieChartService],
   styles: [require('./pieChart.scss')],
   template: require('./pieChart.html')
 })
 export class PieChart {
 
-  charts = [
-    {
-      color: 'rgba(255,255,255,0.4)',
-      description: 'New Visits',
-      stats: '57,820',
-      icon: 'person',
-    }, {
-      color: 'rgba(255,255,255,0.4)',
-      description: 'Purchases',
-      stats: '$ 89,745',
-      icon: 'money',
-    }, {
-      color: 'rgba(255,255,255,0.4)',
-      description: 'Active Users',
-      stats: '178,391',
-      icon: 'face',
-    }, {
-      color: 'rgba(255,255,255,0.4)',
-      description: 'Returned',
-      stats: '32,592',
-      icon: 'refresh',
-    }
-  ];
-
+  public charts: Array<Object>;
   private _init = false;
 
-  constructor() {
+  constructor(private _pieChartService: PieChartService) {
+    this.charts = this._pieChartService.getData();
   }
 
   ngAfterViewInit() {
