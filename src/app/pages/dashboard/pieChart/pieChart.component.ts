@@ -1,7 +1,7 @@
 import {Component, ViewEncapsulation} from 'angular2/core';
-import {BaCard} from '../../../theme/components';
 
-require('easy-pie-chart/dist/jquery.easypiechart.js');
+import {BaCard} from '../../../theme/components';
+import './pieChart.loader.ts';
 
 @Component({
   selector: 'pie-chart',
@@ -36,26 +36,27 @@ export class PieChart {
     }
   ];
 
-  init = false;
+  private _init = false;
 
   constructor() {
   }
 
   ngAfterViewInit() {
-    if (!this.init) {
-      this.loadPieCharts();
-      this.updatePieCharts();
-      this.init = true;
+    if (!this._init) {
+      this._loadPieCharts();
+      this._updatePieCharts();
+      this._init = true;
     }
   }
 
-  private loadPieCharts() {
+  private _loadPieCharts() {
 
     $('.chart').each(function () {
-      $('.chart').easyPieChart({
+      let chart = $(this);
+      chart.easyPieChart({
         easing: 'easeOutBounce',
         onStep: function (from, to, percent) {
-          $(this).find('.percent').text(Math.round(percent));
+          $(this.el).find('.percent').text(Math.round(percent));
         },
         barColor: $(this).attr('data-rel'),
         trackColor: 'rgba(0,0,0,0)',
@@ -68,8 +69,7 @@ export class PieChart {
     });
   }
 
-  private updatePieCharts() {
-
+  private _updatePieCharts() {
     let getRandomArbitrary = (min, max) => { return Math.random() * (max - min) + min };
 
     $('.pie-charts .chart').each(function(index, chart) {

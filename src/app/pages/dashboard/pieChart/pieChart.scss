@@ -1,5 +1,5 @@
 @import "../../../theme/sass/conf/conf";
-//@import "../../../theme/sass/bootstrap-overrides/";
+
 .pie-charts {
   color: $default-text;
 
@@ -39,6 +39,7 @@
       position: absolute;
       right: 0;
       top: 3px;
+      z-index: -1;
     }
   }
   @media screen and
