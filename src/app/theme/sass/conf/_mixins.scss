@@ -117,7 +117,7 @@
   }
 }
 
-@mixin overridecardBg($color, $borderColor, $dropdownColor) {
+@mixin overrideCardBg($color, $borderColor, $dropdownColor) {
   .card.card-blur, .card.card-blur:hover {
     border-color: $borderColor;
     background-color: $color;
