@@ -233,6 +233,7 @@ module.exports = {
       "L": "leaflet",
       "Chart": "chart.js",
       "Chartist": "chartist",
+      "EasyPieChart": "easy-pie-chart"
     })
   ],
 
