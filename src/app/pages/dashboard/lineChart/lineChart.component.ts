@@ -28,6 +28,7 @@ export class LineChart {
     };
 
     chart.addListener('rendered', zoomChart);
+    zoomChart();
     
     if (chart.zoomChart) {
       chart.zoomChart();
