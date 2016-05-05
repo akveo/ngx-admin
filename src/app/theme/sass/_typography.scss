@@ -39,7 +39,6 @@ h5 {
 
 .typography-document-samples {
 
-
   p {
     margin: 0;
   }
@@ -51,16 +50,16 @@ h5 {
       height: 620px;
     }
 
-    .card-title{
+    .card-title {
       text-align: center;
       width: 100%;
     }
 
-    .card.with-scroll .card-body{
+    .card.with-scroll .card-body {
       height: calc(100% - 45px);
     }
 
-    .card-content{
+    .card-content {
       padding: 15px 22px 5px 22px;
     }
 
@@ -425,49 +424,58 @@ a.learn-more {
   padding: 0;
   margin-bottom: 90px;
 
-  .card-body{
+  .card-body {
     padding: 0;
   }
 }
 
-
-
-
-  @media screen and (min-width: 1620px) {
-    .col-xlg-1{
-      width: 8.33333333%;
-    }
-    .col-xlg-2{
-      width: 16.66666667%;
-    }
-    .col-xlg-3{
-      width: 25%;
-    }
-    .col-xlg-4{
-      width: 33.33333333%;
-    }
-    .col-xlg-5{
-      width: 41.66666667%;
-    }
-    .col-xlg-6{
-      width: 50%;
-    }
-    .col-xlg-7{
-      width: 58.33333333%;
-    }
-    .col-xlg-8{
-      width: 66.66666667%;
-    }
-    .col-xlg-9{
-      width: 75%;
-    }
-    .col-xlg-10{
-      width: 83.33333333%;
-    }
-    .col-xlg-11{
-      width: 91.66666667%;
-    }
-    .col-xlg-12{
-      width: 100%;
-    }
+@media screen and (min-width: 1620px) {
+  .col-xlg-1 {
+    width: 8.33333333%;
+    flex: 0 0 8.33333333%;
   }
+  .col-xlg-2 {
+    width: 16.66666667%;
+    flex: 0 0 16.66666667%;
+  }
+  .col-xlg-3 {
+    width: 25%;
+    flex: 0 0 25%;
+  }
+  .col-xlg-4 {
+    width: 33.33333333%;
+    flex: 0 0 33.33333333%;
+  }
+  .col-xlg-5 {
+    width: 41.66666667%;
+    flex: 0 0 41.66666667%;
+  }
+  .col-xlg-6 {
+    width: 50%;
+    flex: 0 0 50%;
+  }
+  .col-xlg-7 {
+    width: 58.33333333%;
+    flex: 0 0 58.33333333%;
+  }
+  .col-xlg-8 {
+    width: 66.66666667%;
+    flex: 0 0 66.66666667%;
+  }
+  .col-xlg-9 {
+    width: 75%;
+    flex: 0 0 75%;
+  }
+  .col-xlg-10 {
+    width: 83.33333333%;
+    flex: 0 0 83.33333333%;
+  }
+  .col-xlg-11 {
+    width: 91.66666667%;
+    flex: 0 0 91.66666667%;
+  }
+  .col-xlg-12 {
+    width: 100%;
+    flex: 0 0 100%;
+  }
+}

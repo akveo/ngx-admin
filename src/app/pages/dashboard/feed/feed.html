@@ -1,5 +1,5 @@
-<div class="feed-messages-container" track-width="smallContainerWidth" min-width="360">
-  <div class="feed-message" *ngFor="#message of feed" (ngClick)="expandMessage(message)">
+<div class="feed-messages-container">
+  <div class="feed-message" *ngFor="#message of feed" (click)="expandMessage(message)">
     <div class="message-icon" *ngIf="message.type == 'text-message'">
       <img class="photo-icon" src="{{ ( message.author | profilePicture ) }}">
     </div>
