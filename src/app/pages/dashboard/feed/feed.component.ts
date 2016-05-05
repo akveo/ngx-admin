@@ -1,13 +1,13 @@
 import {Component, ViewEncapsulation} from 'angular2/core';
 
-import {ProfilePicturePipe} from '../../../theme/pipes';
+import {ProfilePicturePipe, AppPicturePipe} from '../../../theme/pipes';
 import {FeedService} from './feed.service';
 
 @Component({
   selector: 'feed',
   encapsulation: ViewEncapsulation.None,
   providers: [FeedService],
-  pipes: [ProfilePicturePipe],
+  pipes: [ProfilePicturePipe, AppPicturePipe],
   styles: [require('./feed.scss')],
   template: require('./feed.html')
 })

@@ -16,7 +16,7 @@
       </div>
       <div class="preview" [ngClass]="{'hidden': !message.expanded}" *ngIf="message.preview">
         <a href="{{ message.link }}" target="_blank">
-          <!--<img src="{{ ( message.preview | appImage )}}">-->
+          <img src="{{ ( message.preview | appPicture )}}">
         </a>
       </div>
       <div [ngClass]="{'hidden': !message.expanded}" class="message-time">
