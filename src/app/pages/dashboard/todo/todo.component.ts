@@ -20,10 +20,6 @@ export class Todo {
     this.todoList = this._todoService.getTodoList();
   }
 
-  ngOnInit() {
-
-  }
-
   getNotDeleted() {
     return this.todoList.filter((item:any) => {return !item.deleted})
   }
@@ -48,7 +44,7 @@ export class Todo {
     }
   }
 
-  addToDoItem($event, clickPlus) {
+  addToDoItem($event) {
 
     if ($event.which === 1 || $event.which === 13) {
 
