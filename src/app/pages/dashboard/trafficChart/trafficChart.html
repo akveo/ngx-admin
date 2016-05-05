@@ -19,7 +19,7 @@
         <p>{{ item.label }}<span class="channel-number">+{{ item.percentage }}%</span></p>
         <div class="progress progress-sm channel-progress">
           <div class="progress-bar" role="progressbar"
-               [attr.aria-valuenow]="item.percentage" aria-valuemin="0" aria-valuemax="100" style="width: {{ item.percentage }}%">
+               [attr.aria-valuenow]="item.percentage" aria-valuemin="0" aria-valuemax="100" [ngStyle]="{width: item.percentage + '%' }">
           </div>
         </div>
       </div>
