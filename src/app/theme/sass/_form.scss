@@ -1,0 +1,563 @@
+.label {
+  border-radius: 0;
+}
+
+.label-primary {
+  background: $primary;
+}
+
+.label-info {
+  background: $primary-light;
+}
+
+.label-success {
+  background: $success;
+}
+
+.label-warning {
+  background: $warning;
+}
+
+.label-danger {
+  background: $danger;
+}
+
+.form-horizontal {
+  label {
+    line-height: 34px;
+    margin-bottom: 0;
+    padding-top: 0 !important;
+  }
+}
+
+.form-group {
+  label {
+    margin-bottom: 5px;
+    color: $default-text;
+    font-weight: $font-normal;
+    font-size: 13px;
+  }
+}
+
+.form-control {
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  border: none;
+  &:focus {
+    box-shadow: none;
+    border-color: $primary-bg;
+    background: #ffffff;
+  }
+}
+
+select.form-control {
+  padding-left: 8px;
+}
+
+textarea.form-control {
+  height: 96px;
+}
+
+.modal-form-btn {
+  text-align: center;
+}
+
+.form-inline {
+  .form-group {
+    input {
+      width: 100%;
+    }
+    label {
+      margin-right: 12px;
+    }
+  }
+
+  button[type="submit"] {
+    margin-left: 12px;
+  }
+
+  label.custom-checkbox > span {
+    display: block;
+    margin-top: -13px;
+    margin-right: 10px;
+  }
+}
+
+.modal-content {
+  border-radius: 5px;
+  border: none;
+  color: $default-text;
+  .modal-header {
+    color: $default;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+}
+
+@mixin setSwitchBorder($color) {
+  .bootstrap-switch.bootstrap-switch-on {
+    border-color: $color;
+  }
+}
+
+.switch-container {
+  display: inline-block;
+  & {
+    @include setSwitchBorder($default);
+  }
+  &.primary {
+    @include setSwitchBorder($primary);
+  }
+  &.success {
+    @include setSwitchBorder($success);
+  }
+  &.warning {
+    @include setSwitchBorder($warning);
+  }
+  &.danger {
+    @include setSwitchBorder($danger);
+  }
+  &.info {
+    @include setSwitchBorder($primary-light);
+  }
+}
+
+.bootstrap-switch {
+  border-radius: 5px;
+  border: 1px solid $default;
+  transition: border-color ease-in-out .7s, box-shadow ease-in-out .7s;
+  &:focus {
+    outline: none;
+  }
+  &.bootstrap-switch-off {
+    border-color: $input-border;
+  }
+  &.bootstrap-switch-focused {
+    box-shadow: none;
+    &.bootstrap-switch-off {
+      border-color: $input-border;
+    }
+  }
+  .bootstrap-switch-container {
+    border-radius: 0;
+    &:focus {
+      outline: none;
+    }
+  }
+  .bootstrap-switch-handle-on {
+    border-radius: 0;
+    &.bootstrap-switch-default {
+      background: $default;
+    }
+    &.bootstrap-switch-success {
+      background: $success;
+    }
+    &.bootstrap-switch-primary {
+      background: $primary;
+    }
+    &.bootstrap-switch-warning {
+      background: $warning;
+    }
+    &.bootstrap-switch-danger {
+      background: $danger;
+    }
+    &.bootstrap-switch-info {
+      background: $primary-light;
+    }
+  }
+  .bootstrap-switch-handle-off {
+    border-radius: 0;
+  }
+
+  .bootstrap-switch-label {
+    background: transparent;
+  }
+
+  &.bootstrap-switch-animate .bootstrap-switch-container {
+    transition: margin-left .2s;
+  }
+}
+
+.switches {
+  margin-left: -12px;
+  margin-bottom: -12px;
+  .switch-container {
+    float: left;
+    margin-left: 12px;
+    margin-bottom: 12px;
+  }
+}
+
+.input-group {
+  width: 100%;
+  margin-bottom: 15px;
+  & > span {
+    border-radius: 0;
+  }
+}
+
+label.custom-checkbox {
+  padding-right: 0;
+  padding-left: 0;
+  margin-bottom: 0;
+  & > input {
+    height: 0;
+    z-index: -100 !important;
+    opacity: 0;
+    position: absolute;
+    &:checked {
+      & + span {
+        &:before {
+          content: "\f00c";
+          font-weight: $font-light;
+        }
+      }
+    }
+    &:disabled {
+      & + span {
+        color: $disabled;
+        cursor: not-allowed;
+        &:before {
+          border-color: $disabled !important;
+          cursor: not-allowed;
+        }
+      }
+    }
+  }
+  & > span {
+    position: relative;
+    display: inline-block;
+    margin: 0;
+    line-height: 16px;
+    font-weight: $font-light;
+    cursor: pointer;
+    padding-left: 22px;
+    width: 100%;
+    &:before {
+      cursor: pointer;
+      font-family: fontAwesome;
+      font-weight: $font-light;
+      font-size: 12px;
+      color: $default;
+      content: "\a0";
+      background-color: transparent;
+      border: 1px solid $default;
+      border-radius: 0;
+      display: inline-block;
+      text-align: center;
+      height: 16px;
+      line-height: 14px;
+      min-width: 16px;
+      margin-right: 6px;
+      position: relative;
+      top: 0;
+      margin-left: -22px;
+      float: left;
+    }
+    &:hover {
+      &:before {
+        border-color: $primary-bg;
+      }
+    }
+  }
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.cut-with-dots {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+}
+
+label.custom-radio {
+  @extend .custom-checkbox;
+  & > input {
+    &:checked {
+      & + span {
+        &:before {
+          content: "\f111";
+        }
+      }
+    }
+  }
+  & > span {
+    &:before {
+      border-radius: 16px;
+      font-size: 9px;
+    }
+  }
+}
+
+@mixin customInput($color) {
+  & > span {
+    &:before {
+      color: $color;
+    }
+    &:hover {
+      &:before {
+        border-color: $color;
+      }
+    }
+  }
+}
+
+label.custom-input-primary {
+  @include customInput($primary);
+}
+
+label.custom-input-success {
+  @include customInput($success);
+}
+
+label.custom-input-warning {
+  @include customInput($warning)
+}
+
+label.custom-input-danger {
+  @include customInput($danger)
+}
+
+.form-horizontal {
+  .radio, .checkbox, .radio-inline, .checkbox-inline {
+    padding-top: 0px;
+  }
+}
+
+.input-demo {
+  line-height: 25px;
+}
+
+@mixin validationState($color, $focusColor) {
+  .control-label {
+    color: $color;
+  }
+  .form-control {
+    border: 1px solid $color;
+    &:focus {
+      box-shadow: none;
+      border-color: $focusColor;
+    }
+  }
+
+  label.custom-checkbox {
+    color: $color;
+    & > span {
+      &:before {
+        color: $color;
+      }
+      &:hover {
+        &:before {
+          border-color: $color;
+        }
+      }
+    }
+  }
+  .form-control-feedback {
+    color: $color;
+  }
+  .input-group-addon {
+    background-color: $color;
+    color: #ffffff;
+  }
+}
+
+.has-success {
+  @include validationState($success-bg, $success);
+}
+
+.has-warning {
+  @include validationState($warning-bg, $warning);
+}
+
+.has-error {
+  @include validationState($danger-bg, $danger);
+}
+
+.has-feedback label ~ .form-control-feedback {
+  top: 21px;
+  font-size: 18px;
+}
+
+.bootstrap-select {
+  .btn-default {
+    &:focus {
+      color: $default-text;
+    }
+  }
+}
+
+.form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control {
+  background: transparent;
+  color: $disabled;
+  border-color: $disabled-bg;
+  @include placeholderStyle($disabled, 1);
+}
+
+.form-control-rounded {
+  border-radius: 16px;
+}
+
+.help-block {
+  color: $help-text;
+}
+
+.help-block.error-block {
+  display: none;
+  .has-error &.basic-block {
+    display: block;
+  }
+}
+
+@mixin groupAddon($color) {
+  background: $color;
+  color: #ffffff;
+  border-color: $color;
+}
+
+.input-group-addon-danger {
+  @include groupAddon($danger);
+}
+
+.input-group-addon-warning {
+  @include groupAddon($warning);
+}
+
+.input-group-addon-success {
+  @include groupAddon($success);
+}
+
+.input-group-addon-primary {
+  @include groupAddon($primary);
+}
+
+.checkbox-demo-row {
+  margin-bottom: 12px;
+}
+
+.dropdown-menu {
+  border-radius: 5px;
+}
+
+.bootstrap-select {
+  .btn-default {
+    background: transparent;
+    color: $default;
+    &:focus {
+      background: #ffffff;
+      box-shadow: none;
+      outline: 0 !important;
+    }
+    &:active {
+      border-color: $default;
+      box-shadow: none;
+      background: #ffffff;
+    }
+  }
+  &.open {
+    .btn-default.dropdown-toggle {
+      box-shadow: none;
+      background-color: #ffffff;
+      border-color: $default;
+      color: $default;
+    }
+    .dropdown-menu {
+      border-left: 1px solid $default;
+      border-right: 1px solid $default;
+      border-bottom-color: $default;
+      border-radius: 0 0 5px 5px;
+    }
+    > .btn.dropdown-toggle {
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+      border-color: transparent;
+      box-shadow: none;
+    }
+    .dropdown-menu {
+      border-top: none;
+    }
+  }
+  &.with-search.open{
+    .btn-default.btn{
+      background-color: rgba(0, 0, 0, 0.2);
+      border-color: 1px solid $default;
+    }
+  }
+  &.with-search.open .btn-default + .dropdown-menu {
+    .bs-searchbox .form-control {
+      background-color: rgba(0, 0, 0, 0.35);
+    }
+    .no-results {
+      color: $default-text;
+    }
+  }
+  .notify {
+    color: $default-text;
+  }
+}
+
+.bootstrap-tagsinput {
+  background-color: transparent;
+  border: 1px solid $input-border;
+  box-shadow: none;
+  color: #555555;
+  max-width: 100%;
+  font-size: 14px;
+  line-height: 26px;
+  width: 100%;
+  &.form-control {
+    display: block;
+    width: 100%;
+  }
+  .tag {
+    border-radius: 3px;
+    font-weight: $font-normal;
+    font-size: 11px;
+    padding: 4px 8px;
+    & [data-role="remove"]:hover {
+      box-shadow: none;
+    }
+  }
+  input {
+    line-height: 22px;
+    font-size: 11px;
+    min-width: 53px;
+  }
+}
+
+.progress-bar-primary {
+  background-color: $primary;
+}
+
+.progress-bar-success {
+  background-color: $success-light;
+}
+
+.progress-bar-warning {
+  background-color: $warning;
+}
+
+.progress-bar-danger {
+  background-color: $danger;
+}
+
+.has-success .input-group-addon {
+  border: none;
+}
+
+.input-group > span.addon-left {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.input-group > span.addon-right {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.sub-little-text{
+  font-size: 12px;
+}
