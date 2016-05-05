@@ -15,7 +15,7 @@
   <div class="channels-info">
     <div>
       <div class="channels-info-item" *ngFor="#item of doughnutData">
-        <div class="legend-color" style="background-color: {{ item.color }}"></div>
+        <div class="legend-color" [ngStyle]="{'background-color': item.color }"></div>
         <p>{{ item.label }}<span class="channel-number">+{{ item.percentage }}%</span></p>
         <div class="progress progress-sm channel-progress">
           <div class="progress-bar" role="progressbar"
