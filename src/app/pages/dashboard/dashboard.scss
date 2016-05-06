@@ -1,13 +1,13 @@
 @media screen and (min-width: 1620px) {
   .row.shift-up {
-    > div {
+    > * {
       margin-top: -573px;
     }
   }
 }
 
 @media screen and (max-width: 1620px) {
-  .card.feed-card.large-card {
+  .card.feed-panel.large-card {
     height: 824px;
   }
 }
