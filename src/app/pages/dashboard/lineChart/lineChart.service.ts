@@ -9,6 +9,9 @@ export class LineChartService {
     theme: 'blur',
     marginTop: 15,
     marginRight: 15,
+    responsive: {
+      "enabled": true
+    },
     dataProvider: [
       { date: new Date(2012, 11), value: 0, value0: 0 },
       { date: new Date(2013, 0), value: 15000, value0: 19000},
