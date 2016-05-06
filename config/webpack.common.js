@@ -166,6 +166,9 @@ module.exports = {
    * See: http://webpack.github.io/docs/configuration.html#plugins
    */
   plugins: [
+    new webpack.ResolverPlugin(
+      new webpack.ResolverPlugin.DirectoryDescriptionFilePlugin('bower.json', ['main'])
+    ),
 
     /*
      * Plugin: ForkCheckerPlugin
@@ -233,6 +236,8 @@ module.exports = {
       "L": "leaflet",
       "Chart": "chart.js",
       "Chartist": "chartist",
+      "fullcalendar": "fullcalendar",
+      "moment": "moment",
       "EasyPieChart": "easy-pie-chart"
     })
   ],
