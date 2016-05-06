@@ -1,26 +1,21 @@
 import {Component, ViewEncapsulation} from 'angular2/core';
 
-import './usersMap.loader.ts';
 import {UsersMapService} from './usersMap.service';
+import {BaAmChart} from '../../../theme/components';
 
 @Component({
   selector: 'users-map',
   encapsulation: ViewEncapsulation.None,
   providers: [UsersMapService],
+  directives: [BaAmChart],
   styles: [require('./usersMap.scss')],
   template: require('./usersMap.html')
 })
 export class UsersMap {
 
+  mapData:Object;
+
   constructor(private _usersMapService:UsersMapService) {
-  }
-
-  ngAfterViewInit() {
-    this._loadUsersMap();
-  }
-
-  // TODO: load proper AmCharts theme
-  private _loadUsersMap() {
-    AmCharts.makeChart('amChartMap', this._usersMapService.getData());
+    this.mapData = this._usersMapService.getData();
   }
 }
