@@ -18,6 +18,7 @@ export class GoogleMaps {
   ngAfterViewInit() {
     let el = DOM.querySelector(this._elementRef.nativeElement, '.google-maps');
 
+    // TODO: do not load this each time as we already have the library after first attempt
     GoogleMapsLoader.load((google) => {
       new google.maps.Map(el, {
         center: new google.maps.LatLng(44.5403, -78.5463),
