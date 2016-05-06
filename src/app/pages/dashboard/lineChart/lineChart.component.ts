@@ -1,6 +1,5 @@
 import {Component, ViewEncapsulation} from 'angular2/core';
 
-import './lineChart.loader.ts';
 import {LineChartService} from './lineChart.service';
 import {BaAmChart} from '../../../theme/components';
 
