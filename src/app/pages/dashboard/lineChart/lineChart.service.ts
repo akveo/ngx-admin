@@ -10,7 +10,7 @@ export class LineChartService {
     marginTop: 15,
     marginRight: 15,
     responsive: {
-      "enabled": true
+      'enabled': true
     },
     dataProvider: [
       { date: new Date(2012, 11), value: 0, value0: 0 },

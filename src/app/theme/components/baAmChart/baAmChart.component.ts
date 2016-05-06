@@ -2,12 +2,14 @@ import {Component, ViewEncapsulation, Input, Output, ElementRef, EventEmitter} f
 
 import './baAmChart.loader.ts';
 import {DOM} from "angular2/src/platform/dom/dom_adapter";
+import {BaAmChartThemeService} from './baAmChartTheme.service';
 
 @Component({
   selector: 'ba-am-chart',
   styles: [require('./baAmChart.scss')],
   template: require('./baAmChart.html'),
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None,
+  providers: [BaAmChartThemeService],
 })
 export class BaAmChart {
 
@@ -15,7 +17,11 @@ export class BaAmChart {
   @Input() baAmChartClass:string;
   @Output() onChartReady = new EventEmitter<any>();
 
-  constructor (private _elementRef:ElementRef) {
+  constructor (private _elementRef:ElementRef, private _baAmChartThemeService:BaAmChartThemeService) {
+  }
+
+  ngOnInit() {
+    AmCharts.themes.blur = this._baAmChartThemeService.getTheme();
   }
 
   ngAfterViewInit() {
