@@ -6,7 +6,7 @@
 bootstrapVersion: 4
 
 # If Bootstrap version 4 is used - turn on/off flexbox model
-useFlexbox: true
+useFlexbox: false
 
 # Webpack loaders, order matters
 styleLoaders:
