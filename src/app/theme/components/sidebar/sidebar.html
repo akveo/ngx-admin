@@ -1,6 +1,6 @@
 <aside class="al-sidebar" (mouseleave)="hoverElemTop=outOfArea">
   <ul class="al-sidebar-list">
-    <li *ngFor="#item of menuItems" class="al-sidebar-list-item"
+    <li *ngFor="let item of menuItems" class="al-sidebar-list-item"
         [ngClass]="{'selected': item.selected, 'with-sub-menu': item.subMenu}">
 
       <a *ngIf="!item.subMenu" [routerLink]="[item.name]" class="al-sidebar-list-link">
@@ -16,7 +16,7 @@
 
       <ul *ngIf="item.subMenu" class="al-sidebar-sublist"
           [ngClass]="{expanded: item.expanded, 'slide-right': item.slideRight}">
-        <li *ngFor="#subitem of item.subMenu"
+        <li *ngFor="let subitem of item.subMenu"
             [ngClass]="{'selected': subitem.selected, 'with-sub-menu': subitem.subMenu}">
           <a (mouseenter)="hoverItem($event, item)" *ngIf="subitem.subMenu" (click)="toggleSubMenu($event, subitem);"
              class="al-sidebar-list-link subitem-submenu-link"><span>{{ subitem.title }}</span>
@@ -25,7 +25,7 @@
           </a>
           <ul *ngIf="subitem.subMenu" class="al-sidebar-sublist subitem-submenu-list"
               [ngClass]="{expanded: subitem.expanded, 'slide-right': subitem.slideRight}">
-            <li *ngFor="#subSubitem of subitem.subMenu" (mouseenter)="hoverItem($event, item)"
+            <li *ngFor="let subSubitem of subitem.subMenu" (mouseenter)="hoverItem($event, item)"
                 [ngClass]="{selected: subitem.selected}">
               <a (mouseenter)="hoverItem($event, item)" [routerLink]="[item.name, subitem.name, subSubitem.name]">
                 {{ subSubitem.title }}</a>

@@ -3,7 +3,7 @@
 <div class="box-shadow-border"></div>
 
 <ul class="todo-list">
-  <li *ngFor="#item of getNotDeleted()" [ngClass]="{checked: item.isChecked, active: item.isActive}" class="{{ getMarkColor(item.markId) }}"
+  <li *ngFor="let item of getNotDeleted()" [ngClass]="{checked: item.isChecked, active: item.isActive}" class="{{ getMarkColor(item.markId) }}"
       (mouseenter)="item.isActive=true" (mouseleave)="item.isActive=false">
 
     <div class="blur-container"><div class="blur-box"></div></div>
