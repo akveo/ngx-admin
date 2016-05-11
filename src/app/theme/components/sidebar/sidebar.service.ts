@@ -1,4 +1,4 @@
-import {Injectable} from 'angular2/core';
+import {Injectable} from '@angular/core';
 
 @Injectable()
 export class SidebarService {
@@ -60,10 +60,10 @@ export class SidebarService {
       expanded: false,
       order: 400,
       subMenu: [
-        {
-          title: 'Chart Js',
-          name: 'ChartJs',
-        },
+        // {
+        //   title: 'Chart Js',
+        //   name: 'ChartJs',
+        // },
         {
           title: 'ChartistJs',
           name: 'ChartistJs',

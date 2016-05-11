@@ -1,6 +1,5 @@
-import {Component, ViewEncapsulation, ElementRef} from 'angular2/core';
+import {Component, ViewEncapsulation, ElementRef} from '@angular/core';
 import {BaCard} from '../../../../theme/components';
-import {DOM} from "angular2/src/platform/dom/dom_adapter";
 
 @Component({
   selector: 'google-maps',
@@ -16,7 +15,7 @@ export class GoogleMaps {
   }
 
   ngAfterViewInit() {
-    let el = DOM.querySelector(this._elementRef.nativeElement, '.google-maps');
+    let el = this._elementRef.nativeElement.querySelector('.google-maps');
 
     // TODO: do not load this each time as we already have the library after first attempt
     GoogleMapsLoader.load((google) => {

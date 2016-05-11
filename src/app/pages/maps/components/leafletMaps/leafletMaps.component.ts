@@ -1,6 +1,5 @@
-import {Component, ViewEncapsulation, ElementRef} from 'angular2/core';
+import {Component, ViewEncapsulation, ElementRef} from '@angular/core';
 import {BaCard} from '../../../../theme/components';
-import {DOM} from "angular2/src/platform/dom/dom_adapter";
 
 @Component({
   selector: 'leaflet-maps',
@@ -18,7 +17,7 @@ export class LeafletMaps {
   }
 
   ngAfterViewInit() {
-    let el = DOM.querySelector(this._elementRef.nativeElement, '.leaflet-maps');
+    let el = this._elementRef.nativeElement.querySelector('.leaflet-maps');
 
     L.Icon.Default.imagePath = 'assets/img/theme/vendor/leaflet';
     var map = L.map(el).setView([51.505, -0.09], 13);

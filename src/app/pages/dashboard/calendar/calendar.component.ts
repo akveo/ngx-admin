@@ -1,4 +1,4 @@
-import {Component, ViewEncapsulation} from 'angular2/core';
+import {Component, ViewEncapsulation} from '@angular/core';
 
 import './calendar.loader.ts';
 import {layoutColors} from "../../../theme/theme.constants";

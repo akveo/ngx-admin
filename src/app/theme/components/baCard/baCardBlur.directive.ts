@@ -1,4 +1,4 @@
-import {Directive, ElementRef, HostListener} from 'angular2/core';
+import {Directive, ElementRef, HostListener} from '@angular/core';
 import {BaCardBlurHelper} from './baCardBlurHelper.service';
 
 import {BgMetrics} from './bgMetrics';

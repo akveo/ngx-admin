@@ -1,4 +1,4 @@
-import {Component, ViewEncapsulation} from 'angular2/core';
+import {Component, ViewEncapsulation} from '@angular/core';
 
 import {UsersMapService} from './usersMap.service';
 import {BaAmChart} from '../../../theme/components';

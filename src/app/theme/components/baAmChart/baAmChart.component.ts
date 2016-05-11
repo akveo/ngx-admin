@@ -1,7 +1,6 @@
-import {Component, ViewEncapsulation, Input, Output, ElementRef, EventEmitter} from 'angular2/core';
+import {Component, ViewEncapsulation, Input, Output, ElementRef, EventEmitter} from '@angular/core';
 
 import './baAmChart.loader.ts';
-import {DOM} from "angular2/src/platform/dom/dom_adapter";
 import {BaAmChartThemeService} from './baAmChartTheme.service';
 
 @Component({
@@ -25,7 +24,7 @@ export class BaAmChart {
   }
 
   ngAfterViewInit() {
-    let el = DOM.querySelector(this._elementRef.nativeElement, '.ba-am-chart');
+    let el = this._elementRef.nativeElement.querySelector('.ba-am-chart');
 
     let chart = AmCharts.makeChart(el, this.baAmChartConfiguration);
     this.onChartReady.emit(chart);

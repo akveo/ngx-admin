@@ -1,4 +1,4 @@
-import {Component, ViewEncapsulation, ElementRef} from 'angular2/core';
+import {Component, ViewEncapsulation, ElementRef} from '@angular/core';
 
 import './trafficChart.loader.ts';
 import {TrafficChartService} from './trafficChart.service';

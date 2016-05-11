@@ -1,4 +1,4 @@
-import {Component, ViewEncapsulation} from 'angular2/core';
+import {Component, ViewEncapsulation} from '@angular/core';
 
 import {LineChartService} from './lineChart.service';
 import {BaAmChart} from '../../../theme/components';

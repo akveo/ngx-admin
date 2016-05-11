@@ -1,4 +1,4 @@
-import {Component, ViewEncapsulation} from 'angular2/core';
+import {Component, ViewEncapsulation} from '@angular/core';
 
 import {ProfilePicturePipe, AppPicturePipe} from '../../../theme/pipes';
 import {FeedService} from './feed.service';

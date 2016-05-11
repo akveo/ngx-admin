@@ -1,5 +1,5 @@
-import {Component, ElementRef, HostListener, ViewEncapsulation} from 'angular2/core';
-import {Router} from 'angular2/router';
+import {Component, ElementRef, HostListener, ViewEncapsulation} from '@angular/core';
+import {Router} from '@angular/router-deprecated';
 
 import {ThemeGlobal, layoutSizes} from '../../../theme';
 import {SidebarService} from './sidebar.service';
