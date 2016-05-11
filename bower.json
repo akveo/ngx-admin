@@ -1,15 +1,13 @@
 {
-  "name": "angular2-webpack-starter",
-  "description": "Angular 2 admin template.",
-  "main": "",
-  "authors": [
-    "Patrick Stapleton <patrick@angularclass.com>"
-  ],
+  "name": "angular2-blur-admin",
+  "version": "0.0.1",
+  "description": "Angular 2 Blur Admin template.",
+  "author": "akveo",
+  "homepage": "",
   "license": "MIT",
   "moduleType": [
     "es6"
   ],
-  "homepage": "",
   "private": true,
   "ignore": [
     "**/.*",
