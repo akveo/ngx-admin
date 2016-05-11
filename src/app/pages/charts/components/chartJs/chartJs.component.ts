@@ -35,8 +35,7 @@ export class ChartJs {
   public options = {
     scaleShowLabelBackdrop : false,
     segmentShowStroke : false,
-    // TODO: produce an error
-    // responsive: true,
+    responsive: true,
     scaleFontColor: "rgba(255,255,255,.7)",
     scaleLineColor: "rgba(255,255,255,.7)",
     pointLabelFontColor: "rgba(255,255,255,.7)"

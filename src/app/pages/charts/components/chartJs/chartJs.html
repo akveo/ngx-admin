@@ -1,23 +1,23 @@
 <div class="row">
   <div class="col-md-4">
-    <ba-card title="Pie" baCardClass="medium-card">
-      <base-chart class="chart chart-pie"
+    <ba-card title="Pie" baCardClass="with-scroll">
+      <base-chart class="chartjs chart chart-pie"
               [legend]="true" [colours]="colours" [options]="options" [data]="data.one" [chartType]="chartType('Pie')" [labels]="labels.one" (chartClick)="changeData($event)">
       </base-chart>
     </ba-card>
   </div>
 
   <div class="col-md-4">
-    <ba-card title="Doughnut" baCardClass="medium-card">
-      <base-chart class="doughnut chart-doughnut"
+    <ba-card title="Doughnut" baCardClass="with-scroll">
+      <base-chart class="chartjs doughnut chart-doughnut"
                   [legend]="true" [colours]="colours" [options]="options" [data]="data.one" [chartType]="chartType('Doughnut')" [labels]="labels.one" (chartClick)="changeData($event)">
       </base-chart>
     </ba-card>
   </div>
 
   <div class="col-md-4">
-    <ba-card title="Polar" baCardClass="medium-card">
-      <base-chart class="polar chart-polar"
+    <ba-card title="Polar" baCardClass="with-scroll">
+      <base-chart class="chartjs polar chart-polar"
                   [legend]="true" [colours]="colours" [options]="options" [data]="data.one" [chartType]="chartType('PolarArea')" [labels]="labels.one" (chartClick)="changeData($event)">
       </base-chart>
     </ba-card>
@@ -27,14 +27,14 @@
 <div class="row ">
   <div class="col-md-6">
     <ba-card title="Animated Radar" baCardClass="with-scroll col-eq-height">
-      <base-chart class="waveLine chart-waveLine"
+      <base-chart class="chartjs waveLine chart-waveLine"
                   [legend]="false" [colours]="colours" [options]="options" [data]="data.two" [chartType]="chartType('Radar')" [labels]="labels.two" (chartClick)="changeData($event)">
       </base-chart>
     </ba-card>
   </div>
   <div class="col-md-6">
     <ba-card title="Animated Bars" baCardClass="with-scroll col-eq-height">
-      <base-chart class="waveBars chart-waveBars"
+      <base-chart class="chartjs waveBars chart-waveBars"
                   [legend]="false" [colours]="colours" [options]="options" [data]="data.two" [chartType]="chartType('Bar')" [labels]="labels.two" (chartClick)="changeData($event)">
       </base-chart>
     </ba-card>
@@ -43,22 +43,22 @@
 
 <div class="row ">
   <div class="col-lg-4 col-md-6">
-    <ba-card title="Radar" baCardClass="with-scroll ">
-      <base-chart id="radar" class="chart chart-radar"
+    <ba-card title="Radar" baCardClass="with-scroll">
+      <base-chart id="radar" class="chartjs chart chart-radar"
                   [legend]="false" [series]="series" [colours]="colours" [options]="options" [data]="data.three" [chartType]="chartType('Radar')" [labels]="labels.three" (chartClick)="changeData($event)">
       </base-chart>
     </ba-card>
   </div>
   <div class="col-lg-4 col-md-6">
-    <ba-card title="Line" baCardClass="with-scroll ">
-      <base-chart id="line" class="chart chart-line"
+    <ba-card title="Line" baCardClass="with-scroll">
+      <base-chart id="line" class="chartjs chart chart-line"
                   [legend]="false" [series]="series" [colours]="colours" [options]="options" [data]="data.three" [chartType]="chartType('Line')" [labels]="labels.two" (chartClick)="changeData($event)">
       </base-chart>
     </ba-card>
   </div>
   <div class="col-lg-4 col-md-12">
-    <ba-card title="Bars" baCardClass="with-scroll ">
-      <base-chart id="bar" class="chart chart-bar"
+    <ba-card title="Bars" baCardClass="with-scroll">
+      <base-chart id="bar" class="chartjs chart chart-bar"
                   [legend]="false" [series]="series" [colours]="colours" [options]="options" [data]="data.three" [chartType]="chartType('Bar')" [labels]="labels.two" (chartClick)="changeData($event)">
       </base-chart>
     </ba-card>

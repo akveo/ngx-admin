@@ -1,3 +1,8 @@
+.chartjs {
+  display: block;
+  width: 100%;
+}
+
 .chart-legend,
 .bar-legend,
 .line-legend,
@@ -16,6 +21,7 @@
   padding-left: 0;
   /* IE (handles all cases, really, but we should also include the vendor-specific properties just to be safe) */
 }
+
 .chart-legend li,
 .bar-legend li,
 .line-legend li,
@@ -32,6 +38,7 @@
   font-size: smaller;
   cursor: default;
 }
+
 .chart-legend li span,
 .bar-legend li span,
 .line-legend li span,
