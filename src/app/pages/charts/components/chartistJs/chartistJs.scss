@@ -1,5 +1,19 @@
 @import "../../../../theme/sass/conf/conf";
 
+.chartist h5 {
+  font-weight: $font-normal;
+}
+
+.ct-area {
+  fill-opacity: .5;
+}
+
+.ct-label{
+  color: $default;
+  opacity: 0.9;
+  fill: rgba(255,255,255,.9);
+}
+
 .ct-chart .ct-label{
   font-size: 1em;
 }
@@ -53,4 +67,8 @@
   .ct-slice-pie, .ct-area{
     fill: $info;
   }
+}
+
+.stacked-bar .ct-bar{
+  stroke-width: 30px;
 }
