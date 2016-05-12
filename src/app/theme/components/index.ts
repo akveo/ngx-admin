@@ -4,3 +4,4 @@ export * from './sidebar';
 export * from './contentTop';
 export * from './baCard';
 export * from './baAmChart';
+export * from './baChartistChart';

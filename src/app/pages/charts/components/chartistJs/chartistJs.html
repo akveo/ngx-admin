@@ -3,22 +3,51 @@
     <div class="col-md-6 ">
       <ba-card title="Lines" baCardClass="with-scroll">
         <h5>Simple line chart</h5>
-        <div id="line-chart" class="ct-chart"></div>
+        <ba-chartist-chart baChartistChartClass="ct-chart"
+                           baChartistChartType="Line"
+                           [baChartistChartData]="simpleLineData"
+                           [baChartistChartOptions]="simpleLineOptions">
+        </ba-chartist-chart>
+
         <h5>Line chart with area</h5>
-        <div id="area-chart" class="ct-chart"></div>
+        <ba-chartist-chart baChartistChartClass="ct-chart"
+                           baChartistChartType="Line"
+                           [baChartistChartData]="areaLineData"
+                           [baChartistChartOptions]="areaLineOptions">
+        </ba-chartist-chart>
+
         <h5>Bi-polar line chart with area only</h5>
-        <div id="bi-chart" class="ct-chart"></div>
+        <ba-chartist-chart baChartistChartClass="ct-chart"
+                           baChartistChartType="Line"
+                           [baChartistChartData]="biLineData"
+                           [baChartistChartOptions]="biLineOptions">
+        </ba-chartist-chart>
       </ba-card>
     </div>
 
     <div class="col-md-6 ">
       <ba-card title="Bars" baCardClass="with-scroll">
         <h5>Simple bar chart</h5>
-        <div id="simple-bar" class="ct-chart"></div>
+        <ba-chartist-chart baChartistChartClass="ct-chart"
+                           baChartistChartType="Bar"
+                           [baChartistChartData]="simpleBarData"
+                           [baChartistChartOptions]="simpleBarOptions">
+        </ba-chartist-chart>
+
         <h5>Multi-line labels bar chart</h5>
-        <div id="multi-bar" class="ct-chart"></div>
+        <ba-chartist-chart baChartistChartClass="ct-chart"
+                           baChartistChartType="Bar"
+                           [baChartistChartData]="multiBarData"
+                           [baChartistChartOptions]="multiBarOptions"
+                           [baChartistChartResponsive]="multiBarResponsive">
+        </ba-chartist-chart>
+
         <h5>Stacked bar chart</h5>
-        <div id="stacked-bar" class="ct-chart stacked-bar"></div>
+        <ba-chartist-chart baChartistChartClass="ct-chart stacked-bar"
+                           baChartistChartType="Bar"
+                           [baChartistChartData]="stackedBarData"
+                           [baChartistChartOptions]="stackedBarOptions">
+        </ba-chartist-chart>
       </ba-card>
     </div>
   </div>
@@ -28,13 +57,27 @@
       <ba-card title="Pies & Donuts" baCardClass="with-scroll">
         <div class="row">
           <div class="col-md-12 col-lg-4"><h5>Simple Pie</h5>
-            <div id="simple-pie" class="ct-chart"></div>
+            <ba-chartist-chart baChartistChartClass="ct-chart stacked-bar"
+                               baChartistChartType="Pie"
+                               [baChartistChartData]="simplePieData"
+                               [baChartistChartOptions]="simplePieOptions"
+                               [baChartistChartResponsive]="getResponsive(20, 80)">
+            </ba-chartist-chart>
           </div>
           <div class="col-md-12 col-lg-4"><h5>Pie with labels</h5>
-            <div id="label-pie" class="ct-chart"></div>
+            <ba-chartist-chart baChartistChartClass="ct-chart stacked-bar"
+                               baChartistChartType="Pie"
+                               [baChartistChartData]="labelsPieData"
+                               [baChartistChartOptions]="labelsPieOptions">
+            </ba-chartist-chart>
           </div>
           <div class="col-md-12 col-lg-4"><h5>Donut</h5>
-            <div id="donut" class="ct-chart"></div>
+            <ba-chartist-chart baChartistChartClass="ct-chart stacked-bar"
+                               baChartistChartType="Pie"
+                               [baChartistChartData]="simpleDonutData"
+                               [baChartistChartOptions]="simpleDonutOptions"
+                               [baChartistChartResponsive]="getResponsive(5, 40)">
+            </ba-chartist-chart>
           </div>
         </div>
       </ba-card>

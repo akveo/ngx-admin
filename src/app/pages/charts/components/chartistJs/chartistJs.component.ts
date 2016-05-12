@@ -2,6 +2,7 @@ import {Component, ViewEncapsulation} from '@angular/core';
 import {BaCard} from '../../../../theme/components';
 
 import {ChartistJsService} from "./chartistJs.service";
+import {BaChartistChart} from '../../../../theme/components';
 
 @Component({
   selector: 'chartist-js',
@@ -9,9 +10,11 @@ import {ChartistJsService} from "./chartistJs.service";
   providers: [ChartistJsService],
   encapsulation: ViewEncapsulation.None,
   styles: [require('chartist/dist/chartist.css'), require('./chartistJs.scss')],
-  directives: [BaCard],
+  directives: [BaCard, BaChartistChart],
   template: require('./chartistJs.html'),
 })
+
+// TODO: service for the data
 export class ChartistJs {
 
   private simpleLineOptions = {
@@ -196,19 +199,6 @@ export class ChartistJs {
   constructor(private _chartistJsService:ChartistJsService) {
   }
 
-  ngOnInit() {
-    new Chartist.Line('#line-chart', this.simpleLineData, this.simpleLineOptions);
-    new Chartist.Line('#area-chart', this.areaLineData, this.areaLineOptions);
-    new Chartist.Line('#bi-chart', this.biLineData, this.biLineOptions);
-
-    new Chartist.Bar('#simple-bar', this.simpleBarData, this.simpleBarOptions);
-    new Chartist.Bar('#multi-bar', this.multiBarData, this.multiBarOptions, this.multiBarResponsive);
-    new Chartist.Bar('#stacked-bar', this.stackedBarData, this.stackedBarOptions);
-
-    new Chartist.Pie('#simple-pie', this.simplePieData, this.simplePieOptions, this.getResponsive(20, 80));
-    new Chartist.Pie('#label-pie', this.labelsPieData, this.labelsPieOptions);
-    new Chartist.Pie('#donut', this.simpleDonutData, this.simpleDonutOptions, this.getResponsive(5, 40));
-  }
 
   getResponsive(padding, offset) {
     return [
