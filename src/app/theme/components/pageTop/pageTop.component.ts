@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, ViewEncapsulation} from '@angular/core';
 
 import {ThemeGlobal} from '../../../theme';
 import {ProfilePicturePipe} from '../../pipes';
@@ -10,7 +10,8 @@ import {ScrollPosition} from '../../directives';
   styles: [require('./pageTop.scss')],
   template: require('./pageTop.html'),
   directives: [MsgCenter, ScrollPosition],
-  pipes: [ProfilePicturePipe]
+  pipes: [ProfilePicturePipe],
+  encapsulation: ViewEncapsulation.None
 })
 export class PageTop {
   isScrolled:Boolean = false;

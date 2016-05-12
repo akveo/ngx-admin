@@ -24,32 +24,26 @@
 
   <div class="row">
     <div class="col-md-6">
-      <div
-        ba-panel
-        ba-panel-title="Icon Buttons"
-        ba-panel-class="with-scroll">
-        <div ng-include="'app/pages/ui/buttons/widgets/iconButtons.html'"></div>
-      </div>
-      <div
-        ba-panel
-        ba-panel-title="Large Buttons"
-        ba-panel-class="with-scroll large-buttons-panel">
-        <div ng-include="'app/pages/ui/buttons/widgets/largeButtons.html'"></div>
-      </div>
+
+      <ba-card title="Icon Buttons" baCardClass="with-scroll">
+        <icon-buttons></icon-buttons>
+      </ba-card>
+
+      <ba-card title="Large Buttons" baCardClass="with-scroll large-buttons-panel">
+        <large-buttons></large-buttons>
+      </ba-card>
+
     </div>
     <div class="col-md-6">
-      <div
-        ba-panel
-        ba-panel-title="Button Dropdowns"
-        ba-panel-class="with-scroll">
-        <div ng-include="'app/pages/ui/buttons/widgets/dropdowns.html'"></div>
-      </div>
-      <div
-        ba-panel
-        ba-panel-title="Button Groups"
-        ba-panel-class="with-scroll">
-        <div ng-include="'app/pages/ui/buttons/widgets/buttonGroups.html'"></div>
-      </div>
+
+      <ba-card title="Button Dropdowns" baCardClass="with-scroll">
+        <dropdown-buttons></dropdown-buttons>
+      </ba-card>
+
+      <ba-card title="Button Groups" baCardClass="with-scroll">
+        <group-buttons></group-buttons>
+      </ba-card>
+
     </div>
   </div>
 

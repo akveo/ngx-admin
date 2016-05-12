@@ -6,32 +6,33 @@
   "homepage": "",
   "license": "MIT",
   "dependencies": {
-    "@angular/http": "2.0.0-rc.1",
     "@angular/common": "2.0.0-rc.1",
     "@angular/compiler": "2.0.0-rc.1",
     "@angular/core": "2.0.0-rc.1",
+    "@angular/http": "2.0.0-rc.1",
     "@angular/platform-browser": "2.0.0-rc.1",
     "@angular/platform-browser-dynamic": "2.0.0-rc.1",
     "@angular/platform-server": "2.0.0-rc.1",
     "@angular/router": "2.0.0-rc.1",
     "@angular/router-deprecated": "2.0.0-rc.1",
-    "core-js": "^2.2.2",
-    "normalize.css": "^4.1.1",
-    "rxjs": "5.0.0-beta.6",
-    "zone.js": "~0.6.12",
     "amcharts3": "github:amcharts/amcharts3",
     "ammap3": "github:amcharts/ammap3",
     "bootstrap": "^4.0.0-alpha.2",
     "bootstrap-loader": "^1.0.8",
     "chartist": "^0.9.7",
+    "core-js": "^2.2.2",
     "easy-pie-chart": "^2.1.7",
     "font-awesome": "^4.6.1",
     "font-awesome-sass-loader": "^1.0.1",
     "google-maps": "^3.2.1",
     "jquery": "^2.2.3",
     "leaflet-map": "^0.2.1",
+    "ng2-bootstrap": "^1.0.16",
+    "ng2-charts": "^1.0.3",
+    "normalize.css": "^4.1.1",
+    "rxjs": "5.0.0-beta.6",
     "tether": "^1.2.4",
-    "ng2-charts": "^1.0.3"
+    "zone.js": "~0.6.12"
   },
   "devDependencies": {
     "angular2-hmr": "~0.6.0",
@@ -94,56 +95,42 @@
     "webpack-dev-server": "webpack-dev-server",
     "webdriver-manager": "webdriver-manager",
     "protractor": "protractor",
-
     "clean": "npm cache clean && npm run rimraf -- node_modules doc typings coverage dist",
     "clean:dist": "npm run rimraf -- dist",
     "preclean:install": "npm run clean",
     "clean:install": "npm set progress=false && npm install",
     "preclean:start": "npm run clean",
     "clean:start": "npm start",
-
     "watch": "npm run watch:dev",
     "watch:dev": "npm run build:dev -- --watch",
     "watch:dev:hmr": "npm run watch:dev -- --hot",
     "watch:test": "npm run test -- --auto-watch --no-single-run",
     "watch:prod": "npm run build:prod -- --watch",
-
     "build": "npm run build:dev",
     "prebuild:dev": "npm run clean:dist",
     "build:dev": "webpack --config config/webpack.dev.js --progress --profile --colors --display-error-details --display-cached",
     "prebuild:prod": "npm run clean:dist",
     "build:prod": "webpack --config config/webpack.prod.js  --progress --profile --colors --display-error-details --display-cached --bail",
-
     "server": "npm run server:dev",
     "server:dev": "webpack-dev-server --config config/webpack.dev.js --inline --progress --profile --colors --watch --display-error-details --display-cached --content-base src/",
     "server:dev:hmr": "npm run server:dev -- --hot",
     "server:prod": "http-server dist --cors",
-
     "webdriver:update": "npm run webdriver-manager update",
     "webdriver:start": "npm run webdriver-manager start",
-
     "lint": "npm run tslint 'src/**/*.ts'",
-
     "pree2e": "npm run webdriver:update -- --standalone",
     "e2e": "npm run protractor",
     "e2e:live": "npm run e2e -- --elementExplorer",
-
     "pretest": "npm run lint",
     "test": "karma start",
-
     "ci": "npm test && npm run e2e",
-
     "docs": "npm run typedoc -- --options typedoc.json --exclude '**/*.spec.ts' ./src/",
-
     "start": "npm run server:dev",
     "start:hmr": "npm run server:dev:hmr",
-
     "postinstall": "npm run typings -- install",
-
     "preversion": "npm test",
     "version": "npm run build",
     "postversion": "git push && git push --tags"
-
   },
   "repository": {
     "type": "git",
