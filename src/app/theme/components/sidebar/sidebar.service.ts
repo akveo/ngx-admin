@@ -28,6 +28,10 @@ export class SidebarService {
           title: 'Buttons',
           name: 'Buttons',
         },
+        {
+          title: 'Icons',
+          name: 'Icons',
+        },
       ]
     },
     {
