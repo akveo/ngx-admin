@@ -2,6 +2,7 @@ import {Component, ViewEncapsulation} from '@angular/core';
 import {RouteConfig} from '@angular/router-deprecated';
 
 import {Typography} from './components/typography';
+import {Buttons} from './components/buttons';
 
 @Component({
   selector: 'ui',
@@ -17,6 +18,11 @@ import {Typography} from './components/typography';
     path: '/typography',
     useAsDefault: true
   },
+  {
+    name: 'Buttons',
+    component: Buttons,
+    path: '/buttons',
+  }
 ])
 export class Ui {
 

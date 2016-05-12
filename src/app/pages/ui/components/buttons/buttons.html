@@ -1,0 +1,65 @@
+<div class="widgets">
+  <div class="row">
+    <div class="col-md-3">
+      <ba-card title="Flat Buttons" baCardClass="with-scroll button-panel">
+        <flat-buttons></flat-buttons>
+      </ba-card>
+    </div>
+    <div class="col-md-3">
+      <ba-card title="Raised Buttons" baCardClass="with-scroll button-panel">
+        <raised-buttons></raised-buttons>
+      </ba-card>
+    </div>
+    <div class="col-md-3">
+      <ba-card title="Different Sizes" baCardClass="with-scroll button-panel df-size-button-panel">
+        <sized-buttons></sized-buttons>
+      </ba-card>
+    </div>
+    <div class="col-md-3">
+      <ba-card title="Disabled" baCardClass="with-scroll button-panel">
+        <disabled-buttons></disabled-buttons>
+      </ba-card>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <div
+        ba-panel
+        ba-panel-title="Icon Buttons"
+        ba-panel-class="with-scroll">
+        <div ng-include="'app/pages/ui/buttons/widgets/iconButtons.html'"></div>
+      </div>
+      <div
+        ba-panel
+        ba-panel-title="Large Buttons"
+        ba-panel-class="with-scroll large-buttons-panel">
+        <div ng-include="'app/pages/ui/buttons/widgets/largeButtons.html'"></div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div
+        ba-panel
+        ba-panel-title="Button Dropdowns"
+        ba-panel-class="with-scroll">
+        <div ng-include="'app/pages/ui/buttons/widgets/dropdowns.html'"></div>
+      </div>
+      <div
+        ba-panel
+        ba-panel-title="Button Groups"
+        ba-panel-class="with-scroll">
+        <div ng-include="'app/pages/ui/buttons/widgets/buttonGroups.html'"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12"
+         ba-panel
+         ba-panel-title="Progress Buttons"
+         ba-panel-class="with-scroll">
+      <div ng-include="'app/pages/ui/buttons/widgets/progressButtons.html'"></div>
+    </div>
+  </div>
+
+</div>

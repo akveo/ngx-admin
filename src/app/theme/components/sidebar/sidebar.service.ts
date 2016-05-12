@@ -24,6 +24,10 @@ export class SidebarService {
           title: 'Typography',
           name: 'Typography',
         },
+        {
+          title: 'Buttons',
+          name: 'Buttons',
+        },
       ]
     },
     {
