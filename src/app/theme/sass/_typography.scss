@@ -19,6 +19,7 @@ body a {
 
 h1 {
   font-size: 32px;
+  margin-bottom: 0.5rem;
 }
 
 h2 {
@@ -213,7 +214,7 @@ h5 {
       line-height: 14px;
       position: relative;
       span {
-        color: $default-text;
+        color: $default;
         display: block;
       }
       ol {
@@ -420,7 +421,7 @@ a.learn-more {
   padding: 0 20px 50px 20px;
 }
 
-.card.banner-column-card {
+.card.banner-column-panel {
   padding: 0;
   margin-bottom: 90px;
 
