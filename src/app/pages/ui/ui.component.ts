@@ -4,6 +4,7 @@ import {RouteConfig} from '@angular/router-deprecated';
 import {Typography} from './components/typography';
 import {Buttons} from './components/buttons';
 import {Icons} from './components/incons';
+import {Grid} from './components/grid';
 
 @Component({
   selector: 'ui',
@@ -28,6 +29,11 @@ import {Icons} from './components/incons';
     name: 'Icons',
     component: Icons,
     path: '/icons',
+  },
+  {
+    name: 'Grid',
+    component: Grid,
+    path: '/grid',
   }
 ])
 export class Ui {

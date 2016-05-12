@@ -32,6 +32,10 @@ export class SidebarService {
           title: 'Icons',
           name: 'Icons',
         },
+        {
+          title: 'Grid',
+          name: 'Grid',
+        },
       ]
     },
     {
