@@ -22,7 +22,20 @@ import {Forms} from './forms';
         <content-top></content-top>
         <router-outlet></router-outlet>
       </div>
-    </div>`
+    </div>
+    <footer class="al-footer clearfix">
+      <div class="al-footer-right">Created with <i class="ion-heart"></i></div>
+      <div class="al-footer-main clearfix">
+        <div class="al-copy">Blur Admin 2016</div>
+        <ul class="al-share clearfix">
+          <li><i class="socicon socicon-facebook"></i></li>
+          <li><i class="socicon socicon-twitter"></i></li>
+          <li><i class="socicon socicon-google"></i></li>
+          <li><i class="socicon socicon-github"></i></li>
+        </ul>
+      </div>
+    </footer>
+    `
 })
 @RouteConfig([
   {
