@@ -13,6 +13,7 @@ import './pieChart.loader.ts';
   styles: [require('./pieChart.scss')],
   template: require('./pieChart.html')
 })
+// TODO: move easypiechart to component
 export class PieChart {
 
   public charts: Array<Object>;

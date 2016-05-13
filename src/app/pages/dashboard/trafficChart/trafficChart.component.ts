@@ -10,6 +10,8 @@ import {TrafficChartService} from './trafficChart.service';
   styles: [require('./trafficChart.scss')],
   template: require('./trafficChart.html')
 })
+
+// TODO: move chart.js to it's own component
 export class TrafficChart {
 
   public doughnutData: Array<Object>;
