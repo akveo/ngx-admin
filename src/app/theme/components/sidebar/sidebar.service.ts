@@ -95,7 +95,7 @@ export class SidebarService {
           name: 'Inputs',
         },
         {
-          title: 'Form Elements',
+          title: 'Form Layouts',
           name: 'Layouts',
         },
       ]
