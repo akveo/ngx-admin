@@ -96,6 +96,20 @@ export const menuItems = [
     ]
   },
   {
+    title: 'Tables',
+    component: 'Tables',
+    icon: 'ion-grid',
+    selected: false,
+    expanded: false,
+    order: 600,
+    subMenu: [
+      {
+        title: 'Basic Tables',
+        component: 'BasicTables',
+      }
+    ]
+  },
+  {
     title: 'Menu Level 1',
     icon: 'ion-ios-more',
     selected: false,

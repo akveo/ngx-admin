@@ -8,6 +8,7 @@ import {Ui} from './ui';
 import {Maps} from './maps';
 import {Charts} from './charts';
 import {Forms} from './forms';
+import {Tables} from './tables';
 
 @Component({
   selector: 'pages',
@@ -65,6 +66,11 @@ import {Forms} from './forms';
     component: Forms,
     path: '/forms/...',
   },
+  {
+    name: 'Tables',
+    component: Tables,
+    path: '/tables/...',
+  }
 ])
 export class Pages {
 
