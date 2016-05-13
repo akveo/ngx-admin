@@ -12,7 +12,7 @@ import {WithoutLabelsForm} from './components/withoutLabelsForm';
   selector: 'layouts',
   encapsulation: ViewEncapsulation.None,
   directives: [BaCard, InlineForm, BlockForm, HorizontalForm, BasicForm, WithoutLabelsForm],
-  styles: [require('./layouts.scss')],
+  styles: [],
   template: require('./layouts.html'),
 })
 export class Layouts {
