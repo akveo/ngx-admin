@@ -16,7 +16,6 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/mergeMap';
 
 // Web dependencies
-// TODO: make sure this is a correct place
 import 'jquery';
 import 'bootstrap-loader';
 import 'font-awesome-sass-loader';
@@ -24,7 +23,6 @@ import 'font-awesome-sass-loader';
 
 if ('production' === ENV) {
   // Production
-
 
 } else {
   // Development

@@ -3,9 +3,7 @@ import {RouteConfig} from '@angular/router-deprecated';
 
 import {Pages} from './pages';
 import {AppState} from "./app.state";
-
-// TODO: is it really the best place to globally require that dependency?
-require("!style!css!sass!./theme/sass/_ionicons.scss");
+import './app.loader.ts';
 
 /*
  * App Component
