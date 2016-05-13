@@ -5,3 +5,4 @@ export * from './contentTop';
 export * from './baCard';
 export * from './baAmChart';
 export * from './baChartistChart';
+export * from './baBackTop';
