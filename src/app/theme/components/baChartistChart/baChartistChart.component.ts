@@ -1,12 +1,10 @@
 import {Component, ViewEncapsulation, Input, Output, ElementRef, EventEmitter} from '@angular/core';
 
-import './baChartistChart.loader.ts';
-
 @Component({
   selector: 'ba-chartist-chart',
+  encapsulation: ViewEncapsulation.None,
   styles: [require('chartist/dist/chartist.css'), require('./baChartistChart.scss')],
   template: require('./baChartistChart.html'),
-  encapsulation: ViewEncapsulation.None,
   providers: [],
 })
 export class BaChartistChart {
@@ -19,9 +17,6 @@ export class BaChartistChart {
   @Output() onChartReady = new EventEmitter<any>();
 
   constructor (private _elementRef:ElementRef) {
-  }
-
-  ngOnInit() {
   }
 
   ngAfterViewInit() {
