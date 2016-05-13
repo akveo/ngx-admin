@@ -4,6 +4,9 @@ import {Router} from '@angular/router-deprecated';
 import {ThemeGlobal, layoutSizes} from '../../../theme';
 import {SidebarService} from './sidebar.service';
 
+// TODO: separate menu and sidebar
+// TODO: move some functionality to decorators
+
 @Component({
   selector: 'sidebar',
   encapsulation: ViewEncapsulation.None,
