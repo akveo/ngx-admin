@@ -83,33 +83,6 @@ export class SidebarService {
       ]
     },
     {
-      title: 'Pages',
-      icon: 'ion-document',
-      selected: false,
-      expanded: false,
-      subMenu: [
-        {
-          title: 'Sign In',
-          // name: 'SignIn',
-          blank: true
-        },
-        {
-          title: 'Sign Up',
-          // name: 'SignUp',
-          blank: true
-        },
-        {
-          title: 'User Profile',
-          // name: 'UserProfile'
-        },
-        {
-          title: '404 Page',
-          // name: 'NotFound',
-          blank: true
-        }
-      ]
-    },
-    {
       title: 'Menu Level 1',
       icon: 'ion-ios-more',
       selected: false,
