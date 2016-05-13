@@ -1,7 +1,6 @@
 import {Component} from '@angular/core';
-import {Subscription} from "rxjs/Subscription";
 
-import {ThemeGlobal} from "../../../theme";
+import {AppState} from "../../../app.state";
 
 @Component({
   selector: 'content-top',
@@ -10,16 +9,10 @@ import {ThemeGlobal} from "../../../theme";
 })
 export class ContentTop {
   activePageTitle = '';
-  private _themeGlobalSubscription:Subscription;
 
-  constructor(private _themeGlobal:ThemeGlobal) {
-    this._themeGlobalSubscription = this._themeGlobal.getDataStream().subscribe((data) => {
-      this.activePageTitle = data['menu.activeLink'] != null ? data['menu.activeLink'].title : this.activePageTitle;
+  constructor(private _state:AppState) {
+    this._state.subscribe('menu.activeLink', (activeLink) => {
+      this.activePageTitle = activeLink.title;
     });
-  }
-
-  ngOnDestroy() {
-    // prevent memory leak when component destroyed
-    this._themeGlobalSubscription.unsubscribe();
   }
 }

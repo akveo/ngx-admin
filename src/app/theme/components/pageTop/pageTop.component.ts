@@ -1,6 +1,6 @@
 import {Component, ViewEncapsulation} from '@angular/core';
 
-import {ThemeGlobal} from '../../../theme';
+import {AppState} from '../../../app.state';
 import {ProfilePicturePipe} from '../../pipes';
 import {MsgCenter} from '../../components/msgCenter';
 import {ScrollPosition} from '../../directives';
@@ -18,12 +18,12 @@ export class PageTop {
   isMenuCollapsed:boolean = false;
 
 
-  constructor(private _themeGlobal:ThemeGlobal) {
+  constructor(private _state:AppState) {
   }
 
   toggleMenu() {
     this.isMenuCollapsed = !this.isMenuCollapsed;
-    this._themeGlobal.setData('menu.isCollapsed', this.isMenuCollapsed);
+    this._state.notifyDataChanged('menu.isCollapsed', this.isMenuCollapsed);
   }
 
   scrolledChanged(isScrolled) {

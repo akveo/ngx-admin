@@ -1,9 +1,8 @@
 import {Component, ViewEncapsulation} from '@angular/core';
-import {RouteConfig, Router} from '@angular/router-deprecated';
-import {Subscription} from 'rxjs/Subscription';
+import {RouteConfig} from '@angular/router-deprecated';
 
 import {Pages} from './pages';
-import {ThemeGlobal} from "./theme";
+import {AppState} from "./app.state";
 
 // TODO: is it really the best place to globally require that dependency?
 require("!style!css!sass!./theme/sass/_ionicons.scss");
@@ -36,16 +35,10 @@ export class App {
 
   isMenuCollapsed:boolean = false;
 
-  private _themeGlobalSubscription:Subscription;
+  constructor(private _state:AppState) {
 
-  constructor(private _themeGlobal:ThemeGlobal) {
-    this._themeGlobalSubscription = this._themeGlobal.getDataStream().subscribe((data) => {
-      this.isMenuCollapsed = data['menu.isCollapsed'] != null ? data['menu.isCollapsed'] : this.isMenuCollapsed;
+    this._state.subscribe('menu.isCollapsed', (isCollapsed) => {
+      this.isMenuCollapsed = isCollapsed;
     });
-  }
-
-  ngOnDestroy() {
-    // prevent memory leak when component destroyed
-    this._themeGlobalSubscription.unsubscribe();
   }
 }

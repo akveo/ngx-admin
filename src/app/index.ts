@@ -1,8 +1,8 @@
 // App
-import {ThemeGlobal} from "./theme/theme.global";
+import {AppState} from "./app.state";
 export * from './app.component';
 
 // Application wide providers
 export const APP_PROVIDERS = [
-  ThemeGlobal
+  AppState
 ];

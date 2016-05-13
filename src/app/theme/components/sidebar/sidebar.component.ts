@@ -1,7 +1,8 @@
 import {Component, ElementRef, HostListener, ViewEncapsulation} from '@angular/core';
 import {Router} from '@angular/router-deprecated';
 
-import {ThemeGlobal, layoutSizes} from '../../../theme';
+import {AppState} from '../../../app.state';
+import {layoutSizes} from '../../../theme';
 import {SidebarService} from './sidebar.service';
 
 // TODO: separate menu and sidebar
@@ -33,7 +34,7 @@ export class Sidebar {
   constructor(private _elementRef:ElementRef,
               private _router:Router,
               private _sidebarService:SidebarService,
-              private _themeGlobal:ThemeGlobal) {
+              private _state:AppState) {
 
   }
 
@@ -70,7 +71,7 @@ export class Sidebar {
 
   menuCollapseStateChange(isCollapsed) {
     this.isMenuCollapsed = isCollapsed;
-    this._themeGlobal.setData('menu.isCollapsed', this.isMenuCollapsed);
+    this._state.notifyDataChanged('menu.isCollapsed', this.isMenuCollapsed);
   }
 
   hoverItem($event) {
@@ -123,6 +124,6 @@ export class Sidebar {
     });
 
     // notifies all subscribers
-    this._themeGlobal.setData('menu.activeLink', currentMenu);
+    this._state.notifyDataChanged('menu.activeLink', currentMenu);
   }
 }
