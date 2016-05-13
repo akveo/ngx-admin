@@ -96,7 +96,7 @@ export class Sidebar {
 
   private _selectMenuItem(currentPath = null) {
 
-    let currentMenu = this._sidebarService.selectMenuItem(this._router, this.menuItems, currentPath);
+    let currentMenu = this._sidebarService.setRouter(this._router).selectMenuItem(this.menuItems, currentPath);
     this._state.notifyDataChanged('menu.activeLink', currentMenu);
   }
 }

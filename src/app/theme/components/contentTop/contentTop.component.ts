@@ -12,7 +12,9 @@ export class ContentTop {
 
   constructor(private _state:AppState) {
     this._state.subscribe('menu.activeLink', (activeLink) => {
-      this.activePageTitle = activeLink.title;
+      if (activeLink) {
+        this.activePageTitle = activeLink.title;
+      }
     });
   }
 }
