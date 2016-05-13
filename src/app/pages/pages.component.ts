@@ -7,6 +7,7 @@ import {Dashboard} from './dashboard';
 import {Ui} from './ui';
 import {Maps} from './maps';
 import {Charts} from './charts';
+import {Forms} from './forms';
 
 @Component({
   selector: 'pages',
@@ -44,6 +45,11 @@ import {Charts} from './charts';
     name: 'Charts',
     component: Charts,
     path: '/charts/...',
+  },
+  {
+    name: 'Forms',
+    component: Forms,
+    path: '/forms/...',
   },
 ])
 export class Pages {

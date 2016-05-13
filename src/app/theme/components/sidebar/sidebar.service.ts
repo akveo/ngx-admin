@@ -83,6 +83,24 @@ export class SidebarService {
       ]
     },
     {
+      title: 'Form Elements',
+      name: 'Forms',
+      icon: 'ion-compose',
+      selected: false,
+      expanded: false,
+      order: 500,
+      subMenu: [
+        {
+          title: 'Form Inputs',
+          name: 'Inputs',
+        },
+        {
+          title: 'Form Elements',
+          name: 'Layouts',
+        },
+      ]
+    },
+    {
       title: 'Menu Level 1',
       icon: 'ion-ios-more',
       selected: false,
