@@ -5,9 +5,6 @@ import {AppState} from '../../../app.state';
 import {layoutSizes} from '../../../theme';
 import {SidebarService} from './sidebar.service';
 
-// TODO: separate menu and sidebar
-// TODO: move some functionality to decorators
-
 @Component({
   selector: 'sidebar',
   encapsulation: ViewEncapsulation.None,
@@ -36,15 +33,10 @@ export class Sidebar {
               private _sidebarService:SidebarService,
               private _state:AppState) {
 
-  }
-
-  ngOnInit() {
     this.menuItems = this._sidebarService.getMenuItems();
-    this.selectMenuItem();
-    this._router.root.subscribe(() => this.selectMenuItem());
+    this._router.root.subscribe((path) => this._selectMenuItem(path));
   }
 
-  // TODO: is it really the best event for this kind of things?
   ngAfterViewInit() {
     this.updateSidebarHeight();
   }
@@ -102,28 +94,9 @@ export class Sidebar {
     return false;
   }
 
-  // TODO: there is a bug in the router thus all child routers are considered as active
-  private selectMenuItem() {
-    let currentMenu;
+  private _selectMenuItem(currentPath = null) {
 
-    let isCurrent = (instructions) => (instructions.filter(i => typeof i !== 'undefined').length > 0 ? this._router.isRouteActive(this._router.generate(instructions)) : false);
-    let assignCurrent = (menu) => (menu.selected ? currentMenu = menu : null);
-
-    this.menuItems.forEach(function (menu: any) {
-
-      menu.selected = isCurrent([menu.name]);
-      menu.expanded = menu.expanded || menu.selected;
-      assignCurrent(menu);
-
-      if (menu.subMenu) {
-        menu.subMenu.forEach(function (subMenu) {
-          subMenu.selected = isCurrent([menu.name, subMenu.name]) && !subMenu.disabled;
-          assignCurrent(menu);
-        });
-      }
-    });
-
-    // notifies all subscribers
+    let currentMenu = this._sidebarService.selectMenuItem(this._router, this.menuItems, currentPath);
     this._state.notifyDataChanged('menu.activeLink', currentMenu);
   }
 }

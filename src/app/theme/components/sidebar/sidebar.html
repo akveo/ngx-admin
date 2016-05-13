@@ -1,9 +1,9 @@
-<aside class="al-sidebar" (mouseleave)="hoverElemTop=outOfArea">
+<aside class="al-sidebar" (mouseleave)="hoverElemTop=outOfArea" sidebarResize>
   <ul class="al-sidebar-list">
     <li *ngFor="let item of menuItems" class="al-sidebar-list-item"
         [ngClass]="{'selected': item.selected, 'with-sub-menu': item.subMenu}">
 
-      <a *ngIf="!item.subMenu" [routerLink]="[item.name]" class="al-sidebar-list-link">
+      <a *ngIf="!item.subMenu" [routerLink]="[item.component]" class="al-sidebar-list-link">
         <i class="{{ item.icon }}"></i><span>{{ item.title }}</span>
       </a>
 
@@ -27,11 +27,11 @@
               [ngClass]="{expanded: subitem.expanded, 'slide-right': subitem.slideRight}">
             <li *ngFor="let subSubitem of subitem.subMenu" (mouseenter)="hoverItem($event, item)"
                 [ngClass]="{selected: subitem.selected}">
-              <a (mouseenter)="hoverItem($event, item)" [routerLink]="[item.name, subitem.name, subSubitem.name]">
+              <a (mouseenter)="hoverItem($event, item)" [routerLink]="[item.component, subitem.component, subSubitem.component]">
                 {{ subSubitem.title }}</a>
             </li>
           </ul>
-          <a *ngIf="!subitem.subMenu" [routerLink]="[item.name, subitem.name]"
+          <a *ngIf="!subitem.subMenu" [routerLink]="[item.component, subitem.component]"
              (mouseenter)="hoverItem($event, item)" target="{{subitem.blank ? '_blank' : '_self'}}">
             {{ subitem.title}}
           </a>

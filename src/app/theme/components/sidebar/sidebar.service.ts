@@ -1,133 +1,49 @@
 import {Injectable} from '@angular/core';
+import {menuItems} from '../../../app.menu';
 
 @Injectable()
 export class SidebarService {
 
-  staticMenuItems = [
-    {
-      title: 'Dashboard',
-      name: 'Dashboard',
-      icon: 'ion-android-home',
-      selected: false,
-      expanded: false,
-      order: 0
-    },
-    {
-      title: 'UI Features',
-      name: 'Ui',
-      icon: 'ion-android-laptop',
-      selected: false,
-      expanded: false,
-      order: 200,
-      subMenu: [
-        {
-          title: 'Typography',
-          name: 'Typography',
-        },
-        {
-          title: 'Buttons',
-          name: 'Buttons',
-        },
-        {
-          title: 'Icons',
-          name: 'Icons',
-        },
-        {
-          title: 'Grid',
-          name: 'Grid',
-        },
-      ]
-    },
-    {
-      title: 'Maps',
-      name: 'Maps',
-      icon: 'ion-ios-location-outline',
-      selected: false,
-      expanded: false,
-      order: 300,
-      subMenu: [
-        {
-          title: 'Google Maps',
-          name: 'GoogleMaps',
-        },
-        {
-          title: 'Leaflet Maps',
-          name: 'LeafletMaps',
-        },
-        {
-          title: 'Bubble Maps',
-          name: 'BubbleMaps',
-        },
-        {
-          title: 'Line Maps',
-          name: 'LineMaps',
-        }
-      ]
-    },
-    {
-      title: 'Charts',
-      name: 'Charts',
-      icon: 'ion-stats-bars',
-      selected: false,
-      expanded: false,
-      order: 400,
-      subMenu: [
-        // {
-        //   title: 'Chart Js',
-        //   name: 'ChartJs',
-        // },
-        {
-          title: 'ChartistJs',
-          name: 'ChartistJs',
-        },
-      ]
-    },
-    {
-      title: 'Form Elements',
-      name: 'Forms',
-      icon: 'ion-compose',
-      selected: false,
-      expanded: false,
-      order: 500,
-      subMenu: [
-        {
-          title: 'Form Inputs',
-          name: 'Inputs',
-        },
-        {
-          title: 'Form Layouts',
-          name: 'Layouts',
-        },
-      ]
-    },
-    {
-      title: 'Menu Level 1',
-      icon: 'ion-ios-more',
-      selected: false,
-      expanded: false,
-      subMenu: [
-        {
-          title: 'Menu Level 1.1',
-          disabled: true,
-          selected: false,
-          expanded: false
-        },
-        {
-          title: 'Menu Level 1.2',
-          subMenu: [{
-            title: 'Menu Level 1.2.1',
-            disabled: true,
-            selected: false,
-            expanded: false
-          }]
-        }
-      ]
-    }];
-
-  constructor() {
+  getMenuItems() {
+    return menuItems;
   }
 
-  getMenuItems() {
-    return this.staticMenuItems;
+  selectMenuItem(router, items:Array<any>, currentPath:string) {
+    let currentMenu;
+
+    let assignCurrent = (menu) => (menu.selected ? currentMenu = menu : null);
+
+    items.forEach((menu: any) => {
+
+      menu.selected = this._isCurrent(router, this._generateRoute(router, [menu.component]));
+      menu.expanded = menu.expanded || menu.selected;
+      assignCurrent(menu);
+
+      if (menu.subMenu) {
+        menu.subMenu.forEach((subMenu) => {
+          let route = this._generateRoute(router, [menu.component, subMenu.component]);
+          subMenu.selected = !subMenu.disabled && this._isCurrent(router, route) && this._resolvePath(route, '') == currentPath;
+          assignCurrent(menu);
+        });
+      }
+    });
+    return currentMenu;
+  }
+
+  private _isCurrent(router, route) {
+    return route ? router.isRouteActive(route) : false;
+  }
+
+  private _generateRoute(router, instructions) {
+    return instructions.filter(i => typeof i !== 'undefined').length > 0 ? router.generate(instructions) : null;
+  }
+
+  private _resolvePath(instruction, collected) {
+    if (instruction !== null) {
+      collected += instruction.urlPath + '/';
+      return this._resolvePath(instruction.child, collected)
+    } else {
+      return collected.slice(0, -1);
+    }
   }
 }
