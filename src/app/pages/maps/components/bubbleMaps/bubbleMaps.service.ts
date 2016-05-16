@@ -1,211 +1,10 @@
 import {Injectable} from '@angular/core';
-import {layoutColors} from "../../../../theme/theme.constants";
+import {layoutColors, layoutPaths} from "../../../../theme/theme.constants";
 
 @Injectable()
 export class BubbleMapsService {
 
-  theme = {
-
-    themeName: "blur",
-
-    AmChart: {
-      color: layoutColors.defaultText,
-      backgroundColor: "#FFFFFF"
-    },
-
-    AmCoordinateChart: {
-      colors: [layoutColors.primary, layoutColors.danger, layoutColors.warning, layoutColors.success, layoutColors.info, layoutColors.default, layoutColors.primaryDark, layoutColors.warningLight, layoutColors.successDark, layoutColors.successLight, layoutColors.successBg]
-    },
-
-    AmStockChart: {
-      colors: [layoutColors.primary, layoutColors.danger, layoutColors.warning, layoutColors.success, layoutColors.info, layoutColors.default, layoutColors.primaryDark, layoutColors.warningLight, layoutColors.successDark, layoutColors.successLight, layoutColors.successBg]
-    },
-
-    AmSlicedChart: {
-      colors: [layoutColors.primary, layoutColors.danger, layoutColors.warning, layoutColors.success, layoutColors.info, layoutColors.default, layoutColors.primaryDark, layoutColors.warningLight, layoutColors.successDark, layoutColors.successLight, layoutColors.successBg],
-      labelTickColor: "#FFFFFF",
-      labelTickAlpha: 0.3
-    },
-
-    AmRectangularChart: {
-      zoomOutButtonColor: '#FFFFFF',
-      zoomOutButtonRollOverAlpha: 0.15,
-      zoomOutButtonImage: "lens.png"
-    },
-
-    AxisBase: {
-      axisColor: "#FFFFFF",
-      axisAlpha: 0.3,
-      gridAlpha: 0.1,
-      gridColor: "#FFFFFF"
-    },
-
-    ChartScrollbar: {
-      backgroundColor: "#FFFFFF",
-      backgroundAlpha: 0.12,
-      graphFillAlpha: 0.5,
-      graphLineAlpha: 0,
-      selectedBackgroundColor: "#FFFFFF",
-      selectedBackgroundAlpha: 0.4,
-      gridAlpha: 0.15
-    },
-
-    ChartCursor: {
-      cursorColor: layoutColors.primary,
-      color: "#FFFFFF",
-      cursorAlpha: 0.5
-    },
-
-    AmLegend: {
-      color: "#FFFFFF"
-    },
-
-    AmGraph: {
-      lineAlpha: 0.9
-    },
-    GaugeArrow: {
-      color: "#FFFFFF",
-      alpha: 0.8,
-      nailAlpha: 0,
-      innerRadius: "40%",
-      nailRadius: 15,
-      startWidth: 15,
-      borderAlpha: 0.8,
-      nailBorderAlpha: 0
-    },
-
-    GaugeAxis: {
-      tickColor: "#FFFFFF",
-      tickAlpha: 1,
-      tickLength: 15,
-      minorTickLength: 8,
-      axisThickness: 3,
-      axisColor: '#FFFFFF',
-      axisAlpha: 1,
-      bandAlpha: 0.8
-    },
-
-    TrendLine: {
-      lineColor: layoutColors.danger,
-      lineAlpha: 0.8
-    },
-
-    // ammap
-    AreasSettings: {
-      alpha: 0.8,
-      color: layoutColors.info,
-      colorSolid: layoutColors.primaryDark,
-      unlistedAreasAlpha: 0.4,
-      unlistedAreasColor: "#FFFFFF",
-      outlineColor: "#FFFFFF",
-      outlineAlpha: 0.5,
-      outlineThickness: 0.5,
-      rollOverColor: layoutColors.primary,
-      rollOverOutlineColor: "#FFFFFF",
-      selectedOutlineColor: "#FFFFFF",
-      selectedColor: "#f15135",
-      unlistedAreasOutlineColor: "#FFFFFF",
-      unlistedAreasOutlineAlpha: 0.5
-    },
-
-    LinesSettings: {
-      color: "#FFFFFF",
-      alpha: 0.8
-    },
-
-    ImagesSettings: {
-      alpha: 0.8,
-      labelColor: "#FFFFFF",
-      color: "#FFFFFF",
-      labelRollOverColor: layoutColors.primaryDark
-    },
-
-    ZoomControl: {
-      buttonFillAlpha: 0.8,
-      buttonIconColor: layoutColors.default,
-      buttonRollOverColor: layoutColors.danger,
-      buttonFillColor: layoutColors.primaryDark,
-      buttonBorderColor: layoutColors.primaryDark,
-      buttonBorderAlpha: 0,
-      buttonCornerRadius: 0,
-      gridColor: "#FFFFFF",
-      gridBackgroundColor: "#FFFFFF",
-      buttonIconAlpha: 0.6,
-      gridAlpha: 0.6,
-      buttonSize: 20
-    },
-
-    SmallMap: {
-      mapColor: "#000000",
-      rectangleColor: layoutColors.danger,
-      backgroundColor: "#FFFFFF",
-      backgroundAlpha: 0.7,
-      borderThickness: 1,
-      borderAlpha: 0.8
-    },
-
-    // the defaults below are set using CSS syntax, you can use any existing css property
-    // if you don't use Stock chart, you can delete lines below
-    PeriodSelector: {
-      color: "#FFFFFF"
-    },
-
-    PeriodButton: {
-      color: "#FFFFFF",
-      background: "transparent",
-      opacity: 0.7,
-      border: "1px solid rgba(0, 0, 0, .3)",
-      MozBorderRadius: "5px",
-      borderRadius: "5px",
-      margin: "1px",
-      outline: "none",
-      boxSizing: "border-box"
-    },
-
-    PeriodButtonSelected: {
-      color: "#FFFFFF",
-      backgroundColor: "#b9cdf5",
-      border: "1px solid rgba(0, 0, 0, .3)",
-      MozBorderRadius: "5px",
-      borderRadius: "5px",
-      margin: "1px",
-      outline: "none",
-      opacity: 1,
-      boxSizing: "border-box"
-    },
-
-    PeriodInputField: {
-      color: "#FFFFFF",
-      background: "transparent",
-      border: "1px solid rgba(0, 0, 0, .3)",
-      outline: "none"
-    },
-
-    DataSetSelector: {
-      color: "#FFFFFF",
-      selectedBackgroundColor: "#b9cdf5",
-      rollOverBackgroundColor: "#a8b0e4"
-    },
-
-    DataSetCompareList: {
-      color: "#FFFFFF",
-      lineHeight: "100%",
-      boxSizing: "initial",
-      webkitBoxSizing: "initial",
-      border: "1px solid rgba(0, 0, 0, .3)"
-    },
-
-    DataSetSelect: {
-      border: "1px solid rgba(0, 0, 0, .3)",
-      outline: "none"
-    }
-  };
-
-  getTheme() {
-    return this.theme;
-  }
-
-  getDataProvider(dataProvider) {
+  getData() {
 
     var latlong = {};
     latlong['AD'] = {'latitude': 42.5, 'longitude': 1.5};
@@ -637,6 +436,12 @@ export class BubbleMapsService {
       }
     }
 
+
+    let dataProvider = {
+      mapVar: AmCharts.maps.worldLow,
+      images: []
+    };
+
     var maxSquare = maxBulletSize * maxBulletSize * 2 * Math.PI;
     var minSquare = minBulletSize * minBulletSize * 2 * Math.PI;
 
@@ -651,6 +456,8 @@ export class BubbleMapsService {
       }
       var size = Math.sqrt(square / (Math.PI * 2));
       var id = dataItem.code;
+      
+      
 
       dataProvider.images.push({
         type: 'circle',
@@ -664,6 +471,28 @@ export class BubbleMapsService {
       });
     }
 
-    return dataProvider;
+    return {
+      type: 'map',
+      theme: 'blur',
+      titles: [
+        {text: 'Population of the World in 2011', size: 14},
+        {text: 'source: Gapminder', size: 11}
+      ],
+      dataProvider: dataProvider,
+
+      areasSettings: {
+        unlistedAreasColor: '#000000',
+        unlistedAreasAlpha: 0.1
+      },
+
+      imagesSettings: {
+        balloonText: '<span style="font-size:14px;"><b>[[title]]</b>: [[value]]</span>'
+      },
+
+      export: {
+        enabled: true
+      },
+      pathToImages: layoutPaths.images.amMap
+    };
   }
 }
