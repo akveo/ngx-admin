@@ -73,6 +73,7 @@ $card-header-font-size: 16px;
 
 .card-title {
   font-weight: $font-normal;
+  font-size: $card-header-font-size;
   text-transform: uppercase;
   opacity: 0.9;
 }

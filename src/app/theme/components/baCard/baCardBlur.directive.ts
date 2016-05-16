@@ -1,6 +1,7 @@
-import {Directive, ElementRef, HostListener} from '@angular/core';
-import {BaCardBlurHelper} from './baCardBlurHelper.service';
+import {Directive, ElementRef, HostListener, HostBinding} from '@angular/core';
+import {BaThemeConfigProvider} from '../../../theme';
 
+import {BaCardBlurHelper} from './baCardBlurHelper.service';
 import {BgMetrics} from './bgMetrics';
 
 @Directive({
@@ -8,17 +9,26 @@ import {BgMetrics} from './bgMetrics';
   providers: [BaCardBlurHelper]
 })
 export class BaCardBlur {
+
+  @HostBinding('class.card-blur') isEnabled:boolean = false;
+
   private _bodyBgSize:BgMetrics;
 
-  constructor(private _baCardBlurHelper:BaCardBlurHelper, private _el:ElementRef) {
-    this._getBodyImageSizesOnBgLoad();
-    this._recalculateCardStylesOnBgLoad();
+  constructor(private _baThemeConfigProvider:BaThemeConfigProvider, private _baCardBlurHelper:BaCardBlurHelper, private _el:ElementRef) {
+    if (this._isEnabled()) {
+      this._getBodyImageSizesOnBgLoad();
+      this._recalculateCardStylesOnBgLoad();
+
+      this.isEnabled = true;
+    }
   }
 
   @HostListener('window:resize')
   _onWindowResize():void {
-    this._bodyBgSize = this._baCardBlurHelper.getBodyBgImageSizes();
-    this._recalculateCardStyle();
+    if (this._isEnabled()) {
+      this._bodyBgSize = this._baCardBlurHelper.getBodyBgImageSizes();
+      this._recalculateCardStyle();
+    }
   }
 
   private _getBodyImageSizesOnBgLoad():void {
@@ -39,5 +49,9 @@ export class BaCardBlur {
     }
     this._el.nativeElement.style.backgroundSize = Math.round(this._bodyBgSize.width) + 'px ' + Math.round(this._bodyBgSize.height) + 'px';
     this._el.nativeElement.style.backgroundPosition = Math.floor(this._bodyBgSize.positionX) + 'px ' + Math.floor(this._bodyBgSize.positionY) + 'px';
+  }
+
+  private _isEnabled() {
+    return this._baThemeConfigProvider.get().theme.blur;
   }
 }

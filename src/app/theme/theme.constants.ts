@@ -1,12 +1,15 @@
 export const IMAGES_ROOT = 'assets/img/';
 
-export let shade = (color, weight) => {
-  return mix('#000000', color, weight);
-};
 
-export let tint = (color, weight) => {
-  return mix('#ffffff', color, weight);
-};
+export class colorHelper {
+  static shade = (color, weight) => {
+    return mix('#000000', color, weight);
+  };
+
+  static tint = (color, weight) => {
+    return mix('#ffffff', color, weight);
+  };
+}
 
 //SASS mix function
 export let mix = (color1, color2, weight) => {
@@ -14,13 +17,14 @@ export let mix = (color1, color2, weight) => {
   function d2h(d) {
     return d.toString(16);
   }
+
   // convert a hex value to decimal
   function h2d(h) {
     return parseInt(h, 16);
   }
 
   let result = "#";
-  for(let i = 1; i < 7; i += 2) {
+  for (let i = 1; i < 7; i += 2) {
     let color1Part = h2d(color1.substr(i, 2));
     let color2Part = h2d(color2.substr(i, 2));
     let resultPart = d2h(Math.floor(color2Part + (color1Part - color2Part) * (weight / 100.0)));
@@ -31,13 +35,13 @@ export let mix = (color1, color2, weight) => {
 
 export let hexToRgbA = (hex, alpha) => {
   var c;
-  if(/^#([A-Fa-f0-9]{3}){1,2}$/.test(hex)){
-    c= hex.substring(1).split('');
-    if(c.length== 3){
-      c= [c[0], c[0], c[1], c[1], c[2], c[2]];
+  if (/^#([A-Fa-f0-9]{3}){1,2}$/.test(hex)) {
+    c = hex.substring(1).split('');
+    if (c.length == 3) {
+      c = [c[0], c[0], c[1], c[1], c[2], c[2]];
     }
-    c= '0x'+c.join('');
-    return 'rgba('+[(c>>16)&255, (c>>8)&255, c&255].join(',')+',' + alpha + ')';
+    c = '0x' + c.join('');
+    return 'rgba(' + [(c >> 16) & 255, (c >> 8) & 255, c & 255].join(',') + ',' + alpha + ')';
   }
   throw new Error('Bad Hex');
 };
@@ -70,23 +74,23 @@ export const layoutColors = {
   warning: colorScheme.warning,
   danger: colorScheme.danger,
 
-  primaryLight: tint(colorScheme.primary, 30),
-  infoLight: tint(colorScheme.info, 30),
-  successLight: tint(colorScheme.success, 30),
-  warningLight: tint(colorScheme.warning, 30),
-  dangerLight: tint(colorScheme.danger, 30),
+  primaryLight: colorHelper.tint(colorScheme.primary, 30),
+  infoLight: colorHelper.tint(colorScheme.info, 30),
+  successLight: colorHelper.tint(colorScheme.success, 30),
+  warningLight: colorHelper.tint(colorScheme.warning, 30),
+  dangerLight: colorHelper.tint(colorScheme.danger, 30),
 
-  primaryDark: shade(colorScheme.primary, 15),
-  infoDark: shade(colorScheme.info, 15),
-  successDark: shade(colorScheme.success, 15),
-  warningDark: shade(colorScheme.warning, 15),
-  dangerDark: shade(colorScheme.danger, 15),
+  primaryDark: colorHelper.shade(colorScheme.primary, 15),
+  infoDark: colorHelper.shade(colorScheme.info, 15),
+  successDark: colorHelper.shade(colorScheme.success, 15),
+  warningDark: colorHelper.shade(colorScheme.warning, 15),
+  dangerDark: colorHelper.shade(colorScheme.danger, 15),
 
-  primaryBg: tint(colorScheme.primary, 20),
-  infoBg: tint(colorScheme.info, 20),
-  successBg: tint(colorScheme.success, 20),
-  warningBg: tint(colorScheme.warning, 20),
-  dangerBg: tint(colorScheme.danger, 20),
+  primaryBg: colorHelper.tint(colorScheme.primary, 20),
+  infoBg: colorHelper.tint(colorScheme.info, 20),
+  successBg: colorHelper.tint(colorScheme.success, 20),
+  warningBg: colorHelper.tint(colorScheme.warning, 20),
+  dangerBg: colorHelper.tint(colorScheme.danger, 20),
 
   default: '#ffffff',
   defaultText: '#666666',
@@ -99,16 +103,16 @@ export const layoutColors = {
     gossip: bgColorPalette.gossip,
     white: bgColorPalette.white,
 
-    blueStoneDark: shade(bgColorPalette.blueStone, 15),
-    surfieGreenDark: shade(bgColorPalette.surfieGreen, 15),
-    silverTreeDark: shade(bgColorPalette.silverTree, 15),
-    gossipDark: shade(bgColorPalette.gossip, 15),
-    whiteDark: shade(bgColorPalette.white, 5),
+    blueStoneDark: colorHelper.shade(bgColorPalette.blueStone, 15),
+    surfieGreenDark: colorHelper.shade(bgColorPalette.surfieGreen, 15),
+    silverTreeDark: colorHelper.shade(bgColorPalette.silverTree, 15),
+    gossipDark: colorHelper.shade(bgColorPalette.gossip, 15),
+    whiteDark: colorHelper.shade(bgColorPalette.white, 5),
   }
 };
 
 let _chartColors = [];
-let _colorsForChart = [ layoutColors.primary, layoutColors.danger, layoutColors.warning, layoutColors.success, layoutColors.info, layoutColors.default, layoutColors.primaryDark, layoutColors.successDark, layoutColors.warningLight, layoutColors.successLight, layoutColors.successBg];
+let _colorsForChart = [layoutColors.primary, layoutColors.danger, layoutColors.warning, layoutColors.success, layoutColors.info, layoutColors.default, layoutColors.primaryDark, layoutColors.successDark, layoutColors.warningLight, layoutColors.successLight, layoutColors.successBg];
 
 _colorsForChart.forEach((color) => {
   _chartColors.push({

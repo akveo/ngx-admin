@@ -2,7 +2,8 @@ import {Component, ViewEncapsulation} from '@angular/core';
 import {RouteConfig} from '@angular/router-deprecated';
 
 import {Pages} from './pages';
-import {AppState} from "./app.state";
+import {AppState} from './app.state';
+import {BaThemeConfigProvider} from './theme';
 import './app.loader.ts';
 
 /*
@@ -12,7 +13,7 @@ import './app.loader.ts';
 @Component({
   selector: 'app',
   pipes: [],
-  providers: [],
+  providers: [BaThemeConfigProvider],
   encapsulation: ViewEncapsulation.None,
   styles: [require('normalize.css'), require('./app.scss')],
   template: `
