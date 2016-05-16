@@ -69,6 +69,7 @@ $card-header-font-size: 16px;
   font-size: $card-header-font-size;
   $vertical-padding: ($card-title-height - $card-header-font-size) / 2;
   padding: $vertical-padding 22px;
+  background-color: $default;
 }
 
 .card-title {
