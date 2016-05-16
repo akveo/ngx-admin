@@ -1,0 +1,1 @@
+export * from './stripedTable.component';

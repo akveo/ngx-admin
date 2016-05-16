@@ -215,6 +215,8 @@ body.badmin-transparent {
       & > tr {
         & > th {
           border-bottom: none;
+          border-top: none;
+          padding: 8px;
         }
       }
     }
