@@ -3,7 +3,7 @@ $card-header-font-size: 16px;
 
 .card {
   border: none;
-  background-color: $card-bg;
+  background-color: $default;
   color: $default-text;
   position: relative;
   //transition: all 0.2s ease;
@@ -71,10 +71,6 @@ $card-header-font-size: 16px;
     border: none;
     color: $default-text;
   }
-}
-
-.card-white {
-  background-color: $card-bg;
 }
 
 .card-blur {

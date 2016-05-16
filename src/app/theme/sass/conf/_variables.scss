@@ -1,33 +1,7 @@
 $font-family: 'Roboto', sans-serif;
 
-$view-total: rgba(0, 0, 0, .4);
-
 $activelink: $primary;
 $hoverlink: $primary-dark;
-
-$default: #ffffff !default;
-
-$facebook-color: #3b5998;
-$twitter-color: #55acee;
-$google-color: #dd4b39;
-$linkedin-color: #0177B5;
-$github-color: #6b6b6b;
-$stackoverflow-color: #2F96E8;
-$dribble-color: #F26798;
-$behace-color: #0093FA;
-
-$card-bg: #f8f8f8;
-$card-bg-hover: #fff;
-
-$disabled: #bdbdbd;
-$disabled-bg: #e6e6e6;
-
-$default-text: #7b7b7b;
-$help-text: #949494;
-
-$border: #dddddd;
-$border-light: #eeeeee;
-$input-border: #cccccc;
 
 $resXXL: 1280px;
 $resXL: 1170px;
@@ -57,3 +31,12 @@ $font-light: 300;
 $font-normal: 400;
 $font-bold: 700;
 $font-ultraBold: 900;
+
+$facebook-color: #3b5998;
+$twitter-color: #55acee;
+$google-color: #dd4b39;
+$linkedin-color: #0177B5;
+$github-color: #6b6b6b;
+$stackoverflow-color: #2F96E8;
+$dribble-color: #F26798;
+$behace-color: #0093FA;

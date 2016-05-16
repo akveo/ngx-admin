@@ -44,7 +44,7 @@
 
 .traffic-legend {
   display: inline-block;
-  padding: 70px 0 0 0px;
+  padding: 70px 0 0 0;
   width: 160px;
 }
 
@@ -132,7 +132,7 @@
 }
 
 .chart-bg {
-  background-color: $view-total;
+  background-color: rgba(0, 0, 0, 0.35);
   position: absolute;
   border-radius: 100px;
   width: 180px;
