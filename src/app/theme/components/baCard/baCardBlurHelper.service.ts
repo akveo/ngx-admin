@@ -7,27 +7,10 @@ export class BaCardBlurHelper {
   private image:HTMLImageElement;
   private imageLoadSubject:Subject<void>;
 
-  constructor() {
+
+  public init() {
     this._genBgImage();
     this._genImageLoadSubject();
-  }
-
-  private _genBgImage():void {
-    this.image = new Image();
-    let computedStyle = getComputedStyle(document.body, ':before');
-    this.image.src = computedStyle.backgroundImage.replace(/url\((['"])?(.*?)\1\)/gi, '$2');
-  }
-
-  private _genImageLoadSubject():void {
-    this.imageLoadSubject = new Subject<void>();
-    this.image.onerror = () => {
-      this.imageLoadSubject.error();
-      this.imageLoadSubject.complete();
-    };
-    this.image.onload = () => {
-      this.imageLoadSubject.next(null);
-      this.imageLoadSubject.complete();
-    };
   }
 
   public bodyBgLoad():Subject<void> {
@@ -50,5 +33,23 @@ export class BaCardBlurHelper {
       finalHeight = (elemW * imgRatio);
     }
     return { width: finalWidth, height: finalHeight, positionX: (elemW - finalWidth)/2, positionY: (elemH - finalHeight)/2};
+  }
+
+  private _genBgImage():void {
+    this.image = new Image();
+    let computedStyle = getComputedStyle(document.body, ':before');
+    this.image.src = computedStyle.backgroundImage.replace(/url\((['"])?(.*?)\1\)/gi, '$2');
+  }
+
+  private _genImageLoadSubject():void {
+    this.imageLoadSubject = new Subject<void>();
+    this.image.onerror = () => {
+      this.imageLoadSubject.error();
+      this.imageLoadSubject.complete();
+    };
+    this.image.onload = () => {
+      this.imageLoadSubject.next(null);
+      this.imageLoadSubject.complete();
+    };
   }
 }
