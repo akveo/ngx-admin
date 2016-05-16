@@ -1,4 +1,5 @@
 import {Component, ViewEncapsulation} from '@angular/core';
+import {BaThemeConfigProvider} from '../../../theme';
 
 import {TodoService} from './todo.service';
 
@@ -11,37 +12,24 @@ import {TodoService} from './todo.service';
 })
 export class Todo {
 
-  public marks:Array<any>;
+  public transparent = this._baConfig.get().theme.blur;
+  public dashboardColors = this._baConfig.get().colors.dashboard;
+
   public todoList:Array<any>;
   public newTodoText:string = '';
 
-  constructor(private _todoService:TodoService) {
-    this.marks = this._todoService.getMarks();
+  constructor(private _baConfig:BaThemeConfigProvider, private _todoService:TodoService) {
     this.todoList = this._todoService.getTodoList();
+
+    this.todoList.forEach((item) => {
+      item.color = this._getRandomColor();
+    });
   }
 
   getNotDeleted() {
-    return this.todoList.filter((item:any) => {return !item.deleted})
-  }
-
-  getMarkColor(id) {
-    return this.marks.filter((item) => { return item.id === id;} )[0].color || '';
-  }
-
-  changeColor(todo) {
-    for (var i = 0; i < this.marks.length; ++i) {
-      if (this.marks[i].id === todo.markId) {
-        var next = (i + 1 !== this.marks.length) ? i + 1 : 0;
-        todo.markId = this.marks[next].id;
-        return false;
-      }
-    }
-  }
-
-  blurOnEnter(event, item) {
-    if (event.which === 13) {
-      item.edit = false;
-    }
+    return this.todoList.filter((item:any) => {
+      return !item.deleted
+    })
   }
 
   addToDoItem($event) {
@@ -50,10 +38,16 @@ export class Todo {
 
       this.todoList.unshift({
         text: this.newTodoText,
-        edit: false,
-        markId: 0
+        color: this._getRandomColor(),
       });
       this.newTodoText = '';
     }
+  }
+
+  private _getRandomColor() {
+    let colors = Object.keys(this.dashboardColors).map(key => this.dashboardColors[key]);
+
+    var i = Math.floor(Math.random() * (colors.length - 1));
+    return colors[i];
   }
 }

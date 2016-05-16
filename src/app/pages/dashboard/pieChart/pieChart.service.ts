@@ -1,33 +1,36 @@
 import {Injectable} from '@angular/core';
+import {BaThemeConfigProvider, colorHelper} from '../../../theme';
 
 @Injectable()
 export class PieChartService {
 
-   private _data = [
-    {
-      color: 'rgba(255,255,255,0.4)',
-      description: 'New Visits',
-      stats: '57,820',
-      icon: 'person',
-    }, {
-      color: 'rgba(255,255,255,0.4)',
-      description: 'Purchases',
-      stats: '$ 89,745',
-      icon: 'money',
-    }, {
-      color: 'rgba(255,255,255,0.4)',
-      description: 'Active Users',
-      stats: '178,391',
-      icon: 'face',
-    }, {
-      color: 'rgba(255,255,255,0.4)',
-      description: 'Returned',
-      stats: '32,592',
-      icon: 'refresh',
-    }
-  ];
+  constructor(private _baConfig:BaThemeConfigProvider) {
+  }
 
   getData() {
-    return this._data;
+    let pieColor = colorHelper.hexToRgbA(this._baConfig.get().colors.defaultText, 0.2);
+    return [
+      {
+        color: pieColor,
+        description: 'New Visits',
+        stats: '57,820',
+        icon: 'person',
+      }, {
+        color: pieColor,
+        description: 'Purchases',
+        stats: '$ 89,745',
+        icon: 'money',
+      }, {
+        color: pieColor,
+        description: 'Active Users',
+        stats: '178,391',
+        icon: 'face',
+      }, {
+        color: pieColor,
+        description: 'Returned',
+        stats: '32,592',
+        icon: 'refresh',
+      }
+    ];
   }
 }
