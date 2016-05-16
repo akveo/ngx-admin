@@ -1,13 +1,26 @@
 @import '../../../theme/sass/conf/conf';
 
-.chart-area {
-  width: 300px;
-  height: 300px;
-}
-
 .channels-block {
   width: 100%;
   position: relative;
+}
+
+.channels-block.transparent {
+  .traffic-chart canvas{
+    border: 10px solid rgba(0,0,0,0.35);
+    box-shadow: 0 0 5px 0 rgb(0, 0, 0) inset;
+    border-radius: 150px;
+  }
+
+  .chart-bg{
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    left: 60px;
+    top: 60px;
+    background-color: rgba(0,0,0,0.35);
+    border-radius: 100px;
+  }
 }
 
 .channels-info {
@@ -16,7 +29,6 @@
   margin-left: 70px;
   margin-top: -20px;
 }
-
 .small-container {
   .channels-info {
     display: none;
@@ -29,7 +41,7 @@
     font-size: 18px;
     opacity: 0.9;
   }
-  .channel-number {
+  .channel-number{
     display: inline-block;
     float: right;
   }
@@ -44,7 +56,7 @@
 
 .traffic-legend {
   display: inline-block;
-  padding: 70px 0 0 0;
+  padding: 70px 0 0 0px;
   width: 160px;
 }
 
@@ -75,10 +87,6 @@
   height: 300px;
   position: relative;
   float: left;
-  //canvas{
-  //  border: 10px solid rgba(0, 0, 0, 0.34902);
-  //  border-radius: 180px;
-  //}
 }
 
 .traffic-text {
@@ -109,79 +117,67 @@
   border-radius: 0;
   width: 100%;
   margin-bottom: 0;
-  background-color: rgba(0, 0, 0, 0.25);
-  .progress-bar {
+  background-color: $progress-background;
+  box-shadow: none;
+  .progress-bar{
     height: 4px;
-    background-color: white;
+    background-color: $progress-default;
+    box-shadow: none;
   }
 }
 
-.legend-color {
+.legend-color{
   width: 30px;
   height: 30px;
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.25);
+  box-shadow:0 2px 2px 0 rgba(0, 0, 0, 0.25);
   position: relative;
   top: 27px;
   border-radius: 15px;
   left: -45px;
 }
 
-.traffic-chart canvas {
-  border: 10px solid rgba(0, 0, 0, 0.0);
-  border-radius: 150px;
-}
-
-.chart-bg {
-  background-color: rgba(0, 0, 0, 0.35);
-  position: absolute;
-  border-radius: 100px;
-  width: 180px;
-  height: 180px;
-  left: 60px;
-  top: 60px;
-}
-
 @media (max-width: $resM) {
-  div.channels-info {
+  div.channels-info{
     display: block;
     width: calc(100% - 88px);
     margin-top: -65px;
     margin-bottom: 10px;
   }
-  .card.medium-card.traffic-panel {
+  .panel.medium-panel.traffic-panel{
     height: auto;
   }
-  .traffic-chart {
+  .traffic-chart{
     position: inherit;
     float: none;
     margin: 0 auto;
   }
-  .chart-bg {
+  .chart-bg{
     left: calc(50% - 90px);
   }
 }
 
-@media (max-width: 1465px) and (min-width: 1199px) {
-  .channels-info {
+@media (max-width: 1465px) and (min-width: 1199px){
+  .channels-info{
     display: none;
   }
-  .traffic-chart {
+  .traffic-chart{
     position: inherit;
     float: none;
     margin: 0 auto;
   }
-  .chart-bg {
+  .chart-bg{
     left: calc(50% - 90px);
   }
 }
 
-@media (max-width: 380px) {
 
-  .traffic-chart {
+@media (max-width: 380px){
+
+  .traffic-chart{
     width: 240px;
   }
 
-  .canvas-holder {
+  .canvas-holder{
     width: 240px;
     height: 240px;
   }
@@ -190,20 +186,11 @@
     top: 30px;
   }
 }
-
-@media (max-width: 320px) {
+@media (max-width: 320px){
   .chart-bg {
     left: 50px;
     top: 50px;
     width: 142px;
     height: 142px;
-  }
-}
-
-body.badmin-transparent {
-  .traffic-chart canvas {
-    border: 10px solid rgba(0, 0, 0, 0.35);
-    box-shadow: 0 0 5px 0 rgb(0, 0, 0) inset;
-    border-radius: 150px;
   }
 }

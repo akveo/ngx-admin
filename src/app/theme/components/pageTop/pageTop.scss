@@ -2,7 +2,7 @@
 @import '../../components/msgCenter/msgCenter';
 
 .page-top {
-  @include bg-translucent-dark(0.5);
+  background-color: $sidebar;
   position: fixed;
   z-index: 904;
   box-shadow: 2px 0px 3px rgba(0, 0, 0, 0.5);
@@ -12,16 +12,12 @@
   padding: 0 32px 0 40px;
 
   &.scrolled {
-    @include bg-translucent-dark(0.85);
-  }
-
-  .dropdown-toggle::after {
-    display: none;
+    background-color: rgba(black, 0.85)
   }
 }
 
 a.al-logo {
-  color: #ffffff;
+  color: $sidebar-text;
   display: block;
   font-size: 24px;
   font-family: $font-family;
@@ -29,11 +25,6 @@ a.al-logo {
   float: left;
   outline: none !important;
   line-height: 60px;
-  text-decoration: none;
-
-  &:hover {
-    color: $hoverlink;
-  }
 
   span {
     color: $primary;
@@ -67,7 +58,7 @@ a.al-logo {
 }
 
 a.refresh-data {
-  color: #ffffff;
+  color: $sidebar-text;
   font-size: 13px;
   text-decoration: none;
   font-weight: $font-normal;
@@ -86,7 +77,7 @@ a.collapse-menu-link {
   display: block;
   text-decoration: none;
   line-height: 42px;
-  color: #fff;
+  color: $sidebar-text;
   padding: 0;
   float: left;
   margin: 11px 0 0 25px;
@@ -119,7 +110,7 @@ a.collapse-menu-link {
 
 .search {
   text-shadow: none;
-  color: #fff;
+  color: $sidebar-text;
   font-size: 13px;
   line-height: 25px;
   transition: all 0.5s ease;
@@ -164,7 +155,7 @@ a.collapse-menu-link {
 }
 
 @media (max-width: $resXXS) {
-  .user-profile {
+  .user-profile{
     min-width: 136px;
   }
   a.refresh-data {
@@ -179,6 +170,7 @@ a.collapse-menu-link {
   }
 }
 
-.profile-toggle-link {
+.profile-toggle-link{
   cursor: pointer;
 }
+

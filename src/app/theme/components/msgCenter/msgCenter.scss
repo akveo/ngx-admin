@@ -29,7 +29,7 @@
       margin-left: 0;
     }
     & > a {
-      color: #ffffff;
+      color: $sidebar-text;
       text-decoration: none;
       font-size: 13px;
       position: relative;
@@ -37,7 +37,7 @@
         display: inline-block;
         min-width: 10px;
         padding: 2px 4px 2px 4px;
-        color: #ffffff;
+        color: $sidebar-text;
         vertical-align: baseline;
         white-space: nowrap;
         text-align: center;
@@ -113,20 +113,21 @@
   left: auto;
   right: -47px;
   top: 26px;
-  @include scrollbars(.4em, rgba(0, 0, 0, 0.5), #fff);
+  @include scrollbars(.4em, rgba(0,0,0,0.5), #fff);
   .header {
     padding: 10px 12px;
-    border-bottom: 1px solid $border-light;
+    border-bottom: 1px solid $default;
     font-size: 12px;
     strong {
       float: left;
+      color: $dropdown-text;
     }
     & > a {
       float: right;
       margin-left: 12px;
       text-decoration: none;
       &:hover {
-        color: $default-text;
+        color: $dropdown-text;
       }
     }
   }
@@ -135,11 +136,11 @@
     overflow: scroll;
     overflow-x: hidden;
     & > a {
-      border-top: 1px solid $border-light;
+      border-top: 1px solid $default;
       padding: 10px 12px;
       display: block;
       text-decoration: none;
-      color: $default-text;
+      color: $dropdown-text;
       font-size: 12px;
       &:first-child {
         border-top: none;
@@ -150,7 +151,7 @@
         img {
           width: 36px;
           height: 36px;
-          &.photo-msg-item {
+          &.photo-msg-item{
             border-radius: 18px;
           }
         }
@@ -193,14 +194,14 @@
     }
   }
   & > a {
-    border-top: 1px solid $border-light;
+    border-top: 1px solid $default;
     display: block;
     text-align: center;
     padding: 10px;
     font-size: 12px;
     text-decoration: none;
     &:hover {
-      color: $default-text;
+      color: $dropdown-text;
     }
   }
 
@@ -212,10 +213,10 @@
       text-align: left;
       border: none;
       text-decoration: none;
-      color: $default-text;
+      color: $dropdown-text;
       padding: 4px 16px 4px 20px;
       &.signout {
-        border-top: 1px solid $border-light;
+        border-top: 1px solid $default;
       }
       i {
         margin-right: 10px;
@@ -248,7 +249,7 @@
       width: 0;
       height: 0;
       border: 10px solid transparent;
-      border-bottom-color: #ffffff;
+      border-bottom-color: $default;
     }
   }
 }

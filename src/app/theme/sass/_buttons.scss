@@ -7,8 +7,6 @@ $hover: 24;
 .btn {
   border-radius: 5px;
   transition: all 0.1s ease;
-  padding: 0.344rem 1rem;
-  font-size: 0.9rem;
 }
 
 .btn:hover {
@@ -39,46 +37,27 @@ $hover: 24;
   }
 }
 
+@mixin openDropdownButton($color, $dark-color) {
+  @include styleButton($color, $color - $hover);
+  background-color: $dark-color;
+  border-color: $dark-color;
+}
+
 .open > .btn.dropdown-toggle {
   &.btn.btn-primary {
-    @include styleButton($primary, $primary - $hover);
-    background-color: $primary-dark;
-    border-color: $primary-dark;
-  }
-  &.btn-default {
-    @include styleButton(transparent, $default);
-    &:focus, &:active:hover, &.active:hover, &:hover {
-      background-color: rgba(0, 0, 0, 0.2);
-      color: $default;
-    }
+    @include openDropdownButton($primary, $primary-dark)
   }
   &.btn-success {
-    @include styleButton($success, $success - $hover);
+    @include openDropdownButton($success, $success-dark)
   }
   &.btn-info {
-    @include styleButton($info, $info - $hover);
+    @include openDropdownButton($info, $info-dark)
   }
   &.btn-warning {
-    @include styleButton($warning, $warning - $hover);
+    @include openDropdownButton($warning, $warning-dark)
   }
   &.btn-danger {
-    @include styleButton($danger, $danger - $hover);
-  }
-}
-
-.dropdown button.btn.btn-default.dropdown-toggle {
-  color: #fff;
-}
-
-.bootstrap-select {
-  .dropdown-toggle:focus {
-    outline: none !important;
-  }
-  button.btn-default:focus {
-    color: $default;
-  }
-  .btn {
-    transition: none;
+    @include openDropdownButton($danger, $danger-dark)
   }
 }
 
@@ -91,10 +70,11 @@ button.btn.btn-primary {
 
 button.btn.btn-default {
   border-width: 1px;
-  @include buttonColor(transparent, $default);
+  color: $default-text;
+  @include buttonColor(transparent, $border);
   &:active, &:target {
     background-color: rgba(0, 0, 0, 0.2);
-    color: $default;
+    color: $default-text;
   }
 }
 
@@ -126,12 +106,13 @@ button.btn.btn-danger {
   }
 }
 
+
 button.btn.btn-inverse {
   @include buttonColor($help-text, $help-text);
-  color: $default;
+  color: $label-text;
   &:active, &:target, &:hover {
     background-color: $help-text;
-    color: $default;
+    color: $label-text;
   }
 }
 
@@ -157,9 +138,6 @@ button.btn.btn-inverse {
 .btn-group {
   button.btn.btn-primary {
     @include buttonGroupColor($primary);
-  }
-  button.btn.btn-default {
-    @include buttonGroupColor($default);
   }
   button.btn.btn-danger {
     @include buttonGroupColor($danger);
@@ -277,22 +255,23 @@ button.progress-button {
   font-size: 16px;
 }
 
-.btn-group-xs>.btn, .btn-xs {
-  padding: 1px 5px;
-  font-size: 12px;
-  line-height: 1.5;
+.dropdown button.btn.btn-default.dropdown-toggle {
+  color: $default-text;
+  border: 1px solid $border;
+  background-color: transparent;
+  &:focus, &:active {
+    background-color: $default;
+  }
 }
 
-.btn-group-sm>.btn, .btn-sm {
-  padding: 5px 10px;
-  font-size: 12px;
-  line-height: 1.5;
-  border-radius: 3px;
-}
-
-.btn-group-lg>.btn, .btn-lg {
-  padding: 10px 16px;
-  font-size: 18px;
-  line-height: 1.3333333;
-  border-radius: 6px;
+.bootstrap-select {
+  .dropdown-toggle:focus {
+    outline: none !important;
+  }
+  button.btn-default:focus {
+    color: $default;
+  }
+  .btn {
+    transition: none;
+  }
 }

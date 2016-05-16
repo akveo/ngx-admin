@@ -60,7 +60,7 @@ export const bgColorPalette = {
   surfieGreen: '#0e8174',
   silverTree: '#6eba8c',
   gossip: '#b9f2a1',
-  white: '#ffffff',
+  white: '#10c4b5',
 };
 
 export const layoutColors = {
@@ -89,7 +89,8 @@ export const layoutColors = {
   dangerBg: tint(colorScheme.danger, 20),
 
   default: '#ffffff',
-  defaultText: '#ffffff',
+  defaultText: '#666666',
+  border: '#dddddd',
 
   bgColorPalette: {
     blueStone: bgColorPalette.blueStone,

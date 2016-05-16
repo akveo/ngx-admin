@@ -86,8 +86,6 @@
   border-top-left-radius: 0;
   border-bottom-right-radius: 5px;
   > li > a {
-    margin-left: -1px;
-
     &:hover, &:focus {
     }
   }
@@ -119,21 +117,21 @@
 .tab-content {
   padding: 15px 15px 5px 15px;
   background: transparent;
-  color: $default;
+  color: $default-text;
   .tab-pane p {
-    color: $default;
+    color: $default-text;
   }
 }
 
 .nav.nav-tabs {
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
-  border-bottom: 1px solid rgba(0, 0, 0, .01);
-  background-color: rgba(0, 0, 0, .2);
+  border-bottom: 1px solid transparent;
+  background-color: $primary-light;
   a {
-    color: $default;
+    color: $label-text;
     &:hover {
-      color: $default;
+      color: $label-text;
     }
   }
   & > li > a {
@@ -141,22 +139,42 @@
     margin-bottom: 0;
     border-radius: 0;
     border: none;
-    color: $default;
     &:hover {
       border: none;
-      color: $default;
-      background-color: rgba(0, 0, 0, .1);
+      background-color: $primary-light;
     }
   }
   & > li.active > a {
-    color: $default;
-    background-color: rgba(0, 0, 0, .25);
+    color: $label-text;
+    background-color: $primary;
   }
   > li:first-of-type a {
     border-top-left-radius: 5px;
   }
   .dropdown-menu > li > a {
-    color: $default-text;
+    color: $dropdown-text;
+    &:hover {
+      color: $dropdown-text;
+    }
+  }
+}
+
+.blur-theme {
+  .nav.nav-tabs {
+    background-color: rgba(0, 0, 0, 0.2);
+    a {
+      color: $default-text;
+      &:hover {
+        color: $default-text;
+      }
+    }
+    & > li > a:hover {
+      background-color: rgba(0, 0, 0, 0.2);
+    }
+    & > li.active > a {
+      color: $default-text;
+      background-color: rgba(0, 0, 0, 0.25);
+    }
   }
 }
 
@@ -168,26 +186,26 @@
   border: none;
 }
 
-.card-primary, .card-info, .card-success, .card-warning, .card-danger {
-  .card-header {
-    border-radius: 4px;
+.accordion-panel  {
+  .panel-heading {
+    border-radius: 3px;
   }
 
-  &.card-open .card-header {
+  &.panel-open .panel-heading {
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
   }
 
-  &:not(.card-open) .card-header {
+  &:not(.panel-open) .panel-heading {
     transition-delay: .3s;
   }
 
-  > .card-header + .card-collapse > .card-body {
+  > .panel-heading + .panel-collapse > .panel-body {
     border-top: none;
   }
 }
 
-.accordion-card .card-header {
+.accordion-panel .panel-heading {
   padding: 0;
   .accordion-toggle {
     display: inline-block;
@@ -195,4 +213,3 @@
     padding: 14px 22px;
   }
 }
-

@@ -1,6 +1,6 @@
 $left-space: 180px;
 
-@include scrollbars(.5em, #d9d9d9, rgba(0, 0, 0, 0));
+@include scrollbars(.5em, #d9d9d9, rgba(0,0,0,0));
 
 html {
   position: relative;
@@ -14,16 +14,37 @@ html, body {
 
 body {
   font: 14px/16px $font-family;
-  color: white;
-  @include main-background();
+  color: $default-text;
+  background-color: $body-bg;
+  &.blur-theme {
+    @include main-background();
+  }
 }
 
-@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  html {
+body.mobile{
+  background: none;
+  .body-bg{
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-attachment: inherit;
+    background-color: $body-bg;
+  }
+  &.blur-theme {
+    @include main-background();
+  }
+}
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none)
+{
+  html{
     overflow: hidden;
     height: 100%;
   }
-  body {
+  body{
     overflow: auto;
     height: 100%;
   }
@@ -34,10 +55,9 @@ a {
   outline: 0 !important;
 }
 
-.body-bg {
+.body-bg{
   display: none;
 }
-
 .al-header {
   display: block;
   height: 49px;
@@ -62,7 +82,7 @@ a {
   display: block;
   bottom: 0;
   font-size: 13px;
-  color: #ffffff;
+  color: $default-text;
   transition: padding-left 0.5s ease;
 }
 
@@ -80,14 +100,14 @@ a {
   margin-right: 12px;
   i {
     margin: 0 4px;
-    color: $warning;
+    color: $danger;
     font-size: 12px;
   }
   a {
     margin-left: 4px;
-    color: #ffffff;
+    color: $default-text;
     &:hover {
-      color: $warning;
+      color: $danger;
     }
   }
 }
@@ -104,7 +124,7 @@ a {
     i {
       cursor: pointer;
       transition: all 0.1s ease;
-      color: #ffffff;
+      color: white;
       padding: 6px;
       box-sizing: content-box;
       font-size: 16px;
@@ -193,20 +213,12 @@ a {
 }
 
 .full-invisible {
-  visibility: hidden !important;
+  visibility: hidden!important;
   * {
-    visibility: hidden !important;
+    visibility: hidden!important;
   }
 }
 
-.text-right {
-  text-align: right;
-}
-
-.text-left {
-  text-align: left;
-}
-
-.text-center {
-  text-align: center;
+.irs-grid-text {
+  color: $default-text;
 }

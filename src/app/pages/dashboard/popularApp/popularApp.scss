@@ -1,30 +1,36 @@
 @import "../../../theme/sass/conf/conf";
 
-.card.popular-app {
-  &>.card-body {
+.panel.popular-app {
+  &>.panel-body {
     padding: 0;
   }
 
-  .popular-app-img {
+  .popular-app-img-container {
     position: relative;
-    background: rgba(0, 0, 0, 0.5);
     padding: 30px 0;
     height: 260px;
     border-top-right-radius: 5px;
     border-top-left-radius: 5px;
-    img {
-      max-width: 60%;
-      max-height: 70%;
+    .popular-app-img {
+      width: 260px;
       position: absolute;
       transform: translateY(-50%) translate(-50%);
       top: 50%;
       left: 50%;
+
+      .logo-text {
+        display: inline-block;
+        margin: 10px;
+        font-size: 26px;
+        color: $default-text;
+      }
     }
   }
   .popular-app-cost {
     font-size: 20px;
     padding: 20px 22px;
-    border-bottom: 1px solid $border;
+    border-bottom: 1px solid $border-light;
+    border-top: 1px solid $border-light;
   }
   .popular-app-info {
     padding: 20px 22px;
@@ -42,13 +48,6 @@
   }
 }
 
-body.badmin-transparent {
-  .popular-app-img {
-    border-top-right-radius: 5px;
-    border-top-left-radius: 5px;
-  }
-  .popular-app-cost {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
-    box-shadow: 0px 1px 0px 0px rgba(255, 255, 255, 0.12);
-  }
+.blur-theme .panel.popular-app .popular-app-img-container {
+  background: rgba(0, 0, 0, 0.5);
 }

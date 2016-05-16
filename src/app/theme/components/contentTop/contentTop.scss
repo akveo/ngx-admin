@@ -7,7 +7,7 @@
 
 h1.al-title {
   font-weight: $font-bold;
-  color: #ffffff;
+  color: $default-text;
   float: left;
   width: auto;
   margin: 0;
@@ -19,14 +19,14 @@ h1.al-title {
 
 .al-breadcrumb {
   background: none;
-  color: #ffffff;
+  color: $default-text;
   padding: 0;
   margin: 0;
   float: right;
   padding-top: 11px;
   li {
     font-size: 18px;
-    font-weight: $font-light;
+    font-weight: $font-normal;
   }
 }
 

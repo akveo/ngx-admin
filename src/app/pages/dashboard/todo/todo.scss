@@ -1,6 +1,5 @@
 @import '../../../theme/sass/conf/conf';
 
-
 input.task-todo {
   margin-bottom: 8px;
 }
@@ -25,11 +24,11 @@ ul.todo-list {
       right: 12px;
       font-size: 32px;
       transition: color 0.2s;
-      color: $input-border;
+      color: rgba($input-border, 0.5);
       visibility: hidden;
       line-height: 42px;
       &:hover {
-        color: $danger-dark;
+        color: $input-border;
       }
     }
     &:hover {
@@ -40,32 +39,11 @@ ul.todo-list {
 
     &.checked {
       .todo-text {
-        color: #BFBFBF;
+        color: $default-text;
       }
       &:before {
         background: $input-border !important;
       }
-    }
-
-    @mixin mark($color) {
-      i.mark {
-        background: $color;
-      }
-    }
-    &.primary {
-      @include mark($primary);
-    }
-    &.danger {
-      @include mark($danger);
-    }
-    &.success {
-      @include mark($success);
-    }
-    &.info {
-      @include mark($info);
-    }
-    &.warning {
-      @include mark($warning);
     }
 
     i.mark {
@@ -102,9 +80,6 @@ ul.todo-list {
 }
 
 label.todo-checkbox {
-  padding-left: 0;
-  margin-bottom: 0;
-
   width: 100%;
   padding-right: 25px;
   min-height: 16px;
@@ -124,8 +99,8 @@ label.todo-checkbox {
   display: none;
 }
 
-body.badmin-transparent {
-  .todo-panel.card {
+.task-todo-container.transparent {
+  .todo-panel.panel {
     color: white;
     opacity: 0.9;
   }
@@ -175,11 +150,6 @@ body.badmin-transparent {
           -webkit-filter: blur(3px);
         }
       }
-      &.primary, &.danger,&.success, &.info, &.warning {
-        i.mark {
-          background-color: transparent;
-        }
-      }
       i.remove-todo {
         color: white;
         opacity: 0.4;
@@ -190,12 +160,12 @@ body.badmin-transparent {
       }
       i.mark {
         min-width: 40px;
-        background-color: transparent;
+        display: none;
       }
       label.todo-checkbox > span {
         &:before {
           position: absolute;
-          color: white;
+          color: $default-text;
           content: '\f10c';
           float: none;
           margin-right: 6px;
@@ -205,11 +175,7 @@ body.badmin-transparent {
       &.checked {
         label.todo-checkbox > span {
           &:before {
-            margin-right: 0;
-            position: absolute;
-            content: '';
-            background-size: contain;
-            background: url($images-root + "app/todo/check-icon.png") no-repeat;
+            content: '\f00c';
           }
         }
       }

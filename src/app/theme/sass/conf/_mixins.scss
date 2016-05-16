@@ -41,7 +41,6 @@
 @mixin bg-nr($relativeUrl) {
   background: url($images-root + $relativeUrl) no-repeat 0 0;
 }
-
 @mixin bg($relativeUrl) {
   background: url($images-root + $relativeUrl);
 }
@@ -94,37 +93,25 @@
 
 @mixin overrideColors($color) {
   p,
-  h1, h2, h3, h4, h5, h6,
+  h1,h2,h3,h4,h5,h6,
   .pie-chart-item,
-  .card-header > .dropdown .dropdown-toggle,
-  .card-title,
+  .panel-heading>.dropdown .dropdown-toggle,
+  .panel-title,
   ol.blur span,
   ul.blur,
   .popular-app-cost,
   .popular-app-info,
-  .card-title > .small,
-  .card-title > .small > a,
-  .card-title > a,
-  .card-title > small,
-  .card-title > small > a,
+  .panel-title>.small,
+  .panel-title>.small>a,
+  .panel-title>a,
+  .panel-title>small,
+  .panel-title>small>a,
   .traffic-text span,
   .form-group label,
-  .help-block {
+  .help-block{
     color: $color;
   }
   .feed-message .message-time, .text-muted {
     color: darken($color, 20);
-  }
-}
-
-@mixin overrideCardBg($color, $borderColor, $dropdownColor) {
-  .card.card-blur, .card.card-blur:hover {
-    border: none;
-    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.25);
-    background-color: $color;
-  }
-
-  .progress {
-    background: $color;
   }
 }

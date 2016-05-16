@@ -1,23 +1,19 @@
 @import '../../../theme/sass/conf/conf';
 
-.feed-panel .card-body {
+.feed-panel .panel-body{
   padding: 10px 0;
 }
 
 .feed-message {
-  $text-message-color: $default;
+  $text-message-color: $default-text;
   $video-message-color: $danger;
   $image-message-color: $success;
   $geo-message-color: $primary;
-  padding: 10px 0;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
-  box-shadow: 0px 1px 0px 0px rgba(255, 255, 255, 0.12);
+  padding: 10px 0 ;
+  border-bottom: 1px solid rgba(0,0,0,0.12);
+  box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.12);
   &:first-child {
     padding-top: 0;
-  }
-
-  .hidden {
-    display: none!important;
   }
 
   .message-icon {
@@ -86,7 +82,7 @@
     border-radius: 5px;
     margin: 0 0 0 80px;
     padding: 5px 20px;
-    color: #fff;
+    color: $default-text;
     width: 280px;
     height: 70px;
 
@@ -142,7 +138,7 @@
       padding-top: 10px;
       width: 100%;
       height: auto;
-      float: none !important;
+      float: none!important;
     }
   }
 
@@ -162,58 +158,65 @@
   }
 }
 
-.line-clamp {
-  display: block;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  position: relative;
 
-  line-height: 1.2;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  padding: 0 !important;
+
+.line-clamp
+{
+  display            : block;
+  display            : -webkit-box;
+  -webkit-box-orient : vertical;
+  position           : relative;
+
+  line-height        : 1.2;
+  overflow           : hidden;
+  text-overflow      : ellipsis;
+  padding            : 0 !important;
 }
 
-@media screen and (-webkit-min-device-pixel-ratio: 0) {
-  .line-clamp:after {
-    content: '...';
-    text-align: right;
-    bottom: 0;
-    right: 0;
-    width: 25%;
-    display: block;
-    position: absolute;
-    height: calc(1em * 1.2);
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  .line-clamp:after
+  {
+    content    : '...';
+    text-align : right;
+    bottom     : 0;
+    right      : 0;
+    width      : 25%;
+    display    : block;
+    position   : absolute;
+    height     : calc(1em * 1.2);
   }
 }
 
-@supports (-webkit-line-clamp: 1) {
-  .line-clamp:after {
-    display: none !important;
+
+@supports (-webkit-line-clamp: 1)
+{
+  .line-clamp:after
+  {
+    display : none !important;
   }
 }
-
-.line-clamp-1 {
-  -webkit-line-clamp: 1;
-  height: calc(1em * 1.2 * 1);
+.line-clamp-1
+{
+  -webkit-line-clamp : 1;
+  height             : calc(1em * 1.2 * 1);
 }
-
-.line-clamp-2 {
-  -webkit-line-clamp: 2;
-  height: calc(1em * 1.2 * 2);
+.line-clamp-2
+{
+  -webkit-line-clamp : 2;
+  height             : calc(1em * 1.2 * 2);
 }
-
-.line-clamp-3 {
-  -webkit-line-clamp: 3;
-  height: calc(1em * 1.2 * 3);
+.line-clamp-3
+{
+  -webkit-line-clamp : 3;
+  height             : calc(1em * 1.2 * 3);
 }
-
-.line-clamp-4 {
-  -webkit-line-clamp: 4;
-  height: calc(1em * 1.2 * 4);
+.line-clamp-4
+{
+  -webkit-line-clamp : 4;
+  height             : calc(1em * 1.2 * 4);
 }
-
-.line-clamp-5 {
-  -webkit-line-clamp: 5;
-  height: calc(1em * 1.2 * 5);
+.line-clamp-5
+{
+  -webkit-line-clamp : 5;
+  height             : calc(1em * 1.2 * 5);
 }

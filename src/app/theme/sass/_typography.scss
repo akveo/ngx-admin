@@ -40,6 +40,7 @@ h5 {
 
 .typography-document-samples {
 
+
   p {
     margin: 0;
   }
@@ -138,11 +139,11 @@ h5 {
   }
 
   .yellow-text p {
-    color: $warning-bg;
+    color: $warning;
   }
 
   .red-text p {
-    color: $danger-bg;
+    color: $danger;
   }
 
   .links {
@@ -214,7 +215,7 @@ h5 {
       line-height: 14px;
       position: relative;
       span {
-        color: $default;
+        color: $default-text;
         display: block;
       }
       ol {
@@ -263,7 +264,7 @@ h5 {
 }
 
 .columns-section {
-  background-color: white;
+  background-color: $default;
 }
 
 p {
@@ -349,16 +350,15 @@ a.learn-more {
   padding: 85px 90px 60px;
   display: inline-block;
   margin: 67px auto;
-  background: #fff;
+  background: $default;
   min-width: 432px;
   overflow: hidden;
   background: rgba(0, 0, 0, 0.75);
-  color: #ffffff;
 
   h1 {
     font-weight: $font-bold;
     width: 100%;
-    color: #ffffff;
+    color: $label-text;
     margin-bottom: 10px;
   }
   p {
@@ -429,6 +429,7 @@ a.learn-more {
     padding: 0;
   }
 }
+
 
 @media screen and (min-width: 1620px) {
   .col-xlg-1 {

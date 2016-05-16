@@ -2,16 +2,14 @@ $card-title-height: 44px;
 $card-header-font-size: 16px;
 
 .card {
-  border: none;
-  background-color: $default;
+  @include scrollbars(.4em, rgba(0, 0, 0, 0.6), rgba(255, 255, 255, 0.7));
   color: $default-text;
+  background-color: $default;
+  border: none;
+  border-radius: 5px;
   position: relative;
-  //transition: all 0.2s ease;
   margin-bottom: 24px;
-  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.25);
-  /*&:hover {
-    background: $card-bg-hover;
-  }*/
+  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.25);
   &.animated {
     animation-duration: 0.5s;
   }
@@ -42,46 +40,46 @@ $card-header-font-size: 16px;
   }
 }
 
-.card > .card-body {
-  padding: 15px 22px;
-  height: 100%;
+.card.card-blur {
+  $blurredBgUrl: $images-root + 'blur-bg-blurred.jpg';
+  background: url($blurredBgUrl);
+  transition: none;
+  background-attachment: fixed;
+}
+
+.card {
+  > .card-body {
+    padding: 15px 22px;
+    height: 100%;
+  }
+  > .card-header {
+    color: $default-text;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  > .card-footer {
+    color: $default-text;
+  }
 }
 
 .card-header, .card-footer {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.12);
   height: $card-title-height;
   font-size: $card-header-font-size;
-
   $vertical-padding: ($card-title-height - $card-header-font-size) / 2;
   padding: $vertical-padding 22px;
-
 }
 
 .card-title {
   font-weight: $font-normal;
   text-transform: uppercase;
   opacity: 0.9;
-  font-size: $card-header-font-size;
-  //text-transform: uppercase;
 }
 
-.card-white, .card-blur {
-  background-size: cover;
-  > .card-header {
-    background-color: transparent;
-    border: none;
-    color: $default-text;
-  }
-}
-
-.card-blur {
-  $blurredBgUrl: $images-root + 'blur-bg-blurred.jpg';
-  background: url($blurredBgUrl);
-  transition: none;
-}
 
 .card-primary {
   > .card-header {
-    color: $primary;
     background-color: $primary-bg;
     border-color: $primary-bg;
   }
@@ -89,7 +87,6 @@ $card-header-font-size: 16px;
 
 .card-success {
   > .card-header {
-    color: $success;
     background-color: $success-bg;
     border-color: $success-bg;
   }
@@ -97,7 +94,6 @@ $card-header-font-size: 16px;
 
 .card-info {
   > .card-header {
-    color: $info;
     background-color: $info-bg;
     border-color: $info-bg;
   }
@@ -105,7 +101,6 @@ $card-header-font-size: 16px;
 
 .card-warning {
   > .card-header {
-    color: $warning;
     background-color: $warning-bg;
     border-color: $warning-bg;
   }
@@ -113,27 +108,19 @@ $card-header-font-size: 16px;
 
 .card-danger {
   > .card-header {
-    color: $danger;
     background-color: $danger-bg;
     border-color: $danger-bg;
   }
 }
 
-.card-primary, .card-success, .card-info, .card-warning, .card-danger {
-  .card-header {
-    color: rgba(255, 255, 255, 0.8);
-  }
-}
+//.bootstrap-card {
+//  background-color: $bootstrap-card-bg;
+//  .card-body{
+//    color: $bootstrap-card-text;
+//  }
+//}
 
-.card.bootstrap-card {
-  .card-body, .card-header {
-    p, div, span {
-      color: $default-text;
-    }
-  }
-}
-
-.accordion-card.card.bootstrap-card {
+.accordion-card.card {
   &.card-primary,
   &.card-success,
   &.card-info,
@@ -174,8 +161,3 @@ $card-header-font-size: 16px;
 .light-text {
   font-weight: $font-light;
 }
-
-/*
-.card-group .card {
-  border-radius: 0;
-}*/

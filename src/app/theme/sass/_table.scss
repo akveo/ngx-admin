@@ -3,7 +3,7 @@
   & > thead {
     & > tr {
       & > th {
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        border-bottom: 1px solid $border-light;
         white-space: nowrap;
         &:first-child {
           text-align: center;
@@ -22,7 +22,7 @@
       & > td {
         padding: 0px 8px;
         line-height: 35px;
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        border-top: 1px solid $border-light;
         &:first-child {
           text-align: center;
         }
@@ -30,12 +30,6 @@
           padding-right: 16px !important;
         }
       }
-    }
-  }
-  &.table-bordered {
-    border-color: rgba(255, 255, 255, 0.2) !important;
-    th, td {
-      border-color: rgba(255, 255, 255, 0.2) !important;
     }
   }
 }
@@ -148,7 +142,7 @@ tr.editable-row {
 }
 
 a.email-link {
-  color: $default;
+  color: $default-text;
   &:hover {
     color: $danger;
   }
@@ -209,64 +203,77 @@ input.search-input {
   margin-left: 0;
 }
 
-body.badmin-transparent {
-  .table {
-    & > thead {
-      & > tr {
-        & > th {
-          border-bottom: none;
-          border-top: none;
-          padding: 8px;
-        }
-      }
-    }
-    & > tbody {
-      & > tr.no-top-border {
-        &:first-child > td {
-          border-top: none;
-        }
+.table {
+  & > thead {
+    & > tr {
+      & > th {
+        border-bottom: none;
       }
     }
   }
-
-  .black-muted-bg {
-    background-color: rgba(0, 0, 0, 0.1);
-  }
-
-  .table-hover {
-    tr:hover {
-      background-color: rgba(0, 0, 0, 0.1);
+  & > tbody {
+    & > tr.no-top-border {
+      &:first-child > td {
+        border-top: none;
+      }
     }
   }
+}
 
-  .table-striped > tbody > tr:nth-of-type(odd) {
+.black-muted-bg {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.table-hover {
+  > tbody > tr:hover {
     background-color: rgba(0, 0, 0, 0.1);
   }
-  .table > tbody > tr.primary > td {
-    background-color: rgba($primary, 0.7);
-    border: none;
-  }
-  .table > tbody > tr.success > td {
-    background-color: rgba($success, 0.7);
-    border: none;
-  }
-  .table > tbody > tr.warning > td {
-    background-color: rgba($warning, 0.7);
-    border: none;
-  }
-  .table > tbody > tr.danger > td {
-    background-color: rgba($danger, 0.7);
-    border: none;
-  }
-  .table > tbody > tr.info > td {
-    background-color: rgba($info, 0.7);
-    border: none;
-  }
+}
 
-  .editable-click, a.editable-click {
-    color: $default;
-    border-bottom: dashed 1px $default;
+.table-bordered,
+.table-bordered > thead > tr > th,
+.table-bordered > tbody > tr > th,
+.table-bordered > tfoot > tr > th,
+.table-bordered > thead > tr > td,
+.table-bordered > tbody > tr > td,
+.table-bordered > tfoot > tr > td{
+  border: 1px solid $border-light;
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+@mixin color-row($color) {
+  background-color: rgba($color, 0.7);
+  color: $label-text;
+  border: none;
+  a.email-link {
+    color: $label-text;
+    &:hover {
+      color: $danger;
+    }
   }
+}
+.table > tbody > tr.primary > td {
+  @include color-row($primary);
+}
+.table > tbody > tr.success > td {
+  @include color-row($success);
+}
+.table > tbody > tr.warning > td {
+  @include color-row($warning);
+}
+.table > tbody > tr.danger > td {
+  @include color-row($danger);
+}
+.table > tbody > tr.info > td {
+  @include color-row($info);
+}
+
+.editable-click, a.editable-click {
+  color: $default-text;
+  border-bottom: dashed 1px $border;
 }
 
 th {
@@ -284,21 +291,21 @@ th {
 .table-striped > tbody > tr > td {
   border: none;
 }
-
 .pagination > li > a,
-.pagination > li > span {
-  color: $default;
-  border-color: $default;
+.pagination > li > span{
+  color: $default-text;
+  border-color: $border;
 }
 
+
 .pagination > li:first-of-type > a,
-.pagination > li:first-of-type > span {
+.pagination > li:first-of-type > span{
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
 }
 
 .pagination > li:last-of-type > a,
-.pagination > li:last-of-type > span {
+.pagination > li:last-of-type > span{
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
 }
@@ -310,17 +317,21 @@ th {
 .pagination > .active > a:focus,
 .pagination > .active > span:focus {
   background-color: $primary;
-  border-color: $default;
+  border-color: $border;
 }
 
 .pagination > li > a:hover,
 .pagination > li > span:hover,
 .pagination > li > a:focus,
-.pagination > li > span:focus {
-  background-color: rgba(0, 0, 0, .2);
-  color: $default;
+.pagination > li > span:focus{
+  background-color: rgba(0,0,0,.2);
+  color: $default-text;
 }
 
 .editable-buttons .btn-with-icon i {
   margin-right: 0;
+}
+
+.table-responsive {
+  margin-top: 10px;
 }
