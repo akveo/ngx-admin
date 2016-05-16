@@ -348,22 +348,42 @@ label.custom-input-danger {
     color: $label-text;
   }
 }
+.form-control-feedback {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2;
+  display: block;
+  width: 34px;
+  height: 34px;
+  line-height: 34px;
+  text-align: center;
+  pointer-events: none;
+}
 
 .has-success {
   @include validationState($success-bg, $success);
+  position: relative;
 }
 
 .has-warning {
   @include validationState($warning-bg, $warning);
+  position: relative;
 }
 
 .has-error {
   @include validationState($danger-bg, $danger);
+  position: relative;
 }
 
-.has-feedback label ~ .form-control-feedback {
-  top: 21px;
-  font-size: 18px;
+.has-feedback {
+  .form-control {
+    padding-right: 42.5px;
+  }
+  label ~ .form-control-feedback {
+    top: 21px;
+    font-size: 18px;
+  }
 }
 
 .bootstrap-select {

@@ -7,6 +7,8 @@ $hover: 24;
 .btn {
   border-radius: 5px;
   transition: all 0.1s ease;
+  padding: 0.344rem 1rem;
+  font-size: 0.9rem;
 }
 
 .btn:hover {
@@ -253,6 +255,26 @@ button.progress-button {
 .btn-xm {
   padding: 8px 14px;
   font-size: 16px;
+}
+
+.btn-group-xs>.btn, .btn-xs {
+  padding: 1px 5px;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.btn-group-sm>.btn, .btn-sm {
+  padding: 5px 10px;
+  font-size: 12px;
+  line-height: 1.5;
+  border-radius: 3px;
+}
+
+.btn-group-lg>.btn, .btn-lg {
+  padding: 10px 16px;
+  font-size: 18px;
+  line-height: 1.3333333;
+  border-radius: 6px;
 }
 
 .dropdown button.btn.btn-default.dropdown-toggle {
