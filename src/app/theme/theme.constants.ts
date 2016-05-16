@@ -9,6 +9,19 @@ export class colorHelper {
   static tint = (color, weight) => {
     return mix('#ffffff', color, weight);
   };
+
+  static hexToRgbA = (hex, alpha) => {
+    var c;
+    if (/^#([A-Fa-f0-9]{3}){1,2}$/.test(hex)) {
+      c = hex.substring(1).split('');
+      if (c.length == 3) {
+        c = [c[0], c[0], c[1], c[1], c[2], c[2]];
+      }
+      c = '0x' + c.join('');
+      return 'rgba(' + [(c >> 16) & 255, (c >> 8) & 255, c & 255].join(',') + ',' + alpha + ')';
+    }
+    throw new Error('Bad Hex');
+  }
 }
 
 //SASS mix function
@@ -31,19 +44,6 @@ export let mix = (color1, color2, weight) => {
     result += ('0' + resultPart).slice(-2);
   }
   return result;
-};
-
-export let hexToRgbA = (hex, alpha) => {
-  var c;
-  if (/^#([A-Fa-f0-9]{3}){1,2}$/.test(hex)) {
-    c = hex.substring(1).split('');
-    if (c.length == 3) {
-      c = [c[0], c[0], c[1], c[1], c[2], c[2]];
-    }
-    c = '0x' + c.join('');
-    return 'rgba(' + [(c >> 16) & 255, (c >> 8) & 255, c & 255].join(',') + ',' + alpha + ')';
-  }
-  throw new Error('Bad Hex');
 };
 
 export const layoutSizes = {
@@ -116,14 +116,14 @@ let _colorsForChart = [layoutColors.primary, layoutColors.danger, layoutColors.w
 
 _colorsForChart.forEach((color) => {
   _chartColors.push({
-    fillColor: hexToRgbA(color, 0.2),
-    strokeColor: hexToRgbA(color, 1),
-    pointColor: hexToRgbA(color, 1),
+    fillColor: colorHelper.hexToRgbA(color, 0.2),
+    strokeColor: colorHelper.hexToRgbA(color, 1),
+    pointColor: colorHelper.hexToRgbA(color, 1),
     pointStrokeColor: color,
     pointHighlightFill: color,
-    pointHighlightStroke: hexToRgbA(color, 0.8),
-    color: hexToRgbA(color, 1),
-    highlight: hexToRgbA(color, 0.8)
+    pointHighlightStroke: colorHelper.hexToRgbA(color, 0.8),
+    color: colorHelper.hexToRgbA(color, 1),
+    highlight: colorHelper.hexToRgbA(color, 0.8)
   });
 });
 export const chartColors = _chartColors;
