@@ -1,7 +1,7 @@
 import {Component, ViewEncapsulation} from '@angular/core';
 
 import './calendar.loader.ts';
-import {layoutColors} from "../../../theme/theme.constants";
+import {BaThemeConfigProvider} from '../../../theme';
 
 @Component({
   selector: 'calendar',
@@ -11,13 +11,15 @@ import {layoutColors} from "../../../theme/theme.constants";
 })
 export class Calendar {
 
+  constructor(private _baConfig:BaThemeConfigProvider) {
+  }
 
   ngAfterViewInit() {
     this._initCalendar();
   }
 
   _initCalendar() {
-    let palette = layoutColors.bgColorPalette;
+    let dashboardColors = this._baConfig.get().colors.dashboard;
 
     let $element = $('#calendar').fullCalendar({
       header: {
@@ -47,23 +49,23 @@ export class Calendar {
         {
           title: 'All Day Event',
           start: '2016-03-01',
-          color: palette.silverTree
+          color: dashboardColors.silverTree
         },
         {
           title: 'Long Event',
           start: '2016-03-07',
           end: '2016-03-10',
-          color: palette.blueStone
+          color: dashboardColors.blueStone
         },
         {
           title: 'Dinner',
           start: '2016-03-14T20:00:00',
-          color: palette.surfieGreen
+          color: dashboardColors.surfieGreen
         },
         {
           title: 'Birthday Party',
           start: '2016-04-01T07:00:00',
-          color: palette.gossipDark
+          color: dashboardColors.gossip
         }
       ]
     });

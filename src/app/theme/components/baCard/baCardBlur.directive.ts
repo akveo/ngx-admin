@@ -14,7 +14,7 @@ export class BaCardBlur {
 
   private _bodyBgSize:BgMetrics;
 
-  constructor(private _baThemeConfigProvider:BaThemeConfigProvider, private _baCardBlurHelper:BaCardBlurHelper, private _el:ElementRef) {
+  constructor(private _baConfig:BaThemeConfigProvider, private _baCardBlurHelper:BaCardBlurHelper, private _el:ElementRef) {
     if (this._isEnabled()) {
       this._getBodyImageSizesOnBgLoad();
       this._recalculateCardStylesOnBgLoad();
@@ -52,6 +52,6 @@ export class BaCardBlur {
   }
 
   private _isEnabled() {
-    return this._baThemeConfigProvider.get().theme.blur;
+    return this._baConfig.get().theme.blur;
   }
 }
