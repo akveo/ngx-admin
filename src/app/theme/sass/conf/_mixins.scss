@@ -62,7 +62,7 @@
     background: url($mainBgUrl) no-repeat center center;
     background-size: cover;
     will-change: transform;
-    z-index: -1;
+    z-index: 0;
   }
 }
 
