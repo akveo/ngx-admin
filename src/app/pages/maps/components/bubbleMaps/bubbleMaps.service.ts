@@ -1,12 +1,16 @@
 import {Injectable} from '@angular/core';
-import {layoutColors, layoutPaths} from "../../../../theme/theme.constants";
+import {BaThemeConfigProvider, layoutPaths} from '../../../../theme';
 
 @Injectable()
 export class BubbleMapsService {
 
-  getData() {
+  constructor(private _baConfig:BaThemeConfigProvider) {
+  }
 
-    var latlong = {};
+  getData() {
+    let layoutColors = this._baConfig.get().colors;
+    let latlong = {};
+
     latlong['AD'] = {'latitude': 42.5, 'longitude': 1.5};
     latlong['AE'] = {'latitude': 24, 'longitude': 54};
     latlong['AF'] = {'latitude': 33, 'longitude': 65};
@@ -248,7 +252,7 @@ export class BubbleMapsService {
     latlong['ZM'] = {'latitude': -15, 'longitude': 30};
     latlong['ZW'] = {'latitude': -20, 'longitude': 30};
 
-    var mapData = [
+    let mapData = [
       {'code': 'AF', 'name': 'Afghanistan', 'value': 32358260, 'color': layoutColors.primaryDark},
       {'code': 'AL', 'name': 'Albania', 'value': 3215988, 'color': layoutColors.warning},
       {'code': 'DZ', 'name': 'Algeria', 'value': 35980193, 'color': layoutColors.danger},
@@ -426,7 +430,7 @@ export class BubbleMapsService {
       , max = -Infinity;
 
     // get min and max values
-    for (var i = 0; i < mapData.length; i++) {
+    for (let i = 0; i < mapData.length; i++) {
       var value = mapData[i].value;
       if (value < min) {
         min = value;
@@ -446,18 +450,18 @@ export class BubbleMapsService {
     var minSquare = minBulletSize * minBulletSize * 2 * Math.PI;
 
     // create circle for each country
-    for (var i = 0; i < mapData.length; i++) {
-      var dataItem = mapData[i];
-      var value = dataItem.value;
+    for (let i = 0; i < mapData.length; i++) {
+      let dataItem = mapData[i];
+      let value = dataItem.value;
       // calculate size of a bubble
-      var square = (value - min) / (max - min) * (maxSquare - minSquare) + minSquare;
+      let square = (value - min) / (max - min) * (maxSquare - minSquare) + minSquare;
       if (square < minSquare) {
         square = minSquare;
       }
-      var size = Math.sqrt(square / (Math.PI * 2));
-      var id = dataItem.code;
-      
-      
+      let size = Math.sqrt(square / (Math.PI * 2));
+      let id = dataItem.code;
+
+
 
       dataProvider.images.push({
         type: 'circle',

@@ -1,12 +1,16 @@
 import {Injectable} from '@angular/core';
 
-import {layoutColors, layoutPaths} from "../../../../theme/theme.constants";
+import {BaThemeConfigProvider, layoutPaths} from '../../../../theme';
 
 @Injectable()
 export class LineMapsService {
 
 
+  constructor(private _baConfig:BaThemeConfigProvider) {
+  }
+
   getData() {
+    let layoutColors = this._baConfig.get().colors;
 
     // svg path for target icon
     let targetSVG = 'M9,0C4.029,0,0,4.029,0,9s4.029,9,9,9s9-4.029,9-9S13.971,0,9,0z M9,15.93 c-3.83,0-6.93-3.1-6.93-6.93S5.17,2.07,9,2.07s6.93,3.1,6.93,6.93S12.83,15.93,9,15.93 M12.5,9c0,1.933-1.567,3.5-3.5,3.5S5.5,10.933,5.5,9S7.067,5.5,9,5.5 S12.5,7.067,12.5,9z';
@@ -75,16 +79,16 @@ export class LineMapsService {
             top: 45,
             labelShiftY: 5,
             labelShiftX: 5,
-            color: layoutColors.default,
-            labelColor: layoutColors.default,
-            labelRollOverColor: layoutColors.default,
+            color: layoutColors.defaultText,
+            labelColor: layoutColors.defaultText,
+            labelRollOverColor: layoutColors.defaultText,
             labelFontSize: 20
           }, {
             label: 'show flights from Vilnius',
             left: 106,
             top: 70,
-            labelColor: layoutColors.default,
-            labelRollOverColor: layoutColors.default,
+            labelColor: layoutColors.defaultText,
+            labelRollOverColor: layoutColors.defaultText,
             labelFontSize: 11,
             linkToObject: 'vilnius'
           } ]
@@ -143,16 +147,16 @@ export class LineMapsService {
               top: 45,
               labelShiftY: 5,
               labelShiftX: 5,
-              color: layoutColors.default,
-              labelColor: layoutColors.default,
-              labelRollOverColor: layoutColors.default,
+              color: layoutColors.defaultText,
+              labelColor: layoutColors.defaultText,
+              labelRollOverColor: layoutColors.defaultText,
               labelFontSize: 20
             }, {
               label: 'show flights from London',
               left: 106,
               top: 70,
-              labelColor: layoutColors.default,
-              labelRollOverColor: layoutColors.default,
+              labelColor: layoutColors.defaultText,
+              labelRollOverColor: layoutColors.defaultText,
               labelFontSize: 11,
               linkToObject: 'london'
             } ]
@@ -250,14 +254,15 @@ export class LineMapsService {
       },
 
       imagesSettings: {
-        color: layoutColors.warningBg,
+        color: layoutColors.warningLight,
         selectedColor: layoutColors.warning
       },
 
       linesSettings: {
-        color: layoutColors.warningBg,
+        color: layoutColors.warningLight,
         alpha: 0.8
       },
+
 
       backgroundZoomsToTop: true,
       linesAboveImages: true,
