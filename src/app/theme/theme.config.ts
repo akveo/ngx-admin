@@ -9,14 +9,14 @@ export class BaThemeConfig {
   }
 
   private _config() {
-    this._baConfig.changeTheme({blur: true});
-
-    this._baConfig.changeColors({
-      default: 'rgba(#000000, 0.2)',
-      defaultText: '#ffffff',
-      dashboard: {
-        white: '#ffffff',
-      },
-    });
+    // this._baConfig.changeTheme({blur: true});
+    //
+    // this._baConfig.changeColors({
+    //   default: 'rgba(#000000, 0.2)',
+    //   defaultText: '#ffffff',
+    //   dashboard: {
+    //     white: '#ffffff',
+    //   },
+    // });
   }
 }
