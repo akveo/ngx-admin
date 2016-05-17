@@ -67,10 +67,6 @@ export const menuItems = [
     expanded: false,
     order: 400,
     subMenu: [
-      // {
-      //   title: 'Chart Js',
-      //   component: 'ChartJs',
-      // },
       {
         title: 'Chartist.Js',
         component: 'ChartistJs',
