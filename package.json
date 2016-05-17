@@ -22,6 +22,7 @@
     "chartist": "^0.9.7",
     "core-js": "^2.2.2",
     "easy-pie-chart": "^2.1.7",
+    "extract-text-webpack-plugin": "^1.0.1",
     "font-awesome": "^4.6.1",
     "font-awesome-sass-loader": "^1.0.1",
     "google-maps": "^3.2.1",

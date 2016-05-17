@@ -1,11 +1,12 @@
+import './app.loader.ts';
+
 import {Component, ViewEncapsulation} from '@angular/core';
 import {RouteConfig} from '@angular/router-deprecated';
 
 import {Pages} from './pages';
 import {AppState} from './app.state';
-import {BaThemeConfigProvider, BaThemeConfig} from './theme';
+import {BaThemeConfigProvider, BaThemeConfig, BaThemeSpinner} from './theme';
 import {BaThemeRun} from './theme/directives';
-import './app.loader.ts';
 
 /*
  * App Component
@@ -15,7 +16,7 @@ import './app.loader.ts';
   selector: 'app',
   pipes: [],
   directives: [BaThemeRun],
-  providers: [BaThemeConfigProvider, BaThemeConfig],
+  providers: [BaThemeConfigProvider, BaThemeConfig, BaThemeSpinner],
   encapsulation: ViewEncapsulation.None,
   styles: [require('normalize.css'), require('./app.scss')],
   template: `
@@ -36,10 +37,14 @@ export class App {
 
   isMenuCollapsed:boolean = false;
 
-  constructor(private _state:AppState, private _baThemeConfig:BaThemeConfig) {
+  constructor(private _state:AppState, private _baThemeConfig:BaThemeConfig, private _baSpinner:BaThemeSpinner) {
 
     this._state.subscribe('menu.isCollapsed', (isCollapsed) => {
       this.isMenuCollapsed = isCollapsed;
     });
+  }
+
+  ngAfterViewInit() {
+    this._baSpinner.hide(200);
   }
 }

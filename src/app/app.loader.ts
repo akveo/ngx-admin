@@ -1,1 +1,2 @@
-require('!style!css!sass!./theme/sass/_ionicons.scss');
+// this css loaded separately as a standalone file to speed up the initial styles loading
+require('./theme/initial.scss');

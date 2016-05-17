@@ -4,6 +4,7 @@ const helpers = require('./helpers');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ForkCheckerPlugin = require('awesome-typescript-loader').ForkCheckerPlugin;
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const METADATA = {
   title: 'Blur Admin on Angular2',
@@ -86,8 +87,7 @@ module.exports = {
         loader: 'source-map-loader',
         exclude: [
           // these packages have problems with their sourcemaps
-          helpers.root('node_modules/rxjs'),
-          helpers.root('node_modules/@angular2-material')
+          helpers.root('node_modules/rxjs')
         ]
       }
 
@@ -133,6 +133,11 @@ module.exports = {
       },
 
       {
+        test: /initial\.scss$/,
+        loader: ExtractTextPlugin.extract('style-loader', 'css-loader!sass-loader')
+      },
+
+      {
         test: /\.woff(2)?(\?v=.+)?$/, loader: "url-loader?limit=10000&mimetype=application/font-woff"
       },
 
@@ -166,6 +171,10 @@ module.exports = {
    * See: http://webpack.github.io/docs/configuration.html#plugins
    */
   plugins: [
+    new ExtractTextPlugin('initial.css',  {
+      allChunks: true
+    }),
+
     new webpack.ResolverPlugin(
       new webpack.ResolverPlugin.DirectoryDescriptionFilePlugin('bower.json', ['main'])
     ),
