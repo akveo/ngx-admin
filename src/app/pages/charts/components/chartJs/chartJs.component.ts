@@ -6,6 +6,7 @@ import {ChartJsService} from "./chartJs.service";
 import {CHART_DIRECTIVES} from 'ng2-charts';
 import {chartColors} from "../../../../theme/theme.constants";
 
+// TODO refactor after https://github.com/valor-software/ng2-charts/issues/186  is closed
 @Component({
   selector: 'chart-js',
   pipes: [],
