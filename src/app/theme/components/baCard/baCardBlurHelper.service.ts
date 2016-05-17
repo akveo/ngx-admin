@@ -37,7 +37,7 @@ export class BaCardBlurHelper {
 
   private _genBgImage():void {
     this.image = new Image();
-    let computedStyle = getComputedStyle(document.body, ':before');
+    let computedStyle = getComputedStyle(document.body.querySelector('main'), ':before');
     this.image.src = computedStyle.backgroundImage.replace(/url\((['"])?(.*?)\1\)/gi, '$2');
   }
 
