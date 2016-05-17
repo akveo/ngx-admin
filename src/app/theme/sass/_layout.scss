@@ -16,25 +16,27 @@ body {
   font: 14px/16px $font-family;
   color: $default-text;
   background-color: $body-bg;
-  &.blur-theme {
+}
+
+.blur-theme {
+  @at-root body {
     @include main-background();
   }
 }
 
-body.mobile{
-  background: none;
-  .body-bg{
-    display: block;
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    background-attachment: inherit;
-    background-color: $body-bg;
-  }
-  &.blur-theme {
-    @include main-background();
+.mobile {
+  @at-root body {
+    background: none;
+    .body-bg {
+      display: block;
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      background-attachment: inherit;
+      background-color: $body-bg;
+    }
   }
 }
 

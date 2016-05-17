@@ -4,6 +4,7 @@ import {RouteConfig} from '@angular/router-deprecated';
 import {Pages} from './pages';
 import {AppState} from './app.state';
 import {BaThemeConfigProvider, BaThemeConfig} from './theme';
+import {BaThemeRun} from './theme/directives';
 import './app.loader.ts';
 
 /*
@@ -13,11 +14,12 @@ import './app.loader.ts';
 @Component({
   selector: 'app',
   pipes: [],
+  directives: [BaThemeRun],
   providers: [BaThemeConfigProvider, BaThemeConfig],
   encapsulation: ViewEncapsulation.None,
   styles: [require('normalize.css'), require('./app.scss')],
   template: `
-    <main [ngClass]="{'menu-collapsed': isMenuCollapsed}">
+    <main [ngClass]="{'menu-collapsed': isMenuCollapsed}" baThemeRun>
       <router-outlet></router-outlet>
     </main>
   `
