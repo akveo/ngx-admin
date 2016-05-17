@@ -99,7 +99,7 @@ export class ChartistJsService {
         reverseData: true,
         horizontalBars: true,
         axisX: {
-          labelInterpolationFnc: Chartist.noop
+          labelInterpolationFnc: (n) => n
         },
         axisY: {
           offset: 60

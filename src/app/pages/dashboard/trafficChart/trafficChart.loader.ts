@@ -1,1 +1,1 @@
-require('chart.js');
+export const Chart = require('chart.js');

@@ -1,13 +1,14 @@
 import {Component, ViewEncapsulation, ElementRef} from '@angular/core';
 import {BaCard} from '../../../../theme/components';
 
+import './leafletMaps.loader';
+
 @Component({
   selector: 'leaflet-maps',
   pipes: [],
   providers: [],
-  // otherwise maps won't work
   encapsulation: ViewEncapsulation.None,
-  styles: [require('leaflet/dist/leaflet.css'), require('./leafletMaps.scss')],
+  styles: [require('./leafletMaps.scss')],
   directives: [BaCard],
   template: require('./leafletMaps.html'),
 })

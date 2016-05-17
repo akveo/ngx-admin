@@ -138,11 +138,11 @@ module.exports = {
       },
 
       {
-        test: /\.woff(2)?(\?v=.+)?$/, loader: "url-loader?limit=10000&mimetype=application/font-woff"
+        test: /\.woff(2)?(\?v=.+)?$/, loader: 'url-loader?limit=10000&mimetype=application/font-woff'
       },
 
       {
-        test: /\.(ttf|eot|svg)(\?v=.+)?$/, loader: "file-loader"
+        test: /\.(ttf|eot|svg)(\?v=.+)?$/, loader: 'file-loader'
       },
 
       {
@@ -239,15 +239,8 @@ module.exports = {
       jQuery: 'jquery',
       $: 'jquery',
       jquery: 'jquery',
-      "Tether": 'tether',
-      "window.Tether": "tether",
-      "GoogleMapsLoader": "google-maps",
-      "L": "leaflet",
-      "Chart": "chart.js",
-      "Chartist": "chartist",
-      "fullcalendar": "fullcalendar",
-      "moment": "moment",
-      "EasyPieChart": "easy-pie-chart"
+      'Tether': 'tether',
+      'window.Tether': 'tether'
     })
   ],
 

@@ -1,5 +1,7 @@
 import {Component, ViewEncapsulation, Input, Output, ElementRef, EventEmitter} from '@angular/core';
 
+import {Chartist} from './baChartistChart.loader.ts';
+
 @Component({
   selector: 'ba-chartist-chart',
   encapsulation: ViewEncapsulation.None,
