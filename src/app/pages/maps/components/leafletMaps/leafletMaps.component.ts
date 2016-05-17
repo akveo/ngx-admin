@@ -9,8 +9,8 @@ import './leafletMaps.loader';
   providers: [],
   encapsulation: ViewEncapsulation.None,
   styles: [require('./leafletMaps.scss')],
-  directives: [BaCard],
   template: require('./leafletMaps.html'),
+  directives: [BaCard],
 })
 export class LeafletMaps {
 

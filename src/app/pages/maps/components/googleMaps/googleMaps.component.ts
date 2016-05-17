@@ -6,8 +6,8 @@ import {GoogleMapsLoader} from './googleMaps.loader';
   selector: 'google-maps',
   pipes: [],
   providers: [],
-  styles: [require('./googleMaps.scss')],
   directives: [BaCard],
+  styles: [require('./googleMaps.scss')],
   template: require('./googleMaps.html'),
 })
 export class GoogleMaps {
