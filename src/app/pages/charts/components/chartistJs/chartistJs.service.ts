@@ -174,7 +174,6 @@ export class ChartistJsService {
   }
 
   public getAll() {
-    console.log(this._data);
     return this._data;
   }
 

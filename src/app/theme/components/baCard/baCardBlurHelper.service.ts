@@ -43,8 +43,7 @@ export class BaCardBlurHelper {
 
   private _genImageLoadSubject():void {
     this.imageLoadSubject = new Subject<void>();
-    this.image.onerror = () => {
-      this.imageLoadSubject.error();
+    this.image.onerror = (err) => {
       this.imageLoadSubject.complete();
     };
     this.image.onload = () => {

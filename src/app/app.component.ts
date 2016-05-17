@@ -3,7 +3,7 @@ import {RouteConfig} from '@angular/router-deprecated';
 
 import {Pages} from './pages';
 import {AppState} from './app.state';
-import {BaThemeConfigProvider} from './theme';
+import {BaThemeConfigProvider, BaThemeConfig} from './theme';
 import './app.loader.ts';
 
 /*
@@ -13,7 +13,7 @@ import './app.loader.ts';
 @Component({
   selector: 'app',
   pipes: [],
-  providers: [BaThemeConfigProvider],
+  providers: [BaThemeConfigProvider, BaThemeConfig],
   encapsulation: ViewEncapsulation.None,
   styles: [require('normalize.css'), require('./app.scss')],
   template: `
@@ -34,7 +34,7 @@ export class App {
 
   isMenuCollapsed:boolean = false;
 
-  constructor(private _state:AppState) {
+  constructor(private _state:AppState, private _baThemeConfig:BaThemeConfig) {
 
     this._state.subscribe('menu.isCollapsed', (isCollapsed) => {
       this.isMenuCollapsed = isCollapsed;

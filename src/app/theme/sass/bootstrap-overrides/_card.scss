@@ -45,6 +45,10 @@ $card-header-font-size: 16px;
   background: url($blurredBgUrl);
   transition: none;
   background-attachment: fixed;
+
+  .card-header, .card-footer {
+    background: transparent;
+  }
 }
 
 .card {

@@ -70,4 +70,12 @@ export class BaThemeConfigProvider {
   get() {
     return this.conf;
   }
+
+  changeTheme (theme) {
+    _.merge(this.get().theme, theme);
+  }
+
+  changeColors (colors) {
+    _.merge(this.get().colors, colors);
+  }
 }
