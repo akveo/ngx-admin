@@ -1,12 +1,15 @@
 import {Injectable} from '@angular/core';
 
+import {BaThemeConfigProvider} from '../../../../theme';
+
 @Injectable()
 export class ChartistJsService {
 
   private _data = {
     simpleLineOptions: {
+      color: this._baConfig.get().colors.defaultText,
       fullWidth: true,
-      height: "300px",
+      height: '300px',
       chartPadding: {
         right: 40
       }
@@ -29,7 +32,7 @@ export class ChartistJsService {
     },
     areaLineOptions: {
       fullWidth: true,
-      height: "300px",
+      height: '300px',
       low: 0,
       showArea: true
     },
@@ -44,7 +47,7 @@ export class ChartistJsService {
     },
 
     biLineOptions: {
-      height: "300px",
+      height: '300px',
       high: 3,
       low: -3,
       showArea: true,
@@ -64,7 +67,7 @@ export class ChartistJsService {
     },
     simpleBarOptions: {
       fullWidth: true,
-      height: "300px"
+      height: '300px'
     },
     multiBarData: {
       labels: ['Quarter 1', 'Quarter 2', 'Quarter 3', 'Quarter 4'],
@@ -78,7 +81,7 @@ export class ChartistJsService {
     },
     multiBarOptions: {
       fullWidth: true,
-      height: "300px",
+      height: '300px',
       stackBars: true,
       axisX: {
         labelInterpolationFnc: function (value) {
@@ -119,7 +122,7 @@ export class ChartistJsService {
     },
     stackedBarOptions: {
       fullWidth: true,
-      height: "300px",
+      height: '300px',
       stackBars: true,
       axisY: {
         labelInterpolationFnc: function (value) {
@@ -132,8 +135,8 @@ export class ChartistJsService {
     },
     simplePieOptions: {
       fullWidth: true,
-      height: "300px",
-      weight: "300px",
+      height: '300px',
+      weight: '300px',
       labelInterpolationFnc: function (value) {
         return Math.round(value / 12 * 100) + '%';
       }
@@ -144,8 +147,8 @@ export class ChartistJsService {
     },
     labelsPieOptions: {
       fullWidth: true,
-      height: "300px",
-      weight: "300px",
+      height: '300px',
+      weight: '300px',
       labelDirection: 'explode',
       labelInterpolationFnc: function (value) {
         return value[0];
@@ -158,8 +161,8 @@ export class ChartistJsService {
     simpleDonutOptions: {
       fullWidth: true,
       donut: true,
-      height: "300px",
-      weight: "300px",
+      height: '300px',
+      weight: '300px',
       labelDirection: 'explode',
       labelInterpolationFnc: function (value) {
         return value[0];
@@ -167,10 +170,14 @@ export class ChartistJsService {
     }
   };
 
+  constructor(private _baConfig:BaThemeConfigProvider) {
+  }
+
   public getAll() {
+    console.log(this._data);
     return this._data;
   }
-  
+
   public getResponsive(padding, offset) {
     return [
       ['screen and (min-width: 1550px)', {

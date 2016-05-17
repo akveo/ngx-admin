@@ -72,7 +72,7 @@ export const menuItems = [
       //   component: 'ChartJs',
       // },
       {
-        title: 'ChartistJs',
+        title: 'Chartist.Js',
         component: 'ChartistJs',
       },
     ]

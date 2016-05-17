@@ -1,17 +1,14 @@
 @import "../../../../theme/sass/conf/conf";
 
-.chartist h5 {
-  font-weight: $font-normal;
-}
 
 .ct-area {
   fill-opacity: .5;
 }
 
 .ct-label{
-  color: $default;
+  color: $default-text;
   opacity: 0.9;
-  fill: rgba(255,255,255,.9);
+  fill: $default-text;
 }
 
 .ct-chart .ct-label{
