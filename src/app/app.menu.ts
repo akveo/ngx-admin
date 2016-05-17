@@ -8,12 +8,26 @@ export const menuItems = [
     order: 0
   },
   {
+    title: 'Charts',
+    component: 'Charts',
+    icon: 'ion-stats-bars',
+    selected: false,
+    expanded: false,
+    order: 200,
+    subMenu: [
+      {
+        title: 'Chartist.Js',
+        component: 'ChartistJs',
+      },
+    ]
+  },
+  {
     title: 'UI Features',
     component: 'Ui',
     icon: 'ion-android-laptop',
     selected: false,
     expanded: false,
-    order: 200,
+    order: 300,
     subMenu: [
       {
         title: 'Typography',
@@ -34,12 +48,44 @@ export const menuItems = [
     ]
   },
   {
+    title: 'Form Elements',
+    component: 'Forms',
+    icon: 'ion-compose',
+    selected: false,
+    expanded: false,
+    order: 400,
+    subMenu: [
+      {
+        title: 'Form Inputs',
+        component: 'Inputs',
+      },
+      {
+        title: 'Form Layouts',
+        component: 'Layouts',
+      },
+    ]
+  },
+  {
+    title: 'Tables',
+    component: 'Tables',
+    icon: 'ion-grid',
+    selected: false,
+    expanded: false,
+    order: 500,
+    subMenu: [
+      {
+        title: 'Basic Tables',
+        component: 'BasicTables',
+      }
+    ]
+  },
+  {
     title: 'Maps',
     component: 'Maps',
     icon: 'ion-ios-location-outline',
     selected: false,
     expanded: false,
-    order: 300,
+    order: 600,
     subMenu: [
       {
         title: 'Google Maps',
@@ -60,56 +106,11 @@ export const menuItems = [
     ]
   },
   {
-    title: 'Charts',
-    component: 'Charts',
-    icon: 'ion-stats-bars',
-    selected: false,
-    expanded: false,
-    order: 400,
-    subMenu: [
-      {
-        title: 'Chartist.Js',
-        component: 'ChartistJs',
-      },
-    ]
-  },
-  {
-    title: 'Form Elements',
-    component: 'Forms',
-    icon: 'ion-compose',
-    selected: false,
-    expanded: false,
-    order: 500,
-    subMenu: [
-      {
-        title: 'Form Inputs',
-        component: 'Inputs',
-      },
-      {
-        title: 'Form Layouts',
-        component: 'Layouts',
-      },
-    ]
-  },
-  {
-    title: 'Tables',
-    component: 'Tables',
-    icon: 'ion-grid',
-    selected: false,
-    expanded: false,
-    order: 600,
-    subMenu: [
-      {
-        title: 'Basic Tables',
-        component: 'BasicTables',
-      }
-    ]
-  },
-  {
     title: 'Menu Level 1',
     icon: 'ion-ios-more',
     selected: false,
     expanded: false,
+    order: 700,
     subMenu: [
       {
         title: 'Menu Level 1.1',
