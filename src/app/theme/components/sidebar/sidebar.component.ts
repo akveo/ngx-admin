@@ -37,14 +37,20 @@ export class Sidebar {
     this._router.root.subscribe((path) => this._selectMenuItem(path));
   }
 
+  ngOnInit() {
+    if (this._shouldMenuCollapse()) {
+      this.menuCollapse();
+    }
+  }
+
   ngAfterViewInit() {
     this.updateSidebarHeight();
   }
 
-  @HostListener('window:resize', ['$event'])
-  onWindowResize($event) {
+  @HostListener('window:resize')
+  onWindowResize() {
 
-    var isMenuShouldCollapsed = $event.target.innerWidth <= layoutSizes.resWidthCollapseSidebar;
+    var isMenuShouldCollapsed = this._shouldMenuCollapse();
 
     if (this.isMenuShouldCollapsed !== isMenuShouldCollapsed) {
       this.menuCollapseStateChange(isMenuShouldCollapsed);
@@ -92,6 +98,10 @@ export class Sidebar {
       submenu.slideToggle();
     }
     return false;
+  }
+
+  private _shouldMenuCollapse() {
+    return window.innerWidth <= layoutSizes.resWidthCollapseSidebar;
   }
 
   private _selectMenuItem(currentPath = null) {

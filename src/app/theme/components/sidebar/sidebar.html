@@ -1,7 +1,7 @@
 <aside class="al-sidebar" (mouseleave)="hoverElemTop=outOfArea" sidebarResize>
   <ul class="al-sidebar-list">
     <li *ngFor="let item of menuItems" class="al-sidebar-list-item"
-        [ngClass]="{'selected': item.selected, 'with-sub-menu': item.subMenu}">
+        [ngClass]="{'selected': item.selected && !item.expanded, 'with-sub-menu': item.subMenu, 'ba-sidebar-item-expanded': item.expanded}">
 
       <a *ngIf="!item.subMenu" [routerLink]="[item.component]" class="al-sidebar-list-link">
         <i class="{{ item.icon }}"></i><span>{{ item.title }}</span>
@@ -15,8 +15,8 @@
       </a>
 
       <ul *ngIf="item.subMenu" class="al-sidebar-sublist"
-          [ngClass]="{expanded: item.expanded, 'slide-right': item.slideRight}">
-        <li *ngFor="let subitem of item.subMenu"
+          [ngClass]="{'slide-right': item.slideRight}">
+        <li *ngFor="let subitem of item.subMenu" class="ba-sidebar-sublist-item"
             [ngClass]="{'selected': subitem.selected, 'with-sub-menu': subitem.subMenu}">
           <a (mouseenter)="hoverItem($event, item)" *ngIf="subitem.subMenu" (click)="toggleSubMenu($event, subitem);"
              class="al-sidebar-list-link subitem-submenu-link"><span>{{ subitem.title }}</span>

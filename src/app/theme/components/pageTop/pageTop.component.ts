@@ -14,11 +14,14 @@ import {ScrollPosition} from '../../directives';
   encapsulation: ViewEncapsulation.None
 })
 export class PageTop {
+
   isScrolled:Boolean = false;
   isMenuCollapsed:boolean = false;
 
-
   constructor(private _state:AppState) {
+    this._state.subscribe('menu.isCollapsed', (isCollapsed) => {
+      this.isMenuCollapsed = isCollapsed;
+    });
   }
 
   toggleMenu() {
