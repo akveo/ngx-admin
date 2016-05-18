@@ -2,14 +2,14 @@ import {Component, ViewEncapsulation} from '@angular/core';
 
 import {AppState} from '../../../app.state';
 import {BaProfilePicturePipe} from '../../pipes';
-import {MsgCenter} from '../../components/msgCenter';
+import {BaMsgCenter} from '../../components/baMsgCenter';
 import {BaScrollPosition} from '../../directives';
 
 @Component({
   selector: 'page-top',
   styles: [require('./pageTop.scss')],
   template: require('./pageTop.html'),
-  directives: [MsgCenter, BaScrollPosition],
+  directives: [BaMsgCenter, BaScrollPosition],
   pipes: [BaProfilePicturePipe],
   encapsulation: ViewEncapsulation.None
 })

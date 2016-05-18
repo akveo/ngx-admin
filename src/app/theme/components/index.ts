@@ -1,5 +1,5 @@
 export * from './pageTop';
-export * from './msgCenter';
+export * from './baMsgCenter';
 export * from './sidebar';
 export * from './baContentTop';
 export * from './baCard';

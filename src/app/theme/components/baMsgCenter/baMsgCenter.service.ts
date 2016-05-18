@@ -1,16 +1,9 @@
-import {Component} from '@angular/core';
+import {Injectable} from '@angular/core'
 
-import {BaProfilePicturePipe} from '../../pipes';
+@Injectable()
+export class BaMsgCenterService {
 
-@Component({
-  selector: 'msg-center',
-  styles: [require('./msgCenter.scss')],
-  template: require('./msgCenter.html'),
-  pipes: [BaProfilePicturePipe]
-})
-export class MsgCenter {
-
-  notifications = [
+  private _notifications = [
     {
       name: 'Vlad',
       text: 'Vlad posted a new article.',
@@ -48,7 +41,7 @@ export class MsgCenter {
     }
   ];
 
-  messages = [
+  private _messages = [
     {
       name: 'Nasta',
       text: 'After you get up and running, you can place Font Awesome icons just about...',
@@ -85,4 +78,12 @@ export class MsgCenter {
       time: '1 week ago'
     }
   ];
+
+  public getMessages():Array<Object> {
+    return this._messages;
+  }
+
+  public getNotifications():Array<Object> {
+    return this._notifications;
+  }
 }
