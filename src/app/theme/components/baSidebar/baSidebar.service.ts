@@ -2,20 +2,20 @@ import {Injectable} from '@angular/core';
 import {menuItems} from '../../../app.menu';
 
 @Injectable()
-export class SidebarService {
+export class BaSidebarService {
 
   private _router;
 
-  getMenuItems() {
+  public getMenuItems():Array<Object> {
     return menuItems;
   }
 
-  setRouter(router) {
+  public setRouter(router): BaSidebarService {
     this._router = router;
     return this;
   }
 
-  selectMenuItem(items:Array<any>, currentPath:string) {
+  public selectMenuItem(items:Array<any>, currentPath:string) {
     let currentMenu;
 
     let assignCurrent = (menu) => (menu.selected ? currentMenu = menu : null);
