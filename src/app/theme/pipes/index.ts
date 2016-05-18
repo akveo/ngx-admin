@@ -1,3 +1,3 @@
 export * from './profilePicture';
-export * from './appPicture';
+export * from './baAppPicture';
 export * from './kameleonPicture';

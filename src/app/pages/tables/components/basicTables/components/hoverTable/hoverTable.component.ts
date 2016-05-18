@@ -1,12 +1,12 @@
 import {Component} from '@angular/core';
 
-import {AppPicturePipe} from '../../../../../../theme/pipes';
+import {BaAppPicturePipe} from '../../../../../../theme/pipes';
 import {BasicTablesService} from '../../basicTables.service';
 
 @Component({
   selector: 'hover-table',
   template: require('./hoverTable.html'),
-  pipes: [AppPicturePipe]
+  pipes: [BaAppPicturePipe]
 })
 export class HoverTable {
 

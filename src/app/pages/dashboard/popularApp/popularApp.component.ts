@@ -1,11 +1,11 @@
 import {Component, ViewEncapsulation} from '@angular/core';
 
-import {AppPicturePipe} from '../../../theme/pipes';
+import {BaAppPicturePipe} from '../../../theme/pipes';
 
 @Component({
   selector: 'popular-app',
   encapsulation: ViewEncapsulation.None,
-  pipes: [AppPicturePipe],
+  pipes: [BaAppPicturePipe],
   styles: [require('./popularApp.scss')],
   template: require('./popularApp.html')
 })

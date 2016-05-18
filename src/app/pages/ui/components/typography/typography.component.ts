@@ -1,12 +1,12 @@
 import {Component, ViewEncapsulation} from '@angular/core';
 
 
-import {AppPicturePipe} from '../../../../theme/pipes';
+import {BaAppPicturePipe} from '../../../../theme/pipes';
 import {BaCard} from '../../../../theme/components';
 
 @Component({
   selector: 'typography',
-  pipes: [AppPicturePipe],
+  pipes: [BaAppPicturePipe],
   directives: [BaCard],
   providers: [],
   styles: [],

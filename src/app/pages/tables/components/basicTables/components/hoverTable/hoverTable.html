@@ -14,7 +14,7 @@
     </thead>
     <tbody>
     <tr *ngFor="let item of metricsTableData" class="no-top-border">
-      <td><img src="{{ ( item.image | appPicture ) }}" width="20" height="20"></td>
+      <td><img src="{{ ( item.image | baAppPicture ) }}" width="20" height="20"></td>
       <td ngClass="nowrap">{{item.browser}}</td>
       <td class="align-right">{{item.visits}}</td>
       <td class="table-arr"><i [ngClass]="{'icon-up': item.isVisitsUp, 'icon-down': !item.isVisitsUp }"></i></td>
