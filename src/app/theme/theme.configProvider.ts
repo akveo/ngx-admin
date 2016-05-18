@@ -6,27 +6,27 @@ export class BaThemeConfigProvider {
 
   basic = {
     default: '#ffffff',
-    defaultText: '#666666',
+    defaultText: '#ffffff',
     border: '#dddddd',
     borderDark: '#aaaaaa',
   };
 
   // main functional color scheme
   colorScheme = {
-    primary: '#209e91',
-    info: '#2dacd1',
-    success: '#90b900',
-    warning: '#dfb81c',
-    danger: '#e85656',
+    primary: '#00abff',
+    info: '#40daf1',
+    success: '#8bd22f',
+    warning: '#e7ba08',
+    danger: '#f95372',
   };
 
   // dashboard colors for charts
   dashboardColors = {
-    blueStone: '#005562',
-    surfieGreen: '#0e8174',
-    silverTree: '#6eba8c',
-    gossip: '#b9f2a1',
-    white: '#10c4b5',
+    blueStone: '#40daf1',
+    surfieGreen: '#00abff',
+    silverTree: '#1b70ef',
+    gossip: '#3c4eb9',
+    white: '#ffffff',
   };
 
   conf = {

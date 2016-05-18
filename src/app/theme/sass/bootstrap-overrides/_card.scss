@@ -4,12 +4,12 @@ $card-header-font-size: 16px;
 .card {
   @include scrollbars(.4em, rgba(0, 0, 0, 0.6), rgba(255, 255, 255, 0.7));
   color: $content-text;
-  background-color: $default;
+  background-color: $bootstrap-panel-bg;
   border: none;
-  border-radius: 5px;
+  border-radius: $bootstrap-panel-radius;
   position: relative;
   margin-bottom: 24px;
-  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.25);
+  box-shadow: $bootstrap-panel-shadow;
   &.animated {
     animation-duration: 0.5s;
   }
@@ -68,13 +68,12 @@ $card-header-font-size: 16px;
 
 .card-header, .card-footer {
   color: $content-text;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
-  box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.12);
+  border-bottom: $bootstrap-panel-header-border;
   height: $card-title-height;
   font-size: $card-header-font-size;
   $vertical-padding: ($card-title-height - $card-header-font-size) / 2;
   padding: $vertical-padding 22px;
-  background-color: $default;
+  background-color: $bootstrap-panel-header-bg;
 }
 
 .card-title {

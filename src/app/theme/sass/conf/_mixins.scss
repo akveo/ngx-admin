@@ -117,7 +117,10 @@
 }
 
 @mixin gradient($color-1, $color-2, $color-3) {
-  background: $color-1;
-  background: -webkit-linear-gradient(left top, $color-1,$color-2 50%,$color-3);
-  background: linear-gradient(to right bottom,$color-1,$color-2 50%,$color-3);
+  background: $color-2; /* Old browsers */
+  background: -moz-radial-gradient(bottom, ellipse cover,  $color-1 0%, $color-2 45%, $color-3 100%); /* FF3.6-15 */
+  background: -webkit-radial-gradient(bottom, ellipse cover,  $color-1 0%,$color-2 45%,$color-3 100%); /* Chrome10-25,Safari5.1-6 */
+  background: radial-gradient(ellipse at bottom,  $color-1 0%,$color-2 45%,$color-3 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$color-1', endColorstr='$color-3',GradientType=1); /* IE6-9 fallback on horizontal gradient */
+
 }
