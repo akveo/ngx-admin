@@ -3,13 +3,13 @@ import {Component, ViewEncapsulation} from '@angular/core';
 import {AppState} from '../../../app.state';
 import {ProfilePicturePipe} from '../../pipes';
 import {MsgCenter} from '../../components/msgCenter';
-import {ScrollPosition} from '../../directives';
+import {BaScrollPosition} from '../../directives';
 
 @Component({
   selector: 'page-top',
   styles: [require('./pageTop.scss')],
   template: require('./pageTop.html'),
-  directives: [MsgCenter, ScrollPosition],
+  directives: [MsgCenter, BaScrollPosition],
   pipes: [ProfilePicturePipe],
   encapsulation: ViewEncapsulation.None
 })

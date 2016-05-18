@@ -1,2 +1,2 @@
-export * from './scrollPosition';
+export * from './baScrollPosition';
 export * from './baThemeRun';
