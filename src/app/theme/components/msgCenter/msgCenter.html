@@ -17,7 +17,7 @@
       <div class="msg-list">
         <a *ngFor="let msg of notifications" href class="clearfix">
           <div class="img-area"><img [ngClass]="{'photo-msg-item': !msg.image}"
-                                     src="{{ ( msg.image ||  (msg.name | profilePicture)) }}"></div>
+                                     src="{{ ( msg.image ||  (msg.name | baProfilePicture)) }}"></div>
           <div class="msg-area">
             <div>{{ msg.text }}</div>
             <span>{{ msg.time }}</span>
@@ -42,7 +42,7 @@
       <div class="msg-list">
         <a *ngFor="let msg of messages" href class="clearfix">
           <div class="img-area"><img [ngClass]="{'photo-msg-item': !msg.image}"
-                                     src="{{ ( msg.image ||  (msg.name | profilePicture)) }}"></div>
+                                     src="{{ ( msg.image ||  (msg.name | baProfilePicture)) }}"></div>
           <div class="msg-area">
             <div>{{ msg.text }}</div>
             <span>{{ msg.time }}</span>

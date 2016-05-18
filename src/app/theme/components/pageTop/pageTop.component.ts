@@ -1,7 +1,7 @@
 import {Component, ViewEncapsulation} from '@angular/core';
 
 import {AppState} from '../../../app.state';
-import {ProfilePicturePipe} from '../../pipes';
+import {BaProfilePicturePipe} from '../../pipes';
 import {MsgCenter} from '../../components/msgCenter';
 import {BaScrollPosition} from '../../directives';
 
@@ -10,7 +10,7 @@ import {BaScrollPosition} from '../../directives';
   styles: [require('./pageTop.scss')],
   template: require('./pageTop.html'),
   directives: [MsgCenter, BaScrollPosition],
-  pipes: [ProfilePicturePipe],
+  pipes: [BaProfilePicturePipe],
   encapsulation: ViewEncapsulation.None
 })
 export class PageTop {

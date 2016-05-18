@@ -1,12 +1,12 @@
 import {Component} from '@angular/core';
 
-import {ProfilePicturePipe} from '../../pipes';
+import {BaProfilePicturePipe} from '../../pipes';
 
 @Component({
   selector: 'msg-center',
   styles: [require('./msgCenter.scss')],
   template: require('./msgCenter.html'),
-  pipes: [ProfilePicturePipe]
+  pipes: [BaProfilePicturePipe]
 })
 export class MsgCenter {
 
