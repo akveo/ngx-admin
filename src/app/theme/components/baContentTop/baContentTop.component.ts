@@ -3,12 +3,13 @@ import {Component} from '@angular/core';
 import {AppState} from "../../../app.state";
 
 @Component({
-  selector: 'content-top',
-  styles: [require('./contentTop.scss')],
-  template: require('./contentTop.html'),
+  selector: 'ba-content-top',
+  styles: [require('./baContentTop.scss')],
+  template: require('./baContentTop.html'),
 })
-export class ContentTop {
-  activePageTitle = '';
+export class BaContentTop {
+
+  public activePageTitle:string = '';
 
   constructor(private _state:AppState) {
     this._state.subscribe('menu.activeLink', (activeLink) => {

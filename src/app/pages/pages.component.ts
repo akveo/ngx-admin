@@ -1,7 +1,7 @@
 import {Component, ViewEncapsulation} from '@angular/core';
 import {RouteConfig} from '@angular/router-deprecated';
 
-import {PageTop, ContentTop, Sidebar, BaBackTop} from '../theme/components';
+import {PageTop, BaContentTop, Sidebar, BaBackTop} from '../theme/components';
 
 import {Dashboard} from './dashboard';
 import {Ui} from './ui';
@@ -14,13 +14,13 @@ import {Tables} from './tables';
   selector: 'pages',
   encapsulation: ViewEncapsulation.None,
   styles: [],
-  directives: [PageTop, Sidebar, ContentTop, BaBackTop],
+  directives: [PageTop, Sidebar, BaContentTop, BaBackTop],
   template: `
     <sidebar></sidebar>
     <page-top></page-top>
     <div class="al-main">
       <div class="al-content">
-        <content-top></content-top>
+        <ba-content-top></ba-content-top>
         <router-outlet></router-outlet>
       </div>
     </div>
