@@ -1,1 +1,1 @@
-export * from './sidebar.component.ts';
+export * from './baSidebar.component.ts';

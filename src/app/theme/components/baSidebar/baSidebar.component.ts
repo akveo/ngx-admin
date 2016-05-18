@@ -8,8 +8,8 @@ import {BaSidebarService} from './baSidebar.service';
 @Component({
   selector: 'ba-sidebar',
   encapsulation: ViewEncapsulation.None,
-  styles: [require('./sidebar.scss')],
-  template: require('./sidebar.html'),
+  styles: [require('./baSidebar.scss')],
+  template: require('./baSidebar.html'),
   providers: [BaSidebarService]
 })
 export class BaSidebar {
