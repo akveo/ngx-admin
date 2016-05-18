@@ -72,7 +72,7 @@ button.btn.btn-primary {
 
 button.btn.btn-default {
   border-width: 1px;
-  color: $default-text;
+  color: $content-text;
   @include buttonColor(transparent, $border);
   &:active, &:target {
     background-color: rgba(0, 0, 0, 0.2);

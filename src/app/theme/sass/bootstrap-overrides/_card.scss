@@ -3,7 +3,7 @@ $card-header-font-size: 16px;
 
 .card {
   @include scrollbars(.4em, rgba(0, 0, 0, 0.6), rgba(255, 255, 255, 0.7));
-  color: $default-text;
+  color: $content-text;
   background-color: $default;
   border: none;
   border-radius: 5px;

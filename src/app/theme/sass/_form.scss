@@ -33,15 +33,15 @@
 .form-group {
   label {
     margin-bottom: 5px;
-    color: $default-text;
+    color: $content-text;
     font-weight: $font-normal;
     font-size: 13px;
   }
 }
 
 .form-control {
-  color: $default-text;
-  @include placeholderStyle($default-text, 0.7);
+  color: $content-text;
+  @include placeholderStyle($content-text, 0.7);
   border: 1px solid $input-border;
   border-radius: 5px;
   background-color: $input-background;
@@ -53,6 +53,8 @@
     background: $input-background;
   }
 }
+
+
 
 select.form-control {
   padding-left: 8px;
@@ -224,7 +226,7 @@ label.custom-checkbox {
       font-family: fontAwesome;
       font-weight: $font-light;
       font-size: 12px;
-      color: $default-text;
+      color: $content-text;
       content: "\a0";
       background-color: transparent;
       border: 1px solid $border;
@@ -318,7 +320,7 @@ label.custom-input-danger {
 
 @mixin validationState($color, $focusColor) {
   .control-label {
-    color: $default-text;
+    color: $content-text;
   }
   .form-control {
     border: 1px solid $color;
@@ -447,10 +449,15 @@ label.custom-input-danger {
   border-radius: 5px;
 }
 
+.dropdown button.btn.btn-default.dropdown-toggle {
+  color: $content-text;
+}
+
+
 .bootstrap-select.btn-group {
   button.btn.btn-default {
     background: transparent;
-    color: $default-text;
+    color: $content-text;
     &:hover {
       background: $default;
       box-shadow: none;
@@ -491,7 +498,7 @@ label.custom-input-danger {
 }
 
 .bootstrap-tagsinput {
-  color: $default-text;
+  color: $content-text;
   background-color: $input-background;
   border: 1px solid $input-border;
   border-radius: 5px;
