@@ -1,4 +1,4 @@
-export * from './pageTop';
+export * from './baPageTop';
 export * from './baMsgCenter';
 export * from './sidebar';
 export * from './baContentTop';
