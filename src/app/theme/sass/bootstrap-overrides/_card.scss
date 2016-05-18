@@ -67,6 +67,7 @@ $card-header-font-size: 16px;
 }
 
 .card-header, .card-footer {
+  color: $content-text;
   border-bottom: 1px solid rgba(0, 0, 0, 0.12);
   box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.12);
   height: $card-title-height;
@@ -81,6 +82,7 @@ $card-header-font-size: 16px;
   font-size: $card-header-font-size;
   text-transform: uppercase;
   opacity: 0.9;
+  color: $content-text;
 }
 
 

@@ -39,7 +39,7 @@ ul.todo-list {
 
     &.checked {
       .todo-text {
-        color: $default-text;
+        color: $content-text;
       }
       &:before {
         background: $input-border !important;
@@ -165,7 +165,7 @@ label.todo-checkbox {
       label.todo-checkbox > span {
         &:before {
           position: absolute;
-          color: $default-text;
+          color: $content-text;
           content: '\f10c';
           float: none;
           margin-right: 6px;

@@ -752,7 +752,7 @@ a.fc-more {
   background: transparent;
   box-shadow: none;
   border: none;
-  color: $default-text;
+  color: $content-text;
 }
 .fc-next-button {
   left: 30px;
@@ -760,6 +760,6 @@ a.fc-more {
 .fc-prev-button {
 }
 .fc-day-number{
-  color: $default-text;
+  color: $content-text;
   opacity: 0.9;
 }
