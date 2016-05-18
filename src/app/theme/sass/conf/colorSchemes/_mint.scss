@@ -1,5 +1,8 @@
 $default: #ffffff;
 $body-bg: #F0F3F4;
+@mixin body-bg() {
+  background-color: $body-bg;
+}
 $default-text: #666666;
 $content-text: $default-text;
 $help-text: #949494;

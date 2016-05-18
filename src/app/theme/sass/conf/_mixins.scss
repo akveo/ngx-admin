@@ -115,3 +115,9 @@
     color: darken($color, 20);
   }
 }
+
+@mixin gradient($color-1, $color-2, $color-3) {
+  background: $color-1;
+  background: -webkit-linear-gradient(left top, $color-1,$color-2 50%,$color-3);
+  background: linear-gradient(to right bottom,$color-1,$color-2 50%,$color-3);
+}

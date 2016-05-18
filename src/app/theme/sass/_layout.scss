@@ -15,7 +15,7 @@ html, body {
 main {
   font: 14px/16px $font-family;
   color: $default-text;
-  background-color: $body-bg;
+  @include body-bg();
   &.blur-theme {
     @include main-background();
   }
