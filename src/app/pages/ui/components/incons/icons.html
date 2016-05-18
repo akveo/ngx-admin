@@ -5,7 +5,7 @@
       <ba-card title="Kameleon SVG Icons" baCardClass="with-scroll">
         <div class="row clearfix">
           <div class="kameleon-row" *ngFor="let icon of icons.kameleonIcons">
-            <div class="kameleon-icon"><img src="{{ (icon.img | kameleonPicture )}}"><span>{{ icon.name }}</span></div>
+            <div class="kameleon-icon"><img src="{{ (icon.img | baKameleonPicture )}}"><span>{{ icon.name }}</span></div>
           </div>
         </div>
         <a href="http://www.kameleon.pics/" target="_blank" class="see-all-icons">See all Kamaleon icons</a>
@@ -22,7 +22,7 @@
       <ba-card title="Icons With Rounded Background" baCardClass="with-scroll">
         <div class="row clearfix">
           <div class="kameleon-row" *ngFor="let icon of icons.kameleonRoundedIcons">
-            <div class="kameleon-icon with-round-bg {{ icon.color }}"><img src="{{ ( icon.img | kameleonPicture ) }}"><span>{{ icon.name }}</span></div>
+            <div class="kameleon-icon with-round-bg {{ icon.color }}"><img src="{{ ( icon.img | baKameleonPicture ) }}"><span>{{ icon.name }}</span></div>
           </div>
         </div>
         <a href="http://www.kameleon.pics/" target="_blank" class="see-all-icons">See all Kamaleon icons</a>
