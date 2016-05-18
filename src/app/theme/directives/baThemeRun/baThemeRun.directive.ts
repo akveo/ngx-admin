@@ -13,17 +13,17 @@ export class BaThemeRun {
   constructor(private _baConfig:BaThemeConfigProvider) {
   }
 
-  ngOnInit() {
+  public ngOnInit():void {
     this._assignBlur();
-    this._assingMobile();
+    this._assignMobile();
   }
 
   // TODO: assign any theme class, not only hardcoded blur
-  private _assignBlur() {
+  private _assignBlur():void {
     this.isBlur = this._baConfig.get().theme.blur;
   }
 
-  private _assingMobile() {
+  private _assignMobile():void {
     this.isMobile = isMobile();
   }
 }
