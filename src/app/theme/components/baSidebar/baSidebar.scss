@@ -49,6 +49,13 @@ $angle-right: "\f101";
   }
 }
 
+.ba-sidebar-item-expanded {
+  > ul.al-sidebar-sublist {
+    display: block!important;
+  }
+
+}
+
 .al-sidebar-list-item, .ba-sidebar-sublist-item {
   &.ba-sidebar-item-expanded {
     > .al-sidebar-list-link {

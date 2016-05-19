@@ -16,7 +16,7 @@ export class BaSidebar {
 
   public menuItems:Array<any>;
   public menuHeight:number;
-  public isMenuCollapsed:boolean;
+  public isMenuCollapsed:boolean = false;
 
   public showHoverElem:boolean;
   public hoverElemHeight:number;
@@ -33,6 +33,7 @@ export class BaSidebar {
 
     this.menuItems = this._sidebarService.getMenuItems();
     this._router.root.subscribe((path) => this._selectMenuItem(path));
+    this._state.subscribe('menu.isCollapsed', (isCollapsed) => { this.isMenuCollapsed = isCollapsed; });
   }
 
   public ngOnInit():void {
@@ -65,7 +66,7 @@ export class BaSidebar {
     this.menuCollapseStateChange(true);
   }
 
-  public menuCollapseStateChange(isCollapsed):void {
+  public menuCollapseStateChange(isCollapsed:boolean):void {
     this.isMenuCollapsed = isCollapsed;
     this._state.notifyDataChanged('menu.isCollapsed', this.isMenuCollapsed);
   }
@@ -88,13 +89,13 @@ export class BaSidebar {
     if (this.isMenuCollapsed) {
       this.menuExpand();
       if (!item.expanded) {
-        item.expanded = !item.expanded;
-        submenu.slideToggle();
+        item.expanded = true;
       }
     } else {
       item.expanded = !item.expanded;
       submenu.slideToggle();
     }
+
     return false;
   }
 
@@ -106,5 +107,9 @@ export class BaSidebar {
 
     let currentMenu = this._sidebarService.setRouter(this._router).selectMenuItem(this.menuItems, currentPath);
     this._state.notifyDataChanged('menu.activeLink', currentMenu);
+    // hide menu after natigation on mobile devises
+    if (this._shouldMenuCollapse()) {
+      this.menuCollapse();
+    }
   }
 }
