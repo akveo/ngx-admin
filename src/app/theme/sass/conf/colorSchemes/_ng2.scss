@@ -13,7 +13,7 @@ $disabled-bg: tint($disabled, 15%);
 $border: lighten(#455e9f, 70%);
 $border-light: tint($border, 15%);
 $input-border: shade($border, 5%);
-$input-background: #ffffff;
+$input-background: rgba(255,255,255,0.2);
 
 $sidebar: #282828;
 $sidebar-text: #ffffff;

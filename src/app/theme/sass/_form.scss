@@ -54,8 +54,6 @@
   }
 }
 
-
-
 select.form-control {
   padding-left: 8px;
 }
@@ -310,7 +308,7 @@ label.custom-input-danger {
 
 .form-horizontal {
   .radio, .checkbox, .radio-inline, .checkbox-inline {
-    padding-top: 0px;
+    padding-top: 0;
   }
 }
 
@@ -351,6 +349,7 @@ label.custom-input-danger {
     color: $label-text;
   }
 }
+
 .form-control-feedback {
   position: absolute;
   top: 0;
@@ -453,7 +452,6 @@ label.custom-input-danger {
   color: $content-text;
 }
 
-
 .bootstrap-select.btn-group {
   button.btn.btn-default {
     background: transparent;
@@ -474,7 +472,7 @@ label.custom-input-danger {
       box-shadow: none;
       border-color: $border;
     }
-    > .btn{
+    > .btn {
       border-radius: 5px 5px 0 0;
     }
     .dropdown-menu.open {
@@ -565,19 +563,22 @@ label.custom-input-danger {
   border-bottom-right-radius: 5px;
 }
 
-.with-primary-addon:focus{
+.with-primary-addon:focus {
   border-color: $primary;
 }
-.with-warning-addon:focus{
+
+.with-warning-addon:focus {
   border-color: $warning;
 }
-.with-success-addon:focus{
+
+.with-success-addon:focus {
   border-color: $success;
 }
-.with-danger-addon:focus{
+
+.with-danger-addon:focus {
   border-color: $danger;
 }
 
-.sub-little-text{
+.sub-little-text {
   font-size: 12px;
 }
