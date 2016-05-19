@@ -19,6 +19,16 @@ main {
   &.blur-theme {
     @include main-background();
   }
+
+  .additional-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    //background-attachment: inherit;
+    @include additional-bg();
+  }
 }
 
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none)

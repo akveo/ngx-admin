@@ -21,6 +21,7 @@ import {BaThemeRun} from './theme/directives';
   styles: [require('normalize.css'), require('./app.scss')],
   template: `
     <main [ngClass]="{'menu-collapsed': isMenuCollapsed}" baThemeRun>
+      <div class="additional-bg"></div>
       <router-outlet></router-outlet>
     </main>
   `

@@ -3,6 +3,9 @@ $body-bg: #F0F3F4;
 @mixin body-bg() {
   background-color: $body-bg;
 }
+@mixin additional-bg() {
+  display: none;
+}
 $default-text: #666666;
 $content-text: $default-text;
 $help-text: #949494;

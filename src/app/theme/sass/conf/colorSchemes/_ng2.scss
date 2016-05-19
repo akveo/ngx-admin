@@ -3,6 +3,10 @@ $body-bg: #F0F3F4;
 @mixin body-bg() {
   @include gradient(#73c5d9, #4691d1, #455e9f);
 }
+@mixin additional-bg() {
+  display: block;
+  background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAIUlEQVQIW2NkYGCQZGBgeM4ABYxQGiYoCRMAiYMFMVQAAIACBDd1EYQFAAAAAElFTkSuQmCC) repeat;
+}
 $default-text: #ffffff;
 $content-text: $default-text;
 $help-text: $default-text;
