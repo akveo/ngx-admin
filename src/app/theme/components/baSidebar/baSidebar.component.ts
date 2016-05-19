@@ -3,6 +3,7 @@ import {Router} from '@angular/router-deprecated';
 
 import {AppState} from '../../../app.state';
 import {layoutSizes} from '../../../theme';
+import {BaSlimScroll} from '../../../theme/directives';
 import {BaSidebarService} from './baSidebar.service';
 
 @Component({
@@ -10,7 +11,8 @@ import {BaSidebarService} from './baSidebar.service';
   encapsulation: ViewEncapsulation.None,
   styles: [require('./baSidebar.scss')],
   template: require('./baSidebar.html'),
-  providers: [BaSidebarService]
+  providers: [BaSidebarService],
+  directives: [BaSlimScroll]
 })
 export class BaSidebar {
 
