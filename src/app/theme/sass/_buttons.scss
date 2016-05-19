@@ -108,7 +108,6 @@ button.btn.btn-danger {
   }
 }
 
-
 button.btn.btn-inverse {
   @include buttonColor($help-text, $help-text);
   color: $label-text;
@@ -244,7 +243,7 @@ button.progress-button {
 }
 
 .btn-raised {
-  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.35);
 }
 
 .btn-mm {
@@ -257,20 +256,20 @@ button.progress-button {
   font-size: 16px;
 }
 
-.btn-group-xs>.btn, .btn-xs {
+.btn-group-xs > .btn, .btn-xs {
   padding: 1px 5px;
   font-size: 12px;
   line-height: 1.5;
 }
 
-.btn-group-sm>.btn, .btn-sm {
+.btn-group-sm > .btn, .btn-sm {
   padding: 5px 10px;
   font-size: 12px;
   line-height: 1.5;
   border-radius: 3px;
 }
 
-.btn-group-lg>.btn, .btn-lg {
+.btn-group-lg > .btn, .btn-lg {
   padding: 10px 16px;
   font-size: 18px;
   line-height: 1.3333333;
