@@ -5,21 +5,25 @@
   position: relative;
 }
 
+
+.chart-bg {
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  left: 60px;
+  top: 60px;
+  background-color: transparent;
+  border-radius: 100px;
+}
+
 .ng2, .blur {
   .traffic-chart canvas {
     border: 15px solid rgba(0, 0, 0, 0.2);
-    //box-shadow: 0 0 5px 0 rgb(0, 0, 0) inset;
     border-radius: 150px;
   }
 
   .chart-bg {
-    position: absolute;
-    width: 180px;
-    height: 180px;
-    left: 60px;
-    top: 60px;
     background-color: rgba(0, 0, 0, 0.4);
-    border-radius: 100px;
   }
 }
 
@@ -57,7 +61,7 @@
 
 .traffic-legend {
   display: inline-block;
-  padding: 70px 0 0 0px;
+  padding: 70px 0 0 0;
   width: 160px;
 }
 
@@ -143,67 +147,59 @@
     height: auto;
   }
 
-  .channels-block {
-    div.channels-info {
-      display: block;
-      width: calc(100% - 88px);
-      margin-top: -65px;
-      margin-bottom: 10px;
-    }
-    .traffic-chart {
-      position: inherit;
-      float: none;
-      margin: 0 auto;
-    }
-    .chart-bg {
-      left: calc(50% - 90px);
-    }
+  div.channels-info {
+    display: block;
+    width: calc(100% - 88px);
+    margin-top: -65px;
+    margin-bottom: 10px;
+  }
+  .traffic-chart {
+    position: inherit;
+    float: none;
+    margin: 0 auto;
+  }
+  .chart-bg {
+    left: calc(50% - 90px);
   }
 }
 
 @media (max-width: 1465px) and (min-width: 1199px) {
 
-  .channels-block {
-    .channels-info {
-      display: none;
-    }
-    .traffic-chart {
-      position: inherit;
-      float: none;
-      margin: 0 auto;
-    }
+  .channels-info {
+    display: none;
+  }
+  .traffic-chart {
+    position: inherit;
+    float: none;
+    margin: 0 auto;
+  }
 
-    .chart-bg {
-      left: calc(50% - 90px);
-    }
+  .chart-bg {
+    left: calc(50% - 90px);
   }
 }
 
 @media (max-width: 380px) {
 
-  .channels-block {
-    .traffic-chart {
-      width: 240px;
-    }
+  .traffic-chart {
+    width: 240px;
+  }
 
-    .canvas-holder {
-      width: 240px;
-      height: 240px;
-    }
+  .canvas-holder {
+    width: 240px;
+    height: 240px;
+  }
 
-    .chart-bg {
-      top: 30px;
-    }
+  .chart-bg {
+    top: 30px;
   }
 }
 
 @media (max-width: 320px) {
-  .channels-block {
-    .chart-bg {
-      left: 50px;
-      top: 50px;
-      width: 142px;
-      height: 142px;
-    }
+  .chart-bg {
+    left: 50px;
+    top: 50px;
+    width: 142px;
+    height: 142px;
   }
 }

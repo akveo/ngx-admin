@@ -8,7 +8,7 @@ export class PieChartService {
   }
 
   getData() {
-    let pieColor = colorHelper.hexToRgbA(this._baConfig.get().colors.defaultText, 0.2);
+    let pieColor = this._baConfig.get().colors.custom.dashboardPieChart;
     return [
       {
         color: pieColor,

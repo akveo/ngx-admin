@@ -66,7 +66,8 @@ export class BaThemeConfigProvider {
       },
 
       custom: {
-        dashboardLineChart: '#fff',
+        dashboardLineChart: this.basic.defaultText,
+        dashboardPieChart: colorHelper.hexToRgbA(this.basic.defaultText, 0.8)
       }
     }
   };
