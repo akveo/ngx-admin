@@ -264,6 +264,12 @@ a.al-sidebar-list-link {
   }
 }
 
+.menu-collapsed {
+  .slimScrollBar, .slimScrollRail {
+    display: none!important;
+  }
+}
+
 @media (min-width: 1200px) {
   .menu-collapsed {
     @include layout-collapsed();
