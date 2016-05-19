@@ -11,8 +11,7 @@ import {TodoService} from './todo.service';
   template: require('./todo.html')
 })
 export class Todo {
-
-  public transparent = this._baConfig.get().theme.blur;
+  
   public dashboardColors = this._baConfig.get().colors.dashboard;
 
   public todoList:Array<any>;

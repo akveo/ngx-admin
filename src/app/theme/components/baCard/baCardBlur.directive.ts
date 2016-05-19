@@ -53,6 +53,6 @@ export class BaCardBlur {
   }
 
   private _isEnabled() {
-    return this._baConfig.get().theme.blur;
+    return this._baConfig.get().theme.name == 'blur';
   }
 }

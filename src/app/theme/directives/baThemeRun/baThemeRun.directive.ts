@@ -7,23 +7,29 @@ import {BaThemeConfigProvider, isMobile} from '../../../theme';
 })
 export class BaThemeRun {
 
-  @HostBinding('class.blur-theme') isBlur:boolean = false;
-  @HostBinding('class.mobile') isMobile:boolean = false;
+  private _classes:Array<string> = [];
+  @HostBinding('class') classesString:string;
 
   constructor(private _baConfig:BaThemeConfigProvider) {
   }
 
   public ngOnInit():void {
-    this._assignBlur();
+    this._assignTheme();
     this._assignMobile();
   }
 
-  // TODO: assign any theme class, not only hardcoded blur
-  private _assignBlur():void {
-    this.isBlur = this._baConfig.get().theme.blur;
+  private _assignTheme():void {
+    this._addClass(this._baConfig.get().theme.name);
   }
 
   private _assignMobile():void {
-    this.isMobile = isMobile();
+    if (isMobile()) {
+      this._addClass('mobile');
+    }
+  }
+
+  private _addClass(cls:string) {
+    this._classes.push(cls);
+    this.classesString = this._classes.join(' ');
   }
 }

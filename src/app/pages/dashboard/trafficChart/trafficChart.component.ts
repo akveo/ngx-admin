@@ -15,11 +15,9 @@ import {TrafficChartService} from './trafficChart.service';
 export class TrafficChart {
 
   public doughnutData: Array<Object>;
-  public transparent:boolean = false;
 
   constructor(private trafficChartService:TrafficChartService) {
     this.doughnutData = trafficChartService.getData();
-    this.transparent = trafficChartService.getTransparent();
   }
 
   ngAfterViewInit() {

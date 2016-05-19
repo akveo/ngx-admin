@@ -31,7 +31,7 @@ export class BaThemeConfigProvider {
 
   conf = {
     theme: {
-      blur: false,
+      name: 'ng2',
     },
     colors: {
       default: this.basic.default,
@@ -64,6 +64,10 @@ export class BaThemeConfigProvider {
         gossip: this.dashboardColors.gossip,
         white: this.dashboardColors.white,
       },
+
+      custom: {
+        dashboardLineChart: '#fff',
+      }
     }
   };
 

@@ -5,21 +5,23 @@
   position: relative;
 }
 
-.channels-block.transparent {
-  .traffic-chart canvas{
-    border: 10px solid rgba(0,0,0,0.35);
-    box-shadow: 0 0 5px 0 rgb(0, 0, 0) inset;
-    border-radius: 150px;
-  }
+.ng2, .blur {
+  .channels-block {
+    .traffic-chart canvas{
+      border: 15px solid rgba(0,0,0,0.2);
+      //box-shadow: 0 0 5px 0 rgb(0, 0, 0) inset;
+      border-radius: 150px;
+    }
 
-  .chart-bg{
-    position: absolute;
-    width: 180px;
-    height: 180px;
-    left: 60px;
-    top: 60px;
-    background-color: rgba(0,0,0,0.35);
-    border-radius: 100px;
+    .chart-bg{
+      position: absolute;
+      width: 180px;
+      height: 180px;
+      left: 60px;
+      top: 60px;
+      background-color: rgba(0,0,0,0.4);
+      border-radius: 100px;
+    }
   }
 }
 

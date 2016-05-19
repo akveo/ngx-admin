@@ -10,7 +10,7 @@ export class LineChartService {
   getData() {
 
     var layoutColors = this._baConfig.get().colors;
-    var graphColor = this._baConfig.get().theme.blur ? '#000000' : layoutColors.primary;
+    var graphColor = this._baConfig.get().colors.custom.dashboardLineChart;
 
     return {
       type: 'serial',
@@ -84,7 +84,7 @@ export class LineChartService {
           id: 'g1',
           bullet: 'none',
           useLineColorForBulletBorder: true,
-          lineColor: colorHelper.hexToRgbA(graphColor, 0.5),
+          lineColor: colorHelper.hexToRgbA(graphColor, 0.15),
           lineThickness: 1,
           negativeLineColor: layoutColors.danger,
           type: 'smoothedLine',

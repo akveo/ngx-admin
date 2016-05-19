@@ -49,8 +49,4 @@ export class TrafficChartService {
       },
     ];
   }
-
-  getTransparent() {
-    return this._baConfig.get().theme.blur;
-  }
 }

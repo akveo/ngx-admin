@@ -26,8 +26,8 @@ $bootstrap-panel-header-border: none;
 $bootstrap-panel-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.15);
 $mail-box: whitesmoke;
 $auth-panel-background: #ffffff;
-$progress-background: rgba(#000000, 0.07);
-$progress-default: rgba(#000000, 0.15);
+$progress-background: rgba(0,0,0, 0.15);
+$progress-default: rgba($default-text, 0.95);
 
 $primary: #00abff !default;
 $info: #40daf1 !default;
