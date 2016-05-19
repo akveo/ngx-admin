@@ -286,6 +286,14 @@ button.progress-button {
   }
 }
 
+.ng2, .blur {
+  .dropdown button.btn.btn-default.dropdown-toggle {
+    &:focus, &:active {
+      background-color: transparent;
+    }
+  }
+}
+
 .bootstrap-select {
   .dropdown-toggle:focus {
     outline: none !important;
