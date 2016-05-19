@@ -31,7 +31,7 @@ export class BaThemeConfigProvider {
 
   conf = {
     theme: {
-      name: 'blur',
+      name: 'ng2',
     },
     colors: {
       default: this.basic.default,
