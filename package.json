@@ -1,9 +1,9 @@
 {
-  "name": "angular2-blur-admin",
+  "name": "ng2-admin",
   "version": "0.0.1",
-  "description": "Angular 2 Blur Admin template.",
+  "description": "Angular 2 and Bootstrap 4 Admin Template.",
   "author": "akveo",
-  "homepage": "",
+  "homepage": "http://akveo.github.io/ng2-admin/",
   "license": "MIT",
   "dependencies": {
     "@angular/common": "2.0.0-rc.1",
@@ -137,10 +137,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/angularclass/angular2-webpack-starter.git"
+    "url": "https://github.com/akveo/ng2-admin.git"
   },
   "bugs": {
-    "url": "https://github.com/angularclass/angular2-webpack-starter/issues"
+    "url": "https://github.com/akveo/ng2-admin/issues"
   },
   "engines": {
     "node": ">= 4.2.1",
