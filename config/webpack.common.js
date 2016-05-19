@@ -235,6 +235,7 @@ module.exports = {
       chunksSortMode: helpers.packageSort(['polyfills', 'vendor', 'main'])
     }),
 
+    // TODO: make sure this is a correct configuration
     new webpack.ProvidePlugin({
       jQuery: 'jquery',
       $: 'jquery',
