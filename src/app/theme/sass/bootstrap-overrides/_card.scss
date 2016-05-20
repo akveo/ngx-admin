@@ -1,11 +1,22 @@
 $card-title-height: 44px;
 $card-header-font-size: 16px;
 
+.card.card-blur {
+  $blurredBgUrl: $images-root + 'blur-bg-blurred.jpg';
+  background: url($blurredBgUrl);
+  transition: none;
+  background-attachment: fixed;
+
+  .card-header, .card-footer {
+    background: transparent;
+  }
+}
+
 .card {
   @include scrollbars(.4em, rgba(0, 0, 0, 0.6), rgba(255, 255, 255, 0.7));
   color: $content-text;
   background-color: $bootstrap-panel-bg;
-  border: none;
+  border: 0;
   border-radius: $bootstrap-panel-radius;
   position: relative;
   margin-bottom: 24px;
@@ -37,17 +48,6 @@ $card-header-font-size: 16px;
       height: calc(100% - #{$card-title-height});
       overflow-y: auto;
     }
-  }
-}
-
-.card.card-blur {
-  $blurredBgUrl: $images-root + 'blur-bg-blurred.jpg';
-  background: url($blurredBgUrl);
-  transition: none;
-  background-attachment: fixed;
-
-  .card-header, .card-footer {
-    background: transparent;
   }
 }
 
@@ -84,7 +84,6 @@ $card-header-font-size: 16px;
   color: $content-text;
 }
 
-
 .card-primary {
   > .card-header {
     background-color: $primary-bg;
@@ -119,13 +118,6 @@ $card-header-font-size: 16px;
     border-color: $danger-bg;
   }
 }
-
-//.bootstrap-card {
-//  background-color: $bootstrap-card-bg;
-//  .card-body{
-//    color: $bootstrap-card-text;
-//  }
-//}
 
 .accordion-card.card {
   &.card-primary,
