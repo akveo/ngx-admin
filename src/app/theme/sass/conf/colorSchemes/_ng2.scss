@@ -1,12 +1,20 @@
 $default: #ffffff;
 $body-bg: #F0F3F4;
-@mixin body-bg() {
-  @include gradient(#73c5d9, #4691d1, #455e9f);
-}
+
+@mixin body-bg() {}
 
 @mixin additional-bg() {
   display: block;
-  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAIUlEQVQIW2NkYGCQZGBgeM4ABYxQGiYoCRMAiYMFMVQAAIACBDd1EYQFAAAAAElFTkSuQmCC) repeat;
+  @include gradient(#73c5d9, #4691d1, #455e9f);
+  &::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAIUlEQVQIW2NkYGCQZGBgeM4ABYxQGiYoCRMAiYMFMVQAAIACBDd1EYQFAAAAAElFTkSuQmCC) repeat;
+  }
 }
 
 $default-text: #ffffff;
@@ -14,12 +22,12 @@ $content-text: $default-text;
 $help-text: $default-text;
 $label-text: $default-text;
 
-$disabled: #dddddd;
+$disabled: rgba(255, 255, 255, 0.4);
 $disabled-bg: tint($disabled, 15%);
 $border: lighten(#455e9f, 70%);
 $border-light: tint($border, 15%);
-$input-border: shade($border, 5%);
-$input-background: rgba(255, 255, 255, 0.2);
+$input-border: rgba(255, 255, 255, 0.6);
+$input-background: rgba(255, 255, 255, 0.1);
 
 $sidebar: #282828;
 $sidebar-text: #ffffff;
