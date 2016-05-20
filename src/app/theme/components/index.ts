@@ -6,4 +6,4 @@ export * from './baCard';
 export * from './baAmChart';
 export * from './baChartistChart';
 export * from './baBackTop';
-export * from './BaFullCalendar';
+export * from './baFullCalendar';
