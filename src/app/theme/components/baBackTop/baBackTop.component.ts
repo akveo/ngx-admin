@@ -1,10 +1,10 @@
-import {Component, HostListener, Input, ElementRef} from '@angular/core';
+import {Component, ViewChild, HostListener, Input, ElementRef} from '@angular/core';
 
 @Component({
   selector: 'ba-back-top',
   styles: [require('./baBackTop.scss')],
   template: `
-    <i class="fa fa-angle-up back-top ba-back-top" title="Back to Top"></i>
+    <i #baBackTop class="fa fa-angle-up back-top ba-back-top" title="Back to Top"></i>
   `
 })
 export class BaBackTop {
@@ -13,7 +13,9 @@ export class BaBackTop {
   @Input() showSpeed:number = 500;
   @Input() moveSpeed:number = 1000;
 
-  constructor (private _elementRef:ElementRef) {
+  @ViewChild('baBackTop') private _selector:ElementRef;
+
+  ngAfterViewInit () {
     this._onWindowScroll();
   }
 
@@ -25,7 +27,7 @@ export class BaBackTop {
 
   @HostListener('window:scroll')
   _onWindowScroll():void {
-    let el = this._elementRef.nativeElement.querySelector('.ba-back-top');
+    let el = this._selector.nativeElement;
     window.scrollY > this.position ? $(el).fadeIn(this.showSpeed) : $(el).fadeOut(this.showSpeed);
   }
 }

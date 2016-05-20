@@ -1,4 +1,4 @@
-import {Component, ViewEncapsulation, Input, Output, ElementRef, EventEmitter} from '@angular/core';
+import {Component, ViewChild, ViewEncapsulation, Input, Output, ElementRef, EventEmitter} from '@angular/core';
 
 import {Chartist} from './baChartistChart.loader.ts';
 
@@ -18,14 +18,10 @@ export class BaChartistChart {
   @Input() baChartistChartClass:string;
   @Output() onChartReady = new EventEmitter<any>();
 
-  constructor (private _elementRef:ElementRef) {
-  }
+  @ViewChild('baChartistChart') private _selector:ElementRef;
 
   ngAfterViewInit() {
-    let el = this._elementRef.nativeElement.querySelector('.ba-chartist-chart');
-
-    let chart = new Chartist[this.baChartistChartType](el, this.baChartistChartData, this.baChartistChartOptions, this.baChartistChartResponsive);
+    let chart = new Chartist[this.baChartistChartType](this._selector.nativeElement, this.baChartistChartData, this.baChartistChartOptions, this.baChartistChartResponsive);
     this.onChartReady.emit(chart);
   }
-
 }
