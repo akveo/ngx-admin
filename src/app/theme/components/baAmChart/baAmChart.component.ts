@@ -1,4 +1,4 @@
-import {Component, ViewEncapsulation, Input, Output, ElementRef, EventEmitter} from '@angular/core';
+import {Component, ViewChild, ViewEncapsulation, Input, Output, ElementRef, EventEmitter} from '@angular/core';
 
 import './baAmChart.loader.ts';
 import {BaAmChartThemeService} from './baAmChartTheme.service';
@@ -15,7 +15,9 @@ export class BaAmChart {
   @Input() baAmChartClass:string;
   @Output() onChartReady = new EventEmitter<any>();
 
-  constructor (private _elementRef:ElementRef, private _baAmChartThemeService:BaAmChartThemeService) {
+  @ViewChild('baAmChart') private _selector:ElementRef;
+
+  constructor (private _baAmChartThemeService:BaAmChartThemeService) {
   }
 
   ngOnInit() {
@@ -23,9 +25,7 @@ export class BaAmChart {
   }
 
   ngAfterViewInit() {
-    let el = this._elementRef.nativeElement.querySelector('.ba-am-chart');
-
-    let chart = AmCharts.makeChart(el, this.baAmChartConfiguration);
+    let chart = AmCharts.makeChart(this._selector.nativeElement, this.baAmChartConfiguration);
     this.onChartReady.emit(chart);
   }
 }
