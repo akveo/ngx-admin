@@ -11,7 +11,6 @@ import {CheckboxInputs} from './components/checkboxInputs';
   selector: 'inputs',
   encapsulation: ViewEncapsulation.None,
   directives: [BaCard, StandardInputs, ValidationInputs, GroupInputs, CheckboxInputs],
-  styles: [require('./inputs.scss')],
   template: require('./inputs.html'),
 })
 export class Inputs {
