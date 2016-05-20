@@ -1,22 +1,6 @@
 $default: #ffffff;
 $body-bg: #F0F3F4;
 
-@mixin body-bg() {}
-
-@mixin additional-bg() {
-  display: block;
-  @include gradient(#73c5d9, #4691d1, #455e9f);
-  &::after {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAIUlEQVQIW2NkYGCQZGBgeM4ABYxQGiYoCRMAiYMFMVQAAIACBDd1EYQFAAAAAElFTkSuQmCC) repeat;
-  }
-}
-
 $default-text: #ffffff;
 $content-text: $default-text;
 $help-text: $default-text;
@@ -66,3 +50,22 @@ $info-bg: tint($info, 20%);
 $success-bg: tint($success, 20%);
 $warning-bg: tint($warning, 20%);
 $danger-bg: tint($danger, 20%);
+
+$activelink: #285eb8;
+$hoverlink: darken($activelink, 20%);
+
+@mixin body-bg() {}
+
+@mixin additional-bg() {
+  display: block;
+  @include gradient(#73c5d9, #4691d1, #455e9f);
+  &::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAIUlEQVQIW2NkYGCQZGBgeM4ABYxQGiYoCRMAiYMFMVQAAIACBDd1EYQFAAAAAElFTkSuQmCC) repeat;
+  }
+}

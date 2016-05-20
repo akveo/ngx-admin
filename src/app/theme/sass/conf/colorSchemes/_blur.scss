@@ -1,11 +1,7 @@
 $default: rgba(#000000, 0.2);
 $body-bg: #F0F3F4;
-@mixin body-bg() {
-  background-color: $body-bg;
-}
-@mixin additional-bg() {
-  display: none;
-}
+
+
 $default-text: #ffffff;
 $content-text: $default-text;
 $help-text: #eeeeee;
@@ -55,3 +51,13 @@ $info-bg: tint($info, 20%);
 $success-bg: tint($success, 20%);
 $warning-bg: tint($warning, 20%);
 $danger-bg: tint($danger, 20%);
+
+$activelink: $primary;
+$hoverlink: $primary-dark;
+
+@mixin body-bg() {
+  background-color: $body-bg;
+}
+@mixin additional-bg() {
+  display: none;
+}
