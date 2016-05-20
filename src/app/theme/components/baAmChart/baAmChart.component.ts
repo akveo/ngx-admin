@@ -5,7 +5,6 @@ import {BaAmChartThemeService} from './baAmChartTheme.service';
 
 @Component({
   selector: 'ba-am-chart',
-  styles: [require('./baAmChart.scss')],
   template: require('./baAmChart.html'),
   encapsulation: ViewEncapsulation.None,
   providers: [BaAmChartThemeService],
