@@ -21,7 +21,6 @@ export class BubbleMaps {
   }
 
   ngOnInit() {
-
     this.chartData = this._bubbleMapsService.getData();
   }
 }
