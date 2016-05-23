@@ -462,11 +462,11 @@ h1:hover .hash-link, h2:hover .hash-link, h3:hover .hash-link, h4:hover .hash-li
 
 .nav-docs a:hover {
   text-decoration: none;
-  color: #cc7a6f
+  color: #285eb8
 }
 
 .nav-docs a.active {
-  color: #cc7a6f
+  color: #285eb8
 }
 
 .nav-docs a.external:after {
