@@ -8,8 +8,8 @@ $label-text: $default-text;
 
 $disabled: rgba(255, 255, 255, 0.4);
 $disabled-bg: tint($disabled, 15%);
-$border: lighten(#455e9f, 70%);
-$border-light: tint($border, 15%);
+$border: rgba(255, 255, 255, 0.5);
+$border-light: rgba(255, 255, 255, 0.3);
 $input-border: rgba(255, 255, 255, 0.6);
 $input-background: rgba(255, 255, 255, 0.1);
 
@@ -20,7 +20,7 @@ $bootstrap-panel-radius: 7px;
 $bootstrap-panel-text: #ffffff;
 $bootstrap-panel-bg: rgba(255, 255, 255, 0.1);
 $bootstrap-panel-header-bg: transparent;
-$bootstrap-panel-header-border: none;
+$bootstrap-panel-header-border: 1px solid $border-light;
 $bootstrap-panel-shadow: 1px 1px 4px rgba(0, 0, 0, 0.15);
 $mail-box: whitesmoke;
 $auth-panel-background: #ffffff;
