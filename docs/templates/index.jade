@@ -1,0 +1,69 @@
+
+extends layout
+
+block title
+  | BlurAdmin angular admin dashboard template
+
+block content
+  div.hero
+    div.hero-content
+      div.wrap
+        div.text
+          strong Blur#[span.white-text Admin]
+        div.minitext Angular admin panel front-end framework
+        div.buttons-unit
+          a.button(href=installationArticleUrl) Installation guidelines
+          a.button(href=firstArticleUrl) Documentation
+        div.admin-screenshots
+          div.admin-screenshot
+            h3 Mint version
+            a.demo-link(href='http://akveo.com/blur-admin-mint/',target='_blank')
+              img(src=contents.images['blur-preview-mint.jpg'].url)
+              span.demo-link-label Demo
+          div.admin-screenshot
+            h3 Blur version (experimental)
+            a.demo-link(href='http://akveo.com/blur-admin/',target='_blank')
+              img(src=contents.images['blur-preview.jpg'].url)
+              span.demo-link-label Demo
+  div.index-block
+    div.wrap
+      h1 Why BlurAdmin?
+      div.why-items
+        div.why-item
+          img(src=contents.images['why-structure.svg'].url)
+          h4 Awesome structure
+          p Feature-based structure has proven itself as a good choice for large angular applications.
+        div.why-item
+          img(src=contents.images['why-design.svg'].url)
+          h4 Neat design
+          p We have put a lot of efforts and carefully selected each color and character for this template!
+        div.why-item
+          img(src=contents.images['why-practices.svg'].url)
+          h4 Ease of customization
+          p Check out #[a(href='/blur-admin/articles/011-changing-color-scheme') our article], where we describe how you can create different look in just 2 minutes!
+  div.index-block.black
+    div.wrap
+      h1 Is it free?
+      p Blur admin is completely free and MIT licensed. That means you can do whatever you want with it.
+      p
+        | Initially we planned to sell it on template markets.
+        |&nbsp;But they #[a(href='http://akveo.com/blog/why-i-hate-template-markets/',target='_blank') rejected us several times].
+        |&nbsp;That's why we decided to make it open-source. And honestly, we have completely no regrets about it!
+        |&nbsp;And we suggest you to not waste your money and use our template instead of paid ones!
+        |&nbsp;Trust us, it's better than large number of them.
+  div.index-block
+    div.wrap
+      h1 How can I support you guys?
+      p Here's what you can do:
+      ul
+        li Star #[a(href='https://github.com/akveo/blur-admin',target='_blank') our GitHub repo]
+        li Create pull requests, submit bugs, suggest new features
+        li Follow #[a(href='https://twitter.com/akveo_inc',target='_blank') us on Twitter]
+        li Like #[a(href='https://www.facebook.com/akveo/',target='_blank') our page on Facebook]
+  div.index-block.black
+    div.wrap
+      h1 Can I hire you?
+      p Yes! We are available for hire. Visit #[a(href='http://akveo.com',target='_blank') our homepage]
+        |&nbsp;or simply leave us a note to #[a(href='mailto:contact@akveo.com') contact@akveo.com].
+        |&nbsp;We will be happy to work with you!
+
