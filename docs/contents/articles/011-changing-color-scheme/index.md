@@ -22,7 +22,7 @@ As we want a dark theme, we're taking `ng2`.
 
 To do this, replace 
 ```scss
-@import 'colorSchemes/blue';
+@import 'colorSchemes/ng2';
 ```
 
 to
