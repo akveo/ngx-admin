@@ -6,55 +6,117 @@ group: Customization
 template: article.jade
 ---
 
-We tried to make the process of changing color scheme in BlurAdmin as easy as possible. 
+We tried to make the process of color scheme customization as easy as possible. 
 
-By default BlurAdmin has two color profiles: mint and blur.
+By default ng2-admin has three built-in color profiles: ng2 (default blue sheme), mint and blur.
 This article will help you to create your own color profile.
-Let's say you want to make BlurAdmin dark.
+Let's say you want to make ng2-admin dark theme.
 
 First we advice you to take some colorscheme file as a basis. 
-For light themes we suggest you to take `src/sass/theme/conf/colorScheme/_mint.scss` one and for dark take `src/sass/theme/conf/colorScheme/_blur.scss` one.
-As we want dark theme, we're taking `blur`.
+For light themes we suggest taking `src/app/theme/sass/conf/colorScheme/_mint.scss` one and for dark `src/app/theme/sass/conf/colorScheme/_blue.scss` one.
+As we want a dark theme, we're taking `ng2`.
 
-1) Copy `src/sass/theme/conf/colorScheme/_blur.scss` to `src/sass/theme/conf/colorScheme/_dark.scss`.
+1) Copy `src/app/theme/sass/conf/colorScheme/_mint.scss` to `src/app/theme/sass/conf/colorScheme/_dark.scss`.
 
-2) Include your colorscheme file in `src/sass/theme/common.scs`.
+2) Include your colorscheme file in `src/app/theme/sass/conf/conf.scss`.
 
 To do this, replace 
 ```scss
-@import 'theme/conf/colorScheme/mint';
+@import 'colorSchemes/blue';
 ```
 
 to
 
 ```scss
-@import 'theme/conf/colorScheme/dark';
+@import 'colorSchemes/dark';
 ```
 
-Now you can start changing your colors.
+3) Rename the color scheme enabled
+
+Open `src/app/theme/theme.config.ts`.
+Uncomment the following line
+
+```javascript
+  //this._baConfig.changeTheme({name: 'my-theme'});
+``` 
+
+and put you theme name, in our case it is `dark`
+
+```javascript
+  this._baConfig.changeTheme({name: 'dark'});
+``` 
+Beside this notifies the system which scheme currently enabled, it also puts a css class to a main element of the page. Thus you can freely create theme-specific css selectors in you code without braking other themes' styles.
+
+For example like this:
+```scss
+. dark .card-body {
+  background-color: white;
+}
+```
+
+4) Change the colors
+
+Now your can start changing the colors.
 For example, after playing a bit with different colors, we changed 5 first main variables in `_dark.scss` file:
 ```sass
-$default: rgba(#000000, 0.2); //Panel background color
-$body-bg: #F0F3F4; // Body background color
-$default-text: #ffffff; // Default text color
-$help-text: #eeeeee; // Default subtext color
-$label-text: #ffffff; // Text for labels in forms (Basically it should be equal to default-text in most cases)
+$body-bg: #636363;
+$bootstrap-panel-bg: rgba(#000000, 0.2);
+
 ```
 
-After this is done, you need to setup javascript to use **same colors** while building charts and other javascript components.
-To do this, add following code to some configuration block, for example to `src/app/theme/theme.config.js`:
+After this is done, you need to setup javascript to use **same colors**. These color are used for javascript charts and other components (maps, etc); 
+Let's completely change the JS colors to a new set.
+To do this, add the following code to the configuration block inside `src/app/theme/theme.config.ts`:
 ```javascript
-  baConfigProvider.changeColors({
+  let colorScheme = {
+    primary: '#209e91',
+    info: '#2dacd1',
+    success: '#90b900',
+    warning: '#dfb81c',
+    danger: '#e85656',
+  };
+  this._baConfig.changeColors({
     default: '#4e4e55',
     defaultText: '#e2e2e2',
+    border: '#dddddd',
+    borderDark: '#aaaaaa',
+
+    primary: colorScheme.primary,
+    info: colorScheme.info,
+    success: colorScheme.success,
+    warning: colorScheme.warning,
+    danger: colorScheme.danger,
+
+    primaryLight: colorHelper.tint(colorScheme.primary, 30),
+    infoLight: colorHelper.tint(colorScheme.info, 30),
+    successLight: colorHelper.tint(colorScheme.success, 30),
+    warningLight: colorHelper.tint(colorScheme.warning, 30),
+    dangerLight: colorHelper.tint(colorScheme.danger, 30),
+
+    primaryDark: colorHelper.shade(colorScheme.primary, 15),
+    infoDark: colorHelper.shade(colorScheme.info, 15),
+    successDark: colorHelper.shade(colorScheme.success, 15),
+    warningDark: colorHelper.shade(colorScheme.warning, 15),
+    dangerDark: colorHelper.shade(colorScheme.danger, 15),
+
+    dashboard: {
+      blueStone: '#005562',
+      surfieGreen: '#0e8174',
+      silverTree: '#6eba8c',
+      gossip: '#b9f2a1',
+      white: '#10c4b5',
+    },
   });
 ``` 
+Here we defined a list of main colors `colorScheme` and then made light and dark version of those using `colorHelper` methods. 
+We also defined a couple of custom colors for dashboard charts.
+
 
 That's basically it! Right now your admin application should look like this:
 
-![](new-color-scheme.jpg)
+![](new-color-scheme.png)
 
 For further reference, please look in
-- Colorscheme scss file (`src/sass/theme/conf/colorScheme/_mint.scss` or `src/sass/theme/conf/colorScheme/_blur.scss`)
+- Colorscheme scss file (`src/app/theme/sass/conf/colorScheme/_ng2.scss`, `src/app/theme/sass/conf/colorScheme/_mint.scss` and `src/app/theme/sass/conf/colorScheme/_blur.scss`)
 - `src/app/theme/theme.configProvider.js` to understand which javascript colors can be changed
-- If you want to know how to change theme to blur, read [following article](/blur-admin/articles/014-switch-to-blur-theme/)
+- If you want to know how to change theme to blur, read [following article](/ng2-admin/articles/014-switch-to-blur-theme/)
