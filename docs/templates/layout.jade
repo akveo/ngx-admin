@@ -16,6 +16,8 @@ html(lang='en')
           = locals.name
       link(rel='alternate', href=locals.url+'/feed.xml', type='application/rss+xml', title=locals.description)
       link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900italic,900|Anonymous+Pro:400,700,400italic,700italic&subset=latin,greek,greek-ext,vietnamese,cyrillic-ext,latin-ext,cyrillic')
+      link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.0/gh-fork-ribbon.min.css')
+
       link(rel='stylesheet', href=contents.css['main.css'].url)
       link(rel='shortcut icon', href=contents.images['favicon.png'].url)
   body(class=bodyclass)
@@ -23,8 +25,8 @@ html(lang='en')
       div.nav-main
         div.wrap
           a.nav-home(href=contents['index'].url)
-            img.nav-logo(src=contents.images['blur-admin-logo.png'].url, width=36,height=36)
-            |&nbsp;#[span.blur-label Blur]Admin
+            img.nav-logo(src=contents.images['logo.png'].url, width=24,height=24)
+            |&nbsp;#[span.blur-label ng2-]admin
           ul.nav-site.nav-site-internal
             li
               a(class= locals.page.metadata.activeHome ? 'active': '')(href=contents['index'].url) Home
@@ -35,9 +37,8 @@ html(lang='en')
       block content
         h2 Welcome to blur admin!
       footer.wrap
-        div.left Powered by Angular, Bootsrap, Gulp and more...
+        div.left Powered by Angular 2, Bootstrap 4, Webpack and many more...
         div.right
           | © 2015–2016 Akveo LLC<br />
           | Documentation licensed under #[a(href='https://creativecommons.org/licenses/by/4.0/') CC BY 4.0].
-    a(href='https://github.com/akveo/blur-admin')
-      img(style='position: fixed; top: 0; right: 0; border: 0; z-index: 1000;',src='https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67',alt='Fork me on GitHub',data-canonical-src='https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png')
+    a(href='https://github.com/akveo/ng2-admin', class='github-fork-ribbon', title="Star & Fork on GitHub")
