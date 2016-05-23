@@ -8,39 +8,64 @@ template: article.jade
 
 ## Prerequisites
 
-Despite BlurAdmin can be run without any development experience, it would be much easier if you already know something about it. In general following instruction do allow to run local copy by complete newbie, but it doesn't answer questions that can arise in the process of installation.
+Despite BlurAdmin can be run without any development experience, it would be much easier if you already have some development experience. In general following instructions allow you to run a local copy on your machine.
 
 ## Install tools
 
-If you don't havee any of these tools installed already, you will need to:
+If you don't have any of these tools installed already, you will need to:
 * Download and install [git](https://git-scm.com/)
 * Download and install nodejs [https://nodejs.org](https://nodejs.org)
 
-**Note**: It seems like there are some problems with some libraries used in this template and old node versions. That's why we suggest you to have one of the latest.
+**Note**: Make sure you have Node version >= 4.0 and NPM >= 3
+
+Once you have those, you should install these globals with `npm install --global`:
+* webpack
+```bash
+npm install --global webpack
+```
+
+* webpack-dev-server
+```bash
+npm install --global webpack-dev-server
+```
+
+* typings
+```bash
+npm install --global typings
+```
+
+* typescript
+```bash
+npm install --global typescript
+```
 
 ## Clone repository and install dependencies
 
-You will need to clone source code of BlurAdmin GitHub repository. To do this open console and execute following lines:
+You will need to clone the source code of ng2-admin GitHub repository:
 ```bash
-git clone https://github.com/akveo/blur-admin.git
+git clone https://github.com/akveo/ng2-admin.git
 ```
-After repository is cloned, go inside of repository directory and install dependencies there:
+After repository is cloned, go inside of the repository directory and install dependencies:
 ```bash
-cd blur-admin
+cd ng2-admin
 npm install
 ```
-This will setup a working copy of BlurAdmin on your local machine
+This will setup a working copy of ng2-admin on your local machine.
 
 ## Running local copy
 
-To run local copy in development mode, execute:
+To run a local copy in development mode, execute:
 ```bash
-gulp serve
+npm start
 ```
-This script should automatically open template in your default browser.
+Go to http://0.0.0.0:3000 or http://localhost:3000 in your browser.
 
-To run local copy in production mode, execute:
+
+To run the local copy in production mode and build the sources, execute:
 ```bash
-gulp serve:dist
+npm run prebuild:prod && npm run build:prod && npm run server:prod
 ```
-For addition information about build, please check out [this angular generator](https://github.com/Swiip/generator-gulp-angular)
+This will clear up your dist folder (where release files are located), generate release build and start built-in server.
+Now you can copy the sources from a `dist` folder and use it with any backend framework or simple put in under some web server.
+
+For addition information about build, please check out [Angular2 Webpack Starter documentation](https://github.com/AngularClass/angular2-webpack-starter)
