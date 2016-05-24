@@ -74,5 +74,5 @@ $hoverlink: $primary-dark;
   }
 }
 @mixin additional-bg() {
-  display: none;
+  //display: block; // additional background layer, hidden by default
 }

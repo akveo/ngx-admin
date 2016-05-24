@@ -58,6 +58,12 @@ $hoverlink: darken($activelink, 20%);
 
 @mixin additional-bg() {
   display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+
   @include gradient(#73c5d9, #4691d1, #455e9f);
   &::after {
     content: '';

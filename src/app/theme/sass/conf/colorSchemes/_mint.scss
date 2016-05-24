@@ -58,5 +58,5 @@ $hoverlink: $primary-dark;
   background-color: $body-bg;
 }
 @mixin additional-bg() {
-  display: none;
+  //display: block; // additional background layer, hidden by default
 }
