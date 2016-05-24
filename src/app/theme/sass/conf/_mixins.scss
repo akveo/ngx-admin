@@ -49,23 +49,6 @@
   background-image: url($images-root + $relativeUrl);
 }
 
-@mixin main-background() {
-  $mainBgUrl: $images-root + 'blur-bg.jpg';
-
-  &::before {
-    content: '';
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background: url($mainBgUrl) no-repeat center center;
-    background-size: cover;
-    will-change: transform;
-    z-index: 0;
-  }
-}
-
 @mixin bg-translucent-dark($opacity) {
   background: rgba(0, 0, 0, $opacity);
 }

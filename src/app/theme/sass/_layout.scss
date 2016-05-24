@@ -18,11 +18,8 @@ main {
   position: relative;
   font: 14px/16px $font-family;
   color: $default-text;
-  @include body-bg();
 
-  &.blur {
-    @include main-background();
-  }
+  @include body-bg();
 
   .additional-bg {
     position: fixed;
@@ -30,7 +27,6 @@ main {
     left: 0;
     bottom: 0;
     right: 0;
-    //background-attachment: inherit;
     @include additional-bg();
   }
 }
