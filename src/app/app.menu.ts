@@ -114,14 +114,17 @@ export const menuItems = [
     subMenu: [
       {
         title: 'Menu Level 1.1',
+        url: '#',
         disabled: true,
         selected: false,
         expanded: false
       },
       {
         title: 'Menu Level 1.2',
+        url: '#',
         subMenu: [{
           title: 'Menu Level 1.2.1',
+          url: '#',
           disabled: true,
           selected: false,
           expanded: false
