@@ -2,9 +2,9 @@
 
 Admin template made with ♥ by [Akveo team](http://akveo.com/). Follow us on [Twitter](https://twitter.com/akveo_inc) to get latest news about this template first!
 
-## Demo
+### Demo
 
-TODO: demo link
+<a target="_blank" href="http://akveo.com/ng2-admin/"><img src="http://i.imgur.com/QK9AzHj.jpg" width="300" alt="Sky Blue"/></a>
 
 ## Angular 1.x version
 Here you can find Angular 1.x based version: [Blur Admin](http://akveo.github.io/blur-admin/).
