@@ -22,7 +22,7 @@ Here we registering a loader (`this._imageLoader.load` just returns a `Promise`)
   BaThemePreloader.registerLoader(this._imageLoader.load(layoutPaths.images.root + 'blur-bg-mobile.jpg'));
 ```
 
-Then we starting all the registered promises and once they all are done - hiding the spinner.
+Then we are starting all the registered promises and once they all are done - hiding the spinner.
 ```javascript
   BaThemePreloader.load().then((values) => {
        this._spinner.hide();
