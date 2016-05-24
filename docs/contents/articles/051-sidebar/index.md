@@ -55,4 +55,4 @@ You also can define a list of sub-menu items like this:
 
 ## Routes configuration
 
-Routes configuration is specified in the Page Components according to Angular 2 Router specification. More information you can find [here](https://angular.io/docs/ts/latest/guide/router.html).
+Routes configuration is specified in the Page Components according to Angular 2 Router specification. More information you can find [here](https://angular.io/docs/ts/latest/guide/router-deprecated.html).
