@@ -1,32 +1,33 @@
 $default: rgba(#000000, 0.2);
 $body-bg: #F0F3F4;
 
-
 $default-text: #ffffff;
 $content-text: $default-text;
 $help-text: #eeeeee;
-$label-text: #ffffff;
 
+$label-text: #ffffff;
 $disabled: #dddddd;
 $disabled-bg: transparent;
 $border: #ffffff;
 $border-light: rgba(#ffffff, 0.2);
 $input-border: transparent;
 $input-background: rgba(#000000, 0.15);
+$dropdown-text: #7d7d7d;
 
 $sidebar: rgba(#000000, 0.5);
 $sidebar-text: #ffffff;
-$dropdown-text: #7d7d7d;
+
+$mail-box: whitesmoke;
+$auth-panel-background: rgba(#000000, 0.55);
+$progress-background: rgba(#000000, 0.15);
+$progress-default: #ffffff;
+
 $bootstrap-panel-radius: 5px;
 $bootstrap-panel-text: #7d7d7d;
 $bootstrap-panel-bg: #ffffff;
 $bootstrap-panel-header-bg: $bootstrap-panel-bg;
 $bootstrap-panel-header-border: 1px solid rgba(0, 0, 0, 0.12);
 $bootstrap-panel-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.25);
-$mail-box: whitesmoke;
-$auth-panel-background: rgba(#000000, 0.55);
-$progress-background: rgba(#000000, 0.15);
-$progress-default: #ffffff;
 
 $primary: #209e91 !default;
 $info: #2dacd1 !default;
