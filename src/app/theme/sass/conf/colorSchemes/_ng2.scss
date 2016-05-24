@@ -54,24 +54,25 @@ $danger-bg: tint($danger, 20%);
 $activelink: #285eb8;
 $hoverlink: darken($activelink, 20%);
 
-@mixin body-bg() {}
+@mixin body-bg() {
+  background-color: $body-bg;
 
-@mixin additional-bg() {
-  display: block;
-  position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
+  $mainBgUrl: $images-root + 'sky-bg.jpg';
 
-  @include gradient(#73c5d9, #4691d1, #455e9f);
-  &::after {
+  &::before {
     content: '';
     position: fixed;
+    width: 100%;
+    height: 100%;
     top: 0;
     left: 0;
-    bottom: 0;
-    right: 0;
-    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAIUlEQVQIW2NkYGCQZGBgeM4ABYxQGiYoCRMAiYMFMVQAAIACBDd1EYQFAAAAAElFTkSuQmCC) repeat;
+    background: url($mainBgUrl) no-repeat center center;
+    background-size: cover;
+    will-change: transform;
+    z-index: 0;
   }
+}
+
+@mixin additional-bg() {
+  //display: block; // additional background layer, hidden by default
 }
