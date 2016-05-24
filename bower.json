@@ -12,12 +12,10 @@
   "ignore": [
     "**/.*",
     "node_modules",
-    "bower_components",
     "test",
     "tests"
   ],
   "dependencies": {
-    "Ionicons": "ionicons#~2.0.1",
-    "fullcalendar": "^2.7.1"
+    "Ionicons": "ionicons#~2.0.1"
   }
 }

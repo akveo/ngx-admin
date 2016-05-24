@@ -1,0 +1,31 @@
+{
+  "baseUrl": "/ng2-admin/",
+  "locals": {
+    "url": "http://localhost:8080",
+    "name": "ng2-admin blog",
+    "owner": "Akveo",
+    "description": ""
+  },
+  "plugins": [
+    "./plugins/paginator.coffee"
+  ],
+  "require": {
+    "moment": "moment",
+    "_": "underscore",
+    "typogr": "typogr"
+  },
+  "jade": {
+    "pretty": true
+  },
+  "markdown": {
+    "smartLists": true,
+    "smartypants": true
+  },
+  "paginator": {
+    "perPage": 3,
+    "groupSort": {
+      "Quick Start": 1000,
+      "Customization": 900
+    }
+  }
+}

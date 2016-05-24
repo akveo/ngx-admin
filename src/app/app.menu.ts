@@ -128,5 +128,14 @@ export const menuItems = [
         }]
       }
     ]
+  },
+  {
+    title: 'External Link',
+    url: 'http://akveo.com',
+    icon: 'ion-android-exit',
+    selected: false,
+    expanded: false,
+    order: 800,
+    target: '_blank'
   }
 ];

@@ -1,0 +1,44 @@
+doctype html
+block vars
+  - var bodyclass = null;
+  - var groupedArticles = env.helpers.getGroupedArticles(contents);
+  - var firstArticleUrl = groupedArticles[0].items[0].url
+  - var installationArticleUrl = groupedArticles[0].items[1].url
+html(lang='en')
+  head
+    block head
+      meta(charset='utf-8')
+      meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
+      meta(name='viewport', content='width=device-width')
+      meta(name='keywords', content='admin,dashboard,template,angular,bootstrap,blur,panel,html,css,javascript')
+      title
+        block title
+          = locals.name
+      link(rel='alternate', href=locals.url+'/feed.xml', type='application/rss+xml', title=locals.description)
+      link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900italic,900|Anonymous+Pro:400,700,400italic,700italic&subset=latin,greek,greek-ext,vietnamese,cyrillic-ext,latin-ext,cyrillic')
+      link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.0/gh-fork-ribbon.min.css')
+
+      link(rel='stylesheet', href=contents.css['main.css'].url)
+      link(rel='shortcut icon', href=contents.images['favicon.png'].url)
+  body(class=bodyclass)
+    div.container
+      div.nav-main
+        div.wrap
+          a.nav-home(href=contents['index'].url)
+            img.nav-logo(src=contents.images['logo.png'].url, width=24,height=24)
+            |&nbsp;#[span.blur-label ng2-]admin
+          ul.nav-site.nav-site-internal
+            li
+              a(class= locals.page.metadata.activeHome ? 'active': '')(href=contents['index'].url) Home
+            li
+              a(class= !locals.page.metadata.activeHome ? 'active': '')(href=firstArticleUrl) Docs
+          span.nav-docs-right
+            | Need some help? Let us know! #[a(href='mailto:contact@akveo.com') contact@akveo.com]
+      block content
+        h2 Welcome to blur admin!
+      footer.wrap
+        div.left Powered by Angular 2, Bootstrap 4, Webpack and many more...
+        div.right
+          | © 2015–2016 Akveo LLC<br />
+          | Documentation licensed under #[a(href='https://creativecommons.org/licenses/by/4.0/') CC BY 4.0].
+    a(href='https://github.com/akveo/ng2-admin', class='github-fork-ribbon', title="Star & Fork on GitHub")
