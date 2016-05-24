@@ -7,6 +7,9 @@ import {Pages} from './pages';
 import {AppState} from './app.state';
 import {BaThemeConfigProvider, BaThemeConfig, BaThemeSpinner} from './theme';
 import {BaThemeRun} from './theme/directives';
+import {BaImageLoaderService, BaThemePreloader} from './theme/services';
+
+import {layoutPaths} from './theme/theme.constants';
 
 /*
  * App Component
@@ -16,7 +19,7 @@ import {BaThemeRun} from './theme/directives';
   selector: 'app',
   pipes: [],
   directives: [BaThemeRun],
-  providers: [BaThemeConfigProvider, BaThemeConfig, BaThemeSpinner],
+  providers: [BaThemeConfigProvider, BaThemeConfig, BaImageLoaderService, BaThemeSpinner],
   encapsulation: ViewEncapsulation.None,
   styles: [require('normalize.css'), require('./app.scss')],
   template: `
@@ -38,14 +41,23 @@ export class App {
 
   isMenuCollapsed:boolean = false;
 
-  constructor(private _state:AppState, private _baThemeConfig:BaThemeConfig, private _baSpinner:BaThemeSpinner) {
+  constructor(private _state:AppState, private _imageLoader:BaImageLoaderService, private _spinner:BaThemeSpinner) {
+    this._loadImages();
 
     this._state.subscribe('menu.isCollapsed', (isCollapsed) => {
       this.isMenuCollapsed = isCollapsed;
     });
   }
 
-  ngAfterViewInit() {
-    this._baSpinner.hide(200);
+  public ngAfterViewInit():void {
+    // hide spinner once all loaders are completed
+    BaThemePreloader.load().then((values) => {
+      this._spinner.hide();
+    });
+  }
+
+  private _loadImages():void {
+    // register some loaders
+    BaThemePreloader.registerLoader(this._imageLoader.load(layoutPaths.images.root + 'blur-bg-mobile.jpg'));
   }
 }

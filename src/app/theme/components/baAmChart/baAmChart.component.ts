@@ -1,5 +1,7 @@
 import {Component, ViewChild, ViewEncapsulation, Input, Output, ElementRef, EventEmitter} from '@angular/core';
 
+import {BaThemePreloader} from '../../../theme/services';
+
 import './baAmChart.loader.ts';
 import {BaAmChartThemeService} from './baAmChartTheme.service';
 
@@ -18,6 +20,7 @@ export class BaAmChart {
   @ViewChild('baAmChart') private _selector:ElementRef;
 
   constructor (private _baAmChartThemeService:BaAmChartThemeService) {
+    this._loadChartsLib();
   }
 
   ngOnInit() {
@@ -27,5 +30,13 @@ export class BaAmChart {
   ngAfterViewInit() {
     let chart = AmCharts.makeChart(this._selector.nativeElement, this.baAmChartConfiguration);
     this.onChartReady.emit(chart);
+  }
+
+  private _loadChartsLib():void {
+    BaThemePreloader.registerLoader(new Promise((resolve, reject) => {
+      AmCharts.ready(function(){
+        resolve('AmCharts ready');
+      });
+    }));
   }
 }
