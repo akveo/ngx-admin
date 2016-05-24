@@ -11,7 +11,7 @@ If you want to switch theme to the blur, you need to follow 3 simple steps:
 1) Blur color scheme needs some javascript to calculate initial background offsets for panels.
 That's why we need to tell the system that we want to use blur theme by specifying this in `src/app/theme/theme.config.ts`:
 ```javascript
-  baConfigProvider.changeTheme({name: 'blur'});
+  this._baConfig.changeTheme({name: 'blur'});
 ```
 
 2) Also you need to change some colors. 
