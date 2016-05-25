@@ -8,7 +8,7 @@ export class BaImageLoaderService {
     return new Promise((resolve, reject) => {
       let img = new Image();
       img.src = src;
-      img.onload = function(){
+      img.onload = function() {
         resolve('Image with src ' + src + ' loaded successfully.');
       };
     });
