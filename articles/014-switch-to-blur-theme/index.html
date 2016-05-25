@@ -55,8 +55,9 @@
 That’s why we need to tell the system that we want to use blur theme by specifying this in <code>src/app/theme/theme.config.ts</code>:</p>
 <pre><code class="lang-javascript">  <span class="keyword">this</span>._baConfig.changeTheme({name: <span class="string">'blur'</span>});
 </code></pre>
+<p><br><br></p>
 <p>2) Also you need to change some colors. 
-For our blur theme we use following&nbsp;configuration:</p>
+For our blur theme we use the following configuration in <code>src/app/theme/theme.config.ts</code>:</p>
 <pre><code class="lang-javascript">  <span class="keyword">let</span> colorScheme = {
     primary: <span class="string">'#209e91'</span>,
     info: <span class="string">'#2dacd1'</span>,
@@ -97,6 +98,7 @@ For our blur theme we use following&nbsp;configuration:</p>
     },
   });
 </code></pre>
+<p><br><br></p>
 <p>3) <span class="caps">CSS</span> should also be recompiled. 
 Before running build command, switch to <em>blur</em> color profile.
 To do so replace theme in <code>src/app/theme/sass/conf/conf.scss</code>:</p>
@@ -111,8 +113,8 @@ To do so replace theme in <code>src/app/theme/sass/conf/conf.scss</code>:</p>
 <li><code>src/assets/img/blur-bg-blurred.jpg</code> (blurred background image used on&nbsp;panels)</li>
 </ul>
 <p>We suggest using 10px Gaussian blur to blur an original&nbsp;image.</p>
-<hr>
-<p>That’s it! You have successfully blurred your theme! Run <code>npm start</code> and check it&nbsp;out.</p>
+<p><br><br>
+That’s it! You have successfully blurred your theme! Run <code>npm start</code> and check it&nbsp;out.</p>
 
         </div>
       </section>

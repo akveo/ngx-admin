@@ -56,16 +56,18 @@ This article will help you to create your own color profile.
 Let’s say you want to make ng2-admin dark&nbsp;theme.</p>
 <p>First we advice you to take some colorscheme file as a basis. 
 For light themes we suggest taking <code>src/app/theme/sass/conf/colorScheme/_mint.scss</code> one and for dark <code>src/app/theme/sass/conf/colorScheme/_blue.scss</code> one.
-As we want a dark theme, we’re taking <code>ng2</code>.</p>
-<p>1) Copy <code>src/app/theme/sass/conf/colorScheme/_mint.scss</code> to <code>src/app/theme/sass/conf/colorScheme/_dark.scss</code>.</p>
+As we want a dark theme, we’re taking <code>mint</code>.</p>
+<p>1) Copy <code>src/app/theme/sass/conf/colorScheme/_mint.scss</code> to <code>src/app/theme/sass/conf/colorScheme/_dark.scss</code>:
+<br><br></p>
 <p>2) Include your colorscheme file in <code>src/app/theme/sass/conf/conf.scss</code>.</p>
-<p>To do this,&nbsp;replace </p>
+<p>To do this,&nbsp;replace</p>
 <pre><code class="lang-scss">@<span class="keyword">import</span> <span class="string">'colorSchemes/ng2'</span>;
 </code></pre>
 <p>to</p>
 <pre><code class="lang-scss">@<span class="keyword">import</span> <span class="string">'colorSchemes/dark'</span>;
 </code></pre>
-<p>3) Rename the color scheme&nbsp;enabled</p>
+<p><br><br></p>
+<p>3) Rename the color scheme&nbsp;enabled:</p>
 <p>Open <code>src/app/theme/theme.config.ts</code>.
 Uncomment the following&nbsp;line</p>
 <pre><code class="lang-javascript">  <span class="comment">//this._baConfig.changeTheme({name: 'my-theme'});</span>
@@ -79,9 +81,10 @@ Uncomment the following&nbsp;line</p>
   <span class="attribute">background-color</span>: white;
 }
 </code></pre>
-<p>4) Change the&nbsp;colors</p>
+<p><br><br></p>
+<p>4) Change the&nbsp;colors:</p>
 <p>Now your can start changing the colors.
-For example, after playing a bit with different colors, we changed 5 first main variables in <code>_dark.scss</code> file:</p>
+For example, after playing a bit with different colors, we changed 2 first main variables in <code>_dark.scss</code> file:</p>
 <pre><code class="lang-sass">$body-bg: #636363;
 $bootstrap-panel-bg: rgba(#000000, 0.2);
 </code></pre>
@@ -136,7 +139,7 @@ We also defined a couple of custom colors for dashboard&nbsp;charts.</p>
 <ul>
 <li>Colorscheme scss file (<code>src/app/theme/sass/conf/colorScheme/_ng2.scss</code>, <code>src/app/theme/sass/conf/colorScheme/_mint.scss</code> and <code>src/app/theme/sass/conf/colorScheme/_blur.scss</code>)</li>
 <li><code>src/app/theme/theme.configProvider.js</code> to understand which javascript colors can be&nbsp;changed</li>
-<li>If you want to know how to change theme to blur, read <a href="/ng2-admin/articles/014-switch-to-blur-theme/">following&nbsp;article</a></li>
+<li>If you want to know how to change theme to blur, read the <a href="/ng2-admin/articles/014-switch-to-blur-theme/">following&nbsp;article</a></li>
 </ul>
 
         </div>

@@ -51,7 +51,7 @@
         <div class="inner-content">
           <h1>Sidebar</h1>
           <div class="subHeader"></div><p>Sidebar is used to provide convenient way of navigation in the application. 
-Application support only one sidebar per angular application. 
+Application supports only one sidebar per angular application. 
 That means sidebar is basically a singletone object.
 Currently sidebar supports level 1 and 2 sub&nbsp;menus.</p>
 <p>Sidebar can be added to the page using <code>BaSidebar</code> component:</p>
@@ -59,7 +59,7 @@ Currently sidebar supports level 1 and 2 sub&nbsp;menus.</p>
 </code></pre>
 <p>At the moment sidebar menu items configuration and Angular 2 Router should be configured independently. We probably will come up with a better solution once new Angular Router is released and&nbsp;stable.</p>
 <h2 id="menu-configuration">Menu&nbsp;Configuration</h2>
-<p>All menu items are located inside <code>src/app/app.menu.ts</code> file. The file contain a list of Menu Item objects with the following&nbsp;fields:</p>
+<p>All menu items are located inside <code>src/app/app.menu.ts</code> file. The file contains a list of Menu Item objects with the following&nbsp;fields:</p>
 <pre><code class="lang-javascript">  {
     title: <span class="string">'Dashboard'</span>, <span class="comment">// menu item title</span>
     component: <span class="string">'Dashboard'</span>, <span class="comment">// component where the menu should lead, has a priority over url property</span>

@@ -50,53 +50,49 @@
         </div>
         <div class="inner-content">
           <h1>Create New Page</h1>
-          <div class="subHeader"></div><p>Blur admin uses <a href="https://github.com/angular-ui/ui-router">Angular <span class="caps">UI</span> router</a> for navigation. 
-That means to create new page you need to basically configure <code>ui-router</code> state.</p>
+          <div class="subHeader"></div><p>ng2-admin uses <a href="https://angular.io/docs/ts/latest/guide/router-deprecated.html">Angular Router</a> for navigation.
+Currently this version of the router is deprecated and we are going to move on to a new version once it’s&nbsp;stable.</p>
 <p>We strongly recommend to follow pages structure in your application. 
 If it doesn’t fit your needs please create a GitHub issue and tell us why. We would be glad to&nbsp;discuss. </p>
-<p>Also we recommend to put pages to separate modules. 
-This will allow you to easily switch off some pages in the future if&nbsp;needed.</p>
+<p>Basically any page is just a usual Angular 2 Component with some routes defined for&nbsp;it.</p>
 <h2 id="page-creation-example">Page creation&nbsp;example</h2>
-<p>0) Let’s assume we want to create a blank page with title ‘My New&nbsp;Page’</p>
-<p>1) Let’s Create a new directory to contain our new page inside of <code>src/app/pages</code>. Let’s call this directory <code>myNewPage</code>.</p>
-<p>2) Then let’s create blank angular module to contain our page called ‘myNewPage.module.js’ inside of <code>src/app/pages/myNewPage</code>:</p>
-<pre><code class="lang-javascript">(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>{
-<span class="meta">  'use strict'</span>;
+<p>1) Let’s assume we want to create a blank page with title ‘My New Page’
+<br><br></p>
+<p>2) Let’s Create a new directory to contain our new page inside of <code>src/app/pages</code>. Let’s call this directory <code>new</code>.
+<br><br></p>
+<p>3) Then let’s create blank angular component to contain our page called ‘new.component.module.js’ inside of <code>src/app/pages/new</code>:</p>
+<pre><code class="lang-javascript"><span class="keyword">import</span> {Component} <span class="keyword">from</span> <span class="string">'@angular/core'</span>;
 
-  angular.module(<span class="string">'BlurAdmin.pages.myNewPage'</span>, [])
-      .config(routeConfig);
+@Component({
+  selector: <span class="string">'new'</span>,
+  pipes: [],
+  providers: [],
+  styles: [],
+  template: <span class="string">`&lt;strong&gt;My page content here&lt;/strong&gt;`</span>
+})
+<span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">New</span> </span>{
 
-  <span class="comment">/** @ngInject */</span>
-  <span class="function"><span class="keyword">function</span> <span class="title">routeConfig</span>(<span class="params"></span>) </span>{
-
+  <span class="keyword">constructor</span>() {
   }
-
-})();
+}
 </code></pre>
-<p>3) Then let’s create empty html file called <code>my-new-page.html</code> inside of <code>src/app/pages/myNewPage</code>.</p>
-<p>4) Lastly let’s create ui router state for this page. To do this we need to modify module.js file we created on step&nbsp;2:</p>
-<pre><code class="lang-javascript">(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>{
-<span class="meta">  'use strict'</span>;
-
-  angular.module(<span class="string">'BlurAdmin.pages.myNewPage'</span>, [])
-      .config(routeConfig);
-
-  <span class="comment">/** @ngInject */</span>
-  <span class="function"><span class="keyword">function</span> <span class="title">routeConfig</span>(<span class="params">$stateProvider</span>) </span>{
-    $stateProvider
-        .state(<span class="string">'myNewPage'</span>, {
-          url: <span class="string">'/myNewPage'</span>,
-          templateUrl: <span class="string">'app/pages/myNewPage/my-new-page.html'</span>,
-          title: <span class="string">'My New Page'</span>,
-          sidebarMeta: {
-            order: <span class="number">800</span>,
-          },
-        });
+<p>This will create a simple Angular 2 component, for more detail please check out <a href="https://angular.io/docs/ts/latest/guide/displaying-data.html">official Angular 2 documentation</a>.
+<br><br></p>
+<p>4) Last thing we need to do is to define a Router configuration in a parent component, in our case in Pages component <code>src/app/pages/pages.component.ts</code>:</p>
+<pre><code class="lang-javascript">@RouteConfig([
+  <span class="comment">// ... some routes here</span>
+  {
+    name: <span class="string">'New'</span>,
+    component: New,
+    path: <span class="string">'/new'</span>,
   }
-
-})();
+])
+<span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">Pages</span> </span>{
+}
 </code></pre>
-<p>That’s it! Your can now open your new page either from sidebar or through hash&nbsp;<span class="caps">URL</span>.</p>
+<p><br><br></p>
+<p>And that’s it! now your page should be available by the following url <a href="http://localhost:3000/#/pages/new">http://localhost:3000/#/pages/new</a>.
+If you want to add a link to your page into Sidebar, please look at the <a href="/ng2-admin/articles/015-sidebar/">following article</a>.</p>
 
         </div>
       </section>
