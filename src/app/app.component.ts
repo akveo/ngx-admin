@@ -5,9 +5,9 @@ import {RouteConfig} from '@angular/router-deprecated';
 
 import {Pages} from './pages';
 import {AppState} from './app.state';
-import {BaThemeConfigProvider, BaThemeConfig, BaThemeSpinner} from './theme';
+import {BaThemeConfigProvider, BaThemeConfig} from './theme';
 import {BaThemeRun} from './theme/directives';
-import {BaImageLoaderService, BaThemePreloader} from './theme/services';
+import {BaImageLoaderService, BaThemePreloader, BaThemeSpinner} from './theme/services';
 
 import {layoutPaths} from './theme/theme.constants';
 
