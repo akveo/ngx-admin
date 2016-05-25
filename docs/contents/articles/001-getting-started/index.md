@@ -8,7 +8,7 @@ template: article.jade
 
 ## What is ng2-admin?
 
-ng2-admin is a front-end Admin Dashboard template based on Angular 2, Bootstrap 4 and Webpack. That means all data you can see on graphs, charts tables is mocked in Javascript so you can use backend of your choice with no limitations.
+ng2-admin is a front-end Admin Dashboard template based on Angular 2, Bootstrap 4 and Webpack. That means all data you can see on graphs, charts and tables is mocked in Javascript so you can use backend of your choice with no limitations.
 
 ## How can it help me?
 

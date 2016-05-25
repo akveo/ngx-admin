@@ -14,13 +14,14 @@ Let's say you want to make ng2-admin dark theme.
 
 First we advice you to take some colorscheme file as a basis. 
 For light themes we suggest taking `src/app/theme/sass/conf/colorScheme/_mint.scss` one and for dark `src/app/theme/sass/conf/colorScheme/_blue.scss` one.
-As we want a dark theme, we're taking `ng2`.
+As we want a dark theme, we're taking `mint`.
 
-1) Copy `src/app/theme/sass/conf/colorScheme/_mint.scss` to `src/app/theme/sass/conf/colorScheme/_dark.scss`.
+1) Copy `src/app/theme/sass/conf/colorScheme/_mint.scss` to `src/app/theme/sass/conf/colorScheme/_dark.scss`:
+<br><br>
 
 2) Include your colorscheme file in `src/app/theme/sass/conf/conf.scss`.
 
-To do this, replace 
+To do this, replace
 ```scss
 @import 'colorSchemes/ng2';
 ```
@@ -30,8 +31,9 @@ to
 ```scss
 @import 'colorSchemes/dark';
 ```
+<br><br>
 
-3) Rename the color scheme enabled
+3) Rename the color scheme enabled:
 
 Open `src/app/theme/theme.config.ts`.
 Uncomment the following line
@@ -53,11 +55,12 @@ For example like this:
   background-color: white;
 }
 ```
+<br><br>
 
-4) Change the colors
+4) Change the colors:
 
 Now your can start changing the colors.
-For example, after playing a bit with different colors, we changed 5 first main variables in `_dark.scss` file:
+For example, after playing a bit with different colors, we changed 2 first main variables in `_dark.scss` file:
 ```sass
 $body-bg: #636363;
 $bootstrap-panel-bg: rgba(#000000, 0.2);
@@ -119,4 +122,4 @@ That's basically it! Right now your admin application should look like this:
 For further reference, please look in
 - Colorscheme scss file (`src/app/theme/sass/conf/colorScheme/_ng2.scss`, `src/app/theme/sass/conf/colorScheme/_mint.scss` and `src/app/theme/sass/conf/colorScheme/_blur.scss`)
 - `src/app/theme/theme.configProvider.js` to understand which javascript colors can be changed
-- If you want to know how to change theme to blur, read [following article](/ng2-admin/articles/014-switch-to-blur-theme/)
+- If you want to know how to change theme to blur, read the [following article](/ng2-admin/articles/014-switch-to-blur-theme/)

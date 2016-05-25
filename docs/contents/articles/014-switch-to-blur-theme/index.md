@@ -13,9 +13,10 @@ That's why we need to tell the system that we want to use blur theme by specifyi
 ```javascript
   this._baConfig.changeTheme({name: 'blur'});
 ```
+<br><br>
 
 2) Also you need to change some colors. 
-For our blur theme we use following configuration:
+For our blur theme we use the following configuration in `src/app/theme/theme.config.ts`:
 ```javascript
   let colorScheme = {
     primary: '#209e91',
@@ -57,6 +58,8 @@ For our blur theme we use following configuration:
     },
   });
 ```
+<br><br>
+
 3) CSS should also be recompiled. 
 Before running build command, switch to *blur* color profile.
 To do so replace theme in `src/app/theme/sass/conf/conf.scss`:
@@ -78,5 +81,5 @@ Additionaly, if you would like to use some different background, replace the fol
 
 We suggest using 10px Gaussian blur to blur an original image.
 
-_________________________________________ 
+<br><br>
 That's it! You have successfully blurred your theme! Run `npm start` and check it out.

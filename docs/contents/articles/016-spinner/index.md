@@ -17,7 +17,7 @@ This service globally integrated into the application and connected to the spinn
 You can register any promise in any part of the application so that the spinner will be hidden only after your promise is completed (resolved).
 
 You can find an example of usage inside of the `app.component.ts` file.
-Here we registering a loader (`this._imageLoader.load` just returns a `Promise`) which loads a background image:
+Here we are registering a loader (`this._imageLoader.load` just returns a `Promise`) which loads a background image:
 ```javascript
   BaThemePreloader.registerLoader(this._imageLoader.load(layoutPaths.images.root + 'blur-bg-mobile.jpg'));
 ```

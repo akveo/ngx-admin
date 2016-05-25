@@ -8,7 +8,7 @@ template: article.jade
 
 ## Prerequisites
 
-Despite BlurAdmin can be run without any development experience, it would be much easier if you already have some development experience. In general following instructions allow you to run a local copy on your machine.
+Despite BlurAdmin can be run without any development experience, it would be much easier if you already have some. In general following instructions allow you to run a local copy on your machine.
 
 ## Install tools
 
@@ -66,6 +66,6 @@ To run the local copy in production mode and build the sources, execute:
 npm run prebuild:prod && npm run build:prod && npm run server:prod
 ```
 This will clear up your dist folder (where release files are located), generate release build and start built-in server.
-Now you can copy the sources from a `dist` folder and use it with any backend framework or simple put in under some web server.
+Now you can copy the sources from a `dist` folder and use it with any backend framework or simply put it under some web server.
 
 For addition information about build, please check out [Angular2 Webpack Starter documentation](https://github.com/AngularClass/angular2-webpack-starter)

@@ -7,7 +7,7 @@ template: article.jade
 ---
 
 Sidebar is used to provide convenient way of navigation in the application. 
-Application support only one sidebar per angular application. 
+Application supports only one sidebar per angular application. 
 That means sidebar is basically a singletone object.
 Currently sidebar supports level 1 and 2 sub menus.
  
@@ -21,7 +21,7 @@ At the moment sidebar menu items configuration and Angular 2 Router should be co
 
 ## Menu Configuration
 
-All menu items are located inside `src/app/app.menu.ts` file. The file contain a list of Menu Item objects with the following fields:
+All menu items are located inside `src/app/app.menu.ts` file. The file contains a list of Menu Item objects with the following fields:
 
 ```javascript
   {
