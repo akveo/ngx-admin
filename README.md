@@ -6,6 +6,8 @@ Admin template made with :heart:  by [Akveo team](http://akveo.com/). Follow us 
 
 <a target="_blank" href="http://akveo.com/ng2-admin/"><img src="http://i.imgur.com/QK9AzHj.jpg" width="600" alt="Sky Blue"/></a>
 
+<a target="_blank" href="http://akveo.com/ng2-admin/">Live Demo</a>
+
 ## Angular 1.x version
  :point_right: Here you can find Angular 1.x based version: [Blur Admin](http://akveo.github.io/blur-admin/)
  
@@ -16,10 +18,10 @@ Admin template made with :heart:  by [Akveo team](http://akveo.com/). Follow us 
 :rocket: Angular 2, Bootstrap 4, Webpack and lots of awesome modules and plugins
 
 ## How can I support developers?
-&nbsp;&nbsp;&nbsp;:star:&nbsp;&nbsp;Star our GitHub repo </br>
-&nbsp;&nbsp;&nbsp;:wrench:&nbsp;&nbsp;Create pull requests, submit bugs, suggest new features or documentation updates </br>
-&nbsp;&nbsp;&nbsp;:feet:&nbsp;&nbsp;Follow us on [Twitter](https://twitter.com/akveo_inc) </br>
-&nbsp;&nbsp;:thumbsup:&nbsp;&nbsp;Like our page on [Facebook](https://www.facebook.com/akveo/) </br>
+- Star our GitHub repo :star:
+- Create pull requests, submit bugs, suggest new features or documentation updates :wrench:
+- Follow us on [Twitter](https://twitter.com/akveo_inc) :feet:
+- Like our page on [Facebook](https://www.facebook.com/akveo/) :thumbsup:
 
 ## Can I hire you guys?
 :innocent: Yes! we are available for hire :innocent:  Visit [our homepage](http://akveo.com/) or simply leave us a note to [contact@akveo.com](mailto:contact@akveo.com). We will be happy to work with you!
