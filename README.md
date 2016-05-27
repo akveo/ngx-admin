@@ -9,13 +9,13 @@ Admin template made with :heart:  by [Akveo team](http://akveo.com/). Follow us 
 <a target="_blank" href="http://akveo.com/ng2-admin/">Live Demo</a>
 
 ## Angular 1.x version
- :point_right: Here you can find Angular 1.x based version: [Blur Admin](http://akveo.github.io/blur-admin/)
+Here you can find Angular 1.x based version: [Blur Admin](http://akveo.github.io/blur-admin/)
  
 ## Documentation
-:point_right: Installation, customization and other useful articles: https://akveo.github.io/ng2-admin/
+Installation, customization and other useful articles: https://akveo.github.io/ng2-admin/
 
 ## Based on
-:rocket: Angular 2, Bootstrap 4, Webpack and lots of awesome modules and plugins
+Angular 2, Bootstrap 4, Webpack and lots of awesome modules and plugins
 
 ## How can I support developers?
 - Star our GitHub repo :star:
@@ -24,7 +24,7 @@ Admin template made with :heart:  by [Akveo team](http://akveo.com/). Follow us 
 - Like our page on [Facebook](https://www.facebook.com/akveo/) :thumbsup:
 
 ## Can I hire you guys?
-:innocent: Yes! we are available for hire :innocent:  Visit [our homepage](http://akveo.com/) or simply leave us a note to [contact@akveo.com](mailto:contact@akveo.com). We will be happy to work with you!
+Yes!  Visit [our homepage](http://akveo.com/) or simply leave us a note to [contact@akveo.com](mailto:contact@akveo.com). We will be happy to work with you!
 
 ## Features
 * TypeScript
