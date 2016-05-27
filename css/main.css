@@ -4,6 +4,10 @@ html {
   line-height: 1.28
 }
 
+body {
+  position: relative;
+  min-width: 1060px;
+}
 p {
   margin: 0 0 10px
 }
