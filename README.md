@@ -1,4 +1,4 @@
-# Admin template based on Angular 2, Bootstrap 4 and Webpack :clap::clap::clap:
+# Admin template based on Angular 2, Bootstrap 4 and Webpack
 
 Admin template made with :heart:  by [Akveo team](http://akveo.com/). Follow us on [Twitter](https://twitter.com/akveo_inc) to get latest news about this template first!
 
@@ -16,10 +16,10 @@ Admin template made with :heart:  by [Akveo team](http://akveo.com/). Follow us 
 :rocket: Angular 2, Bootstrap 4, Webpack and lots of awesome modules and plugins
 
 ## How can I support developers?
-- :star: :star: :star: Star our GitHub repo :star: :star: :star:
-- :wrench: :wrench: :wrench: Create pull requests, submit bugs, suggest new features or documentation updates :wrench: :wrench: :wrench:
-- :feet: :feet: :feet: Follow us on [Twitter](https://twitter.com/akveo_inc) :feet: :feet: :feet:
-- :thumbsup: :thumbsup: :thumbsup: Like our page on [Facebook](https://www.facebook.com/akveo/) :thumbsup: :thumbsup: :thumbsup: 
+&nbsp;&nbsp;&nbsp;:star:&nbsp;&nbsp;Star our GitHub repo </br>
+&nbsp;&nbsp;&nbsp;:wrench:&nbsp;&nbsp;Create pull requests, submit bugs, suggest new features or documentation updates </br>
+&nbsp;&nbsp;&nbsp;:feet:&nbsp;&nbsp;Follow us on [Twitter](https://twitter.com/akveo_inc) </br>
+&nbsp;&nbsp;:thumbsup:&nbsp;&nbsp;Like our page on [Facebook](https://www.facebook.com/akveo/) </br>
 
 ## Can I hire you guys?
 :innocent: Yes! we are available for hire :innocent:  Visit [our homepage](http://akveo.com/) or simply leave us a note to [contact@akveo.com](mailto:contact@akveo.com). We will be happy to work with you!
