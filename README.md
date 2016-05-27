@@ -1,4 +1,4 @@
-# :clap::clap::clap: Admin template based on Angular 2, Bootstrap 4 and Webpack :clap::clap::clap:
+# Admin template based on Angular 2, Bootstrap 4 and Webpack :clap::clap::clap:
 
 Admin template made with :heart:  by [Akveo team](http://akveo.com/). Follow us on [Twitter](https://twitter.com/akveo_inc) to get latest news about this template first!
 
