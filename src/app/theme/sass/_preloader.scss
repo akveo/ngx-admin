@@ -33,7 +33,6 @@
   height: 100%;
   z-index: 1000;
   background: #000000;
-  backface-visibility: hidden;
   & > div {
     display: block;
     position: relative;
@@ -45,9 +44,7 @@
     border-radius: 50%;
     border: 3px solid transparent;
     border-top-color: $danger;
-    backface-visibility: hidden;
     transform: translate3d(0, 0, 0);
-    backface-visibility: hidden;
     animation: spin 2s linear infinite; /* Chrome, Firefox 16+, IE 10+, Opera */
     &:before {
       content: "";
