@@ -27,6 +27,9 @@ h1.al-title {
   li {
     font-size: 18px;
     font-weight: $font-normal;
+    a {
+      color: $primary-light;
+    }
   }
 }
 
