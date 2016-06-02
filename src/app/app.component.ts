@@ -36,6 +36,13 @@ import {layoutPaths} from './theme/theme.constants';
     component: Pages,
     useAsDefault: true
   },
+  // handle any non-registered route
+  // and simply redirects back to dashboard page
+  // you can specify any customer 404 page while it's not built in ito ng2-admin
+  {
+    path: '/**',
+    redirectTo: ['Pages']
+  }
 ])
 export class App {
 
