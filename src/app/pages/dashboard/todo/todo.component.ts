@@ -33,7 +33,7 @@ export class Todo {
 
   addToDoItem($event) {
 
-    if ($event.which === 1 || $event.which === 13) {
+    if (($event.which === 1 || $event.which === 13) && this.newTodoText.trim() != '') {
 
       this.todoList.unshift({
         text: this.newTodoText,
