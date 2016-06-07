@@ -39,6 +39,11 @@ npm install --global typings
 npm install --global typescript
 ```
 
+* bower
+```
+npm install --global bower
+```
+
 ## Clone repository and install dependencies
 
 You will need to clone the source code of ng2-admin GitHub repository:
