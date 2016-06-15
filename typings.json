@@ -3,7 +3,7 @@
     "zone.js": "github:gdi2290/typed-zone.js#66ea8a3451542bb7798369306840e46be1d6ec89"
   },
   "devDependencies": {},
-  "ambientDependencies": {
+  "globalDependencies": {
     "core-js": "registry:dt/core-js#0.0.0+20160317120654",
     "hammerjs": "github:DefinitelyTyped/DefinitelyTyped/hammerjs/hammerjs.d.ts#74a4dfc1bc2dfadec47b8aae953b28546cb9c6b7",
     "lodash": "registry:dt/lodash#3.10.0+20160330154726",
