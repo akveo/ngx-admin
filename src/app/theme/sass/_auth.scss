@@ -1,28 +1,14 @@
 @import 'conf/conf';
 
-main {
-  min-height: 520px;
-  height: 100%;
-}
-
 $text-color: #ffffff;
 
-.form-control, .form-control:focus {
-  @include placeholderStyle($text-color, 0.9);
-  background-color: rgba(0, 0, 0, .4);
-  border-radius: 5px;
-  color: $text-color;
-}
-.form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control {
-  @include placeholderStyle($text-color, 0.6);
-}
 
 .auth-main {
   display: flex;
   align-items: center;
   height: 100%;
   width: 100%;
-  position: relative;
+  position: absolute;
 }
 
 .auth-block {
