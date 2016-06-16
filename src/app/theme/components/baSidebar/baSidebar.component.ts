@@ -27,6 +27,7 @@ export class BaSidebar {
   public outOfArea:number = -200;
 
   public isMenuShouldCollapsed:boolean = false;
+  protected _onRouteChange;
 
   constructor(private _elementRef:ElementRef,
               private _router:Router,
@@ -34,14 +35,21 @@ export class BaSidebar {
               private _state:AppState) {
 
     this.menuItems = this._sidebarService.getMenuItems();
-    this._router.root.subscribe((path) => this._selectMenuItem(path));
-    this._state.subscribe('menu.isCollapsed', (isCollapsed) => { this.isMenuCollapsed = isCollapsed; });
+    this._onRouteChange = this._router.root.subscribe((path) => this._selectMenuItem(path));
+    this._state.subscribe('menu.isCollapsed', (isCollapsed) => {
+      this.isMenuCollapsed = isCollapsed;
+    });
   }
+
 
   public ngOnInit():void {
     if (this._shouldMenuCollapse()) {
       this.menuCollapse();
     }
+  }
+
+  public ngOnDestroy():void {
+    this._onRouteChange.unsubscribe();
   }
 
   public ngAfterViewInit():void {

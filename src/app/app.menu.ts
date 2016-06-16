@@ -107,7 +107,7 @@ export const menuItems = [
   },
   {
     title: 'Pages',
-    icon: 'ion-ios-location-outline',
+    icon: 'ion-document',
     selected: false,
     expanded: false,
     order: 650,
