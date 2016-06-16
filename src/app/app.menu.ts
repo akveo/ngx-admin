@@ -106,6 +106,23 @@ export const menuItems = [
     ]
   },
   {
+    title: 'Pages',
+    icon: 'ion-ios-location-outline',
+    selected: false,
+    expanded: false,
+    order: 650,
+    subMenu: [
+      {
+        title: 'Login',
+        url: '/#/login',
+      },
+      {
+        title: 'Register',
+        url: '/#/register',
+      }
+    ]
+  },
+  {
     title: 'Menu Level 1',
     icon: 'ion-ios-more',
     selected: false,
