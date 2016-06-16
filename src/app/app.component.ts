@@ -5,6 +5,7 @@ import {RouteConfig} from '@angular/router-deprecated';
 
 import {Pages} from './pages';
 import {Login} from './pages/login';
+import {Register} from './pages/register';
 import {AppState} from './app.state';
 import {BaThemeConfigProvider, BaThemeConfig} from './theme';
 import {BaThemeRun} from './theme/directives';
@@ -41,6 +42,11 @@ import {layoutPaths} from './theme/theme.constants';
     path: '/login',
     name: 'Login',
     component: Login
+  },
+  {
+    path: '/register',
+    name: 'Register',
+    component: Register
   },
   // handle any non-registered route
   // and simply redirects back to dashboard page
