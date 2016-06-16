@@ -114,11 +114,11 @@ export const menuItems = [
     subMenu: [
       {
         title: 'Login',
-        url: '/#/login',
+        url: '#/login',
       },
       {
         title: 'Register',
-        url: '/#/register',
+        url: '#/register',
       }
     ]
   },
