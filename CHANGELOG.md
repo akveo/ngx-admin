@@ -1,4 +1,4 @@
-<a name="0.2.0"></a>
+<a name="0.2.1"></a>
 # 0.2.1 (2016-06-21)
 
 
@@ -18,6 +18,6 @@
 
 ### How to update
 
-* Remove `node_module` and `typings` folders 
+* Remove `node_modules` and `typings` folders 
 * run `npm install`
 
