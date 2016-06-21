@@ -94,7 +94,7 @@ export class BaSidebar {
   }
 
   public toggleSubMenu($event, item):boolean {
-    var submenu = $($event.currentTarget).next();
+    var submenu = jQuery($event.currentTarget).next();
 
     if (this.isMenuCollapsed) {
       this.menuExpand();

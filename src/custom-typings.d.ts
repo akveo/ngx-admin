@@ -29,7 +29,7 @@ import * as _ from 'lodash'
  *
  */
 
-declare var $:any;
+declare var jQuery:any;
 declare var GoogleMapsLoader:any;
 declare var L:any;
 declare var AmCharts:any;
