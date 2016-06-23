@@ -35,7 +35,7 @@ export class BaSidebar {
               private _state:AppState) {
 
     this.menuItems = this._sidebarService.getMenuItems();
-    this._onRouteChange = this._router.root.subscribe((path) => this._selectMenuItem(path));
+    this._onRouteChange = this._router.root.subscribe((path) => this._selectMenuItem());
     this._state.subscribe('menu.isCollapsed', (isCollapsed) => {
       this.isMenuCollapsed = isCollapsed;
     });
@@ -113,9 +113,9 @@ export class BaSidebar {
     return window.innerWidth <= layoutSizes.resWidthCollapseSidebar;
   }
 
-  private _selectMenuItem(currentPath = null):void {
+  private _selectMenuItem():void {
 
-    let currentMenu = this._sidebarService.setRouter(this._router).selectMenuItem(this.menuItems, currentPath);
+    let currentMenu = this._sidebarService.setRouter(this._router).selectMenuItem(this.menuItems);
     this._state.notifyDataChanged('menu.activeLink', currentMenu);
     // hide menu after natigation on mobile devises
     if (this._shouldMenuCollapse()) {
