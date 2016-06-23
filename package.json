@@ -116,7 +116,7 @@
     "gh-pages": "wintersmith build -C docs && gh-pages -d docs/build",
     "start": "npm run server:dev",
     "start:hmr": "npm run server:dev:hmr",
-    "postinstall": "npm run typings -- install && bower install",
+    "postinstall": "npm run typings -- install",
     "version": "npm run build",
     "postversion": "git push && git push --tags"
   },

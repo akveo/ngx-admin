@@ -15,19 +15,19 @@ export class BaSidebarService {
     return this;
   }
 
-  public selectMenuItem(items:Array<any>, currentPath:string) {
-    let currentMenu;
+  public selectMenuItem(items:Array<any>) {
+    let currentMenu = null;
 
     let assignCurrent = (menu) => (menu.selected ? currentMenu = menu : null);
 
     items.forEach((menu: any) => {
 
-      this._selectItem(currentPath, [menu.component], menu);
+      this._selectItem([menu.component], menu);
       assignCurrent(menu);
 
       if (menu.subMenu) {
         menu.subMenu.forEach((subMenu) => {
-          this._selectItem(currentPath, [menu.component, subMenu.component], subMenu, menu);
+          this._selectItem([menu.component, subMenu.component], subMenu, menu);
           assignCurrent(subMenu);
         });
       }
@@ -35,9 +35,9 @@ export class BaSidebarService {
     return currentMenu;
   }
 
-  private _selectItem(currentPath, instructions, item, parentMenu = null) {
+  private _selectItem(instructions, item, parentMenu = null) {
     let route = this._generateRoute(instructions);
-    item.selected = !item.disabled && this._isCurrent(route) && this._resolvePath(route, '') == currentPath;
+    item.selected = !item.disabled && this._isCurrent(route);
     if (parentMenu) {
       parentMenu.expanded = parentMenu.expanded || item.selected;
     }

@@ -1,0 +1,15 @@
+FROM node:4.4.5-wheezy
+
+RUN mkdir /app
+WORKDIR /app
+
+
+# Get the usual suspects ;-)
+RUN npm install typings webpack-dev-server webpack rimraf -g
+
+
+ADD . /app
+EXPOSE 3000
+VOLUME ["/app"]
+
+CMD bash

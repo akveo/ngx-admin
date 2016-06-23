@@ -2,7 +2,7 @@ export const menuItems = [
   {
     title: 'Dashboard',
     component: 'Dashboard',
-    icon: 'ion-android-home',
+    icon: 'fa fa-home',
     selected: false,
     expanded: false,
     order: 0
@@ -10,7 +10,7 @@ export const menuItems = [
   {
     title: 'Charts',
     component: 'Charts',
-    icon: 'ion-stats-bars',
+    icon: 'fa fa-bar-chart',
     selected: false,
     expanded: false,
     order: 200,
@@ -24,7 +24,7 @@ export const menuItems = [
   {
     title: 'UI Features',
     component: 'Ui',
-    icon: 'ion-android-laptop',
+    icon: 'fa fa-laptop',
     selected: false,
     expanded: false,
     order: 300,
@@ -50,7 +50,7 @@ export const menuItems = [
   {
     title: 'Form Elements',
     component: 'Forms',
-    icon: 'ion-compose',
+    icon: 'fa fa-pencil-square-o',
     selected: false,
     expanded: false,
     order: 400,
@@ -68,7 +68,7 @@ export const menuItems = [
   {
     title: 'Tables',
     component: 'Tables',
-    icon: 'ion-grid',
+    icon: 'fa fa-table',
     selected: false,
     expanded: false,
     order: 500,
@@ -82,7 +82,7 @@ export const menuItems = [
   {
     title: 'Maps',
     component: 'Maps',
-    icon: 'ion-ios-location-outline',
+    icon: 'fa fa-map-marker',
     selected: false,
     expanded: false,
     order: 600,
@@ -107,7 +107,7 @@ export const menuItems = [
   },
   {
     title: 'Pages',
-    icon: 'ion-document',
+    icon: 'fa fa-sticky-note',
     selected: false,
     expanded: false,
     order: 650,
@@ -124,7 +124,7 @@ export const menuItems = [
   },
   {
     title: 'Menu Level 1',
-    icon: 'ion-ios-more',
+    icon: 'fa fa-level-down',
     selected: false,
     expanded: false,
     order: 700,
