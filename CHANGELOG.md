@@ -1,3 +1,21 @@
+<a name="0.3.0"></a>
+# 0.3.0 (2016-06-29)
+
+### Bug Fixes
+
+* Sidebar menu angle fixed
+* Sidebar menu selected item fixed
+
+### Features
+
+* Angular updated to rc.3
+* Dependencies updated accordingly
+
+### How to update
+
+* Remove `node_modules` and `typings` folders 
+* run `npm install`
+
 <a name="0.2.1"></a>
 # 0.2.1 (2016-06-21)
 
@@ -20,4 +38,3 @@
 
 * Remove `node_modules` and `typings` folders 
 * run `npm install`
-

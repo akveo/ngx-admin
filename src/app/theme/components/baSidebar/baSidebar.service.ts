@@ -16,7 +16,7 @@ export class BaSidebarService {
   }
 
   public selectMenuItem(items:Array<any>) {
-    let currentMenu = null;
+    let currentMenu;
 
     let assignCurrent = (menu) => (menu.selected ? currentMenu = menu : null);
 
@@ -49,14 +49,5 @@ export class BaSidebarService {
 
   private _generateRoute(instructions) {
     return instructions.filter(i => typeof i !== 'undefined').length > 0 ? this._router.generate(instructions) : null;
-  }
-
-  private _resolvePath(instruction, collected) {
-    if (instruction !== null) {
-      collected += instruction.urlPath + '/';
-      return this._resolvePath(instruction.child, collected)
-    } else {
-      return collected.slice(0, -1);
-    }
   }
 }
