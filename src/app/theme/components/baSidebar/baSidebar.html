@@ -14,7 +14,7 @@
       <a *ngIf="item.subMenu" (mouseenter)="hoverItem($event, item)" (click)="toggleSubMenu($event, item)"
          class="al-sidebar-list-link">
         <i class="{{ item.icon }}"></i><span>{{ item.title }}</span>
-        <b class="fa" [ngClass]="{'fa-angle-up': item.expanded, 'fa-angle-down': !item.expanded}"
+        <b class="fa fa-angle-down"
            *ngIf="item.subMenu"></b>
       </a>
 
