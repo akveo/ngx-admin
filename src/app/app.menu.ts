@@ -8,6 +8,18 @@ export const menuItems = [
     order: 0
   },
   {
+    title: 'Editors',
+    component: 'Editors',
+    icon: 'ion-edit',
+    order: 100,
+    subMenu: [
+      {
+        title: 'CKEditor',
+        component: 'Ckeditor'
+      }
+    ]
+  },
+  {
     title: 'Charts',
     component: 'Charts',
     icon: 'ion-stats-bars',
