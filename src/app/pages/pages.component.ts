@@ -9,6 +9,7 @@ import {Maps} from './maps';
 import {Charts} from './charts';
 import {Forms} from './forms';
 import {Tables} from './tables';
+import {Editors} from "./editors";
 
 @Component({
   selector: 'pages',
@@ -40,6 +41,11 @@ import {Tables} from './tables';
     `
 })
 @RouteConfig([
+  {
+    name: 'Editors',
+    component: Editors,
+    path: '/editors/...',
+  },
   {
     name: 'Dashboard',
     component: Dashboard,
