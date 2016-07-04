@@ -17,6 +17,5 @@
   ],
   "dependencies": {
     "Ionicons": "ionicons#~2.0.1",
-    "ckeditor": "^4.5.9"
   }
 }
