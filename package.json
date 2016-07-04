@@ -36,6 +36,7 @@
     "leaflet-map": "^0.2.1",
     "lodash": "^4.12.0",
     "ng2-bootstrap": "^1.0.16",
+    "ng2-branchy": "0.0.2-2",
     "ng2-ckeditor": "^1.0.3",
     "ng2-uploader": "^0.5.2",
     "normalize.css": "^4.1.1",
