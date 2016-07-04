@@ -22,6 +22,7 @@
     "bootstrap-loader": "^1.0.8",
     "chart.js": "^1.1.1",
     "chartist": "^0.9.7",
+    "ckeditor": "^4.5.9",
     "core-js": "^2.4.0",
     "easy-pie-chart": "^2.1.7",
     "extract-text-webpack-plugin": "^1.0.1",
