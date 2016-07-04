@@ -10,6 +10,7 @@ import {Charts} from './charts';
 import {Forms} from './forms';
 import {Tables} from './tables';
 import {Editors} from "./editors";
+import {Components} from "./components/components.component";
 
 @Component({
   selector: 'pages',
@@ -51,6 +52,11 @@ import {Editors} from "./editors";
     component: Dashboard,
     path: '/dashboard',
     useAsDefault: true,
+  },
+  {
+    name: 'Components',
+    component: Components,
+    path: '/components/...'
   },
   {
     name: 'Ui',

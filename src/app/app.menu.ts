@@ -34,6 +34,18 @@ export const menuItems = [
     ]
   },
   {
+    title: 'Components',
+    component: 'Components',
+    icon: 'ion-gear-a',
+    order: 250,
+    subMenu: [
+      {
+        title: 'Tree View',
+        component: 'TreeView'
+      }
+    ]
+  },
+  {
     title: 'UI Features',
     component: 'Ui',
     icon: 'ion-android-laptop',
