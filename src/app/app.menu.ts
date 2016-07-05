@@ -1,125 +1,113 @@
 export const menuItems = [
   {
     title: 'Dashboard',
-    component: 'Dashboard',
-    icon: 'ion-android-home',
+    component: 'dashboard',
+    icon: 'fa fa-home',
     selected: false,
     expanded: false,
     order: 0
   },
   {
-    title: 'Editors',
-    component: 'Editors',
-    icon: 'ion-edit',
-    order: 100,
-    subMenu: [
-      {
-        title: 'CKEditor',
-        component: 'Ckeditor'
-      }
-    ]
-  },
-  {
     title: 'Charts',
-    component: 'Charts',
-    icon: 'ion-stats-bars',
+    component: 'charts',
+    icon: 'fa fa-bar-chart',
     selected: false,
     expanded: false,
     order: 200,
     subMenu: [
       {
         title: 'Chartist.Js',
-        component: 'ChartistJs',
+        component: 'chartist-js',
       },
     ]
   },
   {
     title: 'UI Features',
-    component: 'Ui',
-    icon: 'ion-android-laptop',
+    component: 'ui',
+    icon: 'fa fa-laptop',
     selected: false,
     expanded: false,
     order: 300,
     subMenu: [
       {
         title: 'Typography',
-        component: 'Typography',
+        component: 'typography',
       },
       {
         title: 'Buttons',
-        component: 'Buttons',
+        component: 'buttons',
       },
       {
         title: 'Icons',
-        component: 'Icons',
+        component: 'icons',
       },
       {
         title: 'Grid',
-        component: 'Grid',
+        component: 'grid',
       },
     ]
   },
   {
     title: 'Form Elements',
-    component: 'Forms',
-    icon: 'ion-compose',
+    component: 'forms',
+    icon: 'fa fa-pencil-square-o',
     selected: false,
     expanded: false,
     order: 400,
     subMenu: [
       {
         title: 'Form Inputs',
-        component: 'Inputs',
+        component: 'inputs',
       },
       {
         title: 'Form Layouts',
-        component: 'Layouts',
+        component: 'layouts',
       },
     ]
   },
   {
     title: 'Tables',
-    component: 'Tables',
-    icon: 'ion-grid',
+    component: 'tables',
+    icon: 'fa fa-table',
     selected: false,
     expanded: false,
     order: 500,
     subMenu: [
       {
         title: 'Basic Tables',
-        component: 'BasicTables',
+        component: 'basictables',
       }
     ]
   },
   {
     title: 'Maps',
-    component: 'Maps',
-    icon: 'ion-ios-location-outline',
+    component: 'maps',
+    icon: 'fa fa-map-marker',
     selected: false,
     expanded: false,
     order: 600,
     subMenu: [
       {
         title: 'Google Maps',
-        component: 'GoogleMaps',
+        component: 'googlemaps',
       },
       {
         title: 'Leaflet Maps',
-        component: 'LeafletMaps',
+        component: 'leafletmaps',
       },
       {
         title: 'Bubble Maps',
-        component: 'BubbleMaps',
+        component: 'bubblemaps',
       },
       {
         title: 'Line Maps',
-        component: 'LineMaps',
+        component: 'linemaps',
       }
     ]
   },
   {
     title: 'Pages',
-    icon: 'ion-document',
+    icon: 'fa fa-sticky-note',
     selected: false,
     expanded: false,
     order: 650,
@@ -136,7 +124,7 @@ export const menuItems = [
   },
   {
     title: 'Menu Level 1',
-    icon: 'ion-ios-more',
+    icon: 'fa fa-level-down',
     selected: false,
     expanded: false,
     order: 700,

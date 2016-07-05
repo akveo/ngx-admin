@@ -7,8 +7,8 @@ import {FORM_PROVIDERS, LocationStrategy, HashLocationStrategy} from '@angular/c
 
 // Angular 2 Http
 import {HTTP_PROVIDERS} from '@angular/http';
-// Angular 2 Router
-import {ROUTER_PROVIDERS} from '@angular/router-deprecated';
+import {APP_ROUTER_PROVIDERS} from "../../app/app.routes";
+
 
 /*
 * Application Providers/Directives/Pipes
@@ -17,7 +17,7 @@ import {ROUTER_PROVIDERS} from '@angular/router-deprecated';
 export const APPLICATION_PROVIDERS = [
   ...FORM_PROVIDERS,
   ...HTTP_PROVIDERS,
-  ...ROUTER_PROVIDERS,
+  ...APP_ROUTER_PROVIDERS,
   {provide: LocationStrategy, useClass: HashLocationStrategy }
 ];
 

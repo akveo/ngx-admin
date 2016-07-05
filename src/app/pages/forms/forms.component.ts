@@ -1,8 +1,4 @@
-import {Component} from '@angular/core';
-import {RouteConfig} from '@angular/router-deprecated';
-
-import {Inputs} from './components/inputs';
-import {Layouts} from './components/layouts';
+import {Component} from "@angular/core";
 
 @Component({
   selector: 'forms',
@@ -11,19 +7,6 @@ import {Layouts} from './components/layouts';
   styles: [],
   template: `<router-outlet></router-outlet>`
 })
-@RouteConfig([
-  {
-    name: 'Inputs',
-    component: Inputs,
-    path: '/inputs',
-    useAsDefault: true
-  },
-  {
-    name: 'Layouts',
-    component: Layouts,
-    path: '/layouts',
-  }
-])
 export class Forms {
 
   constructor() {
