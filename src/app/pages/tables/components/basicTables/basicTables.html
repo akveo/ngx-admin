@@ -36,5 +36,18 @@
       </ba-card>
     </div>
   </div>
-
+  <div class="row">
+    <div class="col-md-12">
+      <ba-card title="Total"
+               baCardClass="with-scroll table-panel">
+        <remote-data-table [data] = "data | async"></remote-data-table>
+      </ba-card>
+    </div>
+    <div class="col-md-12">
+      <ba-card title="Total"
+               baCardClass="with-scroll table-panel">
+        <remote-data-ng2-table [datang2] = "datang2 | async"></remote-data-ng2-table>
+      </ba-card>
+    </div>
+  </div>
 </div>

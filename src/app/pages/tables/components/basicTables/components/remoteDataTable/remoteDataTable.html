@@ -1,0 +1,18 @@
+<div class="vertical-scroll-max">
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th class="table-id">Id</th>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let item of data">
+      <td class="table-id">{{ item.id }}</td>
+      <td>{{ item.name }}</td>
+      <td>{{ item.description }}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
