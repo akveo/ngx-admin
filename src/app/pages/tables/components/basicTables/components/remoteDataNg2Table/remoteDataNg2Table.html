@@ -1,0 +1,7 @@
+<div class="vertical-scroll-max">
+    <ng-table class="table-responsive"
+              [config]="config.sorting"
+              (tableChanged)="onChangeTable(config)"
+              [rows]="rows" [columns]="columns">
+    </ng-table>
+</div>
