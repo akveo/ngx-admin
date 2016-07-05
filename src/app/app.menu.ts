@@ -1,7 +1,7 @@
 export const menuItems = [
   {
     title: 'Dashboard',
-    component: 'Dashboard',
+    component: 'dashboard',
     icon: 'fa fa-home',
     selected: false,
     expanded: false,
@@ -9,7 +9,7 @@ export const menuItems = [
   },
   {
     title: 'Charts',
-    component: 'Charts',
+    component: 'charts',
     icon: 'fa fa-bar-chart',
     selected: false,
     expanded: false,
@@ -17,13 +17,13 @@ export const menuItems = [
     subMenu: [
       {
         title: 'Chartist.Js',
-        component: 'ChartistJs',
+        component: 'chartist-js',
       },
     ]
   },
   {
     title: 'UI Features',
-    component: 'Ui',
+    component: 'ui',
     icon: 'fa fa-laptop',
     selected: false,
     expanded: false,
@@ -31,25 +31,25 @@ export const menuItems = [
     subMenu: [
       {
         title: 'Typography',
-        component: 'Typography',
+        component: 'typography',
       },
       {
         title: 'Buttons',
-        component: 'Buttons',
+        component: 'buttons',
       },
       {
         title: 'Icons',
-        component: 'Icons',
+        component: 'icons',
       },
       {
         title: 'Grid',
-        component: 'Grid',
+        component: 'grid',
       },
     ]
   },
   {
     title: 'Form Elements',
-    component: 'Forms',
+    component: 'forms',
     icon: 'fa fa-pencil-square-o',
     selected: false,
     expanded: false,
@@ -57,17 +57,17 @@ export const menuItems = [
     subMenu: [
       {
         title: 'Form Inputs',
-        component: 'Inputs',
+        component: 'inputs',
       },
       {
         title: 'Form Layouts',
-        component: 'Layouts',
+        component: 'layouts',
       },
     ]
   },
   {
     title: 'Tables',
-    component: 'Tables',
+    component: 'tables',
     icon: 'fa fa-table',
     selected: false,
     expanded: false,
@@ -75,13 +75,13 @@ export const menuItems = [
     subMenu: [
       {
         title: 'Basic Tables',
-        component: 'BasicTables',
+        component: 'basictables',
       }
     ]
   },
   {
     title: 'Maps',
-    component: 'Maps',
+    component: 'maps',
     icon: 'fa fa-map-marker',
     selected: false,
     expanded: false,
@@ -89,19 +89,19 @@ export const menuItems = [
     subMenu: [
       {
         title: 'Google Maps',
-        component: 'GoogleMaps',
+        component: 'googlemaps',
       },
       {
         title: 'Leaflet Maps',
-        component: 'LeafletMaps',
+        component: 'leafletmaps',
       },
       {
         title: 'Bubble Maps',
-        component: 'BubbleMaps',
+        component: 'bubblemaps',
       },
       {
         title: 'Line Maps',
-        component: 'LineMaps',
+        component: 'linemaps',
       }
     ]
   },

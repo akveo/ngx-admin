@@ -1,5 +1,5 @@
 import {Component, ElementRef, HostListener, ViewEncapsulation} from '@angular/core';
-import {Router} from '@angular/router-deprecated';
+import {Router} from '@angular/router';
 
 import {AppState} from '../../../app.state';
 import {layoutSizes} from '../../../theme';
@@ -35,7 +35,7 @@ export class BaSidebar {
               private _state:AppState) {
 
     this.menuItems = this._sidebarService.getMenuItems();
-    this._onRouteChange = this._router.root.subscribe((path) => this._selectMenuItem());
+    // this._onRouteChange = this._router.root.subscribe((path) => this._selectMenuItem());
     this._state.subscribe('menu.isCollapsed', (isCollapsed) => {
       this.isMenuCollapsed = isCollapsed;
     });
@@ -49,7 +49,7 @@ export class BaSidebar {
   }
 
   public ngOnDestroy():void {
-    this._onRouteChange.unsubscribe();
+    // this._onRouteChange.unsubscribe();
   }
 
   public ngAfterViewInit():void {
