@@ -4,10 +4,10 @@
         [ngClass]="{'selected': item.selected && !item.expanded, 'with-sub-menu': item.subMenu, 'ba-sidebar-item-expanded': item.expanded}">
 
 
-      <a *ngIf="!item.component && !item.subMenu" [attr.href]="item.url || ''" [attr.target]="item.target || ''" class="al-sidebar-list-link">
+      <a *ngIf="!item.path && !item.subMenu" [attr.href]="item.url || ''" [attr.target]="item.target || ''" class="al-sidebar-list-link">
         <i class="{{ item.icon }}"></i><span>{{ item.title }}</span>
       </a>
-      <a *ngIf="item.component && !item.subMenu" [routerLink]="[item.component]" [attr.target]="item.target || ''" class="al-sidebar-list-link">
+      <a *ngIf="item.path && !item.subMenu" [routerLink]="[item.path]" [attr.target]="item.target || ''" class="al-sidebar-list-link">
         <i class="{{ item.icon }}"></i><span>{{ item.title }}</span>
       </a>
 
@@ -31,17 +31,17 @@
               [ngClass]="{expanded: subitem.expanded, 'slide-right': subitem.slideRight}">
             <li *ngFor="let subSubitem of subitem.subMenu" (mouseenter)="hoverItem($event, item)"
                 [ngClass]="{selected: subitem.selected}">
-              <a *ngIf="!item.component" (mouseenter)="hoverItem($event, item)" [attr.href]="subSubitem.url || ''" [attr.target]="subSubitem.target || ''">
+              <a *ngIf="!item.path" (mouseenter)="hoverItem($event, item)" [attr.href]="subSubitem.url || ''" [attr.target]="subSubitem.target || ''">
                 {{ subSubitem.title }}</a>
-              <a *ngIf="item.component" (mouseenter)="hoverItem($event, item)" [attr.target]="subSubitem.target || ''" [routerLink]="[item.component, subitem.component, subSubitem.component]">
+              <a *ngIf="item.path" (mouseenter)="hoverItem($event, item)" [attr.target]="subSubitem.target || ''" [routerLink]="[item.path, subitem.path]">
                 {{ subSubitem.title }}</a>
             </li>
           </ul>
-          <a *ngIf="!item.component && !subitem.subMenu" [attr.href]="subitem.url || ''"
+          <a *ngIf="!item.path && !subitem.subMenu" [attr.href]="subitem.url || ''" [routerLink]="[subitem.path || '']"
              (mouseenter)="hoverItem($event, item)" [attr.target]="subitem.target || ''">
             {{ subitem.title}}
           </a>
-          <a *ngIf="item.component && !subitem.subMenu" [routerLink]="[item.component, subitem.component]"
+          <a *ngIf="item.path && !subitem.subMenu" [routerLink]="[item.path, subitem.path]"
              (mouseenter)="hoverItem($event, item)" [attr.target]="subitem.target || ''">
             {{ subitem.title}}
           </a>
