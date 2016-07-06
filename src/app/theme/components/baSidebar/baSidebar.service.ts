@@ -1,16 +1,17 @@
 import {Injectable} from '@angular/core';
 import {menuItems} from '../../../app.menu';
+import {Router, UrlTree} from "@angular/router";
 
 @Injectable()
 export class BaSidebarService {
 
-  private _router;
+  private _router:Router;
 
   public getMenuItems():Array<Object> {
     return menuItems;
   }
 
-  public setRouter(router): BaSidebarService {
+  public setRouter(router:Router):BaSidebarService {
     this._router = router;
     return this;
   }
@@ -20,14 +21,14 @@ export class BaSidebarService {
 
     let assignCurrent = (menu) => (menu.selected ? currentMenu = menu : null);
 
-    items.forEach((menu: any) => {
+    items.forEach((menu:any) => {
 
-      this._selectItem([menu.component], menu);
+      this._selectItem([menu.path], menu);
       assignCurrent(menu);
 
       if (menu.subMenu) {
         menu.subMenu.forEach((subMenu) => {
-          this._selectItem([menu.component, subMenu.component], subMenu, menu);
+          this._selectItem([menu.path, subMenu.path], subMenu, menu);
           assignCurrent(subMenu);
         });
       }
@@ -43,11 +44,22 @@ export class BaSidebarService {
     }
   }
 
-  private _isCurrent(route) {
-    return route ? this._router.isRouteActive(route) : false;
+  private _isCurrent(route:UrlTree):boolean {
+    if (!route)
+      return false;
+
+    return this._router.url === this._router.serializeUrl(route);
   }
 
-  private _generateRoute(instructions) {
-    return instructions.filter(i => typeof i !== 'undefined').length > 0 ? this._router.generate(instructions) : null;
+  private _generateRoute(instructions:any[]):UrlTree {
+    if (!instructions)
+      return null;
+
+    instructions = instructions.filter(item => !!item);
+
+    if (instructions.length === 0)
+      return null;
+
+    return this._router.createUrlTree(instructions);
   }
 }
