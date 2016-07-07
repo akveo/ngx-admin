@@ -1,5 +1,5 @@
-import {RouterConfig} from "@angular/router";
-import {Login} from "./login.component";
+import {RouterConfig} from '@angular/router';
+import {Login} from './login.component';
 
 export const LoginRoutes: RouterConfig = [
   {

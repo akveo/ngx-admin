@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {RouteConfig} from '@angular/router-deprecated';
 
-import {Ckeditor} from "./components/ckeditor";
+import {Ckeditor} from './components/ckeditor';
 
 @Component({
   selector: 'editors',

@@ -2,15 +2,29 @@ export const menuItems = [
   {
     title: 'Dashboard',
     path: '/pages/dashboard',
-    icon: 'fa fa-home',
+    icon: 'ion-android-home',
     selected: false,
     expanded: false,
     order: 0
   },
   {
+    title: 'Editors',
+    path: '/pages/editors',
+    icon: 'ion-edit',
+    selected: false,
+    expanded: false,
+    order: 100,
+    subMenu: [
+      {
+        title: 'CKEditor',
+        path: '/ckeditor',
+      }
+    ]
+  },
+  {
     title: 'Charts',
     path: '/pages/charts',
-    icon: 'fa fa-bar-chart',
+    icon: 'ion-stats-bars',
     selected: false,
     expanded: false,
     order: 200,
@@ -24,7 +38,7 @@ export const menuItems = [
   {
     title: 'UI Features',
     path: '/pages/ui',
-    icon: 'fa fa-laptop',
+    icon: 'ion-android-laptop',
     selected: false,
     expanded: false,
     order: 300,
@@ -50,7 +64,7 @@ export const menuItems = [
   {
     title: 'Form Elements',
     path: '/pages/forms',
-    icon: 'fa fa-pencil-square-o',
+    icon: 'ion-compose',
     selected: false,
     expanded: false,
     order: 400,
@@ -68,7 +82,7 @@ export const menuItems = [
   {
     title: 'Tables',
     path: '/pages/tables',
-    icon: 'fa fa-table',
+    icon: 'ion-grid',
     selected: false,
     expanded: false,
     order: 500,
@@ -82,7 +96,7 @@ export const menuItems = [
   {
     title: 'Maps',
     path: '/pages/maps',
-    icon: 'fa fa-map-marker',
+    icon: 'ion-ios-location-outline',
     selected: false,
     expanded: false,
     order: 600,
@@ -107,7 +121,7 @@ export const menuItems = [
   },
   {
     title: 'Pages',
-    icon: 'fa fa-sticky-note',
+    icon: 'ion-document',
     selected: false,
     expanded: false,
     order: 650,
@@ -124,7 +138,7 @@ export const menuItems = [
   },
   {
     title: 'Menu Level 1',
-    icon: 'fa fa-level-down',
+    icon: 'ion-ios-more',
     selected: false,
     expanded: false,
     order: 700,

@@ -1,9 +1,9 @@
-import {Component, ElementRef, HostListener, ViewEncapsulation} from "@angular/core";
-import {Router} from "@angular/router";
-import {AppState} from "../../../app.state";
-import {layoutSizes} from "../../../theme";
-import {BaSlimScroll} from "../../../theme/directives";
-import {BaSidebarService} from "./baSidebar.service";
+import {Component, ElementRef, HostListener, ViewEncapsulation} from '@angular/core';
+import {Router} from '@angular/router';
+import {AppState} from '../../../app.state';
+import {layoutSizes} from '../../../theme';
+import {BaSlimScroll} from '../../../theme/directives';
+import {BaSidebarService} from './baSidebar.service';
 
 @Component({
   selector: 'ba-sidebar',

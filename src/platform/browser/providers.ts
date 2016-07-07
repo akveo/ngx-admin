@@ -7,7 +7,7 @@ import {FORM_PROVIDERS, LocationStrategy, HashLocationStrategy} from '@angular/c
 
 // Angular 2 Http
 import {HTTP_PROVIDERS} from '@angular/http';
-import {APP_ROUTER_PROVIDERS} from "../../app/app.routes";
+import {APP_ROUTER_PROVIDERS} from '../../app/app.routes';
 
 
 /*

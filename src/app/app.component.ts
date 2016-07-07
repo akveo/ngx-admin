@@ -1,4 +1,4 @@
-import "./app.loader.ts";
+import './app.loader.ts';
 import {Component, ViewEncapsulation} from "@angular/core";
 import {AppState} from "./app.state";
 import {BaThemeConfigProvider, BaThemeConfig} from "./theme";

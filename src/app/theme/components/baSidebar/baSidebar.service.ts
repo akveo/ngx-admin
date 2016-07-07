@@ -45,21 +45,18 @@ export class BaSidebarService {
   }
 
   private _isCurrent(route:UrlTree):boolean {
-    if (!route)
-      return false;
-
-    return this._router.url === this._router.serializeUrl(route);
+    if (route) {
+      return this._router.url === this._router.serializeUrl(route);
+    }
+    return false;
   }
 
   private _generateRoute(instructions:any[]):UrlTree {
-    if (!instructions)
-      return null;
-
     instructions = instructions.filter(item => !!item);
 
-    if (instructions.length === 0)
-      return null;
-
-    return this._router.createUrlTree(instructions);
+    if (instructions.length != 0) {
+      return this._router.createUrlTree(instructions);
+    }
+    return null;
   }
 }

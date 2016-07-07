@@ -1,5 +1,5 @@
-import {RouterConfig} from "@angular/router";
-import {Register} from "./register.component";
+import {RouterConfig} from '@angular/router';
+import {Register} from './register.component';
 
 export const RegisterRoutes: RouterConfig = [
   {
