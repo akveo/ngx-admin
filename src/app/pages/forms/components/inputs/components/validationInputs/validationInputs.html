@@ -10,31 +10,9 @@
   <label class="control-label" for="inputError1">Input with error</label>
   <input type="text" class="form-control" id="inputError1">
 </div>
-<div class="has-success">
-  <div class="checkbox">
-    <label class="custom-checkbox">
-      <input type="checkbox" id="checkboxSuccess" value="option1">
-      <span>Checkbox with success</span>
-    </label>
-  </div>
-</div>
-<div class="has-warning">
-  <div class="checkbox">
-    <label class="custom-checkbox">
-      <input type="checkbox" id="checkboxWarning" value="option1">
-      <span>Checkbox with warning</span>
-    </label>
-  </div>
-</div>
-<div class="has-error">
-  <div class="checkbox">
-    <label class="custom-checkbox">
-      <input type="checkbox" id="checkboxError" value="option1">
-      <span>Checkbox with error</span>
-    </label>
-  </div>
-</div>
-
+  <ba-checkbox [(ngModel)]="option1" [baCheckboxClass]="'checkbox has-success'" [label]="'Checkbox with success'" [value]="'option1'" id="checkboxSuccess"></ba-checkbox>
+  <ba-checkbox [(ngModel)]="option2" [baCheckboxClass]="'checkbox has-warning'" [label]="'Checkbox with warning'" [value]="'option2'" id="checkboxWarning"></ba-checkbox>
+  <ba-checkbox [(ngModel)]="option3" [baCheckboxClass]="'checkbox has-error'" [label]="'Checkbox with error'" [value]="'option3'" id="checkboxError"></ba-checkbox>
 <div class="form-group has-success has-feedback">
   <label class="control-label" for="inputSuccess2">Input with success</label>
   <input type="text" class="form-control" id="inputSuccess2" aria-describedby="inputSuccess2Status">
