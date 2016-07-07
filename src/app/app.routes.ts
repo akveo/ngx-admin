@@ -4,14 +4,13 @@ import {PagesRoutes} from "./pages/pages.routes";
 import {RegisterRoutes} from "./pages/register/register.routes";
 
 export const routes: RouterConfig = [
-  {
-    path: '',
-    redirectTo: '/pages/dashboard',
-    terminal: true
-  },
   ...LoginRoutes,
   ...RegisterRoutes,
-  ...PagesRoutes
+  ...PagesRoutes,
+  {
+    path: '**',
+    redirectTo: '/pages/dashboard'
+  },
 ];
 
 export const APP_ROUTER_PROVIDERS = [
