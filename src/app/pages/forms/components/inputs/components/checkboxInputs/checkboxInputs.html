@@ -1,23 +1,8 @@
 <div class="checkbox-demo-row">
   <div class="input-demo checkbox-demo row">
-    <div class="col-md-4">
-      <label class="checkbox-inline custom-checkbox nowrap">
-        <input type="checkbox" id="inlineCheckbox01" value="option1">
-        <span>Check 1</span>
-      </label>
-    </div>
-    <div class="col-md-4">
-      <label class="checkbox-inline custom-checkbox nowrap">
-        <input type="checkbox" id="inlineCheckbox02" value="option2">
-        <span>Check 2</span>
-      </label>
-    </div>
-    <div class="col-md-4">
-      <label class="checkbox-inline custom-checkbox nowrap">
-        <input type="checkbox" id="inlineCheckbox03" value="option3">
-        <span>Check 3</span>
-      </label>
-    </div>
+    <ba-checkbox [(ngModel)]="value1" [baCheckboxClass]="'col-md-4'" [label]="'Check 1'" [disabled]="false" [value]="option1" id="inlineCheckbox01"></ba-checkbox>
+    <ba-checkbox [(ngModel)]="value2" [baCheckboxClass]="'col-md-4'" [label]="'Check 2'" [disabled]="false" [value]="option2" id="inlineCheckbox02"></ba-checkbox>
+    <ba-checkbox [(ngModel)]="value3" [baCheckboxClass]="'col-md-4'" [label]="'Check 3'" [disabled]="false" [value]="option3" id="inlineCheckbox03"></ba-checkbox>
   </div>
   <div class="input-demo radio-demo row">
     <div class="col-md-4">
