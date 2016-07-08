@@ -1,2 +1,1 @@
-export * from './baCard.component.ts';
-export * from './baCardBlur.directive';
+export * from './baCard.component';
