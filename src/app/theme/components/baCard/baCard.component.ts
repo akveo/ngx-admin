@@ -1,5 +1,4 @@
-import {Component, ViewEncapsulation, Input} from '@angular/core';
-
+import {Component, ViewEncapsulation, ViewChild, Input} from '@angular/core';
 import {BaCardBlur} from './baCardBlur.directive';
 
 @Component({
