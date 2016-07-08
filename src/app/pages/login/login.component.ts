@@ -1,5 +1,5 @@
 import {Component, ViewEncapsulation} from '@angular/core';
-import {FORM_DIRECTIVES, FormBuilder, ControlGroup, Validators, AbstractControl} from '@angular/common';
+import {FormGroup, AbstractControl, FormBuilder, Validators} from '@angular/forms';
 
 @Component({
   selector: 'login',
@@ -10,7 +10,7 @@ import {FORM_DIRECTIVES, FormBuilder, ControlGroup, Validators, AbstractControl}
 })
 export class Login {
 
-  public form:ControlGroup;
+  public form:FormGroup;
   public email:AbstractControl;
   public password:AbstractControl;
   public submitted:boolean = false;
@@ -24,7 +24,7 @@ export class Login {
     this.email = this.form.controls['email'];
     this.password = this.form.controls['password'];
   }
-  
+
   public onSubmit(values:Object):void {
     this.submitted = true;
     if (this.form.valid) {

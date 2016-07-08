@@ -10,15 +10,20 @@ import {HTTP_PROVIDERS} from '@angular/http';
 // Angular 2 Router
 import {ROUTER_PROVIDERS} from '@angular/router-deprecated';
 
+// Angular 2 forms
+import {disableDeprecatedForms, provideForms} from '@angular/forms';
+
 /*
-* Application Providers/Directives/Pipes
-* providers/directives/pipes that only live in our browser environment
-*/
+ * Application Providers/Directives/Pipes
+ * providers/directives/pipes that only live in our browser environment
+ */
 export const APPLICATION_PROVIDERS = [
-  ...FORM_PROVIDERS,
+  // new Angular 2 forms
+  disableDeprecatedForms(),
+  provideForms(),
   ...HTTP_PROVIDERS,
   ...ROUTER_PROVIDERS,
-  {provide: LocationStrategy, useClass: HashLocationStrategy }
+  {provide: LocationStrategy, useClass: HashLocationStrategy}
 ];
 
 export const PROVIDERS = [

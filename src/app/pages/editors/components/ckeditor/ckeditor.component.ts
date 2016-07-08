@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {CKEditor} from 'ng2-ckeditor';
-import {BaCard} from "../../../../theme/components/baCard/baCard.component";
+import {BaCard} from '../../../../theme/components/baCard';
 
 import './ckeditor.loader.ts';
 
@@ -11,11 +11,12 @@ import './ckeditor.loader.ts';
 })
 
 export class Ckeditor {
-  private ckeditorContent;
-  private config;
-  
+  public ckeditorContent:string = '<p>Hello CKEditor</p>';
+  public config = {
+    uiColor: '#F0F3F4',
+    height: '600'
+  };
+
   constructor() {
-    this.ckeditorContent = `<p>Hello CKEditor</p>`;
-    this.config = {uiColor: '#F0F3F4', height: '600'};
   }
 }
