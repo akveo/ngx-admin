@@ -1,16 +1,15 @@
 import {Component, Input, Self} from '@angular/core';
 import {ControlValueAccessor, NgModel} from '@angular/forms';
+import {BaCheckbox} from '../baCheckbox';
 
 @Component({
-  selector: 'ba-checkbox[ngModel]',
-  styles: [require('./baCheckbox.scss')],
-  template: require('./baCheckbox.html')
+  selector: 'ba-multi-checkbox[ngModel]',
+  template: require('./baMultiCheckbox.html'),
+  directives: [BaCheckbox]
 })
-export class BaCheckbox implements ControlValueAccessor {
-  @Input() disabled:boolean;
-  @Input() label:string;
-  @Input() value:string;
-  @Input() baCheckboxClass:string;
+export class BaMultiCheckbox implements ControlValueAccessor {
+  @Input() baMultiCheckboxClass:string;
+  @Input() propertiesMapping:any;
 
   public model: NgModel;
   public state: boolean;
@@ -20,6 +19,16 @@ export class BaCheckbox implements ControlValueAccessor {
     state.valueAccessor = this;
   }
 
+  public getProp(item: any, propName: string): string {
+    const prop = this.propertiesMapping[propName];
+
+    if (!prop) {
+      return item[propName];
+    } else if (typeof prop === 'function') {
+      return prop(item);
+    }
+    return item[prop];
+  }
   public onChange(value: any): void {}
   public onTouch(value: any): void {}
   public writeValue(state: any): void {

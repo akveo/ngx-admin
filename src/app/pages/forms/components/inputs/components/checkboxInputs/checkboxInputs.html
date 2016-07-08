@@ -1,8 +1,6 @@
 <div class="checkbox-demo-row">
   <div class="input-demo checkbox-demo row">
-    <ba-checkbox [(ngModel)]="value1" [baCheckboxClass]="'col-md-4'" [label]="'Check 1'" [disabled]="false" [value]="option1" id="inlineCheckbox01"></ba-checkbox>
-    <ba-checkbox [(ngModel)]="value2" [baCheckboxClass]="'col-md-4'" [label]="'Check 2'" [disabled]="false" [value]="option2" id="inlineCheckbox02"></ba-checkbox>
-    <ba-checkbox [(ngModel)]="value3" [baCheckboxClass]="'col-md-4'" [label]="'Check 3'" [disabled]="false" [value]="option3" id="inlineCheckbox03"></ba-checkbox>
+    <ba-multi-checkbox [(ngModel)]="checkboxModel" [propertiesMapping]="checkboxPropertiesMapping"></ba-multi-checkbox>
   </div>
   <div class="input-demo radio-demo row">
     <div class="col-md-4">
@@ -27,10 +25,7 @@
 </div>
 <div>
   <div class="checkbox disabled">
-    <label class="custom-checkbox nowrap">
-      <input type="checkbox" value="" disabled>
-      <span>Checkbox is disabled</span>
-    </label>
+    <ba-checkbox [label]="'Disabled checkbox'" [disabled]="true"></ba-checkbox>
   </div>
   <div class="radio disabled">
     <label class="custom-radio nowrap">
