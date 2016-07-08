@@ -16,9 +16,8 @@ export class BaCheckbox implements ControlValueAccessor {
   @Input() disabled:boolean;
   @Input() label:string;
   @Input() value:string;
-  @Input() name:string;
   @Input() baCheckboxClass:string;
-
+  
   public state: boolean;
 
   onChange(value: any): void {}

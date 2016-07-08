@@ -8,3 +8,4 @@ export * from './baChartistChart';
 export * from './baBackTop';
 export * from './baFullCalendar';
 export * from './baCheckbox';
+export * from './baMultiCheckbox';
