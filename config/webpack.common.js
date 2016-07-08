@@ -87,6 +87,7 @@ module.exports = {
         loader: 'source-map-loader',
         exclude: [
           // these packages have problems with their sourcemaps
+          helpers.root('node_modules/ng2-branchy'),
           helpers.root('node_modules/rxjs')
         ]
       }
