@@ -65,7 +65,7 @@ export class BaMenuService {
       item.skip = true;
     }
 
-    // we have to collect all pathes to correctly build the url then
+    // we have to collect all paths to correctly build the url then
     item.route.paths = parent && parent.route && parent.route.paths ? parent.route.paths.slice(0) : [];
     item.route.paths.push(item.route.path);
 
@@ -84,10 +84,12 @@ export class BaMenuService {
   }
 
   protected _prepareItem(object:any):any {
-    if (!object.disabled && !object.skip) {
+    if (!object.skip) {
 
       let itemUrl = this._router.serializeUrl(this._router.createUrlTree(object.route.paths));
       object.url = object.url ? object.url : '/#' + itemUrl;
+
+      object.target = object.target || '';
       return this._selectItem(object);
     }
 
