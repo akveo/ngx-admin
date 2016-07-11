@@ -57,6 +57,10 @@ npm install
 ```
 This will setup a working copy of ng2-admin on your local machine.
 
+**Note**: If you have any issues after the installation please run the following command:
+```bash
+typings install && bower install
+```
 ## Running local copy
 
 To run a local copy in development mode, execute:
