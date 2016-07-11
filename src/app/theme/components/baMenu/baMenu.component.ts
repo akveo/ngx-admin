@@ -27,6 +27,7 @@ export class BaMenu {
   public hoverElemHeight:number;
   public hoverElemTop:number;
   protected _onRouteChange:Subscription;
+  public outOfArea:number = -200;
 
   constructor(private _router:Router, private _service:BaMenuService) {
 

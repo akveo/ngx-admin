@@ -1,4 +1,4 @@
-import {Component, ElementRef, HostListener, ViewEncapsulation, Input, Output, EventEmitter} from '@angular/core';
+import {Component, ViewEncapsulation, Input, Output, EventEmitter} from '@angular/core';
 
 @Component({
   selector: 'ba-menu-item',
@@ -15,11 +15,6 @@ export class BaMenuItem {
 
   @Output() itemHover = new EventEmitter<any>();
   @Output() toggleSubMenu = new EventEmitter<any>();
-
-  public outOfArea:number = -200;
-
-  public ngOnInit():void {
-  }
 
   public onHoverItem($event):void {
     this.itemHover.emit($event);
