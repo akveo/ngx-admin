@@ -1,6 +1,4 @@
 import {Component} from '@angular/core';
-import {RouteConfig} from '@angular/router-deprecated';
-import {TreeView} from "./components/treeView";
 
 @Component({
   selector: 'components',
@@ -9,14 +7,6 @@ import {TreeView} from "./components/treeView";
   styles: [],
   template: `<router-outlet></router-outlet>`
 })
-@RouteConfig([
-  {
-    name: 'TreeView',
-    component: TreeView,
-    path: '/tree-view',
-    useAsDefault: true
-  }
-])
 export class Components {
 
   constructor() {
