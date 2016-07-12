@@ -1,0 +1,14 @@
+sudo: false
+
+language: node_js
+
+node_js:
+  - "4"
+  - "5"
+  - "node"
+
+install:
+  - npm install
+
+script:
+  - npm run build:prod
