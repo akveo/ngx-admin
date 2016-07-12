@@ -4,11 +4,15 @@ language: node_js
 
 node_js:
   - "4"
-  - "5"
-  - "node"
+  
+before_script:
+  - npm install -g webpack
+  - npm install -g typings
+  - npm install -g typescript
+  - npm install -g bower
 
 install:
   - npm install
 
 script:
-  - npm run build:prod
+  - npm run build
