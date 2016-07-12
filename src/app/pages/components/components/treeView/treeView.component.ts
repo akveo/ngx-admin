@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {BranchyComponent, TreeModel} from 'ng2-branchy';
-import {BaCard} from "../../../../theme/components/baCard/baCard.component";
+import {BaCard} from '../../../../theme/components/baCard';
 
 @Component({
   selector: 'tree-view',
