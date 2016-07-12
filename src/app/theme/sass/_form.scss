@@ -75,12 +75,6 @@ textarea.form-control {
   button[type="submit"] {
     margin-left: 12px;
   }
-
-  label.custom-checkbox > span {
-    display: block;
-    margin-top: -13px;
-    margin-right: 10px;
-  }
 }
 
 @mixin setSwitchBorder($color) {
@@ -182,8 +176,19 @@ textarea.form-control {
   }
 }
 
-label.custom-checkbox {
-  padding-right: 0;
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.cut-with-dots {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+}
+
+label.custom-radio {
+  @padding-right: 0;
   padding-left: 0;
   margin-bottom: 0;
   & > input {
@@ -246,20 +251,6 @@ label.custom-checkbox {
       }
     }
   }
-}
-
-.nowrap {
-  white-space: nowrap;
-}
-
-.cut-with-dots {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: block;
-}
-
-label.custom-radio {
-  @extend .custom-checkbox;
   & > input {
     &:checked {
       & + span {
@@ -307,7 +298,7 @@ label.custom-input-danger {
 }
 
 .form-horizontal {
-  .radio, .checkbox, .radio-inline, .checkbox-inline {
+  .radio, .radio-inline {
     padding-top: 0;
   }
 }
@@ -327,7 +318,6 @@ label.custom-input-danger {
       border-color: $focusColor;
     }
   }
-
   label.custom-checkbox {
     color: $color;
     & > span {
@@ -361,21 +351,6 @@ label.custom-input-danger {
   line-height: 34px;
   text-align: center;
   pointer-events: none;
-}
-
-.has-success {
-  @include validationState($success-bg, $success);
-  position: relative;
-}
-
-.has-warning {
-  @include validationState($warning-bg, $warning);
-  position: relative;
-}
-
-.has-error {
-  @include validationState($danger-bg, $danger);
-  position: relative;
 }
 
 .has-feedback {
