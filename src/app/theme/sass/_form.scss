@@ -470,6 +470,21 @@ label.custom-input-danger {
   }
 }
 
+.has-success {
+  @include validationState($success-bg, $success);
+  position: relative;
+}
+
+.has-warning {
+  @include validationState($warning-bg, $warning);
+  position: relative;
+}
+
+.has-error {
+  @include validationState($danger-bg, $danger);
+  position: relative;
+}
+
 .bootstrap-tagsinput {
   color: $content-text;
   background-color: $input-background;
