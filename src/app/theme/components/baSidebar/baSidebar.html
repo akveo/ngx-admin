@@ -1,55 +1,6 @@
 <aside class="al-sidebar" (mouseleave)="hoverElemTop=outOfArea" sidebarResize>
-  <ul id="al-sidebar-list" class="al-sidebar-list" baSlimScroll [baSlimScrollOptions]="{height: menuHeight}">
-    <li *ngFor="let item of menuItems" class="al-sidebar-list-item"
-        [ngClass]="{'selected': item.selected && !item.expanded, 'with-sub-menu': item.subMenu, 'ba-sidebar-item-expanded': item.expanded}">
-
-
-      <a *ngIf="!item.component && !item.subMenu" [attr.href]="item.url || ''" [attr.target]="item.target || ''" class="al-sidebar-list-link">
-        <i class="{{ item.icon }}"></i><span>{{ item.title }}</span>
-      </a>
-      <a *ngIf="item.component && !item.subMenu" [routerLink]="[item.component]" [attr.target]="item.target || ''" class="al-sidebar-list-link">
-        <i class="{{ item.icon }}"></i><span>{{ item.title }}</span>
-      </a>
-
-      <a *ngIf="item.subMenu" (mouseenter)="hoverItem($event, item)" (click)="toggleSubMenu($event, item)"
-         class="al-sidebar-list-link">
-        <i class="{{ item.icon }}"></i><span>{{ item.title }}</span>
-        <b class="fa fa-angle-down"
-           *ngIf="item.subMenu"></b>
-      </a>
-
-      <ul *ngIf="item.subMenu" class="al-sidebar-sublist"
-          [ngClass]="{'slide-right': item.slideRight}">
-        <li *ngFor="let subitem of item.subMenu" class="ba-sidebar-sublist-item"
-            [ngClass]="{'selected': subitem.selected, 'with-sub-menu': subitem.subMenu}">
-          <a (mouseenter)="hoverItem($event, item)" *ngIf="subitem.subMenu" (click)="toggleSubMenu($event, subitem);"
-             class="al-sidebar-list-link subitem-submenu-link"><span>{{ subitem.title }}</span>
-            <b class="fa" *ngIf="subitem.subMenu"
-               [ngClass]="{'fa-angle-up': subitem.expanded, 'fa-angle-down': !subitem.expanded}"></b>
-          </a>
-          <ul *ngIf="subitem.subMenu" class="al-sidebar-sublist subitem-submenu-list"
-              [ngClass]="{expanded: subitem.expanded, 'slide-right': subitem.slideRight}">
-            <li *ngFor="let subSubitem of subitem.subMenu" (mouseenter)="hoverItem($event, item)"
-                [ngClass]="{selected: subitem.selected}">
-              <a *ngIf="!item.component" (mouseenter)="hoverItem($event, item)" [attr.href]="subSubitem.url || ''" [attr.target]="subSubitem.target || ''">
-                {{ subSubitem.title }}</a>
-              <a *ngIf="item.component" (mouseenter)="hoverItem($event, item)" [attr.target]="subSubitem.target || ''" [routerLink]="[item.component, subitem.component, subSubitem.component]">
-                {{ subSubitem.title }}</a>
-            </li>
-          </ul>
-          <a *ngIf="!item.component && !subitem.subMenu" [attr.href]="subitem.url || ''"
-             (mouseenter)="hoverItem($event, item)" [attr.target]="subitem.target || ''">
-            {{ subitem.title}}
-          </a>
-          <a *ngIf="item.component && !subitem.subMenu" [routerLink]="[item.component, subitem.component]"
-             (mouseenter)="hoverItem($event, item)" [attr.target]="subitem.target || ''">
-            {{ subitem.title}}
-          </a>
-        </li>
-      </ul>
-
-    </li>
-  </ul>
-  <div class="sidebar-hover-elem" [ngStyle]="{top: hoverElemTop + 'px', height: hoverElemHeight + 'px'}"
-       [ngClass]="{'show-hover-elem': showHoverElem }"></div>
+  <ba-menu [menuRoutes]="routes"
+           [menuHeight]="menuHeight"
+           [sidebarCollapsed]="isMenuCollapsed"
+           (expandMenu)="menuExpand()"></ba-menu>
 </aside>

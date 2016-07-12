@@ -5,7 +5,7 @@
 import {PLATFORM_DIRECTIVES} from '@angular/core';
 
 // Angular 2 Router
-import {ROUTER_DIRECTIVES} from '@angular/router-deprecated';
+import {ROUTER_DIRECTIVES} from '@angular/router';
 // Angular 2 forms
 import { REACTIVE_FORM_DIRECTIVES } from '@angular/forms';
 
