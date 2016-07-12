@@ -20,6 +20,8 @@ import {BubbleMaps} from './maps/components/bubbleMaps/bubbleMaps.component';
 import {LineMaps} from './maps/components/lineMaps/lineMaps.component';
 import {Editors} from './editors/editors.component';
 import {Ckeditor} from './editors/components/ckeditor/ckeditor.component';
+import {Components} from './components/components.component';
+import {TreeView} from './components/components/treeView/treeView.component';
 
 //noinspection TypeScriptValidateTypes
 export const PagesRoutes:RouterConfig = [
@@ -59,6 +61,30 @@ export const PagesRoutes:RouterConfig = [
             data: {
               menu: {
                 title: 'CKEditor',
+              }
+            }
+          }
+        ]
+      },
+      {
+        path: 'components',
+        component: Components,
+        data: {
+          menu: {
+            title: 'Components',
+            icon: 'ion-gear-a',
+            selected: false,
+            expanded: false,
+            order: 250,
+          }
+        },
+        children: [
+          {
+            path: 'treeview',
+            component: TreeView,
+            data: {
+              menu: {
+                title: 'Tree View',
               }
             }
           }
