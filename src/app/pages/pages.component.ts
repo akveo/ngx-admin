@@ -1,14 +1,5 @@
 import {Component, ViewEncapsulation} from '@angular/core';
-import {RouteConfig} from '@angular/router-deprecated';
-
 import {BaPageTop, BaContentTop, BaSidebar, BaBackTop} from '../theme/components';
-
-import {Dashboard} from './dashboard';
-import {Ui} from './ui';
-import {Maps} from './maps';
-import {Charts} from './charts';
-import {Forms} from './forms';
-import {Tables} from './tables';
 
 @Component({
   selector: 'pages',
@@ -39,39 +30,6 @@ import {Tables} from './tables';
     <ba-back-top position="200"></ba-back-top>
     `
 })
-@RouteConfig([
-  {
-    name: 'Dashboard',
-    component: Dashboard,
-    path: '/dashboard',
-    useAsDefault: true,
-  },
-  {
-    name: 'Ui',
-    component: Ui,
-    path: '/ui/...',
-  },
-  {
-    name: 'Maps',
-    component: Maps,
-    path: '/maps/...',
-  },
-  {
-    name: 'Charts',
-    component: Charts,
-    path: '/charts/...',
-  },
-  {
-    name: 'Forms',
-    component: Forms,
-    path: '/forms/...',
-  },
-  {
-    name: 'Tables',
-    component: Tables,
-    path: '/tables/...',
-  }
-])
 export class Pages {
 
   constructor() {

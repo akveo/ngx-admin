@@ -1,7 +1,7 @@
 import {Component, ViewEncapsulation} from '@angular/core';
 
 import {BaFullCalendar} from '../../../theme/components';
-import {CalendarService} from "./calendar.service";
+import {CalendarService} from './calendar.service';
 
 @Component({
   selector: 'calendar',
@@ -36,9 +36,9 @@ export class Calendar {
           start: start,
           end: end
         };
-        $(this._calendar).fullCalendar('renderEvent', eventData, true);
+        jQuery(this._calendar).fullCalendar('renderEvent', eventData, true);
       }
-      $(this._calendar).fullCalendar('unselect');
+      jQuery(this._calendar).fullCalendar('unselect');
     }
   }
 }

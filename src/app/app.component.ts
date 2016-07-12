@@ -1,15 +1,10 @@
 import './app.loader.ts';
-
-import {Component, ViewEncapsulation} from '@angular/core';
-import {RouteConfig} from '@angular/router-deprecated';
-
-import {Pages} from './pages';
-import {AppState} from './app.state';
-import {BaThemeConfigProvider, BaThemeConfig} from './theme';
-import {BaThemeRun} from './theme/directives';
-import {BaImageLoaderService, BaThemePreloader, BaThemeSpinner} from './theme/services';
-
-import {layoutPaths} from './theme/theme.constants';
+import {Component, ViewEncapsulation} from "@angular/core";
+import {AppState} from "./app.state";
+import {BaThemeConfigProvider, BaThemeConfig} from "./theme";
+import {BaThemeRun} from "./theme/directives";
+import {BaImageLoaderService, BaThemePreloader, BaThemeSpinner} from "./theme/services";
+import {layoutPaths} from "./theme/theme.constants";
 
 /*
  * App Component
@@ -29,21 +24,6 @@ import {layoutPaths} from './theme/theme.constants';
     </main>
   `
 })
-@RouteConfig([
-  {
-    path: '/pages/...',
-    name: 'Pages',
-    component: Pages,
-    useAsDefault: true
-  },
-  // handle any non-registered route
-  // and simply redirects back to dashboard page
-  // you can specify any customer 404 page while it's not built in ito ng2-admin
-  {
-    path: '/**',
-    redirectTo: ['Pages']
-  }
-])
 export class App {
 
   isMenuCollapsed:boolean = false;

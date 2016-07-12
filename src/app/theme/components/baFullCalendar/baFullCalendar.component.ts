@@ -16,7 +16,7 @@ export class BaFullCalendar {
   @ViewChild('baFullCalendar') private _selector:ElementRef;
 
   ngAfterViewInit() {
-    let calendar = $(this._selector.nativeElement).fullCalendar(this.baFullCalendarConfiguration);
+    let calendar = jQuery(this._selector.nativeElement).fullCalendar(this.baFullCalendarConfiguration);
     this.onCalendarReady.emit(calendar);
   }
 }

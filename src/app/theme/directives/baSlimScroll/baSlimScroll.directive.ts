@@ -22,10 +22,10 @@ export class BaSlimScroll {
   }
 
   private _init() {
-    $(this._elementRef.nativeElement).slimScroll(this.baSlimScrollOptions);
+    jQuery(this._elementRef.nativeElement).slimScroll(this.baSlimScrollOptions);
   }
 
   private _destroy() {
-    $(this._elementRef.nativeElement).slimScroll({ destroy: true });
+    jQuery(this._elementRef.nativeElement).slimScroll({ destroy: true });
   }
 }

@@ -1,0 +1,127 @@
+@import 'conf/conf';
+
+$text-color: #ffffff;
+
+
+.auth-main {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+.auth-block {
+  width: 540px;
+  margin: 0 auto;
+  border-radius: 5px;
+  @include bg-translucent-dark(0.55);
+  color: #fff;
+  padding: 32px;
+  h1 {
+    font-weight: $font-light;
+    margin-bottom: 28px;
+    text-align: center;
+  }
+  p {
+    font-size: 16px;
+  }
+  a {
+    text-decoration: none;
+    outline: none;
+    transition: all 0.2s ease;
+    color: $primary;
+    &:hover {
+      color: $primary-dark;
+    }
+  }
+
+  .control-label {
+    padding-top: 11px;
+    color: $text-color;
+  }
+
+  .form-group {
+    margin-bottom: 12px;
+  }
+}
+
+.auth-input {
+  width: 300px;
+  margin-bottom: 24px;
+  input {
+    display: block;
+    width: 100%;
+    border: none;
+    font-size: 16px;
+    padding: 4px 10px;
+    outline: none;
+  }
+}
+
+a.forgot-pass {
+  display: block;
+  text-align: right;
+  margin-bottom: -20px;
+  float: right;
+  z-index: 2;
+  position: relative;
+}
+
+.auth-link {
+  display: block;
+  font-size: 16px;
+  text-align: center;
+  margin-bottom: 33px;
+}
+
+.auth-sep {
+  margin-top: 36px;
+  margin-bottom: 24px;
+  line-height: 20px;
+  font-size: 16px;
+  text-align: center;
+  display: block;
+  position: relative;
+  & > span {
+    display: table-cell;
+    width: 30%;
+    white-space: nowrap;
+    padding: 0 24px;
+    color: $text-color;
+    & > span {
+      margin-top: -12px;
+      display: block;
+    }
+  }
+  &:before, &:after {
+    border-top: solid 1px $text-color;
+    content: "";
+    height: 1px;
+    width: 35%;
+    display: table-cell;
+  }
+}
+
+.al-share-auth {
+  text-align: center;
+  .al-share {
+    float: none;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    li {
+      margin-left: 24px;
+      &:first-child {
+        margin-left: 0;
+      }
+      i {
+        font-size: 24px;
+      }
+    }
+  }
+}
+
+.btn-auth {
+  color: #ffffff!important;
+}
