@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width">
     <meta name="keywords" content="admin,dashboard,template,angular,bootstrap,blur,panel,html,css,javascript">
-    <title>BlurAdmin documentation - Sidebar</title>
+    <title>ng2-admin documentation - Sidebar</title>
     <link rel="alternate" href="http://localhost:8080/feed.xml" type="application/rss+xml" title="">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900italic,900|Anonymous+Pro:400,700,400italic,700italic&amp;subset=latin,greek,greek-ext,vietnamese,cyrillic-ext,latin-ext,cyrillic">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.0/gh-fork-ribbon.min.css">
@@ -52,43 +52,80 @@
           <h1>Sidebar</h1>
           <div class="subHeader"></div><p>Sidebar is used to provide convenient way of navigation in the application. 
 Application supports only one sidebar per angular application. 
-That means sidebar is basically a singletone object.
-Currently sidebar supports level 1 and 2 sub&nbsp;menus.</p>
+That means sidebar is basically a singletone&nbsp;object.</p>
 <p>Sidebar can be added to the page using <code>BaSidebar</code> component:</p>
 <pre><code class="lang-html"><span class="tag">&lt;<span class="name">ba-sidebar</span>&gt;</span><span class="tag">&lt;/<span class="name">ba-sidebar</span>&gt;</span>
 </code></pre>
-<p>At the moment sidebar menu items configuration and Angular 2 Router should be configured independently. We probably will come up with a better solution once new Angular Router is released and&nbsp;stable.</p>
+<p>The sidebar contains a <code>&lt;ba-menu&gt;&lt;/ba-menu&gt;</code> component which defines and renders application menu based on routes provided. Generally <code>ba-menu</code> component can be used separately from <code>ba-sidebar</code>.
+All menu items information defined inside the <code>data</code> properly of a&nbsp;route.</p>
 <h2 id="menu-configuration">Menu&nbsp;Configuration</h2>
-<p>All menu items are located inside <code>src/app/app.menu.ts</code> file. The file contains a list of Menu Item objects with the following&nbsp;fields:</p>
+<p>All menu items are located inside <code>src/app/app.routes.ts</code> file. Each route item can have a <code>menu</code> property under <code>data</code> defining a menu&nbsp;item:</p>
 <pre><code class="lang-javascript">  {
-    title: <span class="string">'Dashboard'</span>, <span class="comment">// menu item title</span>
-    component: <span class="string">'Dashboard'</span>, <span class="comment">// component where the menu should lead, has a priority over url property</span>
-    url: <span class="string">'http://google.com'</span> <span class="comment">// manual url address (used only when component is not specified)</span>
-    icon: <span class="string">'ion-android-home'</span>, <span class="comment">// icon class</span>
-    target: <span class="string">'_blank'</span>, <span class="comment">// link target attribute (used only when url is specified)</span>
-    selected: <span class="literal">false</span>,  <span class="comment">// is item selected</span>
-    expanded: <span class="literal">false</span>, <span class="comment">// is item expanded (used only when subItems list specified)</span>
-    order: <span class="number">0</span> <span class="comment">// order in a list</span>
+    <span class="comment">// first, router configuration</span>
+    path: <span class="string">'dashboard'</span>,
+    component: Dashboard,
+    data: {
+      <span class="comment">// here additionaly we difine how the menu item should look like</span>
+      menu: {
+        title: <span class="string">'Dashboard'</span>, <span class="comment">// menu title</span>
+        icon: <span class="string">'ion-android-home'</span>, <span class="comment">// menu icon</span>
+        selected: <span class="literal">false</span>, <span class="comment">// selected or not</span>
+        expanded: <span class="literal">false</span>, <span class="comment">// expanded or not (if item has children)</span>
+        order: <span class="number">0</span> <span class="comment">// and item order in the menu list</span>
+      }
+    }
   }
 </code></pre>
 <p>You also can define a list of sub-menu items like&nbsp;this:</p>
 <pre><code class="lang-javascript">  {
-    title: <span class="string">'Charts'</span>,
-    component: <span class="string">'Charts'</span>,
-    icon: <span class="string">'ion-stats-bars'</span>,
-    selected: <span class="literal">false</span>,
-    expanded: <span class="literal">false</span>,
-    order: <span class="number">200</span>,
-    subMenu: [  <span class="comment">// list of sub-menu items</span>
+    <span class="comment">// parent route</span>
+    path: <span class="string">'charts'</span>,
+    component: Charts,
+    data: {
+
+      <span class="comment">// parent menu configuration</span>
+      menu: {
+        title: <span class="string">'Charts'</span>,
+        icon: <span class="string">'ion-stats-bars'</span>,
+        selected: <span class="literal">false</span>,
+        expanded: <span class="literal">false</span>,
+        order: <span class="number">200</span>,
+      }
+    },
+
+    <span class="comment">// children routes</span>
+    children: [
       {
-        title: <span class="string">'Chartist.Js'</span>, <span class="comment">// sub-item title</span>
-        component: <span class="string">'ChartistJs'</span>  <span class="comment">// sum-item component </span>
-      },
+        path: <span class="string">'chartist-js'</span>,
+        component: ChartistJs,
+        data: {
+
+          <span class="comment">// children menu item configuration</span>
+          menu: {
+            title: <span class="string">'Chartist.Js'</span>,
+          }
+        }
+      }
     ]
   }
 </code></pre>
-<h2 id="routes-configuration">Routes&nbsp;configuration</h2>
-<p>Routes configuration is specified in the Page Components according to Angular 2 Router specification. More information you can find <a href="https://angular.io/docs/ts/latest/guide/router-deprecated.html">here</a>.</p>
+<h1 id="custom-menu-items">Custom menu&nbsp;items</h1>
+<p>You also can define a menu item not connected to any existing route in the&nbsp;application:</p>
+<pre><code class="lang-javascript">  {
+    path: <span class="string">''</span>, <span class="comment">// just leave the path empty</span>
+    data: {
+
+      <span class="comment">// and define your menu item</span>
+      menu: {
+        title: <span class="string">'External Link'</span>, <span class="comment">// title</span>
+        url: <span class="string">'http://akveo.com'</span>, <span class="comment">// custom url</span>
+        icon: <span class="string">'ion-android-exit'</span>, <span class="comment">// icon</span>
+        order: <span class="number">800</span>, <span class="comment">// order</span>
+        target: <span class="string">'_blank'</span> <span class="comment">// target property of &lt;a&gt; tag (_self, _blank, etc)</span>
+      }
+    }
+  }
+</code></pre>
 
         </div>
       </section>

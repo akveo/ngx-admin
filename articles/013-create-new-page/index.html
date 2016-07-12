@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width">
     <meta name="keywords" content="admin,dashboard,template,angular,bootstrap,blur,panel,html,css,javascript">
-    <title>BlurAdmin documentation - Create New Page</title>
+    <title>ng2-admin documentation - Create New Page</title>
     <link rel="alternate" href="http://localhost:8080/feed.xml" type="application/rss+xml" title="">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900italic,900|Anonymous+Pro:400,700,400italic,700italic&amp;subset=latin,greek,greek-ext,vietnamese,cyrillic-ext,latin-ext,cyrillic">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.0/gh-fork-ribbon.min.css">
@@ -50,17 +50,16 @@
         </div>
         <div class="inner-content">
           <h1>Create New Page</h1>
-          <div class="subHeader"></div><p>ng2-admin uses <a href="https://angular.io/docs/ts/latest/guide/router-deprecated.html">Angular Router</a> for navigation.
-Currently this version of the router is deprecated and we are going to move on to a new version once it’s&nbsp;stable.</p>
-<p>We strongly recommend to follow pages structure in your application. 
-If it doesn’t fit your needs please create a GitHub issue and tell us why. We would be glad to&nbsp;discuss. </p>
-<p>Basically any page is just a usual Angular 2 Component with some routes defined for&nbsp;it.</p>
+          <div class="subHeader"></div><p>ng2-admin uses <a href="https://angular.io/docs/ts/latest/guide/router.html">Angular 2 Component Router</a> for&nbsp;navigation.</p>
+<p>We strongly recommend to follow pages structure in your application.
+If it does not fit your needs please create a GitHub issue and tell us why. We would be glad to&nbsp;discuss. </p>
+<p>Basically any page is just a common Angular 2 Component with a route defined for&nbsp;it.</p>
 <h2 id="page-creation-example">Page creation&nbsp;example</h2>
-<p>1) Let’s assume we want to create a blank page with title ‘My New Page’
+<p>1) Let’s assume we want to create a blank page with a title ‘My New Page’
 <br><br></p>
-<p>2) Let’s Create a new directory to contain our new page inside of <code>src/app/pages</code>. Let’s call this directory <code>new</code>.
+<p>2) Let’s Create a new directory for our new page inside of <code>src/app/pages</code>. Let’s call the directory <code>new</code>.
 <br><br></p>
-<p>3) Then let’s create blank angular component to contain our page called ‘new.component.module.js’ inside of <code>src/app/pages/new</code>:</p>
+<p>3) Then let’s create a blank angular 2 component for our page called ‘new.component.ts’ inside of <code>src/app/pages/new</code>:</p>
 <pre><code class="lang-javascript"><span class="keyword">import</span> {Component} <span class="keyword">from</span> <span class="string">'@angular/core'</span>;
 
 @Component({
@@ -78,21 +77,55 @@ If it doesn’t fit your needs please create a GitHub issue and tell us why. We 
 </code></pre>
 <p>This will create a simple Angular 2 component, for more detail please check out <a href="https://angular.io/docs/ts/latest/guide/displaying-data.html">official Angular 2 documentation</a>.
 <br><br></p>
-<p>4) Last thing we need to do is to define a Router configuration in a parent component, in our case in Pages component <code>src/app/pages/pages.component.ts</code>:</p>
-<pre><code class="lang-javascript">@RouteConfig([
-  <span class="comment">// ... some routes here</span>
+<p>4) Last thing we need to do is to define a Router configuration. Routes for pages are located inside of <code>src/app/pages/pages.routes.ts</code>.
+Typically all pages are children for <code>/pages</code> routes and defined under <code>children</code> property of root <code>pages</code> route like&nbsp;this:</p>
+<pre><code class="lang-javascript"><span class="comment">// imports here</span>
+<span class="comment">// lets import our page</span>
+<span class="keyword">import</span> {New} <span class="keyword">from</span> <span class="string">'./new/new.component'</span>;
+
+
+<span class="comment">//noinspection TypeScriptValidateTypes</span>
+<span class="keyword">export</span> <span class="keyword">const</span> PagesRoutes:RouterConfig = [
   {
-    name: <span class="string">'New'</span>,
-    component: New,
-    path: <span class="string">'/new'</span>,
+    path: <span class="string">'pages'</span>,
+    component: Pages,
+    children: [
+      {
+        path: <span class="string">'new'</span>,  <span class="comment">// path for our page</span>
+        component: New, <span class="comment">// component imported above</span>
+        data: { <span class="comment">// custom menu declaration</span>
+          menu: {
+            title: <span class="string">'New Page'</span>, <span class="comment">// menu title</span>
+            icon: <span class="string">'ion-android-home'</span>, <span class="comment">// menu icon</span>
+            selected: <span class="literal">false</span>,
+            expanded: <span class="literal">false</span>,
+            order: <span class="number">0</span>
+          }
+        }
+      },
+
+
+      {
+        path: <span class="string">'dashboard'</span>,
+        component: Dashboard,
+        data: {
+          menu: {
+            title: <span class="string">'Dashboard'</span>,
+            icon: <span class="string">'ion-android-home'</span>,
+            selected: <span class="literal">false</span>,
+            expanded: <span class="literal">false</span>,
+            order: <span class="number">0</span>
+          }
+        }
+      }
+      <span class="comment">// rest of the routes</span>
+    ]
   }
-])
-<span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">Pages</span> </span>{
-}
+];
 </code></pre>
 <p><br><br></p>
-<p>And that’s it! now your page should be available by the following url <a href="http://localhost:3000/#/pages/new">http://localhost:3000/#/pages/new</a>.
-If you want to add a link to your page into Sidebar, please look at the <a href="/ng2-admin/articles/015-sidebar/">following article</a>.</p>
+<p>And that’s it! Now your page is available by the following url <a href="http://localhost:3000/#/pages/new">http://localhost:3000/#/pages/new</a>.
+Plus, your page is automatically registered inside the sidebar menu. If you don’t want to have a link in the menu - just remove the <code>menu</code> declaration under <code>data</code> property.</p>
 
         </div>
       </section>
