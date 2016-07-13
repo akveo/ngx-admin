@@ -8,10 +8,7 @@
     <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
   </div>
   <div class="checkbox">
-    <label class="custom-checkbox">
-      <input type="checkbox">
-      <span>Check me out</span>
-    </label>
+    <ba-checkbox [(ngModel)]="isChecked" [label]="'Check me out'" [ngModelOptions]="{standalone: true}"></ba-checkbox>
   </div>
   <button type="submit" class="btn btn-danger">Submit</button>
 </form>

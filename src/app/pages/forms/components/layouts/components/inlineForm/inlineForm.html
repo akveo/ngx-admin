@@ -6,10 +6,7 @@
     <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Email">
   </div>
   <div class="checkbox">
-    <label class="custom-checkbox">
-      <input type="checkbox">
-      <span>Remember me</span>
-    </label>
+    <ba-checkbox [(ngModel)]="isRemember" [label]="'Remember me'" [ngModelOptions]="{standalone: true}"></ba-checkbox>
   </div>
   <button type="submit" class="btn btn-primary">Send invitation</button>
 </form>
