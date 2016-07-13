@@ -37,7 +37,7 @@ ng2-admin/
    │   │   │
    │   │   ├──app.loader.ts      * requires initial css styles (most important for application loading stage)
    │   │   │
-   │   │   ├──app.menu.ts        * sidebar menu configuration
+   │   │   ├──app.routes.ts      * application routes and menu configuration
    │   │   │
    │   │   ├──app.state.ts       * global application state for data exchange between components
    │   │   │

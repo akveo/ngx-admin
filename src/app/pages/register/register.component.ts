@@ -1,5 +1,5 @@
 import {Component, ViewEncapsulation} from '@angular/core';
-import {FORM_DIRECTIVES, FormBuilder, ControlGroup, Validators, AbstractControl} from '@angular/common';
+import {FormGroup, AbstractControl, FormBuilder, Validators} from '@angular/forms';
 import {EmailValidator, EqualPasswordsValidator} from '../../theme/validators';
 
 @Component({
@@ -11,12 +11,12 @@ import {EmailValidator, EqualPasswordsValidator} from '../../theme/validators';
 })
 export class Register {
 
-  public form:ControlGroup;
+  public form:FormGroup;
   public name:AbstractControl;
   public email:AbstractControl;
   public password:AbstractControl;
   public repeatPassword:AbstractControl;
-  public passwords:ControlGroup;
+  public passwords:FormGroup;
 
   public submitted:boolean = false;
 
@@ -33,7 +33,7 @@ export class Register {
 
     this.name = this.form.controls['name'];
     this.email = this.form.controls['email'];
-    this.passwords = <ControlGroup> this.form.controls['passwords'];
+    this.passwords = <FormGroup> this.form.controls['passwords'];
     this.password = this.passwords.controls['password'];
     this.repeatPassword = this.passwords.controls['repeatPassword'];
   }

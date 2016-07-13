@@ -1,0 +1,21 @@
+<li [ngClass]="{'al-sidebar-list-item': !child, 'ba-sidebar-sublist-item': child, 'selected': menuItem.selected && !menuItem.expanded, 'with-sub-menu': menuItem.children, 'ba-sidebar-item-expanded': menuItem.expanded}">
+
+
+  <a *ngIf="!menuItem.children" (mouseenter)="onHoverItem($event, item)" [href]="menuItem.url" [target]="menuItem.target" class="al-sidebar-list-link">
+    <i *ngIf="menuItem.icon" class="{{ menuItem.icon }}"></i><span>{{ menuItem.title }}</span>
+  </a>
+
+  <a *ngIf="menuItem.children" (mouseenter)="onHoverItem($event, item)" (click)="onToggleSubMenu($event, menuItem)" class="al-sidebar-list-link">
+    <i *ngIf="menuItem.icon" class="{{ menuItem.icon }}"></i><span>{{ menuItem.title }}</span>
+    <b class="fa fa-angle-down" [ngClass]="{'fa-angle-up': menuItem.expanded}"></b>
+  </a>
+
+  <ul *ngIf="menuItem.children" class="al-sidebar-sublist" [ngClass]="{'slide-right': menuItem.slideRight}">
+    <ba-menu-item [menuItem]="subItem"
+                  [child]="true"
+                  (itemHover)="onHoverItem($event)"
+                  (toggleSubMenu)="onToggleSubMenu($event, subItem)"
+                  *ngFor="let subItem of menuItem.children"></ba-menu-item>
+  </ul>
+
+</li>
