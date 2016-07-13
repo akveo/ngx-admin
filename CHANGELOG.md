@@ -15,7 +15,7 @@
 * Sidebar rewritten, menu merged with routes configuration
 * New CKEditor component
 * New Image Uploader component
-* New Three view component
+* New Tree view component
 * New Rating component
 * New Checkbox and multi-checkbox component
 
