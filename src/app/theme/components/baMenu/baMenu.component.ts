@@ -5,6 +5,7 @@ import {Subscription} from 'rxjs/Rx';
 import {BaSlimScroll} from '../../../theme/directives';
 import {BaMenuService} from './baMenu.service';
 import {BaMenuItem} from './components/baMenuItem';
+import {AppState} from '../../../app.state';
 
 @Component({
   selector: 'ba-menu',
@@ -29,13 +30,25 @@ export class BaMenu {
   protected _onRouteChange:Subscription;
   public outOfArea:number = -200;
 
-  constructor(private _router:Router, private _service:BaMenuService) {
-
+  constructor(private _router:Router, private _service:BaMenuService, private _state:AppState) {
     this._onRouteChange = this._router.events.subscribe((event) => {
-      if (this.menuItems && event instanceof NavigationEnd) {
-        this.menuItems = this._service.selectMenuItem(this.menuItems);
+
+      if (event instanceof NavigationEnd) {
+        if (this.menuItems) {
+          this.selectMenuAndNotify();
+        } else {
+          // on page load we have to wait as event is fired before menu elements are prepared
+          setTimeout(() => this.selectMenuAndNotify());
+        }
       }
     });
+  }
+
+  public selectMenuAndNotify():void {
+    if (this.menuItems) {
+      this.menuItems = this._service.selectMenuItem(this.menuItems);
+      this._state.notifyDataChanged('menu.activeLink', this._service.getCurrentItem());
+    }
   }
 
   public ngOnInit():void {
