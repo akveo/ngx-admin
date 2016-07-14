@@ -14,10 +14,7 @@
   <div class="form-group row">
     <div class="col-sm-offset-2 col-sm-10">
       <div class="checkbox">
-        <label class="custom-checkbox">
-          <input type="checkbox">
-          <span>Remember me</span>
-        </label>
+        <ba-checkbox [(ngModel)]="isRemember" [label]="'Remember me'" [ngModelOptions]="{standalone: true}"></ba-checkbox>
       </div>
     </div>
   </div>

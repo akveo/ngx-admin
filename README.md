@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/akveo/ng2-admin.svg?branch=master)](https://travis-ci.org/akveo/ng2-admin)
+[![Dependency Status](https://david-dm.org/akveo/ng2-admin.svg)](https://david-dm.org/akveo/ng2-admin)
+
 # Admin panel framework based on Angular 2, Bootstrap 4 and Webpack
 
 Admin template made with :heart:  by [Akveo team](http://akveo.com/). Follow us on [Twitter](https://twitter.com/akveo_inc) to get latest news about this template first!

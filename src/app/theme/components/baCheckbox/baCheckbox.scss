@@ -1,0 +1,62 @@
+@import '../../sass/conf/conf';
+
+@mixin validationState($color, $focusColor) {
+  .control-label {
+    color: $content-text;
+  }
+  .form-control {
+    border: 1px solid $color;
+    &:focus {
+      box-shadow: none;
+      border-color: $focusColor;
+    }
+  }
+  label.custom-checkbox {
+    color: $color;
+    & > span {
+      &:before {
+        color: $color;
+      }
+      &:hover {
+        &:before {
+          border-color: $color;
+        }
+      }
+    }
+  }
+  .form-control-feedback {
+    color: $color;
+  }
+  .input-group-addon {
+    background-color: $color;
+    color: $label-text;
+  }
+}
+
+.has-success {
+  @include validationState($success-bg, $success);
+  position: relative;
+}
+
+.has-warning {
+  @include validationState($warning-bg, $warning);
+  position: relative;
+}
+
+.has-error {
+  @include validationState($danger-bg, $danger);
+  position: relative;
+}
+
+label.custom-checkbox > span {
+  display: block;
+  margin-top: -13px;
+  margin-right: 10px;
+}
+
+.form-horizontal {
+  .checkbox, .checkbox-inline{
+    padding-top: 0;
+  }
+}
+

@@ -1,0 +1,10 @@
+<div class="{{baMultiCheckboxClass}}">
+  <ba-checkbox *ngFor="let item of state"
+               [(ngModel)]="item[propertiesMapping.model]"
+               [baCheckboxClass]="getProp(item, 'baCheckboxClass')"
+               [label]="getProp(item, 'label')"
+               [disabled]="getProp(item, 'disabled')"
+               [value]="getProp(item, 'value')"
+               id="{{getProp(item, 'id')}}">
+  </ba-checkbox>
+</div>

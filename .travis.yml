@@ -1,0 +1,26 @@
+sudo: false
+
+language: node_js
+
+node_js:
+  - "4"
+
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      - g++-4.8
+
+install:
+  - npm config set spin false
+  - npm install -g npm@3
+  - npm install -g webpack
+  - npm install -g typings
+  - npm install -g typescript
+  - npm install -g bower
+
+  - npm install
+
+script:
+  - npm run build:prod
