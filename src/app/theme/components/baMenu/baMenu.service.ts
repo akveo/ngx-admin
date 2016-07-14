@@ -4,6 +4,8 @@ import {Router, UrlTree, RouterConfig} from '@angular/router';
 @Injectable()
 export class BaMenuService {
 
+  protected _currentMenuItem = {};
+
   constructor(private _router:Router) {
   }
 
@@ -12,10 +14,18 @@ export class BaMenuService {
     return this._skipEmpty(items);
   }
 
+  public getCurrentItem():any {
+    return this._currentMenuItem;
+  }
+
   public selectMenuItem(menuItems:any[]):any[] {
     let items = [];
     menuItems.forEach((item) => {
       this._selectItem(item);
+
+      if (item.selected) {
+        this._currentMenuItem = item;
+      }
 
       if (item.children && item.children.length > 0) {
         item.children = this.selectMenuItem(item.children);
