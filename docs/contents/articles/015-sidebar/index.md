@@ -6,21 +6,21 @@ group: Components
 template: article.jade
 ---
 
-Sidebar is used to provide convenient way of navigation in the application. 
-Application supports only one sidebar per angular application. 
-That means sidebar is basically a singletone object.
+The sidebar provides a convenient way to navigate the application. 
+Only one sidebar is supported per angular application. 
+This means that sidebar is basically a singleton object.
  
-Sidebar can be added to the page using `BaSidebar` component:
+Sidebar can be added to the page using the `BaSidebar` component:
 ```html
 <ba-sidebar></ba-sidebar>
 ```
 
-The sidebar contains a `<ba-menu></ba-menu>` component which defines and renders application menu based on routes provided. Generally `ba-menu` component can be used separately from `ba-sidebar`.
-All menu items information defined inside the `data` properly of a route.
+The sidebar contains a `<ba-menu></ba-menu>` component which defines and renders the application menu based on routes provided. Generally the `ba-menu` component can be used separately from `ba-sidebar`.
+All menu items information is defined inside the `data` property of a route.
 
 ## Menu Configuration
 
-All menu items are located inside `src/app/app.routes.ts` file. Each route item can have a `menu` property under `data` defining a menu item:
+All menu items are located inside the `src/app/app.routes.ts` file. Each route item can have a `menu` property under `data` defining a menu item:
 
 ```javascript
   {
@@ -28,13 +28,13 @@ All menu items are located inside `src/app/app.routes.ts` file. Each route item 
     path: 'dashboard',
     component: Dashboard,
     data: {
-      // here additionaly we difine how the menu item should look like
+      // here additionaly we define how the menu item should look
       menu: {
         title: 'Dashboard', // menu title
         icon: 'ion-android-home', // menu icon
         selected: false, // selected or not
         expanded: false, // expanded or not (if item has children)
-        order: 0 // and item order in the menu list
+        order: 0 // item order in the menu list
       }
     }
   }
