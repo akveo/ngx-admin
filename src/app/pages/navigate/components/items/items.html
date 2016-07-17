@@ -1,0 +1,51 @@
+<div class="widgets">
+
+  <div class="row">
+    <div class="col-lg-12 col-sm-12 col-xs-12">
+
+      <ba-card baCardClass="banner-column-panel">
+        <div class="banner">
+          <div class="large-banner-wrapper">
+            <img src="{{ ( 'app/typography/banner.png' | baAppPicture ) }}" alt=""/>
+          </div>
+          <div class="banner-text-wrapper">
+            <div class="banner-text">
+              <h1>Simple Banner Text</h1>
+
+              <p>Lorem ipsum dolor sit amet</p>
+
+              <p>Odio amet viverra rutrum</p>
+            </div>
+          </div>
+        </div>
+        <div class="section">
+          <div class="row">
+            <div class="col-sm-4">
+              <h4>Sub Page</h4>
+              <div class="img-wrapper"><img src="{{ ( 'app/typography/typo04.png' | baAppPicture ) }}" alt=""/></div>
+              <p>Eget augue, lacus erat ante egestas scelerisque aliquam, metus molestie leo in habitasse magna
+                maecenas</p>
+              <a [routerLink]="['./details']" class="learn-more">Learn more</a>
+            </div>
+            <div class="col-sm-4">
+              <h4>Sub Page with Overdrive Title </h4>
+              <div class="img-wrapper"><img src="{{ ( 'app/typography/typo05.png' | baAppPicture ) }}" alt=""/></div>
+              <p>Augue massa et parturient, suspendisse orci nec scelerisque sit, integer nam mauris pede consequat
+                in
+                velit</p>
+              <a [routerLink]="['./overdrive']" class="learn-more">Learn more</a>
+            </div>
+            <div class="col-sm-4">
+              <h4>Fail Auth</h4>
+              <div class="img-wrapper"><img src="{{ ( 'app/typography/typo06.png' | baAppPicture ) }}" alt=""/></div>
+              <p>Eget turpis, tortor lobortis porttitor, vestibulum nullam vehicula aliquam</p>
+              <a [routerLink]="['./fail_auth']" class="learn-more">Learn more</a>
+            </div>
+          </div>
+          <div class="separator"></div>
+        </div>
+      </ba-card>
+    </div>
+  </div>
+
+</div>

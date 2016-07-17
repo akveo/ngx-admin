@@ -22,6 +22,10 @@ import {Editors} from './editors/editors.component';
 import {Ckeditor} from './editors/components/ckeditor/ckeditor.component';
 import {Components} from './components/components.component';
 import {TreeView} from './components/components/treeView/treeView.component';
+import {Items} from "./navigate/components/items/items.component";
+import {Details} from "./navigate/components/details/details.component";
+import {Overdrive} from "./navigate/components/overdrive/overdrive.component";
+import {AppGuard} from "../app.guard";
 
 //noinspection TypeScriptValidateTypes
 export const PagesRoutes:RouterConfig = [
@@ -33,6 +37,7 @@ export const PagesRoutes:RouterConfig = [
         path: 'dashboard',
         component: Dashboard,
         data: {
+          page_title: 'Dashboard',
           menu: {
             title: 'Dashboard',
             icon: 'ion-android-home',
@@ -59,6 +64,7 @@ export const PagesRoutes:RouterConfig = [
             path: 'ckeditor',
             component: Ckeditor,
             data: {
+              page_title: 'CKEditor',
               menu: {
                 title: 'CKEditor',
               }
@@ -83,6 +89,7 @@ export const PagesRoutes:RouterConfig = [
             path: 'treeview',
             component: TreeView,
             data: {
+              page_title: 'Tree View',
               menu: {
                 title: 'Tree View',
               }
@@ -107,6 +114,7 @@ export const PagesRoutes:RouterConfig = [
             path: 'chartist-js',
             component: ChartistJs,
             data: {
+              page_title: 'Chartist',
               menu: {
                 title: 'Chartist.Js',
               }
@@ -131,6 +139,7 @@ export const PagesRoutes:RouterConfig = [
             path: 'typography',
             component: Typography,
             data: {
+              page_title: 'Typography',
               menu: {
                 title: 'Typography',
               }
@@ -140,6 +149,7 @@ export const PagesRoutes:RouterConfig = [
             path: 'buttons',
             component: Buttons,
             data: {
+              page_title: 'Buttons',
               menu: {
                 title: 'Buttons',
               }
@@ -149,6 +159,7 @@ export const PagesRoutes:RouterConfig = [
             path: 'icons',
             component: Icons,
             data: {
+              page_title: 'Icons',
               menu: {
                 title: 'Icons',
               }
@@ -158,6 +169,7 @@ export const PagesRoutes:RouterConfig = [
             path: 'grid',
             component: Grid,
             data: {
+              page_title: 'Grid',
               menu: {
                 title: 'Grid',
               }
@@ -182,6 +194,7 @@ export const PagesRoutes:RouterConfig = [
             path: 'inputs',
             component: Inputs,
             data: {
+              page_title: 'Form Inputs',
               menu: {
                 title: 'Form Inputs',
               }
@@ -191,6 +204,7 @@ export const PagesRoutes:RouterConfig = [
             path: 'layouts',
             component: Layouts,
             data: {
+              page_title: 'Form Layouts',
               menu: {
                 title: 'Form Layouts',
               }
@@ -215,6 +229,7 @@ export const PagesRoutes:RouterConfig = [
             path: 'basictables',
             component: BasicTables,
             data: {
+              page_title: 'Basic Tables',
               menu: {
                 title: 'Basic Tables',
               }
@@ -239,6 +254,7 @@ export const PagesRoutes:RouterConfig = [
             path: 'googlemaps',
             component: GoogleMaps,
             data: {
+              page_title: 'Google Maps',
               menu: {
                 title: 'Google Maps',
               }
@@ -248,6 +264,7 @@ export const PagesRoutes:RouterConfig = [
             path: 'leafletmaps',
             component: LeafletMaps,
             data: {
+              page_title: 'Leaflet Maps',
               menu: {
                 title: 'Leaflet Maps',
               }
@@ -257,6 +274,7 @@ export const PagesRoutes:RouterConfig = [
             path: 'bubblemaps',
             component: BubbleMaps,
             data: {
+              page_title: 'Bubble Maps',
               menu: {
                 title: 'Bubble Maps',
               }
@@ -266,6 +284,7 @@ export const PagesRoutes:RouterConfig = [
             path: 'linemaps',
             component: LineMaps,
             data: {
+              page_title: 'Line Maps',
               menu: {
                 title: 'Line Maps',
               }
@@ -288,6 +307,7 @@ export const PagesRoutes:RouterConfig = [
           {
             path: '',
             data: {
+              page_title: 'Menu Level 1.1',
               menu: {
                 title: 'Menu Level 1.1',
                 url: '#'
@@ -297,6 +317,7 @@ export const PagesRoutes:RouterConfig = [
           {
             path: '',
             data: {
+              page_title: 'Menu Level 1.2',
               menu: {
                 title: 'Menu Level 1.2',
                 url: '#'
@@ -306,6 +327,7 @@ export const PagesRoutes:RouterConfig = [
               {
                 path: '',
                 data: {
+                  page_title: 'Menu Level 1.2.1',
                   menu: {
                     title: 'Menu Level 1.2.1',
                     url: '#'
@@ -317,13 +339,67 @@ export const PagesRoutes:RouterConfig = [
         ]
       },
       {
+        path: 'navigate',
+        data: {
+          menu: {
+            title: 'Navigate',
+            icon: 'ion-ios-more',
+            selected: false,
+            expanded: false,
+            order: 800,
+          }
+        },
+        children: [
+          {
+            path: 'items',
+            component: Items,
+            data: {
+              page_title: 'Items',
+              menu: {
+                title: 'List Items'
+              }
+            }
+          },
+          {
+            path: 'items/details',
+            component: Details,
+            data: {
+              breadcrumb: [
+                {
+                  title: 'Items',
+                  path: './'
+                }
+              ],
+              page_title: 'Details',
+            }
+          },
+          {
+            path: 'items/overdrive',
+            component: Overdrive,
+            data: {
+              page_title: 'Overdrive',
+            }
+          },
+          {
+            path: 'items/fail_auth',
+            component: Overdrive,
+            canActivate: [AppGuard],
+            data:{
+              permissions: [
+                'permission1', 'permission2'
+              ]
+            }
+          }
+        ]
+      },
+      {
         path: '',
         data: {
           menu: {
             title: 'External Link',
             url: 'http://akveo.com',
             icon: 'ion-android-exit',
-            order: 800,
+            order: 900,
             target: '_blank'
           }
         }

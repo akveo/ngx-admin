@@ -17,12 +17,13 @@ import {AppState} from '../../../app.state';
 })
 export class BaMenu {
 
-  @Input() menuRoutes:RouterConfig = [];
+  @Input() appRoutes:RouterConfig = [];
   @Input() sidebarCollapsed:boolean = false;
   @Input() menuHeight:number;
 
   @Output() expandMenu = new EventEmitter<any>();
 
+  public routerItems:any[];
   public menuItems:any[];
   public showHoverElem:boolean;
   public hoverElemHeight:number;
@@ -31,28 +32,31 @@ export class BaMenu {
   public outOfArea:number = -200;
 
   constructor(private _router:Router, private _service:BaMenuService, private _state:AppState) {
+
     this._onRouteChange = this._router.events.subscribe((event) => {
 
       if (event instanceof NavigationEnd) {
         if (this.menuItems) {
-          this.selectMenuAndNotify();
+          this.selectActiveRouteAndNotify();
         } else {
           // on page load we have to wait as event is fired before menu elements are prepared
-          setTimeout(() => this.selectMenuAndNotify());
+          setTimeout(() => this.selectActiveRouteAndNotify());
         }
       }
     });
   }
 
-  public selectMenuAndNotify():void {
-    if (this.menuItems) {
+  public selectActiveRouteAndNotify():void {
+    if (this.routerItems) {
       this.menuItems = this._service.selectMenuItem(this.menuItems);
+      this.routerItems = this._service.selectActivePage(this.routerItems);
       this._state.notifyDataChanged('menu.activeLink', this._service.getCurrentItem());
     }
   }
 
   public ngOnInit():void {
-    this.menuItems = this._service.convertRoutesToMenus(this.menuRoutes);
+    this.routerItems = this._service.convertAppRoutes(this.appRoutes);
+    this.menuItems = this._service.convertRoutesToMenus(this.routerItems);
   }
 
   public ngOnDestroy():void {

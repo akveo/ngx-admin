@@ -3,7 +3,13 @@
 
   <ul class="breadcrumb al-breadcrumb">
     <li>
-      <a href="#/pages/dashboard">Home</a></li>
-    <li>{{ activePageTitle }}</li>
+      <a href="#/pages/dashboard">Home</a>
+    </li>
+    <li *ngFor="let item of breadcrumb">
+      <a [routerLink]="resolveURL(item.path)">{{ item.title }}</a>
+    </li>
+    <li>
+      {{ activePageTitle }}
+    </li>
   </ul>
 </div>

@@ -9,9 +9,12 @@ export class BaMenuService {
   constructor(private _router:Router) {
   }
 
-  public convertRoutesToMenus(routes:RouterConfig):any[] {
-    let items = this._convertArrayToItems(routes);
-    return this._skipEmpty(items);
+  public convertAppRoutes(routes:RouterConfig):any[] {
+    return this._convertArrayToItems(routes)
+  }
+
+  public convertRoutesToMenus(appRoutes:any[]):any[] {
+    return this._skipEmpty(appRoutes);
   }
 
   public getCurrentItem():any {
@@ -19,8 +22,16 @@ export class BaMenuService {
   }
 
   public selectMenuItem(menuItems:any[]):any[] {
+    return this.selectActiveItem(menuItems);
+  }
+
+  public selectActivePage(routerItems:any[]):any[] {
+    return this.selectActiveItem(routerItems);
+  }
+
+  protected selectActiveItem(routerItems:any[]):any[] {
     let items = [];
-    menuItems.forEach((item) => {
+    routerItems.forEach((item) => {
       this._selectItem(item);
 
       if (item.selected) {
@@ -28,7 +39,7 @@ export class BaMenuService {
       }
 
       if (item.children && item.children.length > 0) {
-        item.children = this.selectMenuItem(item.children);
+        item.children = this.selectActiveItem(item.children);
       }
       items.push(item);
     });
@@ -41,7 +52,10 @@ export class BaMenuService {
       let menuItem;
       if (item.skip) {
         if (item.children && item.children.length > 0) {
-          menuItem = item.children;
+          let subItems = this._skipEmpty(item.children);
+          if (subItems.length > 0){
+            menuItem = subItems;
+          }
         }
       } else {
         menuItem = item;
@@ -69,10 +83,34 @@ export class BaMenuService {
       // this is a menu object
       item = object.data.menu;
       item.route = object;
-      delete item.route.data.menu;
     } else {
       item.route = object;
       item.skip = true;
+    }
+
+    item.pageTitle = null;
+    if (object.data && object.data.page_title && object.data.page_title != ''){
+      item.pageTitle = object.data.page_title;
+    }
+
+    item.breadcrumb = [];
+    if (object.data && object.data.breadcrumb) {
+      if (!Array.isArray(object.data.breadcrumb)){
+        object.data.breadcrumb = [object.data.breadcrumb];
+      }
+
+      item.breadcrumb = object.data.breadcrumb;
+    }
+
+
+    item.permissions = null;
+    if (object.data && object.data.permissions){
+      if (Array.isArray(object.data.permissions)){
+        item.permissions = object.data.permissions;
+      }
+      else{
+        item.permissions = [object.data.permissions];
+      }
     }
 
     // we have to collect all paths to correctly build the url then
@@ -94,16 +132,11 @@ export class BaMenuService {
   }
 
   protected _prepareItem(object:any):any {
-    if (!object.skip) {
+    let itemUrl = this._router.serializeUrl(this._router.createUrlTree(object.route.paths));
+    object.url = object.url ? object.url : '/#' + itemUrl;
 
-      let itemUrl = this._router.serializeUrl(this._router.createUrlTree(object.route.paths));
-      object.url = object.url ? object.url : '/#' + itemUrl;
-
-      object.target = object.target || '';
-      return this._selectItem(object);
-    }
-
-    return object;
+    object.target = object.target || '';
+    return this._selectItem(object);
   }
 
   protected _selectItem(object:any):any {
