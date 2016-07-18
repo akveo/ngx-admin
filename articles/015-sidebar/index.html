@@ -50,28 +50,28 @@
         </div>
         <div class="inner-content">
           <h1>Sidebar</h1>
-          <div class="subHeader"></div><p>Sidebar is used to provide convenient way of navigation in the application. 
-Application supports only one sidebar per angular application. 
-That means sidebar is basically a singletone&nbsp;object.</p>
-<p>Sidebar can be added to the page using <code>BaSidebar</code> component:</p>
+          <div class="subHeader"></div><p>The sidebar provides a convenient way to navigate the application. 
+Only one sidebar is supported per angular application. 
+This means that sidebar is basically a singleton&nbsp;object.</p>
+<p>Sidebar can be added to the page using the <code>BaSidebar</code> component:</p>
 <pre><code class="lang-html"><span class="tag">&lt;<span class="name">ba-sidebar</span>&gt;</span><span class="tag">&lt;/<span class="name">ba-sidebar</span>&gt;</span>
 </code></pre>
-<p>The sidebar contains a <code>&lt;ba-menu&gt;&lt;/ba-menu&gt;</code> component which defines and renders application menu based on routes provided. Generally <code>ba-menu</code> component can be used separately from <code>ba-sidebar</code>.
-All menu items information defined inside the <code>data</code> properly of a&nbsp;route.</p>
+<p>The sidebar contains a <code>&lt;ba-menu&gt;&lt;/ba-menu&gt;</code> component which defines and renders the application menu based on routes provided. Generally the <code>ba-menu</code> component can be used separately from <code>ba-sidebar</code>.
+All menu items information is defined inside the <code>data</code> property of a&nbsp;route.</p>
 <h2 id="menu-configuration">Menu&nbsp;Configuration</h2>
-<p>All menu items are located inside <code>src/app/app.routes.ts</code> file. Each route item can have a <code>menu</code> property under <code>data</code> defining a menu&nbsp;item:</p>
+<p>All menu items are located inside the <code>src/app/app.routes.ts</code> file. Each route item can have a <code>menu</code> property under <code>data</code> defining a menu&nbsp;item:</p>
 <pre><code class="lang-javascript">  {
     <span class="comment">// first, router configuration</span>
     path: <span class="string">'dashboard'</span>,
     component: Dashboard,
     data: {
-      <span class="comment">// here additionaly we difine how the menu item should look like</span>
+      <span class="comment">// here additionaly we define how the menu item should look</span>
       menu: {
         title: <span class="string">'Dashboard'</span>, <span class="comment">// menu title</span>
         icon: <span class="string">'ion-android-home'</span>, <span class="comment">// menu icon</span>
         selected: <span class="literal">false</span>, <span class="comment">// selected or not</span>
         expanded: <span class="literal">false</span>, <span class="comment">// expanded or not (if item has children)</span>
-        order: <span class="number">0</span> <span class="comment">// and item order in the menu list</span>
+        order: <span class="number">0</span> <span class="comment">// item order in the menu list</span>
       }
     }
   }
