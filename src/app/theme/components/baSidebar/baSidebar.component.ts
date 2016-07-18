@@ -3,6 +3,7 @@ import {AppState} from '../../../app.state';
 import {layoutSizes} from '../../../theme';
 import {BaMenu} from '../baMenu';
 import {routes} from '../../../../app/app.routes';
+import * as _ from 'lodash';
 
 @Component({
   selector: 'ba-sidebar',
@@ -15,7 +16,7 @@ import {routes} from '../../../../app/app.routes';
 export class BaSidebar {
 
   // here we declare which routes we want to use as a menu in our sidebar
-  public routes = routes;
+  public routes = _.cloneDeep(routes); // we're creating a deep copy since we are going to change that object
 
   public menuHeight:number;
   public isMenuCollapsed:boolean = false;
