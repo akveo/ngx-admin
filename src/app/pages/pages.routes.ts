@@ -277,6 +277,38 @@ export const PagesRoutes:RouterConfig = [
         path: '',
         data: {
           menu: {
+            title: 'Pages',
+            icon: 'ion-document',
+            selected: false,
+            expanded: false,
+            order: 650,
+          }
+        },
+        children: [
+          {
+            path: '',
+            data: {
+              menu: {
+                title: 'Login',
+                url: '#/login'
+              }
+            }
+          },
+          {
+            path: '',
+            data: {
+              menu: {
+                title: 'Register',
+                url: '#/register'
+              }
+            }
+          }
+        ]
+      },
+      {
+        path: '',
+        data: {
+          menu: {
             title: 'Menu Level 1',
             icon: 'ion-ios-more',
             selected: false,
