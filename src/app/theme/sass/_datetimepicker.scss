@@ -1,0 +1,50 @@
+@import "~bootstrap-datetime-picker/css/bootstrap-datetimepicker";
+
+
+// Overdrive style
+.datetimepicker{
+  .glyphicon{
+    display: inline-block;
+    font-family: "Ionicons";
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    text-rendering: auto;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .glyphicon-arrow-left:before{
+    content: "\F108";
+  }
+  .glyphicon-arrow-right:before{
+    content: "\F10B";
+  }
+}
+
+
+.datetimepicker table tr td.active, .datetimepicker table tr td span.active {
+  &:active, &:hover:active {
+    background-image: none;
+    background-color: $primary;
+  }
+  &.disabled {
+    &:active, &:hover:active {
+      background-image: none;
+      background-color: $primary;
+    }
+  }
+  &.active, &:hover.active {
+    background-image: none;
+    background-color: $primary;
+  }
+  &.disabled {
+    &.active, &:hover.active {
+      background-image: none;
+      background-color: $primary;
+    }
+  }
+}
