@@ -1,4 +1,15 @@
-import {Component, ViewChild, ViewEncapsulation, Input, Output, ElementRef, EventEmitter} from '@angular/core';
+import {
+    Component,
+    ViewChild,
+    ViewEncapsulation,
+    Input,
+    Output,
+    ElementRef,
+    EventEmitter,
+    OnInit,
+    OnChanges,
+    OnDestroy,
+} from '@angular/core';
 
 import {Chartist} from './baChartistChart.loader.ts';
 
@@ -20,8 +31,22 @@ export class BaChartistChart {
 
   @ViewChild('baChartistChart') private _selector:ElementRef;
 
+  private chart;
+
   ngAfterViewInit() {
-    let chart = new Chartist[this.baChartistChartType](this._selector.nativeElement, this.baChartistChartData, this.baChartistChartOptions, this.baChartistChartResponsive);
-    this.onChartReady.emit(chart);
+    this.chart = new Chartist[this.baChartistChartType](this._selector.nativeElement, this.baChartistChartData, this.baChartistChartOptions, this.baChartistChartResponsive);
+    this.onChartReady.emit(this.chart);
+  }
+
+  ngOnChanges() {
+    if (this.chart) {
+      (<any>this.chart).update(this.baChartistChartData, this.baChartistChartOptions);
+    }
+  }
+
+  ngOnDestroy():void {
+    if (this.chart) {
+      this.chart.detach();
+    }
   }
 }
