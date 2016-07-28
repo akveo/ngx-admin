@@ -16,7 +16,6 @@ install:
   - npm config set spin false
   - npm install -g npm@3
   - npm install -g webpack
-  - npm install -g typings
   - npm install -g typescript
   - npm install -g bower
 

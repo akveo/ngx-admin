@@ -1,3 +1,7 @@
+/**
+ * @author: @AngularClass
+ */
+
 const helpers = require('./helpers');
 const webpackMerge = require('webpack-merge'); // used to merge webpack configs
 const commonConfig = require('./webpack.common.js'); // the settings that are common to prod and dev
@@ -7,11 +11,12 @@ const commonConfig = require('./webpack.common.js'); // the settings that are co
  */
 const ProvidePlugin = require('webpack/lib/ProvidePlugin');
 const DefinePlugin = require('webpack/lib/DefinePlugin');
+const NormalModuleReplacementPlugin = require('webpack/lib/NormalModuleReplacementPlugin');
+const IgnorePlugin = require('webpack/lib/IgnorePlugin');
 const DedupePlugin = require('webpack/lib/optimize/DedupePlugin');
 const UglifyJsPlugin = require('webpack/lib/optimize/UglifyJsPlugin');
-const CompressionPlugin = require('compression-webpack-plugin');
 const WebpackMd5Hash = require('webpack-md5-hash');
-
+const CompressionPlugin = require('compression-webpack-plugin');
 /**
  * Webpack Constants
  */
@@ -22,13 +27,11 @@ const METADATA = webpackMerge(commonConfig.metadata, {
   host: HOST,
   port: PORT,
   ENV: ENV,
-  HMR: false,
-  baseUrl: ''
+  HMR: false
 });
 
 module.exports = webpackMerge(commonConfig, {
 
-  metadata: METADATA,
   /**
    * Switch loaders to debug mode.
    *
@@ -72,7 +75,7 @@ module.exports = webpackMerge(commonConfig, {
      *
      * See: http://webpack.github.io/docs/configuration.html#output-sourcemapfilename
      */
-    sourceMapFilename: '[file].map',
+    sourceMapFilename: '[name].[chunkhash].bundle.map',
 
     /**
      * The filename of non-entry chunks as relative path
@@ -152,16 +155,33 @@ module.exports = webpackMerge(commonConfig, {
       // }, // debug
       // comments: true, //debug
 
+
       beautify: false, //prod
-
-      mangle: false, //prod
-
-      compress: {
-        screw_ie8: true
-      }, //prod
-
+      mangle: { screw_ie8 : true }, //prod
+      compress: { screw_ie8: true }, //prod
       comments: false //prod
     }),
+
+    /**
+     * Plugin: NormalModuleReplacementPlugin
+     * Description: Replace resources that matches resourceRegExp with newResource
+     *
+     * See: http://webpack.github.io/docs/list-of-plugins.html#normalmodulereplacementplugin
+     */
+
+    new NormalModuleReplacementPlugin(
+      /angular2-hmr/,
+      helpers.root('config/modules/angular2-hmr-prod.js')
+    ),
+
+    /**
+     * Plugin: IgnorePlugin
+     * Description: Don’t generate modules for requests matching the provided RegExp.
+     *
+     * See: http://webpack.github.io/docs/list-of-plugins.html#ignoreplugin
+     */
+
+    // new IgnorePlugin(/angular2-hmr/),
 
     /**
      * Plugin: CompressionPlugin
