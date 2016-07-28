@@ -1,6 +1,6 @@
 {
   "name": "ng2-admin",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "Angular 2 and Bootstrap 4 Admin Template.",
   "author": "akveo",
   "homepage": "http://akveo.github.io/ng2-admin/",
@@ -40,7 +40,7 @@
     "ng2-bootstrap": "^1.0.20",
     "ng2-branchy": "^0.0.2-5",
     "ng2-ckeditor": "^1.0.4",
-    "ng2-uploader": "0.5.2",
+    "ng2-uploader": "0.5.6",
     "normalize.css": "^4.1.1",
     "rxjs": "5.0.0-beta.6",
     "tether": "^1.2.4",
