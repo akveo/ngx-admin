@@ -1,3 +1,11 @@
+@mixin header {
+  margin: 10px 0;
+  font-family: inherit;
+  font-weight: bold;
+  color: inherit;
+  text-rendering: optimizelegibility;
+}
+
 html {
   font-family: 'Source Sans Pro', sans-serif;
   color: #484848;
@@ -12,73 +20,69 @@ p {
   margin: 0 0 10px
 }
 
-.subHeader {
-  font-size: 21px;
-  font-weight: 200;
-  line-height: 30px;
-  margin-bottom: 10px
-}
-
 em {
   font-style: italic
 }
 
-h1, h2, h3, h4, h5, h6 {
-  margin: 10px 0;
-  font-family: inherit;
-  font-weight: bold;
-  line-height: 20px;
-  color: inherit;
-  text-rendering: optimizelegibility
-}
-
-h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
-  font-weight: normal;
-  color: #7b7b7b
-}
-
-h1, h2, h3 {
-  line-height: 40px
-}
-
 h1 {
+  @include header;
+
+  line-height: 40px;
   font-size: 39px
 }
 
 h2 {
-  font-size: 31px
+  @include header;
+
+  line-height: 40px;
+  margin-top: 30px;
+  font-size: 31px;
 }
 
 h3 {
-  font-size: 23px
+  @include header;
+
+  line-height: 40px;
+  font-size: 23px;
 }
 
 h4 {
-  font-size: 16px
+  @include header;
+
+  line-height: 20px;
+  font-size: 16px;
 }
 
 h5 {
-  font-size: 14px
+  @include header;
+
+  line-height: 40px;
+  text-transform: uppercase;
+  font-size: 14px;
 }
 
 h6 {
-  font-size: 11px
+  @include header;
+
+  line-height: 20px;
+  font-size: 11px;
 }
 
+
 h1 small {
-  font-size: 24px
+  font-size: 24px;
 }
 
 h2 small {
-  font-size: 18px
+  font-size: 18px;
 }
 
 h3 small {
-  font-size: 16px
+  font-size: 16px;
 }
 
 h4 small {
-  font-size: 14px
+  font-size: 14px;
 }
 
 ul, ol {
@@ -114,15 +118,7 @@ a:focus {
   text-align: center
 }
 
-html * {
-  color-profile: sRGB;
-  rendering-intent: auto
-}
-
-* {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
+body, pre {
   border: none;
   margin: 0;
   padding: 0
@@ -151,8 +147,11 @@ html {
   box-shadow: 0 0 0 2px #f44, 1.5em 0 0 2px #9b3, 3em 0 0 2px #fb5;
 }
 
-.browser-mockup > * {
+.browser-mockup a {
   display: block;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
   border: 1px solid #ddd;
   width: 100%;
 }
@@ -172,18 +171,20 @@ html {
 
 .wrap {
   width: 1060px;
+  box-sizing: border-box;
   margin-left: auto;
   margin-right: auto;
   padding-left: 20px;
-  padding-right: 20px
+  padding-right: 20px;
 }
 
 .skinnyWrap {
   width: 690px;
+  box-sizing: border-box;
   margin-left: auto;
   margin-right: auto;
   padding-left: 20px;
-  padding-right: 20px
+  padding-right: 20px;
 }
 
 hr {
@@ -334,6 +335,9 @@ h1:hover .hash-link, h2:hover .hash-link, h3:hover .hash-link, h4:hover .hash-li
 
 .hero .admin-screenshot {
   width: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
   padding: 0 15px;
   text-align: center;
 }
@@ -368,6 +372,7 @@ h1:hover .hash-link, h2:hover .hash-link, h3:hover .hash-link, h4:hover .hash-li
   left: 0;
   width: 100%;
   height: 100%;
+  background: black;
   background: rgba(0, 0, 0, 0.5);
   color: rgb(249, 249, 249);
   font-size: 32px;
@@ -399,20 +404,16 @@ h1:hover .hash-link, h2:hover .hash-link, h3:hover .hash-link, h4:hover .hash-li
   text-decoration: none;
 }
 
-.buttons-unit.downloads {
-  margin: 30px 0
-}
-
 .index-block {
   padding: 40px 0;
+
+  &:nth-child(even) {
+    background: #f2f2f2;
+  }
 }
 
-.index-block h1 {
+.centered {
   text-align: center;
-}
-
-.index-block.black {
-  background: #f2f2f2;
 }
 
 .why-items {
@@ -426,6 +427,9 @@ h1:hover .hash-link, h2:hover .hash-link, h3:hover .hash-link, h4:hover .hash-li
 .why-item {
   flex: 33%;
   text-align: center;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
   padding: 0 15px;
 }
 
@@ -454,11 +458,6 @@ h1:hover .hash-link, h2:hover .hash-link, h3:hover .hash-link, h4:hover .hash-li
   margin: 0 0 6px
 }
 
-.nav-docs h3 {
-  text-transform: uppercase;
-  font-size: 14px
-}
-
 .nav-docs a {
   color: #666;
   display: block
@@ -478,10 +477,11 @@ h1:hover .hash-link, h2:hover .hash-link, h3:hover .hash-link, h4:hover .hash-li
   display: inline-block;
   width: 10px;
   height: 10px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
   padding-left: 5px;
-  background-image: url("../img/external.png");
-  background-position: 100% 0;
-  background-repeat: no-repeat;
+  background: url("../img/external.png") 100% 0 no-repeat;
   font-size: 10px;
   line-height: 1em;
   opacity: 0.5
@@ -568,14 +568,7 @@ h1:hover .hash-link, h2:hover .hash-link, h3:hover .hash-link, h4:hover .hash-li
 .marketing-col {
   float: left;
   margin-left: 40px;
-  width: 280px
-}
-
-.marketing-col h3 {
-  color: #2d2d2d;
-  font-size: 24px;
-  font-weight: normal;
-  text-transform: uppercase
+  width: 280px;
 }
 
 .marketing-col p {
@@ -584,51 +577,6 @@ h1:hover .hash-link, h2:hover .hash-link, h3:hover .hash-link, h4:hover .hash-li
 
 .marketing-col:first-child {
   margin-left: 0
-}
-
-#examples h3, .home-presentation h3 {
-  color: #2d2d2d;
-  font-size: 24px;
-  font-weight: normal;
-  margin-bottom: 5px
-}
-
-#examples p {
-  margin: 0 0 25px 0;
-  max-width: 600px
-}
-
-#examples .example {
-  margin-top: 60px
-}
-
-#examples #todoExample {
-  font-size: 14px
-}
-
-#examples #todoExample ul {
-  list-style-type: square;
-  margin: 0 0 10px 0
-}
-
-#examples #todoExample input {
-  border: 1px solid #ccc;
-  font: 14px proxima-nova, "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
-  padding: 3px;
-  width: 150px
-}
-
-#examples #todoExample button {
-  font: 14px proxima-nova, "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
-  margin-left: 5px;
-  padding: 4px 10px
-}
-
-#examples #markdownExample textarea {
-  border: 1px solid #ccc;
-  font: 14px proxima-nova, "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
-  margin-bottom: 10px;
-  padding: 5px
 }
 
 .home-bottom-section {
@@ -647,13 +595,9 @@ h1:hover .hash-link, h2:hover .hash-link, h3:hover .hash-link, h4:hover .hash-li
   width: 1220px
 }
 
-.jsxCompiler label.compiler-option {
+.jsxCompiler .compiler-option {
   display: block;
   margin-top: 5px
-}
-
-.jsxCompiler #jsxCompiler {
-  margin-top: 20px
 }
 
 .jsxCompiler .playgroundPreview {
@@ -688,10 +632,6 @@ footer {
   overflow: auto
 }
 
-section.black content {
-  padding-bottom: 18px
-}
-
 .blogContent {
   padding-top: 20px
 }
@@ -709,10 +649,11 @@ section.black content {
   border-left: 5px solid #f7ebc6
 }
 
-.blogContent h2 > code {
+.blogContent code {
   font-size: inherit;
   line-height: inherit;
   color: #555;
+  background-color: black;
   background-color: rgba(0, 0, 0, 0.04)
 }
 
@@ -726,23 +667,13 @@ section.black content {
   clear: both
 }
 
-.documentationContent .subHeader {
-  font-size: 24px
-}
-
-.documentationContent h2 {
-  margin-top: 30px
-}
-
 .documentationContent blockquote {
   padding: 15px 30px 15px 15px;
   margin: 20px 0;
+  background-color: black;
   background-color: rgba(204, 122, 111, 0.1);
-  border-left: 5px solid rgba(191, 87, 73, 0.2)
-}
-
-.documentationContent blockquote h4 {
-  margin-top: 0
+  border-left: 5px solid black;
+  border-left: 5px solid rgba(191, 87, 73, 0.2);
 }
 
 .documentationContent blockquote p {
@@ -764,7 +695,11 @@ section.black content {
 
 .button {
   background: -webkit-linear-gradient(#9a9a9a, #646464);
-  background: linear-gradient(#9a9a9a, #646464);
+  background:    -moz-linear-gradient(#9a9a9a, #646464);
+  background:     -ms-linear-gradient(#9a9a9a, #646464);
+  background:      -o-linear-gradient(#9a9a9a, #646464);
+  background:        -webkit-gradient(#9a9a9a, #646464);
+  background:         linear-gradient(#9a9a9a, #646464);
   border-radius: 4px;
   padding: 8px 16px;
   font-size: 18px;
@@ -775,7 +710,6 @@ section.black content {
   text-decoration: none;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
-  text-decoration: none
 }
 
 .button:hover {
@@ -788,11 +722,6 @@ section.black content {
 
 .hero .button {
   box-shadow: 1px 3px 3px rgba(0, 0, 0, 0.3)
-}
-
-.button.blue {
-  background: -webkit-linear-gradient(#77a3d2, #4783c2);
-  background: linear-gradient(#77a3d2, #4783c2)
 }
 
 .row {
