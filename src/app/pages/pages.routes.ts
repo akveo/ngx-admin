@@ -22,7 +22,7 @@ import {Editors} from './editors/editors.component';
 import {Ckeditor} from './editors/components/ckeditor/ckeditor.component';
 import {Components} from './components/components.component';
 import {TreeView} from './components/components/treeView/treeView.component';
-
+import {tabPanel} from './tabs/tabPanel.component';
 //noinspection TypeScriptValidateTypes
 export const PagesRoutes:RouterConfig = [
   {
@@ -89,6 +89,19 @@ export const PagesRoutes:RouterConfig = [
             }
           }
         ]
+      },
+{
+        path: 'tabs',  
+        component: tabPanel, 
+        data: { 
+          menu: {
+            title: 'TABS', 
+            icon: 'ion-android-menu', 
+            selected: false,
+            expanded: false,
+            order: 0
+          }
+        }
       },
       {
         path: 'charts',
