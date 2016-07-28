@@ -7,8 +7,12 @@
     "description": ""
   },
   "plugins": [
+    "wintersmith-sassy",
     "./plugins/paginator.coffee"
   ],
+  "sass": {
+    "debug": "undefined"
+  },
   "require": {
     "moment": "moment",
     "_": "underscore",
