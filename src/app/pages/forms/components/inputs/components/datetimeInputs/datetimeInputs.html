@@ -1,0 +1,24 @@
+<form>
+  <div class="form-group">
+    <label>DateTime Picker</label>
+    <datetimepicker></datetimepicker>
+  </div>
+  <div class="input-demo row">
+    <div class="form-group col-sm-6">
+      <label>Date Picker</label>
+      <datetimepicker [mode]="'date'"></datetimepicker>
+    </div>
+    <div class="form-group col-sm-6">
+      <label>Time Picker</label>
+      <datetimepicker [mode]="'time'"></datetimepicker>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label>Custom DateTime Picker</label>
+    <datetimepicker [value]="dateTime" [format]="'dd mm yyyy - HH:ii P'"
+       [startView]="month" [disableType]="true" [showMeridian]="true" (valueChange)="dateTime = $event">
+    </datetimepicker>
+    {{dateTime}}
+  </div>
+</form>

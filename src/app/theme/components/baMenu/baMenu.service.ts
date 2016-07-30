@@ -97,7 +97,7 @@ export class BaMenuService {
     if (!object.skip) {
 
       let itemUrl = this._router.serializeUrl(this._router.createUrlTree(object.route.paths));
-      object.url = object.url ? object.url : '/#' + itemUrl;
+      object.url = object.url ? object.url : '#' + itemUrl;
 
       object.target = object.target || '';
       return this._selectItem(object);
@@ -107,7 +107,7 @@ export class BaMenuService {
   }
 
   protected _selectItem(object:any):any {
-    object.selected = object.url == ('/#' + this._router.url);
+    object.selected = object.url == ('#' + this._router.url);
     return object;
   }
 }

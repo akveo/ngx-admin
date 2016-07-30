@@ -7,12 +7,23 @@ import { Component, ElementRef, Input, Output, EventEmitter, OnInit, NgZone, Sim
 })
 
 export class DateTimePicker extends OnInit{
+  private _defaultDateTimeFormat = 'dd-M-yyyy hh:ii';
+  private _defaultDateFormat = 'dd-M-yyyy';
+  private _defaultTimeFormat = 'hh:ii';
+
   @Input() value: string;
   @Input() startDate: any;
   @Input() endDate: any;
+  @Input() mode = ''; // datetime, date, or time
   @Input() minuteStep = 5;
-  @Input() format: string = 'dd-mm-yyyy hh:ii';
+  @Input() startView = 'month';
+  @Input() minView = 'hour';
+  @Input() maxView = 'decade';
+  @Input() todayBtn = true;
+  @Input() forceParse = true;
+  @Input() format: string = '';
   @Input() disableType: boolean = false;
+  @Input() showMeridian: boolean = false;
   @Output() valueChange: EventEmitter<string> = new EventEmitter<string>();
 
   private _picker = null;
@@ -24,10 +35,41 @@ export class DateTimePicker extends OnInit{
   ngOnInit():any {
     this._picker = jQuery(this.myElement.nativeElement).find('.datetime-picker');
 
+    if (this.mode === 'date'){
+      this.todayBtn = true;
+      this.startView = 'month';
+      this.minView = 'month';
+      this.maxView = 'decade';
+      this.forceParse = true;
+      if (this.format === ''){
+        this.format = this._defaultDateFormat;
+      }
+    }
+    else if (this.mode === 'time'){
+      this.todayBtn = false;
+      this.startView = 'day';
+      this.minView = 'hour';
+      this.maxView = 'day';
+      this.forceParse = false;
+      if (this.format === ''){
+        this.format = this._defaultTimeFormat;
+      }
+    }
+
+    if (this.format === ''){
+      this.format = this._defaultDateTimeFormat;
+    }
+
     this._picker.datetimepicker({
       autoclose: true,
       format: this.format,
-      minuteStep: this.minuteStep
+      minuteStep: this.minuteStep,
+      startView: this.startView,
+      minView: this.minView,
+      maxView: this.maxView,
+      todayBtn: this.todayBtn,
+      forceParse: this.forceParse,
+      showMeridian: this.showMeridian
     }).on('changeDate', (picker)=>{
       this.zone.run(()=>{
         this.value = picker.target.value;

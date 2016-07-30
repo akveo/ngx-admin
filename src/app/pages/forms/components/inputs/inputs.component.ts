@@ -7,13 +7,13 @@ import {ValidationInputs} from './components/validationInputs';
 import {GroupInputs} from './components/groupInputs';
 import {CheckboxInputs} from './components/checkboxInputs';
 import {Rating} from './components/ratinginputs';
-import {DateTimePicker} from "./components/datetimepicker/datetimepicker.component";
+import {DateTimeInputs} from "./components/datetimeInputs/datetimeInputs.component";
 
 
 @Component({
   selector: 'inputs',
   encapsulation: ViewEncapsulation.None,
-  directives: [BaCard, StandardInputs, ValidationInputs, GroupInputs, CheckboxInputs, Rating, DateTimePicker],
+  directives: [BaCard, StandardInputs, ValidationInputs, GroupInputs, CheckboxInputs, Rating, DateTimeInputs],
   template: require('./inputs.html'),
 })
 export class Inputs {
