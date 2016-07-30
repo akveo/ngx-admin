@@ -1,5 +1,5 @@
 import { Component, ElementRef, Input, Output, EventEmitter, OnInit, NgZone, SimpleChange} from '@angular/core';
-
+import 'bootstrap-datetime-picker';
 
 @Component({
   selector: 'datetimepicker',
@@ -33,7 +33,7 @@ export class DateTimePicker extends OnInit{
   }
 
   ngOnInit():any {
-    this._picker = jQuery(this.myElement.nativeElement).find('.datetime-picker');
+    this._picker = jQuery(this.myElement.nativeElement).children();
 
     if (this.mode === 'date'){
       this.todayBtn = true;
