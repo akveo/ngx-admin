@@ -80,7 +80,7 @@ module.exports = webpackMerge(commonConfig, {
      *
      * See: http://webpack.github.io/docs/configuration.html#output-sourcemapfilename
      */
-    sourceMapFilename: '[name].map',
+    sourceMapFilename: '[file].map',
 
     /** The filename of non-entry chunks as relative path
      * inside the output.path directory.
@@ -90,7 +90,7 @@ module.exports = webpackMerge(commonConfig, {
     chunkFilename: '[id].chunk.js',
 
     library: 'ac_[name]',
-    libraryTarget: 'var',
+    libraryTarget: 'var'
   },
 
   plugins: [
@@ -111,9 +111,9 @@ module.exports = webpackMerge(commonConfig, {
       'process.env': {
         'ENV': JSON.stringify(METADATA.ENV),
         'NODE_ENV': JSON.stringify(METADATA.ENV),
-        'HMR': METADATA.HMR,
+        'HMR': METADATA.HMR
       }
-    }),
+    })
   ],
 
   /**
