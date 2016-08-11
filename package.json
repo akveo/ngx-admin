@@ -56,7 +56,7 @@
     "@types/lodash": "0.0.28",
     "angular2-hmr": "~0.8.0",
     "gh-pages": "^0.11.0",
-    "parse5": "^1.5.1",
+    "parse5": "^2.2.0",
     "rimraf": "^2.5.2",
     "codelyzer": "~0.0.21",
     "tslint": "^3.7.1",
