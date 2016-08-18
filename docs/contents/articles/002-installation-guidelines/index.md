@@ -29,11 +29,6 @@ npm install --global webpack
 npm install --global webpack-dev-server
 ```
 
-* typings
-```bash
-npm install --global typings
-```
-
 * typescript
 ```bash
 npm install --global typescript
@@ -59,7 +54,7 @@ This will setup a working copy of ng2-admin on your local machine.
 
 **Note**: If you have any issues after the installation, additionally run the following:
 ```bash
-typings install && bower install
+bower install
 ```
 ## Running local copy
 
