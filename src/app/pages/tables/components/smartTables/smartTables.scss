@@ -1,0 +1,55 @@
+@import "../../../../theme/sass/conf/conf";
+
+.ng2-smart-table-container table.ng2-smart-table {
+  th, td {
+    border: 1px solid $border;
+  }
+
+  color: $default-text;
+
+  a.ng2-smart-sort-link {
+    font-size: 14px !important;
+    color: $default-text;
+    font-weight: $font-bold;
+    &.sort {
+      font-weight: $font-bold !important;
+    }
+  }
+
+  .ng2-smart-actions {
+    width: 70px;
+    text-align: center;
+    .actions {
+      float: none;
+      text-align: center;
+      a + a {
+        padding-left: 10px;
+      }
+    }
+  }
+
+  a.ng2-smart-action {
+    font-size: 14px !important;
+    color: $default-text;
+
+    &.ng2-smart-action-add-add {
+      font-size: 25px !important;
+    }
+  }
+}
+
+nav.ng2-smart-pagination-nav {
+  display: flex;
+  justify-content: center;
+}
+
+.ng2-smart-pagination {
+  .ng2-smart-page-item.active .ng2-smart-page-link {
+    background-color: $primary;
+    border-color: $default-text;
+    &:active, &:hover {
+      background-color: $primary;
+      border-color: $default-text;
+    }
+  }
+}
