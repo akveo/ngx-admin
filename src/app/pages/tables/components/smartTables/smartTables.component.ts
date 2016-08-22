@@ -15,6 +15,8 @@ import { SmartTablesService } from './smartTables.service';
 })
 export class SmartTables {
 
+  query: string = '';
+
   settings = {
     add: {
       addButtonContent: '<i class="ion-ios-plus-outline"></i>',
@@ -63,5 +65,34 @@ export class SmartTables {
     this.service.getData().then((data) => {
       this.source.load(data);
     });
+  }
+
+  onSearch(): void {
+    this.source.setFilter([
+      {
+        field: 'id',
+        search: this.query
+      },
+      {
+        field: 'firstName',
+        search: this.query
+      },
+      {
+        field: 'lastName',
+        search: this.query
+      },
+      {
+        field: 'username',
+        search: this.query
+      },
+      {
+        field: 'email',
+        search: this.query
+      },
+      {
+        field: 'age',
+        search: this.query
+      }
+    ], false);
   }
 }
