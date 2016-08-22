@@ -17,7 +17,6 @@ install:
   - npm install -g npm@3
   - npm install -g webpack
   - npm install -g typescript
-  - npm install -g bower
 
   - npm install
 
