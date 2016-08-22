@@ -34,7 +34,8 @@ All menu items are located inside the `src/app/app.routes.ts` file. Each route i
         icon: 'ion-android-home', // menu icon
         selected: false, // selected or not
         expanded: false, // expanded or not (if item has children)
-        order: 0 // item order in the menu list
+        order: 0, // item order in the menu list,
+        hidden: true // hide menu item from a list but keep related features (breadcrumbs, page title)
       }
     }
   }
