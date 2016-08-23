@@ -2,14 +2,21 @@
 
 .ng2-smart-table-container table.ng2-smart-table {
   th, td {
-    border: 1px solid $border;
+    border: 1px solid $border-light !important;
     line-height: 35px;
+    vertical-align: middle;
   }
 
   color: $default-text;
 
   input {
-    line-height: 1.5!important;
+    line-height: 1.5 !important;
+  }
+
+  tbody {
+    tr:hover {
+      background: rgba(0, 0, 0, 0.03);
+    }
   }
 
   a.ng2-smart-sort-link {
@@ -18,6 +25,10 @@
     font-weight: $font-bolder;
     &.sort {
       font-weight: $font-bolder !important;
+
+      &::after {
+        border-bottom-color: $default-text !important;
+      }
     }
   }
 
