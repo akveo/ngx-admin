@@ -30,6 +30,7 @@ export class SmartTables {
     },
     delete: {
       deleteButtonContent: '<i class="ion-trash-a"></i>',
+      confirmDelete: true
     },
     columns: {
       id: {
@@ -65,5 +66,13 @@ export class SmartTables {
     this.service.getData().then((data) => {
       this.source.load(data);
     });
+  }
+
+  onDeleteConfirm(event): void {
+    if (window.confirm('Are you sure you want to delete?')) {
+      event.confirm.resolve();
+    } else {
+      event.confirm.reject();
+    }
   }
 }
