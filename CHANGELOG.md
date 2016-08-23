@@ -1,3 +1,25 @@
+<a name="0.4.3"></a>
+# 0.4.3 (2016-08-23)
+
+### Bug Fixes
+
+* Fix leaflet maps styles
+* Fix license
+* Remove tracing of typings (thanks to @GRoguelon)
+* Update baContentTop to work with routerLink (thanks to @Kaizeras)
+* Fix Chartist to handle data update dynamically (thanks to @bnayalivne)
+
+### Features
+
+* Finally get rid of bower (thanks to @GRoguelon)
+* New component [ng2-smart-table](https://akveo.github.io/ng2-smart-table/) - [demo](http://akveo.com/ng2-admin/#/pages/tables/smarttables)
+
+
+### How to update
+
+* Pull sources from git
+* run `npm install`
+
 <a name="0.4.2"></a>
 # 0.4.2 (2016-07-28)
 
