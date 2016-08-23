@@ -2,13 +2,6 @@
 
   <div class="row">
     <ba-card title="Basic Example" baCardClass="with-scroll">
-      <div class="row">
-        <div class="form-group col-sm-3 col-xs-6">
-          <input type="text" class="form-control" placeholder="Search" [(ngModel)]="query" (keydown.enter)="onSearch()">
-        </div>
-        <button type="submit" class="btn btn-primary" (click)="onSearch()">Search</button>
-      </div>
-
       <ng2-smart-table [settings]="settings" [source]="source"></ng2-smart-table>
     </ba-card>
   </div>
