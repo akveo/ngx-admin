@@ -27,9 +27,6 @@
     .actions {
       float: none;
       text-align: center;
-      a + a {
-        padding-left: 10px;
-      }
     }
   }
 
@@ -37,6 +34,7 @@
     font-size: 14px !important;
     color: $default-text;
     padding: 0 5px;
+    display: inline-block;
 
     &.ng2-smart-action-add-add {
       font-size: 25px !important;
