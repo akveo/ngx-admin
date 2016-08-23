@@ -3,16 +3,21 @@
 .ng2-smart-table-container table.ng2-smart-table {
   th, td {
     border: 1px solid $border;
+    line-height: 35px;
   }
 
   color: $default-text;
 
+  input {
+    line-height: 1.5!important;
+  }
+
   a.ng2-smart-sort-link {
     font-size: 14px !important;
     color: $default-text;
-    font-weight: $font-bold;
+    font-weight: $font-bolder;
     &.sort {
-      font-weight: $font-bold !important;
+      font-weight: $font-bolder !important;
     }
   }
 
@@ -31,6 +36,7 @@
   a.ng2-smart-action {
     font-size: 14px !important;
     color: $default-text;
+    padding: 0 5px;
 
     &.ng2-smart-action-add-add {
       font-size: 25px !important;
@@ -41,15 +47,4 @@
 nav.ng2-smart-pagination-nav {
   display: flex;
   justify-content: center;
-}
-
-.ng2-smart-pagination {
-  .ng2-smart-page-item.active .ng2-smart-page-link {
-    background-color: $primary;
-    border-color: $default-text;
-    &:active, &:hover {
-      background-color: $primary;
-      border-color: $default-text;
-    }
-  }
 }
