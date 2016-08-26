@@ -41,12 +41,17 @@ export class BaMenuService {
       let menuItem;
       if (item.skip) {
         if (item.children && item.children.length > 0) {
-          menuItem = item.children;
+          for(let i=0;i<item.children.length;i++){
+            if(item.children[i].route.dontShowChildren){
+              delete item.children[i].children;
+              menuItem=item;
+            }else
+              menuItem=item.children;
+          }
         }
       } else {
         menuItem = item;
       }
-
       if (menuItem) {
         menu.push(menuItem);
       }
