@@ -1,6 +1,5 @@
 import {Component, ViewEncapsulation} from '@angular/core';
 
-import {BaCard} from '../../../theme/components';
 import {PieChartService} from './pieChart.service';
 
 import './pieChart.loader.ts';
@@ -8,7 +7,6 @@ import './pieChart.loader.ts';
 @Component({
   selector: 'pie-chart',
   encapsulation: ViewEncapsulation.None,
-  directives: [BaCard],
   providers: [PieChartService],
   styles: [require('./pieChart.scss')],
   template: require('./pieChart.html')

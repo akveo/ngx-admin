@@ -1,11 +1,11 @@
 import {Component, ViewEncapsulation, Input, Output, EventEmitter} from '@angular/core';
-import {Router, RouterConfig, NavigationEnd} from '@angular/router';
+import {Router, Routes, NavigationEnd} from '@angular/router';
 import {Subscription} from 'rxjs/Rx';
 
 import {BaSlimScroll} from '../../../theme/directives';
 import {BaMenuService} from './baMenu.service';
 import {BaMenuItem} from './components/baMenuItem';
-import {AppState} from '../../../app.state';
+import {GlobalState} from '../../../global.state';
 
 @Component({
   selector: 'ba-menu',
@@ -17,7 +17,7 @@ import {AppState} from '../../../app.state';
 })
 export class BaMenu {
 
-  @Input() menuRoutes:RouterConfig = [];
+  @Input() menuRoutes:Routes = [];
   @Input() sidebarCollapsed:boolean = false;
   @Input() menuHeight:number;
 
@@ -30,7 +30,7 @@ export class BaMenu {
   protected _onRouteChange:Subscription;
   public outOfArea:number = -200;
 
-  constructor(private _router:Router, private _service:BaMenuService, private _state:AppState) {
+  constructor(private _router:Router, private _service:BaMenuService, private _state:GlobalState) {
     this._onRouteChange = this._router.events.subscribe((event) => {
 
       if (event instanceof NavigationEnd) {

@@ -1,6 +1,5 @@
 import {Component, ViewEncapsulation} from '@angular/core';
 
-import {BaCard} from '../../../../theme/components';
 
 import {NG2_SMART_TABLE_DIRECTIVES, LocalDataSource} from 'ng2-smart-table';
 import { SmartTablesService } from './smartTables.service';
@@ -8,7 +7,7 @@ import { SmartTablesService } from './smartTables.service';
 @Component({
   selector: 'basic-tables',
   encapsulation: ViewEncapsulation.None,
-  directives: [BaCard, NG2_SMART_TABLE_DIRECTIVES],
+  directives: [NG2_SMART_TABLE_DIRECTIVES],
   styles: [require('./smartTables.scss')],
   template: require('./smartTables.html'),
   providers: [SmartTablesService]

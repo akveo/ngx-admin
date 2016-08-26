@@ -1,12 +1,10 @@
 import {Component, ElementRef} from '@angular/core';
-import {BaCard} from '../../../../theme/components';
 import {GoogleMapsLoader} from './googleMaps.loader';
 
 @Component({
   selector: 'google-maps',
   pipes: [],
   providers: [],
-  directives: [BaCard],
   styles: [require('./googleMaps.scss')],
   template: require('./googleMaps.html'),
 })

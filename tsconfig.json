@@ -5,12 +5,16 @@
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
     "sourceMap": true,
     "noEmitHelpers": true,
-    "lib": ["es6", "dom"],
     "strictNullChecks": false,
     "baseUrl": "./src",
     "paths": [
+    ],
+    "lib": [
+      "dom",
+      "es6"
     ],
     "types": [
       "core-js",
@@ -22,7 +26,8 @@
     ]
   },
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "dist"
   ],
   "awesomeTypescriptLoaderOptions": {
     "forkChecker": true,

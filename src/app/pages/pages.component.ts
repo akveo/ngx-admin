@@ -1,11 +1,8 @@
 import {Component, ViewEncapsulation} from '@angular/core';
-import {BaPageTop, BaContentTop, BaSidebar, BaBackTop} from '../theme/components';
-
 @Component({
   selector: 'pages',
   encapsulation: ViewEncapsulation.None,
   styles: [],
-  directives: [BaPageTop, BaSidebar, BaContentTop, BaBackTop],
   template: `
     <ba-sidebar></ba-sidebar>
     <ba-page-top></ba-page-top>

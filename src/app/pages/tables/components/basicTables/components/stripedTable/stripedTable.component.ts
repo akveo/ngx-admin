@@ -1,12 +1,10 @@
 import {Component} from '@angular/core';
 
-import {BaAppPicturePipe} from '../../../../../../theme/pipes';
 import {BasicTablesService} from '../../basicTables.service';
 
 @Component({
   selector: 'striped-table',
-  template: require('./stripedTable.html'),
-  pipes: [BaAppPicturePipe]
+  template: require('./stripedTable.html')
 })
 export class StripedTable {
 

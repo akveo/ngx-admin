@@ -76,7 +76,7 @@ interface WebpackModule {
     data?: any,
     idle: any,
     accept(dependencies?: string | string[], callback?: (updatedDependencies?: any) => void): void;
-    decline(dependencies?: string | string[]): void;
+    decline(deps?: any | string | string[]): void;
     dispose(callback?: (data?: any) => void): void;
     addDisposeHandler(callback?: (data?: any) => void): void;
     removeDisposeHandler(callback?: (data?: any) => void): void;

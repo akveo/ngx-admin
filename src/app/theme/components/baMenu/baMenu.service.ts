@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {Router, UrlTree, RouterConfig} from '@angular/router';
+import {Router, Routes} from '@angular/router';
 
 @Injectable()
 export class BaMenuService {
@@ -9,7 +9,7 @@ export class BaMenuService {
   constructor(private _router:Router) {
   }
 
-  public convertRoutesToMenus(routes:RouterConfig):any[] {
+  public convertRoutesToMenus(routes:Routes):any[] {
     let items = this._convertArrayToItems(routes);
     return this._skipEmpty(items);
   }

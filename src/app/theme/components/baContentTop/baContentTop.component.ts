@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 
-import {AppState} from "../../../app.state";
+import {GlobalState} from '../../../global.state';
 
 @Component({
   selector: 'ba-content-top',
@@ -11,7 +11,7 @@ export class BaContentTop {
 
   public activePageTitle:string = '';
 
-  constructor(private _state:AppState) {
+  constructor(private _state:GlobalState) {
     this._state.subscribe('menu.activeLink', (activeLink) => {
       if (activeLink) {
         this.activePageTitle = activeLink.title;

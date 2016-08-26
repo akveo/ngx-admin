@@ -1,13 +1,11 @@
 import {Component, ViewEncapsulation} from '@angular/core';
 
 import {LineChartService} from './lineChart.service';
-import {BaAmChart} from '../../../theme/components';
 
 @Component({
   selector: 'line-chart',
   encapsulation: ViewEncapsulation.None,
   providers: [LineChartService],
-  directives: [BaAmChart],
   styles: [require('./lineChart.scss')],
   template: require('./lineChart.html')
 })

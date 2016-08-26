@@ -1,17 +1,14 @@
 import {Component} from '@angular/core';
-import {BranchyComponent, TreeModel} from 'ng2-branchy';
-import {BaCard} from '../../../../theme/components/baCard';
+import {TreeComponent, TreeModel} from 'ng2-tree';
 
 @Component({
   selector: 'tree-view',
-  directives: [BranchyComponent, BaCard],
+  directives: [TreeComponent],
   template: require('./treeView.html'),
 })
 
 export class TreeView {
 
-  constructor() {
-  }
   private tree: TreeModel = {
     value: 'Programming languages by programming paradigm',
     children: [
@@ -33,5 +30,8 @@ export class TreeView {
       }
     ]
   };
+
+  constructor() {
+  }
 
 }

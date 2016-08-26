@@ -1,6 +1,5 @@
 import {Component, ViewEncapsulation} from '@angular/core';
 
-import {BaFullCalendar} from '../../../theme/components';
 import {CalendarService} from './calendar.service';
 
 @Component({
@@ -8,7 +7,6 @@ import {CalendarService} from './calendar.service';
   encapsulation: ViewEncapsulation.None,
   styles: [require('./calendar.scss')],
   template: require('./calendar.html'),
-  directives: [BaFullCalendar],
   providers: [CalendarService]
 })
 export class Calendar {

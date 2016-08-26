@@ -1,6 +1,5 @@
 import {Component, ViewEncapsulation} from '@angular/core';
 
-import {BaCard} from '../../../../theme/components';
 import {FlatButtons} from './components/flatButtons';
 import {RaisedButtons} from './components/raisedButtons';
 import {SizedButtons} from './components/sizedButtons';
@@ -14,7 +13,6 @@ import {GroupButtons} from './components/groupButtons';
   selector: 'buttons',
   encapsulation: ViewEncapsulation.None,
   directives: [
-    BaCard,
     FlatButtons,
     RaisedButtons,
     SizedButtons,

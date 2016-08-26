@@ -1,12 +1,11 @@
 import {Component} from '@angular/core';
 import {CKEditor} from 'ng2-ckeditor';
-import {BaCard} from '../../../../theme/components/baCard';
 
 import './ckeditor.loader.ts';
 
 @Component({
-  selector: 'ckeditor',
-  directives: [CKEditor, BaCard],
+  selector: 'ckeditor-component',
+  directives: [CKEditor],
   template: require('./ckeditor.html')
 })
 

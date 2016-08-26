@@ -1,9 +1,7 @@
 import {Component} from '@angular/core';
-import {BaMultiCheckbox} from '../../../../../../theme/components';
 
 @Component({
   selector: 'validation-inputs',
-  directives: [BaMultiCheckbox],
   template: require('./validationInputs.html'),
 })
 export class ValidationInputs {
@@ -27,7 +25,7 @@ export class ValidationInputs {
     label: 'name',
     baCheckboxClass: 'class'
   };
-  
+
   constructor() {
   }
 }
