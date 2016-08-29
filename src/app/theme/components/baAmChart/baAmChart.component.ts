@@ -34,9 +34,15 @@ export class BaAmChart {
 
   private _loadChartsLib():void {
     BaThemePreloader.registerLoader(new Promise((resolve, reject) => {
-      AmCharts.ready(function(){
-        resolve('AmCharts ready');
-      });
+      let amChartsReadyMsg = 'AmCharts ready';
+
+      if (AmCharts.isReady) {
+        resolve(amChartsReadyMsg);
+      } else {
+        AmCharts.ready(function () {
+          resolve(amChartsReadyMsg);
+        });
+      }
     }));
   }
 }
