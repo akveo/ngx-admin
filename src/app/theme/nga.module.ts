@@ -1,7 +1,7 @@
 import { NgModule }      from '@angular/core';
 import { CommonModule }  from '@angular/common';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import { RouterModule } from '@angular/router';
 
 import {
   BaThemeConfig
@@ -97,7 +97,7 @@ const NGA_VALIDATORS = [
   ],
   imports: [
     CommonModule,
-    HttpModule,
+    RouterModule,
     FormsModule,
     ReactiveFormsModule,
   ],

@@ -51,20 +51,21 @@ const APP_PROVIDERS = [
 export class AppModule {
 
   constructor(public appRef: ApplicationRef, public appState: AppState) {
-    
+
   }
 
   hmrOnInit(store) {
-    if (!store && !store.state) return;
+    if (!store || !store.state) return;
     console.log('HMR store', store);
-    this.appState.state = store.state;
+    this.appState._state = store.state;
+    this.appRef.tick();
     delete store.state;
   }
 
   hmrOnDestroy(store) {
-    let cmpLocation = this.appRef.components.map(cmp => cmp.location.nativeElement);
+    const cmpLocation = this.appRef.components.map(cmp => cmp.location.nativeElement);
     // recreate elements
-    let state = this.appState.state;
+    const state = this.appState._state;
     store.state = state;
     store.disposeOldHosts = createNewHosts(cmpLocation);
     // remove styles

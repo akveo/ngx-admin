@@ -4,25 +4,25 @@ import { Pages } from './pages.component';
 const routes: Routes = [
   {
     path: 'login',
-    loadChildren: () => require('es6-promise-loader!app/pages/login/login.module')('default')
+    loadChildren: () => System.import('./login/login.module')
   },
   {
     path: 'register',
-    loadChildren: () => require('es6-promise-loader!app/pages/register/register.module')('default')
+    loadChildren: () => System.import('./register/register.module')
   },
   {
     path: 'pages',
     component: Pages,
     children: [
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
-      { path: 'dashboard', loadChildren: () => require('es6-promise-loader!app/pages/dashboard/dashboard.module')('default') },
-      { path: 'editors', loadChildren: () => require('es6-promise-loader!app/pages/editors/editors.module')('default') },
-      //{ path: 'components', loadChildren: () => require('es6-promise-loader!app/pages/components/components.module')('default') }
-      { path: 'charts', loadChildren: () => require('es6-promise-loader!app/pages/charts/charts.module')('default') },
-      { path: 'ui', loadChildren: () => require('es6-promise-loader!app/pages/ui/ui.module')('default') },
-      { path: 'forms', loadChildren: () => require('es6-promise-loader!app/pages/forms/forms.module')('default') },
-      { path: 'tables', loadChildren: () => require('es6-promise-loader!app/pages/tables/tables.module')('default') },
-      { path: 'maps', loadChildren: () => require('es6-promise-loader!app/pages/maps/maps.module')('default') }
+      { path: 'dashboard', loadChildren: () => System.import('./dashboard/dashboard.module') },
+      { path: 'editors', loadChildren: () => System.import('./editors/editors.module') },
+      //{ path: 'components', loadChildren: () => System.import('./components/components.module') }
+      { path: 'charts', loadChildren: () => System.import('./charts/charts.module') },
+      { path: 'ui', loadChildren: () => System.import('./ui/ui.module') },
+      { path: 'forms', loadChildren: () => System.import('./forms/forms.module') },
+      { path: 'tables', loadChildren: () => System.import('./tables/tables.module') },
+      { path: 'maps', loadChildren: () => System.import('./maps/maps.module') }
     ]
   }
 ];
