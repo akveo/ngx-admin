@@ -1,6 +1,9 @@
 <a name="0.5.0"></a>
 # 0.5.0 (2016-08-30)
 
+### Note
+Not all packages used in ng2-admin support RC5 at the moment, so we suggest waiting until ng2-admin@0.5.1 version for a complete support of RC5.
+
 ### Features
 
 * Angular rc.5 (ngModule)
