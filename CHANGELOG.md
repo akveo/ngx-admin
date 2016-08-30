@@ -16,10 +16,10 @@ Not all packages used in ng2-admin support RC5 at the moment, so we suggest wait
 
 Things to consider:
 
-* We introduced NgaModule - wrapper for all ng2-admin features. At the moment it includes everything (directives, services, configs, etc). But, the important thing is that we are planning to refactor it and divide into smaller modules, so that if you don't need a whole list of features somewhere in your code - you can simply import a smaller part. [Here are some some details](https://github.com/akveo/ng2-admin/issues/179).
+* We introduced NgaModule - wrapper for all ng2-admin features. At the moment it includes everything (directives, services, configs, etc). But, the important thing is that we are planning to refactor it and divide into smaller modules, so that if you don't need a whole list of features somewhere in your code - you can simply import a smaller part. [Here are some more details](https://github.com/akveo/ng2-admin/issues/179).
 * Each page section now is a module (Feature Module as per angular documents) wrapped in pages.module.
 * Routes configuration (again :( ) moved from one complete file to modules (page sections) configurations. Thus we just left menu configuration as it was before (in one file), just renamed it into app.menu.ts.
-* We are planning to continue code refactoring and planning to change component names to follow angular recommendations. Thus we strongly recommend to not import Ba* directives directly and use NgaModule which will encapsulate the changes we are going to make. [Here are some some details](https://github.com/akveo/ng2-admin/issues/179).
+* We are planning to continue code refactoring and planning to change component names to follow angular recommendations. Thus we strongly recommend to not import Ba* directives directly and use NgaModule which will encapsulate the changes we are going to make. [Here are some more details](https://github.com/akveo/ng2-admin/issues/179).
 
 
 ### How to update
