@@ -1,3 +1,35 @@
+<a name="0.5.0"></a>
+# 0.5.0 (2016-08-30)
+
+### Features
+
+* Angular rc.5 (ngModule)
+* Webpack 2
+* Dependencies updated
+
+### Bug Fixes
+
+### Breaking changes
+
+Things to consider:
+
+* We introduced NgaModule - wrapper for all ng2-admin features. At the moment it includes everything (directives, services, configs, etc). But, the important thing is that we are planning to refactor it and divide into smaller modules, so that if you don't need a whole list of features somewhere in your code - you can simply import a smaller part. [Here are some some details](https://github.com/akveo/ng2-admin/issues/179).
+* Each page section now is a module (Feature Module as per angular documents) wrapped in pages.module.
+* Routes configuration (again :( ) moved from one complete file to modules (page sections) configurations. Thus we just left menu configuration as it was before (in one file), just renamed it into app.menu.ts.
+* We are planning to continue code refactoring and planning to change component names to follow angular recommendations. Thus we strongly recommend to not import Ba* directives directly and use NgaModule which will encapsulate the changes we are going to make. [Here are some some details](https://github.com/akveo/ng2-admin/issues/179).
+
+
+### How to update
+
+* Read Angluar RC4 -> RC5 [migration guide](https://angular.io/docs/ts/latest/cookbook/rc4-to-rc5.html)
+* Pull sources from git, merge accordingly
+* remove `node_modules`
+* run `npm install`
+* Wrap all your pages into modules, register them in the PagesModule
+* Create separate routing files per module
+* Remove all direct imports of Ba* components, directives, pipes, etc, instead change your modules the way to import NgaModule
+* Enjoy!
+
 <a name="0.4.4"></a>
 # 0.4.4 (2016-08-29)
 
