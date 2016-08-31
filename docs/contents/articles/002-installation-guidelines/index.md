@@ -31,7 +31,7 @@ npm install --global webpack-dev-server
 
 * typescript
 ```bash
-npm install --global typescript@beta
+npm install --global typescript@2.0.0
 ```
 
 ## Clone repository and install dependencies
