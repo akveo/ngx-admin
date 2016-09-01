@@ -30,7 +30,7 @@
     "easy-pie-chart": "^2.1.7",
     "extract-text-webpack-plugin": "2.0.0-beta.3",
     "font-awesome": "^4.6.1",
-    "font-awesome-sass-loader": "^1.0.1",
+    "font-awesome-sass-loader": "^1.0.2",
     "fullcalendar": "^2.7.2",
     "google-maps": "^3.2.1",
     "http-server": "^0.9.0",
