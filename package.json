@@ -71,7 +71,7 @@
     "ts-helpers": "1.1.1",
     "ts-node": "^1.3.0",
     "typedoc": "^0.4.4",
-    "typescript": "^2.0.0-beta",
+    "typescript": "2.0.0",
     "awesome-typescript-loader": "^2.2.1",
     "tslint-loader": "^2.1.3",
     "url-loader": "^0.5.7",
