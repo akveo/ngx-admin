@@ -1,1 +1,1 @@
-export * from './baPictureUploader.component.ts';
+export * from './baPictureUploader.component';
