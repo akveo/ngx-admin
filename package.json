@@ -43,7 +43,7 @@
     "lodash": "^4.12.0",
     "ng2-bootstrap": "^1.0.20",
     "ng2-tree": "^0.0.2-7",
-    "ng2-ckeditor": "^1.0.6",
+    "ng2-ckeditor": "1.0.6",
     "ng2-smart-table": "^0.1.6",
     "ng2-uploader": "0.5.14",
     "normalize.css": "^4.1.1",
