@@ -1,1 +1,1 @@
-export * from './baFullCalendar.component.ts';
+export * from './baFullCalendar.component';

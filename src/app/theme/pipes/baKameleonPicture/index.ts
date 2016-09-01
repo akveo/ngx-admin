@@ -1,1 +1,1 @@
-export * from './baKameleonPicture.pipe.ts';
+export * from './baKameleonPicture.pipe';
