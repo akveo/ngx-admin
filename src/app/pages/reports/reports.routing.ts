@@ -10,6 +10,7 @@ const routes:Routes = [
     path: '',
     component: Reports,
     children: [
+      {path: '', redirectTo: 'gf-channel/24-hour-channel-dau', pathMatch: 'full'},
       {path: 'gf-channel/24-hour-channel-dau', component: GfChannelDau},
     ]
   }
