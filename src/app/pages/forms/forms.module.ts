@@ -4,6 +4,8 @@ import { FormsModule as AngularFormsModule } from '@angular/forms';
 import { NgaModule } from '../../theme/nga.module';
 
 import { routing }       from './forms.routing';
+
+import { RatingModule } from 'ng2-bootstrap/ng2-bootstrap';
 import { Forms } from './forms.component';
 import { Inputs } from './components/inputs';
 import { Layouts } from './components/layouts';
@@ -14,6 +16,7 @@ import { Layouts } from './components/layouts';
     CommonModule,
     AngularFormsModule,
     NgaModule,
+    RatingModule,
     routing
   ],
   declarations: [

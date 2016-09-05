@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { NgaModule } from '../../theme/nga.module';
 
 import { routing }       from './ui.routing';
+import { DropdownModule } from 'ng2-bootstrap/ng2-bootstrap';
 import { Ui } from './ui.component';
 import { Buttons } from './components/buttons/buttons.component';
 import { Grid } from './components/grid/grid.component';
@@ -16,6 +17,7 @@ import { Typography } from './components/typography/typography.component';
     CommonModule,
     FormsModule,
     NgaModule,
+    DropdownModule,
     routing
   ],
   declarations: [

@@ -1,1 +1,1 @@
-export * from './baAmChart.component.ts';
+export * from './baAmChart.component';

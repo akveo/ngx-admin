@@ -1,1 +1,1 @@
-export * from './baContentTop.component.ts';
+export * from './baContentTop.component';

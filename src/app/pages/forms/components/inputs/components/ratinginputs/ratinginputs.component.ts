@@ -1,9 +1,7 @@
-import { RatingComponent } from 'ng2-bootstrap/ng2-bootstrap';
 import { Component } from '@angular/core';
 
 @Component({
   selector: 'rating-inputs',
-  directives: [RatingComponent],
   template: require('./ratinginputs.html')
 })
 
