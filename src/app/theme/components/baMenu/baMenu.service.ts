@@ -1,5 +1,24 @@
 import {Injectable} from '@angular/core';
 import {Router, Routes} from '@angular/router';
+export interface INgAdminMenuItem {
+    path: string;
+    children?: INgAdminMenuItem[];
+    data?: INgAdminMenuItemData;
+}
+
+export interface INgAdminMenuItemData {
+    menu: INgAdminMenuItemDataMenu
+}
+
+export interface INgAdminMenuItemDataMenu {
+    title: string;
+    icon?: string;
+    selected?: boolean;
+    expanded?: boolean;
+    order?: number;
+    url?: string;
+    target?: string;
+}
 
 @Injectable()
 export class BaMenuService {
