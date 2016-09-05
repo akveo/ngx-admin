@@ -10,7 +10,7 @@ const routes:Routes = [
     path: '',
     component: Reports,
     children: [
-      {path: 'gfChannelDau', component: GfChannelDau},
+      {path: 'gf-channel/24-hour-channel-dau', component: GfChannelDau},
     ]
   }
 ];

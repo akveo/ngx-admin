@@ -35,11 +35,14 @@ export class BaSidebar {
 
   public ngOnInit():void {
 
-    this.routes = _.cloneDeep(this._menu.get());
-
-    if (this._shouldMenuCollapse()) {
-      this.menuCollapse();
-    }
+    //hoswey, Custom to use configurable menu service
+    this._menu.get().subscribe(menus => {
+      this.routes = _.cloneDeep(menus);
+      console.log("menus is " + menus);
+      if (this._shouldMenuCollapse()) {
+        this.menuCollapse();
+      }
+    });
   }
 
   public ngAfterViewInit():void {

@@ -1,5 +1,6 @@
 <aside class="al-sidebar" (mouseleave)="hoverElemTop=outOfArea" sidebarResize>
-  <ba-menu [menuRoutes]="routes"
+  <ba-menu *ngIf="routes"
+           [menuRoutes]="routes"
            [menuHeight]="menuHeight"
            [sidebarCollapsed]="isMenuCollapsed"
            (expandMenu)="menuExpand()"></ba-menu>
