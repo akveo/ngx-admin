@@ -50,7 +50,8 @@
     "rxjs": "5.0.0-beta.6",
     "tether": "^1.2.4",
     "zone.js": "~0.6.17",
-    "angular2-highcharts": "0.2.1"
+    "angular2-highcharts": "0.2.1"，
+    "primeng": "^1.0.0-beta.14"
   },
   "devDependencies": {
     "@angularclass/hmr": "^1.0.1",
