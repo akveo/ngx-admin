@@ -5,17 +5,17 @@ import { Observable }     from 'rxjs/Observable';
 import 'rxjs/Rx';
 
 @Injectable()
-export class DataProviderService {
+export class EasyqService {
 
   constructor(private http:Http) {
   }
 
-  public get(options:{table:string, filter?: string, order?:string, offset:number, limit:number}):Observable<any> {
+  public getData(options:{table:string, filter?: string, order?:string, offset:number, limit:number}):Observable<any> {
 
     let url = "http://localhost:8080/report-platform-server/api/v2/report/_table/" + options.table;
 
     let offset = options.offset || 0;
-    let limit = options.limit || 100;
+    let limit = options.limit || 9999;
     let order = options.order || '';
     let filter = options.filter || '';
     let params = new URLSearchParams();
@@ -36,26 +36,13 @@ export class DataProviderService {
     url += "&order=" + order;
     url += "&filter=" + filter;
 
-    console.log('Begin get Data');
     return this.http.get(url)
-      .map(this.extractData)
-      .catch(this.handleError);
+      .map((resp:Response) => {
+        return resp.json().resource
+      });
   }
 
-  private extractData(res:Response) {
-    let body = res.json();
-    return body.resource || {};
+  public getSchema(options:{table:string, filter?: string, order?:string, offset:number, limit:number}):Observable<any> {
+
   }
-
-  private handleError(error:any) {
-
-    console.log("error");
-    // In a real world app, we might use a remote logging infrastructure
-    // We'd also dig deeper into the error to get a better message
-    let errMsg = (error.message) ? error.message :
-      error.status ? `${error.status} - ${error.statusText}` : 'Server error';
-    console.error(errMsg); // log to console instead
-    return Observable.throw(errMsg);
-  }
-
 }

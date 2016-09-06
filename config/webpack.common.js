@@ -232,7 +232,18 @@ module.exports = {
     new CopyWebpackPlugin([{
       from: 'src/assets',
       to: 'assets'
-    }]),
+    }, {
+      from: 'node_modules/primeui/themes/delta/theme.css',
+      to: 'assets/primeui/themes/delta/theme.css'
+    },
+      {
+        from: 'node_modules/primeui/themes/delta/images/',
+        to: 'assets/primeui/themes/delta/images'
+      },
+      {
+        from: 'node_modules/primeui/primeui-ng-all.min.css',
+        to: 'assets/primeui/primeui-ng-all.min.css'
+      }]),
 
     /*
      * Plugin: HtmlWebpackPlugin

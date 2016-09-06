@@ -2,14 +2,13 @@ import { Component,OnInit} from '@angular/core';
 import { CHART_DIRECTIVES } from 'angular2-highcharts';
 
 import {Observable} from 'rxjs/Observable';
-import { DataProviderService } from '../../../../app/shared/data-provider.service';
+import { EasyqService } from '../../../shared/easyq.service.ts';
 
 @Component({
   selector: 'simple-chart-example',
   directives: [CHART_DIRECTIVES],
   template: `
         <chart *ngIf="options" [options]="options"></chart>
-        <button (click)="onClick()">测试</button>
     `,
   styles: [
     `
@@ -29,7 +28,7 @@ export class GfChannelDau implements OnInit {
 
   private options:HighchartsOptions;
 
-  constructor(private dataProviderService:DataProviderService) {
+  constructor(private easyqService:EasyqService) {
   }
 
   ngOnInit():void {
@@ -42,11 +41,10 @@ export class GfChannelDau implements OnInit {
 
     Observable.forkJoin(
       Array.from(map.keys()).map(
-        i => this.dataProviderService.get({
+        i => this.easyqService.getData({
           table: 'bproduct_me_channel_dau',
           filter: '(channel_uid=' + i + ')',
           order: 'date desc',
-          offset: 0,
           limit: 10
         })
       )).subscribe((recordsArr) => {
@@ -84,21 +82,4 @@ export class GfChannelDau implements OnInit {
     )
   }
 
-  private records:any[];
-
-  onClick():void {
-
-    let channelUids:string[] = ['103453445', '103463393'];
-
-    Observable.forkJoin(
-      channelUids.map(
-        i => this.dataProviderService.get({
-          table: 'bproduct_me_channel_dau',
-          filter: '(channel_uid=' + i + ')',
-          order: 'date desc',
-          offset: 0,
-          limit: 10
-        })
-      )).subscribe(records => console.log('len is ' + records[0].length))
-  }
 }
