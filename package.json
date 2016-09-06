@@ -139,7 +139,8 @@
     "start": "npm run server:dev",
     "start:hmr": "npm run server:dev:hmr",
     "version": "npm run build",
-    "postversion": "git push && git push --tags"
+    "postversion": "git push && git push --tags",
+    "electron": "electron ./src/electron/main.js"
   },
   "repository": {
     "type": "git",
