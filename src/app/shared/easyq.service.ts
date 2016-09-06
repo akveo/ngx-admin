@@ -12,7 +12,7 @@ export class EasyqService {
 
   public getData(options:{table:string, filter?: string, order?:string, offset:number, limit:number}):Observable<any> {
 
-    let url = "http://localhost:8080/report-platform-server/api/v2/report/_table/" + options.table;
+    let url = "http://platform.report.me.yy.com/api/v2/report/_table/" + options.table;
 
     let offset = options.offset || 0;
     let limit = options.limit || 9999;

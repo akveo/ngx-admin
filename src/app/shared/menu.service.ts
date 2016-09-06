@@ -12,7 +12,7 @@ export class MenuService {
 
   public get():Observable<any> {
 
-    return this.http.get("http://localhost:8080/report-platform-server/sys/menu/list.json?uid=1")
+    return this.http.get("http://platform.report.me.yy.com/sys/menu/list.json?uid=1")
       .map(this.extractData
       ).catch(this.handleError);
   }
