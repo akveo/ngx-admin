@@ -5,12 +5,10 @@ import { EasyqService } from '../../../shared/easyq.service.ts';
 
 @Component({
   template: `
+        <div class="ui-widget-header ui-helper-clearfix">
+            <button type="button" class="btn btn-success btn-icon"(click)="dt.exportCSV()" style="float:left" value="export">导出</button>
+        </div>
         <p-dataTable  scrollable="true" [value]="rows" #dt [value]="rows" [rows]="10" [paginator]="true">
-          <header>
-            <div class="ui-widget-header ui-helper-clearfix" style="padding:4px 10px 4px 0px;border-bottom: 0 none">
-                <button type="button" class="btn btn-success btn-icon"(click)="dt.exportCSV()" style="float:left" value="export">导出</button>
-            </div>
-          </header>
           <p-column field="date" header="日期" [sortable]="true"></p-column>
           <p-column field="channel_name" header="频道" [filter]="true"></p-column>
           <p-column field="anchor_uid" header="主播UID" [sortable]="true" [filter]="true"></p-column>
@@ -45,6 +43,7 @@ import { EasyqService } from '../../../shared/easyq.service.ts';
 export class Hour24ChannelDetail implements OnInit {
 
   private rows:any[];
+
 
   constructor(private easyqService:EasyqService) {
   }
