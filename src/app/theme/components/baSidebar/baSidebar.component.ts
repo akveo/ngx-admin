@@ -3,7 +3,7 @@ import {GlobalState} from '../../../global.state';
 import {layoutSizes} from '../../../theme';
 import {BaMenu} from '../baMenu';
 import {MENU} from '../../../../app/app.menu';
-import {MenuService} from '../../../shared/menu.service';
+import {MenuService} from '../../../shared/service';
 import * as _ from 'lodash';
 
 @Component({

@@ -7,6 +7,8 @@ import 'rxjs/Rx';
 @Injectable()
 export class EasyqService {
 
+  private url:string = "http://platform.report.me.yy.com/api/v2/report/_table/";
+
   constructor(private http:Http) {
   }
 
@@ -40,6 +42,16 @@ export class EasyqService {
       .map((resp:Response) => {
         return resp.json().resource
       });
+  }
+
+  public getMaxDate(table:string):Observable<string> {
+
+    return Observable.create(observer => {
+      this.getData({table: table, order: 'date desc', limit: 1}).subscribe((records) => {
+        const maxDate:string = records.length >= 1 ? records[0].date : "";
+        observer.next(maxDate);
+      });
+    });
   }
 
   public getSchema(options:{table:string, filter?: string, order?:string, offset:number, limit:number}):Observable<any> {

@@ -2,23 +2,27 @@ import { Component,OnInit} from '@angular/core';
 import { CHART_DIRECTIVES } from 'angular2-highcharts';
 
 import {Observable} from 'rxjs/Observable';
-import { EasyqService } from '../../../shared/easyq.service.ts';
+import { EasyqService } from '../../../shared/service/easyq.service.ts';
 
 @Component({
   selector: 'simple-chart-example',
   directives: [CHART_DIRECTIVES],
   template: `
-        <chart *ngIf="options" [options]="options"></chart>
+        <div class="row">
+              <div class="btn-group pull-right" role="group" aria-label="Basic example">
+                <button type="button" (click)="onRangeClick(7)" class="btn btn-success">7天</button>
+                <button type="button" (click)="onRangeClick(14)" class="btn btn-warning">14天</button>
+                <button type="button" (click)="onRangeClick(30)" class="btn btn-danger">30天</button>
+              </div>
+        </div>
+        <div class="row">
+          <chart *ngIf="options" [options]="options"></chart>
+        </div>
     `,
   styles: [
     `
       chart {
         display: block;
-      }
-      button {
-        display: block;
-        width: 100%;
-        height: 25px;
       }
   `
   ],
@@ -32,10 +36,14 @@ export class Hour24ChannelDau implements OnInit {
   }
 
   ngOnInit():void {
+    this.render(7);
+  }
+
+  private render(range:number):void {
 
     let map = new Map<string,string>();
-    map.set('103453445','ME热舞频道');
-    map.set('103463393','ME声优官频');
+    map.set('103453445', 'ME热舞频道');
+    map.set('103463393', 'ME声优官频');
     map.set('102472427', 'ME奇趣频道');
     map.set('103033285', 'ME音乐官频');
 
@@ -45,7 +53,7 @@ export class Hour24ChannelDau implements OnInit {
           table: 'bproduct_me_channel_dau',
           filter: '(channel_uid=' + i + ')',
           order: 'date desc',
-          limit: 10
+          limit: range
         })
       )).subscribe((recordsArr) => {
 
@@ -55,20 +63,24 @@ export class Hour24ChannelDau implements OnInit {
 
           records.reverse();
 
-          let points:number[] = records.map(record => {return record.dau});
+          let points:number[] = records.map(record => {
+            return record.dau
+          });
 
-          dates = records.map(record => {return record.date});
+          dates = records.map(record => {
+            return record.date
+          });
 
           let channelUid = records[0].channel_uid;
           return {
-            name : map.get(channelUid.toString()),
+            name: map.get(channelUid.toString()),
             data: points
           };
         });
 
         this.options = {
           title: {text: '官方频道DAU'},
-          xAxis:{
+          xAxis: {
             categories: dates
           },
           yAxis: {
@@ -82,4 +94,7 @@ export class Hour24ChannelDau implements OnInit {
     )
   }
 
+  private onRangeClick(range:number):void {
+    this.render(range);
+  }
 }
