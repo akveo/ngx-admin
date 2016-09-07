@@ -12,7 +12,7 @@ export class MenuService {
 
   public get():Observable<any> {
 
-    return this.http.get("http://platform.report.me.yy.com/sys/menu/list.json?uid=1")
+    return this.http.get("http://platform.report.me.yy.com/sys/menu/list.do", {withCredentials: true}) //Allow cors with cookies)
       .map(this.extractData
       ).catch(this.handleError);
   }
@@ -26,6 +26,7 @@ export class MenuService {
   private handleError(error:any) {
 
     console.log("error");
+    alert("登陆功能正在集成中,请到http://www.yy.com上进行登陆")
     // In a real world app, we might use a remote logging infrastructure
     // We'd also dig deeper into the error to get a better message
     let errMsg = (error.message) ? error.message :

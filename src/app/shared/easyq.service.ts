@@ -36,7 +36,7 @@ export class EasyqService {
     url += "&order=" + order;
     url += "&filter=" + filter;
 
-    return this.http.get(url)
+    return this.http.get(url, {withCredentials: true})
       .map((resp:Response) => {
         return resp.json().resource
       });
