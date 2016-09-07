@@ -24,7 +24,7 @@ import { EasyqService } from '../../../shared/easyq.service.ts';
   ],
   providers: []
 })
-export class GfChannelDau implements OnInit {
+export class Hour24ChannelDau implements OnInit {
 
   private options:HighchartsOptions;
 

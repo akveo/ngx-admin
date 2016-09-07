@@ -5,10 +5,10 @@ import { NgaModule } from '../../theme/nga.module';
 import { EasyqService } from '../../../app/shared';
 
 import { DataTableModule, SharedModule, PaginatorModule } from 'primeng/primeng';
-import { routing }       from './reports.routing';
-import { Reports } from './reports.component';
-import { GfChannelDau } from './me/gf-channel-dau.component'
-import { Hour24ChannelDetail} from './me/24-hour-channel-details.component'
+import { routing }       from './tinytimes-reports.routing.ts';
+import { TinytimesReports } from './tinytimes-reports.component.ts';
+import { Hour24ChannelDau } from './me/hour-24-channel-dau.component.ts'
+import { Hour24ChannelDetail} from './me/hour-24-channel-details.component.ts'
 
 @NgModule({
   imports: [
@@ -21,12 +21,13 @@ import { Hour24ChannelDetail} from './me/24-hour-channel-details.component'
     routing
   ],
   declarations: [
-    Reports,
-    GfChannelDau,
+    TinytimesReports,
+    Hour24ChannelDau,
     Hour24ChannelDetail
   ],
   providers:[
     EasyqService
   ]
 })
-export default class ReportsModule {}
+export default class TinytimesReportsModule {
+}

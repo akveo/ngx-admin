@@ -7,7 +7,7 @@ import {Component} from '@angular/core';
   styles: [],
   template: `<router-outlet></router-outlet>`
 })
-export class Reports{
+export class TinytimesReports {
 
   constructor() {
   }
