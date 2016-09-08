@@ -26,12 +26,16 @@ export class MenuService {
   private handleError(error:any) {
 
     console.log("error");
-    alert("登陆功能正在集成中,请到http://www.yy.com上进行登陆")
     // In a real world app, we might use a remote logging infrastructure
     // We'd also dig deeper into the error to get a better message
     let errMsg = (error.message) ? error.message :
       error.status ? `${error.status} - ${error.statusText}` : 'Server error';
-    console.error(errMsg); // log to console instead
+
+    if (error.status == 403) {
+      alert("您尚未登陆,页面将跳转到登陆页面")
+      document.location.href = "http://login.report.me.yy.com"
+    }
+
     return Observable.throw(errMsg);
   }
 
