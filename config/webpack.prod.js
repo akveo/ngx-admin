@@ -22,7 +22,7 @@ const CompressionPlugin = require('compression-webpack-plugin');
  */
 const ENV = process.env.NODE_ENV = process.env.ENV = 'production';
 const HOST = process.env.HOST || 'localhost';
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 3000;
 const METADATA = webpackMerge(commonConfig.metadata, {
   host: HOST,
   port: PORT,

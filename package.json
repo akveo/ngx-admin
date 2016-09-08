@@ -14,6 +14,7 @@
     "@angular/platform-browser-dynamic": "2.0.0-rc.5",
     "@angular/platform-server": "2.0.0-rc.5",
     "@angular/router": "github:gdi2290/router-builds",
+    "@angular/http": "2.0.0-rc.5",
     "amcharts3": "github:amcharts/amcharts3",
     "ammap3": "github:amcharts/ammap3",
     "animate.css": "^3.5.1",
