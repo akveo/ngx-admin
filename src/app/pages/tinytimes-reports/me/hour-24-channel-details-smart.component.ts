@@ -2,7 +2,7 @@ import { Component,OnInit,ViewEncapsulation} from '@angular/core';
 import { CalendarModule} from 'primeng/primeng';
 import { Observable } from 'rxjs/Observable';
 import { EasyqService } from '../../../shared/service/easyq.service.ts';
-import {NG2_SMART_TABLE_DIRECTIVES} from 'ng2-smart-table';
+import {Ng2SmartTableModule} from 'ng2-smart-table';
 import {LocalDataSource} from 'ng2-smart-table';
 
 
