@@ -26,7 +26,7 @@ export class BaSidebar {
   public isMenuShouldCollapsed:boolean = false;
 
 
-  constructor(private _elementRef:ElementRef, private _state:GlobalState, private _menu: MenuService) {
+  constructor(private _elementRef:ElementRef, private _state:GlobalState, private _menu:MenuService) {
 
     this._state.subscribe('menu.isCollapsed', (isCollapsed) => {
       this.isMenuCollapsed = isCollapsed;
@@ -36,9 +36,8 @@ export class BaSidebar {
   public ngOnInit():void {
 
     //hoswey, Custom to use configurable menu service
-    this._menu.get().subscribe(menus => {
+    this._menu.listNg2Menus().subscribe(menus => {
       this.routes = _.cloneDeep(menus);
-      console.log("menus is " + menus);
       if (this._shouldMenuCollapse()) {
         this.menuCollapse();
       }

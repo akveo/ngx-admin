@@ -21,7 +21,7 @@ import {LocalDataSource} from 'ng2-smart-table';
   styles: [require('../../tables/components/smartTables/smartTables.scss')],
   encapsulation: ViewEncapsulation.None,
 })
-export class Hour24ChannelDetailSmart implements OnInit {
+export class Hour24ChannelDetailSmartComponent implements OnInit {
 
   rows:any[];
 

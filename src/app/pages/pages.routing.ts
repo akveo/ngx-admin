@@ -23,7 +23,8 @@ const routes:Routes = [
       {path: 'forms', loadChildren: () => System.import('./forms/forms.module')},
       {path: 'tables', loadChildren: () => System.import('./tables/tables.module')},
       {path: 'maps', loadChildren: () => System.import('./maps/maps.module')},
-      {path: 'tinytimes-reports', loadChildren: () => System.import('./tinytimes-reports/tinytimes-reports.module')}
+      {path: 'tinytimes-reports', loadChildren: () => System.import('./tinytimes-reports/tinytimes-reports.module')},
+      {path: 'user-manage', loadChildren: () => System.import('./user-manage/user-manage.module')}
     ]
   }
 ];

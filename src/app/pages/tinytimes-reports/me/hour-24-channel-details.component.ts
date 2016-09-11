@@ -53,7 +53,7 @@ import '../../../shared/loader/jquery-ui-loader'
         </p-dataTable>
   `
 })
-export class Hour24ChannelDetail implements OnInit {
+export class Hour24ChannelDetailComponent implements OnInit {
 
   rows:any[];
 

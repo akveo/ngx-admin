@@ -10,9 +10,15 @@ export class MenuService {
   constructor(private http:Http) {
   }
 
-  public get():Observable<any> {
+  public listNg2Menus():Observable<any> {
 
-    return this.http.get("http://platform.report.me.yy.com/sys/menu/list.do", {withCredentials: true}) //Allow cors with cookies)
+    return this.http.get("http://platform.report.me.yy.com/sys/menu/listNg2Menus.do", {withCredentials: true}) //Allow cors with cookies)
+      .map(this.extractData
+      ).catch(this.handleError);
+  }
+
+  public listPrimengMenus():Observable<any> {
+    return this.http.get("http://platform.report.me.yy.com/sys/menu/listPrimengMenus.do", {withCredentials: true}) //Allow cors with cookies)
       .map(this.extractData
       ).catch(this.handleError);
   }

@@ -15,7 +15,7 @@ class Test {
     </div>
   `
 })
-export class Hour24ChannelDemo {
+export class Hour24ChannelDemoComponent {
   date1:string;
   date2:string;
   dateValue:string;
