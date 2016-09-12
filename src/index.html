@@ -17,11 +17,7 @@
   <!-- base url -->
   <base href="<%= webpackConfig.metadata.baseUrl %>">
 
-  <!--<link rel="stylesheet" type="text/css" href="../node_modules/primeng/resources/themes/omega/theme.css"/>-->
-  <!--<link rel="stylesheet" type="text/css" href="../node_modules/primeng/resources/primeng.min.css"/>-->
-  <link rel="stylesheet" type="text/css" href="/assets/primeui/themes/delta/theme.css">
-  <link rel="stylesheet" type="text/css" href="/assets/primeui/primeui-ng-all.min.css">
-  <link rel="stylesheet" type="text/css" href="/assets/primeui.css">
+
 </head>
 
 <body>
@@ -38,8 +34,17 @@
 <% } %>
 
 
+<link rel="stylesheet" type="text/css" href="/assets/primeui/themes/delta/theme.css">
+<link rel="stylesheet" type="text/css" href="/assets/primeui/primeui-ng-all.min.css">
+<link rel="stylesheet" type="text/css" href="/assets/primeui.css">
 <link
   href='https://fonts.gmirror.org/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900italic,900&subset=latin,greek,greek-ext,vietnamese,cyrillic-ext,latin-ext,cyrillic'
   rel='stylesheet' type='text/css'>
+
+<script src="assets/js/json2csv.js"></script>
+<script>
+  console.log(typeof json2csv === 'function'); // true)
+</script>
+
 </body>
 </html>
