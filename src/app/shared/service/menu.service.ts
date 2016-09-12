@@ -17,8 +17,10 @@ export class MenuService {
       ).catch(this.handleError);
   }
 
-  public listPrimengMenus():Observable<any> {
-    return this.http.get("http://platform.report.me.yy.com/sys/menu/listPrimengMenus.do", {withCredentials: true}) //Allow cors with cookies)
+  public listPrimengMenus(uid:String):Observable<any> {
+    return this.http.get("http://platform.report.me.yy.com/sys/menu/listPrimengMenus.do?uid="
+        + uid, {withCredentials: true}
+      ) //Allow cors with cookies)
       .map(this.extractData
       ).catch(this.handleError);
   }

@@ -14,17 +14,17 @@ import { User, UserManageService } from '../common/user-manage.service'
           </p-tree>
       </div>
       <!--<div class="col-md-8">-->
-        <p-dropdown [options]="users" [(ngModel)]="selectedUser" [filter]="true" [autoWidth]=true [style]="{'width':'150px'}"></p-dropdown>
-         <p>Selected Car: {{selectedUser||'none'}}</p>
+     <p-dropdown [options]="users" [(ngModel)]="selectedUser" [filter]="true" [autoWidth]=true [style]="{'width':'150px'}" (onChange)="onUserChange($event)"></p-dropdown>
       <!--</div>-->
     </div>
+
   `,
   styles: [
     `
     `
   ]
 })
-export class EditUserMenuComponent implements OnInit, AfterViewInit {
+export class EditUserMenuComponent implements OnInit {
 
   private menus:TreeNode[];
 
@@ -39,13 +39,6 @@ export class EditUserMenuComponent implements OnInit, AfterViewInit {
 
   ngOnInit():void {
 
-    this._menuService.listPrimengMenus().subscribe(
-      (menus) => {
-        this.menus = menus;
-        this.defaultAllExpand(menus);
-      }
-    );
-
     this._userManageService.listAllUsers().subscribe(
       (users:User[]) => {
 
@@ -59,23 +52,38 @@ export class EditUserMenuComponent implements OnInit, AfterViewInit {
         if (users && users.length > 0) {
           this.selectedUser = users[0].id;
         }
+        this.refreshMenuTree();
       }
     );
-
   }
 
-  private defaultAllExpand(menus:TreeNode[]):void {
+  private refreshMenuTree():void {
+
+    this._menuService.listPrimengMenus(this.selectedUser).subscribe(
+      (menus) => {
+        this.menus = menus;
+        this.updateSelected(menus);
+        this.expandTreeMenus();
+      }
+    );
+  }
+
+  private onUserChange(event:any):void {
+    this.refreshMenuTree();
+  }
+
+  private updateSelected(menus:TreeNode[]):void {
 
     menus.forEach(menu => {
       if (menu.selected) {
         this.selectedMenus.push(menu);
       }
-      this.defaultAllExpand(menu.children);
+      this.updateSelected(menu.children);
     });
   }
 
 
-  ngAfterViewInit() {
+  private expandTreeMenus() {
     setTimeout(() => { // a timeout is necessary otherwise won't find the elements
 
       // get the first "p-tree" tag and find his first "toggler"
@@ -85,7 +93,7 @@ export class EditUserMenuComponent implements OnInit, AfterViewInit {
           this.renderer.invokeElementMethod(menu, 'dispatchEvent', [event]);
         }
       );
-    }, 2000);
+    }, 500);
   }
 
 
