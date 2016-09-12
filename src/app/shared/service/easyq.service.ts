@@ -54,7 +54,4 @@ export class EasyqService {
     });
   }
 
-  public getSchema(options:{table:string, filter?: string, order?:string, offset:number, limit:number}):Observable<any> {
-
-  }
 }
