@@ -31,12 +31,20 @@ export class UserManageService {
   public saveUser(user:User):Observable<User> {
 
     let headers = new Headers({'Content-Type': 'application/json'});
-
     let options = new RequestOptions({headers: headers, withCredentials: true});
 
     return this.http.post(this.baseUrl + "saveUser.do", JSON.stringify(user), options)
       .map((resp:Response) => {
         return <User>resp.json();
       });
+  }
+
+  public saveUserMenus(userId:String, menuIds:Number[]):void {
+
+    let headers = new Headers({'Content-Type': 'application/json'});
+    let options = new RequestOptions({headers: headers, withCredentials: true});
+
+    let requestBody = JSON.stringify({userId: userId, menuIds: menuIds});
+    return this.http.post(this.baseUrl + "saveUserMenus.do", requestBody, options);
   }
 }

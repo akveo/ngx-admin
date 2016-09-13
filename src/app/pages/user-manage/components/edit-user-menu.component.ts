@@ -3,21 +3,27 @@ import { FormsModule} from '@angular/forms'
 import { TreeNode,DropdownModule } from 'primeng/primeng';
 import { MenuService } from '../../../shared/service/menu.service'
 import { User, UserManageService } from '../common/user-manage.service'
+import { Message } from 'primeng/primeng';
 
 @Component({
 
   template: `
     <div class="row">
       <div class="col-md-4">
-          <p-tree expanded="true" [value]="menus" selectionMode="multiple" [(selection)]="selectedMenus"
-            (onNodeSelect)="nodeSelect($event)" (onNodeUnselect)="nodeUnselect($event)">
-          </p-tree>
+        <p-tree expanded="true" [value]="menus" selectionMode="multiple" [(selection)]="selectedMenus"
+          (onNodeSelect)="nodeSelect($event)" (onNodeUnselect)="nodeUnselect($event)">
+        </p-tree>
       </div>
-      <!--<div class="col-md-8">-->
-     <p-dropdown [options]="users" [(ngModel)]="selectedUser" [filter]="true" [autoWidth]=true [style]="{'width':'150px'}" (onChange)="onUserChange($event)"></p-dropdown>
-      <!--</div>-->
+      <div class="col-md-8">
+          <div class="row">
+            <button class="btn btn-primary" (click)="saveUserMenus()">提交</button>
+          </div>
+          <div class="row">
+            <p-dropdown [options]="users" [(ngModel)]="selectedUser" [filter]="true" [autoWidth]=true [style]="{'width':'150px'}" (onChange)="onUserChange($event)"></p-dropdown>
+          </div>
+      </div>
     </div>
-
+    <p-growl name="message" [value]="msgs"></p-growl>
   `,
   styles: [
     `
@@ -28,11 +34,13 @@ export class EditUserMenuComponent implements OnInit {
 
   private menus:TreeNode[];
 
-  private selectedMenus:any[] = [];
+  private selectedMenus:TreeNode[] = [];
 
   private selectedUser:string;
 
   private users:User[];
+
+  private msgs:Message[] = [];
 
   constructor(private _menuService:MenuService, private _userManageService:UserManageService, private renderer:Renderer) {
   }
@@ -94,6 +102,23 @@ export class EditUserMenuComponent implements OnInit {
         }
       );
     }, 500);
+  }
+
+  private saveUserMenus():void {
+
+    let menuIds = this.selectedMenus.map((menu:TreeNode) => {
+      return menu.data;
+    });
+
+    this._userManageService.saveUserMenus(this.selectedUser, menuIds).subscribe(
+      () => {
+        this.msgs.push({severity: 'info', summary: '保存成功', detail: ''});
+        this.user = new User();
+      },
+      error => {
+        this.msgs.push({severity: 'error', summary: '保存失败', detail: error.statusText});
+      }
+    );
   }
 
 
