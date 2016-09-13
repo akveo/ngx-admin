@@ -15,6 +15,7 @@ import { Hour24ChannelDetailComponent } from './me/hour-24-channel-details.compo
 import { Hour24ChannelDemoComponent } from './me/hour-24-channel-demo.component.ts'
 import { Hour24ChannelDetailSmartComponent } from './me/hour-24-channel-details-smart.component'
 import { Ng2SmartTableModule } from 'ng2-smart-table';
+import { CommSimpleTableModule } from '../../shared/component/comm-simple-table/comm-simple-table.module'
 
 @NgModule({
   imports: [
@@ -26,6 +27,7 @@ import { Ng2SmartTableModule } from 'ng2-smart-table';
     PaginatorModule,
     CalendarModule,
     Ng2SmartTableModule,
+    CommSimpleTableModule,
     routing
   ],
   declarations: [
