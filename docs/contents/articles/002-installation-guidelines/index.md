@@ -8,7 +8,7 @@ template: article.jade
 
 ## Prerequisites
 
-Although ngAdmin can be run without any development experience, it would be much easier if you already have some. 
+Although ng2-admin can be run without any development experience, it would be much easier if you already have some. 
 The following instructions allow you to run a local copy on your machine.
 
 ## Install tools
