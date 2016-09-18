@@ -1,22 +1,26 @@
-import { Component,OnInit} from '@angular/core';
+import { Component,OnInit } from '@angular/core';
 import { CHART_DIRECTIVES } from 'angular2-highcharts';
 
-import {Observable} from 'rxjs/Observable';
+import { Observable } from 'rxjs/Observable';
 import { EasyqService } from '../../../shared/service/easyq.service.ts';
+import { NumToPercentPipe } from '../../../shared/pipes/format'
 
 @Component({
   selector: 'simple-chart-example',
   directives: [CHART_DIRECTIVES],
   template: `
         <div class="row">
-              <div class="btn-group pull-right" role="group" aria-label="Basic example">
-                <button type="button" (click)="onRangeClick(7)" class="btn btn-success">7天</button>
-                <button type="button" (click)="onRangeClick(14)" class="btn btn-warning">14天</button>
-                <button type="button" (click)="onRangeClick(30)" class="btn btn-danger">30天</button>
-              </div>
+          <div class="btn-group pull-right" role="group" aria-label="Basic example">
+            <button type="button" (click)="onRangeClick(7)" class="btn btn-success">7天</button>
+            <button type="button" (click)="onRangeClick(14)" class="btn btn-warning">14天</button>
+            <button type="button" (click)="onRangeClick(30)" class="btn btn-danger">30天</button>
+          </div>
         </div>
         <div class="row">
           <chart *ngIf="options" [options]="options"></chart>
+        </div>
+        <div class="row" style="margin-top: 15px;">
+          <comm-simple-table [table]="table" [settings]="settings"></comm-simple-table>
         </div>
     `,
   styles: [
@@ -24,13 +28,65 @@ import { EasyqService } from '../../../shared/service/easyq.service.ts';
       chart {
         display: block;
       }
-  `
+    `
   ],
   providers: []
 })
 export class Hour24ChannelSummaryComponent implements OnInit {
 
   private options:HighchartsOptions;
+
+  table:string = 'bproduct_me_24_hour_daily_summary';
+
+  settings = {
+
+    columns: {
+
+      date: {
+        title: '日期',
+        type: 'string'
+      },
+      channel_name: {
+        title: '频道',
+        type: 'string'
+      },
+      channel_uid: {
+        title: '频道ID',
+        type: 'number'
+      },
+      pcu: {
+        title: 'pcu',
+        type: 'number'
+      },
+      dau: {
+        title: 'dau',
+        type: 'number'
+      },
+      acu: {
+        title: 'acu',
+        type: 'number'
+      },
+      avg_duration: {
+        title: '人均观看时长',
+        type: 'number'
+      },
+      e_income: {
+        title: 'e豆收益',
+        type: 'number'
+      },
+      exposed_cnt: {
+        title: '曝光数',
+        type: 'number'
+      },
+      jump_rate: {
+        title: '跳出率',
+        type: 'number',
+        valuePrepareFunction: (value) => {
+          return new NumToPercentPipe().transform(value, 2);
+        }
+      }
+    }
+  };
 
   constructor(private easyqService:EasyqService) {
   }
