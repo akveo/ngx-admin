@@ -43,7 +43,8 @@ export class New {
 This will create a simple Angular 2 component. For more detail please check out [official Angular 2 documentation](https://angular.io/docs/ts/latest/guide/displaying-data.html).
 <br><br>
 
-4) The last thing we need to do is to define a Router configuration. Routes for pages are located inside of `src/app/pages/pages.routes.ts`.
+4) The last thing we need to do is to define a Router configuration. Routes for pages are located 
+inside of `src/app/pages/pages.routing.ts`.
 Typically all pages are children of the `/pages` route and defined under the `children` property of the root `pages` route like this:
 
 ```javascript
@@ -94,6 +95,7 @@ export const PagesRoutes:RouterConfig = [
 ```
 <br><br>
 
-And that's it! Now your page is available by the following url [http://localhost:3000/#/pages/new](http://localhost:3000/#/pages/new).
-Plus, your page is automatically registered inside the sidebar menu. If you don't want to have a link in the menu - just remove the `menu` declaration under the `data` property.
+And that's it! Now your page is available by the following this url [http://localhost:3000/#/pages/new](http://localhost:3000/#/pages/new).
+Plus, your page is automatically registered inside the sidebar menu. If you don't want to have a link 
+in the menu - just remove the `menu` declaration under the `data` property.
 
