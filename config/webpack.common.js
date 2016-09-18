@@ -14,9 +14,10 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 /*
  * Webpack Constants
  */
+//Hoswey custom title
 const METADATA = {
-  title: 'ng2-admin - Angular 2 Admin Template',
-  description: 'Free Angular 2 and Bootstrap 4 Admin Template',
+  title: 'ME数据平台',
+  description: 'ME数据平台',
   baseUrl: '/'
 };
 
