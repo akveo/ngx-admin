@@ -2,4 +2,4 @@
 
 cd ..
 ps -ef | grep "cms.report" | awk '{print $2}' | xargs sudo kill -9
-sudo npm start
+sudo nohup npm start &
