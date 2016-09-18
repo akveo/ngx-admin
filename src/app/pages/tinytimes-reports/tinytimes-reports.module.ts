@@ -10,10 +10,10 @@ import { DataTableModule, SharedModule, PaginatorModule, CalendarModule } from '
 
 
 import { TinytimesReports } from './tinytimes-reports.component.ts';
-import { Hour24ChannelDauComponent } from './me/hour-24-channel-dau.component.ts'
-import { Hour24ChannelDetailComponent } from './me/hour-24-channel-details.component.ts'
-import { Hour24ChannelDemoComponent } from './me/hour-24-channel-demo.component.ts'
-import { Hour24ChannelDetailSmartComponent } from './me/hour-24-channel-details-smart.component'
+import { Hour24ChannelDauComponent } from './gf-channel/hour-24-channel-dau.component.ts'
+import { Hour24ChannelDetailComponent } from './gf-channel/hour-24-channel-details.component.ts'
+import { Hour24ChannelDemoComponent } from './gf-channel/hour-24-channel-demo.component.ts'
+import { Hour24ChannelDetailSmartComponent } from './gf-channel/hour-24-channel-details-smart.component'
 import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { CommSimpleTableModule } from '../../shared/component/comm-simple-table/comm-simple-table.module'
 

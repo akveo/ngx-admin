@@ -1,10 +1,10 @@
 import { Routes, RouterModule }  from '@angular/router';
 
 import {TinytimesReports} from './tinytimes-reports.component.ts'
-import { Hour24ChannelDauComponent} from './me/hour-24-channel-dau.component.ts'
-import { Hour24ChannelDetailComponent} from './me/hour-24-channel-details.component.ts'
-import {Hour24ChannelDetailSmartComponent} from './me/hour-24-channel-details-smart.component'
-import { Hour24ChannelDemoComponent} from './me/hour-24-channel-demo.component.ts'
+import { Hour24ChannelDauComponent} from './gf-channel/hour-24-channel-dau.component.ts'
+import { Hour24ChannelDetailComponent} from './gf-channel/hour-24-channel-details.component.ts'
+import {Hour24ChannelDetailSmartComponent} from './gf-channel/hour-24-channel-details-smart.component'
+import { Hour24ChannelDemoComponent} from './gf-channel/hour-24-channel-demo.component.ts'
 
 // noinspection TypeScriptValidateTypes
 const routes:Routes = [
