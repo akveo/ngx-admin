@@ -28,7 +28,7 @@ import { EasyqService } from '../../../shared/service/easyq.service.ts';
   ],
   providers: []
 })
-export class Hour24ChannelDauComponent implements OnInit {
+export class Hour24ChannelSummaryComponent implements OnInit {
 
   private options:HighchartsOptions;
 
