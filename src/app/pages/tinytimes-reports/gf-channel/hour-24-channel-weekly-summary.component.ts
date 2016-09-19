@@ -16,9 +16,9 @@ import { NumToPercentPipe } from '../../../shared/pipes/format'
   ],
   encapsulation: ViewEncapsulation.None,
 })
-export class Hour24ChannelDetailsComponent {
+export class Hour24ChannelWeeklySummaryComponent {
 
-  table:string = 'bproduct_me_24_hour_daily_details';
+  table:string = 'bproduct_me_24_hour_weekly_summary';
 
   settings = {
 
@@ -32,40 +32,44 @@ export class Hour24ChannelDetailsComponent {
         title: '频道',
         type: 'string'
       },
-      anchor_uid: {
-        title: '主播UID',
+      channel_uid: {
+        title: '频道ID',
         type: 'number'
       },
-      nick: {
-        title: '昵称',
-        type: 'string'
-      },
-      start_time: {
-        title: '开始时间',
-        type: 'string'
-      },
-      end_time: {
-        title: '结束时间',
-        type: 'string'
-      },
-      pcu: {
-        title: 'pcu',
+      wau: {
+        title: 'WAU',
         type: 'number'
       },
-      e_income: {
-        title: 'e豆收益',
+      avg_dau: {
+        title: '日均DAU',
+        type: 'number'
+      },
+      max_pcu: {
+        title: '最大PCU',
+        type: 'number'
+      },
+      avg_pcu: {
+        title: '日均PCU',
+        type: 'number'
+      },
+      avg_acu: {
+        title: '日均ACU',
         type: 'number'
       },
       avg_duration: {
-        title: '人均观看时长',
+        title: '日均观看时长',
         type: 'number'
       },
-      exposed_cnt: {
-        title: '曝光人数',
+      e_income: {
+        title: 'E豆收益',
         type: 'number'
       },
-      jump_rate: {
-        title: '跳出率',
+      avg_exposed_cnt: {
+        title: '日均曝光人数',
+        type: 'number'
+      },
+      avg_jump_rate: {
+        title: '日均跳出率',
         type: 'number',
         valuePrepareFunction: (value) => {
           return new NumToPercentPipe().transform(value, 2);

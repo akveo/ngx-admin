@@ -7,8 +7,10 @@ import { routing }       from './tinytimes-reports.routing.ts';
 import { EasyqService } from '../../../app/shared/service/easyq.service';
 
 import { TinytimesReports } from './tinytimes-reports.component.ts';
-import { Hour24ChannelSummaryComponent } from './gf-channel/hour-24-channel-summary.component.ts'
-import { Hour24ChannelDetailsComponent } from './gf-channel/hour-24-channel-details.component.ts'
+import { Hour24ChannelDailySummaryComponent } from './gf-channel/hour-24-channel-daily-summary.component.ts'
+import { Hour24ChannelDailyDetailsComponent } from './gf-channel/hour-24-channel-daily-details.component.ts'
+import { Hour24ChannelWeeklySummaryComponent } from './gf-channel/hour-24-channel-weekly-summary.component.ts'
+
 import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { CommSimpleTableModule } from '../../shared/component/comm-simple-table/comm-simple-table.module'
 import { NumToPercentPipe } from '../../shared/pipes/format'
@@ -23,8 +25,9 @@ import { NumToPercentPipe } from '../../shared/pipes/format'
   ],
   declarations: [
     TinytimesReports,
-    Hour24ChannelSummaryComponent,
-    Hour24ChannelDetailsComponent,
+    Hour24ChannelDailySummaryComponent,
+    Hour24ChannelDailyDetailsComponent,
+    Hour24ChannelWeeklySummaryComponent,
     NumToPercentPipe
   ],
   providers:[

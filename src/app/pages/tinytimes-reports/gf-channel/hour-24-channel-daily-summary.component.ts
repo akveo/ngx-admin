@@ -32,7 +32,7 @@ import { NumToPercentPipe } from '../../../shared/pipes/format'
   ],
   providers: []
 })
-export class Hour24ChannelSummaryComponent implements OnInit {
+export class Hour24ChannelDailySummaryComponent implements OnInit {
 
   private options:HighchartsOptions;
 
