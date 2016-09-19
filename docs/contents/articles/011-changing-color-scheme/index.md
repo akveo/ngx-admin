@@ -12,9 +12,10 @@ By default ng2-admin has three built-in color profiles: ng2 (default blue sheme)
 This article will help you to create your own color profile.
 Let's say you want to make ng2-admin dark theme.
 
-First we advice you to take some colorscheme file as a basis. 
-For light themes we suggest taking `src/app/theme/sass/conf/colorScheme/_mint.scss` one and for dark `src/app/theme/sass/conf/colorScheme/_blue.scss` one.
-As we want a dark theme, we're taking `mint`.
+First we advise you to take some existing colorscheme file as a starting point. 
+For light themes we suggest taking `src/app/theme/sass/conf/colorScheme/_mint.scss` and for 
+dark `src/app/theme/sass/conf/colorScheme/_blue.scss`.
+As we want a dark theme, we're taking `blue`.
 
 1) Copy `src/app/theme/sass/conf/colorScheme/_mint.scss` to `src/app/theme/sass/conf/colorScheme/_dark.scss`:
 <br><br>
@@ -26,14 +27,14 @@ To do this, replace
 @import 'colorSchemes/ng2';
 ```
 
-to
+with
 
 ```scss
 @import 'colorSchemes/dark';
 ```
 <br><br>
 
-3) Rename the color scheme enabled:
+3) Change the color scheme enabled:
 
 Open `src/app/theme/theme.config.ts`.
 Uncomment the following line
@@ -42,12 +43,13 @@ Uncomment the following line
   //this._baConfig.changeTheme({name: 'my-theme'});
 ``` 
 
-and put you theme name, in our case it is `dark`
+and put your theme name, in our case it is `dark`
 
 ```javascript
   this._baConfig.changeTheme({name: 'dark'});
 ``` 
-Beside this notifies the system which scheme currently enabled, it also puts a css class to a main element of the page. Thus you can freely create theme-specific css selectors in you code without braking other themes' styles.
+Beside notifying the system which scheme is currently enabled, this also puts a css class to a main element 
+of the page. Thus you can freely create theme-specific css selectors in your code without breakking other themes' styles.
 
 For example like this:
 ```scss
@@ -59,15 +61,16 @@ For example like this:
 
 4) Change the colors:
 
-Now your can start changing the colors.
-For example, after playing a bit with different colors, we changed 2 first main variables in `_dark.scss` file:
+Now you can start changing the colors.
+For example, after playing a bit with different colors, we changed the 2 first main variables in `_dark.scss` file:
 ```sass
 $body-bg: #636363;
 $bootstrap-panel-bg: rgba(#000000, 0.2);
 
 ```
 
-After this is done, you need to setup javascript to use **same colors**. These color are used for javascript charts and other components (maps, etc); 
+After this is done, you need to setup javascript to use the **same colors**. These colors 
+are used for javascript charts and other components (maps, etc); 
 Let's completely change the JS colors to a new set.
 To do this, add the following code to the configuration block inside `src/app/theme/theme.config.ts`:
 ```javascript
@@ -111,7 +114,7 @@ To do this, add the following code to the configuration block inside `src/app/th
     },
   });
 ``` 
-Here we defined a list of main colors `colorScheme` and then made light and dark version of those using `colorHelper` methods. 
+Here we defined a list of main colors `colorScheme` and then made light and dark versions of those using `colorHelper` methods. 
 We also defined a couple of custom colors for dashboard charts.
 
 
@@ -122,4 +125,4 @@ That's basically it! Right now your admin application should look like this:
 For further reference, please look in
 - Colorscheme scss file (`src/app/theme/sass/conf/colorScheme/_ng2.scss`, `src/app/theme/sass/conf/colorScheme/_mint.scss` and `src/app/theme/sass/conf/colorScheme/_blur.scss`)
 - `src/app/theme/theme.configProvider.js` to understand which javascript colors can be changed
-- If you want to know how to change theme to blur, read the [following article](/ng2-admin/articles/014-switch-to-blur-theme/)
+- If you want to know how to change the theme to blur, read the [following article](/ng2-admin/articles/014-switch-to-blur-theme/)

@@ -8,7 +8,7 @@ template: article.jade
 
 ng2-admin uses [Angular 2 Component Router](https://angular.io/docs/ts/latest/guide/router.html) for navigation.
 
-We strongly recommend to follow pages structure in your application.
+We strongly recommend to follow this page structure in your application.
 If it does not fit your needs please create a GitHub issue and tell us why. We would be glad to discuss. 
 
 
@@ -40,11 +40,12 @@ export class New {
   }
 }
 ```
-This will create a simple Angular 2 component, for more detail please check out [official Angular 2 documentation](https://angular.io/docs/ts/latest/guide/displaying-data.html).
+This will create a simple Angular 2 component. For more detail please check out [official Angular 2 documentation](https://angular.io/docs/ts/latest/guide/displaying-data.html).
 <br><br>
 
-4) Last thing we need to do is to define a Router configuration. Routes for pages are located inside of `src/app/pages/pages.routes.ts`.
-Typically all pages are children for `/pages` routes and defined under `children` property of root `pages` route like this:
+4) The last thing we need to do is to define a Router configuration. Routes for pages are located 
+inside of `src/app/pages/pages.routing.ts`.
+Typically all pages are children of the `/pages` route and defined under the `children` property of the root `pages` route like this:
 
 ```javascript
 // imports here
@@ -94,6 +95,7 @@ export const PagesRoutes:RouterConfig = [
 ```
 <br><br>
 
-And that's it! Now your page is available by the following url [http://localhost:3000/#/pages/new](http://localhost:3000/#/pages/new).
-Plus, your page is automatically registered inside the sidebar menu. If you don't want to have a link in the menu - just remove the `menu` declaration under `data` property.
+And that's it! Now your page is available by the following this url [http://localhost:3000/#/pages/new](http://localhost:3000/#/pages/new).
+Plus, your page is automatically registered inside the sidebar menu. If you don't want to have a link 
+in the menu - just remove the `menu` declaration under the `data` property.
 

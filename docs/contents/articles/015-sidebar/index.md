@@ -8,9 +8,9 @@ template: article.jade
 
 The sidebar provides a convenient way to navigate the application. 
 Only one sidebar is supported per angular application. 
-This means that sidebar is basically a singleton object.
+This means that the sidebar is basically a singleton object.
  
-Sidebar can be added to the page using the `BaSidebar` component:
+The Sidebar can be added to the page using the `BaSidebar` component:
 ```html
 <ba-sidebar></ba-sidebar>
 ```
