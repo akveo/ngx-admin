@@ -45,6 +45,10 @@ export class CommSimpleTableComponent implements OnInit {
       add: false,
       edit: false,
       delete: false
+    },
+    pager: {
+      display: true,
+      perPage: 50
     }
   };
 
