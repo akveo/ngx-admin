@@ -10,7 +10,7 @@ import { UserManageComponent } from './user-manage.component';
 import { EditUserMenuComponent } from './components/edit-user-menu.component';
 import { CreateUserComponent } from './components/create-user.component';
 
-import { UserManageService } from './common/user-manage.service';
+import { User, UserService } from '../../shared/service/user.service'
 
 @NgModule({
   imports: [
@@ -29,7 +29,7 @@ import { UserManageService } from './common/user-manage.service';
   ],
   providers: [
     MenuService,
-    UserManageService
+    UserService
   ]
 })
 export default class UserManageModule {

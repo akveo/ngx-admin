@@ -12,9 +12,9 @@ export class User {
 }
 
 @Injectable()
-export class UserManageService {
+export class UserService {
 
-  private baseUrl:strng = 'http://platform.report.me.yy.com/sys/user-manage/';
+  private baseUrl:strng = 'http://platform.report.me.yy.com/sys/user/';
 
   constructor(private http:Http) {
   }
@@ -24,6 +24,14 @@ export class UserManageService {
     return this.http.get(this.baseUrl + 'listUsers.do', {withCredentials: true}) //Allow cors with cookies)
       .map((resp:Response) => {
           return <User[]>resp.json();
+        }
+      );
+  }
+
+  public getUserInfo():Observable<User> {
+    return this.http.get(this.baseUrl + "getUserInfo.do", {withCredentials: true})
+      .map((resp:Response) => {
+          return <User>resp.json();
         }
       );
   }
@@ -39,12 +47,12 @@ export class UserManageService {
       });
   }
 
-  public saveUserMenus(userId:String, menuIds:Number[]):void {
+  public editUserMenu(userId:String, menuIds:Number[]):void {
 
     let headers = new Headers({'Content-Type': 'application/json'});
     let options = new RequestOptions({headers: headers, withCredentials: true});
 
     let requestBody = JSON.stringify({userId: userId, menuIds: menuIds});
-    return this.http.post(this.baseUrl + "saveUserMenus.do", requestBody, options);
+    return this.http.post(this.baseUrl + "editUserMenu.do", requestBody, options);
   }
 }

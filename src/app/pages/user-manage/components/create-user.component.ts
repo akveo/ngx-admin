@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule} from '@angular/forms'
-import { User, UserManageService } from '../common/user-manage.service'
+import { User, UserService } from '../../../shared/service/user.service'
 import { Message } from 'primeng/primeng';
 
 @Component({
@@ -29,7 +29,7 @@ export class CreateUserComponent implements OnInit {
 
   user:User = new User();
 
-  constructor(private userManageService:UserManageService) {
+  constructor(private userService:UserService) {
 
   }
 
@@ -37,7 +37,7 @@ export class CreateUserComponent implements OnInit {
   }
 
   save():void {
-    this.userManageService.saveUser(this.user).subscribe(
+    this.userService.saveUser(this.user).subscribe(
       (user) => {
         this.msgs.push({severity: 'info', summary: '创建成功', detail: ''});
         this.user = new User();

@@ -2,7 +2,7 @@ import { Component, OnInit, AfterViewInit, Renderer } from '@angular/core';
 import { FormsModule} from '@angular/forms'
 import { TreeNode,DropdownModule } from 'primeng/primeng';
 import { MenuService } from '../../../shared/service/menu.service'
-import { User, UserManageService } from '../common/user-manage.service'
+import { User, UserService } from '../../../shared/service/user.service'
 import { Message } from 'primeng/primeng';
 
 @Component({
@@ -16,7 +16,7 @@ import { Message } from 'primeng/primeng';
       </div>
       <div class="col-md-8">
           <div class="row">
-            <button class="btn btn-primary" (click)="saveUserMenus()">提交</button>
+            <button class="btn btn-primary" (click)="editUserMenu()">提交</button>
           </div>
           <div class="row">
             <p-dropdown [options]="users" [(ngModel)]="selectedUser" [filter]="true" [autoWidth]=true [style]="{'width':'150px'}" (onChange)="onUserChange($event)"></p-dropdown>
@@ -42,12 +42,12 @@ export class EditUserMenuComponent implements OnInit {
 
   private msgs:Message[] = [];
 
-  constructor(private _menuService:MenuService, private _userManageService:UserManageService, private renderer:Renderer) {
+  constructor(private menuService:MenuService, private userService:UserService, private renderer:Renderer) {
   }
 
   ngOnInit():void {
 
-    this._userManageService.listAllUsers().subscribe(
+    this.userService.listAllUsers().subscribe(
       (users:User[]) => {
 
         this.users = users.map((user:User) => {
@@ -67,7 +67,7 @@ export class EditUserMenuComponent implements OnInit {
 
   private refreshMenuTree():void {
 
-    this._menuService.listPrimengMenus(this.selectedUser).subscribe(
+    this.menuService.listPrimengMenus(this.selectedUser).subscribe(
       (menus) => {
         this.menus = menus;
         this.updateSelected(menus);
@@ -91,7 +91,7 @@ export class EditUserMenuComponent implements OnInit {
   }
 
 
-  private expandTreeMenus() {
+  private expandTreeMenus():void {
     setTimeout(() => { // a timeout is necessary otherwise won't find the elements
 
       // get the first "p-tree" tag and find his first "toggler"
@@ -104,13 +104,13 @@ export class EditUserMenuComponent implements OnInit {
     }, 500);
   }
 
-  private saveUserMenus():void {
+  private editUserMenu():void {
 
     let menuIds = this.selectedMenus.map((menu:TreeNode) => {
       return menu.data;
     });
 
-    this._userManageService.saveUserMenus(this.selectedUser, menuIds).subscribe(
+    this.userService.editUserMenu(this.selectedUser, menuIds).subscribe(
       () => {
         this.msgs.push({severity: 'info', summary: '保存成功', detail: ''});
         this.user = new User();
