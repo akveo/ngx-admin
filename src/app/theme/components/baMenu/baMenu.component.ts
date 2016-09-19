@@ -2,9 +2,7 @@ import {Component, ViewEncapsulation, Input, Output, EventEmitter} from '@angula
 import {Router, Routes, NavigationEnd} from '@angular/router';
 import {Subscription} from 'rxjs/Rx';
 
-import {BaSlimScroll} from '../../../theme/directives';
 import {BaMenuService} from './baMenu.service';
-import {BaMenuItem} from './components/baMenuItem';
 import {GlobalState} from '../../../global.state';
 
 @Component({
@@ -12,8 +10,7 @@ import {GlobalState} from '../../../global.state';
   encapsulation: ViewEncapsulation.None,
   styles: [require('./baMenu.scss')],
   template: require('./baMenu.html'),
-  providers: [BaMenuService],
-  directives: [BaMenuItem, BaSlimScroll]
+  providers: [BaMenuService]
 })
 export class BaMenu {
 

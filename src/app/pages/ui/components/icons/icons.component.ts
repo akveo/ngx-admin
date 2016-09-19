@@ -5,7 +5,6 @@ import {IconsService} from './icons.service';
 @Component({
   selector: 'icons',
   encapsulation: ViewEncapsulation.None,
-  providers: [IconsService],
   styles: [require('./icons.scss')],
   template: require('./icons.html'),
 })

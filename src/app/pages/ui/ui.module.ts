@@ -11,6 +11,16 @@ import { Grid } from './components/grid/grid.component';
 import { Icons } from './components/icons/icons.component';
 import { Typography } from './components/typography/typography.component';
 
+import { FlatButtons } from './components/buttons/components/flatButtons';
+import { RaisedButtons } from './components/buttons/components/raisedButtons';
+import { SizedButtons } from './components/buttons/components/sizedButtons';
+import { DisabledButtons } from './components/buttons/components/disabledButtons';
+import { IconButtons } from './components/buttons/components/iconButtons';
+import { LargeButtons } from './components/buttons/components/largeButtons';
+import { DropdownButtons } from './components/buttons/components/dropdownButtons';
+import { GroupButtons } from './components/buttons/components/groupButtons';
+import { IconsService } from './components/icons/icons.service';
+
 
 @NgModule({
   imports: [
@@ -25,7 +35,19 @@ import { Typography } from './components/typography/typography.component';
     Grid,
     Icons,
     Typography,
-    Ui
+    Ui,
+    FlatButtons,
+    RaisedButtons,
+    SizedButtons,
+    DisabledButtons,
+    IconButtons,
+    LargeButtons,
+    DropdownButtons,
+    GroupButtons
+  ],
+  providers: [
+    IconsService
   ]
 })
-export default class UiModule {}
+export default class UiModule {
+}

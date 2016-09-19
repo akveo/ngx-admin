@@ -4,8 +4,6 @@ import './leafletMaps.loader';
 
 @Component({
   selector: 'leaflet-maps',
-  pipes: [],
-  providers: [],
   encapsulation: ViewEncapsulation.None,
   styles: [require('./leafletMaps.scss')],
   template: require('./leafletMaps.html')

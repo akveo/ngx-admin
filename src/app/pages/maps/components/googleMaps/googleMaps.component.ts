@@ -3,8 +3,6 @@ import {GoogleMapsLoader} from './googleMaps.loader';
 
 @Component({
   selector: 'google-maps',
-  pipes: [],
-  providers: [],
   styles: [require('./googleMaps.scss')],
   template: require('./googleMaps.html'),
 })
