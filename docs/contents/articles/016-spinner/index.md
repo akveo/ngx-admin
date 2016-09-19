@@ -6,15 +6,17 @@ group: Components
 template: article.jade
 ---
 
-Theme Spinner `BaThemeSpinner` is a small service helper allowing you to show a preloader spinner while executing some long-running tasks.
-Same spinner you can see after reloading a page - it is shown while application is initializing Anuglar 2 and loading charts and images.
+Theme Spinner `BaThemeSpinner` is a small service helper allowing you to show a preloader spinner while 
+executing some long-running tasks.
+This is the same spinner you can see after reloading a page - it is shown while the application is initializing Angular 2 and loading charts and images.
  
-The usage interface in quite simple, there are two public methods: `show` and `hide`.
+The user interface in quite simple: there are two public methods: `show` and `hide`.
 
 Theme Spinner comes with another small helper called `BaThemePreloader`. 
-This service globally integrated into the application and connected to the spinner.
+This service is globally integrated into the application and connected to the spinner.
 
-You can register any promise in any part of the application so that the spinner will be hidden only after your promise is completed (resolved).
+You can register any promise in any part of the application so that the spinner will be 
+hidden only after your promise is completed (resolved).
 
 You can find an example of usage inside of the `app.component.ts` file.
 Here we are registering a loader (`this._imageLoader.load` just returns a `Promise`) which loads a background image:
