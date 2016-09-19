@@ -9,7 +9,7 @@ import * as _ from 'lodash';
 import { Message } from 'primeng/primeng';
 
 @Component({
-  selector: "comm-simple-table",
+  selector: "me-simple-table",
   template: `
   <div class="row">
       <div class="row" style="margin-bottom: 5px">
@@ -32,7 +32,7 @@ import { Message } from 'primeng/primeng';
   styles: [require('../../../pages/tables/components/smartTables/smartTables.scss')],
   encapsulation: ViewEncapsulation.None,
 })
-export class CommSimpleTableComponent implements OnInit {
+export class MeSimpleTableComponent implements OnInit {
 
   @Input() table:string;
 

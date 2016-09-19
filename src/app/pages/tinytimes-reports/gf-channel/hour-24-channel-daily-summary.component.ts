@@ -11,15 +11,10 @@ import { NumToPercentPipe } from '../../../shared/pipes/format'
           <me-simple-chart [table]="table" [settings]="settings"></me-simple-chart>
         </div>
         <div class="row" style="margin-top: 15px;">
-          <comm-simple-table [table]="table" [settings]="settings"></comm-simple-table>
+          <me-simple-table [table]="table" [settings]="settings"></me-simple-table>
         </div>
     `,
   styles: [
-    `
-      chart {
-        display: block;
-      }
-    `
   ],
   providers: []
 })

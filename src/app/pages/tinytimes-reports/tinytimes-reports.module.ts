@@ -12,7 +12,7 @@ import { Hour24ChannelDailyDetailsComponent } from './gf-channel/hour-24-channel
 import { Hour24ChannelWeeklySummaryComponent } from './gf-channel/hour-24-channel-weekly-summary.component.ts'
 
 import { Ng2SmartTableModule } from 'ng2-smart-table';
-import { CommSimpleTableModule } from '../../shared/component/comm-simple-table/comm-simple-table.module'
+import { MeSimpleTableModule } from '../../shared/component/me-simple-table/me-simple-table.module'
 import { MeSimpleChartModule } from '../../shared/component/me-simple-chart/me-simple-chart.module'
 import { NumToPercentPipe } from '../../shared/pipes/format'
 
@@ -21,7 +21,7 @@ import { NumToPercentPipe } from '../../shared/pipes/format'
     CommonModule,
     FormsModule,
     NgaModule,
-    CommSimpleTableModule,
+    MeSimpleTableModule,
     MeSimpleChartModule,
     routing
   ],

@@ -3,7 +3,7 @@ import { NumToPercentPipe } from '../../../shared/pipes/format'
 
 @Component({
   template: `
-      <comm-simple-table [table]="table" [settings]="settings"></comm-simple-table>
+      <me-simple-table [table]="table" [settings]="settings"></me-simple-table>
   `,
   styles: [
     `th.ng2-smart-th.start_time {
