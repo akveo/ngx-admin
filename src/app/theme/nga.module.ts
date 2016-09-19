@@ -19,6 +19,7 @@ import {
   BaCheckbox,
   BaContentTop,
   BaFullCalendar,
+  BaMenuItem,
   BaMenu,
   BaMsgCenter,
   BaMultiCheckbox,
@@ -26,6 +27,8 @@ import {
   BaPictureUploader,
   BaSidebar
 } from './components';
+
+import { BaCardBlur } from './components/baCard/baCardBlur.directive';
 
 import {
   BaScrollPosition,
@@ -58,6 +61,7 @@ const NGA_COMPONENTS = [
   BaCheckbox,
   BaContentTop,
   BaFullCalendar,
+  BaMenuItem,
   BaMenu,
   BaMsgCenter,
   BaMultiCheckbox,
@@ -69,7 +73,8 @@ const NGA_COMPONENTS = [
 const NGA_DIRECTIVES = [
   BaScrollPosition,
   BaSlimScroll,
-  BaThemeRun
+  BaThemeRun,
+  BaCardBlur
 ];
 
 const NGA_PIPES = [

@@ -1,4 +1,4 @@
-import {Injectable} from '@angular/core';
+import { Injectable } from '@angular/core';
 
 @Injectable()
 export class BasicTablesService {
@@ -488,7 +488,7 @@ export class BasicTablesService {
     }
   ];
 
-  editableTableData:Array<any>;
+  editableTableData: Array<any>;
 
   peopleTableData = [
     {
@@ -654,16 +654,16 @@ export class BasicTablesService {
   ];
 
   statuses = [
-    {value: 1, text: 'Good'},
-    {value: 2, text: 'Awesome'},
-    {value: 3, text: 'Excellent'},
+    { value: 1, text: 'Good' },
+    { value: 2, text: 'Awesome' },
+    { value: 3, text: 'Excellent' },
   ];
 
   groups = [
-    {id: 1, text: 'user'},
-    {id: 2, text: 'customer'},
-    {id: 3, text: 'vip'},
-    {id: 4, text: 'admin'}
+    { id: 1, text: 'user' },
+    { id: 2, text: 'customer' },
+    { id: 3, text: 'vip' },
+    { id: 4, text: 'admin' }
   ];
 
   constructor() {

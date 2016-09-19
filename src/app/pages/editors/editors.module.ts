@@ -1,6 +1,7 @@
 import { NgModule }      from '@angular/core';
 import { CommonModule }  from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { CKEditorModule } from 'ng2-ckeditor';
 import { NgaModule } from '../../theme/nga.module';
 
 import { routing }       from './editors.routing';
@@ -13,6 +14,7 @@ import { Ckeditor } from './components/ckeditor/ckeditor.component';
     CommonModule,
     FormsModule,
     NgaModule,
+    CKEditorModule,
     routing
   ],
   declarations: [
@@ -20,4 +22,5 @@ import { Ckeditor } from './components/ckeditor/ckeditor.component';
     Ckeditor
   ]
 })
-export default class EditorsModule {}
+export default class EditorsModule {
+}

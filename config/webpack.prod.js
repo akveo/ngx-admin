@@ -110,7 +110,7 @@ module.exports = webpackMerge(commonConfig, {
      * See: https://webpack.github.io/docs/list-of-plugins.html#defineplugin
      * See: https://github.com/webpack/docs/wiki/optimization#deduplication
      */
-    new DedupePlugin(),
+    // new DedupePlugin(), // see: https://github.com/angular/angular-cli/issues/1587
 
     /**
      * Plugin: DefinePlugin

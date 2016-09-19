@@ -6,8 +6,7 @@ import {CalendarService} from './calendar.service';
   selector: 'calendar',
   encapsulation: ViewEncapsulation.None,
   styles: [require('./calendar.scss')],
-  template: require('./calendar.html'),
-  providers: [CalendarService]
+  template: require('./calendar.html')
 })
 export class Calendar {
 
@@ -26,8 +25,8 @@ export class Calendar {
   private _onSelect(start, end):void {
 
     if (this._calendar != null) {
-      var title = prompt('Event Title:');
-      var eventData;
+      let title = prompt('Event Title:');
+      let eventData;
       if (title) {
         eventData = {
           title: title,
