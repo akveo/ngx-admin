@@ -11,13 +11,15 @@ import { Message } from 'primeng/primeng';
 @Component({
   selector: "me-simple-table",
   template: `
-  <div class="row">
-      <div class="row" style="margin-bottom: 5px">
+  <div class="row" style="margin-bottom: 5px;background-color: white">
+      <div class="row">
           <div class="col-md-6">
             <div>
-                Form: <p-calendar [(ngModel)]="from" dateFormat="yy-mm-dd" (onSelect) = "onSelect($event)"  ngDefaultControl></p-calendar>
-                To: <p-calendar [(ngModel)]="to" dateFormat="yy-mm-dd" (onSelect) = "onSelect($event)"  ngDefaultControl></p-calendar>
-                 <button class="btn btn-warning" (click)="setDateRange()">查询</button>
+              <span style="padding-left: 5px">Form</span>:
+              <p-calendar [(ngModel)]="from" dateFormat="yy-mm-dd" (onSelect) = "onSelect($event)"  ngDefaultControl></p-calendar>
+              To:
+              <p-calendar [(ngModel)]="to" dateFormat="yy-mm-dd" (onSelect) = "onSelect($event)"  ngDefaultControl></p-calendar>
+              <button class="btn btn-warning" (click)="setDateRange()">查询</button>
             </div>
           </div>
           <div class="text-right col-md-6">
