@@ -14,7 +14,7 @@ export class User {
 @Injectable()
 export class UserService {
 
-  private baseUrl:strng = 'http://platform.report.me.yy.com/sys/user/';
+  private baseUrl:string = 'http://platform.report.me.yy.com/sys/user/';
 
   constructor(private http:Http) {
   }

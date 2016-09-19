@@ -30,7 +30,6 @@ import { Message } from 'primeng/primeng';
   `,
   directives: [],
   styles: [require('../../../pages/tables/components/smartTables/smartTables.scss')],
-  //styles: [require('app/pages/tables/components/smartTables/smartTables.scss')],
   encapsulation: ViewEncapsulation.None,
 })
 export class CommSimpleTableComponent implements OnInit {

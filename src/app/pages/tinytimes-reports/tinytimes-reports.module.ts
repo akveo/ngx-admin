@@ -13,6 +13,7 @@ import { Hour24ChannelWeeklySummaryComponent } from './gf-channel/hour-24-channe
 
 import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { CommSimpleTableModule } from '../../shared/component/comm-simple-table/comm-simple-table.module'
+import { MeSimpleChartModule } from '../../shared/component/me-simple-chart/me-simple-chart.module'
 import { NumToPercentPipe } from '../../shared/pipes/format'
 
 @NgModule({
@@ -21,6 +22,7 @@ import { NumToPercentPipe } from '../../shared/pipes/format'
     FormsModule,
     NgaModule,
     CommSimpleTableModule,
+    MeSimpleChartModule,
     routing
   ],
   declarations: [

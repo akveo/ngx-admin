@@ -1,23 +1,14 @@
-import { Component,OnInit } from '@angular/core';
-import { CHART_DIRECTIVES } from 'angular2-highcharts';
+import { Component, OnInit } from '@angular/core';
 
 import { Observable } from 'rxjs/Observable';
-import { EasyqService } from '../../../shared/service/easyq.service.ts';
 import { NumToPercentPipe } from '../../../shared/pipes/format'
 
 @Component({
   selector: 'simple-chart-example',
-  directives: [CHART_DIRECTIVES],
+  directives: [],
   template: `
         <div class="row">
-          <div class="btn-group pull-right" role="group" aria-label="Basic example">
-            <button type="button" (click)="onRangeClick(7)" class="btn btn-success">7天</button>
-            <button type="button" (click)="onRangeClick(14)" class="btn btn-warning">14天</button>
-            <button type="button" (click)="onRangeClick(30)" class="btn btn-danger">30天</button>
-          </div>
-        </div>
-        <div class="row">
-          <chart *ngIf="options" [options]="options"></chart>
+          <me-simple-chart [table]="table" [settings]="settings"></me-simple-chart>
         </div>
         <div class="row" style="margin-top: 15px;">
           <comm-simple-table [table]="table" [settings]="settings"></comm-simple-table>
@@ -34,53 +25,60 @@ import { NumToPercentPipe } from '../../../shared/pipes/format'
 })
 export class Hour24ChannelDailySummaryComponent implements OnInit {
 
-  private options:HighchartsOptions;
 
   table:string = 'bproduct_me_24_hour_daily_summary';
 
   settings = {
 
     columns: {
-
       date: {
         title: '日期',
         type: 'string'
       },
       channel_name: {
         title: '频道',
-        type: 'string'
+        type: 'string',
+        isChartNameColumn: true
       },
       channel_uid: {
         title: '频道ID',
-        type: 'number'
+        type: 'number',
+        isChartKeyColumn: true
       },
       pcu: {
         title: 'pcu',
-        type: 'number'
+        type: 'number',
+        isDisplayChart: true
       },
       dau: {
         title: 'dau',
-        type: 'number'
+        type: 'number',
+        isDisplayChart: true
       },
       acu: {
         title: 'acu',
-        type: 'number'
+        type: 'number',
+        isDisplayChart: true
       },
       avg_duration: {
         title: '人均观看时长',
-        type: 'number'
+        type: 'number',
+        isDisplayChart: true
       },
       e_income: {
         title: 'e豆收益',
-        type: 'number'
+        type: 'number',
+        isDisplayChart: true
       },
       exposed_cnt: {
         title: '曝光数',
-        type: 'number'
+        type: 'number',
+        isDisplayChart: true
       },
       jump_rate: {
         title: '跳出率',
         type: 'number',
+        isDisplayChart: true,
         valuePrepareFunction: (value) => {
           return new NumToPercentPipe().transform(value, 2);
         }
@@ -88,69 +86,7 @@ export class Hour24ChannelDailySummaryComponent implements OnInit {
     }
   };
 
-  constructor(private easyqService:EasyqService) {
-  }
-
   ngOnInit():void {
-    this.render(7);
   }
 
-  private render(range:number):void {
-
-    let map = new Map<string,string>();
-    map.set('103453445', 'ME热舞频道');
-    map.set('103463393', 'ME声优官频');
-    map.set('102472427', 'ME奇趣频道');
-    map.set('103033285', 'ME音乐官频');
-
-    Observable.forkJoin(
-      Array.from(map.keys()).map(
-        i => this.easyqService.getData({
-          table: 'bproduct_me_channel_dau',
-          filter: '(channel_uid=' + i + ')',
-          order: 'date desc',
-          limit: range
-        })
-      )).subscribe((recordsArr) => {
-
-        let dates:string[];
-
-        recordsArr = recordsArr.map(records => {
-
-          records.reverse();
-
-          let points:number[] = records.map(record => {
-            return record.dau
-          });
-
-          dates = records.map(record => {
-            return record.date
-          });
-
-          let channelUid = records[0].channel_uid;
-          return {
-            name: map.get(channelUid.toString()),
-            data: points
-          };
-        });
-
-        this.options = {
-          title: {text: '官方频道DAU'},
-          xAxis: {
-            categories: dates
-          },
-          yAxis: {
-            title: {
-              text: "用户数"
-            }
-          },
-          series: recordsArr
-        };
-      }
-    )
-  }
-
-  private onRangeClick(range:number):void {
-    this.render(range);
-  }
 }
