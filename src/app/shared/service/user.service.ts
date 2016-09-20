@@ -9,6 +9,14 @@ export class User {
   public id:string;
 
   public userName:string;
+
+  constructor() {
+  }
+
+  constructor(id:string, userName:string) {
+    this.id = id;
+    this.userName = userName;
+  }
 }
 
 @Injectable()
@@ -47,7 +55,7 @@ export class UserService {
       });
   }
 
-  public editUserMenu(userId:String, menuIds:Number[]):void {
+  public editUserMenu(userId:String, menuIds:Number[]):Observable<Response> {
 
     let headers = new Headers({'Content-Type': 'application/json'});
     let options = new RequestOptions({headers: headers, withCredentials: true});

@@ -38,7 +38,7 @@ export class EditUserMenuComponent implements OnInit {
 
   private selectedUser:string;
 
-  private users:User[];
+  private users:any[];
 
   private msgs:Message[] = [];
 
@@ -80,8 +80,9 @@ export class EditUserMenuComponent implements OnInit {
     this.refreshMenuTree();
   }
 
-  private updateSelected(menus:TreeNode[]):void {
+  private updateSelected(menus:any[]):void {
 
+    this.selectedMenus = [];
     menus.forEach(menu => {
       if (menu.selected) {
         this.selectedMenus.push(menu);
@@ -113,7 +114,7 @@ export class EditUserMenuComponent implements OnInit {
     this.userService.editUserMenu(this.selectedUser, menuIds).subscribe(
       () => {
         this.msgs.push({severity: 'info', summary: '保存成功', detail: ''});
-        this.user = new User();
+        //this.user = new User();
       },
       error => {
         this.msgs.push({severity: 'error', summary: '保存失败', detail: error.statusText});

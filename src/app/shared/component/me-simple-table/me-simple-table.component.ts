@@ -114,7 +114,7 @@ export class MeSimpleTableComponent implements OnInit {
       let newRows:any[] = rows.map((row:any) => {
 
         let newRow = {};
-        for (key in row) {
+        for (let key in row) {
 
           if (!row.hasOwnProperty(key)) {
             continue;
