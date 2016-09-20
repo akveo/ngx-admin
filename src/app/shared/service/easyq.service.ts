@@ -4,6 +4,14 @@ import { Observable }     from 'rxjs/Observable';
 
 import 'rxjs/Rx';
 
+export interface EasyqParam {
+  table:string;
+  filter?: string;
+  order?: string;
+  limit?:number;
+  offset?:number;
+}
+
 @Injectable()
 export class EasyqService {
 
@@ -12,7 +20,7 @@ export class EasyqService {
   constructor(private http:Http) {
   }
 
-  public getData(options:{table:string, filter?: string, order?:string, offset:number, limit:number}):Observable<any> {
+  public getData(options:EasyqParam):Observable<any> {
 
     let url = "http://platform.report.me.yy.com/api/v2/report/_table/" + options.table;
 

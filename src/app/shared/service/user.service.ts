@@ -13,9 +13,11 @@ export class User {
   constructor() {
   }
 
-  constructor(id:string, userName:string) {
-    this.id = id;
-    this.userName = userName;
+  static from(id:string, userName:string):User {
+    let user = new User();
+    user.id = id;
+    user.userName = userName;
+    return user;
   }
 }
 

@@ -135,7 +135,7 @@ export class MeSimpleChartComponent implements OnInit {
                   order: 'date desc',
                   limit: this.daysRange
                 })
-              )).subscribe((rowsArray) => {
+              )).subscribe((rowsArray:any[]) => {
 
                 let dates:string[];
 
