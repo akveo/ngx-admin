@@ -16,19 +16,25 @@ class Column {
   selector: "me-simple-chart",
   template: `
     <div class="row">
-      <div class="btn-group pull-left" role="group">
-        <button *ngFor="let column of columns" type="button" (click)="doColumnFilter(column)" class="btn btn-primary">
-          {{column.title}}
-        </button>
+      <div class="col-md-8">
+          <div class="btn-group pull-left" role="group">
+            <button *ngFor="let column of columns" type="button" (click)="doColumnFilter(column)" class="btn btn-primary">
+              {{column.title}}
+            </button>
+          </div>
       </div>
-      <div class="btn-group pull-right" role="group">
-        <button type="button" (click)="onRangeClick(7)" class="btn btn-success">7天</button>
-        <button type="button" (click)="onRangeClick(14)" class="btn btn-warning">14天</button>
-        <button type="button" (click)="onRangeClick(30)" class="btn btn-danger">30天</button>
+      <div class="col-md-4">
+        <div class="btn-group pull-right" role="group">
+            <button type="button" (click)="onRangeClick(7)" class="btn btn-success">7天</button>
+            <button type="button" (click)="onRangeClick(14)" class="btn btn-warning">14天</button>
+            <button type="button" (click)="onRangeClick(30)" class="btn btn-danger">30天</button>
+        </div>
       </div>
     </div>
     <div class="row">
-      <chart *ngIf="options" [options]="options"></chart>
+      <div class="col-md-12">
+        <chart *ngIf="options" [options]="options"></chart>
+      </div>
     </div>
 `,
   directives: [CHART_DIRECTIVES],

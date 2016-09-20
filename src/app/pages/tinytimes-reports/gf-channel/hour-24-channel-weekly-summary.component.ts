@@ -6,13 +6,6 @@ import { NumToPercentPipe } from '../../../shared/pipes/format'
       <me-simple-table [table]="table" [settings]="settings"></me-simple-table>
   `,
   styles: [
-    `th.ng2-smart-th.start_time {
-      width: 180px;
-     }`,
-    `th.ng2-smart-th.end_time {
-      width: 180px;
-     }
-    `
   ],
   encapsulation: ViewEncapsulation.None,
 })

@@ -11,24 +11,28 @@ import { Message } from 'primeng/primeng';
 @Component({
   selector: "me-simple-table",
   template: `
-  <div class="row" style="margin-bottom: 5px;background-color: white">
-      <div class="row">
-          <div class="col-md-6">
-            <div>
-              <span style="padding-left: 6px">From</span>:
-              <p-calendar [(ngModel)]="from" dateFormat="yy-mm-dd" (onSelect) = "onSelect($event)"  ngDefaultControl></p-calendar>
-              To:
-              <p-calendar [(ngModel)]="to" dateFormat="yy-mm-dd" (onSelect) = "onSelect($event)"  ngDefaultControl></p-calendar>
-              <button class="btn btn-warning" (click)="setDateRange()">查询</button>
+      <div style="background-color: white">
+          <div class="row">
+              <div class="col-md-6">
+                <div>
+                  <span style="padding-left: 6px">From&nbsp;</span>:
+                  <p-calendar [(ngModel)]="from" dateFormat="yy-mm-dd" (onSelect) = "onSelect($event)"  ngDefaultControl></p-calendar>
+                  To:&nbsp;
+                  <p-calendar [(ngModel)]="to" dateFormat="yy-mm-dd" (onSelect) = "onSelect($event)"  ngDefaultControl></p-calendar>
+                  <button class="btn btn-warning" (click)="setDateRange()">查询</button>
+                </div>
+              </div>
+              <div class="text-right col-md-6">
+                <button class="btn btn-primary" (click)="export2Csv()">导出</button>
+              </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <ng2-smart-table [settings]="settings" [source]="source"></ng2-smart-table>
             </div>
           </div>
-          <div class="text-right col-md-6">
-            <button class="btn btn-primary" (click)="export2Csv()">导出</button>
-          </div>
       </div>
-      <ng2-smart-table [settings]="settings" [source]="source"></ng2-smart-table>
-  </div>
-  <p-growl name="message" [value]="msgs"></p-growl>
+      <p-growl name="message" [value]="msgs"></p-growl>
   `,
   directives: [],
   styles: [require('../../../pages/tables/components/smartTables/smartTables.scss')],

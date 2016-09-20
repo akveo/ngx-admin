@@ -14,6 +14,8 @@ import { Hour24ChannelWeeklySummaryComponent } from './gf-channel/hour-24-channe
 import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { MeSimpleTableModule } from '../../shared/component/me-simple-table/me-simple-table.module'
 import { MeSimpleChartModule } from '../../shared/component/me-simple-chart/me-simple-chart.module'
+import { MeReportDescModule } from '../../shared/component/me-report-desc/me-report-desc.module'
+
 import { NumToPercentPipe } from '../../shared/pipes/format'
 
 @NgModule({
@@ -23,6 +25,7 @@ import { NumToPercentPipe } from '../../shared/pipes/format'
     NgaModule,
     MeSimpleTableModule,
     MeSimpleChartModule,
+    MeReportDescModule,
     routing
   ],
   declarations: [
