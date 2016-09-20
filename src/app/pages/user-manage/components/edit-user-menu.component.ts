@@ -70,6 +70,7 @@ export class EditUserMenuComponent implements OnInit {
     this.menuService.listPrimengMenus(this.selectedUser).subscribe(
       (menus) => {
         this.menus = menus;
+        this.selectedMenus = [];
         this.updateSelected(menus);
         this.expandTreeMenus();
       }
@@ -82,7 +83,7 @@ export class EditUserMenuComponent implements OnInit {
 
   private updateSelected(menus:any[]):void {
 
-    this.selectedMenus = [];
+
     menus.forEach(menu => {
       if (menu.selected) {
         this.selectedMenus.push(menu);
