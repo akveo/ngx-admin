@@ -85,7 +85,8 @@ export class Hour24ChannelDailySummaryComponent implements OnInit {
   };
 
   descBody:ReportDescBody = {
-    url: "http:///",
+    //报表生成链接
+    url: "https://cloud.hiido.com/calculation/schedule/job/detail/6000021200?tab=info",
     rows: [
       {
         name: "频道",

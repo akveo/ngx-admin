@@ -19,6 +19,10 @@ export class ReportDescBody {
               <td>{{row.name}}</td>
               <td>{{row.desc}}</td>
             </tr>
+            <tr>
+              <td>报表生成链接</td>
+              <td><a href="{{descBody.url}}" target="_blank">链接</a> </td>
+            </tr>
         </table>
     </ba-card>
     </div>
