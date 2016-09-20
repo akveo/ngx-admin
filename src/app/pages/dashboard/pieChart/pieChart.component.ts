@@ -7,7 +7,6 @@ import './pieChart.loader.ts';
 @Component({
   selector: 'pie-chart',
   encapsulation: ViewEncapsulation.None,
-  providers: [PieChartService],
   styles: [require('./pieChart.scss')],
   template: require('./pieChart.html')
 })
@@ -50,7 +49,7 @@ export class PieChart {
   }
 
   private _updatePieCharts() {
-    let getRandomArbitrary = (min, max) => { return Math.random() * (max - min) + min };
+    let getRandomArbitrary = (min, max) => { return Math.random() * (max - min) + min; };
 
     jQuery('.pie-charts .chart').each(function(index, chart) {
       jQuery(chart).data('easyPieChart').update(getRandomArbitrary(55, 90));

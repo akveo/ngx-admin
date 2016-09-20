@@ -36,28 +36,28 @@ export const PAGES_MENU = [
           }
         ]
       },
-      {
-        path: 'components',
-        data: {
-          menu: {
-            title: 'Components',
-            icon: 'ion-gear-a',
-            selected: false,
-            expanded: false,
-            order: 250,
-          }
-        },
-        children: [
-          {
-            path: 'treeview',
-            data: {
-              menu: {
-                title: 'Tree View',
-              }
-            }
-          }
-        ]
-      },
+      //{
+      //  path: 'components',
+      //  data: {
+      //    menu: {
+      //      title: 'Components',
+      //      icon: 'ion-gear-a',
+      //      selected: false,
+      //      expanded: false,
+      //      order: 250,
+      //    }
+      //  },
+      //  children: [
+      //    {
+      //      path: 'treeview',
+      //      data: {
+      //        menu: {
+      //          title: 'Tree View',
+      //        }
+      //      }
+      //    }
+      //  ]
+      //},
       {
         path: 'charts',
         data: {

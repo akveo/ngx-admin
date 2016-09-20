@@ -9,6 +9,8 @@ import { BubbleMaps } from './components/bubbleMaps/bubbleMaps.component';
 import { GoogleMaps } from './components/googleMaps/googleMaps.component';
 import { LeafletMaps } from './components/leafletMaps/leafletMaps.component';
 import { LineMaps } from './components/lineMaps/lineMaps.component';
+import { BubbleMapsService } from './components/bubbleMaps/bubbleMaps.service';
+import { LineMapsService } from './components/lineMaps/lineMaps.service';
 
 
 @NgModule({
@@ -24,6 +26,10 @@ import { LineMaps } from './components/lineMaps/lineMaps.component';
     GoogleMaps,
     LeafletMaps,
     LineMaps
+  ],
+  providers: [
+    BubbleMapsService,
+    LineMapsService
   ]
 })
 export default class MapsModule {}

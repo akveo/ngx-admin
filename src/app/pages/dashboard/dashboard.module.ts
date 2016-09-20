@@ -14,6 +14,13 @@ import { LineChart } from './lineChart';
 import { Feed } from './feed';
 import { Todo } from './todo';
 import { Calendar } from './calendar';
+import { CalendarService } from './calendar/calendar.service';
+import { FeedService } from './feed/feed.service';
+import { LineChartService } from './lineChart/lineChart.service';
+import { PieChartService } from './pieChart/pieChart.service';
+import { TodoService } from './todo/todo.service';
+import { TrafficChartService } from './trafficChart/trafficChart.service';
+import { UsersMapService } from './usersMap/usersMap.service';
 
 @NgModule({
   imports: [
@@ -32,6 +39,15 @@ import { Calendar } from './calendar';
     Todo,
     Calendar,
     Dashboard
+  ],
+  providers: [
+    CalendarService,
+    FeedService,
+    LineChartService,
+    PieChartService,
+    TodoService,
+    TrafficChartService,
+    UsersMapService
   ]
 })
 export default class DashboardModule {}

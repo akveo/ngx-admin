@@ -15,7 +15,6 @@ addons:
 install:
   - npm config set spin false
   - npm install -g npm@3
-  - npm install -g webpack
   - npm install -g typescript@2.0.0
 
   - npm install

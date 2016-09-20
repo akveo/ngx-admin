@@ -1,3 +1,49 @@
+<a name="0.7.0"></a>
+# 0.7.0 (2016-09-19)
+
+### Note
+Tree package does not support angular 2.0 currently so it was hidden from the menu.
+
+### Features
+
+* Angular 2.0
+* Dependencies updated
+
+### Bug Fixes
+
+
+### How to update
+
+* Pull sources from git, merge accordingly
+* remove `node_modules`
+* run `npm install`
+* Remove all directives & pipes from components and move them to the ngModule declarations
+* Enjoy!
+
+
+<a name="0.6.0"></a>
+# 0.6.0 (2016-09-19)
+
+### Note
+Tree package does not support RC6 currently so it was hidden from the menu.
+
+### Features
+
+* Angular rc.6
+* Dependencies updated
+
+### Bug Fixes
+
+
+### How to update
+
+* Pull sources from git, merge accordingly
+* remove `node_modules`
+* run `npm install`
+* Remove all directives & pipes from components and move them to the ngModule declarations
+* Enjoy!
+
+
 <a name="0.5.0"></a>
 # 0.5.0 (2016-08-30)
 
