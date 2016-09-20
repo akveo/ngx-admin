@@ -7,7 +7,7 @@ import { LocalDataSource } from 'ng2-smart-table';
 import '../../loader/jquery-ui-loader'
 import * as _ from 'lodash';
 import { Message } from 'primeng/primeng';
-import './json2csv-loader.ts';
+//import './json2csv-loader.ts';
 
 @Component({
   selector: "me-simple-table",
