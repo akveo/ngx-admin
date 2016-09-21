@@ -107,7 +107,11 @@ export class BaMenuService {
   }
 
   protected _selectItem(object:any):any {
-    object.selected = object.url == ('#' + this._router.url);
+    if (object.children) {
+      object.selected = object.url === ('#' + this._router.url);
+    } else {
+      object.selected = ('#' + this._router.url).indexOf(object.url) === 0;
+    }
     return object;
   }
 }
