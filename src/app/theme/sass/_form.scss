@@ -58,6 +58,14 @@ select.form-control {
   padding-left: 8px;
 }
 
+select.form-control:not([multiple]) option {
+  color: $dropdown-text;
+}
+
+select.form-control[multiple] option {
+  color: $default-text;
+}
+
 textarea.form-control {
   height: 96px;
 }
