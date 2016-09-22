@@ -27,7 +27,9 @@ const METADATA = webpackMerge(commonConfig({env: ENV}).metadata, {
 });
 
 module.exports = function(env) {
-  return webpackMerge(commonConfig({env: ENV}), {
+  env = env || ENV;
+
+  return webpackMerge(commonConfig({env: env}), {
 
     /**
      * Switch loaders to debug mode.
