@@ -42,7 +42,7 @@
     "extract-text-webpack-plugin": "2.0.0-beta.3",
     "font-awesome": "^4.6.1",
     "font-awesome-sass-loader": "^1.0.2",
-    "fullcalendar": "^2.7.2",
+    "fullcalendar": "^3.0.1",
     "google-maps": "^3.2.1",
     "ionicons": "^2.0.1",
     "jquery": "^2.2.3",
