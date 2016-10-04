@@ -3,7 +3,7 @@ import { Component, ViewEncapsulation } from '@angular/core';
 import { GlobalState } from './global.state';
 import { BaImageLoaderService, BaThemePreloader, BaThemeSpinner } from './theme/services';
 import { layoutPaths } from './theme/theme.constants';
-import { BaThemeConfig } from "./theme/theme.config";
+import { BaThemeConfig } from './theme/theme.config';
 
 /*
  * App Component
