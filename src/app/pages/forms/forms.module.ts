@@ -15,6 +15,7 @@ import { ValidationInputs } from './components/inputs/components/validationInput
 import { GroupInputs } from './components/inputs/components/groupInputs';
 import { CheckboxInputs } from './components/inputs/components/checkboxInputs';
 import { Rating } from './components/inputs/components/ratinginputs';
+import { SelectInputs } from './components/inputs/components/selectInputs';
 
 import { InlineForm } from './components/layouts/components/inlineForm';
 import { BlockForm } from './components/layouts/components/blockForm';
@@ -39,6 +40,7 @@ import { WithoutLabelsForm } from './components/layouts/components/withoutLabels
     GroupInputs,
     CheckboxInputs,
     Rating,
+    SelectInputs,
     InlineForm,
     BlockForm,
     HorizontalForm,
