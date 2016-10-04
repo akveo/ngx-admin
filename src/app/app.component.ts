@@ -3,6 +3,7 @@ import { Component, ViewEncapsulation } from '@angular/core';
 import { GlobalState } from './global.state';
 import { BaImageLoaderService, BaThemePreloader, BaThemeSpinner } from './theme/services';
 import { layoutPaths } from './theme/theme.constants';
+import { BaThemeConfig } from './theme/theme.config';
 
 /*
  * App Component
@@ -25,7 +26,8 @@ export class App {
 
   constructor(private _state: GlobalState,
               private _imageLoader: BaImageLoaderService,
-              private _spinner: BaThemeSpinner) {
+              private _spinner: BaThemeSpinner,
+              private _config:BaThemeConfig) {
 
     this._loadImages();
 
