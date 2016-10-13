@@ -7,6 +7,6 @@ import { Component, ViewEncapsulation, ViewChild, Input } from '@angular/core';
   encapsulation: ViewEncapsulation.None
 })
 export class BaCard {
-  @Input() title:String;
-  @Input() baCardClass:String;
+  @Input() title: String;
+  @Input() baCardClass: String;
 }

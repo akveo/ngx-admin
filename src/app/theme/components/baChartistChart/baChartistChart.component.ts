@@ -22,14 +22,14 @@ import { Chartist } from './baChartistChart.loader.ts';
 })
 export class BaChartistChart {
 
-  @Input() baChartistChartType:string;
-  @Input() baChartistChartData:Object;
-  @Input() baChartistChartOptions:Object;
-  @Input() baChartistChartResponsive:Object;
-  @Input() baChartistChartClass:string;
+  @Input() baChartistChartType: string;
+  @Input() baChartistChartData: Object;
+  @Input() baChartistChartOptions: Object;
+  @Input() baChartistChartResponsive: Object;
+  @Input() baChartistChartClass: string;
   @Output() onChartReady = new EventEmitter<any>();
 
-  @ViewChild('baChartistChart') private _selector:ElementRef;
+  @ViewChild('baChartistChart') private _selector: ElementRef;
 
   private chart;
 
