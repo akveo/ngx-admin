@@ -1,5 +1,5 @@
-import {Injectable} from '@angular/core';
-import {BaThemeConfigProvider, layoutPaths} from '../../../theme';
+import { Injectable } from '@angular/core';
+import { BaThemeConfigProvider, layoutPaths } from '../../../theme';
 
 @Injectable()
 export class UsersMapService {

@@ -1,7 +1,7 @@
-import {Component, ElementRef, HostListener, ViewEncapsulation} from '@angular/core';
-import {GlobalState} from '../../../global.state';
-import {layoutSizes} from '../../../theme';
-import {MENU} from '../../../../app/app.menu';
+import { Component, ElementRef, HostListener, ViewEncapsulation } from '@angular/core';
+import { GlobalState } from '../../../global.state';
+import { layoutSizes } from '../../../theme';
+import { MENU } from '../../../../app/app.menu';
 import * as _ from 'lodash';
 
 @Component({

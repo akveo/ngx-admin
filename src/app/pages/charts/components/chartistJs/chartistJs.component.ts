@@ -1,6 +1,6 @@
-import {Component, ViewEncapsulation} from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 
-import {ChartistJsService} from './chartistJs.service';
+import { ChartistJsService } from './chartistJs.service';
 
 @Component({
   selector: 'chartist-js',

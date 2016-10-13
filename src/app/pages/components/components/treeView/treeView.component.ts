@@ -1,5 +1,5 @@
-import {Component} from '@angular/core';
-import {TreeModel} from 'ng2-tree';
+import { Component } from '@angular/core';
+import { TreeModel } from 'ng2-tree';
 
 @Component({
   selector: 'tree-view',

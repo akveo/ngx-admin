@@ -1,5 +1,5 @@
-import {Component, ViewChild, Input, Output, EventEmitter, ElementRef, Renderer} from '@angular/core';
-import {Ng2Uploader} from 'ng2-uploader/ng2-uploader';
+import { Component, ViewChild, Input, Output, EventEmitter, ElementRef, Renderer } from '@angular/core';
+import { Ng2Uploader } from 'ng2-uploader/ng2-uploader';
 
 @Component({
   selector: 'ba-picture-uploader',

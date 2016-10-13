@@ -1,6 +1,6 @@
-import {Component, ViewEncapsulation} from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 
-import {UsersMapService} from './usersMap.service';
+import { UsersMapService } from './usersMap.service';
 
 @Component({
   selector: 'users-map',

@@ -1,5 +1,5 @@
-import {Injectable} from '@angular/core';
-import {BaThemeConfigProvider, colorHelper} from '../../../theme';
+import { Injectable } from '@angular/core';
+import { BaThemeConfigProvider, colorHelper } from '../../../theme';
 
 @Injectable()
 export class TrafficChartService {

@@ -1,7 +1,7 @@
-import {Injectable} from '@angular/core'
-import {Subject} from 'rxjs/Subject';
+import { Injectable } from '@angular/core'
+import { Subject } from 'rxjs/Subject';
 
-import {BgMetrics} from './bgMetrics';
+import { BgMetrics } from './bgMetrics';
 
 @Injectable()
 export class BaCardBlurHelper {

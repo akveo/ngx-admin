@@ -1,5 +1,5 @@
-import {Injectable} from '@angular/core';
-import {BaThemeConfigProvider} from '../../../theme';
+import { Injectable } from '@angular/core';
+import { BaThemeConfigProvider } from '../../../theme';
 
 @Injectable()
 export class CalendarService {

@@ -1,6 +1,6 @@
-import {Component} from '@angular/core';
+import { Component } from '@angular/core';
 
-import {BasicTablesService} from '../../basicTables.service';
+import { BasicTablesService } from '../../basicTables.service';
 
 @Component({
   selector: 'hover-table',

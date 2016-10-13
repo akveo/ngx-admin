@@ -1,6 +1,6 @@
-import {Injectable} from '@angular/core';
+import { Injectable } from '@angular/core';
 
-import {BaThemeConfigProvider, layoutPaths} from '../../../../theme';
+import { BaThemeConfigProvider, layoutPaths } from '../../../../theme';
 
 @Injectable()
 export class LineMapsService {

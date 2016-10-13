@@ -1,9 +1,9 @@
-import {Component, ViewChild, ViewEncapsulation, Input, Output, ElementRef, EventEmitter} from '@angular/core';
+import { Component, ViewChild, ViewEncapsulation, Input, Output, ElementRef, EventEmitter } from '@angular/core';
 
-import {BaThemePreloader} from '../../../theme/services';
+import { BaThemePreloader } from '../../../theme/services';
 
 import './baAmChart.loader.ts';
-import {BaAmChartThemeService} from './baAmChartTheme.service';
+import { BaAmChartThemeService } from './baAmChartTheme.service';
 
 @Component({
   selector: 'ba-am-chart',

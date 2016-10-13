@@ -1,6 +1,6 @@
-import {Component, ViewEncapsulation} from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 
-import {PieChartService} from './pieChart.service';
+import { PieChartService } from './pieChart.service';
 
 import './pieChart.loader.ts';
 

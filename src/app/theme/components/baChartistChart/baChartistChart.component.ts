@@ -11,7 +11,7 @@ import {
     OnDestroy,
 } from '@angular/core';
 
-import {Chartist} from './baChartistChart.loader.ts';
+import { Chartist } from './baChartistChart.loader.ts';
 
 @Component({
   selector: 'ba-chartist-chart',

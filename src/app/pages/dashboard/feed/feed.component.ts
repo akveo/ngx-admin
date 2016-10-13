@@ -1,6 +1,6 @@
-import {Component, ViewEncapsulation} from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 
-import {FeedService} from './feed.service';
+import { FeedService } from './feed.service';
 
 @Component({
   selector: 'feed',

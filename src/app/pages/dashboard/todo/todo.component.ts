@@ -1,7 +1,7 @@
-import {Component, ViewEncapsulation} from '@angular/core';
-import {BaThemeConfigProvider} from '../../../theme';
+import { Component, ViewEncapsulation } from '@angular/core';
+import { BaThemeConfigProvider } from '../../../theme';
 
-import {TodoService} from './todo.service';
+import { TodoService } from './todo.service';
 
 @Component({
   selector: 'todo',

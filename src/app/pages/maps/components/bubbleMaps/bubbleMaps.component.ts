@@ -1,6 +1,6 @@
-import {Component, ViewEncapsulation} from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 
-import {BubbleMapsService} from './bubbleMaps.service';
+import { BubbleMapsService } from './bubbleMaps.service';
 
 @Component({
   selector: 'bubble-maps',

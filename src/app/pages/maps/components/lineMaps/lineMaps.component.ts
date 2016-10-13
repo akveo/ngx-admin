@@ -1,6 +1,6 @@
-import {Component, ViewEncapsulation} from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 
-import {LineMapsService} from './lineMaps.service';
+import { LineMapsService } from './lineMaps.service';
 
 @Component({
   selector: 'line-maps',

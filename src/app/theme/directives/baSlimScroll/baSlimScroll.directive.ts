@@ -1,4 +1,4 @@
-import {Directive, Input, Output, ElementRef, EventEmitter} from '@angular/core';
+import { Directive, Input, Output, ElementRef, EventEmitter } from '@angular/core';
 
 import './baSlimScroll.loader.ts';
 

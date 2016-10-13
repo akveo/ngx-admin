@@ -1,4 +1,4 @@
-import {Component, ViewEncapsulation} from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 
 import { SmartTablesService } from './smartTables.service';
 import { LocalDataSource } from 'ng2-smart-table';

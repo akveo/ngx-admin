@@ -1,4 +1,4 @@
-import {Component, ViewEncapsulation, ViewChild, Input} from '@angular/core';
+import { Component, ViewEncapsulation, ViewChild, Input } from '@angular/core';
 
 @Component({
   selector: 'ba-card',

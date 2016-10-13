@@ -1,5 +1,5 @@
-import {Component, Input, Self} from '@angular/core';
-import {ControlValueAccessor, NgModel} from '@angular/forms';
+import { Component, Input, Self } from '@angular/core';
+import { ControlValueAccessor, NgModel } from '@angular/forms';
 
 @Component({
   selector: 'ba-checkbox[ngModel]',

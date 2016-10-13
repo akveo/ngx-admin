@@ -1,6 +1,6 @@
-import {Component, ViewEncapsulation} from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 
-import {CalendarService} from './calendar.service';
+import { CalendarService } from './calendar.service';
 
 @Component({
   selector: 'calendar',

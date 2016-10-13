@@ -1,4 +1,4 @@
-import {Component, ViewEncapsulation, ElementRef} from '@angular/core';
+import { Component, ViewEncapsulation, ElementRef } from '@angular/core';
 
 import './leafletMaps.loader';
 
