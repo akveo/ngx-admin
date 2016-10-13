@@ -10,9 +10,9 @@ import {BubbleMapsService} from './bubbleMaps.service';
 })
 export class BubbleMaps {
 
-  chartData:Object;
+  chartData: Object;
 
-  constructor(private _bubbleMapsService:BubbleMapsService) {
+  constructor(private _bubbleMapsService: BubbleMapsService) {
   }
 
   ngOnInit() {

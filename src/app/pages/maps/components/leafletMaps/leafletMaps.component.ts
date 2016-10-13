@@ -10,7 +10,7 @@ import './leafletMaps.loader';
 })
 export class LeafletMaps {
 
-  constructor(private _elementRef:ElementRef) {
+  constructor(private _elementRef: ElementRef) {
   }
 
   ngAfterViewInit() {

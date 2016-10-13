@@ -27,7 +27,7 @@ export class App {
   constructor(private _state: GlobalState,
               private _imageLoader: BaImageLoaderService,
               private _spinner: BaThemeSpinner,
-              private _config:BaThemeConfig) {
+              private _config: BaThemeConfig) {
 
     this._loadImages();
 

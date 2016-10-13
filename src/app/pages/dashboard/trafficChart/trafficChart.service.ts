@@ -4,7 +4,7 @@ import {BaThemeConfigProvider, colorHelper} from '../../../theme';
 @Injectable()
 export class TrafficChartService {
 
-  constructor(private _baConfig:BaThemeConfigProvider) {
+  constructor(private _baConfig: BaThemeConfigProvider) {
   }
 
 

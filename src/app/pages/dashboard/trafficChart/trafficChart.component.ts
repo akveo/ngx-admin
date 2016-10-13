@@ -15,7 +15,7 @@ export class TrafficChart {
 
   public doughnutData: Array<Object>;
 
-  constructor(private trafficChartService:TrafficChartService) {
+  constructor(private trafficChartService: TrafficChartService) {
     this.doughnutData = trafficChartService.getData();
   }
 

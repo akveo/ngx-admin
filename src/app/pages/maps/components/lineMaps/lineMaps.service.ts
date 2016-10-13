@@ -6,7 +6,7 @@ import {BaThemeConfigProvider, layoutPaths} from '../../../../theme';
 export class LineMapsService {
 
 
-  constructor(private _baConfig:BaThemeConfigProvider) {
+  constructor(private _baConfig: BaThemeConfigProvider) {
   }
 
   getData() {

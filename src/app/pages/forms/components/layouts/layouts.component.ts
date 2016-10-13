@@ -9,10 +9,10 @@ import {Component, ViewEncapsulation} from '@angular/core';
 export class Layouts {
 
   public defaultPicture = 'assets/img/theme/no-photo.png';
-  public profile:any = {
+  public profile: any = {
     picture: 'assets/img/app/profile/Nasta.png'
   };
-  public uploaderOptions:any = {
+  public uploaderOptions: any = {
     // url: 'http://website.com/upload'
   };
 

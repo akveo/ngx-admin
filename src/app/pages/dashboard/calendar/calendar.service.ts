@@ -4,7 +4,7 @@ import {BaThemeConfigProvider} from '../../../theme';
 @Injectable()
 export class CalendarService {
 
-  constructor(private _baConfig:BaThemeConfigProvider) {
+  constructor(private _baConfig: BaThemeConfigProvider) {
   }
 
   getData() {

@@ -10,9 +10,9 @@ import {FeedService} from './feed.service';
 })
 export class Feed {
 
-  public feed:Array<Object>;
+  public feed: Array<Object>;
 
-  constructor(private _feedService:FeedService) {
+  constructor(private _feedService: FeedService) {
   }
 
   ngOnInit() {
