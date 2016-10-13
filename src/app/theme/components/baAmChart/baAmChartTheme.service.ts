@@ -6,7 +6,7 @@ import {BaThemeConfigProvider} from '../../../theme';
 @Injectable()
 export class BaAmChartThemeService {
 
-  constructor(private _baConfig:BaThemeConfigProvider) {
+  constructor(private _baConfig: BaThemeConfigProvider) {
   }
 
   getTheme() {
