@@ -60,21 +60,6 @@ The following instructions allow you to run a local copy on your&nbsp;machine.</
 <li>Download and install nodejs <a href="https://nodejs.org">https://nodejs.org</a></li>
 </ul>
 <p><strong>Note</strong>: Make sure you have Node version &gt;= 4.0 and <span class="caps">NPM</span> &gt;=&nbsp;3</p>
-<p>Once you have those, you should install these globals with <code>npm install --global</code>:</p>
-<ul>
-<li><p>webpack</p>
-<pre><code class="lang-bash">npm install --global webpack
-</code></pre>
-</li>
-<li><p>webpack-dev-server</p>
-<pre><code class="lang-bash">npm install --global webpack-dev-server
-</code></pre>
-</li>
-<li><p>typescript</p>
-<pre><code class="lang-bash">npm install --global typescript@2.0.0
-</code></pre>
-</li>
-</ul>
 <h2 id="clone-repository-and-install-dependencies">Clone repository and install&nbsp;dependencies</h2>
 <p>You will need to clone the source code of ng2-admin GitHub&nbsp;repository:</p>
 <pre><code class="lang-bash">git <span class="built_in">clone</span> https://github.com/akveo/ng2-admin.git
@@ -84,13 +69,11 @@ The following instructions allow you to run a local copy on your&nbsp;machine.</
 npm install
 </code></pre>
 <p>This will setup a working copy of ng2-admin on your local&nbsp;machine.</p>
-<pre><code>## Running local copy
-
-To run a local copy in development mode, execute:
-
-```bash
-npm start
-</code></pre><p>Go to <a href="http://0.0.0.0:3000">http://0.0.0.0:3000</a> or <a href="http://localhost:3000">http://localhost:3000</a> in your&nbsp;browser.</p>
+<h2 id="running-local-copy">Running local&nbsp;copy</h2>
+<p>To run a local copy in development mode,&nbsp;execute:</p>
+<pre><code class="lang-bash">npm start
+</code></pre>
+<p>Go to <a href="http://0.0.0.0:3000">http://0.0.0.0:3000</a> or <a href="http://localhost:3000">http://localhost:3000</a> in your&nbsp;browser.</p>
 <p>To run the local copy in production mode and build the sources,&nbsp;execute:</p>
 <pre><code class="lang-bash">npm run prebuild:prod &amp;&amp; npm run build:prod &amp;&amp; npm run server:prod
 </code></pre>

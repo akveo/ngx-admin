@@ -54,46 +54,61 @@
 <p>We strongly recommend to follow this page structure in your application.
 If it does not fit your needs please create a GitHub issue and tell us why. We would be glad to&nbsp;discuss. </p>
 <p>Basically any page is just a common Angular 2 Component with a route defined for&nbsp;it.</p>
-<h2 id="page-creation-example">Page creation&nbsp;example</h2>
-<p>1) Let’s assume we want to create a blank page with a title ‘My New Page’
+<h2 id="let-s-create-a-blank-page-in-6-easy-steps">Let’s create a blank page in 6 easy&nbsp;steps</h2>
+<p>1) Create a new directory for our new page inside of <code>src/app/pages</code>. We can call the directory <code>new</code>.
 <br><br></p>
-<p>2) Let’s Create a new directory for our new page inside of <code>src/app/pages</code>. Let’s call the directory <code>new</code>.
-<br><br></p>
-<p>3) Then let’s create a blank angular 2 component for our page called ‘new.component.ts’ inside of <code>src/app/pages/new</code>:</p>
+<p>2) Then let’s create a blank angular 2 component for our page called ‘new.component.ts’ inside of <code>src/app/pages/new</code>:</p>
 <pre><code class="lang-javascript"><span class="keyword">import</span> {Component} <span class="keyword">from</span> <span class="string">'@angular/core'</span>;
 
 @Component({
   selector: <span class="string">'new'</span>,
-  pipes: [],
-  providers: [],
-  styles: [],
   template: <span class="string">`&lt;strong&gt;My page content here&lt;/strong&gt;`</span>
 })
-<span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">New</span> </span>{
-
-  <span class="keyword">constructor</span>() {
-  }
+<span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">NewComponent</span> </span>{
+  <span class="keyword">constructor</span>() {}
 }
 </code></pre>
 <p>This will create a simple Angular 2 component. For more detail please check out <a href="https://angular.io/docs/ts/latest/guide/displaying-data.html">official Angular 2 documentation</a>.
 <br><br></p>
-<p>4) The last thing we need to do is to define a Router configuration. Routes for pages are located 
-inside of <code>src/app/pages/pages.routing.ts</code>.
+<p>3) After that we should create our component routing called <code>new.routing.ts</code> in the <code>new</code> directory.</p>
+<pre><code class="lang-javascript"><span class="keyword">import</span> { Routes, RouterModule }  <span class="keyword">from</span> <span class="string">'@angular/router'</span>;
+<span class="keyword">import</span> { NewComponent } <span class="keyword">from</span> <span class="string">'./new.component'</span>;
+
+<span class="keyword">const</span> routes: Routes = [
+  {
+    path: <span class="string">''</span>,
+    component: NewComponent
+  }
+];
+
+<span class="keyword">export</span> <span class="keyword">const</span> routing = RouterModule.forChild(routes);
+</code></pre>
+<p><br></p>
+<p>4) And now we should create <code>new.module.ts</code> in <code>src/app/pages/new</code> directory and import <code>new.component.ts</code> and <code>new.routing.ts</code> in&nbsp;it.</p>
+<pre><code class="lang-javascript"><span class="keyword">import</span> { NgModule }      <span class="keyword">from</span> <span class="string">'@angular/core'</span>;
+<span class="keyword">import</span> { CommonModule }  <span class="keyword">from</span> <span class="string">'@angular/common'</span>;
+<span class="keyword">import</span> { NewComponent } <span class="keyword">from</span> <span class="string">'./new.component'</span>;
+<span class="keyword">import</span> { routing } <span class="keyword">from</span> <span class="string">'./new.routing'</span>;
+
+@NgModule({
+  imports: [
+    CommonModule,
+    routing
+  ],
+  declarations: [
+    NewComponent
+  ]
+})
+</code></pre>
+<p><br></p>
+<p>5) The penultimate thing we need to do is to declare a route in <code>src/app/pages/pages.menu.ts</code>.
 Typically all pages are children of the <code>/pages</code> route and defined under the <code>children</code> property of the root <code>pages</code> route like&nbsp;this:</p>
-<pre><code class="lang-javascript"><span class="comment">// imports here</span>
-<span class="comment">// lets import our page</span>
-<span class="keyword">import</span> {New} <span class="keyword">from</span> <span class="string">'./new/new.component'</span>;
-
-
-<span class="comment">//noinspection TypeScriptValidateTypes</span>
-<span class="keyword">export</span> <span class="keyword">const</span> PagesRoutes:RouterConfig = [
+<pre><code class="lang-javascript"><span class="keyword">export</span> <span class="keyword">const</span> PAGES_MENU = [
   {
     path: <span class="string">'pages'</span>,
-    component: Pages,
     children: [
       {
         path: <span class="string">'new'</span>,  <span class="comment">// path for our page</span>
-        component: New, <span class="comment">// component imported above</span>
         data: { <span class="comment">// custom menu declaration</span>
           menu: {
             title: <span class="string">'New Page'</span>, <span class="comment">// menu title</span>
@@ -104,11 +119,8 @@ Typically all pages are children of the <code>/pages</code> route and defined un
           }
         }
       },
-
-
       {
         path: <span class="string">'dashboard'</span>,
-        component: Dashboard,
         data: {
           menu: {
             title: <span class="string">'Dashboard'</span>,
@@ -119,15 +131,28 @@ Typically all pages are children of the <code>/pages</code> route and defined un
           }
         }
       }
-      <span class="comment">// rest of the routes</span>
+    }
+  }
+]
+</code></pre>
+<p><br></p>
+<p>6) And in the end let’s import our component in <code>src/app/pages/pages.routing.ts</code> like&nbsp;this:</p>
+<pre><code class="lang-javascript"><span class="keyword">const</span> routes: Routes = [
+  {
+    path: <span class="string">'pages'</span>,
+    component: Pages,
+    children: [
+      { path: <span class="string">''</span>, redirectTo: <span class="string">'dashboard'</span>, pathMatch: <span class="string">'full'</span> },
+      { path: <span class="string">'dashboard'</span>, loadChildren: () =&gt; System.import(<span class="string">'./dashboard/dashboard.module'</span>) },
+      { path: <span class="string">'new'</span>,  loadChildren: () =&gt; System.import(<span class="string">'./new/new.module'</span>) }
     ]
   }
 ];
 </code></pre>
-<p><br><br></p>
+<p><br></p>
 <p>And that’s it! Now your page is available by the following this url <a href="http://localhost:3000/#/pages/new">http://localhost:3000/#/pages/new</a>.
-Plus, your page is automatically registered inside the sidebar menu. If you don’t want to have a link 
-in the menu - just remove the <code>menu</code> declaration under the <code>data</code> property.</p>
+Plus, your page is registered inside the sidebar menu. If you don’t want to have a link 
+in the menu - just remove the <code>menu</code> declaration from the <code>pages.menu.ts</code> file.</p>
 
         </div>
       </section>
