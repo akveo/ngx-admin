@@ -18,23 +18,6 @@ If you don't have any of these tools installed already, you will need to:
 * Download and install nodejs [https://nodejs.org](https://nodejs.org)
 
 **Note**: Make sure you have Node version >= 4.0 and NPM >= 3
-
-Once you have those, you should install these globals with `npm install --global`:
-* webpack
-```bash
-npm install --global webpack
-```
-
-* webpack-dev-server
-```bash
-npm install --global webpack-dev-server
-```
-
-* typescript
-```bash
-npm install --global typescript@2.0.0
-```
-
 ## Clone repository and install dependencies
 
 You will need to clone the source code of ng2-admin GitHub repository:
@@ -50,7 +33,6 @@ npm install
 ```
 This will setup a working copy of ng2-admin on your local machine.
 
-```
 ## Running local copy
 
 To run a local copy in development mode, execute:

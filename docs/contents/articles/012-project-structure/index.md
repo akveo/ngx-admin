@@ -12,24 +12,35 @@ The directory structure of this template is as follows:
 
 ```
 ng2-admin/
-   ├──config/                    * build configuration
+   ├──config/                    * webpack build configuration
+   │   ├──head-config.common.js  * configuration for head elements in index.html
+   │   │
    │   ├──helpers.js             * helper functions for our configuration files
+   │   │
    │   ├──webpack.dev.js         * development webpack config
+   │   │
    │   ├──webpack.prod.js        * production webpack config
-   │   └──webpack.test.js        * testing webpack config
+   │   │
+   │   ├──webpack.test.js        * testing webpack config
+   │   │
+   │   ├──electron/              * electron webpack config
+   │   │
+   │   └──html-elements-plugin/  * html elements plugin
    │
    ├──src/                       * source files that will be compiled to javascript
-   │   ├──main.browser.ts        * entry file for our browser environment
+   │   ├──custom-typings.d.ts    * custom typings for third-party modules
+   │   │
+   │   ├──desktop.ts             * electron window initialization
    │   │
    │   ├──index.html             * application layout
    │   │
-   │   ├──polyfills.ts           * polyfills file
+   │   ├──main.browser.ts        * entry file for our browser environment
    │   │
-   │   ├──vendor.ts              * vendors file
+   │   ├──package.json           * electrons package.json
    │   │
-   │   ├──custom-typings.d.ts    * custom typings for third-party modules
+   │   ├──polyfills.browser.ts   * polyfills file
    │   │
-   │   ├──platform/              * platform dependent imports
+   │   ├──vendor.browser.ts      * vendors file
    │   │
    │   ├──app/                   * application code - our working directory
    │   │   │
@@ -37,9 +48,15 @@ ng2-admin/
    │   │   │
    │   │   ├──app.loader.ts      * requires initial css styles (most important for application loading stage)
    │   │   │
-   │   │   ├──app.routes.ts      * application routes and menu configuration
+   │   │   ├──app.menu.ts        * menu pages routes
    │   │   │
-   │   │   ├──app.state.ts       * global application state for data exchange between components
+   │   │   ├──app.module.ts      * main application module
+   │   │   │
+   │   │   ├──app.routes.ts      * application routes
+   │   │   │  
+   │   │   ├──global.state.ts    * global application state for data exchange between components
+   │   │   │
+   │   │   ├──environment.ts     * environment provider
    │   │   │
    │   │   ├──app.scss           * application styles 
    │   │   │

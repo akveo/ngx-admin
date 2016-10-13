@@ -27,15 +27,17 @@ You can also use ng2-admin for the purpose of learning Angular 2.
 
 ## List of features
 
-* Responsive layout
-* High resolution
+* Angular 2
+* Webpack 2
 * Bootstrap 4 CSS Framework
 * SASS
-* Webpack
-* Angular 2
-* jQuery
-* Charts (amChart, Chartist, Chart.js, Morris)
-* Maps (Google, Leaflet, amMap)
+* [Smart Table](http://akveo.com/ng2-admin/#/pages/tables/smarttables)
+* [Forms](http://akveo.com/ng2-admin/#/pages/forms/inputs)
+* [Editors](http://akveo.com/ng2-admin/#/pages/editors/ckeditor)
+* [Charts (amChart, Chartist, Chart.js, Morris)](http://akveo.com/ng2-admin/#/pages/charts/chartist-js)
+* [Maps (Google, Leaflet, amMap)](http://akveo.com/ng2-admin/#/pages/maps/googlemaps)
+* Responsive layout
+* High resolution
 * and many more!
 
 ## I want to start developing with ng2-admin
