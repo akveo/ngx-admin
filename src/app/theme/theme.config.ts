@@ -5,7 +5,7 @@ import { colorHelper } from './theme.constants';
 @Injectable()
 export class BaThemeConfig {
 
-  constructor(private _baConfig:BaThemeConfigProvider) {
+  constructor(private _baConfig: BaThemeConfigProvider) {
     this._config();
   }
 

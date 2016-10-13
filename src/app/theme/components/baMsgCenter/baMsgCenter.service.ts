@@ -79,11 +79,11 @@ export class BaMsgCenterService {
     }
   ];
 
-  public getMessages():Array<Object> {
+  public getMessages(): Array<Object> {
     return this._messages;
   }
 
-  public getNotifications():Array<Object> {
+  public getNotifications(): Array<Object> {
     return this._notifications;
   }
 }

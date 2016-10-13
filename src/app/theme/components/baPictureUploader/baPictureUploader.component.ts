@@ -9,23 +9,23 @@ import { Ng2Uploader } from 'ng2-uploader/ng2-uploader';
 })
 export class BaPictureUploader {
 
-  @Input() defaultPicture:string = '';
-  @Input() picture:string = '';
+  @Input() defaultPicture: string = '';
+  @Input() picture: string = '';
 
-  @Input() uploaderOptions:any = {};
-  @Input() canDelete:boolean = true;
+  @Input() uploaderOptions: any = {};
+  @Input() canDelete: boolean = true;
 
-  onUpload:EventEmitter<any> = new EventEmitter();
-  onUploadCompleted:EventEmitter<any> = new EventEmitter();
+  onUpload: EventEmitter<any> = new EventEmitter();
+  onUploadCompleted: EventEmitter<any> = new EventEmitter();
 
-  @ViewChild('fileUpload') protected _fileUpload:ElementRef;
+  @ViewChild('fileUpload') protected _fileUpload: ElementRef;
 
-  public uploadInProgress:boolean = false;
+  public uploadInProgress: boolean = false;
 
-  constructor(private renderer:Renderer, protected _uploader:Ng2Uploader) {
+  constructor(private renderer: Renderer, protected _uploader: Ng2Uploader) {
   }
 
-  public ngOnInit():void {
+  public ngOnInit(): void {
     if (this._canUploadOnServer()) {
       setTimeout(() => {
         this._uploader.setOptions(this.uploaderOptions);
@@ -39,7 +39,7 @@ export class BaPictureUploader {
     }
   }
 
-  public onFiles():void {
+  public onFiles(): void {
     let files = this._fileUpload.nativeElement.files;
 
     if (files.length) {
@@ -53,25 +53,25 @@ export class BaPictureUploader {
     }
   }
 
-  public bringFileSelector():boolean {
+  public bringFileSelector(): boolean {
     this.renderer.invokeElementMethod(this._fileUpload.nativeElement, 'click');
     return false;
   }
 
-  public removePicture():boolean {
+  public removePicture(): boolean {
     this.picture = '';
     return false;
   }
 
-  protected _changePicture(file:File):void {
+  protected _changePicture(file: File): void {
     const reader = new FileReader();
-    reader.addEventListener('load', (event:Event) => {
+    reader.addEventListener('load', (event: Event) => {
       this.picture = (<any> event.target).result;
     }, false);
     reader.readAsDataURL(file);
   }
 
-  protected _onUpload(data):void {
+  protected _onUpload(data): void {
     if (data['done'] || data['abort'] || data['error']) {
       this._onUploadCompleted(data);
     } else {
@@ -79,12 +79,12 @@ export class BaPictureUploader {
     }
   }
 
-  protected _onUploadCompleted(data):void {
+  protected _onUploadCompleted(data): void {
     this.uploadInProgress = false;
     this.onUploadCompleted.emit(data);
   }
 
-  protected _canUploadOnServer():boolean {
+  protected _canUploadOnServer(): boolean {
     return !!this.uploaderOptions['url'];
   }
 }

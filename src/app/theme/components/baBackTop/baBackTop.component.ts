@@ -20,7 +20,7 @@ export class BaBackTop {
   }
 
   @HostListener('click')
-  _onClick():boolean {
+  _onClick(): boolean {
     jQuery('html, body').animate({scrollTop: 0}, {duration: this.moveSpeed});
     return false;
   }

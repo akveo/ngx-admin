@@ -5,7 +5,7 @@ import { BgMetrics } from './bgMetrics';
 
 @Injectable()
 export class BaCardBlurHelper {
-  private image:HTMLImageElement;
+  private image: HTMLImageElement;
   private imageLoadSubject: Subject<void>;
 
 
