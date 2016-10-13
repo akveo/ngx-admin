@@ -19,7 +19,7 @@ export class Feed {
     this._loadFeed();
   }
 
-  expandMessage (message){
+  expandMessage (message) {
     message.expanded = !message.expanded;
   }
 

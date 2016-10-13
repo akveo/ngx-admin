@@ -170,7 +170,7 @@ export class ChartistJsService {
     }
   };
 
-  constructor(private _baConfig:BaThemeConfigProvider) {
+  constructor(private _baConfig: BaThemeConfigProvider) {
   }
 
   public getAll() {
