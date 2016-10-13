@@ -16,7 +16,7 @@ export class Todo {
   public todoList: Array<any>;
   public newTodoText: string = '';
 
-  constructor(private _baConfig: BaThemeConfigProvider, private _todoService:TodoService) {
+  constructor(private _baConfig: BaThemeConfigProvider, private _todoService: TodoService) {
     this.todoList = this._todoService.getTodoList();
 
     this.todoList.forEach((item) => {
