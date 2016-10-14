@@ -13,7 +13,7 @@ import { routing } from './app.routing';
 
 // App is our top level component
 import { App } from './app.component';
-import { AppState, InteralStateType } from './app.service';
+import { AppState, InternalStateType } from './app.service';
 import { GlobalState } from './global.state';
 import { NgaModule } from './theme/nga.module';
 import { PagesModule } from './pages/pages.module';
@@ -25,7 +25,7 @@ const APP_PROVIDERS = [
 ];
 
 type StoreType = {
-  state: InteralStateType,
+  state: InternalStateType,
   restoreInputValues: () => void,
   disposeOldHosts: () => void
 };
