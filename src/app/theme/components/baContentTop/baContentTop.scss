@@ -30,6 +30,10 @@ h1.al-title {
     a {
       color: $primary-light;
     }
+
+    &.breadcrumb-item.active {
+      color: $default;
+    }
   }
 }
 
