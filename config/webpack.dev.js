@@ -148,7 +148,9 @@ module.exports = function(options) {
     devServer: {
       port: METADATA.port,
       host: METADATA.host,
-      historyApiFallback: true,
+      historyApiFallback: {
+        index: '/index.html'
+      },
       watchOptions: {
         aggregateTimeout: 300,
         poll: 1000
@@ -172,4 +174,4 @@ module.exports = function(options) {
     }
 
   });
-}
+};

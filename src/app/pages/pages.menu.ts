@@ -245,20 +245,18 @@ export const PAGES_MENU = [
         },
         children: [
           {
-            path: '',
+            path: ['/login'],
             data: {
               menu: {
-                title: 'Login',
-                url: '#/login'
+                title: 'Login'
               }
             }
           },
           {
-            path: '',
+            path: ['/register'],
             data: {
               menu: {
-                title: 'Register',
-                url: '#/register'
+                title: 'Register'
               }
             }
           }
