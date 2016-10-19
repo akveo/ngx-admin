@@ -99,6 +99,7 @@ If it does not fit your needs please create a GitHub issue and tell us why. We w
     NewComponent
   ]
 })
+<span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">NewModule</span> </span>{}
 </code></pre>
 <p><br></p>
 <p>5) The penultimate thing we need to do is to declare a route in <code>src/app/pages/pages.menu.ts</code>.
@@ -113,6 +114,7 @@ Typically all pages are children of the <code>/pages</code> route and defined un
           menu: {
             title: <span class="string">'New Page'</span>, <span class="comment">// menu title</span>
             icon: <span class="string">'ion-android-home'</span>, <span class="comment">// menu icon</span>
+            pathMatch: <span class="string">'prefix'</span>, <span class="comment">// use it if item children not displayed in menu</span>
             selected: <span class="literal">false</span>,
             expanded: <span class="literal">false</span>,
             order: <span class="number">0</span>
@@ -135,7 +137,10 @@ Typically all pages are children of the <code>/pages</code> route and defined un
   }
 ]
 </code></pre>
-<p><br></p>
+<p>If you’d like to highlight menu item when current <span class="caps">URL</span> path partially match the menu item
+path - use pathMatch: ‘prefix’. In this case if the menu item has no children in the menu and 
+you navigated to some child route - the item will be highlighted.
+<br><br></p>
 <p>6) And in the end let’s import our component in <code>src/app/pages/pages.routing.ts</code> like&nbsp;this:</p>
 <pre><code class="lang-javascript"><span class="keyword">const</span> routes: Routes = [
   {
