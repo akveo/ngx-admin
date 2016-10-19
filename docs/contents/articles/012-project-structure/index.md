@@ -6,30 +6,41 @@ group: Customization
 template: article.jade
 ---
 
-Project structure is originally based on [Angular2 Webpack Starter](https://github.com/AngularClass/angular2-webpack-starter#file-structure). We made some changes we thought would be better in our particular case.
+The project structure is originally based on [Angular2 Webpack Starter](https://github.com/AngularClass/angular2-webpack-starter#file-structure). We made some changes we thought would be better in our particular case.
 
 The directory structure of this template is as follows:
 
 ```
 ng2-admin/
-   ├──config/                    * build configuration
+   ├──config/                    * webpack build configuration
+   │   ├──head-config.common.js  * configuration for head elements in index.html
+   │   │
    │   ├──helpers.js             * helper functions for our configuration files
+   │   │
    │   ├──webpack.dev.js         * development webpack config
+   │   │
    │   ├──webpack.prod.js        * production webpack config
-   │   └──webpack.test.js        * testing webpack config
+   │   │
+   │   ├──webpack.test.js        * testing webpack config
+   │   │
+   │   ├──electron/              * electron webpack config
+   │   │
+   │   └──html-elements-plugin/  * html elements plugin
    │
    ├──src/                       * source files that will be compiled to javascript
-   │   ├──main.browser.ts        * entry file for our browser environment
+   │   ├──custom-typings.d.ts    * custom typings for third-party modules
+   │   │
+   │   ├──desktop.ts             * electron window initialization
    │   │
    │   ├──index.html             * application layout
    │   │
-   │   ├──polyfills.ts           * polyfills file
+   │   ├──main.browser.ts        * entry file for our browser environment
    │   │
-   │   ├──vendor.ts              * vendors file
+   │   ├──package.json           * electrons package.json
    │   │
-   │   ├──custom-typings.d.ts    * custom typings for third-party modules
+   │   ├──polyfills.browser.ts   * polyfills file
    │   │
-   │   ├──platform/              * platform dependent imports
+   │   ├──vendor.browser.ts      * vendors file
    │   │
    │   ├──app/                   * application code - our working directory
    │   │   │
@@ -37,9 +48,15 @@ ng2-admin/
    │   │   │
    │   │   ├──app.loader.ts      * requires initial css styles (most important for application loading stage)
    │   │   │
-   │   │   ├──app.routes.ts      * application routes and menu configuration
+   │   │   ├──app.menu.ts        * menu pages routes
    │   │   │
-   │   │   ├──app.state.ts       * global application state for data exchange between components
+   │   │   ├──app.module.ts      * main application module
+   │   │   │
+   │   │   ├──app.routes.ts      * application routes
+   │   │   │  
+   │   │   ├──global.state.ts    * global application state for data exchange between components
+   │   │   │
+   │   │   ├──environment.ts     * environment provider
    │   │   │
    │   │   ├──app.scss           * application styles 
    │   │   │
@@ -53,9 +70,8 @@ ng2-admin/
    ├──tslint.json                * typescript lint config
    ├──typedoc.json               * typescript documentation generator
    ├──tsconfig.json              * config that webpack uses for typescript
-   ├──typings.json               * our typings manager
-   ├──package.json               * what npm uses to manage it's dependencies
-   ├──bower.json                 * DEPRECATED - moving to npm as primary package manager for all dependenties
-   └──.bowerrc                   * DEPRECARD - temporary bower configuration
+   └──package.json               * what npm uses to manage it's dependencies
 ```
-In our template we tried to separate theme layer and presentation layer. We believe most of other templates have them combined. That's why when you start developing using them, it gets very hard for you to remove things you don't need.
+In our template we tried to separate the theme layer and presentation layer. We believe most of other templates 
+have them combined. That's why when you start developing using them, it gets very hard for you to remove things you 
+don't need.

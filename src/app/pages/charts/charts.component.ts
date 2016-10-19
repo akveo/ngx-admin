@@ -1,11 +1,7 @@
-import {Component} from "@angular/core";
-
-// import {ChartJs} from "./components/chartJs";
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'maps',
-  pipes: [],
-  providers: [],
   styles: [],
   template: `<router-outlet></router-outlet>`
 })

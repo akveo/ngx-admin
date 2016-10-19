@@ -1,10 +1,8 @@
 import {Component} from '@angular/core';
-import {BaMultiCheckbox, BaCheckbox} from '../../../../../../theme/components';
 
 @Component({
   selector: 'checkbox-inputs',
   template: require('./checkboxInputs.html'),
-  directives: [BaMultiCheckbox, BaCheckbox]
 })
 export class CheckboxInputs {
   public checkboxModel = [{

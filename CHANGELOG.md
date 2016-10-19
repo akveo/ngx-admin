@@ -1,3 +1,142 @@
+<a name="0.7.0"></a>
+# 0.7.0 (2016-09-19)
+
+### Note
+Tree package does not support angular 2.0 currently so it was hidden from the menu.
+
+### Features
+
+* Angular 2.0
+* Dependencies updated
+
+### Bug Fixes
+
+
+### How to update
+
+* Pull sources from git, merge accordingly
+* remove `node_modules`
+* run `npm install`
+* Remove all directives & pipes from components and move them to the ngModule declarations
+* Enjoy!
+
+
+<a name="0.6.0"></a>
+# 0.6.0 (2016-09-19)
+
+### Note
+Tree package does not support RC6 currently so it was hidden from the menu.
+
+### Features
+
+* Angular rc.6
+* Dependencies updated
+
+### Bug Fixes
+
+
+### How to update
+
+* Pull sources from git, merge accordingly
+* remove `node_modules`
+* run `npm install`
+* Remove all directives & pipes from components and move them to the ngModule declarations
+* Enjoy!
+
+
+<a name="0.5.0"></a>
+# 0.5.0 (2016-08-30)
+
+### Note
+Not all packages used in ng2-admin support RC5 at the moment, so we suggest waiting until ng2-admin@0.5.1 version for a complete support of RC5.
+
+### Features
+
+* Angular rc.5 (ngModule)
+* Webpack 2
+* Dependencies updated
+
+### Bug Fixes
+
+### Breaking changes
+
+Things to consider:
+
+* We introduced NgaModule - wrapper for all ng2-admin features. At the moment it includes everything (directives, services, configs, etc). But, the important thing is that we are planning to refactor it and divide into smaller modules, so that if you don't need a whole list of features somewhere in your code - you can simply import a smaller part. [Here are some more details](https://github.com/akveo/ng2-admin/issues/179).
+* Each page section now is a module (Feature Module as per angular documents) wrapped in pages.module.
+* Routes configuration (again :( ) moved from one complete file to modules (page sections) configurations. Thus we just left menu configuration as it was before (in one file), just renamed it into app.menu.ts.
+* We are planning to continue code refactoring and planning to change component names to follow angular recommendations. Thus we strongly recommend to not import Ba* directives directly and use NgaModule which will encapsulate the changes we are going to make. [Here are some more details](https://github.com/akveo/ng2-admin/issues/179).
+
+
+### How to update
+
+* Read Angluar RC4 -> RC5 [migration guide](https://angular.io/docs/ts/latest/cookbook/rc4-to-rc5.html)
+* Pull sources from git, merge accordingly
+* remove `node_modules`
+* run `npm install`
+* Wrap all your pages into modules, register them in the PagesModule
+* Create separate routing files per module
+* Remove all direct imports of Ba* components, directives, pipes, etc, instead change your modules the way to import NgaModule
+* Enjoy!
+
+<a name="0.4.4"></a>
+# 0.4.4 (2016-08-29)
+
+### Features
+
+* Missed new component [ng2-smart-table](https://akveo.github.io/ng2-smart-table/) - [demo](http://akveo.com/ng2-admin/#/pages/tables/smarttables)
+
+### How to update
+
+* Pull sources from git
+* run `npm install`
+
+<a name="0.4.3"></a>
+# 0.4.3 (2016-08-23)
+
+### Bug Fixes
+
+* Fix leaflet maps styles
+* Fix license
+* Remove tracing of typings (thanks to @GRoguelon)
+* Update baContentTop to work with routerLink (thanks to @Kaizeras)
+* Fix Chartist to handle data update dynamically (thanks to @bnayalivne)
+
+### Features
+
+* Finally get rid of bower (thanks to @GRoguelon)
+* New component [ng2-smart-table](https://akveo.github.io/ng2-smart-table/) - [demo](http://akveo.com/ng2-admin/#/pages/tables/smarttables)
+
+
+### How to update
+
+* Pull sources from git
+* run `npm install`
+
+<a name="0.4.2"></a>
+# 0.4.2 (2016-07-28)
+
+### Bug Fixes
+
+* Fix menu and router configuration
+* Fix broken dependencies
+
+### Features
+
+* Dependencies updated
+* Use @types instead of typings
+
+### BREAKING CHANGES
+
+* Typings were removed, now we use @types instead, more details [here](https://github.com/AngularClass/angular2-webpack-starter#types)
+
+### How to update
+
+* Remove node_modules folder
+* Remove typings folder and move all custom typings to package.json
+* run `npm install`
+
+
 <a name="0.4.0"></a>
 # 0.4.0 (2016-07-12)
 

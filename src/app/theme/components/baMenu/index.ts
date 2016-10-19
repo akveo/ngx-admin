@@ -1,1 +1,1 @@
-export * from './baMenu.component.ts';
+export * from './baMenu.component';

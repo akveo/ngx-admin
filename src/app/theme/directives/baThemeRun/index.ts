@@ -1,1 +1,1 @@
-export * from './baThemeRun.directive.ts';
+export * from './baThemeRun.directive';

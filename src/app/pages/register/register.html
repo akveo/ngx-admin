@@ -1,7 +1,7 @@
 <div class="auth-main">
   <div class="auth-block">
     <h1>Sign up to ng2-admin</h1>
-    <a [routerLink]="['/login']" class="auth-link">Already have an ng2-admin account? Sign in!</a>
+    <a routerLink="/login" class="auth-link">Already have an ng2-admin account? Sign in!</a>
 
     <form [formGroup]="form" (ngSubmit)="onSubmit(form.value)" class="form-horizontal">
       <div class="form-group row" [ngClass]="{'has-error': (!name.valid && name.touched), 'has-success': (name.valid && name.touched)}">

@@ -6,7 +6,6 @@ import {TrafficChartService} from './trafficChart.service';
 @Component({
   selector: 'traffic-chart',
   encapsulation: ViewEncapsulation.None,
-  providers: [TrafficChartService],
   styles: [require('./trafficChart.scss')],
   template: require('./trafficChart.html')
 })

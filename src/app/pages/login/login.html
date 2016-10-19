@@ -1,7 +1,7 @@
 <div class="auth-main">
   <div class="auth-block">
     <h1>Sign in to ng2-admin</h1>
-    <a [routerLink]="['/register']" class="auth-link">New to ng2-admin? Sign up!</a>
+    <a routerLink="/register" class="auth-link">New to ng2-admin? Sign up!</a>
 
     <form [formGroup]="form" (ngSubmit)="onSubmit(form.value)" class="form-horizontal">
       <div class="form-group row" [ngClass]="{'has-error': (!email.valid && email.touched), 'has-success': (email.valid && email.touched)}">
@@ -21,7 +21,7 @@
       <div class="form-group row">
         <div class="col-sm-offset-2 col-sm-10">
           <button [disabled]="!form.valid" type="submit" class="btn btn-default btn-auth">Sign in</button>
-          <a [routerLink]="['Login']" class="forgot-pass">Forgot password?</a>
+          <a routerLink="/login" class="forgot-pass">Forgot password?</a>
         </div>
       </div>
     </form>

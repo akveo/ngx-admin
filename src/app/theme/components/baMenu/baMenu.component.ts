@@ -1,29 +1,25 @@
 import {Component, ViewEncapsulation, Input, Output, EventEmitter} from '@angular/core';
-import {Router, RouterConfig, NavigationEnd} from '@angular/router';
+import {Router, Routes, NavigationEnd} from '@angular/router';
 import {Subscription} from 'rxjs/Rx';
 
-import {BaSlimScroll} from '../../../theme/directives';
 import {BaMenuService} from './baMenu.service';
-import {BaMenuItem} from './components/baMenuItem';
-import {AppState} from '../../../app.state';
+import {GlobalState} from '../../../global.state';
 
 @Component({
   selector: 'ba-menu',
   encapsulation: ViewEncapsulation.None,
   styles: [require('./baMenu.scss')],
   template: require('./baMenu.html'),
-  providers: [BaMenuService],
-  directives: [BaMenuItem, BaSlimScroll]
+  providers: [BaMenuService]
 })
 export class BaMenu {
 
-  @Input() appRoutes:RouterConfig = [];
+  @Input() menuRoutes:Routes = [];
   @Input() sidebarCollapsed:boolean = false;
   @Input() menuHeight:number;
 
   @Output() expandMenu = new EventEmitter<any>();
 
-  public routerItems:any[];
   public menuItems:any[];
   public showHoverElem:boolean;
   public hoverElemHeight:number;
@@ -31,32 +27,29 @@ export class BaMenu {
   protected _onRouteChange:Subscription;
   public outOfArea:number = -200;
 
-  constructor(private _router:Router, private _service:BaMenuService, private _state:AppState) {
-
+  constructor(private _router:Router, private _service:BaMenuService, private _state:GlobalState) {
     this._onRouteChange = this._router.events.subscribe((event) => {
 
       if (event instanceof NavigationEnd) {
         if (this.menuItems) {
-          this.selectActiveRouteAndNotify();
+          this.selectMenuAndNotify();
         } else {
           // on page load we have to wait as event is fired before menu elements are prepared
-          setTimeout(() => this.selectActiveRouteAndNotify());
+          setTimeout(() => this.selectMenuAndNotify());
         }
       }
     });
   }
 
-  public selectActiveRouteAndNotify():void {
-    if (this.routerItems) {
+  public selectMenuAndNotify():void {
+    if (this.menuItems) {
       this.menuItems = this._service.selectMenuItem(this.menuItems);
-      this.routerItems = this._service.selectActivePage(this.routerItems);
       this._state.notifyDataChanged('menu.activeLink', this._service.getCurrentItem());
     }
   }
 
   public ngOnInit():void {
-    this.routerItems = this._service.convertAppRoutes(this.appRoutes);
-    this.menuItems = this._service.convertRoutesToMenus(this.routerItems);
+    this.menuItems = this._service.convertRoutesToMenus(this.menuRoutes);
   }
 
   public ngOnDestroy():void {
