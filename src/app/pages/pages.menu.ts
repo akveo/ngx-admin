@@ -117,6 +117,14 @@ export const PAGES_MENU = [
             }
           },
           {
+            path: 'modals',
+            data: {
+              menu: {
+                title: 'Modals',
+              }
+            }
+          },
+          {
             path: 'grid',
             data: {
               menu: {

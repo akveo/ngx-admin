@@ -1,0 +1,96 @@
+<div class="widgets">
+  <div class="row">
+    <div class="col-md-12">
+      <ba-card title="Modals" class="modal-buttons">
+        <button class="btn btn-success" (click)="lgModal.show()">Large modal</button>
+        <button class="btn btn-warning" (click)="smModal.show()">Small modal</button>
+        <button class="btn btn-primary" (click)="staticModal.show()">Static modal</button>
+        <button class="btn btn-danger" (click)="showChildModal()">Open child modal</button>
+      </ba-card>
+    </div>
+  </div>
+  <div class="row">
+
+  </div>
+</div>
+
+<!-- Large modal -->
+<div bsModal #lgModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button class="close" (click)="lgModal.hide()" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title">Large modal</h4>
+      </div>
+      <div class="modal-body">
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary confirm-btn" (click)="lgModal.hide()">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Small modal -->
+<div bsModal #smModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button class="close" aria-label="Close" (click)="smModal.hide()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title">Small modal</h4>
+      </div>
+      <div class="modal-body">
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary confirm-btn" (click)="smModal.hide()">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Static modal -->
+<div class="modal fade" bsModal #staticModal="bs-modal" [config]="{backdrop: 'static'}" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button class="close" aria-label="Close" (click)="staticModal.hide()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title">Static modal</h4>
+      </div>
+      <div class="modal-body">
+        This is static modal, backdrop click will not close it.
+        Click <b>&times;</b> or confirmation button to close modal.
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary confirm-btn" (click)="staticModal.hide()">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- control modal from parent component -->
+<div bsModal #childModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button class="close" aria-label="Close" (click)="hideChildModal()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title">Child modal</h4>
+      </div>
+      <div class="modal-body">
+        I am a child modal, opened from parent component!
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary confirm-btn" (click)="hideChildModal()">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
