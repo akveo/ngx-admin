@@ -69,6 +69,7 @@ import { routing } from './new.routing';
     NewComponent
   ]
 })
+export default class NewModule {}
 ```
 <br>
 
