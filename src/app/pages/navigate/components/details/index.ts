@@ -1,1 +1,0 @@
-export * from './details.component';
