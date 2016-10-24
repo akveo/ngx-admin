@@ -4,6 +4,7 @@ import {Subscription} from 'rxjs/Rx';
 
 import {BaMenuService} from './baMenu.service';
 import {GlobalState} from '../../../global.state';
+import {layoutSizes} from "../../theme.constants";
 
 @Component({
   selector: 'ba-menu',
