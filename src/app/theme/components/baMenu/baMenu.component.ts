@@ -41,7 +41,7 @@ export class BaMenu {
     });
   }
 
-   public selectMenuAndNotify():void {
+  public selectMenuAndNotify():void {
     if (this.menuItems) {
       this.menuItems = this._service.selectMenuItem(this.menuItems);
       if(this._onSmallScreen()) {
