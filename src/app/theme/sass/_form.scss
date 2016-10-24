@@ -48,6 +48,7 @@
   box-shadow: none;
   font-size: 14px;
   &:focus {
+    color: $content-text;
     box-shadow: none;
     border-color: $primary-bg;
     background: $input-background;
