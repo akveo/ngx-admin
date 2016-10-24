@@ -12,6 +12,7 @@ const IgnorePlugin = require('webpack/lib/IgnorePlugin');
 const DedupePlugin = require('webpack/lib/optimize/DedupePlugin');
 const UglifyJsPlugin = require('webpack/lib/optimize/UglifyJsPlugin');
 const WebpackMd5Hash = require('webpack-md5-hash');
+const CompressionPlugin = require("compression-webpack-plugin");
 
 /**
  * Webpack Constants
@@ -195,6 +196,14 @@ module.exports = function(env) {
       //   regExp: /\.css$|\.html$|\.js$|\.map$/,
       //   threshold: 2 * 1024
       // })
+
+      new CompressionPlugin({
+       asset: "[path].gz[query]",
+       algorithm: "gzip",
+       test: /\.js$|\.css$|\.html$/,
+       threshold: 10240,
+       minRatio: 0.8
+     })
 
     ],
 
