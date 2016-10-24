@@ -41,11 +41,18 @@ export class BaMenu {
     });
   }
 
-  public selectMenuAndNotify():void {
+   public selectMenuAndNotify():void {
     if (this.menuItems) {
       this.menuItems = this._service.selectMenuItem(this.menuItems);
+      if(this._onSmallScreen()) {
+        this._state.notifyDataChanged('menu.isCollapsed', true);
+      }
       this._state.notifyDataChanged('menu.activeLink', this._service.getCurrentItem());
     }
+  }
+
+  private _onSmallScreen():boolean {
+    return window.innerWidth <= layoutSizes.resWidthCollapseSidebar;
   }
 
   public ngOnInit():void {
