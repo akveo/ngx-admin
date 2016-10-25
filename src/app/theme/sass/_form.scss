@@ -349,6 +349,10 @@ label.custom-input-danger {
   }
 }
 
+.input-group-addon {
+  line-height: inherit;
+}
+
 .form-control-feedback {
   position: absolute;
   top: 0;
@@ -367,7 +371,7 @@ label.custom-input-danger {
     padding-right: 42.5px;
   }
   label ~ .form-control-feedback {
-    top: 21px;
+    top: 19px;
     font-size: 18px;
   }
 }
@@ -393,6 +397,7 @@ label.custom-input-danger {
 
 .help-block {
   color: $help-text;
+  vertical-align: sub;
 }
 
 .help-block.error-block {
@@ -560,6 +565,19 @@ label.custom-input-danger {
 .input-group > span.addon-right {
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
+}
+
+.input-group-btn {
+
+  &:not(:first-child) {
+    > .btn, > .btn-group {
+      margin-left: 0;
+    }
+  }
+
+  > .btn {
+    line-height: 1.56;
+  }
 }
 
 .with-primary-addon:focus {
