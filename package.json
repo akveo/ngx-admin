@@ -21,6 +21,7 @@
     "@angularclass/hmr": "~1.2.0",
     "@angularclass/hmr-loader": "~3.0.2",
 
+
     "amcharts3": "github:amcharts/amcharts3",
     "ammap3": "github:amcharts/ammap3",
     "animate.css": "^3.5.1",
@@ -54,6 +55,7 @@
     "normalize.css": "^4.1.1",
     "postcss-loader": "^1.0.0",
     "rxjs": "5.0.0-beta.12",
+    "rxjs-es": "^5.0.0-beta.12",
     "tether": "^1.2.4",
     "zone.js": "~0.6.23"
   },

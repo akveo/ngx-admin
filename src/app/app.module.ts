@@ -14,6 +14,10 @@ import { routing } from './app.routing';
 // App is our top level component
 import { App } from './app.component';
 import { AppState, InternalStateType } from './app.service';
+import { ApiService } from './services/api.service';
+import { ProfileService } from './services/profile.service';
+import { LoginService } from './login.service';
+import { AuthGuard } from './guards/loggedin.guard';
 import { GlobalState } from './global.state';
 import { NgaModule } from './theme/nga.module';
 import { PagesModule } from './pages/pages.module';
@@ -21,7 +25,11 @@ import { PagesModule } from './pages/pages.module';
 // Application wide providers
 const APP_PROVIDERS = [
   AppState,
-  GlobalState
+  GlobalState,
+  ApiService,
+  ProfileService,
+  LoginService,
+  AuthGuard
 ];
 
 type StoreType = {
