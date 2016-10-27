@@ -23,3 +23,6 @@ install:
 
 script:
   - npm run build:prod
+
+notifications:
+  slack: akveo:q559HckfZMSyZRb803aiLcjH
