@@ -77,6 +77,14 @@ export const PAGES_MENU = [
                 title: 'Chartist.Js',
               }
             }
+          },
+          {
+            path: 'morris',
+            data: {
+              menu: {
+                title: 'morris.js',
+              }
+            }
           }
         ]
       },
