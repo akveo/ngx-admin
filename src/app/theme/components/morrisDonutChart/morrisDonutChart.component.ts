@@ -14,8 +14,8 @@ export class MorrisDonutChart implements OnChanges{
   ngOnChanges(changes: SimpleChanges): void {
     var self = this;
     if(this.donutData === null || this.donutData === undefined) return;
-    window['morrisObj'] =
-      new window['Morris'].Donut({
+
+      new Morris.Donut({
         element: 'morris-donut-chart',
         data: this.donutData.data,
         colors : this.donutData.colors,

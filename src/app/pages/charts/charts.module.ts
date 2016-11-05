@@ -7,8 +7,8 @@ import { routing }       from './charts.routing';
 import { Charts } from './charts.component';
 import { ChartistJs } from './components/chartistJs/chartistJs.component';
 import { ChartistJsService } from './components/chartistJs/chartistJs.service';
-import {MorrisComponent} from "./components/morrisJs/morris.componenet";
-import {MorrisService} from "./components/morrisJs/morris.service";
+import { MorrisComponent } from './components/morrisJs/morris.componenet';
+import { MorrisService } from './components/morrisJs/morris.service';
 
 
 @NgModule({

@@ -1,4 +1,5 @@
-import {Component, Input, OnChanges, SimpleChanges, ViewEncapsulation} from '@angular/core';
+import {Component, OnChanges, SimpleChanges, ViewEncapsulation, Input} from '@angular/core';
+import './morrisAreaChart.loader';
 
 @Component({
   moduleId: module.id,
@@ -13,8 +14,7 @@ import {Component, Input, OnChanges, SimpleChanges, ViewEncapsulation} from '@an
 export class MorrisAreaChart implements OnChanges{
   ngOnChanges(changes: SimpleChanges): void {
     if(this.areaData === null || this.areaData === undefined) return;
-    window['morrisObj']  =
-      new window['Morris'].Area({
+      new Morris.Area({
         element: 'morris-area-chart',
         data: this.areaData.data,
         xkey: this.areaData.xkey,

@@ -1,10 +1,10 @@
 import {Component, OnInit} from '@angular/core';
 
-import {LineChartData} from "../../../../theme/components/morrisLineChart/morrisLineChart.component";
-import {DonutChartData} from "../../../../theme/components/morrisDonutChart/morrisDonutChart.component";
-import {BarChartData} from "../../../../theme/components/morrisBarChart/morrisBarChart.component";
-import {AreaChartData} from "../../../../theme/components/morrisAreaChart/morrisAreaChart.component";
-import {MorrisService} from "./morris.service";
+import { LineChartData } from '../../../../theme/components/morrisLineChart/morrisLineChart.component';
+import { DonutChartData } from '../../../../theme/components/morrisDonutChart/morrisDonutChart.component';
+import { BarChartData } from '../../../../theme/components/morrisBarChart/morrisBarChart.component';
+import { AreaChartData } from '../../../../theme/components/morrisAreaChart/morrisAreaChart.component';
+import { MorrisService } from './morris.service';
 @Component({
   moduleId: module.id,
   selector: 'morris',

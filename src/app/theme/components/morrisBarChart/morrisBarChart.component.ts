@@ -13,8 +13,8 @@ import {Component, Input, OnChanges, SimpleChanges, ViewEncapsulation} from '@an
 export class MorrisBarChart implements OnChanges{
   ngOnChanges(changes: SimpleChanges): void {
     if(this.barChartData === null || this.barChartData === undefined) return;
-    window['morrisObj'] =
-      new window['Morris'].Bar({
+
+      new Morris.Bar({
         element: 'morris-bar-chart',
         data: this.barChartData.data,
         xkey: this.barChartData.xkey,

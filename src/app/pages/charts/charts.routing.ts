@@ -2,7 +2,7 @@ import { Routes, RouterModule }  from '@angular/router';
 
 import { Charts } from './charts.component';
 import { ChartistJs } from './components/chartistJs/chartistJs.component';
-import {MorrisComponent} from "./components/morrisJs/morris.componenet";
+import { MorrisComponent } from './components/morrisJs/morris.componenet';
 
 // noinspection TypeScriptValidateTypes
 const routes: Routes = [

@@ -1,4 +1,5 @@
 import {Component, Input, OnChanges, SimpleChanges, ViewEncapsulation} from '@angular/core';
+
 @Component({
   moduleId: module.id,
   encapsulation: ViewEncapsulation.None,
@@ -12,8 +13,7 @@ import {Component, Input, OnChanges, SimpleChanges, ViewEncapsulation} from '@an
 export class MorrisLineChart implements OnChanges{
   ngOnChanges(changes: SimpleChanges): void {
     if(this.lineData === null || this.lineData === undefined) return;
-    window['morrisObj'] =
-      new window['Morris'].Line({
+      new Morris.Line({
         element: 'morris-line-chart',
         data: this.lineData.data,
         xkey: this.lineData.xkey,
