@@ -9,6 +9,7 @@ import {
     ElementRef
 } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
+import { Subscription } from 'rxjs/Subscription';
 import 'rxjs/add/observable/fromEvent';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/distinctUntilChanged';
@@ -28,6 +29,7 @@ export class BaD3Chart{
     @Input()  baD3ChartData:any;
     @Output() onChartReady = new EventEmitter<any>();
     @ViewChild('baD3Chart') private _selector:ElementRef;
+    resizeCheck:Subscription;
 
     constructor(private _chartService:BaD3ChartService){
     }
@@ -46,7 +48,7 @@ export class BaD3Chart{
         this._chartService.drawChart();
         
         // re-draw charts on window resize
-        Observable.fromEvent(window, 'resize')
+        this.resizeCheck = Observable.fromEvent(window, 'resize')
             .map((res:any) => res.target.innerWidth)
             .distinctUntilChanged()
             .subscribe(res => {
@@ -57,6 +59,7 @@ export class BaD3Chart{
 
     ngOnDestroy():void {
         this._chartService.removeChart();
+        this.resizeCheck.unsubscribe();
     }
 
 
