@@ -1,0 +1,1 @@
+export * from './baD3Chart.component';
