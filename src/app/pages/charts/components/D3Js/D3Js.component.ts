@@ -3,7 +3,7 @@ import {
     OnInit
 } from '@angular/core';
 
-import { D3JsService } from './D3Js.service';
+import {D3JsService} from './D3Js.service';
 
 @Component({
     selector: 'd3-js',
@@ -11,14 +11,14 @@ import { D3JsService } from './D3Js.service';
     styles: [require('./D3Js.scss')],
     providers: []
 })
-
-export class D3Js implements OnInit{
+export class D3Js implements OnInit {
+    
     data:any;
 
-    constructor( private _d3JsService:D3JsService){
+    constructor(private _d3JsService:D3JsService) {
     }
 
-    ngOnInit(){
+    ngOnInit() {
         // get sample data
         this.data = this._d3JsService.getAll();
     }

@@ -1,8 +1,9 @@
-import { Injectable } from '@angular/core';
-import { d3 } from './baD3Chart.loader';
+import {Injectable} from '@angular/core';
+import {d3} from './baD3Chart.loader';
 
 @Injectable()
-export class BaD3ChartService{
+export class BaD3ChartService {
+
     public chartSetup:any;
     private width;
     private height;
@@ -15,7 +16,7 @@ export class BaD3ChartService{
     private margin = {top: 20, right: 20, bottom: 30, left: 40};
 
     // call method depending on chartType
-    drawChart(){
+    drawChart():void {
         switch(this.chartSetup.chartType){
             case 'simpleBar':
                 this.simpleBar();
@@ -25,7 +26,7 @@ export class BaD3ChartService{
                 break;
         }
     }
-    resizeChart(){
+    resizeChart():void {
         switch(this.chartSetup.chartType){
             case 'simpleBar':
                 this.simpleBarUpdate();
@@ -38,7 +39,7 @@ export class BaD3ChartService{
     }
 
     // method to remove chart (called on ngOnDestroy)
-    removeChart(){
+    removeChart():void {
         d3.select(this.chartSetup.element).selectAll('svg').remove();
     }
 
@@ -49,7 +50,7 @@ export class BaD3ChartService{
      *  
     */
     // size and scales setup
-    simpleBarSetup(){
+    simpleBarSetup():void {
         this.width = this.chartSetup.element.clientWidth - this.margin.left - this.margin.right;
         this.height = this.chartSetup.element.clientHeight - this.margin.top - this.margin.bottom;
         
@@ -62,10 +63,10 @@ export class BaD3ChartService{
         
         this.xAxis = d3.axisBottom(this.xScale);
         this.yAxis = d3.axisLeft(this.yScale)
-                        .ticks(10, this.chartSetup.data.yAxisFormat ? this.chartSetup.data.yAxisFormat : "");
+                        .ticks(10, this.chartSetup.data.yAxisFormat ? this.chartSetup.data.yAxisFormat : '');
     }
     // chart creation and first draw
-    simpleBar(){
+    simpleBar():void {
         // data refactoring
         this.data = this.chartSetup.data.labels.map( (label, i) => {
             return {
@@ -79,60 +80,60 @@ export class BaD3ChartService{
 
         var svg = d3.select(this.chartSetup.element);
        
-        var g = svg.append("g")
-            .attr("transform", "translate(" + this.margin.left + "," + this.margin.top + ")");       
+        var g = svg.append('g')
+            .attr('transform', 'translate(' + this.margin.left + ',' + this.margin.top + ')');       
 
         // x axis
-        g.append("g")
-            .attr("class", "axis axis--x")
-            .attr("transform", "translate(0," + this.height + ")")
+        g.append('g')
+            .attr('class', 'axis axis--x')
+            .attr('transform', 'translate(0,' + this.height + ')')
             .call(this.xAxis);
 
         // y axis and label
-        g.append("g")
-            .attr("class", "axis axis--y")
+        g.append('g')
+            .attr('class', 'axis axis--y')
             .call(this.yAxis)
-          .append("text")
-            .attr("transform", "rotate(-90)")
-            .attr("y", 6)
-            .attr("dy", "0.71em")
-            .attr("text-anchor", "end")
+          .append('text')
+            .attr('transform', 'rotate(-90)')
+            .attr('y', 6)
+            .attr('dy', '0.71em')
+            .attr('text-anchor', 'end')
             .text(this.chartSetup.data.yAxisLabel);
         
         // chart/bars data
-        g.selectAll(".bar")
+        g.selectAll('.bar')
             .data(this.data)
-            .enter().append("rect")
-            .attr("class", "bar")
-            .style("fill", d => d.color)
-            .attr("x", d => this.xScale(d.label))
-            .attr("y", d => this.yScale(d.values))
-            .attr("width", this.xScale.bandwidth())
-            .attr("height", d => this.height - this.yScale(d.values));
+            .enter().append('rect')
+            .attr('class', 'bar')
+            .style('fill', d => d.color)
+            .attr('x', d => this.xScale(d.label))
+            .attr('y', d => this.yScale(d.values))
+            .attr('width', this.xScale.bandwidth())
+            .attr('height', d => this.height - this.yScale(d.values));
         
     }
     // method called on window resize
-    simpleBarUpdate(){
+    simpleBarUpdate():void {
         // re-calculate sizes and scales
         this.simpleBarSetup();
 
         var svg = d3.select(this.chartSetup.element);
 
         // update x axis
-        svg.select(".axis--x")
+        svg.select('.axis--x')
             .call(this.xAxis)
-            .attr("transform", "translate(0," + this.height + ")")
+            .attr('transform', 'translate(0,' + this.height + ')')
 
         // update y axis
-        svg.select(".axis--y")
+        svg.select('.axis--y')
             .call(this.yAxis);
 
         // update chart/bars
-        svg.selectAll(".bar")
-            .attr("x", d => this.xScale(d.label))
-            .attr("width", this.xScale.bandwidth())
-            .attr("y", d => this.yScale(d.values))
-            .attr("height", d => this.height - this.yScale(d.values));
+        svg.selectAll('.bar')
+            .attr('x', d => this.xScale(d.label))
+            .attr('width', this.xScale.bandwidth())
+            .attr('y', d => this.yScale(d.values))
+            .attr('height', d => this.height - this.yScale(d.values));
     }
 
 
@@ -143,7 +144,7 @@ export class BaD3ChartService{
      *  
     */
     // size and scales setup
-    groupedBarSetup(){
+    groupedBarSetup():void {
         this.width = this.chartSetup.element.clientWidth - this.margin.left - this.margin.right;
         this.height = this.chartSetup.element.clientHeight - this.margin.top - this.margin.bottom;
 
@@ -159,10 +160,10 @@ export class BaD3ChartService{
 
         this.xAxis = d3.axisBottom(this.xScale);
         this.yAxis = d3.axisLeft(this.yScale)
-                        .tickFormat(d3.format(this.chartSetup.data.yAxisFormat ? this.chartSetup.data.yAxisFormat : ""));
+                        .tickFormat(d3.format(this.chartSetup.data.yAxisFormat ? this.chartSetup.data.yAxisFormat : ''));
     }
     // chart creation and first draw
-    groupedBar(){
+    groupedBar():void {
         // data refactoring
         this.data = this.chartSetup.data.labels.map( (label, i) => {
             return {
@@ -176,24 +177,24 @@ export class BaD3ChartService{
 
         var svg = d3.select(this.chartSetup.element);
        
-        var g = svg.append("g")
-            .attr("transform", "translate(" + this.margin.left + "," + this.margin.top + ")");  
+        var g = svg.append('g')
+            .attr('transform', 'translate(' + this.margin.left + ',' + this.margin.top + ')');  
 
         // x axis
-        g.append("g")
-            .attr("class", "x axis")
-            .attr("transform", "translate(0," + this.height + ")")
+        g.append('g')
+            .attr('class', 'x axis')
+            .attr('transform', 'translate(0,' + this.height + ')')
             .call(this.xAxis);
 
         // y axis and labels
-        g.append("g")
-            .attr("class", "y axis")
+        g.append('g')
+            .attr('class', 'y axis')
             .call(this.yAxis)
-            .append("text")
-            .attr("transform", "rotate(-90)")
-            .attr("y", 6)
-            .attr("dy", ".71em")
-            .style("text-anchor", "end")
+            .append('text')
+            .attr('transform', 'rotate(-90)')
+            .attr('y', 6)
+            .attr('dy', '.71em')
+            .style('text-anchor', 'end')
             .text(this.chartSetup.data.yAxisLabel);
 
         // data refactoring 
@@ -211,40 +212,40 @@ export class BaD3ChartService{
         })
 
         // bars
-        var groups = g.selectAll(".groups")
+        var groups = g.selectAll('.groups')
             .data(this.data)
-            .enter().append("g")
-            .attr("class", "group")
-            .attr("transform", d => { return "translate(" + this.xScale(d.label) + ",0)"; });
+            .enter().append('g')
+            .attr('class', 'group')
+            .attr('transform', d => { return 'translate(' + this.xScale(d.label) + ',0)'; });
         
-        groups.selectAll("rect")
+        groups.selectAll('rect')
             .data((d,i) => chartData[i])
-            .enter().append("rect")
-            .attr("class", "bar")
-            .attr("width", this.x1Scale.bandwidth())
-            .attr("x", d => this.x1Scale(d.legend))
-            .attr("y", d => this.yScale(d.values))
-            .attr("height", d => this.height - this.yScale(d.values))
-            .style("fill", d => d.color);
+            .enter().append('rect')
+            .attr('class', 'bar')
+            .attr('width', this.x1Scale.bandwidth())
+            .attr('x', d => this.x1Scale(d.legend))
+            .attr('y', d => this.yScale(d.values))
+            .attr('height', d => this.height - this.yScale(d.values))
+            .style('fill', d => d.color);
 
         // legend
-        var legend = svg.selectAll(".legend")
+        var legend = svg.selectAll('.legend')
             .data(this.chartSetup.data.legend.slice().reverse())
-            .enter().append("g")
-            .attr("class", "legend")
-            .attr("transform", (d,i) => "translate(0," + i * 20 + ")");
+            .enter().append('g')
+            .attr('class', 'legend')
+            .attr('transform', (d,i) => 'translate(0,' + i * 20 + ')');
 
-        legend.append("rect")
-            .attr("x", this.width - 18)
-            .attr("width", 18)
-            .attr("height", 18)
-            .style("fill", (d,i) => this.chartSetup.data.color[i]);
+        legend.append('rect')
+            .attr('x', this.width - 18)
+            .attr('width', 18)
+            .attr('height', 18)
+            .style('fill', (d,i) => this.chartSetup.data.color[i]);
 
-        legend.append("text")
-            .attr("x", this.width - 24)
-            .attr("y", 9)
-            .attr("dy", ".35em")
-            .style("text-anchor", "end")
+        legend.append('text')
+            .attr('x', this.width - 24)
+            .attr('y', 9)
+            .attr('dy', '.35em')
+            .style('text-anchor', 'end')
             .text(d => d);
 
         
