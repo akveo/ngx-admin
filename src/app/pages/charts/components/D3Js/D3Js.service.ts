@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
 @Injectable()
-export class D3JsService{
+export class D3JsService {
     private _data = {
         simpleBar: {
                 labels: ['Quarter 1','Quarter 2','Quarter 3','Quarter 4'],
