@@ -8,11 +8,7 @@ import {
     AfterViewInit,
     ElementRef
 } from '@angular/core';
-import {Observable} from 'rxjs/Observable';
 import {Subscription} from 'rxjs/Subscription';
-import 'rxjs/add/observable/fromEvent';
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/distinctUntilChanged';
 
 import {BaD3ChartService} from './baD3Chart.service';
 import {d3} from './baD3Chart.loader';
@@ -37,33 +33,19 @@ export class BaD3Chart {
     constructor(private _chartService:BaD3ChartService) {
     }
 
-    setup():void {
-        this._chartService.chartSetup = {
-            element: this._selector.nativeElement,
-            data: this.baD3ChartData,
-            chartType: this.baD3ChartType 
-        }
-    }
-
     ngAfterViewInit():void {
-
-        this.setup();
-        this._chartService.drawChart();
-        
-        // re-draw charts on window resize
-        this.resizeCheck = Observable.fromEvent(window, 'resize')
-            .map((res:any) => res.target.innerWidth)
-            .distinctUntilChanged()
-            .subscribe(res => {
-                this._chartService.resizeChart();
-            })
-
+        // draw method returns an Observable that listens for window resize
+        // useful to unsubscribe when necessary
+        this.resizeCheck = this._chartService.drawChartNew({
+            chartType: this.baD3ChartType,
+            element: this._selector.nativeElement,
+            inputData: this.baD3ChartData
+        });
     }
 
     ngOnDestroy():void {
-        this._chartService.removeChart();
+        this._chartService.removeChart(this._selector.nativeElement);
         this.resizeCheck.unsubscribe();
     }
-
 
 }
