@@ -1,46 +1,29 @@
 import {Injectable} from '@angular/core';
+import {Observable} from 'rxjs/Observable';
+import 'rxjs/add/observable/fromEvent';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/distinctUntilChanged';
+
 import {d3} from './baD3Chart.loader';
 
 @Injectable()
 export class BaD3ChartService {
 
-    public chartSetup:any;
-    private width;
-    private height;
-    private data;
-    private xScale;
-    private x1Scale;
-    private yScale;
-    private xAxis;
-    private yAxis;
     private margin = {top: 20, right: 20, bottom: 30, left: 40};
 
     // call method depending on chartType
-    drawChart():void {
-        switch(this.chartSetup.chartType){
+    public drawChartNew({chartType, element, inputData}) {
+        switch(chartType){
             case 'simpleBar':
-                this.simpleBar();
-                break;
+                return this.simpleBarDraw({element, inputData});
             case 'groupedBar':
-                this.groupedBar();
-                break;
-        }
-    }
-    resizeChart():void {
-        switch(this.chartSetup.chartType){
-            case 'simpleBar':
-                this.simpleBarUpdate();
-                break;
-            // TODO: groupedBar update on window resize
-            // case 'groupedBar':
-            //     this.groupedBarUpdate();
-            //     break;
+                return this.groupedBarDraw({element, inputData});
         }
     }
 
-    // method to remove chart (called on ngOnDestroy)
-    removeChart():void {
-        d3.select(this.chartSetup.element).selectAll('svg').remove();
+    // remove chart
+    public removeChart(element):void {
+        d3.select(element).selectAll('svg').remove();
     }
 
     /*
@@ -49,93 +32,111 @@ export class BaD3ChartService {
      * 
      *  
     */
-    // size and scales setup
-    simpleBarSetup():void {
-        this.width = this.chartSetup.element.clientWidth - this.margin.left - this.margin.right;
-        this.height = this.chartSetup.element.clientHeight - this.margin.top - this.margin.bottom;
+
+    // simpleBar chart initial setup 
+    private simpleBarSetup({element, inputData, data}) {
+        let width = element.clientWidth - this.margin.left - this.margin.right;
+        let height = element.clientHeight - this.margin.top - this.margin.bottom;
         
-        this.xScale = d3.scaleBand()
-                        .rangeRound([0, this.width]).padding(0.1)
-                        .domain(this.data.map(d =>d.label));
-        this.yScale = d3.scaleLinear()
-                        .rangeRound([this.height, 0])
-                        .domain([0, d3.max(this.data, d => d.values)]);
+        let xScale = d3.scaleBand()
+                        .rangeRound([0, width]).padding(0.1)
+                        .domain(data.map(d =>d.label));
+        let yScale = d3.scaleLinear()
+                        .rangeRound([height, 0])
+                        .domain([0, d3.max(data, d => d.values)]);
         
-        this.xAxis = d3.axisBottom(this.xScale);
-        this.yAxis = d3.axisLeft(this.yScale)
-                        .ticks(10, this.chartSetup.data.yAxisFormat ? this.chartSetup.data.yAxisFormat : '');
+        let xAxis = d3.axisBottom(xScale);
+        let yAxis = d3.axisLeft(yScale)
+                        .ticks(10, inputData.yAxisFormat ? inputData.yAxisFormat : '');
+        
+        return {
+            width, height,
+            xScale, yScale,
+            xAxis, yAxis
+        }
     }
-    // chart creation and first draw
-    simpleBar():void {
+
+    // simpleBar chart initial draw
+    private simpleBarDraw({element, inputData}) {
         // data refactoring
-        this.data = this.chartSetup.data.labels.map( (label, i) => {
+        let data = inputData.labels.map( (label, i) => {
             return {
                 label,
-                values: this.chartSetup.data.values[i],
-                color: this.chartSetup.data.color[i] || this.chartSetup.data.color[0]
+                values: inputData.values[i],
+                color: inputData.color[i] || inputData.color[0]
             }
         })
 
-        this.simpleBarSetup();
-
-        var svg = d3.select(this.chartSetup.element);
+        // initial setup
+        let chartSetup = this.simpleBarSetup({element, inputData, data});
+        
+        let svg = d3.select(element);
        
-        var g = svg.append('g')
+        let g = svg.append('g')
             .attr('transform', 'translate(' + this.margin.left + ',' + this.margin.top + ')');       
 
         // x axis
         g.append('g')
             .attr('class', 'axis axis--x')
-            .attr('transform', 'translate(0,' + this.height + ')')
-            .call(this.xAxis);
+            .attr('transform', 'translate(0,' + chartSetup.height + ')')
+            .call(chartSetup.xAxis);
 
         // y axis and label
         g.append('g')
             .attr('class', 'axis axis--y')
-            .call(this.yAxis)
+            .call(chartSetup.yAxis)
           .append('text')
             .attr('transform', 'rotate(-90)')
             .attr('y', 6)
             .attr('dy', '0.71em')
             .attr('text-anchor', 'end')
-            .text(this.chartSetup.data.yAxisLabel);
+            .text(inputData.yAxisLabel);
         
         // chart/bars data
         g.selectAll('.bar')
-            .data(this.data)
+            .data(data)
             .enter().append('rect')
             .attr('class', 'bar')
             .style('fill', d => d.color)
-            .attr('x', d => this.xScale(d.label))
-            .attr('y', d => this.yScale(d.values))
-            .attr('width', this.xScale.bandwidth())
-            .attr('height', d => this.height - this.yScale(d.values));
+            .attr('x', d => chartSetup.xScale(d.label))
+            .attr('y', d => chartSetup.yScale(d.values))
+            .attr('width', chartSetup.xScale.bandwidth())
+            .attr('height', d => chartSetup.height - chartSetup.yScale(d.values));
         
-    }
-    // method called on window resize
-    simpleBarUpdate():void {
-        // re-calculate sizes and scales
-        this.simpleBarSetup();
+        // redraw chart on window resize
+        // Observable is returned to be able to unsubscribe
+        return Observable.fromEvent(window, 'resize')
+            .map((res:any) => res.target.innerWidth)
+            .distinctUntilChanged()
+            .subscribe(width => {
+                this.simpleBarUpdate({element, inputData, data});
+            })
 
-        var svg = d3.select(this.chartSetup.element);
+    }
+
+    // simpleBar chart responsive redraw
+    private simpleBarUpdate({element, inputData, data}) {
+        // re-calculate sizes and scales
+        let chartSetup = this.simpleBarSetup({element, inputData, data});
+
+        let svg = d3.select(element);
 
         // update x axis
         svg.select('.axis--x')
-            .call(this.xAxis)
-            .attr('transform', 'translate(0,' + this.height + ')')
+            .call(chartSetup.xAxis)
+            .attr('transform', 'translate(0,' + chartSetup.height + ')')
 
         // update y axis
         svg.select('.axis--y')
-            .call(this.yAxis);
+            .call(chartSetup.yAxis);
 
         // update chart/bars
         svg.selectAll('.bar')
-            .attr('x', d => this.xScale(d.label))
-            .attr('width', this.xScale.bandwidth())
-            .attr('y', d => this.yScale(d.values))
-            .attr('height', d => this.height - this.yScale(d.values));
+            .attr('x', d => chartSetup.xScale(d.label))
+            .attr('width', chartSetup.xScale.bandwidth())
+            .attr('y', d => chartSetup.yScale(d.values))
+            .attr('height', d => chartSetup.height - chartSetup.yScale(d.values));
     }
-
 
     /*
      *
@@ -143,112 +144,160 @@ export class BaD3ChartService {
      * 
      *  
     */
-    // size and scales setup
-    groupedBarSetup():void {
-        this.width = this.chartSetup.element.clientWidth - this.margin.left - this.margin.right;
-        this.height = this.chartSetup.element.clientHeight - this.margin.top - this.margin.bottom;
 
-        this.xScale = d3.scaleBand()
-                        .rangeRound([0, this.width]).padding(0.1)
-                        .domain(this.data.map(d => d.label));
-        this.x1Scale = d3.scaleBand()
-                        .rangeRound([0, this.xScale.bandwidth()])
-                        .domain(this.chartSetup.data.legend);
+    // groupedBar chart initial setup
+    private groupedBarSetup({element, inputData, data}) {
+        let width = element.clientWidth - this.margin.left - this.margin.right;
+        let height = element.clientHeight - this.margin.top - this.margin.bottom;
 
-        this.yScale = d3.scaleLinear().range([this.height, 0])
-                        .domain([0, d3.max(this.data, d => d3.max(d.values, d => d))]);
+        let xScale = d3.scaleBand()
+                        .rangeRound([0, width]).padding(0.1)
+                        .domain(data.map(d => d.label));
+        let x1Scale = d3.scaleBand()
+                        .rangeRound([0, xScale.bandwidth()])
+                        .domain(inputData.legend);
 
-        this.xAxis = d3.axisBottom(this.xScale);
-        this.yAxis = d3.axisLeft(this.yScale)
-                        .tickFormat(d3.format(this.chartSetup.data.yAxisFormat ? this.chartSetup.data.yAxisFormat : ''));
+        let yScale = d3.scaleLinear().range([height, 0])
+                        .domain([0, d3.max(data, d => d3.max(d.values, d => d))]);
+
+        let xAxis = d3.axisBottom(xScale);
+        let yAxis = d3.axisLeft(yScale)
+                        .tickFormat(d3.format(inputData.yAxisFormat ? inputData.yAxisFormat : ''));
+
+        return {
+            width, height,
+            xScale, x1Scale, yScale,
+            xAxis, yAxis
+        }
     }
-    // chart creation and first draw
-    groupedBar():void {
+
+    // groupedBar chart initial draw
+    private groupedBarDraw({element, inputData}) {
         // data refactoring
-        this.data = this.chartSetup.data.labels.map( (label, i) => {
+        let data = inputData.labels.map( (label, i) => {
             return {
                 label,
-                values: this.chartSetup.data.values[i],
-                color: this.chartSetup.data.color[i] || this.chartSetup.data.color[0]
+                values: inputData.values[i],
+                color: inputData.color[i] || inputData.color[0]
             }
         })
 
-        this.groupedBarSetup();
+        // initial setup
+        let chartSetup = this.groupedBarSetup({element, inputData, data});
 
-        var svg = d3.select(this.chartSetup.element);
+        let svg = d3.select(element);
        
-        var g = svg.append('g')
+        let g = svg.append('g')
             .attr('transform', 'translate(' + this.margin.left + ',' + this.margin.top + ')');  
 
         // x axis
         g.append('g')
             .attr('class', 'x axis')
-            .attr('transform', 'translate(0,' + this.height + ')')
-            .call(this.xAxis);
+            .attr('transform', 'translate(0,' + chartSetup.height + ')')
+            .call(chartSetup.xAxis);
 
         // y axis and labels
         g.append('g')
             .attr('class', 'y axis')
-            .call(this.yAxis)
+            .call(chartSetup.yAxis)
             .append('text')
             .attr('transform', 'rotate(-90)')
             .attr('y', 6)
             .attr('dy', '.71em')
             .style('text-anchor', 'end')
-            .text(this.chartSetup.data.yAxisLabel);
+            .text(inputData.yAxisLabel);
 
         // data refactoring 
-        var chartData = [];
-        this.data.forEach((data, i) => {
-            var groupData = data.values.map((value, j) => {
+        let chartData = [];
+        data.forEach((data, i) => {
+            let groupData = data.values.map((value, j) => {
                     return {
-                        legend: this.chartSetup.data.legend[j],
-                        label: this.chartSetup.data.labels[i],
+                        legend: inputData.legend[j],
+                        label: inputData.labels[i],
                         values: value,
-                        color: this.chartSetup.data.color[j]
+                        color: inputData.color[j]
                     }
             })
             chartData.push(groupData);
         })
 
         // bars
-        var groups = g.selectAll('.groups')
-            .data(this.data)
+        let groups = g.selectAll('.groups')
+            .data(data)
             .enter().append('g')
             .attr('class', 'group')
-            .attr('transform', d => { return 'translate(' + this.xScale(d.label) + ',0)'; });
+            .attr('transform', d => { return 'translate(' + chartSetup.xScale(d.label) + ',0)'; });
         
         groups.selectAll('rect')
             .data((d,i) => chartData[i])
             .enter().append('rect')
             .attr('class', 'bar')
-            .attr('width', this.x1Scale.bandwidth())
-            .attr('x', d => this.x1Scale(d.legend))
-            .attr('y', d => this.yScale(d.values))
-            .attr('height', d => this.height - this.yScale(d.values))
+            .attr('width', chartSetup.x1Scale.bandwidth())
+            .attr('x', d => chartSetup.x1Scale(d.legend))
+            .attr('y', d => chartSetup.yScale(d.values))
+            .attr('height', d => chartSetup.height - chartSetup.yScale(d.values))
             .style('fill', d => d.color);
 
         // legend
-        var legend = svg.selectAll('.legend')
-            .data(this.chartSetup.data.legend.slice().reverse())
+        let legend = svg.selectAll('.legend')
+            .data(inputData.legend.slice().reverse())
             .enter().append('g')
             .attr('class', 'legend')
             .attr('transform', (d,i) => 'translate(0,' + i * 20 + ')');
 
         legend.append('rect')
-            .attr('x', this.width - 18)
+            .attr('x', chartSetup.width - 5)
             .attr('width', 18)
             .attr('height', 18)
-            .style('fill', (d,i) => this.chartSetup.data.color[i]);
+            .style('fill', (d,i) => inputData.color[i]);
 
         legend.append('text')
-            .attr('x', this.width - 24)
+            .attr('x', chartSetup.width - 9)
             .attr('y', 9)
             .attr('dy', '.35em')
             .style('text-anchor', 'end')
             .text(d => d);
 
-        
+        // redraw chart on window resize
+        // Observable is returned to be able to unsubscribe
+        return Observable.fromEvent(window, 'resize')
+            .map((res:any) => res.target.innerWidth)
+            .distinctUntilChanged()
+            .subscribe(width => {
+                this.groupedBarUpdate({element, inputData, data});
+            })
     }
 
+    // groupedBar chart responsive redraw
+    private groupedBarUpdate({element, inputData, data}) {
+        // re-calculate sizes and scales
+        let chartSetup = this.groupedBarSetup({element, inputData, data});
+
+        let svg = d3.select(element);
+
+        // x axis
+        svg.select('.x.axis')
+            .attr('transform', 'translate(0,' + chartSetup.height + ')')
+            .call(chartSetup.xAxis);
+
+        // y axis and labels
+        svg.select('.y.axis')
+            .call(chartSetup.yAxis);
+
+        // bars
+        svg.selectAll('.group')
+            .attr('transform', d => {return 'translate(' + chartSetup.xScale(d.label) + ',0)'; });
+        
+        svg.selectAll('.bar')
+            .attr('width', chartSetup.x1Scale.bandwidth())
+            .attr('x', d => chartSetup.x1Scale(d.legend))
+            .attr('y', d => chartSetup.yScale(d.values))
+            .attr('height', d => chartSetup.height - chartSetup.yScale(d.values));
+
+        // legend
+        svg.selectAll('.legend rect')
+            .attr('x', chartSetup.width - 5);
+        svg.selectAll('.legend text')
+            .attr('x', chartSetup.width - 9);
+    }
 }
