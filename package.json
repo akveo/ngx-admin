@@ -55,7 +55,7 @@
     "postcss-loader": "^1.0.0",
     "rxjs": "5.0.0-beta.12",
     "tether": "^1.2.4",
-    "zone.js": "~0.6.23"
+    "zone.js": "~0.6.25"
   },
   "devDependencies": {
     "angular2-template-loader": "^0.5.0",
@@ -99,7 +99,7 @@
     "webpack": "2.1.0-beta.25",
     "webpack-dashboard": "^0.1.8",
     "webpack-dev-middleware": "^1.6.1",
-    "webpack-dev-server": "^2.1.0-beta.9",
+    "webpack-dev-server": "2.1.0-beta.9",
     "webpack-md5-hash": "^0.0.5",
     "webpack-merge": "^0.15.0",
     "compression-webpack-plugin": "^0.3.1",
