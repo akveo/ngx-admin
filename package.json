@@ -137,7 +137,7 @@
     "server:prod": "http-server dist --cors",
     "webdriver:update": "npm run webdriver-manager update",
     "webdriver:start": "npm run webdriver-manager start",
-    "lint": "npm run tslint \"src/**/*.ts\"",
+    "lint": "npm run tslint \"src/**/*.ts\" --force",
     "pree2e": "npm run webdriver:update -- --standalone",
     "pretest": "npm run lint",
     "docs": "npm run typedoc -- --options typedoc.json --exclude '**/*.spec.ts' ./src/",
