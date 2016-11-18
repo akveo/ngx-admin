@@ -99,7 +99,7 @@
     "jsdoc-format": true,
     "no-consecutive-blank-lines": false,
     "one-line": [
-      true,
+      false,
       "check-open-brace",
       "check-catch",
       "check-else",
