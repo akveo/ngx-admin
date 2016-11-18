@@ -18,14 +18,14 @@ module.exports = {
   },
 
   resolve: {
-    extensions: ['', '.ts', '.js', '.json']
+    extensions: ['.ts', '.js', '.json']
   },
 
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.ts$/,
-        loader: 'awesome-typescript-loader'
+        loaders: 'awesome-typescript-loader'
       }
     ]
   },
@@ -35,4 +35,4 @@ module.exports = {
       from: 'src/package.json'
     }])
   ]
-}
+};
