@@ -37,6 +37,10 @@ a.al-logo {
   }
 }
 
+a.al-logo:hover {
+  color: $primary;
+}
+
 .user-profile {
   float: right;
   min-width: 230px;
