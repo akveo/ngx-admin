@@ -28,7 +28,7 @@
     "bootstrap": "4.0.0-alpha.4",
     "bootstrap-loader": "2.0.0-beta.12",
     "chart.js": "^1.1.1",
-    "chartist": "^0.9.7",
+    "chartist": "^0.10.1",
     "ckeditor": "^4.5.9",
     "core-js": "^2.4.1",
     "easy-pie-chart": "^2.1.7",
