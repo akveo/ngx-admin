@@ -58,7 +58,7 @@
     "zone.js": "~0.6.25"
   },
   "devDependencies": {
-    "angular2-template-loader": "^0.5.0",
+    "angular2-template-loader": "^0.6.0",
     "@types/electron": "^1.3.20",
     "@types/hammerjs": "^2.0.33",
     "@types/jasmine": "^2.2.34",
