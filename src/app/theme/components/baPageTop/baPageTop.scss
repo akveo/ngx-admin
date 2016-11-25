@@ -37,6 +37,10 @@ a.al-logo {
   }
 }
 
+a.al-logo:hover {
+  color: $primary;
+}
+
 .user-profile {
   float: right;
   min-width: 230px;
@@ -116,7 +120,6 @@ a.collapse-menu-link {
 
 .search {
   text-shadow: none;
-  color: $sidebar-text;
   font-size: 13px;
   line-height: 25px;
   transition: all 0.5s ease;
@@ -138,6 +141,7 @@ a.collapse-menu-link {
     margin-right: 13px;
   }
   input {
+    color: $sidebar-text;
     background: none;
     border: none;
     outline: none;

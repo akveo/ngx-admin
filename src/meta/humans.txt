@@ -1,0 +1,16 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+  akveo.com
+
+# THANKS
+
+  <name>
+  Akveo Team
+
+# TECHNOLOGY COLOPHON
+
+  HTML5, CSS3, Bootstrap
+  Angular2, TypeScript, Webpack

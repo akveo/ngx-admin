@@ -1,17 +1,21 @@
 const webpack = require('webpack');
+const path = require('path');
 const helpers = require('./helpers');
 
 /*
  * Webpack Plugins
  */
 // problem with copy-webpack-plugin
-const CopyWebpackPlugin = require('copy-webpack-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ForkCheckerPlugin = require('awesome-typescript-loader').ForkCheckerPlugin;
-const HtmlElementsPlugin = require('./html-elements-plugin');
 const AssetsPlugin = require('assets-webpack-plugin');
 const ContextReplacementPlugin = require('webpack/lib/ContextReplacementPlugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const ForkCheckerPlugin = require('awesome-typescript-loader').ForkCheckerPlugin;
+const HtmlElementsPlugin = require('./html-elements-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const LoaderOptionsPlugin = require('webpack/lib/LoaderOptionsPlugin');
+const CommonsChunkPlugin = require('webpack/lib/optimize/CommonsChunkPlugin');
+const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
 
 /*
  * Webpack Constants
@@ -20,7 +24,7 @@ const HMR = helpers.hasProcessFlag('hot');
 const METADATA = {
   title: 'ng2-admin - Angular 2 Admin Template',
   description: 'Free Angular 2 and Bootstrap 4 Admin Template',
-  baseUrl: './',
+  baseUrl: '/',
   isDevServer: helpers.isWebpackDevServer()
 };
 
@@ -32,13 +36,6 @@ const METADATA = {
 module.exports = function (options) {
   isProd = options.env === 'production';
   return {
-
-    /*
-     * Static metadata for index.html
-     *
-     * See: (custom attribute)
-     */
-    metadata: METADATA,
 
     /*
      * Cache generated modules and chunks to improve performance for multiple incremental builds.
@@ -75,13 +72,10 @@ module.exports = function (options) {
        *
        * See: http://webpack.github.io/docs/configuration.html#resolve-extensions
        */
-      extensions: ['', '.ts', '.js', '.css', '.scss', '.json'],
+      extensions: ['.ts', '.js', '.css', '.scss', '.json'],
 
-      // Make sure root is src
-      root: helpers.root('src'),
-
-      // remove other default values
-      modulesDirectories: ['node_modules'],
+      // An array of directory names to be resolved to the current directory
+      modules: [helpers.root('src'), 'node_modules'],
 
     },
 
@@ -92,34 +86,17 @@ module.exports = function (options) {
      */
     module: {
 
-      /*
-       * An array of applied pre and post loaders.
-       *
-       * See: http://webpack.github.io/docs/configuration.html#module-preloaders-module-postloaders
-       */
-      preLoaders: [
+      rules: [
         {
           test: /\.ts$/,
           loader: 'string-replace-loader',
           query: {
-            search: '(System|SystemJS)(.*[\\n\\r]\\s*\\.|\\.)import\\((.+)\\)',
-            replace: '$1.import($3).then(mod => (mod.__esModule && mod.default) ? mod.default : mod)',
-            flags: 'g'
+            search: /(System|SystemJS)(.*[\n\r]\s*\.|\.)import\((.+)\)/g,
+            replace: '$1.import($3).then(mod => (mod.__esModule && mod.default) ? mod.default : mod)'
           },
-          include: [helpers.root('src')]
+          include: [helpers.root('src')],
+          enforce: 'pre'
         },
-
-      ],
-
-      /*
-       * An array of automatically applied loaders.
-       *
-       * IMPORTANT: The loaders here are resolved relative to the resource which they are applied to.
-       * This means they are not resolved relative to the configuration file.
-       *
-       * See: http://webpack.github.io/docs/configuration.html#module-loaders
-       */
-      loaders: [
 
         /*
          * Typescript loader support for .ts and Angular 2 async routes via .async.ts
@@ -202,21 +179,8 @@ module.exports = function (options) {
           test: /\.(jpg|png|gif)$/,
           loader: 'file'
         }
-      ],
-
-      postLoaders: [
-        {
-          test: /\.js$/,
-          loader: 'string-replace-loader',
-          query: {
-            search: 'var sourceMappingUrl = extractSourceMappingUrl\\(cssText\\);',
-            replace: 'var sourceMappingUrl = "";',
-            flags: 'g'
-          }
-        }
       ]
     },
-
 
     /*
      * Add additional plugins to the compiler.
@@ -247,7 +211,7 @@ module.exports = function (options) {
        * See: https://webpack.github.io/docs/list-of-plugins.html#commonschunkplugin
        * See: https://github.com/webpack/docs/wiki/optimization#multi-page-app
        */
-      new webpack.optimize.CommonsChunkPlugin({
+      new CommonsChunkPlugin({
         name: ['polyfills', 'vendor'].reverse()
       }),
 
@@ -274,9 +238,11 @@ module.exports = function (options) {
        * See: https://www.npmjs.com/package/copy-webpack-plugin
        */
       new CopyWebpackPlugin([{
-        from: 'src/assets',
-        to: 'assets'
-      }]),
+          from: 'src/assets',
+          to: 'assets'
+        }, {
+          from: 'src/meta'
+        } ]),
 
       /*
        * Plugin: HtmlWebpackPlugin
@@ -288,13 +254,21 @@ module.exports = function (options) {
        */
       new HtmlWebpackPlugin({
         template: 'src/index.html',
-        chunksSortMode: 'dependency'
+        title: METADATA.title,
+        chunksSortMode: 'dependency',
+        metadata: METADATA,
+        inject: 'head'
       }),
 
-      new webpack.ProvidePlugin({
-        jQuery: 'jquery',
-        'Tether': 'tether',
-        'window.Tether': 'tether'
+      /*
+       * Plugin: ScriptExtHtmlWebpackPlugin
+       * Description: Enhances html-webpack-plugin functionality
+       * with different deployment options for your scripts including:
+       *
+       * See: https://github.com/numical/script-ext-html-webpack-plugin
+       */
+      new ScriptExtHtmlWebpackPlugin({
+        defaultAttribute: 'defer'
       }),
 
       /*
@@ -321,8 +295,33 @@ module.exports = function (options) {
        */
       new HtmlElementsPlugin({
         headTags: require('./head-config.common')
-      })
+      }),
 
+      /**
+       * Plugin LoaderOptionsPlugin (experimental)
+       *
+       * See: https://gist.github.com/sokra/27b24881210b56bbaff7
+       */
+      new LoaderOptionsPlugin({}),
+
+      new webpack.ProvidePlugin({
+        $: "jquery",
+        jQuery: "jquery",
+        "window.jQuery": "jquery",
+        Tether: "tether",
+        "window.Tether": "tether",
+        Tooltip: "exports?Tooltip!bootstrap/js/dist/tooltip",
+        Alert: "exports?Alert!bootstrap/js/dist/alert",
+        Button: "exports?Button!bootstrap/js/dist/button",
+        Carousel: "exports?Carousel!bootstrap/js/dist/carousel",
+        Collapse: "exports?Collapse!bootstrap/js/dist/collapse",
+        Dropdown: "exports?Dropdown!bootstrap/js/dist/dropdown",
+        Modal: "exports?Modal!bootstrap/js/dist/modal",
+        Popover: "exports?Popover!bootstrap/js/dist/popover",
+        Scrollspy: "exports?Scrollspy!bootstrap/js/dist/scrollspy",
+        Tab: "exports?Tab!bootstrap/js/dist/tab",
+        Util: "exports?Util!bootstrap/js/dist/util"
+      })
     ],
 
     /*
@@ -332,7 +331,7 @@ module.exports = function (options) {
      * See: https://webpack.github.io/docs/configuration.html#node
      */
     node: {
-      global: 'window',
+      global: true,
       crypto: 'empty',
       process: true,
       module: false,

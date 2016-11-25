@@ -1,6 +1,6 @@
 @import '../../sass/conf/conf';
 
-$sidebar-width: 180px;
+$sidebar-scroll-width: 4px;
 $angle-left: "\f100";
 $angle-right: "\f101";
 
@@ -113,8 +113,8 @@ a.al-sidebar-list-link {
 
 .slimScrollBar, .slimScrollRail {
   border-radius: 0px !important;
-  width: 4px !important;
-  left: 176px;
+  width: $sidebar-scroll-width !important;
+  left: $sidebar-width - $sidebar-scroll-width;
 }
 
 @mixin layout-collapsed() {
@@ -170,11 +170,11 @@ a.al-sidebar-list-link {
 }
 
 .sidebar-hover-elem{
-  width: 4px;
+  width: $sidebar-scroll-width;
   background: $primary;
   position: absolute;
   top: -150px;
-  left: 176px;
+  left: $sidebar-width - $sidebar-scroll-width;
   transition: all 0.5s ease;
   transition-property: top, height;
   height: 42px;

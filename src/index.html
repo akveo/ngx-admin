@@ -5,9 +5,9 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title><%= webpackConfig.metadata.title %></title>
+  <title><%= htmlWebpackPlugin.options.title %></title>
 
-  <meta name="description" content="<%= webpackConfig.metadata.description %>">
+  <meta name="description" content="<%= htmlWebpackPlugin.options.metadata.description %>">
 
   <% if (webpackConfig.htmlElements.headTags) { %>
   <!-- Configured Head Tags  -->
@@ -15,7 +15,8 @@
   <% } %>
 
   <!-- base url -->
-  <base href="<%= webpackConfig.metadata.baseUrl %>">
+  <base href="<%= htmlWebpackPlugin.options.metadata.baseUrl %>">
+
 
 </head>
 
@@ -27,7 +28,7 @@
   <div></div>
 </div>
 
-<% if (webpackConfig.metadata.isDevServer && webpackConfig.metadata.HMR !== true) { %>
+<% if (htmlWebpackPlugin.options.metadata.isDevServer && htmlWebpackPlugin.options.metadata.HMR !== true) { %>
 <!-- Webpack Dev Server reload -->
 <script src="/webpack-dev-server.js"></script>
 <% } %>

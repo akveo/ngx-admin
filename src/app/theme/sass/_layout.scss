@@ -1,4 +1,6 @@
-$left-space: 180px;
+@import 'conf/conf';
+
+$left-space: $sidebar-width;
 
 @include scrollbars(.5em, #d9d9d9, rgba(0, 0, 0, 0));
 
@@ -66,7 +68,7 @@ a {
 
 .al-footer {
   height: 34px;
-  padding: 0 18px 0 200px;
+  padding: 0 18px 0 ($left-space + 20px);
   width: 100%;
   position: absolute;
   display: block;
