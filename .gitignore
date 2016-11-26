@@ -61,3 +61,6 @@ npm-debug.log
 # IDE #
 .idea/
 *.swp
+/src/**/*.js
+/src/**/*.js.map
+ng2-admin.iml
