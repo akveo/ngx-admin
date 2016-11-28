@@ -14,7 +14,6 @@
 * Pull sources from git, merge accordingly
 * remove `node_modules`
 * run `npm install`
-* Remove all directives & pipes from components and move them to the ngModule declarations
 * Enjoy!
 
 
