@@ -132,6 +132,14 @@ export const PAGES_MENU = [
               }
             }
           },
+          {
+            path:'sweetAlert',
+            data:{
+              menu:{
+                title:'SweetAlert'
+              }
+            }
+          }
         ]
       },
       {
