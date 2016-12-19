@@ -1,10 +1,10 @@
 import './app.loader.ts';
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, ViewEncapsulation, ViewContainerRef } from '@angular/core';
 import { GlobalState } from './global.state';
 import { BaImageLoaderService, BaThemePreloader, BaThemeSpinner } from './theme/services';
 import { layoutPaths } from './theme/theme.constants';
 import { BaThemeConfig } from './theme/theme.config';
-
+import {ComponentsHelper } from 'ng2-bootstrap';
 /*
  * App Component
  * Top Level Component
@@ -27,7 +27,10 @@ export class App {
   constructor(private _state: GlobalState,
               private _imageLoader: BaImageLoaderService,
               private _spinner: BaThemeSpinner,
-              private _config:BaThemeConfig) {
+              private _config: BaThemeConfig,
+              private viewContainerRef: ViewContainerRef) {
+
+    this._fixModals();
 
     this._loadImages();
 
@@ -46,5 +49,27 @@ export class App {
   private _loadImages(): void {
     // register some loaders
     BaThemePreloader.registerLoader(this._imageLoader.load(layoutPaths.images.root + 'sky-bg.jpg'));
+  }
+
+  private _fixModals(): void {
+    ComponentsHelper.prototype.getRootViewContainerRef = function () {
+      // https://github.com/angular/angular/issues/9293
+      if (this.root) {
+        return this.root;
+      }
+      var comps = this.applicationRef.components;
+      if (!comps.length) {
+        throw new Error("ApplicationRef instance not found");
+      }
+      try {
+        /* one more ugly hack, read issue above for details */
+        var rootComponent = this.applicationRef._rootComponents[0];
+        this.root = rootComponent._component.viewContainerRef;
+        return this.root;
+      }
+      catch (e) {
+        throw new Error("ApplicationRef instance not found");
+      }
+    };
   }
 }

@@ -1,3 +1,22 @@
+<a name="0.8.0"></a>
+# 0.8.0 (2016-11-25)
+
+### Features
+
+* Angular 2.2.3
+* Dependencies updated
+
+### Bug Fixes
+
+
+### How to update
+
+* Pull sources from git, merge accordingly
+* remove `node_modules`
+* run `npm install`
+* Enjoy!
+
+
 <a name="0.7.0"></a>
 # 0.7.0 (2016-09-19)
 

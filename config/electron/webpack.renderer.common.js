@@ -1,9 +1,9 @@
 const helpers = require('./../helpers');
-const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const METADATA = {
   baseUrl: './',
-  ENV: 'renderer',
+  ENV: 'renderer'
 };
 
 /*
@@ -14,16 +14,9 @@ const METADATA = {
 module.exports = function (env) {
   METADATA.ENV = env
     ? env
-    : METADATA.ENV
+    : METADATA.ENV;
 
   return {
-
-    /*
-    * Static metadata for index.html
-    *
-    * See: (custom attribute)
-    */
-    metadata: METADATA,
 
     /**
      * The plataform target where the aplication is going to run in.
@@ -46,7 +39,7 @@ module.exports = function (env) {
        *
        * See: http://webpack.github.io/docs/configuration.html#output-path
        */
-      path: helpers.root('build'),
+      path: helpers.root('build')
     },
 
     /*
@@ -56,12 +49,22 @@ module.exports = function (env) {
     * See: https://webpack.github.io/docs/configuration.html#node
     */
     node: {
-      global: 'window',
+      global: true,
       crypto: 'empty',
       process: true,
       module: false,
       clearImmediate: false,
       setImmediate: false
-    }
+    },
+
+    plugins: [
+      new HtmlWebpackPlugin({
+        template: 'src/index.html',
+        title: METADATA.title,
+        chunksSortMode: 'dependency',
+        metadata: METADATA,
+        inject: 'head'
+      })
+    ]
   };
 };

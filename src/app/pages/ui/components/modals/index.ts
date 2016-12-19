@@ -1,0 +1,1 @@
+export * from './modals.component';
