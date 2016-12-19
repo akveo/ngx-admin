@@ -44,6 +44,7 @@ import {
 
 import {
   BaImageLoaderService,
+  BaMenuService,
   BaThemePreloader,
   BaThemeSpinner
 } from './services';
@@ -52,8 +53,6 @@ import {
   EmailValidator,
   EqualPasswordsValidator
 } from './validators';
-
-import { BaMenuService } from './components/baMenu/baMenu.service';
 
 const NGA_COMPONENTS = [
   BaAmChart,

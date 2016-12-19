@@ -2,7 +2,7 @@ import {Component, ViewEncapsulation, Input, Output, EventEmitter} from '@angula
 import {Router, Routes, NavigationEnd} from '@angular/router';
 import {Subscription} from 'rxjs/Rx';
 
-import {BaMenuService} from './baMenu.service';
+import { BaMenuService } from '../../services';
 import {GlobalState} from '../../../global.state';
 
 @Component({
