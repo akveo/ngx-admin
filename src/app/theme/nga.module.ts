@@ -53,6 +53,8 @@ import {
   EqualPasswordsValidator
 } from './validators';
 
+import { BaMenuService } from './components/baMenu/baMenu.service';
+
 const NGA_COMPONENTS = [
   BaAmChart,
   BaBackTop,
@@ -86,7 +88,8 @@ const NGA_PIPES = [
 const NGA_SERVICES = [
   BaImageLoaderService,
   BaThemePreloader,
-  BaThemeSpinner
+  BaThemeSpinner,
+  BaMenuService
 ];
 
 const NGA_VALIDATORS = [

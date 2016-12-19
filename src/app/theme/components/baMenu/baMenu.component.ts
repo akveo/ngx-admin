@@ -9,8 +9,7 @@ import {GlobalState} from '../../../global.state';
   selector: 'ba-menu',
   encapsulation: ViewEncapsulation.None,
   styles: [require('./baMenu.scss')],
-  template: require('./baMenu.html'),
-  providers: [BaMenuService]
+  template: require('./baMenu.html')
 })
 export class BaMenu {
 

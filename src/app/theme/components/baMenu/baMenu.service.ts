@@ -3,17 +3,13 @@ import {Router, Routes} from '@angular/router';
 
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 
-import { MENU } from '../../../app.menu';
-
 @Injectable()
 export class BaMenuService {
   menuItems = new BehaviorSubject<any[]>([]);
 
   protected _currentMenuItem = {};
 
-  constructor(private _router:Router) {
-    this.updateMenuByRoutes(<Routes>MENU);
-  }
+  constructor(private _router:Router) { }
 
   /**
    * Updates the routes in the menu
