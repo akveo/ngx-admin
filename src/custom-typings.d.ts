@@ -32,7 +32,10 @@
  *
  */
 
-declare var jQuery:any;
+interface JQuery {
+    easyPieChart;
+}
+
 declare var GoogleMapsLoader:any;
 declare var L:any;
 declare var AmCharts:any;

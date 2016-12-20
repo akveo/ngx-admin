@@ -2,25 +2,24 @@ import {Component, ViewEncapsulation, Input, Output, EventEmitter} from '@angula
 import {Router, Routes, NavigationEnd} from '@angular/router';
 import {Subscription} from 'rxjs/Rx';
 
-import {BaMenuService} from './baMenu.service';
+import { BaMenuService } from '../../services';
 import {GlobalState} from '../../../global.state';
 
 @Component({
   selector: 'ba-menu',
   encapsulation: ViewEncapsulation.None,
   styles: [require('./baMenu.scss')],
-  template: require('./baMenu.html'),
-  providers: [BaMenuService]
+  template: require('./baMenu.html')
 })
 export class BaMenu {
 
-  @Input() menuRoutes:Routes = [];
   @Input() sidebarCollapsed:boolean = false;
   @Input() menuHeight:number;
 
   @Output() expandMenu = new EventEmitter<any>();
 
-  public menuItems:any[];
+  public menuItems: any[];
+  protected _menuItemsSub: Subscription;
   public showHoverElem:boolean;
   public hoverElemHeight:number;
   public hoverElemTop:number;
@@ -39,6 +38,13 @@ export class BaMenu {
         }
       }
     });
+
+    this._menuItemsSub = this._service.menuItems.subscribe(this.updateMenu.bind(this));
+  }
+
+  public updateMenu(newMenuItems) {
+    this.menuItems = newMenuItems;
+    this.selectMenuAndNotify();
   }
 
   public selectMenuAndNotify():void {
@@ -49,11 +55,11 @@ export class BaMenu {
   }
 
   public ngOnInit():void {
-    this.menuItems = this._service.convertRoutesToMenus(this.menuRoutes);
   }
 
   public ngOnDestroy():void {
     this._onRouteChange.unsubscribe();
+    this._menuItemsSub.unsubscribe();
   }
 
   public hoverItem($event):void {
