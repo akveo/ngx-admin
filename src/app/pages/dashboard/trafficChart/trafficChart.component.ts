@@ -24,7 +24,7 @@ export class TrafficChart {
   }
 
   private _loadDoughnutCharts() {
-    let el = jQuery('.chart-area').get(0);
+    let el = jQuery('.chart-area').get(0) as HTMLCanvasElement;
     new Chart(el.getContext('2d')).Doughnut(this.doughnutData, {
       segmentShowStroke: false,
       percentageInnerCutout : 64,

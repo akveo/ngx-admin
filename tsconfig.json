@@ -21,7 +21,9 @@
       "node",
       "source-map",
       "uglify-js",
-      "webpack"
+      "webpack",
+      "fullcalendar",
+      "jquery.slimscroll"
     ]
   },
   "exclude": [
