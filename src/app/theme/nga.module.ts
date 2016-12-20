@@ -44,6 +44,7 @@ import {
 
 import {
   BaImageLoaderService,
+  BaMenuService,
   BaThemePreloader,
   BaThemeSpinner
 } from './services';
@@ -86,7 +87,8 @@ const NGA_PIPES = [
 const NGA_SERVICES = [
   BaImageLoaderService,
   BaThemePreloader,
-  BaThemeSpinner
+  BaThemeSpinner,
+  BaMenuService
 ];
 
 const NGA_VALIDATORS = [
