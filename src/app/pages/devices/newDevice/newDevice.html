@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+<form #f="ngForm" (ngSubmit)="onSubmit()">
+  <p>
+    <label>Device Id:</label>
+    <input type="text" name="deviceId" [(ngModel)]="_device.devId" required>
+  </p>
+  <p>
+    <label>Sensor Position:</label>
+    <input type="text" name="sensorPosition" [(ngModel)]="_device.sensorPosition" required>
+  </p>
+  <p>
+    <label>Description:</label>
+    <input type="text" name="description" [(ngModel)]="_device.description" required>
+  </p>
+  <p>
+    <label>Comments:</label>
+    <input type="text" name="comments" [(ngModel)]="_device.comments" required>
+  </p>
+  <p>
+    <label>Type:</label>
+    <input type="text" name="type" [(ngModel)]="_device.type" required>
+  </p>
+  <p>
+    <label>Status:</label>
+    <input type="text" name="status" [(ngModel)]="_device.status" required>
+  </p>
+  <p>
+    <button type="submit" [disabled]="!f.valid">Submit</button>
+  </p>
+</form>
+
+</body>
+</html>

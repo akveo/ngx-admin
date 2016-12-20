@@ -6,7 +6,7 @@ export const PAGES_MENU = [
         path: 'device',
         data: {
           menu: {
-            title: 'Add Device',
+            title: 'Devices',
             icon: 'ion-android-home',
             selected: false,
             expanded: false,

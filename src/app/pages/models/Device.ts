@@ -1,18 +1,21 @@
 export class Device {
   sensorId: string;
-  valueType: string;
-  year: number;
-  stamp: number;
+  devId: string;
   sensorPosition: string;
-  value: string;
+  description: string;
+  comments: string;
+  type: string;
+  status: string;
 
-  constructor(valueType: string, year: number, stamp: number, sensorPosition: string, value?: string,
-              sensorId?: string) {
-    this.sensorId = sensorId;
-    this.valueType = valueType;
-    this.year = year;
-    this.stamp = stamp;
+
+  constructor(deviceId: string, sensorPosition: string, description: string, comments: string,
+              type: string, status: string, sensorId?: string) {
+    this.sensorId = sensorId || "";
+    this.devId = deviceId;
     this.sensorPosition = sensorPosition;
-    this.value = value;
+    this.description = description;
+    this.comments = comments;
+    this.type = type;
+    this.status = status;
   }
 }
