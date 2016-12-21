@@ -12,15 +12,14 @@ export class DeviceService {
   constructor(private _http : Http) { }
 
   createNewDevice(device: Device){
-    let body = JSON.stringify(device);
-    let headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    let headers = new Headers({ 'Content-Type': 'application/json' });
     let options = new RequestOptions({ headers: headers, withCredentials: true });
 
-    return this._http.post(this._deviceUrl, body, options);
+    return this._http.post(this._deviceUrl, device, options);
   }
 
   getAllDevices(): Observable<Device[]> {
-    return this._http.get('https://api.myjson.com/bins/d4r7p')
+    return this._http.get(this._deviceUrl)
       .map(this.extractData)
       .catch(this.handleError);
   }

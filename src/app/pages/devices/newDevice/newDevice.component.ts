@@ -11,7 +11,7 @@ export class NewDeviceComponent {
   private _device: Device;
 
   constructor(private _deviceService: DeviceService) {
-    this._device = new Device("1", "Karpos", "Measures temperature", "first", "Temperature", "active");
+    this._device = new Device("1", "Karpos", "Measures temperature", "first", "Temperature", "ACTIVE");
   }
 
   onSubmit() {
