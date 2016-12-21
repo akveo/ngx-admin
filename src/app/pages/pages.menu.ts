@@ -12,7 +12,25 @@ export const PAGES_MENU = [
             expanded: false,
             order: 0
           }
-        }
+        },
+        children: [
+          {
+            path: 'list',
+            data: {
+              menu: {
+                title: 'List Devices',
+              }
+            }
+          },
+          {
+            path: 'new',
+            data: {
+              menu: {
+                title: 'Add New Device',
+              }
+            }
+          }
+        ]
       },
       {
         path: 'dashboard',

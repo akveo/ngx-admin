@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Http, Response, Headers, RequestOptions } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
-import {Device} from "../models/Device";
+import { Device } from "../models/Device";
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/catch';
 
 @Injectable()
 export class DeviceService {
@@ -11,7 +13,6 @@ export class DeviceService {
 
   createNewDevice(device: Device){
     let body = JSON.stringify(device);
-    console.log(body);
     let headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' });
     let options = new RequestOptions({ headers: headers, withCredentials: true });
 
@@ -19,7 +20,7 @@ export class DeviceService {
   }
 
   getAllDevices(): Observable<Device[]> {
-    return this._http.get(this._deviceUrl)
+    return this._http.get('https://api.myjson.com/bins/d4r7p')
       .map(this.extractData)
       .catch(this.handleError);
   }
