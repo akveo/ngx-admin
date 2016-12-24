@@ -18,6 +18,24 @@ export class DeviceService {
     return this._http.post(this._deviceUrl, device, options);
   }
 
+  updateDevice(device: Device){
+    let headers = new Headers({ 'Content-Type': 'application/json' });
+    let options = new RequestOptions({ headers: headers, withCredentials: true });
+
+    return this._http.put(this._deviceUrl + '/' + device.sensorId, device, options);
+  }
+
+  deleteDevice(sensorId: string){
+    let options = new RequestOptions({ headers: new Headers(), withCredentials: true });
+    return this._http.delete(this._deviceUrl + '/' + sensorId, options);
+  }
+
+  getDevice(sensorId: string) {
+    return this._http.get(this._deviceUrl + "/" + sensorId)
+      .map(this.extractData)
+      .catch(this.handleError);
+  }
+
   getAllDevices(): Observable<Device[]> {
     return this._http.get(this._deviceUrl)
       .map(this.extractData)

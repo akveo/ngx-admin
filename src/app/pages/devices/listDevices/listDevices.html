@@ -1,25 +1,10 @@
-<div class="list-devices">
-  <table>
-    <tr>
-      <th>DevId</th>
-      <th>SensorId</th>
-      <th>Comments</th>
-      <th>Description</th>
-      <th>Sensor Position</th>
-      <th>Status</th>
-      <th>Type</th>
-    </tr>
-    <tr *ngFor="let device of _devices">
-      <td>{{device.devId}}</td>
-      <td>{{device.sensorId}}</td>
-      <td>{{device.comments}}</td>
-      <td>{{device.description}}</td>
-      <td>{{device.sensorPosition}}</td>
-      <td>{{device.status}}</td>
-      <td>{{device.type}}</td>
-    </tr>
-  </table>
+<div class="widgets">
 
+  <div class="row">
+    <ba-card title="Device List" baCardClass="with-scroll">
+      <ng2-smart-table [settings]="settings" [source]="source"
+                       (deleteConfirm)="onDeleteConfirm($event)" (editConfirm)="onEditConfirm($event)"></ng2-smart-table>
+    </ba-card>
+  </div>
 
-  <a [routerLink]="['/pages/device/new']">Add New Device</a>
 </div>
