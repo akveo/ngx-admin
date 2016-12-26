@@ -5,7 +5,7 @@ import { SweetAlertService } from './sweetAlertService';
 @Component({
     selector: 'sweet-alert',
     encapsulation: ViewEncapsulation.None,
-    template: require('./SweetAlert.html'),
+    template: require('./sweetAlert.html'),
     styles:[require('sweetalert2/dist/sweetalert2.min.css')]
 })
 export class SweetAlert {
