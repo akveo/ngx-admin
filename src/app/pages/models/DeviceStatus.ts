@@ -3,11 +3,7 @@ export class DeviceStatus {
   static ACTIVE: string = 'ACTIVE';
   static INACTIVE: string = 'INACTIVE';
 
-  static getStatuses(): Array<string> {
-    let statuses = new Array();
-    statuses.push(DeviceStatus.NOT_CLAIMED);
-    statuses.push(DeviceStatus.ACTIVE);
-    statuses.push(DeviceStatus.INACTIVE);
-    return statuses
+  static getStatuses(): string[] {
+     return [DeviceStatus.NOT_CLAIMED ,DeviceStatus.ACTIVE,DeviceStatus.INACTIVE];
   }
 }
