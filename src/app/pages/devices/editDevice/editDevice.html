@@ -1,12 +1,13 @@
 <div class="widgets">
   <div class="row">
     <div class="col-md-6">
-      <ba-card title="Add Device">
+      <ba-card title="Edit Device">
         <form #f="ngForm" (ngSubmit)="onSubmit()">
+
           <div class="form-group">
-            <label for="deviceId">Device Id</label>
-            <input name="deviceId" type="text" class="form-control" id="deviceId" placeholder="Device Id"
-                   [(ngModel)]="_device.devId" required>
+            <label for="sensorId">Position</label>
+            <input name="sensorId" type="text" class="form-control" id="sensorId" placeholder="Sensor ID"
+                   value="{{ _device.sensorId }}" disabled>
           </div>
 
           <div class="form-group">
@@ -18,7 +19,7 @@
           <div class="form-group">
             <label for="type">Type</label>
             <input name="type" type="text" class="form-control" id="type" placeholder="Type"
-                   [(ngModel)]="_device.type" required>
+                   value="{{ _device.type }}" disabled>
           </div>
 
           <div class="form-group">
@@ -28,19 +29,12 @@
           </div>
 
           <div class="form-group">
-            <label for="status">Status</label>
-            <select name="status" class="form-control" id="status" [(ngModel)]="_device.status" required>
-              <option *ngFor="let status of _statuses">{{status}}</option>
-            </select>
-          </div>
-
-          <div class="form-group">
             <label for="comments">Comments</label>
             <textarea name="comments" placeholder="Comments" class="form-control" id="comments"
                       [(ngModel)]="_device.comments" required></textarea>
           </div>
 
-          <button type="submit" class="btn btn-warning" [disabled]="!f.valid">Submit</button>
+          <button type="submit" class="btn btn-warning" [disabled]="!f.valid">Update Device</button>
         </form>
       </ba-card>
     </div>

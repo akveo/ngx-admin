@@ -12,6 +12,8 @@ import {NgaModule} from "../../theme/nga.module";
 
 import { FormsModule as AngularFormsModule } from '@angular/forms';
 import {Ng2SmartTableModule} from "ng2-smart-table";
+import {MyDevicesComponent} from "./myDevices/myDevices.component";
+import {EditDeviceComponent} from "./editDevice/editDevice.component";
 @NgModule({
   imports: [
     AngularFormsModule,
@@ -26,7 +28,9 @@ import {Ng2SmartTableModule} from "ng2-smart-table";
   declarations: [
     DeviceComponent,
     NewDeviceComponent,
-    ListDevicesComponent
+    ListDevicesComponent,
+    MyDevicesComponent,
+    EditDeviceComponent
   ],
   providers: [
     DeviceService

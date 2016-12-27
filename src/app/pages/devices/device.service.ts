@@ -8,6 +8,7 @@ import 'rxjs/add/operator/catch';
 @Injectable()
 export class DeviceService {
   private _deviceUrl = 'http://localhost:8080/sensor';
+  private _userDevices = 'http://localhost:8080/user/sensor';
 
   constructor(private _http : Http) { }
 
@@ -31,7 +32,8 @@ export class DeviceService {
   }
 
   getDevice(sensorId: string) {
-    return this._http.get(this._deviceUrl + "/" + sensorId)
+    let options = new RequestOptions({ headers: new Headers(), withCredentials: true });
+    return this._http.get(this._deviceUrl + "/" + sensorId, options)
       .map(this.extractData)
       .catch(this.handleError);
   }
@@ -40,6 +42,20 @@ export class DeviceService {
     return this._http.get(this._deviceUrl)
       .map(this.extractData)
       .catch(this.handleError);
+  }
+
+  getAllDevicesForUser(): Observable<Device[]> {
+    let options = new RequestOptions({ headers: new Headers(), withCredentials: true });
+
+    return this._http.get(this._userDevices, options)
+      .map(this.extractData)
+      .catch(this.handleError);
+  }
+
+  claimDevice(devId: string) {
+    let options = new RequestOptions({ headers: new Headers(), withCredentials: true });
+
+    return this._http.post(this._deviceUrl + "/claim/" + devId, {}, options);
   }
 
   private extractData(res: Response) {

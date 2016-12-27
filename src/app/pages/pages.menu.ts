@@ -29,6 +29,14 @@ export const PAGES_MENU = [
                 title: 'Add New Device',
               }
             }
+          },
+          {
+            path: 'myDevices',
+            data: {
+              menu: {
+                title: 'My Devices',
+              }
+            }
           }
         ]
       },

@@ -14,7 +14,7 @@ export class NewDeviceComponent {
 
   constructor(private _deviceService: DeviceService) {
     this._device = new Device("2", "Karpos", "Measures temperature", "first", "Temperature",
-      DeviceStatus.ACTIVE, "", "773e900f-6a50-4a72-a4c4-3ba84323730d");
+      DeviceStatus.NOT_CLAIMED, "", "");
     this._statuses = DeviceStatus.getStatuses();
   }
 
