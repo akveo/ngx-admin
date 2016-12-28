@@ -80,8 +80,8 @@ export class ListDevicesComponent implements OnInit {
       let sensorId = event.data.sensorId;
       console.log(sensorId);
       this._deviceService.deleteDevice(sensorId).subscribe(
-        data => console.log("Device deleted"),
-        error => console.log("Unable to delete device")
+        data => this.getDevices(),
+        error => this.getDevices()
       );
     } else {
       event.confirm.reject();
