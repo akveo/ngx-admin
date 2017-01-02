@@ -1,6 +1,7 @@
 <div class="widgets">
   <div class="row">
     <div class="col-md-6">
+      <notifications (mouseover)="messageReceived()" *ngIf="!!message" [message]="message"></notifications>
       <ba-card title="Edit Device">
         <form #f="ngForm" (ngSubmit)="onSubmit()">
 

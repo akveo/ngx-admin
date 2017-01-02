@@ -1,6 +1,7 @@
 <div class="widgets">
   <div class="row">
     <div class="col-md-6">
+      <notifications (mouseover)="messageReceived()" *ngIf="!!message" [message]="message"></notifications>
       <ba-card title="Add Device">
         <form #f="ngForm" (ngSubmit)="onSubmit()">
           <div class="form-group">
@@ -29,7 +30,7 @@
 
           <div class="form-group">
             <label for="status">Status</label>
-            <select name="status" class="form-control" id="status" [(ngModel)]="_device.status" required>
+            <select name="status" class="form-control" id="status" [(ngModel)]="_device.status" required disabled>
               <option *ngFor="let status of _statuses">{{status}}</option>
             </select>
           </div>

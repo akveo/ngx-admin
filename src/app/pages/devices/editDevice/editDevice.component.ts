@@ -11,7 +11,7 @@ import {ActivatedRoute} from "@angular/router";
 export class EditDeviceComponent implements OnInit {
 
   private _device: Device;
-  private _statuses: Array<string>;
+  private message: string = '';
 
   constructor(private _deviceService: DeviceService, private _route: ActivatedRoute) {
 
@@ -29,20 +29,30 @@ export class EditDeviceComponent implements OnInit {
         sensorId = params['sensorId'];
         this._deviceService.getDevice(sensorId).subscribe(
           data => this._device = data,
-          error => console.log("Error HTTP Post Service"),
-          () => console.log("Job Done Post !")
+          error => this.setNotificationMessage(error)
         );
       }
     );
-
-    this._statuses = DeviceStatus.getStatuses();
   }
 
   onSubmit() {
     this._deviceService.updateDevice(this._device).subscribe(
-      data => console.log("Device updated"),
-      error => console.log("Error HTTP Post Service"),
-      () => console.log("Job Done Post !")
+      data => this.message = "Device successfully updated",
+      error => this.setNotificationMessage(error)
     );
+  }
+
+  private setNotificationMessage(error: number): void {
+    if(error == 403) {
+      this.message = 'You do not have the necessary authorities to update the device';
+    } else if (error == 404) {
+      this.message = 'A device with the given ID does not exist';
+    } else if (error == 500) {
+      this.message = 'The application encountered an error';
+    }
+  }
+
+  messageReceived(): void {
+    this.message = '';
   }
 }

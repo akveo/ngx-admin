@@ -17,19 +17,24 @@ export class DeviceService {
     let headers = new Headers({'Content-Type': 'application/json'});
     let options = new RequestOptions({headers: headers, withCredentials: true});
 
-    return this._http.post(this._deviceUrl, device, options);
+    return this._http.post(this._deviceUrl, device, options)
+      .map(this.extractData)
+      .catch(this.handleError);
   }
 
   updateDevice(device: Device) {
     let headers = new Headers({'Content-Type': 'application/json'});
     let options = new RequestOptions({headers: headers, withCredentials: true});
-    console.log(device);
-    return this._http.put(this._deviceUrl + '/' + device.sensorId, device, options);
+    return this._http.put(this._deviceUrl + '/' + device.sensorId, device, options)
+      .map(this.extractData)
+      .catch(this.handleError);
   }
 
   deleteDevice(sensorId: string) {
     let options = new RequestOptions({headers: new Headers(), withCredentials: true});
-    return this._http.delete(this._deviceUrl + '/' + sensorId, options);
+    return this._http.delete(this._deviceUrl + '/' + sensorId, options)
+      .map(this.extractData)
+      .catch(this.handleError);
   }
 
   getDevice(sensorId: string) {
@@ -57,7 +62,9 @@ export class DeviceService {
   claimDevice(devId: string) {
     let options = new RequestOptions({headers: new Headers(), withCredentials: true});
 
-    return this._http.post(this._deviceUrl + "/claim/" + devId, {}, options);
+    return this._http.post(this._deviceUrl + "/claim/" + devId, {}, options)
+      .map(this.extractData)
+      .catch(this.handleError);
   }
 
   private extractData(res: Response) {
@@ -70,12 +77,8 @@ export class DeviceService {
     }
   }
 
-  private handleError(error: Response) {
-    try {
-      let jsonError = error.json();
-      return Observable.throw(jsonError.error);
-    } catch (e) {
-      return Observable.throw('error');
-    }
+  private handleError(res: Response) {
+    console.log(res.status);
+    return Observable.throw(res.status);
   }
 }

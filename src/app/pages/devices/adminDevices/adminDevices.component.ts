@@ -3,12 +3,12 @@ import {DeviceService} from '../device.service';
 import {LocalDataSource} from "ng2-smart-table";
 
 @Component({
-  selector: 'devices',
+  selector: 'admin-devices',
   encapsulation: ViewEncapsulation.None,
   styles: [require('./smartTables.scss')],
-  template: require('./listDevices.html')
+  template: require('./adminDevices.html')
 })
-export class ListDevicesComponent implements OnInit {
+export class AdminDevicesComponent implements OnInit {
 
   source: LocalDataSource = new LocalDataSource();
 
@@ -59,6 +59,8 @@ export class ListDevicesComponent implements OnInit {
     }
   };
 
+  private message: string = '';
+
   constructor(private _deviceService: DeviceService) {
 
   }
@@ -80,8 +82,14 @@ export class ListDevicesComponent implements OnInit {
       let sensorId = event.data.sensorId;
       console.log(sensorId);
       this._deviceService.deleteDevice(sensorId).subscribe(
-        data => this.getDevices(),
-        error => this.getDevices()
+        () => {
+          this.getDevices();
+          this.message = 'Device deleted';
+        },
+        () => {
+          this.getDevices();
+          this.message = 'Unable to delete device';
+        }
       );
     } else {
       event.confirm.reject();
@@ -93,8 +101,24 @@ export class ListDevicesComponent implements OnInit {
     let sensor = event.data;
     console.log(event);
     this._deviceService.updateDevice(sensor).subscribe(
-      data => console.log("Device updated"),
-      error => console.log("Unable to update device")
+      () => {
+        this.message = 'Device successfully updated';
+      },
+      error => this.setNotificationMessage(error)
     );
+  }
+
+  private setNotificationMessage(error: number): void {
+    if(error == 403) {
+      this.message = 'You do not have the necessary authorities to update the device';
+    } else if (error == 404) {
+      this.message = 'A device with the given ID does not exist';
+    } else if (error == 500) {
+      this.message = 'The application encountered an error';
+    }
+  }
+
+  messageReceived(): void {
+    this.message = '';
   }
 }
