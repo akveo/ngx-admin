@@ -18,18 +18,8 @@ export class UserService {
       .catch(this.handleError);
   }
 
-  public isUserAdmin(): boolean {
-    this.getUserRoles().subscribe(
-      roles => {
-        roles.forEach((role) => {
-          if(role.authority == 'ROLE_ADMIN') {
-            return true;
-          }
-        });
-        return false;
-      },
-    );
-    return false;
+  public isUserAdmin(): Observable<boolean> {
+    return this.getUserRoles().map(roles =>  roles.some(role => role.authority === 'ROLE_ADMIN'));
   }
 
   private extractData(res: Response) {

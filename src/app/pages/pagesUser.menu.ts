@@ -1,4 +1,4 @@
-export const PAGES_MENU = [
+export const PAGES_MENU_USER = [
   {
     path: 'pages',
     children: [
@@ -42,15 +42,6 @@ export const PAGES_MENU = [
           menu: {
             title: 'Claim Devices',
             icon: 'ion-ios-personadd'
-          }
-        }
-      },
-      {
-        path: 'new',
-        data: {
-          menu: {
-            title: 'Add New Device',
-            icon: 'ion-plus'
           }
         }
       }

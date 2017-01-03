@@ -1,19 +1,29 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Device} from "../models/Device";
 import {DeviceService} from "../devices/device.service";
 import {DeviceStatus} from "../models/DeviceStatus";
+import {UserService} from "../users/user.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'new-device',
   template: require('./newDevice.html')
 })
-export class NewDeviceComponent {
+export class NewDeviceComponent implements OnInit {
 
   private _device: Device;
   private _statuses: Array<string>;
   private message: string = '';
 
-  constructor(private _deviceService: DeviceService) {
+  constructor(private _deviceService: DeviceService,
+              private _userService: UserService,
+              private router: Router) {
+    this._userService.isUserAdmin().subscribe(
+      isUserAdmin => isUserAdmin? console.log("ADMIN") : this.router.navigate(['/'])
+    );
+  }
+
+  ngOnInit(): void {
     this._device = new Device("2", "Karpos", "Measures temperature", "first", "Temperature",
       DeviceStatus.NOT_CLAIMED, "", "");
     this._statuses = DeviceStatus.getStatuses();

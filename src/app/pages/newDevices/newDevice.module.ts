@@ -9,6 +9,7 @@ import { FormsModule as AngularFormsModule } from '@angular/forms';
 import {DeviceService} from "../devices/device.service";
 import NotificationModule from "../notifications/notification.module";
 import {NewDeviceComponent} from "./newDevice.component";
+import {UserService} from "../users/user.service";
 @NgModule({
   imports: [
     AngularFormsModule,
@@ -24,6 +25,7 @@ import {NewDeviceComponent} from "./newDevice.component";
   ],
   providers: [
     DeviceService,
+    UserService
   ]
 })
 export default class NewDeviceModule {}

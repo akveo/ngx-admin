@@ -19,14 +19,8 @@ export class HomeDevicesComponent implements OnInit {
   }
 
   private getUserRoles() {
-    this._userService.getUserRoles().subscribe(
-      roles => {
-        roles.forEach((role) => {
-          if(role.authority == 'ROLE_ADMIN') {
-            this.isUserAdmin = true;
-          }
-        });
-      },
+    this._userService.isUserAdmin().subscribe(
+      isUserAdmin => this.isUserAdmin = isUserAdmin,
       error => console.log(error)
     );
   }
