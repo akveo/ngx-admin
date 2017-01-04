@@ -53,6 +53,15 @@ export const PAGES_MENU = [
             icon: 'ion-plus'
           }
         }
+      },
+      {
+        path: 'users',
+        data: {
+          menu: {
+            title: 'Users',
+            icon: 'ion-person-stalker'
+          }
+        }
       }
     ]
   }

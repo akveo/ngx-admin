@@ -18,6 +18,7 @@ const routes: Routes = [
       { path: 'device', loadChildren: () => System.import('./devices/device.module') },
       { path: 'claimDevice', loadChildren: () => System.import('./claimDevices/claimDevice.module.ts') },
       { path: 'new', loadChildren: () => System.import('./newDevices/newDevice.module') },
+      { path: 'users', loadChildren: () => System.import('./users/user.module') },
       { path: 'dashboard', loadChildren: () => System.import('./dashboard/dashboard.module') },
       { path: 'editors', loadChildren: () => System.import('./editors/editors.module') },
       //{ path: 'components', loadChildren: () => System.import('./components/components.module') }
