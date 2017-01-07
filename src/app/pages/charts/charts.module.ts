@@ -7,6 +7,8 @@ import { routing }       from './charts.routing';
 import { Charts } from './charts.component';
 import { ChartistJs } from './components/chartistJs/chartistJs.component';
 import { ChartistJsService } from './components/chartistJs/chartistJs.service';
+import { D3Js } from './components/D3Js/D3Js.component';
+import { D3JsService} from './components/D3Js/D3Js.service';
 
 
 @NgModule({
@@ -18,10 +20,12 @@ import { ChartistJsService } from './components/chartistJs/chartistJs.service';
   ],
   declarations: [
     Charts,
-    ChartistJs
+    ChartistJs,
+    D3Js
   ],
   providers: [
-    ChartistJsService
+    ChartistJsService,
+    D3JsService
   ]
 })
 export default class ChartsModule {}

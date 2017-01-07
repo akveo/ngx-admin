@@ -6,7 +6,6 @@
   "homepage": "http://akveo.github.io/ng2-admin/",
   "license": "MIT",
   "dependencies": {
-
     "@angular/common": "2.2.3",
     "@angular/compiler": "2.2.3",
     "@angular/core": "2.2.3",
@@ -16,11 +15,9 @@
     "@angular/platform-browser-dynamic": "2.2.3",
     "@angular/platform-server": "2.2.3",
     "@angular/router": "3.2.3",
-
     "@angularclass/conventions-loader": "^1.0.2",
     "@angularclass/hmr": "~1.2.2",
     "@angularclass/hmr-loader": "~3.0.2",
-
     "amcharts3": "github:amcharts/amcharts3",
     "ammap3": "github:amcharts/ammap3",
     "animate.css": "^3.5.1",
@@ -31,6 +28,7 @@
     "chartist": "^0.9.7",
     "ckeditor": "4.6.0",
     "core-js": "^2.4.1",
+    "d3": "^4.4.1",
     "easy-pie-chart": "^2.1.7",
     "extract-text-webpack-plugin": "2.0.0-beta.3",
     "font-awesome": "^4.6.3",
