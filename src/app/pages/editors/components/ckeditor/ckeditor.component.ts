@@ -4,9 +4,9 @@ import './ckeditor.loader.ts';
 
 @Component({
   selector: 'ckeditor-component',
-  encapsulation: ViewEncapsulation.None,
-  template: require('./ckeditor.html'),
-  styles: [require('./ckeditor.scss')]
+  // encapsulation: ViewEncapsulation.None,
+  templateUrl: './ckeditor.html',
+  styleUrls: ['./ckeditor.scss']
 })
 
 export class Ckeditor {

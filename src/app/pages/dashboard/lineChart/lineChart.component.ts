@@ -1,12 +1,12 @@
-import {Component, ViewEncapsulation} from '@angular/core';
+import {Component} from '@angular/core';
 
 import {LineChartService} from './lineChart.service';
 
+import 'style!./lineChart.scss';
+
 @Component({
   selector: 'line-chart',
-  encapsulation: ViewEncapsulation.None,
-  styles: [require('./lineChart.scss')],
-  template: require('./lineChart.html')
+  templateUrl: './lineChart.html'
 })
 export class LineChart {
 

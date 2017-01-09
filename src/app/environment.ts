@@ -1,3 +1,5 @@
+// TODO: should be from webpack
+const ENV = 'production';
 
 // Angular 2
 // rc2 workaround

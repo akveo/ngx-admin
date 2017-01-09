@@ -1,12 +1,11 @@
-import {Component, ViewEncapsulation} from '@angular/core';
+import {Component} from '@angular/core';
 
 import {UsersMapService} from './usersMap.service';
+import 'style!./usersMap.scss';
 
 @Component({
   selector: 'users-map',
-  encapsulation: ViewEncapsulation.None,
-  styles: [require('./usersMap.scss')],
-  template: require('./usersMap.html')
+  templateUrl: './usersMap.html'
 })
 export class UsersMap {
 

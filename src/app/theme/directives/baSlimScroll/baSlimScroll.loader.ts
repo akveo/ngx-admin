@@ -1,1 +1,1 @@
-require('jquery-slimscroll');
+import 'jquery-slimscroll';

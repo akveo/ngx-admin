@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'rating-inputs',
-  template: require('./ratinginputs.html')
+  templateUrl: './ratinginputs.html'
 })
 
 export class Rating {

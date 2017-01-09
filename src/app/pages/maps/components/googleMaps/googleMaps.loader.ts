@@ -1,1 +1,1 @@
-export const GoogleMapsLoader = require('google-maps');
+import * as GoogleMapsLoader from 'google-maps';

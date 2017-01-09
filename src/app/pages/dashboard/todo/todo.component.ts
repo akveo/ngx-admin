@@ -5,12 +5,12 @@ import {TodoService} from './todo.service';
 
 @Component({
   selector: 'todo',
-  encapsulation: ViewEncapsulation.None,
-  styles: [require('./todo.scss')],
-  template: require('./todo.html')
+  // encapsulation: ViewEncapsulation.None,
+  styleUrls: ['./todo.scss'],
+  templateUrl: './todo.html'
 })
 export class Todo {
-  
+
   public dashboardColors = this._baConfig.get().colors.dashboard;
 
   public todoList:Array<any>;

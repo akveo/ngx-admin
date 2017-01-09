@@ -24,7 +24,7 @@ const APP_PROVIDERS = [
   GlobalState
 ];
 
-type StoreType = {
+export type StoreType = {
   state: InternalStateType,
   restoreInputValues: () => void,
   disposeOldHosts: () => void

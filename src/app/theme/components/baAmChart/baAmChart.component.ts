@@ -7,8 +7,9 @@ import {BaAmChartThemeService} from './baAmChartTheme.service';
 
 @Component({
   selector: 'ba-am-chart',
-  template: require('./baAmChart.html'),
-  encapsulation: ViewEncapsulation.None,
+  templateUrl: './baAmChart.html',
+  styleUrls: ['./baAmChart.scss'],
+  // // encapsulation: ViewEncapsulation.None,
   providers: [BaAmChartThemeService],
 })
 export class BaAmChart {

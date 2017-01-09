@@ -4,8 +4,8 @@ import './baFullCalendar.loader.ts';
 
 @Component({
   selector: 'ba-full-calendar',
-  template: require('./baFullCalendar.html'),
-  encapsulation: ViewEncapsulation.None,
+  templateUrl: './baFullCalendar.html',
+  // // encapsulation: ViewEncapsulation.None,
 })
 export class BaFullCalendar {
 

@@ -48,5 +48,5 @@ import { WithoutLabelsForm } from './components/layouts/components/withoutLabels
     WithoutLabelsForm
   ]
 })
-export default class FormsModule {
+export class FormsModule {
 }

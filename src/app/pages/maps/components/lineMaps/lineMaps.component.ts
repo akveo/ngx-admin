@@ -1,12 +1,11 @@
-import {Component, ViewEncapsulation} from '@angular/core';
+import {Component} from '@angular/core';
 
 import {LineMapsService} from './lineMaps.service';
+import 'style!./lineMaps.scss';
 
 @Component({
   selector: 'line-maps',
-  encapsulation: ViewEncapsulation.None,
-  styles: [require('./lineMaps.scss')],
-  template: require('./lineMaps.html')
+  templateUrl: './lineMaps.html'
 })
 export class LineMaps {
 

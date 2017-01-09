@@ -1,23 +1,18 @@
 import {
     Component,
     ViewChild,
-    ViewEncapsulation,
     Input,
     Output,
     ElementRef,
-    EventEmitter,
-    OnInit,
-    OnChanges,
-    OnDestroy,
+    EventEmitter
 } from '@angular/core';
 
-import {Chartist} from './baChartistChart.loader.ts';
+import * as Chartist from 'chartist';
+import 'style!./baChartistChart.scss';
 
 @Component({
   selector: 'ba-chartist-chart',
-  encapsulation: ViewEncapsulation.None,
-  styles: [require('chartist/dist/chartist.css'), require('./baChartistChart.scss')],
-  template: require('./baChartistChart.html'),
+  templateUrl: './baChartistChart.html',
   providers: [],
 })
 export class BaChartistChart {

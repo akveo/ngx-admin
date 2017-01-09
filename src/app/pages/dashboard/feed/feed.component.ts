@@ -4,9 +4,9 @@ import {FeedService} from './feed.service';
 
 @Component({
   selector: 'feed',
-  encapsulation: ViewEncapsulation.None,
-  styles: [require('./feed.scss')],
-  template: require('./feed.html')
+  // // encapsulation: ViewEncapsulation.None,
+  styleUrls: ['./feed.scss'],
+  templateUrl: './feed.html'
 })
 export class Feed {
 

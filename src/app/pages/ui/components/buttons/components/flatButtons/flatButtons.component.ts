@@ -3,7 +3,7 @@ import {Component} from '@angular/core';
 
 @Component({
   selector: 'flat-buttons',
-  template: require('./flatButtons.html'),
+  templateUrl: './flatButtons.html',
 })
 export class FlatButtons {
 
