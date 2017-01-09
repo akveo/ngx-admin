@@ -97,7 +97,7 @@
     "to-string-loader": "^1.1.4",
     "sass-loader": "^4.0.2",
     "resolve-url-loader": "^1.4.3",
-    "node-sass": "^3.5.3",
+    "node-sass": "^4.2.0",
     "html-webpack-plugin": "^2.21.0",
     "copy-webpack-plugin": "^3.0.1",
     "v8-lazy-parse-webpack-plugin": "^0.3.0",
