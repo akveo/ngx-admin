@@ -43,7 +43,7 @@
     "leaflet": "^0.7.7",
     "leaflet-map": "^0.2.1",
     "lodash": "^4.12.0",
-    "ng2-bootstrap": "1.1.16",
+    "ng2-bootstrap": "1.1.14",
     "ng2-ckeditor": "1.0.7",
     "ng2-smart-table": "^0.3.2",
     "ng2-tree": "^0.0.2-7",
