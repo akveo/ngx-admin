@@ -8,25 +8,25 @@ import { ModuleWithProviders } from '@angular/core';
 export const routes: Routes = [
   {
     path: 'login',
-    loadChildren: 'app/pages/login/login.module#LoginModule'
+    loadChildren: './pages/login/login.module#LoginModule'
   },
   {
     path: 'register',
-    loadChildren: 'app/pages/register/register.module#RegisterModule'
+    loadChildren: './pages/register/register.module#RegisterModule'
   },
   {
     path: 'pages',
     component: Pages,
     children: [
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
-      { path: 'dashboard', loadChildren: 'app/pages/dashboard/dashboard.module#DashboardModule' },
-      { path: 'editors', loadChildren: 'app/pages/editors/editors.module#EditorsModule' },
-      // //{ path: 'components', loadChildren: 'app/pages/components/components.module') }
-      { path: 'charts', loadChildren: 'app/pages/charts/charts.module#ChartsModule' },
-      { path: 'ui', loadChildren: 'app/pages/ui/ui.module#UiModule' },
-      { path: 'forms', loadChildren: 'app/pages/forms/forms.module#FormsModule' },
-      { path: 'tables', loadChildren: 'app/pages/tables/tables.module#TablesModule' },
-      { path: 'maps', loadChildren: 'app/pages/maps/maps.module#MapsModule' }
+      { path: 'dashboard', loadChildren: './pages/dashboard/dashboard.module#DashboardModule' },
+      { path: 'editors', loadChildren: './pages/editors/editors.module#EditorsModule' },
+      // //{ path: 'components', loadChildren: './pages/components/components.module') }
+      { path: 'charts', loadChildren: './pages/charts/charts.module#ChartsModule' },
+      { path: 'ui', loadChildren: './pages/ui/ui.module#UiModule' },
+      { path: 'forms', loadChildren: './pages/forms/forms.module#FormsModule' },
+      { path: 'tables', loadChildren: './pages/tables/tables.module#TablesModule' },
+      { path: 'maps', loadChildren: './pages/maps/maps.module#MapsModule' }
     ]
   }
 ];

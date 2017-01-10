@@ -8,4 +8,6 @@ export class BasicForm {
 
   constructor() {
   }
+
+  isChecked: boolean = false;
 }

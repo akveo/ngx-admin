@@ -18,7 +18,7 @@ export class BaPictureUploader {
   onUpload:EventEmitter<any> = new EventEmitter();
   onUploadCompleted:EventEmitter<any> = new EventEmitter();
 
-  @ViewChild('fileUpload') protected _fileUpload:ElementRef;
+  @ViewChild('fileUpload') public _fileUpload:ElementRef;
 
   public uploadInProgress:boolean = false;
 

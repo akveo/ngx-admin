@@ -8,4 +8,6 @@ export class HorizontalForm {
 
   constructor() {
   }
+
+  isRemember: boolean = false;
 }

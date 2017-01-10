@@ -18,7 +18,7 @@ export class BaAmChart {
   @Input() baAmChartClass:string;
   @Output() onChartReady = new EventEmitter<any>();
 
-  @ViewChild('baAmChart') private _selector:ElementRef;
+  @ViewChild('baAmChart') public _selector:ElementRef;
 
   constructor (private _baAmChartThemeService:BaAmChartThemeService) {
     this._loadChartsLib();

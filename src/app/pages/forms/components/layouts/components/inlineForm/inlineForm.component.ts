@@ -9,4 +9,6 @@ export class InlineForm {
 
   constructor() {
   }
+
+  isRemember: boolean = false;
 }

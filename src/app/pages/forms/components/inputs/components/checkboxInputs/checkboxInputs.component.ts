@@ -19,6 +19,8 @@ export class CheckboxInputs {
     class: 'col-md-4'
   }];
 
+  isDisabled: boolean = false;
+
   public checkboxPropertiesMapping = {
     model: 'checked',
     value: 'name',

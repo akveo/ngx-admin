@@ -24,7 +24,7 @@ export class BaChartistChart {
   @Input() baChartistChartClass:string;
   @Output() onChartReady = new EventEmitter<any>();
 
-  @ViewChild('baChartistChart') private _selector:ElementRef;
+  @ViewChild('baChartistChart') public _selector:ElementRef;
 
   private chart;
 
@@ -33,7 +33,7 @@ export class BaChartistChart {
     this.onChartReady.emit(this.chart);
   }
 
-  ngOnChanges() {
+  ngOnChanges(changes) {
     if (this.chart) {
       (<any>this.chart).update(this.baChartistChartData, this.baChartistChartOptions);
     }

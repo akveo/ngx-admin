@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "module": "commonjs",
+    "module": "es2015",
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
@@ -14,26 +14,31 @@
     "paths": {
     },
     "lib": [
-      "dom",
-      "es6"
+      "es2015",
+      "dom"
     ],
     "types": [
       "hammerjs",
-      "jasmine",
       "node",
-      "selenium-webdriver",
       "source-map",
-      "uglify-js",
-      "webpack"
+      "webpack",
+      "fullcalendar",
+      "jquery.slimscroll"
     ]
   },
   "exclude": [
     "node_modules",
-    "dist"
+    "dist",
+    "src/**/*.spec.ts",
+    "src/**/*.e2e.ts"
   ],
   "awesomeTypescriptLoaderOptions": {
     "forkChecker": true,
     "useWebpackText": true
+  },
+  "angularCompilerOptions": {
+    "genDir": "./compiled",
+    "skipMetadataEmit": true
   },
   "compileOnSave": false,
   "buildOnSave": false,
