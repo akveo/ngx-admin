@@ -6,21 +6,16 @@ import { NgaModule } from '../../theme/nga.module';
 import { Dashboard } from './dashboard.component';
 import { routing }       from './dashboard.routing';
 
-import { PopularApp } from './popularApp';
-import { PieChart } from './pieChart';
-import { TrafficChart } from './trafficChart';
-import { UsersMap } from './usersMap';
-import { LineChart } from './lineChart';
-import { Feed } from './feed';
-import { Todo } from './todo';
-import { Calendar } from './calendar';
-import { CalendarService } from './calendar/calendar.service';
-import { FeedService } from './feed/feed.service';
-import { LineChartService } from './lineChart/lineChart.service';
-import { PieChartService } from './pieChart/pieChart.service';
-import { TodoService } from './todo/todo.service';
-import { TrafficChartService } from './trafficChart/trafficChart.service';
-import { UsersMapService } from './usersMap/usersMap.service';
+import { ActiveDevices } from './activeDevices';
+import { DeviceTypesComponent } from './deviceTypes';
+import { DeviceTypesService } from './deviceTypes/deviceTypes.service';
+import {DashboardService} from "./dashboard.service";
+import {MeasurementTypesService} from "./measurementTypes/measurementTypes.service";
+import {MeasurementTypesPieChartComponent} from "./measurementTypes/measurementTypes.component";
+import {NumberOfUsers} from "./numberOfUsers/numberOfUsers.component";
+import {MeasurementTypesForUserComponent} from "./measurementTypesUser/measurementTypesUser.component";
+import {MeasurementTypesUserService} from "./measurementTypesUser/measurementTypesUser.service";
+import {NumberOfDevicesForUsers} from "./numberOfDevicesForUsers/numberOfDevicesForUsers.component";
 
 @NgModule({
   imports: [
@@ -30,24 +25,19 @@ import { UsersMapService } from './usersMap/usersMap.service';
     routing
   ],
   declarations: [
-    PopularApp,
-    PieChart,
-    TrafficChart,
-    UsersMap,
-    LineChart,
-    Feed,
-    Todo,
-    Calendar,
+    ActiveDevices,
+    NumberOfUsers,
+    NumberOfDevicesForUsers,
+    DeviceTypesComponent,
+    MeasurementTypesPieChartComponent,
+    MeasurementTypesForUserComponent,
     Dashboard
   ],
   providers: [
-    CalendarService,
-    FeedService,
-    LineChartService,
-    PieChartService,
-    TodoService,
-    TrafficChartService,
-    UsersMapService
+    DeviceTypesService,
+    MeasurementTypesService,
+    MeasurementTypesUserService,
+    DashboardService
   ]
 })
 export default class DashboardModule {}
