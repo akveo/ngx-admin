@@ -52,7 +52,8 @@
     "ng2-tree": "^0.0.2-7",
     "ng2-uploader": "1.1.0",
     "normalize.css": "^4.1.1",
-    "postcss-loader": "^1.0.0",
+    "postcss-loader": "1.0.0",
+    "postcss-load-config": "1.0.0",
     "rxjs": "5.0.0-beta.12",
     "tether": "^1.2.4",
     "zone.js": "~0.7.1"
