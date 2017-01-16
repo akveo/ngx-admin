@@ -106,7 +106,7 @@
     "webpack-dev-middleware": "^1.6.1",
     "webpack-dev-server": "2.1.0-beta.11",
     "webpack-md5-hash": "^0.0.5",
-    "webpack-merge": "^0.17.0",
+    "webpack-merge": "^2.4.0",
     "compression-webpack-plugin": "^0.3.1",
     "es6-promise": "^3.1.2",
     "es6-shim": "^0.35.0",
