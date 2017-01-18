@@ -19,7 +19,7 @@ export class ActiveDevices {
     this._dashboardService.getNumberOfActiveDevices().subscribe(
       (result: any) => {
         this.activeDevices = result.active;
-        this.percentage = parseInt((result.active / result.total) * 100);
+        this.percentage = ((result.active / result.total) * 100).toFixed(1);
 
         this._loadPieCharts(this.percentage);
         this._updatePieCharts(this.percentage);

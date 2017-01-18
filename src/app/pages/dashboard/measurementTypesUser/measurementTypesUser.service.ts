@@ -17,8 +17,8 @@ export class MeasurementTypesUserService {
     return this._dashboardService.getNumberOfMeasurementsForUserByType()
       .map(o => Object.keys(o).map((key, index, arr) => ({
         value: o[key],
-        color: dashboardColors[ colorNames[ colorNames.length % (index + 3)] ],
-        highlight: colorHelper.shade(dashboardColors[ colorNames [colorNames.length % (index + 3)] ], 15),
+        color: dashboardColors[ colorNames[ (colorNames.length - 1) % (index + 1)] ],
+        highlight: colorHelper.shade(dashboardColors[ colorNames [(colorNames.length - 1) % (index + 1)] ], 15),
         label: key,
         order: index,
       })));

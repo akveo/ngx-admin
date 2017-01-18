@@ -19,7 +19,7 @@ export class MeasurementTypesForUserComponent {
     deviceTypesPieChartService.getData().subscribe(
       (data) => {
         this.doughnutData = data;
-        this.totalDevices = this.doughnutData.reduce((sum,data) => sum + data.value , 0);
+        this.totalDevices = Number(this.doughnutData.reduce((sum,data) => sum + (<any>data).value , 0));
         this.doughnutData.forEach((deviceData) => {
           (<any>deviceData).percentage = (((<any>deviceData).value/this.totalDevices)*100).toFixed(1);
         });
