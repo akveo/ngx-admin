@@ -1,0 +1,57 @@
+<div class="widgets">
+
+  <div class="row">
+    <div class="col-lg-8 col-md-12">
+      <notifications (mouseover)="messageReceived()" *ngIf="!!message" [message]="message"></notifications>
+      <ba-card title="My Devices" baCardClass="with-scroll table-panel">
+        <div class="horizontal-scroll">
+          <table class="table table-condensed">
+            <thead>
+            <tr>
+              <th class="table-id">Sensor ID</th>
+              <th>Position</th>
+              <th>Comments</th>
+              <th>Description</th>
+              <th>Type</th>
+              <th>Status</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let device of _devices">
+              <td class="table-id">{{ device.sensorId }}</td>
+              <td>{{ device.position }}</td>
+              <td>{{ device.comments }}</td>
+              <td>{{ device.description }}</td>
+              <td>{{ device.type }}</td>
+
+              <td [ngSwitch]="device.status">
+                <button *ngSwitchCase="'ACTIVE'"
+                        ngClass="{status-button btn btn-xs btn-success"
+                        (click)="changeStatus(device)">
+                  {{ device.status }}
+                </button>
+                <button *ngSwitchCase="'INACTIVE'"
+                        ngClass="{status-button btn btn-xs btn-danger"
+                        (click)="changeStatus(device)">
+                  {{ device.status }}
+                </button>
+              </td>
+
+              <td class="text-center">
+                <button [routerLink]="['/pages/device', device.sensorId]"
+                        ngClass="{status-button btn btn-sm btn-info">
+                  <i class="ion-edit"></i>
+                  Edit Device
+                </button>
+              </td>
+
+            </tr>
+            </tbody>
+          </table>
+        </div>
+
+      </ba-card>
+    </div>
+  </div>
+
+</div>

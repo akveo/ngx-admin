@@ -9,6 +9,8 @@ import { BaMenuService } from './theme';
 import {ComponentsHelper } from 'ng2-bootstrap';
 
 import { MENU } from './app.menu';
+import { MENU_USER } from './appUser.menu';
+import {UserService} from "./pages/users/user.service";
 /*
  * App Component
  * Top Level Component
@@ -33,9 +35,18 @@ export class App {
               private _spinner: BaThemeSpinner,
               private _config: BaThemeConfig,
               private _menuService: BaMenuService,
-              private viewContainerRef: ViewContainerRef) {
+              private viewContainerRef: ViewContainerRef,
+              private _userService: UserService) {
 
-    this._menuService.updateMenuByRoutes(<Routes>MENU);
+    this._userService.isUserAdmin().subscribe(
+      isUserAdmin => {
+        if (isUserAdmin) {
+          this._menuService.updateMenuByRoutes(<Routes>MENU);
+        } else {
+          this._menuService.updateMenuByRoutes(<Routes>MENU_USER);
+        }
+      }
+    );
 
     this._fixModals();
 

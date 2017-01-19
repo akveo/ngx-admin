@@ -1,0 +1,23 @@
+<div class="widgets">
+
+  <div class="row">
+    <div class="col-lg-8 col-md-12">
+      <notifications (mouseover)="messageReceived()" *ngIf="!!message" [message]="message"></notifications>
+
+      <ba-card title="Claim Device" baCardClass="with-scroll table-panel">
+
+        <form #f="ngForm" (ngSubmit)="onSubmitClaimDevice()">
+          <div class="form-group">
+            <label for="deviceId">Device Id</label>
+            <input name="deviceId" type="text" class="form-control" id="deviceId" placeholder="Device Id"
+                   [(ngModel)]="_claimedDevId" required>
+          </div>
+
+          <button type="submit" class="btn btn-warning" [disabled]="!f.valid">Claim Device</button>
+        </form>
+
+      </ba-card>
+    </div>
+  </div>
+
+</div>

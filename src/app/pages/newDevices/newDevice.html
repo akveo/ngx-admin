@@ -1,0 +1,49 @@
+<div class="widgets">
+  <div class="row">
+    <div class="col-md-6">
+      <notifications (mouseover)="messageReceived()" *ngIf="!!message" [message]="message"></notifications>
+      <ba-card title="Add Device">
+        <form #f="ngForm" (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <label for="deviceId">Device Id</label>
+            <input name="deviceId" type="text" class="form-control" id="deviceId" placeholder="Device Id"
+                   [(ngModel)]="_device.devId" required>
+          </div>
+
+          <div class="form-group">
+            <label for="sensorPosition">Position</label>
+            <input name="sensorPosition" type="text" class="form-control" id="sensorPosition" placeholder="Position"
+                   [(ngModel)]="_device.position" required>
+          </div>
+
+          <div class="form-group">
+            <label for="type">Type</label>
+            <input name="type" type="text" class="form-control" id="type" placeholder="Type"
+                   [(ngModel)]="_device.type" required>
+          </div>
+
+          <div class="form-group">
+            <label for="description">Description</label>
+            <input name="description" type="text" class="form-control" id="description" placeholder="Description"
+                   [(ngModel)]="_device.description" required>
+          </div>
+
+          <div class="form-group">
+            <label for="status">Status</label>
+            <select name="status" class="form-control" id="status" [(ngModel)]="_device.status" required disabled>
+              <option *ngFor="let status of _statuses">{{status}}</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="comments">Comments</label>
+            <textarea name="comments" placeholder="Comments" class="form-control" id="comments"
+                      [(ngModel)]="_device.comments" required></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-warning" [disabled]="!f.valid">Submit</button>
+        </form>
+      </ba-card>
+    </div>
+  </div>
+</div>

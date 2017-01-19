@@ -1,0 +1,11 @@
+<div class="widgets">
+
+  <div class="row">
+    <notifications (mouseover)="messageReceived()" *ngIf="!!message" [message]="message"></notifications>
+    <ba-card title="Device List" baCardClass="with-scroll">
+      <ng2-smart-table [settings]="settings" [source]="source"
+                       (deleteConfirm)="onDeleteConfirm($event)" (editConfirm)="onEditConfirm($event)"></ng2-smart-table>
+    </ba-card>
+  </div>
+
+</div>

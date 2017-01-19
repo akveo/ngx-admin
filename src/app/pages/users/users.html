@@ -1,0 +1,82 @@
+<div class="widgets">
+
+  <div class="row">
+    <div class="col-lg-10 col-md-12">
+      <notifications (mouseover)="messageReceived()" *ngIf="!!message" [message]="message"></notifications>
+      <ba-card title="Users" baCardClass="with-scroll table-panel">
+        <div class="horizontal-scroll">
+          <table class="table table-condensed">
+            <thead>
+            <tr>
+              <th class="table-id">User ID</th>
+              <th>Username</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Roles</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let user of _users">
+              <td class="table-id">{{ user.userId }}</td>
+              <td>
+                <input name="username" type="text" class="form-control" id="username"
+                       [(ngModel)]="user.username" required>
+              </td>
+              <td>
+                <input name="name" type="text" class="form-control" id="name"
+                       [(ngModel)]="user.name" required>
+              </td>
+              <td>
+                <input name="email" type="text" class="form-control" id="email"
+                       [(ngModel)]="user.email" required>
+              </td>
+
+              <td>
+                <div class="dropdown">
+                  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1"
+                          data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                    Roles
+                    <span class="caret"></span>
+                  </button>
+
+                  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                    <input type="checkbox"
+                           name="admin"
+                           value="role"
+                           [checked]="hasRole(user.authorities, 'ROLE_ADMIN')"
+                           (change)="toggleRole(user, 'ROLE_ADMIN')">Admin<br>
+                    <input type="checkbox"
+                           name="user"
+                           value="role"
+                           [checked]="hasRole(user.authorities, 'ROLE_USER')"
+                           (change)="toggleRole(user, 'ROLE_USER')">User<br>
+                    <input type="checkbox"
+                           name="tech"
+                           value="role"
+                           [checked]="hasRole(user.authorities, 'ROLE_TECH')"
+                           (change)="toggleRole(user, 'ROLE_TECH')">Tech
+                  </ul>
+                </div>
+              </td>
+
+              <td>
+                <button ngClass="{status-button btn btn-sm btn-success"
+                        (click)="updateUser(user)">
+                  <i class="ion-edit"></i>
+                </button>
+                <button ngClass="{status-button btn btn-sm btn-danger"
+                        (click)="deleteUser(user.userId)">
+                  <i class="ion-trash-a"></i>
+                </button>
+              </td>
+
+            </tr>
+            </tbody>
+          </table>
+        </div>
+
+      </ba-card>
+    </div>
+  </div>
+
+</div>

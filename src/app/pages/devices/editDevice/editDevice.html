@@ -1,0 +1,43 @@
+<div class="widgets">
+  <div class="row">
+    <div class="col-md-6">
+      <notifications (mouseover)="messageReceived()" *ngIf="!!message" [message]="message"></notifications>
+      <ba-card title="Edit Device">
+        <form #f="ngForm" (ngSubmit)="onSubmit()">
+
+          <div class="form-group">
+            <label for="sensorId">Position</label>
+            <input name="sensorId" type="text" class="form-control" id="sensorId" placeholder="Sensor ID"
+                   value="{{ _device.sensorId }}" disabled>
+          </div>
+
+          <div class="form-group">
+            <label for="sensorPosition">Position</label>
+            <input name="sensorPosition" type="text" class="form-control" id="sensorPosition" placeholder="Position"
+                   [(ngModel)]="_device.position" required>
+          </div>
+
+          <div class="form-group">
+            <label for="type">Type</label>
+            <input name="type" type="text" class="form-control" id="type" placeholder="Type"
+                   value="{{ _device.type }}" disabled>
+          </div>
+
+          <div class="form-group">
+            <label for="description">Description</label>
+            <input name="description" type="text" class="form-control" id="description" placeholder="Description"
+                   [(ngModel)]="_device.description" required>
+          </div>
+
+          <div class="form-group">
+            <label for="comments">Comments</label>
+            <textarea name="comments" placeholder="Comments" class="form-control" id="comments"
+                      [(ngModel)]="_device.comments" required></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-warning" [disabled]="!f.valid">Update Device</button>
+        </form>
+      </ba-card>
+    </div>
+  </div>
+</div>
