@@ -2,7 +2,7 @@ import {Component, ElementRef, HostListener, ViewEncapsulation} from '@angular/c
 import {GlobalState} from '../../../global.state';
 import {layoutSizes} from '../../../theme';
 
-import 'style!./baSidebar.scss';
+import 'style-loader!./baSidebar.scss';
 
 @Component({
   selector: 'ba-sidebar',

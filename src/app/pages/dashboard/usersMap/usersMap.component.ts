@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 
 import {UsersMapService} from './usersMap.service';
-import 'style!./usersMap.scss';
+import 'style-loader!./usersMap.scss';
 
 @Component({
   selector: 'users-map',

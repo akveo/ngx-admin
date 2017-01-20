@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
-import './app.loader.ts';
 import { Component, ViewEncapsulation, ViewContainerRef } from '@angular/core';
+
 import { GlobalState } from './global.state';
 import { BaImageLoaderService, BaThemePreloader, BaThemeSpinner } from './theme/services';
 import { layoutPaths } from './theme/theme.constants';
@@ -9,7 +9,8 @@ import { BaMenuService } from './theme';
 
 import { MENU } from './app.menu';
 
-import 'style!./app.scss';
+import 'style-loader!./app.scss';
+import 'style-loader!./theme/initial.scss';
 
 /*
  * App Component

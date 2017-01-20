@@ -1,7 +1,7 @@
 import {Component, ViewEncapsulation} from '@angular/core';
 
 import {ChartistJsService} from './chartistJs.service';
-import 'style!./chartistJs.scss';
+import 'style-loader!./chartistJs.scss';
 
 @Component({
   selector: 'chartist-js',

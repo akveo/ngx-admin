@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 
 import {LineMapsService} from './lineMaps.service';
-import 'style!./lineMaps.scss';
+import 'style-loader!./lineMaps.scss';
 
 @Component({
   selector: 'line-maps',

@@ -3,7 +3,7 @@ import {Component, ViewEncapsulation} from '@angular/core';
 import {PieChartService} from './pieChart.service';
 
 import './pieChart.loader.ts';
-import 'style!./pieChart.scss';
+import 'style-loader!./pieChart.scss';
 
 @Component({
   selector: 'pie-chart',

@@ -2,7 +2,7 @@ import {Component} from '@angular/core';
 
 import {LineChartService} from './lineChart.service';
 
-import 'style!./lineChart.scss';
+import 'style-loader!./lineChart.scss';
 
 @Component({
   selector: 'line-chart',

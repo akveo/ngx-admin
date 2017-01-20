@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 
 import {BubbleMapsService} from './bubbleMaps.service';
-import 'style!./bubbleMaps.scss';
+import 'style-loader!./bubbleMaps.scss';
 
 @Component({
   selector: 'bubble-maps',

@@ -1,7 +1,7 @@
 import {Component, ViewEncapsulation} from '@angular/core';
 
 import {CalendarService} from './calendar.service';
-import 'style!./calendar.scss';
+import 'style-loader!./calendar.scss';
 
 @Component({
   selector: 'calendar',

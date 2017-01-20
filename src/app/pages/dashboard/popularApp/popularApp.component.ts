@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import 'style!./popularApp.scss';
+import 'style-loader!./popularApp.scss';
 
 @Component({
   selector: 'popular-app',

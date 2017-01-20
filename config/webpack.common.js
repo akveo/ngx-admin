@@ -90,17 +90,6 @@ module.exports = function (options) {
     module: {
 
       rules: [
-        {
-          test: /\.ts$/,
-          loader: 'string-replace-loader',
-          query: {
-            search: /(System|SystemJS)(.*[\n\r]\s*\.|\.)import\((.+)\)/g,
-            replace: '$1.import($3).then(mod => (mod.__esModule && mod.default) ? mod.default : mod)'
-          },
-          include: [helpers.root('src')],
-          enforce: 'pre'
-        },
-
         /*
          * Typescript loader support for .ts and Angular 2 async routes via .async.ts
          * Replace templateUrl and stylesUrl with require()
@@ -114,7 +103,14 @@ module.exports = function (options) {
             '@angularclass/hmr-loader?pretty=' + !isProd + '&prod=' + isProd,
             'awesome-typescript-loader?{configFileName: "tsconfig.webpack.json"}',
             'angular2-template-loader',
-            'angular-router-loader?loader=system&genDir=compiled/src/app&aot=' + AOT
+            {
+              loader: 'ng-router-loader',
+              options: {
+                loader: 'async-system',
+                genDir: 'compiled',
+                aot: AOT
+              }
+            }
           ],
           exclude: [/\.(spec|e2e)\.ts$/]
         },
@@ -130,13 +126,12 @@ module.exports = function (options) {
         },
 
         /*
-         * to string and css loader support for *.css files
+         * to string and css loader support for *.css files (from Angular components)
          * Returns file content as string
          *
          */
         {
           test: /\.css$/,
-          // loaders: ['to-string-loader', 'css-loader']
           use: ['raw-loader']
         },
 
@@ -188,10 +183,6 @@ module.exports = function (options) {
       ]
     },
 
-    resolveLoader: {
-      moduleExtensions: ['-loader']
-    },
-
     /*
      * Add additional plugins to the compiler.
      *
@@ -227,9 +218,9 @@ module.exports = function (options) {
       }),
       // This enables tree shaking of the vendor modules
       new CommonsChunkPlugin({
-          name: 'vendor',
-          chunks: ['main'],
-          minChunks: module => /node_modules\//.test(module.resource)
+        name: 'vendor',
+        chunks: ['main'],
+        minChunks: module => /node_modules\//.test(module.resource)
       }),
       // Specify the correct order the scripts will be injected in
       new CommonsChunkPlugin({
@@ -259,9 +250,9 @@ module.exports = function (options) {
        * See: https://www.npmjs.com/package/copy-webpack-plugin
        */
       new CopyWebpackPlugin([
-        { from: 'src/assets', to: 'assets' },
-        { from: 'node_modules/ckeditor', to: 'ckeditor' },
-        { from: 'src/meta'}
+        {from: 'src/assets', to: 'assets'},
+        {from: 'node_modules/ckeditor', to: 'ckeditor'},
+        {from: 'src/meta'}
       ]),
 
       /*
@@ -365,11 +356,11 @@ module.exports = function (options) {
         helpers.root('node_modules/@angular/core/src/facade/math.js')
       ),
 
-        new ngcWebpack.NgcWebpackPlugin({
-          disabled: !AOT,
-          tsConfig: helpers.root('tsconfig.webpack.json'),
-          resourceOverride: helpers.root('config/resource-override.js')
-        })
+      new ngcWebpack.NgcWebpackPlugin({
+        disabled: !AOT,
+        tsConfig: helpers.root('tsconfig.webpack.json'),
+        resourceOverride: helpers.root('config/resource-override.js')
+      })
     ],
 
     /*

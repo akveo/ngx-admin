@@ -8,7 +8,7 @@ import {
 } from '@angular/core';
 
 import * as Chartist from 'chartist';
-import 'style!./baChartistChart.scss';
+import 'style-loader!./baChartistChart.scss';
 
 @Component({
   selector: 'ba-chartist-chart',
@@ -24,7 +24,7 @@ export class BaChartistChart {
   @Input() baChartistChartClass:string;
   @Output() onChartReady = new EventEmitter<any>();
 
-  @ViewChild('baChartistChart') public _selector:ElementRef;
+  @ViewChild('baChartistChart') public _selector: ElementRef;
 
   private chart;
 
