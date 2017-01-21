@@ -39,17 +39,17 @@ export class BaPictureUploader {
     }
   }
 
-  public bringFileSelector():boolean {
+  bringFileSelector():boolean {
     this.renderer.invokeElementMethod(this._fileUpload.nativeElement, 'click');
     return false;
   }
 
-  public removePicture():boolean {
+  removePicture():boolean {
     this.picture = '';
     return false;
   }
 
-  protected _changePicture(file:File):void {
+  _changePicture(file:File):void {
     const reader = new FileReader();
     reader.addEventListener('load', (event:Event) => {
       this.picture = (<any> event.target).result;
@@ -57,7 +57,7 @@ export class BaPictureUploader {
     reader.readAsDataURL(file);
   }
 
-  protected _onUpload(data):void {
+  _onUpload(data):void {
     if (data['done'] || data['abort'] || data['error']) {
       this._onUploadCompleted(data);
     } else {
@@ -65,12 +65,12 @@ export class BaPictureUploader {
     }
   }
 
-  protected _onUploadCompleted(data):void {
+  _onUploadCompleted(data):void {
     this.uploadInProgress = false;
     this.onUploadCompleted.emit(data);
   }
 
-  protected _canUploadOnServer():boolean {
+  _canUploadOnServer():boolean {
     return !!this.uploaderOptions['url'];
   }
 }
