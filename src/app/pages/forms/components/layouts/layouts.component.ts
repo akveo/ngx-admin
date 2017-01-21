@@ -1,9 +1,8 @@
-import {Component, ViewEncapsulation} from '@angular/core';
+import {Component} from '@angular/core';
 import { NgUploaderOptions } from 'ngx-uploader';
 
 @Component({
   selector: 'layouts',
-  // encapsulation: ViewEncapsulation.None,
   styles: [],
   templateUrl: './layouts.html',
 })

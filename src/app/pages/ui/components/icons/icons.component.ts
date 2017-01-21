@@ -1,11 +1,11 @@
-import {Component, ViewEncapsulation} from '@angular/core';
+import {Component} from '@angular/core';
 
 import {IconsService} from './icons.service';
 
+import 'style-loader!./icons.scss';
+
 @Component({
   selector: 'icons',
-  // encapsulation: ViewEncapsulation.None,
-  styleUrls: ['./icons.scss'],
   templateUrl: './icons.html',
 })
 export class Icons {

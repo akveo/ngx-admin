@@ -1,9 +1,9 @@
-import {Component, ViewEncapsulation} from '@angular/core';
+import {Component} from '@angular/core';
+
+import 'style-loader!./basicTables.scss';
 
 @Component({
   selector: 'basic-tables',
-  // encapsulation: ViewEncapsulation.None,
-  styleUrls: ['./basicTables.scss'],
   templateUrl: './basicTables.html'
 })
 export class BasicTables {

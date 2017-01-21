@@ -1,14 +1,14 @@
-import { Component, ViewEncapsulation, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { Subscription } from 'rxjs/Rx';
 
 import { BaMenuService } from '../../services';
 import { GlobalState } from '../../../global.state';
 
+import 'style-loader!./baMenu.scss';
+
 @Component({
   selector: 'ba-menu',
-  // // encapsulation: ViewEncapsulation.None,
-  styleUrls: ['./baMenu.scss'],
   templateUrl: './baMenu.html'
 })
 export class BaMenu {

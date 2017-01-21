@@ -1,5 +1,5 @@
 import { Routes } from '@angular/router';
-import { Component, ViewEncapsulation, ViewContainerRef } from '@angular/core';
+import { Component, ViewContainerRef } from '@angular/core';
 
 import { GlobalState } from './global.state';
 import { BaImageLoaderService, BaThemePreloader, BaThemeSpinner } from './theme/services';
@@ -18,8 +18,6 @@ import 'style-loader!./theme/initial.scss';
  */
 @Component({
   selector: 'app',
-  // // encapsulation: ViewEncapsulation.None,
-  // styleUrls: ['./app.scss'],
   template: `
     <main [ngClass]="{'menu-collapsed': isMenuCollapsed}" baThemeRun>
       <div class="additional-bg"></div>

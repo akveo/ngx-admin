@@ -2,10 +2,10 @@ import {Component, ViewEncapsulation} from '@angular/core';
 import {FormGroup, AbstractControl, FormBuilder, Validators} from '@angular/forms';
 import {EmailValidator, EqualPasswordsValidator} from '../../theme/validators';
 
+import 'style-loader!./register.scss';
+
 @Component({
   selector: 'register',
-  // encapsulation: ViewEncapsulation.None,
-  styleUrls: ['./register.scss'],
   templateUrl: './register.html',
 })
 export class Register {

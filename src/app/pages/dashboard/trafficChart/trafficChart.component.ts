@@ -1,13 +1,13 @@
-import {Component, ViewEncapsulation, ElementRef} from '@angular/core';
+import {Component} from '@angular/core';
 
 import './trafficChart.loader.ts';
 import {TrafficChartService} from './trafficChart.service';
 import * as Chart from 'chart.js';
 
+import 'style-loader!./trafficChart.scss';
+
 @Component({
   selector: 'traffic-chart',
-  // encapsulation: ViewEncapsulation.None,
-  styleUrls: ['./trafficChart.scss'],
   templateUrl: './trafficChart.html'
 })
 

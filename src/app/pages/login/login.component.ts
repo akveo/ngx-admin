@@ -1,10 +1,10 @@
-import {Component, ViewEncapsulation} from '@angular/core';
+import {Component} from '@angular/core';
 import {FormGroup, AbstractControl, FormBuilder, Validators} from '@angular/forms';
+
+import 'style-loader!./login.scss';
 
 @Component({
   selector: 'login',
-  // encapsulation: ViewEncapsulation.None,
-  styleUrls: ['./login.scss'],
   templateUrl: './login.html',
 })
 export class Login {

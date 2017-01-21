@@ -1,15 +1,15 @@
-import {Component, ViewChild, ViewEncapsulation, Input, Output, ElementRef, EventEmitter} from '@angular/core';
+import {Component, ViewChild, Input, Output, ElementRef, EventEmitter} from '@angular/core';
 
 import {BaThemePreloader} from '../../../theme/services';
 
 import './baAmChart.loader.ts';
 import {BaAmChartThemeService} from './baAmChartTheme.service';
 
+import 'style-loader!./baAmChart.scss';
+
 @Component({
   selector: 'ba-am-chart',
   templateUrl: './baAmChart.html',
-  styleUrls: ['./baAmChart.scss'],
-  // // encapsulation: ViewEncapsulation.None,
   providers: [BaAmChartThemeService],
 })
 export class BaAmChart {

@@ -1,11 +1,12 @@
-import {Component, ViewChild, ViewEncapsulation, Input, Output, ElementRef, EventEmitter} from '@angular/core';
+import {Component, ViewChild, Input, Output, ElementRef, EventEmitter} from '@angular/core';
 
 import './baFullCalendar.loader.ts';
+
+import 'style-loader!./baFullCalendar.scss';
 
 @Component({
   selector: 'ba-full-calendar',
   templateUrl: './baFullCalendar.html',
-  // // encapsulation: ViewEncapsulation.None,
 })
 export class BaFullCalendar {
 
