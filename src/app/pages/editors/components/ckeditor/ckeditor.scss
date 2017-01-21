@@ -1,5 +1,6 @@
 @import '../../../../theme/sass/conf/conf';
 
-.cke_source {
-  color: $dropdown-text!important;
+.cke_wysiwyg_div {
+  padding: 20px !important;
+  color: $ckeditor-text !important;
 }

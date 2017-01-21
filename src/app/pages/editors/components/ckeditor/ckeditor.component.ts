@@ -1,19 +1,20 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component } from '@angular/core';
 
-import './ckeditor.loader.ts';
+import './ckeditor.loader';
+import 'ckeditor';
+import 'style-loader!./ckeditor.scss';
 
 @Component({
   selector: 'ckeditor-component',
-  // encapsulation: ViewEncapsulation.None,
   templateUrl: './ckeditor.html',
-  styleUrls: ['./ckeditor.scss']
 })
 
 export class Ckeditor {
   public ckeditorContent:string = '<p>Hello CKEditor</p>';
   public config = {
     uiColor: '#F0F3F4',
-    height: '600'
+    height: '600',
+    extraPlugins: 'divarea',
   };
 
   constructor() {
