@@ -1,54 +1,40 @@
 import {Component, ViewChild, Input, Output, EventEmitter, ElementRef, Renderer} from '@angular/core';
-import {Ng2Uploader} from 'ng2-uploader/ng2-uploader';
+import { NgUploaderOptions } from 'ngx-uploader';
 
 @Component({
   selector: 'ba-picture-uploader',
   styleUrls: ['./baPictureUploader.scss'],
   templateUrl: './baPictureUploader.html',
-  providers: [Ng2Uploader]
 })
 export class BaPictureUploader {
 
   @Input() defaultPicture:string = '';
   @Input() picture:string = '';
 
-  @Input() uploaderOptions:any = {};
+  @Input() uploaderOptions:NgUploaderOptions = { url: '' };
   @Input() canDelete:boolean = true;
 
-  onUpload:EventEmitter<any> = new EventEmitter();
-  onUploadCompleted:EventEmitter<any> = new EventEmitter();
+  @Output() onUpload = new EventEmitter<any>();
+  @Output() onUploadCompleted = new EventEmitter<any>();
 
   @ViewChild('fileUpload') public _fileUpload:ElementRef;
 
-  public uploadInProgress:boolean = false;
+  public uploadInProgress:boolean;
 
-  constructor(private renderer:Renderer, protected _uploader:Ng2Uploader) {
+  constructor(private renderer: Renderer) {
   }
 
-  public ngOnInit():void {
-    if (this._canUploadOnServer()) {
-      setTimeout(() => {
-        this._uploader.setOptions(this.uploaderOptions);
-      });
-
-      this._uploader._emitter.subscribe((data) => {
-        this._onUpload(data);
-      });
-    } else {
-      console.warn('Please specify url parameter to be able to upload the file on the back-end');
-    }
-  }
-
-  public onFiles():void {
+  beforeUpload(uploadingFile): void {
     let files = this._fileUpload.nativeElement.files;
 
     if (files.length) {
       const file = files[0];
       this._changePicture(file);
 
-      if (this._canUploadOnServer()) {
+      if (!this._canUploadOnServer()) {
+        uploadingFile.setAbort();
+      } else {
         this.uploadInProgress = true;
-        this._uploader.addFilesToQueue(files);
       }
     }
   }

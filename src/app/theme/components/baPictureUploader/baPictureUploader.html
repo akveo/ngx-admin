@@ -1,7 +1,7 @@
 <div class="picture-group" [ngClass]="{uploading: uploadInProgress}">
   <div class="picture-wrapper" (click)="bringFileSelector();">
-    <img src="{{ picture }}" *ngIf="picture">
-    <img src="{{ defaultPicture }}" ngIf="{{!picture && defaultPicture}}">
+    <img [src]="picture" *ngIf="picture">
+    <img [src]="defaultPicture" *ngIf="!picture && defaultPicture">
 
     <div class="loading" *ngIf="uploadInProgress">
       <div class="spinner">
@@ -12,5 +12,8 @@
   </div>
   <i class="ion-ios-close-outline" (click)="removePicture();" *ngIf="picture && canDelete"></i>
   <a href class="change-picture" (click)="bringFileSelector();">Change profile Picture</a>
-  <input #fileUpload type="file" hidden="true" id="uploadFile" (change)="onFiles()">
+  <input #fileUpload ngFileSelect [options]="uploaderOptions"
+         (onUpload)="_onUpload($event)"
+         (beforeUpload)="beforeUpload($event)"
+         type="file" hidden="true">
 </div>
