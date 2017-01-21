@@ -2,7 +2,7 @@ import {Component, ViewEncapsulation} from '@angular/core';
 
 import {PieChartService} from './pieChart.service';
 
-import './pieChart.loader.ts';
+import 'easy-pie-chart/dist/jquery.easypiechart.js';
 import 'style-loader!./pieChart.scss';
 
 @Component({

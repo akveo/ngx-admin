@@ -1,6 +1,5 @@
 import {Component} from '@angular/core';
 
-import './trafficChart.loader.ts';
 import {TrafficChartService} from './trafficChart.service';
 import * as Chart from 'chart.js';
 

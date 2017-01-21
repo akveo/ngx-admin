@@ -1,6 +1,6 @@
 import {Component, ElementRef} from '@angular/core';
 
-import './leafletMaps.loader';
+import 'leaflet-map';
 
 @Component({
   selector: 'leaflet-maps',
