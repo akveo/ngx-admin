@@ -43,7 +43,7 @@
     "ng2-bootstrap": "1.1.16-11",
     "ng2-ckeditor": "1.1.5",
     "ng2-smart-table": "^0.3.2",
-    "ng2-tree": "^0.0.2-7",
+    "ng2-tree": "^2.0.0-alpha.0",
     "ngx-uploader": "^2.0.24",
     "normalize.css": "^4.1.1",
     "reflect-metadata": "^0.1.9",
