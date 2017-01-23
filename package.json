@@ -28,6 +28,7 @@
     "chartist": "^0.9.7",
     "ckeditor": "4.6.0",
     "core-js": "^2.4.1",
+    "d3": "^4.3.0",
     "easy-pie-chart": "^2.1.7",
     "extract-text-webpack-plugin": "2.0.0-beta.3",
     "font-awesome": "^4.6.3",
