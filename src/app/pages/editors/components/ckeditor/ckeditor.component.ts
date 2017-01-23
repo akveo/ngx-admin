@@ -14,7 +14,6 @@ export class Ckeditor {
   public config = {
     uiColor: '#F0F3F4',
     height: '600',
-    extraPlugins: 'divarea',
   };
 
   constructor() {
