@@ -1,11 +1,11 @@
 import {Component, ViewChild, Input, Output, EventEmitter, ElementRef, Renderer} from '@angular/core';
-import {Ng2Uploader} from 'ng2-uploader/ng2-uploader';
+import { NgUploaderService } from 'ngx-uploader';
 
 @Component({
   selector: 'ba-picture-uploader',
   styles: [require('./baPictureUploader.scss')],
   template: require('./baPictureUploader.html'),
-  providers: [Ng2Uploader]
+  providers: [NgUploaderService]
 })
 export class BaPictureUploader {
 
@@ -22,7 +22,7 @@ export class BaPictureUploader {
 
   public uploadInProgress:boolean = false;
 
-  constructor(private renderer:Renderer, protected _uploader:Ng2Uploader) {
+  constructor(private renderer: Renderer, protected _uploader: NgUploaderService) {
   }
 
   public ngOnInit():void {
