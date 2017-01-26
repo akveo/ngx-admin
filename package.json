@@ -108,7 +108,7 @@
     "webpack-dev-middleware": "1.9.0",
     "webpack-dev-server": "2.2.0",
     "webpack-md5-hash": "0.0.5",
-    "webpack-merge": "2.4.0"
+    "webpack-merge": "2.5.0"
   },
   "scripts": {
     "rimraf": "rimraf",
