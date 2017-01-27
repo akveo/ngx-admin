@@ -3,7 +3,6 @@ sudo: false
 language: node_js
 
 node_js:
-  - "4"
   - "5"
   - "6"
 
@@ -16,13 +15,12 @@ addons:
 
 install:
   - npm config set spin false
-  - npm install -g npm@3
-  - npm install -g typescript@2.0.0
 
   - npm install
 
 script:
   - npm run build:prod
+  - npm run build:aot
 
 notifications:
   slack: akveo:q559HckfZMSyZRb803aiLcjH

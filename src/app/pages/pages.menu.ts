@@ -184,14 +184,14 @@ export const PAGES_MENU = [
               }
             }
           },
-          // {
-          //   path: 'smarttables',
-          //   data: {
-          //     menu: {
-          //       title: 'Smart Tables',
-          //     }
-          //   }
-          // }
+          {
+            path: 'smarttables',
+            data: {
+              menu: {
+                title: 'Smart Tables',
+              }
+            }
+          }
         ]
       },
       {

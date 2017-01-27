@@ -1,16 +1,13 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "module": "es2015",
+    "module": "commonjs",
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "allowSyntheticDefaultImports": true,
     "sourceMap": true,
-    "noEmit": true,
-    "noEmitHelpers": true,
-    "strictNullChecks": false,
     "baseUrl": "./src",
+    "outDir": "compiled",
     "paths": {
     },
     "lib": [
@@ -19,19 +16,12 @@
     ],
     "typeRoots": [
       "node_modules/@types"
-    ],
-    "types": [
-      "hammerjs",
-      "node",
-      "source-map",
-      "webpack",
-      "fullcalendar",
-      "jquery.slimscroll"
     ]
   },
   "exclude": [
     "node_modules",
     "dist",
+    "compiled",
     "src/**/*.spec.ts",
     "src/**/*.e2e.ts"
   ],
@@ -40,10 +30,12 @@
     "useWebpackText": true
   },
   "angularCompilerOptions": {
-    "genDir": "./compiled",
+    "genDir": "compiled",
     "skipMetadataEmit": true
   },
   "compileOnSave": false,
   "buildOnSave": false,
-  "atom": { "rewriteTsconfig": false }
+  "atom": {
+    "rewriteTsconfig": false
+  }
 }
