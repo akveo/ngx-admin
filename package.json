@@ -107,7 +107,7 @@
     "typedoc": "^0.5.3",
     "typescript": "~2.1.5",
     "url-loader": "^0.5.7",
-    "webpack": "2.2.0",
+    "webpack": "2.2.1",
     "webpack-dashboard": "0.2.1",
     "webpack-dev-middleware": "1.9.0",
     "webpack-dev-server": "2.2.0",
