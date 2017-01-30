@@ -1,3 +1,28 @@
+<a name="0.9.0"></a>
+# 0.9.0 (2017-01-30)
+
+### Features
+
+* Angular 2.4.4
+* Dependencies updated
+* [AOT](https://angular.io/docs/ts/latest/cookbook/aot-compiler.html) :tada:
+* DLL bundles
+
+### Bug Fixes
+
+### How to use AOT
+
+* run `npm run build:aot`
+* run `npm run server:prod`
+
+### How to update
+
+* Pull sources from git, merge accordingly
+* remove `node_modules`
+* run `npm install`
+* Enjoy!
+
+
 <a name="0.8.0"></a>
 # 0.8.0 (2016-11-25)
 
