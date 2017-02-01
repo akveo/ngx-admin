@@ -1,4 +1,9 @@
-import {Component} from '@angular/core';
+import { Component } from '@angular/core';
+import { Routes } from '@angular/router';
+
+import { BaMenuService } from '../theme';
+import { MENU } from '../app.menu';
+
 @Component({
   selector: 'pages',
   styles: [],
@@ -28,9 +33,10 @@ import {Component} from '@angular/core';
 })
 export class Pages {
 
-  constructor() {
+  constructor(private _menuService: BaMenuService,) {
   }
 
   ngOnInit() {
+    this._menuService.updateMenuByRoutes(<Routes>MENU);
   }
 }
