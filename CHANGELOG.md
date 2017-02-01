@@ -20,6 +20,9 @@
 * Pull sources from git, merge accordingly
 * remove `node_modules`
 * run `npm install`
+* replace `require` for templates and styles on `templateUrl` ans `styleUrls`
+* private, protected accessors should be changed to public for any members accessed from template
+* replace default export on named export in modules
 * Enjoy!
 
 
