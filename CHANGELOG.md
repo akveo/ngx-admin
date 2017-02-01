@@ -20,6 +20,10 @@
 * Pull sources from git, merge accordingly
 * remove `node_modules`
 * run `npm install`
+* replace `require` for templates and styles with `templateUrl` and `styleUrls`
+* private, protected accessors should be changed to public for any members accessed from template
+* replace default export on named export in modules
+* remove ViewEncapsulation from components
 * Enjoy!
 
 
