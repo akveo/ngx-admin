@@ -1,1 +1,0 @@
-export * from './standardInputs.component';

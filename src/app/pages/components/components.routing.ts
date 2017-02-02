@@ -1,17 +1,18 @@
-import { Routes, RouterModule }  from '@angular/router';
+import { ModuleWithProviders } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 
-import { Components } from './components.component';
-import { TreeView } from './components/treeView/treeView.component';
+import { ComponentsComponent } from './components.component';
+import { TreeViewComponent } from './components/tree-view/tree-view.component';
 
 // noinspection TypeScriptValidateTypes
 const routes: Routes = [
   {
     path: '',
-    component: Components,
+    component: ComponentsComponent,
     children: [
-      { path: 'treeview', component: TreeView }
+      { path: 'treeview', component: TreeViewComponent }
     ]
   }
 ];
 
-export const routing = RouterModule.forChild(routes);
+export const routing: ModuleWithProviders = RouterModule.forChild(routes);

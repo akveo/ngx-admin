@@ -8,8 +8,7 @@ export type InternalStateType = {
 export class AppState {
   _state: InternalStateType = {};
 
-  constructor() {
-  }
+  constructor() { }
 
   // already return a clone of the current state
   get state() {

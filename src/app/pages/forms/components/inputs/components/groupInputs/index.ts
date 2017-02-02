@@ -1,1 +1,0 @@
-export * from './groupInputs.component';

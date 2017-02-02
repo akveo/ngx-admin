@@ -1,29 +1,27 @@
-import {Component} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
-import {FeedService} from './feed.service';
-
-import 'style-loader!./feed.scss';
+import { FeedService } from './feed.service';
+import 'style-loader!./feed.component.scss';
 
 @Component({
   selector: 'feed',
-  templateUrl: './feed.html'
+  templateUrl: './feed.component.html'
 })
-export class Feed {
+export class FeedComponent implements OnInit {
 
-  public feed:Array<Object>;
+  feed: Array<any>;
 
-  constructor(private _feedService:FeedService) {
-  }
+  constructor(private _feedService: FeedService) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this._loadFeed();
   }
 
-  expandMessage (message){
+  expandMessage(message: any): void {
     message.expanded = !message.expanded;
   }
 
-  private _loadFeed() {
+  private _loadFeed(): void {
     this.feed = this._feedService.getData();
   }
 }

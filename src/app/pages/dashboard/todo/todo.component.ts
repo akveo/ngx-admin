@@ -1,38 +1,39 @@
-import {Component} from '@angular/core';
-import {BaThemeConfigProvider} from '../../../theme';
+import { Component } from '@angular/core';
 
-import {TodoService} from './todo.service';
+import { BaThemeConfigProvider } from '../../../theme';
 
-import 'style-loader!./todo.scss';
+import { TodoService } from './todo.service';
+
+import 'style-loader!./todo.component.scss';
 
 @Component({
   selector: 'todo',
-  templateUrl: './todo.html'
+  templateUrl: './todo.component.html'
 })
-export class Todo {
+export class TodoComponent {
 
-  public dashboardColors = this._baConfig.get().colors.dashboard;
+  dashboardColors: any;
+  newTodoText: string;
+  todoList: Array<any>;
 
-  public todoList:Array<any>;
-  public newTodoText:string = '';
-
-  constructor(private _baConfig:BaThemeConfigProvider, private _todoService:TodoService) {
+  constructor(private _baConfig: BaThemeConfigProvider, private _todoService: TodoService) {
+    this.dashboardColors = this._baConfig.get().colors.dashboard;
+    this.newTodoText = '';
     this.todoList = this._todoService.getTodoList();
 
-    this.todoList.forEach((item) => {
+    this.todoList.forEach((item: any) => {
       item.color = this._getRandomColor();
     });
   }
 
   getNotDeleted() {
-    return this.todoList.filter((item:any) => {
-      return !item.deleted
-    })
+    return this.todoList.filter((item: any) => {
+      return !item.deleted;
+    });
   }
 
-  addToDoItem($event) {
-
-    if (($event.which === 1 || $event.which === 13) && this.newTodoText.trim() != '') {
+  addToDoItem($event: any) {
+    if (($event.which === 1 || $event.which === 13) && this.newTodoText.trim() !== '') {
 
       this.todoList.unshift({
         text: this.newTodoText,
@@ -43,9 +44,9 @@ export class Todo {
   }
 
   private _getRandomColor() {
-    let colors = Object.keys(this.dashboardColors).map(key => this.dashboardColors[key]);
+    const colors: Array<any> = Object.keys(this.dashboardColors).map(key => this.dashboardColors[key]);
 
-    var i = Math.floor(Math.random() * (colors.length - 1));
+    const i: number = Math.floor(Math.random() * (colors.length - 1));
     return colors[i];
   }
 }

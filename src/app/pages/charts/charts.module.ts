@@ -1,27 +1,26 @@
-import { NgModule }      from '@angular/core';
-import { CommonModule }  from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
+
 import { NgaModule } from '../../theme/nga.module';
 
-import { routing }       from './charts.routing';
-import { Charts } from './charts.component';
-import { ChartistJs } from './components/chartistJs/chartistJs.component';
-import { ChartistJsService } from './components/chartistJs/chartistJs.service';
+import { routing } from './charts.routing';
+import { ChartsComponent } from './charts.component';
 
+import { ChartistJsComponent } from './components/chartist-js/chartist-js.component';
+import { ChartistJsService } from './components/chartist-js/chartist-js.service';
 
 @NgModule({
   imports: [
     CommonModule,
-    FormsModule,
     NgaModule,
     routing
   ],
   declarations: [
-    Charts,
-    ChartistJs
+    ChartsComponent,
+    ChartistJsComponent
   ],
   providers: [
     ChartistJsService
   ]
 })
-export class ChartsModule {}
+export class ChartsModule { }

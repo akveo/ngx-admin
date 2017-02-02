@@ -1,35 +1,34 @@
-import { NgModule }      from '@angular/core';
 import { CommonModule }  from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { NgModule } from '@angular/core';
+
 import { NgaModule } from '../../theme/nga.module';
 
-import { routing }       from './maps.routing';
-import { Maps } from './maps.component';
-import { BubbleMaps } from './components/bubbleMaps/bubbleMaps.component';
-import { GoogleMaps } from './components/googleMaps/googleMaps.component';
-import { LeafletMaps } from './components/leafletMaps/leafletMaps.component';
-import { LineMaps } from './components/lineMaps/lineMaps.component';
-import { BubbleMapsService } from './components/bubbleMaps/bubbleMaps.service';
-import { LineMapsService } from './components/lineMaps/lineMaps.service';
+import { routing } from './maps.routing';
+import { MapsComponent } from './maps.component';
 
+import { BubbleMapsComponent } from './components/bubble-maps/bubble-maps.component';
+import { GoogleMapsComponent } from './components/google-maps/google-maps.component';
+import { LeafletMapsComponent } from './components/leaflet-maps/leaflet-maps.component';
+import { LineMapsComponent } from './components/line-maps/line-maps.component';
+import { BubbleMapsService } from './components/bubble-maps/bubble-maps.service';
+import { LineMapsService } from './components/line-maps/line-maps.service';
 
 @NgModule({
   imports: [
     CommonModule,
-    FormsModule,
     NgaModule,
     routing
   ],
   declarations: [
-    Maps,
-    BubbleMaps,
-    GoogleMaps,
-    LeafletMaps,
-    LineMaps
+    MapsComponent,
+    BubbleMapsComponent,
+    GoogleMapsComponent,
+    LeafletMapsComponent,
+    LineMapsComponent
   ],
   providers: [
     BubbleMapsService,
     LineMapsService
   ]
 })
-export class MapsModule {}
+export class MapsModule { }

@@ -1,25 +1,26 @@
-import { Routes, RouterModule }  from '@angular/router';
+import { ModuleWithProviders } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 
-import { Ui } from './ui.component';
-import { Buttons } from './components/buttons/buttons.component';
-import { Grid } from './components/grid/grid.component';
-import { Icons } from './components/icons/icons.component';
-import { Modals } from './components/modals/modals.component';
-import { Typography } from './components/typography/typography.component';
+import { UiComponent } from './ui.component';
+import { ButtonsComponent } from './components/buttons/buttons.component';
+import { GridComponent } from './components/grid/grid.component';
+import { IconsComponent } from './components/icons/icons.component';
+import { ModalsComponent } from './components/modals/modals.component';
+import { TypographyComponent } from './components/typography/typography.component';
 
 // noinspection TypeScriptValidateTypes
 const routes: Routes = [
   {
     path: '',
-    component: Ui,
+    component: UiComponent,
     children: [
-      { path: 'buttons', component: Buttons },
-      { path: 'grid', component: Grid },
-      { path: 'icons', component: Icons },
-      { path: 'typography', component: Typography },
-      { path: 'modals', component: Modals }
+      { path: 'buttons', component: ButtonsComponent },
+      { path: 'grid', component: GridComponent },
+      { path: 'icons', component: IconsComponent },
+      { path: 'typography', component: TypographyComponent },
+      { path: 'modals', component: ModalsComponent }
     ]
   }
 ];
 
-export const routing = RouterModule.forChild(routes);
+export const routing: ModuleWithProviders = RouterModule.forChild(routes);

@@ -12,7 +12,7 @@ import { ENV_PROVIDERS } from './environment';
 import { routing } from './app.routing';
 
 // App is our top level component
-import { App } from './app.component';
+import { AppComponent } from './app.component';
 import { AppState, InternalStateType } from './app.service';
 import { GlobalState } from './global.state';
 import { NgaModule } from './theme/nga.module';
@@ -34,9 +34,9 @@ export type StoreType = {
  * `AppModule` is the main entry point into Angular2's bootstraping process
  */
 @NgModule({
-  bootstrap: [App],
+  bootstrap: [AppComponent],
   declarations: [
-    App
+    AppComponent
   ],
   imports: [ // import Angular's modules
     BrowserModule,
@@ -53,11 +53,9 @@ export type StoreType = {
     APP_PROVIDERS
   ]
 })
-
 export class AppModule {
 
-  constructor(public appRef: ApplicationRef, public appState: AppState) {
-  }
+  constructor(public appRef: ApplicationRef, public appState: AppState) { }
 
   hmrOnInit(store: StoreType) {
     if (!store || !store.state) return;

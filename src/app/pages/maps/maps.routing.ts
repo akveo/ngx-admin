@@ -1,23 +1,24 @@
-import { Routes, RouterModule }  from '@angular/router';
+import { ModuleWithProviders } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 
-import { Maps } from './maps.component';
-import { BubbleMaps } from './components/bubbleMaps/bubbleMaps.component';
-import { GoogleMaps } from './components/googleMaps/googleMaps.component';
-import { LeafletMaps } from './components/leafletMaps/leafletMaps.component';
-import { LineMaps } from './components/lineMaps/lineMaps.component';
+import { MapsComponent } from './maps.component';
+import { BubbleMapsComponent } from './components/bubble-maps/bubble-maps.component';
+import { GoogleMapsComponent } from './components/google-maps/google-maps.component';
+import { LeafletMapsComponent } from './components/leaflet-maps/leaflet-maps.component';
+import { LineMapsComponent } from './components/line-maps/line-maps.component';
 
 // noinspection TypeScriptValidateTypes
 const routes: Routes = [
   {
     path: '',
-    component: Maps,
+    component: MapsComponent,
     children: [
-      { path: 'bubblemaps', component: BubbleMaps },
-      { path: 'googlemaps', component: GoogleMaps },
-      { path: 'leafletmaps', component: LeafletMaps },
-      { path: 'linemaps', component: LineMaps }
+      { path: 'bubblemaps', component: BubbleMapsComponent },
+      { path: 'googlemaps', component: GoogleMapsComponent },
+      { path: 'leafletmaps', component: LeafletMapsComponent },
+      { path: 'linemaps', component: LineMapsComponent }
     ]
   }
 ];
 
-export const routing = RouterModule.forChild(routes);
+export const routing: ModuleWithProviders = RouterModule.forChild(routes);

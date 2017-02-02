@@ -1,21 +1,25 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import './ckeditor.loader';
 import 'ckeditor';
-import 'style-loader!./ckeditor.scss';
+import 'style-loader!./ckeditor.component.scss';
 
 @Component({
   selector: 'ckeditor-component',
-  templateUrl: './ckeditor.html',
+  templateUrl: './ckeditor.component.html',
 })
+export class CkeditorComponent implements OnInit {
 
-export class Ckeditor {
-  public ckeditorContent:string = '<p>Hello CKEditor</p>';
-  public config = {
-    uiColor: '#F0F3F4',
-    height: '600',
-  };
+  ckeditorContent: string;
+  config: any;
 
-  constructor() {
+  constructor() { }
+
+  ngOnInit(): void {
+    this.ckeditorContent = '<p>Hello CKEditor</p>';
+    this.config = {
+      uiColor: '#F0F3F4',
+      height: '600',
+    };
   }
 }

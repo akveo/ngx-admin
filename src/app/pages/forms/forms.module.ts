@@ -1,52 +1,51 @@
-import { NgModule }      from '@angular/core';
-import { CommonModule }  from '@angular/common';
+import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
 import { FormsModule as AngularFormsModule } from '@angular/forms';
-import { NgaModule } from '../../theme/nga.module';
-
-import { routing }       from './forms.routing';
 
 import { RatingModule } from 'ng2-bootstrap';
-import { Forms } from './forms.component';
-import { Inputs } from './components/inputs';
-import { Layouts } from './components/layouts';
+import { NgaModule } from '../../theme/nga.module';
 
-import { StandardInputs } from './components/inputs/components/standardInputs';
-import { ValidationInputs } from './components/inputs/components/validationInputs';
-import { GroupInputs } from './components/inputs/components/groupInputs';
-import { CheckboxInputs } from './components/inputs/components/checkboxInputs';
-import { Rating } from './components/inputs/components/ratinginputs';
-import { SelectInputs } from './components/inputs/components/selectInputs';
+import { routing } from './forms.routing';
+import { FormsComponent } from './forms.component';
+import { InputsComponent } from './components/inputs';
+import { LayoutsComponent } from './components/layouts';
 
-import { InlineForm } from './components/layouts/components/inlineForm';
-import { BlockForm } from './components/layouts/components/blockForm';
-import { HorizontalForm } from './components/layouts/components/horizontalForm';
-import { BasicForm } from './components/layouts/components/basicForm';
-import { WithoutLabelsForm } from './components/layouts/components/withoutLabelsForm';
+import { CheckboxInputsComponent } from './components/inputs/components/checkbox-inputs';
+import { GroupInputsComponent } from './components/inputs/components/group-inputs';
+import { RatingComponent } from './components/inputs/components/rating-inputs';
+import { SelectInputsComponent } from './components/inputs/components/select-inputs';
+import { StandardInputsComponent } from './components/inputs/components/standard-inputs';
+import { ValidationInputsComponent } from './components/inputs/components/validation-inputs';
+
+import { BasicFormComponent } from './components/layouts/components/basic-form';
+import { BlockFormComponent } from './components/layouts/components/block-form';
+import { HorizontalFormComponent } from './components/layouts/components/horizontal-form';
+import { InlineFormComponent } from './components/layouts/components/inline-form';
+import { WithoutLabelsFormComponent } from './components/layouts/components/without-labels-form';
 
 @NgModule({
   imports: [
-    CommonModule,
     AngularFormsModule,
+    CommonModule,
     NgaModule,
     RatingModule.forRoot(),
     routing
   ],
   declarations: [
-    Layouts,
-    Inputs,
-    Forms,
-    StandardInputs,
-    ValidationInputs,
-    GroupInputs,
-    CheckboxInputs,
-    Rating,
-    SelectInputs,
-    InlineForm,
-    BlockForm,
-    HorizontalForm,
-    BasicForm,
-    WithoutLabelsForm
+    FormsComponent,
+    InputsComponent,
+    LayoutsComponent,
+    CheckboxInputsComponent,
+    GroupInputsComponent,
+    RatingComponent,
+    SelectInputsComponent,
+    StandardInputsComponent,
+    ValidationInputsComponent,
+    BasicFormComponent,
+    BlockFormComponent,
+    HorizontalFormComponent,
+    InlineFormComponent,
+    WithoutLabelsFormComponent
   ]
 })
-export class FormsModule {
-}
+export class FormsModule { }

@@ -1,11 +1,11 @@
-import {Component} from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'inputs',
-  templateUrl: './inputs.html',
+  templateUrl: './inputs.component.html'
 })
-export class Inputs {
+export class InputsComponent {
 
-  constructor() {
-  }
+  constructor() { }
+
 }

@@ -1,4 +1,4 @@
-import {Component, ViewChild, Input, Output, EventEmitter, ElementRef, Renderer} from '@angular/core';
+import { Component, ViewChild, Input, Output, EventEmitter, ElementRef, Renderer } from '@angular/core';
 import { NgUploaderOptions } from 'ngx-uploader';
 
 @Component({

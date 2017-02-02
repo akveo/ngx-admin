@@ -1,5 +1,5 @@
-import {Injectable} from '@angular/core';
-import {colorHelper} from './theme.constants';
+import { Injectable } from '@angular/core';
+import { colorHelper } from './theme.constants';
 import * as _ from 'lodash';
 
 @Injectable()

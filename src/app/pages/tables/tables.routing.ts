@@ -1,19 +1,20 @@
-import { Routes, RouterModule }  from '@angular/router';
+import { ModuleWithProviders } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 
-import { Tables } from './tables.component';
-import { BasicTables } from './components/basicTables/basicTables.component';
-import { SmartTables } from './components/smartTables/smartTables.component';
+import { TablesComponent } from './tables.component';
+import { BasicTablesComponent } from './components/basic-tables/basic-tables.component';
+import { SmartTablesComponent } from './components/smart-tables/smart-tables.component';
 
 // noinspection TypeScriptValidateTypes
 const routes: Routes = [
   {
     path: '',
-    component: Tables,
+    component: TablesComponent,
     children: [
-      { path: 'basictables', component: BasicTables },
-      { path: 'smarttables', component: SmartTables }
+      { path: 'basictables', component: BasicTablesComponent },
+      { path: 'smarttables', component: SmartTablesComponent }
     ]
   }
 ];
 
-export const routing = RouterModule.forChild(routes);
+export const routing: ModuleWithProviders = RouterModule.forChild(routes);

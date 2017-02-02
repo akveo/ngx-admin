@@ -1,13 +1,13 @@
-import {Component, ViewEncapsulation} from '@angular/core';
+import { Component } from '@angular/core';
 
-import 'style-loader!./buttons.scss';
+import 'style-loader!./buttons.component.scss';
 
 @Component({
   selector: 'buttons',
-  templateUrl: './buttons.html',
+  templateUrl: './buttons.component.html',
 })
-export class Buttons {
+export class ButtonsComponent {
 
-  constructor() {
-  }
+  constructor() { }
+
 }
