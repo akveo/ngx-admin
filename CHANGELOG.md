@@ -20,9 +20,10 @@
 * Pull sources from git, merge accordingly
 * remove `node_modules`
 * run `npm install`
-* replace `require` for templates and styles on `templateUrl` ans `styleUrls`
+* replace `require` for templates and styles with `templateUrl` and `styleUrls`
 * private, protected accessors should be changed to public for any members accessed from template
 * replace default export on named export in modules
+* remove ViewEncapsulation from components
 * Enjoy!
 
 
@@ -233,7 +234,7 @@ More details on how to configure a new route you can find [here](https://akveo.g
 
 ### How to update
 
-* Remove `node_modules` and `typings` folders 
+* Remove `node_modules` and `typings` folders
 * run `npm install`
 
 <a name="0.2.1"></a>
@@ -256,5 +257,5 @@ More details on how to configure a new route you can find [here](https://akveo.g
 
 ### How to update
 
-* Remove `node_modules` and `typings` folders 
+* Remove `node_modules` and `typings` folders
 * run `npm install`
