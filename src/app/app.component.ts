@@ -1,10 +1,10 @@
-import { Component, ViewContainerRef } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 
 import { GlobalState } from './global.state';
 import { BaImageLoaderService, BaThemePreloader, BaThemeSpinner } from './theme/services';
 import { layoutPaths } from './theme/theme.constants';
 
-import 'style-loader!./app.scss';
+import 'style-loader!./app.component.scss';
 import 'style-loader!./theme/initial.scss';
 
 /*
@@ -20,15 +20,16 @@ import 'style-loader!./theme/initial.scss';
     </main>
   `
 })
-export class App {
+export class AppComponent implements AfterViewInit, OnInit {
 
-  isMenuCollapsed: boolean = false;
+  isMenuCollapsed: boolean;
 
   constructor(private _state: GlobalState,
               private _imageLoader: BaImageLoaderService,
-              private _spinner: BaThemeSpinner,
-              private viewContainerRef: ViewContainerRef) {
+              private _spinner: BaThemeSpinner) { }
 
+  ngOnInit(): void {
+    this.isMenuCollapsed = false;
     this._loadImages();
 
     this._state.subscribe('menu.isCollapsed', (isCollapsed) => {
@@ -36,7 +37,7 @@ export class App {
     });
   }
 
-  public ngAfterViewInit(): void {
+  ngAfterViewInit(): void {
     // hide spinner once all loaders are completed
     BaThemePreloader.load().then((values) => {
       this._spinner.hide();

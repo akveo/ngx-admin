@@ -1,21 +1,21 @@
-import {Component} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
-import {IconsService} from './icons.service';
+import { IconsService } from './icons.service';
 
-import 'style-loader!./icons.scss';
+import 'style-loader!./icons.component.scss';
 
 @Component({
   selector: 'icons',
-  templateUrl: './icons.html',
+  templateUrl: './icons.component.html',
 })
-export class Icons {
+export class IconsComponent implements OnInit {
 
-  icons:any;
+  icons: any;
 
-  constructor(private _iconsService: IconsService) {
-  }
+  constructor(private _iconsService: IconsService) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.icons = this._iconsService.getAll();
   }
+
 }

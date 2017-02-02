@@ -1,15 +1,14 @@
-import {Injectable} from '@angular/core';
-import {BaThemeConfigProvider} from '../../../theme';
+import { Injectable } from '@angular/core';
+import { BaThemeConfigProvider } from '../../../theme';
 
 @Injectable()
 export class CalendarService {
 
-  constructor(private _baConfig:BaThemeConfigProvider) {
-  }
+  constructor(private _baConfig: BaThemeConfigProvider) { }
 
   getData() {
+    const dashboardColors: any = this._baConfig.get().colors.dashboard;
 
-    let dashboardColors = this._baConfig.get().colors.dashboard;
     return {
       header: {
         left: 'prev,next today',

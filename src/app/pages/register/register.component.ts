@@ -1,47 +1,52 @@
-import {Component, ViewEncapsulation} from '@angular/core';
-import {FormGroup, AbstractControl, FormBuilder, Validators} from '@angular/forms';
-import {EmailValidator, EqualPasswordsValidator} from '../../theme/validators';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
-import 'style-loader!./register.scss';
+import { EmailValidator, EqualPasswordsValidator } from '../../theme/validators';
+
+import 'style-loader!./register.component.scss';
 
 @Component({
   selector: 'register',
-  templateUrl: './register.html',
+  templateUrl: './register.component.html',
 })
-export class Register {
+export class RegisterComponent {
 
-  public form:FormGroup;
-  public name:AbstractControl;
-  public email:AbstractControl;
-  public password:AbstractControl;
-  public repeatPassword:AbstractControl;
-  public passwords:FormGroup;
+  form: FormGroup;
+  name: FormControl;
+  email: FormControl;
+  password: FormControl;
+  repeatPassword: FormControl;
+  passwords: FormGroup;
 
-  public submitted:boolean = false;
+  submitted: boolean;
 
-  constructor(fb:FormBuilder) {
+  constructor(private formBuilder: FormBuilder) { }
 
-    this.form = fb.group({
-      'name': ['', Validators.compose([Validators.required, Validators.minLength(4)])],
-      'email': ['', Validators.compose([Validators.required, EmailValidator.validate])],
-      'passwords': fb.group({
-        'password': ['', Validators.compose([Validators.required, Validators.minLength(4)])],
-        'repeatPassword': ['', Validators.compose([Validators.required, Validators.minLength(4)])]
-      }, {validator: EqualPasswordsValidator.validate('password', 'repeatPassword')})
+  ngOnInit(): void {
+    this.name = new FormControl('', Validators.compose([Validators.required, Validators.minLength(4)]));
+    this.email = new FormControl('', Validators.compose([Validators.required, EmailValidator.validate]));
+    this.password = new FormControl('', Validators.compose([Validators.required, Validators.minLength(4)]));
+    this.repeatPassword = new FormControl('', Validators.compose([Validators.required, Validators.minLength(4)]));
+    this.passwords = this.formBuilder.group({
+      'password': this.password,
+      'repeatPassword': this.repeatPassword,
+      }, { validator: EqualPasswordsValidator.validate('password', 'repeatPassword') });
+
+    this.form = this.formBuilder.group({
+      'name': this.name,
+      'email': this.email,
+      'passwords': this.passwords
     });
 
-    this.name = this.form.controls['name'];
-    this.email = this.form.controls['email'];
-    this.passwords = <FormGroup> this.form.controls['passwords'];
-    this.password = this.passwords.controls['password'];
-    this.repeatPassword = this.passwords.controls['repeatPassword'];
+    this.submitted = false;
   }
 
-  public onSubmit(values:Object):void {
+  onSubmit(): void {
     this.submitted = true;
+
     if (this.form.valid) {
       // your code goes here
-      // console.log(values);
+      // console.log(this.form.value);
     }
   }
 }

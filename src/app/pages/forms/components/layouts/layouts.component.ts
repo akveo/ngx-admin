@@ -1,25 +1,28 @@
-import {Component} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+
 import { NgUploaderOptions } from 'ngx-uploader';
 
 @Component({
   selector: 'layouts',
-  styles: [],
-  templateUrl: './layouts.html',
+  templateUrl: './layouts.component.html'
 })
-export class Layouts {
+export class LayoutsComponent implements OnInit {
 
-  public defaultPicture = 'assets/img/theme/no-photo.png';
-  public profile:any = {
-    picture: 'assets/img/app/profile/Nasta.png'
-  };
-  public uploaderOptions:NgUploaderOptions = {
-    // url: 'http://website.com/upload'
-    url: '',
-  };
+  defaultPicture: string;
+  profile: any;
+  uploaderOptions: NgUploaderOptions;
 
-  constructor() {
+  constructor() { }
+
+  ngOnInit(): void {
+    this.defaultPicture = 'assets/img/theme/no-photo.png';
+    this.profile = {
+      picture: 'assets/img/app/profile/Nasta.png'
+    };
+    this.uploaderOptions = {
+      // url: 'http://website.com/upload'
+      url: '',
+    };
   }
 
-  ngOnInit() {
-  }
 }

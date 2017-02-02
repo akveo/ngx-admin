@@ -1,8 +1,9 @@
-import { NgModule, ApplicationRef } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { ApplicationRef, NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
+
 import { removeNgStyles, createNewHosts, createInputTransfer } from '@angularclass/hmr';
 
 /*
@@ -12,7 +13,7 @@ import { ENV_PROVIDERS } from './environment';
 import { routing } from './app.routing';
 
 // App is our top level component
-import { App } from './app.component';
+import { AppComponent } from './app.component';
 import { AppState, InternalStateType } from './app.service';
 import { GlobalState } from './global.state';
 import { NgaModule } from './theme/nga.module';
@@ -34,9 +35,9 @@ export type StoreType = {
  * `AppModule` is the main entry point into Angular2's bootstraping process
  */
 @NgModule({
-  bootstrap: [App],
+  bootstrap: [AppComponent],
   declarations: [
-    App
+    AppComponent
   ],
   imports: [ // import Angular's modules
     BrowserModule,
@@ -53,11 +54,9 @@ export type StoreType = {
     APP_PROVIDERS
   ]
 })
-
 export class AppModule {
 
-  constructor(public appRef: ApplicationRef, public appState: AppState) {
-  }
+  constructor(public appRef: ApplicationRef, public appState: AppState) { }
 
   hmrOnInit(store: StoreType) {
     if (!store || !store.state) return;
@@ -66,7 +65,7 @@ export class AppModule {
     this.appState._state = store.state;
     // set input values
     if ('restoreInputValues' in store) {
-      let restoreInputValues = store.restoreInputValues;
+      const restoreInputValues: any = store.restoreInputValues;
       setTimeout(restoreInputValues);
     }
     this.appRef.tick();

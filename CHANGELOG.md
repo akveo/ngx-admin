@@ -234,7 +234,7 @@ More details on how to configure a new route you can find [here](https://akveo.g
 
 ### How to update
 
-* Remove `node_modules` and `typings` folders 
+* Remove `node_modules` and `typings` folders
 * run `npm install`
 
 <a name="0.2.1"></a>
@@ -257,5 +257,5 @@ More details on how to configure a new route you can find [here](https://akveo.g
 
 ### How to update
 
-* Remove `node_modules` and `typings` folders 
+* Remove `node_modules` and `typings` folders
 * run `npm install`

@@ -1,13 +1,13 @@
-import {Component} from '@angular/core';
+import { Component } from '@angular/core';
 
-import 'style-loader!./grid.scss';
+import 'style-loader!./grid.component.scss';
 
 @Component({
   selector: 'grid',
-  templateUrl: './grid.html',
+  templateUrl: './grid.component.html',
 })
-export class Grid {
+export class GridComponent {
 
-  constructor() {
-  }
+  constructor() { }
+
 }

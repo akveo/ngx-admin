@@ -1,17 +1,18 @@
-import { Routes, RouterModule }  from '@angular/router';
+import { ModuleWithProviders } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 
-import { Editors } from './editors.component';
-import { Ckeditor } from './components/ckeditor/ckeditor.component';
+import { EditorsComponent } from './editors.component';
+import { CkeditorComponent } from './components/ckeditor/ckeditor.component';
 
 // noinspection TypeScriptValidateTypes
 const routes: Routes = [
   {
     path: '',
-    component: Editors,
+    component: EditorsComponent,
     children: [
-      { path: 'ckeditor', component: Ckeditor }
+      { path: 'ckeditor', component: CkeditorComponent }
     ]
   }
 ];
 
-export const routing = RouterModule.forChild(routes);
+export const routing: ModuleWithProviders = RouterModule.forChild(routes);

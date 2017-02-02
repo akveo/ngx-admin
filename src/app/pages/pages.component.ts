@@ -31,12 +31,12 @@ import { MENU } from '../app.menu';
     <ba-back-top position="200"></ba-back-top>
     `
 })
-export class Pages {
+export class PagesComponent {
 
-  constructor(private _menuService: BaMenuService,) {
+  constructor(private _menuService: BaMenuService) { }
+
+  ngOnInit(): void {
+    this._menuService.updateMenuByRoutes(MENU as Routes);
   }
 
-  ngOnInit() {
-    this._menuService.updateMenuByRoutes(<Routes>MENU);
-  }
 }
