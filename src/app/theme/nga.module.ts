@@ -1,7 +1,8 @@
-import { NgModule, ModuleWithProviders }      from '@angular/core';
 import { CommonModule }  from '@angular/common';
+import { NgModule, ModuleWithProviders } from '@angular/core';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+
 import { NgUploaderModule } from 'ngx-uploader';
 
 import {
@@ -29,7 +30,7 @@ import {
   BaSidebar
 } from './components';
 
-import { BaCardBlur } from './components/baCard/baCardBlur.directive';
+import { BaCardBlur } from './components/ba-card/ba-card-blur.directive';
 
 import {
   BaScrollPosition,

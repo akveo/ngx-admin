@@ -1,8 +1,9 @@
-import { NgModule, ApplicationRef } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { ApplicationRef, NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
+
 import { removeNgStyles, createNewHosts, createInputTransfer } from '@angularclass/hmr';
 
 /*
@@ -64,7 +65,7 @@ export class AppModule {
     this.appState._state = store.state;
     // set input values
     if ('restoreInputValues' in store) {
-      let restoreInputValues = store.restoreInputValues;
+      const restoreInputValues: any = store.restoreInputValues;
       setTimeout(restoreInputValues);
     }
     this.appRef.tick();
