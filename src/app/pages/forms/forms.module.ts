@@ -1,6 +1,7 @@
 import { NgModule }      from '@angular/core';
 import { CommonModule }  from '@angular/common';
 import { FormsModule as AngularFormsModule } from '@angular/forms';
+import { FormioModule } from 'ng2-formio';
 import { NgaModule } from '../../theme/nga.module';
 
 import { routing }       from './forms.routing';
@@ -9,6 +10,7 @@ import { RatingModule } from 'ng2-bootstrap';
 import { Forms } from './forms.component';
 import { Inputs } from './components/inputs';
 import { Layouts } from './components/layouts';
+import { FormioPage } from './components/formio';
 
 import { StandardInputs } from './components/inputs/components/standardInputs';
 import { ValidationInputs } from './components/inputs/components/validationInputs';
@@ -27,6 +29,7 @@ import { WithoutLabelsForm } from './components/layouts/components/withoutLabels
   imports: [
     CommonModule,
     AngularFormsModule,
+    FormioModule,
     NgaModule,
     RatingModule.forRoot(),
     routing
@@ -35,6 +38,7 @@ import { WithoutLabelsForm } from './components/layouts/components/withoutLabels
     Layouts,
     Inputs,
     Forms,
+    FormioPage,
     StandardInputs,
     ValidationInputs,
     GroupInputs,

@@ -161,6 +161,14 @@ export const PAGES_MENU = [
                 title: 'Form Layouts',
               }
             }
+          },
+          {
+            path: 'formio',
+            data: {
+              menu: {
+                title: 'Dynamic Forms',
+              }
+            }
           }
         ]
       },
