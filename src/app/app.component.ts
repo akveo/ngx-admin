@@ -1,7 +1,7 @@
 import { Component, ViewContainerRef } from '@angular/core';
 
 import { GlobalState } from './global.state';
-import { BaImageLoaderService, BaThemePreloader, BaThemeSpinner } from './theme/services';
+import { BaImageLoaderService, BaThemePreloader, BaThemeSpinner} from './theme/services';
 import { layoutPaths } from './theme/theme.constants';
 
 import 'style-loader!./app.scss';

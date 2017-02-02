@@ -1,0 +1,33 @@
+<section class="chartist">
+  <div class="row">
+    <div class="col-md-12 ">
+      <ba-card title="Line" baCardClass="with-scroll">
+        <h5>line chart</h5>
+        <morris-line-chart class="morris-chart" [lineData]="lineChartData"></morris-line-chart>
+      </ba-card>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <ba-card title="Donut & Bar" baCardClass="with-scroll">
+        <div class="row">
+          <div class="col-md-12 col-lg-4"><h5>Donut Chart</h5>
+            <morris-donut-chart class="morris-chart" [donutData]="donutChartData"></morris-donut-chart>
+          </div>
+          <div class="col-md-12 col-lg-8"><h5>Bar Chart</h5>
+            <morris-bar-chart class="morris-chart" [barChartData]="barChartData"></morris-bar-chart>
+          </div>
+        </div>
+      </ba-card>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 ">
+      <ba-card title="Area" baCardClass="with-scroll">
+        <h5>Area Chart</h5>
+        <morris-area-chart [areaData]="areaChartData"></morris-area-chart>
+      </ba-card>
+    </div>
+  </div>
+</section>

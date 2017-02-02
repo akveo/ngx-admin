@@ -26,7 +26,12 @@ import {
   BaMultiCheckbox,
   BaPageTop,
   BaPictureUploader,
-  BaSidebar
+  BaSidebar,
+  MorrisLineChart,
+  MorrisDonutChart,
+  MorrisBarChart,
+  MorrisAreaChart
+
 } from './components';
 
 import { BaCardBlur } from './components/baCard/baCardBlur.directive';
@@ -69,7 +74,11 @@ const NGA_COMPONENTS = [
   BaMultiCheckbox,
   BaPageTop,
   BaPictureUploader,
-  BaSidebar
+  BaSidebar,
+  MorrisLineChart,
+  MorrisDonutChart,
+  MorrisBarChart,
+  MorrisAreaChart
 ];
 
 const NGA_DIRECTIVES = [

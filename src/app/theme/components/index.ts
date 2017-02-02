@@ -12,3 +12,7 @@ export * from './baFullCalendar';
 export * from './baPictureUploader';
 export * from './baCheckbox';
 export * from './baMultiCheckbox';
+export * from './morrisAreaChart';
+export * from './morrisBarChart';
+export * from './morrisLineChart';
+export * from './morrisDonutChart';
