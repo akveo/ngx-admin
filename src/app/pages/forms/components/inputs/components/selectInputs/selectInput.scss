@@ -1,9 +1,0 @@
-@import "../../../../../../theme/sass/conf/conf.scss";
-
-select.form-control[multiple] {
-  overflow-y: scroll;
-}
-
-select.form-control {
-  color: $default;
-}
