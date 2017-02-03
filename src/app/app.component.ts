@@ -2,6 +2,7 @@ import { Component, ViewContainerRef } from '@angular/core';
 
 import { GlobalState } from './global.state';
 import { BaImageLoaderService, BaThemePreloader, BaThemeSpinner } from './theme/services';
+import { BaThemeConfig } from './theme/theme.config';
 import { layoutPaths } from './theme/theme.constants';
 
 import 'style-loader!./app.scss';
@@ -27,7 +28,10 @@ export class App {
   constructor(private _state: GlobalState,
               private _imageLoader: BaImageLoaderService,
               private _spinner: BaThemeSpinner,
-              private viewContainerRef: ViewContainerRef) {
+              private viewContainerRef: ViewContainerRef,
+              private themeConfig: BaThemeConfig) {
+
+    themeConfig.config();
 
     this._loadImages();
 
