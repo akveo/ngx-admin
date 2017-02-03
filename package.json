@@ -16,14 +16,8 @@
     "node": ">= 5.4.1 < 7"
   },
   "devDependencies": {
-    "codelyzer": "^2.0.0-beta.4",
     "tslint": "^4.4.2",
+    "tslint-eslint-rules": "^3.2.3",
     "typescript": "^2.1.5"
-  },
-  "dependencies": {
-    "@angular/compiler": "^2.4.5",
-    "@angular/core": "^2.4.5",
-    "rxjs": "^5.1.0",
-    "zone.js": "^0.7.6"
   }
 }
