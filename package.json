@@ -4,6 +4,7 @@
   "description": "@nga-srcs",
   "main": "index.js",
   "private": true,
+  "scripts": {},
   "repository": "git+https://github.com/akveo/ng2-admin.git",
   "keywords": [],
   "author": "akveo",
@@ -16,6 +17,7 @@
     "node": ">= 5.4.1 < 7"
   },
   "devDependencies": {
+    "stylelint": "^7.8.0",
     "tslint": "^4.4.2",
     "tslint-eslint-rules": "^3.2.3",
     "typescript": "^2.1.5"
