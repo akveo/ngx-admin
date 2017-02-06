@@ -7,7 +7,6 @@
       true,
       120
     ],
-    "no-inferrable-types": true,
     "class-name": true,
     "comment-format": [
       true,
@@ -133,8 +132,8 @@
     "ter-arrow-body-style": [true, "always"],
     "ter-arrow-parens": [true, "always"],
     "ter-arrow-spacing": [true, {
-      "before": false,
-      "after": false
+      "before": true,
+      "after": true
     }],
     "no-var-keyword": true,
     "prefer-const": true,

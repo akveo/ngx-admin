@@ -17,7 +17,9 @@
     "node": ">= 5.4.1 < 7"
   },
   "devDependencies": {
+    "@types/node": "^7.0.4",
     "stylelint": "^7.8.0",
+    "tslib": "^1.5.0",
     "tslint": "^4.4.2",
     "tslint-eslint-rules": "^3.2.3",
     "typescript": "^2.1.5"
