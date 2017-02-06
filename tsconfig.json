@@ -10,6 +10,7 @@
     "noEmitHelpers": true,
     "importHelpers": true,
     "strictNullChecks": false,
+    "sourceMap": true,
     "paths": {
     },
     "baseUrl": ".",
