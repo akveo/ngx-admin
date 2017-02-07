@@ -64,7 +64,7 @@
     "@types/uglify-js": "^2.0.27",
     "@types/webpack": "^2.0.0",
     "add-asset-html-webpack-plugin": "^1.0.2",
-    "angular2-template-loader": "^0.6.0",
+    "angular2-template-loader": "0.6.0",
     "assets-webpack-plugin": "^3.5.1",
     "awesome-typescript-loader": "~3.0.0-beta.18",
     "bootstrap-loader": "2.0.0-beta.18",
