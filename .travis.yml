@@ -1,4 +1,5 @@
 sudo: false
+dist: trusty
 
 language: node_js
 
@@ -19,6 +20,9 @@ addons:
       - g++-4.8
 
 before_install:
+  - export CHROME_BIN=chromium-browser
+  - export DISPLAY=:99.0
+  - sh -e /etc/init.d/xvfb start
   - curl -o- -L https://yarnpkg.com/install.sh | bash
   - export PATH=$HOME/.yarn/bin:$PATH
 
@@ -29,6 +33,9 @@ install:
   - yarn
 
 script:
+  - yarn run lint
+  - yarn run test
+  - yarn run e2e:ci
 
 notifications:
   slack: akveo:q559HckfZMSyZRb803aiLcjH

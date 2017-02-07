@@ -3,10 +3,17 @@ import { CommonModule } from '@angular/common';
 
 import { NgaLayoutModule } from './layout/nga-layout.module';
 
+const NGA_THEME_SUBMODULES = [
+  NgaLayoutModule,
+];
+
 @NgModule({
   imports: [
     CommonModule,
-    NgaLayoutModule,
+    ...NGA_THEME_SUBMODULES,
+  ],
+  exports: [
+    ...NGA_THEME_SUBMODULES,
   ],
 })
 export class NgaThemeModule {
