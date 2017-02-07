@@ -1,13 +1,13 @@
 {
   "name": "@nga/common",
-  "version": "2.0.0",
+  "version": "2.0.0-alpha.0",
   "description": "@nga/common",
   "main": "index.js",
   "typings": "index.d.ts",
   "author": "akveo",
   "license": "MIT",
   "devDependencies": {
-    "@angular/core": "^2.4.5",
+    "@angular/core": "^2.4.6",
     "rxjs": "^5.0.1",
     "zone.js": "^0.7.2"
   }

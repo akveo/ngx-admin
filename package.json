@@ -17,7 +17,15 @@
     "node": ">= 5.4.1 < 7"
   },
   "devDependencies": {
+    "@types/jasmine": "^2.5.41",
     "@types/node": "^7.0.4",
+    "jasmine-core": "^2.5.2",
+    "jasmine-spec-reporter": "^3.2.0",
+    "karma": "^1.4.1",
+    "karma-chrome-launcher": "^2.0.0",
+    "karma-cli": "^1.0.1",
+    "karma-jasmine": "^1.1.0",
+    "karma-remap-istanbul": "^0.6.0",
     "stylelint": "^7.8.0",
     "tslib": "^1.5.0",
     "tslint": "^4.4.2",

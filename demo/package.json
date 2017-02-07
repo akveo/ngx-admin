@@ -3,7 +3,7 @@
   "description": "Angular 2 and Bootstrap 4 Admin Template.",
   "author": "akveo",
   "homepage": "http://akveo.github.io/ng2-admin/",
-  "version": "2.0.0",
+  "version": "2.0.0-alpha.0",
   "license": "MIT",
   "angular-cli": {},
   "scripts": {

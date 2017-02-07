@@ -21,7 +21,6 @@
     "no-eval": true,
     "no-arg": true,
     "no-internal-module": true,
-    "no-trailing-whitespace": true,
     "no-bitwise": true,
     "no-shadowed-variable": true,
     "no-unused-expression": true,
@@ -83,7 +82,6 @@
     "use-isnan": true,
     "valid-typeof": true,
     "label-position": true,
-    "no-magic-numbers": true,
     "no-multi-spaces": [
       true,
       {
@@ -110,16 +108,6 @@
       "1tbs",
       {
         "allowSingleLine": true
-      }
-    ],
-    "ter-indent": [
-      true,
-      2,
-      {
-        "FunctionExpression": {
-          "parameters": 1,
-          "body": 1
-        }
       }
     ],
     "new-parens": true,
