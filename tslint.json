@@ -1,6 +1,7 @@
 {
   "rulesDirectory": [
-    "node_modules/tslint-eslint-rules/dist/rules"
+    "node_modules/tslint-eslint-rules/dist/rules",
+    "node_modules/codelyzer"
   ],
   "rules": {
     "max-line-length": [
@@ -111,22 +112,84 @@
       }
     ],
     "new-parens": true,
-    "no-consecutive-blank-lines": [true, 2],
+    "no-consecutive-blank-lines": [
+      true,
+      2
+    ],
     "object-curly-spacing": [
       true,
       "always"
     ],
-    "object-literal-key-quotes": [true, "as-needed"],
-    "ter-arrow-body-style": [true, "always"],
-    "ter-arrow-parens": [true, "always"],
-    "ter-arrow-spacing": [true, {
-      "before": true,
-      "after": true
-    }],
+    "object-literal-key-quotes": [
+      true,
+      "as-needed"
+    ],
+    "ter-arrow-body-style": [
+      true,
+      "always"
+    ],
+    "ter-arrow-parens": [
+      true,
+      "always"
+    ],
+    "ter-arrow-spacing": [
+      true,
+      {
+        "before": true,
+        "after": true
+      }
+    ],
     "no-var-keyword": true,
     "prefer-const": true,
-    "trailing-comma": [true, {"multiline": "always", "singleline": "never"}],
+    "trailing-comma": [
+      true,
+      {
+        "multiline": "always",
+        "singleline": "never"
+      }
+    ],
     "no-conditional-assignment": true,
-    "no-console": [true, "log", "error"]
+    "no-console": [
+      true,
+      "log",
+      "error"
+    ],
+    "directive-selector": [
+      true,
+      "attribute",
+      [
+        "nga"
+      ],
+      "camelCase"
+    ],
+    "component-selector": [
+      true,
+      "element",
+      [
+        "nga"
+      ],
+      "kebab-case"
+    ],
+    "use-input-property-decorator": true,
+    "use-output-property-decorator": true,
+    "use-host-property-decorator": true,
+    "no-attribute-parameter-decorator": true,
+    "no-input-rename": true,
+    "no-output-rename": true,
+    "no-forward-ref": true,
+    "use-life-cycle-interface": true,
+    "use-pipe-transform-interface": true,
+    "component-class-suffix": [
+      true,
+      "Component"
+    ],
+    "directive-class-suffix": [
+      true,
+      "Directive"
+    ],
+    "import-destructuring-spacing": true,
+    "templates-use-public": true,
+    "no-access-missing-member": true,
+    "invoke-injectable": true
   }
 }

@@ -21,15 +21,16 @@ exports.config = {
   jasmineNodeOpts: {
     showColors: true,
     defaultTimeoutInterval: 30000,
-    print: function() {}
+    print: function () {
+    }
   },
   useAllAngular2AppRoots: true,
-  beforeLaunch: function() {
+  beforeLaunch: function () {
     require('ts-node').register({
       project: 'test/e2e'
     });
   },
-  onPrepare: function() {
+  onPrepare: function () {
     jasmine.getEnv().addReporter(new SpecReporter());
   }
 };
