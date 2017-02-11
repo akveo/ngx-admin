@@ -167,14 +167,7 @@
     "electron:start": "electron build",
     "build:aot:prod": "npm run clean:dist && npm run clean:aot && webpack --config config/webpack.prod.js  --progress --profile --bail",
     "build:aot": "npm run build:aot:prod",
-    "ci:aot": "npm run lint && npm run test && npm run build:aot && npm run e2e",
-    "ci:jit": "npm run lint && npm run test && npm run build:prod && npm run e2e",
-    "ci:nobuild": "npm run lint && npm test && npm run e2e",
-    "ci:testall": "npm run lint && npm run test && npm run build:prod && npm run e2e && npm run build:aot && npm run e2e",
-    "ci": "npm run ci:testall",
-    "clean:aot": "npm run rimraf -- compiled",
-    "e2e": "npm-run-all -p -r server:prod:ci e2e:only",
-    "e2e:only": "npm run protractor"
+    "clean:aot": "npm run rimraf -- compiled"
   },
   "repository": {
     "type": "git",

@@ -6,7 +6,6 @@ import { MENU } from '../app.menu';
 
 @Component({
   selector: 'pages',
-  styles: [],
   template: `
     <ba-sidebar></ba-sidebar>
     <ba-page-top></ba-page-top>
