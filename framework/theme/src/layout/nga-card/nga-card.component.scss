@@ -1,0 +1,89 @@
+@import '../../sass/conf/conf';
+
+/deep/ nga-card {
+  display: block;
+  color: $card-text;
+  background: $card-background;
+  margin-bottom: $card-padding;
+  border-radius: $card-radius;
+  box-shadow: $card-shadow;
+
+  @include scrollbars(0.4em, rgba(0, 0, 0, 0.6), rgba(255, 255, 255, 0.7));
+
+  &[small] {
+    min-height: $small-card-height;
+  }
+
+  &[xsmall] {
+    min-height: $xsmall-card-height;
+  }
+
+  &[medium] {
+    min-height: $medium-card-height;
+  }
+
+  &[xmedium] {
+    min-height: $extra-medium-card-height;
+  }
+
+  &[large] {
+    min-height: $large-card-height;
+  }
+
+  &[primary] {
+    /deep/ nga-card-header {
+      background-color: $primary-bg;
+      border-color: $primary-bg;
+    }
+  }
+
+  &[success] {
+    /deep/ nga-card-header {
+      background-color: $success-bg;
+      border-color: $success-bg;
+    }
+  }
+
+  &[info] {
+    /deep/ nga-card-header {
+      background-color: $info-bg;
+      border-color: $info-bg;
+    }
+  }
+
+  &[warning] {
+    /deep/ nga-card-header {
+      background-color: $warning-bg;
+      border-color: $warning-bg;
+    }
+  }
+
+  &[danger] {
+    /deep/ nga-card-header {
+      background-color: $danger-bg;
+      border-color: $danger-bg;
+    }
+  }
+}
+
+/deep/ nga-card-header {
+  display: block;
+  padding: $card-padding;
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+  font-weight: $font-bolder;
+  border-bottom: $card-header-border;
+  text-transform: uppercase;
+  opacity: 0.9;
+}
+
+/deep/ nga-card-body {
+  display: block;
+  padding: $card-padding;
+  overflow: auto;
+}
+
+/deep/ nga-card-footer {
+  display: block;
+  padding: $card-padding;
+}

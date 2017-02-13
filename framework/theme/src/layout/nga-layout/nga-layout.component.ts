@@ -4,6 +4,7 @@ import { Component } from '@angular/core';
   selector: 'nga-layout',
   styleUrls: ['./nga-layout.component.scss'],
   template: `
+    <ng-content></ng-content>
     <ng-content select="nga-layout-sidebar"></ng-content>
     <ng-content select="nga-layout-content"></ng-content>
   `,

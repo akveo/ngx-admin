@@ -1,0 +1,22 @@
+@import '../../sass/conf/conf';
+
+/deep/ nga-layout {
+  display: block;
+}
+
+/deep/ nga-layout-sidebar {
+  display: block;
+  float: left;
+
+  &[left] {
+    float: left;
+  }
+
+  &[right] {
+    float: right;
+  }
+}
+
+/deep/ nga-layout-content {
+  display: block;
+}

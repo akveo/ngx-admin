@@ -11,8 +11,9 @@
     "pree2e": "webdriver-manager update",
     "e2e:ci": "npm-run-all -p -r start e2e",
     "e2e": "protractor",
-    "lint": "npm run lint:framework",
-    "lint:framework": "tslint --force './framework/**/*.ts'"
+    "lint": "npm-run-all -s lint:framework:ts lint:framework:scss",
+    "lint:framework:ts": "tslint --force ./framework/**/*.ts",
+    "lint:framework:scss": "stylelint ./framework/**/*.scss"
   },
   "repository": "git+https://github.com/akveo/ng2-admin.git",
   "keywords": [],
@@ -43,8 +44,9 @@
     "@types/webpack": "2.2.5",
     "angular-cli": "1.0.0-beta.28.3",
     "bootstrap": "4.0.0-alpha.6",
-    "codelyzer": "^2.0.0",
+    "codelyzer": "2.0.0",
     "core-js": "2.4.1",
+    "ionicons": "2.0.1",
     "jasmine-core": "2.5.2",
     "jasmine-spec-reporter": "2.5.0",
     "jquery": "2.2.4",
@@ -59,13 +61,13 @@
     "rimraf": "2.5.4",
     "rxjs": "5.0.1",
     "stylelint": "7.8.0",
+    "tether": "1.4.0",
     "ts-node": "1.2.1",
     "tslib": "1.5.0",
     "tslint": "4.4.2",
     "tslint-eslint-rules": "3.2.3",
     "typedoc": "0.5.5",
     "typescript": "2.1.5",
-    "webdriver-manager": "11.1.1",
     "zone.js": "0.7.6"
   }
 }

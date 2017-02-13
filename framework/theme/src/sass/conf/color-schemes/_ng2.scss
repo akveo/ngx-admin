@@ -1,0 +1,58 @@
+$default: #ffffff; // default colors for layout
+$body-bg: #f0f3f4; // default bg color
+
+$default-text: $default; // default text color layout (usually is the same as $default)
+$content-text: $default-text; // content text color on card, panels, form, etc
+$help-text: $default-text; // additional text color for hits
+
+$label-text: $default-text; // labels color
+$disabled: rgba(255, 255, 255, 0.4); // color for disabled state
+$disabled-bg: tint($disabled, 15%); // background color for disable state
+$border: rgba(255, 255, 255, 0.5); // border color
+$border-light: rgba(255, 255, 255, 0.3); // lighter version of border color (for hovers)
+$input-border: rgba(255, 255, 255, 0.6); // input border color
+$input-background: rgba(255, 255, 255, 0.1); // input border color for hover
+$dropdown-text: #7d7d7d; // dropdown text color
+
+// sidebar colors
+$sidebar: #282828;
+$sidebar-text: $default;
+
+// bootstrap card panel styles
+$card-radius: 7px;
+$card-text: $default;
+$card-bg: rgba(255, 255, 255, 0.1);
+$card-header-bg: transparent;
+$card-header-border: 1px solid $border-light;
+$card-shadow: 1px 1px 4px rgba(0, 0, 0, 0.15);
+$card-padding: 20px;
+$card-background: $input-background;
+
+// color scheme
+$primary: #00abff !default;
+$info: #40daf1 !default;
+$success: #8bd22f !default;
+$warning: #e7ba08 !default;
+$danger: #f95372 !default;
+
+$primary-light: tint($primary, 30%);
+$info-light: tint($info, 30%);
+$success-light: tint($success, 30%);
+$warning-light: tint($warning, 30%);
+$danger-light: tint($danger, 30%);
+
+$primary-dark: shade($primary, 15%);
+$info-dark: shade($info, 15%);
+$success-dark: shade($success, 15%);
+$warning-dark: shade($warning, 15%);
+$danger-dark: shade($danger, 15%);
+
+$primary-bg: tint($primary, 20%);
+$info-bg: tint($info, 20%);
+$success-bg: tint($success, 20%);
+$warning-bg: tint($warning, 20%);
+$danger-bg: tint($danger, 20%);
+
+// link colors
+$activelink: #285eb8;
+$hoverlink: darken($activelink, 20%);

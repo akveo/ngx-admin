@@ -16,9 +16,14 @@
       "tsconfig": "tsconfig.json",
       "prefix": "",
       "styles": [
+        "../../node_modules/bootstrap/scss/bootstrap.scss",
         "styles.scss"
       ],
-      "scripts": [],
+      "scripts": [
+        "../../node_modules/jquery/dist/jquery.js",
+        "../../node_modules/tether/dist/js/tether.js",
+        "../../node_modules/bootstrap/dist/js/bootstrap.js"
+      ],
       "environments": {
         "source": "environments/environment.ts",
         "dev": "environments/environment.ts",

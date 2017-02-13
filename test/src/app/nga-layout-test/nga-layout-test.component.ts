@@ -4,8 +4,12 @@ import { Component } from '@angular/core';
   selector: 'nga-layout-test',
   template: `
     <nga-layout>
-      <nga-layout-sidebar></nga-layout-sidebar>
-      <nga-layout-content></nga-layout-content>
+      <nga-layout-sidebar>
+        <span>Sidebar</span>
+      </nga-layout-sidebar>
+      <nga-layout-content>
+        <span>Content</span>
+      </nga-layout-content>
     </nga-layout>
 `,
 })

@@ -1,1 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+
+html {
+  font-size: 1rem;
+
+  body {
+    background: url('./assets/img/sky-bg.jpg');
+    padding: 20px;
+  }
+}

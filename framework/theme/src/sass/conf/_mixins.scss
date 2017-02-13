@@ -1,0 +1,47 @@
+/// Slightly lighten a color
+/// @access public
+/// @param {Color} $color - color to tint
+/// @param {Number} $percentage - percentage of `$color` in returned color
+/// @return {Color}
+@function tint($color, $percentage) {
+  @return mix(white, $color, $percentage);
+}
+
+/// Slightly darken a color
+/// @access public
+/// @param {Color} $color - color to shade
+/// @param {Number} $percentage - percentage of `$color` in returned color
+/// @return {Color}
+@function shade($color, $percentage) {
+  @return mix(black, $color, $percentage);
+}
+
+@mixin scrollbars($size, $foreground-color, $background-color: mix($foreground-color, white, 50%)) {
+  ::-webkit-scrollbar {
+    width: $size;
+    height: $size;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: $foreground-color;
+    cursor: pointer;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: $background-color;
+  }
+
+  // For Internet Explorer
+  body {
+    scrollbar-face-color: $foreground-color;
+    scrollbar-track-color: $background-color;
+  }
+}
+
+@mixin gradient($color-1, $color-2, $color-3) {
+  background: $color-2; /* Old browsers */
+  background: -moz-radial-gradient(bottom, ellipse cover, $color-1 0%, $color-2 45%, $color-3 100%); /* FF3.6-15 */
+  background: -webkit-radial-gradient(bottom, ellipse cover, $color-1 0%, $color-2 45%, $color-3 100%); /* Chrome10-25,Safari5.1-6 */
+  background: radial-gradient(ellipse at bottom, $color-1 0%, $color-2 45%, $color-3 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:dximagetransform.microsoft.gradient(startColorstr='$color-1', endColorstr='$color-3', GradientType=1); /* IE6-9 fallback on horizontal gradient */
+}
