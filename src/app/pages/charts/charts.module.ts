@@ -24,4 +24,4 @@ import { ChartistJsService } from './components/chartistJs/chartistJs.service';
     ChartistJsService
   ]
 })
-export default class ChartsModule {}
+export class ChartsModule {}

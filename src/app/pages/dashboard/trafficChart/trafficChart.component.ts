@@ -1,13 +1,13 @@
-import {Component, ViewEncapsulation, ElementRef} from '@angular/core';
+import {Component} from '@angular/core';
 
-import {Chart} from './trafficChart.loader.ts';
 import {TrafficChartService} from './trafficChart.service';
+import * as Chart from 'chart.js';
+
+import 'style-loader!./trafficChart.scss';
 
 @Component({
   selector: 'traffic-chart',
-  encapsulation: ViewEncapsulation.None,
-  styles: [require('./trafficChart.scss')],
-  template: require('./trafficChart.html')
+  templateUrl: './trafficChart.html'
 })
 
 // TODO: move chart.js to it's own component

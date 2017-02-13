@@ -1,12 +1,11 @@
-import {Component, ViewEncapsulation} from '@angular/core';
+import {Component} from '@angular/core';
 
 import {CalendarService} from './calendar.service';
+import 'style-loader!./calendar.scss';
 
 @Component({
   selector: 'calendar',
-  encapsulation: ViewEncapsulation.None,
-  styles: [require('./calendar.scss')],
-  template: require('./calendar.html')
+  templateUrl: './calendar.html'
 })
 export class Calendar {
 

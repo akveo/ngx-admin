@@ -1,12 +1,11 @@
-import {Component, ViewEncapsulation} from '@angular/core';
+import {Component} from '@angular/core';
 
 import {ChartistJsService} from './chartistJs.service';
+import 'style-loader!./chartistJs.scss';
 
 @Component({
   selector: 'chartist-js',
-  encapsulation: ViewEncapsulation.None,
-  styles: [require('chartist/dist/chartist.css'), require('./chartistJs.scss')],
-  template: require('./chartistJs.html'),
+  templateUrl: './chartistJs.html',
 })
 
 export class ChartistJs {

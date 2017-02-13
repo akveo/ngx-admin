@@ -4,7 +4,7 @@ import {BasicTablesService} from '../../basicTables.service';
 
 @Component({
   selector: 'hover-table',
-  template: require('./hoverTable.html')
+  templateUrl: './hoverTable.html'
 })
 export class HoverTable {
 

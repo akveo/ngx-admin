@@ -19,4 +19,4 @@ import { routing }       from './login.routing';
     Login
   ]
 })
-export default class LoginModule {}
+export class LoginModule {}

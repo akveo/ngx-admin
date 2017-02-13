@@ -50,4 +50,4 @@ import { UsersMapService } from './usersMap/usersMap.service';
     UsersMapService
   ]
 })
-export default class DashboardModule {}
+export class DashboardModule {}

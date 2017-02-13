@@ -1,10 +1,10 @@
-import {Component, ViewEncapsulation} from '@angular/core';
+import {Component} from '@angular/core';
+
+import 'style-loader!./buttons.scss';
 
 @Component({
   selector: 'buttons',
-  encapsulation: ViewEncapsulation.None,
-  styles: [require('./buttons.scss')],
-  template: require('./buttons.html'),
+  templateUrl: './buttons.html',
 })
 export class Buttons {
 

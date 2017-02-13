@@ -4,7 +4,7 @@ import {BasicTablesService} from '../../basicTables.service';
 
 @Component({
   selector: 'striped-table',
-  template: require('./stripedTable.html')
+  templateUrl: './stripedTable.html'
 })
 export class StripedTable {
 

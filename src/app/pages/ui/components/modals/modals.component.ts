@@ -3,8 +3,8 @@ import { ModalDirective } from 'ng2-bootstrap';
 
 @Component({
   selector: 'modals',
-  styles: [require('./modals.scss')],
-  template: require('./modals.html')
+  styleUrls: ['./modals.scss'],
+  templateUrl: './modals.html'
 })
 export class Modals {
   @ViewChild('childModal') childModal: ModalDirective;

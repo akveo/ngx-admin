@@ -1,14 +1,22 @@
-import {Component, ViewChild, ViewEncapsulation, Input, Output, ElementRef, EventEmitter} from '@angular/core';
+import {Component, ViewChild, Input, Output, ElementRef, EventEmitter} from '@angular/core';
 
 import {BaThemePreloader} from '../../../theme/services';
 
-import './baAmChart.loader.ts';
+import 'amcharts3';
+import 'amcharts3/amcharts/plugins/responsive/responsive.js';
+import 'amcharts3/amcharts/serial.js';
+
+import 'ammap3';
+import 'ammap3/ammap/maps/js/worldLow';
+
+
 import {BaAmChartThemeService} from './baAmChartTheme.service';
+
+import 'style-loader!./baAmChart.scss';
 
 @Component({
   selector: 'ba-am-chart',
-  template: require('./baAmChart.html'),
-  encapsulation: ViewEncapsulation.None,
+  templateUrl: './baAmChart.html',
   providers: [BaAmChartThemeService],
 })
 export class BaAmChart {
@@ -17,7 +25,7 @@ export class BaAmChart {
   @Input() baAmChartClass:string;
   @Output() onChartReady = new EventEmitter<any>();
 
-  @ViewChild('baAmChart') private _selector:ElementRef;
+  @ViewChild('baAmChart') public _selector:ElementRef;
 
   constructor (private _baAmChartThemeService:BaAmChartThemeService) {
     this._loadChartsLib();

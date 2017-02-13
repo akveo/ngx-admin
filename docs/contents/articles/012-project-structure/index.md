@@ -46,7 +46,6 @@ ng2-admin/
    │   │   │
    │   │   ├──app.component.ts   * main application component
    │   │   │
-   │   │   ├──app.loader.ts      * requires initial css styles (most important for application loading stage)
    │   │   │
    │   │   ├──app.menu.ts        * menu pages routes
    │   │   │

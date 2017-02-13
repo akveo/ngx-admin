@@ -3,12 +3,12 @@ import {TreeModel} from 'ng2-tree';
 
 @Component({
   selector: 'tree-view',
-  template: require('./treeView.html'),
+  templateUrl: './treeView.html',
 })
 
 export class TreeView {
 
-  private tree: TreeModel = {
+  tree: TreeModel = {
     value: 'Programming languages by programming paradigm',
     children: [
       {

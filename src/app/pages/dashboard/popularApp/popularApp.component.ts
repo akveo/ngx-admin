@@ -1,10 +1,9 @@
-import {Component, ViewEncapsulation} from '@angular/core';
+import {Component} from '@angular/core';
+import 'style-loader!./popularApp.scss';
 
 @Component({
   selector: 'popular-app',
-  encapsulation: ViewEncapsulation.None,
-  styles: [require('./popularApp.scss')],
-  template: require('./popularApp.html')
+  templateUrl: './popularApp.html'
 })
 export class PopularApp {
 

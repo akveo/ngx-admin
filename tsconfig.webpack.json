@@ -7,6 +7,7 @@
     "experimentalDecorators": true,
     "sourceMap": true,
     "baseUrl": "./src",
+    "outDir": "compiled",
     "paths": {
     },
     "lib": [
@@ -19,11 +20,18 @@
   },
   "exclude": [
     "node_modules",
-    "dist"
+    "dist",
+    "compiled",
+    "src/**/*.spec.ts",
+    "src/**/*.e2e.ts"
   ],
   "awesomeTypescriptLoaderOptions": {
     "forkChecker": true,
     "useWebpackText": true
+  },
+  "angularCompilerOptions": {
+    "genDir": "compiled",
+    "skipMetadataEmit": true
   },
   "compileOnSave": false,
   "buildOnSave": false,
