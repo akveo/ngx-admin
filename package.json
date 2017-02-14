@@ -50,7 +50,7 @@
     "reflect-metadata": "0.1.2",
     "rxjs": "5.0.3",
     "tether": "1.4.0",
-    "zone.js": "0.7.6"
+    "zone.js": "0.7.7"
   },
   "devDependencies": {
     "@angular/compiler-cli": "2.4.4",
