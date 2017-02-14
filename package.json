@@ -49,7 +49,6 @@
     "ionicons": "2.0.1",
     "jasmine-core": "2.5.2",
     "jasmine-spec-reporter": "2.5.0",
-    "jquery": "2.2.4",
     "karma": "1.2.0",
     "karma-chrome-launcher": "2.0.0",
     "karma-cli": "1.0.1",
