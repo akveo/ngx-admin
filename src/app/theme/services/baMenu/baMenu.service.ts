@@ -1,5 +1,6 @@
 import {Injectable} from '@angular/core';
 import {Router, Routes} from '@angular/router';
+import * as _ from 'lodash';
 
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 

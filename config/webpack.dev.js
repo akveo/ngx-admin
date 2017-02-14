@@ -119,7 +119,6 @@ module.exports = function (options) {
               name: 'zone.js',
               path: 'zone.js/dist/long-stack-trace-zone.js'
             },
-            'ts-helpers',
           ],
           vendor: [
             '@angular/platform-browser',
