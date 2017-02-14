@@ -1,15 +1,16 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "module": "commonjs",
+    "module": "es2015",
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
     "sourceMap": true,
-    "baseUrl": "./src",
-    "outDir": "compiled",
-    "paths": {
-    },
+    "noEmit": true,
+    "noEmitHelpers": true,
+    "importHelpers": true,
+    "strictNullChecks": false,
     "lib": [
       "es2015",
       "dom"
@@ -21,7 +22,6 @@
   "exclude": [
     "node_modules",
     "dist",
-    "compiled",
     "src/**/*.spec.ts",
     "src/**/*.e2e.ts"
   ],
@@ -30,7 +30,7 @@
     "useWebpackText": true
   },
   "angularCompilerOptions": {
-    "genDir": "compiled",
+    "genDir": "./compiled",
     "skipMetadataEmit": true
   },
   "compileOnSave": false,

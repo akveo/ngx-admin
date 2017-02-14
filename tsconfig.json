@@ -5,13 +5,15 @@
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
     "sourceMap": true,
-    "baseUrl": "./src",
-    "paths": {
-    },
+    "noEmit": true,
+    "noEmitHelpers": true,
+    "importHelpers": true,
+    "strictNullChecks": false,
     "lib": [
-      "es2015",
-      "dom"
+      "dom",
+      "es6"
     ],
     "typeRoots": [
       "node_modules/@types"
