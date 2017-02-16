@@ -64,10 +64,12 @@ function createTag(tagName, attrMap, publicPath) {
         }
       }
 
-      return name + '="' + value + '"';
+      return `${name}="${value}"`;
     });
 
-  return '<' + tagName + ' ' + attributes.join(' ') + '>';
+  const closingTag = tagName === 'script' ? '</script>' : '';
+
+  return `<${tagName} ${attributes.join(' ')}>${closingTag}`;
 }
 
 /**
