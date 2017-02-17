@@ -6,7 +6,6 @@ import { BaThemeConfig } from './theme/theme.config';
 import { layoutPaths } from './theme/theme.constants';
 
 import 'style-loader!./app.scss';
-import 'style-loader!./theme/initial.scss';
 
 /*
  * App Component
