@@ -13,6 +13,7 @@ import { Layouts } from './components/layouts';
 
 //Territory Forms
 import { Indication } from './components/ter-forms/indications';
+import { AddressCadasterForm } from './components/ter-forms/addressCadasterForm';
 
 import { StandardInputs } from './components/inputs/components/standardInputs';
 import { ValidationInputs } from './components/inputs/components/validationInputs';
@@ -51,7 +52,8 @@ import { WithoutLabelsForm } from './components/layouts/components/withoutLabels
     BasicForm,
     WithoutLabelsForm,
     //Territory Forms
-    Indication
+    Indication,
+    AddressCadasterForm
 
   ]
 })

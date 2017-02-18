@@ -1,0 +1,1 @@
+export * from './addressCadasterForm.component';
