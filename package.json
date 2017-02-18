@@ -107,7 +107,7 @@
     "typescript": "2.1.6",
     "url-loader": "0.5.7",
     "webpack": "2.2.0",
-    "webpack-dev-middleware": "1.10.0",
+    "webpack-dev-middleware": "1.10.1",
     "webpack-dev-server": "2.3.0",
     "webpack-dll-bundles-plugin": "1.0.0-beta.5",
     "webpack-merge": "2.6.1"
