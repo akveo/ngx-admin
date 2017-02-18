@@ -8,7 +8,11 @@ import { routing }       from './forms.routing';
 import { RatingModule } from 'ng2-bootstrap';
 import { Forms } from './forms.component';
 import { Inputs } from './components/inputs';
+
 import { Layouts } from './components/layouts';
+
+//Territory Forms
+import { Indication } from './components/ter-forms/indications';
 
 import { StandardInputs } from './components/inputs/components/standardInputs';
 import { ValidationInputs } from './components/inputs/components/validationInputs';
@@ -45,7 +49,10 @@ import { WithoutLabelsForm } from './components/layouts/components/withoutLabels
     BlockForm,
     HorizontalForm,
     BasicForm,
-    WithoutLabelsForm
+    WithoutLabelsForm,
+    //Territory Forms
+    Indication
+
   ]
 })
 export class FormsModule {

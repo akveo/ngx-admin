@@ -133,6 +133,27 @@ export const PAGES_MENU = [
             }
           },
         ]
+      },{
+        path: 'forms',
+        data: {
+          menu: {
+            title: 'Forms',
+            icon: 'ion-compose',
+            selected: false,
+            expanded: false,
+            order: 900,
+          }
+        },
+        children: [
+          {
+            path: 'indications',
+            data: {
+              menu: {
+                title: 'Indication Form',
+              }
+            }
+          }
+        ]
       },
       {
         path: 'forms',
