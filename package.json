@@ -69,7 +69,7 @@
     "assets-webpack-plugin": "3.5.1",
     "awesome-typescript-loader": "3.0.4",
     "bootstrap-loader": "2.0.0-beta.18",
-    "codelyzer": "2.0.0",
+    "codelyzer": "2.0.1",
     "copy-webpack-plugin": "4.0.1",
     "css-loader": "0.26.1",
     "electron": "1.6.0",
