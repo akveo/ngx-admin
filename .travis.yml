@@ -31,7 +31,6 @@ before_install:
 
 before_script:
   - npm i -g @angular/cli
-  - npm i -g karma
 
 install:
   - yarn
@@ -39,7 +38,6 @@ install:
 script:
   - yarn run lint
   - yarn run test
-  - yarn run e2e:ci
 
 notifications:
   slack: akveo:q559HckfZMSyZRb803aiLcjH

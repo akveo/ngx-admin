@@ -1,12 +1,30 @@
-@import '../../sass/conf/conf';
+@import '../../themes/nga.globals';
+
+$layout-min-height: 500px;
+$layout-height: 100%;
+$layout-sidebar-height: 100%;
+$layout-content-height: 100%;
+
+$layout-padding: 20px;
+
+$layout-width: 100%;
+$layout-sidebar-width: 20%;
+$layout-content-width: 80%;
 
 /deep/ nga-layout {
   display: block;
+  height: $layout-height;
+  width: $layout-width;
+  min-height: $layout-min-height;
 }
 
 /deep/ nga-layout-sidebar {
   display: block;
   float: left;
+  height: $layout-sidebar-height;
+  min-height: $layout-min-height;
+  width: $layout-sidebar-width;
+  padding: $layout-padding;
 
   &[left] {
     float: left;
@@ -19,4 +37,9 @@
 
 /deep/ nga-layout-content {
   display: block;
+  height: $layout-content-height;
+  min-height: $layout-min-height;
+  width: $layout-content-width;
+  padding: $layout-padding;
+  float: left;
 }

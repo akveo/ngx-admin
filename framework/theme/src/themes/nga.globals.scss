@@ -1,3 +1,24 @@
+@import './nga.mixins';
+
+$default-animation-duration: 0.2s;
+$default-animation-style: ease-out;
+
+$font-thin: 100;
+$font-light: 300;
+$font-normal: 400;
+$font-bold: 700;
+$font-bolder: 500;
+$font-ultraBold: 900;
+
+$facebook-color: #3b5998;
+$twitter-color: #55acee;
+$google-color: #dd4b39;
+$linkedin-color: #0177b5;
+$github-color: #6b6b6b;
+$stackoverflow-color: #2f96e8;
+$dribble-color: #f26798;
+$behace-color: #0093fa;
+
 $default: #ffffff; // default colors for layout
 $body-bg: #f0f3f4; // default bg color
 
@@ -17,16 +38,6 @@ $dropdown-text: #7d7d7d; // dropdown text color
 // sidebar colors
 $sidebar: #282828;
 $sidebar-text: $default;
-
-// bootstrap card panel styles
-$card-radius: 7px;
-$card-text: $default;
-$card-bg: rgba(255, 255, 255, 0.1);
-$card-header-bg: transparent;
-$card-header-border: 1px solid $border-light;
-$card-shadow: 1px 1px 4px rgba(0, 0, 0, 0.15);
-$card-padding: 20px;
-$card-background: $input-background;
 
 // color scheme
 $primary: #00abff !default;
