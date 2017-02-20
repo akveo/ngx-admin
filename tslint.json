@@ -78,7 +78,6 @@
     "no-consecutive-blank-lines": [true, 2],
     "object-curly-spacing": [true, "always"],
     "object-literal-key-quotes": [true, "as-needed"],
-    "ter-arrow-body-style": [true, "always"],
     "ter-arrow-spacing": [
       true,
       {

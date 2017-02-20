@@ -30,7 +30,7 @@ before_install:
   - export PATH=$HOME/.yarn/bin:$PATH
 
 before_script:
-  - npm i -g angular-cli
+  - npm i -g @angular/cli
   - npm i -g karma
 
 install:

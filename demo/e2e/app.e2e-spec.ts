@@ -1,10 +1,10 @@
-import { NgxAdminDemoPage } from './app.po';
+import { NgaFrameworkDemoPage } from './app.po';
 
-describe('ngx-admin-demo App', function() {
-  let page: NgxAdminDemoPage;
+describe('nga-framework-demo App', () => {
+  let page: NgaFrameworkDemoPage;
 
   beforeEach(() => {
-    page = new NgxAdminDemoPage();
+    page = new NgaFrameworkDemoPage();
   });
 
   it('should display message saying app works', () => {

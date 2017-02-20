@@ -1,6 +1,6 @@
 import { browser, element, by } from 'protractor';
 
-export class NgxAdminDemoPage {
+export class NgaFrameworkDemoPage {
   navigateTo() {
     return browser.get('/');
   }
