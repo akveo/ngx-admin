@@ -9,6 +9,7 @@
     "sourceMap": true,
     "noEmit": true,
     "noEmitHelpers": true,
+    "importHelpers": true,
     "strictNullChecks": false,
     "lib": [
       "es2015",
