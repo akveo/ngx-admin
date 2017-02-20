@@ -164,7 +164,7 @@
     "build:aot:prod": "npm run clean:dist && npm run clean:aot && webpack --config config/webpack.prod.js  --progress --profile --bail",
     "build:aot": "npm run build:aot:prod",
     "clean:aot": "npm run rimraf -- compiled",
-    "ci:all": "npm run build:prod && npm run build:aot"
+    "build:ci": "npm run build:prod && npm run build:aot"
   },
   "repository": {
     "type": "git",

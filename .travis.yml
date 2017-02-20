@@ -30,8 +30,7 @@ install:
   - yarn
 
 script:
-  - yarn run build:prod
-  - yarn run build:aot
+  - yarn run build:ci
 
 notifications:
   slack: akveo:q559HckfZMSyZRb803aiLcjH
