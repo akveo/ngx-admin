@@ -1,0 +1,9 @@
+@mixin nga-layout-theme($theme) {
+  /deep/ nga-layout {
+    $background: map-get($theme, background);
+    $foreground: map-get($theme, foreground);
+
+    background: $background;
+    color: $foreground;
+  }
+}

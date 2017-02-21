@@ -1,0 +1,62 @@
+@mixin _nga-card-header($status-color) {
+  background-color: $status-color;
+  border-color: $status-color;
+}
+
+@mixin nga-card-theme($theme) {
+  /deep/ nga-card {
+    $background: map-get($theme, background);
+    $foreground: map-get($theme, foreground);
+    $shadow: map-get($theme, shadow);
+
+    background: $background;
+    color: $foreground;
+    box-shadow: 1px 1px 4px $shadow;
+
+    &[primary] {
+      /deep/ nga-card-header {
+        $primary: map-get($theme, primary);
+
+        @include _nga-card-header($primary);
+      }
+    }
+
+    &[success] {
+      /deep/ nga-card-header {
+        $success: map-get($theme, success);
+
+        @include _nga-card-header($success);
+      }
+    }
+
+    &[info] {
+      /deep/ nga-card-header {
+        $info: map-get($theme, info);
+
+        @include _nga-card-header($info);
+      }
+    }
+
+    &[warning] {
+      /deep/ nga-card-header {
+        $warning: map-get($theme, warning);
+
+        @include _nga-card-header($warning);
+      }
+    }
+
+    &[danger] {
+      /deep/ nga-card-header {
+        $danger: map-get($theme, danger);
+
+        @include _nga-card-header($danger);
+      }
+    }
+  }
+
+  /deep/ nga-card-header {
+    $separator: map-get($theme, separator);
+
+    border-bottom-color: $separator;
+  }
+}

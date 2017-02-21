@@ -1,0 +1,8 @@
+@import '../../layout/nga-layout/nga-layout.component.theme';
+@import '../../layout/nga-card/nga-card.component.theme';
+
+// Create a theme
+@mixin nga-theme($theme) {
+  @include nga-layout-theme($theme);
+  @include nga-card-theme($theme);
+}
