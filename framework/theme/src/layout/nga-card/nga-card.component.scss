@@ -1,4 +1,4 @@
-@import '../../themes/nga.globals';
+@import '../../core/style/nga.globals';
 
 $small-card-height: 114px;
 $xsmall-card-height: 187px;
@@ -7,13 +7,13 @@ $extra-medium-card-height: 550px;
 $large-card-height: 974px;
 
 $card-radius: 7px;
-$card-text: $default;
+$card-text: $nga-color-default;
 $card-bg: rgba(255, 255, 255, 0.1);
 $card-header-bg: transparent;
-$card-header-border: 1px solid $border-light;
+$card-header-border: 1px solid $nga-border-color-light;
 $card-shadow: 1px 1px 4px rgba(0, 0, 0, 0.15);
 $card-padding: 20px;
-$card-background: $input-background;
+$card-background: $nga-input-background;
 
 /deep/ nga-card {
   display: block;
@@ -23,7 +23,7 @@ $card-background: $input-background;
   border-radius: $card-radius;
   box-shadow: $card-shadow;
 
-  @include scrollbars(0.4em, rgba(0, 0, 0, 0.6), rgba(255, 255, 255, 0.7));
+  @include nga-scrollbars(0.4em, rgba(0, 0, 0, 0.6), rgba(255, 255, 255, 0.7));
 
   &[small] {
     min-height: $small-card-height;
@@ -47,36 +47,36 @@ $card-background: $input-background;
 
   &[primary] {
     /deep/ nga-card-header {
-      background-color: $primary-bg;
-      border-color: $primary-bg;
+      background-color: $nga-background-color-primary;
+      border-color: $nga-background-color-primary;
     }
   }
 
   &[success] {
     /deep/ nga-card-header {
-      background-color: $success-bg;
-      border-color: $success-bg;
+      background-color: $nga-background-color-success;
+      border-color: $nga-background-color-success;
     }
   }
 
   &[info] {
     /deep/ nga-card-header {
-      background-color: $info-bg;
-      border-color: $info-bg;
+      background-color: $nga-background-color-info;
+      border-color: $nga-background-color-info;
     }
   }
 
   &[warning] {
     /deep/ nga-card-header {
-      background-color: $warning-bg;
-      border-color: $warning-bg;
+      background-color: $nga-background-color-warning;
+      border-color: $nga-background-color-warning;
     }
   }
 
   &[danger] {
     /deep/ nga-card-header {
-      background-color: $danger-bg;
-      border-color: $danger-bg;
+      background-color: $nga-background-color-danger;
+      border-color: $nga-background-color-danger;
     }
   }
 }
@@ -86,7 +86,7 @@ $card-background: $input-background;
   padding: $card-padding;
   font-size: 1.5rem;
   line-height: 1.5rem;
-  font-weight: $font-bolder;
+  font-weight: $nga-font-bolder;
   border-bottom: $card-header-border;
   text-transform: uppercase;
   opacity: 0.9;
