@@ -162,9 +162,9 @@ module.exports = function (options) {
 
         {
           test: /initial\.scss$/,
-          loader: ExtractTextPlugin.extract({
-            fallbackLoader: 'style-loader',
-            loader: 'css-loader!sass-loader?sourceMap'
+          use: ExtractTextPlugin.extract({
+            fallback: 'style-loader',
+            use: 'css-loader!sass-loader?sourceMap'
           })
         },
 

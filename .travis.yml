@@ -5,12 +5,6 @@ language: node_js
 node_js:
   - "6"
 
-cache:
-  directories:
-    - node_modules
-    - $HOME/.npm
-    - $HOME/.cache/yarn
-
 addons:
   apt:
     sources:
@@ -30,8 +24,7 @@ install:
   - yarn
 
 script:
-  - yarn run build:prod
-  - yarn run build:aot
+  - yarn run build:ci
 
 notifications:
   slack: akveo:q559HckfZMSyZRb803aiLcjH
