@@ -1,30 +1,40 @@
 @import '../../core/style/nga.globals';
 
-$layout-min-height: 500px;
-$layout-height: 100%;
-$layout-sidebar-height: 100%;
-$layout-content-height: 100%;
+$nga-layout-props: (
+  min-height: 500px,
+  height: 100%,
+  padding: 20px,
+  widht: 100%
+);
 
-$layout-padding: 20px;
+$nga-layout-sidebar-props: (
+  min-height: map-get($nga-layout-props, min-height),
+  height: map-get($nga-layout-props, height),
+  padding: map-get($nga-layout-props, padding),
+  width: 20%
+);
 
-$layout-width: 100%;
-$layout-sidebar-width: 20%;
-$layout-content-width: 80%;
+$nga-layout-content-props: (
+  min-height: map-get($nga-layout-props, min-height),
+  height: map-get($nga-layout-props, height),
+  padding: map-get($nga-layout-props, padding),
+  width: 80%
+);
 
 /deep/ nga-layout {
   display: block;
-  height: $layout-height;
-  width: $layout-width;
-  min-height: $layout-min-height;
+  height: map-get($nga-layout-props, height);
+  width: map-get($nga-layout-props, width);
+  min-height: map-get($nga-layout-props, min-height);
 }
 
 /deep/ nga-layout-sidebar {
   display: block;
   float: left;
-  height: $layout-sidebar-height;
-  min-height: $layout-min-height;
-  width: $layout-sidebar-width;
-  padding: $layout-padding;
+  height: map-get($nga-layout-sidebar-props, height);
+  min-height: map-get($nga-layout-sidebar-props, min-height);
+  width: map-get($nga-layout-sidebar-props, width);
+  padding: map-get($nga-layout-sidebar-props, padding);
 
   &[left] {
     float: left;
@@ -37,9 +47,9 @@ $layout-content-width: 80%;
 
 /deep/ nga-layout-content {
   display: block;
-  height: $layout-content-height;
-  min-height: $layout-min-height;
-  width: $layout-content-width;
-  padding: $layout-padding;
   float: left;
+  height: map-get($nga-layout-content-props, height);
+  min-height: map-get($nga-layout-content-props, min-height);
+  width: map-get($nga-layout-content-props, width);
+  padding: map-get($nga-layout-content-props, padding);
 }

@@ -1,62 +1,83 @@
 @import './nga.mixins';
 @import './nga.functions';
 
-$nga-animation-duration: 0.2s;
-$nga-animation-style: ease-out;
+$nga-animation: (
+  duration: 0.2s,
+  animation: ease-out
+);
 
-$nga-font-thin: 100;
-$nga-font-light: 300;
-$nga-font-normal: 400;
-$nga-font-bold: 700;
-$nga-font-bolder: 500;
-$nga-font-ultraBold: 900;
+$nga-font-weight: (
+  thin: 100,
+  light: 300,
+  normal: 400,
+  bolder: 500,
+  bold: 700,
+  ultra-bold: 900
+);
 
-$nga-color-facebook: #3b5998;
-$nga-color-twitter: #55acee;
-$nga-color-google: #dd4b39;
-$nga-color-linkedin: #0177b5;
-$nga-color-github: #6b6b6b;
-$nga-color-stackoverflow: #2f96e8;
-$nga-color-dribble: #f26798;
-$nga-color-behace: #0093fa;
+$nga-social-colors: (
+  facebook: #3b5998,
+  twitter: #55acee,
+  google: #dd4b39,
+  linkedin: #0177b5,
+  github: #6b6b6b,
+  stackoverflow: #2f96e8,
+  dribble: #f26798,
+  behance: #0093fa
+);
 
-$nga-color-primary: #00abff !default;
-$nga-color-info: #40daf1 !default;
-$nga-color-success: #8bd22f !default;
-$nga-color-warning: #e7ba08 !default;
-$nga-color-danger: #f95372 !default;
+$nga-status-colors: (
+  primary: #00abff,
+  info: #40daf1,
+  success: #8bd22f,
+  warning: #e7ba08,
+  danger: #f95372
+);
 
-$nga-color-primary-light: tint($nga-color-primary, 30%);
-$nga-color-info-light: tint($nga-color-info, 30%);
-$nga-color-success-light: tint($nga-color-success, 30%);
-$nga-color-warning-light: tint($nga-color-warning, 30%);
-$nga-color-danger-light: tint($nga-color-danger, 30%);
+$nga-status-colors-light: (
+  primary: tint(map-get($nga-status-colors, primary), 30%),
+  info: tint(map-get($nga-status-colors, info), 30%),
+  success: tint(map-get($nga-status-colors, success), 30%),
+  warning: tint(map-get($nga-status-colors, warning), 30%),
+  danger: tint(map-get($nga-status-colors, danger), 30%)
+);
 
-$nga-color-primary-dark: shade($nga-color-primary, 15%);
-$nga-color-info-dark: shade($nga-color-info, 15%);
-$nga-color-success-dark: shade($nga-color-success, 15%);
-$nga-color-warning-dark: shade($nga-color-warning, 15%);
-$nga-color-danger-dark: shade($nga-color-danger, 15%);
+$nga-status-colors-dark: (
+  primary: shade(map-get($nga-status-colors, primary), 15%),
+  info: shade(map-get($nga-status-colors, info), 15%),
+  success: shade(map-get($nga-status-colors, success), 15%),
+  warning: shade(map-get($nga-status-colors, warning), 15%),
+  danger: shade(map-get($nga-status-colors, danger), 15%)
+);
 
-$nga-color-default: #ffffff; // default colors for layout
-$nga-color-disabled: rgba(255, 255, 255, 0.4); // color for disabled state
+$nga-colors: (
+  default: #ffffff,
+  disabled: rgba(255, 255, 255, 0.4)
+);
 
-$nga-background-color-default: #f0f3f4; // default bg color
-$nga-background-color-disabled: tint($nga-color-disabled, 15%); // background color for disable state
-$nga-background-color-primary: tint($nga-color-primary, 20%);
-$nga-background-color-info: tint($nga-color-info, 20%);
-$nga-background-color-success: tint($nga-color-success, 20%);
-$nga-background-color-warning: tint($nga-color-warning, 20%);
-$nga-background-color-danger: tint($nga-color-danger, 20%);
+$nga-background-colors: (
+  default: #f0f3f4,
+  disabled: tint(map-get($nga-colors, disabled), 15%),
+  primary: tint(map-get($nga-status-colors, primary), 20%),
+  info: tint(map-get($nga-status-colors, info), 20%),
+  success: tint(map-get($nga-status-colors, success), 20%),
+  warning: tint(map-get($nga-status-colors, warning), 20%),
+  danger: tint(map-get($nga-status-colors, danger), 20%),
+);
 
-$nga-border-color: rgba(255, 255, 255, 0.5); // border color
-$nga-border-color-light: rgba(255, 255, 255, 0.3); // lighter version of border color (for hovers)
+$nga-border-colors: (
+  default: rgba(255, 255, 255, 0.5), // border color
+  light: rgba(255, 255, 255, 0.3) // lighter version of border color (for hovers)
+);
 
-$nga-input-border-color: rgba(255, 255, 255, 0.6); // input border color
-$nga-input-background: rgba(255, 255, 255, 0.1); // input border color for hover
+$nga-input-colors: (
+  border: rgba(255, 255, 255, 0.6), // input border color
+  background: rgba(255, 255, 255, 0.1) // input border color for hover
+);
 
 $nga-dropdown-text-color: #7d7d7d; // dropdown text color
 
-// link colors
-$nga-link-color-activelink: #285eb8;
-$nga-link-color-hoverlink: darken($nga-link-color-activelink, 20%);
+$nga-link-color-statuses: (
+  active: #285eb8,
+  hover: darken(#285eb8, 20%)
+);

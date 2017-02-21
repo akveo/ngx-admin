@@ -1,108 +1,111 @@
 @import '../../core/style/nga.globals';
 
-$small-card-height: 114px;
-$xsmall-card-height: 187px;
-$medium-card-height: 400px;
-$extra-medium-card-height: 550px;
-$large-card-height: 974px;
+$nga-card-height: (
+  small: 114px,
+  xsmall: 187px,
+  medium: 400px,
+  xmedium: 550px,
+  large: 974px
+);
 
-$card-radius: 7px;
-$card-text: $nga-color-default;
-$card-bg: rgba(255, 255, 255, 0.1);
-$card-header-bg: transparent;
-$card-header-border: 1px solid $nga-border-color-light;
-$card-shadow: 1px 1px 4px rgba(0, 0, 0, 0.15);
-$card-padding: 20px;
-$card-background: $nga-input-background;
+$nga-card-props: (
+  radius: 7px,
+  text-color: map-get($nga-colors, default),
+  header-background: transparent,
+  header-border: 1px solid map-get($nga-border-colors, light),
+  shadow: 1px 1px 4px rgba(0, 0, 0, 0.15),
+  padding: 20px,
+  background-color: map-get($nga-input-colors, background)
+);
 
 /deep/ nga-card {
   display: block;
-  color: $card-text;
-  background: $card-background;
-  margin-bottom: $card-padding;
-  border-radius: $card-radius;
-  box-shadow: $card-shadow;
+  color: map-get($nga-card-props, text-color);
+  background: map-get($nga-card-props, background-color);
+  margin-bottom: map-get($nga-card-props, padding);
+  border-radius: map-get($nga-card-props, radius);
+  box-shadow: map-get($nga-card-props, shadow);
 
   @include nga-scrollbars(0.4em, rgba(0, 0, 0, 0.6), rgba(255, 255, 255, 0.7));
 
   &[small] {
-    min-height: $small-card-height;
+    min-height: map-get($nga-card-height, small);
   }
 
   &[xsmall] {
-    min-height: $xsmall-card-height;
+    min-height: map-get($nga-card-height, xsmall);
   }
 
   &[medium] {
-    min-height: $medium-card-height;
+    min-height: map-get($nga-card-height, medium);
   }
 
   &[xmedium] {
-    min-height: $extra-medium-card-height;
+    min-height: map-get($nga-card-height, xmedium);
   }
 
   &[large] {
-    min-height: $large-card-height;
+    min-height: map-get($nga-card-height, large);
   }
 
   &[primary] {
     /deep/ nga-card-header {
-      background-color: $nga-background-color-primary;
-      border-color: $nga-background-color-primary;
+      background-color: map-get($nga-background-colors, primary);
+      border-color: map-get($nga-background-colors, primary);
     }
   }
 
   &[success] {
     /deep/ nga-card-header {
-      background-color: $nga-background-color-success;
-      border-color: $nga-background-color-success;
+      background-color: map-get($nga-background-colors, success);
+      border-color: map-get($nga-background-colors, success);
     }
   }
 
   &[info] {
     /deep/ nga-card-header {
-      background-color: $nga-background-color-info;
-      border-color: $nga-background-color-info;
+      background-color: map-get($nga-background-colors, info);
+      border-color: map-get($nga-background-colors, info);
     }
   }
 
   &[warning] {
     /deep/ nga-card-header {
-      background-color: $nga-background-color-warning;
-      border-color: $nga-background-color-warning;
+      background-color: map-get($nga-background-colors, warning);
+      border-color: map-get($nga-background-colors, warning);
     }
   }
 
   &[danger] {
     /deep/ nga-card-header {
-      background-color: $nga-background-color-danger;
-      border-color: $nga-background-color-danger;
+      background-color: map-get($nga-background-colors, danger);
+      border-color: map-get($nga-background-colors, danger);
     }
   }
 }
 
 /deep/ nga-card-header {
   display: block;
-  padding: $card-padding;
+  padding: map-get($nga-card-props, padding);
   font-size: 1.5rem;
   line-height: 1.5rem;
-  font-weight: $nga-font-bolder;
-  border-bottom: $card-header-border;
+  font-weight: map-get($nga-font-weight, bolder);
+  border-bottom: map-get($nga-card-props, header-border);
   text-transform: uppercase;
   opacity: 0.9;
-  border-top-left-radius: $card-radius;
-  border-top-right-radius: $card-radius;
+  border-top-left-radius: map-get($nga-card-props, radius);
+  border-top-right-radius: map-get($nga-card-props, radius);
 }
 
 /deep/ nga-card-body {
   display: block;
-  padding: $card-padding;
+  padding: map-get($nga-card-props, padding);
   overflow: auto;
 }
 
 /deep/ nga-card-footer {
   display: block;
-  padding: $card-padding;
-  border-bottom-left-radius: $card-radius;
-  border-bottom-right-radius: $card-radius;
+  padding: map-get($nga-card-props, padding);
+  border-bottom-left-radius: map-get($nga-card-props, radius);
+  border-bottom-right-radius: map-get($nga-card-props, radius);
 }
