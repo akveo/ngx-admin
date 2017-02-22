@@ -12,15 +12,19 @@ addons:
     packages:
       - g++-4.8
 
-install:
+before_install:
+  - curl -o- -L https://yarnpkg.com/install.sh | bash
+  - export PATH=$HOME/.yarn/bin:$PATH
   - npm config set spin false
-  - npm install -g npm@latest
 
-  - npm install
+before_script:
+  - npm i -g npm@4
+
+install:
+  - yarn
 
 script:
-  - npm run build:prod
-  - npm run build:aot
+  - yarn run build:ci
 
 notifications:
   slack: akveo:q559HckfZMSyZRb803aiLcjH
