@@ -1,7 +1,8 @@
 @import '../../core/style/nga.global';
+@import '../../core/theming/nga.theming';
 
-@mixin nga-layout-theme($theme) {
-  $global: map-merge($nga-global, map-get($theme, nga-global));
+@mixin nga-layout-theme($nga-theme) {
+  $global: map-get($nga-theme, global);
 
   $background: map-get($global, background);
   $foreground: map-get($global, foreground);

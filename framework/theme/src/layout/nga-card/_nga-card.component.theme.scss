@@ -1,15 +1,16 @@
 @import '../../core/style/nga.global';
+@import '../../core/theming/nga.theming';
 
 @mixin _nga-card-header($status-color) {
   background-color: $status-color;
   border-color: $status-color;
 }
 
-@mixin nga-card-theme($theme) {
-  $global: map-merge($nga-global, map-get($theme, nga-global));
-  $background-colors: map-merge($nga-background-colors, map-get($theme, nga-background-colors));
-  $font-weight: map-merge($nga-font-weight, map-get($theme, nga-font-weight));
-  $card: map-merge($nga-card, map-get($theme, nga-card));
+@mixin nga-card-theme($nga-theme) {
+  $global: map-get($nga-theme, global);
+  $colors: map-get($nga-theme, color-light);
+  $font-weight: map-get($nga-theme, font-weight);
+  $card: map-get($nga-theme, card);
 
   $background: map-get($global, background);
   $foreground: map-get($global, foreground);
@@ -24,7 +25,7 @@
     box-shadow: 1px 1px 4px $shadow;
     font-weight: $font-weight;
 
-    @each $name, $color in $background-colors {
+    @each $name, $color in $colors {
       &[#{$name}] {
         /deep/ nga-card-header {
           @include _nga-card-header($color);

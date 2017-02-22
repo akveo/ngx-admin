@@ -1,0 +1,9 @@
+@function nga-get($customTheme, $key, $defaultTheme: null) {
+  $config: map-get($customTheme, $key);
+
+  @if ($config) {
+    @return map-merge($defaultTheme, $config);
+  }
+
+  @return $defaultTheme;
+}

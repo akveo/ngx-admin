@@ -1,10 +1,5 @@
 @import './nga.variables';
 
-$nga-global: (
-  background: transparent,
-  foreground: map-get($nga-colors, default)
-);
-
 $nga-font-weight: (
   thin: 100,
   light: 300,
@@ -14,17 +9,55 @@ $nga-font-weight: (
   ultra-bold: 900
 );
 
-$nga-background-colors: (
-  default: #f0f3f4,
-  disabled: tint(map-get($nga-colors, disabled), 15%),
-  primary: tint(map-get($nga-status-colors, primary), 20%),
-  info: tint(map-get($nga-status-colors, info), 20%),
-  success: tint(map-get($nga-status-colors, success), 20%),
-  warning: tint(map-get($nga-status-colors, warning), 20%),
-  danger: tint(map-get($nga-status-colors, danger), 20%),
+$nga-card: (
+  shadow: rgba(0, 0, 0, 0.15),
+  separator: rgba(255, 255, 255, 0.3)
 );
 
-$nga-card: (
-  shadow: rgba(0, 0, 0, 0.15)
+$nga-color: (
+  default: #ffffff,
+  disabled: rgba(255, 255, 255, 0.4),
+  primary: #00abff,
+  info: #40daf1,
+  success: #8bd22f,
+  warning: #e7ba08,
+  danger: #f95372
+);
+
+$nga-color-light: (
+  primary: tint(map-get($nga-color, primary), 30%),
+  info: tint(map-get($nga-color, info), 30%),
+  success: tint(map-get($nga-color, success), 30%),
+  warning: tint(map-get($nga-color, warning), 30%),
+  danger: tint(map-get($nga-color, danger), 30%)
+);
+
+$nga-color-dark: (
+  primary: shade(map-get($nga-color, primary), 15%),
+  info: shade(map-get($nga-color, info), 15%),
+  success: shade(map-get($nga-color, success), 15%),
+  warning: shade(map-get($nga-color, warning), 15%),
+  danger: shade(map-get($nga-color, danger), 15%)
+);
+
+$nga-social-color: (
+  facebook: #3b5998,
+  twitter: #55acee,
+  google: #dd4b39,
+  linkedin: #0177b5,
+  github: #6b6b6b,
+  stackoverflow: #2f96e8,
+  dribble: #f26798,
+  behance: #0093fa
+);
+
+$nga-link-color-status: (
+  active: #285eb8,
+  hover: darken(#285eb8, 20%)
+);
+
+$nga-global: (
+  background: transparent,
+  foreground: map-get($nga-color, default)
 );
 

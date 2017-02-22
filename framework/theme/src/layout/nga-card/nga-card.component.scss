@@ -9,9 +9,9 @@ $nga-card-height: (
 );
 
 $nga-card-border-radius: 7px;
-$nga-card-separator: 1px solid map-get($nga-border-colors, light);
+$nga-card-separator: 1px solid map-get($nga-card, separator);
 $nga-card-padding: 20px;
-$nga-card-background: map-get($nga-input-colors, background);
+$nga-card-background: rgba(255, 255, 255, 0.1);
 
 @mixin _nga-card-header($header-color) {
   background-color: $header-color;
@@ -35,7 +35,7 @@ $nga-card-background: map-get($nga-input-colors, background);
     }
   }
 
-  @each $name, $color in $nga-background-colors {
+  @each $name, $color in $nga-color-light {
     &[#{$name}] {
       /deep/ nga-card-header {
         @include _nga-card-header($color);

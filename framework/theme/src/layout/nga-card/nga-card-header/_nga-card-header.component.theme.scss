@@ -1,9 +1,10 @@
 @import '../../../core/style/nga.global';
+@import '../../../core/theming/nga.theming';
 
-@mixin nga-card-header-theme($theme) {
-  $border-colors: map-merge($nga-border-colors, map-get($theme, nga-border-colors));
+@mixin nga-card-header-theme($nga-theme) {
+  $card: map-get($nga-theme, card);
 
-  $separator: map-get($border-colors, light);
+  $separator: map-get($card, separator);
 
   /deep/ nga-card-header {
     border-bottom-color: $separator;

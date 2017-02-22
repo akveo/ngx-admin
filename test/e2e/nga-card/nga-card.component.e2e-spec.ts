@@ -54,55 +54,55 @@ describe('nga-card', () => {
   it('should have header with primary color of background and border', () => {
     browser.get('/');
     element(by.css('#primary-card > nga-card-header')).getCssValue('background-color').then(bgColor => {
-      expect(bgColor).toEqual('rgba(51, 188, 255, 1)');
+      expect(bgColor).toEqual('rgba(77, 196, 255, 1)');
     });
 
     element(by.css('#primary-card > nga-card-header')).getCssValue('border-color').then(bgColor => {
-      expect(bgColor).toEqual('rgb(51, 188, 255)');
+      expect(bgColor).toEqual('rgb(77, 196, 255)');
     });
   });
 
   it('should have header with success color of background and border', () => {
     browser.get('/');
     element(by.css('#success-card > nga-card-header')).getCssValue('background-color').then(bgColor => {
-      expect(bgColor).toEqual('rgba(162, 219, 89, 1)');
+      expect(bgColor).toEqual('rgba(174, 224, 109, 1)');
     });
 
     element(by.css('#success-card > nga-card-header')).getCssValue('border-color').then(bgColor => {
-      expect(bgColor).toEqual('rgb(162, 219, 89)');
+      expect(bgColor).toEqual('rgb(174, 224, 109)');
     });
   });
 
   it('should have header with info color of background and border', () => {
     browser.get('/');
     element(by.css('#info-card > nga-card-header')).getCssValue('background-color').then(bgColor => {
-      expect(bgColor).toEqual('rgba(102, 225, 244, 1)');
+      expect(bgColor).toEqual('rgba(121, 229, 245, 1)');
     });
 
     element(by.css('#info-card > nga-card-header')).getCssValue('border-color').then(bgColor => {
-      expect(bgColor).toEqual('rgb(102, 225, 244)');
+      expect(bgColor).toEqual('rgb(121, 229, 245)');
     });
   });
 
   it('should have header with warning color of background and border', () => {
     browser.get('/');
     element(by.css('#warning-card > nga-card-header')).getCssValue('background-color').then(bgColor => {
-      expect(bgColor).toEqual('rgba(236, 200, 57, 1)');
+      expect(bgColor).toEqual('rgba(238, 207, 82, 1)');
     });
 
     element(by.css('#warning-card > nga-card-header')).getCssValue('border-color').then(bgColor => {
-      expect(bgColor).toEqual('rgb(236, 200, 57)');
+      expect(bgColor).toEqual('rgb(238, 207, 82)');
     });
   });
 
   it('should have header with danger color of background and border', () => {
     browser.get('/');
     element(by.css('#danger-card > nga-card-header')).getCssValue('background-color').then(bgColor => {
-      expect(bgColor).toEqual('rgba(250, 117, 142, 1)');
+      expect(bgColor).toEqual('rgba(251, 135, 156, 1)');
     });
 
     element(by.css('#danger-card > nga-card-header')).getCssValue('border-color').then(bgColor => {
-      expect(bgColor).toEqual('rgb(250, 117, 142)');
+      expect(bgColor).toEqual('rgb(251, 135, 156)');
     });
   });
 });

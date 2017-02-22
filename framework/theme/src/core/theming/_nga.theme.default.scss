@@ -1,10 +1,35 @@
+@import '../../core/theming/nga.theming';
 @import '../../layout/nga-layout/nga-layout.component.theme';
 @import '../../layout/nga-card/nga-card.component.theme';
 @import '../../layout/nga-card/nga-card-header/nga-card-header.component.theme';
 
+@function _nga-prepare-theme($nga-theme) {
+  $_nga-font-weight: nga-get($nga-theme, font-weight, $nga-font-weight);
+  $_nga-card: nga-get($nga-theme, card, $nga-card);
+  $_nga-color: nga-get($nga-theme, color, $nga-color);
+  $_nga-color-light: nga-get($nga-theme, color-light, $nga-color-light);
+  $_nga-color-dark: nga-get($nga-theme, color-dark, $nga-color-dark);
+  $_nga-social-color: nga-get($nga-theme, social-color, $nga-social-color);
+  $_nga-link-color-status: nga-get($nga-theme, link-color-status, $nga-link-color-status);
+  $_nga-global: nga-get($nga-theme, global, $nga-global);
+
+  @return (
+    font-weight: $_nga-font-weight,
+    card: $_nga-card,
+    color: $_nga-color,
+    color-light: $_nga-color-light,
+    color-dark: $_nga-color-dark,
+    social-color: $_nga-social-color,
+    link-color-status: $_nga-link-color-status,
+    global: $_nga-global
+  );
+}
+
 // Create a theme
-@mixin nga-theme($theme) {
-  @include nga-layout-theme($theme);
-  @include nga-card-theme($theme);
-  @include nga-card-header-theme($theme);
+@mixin nga-theme($nga-theme) {
+  $_nga-theme: _nga-prepare-theme($nga-theme);
+
+  @include nga-layout-theme($_nga-theme);
+  @include nga-card-theme($_nga-theme);
+  @include nga-card-header-theme($_nga-theme);
 }
