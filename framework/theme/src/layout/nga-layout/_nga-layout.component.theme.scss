@@ -1,8 +1,12 @@
-@mixin nga-layout-theme($theme) {
-  /deep/ nga-layout {
-    $background: map-get($theme, background);
-    $foreground: map-get($theme, foreground);
+@import '../../core/style/nga.global';
 
+@mixin nga-layout-theme($theme) {
+  $global: map-merge($nga-global, map-get($theme, nga-global));
+
+  $background: map-get($global, background);
+  $foreground: map-get($global, foreground);
+
+  /deep/ nga-layout {
     background: $background;
     color: $foreground;
   }

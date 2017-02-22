@@ -1,0 +1,7 @@
+@import '../nga-card.component';
+
+/deep/ nga-card-body {
+  display: block;
+  padding: $nga-card-padding;
+  overflow: auto;
+}

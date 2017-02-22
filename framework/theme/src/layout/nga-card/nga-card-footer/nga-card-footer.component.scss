@@ -1,0 +1,8 @@
+@import '../nga-card.component';
+
+/deep/ nga-card-footer {
+  display: block;
+  padding: $nga-card-padding;
+  border-bottom-left-radius: $nga-card-border-radius;
+  border-bottom-right-radius: $nga-card-border-radius;
+}

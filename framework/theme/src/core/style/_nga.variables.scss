@@ -1,20 +1,6 @@
 @import './nga.mixins';
 @import './nga.functions';
 
-$nga-animation: (
-  duration: 0.2s,
-  animation: ease-out
-);
-
-$nga-font-weight: (
-  thin: 100,
-  light: 300,
-  normal: 400,
-  bolder: 500,
-  bold: 700,
-  ultra-bold: 900
-);
-
 $nga-social-colors: (
   facebook: #3b5998,
   twitter: #55acee,
@@ -53,16 +39,6 @@ $nga-status-colors-dark: (
 $nga-colors: (
   default: #ffffff,
   disabled: rgba(255, 255, 255, 0.4)
-);
-
-$nga-background-colors: (
-  default: #f0f3f4,
-  disabled: tint(map-get($nga-colors, disabled), 15%),
-  primary: tint(map-get($nga-status-colors, primary), 20%),
-  info: tint(map-get($nga-status-colors, info), 20%),
-  success: tint(map-get($nga-status-colors, success), 20%),
-  warning: tint(map-get($nga-status-colors, warning), 20%),
-  danger: tint(map-get($nga-status-colors, danger), 20%),
 );
 
 $nga-border-colors: (

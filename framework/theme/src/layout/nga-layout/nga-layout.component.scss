@@ -1,47 +1,20 @@
-@import '../../core/style/nga.globals';
+@import '../../core/style/nga.global';
 
 $nga-layout-min-height: 500px;
 $nga-layout-height: 100%;
 $nga-layout-padding: 20px;
 $nga-layout-width: 100%;
 
-$nga-layout-sidebar-width: 20%;
-
-$nga-layout-content-width: 80%;
-
 %nga-layout-container {
   display: block;
   height: $nga-layout-height;
   min-height: $nga-layout-min-height;
-  background: transparent;
+  background: map-get($nga-global, background);
+  color: map-get($nga-global, foreground);
 }
 
 /deep/ nga-layout {
   @extend %nga-layout-container;
 
   width: $nga-layout-width;
-}
-
-/deep/ nga-layout-sidebar {
-  @extend %nga-layout-container;
-
-  padding: $nga-layout-padding;
-  float: left;
-  width: $nga-layout-sidebar-width;
-
-  &[left] {
-    float: left;
-  }
-
-  &[right] {
-    float: right;
-  }
-}
-
-/deep/ nga-layout-content {
-  @extend %nga-layout-container;
-
-  padding: $nga-layout-padding;
-  float: left;
-  width: $nga-layout-content-width;
 }

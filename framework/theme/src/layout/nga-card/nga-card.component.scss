@@ -1,4 +1,4 @@
-@import '../../core/style/nga.globals';
+@import '../../core/style/nga.global';
 
 $nga-card-height: (
   small: 114px,
@@ -9,9 +9,7 @@ $nga-card-height: (
 );
 
 $nga-card-border-radius: 7px;
-$nga-card-color: map-get($nga-colors, default);
 $nga-card-separator: 1px solid map-get($nga-border-colors, light);
-$nga-card-shadow: 1px 1px 4px rgba(0, 0, 0, 0.15);
 $nga-card-padding: 20px;
 $nga-card-background: map-get($nga-input-colors, background);
 
@@ -22,87 +20,26 @@ $nga-card-background: map-get($nga-input-colors, background);
 
 /deep/ nga-card {
   display: block;
-  color: $nga-card-color;
+  color: map-get($nga-global, foreground);
   background: $nga-card-background;
   margin-bottom: $nga-card-padding;
   border-radius: $nga-card-border-radius;
-  box-shadow: $nga-card-shadow;
+  box-shadow: 1px 1px 4px map-get($nga-card, shadow);
+  font-weight: map-get($nga-font-weight, normal);
 
   @include nga-scrollbars(0.4em, rgba(0, 0, 0, 0.6), rgba(255, 255, 255, 0.7));
 
-  &[small] {
-    min-height: map-get($nga-card-height, small);
-  }
-
-  &[xsmall] {
-    min-height: map-get($nga-card-height, xsmall);
-  }
-
-  &[medium] {
-    min-height: map-get($nga-card-height, medium);
-  }
-
-  &[xmedium] {
-    min-height: map-get($nga-card-height, xmedium);
-  }
-
-  &[large] {
-    min-height: map-get($nga-card-height, large);
-  }
-
-  &[primary] {
-    /deep/ nga-card-header {
-      @include _nga-card-header(map-get($nga-background-colors, primary));
+  @each $name, $size in $nga-card-height {
+    &[#{$name}] {
+      min-height: #{$size};
     }
   }
 
-  &[success] {
-    /deep/ nga-card-header {
-      @include _nga-card-header(map-get($nga-background-colors, success));
+  @each $name, $color in $nga-background-colors {
+    &[#{$name}] {
+      /deep/ nga-card-header {
+        @include _nga-card-header($color);
+      }
     }
   }
-
-  &[info] {
-    /deep/ nga-card-header {
-      @include _nga-card-header(map-get($nga-background-colors, info));
-    }
-  }
-
-  &[warning] {
-    /deep/ nga-card-header {
-      @include _nga-card-header(map-get($nga-background-colors, warning));
-    }
-  }
-
-  &[danger] {
-    /deep/ nga-card-header {
-      @include _nga-card-header(map-get($nga-background-colors, danger));
-    }
-  }
-}
-
-/deep/ nga-card-header {
-  display: block;
-  padding: $nga-card-padding;
-  font-size: 1.5rem;
-  line-height: 1.5rem;
-  font-weight: map-get($nga-font-weight, bolder);
-  border-bottom: $nga-card-separator;
-  text-transform: uppercase;
-  opacity: 0.9;
-  border-top-left-radius: $nga-card-border-radius;
-  border-top-right-radius: $nga-card-border-radius;
-}
-
-/deep/ nga-card-body {
-  display: block;
-  padding: $nga-card-padding;
-  overflow: auto;
-}
-
-/deep/ nga-card-footer {
-  display: block;
-  padding: $nga-card-padding;
-  border-bottom-left-radius: $nga-card-border-radius;
-  border-bottom-right-radius: $nga-card-border-radius;
 }
