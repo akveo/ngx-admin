@@ -104,7 +104,7 @@
     "ts-node": "2.1.0",
     "tslint": "4.4.2",
     "typedoc": "0.5.6",
-    "typescript": "2.0.10",
+    "typescript": "2.2.1",
     "url-loader": "0.5.7",
     "webpack": "2.2.0",
     "webpack-dev-middleware": "1.9.0",
