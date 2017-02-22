@@ -6,7 +6,6 @@ $nga-layout-padding: 20px;
 $nga-layout-width: 100%;
 
 %nga-layout-container {
-  display: block;
   height: $nga-layout-height;
   min-height: $nga-layout-min-height;
   background: map-get($nga-global, background);
@@ -17,4 +16,6 @@ $nga-layout-width: 100%;
   @extend %nga-layout-container;
 
   width: $nga-layout-width;
+  display: flex;
+  flex-flow: row;
 }

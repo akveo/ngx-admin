@@ -5,7 +5,8 @@ $nga-layout-content-width: 80%;
 /deep/ nga-layout-content {
   @extend %nga-layout-container;
 
+  display: block;
   padding: $nga-layout-padding;
-  float: left;
   width: $nga-layout-content-width;
+  order: 1;
 }
