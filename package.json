@@ -29,9 +29,9 @@
   },
   "homepage": "https://github.com/akveo/ng2-admin#readme",
   "devDependencies": {
+    "@angular/cli": "1.0.0-beta.32.3",
     "@angular/common": "2.4.7",
     "@angular/compiler": "2.4.7",
-    "@angular/cli": "1.0.0-beta.32.3",
     "@angular/compiler-cli": "2.4.7",
     "@angular/core": "2.4.7",
     "@angular/forms": "2.4.7",
@@ -51,9 +51,9 @@
     "karma": "1.4.1",
     "karma-chrome-launcher": "2.0.0",
     "karma-cli": "1.0.1",
+    "karma-coverage-istanbul-reporter": "0.2.3",
     "karma-jasmine": "1.1.0",
     "karma-jasmine-html-reporter": "0.2.2",
-    "karma-coverage-istanbul-reporter": "0.2.3",
     "npm-run-all": "4.0.1",
     "protractor": "5.1.0",
     "rimraf": "2.5.4",
@@ -64,6 +64,7 @@
     "tslib": "1.5.0",
     "tslint": "4.4.2",
     "tslint-eslint-rules": "3.2.3",
+    "typedoc": "0.5.7",
     "typescript": "2.0.10",
     "zone.js": "0.7.7"
   }
