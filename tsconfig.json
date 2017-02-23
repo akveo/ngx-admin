@@ -20,8 +20,6 @@
     ],
     "typeRoots": [
       "node_modules/@types"
-    ],
-    "compileOnSave": false,
-    "buildOnSave": false
+    ]
   }
 }

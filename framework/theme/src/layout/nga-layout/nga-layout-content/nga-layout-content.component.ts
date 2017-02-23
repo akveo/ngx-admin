@@ -1,5 +1,9 @@
 import { Component } from '@angular/core';
 
+/**
+ * Component intended to be used within  the `<nga-layout>` component.
+ * It adds styles for a preset body section.
+ */
 @Component({
   selector: 'nga-layout-content',
   styleUrls: ['./nga-layout-content.component.scss'],

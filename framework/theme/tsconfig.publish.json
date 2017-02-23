@@ -23,7 +23,5 @@
   ],
   "angularCompilerOptions": {
     "genDir": "compiled"
-  },
-  "compileOnSave": false,
-  "buildOnSave": false
+  }
 }

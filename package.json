@@ -1,5 +1,5 @@
 {
-  "name": "nga-srcs",
+  "name": "@nga/framework",
   "version": "2.0.0-alpha.0",
   "description": "nga-srcs",
   "scripts": {
@@ -11,7 +11,10 @@
     "e2e": "protractor",
     "lint": "npm-run-all -s lint:framework:ts lint:framework:scss",
     "lint:framework:ts": "tslint --force ./framework/**/*.ts",
-    "lint:framework:scss": "stylelint ./framework/**/*.scss"
+    "lint:framework:scss": "stylelint ./framework/**/*.scss",
+    "compodoc": "./node_modules/.bin/compodoc",
+    "doc": "compodoc ./framework -p ./tsconfig.json --theme readthedocs -d docs --disableGraph --disableCoverage --hideGenerator",
+    "doc:serve": "compodoc ./framework -s -o -p ./tsconfig.json --theme readthedocs -d docs --disableGraph --disableCoverage --hideGenerator"
   },
   "repository": "git+https://github.com/akveo/ng2-admin.git",
   "keywords": [
@@ -44,6 +47,7 @@
     "@types/node": "6.0.63",
     "bootstrap": "4.0.0-alpha.6",
     "codelyzer": "2.0.1",
+    "compodoc": "0.0.41",
     "core-js": "2.4.1",
     "ionicons": "2.0.1",
     "jasmine-core": "2.5.2",
@@ -64,7 +68,6 @@
     "tslib": "1.5.0",
     "tslint": "4.4.2",
     "tslint-eslint-rules": "3.2.3",
-    "typedoc": "0.5.7",
     "typescript": "2.0.10",
     "zone.js": "0.7.7"
   }
