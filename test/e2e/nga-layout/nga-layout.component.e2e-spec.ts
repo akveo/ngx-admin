@@ -29,4 +29,16 @@ describe('nga-layout', () => {
       expect(order).toEqual('2');
     });
   });
+
+  it('should display layout with left and right sidebars', () => {
+    browser.get('#/nga-layout');
+
+    element(by.css('#two-sidebars-layout > nga-layout-sidebar[left]')).getCssValue('order').then(order => {
+      expect(order).toEqual('0');
+    });
+
+    element(by.css('#two-sidebars-layout > nga-layout-sidebar[right]')).getCssValue('order').then(order => {
+      expect(order).toEqual('2');
+    });
+  });
 });
