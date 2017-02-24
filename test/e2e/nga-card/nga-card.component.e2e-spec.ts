@@ -19,19 +19,19 @@ describe('nga-card', () => {
     expect(element(by.css('#default-card nga-card-footer')).getText()).toEqual('Footer');
   });
 
-  it('should have height equal 193px', () => {
+  it('should have height equal 185px', () => {
     browser.get('/');
 
     element(by.css('#small-card')).getSize().then(el => {
-      expect(el.height).toEqual(193);
+      expect(el.height).toEqual(185);
     });
   });
 
-  it('should have height equal 193px', () => {
+  it('should have height equal 187px', () => {
     browser.get('/');
 
     element(by.css('#xsmall-card')).getSize().then(el => {
-      expect(el.height).toEqual(193);
+      expect(el.height).toEqual(187);
     });
   });
 

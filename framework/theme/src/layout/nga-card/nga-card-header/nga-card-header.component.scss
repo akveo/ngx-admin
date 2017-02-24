@@ -1,14 +1,26 @@
 @import '../nga-card.component';
 
+@mixin _headings($from: 1, $to: 6) {
+  @for $i from $from through $to {
+    h#{$i} {
+      @content;
+    }
+  }
+}
+
 /deep/ nga-card-header {
   display: block;
   padding: $nga-card-padding;
-  font-size: 1.5rem;
-  line-height: 1.5rem;
-  font-weight: map-get($nga-font-weight, bolder);
+  font-size: 1rem;
+  line-height: 1rem;
+  font-weight: map-get($nga-font-weight, normal);
   border-bottom: $nga-card-separator;
   text-transform: uppercase;
   opacity: 0.9;
   border-top-left-radius: $nga-card-border-radius;
   border-top-right-radius: $nga-card-border-radius;
+
+  @include _headings() {
+    margin: 0;
+  }
 }

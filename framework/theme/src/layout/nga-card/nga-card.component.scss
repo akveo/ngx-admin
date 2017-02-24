@@ -19,7 +19,8 @@ $nga-card-background: rgba(255, 255, 255, 0.1);
 }
 
 /deep/ nga-card {
-  display: block;
+  display: flex;
+  flex-direction: column;
   color: map-get($nga-global, foreground);
   background: $nga-card-background;
   margin-bottom: $nga-card-padding;
