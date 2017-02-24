@@ -1,5 +1,5 @@
 {
-  "name": "nga-framework-demo",
+  "name": "@nga/demo",
   "version": "2.0.0-alpha.0",
   "license": "MIT",
   "angular-cli": {},
