@@ -75,7 +75,7 @@
     "es6-promise": "4.0.5",
     "es6-shim": "0.35.3",
     "es7-reflect-metadata": "1.6.0",
-    "exports-loader": "0.6.3",
+    "exports-loader": "0.6.4",
     "expose-loader": "0.7.3",
     "extract-text-webpack-plugin": "2.0.0-rc.3",
     "file-loader": "0.10.0",
