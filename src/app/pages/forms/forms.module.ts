@@ -21,6 +21,8 @@ import { GroupInputs } from './components/inputs/components/groupInputs';
 import { CheckboxInputs } from './components/inputs/components/checkboxInputs';
 import { Rating } from './components/inputs/components/ratinginputs';
 import { SelectInputs } from './components/inputs/components/selectInputs';
+import { SelectorWithAdd } from './components/inputs/components/selectorWithAdd';
+import { DropdownModule, ModalModule } from 'ng2-bootstrap';
 
 import { InlineForm } from './components/layouts/components/inlineForm';
 import { BlockForm } from './components/layouts/components/blockForm';
@@ -34,7 +36,9 @@ import { WithoutLabelsForm } from './components/layouts/components/withoutLabels
     AngularFormsModule,
     NgaModule,
     RatingModule.forRoot(),
-    routing
+    routing,
+    DropdownModule.forRoot(),
+    ModalModule.forRoot()
   ],
   declarations: [
     Layouts,
@@ -51,6 +55,7 @@ import { WithoutLabelsForm } from './components/layouts/components/withoutLabels
     HorizontalForm,
     BasicForm,
     WithoutLabelsForm,
+    SelectorWithAdd,
     //Territory Forms
     Indication,
     AddressCadasterForm
