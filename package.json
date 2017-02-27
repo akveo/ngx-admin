@@ -102,7 +102,7 @@
     "to-string-loader": "1.1.5",
     "ts-helpers": "1.1.2",
     "ts-node": "2.1.0",
-    "tslint": "4.4.2",
+    "tslint": "4.5.0",
     "typedoc": "0.5.6",
     "typescript": "2.0.10",
     "url-loader": "0.5.7",
