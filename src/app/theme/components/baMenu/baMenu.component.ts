@@ -1,15 +1,17 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, ElementRef } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { Subscription } from 'rxjs/Rx';
 
 import { BaMenuService } from '../../services';
 import { GlobalState } from '../../../global.state';
+import { isMobile } from '../../theme.constants';
 
 import 'style-loader!./baMenu.scss';
 
 @Component({
   selector: 'ba-menu',
-  templateUrl: './baMenu.html'
+  templateUrl: './baMenu.html',
+  host: {'(document:click)': 'detectOutsideMenuClick($event)'}
 })
 export class BaMenu {
 
@@ -25,8 +27,12 @@ export class BaMenu {
   public hoverElemTop: number;
   protected _onRouteChange: Subscription;
   public outOfArea: number = -200;
+  public isMenuCollapsed: boolean;
 
-  constructor(private _router: Router, private _service: BaMenuService, private _state: GlobalState) {
+  constructor(private _router: Router, private _service: BaMenuService, private _state: GlobalState, private _elementRef: ElementRef) {
+    this._state.subscribe('menu.isCollapsed', (isCollapsed) => {
+			this.isMenuCollapsed = isCollapsed;
+		});
   }
 
   public updateMenu(newMenuItems) {
@@ -83,5 +89,13 @@ export class BaMenu {
     }
 
     return false;
+  }
+   
+  //Detecting an outside click of the menu to toggle close
+  private detectOutsideMenuClick(event) {
+    //If document clicked, is mobile, menu closed and clicked item is not the menu toggle or inside ba-menu, close the menu
+    if (!this.isMenuCollapsed && isMobile() && !this._elementRef.nativeElement.contains(event.target) && !jQuery(event.target).hasClass("collapse-menu-link")) {
+      this._state.notifyDataChanged('menu.isCollapsed', true);
+    }
   }
 }
