@@ -1,4 +1,4 @@
-import {Component , Input , Output, EventEmitter} from '@angular/core';
+import {Component, Input, Output, EventEmitter, OnInit} from '@angular/core';
 
 
 @Component({
@@ -6,18 +6,47 @@ import {Component , Input , Output, EventEmitter} from '@angular/core';
   templateUrl: './selector.html',
   styleUrls: ['./modals.scss']
 })
-export class SelectorWithAdd {
+export class SelectorWithAdd implements OnInit {
+
 
   constructor() {
   }
 
-@Input()
-sugestionList:string[];
-@Output()
-addedNewValues: EventEmitter<string> = new EventEmitter<string>();
+  ngOnInit() {
+    this.setInitialState();
+  }
 
-handleNewValues(event){
-    this.addedNewValues.emit(event.value);
-}
+  protected value: string;
+  protected selectedValue: string;
+  @Input()
+  protected itemsList: string[];
+  @Output()
+  protected addedNewValues: EventEmitter<string> = new EventEmitter<string>();
+  @Output()
+  protected onChangeSelectedValue: EventEmitter<string> = new EventEmitter<string>();
+
+
+
+
+  //UI Variables
+  feedBackClass: string;
+  successfeedBackClass: string = " has-success ";
+  failfeedBackClass: string = " has-error ";
+  initialfeedBackClass: string = " has-feedback ";
+
+  handleNewValues() {
+    this.addedNewValues.emit(this.value);
+    this.feedBackClass += this.successfeedBackClass;
+    this.value = "";
+  }
+
+  handleSelectedValue() {
+    this.onChangeSelectedValue.emit(this.selectedValue);
+  }
+
+  setInitialState(): void {
+    this.feedBackClass = this.initialfeedBackClass;
+  }
+
 
 }

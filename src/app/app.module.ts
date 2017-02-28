@@ -5,6 +5,9 @@ import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 import { removeNgStyles, createNewHosts, createInputTransfer } from '@angularclass/hmr';
 
+import {INDICATIONS_SERVICES} from './pages/forms/components/ter-forms/indications';
+import {CADASTER_SERVICES} from './pages/forms/components/ter-forms/cadaster';
+
 /*
  * Platform and Environment providers/directives/pipes
  */
@@ -50,7 +53,9 @@ export type StoreType = {
   ],
   providers: [ // expose our Services and Providers into Angular's dependency injection
     ENV_PROVIDERS,
-    APP_PROVIDERS
+    APP_PROVIDERS,
+    ...INDICATIONS_SERVICES,
+    ...CADASTER_SERVICES
   ]
 })
 
