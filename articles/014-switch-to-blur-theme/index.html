@@ -50,7 +50,7 @@
         </div>
         <div class="inner-content">
           <h1>Enabling blur theme</h1>
-          <div class="subHeader"></div><p>If you want to switch theme to the blur, you need to follow 3 simple&nbsp;steps:</p>
+          <div class="subHeader"></div><p>If you want to switch theme to the blur, you need to follow 3 simple<span class="widont">&nbsp;</span>steps:</p>
 <p>1) Blur color scheme needs some javascript to calculate initial background offsets for panels.
 That’s why we need to tell the system that we want to use blur theme by specifying this in <code>src/app/theme/theme.config.ts</code>:</p>
 <pre><code class="lang-javascript">  <span class="keyword">this</span>._baConfig.changeTheme({name: <span class="string">'blur'</span>});
@@ -102,19 +102,19 @@ For our blur theme we use the following configuration in <code>src/app/theme/the
 <p>3) <span class="caps">CSS</span> should also be recompiled. 
 Before running build command, switch to <em>blur</em> color profile.
 To do so replace theme in <code>src/app/theme/sass/conf/conf.scss</code>:</p>
-<pre><code class="lang-scss">@<span class="keyword">import</span> <span class="string">'colorScheme/ng2'</span>;
+<pre><code class="lang-scss"><span class="at_rule">@<span class="keyword">import</span> <span class="string">'colorSchemes/ng2'</span>;</span>
 </code></pre>
 <p>to</p>
-<pre><code class="lang-scss">@<span class="keyword">import</span> <span class="string">'colorScheme/blur'</span>;
+<pre><code class="lang-scss"><span class="at_rule">@<span class="keyword">import</span> <span class="string">'colorSchemes/blur'</span>;</span>
 </code></pre>
-<p>Additionaly, if you would like to use some different background, replace the following&nbsp;images:</p>
+<p>Additionaly, if you would like to use some different background, replace the following<span class="widont">&nbsp;</span>images:</p>
 <ul>
-<li><code>src/assets/img/blur-bg.jpg</code> (main background&nbsp;image)</li>
-<li><code>src/assets/img/blur-bg-blurred.jpg</code> (blurred background image used on&nbsp;panels)</li>
+<li><code>src/assets/img/blur-bg.jpg</code> (main background<span class="widont">&nbsp;</span>image)</li>
+<li><code>src/assets/img/blur-bg-blurred.jpg</code> (blurred background image used on<span class="widont">&nbsp;</span>panels)</li>
 </ul>
-<p>We suggest using 10px Gaussian blur to blur an original&nbsp;image.</p>
+<p>We suggest using 10px Gaussian blur to blur an original<span class="widont">&nbsp;</span>image.</p>
 <p><br><br>
-That’s it! You have successfully blurred your theme! Run <code>npm start</code> and check it&nbsp;out.</p>
+That’s it! You have successfully blurred your theme! Run <code>npm start</code> and check it<span class="widont">&nbsp;</span>out.</p>
 
         </div>
       </section>

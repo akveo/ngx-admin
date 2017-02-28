@@ -50,11 +50,11 @@
         </div>
         <div class="inner-content">
           <h1>Create New Page</h1>
-          <div class="subHeader"></div><p>ng2-admin uses <a href="https://angular.io/docs/ts/latest/guide/router.html">Angular 2 Component Router</a> for&nbsp;navigation.</p>
+          <div class="subHeader"></div><p>ng2-admin uses <a href="https://angular.io/docs/ts/latest/guide/router.html">Angular 2 Component Router</a> for<span class="widont">&nbsp;</span>navigation.</p>
 <p>We strongly recommend to follow this page structure in your application.
-If it does not fit your needs please create a GitHub issue and tell us why. We would be glad to&nbsp;discuss. </p>
-<p>Basically any page is just a common Angular 2 Component with a route defined for&nbsp;it.</p>
-<h2 id="let-s-create-a-blank-page-in-6-easy-steps">Let’s create a blank page in 6 easy&nbsp;steps</h2>
+If it does not fit your needs please create a GitHub issue and tell us why. We would be glad to<span class="widont">&nbsp;</span>discuss. </p>
+<p>Basically any page is just a common Angular 2 Component with a route defined for<span class="widont">&nbsp;</span>it.</p>
+<h2 id="let-s-create-a-blank-page-in-6-easy-steps">Let’s create a blank page in 6 easy<span class="widont">&nbsp;</span>steps</h2>
 <p>1) Create a new directory for our new page inside of <code>src/app/pages</code>. We can call the directory <code>new</code>.
 <br><br></p>
 <p>2) Then let’s create a blank angular 2 component for our page called ‘new.component.ts’ inside of <code>src/app/pages/new</code>:</p>
@@ -65,7 +65,7 @@ If it does not fit your needs please create a GitHub issue and tell us why. We w
   template: <span class="string">`&lt;strong&gt;My page content here&lt;/strong&gt;`</span>
 })
 <span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">NewComponent</span> </span>{
-  <span class="keyword">constructor</span>() {}
+  constructor() {}
 }
 </code></pre>
 <p>This will create a simple Angular 2 component. For more detail please check out <a href="https://angular.io/docs/ts/latest/guide/displaying-data.html">official Angular 2 documentation</a>.
@@ -84,7 +84,7 @@ If it does not fit your needs please create a GitHub issue and tell us why. We w
 <span class="keyword">export</span> <span class="keyword">const</span> routing = RouterModule.forChild(routes);
 </code></pre>
 <p><br></p>
-<p>4) And now we should create <code>new.module.ts</code> in <code>src/app/pages/new</code> directory and import <code>new.component.ts</code> and <code>new.routing.ts</code> in&nbsp;it.</p>
+<p>4) And now we should create <code>new.module.ts</code> in <code>src/app/pages/new</code> directory and import <code>new.component.ts</code> and <code>new.routing.ts</code> in it.</p>
 <pre><code class="lang-javascript"><span class="keyword">import</span> { NgModule }      <span class="keyword">from</span> <span class="string">'@angular/core'</span>;
 <span class="keyword">import</span> { CommonModule }  <span class="keyword">from</span> <span class="string">'@angular/common'</span>;
 <span class="keyword">import</span> { NewComponent } <span class="keyword">from</span> <span class="string">'./new.component'</span>;
@@ -99,11 +99,11 @@ If it does not fit your needs please create a GitHub issue and tell us why. We w
     NewComponent
   ]
 })
-<span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">NewModule</span> </span>{}
+<span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">NewModule</span> </span>{}
 </code></pre>
 <p><br></p>
 <p>5) The penultimate thing we need to do is to declare a route in <code>src/app/pages/pages.menu.ts</code>.
-Typically all pages are children of the <code>/pages</code> route and defined under the <code>children</code> property of the root <code>pages</code> route like&nbsp;this:</p>
+Typically all pages are children of the <code>/pages</code> route and defined under the <code>children</code> property of the root <code>pages</code> route like<span class="widont">&nbsp;</span>this:</p>
 <pre><code class="lang-javascript"><span class="keyword">export</span> <span class="keyword">const</span> PAGES_MENU = [
   {
     path: <span class="string">'pages'</span>,
@@ -141,15 +141,15 @@ Typically all pages are children of the <code>/pages</code> route and defined un
 path - use pathMatch: ‘prefix’. In this case if the menu item has no children in the menu and 
 you navigated to some child route - the item will be highlighted.
 <br><br></p>
-<p>6) And in the end let’s import our component in <code>src/app/pages/pages.routing.ts</code> like&nbsp;this:</p>
+<p>6) And in the end let’s import our component in <code>src/app/pages/pages.routing.ts</code> like this:</p>
 <pre><code class="lang-javascript"><span class="keyword">const</span> routes: Routes = [
   {
     path: <span class="string">'pages'</span>,
     component: Pages,
     children: [
       { path: <span class="string">''</span>, redirectTo: <span class="string">'dashboard'</span>, pathMatch: <span class="string">'full'</span> },
-      { path: <span class="string">'dashboard'</span>, loadChildren: () =&gt; System.import(<span class="string">'./dashboard/dashboard.module'</span>) },
-      { path: <span class="string">'new'</span>,  loadChildren: () =&gt; System.import(<span class="string">'./new/new.module'</span>) }
+      { path: <span class="string">'dashboard'</span>, loadChildren: <span class="string">'app/pages/dashboard/dashboard.module#DashboardModule'</span> },
+      { path: <span class="string">'new'</span>,  loadChildren: <span class="string">'app/pages/new/new.module#NewModule'</span> }
     ]
   }
 ];

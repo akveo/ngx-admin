@@ -52,14 +52,14 @@
           <h1>Sidebar</h1>
           <div class="subHeader"></div><p>The sidebar provides a convenient way to navigate the application. 
 Only one sidebar is supported per angular application. 
-This means that the sidebar is basically a singleton&nbsp;object.</p>
+This means that the sidebar is basically a singleton<span class="widont">&nbsp;</span>object.</p>
 <p>The Sidebar can be added to the page using the <code>BaSidebar</code> component:</p>
-<pre><code class="lang-html"><span class="tag">&lt;<span class="name">ba-sidebar</span>&gt;</span><span class="tag">&lt;/<span class="name">ba-sidebar</span>&gt;</span>
+<pre><code class="lang-html"><span class="tag">&lt;<span class="title">ba-sidebar</span>&gt;</span><span class="tag">&lt;/<span class="title">ba-sidebar</span>&gt;</span>
 </code></pre>
 <p>The sidebar contains a <code>&lt;ba-menu&gt;&lt;/ba-menu&gt;</code> component which defines and renders the application menu based on routes provided. Generally the <code>ba-menu</code> component can be used separately from <code>ba-sidebar</code>.
-All menu items information is defined inside the <code>data</code> property of a&nbsp;route.</p>
-<h2 id="menu-configuration">Menu&nbsp;Configuration</h2>
-<p>All menu items are located inside the <code>src/app/app.routes.ts</code> file. Each route item can have a <code>menu</code> property under <code>data</code> defining a menu&nbsp;item:</p>
+All menu items information is defined inside the <code>data</code> property of a<span class="widont">&nbsp;</span>route.</p>
+<h2 id="menu-configuration">Menu Configuration</h2>
+<p>All menu items are located inside the <code>src/app/app.routes.ts</code> file. Each route item can have a <code>menu</code> property under <code>data</code> defining a menu<span class="widont">&nbsp;</span>item:</p>
 <pre><code class="lang-javascript">  {
     <span class="comment">// first, router configuration</span>
     path: <span class="string">'dashboard'</span>,
@@ -77,7 +77,7 @@ All menu items information is defined inside the <code>data</code> property of a
     }
   }
 </code></pre>
-<p>You also can define a list of sub-menu items like&nbsp;this:</p>
+<p>You also can define a list of sub-menu items like<span class="widont">&nbsp;</span>this:</p>
 <pre><code class="lang-javascript">  {
     <span class="comment">// parent route</span>
     path: <span class="string">'charts'</span>,
@@ -110,8 +110,8 @@ All menu items information is defined inside the <code>data</code> property of a
     ]
   }
 </code></pre>
-<h1 id="custom-menu-items">Custom menu&nbsp;items</h1>
-<p>You also can define a menu item not connected to any existing route in the&nbsp;application:</p>
+<h1 id="custom-menu-items">Custom menu items</h1>
+<p>You also can define a menu item not connected to any existing route in the<span class="widont">&nbsp;</span>application:</p>
 <pre><code class="lang-javascript">  {
     path: <span class="string">''</span>, <span class="comment">// just leave the path empty</span>
     data: {

@@ -52,28 +52,28 @@
           <h1>Theme Spinner</h1>
           <div class="subHeader"></div><p>Theme Spinner <code>BaThemeSpinner</code> is a small service helper allowing you to show a preloader spinner while 
 executing some long-running tasks.
-This is the same spinner you can see after reloading a page - it is shown while the application is initializing Angular 2 and loading charts and&nbsp;images.</p>
+This is the same spinner you can see after reloading a page - it is shown while the application is initializing Angular 2 and loading charts and<span class="widont">&nbsp;</span>images.</p>
 <p>The user interface in quite simple: there are two public methods: <code>show</code> and <code>hide</code>.</p>
 <p>Theme Spinner comes with another small helper called <code>BaThemePreloader</code>. 
-This service is globally integrated into the application and connected to the&nbsp;spinner.</p>
+This service is globally integrated into the application and connected to the<span class="widont">&nbsp;</span>spinner.</p>
 <p>You can register any promise in any part of the application so that the spinner will be 
-hidden only after your promise is completed&nbsp;(resolved).</p>
+hidden only after your promise is completed<span class="widont">&nbsp;</span>(resolved).</p>
 <p>You can find an example of usage inside of the <code>app.component.ts</code> file.
-Here we are registering a loader (<code>this._imageLoader.load</code> just returns a <code>Promise</code>) which loads a background&nbsp;image:</p>
+Here we are registering a loader (<code>this._imageLoader.load</code> just returns a <code>Promise</code>) which loads a background<span class="widont">&nbsp;</span>image:</p>
 <pre><code class="lang-javascript">  BaThemePreloader.registerLoader(<span class="keyword">this</span>._imageLoader.load(layoutPaths.images.root + <span class="string">'blur-bg-mobile.jpg'</span>));
 </code></pre>
-<p>Then we are starting all the registered promises and once they all are done - hiding the&nbsp;spinner.</p>
+<p>Then we are starting all the registered promises and once they all are done - hiding the<span class="widont">&nbsp;</span>spinner.</p>
 <pre><code class="lang-javascript">  BaThemePreloader.load().then((values) =&gt; {
        <span class="keyword">this</span>._spinner.hide();
   });
 </code></pre>
 <h2 id="example">Example</h2>
 <p>You also can register a loader on any page you want.
-Say you have a long-running task on the Charts page (you need to receive some data from a web service) and you want the spinner to be shown while the data is&nbsp;loading.</p>
-<p>First thing you need to do is to import BaThemePreloader&nbsp;service:</p>
+Say you have a long-running task on the Charts page (you need to receive some data from a web service) and you want the spinner to be shown while the data is<span class="widont">&nbsp;</span>loading.</p>
+<p>First thing you need to do is to import BaThemePreloader<span class="widont">&nbsp;</span>service:</p>
 <pre><code class="lang-javascript">  <span class="keyword">import</span> {BaThemePreloader} <span class="keyword">from</span> <span class="string">'../../../../theme/services'</span>;
 </code></pre>
-<p>Then, say you have a method loading some data called <code>_loadData</code>, in our case we just mocked this method with <code>setTimeout</code> to emulate the loading&nbsp;process:</p>
+<p>Then, say you have a method loading some data called <code>_loadData</code>, in our case we just mocked this method with <code>setTimeout</code> to emulate the loading<span class="widont">&nbsp;</span>process:</p>
 <pre><code class="lang-javascript">  private _loadData():<span class="built_in">Promise</span>&lt;any&gt; {
     <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>((resolve, reject) =&gt; {
       setTimeout(() =&gt; {
@@ -82,10 +82,10 @@ Say you have a long-running task on the Charts page (you need to receive some da
     });
   }
 </code></pre>
-<p>Last thing you need to do is to register your&nbsp;loader:</p>
+<p>Last thing you need to do is to register your<span class="widont">&nbsp;</span>loader:</p>
 <pre><code class="lang-javascript">  BaThemePreloader.registerLoader(<span class="keyword">this</span>._loadData());
 </code></pre>
-<p>That’s basically it! Once your data is loaded and all other registered loaders are completed - the spinner will be&nbsp;hidden.</p>
+<p>That’s basically it! Once your data is loaded and all other registered loaders are completed - the spinner will be<span class="widont">&nbsp;</span>hidden.</p>
 
         </div>
       </section>
