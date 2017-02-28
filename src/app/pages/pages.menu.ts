@@ -134,6 +134,28 @@ export const PAGES_MENU = [
           },
         ]
       },{
+        path: 'admin',
+        data: {
+          menu: {
+            title: 'Admin',
+            icon: 'ion-grid',
+            selected: false,
+            expanded: false,
+            order: 1500,
+          }
+        },
+        children: [
+          {
+            path: 'territories',
+            data: {
+              menu: {
+                title: 'Territories Tables',
+              }
+            }
+          }
+        ]
+      },
+      {
         path: 'forms',
         data: {
           menu: {
@@ -151,7 +173,14 @@ export const PAGES_MENU = [
               menu: {
                 title: 'Indication Form',
               }
-            }
+            },
+          },{
+            path: 'cadaster',
+            data: {
+              menu: {
+                title: 'New Territory',
+              }
+            },
           }
         ]
       },
