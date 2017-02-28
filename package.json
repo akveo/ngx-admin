@@ -105,12 +105,16 @@
     "tslint": "4.4.2",
     "typedoc": "0.5.6",
     "typescript": "2.0.10",
+    "typogr": "0.6.6",
+    "underscore": "1.8.3",
     "url-loader": "0.5.7",
     "webpack": "2.2.0",
     "webpack-dev-middleware": "1.9.0",
     "webpack-dev-server": "2.2.0",
     "webpack-dll-bundles-plugin": "1.0.0-beta.5",
-    "webpack-merge": "2.6.1"
+    "webpack-merge": "2.6.1",
+    "wintersmith": "2.2.5",
+    "wintersmith-sassy": "1.1.0"
   },
   "scripts": {
     "rimraf": "rimraf",
