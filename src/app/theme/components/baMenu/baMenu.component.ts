@@ -92,7 +92,7 @@ export class BaMenu {
   }
    
   //Detecting an outside click of the menu to toggle close
-  private detectOutsideMenuClick(event) {
+  public detectOutsideMenuClick(event) {
     //If document clicked, is mobile, menu closed and clicked item is not the menu toggle or inside ba-menu, close the menu
     if (!this.isMenuCollapsed && isMobile() && !this._elementRef.nativeElement.contains(event.target) && !jQuery(event.target).hasClass("collapse-menu-link")) {
       this._state.notifyDataChanged('menu.isCollapsed', true);
