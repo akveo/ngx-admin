@@ -46,7 +46,7 @@
     "ng2-tree": "2.0.0-alpha.3",
     "ngx-uploader": "2.2.0",
     "normalize.css": "4.2.0",
-    "reflect-metadata": "0.1.9",
+    "reflect-metadata": "0.1.10",
     "rxjs": "5.0.2",
     "tether": "1.4.0",
     "zone.js": "0.7.7"
