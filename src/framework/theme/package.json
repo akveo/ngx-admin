@@ -7,7 +7,6 @@
   "author": "akveo",
   "license": "MIT",
   "scripts": {
-    "build": "node_modules/.bin/ngc -p tsconfig.publish.json"
   },
   "repository": {
     "type": "git",
@@ -27,21 +26,25 @@
     "nga"
   ],
   "peerDependencies": {
-    "@angular/common": "2.4.8",
-    "@angular/core": "2.4.8"
+    "@angular/common": "^2.4.9",
+    "@angular/core": "^2.4.9",
+    "@ng-bootstrap/ng-bootstrap": "^1.0.0-alpha.20",
+    "bootstrap": "^4.0.0-alpha.6"
   },
   "devDependencies": {
-    "@angular/common": "2.4.8",
-    "@angular/compiler": "2.4.8",
-    "@angular/compiler-cli": "2.4.8",
-    "@angular/core": "2.4.8",
-    "@angular/forms": "2.4.8",
-    "@angular/http": "2.4.8",
-    "@angular/platform-browser": "2.4.8",
-    "@angular/platform-browser-dynamic": "2.4.8",
-    "@angular/platform-server": "2.4.8",
-    "@angular/router": "3.4.8",
+    "@angular/common": "2.4.9",
+    "@angular/compiler": "2.4.9",
+    "@angular/compiler-cli": "2.4.9",
+    "@angular/core": "2.4.9",
+    "@angular/forms": "2.4.9",
+    "@angular/http": "2.4.9",
+    "@angular/platform-browser": "2.4.9",
+    "@angular/platform-browser-dynamic": "2.4.9",
+    "@angular/platform-server": "2.4.9",
+    "@angular/router": "3.4.9",
+    "@ng-bootstrap/ng-bootstrap": "1.0.0-alpha.20",
     "@types/node": "6.0.63",
+    "bootstrap": "4.0.0-alpha.6",
     "rxjs": "5.1.1",
     "typescript": "2.0.10",
     "zone.js": "0.7.7"

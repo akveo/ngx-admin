@@ -6,20 +6,15 @@
     "sourceMap": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "allowSyntheticDefaultImports": true,
-    "noEmit": true,
-    "noEmitHelpers": true,
-    "importHelpers": true,
-    "strictNullChecks": false,
     "declaration": true,
-    "typeRoots": ["node_modules/@types"],
-    "lib": ["es2015", "dom"]
+    "lib": ["es2015", "dom"],
+    "typeRoots": ["node_modules/@types"]
   },
   "files": [
     "index.ts"
   ],
   "exclude": [
-    "**/*.spec.ts"
+    "**/*.spec.ts "
   ],
   "angularCompilerOptions": {
     "genDir": "compiled"
