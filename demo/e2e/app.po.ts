@@ -1,6 +1,6 @@
 import { browser, element, by } from 'protractor';
 
-export class NgaFrameworkDemoPage {
+export class NgaDemoPage {
   navigateTo() {
     return browser.get('/');
   }

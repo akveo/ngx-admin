@@ -1,1 +1,1 @@
-# @nga demo
+# nga-demo

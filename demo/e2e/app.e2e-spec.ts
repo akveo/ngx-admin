@@ -1,10 +1,10 @@
-import { NgaFrameworkDemoPage } from './app.po';
+import { NgaDemoPage } from './app.po';
 
-describe('nga-framework-demo App', () => {
-  let page: NgaFrameworkDemoPage;
+describe('nga-demo App', () => {
+  let page: NgaDemoPage;
 
   beforeEach(() => {
-    page = new NgaFrameworkDemoPage();
+    page = new NgaDemoPage();
   });
 
   it('should display message saying app works', () => {

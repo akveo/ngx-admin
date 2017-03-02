@@ -21,7 +21,7 @@ const NGA_THEME_SUBMODULES = [
   ],
 })
 export class NgaThemeModule {
-  static forRoot(ngaThemeOptions: NgaThemeOptions): ModuleWithProviders {
+  static forRoot(ngaThemeOptions?: NgaThemeOptions): ModuleWithProviders {
     return <ModuleWithProviders> {
       ngModule: NgaThemeModule,
     };

@@ -1,6 +1,5 @@
 import { browser, element, by } from 'protractor';
 
-
 describe('nga-layout', () => {
   it('should display default layout', () => {
     browser.get('#/nga-layout');

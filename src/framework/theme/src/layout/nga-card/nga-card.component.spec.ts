@@ -4,14 +4,13 @@ import { NgaCardComponent } from './nga-card.component';
 
 
 describe('nga-card', () => {
-  beforeEach(() => {
+  beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
         NgaCardComponent,
       ],
-    });
-    TestBed.compileComponents();
-  });
+    }).compileComponents();
+  }));
 
   it(`should have as title 'nga-card'`, async(() => {
     const fixture = TestBed.createComponent(NgaCardComponent);

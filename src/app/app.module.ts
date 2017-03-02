@@ -4,17 +4,13 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 
-import { routes } from './app.routes';
+import { NgaThemeModule } from '../framework/theme';
 
 import { AppComponent } from './app.component';
 import { NgaCardTestComponent } from './nga-card-test/nga-card-test.component';
 import { NgaLayoutTestComponent } from './nga-layout-test/nga-layout-test.component';
 
-import { NgaThemeModule, NgaThemeOptions } from '../../../framework/theme';
-
-const ngaThemeOptions: NgaThemeOptions = {
-  theme: 'default',
-};
+import { routes } from './app.routes';
 
 @NgModule({
   declarations: [
@@ -27,7 +23,7 @@ const ngaThemeOptions: NgaThemeOptions = {
     FormsModule,
     HttpModule,
     RouterModule.forRoot(routes, { useHash: true }),
-    NgaThemeModule.forRoot(ngaThemeOptions),
+    NgaThemeModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent],

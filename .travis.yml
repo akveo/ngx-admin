@@ -36,8 +36,10 @@ install:
   - yarn
 
 script:
-  - yarn run lint
+  - yarn run lint:ci
   - yarn run test
+  - yarn run e2e:ci
+  - yarn run build:ci
 
 notifications:
   slack: akveo:q559HckfZMSyZRb803aiLcjH
