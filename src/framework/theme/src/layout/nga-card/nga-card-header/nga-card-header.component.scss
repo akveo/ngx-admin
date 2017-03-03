@@ -1,4 +1,4 @@
-@import '../nga-card.component';
+@import '../nga-card.component.scss';
 
 @mixin _headings($from: 1, $to: 6) {
   @for $i from $from through $to {

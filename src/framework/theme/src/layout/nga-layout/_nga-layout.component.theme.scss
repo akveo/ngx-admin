@@ -1,5 +1,5 @@
-@import '../../core/style/nga.global';
-@import '../../core/theming/nga.theming';
+@import '../../core/style/_nga.global.scss';
+@import '../../core/theming/_nga.theming.scss';
 
 @mixin nga-layout-theme($nga-theme) {
   $global: map-get($nga-theme, global);

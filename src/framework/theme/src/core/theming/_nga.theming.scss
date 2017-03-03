@@ -1,4 +1,4 @@
-@import '../../core/style/nga.functions';
+@import '../../core/style/_nga.functions.scss';
 
 @function nga-get($custom-theme, $key, $default-theme: ()) {
   $config: map-get($custom-theme, $key);

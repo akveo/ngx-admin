@@ -1,7 +1,7 @@
-@import '../../core/theming/nga.theming';
-@import '../../layout/nga-layout/nga-layout.component.theme';
-@import '../../layout/nga-card/nga-card.component.theme';
-@import '../../layout/nga-card/nga-card-header/nga-card-header.component.theme';
+@import '../../core/theming/_nga.theming.scss';
+@import '../../layout/nga-layout/_nga-layout.component.theme.scss';
+@import '../../layout/nga-card/_nga-card.component.theme.scss';
+@import '../../layout/nga-card/nga-card-header/_nga-card-header.component.theme.scss';
 
 @function _nga-prepare-theme($nga-theme) {
   $_nga-font-weight: nga-get($nga-theme, font-weight, $nga-font-weight);

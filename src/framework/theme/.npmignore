@@ -1,0 +1,9 @@
+/compiled
+# or
+*.ngFactory.ts
+
+/src
+
+index.ts
+tsconfig.publish.json
+.npmignore

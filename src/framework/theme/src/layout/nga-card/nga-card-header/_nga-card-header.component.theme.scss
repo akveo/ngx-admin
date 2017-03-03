@@ -1,5 +1,5 @@
-@import '../../../core/style/nga.global';
-@import '../../../core/theming/nga.theming';
+@import '../../../core/style/_nga.global.scss';
+@import '../../../core/theming/_nga.theming.scss';
 
 @mixin nga-card-header-theme($nga-theme) {
   $card: map-get($nga-theme, card);
