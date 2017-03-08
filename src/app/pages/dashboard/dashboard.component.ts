@@ -1,4 +1,6 @@
-import {Component} from '@angular/core';
+import { Component } from '@angular/core';
+import { EasyPieChartData } from '../../theme/components';
+import { PieChartService } from './pieChart/pieChart.service'
 
 @Component({
   selector: 'dashboard',
@@ -6,8 +8,9 @@ import {Component} from '@angular/core';
   templateUrl: './dashboard.html'
 })
 export class Dashboard {
+  pieChartData: EasyPieChartData[];
 
-  constructor() {
+  constructor(private _pieChartService: PieChartService) {
+    this.pieChartData = _pieChartService.getData();
   }
-
 }

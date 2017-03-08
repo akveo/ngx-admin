@@ -1,14 +1,13 @@
-import { Injectable } from '@angular/core';
-import { BaThemeConfigProvider, colorHelper } from '../../../theme';
-import { EasyPieChartData } from '../../../theme/components';
+import {Injectable} from '@angular/core';
+import {BaThemeConfigProvider, colorHelper} from '../../../theme';
 
 @Injectable()
 export class PieChartService {
 
-  constructor(private _baConfig: BaThemeConfigProvider) {
+  constructor(private _baConfig:BaThemeConfigProvider) {
   }
 
-  getData(): Array<EasyPieChartData> {
+  getData() {
     let pieColor = this._baConfig.get().colors.custom.dashboardPieChart;
     return [
       {

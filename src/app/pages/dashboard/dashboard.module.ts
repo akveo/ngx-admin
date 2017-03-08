@@ -7,7 +7,6 @@ import { Dashboard } from './dashboard.component';
 import { routing }       from './dashboard.routing';
 
 import { PopularApp } from './popularApp';
-import { PieChart } from './pieChart';
 import { TrafficChart } from './trafficChart';
 import { UsersMap } from './usersMap';
 import { LineChart } from './lineChart';
@@ -31,7 +30,6 @@ import { UsersMapService } from './usersMap/usersMap.service';
   ],
   declarations: [
     PopularApp,
-    PieChart,
     TrafficChart,
     UsersMap,
     LineChart,

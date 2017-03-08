@@ -1,22 +1,20 @@
-import {Component} from '@angular/core';
+import { Component, Input } from '@angular/core';
 
-import {PieChartService} from './pieChart.service';
+import { EasyPieChartData } from './baEasyPieChart.data'
 
 import 'easy-pie-chart/dist/jquery.easypiechart.js';
-import 'style-loader!./pieChart.scss';
+import 'style-loader!./baEasyPieChart.scss';
 
 @Component({
-  selector: 'pie-chart',
-  templateUrl: './pieChart.html'
+  selector: 'ba-easy-pie-chart',
+  templateUrl: './baEasyPieChart.html'
 })
-// TODO: move easypiechart to component
-export class PieChart {
+export class BaEasyPieChart {
 
-  public charts: Array<Object>;
+  @Input() charts: Array<EasyPieChartData>;
   private _init = false;
 
-  constructor(private _pieChartService: PieChartService) {
-    this.charts = this._pieChartService.getData();
+  constructor() {    
   }
 
   ngAfterViewInit() {
@@ -50,7 +48,7 @@ export class PieChart {
   private _updatePieCharts() {
     let getRandomArbitrary = (min, max) => { return Math.random() * (max - min) + min; };
 
-    jQuery('.pie-charts .chart').each(function(index, chart) {
+    jQuery('.pie-charts .chart').each(function (index, chart) {
       jQuery(chart).data('easyPieChart').update(getRandomArbitrary(55, 90));
     });
   }
