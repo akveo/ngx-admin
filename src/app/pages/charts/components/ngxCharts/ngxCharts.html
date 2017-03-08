@@ -1,0 +1,100 @@
+<section>
+  <div class="row">
+    <div class="col-md-6 ">
+      <ba-card title="Lines" baCardClass="with-scroll">
+        <h5>Line Chart</h5>
+        <div class="ngx-charts-container">
+          <ngx-charts-line-chart
+            [scheme]="colorScheme"
+            [results]="multi"
+            [xAxis]="true"
+            [yAxis]="true">
+          </ngx-charts-line-chart>
+        </div>
+
+        <h5>Area Chart</h5>
+        <div class="ngx-charts-container">
+          <ngx-charts-area-chart
+            [scheme]="colorScheme"
+            [results]="multi"
+            [xAxis]="true"
+            [yAxis]="true">
+          </ngx-charts-area-chart>
+        </div>
+
+        <h5>Stacked Area Chart</h5>
+        <div class="ngx-charts-container">
+          <ngx-charts-area-chart-stacked
+            [scheme]="colorScheme"
+            [results]="multi"
+            [xAxis]="true"
+            [yAxis]="true">
+          </ngx-charts-area-chart-stacked>
+        </div>
+      </ba-card>
+    </div>
+
+    <div class="col-md-6 ">
+      <ba-card title="Bars" baCardClass="with-scroll">
+        <h5>Vertical Bar Chart</h5>
+        <div class="ngx-charts-container">
+          <ngx-charts-bar-vertical
+            [scheme]="colorScheme"
+            [results]="single"
+            [xAxis]="true"
+            [yAxis]="true">
+          </ngx-charts-bar-vertical>
+        </div>
+
+        <h5>Grouped Vertical Bar Chart</h5>
+        <div class="ngx-charts-container">
+          <ngx-charts-bar-vertical-2d
+            [scheme]="colorScheme"
+            [results]="multi"
+            [xAxis]="true"
+            [yAxis]="true">
+          </ngx-charts-bar-vertical-2d>
+        </div>
+
+        <h5>Stacked Vertical Bar Chart</h5>
+        <div class="ngx-charts-container">
+          <ngx-charts-bar-vertical-stacked
+            [scheme]="colorScheme"
+            [results]="multi"
+            [xAxis]="true"
+            [yAxis]="true">
+          </ngx-charts-bar-vertical-stacked>
+        </div>
+      </ba-card>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <ba-card title="Pies" baCardClass="with-scroll">
+        <div class="row">
+          <div class="col-md-12 col-lg-6">
+            <h5>Pie Chart</h5>
+            <div class="ngx-charts-container">
+              <ngx-charts-pie-chart
+                [scheme]="colorScheme"
+                [results]="single"
+                [explodeSlices]="true"
+                [labels]="true">
+              </ngx-charts-pie-chart>
+            </div>
+          </div>
+          <div class="col-md-12 col-lg-6">
+            <h5>Pie Grid Chart</h5>
+            <div class="ngx-charts-container">
+              <ngx-charts-pie-grid
+                [scheme]="colorScheme"
+                [results]="single">
+              </ngx-charts-pie-grid>
+            </div>
+          </div>
+        </div>
+      </ba-card>
+    </div>
+  </div>
+</section>

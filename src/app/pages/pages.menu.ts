@@ -77,6 +77,14 @@ export const PAGES_MENU = [
                 title: 'Chartist.Js',
               }
             }
+          },
+          {
+            path: 'ngx-charts',
+            data: {
+              menu: {
+                title: 'ngx-charts',
+              }
+            }
           }
         ]
       },
