@@ -1,13 +1,6 @@
-@import '../nga-layout.component.scss';
-
-$nga-layout-sidebar-width: 20%;
-
-/deep/ nga-layout-sidebar {
-  @extend %nga-layout-container;
+:host {
 
   display: block;
-  padding: $nga-layout-padding;
-  width: $nga-layout-sidebar-width;
 
   &[left] {
     order: 0;

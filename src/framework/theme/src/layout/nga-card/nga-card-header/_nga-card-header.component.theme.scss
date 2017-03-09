@@ -1,12 +1,10 @@
-@import '../../../core/style/_nga.global.scss';
-@import '../../../core/theming/_nga.theming.scss';
-
-@mixin nga-card-header-theme($nga-theme) {
-  $card: map-get($nga-theme, card);
-
-  $separator: map-get($card, separator);
+@mixin nga-card-header-theme() {
 
   /deep/ nga-card-header {
-    border-bottom-color: $separator;
+    padding: $nga-card-padding;
+    border-bottom-color: $nga-card-separator;
+    border-top-left-radius: $nga-card-border-radius;
+    border-top-right-radius: $nga-card-border-radius;
+    font-weight: $nga-font-weight-normal;
   }
 }

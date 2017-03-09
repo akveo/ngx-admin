@@ -1,2 +1,6 @@
-@mixin nga-card-body-theme($nga-theme) {
+@mixin nga-card-body-theme() {
+
+  /deep/ nga-card-body {
+    padding: $nga-card-padding;
+  }
 }

@@ -1,14 +1,12 @@
-@import '../../core/style/_nga.global.scss';
-@import '../../core/theming/_nga.theming.scss';
-
-@mixin nga-layout-theme($nga-theme) {
-  $global: map-get($nga-theme, global);
-
-  $background: map-get($global, background);
-  $foreground: map-get($global, foreground);
-
+@mixin nga-layout-theme() {
   /deep/ nga-layout {
-    background: $background;
-    color: $foreground;
+    height: $nga-layout-height;
+    min-height: $nga-layout-height;
+    width: $nga-layout-width;
+
+    background: $nga-layout-background;
+    color: $nga-layout-foreground;
+
+    @include nga-scrollbars(0.4em, rgba(0, 0, 0, 0.6), rgba(255, 255, 255, 0.7));
   }
 }

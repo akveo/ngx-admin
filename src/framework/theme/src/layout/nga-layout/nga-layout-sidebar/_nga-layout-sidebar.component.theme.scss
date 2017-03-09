@@ -1,2 +1,11 @@
-@mixin nga-layout-sidebar-theme($nga-theme) {
+@mixin nga-layout-sidebar-theme() {
+
+  /deep/ nga-layout-sidebar {
+    height: $nga-layout-height;
+    min-height: $nga-layout-height;
+    width: $nga-layout-width;
+
+    background: $nga-layout-background;
+    color: $nga-layout-foreground;
+  }
 }

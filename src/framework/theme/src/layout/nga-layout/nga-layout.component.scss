@@ -1,24 +1,4 @@
-@import '../../core/style/_nga.global.scss';
-@import '../../core/style/_nga.mixins.scss';
-
-$nga-layout-min-height: 500px;
-$nga-layout-height: 100%;
-$nga-layout-padding: 20px;
-$nga-layout-width: 100%;
-
-%nga-layout-container {
-  height: $nga-layout-height;
-  min-height: $nga-layout-min-height;
-  background: map-get($nga-global, background);
-  color: map-get($nga-global, foreground);
-}
-
-/deep/ nga-layout {
-  @extend %nga-layout-container;
-
-  @include nga-scrollbars(0.4em, rgba(0, 0, 0, 0.6), rgba(255, 255, 255, 0.7));
-
-  width: $nga-layout-width;
+:host {
   display: flex;
   flex-direction: row;
 }

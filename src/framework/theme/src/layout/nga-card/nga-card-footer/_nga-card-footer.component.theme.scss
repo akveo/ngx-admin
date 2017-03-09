@@ -1,2 +1,8 @@
-@mixin nga-card-footer-theme($nga-theme) {
+@mixin nga-card-footer-theme() {
+
+  /deep/ nga-card-footer {
+    padding: $nga-card-padding;
+    border-bottom-left-radius: $nga-card-border-radius;
+    border-bottom-right-radius: $nga-card-border-radius;
+  }
 }

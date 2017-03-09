@@ -1,12 +1,4 @@
-@import '../nga-layout.component.scss';
-
-$nga-layout-content-width: 80%;
-
-/deep/ nga-layout-content {
-  @extend %nga-layout-container;
-
+:host {
   display: block;
-  padding: $nga-layout-padding;
-  width: $nga-layout-content-width;
   order: 1;
 }

@@ -1,0 +1,42 @@
+@import '../layout/nga-layout/nga-layout.component.theme';
+@import '../layout/nga-card/nga-card.component.theme';
+@import '../layout/nga-card/nga-card-header/nga-card-header.component.theme';
+@import '../layout/nga-card/nga-card-body/nga-card-body.component.theme';
+@import '../layout/nga-card/nga-card-footer/nga-card-footer.component.theme';
+@import '../layout/nga-tabset/nga-tabset.component.theme';
+@import '../layout/nga-tabset/nga-tabset-tab/nga-tabset-tab.component.theme';
+@import '../layout/nga-tabset/nga-tabset-tab/nga-tabset-tab-header/nga-tabset-tab-header.component.theme';
+@import '../layout/nga-tabset/nga-tabset-tab/nga-tabset-tab-content/nga-tabset-tab-content.component.theme';
+@import '../layout/nga-layout/nga-layout-column/nga-layout-column.component.theme';
+@import '../layout/nga-layout/nga-layout-content/nga-layout-content.component.theme';
+@import '../layout/nga-layout/nga-layout-footer/nga-layout-footer.component.theme';
+@import '../layout/nga-layout/nga-layout-header/nga-layout-header.component.theme';
+@import '../layout/nga-layout/nga-layout-sidebar/nga-layout-sidebar.component.theme';
+@import '../layout/nga-layout/nga-layout-sidebar/nga-layout-sidebar-content/nga-layout-sidebar-content.component.theme';
+@import '../layout/nga-layout/nga-layout-sidebar/nga-layout-sidebar-footer/nga-layout-sidebar-footer.component.theme';
+@import '../layout/nga-layout/nga-layout-sidebar/nga-layout-sidebar-header/nga-layout-sidebar-header.component.theme';
+
+
+// Create a theme
+@mixin nga-theme() {
+
+  @include nga-card-theme();
+  @include nga-card-header-theme();
+  @include nga-card-body-theme();
+  @include nga-card-footer-theme();
+
+  @include nga-tabset-theme();
+  @include nga-tabset-tab-theme();
+  @include nga-tabset-tab-header-theme();
+  @include nga-tabset-tab-content-theme();
+
+  @include nga-layout-theme();
+  @include nga-layout-column-theme();
+  @include nga-layout-content-theme();
+  @include nga-layout-footer-theme();
+  @include nga-layout-header-theme();
+  @include nga-layout-sidebar-theme();
+  @include nga-layout-sidebar-content-theme();
+  @include nga-layout-sidebar-footer-theme();
+  @include nga-layout-sidebar-header-theme();
+}

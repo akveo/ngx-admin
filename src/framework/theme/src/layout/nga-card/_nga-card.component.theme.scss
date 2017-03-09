@@ -1,36 +1,58 @@
-@import '../../core/style/_nga.global.scss';
-@import '../../core/theming/_nga.theming.scss';
-
-@mixin _nga-card-header($status-color) {
-  background-color: $status-color;
-  border-color: $status-color;
-}
-
-@mixin nga-card-theme($nga-theme) {
-  $global: map-get($nga-theme, global);
-  $colors: map-get($nga-theme, color-light);
-  $font-weight: map-get($nga-theme, font-weight);
-  $card: map-get($nga-theme, card);
-
-  $background: map-get($global, background);
-  $foreground: map-get($global, foreground);
-
-  $font-weight: map-get($font-weight, normal);
-
-  $shadow: map-get($card, shadow);
+@mixin nga-card-theme() {
 
   /deep/ nga-card {
-    background: $background;
-    color: $foreground;
-    box-shadow: 1px 1px 4px $shadow;
-    font-weight: $font-weight;
+    background: $nga-card-background;
+    color: $nga-card-foreground;
+    margin-bottom: $nga-card-padding;
+    border-radius: $nga-card-border-radius;
+    box-shadow: 1px 1px 4px $nga-card-shadow;
+    font-weight: $nga-font-weight-normal;
 
-    @each $name, $color in $colors {
-      &[#{$name}] {
-        /deep/ nga-card-header {
-          @include _nga-card-header($color);
-        }
-      }
+    &[small] {
+      min-height: $nga-card-height-small;
     }
+    &[xsmall] {
+      min-height: $nga-card-height-xsmall;
+    }
+    &[medium] {
+      min-height: $nga-card-height-medium;
+    }
+    &[xmedium] {
+      min-height: $nga-card-height-xmedium;
+    }
+    &[large] {
+      min-height: $nga-card-height-large;
+    }
+
+    &[default] /deep/ nga-card-header {
+      background-color: $nga-color-default;
+      border: $nga-color-default;
+    }
+    &[disabled] /deep/ nga-card-header {
+      background-color: $nga-color-disabled;
+      border: $nga-color-disabled;
+    }
+    &[primary] /deep/ nga-card-header {
+      background-color: $nga-color-primary;
+      border: $nga-color-primary;
+    }
+    &[info] /deep/ nga-card-header {
+      background-color: $nga-color-info;
+      border: $nga-color-info;
+    }
+    &[success] /deep/ nga-card-header {
+      background-color: $nga-color-success;
+      border: $nga-color-success;
+    }
+    &[warning] /deep/ nga-card-header {
+      background-color: $nga-color-warning;
+      border: $nga-color-warning;
+    }
+    &[danger] /deep/ nga-card-header {
+      background-color: $nga-color-danger;
+      border: $nga-color-danger;
+    }
+
+    @include nga-scrollbars(0.4em, rgba(0, 0, 0, 0.6), rgba(255, 255, 255, 0.7));
   }
 }

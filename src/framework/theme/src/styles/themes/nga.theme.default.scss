@@ -1,0 +1,81 @@
+@import '../core/_nga.core.scss';
+@import '../_nga.globals.scss';
+@import '../_nga.components.scss';
+
+// default global styles
+
+$nga-font-weight-thin: 100 !default;
+$nga-font-weight-light: 300 !default;
+$nga-font-weight-normal: 400 !default;
+$nga-font-weight-bolder: 500 !default;
+$nga-font-weight-bold: 700 !default;
+$nga-font-weight-ultra-bold: 900 !default;
+
+$nga-radius: 7px !default;
+$nga-padding: 20px !default;
+$nga-margin: 20px !default;
+
+$nga-color-default: #ffffff !default;
+$nga-color-disabled: rgba(255, 255, 255, 0.4) !default;
+$nga-color-primary: #00abff !default;
+$nga-color-info: #40daf1 !default;
+$nga-color-success: #8bd22f !default;
+$nga-color-warning: #e7ba08 !default;
+$nga-color-danger: #f95372 !default;
+
+$nga-color-light-percent: 30% !default;
+$nga-color-light-primary: tint($nga-color-primary, $nga-color-light-percent) !default;
+$nga-color-light-info: tint($nga-color-info, $nga-color-light-percent) !default;
+$nga-color-light-success: tint($nga-color-success, $nga-color-light-percent) !default;
+$nga-color-light-warning: tint($nga-color-warning, $nga-color-light-percent) !default;
+$nga-color-light-danger: tint($nga-color-danger, $nga-color-light-percent) !default;
+
+$nga-color-dark-percent: 15% !default;
+$nga-color-dark-primary: tint($nga-color-primary, $nga-color-dark-percent) !default;
+$nga-color-dark-info: tint($nga-color-info, $nga-color-dark-percent) !default;
+$nga-color-dark-success: tint($nga-color-success, $nga-color-dark-percent) !default;
+$nga-color-dark-warning: tint($nga-color-warning, $nga-color-dark-percent) !default;
+$nga-color-dark-danger: tint($nga-color-danger, $nga-color-dark-percent) !default;
+
+$nga-social-color-facebook: #3b5998 !default;
+$nga-social-color-twitter: #55acee !default;
+$nga-social-color-google: #dd4b39 !default;
+$nga-social-color-linkedin: #0177b5 !default;
+$nga-social-color-github: #6b6b6b !default;
+$nga-social-color-stackoverflow: #2f96e8 !default;
+$nga-social-color-dribble: #f26798 !default;
+$nga-social-color-behance: #0093fa !default;
+
+$nga-link-color-active: #285eb8 !default;
+$nga-link-color-hover: darken($nga-link-color-active, 20%) !default;
+$nga-link-color-visited: $nga-link-color-active !default;
+
+$nga-background: transparent !default;
+$nga-foreground: $nga-color-default !default;
+
+// component specific styles
+
+$nga-card-foreground: $nga-foreground !default;
+$nga-card-background: $nga-background !default;
+$nga-card-height-small: 114px !default;
+$nga-card-height-xsmall: 187px !default;
+$nga-card-height-medium: 400px !default;
+$nga-card-height-xmedium: 550px !default;
+$nga-card-height-large: 974px !default;
+$nga-card-shadow: rgba(0, 0, 0, 0.15) !default;
+$nga-card-separator: rgba(255, 255, 255, 0.3) !default;
+$nga-card-border-radius: $nga-radius !default;
+$nga-card-padding: $nga-padding !default;
+
+$nga-layout-foreground: $nga-foreground !default;
+$nga-layout-background: $nga-background !default;
+$nga-layout-height: 100% !default;
+$nga-layout-width: 100% !default;
+$nga-layout-padding: $nga-padding !default;
+
+$nga-sidebar-foreground: $nga-foreground !default;
+$nga-sidebar-background: $nga-background !default;
+$nga-sidebar-height: 100% !default;
+$nga-sidebar-width: 20% !default;
+$nga-layout-content-width: 20% !default;
+$nga-sidebar-padding: $nga-padding !default;

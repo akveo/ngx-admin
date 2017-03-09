@@ -1,2 +1,12 @@
-@mixin nga-layout-content-theme($nga-theme) {
+@mixin nga-layout-content-theme() {
+
+  /deep/ nga-layout-content {
+    height: $nga-layout-height;
+    min-height: $nga-layout-height;
+    width: $nga-layout-content-width;
+
+    background: $nga-layout-background;
+    color: $nga-layout-foreground;
+  }
+
 }

@@ -1,30 +1,22 @@
-//@import '../framework/theme/src/core/theming/nga.theme.default';
+@import '../framework/theme/src/styles/themes/nga.theme.default.scss';
+
+:host {
+  @include nga-theme();
+}
+
+//$nga-background: #a5e0e6;
+//$nga-foreground: black;
 //
-//$nga-theme: (
-//  global: (
-//    background: #a5e0e6,
-//    foreground: black
-//  ),
-//  color: (
-//    primary: #ff002e,
-//    info: #ffcc00
-//  ),
-//  color-light: (
-//    primary: #138fcc,
-//    success: #7dce15,
-//    info: #ffffff,
-//    warning: #ffcc00,
-//    danger: #ff0030
-//  ),
-//  font-weight: (
-//    normal: 450
-//  ),
-//  card: (
-//    shadow: red,
-//    separator: red
-//  )
-//);
+//$nga-color-primary: #ff002e;
+//$nga-color-info: #ffcc00;
 //
-///deep/ nga-app-root {
-//  @include nga-theme($nga-theme);
-//}
+//$nga-color-light-primary: #138fcc;
+//$nga-color-light-success: #7dce15;
+//$nga-color-light-info: #ffffff;
+//$nga-color-light-warning: #ffcc00;
+//$nga-color-light-danger: #ff0030;
+//
+//$nga-font-weight-norbal: 450;
+//$nga-card-shadow: red;
+//$nga-card-separator: red;
+//

@@ -1,46 +1,4 @@
-@import '../../core/style/_nga.global.scss';
-
-$nga-card-height: (
-  small: 114px,
-  xsmall: 187px,
-  medium: 400px,
-  xmedium: 550px,
-  large: 974px
-);
-
-$nga-card-border-radius: 7px;
-$nga-card-separator: 1px solid map-get($nga-card, separator);
-$nga-card-padding: 20px;
-$nga-card-background: rgba(255, 255, 255, 0.1);
-
-@mixin _nga-card-header($header-color) {
-  background-color: $header-color;
-  border-color: $header-color;
-}
-
-/deep/ nga-card {
+:host {
   display: flex;
   flex-direction: column;
-  color: map-get($nga-global, foreground);
-  background: $nga-card-background;
-  margin-bottom: $nga-card-padding;
-  border-radius: $nga-card-border-radius;
-  box-shadow: 1px 1px 4px map-get($nga-card, shadow);
-  font-weight: map-get($nga-font-weight, normal);
-
-  @include nga-scrollbars(0.4em, rgba(0, 0, 0, 0.6), rgba(255, 255, 255, 0.7));
-
-  @each $name, $size in $nga-card-height {
-    &[#{$name}] {
-      min-height: #{$size};
-    }
-  }
-
-  @each $name, $color in $nga-color-light {
-    &[#{$name}] {
-      /deep/ nga-card-header {
-        @include _nga-card-header($color);
-      }
-    }
-  }
 }

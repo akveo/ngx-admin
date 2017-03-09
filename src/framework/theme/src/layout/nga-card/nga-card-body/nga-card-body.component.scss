@@ -1,8 +1,5 @@
-@import '../nga-card.component.scss';
-
-/deep/ nga-card-body {
+:host {
   display: block;
-  padding: $nga-card-padding;
   overflow: auto;
   flex: 1;
 }
