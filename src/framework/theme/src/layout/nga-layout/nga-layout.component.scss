@@ -1,4 +1,9 @@
 :host {
   display: flex;
   flex-direction: row;
+
+  /deep/ nga-layout-content {
+    display: block;
+    order: 1;
+  }
 }

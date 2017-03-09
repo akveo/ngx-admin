@@ -7,28 +7,36 @@ import {
   NgaCardHeaderComponent,
   NgaCardBodyComponent,
   NgaCardFooterComponent,
-} from './nga-card';
+} from './nga-card/nga-card.component';
 
 // nga-layout
 import {
   NgaLayoutComponent,
   NgaLayoutHeaderComponent,
   NgaLayoutColumnComponent,
-  NgaLayoutSidebarComponent,
-  NgaLayoutSidebarHeaderComponent,
-  NgaLayoutSidebarContentComponent,
-  NgaLayoutSidebarFooterComponent,
   NgaLayoutContentComponent,
   NgaLayoutFooterComponent,
-} from './nga-layout';
+} from './nga-layout/nga-layout.component';
+
+// nga-sidebar
+import {
+  NgaSidebarComponent,
+  NgaSidebarHeaderComponent,
+  NgaSidebarContentComponent,
+  NgaSidebarFooterComponent,
+} from './nga-sidebar/nga-sidebar.component';
 
 // nga-tabset
 import {
   NgaTabsetComponent,
+} from './nga-tabset/nga-tabset.component';
+
+// nga-tabset-tab
+import {
   NgaTabsetTabComponent,
   NgaTabsetTabHeaderComponent,
   NgaTabsetTabContentComponent,
-} from './nga-tabset';
+} from './nga-tabset-tab/nga-tabset-tab.component';
 
 const NGA_LAYOUT_COMPONENTS = [
   NgaCardComponent,
@@ -38,10 +46,10 @@ const NGA_LAYOUT_COMPONENTS = [
   NgaLayoutComponent,
   NgaLayoutHeaderComponent,
   NgaLayoutColumnComponent,
-  NgaLayoutSidebarComponent,
-  NgaLayoutSidebarHeaderComponent,
-  NgaLayoutSidebarContentComponent,
-  NgaLayoutSidebarFooterComponent,
+  NgaSidebarComponent,
+  NgaSidebarHeaderComponent,
+  NgaSidebarContentComponent,
+  NgaSidebarFooterComponent,
   NgaLayoutContentComponent,
   NgaLayoutFooterComponent,
   NgaTabsetComponent,

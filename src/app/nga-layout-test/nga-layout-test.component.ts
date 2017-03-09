@@ -5,36 +5,39 @@ import { Component } from '@angular/core';
   styleUrls: ['./nga-layout-test.component.scss'],
   template: `
     <nga-layout id="default-layout">
-      <nga-layout-sidebar class="sidebar">
+      <nga-sidebar class="sidebar">
         <span>Sidebar</span>
-      </nga-layout-sidebar>
+      </nga-sidebar>
       <nga-layout-content class="content">
         <span>Content</span>
       </nga-layout-content>
     </nga-layout>
+    
     <nga-layout id="left-sidebar-layout">
-      <nga-layout-sidebar class="sidebar" left>
+      <nga-sidebar class="sidebar" left>
         <span>Sidebar</span>
-      </nga-layout-sidebar>
+      </nga-sidebar>
       <nga-layout-content class="content">
         <span>Content</span>
       </nga-layout-content>
     </nga-layout>
+    
     <nga-layout id="right-sidebar-layout">
-      <nga-layout-sidebar class="sidebar" right>
+      <nga-sidebar class="sidebar" right>
         <span>Sidebar</span>
-      </nga-layout-sidebar>
+      </nga-sidebar>
       <nga-layout-content class="content">
         <span>Content</span>
       </nga-layout-content>
     </nga-layout>
+    
     <nga-layout id="two-sidebars-layout">
-      <nga-layout-sidebar class="sidebar" left>
+      <nga-sidebar class="sidebar" left>
         <span>Sidebar</span>
-      </nga-layout-sidebar>
-      <nga-layout-sidebar class="sidebar" right>
+      </nga-sidebar>
+      <nga-sidebar class="sidebar" right>
         <span>Sidebar</span>
-      </nga-layout-sidebar>
+      </nga-sidebar>
       <nga-layout-content class="content">
         <span>Content</span>
       </nga-layout-content>

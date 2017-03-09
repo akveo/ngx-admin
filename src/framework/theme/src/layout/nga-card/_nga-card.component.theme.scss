@@ -54,5 +54,23 @@
     }
 
     @include nga-scrollbars(0.4em, rgba(0, 0, 0, 0.6), rgba(255, 255, 255, 0.7));
+
+    /deep/ nga-card-body {
+      padding: $nga-card-padding;
+    }
+
+    /deep/ nga-card-footer {
+      padding: $nga-card-padding;
+      border-bottom-left-radius: $nga-card-border-radius;
+      border-bottom-right-radius: $nga-card-border-radius;
+    }
+
+    /deep/ nga-card-header {
+      padding: $nga-card-padding;
+      border-bottom-color: $nga-card-separator;
+      border-top-left-radius: $nga-card-border-radius;
+      border-top-right-radius: $nga-card-border-radius;
+      font-weight: $nga-font-weight-normal;
+    }
   }
 }

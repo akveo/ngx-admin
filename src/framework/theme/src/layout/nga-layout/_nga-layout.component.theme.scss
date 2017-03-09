@@ -8,5 +8,14 @@
     color: $nga-layout-foreground;
 
     @include nga-scrollbars(0.4em, rgba(0, 0, 0, 0.6), rgba(255, 255, 255, 0.7));
+
+    /deep/ nga-layout-content {
+      height: $nga-layout-height;
+      min-height: $nga-layout-height;
+      width: $nga-layout-content-width;
+
+      background: $nga-layout-background;
+      color: $nga-layout-foreground;
+    }
   }
 }
