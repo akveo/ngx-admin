@@ -64,7 +64,7 @@ export class NgaLayoutFooterComponent {
  */
 @Component({
   selector: 'nga-layout',
-  styleUrls: ['./nga-layout.component.scss'],
+  styleUrls: ['./layout.component.scss'],
   template: `
     <ng-content></ng-content>
     <ng-content select="nga-layout-header"></ng-content>

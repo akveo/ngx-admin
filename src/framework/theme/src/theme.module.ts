@@ -2,9 +2,9 @@ import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
-import { NgaThemeOptions } from './nga-theme.options';
+import { NgaThemeOptions } from './theme.options';
 
-import { NgaLayoutModule } from './layout/nga-layout.module';
+import { NgaLayoutModule } from './layout/layout.module';
 
 const NGA_THEME_SUBMODULES = [
   NgaLayoutModule,

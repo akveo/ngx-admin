@@ -29,7 +29,7 @@ export class NgaSidebarFooterComponent {
 
 @Component({
   selector: 'nga-sidebar',
-  styleUrls: ['./nga-sidebar.component.scss'],
+  styleUrls: ['./sidebar.component.scss'],
   template: `<ng-content></ng-content>`,
 })
 export class NgaSidebarComponent {

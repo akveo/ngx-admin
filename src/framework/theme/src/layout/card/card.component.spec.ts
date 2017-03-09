@@ -1,6 +1,6 @@
 import { TestBed, async } from '@angular/core/testing';
 
-import { NgaCardComponent } from './nga-card.component';
+import { NgaCardComponent } from './card.component';
 
 
 describe('nga-card', () => {

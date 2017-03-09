@@ -20,7 +20,7 @@ export class NgaTabsetTabHeaderComponent {
 
 @Component({
   selector: 'nga-tabset-tab',
-  styleUrls: ['./nga-tabset-tab.component.scss'],
+  styleUrls: ['./tabset-tab.component.scss'],
   template: `
     <ng-content></ng-content>
     <ng-content select="nga-tabset-tab-header"></ng-content>

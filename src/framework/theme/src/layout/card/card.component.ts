@@ -44,7 +44,7 @@ export class NgaCardFooterComponent {
  */
 @Component({
   selector: 'nga-card',
-  styleUrls: ['./nga-card.component.scss'],
+  styleUrls: ['./card.component.scss'],
   template: `
     <ng-content></ng-content>
     <ng-content select="nga-card-header"></ng-content>

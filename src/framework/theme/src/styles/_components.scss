@@ -1,0 +1,16 @@
+@import '../layout/layout/layout.component.theme.scss';
+@import '../layout/sidebar/sidebar.component.theme.scss';
+@import '../layout/card/card.component.theme.scss';
+@import '../layout/tabset/tabset.component.theme.scss';
+@import '../layout/tabset-tab/tabset-tab.component.theme.scss';
+@import '../layout/sidebar/sidebar.component.theme.scss';
+
+
+// Create a theme
+@mixin nga-theme() {
+  @include nga-layout-theme();
+  @include nga-sidebar-theme();
+  @include nga-card-theme();
+  @include nga-tabset-theme();
+  @include nga-tabset-tab-theme();
+}

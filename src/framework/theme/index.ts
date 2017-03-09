@@ -1,2 +1,2 @@
-export * from './src/nga-theme.module';
-export * from './src/nga-theme.options';
+export * from './src/theme.module';
+export * from './src/theme.options';

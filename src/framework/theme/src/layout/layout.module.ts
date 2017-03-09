@@ -7,7 +7,7 @@ import {
   NgaCardHeaderComponent,
   NgaCardBodyComponent,
   NgaCardFooterComponent,
-} from './nga-card/nga-card.component';
+} from './card/card.component';
 
 // nga-layout
 import {
@@ -16,7 +16,7 @@ import {
   NgaLayoutColumnComponent,
   NgaLayoutContentComponent,
   NgaLayoutFooterComponent,
-} from './nga-layout/nga-layout.component';
+} from './layout/layout.component';
 
 // nga-sidebar
 import {
@@ -24,19 +24,19 @@ import {
   NgaSidebarHeaderComponent,
   NgaSidebarContentComponent,
   NgaSidebarFooterComponent,
-} from './nga-sidebar/nga-sidebar.component';
+} from './sidebar/sidebar.component';
 
 // nga-tabset
 import {
   NgaTabsetComponent,
-} from './nga-tabset/nga-tabset.component';
+} from './tabset/tabset.component';
 
 // nga-tabset-tab
 import {
   NgaTabsetTabComponent,
   NgaTabsetTabHeaderComponent,
   NgaTabsetTabContentComponent,
-} from './nga-tabset-tab/nga-tabset-tab.component';
+} from './tabset-tab/tabset-tab.component';
 
 const NGA_LAYOUT_COMPONENTS = [
   NgaCardComponent,
