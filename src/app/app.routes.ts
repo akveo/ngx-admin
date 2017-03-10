@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
 
-import { NgaCardTestComponent } from './nga-card-test/nga-card-test.component';
-import { NgaLayoutTestComponent } from './nga-layout-test/nga-layout-test.component';
+import { NgaCardTestComponent } from './card-test/card-test.component';
+import { NgaLayoutTestComponent } from './layout-test/layout-test.component';
 
 export const routes: Routes = [
   {

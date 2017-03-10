@@ -19,11 +19,11 @@ describe('nga-card', () => {
     expect(element(by.css('#default-card nga-card-footer')).getText()).toEqual('Footer');
   });
 
-  it('should have height equal 185px', () => {
+  it('should have height equal 184px', () => {
     browser.get('/');
 
     element(by.css('#small-card')).getSize().then(el => {
-      expect(el.height).toEqual(185);
+      expect(el.height).toEqual(184);
     });
   });
 
@@ -63,11 +63,11 @@ describe('nga-card', () => {
     browser.get('/');
 
     element(by.css('#primary-card > nga-card-header')).getCssValue('background-color').then(bgColor => {
-      expect(bgColor).toEqual('rgba(77, 196, 255, 1)');
+      expect(bgColor).toEqual('rgba(0, 171, 255, 1)');
     });
 
     element(by.css('#primary-card > nga-card-header')).getCssValue('border-color').then(bgColor => {
-      expect(bgColor).toEqual('rgb(77, 196, 255)');
+      expect(bgColor).toEqual('rgb(0, 171, 255)');
     });
   });
 
@@ -75,11 +75,11 @@ describe('nga-card', () => {
     browser.get('/');
 
     element(by.css('#success-card > nga-card-header')).getCssValue('background-color').then(bgColor => {
-      expect(bgColor).toEqual('rgba(174, 224, 109, 1)');
+      expect(bgColor).toEqual('rgba(139, 210, 47, 1)');
     });
 
     element(by.css('#success-card > nga-card-header')).getCssValue('border-color').then(bgColor => {
-      expect(bgColor).toEqual('rgb(174, 224, 109)');
+      expect(bgColor).toEqual('rgb(139, 210, 47)');
     });
   });
 
@@ -87,11 +87,11 @@ describe('nga-card', () => {
     browser.get('/');
 
     element(by.css('#info-card > nga-card-header')).getCssValue('background-color').then(bgColor => {
-      expect(bgColor).toEqual('rgba(121, 229, 245, 1)');
+      expect(bgColor).toEqual('rgba(64, 218, 241, 1)');
     });
 
     element(by.css('#info-card > nga-card-header')).getCssValue('border-color').then(bgColor => {
-      expect(bgColor).toEqual('rgb(121, 229, 245)');
+      expect(bgColor).toEqual('rgb(64, 218, 241)');
     });
   });
 
@@ -99,11 +99,11 @@ describe('nga-card', () => {
     browser.get('/');
 
     element(by.css('#warning-card > nga-card-header')).getCssValue('background-color').then(bgColor => {
-      expect(bgColor).toEqual('rgba(238, 207, 82, 1)');
+      expect(bgColor).toEqual('rgba(231, 186, 8, 1)');
     });
 
     element(by.css('#warning-card > nga-card-header')).getCssValue('border-color').then(bgColor => {
-      expect(bgColor).toEqual('rgb(238, 207, 82)');
+      expect(bgColor).toEqual('rgb(231, 186, 8)');
     });
   });
 
@@ -111,11 +111,11 @@ describe('nga-card', () => {
     browser.get('/');
 
     element(by.css('#danger-card > nga-card-header')).getCssValue('background-color').then(bgColor => {
-      expect(bgColor).toEqual('rgba(251, 135, 156, 1)');
+      expect(bgColor).toEqual('rgba(249, 83, 114, 1)');
     });
 
     element(by.css('#danger-card > nga-card-header')).getCssValue('border-color').then(bgColor => {
-      expect(bgColor).toEqual('rgb(251, 135, 156)');
+      expect(bgColor).toEqual('rgb(249, 83, 114)');
     });
   });
 });

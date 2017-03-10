@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'nga-layout-test',
-  styleUrls: ['./nga-layout-test.component.scss'],
+  styleUrls: ['layout-test.component.scss'],
   template: `
     <nga-layout id="default-layout">
       <nga-sidebar class="sidebar">
