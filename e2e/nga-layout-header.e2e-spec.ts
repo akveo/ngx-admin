@@ -1,6 +1,6 @@
 import { browser, element, by } from 'protractor';
 
-fdescribe('nga-layout-header', () => {
+describe('nga-layout-header', () => {
 
   beforeEach(() => {
     browser.get('#/nga-layout-header');
@@ -18,8 +18,8 @@ fdescribe('nga-layout-header', () => {
     });
   });
 
-  it('should have min-height', () => {
-    element(by.css('nga-layout-header nav')).getCssValue('min-height').then(value => {
+  it('should have height', () => {
+    element(by.css('nga-layout-header nav')).getCssValue('height').then(value => {
       expect(value).toEqual('56px');
     });
   });

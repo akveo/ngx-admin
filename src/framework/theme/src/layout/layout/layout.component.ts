@@ -1,4 +1,4 @@
-import { Component, Directive, Input } from '@angular/core';
+import { Component, Input, ContentChild } from '@angular/core';
 
 /**
  * Component intended to be used within  the `<nga-layout>` component.
@@ -49,10 +49,15 @@ export class NgaLayoutContentComponent {
 @Component({
   selector: 'nga-layout-footer',
   template: `
-    <ng-content></ng-content>
+    <nav class="navbar" [ngClass]="{'fixed-bottom': fixed === '' || fixed}">
+      <div class="container-fluid">
+        <ng-content></ng-content>
+      </div>
+    </nav>
   `,
 })
 export class NgaLayoutFooterComponent {
+  @Input() fixed;
 }
 
 /**
@@ -72,7 +77,7 @@ export class NgaLayoutFooterComponent {
   styleUrls: ['./layout.component.scss'],
   template: `
     <ng-content select="nga-layout-header"></ng-content>
-    <div class="container-fluid main-container">
+    <div class="container-fluid main-container" [ngClass]="{'with-footer': footer}">
       <ng-content></ng-content>
       <ng-content select="nga-layout-column"></ng-content>
       <ng-content select="nga-layout-sidebar"></ng-content>
@@ -82,4 +87,6 @@ export class NgaLayoutFooterComponent {
   `,
 })
 export class NgaLayoutComponent {
+
+  @ContentChild(NgaLayoutFooterComponent) footer;
 }

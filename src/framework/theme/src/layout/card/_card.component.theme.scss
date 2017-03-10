@@ -67,7 +67,7 @@
 
     /deep/ nga-card-header {
       padding: $nga-card-padding;
-      border-bottom-color: $nga-card-separator;
+      border-bottom: 1px solid $nga-card-separator;
       border-top-left-radius: $nga-card-border-radius;
       border-top-right-radius: $nga-card-border-radius;
       font-weight: $nga-font-weight-normal;

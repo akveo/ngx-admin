@@ -1,7 +1,6 @@
 :host {
 
   /deep/ nga-layout-header {
-
     nav {
       display: flex;
       justify-content: center
@@ -10,6 +9,18 @@
     .container-fluid {
       margin: 0;
       padding: 0;
+    }
+  }
+
+  /deep/ nga-layout-footer {
+    nav {
+      display: flex;
+      justify-content: center;
+      overflow: hidden;
+
+      &[fixed] {
+        margin-top: 0;
+      }
     }
   }
 }

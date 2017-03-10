@@ -15,7 +15,9 @@ $nga-radius: 0.5rem !default;
 $nga-padding: 1rem !default;
 $nga-margin: 1rem !default;
 
-$nga-color-default: #ffffff !default;
+$nga-color-default: #3f4243 !default;
+$nga-color-inverse: white!default;
+
 $nga-color-disabled: rgba(255, 255, 255, 0.4) !default;
 $nga-color-primary: #00abff !default;
 $nga-color-info: #40daf1 !default;
@@ -52,6 +54,9 @@ $nga-link-color-visited: $nga-link-color-active !default;
 
 $nga-background: rgba(0, 0, 0, 0.07) !default;
 $nga-foreground: $nga-color-default !default;
+$nga-foreground-inverse: $nga-color-inverse !default;
+$nga-border-color: rgba(0, 0, 0, 0.15) !default;
+$nga-shadow-color: rgba(0, 0, 0, 0.15) !default;
 
 // component specific styles
 
@@ -62,14 +67,19 @@ $nga-card-height-xsmall: 187px !default;
 $nga-card-height-medium: 400px !default;
 $nga-card-height-xmedium: 550px !default;
 $nga-card-height-large: 974px !default;
-$nga-card-shadow: rgba(0, 0, 0, 0.15) !default;
-$nga-card-separator: rgba(255, 255, 255, 0.3) !default;
+$nga-card-shadow: $nga-shadow-color !default;
+$nga-card-separator: $nga-border-color !default;
 $nga-card-border-radius: $nga-radius !default;
 $nga-card-padding: $nga-padding !default;
 
-$nga-header-min-height: 3.5rem;
-$nga-header-foreground: white !default;
+$nga-header-height: 3.5rem !default;
+$nga-header-foreground: $nga-foreground-inverse !default;
 $nga-header-background: #292b2c !default;
+
+$nga-footer-height: 5rem !default;
+$nga-footer-foreground: $nga-foreground-inverse !default;
+$nga-footer-background: #292b2c !default;
+$nga-footer-separator: $nga-border-color !default;
 
 $nga-layout-foreground: $nga-foreground !default;
 $nga-layout-background: $nga-background !default;

@@ -1,18 +1,20 @@
 @mixin nga-layout-theme() {
 
   /deep/ nga-layout {
-
     .main-container {
       padding: $nga-layout-padding;
       min-height: $nga-layout-min-height;
       background: $nga-layout-background;
       color: $nga-layout-foreground;
+
+      &.with-footer {
+        padding-bottom: calc(#{$nga-footer-height} + #{$nga-layout-padding});
+      }
     }
 
     /deep/ nga-layout-header {
-
       nav {
-        min-height: $nga-header-min-height;
+        height: $nga-header-height;
         background: $nga-header-background;
         color: $nga-header-foreground;
         a {
@@ -22,9 +24,29 @@
           }
         }
       }
+      & + .main-container {
+        min-height: calc(#{$nga-layout-min-height} - #{$nga-header-height});
+      }
+      &[fixed] + .main-container {
+        min-height: $nga-layout-min-height;
+        padding-top: calc(#{$nga-header-height} + #{$nga-layout-padding});
+      }
+    }
 
-      &[fixed] + .container-fluid {
-        padding-top: calc(#{$nga-header-min-height} + #{$nga-layout-padding});
+    /deep/ nga-layout-footer {
+      nav {
+        height: $nga-footer-height;
+        margin-top: -$nga-footer-height;
+        background: $nga-footer-background;
+        color: $nga-footer-foreground;
+        border-top: 1px solid $nga-footer-separator;
+
+        a {
+          color: $nga-footer-foreground;
+          @include hover-focus-active {
+            color: $nga-footer-foreground;
+          }
+        }
       }
     }
   }
