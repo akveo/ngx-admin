@@ -10,11 +10,11 @@ export const routes: Routes = [
     component: NgaCardTestComponent,
   },
   {
-    path: 'nga-layout-header',
+    path: 'layout-header',
     component: NgaLayoutHeaderTestComponent,
   },
   {
-    path: 'nga-layout-footer',
+    path: 'layout-footer',
     component: NgaLayoutFooterTestComponent,
   },
   {
