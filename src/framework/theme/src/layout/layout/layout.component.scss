@@ -1,9 +1,15 @@
 :host {
-  display: flex;
-  flex-direction: row;
 
-  /deep/ nga-layout-content {
-    display: block;
-    order: 1;
+  /deep/ nga-layout-header {
+
+    nav {
+      display: flex;
+      justify-content: center
+    }
+
+    .container-fluid {
+      margin: 0;
+      padding: 0;
+    }
   }
 }

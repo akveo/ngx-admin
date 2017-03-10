@@ -1,21 +1,32 @@
 @mixin nga-layout-theme() {
+
   /deep/ nga-layout {
-    height: $nga-layout-height;
-    min-height: $nga-layout-height;
-    width: $nga-layout-width;
 
-    background: $nga-layout-background;
-    color: $nga-layout-foreground;
-
-    @include nga-scrollbars(0.4em, rgba(0, 0, 0, 0.6), rgba(255, 255, 255, 0.7));
-
-    /deep/ nga-layout-content {
-      height: $nga-layout-height;
-      min-height: $nga-layout-height;
-      width: $nga-layout-content-width;
-
+    .main-container {
+      padding: $nga-layout-padding;
+      min-height: $nga-layout-min-height;
       background: $nga-layout-background;
       color: $nga-layout-foreground;
     }
+
+    /deep/ nga-layout-header {
+
+      nav {
+        min-height: $nga-header-min-height;
+        background: $nga-header-background;
+        color: $nga-header-foreground;
+        a {
+          color: $nga-header-foreground;
+          @include hover-focus-active {
+            color: $nga-header-foreground;
+          }
+        }
+      }
+
+      &[fixed] + .container-fluid {
+        padding-top: calc(#{$nga-header-min-height} + #{$nga-layout-padding});
+      }
+    }
   }
+
 }

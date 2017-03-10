@@ -1,8 +1,7 @@
 @mixin nga-sidebar-theme() {
 
   /deep/ nga-sidebar {
-    height: $nga-layout-height;
-    min-height: $nga-layout-height;
+    min-height: $nga-layout-min-height;
     width: $nga-sidebar-width;
 
     background: $nga-layout-background;

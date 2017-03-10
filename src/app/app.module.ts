@@ -8,7 +8,7 @@ import { NgaThemeModule } from '../framework/theme';
 
 import { AppComponent } from './app.component';
 import { NgaCardTestComponent } from './nga-card-test/nga-card-test.component';
-import { NgaLayoutTestComponent } from './nga-layout-test/nga-layout-test.component';
+import { NgaLayoutHeaderTestComponent } from './nga-layout-test/nga-layout-header-test.component';
 
 import { routes } from './app.routes';
 
@@ -16,7 +16,7 @@ import { routes } from './app.routes';
   declarations: [
     AppComponent,
     NgaCardTestComponent,
-    NgaLayoutTestComponent,
+    NgaLayoutHeaderTestComponent,
   ],
   imports: [
     BrowserModule,

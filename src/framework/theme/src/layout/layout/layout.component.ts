@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Directive, Input } from '@angular/core';
 
 /**
  * Component intended to be used within  the `<nga-layout>` component.
@@ -20,12 +20,16 @@ export class NgaLayoutColumnComponent {
 @Component({
   selector: 'nga-layout-header',
   template: `
-    <ng-content></ng-content>
+    <nav class="navbar" [ngClass]="{'fixed-top': fixed === '' || fixed}">
+      <div class="container-fluid">
+        <ng-content></ng-content>
+      </div>
+    </nav>
   `,
 })
 export class NgaLayoutHeaderComponent {
+  @Input() fixed;
 }
-
 
 /**
  * Component intended to be used within  the `<nga-layout>` component.
@@ -56,6 +60,7 @@ export class NgaLayoutFooterComponent {
  *
  * While this component can be used alone, it also provides a number
  * of child components for common layout sections, including:
+ * // TODO: layout parameters (fluid, center)
  * - nga-layout-sidebar
  * - nga-layout-column
  * - nga-layout-content
@@ -66,11 +71,13 @@ export class NgaLayoutFooterComponent {
   selector: 'nga-layout',
   styleUrls: ['./layout.component.scss'],
   template: `
-    <ng-content></ng-content>
     <ng-content select="nga-layout-header"></ng-content>
-    <ng-content select="nga-layout-column"></ng-content>
-    <ng-content select="nga-layout-sidebar"></ng-content>
-    <ng-content select="nga-layout-content"></ng-content>
+    <div class="container-fluid main-container">
+      <ng-content></ng-content>
+      <ng-content select="nga-layout-column"></ng-content>
+      <ng-content select="nga-layout-sidebar"></ng-content>
+      <ng-content select="nga-layout-content"></ng-content>
+    </div>
     <ng-content select="nga-layout-footer"></ng-content>
   `,
 })
