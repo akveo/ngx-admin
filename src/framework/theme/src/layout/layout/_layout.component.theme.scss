@@ -1,21 +1,54 @@
 @mixin nga-layout-theme() {
+
   /deep/ nga-layout {
-    height: $nga-layout-height;
-    min-height: $nga-layout-height;
-    width: $nga-layout-width;
-
-    background: $nga-layout-background;
-    color: $nga-layout-foreground;
-
-    @include nga-scrollbars(0.4em, rgba(0, 0, 0, 0.6), rgba(255, 255, 255, 0.7));
-
-    /deep/ nga-layout-content {
-      height: $nga-layout-height;
-      min-height: $nga-layout-height;
-      width: $nga-layout-content-width;
-
+    .main-container {
+      padding: $nga-layout-padding;
+      min-height: $nga-layout-min-height;
       background: $nga-layout-background;
       color: $nga-layout-foreground;
+
+      &.with-footer {
+        padding-bottom: calc(#{$nga-footer-height} + #{$nga-layout-padding});
+      }
+    }
+
+    /deep/ nga-layout-header {
+      nav {
+        height: $nga-header-height;
+        background: $nga-header-background;
+        color: $nga-header-foreground;
+        a {
+          color: $nga-header-foreground;
+          @include hover-focus-active {
+            color: $nga-header-foreground;
+          }
+        }
+      }
+      & + .main-container {
+        min-height: calc(#{$nga-layout-min-height} - #{$nga-header-height});
+      }
+      &[fixed] + .main-container {
+        min-height: $nga-layout-min-height;
+        padding-top: calc(#{$nga-header-height} + #{$nga-layout-padding});
+      }
+    }
+
+    /deep/ nga-layout-footer {
+      nav {
+        height: $nga-footer-height;
+        margin-top: -$nga-footer-height;
+        background: $nga-footer-background;
+        color: $nga-footer-foreground;
+        border-top: 1px solid $nga-footer-separator;
+
+        a {
+          color: $nga-footer-foreground;
+          @include hover-focus-active {
+            color: $nga-footer-foreground;
+          }
+        }
+      }
     }
   }
+
 }

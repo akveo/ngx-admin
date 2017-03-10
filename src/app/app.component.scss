@@ -1,12 +1,8 @@
-@import '../framework/theme/src/styles/themes/nga.theme.default.scss';
-
-:host {
-  @include nga-theme();
-}
-
-//$nga-background: #a5e0e6;
-//$nga-foreground: black;
+//$nga-background: linear-gradient(#6592e0, #564ece);
+//$nga-foreground: white;
 //
+//$nga-card-background: transparent;
+
 //$nga-color-primary: #ff002e;
 //$nga-color-info: #ffcc00;
 //
@@ -19,4 +15,9 @@
 //$nga-font-weight-norbal: 450;
 //$nga-card-shadow: red;
 //$nga-card-separator: red;
-//
+
+
+@import '../framework/theme/src/styles/themes/nga.theme.default.scss';
+:host {
+  @include nga-theme();
+}
