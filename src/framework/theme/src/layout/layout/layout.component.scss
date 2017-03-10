@@ -1,5 +1,9 @@
 :host {
 
+  .main-container {
+    display: flex;
+  }
+
   /deep/ nga-layout-header {
     nav {
       display: flex;
@@ -22,5 +26,21 @@
         margin-top: 0;
       }
     }
+  }
+
+  /deep/ nga-layout-column {
+    flex: 1 auto;
+
+    &[right] {
+      order: 3;
+    }
+    &[left] {
+      order: 1;
+    }
+  }
+
+  /deep/ nga-layout-content {
+    flex: 2 auto;
+    order: 2;
   }
 }
