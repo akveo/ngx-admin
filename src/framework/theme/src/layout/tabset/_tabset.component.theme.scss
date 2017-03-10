@@ -1,2 +1,48 @@
 @mixin nga-tabset-theme() {
+  /deep/ nga-tabset {
+    ul.nga-tabset {
+      width: $nga-tab-header-width;
+      border-bottom: 1px solid $nga-color-default;
+
+      li {
+        border: 1px solid transparent;
+        border-top-left-radius: $nga-tab-header-radius;
+        border-top-right-radius: $nga-tab-header-radius;
+        height: $nga-tab-header-height;
+        background: $nga-background;
+        padding: $nga-tab-header-padding;
+        min-width: $nga-tab-header-min-width;
+
+        a {
+          color: $nga-foreground;
+        }
+
+        &.active {
+          background: $nga-tab-header-active;
+
+          a {
+            color: $nga-color-default-dark;
+          }
+        }
+
+        &:hover {
+          border-color: $nga-color-default;
+        }
+      }
+    }
+
+    /deep/ nga-tab {
+      color: $nga-foreground;
+
+      @include nga-scrollbars(0.4em, rgba(0, 0, 0, 0.6), rgba(255, 255, 255, 0.7));
+    }
+
+    &[full-width] {
+      ul.nga-tabset {
+        li {
+          width: $nga-tab-header-width;
+        }
+      }
+    }
+  }
 }

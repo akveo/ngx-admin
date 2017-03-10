@@ -1,2 +1,24 @@
 :host {
+  ul.nga-tabset {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    padding: 0;
+
+    li {
+      font-size: 1rem;
+      line-height: 1rem;
+      cursor: pointer;
+      margin-bottom: -1px;
+
+      a {
+        text-decoration: none;
+      }
+    }
+  }
+
+  /deep/ nga-tab {
+    font-size: 1rem;
+    line-height: 1rem;
+  }
 }
