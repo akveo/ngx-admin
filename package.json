@@ -19,6 +19,8 @@
     "@angularclass/hmr": "1.2.2",
     "@angularclass/hmr-loader": "3.0.2",
     "@ng-bootstrap/ng-bootstrap": "1.0.0-alpha.22",
+    "@ngx-translate/core": "6.0.1",
+    "@ngx-translate/http-loader": "0.0.3",
     "amcharts3": "github:amcharts/amcharts3",
     "ammap3": "github:amcharts/ammap3",
     "animate.css": "3.5.2",
