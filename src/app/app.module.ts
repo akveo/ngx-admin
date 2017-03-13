@@ -19,7 +19,7 @@ import { routes } from './app.routes';
     AppComponent,
     NgaCardTestComponent,
     NgaLayoutHeaderTestComponent,
-    NgaLayoutFooterTestComponent
+    NgaLayoutFooterTestComponent,
     NgaTabsetTestComponent,
   ],
   imports: [
