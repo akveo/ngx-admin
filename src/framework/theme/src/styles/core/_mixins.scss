@@ -40,6 +40,6 @@
   &:focus,
   &:active,
   &:hover {
-    @content
+    @content;
   }
 }
