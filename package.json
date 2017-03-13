@@ -13,6 +13,7 @@
     "rimraf": "rimraf",
     "ngc": "node_modules/.bin/ngc",
     "start": "ng serve",
+    "start:hmr": "ng serve --hmr --env=dev-hmr",
     "start:aot": "start --aot",
     "build": "npm run clean:dist && ng build",
     "build:prod": "npm run build -- --prod",
@@ -64,6 +65,7 @@
   "devDependencies": {
     "@angular/cli": "1.0.0-rc.1",
     "@angular/compiler-cli": "2.4.9",
+    "@angularclass/hmr": "1.2.2",
     "@types/jasmine": "2.5.38",
     "@types/node": "6.0.63",
     "@types/rimraf": "0.0.28",
