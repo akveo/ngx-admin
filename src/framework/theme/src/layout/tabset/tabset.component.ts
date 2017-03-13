@@ -1,4 +1,14 @@
-import { Component, Input, ContentChildren, QueryList, AfterContentInit } from '@angular/core';
+import {
+  Component,
+  Input,
+  Output,
+  EventEmitter,
+  ContentChildren,
+  QueryList,
+  AfterContentInit,
+  OnInit,
+} from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'nga-tab',
@@ -11,6 +21,7 @@ import { Component, Input, ContentChildren, QueryList, AfterContentInit } from '
 export class NgaTabComponent {
   @Input() tabTitle: string;
   @Input() active: boolean = false;
+  @Input() route: string;
 }
 
 @Component({
@@ -18,7 +29,9 @@ export class NgaTabComponent {
   styleUrls: ['./tabset.component.scss'],
   template: `
     <ul class="nga-tabset">
-      <li *ngFor="let tab of tabs" (click)="$event.preventDefault();selectTab(tab)" [class.active]="tab.active">
+      <li *ngFor="let tab of tabs" 
+      (click)="$event.preventDefault();selectTab(tab);changeTab.emit(tab)" 
+      [class.active]="tab.active">
         <a href="#">{{tab.tabTitle}}</a>
       </li>
     </ul>
@@ -26,15 +39,30 @@ export class NgaTabComponent {
     <ng-content select="nga-tab"></ng-content>
   `,
 })
-export class NgaTabsetComponent implements AfterContentInit {
+export class NgaTabsetComponent implements AfterContentInit, OnInit {
   @ContentChildren(NgaTabComponent) tabs: QueryList<NgaTabComponent>;
 
-  ngAfterContentInit() {
-    const activeTabs = this.tabs.filter(tab => tab.active);
+  @Input() routes: boolean = false;
 
-    if (!activeTabs.length) {
-      this.selectTab(this.tabs.first);
-    }
+  @Output() changeTab = new EventEmitter<any>();
+
+  constructor(private activatedRoute: ActivatedRoute) {
+  }
+
+  ngOnInit() {
+  }
+
+  ngAfterContentInit() {
+    this.activatedRoute.params
+      .subscribe((params: any) => {
+        const activeTabs = this.tabs.filter(tab => this.routes ? tab.route === params.tab : tab.active);
+
+        if (!activeTabs.length) {
+          this.selectTab(this.tabs.first);
+        } else {
+          this.selectTab(activeTabs[0]);
+        }
+      });
   }
 
   selectTab(tab: NgaTabComponent) {

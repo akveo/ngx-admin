@@ -23,6 +23,10 @@ export const routes: Routes = [
     component: NgaTabsetTestComponent,
   },
   {
+    path: 'tabset/:tab',
+    component: NgaTabsetTestComponent,
+  },
+  {
     path: '**',
     component: NgaCardTestComponent,
   },
