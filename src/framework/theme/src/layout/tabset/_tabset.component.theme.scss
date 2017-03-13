@@ -8,7 +8,6 @@
         border: 1px solid transparent;
         border-top-left-radius: $nga-tab-header-radius;
         border-top-right-radius: $nga-tab-header-radius;
-        height: $nga-tab-header-height;
         background: $nga-background;
         padding: $nga-tab-header-padding;
         min-width: $nga-tab-header-min-width;
@@ -27,6 +26,10 @@
 
         &:hover {
           border-color: $nga-color-default;
+        }
+
+        &.active:hover {
+          border-bottom: none;
         }
       }
     }
