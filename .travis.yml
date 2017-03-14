@@ -38,7 +38,7 @@ install:
 script:
   - yarn run lint:ci
   - yarn run test
-  - yarn run e2e:ci
+  - yarn run e2e
   - yarn run build:ci
 
 notifications:

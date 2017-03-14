@@ -11,6 +11,7 @@ import { NgaCardTestComponent } from './card-test/card-test.component';
 import { NgaLayoutTestComponent } from './layout-test/layout-test.component';
 import { NgaLayoutHeaderTestComponent } from './layout-test/layout-header-test.component';
 import { NgaLayoutFooterTestComponent } from './layout-test/layout-footer-test.component';
+import { NgaTabsetTestComponent } from './tabset-test/tabset-test.component';
 
 import { routes } from './app.routes';
 
@@ -20,7 +21,8 @@ import { routes } from './app.routes';
     NgaCardTestComponent,
     NgaLayoutTestComponent,
     NgaLayoutHeaderTestComponent,
-    NgaLayoutFooterTestComponent
+    NgaLayoutFooterTestComponent,
+    NgaTabsetTestComponent,
   ],
   imports: [
     BrowserModule,

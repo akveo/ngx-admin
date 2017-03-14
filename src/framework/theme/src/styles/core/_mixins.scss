@@ -28,10 +28,18 @@
   filter: progid:dximagetransform.microsoft.gradient(startColorstr='$color-1', endColorstr='$color-3', GradientType=1); /* IE6-9 fallback on horizontal gradient */
 }
 
+@mixin nga-headings($from: 1, $to: 6) {
+  @for $i from $from through $to {
+    h#{$i} {
+      margin: 0;
+    }
+  }
+}
+
 @mixin hover-focus-active {
   &:focus,
   &:active,
   &:hover {
-    @content
+    @content;
   }
 }

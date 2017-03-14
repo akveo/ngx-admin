@@ -1,11 +1,3 @@
-@mixin _headings($from: 1, $to: 6) {
-  @for $i from $from through $to {
-    h#{$i} {
-      margin: 0;
-    }
-  }
-}
-
 :host {
   display: flex;
   flex-direction: column;
@@ -26,7 +18,5 @@
     line-height: 1rem;
     text-transform: uppercase;
     opacity: 0.9;
-
-    @include _headings();
   }
 }

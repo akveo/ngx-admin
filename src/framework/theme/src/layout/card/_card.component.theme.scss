@@ -1,5 +1,4 @@
 @mixin nga-card-theme() {
-
   /deep/ nga-card {
     background: $nga-card-background;
     color: $nga-card-foreground;
@@ -71,6 +70,8 @@
       border-top-left-radius: $nga-card-border-radius;
       border-top-right-radius: $nga-card-border-radius;
       font-weight: $nga-font-weight-normal;
+
+      @include nga-headings();
     }
   }
 }

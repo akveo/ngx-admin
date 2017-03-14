@@ -28,14 +28,8 @@ import {
 // nga-tabset
 import {
   NgaTabsetComponent,
+  NgaTabComponent,
 } from './tabset/tabset.component';
-
-// nga-tabset-tab
-import {
-  NgaTabsetTabComponent,
-  NgaTabsetTabHeaderComponent,
-  NgaTabsetTabContentComponent,
-} from './tabset-tab/tabset-tab.component';
 
 const NGA_LAYOUT_COMPONENTS = [
   NgaCardComponent,
@@ -51,9 +45,7 @@ const NGA_LAYOUT_COMPONENTS = [
   NgaSidebarFooterComponent,
   NgaLayoutFooterComponent,
   NgaTabsetComponent,
-  NgaTabsetTabComponent,
-  NgaTabsetTabHeaderComponent,
-  NgaTabsetTabContentComponent,
+  NgaTabComponent,
 ];
 
 @NgModule({
