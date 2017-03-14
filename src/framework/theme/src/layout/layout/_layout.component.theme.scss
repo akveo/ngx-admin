@@ -2,13 +2,12 @@
 
   /deep/ nga-layout {
     .main-container {
-      padding: $nga-layout-padding;
       min-height: $nga-layout-min-height;
       background: $nga-layout-background;
       color: $nga-layout-foreground;
 
       &.with-footer {
-        padding-bottom: calc(#{$nga-footer-height} + #{$nga-layout-padding});
+        padding-bottom: $nga-footer-height;
       }
     }
 
@@ -29,7 +28,7 @@
       }
       &[fixed] + .main-container {
         min-height: $nga-layout-min-height;
-        padding-top: calc(#{$nga-header-height} + #{$nga-layout-padding});
+        padding-top: $nga-header-height;
       }
     }
 
@@ -48,6 +47,10 @@
           }
         }
       }
+    }
+
+    /deep/ nga-layout-column {
+      padding: $nga-layout-padding;
     }
   }
 
