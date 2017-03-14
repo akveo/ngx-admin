@@ -1,6 +1,6 @@
 import { browser, element, by } from 'protractor';
 
-describe('nga-card', () => {
+describe('card', () => {
   it('should display text inside nga-card-header', () => {
     browser.get('/');
 

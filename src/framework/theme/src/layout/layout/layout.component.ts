@@ -33,17 +33,6 @@ export class NgaLayoutHeaderComponent {
 
 /**
  * Component intended to be used within  the `<nga-layout>` component.
- * It adds styles for a preset body section.
- */
-@Component({
-  selector: 'nga-layout-content',
-  template: `<ng-content></ng-content>`,
-})
-export class NgaLayoutContentComponent {
-}
-
-/**
- * Component intended to be used within  the `<nga-layout>` component.
  * It adds styles for a preset footer section.
  */
 @Component({
@@ -77,7 +66,7 @@ export class NgaLayoutFooterComponent {
   styleUrls: ['./layout.component.scss'],
   template: `
     <ng-content select="nga-layout-header"></ng-content>
-    <div class="container-fluid main-container" [ngClass]="{'with-footer': footer}">
+    <div class="main-container container-fluid" [ngClass]="{'with-footer': footer, 'container': center === '' || center}">
       <ng-content></ng-content>
       <ng-content select="nga-layout-column"></ng-content>
       <ng-content select="nga-layout-sidebar"></ng-content>
@@ -87,6 +76,6 @@ export class NgaLayoutFooterComponent {
   `,
 })
 export class NgaLayoutComponent {
-
+  @Input() center;
   @ContentChild(NgaLayoutFooterComponent) footer;
 }

@@ -29,18 +29,16 @@
   }
 
   /deep/ nga-layout-column {
-    flex: 1 auto;
+    order: 2;
+    flex: 3 auto;
 
     &[right] {
       order: 3;
+      flex: 1 auto;
     }
     &[left] {
       order: 1;
+      flex: 1 auto;
     }
-  }
-
-  /deep/ nga-layout-content {
-    flex: 2 auto;
-    order: 2;
   }
 }

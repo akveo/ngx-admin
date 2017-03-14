@@ -14,7 +14,6 @@ import {
   NgaLayoutComponent,
   NgaLayoutHeaderComponent,
   NgaLayoutColumnComponent,
-  NgaLayoutContentComponent,
   NgaLayoutFooterComponent,
 } from './layout/layout.component';
 
@@ -50,7 +49,6 @@ const NGA_LAYOUT_COMPONENTS = [
   NgaSidebarHeaderComponent,
   NgaSidebarContentComponent,
   NgaSidebarFooterComponent,
-  NgaLayoutContentComponent,
   NgaLayoutFooterComponent,
   NgaTabsetComponent,
   NgaTabsetTabComponent,
