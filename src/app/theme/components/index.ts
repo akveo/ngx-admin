@@ -12,3 +12,4 @@ export * from './baFullCalendar';
 export * from './baPictureUploader';
 export * from './baCheckbox';
 export * from './baMultiCheckbox';
+export * from './baFileUploader';
