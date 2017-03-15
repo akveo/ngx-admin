@@ -1,49 +1,53 @@
 @mixin nga-tabset-theme() {
   /deep/ nga-tabset {
-    ul.nga-tabset {
-      width: $nga-tab-header-width;
-      border-bottom: 1px solid $nga-color-default;
+    @include nga-scrollbars(0.4em, rgba(0, 0, 0, 0.6), rgba(255, 255, 255, 0.7));
 
-      li {
-        border: 1px solid transparent;
-        border-top-left-radius: $nga-tab-header-radius;
-        border-top-right-radius: $nga-tab-header-radius;
-        background: $nga-background;
-        padding: $nga-tab-header-padding;
-        min-width: $nga-tab-header-min-width;
+    ul {
+      &.nga-tabset {
+        width: $nga-tab-header-width;
+        border-bottom: 1px solid $nga-color-default;
 
-        a {
-          color: $nga-foreground;
-        }
-
-        &.active {
-          background: $nga-tab-header-active;
+        li {
+          border: 1px solid transparent;
+          border-top-left-radius: $nga-tab-header-radius;
+          border-top-right-radius: $nga-tab-header-radius;
+          background: $nga-background;
+          padding: $nga-tab-header-padding;
+          min-width: $nga-tab-header-min-width;
 
           a {
-            color: $nga-color-default-dark;
+            color: $nga-foreground;
           }
-        }
 
-        &:hover {
-          border-color: $nga-color-default;
-        }
+          &.active {
+            background: $nga-tab-header-active;
 
-        &.active:hover {
-          border-bottom: none;
+            a {
+              color: $nga-color-default;
+            }
+          }
+
+          &:hover {
+            border-color: $nga-color-default;
+          }
+
+          &.active:hover {
+            border-bottom-color: transparent;
+          }
         }
       }
     }
 
     /deep/ nga-tab {
       color: $nga-foreground;
-
-      @include nga-scrollbars(0.4em, rgba(0, 0, 0, 0.6), rgba(255, 255, 255, 0.7));
     }
 
     &[full-width] {
-      ul.nga-tabset {
-        li {
-          width: $nga-tab-header-width;
+      ul {
+        &.nga-tabset {
+          li {
+            width: $nga-tab-header-width;
+          }
         }
       }
     }
