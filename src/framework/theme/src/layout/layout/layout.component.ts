@@ -67,10 +67,11 @@ export class NgaLayoutFooterComponent {
   template: `
     <ng-content select="nga-layout-header"></ng-content>
     <div class="main-container container-fluid" [ngClass]="{'with-footer': footer, 'container': center === '' || center}">
+      <ng-content select="nga-sidebar[left]"></ng-content>
+      <ng-content select="nga-sidebar"></ng-content>
       <ng-content></ng-content>
       <ng-content select="nga-layout-column"></ng-content>
-      <ng-content select="nga-layout-sidebar"></ng-content>
-      <ng-content select="nga-layout-content"></ng-content>
+      <ng-content select="nga-sidebar[right]"></ng-content>
     </div>
     <ng-content select="nga-layout-footer"></ng-content>
   `,

@@ -1,11 +1,12 @@
 :host {
 
-  .main-container {
+  > .main-container {
     display: flex;
     padding: 0;
   }
 
   /deep/ nga-layout-header {
+    display: block;
     nav {
       display: flex;
       justify-content: center;
@@ -18,6 +19,7 @@
   }
 
   /deep/ nga-layout-footer {
+    display: block;
     nav {
       display: flex;
       justify-content: center;
@@ -33,12 +35,13 @@
     order: 2;
     flex: 3 auto;
 
-    &[right] {
-      order: 3;
-      flex: 1 auto;
-    }
     &[left] {
       order: 1;
+      flex: 1 auto;
+    }
+
+    &[right] {
+      order: 3;
       flex: 1 auto;
     }
   }

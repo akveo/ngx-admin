@@ -1,18 +1,26 @@
 @mixin nga-layout-theme() {
 
   /deep/ nga-layout {
-    .main-container {
+
+    > .main-container {
       min-height: $nga-layout-min-height;
       background: $nga-layout-background;
       color: $nga-layout-foreground;
 
       &.with-footer {
         padding-bottom: $nga-footer-height;
+
+        /deep/ nga-sidebar {
+          height: calc(#{$nga-sidebar-height} - #{$nga-footer-height});
+          > .scrollable {
+            padding-bottom: $nga-footer-height;
+          }
+        }
       }
     }
 
     /deep/ nga-layout-header {
-      nav {
+      > nav {
         height: $nga-header-height;
         background: $nga-header-background;
         color: $nga-header-foreground;
@@ -25,15 +33,37 @@
       }
       & + .main-container {
         min-height: calc(#{$nga-layout-min-height} - #{$nga-header-height});
+
+        /deep/ nga-sidebar {
+          height: calc(#{$nga-sidebar-height} - #{$nga-header-height});
+
+          > .scrollable {
+            margin-top: $nga-header-height;
+          }
+        }
+
+        &.with-footer {
+          /deep/ nga-sidebar {
+            height: calc(#{$nga-sidebar-height} - #{$nga-header-height} - #{$nga-footer-height});
+
+            > .scrollable {
+              padding-bottom: calc(#{$nga-header-height} + #{$nga-footer-height});
+            }
+          }
+        }
       }
       &[fixed] + .main-container {
         min-height: $nga-layout-min-height;
         padding-top: $nga-header-height;
+
+        /deep/ nga-sidebar.fixed {
+          padding-top: $nga-header-height;
+        }
       }
     }
 
     /deep/ nga-layout-footer {
-      nav {
+      > nav {
         height: $nga-footer-height;
         margin-top: -$nga-footer-height;
         background: $nga-footer-background;

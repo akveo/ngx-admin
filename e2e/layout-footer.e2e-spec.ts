@@ -38,7 +38,7 @@ describe('nga-layout-footer', () => {
 
   it('should add padding to body', () => {
     element(by.css('nga-layout > .main-container')).getCssValue('padding-bottom').then(value => {
-      expect(value).toEqual('96px');
+      expect(value).toEqual('80px');
     });
   });
 
