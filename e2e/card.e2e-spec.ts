@@ -18,32 +18,38 @@ describe('nga-card', () => {
   });
 
   it('should have height equal 161px', () => {
-    element(by.css('nga-card:nth-child(2)')).getSize().then(el => {
+    element(by.css('nga-card:nth-child(1)')).getSize().then(el => {
       expect(el.height).toEqual(161);
     });
   });
 
-  it('should have height equal 187px', () => {
+  it('should have height equal 219', () => {
+    element(by.css('nga-card:nth-child(2)')).getSize().then(el => {
+      expect(el.height).toEqual(219);
+    });
+  });
+
+  it('should have height equal 292', () => {
     element(by.css('nga-card:nth-child(3)')).getSize().then(el => {
-      expect(el.height).toEqual(187);
+      expect(el.height).toEqual(292);
     });
   });
 
-  it('should have height equal 400px', () => {
+  it('should have height equal 505px', () => {
     element(by.css('nga-card:nth-child(4)')).getSize().then(el => {
-      expect(el.height).toEqual(400);
+      expect(el.height).toEqual(505);
     });
   });
 
-  it('should have height equal 550px', () => {
+  it('should have height equal 655px', () => {
     element(by.css('nga-card:nth-child(5)')).getSize().then(el => {
-      expect(el.height).toEqual(550);
+      expect(el.height).toEqual(655);
     });
   });
 
-  it('should have height equal 974px', () => {
+  it('should have height equal 1079px', () => {
     element(by.css('nga-card:nth-child(6)')).getSize().then(el => {
-      expect(el.height).toEqual(974);
+      expect(el.height).toEqual(1079);
     });
   });
 
