@@ -1,6 +1,7 @@
 :host {
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 
   /deep/ nga-card-body {
     display: block;
