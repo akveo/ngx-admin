@@ -12,12 +12,18 @@ import { NgaLayoutTestComponent } from './layout-test/layout-test.component';
 import { NgaLayoutHeaderTestComponent } from './layout-test/layout-header-test.component';
 import { NgaLayoutFooterTestComponent } from './layout-test/layout-footer-test.component';
 import { NgaTabsetTestComponent } from './tabset-test/tabset-test.component';
+import {
+  NgaRouteTabsetTestComponent,
+  NgaRouteTabsetTestChild1Component,
+  NgaRouteTabsetTestChild2Component,
+} from './route-tabset-test/route-tabset-test.component';
 
-import { routes } from './app.routes';
 import { NgaSidebarTestComponent } from './sidebar-test/sidebar-test.component';
 import { NgaSidebarTestOneComponent } from './sidebar-test/sidebar-test-one.component';
 import { NgaSidebarTestTwoComponent } from './sidebar-test/sidebar-test-two.component';
 import { NgaSidebarTestThreeComponent } from './sidebar-test/sidebar-test-three.component';
+
+import { routes } from './app.routes';
 
 @NgModule({
   declarations: [
@@ -31,6 +37,9 @@ import { NgaSidebarTestThreeComponent } from './sidebar-test/sidebar-test-three.
     NgaSidebarTestOneComponent,
     NgaSidebarTestTwoComponent,
     NgaSidebarTestThreeComponent,
+    NgaRouteTabsetTestComponent,
+    NgaRouteTabsetTestChild1Component,
+    NgaRouteTabsetTestChild2Component,
   ],
   imports: [
     BrowserModule,

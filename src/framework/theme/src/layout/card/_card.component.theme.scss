@@ -7,20 +7,32 @@
     box-shadow: 1px 1px 4px $nga-card-shadow;
     font-weight: $nga-font-weight-normal;
 
+    @include nga-scrollbars(0.4em, rgba(0, 0, 0, 0.6), rgba(255, 255, 255, 0.7));
+
     &[small] {
-      min-height: $nga-card-height-small;
+      /deep/ nga-card-body {
+        height: $nga-card-height-small;
+      }
     }
     &[xsmall] {
-      min-height: $nga-card-height-xsmall;
+      /deep/ nga-card-body {
+        height: $nga-card-height-xsmall;
+      }
     }
     &[medium] {
-      min-height: $nga-card-height-medium;
+      /deep/ nga-card-body {
+        height: $nga-card-height-medium;
+      }
     }
     &[xmedium] {
-      min-height: $nga-card-height-xmedium;
+      /deep/ nga-card-body {
+        height: $nga-card-height-xmedium;
+      }
     }
     &[large] {
-      min-height: $nga-card-height-large;
+      /deep/ nga-card-body {
+        height: $nga-card-height-large;
+      }
     }
 
     &[default] /deep/ nga-card-header {
@@ -51,8 +63,6 @@
       background-color: $nga-color-danger;
       border: $nga-color-danger;
     }
-
-    @include nga-scrollbars(0.4em, rgba(0, 0, 0, 0.6), rgba(255, 255, 255, 0.7));
 
     /deep/ nga-card-body {
       padding: $nga-card-padding;

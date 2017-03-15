@@ -9,6 +9,11 @@ import { NgaSidebarTestComponent } from './sidebar-test/sidebar-test.component';
 import { NgaSidebarTestOneComponent } from './sidebar-test/sidebar-test-one.component';
 import { NgaSidebarTestTwoComponent } from './sidebar-test/sidebar-test-two.component';
 import { NgaSidebarTestThreeComponent } from './sidebar-test/sidebar-test-three.component';
+import {
+  NgaRouteTabsetTestComponent,
+  NgaRouteTabsetTestChild1Component,
+  NgaRouteTabsetTestChild2Component,
+} from './route-tabset-test/route-tabset-test.component';
 
 export const routes: Routes = [
   {
@@ -50,6 +55,25 @@ export const routes: Routes = [
   {
     path: 'sidebar/three',
     component: NgaSidebarTestThreeComponent,
+  },
+  {
+    path: 'route-tabset',
+    component: NgaRouteTabsetTestComponent,
+    children: [
+      {
+        path: '',
+        redirectTo: 'tab1',
+        pathMatch: 'full',
+      },
+      {
+        path: 'tab1',
+        component: NgaRouteTabsetTestChild1Component,
+      },
+      {
+        path: 'tab2',
+        component: NgaRouteTabsetTestChild2Component,
+      },
+    ],
   },
   {
     path: '**',

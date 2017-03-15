@@ -28,6 +28,7 @@
   "peerDependencies": {
     "@angular/common": "^2.4.9",
     "@angular/core": "^2.4.9",
+    "@angular/router": "^3.4.9",
     "@ng-bootstrap/ng-bootstrap": "^1.0.0-alpha.20",
     "bootstrap": "^4.0.0-alpha.6"
   },

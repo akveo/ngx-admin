@@ -6,14 +6,13 @@ import {
   ContentChildren,
   QueryList,
   AfterContentInit,
-  OnInit,
 } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'nga-tab',
   template: `
-    <div [hidden]="!active">
+    <div class="nga-tab" [hidden]="!active">
       <ng-content></ng-content>
     </div>
   `,
@@ -32,14 +31,14 @@ export class NgaTabComponent {
       <li *ngFor="let tab of tabs" 
       (click)="$event.preventDefault();selectTab(tab);changeTab.emit(tab)" 
       [class.active]="tab.active">
-        <a href="#">{{tab.tabTitle}}</a>
+        <a href>{{tab.tabTitle}}</a>
       </li>
     </ul>
     <ng-content></ng-content>
     <ng-content select="nga-tab"></ng-content>
   `,
 })
-export class NgaTabsetComponent implements AfterContentInit, OnInit {
+export class NgaTabsetComponent implements AfterContentInit {
   @ContentChildren(NgaTabComponent) tabs: QueryList<NgaTabComponent>;
 
   @Input() routes: boolean = false;
@@ -47,9 +46,6 @@ export class NgaTabsetComponent implements AfterContentInit, OnInit {
   @Output() changeTab = new EventEmitter<any>();
 
   constructor(private activatedRoute: ActivatedRoute) {
-  }
-
-  ngOnInit() {
   }
 
   ngAfterContentInit() {

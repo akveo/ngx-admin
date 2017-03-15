@@ -1,11 +1,10 @@
 :host {
   ul {
-    &.nga-tabset {
+    &.nga-route-tabset {
       display: flex;
       flex-direction: row;
       list-style-type: none;
       padding: 0;
-      overflow: hidden;
 
       li {
         cursor: pointer;
@@ -20,17 +19,6 @@
           font-size: 1rem;
           line-height: 1rem;
         }
-      }
-    }
-  }
-
-  /deep/ nga-tab {
-    font-size: 1rem;
-    line-height: 1rem;
-
-    div {
-      &.nga-tab {
-        overflow: auto;
       }
     }
   }

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 // nga-card
 import {
@@ -31,6 +32,9 @@ import {
   NgaTabComponent,
 } from './tabset/tabset.component';
 
+// nga-route-tabset
+import { NgaRouteTabsetComponent } from './route-tabset/route-tabset.component';
+
 const NGA_LAYOUT_COMPONENTS = [
   NgaCardComponent,
   NgaCardHeaderComponent,
@@ -46,11 +50,13 @@ const NGA_LAYOUT_COMPONENTS = [
   NgaLayoutFooterComponent,
   NgaTabsetComponent,
   NgaTabComponent,
+  NgaRouteTabsetComponent,
 ];
 
 @NgModule({
   imports: [
     CommonModule,
+    RouterModule,
   ],
   declarations: [
     ...NGA_LAYOUT_COMPONENTS,
