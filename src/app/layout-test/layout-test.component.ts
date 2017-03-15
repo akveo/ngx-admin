@@ -7,10 +7,10 @@ import { Component } from '@angular/core';
     :host /deep/ nga-layout-column {
       background-color: #fb75ff;
     } 
-    :host /deep/ nga-layout-column[right] {
+    :host /deep/ nga-layout-column.right {
       background-color: #aeff34;
     }
-    :host /deep/ nga-layout-column[left] {
+    :host /deep/ nga-layout-column.left {
       background-color: #76ecff;
     }
     

@@ -52,7 +52,7 @@
           }
         }
       }
-      &[fixed] + .main-container {
+      &.fixed + .main-container {
         min-height: $nga-layout-min-height;
         padding-top: $nga-header-height;
 

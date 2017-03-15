@@ -1,4 +1,5 @@
-import { Component, Input, ContentChild } from '@angular/core';
+import { Component, Input, ContentChild, HostBinding } from '@angular/core';
+import { convertToBoolProperty } from '../helpers';
 
 /**
  * Component intended to be used within  the `<nga-layout>` component.
@@ -11,6 +12,20 @@ import { Component, Input, ContentChild } from '@angular/core';
   `,
 })
 export class NgaLayoutColumnComponent {
+
+  @HostBinding('class.right')
+  rightValue: boolean;
+  @HostBinding('class.left')
+  leftValue: boolean;
+
+  @Input()
+  set right(val: boolean) {
+    this.rightValue = convertToBoolProperty(val);
+  }
+  @Input()
+  set left(val: boolean) {
+    this.leftValue = convertToBoolProperty(val);
+  }
 }
 
 /**
@@ -20,7 +35,7 @@ export class NgaLayoutColumnComponent {
 @Component({
   selector: 'nga-layout-header',
   template: `
-    <nav class="navbar" [ngClass]="{'fixed-top': fixed === '' || fixed}">
+    <nav class="navbar" [ngClass]="{'fixed-top': fixedValue}">
       <div class="container-fluid">
         <ng-content></ng-content>
       </div>
@@ -28,7 +43,13 @@ export class NgaLayoutColumnComponent {
   `,
 })
 export class NgaLayoutHeaderComponent {
-  @Input() fixed;
+
+  @HostBinding('class.fixed') fixedValue: boolean;
+
+  @Input()
+  set fixed(val: boolean) {
+    this.fixedValue = convertToBoolProperty(val);
+  }
 }
 
 /**
@@ -38,7 +59,7 @@ export class NgaLayoutHeaderComponent {
 @Component({
   selector: 'nga-layout-footer',
   template: `
-    <nav class="navbar" [ngClass]="{'fixed-bottom': fixed === '' || fixed}">
+    <nav class="navbar" [ngClass]="{'fixed-bottom': fixedValue}">
       <div class="container-fluid">
         <ng-content></ng-content>
       </div>
@@ -46,7 +67,13 @@ export class NgaLayoutHeaderComponent {
   `,
 })
 export class NgaLayoutFooterComponent {
-  @Input() fixed;
+
+  @HostBinding('class.fixed') fixedValue: boolean;
+
+  @Input()
+  set fixed(val: boolean) {
+    this.fixedValue = convertToBoolProperty(val);
+  }
 }
 
 /**
@@ -54,7 +81,6 @@ export class NgaLayoutFooterComponent {
  *
  * While this component can be used alone, it also provides a number
  * of child components for common layout sections, including:
- * // TODO: layout parameters (fluid, center)
  * - nga-layout-sidebar
  * - nga-layout-column
  * - nga-layout-content
@@ -66,7 +92,7 @@ export class NgaLayoutFooterComponent {
   styleUrls: ['./layout.component.scss'],
   template: `
     <ng-content select="nga-layout-header"></ng-content>
-    <div class="main-container container-fluid" [ngClass]="{'with-footer': footer, 'container': center === '' || center}">
+    <div class="main-container container-fluid" [ngClass]="{'with-footer': footer, 'container': centerValue}">
       <ng-content select="nga-sidebar[left]"></ng-content>
       <ng-content select="nga-sidebar"></ng-content>
       <ng-content></ng-content>
@@ -77,6 +103,12 @@ export class NgaLayoutFooterComponent {
   `,
 })
 export class NgaLayoutComponent {
-  @Input() center;
+
+  centerValue: boolean = false;
+
+  @Input()
+  set center(val: boolean) {
+    this.centerValue = convertToBoolProperty(val);
+  }
   @ContentChild(NgaLayoutFooterComponent) footer;
 }
