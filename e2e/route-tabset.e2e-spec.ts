@@ -15,7 +15,7 @@ describe('nga-route-tabset', () => {
       .getText()).toEqual('Tab #2');
   });
 
-  it('should to change tabs of a route-tabset"', () => {
+  it('should change tabs of a route-tabset"', () => {
     const tab2 = by.css('nga-route-tabset:nth-child(1) > ul.nga-route-tabset > li:nth-child(2)');
 
     element(tab2).click()
@@ -34,14 +34,18 @@ describe('nga-route-tabset', () => {
   });
 
   it('should display a full-width route-tabset', () => {
-    expect(element(by.css('nga-route-tabset:nth-child(2) > ul.nga-route-tabset > li:nth-child(1)'))
+    const tab1 = by.css('nga-route-tabset:nth-child(2) > ul.nga-route-tabset > li:nth-child(1)');
+
+    expect(element(tab1)
       .getText()).toEqual('Tab #1');
 
-    expect(element(by.css('nga-route-tabset:nth-child(2) > ul.nga-route-tabset > li:nth-child(2)'))
+    const tab2 = by.css('nga-route-tabset:nth-child(2) > ul.nga-route-tabset > li:nth-child(2)');
+
+    expect(element(tab2)
       .getText()).toEqual('Tab #2');
   });
 
-  it('should to change tabs of a full-width route-tabset', () => {
+  it('should change tabs of a full-width route-tabset', () => {
     const tab2 = by.css('nga-route-tabset:nth-child(2) > ul.nga-route-tabset > li:nth-child(2)');
 
     element(tab2).click()
