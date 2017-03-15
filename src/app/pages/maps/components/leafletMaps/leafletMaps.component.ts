@@ -1,10 +1,10 @@
 import {Component, ElementRef} from '@angular/core';
 
 import 'leaflet-map';
+import 'style-loader!./leafletMaps.scss';
 
 @Component({
   selector: 'leaflet-maps',
-  styleUrls: ['./leafletMaps.scss'],
   templateUrl: './leafletMaps.html'
 })
 export class LeafletMaps {
