@@ -3,6 +3,7 @@
 @import '../layout/card/card.component.theme.scss';
 @import '../layout/tabset/tabset.component.theme.scss';
 @import '../layout/sidebar/sidebar.component.theme.scss';
+@import '../layout/route-tabset/route-tabset.component.theme.scss';
 
 // Create a theme
 @mixin nga-theme() {
@@ -10,4 +11,5 @@
   @include nga-sidebar-theme();
   @include nga-card-theme();
   @include nga-tabset-theme();
+  @include nga-route-tabset-theme();
 }

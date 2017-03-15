@@ -18,7 +18,6 @@ $nga-margin: 1rem !default;
 $nga-color-default: #3f4243 !default;
 $nga-color-inverse: white !default;
 
-$nga-color-default-dark: #464a4c !default;
 $nga-color-disabled: rgba(255, 255, 255, 0.4) !default;
 $nga-color-primary: #00abff !default;
 $nga-color-info: #40daf1 !default;
@@ -98,5 +97,11 @@ $nga-sidebar-padding: $nga-padding !default;
 $nga-tab-header-padding: 5px !default;
 $nga-tab-header-width: 100% !default;
 $nga-tab-header-radius: 7px !default;
-$nga-tab-header-active: #ffffff;
-$nga-tab-header-min-width: 100px;
+$nga-tab-header-active: #ffffff !default;
+$nga-tab-header-min-width: 100px !default;
+
+$nga-route-tab-header-padding: $nga-tab-header-padding !default;
+$nga-route-tab-header-width: $nga-tab-header-width !default;
+$nga-route-tab-header-radius: $nga-tab-header-radius !default;
+$nga-route-tab-header-active: $nga-tab-header-active !default;
+$nga-route-tab-header-min-width: $nga-tab-header-min-width !default;
