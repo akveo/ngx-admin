@@ -3,10 +3,10 @@
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  transition: width .2s;
+  transition: width 0.2s;
 
   > .scrollable {
-    transition: width .2s;
+    transition: width 0.2s;
   }
 
   order: 0;
@@ -33,8 +33,6 @@
 
   > .scrollable {
     overflow-y: auto;
-    top: 0;
-    bottom: 0;
   }
 
   /deep/ nga-sidebar-footer {

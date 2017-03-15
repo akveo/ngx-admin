@@ -11,9 +11,8 @@
         padding-bottom: $nga-footer-height;
 
         /deep/ nga-sidebar {
-          height: calc(#{$nga-sidebar-height} - #{$nga-footer-height});
           > .scrollable {
-            padding-bottom: $nga-footer-height;
+            height: calc(#{$nga-sidebar-height} - #{$nga-footer-height});
           }
         }
       }
@@ -35,19 +34,17 @@
         min-height: calc(#{$nga-layout-min-height} - #{$nga-header-height});
 
         /deep/ nga-sidebar {
-          height: calc(#{$nga-sidebar-height} - #{$nga-header-height});
 
           > .scrollable {
-            margin-top: $nga-header-height;
+            height: calc(#{$nga-sidebar-height} - #{$nga-header-height});
           }
         }
 
         &.with-footer {
           /deep/ nga-sidebar {
-            height: calc(#{$nga-sidebar-height} - #{$nga-header-height} - #{$nga-footer-height});
 
             > .scrollable {
-              padding-bottom: calc(#{$nga-header-height} + #{$nga-footer-height});
+              height: calc(#{$nga-sidebar-height} - #{$nga-header-height} - #{$nga-footer-height});
             }
           }
         }
@@ -55,10 +52,6 @@
       &.fixed + .main-container {
         min-height: $nga-layout-min-height;
         padding-top: $nga-header-height;
-
-        /deep/ nga-sidebar.fixed {
-          padding-top: $nga-header-height;
-        }
       }
     }
 

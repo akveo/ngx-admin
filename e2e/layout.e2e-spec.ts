@@ -25,7 +25,7 @@ describe('nga-layout', () => {
 
   it('should render left with flex: 1 1 auto', () => {
     element.all(by.css('#layout-fluid > div > nga-layout-column')).get(0).getCssValue('flex').then(value => {
-      expect(value).toMatch('1 1 auto');
+      expect(value).toMatch('1 0 0%');
     });
   });
 
@@ -37,7 +37,7 @@ describe('nga-layout', () => {
 
   it('should render center with flex: 3 1 auto', () => {
     element.all(by.css('#layout-fluid > div > nga-layout-column')).get(1).getCssValue('flex').then(value => {
-      expect(value).toMatch('3 1 auto');
+      expect(value).toMatch('3 0 0%');
     });
   });
 
@@ -49,7 +49,7 @@ describe('nga-layout', () => {
 
   it('should render right with flex: 1 1 auto', () => {
     element.all(by.css('#layout-fluid > div > nga-layout-column')).get(2).getCssValue('flex').then(value => {
-      expect(value).toMatch('1 1 auto');
+      expect(value).toMatch('1 0 0%');
     });
   });
 

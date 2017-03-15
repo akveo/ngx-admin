@@ -20,16 +20,20 @@ import { NgaSidebarComponent } from '../../framework/theme/src/layout/sidebar/si
       </nga-layout-header>
       
       <nga-sidebar state="collapsed" fixed #left>
-        Sidebar
       </nga-sidebar>
       
       <nga-sidebar right state="compacted" #right>
-        Small
+        {{ content }}
       </nga-sidebar>
       
+      <nga-layout-column left>
+       {{ content }}
+      </nga-layout-column>
       <nga-layout-column>
-       
-       Content
+       {{ content }}
+      </nga-layout-column>
+      <nga-layout-column right>
+       {{ content }}
       </nga-layout-column>
 
       
@@ -44,11 +48,21 @@ export class NgaSidebarTestComponent {
   @ViewChild('left') leftSidebar: NgaSidebarComponent;
   @ViewChild('right') rightSidebar: NgaSidebarComponent;
 
+  content = 'First ';
+
   collapseLeft(): void {
     this.leftSidebar.toggle();
   }
 
   collapseRight(): void {
     this.rightSidebar.toggle(true);
+  }
+
+  ngOnInit(): void {
+
+    for (let i = 0; i < 1000; i++) {
+      this.content += 'Akveo ';
+    }
+    this.content +=' Last';
   }
 }

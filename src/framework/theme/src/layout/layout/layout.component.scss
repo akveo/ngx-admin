@@ -33,16 +33,16 @@
 
   /deep/ nga-layout-column {
     order: 2;
-    flex: 3 auto;
+    flex: 3 0;
 
     &.left {
       order: 1;
-      flex: 1 auto;
+      flex: 1 0;
     }
 
     &.right {
       order: 3;
-      flex: 1 auto;
+      flex: 1 0;
     }
   }
 }

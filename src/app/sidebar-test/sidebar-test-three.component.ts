@@ -11,7 +11,7 @@ import { NgaSidebarComponent } from '../../framework/theme/src/layout/sidebar/si
     `
   ],
   template: `
-    <nga-layout >
+    <nga-layout>
     
       <nga-layout-header></nga-layout-header>
     

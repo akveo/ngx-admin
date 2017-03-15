@@ -6,14 +6,14 @@ describe('nga-sidebar-two', () => {
     browser.get('#/sidebar/two');
   });
 
-  it('should render right fixed sidebar height minus header  & footer', () => {
+  it('should render right fixed sidebar height minus header', () => {
     Promise.all([
       element(by.css('nga-layout')).getSize(),
       element(by.css('nga-layout-header')).getSize(),
       element(by.css('nga-layout-footer')).getSize(),
       element(by.css('nga-sidebar[fixed]')).getSize()
     ]).then(([layoutSize, headerSize, footerSize, sidebarSize]) => {
-      expect(sidebarSize.height).toEqual(layoutSize.height - headerSize.height - footerSize.height);
+      expect(sidebarSize.height).toEqual(layoutSize.height - headerSize.height);
     });
   });
 
