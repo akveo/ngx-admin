@@ -14,7 +14,7 @@
     "ngc": "node_modules/.bin/ngc",
     "start": "ng serve",
     "start:hmr": "ng serve --hmr --env=dev-hmr",
-    "start:aot": "start --aot",
+    "start:aot": "ng serve --aot",
     "build": "npm run clean:dist && ng build",
     "build:prod": "npm run build -- --prod",
     "build:prod:aot": "npm run build -- --aot",
