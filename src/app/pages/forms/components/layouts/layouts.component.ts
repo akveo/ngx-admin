@@ -3,7 +3,6 @@ import { NgUploaderOptions } from 'ngx-uploader';
 
 @Component({
   selector: 'layouts',
-  styles: [],
   templateUrl: './layouts.html',
 })
 export class Layouts {

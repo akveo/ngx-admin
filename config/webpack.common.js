@@ -1,5 +1,4 @@
 const webpack = require('webpack');
-const path = require('path');
 const helpers = require('./helpers');
 
 /*
@@ -162,9 +161,9 @@ module.exports = function (options) {
 
         {
           test: /initial\.scss$/,
-          loader: ExtractTextPlugin.extract({
-            fallbackLoader: 'style-loader',
-            loader: 'css-loader!sass-loader?sourceMap'
+          use: ExtractTextPlugin.extract({
+            fallback: 'style-loader',
+            use: 'css-loader!sass-loader?sourceMap'
           })
         },
 
@@ -271,7 +270,6 @@ module.exports = function (options) {
        */
       new CopyWebpackPlugin([
         {from: 'src/assets', to: 'assets'},
-        {from: 'node_modules/ckeditor', to: 'ckeditor'},
         {from: 'src/meta'}
       ]),
 

@@ -69,7 +69,7 @@ import { routing } from './new.routing';
     NewComponent
   ]
 })
-export default class NewModule {}
+export class NewModule {}
 ```
 <br>
 
@@ -124,8 +124,8 @@ const routes: Routes = [
     component: Pages,
     children: [
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
-      { path: 'dashboard', loadChildren: () => System.import('./dashboard/dashboard.module') },
-      { path: 'new',  loadChildren: () => System.import('./new/new.module') }
+      { path: 'dashboard', loadChildren: 'app/pages/dashboard/dashboard.module#DashboardModule' },
+      { path: 'new',  loadChildren: 'app/pages/new/new.module#NewModule' }
     ]
   }
 ];
