@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, OnInit } from '@angular/core';
 import { NgaSidebarComponent } from '../../framework/theme/src/layout/sidebar/sidebar.component';
 
 @Component({
@@ -8,7 +8,7 @@ import { NgaSidebarComponent } from '../../framework/theme/src/layout/sidebar/si
     :host /deep/ nga-layout-column {
       background-color: #76ecff;
     }
-    `
+    `,
   ],
   template: `
     <nga-layout>
@@ -43,26 +43,26 @@ import { NgaSidebarComponent } from '../../framework/theme/src/layout/sidebar/si
     </nga-layout>
 `,
 })
-export class NgaSidebarTestComponent {
+export class NgaSidebarTestComponent implements OnInit {
 
   @ViewChild('left') leftSidebar: NgaSidebarComponent;
   @ViewChild('right') rightSidebar: NgaSidebarComponent;
 
   content = 'First ';
 
-  collapseLeft(): void {
+  collapseLeft() {
     this.leftSidebar.toggle();
   }
 
-  collapseRight(): void {
+  collapseRight() {
     this.rightSidebar.toggle(true);
   }
 
-  ngOnInit(): void {
+  ngOnInit() {
 
     for (let i = 0; i < 1000; i++) {
       this.content += 'Akveo ';
     }
-    this.content +=' Last';
+    this.content += ' Last';
   }
 }

@@ -8,7 +8,7 @@ import { NgaSidebarComponent } from '../../framework/theme/src/layout/sidebar/si
     :host /deep/ nga-layout-column {
       background-color: #76ecff;
     }
-    `
+    `,
   ],
   template: `
     <nga-layout>

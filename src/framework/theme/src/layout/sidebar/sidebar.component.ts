@@ -98,9 +98,11 @@ export class NgaSidebarComponent {
   toggle(compact: boolean = false): void {
     const closedStates = [NgaSidebarComponent.STATE_COMPACTED, NgaSidebarComponent.STATE_COLLAPSED];
     if (compact) {
-      this.state = closedStates.indexOf(this.stateValue) >= 0 ? NgaSidebarComponent.STATE_EXPANDED : NgaSidebarComponent.STATE_COMPACTED;
+      this.state = closedStates.indexOf(this.stateValue) >= 0 ?
+        NgaSidebarComponent.STATE_EXPANDED : NgaSidebarComponent.STATE_COMPACTED;
     } else {
-      this.state = closedStates.indexOf(this.stateValue) >= 0 ? NgaSidebarComponent.STATE_EXPANDED : NgaSidebarComponent.STATE_COLLAPSED;
+      this.state = closedStates.indexOf(this.stateValue) >= 0 ?
+        NgaSidebarComponent.STATE_EXPANDED : NgaSidebarComponent.STATE_COLLAPSED;
     }
   }
 }

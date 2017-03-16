@@ -11,7 +11,7 @@ describe('nga-sidebar-two', () => {
       element(by.css('nga-layout')).getSize(),
       element(by.css('nga-layout-header')).getSize(),
       element(by.css('nga-layout-footer')).getSize(),
-      element(by.css('nga-sidebar[fixed]')).getSize()
+      element(by.css('nga-sidebar[fixed]')).getSize(),
     ]).then(([layoutSize, headerSize, footerSize, sidebarSize]) => {
       expect(sidebarSize.height).toEqual(layoutSize.height - headerSize.height);
     });
@@ -22,7 +22,7 @@ describe('nga-sidebar-two', () => {
       element(by.css('nga-layout')).getSize(),
       element(by.css('nga-layout-header')).getSize(),
       element(by.css('nga-layout-footer')).getSize(),
-      element.all(by.css('nga-sidebar')).get(0).getSize()
+      element.all(by.css('nga-sidebar')).get(0).getSize(),
     ]).then(([layoutSize, headerSize, footerSize, sidebarSize]) => {
       expect(sidebarSize.height).toEqual(layoutSize.height - headerSize.height - footerSize.height);
     });

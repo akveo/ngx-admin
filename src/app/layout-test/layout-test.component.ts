@@ -14,7 +14,7 @@ import { Component } from '@angular/core';
       background-color: #76ecff;
     }
     
-    `
+    `,
   ],
   template: `
     <nga-layout id="layout-fluid">
