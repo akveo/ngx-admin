@@ -25,7 +25,7 @@
     "test:coverage": "npm run clean:coverage && ng test -sr -cc",
     "lint": "ng lint",
     "lint:styles": "stylelint ./src/framework/**/*.scss",
-    "lint:ci": "npm-run-all -p -r lint lint:styles",
+    "lint:ci": "npm run lint && npm run lint:styles",
     "pree2e": "webdriver-manager update --standalone false --gecko false",
     "e2e": "ng e2e",
     "compodoc": "./node_modules/.bin/compodoc",
