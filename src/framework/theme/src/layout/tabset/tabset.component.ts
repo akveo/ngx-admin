@@ -6,8 +6,11 @@ import {
   ContentChildren,
   QueryList,
   AfterContentInit,
+  HostBinding,
 } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+
+import { convertToBoolProperty } from '../helpers';
 
 @Component({
   selector: 'nga-tab',
@@ -39,9 +42,17 @@ export class NgaTabComponent {
   `,
 })
 export class NgaTabsetComponent implements AfterContentInit {
+
   @ContentChildren(NgaTabComponent) tabs: QueryList<NgaTabComponent>;
 
+  @HostBinding('class.full-width') fullWidthValue: boolean = false;
+
   @Input() routes: boolean = false;
+
+  @Input()
+  set fullWidth(val: boolean) {
+    this.fullWidthValue = convertToBoolProperty(val);
+  }
 
   @Output() changeTab = new EventEmitter<any>();
 

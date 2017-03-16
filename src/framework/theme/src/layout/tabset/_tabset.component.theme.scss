@@ -4,7 +4,6 @@
 
     ul {
       &.nga-tabset {
-        width: $nga-tab-header-width;
         border-bottom: 1px solid $nga-color-default;
 
         li {
@@ -40,16 +39,6 @@
 
     /deep/ nga-tab {
       color: $nga-foreground;
-    }
-
-    &[full-width] {
-      ul {
-        &.nga-tabset {
-          li {
-            width: $nga-tab-header-width;
-          }
-        }
-      }
     }
   }
 }

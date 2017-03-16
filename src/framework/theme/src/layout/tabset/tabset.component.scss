@@ -34,4 +34,14 @@
       }
     }
   }
+
+  &.full-width {
+    ul {
+      &.nga-tabset {
+        li {
+          width: 100%;
+        }
+      }
+    }
+  }
 }

@@ -2,7 +2,6 @@
   /deep/ nga-route-tabset {
     ul {
       &.nga-route-tabset {
-        width: $nga-route-tab-header-width;
         border-bottom: 1px solid $nga-color-default;
       }
 
@@ -32,16 +31,6 @@
 
         &.active:hover {
           border-bottom-color: transparent;
-        }
-      }
-    }
-
-    &[full-width] {
-      ul {
-        &.nga-route-tabset {
-          li {
-            width: $nga-route-tab-header-width;
-          }
         }
       }
     }

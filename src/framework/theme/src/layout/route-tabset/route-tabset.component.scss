@@ -22,4 +22,14 @@
       }
     }
   }
+
+  &.full-width {
+    ul {
+      &.nga-route-tabset {
+        li {
+          width: 100%;
+        }
+      }
+    }
+  }
 }

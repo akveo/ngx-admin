@@ -1,5 +1,7 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, HostBinding } from '@angular/core';
 import { Router } from '@angular/router';
+
+import { convertToBoolProperty } from '../helpers';
 
 @Component({
   selector: 'nga-route-tabset',
@@ -18,7 +20,15 @@ import { Router } from '@angular/router';
   `,
 })
 export class NgaRouteTabsetComponent {
+
+  @HostBinding('class.full-width') fullWidthValue: boolean = false;
+
   @Input() tabs: Array<any>;
+
+  @Input()
+  set fullWidth(val: boolean) {
+    this.fullWidthValue = convertToBoolProperty(val);
+  }
 
   @Output() changeTab = new EventEmitter<any>();
 
@@ -30,4 +40,5 @@ export class NgaRouteTabsetComponent {
 
     this.router.navigate([tab.route]);
   }
+
 }

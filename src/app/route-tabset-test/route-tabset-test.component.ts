@@ -18,7 +18,7 @@ export class NgaRouteTabsetTestChild2Component {
   selector: 'nga-route-tabset-test',
   template: `
     <nga-route-tabset [tabs]="tabs"></nga-route-tabset>
-    <nga-route-tabset [tabs]="tabs" full-width></nga-route-tabset>
+    <nga-route-tabset [tabs]="tabs" fullWidth></nga-route-tabset>
   `,
 })
 export class NgaRouteTabsetTestComponent {

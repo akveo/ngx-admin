@@ -48,7 +48,7 @@ import { Router } from '@angular/router';
         <span>Content #3</span>
       </nga-tab>
     </nga-tabset>
-    <nga-tabset full-width>
+    <nga-tabset fullWidth>
       <nga-tab tabTitle="Tab #1">
         <span>Content #1</span>
       </nga-tab>
