@@ -112,6 +112,7 @@
     "import-destructuring-spacing": true,
     "templates-use-public": true,
     "no-access-missing-member": true,
-    "invoke-injectable": true
+    "invoke-injectable": true,
+    "space-in-parens": ["error", "never"]
   }
 }

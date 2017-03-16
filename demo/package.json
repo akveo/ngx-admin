@@ -40,7 +40,7 @@
     "zone.js": "0.7.7"
   },
   "devDependencies": {
-    "@angular/cli": "1.0.0-rc.1",
+    "@angular/cli": "1.0.0-rc.2",
     "@angular/compiler-cli": "2.4.9",
     "@types/jasmine": "2.5.38",
     "@types/node": "6.0.63",
@@ -57,8 +57,8 @@
     "rimraf": "2.6.1",
     "stylelint": "7.8.0",
     "ts-node": "2.0.0",
-    "tslint": "4.4.2",
-    "tslint-eslint-rules": "3.2.3",
+    "tslint": "4.5.1",
+    "tslint-eslint-rules": "3.4.0",
     "typescript": "2.0.10"
   }
 }
