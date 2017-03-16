@@ -9,59 +9,74 @@
 
     @include nga-scrollbars(0.4em, rgba(0, 0, 0, 0.6), rgba(255, 255, 255, 0.7));
 
-    &[small] {
+    &.small-card {
       /deep/ nga-card-body {
         height: $nga-card-height-small;
       }
     }
-    &[xsmall] {
+    &.xsmall-card {
       /deep/ nga-card-body {
         height: $nga-card-height-xsmall;
       }
     }
-    &[medium] {
+    &.medium-card {
       /deep/ nga-card-body {
         height: $nga-card-height-medium;
       }
     }
-    &[xmedium] {
+    &.xmedium-card {
       /deep/ nga-card-body {
         height: $nga-card-height-xmedium;
       }
     }
-    &[large] {
+    &.large-card {
       /deep/ nga-card-body {
         height: $nga-card-height-large;
       }
     }
 
-    &[default] /deep/ nga-card-header {
-      background-color: $nga-color-default;
-      border: $nga-color-default;
+    &.active-card {
+      /deep/ nga-card-header {
+        background-color: $nga-color-default;
+        border-bottom-color: $nga-color-default;
+        color: $nga-color-inverse;
+      }
     }
-    &[disabled] /deep/ nga-card-header {
-      background-color: $nga-color-disabled;
-      border: $nga-color-disabled;
+    &.disabled-card {
+      /deep/ nga-card-header {
+        background-color: $nga-color-disabled;
+        border-bottom-color: $nga-color-disabled;
+      }
     }
-    &[primary] /deep/ nga-card-header {
-      background-color: $nga-color-primary;
-      border: $nga-color-primary;
+    &.primary-card {
+      /deep/ nga-card-header {
+        background-color: $nga-color-primary;
+        border-bottom-color: $nga-color-primary;
+      }
     }
-    &[info] /deep/ nga-card-header {
-      background-color: $nga-color-info;
-      border: $nga-color-info;
+    &.info-card {
+      /deep/ nga-card-header {
+        background-color: $nga-color-info;
+        border-bottom-color: $nga-color-info;
+      }
     }
-    &[success] /deep/ nga-card-header {
-      background-color: $nga-color-success;
-      border: $nga-color-success;
+    &.success-card {
+      /deep/ nga-card-header {
+        background-color: $nga-color-success;
+        border-bottom-color: $nga-color-success;
+      }
     }
-    &[warning] /deep/ nga-card-header {
-      background-color: $nga-color-warning;
-      border: $nga-color-warning;
+    &.warning-card {
+      /deep/ nga-card-header {
+        background-color: $nga-color-warning;
+        border-bottom-color: $nga-color-warning;
+      }
     }
-    &[danger] /deep/ nga-card-header {
-      background-color: $nga-color-danger;
-      border: $nga-color-danger;
+    &.danger-card {
+      /deep/ nga-card-header {
+        background-color: $nga-color-danger;
+        border-bottom-color: $nga-color-danger;
+      }
     }
 
     /deep/ nga-card-body {

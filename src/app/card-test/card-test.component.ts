@@ -14,7 +14,7 @@ import { Component } from '@angular/core';
         <span>Footer</span>
       </nga-card-footer>
     </nga-card>
-    <nga-card small>
+    <nga-card size="small">
       <nga-card-header>
         <span>Header</span>
       </nga-card-header>
@@ -25,7 +25,7 @@ import { Component } from '@angular/core';
         <span>Footer</span>
       </nga-card-footer>
     </nga-card>
-    <nga-card xsmall>
+    <nga-card size="xsmall">
       <nga-card-header>
         <span>Header</span>
       </nga-card-header>
@@ -36,7 +36,7 @@ import { Component } from '@angular/core';
         <span>Footer</span>
       </nga-card-footer>
     </nga-card>
-    <nga-card medium>
+    <nga-card size="medium">
       <nga-card-header>
         <span>Header</span>
       </nga-card-header>
@@ -47,7 +47,7 @@ import { Component } from '@angular/core';
         <span>Footer</span>
       </nga-card-footer>
     </nga-card>
-    <nga-card xmedium>
+    <nga-card size="xmedium">
       <nga-card-header>
         <span>Header</span>
       </nga-card-header>
@@ -58,7 +58,7 @@ import { Component } from '@angular/core';
         <span>Footer</span>
       </nga-card-footer>
     </nga-card>
-    <nga-card large>
+    <nga-card size="large">
       <nga-card-header>
         <span>Header</span>
       </nga-card-header>
@@ -69,7 +69,7 @@ import { Component } from '@angular/core';
         <span>Footer</span>
       </nga-card-footer>
     </nga-card>
-    <nga-card primary>
+    <nga-card status="primary">
       <nga-card-header>
         <span>Header</span>
       </nga-card-header>
@@ -80,7 +80,7 @@ import { Component } from '@angular/core';
         <span>Footer</span>
       </nga-card-footer>
     </nga-card>
-    <nga-card success>
+    <nga-card status="success">
       <nga-card-header>
         <span>Header</span>
       </nga-card-header>
@@ -91,7 +91,7 @@ import { Component } from '@angular/core';
         <span>Footer</span>
       </nga-card-footer>
     </nga-card>
-    <nga-card info>
+    <nga-card status="info">
       <nga-card-header>
         <span>Header</span>
       </nga-card-header>
@@ -102,7 +102,7 @@ import { Component } from '@angular/core';
         <span>Footer</span>
       </nga-card-footer>
     </nga-card>
-    <nga-card warning>
+    <nga-card status="warning">
       <nga-card-header>
         <span>Header</span>
       </nga-card-header>
@@ -113,7 +113,40 @@ import { Component } from '@angular/core';
         <span>Footer</span>
       </nga-card-footer>
     </nga-card>
-    <nga-card danger>
+    <nga-card status="danger">
+      <nga-card-header>
+        <span>Header</span>
+      </nga-card-header>
+      <nga-card-body>
+        <span>Body</span>
+      </nga-card-body>
+      <nga-card-footer>
+        <span>Footer</span>
+      </nga-card-footer>
+    </nga-card>
+    <nga-card status="active">
+      <nga-card-header>
+        <span>Header</span>
+      </nga-card-header>
+      <nga-card-body>
+        <span>Body</span>
+      </nga-card-body>
+      <nga-card-footer>
+        <span>Footer</span>
+      </nga-card-footer>
+    </nga-card>
+    <nga-card status="disabled">
+      <nga-card-header>
+        <span>Header</span>
+      </nga-card-header>
+      <nga-card-body>
+        <span>Body</span>
+      </nga-card-body>
+      <nga-card-footer>
+        <span>Footer</span>
+      </nga-card-footer>
+    </nga-card>
+    <nga-card *ngFor="let card of cards" [size]="card.size" [status]="card.status">
       <nga-card-header>
         <span>Header</span>
       </nga-card-header>
@@ -127,4 +160,28 @@ import { Component } from '@angular/core';
   `,
 })
 export class NgaCardTestComponent {
+
+  sizes = ['small', 'xsmall', 'medium', 'xmedium', 'large'];
+  statuses = ['primary', 'success', 'info', 'warning', 'danger', 'active', 'disabled'];
+
+  cards: Array<any>;
+
+  constructor() {
+    this.cards = this.prepareCards();
+  }
+
+  private prepareCards(): Array<any> {
+    const result = [];
+
+    this.statuses.forEach(status => {
+      this.sizes.forEach(size => {
+        result.push({
+          size: size,
+          status: status,
+        });
+      });
+    });
+
+    return result;
+  }
 }
