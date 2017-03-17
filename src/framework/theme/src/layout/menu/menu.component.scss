@@ -1,0 +1,35 @@
+:host {
+  /deep/ ul {
+    list-style-type: none;
+    padding: 0;
+    transition: height 10s ease;
+    height: 100%;
+
+    li {
+      a {
+        display: flex;
+        flex-direction: row;
+        text-decoration: none;
+        font-size: 1rem;
+        line-height: 1rem;
+
+        i:first-child {
+          margin-right: 10px;
+        }
+
+        i {
+          display: block;
+        }
+
+        span {
+          display: block;
+          flex: 1;
+        }
+      }
+    }
+
+    &.submenu-hidden {
+      height: 0;
+    }
+  }
+}

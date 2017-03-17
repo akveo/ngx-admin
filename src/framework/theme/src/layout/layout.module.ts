@@ -35,6 +35,9 @@ import {
 // nga-route-tabset
 import { NgaRouteTabsetComponent } from './route-tabset/route-tabset.component';
 
+// nga-menu
+import { NgaMenuComponent, NgaMenuItemComponent } from './menu/menu.component';
+
 const NGA_LAYOUT_COMPONENTS = [
   NgaCardComponent,
   NgaCardHeaderComponent,
@@ -51,6 +54,8 @@ const NGA_LAYOUT_COMPONENTS = [
   NgaTabsetComponent,
   NgaTabComponent,
   NgaRouteTabsetComponent,
+  NgaMenuComponent,
+  NgaMenuItemComponent,
 ];
 
 @NgModule({

@@ -1,0 +1,24 @@
+@mixin nga-menu-theme() {
+  /deep/ nga-menu {
+    /deep/ ul {
+      li {
+        a {
+          color: $nga-color-default;
+          transition: color 0.2s ease;
+        }
+
+        a:hover {
+          color: $nga-color-primary;
+        }
+
+        &.active {
+          background: $nga-color-default;
+
+          a {
+            color: $nga-color-inverse;
+          }
+        }
+      }
+    }
+  }
+}

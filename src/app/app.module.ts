@@ -23,6 +23,8 @@ import { NgaSidebarTestOneComponent } from './sidebar-test/sidebar-test-one.comp
 import { NgaSidebarTestTwoComponent } from './sidebar-test/sidebar-test-two.component';
 import { NgaSidebarTestThreeComponent } from './sidebar-test/sidebar-test-three.component';
 
+import { NgaMenuTestComponent } from './menu-test/menu-test.component';
+
 import { routes } from './app.routes';
 
 @NgModule({
@@ -40,6 +42,7 @@ import { routes } from './app.routes';
     NgaRouteTabsetTestComponent,
     NgaRouteTabsetTestChild1Component,
     NgaRouteTabsetTestChild2Component,
+    NgaMenuTestComponent,
   ],
   imports: [
     BrowserModule,
