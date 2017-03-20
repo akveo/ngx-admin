@@ -2,7 +2,6 @@
   /deep/ ul {
     list-style-type: none;
     padding: 0;
-    transition: height 10s ease;
     height: 100%;
 
     li {
@@ -26,10 +25,6 @@
           flex: 1;
         }
       }
-    }
-
-    &.submenu-hidden {
-      height: 0;
     }
   }
 }

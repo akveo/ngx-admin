@@ -12,29 +12,37 @@ export class NgaMenuItem {
   expanded?: boolean = false;
   selected?: boolean = false;
   children?: Array<NgaMenuItem>;
+  target?: string;
+  hidden?: boolean = false;
 }
 
 @Component({
   selector: 'nga-menu-item',
   template: `
-    <li [ngClass]="{ 'active': menuItem.selected && !menuItem.expanded }">
+    <li [ngClass]="{ 'active': menuItem.selected && !menuItem.expanded }"
+        [title]="menuItem.title"
+        [hidden]="menuItem.hidden">
       <a href [hidden]="menuItem.children" 
               [href]="menuItem.url" 
+              [target]="menuItem.target"
               (mouseenter)="onHoverItem(menuItem)">
         <i class="{{ menuItem.icon }}" *ngIf="menuItem.icon"></i>
         <span>{{ menuItem.title }}</span>      
       </a>
       <a href *ngIf="menuItem.children"
-              (click)="onToogleSubMenu($event, menuItem)"
+              (click)="$event.preventDefault();onToogleSubMenu(menuItem)"
+              [target]="menuItem.target"
               (mouseenter)="onHoverItem(menuItem)">
         <i class="{{ menuItem.icon }}" *ngIf="menuItem.icon"></i>
         <span>{{ menuItem.title }}</span>
         <i class="ion" [ngClass]="{ 'ion-chevron-down': !menuItem.expanded, 
                                     'ion-chevron-up': menuItem.expanded }"></i>
       </a>
-      <nga-menu [menuItems]="menuItem.children" 
-                *ngIf="menuItem.children && menuItem.expanded" 
-                [ngClass]="{ 'submenu-hidden': !menuItem.expanded }"></nga-menu>
+      <ul *ngIf="menuItem.children && menuItem.expanded">
+        <nga-menu-item [menuItem]="item" *ngFor="let item of menuItem.children" 
+                       (hoverItem)="onHoverItem($event)" 
+                       (toogleSubMenu)="onToogleSubMenu($event)"></nga-menu-item>
+      </ul>
     </li>
   `,
 })
@@ -45,11 +53,7 @@ export class NgaMenuItemComponent {
   @Output() hoverItem = new EventEmitter<any>();
   @Output() toogleSubMenu = new EventEmitter<any>();
 
-  onToogleSubMenu($event, menuItem: NgaMenuItem) {
-    $event.preventDefault();
-
-    menuItem.expanded = !menuItem.expanded;
-
+  onToogleSubMenu(menuItem: NgaMenuItem) {
     this.toogleSubMenu.emit(menuItem);
   }
 
@@ -78,12 +82,14 @@ export class NgaMenuComponent {
   @Output() hoverItem = new EventEmitter<any>();
   @Output() toogleSubMenu = new EventEmitter<any>();
 
-  onHoverItem($event) {
-    this.hoverItem = $event;
+  onHoverItem(menuItem: NgaMenuItem) {
+    this.hoverItem.emit(menuItem);
   }
 
-  onToogleSubMenu($event) {
-    this.toogleSubMenu = $event;
+  onToogleSubMenu(menuItem: NgaMenuItem) {
+    menuItem.expanded = !menuItem.expanded;
+
+    this.toogleSubMenu.emit(menuItem);
   }
 
 }
