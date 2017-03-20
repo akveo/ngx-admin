@@ -2,9 +2,11 @@
   /deep/ ul {
     list-style-type: none;
     padding: 0;
-    height: 100%;
+    transition: opacity 0.5s ease-out;
 
     li {
+      padding: 5px 5px 5px 0;
+
       a {
         display: flex;
         flex-direction: row;
@@ -25,6 +27,14 @@
           flex: 1;
         }
       }
+    }
+
+    &.menu-hidden {
+      opacity: 0;
+    }
+
+    &.menu-visible {
+      opacity: 1;
     }
   }
 }

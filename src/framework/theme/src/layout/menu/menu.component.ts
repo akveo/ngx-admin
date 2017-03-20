@@ -21,8 +21,8 @@ export class NgaMenuItem {
   template: `
     <li [ngClass]="{ 'active': menuItem.selected && !menuItem.expanded }"
         [title]="menuItem.title"
-        [hidden]="menuItem.hidden">
-      <a href [hidden]="menuItem.children" 
+        *ngIf="!menuItem.hidden">
+      <a href *ngIf="!menuItem.children" 
               [href]="menuItem.url" 
               [target]="menuItem.target"
               (mouseenter)="onHoverItem(menuItem)">
@@ -38,7 +38,8 @@ export class NgaMenuItem {
         <i class="ion" [ngClass]="{ 'ion-chevron-down': !menuItem.expanded, 
                                     'ion-chevron-up': menuItem.expanded }"></i>
       </a>
-      <ul *ngIf="menuItem.children && menuItem.expanded">
+      <ul [ngClass]="{ 'menu-hidden': !(menuItem.children && menuItem.expanded), 
+                       'menu-visible': menuItem.expanded }">
         <nga-menu-item [menuItem]="item" *ngFor="let item of menuItem.children" 
                        (hoverItem)="onHoverItem($event)" 
                        (toogleSubMenu)="onToogleSubMenu($event)"></nga-menu-item>
