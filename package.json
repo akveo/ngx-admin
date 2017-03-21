@@ -101,7 +101,7 @@
     "style-loader": "0.13.1",
     "to-string-loader": "1.1.5",
     "ts-helpers": "1.1.2",
-    "ts-node": "2.1.0",
+    "ts-node": "2.1.1",
     "tslint": "4.4.2",
     "typedoc": "0.5.6",
     "typescript": "2.0.10",
