@@ -1,3 +1,8 @@
+/**
+ * @license
+ * Copyright Akveo. All Rights Reserved.
+ * Licensed under the MIT License. See License.txt in the project root for license information.
+ */
 //$nga-background: linear-gradient(#6592e0, #564ece);
 //$nga-foreground: white;
 //
@@ -17,7 +22,8 @@
 //$nga-card-separator: red;
 
 
-@import '../framework/theme/src/styles/themes/nga.theme.default.scss';
+@import '../framework/theme/styles/themes/nga.theme.default';
+
 :host {
   @include nga-theme();
 }

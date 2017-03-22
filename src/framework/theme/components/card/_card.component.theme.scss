@@ -1,0 +1,107 @@
+/**
+ * @license
+ * Copyright Akveo. All Rights Reserved.
+ * Licensed under the MIT License. See License.txt in the project root for license information.
+ */
+@mixin nga-card-theme() {
+  /deep/ nga-card {
+    background: $nga-card-background;
+    color: $nga-card-foreground;
+    margin-bottom: $nga-card-padding;
+    border-radius: $nga-card-border-radius;
+    box-shadow: 1px 1px 4px $nga-card-shadow;
+    font-weight: $nga-font-weight-normal;
+
+    @include nga-scrollbars(0.4em, rgba(0, 0, 0, 0.6), rgba(255, 255, 255, 0.7));
+
+    &.small-card {
+      /deep/ nga-card-body {
+        height: $nga-card-height-small;
+      }
+    }
+    &.xsmall-card {
+      /deep/ nga-card-body {
+        height: $nga-card-height-xsmall;
+      }
+    }
+    &.medium-card {
+      /deep/ nga-card-body {
+        height: $nga-card-height-medium;
+      }
+    }
+    &.xmedium-card {
+      /deep/ nga-card-body {
+        height: $nga-card-height-xmedium;
+      }
+    }
+    &.large-card {
+      /deep/ nga-card-body {
+        height: $nga-card-height-large;
+      }
+    }
+
+    &.active-card {
+      /deep/ nga-card-header {
+        background-color: $nga-color-default;
+        border-bottom-color: $nga-color-default;
+        color: $nga-color-inverse;
+      }
+    }
+    &.disabled-card {
+      /deep/ nga-card-header {
+        background-color: $nga-color-disabled;
+        border-bottom-color: $nga-color-disabled;
+      }
+    }
+    &.primary-card {
+      /deep/ nga-card-header {
+        background-color: $nga-color-primary;
+        border-bottom-color: $nga-color-primary;
+      }
+    }
+    &.info-card {
+      /deep/ nga-card-header {
+        background-color: $nga-color-info;
+        border-bottom-color: $nga-color-info;
+      }
+    }
+    &.success-card {
+      /deep/ nga-card-header {
+        background-color: $nga-color-success;
+        border-bottom-color: $nga-color-success;
+      }
+    }
+    &.warning-card {
+      /deep/ nga-card-header {
+        background-color: $nga-color-warning;
+        border-bottom-color: $nga-color-warning;
+      }
+    }
+    &.danger-card {
+      /deep/ nga-card-header {
+        background-color: $nga-color-danger;
+        border-bottom-color: $nga-color-danger;
+      }
+    }
+
+    /deep/ nga-card-body {
+      padding: $nga-card-padding;
+    }
+
+    /deep/ nga-card-footer {
+      padding: $nga-card-padding;
+      border-bottom-left-radius: $nga-card-border-radius;
+      border-bottom-right-radius: $nga-card-border-radius;
+    }
+
+    /deep/ nga-card-header {
+      padding: $nga-card-padding;
+      border-bottom: 1px solid $nga-card-separator;
+      border-top-left-radius: $nga-card-border-radius;
+      border-top-right-radius: $nga-card-border-radius;
+      font-weight: $nga-font-weight-normal;
+
+      @include nga-headings();
+    }
+  }
+}

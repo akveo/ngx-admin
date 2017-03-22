@@ -1,5 +1,10 @@
+/**
+ * @license
+ * Copyright Akveo. All Rights Reserved.
+ * Licensed under the MIT License. See License.txt in the project root for license information.
+ */
 import { Component, ViewChild, OnInit } from '@angular/core';
-import { NgaSidebarComponent } from '../../framework/theme/src/layout/sidebar/sidebar.component';
+import { NgaSidebarComponent } from '../../framework/theme/components/sidebar/sidebar.component';
 
 @Component({
   selector: 'nga-sidebar-test',
@@ -12,20 +17,20 @@ import { NgaSidebarComponent } from '../../framework/theme/src/layout/sidebar/si
   ],
   template: `
     <nga-layout>
-      <nga-layout-header>
+      <nga-layout-header fixed>
         <a href="#" class="navbar-brand">Akveo</a>
-        
+
         <button id="collapse-left" (click)="collapseLeft()">Collapse Left</button>
         <button id="collapse-right" (click)="collapseRight()">Collapse Right</button>
       </nga-layout-header>
-      
+
       <nga-sidebar state="collapsed" fixed #left>
       </nga-sidebar>
-      
+
       <nga-sidebar right state="compacted" #right>
         {{ content }}
       </nga-sidebar>
-      
+
       <nga-layout-column left>
        {{ content }}
       </nga-layout-column>
@@ -36,7 +41,7 @@ import { NgaSidebarComponent } from '../../framework/theme/src/layout/sidebar/si
        {{ content }}
       </nga-layout-column>
 
-      
+
       <nga-layout-footer>
         &copy; Akveo 2017
       </nga-layout-footer>

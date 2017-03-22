@@ -1,0 +1,22 @@
+/**
+ * @license
+ * Copyright Akveo. All Rights Reserved.
+ * Licensed under the MIT License. See License.txt in the project root for license information.
+ */
+@import '../components/layout/layout.component.theme';
+@import '../components/sidebar/sidebar.component.theme';
+@import '../components/card/card.component.theme';
+@import '../components/tabset/tabset.component.theme';
+@import '../components/sidebar/sidebar.component.theme';
+@import '../components/route-tabset/route-tabset.component.theme';
+@import '../components/menu/menu.component.theme';
+
+// Create a theme
+@mixin nga-theme() {
+  @include nga-layout-theme();
+  @include nga-sidebar-theme();
+  @include nga-card-theme();
+  @include nga-tabset-theme();
+  @include nga-route-tabset-theme();
+  @include nga-menu-theme();
+}

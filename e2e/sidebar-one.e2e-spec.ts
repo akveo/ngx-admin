@@ -1,3 +1,8 @@
+/**
+ * @license
+ * Copyright Akveo. All Rights Reserved.
+ * Licensed under the MIT License. See License.txt in the project root for license information.
+ */
 import { browser, element, by } from 'protractor';
 
 describe('nga-sidebar-one', () => {
@@ -29,7 +34,7 @@ describe('nga-sidebar-one', () => {
 
   it('should render right sidebar at right', () => {
     element(by.css('nga-sidebar[right]')).getCssValue('order').then(value => {
-      expect(value).toMatch('4');
+      expect(value).toMatch('2');
     });
   });
 

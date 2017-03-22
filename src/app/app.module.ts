@@ -1,3 +1,8 @@
+/**
+ * @license
+ * Copyright Akveo. All Rights Reserved.
+ * Licensed under the MIT License. See License.txt in the project root for license information.
+ */
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -5,6 +10,12 @@ import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 
 import { NgaThemeModule } from '../framework/theme';
+import { NgaCardModule } from '../framework/theme/components/card/card.module';
+import { NgaLayoutModule } from '../framework/theme/components/layout/layout.module';
+import { NgaMenuModule } from '../framework/theme/components/menu/menu.module';
+import { NgaRouteTabsetModule } from '../framework/theme/components/route-tabset/route-tabset.module';
+import { NgaSidebarModule } from '../framework/theme/components/sidebar/sidebar.module';
+import { NgaTabsetModule } from '../framework/theme/components/tabset/tabset.module';
 
 import { AppComponent } from './app.component';
 import { NgaCardTestComponent } from './card-test/card-test.component';
@@ -28,6 +39,19 @@ import { NgaMenuTestComponent } from './menu-test/menu-test.component';
 import { routes } from './app.routes';
 
 @NgModule({
+  imports: [
+    BrowserModule,
+    FormsModule,
+    HttpModule,
+    RouterModule.forRoot(routes, { useHash: true }),
+    NgaThemeModule.forRoot(),
+    NgaCardModule,
+    NgaLayoutModule,
+    NgaMenuModule,
+    NgaRouteTabsetModule,
+    NgaSidebarModule,
+    NgaTabsetModule,
+  ],
   declarations: [
     AppComponent,
     NgaCardTestComponent,
@@ -43,13 +67,6 @@ import { routes } from './app.routes';
     NgaRouteTabsetTestChild1Component,
     NgaRouteTabsetTestChild2Component,
     NgaMenuTestComponent,
-  ],
-  imports: [
-    BrowserModule,
-    FormsModule,
-    HttpModule,
-    RouterModule.forRoot(routes, { useHash: true }),
-    NgaThemeModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent],

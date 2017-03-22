@@ -1,6 +1,11 @@
+/**
+ * @license
+ * Copyright Akveo. All Rights Reserved.
+ * Licensed under the MIT License. See License.txt in the project root for license information.
+ */
 import { Component } from '@angular/core';
 
-import { NgaMenuItem } from '../../framework/theme/src/layout/menu/menu.component';
+import { NgaMenuItem } from '../../framework/theme/components/menu/menu.component';
 
 @Component({
   selector: 'nga-menu-test',

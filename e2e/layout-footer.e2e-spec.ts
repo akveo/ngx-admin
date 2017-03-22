@@ -1,3 +1,8 @@
+/**
+ * @license
+ * Copyright Akveo. All Rights Reserved.
+ * Licensed under the MIT License. See License.txt in the project root for license information.
+ */
 import { browser, element, by } from 'protractor';
 
 describe('nga-layout-footer', () => {
@@ -20,7 +25,7 @@ describe('nga-layout-footer', () => {
 
   it('should have height', () => {
     element(by.css('nga-layout-footer nav')).getCssValue('height').then(value => {
-      expect(value).toEqual('80px');
+      expect(value).toEqual('40px');
     });
   });
 
@@ -33,12 +38,6 @@ describe('nga-layout-footer', () => {
   it('should align items vertically', () => {
     element(by.css('nga-layout-footer nav')).getCssValue('justify-content').then(value => {
       expect(value).toEqual('center');
-    });
-  });
-
-  it('should add padding to body', () => {
-    element(by.css('nga-layout > .main-container')).getCssValue('padding-bottom').then(value => {
-      expect(value).toEqual('80px');
     });
   });
 

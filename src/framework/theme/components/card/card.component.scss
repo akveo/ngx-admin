@@ -1,0 +1,28 @@
+/**
+ * @license
+ * Copyright Akveo. All Rights Reserved.
+ * Licensed under the MIT License. See License.txt in the project root for license information.
+ */
+:host {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+
+  /deep/ nga-card-body {
+    display: block;
+    overflow: auto;
+    flex: 1;
+  }
+
+  /deep/ nga-card-footer {
+    display: block;
+  }
+
+  /deep/ nga-card-header {
+    display: block;
+    font-size: 1rem;
+    line-height: 1rem;
+    text-transform: uppercase;
+    opacity: 0.9;
+  }
+}

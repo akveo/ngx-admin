@@ -1,5 +1,10 @@
+/**
+ * @license
+ * Copyright Akveo. All Rights Reserved.
+ * Licensed under the MIT License. See License.txt in the project root for license information.
+ */
 import { Component, ViewChild } from '@angular/core';
-import { NgaSidebarComponent } from '../../framework/theme/src/layout/sidebar/sidebar.component';
+import { NgaSidebarComponent } from '../../framework/theme/components/sidebar/sidebar.component';
 
 @Component({
   selector: 'nga-sidebar-test-one',
@@ -12,19 +17,19 @@ import { NgaSidebarComponent } from '../../framework/theme/src/layout/sidebar/si
   ],
   template: `
     <nga-layout>
-    
+
       <nga-layout-header></nga-layout-header>
-    
+
       <nga-sidebar>
         Left
       </nga-sidebar>
-      
+
       <nga-sidebar right fixed>
         Right
       </nga-sidebar>
-      
+
       <nga-layout-footer></nga-layout-footer>
-      
+
     </nga-layout>
 `,
 })

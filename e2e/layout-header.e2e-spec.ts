@@ -1,3 +1,8 @@
+/**
+ * @license
+ * Copyright Akveo. All Rights Reserved.
+ * Licensed under the MIT License. See License.txt in the project root for license information.
+ */
 import { browser, element, by } from 'protractor';
 
 describe('nga-layout-header', () => {
@@ -14,13 +19,13 @@ describe('nga-layout-header', () => {
 
   it('should stick fixed header', () => {
     element(by.css('nga-layout-header[fixed]')).getCssValue('position').then(value => {
-      expect(value).toEqual('static');
+      expect(value).toEqual('fixed');
     });
   });
 
   it('should have height', () => {
     element(by.css('nga-layout-header nav')).getCssValue('height').then(value => {
-      expect(value).toEqual('56px');
+      expect(value).toEqual('54px');
     });
   });
 

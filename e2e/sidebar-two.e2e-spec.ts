@@ -1,3 +1,8 @@
+/**
+ * @license
+ * Copyright Akveo. All Rights Reserved.
+ * Licensed under the MIT License. See License.txt in the project root for license information.
+ */
 import { browser, element, by } from 'protractor';
 
 describe('nga-sidebar-two', () => {
@@ -6,25 +11,21 @@ describe('nga-sidebar-two', () => {
     browser.get('#/sidebar/two');
   });
 
-  it('should render right fixed sidebar height minus header', () => {
+  it('should render right fixed sidebar height layout', () => {
     Promise.all([
       element(by.css('nga-layout')).getSize(),
-      element(by.css('nga-layout-header')).getSize(),
-      element(by.css('nga-layout-footer')).getSize(),
       element(by.css('nga-sidebar[fixed]')).getSize(),
-    ]).then(([layoutSize, headerSize, footerSize, sidebarSize]) => {
-      expect(sidebarSize.height).toEqual(layoutSize.height - headerSize.height);
+    ]).then(([layoutSize, sidebarSize]) => {
+      expect(sidebarSize.height).toEqual(layoutSize.height);
     });
   });
 
-  it('should render left non-fixed sidebar height minus header & footer', () => {
+  it('should render left non-fixed sidebar height layout', () => {
     Promise.all([
       element(by.css('nga-layout')).getSize(),
-      element(by.css('nga-layout-header')).getSize(),
-      element(by.css('nga-layout-footer')).getSize(),
       element.all(by.css('nga-sidebar')).get(0).getSize(),
-    ]).then(([layoutSize, headerSize, footerSize, sidebarSize]) => {
-      expect(sidebarSize.height).toEqual(layoutSize.height - headerSize.height - footerSize.height);
+    ]).then(([layoutSize, sidebarSize]) => {
+      expect(sidebarSize.height).toEqual(layoutSize.height);
     });
   });
 

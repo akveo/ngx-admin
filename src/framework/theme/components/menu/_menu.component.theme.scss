@@ -1,0 +1,29 @@
+/**
+ * @license
+ * Copyright Akveo. All Rights Reserved.
+ * Licensed under the MIT License. See License.txt in the project root for license information.
+ */
+@mixin nga-menu-theme() {
+  /deep/ nga-menu {
+    /deep/ ul {
+      li {
+        a {
+          color: $nga-color-default;
+          transition: color 0.2s ease;
+        }
+
+        a:hover {
+          color: $nga-color-primary;
+        }
+
+        &.active {
+          background: $nga-color-default;
+
+          a {
+            color: $nga-color-inverse;
+          }
+        }
+      }
+    }
+  }
+}
