@@ -43,7 +43,7 @@ Yes!  Visit [our homepage](http://akveo.com/) or simply leave us a note to [cont
 * Maps (Google, Leaflet, amMap)
 * and many more!
 
-##License
+## License
 [MIT](LICENSE.txt) license.
 
 ### From akveo
