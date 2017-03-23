@@ -3,8 +3,10 @@
  * Copyright Akveo. All Rights Reserved.
  * Licensed under the MIT License. See License.txt in the project root for license information.
  */
-import { Component, ViewChild, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+
 import { NgaSidebarComponent } from '../../framework/theme/components/sidebar/sidebar.component';
+import { NgaSidebarService } from '../../framework/theme/components/sidebar/sidebar.service';
 
 @Component({
   selector: 'nga-sidebar-test',
@@ -24,10 +26,10 @@ import { NgaSidebarComponent } from '../../framework/theme/components/sidebar/si
         <button id="collapse-right" (click)="collapseRight()">Collapse Right</button>
       </nga-layout-header>
 
-      <nga-sidebar state="collapsed" fixed #left>
+      <nga-sidebar state="collapsed" fixed tag="left">
       </nga-sidebar>
 
-      <nga-sidebar right state="compacted" #right>
+      <nga-sidebar right state="compacted" tag="right">
         {{ content }}
       </nga-sidebar>
 
@@ -50,17 +52,16 @@ import { NgaSidebarComponent } from '../../framework/theme/components/sidebar/si
 })
 export class NgaSidebarTestComponent implements OnInit {
 
-  @ViewChild('left') leftSidebar: NgaSidebarComponent;
-  @ViewChild('right') rightSidebar: NgaSidebarComponent;
-
   content = 'First ';
 
+  constructor(private sidebarService: NgaSidebarService) { }
+
   collapseLeft() {
-    this.leftSidebar.toggle();
+    this.sidebarService.toggle(false, 'left');
   }
 
   collapseRight() {
-    this.rightSidebar.toggle(true);
+    this.sidebarService.toggle(true, 'right');
   }
 
   ngOnInit() {

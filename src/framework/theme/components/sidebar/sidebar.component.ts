@@ -3,8 +3,10 @@
  * Copyright Akveo. All Rights Reserved.
  * Licensed under the MIT License. See License.txt in the project root for license information.
  */
-import { Component, HostBinding, Input } from '@angular/core';
+import { Component, HostBinding, Input, OnInit } from '@angular/core';
 import { convertToBoolProperty } from '../helpers';
+
+import { NgaSidebarService } from './sidebar.service';
 
 @Component({
   selector: 'nga-sidebar-header',
@@ -46,7 +48,7 @@ export class NgaSidebarFooterComponent {
     </div>
   `,
 })
-export class NgaSidebarComponent {
+export class NgaSidebarComponent implements OnInit {
 
   static readonly STATE_EXPANDED: string = 'expanded';
   static readonly STATE_COLLAPSED: string = 'collapsed';
@@ -86,6 +88,30 @@ export class NgaSidebarComponent {
   @Input()
   set state(val: string) {
     this.stateValue = val;
+  }
+
+  @Input() tag: string;
+
+  constructor(private sidebarService: NgaSidebarService) { }
+
+  ngOnInit() {
+    this.sidebarService.toggle$.subscribe((data: any) => {
+      if (!this.tag || this.tag === data.tag) {
+        this.toggle(data.compact);
+      }
+    });
+
+    this.sidebarService.expand$.subscribe((data: any) => {
+      if (!this.tag || this.tag === data.tag) {
+        this.expand();
+      }
+    });
+
+    this.sidebarService.collapse$.subscribe((data: any) => {
+      if (!this.tag || this.tag === data.tag) {
+        this.collapse();
+      }
+    });
   }
 
   collapse(): void {

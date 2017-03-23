@@ -3,7 +3,7 @@
  * Copyright Akveo. All Rights Reserved.
  * Licensed under the MIT License. See License.txt in the project root for license information.
  */
-import { NgModule } from '@angular/core';
+import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import {
@@ -13,11 +13,17 @@ import {
   NgaSidebarHeaderComponent,
 } from './sidebar.component';
 
+import { NgaSidebarService } from './sidebar.service';
+
 const NGA_SIDEBAR_COMPONENTS = [
   NgaSidebarComponent,
   NgaSidebarContentComponent,
   NgaSidebarFooterComponent,
   NgaSidebarHeaderComponent,
+];
+
+const NGA_SIDEBAR_PROVIDERS = [
+  NgaSidebarService,
 ];
 
 @NgModule({
@@ -32,4 +38,12 @@ const NGA_SIDEBAR_COMPONENTS = [
   ],
 })
 export class NgaSidebarModule {
+  static forRoot(): ModuleWithProviders {
+    return <ModuleWithProviders>{
+      ngModule: NgaSidebarModule,
+      providers: [
+        ...NGA_SIDEBAR_PROVIDERS,
+      ],
+    };
+  }
 }

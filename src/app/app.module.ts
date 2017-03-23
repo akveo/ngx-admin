@@ -49,7 +49,7 @@ import { routes } from './app.routes';
     NgaLayoutModule,
     NgaMenuModule,
     NgaRouteTabsetModule,
-    NgaSidebarModule,
+    NgaSidebarModule.forRoot(),
     NgaTabsetModule,
   ],
   declarations: [
