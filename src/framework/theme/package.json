@@ -2,8 +2,9 @@
   "name": "@nga/theme",
   "version": "2.0.0-alpha.0",
   "description": "@nga/theme",
-  "main": "lib/index.js",
-  "typings": "lib/index.d.ts",
+  "main": "./bundles/theme.umd.js",
+  "module": "./index.js",
+  "typings": "./index.d.ts",
   "author": "akveo",
   "license": "MIT",
   "scripts": {
@@ -28,6 +29,8 @@
   "peerDependencies": {
     "@angular/common": "^2.4.10",
     "@angular/core": "^2.4.10",
+    "@angular/platform-browser": "^2.4.10",
+    "@angular/platform-browser-dynamic": "^2.4.10",
     "@angular/router": "^3.4.10",
     "@ng-bootstrap/ng-bootstrap": "^1.0.0-alpha.21",
     "bootstrap": "^4.0.0-alpha.6",

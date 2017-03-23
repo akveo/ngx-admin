@@ -40,7 +40,7 @@ export class NgaRouteTabsetComponent {
   constructor(private router: Router) {
   }
 
-  selectTab(tab) {
+  selectTab(tab: any) {
     this.changeTab.emit(tab);
 
     this.router.navigate([tab.route]);

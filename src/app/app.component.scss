@@ -24,6 +24,4 @@
 
 @import '../framework/theme/styles/themes/nga.theme.default';
 
-:host {
-  @include nga-theme();
-}
+@include nga-theme();

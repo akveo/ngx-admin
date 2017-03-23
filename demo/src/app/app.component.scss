@@ -3,3 +3,7 @@
  * Copyright Akveo. All Rights Reserved.
  * Licensed under the MIT License. See License.txt in the project root for license information.
  */
+
+@import '~@nga/theme/styles/themes/nga.theme.default';
+
+@include nga-theme();

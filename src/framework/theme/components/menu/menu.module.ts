@@ -22,6 +22,6 @@ const NGA_MENU_COMPONENTS = [
   ],
   exports: [
     ...NGA_MENU_COMPONENTS,
-  ]
+  ],
 })
 export class NgaMenuModule { }
