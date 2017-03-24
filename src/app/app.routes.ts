@@ -86,6 +86,18 @@ export const routes: Routes = [
     component: NgaMenuTestComponent,
   },
   {
+    path: 'menu/menu1',
+    component: NgaMenuTestComponent,
+  },
+  {
+    path: 'menu/menu2',
+    component: NgaMenuTestComponent,
+  },
+  {
+    path: 'menu/menu3',
+    component: NgaMenuTestComponent,
+  },
+  {
     path: '**',
     component: NgaCardTestComponent,
   },

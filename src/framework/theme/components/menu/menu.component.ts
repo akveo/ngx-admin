@@ -8,18 +8,11 @@ import {
   Input,
   Output,
   EventEmitter,
+  OnInit,
 } from '@angular/core';
 
-export class NgaMenuItem {
-  title: string;
-  url?: string;
-  icon?: string;
-  expanded?: boolean = false;
-  selected?: boolean = false;
-  children?: Array<NgaMenuItem>;
-  target?: string;
-  hidden?: boolean = false;
-}
+import { NgaMenuModuleConfig, NgaMenuItem } from './menu.interfaces';
+import { NgaMenuService } from './menu.service';
 
 @Component({
   selector: 'nga-menu-item',
@@ -81,12 +74,19 @@ export class NgaMenuItemComponent {
     </ul>
   `,
 })
-export class NgaMenuComponent {
+export class NgaMenuComponent implements OnInit {
 
-  @Input() menuItems: Array<NgaMenuItem>;
+  menuItems: Array<NgaMenuItem>;
 
   @Output() hoverItem = new EventEmitter<any>();
   @Output() toogleSubMenu = new EventEmitter<any>();
+
+  constructor(private menuService: NgaMenuService) { }
+
+  ngOnInit() {
+    this.menuService.getMenuItems()
+      .subscribe((data: Array<NgaMenuItem>) => this.menuItems = data);
+  }
 
   onHoverItem(menuItem: NgaMenuItem) {
     this.hoverItem.emit(menuItem);

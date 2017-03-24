@@ -17,7 +17,7 @@ import { NgaRouteTabsetModule } from '../framework/theme/components/route-tabset
 import { NgaSidebarModule } from '../framework/theme/components/sidebar/sidebar.module';
 import { NgaTabsetModule } from '../framework/theme/components/tabset/tabset.module';
 
-import { AppComponent } from './app.component';
+import { NgaAppComponent } from './app.component';
 import { NgaCardTestComponent } from './card-test/card-test.component';
 import { NgaLayoutTestComponent } from './layout-test/layout-test.component';
 import { NgaLayoutHeaderTestComponent } from './layout-test/layout-header-test.component';
@@ -37,6 +37,24 @@ import { NgaSidebarTestThreeComponent } from './sidebar-test/sidebar-test-three.
 import { NgaMenuTestComponent } from './menu-test/menu-test.component';
 
 import { routes } from './app.routes';
+import { menuItems } from './menu-test/menu-items';
+
+const NGA_TEST_COMPONENTS = [
+  NgaAppComponent,
+  NgaCardTestComponent,
+  NgaLayoutTestComponent,
+  NgaLayoutHeaderTestComponent,
+  NgaLayoutFooterTestComponent,
+  NgaTabsetTestComponent,
+  NgaSidebarTestComponent,
+  NgaSidebarTestOneComponent,
+  NgaSidebarTestTwoComponent,
+  NgaSidebarTestThreeComponent,
+  NgaRouteTabsetTestComponent,
+  NgaRouteTabsetTestChild1Component,
+  NgaRouteTabsetTestChild2Component,
+  NgaMenuTestComponent,
+];
 
 @NgModule({
   imports: [
@@ -47,29 +65,18 @@ import { routes } from './app.routes';
     NgaThemeModule.forRoot(),
     NgaCardModule,
     NgaLayoutModule,
-    NgaMenuModule,
+    NgaMenuModule.forRoot({
+      menuItems: menuItems,
+    }),
     NgaRouteTabsetModule,
     NgaSidebarModule.forRoot(),
     NgaTabsetModule,
   ],
   declarations: [
-    AppComponent,
-    NgaCardTestComponent,
-    NgaLayoutTestComponent,
-    NgaLayoutHeaderTestComponent,
-    NgaLayoutFooterTestComponent,
-    NgaTabsetTestComponent,
-    NgaSidebarTestComponent,
-    NgaSidebarTestOneComponent,
-    NgaSidebarTestTwoComponent,
-    NgaSidebarTestThreeComponent,
-    NgaRouteTabsetTestComponent,
-    NgaRouteTabsetTestChild1Component,
-    NgaRouteTabsetTestChild2Component,
-    NgaMenuTestComponent,
+    ...NGA_TEST_COMPONENTS,
   ],
   providers: [],
-  bootstrap: [AppComponent],
+  bootstrap: [NgaAppComponent],
 })
 export class AppModule {
 }

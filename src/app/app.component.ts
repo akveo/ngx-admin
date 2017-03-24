@@ -10,5 +10,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss'],
   template: `<router-outlet></router-outlet>`,
 })
-export class AppComponent {
+export class NgaAppComponent {
 }
