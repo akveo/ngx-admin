@@ -28,7 +28,6 @@ exports.config = {
     });
   },
   onPrepare() {
-    browser.ignoreSynchronization = false;
     jasmine.getEnv().addReporter(new SpecReporter({ spec: { displayStacktrace: true } }));
   }
 };

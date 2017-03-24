@@ -19,7 +19,6 @@
   "homepage": "https://github.com/akveo/ng2-admin#readme",
   "keywords": [
     "angular",
-    "angular2",
     "typescript",
     "ng2-admin",
     "ngx-admin",
@@ -27,11 +26,9 @@
     "nga"
   ],
   "peerDependencies": {
-    "@angular/common": "^2.4.10",
-    "@angular/core": "^2.4.10",
-    "@angular/platform-browser": "^2.4.10",
-    "@angular/platform-browser-dynamic": "^2.4.10",
-    "@angular/router": "^3.4.10",
+    "@angular/common": "^4.0.0",
+    "@angular/core": "^4.0.0",
+    "@angular/router": "^4.0.0",
     "@ng-bootstrap/ng-bootstrap": "^1.0.0-alpha.21",
     "bootstrap": "^4.0.0-alpha.6",
     "font-awesome": "^4.7.0",

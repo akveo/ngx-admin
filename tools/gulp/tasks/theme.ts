@@ -113,7 +113,11 @@ const ROLLUP_GLOBALS = {
   '@angular/common': 'ng.common',
   '@angular/forms': 'ng.forms',
   '@angular/router': 'ng.router',
+  '@angular/http': 'ng.http',
+  '@angular/animations': 'ng.animations',
+  '@angular/animations/browser': 'ng.animations.browser',
   '@angular/platform-browser': 'ng.platformBrowser',
+  '@angular/platform-browser/animations': 'ng.platformBrowser.animations',
   '@angular/platform-browser-dynamic': 'ng.platformBrowserDynamic',
 
   // Rxjs dependencies

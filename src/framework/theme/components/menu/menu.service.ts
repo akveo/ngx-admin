@@ -1,7 +1,8 @@
 import { Injectable, Optional } from '@angular/core';
 import { Router } from '@angular/router';
 import { Routes } from '@angular/router';
-import { Subject, Observable } from 'rxjs';
+import { Subject } from 'rxjs/Subject';
+import { Observable } from 'rxjs/Observable';
 
 import { NgaMenuItem, NgaMenuModuleConfig } from './menu.interfaces';
 
