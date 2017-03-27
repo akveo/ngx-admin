@@ -18,20 +18,22 @@ import { NgaMenuService } from './menu.service';
   selector: 'nga-menu-item',
   template: `
     <li [ngClass]="{ 'active': menuItem.selected && !menuItem.expanded }"
-        [title]="menuItem.title"
+        [attr.title]="menuItem.title"
         *ngIf="!menuItem.hidden">
       <a href *ngIf="!menuItem.children"
-              [href]="menuItem.url"
-              [target]="menuItem.target"
+              [attr.href]="menuItem.url"
+              [attr.target]="menuItem.target"
               (mouseenter)="onHoverItem(menuItem)">
         <i class="{{ menuItem.icon }}" *ngIf="menuItem.icon"></i>
+        <i *ngIf="!menuItem.icon"></i>
         <span>{{ menuItem.title }}</span>
       </a>
       <a href *ngIf="menuItem.children"
               (click)="$event.preventDefault();onToogleSubMenu(menuItem)"
-              [target]="menuItem.target"
+              [attr.target]="menuItem.target"
               (mouseenter)="onHoverItem(menuItem)">
         <i class="{{ menuItem.icon }}" *ngIf="menuItem.icon"></i>
+        <i *ngIf="!menuItem.icon"></i>
         <span>{{ menuItem.title }}</span>
         <i class="ion" [ngClass]="{ 'ion-chevron-down': !menuItem.expanded,
                                     'ion-chevron-up': menuItem.expanded }"></i>
