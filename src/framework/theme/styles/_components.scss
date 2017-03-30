@@ -10,6 +10,7 @@
 @import '../components/sidebar/sidebar.component.theme';
 @import '../components/route-tabset/route-tabset.component.theme';
 @import '../components/menu/menu.component.theme';
+@import '../components/user/user.component.theme';
 
 // Create a theme
 @mixin nga-theme() {
@@ -19,4 +20,5 @@
   @include nga-tabset-theme();
   @include nga-route-tabset-theme();
   @include nga-menu-theme();
+  @include nga-user-theme();
 }

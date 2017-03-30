@@ -48,3 +48,9 @@
     @content;
   }
 }
+
+@mixin center-horizontal-absolute {
+  position: absolute;
+  transform: translate(-50%, 0);
+  left: 50%;
+}

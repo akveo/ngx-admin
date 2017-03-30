@@ -20,6 +20,7 @@ import {
   NgaRouteTabsetTestChild2Component,
 } from './route-tabset-test/route-tabset-test.component';
 import { NgaMenuTestComponent } from './menu-test/menu-test.component';
+import { NgaUserTestComponent } from './user-test/user-test.component';
 
 export const routes: Routes = [
   {
@@ -96,6 +97,10 @@ export const routes: Routes = [
   {
     path: 'menu/menu3',
     component: NgaMenuTestComponent,
+  },
+  {
+    path: 'user',
+    component: NgaUserTestComponent,
   },
   {
     path: '**',

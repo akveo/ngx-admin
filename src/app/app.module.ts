@@ -16,6 +16,7 @@ import { NgaMenuModule } from '../framework/theme/components/menu/menu.module';
 import { NgaRouteTabsetModule } from '../framework/theme/components/route-tabset/route-tabset.module';
 import { NgaSidebarModule } from '../framework/theme/components/sidebar/sidebar.module';
 import { NgaTabsetModule } from '../framework/theme/components/tabset/tabset.module';
+import { NgaUserModule } from '../framework/theme/components/user/user.module';
 
 import { NgaAppComponent } from './app.component';
 import { NgaCardTestComponent } from './card-test/card-test.component';
@@ -35,6 +36,7 @@ import { NgaSidebarTestTwoComponent } from './sidebar-test/sidebar-test-two.comp
 import { NgaSidebarTestThreeComponent } from './sidebar-test/sidebar-test-three.component';
 
 import { NgaMenuTestComponent } from './menu-test/menu-test.component';
+import { NgaUserTestComponent } from './user-test/user-test.component';
 
 import { routes } from './app.routes';
 import { menuItems } from './menu-test/menu-items';
@@ -54,6 +56,7 @@ const NGA_TEST_COMPONENTS = [
   NgaRouteTabsetTestChild1Component,
   NgaRouteTabsetTestChild2Component,
   NgaMenuTestComponent,
+  NgaUserTestComponent,
 ];
 
 @NgModule({
@@ -71,6 +74,7 @@ const NGA_TEST_COMPONENTS = [
     NgaRouteTabsetModule,
     NgaSidebarModule.forRoot(),
     NgaTabsetModule,
+    NgaUserModule,
   ],
   declarations: [
     ...NGA_TEST_COMPONENTS,

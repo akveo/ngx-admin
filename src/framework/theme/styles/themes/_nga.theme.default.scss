@@ -22,6 +22,7 @@ $nga-margin: 1rem !default;
 
 $nga-color-default: #3f4243 !default;
 $nga-color-inverse: white !default;
+$nga-color-gray: rgba(0, 0, 0, 0.15) !default;
 
 $nga-color-disabled: rgba(255, 255, 255, 0.4) !default;
 $nga-color-primary: #00abff !default;
@@ -62,8 +63,8 @@ $nga-foreground: $nga-color-default !default;
 
 $nga-foreground-inverse: $nga-color-inverse !default;
 $nga-background-inverse: $nga-color-default !default;
-$nga-border-color: rgba(0, 0, 0, 0.15) !default;
-$nga-shadow-color: rgba(0, 0, 0, 0.15) !default;
+$nga-border-color: $nga-color-gray !default;
+$nga-shadow-color: $nga-color-gray !default;
 
 // component specific styles
 
@@ -112,3 +113,9 @@ $nga-route-tab-header-padding: $nga-tab-header-padding !default;
 $nga-route-tab-header-radius: $nga-tab-header-radius !default;
 $nga-route-tab-header-active: $nga-tab-header-active !default;
 $nga-route-tab-header-min-width: $nga-tab-header-min-width !default;
+
+$nga-user-size-small: 1.5rem !default;
+$nga-user-size-medium: 3rem !default;
+$nga-user-size-large: 4rem !default;
+$nga-user-picture-background: $nga-color-gray !default;
+$nga-user-menu-border: $nga-border-color !default;

@@ -1,0 +1,98 @@
+@import '../../styles/core/core';
+
+/**
+ * @license
+ * Copyright Akveo. All Rights Reserved.
+ * Licensed under the MIT License. See License.txt in the project root for license information.
+ */
+:host {
+  .user-container {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+
+    .user-picture {
+      border-radius: 50%;
+      flex-shrink: 0;
+
+      &.image {
+        background-size: cover!important;
+        background-repeat: no-repeat!important;
+      }
+
+      &.background {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+
+    .user-title, .user-name {
+      margin-left: 0.5rem;
+    }
+
+    .user-title {
+      font-size: 0.75rem;
+    }
+
+    .info-container {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .user-context-menu {
+      @include center-horizontal-absolute();
+
+      z-index: 1000;
+      top: calc(100% + 10px);
+      background-clip: padding-box;
+      border-radius: 5px;
+      font-size: 0.875rem;
+      line-height: 1.5rem;
+
+      ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+
+        li {
+          display: block;
+
+          > a {
+            padding: 0.25rem 3rem;
+            display: block;
+
+          }
+
+          &:nth-child(2) > a {
+            padding-top: 0.75rem;
+          }
+          &:last-child > a {
+            padding-bottom: 0.75rem;
+          }
+
+          &.arrow {
+            @include center-horizontal-absolute();
+
+            top: -22px;
+            width: 0;
+            height: 0;
+            border: 11px solid transparent;
+
+            &:after {
+              position: absolute;
+              content: ' ';
+              width: 0;
+              height: 0;
+              top: -9px;
+              left: 0;
+              margin-left: -10px;
+              display: block;
+              border: 10px solid transparent;
+            }
+          }
+        }
+      }
+    }
+  }
+}
