@@ -70,5 +70,4 @@ describe('nga-layout', () => {
     });
   });
 
-
 });
