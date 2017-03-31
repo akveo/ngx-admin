@@ -139,9 +139,9 @@
     q "^1.4.1"
     viz.js "^1.6.0"
 
-"@ng-bootstrap/ng-bootstrap@1.0.0-alpha.21":
-  version "1.0.0-alpha.21"
-  resolved "https://registry.yarnpkg.com/@ng-bootstrap/ng-bootstrap/-/ng-bootstrap-1.0.0-alpha.21.tgz#9ac0ddcd81364b427b0997c7c11218d6a6dae371"
+"@ng-bootstrap/ng-bootstrap@1.0.0-alpha.22":
+  version "1.0.0-alpha.22"
+  resolved "https://registry.yarnpkg.com/@ng-bootstrap/ng-bootstrap/-/ng-bootstrap-1.0.0-alpha.22.tgz#aaad058cc39293ea6184e4b9b849f298c0b11a86"
 
 "@ngtools/json-schema@1.0.5":
   version "1.0.5"

@@ -29,7 +29,6 @@
     "@angular/common": "^4.0.0",
     "@angular/core": "^4.0.0",
     "@angular/router": "^4.0.0",
-    "@ng-bootstrap/ng-bootstrap": "^1.0.0-alpha.21",
     "bootstrap": "^4.0.0-alpha.6",
     "font-awesome": "^4.7.0",
     "ionicons": "^2.0.1"

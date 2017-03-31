@@ -141,7 +141,6 @@ const ROLLUP_GLOBALS = {
   'rxjs/Observable': 'Rx',
 
   // 3rd party dependencies
-  '@ng-bootstrap/ng-bootstrap': 'ngBootstrap.ngBootstrap',
 };
 
 /** Creates a rollup bundles of the @nga/theme components.*/
