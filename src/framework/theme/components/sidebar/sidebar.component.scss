@@ -5,21 +5,36 @@
  */
 :host {
 
+  display: -webkit-box;
+
+  display: -ms-flexbox;
+
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   overflow: hidden;
+  -webkit-transition: width 0.2s;
   transition: width 0.2s;
 
   > .scrollable {
+    -webkit-transition: width 0.2s;
     transition: width 0.2s;
   }
 
-  order: 0;
+  -webkit-box-ordinal-group: 1;
+
+      -ms-flex-order: 0;
+
+          order: 0;
   margin-right: auto;
   margin-left: 0;
 
   &.right {
-    order: 4;
+    -webkit-box-ordinal-group: 5;
+        -ms-flex-order: 4;
+            order: 4;
     margin-right: 0;
     margin-left: auto;
   }

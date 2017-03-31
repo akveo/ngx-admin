@@ -6,8 +6,13 @@
 :host {
   ul {
     &.nga-route-tabset {
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
-      flex-direction: row;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: row;
+              flex-direction: row;
       list-style-type: none;
       padding: 0;
 

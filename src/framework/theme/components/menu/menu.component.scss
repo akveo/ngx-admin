@@ -7,6 +7,7 @@
   /deep/ ul {
     list-style-type: none;
     padding: 0;
+    -webkit-transition: visibility 0s, opacity 0.2s linear;
     transition: visibility 0s, opacity 0.2s linear;
 
     li {
@@ -17,8 +18,13 @@
 
       a {
         padding: 0.5rem 0;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        flex-direction: row;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: row;
+                flex-direction: row;
         text-decoration: none;
         font-size: 1rem;
         line-height: 1rem;
@@ -33,7 +39,9 @@
 
         span {
           display: block;
-          flex: 1;
+          -webkit-box-flex: 1;
+              -ms-flex: 1;
+                  flex: 1;
         }
       }
     }
