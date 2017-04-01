@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+    "declaration": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "lib": ["es6", "es2015", "dom"],
+    "module": "es2015",
+    "moduleResolution": "node",
+    "noEmitOnError": true,
+    "noImplicitAny": true,
+    "outDir": "../../../dist/@nga/auth",
+    "rootDir": ".",
+    "sourceMap": true,
+    "target": "es6",
+    "inlineSources": true,
+    "stripInternal": false,
+    "baseUrl": "",
+    "typeRoots": [
+      "../../../node_modules/@types/!(node)"
+    ],
+    "types": [
+      "jasmine",
+      "rx/rx.all"
+    ]
+  },
+  "angularCompilerOptions": {
+    "genDir": "../../dist",
+    "skipTemplateCodegen": true,
+    "debug": true
+  }
+}

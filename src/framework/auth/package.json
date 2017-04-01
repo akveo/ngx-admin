@@ -1,0 +1,37 @@
+{
+  "name": "@nga/auth",
+  "version": "2.0.0-alpha.0",
+  "description": "@nga/auth",
+  "main": "./bundles/auth.umd.js",
+  "module": "./index.js",
+  "typings": "./index.d.ts",
+  "author": "akveo",
+  "license": "MIT",
+  "scripts": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/akveo/ng2-admin.git"
+  },
+  "bugs": {
+    "url": "https://github.com/akveo/ng2-admin/issues"
+  },
+  "homepage": "https://github.com/akveo/ng2-admin#readme",
+  "keywords": [
+    "angular",
+    "typescript",
+    "ng2-admin",
+    "ngx-admin",
+    "auth",
+    "login",
+    "register",
+    "nga"
+  ],
+  "peerDependencies": {
+    "@angular/common": "^4.0.0",
+    "@angular/core": "^4.0.0",
+    "@angular/router": "^4.0.0",
+    "@angular/forms": "^4.0.0",
+    "bootstrap": "^4.0.0-alpha.6"
+  }
+}

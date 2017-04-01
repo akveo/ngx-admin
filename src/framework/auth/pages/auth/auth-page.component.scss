@@ -1,0 +1,51 @@
+/**
+ * @license
+ * Copyright Akveo. All Rights Reserved.
+ * Licensed under the MIT License. See License.txt in the project root for license information.
+ */
+:host {
+  /deep/ nga-layout-column {
+    // TODO: quick fix for broken layout
+    line-height: normal!important;
+  }
+
+  .auth-block {
+    max-width: 600px;
+    padding: 2rem;
+    margin: 60px auto 0 auto;
+
+    /deep/ {
+      .checkbox {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+        font-weight: normal;
+      }
+      .form-control {
+        position: relative;
+        height: auto;
+        padding: 10px;
+      }
+      .form-control:focus {
+        z-index: 2;
+      }
+      input.middle {
+        border-radius: 0;
+        margin: -1px 0;
+      }
+      input.first {
+        margin-bottom: -1px;
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+      }
+      input.last {
+        margin-bottom: 10px;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+      }
+      .links {
+        padding-top: 2rem;
+      }
+    }
+  }
+}
