@@ -1,9 +1,13 @@
-import { NgModule, ModuleWithProviders } from '@angular/core';
+import { NgModule, ModuleWithProviders, InjectionToken, Injector } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 // TODO: how should we link modules together?
 import { NgaLayoutModule } from '../theme/components/layout/layout.module';
+
+import { NgaAuthService } from './services/auth.service';
+import { NgaDummyProviderService } from './providers/dummy-provider.service';
 import { NgaAuthOptions } from './auth.options';
 import { NgaAuthPageComponent } from './pages/auth/auth-page.component';
 import { NgaLoginPageComponent } from './pages/login/login-page.component';
@@ -13,11 +17,25 @@ import { NgaResetPasswordPageComponent } from './pages/reset-password/reset-pass
 
 import { routes } from './auth.routes';
 
+export const NgaAuthOptionsToken = new InjectionToken<NgaAuthOptions>('NGA_AUTH_OPTIONS');
+
+export function ngaAuthServiceFactory(config: any, injector: Injector) {
+  const providers = config.providers || {};
+
+  for (const key in providers) {
+    const provider = providers[key];
+    provider.object = injector.get(provider.service);
+    provider.object.setConfig(provider.config || {});
+  }
+  return new NgaAuthService(providers);
+}
+
 @NgModule({
   imports: [
     CommonModule,
     NgaLayoutModule,
     RouterModule.forChild(routes),
+    FormsModule,
   ],
   declarations: [
     NgaAuthPageComponent,
@@ -28,9 +46,15 @@ import { routes } from './auth.routes';
   ],
 })
 export class NgaAuthModule {
-  static forRoot(ngaAuthOptions?: NgaAuthOptions): ModuleWithProviders {
+  // TODO: NgaAuthOptions
+  static forRoot(ngaAuthOptions?: any): ModuleWithProviders {
     return <ModuleWithProviders> {
       ngModule: NgaAuthModule,
+      providers: [
+        { provide: NgaAuthOptionsToken, useValue: ngaAuthOptions },
+        { provide: NgaAuthService, useFactory: ngaAuthServiceFactory, deps: [NgaAuthOptionsToken, Injector] },
+        NgaDummyProviderService,
+      ],
     };
   }
 }

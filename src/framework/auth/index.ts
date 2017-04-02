@@ -11,7 +11,9 @@ export * from './pages/register/register-page.component';
 export * from './pages/request-password/request-password-page.component';
 export * from './pages/reset-password/reset-password-page.component';
 
+export * from './services/auth.service';
+export * from './providers/dummy-provider.service';
+
 
 // TODO: 1) how to reference the other modules (to NgaTheme, NgaCommon)?
 // TODO: 2) how to reference the theme CSS files?
-// TODO: 3) provider for auth
