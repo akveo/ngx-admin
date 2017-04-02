@@ -14,7 +14,7 @@ import { NgaAuthService, NgaAuthResult } from '../../services/auth.service';
   styleUrls: ['./login-page.component.scss'],
   template: `
     <h2>Please sign in</h2>
-    <form (ngSubmit)="login('dummy')" #loginForm="ngForm">
+    <form (ngSubmit)="login('email')" #loginForm="ngForm">
       <div *ngIf="errors && errors.length > 0 && !submitted" class="alert alert-danger" role="alert">
         <div><strong>Oh snap!</strong></div>
         <div *ngFor="let error of errors">{{ error }}</div>

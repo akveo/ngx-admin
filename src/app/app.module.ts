@@ -98,7 +98,7 @@ const NGA_TEST_COMPONENTS = [
     NgaAuthModule.forRoot({
       providers: {
 
-        dummy: {
+        email: {
           service: NgaDummyProviderService,
           config: {
             alwaysFail: true,
