@@ -23,9 +23,11 @@ export function ngaAuthServiceFactory(config: any, injector: Injector) {
   const providers = config.providers || {};
 
   for (const key in providers) {
-    const provider = providers[key];
-    provider.object = injector.get(provider.service);
-    provider.object.setConfig(provider.config || {});
+    if (providers.hasOwnProperty(key)) {
+      const provider = providers[key];
+      provider.object = injector.get(provider.service);
+      provider.object.setConfig(provider.config || {});
+    }
   }
   return new NgaAuthService(providers);
 }
@@ -46,8 +48,8 @@ export function ngaAuthServiceFactory(config: any, injector: Injector) {
   ],
 })
 export class NgaAuthModule {
-  // TODO: NgaAuthOptions
-  static forRoot(ngaAuthOptions?: any): ModuleWithProviders {
+
+  static forRoot(ngaAuthOptions?: NgaAuthOptions): ModuleWithProviders {
     return <ModuleWithProviders> {
       ngModule: NgaAuthModule,
       providers: [
