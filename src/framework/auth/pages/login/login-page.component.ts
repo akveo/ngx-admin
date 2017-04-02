@@ -34,7 +34,7 @@ import { NgaAuthService, NgaAuthResult } from '../../services/auth.service';
         <a routerLink="../request-password">Forgot Password</a>
       </div>
       <button [disabled]="submitted || !loginForm.form.valid" 
-      class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+        class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
     </form>
     
     <div class="links">
@@ -56,7 +56,7 @@ export class NgaLoginPageComponent {
     this.errors = [];
     this.submitted = true;
 
-    this.service.authenticate(provider, { failure: true }).subscribe((result: NgaAuthResult) => {
+    this.service.authenticate(provider, this.user).subscribe((result: NgaAuthResult) => {
       this.submitted = false;
       if (result.isSuccess()) {
         return this.router.navigate(['/']);
