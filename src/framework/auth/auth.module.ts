@@ -7,7 +7,7 @@ import { FormsModule } from '@angular/forms';
 import { NgaLayoutModule } from '../theme/components/layout/layout.module';
 
 import { NgaAuthService } from './services/auth.service';
-import { NgaDummyProviderService } from './providers/dummy-provider.service';
+import { NgaDummyAuthProvider } from './providers/dummy-auth.provider';
 import { NgaAuthOptions } from './auth.options';
 import { NgaAuthPageComponent } from './pages/auth/auth-page.component';
 import { NgaLoginPageComponent } from './pages/login/login-page.component';
@@ -55,7 +55,7 @@ export class NgaAuthModule {
       providers: [
         { provide: NgaAuthOptionsToken, useValue: ngaAuthOptions },
         { provide: NgaAuthService, useFactory: ngaAuthServiceFactory, deps: [NgaAuthOptionsToken, Injector] },
-        NgaDummyProviderService,
+        NgaDummyAuthProvider,
       ],
     };
   }

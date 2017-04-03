@@ -1,7 +1,7 @@
 import { Observable } from 'rxjs/Rx';
 import { NgaAuthResult } from '../services/auth.service';
 
-export abstract class NgaAbstractProviderService {
+export abstract class NgaAbstractAuthProvider {
 
   protected defaultConfig: any = {};
   protected config: any = {};

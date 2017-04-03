@@ -3,17 +3,17 @@ import { Response, ResponseOptions } from '@angular/http';
 import { Observable } from 'rxjs/Rx';
 
 import { NgaAuthResult } from '../services/auth.service';
-import { NgaAbstractProviderService } from './abstract-provider';
+import { NgaAbstractAuthProvider } from './abstract-auth.provider';
 
-export interface NgaDummyProviderConfig {
+export interface NgaDummyAuthProviderConfig {
   delay?: number;
   alwaysFail?: boolean;
 }
 
 @Injectable()
-export class NgaDummyProviderService extends NgaAbstractProviderService {
+export class NgaDummyAuthProvider extends NgaAbstractAuthProvider {
 
-  protected defaultConfig: NgaDummyProviderConfig = {
+  protected defaultConfig: NgaDummyAuthProviderConfig = {
     delay: 1000,
   };
 
