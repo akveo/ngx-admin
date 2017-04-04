@@ -39,12 +39,12 @@ import { NgaSidebarService } from '../../framework/theme/components/sidebar/side
       <nga-layout-column>
        {{ content }}
       </nga-layout-column>
-      <nga-layout-column right>
+      <nga-layout-column>
        {{ content }}
       </nga-layout-column>
 
 
-      <nga-layout-footer>
+      <nga-layout-footer fixed>
         &copy; Akveo 2017
       </nga-layout-footer>
     </nga-layout>

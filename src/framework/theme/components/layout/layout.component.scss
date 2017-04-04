@@ -5,11 +5,14 @@
  */
 :host {
   display: flex;
-  min-height: 100vh;
 
   /deep/ nga-layout-header {
-    height: 54px;
     display: block;
+
+    nav {
+      justify-content: center;
+      display: flex;
+    }
 
     &.fixed {
       position: fixed;
@@ -17,95 +20,60 @@
       right: 0;
       z-index: 2;
     }
-
-    &.fixed ~ .main-container {
-      padding: 45px 0 0 0;
-    }
-
-    nav {
-      display: flex;
-      justify-content: center;
-    }
-
-    .container-fluid {
-      margin: 0;
-      padding: 0;
-    }
   }
 
-  .main-container {
+  .container {
     flex: 1;
     display: flex;
     flex-direction: row;
-  }
 
-  /deep/ nga-sidebar {
-    order: 0;
-    line-height:150px;
-
-    &.right {
-      order: 2;
-    }
-
-    .fixed {
-      position: fixed;
-      width: 100%;
-      overflow-y: auto;
-      height: 100%;
-    }
-  }
-
-  &.center {
-    .content {
-      width: 900px;
-      max-width: 100%;
-      position: relative;
-      margin-left: auto;
-      margin-right: auto;
-      flex: 0 1 900px;
-    }
-  }
-
-  .content {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-  }
-
-  /deep/ nga-layout-footer {
-    height: 40px;
-    margin-top: auto;
-    display: block;
-
-    nav {
-      display: flex;
-      justify-content: center;
-      overflow: hidden;
-
-      &.fixed {
-        margin-top: 0;
-      }
-    }
-  }
-
-  .columns {
-    display: flex;
-    flex-direction: row;
-    flex: 1;
-
-    /deep/ nga-layout-column {
-      order: 2;
-      flex: 3 0;
-      line-height: 150px;
-
-      &.left {
-        order: 1;
-        flex: 1 0;
-      }
+    /deep/ nga-sidebar {
+      order: 0;
 
       &.right {
-        order: 3;
-        flex: 1 0;
+        order: 2;
+      }
+
+      .fixed {
+        position: fixed;
+        width: 100%;
+        overflow-y: auto;
+        height: 100%;
+      }
+    }
+
+    .content {
+      &.center {
+        max-width: 100%;
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .columns {
+        display: flex;
+        flex-direction: row;
+        flex: 1;
+
+        /deep/ nga-layout-column {
+          order: 2;
+          flex: 3 0;
+
+          &.left {
+            order: 1;
+            flex: 1 0;
+          }
+        }
+      }
+
+      /deep/ nga-layout-footer {
+        display: block;
+        margin-top: auto;
+
+        nav {
+          justify-content: center;
+          display: flex;
+        }
       }
     }
   }

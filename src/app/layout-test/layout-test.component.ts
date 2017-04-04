@@ -33,7 +33,7 @@ import { Component } from '@angular/core';
       <nga-layout-column>
         Center
       </nga-layout-column>
-      <nga-layout-column right>
+      <nga-layout-column>
         Right
       </nga-layout-column>
 
@@ -53,11 +53,11 @@ import { Component } from '@angular/core';
       <nga-layout-column>
         Center
       </nga-layout-column>
-      <nga-layout-column right>
+      <nga-layout-column>
         Right
       </nga-layout-column>
 
-      <nga-layout-footer>
+      <nga-layout-footer fixed>
         &copy; Akveo 2017
       </nga-layout-footer>
     </nga-layout>

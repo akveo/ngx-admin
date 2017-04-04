@@ -13,7 +13,7 @@ describe('nga-layout-footer', () => {
 
   it('should render default footer', () => {
     element(by.css('nga-layout-footer > nav')).getAttribute('class').then(value => {
-      expect(value).toMatch('navbar');
+      expect(value).toBeDefined();
     });
   });
 
@@ -25,7 +25,7 @@ describe('nga-layout-footer', () => {
 
   it('should have height', () => {
     element(by.css('nga-layout-footer nav')).getCssValue('height').then(value => {
-      expect(value).toEqual('40px');
+      expect(value).toEqual('80px');
     });
   });
 

@@ -13,7 +13,7 @@ describe('nga-layout-header', () => {
 
   it('should render default header', () => {
     element(by.css('nga-layout-header > nav')).getAttribute('class').then(value => {
-      expect(value).toMatch('navbar');
+      expect(value).toBeDefined();
     });
   });
 
@@ -25,7 +25,7 @@ describe('nga-layout-header', () => {
 
   it('should have height', () => {
     element(by.css('nga-layout-header nav')).getCssValue('height').then(value => {
-      expect(value).toEqual('54px');
+      expect(value).toEqual('56px');
     });
   });
 

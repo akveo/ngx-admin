@@ -6,13 +6,8 @@
 :host {
   ul {
     &.nga-tabset {
-      display: -webkit-box;
-      display: -ms-flexbox;
       display: flex;
-      -webkit-box-orient: horizontal;
-      -webkit-box-direction: normal;
-          -ms-flex-direction: row;
-              flex-direction: row;
+      flex-direction: row;
       list-style-type: none;
       padding: 0;
       overflow: hidden;

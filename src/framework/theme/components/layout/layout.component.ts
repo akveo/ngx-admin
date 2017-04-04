@@ -3,7 +3,7 @@
  * Copyright Akveo. All Rights Reserved.
  * Licensed under the MIT License. See License.txt in the project root for license information.
  */
-import { Component, Input, ContentChild, HostBinding } from '@angular/core';
+import { Component, Input, ContentChild, HostBinding, ChangeDetectionStrategy } from '@angular/core';
 import { convertToBoolProperty } from '../helpers';
 
 /**
@@ -12,21 +12,15 @@ import { convertToBoolProperty } from '../helpers';
  */
 @Component({
   selector: 'nga-layout-column',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <ng-content></ng-content>
   `,
 })
 export class NgaLayoutColumnComponent {
 
-  @HostBinding('class.right') rightValue: boolean;
-
   @HostBinding('class.left') leftValue: boolean;
 
-
-  @Input()
-  set right(val: boolean) {
-    this.rightValue = convertToBoolProperty(val);
-  }
   @Input()
   set left(val: boolean) {
     this.leftValue = convertToBoolProperty(val);
@@ -39,11 +33,10 @@ export class NgaLayoutColumnComponent {
  */
 @Component({
   selector: 'nga-layout-header',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
-    <nav class="navbar" [ngClass]="{'fixed-top': fixedValue}">
-      <div class="container-fluid">
-        <ng-content></ng-content>
-      </div>
+    <nav [ngClass]="{ 'fixed': fixedValue }">
+      <ng-content></ng-content>
     </nav>
   `,
 })
@@ -64,11 +57,10 @@ export class NgaLayoutHeaderComponent {
  */
 @Component({
   selector: 'nga-layout-footer',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
-    <nav class="navbar" [ngClass]="{'fixed-bottom': fixedValue}">
-      <div class="container-fluid">
-        <ng-content></ng-content>
-      </div>
+    <nav [ngClass]="{ 'fixed': fixedValue }">
+      <ng-content></ng-content>
     </nav>
   `,
 })
@@ -88,7 +80,7 @@ export class NgaLayoutFooterComponent {
  *
  * While this component can be used alone, it also provides a number
  * of child components for common layout sections, including:
- * - nga-layout-sidebar
+ * - nga-sidebar
  * - nga-layout-column
  * - nga-layout-content
  * - nga-layout-header
@@ -96,15 +88,15 @@ export class NgaLayoutFooterComponent {
  */
 @Component({
   selector: 'nga-layout',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   styleUrls: ['./layout.component.scss'],
   template: `
     <ng-content select="nga-layout-header"></ng-content>
-    <div class="main-container">
-      <ng-content select="nga-sidebar[left]"></ng-content>
+    <div class="container">
       <ng-content select="nga-sidebar"></ng-content>
-      <div class="content">
+      <ng-content select="nga-sidebar[left]"></ng-content>
+      <div class="content" [ngClass]="{ 'center': centerValue }">
         <div class="columns">
-          <ng-content></ng-content>
           <ng-content select="nga-layout-column"></ng-content>
         </div>
         <ng-content select="nga-layout-footer"></ng-content>
