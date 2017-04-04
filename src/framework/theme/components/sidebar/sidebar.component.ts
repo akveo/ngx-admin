@@ -3,13 +3,14 @@
  * Copyright Akveo. All Rights Reserved.
  * Licensed under the MIT License. See License.txt in the project root for license information.
  */
-import { Component, HostBinding, Input, OnInit } from '@angular/core';
+import { Component, HostBinding, Input, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { convertToBoolProperty } from '../helpers';
 
 import { NgaSidebarService } from './sidebar.service';
 
 @Component({
   selector: 'nga-sidebar-header',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <ng-content></ng-content>
   `,
@@ -19,6 +20,7 @@ export class NgaSidebarHeaderComponent {
 
 @Component({
   selector: 'nga-sidebar-content',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <ng-content></ng-content>
   `,
@@ -28,6 +30,7 @@ export class NgaSidebarContentComponent {
 
 @Component({
   selector: 'nga-sidebar-footer',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <ng-content></ng-content>
   `,
@@ -37,6 +40,7 @@ export class NgaSidebarFooterComponent {
 
 @Component({
   selector: 'nga-sidebar',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   styleUrls: ['./sidebar.component.scss'],
   template: `
     <div class="scrollable">

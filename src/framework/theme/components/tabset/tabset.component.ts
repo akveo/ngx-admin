@@ -12,6 +12,7 @@ import {
   QueryList,
   AfterContentInit,
   HostBinding,
+  ChangeDetectionStrategy,
 } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
@@ -19,6 +20,7 @@ import { convertToBoolProperty } from '../helpers';
 
 @Component({
   selector: 'nga-tab',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <div class="nga-tab" [hidden]="!active">
       <ng-content></ng-content>
@@ -33,6 +35,7 @@ export class NgaTabComponent {
 
 @Component({
   selector: 'nga-tabset',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   styleUrls: ['./tabset.component.scss'],
   template: `
     <ul class="nga-tabset">

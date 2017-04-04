@@ -3,13 +3,14 @@
  * Copyright Akveo. All Rights Reserved.
  * Licensed under the MIT License. See License.txt in the project root for license information.
  */
-import { Component, Input, Output, EventEmitter, HostBinding } from '@angular/core';
+import { Component, Input, Output, EventEmitter, HostBinding, ChangeDetectionStrategy } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { convertToBoolProperty } from '../helpers';
 
 @Component({
   selector: 'nga-route-tabset',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   styleUrls: ['./route-tabset.component.scss'],
   template: `
     <ul class="nga-route-tabset">
