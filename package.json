@@ -50,7 +50,7 @@
     "roboto-fontface": "0.7.0",
     "rxjs": "5.1.1",
     "tether": "1.4.0",
-    "zone.js": "0.7.7"
+    "zone.js": "0.8.2"
   },
   "devDependencies": {
     "@angular/compiler-cli": "2.4.9",
