@@ -2,61 +2,11 @@ import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs/Rx';
 
+import { NgEmailPassAuthProviderConfig } from './email-pass-auth.options';
 import { NgaAuthResult } from '../services/auth.service';
 import { NgaAbstractAuthProvider } from './abstract-auth.provider';
 import { getDeepFromObject } from '../helpers';
 
-export interface NgaEmailPassModuleConfig {
-  alwaysFail?: boolean,
-  endpoint?: string,
-  redirect?: {
-    success?: string | null,
-    failure?: string | null,
-  },
-  token?: {
-    key?: string,
-    getter?: Function,
-  },
-  errors?: {
-    key?: string,
-    getter?: Function,
-  },
-  messages?: {
-    key?: string,
-    getter?: Function,
-  },
-  defaultErrors?: string[]
-  defaultMessages?: string[],
-}
-
-export interface NgaEmailPassResetModuleConfig extends NgaEmailPassModuleConfig {
-  resetPasswordTokenKey?: string;
-}
-
-export interface NgEmailPassAuthProviderConfig {
-  login?: boolean | NgaEmailPassModuleConfig,
-  register?: boolean | NgaEmailPassModuleConfig,
-  requestPass?: boolean | NgaEmailPassModuleConfig,
-  resetPass?: boolean | NgaEmailPassResetModuleConfig,
-  validation?: {
-    password?: {
-      required?: boolean,
-      minLength?: number | null,
-      maxLength?: number | null,
-      regexp?: string | null,
-    },
-    email?: {
-      required?: boolean,
-      regexp?: string | null,
-    },
-    fullName?: {
-      required?: boolean,
-      minLength?: number | null,
-      maxLength?: number | null,
-      regexp?: string | null,
-    },
-  },
-}
 
 @Injectable()
 export class NgaEmailPassAuthProvider extends NgaAbstractAuthProvider {
@@ -102,6 +52,24 @@ export class NgaEmailPassAuthProvider extends NgaAbstractAuthProvider {
       messages: {
         key: 'data.messages',
         getter: (res) => getDeepFromObject(this.getJsonSafe(res), this.getConfigValue('register.messages.key'), this.getConfigValue('register.defaultMessages')),
+      },
+      defaultErrors: ['Something went wrong, please try again.'],
+      defaultMessages: ['You have been successfully registered.'],
+    },
+    logout: {
+      alwaysFail: false,
+      endpoint: '/api/auth/logout',
+      redirect: {
+        success: '/',
+        failure: null,
+      },
+      errors: {
+        key: 'data.errors',
+        getter: (res) => getDeepFromObject(this.getJsonSafe(res), this.getConfigValue('logout.errors.key'), this.getConfigValue('logout.defaultErrors')),
+      },
+      messages: {
+        key: 'data.messages',
+        getter: (res) => getDeepFromObject(this.getJsonSafe(res), this.getConfigValue('logout.messages.key'), this.getConfigValue('logout.defaultMessages')),
       },
       defaultErrors: ['Something went wrong, please try again.'],
       defaultMessages: ['You have been successfully registered.'],
@@ -169,7 +137,6 @@ export class NgaEmailPassAuthProvider extends NgaAbstractAuthProvider {
     return this.http.post(this.getConfigValue('login.endpoint'), data)
       .map((res) => {
         if (this.getConfigValue('login.alwaysFail')) {
-          console.log('nga-auth: EmailPass provider, alwaysFail mode is enabled.');
           throw this.createFailResponse(data);
         }
         return res;
@@ -205,7 +172,6 @@ export class NgaEmailPassAuthProvider extends NgaAbstractAuthProvider {
     return this.http.post(this.getConfigValue('register.endpoint'), data)
       .map((res) => {
         if (this.getConfigValue('register.alwaysFail')) {
-          console.log('nga-auth: EmailPass provider, alwaysFail mode is enabled.');
           throw this.createFailResponse(data);
         }
         return res;
@@ -237,15 +203,47 @@ export class NgaEmailPassAuthProvider extends NgaAbstractAuthProvider {
       });
   }
 
+  // TODO: implement
   requestPassword(data?: any): Observable<NgaAuthResult> {
     return Observable.empty();
   }
 
+  // TODO: implement
   resetPassword(data?: any): Observable<NgaAuthResult> {
     return Observable.empty();
   }
 
-  logout(data?: any): Observable<NgaAuthResult> {
-    return Observable.empty();
+  logout(): Observable<NgaAuthResult> {
+    return this.http.delete(this.getConfigValue('logout.endpoint'))
+      .map((res) => {
+        if (this.getConfigValue('logout.alwaysFail')) {
+          throw this.createFailResponse();
+        }
+        return res;
+      })
+      .map((res) => {
+        return new NgaAuthResult(
+          true,
+          res,
+          this.getConfigValue('logout.redirect.success'),
+          [],
+          this.getConfigValue('logout.messages.getter')(res)
+        );
+      })
+      .catch((res) => {
+        let errors = [];
+        if (res instanceof Response) {
+          errors = this.getConfigValue('logout.errors.getter')(res);
+        } else {
+          errors.push('Something went wrong.');
+        }
+        return Observable.of(
+          new NgaAuthResult(
+            false,
+            res,
+            this.getConfigValue('logout.redirect.failure'),
+            errors,
+          ));
+      });
   }
 }

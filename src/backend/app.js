@@ -12,6 +12,7 @@ app.use(auth.initialize());
 app.use(function(req, res, next) {
   res.header('Access-Control-Allow-Origin', '*');
   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+  res.header('Access-Control-Allow-Methods', 'GET, PUT, POST, DELETE, HEAD');
   next();
 });
 
@@ -42,7 +43,7 @@ app.post('/api/auth/login', function (req, res) {
       var token = jwt.encode(payload, cfg.jwtSecret);
       return res.json({
         data: {
-          message: 'Successfully login!',
+          message: 'Successfully logged in!',
           token: token
         }
       });
@@ -68,7 +69,7 @@ app.post('/api/auth/register', function (req, res) {
       var token = jwt.encode(payload, cfg.jwtSecret);
       return res.json({
         data: {
-          message: 'Successfully register!',
+          message: 'Successfully registered!',
           token: token
         }
       });
@@ -77,6 +78,14 @@ app.post('/api/auth/register', function (req, res) {
   return res.status(401).json({
     data: {
       error: 'Something went wrong while registering your account. Please check the form and try again.'
+    }
+  });
+});
+
+app.delete('/api/auth/logout', function (req, res) {
+  return res.json({
+    data: {
+      message: 'Successfully logged out!'
     }
   });
 });

@@ -14,6 +14,7 @@ import { NgaAuthOptions, NgaAuthOptionsToken } from './auth.options';
 import { NgaAuthPageComponent } from './pages/auth/auth-page.component';
 import { NgaLoginPageComponent } from './pages/login/login-page.component';
 import { NgaRegisterPageComponent } from './pages/register/register-page.component';
+import { NgaLogoutPageComponent } from './pages/logout/logout-page.component';
 import { NgaRequestPasswordPageComponent } from './pages/request-password/request-password-page.component';
 import { NgaResetPasswordPageComponent } from './pages/reset-password/reset-password-page.component';
 
@@ -46,6 +47,15 @@ export function ngaAuthServiceFactory(config: any, tokenService: NgaTokenService
     NgaRegisterPageComponent,
     NgaRequestPasswordPageComponent,
     NgaResetPasswordPageComponent,
+    NgaLogoutPageComponent,
+  ],
+  exports: [
+    NgaAuthPageComponent,
+    NgaLoginPageComponent,
+    NgaRegisterPageComponent,
+    NgaRequestPasswordPageComponent,
+    NgaResetPasswordPageComponent,
+    NgaLogoutPageComponent,
   ],
 })
 export class NgaAuthModule {

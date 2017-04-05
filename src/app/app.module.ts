@@ -114,6 +114,13 @@ const NGA_TEST_COMPONENTS = [
             register: {
               endpoint: 'http://localhost:4400/api/auth/register'
             },
+            logout: {
+              endpoint: 'http://localhost:4400/api/auth/logout',
+              redirect: {
+                success: '/auth/login',
+                failure: '/auth/login',
+              }
+            },
           },
         },
       },

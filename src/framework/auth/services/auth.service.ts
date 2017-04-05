@@ -82,21 +82,22 @@ export class NgaAuthService {
       });
   }
 
+  logout(provider: string): Observable<NgaAuthResult> {
+    return this.getProvider(provider).logout()
+      .do((result: NgaAuthResult) => {
+        console.log(result);
+        if (result.isSuccess()) {
+          this.tokenService.clear();
+        }
+      });
+  }
+
   requestPassword(provider: string, data?: any): Observable<NgaAuthResult> {
     return this.getProvider(provider).requestPassword(data);
   }
 
   resetPassword(provider: string, data?: any): Observable<NgaAuthResult> {
     return this.getProvider(provider).requestPassword(data);
-  }
-
-  logout(provider: string, data?: any): Observable<NgaAuthResult> {
-    return this.getProvider(provider).logout(data)
-      .do((result: NgaAuthResult) => {
-        if (result.isSuccess()) {
-          this.tokenService.clear();
-        }
-      });
   }
 
   protected getProvider(provider: string): NgaAbstractAuthProvider {

@@ -25,7 +25,7 @@ export abstract class NgaAbstractAuthProvider {
 
   abstract resetPassword(data?: any): Observable<NgaAuthResult>;
 
-  abstract logout(data?: any): Observable<NgaAuthResult>;
+  abstract logout(): Observable<NgaAuthResult>;
 
   protected createFailResponse(data?: any): Response {
     return new Response(new ResponseOptions({ body: '{}', status: 401 }));
