@@ -1,4 +1,4 @@
-import { NgModule, ModuleWithProviders, Injector } from '@angular/core';
+import { NgModule, ModuleWithProviders, Injector, Optional, SkipSelf } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
@@ -59,6 +59,12 @@ export function ngaAuthServiceFactory(config: any, tokenService: NgaTokenService
   ],
 })
 export class NgaAuthModule {
+
+  constructor(@Optional() @SkipSelf() parentModule: NgaAuthModule) {
+    if (parentModule) {
+      throw new Error('NgaAuthModule is already loaded. Import it in the AppModule only.');
+    }
+  }
 
   static forRoot(ngaAuthOptions?: NgaAuthOptions): ModuleWithProviders {
     return <ModuleWithProviders> {
