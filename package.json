@@ -78,7 +78,7 @@
     "es7-reflect-metadata": "1.6.0",
     "exports-loader": "0.6.3",
     "expose-loader": "0.7.3",
-    "extract-text-webpack-plugin": "2.0.0-rc.3",
+    "extract-text-webpack-plugin": "2.0.0",
     "file-loader": "0.10.0",
     "find-root": "1.0.0",
     "font-awesome-sass-loader": "1.0.3",
