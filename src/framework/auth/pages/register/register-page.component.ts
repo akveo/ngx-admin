@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
 
 import { NgaUser } from '../../models/user';
 import { NgaAuthService, NgaAuthResult } from '../../services/auth.service';
+import { NgaTokenService } from '../../services/token.service';
 
 @Component({
   selector: 'nga-register-page',
@@ -18,6 +19,10 @@ import { NgaAuthService, NgaAuthResult } from '../../services/auth.service';
       <div *ngIf="errors && errors.length > 0 && !submitted" class="alert alert-danger" role="alert">
         <div><strong>Oh snap!</strong></div>
         <div *ngFor="let error of errors">{{ error }}</div>
+      </div>
+      <div *ngIf="messages && messages.length > 0 && !submitted" class="alert alert-success" role="alert">
+        <div><strong>Hooray!</strong></div>
+        <div *ngFor="let message of messages">{{ message }}</div>
       </div>
       
       <label for="input-name" class="sr-only">Full name</label>
@@ -53,24 +58,35 @@ import { NgaAuthService, NgaAuthResult } from '../../services/auth.service';
 })
 export class NgaRegisterPageComponent {
 
+  delay: number = 1500;
   submitted = false;
   errors: string[] = [];
+  messages: string[] = [];
   user: NgaUser = new NgaUser();
 
   constructor(protected service: NgaAuthService,
+              protected tokenService: NgaTokenService,
               protected router: Router) {
   }
 
   register(provider: string): void {
-    this.errors = [];
+    this.errors = this.messages = [];
     this.submitted = true;
 
     this.service.register(provider, this.user).subscribe((result: NgaAuthResult) => {
       this.submitted = false;
       if (result.isSuccess()) {
-        return this.router.navigate(['/']);
+        this.messages = result.getMessages();
+      } else {
+        this.errors = result.getErrors();
       }
-      this.errors = result.getErrors();
+
+      const redirect = result.getRedirect();
+      if (redirect) {
+        setTimeout(() => {
+          return this.router.navigateByUrl(redirect);
+        }, this.delay);
+      }
     });
   }
 }

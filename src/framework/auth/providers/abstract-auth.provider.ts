@@ -1,5 +1,8 @@
+import { Response, ResponseOptions } from '@angular/http';
 import { Observable } from 'rxjs/Rx';
+
 import { NgaAuthResult } from '../services/auth.service';
+import { getDeepFromObject, deepExtend } from '../helpers';
 
 export abstract class NgaAbstractAuthProvider {
 
@@ -7,12 +10,11 @@ export abstract class NgaAbstractAuthProvider {
   protected config: any = {};
 
   setConfig(config): void {
-    // TODO: merge config deep
-    this.config = Object.assign({}, this.defaultConfig, config);
+    this.config = deepExtend({}, this.defaultConfig, config);
   }
 
   getConfigValue(key): any {
-    return this.config[key];
+    return getDeepFromObject(this.config, key, null);
   }
 
   abstract authenticate(data?: any): Observable<NgaAuthResult>;
@@ -22,4 +24,24 @@ export abstract class NgaAbstractAuthProvider {
   abstract requestPassword(data?: any): Observable<NgaAuthResult>;
 
   abstract resetPassword(data?: any): Observable<NgaAuthResult>;
+
+  abstract logout(data?: any): Observable<NgaAuthResult>;
+
+  protected createFailResponse(data?: any): Response {
+    return new Response(new ResponseOptions({ body: '{}', status: 401 }));
+  }
+
+  protected createSuccessResponse(data?: any): Response {
+    return new Response(new ResponseOptions({ body: '{}', status: 200 }));
+  }
+
+  protected getJsonSafe(res): any {
+    let json;
+    try {
+      json = res.json();
+    } catch(e) {
+      json = {};
+    }
+    return json;
+  }
 }

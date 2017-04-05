@@ -1,4 +1,4 @@
-import { NgModule, ModuleWithProviders, InjectionToken, Injector } from '@angular/core';
+import { NgModule, ModuleWithProviders, Injector } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
@@ -8,7 +8,9 @@ import { NgaLayoutModule } from '../theme/components/layout/layout.module';
 
 import { NgaAuthService } from './services/auth.service';
 import { NgaDummyAuthProvider } from './providers/dummy-auth.provider';
-import { NgaAuthOptions } from './auth.options';
+import { NgaEmailPassAuthProvider } from './providers/email-pass-auth.provider';
+
+import { NgaAuthOptions, NgaAuthOptionsToken } from './auth.options';
 import { NgaAuthPageComponent } from './pages/auth/auth-page.component';
 import { NgaLoginPageComponent } from './pages/login/login-page.component';
 import { NgaRegisterPageComponent } from './pages/register/register-page.component';
@@ -16,10 +18,9 @@ import { NgaRequestPasswordPageComponent } from './pages/request-password/reques
 import { NgaResetPasswordPageComponent } from './pages/reset-password/reset-password-page.component';
 
 import { routes } from './auth.routes';
+import { NgaTokenService } from './services/token.service';
 
-export const NgaAuthOptionsToken = new InjectionToken<NgaAuthOptions>('NGA_AUTH_OPTIONS');
-
-export function ngaAuthServiceFactory(config: any, injector: Injector) {
+export function ngaAuthServiceFactory(config: any, tokenService: NgaTokenService, injector: Injector) {
   const providers = config.providers || {};
 
   for (const key in providers) {
@@ -29,7 +30,7 @@ export function ngaAuthServiceFactory(config: any, injector: Injector) {
       provider.object.setConfig(provider.config || {});
     }
   }
-  return new NgaAuthService(providers);
+  return new NgaAuthService(providers, tokenService);
 }
 
 @NgModule({
@@ -54,8 +55,10 @@ export class NgaAuthModule {
       ngModule: NgaAuthModule,
       providers: [
         { provide: NgaAuthOptionsToken, useValue: ngaAuthOptions },
-        { provide: NgaAuthService, useFactory: ngaAuthServiceFactory, deps: [NgaAuthOptionsToken, Injector] },
+        { provide: NgaAuthService, useFactory: ngaAuthServiceFactory, deps: [NgaAuthOptionsToken, NgaTokenService, Injector] },
+        NgaTokenService,
         NgaDummyAuthProvider,
+        NgaEmailPassAuthProvider,
       ],
     };
   }

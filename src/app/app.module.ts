@@ -49,7 +49,7 @@ import {
 } from './menu-test/menu-test.component';
 import { NgaUserTestComponent } from './user-test/user-test.component';
 import { NgaAuthModule } from '../framework/auth';
-import { NgaDummyAuthProvider } from '../framework/auth';
+import { NgaDummyAuthProvider, NgaEmailPassAuthProvider } from '../framework/auth';
 
 import { routes } from './app.routes';
 
@@ -97,58 +97,25 @@ const NGA_TEST_COMPONENTS = [
     NgaUserModule,
     NgaAuthModule.forRoot({
       providers: {
-
+        //
+        // email: {
+        //   service: NgaDummyAuthProvider,
+        //   config: {
+        //     alwaysFail: true,
+        //     delay: 1000,
+        //   },
+        // },
         email: {
-          service: NgaDummyAuthProvider,
+          service: NgaEmailPassAuthProvider,
           config: {
-            alwaysFail: true,
-            delay: 1000,
+            login: {
+              endpoint: 'http://localhost:4400/api/auth/login'
+            },
+            register: {
+              endpoint: 'http://localhost:4400/api/auth/register'
+            },
           },
         },
-        //email: {
-        //  service: NgaEmailProviderService,
-        //  config: {
-        //    alwaysFail: true,
-        //    login: true,
-        //    register: true,
-        //    requestPass: true,
-        //    resetPass: true,
-        //    endPoint: { // or just '/api/auth'
-        //      loginEndPoint: '/api/auth/login',
-        //      registerEndPoint: '/api/auth/register',
-        //      requestPassEndPoint: '/api/auth/password/request',
-        //      resetPassEndPoint: '/api/auth/password/change',
-        //    },
-        //    token: {
-        //      returnedIn: 'header', // body
-        //      headerKey: 'X-Auth-Token',
-        //      bodyKey: 'data.token',
-        //    },
-        //    redirect: {
-        //      success: '/',
-        //      failure: null,
-        //    },
-        //    validation: {
-        //      password: {
-        //        required: true,
-        //        minLength: 4,
-        //        maxLength: 12,
-        //        regexp: null,
-        //      },
-        //      email: {
-        //        required: true,
-        //        regexp: null,
-        //      },
-        //      fullName: {
-        //        required: true,
-        //        minLength: 4,
-        //        maxLength: 12,
-        //        regexp: null,
-        //      },
-        //    },
-        //    resetPasswordTokenKey: 'reset_password_token',
-        //  },
-        //},
       },
     }),
   ],

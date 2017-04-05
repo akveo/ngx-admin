@@ -37,13 +37,19 @@ export class NgaDummyAuthProvider extends NgaAbstractAuthProvider {
       .delay(this.getConfigValue('delay'));
   }
 
+  logout(data?: any): Observable<NgaAuthResult> {
+    return Observable.of(this.createDummyResult(data))
+      .delay(this.getConfigValue('delay'));
+  }
+
   protected createDummyResult(data?: any): NgaAuthResult {
     if (this.getConfigValue('alwaysFail')) {
       return new NgaAuthResult(false,
-        ['Something went wrong'],
-        new Response(new ResponseOptions({ body: '', status: 500 })));
+        this.createFailResponse(data),
+        null,
+        ['Something went wrong.']);
     }
 
-    return new NgaAuthResult(true, [], new Response(new ResponseOptions({ body: '', status: 200 })));
+    return new NgaAuthResult(true, '/', this.createSuccessResponse(data), ['Successfully logged in.']);
   }
 }
