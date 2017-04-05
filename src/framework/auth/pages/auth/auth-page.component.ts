@@ -3,13 +3,19 @@
  * Copyright Akveo. All Rights Reserved.
  * Licensed under the MIT License. See License.txt in the project root for license information.
  */
-import { Component } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
+import { NgaAuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'nga-auth-page',
   styleUrls: ['./auth-page.component.scss'],
   template: `
     <nga-layout>
+      <nga-layout-header>
+        <span *ngIf="authenticated">Authenticated</span>
+        <span *ngIf="!authenticated">Not authenticated</span>
+      </nga-layout-header>
+      
       <nga-layout-column>
         <div class="auth-block">
           <router-outlet></router-outlet>
@@ -18,5 +24,20 @@ import { Component } from '@angular/core';
     </nga-layout>
   `,
 })
-export class NgaAuthPageComponent {
+export class NgaAuthPageComponent implements OnDestroy {
+
+  subscription: any;
+
+  authenticated: boolean = false;
+  token: string = '';
+
+  constructor(protected auth: NgaAuthService) {
+
+    this.subscription = auth.onAuthenticationChange()
+      .subscribe(authenticated => this.authenticated = authenticated);
+  }
+
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
+  }
 }

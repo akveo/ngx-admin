@@ -1,5 +1,5 @@
 import { Injectable, Inject } from '@angular/core';
-import { Observable } from 'rxjs/Rx';
+import { Observable, ReplaySubject, Subject, BehaviorSubject } from 'rxjs/Rx';
 
 import { NgaAuthOptionsToken } from '../auth.options';
 import { deepExtend, getDeepFromObject } from '../helpers';
@@ -17,13 +17,16 @@ export class NgaTokenService {
   };
   protected config: any = {};
 
+  protected token$: BehaviorSubject<any> = new BehaviorSubject(null);
+
   constructor(@Inject(NgaAuthOptionsToken) protected options) {
-    this.setConfig(options)
+    this.setConfig(options);
+
+    this.get().subscribe(token => this.publishToken(token));
   }
 
   setConfig(config): void {
     this.config = deepExtend({}, this.defaultConfig, config);
-    console.log(this.config);
   }
 
   getConfigValue(key): any {
@@ -31,6 +34,7 @@ export class NgaTokenService {
   }
 
   set(token: any): Observable<any> {
+    this.publishToken(token);
     return this.getConfigValue('token.setter')(token);
   }
 
@@ -38,7 +42,16 @@ export class NgaTokenService {
     return this.getConfigValue('token.getter')();
   }
 
+  tokenChange(): Observable<any> {
+    return this.token$.publish().refCount();
+  }
+
   clear(): Observable<any> {
+    this.publishToken(null);
     return this.getConfigValue('token.deleter')();
+  }
+
+  protected publishToken(token): void {
+    this.token$.next(token);
   }
 }
