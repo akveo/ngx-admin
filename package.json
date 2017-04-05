@@ -47,6 +47,7 @@
     "ngx-uploader": "2.2.0",
     "normalize.css": "4.2.0",
     "reflect-metadata": "0.1.9",
+    "roboto-fontface": "0.7.0",
     "rxjs": "5.1.1",
     "tether": "1.4.0",
     "zone.js": "0.7.7"
