@@ -109,7 +109,7 @@
     "typogr": "0.6.6",
     "underscore": "1.8.3",
     "url-loader": "0.5.7",
-    "webpack": "2.2.0",
+    "webpack": "2.3.2",
     "webpack-dev-middleware": "1.9.0",
     "webpack-dev-server": "2.2.0",
     "webpack-dll-bundles-plugin": "1.0.0-beta.5",
