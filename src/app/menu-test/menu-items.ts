@@ -1,4 +1,4 @@
-import { NgaMenuItem } from '../../framework/theme/components/menu/menu.interfaces';
+import { NgaMenuItem } from '../../framework/theme/components/menu/menu.options';
 
 export const menuItems: Array<NgaMenuItem> = [
   {

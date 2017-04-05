@@ -9,7 +9,7 @@ import { CommonModule } from '@angular/common';
 import { NgaMenuComponent, NgaMenuItemComponent } from './menu.component';
 import { NgaMenuService } from './menu.service';
 
-import { NgaMenuModuleConfig, NgaMenuItem } from './menu.interfaces';
+import { NgaMenuModuleConfig, NgaMenuItem } from './menu.options';
 
 const NGA_MENU_COMPONENTS = [
   NgaMenuComponent,

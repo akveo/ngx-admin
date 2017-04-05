@@ -4,21 +4,18 @@ import { Routes } from '@angular/router';
 import { Subject } from 'rxjs/Subject';
 import { Observable } from 'rxjs/Observable';
 
-import { NgaMenuItem, NgaMenuModuleConfig } from './menu.interfaces';
+import { NgaMenuItem, NgaMenuModuleConfig } from './menu.options';
 
 @Injectable()
 export class NgaMenuService {
 
-  private menuItems: Array<NgaMenuItem>;
-
-  constructor(@Optional() config: NgaMenuModuleConfig,
-              private router: Router) {
-    this.menuItems = config.menuItems;
+  constructor(@Optional() private config: NgaMenuModuleConfig,
+                          private router: Router) {
   }
 
   getMenuItems(): Observable<any> {
     return Observable.create((observer: any) => {
-      observer.next(this.menuItems);
+      observer.next(this.config.menuItems);
     });
   }
 

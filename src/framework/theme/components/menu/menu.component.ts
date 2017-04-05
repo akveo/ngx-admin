@@ -12,7 +12,7 @@ import {
   ChangeDetectionStrategy,
 } from '@angular/core';
 
-import { NgaMenuModuleConfig, NgaMenuItem } from './menu.interfaces';
+import { NgaMenuModuleConfig, NgaMenuItem } from './menu.options';
 import { NgaMenuService } from './menu.service';
 
 @Component({
