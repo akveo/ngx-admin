@@ -2,6 +2,7 @@ import { NgModule }      from '@angular/core';
 import { CommonModule }  from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { NgaModule } from '../../theme/nga.module';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { routing }       from './ui.routing';
 import { DropdownModule, ModalModule } from 'ng2-bootstrap';
@@ -21,6 +22,9 @@ import { LargeButtons } from './components/buttons/components/largeButtons';
 import { DropdownButtons } from './components/buttons/components/dropdownButtons';
 import { GroupButtons } from './components/buttons/components/groupButtons';
 import { IconsService } from './components/icons/icons.service';
+import { DefaultModal } from './components/modals/default-modal/default-modal.component';
+
+
 
 
 @NgModule({
@@ -28,6 +32,7 @@ import { IconsService } from './components/icons/icons.service';
     CommonModule,
     FormsModule,
     NgaModule,
+    NgbModule,
     DropdownModule.forRoot(),
     ModalModule.forRoot(),
     routing
@@ -46,7 +51,11 @@ import { IconsService } from './components/icons/icons.service';
     IconButtons,
     LargeButtons,
     DropdownButtons,
-    GroupButtons
+    GroupButtons,
+    DefaultModal
+  ],
+  entryComponents: [
+    DefaultModal
   ],
   providers: [
     IconsService
