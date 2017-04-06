@@ -15,9 +15,14 @@ import { NgaAuthService, NgaAuthResult } from '../../services/auth.service';
   template: `
     <h2>Request password reset</h2>
     <form (ngSubmit)="requestPass('email')" #requestPassForm="ngForm">
+
       <div *ngIf="errors && errors.length > 0 && !submitted" class="alert alert-danger" role="alert">
         <div><strong>Oh snap!</strong></div>
         <div *ngFor="let error of errors">{{ error }}</div>
+      </div>
+      <div *ngIf="messages && messages.length > 0 && !submitted" class="alert alert-success" role="alert">
+        <div><strong>Hooray!</strong></div>
+        <div *ngFor="let message of messages">{{ message }}</div>
       </div>
       
       <label for="input-email" class="sr-only">Enter your email address</label>
@@ -36,8 +41,10 @@ import { NgaAuthService, NgaAuthResult } from '../../services/auth.service';
 })
 export class NgaRequestPasswordPageComponent {
 
+  redirectDelay: number = 1500;
   submitted = false;
   errors: string[] = [];
+  messages: string[] = [];
   user: NgaUser = new NgaUser();
 
   constructor(protected service: NgaAuthService,
@@ -45,15 +52,23 @@ export class NgaRequestPasswordPageComponent {
   }
 
   requestPass(provider: string): void {
-    this.errors = [];
+    this.errors = this.messages = [];
     this.submitted = true;
 
     this.service.requestPassword(provider, this.user).subscribe((result: NgaAuthResult) => {
       this.submitted = false;
       if (result.isSuccess()) {
-        return this.router.navigate(['/']);
+        this.messages = result.getMessages();
+      } else {
+        this.errors = result.getErrors();
       }
-      this.errors = result.getErrors();
+
+      const redirect = result.getRedirect();
+      if (redirect) {
+        setTimeout(() => {
+          return this.router.navigateByUrl(redirect);
+        }, this.redirectDelay);
+      }
     });
   }
 }

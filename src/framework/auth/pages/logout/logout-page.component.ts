@@ -16,7 +16,7 @@ import { NgaAuthService, NgaAuthResult } from '../../services/auth.service';
 })
 export class NgaLogoutPageComponent {
 
-  delay: number = 1500;
+  redirectDelay: number = 1500;
 
   constructor(protected service: NgaAuthService,
               protected router: Router) {
@@ -33,7 +33,7 @@ export class NgaLogoutPageComponent {
       if (redirect) {
         setTimeout(() => {
           return this.router.navigateByUrl(redirect);
-        }, this.delay);
+        }, this.redirectDelay);
       }
     });
   }

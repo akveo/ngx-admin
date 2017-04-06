@@ -82,6 +82,23 @@ app.post('/api/auth/register', function (req, res) {
   });
 });
 
+app.post('/api/auth/request-pass', function (req, res) {
+  return res.json({
+    data: {
+      message: 'Email with instruction has been sent!'
+    }
+  });
+});
+
+app.post('/api/auth/reset-pass', function (req, res) {
+  return res.json({
+    data: {
+      message: 'Password successfully reset!'
+    }
+  });
+});
+
+
 app.delete('/api/auth/logout', function (req, res) {
   return res.json({
     data: {

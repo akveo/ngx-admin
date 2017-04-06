@@ -21,15 +21,15 @@ export class NgaEmailPassAuthProvider extends NgaAbstractAuthProvider {
       },
       token: {
         key: 'data.token',
-        getter: (res) => getDeepFromObject(this.getJsonSafe(res), this.getConfigValue('login.token.key')),
+        getter: (res: Response) => getDeepFromObject(this.getJsonSafe(res), this.getConfigValue('login.token.key')),
       },
       errors: {
         key: 'data.errors',
-        getter: (res) => getDeepFromObject(this.getJsonSafe(res), this.getConfigValue('login.errors.key'), this.getConfigValue('login.defaultErrors')),
+        getter: (res: Response) => getDeepFromObject(this.getJsonSafe(res), this.getConfigValue('login.errors.key'), this.getConfigValue('login.defaultErrors')),
       },
       messages: {
         key: 'data.messages',
-        getter: (res) => getDeepFromObject(this.getJsonSafe(res), this.getConfigValue('login.messages.key'), this.getConfigValue('login.defaultMessages')),
+        getter: (res: Response) => getDeepFromObject(this.getJsonSafe(res), this.getConfigValue('login.messages.key'), this.getConfigValue('login.defaultMessages')),
       },
       defaultErrors: ['Login/Email combination is not correct, please try again.'],
       defaultMessages: ['You have been successfully logged in.'],
@@ -43,15 +43,15 @@ export class NgaEmailPassAuthProvider extends NgaAbstractAuthProvider {
       },
       token: {
         key: 'data.token',
-        getter: (res) => getDeepFromObject(this.getJsonSafe(res), this.getConfigValue('register.token.key')),
+        getter: (res: Response) => getDeepFromObject(this.getJsonSafe(res), this.getConfigValue('register.token.key')),
       },
       errors: {
         key: 'data.errors',
-        getter: (res) => getDeepFromObject(this.getJsonSafe(res), this.getConfigValue('register.errors.key'), this.getConfigValue('register.defaultErrors')),
+        getter: (res: Response) => getDeepFromObject(this.getJsonSafe(res), this.getConfigValue('register.errors.key'), this.getConfigValue('register.defaultErrors')),
       },
       messages: {
         key: 'data.messages',
-        getter: (res) => getDeepFromObject(this.getJsonSafe(res), this.getConfigValue('register.messages.key'), this.getConfigValue('register.defaultMessages')),
+        getter: (res: Response) => getDeepFromObject(this.getJsonSafe(res), this.getConfigValue('register.messages.key'), this.getConfigValue('register.defaultMessages')),
       },
       defaultErrors: ['Something went wrong, please try again.'],
       defaultMessages: ['You have been successfully registered.'],
@@ -65,32 +65,32 @@ export class NgaEmailPassAuthProvider extends NgaAbstractAuthProvider {
       },
       errors: {
         key: 'data.errors',
-        getter: (res) => getDeepFromObject(this.getJsonSafe(res), this.getConfigValue('logout.errors.key'), this.getConfigValue('logout.defaultErrors')),
+        getter: (res: Response) => getDeepFromObject(this.getJsonSafe(res), this.getConfigValue('logout.errors.key'), this.getConfigValue('logout.defaultErrors')),
       },
       messages: {
         key: 'data.messages',
-        getter: (res) => getDeepFromObject(this.getJsonSafe(res), this.getConfigValue('logout.messages.key'), this.getConfigValue('logout.defaultMessages')),
+        getter: (res: Response) => getDeepFromObject(this.getJsonSafe(res), this.getConfigValue('logout.messages.key'), this.getConfigValue('logout.defaultMessages')),
       },
       defaultErrors: ['Something went wrong, please try again.'],
       defaultMessages: ['You have been successfully registered.'],
     },
-    // requestPass: {
-    //   endpoint: '/api/auth/request-pass',
-    //   redirect: {
-    //     success: '/',
-    //     failure: null,
-    //   },
-    //   errors: {
-    //     key: 'errors',
-    //     getter: (res) => getDeepFromObject(res, this.getConfigValue('requestPass.errors.key')),
-    //   },
-    //   messages: {
-    //     key: 'message',
-    //     getter: (res) => getDeepFromObject(res, this.getConfigValue('requestPass.messages.key')),
-    //   },
-    //   defaultErrors: ['Something went wrong, please try again.'],
-    //   defaultMessages: ['Reset password instructions have been sent to your email.'],
-    // },
+    requestPass: {
+      endpoint: '/api/auth/request-pass',
+      redirect: {
+        success: '/',
+        failure: null,
+      },
+      errors: {
+        key: 'data.errors',
+        getter: (res: Response) => getDeepFromObject(this.getJsonSafe(res), this.getConfigValue('requestPass.errors.key'), this.getConfigValue('requestPass.defaultErrors')),
+      },
+      messages: {
+        key: 'data.messages',
+        getter: (res: Response) => getDeepFromObject(this.getJsonSafe(res), this.getConfigValue('requestPass.messages.key'), this.getConfigValue('requestPass.defaultMessages')),
+      },
+      defaultErrors: ['Something went wrong, please try again.'],
+      defaultMessages: ['Reset password instructions have been sent to your email.'],
+    },
     // resetPass: {
     //   endpoint: '/api/auth/reset-pass',
     //   redirect: {
@@ -203,9 +203,38 @@ export class NgaEmailPassAuthProvider extends NgaAbstractAuthProvider {
       });
   }
 
-  // TODO: implement
   requestPassword(data?: any): Observable<NgaAuthResult> {
-    return Observable.empty();
+    return this.http.post(this.getConfigValue('requestPass.endpoint'), data)
+      .map((res) => {
+        if (this.getConfigValue('requestPass.alwaysFail')) {
+          throw this.createFailResponse();
+        }
+        return res;
+      })
+      .map((res) => {
+        return new NgaAuthResult(
+          true,
+          res,
+          this.getConfigValue('requestPass.redirect.success'),
+          [],
+          this.getConfigValue('requestPass.messages.getter')(res)
+        );
+      })
+      .catch((res) => {
+        let errors = [];
+        if (res instanceof Response) {
+          errors = this.getConfigValue('requestPass.errors.getter')(res);
+        } else {
+          errors.push('Something went wrong.');
+        }
+        return Observable.of(
+          new NgaAuthResult(
+            false,
+            res,
+            this.getConfigValue('requestPass.redirect.failure'),
+            errors,
+          ));
+      });
   }
 
   // TODO: implement

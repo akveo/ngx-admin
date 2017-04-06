@@ -149,7 +149,6 @@ export class NgaAuthService {
   logout(provider: string): Observable<NgaAuthResult> {
     return this.getProvider(provider).logout()
       .do((result: NgaAuthResult) => {
-        console.log(result);
         if (result.isSuccess()) {
           this.tokenService.clear();
         }

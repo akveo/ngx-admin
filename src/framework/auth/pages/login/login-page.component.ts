@@ -51,7 +51,7 @@ import { NgaTokenService } from '../../services/token.service';
 })
 export class NgaLoginPageComponent {
 
-  delay: number = 1500;
+  redirectDelay: number = 1500;
   submitted = false;
   errors: string[] = [];
   messages: string[] = [];
@@ -77,7 +77,7 @@ export class NgaLoginPageComponent {
       if (redirect) {
         setTimeout(() => {
           return this.router.navigateByUrl(redirect);
-        }, this.delay);
+        }, this.redirectDelay);
       }
     });
   }
