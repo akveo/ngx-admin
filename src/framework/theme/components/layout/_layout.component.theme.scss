@@ -12,6 +12,7 @@
     /deep/ nga-layout-header {
       nav {
         height: $nga-header-height;
+        padding: $nga-header-padding;
         background: $nga-header-background;
         color: $nga-header-foreground;
 
@@ -29,7 +30,7 @@
       }
     }
 
-    .container {
+    .layout-container {
       .content {
         display: flex;
         flex: 1;
