@@ -400,6 +400,10 @@ label.custom-input-danger {
   vertical-align: sub;
 }
 
+.raiting-box {
+  display: flex;
+}
+
 .help-block.error-block {
   display: none;
   .has-error &.basic-block {

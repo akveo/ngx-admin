@@ -42,6 +42,8 @@
   }
   .row {
     margin: 0;
+    display: flex;
+    justify-content: space-between;
     > div {
       padding: 0;
     }
