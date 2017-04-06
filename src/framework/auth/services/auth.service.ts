@@ -180,7 +180,7 @@ export class NgaAuthService {
    * @returns {Observable<NgaAuthResult>}
    */
   resetPassword(provider: string, data?: any): Observable<NgaAuthResult> {
-    return this.getProvider(provider).requestPassword(data);
+    return this.getProvider(provider).resetPassword(data);
   }
 
   protected getProvider(provider: string): NgaAbstractAuthProvider {

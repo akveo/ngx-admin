@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
+import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs/Rx';
 
 import { NgEmailPassAuthProviderConfig } from './email-pass-auth.options';
@@ -91,24 +92,24 @@ export class NgaEmailPassAuthProvider extends NgaAbstractAuthProvider {
       defaultErrors: ['Something went wrong, please try again.'],
       defaultMessages: ['Reset password instructions have been sent to your email.'],
     },
-    // resetPass: {
-    //   endpoint: '/api/auth/reset-pass',
-    //   redirect: {
-    //     success: '/',
-    //     failure: null,
-    //   },
-    //   errors: {
-    //     key: 'errors',
-    //     getter: (res) => getDeepFromObject(res, this.getConfigValue('resetPass.errors.key')),
-    //   },
-    //   messages: {
-    //     key: 'message',
-    //     getter: (res) => getDeepFromObject(res, this.getConfigValue('resetPass.messages.key')),
-    //   },
-    //   resetPasswordTokenKey: 'reset_password_token',
-    //   defaultErrors: ['Something went wrong, please try again.'],
-    //   defaultMessages: ['Your password has been successfully changed.'],
-    // },
+    resetPass: {
+      endpoint: '/api/auth/reset-pass',
+      redirect: {
+        success: '/',
+        failure: null,
+      },
+      errors: {
+        key: 'data.errors',
+        getter: (res: Response) => getDeepFromObject(this.getJsonSafe(res), this.getConfigValue('resetPass.errors.key'), this.getConfigValue('resetPass.defaultErrors')),
+      },
+      messages: {
+        key: 'data.messages',
+        getter: (res: Response) => getDeepFromObject(this.getJsonSafe(res), this.getConfigValue('resetPass.messages.key'), this.getConfigValue('resetPass.defaultMessages')),
+      },
+      resetPasswordTokenKey: 'reset_password_token',
+      defaultErrors: ['Something went wrong, please try again.'],
+      defaultMessages: ['Your password has been successfully changed.'],
+    },
     // validation: {
     //   password: {
     //     required: true,
@@ -129,7 +130,7 @@ export class NgaEmailPassAuthProvider extends NgaAbstractAuthProvider {
     // },
   };
 
-  constructor(protected http: Http) {
+  constructor(protected http: Http, private route: ActivatedRoute) {
     super();
   }
 
@@ -237,9 +238,41 @@ export class NgaEmailPassAuthProvider extends NgaAbstractAuthProvider {
       });
   }
 
-  // TODO: implement
-  resetPassword(data?: any): Observable<NgaAuthResult> {
-    return Observable.empty();
+  resetPassword(data: any = {}): Observable<NgaAuthResult> {
+    const tokenKey = this.getConfigValue('resetPass.resetPasswordTokenKey');
+    data[tokenKey] = this.route.snapshot.queryParams[tokenKey];
+
+    return this.http.post(this.getConfigValue('resetPass.endpoint'), data)
+      .map((res) => {
+        if (this.getConfigValue('resetPass.alwaysFail')) {
+          throw this.createFailResponse();
+        }
+        return res;
+      })
+      .map((res) => {
+        return new NgaAuthResult(
+          true,
+          res,
+          this.getConfigValue('resetPass.redirect.success'),
+          [],
+          this.getConfigValue('resetPass.messages.getter')(res)
+        );
+      })
+      .catch((res) => {
+        let errors = [];
+        if (res instanceof Response) {
+          errors = this.getConfigValue('resetPass.errors.getter')(res);
+        } else {
+          errors.push('Something went wrong.');
+        }
+        return Observable.of(
+          new NgaAuthResult(
+            false,
+            res,
+            this.getConfigValue('resetPass.redirect.failure'),
+            errors,
+          ));
+      });
   }
 
   logout(): Observable<NgaAuthResult> {

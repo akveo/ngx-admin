@@ -91,9 +91,17 @@ app.post('/api/auth/request-pass', function (req, res) {
 });
 
 app.post('/api/auth/reset-pass', function (req, res) {
-  return res.json({
+
+  if (req.body.reset_password_token) {
+    return res.json({
+      data: {
+        message: 'Password successfully reset!'
+      }
+    });
+  }
+  return res.status(401).json({
     data: {
-      message: 'Password successfully reset!'
+      error: 'Token is not correct.'
     }
   });
 });

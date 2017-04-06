@@ -127,6 +127,12 @@ const NGA_TEST_COMPONENTS = [
                 success: '/auth/reset-password',
               }
             },
+            resetPass: {
+              endpoint: 'http://localhost:4400/api/auth/reset-pass',
+              redirect: {
+                success: '/auth/login',
+              }
+            },
           },
         },
       },

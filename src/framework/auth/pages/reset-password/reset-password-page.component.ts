@@ -3,11 +3,6 @@
  * Copyright Akveo. All Rights Reserved.
  * Licensed under the MIT License. See License.txt in the project root for license information.
  */
-/**
- * @license
- * Copyright Akveo. All Rights Reserved.
- * Licensed under the MIT License. See License.txt in the project root for license information.
- */
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -20,9 +15,14 @@ import { NgaAuthService, NgaAuthResult } from '../../services/auth.service';
   template: `
     <h2>Change password</h2>
     <form (ngSubmit)="resetPass('email')" #resetPassForm="ngForm">
+      
       <div *ngIf="errors && errors.length > 0 && !submitted" class="alert alert-danger" role="alert">
         <div><strong>Oh snap!</strong></div>
         <div *ngFor="let error of errors">{{ error }}</div>
+      </div>
+      <div *ngIf="messages && messages.length > 0 && !submitted" class="alert alert-success" role="alert">
+        <div><strong>Hooray!</strong></div>
+        <div *ngFor="let message of messages">{{ message }}</div>
       </div>
       
       <label for="input-password" class="sr-only">New Password</label>
@@ -46,8 +46,10 @@ import { NgaAuthService, NgaAuthResult } from '../../services/auth.service';
 })
 export class NgaResetPasswordPageComponent {
 
+  redirectDelay: number = 1500;
   submitted = false;
   errors: string[] = [];
+  messages: string[] = [];
   user: NgaUser = new NgaUser();
 
   constructor(protected service: NgaAuthService,
@@ -55,15 +57,23 @@ export class NgaResetPasswordPageComponent {
   }
 
   resetPass(provider: string): void {
-    this.errors = [];
+    this.errors = this.messages = [];
     this.submitted = true;
 
-    this.service.requestPassword(provider, this.user).subscribe((result: NgaAuthResult) => {
+    this.service.resetPassword(provider, this.user).subscribe((result: NgaAuthResult) => {
       this.submitted = false;
       if (result.isSuccess()) {
-        return this.router.navigate(['/']);
+        this.messages = result.getMessages();
+      } else {
+        this.errors = result.getErrors();
       }
-      this.errors = result.getErrors();
+
+      const redirect = result.getRedirect();
+      if (redirect) {
+        setTimeout(() => {
+          return this.router.navigateByUrl(redirect);
+        }, this.redirectDelay);
+      }
     });
   }
 }
