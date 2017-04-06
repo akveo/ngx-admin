@@ -5,6 +5,7 @@
  */
 :host {
   display: flex;
+  flex-direction: column;
 
   /deep/ nga-layout-header {
     display: block;
