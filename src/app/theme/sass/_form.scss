@@ -314,6 +314,10 @@ label.custom-input-danger {
 
 .input-demo {
   line-height: 25px;
+
+  ba-multi-checkbox {
+    width: 100%;
+  }
 }
 
 @mixin validationState($color, $focusColor) {
