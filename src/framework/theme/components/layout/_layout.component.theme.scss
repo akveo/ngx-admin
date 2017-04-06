@@ -25,8 +25,8 @@
         }
       }
 
-      &.fixed ~ .container {
-        padding-top: $nga-layout-padding;
+      &.fixed ~ .layout-container {
+        padding-top: $nga-header-height;
       }
     }
 
