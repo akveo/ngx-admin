@@ -9,20 +9,16 @@
       li {
         a {
           color: $nga-color-default;
-          -webkit-transition: color 0.2s ease;
           transition: color 0.2s ease;
+
+          &.active {
+            background: $nga-color-default;
+            color: $nga-color-inverse;
+          }
         }
 
         a:hover {
           color: $nga-color-primary;
-        }
-
-        &.active {
-          background: $nga-color-default;
-
-          a {
-            color: $nga-color-inverse;
-          }
         }
       }
     }

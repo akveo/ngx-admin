@@ -24,12 +24,12 @@ export class NgaUserMenuItem {
           {{ getInitials() }}
         </template>
       </div>
-      
+
       <div class="info-container">
         <span *ngIf="showNameValue && name" class="user-name">{{ name }}</span>
         <span *ngIf="showTitleValue && title" class="user-title">{{ title }}</span>
       </div>
-      
+
       <div *ngIf="menu && menu.length > 0" [ngStyle]="{display: isMenuShown ? 'block' : 'none'}" class="user-context-menu">
         <ul>
           <li class="arrow"></li>
@@ -71,7 +71,7 @@ export class NgaUserComponent {
   @Input() title: string;
   @Input() picture: string;
   @Input() color: string;
-  @Input() menu: Array<NgaUserMenuItem> = [];
+  @Input() menu: NgaUserMenuItem[] = [];
 
   @Input()
   set size(val: string) {
@@ -103,7 +103,7 @@ export class NgaUserComponent {
 
   constructor(private el: ElementRef) { }
 
-  itemClick(event, item: NgaUserMenuItem): boolean {
+  itemClick(event: any, item: NgaUserMenuItem): boolean {
     this.menuClick.emit(item);
     return false;
   }
@@ -113,7 +113,7 @@ export class NgaUserComponent {
   }
 
   @HostListener('document:click', ['$event'])
-  hideMenu(event) {
+  hideMenu(event: any) {
     if (!this.el.nativeElement.contains(event.target)) {
       this.isMenuShown = false;
     }

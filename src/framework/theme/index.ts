@@ -11,3 +11,4 @@ export * from './components/menu/menu.module';
 export * from './components/route-tabset/route-tabset.module';
 export * from './components/sidebar/sidebar.module';
 export * from './components/tabset/tabset.module';
+export * from './components/user/user.module';

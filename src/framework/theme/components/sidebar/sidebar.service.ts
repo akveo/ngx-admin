@@ -5,24 +5,24 @@ import { Observable } from 'rxjs/Observable';
 @Injectable()
 export class NgaSidebarService {
 
-  private toggleSubject = new Subject<any>();
-  private expandSubject = new Subject<any>();
-  private collapseSubject = new Subject<any>();
+  private toggleChanges$ = new Subject();
+  private expandChanges$ = new Subject();
+  private collapseChanges$ = new Subject();
 
-  toggle$: Observable<any> = this.toggleSubject.asObservable();
-  expand$: Observable<any> = this.expandSubject.asObservable();
-  collapse$: Observable<any> = this.collapseSubject.asObservable();
+  toggleChanges: Observable<any> = this.toggleChanges$.asObservable();
+  expandChanges: Observable<any> = this.expandChanges$.asObservable();
+  collapseChanges: Observable<any> = this.collapseChanges$.asObservable();
 
   toggle(compact: boolean = false, tag?: string) {
-    this.toggleSubject.next({ compact, tag });
+    this.toggleChanges$.next({ compact, tag });
   }
 
   expand(tag?: string) {
-    this.expandSubject.next({ tag });
+    this.expandChanges$.next({ tag });
   }
 
   collapse(tag?: string) {
-    this.collapseSubject.next({ tag });
+    this.collapseChanges$.next({ tag });
   }
 
 }

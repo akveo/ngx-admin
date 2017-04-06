@@ -169,13 +169,13 @@ export class NgaCardTestComponent {
   sizes = ['small', 'xsmall', 'medium', 'xmedium', 'large'];
   statuses = ['primary', 'success', 'info', 'warning', 'danger', 'active', 'disabled'];
 
-  cards: Array<any>;
+  cards: any[];
 
   constructor() {
     this.cards = this.prepareCards();
   }
 
-  private prepareCards(): Array<any> {
+  private prepareCards(): any[] {
     const result = [];
 
     this.statuses.forEach(status => {

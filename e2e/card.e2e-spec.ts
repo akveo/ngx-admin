@@ -20,7 +20,7 @@ const dangerColor: string = 'rgba(249, 83, 114, 1)';
 const activeColor: string = 'rgba(63, 66, 67, 1)';
 const disabledColor: string = 'rgba(255, 255, 255, 0.4)';
 
-const heights: Array<any> = [
+const heights: any[] = [
   {
     key: 'small',
     value: smallHeight,
@@ -43,7 +43,7 @@ const heights: Array<any> = [
   },
 ];
 
-const colors: Array<any> = [
+const colors: any[] = [
   {
     key: 'primary',
     value: primaryColor,
@@ -74,10 +74,10 @@ const colors: Array<any> = [
   },
 ];
 
-let cards: Array<any> = [];
+let cards: any[] = [];
 
 function prepareCards() {
-  const result: Array<any> = [];
+  const result: any[] = [];
 
   let elementNumber: number = 14;
 

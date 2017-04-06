@@ -35,7 +35,7 @@ script:
   - npm run lint:ci
   - npm run build:ci
   - npm run test
-  - npm run e2e:ci
+  - npm run e2e
 
 notifications:
   slack: akveo:q559HckfZMSyZRb803aiLcjH

@@ -31,6 +31,7 @@
     "@angular/router": "^4.0.0",
     "bootstrap": "^4.0.0-alpha.6",
     "font-awesome": "^4.7.0",
+    "immutable": "^3.8.1",
     "ionicons": "^2.0.1"
   }
 }

@@ -77,7 +77,6 @@
     "new-parens": true,
     "no-consecutive-blank-lines": [true, 2],
     "object-curly-spacing": [true, "always"],
-    "object-literal-key-quotes": [true, "as-needed"],
     "ter-arrow-spacing": [
       true,
       {

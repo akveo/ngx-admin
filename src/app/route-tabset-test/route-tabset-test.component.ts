@@ -27,7 +27,7 @@ export class NgaRouteTabsetTestChild2Component {
   `,
 })
 export class NgaRouteTabsetTestComponent {
-  tabs: Array<any> = [
+  tabs: any[] = [
     {
       title: 'Tab #1',
       route: '/route-tabset/tab1',

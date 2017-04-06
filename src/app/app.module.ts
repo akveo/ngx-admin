@@ -35,7 +35,14 @@ import { NgaSidebarTestOneComponent } from './sidebar-test/sidebar-test-one.comp
 import { NgaSidebarTestTwoComponent } from './sidebar-test/sidebar-test-two.component';
 import { NgaSidebarTestThreeComponent } from './sidebar-test/sidebar-test-three.component';
 
-import { NgaMenuTestComponent } from './menu-test/menu-test.component';
+import {
+  NgaMenuTestComponent,
+  NgaMenuItem2Component,
+  NgaMenuItem31Component,
+  NgaMenuItem3Component,
+  NgaMenuItem33Component,
+  NgaMenuItem331Component,
+} from './menu-test/menu-test.component';
 import { NgaUserTestComponent } from './user-test/user-test.component';
 
 import { routes } from './app.routes';
@@ -56,6 +63,11 @@ const NGA_TEST_COMPONENTS = [
   NgaRouteTabsetTestChild1Component,
   NgaRouteTabsetTestChild2Component,
   NgaMenuTestComponent,
+  NgaMenuItem2Component,
+  NgaMenuItem3Component,
+  NgaMenuItem31Component,
+  NgaMenuItem33Component,
+  NgaMenuItem331Component,
   NgaUserTestComponent,
 ];
 
@@ -68,9 +80,7 @@ const NGA_TEST_COMPONENTS = [
     NgaThemeModule.forRoot(),
     NgaCardModule,
     NgaLayoutModule,
-    NgaMenuModule.forRoot({
-      menuItems: menuItems,
-    }),
+    NgaMenuModule.forRoot(),
     NgaRouteTabsetModule,
     NgaSidebarModule.forRoot(),
     NgaTabsetModule,

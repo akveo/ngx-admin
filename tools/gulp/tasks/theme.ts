@@ -141,6 +141,7 @@ const ROLLUP_GLOBALS = {
   'rxjs/Observable': 'Rx',
 
   // 3rd party dependencies
+  'immutable': 'immutable',
 };
 
 /** Creates a rollup bundles of the @nga/theme components.*/

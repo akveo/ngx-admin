@@ -32,12 +32,11 @@ const NGA_MENU_PROVIDERS = [
   ],
 })
 export class NgaMenuModule {
-  static forRoot(config: NgaMenuModuleConfig): ModuleWithProviders {
+  static forRoot(): ModuleWithProviders {
     return <ModuleWithProviders>{
       ngModule: NgaMenuModule,
       providers: [
         ...NGA_MENU_PROVIDERS,
-        { provide: NgaMenuModuleConfig, useValue: config },
       ],
     };
   }

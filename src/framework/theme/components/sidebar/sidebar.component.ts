@@ -99,19 +99,19 @@ export class NgaSidebarComponent implements OnInit {
   constructor(private sidebarService: NgaSidebarService) { }
 
   ngOnInit() {
-    this.sidebarService.toggle$.subscribe((data: any) => {
+    this.sidebarService.toggleChanges.subscribe((data: any) => {
       if (!this.tag || this.tag === data.tag) {
         this.toggle(data.compact);
       }
     });
 
-    this.sidebarService.expand$.subscribe((data: any) => {
+    this.sidebarService.expandChanges.subscribe((data: any) => {
       if (!this.tag || this.tag === data.tag) {
         this.expand();
       }
     });
 
-    this.sidebarService.collapse$.subscribe((data: any) => {
+    this.sidebarService.collapseChanges.subscribe((data: any) => {
       if (!this.tag || this.tag === data.tag) {
         this.collapse();
       }

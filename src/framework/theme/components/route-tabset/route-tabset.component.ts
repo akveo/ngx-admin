@@ -29,7 +29,7 @@ export class NgaRouteTabsetComponent {
 
   @HostBinding('class.full-width') fullWidthValue: boolean = false;
 
-  @Input() tabs: Array<any>;
+  @Input() tabs: any[];
 
   @Input()
   set fullWidth(val: boolean) {

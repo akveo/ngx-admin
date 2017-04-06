@@ -1,30 +1,77 @@
-import { Injectable, Optional } from '@angular/core';
+/**
+ * @license
+ * Copyright Akveo. All Rights Reserved.
+ * Licensed under the MIT License. See License.txt in the project root for license information.
+ */
+import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Routes } from '@angular/router';
 import { Subject } from 'rxjs/Subject';
 import { Observable } from 'rxjs/Observable';
+import { List } from 'immutable';
 
 import { NgaMenuItem, NgaMenuModuleConfig } from './menu.options';
 
 @Injectable()
 export class NgaMenuService {
 
-  constructor(@Optional() private config: NgaMenuModuleConfig,
-                          private router: Router) {
-  }
+  private preparedMenuItems$ = new Subject();
+  private addItemsChanges$ = new Subject();
 
-  getMenuItems(): Observable<any> {
-    return Observable.create((observer: any) => {
-      observer.next(this.config.menuItems);
+  preparedMenuItems: Observable<{ tag: string, items: List<NgaMenuItem> }> = this.preparedMenuItems$.asObservable();
+
+  addMenuChanges: Observable<{ tag: string, item: NgaMenuItem }> = this.addItemsChanges$.asObservable();
+
+  constructor(private router: Router) { }
+
+  prepareMenuItems(items: List<NgaMenuItem>, tag?: string) {
+    items.forEach(i => this.prepareMenuItem(i));
+
+    this.preparedMenuItems$.next({
+      tag,
+      items,
     });
   }
 
-  getCurrentMenuItem(): Observable<any> {
-    return Observable.create((observer: any) => {
-      observer.next();
+  private prepareMenuItem(item: NgaMenuItem) {
+    if (item.children && item.children.size > 0) {
+      const firstItemWithoutParent = item.children.filter(c => c.parent === null || c.parent === undefined).first();
+
+      if (firstItemWithoutParent) {
+        firstItemWithoutParent.parent = item;
+
+        this.prepareMenuItem(firstItemWithoutParent);
+      }
+    } else if (item.parent) {
+      this.prepareMenuItem(item.parent);
+    }
+  }
+
+  addMenuItem(item: NgaMenuItem, tag?: string) {
+    this.addItemsChanges$.next({
+      tag,
+      item,
     });
   }
 
-  addMenuItem(menuItem: NgaMenuItem) { }
+  selectMenuItem(item: NgaMenuItem) {
+    item.selected = true;
+
+    if (item.parent) {
+      item.parent.expanded = true;
+
+      this.selectMenuItem(item.parent);
+    }
+  }
+
+  resetMenuItems(prevSelectedItem: NgaMenuItem) {
+    prevSelectedItem.selected = false;
+
+    if (prevSelectedItem.parent) {
+      prevSelectedItem.parent.expanded = false;
+
+      this.resetMenuItems(prevSelectedItem.parent);
+    }
+  }
 
 }

@@ -1,16 +1,23 @@
-// TODO: let's move this into the component (angular doesn't recommend using .interface files)
+/**
+ * @license
+ * Copyright Akveo. All Rights Reserved.
+ * Licensed under the MIT License. See License.txt in the project root for license information.
+ */
+import { List } from 'immutable';
+
 export class NgaMenuItem {
   title: string;
-  // TODO let's add a 'link' property which accepts routerLink values
+  link?: string;
   url?: string;
   icon?: string;
   expanded?: boolean = false;
   selected?: boolean = false;
-  children?: Array<NgaMenuItem>;
+  children?: List<NgaMenuItem>;
   target?: string;
   hidden?: boolean = false;
+  parent?: NgaMenuItem;
 }
 
 export class NgaMenuModuleConfig {
-  menuItems: Array<NgaMenuItem>;
+  menuItems: List<NgaMenuItem>;
 }
