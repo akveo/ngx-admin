@@ -47,6 +47,9 @@ $angle-right: "\f101";
       }
     }
   }
+  &.child-selected{
+    font-weight: bold;
+  }
 }
 
 .ba-sidebar-item-expanded {

@@ -31,17 +31,25 @@ export class BaMenuService {
     return this._currentMenuItem;
   }
 
-  public selectMenuItem(menuItems:any[]):any[] {
+  public selectMenuItem(menuItems:any[], parentItem: any):any[] {
     let items = [];
     menuItems.forEach((item) => {
       this._selectItem(item);
 
+      if (parentItem){
+        parentItem.childSelected = false;
+      }
+
       if (item.selected) {
         this._currentMenuItem = item;
+
+        if (parentItem) {
+          parentItem.childSelected = true;
+        }
       }
 
       if (item.children && item.children.length > 0) {
-        item.children = this.selectMenuItem(item.children);
+        item.children = this.selectMenuItem(item.children, item);
       }
       items.push(item);
     });
