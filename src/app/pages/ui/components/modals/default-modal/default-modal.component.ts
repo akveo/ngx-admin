@@ -17,7 +17,12 @@ export class DefaultModal implements OnInit {
    nostrud exerci tation ullamcorper suscipit lobortis
    nisl ut aliquip ex ea commodo consequat.`;
 
-  constructor(private activeModal: NgbActiveModal) {}
+  constructor(private activeModal: NgbActiveModal) {
+  }
 
   ngOnInit() {}
+
+  closeModal() {
+    this.activeModal.close();
+  }
 }

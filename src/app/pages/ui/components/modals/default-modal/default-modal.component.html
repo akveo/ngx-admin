@@ -1,7 +1,7 @@
 <div class="modal-content">
   <div class="modal-header">
     <h4 class="modal-title">{{modalHeader}}</h4>
-    <button class="close" aria-label="Close" (click)="activeModal.dismiss()">
+    <button class="close" aria-label="Close" (click)="closeModal()">
       <span aria-hidden="true">&times;</span>
     </button>
   </div>
@@ -9,6 +9,6 @@
     {{modalContent}}
   </div>
   <div class="modal-footer">
-    <button class="btn btn-primary confirm-btn" (click)="activeModal.dismiss()">Save changes</button>
+    <button class="btn btn-primary confirm-btn" (click)="closeModal()">Save changes</button>
   </div>
 </div>
