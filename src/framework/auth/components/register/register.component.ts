@@ -8,14 +8,14 @@ import { Router } from '@angular/router';
 
 import { NgaUser } from '../../models/user';
 import { NgaAuthService, NgaAuthResult } from '../../services/auth.service';
+import { NgaTokenService } from '../../services/token.service';
 
 @Component({
-  selector: 'nga-reset-password-page',
-  styleUrls: ['./reset-password-page.component.scss'],
+  selector: 'nga-register',
+  styleUrls: ['./register.component.scss'],
   template: `
-    <h2>Change password</h2>
-    <form (ngSubmit)="resetPass('email')" #resetPassForm="ngForm">
-      
+    <h2>Create new account</h2>
+    <form (ngSubmit)="register('email')" #registerForm="ngForm">
       <div *ngIf="errors && errors.length > 0 && !submitted" class="alert alert-danger" role="alert">
         <div><strong>Oh snap!</strong></div>
         <div *ngFor="let error of errors">{{ error }}</div>
@@ -25,26 +25,38 @@ import { NgaAuthService, NgaAuthResult } from '../../services/auth.service';
         <div *ngFor="let message of messages">{{ message }}</div>
       </div>
       
-      <label for="input-password" class="sr-only">New Password</label>
-      <input name="password" [(ngModel)]="user.password" type="password" id="input-password" 
-        class="form-control form-control-lg first" placeholder="New Password" required autofocus>
+      <label for="input-name" class="sr-only">Full name</label>
+      <input name="fullName" [(ngModel)]="user.fullName" type="text" id="input-name" 
+        class="form-control form-control-lg first" placeholder="Full name" autofocus>
       
-      <label for="input-re-password" class="sr-only">Confirm Password</label>
+      <label for="input-email" class="sr-only">Email address</label>
+      <input name="email" [(ngModel)]="user.email" type="email" id="input-email" 
+        class="form-control form-control-lg middle" placeholder="Email address" required>
+      
+      <label for="input-password" class="sr-only">Password</label>
+      <input name="password" [(ngModel)]="user.password" type="password" id="input-password" 
+        class="form-control form-control-lg middle" placeholder="Password" required>
+      
+      <label for="input-re-password" class="sr-only">Repeat password</label>
       <input name="confirmPassword" [(ngModel)]="user.confirmPassword" type="password" id="input-re-password" 
         class="form-control form-control-lg last" placeholder="Confirm Password" required>
       
-      <div class="checkbox"></div>
-      
-      <button [disabled]="submitted || !resetPassForm.form.valid"
-        class="btn btn-lg btn-primary btn-block" type="submit">Change password</button>
+      <div class="checkbox">
+        <label>
+          <input name="rememberMe" [(ngModel)]="user.rememberMe" 
+            type="checkbox" value="remember-me"> Agree to <a href="#" target="_blank">Terms & Conditions</a>
+        </label>
+      </div>
+      <button [disabled]="submitted || !registerForm.form.valid" 
+        class="btn btn-lg btn-primary btn-block" type="submit">Register</button>
     </form>
     
     <div class="links">
-      <a routerLink="../login">Login</a> or <a routerLink="../register">Register</a>
+      Already have an account? <a routerLink="../login">Sign in</a>
     </div>
   `,
 })
-export class NgaResetPasswordPageComponent {
+export class NgaRegisterComponent {
 
   redirectDelay: number = 1500;
   submitted = false;
@@ -53,14 +65,15 @@ export class NgaResetPasswordPageComponent {
   user: NgaUser = new NgaUser();
 
   constructor(protected service: NgaAuthService,
+              protected tokenService: NgaTokenService,
               protected router: Router) {
   }
 
-  resetPass(provider: string): void {
+  register(provider: string): void {
     this.errors = this.messages = [];
     this.submitted = true;
 
-    this.service.resetPassword(provider, this.user).subscribe((result: NgaAuthResult) => {
+    this.service.register(provider, this.user).subscribe((result: NgaAuthResult) => {
       this.submitted = false;
       if (result.isSuccess()) {
         this.messages = result.getMessages();

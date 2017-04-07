@@ -9,12 +9,12 @@ import { Router } from '@angular/router';
 import { NgaAuthService, NgaAuthResult } from '../../services/auth.service';
 
 @Component({
-  selector: 'nga-logout-page',
+  selector: 'nga-logout',
   template: `
-    <div>Logging out...</div>
+    <div>Logging out, please wait...</div>
   `,
 })
-export class NgaLogoutPageComponent {
+export class NgaLogoutComponent {
 
   redirectDelay: number = 1500;
 

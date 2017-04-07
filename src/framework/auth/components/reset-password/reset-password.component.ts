@@ -8,14 +8,13 @@ import { Router } from '@angular/router';
 
 import { NgaUser } from '../../models/user';
 import { NgaAuthService, NgaAuthResult } from '../../services/auth.service';
-import { NgaTokenService } from '../../services/token.service';
 
 @Component({
-  selector: 'nga-login-page',
-  styleUrls: ['./login-page.component.scss'],
+  selector: 'nga-reset-password-page',
+  styleUrls: ['./reset-password.component.scss'],
   template: `
-    <h2>Please sign in</h2>
-    <form (ngSubmit)="login('email')" #loginForm="ngForm">
+    <h2>Change password</h2>
+    <form (ngSubmit)="resetPass('email')" #resetPassForm="ngForm">
       
       <div *ngIf="errors && errors.length > 0 && !submitted" class="alert alert-danger" role="alert">
         <div><strong>Oh snap!</strong></div>
@@ -26,30 +25,26 @@ import { NgaTokenService } from '../../services/token.service';
         <div *ngFor="let message of messages">{{ message }}</div>
       </div>
       
-      <label for="input-email" class="sr-only">Email address</label>
-      <input name="email" [(ngModel)]="user.email" type="email" id="input-email" 
-        class="form-control form-control-lg first" placeholder="Email address" required autofocus>
-        
-      <label for="input-password" class="sr-only">Password</label>
+      <label for="input-password" class="sr-only">New Password</label>
       <input name="password" [(ngModel)]="user.password" type="password" id="input-password" 
-        class="form-control form-control-lg last" placeholder="Password" required>
-        
-      <div class="checkbox">
-        <label>
-          <input name="rememberMe" [(ngModel)]="user.rememberMe" type="checkbox" value="remember-me"> Remember me
-        </label>
-        <a routerLink="../request-password">Forgot Password</a>
-      </div>
-      <button [disabled]="submitted || !loginForm.form.valid" 
-        class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+        class="form-control form-control-lg first" placeholder="New Password" required autofocus>
+      
+      <label for="input-re-password" class="sr-only">Confirm Password</label>
+      <input name="confirmPassword" [(ngModel)]="user.confirmPassword" type="password" id="input-re-password" 
+        class="form-control form-control-lg last" placeholder="Confirm Password" required>
+      
+      <div class="checkbox"></div>
+      
+      <button [disabled]="submitted || !resetPassForm.form.valid"
+        class="btn btn-lg btn-primary btn-block" type="submit">Change password</button>
     </form>
     
     <div class="links">
-      Don't have an account? <a routerLink="../register">Register</a>
+      <a routerLink="../login">Login</a> or <a routerLink="../register">Register</a>
     </div>
   `,
 })
-export class NgaLoginPageComponent {
+export class NgaResetPasswordComponent {
 
   redirectDelay: number = 1500;
   submitted = false;
@@ -61,11 +56,11 @@ export class NgaLoginPageComponent {
               protected router: Router) {
   }
 
-  login(provider: string): void {
+  resetPass(provider: string): void {
     this.errors = this.messages = [];
     this.submitted = true;
 
-    this.service.authenticate(provider, this.user).subscribe((result: NgaAuthResult) => {
+    this.service.resetPassword(provider, this.user).subscribe((result: NgaAuthResult) => {
       this.submitted = false;
       if (result.isSuccess()) {
         this.messages = result.getMessages();

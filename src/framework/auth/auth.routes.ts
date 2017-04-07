@@ -5,41 +5,41 @@
  */
 import { Routes } from '@angular/router';
 
-import { NgaAuthPageComponent } from './pages/auth/auth-page.component';
-import { NgaLoginPageComponent } from './pages/login/login-page.component';
-import { NgaRegisterPageComponent } from './pages/register/register-page.component';
-import { NgaLogoutPageComponent } from './pages/logout/logout-page.component';
-import { NgaRequestPasswordPageComponent } from './pages/request-password/request-password-page.component';
-import { NgaResetPasswordPageComponent } from './pages/reset-password/reset-password-page.component';
+import { NgaAuthComponent } from './components/auth/auth.component';
+import { NgaLoginComponent } from './components/login/login.component';
+import { NgaRegisterComponent } from './components/register/register.component';
+import { NgaLogoutComponent } from './components/logout/logout.component';
+import { NgaRequestPasswordComponent } from './components/request-password/request-password.component';
+import { NgaResetPasswordComponent } from './components/reset-password/reset-password.component';
 
 export const routes: Routes = [
   {
     path: 'auth',
-    component: NgaAuthPageComponent,
+    component: NgaAuthComponent,
     children: [
       {
         path: '',
-        component: NgaLoginPageComponent,
+        component: NgaLoginComponent,
       },
       {
         path: 'login',
-        component: NgaLoginPageComponent,
+        component: NgaLoginComponent,
       },
       {
         path: 'register',
-        component: NgaRegisterPageComponent,
+        component: NgaRegisterComponent,
       },
       {
         path: 'logout',
-        component: NgaLogoutPageComponent,
+        component: NgaLogoutComponent,
       },
       {
         path: 'request-password',
-        component: NgaRequestPasswordPageComponent,
+        component: NgaRequestPasswordComponent,
       },
       {
         path: 'reset-password',
-        component: NgaResetPasswordPageComponent,
+        component: NgaResetPasswordComponent,
       },
     ],
   },

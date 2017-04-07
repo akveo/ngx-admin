@@ -11,7 +11,7 @@ import { NgaAuthService, NgaAuthResult } from '../../services/auth.service';
 
 @Component({
   selector: 'nga-request-password-page',
-  styleUrls: ['./request-password-page.component.scss'],
+  styleUrls: ['./request-password.component.scss'],
   template: `
     <h2>Request password reset</h2>
     <form (ngSubmit)="requestPass('email')" #requestPassForm="ngForm">
@@ -39,7 +39,7 @@ import { NgaAuthService, NgaAuthResult } from '../../services/auth.service';
     </div>
   `,
 })
-export class NgaRequestPasswordPageComponent {
+export class NgaRequestPasswordComponent {
 
   redirectDelay: number = 1500;
   submitted = false;

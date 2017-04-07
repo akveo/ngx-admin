@@ -7,8 +7,8 @@ import { Component, OnDestroy } from '@angular/core';
 import { NgaAuthService } from '../../services/auth.service';
 
 @Component({
-  selector: 'nga-auth-page',
-  styleUrls: ['./auth-page.component.scss'],
+  selector: 'nga-auth',
+  styleUrls: ['./auth.component.scss'],
   template: `
     <nga-layout>
       <nga-layout-header>
@@ -24,8 +24,9 @@ import { NgaAuthService } from '../../services/auth.service';
     </nga-layout>
   `,
 })
-export class NgaAuthPageComponent implements OnDestroy {
+export class NgaAuthComponent implements OnDestroy {
 
+  // TODO: move it from here!!
   subscription: any;
 
   authenticated: boolean = false;
