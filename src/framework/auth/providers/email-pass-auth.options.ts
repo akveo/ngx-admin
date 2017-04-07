@@ -5,18 +5,6 @@ export interface NgaEmailPassModuleConfig {
     success?: string | null,
     failure?: string | null,
   },
-  token?: {
-    key?: string,
-    getter?: Function,
-  },
-  errors?: {
-    key?: string,
-    getter?: Function,
-  },
-  messages?: {
-    key?: string,
-    getter?: Function,
-  },
   defaultErrors?: string[]
   defaultMessages?: string[],
 }
@@ -31,6 +19,18 @@ export interface NgEmailPassAuthProviderConfig {
   requestPass?: boolean | NgaEmailPassModuleConfig,
   resetPass?: boolean | NgaEmailPassResetModuleConfig,
   logout?: boolean | NgaEmailPassResetModuleConfig,
+  token?: {
+    key?: string,
+    getter?: Function,
+  },
+  errors?: {
+    key?: string,
+    getter?: Function,
+  },
+  messages?: {
+    key?: string,
+    getter?: Function,
+  },
   validation?: {
     password?: {
       required?: boolean,
