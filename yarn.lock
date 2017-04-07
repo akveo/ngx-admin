@@ -70,6 +70,10 @@
   version "1.2.2"
   resolved "https://registry.yarnpkg.com/@angularclass/hmr/-/hmr-1.2.2.tgz#46a18f89a1e94d05c268b83c9480e005f73fc265"
 
+"@ng-bootstrap/ng-bootstrap@1.0.0-alpha.22":
+  version "1.0.0-alpha.22"
+  resolved "https://registry.yarnpkg.com/@ng-bootstrap/ng-bootstrap/-/ng-bootstrap-1.0.0-alpha.22.tgz#aaad058cc39293ea6184e4b9b849f298c0b11a86"
+
 "@types/electron@1.4.32":
   version "1.4.32"
   resolved "https://registry.yarnpkg.com/@types/electron/-/electron-1.4.32.tgz#3c9fce4aa53b26213bc1f1b640206191d449fa76"
