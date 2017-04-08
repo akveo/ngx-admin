@@ -483,6 +483,14 @@ export class TerritoriesService {
       "username": "@Sanchez",
       "email": "lousanchez@comtours.com",
       "age": 16
+    },
+    {
+      "id": 60,
+      "firstName": "valter",
+      "lastName": "Junior",
+      "username": "@valterjnr",
+      "email": "valter.jnr@outlook.com",
+      "age": 25
     }
   ];
 

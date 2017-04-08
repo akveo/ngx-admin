@@ -3,6 +3,7 @@ const path = require('path');
 const webpackMerge = require('webpack-merge'); // used to merge webpack configs
 const webpackMergeDll = webpackMerge.strategy({plugins: 'replace'});
 const commonConfig = require('./webpack.common.js'); // the settings that are common to prod and dev
+const webpack = require("webpack");
 
 /**
  * Webpack Plugins
@@ -86,6 +87,13 @@ module.exports = function (options) {
     },
 
     plugins: [
+
+
+      new webpack.ProvidePlugin({
+      jQuery: 'jquery',
+      $: 'jquery',
+      jquery: 'jquery'
+    }),
 
       /**
        * Plugin: DefinePlugin
