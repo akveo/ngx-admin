@@ -4,6 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 import { removeNgStyles, createNewHosts, createInputTransfer } from '@angularclass/hmr';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 /*
  * Platform and Environment providers/directives/pipes
@@ -17,7 +18,7 @@ import { AppState, InternalStateType } from './app.service';
 import { GlobalState } from './global.state';
 import { NgaModule } from './theme/nga.module';
 import { PagesModule } from './pages/pages.module';
-import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
+
 
 // Application wide providers
 const APP_PROVIDERS = [
