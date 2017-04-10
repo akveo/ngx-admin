@@ -2,6 +2,7 @@ import { NgModule }      from '@angular/core';
 import { CommonModule }  from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { NgaModule } from '../../theme/nga.module';
+import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { routing }       from './ui.routing';
 import { DropdownModule, ModalModule } from 'ng2-bootstrap';
@@ -29,6 +30,7 @@ import { DefaultModal } from './components/modals/default-modal/default-modal.co
     CommonModule,
     FormsModule,
     NgaModule,
+    NgbModalModule,
     DropdownModule.forRoot(),
     ModalModule.forRoot(),
     routing
@@ -48,6 +50,9 @@ import { DefaultModal } from './components/modals/default-modal/default-modal.co
     LargeButtons,
     DropdownButtons,
     GroupButtons,
+    DefaultModal
+  ],
+  entryComponents: [
     DefaultModal
   ],
   providers: [
