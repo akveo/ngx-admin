@@ -70,6 +70,10 @@
   version "1.2.2"
   resolved "https://registry.yarnpkg.com/@angularclass/hmr/-/hmr-1.2.2.tgz#46a18f89a1e94d05c268b83c9480e005f73fc265"
 
+"@ng-bootstrap/ng-bootstrap@1.0.0-alpha.22":
+  version "1.0.0-alpha.22"
+  resolved "https://registry.yarnpkg.com/@ng-bootstrap/ng-bootstrap/-/ng-bootstrap-1.0.0-alpha.22.tgz#aaad058cc39293ea6184e4b9b849f298c0b11a86"
+
 "@types/electron@1.4.32":
   version "1.4.32"
   resolved "https://registry.yarnpkg.com/@types/electron/-/electron-1.4.32.tgz#3c9fce4aa53b26213bc1f1b640206191d449fa76"
@@ -592,12 +596,12 @@ bootstrap-loader@2.0.0-beta.21:
     semver "^5.3.0"
     strip-json-comments "^2.0.1"
 
-bootstrap@4.0.0-alpha.4:
-  version "4.0.0-alpha.4"
-  resolved "https://registry.yarnpkg.com/bootstrap/-/bootstrap-4.0.0-alpha.4.tgz#823cb353d6c50a38df98aa18ec4df56ef0355e7a"
+bootstrap@4.0.0-alpha.6:
+  version "4.0.0-alpha.6"
+  resolved "https://registry.yarnpkg.com/bootstrap/-/bootstrap-4.0.0-alpha.6.tgz#4f54dd33ac0deac3b28407bc2df7ec608869c9c8"
   dependencies:
-    jquery "1.9.1 - 3"
-    tether "^1.1.1"
+    jquery ">=1.9.1"
+    tether "^1.4.0"
 
 boxen@^0.6.0:
   version "0.6.0"
@@ -2725,7 +2729,7 @@ jquery-slimscroll@1.3.8:
   dependencies:
     jquery ">= 1.7"
 
-"jquery@1.9.1 - 3", jquery@2.2.4, "jquery@>= 1.7", jquery@>=1.7.1:
+jquery@2.2.4, "jquery@>= 1.7", jquery@>=1.7.1, jquery@>=1.9.1:
   version "2.2.4"
   resolved "https://registry.yarnpkg.com/jquery/-/jquery-2.2.4.tgz#2c89d6889b5eac522a7eea32c14521559c6cbf02"
 
@@ -5416,7 +5420,7 @@ tar@^2.0.0, tar@~2.2.1:
     fstream "^1.0.2"
     inherits "2"
 
-tether@1.4.0, tether@^1.1.1:
+tether@1.4.0, tether@^1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/tether/-/tether-1.4.0.tgz#0f9fa171f75bf58485d8149e94799d7ae74d1c1a"
 

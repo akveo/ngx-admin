@@ -16,19 +16,19 @@
 
   @media screen and (min-width: 1325px) {
     .pie-chart-item-container {
-      width: 25%;
+      max-width: 25%;
       flex: 0 0 25%
     }
   }
   @media screen and (min-width: 700px) and (max-width: 1325px)  {
     .pie-chart-item-container {
-      width: 50%;
+      max-width: 50%;
       flex: 0 0 50%
     }
   }
   @media screen and (max-width: 700px)  {
     .pie-chart-item-container {
-      width: 100%;
+      max-width: 100%;
       flex: 0 0 100%
     }
   }

@@ -21,8 +21,12 @@ export class BaCheckbox implements ControlValueAccessor {
     state.valueAccessor = this;
   }
 
-  public onChange(value: any): void {}
-  public onTouch(value: any): void {}
+  public onChange(value: any): void {
+  }
+
+  public onTouch(value: any): void {
+  }
+
   public writeValue(state: any): void {
     this.state = state;
   }
@@ -31,7 +35,10 @@ export class BaCheckbox implements ControlValueAccessor {
     this.onChange = function(state: boolean) {
       this.writeValue(state);
       this.model.viewToModelUpdate(state);
-    }
+    };
   }
-  public registerOnTouched(fn: any): void { this.onTouch = fn; }
+
+  public registerOnTouched(fn: any): void {
+    this.onTouch = fn;
+  }
 }
