@@ -2,10 +2,10 @@ import { NgModule }      from '@angular/core';
 import { CommonModule }  from '@angular/common';
 import { FormsModule as AngularFormsModule } from '@angular/forms';
 import { NgaModule } from '../../theme/nga.module';
+import { NgbRatingModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { routing }       from './forms.routing';
 
-import { RatingModule } from 'ng2-bootstrap';
 import { Forms } from './forms.component';
 import { Inputs } from './components/inputs';
 import { Layouts } from './components/layouts';
@@ -28,7 +28,7 @@ import { WithoutLabelsForm } from './components/layouts/components/withoutLabels
     CommonModule,
     AngularFormsModule,
     NgaModule,
-    RatingModule.forRoot(),
+    NgbRatingModule,
     routing
   ],
   declarations: [
