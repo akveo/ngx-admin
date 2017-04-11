@@ -22,7 +22,7 @@ import { convertToBoolProperty } from '../helpers';
   selector: 'nga-tab',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
-    <div class="nga-tab" [hidden]="!active">
+    <div [hidden]="!active">
       <ng-content></ng-content>
     </div>
   `,
@@ -40,12 +40,11 @@ export class NgaTabComponent {
   template: `
     <ul class="nga-tabset">
       <li *ngFor="let tab of tabs"
-      (click)="$event.preventDefault();selectTab(tab);changeTab.emit(tab)"
+      (click)="selectTab(tab)"
       [class.active]="tab.active">
-        <a href>{{tab.tabTitle}}</a>
+        <a href (click)="$event.preventDefault()">{{tab.tabTitle}}</a>
       </li>
     </ul>
-    <ng-content></ng-content>
     <ng-content select="nga-tab"></ng-content>
   `,
 })
@@ -84,5 +83,7 @@ export class NgaTabsetComponent implements AfterContentInit {
     this.tabs.forEach(tb => tb.active = false);
 
     tab.active = true;
+
+    this.changeTab.emit(tab)
   }
 }

@@ -32,12 +32,6 @@
   /deep/ nga-tab {
     font-size: 1rem;
     line-height: 1rem;
-
-    div {
-      &.nga-tab {
-        overflow: auto;
-      }
-    }
   }
 
   &.full-width {
