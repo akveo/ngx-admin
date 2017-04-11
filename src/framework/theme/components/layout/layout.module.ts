@@ -4,7 +4,8 @@
  * Licensed under the MIT License. See License.txt in the project root for license information.
  */
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
+import { NgaSharedModule } from '../shared/shared.module';
 
 import {
   NgaLayoutComponent,
@@ -22,7 +23,7 @@ const NGA_LAYOUT_COMPONENTS = [
 
 @NgModule({
   imports: [
-    CommonModule,
+    NgaSharedModule,
   ],
   declarations: [
     ...NGA_LAYOUT_COMPONENTS,

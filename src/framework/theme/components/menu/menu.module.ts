@@ -4,7 +4,8 @@
  * Licensed under the MIT License. See License.txt in the project root for license information.
  */
 import { NgModule, ModuleWithProviders } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
+import { NgaSharedModule } from '../shared/shared.module';
 
 import { NgaMenuComponent, NgaMenuItemComponent } from './menu.component';
 import { NgaMenuService } from './menu.service';
@@ -22,7 +23,7 @@ const NGA_MENU_PROVIDERS = [
 
 @NgModule({
   imports: [
-    CommonModule,
+    NgaSharedModule,
   ],
   declarations: [
     ...NGA_MENU_COMPONENTS,

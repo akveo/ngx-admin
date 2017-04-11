@@ -4,7 +4,8 @@
  * Licensed under the MIT License. See License.txt in the project root for license information.
  */
 import { NgModule, ModuleWithProviders } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
+import { NgaSharedModule } from '../shared/shared.module';
 
 import {
   NgaSidebarComponent,
@@ -28,7 +29,7 @@ const NGA_SIDEBAR_PROVIDERS = [
 
 @NgModule({
   imports: [
-    CommonModule,
+    NgaSharedModule,
   ],
   declarations: [
     ...NGA_SIDEBAR_COMPONENTS,

@@ -4,8 +4,8 @@
  * Licensed under the MIT License. See License.txt in the project root for license information.
  */
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
+
+import { NgaSharedModule } from '../shared/shared.module';
 
 import {
   NgaUserComponent,
@@ -17,8 +17,7 @@ const NGA_USER_COMPONENTS = [
 
 @NgModule({
   imports: [
-    CommonModule,
-    RouterModule,
+    NgaSharedModule,
   ],
   declarations: [
     ...NGA_USER_COMPONENTS,
