@@ -37,7 +37,7 @@ describe('nga-layout-header', () => {
 
   it('should align items vertically', () => {
     element(by.css('nga-layout-header nav')).getCssValue('justify-content').then(value => {
-      expect(value).toEqual('center');
+      expect(value).toEqual('normal');
     });
   });
 
