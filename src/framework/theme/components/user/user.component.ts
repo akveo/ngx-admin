@@ -20,9 +20,9 @@ export class NgaUserMenuItem {
     <div class="user-container" (click)="toggleMenu()">
       <div *ngIf="picture" class="user-picture image" [ngStyle]="{background: 'url(' + picture  + ')'}"></div>
       <div *ngIf="!picture" class="user-picture background" [ngStyle]="{'background-color': color}">
-        <template [ngIf]="showInitialsValue">
+        <ng-template [ngIf]="showInitialsValue">
           {{ getInitials() }}
-        </template>
+        </ng-template>
       </div>
 
       <div class="info-container">
