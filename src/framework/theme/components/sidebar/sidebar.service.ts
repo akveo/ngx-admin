@@ -9,9 +9,9 @@ export class NgaSidebarService {
   private expandChanges$ = new Subject();
   private collapseChanges$ = new Subject();
 
-  toggleChanges: Observable<any> = this.toggleChanges$.asObservable();
-  expandChanges: Observable<any> = this.expandChanges$.asObservable();
-  collapseChanges: Observable<any> = this.collapseChanges$.asObservable();
+  toggleChanges: Observable<{ compact: boolean, tag: string }> = this.toggleChanges$.asObservable();
+  expandChanges: Observable<{ tag: string }> = this.expandChanges$.asObservable();
+  collapseChanges: Observable<{ tag: string }> = this.collapseChanges$.asObservable();
 
   toggle(compact: boolean = false, tag?: string) {
     this.toggleChanges$.next({ compact, tag });
