@@ -84,6 +84,6 @@ export class NgaTabsetComponent implements AfterContentInit {
 
     tab.active = true;
 
-    this.changeTab.emit(tab)
+    this.changeTab.emit(tab);
   }
 }
