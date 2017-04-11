@@ -112,6 +112,6 @@
     "templates-use-public": true,
     "no-access-missing-member": true,
     "invoke-injectable": true,
-    "space-in-parens": ["error", "never"]
+    "space-in-parens": ["error", "info", "never"]
   }
 }

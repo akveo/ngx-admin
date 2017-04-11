@@ -12,7 +12,7 @@ import {
 } from './user.component';
 
 const NGA_USER_COMPONENTS = [
-  NgaUserComponent
+  NgaUserComponent,
 ];
 
 @NgModule({

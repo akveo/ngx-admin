@@ -118,19 +118,19 @@ export class NgaSidebarComponent implements OnInit {
     });
   }
 
-  collapse(): void {
+  collapse() {
     this.state = NgaSidebarComponent.STATE_COLLAPSED;
   }
 
-  expand(): void {
+  expand() {
     this.state = NgaSidebarComponent.STATE_EXPANDED;
   }
 
-  compact(): void {
+  compact() {
     this.state = NgaSidebarComponent.STATE_COMPACTED;
   }
 
-  toggle(compact: boolean = false): void {
+  toggle(compact: boolean = false) {
     const closedStates = [NgaSidebarComponent.STATE_COMPACTED, NgaSidebarComponent.STATE_COLLAPSED];
     if (compact) {
       this.state = closedStates.indexOf(this.stateValue) >= 0 ?

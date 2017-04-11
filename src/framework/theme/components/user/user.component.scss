@@ -79,7 +79,7 @@
             height: 0;
             border: 11px solid transparent;
 
-            &:after {
+            &::after {
               position: absolute;
               content: ' ';
               width: 0;

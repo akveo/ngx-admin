@@ -30,14 +30,16 @@ export class NgaUserMenuItem {
         <span *ngIf="showTitleValue && title" class="user-title">{{ title }}</span>
       </div>
 
-      <div *ngIf="menu && menu.length > 0" [ngStyle]="{display: isMenuShown ? 'block' : 'none'}" class="user-context-menu">
+      <div *ngIf="menu && menu.length > 0"
+           [ngStyle]="{display: isMenuShown ? 'block' : 'none'}" class="user-context-menu">
         <ul>
           <li class="arrow"></li>
           <li *ngFor="let item of menu">
             <span *ngIf="item.icon" class="item-icon {{ item.icon  }}"></span>
             <a *ngIf="item.link && !item.url" [routerLink]="item.link" [attr.target]="item.target">{{ item.title }}</a>
             <a *ngIf="item.url && !item.link" [attr.href]="item.url" [attr.target]="item.target">{{ item.title }}</a>
-            <a *ngIf="!item.link && !item.url" href="#" [attr.target]="item.target" (click)="itemClick($event, item)">{{ item.title }}</a>
+            <a *ngIf="!item.link && !item.url" href="#" [attr.target]="item.target"
+                                                        (click)="itemClick($event, item)">{{ item.title }}</a>
           </li>
         </ul>
       </div>
@@ -108,7 +110,7 @@ export class NgaUserComponent {
     return false;
   }
 
-  toggleMenu(): void {
+  toggleMenu() {
     this.isMenuShown = !this.isMenuShown;
   }
 

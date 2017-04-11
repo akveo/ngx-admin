@@ -43,7 +43,7 @@
       ul > li.arrow {
         border-bottom: 11px solid $nga-user-menu-border !important;
 
-        &:after {
+        &::after {
           border-bottom: 11px solid $nga-color-inverse !important;
         }
       }

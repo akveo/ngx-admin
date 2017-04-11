@@ -12,15 +12,16 @@ import { Component } from '@angular/core';
       .test-row {
         margin: 20px;
       }
-    `
+    `,
   ],
   template: `
     <nga-layout id="layout-fluid">
       <nga-layout-header fixed>
-        <nga-user showInitials size="medium" name="Dmitry Nehaychik" title="Worker" [menu]="contextMenu" (menuClick)="onMenuItemClick($event)"></nga-user>
+        <nga-user showInitials size="medium" name="Dmitry Nehaychik" title="Worker"
+                  [menu]="contextMenu" (menuClick)="onMenuItemClick($event)"></nga-user>
       </nga-layout-header>
 
-      
+
       <nga-layout-column>
         <div class="test-row">
           <nga-user></nga-user>
@@ -41,17 +42,22 @@ import { Component } from '@angular/core';
           <nga-user onlyPicture size="medium" name="Dmitry Nehaychik" title="Worker"></nga-user>
         </div>
         <div class="test-row">
-          <nga-user size="medium" name="Dmitry Nehaychik" title="Worker" [menu]="contextMenu" (menuClick)="onMenuItemClick($event)"></nga-user>
+          <nga-user size="medium" name="Dmitry Nehaychik" title="Worker"
+                    [menu]="contextMenu" (menuClick)="onMenuItemClick($event)"></nga-user>
         </div>
         <div class="test-row">
-          <nga-user onlyPicture size="medium" name="Dmitry Nehaychik" title="Worker" [menu]="contextMenu" (menuClick)="onMenuItemClick($event)"></nga-user>
-        </div>      
-        <div class="test-row">
-          <nga-user size="large" picture="http://lorempixel.com/400/200/animals/" name="Dmitry Nehaychik" title="Worker" [menu]="contextMenu" (menuClick)="onMenuItemClick($event)"></nga-user>
+          <nga-user onlyPicture size="medium" name="Dmitry Nehaychik" title="Worker"
+                    [menu]="contextMenu" (menuClick)="onMenuItemClick($event)"></nga-user>
         </div>
         <div class="test-row">
-          <nga-user showInitials size="medium" name="Dmitry Nehaychik" title="Worker" [menu]="contextMenu" (menuClick)="onMenuItemClick($event)"></nga-user>
-        </div>      
+          <nga-user size="large" picture="http://lorempixel.com/400/200/animals/"
+                    name="Dmitry Nehaychik" title="Worker"
+                    [menu]="contextMenu" (menuClick)="onMenuItemClick($event)"></nga-user>
+        </div>
+        <div class="test-row">
+          <nga-user showInitials size="medium" name="Dmitry Nehaychik" title="Worker"
+                    [menu]="contextMenu" (menuClick)="onMenuItemClick($event)"></nga-user>
+        </div>
       </nga-layout-column>
     </nga-layout>
   `,
@@ -59,12 +65,12 @@ import { Component } from '@angular/core';
 export class NgaUserTestComponent {
 
   contextMenu = [
-    {title: 'Profile', link: 'some/link'},
-    {title: 'Billing', target: '_blank', url: 'http://akveo.com'},
-    {title: 'Exit', key: 'exit'}
+    { title: 'Profile', link: 'some/link' },
+    { title: 'Billing', target: '_blank', url: 'http://akveo.com' },
+    { title: 'Exit', key: 'exit' },
   ];
 
-  onMenuItemClick(event): void {
-    console.log(event);
+  onMenuItemClick(event) {
+    console.info(event);
   }
 }
