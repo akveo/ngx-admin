@@ -16,6 +16,11 @@ export class Layouts {
     url: '',
   };
 
+  public fileUploaderOptions:NgUploaderOptions = {
+    // url: 'http://website.com/upload'
+    url: '',
+  };
+  
   constructor() {
   }
 
