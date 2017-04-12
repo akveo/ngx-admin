@@ -89,7 +89,7 @@
     "imports-loader": "0.7.1",
     "json-loader": "0.5.4",
     "ng-router-loader": "2.1.0",
-    "ngc-webpack": "1.2.0",
+    "ngc-webpack": "2.0.0",
     "node-sass": "4.5.2",
     "npm-run-all": "4.0.2",
     "optimize-js-plugin": "0.0.4",
