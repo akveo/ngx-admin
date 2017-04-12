@@ -16,35 +16,7 @@ export class NgaUserMenuItem {
 @Component({
   selector: 'nga-user',
   styleUrls: ['./user.component.scss'],
-  template: `
-    <div class="user-container" (click)="toggleMenu()">
-      <div *ngIf="picture" class="user-picture image" [ngStyle]="{background: 'url(' + picture  + ')'}"></div>
-      <div *ngIf="!picture" class="user-picture background" [ngStyle]="{'background-color': color}">
-        <ng-template [ngIf]="showInitialsValue">
-          {{ getInitials() }}
-        </ng-template>
-      </div>
-
-      <div class="info-container">
-        <span *ngIf="showNameValue && name" class="user-name">{{ name }}</span>
-        <span *ngIf="showTitleValue && title" class="user-title">{{ title }}</span>
-      </div>
-
-      <div *ngIf="menu && menu.length > 0"
-           [ngStyle]="{display: isMenuShown ? 'block' : 'none'}" class="user-context-menu">
-        <ul>
-          <li class="arrow"></li>
-          <li *ngFor="let item of menu">
-            <span *ngIf="item.icon" class="item-icon {{ item.icon  }}"></span>
-            <a *ngIf="item.link && !item.url" [routerLink]="item.link" [attr.target]="item.target">{{ item.title }}</a>
-            <a *ngIf="item.url && !item.link" [attr.href]="item.url" [attr.target]="item.target">{{ item.title }}</a>
-            <a *ngIf="!item.link && !item.url" href="#" [attr.target]="item.target"
-                                                        (click)="itemClick($event, item)">{{ item.title }}</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  `,
+  templateUrl: './user.component.html',
 })
 export class NgaUserComponent {
 

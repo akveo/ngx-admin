@@ -21,62 +21,7 @@ import { NgaMenuService } from './menu.service';
 @Component({
   // tslint:disable-next-line:component-selector
   selector: '[ngaMenuItem]',
-  template: `
-    <a href *ngIf="!menuItem.children && menuItem.link && !menuItem.url"
-            [ngClass]="{ 'active': menuItem.selected }"
-            [routerLink]="menuItem.link"
-            [attr.target]="menuItem.target"
-            [attr.title]="menuItem.title"
-            (mouseenter)="onHoverItem(menuItem)"
-            (click)="onSelectItem(menuItem)">
-      <i class="{{ menuItem.icon }}" *ngIf="menuItem.icon"></i>
-      <i *ngIf="!menuItem.icon"></i>
-      <span>{{ menuItem.title }}</span>
-    </a>
-    <a href *ngIf="!menuItem.children && !menuItem.link && menuItem.url"
-            [ngClass]="{ 'active': menuItem.selected }"
-            [attr.href]="menuItem.url"
-            [attr.target]="menuItem.target"
-            [attr.title]="menuItem.title"
-            (mouseenter)="onHoverItem(menuItem)"
-            (click)="onSelectItem(menuItem)">
-      <i class="{{ menuItem.icon }}" *ngIf="menuItem.icon"></i>
-      <i *ngIf="!menuItem.icon"></i>
-      <span>{{ menuItem.title }}</span>
-    </a>
-    <a href *ngIf="!menuItem.children && !menuItem.link && !menuItem.url"
-            [ngClass]="{ 'active': menuItem.selected }"
-            [attr.target]="menuItem.target"
-            [attr.title]="menuItem.title"
-            (mouseenter)="onHoverItem(menuItem)"
-            (click)="$event.preventDefault();onItemClick(menuItem)">
-      <i class="{{ menuItem.icon }}" *ngIf="menuItem.icon"></i>
-      <i *ngIf="!menuItem.icon"></i>
-      <span>{{ menuItem.title }}</span>
-    </a>
-    <a href *ngIf="menuItem.children"
-            [ngClass]="{ 'active': menuItem.selected }"
-            (click)="$event.preventDefault();onToogleSubMenu(menuItem)"
-            [attr.target]="menuItem.target"
-            [attr.title]="menuItem.title"
-            (mouseenter)="onHoverItem(menuItem)"
-            href="#">
-      <i class="{{ menuItem.icon }}" *ngIf="menuItem.icon"></i>
-      <i *ngIf="!menuItem.icon"></i>
-      <span>{{ menuItem.title }}</span>
-      <i class="ion" [ngClass]="{ 'ion-chevron-down': !menuItem.expanded,
-                                  'ion-chevron-up': menuItem.expanded }"></i>
-    </a>
-    <ul [ngClass]="{ 'menu-collapsed': !(menuItem.children && menuItem.expanded),
-                     'menu-expanded': menuItem.expanded }">
-      <li ngaMenuItem *ngFor="let item of menuItem.children"
-                      [menuItem]="item"
-                      (hoverItem)="onHoverItem($event)"
-                      (toogleSubMenu)="onToogleSubMenu($event)"
-                      (selectItem)="onSelectItem($event)"
-                      (itemClick)="onItemClick($event)"></li>
-    </ul>
-  `,
+  templateUrl: './menu-item.component.html',
 })
 export class NgaMenuItemComponent {
 
