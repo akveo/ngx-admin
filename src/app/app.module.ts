@@ -37,11 +37,15 @@ import { NgaSidebarTestThreeComponent } from './sidebar-test/sidebar-test-three.
 
 import {
   NgaMenuTestComponent,
+  NgaMenuItem1Component,
   NgaMenuItem2Component,
   NgaMenuItem31Component,
   NgaMenuItem3Component,
+  NgaMenuItem32Component,
   NgaMenuItem33Component,
   NgaMenuItem331Component,
+  NgaMenuItem332Component,
+  NgaMenuItem4Component,
 } from './menu-test/menu-test.component';
 import { NgaUserTestComponent } from './user-test/user-test.component';
 
@@ -63,11 +67,15 @@ const NGA_TEST_COMPONENTS = [
   NgaRouteTabsetTestChild1Component,
   NgaRouteTabsetTestChild2Component,
   NgaMenuTestComponent,
+  NgaMenuItem1Component,
   NgaMenuItem2Component,
   NgaMenuItem3Component,
   NgaMenuItem31Component,
+  NgaMenuItem32Component,
   NgaMenuItem33Component,
   NgaMenuItem331Component,
+  NgaMenuItem332Component,
+  NgaMenuItem4Component,
   NgaUserTestComponent,
 ];
 

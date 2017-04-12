@@ -21,13 +21,17 @@ import {
 } from './route-tabset-test/route-tabset-test.component';
 import {
   NgaMenuTestComponent,
+  NgaMenuItem1Component,
   NgaMenuItem2Component,
-  NgaMenuItem31Component,
   NgaMenuItem3Component,
+  NgaMenuItem31Component,
+  NgaMenuItem32Component,
   NgaMenuItem33Component,
+  NgaMenuItem331Component,
+  NgaMenuItem332Component,
+  NgaMenuItem4Component,
 } from './menu-test/menu-test.component';
 import { NgaUserTestComponent } from './user-test/user-test.component';
-import { NgaMenuItem331Component } from './menu-test/menu-test.component';
 
 export const routes: Routes = [
   {
@@ -95,54 +99,58 @@ export const routes: Routes = [
     children: [
       {
         path: '',
-        redirectTo: 'menu1',
+        redirectTo: '1',
         pathMatch: 'full',
       },
       {
-        path: 'menu1',
+        path: '1',
+        component: NgaMenuItem1Component,
+      },
+      {
+        path: '2',
         component: NgaMenuItem2Component,
       },
       {
-        path: 'menu2',
-        component: NgaMenuItem2Component,
-      },
-      {
-        path: 'menu3',
+        path: '3',
         component: NgaMenuItem3Component,
         children: [
           {
             path: '',
-            redirectTo: 'menu31',
+            redirectTo: '1',
             pathMatch: 'full',
           },
           {
-            path: 'menu31',
+            path: '1',
             component: NgaMenuItem31Component,
           },
           {
-            path: 'menu32',
-            component: NgaMenuItem31Component,
+            path: '2',
+            component: NgaMenuItem32Component,
           },
           {
-            path: 'menu33',
+            path: '3',
             component: NgaMenuItem33Component,
             children: [
               {
                 path: '',
-                redirectTo: 'menu331',
+                redirectTo: '1',
                 pathMatch: 'full',
               },
               {
-                path: 'menu331',
+                path: '1',
                 component: NgaMenuItem331Component,
               },
               {
-                path: 'menu332',
-                component: NgaMenuItem331Component,
+                path: '2',
+                component: NgaMenuItem332Component,
               },
             ],
           },
         ],
+      },
+      {
+        path: '4',
+        component: NgaMenuItem4Component,
       },
     ],
   },

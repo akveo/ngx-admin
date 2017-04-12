@@ -5,11 +5,11 @@ import { NgaMenuItem } from '../../framework/theme/components/menu/menu.options'
 export const menuItems: List<NgaMenuItem> = List([
   {
     title: 'Menu #1',
-    link: '#/menu/menu1',
+    link: '/menu/1',
   },
   {
     title: 'Menu #2',
-    link: '#/menu/menu2',
+    link: '/menu/2',
     icon: 'ion ion-ionic',
   },
   {
@@ -17,12 +17,12 @@ export const menuItems: List<NgaMenuItem> = List([
     children: List([
       {
         title: 'Menu #3.1',
-        link: '#/menu/menu3/menu31',
+        link: '/menu/3/1',
         icon: 'ion ion-heart',
       },
       {
         title: 'Menu #3.2',
-        link: '#/menu/menu3/menu32',
+        link: '/menu/3/2',
       },
       {
         title: 'Menu #3.3',
@@ -30,11 +30,11 @@ export const menuItems: List<NgaMenuItem> = List([
         children: List([
           {
             title: 'Menu #3.3.1',
-            link: '#/menu/menu3/menu33/menu331',
+            link: '/menu/3/3/1',
           },
           {
             title: 'Menu #3.3.2',
-            link: '#/menu/menu3/menu33/menu332',
+            link: '/menu/3/3/2',
             icon: 'ion ion-happy-outline',
           },
           {
@@ -48,7 +48,11 @@ export const menuItems: List<NgaMenuItem> = List([
   },
   {
     title: 'Menu #4',
-    link: '#/menu/menu2',
+    link: '/menu/4',
+    icon: 'ion ion-ionic',
+  },
+  {
+    title: 'Menu #5',
     icon: 'ion ion-ionic',
   },
 ]);
