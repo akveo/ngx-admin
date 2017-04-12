@@ -17,10 +17,13 @@ export class NgaMenuService {
 
   private preparedMenuItems$ = new Subject();
   private addItemsChanges$ = new Subject();
+  private itemClickChanges$ = new Subject();
 
   preparedMenuItems: Observable<{ tag: string, items: List<NgaMenuItem> }> = this.preparedMenuItems$.asObservable();
 
   addMenuChanges: Observable<{ tag: string, item: NgaMenuItem }> = this.addItemsChanges$.asObservable();
+
+  itemClickChanges: Observable<{ tag: string, item: NgaMenuItem }> = this.itemClickChanges$.asObservable();
 
   constructor(private router: Router) { }
 
@@ -72,6 +75,13 @@ export class NgaMenuService {
 
       this.resetMenuItems(prevSelectedItem.parent);
     }
+  }
+
+  itemClick(item: NgaMenuItem, tag?: string) {
+    this.itemClickChanges$.next({
+      tag,
+      item,
+    });
   }
 
 }

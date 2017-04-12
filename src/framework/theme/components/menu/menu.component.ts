@@ -22,13 +22,34 @@ import { NgaMenuService } from './menu.service';
   // tslint:disable-next-line:component-selector
   selector: '[ngaMenuItem]',
   template: `
-    <a href *ngIf="!menuItem.children"
+    <a href *ngIf="!menuItem.children && menuItem.link && !menuItem.url"
             [ngClass]="{ 'active': menuItem.selected }"
-            [attr.href]="menuItem.link || menuItem.url"
+            [routerLink]="menuItem.link"
             [attr.target]="menuItem.target"
             [attr.title]="menuItem.title"
             (mouseenter)="onHoverItem(menuItem)"
             (click)="onSelectItem(menuItem)">
+      <i class="{{ menuItem.icon }}" *ngIf="menuItem.icon"></i>
+      <i *ngIf="!menuItem.icon"></i>
+      <span>{{ menuItem.title }}</span>
+    </a>
+    <a href *ngIf="!menuItem.children && !menuItem.link && menuItem.url"
+            [ngClass]="{ 'active': menuItem.selected }"
+            [attr.href]="menuItem.url"
+            [attr.target]="menuItem.target"
+            [attr.title]="menuItem.title"
+            (mouseenter)="onHoverItem(menuItem)"
+            (click)="onSelectItem(menuItem)">
+      <i class="{{ menuItem.icon }}" *ngIf="menuItem.icon"></i>
+      <i *ngIf="!menuItem.icon"></i>
+      <span>{{ menuItem.title }}</span>
+    </a>
+    <a href *ngIf="!menuItem.children && !menuItem.link && !menuItem.url"
+            [ngClass]="{ 'active': menuItem.selected }"
+            [attr.target]="menuItem.target"
+            [attr.title]="menuItem.title"
+            (mouseenter)="onHoverItem(menuItem)"
+            (click)="$event.preventDefault();onItemClick(menuItem)">
       <i class="{{ menuItem.icon }}" *ngIf="menuItem.icon"></i>
       <i *ngIf="!menuItem.icon"></i>
       <span>{{ menuItem.title }}</span>
@@ -38,7 +59,8 @@ import { NgaMenuService } from './menu.service';
             (click)="$event.preventDefault();onToogleSubMenu(menuItem)"
             [attr.target]="menuItem.target"
             [attr.title]="menuItem.title"
-            (mouseenter)="onHoverItem(menuItem)">
+            (mouseenter)="onHoverItem(menuItem)"
+            href="#">
       <i class="{{ menuItem.icon }}" *ngIf="menuItem.icon"></i>
       <i *ngIf="!menuItem.icon"></i>
       <span>{{ menuItem.title }}</span>
@@ -51,7 +73,8 @@ import { NgaMenuService } from './menu.service';
                       [menuItem]="item"
                       (hoverItem)="onHoverItem($event)"
                       (toogleSubMenu)="onToogleSubMenu($event)"
-                      (selectItem)="onSelectItem($event)"></li>
+                      (selectItem)="onSelectItem($event)"
+                      (itemClick)="onItemClick($event)"></li>
     </ul>
   `,
 })
@@ -62,6 +85,7 @@ export class NgaMenuItemComponent {
   @Output() hoverItem = new EventEmitter<any>();
   @Output() toogleSubMenu = new EventEmitter<any>();
   @Output() selectItem = new EventEmitter<any>();
+  @Output() itemClick = new EventEmitter<any>();
 
   constructor(private router: Router,
     private menuService: NgaMenuService) { }
@@ -78,6 +102,10 @@ export class NgaMenuItemComponent {
     this.selectItem.emit(item);
   }
 
+  onItemClick(item: NgaMenuItem) {
+    this.itemClick.emit(item);
+  }
+
 }
 
 @Component({
@@ -89,7 +117,8 @@ export class NgaMenuItemComponent {
                       [menuItem]="item"
                       (hoverItem)="onHoverItem($event)"
                       (toogleSubMenu)="onToogleSubMenu($event)"
-                      (selectItem)="onSelectItem($event)"></li>
+                      (selectItem)="onSelectItem($event)"
+                      (itemClick)="onItemClick($event)"></li>
     </ul>
   `,
 })
@@ -144,6 +173,10 @@ export class NgaMenuComponent implements OnInit {
     this.selectedMenuItem = item;
 
     this.menuService.selectMenuItem(item);
+  }
+
+  onItemClick(item: NgaMenuItem) {
+    this.menuService.itemClick(item, this.tag);
   }
 
 }
