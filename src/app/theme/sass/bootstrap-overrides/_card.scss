@@ -47,6 +47,7 @@ $card-header-font-size: 16px;
     .card-body {
       height: calc(100% - #{$card-title-height});
       overflow-y: auto;
+      flex: 1;
     }
   }
 }
