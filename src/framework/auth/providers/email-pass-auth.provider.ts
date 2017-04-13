@@ -71,15 +71,20 @@ export class NgaEmailPassAuthProvider extends NgaAbstractAuthProvider {
     },
     token: {
       key: 'data.token',
-      getter: (module: string, res: Response) => getDeepFromObject(this.getJsonSafe(res), this.getConfigValue('token.key')),
+      getter: (module: string, res: Response) => getDeepFromObject(this.getJsonSafe(res),
+        this.getConfigValue('token.key')),
     },
     errors: {
       key: 'data.errors',
-      getter: (module: string, res: Response) => getDeepFromObject(this.getJsonSafe(res), this.getConfigValue('errors.key'), this.getConfigValue(`${module}.defaultErrors`)),
+      getter: (module: string, res: Response) => getDeepFromObject(this.getJsonSafe(res),
+        this.getConfigValue('errors.key'),
+        this.getConfigValue(`${module}.defaultErrors`)),
     },
     messages: {
       key: 'data.messages',
-      getter: (module: string, res: Response) => getDeepFromObject(this.getJsonSafe(res), this.getConfigValue('messages.key'), this.getConfigValue(`${module}.defaultMessages`)),
+      getter: (module: string, res: Response) => getDeepFromObject(this.getJsonSafe(res),
+        this.getConfigValue('messages.key'),
+        this.getConfigValue(`${module}.defaultMessages`)),
     },
     validation: {
       password: {
@@ -117,8 +122,7 @@ export class NgaEmailPassAuthProvider extends NgaAbstractAuthProvider {
           this.getConfigValue('login.redirect.success'),
           [],
           this.getConfigValue('messages.getter')('login', res),
-          this.getConfigValue('token.getter')('login', res)
-        );
+          this.getConfigValue('token.getter')('login', res));
       })
       .catch((res) => {
         let errors = [];
@@ -152,8 +156,7 @@ export class NgaEmailPassAuthProvider extends NgaAbstractAuthProvider {
           this.getConfigValue('register.redirect.success'),
           [],
           this.getConfigValue('messages.getter')('register', res),
-          this.getConfigValue('token.getter')('register', res)
-        );
+          this.getConfigValue('token.getter')('register', res));
       })
       .catch((res) => {
         let errors = [];
@@ -186,8 +189,7 @@ export class NgaEmailPassAuthProvider extends NgaAbstractAuthProvider {
           res,
           this.getConfigValue('requestPass.redirect.success'),
           [],
-          this.getConfigValue('messages.getter')('requestPass', res)
-        );
+          this.getConfigValue('messages.getter')('requestPass', res));
       })
       .catch((res) => {
         let errors = [];
@@ -223,8 +225,7 @@ export class NgaEmailPassAuthProvider extends NgaAbstractAuthProvider {
           res,
           this.getConfigValue('resetPass.redirect.success'),
           [],
-          this.getConfigValue('messages.getter')('resetPass', res)
-        );
+          this.getConfigValue('messages.getter')('resetPass', res));
       })
       .catch((res) => {
         let errors = [];
@@ -257,8 +258,7 @@ export class NgaEmailPassAuthProvider extends NgaAbstractAuthProvider {
           res,
           this.getConfigValue('logout.redirect.success'),
           [],
-          this.getConfigValue('messages.getter')('logout', res)
-        );
+          this.getConfigValue('messages.getter')('logout', res));
       })
       .catch((res) => {
         let errors = [];

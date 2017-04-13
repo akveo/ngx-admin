@@ -2,7 +2,7 @@ import { Response, ResponseOptions } from '@angular/http';
 import { Observable } from 'rxjs/Rx';
 
 import { NgaAuthResult } from '../services/auth.service';
-import { getDeepFromObject, deepExtend } from '../helpers';
+import { deepExtend, getDeepFromObject } from '../helpers';
 
 export abstract class NgaAbstractAuthProvider {
 
@@ -39,7 +39,7 @@ export abstract class NgaAbstractAuthProvider {
     let json;
     try {
       json = res.json();
-    } catch(e) {
+    } catch (e) {
       json = {};
     }
     return json;

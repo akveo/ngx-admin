@@ -1,7 +1,7 @@
 import { Injectable, Inject } from '@angular/core';
 import { Observable, ReplaySubject, Subject, BehaviorSubject } from 'rxjs/Rx';
 
-import { NgaAuthOptionsToken } from '../auth.options';
+import { ngaAuthOptionsToken } from '../auth.options';
 import { deepExtend, getDeepFromObject } from '../helpers';
 
 @Injectable()
@@ -11,25 +11,25 @@ export class NgaTokenService {
     token: {
       key: 'auth_app_token',
       getter: () => Observable.of(localStorage.getItem(this.getConfigValue('token.key'))),
-      setter: (token) => Observable.of(localStorage.setItem(this.getConfigValue('token.key'), token)),
-      deleter: (token) => Observable.of(localStorage.removeItem(this.getConfigValue('token.key'))),
-    }
+      setter: (token: any) => Observable.of(localStorage.setItem(this.getConfigValue('token.key'), token)),
+      deleter: (token: any) => Observable.of(localStorage.removeItem(this.getConfigValue('token.key'))),
+    },
   };
   protected config: any = {};
 
   protected token$: BehaviorSubject<any> = new BehaviorSubject(null);
 
-  constructor(@Inject(NgaAuthOptionsToken) protected options) {
+  constructor(@Inject(ngaAuthOptionsToken) protected options: any) {
     this.setConfig(options);
 
     this.get().subscribe(token => this.publishToken(token));
   }
 
-  setConfig(config): void {
+  setConfig(config: any): void {
     this.config = deepExtend({}, this.defaultConfig, config);
   }
 
-  getConfigValue(key): any {
+  getConfigValue(key: string): any {
     return getDeepFromObject(this.config, key, null);
   }
 
@@ -51,7 +51,7 @@ export class NgaTokenService {
     return this.getConfigValue('token.deleter')();
   }
 
-  protected publishToken(token): void {
+  protected publishToken(token: any): void {
     this.token$.next(token);
   }
 }

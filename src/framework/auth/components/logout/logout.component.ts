@@ -14,7 +14,7 @@ import { NgaAuthService, NgaAuthResult } from '../../services/auth.service';
     <div>Logging out, please wait...</div>
   `,
 })
-export class NgaLogoutComponent {
+export class NgaLogoutComponent implements OnInit {
 
   redirectDelay: number = 1500;
 

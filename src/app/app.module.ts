@@ -109,29 +109,29 @@ const NGA_TEST_COMPONENTS = [
           service: NgaEmailPassAuthProvider,
           config: {
             login: {
-              endpoint: 'http://localhost:4400/api/auth/login'
+              endpoint: 'http://localhost:4400/api/auth/login',
             },
             register: {
-              endpoint: 'http://localhost:4400/api/auth/register'
+              endpoint: 'http://localhost:4400/api/auth/register',
             },
             logout: {
               endpoint: 'http://localhost:4400/api/auth/logout',
               redirect: {
                 success: '/auth/login',
                 failure: '/auth/login',
-              }
+              },
             },
             requestPass: {
               endpoint: 'http://localhost:4400/api/auth/request-pass',
               redirect: {
                 success: '/auth/reset-password',
-              }
+              },
             },
             resetPass: {
               endpoint: 'http://localhost:4400/api/auth/reset-pass',
               redirect: {
                 success: '/auth/login',
-              }
+              },
             },
           },
         },

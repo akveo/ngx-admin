@@ -4,4 +4,4 @@ export interface NgaAuthOptions {
   providers?: any;
 }
 
-export const NgaAuthOptionsToken = new InjectionToken<NgaAuthOptions>('NGA_AUTH_OPTIONS');
+export const ngaAuthOptionsToken = new InjectionToken<NgaAuthOptions>('NGA_AUTH_OPTIONS');
