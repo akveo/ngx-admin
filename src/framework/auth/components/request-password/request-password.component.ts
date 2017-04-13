@@ -27,7 +27,9 @@ import { NgaAuthService, NgaAuthResult } from '../../services/auth.service';
       
       <label for="input-email" class="sr-only">Enter your email address</label>
       <input name="email" [(ngModel)]="user.email" type="email" id="input-email" 
-        class="form-control form-control-lg" placeholder="Email address" required autofocus>
+        class="form-control form-control-lg" placeholder="Email address"
+             [required]="getConfigValue('email', 'validation.email.required')"
+             autofocus>
       <div class="checkbox"></div>
       
       <button [disabled]="submitted || !requestPassForm.form.valid" 
@@ -70,5 +72,9 @@ export class NgaRequestPasswordComponent {
         }, this.redirectDelay);
       }
     });
+  }
+
+  getConfigValue(provider: string, key: string): any {
+    return this.service.getProvider(provider).getConfigValue(key);
   }
 }

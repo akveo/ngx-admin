@@ -85,18 +85,15 @@ export class NgaEmailPassAuthProvider extends NgaAbstractAuthProvider {
       password: {
         required: true,
         minLength: 4,
-        maxLength: 12,
-        regexp: null,
+        maxLength: 30,
       },
       email: {
         required: true,
-        regexp: null,
       },
       fullName: {
         required: false,
         minLength: 4,
         maxLength: 50,
-        regexp: null,
       },
     },
   };
