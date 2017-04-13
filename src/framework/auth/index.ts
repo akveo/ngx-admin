@@ -19,6 +19,5 @@ export * from './providers/email-pass-auth.provider';
 
 
 // TODO: 2) how to reference the theme CSS files?
-// TODO: 3) validation
 // TODO: 4) custom headers
 
