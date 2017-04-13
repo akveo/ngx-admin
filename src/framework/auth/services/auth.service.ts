@@ -1,3 +1,8 @@
+/**
+ * @license
+ * Copyright Akveo. All Rights Reserved.
+ * Licensed under the MIT License. See License.txt in the project root for license information.
+ */
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Rx';
 
@@ -183,7 +188,7 @@ export class NgaAuthService {
     return this.getProvider(provider).resetPassword(data);
   }
 
-  protected getProvider(provider: string): NgaAbstractAuthProvider {
+  getProvider(provider: string): NgaAbstractAuthProvider {
     if (!this.providers[provider]) {
       throw new TypeError(`Nga auth provider '${provider}' is not registered`);
     }

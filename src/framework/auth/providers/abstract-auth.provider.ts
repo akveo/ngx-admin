@@ -9,11 +9,11 @@ export abstract class NgaAbstractAuthProvider {
   protected defaultConfig: any = {};
   protected config: any = {};
 
-  setConfig(config): void {
+  setConfig(config: any): void {
     this.config = deepExtend({}, this.defaultConfig, config);
   }
 
-  getConfigValue(key): any {
+  getConfigValue(key: string): any {
     return getDeepFromObject(this.config, key, null);
   }
 
@@ -35,7 +35,7 @@ export abstract class NgaAbstractAuthProvider {
     return new Response(new ResponseOptions({ body: '{}', status: 200 }));
   }
 
-  protected getJsonSafe(res): any {
+  protected getJsonSafe(res: Response): any {
     let json;
     try {
       json = res.json();

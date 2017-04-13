@@ -28,13 +28,18 @@ import { NgaTokenService } from '../../services/token.service';
       
       <label for="input-email" class="sr-only">Email address</label>
       <input name="email" [(ngModel)]="user.email" type="email" id="input-email" 
-        class="form-control form-control-lg first" placeholder="Email address" required autofocus>
+        class="form-control form-control-lg first" placeholder="Email address" 
+             [required]="getConfigValue('email', 'validation.email.required')"
+             autofocus>
         
       <label for="input-password" class="sr-only">Password</label>
       <input name="password" [(ngModel)]="user.password" type="password" id="input-password" 
-        class="form-control form-control-lg last" placeholder="Password" required>
-        
-      <div class="checkbox">
+        class="form-control form-control-lg last" placeholder="Password" 
+             [required]="getConfigValue('email', 'validation.password.required')"
+             [minlength]="getConfigValue('email', 'validation.password.minLength')"
+             [maxlength]="getConfigValue('email', 'validation.password.maxLength')">
+      
+      <div class="checkbox" *ngIf="getConfigValue('email', 'login.rememberMe')">
         <label>
           <input name="rememberMe" [(ngModel)]="user.rememberMe" type="checkbox" value="remember-me"> Remember me
         </label>
@@ -80,5 +85,9 @@ export class NgaLoginComponent {
         }, this.redirectDelay);
       }
     });
+  }
+
+  getConfigValue(provider: string, key: string): any {
+    return this.service.getProvider(provider).getConfigValue(key);
   }
 }

@@ -1,3 +1,8 @@
+/**
+ * @license
+ * Copyright Akveo. All Rights Reserved.
+ * Licensed under the MIT License. See License.txt in the project root for license information.
+ */
 import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import { ActivatedRoute } from '@angular/router';
@@ -15,6 +20,7 @@ export class NgaEmailPassAuthProvider extends NgaAbstractAuthProvider {
   protected defaultConfig: NgEmailPassAuthProviderConfig = {
     login: {
       alwaysFail: false,
+      rememberMe: true,
       endpoint: '/api/auth/login',
       redirect: {
         success: '/',
@@ -25,6 +31,7 @@ export class NgaEmailPassAuthProvider extends NgaAbstractAuthProvider {
     },
     register: {
       alwaysFail: false,
+      rememberMe: true,
       endpoint: '/api/auth/register',
       redirect: {
         success: '/',
@@ -74,24 +81,24 @@ export class NgaEmailPassAuthProvider extends NgaAbstractAuthProvider {
       key: 'data.messages',
       getter: (module: string, res: Response) => getDeepFromObject(this.getJsonSafe(res), this.getConfigValue('messages.key'), this.getConfigValue(`${module}.defaultMessages`)),
     },
-    // validation: {
-    //   password: {
-    //     required: true,
-    //     minLength: 4,
-    //     maxLength: 12,
-    //     regexp: null,
-    //   },
-    //   email: {
-    //     required: true,
-    //     regexp: null,
-    //   },
-    //   fullName: {
-    //     required: true,
-    //     minLength: 4,
-    //     maxLength: 50,
-    //     regexp: null,
-    //   },
-    // },
+    validation: {
+      password: {
+        required: true,
+        minLength: 4,
+        maxLength: 12,
+        regexp: null,
+      },
+      email: {
+        required: true,
+        regexp: null,
+      },
+      fullName: {
+        required: true,
+        minLength: 4,
+        maxLength: 50,
+        regexp: null,
+      },
+    },
   };
 
   constructor(protected http: Http, private route: ActivatedRoute) {
