@@ -5,37 +5,31 @@
  */
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+
 import {
-  NgaThemeModule,
-  NgaCardModule,
-  NgaLayoutModule,
   NgaMenuModule,
-  NgaRouteTabsetModule,
   NgaSidebarModule,
-  NgaTabsetModule,
+  NgaThemeModule
 } from '@nga/theme';
 
 import { AppComponent } from './app.component';
+import { CoreModule } from './@core/core.module';
+import { PagesModule } from './pages/pages.module';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
-    FormsModule,
     HttpModule,
-    NgaThemeModule,
-    NgaCardModule,
-    NgaLayoutModule,
-    NgaMenuModule,
-    NgaRouteTabsetModule,
-    NgaSidebarModule,
-    NgaTabsetModule,
+    NgaThemeModule.forRoot(),
+    NgaSidebarModule.forRoot(),
+    AppRoutingModule,
+    CoreModule,
+    PagesModule
   ],
-  providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {
+}
