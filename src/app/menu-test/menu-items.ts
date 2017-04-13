@@ -36,6 +36,7 @@ export const menuItems: List<NgaMenuItem> = List([
             title: 'Menu #3.3.2',
             link: '/menu/3/3/2',
             icon: 'ion ion-happy-outline',
+            selected: true,
           },
           {
             title: '@nga/theme',

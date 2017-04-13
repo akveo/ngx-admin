@@ -15,11 +15,11 @@ import { NgaMenuItem, NgaMenuModuleConfig } from './menu.options';
 @Injectable()
 export class NgaMenuService {
 
-  private preparedMenuItems$ = new Subject();
+  private menuItemsChanges$ = new Subject();
   private addItemsChanges$ = new Subject();
   private itemClickChanges$ = new Subject();
 
-  preparedMenuItems: Observable<{ tag: string, items: List<NgaMenuItem> }> = this.preparedMenuItems$.asObservable();
+  menuItemsChanges: Observable<{ tag: string, items: List<NgaMenuItem> }> = this.menuItemsChanges$.asObservable();
 
   addMenuChanges: Observable<{ tag: string, item: NgaMenuItem }> = this.addItemsChanges$.asObservable();
 
@@ -28,25 +28,78 @@ export class NgaMenuService {
   constructor(private router: Router) { }
 
   prepareMenuItems(items: List<NgaMenuItem>, tag?: string) {
-    items.forEach(i => this.prepareMenuItem(i));
+    items.forEach(i => this.setParent(i));
+    items.forEach(i => this.prepareMenu(i));
 
-    this.preparedMenuItems$.next({
+    this.menuItemsChanges$.next({
       tag,
       items,
     });
   }
 
-  private prepareMenuItem(item: NgaMenuItem) {
-    if (item.children && item.children.size > 0) {
-      const firstItemWithoutParent = item.children.filter(c => c.parent === null || c.parent === undefined).first();
+  resetMenuItems(items: List<NgaMenuItem>, tag?: string) {
+    items.forEach(i => this.resetMenu(i));
+
+    this.menuItemsChanges$.next({
+      tag,
+      items,
+    });
+  }
+
+  private setParent(parent: NgaMenuItem) {
+    if (parent.children && parent.children.size > 0) {
+      const firstItemWithoutParent = parent.children.filter(c => c.parent === null || c.parent === undefined).first();
 
       if (firstItemWithoutParent) {
-        firstItemWithoutParent.parent = item;
+        firstItemWithoutParent.parent = parent;
 
-        this.prepareMenuItem(firstItemWithoutParent);
+        this.setParent(firstItemWithoutParent);
       }
-    } else if (item.parent) {
-      this.prepareMenuItem(item.parent);
+    } else if (parent.parent) {
+      this.setParent(parent.parent);
+    }
+  }
+
+  private prepareMenu(parent: any) {
+    parent.checked = true;
+
+    if (parent.children && parent.children.size > 0) {
+      const firstUnchecked = parent.children.filter((c: any) => !c.checked).first();
+
+      if (firstUnchecked) {
+        firstUnchecked.checked = true;
+
+        if (firstUnchecked.selected) {
+          parent.selected = true;
+          parent.expanded = true;
+          parent.checked = true;
+
+          this.prepareMenu(parent);
+        } else {
+          this.prepareMenu(firstUnchecked);
+        }
+      } else if (parent.parent) {
+        parent.parent.selected = true;
+        parent.parent.expanded = true;
+      }
+    } else if (parent.parent) {
+      this.prepareMenu(parent.parent);
+    }
+  }
+
+  private resetMenu(parent: any) {
+    parent.selected = false;
+
+    if (parent.children && parent.children.size > 0) {
+      const firstSelected = parent.children.filter((c: any) => c.selected).first();
+
+      if (firstSelected) {
+        firstSelected.selected = false;
+
+        this.resetMenu(firstSelected);
+      }
+    } else if (parent.parent) {
+      this.resetMenu(parent.parent);
     }
   }
 
@@ -64,16 +117,6 @@ export class NgaMenuService {
       item.parent.expanded = true;
 
       this.selectMenuItem(item.parent);
-    }
-  }
-
-  resetMenuItems(prevSelectedItem: NgaMenuItem) {
-    prevSelectedItem.selected = false;
-
-    if (prevSelectedItem.parent) {
-      prevSelectedItem.parent.expanded = false;
-
-      this.resetMenuItems(prevSelectedItem.parent);
     }
   }
 

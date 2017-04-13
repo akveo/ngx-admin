@@ -76,12 +76,10 @@ export class NgaMenuComponent implements OnInit {
   @Output() hoverItem = new EventEmitter<any>();
   @Output() toogleSubMenu = new EventEmitter<any>();
 
-  private selectedMenuItem: NgaMenuItem;
-
   constructor(private menuService: NgaMenuService) { }
 
   ngOnInit() {
-    this.menuService.preparedMenuItems
+    this.menuService.menuItemsChanges
       .subscribe((data: { tag: string, items: List<NgaMenuItem> }) => {
         if (!data.tag || data.tag === this.tag) {
           this.menuItems = data.items;
@@ -110,13 +108,7 @@ export class NgaMenuComponent implements OnInit {
   }
 
   onSelectItem(item: NgaMenuItem) {
-    if (this.selectedMenuItem) {
-      this.selectedMenuItem.selected = false;
-      this.menuService.resetMenuItems(this.selectedMenuItem);
-    }
-
-    this.selectedMenuItem = item;
-
+    this.menuService.resetMenuItems(this.menuItems);
     this.menuService.selectMenuItem(item);
   }
 
