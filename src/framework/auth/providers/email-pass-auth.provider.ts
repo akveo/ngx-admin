@@ -93,7 +93,7 @@ export class NgaEmailPassAuthProvider extends NgaAbstractAuthProvider {
         regexp: null,
       },
       fullName: {
-        required: true,
+        required: false,
         minLength: 4,
         maxLength: 50,
         regexp: null,
