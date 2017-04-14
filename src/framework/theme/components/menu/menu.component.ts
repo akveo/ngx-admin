@@ -28,15 +28,14 @@ export class NgaMenuItemComponent {
   @Input() menuItem: NgaMenuItem;
 
   @Output() hoverItem = new EventEmitter<any>();
-  @Output() toogleSubMenu = new EventEmitter<any>();
+  @Output() toggleSubMenu = new EventEmitter<any>();
   @Output() selectItem = new EventEmitter<any>();
   @Output() itemClick = new EventEmitter<any>();
 
-  constructor(private router: Router,
-    private menuService: NgaMenuService) { }
+  constructor(private router: Router, private menuService: NgaMenuService) { }
 
-  onToogleSubMenu(item: NgaMenuItem) {
-    this.toogleSubMenu.emit(item);
+  onToggleSubMenu(item: NgaMenuItem) {
+    this.toggleSubMenu.emit(item);
   }
 
   onHoverItem(item: NgaMenuItem) {
@@ -61,7 +60,7 @@ export class NgaMenuItemComponent {
       <li ngaMenuItem *ngFor="let item of menuItems"
                       [menuItem]="item"
                       (hoverItem)="onHoverItem($event)"
-                      (toogleSubMenu)="onToogleSubMenu($event)"
+                      (toggleSubMenu)="onToggleSubMenu($event)"
                       (selectItem)="onSelectItem($event)"
                       (itemClick)="onItemClick($event)"></li>
     </ul>
@@ -69,14 +68,14 @@ export class NgaMenuItemComponent {
 })
 export class NgaMenuComponent implements OnInit {
 
-  @Input() menuItems: List<NgaMenuItem>;
-
   @Input() tag: string;
 
   @Output() hoverItem = new EventEmitter<any>();
-  @Output() toogleSubMenu = new EventEmitter<any>();
+  @Output() toggleSubMenu = new EventEmitter<any>();
 
-  constructor(private menuService: NgaMenuService) { }
+  menuItems: List<NgaMenuItem>;
+
+  constructor(private menuService: NgaMenuService, private router: Router) { }
 
   ngOnInit() {
     this.menuService.menuItemsChanges
@@ -86,30 +85,23 @@ export class NgaMenuComponent implements OnInit {
         }
       });
 
-    this.menuService.addMenuChanges
-      .subscribe((data: { tag: string, item: NgaMenuItem }) => {
-        if (!data.tag || data.tag === this.tag) {
-          this.menuItems = this.menuItems.push(data.item);
-          this.menuService.prepareMenuItems(this.menuItems);
-        }
-      });
-
-    this.menuService.prepareMenuItems(this.menuItems);
+    this.menuService.prepareItems();
   }
 
   onHoverItem(item: NgaMenuItem) {
     this.hoverItem.emit(item);
   }
 
-  onToogleSubMenu(item: NgaMenuItem) {
+  onToggleSubMenu(item: NgaMenuItem) {
     item.expanded = !item.expanded;
 
-    this.toogleSubMenu.emit(item);
+    this.toggleSubMenu.emit(item);
   }
 
   onSelectItem(item: NgaMenuItem) {
-    this.menuService.resetMenuItems(this.menuItems);
-    this.menuService.selectMenuItem(item);
+    this.menuService.resetMenuItems(this.tag);
+
+    item.selected = true;
   }
 
   onItemClick(item: NgaMenuItem) {

@@ -1,5 +1,5 @@
 <a *ngIf="menuItem.link && !menuItem.url && !menuItem.children"
-        [ngClass]="{ 'active': menuItem.selected }"
+        [class.active]="menuItem.selected"
         [routerLink]="menuItem.link"
         [attr.target]="menuItem.target"
         [attr.title]="menuItem.title"
@@ -10,7 +10,7 @@
   <span>{{ menuItem.title }}</span>
 </a>
 <a *ngIf="menuItem.url && !menuItem.children && !menuItem.link"
-        [ngClass]="{ 'active': menuItem.selected }"
+        [class.active]="menuItem.selected"
         [attr.href]="menuItem.url"
         [attr.target]="menuItem.target"
         [attr.title]="menuItem.title"
@@ -21,7 +21,7 @@
   <span>{{ menuItem.title }}</span>
 </a>
 <a *ngIf="!menuItem.children && !menuItem.link && !menuItem.url"
-   [ngClass]="{ 'active': menuItem.selected }"
+   [class.active]="menuItem.selected"
    [attr.target]="menuItem.target"
    [attr.title]="menuItem.title"
    (mouseenter)="onHoverItem(menuItem)"
@@ -31,8 +31,8 @@
   <span>{{ menuItem.title }}</span>
 </a>
 <a *ngIf="menuItem.children"
-   [ngClass]="{ 'active': menuItem.selected }"
-   (click)="$event.preventDefault();onToogleSubMenu(menuItem)"
+   [class.active]="menuItem.selected"
+   (click)="$event.preventDefault();onToggleSubMenu(menuItem)"
    [attr.target]="menuItem.target"
    [attr.title]="menuItem.title"
    (mouseenter)="onHoverItem(menuItem)"
@@ -40,15 +40,16 @@
   <i class="{{ menuItem.icon }}" *ngIf="menuItem.icon"></i>
   <i *ngIf="!menuItem.icon"></i>
   <span>{{ menuItem.title }}</span>
-  <i class="ion" [ngClass]="{ 'ion-chevron-down': !menuItem.expanded,
-                              'ion-chevron-up': menuItem.expanded }"></i>
+  <i class="ion" [class.ion-chevron-down]="!menuItem.expanded"
+                 [class.ion-chevron-up]="menuItem.expanded"></i>
 </a>
-<ul [ngClass]="{ 'menu-collapsed': !(menuItem.children && menuItem.expanded),
-                  'menu-expanded': menuItem.expanded }">
+<ul *ngIf="menuItem.children"
+    [class.menu-collapsed]="!(menuItem.children && menuItem.expanded)"
+    [class.menu-expanded]="menuItem.expanded">
   <li ngaMenuItem *ngFor="let item of menuItem.children"
                   [menuItem]="item"
                   (hoverItem)="onHoverItem($event)"
-                  (toogleSubMenu)="onToogleSubMenu($event)"
+                  (toggleSubMenu)="onToggleSubMenu($event)"
                   (selectItem)="onSelectItem($event)"
                   (itemClick)="onItemClick($event)"></li>
 </ul>

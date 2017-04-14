@@ -35,7 +35,7 @@ export class NgaLayoutColumnComponent {
   selector: 'nga-layout-header',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
-    <nav [ngClass]="{ 'fixed': fixedValue }">
+    <nav [class.fixed]="fixedValue">
       <ng-content></ng-content>
     </nav>
   `,
@@ -59,7 +59,7 @@ export class NgaLayoutHeaderComponent {
   selector: 'nga-layout-footer',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
-    <nav [ngClass]="{ 'fixed': fixedValue }">
+    <nav [class.fixed]="fixedValue">
       <ng-content></ng-content>
     </nav>
   `,
@@ -95,7 +95,7 @@ export class NgaLayoutFooterComponent {
     <div class="layout-container">
       <ng-content select="nga-sidebar"></ng-content>
       <ng-content select="nga-sidebar[left]"></ng-content>
-      <div class="content" [ngClass]="{ 'center': centerValue }">
+      <div class="content" [class.center]="centerValue">
         <div class="columns">
           <ng-content select="nga-layout-column"></ng-content>
         </div>

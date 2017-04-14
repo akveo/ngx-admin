@@ -15,9 +15,10 @@ export class NgaMenuItem {
   children?: List<NgaMenuItem>;
   target?: string;
   hidden?: boolean = false;
+  pathMath?: string = 'full';
   parent?: NgaMenuItem;
 }
 
 export class NgaMenuModuleConfig {
-  menuItems: List<NgaMenuItem>;
+  items?: List<NgaMenuItem>;
 }

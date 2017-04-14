@@ -88,7 +88,9 @@ const NGA_TEST_COMPONENTS = [
     NgaThemeModule.forRoot(),
     NgaCardModule,
     NgaLayoutModule,
-    NgaMenuModule.forRoot(),
+    NgaMenuModule.forRoot({
+      items: menuItems,
+    }),
     NgaRouteTabsetModule,
     NgaSidebarModule.forRoot(),
     NgaTabsetModule,

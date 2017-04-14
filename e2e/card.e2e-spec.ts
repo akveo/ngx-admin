@@ -102,7 +102,6 @@ describe('nga-card', () => {
   cards = prepareCards();
 
   beforeEach(() => {
-    browser.ignoreSynchronization = true;
     browser.get('/');
   });
 

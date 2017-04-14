@@ -25,7 +25,7 @@ describe('nga-route-tabset', () => {
 
     element(tab2).click()
       .then(() => {
-        expect(hasClass(element(tab2), 'active')).toBe(true);
+        expect(hasClass(element(tab2), 'active')).toBeTruthy();
         expect(browser.getCurrentUrl()).toContain('/#/route-tabset/tab2');
       });
 
@@ -33,7 +33,7 @@ describe('nga-route-tabset', () => {
 
     element(tab1).click()
       .then(() => {
-        expect(hasClass(element(tab1), 'active')).toBe(true);
+        expect(hasClass(element(tab1), 'active')).toBeTruthy();
         expect(browser.getCurrentUrl()).toContain('/#/route-tabset/tab1');
       });
   });
@@ -55,7 +55,7 @@ describe('nga-route-tabset', () => {
 
     element(tab2).click()
       .then(() => {
-        expect(hasClass(element(tab2), 'active')).toBe(true);
+        expect(hasClass(element(tab2), 'active')).toBeTruthy();
         expect(browser.getCurrentUrl()).toContain('/#/route-tabset/tab2');
       });
 
@@ -63,7 +63,7 @@ describe('nga-route-tabset', () => {
 
     element(tab1).click()
       .then(() => {
-        expect(hasClass(element(tab1), 'active')).toBe(true);
+        expect(hasClass(element(tab1), 'active')).toBeTruthy();
         expect(browser.getCurrentUrl()).toContain('/#/route-tabset/tab1');
       });
   });

@@ -25,30 +25,32 @@ describe('nga-tabset', () => {
 
     element(tab2).click()
       .then(() => {
-        expect(hasClass(element(tab2), 'active')).toBe(true);
+        expect(hasClass(element(tab2), 'active')).toBeTruthy();
       });
 
     const tab3 = by.css('nga-tabset:nth-child(1) > ul.nga-tabset > li:nth-child(3)');
 
     element(tab3).click()
       .then(() => {
-        expect(hasClass(element(tab3), 'active')).toBe(true);
+        expect(hasClass(element(tab3), 'active')).toBeTruthy();
       });
 
     const tab1 = by.css('nga-tabset:nth-child(1) > ul.nga-tabset > li:nth-child(1)');
 
     element(tab1).click()
       .then(() => {
-        expect(hasClass(element(tab1), 'active')).toBe(true);
+        expect(hasClass(element(tab1), 'active')).toBeTruthy();
       });
   });
 
   it('should display tabset with second active tab', () => {
-    expect(hasClass(element(by.css('nga-tabset:nth-child(2) > ul.nga-tabset > li:nth-child(2)')), 'active')).toBe(true);
+    expect(hasClass(element(by.css('nga-tabset:nth-child(2) > ul.nga-tabset > li:nth-child(2)')), 'active'))
+      .toBeTruthy();
   });
 
   it('should display tabset with third active tab', () => {
-    expect(hasClass(element(by.css('nga-tabset:nth-child(3) > ul.nga-tabset > li:nth-child(3)')), 'active')).toBe(true);
+    expect(hasClass(element(by.css('nga-tabset:nth-child(3) > ul.nga-tabset > li:nth-child(3)')), 'active'))
+      .toBeTruthy();
   });
 
   it('should change the tabs with the enabled routes', () => {
@@ -56,7 +58,7 @@ describe('nga-tabset', () => {
 
     element(tab2).click()
       .then(() => {
-        expect(hasClass(element(tab2), 'active')).toBe(true);
+        expect(hasClass(element(tab2), 'active')).toBeTruthy();
         expect(browser.getCurrentUrl()).toContain('/#/tabset/tab2');
       });
 
@@ -64,7 +66,7 @@ describe('nga-tabset', () => {
 
     element(tab3).click()
       .then(() => {
-        expect(hasClass(element(tab3), 'active')).toBe(true);
+        expect(hasClass(element(tab3), 'active')).toBeTruthy();
         expect(browser.getCurrentUrl()).toContain('/#/tabset/tab3');
       });
 
@@ -72,7 +74,7 @@ describe('nga-tabset', () => {
 
     element(tab1).click()
       .then(() => {
-        expect(hasClass(element(tab1), 'active')).toBe(true);
+        expect(hasClass(element(tab1), 'active')).toBeTruthy();
         expect(browser.getCurrentUrl()).toContain('/#/tabset/tab1');
       });
   });

@@ -3,7 +3,7 @@
  * Copyright Akveo. All Rights Reserved.
  * Licensed under the MIT License. See License.txt in the project root for license information.
  */
-import { Injectable } from '@angular/core';
+import { Injectable, Optional } from '@angular/core';
 import { Router } from '@angular/router';
 import { Routes } from '@angular/router';
 import { Subject } from 'rxjs/Subject';
@@ -16,33 +16,49 @@ import { NgaMenuItem, NgaMenuModuleConfig } from './menu.options';
 export class NgaMenuService {
 
   private menuItemsChanges$ = new Subject();
-  private addItemsChanges$ = new Subject();
   private itemClickChanges$ = new Subject();
 
   menuItemsChanges: Observable<{ tag: string, items: List<NgaMenuItem> }> = this.menuItemsChanges$.asObservable();
 
-  addMenuChanges: Observable<{ tag: string, item: NgaMenuItem }> = this.addItemsChanges$.asObservable();
-
   itemClickChanges: Observable<{ tag: string, item: NgaMenuItem }> = this.itemClickChanges$.asObservable();
 
-  constructor(private router: Router) { }
+  private stack = List<NgaMenuItem>();
+  private items = List<NgaMenuItem>();
 
-  prepareMenuItems(items: List<NgaMenuItem>, tag?: string) {
-    items.forEach(i => this.setParent(i));
-    items.forEach(i => this.prepareMenu(i));
+  constructor(private router: Router, @Optional() private config: NgaMenuModuleConfig) {
+    this.items = List(this.config.items);
+  }
+
+  prepareItems(tag?: string) {
+    this.items.forEach(i => this.setParent(i));
+    this.items.forEach(i => this.prepareItem(i));
+
+    this.stack = this.stack.clear();
+
+    this.menuItemsChanges$.next({ tag, items: this.items });
+  }
+
+  resetMenuItems(tag?: string) {
+    this.items.forEach(i => this.resetItem(i));
+
+    this.stack = this.stack.clear();
 
     this.menuItemsChanges$.next({
       tag,
-      items,
+      items: this.items,
     });
   }
 
-  resetMenuItems(items: List<NgaMenuItem>, tag?: string) {
-    items.forEach(i => this.resetMenu(i));
+  addMenuItems(tag?: string, ...newItems: NgaMenuItem[]) {
+    this.items = this.items.push(...newItems);
 
-    this.menuItemsChanges$.next({
+    this.prepareItems(tag);
+  }
+
+  itemClick(item: NgaMenuItem, tag?: string) {
+    this.itemClickChanges$.next({
       tag,
-      items,
+      item,
     });
   }
 
@@ -55,76 +71,61 @@ export class NgaMenuService {
 
         this.setParent(firstItemWithoutParent);
       }
-    } else if (parent.parent) {
+    }
+
+    if (parent.parent) {
       this.setParent(parent.parent);
     }
   }
 
-  private prepareMenu(parent: any) {
-    parent.checked = true;
+  private prepareItem(parent: NgaMenuItem) {
+    this.stack = this.stack.push(parent);
 
-    if (parent.children && parent.children.size > 0) {
-      const firstUnchecked = parent.children.filter((c: any) => !c.checked).first();
-
-      if (firstUnchecked) {
-        firstUnchecked.checked = true;
-
-        if (firstUnchecked.selected) {
-          parent.selected = true;
-          parent.expanded = true;
-          parent.checked = true;
-
-          this.prepareMenu(parent);
-        } else {
-          this.prepareMenu(firstUnchecked);
-        }
-      } else if (parent.parent) {
-        parent.parent.selected = true;
+    if (parent.expanded) {
+      if (parent.parent) {
         parent.parent.expanded = true;
       }
-    } else if (parent.parent) {
-      this.prepareMenu(parent.parent);
+    }
+
+    if (this.router.isActive(this.router.createUrlTree([parent.link]), parent.pathMath === 'full')) {
+      parent.selected = true;
+
+      if (parent.parent) {
+        parent.parent.expanded = true;
+      }
+    }
+
+    if (parent.children && parent.children.size > 0) {
+      const firstUnchecked = parent.children.filter(c => !this.stack.contains(c)).first();
+
+      if (firstUnchecked) {
+        this.prepareItem(firstUnchecked);
+      }
+    }
+
+    if (parent.parent) {
+      this.prepareItem(parent.parent);
     }
   }
 
-  private resetMenu(parent: any) {
+  private resetItem(parent: NgaMenuItem) {
     parent.selected = false;
 
+    this.stack = this.stack.push(parent);
+
     if (parent.children && parent.children.size > 0) {
-      const firstSelected = parent.children.filter((c: any) => c.selected).first();
+      const firstSelected = parent.children.filter(c => !this.stack.contains(c)).first();
 
       if (firstSelected) {
         firstSelected.selected = false;
 
-        this.resetMenu(firstSelected);
+        this.resetItem(firstSelected);
       }
-    } else if (parent.parent) {
-      this.resetMenu(parent.parent);
     }
-  }
 
-  addMenuItem(item: NgaMenuItem, tag?: string) {
-    this.addItemsChanges$.next({
-      tag,
-      item,
-    });
-  }
-
-  selectMenuItem(item: NgaMenuItem) {
-    item.selected = true;
-
-    if (item.parent) {
-      item.parent.expanded = true;
-
-      this.selectMenuItem(item.parent);
+    if (parent.parent) {
+      this.resetItem(parent.parent);
     }
-  }
-
-  itemClick(item: NgaMenuItem, tag?: string) {
-    this.itemClickChanges$.next({
-      tag,
-      item,
-    });
   }
 
 }
