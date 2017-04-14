@@ -7,11 +7,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 
-import {
-  NgaMenuModule,
-  NgaSidebarModule,
-  NgaThemeModule
-} from '@nga/theme';
+import { NgaThemeModule } from '@nga/theme';
 
 import { AppComponent } from './app.component';
 import { CoreModule } from './@core/core.module';
@@ -24,7 +20,6 @@ import { AppRoutingModule } from './app-routing.module';
     BrowserModule,
     HttpModule,
     NgaThemeModule.forRoot(),
-    NgaSidebarModule.forRoot(),
     AppRoutingModule,
     CoreModule,
     PagesModule

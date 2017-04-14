@@ -1,0 +1,14 @@
+:host {
+  & > nga-layout-header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  & > nga-sidebar {
+
+  }
+
+  & > nga-layout-footer {
+
+  }
+}

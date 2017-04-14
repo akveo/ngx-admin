@@ -8,7 +8,8 @@ import {
   NgaTabsetModule,
   NgaRouteTabsetModule,
   NgaSidebarModule,
-  NgaMenuModule
+  NgaMenuModule,
+  NgaUserModule
 } from '@nga/theme';
 
 import { RootLayoutComponent } from './layouts';
@@ -25,7 +26,8 @@ const NGA_MODULES = [
   NgaTabsetModule,
   NgaRouteTabsetModule,
   NgaSidebarModule,
-  NgaMenuModule
+  NgaMenuModule,
+  NgaUserModule
 ];
 
 const LAYOUT_COMPONENTS = [
