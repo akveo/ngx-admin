@@ -1,4 +1,4 @@
-import { NgaMenuItem } from '@nga/theme/components/menu/menu.options';
+import { NgaMenuItem } from '@nga/theme';
 
 import { List } from 'immutable';
 

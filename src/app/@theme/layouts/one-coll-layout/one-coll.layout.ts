@@ -9,12 +9,20 @@
 * */
 import { Component } from '@angular/core';
 
+
 @Component({
   selector: 'one-coll-layout',
   styleUrls: ['./one-coll.layout.scss'],
   template: `
     <nga-layout>
-      <nga-layout-header fixed></nga-layout-header>
+      <nga-layout-header fixed>
+        <section>
+          <h1>Logo</h1>
+        </section>
+        <section>
+          <nga-user></nga-user>
+        </section> 
+      </nga-layout-header>
       <nga-sidebar fixed>
         <ng-content select="nga-menu"></ng-content>
       </nga-sidebar>
@@ -25,6 +33,5 @@ import { Component } from '@angular/core';
     </nga-layout>
   `,
 })
-export class RootLayoutComponent {
-  constructor() { }
+export class OneCollLayoutComponent {
 }

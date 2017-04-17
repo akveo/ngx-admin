@@ -12,7 +12,7 @@ import {
   NgaUserModule
 } from '@nga/theme';
 
-import { RootLayoutComponent } from './layouts';
+import { OneCollLayoutComponent } from './layouts';
 
 const BASE_MODULES = [
   CommonModule,
@@ -25,24 +25,25 @@ const NGA_MODULES = [
   NgaLayoutModule,
   NgaTabsetModule,
   NgaRouteTabsetModule,
-  NgaSidebarModule,
   NgaMenuModule,
   NgaUserModule
 ];
 
 const LAYOUT_COMPONENTS = [
-  RootLayoutComponent
+  OneCollLayoutComponent
 ];
 
 @NgModule({
   imports: [
     ...BASE_MODULES,
     ...NGA_MODULES,
+    NgaSidebarModule.forRoot(),
   ],
   exports: [
     ...BASE_MODULES,
     ...NGA_MODULES,
-    ...LAYOUT_COMPONENTS
+    ...LAYOUT_COMPONENTS,
+    NgaSidebarModule
   ],
   declarations: [
     ...LAYOUT_COMPONENTS
