@@ -105,7 +105,7 @@
     "to-string-loader": "1.1.5",
     "ts-helpers": "1.1.2",
     "ts-node": "3.0.2",
-    "tslint": "5.0.0",
+    "tslint": "4.5.1",
     "typedoc": "0.5.10",
     "typescript": "2.2.2",
     "typogr": "0.6.6",

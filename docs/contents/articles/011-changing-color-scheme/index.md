@@ -17,7 +17,7 @@ For light themes we suggest taking `src/app/theme/sass/conf/colorScheme/_mint.sc
 dark `src/app/theme/sass/conf/colorScheme/_blue.scss`.
 As we want a dark theme, we're taking `blue`.
 
-1) Copy `src/app/theme/sass/conf/colorScheme/_mint.scss` to `src/app/theme/sass/conf/colorScheme/_dark.scss`:
+1) Copy `src/app/theme/sass/conf/colorScheme/_blue.scss` to `src/app/theme/sass/conf/colorScheme/_dark.scss`:
 <br><br>
 
 2) Include your colorscheme file in `src/app/theme/sass/conf/conf.scss`.

@@ -57,6 +57,20 @@ a.al-logo:hover {
   border: 0;
   opacity: 1;
   position: relative;
+  ul.profile-dropdown:after {
+    bottom: 100%;
+    right: 0;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-color: rgba(255, 255, 255, 0);
+    border-bottom-color: #fff;
+    border-width: 10px;
+    margin-right: 28px;
+  }
   a {
     display: block;
   }
