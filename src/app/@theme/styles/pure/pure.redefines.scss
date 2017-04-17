@@ -1,0 +1,20 @@
+@import '~@nga/theme/styles/themes/nga.theme.default';
+
+$nga-color-primary: #7d85b2;
+$nga-color-default: #edf1f7;
+$nga-color-secondary: #b5bbd5;
+
+$nga-background: white;
+
+$nga-layout-background: $nga-color-default;
+
+$nga-header-height: 4.725rem;
+$nga-header-background: $nga-background;
+
+$nga-footer-height: $nga-header-height;
+$nga-footer-background: $nga-background;
+
+$nga-user-picture-background: $nga-color-default;
+
+$nga-sidebar-background: $nga-background;
+$nga-sidebar-width: 16.25rem;

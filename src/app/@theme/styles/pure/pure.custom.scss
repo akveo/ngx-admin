@@ -1,0 +1,34 @@
+:host /deep/ {
+  color: $nga-color-default;
+
+  nga-layout {
+    nga-layout-header > nav {
+      box-shadow: 0 4px 12px 0 rgba(33, 57, 161, 0.08);
+    }
+
+    nga-sidebar {
+      box-shadow: 0 4px 12px 0 rgba(33, 57, 161, 0.08);
+
+      ul {
+        li a {
+          color: $nga-color-primary;
+          transition: all 0.2s ease;
+          padding: .87rem 0 .87rem 1rem;
+
+          &:hover {
+            background: $nga-color-default;
+          }
+
+          &.active {
+            font-weight: bold;
+          }
+        }
+      }
+    }
+
+    nga-layout-footer > nav {
+      box-shadow: 0 4px 12px 0 rgba(33, 57, 161, 0.08);
+      border: none !important;
+    }
+  }
+}

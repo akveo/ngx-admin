@@ -22,8 +22,7 @@
         "../node_modules/normalize.css/normalize.css",
         "../node_modules/font-awesome/scss/font-awesome.scss",
         "../node_modules/ionicons/scss/ionicons.scss",
-        "../node_modules/bootstrap/scss/bootstrap.scss",
-        "styles.scss"
+        "../node_modules/bootstrap/scss/bootstrap.scss"
       ],
       "scripts": [
         "../node_modules/jquery/dist/jquery.js",

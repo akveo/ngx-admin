@@ -16,20 +16,21 @@ import { Component } from '@angular/core';
   template: `
     <nga-layout>
       <nga-layout-header fixed>
-        <section>
-          <h1>Logo</h1>
-        </section>
-        <section>
-          <nga-user></nga-user>
-        </section> 
+        <a href="/#/pages/dashboard" class="logo">NgX <span>Admin</span></a>
       </nga-layout-header>
-      <nga-sidebar fixed>
-        <ng-content select="nga-menu"></ng-content>
+
+      <nga-sidebar left>
+        <nga-sidebar-content>
+          <ng-content select="nga-menu"></ng-content>
+        </nga-sidebar-content>
       </nga-sidebar>
+      
       <nga-layout-column>
         <ng-content select="router-outlet"></ng-content>
       </nga-layout-column>
-      <nga-layout-footer></nga-layout-footer>
+      
+      <nga-layout-footer>
+      </nga-layout-footer>
     </nga-layout>
   `,
 })

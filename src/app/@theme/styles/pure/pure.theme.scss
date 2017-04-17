@@ -1,3 +1,6 @@
 @import '~@nga/theme/styles/themes/nga.theme.default';
 
+@import 'pure.redefines';
+@import 'pure.custom';
+
 @include nga-theme();
