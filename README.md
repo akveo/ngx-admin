@@ -4,7 +4,7 @@
 
 # Admin panel framework based on Angular 2, Bootstrap 4 and Webpack
 
-Admin template made with :heart:  by [Akveo team](http://akveo.com/). Follow us on [Twitter](https://twitter.com/akveo_inc) to get latest news about this template first!
+Admin template made with :heart:  by [Akveo team](http://akveo.com/). Follow us on [Twitter](https://twitter.com/akveo_inc) to get the latest news about this template first!
 
 ### Demo
 
@@ -33,7 +33,7 @@ This project runs its tests on multiple desktop and mobile browsers using [Brows
 - Like our page on [Facebook](https://www.facebook.com/akveo/) :thumbsup:
 
 ## Can I hire you guys?
-Yes!  Visit [our homepage](http://akveo.com/) or simply leave us a note to [contact@akveo.com](mailto:contact@akveo.com). We will be happy to work with you!
+Yes!  Visit [our homepage](http://akveo.com/) or simply leave us a message to [contact@akveo.com](mailto:contact@akveo.com). We will be happy to work with you!
 
 ## Features
 * TypeScript
@@ -54,4 +54,4 @@ Yes!  Visit [our homepage](http://akveo.com/) or simply leave us a note to [cont
 ### From akveo
 
 Enjoy :metal:
-We're always happy to hear your feedback!
+We're always happy to get your feedback!
