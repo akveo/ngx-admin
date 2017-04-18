@@ -10,7 +10,7 @@ import 'style-loader!./ckeditor.scss';
 })
 
 export class Ckeditor {
-  public ckeditorContent:string = '<p>Hello CKEditor</p>';
+  public ckeditorContent: string = '<p>Hello CKEditor</p>';
   public config = {
     uiColor: '#F0F3F4',
     height: '600',

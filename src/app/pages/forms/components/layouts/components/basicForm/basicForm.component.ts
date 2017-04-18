@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'basic-form',
@@ -6,8 +6,8 @@ import {Component} from '@angular/core';
 })
 export class BasicForm {
 
+  isChecked: boolean = false;
+
   constructor() {
   }
-
-  isChecked: boolean = false;
 }

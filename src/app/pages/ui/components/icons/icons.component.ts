@@ -10,7 +10,7 @@ import 'style-loader!./icons.scss';
 })
 export class Icons {
 
-  icons:any;
+  icons: any;
 
   constructor(private _iconsService: IconsService) {
   }

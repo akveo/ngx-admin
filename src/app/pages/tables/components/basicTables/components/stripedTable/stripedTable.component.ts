@@ -8,7 +8,7 @@ import {BasicTablesService} from '../../basicTables.service';
 })
 export class StripedTable {
 
-  smartTableData:Array<any>;
+  smartTableData: Array<any>;
 
   constructor(private _basicTablesService: BasicTablesService) {
     this.smartTableData = _basicTablesService.smartTableData;

@@ -17,11 +17,11 @@ import 'style-loader!./baChartistChart.scss';
 })
 export class BaChartistChart {
 
-  @Input() baChartistChartType:string;
-  @Input() baChartistChartData:Object;
-  @Input() baChartistChartOptions:Object;
-  @Input() baChartistChartResponsive:Object;
-  @Input() baChartistChartClass:string;
+  @Input() baChartistChartType: string;
+  @Input() baChartistChartData: Object;
+  @Input() baChartistChartOptions: Object;
+  @Input() baChartistChartResponsive: Object;
+  @Input() baChartistChartClass: string;
   @Output() onChartReady = new EventEmitter<any>();
 
   @ViewChild('baChartistChart') public _selector: ElementRef;
@@ -29,7 +29,12 @@ export class BaChartistChart {
   private chart;
 
   ngAfterViewInit() {
-    this.chart = new Chartist[this.baChartistChartType](this._selector.nativeElement, this.baChartistChartData, this.baChartistChartOptions, this.baChartistChartResponsive);
+    this.chart = new Chartist[this.baChartistChartType](
+        this._selector.nativeElement,
+        this.baChartistChartData,
+        this.baChartistChartOptions,
+        this.baChartistChartResponsive
+    );
     this.onChartReady.emit(this.chart);
   }
 
@@ -39,7 +44,7 @@ export class BaChartistChart {
     }
   }
 
-  ngOnDestroy():void {
+  ngOnDestroy(): void {
     if (this.chart) {
       this.chart.detach();
     }

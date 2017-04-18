@@ -1,5 +1,5 @@
-import {Injectable} from '@angular/core';
-import {Router, Routes} from '@angular/router';
+import { Injectable } from '@angular/core';
+import { Router, Routes } from '@angular/router';
 import * as _ from 'lodash';
 
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
@@ -10,7 +10,7 @@ export class BaMenuService {
 
   protected _currentMenuItem = {};
 
-  constructor(private _router:Router) { }
+  constructor(private _router: Router) { }
 
   /**
    * Updates the routes in the menu
@@ -22,16 +22,16 @@ export class BaMenuService {
     this.menuItems.next(convertedRoutes);
   }
 
-  public convertRoutesToMenus(routes:Routes):any[] {
+  public convertRoutesToMenus(routes: Routes): any[] {
     let items = this._convertArrayToItems(routes);
     return this._skipEmpty(items);
   }
 
-  public getCurrentItem():any {
+  public getCurrentItem(): any {
     return this._currentMenuItem;
   }
 
-  public selectMenuItem(menuItems:any[]):any[] {
+  public selectMenuItem(menuItems: any[]): any[] {
     let items = [];
     menuItems.forEach((item) => {
       this._selectItem(item);
@@ -48,7 +48,7 @@ export class BaMenuService {
     return items;
   }
 
-  protected _skipEmpty(items:any[]):any[] {
+  protected _skipEmpty(items: any[]): any[] {
     let menu = [];
     items.forEach((item) => {
       let menuItem;
@@ -68,7 +68,7 @@ export class BaMenuService {
     return [].concat.apply([], menu);
   }
 
-  protected _convertArrayToItems(routes:any[], parent?:any):any[] {
+  protected _convertArrayToItems(routes: any[], parent?: any): any[] {
     let items = [];
     routes.forEach((route) => {
       items.push(this._convertObjectToItem(route, parent));
@@ -76,8 +76,8 @@ export class BaMenuService {
     return items;
   }
 
-  protected _convertObjectToItem(object, parent?:any):any {
-    let item:any = {};
+  protected _convertObjectToItem(object, parent?: any): any {
+    let item: any = {};
     if (object.data && object.data.menu) {
       // this is a menu object
       item = object.data.menu;
@@ -110,7 +110,7 @@ export class BaMenuService {
     return prepared;
   }
 
-  protected _prepareItem(object:any):any {
+  protected _prepareItem(object: any): any {
     if (!object.skip) {
       object.target = object.target || '';
       object.pathMatch = object.pathMatch  || 'full';
@@ -120,8 +120,9 @@ export class BaMenuService {
     return object;
   }
 
-  protected _selectItem(object:any):any {
-    object.selected = this._router.isActive(this._router.createUrlTree(object.route.paths), object.pathMatch === 'full');
+  protected _selectItem(object: any): any {
+    object.selected = this._router
+      .isActive(this._router.createUrlTree(object.route.paths), object.pathMatch === 'full');
     return object;
   }
 }

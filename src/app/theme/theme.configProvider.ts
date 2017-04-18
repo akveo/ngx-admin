@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import * as _ from 'lodash';
 
-import { colorHelper } from './theme.constants';
+import { ColorHelper } from './theme.constants';
 
 @Injectable()
 export class BaThemeConfigProvider {
@@ -53,17 +53,17 @@ export class BaThemeConfigProvider {
         warning: this.colorScheme.warning,
         danger: this.colorScheme.danger,
 
-        primaryLight: colorHelper.tint(this.colorScheme.primary, 30),
-        infoLight: colorHelper.tint(this.colorScheme.info, 30),
-        successLight: colorHelper.tint(this.colorScheme.success, 30),
-        warningLight: colorHelper.tint(this.colorScheme.warning, 30),
-        dangerLight: colorHelper.tint(this.colorScheme.danger, 30),
+        primaryLight: ColorHelper.tint(this.colorScheme.primary, 30),
+        infoLight: ColorHelper.tint(this.colorScheme.info, 30),
+        successLight: ColorHelper.tint(this.colorScheme.success, 30),
+        warningLight: ColorHelper.tint(this.colorScheme.warning, 30),
+        dangerLight: ColorHelper.tint(this.colorScheme.danger, 30),
 
-        primaryDark: colorHelper.shade(this.colorScheme.primary, 15),
-        infoDark: colorHelper.shade(this.colorScheme.info, 15),
-        successDark: colorHelper.shade(this.colorScheme.success, 15),
-        warningDark: colorHelper.shade(this.colorScheme.warning, 15),
-        dangerDark: colorHelper.shade(this.colorScheme.danger, 15),
+        primaryDark: ColorHelper.shade(this.colorScheme.primary, 15),
+        infoDark: ColorHelper.shade(this.colorScheme.info, 15),
+        successDark: ColorHelper.shade(this.colorScheme.success, 15),
+        warningDark: ColorHelper.shade(this.colorScheme.warning, 15),
+        dangerDark: ColorHelper.shade(this.colorScheme.danger, 15),
 
         dashboard: {
           blueStone: this.dashboardColors.blueStone,
@@ -74,7 +74,7 @@ export class BaThemeConfigProvider {
         },
 
         custom: {
-          dashboardPieChart: colorHelper.hexToRgbA(this.basic.defaultText, 0.8),
+          dashboardPieChart: ColorHelper.hexToRgbA(this.basic.defaultText, 0.8),
           dashboardLineChart: this.basic.defaultText,
         }
       }

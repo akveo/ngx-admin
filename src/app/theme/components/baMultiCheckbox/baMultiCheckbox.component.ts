@@ -8,13 +8,13 @@ import {ControlValueAccessor, NgModel} from '@angular/forms';
   providers: [NgModel]
 })
 export class BaMultiCheckbox implements ControlValueAccessor {
-  @Input() baMultiCheckboxClass:string;
-  @Input() propertiesMapping:any;
+  @Input() baMultiCheckboxClass: string;
+  @Input() propertiesMapping: any;
 
   public model: NgModel;
   public state: boolean;
 
-  public constructor(@Self() state:NgModel) {
+  public constructor(@Self() state: NgModel) {
     this.model = state;
     state.valueAccessor = this;
   }

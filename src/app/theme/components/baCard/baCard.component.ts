@@ -5,7 +5,7 @@ import {Component, Input} from '@angular/core';
   templateUrl: './baCard.html',
 })
 export class BaCard {
-  @Input() title:String;
-  @Input() baCardClass:String;
-  @Input() cardType:String;
+  @Input() title: String;
+  @Input() baCardClass: String;
+  @Input() cardType: String;
 }

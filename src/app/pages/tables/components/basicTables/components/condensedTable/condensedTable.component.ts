@@ -8,7 +8,7 @@ import {BasicTablesService} from '../../basicTables.service';
 })
 export class CondensedTable {
 
-  peopleTableData:Array<any>;
+  peopleTableData: Array<any>;
 
   constructor(private _basicTablesService: BasicTablesService) {
     this.peopleTableData = _basicTablesService.peopleTableData;

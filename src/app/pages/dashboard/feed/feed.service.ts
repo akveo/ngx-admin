@@ -1,4 +1,4 @@
-import {Injectable} from '@angular/core';
+import { Injectable } from '@angular/core';
 
 @Injectable()
 export class FeedService {
@@ -9,6 +9,7 @@ export class FeedService {
       author: 'Kostya',
       surname: 'Danovsky',
       header: 'Posted new message',
+      // tslint:disable-next-line:max-line-length
       text: 'Guys, check this out: \nA police officer found a perfect hiding place for watching for speeding motorists. One day, the officer was amazed when everyone was under the speed limit, so he investigated and found the problem. A 10 years old boy was standing on the side of the road with a huge hand painted sign which said "Radar Trap Ahead." A little more investigative work led the officer to the boy\'s accomplice: another boy about 100 yards beyond the radar trap with a sign reading "TIPS" and a bucket at his feet full of change.',
       time: 'Today 11:55 pm',
       ago: '25 minutes ago',
@@ -31,6 +32,7 @@ export class FeedService {
       header: 'Added new image',
       text: '"My little kitten"',
       preview: 'app/feed/my-little-kitten.png',
+      // tslint:disable-next-line:max-line-length
       link: 'http://api.ning.com/files/DtcI2O2Ry7A7VhVxeiWfGU9WkHcMy4WSTWZ79oxJq*h0iXvVGndfD7CIYy-Ax-UAFCBCdqXI4GCBw3FOLKTTjQc*2cmpdOXJ/1082127884.jpeg',
       time: 'Today 2:20 pm',
       ago: '10 hrs ago',
@@ -69,6 +71,7 @@ export class FeedService {
       author: 'Andrey',
       surname: 'Hrabouski',
       header: 'Posted new message',
+      // tslint:disable-next-line:max-line-length
       text: 'How do you smuggle an elephant across the border? Put a slice of bread on each side, and call him "lunch".',
       time: '14.11.2015',
       ago: '5 days ago',
@@ -87,6 +90,7 @@ export class FeedService {
       author: 'Alexander',
       surname: 'Demeshko',
       header: 'Posted new message',
+      // tslint:disable-next-line:max-line-length
       text: '“I mean, they say you die twice. One time when you stop breathing and a second time, a bit later on, when somebody says your name for the last time." ©',
       time: '15.11.2015',
       ago: '6 days ago',

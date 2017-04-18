@@ -7,9 +7,9 @@ import 'jquery-slimscroll';
 })
 export class BaSlimScroll {
 
-  @Input() public baSlimScrollOptions:Object;
+  @Input() public baSlimScrollOptions: Object;
 
-  constructor(private _elementRef:ElementRef) {
+  constructor(private _elementRef: ElementRef) {
   }
 
   ngOnChanges(changes) {
