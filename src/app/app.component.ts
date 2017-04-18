@@ -1,12 +1,10 @@
 import { Component, ViewContainerRef } from '@angular/core';
+import * as $ from 'jquery';
 
 import { GlobalState } from './global.state';
 import { BaImageLoaderService, BaThemePreloader, BaThemeSpinner } from './theme/services';
 import { BaThemeConfig } from './theme/theme.config';
 import { layoutPaths } from './theme/theme.constants';
-
-import 'style-loader!./app.scss';
-import 'style-loader!./theme/initial.scss';
 
 /*
  * App Component
@@ -49,7 +47,7 @@ export class App {
 
   private _loadImages(): void {
     // register some loaders
-    BaThemePreloader.registerLoader(this._imageLoader.load(layoutPaths.images.root + 'sky-bg.jpg'));
+    BaThemePreloader.registerLoader(this._imageLoader.load('/assets/img/sky-bg.jpg'));
   }
 
 }

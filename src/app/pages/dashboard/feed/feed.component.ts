@@ -2,11 +2,10 @@ import {Component} from '@angular/core';
 
 import {FeedService} from './feed.service';
 
-import 'style-loader!./feed.scss';
-
 @Component({
   selector: 'feed',
-  templateUrl: './feed.html'
+  templateUrl: './feed.html',
+  styleUrls: ['./feed.scss']
 })
 export class Feed {
 

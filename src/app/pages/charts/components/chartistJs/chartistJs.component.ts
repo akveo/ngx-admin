@@ -1,11 +1,11 @@
 import {Component} from '@angular/core';
 
 import {ChartistJsService} from './chartistJs.service';
-import 'style-loader!./chartistJs.scss';
 
 @Component({
   selector: 'chartist-js',
   templateUrl: './chartistJs.html',
+  styleUrls: ['./chartistJs.scss']
 })
 
 export class ChartistJs {

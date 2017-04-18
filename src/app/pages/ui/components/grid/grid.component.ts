@@ -1,10 +1,9 @@
 import {Component} from '@angular/core';
 
-import 'style-loader!./grid.scss';
-
 @Component({
   selector: 'grid',
   templateUrl: './grid.html',
+  styleUrls: ['./grid.scss']
 })
 export class Grid {
 
