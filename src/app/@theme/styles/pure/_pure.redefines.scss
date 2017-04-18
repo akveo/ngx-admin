@@ -21,9 +21,14 @@ $nga-user-picture-background: $nga-color-default;
 
 $nga-sidebar-background: $nga-background;
 $nga-sidebar-width: 16.25rem;
+$nga-sidebar-width-compact: 3.45rem;
 
 :host /deep/ {
   color: $nga-color-default;
+
+  input {
+    color: $nga-color-default;
+  }
 
   nga-layout {
     nga-layout-header > nav {

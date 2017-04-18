@@ -1,0 +1,27 @@
+:host {
+  display: flex;
+  align-items: center;
+
+  i.control-icon {
+    &:before {
+      font-size: 2.3rem;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  input {
+    border: none;
+    outline: none;
+    margin-left: 1rem;
+    width: 15rem;
+    transition: width 0.2s ease;
+
+    &.hidden {
+      width: 0;
+      margin: 0;
+    }
+  }
+}

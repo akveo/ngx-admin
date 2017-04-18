@@ -1,0 +1,24 @@
+@mixin base-header-theme() {
+  /deep/ base-header {
+    i.control-icon {
+      &:hover {
+        color: $nga-color-secondary;
+      }
+    }
+
+    .logo {
+      span {
+        color: $nga-color-secondary;
+      }
+
+      &:hover span {
+        color: $nga-color-default;
+      }
+    }
+
+    .left > *,
+    .right > * {
+      border-color: rgba($nga-color-default, 0.2);
+    }
+  }
+}

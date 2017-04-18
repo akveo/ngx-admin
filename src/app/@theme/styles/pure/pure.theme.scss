@@ -1,5 +1,6 @@
 @import '~@nga/theme/styles/themes/nga.theme.default';
-
+@import 'pure.components';
 @import 'pure.redefines';
 
 @include nga-theme();
+@include custom-components-theme();

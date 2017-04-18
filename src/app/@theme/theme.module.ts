@@ -12,7 +12,8 @@ import {
   NgaUserModule
 } from '@nga/theme';
 
-import { OneCollLayoutComponent } from './layouts';
+import { SearchInputComponent } from './search-input/search-input.component';
+import { OneCollLayoutComponent, BaseHeaderComponent } from './layouts';
 
 const BASE_MODULES = [
   CommonModule,
@@ -29,8 +30,9 @@ const NGA_MODULES = [
   NgaUserModule
 ];
 
-const LAYOUT_COMPONENTS = [
-  OneCollLayoutComponent
+const LAYOUTS = [
+  OneCollLayoutComponent,
+  BaseHeaderComponent
 ];
 
 @NgModule({
@@ -42,11 +44,12 @@ const LAYOUT_COMPONENTS = [
   exports: [
     ...BASE_MODULES,
     ...NGA_MODULES,
-    ...LAYOUT_COMPONENTS,
-    NgaSidebarModule
+    ...LAYOUTS,
+    SearchInputComponent
   ],
   declarations: [
-    ...LAYOUT_COMPONENTS
+    ...LAYOUTS,
+    SearchInputComponent
   ]
 })
 export class ThemeModule {
