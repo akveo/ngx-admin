@@ -11,8 +11,12 @@
         color: $nga-color-secondary;
       }
 
-      &:hover span {
+      &:hover {
         color: $nga-color-default;
+
+        span {
+          color: $nga-color-default;
+        }
       }
     }
 
