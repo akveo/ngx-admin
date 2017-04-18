@@ -4,6 +4,15 @@
   nga-layout-header > nav {
     justify-content: space-between;
 
+    i.control-icon {
+      font-size: 2.3rem;
+
+      &:hover {
+        cursor: pointer;
+        color: $nga-color-secondary;
+      }
+    }
+
     div {
       display: flex;
       align-items: center;
@@ -23,13 +32,8 @@
         }
       }
 
-      i.menu-collapse {
+      .control-icon.ion-navicon {
         font-size: 2.8rem;
-
-        &:hover {
-          cursor: pointer;
-          color: $nga-color-secondary;
-        }
       }
 
       .logo {
@@ -50,14 +54,14 @@
     .right {
       > * {
         padding: 0 1.25rem;
-        border-left: 1px solid rgba($nga-color-primary, 0.2);
+        border-left: 1px solid rgba($nga-color-default, 0.2);
 
         &:first-child {
           border: none;
         }
 
         &:last-child {
-          padding-left: 0;
+          padding-right: 0;
         }
       }
     }

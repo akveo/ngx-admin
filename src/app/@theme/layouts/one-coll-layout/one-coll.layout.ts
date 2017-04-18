@@ -18,11 +18,15 @@ import { NgaSidebarService } from '@nga/theme/components/sidebar/sidebar.service
     <nga-layout>
       <nga-layout-header fixed>
         <div class="left">
-          <i class="menu-collapse ion ion-navicon" (click)="toggleSidebar()"></i>
+          <i class="control-icon ion ion-navicon" (click)="toggleSidebar()"></i>
           <a href="/#/pages/dashboard" class="logo">NgX <span>Admin</span></a>
         </div>
         <div class="right">
-          
+          <i class="control-icon ion ion-ios-search"></i>
+          <i class="control-icon ion ion-ios-email-outline"></i>
+          <i class="control-icon ion ion-ios-bell-outline"></i>
+          <nga-user></nga-user>
+          <i class="control-icon ion ion-ios-gear-outline"></i>
         </div>
       </nga-layout-header>
 
@@ -31,11 +35,11 @@ import { NgaSidebarService } from '@nga/theme/components/sidebar/sidebar.service
           <ng-content select="nga-menu"></ng-content>
         </nga-sidebar-content>
       </nga-sidebar>
-      
+
       <nga-layout-column>
         <ng-content select="router-outlet"></ng-content>
       </nga-layout-column>
-      
+
       <nga-layout-footer fixed>
       </nga-layout-footer>
     </nga-layout>
