@@ -3,11 +3,10 @@ import { Component } from '@angular/core';
 import { SmartTablesService } from './smartTables.service';
 import { LocalDataSource } from 'ng2-smart-table';
 
-import 'style-loader!./smartTables.scss';
-
 @Component({
   selector: 'smart-tables',
   templateUrl: './smartTables.html',
+  styleUrls: ['./smartTables.scss']
 })
 export class SmartTables {
 

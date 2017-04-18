@@ -1,9 +1,9 @@
 import {Component} from '@angular/core';
-import 'style-loader!./popularApp.scss';
 
 @Component({
   selector: 'popular-app',
-  templateUrl: './popularApp.html'
+  templateUrl: './popularApp.html',
+  styleUrls: ['./popularApp.scss']
 })
 export class PopularApp {
 

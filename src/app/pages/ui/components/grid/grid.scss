@@ -1,6 +1,6 @@
 @import '../../../../theme/sass/conf/conf';
 
-.show-grid div[class^=col-]{
+:host /deep/.show-grid div[class^=col-]{
   padding: 10px;
   box-sizing: border-box;
   div {
@@ -12,7 +12,7 @@
   }
 }
 
-.grid-h{
+:host /deep/.grid-h{
   margin-top: 40px;
   margin-bottom: 0;
   &:first-child{

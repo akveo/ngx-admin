@@ -3,11 +3,10 @@ import {Component} from '@angular/core';
 import {TrafficChartService} from './trafficChart.service';
 import * as Chart from 'chart.js';
 
-import 'style-loader!./trafficChart.scss';
-
 @Component({
   selector: 'traffic-chart',
-  templateUrl: './trafficChart.html'
+  templateUrl: './trafficChart.html',
+  styleUrls: ['./trafficChart.scss']
 })
 
 // TODO: move chart.js to it's own component
