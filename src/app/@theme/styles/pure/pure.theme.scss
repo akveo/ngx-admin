@@ -1,5 +1,5 @@
 @import '~@nga/theme/styles/themes/nga.theme.default';
-@import 'pure.components';
+@import '../components';
 @import 'pure.redefines';
 
 @include nga-theme();

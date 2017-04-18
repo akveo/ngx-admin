@@ -1,0 +1,14 @@
+:host {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .socials {
+    font-size: 2rem;
+
+    a {
+      padding: .4rem;
+    }
+  }
+}

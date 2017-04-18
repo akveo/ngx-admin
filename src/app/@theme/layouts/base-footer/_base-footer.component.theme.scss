@@ -1,0 +1,9 @@
+@mixin base-footer-theme() {
+  /deep/ base-footer {
+    color: $nga-color-default;
+
+    .socials a:hover {
+      color: $nga-color-secondary !important;
+    }
+  }
+}

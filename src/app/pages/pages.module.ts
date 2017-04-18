@@ -5,6 +5,8 @@ import {
   NgaMenuModule
 } from '@nga/theme';
 
+import { menuItems } from './pages-menu';
+
 import { PagesComponent } from './pages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { PagesRoutingModule } from './pages-routing.module';
@@ -16,7 +18,9 @@ import { ComponentsComponent } from './components/components.component';
 @NgModule({
   imports: [
     NgaSidebarModule.forRoot(),
-    NgaMenuModule.forRoot(),
+    NgaMenuModule.forRoot({
+      items: menuItems
+    }),
     PagesRoutingModule,
     ThemeModule
   ],

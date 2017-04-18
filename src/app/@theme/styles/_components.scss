@@ -1,0 +1,9 @@
+@import '../layouts/base-header/base-header.component.theme';
+@import '../search-input/search-input.component.theme';
+@import '../layouts/base-footer/base-footer.component.theme';
+
+@mixin custom-components-theme() {
+  @include base-header-theme();
+  @include base-footer-theme();
+  @include search-input-theme();
+}

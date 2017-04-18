@@ -19,6 +19,7 @@ import { Component } from '@angular/core';
       </nga-layout-column>
 
       <nga-layout-footer fixed>
+        <base-footer></base-footer>
       </nga-layout-footer>
     </nga-layout>
   `,

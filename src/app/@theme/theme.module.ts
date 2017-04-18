@@ -14,6 +14,7 @@ import {
 
 import { SearchInputComponent } from './search-input/search-input.component';
 import { OneCollLayoutComponent, BaseHeaderComponent } from './layouts';
+import { BaseFooterComponent } from './layouts/base-footer/base-footer.component';
 
 const BASE_MODULES = [
   CommonModule,
@@ -32,7 +33,8 @@ const NGA_MODULES = [
 
 const LAYOUTS = [
   OneCollLayoutComponent,
-  BaseHeaderComponent
+  BaseHeaderComponent,
+  BaseFooterComponent
 ];
 
 @NgModule({
@@ -49,7 +51,8 @@ const LAYOUTS = [
   ],
   declarations: [
     ...LAYOUTS,
-    SearchInputComponent
+    SearchInputComponent,
+    BaseFooterComponent
   ]
 })
 export class ThemeModule {
