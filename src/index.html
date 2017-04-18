@@ -5,18 +5,18 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title><%= htmlWebpackPlugin.options.title %></title>
+  <!--<title><%= htmlWebpackPlugin.options.title %></title>-->
+  <title>ng2-admin</title>
 
-  <meta name="description" content="<%= htmlWebpackPlugin.options.metadata.description %>">
+  <!--<meta name="description" content="<%= htmlWebpackPlugin.options.metadata.description %>">-->
 
-  <% if (webpackConfig.htmlElements.headTags) { %>
-  <!-- Configured Head Tags  -->
-  <%= webpackConfig.htmlElements.headTags %>
-  <% } %>
+  <!--<% if (webpackConfig.htmlElements.headTags) { %>-->
+  <!--&lt;!&ndash; Configured Head Tags  &ndash;&gt;-->
+  <!--<%= webpackConfig.htmlElements.headTags %>-->
+  <!--<% } %>-->
 
   <!-- base url -->
-  <base href="<%= htmlWebpackPlugin.options.metadata.baseUrl %>">
-
+  <!--<base href="<%= htmlWebpackPlugin.options.metadata.baseUrl %>">-->
 
 </head>
 
@@ -28,10 +28,10 @@
   <div></div>
 </div>
 
-<% if (htmlWebpackPlugin.options.metadata.isDevServer && htmlWebpackPlugin.options.metadata.HMR !== true) { %>
-<!-- Webpack Dev Server reload -->
-<script src="/webpack-dev-server.js"></script>
-<% } %>
+<!--<% if (htmlWebpackPlugin.options.metadata.isDevServer && htmlWebpackPlugin.options.metadata.HMR !== true) { %>-->
+<!--&lt;!&ndash; Webpack Dev Server reload &ndash;&gt;-->
+<!--<script src="/webpack-dev-server.js"></script>-->
+<!--<% } %>-->
 
 </body>
 </html>

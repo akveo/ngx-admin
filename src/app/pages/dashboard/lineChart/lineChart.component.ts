@@ -2,11 +2,10 @@ import {Component} from '@angular/core';
 
 import {LineChartService} from './lineChart.service';
 
-import 'style-loader!./lineChart.scss';
-
 @Component({
   selector: 'line-chart',
-  templateUrl: './lineChart.html'
+  templateUrl: './lineChart.html',
+  styleUrls: ['./lineChart.scss']
 })
 export class LineChart {
 

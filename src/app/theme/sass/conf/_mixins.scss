@@ -46,7 +46,7 @@
 }
 
 @mixin bg-image($relativeUrl) {
-  background-image: url($images-root + $relativeUrl);
+  background-image: url($assets-root + $images-root + $relativeUrl);
 }
 
 @mixin bg-translucent-dark($opacity) {

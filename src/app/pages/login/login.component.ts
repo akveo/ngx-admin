@@ -1,11 +1,10 @@
 import {Component} from '@angular/core';
 import {FormGroup, AbstractControl, FormBuilder, Validators} from '@angular/forms';
 
-import 'style-loader!./login.scss';
-
 @Component({
   selector: 'login',
   templateUrl: './login.html',
+  styleUrls: ['./login.scss']
 })
 export class Login {
 
