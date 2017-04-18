@@ -9,6 +9,7 @@
 * */
 import { Component } from '@angular/core';
 
+import { NgaSidebarService } from '@nga/theme/components/sidebar/sidebar.service';
 
 @Component({
   selector: 'one-coll-layout',
@@ -16,10 +17,16 @@ import { Component } from '@angular/core';
   template: `
     <nga-layout>
       <nga-layout-header fixed>
-        <a href="/#/pages/dashboard" class="logo">NgX <span>Admin</span></a>
+        <div class="left">
+          <i class="menu-collapse ion ion-navicon" (click)="toggleSidebar()"></i>
+          <a href="/#/pages/dashboard" class="logo">NgX <span>Admin</span></a>
+        </div>
+        <div class="right">
+          
+        </div>
       </nga-layout-header>
 
-      <nga-sidebar left>
+      <nga-sidebar>
         <nga-sidebar-content>
           <ng-content select="nga-menu"></ng-content>
         </nga-sidebar-content>
@@ -29,10 +36,16 @@ import { Component } from '@angular/core';
         <ng-content select="router-outlet"></ng-content>
       </nga-layout-column>
       
-      <nga-layout-footer>
+      <nga-layout-footer fixed>
       </nga-layout-footer>
     </nga-layout>
   `,
 })
 export class OneCollLayoutComponent {
+  constructor(private sidebarService: NgaSidebarService) {
+  }
+
+  toggleSidebar() {
+    this.sidebarService.toggle(true);
+  }
 }

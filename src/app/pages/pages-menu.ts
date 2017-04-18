@@ -5,43 +5,23 @@ import { List } from 'immutable';
 export const menuItems: List<NgaMenuItem> = List([
   {
     title: 'Dashboard',
-    icon: 'ion ion-android-home',
+    icon: 'ion ion-ios-home-outline',
     link: '/pages/dashboard',
     selected: true
   },
   {
-    title: 'Dashboard',
-    icon: 'ion ion-android-home',
-    link: '/pages/dashboard',
+    title: 'UI Features',
+    icon: 'ion ion-ios-keypad-outline',
+    link: '/pages/ui-features'
   },
   {
-    title: 'Dashboard',
-    icon: 'ion ion-android-home',
-    link: '/pages/dashboard',
+    title: 'Components',
+    icon: 'ion ion-ios-gear-outline',
+    link: '/pages/components'
   },
   {
-    title: 'Dashboard',
-    icon: 'ion ion-android-home',
-    link: '/pages/dashboard',
-  },
-  {
-    title: 'Dashboard',
-    icon: 'ion ion-android-home',
-    link: '/pages/dashboard',
-  },
-  {
-    title: 'Dashboard',
-    icon: 'ion ion-android-home',
-    link: '/pages/dashboard',
-  },
-  {
-    title: 'Dashboard',
-    icon: 'ion ion-android-home',
-    link: '/pages/dashboard',
-  },
-  {
-    title: 'Dashboard',
-    icon: 'ion ion-android-home',
-    link: '/pages/dashboard',
+    title: 'Maps',
+    icon: 'ion ion-ios-location-outline',
+    link: '/pages/maps'
   }
 ]);

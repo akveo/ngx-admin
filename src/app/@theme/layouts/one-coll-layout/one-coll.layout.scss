@@ -4,18 +4,61 @@
   nga-layout-header > nav {
     justify-content: space-between;
 
-    .logo {
-      font-size: 1.7rem;
-      color: $nga-color-primary;
-      text-decoration: none;
-      transition: all 0.2s ease;
+    div {
+      display: flex;
+      align-items: center;
+    }
 
-      span {
-        color: $nga-color-secondary;
+    .left {
+      > * {
+        padding: 0 1.25rem;
+        border-right: 1px solid rgba($nga-color-default, 0.2);
+
+        &:first-child {
+          padding-left: 0;
+        }
+
+        &:last-child {
+          border: none;
+        }
       }
 
-      &:hover span {
-        color: $nga-color-primary;
+      i.menu-collapse {
+        font-size: 2.8rem;
+
+        &:hover {
+          cursor: pointer;
+          color: $nga-color-secondary;
+        }
+      }
+
+      .logo {
+        font-size: 1.7rem;
+        text-decoration: none;
+        transition: all 0.2s ease;
+
+        span {
+          color: $nga-color-secondary;
+        }
+
+        &:hover span {
+          color: $nga-color-default;
+        }
+      }
+    }
+
+    .right {
+      > * {
+        padding: 0 1.25rem;
+        border-left: 1px solid rgba($nga-color-primary, 0.2);
+
+        &:first-child {
+          border: none;
+        }
+
+        &:last-child {
+          padding-left: 0;
+        }
       }
     }
   }
