@@ -4,6 +4,7 @@
  * Licensed under the MIT License. See License.txt in the project root for license information.
  */
 import { Component, OnInit } from '@angular/core';
+import { List } from 'immutable';
 
 import { NgaMenuService } from '../../framework/theme/components/menu/menu.service';
 import { NgaMenuItem } from '../../framework/theme/components/menu/menu.options';
@@ -137,7 +138,7 @@ export class NgaMenuTestComponent implements OnInit {
   }
 
   addMenuItem() {
-    this.menuService.addMenuItems('firstMenu', { title: 'New Menu Item' });
+    this.menuService.addMenuItems(List<NgaMenuItem>([{ title: 'New Menu Item' }]), 'firstMenu');
   }
 
 }

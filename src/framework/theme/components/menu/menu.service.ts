@@ -49,8 +49,8 @@ export class NgaMenuService {
     });
   }
 
-  addMenuItems(tag?: string, ...newItems: NgaMenuItem[]) {
-    this.items = this.items.push(...newItems);
+  addMenuItems(newItems: List<NgaMenuItem>, tag?: string) {
+    this.items = this.items.push(...newItems.toJS());
 
     this.prepareItems(tag);
   }
