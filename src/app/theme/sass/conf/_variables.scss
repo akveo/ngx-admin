@@ -21,9 +21,9 @@ $large-card-height: 974px;
 $default-animation-duration: 0.2s;
 $default-animation-style: ease-out;
 
-$assets-root: 'assets/';
-$images-root: $assets-root + 'img/';
-$fonts-root: $assets-root + 'fonts/';
+$assets-root: '/assets';
+$images-root: '/img/';
+$fonts-root: '/fonts/';
 $font-thin: 100;
 $font-light: 300;
 $font-normal: 400;

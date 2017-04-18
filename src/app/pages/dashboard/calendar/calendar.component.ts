@@ -1,11 +1,12 @@
 import {Component} from '@angular/core';
+import * as jQuery from 'jquery';
 
 import {CalendarService} from './calendar.service';
-import 'style-loader!./calendar.scss';
 
 @Component({
   selector: 'calendar',
-  templateUrl: './calendar.html'
+  templateUrl: './calendar.html',
+  styleUrls: ['./calendar.scss']
 })
 export class Calendar {
 

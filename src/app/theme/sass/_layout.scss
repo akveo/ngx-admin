@@ -160,11 +160,12 @@ a {
 }
 
 .icon-up {
-  @include bg-nr('arrow-green-up.svg');
+  //@include bg-nr('arrow-green-up.svg');
+  background: url('/assets/img/arrow-green-up.svg') no-repeat 0 0;
 }
 
 .icon-down {
-  @include bg-nr('arrow-red-down.svg');
+  background: url('/assets/img/arrow-red-down.svg') no-repeat 0 0;
 }
 
 .disable-text-selection {

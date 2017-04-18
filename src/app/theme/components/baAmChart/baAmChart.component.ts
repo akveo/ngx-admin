@@ -12,11 +12,10 @@ import 'ammap3/ammap/maps/js/worldLow';
 
 import {BaAmChartThemeService} from './baAmChartTheme.service';
 
-import 'style-loader!./baAmChart.scss';
-
 @Component({
   selector: 'ba-am-chart',
   templateUrl: './baAmChart.html',
+  styleUrls: ['./baAmChart.scss'],
   providers: [BaAmChartThemeService],
 })
 export class BaAmChart {

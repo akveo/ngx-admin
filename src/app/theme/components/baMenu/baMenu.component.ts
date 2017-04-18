@@ -5,11 +5,10 @@ import { Subscription } from 'rxjs/Rx';
 import { BaMenuService } from '../../services';
 import { GlobalState } from '../../../global.state';
 
-import 'style-loader!./baMenu.scss';
-
 @Component({
   selector: 'ba-menu',
-  templateUrl: './baMenu.html'
+  templateUrl: './baMenu.html',
+  styleUrls: ['./baMenu.scss']
 })
 export class BaMenu {
 
