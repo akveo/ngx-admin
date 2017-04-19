@@ -13,10 +13,10 @@ import { routing }       from './register.routing';
     ReactiveFormsModule,
     FormsModule,
     NgaModule,
-    routing
+    routing,
   ],
   declarations: [
-    Register
-  ]
+    Register,
+  ],
 })
 export class RegisterModule {}

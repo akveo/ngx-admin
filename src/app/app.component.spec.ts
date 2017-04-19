@@ -3,7 +3,7 @@ import {
   inject,
   async,
   TestBed,
-  ComponentFixture
+  ComponentFixture,
 } from '@angular/core/testing';
 
 // Load the implementations that should be tested
@@ -20,9 +20,9 @@ describe(`App`, () => {
   // async beforeEach
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ App ],
+      declarations: [App],
       schemas: [NO_ERRORS_SCHEMA],
-      providers: [GlobalState, BaImageLoaderService, BaThemeSpinner, BaThemeConfigProvider, BaThemeConfig]
+      providers: [GlobalState, BaImageLoaderService, BaThemeSpinner, BaThemeConfigProvider, BaThemeConfig],
     })
     .compileComponents(); // compile template and css
   }));

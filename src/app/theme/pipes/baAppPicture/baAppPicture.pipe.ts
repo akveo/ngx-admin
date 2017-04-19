@@ -1,10 +1,10 @@
-import {Pipe, PipeTransform} from '@angular/core';
-import {layoutPaths} from '../../../theme';
+import { Pipe, PipeTransform } from '@angular/core';
+import { layoutPaths } from '../../../theme';
 
-@Pipe({name: 'baAppPicture'})
+@Pipe({ name: 'baAppPicture' })
 export class BaAppPicturePipe implements PipeTransform {
 
-  transform(input:string):string {
+  transform(input: string): string {
     return layoutPaths.images.root + input;
   }
 }

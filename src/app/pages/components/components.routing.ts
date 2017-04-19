@@ -9,9 +9,9 @@ const routes: Routes = [
     path: '',
     component: Components,
     children: [
-      { path: 'treeview', component: TreeView }
-    ]
-  }
+      { path: 'treeview', component: TreeView },
+    ],
+  },
 ];
 
 export const routing = RouterModule.forChild(routes);

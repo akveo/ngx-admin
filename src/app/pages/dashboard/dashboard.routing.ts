@@ -9,9 +9,9 @@ export const routes: Routes = [
     path: '',
     component: Dashboard,
     children: [
-      //{ path: 'treeview', component: TreeViewComponent }
-    ]
-  }
+      // { path: 'treeview', component: TreeViewComponent }
+    ],
+  },
 ];
 
 export const routing: ModuleWithProviders = RouterModule.forChild(routes);

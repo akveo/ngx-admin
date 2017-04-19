@@ -28,11 +28,11 @@ import { PAGES_MENU } from './pages.menu';
       </div>
     </footer>
     <ba-back-top position="200"></ba-back-top>
-    `
+    `,
 })
 export class Pages {
 
-  constructor(private _menuService: BaMenuService,) {
+  constructor(private _menuService: BaMenuService) {
   }
 
   ngOnInit() {

@@ -1,5 +1,5 @@
-import {Injectable} from '@angular/core';
-import {Router, Routes} from '@angular/router';
+import { Injectable } from '@angular/core';
+import { Router, Routes } from '@angular/router';
 import * as _ from 'lodash';
 
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
@@ -10,7 +10,7 @@ export class BaMenuService {
 
   protected _currentMenuItem = {};
 
-  constructor(private _router:Router) { }
+  constructor(private _router: Router) { }
 
   /**
    * Updates the routes in the menu
@@ -18,21 +18,21 @@ export class BaMenuService {
    * @param {Routes} routes Type compatible with app.menu.ts
    */
   public updateMenuByRoutes(routes: Routes) {
-    let convertedRoutes = this.convertRoutesToMenus(_.cloneDeep(routes));
+    const convertedRoutes = this.convertRoutesToMenus(_.cloneDeep(routes));
     this.menuItems.next(convertedRoutes);
   }
 
-  public convertRoutesToMenus(routes:Routes):any[] {
-    let items = this._convertArrayToItems(routes);
+  public convertRoutesToMenus(routes: Routes): any[] {
+    const items = this._convertArrayToItems(routes);
     return this._skipEmpty(items);
   }
 
-  public getCurrentItem():any {
+  public getCurrentItem(): any {
     return this._currentMenuItem;
   }
 
-  public selectMenuItem(menuItems:any[]):any[] {
-    let items = [];
+  public selectMenuItem(menuItems: any[]): any[] {
+    const items = [];
     menuItems.forEach((item) => {
       this._selectItem(item);
 
@@ -48,8 +48,8 @@ export class BaMenuService {
     return items;
   }
 
-  protected _skipEmpty(items:any[]):any[] {
-    let menu = [];
+  protected _skipEmpty(items: any[]): any[] {
+    const menu = [];
     items.forEach((item) => {
       let menuItem;
       if (item.skip) {
@@ -68,16 +68,16 @@ export class BaMenuService {
     return [].concat.apply([], menu);
   }
 
-  protected _convertArrayToItems(routes:any[], parent?:any):any[] {
-    let items = [];
+  protected _convertArrayToItems(routes: any[], parent?: any): any[] {
+    const items = [];
     routes.forEach((route) => {
       items.push(this._convertObjectToItem(route, parent));
     });
     return items;
   }
 
-  protected _convertObjectToItem(object, parent?:any):any {
-    let item:any = {};
+  protected _convertObjectToItem(object, parent?: any): any {
+    let item: any = {};
     if (object.data && object.data.menu) {
       // this is a menu object
       item = object.data.menu;
@@ -100,7 +100,7 @@ export class BaMenuService {
       item.children = this._convertArrayToItems(object.children, item);
     }
 
-    let prepared = this._prepareItem(item);
+    const prepared = this._prepareItem(item);
 
     // if current item is selected or expanded - then parent is expanded too
     if ((prepared.selected || prepared.expanded) && parent) {
@@ -110,7 +110,7 @@ export class BaMenuService {
     return prepared;
   }
 
-  protected _prepareItem(object:any):any {
+  protected _prepareItem(object: any): any {
     if (!object.skip) {
       object.target = object.target || '';
       object.pathMatch = object.pathMatch  || 'full';
@@ -120,8 +120,9 @@ export class BaMenuService {
     return object;
   }
 
-  protected _selectItem(object:any):any {
-    object.selected = this._router.isActive(this._router.createUrlTree(object.route.paths), object.pathMatch === 'full');
+  protected _selectItem(object: any): any {
+    object.selected = this._router
+      .isActive(this._router.createUrlTree(object.route.paths), object.pathMatch === 'full');
     return object;
   }
 }

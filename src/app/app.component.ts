@@ -17,7 +17,7 @@ import { layoutPaths } from './theme/theme.constants';
       <div class="additional-bg"></div>
       <router-outlet></router-outlet>
     </main>
-  `
+  `,
 })
 export class App {
 

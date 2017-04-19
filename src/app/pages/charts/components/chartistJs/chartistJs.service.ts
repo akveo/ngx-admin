@@ -1,6 +1,6 @@
-import {Injectable} from '@angular/core';
+import { Injectable } from '@angular/core';
 
-import {BaThemeConfigProvider} from '../../../../theme';
+import { BaThemeConfigProvider } from '../../../../theme';
 
 @Injectable()
 export class ChartistJsService {
@@ -11,8 +11,8 @@ export class ChartistJsService {
       fullWidth: true,
       height: '300px',
       chartPadding: {
-        right: 40
-      }
+        right: 40,
+      },
     },
     simpleLineData: {
       labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
@@ -21,20 +21,20 @@ export class ChartistJsService {
         [10, 45, 30, 14, 12],
         [34, 12, 12, 40, 50],
         [10, 43, 25, 22, 16],
-        [3, 6, 30, 33, 43]
-      ]
+        [3, 6, 30, 33, 43],
+      ],
     },
     areaLineData: {
       labels: [1, 2, 3, 4, 5, 6, 7, 8],
       series: [
-        [5, 9, 7, 8, 5, 3, 5, 4]
-      ]
+        [5, 9, 7, 8, 5, 3, 5, 4],
+      ],
     },
     areaLineOptions: {
       fullWidth: true,
       height: '300px',
       low: 0,
-      showArea: true
+      showArea: true,
     },
     biLineData: {
       labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
@@ -42,8 +42,8 @@ export class ChartistJsService {
         [1, 2, 3, 1, -2, 0, 1],
         [-2, -1, -2, -1, -2.5, -1, -2],
         [0, 0, 0, 1, 2, 2.5, 2],
-        [2.5, 2, 1, 0.5, 1, 0.5, -1]
-      ]
+        [2.5, 2, 1, 0.5, 1, 0.5, -1],
+      ],
     },
 
     biLineOptions: {
@@ -55,19 +55,19 @@ export class ChartistJsService {
       showPoint: false,
       fullWidth: true,
       axisX: {
-        showGrid: false
-      }
+        showGrid: false,
+      },
     },
     simpleBarData: {
       labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
       series: [
         [15, 24, 43, 27, 5, 10, 23, 44, 68, 50, 26, 8],
-        [13, 22, 49, 22, 4, 6, 24, 46, 57, 48, 22, 4]
-      ]
+        [13, 22, 49, 22, 4, 6, 24, 46, 57, 48, 22, 4],
+      ],
     },
     simpleBarOptions: {
       fullWidth: true,
-      height: '300px'
+      height: '300px',
     },
     multiBarData: {
       labels: ['Quarter 1', 'Quarter 2', 'Quarter 3', 'Quarter 4'],
@@ -76,8 +76,8 @@ export class ChartistJsService {
         [3, 2, 9, 5],
         [1, 5, 8, 4],
         [2, 3, 4, 6],
-        [4, 1, 2, 1]
-      ]
+        [4, 1, 2, 1],
+      ],
     },
     multiBarOptions: {
       fullWidth: true,
@@ -88,37 +88,37 @@ export class ChartistJsService {
           return value.split(/\s+/).map(function (word) {
             return word[0];
           }).join('');
-        }
+        },
       },
       axisY: {
-        offset: 20
-      }
+        offset: 20,
+      },
     },
     multiBarResponsive: [
       ['screen and (min-width: 400px)', {
         reverseData: true,
         horizontalBars: true,
         axisX: {
-          labelInterpolationFnc: (n) => n
+          labelInterpolationFnc: (n) => n,
         },
         axisY: {
-          offset: 60
-        }
+          offset: 60,
+        },
       }],
       ['screen and (min-width: 700px)', {
         stackBars: false,
         reverseData: false,
         horizontalBars: false,
-        seriesBarDistance: 15
-      }]
+        seriesBarDistance: 15,
+      }],
     ],
     stackedBarData: {
       labels: ['Quarter 1', 'Quarter 2', 'Quarter 3', 'Quarter 4'],
       series: [
         [800000, 1200000, 1400000, 1300000],
         [200000, 400000, 500000, 300000],
-        [100000, 200000, 400000, 600000]
-      ]
+        [100000, 200000, 400000, 600000],
+      ],
     },
     stackedBarOptions: {
       fullWidth: true,
@@ -127,11 +127,11 @@ export class ChartistJsService {
       axisY: {
         labelInterpolationFnc: function (value) {
           return (value / 1000) + 'k';
-        }
-      }
+        },
+      },
     },
     simplePieData: {
-      series: [5, 3, 4]
+      series: [5, 3, 4],
     },
     simplePieOptions: {
       fullWidth: true,
@@ -139,11 +139,11 @@ export class ChartistJsService {
       weight: '300px',
       labelInterpolationFnc: function (value) {
         return Math.round(value / 12 * 100) + '%';
-      }
+      },
     },
     labelsPieData: {
       labels: ['Bananas', 'Apples', 'Grapes'],
-      series: [20, 15, 40]
+      series: [20, 15, 40],
     },
     labelsPieOptions: {
       fullWidth: true,
@@ -152,11 +152,11 @@ export class ChartistJsService {
       labelDirection: 'explode',
       labelInterpolationFnc: function (value) {
         return value[0];
-      }
+      },
     },
     simpleDonutData: {
       labels: ['Bananas', 'Apples', 'Grapes'],
-      series: [20, 15, 40]
+      series: [20, 15, 40],
     },
     simpleDonutOptions: {
       fullWidth: true,
@@ -166,11 +166,11 @@ export class ChartistJsService {
       labelDirection: 'explode',
       labelInterpolationFnc: function (value) {
         return value[0];
-      }
-    }
+      },
+    },
   };
 
-  constructor(private _baConfig:BaThemeConfigProvider) {
+  constructor(private _baConfig: BaThemeConfigProvider) {
   }
 
   public getAll() {
@@ -185,7 +185,7 @@ export class ChartistJsService {
         labelDirection: 'explode',
         labelInterpolationFnc: function (value) {
           return value;
-        }
+        },
       }],
       ['screen and (max-width: 1200px)', {
         chartPadding: padding,
@@ -193,15 +193,15 @@ export class ChartistJsService {
         labelDirection: 'explode',
         labelInterpolationFnc: function (value) {
           return value;
-        }
+        },
       }],
       ['screen and (max-width: 600px)', {
         chartPadding: 0,
         labelOffset: 0,
         labelInterpolationFnc: function (value) {
           return value[0];
-        }
-      }]
+        },
+      }],
     ];
   }
 }

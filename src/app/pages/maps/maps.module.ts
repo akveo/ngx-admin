@@ -18,18 +18,18 @@ import { LineMapsService } from './components/lineMaps/lineMaps.service';
     CommonModule,
     FormsModule,
     NgaModule,
-    routing
+    routing,
   ],
   declarations: [
     Maps,
     BubbleMaps,
     GoogleMaps,
     LeafletMaps,
-    LineMaps
+    LineMaps,
   ],
   providers: [
     BubbleMapsService,
-    LineMapsService
-  ]
+    LineMapsService,
+  ],
 })
 export class MapsModule {}

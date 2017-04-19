@@ -11,9 +11,9 @@ const routes: Routes = [
     component: Tables,
     children: [
       { path: 'basictables', component: BasicTables },
-      { path: 'smarttables', component: SmartTables }
-    ]
-  }
+      { path: 'smarttables', component: SmartTables },
+    ],
+  },
 ];
 
 export const routing = RouterModule.forChild(routes);

@@ -6,11 +6,11 @@ import 'ckeditor';
 @Component({
   selector: 'ckeditor-component',
   templateUrl: './ckeditor.html',
-  styleUrls: ['./ckeditor.scss']
+  styleUrls: ['./ckeditor.scss'],
 })
 
 export class Ckeditor {
-  public ckeditorContent:string = '<p>Hello CKEditor</p>';
+  public ckeditorContent: string = '<p>Hello CKEditor</p>';
   public config = {
     uiColor: '#F0F3F4',
     height: '600',

@@ -15,26 +15,26 @@ export class GlobalState {
 
   notifyDataChanged(event, value) {
 
-    let current = this._data[event];
+    const current = this._data[event];
     if (current !== value) {
       this._data[event] = value;
 
       this._data.next({
         event: event,
-        data: this._data[event]
+        data: this._data[event],
       });
     }
   }
 
   subscribe(event: string, callback: Function) {
-    let subscribers = this._subscriptions.get(event) || [];
+    const subscribers = this._subscriptions.get(event) || [];
     subscribers.push(callback);
 
     this._subscriptions.set(event, subscribers);
   }
 
   _onEvent(data: any) {
-    let subscribers = this._subscriptions.get(data['event']) || [];
+    const subscribers = this._subscriptions.get(data['event']) || [];
 
     subscribers.forEach((callback) => {
       callback.call(null, data['data']);

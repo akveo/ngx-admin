@@ -15,12 +15,12 @@ import { Ckeditor } from './components/ckeditor/ckeditor.component';
     FormsModule,
     NgaModule,
     CKEditorModule,
-    routing
+    routing,
   ],
   declarations: [
     Editors,
-    Ckeditor
-  ]
+    Ckeditor,
+  ],
 })
 export class EditorsModule {
 }

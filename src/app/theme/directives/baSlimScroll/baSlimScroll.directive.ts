@@ -1,15 +1,15 @@
-import {Directive, Input, Output, ElementRef, EventEmitter} from '@angular/core';
+import { Directive, Input, Output, ElementRef, EventEmitter } from '@angular/core';
 
 import 'jquery-slimscroll';
 
 @Directive({
-  selector: '[baSlimScroll]'
+  selector: '[baSlimScroll]',
 })
 export class BaSlimScroll {
 
-  @Input() public baSlimScrollOptions:Object;
+  @Input() public baSlimScrollOptions: Object;
 
-  constructor(private _elementRef:ElementRef) {
+  constructor(private _elementRef: ElementRef) {
   }
 
   ngOnChanges(changes) {

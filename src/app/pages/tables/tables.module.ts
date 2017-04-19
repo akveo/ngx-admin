@@ -39,7 +39,7 @@ import { SmartTablesService } from './components/smartTables/smartTables.service
   providers: [
     BasicTablesService,
     SmartTablesService,
-  ]
+  ],
 })
 export class TablesModule {
 }

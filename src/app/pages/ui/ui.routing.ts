@@ -17,9 +17,9 @@ const routes: Routes = [
       { path: 'grid', component: Grid },
       { path: 'icons', component: Icons },
       { path: 'typography', component: Typography },
-      { path: 'modals', component: Modals }
-    ]
-  }
+      { path: 'modals', component: Modals },
+    ],
+  },
 ];
 
 export const routing = RouterModule.forChild(routes);
