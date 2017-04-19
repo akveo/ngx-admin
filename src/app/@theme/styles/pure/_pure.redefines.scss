@@ -32,6 +32,7 @@ $nga-sidebar-width-compact: 3.45rem;
 
   a:hover {
     color: $nga-color-secondary;
+    text-decoration: none;
   }
 
   nga-layout {
@@ -63,6 +64,11 @@ $nga-sidebar-width-compact: 3.45rem;
         i {
           font-size: 2rem;
           margin-right: 1.25rem;
+
+          &:first-child {
+            display: flex;
+            justify-content: center;
+          }
         }
       }
     }

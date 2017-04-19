@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
   selector: 'base-footer',
   styleUrls: ['./base-footer.component.scss'],
   template: `
-    <span>Created with ♥ by <b>Akveo</b> 2017</span>
+    <span>Created with ♥ by <b><a href="https://akveo.com" target="_blank">Akveo</a></b> 2017</span>
     <div class="socials">
       <a href="https://github.com/akveo" target="_blank" class="ion ion-social-github"></a>
       <a href="https://www.facebook.com/akveo" target="_blank" class="ion ion-social-facebook"></a>
