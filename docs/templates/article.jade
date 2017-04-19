@@ -1,0 +1,21 @@
+
+extends layout
+
+block title
+  | ng2-admin documentation - #{page.title]
+
+block content
+  section.content.wrap.documentationContent
+    div.nav-docs
+      each group in groupedArticles
+        div.nav-docs.section
+          h5=group.groupName
+          ul
+            each article in group.items
+              li
+                a(href=article.url)(class= locals.page === article ? 'active': '')= article.title
+    div.inner-content
+      h1=locals.page.title
+      div.subHeader
+      != typogr(page.html).typogrify()
+
