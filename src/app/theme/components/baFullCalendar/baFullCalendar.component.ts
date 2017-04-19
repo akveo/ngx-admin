@@ -8,11 +8,11 @@ import * as jQuery from 'jquery';
 })
 export class BaFullCalendar {
 
-  @Input() baFullCalendarConfiguration:Object;
-  @Input() baFullCalendarClass:string;
+  @Input() baFullCalendarConfiguration: Object;
+  @Input() baFullCalendarClass: string;
   @Output() onCalendarReady = new EventEmitter<any>();
 
-  @ViewChild('baFullCalendar') public _selector:ElementRef;
+  @ViewChild('baFullCalendar') public _selector: ElementRef;
 
   ngAfterViewInit() {
     let calendar = jQuery(this._selector.nativeElement).fullCalendar(this.baFullCalendarConfiguration);

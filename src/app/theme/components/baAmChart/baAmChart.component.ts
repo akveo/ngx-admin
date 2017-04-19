@@ -20,13 +20,13 @@ import {BaAmChartThemeService} from './baAmChartTheme.service';
 })
 export class BaAmChart {
 
-  @Input() baAmChartConfiguration:Object;
-  @Input() baAmChartClass:string;
+  @Input() baAmChartConfiguration: Object;
+  @Input() baAmChartClass: string;
   @Output() onChartReady = new EventEmitter<any>();
 
-  @ViewChild('baAmChart') public _selector:ElementRef;
+  @ViewChild('baAmChart') public _selector: ElementRef;
 
-  constructor (private _baAmChartThemeService:BaAmChartThemeService) {
+  constructor (private _baAmChartThemeService: BaAmChartThemeService) {
     this._loadChartsLib();
   }
 
@@ -39,7 +39,7 @@ export class BaAmChart {
     this.onChartReady.emit(chart);
   }
 
-  private _loadChartsLib():void {
+  private _loadChartsLib(): void {
     BaThemePreloader.registerLoader(new Promise((resolve, reject) => {
       let amChartsReadyMsg = 'AmCharts ready';
 

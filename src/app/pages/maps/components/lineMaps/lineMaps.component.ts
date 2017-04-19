@@ -9,9 +9,9 @@ import {LineMapsService} from './lineMaps.service';
 })
 export class LineMaps {
 
-  chartData:Object;
+  chartData: Object;
 
-  constructor(private _lineMapsService:LineMapsService) {
+  constructor(private _lineMapsService: LineMapsService) {
     this.chartData = this._lineMapsService.getData();
   }
 }

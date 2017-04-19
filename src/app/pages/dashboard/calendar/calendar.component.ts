@@ -10,19 +10,19 @@ import {CalendarService} from './calendar.service';
 })
 export class Calendar {
 
-  public calendarConfiguration:any;
-  private _calendar:Object;
+  public calendarConfiguration: any;
+  private _calendar: Object;
 
-  constructor(private _calendarService:CalendarService) {
+  constructor(private _calendarService: CalendarService) {
     this.calendarConfiguration = this._calendarService.getData();
     this.calendarConfiguration.select = (start, end) => this._onSelect(start, end);
   }
 
-  public onCalendarReady(calendar):void {
+  public onCalendarReady(calendar): void {
     this._calendar = calendar;
   }
 
-  private _onSelect(start, end):void {
+  private _onSelect(start, end): void {
 
     if (this._calendar != null) {
       let title = prompt('Event Title:');

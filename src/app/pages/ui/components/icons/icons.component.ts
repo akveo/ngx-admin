@@ -9,7 +9,7 @@ import {IconsService} from './icons.service';
 })
 export class Icons {
 
-  icons:any;
+  icons: any;
 
   constructor(private _iconsService: IconsService) {
   }

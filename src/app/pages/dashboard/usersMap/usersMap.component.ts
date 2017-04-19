@@ -9,9 +9,9 @@ import {UsersMapService} from './usersMap.service';
 })
 export class UsersMap {
 
-  mapData:Object;
+  mapData: Object;
 
-  constructor(private _usersMapService:UsersMapService) {
+  constructor(private _usersMapService: UsersMapService) {
     this.mapData = this._usersMapService.getData();
   }
 }
