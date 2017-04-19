@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "moment": "2.3.x",
+    "typogr": "0.5.x",
+    "underscore": "1.4.x",
+    "wintersmith": "2.3.1",
+    "wintersmith-sassy": "^1.0.0"
+  },
+  "private": true
+}
