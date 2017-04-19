@@ -29,7 +29,7 @@ import { UsersMapService } from './usersMap/usersMap.service';
     FormsModule,
     AppTranslationModule,
     NgaModule,
-    routing
+    routing,
   ],
   declarations: [
     PopularApp,
@@ -40,7 +40,7 @@ import { UsersMapService } from './usersMap/usersMap.service';
     Feed,
     Todo,
     Calendar,
-    Dashboard
+    Dashboard,
   ],
   providers: [
     CalendarService,
@@ -49,7 +49,7 @@ import { UsersMapService } from './usersMap/usersMap.service';
     PieChartService,
     TodoService,
     TrafficChartService,
-    UsersMapService
-  ]
+    UsersMapService,
+  ],
 })
 export class DashboardModule {}

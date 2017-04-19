@@ -1,11 +1,11 @@
-import {Component} from '@angular/core';
+import { Component } from '@angular/core';
 
-import {LineMapsService} from './lineMaps.service';
+import { LineMapsService } from './lineMaps.service';
 
 @Component({
   selector: 'line-maps',
   templateUrl: './lineMaps.html',
-  styleUrls: ['./lineMaps.scss']
+  styleUrls: ['./lineMaps.scss'],
 })
 export class LineMaps {
 

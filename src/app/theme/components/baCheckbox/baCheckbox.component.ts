@@ -1,11 +1,11 @@
-import {Component, Input, Self} from '@angular/core';
-import {ControlValueAccessor, NgModel} from '@angular/forms';
+import { Component, Input, Self } from '@angular/core';
+import { ControlValueAccessor, NgModel } from '@angular/forms';
 
 @Component({
   selector: 'ba-checkbox[ngModel]',
   styleUrls: ['./baCheckbox.scss'],
   templateUrl: './baCheckbox.html',
-  providers: [NgModel]
+  providers: [NgModel],
 })
 export class BaCheckbox implements ControlValueAccessor {
   @Input() disabled: boolean;

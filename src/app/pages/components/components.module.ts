@@ -14,11 +14,11 @@ import { TreeView } from './components/treeView/treeView.component';
     FormsModule,
     NgaModule,
     TreeModule,
-    routing
+    routing,
   ],
   declarations: [
     Components,
     TreeView,
-  ]
+  ],
 })
 export class ComponentsModule {}

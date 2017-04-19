@@ -10,7 +10,7 @@ export class BaAmChartThemeService {
   }
 
   getTheme() {
-    let layoutColors = this._baConfig.get().colors;
+    const layoutColors = this._baConfig.get().colors;
 
     return {
 
@@ -18,19 +18,19 @@ export class BaAmChartThemeService {
 
       AmChart: {
         color: layoutColors.defaultText,
-        backgroundColor: '#FFFFFF'
+        backgroundColor: '#FFFFFF',
       },
 
       AmCoordinateChart: {
         colors: [layoutColors.primary, layoutColors.danger, layoutColors.warning, layoutColors.success,
           layoutColors.info, layoutColors.primaryDark, layoutColors.warningLight, layoutColors.successDark,
-          layoutColors.successLight, layoutColors.primaryLight, layoutColors.warningDark]
+          layoutColors.successLight, layoutColors.primaryLight, layoutColors.warningDark],
       },
 
       AmStockChart: {
         colors: [layoutColors.primary, layoutColors.danger, layoutColors.warning, layoutColors.success,
           layoutColors.info, layoutColors.primaryDark, layoutColors.warningLight, layoutColors.successDark,
-          layoutColors.successLight, layoutColors.primaryLight, layoutColors.warningDark]
+          layoutColors.successLight, layoutColors.primaryLight, layoutColors.warningDark],
       },
 
       AmSlicedChart: {
@@ -38,20 +38,20 @@ export class BaAmChartThemeService {
           layoutColors.info, layoutColors.primaryDark, layoutColors.warningLight, layoutColors.successDark,
           layoutColors.successLight, layoutColors.primaryLight, layoutColors.warningDark],
         labelTickColor: '#FFFFFF',
-        labelTickAlpha: 0.3
+        labelTickAlpha: 0.3,
       },
 
       AmRectangularChart: {
         zoomOutButtonColor: '#FFFFFF',
         zoomOutButtonRollOverAlpha: 0.15,
-        zoomOutButtonImage: 'lens.png'
+        zoomOutButtonImage: 'lens.png',
       },
 
       AxisBase: {
         axisColor: '#FFFFFF',
         axisAlpha: 0.3,
         gridAlpha: 0.1,
-        gridColor: '#FFFFFF'
+        gridColor: '#FFFFFF',
       },
 
       ChartScrollbar: {
@@ -61,21 +61,21 @@ export class BaAmChartThemeService {
         graphLineAlpha: 0,
         selectedBackgroundColor: '#FFFFFF',
         selectedBackgroundAlpha: 0.4,
-        gridAlpha: 0.15
+        gridAlpha: 0.15,
       },
 
       ChartCursor: {
         cursorColor: layoutColors.primary,
         color: '#FFFFFF',
-        cursorAlpha: 0.5
+        cursorAlpha: 0.5,
       },
 
       AmLegend: {
-        color: '#FFFFFF'
+        color: '#FFFFFF',
       },
 
       AmGraph: {
-        lineAlpha: 0.9
+        lineAlpha: 0.9,
       },
       GaugeArrow: {
         color: '#FFFFFF',
@@ -85,7 +85,7 @@ export class BaAmChartThemeService {
         nailRadius: 15,
         startWidth: 15,
         borderAlpha: 0.8,
-        nailBorderAlpha: 0
+        nailBorderAlpha: 0,
       },
 
       GaugeAxis: {
@@ -96,12 +96,12 @@ export class BaAmChartThemeService {
         axisThickness: 3,
         axisColor: '#FFFFFF',
         axisAlpha: 1,
-        bandAlpha: 0.8
+        bandAlpha: 0.8,
       },
 
       TrendLine: {
         lineColor: layoutColors.danger,
-        lineAlpha: 0.8
+        lineAlpha: 0.8,
       },
 
       // ammap
@@ -119,19 +119,19 @@ export class BaAmChartThemeService {
         selectedOutlineColor: '#FFFFFF',
         selectedColor: '#f15135',
         unlistedAreasOutlineColor: '#FFFFFF',
-        unlistedAreasOutlineAlpha: 0.5
+        unlistedAreasOutlineAlpha: 0.5,
       },
 
       LinesSettings: {
         color: '#FFFFFF',
-        alpha: 0.8
+        alpha: 0.8,
       },
 
       ImagesSettings: {
         alpha: 0.8,
         labelColor: '#FFFFFF',
         color: '#FFFFFF',
-        labelRollOverColor: layoutColors.primaryDark
+        labelRollOverColor: layoutColors.primaryDark,
       },
 
       ZoomControl: {
@@ -146,7 +146,7 @@ export class BaAmChartThemeService {
         gridBackgroundColor: '#FFFFFF',
         buttonIconAlpha: 0.6,
         gridAlpha: 0.6,
-        buttonSize: 20
+        buttonSize: 20,
       },
 
       SmallMap: {
@@ -155,13 +155,13 @@ export class BaAmChartThemeService {
         backgroundColor: '#FFFFFF',
         backgroundAlpha: 0.7,
         borderThickness: 1,
-        borderAlpha: 0.8
+        borderAlpha: 0.8,
       },
 
       // the defaults below are set using CSS syntax, you can use any existing css property
       // if you don't use Stock chart, you can delete lines below
       PeriodSelector: {
-        color: '#FFFFFF'
+        color: '#FFFFFF',
       },
 
       PeriodButton: {
@@ -173,7 +173,7 @@ export class BaAmChartThemeService {
         borderRadius: '5px',
         margin: '1px',
         outline: 'none',
-        boxSizing: 'border-box'
+        boxSizing: 'border-box',
       },
 
       PeriodButtonSelected: {
@@ -185,20 +185,20 @@ export class BaAmChartThemeService {
         margin: '1px',
         outline: 'none',
         opacity: 1,
-        boxSizing: 'border-box'
+        boxSizing: 'border-box',
       },
 
       PeriodInputField: {
         color: '#FFFFFF',
         background: 'transparent',
         border: '1px solid rgba(0, 0, 0, .3)',
-        outline: 'none'
+        outline: 'none',
       },
 
       DataSetSelector: {
         color: '#FFFFFF',
         selectedBackgroundColor: '#b9cdf5',
-        rollOverBackgroundColor: '#a8b0e4'
+        rollOverBackgroundColor: '#a8b0e4',
       },
 
       DataSetCompareList: {
@@ -206,13 +206,13 @@ export class BaAmChartThemeService {
         lineHeight: '100%',
         boxSizing: 'initial',
         webkitBoxSizing: 'initial',
-        border: '1px solid rgba(0, 0, 0, .3)'
+        border: '1px solid rgba(0, 0, 0, .3)',
       },
 
       DataSetSelect: {
         border: '1px solid rgba(0, 0, 0, .3)',
-        outline: 'none'
-      }
+        outline: 'none',
+      },
     };
   }
 

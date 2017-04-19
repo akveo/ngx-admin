@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import { Component } from '@angular/core';
 import { NgUploaderOptions } from 'ngx-uploader';
 
 @Component({
@@ -9,7 +9,7 @@ export class Layouts {
 
   public defaultPicture = 'assets/img/theme/no-photo.png';
   public profile: any = {
-    picture: 'assets/img/app/profile/Nasta.png'
+    picture: 'assets/img/app/profile/Nasta.png',
   };
   public uploaderOptions: NgUploaderOptions = {
     // url: 'http://website.com/upload'

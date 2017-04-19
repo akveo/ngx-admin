@@ -1,11 +1,11 @@
-import {Component} from '@angular/core';
+import { Component } from '@angular/core';
 
-import {GlobalState} from '../../../global.state';
+import { GlobalState } from '../../../global.state';
 
 @Component({
   selector: 'ba-page-top',
   templateUrl: './baPageTop.html',
-  styleUrls: ['./baPageTop.scss']
+  styleUrls: ['./baPageTop.scss'],
 })
 export class BaPageTop {
 

@@ -1,11 +1,11 @@
-import {Component, ElementRef} from '@angular/core';
+import { Component, ElementRef } from '@angular/core';
 
 import 'leaflet-map';
 
 @Component({
   selector: 'leaflet-maps',
   templateUrl: './leafletMaps.html',
-  styleUrls: ['./leafletMaps.scss']
+  styleUrls: ['./leafletMaps.scss'],
 })
 export class LeafletMaps {
 
@@ -13,12 +13,12 @@ export class LeafletMaps {
   }
 
   ngAfterViewInit() {
-    let el = this._elementRef.nativeElement.querySelector('.leaflet-maps');
+    const el = this._elementRef.nativeElement.querySelector('.leaflet-maps');
 
     L.Icon.Default.imagePath = 'assets/img/theme/vendor/leaflet';
-    let map = L.map(el).setView([51.505, -0.09], 13);
+    const map = L.map(el).setView([51.505, -0.09], 13);
     L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-      attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+      attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
     }).addTo(map);
 
     L.marker([51.5, -0.09]).addTo(map)

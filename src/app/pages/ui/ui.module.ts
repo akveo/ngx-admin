@@ -31,7 +31,7 @@ import { DefaultModal } from './components/modals/default-modal/default-modal.co
     NgaModule,
     NgbDropdownModule,
     NgbModalModule,
-    routing
+    routing,
   ],
   declarations: [
     Buttons,
@@ -48,14 +48,14 @@ import { DefaultModal } from './components/modals/default-modal/default-modal.co
     LargeButtons,
     DropdownButtons,
     GroupButtons,
-    DefaultModal
+    DefaultModal,
   ],
   entryComponents: [
-    DefaultModal
+    DefaultModal,
   ],
   providers: [
-    IconsService
-  ]
+    IconsService,
+  ],
 })
 export class UiModule {
 }

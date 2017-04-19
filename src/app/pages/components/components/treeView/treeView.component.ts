@@ -1,5 +1,5 @@
-import {Component} from '@angular/core';
-import {TreeModel} from 'ng2-tree';
+import { Component } from '@angular/core';
+import { TreeModel } from 'ng2-tree';
 
 @Component({
   selector: 'tree-view',
@@ -14,20 +14,20 @@ export class TreeView {
       {
         value: 'Object-oriented programming',
         children: [
-          {value: 'Java'},
-          {value: 'C++'},
-          {value: 'C#'},
-        ]
+          { value: 'Java' },
+          { value: 'C++' },
+          { value: 'C#' },
+        ],
       },
       {
         value: 'Prototype-based programming',
         children: [
-          {value: 'JavaScript'},
-          {value: 'CoffeeScript'},
-          {value: 'Lua'},
-        ]
-      }
-    ]
+          { value: 'JavaScript' },
+          { value: 'CoffeeScript' },
+          { value: 'Lua' },
+        ],
+      },
+    ],
   };
 
   constructor() {

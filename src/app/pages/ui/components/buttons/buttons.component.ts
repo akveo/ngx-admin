@@ -1,9 +1,9 @@
-import {Component} from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'buttons',
   templateUrl: './buttons.html',
-  styleUrls: ['./buttons.scss']
+  styleUrls: ['./buttons.scss'],
 })
 export class Buttons {
 

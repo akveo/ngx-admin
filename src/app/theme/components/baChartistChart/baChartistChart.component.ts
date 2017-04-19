@@ -4,7 +4,7 @@ import {
     Input,
     Output,
     ElementRef,
-    EventEmitter
+    EventEmitter,
 } from '@angular/core';
 
 import * as Chartist from 'chartist';
@@ -32,7 +32,7 @@ export class BaChartistChart {
         this._selector.nativeElement,
         this.baChartistChartData,
         this.baChartistChartOptions,
-        this.baChartistChartResponsive
+        this.baChartistChartResponsive,
     );
     this.onChartReady.emit(this.chart);
   }

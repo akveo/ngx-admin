@@ -1,11 +1,11 @@
-import {Component, ElementRef, HostListener} from '@angular/core';
-import {GlobalState} from '../../../global.state';
-import {layoutSizes} from '../../../theme';
+import { Component, ElementRef, HostListener } from '@angular/core';
+import { GlobalState } from '../../../global.state';
+import { layoutSizes } from '../../../theme';
 
 @Component({
   selector: 'ba-sidebar',
   templateUrl: './baSidebar.html',
-  styleUrls: ['./baSidebar.scss']
+  styleUrls: ['./baSidebar.scss'],
 })
 export class BaSidebar {
   public menuHeight: number;
@@ -32,7 +32,7 @@ export class BaSidebar {
   @HostListener('window:resize')
   public onWindowResize(): void {
 
-    let isMenuShouldCollapsed = this._shouldMenuCollapse();
+    const isMenuShouldCollapsed = this._shouldMenuCollapse();
 
     if (this.isMenuShouldCollapsed !== isMenuShouldCollapsed) {
       this.menuCollapseStateChange(isMenuShouldCollapsed);

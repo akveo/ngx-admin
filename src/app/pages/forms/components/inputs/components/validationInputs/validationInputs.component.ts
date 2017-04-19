@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'validation-inputs',
@@ -8,7 +8,7 @@ export class ValidationInputs {
   public checkboxModel = [{
     name: 'Checkbox with success',
     state: false,
-    class: 'has-success checkbox'
+    class: 'has-success checkbox',
   }, {
     name: 'Checkbox with warning',
     state: false,
@@ -16,14 +16,14 @@ export class ValidationInputs {
   }, {
     name: 'Checkbox with error',
     state: false,
-    class: 'has-error checkbox'
+    class: 'has-error checkbox',
   }];
 
   public checkboxPropertiesMapping = {
     model: 'state',
     value: 'name',
     label: 'name',
-    baCheckboxClass: 'class'
+    baCheckboxClass: 'class',
   };
 
   constructor() {

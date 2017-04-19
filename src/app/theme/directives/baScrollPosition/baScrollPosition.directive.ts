@@ -1,7 +1,7 @@
-import {Directive, Input, Output, EventEmitter, HostListener} from '@angular/core';
+import { Directive, Input, Output, EventEmitter, HostListener } from '@angular/core';
 
 @Directive({
-  selector: '[baScrollPosition]'
+  selector: '[baScrollPosition]',
 })
 export class BaScrollPosition {
 
@@ -16,7 +16,7 @@ export class BaScrollPosition {
 
   @HostListener('window:scroll')
   onWindowScroll(): void {
-    let isScrolled = window.scrollY > this.maxHeight;
+    const isScrolled = window.scrollY > this.maxHeight;
     if (isScrolled !== this._isScrolled) {
       this._isScrolled = isScrolled;
       this.scrollChange.emit(isScrolled);

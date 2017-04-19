@@ -6,7 +6,7 @@ import 'ckeditor';
 @Component({
   selector: 'ckeditor-component',
   templateUrl: './ckeditor.html',
-  styleUrls: ['./ckeditor.scss']
+  styleUrls: ['./ckeditor.scss'],
 })
 
 export class Ckeditor {

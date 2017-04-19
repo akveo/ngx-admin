@@ -1,11 +1,11 @@
-import {Component} from '@angular/core';
+import { Component } from '@angular/core';
 
-import {FeedService} from './feed.service';
+import { FeedService } from './feed.service';
 
 @Component({
   selector: 'feed',
   templateUrl: './feed.html',
-  styleUrls: ['./feed.scss']
+  styleUrls: ['./feed.scss'],
 })
 export class Feed {
 

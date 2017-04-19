@@ -8,7 +8,7 @@ import { GlobalState } from '../../../global.state';
 @Component({
   selector: 'ba-menu',
   templateUrl: './baMenu.html',
-  styleUrls: ['./baMenu.scss']
+  styleUrls: ['./baMenu.scss'],
 })
 export class BaMenu {
 
@@ -69,7 +69,7 @@ export class BaMenu {
   }
 
   public toggleSubMenu($event): boolean {
-    let submenu = jQuery($event.currentTarget).next();
+    const submenu = jQuery($event.currentTarget).next();
 
     if (this.sidebarCollapsed) {
       this.expandMenu.emit(null);

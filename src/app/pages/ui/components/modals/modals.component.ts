@@ -5,18 +5,18 @@ import { DefaultModal } from './default-modal/default-modal.component';
 @Component({
   selector: 'modals',
   styleUrls: ['./modals.scss'],
-  templateUrl: './modals.html'
+  templateUrl: './modals.html',
 })
 export class Modals {
 
   constructor(private modalService: NgbModal) {}
 
   lgModalShow() {
-    const activeModal = this.modalService.open(DefaultModal, {size: 'lg'});
+    const activeModal = this.modalService.open(DefaultModal, { size: 'lg' });
     activeModal.componentInstance.modalHeader = 'Large Modal';
   }
   smModalShow(): void {
-    const activeModal = this.modalService.open(DefaultModal, {size: 'sm'});
+    const activeModal = this.modalService.open(DefaultModal, { size: 'sm' });
     activeModal.componentInstance.modalHeader = 'Small Modal';
   }
 
@@ -29,7 +29,7 @@ export class Modals {
   }
 
   childModalShow() {
-    const activeModal = this.modalService.open(DefaultModal, {size: 'sm'});
+    const activeModal = this.modalService.open(DefaultModal, { size: 'sm' });
     activeModal.componentInstance.modalHeader = 'Child modal';
     activeModal.componentInstance.modalContent = `I am a child modal, opened from parent component!`;
   }

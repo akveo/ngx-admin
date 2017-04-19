@@ -1,4 +1,4 @@
-import {FormGroup} from '@angular/forms';
+import { FormGroup } from '@angular/forms';
 
 export class EqualPasswordsValidator {
 
@@ -8,8 +8,8 @@ export class EqualPasswordsValidator {
 
       return (c.controls && c.controls[firstField].value === c.controls[secondField].value) ? null : {
         passwordsEqual: {
-          valid: false
-        }
+          valid: false,
+        },
       };
     };
   }

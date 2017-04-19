@@ -15,9 +15,9 @@ const routes: Routes = [
       { path: 'bubblemaps', component: BubbleMaps },
       { path: 'googlemaps', component: GoogleMaps },
       { path: 'leafletmaps', component: LeafletMaps },
-      { path: 'linemaps', component: LineMaps }
-    ]
-  }
+      { path: 'linemaps', component: LineMaps },
+    ],
+  },
 ];
 
 export const routing = RouterModule.forChild(routes);

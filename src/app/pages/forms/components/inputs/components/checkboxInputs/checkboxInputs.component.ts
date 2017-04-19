@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'checkbox-inputs',
@@ -8,15 +8,15 @@ export class CheckboxInputs {
   public checkboxModel = [{
     name: 'Check 1',
     checked: false,
-    class: 'col-md-4'
+    class: 'col-md-4',
   }, {
     name: 'Check 2',
     checked: true,
-    class: 'col-md-4'
+    class: 'col-md-4',
   }, {
     name: 'Check 3',
     checked: false,
-    class: 'col-md-4'
+    class: 'col-md-4',
   }];
 
   isDisabled: boolean = false;
@@ -25,7 +25,7 @@ export class CheckboxInputs {
     model: 'checked',
     value: 'name',
     label: 'name',
-    baCheckboxClass: 'class'
+    baCheckboxClass: 'class',
   };
 
   constructor() {

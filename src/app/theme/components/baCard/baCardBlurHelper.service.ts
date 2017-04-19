@@ -19,11 +19,11 @@ export class BaCardBlurHelper {
   }
 
   public getBodyBgImageSizes(): BgMetrics {
-    let elemW = document.documentElement.clientWidth;
-    let elemH = document.documentElement.clientHeight;
+    const elemW = document.documentElement.clientWidth;
+    const elemH = document.documentElement.clientHeight;
     if (elemW <= 640) return;
-    let imgRatio = (this.image.height / this.image.width);       // original img ratio
-    let containerRatio = (elemH / elemW);     // container ratio
+    const imgRatio = (this.image.height / this.image.width);       // original img ratio
+    const containerRatio = (elemH / elemW);     // container ratio
 
     let finalHeight, finalWidth;
     if (containerRatio > imgRatio) {
@@ -37,13 +37,13 @@ export class BaCardBlurHelper {
         width: finalWidth,
         height: finalHeight,
         positionX: (elemW - finalWidth) / 2,
-        positionY: (elemH - finalHeight) / 2
+        positionY: (elemH - finalHeight) / 2,
     };
   }
 
   private _genBgImage(): void {
     this.image = new Image();
-    let computedStyle = getComputedStyle(document.body.querySelector('main'), ':before');
+    const computedStyle = getComputedStyle(document.body.querySelector('main'), ':before');
     this.image.src = computedStyle.backgroundImage.replace(/url\((['"])?(.*?)\1\)/gi, '$2');
   }
 

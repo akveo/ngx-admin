@@ -6,7 +6,7 @@ import { BgMetrics } from './bgMetrics';
 
 @Directive({
   selector: '[baCardBlur]',
-  providers: [BaCardBlurHelper]
+  providers: [BaCardBlurHelper],
 })
 export class BaCardBlur {
 
@@ -17,7 +17,7 @@ export class BaCardBlur {
   constructor(
       private _baConfig: BaThemeConfigProvider,
       private _baCardBlurHelper: BaCardBlurHelper,
-      private _el: ElementRef
+      private _el: ElementRef,
   ) {
     if (this._isEnabled()) {
       this._baCardBlurHelper.init();

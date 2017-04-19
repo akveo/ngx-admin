@@ -7,201 +7,201 @@ export class IconsService {
     kameleonIcons: [
       {
         name: 'Beach',
-        img: 'Beach'
+        img: 'Beach',
       },
       {
         name: 'Bus',
-        img: 'Bus'
+        img: 'Bus',
       },
       {
         name: 'Cheese',
-        img: 'Cheese'
+        img: 'Cheese',
       },
       {
         name: 'Desert',
-        img: 'Desert'
+        img: 'Desert',
       },
       {
         name: 'Images',
-        img: 'Images'
+        img: 'Images',
       },
       {
         name: 'Magician',
-        img: 'Magician'
+        img: 'Magician',
       },
       {
         name: 'Makeup',
-        img: 'Makeup'
+        img: 'Makeup',
       },
       {
         name: 'Programming',
-        img: 'Programming'
+        img: 'Programming',
       },
       {
         name: 'Shop',
-        img: 'Shop'
+        img: 'Shop',
       },
       {
         name: 'Surfer',
-        img: 'Surfer'
+        img: 'Surfer',
       },
       {
         name: 'Phone Booth',
-        img: 'Phone-Booth'
+        img: 'Phone-Booth',
       },
       {
         name: 'Ninja',
-        img: 'Ninja'
+        img: 'Ninja',
       },
       {
         name: 'Apartment',
-        img: 'Apartment'
+        img: 'Apartment',
       },
       {
         name: 'Batman',
-        img: 'Batman'
+        img: 'Batman',
       },
       {
         name: 'Medal',
-        img: 'Medal-2'
+        img: 'Medal-2',
       },
       {
         name: 'Money',
-        img: 'Money-Increase'
+        img: 'Money-Increase',
       },
       {
         name: 'Street View',
-        img: 'Street-View'
+        img: 'Street-View',
       },
       {
         name: 'Student',
-        img: 'Student-3'
+        img: 'Student-3',
       },
       {
         name: 'Bell',
-        img: 'Bell'
+        img: 'Bell',
       },
       {
         name: 'Woman',
-        img: 'Boss-5'
+        img: 'Boss-5',
       },
       {
         name: 'Euro',
-        img: 'Euro-Coin'
+        img: 'Euro-Coin',
       },
       {
         name: 'Chessboard',
-        img: 'Chessboard'
+        img: 'Chessboard',
       },
       {
         name: 'Burglar',
-        img: 'Burglar'
+        img: 'Burglar',
       },
       {
         name: 'Dna',
-        img: 'Dna'
+        img: 'Dna',
       },
       {
         name: 'Clipboard Plan',
-        img: 'Clipboard-Plan'
+        img: 'Clipboard-Plan',
       },
       {
         name: 'Boss',
-        img: 'Boss-3'
+        img: 'Boss-3',
       },
       {
         name: 'Key',
-        img: 'Key'
+        img: 'Key',
       },
       {
         name: 'Surgeon',
-        img: 'Surgeon'
+        img: 'Surgeon',
       },
       {
         name: 'Hacker',
-        img: 'Hacker'
+        img: 'Hacker',
       },
       {
         name: 'Santa',
-        img: 'Santa'
-      }
+        img: 'Santa',
+      },
     ],
     kameleonRoundedIcons: [
       {
         color: 'success',
         img: 'Apartment',
-        name: 'Apartment'
+        name: 'Apartment',
       },
       {
         color: 'warning',
         img: 'Bus',
-        name: 'Bus'
+        name: 'Bus',
       },
       {
         color: 'primary',
         img: 'Checklist',
-        name: 'Checklist'
+        name: 'Checklist',
       },
       {
         color: 'warning',
         img: 'Desert',
-        name: 'Desert'
+        name: 'Desert',
       },
       {
         color: 'danger',
         img: 'Laptop-Signal',
-        name: 'Laptop Signal'
+        name: 'Laptop Signal',
       },
       {
         color: 'info',
         img: 'Love-Letter',
-        name: 'Love Letter'
+        name: 'Love Letter',
       },
       {
         color: 'success',
         img: 'Makeup',
-        name: 'Makeup'
+        name: 'Makeup',
       },
       {
         color: 'primary',
         img: 'Santa',
-        name: 'Santa'
+        name: 'Santa',
       },
       {
         color: 'success',
         img: 'Surfer',
-        name: 'Surfer'
+        name: 'Surfer',
       },
       {
         color: 'info',
         img: 'Vector',
-        name: 'Vector'
+        name: 'Vector',
       },
       {
         color: 'warning',
         img: 'Money-Increase',
-        name: 'Money Increase'
+        name: 'Money Increase',
       },
       {
         color: 'info',
         img: 'Alien',
-        name: 'Alien'
+        name: 'Alien',
       },
       {
         color: 'danger',
         img: 'Online-Shopping',
-        name: 'Online Shopping'
+        name: 'Online Shopping',
       },
       {
         color: 'warning',
         img: 'Euro-Coin',
-        name: 'Euro'
+        name: 'Euro',
       },
       {
         color: 'info',
         img: 'Boss-3',
-        name: 'Boss'
-      }
+        name: 'Boss',
+      },
     ],
     ionicons: [
       'ion-ionic',
@@ -273,7 +273,7 @@ export class IconsService {
       'ion-archive',
       'ion-reply',
       'ion-reply-all',
-      'ion-forward'
+      'ion-forward',
     ],
     fontAwesomeIcons: [
       'fa fa-adjust',
@@ -310,7 +310,7 @@ export class IconsService {
       'fa fa-bug',
       'fa fa-building',
       'fa fa-building-o',
-      'fa fa-bullhorn'
+      'fa fa-bullhorn',
     ],
     socicon: ['a', 'b', 'c',
       'd', 'e', 'f', 'g',
@@ -332,8 +332,8 @@ export class IconsService {
       '-', '^', '?', '$',
       '*', '&', '(', '#',
       '.', '_', ']', ')',
-      '\'', '"', '}', '{'
-    ]
+      '\'', '"', '}', '{',
+    ],
   };
 
   getAll() {

@@ -1,4 +1,4 @@
-import {Component, ViewChild, Input, Output, EventEmitter, ElementRef, Renderer} from '@angular/core';
+import { Component, ViewChild, Input, Output, EventEmitter, ElementRef, Renderer } from '@angular/core';
 import { NgUploaderOptions } from 'ngx-uploader';
 
 @Component({
@@ -25,7 +25,7 @@ export class BaPictureUploader {
   }
 
   beforeUpload(uploadingFile): void {
-    let files = this._fileUpload.nativeElement.files;
+    const files = this._fileUpload.nativeElement.files;
 
     if (files.length) {
       const file = files[0];

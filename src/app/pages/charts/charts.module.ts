@@ -14,14 +14,14 @@ import { ChartistJsService } from './components/chartistJs/chartistJs.service';
     CommonModule,
     FormsModule,
     NgaModule,
-    routing
+    routing,
   ],
   declarations: [
     Charts,
-    ChartistJs
+    ChartistJs,
   ],
   providers: [
-    ChartistJsService
-  ]
+    ChartistJsService,
+  ],
 })
 export class ChartsModule {}

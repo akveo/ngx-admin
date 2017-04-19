@@ -1,4 +1,4 @@
-import {Injectable} from '@angular/core';
+import { Injectable } from '@angular/core';
 
 @Injectable()
 export class SmartTablesService {
@@ -10,7 +10,7 @@ export class SmartTablesService {
       lastName: 'Otto',
       username: '@mdo',
       email: 'mdo@gmail.com',
-      age: '28'
+      age: '28',
     },
     {
       id: 2,
@@ -18,7 +18,7 @@ export class SmartTablesService {
       lastName: 'Thornton',
       username: '@fat',
       email: 'fat@yandex.ru',
-      age: '45'
+      age: '45',
     },
     {
       id: 3,
@@ -26,7 +26,7 @@ export class SmartTablesService {
       lastName: 'Bird',
       username: '@twitter',
       email: 'twitter@outlook.com',
-      age: '18'
+      age: '18',
     },
     {
       id: 4,
@@ -34,7 +34,7 @@ export class SmartTablesService {
       lastName: 'Snow',
       username: '@snow',
       email: 'snow@gmail.com',
-      age: '20'
+      age: '20',
     },
     {
       id: 5,
@@ -42,7 +42,7 @@ export class SmartTablesService {
       lastName: 'Sparrow',
       username: '@jack',
       email: 'jack@yandex.ru',
-      age: '30'
+      age: '30',
     },
     {
       id: 6,
@@ -50,7 +50,7 @@ export class SmartTablesService {
       lastName: 'Smith',
       username: '@ann',
       email: 'ann@gmail.com',
-      age: '21'
+      age: '21',
     },
     {
       id: 7,
@@ -58,7 +58,7 @@ export class SmartTablesService {
       lastName: 'Black',
       username: '@barbara',
       email: 'barbara@yandex.ru',
-      age: '43'
+      age: '43',
     },
     {
       id: 8,
@@ -66,7 +66,7 @@ export class SmartTablesService {
       lastName: 'Bagrat',
       username: '@sevan',
       email: 'sevan@outlook.com',
-      age: '13'
+      age: '13',
     },
     {
       id: 9,
@@ -74,7 +74,7 @@ export class SmartTablesService {
       lastName: 'Vardan',
       username: '@ruben',
       email: 'ruben@gmail.com',
-      age: '22'
+      age: '22',
     },
     {
       id: 10,
@@ -82,7 +82,7 @@ export class SmartTablesService {
       lastName: 'Sevan',
       username: '@karen',
       email: 'karen@yandex.ru',
-      age: '33'
+      age: '33',
     },
     {
       id: 11,
@@ -90,7 +90,7 @@ export class SmartTablesService {
       lastName: 'Otto',
       username: '@mark',
       email: 'mark@gmail.com',
-      age: '38'
+      age: '38',
     },
     {
       id: 12,
@@ -98,7 +98,7 @@ export class SmartTablesService {
       lastName: 'Thornton',
       username: '@jacob',
       email: 'jacob@yandex.ru',
-      age: '48'
+      age: '48',
     },
     {
       id: 13,
@@ -106,7 +106,7 @@ export class SmartTablesService {
       lastName: 'Hakob',
       username: '@haik',
       email: 'haik@outlook.com',
-      age: '48'
+      age: '48',
     },
     {
       id: 14,
@@ -114,7 +114,7 @@ export class SmartTablesService {
       lastName: 'Jirair',
       username: '@garegin',
       email: 'garegin@gmail.com',
-      age: '40'
+      age: '40',
     },
     {
       id: 15,
@@ -122,7 +122,7 @@ export class SmartTablesService {
       lastName: 'Bedros',
       username: '@krikor',
       email: 'krikor@yandex.ru',
-      age: '32'
+      age: '32',
     },
     {
       'id': 16,
@@ -130,7 +130,7 @@ export class SmartTablesService {
       'lastName': 'Brady',
       'username': '@Gibson',
       'email': 'franciscagibson@comtours.com',
-      'age': 11
+      'age': 11,
     },
     {
       'id': 17,
@@ -138,7 +138,7 @@ export class SmartTablesService {
       'lastName': 'Figueroa',
       'username': '@Snow',
       'email': 'tillmansnow@comtours.com',
-      'age': 34
+      'age': 34,
     },
     {
       'id': 18,
@@ -146,7 +146,7 @@ export class SmartTablesService {
       'lastName': 'Morris',
       'username': '@Bryant',
       'email': 'jimenezbryant@comtours.com',
-      'age': 45
+      'age': 45,
     },
     {
       'id': 19,
@@ -154,7 +154,7 @@ export class SmartTablesService {
       'lastName': 'Jacobson',
       'username': '@Mcbride',
       'email': 'sandovalmcbride@comtours.com',
-      'age': 32
+      'age': 32,
     },
     {
       'id': 20,
@@ -162,7 +162,7 @@ export class SmartTablesService {
       'lastName': 'Torres',
       'username': '@Charles',
       'email': 'griffincharles@comtours.com',
-      'age': 19
+      'age': 19,
     },
     {
       'id': 21,
@@ -170,7 +170,7 @@ export class SmartTablesService {
       'lastName': 'Parker',
       'username': '@Caldwell',
       'email': 'coracaldwell@comtours.com',
-      'age': 27
+      'age': 27,
     },
     {
       'id': 22,
@@ -178,7 +178,7 @@ export class SmartTablesService {
       'lastName': 'Bond',
       'username': '@Velez',
       'email': 'cindyvelez@comtours.com',
-      'age': 24
+      'age': 24,
     },
     {
       'id': 23,
@@ -186,7 +186,7 @@ export class SmartTablesService {
       'lastName': 'Tyson',
       'username': '@Craig',
       'email': 'friedacraig@comtours.com',
-      'age': 45
+      'age': 45,
     },
     {
       'id': 24,
@@ -194,7 +194,7 @@ export class SmartTablesService {
       'lastName': 'Holcomb',
       'username': '@Rowe',
       'email': 'coterowe@comtours.com',
-      'age': 20
+      'age': 20,
     },
     {
       'id': 25,
@@ -202,7 +202,7 @@ export class SmartTablesService {
       'lastName': 'Mejia',
       'username': '@Valenzuela',
       'email': 'trujillovalenzuela@comtours.com',
-      'age': 16
+      'age': 16,
     },
     {
       'id': 26,
@@ -210,7 +210,7 @@ export class SmartTablesService {
       'lastName': 'Shepard',
       'username': '@Sloan',
       'email': 'pruittsloan@comtours.com',
-      'age': 44
+      'age': 44,
     },
     {
       'id': 27,
@@ -218,7 +218,7 @@ export class SmartTablesService {
       'lastName': 'Ortega',
       'username': '@Black',
       'email': 'suttonblack@comtours.com',
-      'age': 42
+      'age': 42,
     },
     {
       'id': 28,
@@ -226,7 +226,7 @@ export class SmartTablesService {
       'lastName': 'Heath',
       'username': '@Espinoza',
       'email': 'marionespinoza@comtours.com',
-      'age': 47
+      'age': 47,
     },
     {
       'id': 29,
@@ -234,7 +234,7 @@ export class SmartTablesService {
       'lastName': 'Hicks',
       'username': '@Keith',
       'email': 'newmankeith@comtours.com',
-      'age': 15
+      'age': 15,
     },
     {
       'id': 30,
@@ -242,7 +242,7 @@ export class SmartTablesService {
       'lastName': 'Larson',
       'username': '@Summers',
       'email': 'boylesummers@comtours.com',
-      'age': 32
+      'age': 32,
     },
     {
       'id': 31,
@@ -250,7 +250,7 @@ export class SmartTablesService {
       'lastName': 'Vinson',
       'username': '@Mckenzie',
       'email': 'haynesmckenzie@comtours.com',
-      'age': 15
+      'age': 15,
     },
     {
       'id': 32,
@@ -258,7 +258,7 @@ export class SmartTablesService {
       'lastName': 'Acosta',
       'username': '@Young',
       'email': 'milleryoung@comtours.com',
-      'age': 55
+      'age': 55,
     },
     {
       'id': 33,
@@ -266,7 +266,7 @@ export class SmartTablesService {
       'lastName': 'Brown',
       'username': '@Knight',
       'email': 'johnstonknight@comtours.com',
-      'age': 29
+      'age': 29,
     },
     {
       'id': 34,
@@ -274,7 +274,7 @@ export class SmartTablesService {
       'lastName': 'Pitts',
       'username': '@Forbes',
       'email': 'lenaforbes@comtours.com',
-      'age': 25
+      'age': 25,
     },
     {
       'id': 35,
@@ -282,7 +282,7 @@ export class SmartTablesService {
       'lastName': 'Kennedy',
       'username': '@Branch',
       'email': 'terriebranch@comtours.com',
-      'age': 37
+      'age': 37,
     },
     {
       'id': 36,
@@ -290,7 +290,7 @@ export class SmartTablesService {
       'lastName': 'Aguirre',
       'username': '@Kirby',
       'email': 'louisekirby@comtours.com',
-      'age': 44
+      'age': 44,
     },
     {
       'id': 37,
@@ -298,7 +298,7 @@ export class SmartTablesService {
       'lastName': 'Patton',
       'username': '@Sanders',
       'email': 'davidsanders@comtours.com',
-      'age': 26
+      'age': 26,
     },
     {
       'id': 38,
@@ -306,7 +306,7 @@ export class SmartTablesService {
       'lastName': 'Barlow',
       'username': '@Mckinney',
       'email': 'holdenmckinney@comtours.com',
-      'age': 11
+      'age': 11,
     },
     {
       'id': 39,
@@ -314,7 +314,7 @@ export class SmartTablesService {
       'lastName': 'Rivera',
       'username': '@Montoya',
       'email': 'bakermontoya@comtours.com',
-      'age': 47
+      'age': 47,
     },
     {
       'id': 40,
@@ -322,7 +322,7 @@ export class SmartTablesService {
       'lastName': 'Lloyd',
       'username': '@Calderon',
       'email': 'belindacalderon@comtours.com',
-      'age': 21
+      'age': 21,
     },
     {
       'id': 41,
@@ -330,7 +330,7 @@ export class SmartTablesService {
       'lastName': 'Patrick',
       'username': '@Clements',
       'email': 'pearsonclements@comtours.com',
-      'age': 42
+      'age': 42,
     },
     {
       'id': 42,
@@ -338,7 +338,7 @@ export class SmartTablesService {
       'lastName': 'Mckee',
       'username': '@Daugherty',
       'email': 'alycedaugherty@comtours.com',
-      'age': 55
+      'age': 55,
     },
     {
       'id': 43,
@@ -346,7 +346,7 @@ export class SmartTablesService {
       'lastName': 'Spence',
       'username': '@Olsen',
       'email': 'valenciaolsen@comtours.com',
-      'age': 20
+      'age': 20,
     },
     {
       'id': 44,
@@ -354,7 +354,7 @@ export class SmartTablesService {
       'lastName': 'Holcomb',
       'username': '@Humphrey',
       'email': 'leachhumphrey@comtours.com',
-      'age': 28
+      'age': 28,
     },
     {
       'id': 45,
@@ -362,7 +362,7 @@ export class SmartTablesService {
       'lastName': 'Baxter',
       'username': '@Fitzpatrick',
       'email': 'mossfitzpatrick@comtours.com',
-      'age': 51
+      'age': 51,
     },
     {
       'id': 46,
@@ -370,7 +370,7 @@ export class SmartTablesService {
       'lastName': 'Cooke',
       'username': '@Ward',
       'email': 'jeanneward@comtours.com',
-      'age': 59
+      'age': 59,
     },
     {
       'id': 47,
@@ -378,7 +378,7 @@ export class SmartTablesService {
       'lastName': 'Briggs',
       'username': '@Kidd',
       'email': 'wilmakidd@comtours.com',
-      'age': 53
+      'age': 53,
     },
     {
       'id': 48,
@@ -386,7 +386,7 @@ export class SmartTablesService {
       'lastName': 'Perry',
       'username': '@Gilbert',
       'email': 'beatricegilbert@comtours.com',
-      'age': 39
+      'age': 39,
     },
     {
       'id': 49,
@@ -394,7 +394,7 @@ export class SmartTablesService {
       'lastName': 'Hyde',
       'username': '@Mcdonald',
       'email': 'whitakermcdonald@comtours.com',
-      'age': 35
+      'age': 35,
     },
     {
       'id': 50,
@@ -402,7 +402,7 @@ export class SmartTablesService {
       'lastName': 'Duran',
       'username': '@Gross',
       'email': 'rebekahgross@comtours.com',
-      'age': 40
+      'age': 40,
     },
     {
       'id': 51,
@@ -410,7 +410,7 @@ export class SmartTablesService {
       'lastName': 'Mayer',
       'username': '@Woodward',
       'email': 'earlinewoodward@comtours.com',
-      'age': 52
+      'age': 52,
     },
     {
       'id': 52,
@@ -418,7 +418,7 @@ export class SmartTablesService {
       'lastName': 'Baxter',
       'username': '@Johns',
       'email': 'moranjohns@comtours.com',
-      'age': 20
+      'age': 20,
     },
     {
       'id': 53,
@@ -426,7 +426,7 @@ export class SmartTablesService {
       'lastName': 'Hubbard',
       'username': '@Cooke',
       'email': 'nanettecooke@comtours.com',
-      'age': 55
+      'age': 55,
     },
     {
       'id': 54,
@@ -434,7 +434,7 @@ export class SmartTablesService {
       'lastName': 'Walker',
       'username': '@Hendricks',
       'email': 'daltonhendricks@comtours.com',
-      'age': 25
+      'age': 25,
     },
     {
       'id': 55,
@@ -442,7 +442,7 @@ export class SmartTablesService {
       'lastName': 'Blake',
       'username': '@Pena',
       'email': 'bennettpena@comtours.com',
-      'age': 13
+      'age': 13,
     },
     {
       'id': 56,
@@ -450,7 +450,7 @@ export class SmartTablesService {
       'lastName': 'Horton',
       'username': '@Weiss',
       'email': 'kellieweiss@comtours.com',
-      'age': 48
+      'age': 48,
     },
     {
       'id': 57,
@@ -458,7 +458,7 @@ export class SmartTablesService {
       'lastName': 'Talley',
       'username': '@Sanford',
       'email': 'hobbssanford@comtours.com',
-      'age': 28
+      'age': 28,
     },
     {
       'id': 58,
@@ -466,7 +466,7 @@ export class SmartTablesService {
       'lastName': 'Donaldson',
       'username': '@Roman',
       'email': 'mcguireroman@comtours.com',
-      'age': 38
+      'age': 38,
     },
     {
       'id': 59,
@@ -474,7 +474,7 @@ export class SmartTablesService {
       'lastName': 'Saunders',
       'username': '@Harper',
       'email': 'rodriquezharper@comtours.com',
-      'age': 20
+      'age': 20,
     },
     {
       'id': 60,
@@ -482,8 +482,8 @@ export class SmartTablesService {
       'lastName': 'Conner',
       'username': '@Sanchez',
       'email': 'lousanchez@comtours.com',
-      'age': 16
-    }
+      'age': 16,
+    },
   ];
 
   metricsTableData = [
@@ -495,7 +495,7 @@ export class SmartTablesService {
       purchases: '4,214',
       isPurchasesUp: true,
       percent: '45%',
-      isPercentUp: true
+      isPercentUp: true,
     },
     {
       image: 'app/browsers/firefox.svg',
@@ -505,7 +505,7 @@ export class SmartTablesService {
       purchases: '3,031',
       isPurchasesUp: false,
       percent: '28%',
-      isPercentUp: true
+      isPercentUp: true,
     },
     {
       image: 'app/browsers/ie.svg',
@@ -515,7 +515,7 @@ export class SmartTablesService {
       purchases: '2,102',
       isPurchasesUp: false,
       percent: '17%',
-      isPercentUp: false
+      isPercentUp: false,
     },
     {
       image: 'app/browsers/safari.svg',
@@ -525,7 +525,7 @@ export class SmartTablesService {
       purchases: '1,001',
       isPurchasesUp: false,
       percent: '14%',
-      isPercentUp: true
+      isPercentUp: true,
     },
     {
       image: 'app/browsers/opera.svg',
@@ -535,8 +535,8 @@ export class SmartTablesService {
       purchases: '83',
       isPurchasesUp: true,
       percent: '5%',
-      isPercentUp: false
-    }
+      isPercentUp: false,
+    },
   ];
 
   getData(): Promise<any> {

@@ -6,7 +6,7 @@ import { TodoService } from './todo.service';
 @Component({
   selector: 'todo',
   templateUrl: './todo.html',
-  styleUrls: ['./todo.scss']
+  styleUrls: ['./todo.scss'],
 })
 export class Todo {
 
@@ -42,9 +42,9 @@ export class Todo {
   }
 
   private _getRandomColor() {
-    let colors = Object.keys(this.dashboardColors).map(key => this.dashboardColors[key]);
+    const colors = Object.keys(this.dashboardColors).map(key => this.dashboardColors[key]);
 
-    let i = Math.floor(Math.random() * (colors.length - 1));
+    const i = Math.floor(Math.random() * (colors.length - 1));
     return colors[i];
   }
 }

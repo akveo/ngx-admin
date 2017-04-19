@@ -1,11 +1,11 @@
-import {Component} from '@angular/core';
+import { Component } from '@angular/core';
 
-import {LineChartService} from './lineChart.service';
+import { LineChartService } from './lineChart.service';
 
 @Component({
   selector: 'line-chart',
   templateUrl: './lineChart.html',
-  styleUrls: ['./lineChart.scss']
+  styleUrls: ['./lineChart.scss'],
 })
 export class LineChart {
 
@@ -16,7 +16,7 @@ export class LineChart {
   }
 
   initChart(chart: any) {
-    let zoomChart = () => {
+    const zoomChart = () => {
       chart.zoomToDates(new Date(2013, 3), new Date(2014, 0));
     };
 

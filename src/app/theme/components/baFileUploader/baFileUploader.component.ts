@@ -24,7 +24,7 @@ export class BaFileUploader {
   }
 
   beforeFileUpload(uploadingFile): void {
-    let files = this._fileUpload.nativeElement.files;
+    const files = this._fileUpload.nativeElement.files;
     if (files.length) {
       const file = files[0];
       this._onChangeFileSelect(files[0]);

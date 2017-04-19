@@ -1,11 +1,11 @@
-import {Component} from '@angular/core';
+import { Component } from '@angular/core';
 
-import {IconsService} from './icons.service';
+import { IconsService } from './icons.service';
 
 @Component({
   selector: 'icons',
   templateUrl: './icons.html',
-  styleUrls: ['./icons.scss']
+  styleUrls: ['./icons.scss'],
 })
 export class Icons {
 

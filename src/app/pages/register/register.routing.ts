@@ -6,8 +6,8 @@ import { Register } from './register.component';
 const routes: Routes = [
   {
     path: '',
-    component: Register
-  }
+    component: Register,
+  },
 ];
 
 export const routing = RouterModule.forChild(routes);

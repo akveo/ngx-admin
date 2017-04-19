@@ -13,14 +13,14 @@ const translationOptions = {
   loader: {
     provide: TranslateLoader,
     useFactory: (createTranslateLoader),
-    deps: [Http]
-  }
+    deps: [Http],
+  },
 };
 
 @NgModule({
   imports: [TranslateModule.forRoot(translationOptions)],
   exports: [TranslateModule],
-  providers: [TranslateService]
+  providers: [TranslateService],
 })
 export class AppTranslationModule {
   constructor(private translate: TranslateService) {

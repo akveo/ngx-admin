@@ -31,7 +31,7 @@ import { WithoutLabelsForm } from './components/layouts/components/withoutLabels
     AppTranslationModule,
     NgaModule,
     NgbRatingModule,
-    routing
+    routing,
   ],
   declarations: [
     Layouts,
@@ -47,8 +47,8 @@ import { WithoutLabelsForm } from './components/layouts/components/withoutLabels
     BlockForm,
     HorizontalForm,
     BasicForm,
-    WithoutLabelsForm
-  ]
+    WithoutLabelsForm,
+  ],
 })
 export class FormsModule {
 }

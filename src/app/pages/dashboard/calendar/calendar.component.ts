@@ -1,12 +1,12 @@
-import {Component} from '@angular/core';
+import { Component } from '@angular/core';
 import * as jQuery from 'jquery';
 
-import {CalendarService} from './calendar.service';
+import { CalendarService } from './calendar.service';
 
 @Component({
   selector: 'calendar',
   templateUrl: './calendar.html',
-  styleUrls: ['./calendar.scss']
+  styleUrls: ['./calendar.scss'],
 })
 export class Calendar {
 
@@ -25,13 +25,13 @@ export class Calendar {
   private _onSelect(start, end): void {
 
     if (this._calendar != null) {
-      let title = prompt('Event Title:');
+      const title = prompt('Event Title:');
       let eventData;
       if (title) {
         eventData = {
           title: title,
           start: start,
-          end: end
+          end: end,
         };
         jQuery(this._calendar).fullCalendar('renderEvent', eventData, true);
       }

@@ -18,12 +18,12 @@ export class BaMenuService {
    * @param {Routes} routes Type compatible with app.menu.ts
    */
   public updateMenuByRoutes(routes: Routes) {
-    let convertedRoutes = this.convertRoutesToMenus(_.cloneDeep(routes));
+    const convertedRoutes = this.convertRoutesToMenus(_.cloneDeep(routes));
     this.menuItems.next(convertedRoutes);
   }
 
   public convertRoutesToMenus(routes: Routes): any[] {
-    let items = this._convertArrayToItems(routes);
+    const items = this._convertArrayToItems(routes);
     return this._skipEmpty(items);
   }
 
@@ -32,7 +32,7 @@ export class BaMenuService {
   }
 
   public selectMenuItem(menuItems: any[]): any[] {
-    let items = [];
+    const items = [];
     menuItems.forEach((item) => {
       this._selectItem(item);
 
@@ -49,7 +49,7 @@ export class BaMenuService {
   }
 
   protected _skipEmpty(items: any[]): any[] {
-    let menu = [];
+    const menu = [];
     items.forEach((item) => {
       let menuItem;
       if (item.skip) {
@@ -69,7 +69,7 @@ export class BaMenuService {
   }
 
   protected _convertArrayToItems(routes: any[], parent?: any): any[] {
-    let items = [];
+    const items = [];
     routes.forEach((route) => {
       items.push(this._convertObjectToItem(route, parent));
     });
@@ -100,7 +100,7 @@ export class BaMenuService {
       item.children = this._convertArrayToItems(object.children, item);
     }
 
-    let prepared = this._prepareItem(item);
+    const prepared = this._prepareItem(item);
 
     // if current item is selected or expanded - then parent is expanded too
     if ((prepared.selected || prepared.expanded) && parent) {
