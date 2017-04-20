@@ -15,10 +15,10 @@ import { NgaMenuItem, NgaMenuModuleConfig } from './menu.options';
 @Injectable()
 export class NgaMenuService {
 
-  private menuItemsChanges$ = new Subject();
+  private itemsChanges$ = new Subject();
   private itemClickChanges$ = new Subject();
 
-  menuItemsChanges: Observable<{ tag: string, items: List<NgaMenuItem> }> = this.menuItemsChanges$.asObservable();
+  itemsChanges: Observable<{ tag: string, items: List<NgaMenuItem> }> = this.itemsChanges$.asObservable();
 
   itemClickChanges: Observable<{ tag: string, item: NgaMenuItem }> = this.itemClickChanges$.asObservable();
 
@@ -35,7 +35,7 @@ export class NgaMenuService {
 
     this.stack = this.stack.clear();
 
-    this.menuItemsChanges$.next({ tag, items: this.items });
+    this.itemsChanges$.next({ tag, items: this.items });
   }
 
   resetMenuItems(tag?: string) {
@@ -43,7 +43,7 @@ export class NgaMenuService {
 
     this.stack = this.stack.clear();
 
-    this.menuItemsChanges$.next({
+    this.itemsChanges$.next({
       tag,
       items: this.items,
     });
@@ -60,6 +60,54 @@ export class NgaMenuService {
       tag,
       item,
     });
+  }
+
+  goToHome() {
+    let homeItem: NgaMenuItem;
+
+    this.items.forEach(i => {
+      const result = this.getHomeItem(i);
+
+      if (result) {
+        homeItem = result;
+      }
+    });
+
+    this.stack = this.stack.clear();
+
+    if (homeItem) {
+      this.resetMenuItems();
+
+      homeItem.selected = true;
+
+      if (homeItem.link) {
+        this.router.navigate([homeItem.link]);
+      }
+
+      if (homeItem.url) {
+        window.location.href = homeItem.url;
+      }
+    }
+  }
+
+  private getHomeItem(parent: NgaMenuItem): NgaMenuItem {
+    this.stack = this.stack.push(parent);
+
+    if (parent.home) {
+      return parent;
+    }
+
+    if (parent.children && parent.children.size > 0) {
+      const first = parent.children.filter(c => !this.stack.contains(c)).first();
+
+      if (first) {
+        return this.getHomeItem(first);
+      }
+    }
+
+    if (parent.parent) {
+      return this.getHomeItem(parent.parent);
+    }
   }
 
   private setParent(parent: NgaMenuItem) {

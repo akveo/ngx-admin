@@ -125,7 +125,8 @@ export class NgaMenuItem4Component implements OnInit {
   template: `
     <nga-menu tag="firstMenu"></nga-menu>
     <router-outlet></router-outlet>
-    <button class="btn btn-primary" (click)="addMenuItem()">Add</button>
+    <button class="btn btn-primary" id="addBtn" (click)="addMenuItem()">Add</button>
+    <button class="btn btn-primary" id="homeBtn" (click)="goToHome()">Home</button>
   `,
 })
 export class NgaMenuTestComponent implements OnInit {
@@ -139,6 +140,10 @@ export class NgaMenuTestComponent implements OnInit {
 
   addMenuItem() {
     this.menuService.addMenuItems(List<NgaMenuItem>([{ title: 'New Menu Item' }]), 'firstMenu');
+  }
+
+  goToHome() {
+    this.menuService.goToHome();
   }
 
 }

@@ -16,6 +16,7 @@ export class NgaMenuItem {
   target?: string;
   hidden?: boolean = false;
   pathMath?: string = 'full';
+  home?: boolean = false;
   parent?: NgaMenuItem;
 }
 

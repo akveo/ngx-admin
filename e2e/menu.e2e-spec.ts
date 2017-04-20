@@ -20,7 +20,8 @@ const menu332 = by.css('nga-menu ul li:nth-child(3) ul li:nth-child(3) ul li:nth
 const menu333 = by.css('nga-menu ul li:nth-child(3) ul li:nth-child(3) ul li:nth-child(3) a');
 const menu4 = by.css('nga-menu ul li:nth-child(4) a');
 const newMenu = by.css('nga-menu ul li:nth-child(6) a');
-const button = by.css('button');
+const addButton = by.css('#addBtn');
+const homeButton = by.css('#homeBtn');
 
 describe('nga-menu', () => {
 
@@ -210,7 +211,7 @@ describe('nga-menu', () => {
   });
 
   it('should add new menu item', () => {
-    element(button).click()
+    element(addButton).click()
       .then(() => {
         element.all(newMenu).first().getText()
           .then(val => {
@@ -218,6 +219,14 @@ describe('nga-menu', () => {
           });
 
         expect(browser.getCurrentUrl()).toContain('#/menu/1');
+      });
+  });
+
+  it('should be selected - Menu #3.2.2', () => {
+    element(homeButton).click()
+      .then(() => {
+        expect(hasClass(element.all(menu332).first(), 'active')).toBeTruthy();
+        expect(browser.getCurrentUrl()).toContain('#/menu/3/3/2');
       });
   });
 

@@ -78,7 +78,7 @@ export class NgaMenuComponent implements OnInit {
   constructor(private menuService: NgaMenuService, private router: Router) { }
 
   ngOnInit() {
-    this.menuService.menuItemsChanges
+    this.menuService.itemsChanges
       .subscribe((data: { tag: string, items: List<NgaMenuItem> }) => {
         if (!data.tag || data.tag === this.tag) {
           this.menuItems = data.items;
