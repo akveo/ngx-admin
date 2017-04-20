@@ -19,22 +19,23 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
-        "../node_modules/normalize.css/normalize.css",
-        "../node_modules/bootstrap/scss/bootstrap.scss",
         "../node_modules/roboto-fontface/css/roboto/sass/roboto-fontface.scss",
+        "../node_modules/normalize.css/normalize.css",
         "../node_modules/font-awesome/scss/font-awesome.scss",
         "../node_modules/ionicons/scss/ionicons.scss",
+        "../node_modules/bootstrap/scss/bootstrap.scss",
         "../node_modules/leaflet/dist/leaflet.css",
         "../node_modules/chartist/dist/chartist.css",
         "../node_modules/fullcalendar/dist/fullcalendar.css",
-        "app/theme/initial.scss",
         "app/theme/theme.scss",
         "styles.scss"
       ],
       "scripts": [
         "../node_modules/jquery/dist/jquery.js",
+        "../node_modules/easy-pie-chart/dist/jquery.easypiechart.js",
+        "../node_modules/jquery-slimscroll/jquery.slimscroll.js",
         "../node_modules/tether/dist/js/tether.js",
-        "../node_modules/easy-pie-chart/dist/jquery.easypiechart.js"
+        "../node_modules/bootstrap/dist/js/bootstrap.js"
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {
