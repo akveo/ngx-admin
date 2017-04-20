@@ -1,10 +1,20 @@
 @import "../../../../theme/sass/conf/conf";
 
-.ng2-smart-table-container table.ng2-smart-table {
+.widgets {
+  ba-card {
+    width: 100%;
+  }
+}
+
+ng2-smart-table {
   th, td {
     border: 1px solid $border-light !important;
     line-height: 35px;
     vertical-align: middle;
+  }
+
+    table tr td {
+    padding: 0 8px!important;
   }
 
   color: $default-text;
@@ -13,7 +23,15 @@
     line-height: 1.5 !important;
   }
 
+  ng2-smart-table-cell {
+    color: $default-text;
+    line-height: 35px;
+  }
+
   tbody {
+    tr {
+      color: $default-text;
+    }
     tr:hover {
       background: rgba(0, 0, 0, 0.03);
     }
@@ -41,7 +59,11 @@
     }
   }
 
-  a.ng2-smart-action {
+  .ng2-smart-actions-title-add {
+    text-align: center;
+  }
+
+  a.ng2-smart-action, .ng2-smart-title {
     font-size: 14px !important;
     color: $default-text;
     padding: 0 5px;
@@ -51,9 +73,12 @@
       font-size: 25px !important;
     }
   }
+
+  nav.ng2-smart-pagination-nav {
+    display: flex;
+    justify-content: center;
+  }
 }
 
-nav.ng2-smart-pagination-nav {
-  display: flex;
-  justify-content: center;
-}
+
+
