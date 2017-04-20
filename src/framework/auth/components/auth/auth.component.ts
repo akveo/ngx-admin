@@ -11,11 +11,6 @@ import { NgaAuthService } from '../../services/auth.service';
   styleUrls: ['./auth.component.scss'],
   template: `
     <nga-layout>
-      <nga-layout-header>
-        <span *ngIf="authenticated">Authenticated</span>
-        <span *ngIf="!authenticated">Not authenticated</span>
-      </nga-layout-header>
-      
       <nga-layout-column>
         <div class="auth-block">
           <router-outlet></router-outlet>
@@ -26,16 +21,18 @@ import { NgaAuthService } from '../../services/auth.service';
 })
 export class NgaAuthComponent implements OnDestroy {
 
-  // TODO: move it from here!!
   subscription: any;
 
   authenticated: boolean = false;
   token: string = '';
 
+  // showcase of how to use the onAuthenticationChange method
   constructor(protected auth: NgaAuthService) {
 
     this.subscription = auth.onAuthenticationChange()
-      .subscribe(authenticated => this.authenticated = authenticated);
+      .subscribe(authenticated => {
+        this.authenticated = authenticated
+      });
   }
 
   ngOnDestroy(): void {

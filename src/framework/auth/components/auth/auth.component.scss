@@ -4,10 +4,6 @@
  * Licensed under the MIT License. See License.txt in the project root for license information.
  */
 :host {
-  /deep/ nga-layout-column {
-    // TODO: quick fix for broken layout
-    line-height: normal!important;
-  }
 
   .auth-block {
     max-width: 600px;
