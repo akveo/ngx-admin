@@ -1,2 +1,2 @@
-export interface NgaThemeOptions {
+export class NgaThemeOptions {
 }

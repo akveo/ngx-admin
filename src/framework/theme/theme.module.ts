@@ -9,9 +9,15 @@ import { NgaThemeOptions } from './theme.options';
   ],
 })
 export class NgaThemeModule {
-  static forRoot(ngaThemeOptions?: NgaThemeOptions): ModuleWithProviders {
-    return <ModuleWithProviders> {
+  static forRoot(config?: NgaThemeOptions): ModuleWithProviders {
+    return <ModuleWithProviders>{
       ngModule: NgaThemeModule,
+      providers: [
+        {
+          provide: NgaThemeOptions,
+          useValue: config,
+        },
+      ],
     };
   }
 }
