@@ -4,6 +4,10 @@ import { NgaMenuItem } from '../../framework/theme/components/menu/menu.options'
 
 export const menuItems: List<NgaMenuItem> = List([
   {
+    title: 'Menu Items',
+    group: true,
+  },
+  {
     title: 'Menu #1',
     link: '/menu/1',
   },

@@ -5,6 +5,11 @@
  */
 @mixin nga-menu-theme() {
   /deep/ nga-menu {
+    /deep/ .menu-group {
+      color: $nga-color-gray;
+      font-weight: $nga-font-weight-bolder;
+    }
+
     /deep/ ul {
       li {
         a {

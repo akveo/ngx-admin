@@ -7,19 +7,20 @@ import { browser, element, by } from 'protractor';
 
 import { hasClass } from './e2e-helper';
 
-const menu1 = by.css('nga-menu ul li:nth-child(1) a');
-const menu2 = by.css('nga-menu ul li:nth-child(2) a');
-const menu3 = by.css('nga-menu ul li:nth-child(3) a');
-const menu3SubMenu = by.css('nga-menu ul li:nth-child(3) ul');
-const menu31 = by.css('nga-menu ul li:nth-child(3) ul li:nth-child(1) a');
-const menu32 = by.css('nga-menu ul li:nth-child(3) ul li:nth-child(2) a');
-const menu33 = by.css('nga-menu ul li:nth-child(3) ul li:nth-child(3) a');
-const menu33SubMenu = by.css('nga-menu ul li:nth-child(3) ul li:nth-child(3) ul');
-const menu331 = by.css('nga-menu ul li:nth-child(3) ul li:nth-child(3) ul li:nth-child(1) a');
-const menu332 = by.css('nga-menu ul li:nth-child(3) ul li:nth-child(3) ul li:nth-child(2) a');
-const menu333 = by.css('nga-menu ul li:nth-child(3) ul li:nth-child(3) ul li:nth-child(3) a');
-const menu4 = by.css('nga-menu ul li:nth-child(4) a');
-const newMenu = by.css('nga-menu ul li:nth-child(6) a');
+const group = by.css('nga-menu ul li:nth-child(1) span');
+const menu1 = by.css('nga-menu ul li:nth-child(2) a');
+const menu2 = by.css('nga-menu ul li:nth-child(3) a');
+const menu3 = by.css('nga-menu ul li:nth-child(4) a');
+const menu3SubMenu = by.css('nga-menu ul li:nth-child(4) ul');
+const menu31 = by.css('nga-menu ul li:nth-child(4) ul li:nth-child(1) a');
+const menu32 = by.css('nga-menu ul li:nth-child(4) ul li:nth-child(2) a');
+const menu33 = by.css('nga-menu ul li:nth-child(4) ul li:nth-child(3) a');
+const menu33SubMenu = by.css('nga-menu ul li:nth-child(4) ul li:nth-child(3) ul');
+const menu331 = by.css('nga-menu ul li:nth-child(4) ul li:nth-child(3) ul li:nth-child(1) a');
+const menu332 = by.css('nga-menu ul li:nth-child(4) ul li:nth-child(3) ul li:nth-child(2) a');
+const menu333 = by.css('nga-menu ul li:nth-child(4) ul li:nth-child(3) ul li:nth-child(3) a');
+const menu4 = by.css('nga-menu ul li:nth-child(5) a');
+const newMenu = by.css('nga-menu ul li:nth-child(7) a');
 const addButton = by.css('#addBtn');
 const homeButton = by.css('#homeBtn');
 
@@ -27,6 +28,13 @@ describe('nga-menu', () => {
 
   beforeEach(() => {
     browser.get('#/menu');
+  });
+
+  it('should display group title', () => {
+    element.all(group).first().getText()
+      .then(val => {
+        expect(val).toEqual('Menu Items');
+      });
   });
 
   it('should display menu', () => {

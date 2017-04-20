@@ -4,10 +4,18 @@
  * Licensed under the MIT License. See License.txt in the project root for license information.
  */
 :host {
+  font-size: 1rem;
+  line-height: 1rem;
+
   /deep/ ul {
     list-style-type: none;
     padding: 0;
     transition: visibility 0s, opacity 0.2s linear;
+
+    .menu-group {
+      font-size: 1.5em;
+      line-height: 1.5em;
+    }
 
     li {
 
@@ -20,11 +28,11 @@
         display: flex;
         flex-direction: row;
         text-decoration: none;
-        font-size: 1rem;
-        line-height: 1rem;
+        font-size: 1em;
+        line-height: 1em;
 
         i:first-child {
-          width: 1.5rem;
+          width: 1.5em;
         }
 
         i {

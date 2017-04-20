@@ -1,4 +1,7 @@
-<a *ngIf="menuItem.link && !menuItem.url && !menuItem.children"
+<span *ngIf="menuItem.group" class="menu-group">
+  {{ menuItem.title }}
+</span>
+<a *ngIf="menuItem.link && !menuItem.url && !menuItem.children && !menuItem.group"
         [class.active]="menuItem.selected"
         [routerLink]="menuItem.link"
         [attr.target]="menuItem.target"
@@ -9,7 +12,7 @@
   <i *ngIf="!menuItem.icon"></i>
   <span>{{ menuItem.title }}</span>
 </a>
-<a *ngIf="menuItem.url && !menuItem.children && !menuItem.link"
+<a *ngIf="menuItem.url && !menuItem.children && !menuItem.link && !menuItem.group"
         [class.active]="menuItem.selected"
         [attr.href]="menuItem.url"
         [attr.target]="menuItem.target"
@@ -20,7 +23,7 @@
   <i *ngIf="!menuItem.icon"></i>
   <span>{{ menuItem.title }}</span>
 </a>
-<a *ngIf="!menuItem.children && !menuItem.link && !menuItem.url"
+<a *ngIf="!menuItem.children && !menuItem.link && !menuItem.url && !menuItem.group"
    [class.active]="menuItem.selected"
    [attr.target]="menuItem.target"
    [attr.title]="menuItem.title"
