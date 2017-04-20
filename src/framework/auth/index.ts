@@ -18,6 +18,5 @@ export * from './providers/dummy-auth.provider';
 export * from './providers/email-pass-auth.provider';
 
 
-// TODO: 2) how to reference the theme CSS files?
 // TODO: 4) custom headers
 
