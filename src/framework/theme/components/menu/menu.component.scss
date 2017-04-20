@@ -15,6 +15,10 @@
     .menu-group {
       font-size: 1.5em;
       line-height: 1.5em;
+
+      i {
+        width: 1em;
+      }
     }
 
     li {
@@ -32,7 +36,7 @@
         line-height: 1em;
 
         i:first-child {
-          width: 1.5em;
+          width: 1em;
         }
 
         i {

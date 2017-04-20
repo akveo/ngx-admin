@@ -1,4 +1,5 @@
 <span *ngIf="menuItem.group" class="menu-group">
+  <i class="{{ menuItem.icon }}" *ngIf="menuItem.icon"></i>
   {{ menuItem.title }}
 </span>
 <a *ngIf="menuItem.link && !menuItem.url && !menuItem.children && !menuItem.group"
@@ -9,7 +10,6 @@
         (mouseenter)="onHoverItem(menuItem)"
         (click)="onSelectItem(menuItem)">
   <i class="{{ menuItem.icon }}" *ngIf="menuItem.icon"></i>
-  <i *ngIf="!menuItem.icon"></i>
   <span>{{ menuItem.title }}</span>
 </a>
 <a *ngIf="menuItem.url && !menuItem.children && !menuItem.link && !menuItem.group"
@@ -20,7 +20,6 @@
         (mouseenter)="onHoverItem(menuItem)"
         (click)="onSelectItem(menuItem)">
   <i class="{{ menuItem.icon }}" *ngIf="menuItem.icon"></i>
-  <i *ngIf="!menuItem.icon"></i>
   <span>{{ menuItem.title }}</span>
 </a>
 <a *ngIf="!menuItem.children && !menuItem.link && !menuItem.url && !menuItem.group"
@@ -30,7 +29,6 @@
    (mouseenter)="onHoverItem(menuItem)"
    (click)="$event.preventDefault();onItemClick(menuItem)">
   <i class="{{ menuItem.icon }}" *ngIf="menuItem.icon"></i>
-  <i *ngIf="!menuItem.icon"></i>
   <span>{{ menuItem.title }}</span>
 </a>
 <a *ngIf="menuItem.children"
@@ -41,7 +39,6 @@
    (mouseenter)="onHoverItem(menuItem)"
    href="#">
   <i class="{{ menuItem.icon }}" *ngIf="menuItem.icon"></i>
-  <i *ngIf="!menuItem.icon"></i>
   <span>{{ menuItem.title }}</span>
   <i class="ion" [class.ion-chevron-down]="!menuItem.expanded"
                  [class.ion-chevron-up]="menuItem.expanded"></i>

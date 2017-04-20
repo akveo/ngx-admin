@@ -6,6 +6,7 @@ export const menuItems: List<NgaMenuItem> = List([
   {
     title: 'Menu Items',
     group: true,
+    icon: 'ion ion-heart',
   },
   {
     title: 'Menu #1',
