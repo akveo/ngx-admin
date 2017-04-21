@@ -33,7 +33,7 @@ export class NgaMenuService {
     this.items.forEach(i => this.setParent(i));
     this.items.forEach(i => this.prepareItem(i));
 
-    this.stack = this.stack.clear();
+    this.clearStack();
 
     this.itemsChanges$.next({ tag, items: this.items });
   }
@@ -41,7 +41,7 @@ export class NgaMenuService {
   resetMenuItems(tag?: string) {
     this.items.forEach(i => this.resetItem(i));
 
-    this.stack = this.stack.clear();
+    this.clearStack();
 
     this.itemsChanges$.next({
       tag,
@@ -73,7 +73,7 @@ export class NgaMenuService {
       }
     });
 
-    this.stack = this.stack.clear();
+    this.clearStack();
 
     if (homeItem) {
       this.resetMenuItems();
@@ -176,6 +176,10 @@ export class NgaMenuService {
     if (parent.parent) {
       this.resetItem(parent.parent);
     }
+  }
+
+  private clearStack() {
+    this.stack = this.stack.clear();
   }
 
 }
