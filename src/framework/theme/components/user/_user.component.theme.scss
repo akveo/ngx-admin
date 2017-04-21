@@ -40,6 +40,14 @@
       background-color: $nga-color-inverse;
       border: 1px solid $nga-user-menu-border;
 
+      ul > li > a {
+        color: $nga-link-color-active;
+
+        @include hover-focus-active {
+          color: $nga-link-color-hover;
+        }
+      }
+
       ul > li.arrow {
         border-bottom: 11px solid $nga-user-menu-border !important;
 
