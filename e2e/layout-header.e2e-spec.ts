@@ -8,7 +8,7 @@ import { browser, element, by } from 'protractor';
 describe('nga-layout-header', () => {
 
   beforeEach(() => {
-    browser.get('#/layout-header');
+    browser.get('#/layout/header');
   });
 
   it('should render default header', () => {

@@ -13,7 +13,7 @@ import { NgaThemeService } from '../../framework/theme/services/theme.service';
     <nga-layout>
       <nga-layout-header fixed>
         <a href="#" class="navbar-brand">Akveo</a>
-        <button (click)="changeTheme()">Change Theme</button>
+        <button id="change-theme" (click)="changeTheme()">Change Theme</button>
       </nga-layout-header>
 
       <nga-sidebar right>

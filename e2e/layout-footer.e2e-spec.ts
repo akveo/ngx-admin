@@ -8,7 +8,7 @@ import { browser, element, by } from 'protractor';
 describe('nga-layout-footer', () => {
 
   beforeEach(() => {
-    browser.get('#/layout-footer');
+    browser.get('#/layout/footer');
   });
 
   it('should render default footer', () => {
