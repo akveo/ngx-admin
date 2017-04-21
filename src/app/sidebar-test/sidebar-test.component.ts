@@ -5,7 +5,6 @@
  */
 import { Component, OnInit } from '@angular/core';
 
-import { NgaSidebarComponent } from '../../framework/theme/components/sidebar/sidebar.component';
 import { NgaSidebarService } from '../../framework/theme/components/sidebar/sidebar.service';
 
 @Component({

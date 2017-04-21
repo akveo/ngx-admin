@@ -1,0 +1,23 @@
+/**
+ * @license
+ * Copyright Akveo. All Rights Reserved.
+ * Licensed under the MIT License. See License.txt in the project root for license information.
+ */
+
+$nga-background-inverse: #5f1eff;
+$nga-header-foreground: #ce55bd;
+$nga-card-background: #cfe8ff;
+$nga-card-foreground: #747bde;
+$nga-card-separator: red;
+$nga-radius: 0;
+@import '../framework/theme/styles/themes/nga.theme.default';
+
+@include nga-theme('blue') {
+
+  // here you can override theme styles
+  nga-card-header {
+    color: red!important;
+    text-transform: capitalize!important;
+    text-decoration: underline;
+  }
+}

@@ -3,7 +3,7 @@
  * Copyright Akveo. All Rights Reserved.
  * Licensed under the MIT License. See License.txt in the project root for license information.
  */
-@mixin nga-sidebar-theme() {
+@mixin nga-sidebar-theme($theme-name) {
 
   /deep/ nga-sidebar {
 
@@ -14,6 +14,10 @@
       position: fixed;
       width: $nga-sidebar-width;
       background: $nga-sidebar-background;
+
+      > .main-container {
+        padding: $nga-sidebar-padding;
+      }
     }
 
     width: $nga-sidebar-width;
@@ -41,10 +45,6 @@
       > .scrollable {
         width: $nga-sidebar-width;
       }
-    }
-
-    > .main-container {
-      padding: $nga-sidebar-padding;
     }
 
     /deep/ nga-sidebar-header {

@@ -14,6 +14,7 @@ import { NgaSidebarTestComponent } from './sidebar-test/sidebar-test.component';
 import { NgaSidebarTestOneComponent } from './sidebar-test/sidebar-test-one.component';
 import { NgaSidebarTestTwoComponent } from './sidebar-test/sidebar-test-two.component';
 import { NgaSidebarTestThreeComponent } from './sidebar-test/sidebar-test-three.component';
+import { NgaThemeChangeTestComponent } from './layout-test/theme-change-test.component';
 import {
   NgaRouteTabsetTestComponent,
   NgaRouteTabsetTestChild1Component,
@@ -43,12 +44,16 @@ export const routes: Routes = [
     component: NgaLayoutTestComponent,
   },
   {
-    path: 'layout-header',
+    path: 'layout/header',
     component: NgaLayoutHeaderTestComponent,
   },
   {
-    path: 'layout-footer',
+    path: 'layout/footer',
     component: NgaLayoutFooterTestComponent,
+  },
+  {
+    path: 'layout/change-theme',
+    component: NgaThemeChangeTestComponent,
   },
   {
     path: 'tabset',

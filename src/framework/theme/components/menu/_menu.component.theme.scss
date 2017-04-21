@@ -3,7 +3,7 @@
  * Copyright Akveo. All Rights Reserved.
  * Licensed under the MIT License. See License.txt in the project root for license information.
  */
-@mixin nga-menu-theme() {
+@mixin nga-menu-theme($theme-name) {
   /deep/ nga-menu {
     /deep/ .menu-group {
       color: $nga-color-gray;

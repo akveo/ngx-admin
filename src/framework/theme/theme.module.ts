@@ -1,7 +1,9 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { NgaThemeOptions } from './theme.options';
+import { NgaThemeOptions, ngaThemeOptionsToken } from './theme.options';
+import { NgaThemeService } from './services/theme.service';
+
 
 @NgModule({
   imports: [
@@ -9,14 +11,18 @@ import { NgaThemeOptions } from './theme.options';
   ],
 })
 export class NgaThemeModule {
-  static forRoot(config?: NgaThemeOptions): ModuleWithProviders {
-    return <ModuleWithProviders>{
+  static forRoot(ngaThemeOptions?: NgaThemeOptions): ModuleWithProviders {
+
+    if (!ngaThemeOptions.name) {
+      throw new TypeError(`Please specify the default theme name "NgaThemeModule.forRoot({name: 'default'}); 
+        white registering the module."`);
+    }
+
+    return <ModuleWithProviders> {
       ngModule: NgaThemeModule,
       providers: [
-        {
-          provide: NgaThemeOptions,
-          useValue: config,
-        },
+        { provide: ngaThemeOptionsToken, useValue: ngaThemeOptions || {} },
+        NgaThemeService,
       ],
     };
   }

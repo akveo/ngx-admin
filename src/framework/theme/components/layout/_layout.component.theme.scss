@@ -3,8 +3,9 @@
  * Copyright Akveo. All Rights Reserved.
  * Licensed under the MIT License. See License.txt in the project root for license information.
  */
-@mixin nga-layout-theme() {
-  /deep/ nga-layout {
+@mixin nga-layout-theme($theme-name) {
+  /deep/ .layout {
+
     color: $nga-layout-foreground;
     background: $nga-layout-background;
     min-height: $nga-layout-min-height;

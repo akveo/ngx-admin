@@ -4,8 +4,11 @@
  * Licensed under the MIT License. See License.txt in the project root for license information.
  */
 :host {
-  display: flex;
-  flex-direction: column;
+
+  .layout {
+    display: flex;
+    flex-direction: column;
+  }
 
   /deep/ nga-layout-header {
     display: block;

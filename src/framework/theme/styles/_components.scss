@@ -13,12 +13,17 @@
 @import '../components/user/user.component.theme';
 
 // Create a theme
-@mixin nga-theme() {
-  @include nga-layout-theme();
-  @include nga-sidebar-theme();
-  @include nga-card-theme();
-  @include nga-tabset-theme();
-  @include nga-route-tabset-theme();
-  @include nga-menu-theme();
-  @include nga-user-theme();
+@mixin nga-theme($theme-name) {
+
+  /deep/ .theme-#{$theme-name} {
+    @include nga-layout-theme($theme-name);
+    @include nga-sidebar-theme($theme-name);
+    @include nga-card-theme($theme-name);
+    @include nga-tabset-theme($theme-name);
+    @include nga-route-tabset-theme($theme-name);
+    @include nga-menu-theme($theme-name);
+    @include nga-user-theme($theme-name);
+
+    @content;
+  }
 }
