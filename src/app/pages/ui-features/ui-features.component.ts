@@ -1,15 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-ui-features',
-  templateUrl: './ui-features.component.html',
-  styleUrls: ['./ui-features.component.scss']
+  selector: 'ui-features',
+  template: `
+    <p>
+      ui-features works!
+    </p>
+  `,
 })
-export class UiFeaturesComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+export class UiFeaturesComponent {
 }

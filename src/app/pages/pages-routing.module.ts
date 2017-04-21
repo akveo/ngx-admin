@@ -12,18 +12,18 @@ const routes: Routes = [
     path: '',
     component: PagesComponent,
     children: [
-      {path: 'dashboard', component: DashboardComponent},
-      {path: 'ui-features', component: UiFeaturesComponent},
-      {path: 'components', component: ComponentsComponent},
-      {path: 'maps', component: MapsComponent},
-      {path: '', redirectTo: 'dashboard', pathMatch: 'full'}
-    ]
-  }
+      { path: 'dashboard', component: DashboardComponent },
+      { path: 'ui-features', component: UiFeaturesComponent },
+      { path: 'components', component: ComponentsComponent },
+      { path: 'maps', component: MapsComponent },
+      { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+    ],
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class PagesRoutingModule {
 }

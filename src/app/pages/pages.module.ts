@@ -1,9 +1,6 @@
 import { NgModule } from '@angular/core';
 
-import {
-  NgaSidebarModule,
-  NgaMenuModule
-} from '@nga/theme';
+import { NgaMenuModule, NgaSidebarModule, NgaThemeModule } from '@nga/theme';
 
 import { menuItems } from './pages-menu';
 
@@ -17,20 +14,19 @@ import { ComponentsComponent } from './components/components.component';
 
 @NgModule({
   imports: [
+    NgaThemeModule.forRoot({ name: 'pure' }),
     NgaSidebarModule.forRoot(),
-    NgaMenuModule.forRoot({
-      items: menuItems
-    }),
+    NgaMenuModule.forRoot({ items: menuItems }),
     PagesRoutingModule,
-    ThemeModule
+    ThemeModule,
   ],
   declarations: [
     PagesComponent,
     DashboardComponent,
     UiFeaturesComponent,
     MapsComponent,
-    ComponentsComponent
-  ]
+    ComponentsComponent,
+  ],
 })
 export class PagesModule {
 }

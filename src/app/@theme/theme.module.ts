@@ -9,7 +9,7 @@ import {
   NgaRouteTabsetModule,
   NgaSidebarModule,
   NgaMenuModule,
-  NgaUserModule
+  NgaUserModule,
 } from '@nga/theme';
 
 import { SearchInputComponent } from './search-input/search-input.component';
@@ -19,7 +19,7 @@ import { BaseFooterComponent } from './layouts/base-footer/base-footer.component
 const BASE_MODULES = [
   CommonModule,
   FormsModule,
-  ReactiveFormsModule
+  ReactiveFormsModule,
 ];
 
 const NGA_MODULES = [
@@ -28,13 +28,13 @@ const NGA_MODULES = [
   NgaTabsetModule,
   NgaRouteTabsetModule,
   NgaMenuModule,
-  NgaUserModule
+  NgaUserModule,
 ];
 
 const LAYOUTS = [
   OneCollLayoutComponent,
   BaseHeaderComponent,
-  BaseFooterComponent
+  BaseFooterComponent,
 ];
 
 @NgModule({
@@ -47,13 +47,13 @@ const LAYOUTS = [
     ...BASE_MODULES,
     ...NGA_MODULES,
     ...LAYOUTS,
-    SearchInputComponent
+    SearchInputComponent,
   ],
   declarations: [
     ...LAYOUTS,
     SearchInputComponent,
-    BaseFooterComponent
-  ]
+    BaseFooterComponent,
+  ],
 })
 export class ThemeModule {
 }

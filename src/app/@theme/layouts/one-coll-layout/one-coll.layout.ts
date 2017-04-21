@@ -9,9 +9,7 @@ import { Component } from '@angular/core';
       </nga-layout-header>
 
       <nga-sidebar>
-        <nga-sidebar-content>
-          <ng-content select="nga-menu"></ng-content>
-        </nga-sidebar-content>
+        <ng-content select="nga-menu"></ng-content>
       </nga-sidebar>
 
       <nga-layout-column>

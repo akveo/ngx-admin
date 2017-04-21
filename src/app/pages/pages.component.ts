@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
       <nga-menu></nga-menu>
       <router-outlet></router-outlet>
     </one-coll-layout>
-  `
+  `,
 })
 export class PagesComponent {
 }

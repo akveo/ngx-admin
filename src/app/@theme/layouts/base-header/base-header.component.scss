@@ -4,7 +4,7 @@
   justify-content: space-between;
 
   i.control-icon {
-    &:before {
+    &::before {
       font-size: 2.3rem;
     }
 
@@ -47,6 +47,7 @@
       font-size: 1.7rem;
       text-decoration: none;
       transition: all 0.2s ease;
+      cursor: pointer;
     }
   }
 

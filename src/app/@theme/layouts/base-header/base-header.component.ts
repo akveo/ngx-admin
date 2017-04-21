@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { NgaSidebarService } from '@nga/theme/components/sidebar/sidebar.service';
+import { NgaSidebarService, NgaMenuService } from '@nga/theme';
 
 @Component({
   selector: 'base-header',
@@ -8,7 +8,7 @@ import { NgaSidebarService } from '@nga/theme/components/sidebar/sidebar.service
   template: `
     <div class="left">
       <i class="control-icon ion ion-navicon" (click)="toggleSidebar()"></i>
-      <a href="/#/pages/dashboard" class="logo">NgX <span>Admin</span></a>
+      <span class="logo" (click)="goToHome()">NgX &nbsp; <span>Admin</span></span>
     </div>
     <div class="right">
       <search-input></search-input>
@@ -17,13 +17,18 @@ import { NgaSidebarService } from '@nga/theme/components/sidebar/sidebar.service
       <nga-user></nga-user>
       <i class="control-icon ion ion-ios-gear-outline"></i>
     </div>
-  `
+  `,
 })
 export class BaseHeaderComponent {
-  constructor(private sidebarService: NgaSidebarService) {
+  constructor(private sidebarService: NgaSidebarService,
+              private menuService: NgaMenuService) {
   }
 
   toggleSidebar() {
     this.sidebarService.toggle(true);
+  }
+
+  goToHome() {
+    this.menuService.navigateHome();
   }
 }

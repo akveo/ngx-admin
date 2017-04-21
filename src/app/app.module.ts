@@ -7,10 +7,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 
-import { NgaThemeModule } from '@nga/theme';
+import { CoreModule } from './@core/core.module';
 
 import { AppComponent } from './app.component';
-import { CoreModule } from './@core/core.module';
 import { PagesModule } from './pages/pages.module';
 import { AppRoutingModule } from './app-routing.module';
 
@@ -19,10 +18,9 @@ import { AppRoutingModule } from './app-routing.module';
   imports: [
     BrowserModule,
     HttpModule,
-    NgaThemeModule.forRoot(),
     AppRoutingModule,
     CoreModule,
-    PagesModule
+    PagesModule,
   ],
   bootstrap: [AppComponent],
 })

@@ -2,8 +2,11 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'dashboard',
-  templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.scss']
+  template: `
+    <p>
+      dashboard works!
+    </p>
+  `,
 })
 export class DashboardComponent {
 }

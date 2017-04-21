@@ -11,7 +11,7 @@ import { Component } from '@angular/core';
       <a href="https://twitter.com/akveo_inc" target="_blank" class="ion ion-social-twitter"></a>
       <a href="https://www.linkedin.com/company/akveo" target="_blank" class="ion ion-social-linkedin"></a>
     </div>
-  `
+  `,
 })
 export class BaseFooterComponent {
 }

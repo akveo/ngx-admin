@@ -11,7 +11,7 @@ import { Component, ElementRef, EventEmitter, Output, ViewChild } from '@angular
            [class.hidden]="!isInputShown"
            (blur)="hideInput()"
            (input)="onInput($event)">
-  `
+  `,
 })
 export class SearchInputComponent {
   @ViewChild('input') input: ElementRef;
