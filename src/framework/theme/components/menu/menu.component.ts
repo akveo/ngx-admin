@@ -98,7 +98,7 @@ export class NgaMenuComponent implements OnInit {
     this.toggleSubMenu.emit(item);
   }
 
-  onSelectItem(item: NgaMenuItem) {
+  onSelectItem(item: any) {
     this.menuService.resetMenuItems(this.tag);
 
     item.selected = true;

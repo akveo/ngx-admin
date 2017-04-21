@@ -11,7 +11,6 @@ export class NgaMenuItem {
   url?: string;
   icon?: string;
   expanded?: boolean = false;
-  selected?: boolean = false;
   children?: List<NgaMenuItem>;
   target?: string;
   hidden?: boolean = false;

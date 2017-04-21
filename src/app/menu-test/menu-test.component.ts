@@ -127,7 +127,7 @@ export class NgaMenuItem4Component implements OnInit {
         <nga-menu tag="firstMenu"></nga-menu>
         <router-outlet></router-outlet>
         <button class="btn btn-primary" id="addBtn" (click)="addMenuItem()">Add</button>
-        <button class="btn btn-primary" id="homeBtn" (click)="goToHome()">Home</button>
+        <button class="btn btn-primary" id="homeBtn" (click)="navigateHome()">Home</button>
       </nga-layout-column>
     </nga-layout>
   `,
@@ -145,8 +145,8 @@ export class NgaMenuTestComponent implements OnInit {
     this.menuService.addMenuItems(List<NgaMenuItem>([{ title: 'New Menu Item' }]), 'firstMenu');
   }
 
-  goToHome() {
-    this.menuService.goToHome();
+  navigateHome() {
+    this.menuService.navigateHome();
   }
 
 }

@@ -62,9 +62,8 @@ export class NgaMenuService {
     });
   }
 
-  // TODO: let's rename to goHome or navigateHome to sound more natively
-  goToHome() {
-    let homeItem: NgaMenuItem;
+  navigateHome() {
+    let homeItem: any;
 
     this.items.forEach(i => {
       const result = this.getHomeItem(i);
@@ -127,7 +126,9 @@ export class NgaMenuService {
     }
   }
 
-  private prepareItem(parent: NgaMenuItem) {
+  private prepareItem(parent: any) {
+    parent.selected = false;
+
     this.stack = this.stack.push(parent);
 
     if (parent.expanded) {
@@ -157,7 +158,7 @@ export class NgaMenuService {
     }
   }
 
-  private resetItem(parent: NgaMenuItem) {
+  private resetItem(parent: any) {
     parent.selected = false;
 
     this.stack = this.stack.push(parent);
