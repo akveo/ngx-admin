@@ -62,6 +62,7 @@ export class NgaMenuService {
     });
   }
 
+  // TODO: let's rename to goHome or navigateHome to sound more natively
   goToHome() {
     let homeItem: NgaMenuItem;
 
