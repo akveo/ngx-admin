@@ -11,13 +11,8 @@ import { NgaThemeService } from './services/theme.service';
   ],
 })
 export class NgaThemeModule {
-  static forRoot(ngaThemeOptions?: NgaThemeOptions): ModuleWithProviders {
-
-    if (!ngaThemeOptions.name) {
-      throw new TypeError(`Please specify the default theme name "NgaThemeModule.forRoot({name: 'default'}); 
-        white registering the module."`);
-    }
-
+  // TODO: check the options (throw exception?)
+  static forRoot(ngaThemeOptions: NgaThemeOptions): ModuleWithProviders {
     return <ModuleWithProviders> {
       ngModule: NgaThemeModule,
       providers: [
