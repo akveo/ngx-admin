@@ -8,7 +8,6 @@ import { List } from 'immutable';
 
 import { NgaMenuService } from '../../framework/theme/components/menu/menu.service';
 import { NgaMenuItem } from '../../framework/theme/components/menu/menu.options';
-import { menuItems } from './menu-items';
 
 @Component({
   selector: 'nga-menu-item1',
@@ -123,10 +122,14 @@ export class NgaMenuItem4Component implements OnInit {
 @Component({
   selector: 'nga-menu-test',
   template: `
-    <nga-menu tag="firstMenu"></nga-menu>
-    <router-outlet></router-outlet>
-    <button class="btn btn-primary" id="addBtn" (click)="addMenuItem()">Add</button>
-    <button class="btn btn-primary" id="homeBtn" (click)="goToHome()">Home</button>
+    <nga-layout>
+      <nga-layout-column>
+        <nga-menu tag="firstMenu"></nga-menu>
+        <router-outlet></router-outlet>
+        <button class="btn btn-primary" id="addBtn" (click)="addMenuItem()">Add</button>
+        <button class="btn btn-primary" id="homeBtn" (click)="goToHome()">Home</button>
+      </nga-layout-column>
+    </nga-layout>
   `,
 })
 export class NgaMenuTestComponent implements OnInit {
