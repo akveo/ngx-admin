@@ -17,6 +17,3 @@ export * from './providers/abstract-auth.provider';
 export * from './providers/dummy-auth.provider';
 export * from './providers/email-pass-auth.provider';
 
-
-// TODO: 4) custom headers
-

@@ -2,6 +2,7 @@ import { NgModule, ModuleWithProviders, Injector, Optional, SkipSelf } from '@an
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
 
 // TODO: how should we link modules together?
 import { NgaLayoutModule } from '../theme/components/layout/layout.module';
@@ -13,6 +14,9 @@ import { NgaEmailPassAuthProvider } from './providers/email-pass-auth.provider';
 import { NgaAuthOptions, ngaAuthOptionsToken } from './auth.options';
 
 import { NgaAuthComponent } from './components/auth.component';
+import { NgaTokenService } from './services/token.service';
+import { NgaSecuredHttp } from './services/secured-http';
+
 import { NgaAuthBlockComponent } from './components/auth-block/auth-block.component';
 import { NgaLoginComponent } from './components/login/login.component';
 import { NgaRegisterComponent } from './components/register/register.component';
@@ -21,7 +25,6 @@ import { NgaRequestPasswordComponent } from './components/request-password/reque
 import { NgaResetPasswordComponent } from './components/reset-password/reset-password.component';
 
 import { routes } from './auth.routes';
-import { NgaTokenService } from './services/token.service';
 
 export function ngaAuthServiceFactory(config: any, tokenService: NgaTokenService, injector: Injector) {
   const providers = config.providers || {};
@@ -42,6 +45,7 @@ export function ngaAuthServiceFactory(config: any, tokenService: NgaTokenService
     NgaLayoutModule,
     RouterModule.forChild(routes),
     FormsModule,
+    HttpModule,
   ],
   declarations: [
     NgaAuthComponent,
@@ -81,6 +85,7 @@ export class NgaAuthModule {
           deps: [ngaAuthOptionsToken, NgaTokenService, Injector],
         },
         NgaTokenService,
+        NgaSecuredHttp,
         NgaDummyAuthProvider,
         NgaEmailPassAuthProvider,
       ],
