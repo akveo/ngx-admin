@@ -5,7 +5,7 @@
  */
 export * from './auth.options';
 export * from './auth.module';
-export * from './components/auth/auth.component';
+export * from './components/auth-block/auth-block.component';
 export * from './components/login/login.component';
 export * from './components/register/register.component';
 export * from './components/request-password/request-password.component';

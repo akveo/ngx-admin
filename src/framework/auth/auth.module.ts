@@ -11,7 +11,9 @@ import { NgaDummyAuthProvider } from './providers/dummy-auth.provider';
 import { NgaEmailPassAuthProvider } from './providers/email-pass-auth.provider';
 
 import { NgaAuthOptions, ngaAuthOptionsToken } from './auth.options';
-import { NgaAuthComponent } from './components/auth/auth.component';
+
+import { NgaAuthComponent } from './components/auth.component';
+import { NgaAuthBlockComponent } from './components/auth-block/auth-block.component';
 import { NgaLoginComponent } from './components/login/login.component';
 import { NgaRegisterComponent } from './components/register/register.component';
 import { NgaLogoutComponent } from './components/logout/logout.component';
@@ -43,6 +45,7 @@ export function ngaAuthServiceFactory(config: any, tokenService: NgaTokenService
   ],
   declarations: [
     NgaAuthComponent,
+    NgaAuthBlockComponent,
     NgaLoginComponent,
     NgaRegisterComponent,
     NgaRequestPasswordComponent,
@@ -51,6 +54,7 @@ export function ngaAuthServiceFactory(config: any, tokenService: NgaTokenService
   ],
   exports: [
     NgaAuthComponent,
+    NgaAuthBlockComponent,
     NgaLoginComponent,
     NgaRegisterComponent,
     NgaRequestPasswordComponent,

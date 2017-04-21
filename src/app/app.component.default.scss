@@ -4,5 +4,10 @@
  * Licensed under the MIT License. See License.txt in the project root for license information.
  */
 
+// @nga/theme module styles
 @import '../framework/theme/styles/themes/nga.theme.default';
 @include nga-theme('default');
+
+// @nga/auth module styles
+@import '../framework/auth/styles/themes/nga.theme.default';
+@include nga-auth('default');

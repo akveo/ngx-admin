@@ -4,6 +4,7 @@
  * Licensed under the MIT License. See License.txt in the project root for license information.
  */
 
+// @nga/theme module styles
 $nga-background-inverse: #5f1eff;
 $nga-header-foreground: #ce55bd;
 $nga-card-background: #cfe8ff;
@@ -21,3 +22,7 @@ $nga-radius: 0;
     text-decoration: underline;
   }
 }
+
+// @nga/auth module styles
+@import '../framework/auth/styles/themes/nga.theme.default';
+@include nga-auth('blue');

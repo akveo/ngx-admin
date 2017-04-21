@@ -5,7 +5,7 @@
  */
 import { Routes } from '@angular/router';
 
-import { NgaAuthComponent } from './components/auth/auth.component';
+import { NgaAuthComponent } from './components/auth.component';
 import { NgaLoginComponent } from './components/login/login.component';
 import { NgaRegisterComponent } from './components/register/register.component';
 import { NgaLogoutComponent } from './components/logout/logout.component';
