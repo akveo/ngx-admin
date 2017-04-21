@@ -16,11 +16,14 @@ import { NgaMenuItem, NgaMenuModuleConfig } from './menu.options';
 export class NgaMenuService {
 
   private itemsChanges$ = new Subject();
-  private itemClickChanges$ = new Subject();
+  private itemClick$ = new Subject();
+  private addItems$ = new Subject();
+  private navigateHome$ = new Subject();
 
-  itemsChanges: Observable<{ tag: string, items: List<NgaMenuItem> }> = this.itemsChanges$.asObservable();
-
-  itemClickChanges: Observable<{ tag: string, item: NgaMenuItem }> = this.itemClickChanges$.asObservable();
+  itemsChangesSuggest: Observable<{ tag: string, items: List<NgaMenuItem> }> = this.itemsChanges$.asObservable();
+  itemClickSuggest: Observable<{ tag: string, item: NgaMenuItem }> = this.itemClick$.asObservable();
+  addItemsSuggest: Observable<{ tag: string, items: List<NgaMenuItem> }> = this.addItems$.asObservable();
+  navigateHomeSuggest: Observable<{ tag: string }> = this.navigateHome$.asObservable();
 
   private stack = List<NgaMenuItem>();
   private items = List<NgaMenuItem>();
@@ -29,85 +32,36 @@ export class NgaMenuService {
     this.items = List(this.config.items);
   }
 
-  prepareItems(tag?: string) {
-    this.items.forEach(i => this.setParent(i));
-    this.items.forEach(i => this.prepareItem(i));
-
-    this.clearStack();
-
-    this.itemsChanges$.next({ tag, items: this.items });
+  getItems(): List<NgaMenuItem> {
+    return List(this.items);
   }
 
-  resetMenuItems(tag?: string) {
-    this.items.forEach(i => this.resetItem(i));
+  prepareItems(items: List<NgaMenuItem>) {
+    items.forEach(i => this.setParent(i));
+    items.forEach(i => this.prepareItem(i));
 
     this.clearStack();
-
-    this.itemsChanges$.next({
-      tag,
-      items: this.items,
-    });
   }
 
-  addMenuItems(newItems: List<NgaMenuItem>, tag?: string) {
-    this.items = this.items.push(...newItems.toJS());
+  resetItems(items: List<NgaMenuItem>) {
+    items.forEach(i => this.resetItem(i));
 
-    this.prepareItems(tag);
+    this.clearStack();
+  }
+
+  addItems(items: List<NgaMenuItem>, tag?: string) {
+    this.addItems$.next({ tag, items });
   }
 
   itemClick(item: NgaMenuItem, tag?: string) {
-    this.itemClickChanges$.next({
+    this.itemClick$.next({
       tag,
       item,
     });
   }
 
-  navigateHome() {
-    let homeItem: any;
-
-    this.items.forEach(i => {
-      const result = this.getHomeItem(i);
-
-      if (result) {
-        homeItem = result;
-      }
-    });
-
-    this.clearStack();
-
-    if (homeItem) {
-      this.resetMenuItems();
-
-      homeItem.selected = true;
-
-      if (homeItem.link) {
-        this.router.navigate([homeItem.link]);
-      }
-
-      if (homeItem.url) {
-        window.location.href = homeItem.url;
-      }
-    }
-  }
-
-  private getHomeItem(parent: NgaMenuItem): NgaMenuItem {
-    this.stack = this.stack.push(parent);
-
-    if (parent.home) {
-      return parent;
-    }
-
-    if (parent.children && parent.children.size > 0) {
-      const first = parent.children.filter(c => !this.stack.contains(c)).first();
-
-      if (first) {
-        return this.getHomeItem(first);
-      }
-    }
-
-    if (parent.parent) {
-      return this.getHomeItem(parent.parent);
-    }
+  navigateHome(tag?: string) {
+    this.navigateHome$.next({ tag });
   }
 
   private setParent(parent: NgaMenuItem) {
@@ -146,7 +100,7 @@ export class NgaMenuService {
     }
 
     if (parent.children && parent.children.size > 0) {
-      const firstUnchecked = parent.children.filter(c => !this.stack.contains(c)).first();
+      const firstUnchecked = parent.children.filter((c: any) => !this.stack.contains(c)).first();
 
       if (firstUnchecked) {
         this.prepareItem(firstUnchecked);
@@ -164,7 +118,7 @@ export class NgaMenuService {
     this.stack = this.stack.push(parent);
 
     if (parent.children && parent.children.size > 0) {
-      const firstSelected = parent.children.filter(c => !this.stack.contains(c)).first();
+      const firstSelected = parent.children.filter((c: any) => !this.stack.contains(c)).first();
 
       if (firstSelected) {
         firstSelected.selected = false;

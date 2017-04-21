@@ -75,17 +75,39 @@ export class NgaMenuComponent implements OnInit {
 
   menuItems: List<NgaMenuItem>;
 
+  private stack = List<NgaMenuItem>();
+
   constructor(private menuService: NgaMenuService, private router: Router) { }
 
   ngOnInit() {
-    this.menuService.itemsChanges
+    this.menuService.itemsChangesSuggest
       .subscribe((data: { tag: string, items: List<NgaMenuItem> }) => {
         if (!data.tag || data.tag === this.tag) {
           this.menuItems = data.items;
+
+          this.menuService.prepareItems(this.menuItems);
         }
       });
 
-    this.menuService.prepareItems();
+    this.menuService.addItemsSuggest
+      .subscribe((data: { tag: string, items: List<NgaMenuItem> }) => {
+        if (!data.tag || data.tag === this.tag) {
+          this.menuItems = this.menuItems.push(...data.items.toJS());
+
+          this.menuService.prepareItems(this.menuItems);
+        }
+      });
+
+    this.menuService.navigateHomeSuggest
+      .subscribe((data: { tag: string }) => {
+        if (!data.tag || data.tag === this.tag) {
+          this.navigateHome();
+        }
+      });
+
+    this.menuItems = this.menuService.getItems();
+
+    this.menuService.prepareItems(this.menuItems);
   }
 
   onHoverItem(item: NgaMenuItem) {
@@ -99,13 +121,61 @@ export class NgaMenuComponent implements OnInit {
   }
 
   onSelectItem(item: any) {
-    this.menuService.resetMenuItems(this.tag);
+    this.menuService.resetItems(this.menuItems);
 
     item.selected = true;
   }
 
   onItemClick(item: NgaMenuItem) {
     this.menuService.itemClick(item, this.tag);
+  }
+
+  private navigateHome() {
+    let homeItem: any;
+
+    this.menuItems.forEach(i => {
+      const result = this.getHomeItem(i);
+
+      if (result) {
+        homeItem = result;
+      }
+    });
+
+    this.stack = this.stack.clear();
+
+    if (homeItem) {
+      this.menuService.resetItems(this.menuItems);
+
+      homeItem.selected = true;
+
+      if (homeItem.link) {
+        this.router.navigate([homeItem.link]);
+      }
+
+      if (homeItem.url) {
+        window.location.href = homeItem.url;
+      }
+    }
+  }
+
+  private getHomeItem(parent: NgaMenuItem): NgaMenuItem {
+    this.stack = this.stack.push(parent);
+
+    if (parent.home) {
+      return parent;
+    }
+
+    if (parent.children && parent.children.size > 0) {
+      const first = parent.children.filter(c => !this.stack.contains(c)).first();
+
+      if (first) {
+        return this.getHomeItem(first);
+      }
+    }
+
+    if (parent.parent) {
+      return this.getHomeItem(parent.parent);
+    }
   }
 
 }

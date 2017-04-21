@@ -51,7 +51,6 @@ import {
 import { NgaUserTestComponent } from './user-test/user-test.component';
 
 import { routes } from './app.routes';
-import { menuItems } from './menu-test/menu-items';
 
 const NGA_TEST_COMPONENTS = [
   NgaAppComponent,
@@ -90,9 +89,7 @@ const NGA_TEST_COMPONENTS = [
     NgaThemeModule.forRoot({ name: 'default' }),
     NgaCardModule,
     NgaLayoutModule,
-    NgaMenuModule.forRoot({
-      items: menuItems,
-    }),
+    NgaMenuModule.forRoot(),
     NgaRouteTabsetModule,
     NgaSidebarModule.forRoot(),
     NgaTabsetModule,

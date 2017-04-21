@@ -3,7 +3,7 @@
  * Copyright Akveo. All Rights Reserved.
  * Licensed under the MIT License. See License.txt in the project root for license information.
  */
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterContentInit, AfterViewInit } from '@angular/core';
 import { List } from 'immutable';
 
 import { NgaMenuService } from '../../framework/theme/components/menu/menu.service';
@@ -132,21 +132,90 @@ export class NgaMenuItem4Component implements OnInit {
     </nga-layout>
   `,
 })
-export class NgaMenuTestComponent implements OnInit {
+export class NgaMenuTestComponent implements OnInit, AfterViewInit {
+
+  private menuItems: List<NgaMenuItem> = List([
+    {
+      title: 'Menu Items',
+      group: true,
+      icon: 'ion ion-heart',
+    },
+    {
+      title: 'Menu #1',
+      link: '/menu/1',
+    },
+    {
+      title: 'Menu #2',
+      link: '/menu/2',
+      icon: 'ion ion-ionic',
+    },
+    {
+      title: 'Menu #3',
+      children: List([
+        {
+          title: 'Menu #3.1',
+          link: '/menu/3/1',
+          icon: 'ion ion-heart',
+        },
+        {
+          title: 'Menu #3.2',
+          link: '/menu/3/2',
+        },
+        {
+          title: 'Menu #3.3',
+          icon: 'ion ion-icecream',
+          children: List([
+            {
+              title: 'Menu #3.3.1',
+              link: '/menu/3/3/1',
+            },
+            {
+              title: 'Menu #3.3.2',
+              link: '/menu/3/3/2',
+              icon: 'ion ion-happy-outline',
+              home: true,
+            },
+            {
+              title: '@nga/theme',
+              target: '_blank',
+              url: 'https://github.com/akveo/ng2-admin',
+            },
+          ]),
+        },
+      ]),
+    },
+    {
+      title: 'Menu #4',
+      link: '/menu/4',
+      icon: 'ion ion-ionic',
+    },
+    {
+      title: 'Menu #5',
+      icon: 'ion ion-ionic',
+    },
+  ]);
 
   constructor(private menuService: NgaMenuService) { }
 
   ngOnInit() {
-    this.menuService.itemClickChanges
+    this.menuService.itemClickSuggest
       .subscribe((data: { tag: string, item: NgaMenuItem }) => console.info(data));
+
+    this.menuService.addItems(this.menuItems, 'firstMenu');
+
+    this.menuService.navigateHome('firstMenu');
+  }
+
+  ngAfterViewInit() {
+    this.menuService.addItems(this.menuItems, 'firstMenu');
   }
 
   addMenuItem() {
-    this.menuService.addMenuItems(List<NgaMenuItem>([{ title: 'New Menu Item' }]), 'firstMenu');
+    this.menuService.addItems(List<NgaMenuItem>([{ title: 'New Menu Item' }]), 'firstMenu');
   }
 
   navigateHome() {
-    this.menuService.navigateHome();
+    this.menuService.navigateHome('firstMenu');
   }
 
 }

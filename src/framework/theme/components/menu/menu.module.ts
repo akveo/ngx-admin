@@ -4,6 +4,7 @@
  * Licensed under the MIT License. See License.txt in the project root for license information.
  */
 import { NgModule, ModuleWithProviders } from '@angular/core';
+import { List } from 'immutable';
 
 import { NgaSharedModule } from '../shared/shared.module';
 
@@ -33,7 +34,7 @@ const NGA_MENU_PROVIDERS = [
   ],
 })
 export class NgaMenuModule {
-  static forRoot(config?: NgaMenuModuleConfig): ModuleWithProviders {
+  static forRoot(config: NgaMenuModuleConfig = List<NgaMenuItem>()): ModuleWithProviders {
     return <ModuleWithProviders>{
       ngModule: NgaMenuModule,
       providers: [
