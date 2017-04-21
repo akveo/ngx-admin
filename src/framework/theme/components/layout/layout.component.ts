@@ -10,7 +10,7 @@ import {
   HostBinding,
   Input,
   OnDestroy,
-  Renderer2
+  Renderer2,
 } from '@angular/core';
 import { convertToBoolProperty } from '../helpers';
 import { NgaThemeService } from '../../services/theme.service';
@@ -138,7 +138,7 @@ export class NgaLayoutComponent implements OnDestroy {
         this.renderer.removeClass(this.elementRef.nativeElement, 'theme-' + theme.previous);
       }
       this.renderer.addClass(this.elementRef.nativeElement, 'theme-' + theme.name);
-    })
+    });
   }
 
   ngOnDestroy(): void {

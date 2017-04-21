@@ -24,7 +24,7 @@ export class NgaThemeService {
   }
 
   changeTheme(name?: string): void {
-    this.themeChanges$.next({name: name, previous: this.currentTheme});
+    this.themeChanges$.next({ name: name, previous: this.currentTheme });
     this.currentTheme = name;
   }
 
