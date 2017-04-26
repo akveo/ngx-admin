@@ -1,0 +1,32 @@
+{
+  "compilerOptions": {
+    "declaration": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "lib": [
+      "es2015",
+      "dom"
+    ],
+    "module": "es2015",
+    "moduleResolution": "node",
+    "noEmitOnError": true,
+    "noImplicitAny": true,
+    "outDir": "./dist",
+    "rootDir": "./build",
+    "sourceMap": true,
+    "target": "es5",
+    "inlineSources": true,
+    "baseUrl": ".",
+    "paths": {
+      "@angular/core": ["node_modules/@angular/core"]
+    },
+    "skipLibCheck": true
+  },
+  "files": [
+    "./build/auth/index.ts"
+  ],
+  "angularCompilerOptions": {
+    "strictMetadataEmit": true,
+    "genDir": "./compiled"
+  }
+}
