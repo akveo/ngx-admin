@@ -1,66 +1,10 @@
-@import '../components';
 @import 'pure.variables';
+@import '../components';
+@import 'nga-redefines/redefines';
 
 @import '~@nga/theme/styles/themes/nga.theme.default';
 
 @include nga-theme('pure') {
-  $layout-shadow: 0 4px 12px 0 rgba(33, 57, 161, 0.08);
-
-  * {
-    transition: all 0.1s;
-  }
-
-  a, i {
-    @include hover-focus-active {
-      color: $nga-color-secondary !important;
-      text-decoration: none;
-    }
-  }
-
-  nga-layout-header > nav {
-    box-shadow: $layout-shadow;
-  }
-
-  nga-sidebar {
-    z-index: 1;
-    box-shadow: $layout-shadow;
-
-    ul li {
-      &:first-child {
-        margin-top: 3rem;
-      }
-
-      a {
-        display: flex;
-        align-items: center;
-
-        transition: all 0.2s ease;
-        padding: 0.375rem 0 0.375rem 1rem;
-        color: $nga-color-inverse;
-
-        &.active {
-          color: $nga-color-inverse !important;
-          background: $nga-background;
-          font-weight: bold;
-        }
-
-        i {
-          font-size: 2rem;
-          margin-right: 1.25rem;
-
-          &:first-child {
-            display: flex;
-            justify-content: center;
-          }
-        }
-      }
-    }
-  }
-
-  nga-layout-footer > nav {
-    box-shadow: $layout-shadow;
-    border: none !important;
-    padding: 1.25rem;
-  }
+  @include nga-theme-redefines();
   @include custom-components-theme();
 }

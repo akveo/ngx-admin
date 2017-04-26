@@ -9,7 +9,7 @@ import { NgaThemeService } from '@nga/theme/services/theme.service';
   template: `
     <div class="left">
       <i class="control-icon ion ion-navicon" (click)="toggleSidebar()"></i>
-      <span class="logo" (click)="goToHome()">NgX &nbsp; <a>Admin</a></span>
+      <span class="logo" (click)="goToHome()">NgX&nbsp;<a>Admin</a></span>
       <button (click)="switchTheme()">Switch Theme!</button>
     </div>
     <div class="right">

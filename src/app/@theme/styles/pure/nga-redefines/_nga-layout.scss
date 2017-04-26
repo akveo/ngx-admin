@@ -1,0 +1,27 @@
+@mixin nga-layout-redefines {
+  $layout-border-shadow: 0 4px 12px 0 rgba(33, 57, 161, 0.08);
+
+  /deep/ .layout {
+    a, i {
+      @include hover-focus-active {
+        color: $nga-color-secondary !important;
+        text-decoration: none;
+      }
+    }
+
+    nga-layout-header > nav {
+      box-shadow: $layout-border-shadow;
+    }
+
+    nga-sidebar {
+      z-index: 1;
+      box-shadow: $layout-border-shadow;
+    }
+
+    nga-layout-footer > nav {
+      box-shadow: $layout-border-shadow;
+      border: none !important;
+      padding: 1.25rem;
+    }
+  }
+}

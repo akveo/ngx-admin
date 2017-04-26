@@ -45,9 +45,14 @@
 
     .logo {
       font-size: 1.7rem;
+      font-weight: bold;
       text-decoration: none;
       transition: all 0.2s ease;
       cursor: pointer;
+
+      a {
+        font-weight: normal;
+      }
     }
   }
 

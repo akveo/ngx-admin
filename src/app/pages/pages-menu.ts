@@ -10,7 +10,7 @@ export const menuItems: List<NgaMenuItem> = List([
     home: true,
   },
   {
-    title: 'Features',
+    title: 'FEATURES',
     group: true,
   },
   {

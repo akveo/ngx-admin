@@ -1,0 +1,7 @@
+@import 'nga-layout';
+@import 'nga-menu';
+
+@mixin nga-theme-redefines {
+  @include nga-layout-redefines();
+  @include nga-menu-redefines();
+}
