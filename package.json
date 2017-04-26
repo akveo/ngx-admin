@@ -46,15 +46,16 @@
     "framework"
   ],
   "dependencies": {
-    "@angular/animations": "4.0.2",
-    "@angular/common": "4.0.2",
-    "@angular/compiler": "4.0.2",
-    "@angular/core": "4.0.2",
-    "@angular/forms": "4.0.2",
-    "@angular/http": "4.0.2",
-    "@angular/platform-browser": "4.0.2",
-    "@angular/platform-browser-dynamic": "4.0.2",
-    "@angular/router": "4.0.2",
+    "@angular/animations": "4.0.3",
+    "@angular/common": "4.0.3",
+    "@angular/compiler": "4.0.3",
+    "@angular/core": "4.0.3",
+    "@angular/forms": "4.0.3",
+    "@angular/http": "4.0.3",
+    "@angular/platform-browser": "4.0.3",
+    "@angular/platform-browser-dynamic": "4.0.3",
+    "@angular/platform-server": "4.0.3",
+    "@angular/router": "4.0.3",
     "bootstrap": "4.0.0-alpha.6",
     "core-js": "2.4.1",
     "font-awesome": "4.7.0",
@@ -62,17 +63,15 @@
     "ionicons": "2.0.1",
     "normalize.css": "6.0.0",
     "rxjs": "5.1.1",
-    "tether": "1.4.0",
-    "zone.js": "0.8.5"
+    "zone.js": "0.8.6"
   },
   "devDependencies": {
-    "@angular/cli": "1.0.0",
-    "@angular/compiler-cli": "4.0.2",
-    "@angular/platform-server": "4.0.2",
+    "@angular/cli": "1.0.1",
+    "@angular/compiler-cli": "4.0.3",
     "@types/chalk": "0.4.31",
     "@types/gulp": "4.0.2",
     "@types/jasmine": "2.5.38",
-    "@types/node": "6.0.63",
+    "@types/node": "6.0.69",
     "@types/rimraf": "0.0.28",
     "@types/run-sequence": "0.0.29",
     "@types/rx": "2.5.33",
@@ -108,6 +107,6 @@
     "ts-node": "2.0.0",
     "tslint": "4.5.1",
     "tslint-eslint-rules": "3.4.0",
-    "typescript": "2.2.1"
+    "typescript": "2.2.2"
   }
 }

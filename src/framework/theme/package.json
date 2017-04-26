@@ -26,9 +26,9 @@
     "nga"
   ],
   "peerDependencies": {
-    "@angular/common": "^4.0.2",
-    "@angular/core": "^4.0.2",
-    "@angular/router": "^4.0.2",
+    "@angular/common": "^4.0.0",
+    "@angular/core": "^4.0.0",
+    "@angular/router": "^4.0.0",
     "bootstrap": "^4.0.0-alpha.6",
     "font-awesome": "^4.7.0",
     "immutable": "^3.8.1",
