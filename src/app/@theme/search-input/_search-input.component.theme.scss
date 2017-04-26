@@ -1,9 +1,4 @@
 @mixin search-input-theme() {
   /deep/ search-input {
-    i.control-icon {
-      &:hover {
-        color: $nga-color-secondary;
-      }
-    }
   }
 }

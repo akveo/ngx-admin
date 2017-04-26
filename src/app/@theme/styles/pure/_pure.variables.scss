@@ -1,23 +1,17 @@
-$nga-color-primary: #edf1f7;
-$nga-color-default: #7d85b2;
+$nga-color-default: white;
 $nga-color-secondary: #b5bbd5;
+$nga-color-inverse: #7d85b2;
 
-$nga-background: white;
-
-$nga-layout-background: $nga-color-primary;
-$nga-layout-foreground: $nga-color-default;
+$nga-foreground: $nga-color-inverse;
+$nga-background: #edf1f7;
 
 $nga-header-height: 4.725rem;
-$nga-header-background: $nga-background;
-$nga-header-foreground: $nga-color-default;
 $nga-header-padding: 1.25rem;
 
 $nga-footer-height: $nga-header-height;
-$nga-footer-background: $nga-background;
 
-$nga-user-picture-background: $nga-color-default;
-
-$nga-sidebar-background: $nga-background;
 $nga-sidebar-width: 16.25rem;
 $nga-sidebar-width-compact: 3.45rem;
 $nga-sidebar-padding: 0;
+
+$nga-user-picture-background: $nga-background;

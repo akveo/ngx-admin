@@ -1,0 +1,7 @@
+@import '~@nga/theme/styles/themes/nga.theme.default';
+@import '../components';
+@import 'gorgeous.variables';
+
+@include nga-theme('gorgeous') {
+  @include custom-components-theme();
+}

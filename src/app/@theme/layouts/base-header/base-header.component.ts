@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 
 import { NgaSidebarService, NgaMenuService } from '@nga/theme';
+import { NgaThemeService } from '@nga/theme/services/theme.service';
 
 @Component({
   selector: 'base-header',
@@ -8,7 +9,8 @@ import { NgaSidebarService, NgaMenuService } from '@nga/theme';
   template: `
     <div class="left">
       <i class="control-icon ion ion-navicon" (click)="toggleSidebar()"></i>
-      <span class="logo" (click)="goToHome()">NgX &nbsp; <span>Admin</span></span>
+      <span class="logo" (click)="goToHome()">NgX &nbsp; <a>Admin</a></span>
+      <button (click)="switchTheme()">Switch Theme!</button>
     </div>
     <div class="right">
       <search-input></search-input>
@@ -21,7 +23,8 @@ import { NgaSidebarService, NgaMenuService } from '@nga/theme';
 })
 export class BaseHeaderComponent {
   constructor(private sidebarService: NgaSidebarService,
-              private menuService: NgaMenuService) {
+              private menuService: NgaMenuService,
+              private themeService: NgaThemeService) {
   }
 
   toggleSidebar() {
@@ -30,5 +33,13 @@ export class BaseHeaderComponent {
 
   goToHome() {
     this.menuService.navigateHome();
+  }
+
+  switchTheme() {
+    if (this.themeService.currentTheme == 'pure') {
+      this.themeService.changeTheme('gorgeous');
+    } else {
+      this.themeService.changeTheme('pure');
+    }
   }
 }

@@ -1,28 +1,16 @@
 @mixin base-header-theme() {
   /deep/ base-header {
-    i.control-icon {
-      &:hover {
-        color: $nga-color-secondary;
-      }
-    }
+    .logo > a {
+      color: $nga-color-secondary !important;
 
-    .logo {
-      span {
-        color: $nga-color-secondary;
-      }
-
-      &:hover {
-        color: $nga-color-default;
-
-        span {
-          color: $nga-color-default;
-        }
+      @include hover-focus-active {
+        color: $nga-color-inverse !important;
       }
     }
 
     .left > *,
     .right > * {
-      border-color: rgba($nga-color-default, 0.2);
+      border-color: rgba($nga-color-inverse, 0.2);
     }
   }
 }
