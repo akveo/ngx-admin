@@ -125,7 +125,7 @@
     "url-loader": "0.5.8",
     "webpack": "2.3.3",
     "webpack-dev-middleware": "1.10.1",
-    "webpack-dev-server": "2.4.2",
+    "webpack-dev-server": "2.4.5",
     "webpack-dll-bundles-plugin": "1.0.0-beta.5",
     "webpack-merge": "4.1.0",
     "wintersmith": "2.3.6",
