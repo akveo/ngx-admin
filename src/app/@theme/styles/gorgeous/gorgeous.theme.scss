@@ -1,7 +1,116 @@
-@import '~@nga/theme/styles/themes/nga.theme.default';
 @import '../components';
 @import 'gorgeous.variables';
+@import '~@nga/theme/styles/themes/nga.theme.default';
 
 @include nga-theme('gorgeous') {
+  $layout-shadow: 0 8px 20px 0 rgba(37, 26, 75, 0.68);
+
+  * {
+    transition: all 0.1s;
+  }
+
+  a {
+    @include hover-focus-active {
+      color: $nga-color-secondary !important;
+      text-decoration: none;
+    }
+  }
+
+  nga-layout-header > nav {
+    box-shadow: $layout-shadow;
+
+    i:hover {
+      color: $nga-color-secondary;
+    }
+
+    .left {
+      color: $nga-color-inverse;
+
+      a {
+        color: $nga-color-inverse !important;
+
+        &:hover {
+          color: $nga-color-secondary !important;
+        }
+      }
+    }
+
+    .right i {
+      color: #7d85b2;
+
+      &:hover {
+        color: $nga-color-secondary;
+      }
+    }
+  }
+
+  nga-sidebar {
+    z-index: 1;
+    background: transparent;
+
+    .scrollable {
+      box-shadow: $layout-shadow;
+      margin-top: $nga-layout-padding;
+      border-top-right-radius: $nga-radius;
+    }
+
+    ul li {
+      &:first-child {
+        a {
+          background-image: linear-gradient(to right, #664dd9, #9d52f2) !important;
+          box-shadow: 0 0 12px 0 rgba(128, 51, 255, 0.35) !important;
+          margin: 1rem;
+          border-radius: $nga-radius;
+          height: 3.5rem;
+        }
+      }
+
+      a {
+        display: flex;
+        align-items: center;
+
+        transition: all 0.2s ease;
+        padding: 0.375rem 0 0.375rem 1rem;
+        color: $nga-color-inverse;
+
+        &.active {
+          color: $nga-color-inverse !important;
+          background: $nga-background;
+          font-weight: bold;
+        }
+
+        i {
+          font-size: 2rem;
+          margin-right: 1.25rem;
+
+          &:first-child {
+            display: flex;
+            justify-content: center;
+          }
+        }
+      }
+    }
+  }
+
+  nga-layout-footer > nav {
+    $footer-text: #7d85b2;
+    $footer-link: $nga-color-secondary;
+
+    border: none !important;
+    padding: 1.25rem;
+    box-shadow: $layout-shadow;
+
+    .created-by {
+      color: #7d85b2;
+
+      a {
+        color: #7d85b2 !important;
+
+        &:hover {
+          color: $nga-color-secondary !important;
+        }
+      }
+    }
+  }
   @include custom-components-theme();
 }

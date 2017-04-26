@@ -4,6 +4,12 @@
 @import '~@nga/theme/styles/themes/nga.theme.default';
 
 @include nga-theme('pure') {
+  $layout-shadow: 0 4px 12px 0 rgba(33, 57, 161, 0.08);
+
+  * {
+    transition: all 0.1s;
+  }
+
   a, i {
     @include hover-focus-active {
       color: $nga-color-secondary !important;
@@ -12,12 +18,12 @@
   }
 
   nga-layout-header > nav {
-    box-shadow: 0 4px 12px 0 rgba(33, 57, 161, 0.08);
+    box-shadow: $layout-shadow;
   }
 
   nga-sidebar {
     z-index: 1;
-    box-shadow: 0 4px 12px 0 rgba(33, 57, 161, 0.08);
+    box-shadow: $layout-shadow;
 
     ul li {
       &:first-child {
@@ -52,7 +58,7 @@
   }
 
   nga-layout-footer > nav {
-    box-shadow: 0 4px 12px 0 rgba(33, 57, 161, 0.08);
+    box-shadow: $layout-shadow;
     border: none !important;
     padding: 1.25rem;
   }

@@ -14,7 +14,7 @@ import { ComponentsComponent } from './components/components.component';
 
 @NgModule({
   imports: [
-    NgaThemeModule.forRoot({ name: 'pure' }),
+    NgaThemeModule.forRoot({ name: 'gorgeous' }),
     NgaSidebarModule.forRoot(),
     NgaMenuModule.forRoot({ items: menuItems }),
     PagesRoutingModule,

@@ -1,4 +1,7 @@
 @mixin search-input-theme() {
   /deep/ search-input {
+    input {
+      background: transparent;
+    }
   }
 }
