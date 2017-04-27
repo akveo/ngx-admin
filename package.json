@@ -1,7 +1,7 @@
 {
   "name": "ng2-admin",
-  "version": "0.9.0",
-  "description": "Angular 2 and Bootstrap 4 Admin Template.",
+  "version": "1.0.0",
+  "description": "Angular and Bootstrap 4 Admin Template.",
   "author": "Akveo <contact@akveo.com>",
   "homepage": "http://akveo.github.io/ng2-admin/",
   "repository": {
@@ -15,7 +15,8 @@
   "scripts": {
     "ng": "ng",
     "rimraf": "rimraf",
-    "start": "ng serve --hmr",
+    "start": "ng serve",
+    "start:hmr": "ng serve --hmr",
     "start:aot": "ng serve --aot",
     "build": "npm run clean:dist && ng build",
     "build:prod": "npm run build -- --prod",
