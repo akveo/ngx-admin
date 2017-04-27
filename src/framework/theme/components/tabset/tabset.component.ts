@@ -18,6 +18,8 @@ import { ActivatedRoute } from '@angular/router';
 
 import { convertToBoolProperty } from '../helpers';
 
+// TODO: do we need to use hidden (so literally render the HTML, or just can use *ngIf to not render what we don't need
+// at this moment
 @Component({
   selector: 'nga-tab',
   changeDetection: ChangeDetectionStrategy.OnPush,
