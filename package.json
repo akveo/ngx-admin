@@ -116,7 +116,7 @@
     "to-string-loader": "1.1.5",
     "ts-helpers": "1.1.2",
     "ts-node": "3.0.2",
-    "tslib": "1.6.0",
+    "tslib": "1.6.1",
     "tslint": "4.5.1",
     "typedoc": "0.5.10",
     "typescript": "2.2.2",
