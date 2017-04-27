@@ -4,7 +4,7 @@ import {BaThemeConfigProvider, layoutPaths} from '../../../../theme';
 @Injectable()
 export class BubbleMapsService {
 
-  constructor(private _baConfig:BaThemeConfigProvider) {
+  constructor(private _baConfig: BaThemeConfigProvider) {
   }
 
   getData() {
@@ -431,7 +431,7 @@ export class BubbleMapsService {
 
     // get min and max values
     for (let i = 0; i < mapData.length; i++) {
-      var value = mapData[i].value;
+      let value = mapData[i].value;
       if (value < min) {
         min = value;
       }
@@ -446,8 +446,8 @@ export class BubbleMapsService {
       images: []
     };
 
-    var maxSquare = maxBulletSize * maxBulletSize * 2 * Math.PI;
-    var minSquare = minBulletSize * minBulletSize * 2 * Math.PI;
+    let maxSquare = maxBulletSize * maxBulletSize * 2 * Math.PI;
+    let minSquare = minBulletSize * minBulletSize * 2 * Math.PI;
 
     // create circle for each country
     for (let i = 0; i < mapData.length; i++) {

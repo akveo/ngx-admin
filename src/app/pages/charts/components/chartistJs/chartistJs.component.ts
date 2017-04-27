@@ -10,9 +10,9 @@ import 'style-loader!./chartistJs.scss';
 
 export class ChartistJs {
 
-  data:any;
+  data: any;
 
-  constructor(private _chartistJsService:ChartistJsService) {
+  constructor(private _chartistJsService: ChartistJsService) {
   }
 
   ngOnInit() {

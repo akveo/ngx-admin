@@ -1,4 +1,4 @@
-import {Component, ElementRef} from '@angular/core';
+import { Component, ElementRef } from '@angular/core';
 import * as GoogleMapsLoader from 'google-maps';
 
 @Component({
@@ -8,7 +8,7 @@ import * as GoogleMapsLoader from 'google-maps';
 })
 export class GoogleMaps {
 
-  constructor(private _elementRef:ElementRef) {
+  constructor(private _elementRef: ElementRef) {
   }
 
   ngAfterViewInit() {

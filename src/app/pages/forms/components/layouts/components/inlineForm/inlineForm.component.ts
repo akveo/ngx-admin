@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'inline-form',
@@ -7,8 +7,8 @@ import {Component} from '@angular/core';
 })
 export class InlineForm {
 
+  isRemember: boolean = false;
+
   constructor() {
   }
-
-  isRemember: boolean = false;
 }

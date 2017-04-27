@@ -15,7 +15,7 @@ export class BaFileUploader {
   @ViewChild('inputText') public _inputText: ElementRef;
 
   public uploadFileInProgress: boolean;
-  constructor(private renderer: Renderer) { 
+  constructor(private renderer: Renderer) {
   }
 
   bringFileSelector(): boolean {
@@ -27,7 +27,7 @@ export class BaFileUploader {
     let files = this._fileUpload.nativeElement.files;
     if (files.length) {
       const file = files[0];
-      this._onChangeFileSelect(files[0])
+      this._onChangeFileSelect(files[0]);
       if (!this._canFleUploadOnServer()) {
         uploadingFile.setAbort();
       } else {
@@ -37,7 +37,7 @@ export class BaFileUploader {
   }
 
   _onChangeFileSelect(file) {
-    this._inputText.nativeElement.value = file.name
+    this._inputText.nativeElement.value = file.name;
   }
 
   _onFileUpload(data): void {

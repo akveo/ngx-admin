@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'horizontal-form',
@@ -6,8 +6,8 @@ import {Component} from '@angular/core';
 })
 export class HorizontalForm {
 
+  isRemember: boolean = false;
+
   constructor() {
   }
-
-  isRemember: boolean = false;
 }

@@ -8,15 +8,15 @@ import {ControlValueAccessor, NgModel} from '@angular/forms';
   providers: [NgModel]
 })
 export class BaCheckbox implements ControlValueAccessor {
-  @Input() disabled:boolean;
-  @Input() label:string;
-  @Input() value:string;
-  @Input() baCheckboxClass:string;
+  @Input() disabled: boolean;
+  @Input() label: string;
+  @Input() value: string;
+  @Input() baCheckboxClass: string;
 
   public model: NgModel;
   public state: boolean;
 
-  public constructor(@Self() state:NgModel) {
+  public constructor(@Self() state: NgModel) {
     this.model = state;
     state.valueAccessor = this;
   }

@@ -10,9 +10,9 @@ import 'style-loader!./feed.scss';
 })
 export class Feed {
 
-  public feed:Array<Object>;
+  public feed: Array<Object>;
 
-  constructor(private _feedService:FeedService) {
+  constructor(private _feedService: FeedService) {
   }
 
   ngOnInit() {

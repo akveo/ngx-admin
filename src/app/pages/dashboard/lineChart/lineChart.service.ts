@@ -1,16 +1,16 @@
 import {Injectable} from '@angular/core';
-import {BaThemeConfigProvider, colorHelper, layoutPaths} from '../../../theme';
+import {BaThemeConfigProvider, ColorHelper, layoutPaths} from '../../../theme';
 
 @Injectable()
 export class LineChartService {
 
-  constructor(private _baConfig:BaThemeConfigProvider) {
+  constructor(private _baConfig: BaThemeConfigProvider) {
   }
 
   getData() {
 
-    var layoutColors = this._baConfig.get().colors;
-    var graphColor = this._baConfig.get().colors.custom.dashboardLineChart;
+    let layoutColors = this._baConfig.get().colors;
+    let graphColor = this._baConfig.get().colors.custom.dashboardLineChart;
 
     return {
       type: 'serial',
@@ -72,7 +72,7 @@ export class LineChartService {
           id: 'g0',
           bullet: 'none',
           useLineColorForBulletBorder: true,
-          lineColor: colorHelper.hexToRgbA(graphColor, 0.3),
+          lineColor: ColorHelper.hexToRgbA(graphColor, 0.3),
           lineThickness: 1,
           negativeLineColor: layoutColors.danger,
           type: 'smoothedLine',
@@ -84,7 +84,7 @@ export class LineChartService {
           id: 'g1',
           bullet: 'none',
           useLineColorForBulletBorder: true,
-          lineColor: colorHelper.hexToRgbA(graphColor, 0.15),
+          lineColor: ColorHelper.hexToRgbA(graphColor, 0.15),
           lineThickness: 1,
           negativeLineColor: layoutColors.danger,
           type: 'smoothedLine',
