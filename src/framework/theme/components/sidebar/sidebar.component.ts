@@ -8,6 +8,12 @@ import { convertToBoolProperty } from '../helpers';
 
 import { NgaSidebarService } from './sidebar.service';
 
+/**
+ * Sidebar header container.
+ *
+ * Placeholder which contains a sidebar header content,
+ * placed at the very top of the sidebar outside of the scroll area.
+ */
 @Component({
   selector: 'nga-sidebar-header',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -18,6 +24,11 @@ import { NgaSidebarService } from './sidebar.service';
 export class NgaSidebarHeaderComponent {
 }
 
+/**
+ * Sidebar content container.
+ *
+ * Placeholder which contains a sidebar main content.
+ */
 @Component({
   selector: 'nga-sidebar-content',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -28,6 +39,12 @@ export class NgaSidebarHeaderComponent {
 export class NgaSidebarContentComponent {
 }
 
+/**
+ * Sidebar footer container.
+ *
+ * Placeholder which contains a sidebar footer content,
+ * placed at the very bottom of the sidebar outside of the scroll area.
+ */
 @Component({
   selector: 'nga-sidebar-footer',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -38,6 +55,36 @@ export class NgaSidebarContentComponent {
 export class NgaSidebarFooterComponent {
 }
 
+/**
+ * Main sidebar component.
+ *
+ * Sidebar can be place on the left or right side of the layout, can be fixed (shown above the content)
+ * or can push the layout when opened.
+ *
+ * @theme
+ * $nga-sidebar-foreground: $nga-foreground-inverse !default;
+ * $nga-sidebar-background: $nga-background-inverse !default;
+ * $nga-sidebar-height: 100vh !default;
+ * $nga-sidebar-width: 12rem !default;
+ * $nga-sidebar-width-compact: 4rem !default;
+ * $nga-sidebar-padding: $nga-padding !default;
+ * $nga-sidebar-header-height: 3.5rem !default;
+ * $nga-sidebar-footer-height: 3.5rem !default;
+ *
+ * @example
+ *
+ * Example of fixed sidebar located on the left side, initially collapsed.
+ *
+ * <nga-sidebar left fixed state="collapsed">
+ *  <nga-sidebar-header>Header</nga-sidebar-header>
+ *  <nga-sidebar-content>
+ *    Menu or another component here
+ *  </nga-sidebar-content>
+ *  <nga-sidebar-footer>
+ *    Footer components here
+ *  </nga-sidebar-footer>
+ * </nga-sidebar>
+ */
 @Component({
   selector: 'nga-sidebar',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -77,28 +124,54 @@ export class NgaSidebarComponent implements OnInit {
     return this.stateValue === NgaSidebarComponent.STATE_COMPACTED;
   }
 
+  /**
+   * Places sidebar on the left side
+   * @type boolean
+   */
   @Input()
   set right(val: boolean) {
     this.rightValue = convertToBoolProperty(val);
   }
+
+  /**
+   * Places sidebar on the right side
+   * @type boolean
+   */
   @Input()
   set left(val: boolean) {
     this.leftValue = convertToBoolProperty(val);
   }
+
+  /**
+   * Makes sidebar fixed (shown above the layout content)
+   * @type boolean
+   */
   @Input()
   set fixed(val: boolean) {
     this.fixedValue = convertToBoolProperty(val);
   }
+
+  /**
+   * Initial sidebar state, expanded|collapsed|compacted
+   * @type string
+   */
   @Input()
   set state(val: string) {
     this.stateValue = val;
   }
 
+  /**
+   * Tags a sidebar with some ID, can be later used in sidebar service
+   * to determine which sidebar triggered the action, if multiple sidebars exist on the page.
+   *
+   * @type string
+   */
   @Input() tag: string;
 
   constructor(private sidebarService: NgaSidebarService) { }
 
   ngOnInit() {
+    // TODO: we need to unsubscribe from these on destroy
     this.sidebarService.toggleChanges.subscribe((data: { compact: boolean, tag: string }) => {
       if (!this.tag || this.tag === data.tag) {
         this.toggle(data.compact);
@@ -118,18 +191,32 @@ export class NgaSidebarComponent implements OnInit {
     });
   }
 
+  /**
+   * Collapses the sidebar
+   */
   collapse() {
     this.state = NgaSidebarComponent.STATE_COLLAPSED;
   }
 
+  /**
+   * Expands the sidebar
+   */
   expand() {
     this.state = NgaSidebarComponent.STATE_EXPANDED;
   }
 
+  /**
+   * Compacts the sidebar (minimizes)
+   */
   compact() {
     this.state = NgaSidebarComponent.STATE_COMPACTED;
   }
 
+  /**
+   * Toggles sidebar state (expanded|collapsed|compacted)
+   * @param compact boolean If true, then sidebar state will be changed between expanded & compacted,
+   * otherwise - between expanded & collapsed. False by default.
+   */
   toggle(compact: boolean = false) {
     const closedStates = [NgaSidebarComponent.STATE_COMPACTED, NgaSidebarComponent.STATE_COLLAPSED];
     if (compact) {
