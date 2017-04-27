@@ -156,6 +156,10 @@
     normalize-path "^2.0.1"
     through2 "^2.0.3"
 
+"@ng-bootstrap/ng-bootstrap@^1.0.0-alpha.25":
+  version "1.0.0-alpha.25"
+  resolved "https://registry.yarnpkg.com/@ng-bootstrap/ng-bootstrap/-/ng-bootstrap-1.0.0-alpha.25.tgz#68cc2afa17fb5bdd2d775b7f82cffa86ef21b0ed"
+
 "@ngtools/json-schema@1.0.9":
   version "1.0.9"
   resolved "https://registry.yarnpkg.com/@ngtools/json-schema/-/json-schema-1.0.9.tgz#19e46db409c66b4c43841eab514ff9640871affc"
@@ -800,12 +804,6 @@ buffer@^4.3.0:
     base64-js "^1.0.2"
     ieee754 "^1.1.4"
     isarray "^1.0.0"
-
-bufferstreams@^1.1.0:
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/bufferstreams/-/bufferstreams-1.1.1.tgz#0161373060ac5988eff99058731114f6e195d51e"
-  dependencies:
-    readable-stream "^2.0.2"
 
 builtin-modules@^1.0.0:
   version "1.1.1"
@@ -2602,17 +2600,6 @@ gulp-clean-css@3.0.4:
     through2 "^2.0.3"
     vinyl-sourcemaps-apply "^0.2.1"
 
-gulp-htmlmin@3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/gulp-htmlmin/-/gulp-htmlmin-3.0.0.tgz#19ea8002d1231d6b1f18a12d20f2a66a77770fb3"
-  dependencies:
-    bufferstreams "^1.1.0"
-    gulp-util "^3.0.7"
-    html-minifier "^3.0.3"
-    object-assign "^4.0.1"
-    readable-stream "^2.0.2"
-    tryit "^1.0.1"
-
 gulp-replace@0.5.4:
   version "0.5.4"
   resolved "https://registry.yarnpkg.com/gulp-replace/-/gulp-replace-0.5.4.tgz#69a67914bbd13c562bff14f504a403796aa0daa9"
@@ -2826,7 +2813,7 @@ html-entities@^1.2.0:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/html-entities/-/html-entities-1.2.1.tgz#0df29351f0721163515dfb9e5543e5f6eed5162f"
 
-html-minifier@^3.0.3, html-minifier@^3.2.3:
+html-minifier@^3.2.3:
   version "3.4.3"
   resolved "https://registry.yarnpkg.com/html-minifier/-/html-minifier-3.4.3.tgz#eb3a7297c804611f470454eeebe0aacc427e424a"
   dependencies:
@@ -6404,10 +6391,6 @@ trim-newlines@^1.0.0:
 trim-right@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/trim-right/-/trim-right-1.0.1.tgz#cb2e1203067e0c8de1f614094b9fe45704ea6003"
-
-tryit@^1.0.1:
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/tryit/-/tryit-1.0.3.tgz#393be730a9446fd1ead6da59a014308f36c289cb"
 
 ts-node@2.0.0:
   version "2.0.0"

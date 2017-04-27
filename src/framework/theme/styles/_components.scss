@@ -16,6 +16,7 @@
 // Create a theme
 @mixin nga-theme($theme-name) {
 
+  // TODO: cover up this .theme-${} into a function to to repeat in each module
   /deep/ .theme-#{$theme-name} {
     @include nga-layout-theme($theme-name);
     @include nga-sidebar-theme($theme-name);

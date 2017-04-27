@@ -26,6 +26,7 @@ $nga-color-gray: rgba(0, 0, 0, 0.15) !default;
 
 $nga-color-disabled: rgba(255, 255, 255, 0.4) !default;
 $nga-color-primary: #00abff !default;
+$nga-color-secondary: #eeeeee !default;
 $nga-color-info: #40daf1 !default;
 $nga-color-success: #8bd22f !default;
 $nga-color-warning: #e7ba08 !default;
@@ -33,17 +34,19 @@ $nga-color-danger: #f95372 !default;
 
 $nga-color-light-percent: 30% !default;
 $nga-color-light-primary: tint($nga-color-primary, $nga-color-light-percent) !default;
+$nga-color-light-primary: tint($nga-color-secondary, $nga-color-light-percent) !default;
 $nga-color-light-info: tint($nga-color-info, $nga-color-light-percent) !default;
 $nga-color-light-success: tint($nga-color-success, $nga-color-light-percent) !default;
 $nga-color-light-warning: tint($nga-color-warning, $nga-color-light-percent) !default;
 $nga-color-light-danger: tint($nga-color-danger, $nga-color-light-percent) !default;
 
-$nga-color-dark-percent: 15% !default;
-$nga-color-dark-primary: tint($nga-color-primary, $nga-color-dark-percent) !default;
-$nga-color-dark-info: tint($nga-color-info, $nga-color-dark-percent) !default;
-$nga-color-dark-success: tint($nga-color-success, $nga-color-dark-percent) !default;
-$nga-color-dark-warning: tint($nga-color-warning, $nga-color-dark-percent) !default;
-$nga-color-dark-danger: tint($nga-color-danger, $nga-color-dark-percent) !default;
+$nga-color-dark-percent: 10% !default;
+$nga-color-dark-primary: darken($nga-color-primary, $nga-color-dark-percent) !default;
+$nga-color-dark-secondary: darken($nga-color-secondary, $nga-color-dark-percent) !default;
+$nga-color-dark-info: darken($nga-color-info, $nga-color-dark-percent) !default;
+$nga-color-dark-success: darken($nga-color-success, $nga-color-dark-percent) !default;
+$nga-color-dark-warning: darken($nga-color-warning, $nga-color-dark-percent) !default;
+$nga-color-dark-danger: darken($nga-color-danger, $nga-color-dark-percent) !default;
 
 $nga-social-color-facebook: #3b5998 !default;
 $nga-social-color-twitter: #55acee !default;

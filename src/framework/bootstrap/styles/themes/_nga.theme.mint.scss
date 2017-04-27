@@ -3,8 +3,5 @@
  * Copyright Akveo. All Rights Reserved.
  * Licensed under the MIT License. See License.txt in the project root for license information.
  */
-
-// TODO: to decide if we need this here
-/deep/ {
-  @import '~normalize.css';
-}
+@import '../../../theme/styles/themes/nga.theme.mint';
+@import './nga.theme.default';

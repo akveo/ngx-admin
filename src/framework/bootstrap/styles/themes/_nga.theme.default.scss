@@ -1,0 +1,37 @@
+/**
+ * @license
+ * Copyright Akveo. All Rights Reserved.
+ * Licensed under the MIT License. See License.txt in the project root for license information.
+ */
+
+// TODO: reference the node module
+@import '../../../theme/styles/themes/nga.theme.default';
+@import '../components';
+
+// buttons
+
+$btn-primary-bg: $nga-color-primary;
+$btn-primary-border: $nga-color-dark-primary;
+$btn-primary-color: $nga-color-inverse;
+
+$btn-secondary-bg: $nga-color-secondary;
+$btn-secondary-border: $nga-color-dark-secondary;
+$btn-secondary-color: $nga-color-default;
+
+$btn-info-bg: $nga-color-info;
+$btn-info-border: $nga-color-dark-info;
+$btn-info-color: $nga-color-inverse;
+
+$btn-success-bg: $nga-color-success;
+$btn-success-border: $nga-color-dark-success;
+$btn-success-color: $nga-color-inverse;
+
+$btn-warning-bg: $nga-color-warning;
+$btn-warning-border: $nga-color-dark-warning;
+$btn-warning-color: $nga-color-inverse;
+
+$btn-danger-bg: $nga-color-danger;
+$btn-danger-border: $nga-color-dark-danger;
+$btn-danger-color: $nga-color-inverse;
+
+

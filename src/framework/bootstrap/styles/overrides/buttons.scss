@@ -3,8 +3,12 @@
  * Copyright Akveo. All Rights Reserved.
  * Licensed under the MIT License. See License.txt in the project root for license information.
  */
+@import 'partial';
 
-// TODO: to decide if we need this here
-/deep/ {
-  @import '~normalize.css';
+@mixin nga-b-buttons-theme($theme-name) {
+  /deep/ {
+    @import '~bootstrap/scss/buttons';
+
+    // TODO: further button overrides
+  }
 }

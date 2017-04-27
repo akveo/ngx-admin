@@ -11,8 +11,9 @@ $nga-card-background: #cfe8ff;
 $nga-card-foreground: #747bde;
 $nga-card-separator: red;
 $nga-radius: 0;
-@import '../framework/theme/styles/themes/nga.theme.default';
+$nga-color-primary: red;
 
+@import '../framework/theme/styles/themes/nga.theme.default';
 @include nga-theme('blue') {
 
   // here you can override theme styles
@@ -26,3 +27,6 @@ $nga-radius: 0;
 // @nga/auth module styles
 @import '../framework/auth/styles/themes/nga.theme.default';
 @include nga-auth('blue');
+
+@import '../framework/bootstrap/styles/themes/nga.theme.default';
+@include nga-bootstrap('blue');

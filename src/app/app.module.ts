@@ -52,6 +52,8 @@ import {
 import { NgaUserTestComponent } from './user-test/user-test.component';
 import { NgaThemeDynamicTestComponent, NgaDynamicToAddComponent } from './layout-test/theme-dynamic-test.component';
 import { NgaActionsTestComponent } from './actions-test/actions-test.component';
+import { NgaBootstrapModule } from '../framework/bootstrap/bootstrap.module';
+import { NgaBootstrapTestComponent } from './bootstrap-test/bootstrap-test.component';
 
 import { routes } from './app.routes';
 
@@ -81,6 +83,7 @@ const NGA_TEST_COMPONENTS = [
   NgaMenuItem4Component,
   NgaUserTestComponent,
   NgaThemeChangeTestComponent,
+  NgaBootstrapTestComponent,
   NgaDynamicToAddComponent,
   NgaThemeDynamicTestComponent,
   NgaActionsTestComponent,
@@ -143,6 +146,7 @@ const NGA_TEST_COMPONENTS = [
         },
       },
     }),
+    NgaBootstrapModule.forRoot(),
   ],
   declarations: [
     ...NGA_TEST_COMPONENTS,

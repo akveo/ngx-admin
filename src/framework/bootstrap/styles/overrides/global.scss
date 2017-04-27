@@ -1,0 +1,16 @@
+/**
+ * @license
+ * Copyright Akveo. All Rights Reserved.
+ * Licensed under the MIT License. See License.txt in the project root for license information.
+ */
+@import 'partial';
+
+// TODO: per theme customization won't work for these styles as they are global
+@mixin nga-b-global-theme($theme-name) {
+  /deep/ {
+    @import '~bootstrap/scss/normalize';
+    @import '~bootstrap/scss/print';
+
+    @import '~bootstrap/scss/reboot';
+  }
+}

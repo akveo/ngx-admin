@@ -3,8 +3,4 @@
  * Copyright Akveo. All Rights Reserved.
  * Licensed under the MIT License. See License.txt in the project root for license information.
  */
-
-// TODO: to decide if we need this here
-/deep/ {
-  @import '~normalize.css';
-}
+export * from './bootstrap.module';

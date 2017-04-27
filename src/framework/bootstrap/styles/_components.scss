@@ -1,0 +1,20 @@
+/**
+ * @license
+ * Copyright Akveo. All Rights Reserved.
+ * Licensed under the MIT License. See License.txt in the project root for license information.
+ */
+@import './overrides/global';
+@import './overrides/buttons';
+
+// Create a theme
+@mixin nga-bootstrap($theme-name) {
+
+  // these are global and can't be put under the nga-layout.theme-name
+  @include nga-b-global-theme($theme-name);
+
+  /deep/ .theme-#{$theme-name} {
+    @include nga-b-buttons-theme($theme-name);
+
+    @content;
+  }
+}
