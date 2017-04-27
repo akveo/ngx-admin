@@ -75,7 +75,7 @@
     "codelyzer": "2.1.1",
     "copy-webpack-plugin": "4.0.1",
     "css-loader": "0.28.0",
-    "electron": "1.6.2",
+    "electron": "1.6.5",
     "es6-promise": "4.1.0",
     "es6-shim": "0.35.3",
     "es7-reflect-metadata": "1.6.0",
