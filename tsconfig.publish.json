@@ -10,23 +10,24 @@
     "module": "es2015",
     "moduleResolution": "node",
     "noEmitOnError": true,
-    "noImplicitAny": true,
-    "outDir": "./dist",
+    "outDir": "./lib",
     "rootDir": "./build",
     "sourceMap": true,
     "target": "es5",
     "inlineSources": true,
+    "stripInternal": true,
     "baseUrl": ".",
     "paths": {
       "@angular/core": ["node_modules/@angular/core"]
     },
     "skipLibCheck": true
   },
-  "files": [
-    "./build/auth/index.ts"
+  "include": [
+    "./build/**/*"
   ],
   "angularCompilerOptions": {
     "strictMetadataEmit": true,
-    "genDir": "./compiled"
+    "genDir": "./compiled",
+    "debug": true
   }
 }

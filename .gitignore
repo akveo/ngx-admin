@@ -3,6 +3,7 @@
 /tmp
 /compiled
 /build
+/lib
 
 # dependencies
 node_modules
