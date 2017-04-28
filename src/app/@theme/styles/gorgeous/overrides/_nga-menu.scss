@@ -1,4 +1,4 @@
-@mixin nga-menu-redefines {
+@mixin nga-menu-override($theme-name) {
   /deep/ nga-menu {
     ul li {
       &:first-child {

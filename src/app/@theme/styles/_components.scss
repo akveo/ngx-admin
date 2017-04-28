@@ -2,8 +2,10 @@
 @import '../components/search-input/search-input.component.theme';
 @import '../components/base-footer/base-footer.component.theme';
 
-@mixin custom-components-theme() {
-  @include base-header-theme();
-  @include base-footer-theme();
-  @include search-input-theme();
+// TODO: probably move this file into the components folder?
+
+@mixin custom-components-theme($theme-name) {
+  @include base-header-theme($theme-name);
+  @include base-footer-theme($theme-name);
+  @include search-input-theme($theme-name);
 }

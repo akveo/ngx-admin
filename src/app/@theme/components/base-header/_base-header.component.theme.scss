@@ -1,4 +1,4 @@
-@mixin base-header-theme() {
+@mixin base-header-theme($theme-name) {
   /deep/ base-header {
     .logo > a {
       color: $nga-color-secondary !important;

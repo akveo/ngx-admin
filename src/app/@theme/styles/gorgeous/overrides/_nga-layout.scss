@@ -1,4 +1,4 @@
-@mixin nga-layout-redefines {
+@mixin nga-layout-override($theme-name) {
   $layout-shadow: 0 8px 20px 0 rgba(37, 26, 75, 0.68);
 
   /deep/ .layout {

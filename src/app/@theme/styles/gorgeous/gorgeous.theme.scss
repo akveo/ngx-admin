@@ -1,10 +1,11 @@
 @import '../components';
-@import 'gorgeous.variables';
+@import 'variables';
 
 @import '~@nga/theme/styles/themes/nga.theme.default';
-@import 'nga-redefines/redefines';
+@import 'overrides/all';
 
-@include nga-theme('gorgeous') {
-  @include nga-theme-redefines();
-  @include custom-components-theme();
+$theme-name: 'gorgeous';
+@include nga-theme($theme-name) {
+  @include nga-theme-overrides($theme-name);
+  @include custom-components-theme($theme-name);
 }
