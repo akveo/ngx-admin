@@ -15,6 +15,7 @@
   "scripts": {
     "ng": "ng",
     "rimraf": "rimraf",
+    "changelog": "standard-changelog",
     "start": "ng serve",
     "start:hmr": "ng serve --hmr",
     "start:aot": "ng serve --aot",
@@ -101,6 +102,7 @@
     "npm-run-all": "4.0.2",
     "protractor": "5.1.0",
     "rimraf": "2.6.1",
+    "standard-changelog": "1.0.1",
     "stylelint": "7.10.1",
     "ts-helpers": "1.1.2",
     "ts-node": "2.0.0",
