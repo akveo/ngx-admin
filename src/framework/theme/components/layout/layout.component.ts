@@ -15,6 +15,7 @@ import {
 import { convertToBoolProperty } from '../helpers';
 import { NgaThemeService } from '../../services/theme.service';
 import { Subscription } from 'rxjs/Subscription';
+import {NgaSuperSearchService} from "../super-search/super-search.service";
 
 /**
  * Component intended to be used within  the `<nga-layout>` component.
@@ -127,9 +128,11 @@ export class NgaLayoutComponent implements OnDestroy {
     this.centerValue = convertToBoolProperty(val);
   }
 
+  protected searchSubscription: Subscription;
   protected themeSubscription: Subscription;
 
   constructor(protected themeService: NgaThemeService,
+              protected searchActivateService: NgaSuperSearchService,
               protected elementRef: ElementRef,
               protected renderer: Renderer2) {
     this.themeSubscription = this.themeService.onThemeChange().subscribe((theme) => {
@@ -139,9 +142,24 @@ export class NgaLayoutComponent implements OnDestroy {
       }
       this.renderer.addClass(this.elementRef.nativeElement, 'theme-' + theme.name);
     });
+
+    this.searchSubscription = this.searchActivateService.onSearchActivate().subscribe((searchState) => {
+      console.group(`layout consume`);
+      console.log(searchState.type);
+      console.log(searchState.status);
+      console.groupEnd();
+      if (searchState.status) {
+        this.renderer.addClass(this.elementRef.nativeElement, searchState.type);
+        this.renderer.addClass(this.elementRef.nativeElement, 'show');
+      } else {
+        // this.renderer.removeClass(this.elementRef.nativeElement, searchState.type);
+        this.renderer.removeClass(this.elementRef.nativeElement, 'show');
+      }
+    })
   }
 
   ngOnDestroy(): void {
     this.themeSubscription.unsubscribe();
+    this.searchSubscription.unsubscribe();
   }
 }

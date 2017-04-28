@@ -52,6 +52,8 @@ import { NgaAuthModule } from '../framework/auth';
 import { NgaDummyAuthProvider, NgaEmailPassAuthProvider } from '../framework/auth';
 
 import { routes } from './app.routes';
+import { NgaSearchTestComponent } from "./super-search-test/super-search-test.component";
+import { NgaSearchModule } from "../framework/theme/components/super-search/super-search.module";
 
 const NGA_TEST_COMPONENTS = [
   NgaAppComponent,
@@ -79,6 +81,7 @@ const NGA_TEST_COMPONENTS = [
   NgaMenuItem4Component,
   NgaUserTestComponent,
   NgaThemeChangeTestComponent,
+  NgaSearchTestComponent,
 ];
 
 @NgModule({
@@ -95,6 +98,7 @@ const NGA_TEST_COMPONENTS = [
     NgaSidebarModule.forRoot(),
     NgaTabsetModule,
     NgaUserModule,
+    NgaSearchModule,
     NgaAuthModule.forRoot({
       providers: {
         //

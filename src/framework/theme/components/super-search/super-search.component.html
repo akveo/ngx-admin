@@ -1,0 +1,18 @@
+    <div class="search-wrap">
+      <button id="btn-search" class="btn btn--search" (click)="searchToggle()">
+        <i class="ion-android-search icon"></i>
+      </button>
+    </div>
+
+    <div class="search" [class.show]=showSearch (keyup)="($event.keyCode == '27') ? searchToggle() : null">
+
+      <button id="btn-search-close" class="btn btn--search-close" (click)="searchToggle()">
+        <i class="ion-close-round icon"></i>
+      </button>
+
+      <form class="search__form">
+        <input class="search__input" placeholder="akveo"/>
+        <span class="search__info">Hit enter to search or ESC to close</span>
+      </form>
+
+    </div>

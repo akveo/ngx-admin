@@ -1,0 +1,54 @@
+/**
+ * @license
+ * Copyright Akveo. All Rights Reserved.
+ * Licensed under the MIT License. See License.txt in the project root for license information.
+ */
+
+@import './super-search-1.component';
+@import './super-search-2.component';
+@import './super-search-3.component';
+
+
+  .search-wrap {
+    margin: 0 0 0 auto;
+  }
+
+  .icon {
+    font-size: 2.5rem;
+    display: block;
+    width: 1.5rem;
+    height: 1.5rem;
+    margin: 0 auto;
+    color: #d17c78;
+  }
+
+  .btn {
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    border: none;
+    background: none;
+  }
+  .btn:focus {
+    box-shadow: none;
+  }
+
+  #btn-search {
+    font-size: 1rem;
+  }
+
+  .hidden {
+    width: 0;
+    height: 0;
+  }
+
+  .search__input {
+    border: 0;
+    background: transparent;
+    border-radius: 0;
+    -webkit-appearance: none;
+  }
+
+  .search__input:focus {
+    outline: none;
+  }
