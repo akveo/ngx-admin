@@ -19,6 +19,8 @@
     "start": "ng serve",
     "start:hmr": "ng serve --hmr",
     "start:aot": "ng serve --aot",
+    "start:prod": "ng serve --prod",
+    "start:prod:aot": "ng serve --prod --aot",
     "build": "npm run clean:dist && ng build",
     "build:prod": "npm run build -- --prod",
     "build:prod:aot": "npm run build -- --aot",
@@ -32,7 +34,8 @@
     "e2e": "ng e2e",
     "clean:dist": "npm run rimraf -- dist",
     "clean:coverage": "npm run rimraf -- coverage",
-    "gh-pages": "wintersmith build -C docs && gh-pages -d docs/build"
+    "gh-pages": "wintersmith build -C docs && gh-pages -d docs/build",
+    "docs:serve": "wintersmith preview -C docs"
   },
   "private": true,
   "dependencies": {
@@ -110,6 +113,7 @@
     "tslint-eslint-rules": "3.5.1",
     "typescript": "2.2.2",
     "typogr": "0.6.6",
+    "underscore": "1.8.3",
     "wintersmith": "2.2.5",
     "wintersmith-sassy": "1.1.0"
   }

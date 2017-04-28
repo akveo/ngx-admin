@@ -74,7 +74,7 @@ to
 @import 'colorSchemes/blur';
 ```
 
-Additionaly, if you would like to use some different background, replace the following images:
+Additionally, if you would like to use some different background, replace the following images:
 
 - `src/assets/img/blur-bg.jpg` (main background image)
 - `src/assets/img/blur-bg-blurred.jpg` (blurred background image used on panels)
