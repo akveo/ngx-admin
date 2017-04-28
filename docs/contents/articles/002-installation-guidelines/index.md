@@ -60,6 +60,16 @@ or in AOT mode
 npm run start:prod:aot
 ```
 
+To create a bundle in production mode, execute:
+
+```bash
+npm run build:prod
+```
+or
+```bash
+npm run build:prod:aot
+```
+
 This will clear up your dist folder (where release files are located), generate a release build and start the 
 built-in server.
 Now you can copy the sources from the `dist` folder and use it with any backend framework or 
