@@ -25,6 +25,7 @@
     "build:prod": "npm run build -- --prod",
     "build:prod:aot": "npm run build -- --aot",
     "build:ci": "npm run build:prod && npm run build:prod:aot",
+    "build:demo": "npm run build:prod:aot -- --base-href \"http://akveo.com/ng2-admin/\"",
     "test": "ng test -sr",
     "test:coverage": "npm run clean:coverage && ng test -sr -cc",
     "lint": "ng lint",
