@@ -4,8 +4,8 @@ import { NgaSidebarService, NgaMenuService } from '@nga/theme';
 import { NgaThemeService } from '@nga/theme/services/theme.service';
 
 @Component({
-  selector: 'base-header',
-  styleUrls: ['./base-header.component.scss'],
+  selector: 'header',
+  styleUrls: ['./header.component.scss'],
   template: `
     <div class="left">
       <i class="control-icon ion ion-navicon" (click)="toggleSidebar()"></i>
@@ -21,7 +21,7 @@ import { NgaThemeService } from '@nga/theme/services/theme.service';
     </div>
   `,
 })
-export class BaseHeaderComponent {
+export class HeaderComponent {
   constructor(private sidebarService: NgaSidebarService,
               private menuService: NgaMenuService,
               private themeService: NgaThemeService) {

@@ -12,7 +12,7 @@ import {
   NgaUserModule,
 } from '@nga/theme';
 
-import { SearchInputComponent, BaseHeaderComponent, BaseFooterComponent } from './components';
+import { SearchInputComponent, HeaderComponent, FooterComponent } from './components';
 import { OneColumnLayoutComponent } from './layouts';
 
 const BASE_MODULES = [
@@ -31,15 +31,15 @@ const NGA_MODULES = [
 ];
 
 const COMPONENTS = [
-  BaseHeaderComponent,
-  BaseFooterComponent,
+  HeaderComponent,
+  FooterComponent,
   SearchInputComponent,
 ];
 
 const LAYOUTS = [
   OneColumnLayoutComponent,
-  BaseHeaderComponent,
-  BaseFooterComponent,
+  HeaderComponent,
+  FooterComponent,
 ];
 
 @NgModule({

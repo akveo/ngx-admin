@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'base-footer',
-  styleUrls: ['./base-footer.component.scss'],
+  selector: 'footer',
+  styleUrls: ['./footer.component.scss'],
   template: `
     <span class="created-by">Created with ♥ by <b><a href="https://akveo.com" target="_blank">Akveo</a></b> 2017</span>
     <div class="socials">
@@ -13,5 +13,5 @@ import { Component } from '@angular/core';
     </div>
   `,
 })
-export class BaseFooterComponent {
+export class FooterComponent {
 }
