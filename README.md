@@ -2,7 +2,7 @@
 [![Join the chat at https://gitter.im/ng2-admin/Lobby](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/ng2-admin/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![Dependency Status](https://david-dm.org/akveo/ng2-admin/status.svg)](https://david-dm.org/akveo/ng2-admin)
 
-# Admin panel framework based on Angular 2, Bootstrap 4 and Webpack
+# Admin panel framework based on Angular, Bootstrap 4 and Angular CLI
 
 Admin template made with :heart:  by [Akveo team](http://akveo.com/). Follow us on [Twitter](https://twitter.com/akveo_inc) to get the latest news about this template first!
 
@@ -19,7 +19,7 @@ Here you can find Angular 1.x based version: [Blur Admin](http://akveo.github.io
 Installation, customization and other useful articles: https://akveo.github.io/ng2-admin/
 
 ## Based on
-Angular 2, Bootstrap 4, Webpack and lots of awesome modules and plugins
+Angular 2+, Angular CLI, Bootstrap 4, and lots of awesome modules and plugins
 
 ## BrowserStack
 This project runs its tests on multiple desktop and mobile browsers using [BrowserStack](http://www.browserstack.com).
@@ -42,7 +42,7 @@ Yes!  Visit [our homepage](http://akveo.com/) or simply leave us a message to [c
 * High resolution
 * Bootstrap 4 CSS Framework
 * Sass
-* Angular 2
+* Angular
 * jQuery
 * Charts (Chartist, Chart.js)
 * Maps (Google, Leaflet, amMap)
