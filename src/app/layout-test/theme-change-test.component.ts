@@ -60,11 +60,10 @@ export class NgaThemeChangeTestComponent {
   changeTheme() {
     this.currentTheme = this.currentTheme === 'default' ? 'blue' : 'default';
     this.themeService.changeTheme(this.currentTheme);
-
-    this.themeService.appendToTop(NgaDymanicComponentComponent);
   }
 
   addDynamicComponent() {
-    this.themeService.appendToTop(NgaDymanicComponentComponent);
+    this.themeService.appendToTop(NgaDymanicComponentComponent)
+      .subscribe(cRef => console.log(cRef));
   }
 }

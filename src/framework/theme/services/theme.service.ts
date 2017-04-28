@@ -30,8 +30,11 @@ export class NgaThemeService {
     this.currentTheme = name;
   }
 
-  appendToTop(component: any): void {
-    this.appendToTop$.next(component);
+  // TODO: clear function
+  appendToTop(component: any): Observable<any> {
+    const observable = new ReplaySubject(1);
+    this.appendToTop$.next({ component: component, listener: observable });
+    return observable.asObservable();
   }
 
   onThemeChange(): Observable<any> {

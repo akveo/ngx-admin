@@ -6,16 +6,20 @@
 import {
   AfterViewInit,
   ChangeDetectionStrategy,
-  Component, ComponentFactoryResolver,
+  Component,
+  ComponentFactoryResolver,
   ElementRef,
   HostBinding,
   Input,
   OnDestroy,
-  Renderer2, ViewChild, ViewContainerRef,
+  Renderer2,
+  ViewChild,
+  ViewContainerRef,
 } from '@angular/core';
 import { convertToBoolProperty } from '../helpers';
 import { NgaThemeService } from '../../services/theme.service';
 import { Subscription } from 'rxjs/Subscription';
+import { Subject } from 'rxjs/Subject';
 
 /**
  * Component intended to be used within  the `<nga-layout>` component.
@@ -128,6 +132,7 @@ export class NgaLayoutComponent implements OnDestroy, AfterViewInit {
   set center(val: boolean) {
     this.centerValue = convertToBoolProperty(val);
   }
+
   @ViewChild('veryTop', { read: ViewContainerRef }) veryTopRef;
 
   protected themeSubscription: Subscription;
@@ -147,11 +152,14 @@ export class NgaLayoutComponent implements OnDestroy, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    this.appendSubscription = this.themeService.onAppendToTop().subscribe((component) => {
+    this.appendSubscription = this.themeService.onAppendToTop()
+      .subscribe((data: { component: any, listener: Subject<any> }) => {
 
-      const componentFactory = this.componentFactoryResolver.resolveComponentFactory(component);
-      const componentRef = this.veryTopRef.createComponent(componentFactory);
-    });
+        const componentFactory = this.componentFactoryResolver.resolveComponentFactory(data.component);
+        const componentRef = this.veryTopRef.createComponent(componentFactory);
+
+        data.listener.next(componentRef);
+      });
   }
 
   ngOnDestroy(): void {
