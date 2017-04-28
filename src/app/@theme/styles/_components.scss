@@ -1,6 +1,6 @@
-@import '../layouts/base-header/base-header.component.theme';
-@import '../search-input/search-input.component.theme';
-@import '../layouts/base-footer/base-footer.component.theme';
+@import '../components/base-header/base-header.component.theme';
+@import '../components/search-input/search-input.component.theme';
+@import '../components/base-footer/base-footer.component.theme';
 
 @mixin custom-components-theme() {
   @include base-header-theme();

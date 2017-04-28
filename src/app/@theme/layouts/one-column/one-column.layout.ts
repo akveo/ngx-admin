@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'one-coll-layout',
+  selector: 'one-column-layout',
   template: `
     <nga-layout>
       <nga-layout-header fixed>
@@ -22,5 +22,5 @@ import { Component } from '@angular/core';
     </nga-layout>
   `,
 })
-export class OneCollLayoutComponent {
+export class OneColumnLayoutComponent {
 }

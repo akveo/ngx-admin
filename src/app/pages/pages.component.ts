@@ -7,10 +7,10 @@ import { Component } from '@angular/core';
     '../@theme/styles/pure/pure.theme.scss',
   ],
   template: `
-    <one-coll-layout>
+    <one-column-layout>
       <nga-menu></nga-menu>
       <router-outlet></router-outlet>
-    </one-coll-layout>
+    </one-column-layout>
   `,
 })
 export class PagesComponent {
