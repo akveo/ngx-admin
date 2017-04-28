@@ -45,10 +45,10 @@
 ### BREAKING CHANGES
 
 * The webpack version of ng2-admin was moved to webpack [branch](https://github.com/akveo/ng2-admin/tree/webpack).
-* The electron configuration was removed and from this version is no longer supported.
+* We dropped the electron support as, unfortunately, angular-cli doesn't have the official support of electron. Please consider using preview 'webpack' (link to webpack branch) version manually.
 
 
-### How to update
+### How to migrate
 
 1. Copy cli branch from **git@github.com:angular/angular-cli.git**;
 2. Copy your **src/app, src/assets, src/custom-typings.d.ts** into **src** folder;
@@ -59,43 +59,7 @@
 8. Change **style-loader** css import to ``styleUrls[‘./example.scss’]`` and wrap your sass styles into `:host /deep/ {}` expression.
 
 
-### How to migrate a project based on webpack to angular-cli
-
-1. Ensure that you're using npm version 3 or higher and Node 6.9.0 or higher  by running: `npm --version`, `node --version`. If you are not running 3.x, the easiest way to update is to install the latest version of Node.js;
-2. Install globally the latest Angular CLI: `npm install -g @angular/cli`;
-3. Create new angular cli project: `ng new ng2-admin-cli`;
-4. Open generated folder ng2-admin-cli: `cd ng2-admin-cli`;
-5. Copy required modules into package.json and install them;
-6. Copy and replace all files from src directory;
-7. Add each of your required modules and styles into angular_cli.json, for example:
-```
-"styles": [
- "../node_modules/roboto-fontface/css/roboto/sass/roboto-fontface.scss",
- "../node_modules/normalize.css/normalize.css",
- "../node_modules/font-awesome/scss/font-awesome.scss",
- "../node_modules/ionicons/scss/ionicons.scss",
- "../node_modules/bootstrap/scss/bootstrap.scss",
- "../node_modules/leaflet/dist/leaflet.css",
- "../node_modules/chartist/dist/chartist.css",
- "../node_modules/fullcalendar/dist/fullcalendar.css",
- "app/theme/theme.scss",
- "styles.scss"
-],
-"scripts": [
- "../node_modules/jquery/dist/jquery.js",
- "../node_modules/easy-pie-chart/dist/jquery.easypiechart.js",
- "../node_modules/jquery-slimscroll/jquery.slimscroll.js",
- "../node_modules/tether/dist/js/tether.js",
- "../node_modules/bootstrap/dist/js/bootstrap.js"],
- ```
- 8. Copy code from custom-typings.d.ts to typings.d.ts;
- 9. Change paths to file(images, fonts, ets);
- 10. Add import * as $ from 'jquery'; into app.component.ts;
- 11. Delete unused file: **.bootstraprc, postcss.config.js, tsconfig.webpack.js, typedoc.json, webpack.config.js, config/, docs/, src/custom-typings.d.ts, desktop, ts, src/main.browser.aot.ts, src/package.json, src/polyfills.browser.ts, src/vendor.browser.ts, src/app/environment.ts, src/app/index.ts, src/assets/service-worker.js**;
- 12. Change **style-loader** css import to `styleUrls[‘./example.scss’]` and wrap your sass style into `:host /deep/ {}` expression.
-
-
-**NOTE**: Sometimes you may have some individual issues with concrete library, each such problem is solved individually and can not be described in this guide.
+**NOTE**: Sometimes you may have some individual issues with a concrete library, each such problem needs to be solved individually and can not be described in this guide.
 
 <a name="0.9.0"></a>
 # [0.9.0](https://github.com/akveo/ng2-admin/compare/v0.8.0...v0.9.0) (2017-01-30)
