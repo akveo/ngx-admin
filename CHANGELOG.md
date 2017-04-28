@@ -75,8 +75,10 @@
 
 ### How to use AOT
 
-* run `npm run build:aot`
-* run `npm run server:prod`
+```bash
+  npm run build:aot
+  npm run server:prod
+```
 
 ### How to update
 
@@ -98,9 +100,6 @@
 * Angular 2.2.3
 * Dependencies updated
 
-### Bug Fixes
-
-
 ### How to update
 
 * Pull sources from git, merge accordingly
@@ -119,9 +118,6 @@ Tree package does not support angular 2.0 currently so it was hidden from the me
 
 * Angular 2.0
 * Dependencies updated
-
-### Bug Fixes
-
 
 ### How to update
 
@@ -142,9 +138,6 @@ Tree package does not support RC6 currently so it was hidden from the menu.
 
 * Angular rc.6
 * Dependencies updated
-
-### Bug Fixes
-
 
 ### How to update
 
@@ -167,8 +160,6 @@ Not all packages used in ng2-admin support RC5 at the moment, so we suggest wait
 * Webpack 2
 * Dependencies updated
 
-### Bug Fixes
-
 ### Breaking changes
 
 Things to consider:
@@ -181,7 +172,7 @@ Things to consider:
 
 ### How to update
 
-* Read Angluar RC4 -> RC5 [migration guide](https://angular.io/docs/ts/latest/cookbook/rc4-to-rc5.html)
+* Read Angular RC4 -> RC5 [migration guide](https://angular.io/docs/ts/latest/cookbook/rc4-to-rc5.html)
 * Pull sources from git, merge accordingly
 * remove `node_modules`
 * run `npm install`

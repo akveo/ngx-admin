@@ -8,7 +8,7 @@ template: article.jade
 
 Theme Spinner `BaThemeSpinner` is a small service helper allowing you to show a preloader spinner while 
 executing some long-running tasks.
-This is the same spinner you can see after reloading a page - it is shown while the application is initializing Angular 2 and loading charts and images.
+This is the same spinner you can see after reloading a page - it is shown while the application is initializing Angular and loading charts and images.
  
 The user interface in quite simple: there are two public methods: `show` and `hide`.
 

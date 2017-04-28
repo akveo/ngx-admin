@@ -8,7 +8,7 @@ template: article.jade
 
 We tried to make the process of color scheme customization as easy as possible. 
 
-By default ng2-admin has three built-in color profiles: ng2 (default blue sheme), mint and blur.
+By default ng2-admin has three built-in color profiles: ng2 (default blue scheme), mint and blur.
 This article will help you to create your own color profile.
 Let's say you want to make ng2-admin dark theme.
 
