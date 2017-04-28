@@ -59,7 +59,7 @@ The following instructions allow you to run a local copy on your<span class="wid
 <li>Download and install <a href="https://git-scm.com/">git</a></li>
 <li>Download and install nodejs <a href="https://nodejs.org">https://nodejs.org</a></li>
 </ul>
-<p><strong>Note</strong>: Make sure you have Node version &gt;= 4.0 and <span class="caps">NPM</span> &gt;=<span class="widont">&nbsp;</span>3</p>
+<p><strong>Note</strong>: Make sure you have Node version &gt;= 6.0 and <span class="caps">NPM</span> &gt;=<span class="widont">&nbsp;</span>3</p>
 <h2 id="clone-repository-and-install-dependencies">Clone repository and install<span class="widont">&nbsp;</span>dependencies</h2>
 <p>You will need to clone the source code of ng2-admin GitHub<span class="widont">&nbsp;</span>repository:</p>
 <pre><code class="lang-bash">git <span class="built_in">clone</span> https://github.com/akveo/ng2-admin.git
@@ -68,26 +68,32 @@ The following instructions allow you to run a local copy on your<span class="wid
 <pre><code class="lang-bash"><span class="built_in">cd</span> ng2-admin
 npm install
 </code></pre>
+<p>or</p>
+<pre><code class="lang-bash"><span class="built_in">cd</span> ng2-admin
+yarn
+</code></pre>
 <p>This will setup a working copy of ng2-admin on your local<span class="widont">&nbsp;</span>machine.</p>
 <h2 id="running-local-copy">Running local copy</h2>
 <p>To run a local copy in development mode,<span class="widont">&nbsp;</span>execute:</p>
 <pre><code class="lang-bash">npm start
 </code></pre>
-<p>Go to <a href="http://0.0.0.0:3000">http://0.0.0.0:3000</a> or <a href="http://localhost:3000">http://localhost:3000</a> in your<span class="widont">&nbsp;</span>browser.</p>
+<p>Go to <a href="http://0.0.0.0:4200">http://0.0.0.0:4200</a> or <a href="http://localhost:4200">http://localhost:4200</a> in your<span class="widont">&nbsp;</span>browser.</p>
 <p>To run the local copy in production mode and build the sources,<span class="widont">&nbsp;</span>execute:</p>
-<pre><code class="lang-bash">npm run prebuild:prod &amp;&amp; npm run build:prod &amp;&amp; npm run server:prod
+<pre><code class="lang-bash">npm run start:prod
+</code></pre>
+<p>or in <span class="caps">AOT</span><span class="widont">&nbsp;</span>mode</p>
+<pre><code class="lang-bash">npm run start:prod:aot
 </code></pre>
 <p>This will clear up your dist folder (where release files are located), generate a release build and start the 
 built-in server.
 Now you can copy the sources from the <code>dist</code> folder and use it with any backend framework or 
 simply put it under a web<span class="widont">&nbsp;</span>server.</p>
-<p>For addition information about creating a build, please check out <a href="https://github.com/AngularClass/angular2-webpack-starter">Angular2 Webpack Starter<span class="widont">&nbsp;</span>documentation</a></p>
 
         </div>
       </section>
       <footer class="wrap">
-        <div class="left">Powered by Angular 2, Bootstrap 4, Webpack and many more...</div>
-        <div class="right">© 2015–2016 Akveo LLC<br />Documentation licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.</div>
+        <div class="left">Powered by Angular, Bootstrap 4, Angular CLI and many more...</div>
+        <div class="right">© 2017 Akveo LLC<br />Documentation licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.</div>
       </footer>
     </div><a href="https://github.com/akveo/ng2-admin" title="Star &amp; Fork on GitHub" class="github-fork-ribbon"></a>
   </body>

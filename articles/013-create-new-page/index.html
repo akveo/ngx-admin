@@ -50,28 +50,29 @@
         </div>
         <div class="inner-content">
           <h1>Create New Page</h1>
-          <div class="subHeader"></div><p>ng2-admin uses <a href="https://angular.io/docs/ts/latest/guide/router.html">Angular 2 Component Router</a> for<span class="widont">&nbsp;</span>navigation.</p>
+          <div class="subHeader"></div><p>ng2-admin uses <a href="https://angular.io/docs/ts/latest/guide/router.html">Angular Component Router</a> for<span class="widont">&nbsp;</span>navigation.</p>
 <p>We strongly recommend to follow this page structure in your application.
 If it does not fit your needs please create a GitHub issue and tell us why. We would be glad to<span class="widont">&nbsp;</span>discuss. </p>
-<p>Basically any page is just a common Angular 2 Component with a route defined for<span class="widont">&nbsp;</span>it.</p>
+<p>Basically any page is just a common Angular Component with a route defined for<span class="widont">&nbsp;</span>it.</p>
 <h2 id="let-s-create-a-blank-page-in-6-easy-steps">Let’s create a blank page in 6 easy<span class="widont">&nbsp;</span>steps</h2>
 <p>1) Create a new directory for our new page inside of <code>src/app/pages</code>. We can call the directory <code>new</code>.
 <br><br></p>
-<p>2) Then let’s create a blank angular 2 component for our page called ‘new.component.ts’ inside of <code>src/app/pages/new</code>:</p>
-<pre><code class="lang-javascript"><span class="keyword">import</span> {Component} <span class="keyword">from</span> <span class="string">'@angular/core'</span>;
+<p>2) Then let’s create a blank angular component for our page called ‘new.component.ts’ inside of <code>src/app/pages/new</code>:</p>
+<pre><code class="lang-javascript"><span class="keyword">import</span> { Component } <span class="keyword">from</span> <span class="string">'@angular/core'</span>;
 
 @Component({
   selector: <span class="string">'new'</span>,
-  template: <span class="string">`&lt;strong&gt;My page content here&lt;/strong&gt;`</span>
+  template: <span class="string">`&lt;strong&gt;My page content here&lt;/strong&gt;`</span>,
 })
 <span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">NewComponent</span> </span>{
   constructor() {}
 }
 </code></pre>
-<p>This will create a simple Angular 2 component. For more detail please check out <a href="https://angular.io/docs/ts/latest/guide/displaying-data.html">official Angular 2 documentation</a>.
+<p>This will create a simple Angular component. For more detail please check out <a href="https://angular.io/docs/ts/latest/guide/displaying-data.html">official Angular documentation</a>.
 <br><br></p>
 <p>3) After that we should create our component routing called <code>new.routing.ts</code> in the <code>new</code> directory.</p>
-<pre><code class="lang-javascript"><span class="keyword">import</span> { Routes, RouterModule }  <span class="keyword">from</span> <span class="string">'@angular/router'</span>;
+<pre><code class="lang-javascript"><span class="keyword">import</span> { Routes, RouterModule } <span class="keyword">from</span> <span class="string">'@angular/router'</span>;
+
 <span class="keyword">import</span> { NewComponent } <span class="keyword">from</span> <span class="string">'./new.component'</span>;
 
 <span class="keyword">const</span> routes: Routes = [
@@ -87,12 +88,15 @@ If it does not fit your needs please create a GitHub issue and tell us why. We w
 <p>4) And now we should create <code>new.module.ts</code> in <code>src/app/pages/new</code> directory and import <code>new.component.ts</code> and <code>new.routing.ts</code> in it.</p>
 <pre><code class="lang-javascript"><span class="keyword">import</span> { NgModule }      <span class="keyword">from</span> <span class="string">'@angular/core'</span>;
 <span class="keyword">import</span> { CommonModule }  <span class="keyword">from</span> <span class="string">'@angular/common'</span>;
+<span class="keyword">import</span> { FormsModule } <span class="keyword">from</span> <span class="string">'@angular/forms'</span>;
+
 <span class="keyword">import</span> { NewComponent } <span class="keyword">from</span> <span class="string">'./new.component'</span>;
 <span class="keyword">import</span> { routing } <span class="keyword">from</span> <span class="string">'./new.routing'</span>;
 
 @NgModule({
   imports: [
     CommonModule,
+    FormsModule,
     routing
   ],
   declarations: [
@@ -148,22 +152,22 @@ you navigated to some child route - the item will be highlighted.
     component: Pages,
     children: [
       { path: <span class="string">''</span>, redirectTo: <span class="string">'dashboard'</span>, pathMatch: <span class="string">'full'</span> },
-      { path: <span class="string">'dashboard'</span>, loadChildren: <span class="string">'app/pages/dashboard/dashboard.module#DashboardModule'</span> },
-      { path: <span class="string">'new'</span>,  loadChildren: <span class="string">'app/pages/new/new.module#NewModule'</span> }
+      { path: <span class="string">'dashboard'</span>, loadChildren: <span class="string">'./dashboard/dashboard.module#DashboardModule'</span> },
+      { path: <span class="string">'new'</span>,  loadChildren: <span class="string">'./new/new.module#NewModule'</span> }
     ]
   }
 ];
 </code></pre>
 <p><br></p>
-<p>And that’s it! Now your page is available by the following this url <a href="http://localhost:3000/#/pages/new">http://localhost:3000/#/pages/new</a>.
+<p>And that’s it! Now your page is available by the following this url <a href="http://localhost:4200/#/pages/new">http://localhost:4200/#/pages/new</a>.
 Plus, your page is registered inside the sidebar menu. If you don’t want to have a link 
 in the menu - just remove the <code>menu</code> declaration from the <code>pages.menu.ts</code> file.</p>
 
         </div>
       </section>
       <footer class="wrap">
-        <div class="left">Powered by Angular 2, Bootstrap 4, Webpack and many more...</div>
-        <div class="right">© 2015–2016 Akveo LLC<br />Documentation licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.</div>
+        <div class="left">Powered by Angular, Bootstrap 4, Angular CLI and many more...</div>
+        <div class="right">© 2017 Akveo LLC<br />Documentation licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.</div>
       </footer>
     </div><a href="https://github.com/akveo/ng2-admin" title="Star &amp; Fork on GitHub" class="github-fork-ribbon"></a>
   </body>
