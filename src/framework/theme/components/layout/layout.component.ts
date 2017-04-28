@@ -4,13 +4,14 @@
  * Licensed under the MIT License. See License.txt in the project root for license information.
  */
 import {
+  AfterViewInit,
   ChangeDetectionStrategy,
-  Component,
+  Component, ComponentFactoryResolver,
   ElementRef,
   HostBinding,
   Input,
   OnDestroy,
-  Renderer2,
+  Renderer2, ViewChild, ViewContainerRef,
 } from '@angular/core';
 import { convertToBoolProperty } from '../helpers';
 import { NgaThemeService } from '../../services/theme.service';
@@ -101,6 +102,7 @@ export class NgaLayoutFooterComponent {
   changeDetection: ChangeDetectionStrategy.OnPush,
   styleUrls: ['./layout.component.scss'],
   template: `
+    <ng-template #veryTop></ng-template>
     <div class="layout">
       <ng-content select="nga-layout-header"></ng-content>
       <div class="layout-container">
@@ -117,7 +119,7 @@ export class NgaLayoutFooterComponent {
     </div>
   `,
 })
-export class NgaLayoutComponent implements OnDestroy {
+export class NgaLayoutComponent implements OnDestroy, AfterViewInit {
 
   // TODO: can we remove this?
   @HostBinding('class.center') centerValue: boolean = false;
@@ -126,10 +128,13 @@ export class NgaLayoutComponent implements OnDestroy {
   set center(val: boolean) {
     this.centerValue = convertToBoolProperty(val);
   }
+  @ViewChild('veryTop', { read: ViewContainerRef }) veryTopRef;
 
   protected themeSubscription: Subscription;
+  protected appendSubscription: Subscription;
 
   constructor(protected themeService: NgaThemeService,
+              protected componentFactoryResolver: ComponentFactoryResolver,
               protected elementRef: ElementRef,
               protected renderer: Renderer2) {
     this.themeSubscription = this.themeService.onThemeChange().subscribe((theme) => {
@@ -141,7 +146,16 @@ export class NgaLayoutComponent implements OnDestroy {
     });
   }
 
+  ngAfterViewInit(): void {
+    this.appendSubscription = this.themeService.onAppendToTop().subscribe((component) => {
+
+      const componentFactory = this.componentFactoryResolver.resolveComponentFactory(component);
+      const componentRef = this.veryTopRef.createComponent(componentFactory);
+    });
+  }
+
   ngOnDestroy(): void {
     this.themeSubscription.unsubscribe();
+    this.appendSubscription.unsubscribe();
   }
 }

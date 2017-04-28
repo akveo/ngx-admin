@@ -23,7 +23,7 @@ import { NgaCardTestComponent } from './card-test/card-test.component';
 import { NgaLayoutTestComponent } from './layout-test/layout-test.component';
 import { NgaLayoutHeaderTestComponent } from './layout-test/layout-header-test.component';
 import { NgaLayoutFooterTestComponent } from './layout-test/layout-footer-test.component';
-import { NgaThemeChangeTestComponent } from './layout-test/theme-change-test.component';
+import { NgaDymanicComponentComponent, NgaThemeChangeTestComponent } from './layout-test/theme-change-test.component';
 import { NgaTabsetTestComponent } from './tabset-test/tabset-test.component';
 import {
   NgaRouteTabsetTestComponent,
@@ -79,6 +79,7 @@ const NGA_TEST_COMPONENTS = [
   NgaMenuItem4Component,
   NgaUserTestComponent,
   NgaThemeChangeTestComponent,
+  NgaDymanicComponentComponent,
 ];
 
 @NgModule({
@@ -140,6 +141,9 @@ const NGA_TEST_COMPONENTS = [
   ],
   declarations: [
     ...NGA_TEST_COMPONENTS,
+  ],
+  entryComponents: [
+    NgaDymanicComponentComponent,
   ],
   providers: [],
   bootstrap: [NgaAppComponent],

@@ -8,12 +8,25 @@ import { Component } from '@angular/core';
 import { NgaThemeService } from '../../framework/theme/services/theme.service';
 
 @Component({
+  selector: 'nga-dynamic-component-test',
+  template: `
+    <div>
+      <strong>hello from dynamically inserted component</strong>
+    </div>
+  `,
+})
+export class NgaDymanicComponentComponent {
+}
+
+@Component({
   selector: 'nga-change-theme-test',
   template: `
     <nga-layout>
       <nga-layout-header fixed>
         <a href="#" class="navbar-brand">Akveo</a>
         <button id="change-theme" (click)="changeTheme()">Change Theme</button>
+        
+        <button id="add-dynamic" (click)="addDynamicComponent()">Add Dynamic Copmonent</button>
       </nga-layout-header>
 
       <nga-sidebar right>
@@ -47,5 +60,11 @@ export class NgaThemeChangeTestComponent {
   changeTheme() {
     this.currentTheme = this.currentTheme === 'default' ? 'blue' : 'default';
     this.themeService.changeTheme(this.currentTheme);
+
+    this.themeService.appendToTop(NgaDymanicComponentComponent);
+  }
+
+  addDynamicComponent() {
+    this.themeService.appendToTop(NgaDymanicComponentComponent);
   }
 }
