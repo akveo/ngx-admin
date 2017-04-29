@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 
 import { PagesComponent } from './pages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { UiFeaturesComponent } from './ui-features/ui-features.component';
 import { ComponentsComponent } from './components/components.component';
 import { MapsComponent } from './maps/maps.component';
 import { NgxChartsComponent } from './charts/charts.component';
@@ -15,7 +14,7 @@ const routes: Routes = [
     component: PagesComponent,
     children: [
       { path: 'dashboard', component: DashboardComponent },
-      { path: 'ui-features', component: UiFeaturesComponent },
+      { path: 'ui-features', loadChildren: './ui-features/ui-features.module#NgxUiFeaturesModule' },
       { path: 'components', component: ComponentsComponent },
       { path: 'maps', component: MapsComponent },
       { path: 'charts', component: NgxChartsComponent },

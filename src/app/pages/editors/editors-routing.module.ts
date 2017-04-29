@@ -9,16 +9,13 @@ const routes: Routes = [
   {
     path: '',
     component: NgxEditorsComponent,
-    children: [
-      {
-        path: 'tinymce',
-        component: NgxTinyMCEComponent,
-      },
-      {
-        path: 'ckeditor',
-        component: NgxCKEditorComponent,
-      },
-    ],
+    children: [{
+      path: 'tinymce',
+      component: NgxTinyMCEComponent,
+    }, {
+      path: 'ckeditor',
+      component: NgxCKEditorComponent,
+    }],
   },
 ];
 
