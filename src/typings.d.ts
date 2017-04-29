@@ -7,3 +7,5 @@
 declare var module: {
   id: string;
 };
+
+declare var tinymce: any;

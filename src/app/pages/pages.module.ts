@@ -11,6 +11,16 @@ import { ThemeModule } from '../@theme/theme.module';
 import { UiFeaturesComponent } from './ui-features/ui-features.component';
 import { MapsComponent } from './maps/maps.component';
 import { ComponentsComponent } from './components/components.component';
+import { NgxChartsComponent } from './charts/charts.component';
+
+const PAGES_COMPONENTS = [
+  PagesComponent,
+  DashboardComponent,
+  UiFeaturesComponent,
+  MapsComponent,
+  ComponentsComponent,
+  NgxChartsComponent,
+];
 
 @NgModule({
   imports: [
@@ -21,11 +31,7 @@ import { ComponentsComponent } from './components/components.component';
     ThemeModule,
   ],
   declarations: [
-    PagesComponent,
-    DashboardComponent,
-    UiFeaturesComponent,
-    MapsComponent,
-    ComponentsComponent,
+    ...PAGES_COMPONENTS,
   ],
 })
 export class PagesModule {

@@ -28,4 +28,20 @@ export const menuItems: List<NgaMenuItem> = List([
     icon: 'ion ion-ios-location-outline',
     link: '/pages/maps',
   },
+  {
+    title: 'Charts',
+    icon: 'ion ion-arrow-graph-up-right',
+    link: '/pages/charts',
+  },
+  {
+    title: 'Editors',
+    icon: 'ion ion-edit',
+    link: '/pages/editors',
+    children: List([
+      {
+        title: 'TinyMCE',
+        link: '/pages/editors/tinymce',
+      },
+    ]),
+  },
 ]);
