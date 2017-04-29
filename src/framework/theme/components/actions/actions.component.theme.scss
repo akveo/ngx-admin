@@ -1,0 +1,57 @@
+/**
+ * @license
+ * Copyright Akveo. All Rights Reserved.
+ * Licensed under the MIT License. See License.txt in the project root for license information.
+ */
+@mixin nga-actions-theme($theme-name) {
+
+  /deep/ nga-actions {
+    /deep/ nga-action {
+      height: $nga-actions-size-small;
+      padding: 0 $nga-actions-padding;
+
+      i.control-icon {
+        color: $nga-actions-color;
+        font-size: $nga-actions-size-small;
+      }
+      border-left: 1px solid rgba($nga-actions-color, 0.3);
+      background: $nga-actions-background;
+    }
+
+    &.inverse {
+      /deep/ nga-action {
+        i.control-icon {
+          color: $nga-actions-color-inverse;
+        }
+        border-left: 1px solid rgba($nga-actions-color-inverse, 0.3);
+        background: $nga-actions-background-inverse;
+      }
+    }
+
+    &.small {
+
+      /deep/ nga-action {
+        height: $nga-actions-size-small;
+        i.control-icon {
+          font-size: $nga-actions-size-small;
+        }
+      }
+    }
+    &.medium {
+      /deep/ nga-action {
+        height: $nga-actions-size-medium;
+        i.control-icon {
+          font-size: $nga-actions-size-medium;
+        }
+      }
+    }
+    &.large {
+      /deep/ nga-action {
+        height: $nga-actions-size-large;
+        i.control-icon {
+          font-size: $nga-actions-size-large;
+        }
+      }
+    }
+  }
+}

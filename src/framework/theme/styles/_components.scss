@@ -11,6 +11,7 @@
 @import '../components/route-tabset/route-tabset.component.theme';
 @import '../components/menu/menu.component.theme';
 @import '../components/user/user.component.theme';
+@import '../components/actions/actions.component.theme';
 
 // Create a theme
 @mixin nga-theme($theme-name) {
@@ -23,6 +24,7 @@
     @include nga-route-tabset-theme($theme-name);
     @include nga-menu-theme($theme-name);
     @include nga-user-theme($theme-name);
+    @include nga-actions-theme($theme-name);
 
     @content;
   }

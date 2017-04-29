@@ -34,6 +34,7 @@ import {
 } from './menu-test/menu-test.component';
 import { NgaUserTestComponent } from './user-test/user-test.component';
 import { NgaThemeDynamicTestComponent } from './layout-test/theme-dynamic-test.component';
+import { NgaActionsTestComponent } from './actions-test/actions-test.component';
 
 export const routes: Routes = [
   {
@@ -171,6 +172,10 @@ export const routes: Routes = [
   {
     path: 'auth',
     loadChildren: 'framework/auth/auth.module#NgaAuthModule',
+  },
+  {
+    path: 'actions',
+    component: NgaActionsTestComponent,
   },
   {
     path: '**',

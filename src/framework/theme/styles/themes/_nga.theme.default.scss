@@ -116,7 +116,17 @@ $nga-route-tab-header-active: $nga-tab-header-active !default;
 $nga-route-tab-header-min-width: $nga-tab-header-min-width !default;
 
 $nga-user-size-small: 1.5rem !default;
-$nga-user-size-medium: 3rem !default;
+$nga-user-size-medium: 2.5rem !default;
 $nga-user-size-large: 4rem !default;
 $nga-user-picture-background: $nga-color-gray !default;
 $nga-user-menu-border: $nga-border-color !default;
+
+$nga-actions-padding: $nga-padding;
+$nga-actions-size-small: 1.5rem !default;
+$nga-actions-size-medium: 2.5rem !default;
+$nga-actions-size-large: 4rem !default;
+$nga-actions-color: $nga-color-default !default;
+$nga-actions-background: transparent !default;
+$nga-actions-color-inverse: $nga-color-inverse !default;
+$nga-actions-background-inverse: $nga-background-inverse !default;
+

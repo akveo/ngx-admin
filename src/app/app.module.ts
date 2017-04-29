@@ -17,6 +17,8 @@ import { NgaRouteTabsetModule } from '../framework/theme/components/route-tabset
 import { NgaSidebarModule } from '../framework/theme/components/sidebar/sidebar.module';
 import { NgaTabsetModule } from '../framework/theme/components/tabset/tabset.module';
 import { NgaUserModule } from '../framework/theme/components/user/user.module';
+import { NgaAuthModule, NgaDummyAuthProvider, NgaEmailPassAuthProvider } from '../framework/auth';
+import { NgaActionsModule } from '../framework/theme/components/actions/actions.module';
 
 import { NgaAppComponent } from './app.component';
 import { NgaCardTestComponent } from './card-test/card-test.component';
@@ -48,9 +50,8 @@ import {
   NgaMenuItem4Component,
 } from './menu-test/menu-test.component';
 import { NgaUserTestComponent } from './user-test/user-test.component';
-import { NgaAuthModule } from '../framework/auth';
-import { NgaDummyAuthProvider, NgaEmailPassAuthProvider } from '../framework/auth';
 import { NgaThemeDynamicTestComponent, NgaDynamicToAddComponent } from './layout-test/theme-dynamic-test.component';
+import { NgaActionsTestComponent } from './actions-test/actions-test.component';
 
 import { routes } from './app.routes';
 
@@ -82,6 +83,7 @@ const NGA_TEST_COMPONENTS = [
   NgaThemeChangeTestComponent,
   NgaDynamicToAddComponent,
   NgaThemeDynamicTestComponent,
+  NgaActionsTestComponent,
 ];
 
 @NgModule({
@@ -98,6 +100,7 @@ const NGA_TEST_COMPONENTS = [
     NgaSidebarModule.forRoot(),
     NgaTabsetModule,
     NgaUserModule,
+    NgaActionsModule,
     NgaAuthModule.forRoot({
       providers: {
         //
