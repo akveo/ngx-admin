@@ -5493,6 +5493,10 @@ tslint-eslint-rules@3.4.0:
   dependencies:
     doctrine "^0.7.2"
 
+tslint-language-service@0.9.2:
+  version "0.9.2"
+  resolved "https://registry.yarnpkg.com/tslint-language-service/-/tslint-language-service-0.9.2.tgz#76e0ed3e92677a5bd5bc91e4a1335d9b284469f3"
+
 tslint@4.5.1:
   version "4.5.1"
   resolved "https://registry.yarnpkg.com/tslint/-/tslint-4.5.1.tgz#05356871bef23a434906734006fc188336ba824b"
