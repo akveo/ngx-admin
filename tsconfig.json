@@ -15,6 +15,9 @@
     "lib": [
       "es2016",
       "dom"
+    ],
+    "plugins": [
+      { "name": "tslint-language-service"}
     ]
   }
 }
