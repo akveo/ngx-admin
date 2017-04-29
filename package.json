@@ -112,7 +112,7 @@
     "ts-node": "2.0.0",
     "tslint": "4.5.0",
     "tslint-eslint-rules": "3.5.1",
-    "typescript": "2.2.2",
+    "typescript": "2.3.2",
     "typogr": "0.6.6",
     "underscore": "1.8.3",
     "wintersmith": "2.2.5",
