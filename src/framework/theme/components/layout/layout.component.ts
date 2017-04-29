@@ -106,7 +106,7 @@ export class NgaLayoutFooterComponent {
   changeDetection: ChangeDetectionStrategy.OnPush,
   styleUrls: ['./layout.component.scss'],
   template: `
-    <ng-template #veryTop></ng-template>
+    <ng-template #layoutTopDynamicArea></ng-template>
     <div class="layout">
       <ng-content select="nga-layout-header"></ng-content>
       <div class="layout-container">
@@ -133,10 +133,11 @@ export class NgaLayoutComponent implements OnDestroy, AfterViewInit {
     this.centerValue = convertToBoolProperty(val);
   }
 
-  @ViewChild('veryTop', { read: ViewContainerRef }) veryTopRef;
+  @ViewChild('layoutTopDynamicArea', { read: ViewContainerRef }) veryTopRef: ViewContainerRef;
 
   protected themeSubscription: Subscription;
   protected appendSubscription: Subscription;
+  protected clearSubscription: Subscription;
 
   constructor(protected themeService: NgaThemeService,
               protected componentFactoryResolver: ComponentFactoryResolver,
@@ -160,10 +161,17 @@ export class NgaLayoutComponent implements OnDestroy, AfterViewInit {
 
         data.listener.next(componentRef);
       });
+
+    this.clearSubscription = this.themeService.onClearLayoutTop()
+      .subscribe((data: { listener: Subject<any> }) => {
+        this.veryTopRef.clear();
+        data.listener.next(true);
+      });
   }
 
   ngOnDestroy(): void {
     this.themeSubscription.unsubscribe();
     this.appendSubscription.unsubscribe();
+    this.clearSubscription.unsubscribe();
   }
 }

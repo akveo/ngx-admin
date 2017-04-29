@@ -25,6 +25,7 @@ export class NgaDynamicToAddComponent {
       <nga-layout-header fixed>
         <a href="#" class="navbar-brand">Akveo</a>
         <button id="add-dynamic" (click)="addDynamicComponent()">Add Dynamic Copmonent</button>
+        <button id="clear-dynamic" (click)="clearDynamicComponents()">Clear Dynamic Copmonents</button>
       </nga-layout-header>
 
       <nga-sidebar right>
@@ -54,7 +55,12 @@ export class NgaThemeDynamicTestComponent {
   constructor(private themeService: NgaThemeService) { }
 
   addDynamicComponent() {
-    this.themeService.appendToTop(NgaDynamicToAddComponent)
+    this.themeService.appendToLayoutTop(NgaDynamicToAddComponent)
       .subscribe(cRef => console.log(cRef));
+  }
+
+  clearDynamicComponents() {
+    this.themeService.clearLayoutTop()
+      .subscribe(res => console.log(res));
   }
 }
