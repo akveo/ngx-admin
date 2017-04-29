@@ -14,7 +14,7 @@
     align-items: center;
 
     &:first-child {
-      border-left: none;
+      border-left: none!important;
     }
 
     i.control-icon {
