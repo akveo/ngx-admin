@@ -156,7 +156,7 @@
     normalize-path "^2.0.1"
     through2 "^2.0.3"
 
-"@ng-bootstrap/ng-bootstrap@^1.0.0-alpha.25":
+"@ng-bootstrap/ng-bootstrap@1.0.0-alpha.25":
   version "1.0.0-alpha.25"
   resolved "https://registry.yarnpkg.com/@ng-bootstrap/ng-bootstrap/-/ng-bootstrap-1.0.0-alpha.25.tgz#68cc2afa17fb5bdd2d775b7f82cffa86ef21b0ed"
 
