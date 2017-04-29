@@ -33,6 +33,7 @@ import {
   NgaMenuItem4Component,
 } from './menu-test/menu-test.component';
 import { NgaUserTestComponent } from './user-test/user-test.component';
+import { NgaThemeDynamicTestComponent } from './layout-test/theme-dynamic-test.component';
 
 export const routes: Routes = [
   {
@@ -54,6 +55,10 @@ export const routes: Routes = [
   {
     path: 'layout/change-theme',
     component: NgaThemeChangeTestComponent,
+  },
+  {
+    path: 'layout/dynamic',
+    component: NgaThemeDynamicTestComponent,
   },
   {
     path: 'tabset',
