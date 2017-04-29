@@ -12,16 +12,29 @@ import { NgaThemeService } from '@nga/theme/services/theme.service';
       <span class="logo" (click)="goToHome()">NgX&nbsp;<a>Admin</a></span>
       <button (click)="switchTheme()">Switch Theme!</button>
     </div>
-    <div class="right">
-      <search-input></search-input>
-      <i class="control-icon ion ion-ios-email-outline"></i>
-      <i class="control-icon ion ion-ios-bell-outline"></i>
-      <nga-user></nga-user>
-      <i class="control-icon ion ion-ios-gear-outline"></i>
-    </div>
+    
+    <nga-actions size="medium" inverse class="right">
+      <nga-action><search-input></search-input></nga-action>
+      <nga-action icon="ion-ios-email-outline"></nga-action>
+      <nga-action disabled icon="ion-ios-bell-outline"></nga-action>
+      <nga-action>
+        <nga-user [menu]="userMenu" name="Han Solo"></nga-user>
+      </nga-action>
+      <nga-action icon="ion-ios-gear-outline"></nga-action>
+    </nga-actions>
   `,
 })
 export class HeaderComponent {
+
+  userMenu = [
+    {
+      title: 'Profile',
+    },
+    {
+      title: 'Log out',
+    },
+  ];
+
   constructor(private sidebarService: NgaSidebarService,
               private menuService: NgaMenuService,
               private themeService: NgaThemeService) {

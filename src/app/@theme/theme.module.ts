@@ -10,6 +10,7 @@ import {
   NgaSidebarModule,
   NgaMenuModule,
   NgaUserModule,
+  NgaActionsModule,
 } from '@nga/theme';
 
 import { SearchInputComponent, HeaderComponent, FooterComponent } from './components';
@@ -28,6 +29,7 @@ const NGA_MODULES = [
   NgaRouteTabsetModule,
   NgaMenuModule,
   NgaUserModule,
+  NgaActionsModule,
 ];
 
 const COMPONENTS = [

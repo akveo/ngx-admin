@@ -3,16 +3,6 @@
   display: flex;
   justify-content: space-between;
 
-  i.control-icon {
-    &::before {
-      font-size: 2.3rem;
-    }
-
-    &:hover {
-      cursor: pointer;
-    }
-  }
-
   div {
     display: flex;
     align-items: center;
@@ -52,22 +42,6 @@
 
       a {
         font-weight: normal;
-      }
-    }
-  }
-
-  .right {
-    > * {
-      padding: 0 1.25rem;
-      border-left-width: 1px;
-      border-left-style: solid;
-
-      &:first-child {
-        border: none;
-      }
-
-      &:last-child {
-        padding-right: 0;
       }
     }
   }
