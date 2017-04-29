@@ -4,13 +4,13 @@
  * Licensed under the MIT License. See License.txt in the project root for license information.
  */
 
-@import './super-search-1.component';
-@import './super-search-2.component';
-@import './super-search-3.component';
-
 
   .search-wrap {
     margin: 0 0 0 auto;
+    font-size: 0.85rem;
+    position: absolute;
+    top: 0.3rem;
+    right: 2rem;
   }
 
   .icon {
@@ -29,6 +29,7 @@
     border: none;
     background: none;
   }
+
   .btn:focus {
     box-shadow: none;
   }
@@ -37,18 +38,5 @@
     font-size: 1rem;
   }
 
-  .hidden {
-    width: 0;
-    height: 0;
-  }
 
-  .search__input {
-    border: 0;
-    background: transparent;
-    border-radius: 0;
-    -webkit-appearance: none;
-  }
 
-  .search__input:focus {
-    outline: none;
-  }

@@ -6,12 +6,6 @@
 ///specific for modal option styles
 
 :host.option1 {
-  .search-wrap {
-    font-size: 0.85rem;
-    position: absolute;
-    top: 0.3rem;
-    right: 2rem;
-  }
 
   .search {
     display: flex;
@@ -28,6 +22,28 @@
     height: 100vh;
 
   }
+
+  .btn {
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    border: none;
+    background: none;
+
+    &:focus {
+      box-shadow: none;
+    }
+  }
+
+  .icon {
+    font-size: 2.5rem;
+    display: block;
+    width: 1.5rem;
+    height: 1.5rem;
+    margin: 0 auto;
+    color: #d17c78;
+  }
+
   .search::before,
   .search::after {
     content: '';
@@ -55,8 +71,8 @@
   #btn-search-close { // TODO: refactor to specific classes
     font-size: 2rem;
     position: absolute;
-    top: 1.25rem;
-    right: 1.25rem;
+    top: 3rem;
+    right: 3rem;
     display: block;
   }
 
@@ -66,7 +82,7 @@
     opacity: 0;
     transition: opacity 0.5s;
   }
-  .show.search {
+  &.show .search {
     pointer-events: auto;
     opacity: 1;
   }
@@ -84,9 +100,11 @@
     transform: translate3d(15px, 15px, 0);
   }
 
-  .show.search::before,
-  .show.search::after {
-    transform: translate3d(0, 0, 0);
+  &.show {
+    .search::before,
+    .search::after {
+      transform: translate3d(0, 0, 0);
+    }
   }
 
   ///close button
@@ -96,7 +114,7 @@
     transition: opacity 0.5s, transform 0.5s;
   }
 
-  .show.search .btn--search-close {
+  &.show .search .btn--search-close {
     opacity: 1;
     transform: scale3d(1, 1, 1);
   }
@@ -108,12 +126,23 @@
     transition: opacity 0.5s, transform 0.5s;
   }
 
-  .show.search .search__form {
+  &.show .search .search__form {
     opacity: 1;
     transform: scale3d(1, 1, 1);
   }
 
   ///Styles for modal content
+  .search__input {
+    border: 0;
+    background: transparent;
+    border-radius: 0;
+    -webkit-appearance: none;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
   .search__input {
     font-family: inherit;
     font-size: 10vw;
