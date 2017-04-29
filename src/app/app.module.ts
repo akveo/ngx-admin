@@ -50,6 +50,7 @@ import {
 import { NgaUserTestComponent } from './user-test/user-test.component';
 import { NgaAuthModule } from '../framework/auth';
 import { NgaDummyAuthProvider, NgaEmailPassAuthProvider } from '../framework/auth';
+import { NgaThemeDynamicTestComponent, NgaDynamicToAddComponent } from './layout-test/theme-dynamic-test.component';
 
 import { routes } from './app.routes';
 import { NgaSearchTestComponent } from "./super-search-test/super-search-test.component";
@@ -81,7 +82,12 @@ const NGA_TEST_COMPONENTS = [
   NgaMenuItem4Component,
   NgaUserTestComponent,
   NgaThemeChangeTestComponent,
+<<<<<<< HEAD
   NgaSearchTestComponent,
+=======
+  NgaDynamicToAddComponent,
+  NgaThemeDynamicTestComponent,
+>>>>>>> ngx-admin
 ];
 
 @NgModule({
@@ -144,6 +150,9 @@ const NGA_TEST_COMPONENTS = [
   ],
   declarations: [
     ...NGA_TEST_COMPONENTS,
+  ],
+  entryComponents: [
+    NgaDynamicToAddComponent,
   ],
   providers: [],
   bootstrap: [NgaAppComponent],

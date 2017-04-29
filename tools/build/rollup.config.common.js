@@ -5,6 +5,7 @@ export const ROLLUP_GLOBALS = {
   '@angular/common': 'ng.common',
   '@angular/forms': 'ng.forms',
   '@angular/http': 'ng.http',
+  '@angular/router': 'ng.router',
   '@angular/platform-browser': 'ng.platformBrowser',
   '@angular/platform-browser-dynamic': 'ng.platformBrowserDynamic',
   '@angular/platform-browser/animations': 'ng.platformBrowser.animations',
@@ -12,6 +13,8 @@ export const ROLLUP_GLOBALS = {
 
   // Rxjs dependencies
   'rxjs/Subject': 'Rx',
+  'rxjs/Observable': 'Rx',
+  'rxjs/ReplaySubject': 'Rx',
   'rxjs/add/observable/fromEvent': 'Rx.Observable',
   'rxjs/add/observable/forkJoin': 'Rx.Observable',
   'rxjs/add/observable/of': 'Rx.Observable',
@@ -28,13 +31,8 @@ export const ROLLUP_GLOBALS = {
   'rxjs/add/operator/first': 'Rx.Observable.prototype',
   'rxjs/add/operator/startWith': 'Rx.Observable.prototype',
   'rxjs/add/operator/switchMap': 'Rx.Observable.prototype',
-  'rxjs/Observable': 'Rx',
+  'rxjs/add/operator/publish': 'Rx.Observable.prototype',
 };
-
-export const BUILD_CONFIG = {
-  sourceMap: false,
-  format: 'umd',
-}
 
 export function getLicenseBanner(libName, pjsonPath) {
   const libVersion = require(pjsonPath).version;

@@ -7,7 +7,7 @@ var cleanCSS = require('gulp-clean-css');
 
 var inlineResources = require('./scripts/inline-resources');
 
-gulp.task('start', copySources);
+gulp.task('copy-and-build', copySources);
 
 function copySources() {
   gulp.src('./src/framework/**/*')
@@ -40,4 +40,23 @@ function compileSass() {
     .pipe(gulp.dest('./build'));
 }
 
-gulp.task('default', ['start']);
+gulp.task('default', ['copy-and-build']);
+
+gulp.task('inline-resource', copyResources);
+
+function copyResources() {
+  gulp.src([
+      './build/**/*.html',
+      './build/**/*.css',
+      './build/**/*.scss',
+      './build/**/LICENSE.txt',
+      './build/**/README.md',
+      './build/**/package.json'
+    ])
+    .pipe(gulp.dest('./lib'))
+    .on('end', inlineResource)
+}
+
+function inlineResource() {
+  inlineResources('./lib');
+}

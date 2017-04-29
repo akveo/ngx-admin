@@ -4,18 +4,26 @@
  * Licensed under the MIT License. See License.txt in the project root for license information.
  */
 import {
+  AfterViewInit,
   ChangeDetectionStrategy,
   Component,
+  ComponentFactoryResolver,
   ElementRef,
   HostBinding,
   Input,
   OnDestroy,
   Renderer2,
+  ViewChild,
+  ViewContainerRef,
 } from '@angular/core';
 import { convertToBoolProperty } from '../helpers';
 import { NgaThemeService } from '../../services/theme.service';
 import { Subscription } from 'rxjs/Subscription';
+<<<<<<< HEAD
 import {NgaSuperSearchService} from "../super-search/super-search.service";
+=======
+import { Subject } from 'rxjs/Subject';
+>>>>>>> ngx-admin
 
 /**
  * Component intended to be used within  the `<nga-layout>` component.
@@ -102,6 +110,7 @@ export class NgaLayoutFooterComponent {
   changeDetection: ChangeDetectionStrategy.OnPush,
   styleUrls: ['./layout.component.scss'],
   template: `
+    <ng-template #layoutTopDynamicArea></ng-template>
     <div class="layout">
       <ng-content select="nga-layout-header"></ng-content>
       <div class="layout-container">
@@ -118,7 +127,7 @@ export class NgaLayoutFooterComponent {
     </div>
   `,
 })
-export class NgaLayoutComponent implements OnDestroy {
+export class NgaLayoutComponent implements OnDestroy, AfterViewInit {
 
   // TODO: can we remove this?
   @HostBinding('class.center') centerValue: boolean = false;
@@ -128,11 +137,22 @@ export class NgaLayoutComponent implements OnDestroy {
     this.centerValue = convertToBoolProperty(val);
   }
 
+<<<<<<< HEAD
   protected searchSubscription: Subscription;
+=======
+  @ViewChild('layoutTopDynamicArea', { read: ViewContainerRef }) veryTopRef: ViewContainerRef;
+
+>>>>>>> ngx-admin
   protected themeSubscription: Subscription;
+  protected appendSubscription: Subscription;
+  protected clearSubscription: Subscription;
 
   constructor(protected themeService: NgaThemeService,
+<<<<<<< HEAD
               protected searchActivateService: NgaSuperSearchService,
+=======
+              protected componentFactoryResolver: ComponentFactoryResolver,
+>>>>>>> ngx-admin
               protected elementRef: ElementRef,
               protected renderer: Renderer2) {
     this.themeSubscription = this.themeService.onThemeChange().subscribe((theme) => {
@@ -158,8 +178,30 @@ export class NgaLayoutComponent implements OnDestroy {
     })
   }
 
+  ngAfterViewInit(): void {
+    this.appendSubscription = this.themeService.onAppendToTop()
+      .subscribe((data: { component: any, listener: Subject<any> }) => {
+
+        const componentFactory = this.componentFactoryResolver.resolveComponentFactory(data.component);
+        const componentRef = this.veryTopRef.createComponent(componentFactory);
+
+        data.listener.next(componentRef);
+      });
+
+    this.clearSubscription = this.themeService.onClearLayoutTop()
+      .subscribe((data: { listener: Subject<any> }) => {
+        this.veryTopRef.clear();
+        data.listener.next(true);
+      });
+  }
+
   ngOnDestroy(): void {
     this.themeSubscription.unsubscribe();
+<<<<<<< HEAD
     this.searchSubscription.unsubscribe();
+=======
+    this.appendSubscription.unsubscribe();
+    this.clearSubscription.unsubscribe();
+>>>>>>> ngx-admin
   }
 }

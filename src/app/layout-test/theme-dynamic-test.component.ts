@@ -4,15 +4,28 @@
  * Licensed under the MIT License. See License.txt in the project root for license information.
  */
 import { Component } from '@angular/core';
-import { NgaThemeService } from '../../framework/theme';
+
+import { NgaThemeService } from '../../framework/theme/services/theme.service';
 
 @Component({
-  selector: 'nga-change-theme-test',
+  selector: 'nga-dynamic-to-add',
+  template: `
+    <div>
+      <strong>hello from dynamically inserted component</strong>
+    </div>
+  `,
+})
+export class NgaDynamicToAddComponent {
+}
+
+@Component({
+  selector: 'nga-dynamic-test',
   template: `
     <nga-layout>
       <nga-layout-header fixed>
         <a href="#" class="navbar-brand">Akveo</a>
-        <button id="change-theme" (click)="changeTheme()">Change Theme</button>
+        <button id="add-dynamic" (click)="addDynamicComponent()">Add Dynamic Copmonent</button>
+        <button id="clear-dynamic" (click)="clearDynamicComponents()">Clear Dynamic Copmonents</button>
       </nga-layout-header>
 
       <nga-sidebar right>
@@ -37,14 +50,17 @@ import { NgaThemeService } from '../../framework/theme';
     </nga-layout>
 `,
 })
-export class NgaThemeChangeTestComponent {
-
-  currentTheme = 'default';
+export class NgaThemeDynamicTestComponent {
 
   constructor(private themeService: NgaThemeService) { }
 
-  changeTheme() {
-    this.currentTheme = this.currentTheme === 'default' ? 'blue' : 'default';
-    this.themeService.changeTheme(this.currentTheme);
+  addDynamicComponent() {
+    this.themeService.appendToLayoutTop(NgaDynamicToAddComponent)
+      .subscribe(cRef => console.log(cRef));
+  }
+
+  clearDynamicComponents() {
+    this.themeService.clearLayoutTop()
+      .subscribe(res => console.log(res));
   }
 }

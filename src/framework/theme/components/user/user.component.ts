@@ -7,12 +7,45 @@ import { Component, Input, HostBinding, Output, EventEmitter, HostListener, Elem
 import { convertToBoolProperty } from '../helpers';
 
 export class NgaUserMenuItem {
+  /**
+   * Menu title
+   * @type string
+   */
   title: string;
+  /**
+   * Menu link for [routerLink] directive
+   * @type string
+   */
   link?: string;
-  icon?: string;
+  /**
+   * URL for absolute urls, used directly in href
+   * @type string
+   */
+  url?: string;
+  /**
+   * Link target (_blank, _self, etc)
+   * @type string
+   */
   target?: string;
+  /**
+   * Icon class
+   * @type string
+   */
+  icon?: string;
 }
 
+/**
+ * Represents a component showing a user avatar (picture) with a user name on the right.
+ *
+ * Can be used as a user profile link or can bring a user context menu.
+ *
+ * @theme
+ * $nga-user-size-small: 1.5rem !default;
+ * $nga-user-size-medium: 3rem !default;
+ * $nga-user-size-large: 4rem !default;
+ * $nga-user-picture-background: $nga-color-gray !default;
+ * $nga-user-menu-border: $nga-border-color !default;
+ */
 @Component({
   selector: 'nga-user',
   styleUrls: ['./user.component.scss'],
@@ -41,33 +74,86 @@ export class NgaUserComponent {
     return this.sizeValue === NgaUserComponent.SIZE_LARGE;
   }
 
+  /**
+   * Specifies a name to be shown on the right of a user picture
+   * @type string
+   */
   @Input() name: string = 'Anonymous';
+
+  /**
+   * Specifies a title (written in a smaller font) to be shown under the **name**
+   * @type string
+   */
   @Input() title: string;
+
+  /**
+   * Absolute path to a user picture
+   * User name initials (JD for John Doe) will be shown if no picture specified
+   * @type string
+   */
   @Input() picture: string;
+
+  /**
+   * Color of the area shown when no picture specified
+   * @type string
+   */
   @Input() color: string;
+
+  /**
+   * List of menu items for a user context menu (shown when clicked)
+   * @type NgaUserMenuItem[]
+   */
   @Input() menu: NgaUserMenuItem[] = [];
 
+  /**
+   * Size of the component, small|medium|large
+   * @type string
+   */
   @Input()
   set size(val: string) {
     this.sizeValue = val;
   }
+
+  /**
+   * Whether to show a user name or not
+   * @type boolean
+   */
   @Input()
   set showName(val: boolean) {
     this.showNameValue = convertToBoolProperty(val);
   }
+
+  /**
+   * Whether to show a user title or not
+   * @type boolean
+   */
   @Input()
   set showTitle(val: boolean) {
     this.showTitleValue = convertToBoolProperty(val);
   }
+
+  /**
+   * Whether to show a user initials (if no picture specified) or not
+   * @type boolean
+   */
   @Input()
   set showInitials(val: boolean) {
     this.showInitialsValue = convertToBoolProperty(val);
   }
+
+  /**
+   * Whether to show only a picture or also show the name and title
+   * @type boolean
+   */
   @Input()
   set onlyPicture(val: boolean) {
     this.showNameValue = this.showTitleValue = !convertToBoolProperty(val);
   }
 
+  /**
+   * Outputs when a context menu item is clicked
+   * @type EventEmitter<NgaUserMenuItem>
+   */
   @Output() menuClick = new EventEmitter<NgaUserMenuItem>();
 
   showNameValue: boolean = true;
@@ -82,6 +168,9 @@ export class NgaUserComponent {
     return false;
   }
 
+  /**
+   * Toggles a context menu
+   */
   toggleMenu() {
     this.isMenuShown = !this.isMenuShown;
   }

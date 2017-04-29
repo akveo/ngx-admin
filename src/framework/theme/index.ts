@@ -15,3 +15,4 @@ export * from './components/sidebar/sidebar.module';
 export * from './components/sidebar/sidebar.service';
 export * from './components/tabset/tabset.module';
 export * from './components/user/user.module';
+export * from './services/theme.service';
