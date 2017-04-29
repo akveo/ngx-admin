@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { NgxEditorsComponent } from './editors.component';
 import { NgxTinyMCEComponent, NgxTinyMCEEditorComponent } from './tinyMCE.component';
+import { NgxCKEditorComponent } from './ckeditor.component';
 
 const routes: Routes = [
   {
@@ -12,6 +13,10 @@ const routes: Routes = [
       {
         path: 'tinymce',
         component: NgxTinyMCEComponent,
+      },
+      {
+        path: 'ckeditor',
+        component: NgxCKEditorComponent,
       },
     ],
   },
@@ -23,4 +28,9 @@ const routes: Routes = [
 })
 export class NgxEditorsRoutingModule { }
 
-export const routedComponents = [NgxEditorsComponent, NgxTinyMCEComponent, NgxTinyMCEEditorComponent];
+export const routedComponents = [
+  NgxEditorsComponent,
+  NgxTinyMCEComponent,
+  NgxTinyMCEEditorComponent,
+  NgxCKEditorComponent,
+];

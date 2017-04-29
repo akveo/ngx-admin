@@ -42,6 +42,10 @@ export const menuItems: List<NgaMenuItem> = List([
         title: 'TinyMCE',
         link: '/pages/editors/tinymce',
       },
+      {
+        title: 'CKEditor',
+        link: '/pages/editors/ckeditor',
+      },
     ]),
   },
 ]);
