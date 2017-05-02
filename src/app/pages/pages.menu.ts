@@ -191,6 +191,14 @@ export const PAGES_MENU = [
                 title: 'general.menu.smart_tables',
               }
             }
+          },
+          {
+            path: 'datatables',
+            data: {
+              menu: {
+                title: 'Data Tables',
+              }
+            }
           }
         ]
       },

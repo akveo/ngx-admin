@@ -1,0 +1,89 @@
+<div class="widgets">
+    <div class="row">
+        <ba-card title="Basic Example" baCardClass="with-scroll" class="data-table-container">
+            <div class="row">
+                <div class="col-sm-2">
+                    <label class="label-control">Rows on page</label>
+                    <select class="form-control input-sm" [(ngModel)]="rowsOnPage">
+                    <option [ngValue]="5">5</option>
+                    <option [ngValue]="10">10</option>
+                    <option [ngValue]="15">15</option>
+                </select>
+                </div>
+                <div class="col-sm-4">
+                    <div class="row">
+                        <label class="col-sm-12 label-control">Sort by</label>
+                    </div>
+                    <div class="row">
+                        <div class="offset-sm-1 col-sm-5">
+                            <div class="row">
+                                <select class="form-control input-sm" [(ngModel)]="sortBy">
+                            <option ngValue="name">Name</option>
+                            <option ngValue="email">Email</option>
+                            <option ngValue="age">Age</option>
+                            <option [ngValue]="sortByWordLength">City</option>
+                        </select>
+                            </div>
+                        </div>
+                        <div class="offset-sm-1 col-sm-5">
+                            <div class="row">
+                                <select class="form-control input-sm" [(ngModel)]="sortOrder">
+                            <option ngValue="asc">Ascending</option>
+                            <option ngValue="desc">Descending</option>
+                            <option ngValue="badValue">Bad value</option>
+                        </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">User information</div>
+
+                <table class="table table-striped" [mfData]="data | dataFilter : filterQuery" #mf="mfDataTable" [mfRowsOnPage]="rowsOnPage" [(mfSortBy)]="sortBy" [(mfSortOrder)]="sortOrder">
+                    <thead>
+                        <tr>
+                            <th style="width: 10%"></th>
+                            <th style="width: 20%">
+                                <mfDefaultSorter by="name">Name</mfDefaultSorter>
+                            </th>
+                            <th style="width: 40%">
+                                <mfDefaultSorter by="email">Email</mfDefaultSorter>
+                            </th>
+                            <th style="width: 10%">
+                                <mfDefaultSorter by="age">Age</mfDefaultSorter>
+                            </th>
+                            <th style="width: 20%">
+                                <mfDefaultSorter [by]="sortByWordLength">City</mfDefaultSorter>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th colspan="5">
+                                Filter by name:
+                                <input class="form-control" [(ngModel)]="filterQuery" />
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of mf.data">
+                            <td>
+                                <button (click)="remove(item)" class="btn btn-danger">x</button>
+                            </td>
+                            <td>{{item.name}}</td>
+                            <td>{{item.email}}</td>
+                            <td class="text-right">{{item.age}}</td>
+                            <td>{{item.city | uppercase}}</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="5">
+                                <mfBootstrapPaginator [rowsOnPageSet]="[5,10,15]"></mfBootstrapPaginator>
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </ba-card>
+    </div>
+</div>
