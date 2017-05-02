@@ -1,0 +1,248 @@
+/*!
+ * Bootstrap Docs (http://getbootstrap.com)
+ * Copyright 2011-2014 Twitter, Inc.
+ * Licensed under the Creative Commons Attribution 3.0 Unported License. For
+ * details, see http://creativecommons.org/licenses/by/3.0/.
+ */
+
+.h1, .h2, .h3, h1, h2, h3 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.h1, h1 {
+  font-size: 36px;
+}
+
+.btn-group-lg > .btn, .btn-lg {
+  font-size: 18px;
+}
+
+section {
+  padding-top: 30px;
+}
+
+.bd-pageheader {
+  margin-top: 51px;
+}
+
+.page-header {
+  padding-bottom: 9px;
+  margin: 40px 0 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.navbar-default .navbar-nav > li > a {
+  color: #777;
+}
+
+.navbar {
+  padding: 0;
+}
+
+.navbar-nav .nav-item {
+  margin-left: 0 !important;
+}
+
+.nav > li > a {
+  position: relative;
+  display: block;
+  padding: 10px 15px;
+}
+
+.nav .navbar-brand {
+  float: left;
+  height: 50px;
+  padding: 15px 15px;
+  font-size: 18px;
+  line-height: 20px;
+  margin-right: 0 !important;
+}
+
+.navbar-brand {
+  color: #777;
+  float: left;
+  height: 50px;
+  padding: 15px 15px;
+  font-size: 18px;
+  line-height: 20px;
+}
+
+.navbar-toggler {
+  margin-top: 8px;
+  margin-right: 15px;
+}
+
+.navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > li > a:hover {
+  color: #333;
+  background-color: transparent;
+}
+
+.bd-pageheader, .bs-docs-masthead {
+  position: relative;
+  padding: 30px 0;
+  color: #cdbfe3;
+  text-align: center;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, .1);
+  background-color: #6f5499;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#563d7c), to(#6f5499));
+  background-image: -webkit-linear-gradient(top, #563d7c 0, #6f5499 100%);
+  background-image: -o-linear-gradient(top, #563d7c 0, #6f5499 100%);
+  background-image: linear-gradient(to bottom, #563d7c 0, #6f5499 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#563d7c', endColorstr='#6F5499', GradientType=0);
+  background-repeat: repeat-x;
+}
+
+.bd-pageheader {
+  margin-bottom: 40px;
+  font-size: 20px;
+}
+
+.bd-pageheader h1 {
+  margin-top: 0;
+  color: #fff;
+}
+
+.bd-pageheader p {
+  margin-bottom: 0;
+  font-weight: 300;
+  line-height: 1.4;
+}
+
+.bd-pageheader .btn {
+  margin: 10px 0;
+}
+
+.scrollable-menu .nav-link {
+  color: #337ab7;
+  font-size: 14px;
+}
+
+.scrollable-menu .nav-link:hover {
+  color: #23527c;
+  background-color: #eee;
+}
+
+@media (min-width: 992px) {
+  .bd-pageheader h1, .bd-pageheader p {
+    margin-right: 380px;
+  }
+}
+
+@media (min-width: 768px) {
+  .bd-pageheader {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    font-size: 24px;
+    text-align: left;
+  }
+
+  .bd-pageheader h1 {
+    font-size: 60px;
+    line-height: 1;
+  }
+
+  .navbar-nav > li > a.nav-link {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-size: 14px;
+  }
+
+  .navbar > .container .navbar-brand, .navbar > .container-fluid .navbar-brand {
+    margin-left: -15px;
+  }
+}
+
+@media (max-width: 767px) {
+  .hidden-xs {
+    display: none !important;
+  }
+
+  .navbar .container {
+    width: 100%;
+    max-width: 100%;
+  }
+  .navbar .container,
+  .navbar .container .navbar-header {
+    padding: 0;
+    margin: 0;
+  }
+}
+
+@media (max-width: 400px) {
+  code, kbd {
+    font-size: 60%;
+  }
+}
+
+/**
+    * VH and VW units can cause issues on iOS devices: http://caniuse.com/#feat=viewport-units
+    *
+    * To overcome this, create media queries that target the width, height, and orientation of iOS devices.
+    * It isn't optimal, but there is really no other way to solve the problem. In this example, I am fixing
+    * the height of element '.scrollable-menu' —which is a full width and height cover image.
+    *
+    * iOS Resolution Quick Reference: http://www.iosres.com/
+    */
+
+.scrollable-menu {
+  height: 90vh !important;
+  width: 100vw;
+  overflow-x: hidden;
+  padding: 0 0 20px;
+}
+
+/**
+ * iPad with portrait orientation.
+ */
+@media all and (device-width: 768px) and (device-height: 1024px) and (orientation: portrait) {
+  .scrollable-menu {
+    height: 1024px !important;
+  }
+}
+
+/**
+ * iPad with landscape orientation.
+ */
+@media all and (device-width: 768px) and (device-height: 1024px) and (orientation: landscape) {
+  .scrollable-menu {
+    height: 768px !important;
+  }
+}
+
+/**
+ * iPhone 5
+ * You can also target devices with aspect ratio.
+ */
+@media screen and (device-aspect-ratio: 40/71) {
+  .scrollable-menu {
+    height: 500px !important;
+  }
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #888;
+}
+
+.navbar-toggle:focus {
+  outline: 0
+}
+
+.navbar-toggle .icon-bar {
+  display: block;
+  width: 22px;
+  height: 2px;
+  border-radius: 1px
+}
+
+.navbar-toggle .icon-bar + .icon-bar {
+  margin-top: 4px
+}
+
+pre {
+  white-space: pre-wrap;       /* CSS 3 */
+  white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+  white-space: -pre-wrap;      /* Opera 4-6 */
+  white-space: -o-pre-wrap;    /* Opera 7 */
+  word-wrap: break-word;       /* Internet Explorer 5.5+ */
+}

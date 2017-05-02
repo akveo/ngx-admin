@@ -47,4 +47,4 @@ declare var L:any;
 declare var AmCharts:any;
 declare var Chart:any;
 declare var Chartist:any;
-
+declare const chroma: any;
