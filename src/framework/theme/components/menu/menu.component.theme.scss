@@ -4,13 +4,13 @@
  * Licensed under the MIT License. See License.txt in the project root for license information.
  */
 @mixin nga-menu-theme($theme-name) {
-  /deep/ nga-menu {
-    /deep/ .menu-group {
+  nga-menu {
+    .menu-group {
       color: $nga-color-gray;
       font-weight: $nga-font-weight-bolder;
     }
 
-    /deep/ ul {
+    ul {
       li {
         a {
           color: $nga-color-default;

@@ -29,9 +29,9 @@
     "@angular/common": "^4.0.0",
     "@angular/core": "^4.0.0",
     "@angular/router": "^4.0.0",
-    "normalize.css": "6.0.0",
-    "font-awesome": "^4.7.0",
-    "immutable": "^3.8.1",
-    "ionicons": "^2.0.1"
+    "font-awesome": "4.7.0",
+    "immutable": "3.8.1",
+    "ionicons": "2.0.1",
+    "normalize.css": "6.0.0"
   }
 }

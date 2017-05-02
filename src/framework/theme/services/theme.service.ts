@@ -16,6 +16,7 @@ import { ngaThemeOptionsToken } from '../theme.options';
 @Injectable()
 export class NgaThemeService {
 
+  // TODO: behavioral subject here?
   currentTheme: string;
   private themeChanges$ = new ReplaySubject(1);
   private appendToLayoutTop$ = new Subject();

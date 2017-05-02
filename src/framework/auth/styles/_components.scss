@@ -7,7 +7,7 @@
 
 // Create a theme
 @mixin nga-auth($theme-name) {
-  /deep/ .theme-#{$theme-name} {
+  .theme-#{$theme-name} {
     @include nga-auth-block-theme($theme-name);
 
     @content;

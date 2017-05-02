@@ -4,6 +4,11 @@
  * Licensed under the MIT License. See License.txt in the project root for license information.
  */
 @import 'partial';
-@import '~bootstrap/scss/normalize';
-@import '~bootstrap/scss/print';
-@import '~bootstrap/scss/reboot';
+
+@mixin nga-b-forms-theme($theme-name) {
+  /deep/ {
+    @import '~bootstrap/scss/forms';
+
+    // TODO: further forms overrides
+  }
+}

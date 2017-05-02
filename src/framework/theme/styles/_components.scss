@@ -7,7 +7,6 @@
 @import '../components/sidebar/sidebar.component.theme';
 @import '../components/card/card.component.theme';
 @import '../components/tabset/tabset.component.theme';
-@import '../components/sidebar/sidebar.component.theme';
 @import '../components/route-tabset/route-tabset.component.theme';
 @import '../components/menu/menu.component.theme';
 @import '../components/user/user.component.theme';
@@ -17,7 +16,7 @@
 @mixin nga-theme($theme-name) {
 
   // TODO: cover up this .theme-${} into a function to to repeat in each module
-  /deep/ .theme-#{$theme-name} {
+  .theme-#{$theme-name} {
     @include nga-layout-theme($theme-name);
     @include nga-sidebar-theme($theme-name);
     @include nga-card-theme($theme-name);

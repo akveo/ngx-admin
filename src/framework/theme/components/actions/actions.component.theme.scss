@@ -5,8 +5,8 @@
  */
 @mixin nga-actions-theme($theme-name) {
 
-  /deep/ nga-actions {
-    /deep/ nga-action {
+  nga-actions {
+    nga-action {
       height: $nga-actions-size-small;
       padding: 0 $nga-actions-padding;
 
@@ -19,7 +19,7 @@
     }
 
     &.inverse {
-      /deep/ nga-action {
+      nga-action {
         i.control-icon {
           color: $nga-actions-color-inverse;
         }
@@ -30,7 +30,7 @@
 
     &.small {
 
-      /deep/ nga-action {
+      nga-action {
         height: $nga-actions-size-small;
         i.control-icon {
           font-size: $nga-actions-size-small;
@@ -38,7 +38,7 @@
       }
     }
     &.medium {
-      /deep/ nga-action {
+      nga-action {
         height: $nga-actions-size-medium;
         i.control-icon {
           font-size: $nga-actions-size-medium;
@@ -46,7 +46,7 @@
       }
     }
     &.large {
-      /deep/ nga-action {
+      nga-action {
         height: $nga-actions-size-large;
         i.control-icon {
           font-size: $nga-actions-size-large;

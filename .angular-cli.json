@@ -19,8 +19,6 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
-        "../node_modules/font-awesome/scss/font-awesome.scss",
-        "../node_modules/ionicons/scss/ionicons.scss",
         "styles.scss"
       ],
       "scripts": [
