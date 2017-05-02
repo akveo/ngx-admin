@@ -8,23 +8,23 @@ import { DataTablesService } from './dataTables.service';
 })
 export class DataTables {
 
-    public data;
-    public filterQuery = "";
-    public rowsOnPage = 10;
-    public sortBy = "email";
-    public sortOrder = "asc";
+    data;
+    filterQuery = "";
+    rowsOnPage = 10;
+    sortBy = "email";
+    sortOrder = "asc";
 
-    constructor(protected service: DataTablesService) {
+    constructor(private service: DataTablesService) {
     this.service.getData().then((data) => {
       this.data = data;
     });
   }
 
-    public toInt(num: string) {
+    toInt(num: string) {
         return +num;
     }
 
-    public sortByWordLength = (a: any) => {
+    sortByWordLength = (a: any) => {
         return a.city.length;
     }
   

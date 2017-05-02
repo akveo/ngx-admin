@@ -1,8 +1,8 @@
-import * as _ from "lodash";
-import {Pipe, PipeTransform} from "@angular/core";
+import * as _ from 'lodash';
+import {Pipe, PipeTransform} from '@angular/core';
 
 @Pipe({
-    name: "dataFilter"
+    name: 'dataFilter'
 })
 export class DataFilterPipe implements PipeTransform {
 
