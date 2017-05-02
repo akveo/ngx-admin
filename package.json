@@ -22,16 +22,16 @@
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "4.0.3",
-    "@angular/common": "4.0.3",
-    "@angular/compiler": "4.0.3",
-    "@angular/core": "4.0.3",
-    "@angular/forms": "4.0.3",
-    "@angular/http": "4.0.3",
-    "@angular/platform-browser": "4.0.3",
-    "@angular/platform-browser-dynamic": "4.0.3",
-    "@angular/platform-server": "4.0.3",
-    "@angular/router": "4.0.3",
+    "@angular/animations": "4.1.0",
+    "@angular/common": "4.1.0",
+    "@angular/compiler": "4.1.0",
+    "@angular/core": "4.1.0",
+    "@angular/forms": "4.1.0",
+    "@angular/http": "4.1.0",
+    "@angular/platform-browser": "4.1.0",
+    "@angular/platform-browser-dynamic": "4.1.0",
+    "@angular/platform-server": "4.1.0",
+    "@angular/router": "4.1.0",
     "@ng-bootstrap/ng-bootstrap": "1.0.0-alpha.25",
     "bootstrap": "4.0.0-alpha.6",
     "ckeditor": "4.6.2",
@@ -51,7 +51,7 @@
   },
   "devDependencies": {
     "@angular/cli": "1.0.1",
-    "@angular/compiler-cli": "4.0.3",
+    "@angular/compiler-cli": "4.1.0",
     "@types/jasmine": "2.5.38",
     "@types/node": "6.0.69",
     "angular-cli-ghpages": "0.5.0",
@@ -72,6 +72,6 @@
     "tslint": "4.5.1",
     "tslint-eslint-rules": "3.4.0",
     "tslint-language-service": "0.9.2",
-    "typescript": "2.2.2"
+    "typescript": "2.3.2"
   }
 }
