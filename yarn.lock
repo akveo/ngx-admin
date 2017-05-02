@@ -303,11 +303,7 @@ angular2-datatable@0.6.0:
   resolved "https://registry.yarnpkg.com/angular2-datatable/-/angular2-datatable-0.6.0.tgz#ca008f74087f0cb87da5709ed2f2d1d061772632"
   dependencies:
     lodash "^4.0.0"
-
-angular2-modal@^2.0.3:
-  version "2.0.3"
-  resolved "https://registry.yarnpkg.com/angular2-modal/-/angular2-modal-2.0.3.tgz#d5e19a799f517c51d729f4960057506176563e8f"
-
+    
 animate.css@3.5.2:
   version "3.5.2"
   resolved "https://registry.yarnpkg.com/animate.css/-/animate.css-3.5.2.tgz#91e668dc069a808e5e499514867b97aae0166c36"
