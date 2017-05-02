@@ -6,6 +6,7 @@ import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { DataTableModule } from "angular2-datatable";
 import { HttpModule } from "@angular/http";
 import { DataFilterPipe }   from './components/dataTables/data-filter.pipe';
+import { HotTable, HotTableModule } from 'ng2-handsontable';
 
 import { routing }       from './tables.routing';
 import { Tables } from './tables.component';
@@ -22,6 +23,15 @@ import { SmartTablesService } from './components/smartTables/smartTables.service
 import { DataTables } from './components/dataTables/dataTables.component';
 import { DataTablesService } from './components/dataTables/dataTables.service';
 
+import { HotTables } from './components/hotTables/hotTables.component';
+import { HandsontableSection } from './components/hotTables/handsontable-section';
+import { BasicDemo } from './components/hotTables/handsontable/basic-demo';
+import { SheetDemo } from './components/hotTables/handsontable/sheet-demo';
+import { FinanceDemo } from './components/hotTables/handsontable/finance-demo';
+import { ScienceDemo } from './components/hotTables/handsontable/science-demo';
+import { SportDemo } from './components/hotTables/handsontable/sport-demo';
+import { AdvancedDemo } from './components/hotTables/handsontable/advanced-demo';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -30,7 +40,8 @@ import { DataTablesService } from './components/dataTables/dataTables.service';
     routing,
     Ng2SmartTableModule,
     DataTableModule,
-    HttpModule
+    HttpModule,
+    HotTableModule
   ],
   declarations: [
     Tables,
@@ -43,7 +54,15 @@ import { DataTablesService } from './components/dataTables/dataTables.service';
     ResponsiveTable,
     SmartTables,
     DataTables,
-    DataFilterPipe
+    DataFilterPipe,
+    HotTables,
+    HandsontableSection,
+    BasicDemo,
+    AdvancedDemo,
+    FinanceDemo,
+    ScienceDemo,
+    SportDemo,
+    SheetDemo
   ],
   providers: [
     BasicTablesService,
