@@ -10,6 +10,14 @@
 
 // buttons
 
+$btn-default-bg: $nga-color-neutral;
+$btn-default-border: $nga-color-inverse;
+$btn-default-border-width: 1px;
+$btn-default-color: $nga-color-inverse;
+
+$btn-inverse-bg: $nga-color-gray;
+$btn-inverse-color: $nga-color-inverse;
+
 $btn-primary-bg: $nga-color-primary;
 $btn-primary-border: $nga-color-dark-primary;
 $btn-primary-color: $nga-color-inverse;
@@ -34,4 +42,11 @@ $btn-danger-bg: $nga-color-danger;
 $btn-danger-border: $nga-color-dark-danger;
 $btn-danger-color: $nga-color-inverse;
 
+$btn-hover: 24;
+$btn-border-radius: 5px;
+
+$btn-small-border-radius: 3px;
+$btn-large-border-radius: 6px;
+
+$btn-raised-shadow-color: rgba(0, 0, 0, 0.35);
 
