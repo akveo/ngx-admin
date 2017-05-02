@@ -18,6 +18,7 @@
       "tsconfig": "tsconfig.app.json",
       "testTsconfig": "tsconfig.spec.json",
       "styles": [
+        "../node_modules/roboto-fontface/css/roboto/sass/roboto-fontface.scss",
         "../node_modules/normalize.css/normalize.css",
         "../node_modules/font-awesome/scss/font-awesome.scss",
         "../node_modules/ionicons/scss/ionicons.scss",

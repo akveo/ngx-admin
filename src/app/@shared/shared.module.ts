@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { NgaCardModule } from '@nga/theme';
-import { CKEditorModule } from 'ng2-ckeditor';
+import { NgaBootstrapModule } from '@nga/bootstrap';
 
 @NgModule ({
   exports: [
@@ -12,7 +12,7 @@ import { CKEditorModule } from 'ng2-ckeditor';
     ReactiveFormsModule,
     RouterModule,
     NgaCardModule,
-    CKEditorModule,
+    NgaBootstrapModule,
   ],
 })
 export class NgxSharedModule { }

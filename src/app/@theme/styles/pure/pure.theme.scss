@@ -1,3 +1,8 @@
+/**
+ * @license
+ * Copyright Akveo. All Rights Reserved.
+ * Licensed under the MIT License. See License.txt in the project root for license information.
+ */
 @import 'variables';
 @import '../components';
 @import 'overrides/all';
@@ -5,7 +10,13 @@
 @import '~@nga/theme/styles/themes/nga.theme.default';
 
 $theme-name: 'pure';
+
+// @nga/theme module styles
 @include nga-theme($theme-name) {
   @include nga-theme-overrides($theme-name);
   @include custom-components-theme($theme-name);
 }
+
+// @nga/bootstrap module styles
+@import '~@nga/bootstrap/styles/themes/nga.theme.default';
+@include nga-bootstrap($theme-name);
