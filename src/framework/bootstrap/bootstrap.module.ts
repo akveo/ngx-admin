@@ -5,7 +5,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 @NgModule({
   imports: [
     CommonModule,
-    NgbModule,
+    NgbModule.forRoot(),
   ],
   exports: [
     NgbModule,
