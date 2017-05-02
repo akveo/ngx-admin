@@ -298,7 +298,7 @@ amdefine@>=0.0.4:
   version "3.21.0"
   resolved "https://codeload.github.com/amcharts/ammap3/tar.gz/00086807e39549325fe361336b2289d8fc524753"
 
-angular2-datatable@^0.6.0:
+angular2-datatable@0.6.0:
   version "0.6.0"
   resolved "https://registry.yarnpkg.com/angular2-datatable/-/angular2-datatable-0.6.0.tgz#ca008f74087f0cb87da5709ed2f2d1d061772632"
   dependencies:
