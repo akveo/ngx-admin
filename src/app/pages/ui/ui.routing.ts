@@ -6,6 +6,7 @@ import { Grid } from './components/grid/grid.component';
 import { Icons } from './components/icons/icons.component';
 import { Modals } from './components/modals/modals.component';
 import { Typography } from './components/typography/typography.component';
+import { SlimComponent } from './components/slim/slim.component';
 
 // noinspection TypeScriptValidateTypes
 const routes: Routes = [
@@ -17,7 +18,8 @@ const routes: Routes = [
       { path: 'grid', component: Grid },
       { path: 'icons', component: Icons },
       { path: 'typography', component: Typography },
-      { path: 'modals', component: Modals }
+      { path: 'modals', component: Modals },
+      { path: 'slim', component: SlimComponent },
     ]
   }
 ];

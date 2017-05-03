@@ -24,7 +24,7 @@ export class AdvancedDemoComponent {
       {data: 4, type: 'numeric', format: '0.00%', 
        renderer: function percentRenderer(instance, td, row, col, prop, value, cellProperties) {
         Handsontable.renderers.NumericRenderer.apply(this, arguments);
-        td.style.color = (value < 0) ? 'red' : 'green';
+        td.style.color = 'white';
       }},
       {data: 5, type: 'numeric', format: '0,0.00[0000]'},
       {data: 6, type: 'numeric', format: '0,0.00[0000]'}

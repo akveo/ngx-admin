@@ -125,6 +125,14 @@ export const PAGES_MENU = [
             }
           },
           {
+            path: 'slim',
+            data: {
+              menu: {
+                title: 'Slim loading bar',
+              }
+            }
+          },
+          {
             path: 'grid',
             data: {
               menu: {

@@ -3,27 +3,35 @@ import { Component } from '@angular/core';
 @Component({
    selector: 'handsontable-section',
    template: `
-             <section id="handsontable">
-               <div class="row">
+               <div class="widgets">
+                  <div class="row">
                     <div class="col-md-12">
-                        <basic-demo></basic-demo>
-                        <br>
-                        <br>
-                        <advanced-demo></advanced-demo>
-                        <br>
-                        <br>
-                        <finance-demo></finance-demo>  
-                        <br>
-                        <science-demo></science-demo>
-                        <br>
-                        <br>   
-                        <sheet-demo></sheet-demo>
-                        <br>
-                        <br>
-                        <sport-demo></sport-demo>
+                      <ba-card title="Examples">
+                         <section id="handsontable">
+                           <div class="row">
+                                <div class="col-md-12">
+                                    <basic-demo></basic-demo>
+                                    <br>
+                                    <br>
+                                    <advanced-demo></advanced-demo>
+                                    <br>
+                                    <br>
+                                    <finance-demo></finance-demo>  
+                                    <br>
+                                    <science-demo></science-demo>
+                                    <br>
+                                    <br>   
+                                    <sheet-demo></sheet-demo>
+                                    <br>
+                                    <br>
+                                    <sport-demo></sport-demo>
+                                </div>
+                           </div>
+                         </section>
+                       </ba-card>
                     </div>
+                  </div>
                </div>
-             </section>
              `
 })
 export class HandsontableSectionComponent {
