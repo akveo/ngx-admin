@@ -2,6 +2,7 @@ import { NgModule }      from '@angular/core';
 import { CommonModule }  from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { NgaModule } from '../../theme/nga.module';
+import { SlimLoadingBarModule } from 'ng2-slim-loading-bar';
 import { NgbDropdownModule, NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { routing }       from './ui.routing';
@@ -10,6 +11,7 @@ import { Buttons } from './components/buttons/buttons.component';
 import { Grid } from './components/grid/grid.component';
 import { Icons } from './components/icons/icons.component';
 import { Modals } from './components/modals/modals.component';
+import { SlimComponent } from './components/slim/slim.component';
 import { Typography } from './components/typography/typography.component';
 
 import { FlatButtons } from './components/buttons/components/flatButtons';
@@ -31,6 +33,7 @@ import { DefaultModal } from './components/modals/default-modal/default-modal.co
     NgaModule,
     NgbDropdownModule,
     NgbModalModule,
+    SlimLoadingBarModule.forRoot(),
     routing
   ],
   declarations: [
@@ -38,6 +41,7 @@ import { DefaultModal } from './components/modals/default-modal/default-modal.co
     Grid,
     Icons,
     Modals,
+    SlimComponent,
     Typography,
     Ui,
     FlatButtons,
