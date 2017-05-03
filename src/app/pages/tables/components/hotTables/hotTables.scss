@@ -8,17 +8,10 @@
 		    border-top: 1px solid rgba(255, 255, 255, 0.3) !important;
 		}
 
-		td {
+		td, th {
 		    border-right: 1px solid rgba(255, 255, 255, 0.3) !important;
 		    border-bottom: 1px solid rgba(255, 255, 255, 0.3) !important;
 		    background-color: transparent !important;
-		    color: #fff;
-		}
-
-		th {
-		    border-right: 1px solid rgba(0, 171, 255, 0.7) !important;
-		    border-bottom: 1px solid rgba(0, 171, 255, 0.7) !important;
-		    background-color: rgba(0, 171, 255, 0.7) !important;
 		    color: #fff;
 		}
     }
