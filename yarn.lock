@@ -4327,7 +4327,7 @@ modify-values@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/modify-values/-/modify-values-1.0.0.tgz#e2b6cdeb9ce19f99317a53722f3dbf5df5eaaab2"
 
-moment@>=2.14.0, moment@^2.9.0:
+moment@2.x, moment@>=2.14.0, moment@^2.13.0, moment@^2.9.0:
   version "2.18.1"
   resolved "https://registry.yarnpkg.com/moment/-/moment-2.18.1.tgz#c36193dd3ce1c2eed2adb7c802dbbc77a81b1c0f"
 
@@ -7409,6 +7409,39 @@ write-file-atomic@^1.1.2, write-file-atomic@~1.1.4:
     graceful-fs "^4.1.2"
     imurmurhash "^0.1.4"
     slide "^1.1.5"
+
+numbro@1.8.0:
+  version "1.11.0"
+  resolved "https://registry.yarnpkg.com/numbro/-/numbro-1.11.0.tgz#39aa17b358b4682aec8ca0d5755f35c5d9ce8f9e"
+
+pikaday@1.4.0:
+  version "1.5.1"
+  resolved "https://registry.yarnpkg.com/pikaday/-/pikaday-1.5.1.tgz#0a48549bc1a14ea1d08c44074d761bc2f2bfcfd3"
+  optionalDependencies:
+    moment "2.x"
+
+zeroclipboard@2.2.0:
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/zeroclipboard/-/zeroclipboard-2.3.0.tgz#592ebd833a4308688b0739697d3dbf989002c9af"
+
+ng2-handsontable@0.48.0:
+  version "0.48.0"
+  resolved "https://registry.yarnpkg.com/ng2-handsontable/-/ng2-handsontable-0.48.0.tgz#1f088a04a69e7aa704fc5f4c1791937599d88b85"
+  dependencies:
+    handsontable "0.31.1"
+
+handsontable@0.31.1:
+  version "0.31.2"
+  resolved "https://registry.yarnpkg.com/handsontable/-/handsontable-0.31.2.tgz#276c5208b6f679f0a0ae539a1806a85279943a0a"
+  dependencies:
+    moment "^2.13.0"
+    numbro "^1.8.0"
+    pikaday "^1.4.0"
+    zeroclipboard "^2.2.0"
+
+chroma-js@1.3.3:
+  version "1.3.3"
+  resolved "https://registry.yarnpkg.com/chroma-js/-/chroma-js-1.3.3.tgz#91b3a2b3856c18443ebd8c9719faea108b56263b"
 
 write-file-stdout@0.0.2:
   version "0.0.2"
