@@ -25,7 +25,7 @@ import { Component } from '@angular/core';
         </nga-actions>
       </nga-layout-header>
       <nga-layout-column>
-        
+
         <nga-card>
           <nga-card-body>
             <nga-actions>
@@ -86,6 +86,6 @@ import { Component } from '@angular/core';
 export class NgaActionsTestComponent {
 
   actionOnClick(event: any) {
-    console.log(event);
+    console.info(event);
   }
 }
