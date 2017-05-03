@@ -199,7 +199,15 @@ export const PAGES_MENU = [
                 title: 'Data Tables',
               }
             }
-          }
+          },
+           {
+             path: 'hottables',
+             data: {
+               menu: {
+                 title: 'Hot Tables',
+               }
+             }
+           }
         ]
       },
       {
