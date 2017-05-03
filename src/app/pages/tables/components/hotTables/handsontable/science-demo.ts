@@ -1,34 +1,12 @@
 import { Component } from '@angular/core';
 import * as Handsontable from 'handsontable/dist/handsontable.full.js';
 import { getScienceData } from './data';
+import { updateHeatmap } from './science-demo.service';
+import { point } from './science-demo.service';
+import { generateHeatmapData } from './science-demo.service';
 
 let heatmapScale = chroma.scale(['#17F556', '#ED6D47']);
 let heatmap = [];
-
-function updateHeatmap(change, source) {
-  if (change && change.length) {
-    heatmap[change[0][1]] = generateHeatmapData(this, change[0][1]);
-  } else {
-    heatmap = [];
-
-    for (let i = 1, colCount = this.countCols(); i < colCount; i++) {
-      heatmap[i] = generateHeatmapData(this, i);
-    }
-  }
-}
-
-function point(min, max, value) {
-  return (value - min) / (max - min);
-}
-
-function generateHeatmapData(context:any, colId) {
-  let values = context.getDataAtCol(colId);
-
-  return {
-    min: Math.min.apply(null, values),
-    max: Math.max.apply(null, values)
-  };
-}
 
 function heatmapRenderer(instance, td, row, col, prop, value, cellProperties) {
   Handsontable.renderers.TextRenderer.apply(this, arguments);
