@@ -28,5 +28,5 @@ $nga-color-primary: red;
 @import '../framework/auth/styles/themes/nga.theme.default';
 @include nga-auth('blue');
 
-@import '../framework/bootstrap/styles/themes/nga.theme.default';
+@import '../framework/theme/overrides/bootstrap/styles/themes/nga.theme.default';
 @include nga-bootstrap('blue');

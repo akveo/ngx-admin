@@ -1,0 +1,52 @@
+/**
+ * @license
+ * Copyright Akveo. All Rights Reserved.
+ * Licensed under the MIT License. See License.txt in the project root for license information.
+ */
+
+// TODO: reference the node module
+@import '../../../../styles/themes/nga.theme.default';
+@import '../components';
+
+// buttons
+
+$btn-default-bg: $nga-color-neutral !default;
+$btn-default-border: $nga-color-inverse !default;
+$btn-default-border-width: 1px !default;
+$btn-default-color: $nga-color-inverse !default;
+
+$btn-inverse-bg: $nga-color-gray !default;
+$btn-inverse-color: $nga-color-inverse !default;
+
+$btn-primary-bg: $nga-color-primary !default;
+$btn-primary-border: $nga-color-dark-primary !default;
+$btn-primary-color: $nga-color-inverse !default;
+
+$btn-secondary-bg: $nga-color-secondary !default;
+$btn-secondary-border: $nga-color-dark-secondary !default;
+$btn-secondary-color: $nga-color-default !default;
+
+$btn-info-bg: $nga-color-info !default;
+$btn-info-border: $nga-color-dark-info !default;
+$btn-info-color: $nga-color-inverse !default;
+
+$btn-success-bg: $nga-color-success !default;
+$btn-success-border: $nga-color-dark-success !default;
+$btn-success-color: $nga-color-inverse !default;
+
+$btn-warning-bg: $nga-color-warning !default;
+$btn-warning-border: $nga-color-dark-warning !default;
+$btn-warning-color: $nga-color-inverse !default;
+
+$btn-danger-bg: $nga-color-danger !default;
+$btn-danger-border: $nga-color-dark-danger !default;
+$btn-danger-color: $nga-color-inverse !default;
+
+$btn-hover: 24 !default;
+$btn-border-radius: 5px !default;
+
+$btn-small-border-radius: 3px !default;
+$btn-large-border-radius: 6px !default;
+
+$btn-raised-shadow-color: rgba(0, 0, 0, 0.35) !default;
+

@@ -3,6 +3,7 @@
  * Copyright Akveo. All Rights Reserved.
  * Licensed under the MIT License. See License.txt in the project root for license information.
  */
+
 import { Routes } from '@angular/router';
 
 import { NgaCardTestComponent } from './card-test/card-test.component';

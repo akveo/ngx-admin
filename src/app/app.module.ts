@@ -3,6 +3,7 @@
  * Copyright Akveo. All Rights Reserved.
  * Licensed under the MIT License. See License.txt in the project root for license information.
  */
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -52,7 +53,7 @@ import {
 import { NgaUserTestComponent } from './user-test/user-test.component';
 import { NgaThemeDynamicTestComponent, NgaDynamicToAddComponent } from './layout-test/theme-dynamic-test.component';
 import { NgaActionsTestComponent } from './actions-test/actions-test.component';
-import { NgaBootstrapModule } from '../framework/bootstrap/bootstrap.module';
+import { NgaBootstrapModule } from '../framework/theme/overrides/bootstrap/bootstrap.module';
 import { NgaBootstrapTestComponent } from './bootstrap-test/bootstrap-test.component';
 
 import { routes } from './app.routes';

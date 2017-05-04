@@ -3,6 +3,7 @@
  * Copyright Akveo. All Rights Reserved.
  * Licensed under the MIT License. See License.txt in the project root for license information.
  */
+
 @mixin nga-card-theme($theme-name) {
   nga-card {
     background: $nga-card-background;
@@ -11,6 +12,10 @@
     border-radius: $nga-card-border-radius;
     box-shadow: 1px 1px 4px $nga-card-shadow;
     font-weight: $nga-font-weight-normal;
+
+    a {
+      color: $nga-card-foreground;
+    }
 
     @include nga-scrollbars(0.4em, rgba(0, 0, 0, 0.6), rgba(255, 255, 255, 0.7));
 

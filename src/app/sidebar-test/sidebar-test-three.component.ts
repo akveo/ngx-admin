@@ -3,6 +3,7 @@
  * Copyright Akveo. All Rights Reserved.
  * Licensed under the MIT License. See License.txt in the project root for license information.
  */
+
 import { Component, ViewChild } from '@angular/core';
 import { NgaSidebarComponent } from '../../framework/theme/components/sidebar/sidebar.component';
 
