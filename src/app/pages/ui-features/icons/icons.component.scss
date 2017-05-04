@@ -1,0 +1,16 @@
+:host {
+  display: block;
+
+  nga-card {
+    nga-card-body {
+      .icon {
+        float: left;
+        text-align: center;
+      }
+    }
+
+    nga-card-footer {
+      text-align: right;
+    }
+  }
+}

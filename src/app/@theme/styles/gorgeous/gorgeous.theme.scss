@@ -18,5 +18,5 @@ $theme-name: 'gorgeous';
 }
 
 // @nga/bootstrap module styles
-@import '~@nga/bootstrap/styles/themes/nga.theme.default';
+@import '~@nga/theme/overrides/bootstrap/styles/themes/nga.theme.default';
 @include nga-bootstrap($theme-name);

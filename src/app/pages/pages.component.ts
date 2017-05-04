@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
 
+import 'style-loader!../@theme/styles/gorgeous/gorgeous.theme.scss';
+import 'style-loader!../@theme/styles/pure/pure.theme.scss';
+
 @Component({
   selector: 'pages',
-  styleUrls: [
-    '../@theme/styles/gorgeous/gorgeous.theme.scss',
-    '../@theme/styles/pure/pure.theme.scss',
-  ],
   template: `
     <one-column-layout>
       <nga-menu></nga-menu>
