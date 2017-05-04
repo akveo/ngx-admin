@@ -2,9 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'ngx-grid',
-  template: `
-    <p>grid works!</p>
-  `,
+  styleUrls: ['./grid.component.scss'],
+  templateUrl: './grid.component.html',
 })
 export class NgxGridComponent implements OnInit {
 
