@@ -40,19 +40,3 @@ const routes: Routes = [
   exports: [RouterModule],
 })
 export class NgxUiFeaturesRoutingModule { }
-
-export const routedComponents = [
-  NgxUiFeaturesComponent,
-  NgxButtonsComponent,
-  NgxGridComponent,
-  NgxIconsComponent,
-  NgxModalsComponent,
-  NgxFlatButtonsComponent,
-  NgxRaisedButtonsComponent,
-  NgxSizedButtonsComponent,
-  NgxDisabledButtonsComponent,
-  NgxIconButtonsComponent,
-  NgxDropdownButtonsComponent,
-  NgxLargeButtonsComponent,
-  NgxGroupButtonsComponent,
-];
