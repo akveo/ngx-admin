@@ -56,11 +56,11 @@ export class NgaThemeDynamicTestComponent {
 
   addDynamicComponent() {
     this.themeService.appendToLayoutTop(NgaDynamicToAddComponent)
-      .subscribe(cRef => console.log(cRef));
+      .subscribe(cRef => console.info(cRef));
   }
 
   clearDynamicComponents() {
     this.themeService.clearLayoutTop()
-      .subscribe(res => console.log(res));
+      .subscribe(res => console.info(res));
   }
 }

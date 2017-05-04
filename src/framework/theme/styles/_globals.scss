@@ -3,9 +3,11 @@
  * Copyright Akveo. All Rights Reserved.
  * Licensed under the MIT License. See License.txt in the project root for license information.
  */
-// TODO: to decide if we need this here
-/deep/ {
-  body, html {
-    min-height: 100%;
-  }
-}
+
+@import '~normalize.css';
+
+$fa-font-path: '~font-awesome/fonts';
+@import '~font-awesome/scss/font-awesome';
+
+$ionicons-font-path: '~ionicons/fonts';
+@import '~ionicons/scss/ionicons';

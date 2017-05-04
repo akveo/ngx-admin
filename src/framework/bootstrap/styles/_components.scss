@@ -3,12 +3,16 @@
  * Copyright Akveo. All Rights Reserved.
  * Licensed under the MIT License. See License.txt in the project root for license information.
  */
-@import '../components/auth-block/auth-block.component.theme';
+@import './overrides/global';
+@import './overrides/buttons';
+@import './overrides/forms';
 
 // Create a theme
-@mixin nga-auth($theme-name) {
+@mixin nga-bootstrap($theme-name) {
+
   .theme-#{$theme-name} {
-    @include nga-auth-block-theme($theme-name);
+    @include nga-b-buttons-theme($theme-name);
+    @include nga-b-forms-theme($theme-name);
 
     @content;
   }

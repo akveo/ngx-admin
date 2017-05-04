@@ -11,6 +11,10 @@
     display: inline-flex;
     align-items: center;
 
+    &.with-menu {
+      cursor: pointer;
+    }
+
     .user-picture {
       border-radius: 50%;
       flex-shrink: 0;
@@ -57,7 +61,7 @@
 
         li {
           display: block;
-
+          white-space: nowrap;
           > a {
             padding: 0.25rem 3rem;
             display: block;

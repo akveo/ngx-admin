@@ -1,0 +1,286 @@
+/**
+ * @license
+ * Copyright Akveo. All Rights Reserved.
+ * Licensed under the MIT License. See License.txt in the project root for license information.
+ */
+
+@import 'partial';
+
+@mixin nga-b-buttons-theme($theme-name) {
+  /deep/ {
+    @import '~bootstrap/scss/buttons';
+    @import '~bootstrap/scss/mixins/buttons';
+
+    @mixin button-style($background, $border) {
+      background: $background;
+      border-color: $border;
+    }
+
+    @mixin buttonColor($background, $border) {
+      @include button-style($background, $border);
+
+      &.disabled,
+      &[disabled],
+      fieldset[disabled] &,
+      &.disabled:hover,
+      &[disabled]:hover,
+      fieldset[disabled] &:hover,
+      &.disabled:focus,
+      &[disabled]:focus,
+      fieldset[disabled] &:focus,
+      &.disabled.focus,
+      &[disabled].focus,
+      fieldset[disabled] &.focus,
+      &.disabled:active,
+      &[disabled]:active,
+      fieldset[disabled] &:active,
+      &.disabled.active,
+      &[disabled].active,
+      fieldset[disabled] &.active {
+
+        @include button-style($background, $border + $btn-hover / 2);
+
+        &:hover {
+          transform: none;
+        }
+      }
+
+      &:hover,
+      &:focus,
+      &.focus,
+      &:active,
+      &.active {
+        @include button-style($background, $border - $btn-hover);
+      }
+    }
+
+    @mixin button-open-dropdown($background, $border) {
+
+      @include button-style($background, $background - $btn-hover);
+
+      background-color: $border;
+      border-color: $border;
+    }
+
+    @mixin button-group-color($color) {
+      border-color: $color - $btn-hover / 2;
+      &:hover {
+        border-color: $color - $btn-hover;
+      }
+    }
+
+    .btn {
+      cursor: pointer;
+      border-radius: $btn-border-radius;
+      transition: all 0.1s ease;
+      padding: 0.344em 1em;
+      font-size: 1em;
+
+      &:hover {
+        transform: scale(1.2);
+      }
+
+      &:focus,
+      &:active:focus,
+      &.active:focus,
+      &.focus,
+      &:active.focus,
+      &.active.focus {
+        outline: none;
+      }
+
+      &.btn-primary {
+        @include buttonColor($btn-primary-bg, $btn-primary-bg);
+
+        &:active,
+        &:target {
+          background-color: $btn-primary-border;
+        }
+      }
+
+      &.btn-default {
+        border-width: $btn-default-border-width;
+        color: $btn-default-color;
+
+        @include buttonColor($btn-default-bg, $btn-default-border);
+
+        &:active,
+        &:target {
+          background-color: $btn-default-bg;
+          color: $btn-default-color;
+        }
+      }
+
+      &.btn-success {
+        @include buttonColor($btn-success-bg, $btn-success-bg);
+
+        &:active,
+        &:target {
+          background-color: $btn-success-border;
+        }
+      }
+
+      &.btn-info {
+        @include buttonColor($btn-info-bg, $btn-info-bg);
+
+        &:active,
+        &:target {
+          background-color: $btn-info-border;
+        }
+      }
+
+      &.btn-warning {
+        @include buttonColor($btn-warning-bg, $btn-warning-bg);
+
+        &:active,
+        &:target {
+          background-color: $btn-warning-border;
+        }
+      }
+
+      &.btn-danger {
+        @include buttonColor($btn-danger-bg, $btn-danger-bg);
+
+        &:active,
+        &:target {
+          background-color: $btn-danger-bg;
+        }
+      }
+
+      &.btn-inverse {
+        @include buttonColor($btn-inverse-bg, $btn-inverse-bg);
+
+        color: $btn-inverse-color;
+
+        &:active,
+        &:target,
+        &:hover {
+          background-color: $btn-inverse-bg;
+          color: $btn-inverse-color;
+        }
+      }
+
+      &.btn-with-icon {
+        i {
+          margin-right: 10px;
+        }
+      }
+
+      .caret {
+        margin-left: 2px;
+      }
+    }
+
+    .open {
+      .btn {
+        &.dropdown-toggle {
+          &.btn-primary {
+            @include button-open-dropdown($btn-primary-bg, $btn-primary-border);
+          }
+          &.btn-success {
+            @include button-open-dropdown($btn-success-bg, $btn-success-border);
+          }
+          &.btn-info {
+            @include button-open-dropdown($btn-info-bg, $btn-info-border);
+          }
+          &.btn-warning {
+            @include button-open-dropdown($btn-warning-bg, $btn-warning-border);
+          }
+          &.btn-danger {
+            @include button-open-dropdown($btn-danger-bg, $btn-danger-border);
+          }
+        }
+      }
+    }
+
+    .btn-toolbar {
+      display: inline-block;
+    }
+
+    .btn-group,
+    .btn-toolbar {
+       :hover {
+        transform: none;
+      }
+    }
+
+    .btn-group {
+      &.btn {
+        &.btn-primary {
+          @include button-group-color($btn-primary-border);
+        }
+
+        &.btn-danger {
+          @include button-group-color($btn-danger-border);
+        }
+
+        &.btn-info {
+          @include button-group-color($btn-info-border);
+        }
+
+        &.btn-success {
+          @include button-group-color($btn-success-border);
+        }
+
+        &.btn-warning {
+          @include button-group-color($btn-warning-border);
+        }
+      }
+
+      .dropdown-menu {
+        margin-top: 0;
+      }
+    }
+
+    .btn-raised {
+      box-shadow: 0 2px 5px 0 $btn-raised-shadow-color;
+    }
+
+    .btn-mm {
+      line-height: 1em;
+
+      @include button-size(5px, 11px, 0.8em, $btn-border-radius);
+    }
+
+    .btn-xm {
+      line-height: 1em;
+
+      @include button-size(8px, 14px, 1em, $btn-border-radius);
+    }
+
+    .btn-xs {
+      line-height: 1.2em;
+
+      @include button-size(1px, 5px, 0.8em, $btn-border-radius);
+    }
+
+    .btn-sm {
+      line-height: 1em;
+
+      @include button-size(5px, 10px, 0.8em, $btn-small-border-radius);
+    }
+
+    .btn-lg {
+      line-height: 1.2em;
+
+      @include button-size(10px, 16px, 1.2em, $btn-large-border-radius);
+    }
+
+    .dropdown {
+      .btn {
+        &.btn-default {
+          &.dropdown-toggle {
+            color: $btn-default-color;
+            border: 1px solid $btn-default-border;
+            background-color: $btn-default-bg;
+
+            &:focus,
+            &:active {
+              background-color: $btn-default-bg;
+            }
+          }
+        }
+      }
+    }
+  }
+}

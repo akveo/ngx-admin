@@ -1,4 +1,4 @@
-<div class="user-container" (click)="toggleMenu()">
+<div class="user-container" (click)="toggleMenu()" [ngClass]="{'with-menu' : hasMenu()}">
   <div *ngIf="picture" class="user-picture image" [ngStyle]="{background: 'url(' + picture  + ')'}"></div>
   <div *ngIf="!picture" class="user-picture background" [ngStyle]="{'background-color': color}">
     <ng-template [ngIf]="showInitialsValue">
@@ -11,7 +11,7 @@
     <span *ngIf="showTitleValue && title" class="user-title">{{ title }}</span>
   </div>
 
-  <div *ngIf="menu && menu.length > 0"
+  <div *ngIf="hasMenu()"
         [ngStyle]="{display: isMenuShown ? 'block' : 'none'}" class="user-context-menu">
     <ul>
       <li class="arrow"></li>

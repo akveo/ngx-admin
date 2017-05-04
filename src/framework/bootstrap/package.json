@@ -1,8 +1,8 @@
 {
-  "name": "@nga/theme",
+  "name": "@nga/bootstrap",
   "version": "2.0.0-alpha.0",
-  "description": "@nga/theme",
-  "main": "./bundles/theme.umd.js",
+  "description": "@nga/bootstrap",
+  "main": "./bundles/bootstrap.umd.js",
   "module": "./index.js",
   "typings": "./index.d.ts",
   "author": "akveo",
@@ -22,16 +22,15 @@
     "typescript",
     "ng2-admin",
     "ngx-admin",
+    "bootstrap",
+    "bootstrap-4",
     "theme",
     "nga"
   ],
   "peerDependencies": {
     "@angular/common": "^4.0.0",
     "@angular/core": "^4.0.0",
-    "@angular/router": "^4.0.0",
-    "font-awesome": "4.7.0",
-    "immutable": "3.8.1",
-    "ionicons": "2.0.1",
-    "normalize.css": "6.0.0"
+    "@ng-bootstrap/ng-bootstrap": "1.0.0-alpha.25",
+    "bootstrap": "^4.0.0-alpha.6"
   }
 }

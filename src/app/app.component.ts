@@ -5,9 +5,11 @@
  */
 import { Component } from '@angular/core';
 
+import 'style-loader!./app.theme.default.scss';
+import 'style-loader!./app.theme.blue.scss';
+
 @Component({
   selector: 'nga-app-root',
-  styleUrls: ['./app.component.default.scss', './app.component.blue.scss'],
   template: `<router-outlet></router-outlet>`,
 })
 export class NgaAppComponent {

@@ -185,8 +185,13 @@ export class NgaUserComponent {
   getInitials(): string {
     if (this.name) {
       const names = this.name.split(' ');
-      return names.map(n => n.charAt(0)).splice(0, 2).join(' ').toUpperCase();
+      return names.map(n => n.charAt(0)).splice(0, 2).join('').toUpperCase();
     }
     return '';
   }
+
+  hasMenu(): boolean {
+    return this.menu && this.menu.length > 0;
+  }
+
 }

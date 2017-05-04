@@ -5,7 +5,7 @@
  */
 @mixin nga-sidebar-theme($theme-name) {
 
-  /deep/ nga-sidebar {
+  nga-sidebar {
 
     @include nga-scrollbars(0.4em, rgba(0, 0, 0, 0.6), rgba(255, 255, 255, 0.7));
 
@@ -47,12 +47,12 @@
       }
     }
 
-    /deep/ nga-sidebar-header {
+    nga-sidebar-header {
       padding: $nga-sidebar-padding;
       height: $nga-sidebar-header-height;
     }
 
-    /deep/ nga-sidebar-footer {
+    nga-sidebar-footer {
       padding: $nga-sidebar-padding;
       height: $nga-sidebar-footer-height;
     }

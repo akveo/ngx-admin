@@ -4,7 +4,7 @@
  * Licensed under the MIT License. See License.txt in the project root for license information.
  */
 @mixin nga-route-tabset-theme($theme-name) {
-  /deep/ nga-route-tabset {
+  nga-route-tabset {
     ul {
       &.nga-route-tabset {
         border-bottom: 1px solid $nga-color-default;

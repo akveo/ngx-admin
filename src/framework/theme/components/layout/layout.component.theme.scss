@@ -4,13 +4,13 @@
  * Licensed under the MIT License. See License.txt in the project root for license information.
  */
 @mixin nga-layout-theme($theme-name) {
-  /deep/ .layout {
+  .layout {
 
     color: $nga-layout-foreground;
     background: $nga-layout-background;
     min-height: $nga-layout-min-height;
 
-    /deep/ nga-layout-header {
+    nga-layout-header {
       nav {
         height: $nga-header-height;
         padding: $nga-header-padding;
@@ -37,7 +37,7 @@
         flex: 1;
         flex-direction: column;
 
-        /deep/ nga-layout-footer {
+        nga-layout-footer {
           nav {
             height: $nga-footer-height;
             background: $nga-footer-background;
@@ -60,7 +60,7 @@
         }
 
         .columns {
-          /deep/ nga-layout-column {
+          nga-layout-column {
             padding: $nga-layout-padding;
           }
         }

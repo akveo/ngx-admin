@@ -7,15 +7,16 @@
 @import '../components/sidebar/sidebar.component.theme';
 @import '../components/card/card.component.theme';
 @import '../components/tabset/tabset.component.theme';
-@import '../components/sidebar/sidebar.component.theme';
 @import '../components/route-tabset/route-tabset.component.theme';
 @import '../components/menu/menu.component.theme';
 @import '../components/user/user.component.theme';
+@import '../components/actions/actions.component.theme';
 
 // Create a theme
 @mixin nga-theme($theme-name) {
 
-  /deep/ .theme-#{$theme-name} {
+  // TODO: cover up this .theme-${} into a function to to repeat in each module
+  .theme-#{$theme-name} {
     @include nga-layout-theme($theme-name);
     @include nga-sidebar-theme($theme-name);
     @include nga-card-theme($theme-name);
@@ -23,6 +24,7 @@
     @include nga-route-tabset-theme($theme-name);
     @include nga-menu-theme($theme-name);
     @include nga-user-theme($theme-name);
+    @include nga-actions-theme($theme-name);
 
     @content;
   }
