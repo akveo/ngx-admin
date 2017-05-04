@@ -19,11 +19,8 @@ import {
 import { convertToBoolProperty } from '../helpers';
 import { NgaThemeService } from '../../services/theme.service';
 import { Subscription } from 'rxjs/Subscription';
-<<<<<<< HEAD
-import {NgaSuperSearchService} from "../super-search/super-search.service";
-=======
+import { NgaSuperSearchService } from "../super-search/super-search.service";
 import { Subject } from 'rxjs/Subject';
->>>>>>> ngx-admin
 
 /**
  * Component intended to be used within  the `<nga-layout>` component.
@@ -137,24 +134,20 @@ export class NgaLayoutComponent implements OnDestroy, AfterViewInit {
     this.centerValue = convertToBoolProperty(val);
   }
 
-<<<<<<< HEAD
   protected searchSubscription: Subscription;
-=======
+
   @ViewChild('layoutTopDynamicArea', { read: ViewContainerRef }) veryTopRef: ViewContainerRef;
 
->>>>>>> ngx-admin
+
   protected themeSubscription: Subscription;
   protected appendSubscription: Subscription;
   protected clearSubscription: Subscription;
 
   constructor(protected themeService: NgaThemeService,
-<<<<<<< HEAD
-              protected searchActivateService: NgaSuperSearchService,
-=======
-              protected componentFactoryResolver: ComponentFactoryResolver,
->>>>>>> ngx-admin
-              protected elementRef: ElementRef,
-              protected renderer: Renderer2) {
+    protected searchService: NgaSuperSearchService,
+    protected componentFactoryResolver: ComponentFactoryResolver,
+    protected elementRef: ElementRef,
+    protected renderer: Renderer2) {
     this.themeSubscription = this.themeService.onThemeChange().subscribe((theme) => {
 
       if (theme.previous) {
@@ -163,16 +156,12 @@ export class NgaLayoutComponent implements OnDestroy, AfterViewInit {
       this.renderer.addClass(this.elementRef.nativeElement, 'theme-' + theme.name);
     });
 
-    this.searchSubscription = this.searchActivateService.onSearchActivate().subscribe((searchState) => {
-      console.group(`layout consume`);
-      console.log(searchState.type);
-      console.log(searchState.status);
-      console.groupEnd();
+    this.searchSubscription = this.searchService.onSearchActivate().subscribe((searchState) => {
       if (searchState.status) {
         this.renderer.addClass(this.elementRef.nativeElement, searchState.type);
         this.renderer.addClass(this.elementRef.nativeElement, 'show');
       } else {
-        // this.renderer.removeClass(this.elementRef.nativeElement, searchState.type);
+        setTimeout(() => this.renderer.removeClass(this.elementRef.nativeElement, searchState.type), 500);
         this.renderer.removeClass(this.elementRef.nativeElement, 'show');
       }
     })
@@ -181,10 +170,8 @@ export class NgaLayoutComponent implements OnDestroy, AfterViewInit {
   ngAfterViewInit(): void {
     this.appendSubscription = this.themeService.onAppendToTop()
       .subscribe((data: { component: any, listener: Subject<any> }) => {
-
         const componentFactory = this.componentFactoryResolver.resolveComponentFactory(data.component);
         const componentRef = this.veryTopRef.createComponent(componentFactory);
-
         data.listener.next(componentRef);
       });
 
@@ -197,11 +184,8 @@ export class NgaLayoutComponent implements OnDestroy, AfterViewInit {
 
   ngOnDestroy(): void {
     this.themeSubscription.unsubscribe();
-<<<<<<< HEAD
     this.searchSubscription.unsubscribe();
-=======
     this.appendSubscription.unsubscribe();
     this.clearSubscription.unsubscribe();
->>>>>>> ngx-admin
   }
 }

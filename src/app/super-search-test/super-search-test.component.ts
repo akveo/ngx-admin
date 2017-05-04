@@ -3,7 +3,8 @@
  * Copyright Akveo. All Rights Reserved.
  * Licensed under the MIT License. See License.txt in the project root for license information.
  */
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { NgaSuperSearchService } from "../../framework/theme/components/super-search/super-search.service";
 
 @Component({
   selector: 'nga-search-test',
@@ -11,7 +12,7 @@ import { Component } from '@angular/core';
     <nga-layout>
       <nga-layout-header fixed>
         <a class="navbar-brand" href="#">ngx-admin</a>
-        <nga-search type="option3"></nga-search>
+        <nga-search type="modal-half"></nga-search>  
       </nga-layout-header>
       <nga-layout-column>
         <nga-card>
@@ -62,14 +63,14 @@ import { Component } from '@angular/core';
     </nga-layout>
   `,
 })
-export class NgaSearchTestComponent {
+export class NgaSearchTestComponent implements OnInit {
 
   sizes = ['small', 'xsmall', 'medium', 'xmedium', 'large'];
   statuses = ['primary', 'success', 'info', 'warning', 'danger', 'active', 'disabled'];
 
   cards: any[];
 
-  constructor() {
+  constructor(private searchService: NgaSuperSearchService) {
     this.cards = this.prepareCards();
   }
 
@@ -86,5 +87,11 @@ export class NgaSearchTestComponent {
     });
 
     return result;
+  }
+
+  ngOnInit(): void {
+    this.searchService.onSearch().subscribe(term => {
+      console.log(term);
+    })
   }
 }

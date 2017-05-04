@@ -82,12 +82,9 @@ const NGA_TEST_COMPONENTS = [
   NgaMenuItem4Component,
   NgaUserTestComponent,
   NgaThemeChangeTestComponent,
-<<<<<<< HEAD
   NgaSearchTestComponent,
-=======
   NgaDynamicToAddComponent,
   NgaThemeDynamicTestComponent,
->>>>>>> ngx-admin
 ];
 
 @NgModule({
@@ -152,7 +149,7 @@ const NGA_TEST_COMPONENTS = [
     ...NGA_TEST_COMPONENTS,
   ],
   entryComponents: [
-    NgaDynamicToAddComponent,
+    NgaDynamicToAddComponent
   ],
   providers: [],
   bootstrap: [NgaAppComponent],

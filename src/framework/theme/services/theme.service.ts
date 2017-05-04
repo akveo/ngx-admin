@@ -18,7 +18,7 @@ export class NgaThemeService {
 
   currentTheme: string;
   private themeChanges$ = new ReplaySubject(1);
-  private appendToLayoutTop$ = new Subject();
+  private appendToLayoutTop$ = new ReplaySubject(1);
   private createLayoutTop$ = new Subject();
 
   constructor(@Inject(ngaThemeOptionsToken) protected options: any) {
