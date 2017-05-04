@@ -4,13 +4,13 @@ import { FormsModule as AngularFormsModule } from '@angular/forms';
 import { AppTranslationModule } from '../../app.translation.module';
 import { NgaModule } from '../../theme/nga.module';
 import { NgbRatingModule } from '@ng-bootstrap/ng-bootstrap';
+import { ImageCropperModule } from 'ng2-img-cropper';
 
 import { routing } from './forms.routing';
 
 import { Forms } from './forms.component';
 import { Inputs } from './components/inputs';
 import { Layouts } from './components/layouts';
-import { ImageCropperComponent } from 'ng2-img-cropper';
 
 import { StandardInputs } from './components/inputs/components/standardInputs';
 import { ValidationInputs } from './components/inputs/components/validationInputs';
@@ -33,10 +33,10 @@ import { ImageCropper } from './components/layouts/components/imageCropper';
     AppTranslationModule,
     NgaModule,
     NgbRatingModule,
-    routing
+    routing,
+    ImageCropperModule
   ],
   declarations: [
-    ImageCropperComponent,
     Layouts,
     Inputs,
     Forms,
