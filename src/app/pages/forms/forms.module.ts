@@ -11,6 +11,7 @@ import { routing } from './forms.routing';
 import { Forms } from './forms.component';
 import { Inputs } from './components/inputs';
 import { Layouts } from './components/layouts';
+import { ImageCropper } from './components/imageCropper';
 
 import { StandardInputs } from './components/inputs/components/standardInputs';
 import { ValidationInputs } from './components/inputs/components/validationInputs';
@@ -24,7 +25,6 @@ import { BlockForm } from './components/layouts/components/blockForm';
 import { HorizontalForm } from './components/layouts/components/horizontalForm';
 import { BasicForm } from './components/layouts/components/basicForm';
 import { WithoutLabelsForm } from './components/layouts/components/withoutLabelsForm';
-import { ImageCropper } from './components/layouts/components/imageCropper';
 
 @NgModule({
   imports: [
@@ -38,6 +38,7 @@ import { ImageCropper } from './components/layouts/components/imageCropper';
   ],
   declarations: [
     Layouts,
+    ImageCropper,
     Inputs,
     Forms,
     StandardInputs,
@@ -50,8 +51,7 @@ import { ImageCropper } from './components/layouts/components/imageCropper';
     BlockForm,
     HorizontalForm,
     BasicForm,
-    WithoutLabelsForm,
-    ImageCropper
+    WithoutLabelsForm
   ]
 })
 export class FormsModule {
