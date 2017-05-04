@@ -1,15 +1,16 @@
-import { NgModule }      from '@angular/core';
-import { CommonModule }  from '@angular/common';
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { FormsModule as AngularFormsModule } from '@angular/forms';
 import { AppTranslationModule } from '../../app.translation.module';
 import { NgaModule } from '../../theme/nga.module';
 import { NgbRatingModule } from '@ng-bootstrap/ng-bootstrap';
 
-import { routing }       from './forms.routing';
+import { routing } from './forms.routing';
 
 import { Forms } from './forms.component';
 import { Inputs } from './components/inputs';
 import { Layouts } from './components/layouts';
+import { ImageCropperComponent } from 'ng2-img-cropper';
 
 import { StandardInputs } from './components/inputs/components/standardInputs';
 import { ValidationInputs } from './components/inputs/components/validationInputs';
@@ -23,6 +24,7 @@ import { BlockForm } from './components/layouts/components/blockForm';
 import { HorizontalForm } from './components/layouts/components/horizontalForm';
 import { BasicForm } from './components/layouts/components/basicForm';
 import { WithoutLabelsForm } from './components/layouts/components/withoutLabelsForm';
+import { ImageCropper } from './components/layouts/components/imageCropper';
 
 @NgModule({
   imports: [
@@ -34,6 +36,7 @@ import { WithoutLabelsForm } from './components/layouts/components/withoutLabels
     routing
   ],
   declarations: [
+    ImageCropperComponent,
     Layouts,
     Inputs,
     Forms,
@@ -47,7 +50,8 @@ import { WithoutLabelsForm } from './components/layouts/components/withoutLabels
     BlockForm,
     HorizontalForm,
     BasicForm,
-    WithoutLabelsForm
+    WithoutLabelsForm,
+    ImageCropper
   ]
 })
 export class FormsModule {
