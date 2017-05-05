@@ -15,6 +15,7 @@
 
 /deep/ nga-layout.modal-half.show .layout {
   transform: scale3d(0.8,0.8,1);
+  pointer-events: none;
 }
 
 :host.modal-half {

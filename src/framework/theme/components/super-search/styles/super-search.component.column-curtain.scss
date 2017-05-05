@@ -20,6 +20,10 @@
   }
 }
 
+/deep/ nga-layout.column-curtain.show .layout {
+  pointer-events: none;
+}
+
 :host.column-curtain {
 
   .search__content {

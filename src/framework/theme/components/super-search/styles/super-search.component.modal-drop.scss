@@ -17,6 +17,7 @@
 /deep/ nga-layout.modal-drop.show .layout {
   opacity: 0;
   transform: scale3d(0.9,0.9,1);
+  pointer-events: none;
 }
 
 :host.modal-drop {

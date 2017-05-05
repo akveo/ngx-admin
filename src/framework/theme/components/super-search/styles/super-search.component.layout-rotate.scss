@@ -17,6 +17,7 @@
 
 /deep/ nga-layout.rotate-layout.show .layout {
   transform: perspective(1000px) translate3d(0,10vh,0) rotate3d(1,0,0,30deg);
+  pointer-events: none;
 }
 
 /deep/ nga-layout.rotate-layout {
