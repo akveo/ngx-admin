@@ -159,7 +159,7 @@ export class NgaLayoutComponent implements OnDestroy, AfterViewInit {
     this.searchSubscription = this.searchService.onSearchActivate().subscribe((searchState) => {
       if (searchState.status) {
         this.renderer.addClass(this.elementRef.nativeElement, searchState.type);
-        this.renderer.addClass(this.elementRef.nativeElement, 'show');
+        setTimeout(() => this.renderer.addClass(this.elementRef.nativeElement, 'show'), 1);
       } else {
         setTimeout(() => this.renderer.removeClass(this.elementRef.nativeElement, searchState.type), 500);
         this.renderer.removeClass(this.elementRef.nativeElement, 'show');

@@ -8,7 +8,7 @@
 ///specific for layout-rotate option styles////////////////////////////////////////////////////////////////////////////////////
 
 /deep/ nga-layout.rotate-layout .layout {
-  background: #ededed;
+  background: #ededed;//TODO: glabal variable can be used?
   overflow: hidden;
   transform: perspective(1000px);
   transition: transform 0.5s;
@@ -17,6 +17,12 @@
 
 /deep/ nga-layout.rotate-layout.show .layout {
   transform: perspective(1000px) translate3d(0,10vh,0) rotate3d(1,0,0,30deg);
+}
+
+/deep/ nga-layout.rotate-layout {
+  position: fixed;
+  overflow: hidden;
+  width: 100%;
 }
 
 :host.rotate-layout {
@@ -100,8 +106,9 @@
   .search__content {
     background: none;
     transition-property: background;
-    transition-delay: 0.25s;
+    transition-delay: 0.3s;
   }
+
   &.show .search__content {
     transition-delay: 0s;
     background: $nga-search-bg-secondary;//#2f2c2c;
@@ -111,6 +118,7 @@
     pointer-events: none;
     opacity: 0;
     transition: opacity 0.5s;
+    transition-timing-function: cubic-bezier(0.2,1,0.3,1);
   }
 
   &.show .search {

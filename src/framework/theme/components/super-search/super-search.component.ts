@@ -208,11 +208,11 @@ export class NgaSearchComponent {
     this.showSearch = !this.showSearch;
 
     this.searchService.searchActivate(this.searchType, this.showSearch);
-
-    this.searchFieldComponentRef.instance.showSearch = this.showSearch;
-    this.searchFieldComponentRef.changeDetectorRef.detectChanges();
+    setTimeout(() => {
+      this.searchFieldComponentRef.instance.showSearch = this.showSearch;
+      this.searchFieldComponentRef.changeDetectorRef.detectChanges();
+    }, 1);
   }
-
 
   ngAfterViewInit() {
     const fieldComponentObservable = this.themeService.appendToLayoutTop(NgaSearchFieldComponent);
