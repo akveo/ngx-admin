@@ -15,25 +15,23 @@ import { NgxDropdownButtonsComponent } from './buttons/dropdown/dropdown.compone
 import { NgxLargeButtonsComponent } from './buttons/large/large.component';
 import { NgxGroupButtonsComponent } from './buttons/group/group.component';
 
-const routes: Routes = [
-  {
-    path: '',
-    component: NgxUiFeaturesComponent,
-    children: [{
-      path: 'buttons',
-      component: NgxButtonsComponent,
-    }, {
-      path: 'grid',
-      component: NgxGridComponent,
-    }, {
-      path: 'icons',
-      component: NgxIconsComponent,
-    }, {
-      path: 'modals',
-      component: NgxModalsComponent,
-    }],
-  },
-];
+const routes: Routes = [{
+  path: '',
+  component: NgxUiFeaturesComponent,
+  children: [{
+    path: 'buttons',
+    component: NgxButtonsComponent,
+  }, {
+    path: 'grid',
+    component: NgxGridComponent,
+  }, {
+    path: 'icons',
+    component: NgxIconsComponent,
+  }, {
+    path: 'modals',
+    component: NgxModalsComponent,
+  }],
+}];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

@@ -5,19 +5,17 @@ import { NgxEditorsComponent } from './editors.component';
 import { NgxTinyMCEComponent, NgxTinyMCEEditorComponent } from './tinyMCE.component';
 import { NgxCKEditorComponent } from './ckeditor.component';
 
-const routes: Routes = [
-  {
-    path: '',
-    component: NgxEditorsComponent,
-    children: [{
-      path: 'tinymce',
-      component: NgxTinyMCEComponent,
-    }, {
-      path: 'ckeditor',
-      component: NgxCKEditorComponent,
-    }],
-  },
-];
+const routes: Routes = [{
+  path: '',
+  component: NgxEditorsComponent,
+  children: [{
+    path: 'tinymce',
+    component: NgxTinyMCEComponent,
+  }, {
+    path: 'ckeditor',
+    component: NgxCKEditorComponent,
+  }],
+}];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

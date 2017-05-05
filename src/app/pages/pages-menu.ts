@@ -42,12 +42,21 @@ export const menuItems: List<NgaMenuItem> = List([{
 }, {
   title: 'Editors',
   icon: 'ion ion-edit',
-  link: '/pages/editors',
   children: List([{
     title: 'TinyMCE',
     link: '/pages/editors/tinymce',
   }, {
     title: 'CKEditor',
     link: '/pages/editors/ckeditor',
+  }]),
+}, {
+  title: 'Forms',
+  icon: 'ion-compose',
+  children: List([{
+    title: 'Form Inputs',
+    link: '/pages/forms/inputs',
+  }, {
+    title: 'Form Layouts',
+    link: '/pages/forms/layouts',
   }]),
 }]);
