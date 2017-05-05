@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, AfterViewInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnDestroy, AfterViewInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'ngx-tinymce-editor',
@@ -6,17 +6,13 @@ import { Component, OnInit, OnDestroy, AfterViewInit, Input, Output, EventEmitte
     <textarea id="{{ elementId }}"></textarea>
   `,
 })
-export class NgxTinyMCEEditorComponent implements OnInit, OnDestroy, AfterViewInit {
+export class NgxTinyMCEEditorComponent implements OnDestroy, AfterViewInit {
 
   @Input() elementId: string;
 
   @Output() editorKeyup = new EventEmitter<any>();
 
   editor: any;
-
-  constructor() { }
-
-  ngOnInit() { }
 
   ngAfterViewInit() {
     tinymce.init({
@@ -51,11 +47,7 @@ export class NgxTinyMCEEditorComponent implements OnInit, OnDestroy, AfterViewIn
     </nga-card>
   `,
 })
-export class NgxTinyMCEComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() { }
+export class NgxTinyMCEComponent {
 
   editorKeyupHandler($event) {
     console.info($event);

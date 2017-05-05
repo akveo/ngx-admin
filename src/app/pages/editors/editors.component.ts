@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'ngx-editors',
@@ -6,8 +6,6 @@ import { Component, OnInit } from '@angular/core';
     <router-outlet></router-outlet>
   `,
 })
-export class NgxEditorsComponent implements OnInit {
-  constructor() { }
+export class NgxEditorsComponent {
 
-  ngOnInit() { }
 }

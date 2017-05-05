@@ -1,11 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'ngx-modal',
-  templateUrl: './modal.component.html'
+  templateUrl: './modal.component.html',
 })
-export class NgxModalComponent implements OnInit {
+export class NgxModalComponent {
 
   modalHeader: string;
   modalContent: string = `Lorem ipsum dolor sit amet,
@@ -16,8 +16,6 @@ export class NgxModalComponent implements OnInit {
     nisl ut aliquip ex ea commodo consequat.`;
 
   constructor(private activeModal: NgbActiveModal) { }
-
-  ngOnInit() { }
 
   closeModal() {
     this.activeModal.close();

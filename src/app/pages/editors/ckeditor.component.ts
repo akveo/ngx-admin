@@ -1,6 +1,5 @@
 import {
   Component,
-  OnInit,
   OnDestroy,
   AfterViewInit,
   Input,
@@ -21,10 +20,6 @@ import 'ckeditor';
     </nga-card>
   `,
 })
-export class NgxCKEditorComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() { }
+export class NgxCKEditorComponent {
 
 }

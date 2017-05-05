@@ -1,11 +1,11 @@
-import { Component, OnInit, Pipe, PipeTransform } from '@angular/core';
+import { Component, Pipe, PipeTransform } from '@angular/core';
 
 @Component({
   selector: 'ngx-icons',
   styleUrls: ['./icons.component.scss'],
   templateUrl: './icons.component.html',
 })
-export class NgxIconsComponent implements OnInit {
+export class NgxIconsComponent {
 
   icons = {
 
@@ -33,10 +33,6 @@ export class NgxIconsComponent implements OnInit {
       'fa fa-birthday-cake', 'fa fa-bolt', 'fa fa-bomb', 'fa fa-book', 'fa fa-bookmark', 'fa fa-bookmark-o',
       'fa fa-briefcase', 'fa fa-bug', 'fa fa-building', 'fa fa-building-o', 'fa fa-bullhorn',
     ],
-  }
-
-  constructor() { }
-
-  ngOnInit() { }
+  };
 
 }

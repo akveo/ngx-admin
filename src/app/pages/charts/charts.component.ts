@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'ngx-charts',
@@ -6,8 +6,5 @@ import { Component, OnInit } from '@angular/core';
     <p>charts work!</p>
   `,
 })
-export class NgxChartsComponent implements OnInit {
-  constructor() { }
-
-  ngOnInit() { }
+export class NgxChartsComponent {
 }
