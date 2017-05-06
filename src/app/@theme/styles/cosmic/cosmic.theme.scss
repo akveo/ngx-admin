@@ -24,3 +24,7 @@ $theme-name: 'cosmic';
 // @nga/maps module styles
 @import '~@nga/theme/overrides/maps/styles/themes/nga.theme.default';
 @include nga-maps($theme-name);
+
+// @nga/typography module styles
+@import '~@nga/theme/overrides/typography/styles/themes/nga.theme.default';
+@include nga-typography($theme-name);

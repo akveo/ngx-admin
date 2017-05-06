@@ -17,6 +17,7 @@ import { DropdownButtonsComponent } from './buttons/dropdown/dropdown.component'
 import { GroupButtonsComponent } from './buttons/group/group.component';
 import { LargeButtonsComponent } from './buttons/large/large.component';
 import { ModalComponent } from './modals/modal/modal.component';
+import { TypographyComponent } from './typography/typography.component';
 
 const COMPONENTS = [
   UiFeaturesComponent,
@@ -33,6 +34,7 @@ const COMPONENTS = [
   GroupButtonsComponent,
   LargeButtonsComponent,
   ModalComponent,
+  TypographyComponent,
 ];
 
 @NgModule({

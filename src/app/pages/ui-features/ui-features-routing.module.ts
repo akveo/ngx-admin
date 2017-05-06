@@ -6,6 +6,7 @@ import { ButtonsComponent } from './buttons/buttons.component';
 import { GridComponent } from './grid/grid.component';
 import { IconsComponent } from './icons/icons.component';
 import { ModalsComponent } from './modals/modals.component';
+import { TypographyComponent } from './typography/typography.component';
 
 const routes: Routes = [{
   path: '',
@@ -22,6 +23,9 @@ const routes: Routes = [{
   }, {
     path: 'modals',
     component: ModalsComponent,
+  }, {
+    path: 'typography',
+    component: TypographyComponent,
   }],
 }];
 
