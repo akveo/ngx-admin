@@ -4,6 +4,6 @@ import { Component } from '@angular/core';
   selector: 'ngx-icon-buttons',
   templateUrl: './icon.component.html',
 })
-export class NgxIconButtonsComponent {
+export class IconButtonsComponent {
 
 }

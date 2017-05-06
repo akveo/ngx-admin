@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
     <p>charts work!</p>
   `,
 })
-export class NgxChartsComponent {
+export class ChartsComponent {
 }

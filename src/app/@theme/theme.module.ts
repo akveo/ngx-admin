@@ -13,7 +13,13 @@ import {
   NgaActionsModule,
 } from '@nga/theme';
 
-import { SearchInputComponent, HeaderComponent, FooterComponent } from './components';
+import {
+  HeaderComponent,
+  FooterComponent,
+  SearchInputComponent,
+  TinyMCEComponent
+} from './components';
+
 import { OneColumnLayoutComponent } from './layouts';
 
 const BASE_MODULES = [
@@ -36,12 +42,8 @@ const COMPONENTS = [
   HeaderComponent,
   FooterComponent,
   SearchInputComponent,
-];
-
-const LAYOUTS = [
+  TinyMCEComponent,
   OneColumnLayoutComponent,
-  HeaderComponent,
-  FooterComponent,
 ];
 
 @NgModule({
@@ -54,11 +56,9 @@ const LAYOUTS = [
     ...BASE_MODULES,
     ...NGA_MODULES,
     ...COMPONENTS,
-    ...LAYOUTS,
   ],
   declarations: [
     ...COMPONENTS,
-    ...LAYOUTS,
   ],
 })
 export class ThemeModule {

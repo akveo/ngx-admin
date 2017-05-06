@@ -4,6 +4,6 @@ import { Component } from '@angular/core';
   selector: 'ngx-group-buttons',
   templateUrl: './group.component.html',
 })
-export class NgxGroupButtonsComponent {
+export class GroupButtonsComponent {
 
 }

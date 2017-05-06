@@ -6,7 +6,7 @@ import { Component, OnDestroy, AfterViewInit, Input, Output, EventEmitter } from
     <textarea id="{{ elementId }}"></textarea>
   `,
 })
-export class NgxTinyMCEEditorComponent implements OnDestroy, AfterViewInit {
+export class TinyMCEEditorComponent implements OnDestroy, AfterViewInit {
 
   @Input() elementId: string;
 
@@ -47,7 +47,7 @@ export class NgxTinyMCEEditorComponent implements OnDestroy, AfterViewInit {
     </nga-card>
   `,
 })
-export class NgxTinyMCEComponent {
+export class TinyMCEComponent {
 
   editorKeyupHandler($event) {
     console.info($event);

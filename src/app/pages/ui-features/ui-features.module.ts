@@ -1,50 +1,50 @@
 import { NgModule } from '@angular/core';
 
-import { NgxSharedModule } from '../../@shared/shared.module';
+import { SharedModule } from '../../shared.module';
 
-import { NgxUiFeaturesRoutingModule } from './ui-features-routing.module';
-import { NgxUiFeaturesComponent } from './ui-features.component';
-import { NgxButtonsComponent } from './buttons/buttons.component';
-import { NgxGridComponent } from './grid/grid.component';
-import { NgxModalsComponent } from './modals/modals.component';
-import { NgxIconsComponent } from './icons/icons.component';
-import { NgxFlatButtonsComponent } from './buttons/flat/flat.component';
-import { NgxRaisedButtonsComponent } from './buttons/raised/raised.component';
-import { NgxSizedButtonsComponent } from './buttons/sized/sized.component';
-import { NgxDisabledButtonsComponent } from './buttons/disabled/disabled.component';
-import { NgxIconButtonsComponent } from './buttons/icon/icon.component';
-import { NgxDropdownButtonsComponent } from './buttons/dropdown/dropdown.component';
-import { NgxGroupButtonsComponent } from './buttons/group/group.component';
-import { NgxLargeButtonsComponent } from './buttons/large/large.component';
-import { NgxModalComponent } from './modals/modal/modal.component';
+import { UiFeaturesRoutingModule } from './ui-features-routing.module';
+import { UiFeaturesComponent } from './ui-features.component';
+import { ButtonsComponent } from './buttons/buttons.component';
+import { GridComponent } from './grid/grid.component';
+import { ModalsComponent } from './modals/modals.component';
+import { IconsComponent } from './icons/icons.component';
+import { FlatButtonsComponent } from './buttons/flat/flat.component';
+import { RaisedButtonsComponent } from './buttons/raised/raised.component';
+import { SizedButtonsComponent } from './buttons/sized/sized.component';
+import { DisabledButtonsComponent } from './buttons/disabled/disabled.component';
+import { IconButtonsComponent } from './buttons/icon/icon.component';
+import { DropdownButtonsComponent } from './buttons/dropdown/dropdown.component';
+import { GroupButtonsComponent } from './buttons/group/group.component';
+import { LargeButtonsComponent } from './buttons/large/large.component';
+import { ModalComponent } from './modals/modal/modal.component';
 
-export const NGX_UI_FEATURES_COMPONENTS = [
-  NgxUiFeaturesComponent,
-  NgxButtonsComponent,
-  NgxGridComponent,
-  NgxIconsComponent,
-  NgxModalsComponent,
-  NgxFlatButtonsComponent,
-  NgxRaisedButtonsComponent,
-  NgxSizedButtonsComponent,
-  NgxDisabledButtonsComponent,
-  NgxIconButtonsComponent,
-  NgxDropdownButtonsComponent,
-  NgxLargeButtonsComponent,
-  NgxGroupButtonsComponent,
-  NgxModalComponent,
+const COMPONENTS = [
+  UiFeaturesComponent,
+  ButtonsComponent,
+  GridComponent,
+  ModalsComponent,
+  IconsComponent,
+  FlatButtonsComponent,
+  RaisedButtonsComponent,
+  SizedButtonsComponent,
+  DisabledButtonsComponent,
+  IconButtonsComponent,
+  DropdownButtonsComponent,
+  GroupButtonsComponent,
+  LargeButtonsComponent,
+  ModalComponent,
 ];
 
 @NgModule({
   imports: [
-    NgxSharedModule,
-    NgxUiFeaturesRoutingModule,
+    SharedModule,
+    UiFeaturesRoutingModule,
   ],
   declarations: [
-    ...NGX_UI_FEATURES_COMPONENTS,
+    ...COMPONENTS,
   ],
   entryComponents: [
-    NgxModalComponent,
+    ModalComponent,
   ],
 })
-export class NgxUiFeaturesModule { }
+export class UiFeaturesModule { }

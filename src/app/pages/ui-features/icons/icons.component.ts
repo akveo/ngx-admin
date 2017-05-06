@@ -5,7 +5,7 @@ import { Component, Pipe, PipeTransform } from '@angular/core';
   styleUrls: ['./icons.component.scss'],
   templateUrl: './icons.component.html',
 })
-export class NgxIconsComponent {
+export class IconsComponent {
 
   icons = {
 

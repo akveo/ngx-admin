@@ -1,19 +1,19 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { NgxFormsComponent } from './forms.component';
-import { NgxFormInputsComponent } from './form-inputs/form-inputs.component';
-import { NgxFormLayoutsComponent } from './form-layouts/form-layouts.component';
+import { FormsComponent } from './forms.component';
+import { FormInputsComponent } from './form-inputs/form-inputs.component';
+import { FormLayoutsComponent } from './form-layouts/form-layouts.component';
 
 const routes: Routes = [{
   path: '',
-  component: NgxFormsComponent,
+  component: FormsComponent,
   children: [{
     path: 'inputs',
-    component: NgxFormInputsComponent,
+    component: FormInputsComponent,
   }, {
     path: 'layouts',
-    component: NgxFormLayoutsComponent,
+    component: FormLayoutsComponent,
   }],
 }];
 
@@ -25,12 +25,12 @@ const routes: Routes = [{
     RouterModule,
   ],
 })
-export class NgxFormsRoutingModule {
+export class FormsRoutingModule {
 
 }
 
 export const routedComponents = [
-  NgxFormsComponent,
-  NgxFormInputsComponent,
-  NgxFormLayoutsComponent,
+  FormsComponent,
+  FormInputsComponent,
+  FormLayoutsComponent,
 ];

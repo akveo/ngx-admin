@@ -5,6 +5,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./buttons.component.scss'],
   templateUrl: './buttons.component.html',
 })
-export class NgxButtonsComponent {
+export class ButtonsComponent {
 
 }

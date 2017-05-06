@@ -4,6 +4,6 @@ import { Component } from '@angular/core';
   selector: 'ngx-form-layouts',
   templateUrl: './form-layouts.component.html',
 })
-export class NgxFormLayoutsComponent {
+export class FormLayoutsComponent {
 
 }

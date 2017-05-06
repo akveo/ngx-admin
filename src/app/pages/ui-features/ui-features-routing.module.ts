@@ -1,35 +1,27 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { NgxUiFeaturesComponent } from './ui-features.component';
-import { NgxButtonsComponent } from './buttons/buttons.component';
-import { NgxGridComponent } from './grid/grid.component';
-import { NgxIconsComponent } from './icons/icons.component';
-import { NgxModalsComponent } from './modals/modals.component';
-import { NgxFlatButtonsComponent } from './buttons/flat/flat.component';
-import { NgxRaisedButtonsComponent } from './buttons/raised/raised.component';
-import { NgxSizedButtonsComponent } from './buttons/sized/sized.component';
-import { NgxDisabledButtonsComponent } from './buttons/disabled/disabled.component';
-import { NgxIconButtonsComponent } from './buttons/icon/icon.component';
-import { NgxDropdownButtonsComponent } from './buttons/dropdown/dropdown.component';
-import { NgxLargeButtonsComponent } from './buttons/large/large.component';
-import { NgxGroupButtonsComponent } from './buttons/group/group.component';
+import { UiFeaturesComponent } from './ui-features.component';
+import { ButtonsComponent } from './buttons/buttons.component';
+import { GridComponent } from './grid/grid.component';
+import { IconsComponent } from './icons/icons.component';
+import { ModalsComponent } from './modals/modals.component';
 
 const routes: Routes = [{
   path: '',
-  component: NgxUiFeaturesComponent,
+  component: UiFeaturesComponent,
   children: [{
     path: 'buttons',
-    component: NgxButtonsComponent,
+    component: ButtonsComponent,
   }, {
     path: 'grid',
-    component: NgxGridComponent,
+    component: GridComponent,
   }, {
     path: 'icons',
-    component: NgxIconsComponent,
+    component: IconsComponent,
   }, {
     path: 'modals',
-    component: NgxModalsComponent,
+    component: ModalsComponent,
   }],
 }];
 
@@ -37,4 +29,4 @@ const routes: Routes = [{
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class NgxUiFeaturesRoutingModule { }
+export class UiFeaturesRoutingModule { }

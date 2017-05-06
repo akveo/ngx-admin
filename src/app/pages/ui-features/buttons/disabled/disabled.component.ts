@@ -4,6 +4,6 @@ import { Component } from '@angular/core';
   selector: 'ngx-disabled-buttons',
   templateUrl: './disabled.component.html',
 })
-export class NgxDisabledButtonsComponent {
+export class DisabledButtonsComponent {
 
 }

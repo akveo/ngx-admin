@@ -10,14 +10,14 @@ import { PagesRoutingModule } from './pages-routing.module';
 import { ThemeModule } from '../@theme/theme.module';
 import { MapsComponent } from './maps/maps.component';
 import { ComponentsComponent } from './components/components.component';
-import { NgxChartsComponent } from './charts/charts.component';
+import { ChartsComponent } from './charts/charts.component';
 
 const PAGES_COMPONENTS = [
   PagesComponent,
   DashboardComponent,
   MapsComponent,
   ComponentsComponent,
-  NgxChartsComponent,
+  ChartsComponent,
 ];
 
 @NgModule({

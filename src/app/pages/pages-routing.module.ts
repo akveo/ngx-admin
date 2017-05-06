@@ -5,8 +5,7 @@ import { PagesComponent } from './pages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ComponentsComponent } from './components/components.component';
 import { MapsComponent } from './maps/maps.component';
-import { NgxChartsComponent } from './charts/charts.component';
-import { NgxEditorsComponent } from './editors/editors.component';
+import { ChartsComponent } from './charts/charts.component';
 
 const routes: Routes = [{
   path: '',
@@ -16,7 +15,7 @@ const routes: Routes = [{
     component: DashboardComponent,
   }, {
     path: 'ui-features',
-    loadChildren: './ui-features/ui-features.module#NgxUiFeaturesModule',
+    loadChildren: './ui-features/ui-features.module#UiFeaturesModule',
   }, {
     path: 'components',
     component: ComponentsComponent,
@@ -25,13 +24,13 @@ const routes: Routes = [{
     component: MapsComponent,
   }, {
     path: 'charts',
-    component: NgxChartsComponent,
+    component: ChartsComponent,
   }, {
     path: 'editors',
-    loadChildren: './editors/editors.module#NgxEditorsModule',
+    loadChildren: './editors/editors.module#EditorsModule',
   }, {
     path: 'forms',
-    loadChildren: './forms/forms.module#NgxFormsModule',
+    loadChildren: './forms/forms.module#FormsModule',
   }, {
     path: '',
     redirectTo: 'dashboard',

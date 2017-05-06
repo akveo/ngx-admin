@@ -1,30 +1,30 @@
 import { Component } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
-import { NgxModalComponent } from './modal/modal.component';
+import { ModalComponent } from './modal/modal.component';
 
 @Component({
   selector: 'ngx-modals',
   styleUrls: ['./modals.component.scss'],
   templateUrl: './modals.component.html',
 })
-export class NgxModalsComponent {
+export class ModalsComponent {
 
   constructor(private modalService: NgbModal) { }
 
   showLargeModal() {
-    const activeModal = this.modalService.open(NgxModalComponent, { size: 'lg' });
+    const activeModal = this.modalService.open(ModalComponent, { size: 'lg' });
 
     activeModal.componentInstance.modalHeader = 'Large Modal';
   }
   showSmallModal() {
-    const activeModal = this.modalService.open(NgxModalComponent, { size: 'sm' });
+    const activeModal = this.modalService.open(ModalComponent, { size: 'sm' });
 
     activeModal.componentInstance.modalHeader = 'Small Modal';
   }
 
   showStaticModal() {
-    const activeModal = this.modalService.open(NgxModalComponent, {
+    const activeModal = this.modalService.open(ModalComponent, {
       size: 'sm',
       backdrop: 'static',
     });

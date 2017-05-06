@@ -14,4 +14,4 @@ import { NgaCardModule, NgaBootstrapModule } from '@nga/theme';
     NgaBootstrapModule,
   ],
 })
-export class NgxSharedModule { }
+export class SharedModule { }

@@ -4,6 +4,6 @@ import { Component } from '@angular/core';
   selector: 'ngx-raised-buttons',
   templateUrl: './raised.component.html',
 })
-export class NgxRaisedButtonsComponent {
+export class RaisedButtonsComponent {
 
 }

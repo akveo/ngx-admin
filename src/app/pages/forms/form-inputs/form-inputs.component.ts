@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
   selector: 'ngx-form-inputs',
   templateUrl: './form-inputs.component.html',
 })
-export class NgxFormInputsComponent {
+export class FormInputsComponent {
 
   rate1: number = 3;
   rate2: number = 4;

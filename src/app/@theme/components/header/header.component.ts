@@ -4,7 +4,7 @@ import { NgaSidebarService, NgaMenuService } from '@nga/theme';
 import { NgaThemeService } from '@nga/theme/services/theme.service';
 
 @Component({
-  selector: 'header',
+  selector: 'ngx-header',
   styleUrls: ['./header.component.scss'],
   template: `
     <div class="left">
@@ -14,7 +14,7 @@ import { NgaThemeService } from '@nga/theme/services/theme.service';
     </div>
     
     <nga-actions size="medium" inverse class="right">
-      <nga-action><search-input></search-input></nga-action>
+      <nga-action><ngx-search-input></ngx-search-input></nga-action>
       <nga-action icon="ion-ios-email-outline"></nga-action>
       <nga-action disabled icon="ion-ios-bell-outline"></nga-action>
       <nga-action>

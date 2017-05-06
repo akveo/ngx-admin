@@ -4,6 +4,6 @@ import { Component } from '@angular/core';
   selector: 'ngx-large-buttons',
   templateUrl: './large.component.html',
 })
-export class NgxLargeButtonsComponent {
+export class LargeButtonsComponent {
 
 }

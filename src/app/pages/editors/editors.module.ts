@@ -1,18 +1,20 @@
 import { NgModule } from '@angular/core';
 import { CKEditorModule } from 'ng2-ckeditor';
 
-import { NgxSharedModule } from '../../@shared/shared.module';
+import { SharedModule } from '../../shared.module';
+import { ThemeModule } from '../../@theme/theme.module';
 
-import { NgxEditorsRoutingModule, routedComponents } from './editors-routing.module';
+import { EditorsRoutingModule, routedComponents } from './editors-routing.module';
 
 @NgModule({
   imports: [
-    NgxSharedModule,
-    NgxEditorsRoutingModule,
+    SharedModule,
+    ThemeModule,
+    EditorsRoutingModule,
     CKEditorModule,
   ],
   declarations: [
     ...routedComponents,
   ],
 })
-export class NgxEditorsModule { }
+export class EditorsModule { }

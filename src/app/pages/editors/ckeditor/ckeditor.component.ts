@@ -1,11 +1,4 @@
-import {
-  Component,
-  OnDestroy,
-  AfterViewInit,
-  Input,
-  Output,
-  EventEmitter,
-} from '@angular/core';
+import { Component } from '@angular/core';
 
 import './ckeditor.loader';
 import 'ckeditor';
@@ -21,5 +14,4 @@ import 'ckeditor';
   `,
 })
 export class CKEditorComponent {
-
 }

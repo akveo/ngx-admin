@@ -4,6 +4,6 @@ import { Component } from '@angular/core';
   selector: 'ngx-dropdown-buttons',
   templateUrl: './dropdown.component.html',
 })
-export class NgxDropdownButtonsComponent {
+export class DropdownButtonsComponent {
 
 }

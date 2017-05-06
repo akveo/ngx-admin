@@ -5,7 +5,7 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
   selector: 'ngx-modal',
   templateUrl: './modal.component.html',
 })
-export class NgxModalComponent {
+export class ModalComponent {
 
   modalHeader: string;
   modalContent: string = `Lorem ipsum dolor sit amet,

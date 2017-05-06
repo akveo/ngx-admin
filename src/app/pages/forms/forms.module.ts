@@ -1,16 +1,16 @@
 import { NgModule } from '@angular/core';
 
-import { NgxSharedModule } from '../../@shared/shared.module';
+import { SharedModule } from '../../shared.module';
 
-import { NgxFormsRoutingModule, routedComponents } from './forms-routing.module';
+import { FormsRoutingModule, routedComponents } from './forms-routing.module';
 
 @NgModule({
   imports: [
-    NgxSharedModule,
-    NgxFormsRoutingModule,
+    SharedModule,
+    FormsRoutingModule,
   ],
   declarations: [
     ...routedComponents,
   ],
 })
-export class NgxFormsModule { }
+export class FormsModule { }

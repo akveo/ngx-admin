@@ -5,6 +5,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./grid.component.scss'],
   templateUrl: './grid.component.html',
 })
-export class NgxGridComponent {
+export class GridComponent {
 
 }

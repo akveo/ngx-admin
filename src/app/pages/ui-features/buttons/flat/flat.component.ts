@@ -4,6 +4,6 @@ import { Component } from '@angular/core';
   selector: 'ngx-flat-buttons',
   templateUrl: './flat.component.html',
 })
-export class NgxFlatButtonsComponent {
+export class FlatButtonsComponent {
 
 }

@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   template: `
     <nga-layout>
       <nga-layout-header fixed>
-        <header></header>
+        <ngx-header></ngx-header>
       </nga-layout-header>
 
       <nga-sidebar>
@@ -17,7 +17,7 @@ import { Component } from '@angular/core';
       </nga-layout-column>
 
       <nga-layout-footer fixed>
-        <footer></footer>
+        <ngx-footer></ngx-footer>
       </nga-layout-footer>
     </nga-layout>
   `,
