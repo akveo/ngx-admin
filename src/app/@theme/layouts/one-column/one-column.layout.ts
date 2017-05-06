@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'one-column-layout',
+  selector: 'ngx-one-column-layout',
   template: `
     <nga-layout>
       <nga-layout-header fixed>

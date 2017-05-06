@@ -17,7 +17,7 @@ import {
   HeaderComponent,
   FooterComponent,
   SearchInputComponent,
-  TinyMCEComponent
+  TinyMCEComponent,
 } from './components';
 
 import { OneColumnLayoutComponent } from './layouts';

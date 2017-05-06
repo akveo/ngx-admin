@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'dashboard',
+  selector: 'ngx-dashboard',
   template: `
     <nga-card>
       <nga-card-header>Test card</nga-card-header>  

@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { EditorsComponent } from './editors.component';
-import { TinyMCEComponent, TinyMCEEditorComponent } from './tinyMCE.component';
+import { TinyMCEComponent } from './tiny-mce/tiny-mce.component';
 import { CKEditorComponent } from './ckeditor.component';
 
 const routes: Routes = [{
@@ -26,6 +26,5 @@ export class EditorsRoutingModule { }
 export const routedComponents = [
   EditorsComponent,
   TinyMCEComponent,
-  TinyMCEEditorComponent,
   CKEditorComponent,
 ];

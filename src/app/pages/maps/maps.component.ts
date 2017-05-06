@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'maps',
+  selector: 'ngx-maps',
   template: `
     <p>
       maps works!

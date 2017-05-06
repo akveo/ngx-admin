@@ -4,12 +4,12 @@ import 'style-loader!../@theme/styles/gorgeous/gorgeous.theme.scss';
 import 'style-loader!../@theme/styles/pure/pure.theme.scss';
 
 @Component({
-  selector: 'pages',
+  selector: 'ngx-pages',
   template: `
-    <one-column-layout>
+    <ngx-one-column-layout>
       <nga-menu></nga-menu>
       <router-outlet></router-outlet>
-    </one-column-layout>
+    </ngx-one-column-layout>
   `,
 })
 export class PagesComponent {

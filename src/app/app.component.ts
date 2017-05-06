@@ -6,7 +6,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app',
+  selector: 'ngx-app',
   template: '<router-outlet></router-outlet>',
 })
 export class AppComponent {
