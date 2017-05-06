@@ -4,7 +4,6 @@ import { NgModule } from '@angular/core';
 import { PagesComponent } from './pages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ComponentsComponent } from './components/components.component';
-import { MapsComponent } from './maps/maps.component';
 import { ChartsComponent } from './charts/charts.component';
 
 const routes: Routes = [{
@@ -21,7 +20,7 @@ const routes: Routes = [{
     component: ComponentsComponent,
   }, {
     path: 'maps',
-    component: MapsComponent,
+    loadChildren: './maps/maps.module#MapsModule',
   }, {
     path: 'charts',
     component: ChartsComponent,

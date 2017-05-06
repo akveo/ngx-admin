@@ -14,7 +14,7 @@ export const menuItems: List<NgaMenuItem> = List([{
   title: 'UI Features',
   icon: 'ion ion-ios-keypad-outline',
   link: '/pages/ui-features',
-  children: List([{
+  children: List<NgaMenuItem>([{
     title: 'Buttons',
     link: '/pages/ui-features/buttons',
   }, {
@@ -34,7 +34,13 @@ export const menuItems: List<NgaMenuItem> = List([{
 }, {
   title: 'Maps',
   icon: 'ion ion-ios-location-outline',
-  link: '/pages/maps',
+  children: List<NgaMenuItem>([{
+    title: 'Gmaps',
+    link: '/pages/maps/gmaps',
+  }, {
+    title: 'Leaflet',
+    link: '/pages/maps/leaflet',
+  }]),
 }, {
   title: 'Charts',
   icon: 'ion ion-arrow-graph-up-right',
@@ -42,7 +48,7 @@ export const menuItems: List<NgaMenuItem> = List([{
 }, {
   title: 'Editors',
   icon: 'ion ion-edit',
-  children: List([{
+  children: List<NgaMenuItem>([{
     title: 'TinyMCE',
     link: '/pages/editors/tinymce',
   }, {
@@ -52,7 +58,7 @@ export const menuItems: List<NgaMenuItem> = List([{
 }, {
   title: 'Forms',
   icon: 'ion-compose',
-  children: List([{
+  children: List<NgaMenuItem>([{
     title: 'Form Inputs',
     link: '/pages/forms/inputs',
   }, {

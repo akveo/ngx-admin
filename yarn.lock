@@ -2,6 +2,10 @@
 # yarn lockfile v1
 
 
+"@agm/core@1.0.0-beta.0":
+  version "1.0.0-beta.0"
+  resolved "https://registry.yarnpkg.com/@agm/core/-/core-1.0.0-beta.0.tgz#5ca53f0efa321e1e24c7ba3a6be72f96bccf82a4"
+
 "@angular/animations@4.1.0":
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/@angular/animations/-/animations-4.1.0.tgz#97b642aee01b5406e03ec65e499342ba91e2dd38"
@@ -123,6 +127,10 @@
   dependencies:
     tsickle "^0.21.0"
 
+"@asymmetrik/angular2-leaflet@2.1.4":
+  version "2.1.4"
+  resolved "https://registry.yarnpkg.com/@asymmetrik/angular2-leaflet/-/angular2-leaflet-2.1.4.tgz#3d55155f77008753bce40f0af53aa2a7ec23916b"
+
 "@ng-bootstrap/ng-bootstrap@1.0.0-alpha.25":
   version "1.0.0-alpha.25"
   resolved "https://registry.yarnpkg.com/@ng-bootstrap/ng-bootstrap/-/ng-bootstrap-1.0.0-alpha.25.tgz#68cc2afa17fb5bdd2d775b7f82cffa86ef21b0ed"
@@ -140,9 +148,19 @@
     magic-string "^0.19.0"
     source-map "^0.5.6"
 
+"@types/geojson@*":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@types/geojson/-/geojson-1.0.2.tgz#b02d10ab028e2928ac592a051aaa4981a1941d03"
+
 "@types/jasmine@2.5.38":
   version "2.5.38"
   resolved "https://registry.yarnpkg.com/@types/jasmine/-/jasmine-2.5.38.tgz#a4379124c4921d4e21de54ec74669c9e9b356717"
+
+"@types/leaflet@1.0.60":
+  version "1.0.60"
+  resolved "https://registry.yarnpkg.com/@types/leaflet/-/leaflet-1.0.60.tgz#48b9ca197a78fa5e1bb3aeac614f286c08951834"
+  dependencies:
+    "@types/geojson" "*"
 
 "@types/node@6.0.69", "@types/node@^6.0.46":
   version "6.0.69"
@@ -3105,6 +3123,10 @@ ldjson-stream@^1.2.1:
   dependencies:
     split2 "^0.2.1"
     through2 "^0.6.1"
+
+leaflet@1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/leaflet/-/leaflet-1.0.3.tgz#1f401b98b45c8192134c6c8d69686253805007c8"
 
 less-loader@^4.0.2:
   version "4.0.3"
