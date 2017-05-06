@@ -62,11 +62,10 @@
 
         /deep/ nga-layout-column {
           order: 2;
-          flex: 3 0;
+          flex: 1 0;
 
           &.left {
             order: 1;
-            flex: 1 0;
           }
         }
       }
