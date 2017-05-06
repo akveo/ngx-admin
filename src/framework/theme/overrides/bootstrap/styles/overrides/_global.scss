@@ -3,7 +3,10 @@
  * Copyright Akveo. All Rights Reserved.
  * Licensed under the MIT License. See License.txt in the project root for license information.
  */
-@import 'partial';
+
+@import './partial';
+
 @import '~bootstrap/scss/normalize';
 @import '~bootstrap/scss/print';
 @import '~bootstrap/scss/reboot';
+@import '~bootstrap/scss/bootstrap';

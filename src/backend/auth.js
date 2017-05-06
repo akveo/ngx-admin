@@ -1,3 +1,9 @@
+/**
+ * @license
+ * Copyright Akveo. All Rights Reserved.
+ * Licensed under the MIT License. See License.txt in the project root for license information.
+ */
+
 var passport = require('passport');
 var passportJWT = require('passport-jwt');
 var users = require('./users.js');

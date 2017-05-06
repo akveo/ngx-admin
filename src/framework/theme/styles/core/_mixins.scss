@@ -3,6 +3,7 @@
  * Copyright Akveo. All Rights Reserved.
  * Licensed under the MIT License. See License.txt in the project root for license information.
  */
+
 @mixin nga-scrollbars($size, $foreground-color, $background-color: mix($foreground-color, white, 50%)) {
   ::-webkit-scrollbar {
     width: $size;

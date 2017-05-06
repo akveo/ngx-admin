@@ -3,6 +3,7 @@
  * Copyright Akveo. All Rights Reserved.
  * Licensed under the MIT License. See License.txt in the project root for license information.
  */
+
 import { Inject, Injectable, Type } from '@angular/core';
 
 import { Observable } from 'rxjs/Observable';

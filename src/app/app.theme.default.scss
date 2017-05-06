@@ -13,5 +13,5 @@
 @include nga-auth('default');
 
 // @nga/bootstrap module styles
-@import '../framework/bootstrap/styles/themes/nga.theme.default';
+@import '../framework/theme/overrides/bootstrap/styles/themes/nga.theme.default';
 @include nga-bootstrap('default');

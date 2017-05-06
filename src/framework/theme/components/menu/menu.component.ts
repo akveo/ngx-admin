@@ -3,6 +3,7 @@
  * Copyright Akveo. All Rights Reserved.
  * Licensed under the MIT License. See License.txt in the project root for license information.
  */
+
 import {
   Component,
   Input,
@@ -120,7 +121,7 @@ export class NgaMenuComponent implements OnInit {
     this.toggleSubMenu.emit(item);
   }
 
-  onSelectItem(item: any) {
+  onSelectItem(item: NgaMenuItem) {
     this.menuService.resetItems(this.menuItems);
 
     item.selected = true;
@@ -131,7 +132,7 @@ export class NgaMenuComponent implements OnInit {
   }
 
   private navigateHome() {
-    let homeItem: any;
+    let homeItem: NgaMenuItem;
 
     this.menuItems.forEach(i => {
       const result = this.getHomeItem(i);

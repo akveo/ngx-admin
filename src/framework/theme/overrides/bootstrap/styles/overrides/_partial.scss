@@ -3,5 +3,6 @@
  * Copyright Akveo. All Rights Reserved.
  * Licensed under the MIT License. See License.txt in the project root for license information.
  */
-@import '../../../theme/styles/themes/nga.theme.blur';
-@import './nga.theme.default';
+
+@import '~bootstrap/scss/variables';
+@import '~bootstrap/scss/mixins';

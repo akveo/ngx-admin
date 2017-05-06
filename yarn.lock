@@ -6181,9 +6181,9 @@ tslint-eslint-rules@3.4.0:
   dependencies:
     doctrine "^0.7.2"
 
-tslint-language-service@0.9.2:
-  version "0.9.2"
-  resolved "https://registry.yarnpkg.com/tslint-language-service/-/tslint-language-service-0.9.2.tgz#76e0ed3e92677a5bd5bc91e4a1335d9b284469f3"
+tslint-language-service@0.9.3:
+  version "0.9.3"
+  resolved "https://registry.yarnpkg.com/tslint-language-service/-/tslint-language-service-0.9.3.tgz#102f8fe3470991b35eb8e4b4e2e26bf6c3ca1a79"
 
 tslint@4.5.1:
   version "4.5.1"
@@ -6676,16 +6676,9 @@ write-file-stdout@0.0.2:
   version "0.0.2"
   resolved "https://registry.yarnpkg.com/write-file-stdout/-/write-file-stdout-0.0.2.tgz#c252d7c7c5b1b402897630e3453c7bfe690d9ca1"
 
-ws@1.1.1:
+ws@1.1.1, ws@^1.0.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/ws/-/ws-1.1.1.tgz#082ddb6c641e85d4bb451f03d52f06eabdb1f018"
-  dependencies:
-    options ">=0.0.5"
-    ultron "1.0.x"
-
-ws@^1.0.1:
-  version "1.1.4"
-  resolved "https://registry.yarnpkg.com/ws/-/ws-1.1.4.tgz#57f40d036832e5f5055662a397c4de76ed66bf61"
   dependencies:
     options ">=0.0.5"
     ultron "1.0.x"

@@ -3,6 +3,7 @@
  * Copyright Akveo. All Rights Reserved.
  * Licensed under the MIT License. See License.txt in the project root for license information.
  */
+
 import { List } from 'immutable';
 
 export class NgaMenuItem {
@@ -18,6 +19,7 @@ export class NgaMenuItem {
   home?: boolean = false;
   group?: boolean;
   parent?: NgaMenuItem;
+  selected?: boolean = false;
 }
 
 export class NgaMenuModuleConfig {

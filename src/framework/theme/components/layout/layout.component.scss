@@ -3,6 +3,7 @@
  * Copyright Akveo. All Rights Reserved.
  * Licensed under the MIT License. See License.txt in the project root for license information.
  */
+
 :host {
 
   .layout {
@@ -22,7 +23,7 @@
       position: fixed;
       left: 0;
       right: 0;
-      z-index: 2;
+      z-index: 100;
     }
   }
 
@@ -61,11 +62,10 @@
 
         /deep/ nga-layout-column {
           order: 2;
-          flex: 3 0;
+          flex: 1 0;
 
           &.left {
             order: 1;
-            flex: 1 0;
           }
         }
       }

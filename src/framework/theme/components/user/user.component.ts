@@ -3,6 +3,7 @@
  * Copyright Akveo. All Rights Reserved.
  * Licensed under the MIT License. See License.txt in the project root for license information.
  */
+
 import { Component, Input, HostBinding, Output, EventEmitter, HostListener, ElementRef } from '@angular/core';
 import { convertToBoolProperty } from '../helpers';
 

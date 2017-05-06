@@ -3,5 +3,13 @@
  * Copyright Akveo. All Rights Reserved.
  * Licensed under the MIT License. See License.txt in the project root for license information.
  */
-@import '../../../theme/styles/themes/nga.theme.mint';
-@import './nga.theme.default';
+
+@import 'partial';
+
+@mixin nga-b-forms-theme($theme-name) {
+  /deep/ {
+    @import '~bootstrap/scss/forms';
+
+    // TODO: further forms overrides
+  }
+}
