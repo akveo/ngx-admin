@@ -164,7 +164,7 @@ export class NgaLayoutComponent implements OnDestroy, AfterViewInit {
         setTimeout(() => this.renderer.removeClass(this.elementRef.nativeElement, searchState.type), 500);
         this.renderer.removeClass(this.elementRef.nativeElement, 'show');
       }
-    })
+    });
   }
 
   ngAfterViewInit(): void {

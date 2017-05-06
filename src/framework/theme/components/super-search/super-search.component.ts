@@ -144,16 +144,10 @@ export class NgaSearchFieldComponent {
 })
 export class NgaSearchComponent {
 
-  static readonly TYPE_MODAL_ZOOMIN = 'modal-zoomin';
-  static readonly TYPE_ROTATE_LAYOUT = 'rotate-layout';
-  static readonly TYPE_MODAL_MOVE = 'modal-move';
-  static readonly TYPE_CURTAIN = 'curtain';
-  static readonly TYPE_COLUMN_CURTAIN = 'column-curtain';
-  static readonly TYPE_MODAL_DROP = 'modal-drop';
-  static readonly TYPE_MODAL_HALF = 'modal-half';
-
   public showSearch: boolean = false;
+
   @Input() private type: string = 'rotate-layout';
+
   private searchFieldComponentRef: ComponentRef<any> = null;
 
   constructor(private searchService: NgaSuperSearchService,
