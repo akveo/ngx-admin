@@ -7,28 +7,37 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs/Subject';
 import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/publish';
 
 @Injectable()
 export class NgaSidebarService {
 
-  private toggleChanges$ = new Subject();
-  private expandChanges$ = new Subject();
-  private collapseChanges$ = new Subject();
+  private toggle$ = new Subject();
+  private expand$ = new Subject();
+  private collapse$ = new Subject();
 
-  toggleChanges: Observable<{ compact: boolean, tag: string }> = this.toggleChanges$.asObservable();
-  expandChanges: Observable<{ tag: string }> = this.expandChanges$.asObservable();
-  collapseChanges: Observable<{ tag: string }> = this.collapseChanges$.asObservable();
+  onToggle(): Observable<{ compact: boolean, tag: string }> {
+    return this.toggle$.publish().refCount();
+  }
+
+  onExpand(): Observable<{ tag: string }> {
+    return this.expand$.publish().refCount();
+  }
+
+  onCollapse(): Observable<{ tag: string }> {
+    return this.collapse$.publish().refCount();
+  }
 
   toggle(compact: boolean = false, tag?: string) {
-    this.toggleChanges$.next({ compact, tag });
+    this.toggle$.next({ compact, tag });
   }
 
   expand(tag?: string) {
-    this.expandChanges$.next({ tag });
+    this.expand$.next({ tag });
   }
 
   collapse(tag?: string) {
-    this.collapseChanges$.next({ tag });
+    this.collapse$.next({ tag });
   }
 
 }
