@@ -12,6 +12,7 @@ import { List } from 'immutable';
 
 import { NgaMenuService } from './menu.service';
 import { NgaMenuItem } from './menu.options';
+import { convertToBoolProperty } from '../helpers';
 
 @Component({
   // tslint:disable-next-line:component-selector
@@ -63,7 +64,18 @@ export class NgaMenuItemComponent {
 })
 export class NgaMenuComponent implements OnInit, OnDestroy {
 
+  @HostBinding('class.inverse') inverseValue: boolean;
+
   @Input() tag: string;
+
+  /**
+   * Makes colors inverse based on current theme
+   * @type boolean
+   */
+  @Input()
+  set inverse(val: boolean) {
+    this.inverseValue = convertToBoolProperty(val);
+  }
 
   @Output() hoverItem = new EventEmitter<any>();
   @Output() toggleSubMenu = new EventEmitter<any>();

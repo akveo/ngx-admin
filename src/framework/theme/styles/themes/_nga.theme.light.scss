@@ -1,0 +1,17 @@
+/**
+ * @license
+ * Copyright Akveo. All Rights Reserved.
+ * Licensed under the MIT License. See License.txt in the project root for license information.
+ */
+
+$nga-color-default: #7179a3;
+$nga-color-secondary: #a1a1e6;
+$nga-color-inverse: white;
+
+$nga-foreground: $nga-color-default;
+$nga-background: #edf1f7;
+$nga-background-inverse: white;
+
+$nga-foreground-inverse: $nga-color-default;
+
+@import 'nga.theme.default';

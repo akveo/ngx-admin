@@ -6,11 +6,14 @@
 
 @mixin nga-card-theme($theme-name) {
   nga-card {
+    font-size: $nga-card-font-size;
+    line-height: $nga-card-line-height;
+
     background: $nga-card-background;
     color: $nga-card-foreground;
     margin-bottom: $nga-card-padding;
     border-radius: $nga-card-border-radius;
-    box-shadow: 1px 1px 4px $nga-card-shadow;
+    box-shadow: $nga-card-shadow;
     font-weight: $nga-font-weight-normal;
 
     @include nga-scrollbars(0.4em, rgba(0, 0, 0, 0.6), rgba(255, 255, 255, 0.7));

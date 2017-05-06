@@ -7,13 +7,26 @@
 @mixin nga-user-theme($theme-name) {
   nga-user {
 
+    font-size: $nga-user-font-size;
+    line-height: $nga-user-line-height;
+
     .user-picture {
       height: $nga-user-size-medium;
       width: $nga-user-size-medium;
-      background: $nga-user-picture-background;
+      background: $nga-user-background;
 
       &.background {
-        color: $nga-color-inverse;
+        color: $nga-user-foreground;
+      }
+    }
+
+    &.inverse {
+      .user-picture {
+        background: $nga-user-background-inverse;
+
+        &.background {
+          color: $nga-user-foreground-inverse;
+        }
       }
     }
 
@@ -38,7 +51,7 @@
     }
 
     .user-context-menu {
-      background-color: $nga-color-inverse;
+      background-color: $nga-user-background-inverse;
       border: 1px solid $nga-user-menu-border;
 
       ul > li > a {
@@ -53,7 +66,7 @@
         border-bottom: 11px solid $nga-user-menu-border !important;
 
         &::after {
-          border-bottom: 11px solid $nga-color-inverse !important;
+          border-bottom: 11px solid $nga-user-background-inverse !important;
         }
       }
     }

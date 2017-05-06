@@ -5,34 +5,38 @@
  */
 
 @mixin nga-route-tabset-theme($theme-name) {
+
   nga-route-tabset {
+    font-size: $nga-route-tabs-font-size;
+    line-height: $nga-route-tabs-line-height;
+
     ul {
       &.nga-route-tabset {
-        border-bottom: 1px solid $nga-color-default;
+        border-bottom: 1px solid $nga-route-tabs-separator;
       }
 
       li {
         border: 1px solid transparent;
-        border-top-left-radius: $nga-route-tab-header-radius;
-        border-top-right-radius: $nga-route-tab-header-radius;
-        background: $nga-background;
-        padding: $nga-route-tab-header-padding;
-        min-width: $nga-route-tab-header-min-width;
+        border-top-left-radius: $nga-route-tabs-header-radius;
+        border-top-right-radius: $nga-route-tabs-header-radius;
+        background: $nga-route-tabs-background;
+        padding: $nga-route-tabs-header-padding;
+        min-width: $nga-route-tabs-header-min-width;
 
         a {
-          color: $nga-foreground;
+          color: $nga-route-tabs-foreground;
         }
 
         &.active {
-          background: $nga-route-tab-header-active;
+          background: $nga-route-tabs-header-active;
 
           a {
-            color: $nga-color-default;
+            color: $nga-route-tabs-foreground;
           }
         }
 
         &:hover {
-          border-color: $nga-color-default;
+          border-color: $nga-route-tabs-foreground;
         }
 
         &.active:hover {

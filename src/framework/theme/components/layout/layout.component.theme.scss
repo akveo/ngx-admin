@@ -7,11 +7,14 @@
 @mixin nga-layout-theme($theme-name) {
   .layout {
 
+    font-size: $nga-layout-font-size;
+    line-height: $nga-layout-line-height;
     color: $nga-layout-foreground;
     background: $nga-layout-background;
     min-height: $nga-layout-min-height;
 
     nga-layout-header {
+      box-shadow: $nga-header-shadow;
       nav {
         height: $nga-header-height;
         padding: $nga-header-padding;
@@ -39,8 +42,11 @@
         flex-direction: column;
 
         nga-layout-footer {
+          box-shadow: $nga-footer-shadow;
+
           nav {
             height: $nga-footer-height;
+            padding: $nga-footer-padding;
             background: $nga-footer-background;
             color: $nga-footer-foreground;
             border-top: 1px solid $nga-footer-separator;

@@ -8,6 +8,10 @@
 
   nga-sidebar {
 
+    font-size: $nga-sidebar-font-size;
+    line-height: $nga-sidebar-line-height;
+
+    // TODO: move this styles into theme variables
     @include nga-scrollbars(0.4em, rgba(0, 0, 0, 0.6), rgba(255, 255, 255, 0.7));
 
     > .scrollable {
@@ -15,6 +19,7 @@
       position: fixed;
       width: $nga-sidebar-width;
       background: $nga-sidebar-background;
+      box-shadow: $nga-sidebar-shadow;
 
       > .main-container {
         padding: $nga-sidebar-padding;
@@ -56,6 +61,10 @@
     nga-sidebar-footer {
       padding: $nga-sidebar-padding;
       height: $nga-sidebar-footer-height;
+    }
+
+    nga-menu {
+      margin: 0 -$nga-sidebar-padding;
     }
   }
 }

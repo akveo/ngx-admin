@@ -17,18 +17,31 @@ $nga-font-weight-bolder: 500 !default;
 $nga-font-weight-bold: 700 !default;
 $nga-font-weight-ultra-bold: 900 !default;
 
+$nga-base-font-size: 16px !default;
+$nga-font-size: 1rem !default;
+
+// TODO: start using these values
+$nga-font-size-lg: 1.25rem !default;
+$nga-font-size-sm: 0.875rem !default;
+$nga-font-size-xs: 0.75rem !default;
+
 $nga-radius: 0.5rem !default;
 $nga-padding: 1rem !default;
 $nga-margin: 1rem !default;
+$nga-line-height: 1rem;
 
-$nga-color-default: #3f4243 !default;
-$nga-color-inverse: white !default;
-$nga-color-gray: rgba(0, 0, 0, 0.15) !default;
+$nga-color-default: #7179a3 !default;
+$nga-color-inverse: #edf1f7 !default;
+$nga-foreground: $nga-color-default !default;
+$nga-background: $nga-color-inverse !default;
+$nga-foreground-inverse: $nga-color-inverse !default;
+$nga-background-inverse: $nga-color-default !default;
+
+$nga-color-gray: rgba(81, 113, 165, 0.15) !default;
 $nga-color-neutral: transparent;
-
 $nga-color-disabled: rgba(255, 255, 255, 0.4) !default;
 $nga-color-primary: #00abff !default;
-$nga-color-secondary: #eeeeee !default;
+$nga-color-secondary: #b5bbd5 !default;
 $nga-color-info: #40daf1 !default;
 $nga-color-success: #8bd22f !default;
 $nga-color-warning: #e7ba08 !default;
@@ -59,20 +72,18 @@ $nga-social-color-stackoverflow: #2f96e8 !default;
 $nga-social-color-dribble: #f26798 !default;
 $nga-social-color-behance: #0093fa !default;
 
+$nga-border-color: $nga-color-gray !default;
+$nga-shadow-color: rgba(33, 57, 161, 0.08) !default;
+$nga-shadow: 0 4px 12px 0 $nga-shadow-color !default;
+
 $nga-link-color-active: #285eb8 !default;
 $nga-link-color-hover: darken($nga-link-color-active, 20%) !default;
 $nga-link-color-visited: $nga-link-color-active !default;
 
-$nga-background: rgba(0, 0, 0, 0.07) !default;
-$nga-foreground: $nga-color-default !default;
-
-$nga-foreground-inverse: $nga-color-inverse !default;
-$nga-background-inverse: $nga-color-default !default;
-$nga-border-color: $nga-color-gray !default;
-$nga-shadow-color: $nga-color-gray !default;
-
 // component specific styles
 
+$nga-card-font-size: $nga-font-size !default;
+$nga-card-line-height: $nga-line-height !default;
 $nga-card-foreground: $nga-foreground !default;
 $nga-card-background: $nga-background !default;
 $nga-card-height-small: 114px !default;
@@ -80,20 +91,26 @@ $nga-card-height-xsmall: 187px !default;
 $nga-card-height-medium: 400px !default;
 $nga-card-height-xmedium: 550px !default;
 $nga-card-height-large: 974px !default;
-$nga-card-shadow: $nga-shadow-color !default;
+$nga-card-shadow: $nga-shadow !default;
 $nga-card-separator: $nga-border-color !default;
 $nga-card-border-radius: $nga-radius !default;
 $nga-card-padding: $nga-padding !default;
 
-$nga-header-height: 3.5rem !default;
-$nga-header-padding: $nga-padding !default;
+$nga-layout-font-size: $nga-font-size !default;
+$nga-layout-line-height: $nga-line-height !default;
+
+$nga-header-height: 4.725rem !default;
+$nga-header-padding: 1.25rem !default;
 $nga-header-foreground: $nga-foreground-inverse !default;
 $nga-header-background: $nga-background-inverse !default;
+$nga-header-shadow: $nga-shadow !default;
 
-$nga-footer-height: 5rem !default;
+$nga-footer-height: 4.725rem !default;
+$nga-footer-padding: 1.25rem !default;
 $nga-footer-foreground: $nga-foreground-inverse !default;
 $nga-footer-background: $nga-background-inverse !default;
-$nga-footer-separator: $nga-border-color !default;
+$nga-footer-separator: transparent !default;
+$nga-footer-shadow: $nga-shadow !default;
 
 $nga-layout-foreground: $nga-foreground !default;
 $nga-layout-background: $nga-background !default;
@@ -101,37 +118,68 @@ $nga-layout-min-height: 100vh !default;
 $nga-layout-padding: $nga-padding !default;
 $nga-layout-content-width: 900px !default;
 
+$nga-sidebar-font-size: $nga-font-size !default;
+$nga-sidebar-line-height: $nga-line-height !default;
 $nga-sidebar-foreground: $nga-foreground-inverse !default;
 $nga-sidebar-background: $nga-background-inverse !default;
 $nga-sidebar-height: 100vh !default;
-$nga-sidebar-width: 12rem !default;
-$nga-sidebar-width-compact: 4rem !default;
+$nga-sidebar-width: 16rem !default;
+$nga-sidebar-width-compact: 3.5rem !default;
 $nga-sidebar-padding: $nga-padding !default;
 $nga-sidebar-header-height: 3.5rem !default;
 $nga-sidebar-footer-height: 3.5rem !default;
+$nga-sidebar-shadow: $nga-shadow !default;
 
-$nga-tab-header-padding: 5px !default;
-$nga-tab-header-radius: 7px !default;
-$nga-tab-header-active: #ffffff !default;
-$nga-tab-header-min-width: 100px !default;
+$nga-menu-font-size: $nga-font-size !default;
+$nga-menu-line-height: $nga-line-height !default;
+$nga-menu-group-font-weight: $nga-font-weight-bolder;
+$nga-menu-group-font-size: 1.025rem;
 
-$nga-route-tab-header-padding: $nga-tab-header-padding !default;
-$nga-route-tab-header-radius: $nga-tab-header-radius !default;
-$nga-route-tab-header-active: $nga-tab-header-active !default;
-$nga-route-tab-header-min-width: $nga-tab-header-min-width !default;
+$nga-menu-item-foreground: $nga-foreground;
+$nga-menu-item-foreground-inverse: $nga-foreground-inverse;
 
+$nga-menu-item-background: $nga-background;
+$nga-menu-item-background-inverse: $nga-background-inverse;
+
+$nga-menu-item-padding: 0.5rem 1rem;
+
+$nga-tabs-font-size: $nga-font-size !default;
+$nga-tabs-line-height: $nga-line-height !default;
+$nga-tabs-header-padding: $nga-padding !default;
+$nga-tabs-header-radius: $nga-radius !default;
+$nga-tabs-header-active: $nga-color-default !default;
+$nga-tabs-header-min-width: 100px !default;
+$nga-tabs-background: $nga-background !default;
+$nga-tabs-separator: $nga-color-default !default;
+$nga-tabs-foreground: $nga-foreground !default;
+
+$nga-route-tabs-font-size: $nga-font-size !default;
+$nga-route-tabs-line-height: $nga-line-height !default;
+$nga-route-tabs-header-padding: $nga-padding !default;
+$nga-route-tabs-header-radius: $nga-radius !default;
+$nga-route-tabs-header-active: $nga-color-default !default;
+$nga-route-tabs-header-min-width: 100px !default;
+$nga-route-tabs-background: $nga-background !default;
+$nga-route-tabs-separator: $nga-color-default !default;
+$nga-route-tabs-foreground: $nga-foreground !default;
+
+$nga-user-font-size: $nga-font-size !default;
+$nga-user-line-height: $nga-line-height !default;
 $nga-user-size-small: 1.5rem !default;
 $nga-user-size-medium: 2.5rem !default;
 $nga-user-size-large: 4rem !default;
-$nga-user-picture-background: $nga-color-gray !default;
+$nga-user-background: $nga-background-inverse !default;
+$nga-user-foreground: $nga-foreground-inverse!default;
+$nga-user-background-inverse: $nga-background !default;
+$nga-user-foreground-inverse: $nga-foreground !default;
 $nga-user-menu-border: $nga-border-color !default;
 
+$nga-actions-font-size: $nga-font-size !default;
+$nga-actions-line-height: $nga-line-height !default;
 $nga-actions-padding: $nga-padding;
 $nga-actions-size-small: 1.5rem !default;
 $nga-actions-size-medium: 2.5rem !default;
 $nga-actions-size-large: 4rem !default;
-$nga-actions-color: $nga-color-default !default;
-$nga-actions-background: transparent !default;
-$nga-actions-color-inverse: $nga-color-inverse !default;
-$nga-actions-background-inverse: $nga-background-inverse !default;
+$nga-actions-color: $nga-foreground !default;
+$nga-actions-color-inverse: $nga-foreground-inverse !default;
 
