@@ -4,20 +4,14 @@
  * Licensed under the MIT License. See License.txt in the project root for license information.
  */
 
-import {
-  Component,
-  Input,
-  Output,
-  EventEmitter,
-  OnInit,
-  ChangeDetectionStrategy,
-} from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
+import { Observable } from 'rxjs/Observable';
+import { Subscription } from 'rxjs/Subscription';
 import { List } from 'immutable';
 
-import { NgaMenuModuleConfig, NgaMenuItem } from './menu.options';
 import { NgaMenuService } from './menu.service';
+import { NgaMenuItem } from './menu.options';
 
 @Component({
   // tslint:disable-next-line:component-selector
@@ -26,7 +20,7 @@ import { NgaMenuService } from './menu.service';
 })
 export class NgaMenuItemComponent {
 
-  @Input() menuItem: NgaMenuItem;
+  @Input() menuItem = <NgaMenuItem>null;
 
   @Output() hoverItem = new EventEmitter<any>();
   @Output() toggleSubMenu = new EventEmitter<any>();
@@ -67,7 +61,7 @@ export class NgaMenuItemComponent {
     </ul>
   `,
 })
-export class NgaMenuComponent implements OnInit {
+export class NgaMenuComponent implements OnInit, OnDestroy {
 
   @Input() tag: string;
 
@@ -78,10 +72,14 @@ export class NgaMenuComponent implements OnInit {
 
   private stack = List<NgaMenuItem>();
 
+  private itemsChangesSubscription: Subscription;
+  private addItemSubscription: Subscription;
+  private navigateHomeSubscription: Subscription;
+
   constructor(private menuService: NgaMenuService, private router: Router) { }
 
   ngOnInit() {
-    this.menuService.itemsChangesSuggest
+    this.itemsChangesSubscription = this.menuService.onItemsChanges()
       .subscribe((data: { tag: string, items: List<NgaMenuItem> }) => {
         if (!data.tag || data.tag === this.tag) {
           this.menuItems = data.items;
@@ -90,7 +88,7 @@ export class NgaMenuComponent implements OnInit {
         }
       });
 
-    this.menuService.addItemsSuggest
+    this.addItemSubscription = this.menuService.onAddItem()
       .subscribe((data: { tag: string, items: List<NgaMenuItem> }) => {
         if (!data.tag || data.tag === this.tag) {
           this.menuItems = this.menuItems.push(...data.items.toJS());
@@ -99,7 +97,7 @@ export class NgaMenuComponent implements OnInit {
         }
       });
 
-    this.menuService.navigateHomeSuggest
+    this.navigateHomeSubscription = this.menuService.onNavigateHome()
       .subscribe((data: { tag: string }) => {
         if (!data.tag || data.tag === this.tag) {
           this.navigateHome();
@@ -109,6 +107,12 @@ export class NgaMenuComponent implements OnInit {
     this.menuItems = this.menuService.getItems();
 
     this.menuService.prepareItems(this.menuItems);
+  }
+
+  ngOnDestroy() {
+    this.itemsChangesSubscription.unsubscribe();
+    this.addItemSubscription.unsubscribe();
+    this.navigateHomeSubscription.unsubscribe();
   }
 
   onHoverItem(item: NgaMenuItem) {

@@ -4,24 +4,27 @@
  * Licensed under the MIT License. See License.txt in the project root for license information.
  */
 
+import { InjectionToken } from '@angular/core';
 import { List } from 'immutable';
 
-export class NgaMenuItem {
+export interface NgaMenuItem {
   title: string;
   link?: string;
   url?: string;
   icon?: string;
-  expanded?: boolean = false;
+  expanded?: boolean;
   children?: List<NgaMenuItem>;
   target?: string;
-  hidden?: boolean = false;
-  pathMath?: string = 'full';
-  home?: boolean = false;
+  hidden?: boolean;
+  pathMath?: string;
+  home?: boolean;
   group?: boolean;
   parent?: NgaMenuItem;
-  selected?: boolean = false;
+  selected?: boolean;
 }
 
-export class NgaMenuModuleConfig {
-  items?: List<NgaMenuItem>;
+export interface NgaMenuOptions {
+  items?: List<any>;
 }
+
+export const ngaMenuOptionsToken = new InjectionToken<NgaMenuOptions>('NGA_MENU_OPTIONS');

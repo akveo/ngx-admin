@@ -12,9 +12,9 @@ import { NgaSharedModule } from '../shared/shared.module';
 import { NgaMenuComponent, NgaMenuItemComponent } from './menu.component';
 import { NgaMenuService } from './menu.service';
 
-import { NgaMenuModuleConfig, NgaMenuItem } from './menu.options';
+import { NgaMenuOptions, ngaMenuOptionsToken } from './menu.options';
 
-const NGA_MENU_COMPONENTS = [
+const ngaMenuComponents = [
   NgaMenuComponent,
   NgaMenuItemComponent,
 ];
@@ -28,22 +28,19 @@ const NGA_MENU_PROVIDERS = [
     NgaSharedModule,
   ],
   declarations: [
-    ...NGA_MENU_COMPONENTS,
+    ...ngaMenuComponents,
   ],
   exports: [
-    ...NGA_MENU_COMPONENTS,
+    ...ngaMenuComponents,
   ],
 })
 export class NgaMenuModule {
-  static forRoot(config: NgaMenuModuleConfig = List<NgaMenuItem>()): ModuleWithProviders {
+  static forRoot(ngaMenuOptions?: NgaMenuOptions): ModuleWithProviders {
     return <ModuleWithProviders>{
       ngModule: NgaMenuModule,
       providers: [
         ...NGA_MENU_PROVIDERS,
-        {
-          provide: NgaMenuModuleConfig,
-          useValue: config,
-        },
+        { provide: ngaMenuOptionsToken, useValue: ngaMenuOptions },
       ],
     };
   }
