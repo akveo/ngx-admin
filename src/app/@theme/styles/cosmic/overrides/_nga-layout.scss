@@ -1,20 +1,9 @@
-@mixin nga-layout-override($theme-name) {
-  $layout-shadow: 0 8px 20px 0 rgba(37, 26, 75, 0.68);
+@mixin nga-layout-override($theme-name) {;
 
+  // TODO: refactor this
   /deep/ .layout {
-    a {
-      @include hover-focus-active {
-        color: $nga-color-secondary !important;
-        text-decoration: none;
-      }
-    }
 
     nga-layout-header > nav {
-      box-shadow: $layout-shadow;
-
-      i:hover {
-        color: $nga-color-secondary;
-      }
 
       .left {
         color: $nga-color-inverse;
@@ -42,19 +31,17 @@
       background: transparent;
 
       .scrollable {
-        box-shadow: $layout-shadow;
+        //box-shadow: $layout-shadow;
         margin-top: $nga-layout-padding;
         border-top-right-radius: $nga-radius;
       }
     }
 
     nga-layout-footer > nav {
-      $footer-text: #7d85b2;
       $footer-link: $nga-color-secondary;
 
       border: none !important;
       padding: 1.25rem;
-      box-shadow: $layout-shadow;
 
       .created-by {
         color: #7d85b2;

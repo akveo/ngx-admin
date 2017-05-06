@@ -3,13 +3,12 @@
  * Copyright Akveo. All Rights Reserved.
  * Licensed under the MIT License. See License.txt in the project root for license information.
  */
-@import 'variables';
 @import '../components';
 @import 'overrides/all';
 
-@import '~@nga/theme/styles/themes/nga.theme.default';
+@import '~@nga/theme/styles/themes/nga.theme.light';
 
-$theme-name: 'pure';
+$theme-name: 'light';
 
 // @nga/theme module styles
 @include nga-theme($theme-name) {

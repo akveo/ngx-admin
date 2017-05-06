@@ -6,10 +6,10 @@
 @import '../components';
 @import 'variables';
 
-@import '~@nga/theme/styles/themes/nga.theme.default';
+@import '~@nga/theme/styles/themes/nga.theme.cosmic';
 @import 'overrides/all';
 
-$theme-name: 'gorgeous';
+$theme-name: 'cosmic';
 
 // @nga/theme module styles
 @include nga-theme($theme-name) {

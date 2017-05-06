@@ -22,7 +22,7 @@ const PAGES_COMPONENTS = [
 
 @NgModule({
   imports: [
-    NgaThemeModule.forRoot({ name: 'gorgeous' }),
+    NgaThemeModule.forRoot({ name: 'cosmic' }),
     NgaSidebarModule.forRoot(),
     NgaMenuModule.forRoot({ items: menuItems }),
     PagesRoutingModule,

@@ -18,7 +18,7 @@ import { NgaThemeService } from '@nga/theme/services/theme.service';
       <nga-action icon="ion-ios-email-outline"></nga-action>
       <nga-action disabled icon="ion-ios-bell-outline"></nga-action>
       <nga-action>
-        <nga-user [menu]="userMenu" name="Han Solo"></nga-user>
+        <nga-user inverse [menu]="userMenu" name="Han Solo"></nga-user>
       </nga-action>
       <nga-action icon="ion-ios-gear-outline"></nga-action>
     </nga-actions>
@@ -49,10 +49,10 @@ export class HeaderComponent {
   }
 
   switchTheme() {
-    if (this.themeService.currentTheme == 'pure') {
-      this.themeService.changeTheme('gorgeous');
+    if (this.themeService.currentTheme == 'light') {
+      this.themeService.changeTheme('cosmic');
     } else {
-      this.themeService.changeTheme('pure');
+      this.themeService.changeTheme('light');
     }
   }
 }

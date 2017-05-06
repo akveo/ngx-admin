@@ -1,7 +1,0 @@
-@import 'nga-layout';
-@import 'nga-menu';
-
-@mixin nga-theme-overrides($theme-name) {
-  @include nga-layout-override($theme-name);
-  @include nga-menu-override($theme-name);
-}

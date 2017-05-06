@@ -1,0 +1,14 @@
+@mixin nga-menu-override($theme-name) {
+  /deep/ nga-menu {
+    > ul > li:first-child {
+      a {
+        background-image: linear-gradient(to right, #664dd9, #9d52f2) !important;
+        box-shadow: 0 0 12px 0 rgba(128, 51, 255, 0.35) !important;
+        margin: 1rem;
+        border-radius: $nga-radius;
+        height: 3.5rem;
+        color: $nga-color-inverse;
+      }
+    }
+  }
+}
