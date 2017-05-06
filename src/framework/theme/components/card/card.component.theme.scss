@@ -13,10 +13,6 @@
     box-shadow: 1px 1px 4px $nga-card-shadow;
     font-weight: $nga-font-weight-normal;
 
-    a {
-      color: $nga-card-foreground;
-    }
-
     @include nga-scrollbars(0.4em, rgba(0, 0, 0, 0.6), rgba(255, 255, 255, 0.7));
 
     &.small-card {

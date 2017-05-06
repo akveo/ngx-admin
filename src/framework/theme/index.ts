@@ -19,3 +19,4 @@ export * from './components/user/user.module';
 export * from './components/actions/actions.module';
 export * from './services/theme.service';
 export * from './overrides/bootstrap/bootstrap.module';
+export * from './overrides/typography/typography.module';
