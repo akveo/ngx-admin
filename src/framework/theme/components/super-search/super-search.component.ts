@@ -1,18 +1,25 @@
+/**
+ * @license
+ * Copyright Akveo. All Rights Reserved.
+ * Licensed under the MIT License. See License.txt in the project root for license information.
+ */
 import {
-  Component, ChangeDetectionStrategy, OnInit, Input, HostBinding,
-  ComponentRef, AfterViewInit, Output, EventEmitter, ChangeDetectorRef, ViewChild, ElementRef, Renderer
+  Component, ChangeDetectionStrategy, Input, HostBinding,
+  ComponentRef, Output, EventEmitter, ViewChild, ElementRef, AfterViewInit
 } from '@angular/core';
 import { NgaSuperSearchService } from "./super-search.service";
 import { NgaThemeService } from "../../services/theme.service";
 
-
+/**
+ * search-field-component is used under the hood by nga-search component
+ * can't be used itself
+ */
 @Component({
   selector: 'nga-search-field',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   styleUrls: ['styles/super-search.component.modal-zoomin.scss',
     'styles/super-search.component.layout-rotate.scss',
     'styles/super-search.component.modal-move.scss',
-    'styles/super-search.component.field-zoomin.scss',
-    'styles/super-search-5.component.scss',
     'styles/super-search.component.curtain.scss',
     'styles/super-search.component.column-curtain.scss',
     'styles/super-search.component.modal-drop.scss',
@@ -28,12 +35,12 @@ import { NgaThemeService } from "../../services/theme.service";
     <div class="form__wrapper">
       <form class="search__form" (keyup.enter)="onSearchSubmit(searchInput.value)">
         <div class="form__content">
-          <input #searchInput class="search__input" placeholder="akveo" />
+          <input #searchInput class="search__input" placeholder="{{ placeholder }}"
+            autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
         </div>
         <span class="search__info">Hit enter to search or ESC to close</span>
       </form>
     </div>
-    
     
   </div>
 </div>`
@@ -50,15 +57,15 @@ export class NgaSearchFieldComponent {
   static readonly TYPE_MODAL_HALF = 'modal-half';
 
   @HostBinding('class.show') public showSearch: boolean = false;
-
-  public searchType: string = 'rotate-layout';
-
   @Output() searchClose = new EventEmitter();
   @Output() search = new EventEmitter();
+  public placeholder: string = 'akveo';
+  private searchType: string = 'rotate-layout';
 
   @ViewChild('searchInput') inputElement: ElementRef;
 
   constructor() { }
+
 
   @HostBinding('class.modal-zoomin')
   get modalZoomin() {
@@ -115,24 +122,9 @@ export class NgaSearchFieldComponent {
   }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 @Component({
   selector: 'nga-search',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   styleUrls: ['styles/super-search.component.scss'],
   template: `
     <div class="search-wrap" [class.show]="showSearch">
@@ -142,21 +134,21 @@ export class NgaSearchFieldComponent {
     </div>
     `,
 })
-export class NgaSearchComponent {
+export class NgaSearchComponent implements AfterViewInit {
 
   public showSearch: boolean = false;
 
-  @Input() private type: string = 'rotate-layout';
-
+  @Input() type: string = 'rotate-layout';
+  @Input() placeholder: string = 'akveo';
   private searchFieldComponentRef: ComponentRef<any> = null;
 
   constructor(private searchService: NgaSuperSearchService,
-              private themeService: NgaThemeService) {
+    private themeService: NgaThemeService) {
   }
 
   onOpenSearch() {
     this.showSearch = true;
-    this.searchService.searchActivate(this.type, true);
+    this.themeService.activateSearch(this.type, true);
     setTimeout(() => {
       this.searchFieldComponentRef.instance.showSearch = true;
       this.searchFieldComponentRef.instance.inputElement.nativeElement.focus();
@@ -166,27 +158,16 @@ export class NgaSearchComponent {
 
   onCloseSearch() {
     this.showSearch = false;
-    this.searchService.searchActivate(this.type, false);
+    this.themeService.activateSearch(this.type, false);
     this.searchFieldComponentRef.instance.showSearch = false;
     this.searchFieldComponentRef.instance.inputElement.nativeElement.value = '';
     this.searchFieldComponentRef.instance.inputElement.nativeElement.blur();
     this.searchFieldComponentRef.changeDetectorRef.detectChanges();
   }
 
-  ngAfterViewInit() {
-    const fieldComponentObservable = this.themeService.appendToLayoutTop(NgaSearchFieldComponent);
-    fieldComponentObservable.subscribe((componentRef: ComponentRef<any>) => {
-      if (componentRef) {
-        this.searchFieldComponentRef = componentRef;//need to start ChangeDetection for instance-driven remote component
-        this.connectToSearchField(componentRef.instance);
-        componentRef.changeDetectorRef.detectChanges();
-      }
-    });
-  }
-
   connectToSearchField(component) {
     component.searchType = this.type;
-
+    component.placeholder = this.placeholder;
     component.searchClose.subscribe(() => {
       this.onCloseSearch();
     })
@@ -195,6 +176,17 @@ export class NgaSearchComponent {
       this.searchService.search(term);
       this.onCloseSearch();
     })
+  }
+
+  ngAfterViewInit() {
+    const fieldComponentObservable = this.themeService.appendToLayoutTop(NgaSearchFieldComponent);
+    fieldComponentObservable.subscribe((componentRef: ComponentRef<any>) => {
+      if (componentRef) {
+        this.searchFieldComponentRef = componentRef;
+        this.connectToSearchField(componentRef.instance);
+        componentRef.changeDetectorRef.detectChanges();
+      }
+    });
   }
 }
 

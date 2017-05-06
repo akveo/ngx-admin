@@ -19,7 +19,6 @@ import {
 import { convertToBoolProperty } from '../helpers';
 import { NgaThemeService } from '../../services/theme.service';
 import { Subscription } from 'rxjs/Subscription';
-import { NgaSuperSearchService } from "../super-search/super-search.service";
 import { Subject } from 'rxjs/Subject';
 
 /**
@@ -144,7 +143,6 @@ export class NgaLayoutComponent implements OnDestroy, AfterViewInit {
   protected clearSubscription: Subscription;
 
   constructor(protected themeService: NgaThemeService,
-    protected searchService: NgaSuperSearchService,
     protected componentFactoryResolver: ComponentFactoryResolver,
     protected elementRef: ElementRef,
     protected renderer: Renderer2) {
@@ -156,11 +154,12 @@ export class NgaLayoutComponent implements OnDestroy, AfterViewInit {
       this.renderer.addClass(this.elementRef.nativeElement, 'theme-' + theme.name);
     });
 
-    this.searchSubscription = this.searchService.onSearchActivate().subscribe((searchState) => {
+    this.searchSubscription = this.themeService.onSearchActivate().subscribe((searchState) => {
       if (searchState.status) {
         this.renderer.addClass(this.elementRef.nativeElement, searchState.type);
         setTimeout(() => this.renderer.addClass(this.elementRef.nativeElement, 'show'), 1);
       } else {
+//removing class with animations after 500ms(animation time) to avoid breaking fixed elements
         setTimeout(() => this.renderer.removeClass(this.elementRef.nativeElement, searchState.type), 500);
         this.renderer.removeClass(this.elementRef.nativeElement, 'show');
       }

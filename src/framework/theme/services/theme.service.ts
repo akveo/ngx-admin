@@ -21,6 +21,7 @@ export class NgaThemeService {
   private themeChanges$ = new ReplaySubject(1);
   private appendToLayoutTop$ = new ReplaySubject(1);
   private createLayoutTop$ = new Subject();
+  private activateSearch$ = new Subject();
 
   constructor(@Inject(ngaThemeOptionsToken) protected options: any) {
     if (options && options.name) {
@@ -43,6 +44,14 @@ export class NgaThemeService {
     const observable = new BehaviorSubject(null);
     this.createLayoutTop$.next({ listener: observable });
     return observable.asObservable();
+  }
+
+  activateSearch(searchType: string, searchStatus: boolean) {
+    this.activateSearch$.next({ type: searchType, status: searchStatus });
+  }
+
+  onSearchActivate(): Observable<any> {
+    return this.activateSearch$.publish().refCount();
   }
 
   onThemeChange(): Observable<any> {
