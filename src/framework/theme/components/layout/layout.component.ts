@@ -160,7 +160,7 @@ export class NgaLayoutComponent implements OnDestroy, AfterViewInit {
         this.renderer.addClass(this.elementRef.nativeElement, searchState.type);
         setTimeout(() => this.renderer.addClass(this.elementRef.nativeElement, 'show'), 1);
       } else {
-//removing class with animations after 500ms(animation time) to avoid breaking fixed elements
+        //removing class with animations after 500ms(animation time) to avoid breaking fixed elements
         setTimeout(() => this.renderer.removeClass(this.elementRef.nativeElement, searchState.type), 500);
         this.renderer.removeClass(this.elementRef.nativeElement, 'show');
       }

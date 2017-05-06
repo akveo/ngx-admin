@@ -43,7 +43,7 @@
     align-items: center;
     text-align: center;
     z-index: 1000;
-    background: $nga-search-bg;//#2f2c2c;
+    background: $nga-search-bg;
     position: fixed;
     top: 0;
     left: 0;
@@ -67,7 +67,7 @@
   .search__input {
     font-size: 7vw;
     width: 75%;
-    color: $nga-search-text-color;//#ffefb9;
+    color: $nga-search-text-color;
     border-bottom: 4px solid;
   }
 

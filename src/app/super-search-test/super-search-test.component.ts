@@ -12,7 +12,7 @@ import { NgaSuperSearchService } from "../../framework/theme/components/super-se
     <nga-layout>
       <nga-layout-header fixed>
         <a class="navbar-brand" href="#">ngx-admin</a>
-        <nga-search type="modal-half"></nga-search>  
+        <nga-search type="rotate-layout"></nga-search>  
       </nga-layout-header>
       <nga-layout-column>
         <nga-card>
@@ -65,28 +65,7 @@ import { NgaSuperSearchService } from "../../framework/theme/components/super-se
 })
 export class NgaSearchTestComponent implements OnInit {
 
-  sizes = ['small', 'xsmall', 'medium', 'xmedium', 'large'];
-  statuses = ['primary', 'success', 'info', 'warning', 'danger', 'active', 'disabled'];
-
-  cards: any[];
-
   constructor(private searchService: NgaSuperSearchService) {
-    this.cards = this.prepareCards();
-  }
-
-  private prepareCards(): any[] {
-    const result = [];
-
-    this.statuses.forEach(status => {
-      this.sizes.forEach(size => {
-        result.push({
-          size: size,
-          status: status,
-        });
-      });
-    });
-
-    return result;
   }
 
   ngOnInit(): void {

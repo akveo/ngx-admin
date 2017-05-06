@@ -8,18 +8,6 @@
 
 ///specific for column-curtain option styles
 
-/deep/ nga-layout-header {
-  /deep/ nga-search.column-curtain {
-    .search__btn-open {
-      opacity: 1;
-    }
-    .show .search__btn-open {
-      opacity: 0;
-      transition: opacity 0.5s;
-    }
-  }
-}
-
 /deep/ nga-layout.column-curtain.show .layout {
   pointer-events: none;
 }
