@@ -50,12 +50,12 @@
 
 ### How to migrate
 
-1. Copy cli branch from **git@github.com:angular/angular-cli.git**;
-2. Copy your **src/app, src/assets, src/custom-typings.d.ts** into **src** folder;
+1. Pull the latest ng2-admin version from **https://github.com/akveo/ng2-admin.git**;
+2. Copy your **src/app, src/assets, src/custom-typings.d.ts** from webpack version into **src** folder in cli version;
 3. Add each of your required modules and styles into **.angular-cli.json**;
 5. Change paths to file(images, fonts, ets);
-6. Add **import * as $ from 'jquery';** into **app.component.ts**;
-7. Delete unused files: **.bootstraprc, postcss.config.js, tsconfig.webpack.js, typedoc.json, webpack.config.js, config/, docs/, src/custom-typings.d.ts, desktop, ts, src/main.browser.aot.ts, src/package.json, src/polyfills.browser.ts, src/vendor.browser.ts, src/app/environment.ts, src/app/index.ts, src/assets/service-worker.js**;
+6. Add **import * as $ from 'jquery';** into **app.component.ts** in cli version;
+7. Delete unused files in cli version: **.bootstraprc, postcss.config.js, tsconfig.webpack.js, typedoc.json, webpack.config.js, config/, docs/, src/custom-typings.d.ts, desktop, ts, src/main.browser.aot.ts, src/package.json, src/polyfills.browser.ts, src/vendor.browser.ts, src/app/environment.ts, src/app/index.ts, src/assets/service-worker.js**;
 8. Change **style-loader** css import to ``styleUrls[‘./example.scss’]`` and wrap your sass styles into `:host /deep/ {}` expression.
 
 
