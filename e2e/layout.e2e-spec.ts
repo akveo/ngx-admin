@@ -38,10 +38,10 @@ describe('nga-layout', () => {
       });
   });
 
-  it('should render center with flex: 3 0 auto', () => {
+  it('should render center with flex: 1 0 auto', () => {
     element.all(by.css('#layout-fluid > .layout > .layout-container > .content > .columns > nga-layout-column'))
       .get(1).getCssValue('flex').then(value => {
-        expect(value).toMatch('3 0 0%');
+        expect(value).toMatch('1 0 0%');
       });
   });
 
@@ -52,10 +52,10 @@ describe('nga-layout', () => {
       });
   });
 
-  it('should render right with flex: 3 0 auto', () => {
+  it('should render right with flex: 1 0 auto', () => {
     element.all(by.css('#layout-fluid > .layout > .layout-container > .content > .columns > nga-layout-column'))
       .get(2).getCssValue('flex').then(value => {
-        expect(value).toMatch('3 0 0%');
+        expect(value).toMatch('1 0 0%');
       });
   });
 
