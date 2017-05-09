@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 
 import './ckeditor.loader';
 import 'ckeditor';
-import 'style-loader!./ckeditor.scss';
 
 @Component({
   selector: 'ckeditor-component',
   templateUrl: './ckeditor.html',
+  styleUrls: ['./ckeditor.scss']
 })
 
 export class Ckeditor {

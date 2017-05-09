@@ -3,11 +3,10 @@ import {BaThemeConfigProvider} from '../../../theme';
 
 import {TodoService} from './todo.service';
 
-import 'style-loader!./todo.scss';
-
 @Component({
   selector: 'todo',
-  templateUrl: './todo.html'
+  templateUrl: './todo.html',
+  styleUrls: ['./todo.scss']
 })
 export class Todo {
 

@@ -1,0 +1,9 @@
+@import '../../../../theme/sass/conf/conf';
+:host /deep/ .widgets {
+    .data-table-container {
+        width: 100%;
+        .panel-heading {
+            margin-top: 25px;
+        }
+    }
+}

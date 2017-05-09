@@ -1,11 +1,11 @@
 import {Component} from '@angular/core';
 
 import {UsersMapService} from './usersMap.service';
-import 'style-loader!./usersMap.scss';
 
 @Component({
   selector: 'users-map',
-  templateUrl: './usersMap.html'
+  templateUrl: './usersMap.html',
+  styleUrls: ['./usersMap.scss']
 })
 export class UsersMap {
 

@@ -1,5 +1,68 @@
+<a name="1.0.0"></a>
+# [1.0.0](https://github.com/akveo/ng2-admin/compare/v0.9.0...v1.0.0) (2017-04-27)
+
+
+### Bug Fixes
+
+* **build:** fix [#777](https://github.com/akveo/ng2-admin/issues/777) ([9bd7dbd](https://github.com/akveo/ng2-admin/commit/9bd7dbd))
+* **build:** fix [#955](https://github.com/akveo/ng2-admin/issues/955) ([#961](https://github.com/akveo/ng2-admin/issues/961)) ([dd63535](https://github.com/akveo/ng2-admin/commit/dd63535))
+* **build:** hopefully fix the prod & aot build errors ([#753](https://github.com/akveo/ng2-admin/issues/753)) ([7215b0b](https://github.com/akveo/ng2-admin/commit/7215b0b))
+* **card:** fix [#962](https://github.com/akveo/ng2-admin/issues/962) ([#966](https://github.com/akveo/ng2-admin/issues/966)) ([72cb319](https://github.com/akveo/ng2-admin/commit/72cb319))
+* **components:** add css pseudo-selector for dropdown arrow  ([#848](https://github.com/akveo/ng2-admin/issues/848)) ([1be434b](https://github.com/akveo/ng2-admin/commit/1be434b))
+* **components:** add notification and message count from array length ([#893](https://github.com/akveo/ng2-admin/issues/893)) ([a8fe3f1](https://github.com/akveo/ng2-admin/commit/a8fe3f1))
+* **dependencies:** fix [#689](https://github.com/akveo/ng2-admin/issues/689), [#688](https://github.com/akveo/ng2-admin/issues/688) ([d34e6e9](https://github.com/akveo/ng2-admin/commit/d34e6e9))
+* **dependencies:** fix angular2-template-loader version ([2b25258](https://github.com/akveo/ng2-admin/commit/2b25258))
+* **dependencies:** fix versions ([62810ae](https://github.com/akveo/ng2-admin/commit/62810ae))
+* **dependencies:** fix versions ([5523029](https://github.com/akveo/ng2-admin/commit/5523029))
+* **dependencies:** update dependencies, fix [#694](https://github.com/akveo/ng2-admin/issues/694), fix [#695](https://github.com/akveo/ng2-admin/issues/695) ([08de1f6](https://github.com/akveo/ng2-admin/commit/08de1f6))
+* **docker:** fix [#712](https://github.com/akveo/ng2-admin/issues/712) ([cd7520e](https://github.com/akveo/ng2-admin/commit/cd7520e))
+* **documents:** fix [#771](https://github.com/akveo/ng2-admin/issues/771) ([78c70ae](https://github.com/akveo/ng2-admin/commit/78c70ae))
+* **editors:** fix an issue where ckeditor doesn't load on the demo ([0a4f40c](https://github.com/akveo/ng2-admin/commit/0a4f40c))
+* **forms:** bad linking correction between label and input ([#886](https://github.com/akveo/ng2-admin/issues/886)) ([bb6ecd3](https://github.com/akveo/ng2-admin/commit/bb6ecd3))
+* **maps:** fix [#813](https://github.com/akveo/ng2-admin/issues/813) ([b414eaf](https://github.com/akveo/ng2-admin/commit/b414eaf))
+* **menu:** fix inactive menu item ([2468710](https://github.com/akveo/ng2-admin/commit/2468710))
+* **package:** add the description fields ([0d77147](https://github.com/akveo/ng2-admin/commit/0d77147))
+* **sidebar:** fix [#997](https://github.com/akveo/ng2-admin/issues/997) ([0a3c98e](https://github.com/akveo/ng2-admin/commit/0a3c98e))
+* **style:** fix [#958](https://github.com/akveo/ng2-admin/issues/958) ([#963](https://github.com/akveo/ng2-admin/issues/963)) ([06d1b98](https://github.com/akveo/ng2-admin/commit/06d1b98))
+* **tables:** fix [#1000](https://github.com/akveo/ng2-admin/issues/1000) ([#1001](https://github.com/akveo/ng2-admin/issues/1001)) ([4b98e0e](https://github.com/akveo/ng2-admin/commit/4b98e0e))
+* **tables:** fix [#700](https://github.com/akveo/ng2-admin/issues/700) ([c85eae7](https://github.com/akveo/ng2-admin/commit/c85eae7))
+* **tables:** fix [#704](https://github.com/akveo/ng2-admin/issues/704) ([0fbad7e](https://github.com/akveo/ng2-admin/commit/0fbad7e))
+* **theme:** fix cards background of blur theme ([0528e2e](https://github.com/akveo/ng2-admin/commit/0528e2e))
+* **ui:** fix NgbModal declaration ([49ff10e](https://github.com/akveo/ng2-admin/commit/49ff10e))
+* **validator:** change email regex to: http://emailregex.com/ ([4470607](https://github.com/akveo/ng2-admin/commit/4470607))
+
+
+### Features
+
+* **angular-cli:** integrate angular-cli :tada: ([#989](https://github.com/akveo/ng2-admin/issues/989)) ([7932421](https://github.com/akveo/ng2-admin/commit/7932421))
+* **dependencies:** update yarn.lock file, fix debugging ([cc97bf1](https://github.com/akveo/ng2-admin/commit/cc97bf1))
+* **layouts:** add file uploader ([#842](https://github.com/akveo/ng2-admin/issues/842)) ([7d03461](https://github.com/akveo/ng2-admin/commit/7d03461))
+* **localization:** implement the localization using ngx-translate ([#830](https://github.com/akveo/ng2-admin/issues/830)) ([627d62d](https://github.com/akveo/ng2-admin/commit/627d62d))
+* **login:** add the locale changes ([#993](https://github.com/akveo/ng2-admin/issues/993)) ([e033edf](https://github.com/akveo/ng2-admin/commit/e033edf))
+* **test:** add testing infrastructure: karma, jasmine and chrome ([#982](https://github.com/akveo/ng2-admin/issues/982)) ([4420048](https://github.com/akveo/ng2-admin/commit/4420048))
+
+
+### BREAKING CHANGES
+
+* The webpack version of ng2-admin was moved to webpack [branch](https://github.com/akveo/ng2-admin/tree/webpack).
+* We dropped the electron support as, unfortunately, angular-cli doesn't have the official support of electron. Please consider using preview 'webpack' (link to webpack branch) version manually.
+
+
+### How to migrate
+
+1. Pull the latest ng2-admin version from **https://github.com/akveo/ng2-admin.git**;
+2. Copy your **src/app, src/assets, src/custom-typings.d.ts** from webpack version into **src** folder in cli version;
+3. Add each of your required modules and styles into **.angular-cli.json**;
+5. Change paths to file(images, fonts, ets);
+6. Add **import * as $ from 'jquery';** into **app.component.ts** in cli version;
+7. Delete unused files in cli version: **.bootstraprc, postcss.config.js, tsconfig.webpack.js, typedoc.json, webpack.config.js, config/, docs/, src/custom-typings.d.ts, desktop, ts, src/main.browser.aot.ts, src/package.json, src/polyfills.browser.ts, src/vendor.browser.ts, src/app/environment.ts, src/app/index.ts, src/assets/service-worker.js**;
+8. Change **style-loader** css import to ``styleUrls[‘./example.scss’]`` and wrap your sass styles into `:host /deep/ {}` expression.
+
+
+**NOTE**: Sometimes you may have some individual issues with a concrete library, each such problem needs to be solved individually and can not be described in this guide.
+
 <a name="0.9.0"></a>
-# 0.9.0 (2017-01-30)
+# [0.9.0](https://github.com/akveo/ng2-admin/compare/v0.8.0...v0.9.0) (2017-01-30)
 
 ### Features
 
@@ -12,8 +75,10 @@
 
 ### How to use AOT
 
-* run `npm run build:aot`
-* run `npm run server:prod`
+```bash
+  npm run build:aot
+  npm run server:prod
+```
 
 ### How to update
 
@@ -28,15 +93,12 @@
 
 
 <a name="0.8.0"></a>
-# 0.8.0 (2016-11-25)
+# [0.8.0](https://github.com/akveo/ng2-admin/compare/v0.7.0...v0.8.0) (2016-11-25)
 
 ### Features
 
 * Angular 2.2.3
 * Dependencies updated
-
-### Bug Fixes
-
 
 ### How to update
 
@@ -47,7 +109,7 @@
 
 
 <a name="0.7.0"></a>
-# 0.7.0 (2016-09-19)
+# [0.7.0](https://github.com/akveo/ng2-admin/compare/v0.6.0...v0.7.0) (2016-09-19)
 
 ### Note
 Tree package does not support angular 2.0 currently so it was hidden from the menu.
@@ -56,9 +118,6 @@ Tree package does not support angular 2.0 currently so it was hidden from the me
 
 * Angular 2.0
 * Dependencies updated
-
-### Bug Fixes
-
 
 ### How to update
 
@@ -70,7 +129,7 @@ Tree package does not support angular 2.0 currently so it was hidden from the me
 
 
 <a name="0.6.0"></a>
-# 0.6.0 (2016-09-19)
+# [0.6.0](https://github.com/akveo/ng2-admin/compare/v0.5.0...v0.6.0) (2016-09-19)
 
 ### Note
 Tree package does not support RC6 currently so it was hidden from the menu.
@@ -79,9 +138,6 @@ Tree package does not support RC6 currently so it was hidden from the menu.
 
 * Angular rc.6
 * Dependencies updated
-
-### Bug Fixes
-
 
 ### How to update
 
@@ -93,7 +149,7 @@ Tree package does not support RC6 currently so it was hidden from the menu.
 
 
 <a name="0.5.0"></a>
-# 0.5.0 (2016-08-30)
+# [0.5.0](https://github.com/akveo/ng2-admin/compare/v0.4.4...v0.5.0) (2016-08-30)
 
 ### Note
 Not all packages used in ng2-admin support RC5 at the moment, so we suggest waiting until ng2-admin@0.5.1 version for a complete support of RC5.
@@ -103,8 +159,6 @@ Not all packages used in ng2-admin support RC5 at the moment, so we suggest wait
 * Angular rc.5 (ngModule)
 * Webpack 2
 * Dependencies updated
-
-### Bug Fixes
 
 ### Breaking changes
 
@@ -118,7 +172,7 @@ Things to consider:
 
 ### How to update
 
-* Read Angluar RC4 -> RC5 [migration guide](https://angular.io/docs/ts/latest/cookbook/rc4-to-rc5.html)
+* Read Angular RC4 -> RC5 [migration guide](https://angular.io/docs/ts/latest/cookbook/rc4-to-rc5.html)
 * Pull sources from git, merge accordingly
 * remove `node_modules`
 * run `npm install`
@@ -128,7 +182,7 @@ Things to consider:
 * Enjoy!
 
 <a name="0.4.4"></a>
-# 0.4.4 (2016-08-29)
+# [0.4.4](https://github.com/akveo/ng2-admin/compare/v0.4.3...v0.4.4) (2016-08-29)
 
 ### Features
 
@@ -140,7 +194,7 @@ Things to consider:
 * run `npm install`
 
 <a name="0.4.3"></a>
-# 0.4.3 (2016-08-23)
+# [0.4.3](https://github.com/akveo/ng2-admin/compare/v0.4.2...v0.4.3) (2016-08-23)
 
 ### Bug Fixes
 
@@ -162,7 +216,7 @@ Things to consider:
 * run `npm install`
 
 <a name="0.4.2"></a>
-# 0.4.2 (2016-07-28)
+# [0.4.2](https://github.com/akveo/ng2-admin/compare/v0.4.0...v0.4.2) (2016-07-28)
 
 ### Bug Fixes
 
