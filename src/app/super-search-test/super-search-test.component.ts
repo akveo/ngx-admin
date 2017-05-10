@@ -4,7 +4,7 @@
  * Licensed under the MIT License. See License.txt in the project root for license information.
  */
 import { Component, OnInit } from '@angular/core';
-import { NgaSuperSearchService } from "../../framework/theme/components/super-search/super-search.service";
+import { NgaSuperSearchService } from '../../framework/theme';
 
 @Component({
   selector: 'nga-search-test',
@@ -69,8 +69,8 @@ export class NgaSearchTestComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.searchService.onSearch().subscribe(term => {
-      console.log(term);
-    })
+    this.searchService.onSearchSubmit().subscribe(term => {
+      console.info(term);
+    });
   }
 }

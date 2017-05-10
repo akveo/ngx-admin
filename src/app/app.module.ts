@@ -57,8 +57,8 @@ import { NgaBootstrapModule } from '../framework/theme/overrides/bootstrap/boots
 import { NgaBootstrapTestComponent } from './bootstrap-test/bootstrap-test.component';
 
 import { routes } from './app.routes';
-import { NgaSearchTestComponent } from "./super-search-test/super-search-test.component";
-import { NgaSearchModule } from "../framework/theme/components/super-search/super-search.module";
+import { NgaSearchTestComponent } from './super-search-test/super-search-test.component';
+import { NgaSearchModule } from '../framework/theme';
 
 const NGA_TEST_COMPONENTS = [
   NgaAppComponent,
@@ -157,7 +157,7 @@ const NGA_TEST_COMPONENTS = [
     ...NGA_TEST_COMPONENTS,
   ],
   entryComponents: [
-    NgaDynamicToAddComponent
+    NgaDynamicToAddComponent,
   ],
   providers: [],
   bootstrap: [NgaAppComponent],
