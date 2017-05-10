@@ -8,7 +8,7 @@ import {
   ComponentRef, Output, EventEmitter, ViewChild, ElementRef, AfterViewInit,
 } from '@angular/core';
 
-import { NgaSuperSearchService } from './super-search.service';
+import { NgaSuperSearchService } from './search.service';
 import { NgaThemeService } from '../../services/theme.service';
 
 /**
@@ -18,13 +18,13 @@ import { NgaThemeService } from '../../services/theme.service';
 @Component({
   selector: 'nga-search-field',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  styleUrls: ['styles/super-search.component.modal-zoomin.scss',
-    'styles/super-search.component.layout-rotate.scss',
-    'styles/super-search.component.modal-move.scss',
-    'styles/super-search.component.curtain.scss',
-    'styles/super-search.component.column-curtain.scss',
-    'styles/super-search.component.modal-drop.scss',
-    'styles/super-search.component.modal-half.scss',
+  styleUrls: ['styles/search.component.modal-zoomin.scss',
+    'styles/search.component.layout-rotate.scss',
+    'styles/search.component.modal-move.scss',
+    'styles/search.component.curtain.scss',
+    'styles/search.component.column-curtain.scss',
+    'styles/search.component.modal-drop.scss',
+    'styles/search.component.modal-half.scss',
   ],
   template: `
 <div class="search__content">
@@ -126,7 +126,7 @@ export class NgaSearchFieldComponent {
 @Component({
   selector: 'nga-search',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  styleUrls: ['styles/super-search.component.scss'],
+  styleUrls: ['styles/search.component.scss'],
   template: `
     <div class="search-wrap" [class.show]="showSearch">
       <button class="search__btn-open" (click)="onOpenSearch()">

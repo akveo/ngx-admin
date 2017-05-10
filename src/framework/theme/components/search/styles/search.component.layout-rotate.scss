@@ -4,77 +4,69 @@
  * Licensed under the MIT License. See License.txt in the project root for license information.
  */
 
-@import './super-search.component.theme';
+@import 'search.component.theme';
+///specific for layout-rotate option styles////////////////////////////////////////////////////////////////////////////////////
 
-///specific for modal-half option styles
-
-/deep/ nga-layout.modal-half .layout {
-  transition: transform 0.6s, opacity 0.6s;
+/deep/ nga-layout.rotate-layout .layout {
+  background: #ededed;//TODO: glabal variable can be used?
+  overflow: hidden;
+  transform: perspective(1000px);
+  transition: transform 0.5s;
   transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
 }
 
-/deep/ nga-layout.modal-half.with-search .layout {
-  transform: scale3d(0.8, 0.8, 1);
+/deep/ nga-layout.rotate-layout.with-search .layout {
+  transform: perspective(1000px) translate3d(0, 10vh, 0) rotate3d(1, 0, 0, 30deg);
   pointer-events: none;
 }
 
-:host.modal-half {
+/deep/ nga-layout.rotate-layout {
+  position: fixed;
+  overflow: hidden;
+  width: 100%;
+}
+
+:host.rotate-layout {
 
   .search__content {
+    position: absolute;
     display: block;
+    width: 100%;
+    height: 150vh;
+    pointer-events: none;
   }
 
   .search {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    position: fixed;
     z-index: 1000;
+    background: $nga-search-bg;
+    position: fixed;
     top: 0;
     left: 0;
-    overflow: hidden;
     width: 100%;
-    height: 100vh;
+    height: 50vh;
   }
 
-  .search__btn-close { // TODO: refactor to specific classes
-    font-size: 2.5rem;
+  ///Styles for search content//////////////////////////////////////////////////////////////////
+  .search__btn-close {
     position: absolute;
     top: 3rem;
     right: 3rem;
-    display: block;
-    z-index: 100;
+    font-size: 2.5rem;
     color: $nga-close-icon-color;
   }
 
-  .search::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    //background: $nga-search-bg-secondary;
-  }
-
-  .form__wrapper {
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 50%;
-    background: $nga-search-bg;
-  }
-
-  ///Styles for modal content//////////////////////////////////////////////////////////////////
   .search__form {
-    width: 75%;
-    margin: 0 auto;
+    margin: 5rem 0;
   }
 
   .search__input {
     font-size: 7vw;
-    width: 100%;
+    width: 75%;
     color: $nga-search-text-color;
     border-bottom: 4px solid;
   }
@@ -110,51 +102,59 @@
     display: none;
   }
 
+
   ////////////transitions////////////////////////////////////////////////////////////////
+  .search__content {
+    background: none;
+    transition-property: background;
+    transition-delay: 0.3s;
+  }
+
+  &.show .search__content {
+    transition-delay: 0s;
+    background: $nga-search-bg-secondary;//#2f2c2c;
+  }
+
   .search {
     pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.5s;
+    transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
   }
 
   &.show .search {
     pointer-events: auto;
-  }
-
-  .search::before {
-    opacity: 0;
-    transition: opacity 0.6s;
-    transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
-  }
-
-  &.show .search::before {
-    opacity: 1;
+    opacity: 0.8;
   }
 
   .search__btn-close {
     opacity: 0;
     transform: scale3d(0.8, 0.8, 1);
-    transition: opacity 0.6s, transform 0.6s;
+    transition: opacity 0.5s, transform 0.5s;
     transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
   }
 
-  &.show .search__btn-close {
+  &.show .search .search__btn-close {
     opacity: 1;
     transform: scale3d(1, 1, 1);
   }
 
-  .form__wrapper {
-    transition: transform 0.6s;
+  .search__form {
+    opacity: 0;
+    transform: scale3d(0.7, 0.7, 1);
+    transition: opacity 0.5s, transform 0.5s;
     transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
-    transform: translate3d(0, -100%, 0);
   }
 
-  &.show .form__wrapper {
-    transform: translate3d(0, 0, 0);
+  &.show .search .search__form {
+    opacity: 1;
+    transform: scale3d(1, 1, 1);
   }
 
   //////responsivenes////////////////////////////////////////////////////////////////
   @media screen and (max-width: 40em) {
     .btn--search-close {
-      font-size: 1.25rem;
+      font-size: 1.25em;
     }
   }
 }

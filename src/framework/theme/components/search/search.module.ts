@@ -6,8 +6,8 @@
 import { NgModule } from '@angular/core';
 
 import { NgaSharedModule } from '../shared/shared.module';
-import { NgaSearchComponent, NgaSearchFieldComponent } from './super-search.component';
-import { NgaSuperSearchService } from './super-search.service';
+import { NgaSearchComponent, NgaSearchFieldComponent } from './search.component';
+import { NgaSuperSearchService } from './search.service';
 
 
 @NgModule({

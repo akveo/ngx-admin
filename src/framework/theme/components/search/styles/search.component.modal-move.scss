@@ -3,37 +3,22 @@
  * Copyright Akveo. All Rights Reserved.
  * Licensed under the MIT License. See License.txt in the project root for license information.
  */
+@import 'search.component.theme';
 
-@import './super-search.component.theme';
-///specific for layout-rotate option styles////////////////////////////////////////////////////////////////////////////////////
-
-/deep/ nga-layout.rotate-layout .layout {
-  background: #ededed;//TODO: glabal variable can be used?
-  overflow: hidden;
-  transform: perspective(1000px);
+///specific for modal-move option styles////////////
+/deep/ nga-layout.modal-move .layout {
   transition: transform 0.5s;
-  transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
 }
 
-/deep/ nga-layout.rotate-layout.with-search .layout {
-  transform: perspective(1000px) translate3d(0, 10vh, 0) rotate3d(1, 0, 0, 30deg);
+/deep/ nga-layout.modal-move.with-search .layout {
+  transform: scale3d(0.8, 0.8, 1);
   pointer-events: none;
 }
 
-/deep/ nga-layout.rotate-layout {
-  position: fixed;
-  overflow: hidden;
-  width: 100%;
-}
-
-:host.rotate-layout {
+:host.modal-move {
 
   .search__content {
-    position: absolute;
     display: block;
-    width: 100%;
-    height: 150vh;
-    pointer-events: none;
   }
 
   .search {
@@ -42,16 +27,15 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    z-index: 1000;
     background: $nga-search-bg;
     position: fixed;
+    z-index: 1000;
     top: 0;
     left: 0;
     width: 100%;
-    height: 50vh;
+    height: 100vh;
   }
 
-  ///Styles for search content//////////////////////////////////////////////////////////////////
   .search__btn-close {
     position: absolute;
     top: 3rem;
@@ -64,11 +48,12 @@
     margin: 5rem 0;
   }
 
+  ///Styles for search content//////////////////////////////
   .search__input {
-    font-size: 7vw;
+    font-size: 10vw;
     width: 75%;
     color: $nga-search-text-color;
-    border-bottom: 4px solid;
+    border-bottom: 5px solid;
   }
 
   .search__info {
@@ -76,19 +61,17 @@
   }
 
   .search__input::-webkit-input-placeholder {
-    opacity: 0.1;
     /* WebKit, Blink, Edge */
     color: $nga-search-placeholder-color;
   }
 
   .search__input::-moz-placeholder {
-    opacity: 0.1;
+    opacity: 1;
     /* Mozilla Firefox 19+ */
     color: $nga-search-placeholder-color;
   }
 
   .search__input:-ms-input-placeholder {
-    opacity: 0.1;
     /* Internet Explorer 10-11 */
     color: $nga-search-placeholder-color;
   }
@@ -102,48 +85,30 @@
     display: none;
   }
 
-
-  ////////////transitions////////////////////////////////////////////////////////////////
-  .search__content {
-    background: none;
-    transition-property: background;
-    transition-delay: 0.3s;
-  }
-
-  &.show .search__content {
-    transition-delay: 0s;
-    background: $nga-search-bg-secondary;//#2f2c2c;
-  }
-
+  //transitions//////////////////
   .search {
     pointer-events: none;
     opacity: 0;
     transition: opacity 0.5s;
-    transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
   }
-
   &.show .search {
     pointer-events: auto;
-    opacity: 0.8;
+    opacity: 1;
   }
 
   .search__btn-close {
     opacity: 0;
-    transform: scale3d(0.8, 0.8, 1);
-    transition: opacity 0.5s, transform 0.5s;
-    transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+    transition: opacity 0.5s;
   }
 
   &.show .search .search__btn-close {
     opacity: 1;
-    transform: scale3d(1, 1, 1);
   }
 
   .search__form {
     opacity: 0;
-    transform: scale3d(0.7, 0.7, 1);
+    transform: scale3d(0.8, 0.8, 1);
     transition: opacity 0.5s, transform 0.5s;
-    transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
   }
 
   &.show .search .search__form {
@@ -151,10 +116,25 @@
     transform: scale3d(1, 1, 1);
   }
 
-  //////responsivenes////////////////////////////////////////////////////////////////
+  .search__input {
+    transform: scale3d(0, 1, 1);
+    transform-origin: 0% 50%;
+    transition: transform 0.3s;
+  }
+
+  &.show .search .search__input {
+    transform: scale3d(1, 1, 1);
+    transition-duration: 0.5s;
+  }
+
+  ////responsiveness//////////////////////////////////
   @media screen and (max-width: 40em) {
-    .btn--search-close {
+    .search__btn-close {
       font-size: 1.25em;
+    }
+
+    .search__info {
+      text-align: left;
     }
   }
 }
