@@ -11,7 +11,7 @@ import { protractor } from 'protractor/built/ptor';
 describe('nga-search', () => {
 
   beforeEach(() => {
-    browser.get('#/super-search');
+    browser.get('#/search');
   });
 
   it('should be able to show search-field', () => {
@@ -59,7 +59,7 @@ describe('nga-search', () => {
     element(by.css('.search__input')).sendKeys(protractor.Key.ESCAPE);
     expect(hasClass(element(by.css('nga-search-field')), 'show')).toBeFalsy();
     expect(hasClass(element(by.css('nga-layout')), 'with-search')).toBeFalsy();
-    expect(hasClass(browser.driver.switchTo().activeElement(), 'search__input')).toBeTruthy();
+    expect(hasClass(browser.driver.switchTo().activeElement(), 'search__input')).toBeFalsy();
     expect(element(by.css('.search__input')).getAttribute('value')).toEqual('');
   });
 
