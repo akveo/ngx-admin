@@ -14,8 +14,8 @@ exports.config = {
   ],
 
   commonCapabilities: {
-    'browserstack.user': process.env.BROWSERSTACK_USERNAME || 'alexander1040',
-    'browserstack.key': process.env.BROWSERSTACK_ACCESS_KEY || 'Jauouq9xfuiy9FZq3uA4',
+    'browserstack.user': process.env.BROWSERSTACK_USERNAME,
+    'browserstack.key': process.env.BROWSERSTACK_ACCESS_KEY,
     'build': '@nga/theme',
     'name': '@nga/theme',
     'browserstack.local': true,
