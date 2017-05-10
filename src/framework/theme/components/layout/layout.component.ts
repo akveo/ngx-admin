@@ -6,7 +6,6 @@
 
 import {
   AfterViewInit,
-  ChangeDetectionStrategy,
   Component,
   ComponentFactoryResolver,
   ElementRef,
@@ -28,7 +27,6 @@ import { Subject } from 'rxjs/Subject';
  */
 @Component({
   selector: 'nga-layout-column',
-  changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <ng-content></ng-content>
   `,
@@ -49,7 +47,6 @@ export class NgaLayoutColumnComponent {
  */
 @Component({
   selector: 'nga-layout-header',
-  changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <nav [class.fixed]="fixedValue">
       <ng-content></ng-content>
@@ -73,7 +70,6 @@ export class NgaLayoutHeaderComponent {
  */
 @Component({
   selector: 'nga-layout-footer',
-  changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <nav [class.fixed]="fixedValue">
       <ng-content></ng-content>
@@ -104,7 +100,6 @@ export class NgaLayoutFooterComponent {
  */
 @Component({
   selector: 'nga-layout',
-  changeDetection: ChangeDetectionStrategy.OnPush,
   styleUrls: ['./layout.component.scss'],
   template: `
     <ng-template #layoutTopDynamicArea></ng-template>

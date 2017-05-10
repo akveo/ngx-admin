@@ -4,7 +4,7 @@
  * Licensed under the MIT License. See License.txt in the project root for license information.
  */
 
-import { Component, Input, HostBinding, ChangeDetectionStrategy } from '@angular/core';
+import { Component, Input, HostBinding } from '@angular/core';
 
 /**
  * Component intended to be used within  the `<nga-card>` component.
@@ -12,7 +12,6 @@ import { Component, Input, HostBinding, ChangeDetectionStrategy } from '@angular
  */
 @Component({
   selector: 'nga-card-header',
-  changeDetection: ChangeDetectionStrategy.OnPush,
   template: `<ng-content></ng-content>`,
 })
 export class NgaCardHeaderComponent {
@@ -24,7 +23,6 @@ export class NgaCardHeaderComponent {
  */
 @Component({
   selector: 'nga-card-body',
-  changeDetection: ChangeDetectionStrategy.OnPush,
   template: `<ng-content></ng-content>`,
 })
 export class NgaCardBodyComponent {
@@ -36,7 +34,6 @@ export class NgaCardBodyComponent {
  */
 @Component({
   selector: 'nga-card-footer',
-  changeDetection: ChangeDetectionStrategy.OnPush,
   template: `<ng-content></ng-content>`,
 })
 export class NgaCardFooterComponent {
@@ -53,7 +50,6 @@ export class NgaCardFooterComponent {
  */
 @Component({
   selector: 'nga-card',
-  changeDetection: ChangeDetectionStrategy.OnPush,
   styleUrls: ['./card.component.scss'],
   template: `
     <ng-content></ng-content>
