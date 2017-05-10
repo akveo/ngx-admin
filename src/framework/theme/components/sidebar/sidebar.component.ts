@@ -4,7 +4,9 @@
  * Licensed under the MIT License. See License.txt in the project root for license information.
  */
 
-import { Component, HostBinding, Input, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, HostBinding, Input, OnInit, OnDestroy } from '@angular/core';
+import { Subscription } from 'rxjs/Subscription';
+
 import { convertToBoolProperty } from '../helpers';
 
 import { NgaSidebarService } from './sidebar.service';
@@ -17,7 +19,6 @@ import { NgaSidebarService } from './sidebar.service';
  */
 @Component({
   selector: 'nga-sidebar-header',
-  changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <ng-content></ng-content>
   `,
@@ -32,7 +33,6 @@ export class NgaSidebarHeaderComponent {
  */
 @Component({
   selector: 'nga-sidebar-content',
-  changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <ng-content></ng-content>
   `,
@@ -48,7 +48,6 @@ export class NgaSidebarContentComponent {
  */
 @Component({
   selector: 'nga-sidebar-footer',
-  changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <ng-content></ng-content>
   `,
@@ -88,7 +87,6 @@ export class NgaSidebarFooterComponent {
  */
 @Component({
   selector: 'nga-sidebar',
-  changeDetection: ChangeDetectionStrategy.OnPush,
   styleUrls: ['./sidebar.component.scss'],
   template: `
     <div class="scrollable">
@@ -100,7 +98,7 @@ export class NgaSidebarFooterComponent {
     </div>
   `,
 })
-export class NgaSidebarComponent implements OnInit {
+export class NgaSidebarComponent implements OnInit, OnDestroy {
 
   static readonly STATE_EXPANDED: string = 'expanded';
   static readonly STATE_COLLAPSED: string = 'collapsed';
@@ -169,27 +167,39 @@ export class NgaSidebarComponent implements OnInit {
    */
   @Input() tag: string;
 
+  private toggleSubscription: Subscription;
+  private expandSubscription: Subscription;
+  private collapseSubscription: Subscription;
+
   constructor(private sidebarService: NgaSidebarService) { }
 
   ngOnInit() {
-    // TODO: we need to unsubscribe from these on destroy
-    this.sidebarService.toggleChanges.subscribe((data: { compact: boolean, tag: string }) => {
-      if (!this.tag || this.tag === data.tag) {
-        this.toggle(data.compact);
-      }
-    });
+    this.toggleSubscription = this.sidebarService.onToggle()
+      .subscribe((data: { compact: boolean, tag: string }) => {
+        if (!this.tag || this.tag === data.tag) {
+          this.toggle(data.compact);
+        }
+      });
 
-    this.sidebarService.expandChanges.subscribe((data: { tag: string }) => {
-      if (!this.tag || this.tag === data.tag) {
-        this.expand();
-      }
-    });
+    this.expandSubscription = this.sidebarService.onExpand()
+      .subscribe((data: { tag: string }) => {
+        if (!this.tag || this.tag === data.tag) {
+          this.expand();
+        }
+      });
 
-    this.sidebarService.collapseChanges.subscribe((data: { tag: string }) => {
-      if (!this.tag || this.tag === data.tag) {
-        this.collapse();
-      }
-    });
+    this.collapseSubscription = this.sidebarService.onCollapse()
+      .subscribe((data: { tag: string }) => {
+        if (!this.tag || this.tag === data.tag) {
+          this.collapse();
+        }
+      });
+  }
+
+  ngOnDestroy() {
+    this.toggleSubscription.unsubscribe();
+    this.expandSubscription.unsubscribe();
+    this.collapseSubscription.unsubscribe();
   }
 
   /**

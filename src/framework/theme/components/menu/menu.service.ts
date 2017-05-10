@@ -4,14 +4,14 @@
  * Licensed under the MIT License. See License.txt in the project root for license information.
  */
 
-import { Injectable, Optional } from '@angular/core';
+import { Injectable, Optional, Inject } from '@angular/core';
 import { Router } from '@angular/router';
-import { Routes } from '@angular/router';
 import { Subject } from 'rxjs/Subject';
 import { Observable } from 'rxjs/Observable';
 import { List } from 'immutable';
+import 'rxjs/add/operator/publish';
 
-import { NgaMenuItem, NgaMenuModuleConfig } from './menu.options';
+import { NgaMenuOptions, NgaMenuItem, ngaMenuOptionsToken } from './menu.options';
 
 @Injectable()
 export class NgaMenuService {
@@ -21,20 +21,19 @@ export class NgaMenuService {
   private addItems$ = new Subject();
   private navigateHome$ = new Subject();
 
-  itemsChangesSuggest: Observable<{ tag: string, items: List<NgaMenuItem> }> = this.itemsChanges$.asObservable();
-  itemClickSuggest: Observable<{ tag: string, item: NgaMenuItem }> = this.itemClick$.asObservable();
-  addItemsSuggest: Observable<{ tag: string, items: List<NgaMenuItem> }> = this.addItems$.asObservable();
-  navigateHomeSuggest: Observable<{ tag: string }> = this.navigateHome$.asObservable();
-
   private stack = List<NgaMenuItem>();
   private items = List<NgaMenuItem>();
 
-  constructor(private router: Router, @Optional() private config: NgaMenuModuleConfig) {
-    this.items = List(this.config.items);
+  constructor(private router: Router, @Inject(ngaMenuOptionsToken) private options: any) {
+    if (options && options.items) {
+      this.items = List<NgaMenuItem>(this.options.items);
+    } else {
+      this.items = List<NgaMenuItem>();
+    }
   }
 
   getItems(): List<NgaMenuItem> {
-    return List(this.items);
+    return List<NgaMenuItem>(this.items);
   }
 
   prepareItems(items: List<NgaMenuItem>) {
@@ -65,6 +64,22 @@ export class NgaMenuService {
     this.navigateHome$.next({ tag });
   }
 
+  onItemsChanges(): Observable<{ tag: string, items: List<NgaMenuItem> }> {
+    return this.itemsChanges$.publish().refCount();
+  }
+
+  onItemClick(): Observable<{ tag: string, item: NgaMenuItem }> {
+    return this.itemClick$.publish().refCount();
+  }
+
+  onAddItem(): Observable<{ tag: string, items: List<NgaMenuItem> }> {
+    return this.addItems$.publish().refCount();
+  }
+
+  onNavigateHome(): Observable<{ tag: string }> {
+    return this.navigateHome$.publish().refCount();
+  }
+
   private setParent(parent: NgaMenuItem) {
     if (parent.children && parent.children.size > 0) {
       const firstItemWithoutParent = parent.children.filter(c => c.parent === null || c.parent === undefined).first();
@@ -81,7 +96,7 @@ export class NgaMenuService {
     }
   }
 
-  private prepareItem(parent: any) {
+  private prepareItem(parent: NgaMenuItem) {
     parent.selected = false;
 
     this.stack = this.stack.push(parent);
@@ -101,7 +116,7 @@ export class NgaMenuService {
     }
 
     if (parent.children && parent.children.size > 0) {
-      const firstUnchecked = parent.children.filter((c: any) => !this.stack.contains(c)).first();
+      const firstUnchecked = parent.children.filter((c: NgaMenuItem) => !this.stack.contains(c)).first();
 
       if (firstUnchecked) {
         this.prepareItem(firstUnchecked);
@@ -113,13 +128,13 @@ export class NgaMenuService {
     }
   }
 
-  private resetItem(parent: any) {
+  private resetItem(parent: NgaMenuItem) {
     parent.selected = false;
 
     this.stack = this.stack.push(parent);
 
     if (parent.children && parent.children.size > 0) {
-      const firstSelected = parent.children.filter((c: any) => !this.stack.contains(c)).first();
+      const firstSelected = parent.children.filter((c: NgaMenuItem) => !this.stack.contains(c)).first();
 
       if (firstSelected) {
         firstSelected.selected = false;

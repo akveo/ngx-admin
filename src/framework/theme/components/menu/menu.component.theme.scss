@@ -5,25 +5,48 @@
  */
 @mixin nga-menu-theme($theme-name) {
   nga-menu {
-    .menu-group {
-      color: $nga-color-gray;
-      font-weight: $nga-font-weight-bolder;
+    font-size: $nga-menu-font-size;
+    line-height: $nga-menu-line-height;
+
+    &.inverse {
+      ul {
+        li {
+          a, .menu-group {
+            color: $nga-menu-item-foreground-inverse;
+
+            @include hover-focus-active {
+              color: $nga-menu-item-foreground-inverse;
+            }
+
+            &.active {
+              background: $nga-menu-item-background;
+              color: $nga-menu-item-foreground;
+            }
+          }
+        }
+      }
+
     }
 
     ul {
       li {
-        a {
-          color: $nga-color-default;
-          transition: color 0.2s ease;
-
-          &.active {
-            background: $nga-color-default;
-            color: $nga-color-inverse;
-          }
+        .menu-group {
+          font-weight: $nga-menu-group-font-weight;
+          font-size: $nga-menu-group-font-size;
         }
 
-        a:hover {
-          color: $nga-color-primary;
+        a, .menu-group {
+          color: $nga-menu-item-foreground;
+          padding: $nga-menu-item-padding;
+
+          @include hover-focus-active {
+            color: $nga-menu-item-foreground;
+          }
+
+          &.active {
+            background: $nga-menu-item-background-inverse;
+            color: $nga-menu-item-foreground-inverse;
+          }
         }
       }
     }

@@ -20,7 +20,7 @@ describe('nga-sidebar-three', () => {
 
   it('should render sidebar compacted', () => {
     element.all(by.css('nga-sidebar[state="compacted"]')).get(0).getSize().then(sidebarSize => {
-      expect(sidebarSize.width).toEqual(64);
+      expect(sidebarSize.width).toEqual(56);
     });
   });
 });

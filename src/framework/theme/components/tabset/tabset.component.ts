@@ -13,39 +13,36 @@ import {
   QueryList,
   AfterContentInit,
   HostBinding,
-  ChangeDetectionStrategy,
 } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { convertToBoolProperty } from '../helpers';
 
-// TODO: do we need to use hidden (so literally render the HTML, or just can use *ngIf to not render what we don't need
-// at this moment
 @Component({
   selector: 'nga-tab',
-  changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
-    <div [hidden]="!active">
+    <div class="nga-tab" *ngIf="active">
       <ng-content></ng-content>
     </div>
   `,
 })
 export class NgaTabComponent {
+
   @Input() tabTitle: string;
   @Input() active: boolean = false;
   @Input() route: string;
+
 }
 
 @Component({
   selector: 'nga-tabset',
-  changeDetection: ChangeDetectionStrategy.OnPush,
   styleUrls: ['./tabset.component.scss'],
   template: `
     <ul class="nga-tabset">
       <li *ngFor="let tab of tabs"
-      (click)="selectTab(tab)"
-      [class.active]="tab.active">
-        <a href (click)="$event.preventDefault()">{{tab.tabTitle}}</a>
+          (click)="selectTab(tab)"
+          [class.active]="tab.active">
+        <a href (click)="$event.preventDefault()">{{ tab.tabTitle }}</a>
       </li>
     </ul>
     <ng-content select="nga-tab"></ng-content>

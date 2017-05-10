@@ -21,3 +21,4 @@ export * from './services/theme.service';
 export * from './overrides/bootstrap/bootstrap.module';
 export * from './components/search/search.module';
 export * from './components/search/search.service';
+export * from './overrides/typography/typography.module';

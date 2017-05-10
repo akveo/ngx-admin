@@ -8,7 +8,6 @@ import {
   Component,
   Input,
   HostBinding,
-  ChangeDetectionStrategy,
 } from '@angular/core';
 
 import { convertToBoolProperty } from '../helpers';
@@ -18,7 +17,6 @@ import { convertToBoolProperty } from '../helpers';
  */
 @Component({
   selector: 'nga-action',
-  changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <a href="#" *ngIf="icon; else showContent" (click)="$event.preventDefault()">
       <i class="control-icon {{ icon }}"></i>
@@ -64,7 +62,6 @@ export class NgaActionComponent {
  */
 @Component({
   selector: 'nga-actions',
-  changeDetection: ChangeDetectionStrategy.OnPush,
   styleUrls: ['./actions.component.scss'],
   template: `
     <ng-content select="nga-action"></ng-content>

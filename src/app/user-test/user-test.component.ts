@@ -18,7 +18,7 @@ import { Component } from '@angular/core';
   template: `
     <nga-layout id="layout-fluid">
       <nga-layout-header fixed>
-        <nga-user showInitials size="medium" name="Dmitry Nehaychik" title="Worker"
+        <nga-user inverse showInitials size="medium" name="Dmitry Nehaychik" title="Worker"
                   [menu]="contextMenu" (menuClick)="onMenuItemClick($event)"></nga-user>
       </nga-layout-header>
 

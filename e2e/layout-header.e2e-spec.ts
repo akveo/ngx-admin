@@ -26,7 +26,7 @@ describe('nga-layout-header', () => {
 
   it('should have height', () => {
     element(by.css('nga-layout-header nav')).getCssValue('height').then(value => {
-      expect(value).toEqual('56px');
+      expect(value).toEqual('75.5938px');
     });
   });
 

@@ -6,27 +6,16 @@
 
 import { ModuleWithProviders, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   imports: [
     CommonModule,
-    NgbModule.forRoot(),
-  ],
-  exports: [
-    NgbModule,
   ],
 })
-export class NgaBootstrapModule {
+export class NgaMapsModule {
   static forRoot(): ModuleWithProviders {
     return <ModuleWithProviders>{
-      ngModule: NgaBootstrapModule,
-      imports: [
-        NgbModule.forRoot(),
-      ],
-      exports: [
-        NgbModule,
-      ],
+      ngModule: NgaMapsModule,
     };
   }
 }

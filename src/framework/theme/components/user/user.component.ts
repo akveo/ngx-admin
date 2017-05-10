@@ -60,6 +60,8 @@ export class NgaUserComponent {
 
   private sizeValue: string;
 
+  @HostBinding('class.inverse') inverseValue: boolean;
+
   @HostBinding('class.small')
   get small() {
     return this.sizeValue === NgaUserComponent.SIZE_SMALL;
@@ -149,6 +151,15 @@ export class NgaUserComponent {
   @Input()
   set onlyPicture(val: boolean) {
     this.showNameValue = this.showTitleValue = !convertToBoolProperty(val);
+  }
+
+  /**
+   * Makes colors inverse based on current theme
+   * @type boolean
+   */
+  @Input()
+  set inverse(val: boolean) {
+    this.inverseValue = convertToBoolProperty(val);
   }
 
   /**

@@ -4,8 +4,9 @@
  * Licensed under the MIT License. See License.txt in the project root for license information.
  */
 
-import { Component, OnInit, AfterContentInit, AfterViewInit } from '@angular/core';
+import { Component, OnInit, AfterContentInit, AfterViewInit, OnDestroy } from '@angular/core';
 import { List } from 'immutable';
+import { Subscription } from 'rxjs/Subscription';
 
 import { NgaMenuService } from '../../framework/theme/components/menu/menu.service';
 import { NgaMenuItem } from '../../framework/theme/components/menu/menu.options';
@@ -133,7 +134,7 @@ export class NgaMenuItem4Component implements OnInit {
     </nga-layout>
   `,
 })
-export class NgaMenuTestComponent implements OnInit, AfterViewInit {
+export class NgaMenuTestComponent implements OnInit, AfterViewInit, OnDestroy {
 
   private menuItems: List<NgaMenuItem> = List([
     {
@@ -152,7 +153,7 @@ export class NgaMenuTestComponent implements OnInit, AfterViewInit {
     },
     {
       title: 'Menu #3',
-      children: List([
+      children: List<NgaMenuItem>([
         {
           title: 'Menu #3.1',
           link: '/menu/3/1',
@@ -165,7 +166,7 @@ export class NgaMenuTestComponent implements OnInit, AfterViewInit {
         {
           title: 'Menu #3.3',
           icon: 'ion ion-icecream',
-          children: List([
+          children: List<NgaMenuItem>([
             {
               title: 'Menu #3.3.1',
               link: '/menu/3/3/1',
@@ -196,15 +197,21 @@ export class NgaMenuTestComponent implements OnInit, AfterViewInit {
     },
   ]);
 
+  private itemClickSubscription: Subscription;
+
   constructor(private menuService: NgaMenuService) { }
 
   ngOnInit() {
-    this.menuService.itemClickSuggest
+    this.itemClickSubscription = this.menuService.onItemClick()
       .subscribe((data: { tag: string, item: NgaMenuItem }) => console.info(data));
 
     this.menuService.addItems(this.menuItems, 'firstMenu');
 
     this.menuService.navigateHome('firstMenu');
+  }
+
+  ngOnDestroy() {
+    this.itemClickSubscription.unsubscribe();
   }
 
   ngAfterViewInit() {

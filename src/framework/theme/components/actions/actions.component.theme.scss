@@ -5,8 +5,11 @@
  */
 
 @mixin nga-actions-theme($theme-name) {
-
   nga-actions {
+
+    font-size: $nga-actions-font-size;
+    line-height: $nga-actions-line-height;
+
     nga-action {
       height: $nga-actions-size-small;
       padding: 0 $nga-actions-padding;
@@ -16,7 +19,7 @@
         font-size: $nga-actions-size-small;
       }
       border-left: 1px solid rgba($nga-actions-color, 0.3);
-      background: $nga-actions-background;
+      background: transparent;
     }
 
     &.inverse {
@@ -25,7 +28,6 @@
           color: $nga-actions-color-inverse;
         }
         border-left: 1px solid rgba($nga-actions-color-inverse, 0.3);
-        background: $nga-actions-background-inverse;
       }
     }
 

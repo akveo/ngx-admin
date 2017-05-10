@@ -16,7 +16,7 @@ describe('nga-sidebar-one', () => {
     element(by.css('nga-layout')).getSize().then(size => {
       element.all(by.css('nga-sidebar')).get(0).getSize().then(sidebarSize => {
         expect(sidebarSize.height).toEqual(size.height);
-        expect(sidebarSize.width).toEqual(192);
+        expect(sidebarSize.width).toEqual(256);
       });
     });
   });
