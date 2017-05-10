@@ -11,7 +11,7 @@
     &.inverse {
       ul {
         li {
-          a, .menu-group  {
+          a, .menu-group {
             color: $nga-menu-item-foreground-inverse;
 
             @include hover-focus-active {
