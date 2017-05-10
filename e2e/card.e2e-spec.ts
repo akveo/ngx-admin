@@ -6,19 +6,19 @@
 
 import { browser, element, by } from 'protractor';
 
-const defaultHeight: number = 161;
-const smallHeight: number = 219;
-const xsmallHeight: number = 292;
-const mediumHeight: number = 505;
-const xmediumHeight: number = 655;
-const largeHeight: number = 1079;
+const defaultHeight: number = 145;
+const smallHeight: number = 211;
+const xsmallHeight: number = 284;
+const mediumHeight: number = 497;
+const xmediumHeight: number = 647;
+const largeHeight: number = 1071;
 
 const primaryColor: string = 'rgba(0, 171, 255, 1)';
 const successColor: string = 'rgba(139, 210, 47, 1)';
 const infoColor: string = 'rgba(64, 218, 241, 1)';
 const warningColor: string = 'rgba(231, 186, 8, 1)';
 const dangerColor: string = 'rgba(249, 83, 114, 1)';
-const activeColor: string = 'rgba(63, 66, 67, 1)';
+const activeColor: string = 'rgba(113, 121, 163, 1)';
 const disabledColor: string = 'rgba(255, 255, 255, 0.4)';
 
 const heights: any[] = [

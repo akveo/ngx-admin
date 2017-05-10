@@ -20,7 +20,7 @@ describe('nga-sidebar', () => {
 
   it('should render sidebar compacted', () => {
     element.all(by.css('nga-sidebar[state="compacted"]')).get(0).getSize().then(sidebarSize => {
-      expect(sidebarSize.width).toEqual(64);
+      expect(sidebarSize.width).toEqual(56);
     });
   });
 
@@ -32,13 +32,13 @@ describe('nga-sidebar', () => {
     button.click().then(() => {
       return browser.driver.wait(() => {
         return sidebar.getSize().then(sidebarSize => {
-          return sidebarSize.width === 192;
+          return sidebarSize.width === 256;
         });
       }, 10000);
     });
 
     sidebar.getSize().then(sidebarSize => {
-      expect(sidebarSize.width).toEqual(192);
+      expect(sidebarSize.width).toEqual(256);
     });
 
     button.click().then(() => {
@@ -62,25 +62,25 @@ describe('nga-sidebar', () => {
     button.click().then(() => {
       return browser.driver.wait(() => {
         return sidebar.getSize().then(sidebarSize => {
-          return sidebarSize.width === 192;
+          return sidebarSize.width === 256;
         });
       }, 10000);
     });
 
     sidebar.getSize().then(sidebarSize => {
-      expect(sidebarSize.width).toEqual(192);
+      expect(sidebarSize.width).toEqual(256);
     });
 
     button.click().then(() => {
       return browser.driver.wait(() => {
         return sidebar.getSize().then(sidebarSize => {
-          return sidebarSize.width === 64;
+          return sidebarSize.width === 56;
         });
       }, 10000);
     });
 
     sidebar.getSize().then(sidebarSize => {
-      expect(sidebarSize.width).toEqual(64);
+      expect(sidebarSize.width).toEqual(56);
     });
   });
 

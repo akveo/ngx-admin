@@ -26,7 +26,7 @@ describe('nga-layout-footer', () => {
 
   it('should have height', () => {
     element(by.css('nga-layout-footer nav')).getCssValue('height').then(value => {
-      expect(value).toEqual('80px');
+      expect(value).toEqual('75.5938px');
     });
   });
 
