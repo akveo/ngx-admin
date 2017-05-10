@@ -20,3 +20,7 @@ $theme-name: 'cosmic';
 // @nga/bootstrap module styles
 @import '~@nga/theme/overrides/bootstrap/styles/themes/nga.theme.default';
 @include nga-bootstrap($theme-name);
+
+// @nga/maps module styles
+@import '~@nga/theme/overrides/maps/styles/themes/nga.theme.default';
+@include nga-maps($theme-name);

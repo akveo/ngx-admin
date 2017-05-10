@@ -24,8 +24,7 @@
       "testTsconfig": "tsconfig.spec.json",
       "styles": [
         "../node_modules/roboto-fontface/css/roboto/sass/roboto-fontface.scss",
-        "../node_modules/normalize.css/normalize.css",
-        "../node_modules/leaflet/dist/leaflet.css"
+        "../node_modules/normalize.css/normalize.css"
       ],
       "scripts": [
         "../node_modules/jquery/dist/jquery.js",
