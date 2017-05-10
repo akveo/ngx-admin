@@ -4,7 +4,7 @@
  * Licensed under the MIT License. See License.txt in the project root for license information.
  */
 
-@import "./super-search.component.theme";
+@import './super-search.component.theme';
 ///specific for layout-rotate option styles////////////////////////////////////////////////////////////////////////////////////
 
 /deep/ nga-layout.rotate-layout .layout {
@@ -12,11 +12,11 @@
   overflow: hidden;
   transform: perspective(1000px);
   transition: transform 0.5s;
-  transition-timing-function: cubic-bezier(0.2,1,0.3,1);
+  transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
 }
 
 /deep/ nga-layout.rotate-layout.with-search .layout {
-  transform: perspective(1000px) translate3d(0,10vh,0) rotate3d(1,0,0,30deg);
+  transform: perspective(1000px) translate3d(0, 10vh, 0) rotate3d(1, 0, 0, 30deg);
   pointer-events: none;
 }
 
@@ -57,7 +57,7 @@
     top: 3rem;
     right: 3rem;
     font-size: 2.5rem;
-    color: $nga-close-icon-color
+    color: $nga-close-icon-color;
   }
 
   .search__form {
@@ -119,7 +119,7 @@
     pointer-events: none;
     opacity: 0;
     transition: opacity 0.5s;
-    transition-timing-function: cubic-bezier(0.2,1,0.3,1);
+    transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
   }
 
   &.show .search {
@@ -131,7 +131,7 @@
     opacity: 0;
     transform: scale3d(0.8, 0.8, 1);
     transition: opacity 0.5s, transform 0.5s;
-    transition-timing-function: cubic-bezier(0.2,1,0.3,1);
+    transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
   }
 
   &.show .search .search__btn-close {
@@ -143,7 +143,7 @@
     opacity: 0;
     transform: scale3d(0.7, 0.7, 1);
     transition: opacity 0.5s, transform 0.5s;
-    transition-timing-function: cubic-bezier(0.2,1,0.3,1);
+    transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
   }
 
   &.show .search .search__form {

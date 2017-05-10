@@ -4,17 +4,17 @@
  * Licensed under the MIT License. See License.txt in the project root for license information.
  */
 
-@import "./super-search.component.theme";
+@import './super-search.component.theme';
 
 ///specific for modal-half option styles
 
 /deep/ nga-layout.modal-half .layout {
   transition: transform 0.6s, opacity 0.6s;
-  transition-timing-function: cubic-bezier(0.2,1,0.3,1);
+  transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
 }
 
 /deep/ nga-layout.modal-half.with-search .layout {
-  transform: scale3d(0.8,0.8,1);
+  transform: scale3d(0.8, 0.8, 1);
   pointer-events: none;
 }
 
@@ -25,7 +25,6 @@
   }
 
   .search {
-    position: relative;
     text-align: center;
     position: fixed;
     z-index: 1000;
@@ -123,7 +122,7 @@
   .search::before {
     opacity: 0;
     transition: opacity 0.6s;
-    transition-timing-function: cubic-bezier(0.2,1,0.3,1);
+    transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
   }
 
   &.show .search::before {
@@ -134,7 +133,7 @@
     opacity: 0;
     transform: scale3d(0.8, 0.8, 1);
     transition: opacity 0.6s, transform 0.6s;
-    transition-timing-function: cubic-bezier(0.2,1,0.3,1);
+    transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
   }
 
   &.show .search__btn-close {
@@ -144,12 +143,12 @@
 
   .form__wrapper {
     transition: transform 0.6s;
-    transition-timing-function: cubic-bezier(0.2,1,0.3,1);
-    transform: translate3d(0,-100%,0);
+    transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+    transform: translate3d(0, -100%, 0);
   }
 
   &.show .form__wrapper {
-    transform: translate3d(0,0,0);
+    transform: translate3d(0, 0, 0);
   }
 
   //////responsivenes////////////////////////////////////////////////////////////////

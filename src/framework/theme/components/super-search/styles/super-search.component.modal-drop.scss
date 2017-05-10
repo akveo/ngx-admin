@@ -4,7 +4,7 @@
  * Licensed under the MIT License. See License.txt in the project root for license information.
  */
 
-@import "./super-search.component.theme";
+@import './super-search.component.theme';
 
 
 ///specific for modal-drop option styles
@@ -16,7 +16,7 @@
 
 /deep/ nga-layout.modal-drop.with-search .layout {
   opacity: 0;
-  transform: scale3d(0.9,0.9,1);
+  transform: scale3d(0.9, 0.9, 1);
   pointer-events: none;
 }
 
@@ -153,12 +153,12 @@
   }
 
   .form__content {
-    transform: translate3d(0,-50px,0);
+    transform: translate3d(0, -50px, 0);
     transition: transform 0.4s;
   }
 
   &.show .form__content {
-    transform: translate3d(0,0,0);
+    transform: translate3d(0, 0, 0);
     transition: none;
   }
 
@@ -197,10 +197,10 @@
   @keyframes scaleUpDown {
     0% {
       opacity: 1;
-      transform: scale3d(1,0,1);
+      transform: scale3d(1, 0, 1);
     }
     50% {
-      transform: scale3d(1,1,1);
+      transform: scale3d(1, 1, 1);
       transform-origin: 50% 0;
       transition-timing-function: ease-out;
     }
@@ -210,7 +210,7 @@
     }
     100% {
       opacity: 1;
-      transform: scale3d(1,0,1);
+      transform: scale3d(1, 0, 1);
       transform-origin: 50% 100%;
       transition-timing-function: ease-out;
     }

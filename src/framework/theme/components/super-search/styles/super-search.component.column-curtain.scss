@@ -4,7 +4,7 @@
 * Licensed under the MIT License. See License.txt in the project root for license information.
 */
 
-@import "./super-search.component.theme";
+@import './super-search.component.theme';
 
 ///specific for column-curtain option styles
 
@@ -118,7 +118,7 @@
   }
 
   &.show .search__content::before {
-    transform: scale3d(1,1,1);
+    transform: scale3d(1, 1, 1);
   }
 
   .search__form {

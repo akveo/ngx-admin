@@ -8,7 +8,7 @@ import 'rxjs/add/operator/share';
 import { Subject } from 'rxjs/Subject';
 import { Observable } from 'rxjs/Observable';
 
-import { NgaThemeService } from "../../services/theme.service";
+import { NgaThemeService } from '../../services/theme.service';
 
 @Injectable()
 export class NgaSuperSearchService {

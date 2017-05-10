@@ -6,7 +6,7 @@
 
 import { browser, element, by } from 'protractor';
 import { hasClass } from './e2e-helper';
-import { protractor } from "protractor/built/ptor";
+import { protractor } from 'protractor/built/ptor';
 
 describe('nga-search', () => {
 
@@ -49,7 +49,7 @@ describe('nga-search', () => {
 
   it('should clean search input when closed', () => {
     element(by.css('.search__btn-open')).click();
-    element(by.css('.search__input')).sendKeys("akveo");
+    element(by.css('.search__input')).sendKeys('akveo');
     element(by.css('.search__btn-close')).click();
     expect(element(by.css('.search__input')).getAttribute('value')).toEqual('');
   });
@@ -71,5 +71,5 @@ describe('nga-search', () => {
     expect(hasClass(element(by.css('nga-layout')), 'with-search')).toBeFalsy();
     expect(hasClass(browser.driver.switchTo().activeElement(), 'search__input')).toBeFalsy();
     expect(element(by.css('.search__input')).getAttribute('value')).toEqual('');
-  })
+  });
 });

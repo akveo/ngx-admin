@@ -60,7 +60,7 @@ export class NgaThemeService {
     return this.createLayoutTop$.publish().refCount();
   }
 
-  appendLayoutClass(className : string) {
+  appendLayoutClass(className: string) {
     this.appendLayoutClass$.next(className);
   }
 
@@ -68,7 +68,7 @@ export class NgaThemeService {
     return this.appendLayoutClass$.publish().refCount();
   }
 
-  removeLayoutClass(className : string) {
+  removeLayoutClass(className: string) {
     this.removeLayoutClass$.next(className);
   }
 
