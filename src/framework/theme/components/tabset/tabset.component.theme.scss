@@ -21,7 +21,7 @@
           border: 1px solid transparent;
           border-top-left-radius: $nga-tabs-header-radius;
           border-top-right-radius: $nga-tabs-header-radius;
-          background: $nga-tabs-background;
+          background: $nga-tabs-header-background;
           padding: $nga-tabs-header-padding;
           min-width: $nga-tabs-header-min-width;
 
@@ -50,6 +50,10 @@
 
     nga-tab {
       color: $nga-foreground;
+
+      .nga-tab {
+        background-color: $nga-tabs-background;
+      }
     }
   }
 }

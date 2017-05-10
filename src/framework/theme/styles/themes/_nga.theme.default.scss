@@ -28,7 +28,7 @@ $nga-font-size-xs: 0.75rem !default;
 $nga-radius: 0.5rem !default;
 $nga-padding: 1rem !default;
 $nga-margin: 1rem !default;
-$nga-line-height: 1rem;
+$nga-line-height: 1rem !default;
 
 $nga-color-default: #7179a3 !default;
 $nga-color-inverse: #edf1f7 !default;
@@ -38,7 +38,7 @@ $nga-foreground-inverse: $nga-color-inverse !default;
 $nga-background-inverse: $nga-color-default !default;
 
 $nga-color-gray: rgba(81, 113, 165, 0.15) !default;
-$nga-color-neutral: transparent;
+$nga-color-neutral: transparent !default;
 $nga-color-disabled: rgba(255, 255, 255, 0.4) !default;
 $nga-color-primary: #00abff !default;
 $nga-color-secondary: #b5bbd5 !default;
@@ -132,16 +132,16 @@ $nga-sidebar-shadow: $nga-shadow !default;
 
 $nga-menu-font-size: $nga-font-size !default;
 $nga-menu-line-height: $nga-line-height !default;
-$nga-menu-group-font-weight: $nga-font-weight-bolder;
-$nga-menu-group-font-size: 1.025rem;
+$nga-menu-group-font-weight: $nga-font-weight-bolder !default;
+$nga-menu-group-font-size: 1.025rem !default;
 
-$nga-menu-item-foreground: $nga-foreground;
-$nga-menu-item-foreground-inverse: $nga-foreground-inverse;
+$nga-menu-item-foreground: $nga-foreground !default;
+$nga-menu-item-foreground-inverse: $nga-foreground-inverse !default;
 
-$nga-menu-item-background: $nga-background;
-$nga-menu-item-background-inverse: $nga-background-inverse;
+$nga-menu-item-background: $nga-background !default;
+$nga-menu-item-background-inverse: $nga-background-inverse !default;
 
-$nga-menu-item-padding: 0.5rem 1rem;
+$nga-menu-item-padding: 0.5rem 1rem !default;
 
 $nga-tabs-font-size: $nga-font-size !default;
 $nga-tabs-line-height: $nga-line-height !default;
@@ -149,10 +149,11 @@ $nga-tabs-header-padding: $nga-padding !default;
 $nga-tabs-header-radius: $nga-radius !default;
 $nga-tabs-header-active: $nga-color-default !default;
 $nga-tabs-header-min-width: 100px !default;
-$nga-tabs-background: $nga-background !default;
+$nga-tabs-header-background: transparent !default;
 $nga-tabs-separator: $nga-color-default !default;
 $nga-tabs-foreground: $nga-foreground !default;
 $nga-tabs-foreground-inverse: $nga-foreground-inverse !default;
+$nga-tabs-background: transparent;
 
 $nga-route-tabs-font-size: $nga-font-size !default;
 $nga-route-tabs-line-height: $nga-line-height !default;
@@ -160,7 +161,7 @@ $nga-route-tabs-header-padding: $nga-padding !default;
 $nga-route-tabs-header-radius: $nga-radius !default;
 $nga-route-tabs-header-active: $nga-color-default !default;
 $nga-route-tabs-header-min-width: 100px !default;
-$nga-route-tabs-background: $nga-background !default;
+$nga-route-tabs-header-background: transparent !default;
 $nga-route-tabs-separator: $nga-color-default !default;
 $nga-route-tabs-foreground: $nga-foreground !default;
 $nga-route-tabs-foreground-inverse: $nga-foreground-inverse !default;

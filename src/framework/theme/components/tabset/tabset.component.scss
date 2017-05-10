@@ -5,6 +5,9 @@
  */
 
 :host {
+  font-size: 1rem;
+  line-height: 1.2rem;
+
   ul {
     &.nga-tabset {
       display: flex;
@@ -22,17 +25,17 @@
         a {
           text-decoration: none;
           display: block;
-          padding: 0.5rem 1rem;
-          font-size: 1rem;
-          line-height: 1rem;
+          padding: 0.5em 1em;
+          font-size: 1em;
+          line-height: 1.2em;
         }
       }
     }
   }
 
   /deep/ nga-tab {
-    font-size: 1rem;
-    line-height: 1rem;
+    font-size: 1em;
+    line-height: 1.2em;
   }
 
   &.full-width {
