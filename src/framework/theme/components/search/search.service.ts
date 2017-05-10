@@ -12,33 +12,37 @@ import { NgaThemeService } from '../../services/theme.service';
 
 @Injectable()
 export class NgaSuperSearchService {
-  private searchTerms = new Subject();
+  private searchTerms$ = new Subject();
+  private searchActivations$ = new Subject();
+  private searchDeactivations$ = new Subject();
 
   constructor(private themeService: NgaThemeService) {}
 
   activateSearch(searchType: string) {
-    this.onSearchActivate(searchType);
-  }
-
-  onSearchActivate(searchType: string) {
     this.themeService.appendLayoutClass(searchType);
     setTimeout(() => this.themeService.appendLayoutClass('with-search'), 1);
+    this.searchActivations$.next(searchType);
+  }
+
+  onSearchActivate(): Observable<any> {
+    return this.searchActivations$.share();
   }
 
   deactivateSearch(searchType) {
-    this.onSearchDeactivate(searchType);
-  }
-
-  onSearchDeactivate(searchType) {
     this.themeService.removeLayoutClass('with-search');
     setTimeout(() => this.themeService.removeLayoutClass(searchType), 500);
+    this.searchDeactivations$.next(searchType);
+  }
+
+  onSearchDeactivate() {
+    return this.searchDeactivations$.share();
   }
 
   searchSubmit(term) {
-    this.searchTerms.next(term);
+    this.searchTerms$.next(term);
   }
 
   onSearchSubmit(): Observable<any> {
-    return this.searchTerms.share();
+    return this.searchTerms$.share();
   }
 }

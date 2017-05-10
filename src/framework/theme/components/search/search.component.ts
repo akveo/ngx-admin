@@ -144,11 +144,23 @@ export class NgaSearchComponent implements AfterViewInit {
   private searchFieldComponentRef: ComponentRef<any> = null;
 
   constructor(private searchService: NgaSuperSearchService,
-              private themeService: NgaThemeService) {}
+              private themeService: NgaThemeService) {
+
+    this.searchService.onSearchActivate().subscribe(() => {
+      this.openSearch();
+    });
+
+    this.searchService.onSearchDeactivate().subscribe(() => {
+      this.closeSearch();
+    });
+  }
 
   onOpenSearch() {
-    this.showSearch = true;
     this.searchService.activateSearch(this.type);
+  }
+
+  openSearch() {
+    this.showSearch = true;
     setTimeout(() => {
       this.searchFieldComponentRef.instance.showSearch = true;
       this.searchFieldComponentRef.instance.inputElement.nativeElement.focus();
@@ -157,8 +169,11 @@ export class NgaSearchComponent implements AfterViewInit {
   }
 
   onCloseSearch() {
-    this.showSearch = false;
     this.searchService.deactivateSearch(this.type);
+  }
+
+  closeSearch() {
+    this.showSearch = false;
     this.searchFieldComponentRef.instance.showSearch = false;
     this.searchFieldComponentRef.instance.inputElement.nativeElement.value = '';
     this.searchFieldComponentRef.instance.inputElement.nativeElement.blur();
