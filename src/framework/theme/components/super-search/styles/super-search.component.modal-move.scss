@@ -10,7 +10,7 @@
   transition: transform 0.5s;
 }
 
-/deep/ nga-layout.modal-move.show .layout {
+/deep/ nga-layout.modal-move.with-search .layout {
   transform: scale3d(0.8,0.8,1);
   pointer-events: none;
 }

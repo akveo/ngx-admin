@@ -15,7 +15,7 @@
   transition-timing-function: cubic-bezier(0.2,1,0.3,1);
 }
 
-/deep/ nga-layout.rotate-layout.show .layout {
+/deep/ nga-layout.rotate-layout.with-search .layout {
   transform: perspective(1000px) translate3d(0,10vh,0) rotate3d(1,0,0,30deg);
   pointer-events: none;
 }

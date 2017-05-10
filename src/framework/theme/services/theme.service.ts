@@ -22,7 +22,8 @@ export class NgaThemeService {
   private themeChanges$ = new ReplaySubject(1);
   private appendToLayoutTop$ = new ReplaySubject(1);
   private createLayoutTop$ = new Subject();
-  private activateSearch$ = new Subject();
+  private appendLayoutClass$ = new Subject();
+  private removeLayoutClass$ = new Subject();
 
   constructor(@Inject(ngaThemeOptionsToken) protected options: any) {
     if (options && options.name) {
@@ -47,14 +48,6 @@ export class NgaThemeService {
     return observable.asObservable();
   }
 
-  activateSearch(searchType: string, searchStatus: boolean) {
-    this.activateSearch$.next({ type: searchType, status: searchStatus });
-  }
-
-  onSearchActivate(): Observable<any> {
-    return this.activateSearch$.publish().refCount();
-  }
-
   onThemeChange(): Observable<any> {
     return this.themeChanges$.publish().refCount();
   }
@@ -65,5 +58,21 @@ export class NgaThemeService {
 
   onClearLayoutTop(): Observable<any> {
     return this.createLayoutTop$.publish().refCount();
+  }
+
+  appendLayoutClass(className : string) {
+    this.appendLayoutClass$.next(className);
+  }
+
+  onAppendLayoutClass(): Observable<any> {
+    return this.appendLayoutClass$.publish().refCount();
+  }
+
+  removeLayoutClass(className : string) {
+    this.removeLayoutClass$.next(className);
+  }
+
+  onRemoveLayoutClass(): Observable<any> {
+    return this.removeLayoutClass$.publish().refCount();
   }
 }

@@ -5,10 +5,11 @@
  */
 import {
   Component, ChangeDetectionStrategy, Input, HostBinding,
-  ComponentRef, Output, EventEmitter, ViewChild, ElementRef, AfterViewInit
+  ComponentRef, Output, EventEmitter, ViewChild, ElementRef, AfterViewInit,
 } from '@angular/core';
-import { NgaSuperSearchService } from "./super-search.service";
-import { NgaThemeService } from "../../services/theme.service";
+
+import { NgaSuperSearchService } from './super-search.service';
+import { NgaThemeService } from '../../services/theme.service';
 
 /**
  * search-field-component is used under the hood by nga-search component
@@ -43,7 +44,7 @@ import { NgaThemeService } from "../../services/theme.service";
     </div>
     
   </div>
-</div>`
+</div>`,
 })
 export class NgaSearchFieldComponent {
 
@@ -143,22 +144,21 @@ export class NgaSearchComponent implements AfterViewInit {
   private searchFieldComponentRef: ComponentRef<any> = null;
 
   constructor(private searchService: NgaSuperSearchService,
-    private themeService: NgaThemeService) {
-  }
+              private themeService: NgaThemeService) {}
 
   onOpenSearch() {
     this.showSearch = true;
-    this.themeService.activateSearch(this.type, true);
+    this.searchService.activateSearch(this.type);
     setTimeout(() => {
       this.searchFieldComponentRef.instance.showSearch = true;
       this.searchFieldComponentRef.instance.inputElement.nativeElement.focus();
       this.searchFieldComponentRef.changeDetectorRef.detectChanges();
-    }, 1)
+    }, 1);
   }
 
   onCloseSearch() {
     this.showSearch = false;
-    this.themeService.activateSearch(this.type, false);
+    this.searchService.deactivateSearch(this.type);
     this.searchFieldComponentRef.instance.showSearch = false;
     this.searchFieldComponentRef.instance.inputElement.nativeElement.value = '';
     this.searchFieldComponentRef.instance.inputElement.nativeElement.blur();
@@ -170,12 +170,12 @@ export class NgaSearchComponent implements AfterViewInit {
     component.placeholder = this.placeholder;
     component.searchClose.subscribe(() => {
       this.onCloseSearch();
-    })
+    });
 
     component.search.subscribe(term => {
-      this.searchService.search(term);
+      this.searchService.searchSubmit(term);
       this.onCloseSearch();
-    })
+    });
   }
 
   ngAfterViewInit() {
