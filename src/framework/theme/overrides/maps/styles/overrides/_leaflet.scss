@@ -7,7 +7,7 @@
 @mixin nga-m-leaflet-theme($theme-name) {
 
   /deep/ {
-
+    @import '~leaflet/dist/leaflet.css';
   }
 
 }
