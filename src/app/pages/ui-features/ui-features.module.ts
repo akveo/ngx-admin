@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { NgaTabsetModule, NgaRouteTabsetModule } from '@nga/theme';
 
 import { SharedModule } from '../../shared.module';
 
@@ -18,6 +19,7 @@ import { GroupButtonsComponent } from './buttons/group/group.component';
 import { LargeButtonsComponent } from './buttons/large/large.component';
 import { ModalComponent } from './modals/modal/modal.component';
 import { TypographyComponent } from './typography/typography.component';
+import { TabsComponent } from './tabs/tabs.component';
 
 const COMPONENTS = [
   UiFeaturesComponent,
@@ -35,12 +37,15 @@ const COMPONENTS = [
   LargeButtonsComponent,
   ModalComponent,
   TypographyComponent,
+  TabsComponent,
 ];
 
 @NgModule({
   imports: [
     SharedModule,
     UiFeaturesRoutingModule,
+    NgaTabsetModule,
+    NgaRouteTabsetModule,
   ],
   declarations: [
     ...COMPONENTS,

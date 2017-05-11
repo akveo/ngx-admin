@@ -12,6 +12,7 @@
     "build:prod:aot": "npm run build:prod -- --aot",
     "build:ci": "npm-run-all -p -r build:prod build:prod:aot",
     "build:ghpages": "npm run build:prod:aot -- --base-href \"https://akveo.github.io/ng2-admin/\" && ngh",
+    "build:stg": "npm run build:prod:aot -- --base-href \"http://akveo.com/ngx-admin/\"",
     "test": "ng test -sr",
     "test:coverage": "rimraf coverage && npm run test -- -cc",
     "lint": "ng lint",

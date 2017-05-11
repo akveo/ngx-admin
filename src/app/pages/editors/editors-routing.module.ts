@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { EditorsComponent } from './editors.component';
 import { TinyMCEComponent } from './tiny-mce/tiny-mce.component';
-import { CKEditorComponent } from './ckeditor.component';
+import { CKEditorComponent } from './ckeditor/ckeditor.component';
 
 const routes: Routes = [{
   path: '',

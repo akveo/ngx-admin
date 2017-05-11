@@ -5,12 +5,11 @@
  */
 
 @import '../components';
-@import 'variables';
-
-@import '~@nga/theme/styles/themes/nga.theme.cosmic';
 @import 'overrides/all';
 
-$theme-name: 'cosmic';
+@import '~@nga/theme/styles/themes/nga.theme.default';
+
+$theme-name: 'default';
 
 // @nga/theme module styles
 @include nga-theme($theme-name) {

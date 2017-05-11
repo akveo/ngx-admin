@@ -11,8 +11,9 @@ import { NgaThemeService } from '@nga/theme/services/theme.service';
       <i class="control-icon ion ion-navicon" (click)="toggleSidebar()"></i>
       <span class="logo" (click)="goToHome()">NgX&nbsp;<a>Admin</a></span>
       <button (click)="switchTheme()">Switch Theme!</button>
+      <button (click)="selectDefaultTheme()">Default Theme!</button>
     </div>
-    
+
     <nga-actions size="medium" inverse class="right">
       <nga-action><ngx-search-input></ngx-search-input></nga-action>
       <nga-action icon="ion-ios-email-outline"></nga-action>
@@ -54,5 +55,9 @@ export class HeaderComponent {
     } else {
       this.themeService.changeTheme('light');
     }
+  }
+
+  selectDefaultTheme() {
+    this.themeService.changeTheme('default');
   }
 }

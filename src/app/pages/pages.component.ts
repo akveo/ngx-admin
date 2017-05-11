@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 
 import 'style-loader!../@theme/styles/cosmic/cosmic.theme.scss';
 import 'style-loader!../@theme/styles/light/light.theme.scss';
+import 'style-loader!../@theme/styles/default/default.theme.scss';
 
 @Component({
   selector: 'ngx-pages',

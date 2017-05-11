@@ -29,6 +29,9 @@ export const menuItems: List<NgaMenuItem> = List([{
   }, {
     title: 'Typography',
     link: '/pages/ui-features/typography',
+  }, {
+    title: 'Tabs',
+    link: '/pages/ui-features/tabs',
   }]),
 }, {
   title: 'Components',
