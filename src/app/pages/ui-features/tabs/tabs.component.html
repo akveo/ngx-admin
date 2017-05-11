@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-md-6">
-    <nga-card>
+    <nga-card size="medium">
       <nga-card-header>Tabset</nga-card-header>
       <nga-card-body>
         <nga-tabset>
@@ -18,9 +18,11 @@
     </nga-card>
   </div>
   <div class="col-md-6">
-    <nga-card>
+    <nga-card size="medium">
       <nga-card-header>Route Tabset</nga-card-header>
-      <nga-card-body></nga-card-body>
+      <nga-card-body>
+        <nga-route-tabset [tabs]="tabs"></nga-route-tabset>
+      </nga-card-body>
     </nga-card>
   </div>
 </div>

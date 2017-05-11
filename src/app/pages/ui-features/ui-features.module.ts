@@ -19,7 +19,7 @@ import { GroupButtonsComponent } from './buttons/group/group.component';
 import { LargeButtonsComponent } from './buttons/large/large.component';
 import { ModalComponent } from './modals/modal/modal.component';
 import { TypographyComponent } from './typography/typography.component';
-import { TabsComponent } from './tabs/tabs.component';
+import { TabsComponent, Tab1Component, Tab2Component } from './tabs/tabs.component';
 
 const COMPONENTS = [
   UiFeaturesComponent,
@@ -38,6 +38,8 @@ const COMPONENTS = [
   ModalComponent,
   TypographyComponent,
   TabsComponent,
+  Tab1Component,
+  Tab2Component,
 ];
 
 @NgModule({

@@ -7,7 +7,7 @@ import { GridComponent } from './grid/grid.component';
 import { IconsComponent } from './icons/icons.component';
 import { ModalsComponent } from './modals/modals.component';
 import { TypographyComponent } from './typography/typography.component';
-import { TabsComponent } from './tabs/tabs.component';
+import { TabsComponent, Tab1Component, Tab2Component } from './tabs/tabs.component';
 
 const routes: Routes = [{
   path: '',
@@ -30,6 +30,17 @@ const routes: Routes = [{
   }, {
     path: 'tabs',
     component: TabsComponent,
+    children: [{
+      path: '',
+      redirectTo: 'tab1',
+      pathMatch: 'full',
+    }, {
+      path: 'tab1',
+      component: Tab1Component,
+    }, {
+      path: 'tab2',
+      component: Tab2Component,
+    }],
   }],
 }];
 
