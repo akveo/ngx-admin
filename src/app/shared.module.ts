@@ -4,7 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { NgaCardModule, NgaBootstrapModule } from '@nga/theme';
 
-@NgModule ({
+@NgModule({
   exports: [
     CommonModule,
     FormsModule,

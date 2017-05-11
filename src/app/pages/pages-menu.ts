@@ -50,7 +50,13 @@ export const menuItems: List<NgaMenuItem> = List([{
 }, {
   title: 'Charts',
   icon: 'ion ion-arrow-graph-up-right',
-  link: '/pages/charts',
+  children: List<NgaMenuItem>([{
+    title: 'Echarts',
+    link: '/pages/charts/echarts',
+  }, {
+    title: 'D3',
+    link: '/pages/charts/d3',
+  }]),
 }, {
   title: 'Editors',
   icon: 'ion ion-edit',

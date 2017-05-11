@@ -1,0 +1,56 @@
+<div class="row">
+  <div class="col-md-6">
+    <nga-card size="xmedium">
+      <nga-card-header>Pie</nga-card-header>
+      <nga-card-body>
+        <ngx-charts-pie-chart
+          [view]="view"
+          [scheme]="colorScheme"
+          [results]="single"
+          [legend]="showLegend"
+          [labels]="showLabels">
+        </ngx-charts-pie-chart>
+      </nga-card-body>
+    </nga-card>
+  </div>
+  <div class="col-md-6">
+    <nga-card size="xmedium">
+      <nga-card-header>Bar</nga-card-header>
+      <nga-card-body>
+        <ngx-charts-bar-vertical
+          [view]="view"
+          [scheme]="colorScheme"
+          [results]="single"
+          [xAxis]="showXAxis"
+          [yAxis]="showYAxis"
+          [legend]="showLegend"
+          [showXAxisLabel]="showXAxisLabel"
+          [showYAxisLabel]="showYAxisLabel"
+          [xAxisLabel]="xAxisLabel"
+          [yAxisLabel]="yAxisLabel">
+        </ngx-charts-bar-vertical>
+      </nga-card-body>
+    </nga-card>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-6">
+    <nga-card size="xmedium">
+      <nga-card-header>Line</nga-card-header>
+      <nga-card-body>
+        <ngx-charts-line-chart
+          [view]="view"
+          [scheme]="colorScheme"
+          [results]="multi"
+          [xAxis]="showXAxis"
+          [yAxis]="showYAxis"
+          [legend]="showLegend"
+          [showXAxisLabel]="showXAxisLabel"
+          [showYAxisLabel]="showYAxisLabel"
+          [xAxisLabel]="xAxisLabel"
+          [yAxisLabel]="yAxisLabel">
+        </ngx-charts-line-chart>
+      </nga-card-body>
+    </nga-card>
+  </div>
+</div>

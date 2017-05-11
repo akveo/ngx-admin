@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'ngx-charts',
   template: `
-    <p>charts work!</p>
+    <router-outlet></router-outlet>
   `,
 })
 export class ChartsComponent {

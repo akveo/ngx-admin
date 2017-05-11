@@ -28,3 +28,7 @@ $theme-name: 'default';
 // @nga/typography module styles
 @import '~@nga/theme/overrides/typography/styles/themes/nga.theme.default';
 @include nga-typography($theme-name);
+
+// @nga/charts module styles
+@import '~@nga/theme/overrides/charts/styles/themes/nga.theme.default';
+@include nga-charts($theme-name);

@@ -9,13 +9,11 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { PagesRoutingModule } from './pages-routing.module';
 import { ThemeModule } from '../@theme/theme.module';
 import { ComponentsComponent } from './components/components.component';
-import { ChartsComponent } from './charts/charts.component';
 
 const PAGES_COMPONENTS = [
   PagesComponent,
   DashboardComponent,
   ComponentsComponent,
-  ChartsComponent,
 ];
 
 @NgModule({

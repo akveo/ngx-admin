@@ -23,7 +23,7 @@ const routes: Routes = [{
     loadChildren: './maps/maps.module#MapsModule',
   }, {
     path: 'charts',
-    component: ChartsComponent,
+    loadChildren: './charts/charts.module#ChartsModule',
   }, {
     path: 'editors',
     loadChildren: './editors/editors.module#EditorsModule',
