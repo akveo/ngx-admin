@@ -11,7 +11,7 @@
     font-size: $nga-tabs-font-size;
     line-height: $nga-tabs-line-height;
 
-    @include nga-scrollbars(0.4em, rgba(0, 0, 0, 0.6), rgba(255, 255, 255, 0.7));
+    @include nga-scrollbars($nga-scrollbar-width, $nga-scrollbar-foreground, $nga-scrollbar-background);
 
     ul {
       &.nga-tabset {
@@ -38,18 +38,18 @@
           }
 
           &:hover {
-            border-color: $nga-tabs-foreground;
+            border-color: $nga-tabs-header-border-inverse;
           }
 
           &.active:hover {
-            border-bottom-color: transparent;
+            border-bottom-color: $nga-tabs-header-border-inverse;
           }
         }
       }
     }
 
     nga-tab {
-      color: $nga-foreground;
+      color: $nga-tabs-foreground;
 
       .nga-tab {
         background-color: $nga-tabs-background;

@@ -153,7 +153,9 @@ $nga-tabs-header-background: transparent !default;
 $nga-tabs-separator: $nga-color-default !default;
 $nga-tabs-foreground: $nga-foreground !default;
 $nga-tabs-foreground-inverse: $nga-foreground-inverse !default;
-$nga-tabs-background: transparent;
+$nga-tabs-header-border: $nga-color-default !default;
+$nga-tabs-header-border-inverse: transparent !default;
+$nga-tabs-background: transparent !default;
 
 $nga-route-tabs-font-size: $nga-font-size !default;
 $nga-route-tabs-line-height: $nga-line-height !default;
@@ -165,6 +167,8 @@ $nga-route-tabs-header-background: transparent !default;
 $nga-route-tabs-separator: $nga-color-default !default;
 $nga-route-tabs-foreground: $nga-foreground !default;
 $nga-route-tabs-foreground-inverse: $nga-foreground-inverse !default;
+$nga-route-tabs-header-border: $nga-color-default !default;
+$nga-route-tabs-header-border-inverse: transparent !default;
 
 $nga-user-font-size: $nga-font-size !default;
 $nga-user-line-height: $nga-line-height !default;
@@ -185,4 +189,8 @@ $nga-actions-size-medium: 2.5rem !default;
 $nga-actions-size-large: 4rem !default;
 $nga-actions-color: $nga-foreground !default;
 $nga-actions-color-inverse: $nga-foreground-inverse !default;
+
+$nga-scrollbar-foreground: rgba(0, 0, 0, 0.6) !default;
+$nga-scrollbar-background: rgba(255, 255, 255, 0.7) !default;
+$nga-scrollbar-width: 0.4em !default;
 
