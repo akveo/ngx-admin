@@ -37,7 +37,7 @@ import { NgaThemeService } from '../../services/theme.service';
     <div class="form-wrapper">
       <form class="form" (keyup.enter)="onSearchSubmit(searchInput.value)">
         <div class="form-content">
-          <input id="search-input" placeholder="{{ placeholder }}"/>
+          <input id="search-input" #searchInput placeholder="{{ placeholder }}"/>
         </div>
         <span class="info">Hit enter to search</span>
       </form>
