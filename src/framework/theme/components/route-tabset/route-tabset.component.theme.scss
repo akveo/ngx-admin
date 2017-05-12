@@ -7,42 +7,47 @@
 @mixin nga-route-tabset-theme($theme-name) {
 
   nga-route-tabset {
+
     font-size: $nga-route-tabs-font-size;
     line-height: $nga-route-tabs-line-height;
 
     ul {
       &.nga-route-tabset {
         border-bottom: 1px solid $nga-route-tabs-separator;
-      }
 
-      li {
-        border: 1px solid transparent;
-        border-top-left-radius: $nga-route-tabs-header-radius;
-        border-top-right-radius: $nga-route-tabs-header-radius;
-        background: $nga-route-tabs-header-background;
-        padding: $nga-route-tabs-header-padding;
-        min-width: $nga-route-tabs-header-min-width;
-
-        a {
-          color: $nga-route-tabs-foreground;
-        }
-
-        &.active {
-          background: $nga-route-tabs-header-active;
+        li {
+          border: 1px solid transparent;
+          border-top-left-radius: $nga-route-tabs-header-radius;
+          border-top-right-radius: $nga-route-tabs-header-radius;
+          background: $nga-route-tabs-header-background;
+          padding: $nga-route-tabs-header-padding;
+          min-width: $nga-route-tabs-header-min-width;
 
           a {
-            color: $nga-route-tabs-foreground-inverse;
+            color: $nga-route-tabs-foreground;
+          }
+
+          &.active {
+            background: $nga-route-tabs-header-active;
+
+            a {
+              color: $nga-route-tabs-foreground-inverse;
+            }
+          }
+
+          &:hover {
+            border-color: $nga-route-tabs-header-border-inverse;
+          }
+
+          &.active:hover {
+            border-bottom-color: $nga-route-tabs-header-border-inverse;
           }
         }
-
-        &:hover {
-          border-color: $nga-route-tabs-foreground;
-        }
-
-        &.active:hover {
-          border-bottom-color: transparent;
-        }
       }
+    }
+
+    nga-route-tab {
+      color: $nga-route-tabs-foreground;
     }
   }
 }

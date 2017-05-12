@@ -16,7 +16,7 @@
     box-shadow: $nga-card-shadow;
     font-weight: $nga-font-weight-normal;
 
-    @include nga-scrollbars(0.4em, rgba(0, 0, 0, 0.6), rgba(255, 255, 255, 0.7));
+    @include nga-scrollbars($nga-scrollbar-width, $nga-scrollbar-foreground, $nga-scrollbar-background);
 
     &.small-card {
       nga-card-body {

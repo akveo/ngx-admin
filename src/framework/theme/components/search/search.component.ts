@@ -37,7 +37,7 @@ import { NgaThemeService } from '../../services/theme.service';
     <div class="form-wrapper">
       <form class="form" (keyup.enter)="onSearchSubmit(searchInput.value)">
         <div class="form-content">
-          <input id="search-input" #searchInput placeholder="{{ placeholder }}"/>
+          <input id="search-input" placeholder="{{ placeholder }}"/>
         </div>
         <span class="info">Hit enter to search</span>
       </form>
@@ -138,7 +138,7 @@ export class NgaSearchComponent implements AfterViewInit {
   private searchFieldComponentRef: ComponentRef<any> = null;
 
   constructor(private searchService: NgaSuperSearchService,
-              private themeService: NgaThemeService) {
+    private themeService: NgaThemeService) {
 
     this.searchService.onSearchActivate().subscribe(() => {
       this.openSearch();
