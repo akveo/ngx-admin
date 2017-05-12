@@ -11,4 +11,4 @@ RUN git clone https://github.com/akveo/ng2-admin.git /var/www \
 EXPOSE 8080
 
 WORKDIR /var/www
-ENTRYPOINT ["npm", "run", "server:prod"]
+ENTRYPOINT ["npm", "run", "start:prod"]
