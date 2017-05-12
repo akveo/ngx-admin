@@ -16,7 +16,7 @@ export class NgaSuperSearchService {
   private searchActivations$ = new Subject();
   private searchDeactivations$ = new Subject();
 
-  constructor(private themeService: NgaThemeService) {}
+  constructor(private themeService: NgaThemeService) { }
 
   activateSearch(searchType: string) {
     this.themeService.appendLayoutClass(searchType);

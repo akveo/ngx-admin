@@ -3,138 +3,104 @@
  * Copyright Akveo. All Rights Reserved.
  * Licensed under the MIT License. See License.txt in the project root for license information.
  */
-@import 'search.component.theme';
 
-///specific for modal-move option styles////////////
-/deep/ nga-layout.modal-move .layout {
-  transition: transform 0.5s;
+/deep/ nga-layout.modal-move {
+  .layout {
+    transition: transform 0.5s;
+  }
 }
 
-/deep/ nga-layout.modal-move.with-search .layout {
-  transform: scale3d(0.8, 0.8, 1);
-  pointer-events: none;
+/deep/ nga-layout.modal-move.with-search {
+  .layout {
+    transform: scale3d(0.8, 0.8, 1);
+    pointer-events: none;
+  }
 }
 
 :host.modal-move {
 
-  .search__content {
-    display: block;
-  }
+	.search {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		position: fixed;
+		z-index: 1000;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100vh;
+	}
 
-  .search {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    background: $nga-search-bg;
-    position: fixed;
-    z-index: 1000;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-  }
+	button {
+		position: absolute;
+		top: 3rem;
+		right: 3rem;
+		font-size: 2.5rem;
+	}
 
-  .search__btn-close {
-    position: absolute;
-    top: 3rem;
-    right: 3rem;
-    font-size: 2.5rem;
-    color: $nga-close-icon-color;
-  }
+	form {
+		margin: 5rem 0;
+	}
 
-  .search__form {
-    margin: 5rem 0;
-  }
+	input {
+		font-size: 10vw;
+		width: 75%;
+	}
 
-  ///Styles for search content//////////////////////////////
-  .search__input {
-    font-size: 10vw;
-    width: 75%;
-    color: $nga-search-text-color;
-    border-bottom: 5px solid;
-  }
+	.search {
+		pointer-events: none;
+		opacity: 0;
+		transition: opacity 0.5s;
+	}
 
-  .search__info {
-    color: $nga-search-text-color;
-  }
+	button {
+		opacity: 0;
+		transition: opacity 0.5s;
+	}
 
-  .search__input::-webkit-input-placeholder {
-    /* WebKit, Blink, Edge */
-    color: $nga-search-placeholder-color;
-  }
+	form {
+		opacity: 0;
+		transform: scale3d(0.8, 0.8, 1);
+		transition: opacity 0.5s, transform 0.5s;
+	}
 
-  .search__input::-moz-placeholder {
-    opacity: 1;
-    /* Mozilla Firefox 19+ */
-    color: $nga-search-placeholder-color;
-  }
+	input {
+		transform: scale3d(0, 1, 1);
+		transform-origin: 0 50%;
+		transition: transform 0.3s;
+	}
 
-  .search__input:-ms-input-placeholder {
-    /* Internet Explorer 10-11 */
-    color: $nga-search-placeholder-color;
-  }
+	&.show {
+		.search {
+			pointer-events: auto;
+			opacity: 1;
+		}
 
-  .search__input::-webkit-search-cancel-button,
-  .search__input::-webkit-search-decoration {
-    -webkit-appearance: none;
-  }
+		button {
+			opacity: 1;
+		}
 
-  .search__input::-ms-clear {
-    display: none;
-  }
+		form {
+			opacity: 1;
+			transform: scale3d(1, 1, 1);
+		}
 
-  //transitions//////////////////
-  .search {
-    pointer-events: none;
-    opacity: 0;
-    transition: opacity 0.5s;
-  }
-  &.show .search {
-    pointer-events: auto;
-    opacity: 1;
-  }
+		input {
+			transform: scale3d(1, 1, 1);
+			transition-duration: 0.5s;
+		}
+	}
 
-  .search__btn-close {
-    opacity: 0;
-    transition: opacity 0.5s;
-  }
+	@media screen and (max-width: 40rem) {
+		button {
+			font-size: 1.25rem;
+		}
 
-  &.show .search .search__btn-close {
-    opacity: 1;
-  }
-
-  .search__form {
-    opacity: 0;
-    transform: scale3d(0.8, 0.8, 1);
-    transition: opacity 0.5s, transform 0.5s;
-  }
-
-  &.show .search .search__form {
-    opacity: 1;
-    transform: scale3d(1, 1, 1);
-  }
-
-  .search__input {
-    transform: scale3d(0, 1, 1);
-    transform-origin: 0% 50%;
-    transition: transform 0.3s;
-  }
-
-  &.show .search .search__input {
-    transform: scale3d(1, 1, 1);
-    transition-duration: 0.5s;
-  }
-
-  ////responsiveness//////////////////////////////////
-  @media screen and (max-width: 40em) {
-    .search__btn-close {
-      font-size: 1.25em;
-    }
-
-    .search__info {
-      text-align: left;
-    }
-  }
+		span {
+			text-align: left;
+		}
+	}
 }
+

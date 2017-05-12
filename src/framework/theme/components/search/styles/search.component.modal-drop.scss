@@ -4,10 +4,6 @@
  * Licensed under the MIT License. See License.txt in the project root for license information.
  */
 
-@import 'search.component.theme';
-
-
-///specific for modal-drop option styles
 /deep/ nga-layout.modal-drop .layout {
   position: relative;
   transition: transform 0.4s, opacity 0.4s;
@@ -22,10 +18,6 @@
 
 :host.modal-drop {
 
-  .search__content {
-    display: block;
-  }
-
   .search {
     display: flex;
     flex-direction: column;
@@ -38,6 +30,7 @@
     left: 0;
     width: 100%;
     height: 100vh;
+		background: none;
   }
 
   .search::before {
@@ -47,91 +40,53 @@
     right: 0;
     width: 100%;
     height: 100%;
-    background: $nga-search-bg;//#333b8d;
   }
 
-  ///Styles for modal content//////////////////////////////////////////////////////////////////
-  .search__btn-close {
+  button {
     font-size: 2.5rem;
     position: absolute;
     top: 3rem;
     right: 3rem;
     display: block;
-    color: $nga-close-icon-color;
   }
 
-  .search__form {
+  form {
     position: relative;
-    margin: 5em 0 2em;
+    margin: 5rem 0 2rem;
   }
 
-  .form__content {
+  .form-content {
     position: relative;
     z-index: 10;
     overflow: hidden;
   }
 
-  .form__content::after {
+  .form-content::after {
     content: '';
     position: absolute;
     top: 0;
     left: 20%;
     width: 60%;
     height: 105%;
-    background: $nga-search-text-color;//#eaba82;
   }
 
-  .search__input {
+  input {
     font-size: 6vw;
     width: 60%;
-    padding: 0.25em;
+    padding: 0.25rem;
     text-align: center;
-    color: $nga-search-text-color;
-    background: $nga-search-bg-secondary;
 }
 
-  .search__info {
+  span {
     position: relative;
     z-index: 9;
     display: block;
     width: 60%;
-    padding: 0.85em 0;
-    color: $nga-search-text-color;
+    padding: 0.85rem 0;
   }
 
-
-  .search__input::-webkit-input-placeholder {
-    /* WebKit, Blink, Edge */
-    color: $nga-search-placeholder-color;
-  }
-
-  .search__input::-moz-placeholder {
-    opacity: 1;
-    /* Mozilla Firefox 19+ */
-    color: $nga-search-placeholder-color;
-  }
-
-  .search__input:-ms-input-placeholder {
-    /* Internet Explorer 10-11 */
-    color: $nga-search-placeholder-color;
-  }
-
-  .search__input::-webkit-search-cancel-button,
-  .search__input::-webkit-search-decoration {
-    -webkit-appearance: none;
-  }
-
-  .search__input::-ms-clear {
-    display: none;
-  }
-
-  ////////////transitions////////////////////////////////////////////////////////////////
   .search {
     pointer-events: none;
-  }
-
-  &.show .search {
-    pointer-events: auto;
   }
 
   .search::before {
@@ -139,59 +94,65 @@
     transition: opacity 0.4s;
   }
 
-  &.show .search::before {
-    opacity: 1;
-  }
-
-  .search__btn-close {
+  button {
     opacity: 0;
     transition: opacity 0.4s;
   }
 
-  &.show .search .search__btn-close {
-    opacity: 1;
-  }
-
-  .form__content {
+  .form-content {
     transform: translate3d(0, -50px, 0);
     transition: transform 0.4s;
   }
 
-  &.show .form__content {
-    transform: translate3d(0, 0, 0);
-    transition: none;
-  }
-
-  .search__input {
-    opacity: 0;
-    transition: opacity 0.4s;
-  }
-
-  &.show .search__input {
-    opacity: 1;
-    transition: opacity 0s 0.4s;
-  }
-
-  .form__content::after {
-    opacity: 0;
-    transform-origin: 50% 0;
-  }
-
-  &.show .form__content::after {
-    animation: scaleUpDown 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-  }
-
-  .search__info {
+  span {
     opacity: 0;
     transform: translate3d(0, -50px, 0);
     transition: opacity 0.4s, transform 0.4s;
   }
 
-  &.show .search__info {
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
-    transition-delay: 0.4s;
-    transition-timing-function: ease-out;
+  input {
+    opacity: 0;
+    transition: opacity 0.4s;
+  }
+
+  .form-content::after {
+    opacity: 0;
+    transform-origin: 50% 0;
+  }
+
+  &.show {
+    .search {
+      pointer-events: auto;
+    }
+
+    .search::before {
+      opacity: 1;
+    }
+
+    button {
+      opacity: 1;
+    }
+
+    .form-content {
+      transform: translate3d(0, 0, 0);
+      transition: none;
+    }
+
+    input {
+      opacity: 1;
+      transition: opacity 0s 0.4s;
+    }
+
+    .form-content::after {
+      animation: scaleUpDown 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    }
+
+    span {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+      transition-delay: 0.4s;
+      transition-timing-function: ease-out;
+    }
   }
 
   @keyframes scaleUpDown {
@@ -216,17 +177,16 @@
     }
   }
 
-  //////responsivenes////////////////////////////////////////////////////////////////
-  @media screen and (max-width: 40em) {
-    .btn--search-close {
-      font-size: 1em;
+  @media screen and (max-width: 40rem) {
+    button {
+      font-size: 1rem;
     }
 
-    .search__form {
-      margin: 2em 0;
+    form {
+      margin: 2rem 0;
     }
 
-    .search__input {
+    input {
       width: 100%;
       left: 0;
     }

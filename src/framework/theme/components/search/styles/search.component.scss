@@ -4,18 +4,15 @@
  * Licensed under the MIT License. See License.txt in the project root for license information.
  */
 
-@import 'search.component.theme';
-
   .search-wrap {
     margin: 5px;
   }
 
-  .search__btn-open {
+  button {
     font-size: 2.5rem;
     width: 1.5rem;
     height: 1.5rem;
     margin: 0 auto;
-    color: $nga-search-icon-color;
     padding: 0;
     cursor: pointer;
     border: none;

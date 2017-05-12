@@ -12,6 +12,7 @@
 @import '../components/menu/menu.component.theme';
 @import '../components/user/user.component.theme';
 @import '../components/actions/actions.component.theme';
+@import '../components/search/search.component.theme';
 
 // Create a theme
 @mixin nga-theme($theme-name) {
@@ -26,6 +27,7 @@
     @include nga-menu-theme($theme-name);
     @include nga-user-theme($theme-name);
     @include nga-actions-theme($theme-name);
+    @include nga-search-theme($theme-name);
 
     @content;
   }

@@ -18,7 +18,8 @@ import { NgaThemeService } from '../../services/theme.service';
 @Component({
   selector: 'nga-search-field',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  styleUrls: ['styles/search.component.modal-zoomin.scss',
+  styleUrls: [
+    'styles/search.component.modal-zoomin.scss',
     'styles/search.component.layout-rotate.scss',
     'styles/search.component.modal-move.scss',
     'styles/search.component.curtain.scss',
@@ -27,19 +28,18 @@ import { NgaThemeService } from '../../services/theme.service';
     'styles/search.component.modal-half.scss',
   ],
   template: `
-<div class="search__content">
+<div class="wrapper">
   <div class="search" (keyup)="($event.keyCode == '27') ? onSearchClose() : null">
   
-    <button class="search__btn-close" (click)="onSearchClose()">
-      <i class="ion-close-round icon"></i>
+    <button id="search-close-btn" (click)="onSearchClose()">
+      <i class="ion-ios-close-outline icon"></i>
     </button>
-    <div class="form__wrapper">
-      <form class="search__form" (keyup.enter)="onSearchSubmit(searchInput.value)">
-        <div class="form__content">
-          <input #searchInput class="search__input" placeholder="{{ placeholder }}"
-            autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+    <div class="form-wrapper">
+      <form class="form" (keyup.enter)="onSearchSubmit(searchInput.value)">
+        <div class="form-content">
+          <input id="search-input" #searchInput placeholder="{{ placeholder }}"/>
         </div>
-        <span class="search__info">Hit enter to search or ESC to close</span>
+        <span class="info">Hit enter to search</span>
       </form>
     </div>
     
@@ -51,7 +51,6 @@ export class NgaSearchFieldComponent {
   static readonly TYPE_MODAL_ZOOMIN = 'modal-zoomin';
   static readonly TYPE_ROTATE_LAYOUT = 'rotate-layout';
   static readonly TYPE_MODAL_MOVE = 'modal-move';
-  static readonly TYPE_FIELD_ZOOMIN = 'field-zoomin';
   static readonly TYPE_CURTAIN = 'curtain';
   static readonly TYPE_COLUMN_CURTAIN = 'column-curtain';
   static readonly TYPE_MODAL_DROP = 'modal-drop';
@@ -80,11 +79,6 @@ export class NgaSearchFieldComponent {
   @HostBinding('class.modal-move')
   get modalMove() {
     return this.searchType === NgaSearchFieldComponent.TYPE_MODAL_MOVE;
-  }
-
-  @HostBinding('class.field-zoomin')
-  get fieldZoomin() {
-    return this.searchType === NgaSearchFieldComponent.TYPE_FIELD_ZOOMIN;
   }
 
   @HostBinding('class.curtain')
@@ -129,8 +123,8 @@ export class NgaSearchFieldComponent {
   styleUrls: ['styles/search.component.scss'],
   template: `
     <div class="search-wrap" [class.show]="showSearch">
-      <button class="search__btn-open" (click)="onOpenSearch()">
-        <i class="ion-android-search icon"></i>
+      <button id="search-open-btn" (click)="onOpenSearch()">
+        <i class="ion-ios-search icon"></i>
       </button>
     </div>
     `,

@@ -4,14 +4,7 @@
 * Licensed under the MIT License. See License.txt in the project root for license information.
 */
 
-@import 'search.component.theme';
-
-///specific for curtain option styles///////////////////////////////
 :host.curtain {
-
-  .search__content {
-    display: block;
-  }
 
   .search {
     position: fixed;
@@ -21,12 +14,10 @@
     overflow: hidden;
     height: 100vh;
     width: 100%;
-    background: $nga-search-bg;
     padding: 3rem;
   }
 
-
-  .search__btn-close {
+  button {
     font-size: 2.5rem;
     position: absolute;
     top: 3rem;
@@ -40,63 +31,22 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: $nga-search-bg;//TODO: try with white
   }
 
-  ///Styles for search content/////////////////////////////////////
-  .search__form {
+  form {
     width: 50%;
   }
 
-  .search__input {
+  input {
     width: 100%;
     font-size: 6vw;
-    color: $nga-search-text-color;
-    border-bottom: 2px solid;
   }
 
-
-  .search__info {
-    color: $nga-search-text-color;
-  }
-
-  .search__input::-webkit-input-placeholder {
-    /* WebKit, Blink, Edge */
-    color: $nga-search-placeholder-color;
-  }
-
-  .search__input::-moz-placeholder {
-    opacity: 1;
-    /* Mozilla Firefox 19+ */
-    color: $nga-search-placeholder-color;
-  }
-
-  .search__input:-ms-input-placeholder {
-    /* Internet Explorer 10-11 */
-    color: $nga-search-placeholder-color;
-  }
-
-  .search__input::-webkit-search-cancel-button,
-  .search__input::-webkit-search-decoration {
-    -webkit-appearance: none;
-  }
-
-  .search__input::-ms-clear {
-    display: none;
-  }
-
-  //transitions/////////////////////////////
   .search {
     pointer-events: none;
     transition: transform 0.3s;
     transition-delay: 0.4s;
     transition-timing-function: ease-out;
-  }
-  &.show .search {
-    width: 100%;
-    pointer-events: auto;
-    transform: translate3d(-100%, 0, 0);
-    transition-delay: 0s;
   }
 
   .search::after {
@@ -104,41 +54,49 @@
     transition-timing-function: ease-out;
   }
 
-  &.show .search::after {
-    transform: translate3d(100%, 0, 0);
-    transition-delay: 0.4s;
-}
-
-  .search__btn-close {
+  button {
     transition: opacity 0.1s;
     transition-delay: 0.3s;
   }
 
-  &.show .search .search__btn-close {
-    opacity: 1;
-    transform: scale3d(1, 1, 1);
-  }
-
-  .search__form {
+  form {
     opacity: 0;
     transform: scale3d(0.8, 0.8, 1);
     transition: opacity 0.5s, transform 0.5s;
   }
 
-  &.show .search .search__form {
-    opacity: 1;
-    transform: scale3d(1, 1, 1);
+  &.show {
+    .search {
+      width: 100%;
+      pointer-events: auto;
+      transform: translate3d(-100%, 0, 0);
+      transition-delay: 0s;
+    }
+
+    .search::after {
+      transform: translate3d(100%, 0, 0);
+      transition-delay: 0.4s;
+    }
+
+    .search button {
+      opacity: 1;
+      transform: scale3d(1, 1, 1);
+    }
+
+    form {
+      opacity: 1;
+      transform: scale3d(1, 1, 1);
+    }
   }
 
-
   @media screen and (max-width: 40em) {
-    .search__info {
+    span {
       width: 90%;
     }
     .btn--search-close {
       font-size: 1.25rem;
     }
-    .search__input {
+    input {
       font-size: 2em;
       width: 90%;
     }

@@ -186,3 +186,11 @@ $nga-actions-size-large: 4rem !default;
 $nga-actions-color: $nga-foreground !default;
 $nga-actions-color-inverse: $nga-foreground-inverse !default;
 
+$nga-btn-search-open-color: $nga-color-secondary;
+$nga-btn-close-color:	$nga-color-secondary;
+$nga-search-bg: linear-gradient(to right, #171749, #413789) !default;//TODO: get rid of this hardcode, $nga-background
+$nga-search-bg-secondary: $nga-color-default;
+$nga-search-text-color: $nga-color-inverse !default;
+$nga-search-info-color: $nga-color-secondary;
+$nga-search-dash-color: $nga-color-secondary;
+$nga-search-placeholder-color: $nga-color-secondary;
