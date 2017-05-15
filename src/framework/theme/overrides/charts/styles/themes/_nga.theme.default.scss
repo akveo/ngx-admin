@@ -5,6 +5,7 @@
  */
 
 @import '../../../../styles/themes/nga.theme.default';
-@import '../components';
+@import '../component';
 
-$nga-banner-text-background: rgba(0, 0, 0, 0.75);
+$nga-d3-foreground: $nga-foreground !default;
+$nga-d3-legend-background: #e9e9e9;

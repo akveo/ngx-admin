@@ -4,13 +4,13 @@
  * Licensed under the MIT License. See License.txt in the project root for license information.
  */
 
-@import './overrides/leaflet';
+@import './overrides/d3';
 
 // Create a theme
-@mixin nga-maps($theme-name) {
+@mixin nga-charts($theme-name) {
 
   .theme-#{$theme-name} {
-    @include nga-m-leaflet-theme($theme-name);
+    @include nga-c-d3-theme($theme-name);
 
     @content;
   }

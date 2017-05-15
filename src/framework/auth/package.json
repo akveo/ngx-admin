@@ -7,8 +7,7 @@
   "typings": "./index.d.ts",
   "author": "akveo",
   "license": "MIT",
-  "scripts": {
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/akveo/ng2-admin.git"
@@ -32,7 +31,9 @@
     "@angular/core": "^4.0.0",
     "@angular/router": "^4.0.0",
     "@angular/forms": "^4.0.0",
-    "@angular/http": "^4.0.0",
-    "bootstrap": "^4.0.0-alpha.6"
+    "@angular/http": "^4.0.0"
+  },
+  "dependencies": {
+    "bootstrap": "4.0.0-alpha.6"
   }
 }
