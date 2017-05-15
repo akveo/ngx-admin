@@ -1,17 +1,19 @@
-import { NgModule }      from '@angular/core';
-import { CommonModule }  from '@angular/common';
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { NgaModule } from '../../theme/nga.module';
 import { SlimLoadingBarModule } from 'ng2-slim-loading-bar';
+import { ToasterModule } from 'angular2-toaster';
 import { NgbDropdownModule, NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 
-import { routing }       from './ui.routing';
+import { routing } from './ui.routing';
 import { Ui } from './ui.component';
 import { Buttons } from './components/buttons/buttons.component';
 import { Grid } from './components/grid/grid.component';
 import { Icons } from './components/icons/icons.component';
 import { Modals } from './components/modals/modals.component';
 import { SlimComponent } from './components/slim/slim.component';
+import { ToastComponent } from './components/toast/toast.component';
 import { Typography } from './components/typography/typography.component';
 
 import { FlatButtons } from './components/buttons/components/flatButtons';
@@ -34,7 +36,8 @@ import { DefaultModal } from './components/modals/default-modal/default-modal.co
     NgbDropdownModule,
     NgbModalModule,
     SlimLoadingBarModule.forRoot(),
-    routing
+    ToasterModule,
+    routing,
   ],
   declarations: [
     Buttons,
@@ -42,6 +45,7 @@ import { DefaultModal } from './components/modals/default-modal/default-modal.co
     Icons,
     Modals,
     SlimComponent,
+    ToastComponent,
     Typography,
     Ui,
     FlatButtons,
@@ -52,14 +56,14 @@ import { DefaultModal } from './components/modals/default-modal/default-modal.co
     LargeButtons,
     DropdownButtons,
     GroupButtons,
-    DefaultModal
+    DefaultModal,
   ],
   entryComponents: [
-    DefaultModal
+    DefaultModal,
   ],
   providers: [
-    IconsService
-  ]
+    IconsService,
+  ],
 })
 export class UiModule {
 }

@@ -1,4 +1,4 @@
-import { Routes, RouterModule }  from '@angular/router';
+import { Routes, RouterModule } from '@angular/router';
 
 import { Ui } from './ui.component';
 import { Buttons } from './components/buttons/buttons.component';
@@ -7,6 +7,7 @@ import { Icons } from './components/icons/icons.component';
 import { Modals } from './components/modals/modals.component';
 import { Typography } from './components/typography/typography.component';
 import { SlimComponent } from './components/slim/slim.component';
+import { ToastComponent } from './components/toast/toast.component';
 
 // noinspection TypeScriptValidateTypes
 const routes: Routes = [
@@ -20,8 +21,9 @@ const routes: Routes = [
       { path: 'typography', component: Typography },
       { path: 'modals', component: Modals },
       { path: 'slim', component: SlimComponent },
-    ]
-  }
+      { path: 'toast', component: ToastComponent },
+    ],
+  },
 ];
 
 export const routing = RouterModule.forChild(routes);

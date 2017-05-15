@@ -19,6 +19,7 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
+        "../node_modules/angular2-toaster/toaster.css",
         "../node_modules/roboto-fontface/css/roboto/sass/roboto-fontface.scss",
         "../node_modules/normalize.css/normalize.css",
         "../node_modules/font-awesome/scss/font-awesome.scss",

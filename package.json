@@ -56,6 +56,7 @@
     "amcharts3": "github:amcharts/amcharts3",
     "ammap3": "github:amcharts/ammap3",
     "angular2-datatable": "0.6.0",
+    "angular2-toaster": "^3.0.1",
     "animate.css": "3.5.2",
     "bootstrap": "4.0.0-alpha.6",
     "chart.js": "1.1.1",

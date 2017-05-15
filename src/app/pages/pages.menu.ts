@@ -133,6 +133,14 @@ export const PAGES_MENU = [
             }
           },
           {
+            path: 'toast',
+            data: {
+              menu: {
+                title: 'general.menu.toast',
+              },
+            },
+          },
+          {
             path: 'grid',
             data: {
               menu: {
