@@ -24,15 +24,38 @@
     border-left: 0;
     background: transparent;
     border-radius: 0;
-
     line-height: 1;
     display: inline-block;
     box-sizing: border-box;
     padding: 0.05rem 0;
-
     -webkit-appearance: none;
+
     &:focus {
       outline: none;
+    }
+
+    &::-webkit-input-placeholder {
+      /* WebKit, Blink, Edge */
+      opacity: 0.3;
+    }
+
+    &::-moz-placeholder {
+      /* Mozilla Firefox 19+ */
+      opacity: 0.3;
+    }
+
+    &:-ms-input-placeholder {
+      /* Internet Explorer 10-11 */
+      opacity: 0.3;
+    }
+
+    &::-webkit-search-cancel-button,
+    &::-webkit-search-decoration {
+      -webkit-appearance: none;
+    }
+
+    &::-ms-clear {
+      display: none;
     }
   }
 
@@ -44,30 +67,6 @@
     margin: 0 auto;
     padding: 0.85rem 0;
     text-align: right;
-  }
-
-  input::-webkit-input-placeholder {
-    /* WebKit, Blink, Edge */
-    opacity: 0.3;
-  }
-
-  input::-moz-placeholder {
-    /* Mozilla Firefox 19+ */
-    opacity: 0.3;
-  }
-
-  input:-ms-input-placeholder {
-    /* Internet Explorer 10-11 */
-    opacity: 0.3;
-  }
-
-  input::-webkit-search-cancel-button,
-  input::-webkit-search-decoration {
-    -webkit-appearance: none;
-  }
-
-  input::-ms-clear {
-    display: none;
   }
 }
 
@@ -89,106 +88,87 @@
     left: 0;
     width: 100%;
     height: 100vh;
-  }
-
-  .search::before,
-  .search::after {
-    content: '';
-    position: absolute;
-    width: calc(100% + 15px);
-    height: calc(100% + 15px);
-    pointer-events: none;
-  }
-
-  .search::before {
-    top: 0;
-    left: 0;
-    border-right-width: 0;
-    border-bottom-width: 0;
-  }
-
-  .search::after {
-    right: 0;
-    bottom: 0;
-    border-top-width: 0;
-    border-left-width: 0;
-  }
-
-  button {
-    position: absolute;
-    top: 3rem;
-    right: 3rem;
-    font-size: 2.5rem;
-  }
-
-  input {
-    font-size: 10vw;
-    width: 75%;
-  }
-
-  .search {
     pointer-events: none;
     opacity: 0;
     transition: opacity 0.5s;
-  }
 
-  .search::before {
-    transform: translate3d(-15px, -15px, 0);
-  }
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      width: calc(100% + 15px);
+      height: calc(100% + 15px);
+      pointer-events: none;
+    }
 
-  .search::after {
-    transform: translate3d(15px, 15px, 0);
-  }
+    &::before {
+      top: 0;
+      left: 0;
+      border-right-width: 0;
+      border-bottom-width: 0;
+      transform: translate3d(-15px, -15px, 0);
+    }
 
-  button {
-    opacity: 0;
-    transform: scale3d(0.8, 0.8, 1);
-    transition: opacity 0.5s, transform 0.5s;
-  }
+    &::after {
+      right: 0;
+      bottom: 0;
+      border-top-width: 0;
+      border-left-width: 0;
+      transform: translate3d(15px, 15px, 0);
+    }
 
- form {
-    opacity: 0;
-    transform: scale3d(0.8, 0.8, 1);
-    transition: opacity 0.5s, transform 0.5s;
-  }
+		button {
+			position: absolute;
+			top: 3rem;
+			right: 3rem;
+			font-size: 2.5rem;
+		}
+
+		input {
+			font-size: 10vw;
+			width: 75%;
+		}
+
+		button {
+			opacity: 0;
+			transform: scale3d(0.8, 0.8, 1);
+			transition: opacity 0.5s, transform 0.5s;
+		}
+
+		form {
+			opacity: 0;
+			transform: scale3d(0.8, 0.8, 1);
+			transition: opacity 0.5s, transform 0.5s;
+		}
+	}
+
 
   &.show {
     .search {
       pointer-events: auto;
       opacity: 1;
-    }
 
-    .search::before,
-    .search::after {
-      transform: translate3d(0, 0, 0);
-    }
+      &::before,
+      &::after {
+        transform: translate3d(0, 0, 0);
+        transition: transform 0.5s;
+      }
 
-    //borders
-    .search::before,
-    .search::after {
-      transition: transform 0.5s;
-    }
+      button {
+        opacity: 1;
+        transform: scale3d(1, 1, 1);
+      }
 
-    button {
-      opacity: 1;
-      transform: scale3d(1, 1, 1);
-    }
-
-   form {
-      opacity: 1;
-      transform: scale3d(1, 1, 1);
+      form {
+        opacity: 1;
+        transform: scale3d(1, 1, 1);
+      }
     }
   }
 
   @media screen and (max-width: 40rem) {
    	form {
       margin: 5rem 0 1rem;
-    }
-
-    button {
-      font-size: 1.25rem;
-      top: 1.5rem;
-      right: 1.5rem;
     }
 
     span {

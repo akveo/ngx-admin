@@ -3,7 +3,9 @@
  * Copyright Akveo. All Rights Reserved.
  * Licensed under the MIT License. See License.txt in the project root for license information.
  */
+
 import { Component, OnInit } from '@angular/core';
+
 import { NgaSuperSearchService } from '../../framework/theme';
 
 @Component({
@@ -68,8 +70,8 @@ export class NgaSearchTestComponent implements OnInit {
   constructor(private searchService: NgaSuperSearchService) {
   }
 
-  ngOnInit(): void {
-    this.searchService.onSearchSubmit().subscribe(term => {
+  ngOnInit() {
+    this.searchService.searchTerms().subscribe(term => {
       console.info(term);
     });
   }

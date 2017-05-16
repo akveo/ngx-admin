@@ -10,34 +10,34 @@
 
     .search {
       background: $nga-search-bg;
-    }
 
-    button {
-      color: $nga-btn-close-color;
-    }
+      button {
+        color: $nga-btn-close-color;
+      }
 
-    input {
-      color: $nga-search-text-color;
-      border-bottom: 4px solid $nga-search-dash-color;
-    }
+      span {
+        color: $nga-search-info-color;
+      }
 
-    span {
-      color: $nga-search-info-color;
-    }
+      input {
+        color: $nga-search-text-color;
+        border-bottom: 4px solid $nga-search-dash-color;
 
-   input::-webkit-input-placeholder {
-      /* WebKit, Blink, Edge */
-      color: $nga-search-placeholder-color;
-    }
+        &::-webkit-input-placeholder {
+          /* WebKit, Blink, Edge */
+          color: $nga-search-placeholder-color;
+        }
 
-   input::-moz-placeholder {
-      /* Mozilla Firefox 19+ */
-      color: $nga-search-placeholder-color;
-    }
+        &::-moz-placeholder {
+          /* Mozilla Firefox 19+ */
+          color: $nga-search-placeholder-color;
+        }
 
-   input:-ms-input-placeholder {
-      /* Internet Explorer 10-11 */
-      color: $nga-search-placeholder-color;
+        &:-ms-input-placeholder {
+          /* Internet Explorer 10-11 */
+          color: $nga-search-placeholder-color;
+        }
+      }
     }
 
     &.rotate-layout {
@@ -84,10 +84,26 @@
     }
 
 		&.column-curtain {
-			.wrapper::before {
-				background: $nga-search-bg;
-			}
+			.wrapper {
+        &::before {
+          background: $nga-search-bg;
+        }
+        &::after {
+          background: transparent;
+        }
+      }
+      &.show {
+        .wrapper::after {
+          background: $nga-search-bg-secondary;
+        }
+      }
 		}
+
+    &.simple-search {
+      input {
+        border-bottom: 1px solid $nga-search-dash-color;
+      }
+    }
   }
 
   nga-search {

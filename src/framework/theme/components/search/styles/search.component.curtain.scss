@@ -15,54 +15,42 @@
     height: 100vh;
     width: 100%;
     padding: 3rem;
-  }
-
-  button {
-    font-size: 2.5rem;
-    position: absolute;
-    top: 3rem;
-    right: 3rem;
-  }
-
-  .search::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-  }
-
-  form {
-    width: 50%;
-  }
-
-  input {
-    width: 100%;
-    font-size: 6vw;
-  }
-
-  .search {
     pointer-events: none;
     transition: transform 0.3s;
     transition-delay: 0.4s;
     transition-timing-function: ease-out;
-  }
 
-  .search::after {
-    transition: transform 0.3s;
-    transition-timing-function: ease-out;
-  }
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.3s;
+      transition-timing-function: ease-out;
+    }
 
-  button {
-    transition: opacity 0.1s;
-    transition-delay: 0.3s;
-  }
+    button {
+      font-size: 2.5rem;
+      position: absolute;
+      top: 3rem;
+      right: 3rem;
+      transition: opacity 0.1s;
+      transition-delay: 0.3s;
+    }
 
-  form {
-    opacity: 0;
-    transform: scale3d(0.8, 0.8, 1);
-    transition: opacity 0.5s, transform 0.5s;
+    form {
+      width: 50%;
+      opacity: 0;
+      transform: scale3d(0.8, 0.8, 1);
+      transition: opacity 0.5s, transform 0.5s;
+    }
+
+    input {
+      width: 100%;
+      font-size: 6vw;
+    }
   }
 
   &.show {
@@ -71,21 +59,21 @@
       pointer-events: auto;
       transform: translate3d(-100%, 0, 0);
       transition-delay: 0s;
-    }
 
-    .search::after {
-      transform: translate3d(100%, 0, 0);
-      transition-delay: 0.4s;
-    }
+      &::after {
+        transform: translate3d(100%, 0, 0);
+        transition-delay: 0.4s;
+      }
 
-    .search button {
-      opacity: 1;
-      transform: scale3d(1, 1, 1);
-    }
+      button {
+        opacity: 1;
+        transform: scale3d(1, 1, 1);
+      }
 
-    form {
-      opacity: 1;
-      transform: scale3d(1, 1, 1);
+      form {
+        opacity: 1;
+        transform: scale3d(1, 1, 1);
+      }
     }
   }
 
@@ -93,9 +81,7 @@
     span {
       width: 90%;
     }
-    .btn--search-close {
-      font-size: 1.25rem;
-    }
+
     input {
       font-size: 2em;
       width: 90%;

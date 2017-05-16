@@ -18,6 +18,7 @@ import {
 } from '@angular/core';
 import { Subscription } from 'rxjs/Subscription';
 import { Subject } from 'rxjs/Subject';
+
 import { convertToBoolProperty } from '../helpers';
 import { NgaThemeService } from '../../services/theme.service';
 
@@ -138,9 +139,9 @@ export class NgaLayoutComponent implements OnDestroy, AfterViewInit {
   protected clearSubscription: Subscription;
 
   constructor(protected themeService: NgaThemeService,
-    protected componentFactoryResolver: ComponentFactoryResolver,
-    protected elementRef: ElementRef,
-    protected renderer: Renderer2) {
+              protected componentFactoryResolver: ComponentFactoryResolver,
+              protected elementRef: ElementRef,
+              protected renderer: Renderer2) {
     this.themeSubscription = this.themeService.onThemeChange().subscribe((theme) => {
 
       if (theme.previous) {
@@ -149,13 +150,13 @@ export class NgaLayoutComponent implements OnDestroy, AfterViewInit {
       this.renderer.addClass(this.elementRef.nativeElement, 'theme-' + theme.name);
     });
 
-      this.appendClassSubscription = this.themeService.onAppendLayoutClass().subscribe((className) => {
-        this.renderer.addClass(this.elementRef.nativeElement, className);
-      });
+    this.appendClassSubscription = this.themeService.onAppendLayoutClass().subscribe((className) => {
+      this.renderer.addClass(this.elementRef.nativeElement, className);
+    });
 
-      this.removeClassSubscription = this.themeService.onRemoveLayoutClass().subscribe((className) => {
-        this.renderer.removeClass(this.elementRef.nativeElement, className);
-      });
+    this.removeClassSubscription = this.themeService.onRemoveLayoutClass().subscribe((className) => {
+      this.renderer.removeClass(this.elementRef.nativeElement, className);
+    });
   }
 
   ngAfterViewInit(): void {

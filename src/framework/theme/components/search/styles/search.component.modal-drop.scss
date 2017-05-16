@@ -30,128 +30,109 @@
     left: 0;
     width: 100%;
     height: 100vh;
-		background: none;
-  }
-
-  .search::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-  }
-
-  button {
-    font-size: 2.5rem;
-    position: absolute;
-    top: 3rem;
-    right: 3rem;
-    display: block;
-  }
-
-  form {
-    position: relative;
-    margin: 5rem 0 2rem;
-  }
-
-  .form-content {
-    position: relative;
-    z-index: 10;
-    overflow: hidden;
-  }
-
-  .form-content::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 20%;
-    width: 60%;
-    height: 105%;
-  }
-
-  input {
-    font-size: 6vw;
-    width: 60%;
-    padding: 0.25rem;
-    text-align: center;
-}
-
-  span {
-    position: relative;
-    z-index: 9;
-    display: block;
-    width: 60%;
-    padding: 0.85rem 0;
-  }
-
-  .search {
+    background: none;
     pointer-events: none;
-  }
 
-  .search::before {
-    opacity: 0;
-    transition: opacity 0.4s;
-  }
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: opacity 0.4s;
+    }
 
-  button {
-    opacity: 0;
-    transition: opacity 0.4s;
-  }
+    button {
+      font-size: 2.5rem;
+      position: absolute;
+      top: 3rem;
+      right: 3rem;
+      display: block;
+      opacity: 0;
+      transition: opacity 0.4s;
+    }
 
-  .form-content {
-    transform: translate3d(0, -50px, 0);
-    transition: transform 0.4s;
-  }
+    form {
+      position: relative;
+      margin: 5rem 0 2rem;
+    }
 
-  span {
-    opacity: 0;
-    transform: translate3d(0, -50px, 0);
-    transition: opacity 0.4s, transform 0.4s;
-  }
+    input {
+      font-size: 6vw;
+      width: 60%;
+      padding: 0.25rem;
+      text-align: center;
+      opacity: 0;
+      transition: opacity 0.4s;
+    }
 
-  input {
-    opacity: 0;
-    transition: opacity 0.4s;
-  }
+    span {
+      position: relative;
+      z-index: 9;
+      display: block;
+      width: 60%;
+      padding: 0.85rem 0;
+      opacity: 0;
+      transform: translate3d(0, -50px, 0);
+      transition: opacity 0.4s, transform 0.4s;
+    }
 
-  .form-content::after {
-    opacity: 0;
-    transform-origin: 50% 0;
+    .form-content {
+      position: relative;
+      z-index: 10;
+      overflow: hidden;
+      transform: translate3d(0, -50px, 0);
+      transition: transform 0.4s;
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 20%;
+        width: 60%;
+        height: 105%;
+        opacity: 0;
+        transform-origin: 50% 0;
+      }
+    }
   }
 
   &.show {
     .search {
       pointer-events: auto;
-    }
 
-    .search::before {
-      opacity: 1;
-    }
+      &::before {
+        opacity: 1;
+      }
 
-    button {
-      opacity: 1;
-    }
+      button {
+        opacity: 1;
+      }
 
-    .form-content {
-      transform: translate3d(0, 0, 0);
-      transition: none;
-    }
+      .form-content {
+        transform: translate3d(0, 0, 0);
+        transition: none;
 
-    input {
-      opacity: 1;
-      transition: opacity 0s 0.4s;
-    }
+        &::after {
+          animation: scaleUpDown 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+      }
 
-    .form-content::after {
-      animation: scaleUpDown 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-    }
+      input {
+        opacity: 1;
+        transition: opacity 0s 0.4s;
+      }
 
-    span {
-      opacity: 1;
-      transform: translate3d(0, 0, 0);
-      transition-delay: 0.4s;
-      transition-timing-function: ease-out;
+
+
+      span {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+        transition-delay: 0.4s;
+        transition-timing-function: ease-out;
+      }
     }
   }
 
@@ -178,10 +159,6 @@
   }
 
   @media screen and (max-width: 40rem) {
-    button {
-      font-size: 1rem;
-    }
-
     form {
       margin: 2rem 0;
     }

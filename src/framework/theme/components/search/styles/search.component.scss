@@ -4,25 +4,45 @@
  * Licensed under the MIT License. See License.txt in the project root for license information.
  */
 
-  .search-wrap {
-    margin: 5px;
-  }
 
-  button {
-    font-size: 2.5rem;
-    width: 1.5rem;
-    height: 1.5rem;
-    margin: 0 auto;
-    padding: 0;
-    cursor: pointer;
-    border: none;
-    background: none;
+:host {
+	.search-wrap {
+		margin: 5px;
+	}
 
-    &:focus {
-      box-shadow: none;
-      outline: none;
-    }
-  }
+	button {
+		font-size: 2.5rem;
+
+		margin: 0 auto;
+		padding: 0;
+		cursor: pointer;
+		border: none;
+		background: none;
+
+		&:focus {
+			box-shadow: none;
+			outline: none;
+		}
+	}
+
+	&.simple-search {
+		.search-wrap {
+			display: flex;
+			transition: width 0.3s ease;
+			width: 2rem;
+			overflow: hidden;
+
+			&.show {
+				align-items: center;
+				width: 18rem;
+			}
+		}
+	}
+}
+
+
+
+
 
 
 
