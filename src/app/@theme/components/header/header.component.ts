@@ -50,7 +50,7 @@ export class HeaderComponent {
   }
 
   switchTheme() {
-    if (this.themeService.currentTheme == 'light') {
+    if (this.themeService.currentTheme === 'light') {
       this.themeService.changeTheme('cosmic');
     } else {
       this.themeService.changeTheme('light');
