@@ -30,19 +30,21 @@ export class NgaThemeService {
   }
 
   changeTheme(name?: string): void {
-    this.themeChanges$.next({ name: name, previous: this.currentTheme });
+    this.themeChanges$.next({ name, previous: this.currentTheme });
     this.currentTheme = name;
   }
 
   appendToLayoutTop<T>(component: Type<T>): Observable<any> {
     const observable = new BehaviorSubject(null);
-    this.appendToLayoutTop$.next({ component: component, listener: observable });
+    this.appendToLayoutTop$.next({ component, listener: observable });
+
     return observable.asObservable();
   }
 
   clearLayoutTop(): Observable<any> {
     const observable = new BehaviorSubject(null);
     this.createLayoutTop$.next({ listener: observable });
+
     return observable.asObservable();
   }
 

@@ -177,6 +177,7 @@ export class NgaUserComponent {
 
   itemClick(event: any, item: NgaUserMenuItem): boolean {
     this.menuClick.emit(item);
+
     return false;
   }
 
@@ -197,8 +198,10 @@ export class NgaUserComponent {
   getInitials(): string {
     if (this.name) {
       const names = this.name.split(' ');
+
       return names.map(n => n.charAt(0)).splice(0, 2).join('').toUpperCase();
     }
+
     return '';
   }
 

@@ -186,8 +186,8 @@ export class NgaCardTestComponent {
     this.statuses.forEach(status => {
       this.sizes.forEach(size => {
         result.push({
-          size: size,
-          status: status,
+          size,
+          status,
         });
       });
     });

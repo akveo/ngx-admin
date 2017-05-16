@@ -18,10 +18,7 @@ import { NgaMenuItem } from '../../framework/theme/components/menu/menu.options'
   `,
 })
 
-export class NgaMenuItem1Component implements OnInit {
-  constructor() { }
-
-  ngOnInit() { }
+export class NgaMenuItem1Component {
 }
 
 @Component({
@@ -31,10 +28,7 @@ export class NgaMenuItem1Component implements OnInit {
   `,
 })
 
-export class NgaMenuItem2Component implements OnInit {
-  constructor() { }
-
-  ngOnInit() { }
+export class NgaMenuItem2Component {
 }
 
 @Component({
@@ -43,10 +37,7 @@ export class NgaMenuItem2Component implements OnInit {
     <router-outlet></router-outlet>
   `,
 })
-export class NgaMenuItem3Component implements OnInit {
-  constructor() { }
-
-  ngOnInit() { }
+export class NgaMenuItem3Component {
 }
 
 @Component({
@@ -55,10 +46,7 @@ export class NgaMenuItem3Component implements OnInit {
     <h1>Menu Item #3.1</h1>
   `,
 })
-export class NgaMenuItem31Component implements OnInit {
-  constructor() { }
-
-  ngOnInit() { }
+export class NgaMenuItem31Component {
 }
 
 @Component({
@@ -67,10 +55,7 @@ export class NgaMenuItem31Component implements OnInit {
     <h1>Menu Item #3.2</h1>
   `,
 })
-export class NgaMenuItem32Component implements OnInit {
-  constructor() { }
-
-  ngOnInit() { }
+export class NgaMenuItem32Component {
 }
 
 @Component({
@@ -79,10 +64,7 @@ export class NgaMenuItem32Component implements OnInit {
     <router-outlet></router-outlet>
   `,
 })
-export class NgaMenuItem33Component implements OnInit {
-  constructor() { }
-
-  ngOnInit() { }
+export class NgaMenuItem33Component {
 }
 
 @Component({
@@ -91,10 +73,7 @@ export class NgaMenuItem33Component implements OnInit {
     <h1>Menu Item #3.3.1</h1>
   `,
 })
-export class NgaMenuItem331Component implements OnInit {
-  constructor() { }
-
-  ngOnInit() { }
+export class NgaMenuItem331Component {
 }
 
 @Component({
@@ -103,10 +82,7 @@ export class NgaMenuItem331Component implements OnInit {
     <h1>Menu Item #3.3.2</h1>
   `,
 })
-export class NgaMenuItem332Component implements OnInit {
-  constructor() { }
-
-  ngOnInit() { }
+export class NgaMenuItem332Component {
 }
 
 @Component({
@@ -115,10 +91,7 @@ export class NgaMenuItem332Component implements OnInit {
     <h1>Menu Item #4</h1>
   `,
 })
-export class NgaMenuItem4Component implements OnInit {
-  constructor() { }
-
-  ngOnInit() { }
+export class NgaMenuItem4Component {
 }
 
 @Component({

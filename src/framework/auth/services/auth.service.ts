@@ -192,6 +192,7 @@ export class NgaAuthService {
     if (!this.providers[provider]) {
       throw new TypeError(`Nga auth provider '${provider}' is not registered`);
     }
+
     return this.providers[provider].object;
   }
 }

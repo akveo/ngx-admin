@@ -42,6 +42,7 @@ export abstract class NgaAbstractAuthProvider {
     } catch (e) {
       json = {};
     }
+
     return json;
   }
 }
