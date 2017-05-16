@@ -56,6 +56,9 @@ export const menuItems: List<NgaMenuItem> = List([{
   }, {
     title: 'D3',
     link: '/pages/charts/d3',
+  }, {
+    title: 'Charts.js',
+    link: '/pages/charts/chartjs',
   }]),
 }, {
   title: 'Editors',

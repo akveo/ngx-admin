@@ -3,7 +3,7 @@
 :host {
   display: block;
 
-  .echart {
+  /deep/ .echart {
     height: calc(#{$nga-card-height-xmedium} - 50px);
   }
 }
