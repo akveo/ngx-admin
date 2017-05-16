@@ -21,9 +21,9 @@ import { convertToBoolProperty } from '../helpers';
 @Component({
   selector: 'nga-tab',
   template: `
-    <div class="nga-tab" *ngIf="active">
+    <ng-container *ngIf="active">
       <ng-content></ng-content>
-    </div>
+    </ng-container>
   `,
 })
 export class NgaTabComponent {
