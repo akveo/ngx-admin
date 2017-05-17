@@ -21,6 +21,7 @@ export interface NgaMenuItem {
   group?: boolean;
   parent?: NgaMenuItem;
   selected?: boolean;
+  data?: any;
 }
 
 export interface NgaMenuOptions {
