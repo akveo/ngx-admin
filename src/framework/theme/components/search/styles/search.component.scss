@@ -6,44 +6,36 @@
 
 
 :host {
-	.search-wrap {
-		margin: 5px;
-	}
+  .search-wrap {
+    margin: 5px;
+  }
 
-	button {
-		font-size: 2.5rem;
+  button {
+    font-size: 2.5rem;
 
-		margin: 0 auto;
-		padding: 0;
-		cursor: pointer;
-		border: none;
-		background: none;
+    margin: 0 auto;
+    padding: 0;
+    cursor: pointer;
+    border: none;
+    background: none;
 
-		&:focus {
-			box-shadow: none;
-			outline: none;
-		}
-	}
+    &:focus {
+      box-shadow: none;
+      outline: none;
+    }
+  }
 
-	&.simple-search {
-		.search-wrap {
-			display: flex;
-			transition: width 0.3s ease;
-			width: 2rem;
-			overflow: hidden;
+  &.simple-search {
+    .search-wrap {
+      display: flex;
+      transition: width 0.3s ease;
+      width: 2rem;
+      overflow: hidden;
 
-			&.show {
-				align-items: center;
-				width: 18rem;
-			}
-		}
-	}
+      &.show {
+        align-items: center;
+        width: 18rem;
+      }
+    }
+  }
 }
-
-
-
-
-
-
-
-

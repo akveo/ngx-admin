@@ -6,18 +6,18 @@
 
 :host.simple-search {
   .wrapper {
-		opacity: 0;
+    opacity: 0;
 
-		button, span {
-			display: none;
-		}
+    button, span {
+      display: none;
+    }
   }
 
   &.show {
     .wrapper {
-			opacity: 1;
+      opacity: 1;
 
-			.search {
+      .search {
         background: none;
 
         input {
