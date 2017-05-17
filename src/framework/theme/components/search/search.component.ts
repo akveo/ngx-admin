@@ -32,26 +32,26 @@ import 'rxjs/add/observable/of';
     'styles/search.component.modal-half.scss',
     'styles/search.component.simple-search.scss',
   ],
-template: `
-		<div class="wrapper">
-			<div class="search" (keyup.esc)="onSearchClose()" >
-			
-				<button (click)="onSearchClose()">
-					<i class="ion-ios-close-outline icon"></i>
-				</button>
-				<div class="form-wrapper">
-					<form class="form" (keyup.enter)="onSearchSubmit(searchInput.value)">
-						<div class="form-content">
-							<input class="search-input" #searchInput autocomplete="off" [attr.placeholder]="placeholder"
-							(blur)="onBlur()"/>
-						</div>
-						<span class="info">Hit enter to search</span>
-					</form>
-				</div>
-				
-			</div>
-		</div>
-	`,
+  template: `
+    <div class="wrapper">
+      <div class="search" (keyup.esc)="onSearchClose()" >
+      
+        <button (click)="onSearchClose()">
+          <i class="ion-ios-close-outline icon"></i>
+        </button>
+        <div class="form-wrapper">
+          <form class="form" (keyup.enter)="onSearchSubmit(searchInput.value)">
+            <div class="form-content">
+              <input class="search-input" #searchInput autocomplete="off" [attr.placeholder]="placeholder"
+              (blur)="onBlur()"/>
+            </div>
+            <span class="info">Hit enter to search</span>
+          </form>
+        </div>
+        
+      </div>
+    </div>
+    `,
 })
 export class NgaSearchFieldComponent {
 
