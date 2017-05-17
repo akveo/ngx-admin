@@ -34,11 +34,13 @@
     "@swimlane/ngx-charts": "5.2.0",
     "angular2-echarts": "1.1.7",
     "bootstrap": "4.0.0-alpha.6",
+    "chart.js": "2.5.0",
     "d3": "4.8.0",
     "echarts": "3.5.4",
     "font-awesome": "4.7.0",
     "immutable": "3.8.1",
     "ionicons": "2.0.1",
+    "ng2-charts": "1.5.0",
     "normalize.css": "6.0.0"
   }
 }
