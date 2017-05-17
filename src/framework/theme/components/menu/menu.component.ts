@@ -53,7 +53,7 @@ export class NgaMenuItemComponent {
   styleUrls: ['./menu.component.scss'],
   template: `
     <ul>
-      <li ngaMenuItem *ngFor="let item of menuItems"
+      <li ngaMenuItem *ngFor="let item of items"
                       [menuItem]="item"
                       [class.expanded]="item.expanded"
                       [class.collapsed]="!item.expanded"
@@ -69,6 +69,7 @@ export class NgaMenuComponent implements OnInit, OnDestroy {
   @HostBinding('class.inverse') inverseValue: boolean;
 
   @Input() tag: string;
+  @Input() items: List<NgaMenuItem>;
 
   /**
    * Makes colors inverse based on current theme
@@ -82,11 +83,8 @@ export class NgaMenuComponent implements OnInit, OnDestroy {
   @Output() hoverItem = new EventEmitter<any>();
   @Output() toggleSubMenu = new EventEmitter<any>();
 
-  menuItems: List<NgaMenuItem>;
-
   private stack = List<NgaMenuItem>();
 
-  private itemsChangesSubscription: Subscription;
   private addItemSubscription: Subscription;
   private navigateHomeSubscription: Subscription;
   private getSelectedItemSubscription: Subscription;
@@ -94,21 +92,12 @@ export class NgaMenuComponent implements OnInit, OnDestroy {
   constructor(private menuService: NgaMenuService, private router: Router) { }
 
   ngOnInit() {
-    this.itemsChangesSubscription = this.menuService.onItemsChanges()
-      .subscribe((data: { tag: string, items: List<NgaMenuItem> }) => {
-        if (this.compareTag(data.tag)) {
-          this.menuItems = data.items;
-
-          this.menuService.prepareItems(this.menuItems);
-        }
-      });
-
     this.addItemSubscription = this.menuService.onAddItem()
       .subscribe((data: { tag: string, items: List<NgaMenuItem> }) => {
         if (this.compareTag(data.tag)) {
-          this.menuItems = this.menuItems.push(...data.items.toJS());
+          this.items = this.items.push(...data.items.toJS());
 
-          this.menuService.prepareItems(this.menuItems);
+          this.menuService.prepareItems(this.items);
         }
       });
 
@@ -124,7 +113,7 @@ export class NgaMenuComponent implements OnInit, OnDestroy {
 
         let selectedItem: NgaMenuItem;
 
-        this.menuItems.forEach(i => {
+        this.items.forEach(i => {
           const result = this.getSelectedItem(i);
 
           if (result) {
@@ -136,16 +125,15 @@ export class NgaMenuComponent implements OnInit, OnDestroy {
 
         this.clearStack();
 
-        data.listener.next({ tag: data.tag, item: selectedItem });
+        data.listener.next({ tag: this.tag, item: selectedItem });
       });
 
-    this.menuItems = this.menuService.getItems();
+    this.items = this.items.push(...this.menuService.getItems().toJS());
 
-    this.menuService.prepareItems(this.menuItems);
+    this.menuService.prepareItems(this.items);
   }
 
   ngOnDestroy() {
-    this.itemsChangesSubscription.unsubscribe();
     this.addItemSubscription.unsubscribe();
     this.navigateHomeSubscription.unsubscribe();
     this.getSelectedItemSubscription.unsubscribe();
@@ -162,7 +150,7 @@ export class NgaMenuComponent implements OnInit, OnDestroy {
   }
 
   onSelectItem(item: NgaMenuItem) {
-    this.menuService.resetItems(this.menuItems);
+    this.menuService.resetItems(this.items);
 
     item.selected = true;
   }
@@ -174,7 +162,7 @@ export class NgaMenuComponent implements OnInit, OnDestroy {
   private navigateHome() {
     let homeItem: NgaMenuItem;
 
-    this.menuItems.forEach(i => {
+    this.items.forEach(i => {
       const result = this.getHomeItem(i);
 
       if (result) {
@@ -185,7 +173,7 @@ export class NgaMenuComponent implements OnInit, OnDestroy {
     this.clearStack();
 
     if (homeItem) {
-      this.menuService.resetItems(this.menuItems);
+      this.menuService.resetItems(this.items);
 
       homeItem.selected = true;
 

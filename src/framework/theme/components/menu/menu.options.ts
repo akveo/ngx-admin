@@ -25,7 +25,7 @@ export interface NgaMenuItem {
 }
 
 export interface NgaMenuOptions {
-  items?: List<any>;
+  items?: List<NgaMenuItem>;
 }
 
 export const ngaMenuOptionsToken = new InjectionToken<NgaMenuOptions>('NGA_MENU_OPTIONS');

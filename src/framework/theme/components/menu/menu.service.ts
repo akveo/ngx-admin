@@ -17,7 +17,6 @@ import { NgaMenuOptions, NgaMenuItem, ngaMenuOptionsToken } from './menu.options
 @Injectable()
 export class NgaMenuService {
 
-  private itemsChanges$ = new Subject();
   private itemClick$ = new Subject();
   private addItems$ = new Subject();
   private navigateHome$ = new Subject();
@@ -72,10 +71,6 @@ export class NgaMenuService {
     this.getSelectedItem$.next({ tag, listener });
 
     return listener.asObservable();
-  }
-
-  onItemsChanges(): Observable<{ tag: string, items: List<NgaMenuItem> }> {
-    return this.itemsChanges$.publish().refCount();
   }
 
   onItemClick(): Observable<{ tag: string, item: NgaMenuItem }> {

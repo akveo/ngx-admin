@@ -9,6 +9,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
+import { List } from 'immutable';
 
 import { NgaThemeModule } from '../framework/theme';
 import { NgaCardModule } from '../framework/theme/components/card/card.module';
@@ -57,6 +58,7 @@ import { NgaBootstrapModule } from '../framework/theme/overrides/bootstrap/boots
 import { NgaBootstrapTestComponent } from './bootstrap-test/bootstrap-test.component';
 
 import { routes } from './app.routes';
+import { NgaMenuItem } from '../framework/theme/components/menu/menu.options';
 
 const NGA_TEST_COMPONENTS = [
   NgaAppComponent,
@@ -99,7 +101,35 @@ const NGA_TEST_COMPONENTS = [
     NgaThemeModule.forRoot({ name: 'default' }),
     NgaCardModule,
     NgaLayoutModule,
-    NgaMenuModule.forRoot(),
+    NgaMenuModule.forRoot({
+      items: List<NgaMenuItem>([{
+        title: 'Menu #3',
+        children: List<NgaMenuItem>([{
+          title: 'Menu #3.1',
+          link: '/menu/3/1',
+          icon: 'ion ion-heart',
+        }, {
+          title: 'Menu #3.2',
+          link: '/menu/3/2',
+        }, {
+          title: 'Menu #3.3',
+          icon: 'ion ion-icecream',
+          children: List<NgaMenuItem>([{
+            title: 'Menu #3.3.1',
+            link: '/menu/3/3/1',
+          }, {
+            title: 'Menu #3.3.2',
+            link: '/menu/3/3/2',
+            icon: 'ion ion-happy-outline',
+            home: true,
+          }, {
+            title: '@nga/theme',
+            target: '_blank',
+            url: 'https://github.com/akveo/ng2-admin',
+          }]),
+        }]),
+      }]),
+    }),
     NgaRouteTabsetModule,
     NgaSidebarModule.forRoot(),
     NgaTabsetModule,
