@@ -4,7 +4,5 @@
  * Licensed under the MIT License. See License.txt in the project root for license information.
  */
 
-@import '../../../../styles/themes/nga.theme.default';
-@import '../components';
-
-$nga-banner-text-background: rgba(0, 0, 0, 0.75);
+@import '../../../../styles/themes/nga.theme.blur';
+@import './nga.theme.default';

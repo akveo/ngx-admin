@@ -47,6 +47,7 @@ export class NgaSecuredHttp {
       .map((token: any) => {
         options.headers = options.headers || new Headers();
         this.addAuthTokenHeader(options.headers, token);
+
         return options;
       });
   }

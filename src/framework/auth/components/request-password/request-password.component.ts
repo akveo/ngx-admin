@@ -24,18 +24,18 @@ import { NgaAuthService, NgaAuthResult } from '../../services/auth.service';
         <div><strong>Hooray!</strong></div>
         <div *ngFor="let message of messages">{{ message }}</div>
       </div>
-      
+
       <label for="input-email" class="sr-only">Enter your email address</label>
-      <input name="email" [(ngModel)]="user.email" type="email" id="input-email" 
+      <input name="email" [(ngModel)]="user.email" type="email" id="input-email"
         class="form-control form-control-lg" placeholder="Email address"
              [required]="getConfigValue('email', 'validation.email.required')"
              autofocus>
       <div class="checkbox"></div>
-      
-      <button [disabled]="submitted || !requestPassForm.form.valid" 
+
+      <button [disabled]="submitted || !requestPassForm.form.valid"
         class="btn btn-lg btn-primary btn-block" type="submit">Request password</button>
     </form>
-    
+
     <div class="links">
       <a routerLink="../login">Login</a> or <a routerLink="../register">Register</a>
     </div>

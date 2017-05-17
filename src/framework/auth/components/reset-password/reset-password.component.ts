@@ -15,7 +15,7 @@ import { NgaAuthService, NgaAuthResult } from '../../services/auth.service';
   template: `
     <h2>Change password</h2>
     <form (ngSubmit)="resetPass('email')" #resetPassForm="ngForm">
-      
+
       <div *ngIf="errors && errors.length > 0 && !submitted" class="alert alert-danger" role="alert">
         <div><strong>Oh snap!</strong></div>
         <div *ngFor="let error of errors">{{ error }}</div>
@@ -24,28 +24,28 @@ import { NgaAuthService, NgaAuthResult } from '../../services/auth.service';
         <div><strong>Hooray!</strong></div>
         <div *ngFor="let message of messages">{{ message }}</div>
       </div>
-      
+
       <label for="input-password" class="sr-only">New Password</label>
-      <input name="password" [(ngModel)]="user.password" type="password" id="input-password" 
+      <input name="password" [(ngModel)]="user.password" type="password" id="input-password"
         class="form-control form-control-lg first" placeholder="New Password" required
              [required]="getConfigValue('email', 'validation.password.required')"
              [minlength]="getConfigValue('email', 'validation.password.minLength')"
              [maxlength]="getConfigValue('email', 'validation.password.maxLength')"
              autofocus>
-      
+
       <label for="input-re-password" class="sr-only">Confirm Password</label>
-      <input name="confirmPassword" [(ngModel)]="user.confirmPassword" type="password" id="input-re-password" 
+      <input name="confirmPassword" [(ngModel)]="user.confirmPassword" type="password" id="input-re-password"
         class="form-control form-control-lg last" placeholder="Confirm Password"
              [required]="getConfigValue('email', 'validation.password.required')"
              [minlength]="getConfigValue('email', 'validation.password.minLength')"
              [maxlength]="getConfigValue('email', 'validation.password.maxLength')">
-      
+
       <div class="checkbox"></div>
-      
+
       <button [disabled]="submitted || !resetPassForm.form.valid"
         class="btn btn-lg btn-primary btn-block" type="submit">Change password</button>
     </form>
-    
+
     <div class="links">
       <a routerLink="../login">Login</a> or <a routerLink="../register">Register</a>
     </div>

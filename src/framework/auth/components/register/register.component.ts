@@ -24,44 +24,44 @@ import { NgaTokenService } from '../../services/token.service';
         <div><strong>Hooray!</strong></div>
         <div *ngFor="let message of messages">{{ message }}</div>
       </div>
-      
+
       <label for="input-name" class="sr-only">Full name</label>
-      <input name="fullName" [(ngModel)]="user.fullName" type="text" id="input-name" 
+      <input name="fullName" [(ngModel)]="user.fullName" type="text" id="input-name"
         class="form-control form-control-lg first" placeholder="Full name"
              [required]="getConfigValue('email', 'validation.fullName.required')"
              [minlength]="getConfigValue('email', 'validation.fullName.minLength')"
              [maxlength]="getConfigValue('email', 'validation.fullName.maxLength')"
              autofocus>
-      
+
       <label for="input-email" class="sr-only">Email address</label>
-      <input name="email" [(ngModel)]="user.email" type="email" id="input-email" 
+      <input name="email" [(ngModel)]="user.email" type="email" id="input-email"
         class="form-control form-control-lg middle" placeholder="Email address"
              [required]="getConfigValue('email', 'validation.email.required')">
-      
+
       <label for="input-password" class="sr-only">Password</label>
-      <input name="password" [(ngModel)]="user.password" type="password" id="input-password" 
+      <input name="password" [(ngModel)]="user.password" type="password" id="input-password"
         class="form-control form-control-lg middle" placeholder="Password"
              [required]="getConfigValue('email', 'validation.password.required')"
              [minlength]="getConfigValue('email', 'validation.password.minLength')"
              [maxlength]="getConfigValue('email', 'validation.password.maxLength')">
-      
+
       <label for="input-re-password" class="sr-only">Repeat password</label>
-      <input name="confirmPassword" [(ngModel)]="user.confirmPassword" type="password" id="input-re-password" 
+      <input name="confirmPassword" [(ngModel)]="user.confirmPassword" type="password" id="input-re-password"
         class="form-control form-control-lg last" placeholder="Confirm Password"
              [required]="getConfigValue('email', 'validation.password.required')"
              [minlength]="getConfigValue('email', 'validation.password.minLength')"
              [maxlength]="getConfigValue('email', 'validation.password.maxLength')">
-      
+
       <div class="checkbox" *ngIf="getConfigValue('email', 'register.terms')">
         <label>
-          <input name="rememberMe" [(ngModel)]="user.terms" 
+          <input name="rememberMe" [(ngModel)]="user.terms"
             type="checkbox" value="remember-me"> Agree to <a href="#" target="_blank">Terms & Conditions</a>
         </label>
       </div>
-      <button [disabled]="submitted || !registerForm.form.valid" 
+      <button [disabled]="submitted || !registerForm.form.valid"
         class="btn btn-lg btn-primary btn-block" type="submit">Register</button>
     </form>
-    
+
     <div class="links">
       Already have an account? <a routerLink="../login">Sign in</a>
     </div>

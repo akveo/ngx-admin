@@ -113,6 +113,7 @@ export class NgaEmailPassAuthProvider extends NgaAbstractAuthProvider {
         if (this.getConfigValue('login.alwaysFail')) {
           throw this.createFailResponse(data);
         }
+
         return res;
       })
       .map((res) => {
@@ -131,6 +132,7 @@ export class NgaEmailPassAuthProvider extends NgaAbstractAuthProvider {
         } else {
           errors.push('Something went wrong.');
         }
+
         return Observable.of(
           new NgaAuthResult(
             false,
@@ -147,6 +149,7 @@ export class NgaEmailPassAuthProvider extends NgaAbstractAuthProvider {
         if (this.getConfigValue('register.alwaysFail')) {
           throw this.createFailResponse(data);
         }
+
         return res;
       })
       .map((res) => {
@@ -165,6 +168,7 @@ export class NgaEmailPassAuthProvider extends NgaAbstractAuthProvider {
         } else {
           errors.push('Something went wrong.');
         }
+
         return Observable.of(
           new NgaAuthResult(
             false,
@@ -181,6 +185,7 @@ export class NgaEmailPassAuthProvider extends NgaAbstractAuthProvider {
         if (this.getConfigValue('requestPass.alwaysFail')) {
           throw this.createFailResponse();
         }
+
         return res;
       })
       .map((res) => {
@@ -198,6 +203,7 @@ export class NgaEmailPassAuthProvider extends NgaAbstractAuthProvider {
         } else {
           errors.push('Something went wrong.');
         }
+
         return Observable.of(
           new NgaAuthResult(
             false,
@@ -217,6 +223,7 @@ export class NgaEmailPassAuthProvider extends NgaAbstractAuthProvider {
         if (this.getConfigValue('resetPass.alwaysFail')) {
           throw this.createFailResponse();
         }
+
         return res;
       })
       .map((res) => {
@@ -234,6 +241,7 @@ export class NgaEmailPassAuthProvider extends NgaAbstractAuthProvider {
         } else {
           errors.push('Something went wrong.');
         }
+
         return Observable.of(
           new NgaAuthResult(
             false,
@@ -250,6 +258,7 @@ export class NgaEmailPassAuthProvider extends NgaAbstractAuthProvider {
         if (this.getConfigValue('logout.alwaysFail')) {
           throw this.createFailResponse();
         }
+
         return res;
       })
       .map((res) => {
@@ -267,6 +276,7 @@ export class NgaEmailPassAuthProvider extends NgaAbstractAuthProvider {
         } else {
           errors.push('Something went wrong.');
         }
+
         return Observable.of(
           new NgaAuthResult(
             false,

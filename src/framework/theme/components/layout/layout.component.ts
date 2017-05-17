@@ -145,9 +145,9 @@ export class NgaLayoutComponent implements OnDestroy, AfterViewInit {
     this.themeSubscription = this.themeService.onThemeChange().subscribe((theme) => {
 
       if (theme.previous) {
-        this.renderer.removeClass(this.elementRef.nativeElement, 'theme-' + theme.previous);
+        this.renderer.removeClass(this.elementRef.nativeElement, `theme-${theme.previous}`);
       }
-      this.renderer.addClass(this.elementRef.nativeElement, 'theme-' + theme.name);
+      this.renderer.addClass(this.elementRef.nativeElement, `theme-${theme.name}`);
     });
 
     this.appendClassSubscription = this.themeService.onAppendLayoutClass().subscribe((className) => {

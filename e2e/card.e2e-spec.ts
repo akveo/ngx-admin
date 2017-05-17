@@ -220,25 +220,25 @@ describe('nga-card', () => {
 
   cards.forEach(c => {
     it(`should display ${c.name} card with ${c.colorKey} header`, () => {
-      expect(element(by.css('nga-card:nth-child(' + c.elementNumber + ') > nga-card-header'))
+      expect(element(by.css(`nga-card:nth-child(${c.elementNumber}) > nga-card-header`))
         .getText()).toEqual('HEADER');
 
-      expect(element(by.css('nga-card:nth-child(' + c.elementNumber + ') > nga-card-body'))
+      expect(element(by.css(`nga-card:nth-child(${c.elementNumber}) > nga-card-body`))
         .getText()).toEqual('Body');
 
-      expect(element(by.css('nga-card:nth-child(' + c.elementNumber + ') > nga-card-footer'))
+      expect(element(by.css(`nga-card:nth-child(${c.elementNumber}) > nga-card-footer`))
         .getText()).toEqual('Footer');
 
-      element(by.css('nga-card:nth-child(' + c.elementNumber + ')')).getSize().then(el => {
+      element(by.css(`nga-card:nth-child(${c.elementNumber})`)).getSize().then(el => {
         expect(el.height).toEqual(c.height);
       });
 
-      element(by.css('nga-card:nth-child(' + c.elementNumber + ') > nga-card-header'))
+      element(by.css(`nga-card:nth-child(${c.elementNumber}) > nga-card-header`))
         .getCssValue('background-color').then(bgColor => {
           expect(bgColor).toEqual(c.color);
         });
 
-      element(by.css('nga-card:nth-child(' + c.elementNumber + ') > nga-card-header'))
+      element(by.css(`nga-card:nth-child(${c.elementNumber}) > nga-card-header`))
         .getCssValue('border-bottom-color').then(bgColor => {
           expect(bgColor).toEqual(c.color);
         });

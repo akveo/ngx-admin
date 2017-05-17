@@ -50,10 +50,7 @@
 
     nga-tab {
       color: $nga-tabs-foreground;
-
-      .nga-tab {
-        background-color: $nga-tabs-background;
-      }
+      background-color: $nga-tabs-background;
     }
   }
 }

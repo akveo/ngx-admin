@@ -7,8 +7,7 @@
   "typings": "./index.d.ts",
   "author": "akveo",
   "license": "MIT",
-  "scripts": {
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/akveo/ng2-admin.git"
@@ -28,7 +27,15 @@
   "peerDependencies": {
     "@angular/common": "^4.0.0",
     "@angular/core": "^4.0.0",
-    "@angular/router": "^4.0.0",
+    "@angular/router": "^4.0.0"
+  },
+  "dependencies": {
+    "@ng-bootstrap/ng-bootstrap": "1.0.0-alpha.25",
+    "@swimlane/ngx-charts": "5.2.0",
+    "angular2-echarts": "1.1.7",
+    "bootstrap": "4.0.0-alpha.6",
+    "d3": "4.8.0",
+    "echarts": "3.5.4",
     "font-awesome": "4.7.0",
     "immutable": "3.8.1",
     "ionicons": "2.0.1",

@@ -36,6 +36,7 @@ export function ngaAuthServiceFactory(config: any, tokenService: NgaTokenService
       provider.object.setConfig(provider.config || {});
     }
   }
+
   return new NgaAuthService(providers, tokenService);
 }
 

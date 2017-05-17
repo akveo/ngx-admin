@@ -43,26 +43,31 @@ export const deepExtend = function (...objects: any[]): any {
          */
       } else if (typeof val !== 'object' || val === null) {
         target[key] = val;
+
         return;
 
         // just clone arrays (and recursive clone objects inside)
       } else if (Array.isArray(val)) {
         target[key] = deepCloneArray(val);
+
         return;
 
         // custom cloning and overwrite for specific objects
       } else if (isSpecificValue(val)) {
         target[key] = cloneSpecificValue(val);
+
         return;
 
         // overwrite by new value if source isn't object or array
       } else if (typeof src !== 'object' || src === null || Array.isArray(src)) {
         target[key] = deepExtend({}, val);
+
         return;
 
         // source value and new value is objects both, extending...
       } else {
         target[key] = deepExtend(src, val);
+
         return;
       }
     });
@@ -106,6 +111,7 @@ function deepCloneArray(arr: any[]): any {
       clone[index] = item;
     }
   });
+
   return clone;
 }
 
