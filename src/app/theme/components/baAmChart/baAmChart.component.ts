@@ -10,7 +10,7 @@ import 'ammap3';
 import 'ammap3/ammap/maps/js/worldLow';
 
 
-import { BaAmChartThemeService } from './baAmChartTheme.service';
+import {BaAmChartThemeService} from './baAmChartTheme.service';
 
 @Component({
   selector: 'ba-am-chart',
