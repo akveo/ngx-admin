@@ -32,7 +32,7 @@ import 'rxjs/add/observable/of';
     'styles/search.component.modal-half.scss',
     'styles/search.component.simple-search.scss',
   ],
-  template: `
+template: `
 		<div class="wrapper">
 			<div class="search" (keyup.esc)="onSearchClose()" >
 			

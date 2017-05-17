@@ -117,30 +117,30 @@
       transform: translate3d(15px, 15px, 0);
     }
 
-		button {
-			position: absolute;
-			top: 3rem;
-			right: 3rem;
-			font-size: 2.5rem;
-		}
+    button {
+      position: absolute;
+      top: 3rem;
+      right: 3rem;
+      font-size: 2.5rem;
+    }
 
-		input {
-			font-size: 10vw;
-			width: 75%;
-		}
+    input {
+      font-size: 10vw;
+      width: 75%;
+    }
 
-		button {
-			opacity: 0;
-			transform: scale3d(0.8, 0.8, 1);
-			transition: opacity 0.5s, transform 0.5s;
-		}
+    button {
+      opacity: 0;
+      transform: scale3d(0.8, 0.8, 1);
+      transition: opacity 0.5s, transform 0.5s;
+    }
 
-		form {
-			opacity: 0;
-			transform: scale3d(0.8, 0.8, 1);
-			transition: opacity 0.5s, transform 0.5s;
-		}
-	}
+    form {
+      opacity: 0;
+      transform: scale3d(0.8, 0.8, 1);
+      transition: opacity 0.5s, transform 0.5s;
+    }
+  }
 
 
   &.show {
@@ -167,7 +167,7 @@
   }
 
   @media screen and (max-width: 40rem) {
-   	form {
+    form {
       margin: 5rem 0 1rem;
     }
 
