@@ -103,31 +103,12 @@ const NGA_TEST_COMPONENTS = [
     NgaLayoutModule,
     NgaMenuModule.forRoot({
       items: List<NgaMenuItem>([{
-        title: 'Menu #3',
-        children: List<NgaMenuItem>([{
-          title: 'Menu #3.1',
-          link: '/menu/3/1',
-          icon: 'ion ion-heart',
-        }, {
-          title: 'Menu #3.2',
-          link: '/menu/3/2',
-        }, {
-          title: 'Menu #3.3',
-          icon: 'ion ion-icecream',
-          children: List<NgaMenuItem>([{
-            title: 'Menu #3.3.1',
-            link: '/menu/3/3/1',
-          }, {
-            title: 'Menu #3.3.2',
-            link: '/menu/3/3/2',
-            icon: 'ion ion-happy-outline',
-            home: true,
-          }, {
-            title: '@nga/theme',
-            target: '_blank',
-            url: 'https://github.com/akveo/ng2-admin',
-          }]),
-        }]),
+        title: 'Menu #4',
+        link: '/menu/4',
+        icon: 'ion ion-ionic',
+      }, {
+        title: 'Menu #5',
+        icon: 'ion ion-ionic',
       }]),
     }),
     NgaRouteTabsetModule,

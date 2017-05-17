@@ -6,9 +6,9 @@
 
 import { Injectable, Optional, Inject } from '@angular/core';
 import { Router } from '@angular/router';
-import { Subject } from 'rxjs/Subject';
 import { Observable } from 'rxjs/Observable';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
+import { ReplaySubject } from 'rxjs/ReplaySubject';
 import { List } from 'immutable';
 import 'rxjs/add/operator/publish';
 
@@ -17,10 +17,10 @@ import { NgaMenuOptions, NgaMenuItem, ngaMenuOptionsToken } from './menu.options
 @Injectable()
 export class NgaMenuService {
 
-  private itemClick$ = new Subject();
-  private addItems$ = new Subject();
-  private navigateHome$ = new Subject();
-  private getSelectedItem$ = new Subject();
+  private itemClick$ = new ReplaySubject(1);
+  private addItems$ = new ReplaySubject(1);
+  private navigateHome$ = new ReplaySubject(1);
+  private getSelectedItem$ = new ReplaySubject(1);
 
   private stack = List<NgaMenuItem>();
   private items = List<NgaMenuItem>();
