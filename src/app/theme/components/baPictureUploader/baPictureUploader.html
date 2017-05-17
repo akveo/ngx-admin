@@ -12,8 +12,7 @@
   </div>
   <i class="ion-ios-close-outline" (click)="removePicture();" *ngIf="picture && canDelete"></i>
   <a href class="change-picture" (click)="bringFileSelector();">Change profile Picture</a>
-  <input #fileUpload ngFileSelect [options]="uploaderOptions"
-         (onUpload)="_onUpload($event)"
-         (beforeUpload)="beforeUpload($event)"
-         type="file" hidden="true">
+  <input #fileUpload ngFileSelect [uploadInput]="uploadInput"
+         (uploadOutput)="onUploadOutput($event)"
+         type="file" hidden="hidden">
 </div>

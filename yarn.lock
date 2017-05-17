@@ -2800,7 +2800,7 @@ handlebars@^4.0.2, handlebars@^4.0.3:
   optionalDependencies:
     uglify-js "^2.6"
 
-handsontable@0.31.1:
+handsontable@^0.31.1:
   version "0.31.2"
   resolved "https://registry.yarnpkg.com/handsontable/-/handsontable-0.31.2.tgz#276c5208b6f679f0a0ae539a1806a85279943a0a"
   dependencies:
@@ -4385,9 +4385,9 @@ ng2-tree@2.0.0-alpha.5:
   version "2.0.0-alpha.5"
   resolved "https://registry.yarnpkg.com/ng2-tree/-/ng2-tree-2.0.0-alpha.5.tgz#197f33af92f16f4a9168a3394ed0cbf9c1708a4a"
 
-ngx-uploader@2.2.5:
-  version "2.2.5"
-  resolved "https://registry.yarnpkg.com/ngx-uploader/-/ngx-uploader-2.2.5.tgz#e25826cc005892f2795bff729d4282a1b0d28c0b"
+ngx-uploader@3.0.5:
+  version "3.0.5"
+  resolved "https://registry.yarnpkg.com/ngx-uploader/-/ngx-uploader-3.0.5.tgz#f9655597d9c16e92f028eb53e04e9e94de0a8b83"
 
 no-case@^2.2.0:
   version "2.3.1"
@@ -5658,7 +5658,7 @@ read@1, read@~1.0.1, read@~1.0.7:
   dependencies:
     mute-stream "~0.0.4"
 
-"readable-stream@1 || 2", "readable-stream@^2.0.0 || ^1.1.13", readable-stream@^2.0.1, readable-stream@^2.0.5, readable-stream@^2.0.6, readable-stream@^2.1.4, readable-stream@^2.1.5, readable-stream@^2.2.2, readable-stream@^2.2.6:
+"readable-stream@1 || 2", "readable-stream@^2.0.0 || ^1.1.13", readable-stream@^2.0.6, readable-stream@^2.1.4, readable-stream@^2.1.5, readable-stream@^2.2.2, readable-stream@^2.2.6:
   version "2.2.9"
   resolved "https://registry.yarnpkg.com/readable-stream/-/readable-stream-2.2.9.tgz#cf78ec6f4a6d1eb43d26488cac97f042e74b7fc8"
   dependencies:
@@ -5688,7 +5688,7 @@ readable-stream@^1.0.33, readable-stream@~1.1.9:
     isarray "0.0.1"
     string_decoder "~0.10.x"
 
-readable-stream@^2.0.2, readable-stream@~2.0.5:
+readable-stream@^2.0.1, readable-stream@^2.0.2, readable-stream@^2.0.5, readable-stream@~2.0.5:
   version "2.0.6"
   resolved "https://registry.yarnpkg.com/readable-stream/-/readable-stream-2.0.6.tgz#8f90341e68a53ccc928788dacfcd11b36eb9b78e"
   dependencies:

@@ -1,5 +1,5 @@
 import {Component, ViewChild, Input, Output, EventEmitter, ElementRef, Renderer} from '@angular/core';
-import { NgUploaderOptions } from 'ngx-uploader';
+import { UploadOutput, UploadInput } from 'ngx-uploader';
 
 @Component({
   selector: 'ba-picture-uploader',
@@ -11,7 +11,7 @@ export class BaPictureUploader {
   @Input() defaultPicture:string = '';
   @Input() picture:string = '';
 
-  @Input() uploaderOptions:NgUploaderOptions = { url: '' };
+  @Input() uploaderOptions = { url: '' };
   @Input() canDelete:boolean = true;
 
   @Output() onUpload = new EventEmitter<any>();
@@ -19,24 +19,35 @@ export class BaPictureUploader {
 
   @ViewChild('fileUpload') public _fileUpload:ElementRef;
 
+  uploadInput: EventEmitter<UploadInput> = new EventEmitter<UploadInput>();
   public uploadInProgress:boolean;
 
   constructor(private renderer: Renderer) {
   }
 
-  beforeUpload(uploadingFile): void {
-    let files = this._fileUpload.nativeElement.files;
+  onUploadOutput(output: UploadOutput): void {
+      if (output.type === 'allAddedToQueue') {
+          let files = this._fileUpload.nativeElement.files;
 
-    if (files.length) {
-      const file = files[0];
-      this._changePicture(file);
+          if (files.length) {
+              const file = files[0];
+              this._changePicture(file);
 
-      if (!this._canUploadOnServer()) {
-        uploadingFile.setAbort();
+              if (this._canUploadOnServer()) {
+                  this.uploadInProgress = true;
+                  this.uploadInput.emit(jQuery.extend({
+                      type: 'uploadAll',
+                      method: 'POST',
+                      concurrency: 1
+                  }, this.uploaderOptions));
+              }
+          }
+      } else if (output.type === 'done') {
+          this.uploadInProgress = false;
+          this.onUploadCompleted.emit(output);
       } else {
-        this.uploadInProgress = true;
+          this.onUpload.emit(output);
       }
-    }
   }
 
   bringFileSelector():boolean {
@@ -55,19 +66,6 @@ export class BaPictureUploader {
       this.picture = (<any> event.target).result;
     }, false);
     reader.readAsDataURL(file);
-  }
-
-  _onUpload(data):void {
-    if (data['done'] || data['abort'] || data['error']) {
-      this._onUploadCompleted(data);
-    } else {
-      this.onUpload.emit(data);
-    }
-  }
-
-  _onUploadCompleted(data):void {
-    this.uploadInProgress = false;
-    this.onUploadCompleted.emit(data);
   }
 
   _canUploadOnServer():boolean {
