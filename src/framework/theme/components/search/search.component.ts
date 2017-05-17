@@ -171,7 +171,7 @@ export class NgaSearchComponent implements AfterViewInit, OnDestroy {
 
   @Input()
   set type(val: any) {
-    if (val == 'simple-search') {
+    if (val === 'simple-search') {
       this.attachedSearchField = true;
     }
     this.searchType = val;
@@ -212,6 +212,7 @@ export class NgaSearchComponent implements AfterViewInit, OnDestroy {
   createAttachedSearch(component): Observable<any> {
     const componentFactory = this.componentFactoryResolver.resolveComponentFactory(component);
     const componentRef = this.attachedSearchContainer.createComponent(componentFactory);
+
     return Observable.of(componentRef);
   }
 
