@@ -125,7 +125,7 @@ export class NgaMenuComponent implements OnInit, OnDestroy {
 
         this.clearStack();
 
-        data.listener.next({ tag: data.tag, item: selectedItem });
+        data.listener.next({ tag: this.tag, item: selectedItem });
       });
 
     this.items = this.items.push(...this.menuService.getItems().toJS());
