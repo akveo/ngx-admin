@@ -86,7 +86,6 @@ export class NgaMenuComponent implements OnInit, OnDestroy {
 
   private stack = List<NgaMenuItem>();
 
-  private itemsChangesSubscription: Subscription;
   private addItemSubscription: Subscription;
   private navigateHomeSubscription: Subscription;
   private getSelectedItemSubscription: Subscription;
@@ -94,15 +93,6 @@ export class NgaMenuComponent implements OnInit, OnDestroy {
   constructor(private menuService: NgaMenuService, private router: Router) { }
 
   ngOnInit() {
-    this.itemsChangesSubscription = this.menuService.onItemsChanges()
-      .subscribe((data: { tag: string, items: List<NgaMenuItem> }) => {
-        if (this.compareTag(data.tag)) {
-          this.menuItems = data.items;
-
-          this.menuService.prepareItems(this.menuItems);
-        }
-      });
-
     this.addItemSubscription = this.menuService.onAddItem()
       .subscribe((data: { tag: string, items: List<NgaMenuItem> }) => {
         if (this.compareTag(data.tag)) {
@@ -145,7 +135,6 @@ export class NgaMenuComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    this.itemsChangesSubscription.unsubscribe();
     this.addItemSubscription.unsubscribe();
     this.navigateHomeSubscription.unsubscribe();
     this.getSelectedItemSubscription.unsubscribe();
