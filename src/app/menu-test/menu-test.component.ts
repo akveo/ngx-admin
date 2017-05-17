@@ -99,7 +99,7 @@ export class NgaMenuItem4Component {
   template: `
     <nga-layout>
       <nga-layout-column>
-        <nga-menu tag="firstMenu"></nga-menu>
+        <nga-menu tag="firstMenu" [items]="menuItems"></nga-menu>
         <router-outlet></router-outlet>
         <button class="btn btn-primary" id="addBtn" (click)="addMenuItem()">Add</button>
         <button class="btn btn-primary" id="homeBtn" (click)="navigateHome()">Home</button>
@@ -109,66 +109,18 @@ export class NgaMenuItem4Component {
 })
 export class NgaMenuTestComponent implements OnInit, AfterViewInit, OnDestroy {
 
-  private menuItems: List<NgaMenuItem> = List([
-    {
-      title: 'Menu Items',
-      group: true,
-      icon: 'ion ion-heart',
-    },
-    {
-      title: 'Menu #1',
-      link: '/menu/1',
-    },
-    {
-      title: 'Menu #2',
-      link: '/menu/2',
-      icon: 'ion ion-ionic',
-    },
-    {
-      title: 'Menu #3',
-      children: List<NgaMenuItem>([
-        {
-          title: 'Menu #3.1',
-          link: '/menu/3/1',
-          icon: 'ion ion-heart',
-        },
-        {
-          title: 'Menu #3.2',
-          link: '/menu/3/2',
-        },
-        {
-          title: 'Menu #3.3',
-          icon: 'ion ion-icecream',
-          children: List<NgaMenuItem>([
-            {
-              title: 'Menu #3.3.1',
-              link: '/menu/3/3/1',
-            },
-            {
-              title: 'Menu #3.3.2',
-              link: '/menu/3/3/2',
-              icon: 'ion ion-happy-outline',
-              home: true,
-            },
-            {
-              title: '@nga/theme',
-              target: '_blank',
-              url: 'https://github.com/akveo/ng2-admin',
-            },
-          ]),
-        },
-      ]),
-    },
-    {
-      title: 'Menu #4',
-      link: '/menu/4',
-      icon: 'ion ion-ionic',
-    },
-    {
-      title: 'Menu #5',
-      icon: 'ion ion-ionic',
-    },
-  ]);
+  menuItems = List<NgaMenuItem>([{
+    title: 'Menu Items',
+    group: true,
+    icon: 'ion ion-heart',
+  }, {
+    title: 'Menu #1',
+    link: '/menu/1',
+  }, {
+    title: 'Menu #2',
+    link: '/menu/2',
+    icon: 'ion ion-ionic',
+  }]);
 
   private itemClickSubscription: Subscription;
 
@@ -178,8 +130,6 @@ export class NgaMenuTestComponent implements OnInit, AfterViewInit, OnDestroy {
     this.itemClickSubscription = this.menuService.onItemClick()
       .subscribe((data: { tag: string, item: NgaMenuItem }) => console.info(data));
 
-    this.menuService.addItems(this.menuItems, 'firstMenu');
-
     this.menuService.navigateHome('firstMenu');
   }
 
@@ -188,7 +138,14 @@ export class NgaMenuTestComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   ngAfterViewInit() {
-    this.menuService.addItems(this.menuItems, 'firstMenu');
+    this.menuService.addItems(List<NgaMenuItem>([{
+      title: 'Menu #4',
+      link: '/menu/4',
+      icon: 'ion ion-ionic',
+    }, {
+      title: 'Menu #5',
+      icon: 'ion ion-ionic',
+    }]), 'firstMenu');
   }
 
   addMenuItem() {
