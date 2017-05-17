@@ -7,6 +7,7 @@
 @import './overrides/global';
 @import './overrides/buttons';
 @import './overrides/forms';
+@import './overrides/tables';
 
 // Create a theme
 @mixin nga-bootstrap($theme-name) {
@@ -14,6 +15,7 @@
   .theme-#{$theme-name} {
     @include nga-b-buttons-theme($theme-name);
     @include nga-b-forms-theme($theme-name);
+    @include nga-b-tables-theme($theme-name);
 
     @content;
   }

@@ -1,0 +1,14 @@
+/**
+ * @license
+ * Copyright Akveo. All Rights Reserved.
+ * Licensed under the MIT License. See License.txt in the project root for license information.
+ */
+
+@import 'partial';
+
+@mixin nga-b-tables-theme($theme-name) {
+  /deep/ {
+    @import '~bootstrap/scss/tables';
+    @import '~bootstrap/scss/mixins/table-row';
+  }
+}
