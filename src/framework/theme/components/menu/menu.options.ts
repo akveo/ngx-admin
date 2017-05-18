@@ -21,10 +21,11 @@ export interface NgaMenuItem {
   group?: boolean;
   parent?: NgaMenuItem;
   selected?: boolean;
+  data?: any;
 }
 
 export interface NgaMenuOptions {
-  items?: List<any>;
+  items?: List<NgaMenuItem>;
 }
 
 export const ngaMenuOptionsToken = new InjectionToken<NgaMenuOptions>('NGA_MENU_OPTIONS');

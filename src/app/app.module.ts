@@ -9,6 +9,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
+import { List } from 'immutable';
 
 import { NgaThemeModule } from '../framework/theme';
 import { NgaCardModule } from '../framework/theme/components/card/card.module';
@@ -59,6 +60,7 @@ import { NgaBootstrapTestComponent } from './bootstrap-test/bootstrap-test.compo
 import { routes } from './app.routes';
 import { NgaSearchTestComponent } from './search-test/search-test.component';
 import { NgaSearchModule } from '../framework/theme';
+import { NgaMenuItem } from '../framework/theme/components/menu/menu.options';
 
 const NGA_TEST_COMPONENTS = [
   NgaAppComponent,
@@ -102,7 +104,16 @@ const NGA_TEST_COMPONENTS = [
     NgaThemeModule.forRoot({ name: 'default' }),
     NgaCardModule,
     NgaLayoutModule,
-    NgaMenuModule.forRoot(),
+    NgaMenuModule.forRoot({
+      items: List<NgaMenuItem>([{
+        title: 'Menu #4',
+        link: '/menu/4',
+        icon: 'ion ion-ionic',
+      }, {
+        title: 'Menu #5',
+        icon: 'ion ion-ionic',
+      }]),
+    }),
     NgaRouteTabsetModule,
     NgaSidebarModule.forRoot(),
     NgaTabsetModule,

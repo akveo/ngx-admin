@@ -7,6 +7,7 @@
 import { Component, Input, Output, EventEmitter, OnInit, OnDestroy, HostBinding } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
+import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { List } from 'immutable';
 
 import { NgaMenuService } from './menu.service';
@@ -52,8 +53,10 @@ export class NgaMenuItemComponent {
   styleUrls: ['./menu.component.scss'],
   template: `
     <ul>
-      <li ngaMenuItem *ngFor="let item of menuItems"
+      <li ngaMenuItem *ngFor="let item of items"
                       [menuItem]="item"
+                      [class.expanded]="item.expanded"
+                      [class.collapsed]="!item.expanded"
                       (hoverItem)="onHoverItem($event)"
                       (toggleSubMenu)="onToggleSubMenu($event)"
                       (selectItem)="onSelectItem($event)"
@@ -66,6 +69,7 @@ export class NgaMenuComponent implements OnInit, OnDestroy {
   @HostBinding('class.inverse') inverseValue: boolean;
 
   @Input() tag: string;
+  @Input() items = List<NgaMenuItem>();
 
   /**
    * Makes colors inverse based on current theme
@@ -79,51 +83,64 @@ export class NgaMenuComponent implements OnInit, OnDestroy {
   @Output() hoverItem = new EventEmitter<any>();
   @Output() toggleSubMenu = new EventEmitter<any>();
 
-  menuItems: List<NgaMenuItem>;
-
   private stack = List<NgaMenuItem>();
 
-  private itemsChangesSubscription: Subscription;
   private addItemSubscription: Subscription;
   private navigateHomeSubscription: Subscription;
+  private getSelectedItemSubscription: Subscription;
 
   constructor(private menuService: NgaMenuService, private router: Router) { }
 
   ngOnInit() {
-    this.itemsChangesSubscription = this.menuService.onItemsChanges()
-      .subscribe((data: { tag: string, items: List<NgaMenuItem> }) => {
-        if (!data.tag || data.tag === this.tag) {
-          this.menuItems = data.items;
-
-          this.menuService.prepareItems(this.menuItems);
-        }
-      });
-
     this.addItemSubscription = this.menuService.onAddItem()
       .subscribe((data: { tag: string, items: List<NgaMenuItem> }) => {
-        if (!data.tag || data.tag === this.tag) {
-          this.menuItems = this.menuItems.push(...data.items.toJS());
+        if (this.compareTag(data.tag)) {
+          this.items = this.items.push(...data.items.toJS());
 
-          this.menuService.prepareItems(this.menuItems);
+          this.menuService.prepareItems(this.items);
         }
       });
 
     this.navigateHomeSubscription = this.menuService.onNavigateHome()
       .subscribe((data: { tag: string }) => {
-        if (!data.tag || data.tag === this.tag) {
+        if (this.compareTag(data.tag)) {
           this.navigateHome();
         }
       });
 
-    this.menuItems = this.menuService.getItems();
+    this.getSelectedItemSubscription = this.menuService.onGetSelectedItem()
+      .subscribe((data: { tag: string, listener: BehaviorSubject<{ tag: string, item: NgaMenuItem }> }) => {
 
-    this.menuService.prepareItems(this.menuItems);
+        let selectedItem: NgaMenuItem;
+
+        this.items.forEach(i => {
+          const result = this.getSelectedItem(i);
+
+          if (result) {
+            selectedItem = result;
+
+            return;
+          }
+        });
+
+        this.clearStack();
+
+        data.listener.next({ tag: this.tag, item: selectedItem });
+      });
+
+    this.router.events.subscribe(() => {
+      this.menuService.prepareItems(this.items);
+    });
+
+    this.items = this.items.push(...this.menuService.getItems().toJS());
+
+    this.menuService.prepareItems(this.items);
   }
 
   ngOnDestroy() {
-    this.itemsChangesSubscription.unsubscribe();
     this.addItemSubscription.unsubscribe();
     this.navigateHomeSubscription.unsubscribe();
+    this.getSelectedItemSubscription.unsubscribe();
   }
 
   onHoverItem(item: NgaMenuItem) {
@@ -137,7 +154,7 @@ export class NgaMenuComponent implements OnInit, OnDestroy {
   }
 
   onSelectItem(item: NgaMenuItem) {
-    this.menuService.resetItems(this.menuItems);
+    this.menuService.resetItems(this.items);
 
     item.selected = true;
   }
@@ -149,7 +166,7 @@ export class NgaMenuComponent implements OnInit, OnDestroy {
   private navigateHome() {
     let homeItem: NgaMenuItem;
 
-    this.menuItems.forEach(i => {
+    this.items.forEach(i => {
       const result = this.getHomeItem(i);
 
       if (result) {
@@ -157,10 +174,10 @@ export class NgaMenuComponent implements OnInit, OnDestroy {
       }
     });
 
-    this.stack = this.stack.clear();
+    this.clearStack();
 
     if (homeItem) {
-      this.menuService.resetItems(this.menuItems);
+      this.menuService.resetItems(this.items);
 
       homeItem.selected = true;
 
@@ -191,6 +208,35 @@ export class NgaMenuComponent implements OnInit, OnDestroy {
 
     if (parent.parent) {
       return this.getHomeItem(parent.parent);
+    }
+  }
+
+  private clearStack() {
+    this.stack = this.stack.clear();
+  }
+
+  private compareTag(tag: string) {
+    return !tag || tag === this.tag;
+  }
+
+  private getSelectedItem(parent: NgaMenuItem): NgaMenuItem {
+
+    this.stack = this.stack.push(parent);
+
+    if (parent.selected) {
+      return parent;
+    }
+
+    if (parent.children && parent.children.size > 0) {
+      const first = parent.children.filter(c => !this.stack.contains(c)).first();
+
+      if (first) {
+        return this.getSelectedItem(first);
+      }
+    }
+
+    if (parent.parent) {
+      return this.getSelectedItem(parent.parent);
     }
   }
 

@@ -48,6 +48,8 @@
     [class.menu-expanded]="menuItem.expanded">
   <li ngaMenuItem *ngFor="let item of menuItem.children"
                   [menuItem]="item"
+                  [class.expanded]="item.expanded"
+                  [class.collapsed]="!item.expanded"
                   (hoverItem)="onHoverItem($event)"
                   (toggleSubMenu)="onToggleSubMenu($event)"
                   (selectItem)="onSelectItem($event)"

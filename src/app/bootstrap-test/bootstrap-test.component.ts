@@ -23,6 +23,39 @@ import { Component } from '@angular/core';
           <button class="btn btn-success">Success</button>
           <button class="btn btn-warning">Warning</button>
         </div>
+        
+        <h2>Tables</h2>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <td>id</td>
+              <td>name</td>
+              <td>email</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>some</td>
+              <td>John Doe</td>
+              <td>test@test.com</td>
+            </tr>
+            <tr>
+              <td>some</td>
+              <td>John Doe</td>
+              <td>test@test.com</td>
+            </tr>
+            <tr>
+              <td>some</td>
+              <td>John Doe</td>
+              <td>test@test.com</td>
+            </tr>
+            <tr>
+              <td>some</td>
+              <td>John Doe</td>
+              <td>test@test.com</td>
+            </tr>
+          </tbody>
+        </table>
       </nga-layout-column>
     </nga-layout>
   `,

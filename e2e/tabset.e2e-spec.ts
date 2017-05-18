@@ -7,14 +7,14 @@
 import { browser, element, by } from 'protractor';
 import { hasClass } from './e2e-helper';
 
-describe('nga-tabset', () => {
+fdescribe('nga-tabset', () => {
   beforeEach(() => {
     browser.get('#/tabset');
   });
 
   it('should display default tabset', () => {
     expect(element(by.css('nga-tabset:nth-child(1) > ul.nga-tabset > li:nth-child(1)')).getText()).toEqual('Tab #1');
-    expect(element(by.css('nga-tabset:nth-child(1) > nga-tab[tabTitle="Tab #1"] > div > span'))
+    expect(element(by.css('nga-tabset:nth-child(1) > nga-tab[tabTitle="Tab #1"] > span'))
       .getText()).toEqual('Content #1');
 
     expect(element(by.css('nga-tabset:nth-child(1) > ul.nga-tabset > li:nth-child(2)')).getText()).toEqual('Tab #2');
