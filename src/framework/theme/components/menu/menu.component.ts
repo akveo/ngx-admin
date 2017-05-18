@@ -128,6 +128,10 @@ export class NgaMenuComponent implements OnInit, OnDestroy {
         data.listener.next({ tag: this.tag, item: selectedItem });
       });
 
+    this.router.events.subscribe(() => {
+      this.menuService.prepareItems(this.items);
+    });
+
     this.items = this.items.push(...this.menuService.getItems().toJS());
 
     this.menuService.prepareItems(this.items);
