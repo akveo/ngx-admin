@@ -9,33 +9,26 @@
   nga-search-field {
 
     .search {
-      background: $nga-search-bg;
+      background: $nga-search-background;
 
       button {
-        color: $nga-btn-close-color;
+        color: $nga-search-btn-close-foreground;
       }
 
       span {
-        color: $nga-search-info-color;
+        color: $nga-search-info;
       }
 
       input {
-        color: $nga-search-text-color;
-        border-bottom: 4px solid $nga-search-dash-color;
+        color: $nga-search-text;
+        border-bottom: 4px solid $nga-search-dash;
 
-        &::-webkit-input-placeholder {
-          /* WebKit, Blink, Edge */
-          color: $nga-search-placeholder-color;
+        &::placeholder {
+          color: $nga-search-placeholder;
         }
 
-        &::-moz-placeholder {
-          /* Mozilla Firefox 19+ */
-          color: $nga-search-placeholder-color;
-        }
-
-        &:-ms-input-placeholder {
-          /* Internet Explorer 10-11 */
-          color: $nga-search-placeholder-color;
+        &::-ms-clear {
+          display: none;
         }
       }
     }
@@ -43,7 +36,7 @@
     &.rotate-layout {
       .wrapper {
         opacity: 0;
-        background: $nga-search-bg;
+        background: $nga-search-background;
       }
 
     }
@@ -51,42 +44,42 @@
     &.modal-zoomin {
       .search::before,
       .search::after {
-        border: 1.5rem solid $nga-search-bg-secondary;
+        border: 1.5rem solid $nga-search-background-secondary;
       }
 
     }
 
 		&.modal-half {
 			.form-wrapper {
-				background: $nga-search-bg;
+				background: $nga-search-background;
 			}
       .search::before {
-        background: $nga-search-bg-secondary;
+        background: $nga-search-background-secondary;
       }
     }
 
     &.modal-drop {
       .form-content::after {
-        background: $nga-search-dash-color;
+        background: $nga-search-dash;
       }
       .search::before {
-        background: $nga-search-bg;
+        background: $nga-search-background;
       }
     }
 
     &.curtain {
       .search::after {
-        background: $nga-search-bg;
+        background: $nga-search-background;
       }
       .search {
-        background: $nga-search-bg;
+        background: $nga-search-background;
       }
     }
 
 		&.column-curtain {
 			.wrapper {
         &::before {
-          background: $nga-search-bg;
+          background: $nga-search-background;
         }
         &::after {
           background: transparent;
@@ -94,21 +87,21 @@
       }
       &.show {
         .wrapper::after {
-          background: $nga-search-bg-secondary;
+          background: $nga-search-background-secondary;
         }
       }
 		}
 
     &.simple-search {
       input {
-        border-bottom: 1px solid $nga-search-dash-color;
+        border-bottom: 1px solid $nga-search-dash;
       }
     }
   }
 
   nga-search {
     button {
-      color: $nga-btn-search-open-color;
+      color: $nga-search-btn-open-foreground;
     }
   }
 

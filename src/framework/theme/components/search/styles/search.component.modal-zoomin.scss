@@ -34,28 +34,8 @@
       outline: none;
     }
 
-    &::-webkit-input-placeholder {
-      /* WebKit, Blink, Edge */
+    &::placeholder {
       opacity: 0.3;
-    }
-
-    &::-moz-placeholder {
-      /* Mozilla Firefox 19+ */
-      opacity: 0.3;
-    }
-
-    &:-ms-input-placeholder {
-      /* Internet Explorer 10-11 */
-      opacity: 0.3;
-    }
-
-    &::-webkit-search-cancel-button,
-    &::-webkit-search-decoration {
-      -webkit-appearance: none;
-    }
-
-    &::-ms-clear {
-      display: none;
     }
   }
 

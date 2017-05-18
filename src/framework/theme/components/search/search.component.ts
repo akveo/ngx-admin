@@ -7,13 +7,14 @@
 import {
   Component, ChangeDetectionStrategy, Input, HostBinding,
   ComponentRef, Output, EventEmitter, ViewChild, ElementRef, AfterViewInit, ComponentFactoryResolver, ViewContainerRef,
-  OnDestroy,
+  OnDestroy, OnInit,
 } from '@angular/core';
 
 import { NgaSuperSearchService } from './search.service';
 import { NgaThemeService } from '../../services/theme.service';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/of';
+import 'rxjs/add/operator/delay';
 
 /**
  * search-field-component is used under the hood by nga-search component
@@ -34,13 +35,13 @@ import 'rxjs/add/observable/of';
   ],
   template: `
     <div class="wrapper">
-      <div class="search" (keyup.esc)="onSearchClose()" >
+      <div class="search" (keyup.esc)="closeSearch()" >
       
-        <button (click)="onSearchClose()">
+        <button (click)="closeSearch()">
           <i class="ion-ios-close-outline icon"></i>
         </button>
         <div class="form-wrapper">
-          <form class="form" (keyup.enter)="onSearchSubmit(searchInput.value)">
+          <form class="form" (keyup.enter)="submitSearch(searchInput.value)">
             <div class="form-content">
               <input class="search-input" #searchInput autocomplete="off" [attr.placeholder]="placeholder"
               (blur)="onBlur()"/>
@@ -64,15 +65,15 @@ export class NgaSearchFieldComponent {
   static readonly TYPE_MODAL_HALF = 'modal-half';
   static readonly TYPE_SIMPLE_SEARCH = 'simple-search';
 
-  @Input() searchType: string = 'rotate-layout';
-  @Input() placeholder: string = 'akveo';
+  @Input() searchType: string;
+  @Input() placeholder: string;
 
   @Output() searchClose = new EventEmitter();
   @Output() search = new EventEmitter();
 
   @ViewChild('searchInput') inputElement: ElementRef;
 
-  @HostBinding('class.show') showSearch: boolean = false;
+  @Input() @HostBinding('class.show') showSearch: boolean = false;
 
   @HostBinding('class.modal-zoomin')
   get modalZoomin() {
@@ -119,19 +120,19 @@ export class NgaSearchFieldComponent {
     this.searchType = val;
   }
 
-  onSearchClose() {
+  closeSearch() {
     this.searchClose.emit(true);
   }
 
-  onSearchSubmit(term) {
+  submitSearch(term) {
     if (term) {
       this.search.emit(term);
     }
   }
 
   onBlur() {
-    if (this.searchType === 'simple-search' && this.showSearch) {
-      this.onSearchClose();
+    if (this.searchType === NgaSearchFieldComponent.TYPE_SIMPLE_SEARCH && this.showSearch) {
+      this.closeSearch();
     }
   }
 }
@@ -141,28 +142,29 @@ export class NgaSearchFieldComponent {
   changeDetection: ChangeDetectionStrategy.OnPush,
   styleUrls: ['styles/search.component.scss'],
   template: `
-    <div class="search-wrap" [class.show]="showSearch">
+    <div class="search-wrap">
       <button (click)="openSearch()">
         <i class="ion-ios-search icon"></i>
       </button>
-      <ng-template #attachedSearchField></ng-template>
+      <ng-template #attachedSearchContainer></ng-template>
     </div>
     `,
 })
-export class NgaSearchComponent implements AfterViewInit, OnDestroy {
+export class NgaSearchComponent implements OnInit, AfterViewInit, OnDestroy {
 
-  showSearch: boolean = false;
-  attachedSearchField: boolean = false;
+  @Input() tag: string;
+  @Input() placeholder: string = 'Search...';
 
-  @Input() placeholder: string = 'akveo';
-  @ViewChild('attachedSearchField', { read: ViewContainerRef }) attachedSearchContainer: ViewContainerRef;
+  @HostBinding('class.show') showSearch: boolean = false;
+
+  @ViewChild('attachedSearchContainer', { read: ViewContainerRef }) attachedSearchContainer: ViewContainerRef;
 
   private searchFieldComponentRef: ComponentRef<any> = null;
   private searchType: string = 'rotate-layout';
 
   constructor(private searchService: NgaSuperSearchService,
               private themeService: NgaThemeService,
-              private componentFactoryResolver: ComponentFactoryResolver) {}
+              private componentFactoryResolver: ComponentFactoryResolver) { }
 
   @HostBinding('class.simple-search')
   get simpleSearch() {
@@ -171,42 +173,26 @@ export class NgaSearchComponent implements AfterViewInit, OnDestroy {
 
   @Input()
   set type(val: any) {
-    if (val === 'simple-search') {
-      this.attachedSearchField = true;
-    }
     this.searchType = val;
   }
 
   openSearch() {
-    this.showSearch = true;
-    setTimeout(() => {
-      this.searchFieldComponentRef.instance.showSearch = true;
-      this.searchFieldComponentRef.instance.inputElement.nativeElement.focus();
-      this.searchFieldComponentRef.changeDetectorRef.detectChanges();
-    }, 1);
-    this.searchService.onActivateSearch(this.searchType);
+    this.searchService.activateSearch(this.searchType, this.tag);
   }
 
-  closeSearch() {
-    this.showSearch = false;
-    this.searchFieldComponentRef.instance.showSearch = false;
-    this.searchFieldComponentRef.instance.inputElement.nativeElement.value = '';
-    this.searchFieldComponentRef.instance.inputElement.nativeElement.blur();
-    this.searchFieldComponentRef.changeDetectorRef.detectChanges();
-    this.searchService.onDeactivateSearch(this.searchType);
-  }
-
-  connectToSearchField(component) {
-    component.searchType = this.searchType;
-    component.placeholder = this.placeholder;
-    component.searchClose.subscribe(() => {
-      this.closeSearch();
+  connectToSearchField(componentRef) {
+    this.searchFieldComponentRef = componentRef;
+    componentRef.instance.searchType = this.searchType;
+    componentRef.instance.placeholder = this.placeholder;
+    componentRef.instance.searchClose.subscribe(() => {
+      this.searchService.deactivateSearch(this.searchType, this.tag);
     });
 
-    component.search.subscribe(term => {
-      this.searchService.onSearchSubmit(term);
-      this.closeSearch();
+    componentRef.instance.search.subscribe(term => {
+      this.searchService.submitSearch(term, this.tag);
+      this.searchService.deactivateSearch(this.searchType, this.tag);
     });
+    componentRef.changeDetectorRef.detectChanges();
   }
 
   createAttachedSearch(component): Observable<any> {
@@ -216,14 +202,46 @@ export class NgaSearchComponent implements AfterViewInit, OnDestroy {
     return Observable.of(componentRef);
   }
 
+  ngOnInit() {
+    this.searchService.onSearchActivate().subscribe((data) => {
+      if (!this.tag || data.tag === this.tag) {
+        this.showSearch = true;
+        if (this.searchType !== NgaSearchFieldComponent.TYPE_SIMPLE_SEARCH) {
+          this.themeService.appendLayoutClass(this.searchType);
+          Observable.of(null).delay(0).subscribe(() => {
+            this.themeService.appendLayoutClass('with-search');
+          });
+        }
+        this.searchFieldComponentRef.instance.showSearch = true;
+        this.searchFieldComponentRef.instance.inputElement.nativeElement.focus();
+        this.searchFieldComponentRef.changeDetectorRef.detectChanges();
+      }
+    });
+
+    this.searchService.onSearchDeactivate().subscribe((data) => {
+      if (!this.tag || data.tag === this.tag) {
+        this.showSearch = false;
+        this.searchFieldComponentRef.instance.showSearch = false;
+        this.searchFieldComponentRef.instance.inputElement.nativeElement.value = '';
+        this.searchFieldComponentRef.instance.inputElement.nativeElement.blur();
+        this.searchFieldComponentRef.changeDetectorRef.detectChanges();
+        if (this.searchType !== NgaSearchFieldComponent.TYPE_SIMPLE_SEARCH) {
+          this.themeService.removeLayoutClass('with-search');
+          Observable.of(null).delay(500).subscribe(() => {
+            this.themeService.removeLayoutClass(this.searchType);
+          });
+        }
+      }
+    });
+  }
+
   ngAfterViewInit() {
-    const fieldComponentObservable = this.attachedSearchField ? this.createAttachedSearch(NgaSearchFieldComponent)
+    const fieldComponentObservable = this.searchType === NgaSearchFieldComponent.TYPE_SIMPLE_SEARCH ?
+      this.createAttachedSearch(NgaSearchFieldComponent)
       : this.themeService.appendToLayoutTop(NgaSearchFieldComponent);
     fieldComponentObservable.subscribe((componentRef: ComponentRef<any>) => {
       if (componentRef) {
-        this.searchFieldComponentRef = componentRef;
-        this.connectToSearchField(componentRef.instance);
-        componentRef.changeDetectorRef.detectChanges();
+        this.connectToSearchField(componentRef);
       }
     });
   }
@@ -232,4 +250,3 @@ export class NgaSearchComponent implements AfterViewInit, OnDestroy {
     this.themeService.clearLayoutTop();
   }
 }
-

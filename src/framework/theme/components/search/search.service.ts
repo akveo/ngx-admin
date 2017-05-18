@@ -9,41 +9,33 @@ import { Subject } from 'rxjs/Subject';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/share';
 
-import { NgaThemeService } from '../../services/theme.service';
-
 @Injectable()
 export class NgaSuperSearchService {
-  private searchTerms$ = new Subject();
+  private searchSubmittings$ = new Subject();
   private searchActivations$ = new Subject();
   private searchDeactivations$ = new Subject();
 
-  constructor(private themeService: NgaThemeService) { }
-
-  onActivateSearch(searchType: string) {
-    this.themeService.appendLayoutClass(searchType);
-    setTimeout(() => this.themeService.appendLayoutClass('with-search'), 1);
-    this.searchActivations$.next(searchType);
+  activateSearch(searchType: string, tag?: string) {
+    this.searchActivations$.next({ searchType, tag });
   }
 
-  onDeactivateSearch(searchType) {
-    this.themeService.removeLayoutClass('with-search');
-    setTimeout(() => this.themeService.removeLayoutClass(searchType), 500);
-    this.searchDeactivations$.next(searchType);
+  deactivateSearch(searchType: string, tag?: string) {
+    this.searchDeactivations$.next({ searchType, tag });
   }
 
-  onSearchSubmit(term) {
-    this.searchTerms$.next(term);
+  submitSearch(term: string, tag?: string) {
+    this.searchSubmittings$.next({ term, tag });
   }
 
-  searchActivations(): Observable<any> {
+  onSearchActivate(): Observable<{ searchType: string, tag?: string }> {
     return this.searchActivations$.share();
   }
 
-  searchDeactivations(): Observable<any> {
+  onSearchDeactivate(): Observable<{ searchType: string, tag?: string }> {
     return this.searchDeactivations$.share();
   }
 
-  searchTerms(): Observable<any> {
-    return this.searchTerms$.share();
+  onSearchSubmit(): Observable<{ term: string, tag?: string }> {
+    return this.searchSubmittings$.share();
   }
 }

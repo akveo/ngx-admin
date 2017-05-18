@@ -31,11 +31,13 @@
       transition: width 0.3s ease;
       width: 2rem;
       overflow: hidden;
-
-      &.show {
+    }
+    &.show {
+      .search-wrap {
         align-items: center;
         width: 18rem;
       }
     }
   }
 }
+
