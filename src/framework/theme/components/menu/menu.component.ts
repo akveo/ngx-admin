@@ -128,6 +128,7 @@ export class NgaMenuComponent implements OnInit, OnDestroy {
         data.listener.next({ tag: this.tag, item: selectedItem });
       });
 
+    // TODO: there would be too many events, we need only nagivation end I believe
     this.router.events.subscribe(() => {
       this.menuService.prepareItems(this.items);
     });

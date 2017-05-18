@@ -5,6 +5,7 @@
  */
 
 import { Injectable, Optional, Inject } from '@angular/core';
+import { Location } from '@angular/common';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
@@ -25,7 +26,9 @@ export class NgaMenuService {
   private stack = List<NgaMenuItem>();
   private items = List<NgaMenuItem>();
 
-  constructor(private router: Router, @Inject(ngaMenuOptionsToken) private options: any) {
+  constructor(private router: Router,
+              private location: Location,
+              @Inject(ngaMenuOptionsToken) private options: any) {
     if (options && options.items) {
       this.items = List<NgaMenuItem>(this.options.items);
     } else {
@@ -116,7 +119,8 @@ export class NgaMenuService {
       }
     }
 
-    if (this.router.isActive(this.router.createUrlTree([parent.link]), parent.pathMath === 'full')) {
+    // TODO: check if all cases are covered, consider the pathMatch flag
+    if (this.location.isCurrentPathEqualTo(parent.link)) {
       parent.selected = true;
 
       if (parent.parent) {
