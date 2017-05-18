@@ -69,7 +69,7 @@ export class NgaMenuComponent implements OnInit, OnDestroy {
   @HostBinding('class.inverse') inverseValue: boolean;
 
   @Input() tag: string;
-  @Input() items: List<NgaMenuItem>;
+  @Input() items = List<NgaMenuItem>();
 
   /**
    * Makes colors inverse based on current theme
