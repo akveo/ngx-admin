@@ -80,8 +80,6 @@ export class NgaMenuComponent implements OnInit, OnDestroy {
     this.inverseValue = convertToBoolProperty(val);
   }
 
-  @Output() toggleSubMenu = new EventEmitter<any>();
-
   private stack = List<NgaMenuItem>();
 
   private addItemSubscription: Subscription;
@@ -151,7 +149,7 @@ export class NgaMenuComponent implements OnInit, OnDestroy {
   onToggleSubMenu(item: NgaMenuItem) {
     item.expanded = !item.expanded;
 
-    this.toggleSubMenu.emit(item);
+    this.menuService.submenuToggle(item, this.tag);
   }
 
   onSelectItem(item: NgaMenuItem) {
