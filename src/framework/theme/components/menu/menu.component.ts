@@ -5,7 +5,7 @@
  */
 
 import { Component, Input, Output, EventEmitter, OnInit, OnDestroy, HostBinding } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, NavigationEnd } from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { List } from 'immutable';
@@ -128,9 +128,10 @@ export class NgaMenuComponent implements OnInit, OnDestroy {
         data.listener.next({ tag: this.tag, item: selectedItem });
       });
 
-    // TODO: there would be too many events, we need only nagivation end I believe
-    this.router.events.subscribe(() => {
-      this.menuService.prepareItems(this.items);
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        this.menuService.prepareItems(this.items);
+      }
     });
 
     this.items = this.items.push(...this.menuService.getItems().toJS());
