@@ -123,11 +123,15 @@ export class NgaMenuTestComponent implements OnInit, OnDestroy {
   }]);
 
   private itemClickSubscription: Subscription;
+  private itemSelectSubscription: Subscription;
 
   constructor(private menuService: NgaMenuService) { }
 
   ngOnInit() {
     this.itemClickSubscription = this.menuService.onItemClick()
+      .subscribe((data: { tag: string, item: NgaMenuItem }) => console.info(data));
+
+    this.itemSelectSubscription = this.menuService.onItemSelect()
       .subscribe((data: { tag: string, item: NgaMenuItem }) => console.info(data));
 
     this.menuService.addItems(List<NgaMenuItem>([{
@@ -161,6 +165,7 @@ export class NgaMenuTestComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     this.itemClickSubscription.unsubscribe();
+    this.itemSelectSubscription.unsubscribe();
   }
 
   addMenuItem() {

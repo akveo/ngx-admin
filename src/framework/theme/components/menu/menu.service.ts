@@ -22,6 +22,7 @@ export class NgaMenuService {
   private addItems$ = new ReplaySubject(1);
   private navigateHome$ = new ReplaySubject(1);
   private getSelectedItem$ = new ReplaySubject(1);
+  private itemSelect$ = new ReplaySubject(1);
 
   private stack = List<NgaMenuItem>();
   private items = List<NgaMenuItem>();
@@ -64,6 +65,13 @@ export class NgaMenuService {
     });
   }
 
+  itemSelect(item: NgaMenuItem, tag?: string) {
+    this.itemSelect$.next({
+      tag,
+      item,
+    });
+  }
+
   navigateHome(tag?: string) {
     this.navigateHome$.next({ tag });
   }
@@ -78,6 +86,10 @@ export class NgaMenuService {
 
   onItemClick(): Observable<{ tag: string, item: NgaMenuItem }> {
     return this.itemClick$.publish().refCount();
+  }
+
+  onItemSelect(): Observable<{ tag: string, item: NgaMenuItem }> {
+    return this.itemSelect$.publish().refCount();
   }
 
   onAddItem(): Observable<{ tag: string, items: List<NgaMenuItem> }> {

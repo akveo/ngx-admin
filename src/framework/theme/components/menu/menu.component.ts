@@ -159,6 +159,8 @@ export class NgaMenuComponent implements OnInit, OnDestroy {
     this.menuService.resetItems(this.items);
 
     item.selected = true;
+
+    this.menuService.itemSelect(item, this.tag);
   }
 
   onItemClick(item: NgaMenuItem) {
