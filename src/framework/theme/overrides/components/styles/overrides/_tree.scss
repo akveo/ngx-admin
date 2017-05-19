@@ -4,15 +4,10 @@
  * Licensed under the MIT License. See License.txt in the project root for license information.
  */
 
-@import './overrides/d3';
+@mixin nga-cp-tree-theme($theme-name) {
 
-// Create a theme
-@mixin nga-charts($theme-name) {
+  /deep/ {
 
-  .theme-#{$theme-name} {
-    @include nga-ch-d3-theme($theme-name);
-
-    @content;
   }
 
 }

@@ -8,8 +8,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { List } from 'immutable';
 import { Subscription } from 'rxjs/Subscription';
 
-import { NgaMenuService } from '../../framework/theme/components/menu/menu.service';
-import { NgaMenuItem } from '../../framework/theme/components/menu/menu.options';
+import { NgaMenuService, NgaMenuItem } from '../../framework/theme';
 
 @Component({
   selector: 'nga-menu-item1',
@@ -123,11 +122,23 @@ export class NgaMenuTestComponent implements OnInit, OnDestroy {
   }]);
 
   private itemClickSubscription: Subscription;
+  private itemSelectSubscription: Subscription;
+  private itemHoverSubscription: Subscription;
+  private submenuToggleSubscription: Subscription;
 
   constructor(private menuService: NgaMenuService) { }
 
   ngOnInit() {
     this.itemClickSubscription = this.menuService.onItemClick()
+      .subscribe((data: { tag: string, item: NgaMenuItem }) => console.info(data));
+
+    this.itemSelectSubscription = this.menuService.onItemSelect()
+      .subscribe((data: { tag: string, item: NgaMenuItem }) => console.info(data));
+
+    // this.itemHoverSubscription = this.menuService.onItemHover()
+    //   .subscribe((data: { tag: string, item: NgaMenuItem }) => console.info(data));
+
+    this.submenuToggleSubscription = this.menuService.onSubmenuToggle()
       .subscribe((data: { tag: string, item: NgaMenuItem }) => console.info(data));
 
     this.menuService.addItems(List<NgaMenuItem>([{
@@ -161,6 +172,9 @@ export class NgaMenuTestComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     this.itemClickSubscription.unsubscribe();
+    this.itemSelectSubscription.unsubscribe();
+    this.itemHoverSubscription.unsubscribe();
+    this.submenuToggleSubscription.unsubscribe();
   }
 
   addMenuItem() {
