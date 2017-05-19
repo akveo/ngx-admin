@@ -76,7 +76,7 @@ export class NgaMenuService {
     this.navigateHome$.next({ tag });
   }
 
-  getSelectedItem(tag?: string) {
+  getSelectedItem(tag?: string): Observable<{ tag: string, item: NgaMenuItem }> {
     const listener = new BehaviorSubject<{ tag: string, item: NgaMenuItem }>(null);
 
     this.getSelectedItem$.next({ tag, listener });
