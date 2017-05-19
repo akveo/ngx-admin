@@ -119,8 +119,9 @@ export class NgaMenuService {
       }
     }
 
-    // TODO: check if all cases are covered, consider the pathMatch flag
-    if (this.location.isCurrentPathEqualTo(parent.link)) {
+    const exact: boolean = parent.pathMath === 'full';
+
+    if ((exact && this.location.path() === parent.link) || (!exact && this.location.path().includes(parent.link))) {
       parent.selected = true;
 
       if (parent.parent) {

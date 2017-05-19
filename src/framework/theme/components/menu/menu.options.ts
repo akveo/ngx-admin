@@ -7,7 +7,7 @@
 import { InjectionToken } from '@angular/core';
 import { List } from 'immutable';
 
-export interface NgaMenuItem {
+export abstract class NgaMenuItem {
   title: string;
   link?: string;
   url?: string;
@@ -16,7 +16,7 @@ export interface NgaMenuItem {
   children?: List<NgaMenuItem>;
   target?: string;
   hidden?: boolean;
-  pathMath?: string;
+  pathMath?: string = 'full';
   home?: boolean;
   group?: boolean;
   parent?: NgaMenuItem;
