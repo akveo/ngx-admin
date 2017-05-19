@@ -10,9 +10,7 @@ import { List } from 'immutable';
 import { NgaSharedModule } from '../shared/shared.module';
 
 import { NgaMenuComponent, NgaMenuItemComponent } from './menu.component';
-import { NgaMenuService } from './menu.service';
-
-import { NgaMenuOptions, ngaMenuOptionsToken } from './menu.options';
+import { NgaMenuService, NgaMenuInternalService, NgaMenuOptions, ngaMenuOptionsToken } from './menu.service';
 
 const ngaMenuComponents = [
   NgaMenuComponent,
@@ -21,6 +19,7 @@ const ngaMenuComponents = [
 
 const NGA_MENU_PROVIDERS = [
   NgaMenuService,
+  NgaMenuInternalService,
 ];
 
 @NgModule({

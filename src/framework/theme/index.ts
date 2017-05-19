@@ -5,12 +5,11 @@
  */
 
 export * from './theme.options';
-export * from './components/menu/menu.options';
 export * from './theme.module';
 export * from './components/card/card.module';
 export * from './components/layout/layout.module';
 export * from './components/menu/menu.module';
-export * from './components/menu/menu.service';
+export { NgaMenuService, NgaMenuOptions, NgaMenuItem } from './components/menu/menu.service';
 export * from './components/route-tabset/route-tabset.module';
 export * from './components/sidebar/sidebar.module';
 export * from './components/sidebar/sidebar.service';

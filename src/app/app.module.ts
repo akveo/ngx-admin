@@ -58,7 +58,7 @@ import { NgaBootstrapModule } from '../framework/theme/overrides/bootstrap/boots
 import { NgaBootstrapTestComponent } from './bootstrap-test/bootstrap-test.component';
 
 import { routes } from './app.routes';
-import { NgaMenuItem } from '../framework/theme/components/menu/menu.options';
+import { NgaMenuItem } from '../framework/theme';
 
 const NGA_TEST_COMPONENTS = [
   NgaAppComponent,

@@ -10,8 +10,7 @@ import { Subscription } from 'rxjs/Subscription';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { List } from 'immutable';
 
-import { NgaMenuService } from './menu.service';
-import { NgaMenuItem } from './menu.options';
+import { NgaMenuInternalService, NgaMenuItem } from './menu.service';
 import { convertToBoolProperty } from '../helpers';
 
 @Component({
@@ -28,7 +27,7 @@ export class NgaMenuItemComponent {
   @Output() selectItem = new EventEmitter<any>();
   @Output() itemClick = new EventEmitter<any>();
 
-  constructor(private router: Router, private menuService: NgaMenuService) { }
+  constructor(private router: Router) { }
 
   onToggleSubMenu(item: NgaMenuItem) {
     this.toggleSubMenu.emit(item);
@@ -86,26 +85,26 @@ export class NgaMenuComponent implements OnInit, OnDestroy {
   private navigateHomeSubscription: Subscription;
   private getSelectedItemSubscription: Subscription;
 
-  constructor(private menuService: NgaMenuService, private router: Router) { }
+  constructor(private menu2Service: NgaMenuInternalService, private router: Router) { }
 
   ngOnInit() {
-    this.addItemSubscription = this.menuService.onAddItem()
+    this.addItemSubscription = this.menu2Service.onAddItem()
       .subscribe((data: { tag: string, items: List<NgaMenuItem> }) => {
         if (this.compareTag(data.tag)) {
           this.items = this.items.push(...data.items.toJS());
 
-          this.menuService.prepareItems(this.items);
+          this.menu2Service.prepareItems(this.items);
         }
       });
 
-    this.navigateHomeSubscription = this.menuService.onNavigateHome()
+    this.navigateHomeSubscription = this.menu2Service.onNavigateHome()
       .subscribe((data: { tag: string }) => {
         if (this.compareTag(data.tag)) {
           this.navigateHome();
         }
       });
 
-    this.getSelectedItemSubscription = this.menuService.onGetSelectedItem()
+    this.getSelectedItemSubscription = this.menu2Service.onGetSelectedItem()
       .subscribe((data: { tag: string, listener: BehaviorSubject<{ tag: string, item: NgaMenuItem }> }) => {
 
         let selectedItem: NgaMenuItem;
@@ -127,13 +126,13 @@ export class NgaMenuComponent implements OnInit, OnDestroy {
 
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
-        this.menuService.prepareItems(this.items);
+        this.menu2Service.prepareItems(this.items);
       }
     });
 
-    this.items = this.items.push(...this.menuService.getItems().toJS());
+    this.items = this.items.push(...this.menu2Service.getItems().toJS());
 
-    this.menuService.prepareItems(this.items);
+    this.menu2Service.prepareItems(this.items);
   }
 
   ngOnDestroy() {
@@ -143,25 +142,25 @@ export class NgaMenuComponent implements OnInit, OnDestroy {
   }
 
   onHoverItem(item: NgaMenuItem) {
-    this.menuService.itemHover(item, this.tag);
+    this.menu2Service.itemHover(item, this.tag);
   }
 
   onToggleSubMenu(item: NgaMenuItem) {
     item.expanded = !item.expanded;
 
-    this.menuService.submenuToggle(item, this.tag);
+    this.menu2Service.submenuToggle(item, this.tag);
   }
 
   onSelectItem(item: NgaMenuItem) {
-    this.menuService.resetItems(this.items);
+    this.menu2Service.resetItems(this.items);
 
     item.selected = true;
 
-    this.menuService.itemSelect(item, this.tag);
+    this.menu2Service.itemSelect(item, this.tag);
   }
 
   onItemClick(item: NgaMenuItem) {
-    this.menuService.itemClick(item, this.tag);
+    this.menu2Service.itemClick(item, this.tag);
   }
 
   private navigateHome() {
@@ -178,7 +177,7 @@ export class NgaMenuComponent implements OnInit, OnDestroy {
     this.clearStack();
 
     if (homeItem) {
-      this.menuService.resetItems(this.items);
+      this.menu2Service.resetItems(this.items);
 
       homeItem.selected = true;
 
