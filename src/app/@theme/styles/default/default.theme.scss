@@ -32,3 +32,7 @@ $theme-name: 'default';
 // @nga/charts module styles
 @import '~@nga/theme/overrides/charts/styles/themes/nga.theme.default';
 @include nga-charts($theme-name);
+
+// @nga/components module styles
+@import '~@nga/theme/overrides/components/styles/themes/nga.theme.default';
+@include nga-components($theme-name);

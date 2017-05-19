@@ -36,7 +36,10 @@ export const menuItems: List<NgaMenuItem> = List([{
 }, {
   title: 'Components',
   icon: 'ion ion-ios-gear-outline',
-  link: '/pages/components',
+  children: List<NgaMenuItem>([{
+    title: 'Tree',
+    link: '/pages/components/tree',
+  }]),
 }, {
   title: 'Maps',
   icon: 'ion ion-ios-location-outline',

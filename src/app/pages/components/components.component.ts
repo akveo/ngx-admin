@@ -3,9 +3,7 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'ngx-components',
   template: `
-    <p>
-      components works!
-    </p>
+    <router-outlet></router-outlet>
   `,
 })
 export class ComponentsComponent {
