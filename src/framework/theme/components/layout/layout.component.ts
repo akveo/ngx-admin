@@ -16,10 +16,11 @@ import {
   ViewChild,
   ViewContainerRef,
 } from '@angular/core';
-import { convertToBoolProperty } from '../helpers';
-import { NgaThemeService } from '../../services/theme.service';
 import { Subscription } from 'rxjs/Subscription';
 import { Subject } from 'rxjs/Subject';
+
+import { convertToBoolProperty } from '../helpers';
+import { NgaThemeService } from '../../services/theme.service';
 
 /**
  * Component intended to be used within  the `<nga-layout>` component.
@@ -131,6 +132,8 @@ export class NgaLayoutComponent implements OnDestroy, AfterViewInit {
 
   @ViewChild('layoutTopDynamicArea', { read: ViewContainerRef }) veryTopRef: ViewContainerRef;
 
+  protected appendClassSubscription: Subscription;
+  protected removeClassSubscription: Subscription;
   protected themeSubscription: Subscription;
   protected appendSubscription: Subscription;
   protected clearSubscription: Subscription;
@@ -146,15 +149,21 @@ export class NgaLayoutComponent implements OnDestroy, AfterViewInit {
       }
       this.renderer.addClass(this.elementRef.nativeElement, `theme-${theme.name}`);
     });
+
+    this.appendClassSubscription = this.themeService.onAppendLayoutClass().subscribe((className) => {
+      this.renderer.addClass(this.elementRef.nativeElement, className);
+    });
+
+    this.removeClassSubscription = this.themeService.onRemoveLayoutClass().subscribe((className) => {
+      this.renderer.removeClass(this.elementRef.nativeElement, className);
+    });
   }
 
   ngAfterViewInit(): void {
     this.appendSubscription = this.themeService.onAppendToTop()
       .subscribe((data: { component: any, listener: Subject<any> }) => {
-
         const componentFactory = this.componentFactoryResolver.resolveComponentFactory(data.component);
         const componentRef = this.veryTopRef.createComponent(componentFactory);
-
         data.listener.next(componentRef);
       });
 
@@ -167,6 +176,8 @@ export class NgaLayoutComponent implements OnDestroy, AfterViewInit {
 
   ngOnDestroy(): void {
     this.themeSubscription.unsubscribe();
+    this.appendClassSubscription.unsubscribe();
+    this.removeClassSubscription.unsubscribe();
     this.appendSubscription.unsubscribe();
     this.clearSubscription.unsubscribe();
   }

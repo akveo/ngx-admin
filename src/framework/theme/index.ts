@@ -18,6 +18,8 @@ export * from './components/user/user.module';
 export * from './components/actions/actions.module';
 export * from './services/theme.service';
 export * from './overrides/bootstrap/bootstrap.module';
+export * from './components/search/search.module';
+export * from './components/search/search.service';
 export * from './overrides/typography/typography.module';
 export * from './overrides/charts/charts.module';
 export * from './overrides/components/components.module';

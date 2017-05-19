@@ -20,8 +20,10 @@ export class NgaThemeService {
   // TODO: behavioral subject here?
   currentTheme: string;
   private themeChanges$ = new ReplaySubject(1);
-  private appendToLayoutTop$ = new Subject();
+  private appendToLayoutTop$ = new ReplaySubject(1);
   private createLayoutTop$ = new Subject();
+  private appendLayoutClass$ = new Subject();
+  private removeLayoutClass$ = new Subject();
 
   constructor(@Inject(ngaThemeOptionsToken) protected options: any) {
     if (options && options.name) {
@@ -58,5 +60,21 @@ export class NgaThemeService {
 
   onClearLayoutTop(): Observable<any> {
     return this.createLayoutTop$.publish().refCount();
+  }
+
+  appendLayoutClass(className: string) {
+    this.appendLayoutClass$.next(className);
+  }
+
+  onAppendLayoutClass(): Observable<any> {
+    return this.appendLayoutClass$.publish().refCount();
+  }
+
+  removeLayoutClass(className: string) {
+    this.removeLayoutClass$.next(className);
+  }
+
+  onRemoveLayoutClass(): Observable<any> {
+    return this.removeLayoutClass$.publish().refCount();
   }
 }

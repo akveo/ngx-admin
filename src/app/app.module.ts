@@ -58,6 +58,9 @@ import { NgaBootstrapModule } from '../framework/theme/overrides/bootstrap/boots
 import { NgaBootstrapTestComponent } from './bootstrap-test/bootstrap-test.component';
 
 import { routes } from './app.routes';
+
+import { NgaSearchTestComponent } from './search-test/search-test.component';
+import { NgaSearchModule } from '../framework/theme';
 import { NgaMenuItem } from '../framework/theme';
 
 const NGA_TEST_COMPONENTS = [
@@ -86,6 +89,7 @@ const NGA_TEST_COMPONENTS = [
   NgaMenuItem4Component,
   NgaUserTestComponent,
   NgaThemeChangeTestComponent,
+  NgaSearchTestComponent,
   NgaBootstrapTestComponent,
   NgaDynamicToAddComponent,
   NgaThemeDynamicTestComponent,
@@ -115,6 +119,7 @@ const NGA_TEST_COMPONENTS = [
     NgaSidebarModule.forRoot(),
     NgaTabsetModule,
     NgaUserModule,
+    NgaSearchModule,
     NgaActionsModule,
     NgaAuthModule.forRoot({
       providers: {

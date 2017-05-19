@@ -1,0 +1,158 @@
+/**
+* @license
+* Copyright Akveo. All Rights Reserved.
+* Licensed under the MIT License. See License.txt in the project root for license information.
+*/
+
+:host {
+  button {
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    border: none;
+    background: none;
+
+    &:focus {
+      box-shadow: none;
+      outline: none;
+    }
+  }
+
+  input {
+    border-top: 0;
+    border-right: 0;
+    border-left: 0;
+    background: transparent;
+    border-radius: 0;
+    line-height: 1;
+    display: inline-block;
+    box-sizing: border-box;
+    padding: 0.05rem 0;
+    -webkit-appearance: none;
+
+    &:focus {
+      outline: none;
+    }
+
+    &::placeholder {
+      opacity: 0.3;
+    }
+  }
+
+  span {
+    font-size: 90%;
+    font-weight: bold;
+    display: block;
+    width: 75%;
+    margin: 0 auto;
+    padding: 0.85rem 0;
+    text-align: right;
+  }
+}
+
+:host.modal-zoomin {
+
+  .wrapper {
+    display: block;
+  }
+
+  .search {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.5s;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      width: calc(100% + 15px);
+      height: calc(100% + 15px);
+      pointer-events: none;
+    }
+
+    &::before {
+      top: 0;
+      left: 0;
+      border-right-width: 0;
+      border-bottom-width: 0;
+      transform: translate3d(-15px, -15px, 0);
+    }
+
+    &::after {
+      right: 0;
+      bottom: 0;
+      border-top-width: 0;
+      border-left-width: 0;
+      transform: translate3d(15px, 15px, 0);
+    }
+
+    button {
+      position: absolute;
+      top: 3rem;
+      right: 3rem;
+      font-size: 2.5rem;
+    }
+
+    input {
+      font-size: 10vw;
+      width: 75%;
+    }
+
+    button {
+      opacity: 0;
+      transform: scale3d(0.8, 0.8, 1);
+      transition: opacity 0.5s, transform 0.5s;
+    }
+
+    form {
+      opacity: 0;
+      transform: scale3d(0.8, 0.8, 1);
+      transition: opacity 0.5s, transform 0.5s;
+    }
+  }
+
+
+  &.show {
+    .search {
+      pointer-events: auto;
+      opacity: 1;
+
+      &::before,
+      &::after {
+        transform: translate3d(0, 0, 0);
+        transition: transform 0.5s;
+      }
+
+      button {
+        opacity: 1;
+        transform: scale3d(1, 1, 1);
+      }
+
+      form {
+        opacity: 1;
+        transform: scale3d(1, 1, 1);
+      }
+    }
+  }
+
+  @media screen and (max-width: 40rem) {
+    form {
+      margin: 5rem 0 1rem;
+    }
+
+    span {
+      text-align: left;
+    }
+  }
+}

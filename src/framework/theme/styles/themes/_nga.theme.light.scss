@@ -14,4 +14,7 @@ $nga-background-inverse: white;
 
 $nga-foreground-inverse: $nga-color-default;
 
+$nga-search-background: $nga-background !default;
+$nga-search-text: $nga-color-default !default;
+
 @import 'nga.theme.default';

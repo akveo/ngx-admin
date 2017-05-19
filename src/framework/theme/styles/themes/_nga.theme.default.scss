@@ -193,3 +193,12 @@ $nga-actions-color-inverse: $nga-foreground-inverse !default;
 $nga-scrollbar-foreground: rgba(0, 0, 0, 0.6) !default;
 $nga-scrollbar-background: rgba(255, 255, 255, 0.7) !default;
 $nga-scrollbar-width: 0.4em !default;
+
+$nga-search-btn-open-foreground: $nga-color-secondary !default;
+$nga-search-btn-close-foreground:	$nga-color-secondary !default;
+$nga-search-background: linear-gradient(to right, #171749, #413789) !default;//TODO: get rid of this hardcode, $nga-background
+$nga-search-background-secondary: $nga-color-default !default;
+$nga-search-text: $nga-color-inverse !default;
+$nga-search-info: $nga-color-secondary !default;
+$nga-search-dash: $nga-color-secondary !default;
+$nga-search-placeholder: $nga-color-secondary !default;

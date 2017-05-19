@@ -1,0 +1,108 @@
+/**
+ * @license
+ * Copyright Akveo. All Rights Reserved.
+ * Licensed under the MIT License. See License.txt in the project root for license information.
+ */
+
+@mixin nga-search-theme($theme-name) {
+
+  nga-search-field {
+
+    .search {
+      background: $nga-search-background;
+
+      button {
+        color: $nga-search-btn-close-foreground;
+      }
+
+      span {
+        color: $nga-search-info;
+      }
+
+      input {
+        color: $nga-search-text;
+        border-bottom: 4px solid $nga-search-dash;
+
+        &::placeholder {
+          color: $nga-search-placeholder;
+        }
+
+        &::-ms-clear {
+          display: none;
+        }
+      }
+    }
+
+    &.rotate-layout {
+      .wrapper {
+        opacity: 0;
+        background: $nga-search-background;
+      }
+
+    }
+
+    &.modal-zoomin {
+      .search::before,
+      .search::after {
+        border: 1.5rem solid $nga-search-background-secondary;
+      }
+
+    }
+
+		&.modal-half {
+			.form-wrapper {
+				background: $nga-search-background;
+			}
+      .search::before {
+        background: $nga-search-background-secondary;
+      }
+    }
+
+    &.modal-drop {
+      .form-content::after {
+        background: $nga-search-dash;
+      }
+      .search::before {
+        background: $nga-search-background;
+      }
+    }
+
+    &.curtain {
+      .search::after {
+        background: $nga-search-background;
+      }
+      .search {
+        background: $nga-search-background;
+      }
+    }
+
+		&.column-curtain {
+			.wrapper {
+        &::before {
+          background: $nga-search-background;
+        }
+        &::after {
+          background: transparent;
+        }
+      }
+      &.show {
+        .wrapper::after {
+          background: $nga-search-background-secondary;
+        }
+      }
+		}
+
+    &.simple-search {
+      input {
+        border-bottom: 1px solid $nga-search-dash;
+      }
+    }
+  }
+
+  nga-search {
+    button {
+      color: $nga-search-btn-open-foreground;
+    }
+  }
+
+}

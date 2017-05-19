@@ -16,6 +16,7 @@ import { NgaSidebarTestOneComponent } from './sidebar-test/sidebar-test-one.comp
 import { NgaSidebarTestTwoComponent } from './sidebar-test/sidebar-test-two.component';
 import { NgaSidebarTestThreeComponent } from './sidebar-test/sidebar-test-three.component';
 import { NgaThemeChangeTestComponent } from './layout-test/theme-change-test.component';
+import { NgaSearchTestComponent } from './search-test/search-test.component';
 import {
   NgaRouteTabsetTestComponent,
   NgaRouteTabsetTestChild1Component,
@@ -174,6 +175,10 @@ export const routes: Routes = [
   {
     path: 'auth',
     loadChildren: 'framework/auth/auth.module#NgaAuthModule',
+  },
+  {
+    path: 'search',
+    component: NgaSearchTestComponent,
   },
   {
     path: 'bootstrap',
