@@ -11,6 +11,7 @@ import {
   NgaMenuModule,
   NgaUserModule,
   NgaActionsModule,
+  NgaSearchModule,
 } from '@nga/theme';
 
 import {
@@ -36,6 +37,7 @@ const NGA_MODULES = [
   NgaMenuModule,
   NgaUserModule,
   NgaActionsModule,
+  NgaSearchModule,
 ];
 
 const COMPONENTS = [

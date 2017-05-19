@@ -15,7 +15,7 @@ import { NgaThemeService } from '@nga/theme/services/theme.service';
     </div>
 
     <nga-actions size="medium" inverse class="right">
-      <nga-action><ngx-search-input></ngx-search-input></nga-action>
+      <nga-action><nga-search type="rotate-layout"></nga-search></nga-action>
       <nga-action icon="ion-ios-email-outline"></nga-action>
       <nga-action disabled icon="ion-ios-bell-outline"></nga-action>
       <nga-action>

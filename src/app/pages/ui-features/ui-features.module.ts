@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { NgaTabsetModule, NgaRouteTabsetModule } from '@nga/theme';
+import { NgaTabsetModule, NgaRouteTabsetModule, NgaSearchModule } from '@nga/theme';
 
 import { SharedModule } from '../../shared.module';
 
@@ -20,6 +20,7 @@ import { LargeButtonsComponent } from './buttons/large/large.component';
 import { ModalComponent } from './modals/modal/modal.component';
 import { TypographyComponent } from './typography/typography.component';
 import { TabsComponent, Tab1Component, Tab2Component } from './tabs/tabs.component';
+import { SearchComponent } from './search-fields/search-fields.component';
 
 const COMPONENTS = [
   UiFeaturesComponent,
@@ -40,6 +41,7 @@ const COMPONENTS = [
   TabsComponent,
   Tab1Component,
   Tab2Component,
+  SearchComponent,
 ];
 
 @NgModule({
@@ -48,6 +50,7 @@ const COMPONENTS = [
     UiFeaturesRoutingModule,
     NgaTabsetModule,
     NgaRouteTabsetModule,
+    NgaSearchModule,
   ],
   declarations: [
     ...COMPONENTS,

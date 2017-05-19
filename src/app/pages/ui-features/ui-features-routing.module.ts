@@ -8,6 +8,7 @@ import { IconsComponent } from './icons/icons.component';
 import { ModalsComponent } from './modals/modals.component';
 import { TypographyComponent } from './typography/typography.component';
 import { TabsComponent, Tab1Component, Tab2Component } from './tabs/tabs.component';
+import { SearchComponent } from './search-fields/search-fields.component';
 
 const routes: Routes = [{
   path: '',
@@ -27,6 +28,9 @@ const routes: Routes = [{
   }, {
     path: 'typography',
     component: TypographyComponent,
+  }, {
+    path: 'search-fields',
+    component: SearchComponent,
   }, {
     path: 'tabs',
     component: TabsComponent,
