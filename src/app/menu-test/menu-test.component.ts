@@ -124,6 +124,7 @@ export class NgaMenuTestComponent implements OnInit, OnDestroy {
 
   private itemClickSubscription: Subscription;
   private itemSelectSubscription: Subscription;
+  private itemHoverSubscription: Subscription;
 
   constructor(private menuService: NgaMenuService) { }
 
@@ -133,6 +134,9 @@ export class NgaMenuTestComponent implements OnInit, OnDestroy {
 
     this.itemSelectSubscription = this.menuService.onItemSelect()
       .subscribe((data: { tag: string, item: NgaMenuItem }) => console.info(data));
+
+    // this.itemHoverSubscription = this.menuService.onItemHover()
+    //   .subscribe((data: { tag: string, item: NgaMenuItem }) => console.info(data));
 
     this.menuService.addItems(List<NgaMenuItem>([{
       title: 'Menu #3',
@@ -166,6 +170,7 @@ export class NgaMenuTestComponent implements OnInit, OnDestroy {
   ngOnDestroy() {
     this.itemClickSubscription.unsubscribe();
     this.itemSelectSubscription.unsubscribe();
+    this.itemHoverSubscription.unsubscribe();
   }
 
   addMenuItem() {
