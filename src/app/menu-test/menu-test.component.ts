@@ -173,7 +173,7 @@ export class NgaMenuTestComponent implements OnInit, OnDestroy {
   ngOnDestroy() {
     this.itemClickSubscription.unsubscribe();
     this.itemSelectSubscription.unsubscribe();
-    this.itemHoverSubscription.unsubscribe();
+    // this.itemHoverSubscription.unsubscribe();
     this.submenuToggleSubscription.unsubscribe();
   }
 
