@@ -1,0 +1,14 @@
+/**
+ * @license
+ * Copyright Akveo. All Rights Reserved.
+ * Licensed under the MIT License. See License.txt in the project root for license information.
+ */
+
+@import '../../../../styles/themes/nga.theme.default';
+@import '../component';
+
+$nga-smart-table-foreground: $nga-foreground !default;
+$nga-smart-table-border-color: $nga-foreground !default;
+$nga-smart-table-background: rgba(0, 0, 0, 0.03) !default;
+$nga-smart-table-font-weight-bolder: $nga-font-weight-bolder !default;
+$nga-smart-table-border-radius: 5px !default;

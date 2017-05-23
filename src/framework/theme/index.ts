@@ -23,3 +23,4 @@ export * from './components/search/search.service';
 export * from './overrides/typography/typography.module';
 export * from './overrides/charts/charts.module';
 export * from './overrides/components/components.module';
+export * from './overrides/tables/tables.module';
