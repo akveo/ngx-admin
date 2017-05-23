@@ -33,10 +33,10 @@ export const menuItems: List<NgaMenuItem> = List([{
     title: 'Animated Searches',
     link: '/pages/ui-features/search-fields',
   },
-    {
-      title: 'Tabs',
-      link: '/pages/ui-features/tabs',
-    }]),
+  {
+    title: 'Tabs',
+    link: '/pages/ui-features/tabs',
+  }]),
 }, {
   title: 'Components',
   icon: 'ion ion-ios-gear-outline',
@@ -86,5 +86,12 @@ export const menuItems: List<NgaMenuItem> = List([{
   }, {
     title: 'Form Layouts',
     link: '/pages/forms/layouts',
+  }]),
+}, {
+  title: 'Tables',
+  icon: 'ion-ios-grid-view',
+  children: List<NgaMenuItem>([{
+    title: 'Smart Table',
+    link: '/pages/tables/smart-table',
   }]),
 }]);

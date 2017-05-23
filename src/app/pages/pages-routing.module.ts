@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 
 import { PagesComponent } from './pages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { ChartsComponent } from './charts/charts.component';
 
 const routes: Routes = [{
   path: '',
@@ -29,6 +28,9 @@ const routes: Routes = [{
   }, {
     path: 'forms',
     loadChildren: './forms/forms.module#FormsModule',
+  }, {
+    path: 'tables',
+    loadChildren: './tables/tables.module#TablesModule',
   }, {
     path: '',
     redirectTo: 'dashboard',

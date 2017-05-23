@@ -36,3 +36,7 @@ $theme-name: 'light';
 // @nga/components module styles
 @import '~@nga/theme/overrides/components/styles/themes/nga.theme.default';
 @include nga-components($theme-name);
+
+// @nga/tables module styles
+@import '~@nga/theme/overrides/tables/styles/themes/nga.theme.default';
+@include nga-tables($theme-name);
