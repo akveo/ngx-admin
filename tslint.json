@@ -103,7 +103,6 @@
     "prefer-template": true,
     "no-unnecessary-callback-wrapper": true,
     "member-access": [true, "no-public"],
-    "newline-before-return": true,
     "no-empty-interface": true,
     "no-reference": true,
     "prefer-for-of": true,
