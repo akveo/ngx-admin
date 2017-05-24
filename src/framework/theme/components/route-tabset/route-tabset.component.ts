@@ -9,6 +9,8 @@ import { Router } from '@angular/router';
 
 import { convertToBoolProperty } from '../helpers';
 
+// TODO: 1) improve indents in template
+// TODO: 2) remove class "nga-route-tabset" for ul. Write css directly for the <ul> element
 @Component({
   selector: 'nga-route-tabset',
   styleUrls: ['./route-tabset.component.scss'],
@@ -46,5 +48,4 @@ export class NgaRouteTabsetComponent {
 
     this.router.navigate([tab.route]);
   }
-
 }

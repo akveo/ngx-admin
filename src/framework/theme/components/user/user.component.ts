@@ -54,6 +54,14 @@ export class NgaUserMenuItem {
 })
 export class NgaUserComponent {
 
+  // TODO: it makes sense use object instead of list of variables (or even enum)
+  /*
+    static readonly SIZE = {
+     SMALL: 'small',
+     MEDIUM: 'medium',
+     LARGE: 'large',
+    };
+   */
   static readonly SIZE_SMALL = 'small';
   static readonly SIZE_MEDIUM = 'medium';
   static readonly SIZE_LARGE = 'large';
@@ -177,7 +185,6 @@ export class NgaUserComponent {
 
   itemClick(event: any, item: NgaUserMenuItem): boolean {
     this.menuClick.emit(item);
-
     return false;
   }
 

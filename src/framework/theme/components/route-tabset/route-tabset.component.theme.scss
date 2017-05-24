@@ -12,36 +12,35 @@
     line-height: $nga-route-tabs-line-height;
 
     ul {
-      &.nga-route-tabset {
-        border-bottom: 1px solid $nga-route-tabs-separator;
+      border-bottom: 1px solid $nga-route-tabs-separator;
 
-        li {
-          border: 1px solid transparent;
-          border-top-left-radius: $nga-route-tabs-header-radius;
-          border-top-right-radius: $nga-route-tabs-header-radius;
-          background: $nga-route-tabs-header-background;
-          padding: $nga-route-tabs-header-padding;
-          min-width: $nga-route-tabs-header-min-width;
+      li {
+        border: 1px solid transparent;
+        border-top-left-radius: $nga-route-tabs-header-radius;
+        border-top-right-radius: $nga-route-tabs-header-radius;
+        background: $nga-route-tabs-header-background;
+        padding: $nga-route-tabs-header-padding;
+        min-width: $nga-route-tabs-header-min-width;
+
+        a {
+          color: $nga-route-tabs-foreground;
+        }
+
+        &.active {
+          background: $nga-route-tabs-header-active;
 
           a {
-            color: $nga-route-tabs-foreground;
+            color: $nga-route-tabs-foreground-inverse;
           }
+        }
 
-          &.active {
-            background: $nga-route-tabs-header-active;
+        &:hover {
+          border-color: $nga-route-tabs-header-border-inverse;
+        }
 
-            a {
-              color: $nga-route-tabs-foreground-inverse;
-            }
-          }
-
-          &:hover {
-            border-color: $nga-route-tabs-header-border-inverse;
-          }
-
-          &.active:hover {
-            border-bottom-color: $nga-route-tabs-header-border-inverse;
-          }
+        //TODO: as minimum we could remove "header" from that long long name "$nga-route-tabs-header-border-inverse"
+        &.active:hover {
+          border-bottom-color: $nga-route-tabs-header-border-inverse;
         }
       }
     }
