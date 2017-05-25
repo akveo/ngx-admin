@@ -85,6 +85,7 @@ export class NgaMenuComponent implements OnInit, OnDestroy {
   private navigateHomeSubscription: Subscription;
   private getSelectedItemSubscription: Subscription;
 
+  // TODO: menu2Service should be renamed 
   constructor(private menu2Service: NgaMenuInternalService, private router: Router) { }
 
   ngOnInit() {
@@ -151,6 +152,7 @@ export class NgaMenuComponent implements OnInit, OnDestroy {
     this.menu2Service.submenuToggle(item, this.tag);
   }
 
+  // TODO: is not fired on page reload
   onSelectItem(item: NgaMenuItem) {
     this.menu2Service.resetItems(this.items);
 

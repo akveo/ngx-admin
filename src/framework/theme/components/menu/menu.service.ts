@@ -30,7 +30,7 @@ export abstract class NgaMenuItem {
   children?: List<NgaMenuItem>;
   target?: string;
   hidden?: boolean;
-  pathMath?: string = 'full';
+  pathMath?: string = 'full'; // TODO: is not set if item is initialized by default, should be set anyway
   home?: boolean;
   group?: boolean;
   parent?: NgaMenuItem;
