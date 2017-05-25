@@ -13,6 +13,7 @@ import {
 import { NgaSuperSearchService } from './search.service';
 import { NgaThemeService } from '../../services/theme.service';
 import { Observable } from 'rxjs/Observable';
+import { Subscription } from 'rxjs/Subscription';
 import 'rxjs/add/observable/of';
 import 'rxjs/add/operator/delay';
 
@@ -161,6 +162,9 @@ export class NgaSearchComponent implements OnInit, AfterViewInit, OnDestroy {
 
   private searchFieldComponentRef: ComponentRef<any> = null;
   private searchType: string = 'rotate-layout';
+  private createFieldSubscription: Subscription;
+  private activateSearchSubscription: Subscription;
+  private deactivateSearchSubscription: Subscription;
 
   constructor(private searchService: NgaSuperSearchService,
               private themeService: NgaThemeService,
@@ -203,7 +207,7 @@ export class NgaSearchComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   ngOnInit() {
-    this.searchService.onSearchActivate().subscribe((data) => {
+    this.activateSearchSubscription = this.searchService.onSearchActivate().subscribe((data) => {
       if (!this.tag || data.tag === this.tag) {
         this.showSearch = true;
         if (this.searchType !== NgaSearchFieldComponent.TYPE_SIMPLE_SEARCH) {
@@ -218,7 +222,7 @@ export class NgaSearchComponent implements OnInit, AfterViewInit, OnDestroy {
       }
     });
 
-    this.searchService.onSearchDeactivate().subscribe((data) => {
+    this.deactivateSearchSubscription = this.searchService.onSearchDeactivate().subscribe((data) => {
       if (!this.tag || data.tag === this.tag) {
         this.showSearch = false;
         this.searchFieldComponentRef.instance.showSearch = false;
@@ -239,7 +243,7 @@ export class NgaSearchComponent implements OnInit, AfterViewInit, OnDestroy {
     const fieldComponentObservable = this.searchType === NgaSearchFieldComponent.TYPE_SIMPLE_SEARCH ?
       this.createAttachedSearch(NgaSearchFieldComponent)
       : this.themeService.appendToLayoutTop(NgaSearchFieldComponent);
-    fieldComponentObservable.subscribe((componentRef: ComponentRef<any>) => {
+    this.createFieldSubscription = fieldComponentObservable.subscribe((componentRef: ComponentRef<any>) => {
       if (componentRef) {
         this.connectToSearchField(componentRef);
       }
@@ -247,6 +251,9 @@ export class NgaSearchComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    this.themeService.clearLayoutTop();
+    this.activateSearchSubscription.unsubscribe();
+    this.deactivateSearchSubscription.unsubscribe();
+    this.createFieldSubscription.unsubscribe();
+    this.searchFieldComponentRef.destroy();
   }
 }
