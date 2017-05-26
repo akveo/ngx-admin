@@ -9,7 +9,7 @@ import { CommonModule } from '@angular/common';
 
 import { NgaThemeOptions, ngaThemeOptionsToken } from './theme.options';
 import { NgaThemeService } from './services/theme.service';
-
+import { NgaPreloaderService } from './services/preloader.service';
 
 @NgModule({
   imports: [
@@ -24,6 +24,7 @@ export class NgaThemeModule {
       providers: [
         { provide: ngaThemeOptionsToken, useValue: ngaThemeOptions || {} },
         NgaThemeService,
+        NgaPreloaderService,
       ],
     };
   }

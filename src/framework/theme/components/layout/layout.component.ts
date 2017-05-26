@@ -21,6 +21,7 @@ import { Subject } from 'rxjs/Subject';
 
 import { convertToBoolProperty } from '../helpers';
 import { NgaThemeService } from '../../services/theme.service';
+import { NgaPreloaderService } from '../../services/preloader.service';
 
 /**
  * Component intended to be used within  the `<nga-layout>` component.
@@ -141,7 +142,8 @@ export class NgaLayoutComponent implements OnDestroy, AfterViewInit {
   constructor(protected themeService: NgaThemeService,
               protected componentFactoryResolver: ComponentFactoryResolver,
               protected elementRef: ElementRef,
-              protected renderer: Renderer2) {
+              protected renderer: Renderer2,
+              protected preloaderService: NgaPreloaderService) {
     this.themeSubscription = this.themeService.onThemeChange().subscribe((theme) => {
 
       if (theme.previous) {
@@ -172,6 +174,7 @@ export class NgaLayoutComponent implements OnDestroy, AfterViewInit {
         this.veryTopRef.clear();
         data.listener.next(true);
       });
+    this.preloaderService.load();
   }
 
   ngOnDestroy(): void {
