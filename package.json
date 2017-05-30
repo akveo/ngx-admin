@@ -50,6 +50,7 @@
     "@ng-bootstrap/ng-bootstrap": "1.0.0-alpha.26",
     "@swimlane/ngx-charts": "5.2.0",
     "angular2-echarts": "1.1.7",
+    "angular2-toaster": "^4.0.0",
     "bootstrap": "4.0.0-alpha.6",
     "chart.js": "2.5.0",
     "core-js": "2.4.1",

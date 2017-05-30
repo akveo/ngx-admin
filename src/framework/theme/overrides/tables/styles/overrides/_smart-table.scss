@@ -5,145 +5,143 @@
  */
 
 @mixin nga-t-smart-table-theme($theme-name) {
-  /deep/ {
 
-    ng2-smart-table {
-      th,
-      td {
-        border: 1px solid $nga-smart-table-border-color !important;
-        line-height: 35px;
-        vertical-align: middle;
-      }
+  ng2-smart-table {
+    th,
+    td {
+      border: 1px solid $nga-smart-table-border-color !important;
+      line-height: 35px;
+      vertical-align: middle;
+    }
 
-      table tr td {
-        padding: 0 8px;
-      }
+    table tr td {
+      padding: 0 8px;
+    }
 
+    color: $nga-smart-table-foreground;
+
+    input {
+      line-height: 1.5 !important;
+    }
+
+    ng2-smart-table-cell {
       color: $nga-smart-table-foreground;
+      line-height: 35px;
+    }
 
-      input {
-        line-height: 1.5 !important;
-      }
-
-      ng2-smart-table-cell {
+    tbody {
+      tr {
         color: $nga-smart-table-foreground;
-        line-height: 35px;
       }
 
-      tbody {
-        tr {
-          color: $nga-smart-table-foreground;
-        }
+      tr:hover {
+        background: $nga-smart-table-background;
+      }
+    }
 
-        tr:hover {
-          background: $nga-smart-table-background;
+    a.ng2-smart-sort-link {
+      font-size: 14px !important;
+      color: $nga-smart-table-foreground;
+      font-weight: $nga-smart-table-font-weight-bolder;
+
+      &.sort {
+        font-weight: $nga-smart-table-font-weight-bolder !important;
+
+        &::after {
+          border-bottom-color: $nga-smart-table-border-color !important;
         }
       }
+    }
 
-      a.ng2-smart-sort-link {
-        font-size: 14px !important;
-        color: $nga-smart-table-foreground;
-        font-weight: $nga-smart-table-font-weight-bolder;
+    .ng2-smart-actions {
+      width: 70px;
+      text-align: center;
 
-        &.sort {
-          font-weight: $nga-smart-table-font-weight-bolder !important;
-
-          &::after {
-            border-bottom-color: $nga-smart-table-border-color !important;
-          }
-        }
-      }
-
-      .ng2-smart-actions {
-        width: 70px;
-        text-align: center;
-
-        .actions {
-          float: none;
-          text-align: center;
-        }
-      }
-
-      .ng2-smart-actions-title-add {
+      .actions {
+        float: none;
         text-align: center;
       }
+    }
 
-      a.ng2-smart-action,
-      .ng2-smart-title {
-        font-size: 14px !important;
-        color: $nga-smart-table-foreground;
-        padding: 0 5px;
-        display: inline-block;
+    .ng2-smart-actions-title-add {
+      text-align: center;
+    }
 
-        &.ng2-smart-action-add-add {
-          font-size: 25px !important;
-        }
+    a.ng2-smart-action,
+    .ng2-smart-title {
+      font-size: 14px !important;
+      color: $nga-smart-table-foreground;
+      padding: 0 5px;
+      display: inline-block;
+
+      &.ng2-smart-action-add-add {
+        font-size: 25px !important;
       }
+    }
 
-      nav.ng2-smart-pagination-nav {
+    nav.ng2-smart-pagination-nav {
+      display: flex;
+      justify-content: center;
+      margin-top: 16px;
+
+      .ng2-smart-pagination {
         display: flex;
-        justify-content: center;
-        margin-top: 16px;
 
-        .ng2-smart-pagination {
-          display: flex;
-
-          .page-item.disabled .page-link, .page-item.disabled .page-link:focus, .page-item.disabled .page-link:hover {
-            background: $nga-smart-table-background;
-            color: $nga-smart-table-foreground;
-          }
-        }
-
-        .pagination > li > a, .pagination > li > span {
-          background: transparent;
-        }
-
-        .pagination > li:first-child > a, .pagination > li:first-child > span {
-          border-top-left-radius: 0;
-          border-bottom-left-radius: 0;
-        }
-
-        .pagination > li:last-child > a, .pagination > li:last-child > span {
-          border-top-right-radius: 0;
-          border-bottom-right-radius: 0;
-        }
-
-        .pagination > li > a,
-        .pagination > li > span {
-          color: $nga-smart-table-foreground;
-          border-color: $nga-smart-table-border-color;
-        }
-
-
-        .pagination > li:first-of-type > a,
-        .pagination > li:first-of-type > span {
-          border-top-left-radius: $nga-smart-table-border-radius;
-          border-bottom-left-radius: $nga-smart-table-border-radius;
-        }
-
-        .pagination > li:last-of-type > a,
-        .pagination > li:last-of-type > span {
-          border-top-right-radius: $nga-smart-table-border-radius;
-          border-bottom-right-radius: $nga-smart-table-border-radius;
-        }
-
-        .pagination > .active > a,
-        .pagination > .active > span,
-        .pagination > .active > a:hover,
-        .pagination > .active > span:hover,
-        .pagination > .active > a:focus,
-        .pagination > .active > span:focus {
-          background-color: rgba(0, 0, 0, 0.3) !important;
-          border-color: $nga-smart-table-border-color !important;
-        }
-
-        .pagination > li > a:hover,
-        .pagination > li > span:hover,
-        .pagination > li > a:focus,
-        .pagination > li > span:focus {
-          background-color: rgba(0, 0, 0, 0.2);
+        .page-item.disabled .page-link, .page-item.disabled .page-link:focus, .page-item.disabled .page-link:hover {
+          background: $nga-smart-table-background;
           color: $nga-smart-table-foreground;
         }
+      }
+
+      .pagination > li > a, .pagination > li > span {
+        background: transparent;
+      }
+
+      .pagination > li:first-child > a, .pagination > li:first-child > span {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+      }
+
+      .pagination > li:last-child > a, .pagination > li:last-child > span {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+
+      .pagination > li > a,
+      .pagination > li > span {
+        color: $nga-smart-table-foreground;
+        border-color: $nga-smart-table-border-color;
+      }
+
+
+      .pagination > li:first-of-type > a,
+      .pagination > li:first-of-type > span {
+        border-top-left-radius: $nga-smart-table-border-radius;
+        border-bottom-left-radius: $nga-smart-table-border-radius;
+      }
+
+      .pagination > li:last-of-type > a,
+      .pagination > li:last-of-type > span {
+        border-top-right-radius: $nga-smart-table-border-radius;
+        border-bottom-right-radius: $nga-smart-table-border-radius;
+      }
+
+      .pagination > .active > a,
+      .pagination > .active > span,
+      .pagination > .active > a:hover,
+      .pagination > .active > span:hover,
+      .pagination > .active > a:focus,
+      .pagination > .active > span:focus {
+        background-color: rgba(0, 0, 0, 0.3) !important;
+        border-color: $nga-smart-table-border-color !important;
+      }
+
+      .pagination > li > a:hover,
+      .pagination > li > span:hover,
+      .pagination > li > a:focus,
+      .pagination > li > span:focus {
+        background-color: rgba(0, 0, 0, 0.2);
+        color: $nga-smart-table-foreground;
       }
     }
   }
