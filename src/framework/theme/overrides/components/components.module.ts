@@ -7,9 +7,11 @@
 import { ModuleWithProviders, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TreeModule } from 'ng2-tree';
+import { ToasterModule } from 'angular2-toaster';
 
 const modules = [
   TreeModule,
+  ToasterModule,
 ];
 
 @NgModule({

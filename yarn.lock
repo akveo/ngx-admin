@@ -272,6 +272,10 @@ angular2-echarts@1.1.7:
   version "1.1.7"
   resolved "https://registry.yarnpkg.com/angular2-echarts/-/angular2-echarts-1.1.7.tgz#ef12cbcdfa477b0d82e974f8db97086e18ef9696"
 
+angular2-toaster@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/angular2-toaster/-/angular2-toaster-4.0.0.tgz#716986be9f4bc2e9c26ae31824b015139edbff3e"
+
 ansi-escapes@^1.1.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/ansi-escapes/-/ansi-escapes-1.4.0.tgz#d3a8a83b319aa67793662b13e761c7911422306e"

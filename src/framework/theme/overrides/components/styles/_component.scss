@@ -5,12 +5,14 @@
  */
 
 @import './overrides/tree';
+@import './overrides/toaster';
 
 // Create a theme
 @mixin nga-components($theme-name) {
 
   .theme-#{$theme-name} {
     @include nga-cp-tree-theme($theme-name);
+    @include nga-cp-toaster-theme($theme-name);
 
     @content;
   }

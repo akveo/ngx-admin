@@ -6,24 +6,27 @@
 
 @mixin nga-ch-d3-theme($theme-name) {
 
-  .ngx-charts {
-    .pie-label {
-      fill: $nga-d3-foreground;
+  /deep/ {
+    .ngx-charts {
+      .pie-label {
+        fill: $nga-d3-foreground;
+      }
+
+      .grid-line-path {
+        stroke: $nga-d3-foreground;
+      }
+
+      text {
+        fill: $nga-d3-foreground;
+      }
+
     }
 
-    .grid-line-path {
-      stroke: $nga-d3-foreground;
+    .chart-legend {
+      .legend-labels {
+        background: $nga-d3-legend-background;
+      }
     }
-
-    text {
-      fill: $nga-d3-foreground;
-    }
-
   }
 
-  .chart-legend {
-    .legend-labels {
-      background: $nga-d3-legend-background;
-    }
-  }
 }

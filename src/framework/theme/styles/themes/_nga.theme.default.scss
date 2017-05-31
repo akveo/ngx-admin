@@ -39,6 +39,7 @@ $nga-background-inverse: $nga-color-default !default;
 
 $nga-color-gray: rgba(81, 113, 165, 0.15) !default;
 $nga-color-neutral: transparent !default;
+$nga-color-white: #fff;
 $nga-color-disabled: rgba(255, 255, 255, 0.4) !default;
 $nga-color-primary: #00abff !default;
 $nga-color-secondary: #b5bbd5 !default;
@@ -203,13 +204,14 @@ $nga-search-info: $nga-color-secondary !default;
 $nga-search-dash: $nga-color-secondary !default;
 $nga-search-placeholder: $nga-color-secondary !default;
 
-$nga-toaster-background: rgba(0, 0, 0, 0.6) !default;
-$nga-toaster-foreground: #fff !default;
+$nga-toaster-background: $nga-color-primary !default;
+$nga-toaster-foreground-default: $nga-color-inverse !default;
 $nga-toaster-shadow: $nga-shadow !default;
 $nga-toaster-btn-close-background: transparent !default;
-$nga-toaster-btn-close-foreground: $nga-toaster-foreground !default;
+$nga-toaster-btn-close-foreground: $nga-toaster-foreground-default !default;
 $nga-toaster-shadow: $nga-shadow !default;
 
+$nga-toaster-foreground: $nga-color-white !default;
 $nga-toaster-success: $nga-color-success !default;
 $nga-toaster-info: $nga-color-info !default;
 $nga-toaster-warning: $nga-color-warning !default;
