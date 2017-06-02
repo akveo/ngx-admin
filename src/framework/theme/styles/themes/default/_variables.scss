@@ -262,6 +262,8 @@ $nga-toaster-warning: $nga-color-warning !default;
 $nga-toaster-wait: $nga-color-primary !default;
 $nga-toaster-error: $nga-color-danger !default;
 
+// buttons
+
 $btn-primary-bg: $nga-color-primary;
 $btn-primary-border: $nga-color-dark-primary;
 $btn-primary-color: $nga-color-inverse;
@@ -299,63 +301,76 @@ $btn-danger-bg-active: #cc2c55 !default;
 $btn-default-bg: transparent;
 $btn-default-border: #bdbaff;
 $btn-default-color: #ffffff;
-$btn-default-border-hover-focus: #cac8ff !default;
-$btn-default-border-active: #9795cc !default;
+$btn-default-bg-hover-focus: #cac8ff !default;
+$btn-default-bg-active: #9795cc !default;
 $btn-default-border-width: 2px;
 
 $btn-border-radius: 12px;
 
 $btn-padding-y-lg: 1.25rem;
 $btn-padding-x-lg: 1.75rem;
-$font-size-lg: 1.25rem;
-$line-height-lg: 1.5;
+$btn-font-size-lg: 1.25rem;
+$btn-line-height-lg: 1.375rem;
 $btn-border-radius-lg: 4px;
 
-$btn-padding-y-md: 1rem;
-$btn-padding-x-md: 1.5rem;
-$font-size-md: 1rem;
-$line-height-md: 1.25;
-$btn-border-radius-md: 4px;
+$btn-padding-y-md: 1rem !default;
+$btn-padding-x-md: 1.5rem !default;
+$btn-font-size-md: 1rem !default;
+$btn-line-height-md: 1.125rem !default;
+$btn-border-radius-md: 4px !default;
 
 $btn-padding-y-sm: 0.875rem;
 $btn-padding-x-sm: 1.5rem;
-$font-size-sm: 0.875rem;
-$line-height-sm: 1.125;
+$btn-font-size-sm: 0.875rem;
+$btn-line-height-sm: 1rem;
 $btn-border-radius-sm: 4px;
 
-$btn-padding-y-tn: 0.625rem;
-$btn-padding-x-tn: 1.25rem;
-$font-size-tn: 0.625rem;
-$line-height-tn: 0.875;
-$btn-border-radius-tn: 4px;
+$btn-padding-y-tn: 0.625rem !default;
+$btn-padding-x-tn: 1.25rem !default;
+$btn-font-size-tn: 0.75rem !default;
+$btn-line-height-tn: 0.875rem !default;
+$btn-border-radius-tn: 4px !default;
 
-$btn-padding-y: 0.875rem;
-$btn-padding-x: 2rem;
+$btn-padding-y: 0.875rem !default;
+$btn-padding-x: 2rem !default;
 
-$btn-rectangle-bd-radius: 4px;
-$btn-semi-round-bd-radius: 12px;
-$btn-round-bd-radius: 24px;
+$btn-rectangle-bd-radius: 4px !default;
+$btn-semi-round-bd-radius: 12px !default;
+$btn-round-bd-radius: 24px !default;
 
-$btn-primary-bevel-bd: #6938c9;
-$btn-primary-bevel-bd-height: 3px;
-$btn-primary-glow: #8646ef;
+$btn-primary-bevel-bd: #6938c9 !default;
+$btn-primary-bevel-bd-height: 3px !default;
+$btn-primary-glow: rgba(137, 66, 254, 0.8) !default;
+$btn-primary-shadow: rgba(6, 7, 64, 0.5) !default;
 
-$btn-warning-bevel-bd: #ce7b22;
-$btn-warning-bevel-bd-height: 3px;
-$btn-warning-glow: rgba(255, 193, 38, 0.6);
+$btn-warning-bevel-bd: #ce7b22 !default;
+$btn-warning-bevel-bd-height: 3px !default;
+$btn-warning-glow: rgba(255, 193, 38, 0.6) !default;
+$btn-warning-shadow: rgba(33, 7, 77, 0.5) !default;
 
-$btn-success-bevel-bd: #00967d;
-$btn-success-bevel-bd-height: 3px;
-$btn-success-glow: rgba(35, 255, 181, 0.6);
+$btn-success-bevel-bd: #00967d !default;
+$btn-success-bevel-bd-height: 3px !default;
+$btn-success-glow: rgba(35, 255, 181, 0.6) !default;
+$btn-success-shadow: rgba(33, 7, 77, 0.5) !default;
 
-$btn-info-bevel-bd: #4150d9;
-$btn-info-bevel-bd-height: 3px;
-$btn-info-glow: rgba(0, 136, 255, 0.7);
+$btn-info-bevel-bd: #4150d9 !default;
+$btn-info-bevel-bd-height: 3px !default;
+$btn-info-glow: rgba(0, 136, 255, 0.7) !default;
+$btn-info-shadow: rgba(33, 7, 77, 0.5) !default;
 
-$btn-danger-bevel-bd: #cc2568;
-$btn-danger-bevel-bd-height: 3px;
-$btn-danger-glow: rgba(255, 73, 184, 0.8);
+$btn-danger-bevel-bd: #cc2568 !default;
+$btn-danger-bevel-bd-height: 3px !default;
+$btn-danger-glow: rgba(255, 73, 184, 0.8) !default;
+$btn-danger-shadow: rgba(33, 7, 77, 0.5) !default;
 
-$btn-default-bevel-bd: #665ebd;
-$btn-default-bevel-bd-height: 2px;
-$btn-default-glow: #928dff;
+$btn-default-bevel-bd: #665ebd !default;
+$btn-default-bevel-bd-height: 2px !default;
+$btn-default-glow: rgba(146, 141, 255, 1) !default;
+$btn-default-shadow: rgba(33, 7, 77, 0.5) !default;
+
+$btn-font-family: $nga-font-secondary !default;
+$btn-letter-spacing: 0.4px !default;
+
+$btn-hero-text-shadow: rgba(0, 0, 0, 0.3) !default;
+$btn-hero-text-shadow-y: 1px !default;
+$btn-hero-text-shadow-radius: 3px !default;
