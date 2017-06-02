@@ -1,0 +1,15 @@
+// TODO: change this import to ~node_modules
+@import '../../../theme/styles/core/core';
+@import '../components';
+
+@mixin nga-auth-install($custom-name: null) {
+  @if ($custom-name) {
+    $nga-theme: $custom-name !global;
+  }
+
+  @include install-partials($nga-theme) {
+    @include nga-components($nga-theme);
+
+    @content;
+  }
+}

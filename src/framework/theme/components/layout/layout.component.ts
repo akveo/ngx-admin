@@ -18,9 +18,13 @@ import {
 } from '@angular/core';
 import { Subscription } from 'rxjs/Subscription';
 import { Subject } from 'rxjs/Subject';
+import { BehaviorSubject } from 'rxjs/BehaviorSubject';
+import 'rxjs/add/operator/toPromise';
+import 'rxjs/add/operator/filter';
 
 import { convertToBoolProperty } from '../helpers';
 import { NgaThemeService } from '../../services/theme.service';
+import { NgaSpinnerService } from '../../services/spinner.service';
 
 /**
  * Component intended to be used within  the `<nga-layout>` component.
@@ -132,6 +136,8 @@ export class NgaLayoutComponent implements OnDestroy, AfterViewInit {
 
   @ViewChild('layoutTopDynamicArea', { read: ViewContainerRef }) veryTopRef: ViewContainerRef;
 
+  protected afterViewInit$ = new BehaviorSubject(null);
+
   protected appendClassSubscription: Subscription;
   protected removeClassSubscription: Subscription;
   protected themeSubscription: Subscription;
@@ -139,15 +145,16 @@ export class NgaLayoutComponent implements OnDestroy, AfterViewInit {
   protected clearSubscription: Subscription;
 
   constructor(protected themeService: NgaThemeService,
+              protected spinnerService: NgaSpinnerService,
               protected componentFactoryResolver: ComponentFactoryResolver,
               protected elementRef: ElementRef,
               protected renderer: Renderer2) {
     this.themeSubscription = this.themeService.onThemeChange().subscribe((theme) => {
 
       if (theme.previous) {
-        this.renderer.removeClass(this.elementRef.nativeElement, `theme-${theme.previous}`);
+        this.renderer.removeClass(this.elementRef.nativeElement, `nga-theme-${theme.previous}`);
       }
-      this.renderer.addClass(this.elementRef.nativeElement, `theme-${theme.name}`);
+      this.renderer.addClass(this.elementRef.nativeElement, `nga-theme-${theme.name}`);
     });
 
     this.appendClassSubscription = this.themeService.onAppendLayoutClass().subscribe((className) => {
@@ -157,6 +164,11 @@ export class NgaLayoutComponent implements OnDestroy, AfterViewInit {
     this.removeClassSubscription = this.themeService.onRemoveLayoutClass().subscribe((className) => {
       this.renderer.removeClass(this.elementRef.nativeElement, className);
     });
+
+    this.spinnerService.registerLoader(new Promise((resolve, reject) => {
+      this.afterViewInit$.subscribe((_) => resolve());
+    }));
+    this.spinnerService.load();
   }
 
   ngAfterViewInit(): void {
@@ -172,6 +184,8 @@ export class NgaLayoutComponent implements OnDestroy, AfterViewInit {
         this.veryTopRef.clear();
         data.listener.next(true);
       });
+
+    this.afterViewInit$.next(true);
   }
 
   ngOnDestroy(): void {

@@ -4,6 +4,8 @@
  * Licensed under the MIT License. See License.txt in the project root for license information.
  */
 
+// TODO: what should we do with this?
+
 @import '~normalize.css';
 
 $fa-font-path: '~font-awesome/fonts';
@@ -11,3 +13,7 @@ $fa-font-path: '~font-awesome/fonts';
 
 $ionicons-font-path: '~ionicons/fonts';
 @import '~ionicons/scss/ionicons';
+
+@import '~typeface-exo/index.css';
+
+@import '~segoe-fonts/segoe-fonts.css';

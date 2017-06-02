@@ -37,9 +37,6 @@
 
     .layout-container {
       .content {
-        display: flex;
-        flex: 1;
-        flex-direction: column;
 
         nga-layout-footer {
           box-shadow: $nga-footer-shadow;

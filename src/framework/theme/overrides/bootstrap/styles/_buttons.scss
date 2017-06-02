@@ -1,0 +1,185 @@
+
+/**
+ * @license
+ * Copyright Akveo. All Rights Reserved.
+ * Licensed under the MIT License. See License.txt in the project root for license information.
+ */
+
+@mixin btn($background-color, $hover-focus-color, $active-color) {
+
+  background-color: $background-color;
+
+  &:focus,
+  &:hover,
+  &.focus,
+  &.hover {
+    background-color: $hover-focus-color;
+    border-color: transparent;
+  }
+
+  &:active,
+  &.active {
+    background-color: $active-color;
+    border-color: transparent;
+  }
+
+  &:focus,
+  &.focus {
+    box-shadow: none;
+  }
+}
+
+@mixin btn-shape() {
+  &.btn-rectangle {
+    border-radius: $btn-rectangle-bd-radius;
+  }
+
+  &.btn-semi-round {
+    border-radius: $btn-semi-round-bd-radius;
+  }
+
+  &.btn-round {
+    border-radius: $btn-round-bd-radius;
+  }
+}
+
+@mixin btn-size() {
+  &.btn-lg {
+    line-height: $line-height-lg;
+
+    @include button-size($btn-padding-y-lg, $btn-padding-x-lg, $font-size-lg, $btn-border-radius-lg);
+  }
+
+  &.btn-md {
+    line-height: $line-height-md;
+
+    @include button-size($btn-padding-y-md, $btn-padding-x-md, $font-size-md, $btn-border-radius-md);
+  }
+
+  &.btn-sm {
+    line-height: $line-height-sm;
+
+    @include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-sm, $btn-border-radius-sm);
+  }
+
+  &.btn-tn {
+    line-height: $line-height-tn;
+
+    @include button-size($btn-padding-y-tn, $btn-padding-x-tn, $font-size-tn, $btn-border-radius-tn);
+  }
+}
+
+@mixin primary-gradient() {
+  @include nga-right-gradient($nga-color-gradient-primary-left, $nga-color-gradient-primary-right);
+}
+
+@mixin warning-gradient() {
+  @include nga-right-gradient($nga-color-gradient-warning-left, $nga-color-gradient-warning-right);
+}
+
+@mixin success-gradient() {
+  @include nga-right-gradient($nga-color-gradient-success-left, $nga-color-gradient-success-right);
+}
+
+@mixin info-gradient() {
+  @include nga-right-gradient($nga-color-gradient-info-left, $nga-color-gradient-info-right);
+}
+
+@mixin danger-gradient() {
+  @include nga-right-gradient($nga-color-gradient-danger-left, $nga-color-gradient-danger-right);
+}
+
+@mixin btn-hero() {
+  &.btn-primary-hero {
+    @include primary-gradient();
+    box-shadow: 0 $btn-primary-bevel-bd-height 0 0 $btn-primary-bevel-bd,
+                0 4px 10px 0 $nga-color-gradient-shadow,
+                0 2px 12px 0 $btn-primary-glow;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  }
+
+  &.btn-warning-hero {
+    @include warning-gradient();
+    box-shadow: 0 $btn-warning-bevel-bd-height 0 0 $btn-warning-bevel-bd,
+                0 4px 10px 0 $nga-color-gradient-shadow,
+                0 2px 12px 0 $btn-warning-glow;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  }
+
+  &.btn-success-hero {
+    @include success-gradient();
+    box-shadow: 0 $btn-success-bevel-bd-height 0 0 $btn-success-bevel-bd,
+                0 4px 10px 0 $nga-color-gradient-shadow,
+                0 2px 12px 0 $btn-success-glow;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  }
+
+  &.btn-info-hero {
+    @include info-gradient();
+    box-shadow: 0 $btn-info-bevel-bd-height 0 0 $btn-info-bevel-bd,
+                0 4px 10px 0 $nga-color-gradient-shadow,
+                0 2px 12px 0 $btn-info-glow;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  }
+
+  &.btn-danger-hero {
+    @include nga-right-gradient($nga-color-gradient-danger-left, $nga-color-gradient-danger-right);
+    box-shadow: 0 $btn-danger-bevel-bd-height 0 0 $btn-danger-bevel-bd,
+                0 4px 10px 0 $nga-color-gradient-shadow,
+                0 2px 12px 0 $btn-danger-glow;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  }
+
+  &.btn-hero {
+    box-shadow: 0 $btn-default-bevel-bd-height 0 0 $btn-default-bevel-bd,
+                0 4px 10px 0 $nga-color-gradient-shadow,
+                0 2px 12px 0 $btn-default-glow;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  }
+}
+
+@mixin nga-b-buttons-theme($theme-name) {
+
+  .btn {
+    color: $btn-default-color;
+    border: $btn-default-border-width solid $btn-default-border;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    font-weight: 400;
+
+    @include btn($btn-default-bg, $btn-default-border-hover-focus, $btn-default-border-active);
+    @include btn-shape();
+    @include btn-size();
+    @include btn-hero();
+  }
+
+  .btn-primary {
+    border: none;
+
+    @include btn($btn-primary-bg, $btn-primary-bg-hover-focus, $btn-primary-bg-active);
+  }
+
+  .btn-warning {
+    border: none;
+
+    @include btn($btn-warning-bg, $btn-warning-bg-hover-focus, $btn-warning-bg-active);
+  }
+
+  .btn-info {
+    border: none;
+
+    @include btn($btn-info-bg, $btn-info-bg-hover-focus, $btn-info-bg-active);
+  }
+
+  .btn-success {
+    border: none;
+
+    @include btn($btn-success-bg, $btn-success-bg-hover-focus, $btn-success-bg-active);
+  }
+
+  .btn-danger {
+    border: none;
+
+    @include btn($btn-danger-bg, $btn-danger-bg-hover-focus, $btn-danger-bg-active);
+  }
+}

@@ -9,6 +9,7 @@ import { CommonModule } from '@angular/common';
 
 import { NgaThemeOptions, ngaThemeOptionsToken } from './theme.options';
 import { NgaThemeService } from './services/theme.service';
+import { NgaSpinnerService } from './services/spinner.service';
 
 
 @NgModule({
@@ -24,6 +25,7 @@ export class NgaThemeModule {
       providers: [
         { provide: ngaThemeOptionsToken, useValue: ngaThemeOptions || {} },
         NgaThemeService,
+        NgaSpinnerService,
       ],
     };
   }

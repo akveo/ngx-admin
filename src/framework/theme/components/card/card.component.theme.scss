@@ -14,9 +14,9 @@
     margin-bottom: $nga-card-padding;
     border-radius: $nga-card-border-radius;
     box-shadow: $nga-card-shadow;
-    font-weight: $nga-font-weight-normal;
+    font-weight: $nga-card-font-weight;
 
-    @include nga-scrollbars($nga-scrollbar-width, $nga-scrollbar-foreground, $nga-scrollbar-background);
+    @include nga-scrollbars($nga-card-scrollbar-width, $nga-card-scrollbar-foreground, $nga-card-scrollbar-background);
 
     &.small-card {
       nga-card-body {
@@ -46,45 +46,45 @@
 
     &.active-card {
       nga-card-header {
-        background-color: $nga-color-default;
-        border-bottom-color: $nga-color-default;
-        color: $nga-color-inverse;
+        background-color: $nga-card-header-active-background;
+        border-bottom-color: $nga-card-header-active-separator;
+        color: $nga-card-header-active-foreground;
       }
     }
     &.disabled-card {
       nga-card-header {
-        background-color: $nga-color-disabled;
-        border-bottom-color: $nga-color-disabled;
+        background-color: $nga-card-header-disabled-background;
+        border-bottom-color: $nga-card-header-disabled-separator;
       }
     }
     &.primary-card {
       nga-card-header {
-        background-color: $nga-color-primary;
-        border-bottom-color: $nga-color-primary;
+        background-color: $nga-card-header-primary-background;
+        border-bottom-color: $nga-card-header-primary-separator;
       }
     }
     &.info-card {
       nga-card-header {
-        background-color: $nga-color-info;
-        border-bottom-color: $nga-color-info;
+        background-color: $nga-card-header-info-background;
+        border-bottom-color: $nga-card-header-info-separator;
       }
     }
     &.success-card {
       nga-card-header {
-        background-color: $nga-color-success;
-        border-bottom-color: $nga-color-success;
+        background-color: $nga-card-header-success-background;
+        border-bottom-color: $nga-card-header-success-separator;
       }
     }
     &.warning-card {
       nga-card-header {
-        background-color: $nga-color-warning;
-        border-bottom-color: $nga-color-warning;
+        background-color: $nga-card-header-warning-background;
+        border-bottom-color: $nga-card-header-warning-separator;
       }
     }
     &.danger-card {
       nga-card-header {
-        background-color: $nga-color-danger;
-        border-bottom-color: $nga-color-danger;
+        background-color: $nga-card-header-danger-background;
+        border-bottom-color: $nga-card-header-danger-separator;
       }
     }
 
@@ -100,10 +100,11 @@
 
     nga-card-header {
       padding: $nga-card-padding;
-      border-bottom: 1px solid $nga-card-separator;
+      border-bottom: $nga-card-header-separator-width solid $nga-card-header-separator;
       border-top-left-radius: $nga-card-border-radius;
       border-top-right-radius: $nga-card-border-radius;
-      font-weight: $nga-font-weight-normal;
+      font-weight: $nga-card-font-weight;
+      color: $nga-card-header-foreground;
 
       @include nga-headings();
     }
