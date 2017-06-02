@@ -1,9 +1,11 @@
-.btn-shape-name {
+.shape-container .header {
   margin-bottom: 7px;
 }
 
-.btn-shape-details {
+.shape-container .subheader {
   margin-bottom: 19px;
+  font-weight: 300;
+  font-size: 0.875rem;
 
   span:nth-child(2) {
     color: #ffffff;

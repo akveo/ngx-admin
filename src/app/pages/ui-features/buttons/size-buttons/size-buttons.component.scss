@@ -1,10 +1,18 @@
-.btn-size-container {
-  div:nth-child(1) {
+.row {
+  padding: 0 15px;
+}
+
+.size-container {
+  margin-right: 20px;
+
+  .header {
     margin-bottom: 7px;
   }
 
-  div:nth-child(2) {
+  .subheader {
     color: #ffffff;
     margin-bottom: 19px;
+    font-size: 0.875rem;
+    font-weight: 300;
   }
 }
