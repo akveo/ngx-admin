@@ -24,4 +24,10 @@
       margin: 0;
     }
   }
+
+  /deep/ search-input {
+    input {
+      background: transparent;
+    }
+  }
 }

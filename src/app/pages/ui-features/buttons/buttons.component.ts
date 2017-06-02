@@ -6,5 +6,4 @@ import { Component } from '@angular/core';
   templateUrl: './buttons.component.html',
 })
 export class ButtonsComponent {
-
 }

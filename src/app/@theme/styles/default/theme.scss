@@ -1,0 +1,19 @@
+/**
+ * @license
+ * Copyright Akveo. All Rights Reserved.
+ * Licensed under the MIT License. See License.txt in the project root for license information.
+ */
+
+$nga-theme: 'default';
+
+@import '~@nga/theme/styles/themes/default/theme';
+@import './buttons';
+@import './misc';
+
+@include nga-theme-install($nga-theme) {
+  @include ngx-buttons-theme($nga-theme);
+  @include ngx-misc-theme($nga-theme);
+};
+
+@import '~@nga/auth/styles/themes/default/theme';
+@include nga-auth-install($nga-theme);

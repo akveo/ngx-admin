@@ -2,6 +2,7 @@ import { NgaMenuItem } from '@nga/theme';
 
 import { List } from 'immutable';
 
+// TODO: refactor array styles
 export const menuItems: List<NgaMenuItem> = List([{
   title: 'Dashboard',
   icon: 'ion ion-ios-home-outline',
@@ -32,7 +33,7 @@ export const menuItems: List<NgaMenuItem> = List([{
   }, {
     title: 'Animated Searches',
     link: '/pages/ui-features/search-fields',
-  },
+  }, 
   {
     title: 'Tabs',
     link: '/pages/ui-features/tabs',
@@ -40,10 +41,15 @@ export const menuItems: List<NgaMenuItem> = List([{
 }, {
   title: 'Components',
   icon: 'ion ion-ios-gear-outline',
-  children: List<NgaMenuItem>([{
-    title: 'Tree',
-    link: '/pages/components/tree',
-  }]),
+  children: List<NgaMenuItem>([
+    {
+      title: 'Tree',
+      link: '/pages/components/tree',
+    }, {
+      title: 'Toaster',
+      link: '/pages/components/toaster',
+    },
+  ]),
 }, {
   title: 'Maps',
   icon: 'ion ion-ios-location-outline',

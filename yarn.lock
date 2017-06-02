@@ -268,6 +268,10 @@ angular2-echarts@1.1.7:
   version "1.1.7"
   resolved "https://registry.yarnpkg.com/angular2-echarts/-/angular2-echarts-1.1.7.tgz#ef12cbcdfa477b0d82e974f8db97086e18ef9696"
 
+angular2-toaster@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/angular2-toaster/-/angular2-toaster-4.0.0.tgz#716986be9f4bc2e9c26ae31824b015139edbff3e"
+
 ansi-escapes@^1.1.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/ansi-escapes/-/ansi-escapes-1.4.0.tgz#d3a8a83b319aa67793662b13e761c7911422306e"
@@ -4917,6 +4921,10 @@ scss-tokenizer@^0.2.3:
     js-base64 "^2.1.8"
     source-map "^0.4.2"
 
+segoe-fonts@1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/segoe-fonts/-/segoe-fonts-1.0.1.tgz#ec2c8270921b8457bc2ce166b1aee1068cba7cb7"
+
 select-hose@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/select-hose/-/select-hose-2.0.0.tgz#625d8658f865af43ec962bfc376a37359a4994ca"
@@ -5691,6 +5699,10 @@ type-is@~1.6.14:
   dependencies:
     media-typer "0.3.0"
     mime-types "~2.1.15"
+
+typeface-exo@0.0.22:
+  version "0.0.22"
+  resolved "https://registry.yarnpkg.com/typeface-exo/-/typeface-exo-0.0.22.tgz#8308dfd4e52d0f538cacff9f2aa176e9e18d894f"
 
 typescript@2.3.2:
   version "2.3.2"

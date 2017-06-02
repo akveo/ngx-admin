@@ -22,7 +22,6 @@ import { AppRoutingModule } from './app-routing.module';
     HttpModule,
     AppRoutingModule,
     CoreModule,
-    PagesModule,
   ],
   bootstrap: [AppComponent],
 })

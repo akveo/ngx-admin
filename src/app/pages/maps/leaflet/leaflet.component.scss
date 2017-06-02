@@ -1,13 +1,3 @@
-@import '~@nga/theme/overrides/bootstrap/styles/themes/nga.theme.default';
-
 :host {
   display: block;
-
-  nga-card {
-    nga-card-body {
-      .leaflet-container {
-        height: calc(#{$nga-card-height-xmedium} - 50px);
-      }
-    }
-  }
 }

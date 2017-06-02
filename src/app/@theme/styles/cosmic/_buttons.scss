@@ -1,0 +1,114 @@
+@mixin ngx-buttons-theme($theme-name) {
+
+  $btn-component-size: 50px;
+  $btn-component-bd-radius: 12px;
+
+  @mixin btn-component($bevel-bd, $glow) {
+    .btn-bevel-border {
+      box-shadow: 0 3px 0 0 $bevel-bd;
+    }
+
+    .btn-shadow {
+      box-shadow: 0 4px 10px 0 $nga-color-gradient-shadow;
+    }
+
+    .btn-glow {
+      box-shadow: 0 2px 12px 0 $glow;
+    }
+  }
+
+  .btn-hero-container {
+    padding-right: 0;
+
+    .container-title {
+      margin-bottom: 14px;
+    }
+
+    .container-btn {
+      margin-bottom: 24px;
+    }
+
+    .btn-components-container {
+      .btn-component {
+        display: flex;
+
+        .btn-gradient,
+        .btn-border,
+        .btn-bevel-border,
+        .btn-shadow,
+        .btn-glow {
+          width: $btn-component-size;
+          height: $btn-component-size;
+          border-radius: $btn-component-bd-radius;
+          margin-bottom: 16px;
+        }
+
+        .btn-component-details {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          margin-left: 17px;
+          height: $btn-component-size;
+        }
+
+        .btn-component-header {
+          color: white;
+        }
+
+        .btn-component-subheader {
+          font-size: 0.875rem;
+          line-height: 1rem;
+        }
+      }
+
+      &.primary-container {
+        .btn-gradient {
+          @include primary-gradient();
+        }
+
+        @include btn-component($btn-primary-bevel-bd, $btn-primary-glow);
+      }
+
+      &.warning-container {
+        .btn-gradient {
+          @include warning-gradient();
+        }
+
+        @include btn-component($btn-warning-bevel-bd, $btn-warning-glow);
+      }
+
+      &.success-container {
+        .btn-gradient {
+          @include success-gradient();
+        }
+
+        @include btn-component($btn-success-bevel-bd, $btn-success-glow);
+      }
+
+      &.info-container {
+        .btn-gradient {
+          @include info-gradient();
+        }
+
+        @include btn-component($btn-info-bevel-bd, $btn-info-glow);
+      }
+
+      &.danger-container {
+        .btn-gradient {
+          @include danger-gradient();
+        }
+
+        @include btn-component($btn-danger-bevel-bd, $btn-danger-glow);
+      }
+
+      &.default-container {
+        .btn-border {
+          color: $btn-default-color;
+          border: $btn-default-border-width solid $btn-default-border;
+        }
+
+        @include btn-component($btn-default-bevel-bd, $btn-default-glow);
+      }
+    }
+  }
+}

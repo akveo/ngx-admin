@@ -1,0 +1,56 @@
+<nga-card>
+  <nga-card-header>
+    Toaster configuration
+  </nga-card-header>
+  <nga-card-body>
+    <toaster-container [toasterconfig]="config"></toaster-container>
+    <div class="form-group">
+      <label class="form-control-label">Place to show toast:</label>
+      <select class="form-control" [(ngModel)]="position" name="position">
+        <option *ngFor="let position of positions" [ngValue]="position">{{position}}</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label class="form-control-label">Animation type:</label>
+      <select class="form-control" [(ngModel)]="animationType"name="animation">
+        <option *ngFor="let type of animations" [ngValue]="type">{{type}}</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label class="form-control-label">Title:</label>
+      <input class="form-control" [(ngModel)]="title" name="title">
+    </div>
+    <form>
+      <div class="form-group">
+        <label class="form-control-label">Content:</label>
+        <input class="form-control" [(ngModel)]="content" name="content">
+      </div>
+    </form>
+    <div class="form-group">
+      <label class="form-control-label">Time to hide toast, ms. 0 to persistent toast:</label><input class="form-control" type="number" [(ngModel)]="timeout"name="timeout">
+    </div>
+    <div class="form-group">
+      <label class="form-control-label">Limit number of toasts:</label><input class="form-control" type="number" [(ngModel)]="toastsLimit" name="limit">
+    </div>
+    <div class="form-group">
+      <label class="form-control-label">Toast type:</label>
+                <select class="form-control" [(ngModel)]="type" name="type">
+                  <option *ngFor="let type of types" [ngValue]="type">{{type}}</option>
+                </select>
+    </div>
+    <div class="form-group">
+      <label class="form-control-label"><input type="checkbox" [(ngModel)]="isNewestOnTop" name="onTop">Newest on top</label>
+    </div>
+    <div class="form-group">
+      <label class="form-control-label"><input type="checkbox" [(ngModel)]="isHideOnClick"name="hideOnClick">Hide on click</label>
+    </div>
+    <div class="form-group">
+      <label class="form-control-label"><input type="checkbox" [(ngModel)]="isDuplicatesPrevented" name="noDupl">Prevent arising of duplicate toast</label>
+    </div>
+    <div class="form-group">
+      <label class="form-control-label"><input type="checkbox" [(ngModel)]="isCloseButton" name="closeBtn">Close button</label>
+    </div>
+    <button class="btn btn-default" (click)="makeToast()">Show toast</button>
+    <button class="btn btn-default" (click)="clearToasts()">Clear all toasts</button>
+  </nga-card-body>
+</nga-card>
