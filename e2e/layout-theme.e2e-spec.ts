@@ -24,8 +24,8 @@ describe('nga-layout theme', () => {
     const layout = element(by.css('nga-layout'));
     const cardHeader = element(by.css('nga-card-header'));
 
-    const themeDefault = 'theme-default';
-    const themeBlue = 'theme-blue';
+    const themeDefault = 'nga-theme-default';
+    const themeBlue = 'nga-theme-blue';
 
     button.click().then(() => {
       return browser.driver.wait(() => {

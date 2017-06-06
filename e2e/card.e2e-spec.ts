@@ -13,11 +13,11 @@ const mediumHeight: number = 497;
 const xmediumHeight: number = 647;
 const largeHeight: number = 1071;
 
-const primaryColor: string = 'rgba(0, 171, 255, 1)';
-const successColor: string = 'rgba(139, 210, 47, 1)';
-const infoColor: string = 'rgba(64, 218, 241, 1)';
-const warningColor: string = 'rgba(231, 186, 8, 1)';
-const dangerColor: string = 'rgba(249, 83, 114, 1)';
+const primaryColor: string = 'rgba(118, 89, 255, 1)';
+const successColor: string = 'rgba(0, 217, 119, 1)';
+const infoColor: string = 'rgba(0, 136, 255, 1)';
+const warningColor: string = 'rgba(255, 203, 23, 1)';
+const dangerColor: string = 'rgba(255, 56, 106, 1)';
 const activeColor: string = 'rgba(113, 121, 163, 1)';
 const disabledColor: string = 'rgba(255, 255, 255, 0.4)';
 
