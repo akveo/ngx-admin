@@ -1,8 +1,51 @@
 @mixin ngx-buttons-theme($theme-name) {
-  .hero-buttons {
-    $btn-component-size: 50px;
-    $btn-component-bd-radius: 12px;
 
+  $btn-component-size: 50px;
+  $btn-component-bd-radius: 12px;
+
+  .states-container .state-container {
+    display: flex;
+
+    .state-value {
+      width: $btn-component-size;
+      height: $btn-component-size;
+      border-radius: $btn-component-bd-radius;
+      margin-bottom: 16px;
+    }
+
+    .state-details {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin-left: 17px;
+      height: $btn-component-size;
+    }
+
+    .state-details .header {
+      color: white;
+    }
+
+    .state-details .subheader {
+      font-size: 0.875rem;
+      line-height: 1rem;
+      font-weight: 300;
+    }
+  }
+
+  .example-container {
+    padding-right: 0;
+  }
+
+  .example-container .container-title {
+    margin-bottom: 14px;
+    font-family: Exo;
+  }
+
+  .example-container .container-btn {
+    margin-bottom: 24px;
+  }
+
+  .hero-buttons {
     @mixin btn-component($bevel-bd, $glow, $shadow) {
       .bevel-border {
         box-shadow: 0 3px 0 0 $bevel-bd;
@@ -17,100 +60,53 @@
       }
     }
 
-    .button-container {
-      padding-right: 0;
-
-      .container-title {
-        margin-bottom: 14px;
+    .example-container .states-container.primary-container {
+      .gradient {
+        @include primary-gradient();
       }
 
-      .container-btn {
-        margin-bottom: 24px;
+      @include btn-component($btn-primary-bevel-bd, $btn-primary-glow, $btn-primary-shadow);
+    }
+
+    .example-container .states-container.warning-container {
+      .gradient {
+        @include warning-gradient();
       }
 
-      .states-container {
-        .state-container {
-          display: flex;
+      @include btn-component($btn-warning-bevel-bd, $btn-warning-glow, $btn-warning-shadow);
+    }
 
-          .gradient,
-          .border,
-          .bevel-border,
-          .shadow,
-          .glow {
-            width: $btn-component-size;
-            height: $btn-component-size;
-            border-radius: $btn-component-bd-radius;
-            margin-bottom: 16px;
-          }
-
-          .state-details {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            margin-left: 17px;
-            height: $btn-component-size;
-
-            .header {
-              color: white;
-            }
-
-            .subheader {
-              font-size: 0.875rem;
-              line-height: 1rem;
-              font-weight: 300;
-            }
-          }
-        }
-
-        &.primary-container {
-          .gradient {
-            @include primary-gradient();
-          }
-
-          @include btn-component($btn-primary-bevel-bd, $btn-primary-glow, $btn-primary-shadow);
-        }
-
-        &.warning-container {
-          .gradient {
-            @include warning-gradient();
-          }
-
-          @include btn-component($btn-warning-bevel-bd, $btn-warning-glow, $btn-warning-shadow);
-        }
-
-        &.success-container {
-          .gradient {
-            @include success-gradient();
-          }
-
-          @include btn-component($btn-success-bevel-bd, $btn-success-glow, $btn-success-shadow);
-        }
-
-        &.info-container {
-          .gradient {
-            @include info-gradient();
-          }
-
-          @include btn-component($btn-info-bevel-bd, $btn-info-glow, $btn-info-shadow);
-        }
-
-        &.danger-container {
-          .gradient {
-            @include danger-gradient();
-          }
-
-          @include btn-component($btn-danger-bevel-bd, $btn-danger-glow, $btn-danger-shadow);
-        }
-
-        &.default-container {
-          .border {
-            color: $btn-default-color;
-            border: $btn-default-border-width solid $btn-default-border;
-          }
-
-          @include btn-component($btn-default-bevel-bd, $btn-default-glow, $btn-default-shadow);
-        }
+    .example-container .states-container.success-container {
+      .gradient {
+        @include success-gradient();
       }
+
+      @include btn-component($btn-success-bevel-bd, $btn-success-glow, $btn-success-shadow);
+    }
+
+    .example-container .states-container.info-container {
+      .gradient {
+        @include info-gradient();
+      }
+
+      @include btn-component($btn-info-bevel-bd, $btn-info-glow, $btn-info-shadow);
+    }
+
+    .example-container .states-container.danger-container {
+      .gradient {
+        @include danger-gradient();
+      }
+
+      @include btn-component($btn-danger-bevel-bd, $btn-danger-glow, $btn-danger-shadow);
+    }
+
+    .example-container .states-container.secondary-container {
+      .border {
+        color: $btn-secondary-color;
+        border: $btn-secondary-border-width solid $btn-secondary-border;
+      }
+
+      @include btn-component($btn-secondary-bevel-bd, $btn-secondary-glow, $btn-secondary-shadow);
     }
   }
 
@@ -122,133 +118,101 @@
       background-color: $background;
     }
 
-    .button-container {
-      padding-right: 0;
-
-      .container-title {
-        margin-bottom: 14px;
+    .example-container .states-container.primary-container {
+      .original {
+        @include btn-bg($btn-primary-bg);
       }
 
-      .container-btn {
-        margin-bottom: 24px;
+      .hover {
+        @include btn-bg($btn-primary-bg-hover-focus);
       }
 
-      .states-container {
-        .state-container {
-          display: flex;
-
-          .original,
-          .hover,
-          .active {
-            width: $btn-component-size;
-            height: $btn-component-size;
-            border-radius: $btn-component-bd-radius;
-            margin-bottom: 16px;
-          }
-
-          .state-details {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            margin-left: 17px;
-            height: $btn-component-size;
-
-            .header {
-              color: white;
-            }
-
-            .subheader {
-              font-size: 0.875rem;
-              line-height: 1rem;
-              font-weight: 300;
-            }
-          }
-        }
-
-        &.primary-container {
-          .original {
-            @include btn-bg($btn-primary-bg);
-          }
-
-          .hover {
-            @include btn-bg($btn-primary-bg-hover-focus);
-          }
-
-          .active {
-            @include btn-bg($btn-primary-bg-active);
-          }
-        }
-
-        &.warning-container {
-          .original {
-            @include btn-bg($btn-warning-bg);
-          }
-
-          .hover {
-            @include btn-bg($btn-warning-bg-hover-focus);
-          }
-
-          .active {
-            @include btn-bg($btn-warning-bg-active);
-          }
-        }
-
-        &.success-container {
-          .original {
-            @include btn-bg($btn-success-bg);
-          }
-
-          .hover {
-            @include btn-bg($btn-success-bg-hover-focus);
-          }
-
-          .active {
-            @include btn-bg($btn-success-bg-active);
-          }
-        }
-
-        &.info-container {
-          .original {
-            @include btn-bg($btn-info-bg);
-          }
-
-          .hover {
-            @include btn-bg($btn-info-bg-hover-focus);
-          }
-
-          .active {
-            @include btn-bg($btn-info-bg-active);
-          }
-        }
-
-        &.danger-container {
-          .original {
-            @include btn-bg($btn-danger-bg);
-          }
-
-          .hover {
-            @include btn-bg($btn-danger-bg-hover-focus);
-          }
-
-          .active {
-            @include btn-bg($btn-danger-bg-active);
-          }
-        }
-
-        &.default-container {
-          .original {
-            @include btn-bg($btn-default-border);
-          }
-
-          .hover {
-            @include btn-bg($btn-default-bg-hover-focus);
-          }
-
-          .active {
-            @include btn-bg($btn-default-bg-active);
-          }
-        }
+      .active {
+        @include btn-bg($btn-primary-bg-active);
       }
+    }
+
+    .example-container .states-container.warning-container {
+      .original {
+        @include btn-bg($btn-warning-bg);
+      }
+
+      .hover {
+        @include btn-bg($btn-warning-bg-hover-focus);
+      }
+
+      .active {
+        @include btn-bg($btn-warning-bg-active);
+      }
+    }
+
+    .example-container .states-container.success-container {
+      .original {
+        @include btn-bg($btn-success-bg);
+      }
+
+      .hover {
+        @include btn-bg($btn-success-bg-hover-focus);
+      }
+
+      .active {
+        @include btn-bg($btn-success-bg-active);
+      }
+    }
+
+    .example-container .states-container.info-container {
+      .original {
+        @include btn-bg($btn-info-bg);
+      }
+
+      .hover {
+        @include btn-bg($btn-info-bg-hover-focus);
+      }
+
+      .active {
+        @include btn-bg($btn-info-bg-active);
+      }
+    }
+
+    .example-container .states-container.danger-container {
+      .original {
+        @include btn-bg($btn-danger-bg);
+      }
+
+      .hover {
+        @include btn-bg($btn-danger-bg-hover-focus);
+      }
+
+      .active {
+        @include btn-bg($btn-danger-bg-active);
+      }
+    }
+
+    .example-container .states-container.secondary-container {
+      .original {
+        @include btn-bg($btn-secondary-border);
+      }
+
+      .hover {
+        @include btn-bg($btn-secondary-bg-hover-focus);
+      }
+
+      .active {
+        @include btn-bg($btn-secondary-bg-active);
+      }
+    }
+  }
+
+  .actions-groups {
+    display: flex !important;
+
+    .container-title {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      justify-content: center;
+      color: white;
+      font-family: Exo;
     }
   }
 }

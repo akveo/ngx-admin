@@ -10,8 +10,11 @@ import { NgaThemeService } from '@nga/theme/services/theme.service';
     <div class="left">
       <i class="control-icon ion ion-navicon" (click)="toggleSidebar()"></i>
       <span class="logo" (click)="goToHome()">NgX&nbsp;<a>Admin</a></span>
-      <button (click)="switchTheme()">Switch Theme!</button>
-      <button (click)="selectDefaultTheme()">Default Theme!</button>
+      <div class="theme-buttons">
+        <button class="btn btn-hero btn-primary" (click)="selectCosmicTheme()">Cosmic</button>
+        <button class="btn btn-hero btn-warning" (click)="selectLightTheme()">Light</button>
+        <button class="btn btn-hero btn-info" (click)="selectDefaultTheme()">Default</button>
+      </div>
     </div>
 
     <nga-actions size="medium" inverse class="right">
@@ -37,8 +40,8 @@ export class HeaderComponent {
   ];
 
   constructor(private sidebarService: NgaSidebarService,
-              private menuService: NgaMenuService,
-              private themeService: NgaThemeService) {
+    private menuService: NgaMenuService,
+    private themeService: NgaThemeService) {
   }
 
   toggleSidebar() {
@@ -49,12 +52,12 @@ export class HeaderComponent {
     this.menuService.navigateHome();
   }
 
-  switchTheme() {
-    if (this.themeService.currentTheme === 'light') {
-      this.themeService.changeTheme('cosmic');
-    } else {
-      this.themeService.changeTheme('light');
-    }
+  selectCosmicTheme() {
+    this.themeService.changeTheme('cosmic');
+  }
+
+  selectLightTheme() {
+    this.themeService.changeTheme('light');
   }
 
   selectDefaultTheme() {

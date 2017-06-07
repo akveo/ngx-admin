@@ -1,188 +1,38 @@
-<div class="row default-buttons">
-  <div class="button-container col-md-4">
-    <div class="container-title">
-      <span>Primary Button</span>
-    </div>
-    <div class="container-btn">
-      <button class="btn btn-primary btn-demo">Primary</button>
-    </div>
-    <div class="states-container primary-container">
-      <div class="state-container">
-        <div class="original"></div>
-        <div class="state-details">
-          <span class="header">Default</span>
-          <span class="subheader">#7659ff</span>
+<nga-card>
+  <nga-card-header>Default Buttons</nga-card-header>
+  <nga-card-body>
+    <div class="row default-buttons">
+      <div class="example-container col-md-4" *ngFor="let b of buttons">
+        <div class="container-title">
+          <span>{{ b.containerTitle }}</span>
         </div>
-      </div>
-      <div class="state-container">
-        <div class="hover"></div>
-        <div class="state-details">
-          <span class="header">Hover</span>
-          <span class="subheader">20% white</span>
+        <div class="container-btn">
+          <button class="btn {{ b.class }} btn-demo">{{ b.title }}</button>
         </div>
-      </div>
-      <div class="state-container">
-        <div class="active"></div>
-        <div class="state-details">
-          <span class="header">Active</span>
-          <span class="subheader">20% black</span>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="button-container col-md-4">
-    <div class="container-title">
-      <span>Warning Button</span>
-    </div>
-    <div class="container-btn">
-      <button class="btn btn-warning btn-demo">Warning</button>
-    </div>
-    <div class="states-container warning-container">
-      <div class="state-container">
-        <div class="original"></div>
-        <div class="state-details">
-          <span class="header">Default</span>
-          <span class="subheader">#7659ff</span>
-        </div>
-      </div>
-      <div class="state-container">
-        <div class="hover"></div>
-        <div class="state-details">
-          <span class="header">Hover</span>
-          <span class="subheader">20% white</span>
-        </div>
-      </div>
-      <div class="state-container">
-        <div class="active"></div>
-        <div class="state-details">
-          <span class="header">Active</span>
-          <span class="subheader">20% black</span>
+        <div class="states-container {{ b.container }}">
+          <div class="state-container">
+            <div class="state-value original"></div>
+            <div class="state-details">
+              <span class="header">Default</span>
+              <span class="subheader">{{ b.default }}</span>
+            </div>
+          </div>
+          <div class="state-container">
+            <div class="state-value hover"></div>
+            <div class="state-details">
+              <span class="header">Hover</span>
+              <span class="subheader">20% white</span>
+            </div>
+          </div>
+          <div class="state-container">
+            <div class="state-value active"></div>
+            <div class="state-details">
+              <span class="header">Active</span>
+              <span class="subheader">20% black</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="button-container col-md-4">
-    <div class="container-title">
-      <span>Success Button</span>
-    </div>
-    <div class="container-btn">
-      <button class="btn btn-success btn-demo">Success</button>
-    </div>
-    <div class="states-container success-container">
-      <div class="state-container">
-        <div class="original"></div>
-        <div class="state-details">
-          <span class="header">Default</span>
-          <span class="subheader">#7659ff</span>
-        </div>
-      </div>
-      <div class="state-container">
-        <div class="hover"></div>
-        <div class="state-details">
-          <span class="header">Hover</span>
-          <span class="subheader">20% white</span>
-        </div>
-      </div>
-      <div class="state-container">
-        <div class="active"></div>
-        <div class="state-details">
-          <span class="header">Active</span>
-          <span class="subheader">20% black</span>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="button-container col-md-4">
-    <div class="container-title">
-      <span>Info Button</span>
-    </div>
-    <div class="container-btn">
-      <button class="btn btn-info btn-demo">Info</button>
-    </div>
-    <div class="states-container info-container">
-      <div class="state-container">
-        <div class="original"></div>
-        <div class="state-details">
-          <span class="header">Default</span>
-          <span class="subheader">#7659ff</span>
-        </div>
-      </div>
-      <div class="state-container">
-        <div class="hover"></div>
-        <div class="state-details">
-          <span class="header">Hover</span>
-          <span class="subheader">20% white</span>
-        </div>
-      </div>
-      <div class="state-container">
-        <div class="active"></div>
-        <div class="state-details">
-          <span class="header">Active</span>
-          <span class="subheader">20% black</span>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="button-container col-md-4">
-    <div class="container-title">
-      <span>Danger Button</span>
-    </div>
-    <div class="container-btn">
-      <button class="btn btn-danger btn-demo">Danger</button>
-    </div>
-    <div class="states-container danger-container">
-      <div class="state-container">
-        <div class="original"></div>
-        <div class="state-details">
-          <span class="header">Default</span>
-          <span class="subheader">#7659ff</span>
-        </div>
-      </div>
-      <div class="state-container">
-        <div class="hover"></div>
-        <div class="state-details">
-          <span class="header">Hover</span>
-          <span class="subheader">20% white</span>
-        </div>
-      </div>
-      <div class="state-container">
-        <div class="active"></div>
-        <div class="state-details">
-          <span class="header">Active</span>
-          <span class="subheader">20% black</span>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="button-container col-md-4">
-    <div class="container-title">
-      <span>Default Button</span>
-    </div>
-    <div class="container-btn">
-      <button class="btn btn-demo">Default</button>
-    </div>
-    <div class="states-container default-container">
-      <div class="state-container">
-        <div class="original"></div>
-        <div class="state-details">
-          <span class="header">Default</span>
-          <span class="subheader">#7659ff</span>
-        </div>
-      </div>
-      <div class="state-container">
-        <div class="hover"></div>
-        <div class="state-details">
-          <span class="header">Hover</span>
-          <span class="subheader">20% white</span>
-        </div>
-      </div>
-      <div class="state-container">
-        <div class="active"></div>
-        <div class="state-details">
-          <span class="header">Active</span>
-          <span class="subheader">20% black</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+  </nga-card-body>
+</nga-card>
