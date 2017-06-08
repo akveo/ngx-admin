@@ -1,3 +1,9 @@
-:host {
+@import '~@nga/theme/styles_new/all';
+
+@include nga-install-component() {
   display: block;
+
+  /deep/ .echart {
+    height: calc(#{nga-theme(card-height-xmedium)} - 50px);
+  }
 }

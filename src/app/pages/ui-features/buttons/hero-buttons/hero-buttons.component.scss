@@ -1,4 +1,24 @@
-@mixin ngx-buttons-theme($theme-name) {
+@import '~@nga/theme/styles_new/all';
+
+@mixin btn-component($bevel-bd, $glow, $shadow) {
+  .bevel-border {
+    box-shadow: 0 3px 0 0 $bevel-bd;
+  }
+
+  .shadow {
+    box-shadow: 0 4px 10px 0 $shadow;
+  }
+
+  .glow {
+    box-shadow: 0 2px 12px 0 $glow;
+  }
+}
+
+@mixin btn-bg($background) {
+  background-color: $background;
+}
+
+@include nga-install-component() {
 
   $btn-component-size: 50px;
   $btn-component-bd-radius: 12px;
@@ -37,8 +57,8 @@
   }
 
   .example-container .container-title {
+    font-family: nga-theme(font-secondary);
     margin-bottom: 14px;
-    font-family: Exo;
   }
 
   .example-container .container-btn {
@@ -46,26 +66,13 @@
   }
 
   .hero-buttons {
-    @mixin btn-component($bevel-bd, $glow, $shadow) {
-      .bevel-border {
-        box-shadow: 0 3px 0 0 $bevel-bd;
-      }
-
-      .shadow {
-        box-shadow: 0 4px 10px 0 $shadow;
-      }
-
-      .glow {
-        box-shadow: 0 2px 12px 0 $glow;
-      }
-    }
 
     .example-container .states-container.primary-container {
       .gradient {
         @include primary-gradient();
       }
 
-      @include btn-component($btn-primary-bevel-bd, $btn-primary-glow, $btn-primary-shadow);
+      @include btn-component(nga-theme(btn-primary-bevel-bd), nga-theme(btn-primary-glow), nga-theme(btn-primary-shadow));
     }
 
     .example-container .states-container.warning-container {
@@ -73,7 +80,7 @@
         @include warning-gradient();
       }
 
-      @include btn-component($btn-warning-bevel-bd, $btn-warning-glow, $btn-warning-shadow);
+      @include btn-component(nga-theme(btn-warning-bevel-bd), nga-theme(btn-warning-glow), nga-theme(btn-warning-shadow));
     }
 
     .example-container .states-container.success-container {
@@ -81,7 +88,7 @@
         @include success-gradient();
       }
 
-      @include btn-component($btn-success-bevel-bd, $btn-success-glow, $btn-success-shadow);
+      @include btn-component(nga-theme(btn-success-bevel-bd), nga-theme(btn-success-glow), nga-theme(btn-success-shadow));
     }
 
     .example-container .states-container.info-container {
@@ -89,7 +96,7 @@
         @include info-gradient();
       }
 
-      @include btn-component($btn-info-bevel-bd, $btn-info-glow, $btn-info-shadow);
+      @include btn-component(nga-theme(btn-info-bevel-bd), nga-theme(btn-info-glow), nga-theme(btn-info-shadow));
     }
 
     .example-container .states-container.danger-container {
@@ -97,16 +104,16 @@
         @include danger-gradient();
       }
 
-      @include btn-component($btn-danger-bevel-bd, $btn-danger-glow, $btn-danger-shadow);
+      @include btn-component(nga-theme(btn-danger-bevel-bd), nga-theme(btn-danger-glow), nga-theme(btn-danger-shadow));
     }
 
     .example-container .states-container.secondary-container {
       .border {
-        color: $btn-secondary-color;
-        border: $btn-secondary-border-width solid $btn-secondary-border;
+        color: nga-theme(btn-secondary-color);
+        border: nga-theme(btn-secondary-border-width) solid nga-theme(btn-secondary-border);
       }
 
-      @include btn-component($btn-secondary-bevel-bd, $btn-secondary-glow, $btn-secondary-shadow);
+      @include btn-component(nga-theme(btn-secondary-bevel-bd), nga-theme(btn-secondary-glow), nga-theme(btn-secondary-shadow));
     }
   }
 
@@ -114,91 +121,87 @@
     $btn-component-size: 50px;
     $btn-component-bd-radius: 12px;
 
-    @mixin btn-bg($background) {
-      background-color: $background;
-    }
-
     .example-container .states-container.primary-container {
       .original {
-        @include btn-bg($btn-primary-bg);
+        @include btn-bg(nga-theme(btn-primary-bg));
       }
 
       .hover {
-        @include btn-bg($btn-primary-bg-hover-focus);
+        @include btn-bg(nga-theme(btn-primary-bg-hover-focus));
       }
 
       .active {
-        @include btn-bg($btn-primary-bg-active);
+        @include btn-bg(nga-theme(btn-primary-bg-active));
       }
     }
 
     .example-container .states-container.warning-container {
       .original {
-        @include btn-bg($btn-warning-bg);
+        @include btn-bg(nga-theme(btn-warning-bg));
       }
 
       .hover {
-        @include btn-bg($btn-warning-bg-hover-focus);
+        @include btn-bg(nga-theme(btn-warning-bg-hover-focus));
       }
 
       .active {
-        @include btn-bg($btn-warning-bg-active);
+        @include btn-bg(nga-theme(btn-warning-bg-active));
       }
     }
 
     .example-container .states-container.success-container {
       .original {
-        @include btn-bg($btn-success-bg);
+        @include btn-bg(nga-theme(btn-success-bg));
       }
 
       .hover {
-        @include btn-bg($btn-success-bg-hover-focus);
+        @include btn-bg(nga-theme(btn-success-bg-hover-focus));
       }
 
       .active {
-        @include btn-bg($btn-success-bg-active);
+        @include btn-bg(nga-theme(btn-success-bg-active));
       }
     }
 
     .example-container .states-container.info-container {
       .original {
-        @include btn-bg($btn-info-bg);
+        @include btn-bg(nga-theme(btn-info-bg));
       }
 
       .hover {
-        @include btn-bg($btn-info-bg-hover-focus);
+        @include btn-bg(nga-theme(btn-info-bg-hover-focus));
       }
 
       .active {
-        @include btn-bg($btn-info-bg-active);
+        @include btn-bg(nga-theme(btn-info-bg-active));
       }
     }
 
     .example-container .states-container.danger-container {
       .original {
-        @include btn-bg($btn-danger-bg);
+        @include btn-bg(nga-theme(btn-danger-bg));
       }
 
       .hover {
-        @include btn-bg($btn-danger-bg-hover-focus);
+        @include btn-bg(nga-theme(btn-danger-bg-hover-focus));
       }
 
       .active {
-        @include btn-bg($btn-danger-bg-active);
+        @include btn-bg(nga-theme(btn-danger-bg-active));
       }
     }
 
     .example-container .states-container.secondary-container {
       .original {
-        @include btn-bg($btn-secondary-border);
+        @include btn-bg(nga-theme(btn-secondary-border));
       }
 
       .hover {
-        @include btn-bg($btn-secondary-bg-hover-focus);
+        @include btn-bg(nga-theme(btn-secondary-bg-hover-focus));
       }
 
       .active {
-        @include btn-bg($btn-secondary-bg-active);
+        @include btn-bg(nga-theme(btn-secondary-bg-active));
       }
     }
   }
@@ -207,12 +210,12 @@
     display: flex !important;
 
     .container-title {
+      font-family: nga-theme(font-secondary);
       display: flex;
       flex: 1;
       flex-direction: column;
       justify-content: center;
       color: white;
-      font-family: Exo;
     }
   }
 }

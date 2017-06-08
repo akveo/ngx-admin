@@ -1,0 +1,75 @@
+@import '~@nga/theme/styles_new/all';
+
+// TODO move colors to theme
+@include nga-install-component() {
+  /deep/ {
+    .layout {
+
+      nga-layout-header > nav {
+
+        .left {
+          color: nga-theme(color-inverse);
+
+          a {
+            color: nga-theme(color-inverse) !important;
+
+            &:hover {
+              color: nga-theme(color-secondary) !important;
+            }
+          }
+        }
+
+        .right i {
+          color: #7d85b2;
+
+          &:hover {
+            color: nga-theme(color-secondary);
+          }
+        }
+      }
+
+      nga-sidebar {
+        z-index: 1;
+        background: transparent;
+
+        .scrollable {
+          //box-shadow: $layout-shadow;
+          margin-top: nga-theme(layout-padding);
+          border-top-right-radius: nga-theme(radius);
+        }
+      }
+
+      nga-layout-footer > nav {
+        $footer-link: nga-theme(color-secondary);
+
+        border: none !important;
+        padding: 1.25rem;
+
+        .created-by {
+          color: #7d85b2;
+
+          a {
+            color: #7d85b2 !important;
+
+            &:hover {
+              color: nga-theme(color-secondary) !important;
+            }
+          }
+        }
+      }
+    }
+
+    nga-menu {
+      > ul > li:first-child {
+        a {
+          background-image: linear-gradient(to right, #664dd9, #9d52f2) !important;
+          box-shadow: 0 0 12px 0 rgba(128, 51, 255, 0.35) !important;
+          margin: 1rem;
+          border-radius: nga-theme(radius);
+          height: 3.5rem;
+          color: nga-theme(color-inverse);
+        }
+      }
+    }
+  }
+}

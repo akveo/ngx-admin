@@ -1,9 +1,7 @@
 @import '~@nga/theme/styles_new/all';
 
 @include nga-install-component() {
-  display: block;
-
-  /deep/ .leaflet-container {
+  /deep/ agm-map .agm-map-container-inner {
     height: calc(#{nga-theme(card-height-xmedium)} - 50px);
   }
 }
