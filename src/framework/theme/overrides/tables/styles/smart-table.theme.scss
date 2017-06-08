@@ -5,12 +5,12 @@
  */
 
 // TODO: refactor these styles
-@mixin nga-tables-smart-table-theme($theme-name) {
+@mixin nga-tables-smart-table-theme() {
 
   ng2-smart-table {
     th,
     td {
-      border: 1px solid $nga-smart-table-border-color !important;
+      border: 1px solid nga-theme(smart-table-border-color) !important;
       line-height: 35px;
       vertical-align: middle;
     }
@@ -19,37 +19,37 @@
       padding: 0 8px;
     }
 
-    color: $nga-smart-table-foreground;
+    color: nga-theme(smart-table-foreground);
 
     input {
       line-height: 1.5 !important;
     }
 
     ng2-smart-table-cell {
-      color: $nga-smart-table-foreground;
+      color: nga-theme(smart-table-foreground);
       line-height: 35px;
     }
 
     tbody {
       tr {
-        color: $nga-smart-table-foreground;
+        color: nga-theme(smart-table-foreground);
       }
 
       tr:hover {
-        background: $nga-smart-table-background;
+        background: nga-theme(smart-table-background);
       }
     }
 
     a.ng2-smart-sort-link {
       font-size: 14px !important;
-      color: $nga-smart-table-foreground;
-      font-weight: $nga-smart-table-font-weight-bolder;
+      color: nga-theme(smart-table-foreground);
+      font-weight: nga-theme(smart-table-font-weight-bolder);
 
       &.sort {
-        font-weight: $nga-smart-table-font-weight-bolder !important;
+        font-weight: nga-theme(smart-table-font-weight-bolder) !important;
 
         &::after {
-          border-bottom-color: $nga-smart-table-border-color !important;
+          border-bottom-color: nga-theme(smart-table-border-color) !important;
         }
       }
     }
@@ -71,7 +71,7 @@
     a.ng2-smart-action,
     .ng2-smart-title {
       font-size: 14px !important;
-      color: $nga-smart-table-foreground;
+      color: nga-theme(smart-table-foreground);
       padding: 0 5px;
       display: inline-block;
 
@@ -89,8 +89,8 @@
         display: flex;
 
         .page-item.disabled .page-link, .page-item.disabled .page-link:focus, .page-item.disabled .page-link:hover {
-          background: $nga-smart-table-background;
-          color: $nga-smart-table-foreground;
+          background: nga-theme(smart-table-background);
+          color: nga-theme(smart-table-foreground);
         }
       }
 
@@ -110,21 +110,21 @@
 
       .pagination > li > a,
       .pagination > li > span {
-        color: $nga-smart-table-foreground;
-        border-color: $nga-smart-table-border-color;
+        color: nga-theme(smart-table-foreground);
+        border-color: nga-theme(smart-table-border-color);
       }
 
 
       .pagination > li:first-of-type > a,
       .pagination > li:first-of-type > span {
-        border-top-left-radius: $nga-smart-table-border-radius;
-        border-bottom-left-radius: $nga-smart-table-border-radius;
+        border-top-left-radius: nga-theme(smart-table-border-radius);
+        border-bottom-left-radius: nga-theme(smart-table-border-radius);
       }
 
       .pagination > li:last-of-type > a,
       .pagination > li:last-of-type > span {
-        border-top-right-radius: $nga-smart-table-border-radius;
-        border-bottom-right-radius: $nga-smart-table-border-radius;
+        border-top-right-radius: nga-theme(smart-table-border-radius);
+        border-bottom-right-radius: nga-theme(smart-table-border-radius);
       }
 
       .pagination > .active > a,
@@ -134,7 +134,7 @@
       .pagination > .active > a:focus,
       .pagination > .active > span:focus {
         background-color: rgba(0, 0, 0, 0.3) !important;
-        border-color: $nga-smart-table-border-color !important;
+        border-color: nga-theme(smart-table-border-color) !important;
       }
 
       .pagination > li > a:hover,
@@ -142,7 +142,7 @@
       .pagination > li > a:focus,
       .pagination > li > span:focus {
         background-color: rgba(0, 0, 0, 0.2);
-        color: $nga-smart-table-foreground;
+        color: nga-theme(smart-table-foreground);
       }
     }
   }

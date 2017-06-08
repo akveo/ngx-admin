@@ -1,0 +1,23 @@
+/**
+ * @license
+ * Copyright Akveo. All Rights Reserved.
+ * Licensed under the MIT License. See License.txt in the project root for license information.
+ */
+
+@import './fonts';
+@import '../../overrides/bootstrap/styles/bootstrap.theme';
+@import '../../overrides/charts/styles/d3.theme';
+@import '../../overrides/components/styles/tree.theme';
+@import '../../overrides/components/styles/toaster.theme';
+@import '../../overrides/maps/styles/leaflet.theme';
+@import '../../overrides/tables/styles/smart-table.theme';
+
+
+@mixin nga-theme-overrides() {
+  @include nga-bootstrap-theme();
+  @include nga-charts-d3-theme();
+  @include nga-components-tree-theme();
+  @include nga-maps-leaflet-theme();
+  @include nga-tables-smart-table-theme();
+  @include nga-components-toaster-theme();
+}

@@ -4,69 +4,69 @@
  * Licensed under the MIT License. See License.txt in the project root for license information.
  */
 
-@mixin nga-user-theme($theme-name) {
+@mixin nga-user-theme() {
   nga-user {
 
-    font-size: $nga-user-font-size;
-    line-height: $nga-user-line-height;
+    font-size: nga-theme(user-font-size);
+    line-height: nga-theme(user-line-height);
 
     .user-picture {
-      height: $nga-user-size-medium;
-      width: $nga-user-size-medium;
-      background: $nga-user-background;
+      height: nga-theme(user-size-medium);
+      width: nga-theme(user-size-medium);
+      background: nga-theme(user-background);
 
       &.background {
-        color: $nga-user-foreground;
+        color: nga-theme(user-foreground);
       }
     }
 
     &.inverse {
       .user-picture {
-        background: $nga-user-background-inverse;
+        background: nga-theme(user-background-inverse);
 
         &.background {
-          color: $nga-user-foreground-inverse;
+          color: nga-theme(user-foreground-inverse);
         }
       }
     }
 
     &.small {
       .user-picture {
-        height: $nga-user-size-small;
-        width: $nga-user-size-small;
+        height: nga-theme(user-size-small);
+        width: nga-theme(user-size-small);
         font-size: 80%;
       }
     }
     &.medium {
       .user-picture {
-        height: $nga-user-size-medium;
-        width: $nga-user-size-medium;
+        height: nga-theme(user-size-medium);
+        width: nga-theme(user-size-medium);
       }
     }
     &.large {
       .user-picture {
-        height: $nga-user-size-large;
-        width: $nga-user-size-large;
+        height: nga-theme(user-size-large);
+        width: nga-theme(user-size-large);
       }
     }
 
     .user-context-menu {
-      background-color: $nga-user-background-inverse;
-      border: 1px solid $nga-user-menu-border;
+      background-color: nga-theme(user-background-inverse);
+      border: 1px solid nga-theme(user-menu-border);
 
       ul > li > a {
-        color: $nga-link-color-active;
+        color: nga-theme(link-color-active);
 
         @include hover-focus-active {
-          color: $nga-link-color-hover;
+          color: nga-theme(link-color-hover);
         }
       }
 
       ul > li.arrow {
-        border-bottom: 11px solid $nga-user-menu-border !important;
+        border-bottom: 11px solid nga-theme(nga-user-menu-border) !important;
 
         &::after {
-          border-bottom: 11px solid $nga-user-background-inverse !important;
+          border-bottom: 11px solid nga-theme(nga-user-background-inverse) !important;
         }
       }
     }

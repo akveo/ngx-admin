@@ -4,49 +4,49 @@
  * Licensed under the MIT License. See License.txt in the project root for license information.
  */
 
-@mixin nga-route-tabset-theme($theme-name) {
+@mixin nga-route-tabset-theme() {
 
   nga-route-tabset {
 
-    font-size: $nga-route-tabs-font-size;
-    line-height: $nga-route-tabs-line-height;
+    font-size: nga-theme(route-tabs-font-size);
+    line-height: nga-theme(route-tabs-line-height);
 
     ul {
-      border-bottom: 1px solid $nga-route-tabs-separator;
+      border-bottom: 1px solid nga-theme(route-tabs-separator);
 
       li {
         border: 1px solid transparent;
-        border-top-left-radius: $nga-route-tabs-header-radius;
-        border-top-right-radius: $nga-route-tabs-header-radius;
-        background: $nga-route-tabs-header-background;
-        padding: $nga-route-tabs-header-padding;
-        min-width: $nga-route-tabs-header-min-width;
+        border-top-left-radius: nga-theme(route-tabs-header-radius);
+        border-top-right-radius: nga-theme(route-tabs-header-radius);
+        background: nga-theme(route-tabs-header-background);
+        padding: nga-theme(route-tabs-header-padding);
+        min-width: nga-theme(route-tabs-header-min-width);
 
         a {
-          color: $nga-route-tabs-foreground;
+          color: nga-theme(route-tabs-foreground);
         }
 
         &.active {
-          background: $nga-route-tabs-header-active;
+          background: nga-theme(route-tabs-header-active);
 
           a {
-            color: $nga-route-tabs-foreground-inverse;
+            color: nga-theme(route-tabs-foreground-inverse);
           }
         }
 
         &:hover {
-          border-color: $nga-route-tabs-header-border-inverse;
+          border-color: nga-theme(route-tabs-header-border-inverse);
         }
 
         //TODO: as minimum we could remove "header" from that long long name "$nga-route-tabs-header-border-inverse"
         &.active:hover {
-          border-bottom-color: $nga-route-tabs-header-border-inverse;
+          border-bottom-color: nga-theme(route-tabs-header-border-inverse);
         }
       }
     }
 
     nga-route-tab {
-      color: $nga-route-tabs-foreground;
+      color: nga-theme(route-tabs-foreground);
     }
   }
 }

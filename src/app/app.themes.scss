@@ -1,0 +1,36 @@
+/**
+ * @license
+ * Copyright Akveo. All Rights Reserved.
+ * Licensed under the MIT License. See License.txt in the project root for license information.
+ */
+
+
+// here you can override theme styles
+//nga-card-header {
+  // TODO!!!! it should be possible to specify specific styles for a theme, probably in register theme
+  //color: nga-theme(color-primary) !important;
+  //text-transform: capitalize !important;
+  //text-decoration: underline;
+//}
+
+
+// define global maps
+@import '../framework/theme/styles_new/all';
+
+$nga-themes: nga-register-theme((
+  background-inverse: #5f1eff,
+  header-foreground: #ce55bd,
+  card-background: #cfe8ff,
+  card-foreground: #747bde,
+  card-separator: red,
+  radius: 0,
+  color-primary: red,
+
+), blue, cosmic);
+
+$nga-themes: nga-register-theme((
+  header-foreground: #76ff81,
+
+), blue1, blue);
+
+@include nga-install();

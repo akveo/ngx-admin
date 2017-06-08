@@ -4,55 +4,55 @@
  * Licensed under the MIT License. See License.txt in the project root for license information.
  */
 
-@mixin nga-actions-theme($theme-name) {
+@mixin nga-actions-theme() {
   nga-actions {
 
-    font-size: $nga-actions-font-size;
-    line-height: $nga-actions-line-height;
+    font-size: nga-theme(actions-font-size);
+    line-height: nga-theme(actions-line-height);
 
     nga-action {
-      height: $nga-actions-size-small;
-      padding: 0 $nga-actions-padding;
+      height: nga-theme(actions-size-small);
+      padding: 0 nga-theme(actions-padding);
 
       i.control-icon {
-        color: $nga-actions-color;
-        font-size: $nga-actions-size-small;
+        color: nga-theme(actions-color);
+        font-size: nga-theme(actions-size-small);
       }
-      border-left: 1px solid rgba($nga-actions-color, 0.3);
+      border-left: 1px solid rgba(nga-theme(actions-color), 0.3);
       background: transparent;
     }
 
     &.inverse {
       nga-action {
         i.control-icon {
-          color: $nga-actions-color-inverse;
+          color: nga-theme(actions-color-inverse);
         }
-        border-left: 1px solid rgba($nga-actions-color-inverse, 0.3);
+        border-left: 1px solid rgba(nga-theme(actions-color-inverse), 0.3);
       }
     }
 
     &.small {
 
       nga-action {
-        height: $nga-actions-size-small;
+        height: nga-theme(actions-size-small);
         i.control-icon {
-          font-size: $nga-actions-size-small;
+          font-size: nga-theme(actions-size-small);
         }
       }
     }
     &.medium {
       nga-action {
-        height: $nga-actions-size-medium;
+        height: nga-theme(actions-size-medium);
         i.control-icon {
-          font-size: $nga-actions-size-medium;
+          font-size: nga-theme(actions-size-medium);
         }
       }
     }
     &.large {
       nga-action {
-        height: $nga-actions-size-large;
+        height: nga-theme(actions-size-large);
         i.control-icon {
-          font-size: $nga-actions-size-large;
+          font-size: nga-theme(actions-size-large);
         }
       }
     }

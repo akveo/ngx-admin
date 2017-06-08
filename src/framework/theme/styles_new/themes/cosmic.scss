@@ -1,0 +1,50 @@
+/**
+ * @license
+ * Copyright Akveo. All Rights Reserved.
+ * Licensed under the MIT License. See License.txt in the project root for license information.
+ */
+
+@import '../core/functions';
+@import '../core/mixins';
+
+// default the base theme
+$theme: (
+  color-default: #2f2e66,
+
+  color-inverse: white,
+
+  color-gray: rgba(81, 113, 165, 0.15),
+  color-neutral: transparent,
+  color-white: #ffffff,
+  color-disabled: rgba(255, 255, 255, 0.4),
+  color-primary: #7659ff,
+  color-secondary: #a1a1e6,
+  color-info: #0088ff,
+  color-success: #00d977,
+  color-warning: #ffcb17,
+  color-danger: #ff386a,
+
+  foreground: color-inverse,
+  background: #20274f,
+  foreground-inverse: color-secondary,
+
+  shadow: 0 8px 20px 0 rgba(37, 26, 75, 0.68),
+
+  layout-padding: 2.5rem,
+  header-height: 4.725rem,
+  header-padding: 1.25rem,
+
+  footer-height: header-height,
+
+  sidebar-width: 16.25rem,
+  sidebar-width-compact: 3.45rem,
+  sidebar-padding: 0,
+
+  card-background: color-default,
+  card-separator: color-default,
+  card-foreground: foreground-inverse,
+  card-header-foreground: foreground,
+);
+
+// register the theme
+$nga-themes: nga-register-theme($theme, cosmic, default);

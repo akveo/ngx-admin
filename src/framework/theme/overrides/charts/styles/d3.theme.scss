@@ -4,25 +4,25 @@
  * Licensed under the MIT License. See License.txt in the project root for license information.
  */
 
-@mixin nga-charts-d3-theme($theme-name) {
+@mixin nga-charts-d3-theme() {
   .ngx-charts {
     .pie-label {
-      fill: $nga-d3-foreground;
+      fill: nga-theme(d3-foreground);
     }
 
     .grid-line-path {
-      stroke: $nga-d3-foreground;
+      stroke: nga-theme(d3-foreground);
     }
 
     text {
-      fill: $nga-d3-foreground;
+      fill: nga-theme(d3-foreground);
     }
 
   }
 
   .chart-legend {
     .legend-labels {
-      background: $nga-d3-legend-background;
+      background: nga-theme(d3-legend-background);
     }
   }
 }

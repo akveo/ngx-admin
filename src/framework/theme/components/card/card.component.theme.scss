@@ -4,108 +4,108 @@
  * Licensed under the MIT License. See License.txt in the project root for license information.
  */
 
-@mixin nga-card-theme($theme-name) {
+@mixin nga-card-theme() {
   nga-card {
-    font-size: $nga-card-font-size;
-    line-height: $nga-card-line-height;
+    font-size: nga-theme(card-font-size);
+    line-height: nga-theme(card-line-height);
 
-    background: $nga-card-background;
-    color: $nga-card-foreground;
-    margin-bottom: $nga-card-padding;
-    border-radius: $nga-card-border-radius;
-    box-shadow: $nga-card-shadow;
-    font-weight: $nga-card-font-weight;
+    background: nga-theme(card-background);
+    color: nga-theme(card-foreground);
+    margin-bottom: nga-theme(card-padding);
+    border-radius: nga-theme(card-border-radius);
+    box-shadow: nga-theme(card-shadow);
+    font-weight: nga-theme(card-font-weight);
 
-    @include nga-scrollbars($nga-card-scrollbar-width, $nga-card-scrollbar-foreground, $nga-card-scrollbar-background);
+    @include nga-scrollbars(nga-theme(card-scrollbar-width), nga-theme(card-scrollbar-foreground), nga-theme(card-scrollbar-background));
 
     &.small-card {
       nga-card-body {
-        height: $nga-card-height-small;
+        height: nga-theme(card-height-small);
       }
     }
     &.xsmall-card {
       nga-card-body {
-        height: $nga-card-height-xsmall;
+        height: nga-theme(card-height-xsmall);
       }
     }
     &.medium-card {
       nga-card-body {
-        height: $nga-card-height-medium;
+        height: nga-theme(card-height-medium);
       }
     }
     &.xmedium-card {
       nga-card-body {
-        height: $nga-card-height-xmedium;
+        height: nga-theme(card-height-xmedium);
       }
     }
     &.large-card {
       nga-card-body {
-        height: $nga-card-height-large;
+        height: nga-theme(card-height-large);
       }
     }
 
     &.active-card {
       nga-card-header {
-        background-color: $nga-card-header-active-background;
-        border-bottom-color: $nga-card-header-active-separator;
-        color: $nga-card-header-active-foreground;
+        background-color: nga-theme(card-header-active-background);
+        border-bottom-color: nga-theme(card-header-active-separator);
+        color: nga-theme(card-header-active-foreground);
       }
     }
     &.disabled-card {
       nga-card-header {
-        background-color: $nga-card-header-disabled-background;
-        border-bottom-color: $nga-card-header-disabled-separator;
+        background-color: nga-theme(card-header-disabled-background);
+        border-bottom-color: nga-theme(card-header-disabled-separator);
       }
     }
     &.primary-card {
       nga-card-header {
-        background-color: $nga-card-header-primary-background;
-        border-bottom-color: $nga-card-header-primary-separator;
+        background-color: nga-theme(card-header-primary-background);
+        border-bottom-color: nga-theme(card-header-primary-separator);
       }
     }
     &.info-card {
       nga-card-header {
-        background-color: $nga-card-header-info-background;
-        border-bottom-color: $nga-card-header-info-separator;
+        background-color: nga-theme(card-header-info-background);
+        border-bottom-color: nga-theme(card-header-info-separator);
       }
     }
     &.success-card {
       nga-card-header {
-        background-color: $nga-card-header-success-background;
-        border-bottom-color: $nga-card-header-success-separator;
+        background-color: nga-theme(card-header-success-background);
+        border-bottom-color: nga-theme(card-header-success-separator);
       }
     }
     &.warning-card {
       nga-card-header {
-        background-color: $nga-card-header-warning-background;
-        border-bottom-color: $nga-card-header-warning-separator;
+        background-color: nga-theme(card-header-warning-background);
+        border-bottom-color: nga-theme(card-header-warning-separator);
       }
     }
     &.danger-card {
       nga-card-header {
-        background-color: $nga-card-header-danger-background;
-        border-bottom-color: $nga-card-header-danger-separator;
+        background-color: nga-theme(card-header-danger-background);
+        border-bottom-color: nga-theme(card-header-danger-separator);
       }
     }
 
     nga-card-body {
-      padding: $nga-card-padding;
+      padding: nga-theme(card-padding);
     }
 
     nga-card-footer {
-      padding: $nga-card-padding;
-      border-bottom-left-radius: $nga-card-border-radius;
-      border-bottom-right-radius: $nga-card-border-radius;
+      padding: nga-theme(card-padding);
+      border-bottom-left-radius: nga-theme(card-border-radius);
+      border-bottom-right-radius: nga-theme(card-border-radius);
     }
 
     nga-card-header {
-      padding: $nga-card-padding;
-      border-bottom: $nga-card-header-separator-width solid $nga-card-header-separator;
-      border-top-left-radius: $nga-card-border-radius;
-      border-top-right-radius: $nga-card-border-radius;
-      font-weight: $nga-card-font-weight;
-      font-family: $nga-card-header-font-family;
-      color: $nga-card-header-foreground;
+      padding: nga-theme(card-padding);
+      border-bottom: nga-theme(card-header-separator-width) solid nga-theme(card-header-separator);
+      border-top-left-radius: nga-theme(card-border-radius);
+      border-top-right-radius: nga-theme(card-border-radius);
+      font-weight: nga-theme(card-font-weight);
+      font-family: nga-theme(card-header-font-family);
+      color: nga-theme(card-header-foreground);
 
       @include nga-headings();
     }

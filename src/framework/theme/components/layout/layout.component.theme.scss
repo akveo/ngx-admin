@@ -4,34 +4,34 @@
  * Licensed under the MIT License. See License.txt in the project root for license information.
  */
 
-@mixin nga-layout-theme($theme-name) {
+@mixin nga-layout-theme() {
   .layout {
 
-    font-size: $nga-layout-font-size;
-    line-height: $nga-layout-line-height;
-    color: $nga-layout-foreground;
-    background: $nga-layout-background;
-    min-height: $nga-layout-min-height;
+    font-size: nga-theme(layout-font-size);
+    line-height: nga-theme(layout-line-height);
+    color: nga-theme(layout-foreground);
+    background: nga-theme(layout-background);
+    min-height: nga-theme(layout-min-height);
 
     nga-layout-header {
-      box-shadow: $nga-header-shadow;
+      box-shadow: nga-theme(header-shadow);
       nav {
-        height: $nga-header-height;
-        padding: $nga-header-padding;
-        background: $nga-header-background;
-        color: $nga-header-foreground;
+        height: nga-theme(header-height);
+        padding: nga-theme(header-padding);
+        background: nga-theme(header-background);
+        color: nga-theme(header-foreground);
 
         a {
-          color: $nga-header-foreground;
+          color: nga-theme(header-foreground);
 
           @include hover-focus-active {
-            color: $nga-header-foreground;
+            color: nga-theme(header-foreground);
           }
         }
       }
 
       &.fixed ~ .layout-container {
-        padding-top: $nga-header-height;
+        padding-top: nga-theme(header-height);
       }
     }
 
@@ -39,33 +39,33 @@
       .content {
 
         nga-layout-footer {
-          box-shadow: $nga-footer-shadow;
+          box-shadow: nga-theme(footer-shadow);
 
           nav {
-            height: $nga-footer-height;
-            padding: $nga-footer-padding;
-            background: $nga-footer-background;
-            color: $nga-footer-foreground;
-            border-top: 1px solid $nga-footer-separator;
+            height: nga-theme(footer-height);
+            padding: nga-theme(footer-padding);
+            background: nga-theme(footer-background);
+            color: nga-theme(footer-foreground);
+            border-top: 1px solid nga-theme(footer-separator);
 
             a {
-              color: $nga-header-foreground;
+              color: nga-theme(header-foreground);
 
               @include hover-focus-active {
-                color: $nga-header-foreground;
+                color: nga-theme(header-foreground);
               }
             }
           }
         }
 
         &.center {
-          width: $nga-layout-content-width;
-          flex: 0 1 $nga-layout-content-width;
+          width: nga-theme(layout-content-width);
+          flex: 0 1 nga-theme(layout-content-width);
         }
 
         .columns {
           nga-layout-column {
-            padding: $nga-layout-padding;
+            padding: nga-theme(layout-padding);
           }
         }
       }

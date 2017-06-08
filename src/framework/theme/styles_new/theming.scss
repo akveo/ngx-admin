@@ -1,0 +1,76 @@
+/**
+ * @license
+ * Copyright Akveo. All Rights Reserved.
+ * Licensed under the MIT License. See License.txt in the project root for license information.
+ */
+
+
+/**
+ * This is a starting point where we declare the maps of themes and globally available functions/mixins
+ */
+
+@import 'core/mixins';
+@import 'core/functions';
+
+$nga-themes: () !global;
+$nga-themes-non-processed: () !global;
+
+
+@function nga-theme($key) {
+  @return map-get($theme, $key);
+}
+
+@function nga-get-value($theme, $key, $value) {
+  @if (type-of($value) == 'string') {
+    $tmp: map-get($theme, $value);
+
+    @if ($tmp != null) {
+      @return nga-get-value($theme, $value, $tmp);
+    }
+  }
+
+  @return map-get($theme, $key);
+}
+
+@function nga-register-theme($theme, $name, $default: null) {
+
+  $nga-themes-non-processed: map-set($nga-themes-non-processed, $name, $theme) !global;
+
+  @if ($default != null) {
+    $theme: map-merge(map-get($nga-themes-non-processed, $default), $theme);
+    $nga-themes-non-processed: map-set($nga-themes-non-processed, $name, $theme) !global;
+  }
+
+  $theme-parsed: ();
+  @each $key, $value in $theme {
+    $theme-parsed: map-set($theme-parsed, $key, nga-get-value($theme, $key, $value));
+  }
+
+  @return map-set($nga-themes, $name, $theme-parsed);
+}
+
+@mixin nga-install-component() {
+  @each $theme-name, $theme in $nga-themes {
+    :host-context(.nga-theme-#{$theme-name}) {
+      $theme: $theme !global;
+      @debug $theme;
+      @content;
+    }
+  }
+}
+
+@mixin nga-install-global() {
+  @each $theme-name, $theme in $nga-themes {
+    .nga-theme-#{$theme-name} {
+      $theme: $theme !global;
+
+      @content;
+    }
+  }
+}
+
+@mixin nga-install() {
+  @include nga-install-global() {
+    @include nga-theme-global();
+  }
+}

@@ -6,8 +6,7 @@
 
 import { Component } from '@angular/core';
 
-import 'style-loader!./app.theme.default.scss';
-import 'style-loader!./app.theme.blue.scss';
+import 'style-loader!./app.themes.scss';
 
 @Component({
   selector: 'nga-app-root',

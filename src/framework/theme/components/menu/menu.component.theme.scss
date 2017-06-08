@@ -3,24 +3,24 @@
  * Copyright Akveo. All Rights Reserved.
  * Licensed under the MIT License. See License.txt in the project root for license information.
  */
-@mixin nga-menu-theme($theme-name) {
+@mixin nga-menu-theme() {
   nga-menu {
-    font-size: $nga-menu-font-size;
-    line-height: $nga-menu-line-height;
+    font-size: nga-theme(menu-font-size);
+    line-height: nga-theme(menu-line-height);
 
     &.inverse {
       ul {
         li {
           a, .menu-group {
-            color: $nga-menu-item-foreground-inverse;
+            color: nga-theme(menu-item-foreground-inverse);
 
             @include hover-focus-active {
-              color: $nga-menu-item-foreground-inverse;
+              color: nga-theme(menu-item-foreground-inverse);
             }
 
             &.active {
-              background: $nga-menu-item-background;
-              color: $nga-menu-item-foreground;
+              background: nga-theme(menu-item-background);
+              color: nga-theme(menu-item-foreground);
             }
           }
         }
@@ -31,21 +31,21 @@
     ul {
       li {
         .menu-group {
-          font-weight: $nga-menu-group-font-weight;
-          font-size: $nga-menu-group-font-size;
+          font-weight: nga-theme(menu-group-font-weight);
+          font-size: nga-theme(menu-group-font-size);
         }
 
         a, .menu-group {
-          color: $nga-menu-item-foreground;
-          padding: $nga-menu-item-padding;
+          color: nga-theme(menu-item-foreground);
+          padding: nga-theme(menu-item-padding);
 
           @include hover-focus-active {
-            color: $nga-menu-item-foreground;
+            color: nga-theme(menu-item-foreground);
           }
 
           &.active {
-            background: $nga-menu-item-background-inverse;
-            color: $nga-menu-item-foreground-inverse;
+            background: nga-theme(menu-item-background-inverse);
+            color: nga-theme(menu-item-foreground-inverse);
           }
         }
       }

@@ -6,17 +6,17 @@
 
 @import '~angular2-toaster/toaster';
 
-@mixin nga-components-toaster-theme($theme-name) {
+@mixin nga-components-toaster-theme() {
 
   .toast-close-button {
     position: absolute;
     right: 0.15rem;
     top: 0.2rem;
     opacity: 1;
-    background-color: $nga-toaster-btn-close-background;
+    background-color: nga-theme(toaster-btn-close-background);
     border-radius: 3px;
     font-size: 1.5rem;
-    color: $nga-toaster-foreground-default;
+    color: nga-theme(toaster-foreground-default);
     text-shadow: none;
     button {
       padding: 5px;
@@ -28,51 +28,51 @@
     }
   }
   .toast {
-    color: $nga-toaster-foreground-default !important;
-    background-color: $nga-toaster-background;
+    color: nga-theme(toaster-foreground-default) !important;
+    background-color: nga-theme(toaster-background);
     box-shadow: none !important;
     opacity: 0.8 !important;
     &:hover {
-      box-shadow: $nga-toaster-shadow;
+      box-shadow: nga-theme(toaster-shadow);
       opacity: 1 !important;
     }
   }
   .toast-success {
-    background-color: $nga-toaster-success;
-    color: $nga-toaster-foreground !important;
+    background-color: nga-theme(toaster-success);
+    color: nga-theme(toaster-foreground) !important;
     .toast-close-button {
-      color: $nga-toaster-foreground;
+      color: nga-theme(toaster-foreground);
     }
   }
   .toast-error {
-    background-color: $nga-toaster-error;
-    color: $nga-toaster-foreground !important;
+    background-color: nga-theme(toaster-error);
+    color: nga-theme(toaster-foreground) !important;
     .toast-close-button {
-      color: $nga-toaster-foreground;
+      color: nga-theme(toaster-foreground);
     }
   }
   .toast-info {
-    background-color: $nga-toaster-info;
-    color: $nga-toaster-foreground-default !important;
+    background-color: nga-theme(toaster-info);
+    color: nga-theme(toaster-foreground-default) !important;
     .toast-close-button {
-      color: $nga-toaster-foreground;
+      color: nga-theme(toaster-foreground);
     }
   }
   .toast-wait {
-    background-color: yellow;//$nga-toaster-wait;
-    color: $nga-toaster-foreground !important;
+    background-color: yellow;//nga-theme(toaster-wait);
+    color: nga-theme(toaster-foreground) !important;
     .toast-close-button {
-      color: $nga-toaster-foreground;
+      color: nga-theme(toaster-foreground);
     }
     .icon-wait {
       background-image: url('data:image/gif;base64,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') !important;
     }
   }
   .toast-warning {
-    background-color: $nga-toaster-warning !important;
-    color: $nga-toaster-foreground;
+    background-color: nga-theme(toaster-warning) !important;
+    color: nga-theme(toaster-foreground);
     .toast-close-button {
-      color: $nga-toaster-foreground;
+      color: nga-theme(toaster-foreground);
     }
   }
   .toast-title {

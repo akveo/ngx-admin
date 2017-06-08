@@ -4,27 +4,27 @@
  * Licensed under the MIT License. See License.txt in the project root for license information.
  */
 
-@mixin nga-search-theme($theme-name) {
+@mixin nga-search-theme() {
 
   nga-search-field {
 
     .search {
-      background: $nga-search-background;
+      background: nga-theme(search-background);
 
       button {
-        color: $nga-search-btn-close-foreground;
+        color: nga-theme(search-btn-close-foreground);
       }
 
       span {
-        color: $nga-search-info;
+        color: nga-theme(search-info);
       }
 
       input {
-        color: $nga-search-text;
-        border-bottom: 4px solid $nga-search-dash;
+        color: nga-theme(search-text);
+        border-bottom: 4px solid nga-theme(search-dash);
 
         &::placeholder {
-          color: $nga-search-placeholder;
+          color: nga-theme(search-placeholder);
         }
 
         &::-ms-clear {
@@ -36,7 +36,7 @@
     &.rotate-layout {
       .wrapper {
         opacity: 0;
-        background: $nga-search-background;
+        background: nga-theme(search-background);
       }
 
     }
@@ -44,42 +44,42 @@
     &.modal-zoomin {
       .search::before,
       .search::after {
-        border: 1.5rem solid $nga-search-background-secondary;
+        border: 1.5rem solid nga-theme(search-background-secondary);
       }
 
     }
 
 		&.modal-half {
 			.form-wrapper {
-				background: $nga-search-background;
+				background: nga-theme(search-background);
 			}
       .search::before {
-        background: $nga-search-background-secondary;
+        background: nga-theme(search-background-secondary);
       }
     }
 
     &.modal-drop {
       .form-content::after {
-        background: $nga-search-dash;
+        background: nga-theme(search-dash);
       }
       .search::before {
-        background: $nga-search-background;
+        background: nga-theme(search-background);
       }
     }
 
     &.curtain {
       .search::after {
-        background: $nga-search-background;
+        background: nga-theme(search-background);
       }
       .search {
-        background: $nga-search-background;
+        background: nga-theme(search-background);
       }
     }
 
 		&.column-curtain {
 			.wrapper {
         &::before {
-          background: $nga-search-background;
+          background: nga-theme(search-background);
         }
         &::after {
           background: transparent;
@@ -87,21 +87,21 @@
       }
       &.show {
         .wrapper::after {
-          background: $nga-search-background-secondary;
+          background: nga-theme(search-background-secondary);
         }
       }
 		}
 
     &.simple-search {
       input {
-        border-bottom: 1px solid $nga-search-dash;
+        border-bottom: 1px solid nga-theme(search-dash);
       }
     }
   }
 
   nga-search {
     button {
-      color: $nga-search-btn-open-foreground;
+      color: nga-theme(search-btn-open-foreground);
     }
   }
 

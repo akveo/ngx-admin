@@ -4,9 +4,10 @@
  * Licensed under the MIT License. See License.txt in the project root for license information.
  */
 
-@import '~bootstrap/scss/bootstrap';
-@import './buttons';
+@import 'global/components';
+@import 'global/overrides';
 
-@mixin nga-bootstrap-theme() {
-  @include nga-b-buttons-theme();
+@mixin nga-theme-global() {
+  @include nga-theme-components();
+  @include nga-theme-overrides();
 }

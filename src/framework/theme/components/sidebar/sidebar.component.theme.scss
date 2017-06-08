@@ -4,30 +4,30 @@
  * Licensed under the MIT License. See License.txt in the project root for license information.
  */
 
-@mixin nga-sidebar-theme($theme-name) {
+@mixin nga-sidebar-theme() {
 
   nga-sidebar {
 
-    font-size: $nga-sidebar-font-size;
-    line-height: $nga-sidebar-line-height;
+    font-size: nga-theme(sidebar-font-size);
+    line-height: nga-theme(sidebar-line-height);
 
-    @include nga-scrollbars($nga-scrollbar-width, $nga-scrollbar-foreground, $nga-scrollbar-background);
+    @include nga-scrollbars(nga-theme(scrollbar-width), nga-theme(scrollbar-foreground), nga-theme(scrollbar-background));
 
     > .scrollable {
-      height: $nga-sidebar-height;
+      height: nga-theme(sidebar-height);
       position: fixed;
-      width: $nga-sidebar-width;
-      background: $nga-sidebar-background;
-      box-shadow: $nga-sidebar-shadow;
+      width: nga-theme(sidebar-width);
+      background: nga-theme(sidebar-background);
+      box-shadow: nga-theme(sidebar-shadow);
 
       > .main-container {
-        padding: $nga-sidebar-padding;
+        padding: nga-theme(sidebar-padding);
       }
     }
 
-    width: $nga-sidebar-width;
-    background: $nga-sidebar-background;
-    color: $nga-sidebar-foreground;
+    width: nga-theme(sidebar-width);
+    background: nga-theme(sidebar-background);
+    color: nga-theme(sidebar-foreground);
 
     &.collapsed {
       width: 0;
@@ -39,31 +39,31 @@
     }
 
     &.compacted {
-      width: $nga-sidebar-width-compact;
+      width: nga-theme(sidebar-width-compact);
       > .scrollable {
-        width: $nga-sidebar-width-compact;
+        width: nga-theme(sidebar-width-compact);
       }
     }
 
     &.expanded {
-      width: $nga-sidebar-width;
+      width: nga-theme(sidebar-width);
       > .scrollable {
-        width: $nga-sidebar-width;
+        width: nga-theme(sidebar-width);
       }
     }
 
     nga-sidebar-header {
-      padding: $nga-sidebar-padding;
-      height: $nga-sidebar-header-height;
+      padding: nga-theme(sidebar-padding);
+      height: nga-theme(sidebar-header-height);
     }
 
     nga-sidebar-footer {
-      padding: $nga-sidebar-padding;
-      height: $nga-sidebar-footer-height;
+      padding: nga-theme(sidebar-padding);
+      height: nga-theme(sidebar-footer-height);
     }
 
     nga-menu {
-      margin: 0 -$nga-sidebar-padding;
+      margin: 0 -#{nga-theme(sidebar-padding)};
     }
   }
 }
