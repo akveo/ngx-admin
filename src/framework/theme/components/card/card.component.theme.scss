@@ -104,6 +104,7 @@
       border-top-left-radius: $nga-card-border-radius;
       border-top-right-radius: $nga-card-border-radius;
       font-weight: $nga-card-font-weight;
+      font-family: $nga-card-header-font-family;
       color: $nga-card-header-foreground;
 
       @include nga-headings();

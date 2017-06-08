@@ -97,8 +97,6 @@
 
 @mixin btn-hero() {
   .btn-hero {
-    @include btn-box-shadow($btn-default-bevel-bd-height, $btn-default-bevel-bd, $btn-default-shadow, $btn-default-glow);
-
     text-shadow: 0 $btn-hero-text-shadow-y $btn-hero-text-shadow-radius $btn-hero-text-shadow;
   }
 
@@ -126,19 +124,50 @@
     @include danger-gradient();
     @include btn-box-shadow($btn-danger-bevel-bd-height, $btn-danger-bevel-bd, $btn-danger-shadow, $btn-danger-glow);
   }
+
+  .btn-hero.btn-secondary {
+    @include btn-box-shadow($btn-secondary-bevel-bd-height, $btn-secondary-bevel-bd, $btn-secondary-shadow, $btn-secondary-glow);
+  }
+}
+
+@mixin btn-outline() {
+
+  .btn-outline-primary {
+
+  }
+
+  .btn-outline-secondary {
+
+  }
+
+  .btn-outline-success {
+
+  }
+
+  .btn-outline-info {
+
+  }
+
+  .btn-outline-warning {
+
+  }
+
+  .btn-outline-danger {
+
+  }
 }
 
 @mixin nga-b-buttons-theme($theme-name) {
 
   .btn {
-    color: $btn-default-color;
-    border: $btn-default-border-width solid $btn-default-border;
+    color: $btn-secondary-color;
     text-transform: uppercase;
     letter-spacing: $btn-letter-spacing;
     font-weight: $nga-font-weight-bolder;
     font-family: $btn-font-family;
+    border: none;
 
-    @include btn($btn-default-bg, $btn-default-bg-hover-focus, $btn-default-bg-active);
+    @include btn($btn-secondary-bg, $btn-secondary-bg-hover-focus, $btn-secondary-bg-active);
   }
 
   @include btn-shape();
@@ -148,32 +177,28 @@
   @include btn-hero();
 
   .btn-primary {
-    border: none;
-
     @include btn($btn-primary-bg, $btn-primary-bg-hover-focus, $btn-primary-bg-active);
   }
 
   .btn-warning {
-    border: none;
-
     @include btn($btn-warning-bg, $btn-warning-bg-hover-focus, $btn-warning-bg-active);
   }
 
   .btn-info {
-    border: none;
-
     @include btn($btn-info-bg, $btn-info-bg-hover-focus, $btn-info-bg-active);
   }
 
   .btn-success {
-    border: none;
-
     @include btn($btn-success-bg, $btn-success-bg-hover-focus, $btn-success-bg-active);
   }
 
   .btn-danger {
-    border: none;
-
     @include btn($btn-danger-bg, $btn-danger-bg-hover-focus, $btn-danger-bg-active);
+  }
+
+  .btn-secondary {
+    border: $btn-secondary-border-width solid $btn-secondary-border;
+
+    @include btn($btn-secondary-bg, $btn-secondary-bg-hover-focus, $btn-secondary-bg-active);
   }
 }

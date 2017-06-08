@@ -136,6 +136,7 @@ $nga-card-header-warning-background: $nga-color-warning !default;
 $nga-card-header-warning-separator: $nga-color-warning !default;
 $nga-card-header-danger-background: $nga-color-danger !default;
 $nga-card-header-danger-separator: $nga-color-danger !default;
+$nga-card-header-font-family: $nga-font-secondary !default;
 
 $nga-layout-font-size: $nga-font-size !default;
 $nga-layout-line-height: $nga-line-height !default;
@@ -270,9 +271,12 @@ $btn-primary-color: $nga-color-inverse !default;
 $btn-primary-bg-hover-focus: #917aff !default;
 $btn-primary-bg-active: #5e47cc !default;
 
-$btn-secondary-bg: $nga-color-secondary !default;
-$btn-secondary-border: $nga-color-dark-secondary !default;
-$btn-secondary-color: $nga-color-default !default;
+$btn-secondary-bg: transparent !default;
+$btn-secondary-border: #bdbaff !default;
+$btn-secondary-color: #ffffff !default;
+$btn-secondary-bg-hover-focus: #cac8ff !default;
+$btn-secondary-bg-active: #9795cc !default;
+$btn-secondary-border-width: 2px !default;
 
 $btn-info-bg: $nga-color-info !default;
 $btn-info-border: $nga-color-dark-info !default;
@@ -297,13 +301,6 @@ $btn-danger-border: $nga-color-dark-danger !default;
 $btn-danger-color: $nga-color-inverse !default;
 $btn-danger-bg-hover-focus: #ff6088 !default;
 $btn-danger-bg-active: #cc2c55 !default;
-
-$btn-default-bg: transparent !default;
-$btn-default-border: #bdbaff !default;
-$btn-default-color: #ffffff !default;
-$btn-default-bg-hover-focus: #cac8ff !default;
-$btn-default-bg-active: #9795cc !default;
-$btn-default-border-width: 2px !default;
 
 $btn-border-radius: 12px !default;
 
@@ -363,10 +360,10 @@ $btn-danger-bevel-bd-height: 3px !default;
 $btn-danger-glow: rgba(255, 73, 184, 0.8) !default;
 $btn-danger-shadow: rgba(33, 7, 77, 0.5) !default;
 
-$btn-default-bevel-bd: #665ebd !default;
-$btn-default-bevel-bd-height: 2px !default;
-$btn-default-glow: rgba(146, 141, 255, 1) !default;
-$btn-default-shadow: rgba(33, 7, 77, 0.5) !default;
+$btn-secondary-bevel-bd: #665ebd !default;
+$btn-secondary-bevel-bd-height: 2px !default;
+$btn-secondary-glow: rgba(146, 141, 255, 1) !default;
+$btn-secondary-shadow: rgba(33, 7, 77, 0.5) !default;
 
 $btn-font-family: $nga-font-secondary !default;
 $btn-letter-spacing: 0.4px !default;
