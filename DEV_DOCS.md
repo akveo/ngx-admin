@@ -1,3 +1,6 @@
+# TODO
+ - rewrite theme and styles parts to include info about the variables
+ 
 # MUST!
 - Use tslint, styles-lint
 - Use default angular view encapsulation
