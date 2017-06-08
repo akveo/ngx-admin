@@ -16,6 +16,7 @@ const PAGES_COMPONENTS = [
 
 @NgModule({
   imports: [
+    // TODO: why here? review the modules structure
     NgaThemeModule.forRoot({ name: 'cosmic' }),
     NgaSidebarModule.forRoot(),
     NgaMenuModule.forRoot({ items: menuItems }),
