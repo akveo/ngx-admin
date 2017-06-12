@@ -2,93 +2,14 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'ngx-dashboard',
-  template: `
-    <nga-card>
-      <nga-card-header>Test card</nga-card-header>  
-      <nga-card-body>Some Body</nga-card-body>
-      <nga-card-footer>Super Footer</nga-card-footer>
-    </nga-card>
-    <nga-card>
-      <nga-card-header>Test card</nga-card-header>
-      <nga-card-body>Some Body</nga-card-body>
-      <nga-card-footer>Super Footer</nga-card-footer>
-    </nga-card>
-    <nga-card>
-      <nga-card-header>Test card</nga-card-header>
-      <nga-card-body>Some Body</nga-card-body>
-      <nga-card-footer>Super Footer</nga-card-footer>
-    </nga-card>
-    <nga-card>
-      <nga-card-header>Test card</nga-card-header>
-      <nga-card-body>Some Body</nga-card-body>
-      <nga-card-footer>Super Footer</nga-card-footer>
-    </nga-card>
-    <nga-card>
-      <nga-card-header>Test card</nga-card-header>
-      <nga-card-body>Some Body</nga-card-body>
-      <nga-card-footer>Super Footer</nga-card-footer>
-    </nga-card>
-    <nga-card>
-      <nga-card-header>Test card</nga-card-header>
-      <nga-card-body>Some Body</nga-card-body>
-      <nga-card-footer>Super Footer</nga-card-footer>
-    </nga-card>
-    <nga-card>
-      <nga-card-header>Test card</nga-card-header>
-      <nga-card-body>Some Body</nga-card-body>
-      <nga-card-footer>Super Footer</nga-card-footer>
-    </nga-card>
-    <nga-card>
-      <nga-card-header>Test card</nga-card-header>
-      <nga-card-body>Some Body</nga-card-body>
-      <nga-card-footer>Super Footer</nga-card-footer>
-    </nga-card>
-    <nga-card>
-      <nga-card-header>Test card</nga-card-header>
-      <nga-card-body>Some Body</nga-card-body>
-      <nga-card-footer>Super Footer</nga-card-footer>
-    </nga-card>
-    <nga-card>
-      <nga-card-header>Test card</nga-card-header>
-      <nga-card-body>Some Body</nga-card-body>
-      <nga-card-footer>Super Footer</nga-card-footer>
-    </nga-card>
-    <nga-card>
-      <nga-card-header>Test card</nga-card-header>
-      <nga-card-body>Some Body</nga-card-body>
-      <nga-card-footer>Super Footer</nga-card-footer>
-    </nga-card>
-    <nga-card>
-      <nga-card-header>Test card</nga-card-header>
-      <nga-card-body>Some Body</nga-card-body>
-      <nga-card-footer>Super Footer</nga-card-footer>
-    </nga-card>
-    <nga-card>
-      <nga-card-header>Test card</nga-card-header>
-      <nga-card-body>Some Body</nga-card-body>
-      <nga-card-footer>Super Footer</nga-card-footer>
-    </nga-card>
-    <nga-card>
-      <nga-card-header>Test card</nga-card-header>
-      <nga-card-body>Some Body</nga-card-body>
-      <nga-card-footer>Super Footer</nga-card-footer>
-    </nga-card>
-    <nga-card>
-      <nga-card-header>Test card</nga-card-header>
-      <nga-card-body>Some Body</nga-card-body>
-      <nga-card-footer>Super Footer</nga-card-footer>
-    </nga-card>
-    <nga-card>
-      <nga-card-header>Test card</nga-card-header>
-      <nga-card-body>Some Body</nga-card-body>
-      <nga-card-footer>Super Footer</nga-card-footer>
-    </nga-card>
-    <nga-card>
-      <nga-card-header>Test card</nga-card-header>
-      <nga-card-body>Some Body</nga-card-body>
-      <nga-card-footer>Super Footer</nga-card-footer>
-    </nga-card>
-  `,
+  styleUrls: ['./dashboard.component.scss'],
+  templateUrl: './dashboard.component.html',
 })
 export class DashboardComponent {
+  statusCards = [
+    { title: 'Light', on: true, type: 'primary', icon: 'ion-ios-game-controller-b-outline' },
+    { title: 'RollerShades', on: false, type: 'success', icon: 'ion-ios-game-controller-b-outline' },
+    { title: 'Wireless Audio', on: true, type: 'info', icon: 'ion-ios-game-controller-b-outline' },
+    { title: 'Coffee Maker', on: false, type: 'warning', icon: 'ion-ios-game-controller-b-outline' },
+  ];
 }

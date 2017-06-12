@@ -1,0 +1,14 @@
+<div class="row status-cards">
+  <div class="col-lg-3" *ngFor="let card of statusCards">
+    <nga-card (click)="card.on = !card.on" [ngClass]="{'on': card.on}">
+      <div class="icon-container {{card.type}}">
+        <i class="{{card.icon}}"></i>
+      </div>
+
+      <div class="details">
+        <div class="title">{{card.title}}</div>
+        <div class="status">{{card.on ? 'ON' : 'OFF'}}</div>
+      </div>
+    </nga-card>
+  </div>
+</div>
