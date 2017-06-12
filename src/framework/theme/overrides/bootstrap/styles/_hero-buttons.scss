@@ -1,0 +1,245 @@
+@mixin hero-text() {
+  $btn-text-shadow-y: 1px;
+  $btn-text-shadow-radius: 3px;
+  $btn-text-shadow: rgba(0, 0, 0, 0.3);
+
+  text-shadow: 0 $btn-text-shadow-y $btn-text-shadow-radius $btn-text-shadow;
+}
+
+@mixin bevel($bevel) {
+  box-shadow: 0 3px 0 0 $bevel;
+}
+
+@mixin glow($glow) {
+  box-shadow: 0 2px 12px 0 $glow;
+}
+
+@mixin shadow() {
+  box-shadow: 0 4px 10px 0 rgba(33, 7, 77, 0.5);
+}
+
+@mixin primary-gradient() {
+  $color-gradient-primary-left: #ac63ff;
+  $color-gradient-primary-right: #7659ff;
+
+  @include nga-right-gradient($color-gradient-primary-left, $color-gradient-primary-right);
+}
+
+@mixin warning-gradient() {
+  $color-gradient-warning-left: #ffcb17;
+  $color-gradient-warning-right: #ff874c;
+
+  @include nga-right-gradient($color-gradient-warning-left, $color-gradient-warning-right);
+}
+
+@mixin success-gradient() {
+  $color-gradient-success-left: #00c7c7;
+  $color-gradient-success-right: #00d977;
+
+  @include nga-right-gradient($color-gradient-success-left, $color-gradient-success-right);
+}
+
+@mixin info-gradient() {
+  $color-gradient-info-left: #3dafff;
+  $color-gradient-info-right: #0088ff;
+
+  @include nga-right-gradient($color-gradient-info-left, $color-gradient-info-right);
+}
+
+@mixin danger-gradient() {
+  $color-gradient-danger-left: #ff3dae;
+  $color-gradient-danger-right: #ff386a;
+
+  @include nga-right-gradient($color-gradient-danger-left, $color-gradient-danger-right);
+}
+
+@mixin hero-shadow($bevel, $glow) {
+  box-shadow: 0 3px 0 0 $bevel,
+              0 4px 10px 0 rgba(33, 7, 77, 0.5),
+              0 2px 12px 0 $glow;
+}
+
+@mixin primary-bevel() {
+  $btn-primary-bevel-border: #6938c9;
+
+  @include bevel($btn-primary-bevel-border);
+}
+
+@mixin primary-glow() {
+  $btn-primary-glow: rgba(137, 66, 254, 0.8);
+
+  @include glow($btn-primary-glow);
+}
+
+@mixin primary-hero-shadow() {
+  $btn-primary-bevel-border: #6938c9;
+  $btn-primary-glow: rgba(137, 66, 254, 0.8);
+
+  @include hero-shadow($btn-primary-bevel-border, $btn-primary-glow);
+}
+
+@mixin warning-bevel() {
+  $btn-warning-bevel-border: #ce7b22;
+
+  @include bevel($btn-warning-bevel-border);
+}
+
+@mixin warning-glow() {
+  $btn-warning-glow: rgba(255, 193, 38, 0.6);
+
+  @include glow($btn-warning-glow);
+}
+
+@mixin warning-hero-shadow() {
+  $btn-warning-bevel-border: #ce7b22;
+  $btn-warning-glow: rgba(255, 193, 38, 0.6);
+
+  @include hero-shadow($btn-warning-bevel-border, $btn-warning-glow);
+}
+
+@mixin success-bevel() {
+  $btn-success-bevel-border: #00967d;
+
+  @include bevel($btn-success-bevel-border);
+}
+
+@mixin success-glow() {
+  $btn-success-glow: rgba(35, 255, 181, 0.6);
+
+  @include glow($btn-success-glow);
+}
+
+@mixin success-hero-shadow() {
+  $btn-success-bevel-border: #00967d;
+  $btn-success-glow: rgba(35, 255, 181, 0.6);
+
+  @include hero-shadow($btn-success-bevel-border, $btn-success-glow);
+}
+
+@mixin info-bevel() {
+  $btn-info-bevel-border: #4150d9;
+
+  @include bevel($btn-info-bevel-border);
+}
+
+@mixin info-glow() {
+  $btn-info-glow: rgba(0, 136, 255, 0.7);
+
+  @include glow($btn-info-glow);
+}
+
+@mixin info-hero-shadow() {
+  $btn-info-bevel-border: #4150d9;
+  $btn-info-glow: rgba(0, 136, 255, 0.7);
+
+  @include hero-shadow($btn-info-bevel-border, $btn-info-glow);
+}
+
+@mixin danger-bevel() {
+  $btn-danger-bevel-border: #cc2568;
+
+  @include bevel($btn-danger-bevel-border);
+}
+
+@mixin danger-glow() {
+  $btn-danger-glow: rgba(255, 73, 184, 0.8);
+
+  @include glow($btn-danger-glow);
+}
+
+@mixin danger-hero-shadow() {
+  $btn-danger-bevel-border: #cc2568;
+  $btn-danger-glow: rgba(255, 73, 184, 0.8);
+
+  @include hero-shadow($btn-danger-bevel-border, $btn-danger-glow);
+}
+
+@mixin secondary-bevel() {
+  $btn-secondary-bevel-border: #665ebd;
+
+  @include bevel($btn-secondary-bevel-border);
+}
+
+@mixin secondary-glow() {
+  $btn-secondary-glow: rgba(146, 141, 255, 1);
+
+  @include glow($btn-secondary-glow);
+}
+
+@mixin secondary-border() {
+  border: 2px solid nga-theme(btn-secondary-border) !important;
+}
+
+@mixin secondary-bg() {
+  background-color: nga-theme(btn-secondary-bg) !important;
+}
+
+@mixin secondary-hero-shadow() {
+  $btn-secondary-bevel-border: #665ebd;
+  $btn-secondary-glow: rgba(146, 141, 255, 1);
+
+  @include hero-shadow($btn-secondary-bevel-border, $btn-secondary-glow);
+}
+
+@mixin btn-hero-primary() {
+  @include primary-gradient();
+  @include primary-hero-shadow();
+  @include hero-text();
+}
+
+@mixin btn-hero-warning() {
+  @include warning-gradient();
+  @include warning-hero-shadow();
+  @include hero-text();
+}
+
+@mixin btn-hero-success() {
+  @include success-gradient();
+  @include success-hero-shadow();
+  @include hero-text();
+}
+
+@mixin btn-hero-info() {
+  @include info-gradient();
+  @include info-hero-shadow();
+  @include hero-text();
+}
+
+@mixin btn-hero-danger() {
+  @include danger-gradient();
+  @include danger-hero-shadow();
+  @include hero-text();
+}
+
+@mixin btn-hero-secondary() {
+  @include secondary-border();
+  @include secondary-bg();
+  @include secondary-hero-shadow();
+  @include hero-text();
+}
+
+@mixin btn-hero() {
+  .btn.btn-hero-primary {
+    @include btn-hero-primary();
+  }
+
+  .btn.btn-hero-warning {
+    @include btn-hero-warning();
+  }
+
+  .btn.btn-hero-success {
+    @include btn-hero-success();
+  }
+
+  .btn.btn-hero-info {
+    @include btn-hero-info();
+  }
+
+  .btn.btn-hero-danger {
+    @include btn-hero-danger();
+  }
+
+  .btn.btn-hero-secondary {
+    @include btn-hero-secondary();
+  }
+}

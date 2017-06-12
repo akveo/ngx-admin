@@ -1,0 +1,43 @@
+@mixin btn-outline-primary() {
+}
+
+@mixin btn-outline-secondary() {
+}
+
+@mixin btn-outline-success() {
+}
+
+@mixin btn-outline-info() {
+}
+
+@mixin btn-outline-warning() {
+}
+
+@mixin btn-outline-danger() {
+}
+
+@mixin btn-outline() {
+  .btn.btn-outline-primary {
+    @include btn-outline-primary();
+  }
+
+  .btn.btn-outline-secondary {
+    @include btn-outline-secondary();
+  }
+
+  .btn.btn-outline-success {
+    @include btn-outline-success();
+  }
+
+  .btn.btn-outline-info {
+    @include btn-outline-info();
+  }
+
+  .btn.btn-outline-warning {
+    @include btn-outline-warning();
+  }
+
+  .btn.btn-outline-danger {
+    @include btn-outline-danger();
+  }
+}

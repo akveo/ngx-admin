@@ -1,0 +1,25 @@
+@mixin btn-rectangle() {
+  border-radius: nga-theme(btn-rectangle-bd-radius) !important;
+}
+
+@mixin btn-semi-round() {
+  border-radius: nga-theme(btn-semi-round-bd-radius) !important;
+}
+
+@mixin btn-round() {
+  border-radius: nga-theme(btn-round-bd-radius) !important;
+}
+
+@mixin btn-shape() {
+  .btn.btn-rectangle {
+    @include btn-rectangle();
+  }
+
+  .btn.btn-semi-round {
+    @include btn-semi-round();
+  }
+
+  .btn.btn-round {
+    @include btn-round();
+  }
+}

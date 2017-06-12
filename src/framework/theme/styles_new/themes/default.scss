@@ -64,17 +64,6 @@ $theme: (
   color-dark-warning: color-warning,
   color-dark-danger: color-danger,
 
-  // TODO: rename to "$color-primary-left" (remove gradient)
-  color-gradient-primary-left: #ac63ff,
-  color-gradient-primary-right: #7659ff,
-  color-gradient-warning-left: #ffcb17,
-  color-gradient-warning-right: #ff874c,
-  color-gradient-success-left: #00c7c7,
-  color-gradient-success-right: #00d977,
-  color-gradient-info-left: #3dafff,
-  color-gradient-info-right: #0088ff,
-  color-gradient-danger-left: #ff3dae,
-  color-gradient-danger-right: #ff386a,
   color-gradient-shadow: rgba(33, 7, 77, 0.5),
 
   social-color-facebook: #3b5998,
@@ -256,44 +245,16 @@ $theme: (
   toaster-wait: color-primary,
   toaster-error: color-danger,
 
+  btn-text-color: color-white,
+
   btn-primary-bg: color-primary,
-  btn-primary-border: color-dark-primary,
-  btn-primary-color: color-inverse,
-  btn-primary-bg-hover-focus: #917aff,
-  btn-primary-bg-active: #5e47cc,
-
   btn-secondary-bg: transparent,
-  btn-secondary-border: #bdbaff,
-  btn-secondary-color: #ffffff,
-  btn-secondary-bg-hover-focus: #cac8ff,
-  btn-secondary-bg-active: #9795cc,
-  btn-secondary-border-width: 2px,
-
   btn-info-bg: color-info,
-  btn-info-border: color-dark-info,
-  btn-info-color: color-inverse,
-  btn-info-bg-hover-focus: #33a0ff,
-  btn-info-bg-active: #006dcc,
-
   btn-success-bg: color-success,
-  btn-success-border: color-dark-success,
-  btn-success-color: color-inverse,
-  btn-success-bg-hover-focus: #33e192,
-  btn-success-bg-active: #00ae5f,
-
   btn-warning-bg: color-warning,
-  btn-warning-border: color-dark-warning,
-  btn-warning-color: color-inverse,
-  btn-warning-bg-hover-focus: #ffde6a,
-  btn-warning-bg-active: #cca312,
-
   btn-danger-bg: color-danger,
-  btn-danger-border: color-dark-danger,
-  btn-danger-color: color-inverse,
-  btn-danger-bg-hover-focus: #ff6088,
-  btn-danger-bg-active: #cc2c55,
 
-  btn-border-radius: 12px,
+  btn-secondary-border: #bdbaff,
 
   btn-padding-y-lg: 1.25rem,
   btn-padding-x-lg: 1.75rem,
@@ -327,42 +288,7 @@ $theme: (
   btn-semi-round-bd-radius: 12px,
   btn-round-bd-radius: 24px,
 
-  btn-primary-bevel-bd: #6938c9,
-  btn-primary-bevel-bd-height: 3px,
-  btn-primary-glow: rgba(137, 66, 254, 0.8),
-  btn-primary-shadow: rgba(6, 7, 64, 0.5),
-
-  btn-warning-bevel-bd: #ce7b22,
-  btn-warning-bevel-bd-height: 3px,
-  btn-warning-glow: rgba(255, 193, 38, 0.6),
-  btn-warning-shadow: rgba(33, 7, 77, 0.5),
-
-  btn-success-bevel-bd: #00967d,
-  btn-success-bevel-bd-height: 3px,
-  btn-success-glow: rgba(35, 255, 181, 0.6),
-  btn-success-shadow: rgba(33, 7, 77, 0.5),
-
-  btn-info-bevel-bd: #4150d9,
-  btn-info-bevel-bd-height: 3px,
-  btn-info-glow: rgba(0, 136, 255, 0.7),
-  btn-info-shadow: rgba(33, 7, 77, 0.5),
-
-  btn-danger-bevel-bd: #cc2568,
-  btn-danger-bevel-bd-height: 3px,
-  btn-danger-glow: rgba(255, 73, 184, 0.8),
-  btn-danger-shadow: rgba(33, 7, 77, 0.5),
-
-  btn-secondary-bevel-bd: #665ebd,
-  btn-secondary-bevel-bd-height: 2px,
-  btn-secondary-glow: rgba(146, 141, 255, 1),
-  btn-secondary-shadow: rgba(33, 7, 77, 0.5),
-
-  btn-font-family: font-secondary,
-  btn-letter-spacing: 0.4px,
-
-  btn-hero-text-shadow: rgba(0, 0, 0, 0.3),
-  btn-hero-text-shadow-y: 1px,
-  btn-hero-text-shadow-radius: 3px,
+  btn-font-family: font-secondary
 );
 
 // register the theme
