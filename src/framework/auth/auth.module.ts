@@ -68,13 +68,6 @@ export function ngaAuthServiceFactory(config: any, tokenService: NgaTokenService
   ],
 })
 export class NgaAuthModule {
-
-  constructor(@Optional() @SkipSelf() parentModule: NgaAuthModule) {
-    if (parentModule) {
-      throw new Error('NgaAuthModule is already loaded. Import it in the AppModule only.');
-    }
-  }
-
   static forRoot(ngaAuthOptions?: NgaAuthOptions): ModuleWithProviders {
     return <ModuleWithProviders> {
       ngModule: NgaAuthModule,
