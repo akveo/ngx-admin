@@ -1,5 +1,5 @@
-import { Injectable, Inject } from '@angular/core';
-import { Observable, ReplaySubject, Subject, BehaviorSubject } from 'rxjs/Rx';
+import { Inject, Injectable } from '@angular/core';
+import { BehaviorSubject, Observable, ReplaySubject, Subject } from 'rxjs/Rx';
 
 import { ngaAuthOptionsToken } from '../auth.options';
 import { deepExtend, getDeepFromObject } from '../helpers';
@@ -11,7 +11,7 @@ export class NgaTokenService {
     token: {
       key: 'auth_app_token',
       getter: () => Observable.of(localStorage.getItem(this.getConfigValue('token.key'))),
-      setter: (token: any) => Observable.of(() => localStorage.setItem(this.getConfigValue('token.key'), token)),
+      setter: (token: any) => Observable.of(token).do(token => localStorage.setItem(this.getConfigValue('token.key'), token)),
       deleter: (token: any) => Observable.of(() => localStorage.removeItem(this.getConfigValue('token.key'))),
     },
   };
