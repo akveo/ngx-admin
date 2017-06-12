@@ -95,34 +95,51 @@
   0 2px 12px 0 $glow;
 }
 
+@mixin btn-hero-primary() {
+  @include primary-gradient();
+  @include btn-box-shadow(nga-theme(btn-primary-bevel-bd-height), nga-theme(btn-primary-bevel-bd), nga-theme(btn-primary-shadow), nga-theme(btn-primary-glow));
+}
+
+@mixin btn-hero-warning() {
+  @include warning-gradient();
+  @include btn-box-shadow(nga-theme(btn-warning-bevel-bd-height), nga-theme(btn-warning-bevel-bd), nga-theme(btn-warning-shadow), nga-theme(btn-warning-glow));
+}
+
+@mixin btn-hero-success() {
+  @include success-gradient();
+  @include btn-box-shadow(nga-theme(btn-success-bevel-bd-height), nga-theme(btn-success-bevel-bd), nga-theme(btn-success-shadow), nga-theme(btn-success-glow));
+}
+
+@mixin btn-hero-info() {
+  @include info-gradient();
+  @include btn-box-shadow(nga-theme(btn-info-bevel-bd-height), nga-theme(btn-info-bevel-bd), nga-theme(btn-info-shadow), nga-theme(btn-info-glow));
+}
+
+@mixin btn-hero-danger() {
+  @include danger-gradient();
+  @include btn-box-shadow(nga-theme(btn-danger-bevel-bd-height), nga-theme(btn-danger-bevel-bd), nga-theme(btn-danger-shadow), nga-theme(btn-danger-glow));
+}
+
 @mixin btn-hero() {
   .btn-hero {
+    @include btn-box-shadow(nga-theme(btn-default-bevel-bd-height), nga-theme(btn-default-bevel-bd), nga-theme(btn-default-shadow), nga-theme(btn-default-glow));
     text-shadow: 0 nga-theme(btn-hero-text-shadow-y) nga-theme(btn-hero-text-shadow-radius) nga-theme(btn-hero-text-shadow);
   }
 
   .btn-hero.btn-primary {
-    @include primary-gradient();
-    @include btn-box-shadow(nga-theme(btn-primary-bevel-bd-height), nga-theme(btn-primary-bevel-bd), nga-theme(btn-primary-shadow), nga-theme(btn-primary-glow));
+    @include btn-hero-primary();
   }
-
   .btn-hero.btn-warning {
-    @include warning-gradient();
-    @include btn-box-shadow(nga-theme(btn-warning-bevel-bd-height), nga-theme(btn-warning-bevel-bd), nga-theme(btn-warning-shadow), nga-theme(btn-warning-glow));
+    @include btn-hero-warning();
   }
-
   .btn-hero.btn-success {
-    @include success-gradient();
-    @include btn-box-shadow(nga-theme(btn-success-bevel-bd-height), nga-theme(btn-success-bevel-bd), nga-theme(btn-success-shadow), nga-theme(btn-success-glow));
+    @include btn-hero-success();
   }
-
   .btn-hero.btn-info {
-    @include info-gradient();
-    @include btn-box-shadow(nga-theme(btn-info-bevel-bd-height), nga-theme(btn-info-bevel-bd), nga-theme(btn-info-shadow), nga-theme(btn-info-glow));
+    @include btn-hero-info();
   }
-
   .btn-hero.btn-danger {
-    @include danger-gradient();
-    @include btn-box-shadow(nga-theme(btn-danger-bevel-bd-height), nga-theme(btn-danger-bevel-bd), nga-theme(btn-danger-shadow), nga-theme(btn-danger-glow));
+    @include btn-hero-danger();
   }
 
   .btn-hero.btn-secondary {

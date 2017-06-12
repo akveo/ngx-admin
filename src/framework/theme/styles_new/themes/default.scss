@@ -27,9 +27,10 @@ $theme: (
   radius: 0.5rem,
   padding: 1rem,
   margin: 1rem,
-  line-height: 1rem, // TODO: remove REM
+  line-height: 1.25,
 
   color-default: #7179a3,
+  // TODO: remove inverse, use "color-fg" and "color-bg" instead, remove "color-default"
   color-inverse: #edf1f7,
 
   foreground: color-default,
@@ -63,6 +64,7 @@ $theme: (
   color-dark-warning: color-warning,
   color-dark-danger: color-danger,
 
+  // TODO: rename to "$color-primary-left" (remove gradient)
   color-gradient-primary-left: #ac63ff,
   color-gradient-primary-right: #7659ff,
   color-gradient-warning-left: #ffcb17,
@@ -320,6 +322,7 @@ $theme: (
   btn-padding-y: 0.875rem,
   btn-padding-x: 2rem,
 
+  //TODO: rename "bd" back to "border"
   btn-rectangle-bd-radius: 4px,
   btn-semi-round-bd-radius: 12px,
   btn-round-bd-radius: 24px,

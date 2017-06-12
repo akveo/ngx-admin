@@ -9,7 +9,7 @@
 
 // default the base theme
 $theme: (
-  color-default: #2f2e66,
+  color-default: #3d3780,
 
   color-inverse: white,
 
@@ -43,6 +43,7 @@ $theme: (
   card-background: color-default,
   card-separator: color-default,
   card-foreground: foreground-inverse,
+  card-foreground-secondary: color-secondary,
   card-header-foreground: foreground,
 );
 
