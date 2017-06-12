@@ -116,7 +116,7 @@ export class NgaAuthService {
     return this.getProvider(provider).authenticate(data)
       .do((result: NgaAuthResult) => {
         if (result.isSuccess() && result.getTokenValue()) {
-          this.tokenService.set(result.getTokenValue());
+          this.tokenService.set(result.getTokenValue()).subscribe(() => {});
         }
       });
   }
@@ -136,7 +136,7 @@ export class NgaAuthService {
     return this.getProvider(provider).register(data)
       .do((result: NgaAuthResult) => {
         if (result.isSuccess() && result.getTokenValue()) {
-          this.tokenService.set(result.getTokenValue());
+          this.tokenService.set(result.getTokenValue()).subscribe(() => {});
         }
       });
   }
