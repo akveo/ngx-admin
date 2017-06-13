@@ -8,7 +8,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { List } from 'immutable';
 import { Subscription } from 'rxjs/Subscription';
 
-import { NgaMenuService, NgaMenuItem } from '../../framework/theme';
+import { NgaMenuService, NgaMenuItem } from '@nga/theme';
 
 @Component({
   selector: 'nga-menu-item1',

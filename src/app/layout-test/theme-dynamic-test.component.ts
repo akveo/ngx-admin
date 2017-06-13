@@ -6,7 +6,7 @@
 
 import { Component } from '@angular/core';
 
-import { NgaThemeService } from '../../framework/theme/services/theme.service';
+import { NgaThemeService } from '@nga/theme/services/theme.service';
 
 @Component({
   selector: 'nga-dynamic-to-add',

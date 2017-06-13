@@ -174,7 +174,7 @@ export const routes: Routes = [
   },
   {
     path: 'auth',
-    loadChildren: 'framework/auth/auth.module#NgaAuthModule',
+    loadChildren: '@nga/auth/auth.module#NgaAuthModule',
   },
   {
     path: 'search',

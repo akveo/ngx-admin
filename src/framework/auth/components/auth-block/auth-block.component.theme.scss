@@ -3,10 +3,10 @@
  * Copyright Akveo. All Rights Reserved.
  * Licensed under the MIT License. See License.txt in the project root for license information.
  */
-@mixin nga-auth-block-theme($theme-name) {
+@mixin nga-auth-block-theme() {
   nga-auth-block .auth-block {
-    max-width: $nga-auth-block-max-width;
-    padding: $nga-auth-block-padding;
-    margin-top: $nga-auth-block-margin-top !important;
+    max-width: nga-theme(auth-block-max-width);
+    padding: nga-theme(auth-block-padding);
+    margin-top: nga-theme(auth-block-margin-top !important);
   }
 }

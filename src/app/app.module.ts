@@ -11,16 +11,19 @@ import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 import { List } from 'immutable';
 
-import { NgaThemeModule } from '../framework/theme';
-import { NgaCardModule } from '../framework/theme/components/card/card.module';
-import { NgaLayoutModule } from '../framework/theme/components/layout/layout.module';
-import { NgaMenuModule } from '../framework/theme/components/menu/menu.module';
-import { NgaRouteTabsetModule } from '../framework/theme/components/route-tabset/route-tabset.module';
-import { NgaSidebarModule } from '../framework/theme/components/sidebar/sidebar.module';
-import { NgaTabsetModule } from '../framework/theme/components/tabset/tabset.module';
-import { NgaUserModule } from '../framework/theme/components/user/user.module';
-import { NgaAuthModule, NgaDummyAuthProvider, NgaEmailPassAuthProvider } from '../framework/auth';
-import { NgaActionsModule } from '../framework/theme/components/actions/actions.module';
+import { NgaThemeModule } from '@nga/theme';
+import { NgaCardModule } from '@nga/theme/components/card/card.module';
+import { NgaLayoutModule } from '@nga/theme/components/layout/layout.module';
+import { NgaMenuModule } from '@nga/theme/components/menu/menu.module';
+import { NgaRouteTabsetModule } from '@nga/theme/components/route-tabset/route-tabset.module';
+import { NgaSidebarModule } from '@nga/theme/components/sidebar/sidebar.module';
+import { NgaTabsetModule } from '@nga/theme/components/tabset/tabset.module';
+import { NgaUserModule } from '@nga/theme/components/user/user.module';
+import { NgaAuthModule, NgaDummyAuthProvider, NgaEmailPassAuthProvider } from '@nga/auth';
+import { NgaActionsModule } from '@nga/theme/components/actions/actions.module';
+import { NgaBootstrapModule } from '@nga/theme/overrides/bootstrap/bootstrap.module';
+import { NgaSearchModule } from '@nga/theme';
+import { NgaMenuItem } from '@nga/theme';
 
 import { NgaAppComponent } from './app.component';
 import { NgaCardTestComponent } from './card-test/card-test.component';
@@ -54,14 +57,11 @@ import {
 import { NgaUserTestComponent } from './user-test/user-test.component';
 import { NgaThemeDynamicTestComponent, NgaDynamicToAddComponent } from './layout-test/theme-dynamic-test.component';
 import { NgaActionsTestComponent } from './actions-test/actions-test.component';
-import { NgaBootstrapModule } from '../framework/theme/overrides/bootstrap/bootstrap.module';
 import { NgaBootstrapTestComponent } from './bootstrap-test/bootstrap-test.component';
 
 import { routes } from './app.routes';
 
 import { NgaSearchTestComponent } from './search-test/search-test.component';
-import { NgaSearchModule } from '../framework/theme';
-import { NgaMenuItem } from '../framework/theme';
 
 const NGA_TEST_COMPONENTS = [
   NgaAppComponent,

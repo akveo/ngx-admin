@@ -5,7 +5,7 @@
  */
 
 import { Component } from '@angular/core';
-import { NgaThemeService } from '../../framework/theme';
+import { NgaThemeService } from '@nga/theme';
 
 @Component({
   selector: 'nga-change-theme-test',

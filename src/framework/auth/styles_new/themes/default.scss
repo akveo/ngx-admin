@@ -1,0 +1,13 @@
+/**
+ * @license
+ * Copyright Akveo. All Rights Reserved.
+ * Licensed under the MIT License. See License.txt in the project root for license information.
+ */
+
+$theme: (
+  auth-block-max-width: 600px,
+  auth-block-padding: 2rem,
+  auth-block-margin-top: 60px,
+);
+
+$nga-themes: nga-register-theme($theme, default, default);

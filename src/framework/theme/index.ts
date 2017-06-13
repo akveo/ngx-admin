@@ -20,9 +20,3 @@ export * from './components/user/user.module';
 export * from './components/actions/actions.module';
 export * from './components/search/search.module';
 export * from './components/search/search.service';
-
-export * from './overrides/bootstrap/bootstrap.module';
-export * from './overrides/charts/charts.module';
-export * from './overrides/components/components.module';
-export * from './overrides/maps/maps.module';
-export * from './overrides/tables/tables.module';

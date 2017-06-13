@@ -31,9 +31,7 @@
     "@angular/core": "^4.0.0",
     "@angular/router": "^4.0.0",
     "@angular/forms": "^4.0.0",
-    "@angular/http": "^4.0.0"
-  },
-  "dependencies": {
-    "bootstrap": "4.0.0-alpha.6"
+    "@angular/http": "^4.0.0",
+    "@nga/theme": "^1.0.0-alpha"
   }
 }

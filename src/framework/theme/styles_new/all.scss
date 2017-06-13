@@ -1,3 +1,9 @@
 @import 'theming';
 @import 'themes';
 @import 'globals';
+
+@mixin nga-themes-install() {
+  @include nga-install-global() {
+    @include nga-theme-global();
+  }
+}

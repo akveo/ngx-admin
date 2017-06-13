@@ -1,0 +1,13 @@
+/**
+ * @license
+ * Copyright Akveo. All Rights Reserved.
+ * Licensed under the MIT License. See License.txt in the project root for license information.
+ */
+
+@import '../../components/auth-block/auth-block.component.theme';
+
+// Create a theme
+@mixin nga-auth-components() {
+
+  @include nga-auth-block-theme();
+}

@@ -6,7 +6,7 @@
 
 import { Component, OnInit } from '@angular/core';
 
-import { NgaSuperSearchService } from '../../framework/theme';
+import { NgaSuperSearchService } from '@nga/theme';
 
 @Component({
   selector: 'nga-search-test',

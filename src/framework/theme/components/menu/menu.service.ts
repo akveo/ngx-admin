@@ -44,6 +44,7 @@ export interface NgaMenuOptions {
 
 export const ngaMenuOptionsToken = new InjectionToken<NgaMenuOptions>('NGA_MENU_OPTIONS');
 
+// TODO: map select events to router change events
 @Injectable()
 export class NgaMenuService {
 

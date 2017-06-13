@@ -4,12 +4,12 @@
  * Licensed under the MIT License. See License.txt in the project root for license information.
  */
 
-@import '../overrides/bootstrap/styles/bootstrap.theme';
-@import '../overrides/charts/styles/d3.theme';
-@import '../overrides/components/styles/tree.theme';
-@import '../overrides/components/styles/toaster.theme';
-@import '../overrides/maps/styles/leaflet.theme';
-@import '../overrides/tables/styles/smart-table.theme';
+@import '../styles_new/global/bootstrap/bootstrap.theme';
+@import '../styles_new/global/charts/d3.theme';
+@import '../styles_new/global/components/tree.theme';
+@import '../styles_new/global/components/toaster.theme';
+@import '../styles_new/global/maps/leaflet.theme';
+@import '../styles_new/global/tables/smart-table.theme';
 
 
 @mixin nga-overrides($theme-name) {

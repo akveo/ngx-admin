@@ -1,5 +1,9 @@
 # TODO
  - rewrite theme and styles parts to include info about the variables
+ - RXJS import
+ - steps to start the development
+ - describe framework and demo dependencies
+ - redo block about overrides
  
 # MUST!
 - Use tslint, styles-lint

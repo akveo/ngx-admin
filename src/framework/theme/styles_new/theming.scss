@@ -67,9 +67,3 @@ $nga-themes-non-processed: () !global;
     }
   }
 }
-
-@mixin nga-install() {
-  @include nga-install-global() {
-    @include nga-theme-global();
-  }
-}

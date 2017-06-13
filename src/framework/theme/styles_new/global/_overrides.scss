@@ -5,12 +5,13 @@
  */
 
 @import './fonts';
-@import '../../overrides/bootstrap/styles/bootstrap.theme';
-@import '../../overrides/charts/styles/d3.theme';
-@import '../../overrides/components/styles/tree.theme';
-@import '../../overrides/components/styles/toaster.theme';
-@import '../../overrides/maps/styles/leaflet.theme';
-@import '../../overrides/tables/styles/smart-table.theme';
+
+@import 'bootstrap/bootstrap.theme';
+@import 'charts/d3.theme';
+@import 'components/tree.theme';
+@import 'components/toaster.theme';
+@import 'maps/leaflet.theme';
+@import 'tables/smart-table.theme';
 
 
 @mixin nga-theme-overrides() {
