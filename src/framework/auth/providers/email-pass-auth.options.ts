@@ -3,6 +3,8 @@
  * Copyright Akveo. All Rights Reserved.
  * Licensed under the MIT License. See License.txt in the project root for license information.
  */
+
+// TODO postfix to options
 export interface NgaEmailPassModuleConfig {
   alwaysFail?: boolean;
   rememberMe?: boolean;
@@ -15,10 +17,12 @@ export interface NgaEmailPassModuleConfig {
   defaultMessages?: string[];
 }
 
+// TODO postfix to options
 export interface NgaEmailPassResetModuleConfig extends NgaEmailPassModuleConfig {
   resetPasswordTokenKey?: string;
 }
 
+// TODO postfix to options
 export interface NgEmailPassAuthProviderConfig {
   login?: boolean | NgaEmailPassModuleConfig;
   register?: boolean | NgaEmailPassModuleConfig;
