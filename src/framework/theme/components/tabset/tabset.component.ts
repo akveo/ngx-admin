@@ -84,7 +84,7 @@ export class NgaTabsetComponent implements AfterContentInit {
   }
 
   selectTab(selectedTab: NgaTabComponent) {
-    this.tabs.forEach(tab => tab.active = tab == selectedTab);
+    this.tabs.forEach(tab => tab.active = tab === selectedTab);
     this.changeTab.emit(selectedTab);
   }
 }
