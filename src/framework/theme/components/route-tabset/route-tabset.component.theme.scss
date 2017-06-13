@@ -4,6 +4,8 @@
  * Licensed under the MIT License. See License.txt in the project root for license information.
  */
 
+@import '../../overrides/bootstrap/styles/hero-buttons';
+
 @mixin nga-route-tabset-theme() {
 
   nga-route-tabset {
@@ -24,9 +26,8 @@
           color: nga-theme(route-tabs-foreground-secondary);
 
           &::before {
-            background-color: nga-theme(color-success);
-            //background-image: linear-gradient(to right, #00c7c7, #00d977);
-            //box-shadow: 0 0 16px 0 rgba(35, 255, 181, 0.3);
+            @include success-gradient();
+            box-shadow: 0 0 16px 0 rgba(35, 255, 181, 0.3);
           }
         }
 
