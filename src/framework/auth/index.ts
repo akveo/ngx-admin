@@ -5,15 +5,7 @@
  */
 export * from './auth.options';
 export * from './auth.module';
-export * from './components/auth-block/auth-block.component';
-export * from './components/login/login.component';
-export * from './components/register/register.component';
-export * from './components/request-password/request-password.component';
-export * from './components/reset-password/reset-password.component';
 
-export * from './services/auth.service';
-export * from './services/token.service';
-export * from './providers/abstract-auth.provider';
-export * from './providers/dummy-auth.provider';
-export * from './providers/email-pass-auth.provider';
-
+export * from './components';
+export * from './services';
+export * from './providers';
