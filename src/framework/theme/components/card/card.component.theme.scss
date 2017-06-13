@@ -19,29 +19,19 @@
     @include nga-scrollbars(nga-theme(card-scrollbar-width), nga-theme(card-scrollbar-foreground), nga-theme(card-scrollbar-background));
 
     &.small-card {
-      nga-card-body {
-        height: nga-theme(card-height-small);
-      }
+      height: nga-theme(card-height-small);
     }
     &.xsmall-card {
-      nga-card-body {
-        height: nga-theme(card-height-xsmall);
-      }
+      height: nga-theme(card-height-xsmall);
     }
     &.medium-card {
-      nga-card-body {
-        height: nga-theme(card-height-medium);
-      }
+      height: nga-theme(card-height-medium);
     }
     &.xmedium-card {
-      nga-card-body {
-        height: nga-theme(card-height-xmedium);
-      }
+      height: nga-theme(card-height-xmedium);
     }
     &.large-card {
-      nga-card-body {
-        height: nga-theme(card-height-large);
-      }
+      height: nga-theme(card-height-large);
     }
 
     &.active-card {
