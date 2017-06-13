@@ -18,6 +18,7 @@ import { getDeepFromObject } from '../helpers';
 export class NgaEmailPassAuthProvider extends NgaAbstractAuthProvider {
 
   protected defaultConfig: NgEmailPassAuthProviderConfig = {
+    baseEndpoint: '',
     login: {
       alwaysFail: false,
       rememberMe: true,
@@ -108,7 +109,7 @@ export class NgaEmailPassAuthProvider extends NgaAbstractAuthProvider {
   }
 
   authenticate(data?: any): Observable<NgaAuthResult> {
-    return this.http.post(this.getConfigValue('login.endpoint'), data)
+    return this.http.post(this.getActionEndpoint('login'), data)
       .map((res) => {
         if (this.getConfigValue('login.alwaysFail')) {
           throw this.createFailResponse(data);
@@ -144,7 +145,7 @@ export class NgaEmailPassAuthProvider extends NgaAbstractAuthProvider {
   }
 
   register(data?: any): Observable<NgaAuthResult> {
-    return this.http.post(this.getConfigValue('register.endpoint'), data)
+    return this.http.post(this.getActionEndpoint('register'), data)
       .map((res) => {
         if (this.getConfigValue('register.alwaysFail')) {
           throw this.createFailResponse(data);
@@ -180,7 +181,7 @@ export class NgaEmailPassAuthProvider extends NgaAbstractAuthProvider {
   }
 
   requestPassword(data?: any): Observable<NgaAuthResult> {
-    return this.http.post(this.getConfigValue('requestPass.endpoint'), data)
+    return this.http.post(this.getActionEndpoint('requestPass'), data)
       .map((res) => {
         if (this.getConfigValue('requestPass.alwaysFail')) {
           throw this.createFailResponse();
@@ -218,7 +219,7 @@ export class NgaEmailPassAuthProvider extends NgaAbstractAuthProvider {
     const tokenKey = this.getConfigValue('resetPass.resetPasswordTokenKey');
     data[tokenKey] = this.route.snapshot.queryParams[tokenKey];
 
-    return this.http.post(this.getConfigValue('resetPass.endpoint'), data)
+    return this.http.post(this.getActionEndpoint('resetPass'), data)
       .map((res) => {
         if (this.getConfigValue('resetPass.alwaysFail')) {
           throw this.createFailResponse();
@@ -253,7 +254,7 @@ export class NgaEmailPassAuthProvider extends NgaAbstractAuthProvider {
   }
 
   logout(): Observable<NgaAuthResult> {
-    return this.http.delete(this.getConfigValue('logout.endpoint'))
+    return this.http.delete(this.getActionEndpoint('logout'))
       .map((res) => {
         if (this.getConfigValue('logout.alwaysFail')) {
           throw this.createFailResponse();
@@ -285,5 +286,11 @@ export class NgaEmailPassAuthProvider extends NgaAbstractAuthProvider {
             errors,
           ));
       });
+  }
+
+  protected getActionEndpoint(action: string): string {
+    const actionEndpoint: string = this.getConfigValue(`${action}.endpoint`);
+    const baseEndpoint: string = this.getConfigValue('baseEndpoint');
+    return baseEndpoint + actionEndpoint;
   }
 }

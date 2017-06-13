@@ -24,6 +24,7 @@ export interface NgaEmailPassResetModuleConfig extends NgaEmailPassModuleConfig 
 
 // TODO postfix to options
 export interface NgEmailPassAuthProviderConfig {
+  baseEndpoint?: string;
   login?: boolean | NgaEmailPassModuleConfig;
   register?: boolean | NgaEmailPassModuleConfig;
   requestPass?: boolean | NgaEmailPassModuleConfig;
