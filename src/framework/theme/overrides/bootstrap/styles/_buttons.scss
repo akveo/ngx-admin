@@ -5,33 +5,11 @@
  * Licensed under the MIT License. See License.txt in the project root for license information.
  */
 
-@import './default-buttons';
 @import './shape-buttons';
 @import './size-buttons';
+@import './default-buttons';
 @import './hero-buttons';
 @import './outline-buttons';
-
-@mixin btn($btn-type) {
-  @if $btn-type == hero {
-    @include btn-hero();
-  }
-
-  @if $btn-type == size {
-    @include btn-size();
-  }
-
-  @if $btn-type == shape {
-    @include btn-shape();
-  }
-
-  @if $btn-type == outline {
-    @include btn-outline();
-  }
-
-  @if $btn-type == default {
-    @include btn-default();
-  }
-}
 
 @mixin nga-b-buttons-theme() {
 
@@ -44,9 +22,10 @@
     border: none !important;
   }
 
-  @include btn(default);
-  @include btn(hero);
-  @include btn(size);
-  @include btn(shape);
-  @include btn(outline);
+  @include btn-shape();
+  @include btn-size();
+
+  @include btn-default();
+  @include btn-hero();
+  @include btn-outline();
 }
