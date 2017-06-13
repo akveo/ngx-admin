@@ -4,7 +4,6 @@ import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
-// TODO: how should we link modules together?
 import { NgaLayoutModule } from '@nga/theme';
 
 import { NgaAuthService } from './services/auth.service';

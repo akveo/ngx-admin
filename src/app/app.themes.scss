@@ -14,7 +14,7 @@
 //}
 
 
-@import '~@nga/theme/styles_new/all';
+@import '~@nga/theme/styles/all';
 
 $nga-themes: nga-register-theme((
   background-inverse: #5f1eff,
@@ -34,6 +34,6 @@ $nga-themes: nga-register-theme((
 
 @include nga-themes-install();
 
-@import '~@nga/auth/styles_new/all';
+@import '~@nga/auth/styles/all';
 
 @include nga-auth-install();

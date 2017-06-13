@@ -21,3 +21,8 @@
 @function shade($color, $percentage) {
   @return mix(black, $color, $percentage);
 }
+
+@function map-set($map, $key, $value) {
+  $new: ($key: $value);
+  @return map-merge($map, $new);
+}
