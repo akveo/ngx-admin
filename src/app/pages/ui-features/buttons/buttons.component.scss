@@ -1,9 +1,271 @@
-:host /deep/ {
-  display: block;
-  font-size: 1rem;
+@import '~@nga/theme/styles_new/all';
 
-  .btn-demo {
-    width: 180px;
-    height: 48px;
+@mixin btn-bg($background) {
+  background-color: $background;
+}
+
+@include nga-install-component() {
+
+  $btn-component-size: 50px;
+  $btn-component-bd-radius: 12px;
+
+  /deep/ {
+    .btn-demo {
+      width: 180px;
+      height: 48px;
+    }
+
+    .states-container .state-container {
+      display: flex;
+
+      .state-value {
+        width: $btn-component-size;
+        height: $btn-component-size;
+        border-radius: $btn-component-bd-radius;
+        margin-bottom: 16px;
+      }
+
+      .state-details {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-left: 17px;
+        height: $btn-component-size;
+      }
+
+      .state-details .header {
+        color: white;
+      }
+
+      .state-details .subheader {
+        font-size: 0.875rem;
+        line-height: 1rem;
+        font-weight: 300;
+      }
+    }
+
+    .example-container {
+      padding-right: 0;
+    }
+
+    .example-container .container-title {
+      font-family: nga-theme(font-secondary);
+      margin-bottom: 14px;
+    }
+
+    .example-container .container-btn {
+      margin-bottom: 24px;
+    }
+
+    .hero-buttons {
+
+      .example-container .states-container.primary-container {
+        .gradient {
+          @include primary-gradient();
+        }
+
+        .glow {
+          @include primary-glow();
+        }
+
+        .bevel-border {
+          @include primary-bevel();
+        }
+
+        .shadow {
+          @include shadow();
+        }
+      }
+
+      .example-container .states-container.warning-container {
+        .gradient {
+          @include warning-gradient();
+        }
+
+        .glow {
+          @include warning-glow();
+        }
+
+        .bevel-border {
+          @include warning-bevel();
+        }
+
+        .shadow {
+          @include shadow();
+        }
+      }
+
+      .example-container .states-container.success-container {
+        .gradient {
+          @include success-gradient();
+        }
+
+        .glow {
+          @include success-glow();
+        }
+
+        .bevel-border {
+          @include success-bevel();
+        }
+
+        .shadow {
+          @include shadow();
+        }
+      }
+
+      .example-container .states-container.info-container {
+        .gradient {
+          @include info-gradient();
+        }
+
+        .glow {
+          @include info-glow();
+        }
+
+        .bevel-border {
+          @include info-bevel();
+        }
+
+        .shadow {
+          @include shadow();
+        }
+      }
+
+      .example-container .states-container.danger-container {
+        .gradient {
+          @include danger-gradient();
+        }
+
+        .glow {
+          @include danger-glow();
+        }
+
+        .bevel-border {
+          @include danger-bevel();
+        }
+
+        .shadow {
+          @include shadow();
+        }
+      }
+
+      .example-container .states-container.secondary-container {
+        .border {
+          color: nga-theme(btn-secondary-color);
+          border: nga-theme(btn-secondary-border-width) solid nga-theme(btn-secondary-border);
+        }
+
+        .glow {
+          @include secondary-glow();
+        }
+
+        .bevel-border {
+          @include secondary-bevel();
+        }
+
+        .shadow {
+          @include shadow();
+        }
+      }
+    }
+
+    .default-buttons {
+      .example-container .states-container.primary-container {
+        .original {
+          @include btn-bg(nga-theme(btn-primary-bg));
+        }
+
+        .hover {
+          @include primary-hover();
+        }
+
+        .active {
+          @include primary-active();
+        }
+      }
+
+      .example-container .states-container.warning-container {
+        .original {
+          @include btn-bg(nga-theme(btn-warning-bg));
+        }
+
+        .hover {
+          @include warning-hover();
+        }
+
+        .active {
+          @include warning-active();
+        }
+      }
+
+      .example-container .states-container.success-container {
+        .original {
+          @include btn-bg(nga-theme(btn-success-bg));
+        }
+
+        .hover {
+          @include success-hover();
+        }
+
+        .active {
+          @include success-active();
+        }
+      }
+
+      .example-container .states-container.info-container {
+        .original {
+          @include btn-bg(nga-theme(btn-info-bg));
+        }
+
+        .hover {
+          @include info-hover();
+        }
+
+        .active {
+          @include info-active();
+        }
+      }
+
+      .example-container .states-container.danger-container {
+        .original {
+          @include btn-bg(nga-theme(btn-danger-bg));
+        }
+
+        .hover {
+          @include danger-hover();
+        }
+
+        .active {
+          @include danger-active();
+        }
+      }
+
+      .example-container .states-container.secondary-container {
+        .original {
+          @include btn-bg(nga-theme(btn-secondary-border));
+        }
+
+        .hover {
+          @include secondary-hover();
+        }
+
+        .active {
+          @include secondary-active();
+        }
+      }
+    }
+
+    .actions-groups {
+      display: flex !important;
+
+      .container-title {
+        font-family: nga-theme(font-secondary);
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        justify-content: center;
+        color: white;
+      }
+    }
   }
 }

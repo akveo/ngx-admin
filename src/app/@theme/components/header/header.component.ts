@@ -11,9 +11,9 @@ import { NgaThemeService } from '@nga/theme/services/theme.service';
       <i class="control-icon ion ion-navicon" (click)="toggleSidebar()"></i>
       <span class="logo" (click)="goToHome()">NgX&nbsp;<a>Admin</a></span>
       <div class="theme-buttons">
-        <button class="btn btn-hero btn-primary" (click)="selectCosmicTheme()">Cosmic</button>
-        <button class="btn btn-hero btn-warning" (click)="selectLightTheme()">Light</button>
-        <button class="btn btn-hero btn-info" (click)="selectDefaultTheme()">Default</button>
+        <button class="btn btn-hero-primary" (click)="selectCosmicTheme()">Cosmic</button>
+        <button class="btn btn-hero-warning" (click)="selectLightTheme()">Light</button>
+        <button class="btn btn-hero-info" (click)="selectDefaultTheme()">Default</button>
       </div>
     </div>
 

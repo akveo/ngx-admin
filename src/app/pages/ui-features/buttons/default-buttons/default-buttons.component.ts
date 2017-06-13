@@ -9,7 +9,7 @@ export class DefaultButtonsComponent {
   buttons = [{
     class: 'btn-primary',
     container: 'primary-container',
-    containerTitle: 'Prymary Button',
+    containerTitle: 'Primary Button',
     title: 'Primary',
     default: '#7659ff',
   }, {

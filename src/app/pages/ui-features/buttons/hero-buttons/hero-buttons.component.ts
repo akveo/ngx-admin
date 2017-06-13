@@ -2,13 +2,12 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'ngx-hero-buttons',
-  styleUrls: ['./hero-buttons.component.scss'],
   templateUrl: './hero-buttons.component.html',
 })
 export class HeroButtonComponent {
 
   heroButtons = [{
-    class: 'btn-primary',
+    class: 'btn-hero-primary',
     container: 'primary-container',
     title: 'Primary Button',
     buttonTitle: 'Primary',
@@ -17,7 +16,7 @@ export class HeroButtonComponent {
     shadow: 'rgba (6, 7, 64, 0.5)',
     glow: 'rgba (137, 66, 254, 0.8)',
   }, {
-    class: 'btn-warning',
+    class: 'btn-hero-warning',
     container: 'warning-container',
     title: 'Warning Button',
     buttonTitle: 'Warning',
@@ -26,7 +25,7 @@ export class HeroButtonComponent {
     shadow: 'rgba (33, 7, 77, 0.5)',
     glow: 'rgba (255, 193, 38, 0.6)',
   }, {
-    class: 'btn-success',
+    class: 'btn-hero-success',
     container: 'success-container',
     title: 'Success Button',
     buttonTitle: 'Success',
@@ -35,7 +34,7 @@ export class HeroButtonComponent {
     shadow: 'rgba (33, 7, 77, 0.5)',
     glow: 'rgba (35, 255, 181, 0.6)',
   }, {
-    class: 'btn-info',
+    class: 'btn-hero-info',
     container: 'info-container',
     title: 'Info Button',
     buttonTitle: 'Info',
@@ -44,7 +43,7 @@ export class HeroButtonComponent {
     shadow: 'rgba (33, 7, 77, 0.5)',
     glow: 'rgba (0, 136, 255, 0.7)',
   }, {
-    class: 'btn-danger',
+    class: 'btn-hero-danger',
     container: 'danger-container',
     title: 'Danger Button',
     buttonTitle: 'Danger',
@@ -53,7 +52,7 @@ export class HeroButtonComponent {
     shadow: 'rgba (33, 7, 77, 0.5)',
     glow: 'rgba (255, 73, 184, 0.8)',
   }, {
-    class: 'btn-secondary',
+    class: 'btn-hero-secondary',
     container: 'secondary-container',
     title: 'Ghost Button',
     buttonTitle: 'Ghost',
