@@ -41,3 +41,11 @@ ul {
 :host.full-width ul li {
   width: 100%;
 }
+
+:host /deep/ nga-tab {
+  display: none;
+
+  &.content-active {
+    display: flex;
+  }
+}

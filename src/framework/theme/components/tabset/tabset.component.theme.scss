@@ -14,7 +14,7 @@
     ul {
       border-bottom: 1px solid nga-theme(tabs-separator);
       font-size: nga-theme(tabs-font-size);
-      padding: 0 nga-theme(tabs-padding) nga-theme(tabs-padding);
+      padding: 0 nga-theme(tabs-padding);
 
       li {
         background: nga-theme(tabs-header-background);
@@ -46,6 +46,7 @@
       font-size: nga-theme(tabs-content-font-size);
       color: nga-theme(tabs-foreground);
       background-color: nga-theme(tabs-background);
+      padding: nga-theme(tabs-padding);
     }
   }
 }

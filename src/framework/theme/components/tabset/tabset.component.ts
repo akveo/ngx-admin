@@ -21,16 +21,25 @@ import { convertToBoolProperty } from '../helpers';
 @Component({
   selector: 'nga-tab',
   template: `
-    <ng-container *ngIf="active">
-      <ng-content></ng-content>
-    </ng-container>
+    <ng-content></ng-content>
   `,
 })
 export class NgaTabComponent {
 
   @Input() tabTitle: string;
-  @Input() active: boolean = false;
+
   @Input() route: string;
+
+  @HostBinding('class.content-active')
+  activeValue: boolean = false;
+
+  @Input()
+  get active() {
+    return this.activeValue;
+  }
+  set active(val: boolean) {
+    this.activeValue = convertToBoolProperty(val);
+  }
 }
 
 @Component({
@@ -51,38 +60,31 @@ export class NgaTabsetComponent implements AfterContentInit {
 
   @ContentChildren(NgaTabComponent) tabs: QueryList<NgaTabComponent>;
 
-  @HostBinding('class.full-width') fullWidthValue: boolean = false;
-
-  @Input() routes: boolean = false;
+  @HostBinding('class.full-width')
+  fullWidthValue: boolean = false;
 
   @Input()
   set fullWidth(val: boolean) {
     this.fullWidthValue = convertToBoolProperty(val);
   }
 
+  @Input() routes: boolean = false;
+
   @Output() changeTab = new EventEmitter<any>();
 
-  constructor(private activatedRoute: ActivatedRoute) {
+  constructor(private route: ActivatedRoute) {
   }
 
   ngAfterContentInit() {
-    this.activatedRoute.params
+    this.route.params
       .subscribe((params: any) => {
-        const activeTabs = this.tabs.filter(tab => this.routes ? tab.route === params.tab : tab.active);
-
-        if (!activeTabs.length) {
-          this.selectTab(this.tabs.first);
-        } else {
-          this.selectTab(activeTabs[0]);
-        }
+        const activeTab = this.tabs.find(tab => this.routes ? tab.route === params.tab : tab.active);
+        this.selectTab(activeTab || this.tabs.first);
       });
   }
 
-  selectTab(tab: NgaTabComponent) {
-    this.tabs.forEach(tb => tb.active = false);
-
-    tab.active = true;
-
-    this.changeTab.emit(tab);
+  selectTab(selectedTab: NgaTabComponent) {
+    this.tabs.forEach(tab => tab.active = tab == selectedTab);
+    this.changeTab.emit(selectedTab);
   }
 }
