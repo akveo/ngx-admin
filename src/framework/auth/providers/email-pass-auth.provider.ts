@@ -48,7 +48,7 @@ export class NgaEmailPassAuthProvider extends NgaAbstractAuthProvider {
         failure: null,
       },
       defaultErrors: ['Something went wrong, please try again.'],
-      defaultMessages: ['You have been successfully registered.'],
+      defaultMessages: ['You have been successfully logged out.'],
     },
     requestPass: {
       endpoint: '/api/auth/request-pass',
