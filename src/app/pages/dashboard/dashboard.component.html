@@ -1,14 +1,25 @@
-<div class="row status-cards">
-  <div class="col-lg-3" *ngFor="let card of statusCards">
-    <nga-card (click)="card.on = !card.on" [ngClass]="{'on': card.on}">
-      <div class="icon-container {{card.type}}">
-        <i class="{{card.icon}}"></i>
-      </div>
 
-      <div class="details">
-        <div class="title">{{card.title}}</div>
-        <div class="status">{{card.on ? 'ON' : 'OFF'}}</div>
-      </div>
+<ngx-status-cards></ngx-status-cards>
+
+<div class="row">
+  <div class="col-lg-3">
+    <nga-card size="xmedium">
+      <nga-tabset fullWidth>
+        <nga-tab tabTitle="Temperature">
+          <span>Content #1</span>
+        </nga-tab>
+        <nga-tab tabTitle="Humidity">
+          <span>Content #2</span>
+        </nga-tab>
+      </nga-tabset>
+    </nga-card>
+  </div>
+
+  <div class="col-lg-9">
+    <nga-card size="xmedium">
+      <nga-card-header>
+        Electricity
+      </nga-card-header>
     </nga-card>
   </div>
 </div>
