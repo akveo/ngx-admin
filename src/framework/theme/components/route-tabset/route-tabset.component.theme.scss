@@ -8,45 +8,43 @@
 
   nga-route-tabset {
 
-    font-size: nga-theme(route-tabs-font-size);
-    line-height: nga-theme(route-tabs-line-height);
+    @include nga-scrollbars(nga-theme(scrollbar-width), nga-theme(scrollbar-foreground), nga-theme(scrollbar-background));
 
     ul {
       border-bottom: 1px solid nga-theme(route-tabs-separator);
+      font-size: nga-theme(route-tabs-font-size);
+      padding: 0 nga-theme(route-tabs-padding) nga-theme(route-tabs-padding);
 
       li {
-        border: 1px solid transparent;
-        border-top-left-radius: nga-theme(route-tabs-header-radius);
-        border-top-right-radius: nga-theme(route-tabs-header-radius);
         background: nga-theme(route-tabs-header-background);
-        padding: nga-theme(route-tabs-header-padding);
         min-width: nga-theme(route-tabs-header-min-width);
 
         a {
-          color: nga-theme(route-tabs-foreground);
-        }
+          padding: nga-theme(route-tabs-header-padding);
+          color: nga-theme(route-tabs-foreground-secondary);
 
-        &.active {
-          background: nga-theme(route-tabs-header-active);
-
-          a {
-            color: nga-theme(route-tabs-foreground-inverse);
+          &::before {
+            background-color: nga-theme(color-success);
+            //background-image: linear-gradient(to right, #00c7c7, #00d977);
+            //box-shadow: 0 0 16px 0 rgba(35, 255, 181, 0.3);
           }
         }
 
-        &:hover {
-          border-color: nga-theme(route-tabs-header-border-inverse);
-        }
+        &.active {
+          background: nga-theme(route-tabs-active-bg);
 
-        //TODO: as minimum we could remove "header" from that long long name "$nga-route-tabs-header-border-inverse"
-        &.active:hover {
-          border-bottom-color: nga-theme(route-tabs-header-border-inverse);
+          a {
+            font-weight: nga-theme(route-tabs-active-font-weight);
+            color: nga-theme(route-tabs-foreground);
+          }
         }
       }
     }
 
     nga-route-tab {
+      font-size: nga-theme(route-tabs-content-font-size);
       color: nga-theme(route-tabs-foreground);
+      background-color: nga-theme(route-tabs-background);
     }
   }
 }

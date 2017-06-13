@@ -9,18 +9,16 @@ import { Router } from '@angular/router';
 
 import { convertToBoolProperty } from '../helpers';
 
-// TODO: 1) improve indents in template
-// TODO: 2) remove class "nga-route-tabset" for ul. Write css directly for the <ul> element
 @Component({
   selector: 'nga-route-tabset',
   styleUrls: ['./route-tabset.component.scss'],
   template: `
-    <ul class="nga-route-tabset">
+    <ul>
       <li *ngFor="let tab of tabs"
-      (click)="$event.preventDefault();selectTab(tab)"
-      routerLink="{{tab.route}}"
-      routerLinkActive="active"
-      [routerLinkActiveOptions]="{ exact: true }">
+          (click)="$event.preventDefault(); selectTab(tab)"
+          routerLink="{{tab.route}}"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }">
         <a href>{{tab.title}}</a>
       </li>
     </ul>

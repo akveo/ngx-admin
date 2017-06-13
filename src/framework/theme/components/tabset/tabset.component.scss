@@ -4,47 +4,40 @@
  * Licensed under the MIT License. See License.txt in the project root for license information.
  */
 
-:host {
-  font-size: 1rem;
-  line-height: 1.2rem;
+ul {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  margin: 0;
 
-  ul {
-    &.nga-tabset {
-      display: flex;
-      flex-direction: row;
-      list-style-type: none;
-      padding: 0;
-      overflow: hidden;
+  li {
+    cursor: pointer;
+    margin-bottom: -1px;
+    text-align: center;
 
-      li {
-        cursor: pointer;
-        margin-bottom: -1px;
-        text-align: center;
-        padding: 0;
+    &.active a::before {
+      display: block;
+    }
 
-        a {
-          text-decoration: none;
-          display: block;
-          padding: 0.5em 1em;
-          font-size: 1em;
-          line-height: 1.2em;
-        }
+    a {
+      position: relative;
+      text-decoration: none;
+      display: inline-block;
+
+      &::before {
+        display: none;
+        position: absolute;
+        content: '';
+        width: 100%;
+        height: 6px;
+        border-radius: 3px;
+        bottom: 0;
+        left: 0;
       }
     }
   }
+}
 
-  /deep/ nga-tab {
-    font-size: 1em;
-    line-height: 1.2em;
-  }
-
-  &.full-width {
-    ul {
-      &.nga-tabset {
-        li {
-          width: 100%;
-        }
-      }
-    }
-  }
+:host.full-width ul li {
+  width: 100%;
 }

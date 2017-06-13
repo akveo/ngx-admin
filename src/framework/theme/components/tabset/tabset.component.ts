@@ -31,14 +31,13 @@ export class NgaTabComponent {
   @Input() tabTitle: string;
   @Input() active: boolean = false;
   @Input() route: string;
-
 }
 
 @Component({
   selector: 'nga-tabset',
   styleUrls: ['./tabset.component.scss'],
   template: `
-    <ul class="nga-tabset">
+    <ul>
       <li *ngFor="let tab of tabs"
           (click)="selectTab(tab)"
           [class.active]="tab.active">
