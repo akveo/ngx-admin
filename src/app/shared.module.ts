@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-import { NgaCardModule, NgaBootstrapModule } from '@nga/theme';
+import { NgaCardModule } from '@nga/theme';
 
 @NgModule({
   exports: [
@@ -11,7 +11,6 @@ import { NgaCardModule, NgaBootstrapModule } from '@nga/theme';
     ReactiveFormsModule,
     RouterModule,
     NgaCardModule,
-    NgaBootstrapModule,
   ],
 })
 export class SharedModule { }

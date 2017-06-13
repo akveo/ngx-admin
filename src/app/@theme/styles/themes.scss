@@ -1,2 +1,5 @@
 @import '~@nga/theme/styles_new/all';
-@include nga-install();
+@include nga-themes-install();
+
+@import '~@nga/auth/styles_new/all';
+@include nga-auth-install();

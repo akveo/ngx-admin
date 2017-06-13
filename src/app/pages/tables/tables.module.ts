@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { NgaTablesModule } from '@nga/theme';
+import { Ng2SmartTableModule } from 'ng2-smart-table';
 
 import { SharedModule } from '../../shared.module';
 
@@ -10,7 +10,7 @@ import { SmartTableService } from './smart-table/smart-table.service';
   imports: [
     SharedModule,
     TablesRoutingModule,
-    NgaTablesModule,
+    Ng2SmartTableModule,
   ],
   declarations: [
     ...routedComponents,

@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
-import { NgaComponentsModule } from '@nga/theme';
+
+import { TreeModule } from 'ng2-tree';
+import { ToasterModule } from 'angular2-toaster';
 
 import { SharedModule } from '../../shared.module';
 
@@ -8,8 +10,9 @@ import { ComponentsRoutingModule, routedComponents } from './components-routing.
 @NgModule({
   imports: [
     SharedModule,
-    NgaComponentsModule,
     ComponentsRoutingModule,
+    TreeModule,
+    ToasterModule,
   ],
   declarations: [
     ...routedComponents,

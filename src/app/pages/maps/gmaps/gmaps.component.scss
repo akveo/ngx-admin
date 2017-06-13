@@ -1,4 +1,4 @@
-@import '~@nga/theme/styles_new/all';
+@import '~@nga/theme/styles_new/component';
 
 @include nga-install-component() {
   /deep/ agm-map .agm-map-container-inner {

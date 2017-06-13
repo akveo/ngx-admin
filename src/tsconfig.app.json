@@ -4,7 +4,40 @@
     "outDir": "../out-tsc/app",
     "module": "es2015",
     "baseUrl": "",
-    "types": []
+    "types": [],
+    "paths": {
+      "@angular/*": [
+        "../node_modules/@angular/*"
+      ],
+      "@nga/*": [
+        "../node_modules/@nga/*"
+      ],
+      "@ng-bootstrap/*": [
+        "../node_modules/@ng-bootstrap/*"
+      ],
+      "bootstrap/*": [
+        "../node_modules/bootstrap/*"
+      ],
+      "font-awesome/*": [
+        "../node_modules/font-awesome/*"
+      ],
+      "immutable/*": [
+        "../node_modules/immutable/*"
+      ],
+      "ionicons/*": [
+        "../node_modules/ionicons/*"
+      ],
+      "normalize.css/*": [
+        "../node_modules/normalize.css/*"
+      ],
+      "segoe-fonts/*": [
+        "../node_modules/segoe-fonts/*"
+      ],
+      "typeface-exo/*": [
+        "../node_modules/typeface-exo/*"
+      ]
+
+    }
   },
   "exclude": [
     "test.ts",

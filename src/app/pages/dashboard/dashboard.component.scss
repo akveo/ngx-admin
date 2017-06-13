@@ -1,4 +1,5 @@
-@import '~@nga/theme/styles_new/all';
+@import '~@nga/theme/styles_new/component';
+@import '~@nga/theme/styles_new/global/bootstrap/hero-buttons';
 
 @include nga-install-component() {
   .status-cards {
