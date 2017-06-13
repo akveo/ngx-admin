@@ -1,5 +1,5 @@
-@import '~@nga/theme/styles_new/component';
-@import '~@nga/theme/styles_new/global/bootstrap/buttons';
+@import '~@nga/theme/styles/component';
+@import '~@nga/theme/styles/global/bootstrap/buttons';
 
 @mixin btn-bg($background) {
   background-color: $background;
