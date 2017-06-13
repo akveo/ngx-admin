@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { ToasterService, ToasterConfig, Toast } from 'angular2-toaster';
 
+import 'style-loader!angular2-toaster/toaster.css';
+
 @Component({
   selector: 'ngx-toasters',
   styleUrls: ['toaster.component.scss'],

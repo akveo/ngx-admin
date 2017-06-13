@@ -23,8 +23,6 @@
       "tsconfig": "tsconfig.app.json",
       "testTsconfig": "tsconfig.spec.json",
       "styles": [
-        "../node_modules/roboto-fontface/css/roboto/sass/roboto-fontface.scss",
-        "../node_modules/normalize.css/normalize.css"
       ],
       "scripts": [
         "../node_modules/jquery/dist/jquery.js",
