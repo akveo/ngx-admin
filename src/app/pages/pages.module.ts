@@ -5,13 +5,12 @@ import { NgaMenuModule, NgaSidebarModule, NgaThemeModule } from '@nga/theme';
 import { menuItems } from './pages-menu';
 
 import { PagesComponent } from './pages.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
+import { DashboardModule } from './dashboard/dashboard.module';
 import { PagesRoutingModule } from './pages-routing.module';
 import { ThemeModule } from '../@theme/theme.module';
 
 const PAGES_COMPONENTS = [
   PagesComponent,
-  DashboardComponent,
 ];
 
 @NgModule({
@@ -22,6 +21,7 @@ const PAGES_COMPONENTS = [
     NgaMenuModule.forRoot({ items: menuItems }),
     PagesRoutingModule,
     ThemeModule,
+    DashboardModule,
   ],
   declarations: [
     ...PAGES_COMPONENTS,

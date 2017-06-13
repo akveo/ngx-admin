@@ -1,0 +1,71 @@
+@import '~@nga/theme/styles_new/all';
+
+@include nga-install-component() {
+  nga-card {
+    flex-direction: row;
+    align-items: center;
+    height: 6rem;
+    box-shadow: 0 3px 0 0 #322f70, 4px 0 18px 0 rgba(19, 19, 94, 0.4);
+    overflow: visible;
+    cursor: pointer;
+
+    position: relative;
+    &::before {
+      position: absolute;
+      content: '';
+      height: calc(100% + 3px);
+      width: 100%;
+      left: 0;
+      top: 0;
+      background: rgba(0, 0, 0, 0.1);
+      border-radius: nga-theme(card-border-radius);
+    }
+
+    &.on {
+      box-shadow: inset 0 3px 9px 0 #322f70, 4px 0 18px 0 rgba(19, 19, 94, 0.4);
+
+      .icon-container {
+        box-shadow: none;
+        &.success {
+          box-shadow: inset 0 5px 9px 0 #00967d, 0 4px 10px 0 rgba(33, 7, 77, 0.5), 0 2px 12px 0 rgba(35, 255, 181, 0.6);
+        }
+      }
+      &::before {
+        display: none;
+      }
+    }
+  }
+
+  .icon-container {
+    font-size: 4em;
+    padding: 0.5rem 1.75rem;
+    color: nga-theme(card-foreground);
+    border-radius: nga-theme(card-border-radius) 0 0 nga-theme(card-border-radius);
+
+    &.primary {
+      @include btn-hero-primary();
+    }
+    &.success {
+      @include btn-hero-success();
+    }
+    &.info {
+      @include btn-hero-info();
+    }
+    &.warning {
+      @include btn-hero-warning();
+    }
+  }
+
+  .details {
+    margin-left: 1.5rem;
+  }
+  .title {
+    font-size: 1.5rem;
+  }
+  .status {
+    font-size: 1.125rem;
+    font-weight: nga-theme(font-weight-light);
+    text-transform: uppercase;
+    color: nga-theme(card-foreground-secondary);
+  }
+}
