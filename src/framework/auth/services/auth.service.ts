@@ -15,6 +15,7 @@ export class NgaAuthResult {
   protected errors: string[] = [];
   protected messages: string[] = [];
 
+  // TODO pass arguments in options object
   constructor(protected success: boolean,
               protected response?: any,
               protected redirect?: any,
