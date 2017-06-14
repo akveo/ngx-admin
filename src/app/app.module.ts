@@ -21,7 +21,6 @@ import { NgaTabsetModule } from '@nga/theme/components/tabset/tabset.module';
 import { NgaUserModule } from '@nga/theme/components/user/user.module';
 import { NgaAuthModule, NgaDummyAuthProvider, NgaEmailPassAuthProvider } from '@nga/auth';
 import { NgaActionsModule } from '@nga/theme/components/actions/actions.module';
-import { NgaBootstrapModule } from '@nga/theme/overrides/bootstrap/bootstrap.module';
 import { NgaSearchModule } from '@nga/theme';
 import { NgaMenuItem } from '@nga/theme';
 
@@ -163,7 +162,6 @@ const NGA_TEST_COMPONENTS = [
         },
       },
     }),
-    NgaBootstrapModule.forRoot(),
   ],
   declarations: [
     ...NGA_TEST_COMPONENTS,
