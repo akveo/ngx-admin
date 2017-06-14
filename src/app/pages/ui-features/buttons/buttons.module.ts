@@ -10,6 +10,9 @@ import { SizeButtonsComponent } from './size-buttons/size-buttons.component';
 import { ButtonsComponent } from './buttons.component';
 import { ActionsGroupsComponent } from './actions-groups/actions-groups.component';
 import { DropdownButtonsComponent } from './dropdown-buttons/dropdown-button.component';
+import { BlockLevelButtonsComponent } from './block-level-buttons/block-level-buttons.component';
+import { ButtonGroupsComponent } from './button-groups/button-groups.component';
+import { IconButtonsComponent } from './icon-buttons/icon-buttons.component';
 
 const components = [
   ButtonsComponent,
@@ -19,6 +22,9 @@ const components = [
   SizeButtonsComponent,
   ActionsGroupsComponent,
   DropdownButtonsComponent,
+  BlockLevelButtonsComponent,
+  ButtonGroupsComponent,
+  IconButtonsComponent,
 ];
 
 @NgModule({
