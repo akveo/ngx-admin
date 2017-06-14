@@ -40,12 +40,12 @@ $theme: (
   color-neutral: transparent,
   color-white: #ffffff,
   color-disabled: rgba(255, 255, 255, 0.4),
-  color-primary: #8c6fff,
+  color-primary: #8066ff,
 
-  color-success: #6ad996,
-  color-info: #26bbff,
-  color-warning: #fffc75,
-  color-danger: #ff9c89,
+  color-success: #00cc66,
+  color-info: #3377ff,
+  color-warning: #e5b045,
+  color-danger: #ff3355,
 
   color-light-percent: 30%,
   color-light-primary: color-primary,
@@ -243,6 +243,7 @@ $theme: (
   toaster-error: color-danger,
 
   btn-text-color: color-white,
+  btn-font-family: font-secondary,
 
   btn-primary-bg: color-primary,
   btn-secondary-bg: transparent,
@@ -252,40 +253,43 @@ $theme: (
   btn-danger-bg: color-danger,
 
   btn-secondary-border: #bdbaff,
+  btn-secondary-fill: #665ebd,
+
+  btn-padding-y: 0.75rem,
+  btn-padding-x: 1.5rem,
+  btn-font-size: 1rem,
+  btn-border-radius: 12px,
 
   btn-padding-y-lg: 1.25rem,
   btn-padding-x-lg: 1.75rem,
   btn-font-size-lg: 1.25rem,
   btn-line-height-lg: 1.375rem,
-  btn-border-radius-lg: 4px,
+  btn-border-radius-lg: 12px,
 
   btn-padding-y-md: 1rem,
   btn-padding-x-md: 1.5rem,
   btn-font-size-md: 1rem,
   btn-line-height-md: 1.125rem,
-  btn-border-radius-md: 4px,
+  btn-border-radius-md: 12px,
 
   btn-padding-y-sm: 0.875rem,
   btn-padding-x-sm: 1.5rem,
   btn-font-size-sm: 0.875rem,
   btn-line-height-sm: 1rem,
-  btn-border-radius-sm: 4px,
+  btn-border-radius-sm: 12px,
 
   btn-padding-y-tn: 0.625rem,
   btn-padding-x-tn: 1.25rem,
   btn-font-size-tn: 0.75rem,
   btn-line-height-tn: 0.875rem,
-  btn-border-radius-tn: 4px,
+  btn-border-radius-tn: 12px,
 
-  btn-padding-y: 0.875rem,
-  btn-padding-x: 2rem,
+  btn-rectangle-border-radius: 4px,
+  btn-semi-round-border-radius: 12px,
+  btn-round-border-radius: 24px,
 
-  //TODO: rename "bd" back to "border"
-  btn-rectangle-bd-radius: 4px,
-  btn-semi-round-bd-radius: 12px,
-  btn-round-bd-radius: 24px,
-
-  btn-font-family: font-secondary
+  btn-hero-shadow: rgba(33, 7, 77, 0.5),
+  btn-hero-text-shadow: rgba(0, 0, 0, 0.3)
 );
 
 // register the theme

@@ -1,3 +1,11 @@
+@function btn-hover-focus($bg, $percentage: 20%) {
+  @return lighten(nga-theme($bg), $percentage);
+}
+
+@function btn-active($bg, $percentage: 20%) {
+  @return darken(nga-theme($bg), $percentage);
+}
+
 @mixin btn-focus($focus) {
   &:focus,
   &.focus {
@@ -23,160 +31,124 @@
   }
 }
 
-@mixin primary-focus() {
-  $btn-primary-focus-bg: #917aff;
-
-  @include btn-focus($btn-primary-focus-bg);
+@mixin btn-primary-focus() {
+  @include btn-focus(btn-hover-focus(btn-primary-bg));
 }
 
-@mixin primary-hover() {
-  $btn-primary-hover-bg: #917aff;
-
-  @include btn-hover($btn-primary-hover-bg);
+@mixin btn-primary-hover() {
+  @include btn-hover(btn-hover-focus(btn-primary-bg));
 }
 
-@mixin primary-active() {
-  $btn-primary-active-bg: #5e47cc;
-
-  @include btn-active($btn-primary-active-bg);
+@mixin btn-primary-active() {
+  @include btn-active(btn-active(btn-primary-bg));
 }
 
-@mixin success-focus() {
-  $btn-success-focus-bg: #33e192;
-
-  @include btn-focus($btn-success-focus-bg);
+@mixin btn-success-focus() {
+  @include btn-focus(btn-hover-focus(btn-success-bg));
 }
-@mixin success-hover() {
-  $btn-success-hover-bg: #33e192;
-
-  @include btn-hover($btn-success-hover-bg);
+@mixin btn-success-hover() {
+  @include btn-hover(btn-hover-focus(btn-success-bg));
 }
-@mixin success-active() {
-  $btn-success-active-bg: #00ae5f;
-
-  @include btn-active($btn-success-active-bg);
+@mixin btn-success-active() {
+  @include btn-active(btn-active(btn-success-bg));
 }
 
-@mixin warning-focus() {
-  $btn-warning-focus-bg: #ffde6a;
-
-  @include btn-focus($btn-warning-focus-bg);
+@mixin btn-warning-focus() {
+  @include btn-focus(btn-hover-focus(btn-warning-bg));
 }
-@mixin warning-hover() {
-  $btn-warning-hover-bg: #ffde6a;
-
-  @include btn-hover($btn-warning-hover-bg);
+@mixin btn-warning-hover() {
+  @include btn-hover(btn-hover-focus(btn-warning-bg));
 }
-@mixin warning-active() {
-  $btn-warning-active-bg: #cca312;
-
-  @include btn-active($btn-warning-active-bg);
+@mixin btn-warning-active() {
+  @include btn-active(btn-active(btn-warning-bg));
 }
 
-@mixin info-focus() {
-  $btn-info-focus-bg: #33a0ff;
-
-  @include btn-focus($btn-info-focus-bg);
+@mixin btn-info-focus() {
+  @include btn-focus(btn-hover-focus(btn-info-bg));
 }
-@mixin info-hover() {
-  $btn-info-hover-bg: #33a0ff;
-
-  @include btn-hover($btn-info-hover-bg);
+@mixin btn-info-hover() {
+  @include btn-hover(btn-hover-focus(btn-info-bg));
 }
-@mixin info-active() {
-  $btn-info-active-bg: #006dcc;
-
-  @include btn-active($btn-info-active-bg);
+@mixin btn-info-active() {
+  @include btn-active(btn-active(btn-info-bg));
 }
 
-@mixin danger-focus() {
-  $btn-danger-focus-bg: #ff6088;
-
-  @include btn-focus($btn-danger-focus-bg);
+@mixin btn-danger-focus() {
+  @include btn-focus(btn-hover-focus(btn-danger-bg));
 }
-@mixin danger-hover() {
-  $btn-danger-hover-bg: #ff6088;
-
-  @include btn-hover($btn-danger-hover-bg);
+@mixin btn-danger-hover() {
+  @include btn-hover(btn-hover-focus(btn-danger-bg));
 }
-@mixin danger-active() {
-  $btn-danger-active-bg: #cc2c55;
-
-  @include btn-active($btn-danger-active-bg);
+@mixin btn-danger-active() {
+  @include btn-active(btn-active(btn-danger-bg));
 }
 
-@mixin secondary-focus() {
-  $btn-secondary-focus-bg: #cac8ff;
-
-  @include btn-focus($btn-secondary-focus-bg);
+@mixin btn-secondary-focus() {
+  @include btn-focus(btn-hover-focus(btn-secondary-border, 5%));
 }
 
-@mixin secondary-hover() {
-  $btn-secondary-hover-bg: #cac8ff;
-
-  @include btn-hover($btn-secondary-hover-bg);
+@mixin btn-secondary-hover() {
+  @include btn-hover(btn-hover-focus(btn-secondary-border, 5%));
 }
 
-@mixin secondary-active() {
-  $btn-secondary-active-bg: #9795cc;
-
-  @include btn-active($btn-secondary-active-bg);
+@mixin btn-secondary-active() {
+  @include btn-active(btn-active(btn-secondary-border));
 }
 
-@mixin secondary-border() {
+@mixin btn-secondary-border() {
   border: 2px solid nga-theme(btn-secondary-border) !important;
 }
 
-@mixin secondary-bg() {
+@mixin btn-secondary-bg() {
   background-color: nga-theme(btn-secondary-bg) !important;
 }
 
 @mixin btn-primary() {
   background-color: nga-theme(btn-primary-bg) !important;
 
-  @include primary-focus();
-  @include primary-hover();
-  @include primary-active();
+  @include btn-primary-focus();
+  @include btn-primary-hover();
+  @include btn-primary-active();
 }
 
 @mixin btn-warning() {
   background-color: nga-theme(btn-warning-bg) !important;
 
-  @include warning-focus();
-  @include warning-hover();
-  @include warning-active();
+  @include btn-warning-focus();
+  @include btn-warning-hover();
+  @include btn-warning-active();
 }
 
 @mixin btn-info() {
   background-color: nga-theme(btn-info-bg) !important;
 
-  @include info-focus();
-  @include info-hover();
-  @include info-active();
+  @include btn-info-focus();
+  @include btn-info-hover();
+  @include btn-info-active();
 }
 
 @mixin btn-success() {
   background-color: nga-theme(btn-success-bg) !important;
 
-  @include success-focus();
-  @include success-hover();
-  @include success-active();
+  @include btn-success-focus();
+  @include btn-success-hover();
+  @include btn-success-active();
 }
 
 @mixin btn-danger() {
   background-color: nga-theme(btn-danger-bg) !important;
 
-  @include danger-focus();
-  @include danger-hover();
-  @include danger-active();
+  @include btn-danger-focus();
+  @include btn-danger-hover();
+  @include btn-danger-active();
 }
 
 @mixin btn-secondary() {
-  @include secondary-border();
-  @include secondary-bg();
-  @include secondary-focus();
-  @include secondary-hover();
-  @include secondary-active();
+  @include btn-secondary-border();
+  @include btn-secondary-bg();
+  @include btn-secondary-focus();
+  @include btn-secondary-hover();
+  @include btn-secondary-active();
 }
 
 @mixin btn-default() {

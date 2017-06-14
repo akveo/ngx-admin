@@ -4,11 +4,17 @@
  * Licensed under the MIT License. See License.txt in the project root for license information.
  */
 
-$btn-border-radius: 12px !default;
-
 @import '~bootstrap/scss/bootstrap';
 @import './buttons';
+@import './button-group';
+@import './dropdowns';
+@import './pagination';
+@import './icon-buttons';
 
 @mixin nga-bootstrap-theme() {
   @include nga-b-buttons-theme();
+  @include nga-b-button-group-theme();
+  @include nga-b-dropdowns-theme();
+  @include nga-b-pagination-theme();
+  @include nga-b-icon-buttons-theme();
 }

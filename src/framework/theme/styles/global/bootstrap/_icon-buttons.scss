@@ -1,0 +1,13 @@
+/**
+ * @license
+ * Copyright Akveo. All Rights Reserved.
+ * Licensed under the MIT License. See License.txt in the project root for license information.
+ */
+
+@mixin nga-b-icon-buttons-theme() {
+
+  .btn.btn-icon {
+    font-size: 1.5rem;
+    padding: 0.5rem 1rem;
+  }
+}

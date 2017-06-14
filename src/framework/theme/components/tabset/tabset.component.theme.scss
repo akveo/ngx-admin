@@ -26,7 +26,7 @@
 
           &::before {
             // TODO: pass this parameter via theme, or move it to the styles
-            @include success-gradient();
+            @include btn-hero-success-gradient();
             box-shadow: 0 0 16px 0 rgba(35, 255, 181, 0.3);
           }
         }

@@ -1,4 +1,3 @@
-
 /**
  * @license
  * Copyright Akveo. All Rights Reserved.
@@ -19,7 +18,13 @@
     letter-spacing: 0.4px;
     font-weight: nga-theme(font-weight-bolder);
     font-family: nga-theme(btn-font-family);
-    border: none !important;
+    border: 2px solid transparent !important;
+    transition: none;
+
+    @include button-size(nga-theme(btn-padding-y),
+                         nga-theme(btn-padding-x),
+                         nga-theme(btn-font-size),
+                         nga-theme(btn-border-radius));
   }
 
   @include btn-shape();
