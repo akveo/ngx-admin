@@ -13,12 +13,12 @@ export class ModalsComponent {
   constructor(private modalService: NgbModal) { }
 
   showLargeModal() {
-    const activeModal = this.modalService.open(ModalComponent, { size: 'lg' });
+    const activeModal = this.modalService.open(ModalComponent, { size: 'lg', container: 'nga-layout' });
 
     activeModal.componentInstance.modalHeader = 'Large Modal';
   }
   showSmallModal() {
-    const activeModal = this.modalService.open(ModalComponent, { size: 'sm' });
+    const activeModal = this.modalService.open(ModalComponent, { size: 'sm', container: 'nga-layout' });
 
     activeModal.componentInstance.modalHeader = 'Small Modal';
   }
@@ -27,6 +27,7 @@ export class ModalsComponent {
     const activeModal = this.modalService.open(ModalComponent, {
       size: 'sm',
       backdrop: 'static',
+      container: 'nga-layout',
     });
 
     activeModal.componentInstance.modalHeader = 'Static modal';
