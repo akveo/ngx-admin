@@ -23,12 +23,12 @@ export class NgaAuthResult {
               messages?: any,
               token?: any) {
 
-    this.errors = this.errors.concat([errors]);
+    this.errors = this.errors.concat([ errors ]);
     if (errors instanceof Array) {
       this.errors = errors;
     }
 
-    this.messages = this.messages.concat([messages]);
+    this.messages = this.messages.concat([ messages ]);
     if (messages instanceof Array) {
       this.messages = messages;
     }
@@ -47,6 +47,7 @@ export class NgaAuthResult {
   getRedirect(): any {
     return this.redirect;
   }
+
   getErrors(): string[] {
     return this.errors.filter(val => !!val);
   }
@@ -117,7 +118,8 @@ export class NgaAuthService {
     return this.getProvider(provider).authenticate(data)
       .do((result: NgaAuthResult) => {
         if (result.isSuccess() && result.getTokenValue()) {
-          this.tokenService.set(result.getTokenValue()).subscribe(() => {});
+          this.tokenService.set(result.getTokenValue()).subscribe(() => {
+          });
         }
       });
   }
@@ -137,7 +139,8 @@ export class NgaAuthService {
     return this.getProvider(provider).register(data)
       .do((result: NgaAuthResult) => {
         if (result.isSuccess() && result.getTokenValue()) {
-          this.tokenService.set(result.getTokenValue()).subscribe(() => {});
+          this.tokenService.set(result.getTokenValue()).subscribe(() => {
+          });
         }
       });
   }
@@ -156,7 +159,7 @@ export class NgaAuthService {
     return this.getProvider(provider).logout()
       .do((result: NgaAuthResult) => {
         if (result.isSuccess()) {
-          this.tokenService.clear();
+          this.tokenService.clear().subscribe(() => {});
         }
       });
   }
@@ -190,10 +193,10 @@ export class NgaAuthService {
   }
 
   getProvider(provider: string): NgaAbstractAuthProvider {
-    if (!this.providers[provider]) {
+    if (!this.providers[ provider ]) {
       throw new TypeError(`Nga auth provider '${provider}' is not registered`);
     }
 
-    return this.providers[provider].object;
+    return this.providers[ provider ].object;
   }
 }
