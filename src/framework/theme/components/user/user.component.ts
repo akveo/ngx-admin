@@ -7,6 +7,11 @@
 import { Component, Input, HostBinding, Output, EventEmitter, HostListener, ElementRef } from '@angular/core';
 import { convertToBoolProperty } from '../helpers';
 
+/*
+* TODO
+*
+* I want to have capability to pass custom actions in menu.
+* */
 export class NgaUserMenuItem {
   /**
    * Menu title
