@@ -5,4 +5,8 @@
   nga-card-header {
 
   }
+
+  nga-card.contacts nga-tabset /deep/ ul {
+    border-bottom: 1px solid nga-theme(separator);
+  }
 }
