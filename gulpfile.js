@@ -4,6 +4,8 @@ var replace = require('gulp-replace');
 var autoprefixer = require('gulp-autoprefixer');
 var sourcemaps = require('gulp-sourcemaps');
 var cleanCSS = require('gulp-clean-css');
+var gulp = require('gulp');
+var typedoc = require('gulp-typedoc');
 
 var inlineResources = require('./scripts/inline-resources');
 
@@ -46,17 +48,38 @@ gulp.task('inline-resource', copyResources);
 
 function copyResources() {
   gulp.src([
-      './build/**/*.html',
-      './build/**/*.css',
-      './build/**/*.scss',
-      './build/**/LICENSE.txt',
-      './build/**/README.md',
-      './build/**/package.json'
-    ])
+    './build/**/*.html',
+    './build/**/*.css',
+    './build/**/*.scss',
+    './build/**/LICENSE.txt',
+    './build/**/README.md',
+    './build/**/package.json'
+  ])
     .pipe(gulp.dest('./lib'))
     .on('end', inlineResource)
 }
 
 function inlineResource() {
   inlineResources('./lib');
+}
+
+gulp.task('generate-doc-json', generateDocJson);
+
+function generateDocJson() {
+  return gulp
+    .src('./src/framework/**/*.ts')
+    .pipe(typedoc({
+      module: 'commonjs',
+      target: 'ES6',
+      // TODO: ignoreCompilerErrors, huh?
+      ignoreCompilerErrors: true,
+      includeDeclarations: true,
+      emitDecoratorMetadata: true,
+      experimentalDecorators: true,
+      excludeExternals: true,
+      exclude: 'node_modules/**/*',
+      json: 'docs/docs.json',
+      version: true,
+      noLib: true
+    }));
 }
