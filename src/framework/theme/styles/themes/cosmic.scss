@@ -25,9 +25,10 @@ $theme: (
   color-danger: #ff386a,
 
   foreground: white,
-  background: #20274f,
+  background: #2c2961,
   foreground-inverse: color-secondary,
 
+  separator: #342e73,
   shadow: 0 8px 20px 0 rgba(37, 26, 75, 0.68),
 
   layout-padding: 2.5rem,
@@ -45,6 +46,9 @@ $theme: (
   card-foreground: color-white,
   card-foreground-secondary: color-secondary,
   card-header-foreground: foreground,
+  card-header-separator: transparent,
+
+  tabs-separator: transparent,
 );
 
 // register the theme

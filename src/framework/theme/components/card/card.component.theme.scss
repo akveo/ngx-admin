@@ -37,44 +37,44 @@
     &.active-card {
       nga-card-header {
         background-color: nga-theme(card-header-active-background);
-        border-bottom-color: nga-theme(card-header-active-separator);
+        border-bottom-color: nga-theme(card-header-active-background);
         color: nga-theme(card-header-active-foreground);
       }
     }
     &.disabled-card {
       nga-card-header {
         background-color: nga-theme(card-header-disabled-background);
-        border-bottom-color: nga-theme(card-header-disabled-separator);
+        border-bottom-color: nga-theme(card-header-disabled-background);
       }
     }
     &.primary-card {
       nga-card-header {
         background-color: nga-theme(card-header-primary-background);
-        border-bottom-color: nga-theme(card-header-primary-separator);
+        border-bottom-color: nga-theme(card-header-primary-background);
       }
     }
     &.info-card {
       nga-card-header {
         background-color: nga-theme(card-header-info-background);
-        border-bottom-color: nga-theme(card-header-info-separator);
+        border-bottom-color: nga-theme(card-header-info-background);
       }
     }
     &.success-card {
       nga-card-header {
         background-color: nga-theme(card-header-success-background);
-        border-bottom-color: nga-theme(card-header-success-separator);
+        border-bottom-color: nga-theme(card-header-success-background);
       }
     }
     &.warning-card {
       nga-card-header {
         background-color: nga-theme(card-header-warning-background);
-        border-bottom-color: nga-theme(card-header-warning-separator);
+        border-bottom-color: nga-theme(card-header-warning-background);
       }
     }
     &.danger-card {
       nga-card-header {
         background-color: nga-theme(card-header-danger-background);
-        border-bottom-color: nga-theme(card-header-danger-separator);
+        border-bottom-color: nga-theme(card-header-danger-background);
       }
     }
 
@@ -90,12 +90,14 @@
 
     nga-card-header {
       padding: nga-theme(card-padding);
-      border-bottom: nga-theme(card-header-separator-width) solid nga-theme(card-header-separator);
+      border-bottom: 1px solid nga-theme(card-header-separator);
       border-top-left-radius: nga-theme(card-border-radius);
       border-top-right-radius: nga-theme(card-border-radius);
-      font-weight: nga-theme(card-font-weight);
-      font-family: nga-theme(card-header-font-family);
       color: nga-theme(card-header-foreground);
+
+      font-family: nga-theme(card-header-font-family);
+      font-size: nga-theme(card-header-font-size);
+      font-weight: nga-theme(card-header-font-weight);
 
       @include nga-headings();
     }

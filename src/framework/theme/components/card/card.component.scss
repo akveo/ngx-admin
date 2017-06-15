@@ -7,21 +7,20 @@
 :host {
   display: flex;
   flex-direction: column;
+  // TODO: I'm not sure about it because body is "flex: 1"
   overflow: hidden;
 
+  /deep/ nga-card-header {
+    display: flex;
+  }
+
   /deep/ nga-card-body {
-    display: block;
+    display: flex;
     overflow: auto;
     flex: 1;
   }
 
   /deep/ nga-card-footer {
-    display: block;
-  }
-
-  /deep/ nga-card-header {
-    display: block;
-    text-transform: uppercase;
-    opacity: 0.9;
+    display: flex;
   }
 }
