@@ -24,7 +24,7 @@ export class NgaSidebarService {
   /**
    * Subscribe to toggle events
    *
-   * @returns {Observable<{ compact: boolean, tag: string }>}
+   * @returns Observable<{ compact: boolean, tag: string }>
    */
   onToggle(): Observable<{ compact: boolean, tag: string }> {
     return this.toggle$.publish().refCount();
@@ -32,7 +32,7 @@ export class NgaSidebarService {
 
   /**
    * Subscribe to expand events
-   * @returns {Observable<{ tag: string }>}
+   * @returns Observable<{ tag: string }>
    */
   onExpand(): Observable<{ tag: string }> {
     return this.expand$.publish().refCount();
@@ -40,7 +40,7 @@ export class NgaSidebarService {
 
   /**
    * Subscribe to collapse evens
-   * @returns {Observable<{ tag: string }>}
+   * @returns Observable<{ tag: string }>
    */
   onCollapse(): Observable<{ tag: string }> {
     return this.collapse$.publish().refCount();
@@ -48,8 +48,8 @@ export class NgaSidebarService {
 
   /**
    * Toggle a sidebar
-   * @param {boolean} compact
-   * @param {tag} tag If you have multiple sidebars on the page, mark them with `tag` input property and pass it here
+   * @param boolean compact
+   * @param tag tag If you have multiple sidebars on the page, mark them with `tag` input property and pass it here
    * to specify which sidebar you want to control
    */
   toggle(compact: boolean = false, tag?: string) {
@@ -58,7 +58,7 @@ export class NgaSidebarService {
 
   /**
    * Expands a sidebar
-   * @param {tag} tag If you have multiple sidebars on the page, mark them with `tag` input property and pass it here
+   * @param tag tag If you have multiple sidebars on the page, mark them with `tag` input property and pass it here
    * to specify which sidebar you want to control
    */
   expand(tag?: string) {

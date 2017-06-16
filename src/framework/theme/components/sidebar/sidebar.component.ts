@@ -228,7 +228,7 @@ export class NgaSidebarComponent implements OnInit, OnDestroy {
    * Returns some value
    * // TODO: remove this
    *
-   * @returns {number}
+   * @returns number
    */
   returnSomeValue() {
     return 1;
@@ -263,10 +263,6 @@ export class NgaSidebarComponent implements OnInit, OnDestroy {
    * @example Toggle sidebar state
    *
    * ```
-   * @ViewChild(NgaSidebar) sidebar;
-   *
-   * // ...
-   *
    * this.sidebar.toggle(true);
    * ```
    */
