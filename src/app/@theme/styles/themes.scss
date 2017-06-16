@@ -1,7 +1,0 @@
-@import '~@nga/theme/styles/all';
-@include nga-themes-install() {
-  // write global styles here
-}
-
-@import '~@nga/auth/styles/all';
-@include nga-auth-install();

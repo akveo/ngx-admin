@@ -1,4 +1,4 @@
-@import '~@nga/theme/styles/component';
+@import '../../../@theme/styles/variables';
 
 @include nga-install-component() {
   display: block;

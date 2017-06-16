@@ -1,0 +1,16 @@
+// themes - our custom or/and out of the box themes
+@import 'variables';
+
+// framework component themes (styles tied to theme variables)
+@import '~@nga/theme/styles/globals';
+@import '~@nga/auth/styles/all';
+
+// custom global styles
+@import 'global';
+
+// install the framework and custom global styles
+@include nga-install() {
+  @include nga-theme-global();
+  @include nga-auth-global();
+  @include ngx-global-theme();
+};

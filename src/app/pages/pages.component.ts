@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import 'style-loader!../@theme/styles/themes.scss';
+import 'style-loader!../@theme/styles/styles.scss';
 
 @Component({
   selector: 'ngx-pages',
