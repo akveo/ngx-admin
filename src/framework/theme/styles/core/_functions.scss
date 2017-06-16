@@ -22,7 +22,7 @@
   @return mix(black, $color, $percentage);
 }
 
-@function map-set($map, $key, $value) {
+@function map-set($map, $key, $value: null) {
   $new: ($key: $value);
   @return map-merge($map, $new);
 }

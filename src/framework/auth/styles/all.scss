@@ -1,8 +1,2 @@
 @import 'themes';
 @import 'globals';
-
-@mixin nga-auth-install() {
-  @include nga-install-global() {
-    @include nga-auth-global();
-  }
-}

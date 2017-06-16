@@ -14,6 +14,7 @@
 
 $nga-themes: () !global;
 $nga-themes-non-processed: () !global;
+$nga-enabled-themes: () !global;
 
 
 @function nga-theme($key) {
@@ -34,10 +35,12 @@ $nga-themes-non-processed: () !global;
 
 @function nga-register-theme($theme, $name, $default: null) {
 
-  $nga-themes-non-processed: map-set($nga-themes-non-processed, $name, $theme) !global;
 
   @if ($default != null) {
+
     $theme: map-merge(map-get($nga-themes-non-processed, $default), $theme);
+    $nga-themes-non-processed: map-set($nga-themes-non-processed, $name, $theme) !global;
+  } @else {
     $nga-themes-non-processed: map-set($nga-themes-non-processed, $name, $theme) !global;
   }
 
@@ -49,8 +52,25 @@ $nga-themes-non-processed: () !global;
   @return map-set($nga-themes, $name, $theme-parsed);
 }
 
+@function get-enabled-themes() {
+  $themes-to-install: ();
+
+  @if (length($nga-enabled-themes) > 0) {
+    @each $theme-name in $nga-enabled-themes {
+      $themes-to-install: map-set($themes-to-install, $theme-name, map-get($nga-themes, $theme-name));
+    }
+  } @else {
+    $themes-to-install: $nga-themes;
+  }
+
+  @return $themes-to-install;
+}
+
 @mixin nga-install-component() {
-  @each $theme-name, $theme in $nga-themes {
+
+  $themes-to-install: get-enabled-themes();
+
+  @each $theme-name, $theme in $themes-to-install {
     :host-context(.nga-theme-#{$theme-name}) {
       $theme: $theme !global;
       @content;
@@ -59,7 +79,9 @@ $nga-themes-non-processed: () !global;
 }
 
 @mixin nga-install-global() {
-  @each $theme-name, $theme in $nga-themes {
+  $themes-to-install: get-enabled-themes();
+
+  @each $theme-name, $theme in $themes-to-install {
     .nga-theme-#{$theme-name} {
       $theme: $theme !global;
 

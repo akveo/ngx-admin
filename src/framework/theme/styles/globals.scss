@@ -11,3 +11,9 @@
   @include nga-theme-components();
   @include nga-theme-overrides();
 }
+
+@mixin nga-install() {
+  @include nga-install-global() {
+    @content;
+  }
+}
