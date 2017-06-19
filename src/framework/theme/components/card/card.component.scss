@@ -10,17 +10,14 @@
   // TODO: I'm not sure about it because body is "flex: 1"
   overflow: hidden;
 
-  /deep/ nga-card-header {
-    display: flex;
+  nga-card-header {
   }
 
-  /deep/ nga-card-body {
-    display: flex;
+  nga-card-body {
     overflow: auto;
     flex: 1;
   }
 
-  /deep/ nga-card-footer {
-    display: flex;
+  nga-card-footer {
   }
 }

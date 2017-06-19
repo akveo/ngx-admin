@@ -119,6 +119,7 @@ export class NgaSidebarComponent implements OnInit, OnDestroy {
   @HostBinding('class.right') rightValue: boolean = false;
   @HostBinding('class.left') leftValue: boolean = false;
 
+  //TODO: rename stateValue to state (take a look to the card component)
   @HostBinding('class.expanded')
   get expanded() {
     return this.stateValue === NgaSidebarComponent.STATE_EXPANDED;

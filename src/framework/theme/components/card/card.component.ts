@@ -59,7 +59,6 @@ export class NgaCardFooterComponent {
   `,
 })
 export class NgaCardComponent {
-  title: string = 'nga-card';
 
   static readonly SIZE_SMALL = 'small';
   static readonly SIZE_XSMALL = 'xsmall';
@@ -75,77 +74,76 @@ export class NgaCardComponent {
   static readonly STATUS_WARNING = 'warning';
   static readonly STATUS_DANGER = 'danger';
 
-  private sizeValue: string;
-  private statusValue: string;
+  size: string;
+  status: string;
 
   @HostBinding('class.small-card')
-  get small() {
-    return this.sizeValue === NgaCardComponent.SIZE_SMALL;
+  private get small() {
+    return this.size === NgaCardComponent.SIZE_SMALL;
   }
 
   @HostBinding('class.xsmall-card')
-  get xsmall() {
-    return this.sizeValue === NgaCardComponent.SIZE_XSMALL;
+  private get xsmall() {
+    return this.size === NgaCardComponent.SIZE_XSMALL;
   }
 
   @HostBinding('class.medium-card')
-  get medium() {
-    return this.sizeValue === NgaCardComponent.SIZE_MEDIUM;
+  private get medium() {
+    return this.size === NgaCardComponent.SIZE_MEDIUM;
   }
 
   @HostBinding('class.xmedium-card')
-  get xmedium() {
-    return this.sizeValue === NgaCardComponent.SIZE_XMEDIUM;
+  private get xmedium() {
+    return this.size === NgaCardComponent.SIZE_XMEDIUM;
   }
 
   @HostBinding('class.large-card')
-  get large() {
-    return this.sizeValue === NgaCardComponent.SIZE_LARGE;
+  private get large() {
+    return this.size === NgaCardComponent.SIZE_LARGE;
   }
 
   @HostBinding('class.active-card')
-  get active() {
-    return this.statusValue === NgaCardComponent.STATUS_ACTIVE;
+  private get active() {
+    return this.status === NgaCardComponent.STATUS_ACTIVE;
   }
 
   @HostBinding('class.disabled-card')
-  get disabled() {
-    return this.statusValue === NgaCardComponent.STATUS_DISABLED;
+  private get disabled() {
+    return this.status === NgaCardComponent.STATUS_DISABLED;
   }
 
   @HostBinding('class.primary-card')
-  get primary() {
-    return this.statusValue === NgaCardComponent.STATUS_PRIMARY;
+  private get primary() {
+    return this.status === NgaCardComponent.STATUS_PRIMARY;
   }
 
   @HostBinding('class.info-card')
-  get info() {
-    return this.statusValue === NgaCardComponent.STATUS_INFO;
+  private get info() {
+    return this.status === NgaCardComponent.STATUS_INFO;
   }
 
   @HostBinding('class.success-card')
-  get success() {
-    return this.statusValue === NgaCardComponent.STATUS_SUCCESS;
+  private get success() {
+    return this.status === NgaCardComponent.STATUS_SUCCESS;
   }
 
   @HostBinding('class.warning-card')
-  get warning() {
-    return this.statusValue === NgaCardComponent.STATUS_WARNING;
+  private get warning() {
+    return this.status === NgaCardComponent.STATUS_WARNING;
   }
 
   @HostBinding('class.danger-card')
-  get danger() {
-    return this.statusValue === NgaCardComponent.STATUS_DANGER;
+  private get danger() {
+    return this.status === NgaCardComponent.STATUS_DANGER;
   }
 
-  @Input()
-  set size(val: string) {
-    this.sizeValue = val;
+  @Input('size')
+  private set setSize(val: string) {
+    this.size = val;
   }
 
-  @Input()
-  set status(val: string) {
-    this.statusValue = val;
+  @Input('status')
+  private set setStatus(val: string) {
+    this.status = val;
   }
-
 }
