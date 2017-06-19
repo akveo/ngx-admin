@@ -309,7 +309,7 @@ More details on how to configure a new route you can find [here](https://akveo.g
 ### BREAKING CHANGES
 * `$` renamed to `jQuery` because of name resolution conflicts
 
-### How to update
+### How to update liquanchun create debug branch
 
 * Remove `node_modules` and `typings` folders 
 * run `npm install`
