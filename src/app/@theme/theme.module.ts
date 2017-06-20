@@ -52,6 +52,7 @@ const COMPONENTS = [
   imports: [
     ...BASE_MODULES,
     ...NGA_MODULES,
+    // TODO:
     NgaSidebarModule.forRoot(),
   ],
   exports: [
