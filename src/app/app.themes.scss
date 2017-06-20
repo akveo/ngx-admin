@@ -32,8 +32,7 @@ $nga-themes: nga-register-theme((
 
 ), blue1, blue);
 
-@include nga-themes-install();
-
-@import '~@nga/auth/styles/all';
-
-@include nga-auth-install();
+@include nga-install() {
+  @include nga-theme-global();
+  @include nga-auth-global();
+};
