@@ -18,45 +18,45 @@ import { Component } from '@angular/core';
   template: `
     <nga-layout id="layout-fluid">
       <nga-layout-header fixed>
-        <nga-user inverse showInitials size="medium" name="Dmitry Nehaychik" title="Worker"
+        <nga-user showInitials size="medium" name="Dmitry Nehaychik" title="Worker"
                   [menu]="contextMenu" (menuClick)="onMenuItemClick($event)"></nga-user>
       </nga-layout-header>
 
 
       <nga-layout-column>
         <div class="test-row">
-          <nga-user></nga-user>
+          <nga-user inverse></nga-user>
         </div>
         <div class="test-row">
-          <nga-user showInitials></nga-user>
+          <nga-user inverse showInitials></nga-user>
         </div>
         <div class="test-row">
-          <nga-user size="large" name="Dmitry Nehaychik"></nga-user>
+          <nga-user inverse size="large" name="Dmitry Nehaychik"></nga-user>
         </div>
         <div class="test-row">
-          <nga-user name="Dmitry Nehaychik" title="Worker"></nga-user>
+          <nga-user inverse name="Dmitry Nehaychik" title="Worker"></nga-user>
         </div>
         <div class="test-row">
-          <nga-user size="small" name="Dmitry Nehaychik" title="Worker" showTitle="false"></nga-user>
+          <nga-user inverse size="small" name="Dmitry Nehaychik" title="Worker" showTitle="false"></nga-user>
         </div>
         <div class="test-row">
-          <nga-user onlyPicture size="medium" name="Dmitry Nehaychik" title="Worker"></nga-user>
+          <nga-user inverse onlyPicture size="medium" name="Dmitry Nehaychik" title="Worker"></nga-user>
         </div>
         <div class="test-row">
-          <nga-user size="medium" name="Dmitry Nehaychik" title="Worker"
+          <nga-user inverse size="medium" name="Dmitry Nehaychik" title="Worker"
                     [menu]="contextMenu" (menuClick)="onMenuItemClick($event)"></nga-user>
         </div>
         <div class="test-row">
-          <nga-user onlyPicture size="medium" name="Dmitry Nehaychik" title="Worker"
+          <nga-user inverse onlyPicture size="medium" name="Dmitry Nehaychik" title="Worker"
                     [menu]="contextMenu" (menuClick)="onMenuItemClick($event)"></nga-user>
         </div>
         <div class="test-row">
-          <nga-user size="large" picture="http://lorempixel.com/400/200/animals/"
+          <nga-user inverse size="large" picture="http://lorempixel.com/400/200/animals/"
                     name="Dmitry Nehaychik" title="Worker"
                     [menu]="contextMenu" (menuClick)="onMenuItemClick($event)"></nga-user>
         </div>
         <div class="test-row">
-          <nga-user showInitials size="medium" name="Dmitry Nehaychik" title="Worker"
+          <nga-user inverse showInitials size="medium" name="Dmitry Nehaychik" title="Worker"
                     [menu]="contextMenu" (menuClick)="onMenuItemClick($event)"></nga-user>
         </div>
       </nga-layout-column>

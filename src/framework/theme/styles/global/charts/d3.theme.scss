@@ -7,22 +7,22 @@
 @mixin nga-charts-d3-theme() {
   .ngx-charts {
     .pie-label {
-      fill: nga-theme(d3-foreground);
+      fill: nga-theme(d3-fg);
     }
 
     .grid-line-path {
-      stroke: nga-theme(d3-foreground);
+      stroke: nga-theme(d3-fg);
     }
 
     text {
-      fill: nga-theme(d3-foreground);
+      fill: nga-theme(d3-fg);
     }
 
   }
 
   .chart-legend {
     .legend-labels {
-      background: nga-theme(d3-legend-background);
+      background: nga-theme(d3-legend-bg);
     }
   }
 }

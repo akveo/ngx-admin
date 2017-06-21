@@ -15,19 +15,19 @@
       padding: 0 nga-theme(actions-padding);
 
       i.control-icon {
-        color: nga-theme(actions-color);
+        color: nga-theme(actions-fg);
         font-size: nga-theme(actions-size-small);
       }
-      border-left: 1px solid rgba(nga-theme(actions-color), 0.3);
+      border-left: 1px solid rgba(nga-theme(actions-separator), 0.3);
       background: transparent;
     }
 
     &.inverse {
       nga-action {
         i.control-icon {
-          color: nga-theme(actions-color-inverse);
+          color: nga-theme(actions-bg);
         }
-        border-left: 1px solid rgba(nga-theme(actions-color-inverse), 0.3);
+        border-left: 1px solid rgba(nga-theme(actions-separator), 0.3);
       }
     }
 

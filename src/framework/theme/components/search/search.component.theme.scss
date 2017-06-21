@@ -9,10 +9,10 @@
   nga-search-field {
 
     .search {
-      background: nga-theme(search-background);
+      background: nga-theme(search-bg);
 
       button {
-        color: nga-theme(search-btn-close-foreground);
+        color: nga-theme(search-btn-close-fg);
       }
 
       span {
@@ -36,7 +36,7 @@
     &.rotate-layout {
       .wrapper {
         opacity: 0;
-        background: nga-theme(search-background);
+        background: nga-theme(search-bg);
       }
 
     }
@@ -44,17 +44,17 @@
     &.modal-zoomin {
       .search::before,
       .search::after {
-        border: 1.5rem solid nga-theme(search-background-secondary);
+        border: 1.5rem solid nga-theme(search-bg-secondary);
       }
 
     }
 
 		&.modal-half {
 			.form-wrapper {
-				background: nga-theme(search-background);
+				background: nga-theme(search-bg);
 			}
       .search::before {
-        background: nga-theme(search-background-secondary);
+        background: nga-theme(search-bg-secondary);
       }
     }
 
@@ -63,23 +63,23 @@
         background: nga-theme(search-dash);
       }
       .search::before {
-        background: nga-theme(search-background);
+        background: nga-theme(search-bg);
       }
     }
 
     &.curtain {
       .search::after {
-        background: nga-theme(search-background);
+        background: nga-theme(search-bg);
       }
       .search {
-        background: nga-theme(search-background);
+        background: nga-theme(search-bg);
       }
     }
 
 		&.column-curtain {
 			.wrapper {
         &::before {
-          background: nga-theme(search-background);
+          background: nga-theme(search-bg);
         }
         &::after {
           background: transparent;
@@ -87,7 +87,7 @@
       }
       &.show {
         .wrapper::after {
-          background: nga-theme(search-background-secondary);
+          background: nga-theme(search-bg-secondary);
         }
       }
 		}
@@ -101,7 +101,7 @@
 
   nga-search {
     button {
-      color: nga-theme(search-btn-open-foreground);
+      color: nga-theme(search-btn-open-fg);
     }
   }
 

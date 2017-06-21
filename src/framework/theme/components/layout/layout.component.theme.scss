@@ -6,26 +6,29 @@
 
 @mixin nga-layout-theme() {
   .layout {
-
     font-size: nga-theme(layout-font-size);
     line-height: nga-theme(layout-line-height);
-    color: nga-theme(layout-foreground);
-    background: nga-theme(layout-background);
+    color: nga-theme(layout-fg);
+    background: nga-theme(layout-bg);
     min-height: nga-theme(layout-min-height);
 
     nga-layout-header {
+      font-family: nga-theme(header-font-family);
+      font-size: nga-theme(header-font-size);
+      line-height: nga-theme(header-line-height);
+
       box-shadow: nga-theme(header-shadow);
       nav {
         height: nga-theme(header-height);
         padding: nga-theme(header-padding);
-        background: nga-theme(header-background);
-        color: nga-theme(header-foreground);
+        background: nga-theme(header-bg);
+        color: nga-theme(header-fg);
 
         a {
-          color: nga-theme(header-foreground);
+          color: nga-theme(header-fg);
 
           @include hover-focus-active {
-            color: nga-theme(header-foreground);
+            color: nga-theme(header-fg);
           }
         }
       }
@@ -44,15 +47,15 @@
           nav {
             height: nga-theme(footer-height);
             padding: nga-theme(footer-padding);
-            background: nga-theme(footer-background);
-            color: nga-theme(footer-foreground);
+            background: nga-theme(footer-bg);
+            color: nga-theme(footer-fg);
             border-top: 1px solid nga-theme(footer-separator);
 
             a {
-              color: nga-theme(header-foreground);
+              color: nga-theme(header-fg);
 
               @include hover-focus-active {
-                color: nga-theme(header-foreground);
+                color: nga-theme(header-fg);
               }
             }
           }

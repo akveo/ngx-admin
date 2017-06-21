@@ -13,19 +13,19 @@
     .user-picture {
       height: nga-theme(user-size-medium);
       width: nga-theme(user-size-medium);
-      background: nga-theme(user-background);
+      background: nga-theme(user-bg);
 
       &.background {
-        color: nga-theme(user-foreground);
+        color: nga-theme(user-fg);
       }
     }
 
     &.inverse {
       .user-picture {
-        background: nga-theme(user-background-inverse);
+        background: nga-theme(user-fg);
 
         &.background {
-          color: nga-theme(user-foreground-inverse);
+          color: nga-theme(user-bg);
         }
       }
     }
@@ -51,7 +51,7 @@
     }
 
     .user-context-menu {
-      background-color: nga-theme(user-background-inverse);
+      background-color: nga-theme(user-fg);
       border: 1px solid nga-theme(user-menu-border);
 
       ul > li > a {
@@ -66,7 +66,7 @@
         border-bottom: 11px solid nga-theme(nga-user-menu-border) !important;
 
         &::after {
-          border-bottom: 11px solid nga-theme(nga-user-background-inverse) !important;
+          border-bottom: 11px solid nga-theme(user-fg) !important;
         }
       }
     }

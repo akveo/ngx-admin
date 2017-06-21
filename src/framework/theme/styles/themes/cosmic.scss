@@ -10,9 +10,8 @@
 
 // default the base theme
 $theme: (
-  color-default: #3d3780,
-
-  color-inverse: white,
+  color-bg: #3d3780,
+  color-fg: #a1a1e5,
 
   color-gray: rgba(81, 113, 165, 0.15),
   color-neutral: transparent,
@@ -25,31 +24,48 @@ $theme: (
   color-warning: #ffcb17,
   color-danger: #ff386a,
 
-  foreground: white,
-  background: #2c2961,
-  foreground-inverse: color-secondary,
-
   separator: #342e73,
-  shadow: 0 8px 20px 0 rgba(37, 26, 75, 0.68),
+  shadow: 0px 8px 20px 0 rgba(40, 37, 89, 0.6),
+
+  layout-bg: #2c2961,
+
+  sidebar-fg: color-secondary,
+  sidebar-bg: color-bg,
+
+  header-fg: color-white,
+  header-bg: color-bg,
+
+  footer-fg: color-fg,
+  footer-bg: color-bg,
+
+  actions-fg: color-fg,
+  actions-bg: color-bg,
+
+  user-fg: color-bg,
+  user-bg: color-fg,
 
   layout-padding: 2.5rem,
-  header-height: 4.725rem,
-  header-padding: 1.25rem,
-
   footer-height: header-height,
 
   sidebar-width: 16.25rem,
   sidebar-width-compact: 3.45rem,
   sidebar-padding: 0,
 
-  card-background: color-default,
-  card-separator: color-default,
-  card-foreground: color-white,
-  card-foreground-secondary: color-secondary,
-  card-header-foreground: foreground,
+  menu-fg: color-fg,
+  menu-bg: color-bg,
+  menu-active-fg: color-white,
+  menu-active-bg: #494299,
+  menu-group-fg: color-white,
+  menu-submenu-bg: #2c2966,
+  menu-submenu-fg: color-fg,
+
+  card-fg: color-white,
+  card-shadow: 4px 0 18px 0 rgba(37, 26, 75, 0.5),
+  card-header-fg: color-white,
   card-header-separator: transparent,
 
   tabs-separator: transparent,
+  route-tabs-separator: transparent,
 );
 
 // register the theme

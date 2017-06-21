@@ -11,7 +11,7 @@ import { Component } from '@angular/core';
   template: `
     <nga-layout>
       <nga-layout-header>
-        <nga-actions inverse>
+        <nga-actions>
           <nga-action icon="ion-ios-email-outline" (click)="actionOnClick('first')"></nga-action>
           <nga-action icon="ion-ios-bell-outline"></nga-action>
           <nga-action>
@@ -29,7 +29,7 @@ import { Component } from '@angular/core';
 
         <nga-card>
           <nga-card-body>
-            <nga-actions>
+            <nga-actions inverse>
               <nga-action icon="ion-ios-email-outline" (click)="actionOnClick('first')"></nga-action>
               <nga-action icon="ion-ios-bell-outline"></nga-action>
               <nga-action>
@@ -47,7 +47,7 @@ import { Component } from '@angular/core';
 
         <nga-card>
           <nga-card-body>
-            <nga-actions size="medium">
+            <nga-actions inverse size="medium">
               <nga-action icon="ion-ios-email-outline" (click)="actionOnClick('first')"></nga-action>
               <nga-action icon="ion-ios-bell-outline"></nga-action>
               <nga-action>
@@ -65,7 +65,7 @@ import { Component } from '@angular/core';
 
         <nga-card>
           <nga-card-body>
-            <nga-actions size="large">
+            <nga-actions inverse size="large">
               <nga-action icon="ion-ios-email-outline" (click)="actionOnClick('first')"></nga-action>
               <nga-action icon="ion-ios-bell-outline"></nga-action>
               <nga-action>

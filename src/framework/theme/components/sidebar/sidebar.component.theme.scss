@@ -11,13 +11,13 @@
     font-size: nga-theme(sidebar-font-size);
     line-height: nga-theme(sidebar-line-height);
 
-    @include nga-scrollbars(nga-theme(scrollbar-width), nga-theme(scrollbar-foreground), nga-theme(scrollbar-background));
+    @include nga-scrollbars(nga-theme(scrollbar-width), nga-theme(card-scrollbar-fg), nga-theme(card-scrollbar-bg));
 
     > .scrollable {
       height: nga-theme(sidebar-height);
       position: fixed;
       width: nga-theme(sidebar-width);
-      background: nga-theme(sidebar-background);
+      background: nga-theme(sidebar-bg);
       box-shadow: nga-theme(sidebar-shadow);
 
       > .main-container {
@@ -26,8 +26,8 @@
     }
 
     width: nga-theme(sidebar-width);
-    background: nga-theme(sidebar-background);
-    color: nga-theme(sidebar-foreground);
+    background: nga-theme(sidebar-bg);
+    color: nga-theme(sidebar-fg);
 
     &.collapsed {
       width: 0;

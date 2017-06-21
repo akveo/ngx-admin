@@ -9,8 +9,7 @@
 @mixin nga-route-tabset-theme() {
 
   nga-route-tabset {
-
-    @include nga-scrollbars(nga-theme(scrollbar-width), nga-theme(scrollbar-foreground), nga-theme(scrollbar-background));
+    @include nga-scrollbars(nga-theme(scrollbar-width), nga-theme(scrollbar-fg), nga-theme(scrollbar-bg));
 
     ul {
       border-bottom: 1px solid nga-theme(route-tabs-separator);
@@ -18,14 +17,15 @@
       padding: 0 nga-theme(route-tabs-padding);
 
       li {
-        background: nga-theme(route-tabs-header-background);
+        background: nga-theme(route-tabs-header-bg);
         min-width: nga-theme(route-tabs-header-min-width);
 
         a {
           padding: nga-theme(route-tabs-padding);
-          color: nga-theme(route-tabs-foreground-secondary);
+          color: nga-theme(route-tabs-fg-secondary);
 
           &::before {
+            // TODO: pass this parameter via theme, or move it to the styles
             @include success-gradient();
             box-shadow: 0 0 16px 0 rgba(35, 255, 181, 0.3);
           }
@@ -36,7 +36,7 @@
 
           a {
             font-weight: nga-theme(route-tabs-active-font-weight);
-            color: nga-theme(route-tabs-foreground);
+            color: nga-theme(route-tabs-fg);
           }
         }
       }

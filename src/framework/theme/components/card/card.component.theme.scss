@@ -9,14 +9,14 @@
     font-size: nga-theme(card-font-size);
     line-height: nga-theme(card-line-height);
 
-    background: nga-theme(card-background);
-    color: nga-theme(card-foreground);
+    background: nga-theme(card-bg);
+    color: nga-theme(card-fg);
     margin-bottom: nga-theme(card-padding);
     border-radius: nga-theme(card-border-radius);
     box-shadow: nga-theme(card-shadow);
     font-weight: nga-theme(card-font-weight);
 
-    @include nga-scrollbars(nga-theme(card-scrollbar-width), nga-theme(card-scrollbar-foreground), nga-theme(card-scrollbar-background));
+    @include nga-scrollbars(nga-theme(card-scrollbar-width), nga-theme(card-scrollbar-fg), nga-theme(card-scrollbar-bg));
 
     &.small-card {
       height: nga-theme(card-height-small);
@@ -36,45 +36,45 @@
 
     &.active-card {
       nga-card-header {
-        background-color: nga-theme(card-header-active-background);
-        border-bottom-color: nga-theme(card-header-active-background);
-        color: nga-theme(card-header-active-foreground);
+        background-color: nga-theme(card-header-active-bg);
+        border-bottom-color: nga-theme(card-header-active-bg);
+        color: nga-theme(card-header-active-fg);
       }
     }
     &.disabled-card {
       nga-card-header {
-        background-color: nga-theme(card-header-disabled-background);
-        border-bottom-color: nga-theme(card-header-disabled-background);
+        background-color: nga-theme(card-header-disabled-bg);
+        border-bottom-color: nga-theme(card-header-disabled-bg);
       }
     }
     &.primary-card {
       nga-card-header {
-        background-color: nga-theme(card-header-primary-background);
-        border-bottom-color: nga-theme(card-header-primary-background);
+        background-color: nga-theme(card-header-primary-bg);
+        border-bottom-color: nga-theme(card-header-primary-bg);
       }
     }
     &.info-card {
       nga-card-header {
-        background-color: nga-theme(card-header-info-background);
-        border-bottom-color: nga-theme(card-header-info-background);
+        background-color: nga-theme(card-header-info-bg);
+        border-bottom-color: nga-theme(card-header-info-bg);
       }
     }
     &.success-card {
       nga-card-header {
-        background-color: nga-theme(card-header-success-background);
-        border-bottom-color: nga-theme(card-header-success-background);
+        background-color: nga-theme(card-header-success-bg);
+        border-bottom-color: nga-theme(card-header-success-bg);
       }
     }
     &.warning-card {
       nga-card-header {
-        background-color: nga-theme(card-header-warning-background);
-        border-bottom-color: nga-theme(card-header-warning-background);
+        background-color: nga-theme(card-header-warning-bg);
+        border-bottom-color: nga-theme(card-header-warning-bg);
       }
     }
     &.danger-card {
       nga-card-header {
-        background-color: nga-theme(card-header-danger-background);
-        border-bottom-color: nga-theme(card-header-danger-background);
+        background-color: nga-theme(card-header-danger-bg);
+        border-bottom-color: nga-theme(card-header-danger-bg);
       }
     }
 
@@ -93,7 +93,7 @@
       border-bottom: 1px solid nga-theme(card-header-separator);
       border-top-left-radius: nga-theme(card-border-radius);
       border-top-right-radius: nga-theme(card-border-radius);
-      color: nga-theme(card-header-foreground);
+      color: nga-theme(card-header-fg);
 
       font-family: nga-theme(card-header-font-family);
       font-size: nga-theme(card-header-font-size);

@@ -98,7 +98,7 @@ export class NgaMenuItem4Component {
   template: `
     <nga-layout>
       <nga-layout-column>
-        <nga-menu tag="firstMenu" [items]="menuItems"></nga-menu>
+        <nga-menu inverse tag="firstMenu" [items]="menuItems"></nga-menu>
         <router-outlet></router-outlet>
         <button class="btn btn-primary" id="addBtn" (click)="addMenuItem()">Add</button>
         <button class="btn btn-primary" id="homeBtn" (click)="navigateHome()">Home</button>

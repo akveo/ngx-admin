@@ -19,30 +19,30 @@
       padding: 0 8px;
     }
 
-    color: nga-theme(smart-table-foreground);
+    color: nga-theme(smart-table-fg);
 
     input {
       line-height: 1.5 !important;
     }
 
     ng2-smart-table-cell {
-      color: nga-theme(smart-table-foreground);
+      color: nga-theme(smart-table-fg);
       line-height: 35px;
     }
 
     tbody {
       tr {
-        color: nga-theme(smart-table-foreground);
+        color: nga-theme(smart-table-fg);
       }
 
       tr:hover {
-        background: nga-theme(smart-table-background);
+        background: nga-theme(smart-table-bg);
       }
     }
 
     a.ng2-smart-sort-link {
       font-size: 14px !important;
-      color: nga-theme(smart-table-foreground);
+      color: nga-theme(smart-table-fg);
       font-weight: nga-theme(smart-table-font-weight-bolder);
 
       &.sort {
@@ -71,7 +71,7 @@
     a.ng2-smart-action,
     .ng2-smart-title {
       font-size: 14px !important;
-      color: nga-theme(smart-table-foreground);
+      color: nga-theme(smart-table-fg);
       padding: 0 5px;
       display: inline-block;
 
@@ -89,8 +89,8 @@
         display: flex;
 
         .page-item.disabled .page-link, .page-item.disabled .page-link:focus, .page-item.disabled .page-link:hover {
-          background: nga-theme(smart-table-background);
-          color: nga-theme(smart-table-foreground);
+          background: nga-theme(smart-table-bg);
+          color: nga-theme(smart-table-fg);
         }
       }
 
@@ -110,7 +110,7 @@
 
       .pagination > li > a,
       .pagination > li > span {
-        color: nga-theme(smart-table-foreground);
+        color: nga-theme(smart-table-fg);
         border-color: nga-theme(smart-table-border-color);
       }
 
@@ -142,7 +142,7 @@
       .pagination > li > a:focus,
       .pagination > li > span:focus {
         background-color: rgba(0, 0, 0, 0.2);
-        color: nga-theme(smart-table-foreground);
+        color: nga-theme(smart-table-fg);
       }
     }
   }
