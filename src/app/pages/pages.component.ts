@@ -6,7 +6,7 @@ import 'style-loader!../@theme/styles/styles.scss';
   selector: 'ngx-pages',
   template: `
     <ngx-one-column-layout>
-      <nga-menu inverse></nga-menu>
+      <nga-menu></nga-menu>
       <router-outlet></router-outlet>
     </ngx-one-column-layout>
   `,

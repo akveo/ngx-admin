@@ -8,7 +8,7 @@ import { NgaThemeService } from '@nga/theme/services/theme.service';
   styleUrls: ['./header.component.scss'],
   template: `
     <div class="left">
-      <i class="control-icon ion ion-navicon" (click)="toggleSidebar()"></i>
+      <a (click)="toggleSidebar()" href="#"><i class="control-icon ion ion-navicon"></i></a>
       <span class="logo" (click)="goToHome()">NgX&nbsp;<a>Admin</a></span>
       <div class="theme-buttons">
         <button class="btn btn-hero-primary" (click)="selectCosmicTheme()">Cosmic</button>
@@ -17,12 +17,12 @@ import { NgaThemeService } from '@nga/theme/services/theme.service';
       </div>
     </div>
 
-    <nga-actions size="medium" inverse class="right">
+    <nga-actions size="medium" class="right">
       <nga-action><nga-search type="rotate-layout"></nga-search></nga-action>
       <nga-action icon="ion-ios-email-outline"></nga-action>
       <nga-action disabled icon="ion-ios-bell-outline"></nga-action>
       <nga-action>
-        <nga-user inverse [menu]="userMenu" name="Han Solo"></nga-user>
+        <nga-user [menu]="userMenu" name="Han Solo"></nga-user>
       </nga-action>
       <nga-action icon="ion-ios-gear-outline"></nga-action>
     </nga-actions>
@@ -40,12 +40,13 @@ export class HeaderComponent {
   ];
 
   constructor(private sidebarService: NgaSidebarService,
-    private menuService: NgaMenuService,
-    private themeService: NgaThemeService) {
+              private menuService: NgaMenuService,
+              private themeService: NgaThemeService) {
   }
 
-  toggleSidebar() {
+  toggleSidebar(): boolean {
     this.sidebarService.toggle(true);
+    return false;
   }
 
   goToHome() {
