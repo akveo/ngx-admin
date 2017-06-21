@@ -11,8 +11,10 @@ export class NgaTokenService {
     token: {
       key: 'auth_app_token',
       getter: () => Observable.of(localStorage.getItem(this.getConfigValue('token.key'))),
-      setter: (token: any) => Observable.of(token).do(token => localStorage.setItem(this.getConfigValue('token.key'), token)),
-      deleter: (token: any) => Observable.of(token).do(token => localStorage.removeItem(this.getConfigValue('token.key'))),
+      setter: (token: any) => Observable.of(token)
+        .do(t => localStorage.setItem(this.getConfigValue('token.key'), t)),
+      deleter: (token: any) => Observable.of(token)
+        .do(t => localStorage.removeItem(this.getConfigValue('token.key'))),
     },
   };
   protected config: any = {};

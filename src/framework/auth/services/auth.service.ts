@@ -17,18 +17,18 @@ export class NgaAuthResult {
 
   // TODO pass arguments in options object
   constructor(protected success: boolean,
-              protected response?: any,
-              protected redirect?: any,
-              errors?: any,
-              messages?: any,
-              token?: any) {
+                 protected response?: any,
+                 protected redirect?: any,
+                 errors?: any,
+                 messages?: any,
+                 token?: any) {
 
-    this.errors = this.errors.concat([ errors ]);
+    this.errors = this.errors.concat([errors]);
     if (errors instanceof Array) {
       this.errors = errors;
     }
 
-    this.messages = this.messages.concat([ messages ]);
+    this.messages = this.messages.concat([messages]);
     if (messages instanceof Array) {
       this.messages = messages;
     }

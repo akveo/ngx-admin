@@ -16,7 +16,7 @@ const heights = {
 };
 
 const colors = {
-  //Make sure that you convert hex to rgba before validation
+  // Make sure that you convert hex to rgba before validation
   primary: '#8c6fff',
   success: '#6ad996',
   info: '#26bbff',
@@ -32,16 +32,20 @@ function prepareCards() {
   const result: any[] = [];
 
   let elementNumber: number = 14;
-  for (let colorKey in colors) {
-    for (let heightKey in heights) {
-      result.push({
-        name: heightKey,
-        height: heights[heightKey],
-        colorKey: colorKey,
-        color: colorKey == 'disabled' ? colors[colorKey] : hexToRgbA(colors[colorKey]),
-        elementNumber,
-      });
-      elementNumber++;
+  for (const colorKey in colors) {
+    if (this.colors.hasOwnProperty(colorKey)) {
+      for (const heightKey in heights) {
+          if (this.heights.hasOwnProperty(heightKey)) {
+            result.push({
+              name: heightKey,
+              height: heights[heightKey],
+              colorKey,
+              color: colorKey === 'disabled' ? colors[colorKey] : hexToRgbA(colors[colorKey]),
+              elementNumber,
+            });
+            elementNumber++;
+        }
+      }
     }
   }
   return result;
