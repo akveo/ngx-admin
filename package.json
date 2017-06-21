@@ -26,7 +26,8 @@
     "lint:ci": "npm run lint && npm run lint:styles",
     "pree2e": "webdriver-manager update --standalone false --gecko false",
     "e2e": "ng e2e",
-    "e2e:ci": "ng e2e --config ./protractor.conf.ci.js"
+    "e2e:ci": "ng e2e --config ./protractor.conf.ci.js",
+    "precommit": "npm run lint:ci"
   },
   "keywords": [
     "angular",
