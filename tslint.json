@@ -15,7 +15,6 @@
     "no-eval": true,
     "no-arg": true,
     "no-internal-module": true,
-    "no-bitwise": true,
     "no-shadowed-variable": true,
     "no-unused-expression": true,
     "one-line": [true, "check-catch", "check-else", "check-open-brace", "check-whitespace"],
