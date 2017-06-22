@@ -6,7 +6,7 @@
 import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import { ActivatedRoute } from '@angular/router';
-import { Observable } from 'rxjs/Rx';
+import { Observable } from 'rxjs/Observable';
 
 import { NgEmailPassAuthProviderConfig } from './email-pass-auth.options';
 import { NgaAuthResult } from '../services/auth.service';

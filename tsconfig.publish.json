@@ -11,23 +11,29 @@
     "moduleResolution": "node",
     "noEmitOnError": true,
     "outDir": "./lib",
-    "rootDir": "./build",
+    "rootDir": "./.ng_build",
     "sourceMap": true,
-    "target": "es5",
+    "target": "es2015",
     "inlineSources": true,
     "stripInternal": true,
     "baseUrl": ".",
     "paths": {
-      "@angular/core": ["node_modules/@angular/core"]
+      "@nga/theme": ["./.ng_build/theme"]
     },
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "typeRoots": [
+      "node_modules/@types"
+    ]
   },
   "include": [
-    "./build/**/*"
+    "./.ng_build/**/*"
+  ],
+  "exclude": [
+    "./.ng_build/**/*.e2e.ts",
+    "./.ng_build/**/*.spec.ts"
   ],
   "angularCompilerOptions": {
     "strictMetadataEmit": true,
-    "genDir": "./compiled",
-    "debug": true
+    "genDir": "./.ng_compiled"
   }
 }

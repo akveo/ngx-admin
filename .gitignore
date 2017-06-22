@@ -1,8 +1,8 @@
 # compiled output
 /dist
 /tmp
-/compiled
-/build
+/.ng_compiled
+/.ng_build
 /lib
 
 # dependencies

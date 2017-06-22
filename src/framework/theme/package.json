@@ -1,13 +1,13 @@
 {
   "name": "@nga/theme",
-  "version": "2.0.0-alpha.0",
+  "version": "2.0.0-alpha.1",
   "description": "@nga/theme",
   "main": "./bundles/theme.umd.js",
+  "es2015": "./bundles/theme.es2015.js",
   "module": "./index.js",
   "typings": "./index.d.ts",
   "author": "akveo",
   "license": "MIT",
-  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/akveo/ng2-admin.git"

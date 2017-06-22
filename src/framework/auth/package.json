@@ -1,13 +1,13 @@
 {
   "name": "@nga/auth",
-  "version": "2.0.0-alpha.0",
+  "version": "2.0.0-alpha.1",
   "description": "@nga/auth",
   "main": "./bundles/auth.umd.js",
+  "es2015": "./bundles/auth.es2015.js",
   "module": "./index.js",
   "typings": "./index.d.ts",
   "author": "akveo",
   "license": "MIT",
-  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/akveo/ng2-admin.git"
@@ -32,6 +32,6 @@
     "@angular/router": "^4.0.0",
     "@angular/forms": "^4.0.0",
     "@angular/http": "^4.0.0",
-    "@nga/theme": "^1.0.0-alpha"
+    "@nga/theme": "^2.0.0-alpha.1"
   }
 }

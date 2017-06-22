@@ -1,5 +1,10 @@
 import { Inject, Injectable } from '@angular/core';
-import { BehaviorSubject, Observable, ReplaySubject, Subject } from 'rxjs/Rx';
+import { BehaviorSubject } from 'rxjs/BehaviorSubject';
+import { Observable } from 'rxjs/Observable';
+import { ReplaySubject } from 'rxjs/ReplaySubject';
+import { Subject } from 'rxjs/Subject';
+
+import 'rxjs/add/operator/do';
 
 import { ngaAuthOptionsToken } from '../auth.options';
 import { deepExtend, getDeepFromObject } from '../helpers';
@@ -21,7 +26,7 @@ export class NgaTokenService {
 
   protected token$: BehaviorSubject<any> = new BehaviorSubject(null);
 
-  constructor(@Inject(ngaAuthOptionsToken) protected options: any) {
+  constructor( @Inject(ngaAuthOptionsToken) protected options: any) {
     this.setConfig(options);
 
     this.get().subscribe(token => this.publishToken(token));

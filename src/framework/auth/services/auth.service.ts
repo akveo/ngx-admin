@@ -6,6 +6,8 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Rx';
 
+import 'rxjs/add/operator/do';
+
 import { NgaAbstractAuthProvider } from '../providers/abstract-auth.provider';
 import { NgaTokenService } from './token.service';
 
@@ -17,11 +19,11 @@ export class NgaAuthResult {
 
   // TODO pass arguments in options object
   constructor(protected success: boolean,
-                 protected response?: any,
-                 protected redirect?: any,
-                 errors?: any,
-                 messages?: any,
-                 token?: any) {
+    protected response?: any,
+    protected redirect?: any,
+    errors?: any,
+    messages?: any,
+    token?: any) {
 
     this.errors = this.errors.concat([errors]);
     if (errors instanceof Array) {
@@ -159,7 +161,7 @@ export class NgaAuthService {
     return this.getProvider(provider).logout()
       .do((result: NgaAuthResult) => {
         if (result.isSuccess()) {
-          this.tokenService.clear().subscribe(() => {});
+          this.tokenService.clear().subscribe(() => { });
         }
       });
   }
@@ -193,10 +195,10 @@ export class NgaAuthService {
   }
 
   getProvider(provider: string): NgaAbstractAuthProvider {
-    if (!this.providers[ provider ]) {
+    if (!this.providers[provider]) {
       throw new TypeError(`Nga auth provider '${provider}' is not registered`);
     }
 
-    return this.providers[ provider ].object;
+    return this.providers[provider].object;
   }
 }
