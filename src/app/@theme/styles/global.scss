@@ -1,3 +1,10 @@
 @mixin ngx-global-theme() {
   // any global, non-component styles go here
 }
+
+// TODO: probably it makes sense to move it to mixin
+.nga-theme-cosmic {
+  nga-card nga-card-header + nga-card-body {
+    padding-top: 0;
+  }
+}

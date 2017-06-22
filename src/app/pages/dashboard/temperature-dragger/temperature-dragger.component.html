@@ -1,0 +1,29 @@
+<svg #svgRoot xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
+  [attr.viewBox]="styles.viewBox" preserveAspectRatio="xMinYMin meet" class="svg-content" (mousedown)="mouseDown($event)">
+  <defs>
+
+    <filter id="blurFilter" x="0" y="0" width="100%" height="100%">
+      <feGaussianBlur in="SourceGraphic" [attr.stdDeviation]="styles.blurRadius" />
+      <feComponentTransfer>
+        <feFuncA type="discrete" tableValues="1 1"/>
+      </feComponentTransfer>
+    </filter>
+
+    <clipPath id="sliderClip">
+      <path [attr.d]="styles.clipPathStr"></path>
+    </clipPath>
+
+  </defs>
+  <g [attr.transform]="styles.arcTranslateStr">
+
+    <g class="toClip" clip-path="url(#sliderClip)">
+      <g class="toFilter" filter="url(#blurFilter)">
+        <path [attr.d]="arc.d" [attr.fill]="arc.color" *ngFor="let arc of styles.gradArcs"></path>
+      </g>
+      <path [attr.d]="styles.nonSelectedArc.d" [attr.fill]="styles.nonSelectedArc.color"></path>
+    </g>
+
+    <circle [attr.cx]="styles.knobPosition.x" [attr.cy]="styles.knobPosition.y" [attr.r]="pinRadius"
+            [attr.stroke-width]="1 / scaleFactor" fill="#FFFFFF" stroke="#666666"></circle>
+  </g>
+</svg>

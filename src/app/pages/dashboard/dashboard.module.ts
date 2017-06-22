@@ -4,6 +4,7 @@ import { NgaTabsetModule } from '@nga/theme';
 import { SharedModule } from '../../shared.module';
 import { DashboardComponent } from './dashboard.component';
 import { StatusCardsComponent } from './status-cards/status-cards.component';
+import { TemperatureDraggerComponent } from './temperature-dragger/temperature-dragger.component';
 
 @NgModule({
   imports: [
@@ -13,6 +14,7 @@ import { StatusCardsComponent } from './status-cards/status-cards.component';
   declarations: [
     DashboardComponent,
     StatusCardsComponent,
+    TemperatureDraggerComponent,
   ],
 })
 export class DashboardModule { }
