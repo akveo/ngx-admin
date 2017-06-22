@@ -98,7 +98,6 @@
     "space-in-parens": ["error", "info", "never"],
     "number-literal-format": true,
     "no-invalid-template-strings": true,
-    "no-void-expression": [true, "ignore-arrow-function-shorthand"],
     "prefer-template": true,
     "no-unnecessary-callback-wrapper": true,
     "member-access": [true, "no-public"],
