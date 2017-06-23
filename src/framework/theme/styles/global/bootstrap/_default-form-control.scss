@@ -1,0 +1,33 @@
+@mixin form-control-default() {
+  .has-danger .form-control:not(:focus) {
+    @include form-control-danger();
+  }
+
+  .form-control-danger {
+    @include form-control-danger();
+  }
+
+  .has-success .form-control:not(:focus) {
+    @include form-control-success();
+  }
+
+  .form-control-success:not(:focus) {
+    @include form-control-success();
+  }
+}
+
+@mixin form-control-success() {
+  @include form-control-success-focus();
+}
+
+@mixin form-control-danger() {
+  @include form-control-danger-focus();
+}
+
+@mixin form-control-success-focus() {
+  border-color: nga-theme(form-control-success-border-color);
+}
+
+@mixin form-control-danger-focus() {
+  border-color: nga-theme(form-control-danger-border-color);
+}

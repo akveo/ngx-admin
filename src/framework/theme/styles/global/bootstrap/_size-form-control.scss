@@ -1,0 +1,27 @@
+@mixin form-control-size() {
+  .form-control {
+    @include form-control-md();
+  }
+
+  .form-control.input-sm {
+    @include form-control-sm();
+  }
+
+  .form-control.input-lg {
+    @include form-control-lg();
+  }
+}
+
+@mixin form-control-sm() {
+  font-size: nga-theme(form-control-font-size-sm);
+  line-height: nga-theme(form-control-line-height-sm);
+}
+
+@mixin form-control-md() {
+  font-size: nga-theme(form-control-font-size);
+}
+
+@mixin form-control-lg() {
+  font-size: nga-theme(form-control-font-size-lg);
+  line-height: nga-theme(form-control-font-size-lg);
+}

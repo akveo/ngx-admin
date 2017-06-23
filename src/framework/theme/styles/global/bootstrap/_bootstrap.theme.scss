@@ -10,6 +10,7 @@
 @import './dropdowns';
 @import './pagination';
 @import './icon-buttons';
+@import './forms';
 
 @mixin nga-bootstrap-theme() {
   @include nga-b-buttons-theme();
@@ -17,4 +18,5 @@
   @include nga-b-dropdowns-theme();
   @include nga-b-pagination-theme();
   @include nga-b-icon-buttons-theme();
+  @include nga-b-forms-theme();
 }

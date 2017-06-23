@@ -291,7 +291,45 @@ $theme: (
   btn-round-border-radius: 24px,
 
   btn-hero-shadow: rgba(33, 7, 77, 0.5),
-  btn-hero-text-shadow: rgba(0, 0, 0, 0.3)
+  btn-hero-text-shadow: rgba(0, 0, 0, 0.3),
+
+  form-control-text-primary-color: color-white,
+  form-control-text-secondary-color: color-secondary,
+  form-control-font-family: font-secondary,
+  form-control-bg: separator,
+  form-control-focus-bg: layout-bg,
+
+  form-control-border-width: 2px,
+  form-control-border-color: layout-bg,
+  form-control-border-type: solid,
+
+  form-control-primary-border-color: color-primary,
+  form-control-secondary-border-color: color-secondary,
+  form-control-info-border-color: color-info,
+  form-control-success-border-color: color-success,
+  form-control-danger-border-color: color-danger,
+  form-control-warning-border-color: color-warning,
+
+  form-control-placeholder-color: color-fg,
+  form-control-placeholder-font-size: 0.8rem,
+  form-control-placeholder-ellipsis: true,
+  form-control-placeholder-opacity-transition: true,
+
+  form-control-font-size: 1rem,
+  form-control-border-radius: 12px,
+
+  form-control-font-size-sm: 0.875rem,
+  form-control-line-height-sm: 1rem,
+  form-control-border-radius-sm: 12px,
+
+  form-control-font-size-lg: 1.25rem,
+  form-control-line-height-lg: 1.375rem,
+  form-control-border-radius-lg: 12px,
+
+  form-control-label-font-weight: 400,
+
+  form-control-feedback-font-size: 0.8rem,
+  form-control-feedback-font-weight: 400,
 );
 
 // register the theme

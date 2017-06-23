@@ -1,0 +1,36 @@
+/**
+ * @license
+ * Copyright Akveo. All Rights Reserved.
+ * Licensed under the MIT License. See License.txt in the project root for license information.
+ */
+@import './size-form-control';
+@import './default-form-control';
+@import '../../core/mixins';
+
+@mixin nga-b-forms-theme() {
+  .form-control {
+    color: nga-theme(form-control-text-primary-color);
+    background-color: nga-theme(form-control-bg);
+    border: nga-theme(form-control-border-width) nga-theme(form-control-border-type) nga-theme(form-control-border-color);
+    &:focus {
+      border: nga-theme(form-control-border-width) nga-theme(form-control-border-type) nga-theme(form-control-primary-border-color);
+      background-color: nga-theme(form-control-focus-bg);
+    }
+
+    @include form-control-validation(nga-theme(form-control-text-secondary-color));
+    @include placeholder(nga-theme(form-control-placeholder-color), nga-theme(form-control-placeholder-font-size));
+  }
+
+  .form-control-label {
+    color: nga-theme(form-control-text-primary-color);
+    font-weight: nga-theme(form-control-label-font-weight);
+  }
+
+  .form-control-feedback {
+    font-size: nga-theme(form-control-feedback-font-size);
+    font-weight: nga-theme(form-control-feedback-font-weight);
+  }
+
+  @include form-control-size();
+  @include form-control-default();
+}
