@@ -69,6 +69,7 @@ export class NgaUserComponent {
    */
   static readonly SIZE_SMALL = 'small';
   static readonly SIZE_MEDIUM = 'medium';
+  static readonly SIZE_XMEDIUM = 'xmedium';
   static readonly SIZE_LARGE = 'large';
 
   private sizeValue: string;
@@ -83,6 +84,11 @@ export class NgaUserComponent {
   @HostBinding('class.medium')
   get medium() {
     return this.sizeValue === NgaUserComponent.SIZE_MEDIUM;
+  }
+
+  @HostBinding('class.xmedium')
+  get xmedium() {
+    return this.sizeValue === NgaUserComponent.SIZE_XMEDIUM;
   }
 
   @HostBinding('class.large')

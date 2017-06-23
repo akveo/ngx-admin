@@ -1,9 +1,9 @@
 <div class="user-container" (click)="toggleMenu()" [ngClass]="{'with-menu' : hasMenu()}">
-  <div *ngIf="picture" class="user-picture image" [ngStyle]="{background: 'url(' + picture  + ')'}"></div>
-  <div *ngIf="!picture" class="user-picture background" [ngStyle]="{'background-color': color}">
-    <ng-template [ngIf]="showInitialsValue">
+  <div *ngIf="picture" class="user-picture image" style.background-image="url({{picture}})"></div>
+  <div *ngIf="!picture" class="user-picture background" [style.background-color]="color">
+    <ng-container *ngIf="showInitialsValue">
       {{ getInitials() }}
-    </ng-template>
+    </ng-container>
   </div>
 
   <div class="info-container">
