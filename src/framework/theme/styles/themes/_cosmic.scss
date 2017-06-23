@@ -6,7 +6,7 @@
 
 @import '../core/functions';
 @import '../core/mixins';
-@import './default';
+@import 'default';
 
 // default the base theme
 $theme: (
@@ -21,7 +21,7 @@ $theme: (
   color-secondary: #a1a1e6,
   color-info: #0088ff,
   color-success: #00d977,
-  color-warning: #ffcb17,
+  color-warning: #e6b045,
   color-danger: #ff386a,
 
   separator: #342e73,

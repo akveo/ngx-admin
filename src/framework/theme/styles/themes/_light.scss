@@ -6,7 +6,7 @@
 
 @import '../core/functions';
 @import '../core/mixins';
-@import './default';
+@import 'default';
 
 // define the base theme (empty for default)
 $theme: (

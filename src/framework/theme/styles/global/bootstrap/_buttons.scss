@@ -18,7 +18,7 @@
     letter-spacing: 0.4px;
     font-weight: nga-theme(font-weight-bolder);
     font-family: nga-theme(btn-font-family);
-    border: 2px solid transparent !important;
+    border: 2px solid transparent;
     transition: none;
 
     @include button-size(nga-theme(btn-padding-y),

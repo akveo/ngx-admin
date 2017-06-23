@@ -1,33 +1,33 @@
-@function btn-hover-focus($bg, $percentage: 20%) {
-  @return lighten(nga-theme($bg), $percentage);
+@function btn-hover-focus($bg, $percentage: 14%) {
+  @return tint(nga-theme($bg), $percentage);
 }
 
-@function btn-active($bg, $percentage: 20%) {
-  @return darken(nga-theme($bg), $percentage);
+@function btn-active($bg, $percentage: 14%) {
+  @return shade(nga-theme($bg), $percentage);
 }
 
 @mixin btn-focus($focus) {
   &:focus,
   &.focus {
-    background-color: $focus !important;
-    border-color: transparent !important;
-    box-shadow: none !important;
+    background-color: $focus;
+    border-color: transparent;
+    box-shadow: none;
   }
 }
 
 @mixin btn-hover($hover) {
   &:hover,
   &.hover {
-    background-color: $hover !important;
-    border-color: transparent !important;
+    background-color: $hover;
+    border-color: transparent;
   }
 }
 
 @mixin btn-active($active) {
   &:active,
   &.active {
-    background-color: $active !important;
-    border-color: transparent !important;
+    background-color: $active;
+    border-color: transparent;
   }
 }
 
@@ -96,15 +96,15 @@
 }
 
 @mixin btn-secondary-border() {
-  border: 2px solid nga-theme(btn-secondary-border) !important;
+  border: 2px solid nga-theme(btn-secondary-border);
 }
 
 @mixin btn-secondary-bg() {
-  background-color: nga-theme(btn-secondary-bg) !important;
+  background-color: nga-theme(btn-secondary-bg);
 }
 
 @mixin btn-primary() {
-  background-color: nga-theme(btn-primary-bg) !important;
+  background-color: nga-theme(btn-primary-bg);
 
   @include btn-primary-focus();
   @include btn-primary-hover();
@@ -112,7 +112,7 @@
 }
 
 @mixin btn-warning() {
-  background-color: nga-theme(btn-warning-bg) !important;
+  background-color: nga-theme(btn-warning-bg);
 
   @include btn-warning-focus();
   @include btn-warning-hover();
@@ -120,7 +120,7 @@
 }
 
 @mixin btn-info() {
-  background-color: nga-theme(btn-info-bg) !important;
+  background-color: nga-theme(btn-info-bg);
 
   @include btn-info-focus();
   @include btn-info-hover();
@@ -128,7 +128,7 @@
 }
 
 @mixin btn-success() {
-  background-color: nga-theme(btn-success-bg) !important;
+  background-color: nga-theme(btn-success-bg);
 
   @include btn-success-focus();
   @include btn-success-hover();
@@ -136,7 +136,7 @@
 }
 
 @mixin btn-danger() {
-  background-color: nga-theme(btn-danger-bg) !important;
+  background-color: nga-theme(btn-danger-bg);
 
   @include btn-danger-focus();
   @include btn-danger-hover();

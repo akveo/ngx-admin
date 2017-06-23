@@ -5,7 +5,7 @@
 }
 
 @mixin btn-hero-border($border) {
-  border: $border !important;
+  border: $border;
 }
 
 @mixin btn-hero-text() {
@@ -18,7 +18,7 @@
 }
 
 @mixin btn-hero-bevel($color-left, $color-right) {
-  box-shadow: 0 3px 0 0 darken(mix($color-left, $color-right), 14%);
+  box-shadow: 0 3px 0 0 shade(mix($color-left, $color-right), 14%);
 }
 
 @mixin btn-hero-glow($color-left, $color-right) {
@@ -30,7 +30,7 @@
 }
 
 @mixin btn-hero-bevel-glow-shadow($color-left, $color-right) {
-  $bevel: darken(mix($color-left, $color-right), 14%);
+  $bevel: shade(mix($color-left, $color-right), 14%);
   $glow: mix($color-left, $color-right);
 
   box-shadow: 0 3px 0 0 $bevel,
@@ -39,8 +39,8 @@
 }
 
 @mixin btn-hero-hover($color-left, $color-right) {
-  $color-1: lighten($color-left, 14%);
-  $color-2: lighten($color-right, 14%);
+  $color-1: tint($color-left, 14%);
+  $color-2: tint($color-right, 14%);
 
   &:hover,
   .hover {
@@ -49,8 +49,8 @@
 }
 
 @mixin btn-hero-focus($color-left, $color-right) {
-  $color-1: lighten($color-left, 14%);
-  $color-2: lighten($color-right, 14%);
+  $color-1: tint($color-left, 14%);
+  $color-2: tint($color-right, 14%);
 
   &:focus,
   .focus {
@@ -59,15 +59,16 @@
 }
 
 @mixin btn-hero-active($color-left, $color-right) {
-  $color-1: darken($color-left, 14%);
-  $color-2: darken($color-right, 14%);
+
+  $color-1: shade($color-left, 14%);
+  $color-2: shade($color-right, 14%);
 
   &:active,
   .active {
     @include nga-right-gradient($color-1, $color-2);
 
     box-shadow: none;
-    border-color: transparent !important;
+    border-color: transparent;
   }
 }
 
@@ -132,14 +133,14 @@
 
 @mixin btn-hero-info-bevel() {
   $color-right: nga-theme(btn-info-bg);
-  $color-left: btn-hero-gradient-left($color-right);
+  $color-left: btn-hero-gradient-left($color-right, -20deg);
 
   @include btn-hero-bevel($color-left, $color-right);
 }
 
 @mixin btn-hero-danger-bevel() {
   $color-right: nga-theme(btn-danger-bg);
-  $color-left: btn-hero-gradient-left($color-right);
+  $color-left: btn-hero-gradient-left($color-right, -20deg);
 
   @include btn-hero-bevel($color-left, $color-right);
 }
@@ -176,14 +177,14 @@
 
 @mixin btn-hero-info-glow() {
   $color-right: nga-theme(btn-info-bg);
-  $color-left: btn-hero-gradient-left($color-right);
+  $color-left: btn-hero-gradient-left($color-right, -20deg);
 
   @include btn-hero-glow($color-left, $color-right);
 }
 
 @mixin btn-hero-danger-glow() {
   $color-right: nga-theme(btn-danger-bg);
-  $color-left: btn-hero-gradient-left($color-right);
+  $color-left: btn-hero-gradient-left($color-right, -20deg);
 
   @include btn-hero-glow($color-left, $color-right);
 }
@@ -220,14 +221,14 @@
 
 @mixin btn-hero-info-bevel-glow-shadow() {
   $color-right: nga-theme(btn-info-bg);
-  $color-left: btn-hero-gradient-left($color-right);
+  $color-left: btn-hero-gradient-left($color-right, -20deg);
 
   @include btn-hero-bevel-glow-shadow($color-left, $color-right);
 }
 
 @mixin btn-hero-danger-bevel-glow-shadow() {
   $color-right: nga-theme(btn-danger-bg);
-  $color-left: btn-hero-gradient-left($color-right);
+  $color-left: btn-hero-gradient-left($color-right, -20deg);
 
   @include btn-hero-bevel-glow-shadow($color-left, $color-right);
 }
@@ -295,14 +296,14 @@
 
 @mixin btn-hero-info-hover() {
   $color-right: nga-theme(btn-info-bg);
-  $color-left: btn-hero-gradient-left($color-right);
+  $color-left: btn-hero-gradient-left($color-right, -20deg);
 
   @include btn-hero-hover($color-left, $color-right);
 }
 
 @mixin btn-hero-danger-hover() {
   $color-right: nga-theme(btn-danger-bg);
-  $color-left: btn-hero-gradient-left($color-right);
+  $color-left: btn-hero-gradient-left($color-right, -20deg);
 
   @include btn-hero-hover($color-left, $color-right);
 }
@@ -339,14 +340,14 @@
 
 @mixin btn-hero-info-focus() {
   $color-right: nga-theme(btn-info-bg);
-  $color-left: btn-hero-gradient-left($color-right);
+  $color-left: btn-hero-gradient-left($color-right, -20deg);
 
   @include btn-hero-focus($color-left, $color-right);
 }
 
 @mixin btn-hero-danger-focus() {
   $color-right: nga-theme(btn-danger-bg);
-  $color-left: btn-hero-gradient-left($color-right);
+  $color-left: btn-hero-gradient-left($color-right, -20deg);
 
   @include btn-hero-focus($color-left, $color-right);
 }
@@ -383,14 +384,14 @@
 
 @mixin btn-hero-info-active() {
   $color-right: nga-theme(btn-info-bg);
-  $color-left: btn-hero-gradient-left($color-right);
+  $color-left: btn-hero-gradient-left($color-right, -20deg);
 
   @include btn-hero-active($color-left, $color-right);
 }
 
 @mixin btn-hero-danger-active() {
   $color-right: nga-theme(btn-danger-bg);
-  $color-left: btn-hero-gradient-left($color-right);
+  $color-left: btn-hero-gradient-left($color-right, -20deg);
 
   @include btn-hero-active($color-left, $color-right);
 }
@@ -400,7 +401,7 @@
   &:active,
   .active {
     color: darken(#ffffff, 14%);
-    border-color: darken(#ffffff, 14%) !important;
+    border-color: darken(#ffffff, 14%);
     box-shadow: none;
   }
 }

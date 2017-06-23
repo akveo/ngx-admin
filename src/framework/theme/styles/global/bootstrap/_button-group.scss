@@ -5,11 +5,11 @@
  */
 
 @mixin btn-group-divider($color) {
-  border-right-color: darken($color, 5%) !important;
+  border-right-color: shade($color, 14%);
 }
 
 @mixin btn-group-ghost-border($color) {
-  border-color: $color !important;
+  border-color: $color;
 }
 
 
@@ -75,17 +75,17 @@
   }
 
   .btn-group > [class*='btn-outline-']:first-child:not(:last-child):not(.dropdown-toggle) {
-    border-right-color: transparent !important;
+    border-right-color: transparent;
   }
 
   .btn-group > [class*='btn-outline-'] + .dropdown-toggle-split {
-    border-left-color: transparent !important;
+    border-left-color: transparent;
     margin-left: -4px;
     padding-left: calc(1rem + 4px);
   }
 
   .btn-group.btn-group-hidden > .btn {
-    background-color: transparent !important;
+    background-color: transparent;
   }
 
   .btn-group.btn-group-block {
@@ -135,9 +135,9 @@
   }
 
   .btn-group.btn-group-ghost > .btn {
-    background-color: transparent !important;
-    border-radius: nga-theme(btn-border-radius) !important;
-    border-color: #342e73 !important;
+    background-color: transparent;
+    border-radius: nga-theme(btn-border-radius);
+    border-color: #342e73;
   }
 
   .btn-group.btn-group-ghost > .btn:not(:last-child) {

@@ -21,7 +21,7 @@
 }
 
 @mixin btn-outline-border($color) {
-  border: 2px solid $color !important;
+  border: 2px solid $color;
 }
 
 @mixin btn-outline-bg() {
