@@ -20,6 +20,7 @@
       border-radius: 50%;
       flex-shrink: 0;
 
+      // TODO: do we really need important here?
       &.image {
         background-size: cover!important;
         background-repeat: no-repeat!important;

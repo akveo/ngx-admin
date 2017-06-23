@@ -11,10 +11,10 @@ $theme: (
   font-main: SegoeUI,
   font-secondary: Exo,
 
-  font-weight-thin: 100,
-  font-weight-light: 200,
-  font-weight-normal: 300,
-  font-weight-bolder: 400,
+  font-weight-thin: 200,
+  font-weight-light: 300,
+  font-weight-normal: 400,
+  font-weight-bolder: 500,
   font-weight-bold: 600,
   font-weight-ultra-bold: 800,
 
@@ -32,6 +32,7 @@ $theme: (
 
   color-bg: #edf1f7,
   color-fg: #7179a3,
+  color-head: #ffffff,
   color-secondary: #c9c2d5,
 
   separator: color-fg,
@@ -177,7 +178,7 @@ $theme: (
   tabs-header-bg: transparent,
   tabs-separator: separator,
   tabs-fg: color-fg,
-  tabs-fg-secondary: color-secondary,
+  tabs-head-color: color-head,
   tabs-bg: transparent,
 
   route-tabs-font-size: font-size-lg,
@@ -189,7 +190,7 @@ $theme: (
   route-tabs-header-bg: transparent,
   route-tabs-separator: separator,
   route-tabs-fg: color-fg,
-  route-tabs-fg-secondary: color-secondary,
+  route-tabs-head-color: color-head,
   route-tabs-bg: transparent,
 
   user-font-size: font-size,

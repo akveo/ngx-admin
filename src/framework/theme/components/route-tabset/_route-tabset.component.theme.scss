@@ -22,7 +22,7 @@
 
         a {
           padding: nga-theme(route-tabs-padding);
-          color: nga-theme(route-tabs-fg-secondary);
+          color: nga-theme(route-tabs-fg);
 
           &::before {
             @include btn-hero-success-gradient();
@@ -35,7 +35,7 @@
 
           a {
             font-weight: nga-theme(route-tabs-active-font-weight);
-            color: nga-theme(route-tabs-fg);
+            color: nga-theme(route-tabs-head-color);
           }
         }
       }
