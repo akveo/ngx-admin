@@ -18,7 +18,7 @@
     }
 
     @include form-control-validation(nga-theme(form-control-text-secondary-color));
-    @include placeholder(nga-theme(form-control-placeholder-color), nga-theme(form-control-placeholder-font-size));
+    @include install-placeholder(nga-theme(form-control-placeholder-color), nga-theme(form-control-placeholder-font-size));
   }
 
   .form-control-label {

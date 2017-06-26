@@ -60,23 +60,38 @@
   left: 50%;
 }
 
+@mixin install-placeholder($color, $font-size) {
+  $placeholder-selectors: (
+    '::-webkit-input-placeholder'
+    '::-moz-placeholder'
+    ':-moz-placeholder'
+    ':-ms-input-placeholder'
+  );
+
+  &[placeholder] {
+    @include placeholder($color, $font-size);
+  }
+
+  @each $selector in $placeholder-selectors {
+    &#{$selector} {
+      @include placeholder($color, $font-size);
+    }
+
+    &:focus#{$selector} {
+      @include placeholder-focus();
+    }
+  }
+}
+
 @mixin placeholder($color, $font-size) {
-  &::-webkit-input-placeholder {
-    color: $color;
-    font-size: $font-size;
-  }
-  &::-moz-placeholder {
-    color: $color;
-    font-size: $font-size;
-  }
-  /* Firefox 19+ */
-  &:-moz-placeholder {
-    color: $color;
-    font-size: $font-size;
-  }
-  /* Firefox 18- */
-  &:-ms-input-placeholder {
-    color: $color;
-    font-size: $font-size;
-  }
+  color: $color;
+  font-size: $font-size;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  text-overflow:ellipsis;
+}
+
+@mixin placeholder-focus() {
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
