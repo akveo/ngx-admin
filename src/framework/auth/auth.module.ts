@@ -4,7 +4,7 @@ import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
-import { NgaLayoutModule } from '@nga/theme';
+import { NgaLayoutModule } from '@akveo/nga-theme';
 
 import { NgaAuthService } from './services/auth.service';
 import { NgaDummyAuthProvider } from './providers/dummy-auth.provider';

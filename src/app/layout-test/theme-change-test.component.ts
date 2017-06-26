@@ -5,7 +5,7 @@
  */
 
 import { Component } from '@angular/core';
-import { NgaThemeService } from '@nga/theme';
+import { NgaThemeService } from '@akveo/nga-theme';
 
 @Component({
   selector: 'nga-change-theme-test',

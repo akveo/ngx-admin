@@ -8,7 +8,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { List } from 'immutable';
 import { Subscription } from 'rxjs/Subscription';
 
-import { NgaMenuService, NgaMenuItem } from '@nga/theme';
+import { NgaMenuService, NgaMenuItem } from '@akveo/nga-theme';
 
 @Component({
   selector: 'nga-menu-item1',
@@ -162,7 +162,7 @@ export class NgaMenuTestComponent implements OnInit, OnDestroy {
           icon: 'ion ion-happy-outline',
           home: true,
         }, {
-          title: '@nga/theme',
+          title: '@akveo/nga-theme',
           target: '_blank',
           url: 'https://github.com/akveo/ng2-admin',
         }]),

@@ -175,7 +175,7 @@ export const routes: Routes = [
   },
   {
     path: 'auth',
-    loadChildren: '@nga/auth/auth.module#NgaAuthModule',
+    loadChildren: '@akveo/nga-auth/auth.module#NgaAuthModule',
   },
   {
     path: 'search',

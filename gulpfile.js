@@ -165,8 +165,8 @@ const ROLLUP_GLOBALS = {
   '@ng-bootstrap/ng-bootstrap': 'ng-bootstrap.ng-bootstrap',
 
   // @nga dependencies
-  '@nga/theme': 'nga.theme',
-  '@nga/auth': 'nga.auth',
+  '@akveo/nga-theme': 'nga.theme',
+  '@akveo/nga-auth': 'nga.auth',
 };
 const ROLLUP_COMMON_CONFIG = {
   sourceMap: true,
