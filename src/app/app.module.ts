@@ -4,15 +4,14 @@
  * Licensed under the MIT License. See License.txt in the project root for license information.
  */
 
+import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
-import { NgaAuthModule, NgaEmailPassAuthProvider } from '@nga/auth';
+import { List } from 'immutable';
 
-import { NgaMenuItem, NgaSearchModule, NgaThemeModule } from '@nga/theme';
-import { NgaActionsModule } from '@nga/theme/components/actions/actions.module';
+import { NgaThemeModule } from '@nga/theme';
 import { NgaCardModule } from '@nga/theme/components/card/card.module';
 import { NgaLayoutModule } from '@nga/theme/components/layout/layout.module';
 import { NgaMenuModule } from '@nga/theme/components/menu/menu.module';
@@ -20,46 +19,49 @@ import { NgaRouteTabsetModule } from '@nga/theme/components/route-tabset/route-t
 import { NgaSidebarModule } from '@nga/theme/components/sidebar/sidebar.module';
 import { NgaTabsetModule } from '@nga/theme/components/tabset/tabset.module';
 import { NgaUserModule } from '@nga/theme/components/user/user.module';
-import { List } from 'immutable';
-import { NgaActionsTestComponent } from './actions-test/actions-test.component';
+import { NgaAuthModule, NgaDummyAuthProvider, NgaEmailPassAuthProvider } from '@nga/auth';
+import { NgaActionsModule } from '@nga/theme/components/actions/actions.module';
+import { NgaSearchModule } from '@nga/theme';
+import { NgaMenuItem } from '@nga/theme';
 
 import { NgaAppComponent } from './app.component';
-
-import { routes } from './app.routes';
-import { NgaBootstrapTestComponent } from './bootstrap-test/bootstrap-test.component';
 import { NgaCardTestComponent } from './card-test/card-test.component';
-import { NgaFormsTestComponent } from './forms-test/forms-test.component';
-import { NgaLayoutFooterTestComponent } from './layout-test/layout-footer-test.component';
-import { NgaLayoutHeaderTestComponent } from './layout-test/layout-header-test.component';
 import { NgaLayoutTestComponent } from './layout-test/layout-test.component';
+import { NgaLayoutHeaderTestComponent } from './layout-test/layout-header-test.component';
+import { NgaLayoutFooterTestComponent } from './layout-test/layout-footer-test.component';
 import { NgaThemeChangeTestComponent } from './layout-test/theme-change-test.component';
-import { NgaDynamicToAddComponent, NgaThemeDynamicTestComponent } from './layout-test/theme-dynamic-test.component';
+import { NgaTabsetTestComponent } from './tabset-test/tabset-test.component';
 import {
+  NgaRouteTabsetTestComponent,
+  NgaRouteTabsetTestChild1Component,
+  NgaRouteTabsetTestChild2Component,
+} from './route-tabset-test/route-tabset-test.component';
+
+import { NgaSidebarTestComponent } from './sidebar-test/sidebar-test.component';
+import { NgaSidebarTestOneComponent } from './sidebar-test/sidebar-test-one.component';
+import { NgaSidebarTestTwoComponent } from './sidebar-test/sidebar-test-two.component';
+import { NgaSidebarTestThreeComponent } from './sidebar-test/sidebar-test-three.component';
+import {
+  NgaMenuTestComponent,
   NgaMenuItem1Component,
   NgaMenuItem2Component,
   NgaMenuItem31Component,
+  NgaMenuItem3Component,
   NgaMenuItem32Component,
+  NgaMenuItem33Component,
   NgaMenuItem331Component,
   NgaMenuItem332Component,
-  NgaMenuItem33Component,
-  NgaMenuItem3Component,
   NgaMenuItem4Component,
-  NgaMenuTestComponent,
 } from './menu-test/menu-test.component';
-import {
-  NgaRouteTabsetTestChild1Component,
-  NgaRouteTabsetTestChild2Component,
-  NgaRouteTabsetTestComponent,
-} from './route-tabset-test/route-tabset-test.component';
+import { NgaUserTestComponent } from './user-test/user-test.component';
+import { NgaThemeDynamicTestComponent, NgaDynamicToAddComponent } from './layout-test/theme-dynamic-test.component';
+import { NgaActionsTestComponent } from './actions-test/actions-test.component';
+import { NgaBootstrapTestComponent } from './bootstrap-test/bootstrap-test.component';
+
+import { routes } from './app.routes';
 
 import { NgaSearchTestComponent } from './search-test/search-test.component';
-import { NgaSidebarTestOneComponent } from './sidebar-test/sidebar-test-one.component';
-import { NgaSidebarTestThreeComponent } from './sidebar-test/sidebar-test-three.component';
-import { NgaSidebarTestTwoComponent } from './sidebar-test/sidebar-test-two.component';
-
-import { NgaSidebarTestComponent } from './sidebar-test/sidebar-test.component';
-import { NgaTabsetTestComponent } from './tabset-test/tabset-test.component';
-import { NgaUserTestComponent } from './user-test/user-test.component';
+import { NgaFormsTestComponent } from './forms-test/forms-test.component';
 
 const NGA_TEST_COMPONENTS = [
   NgaAppComponent,
@@ -101,7 +103,7 @@ const NGA_TEST_COMPONENTS = [
     FormsModule,
     HttpModule,
     RouterModule.forRoot(routes, { useHash: true }),
-    NgaThemeModule.forRoot({ name: 'cosmic' }),
+    NgaThemeModule.forRoot({ name: 'default' }),
     NgaCardModule,
     NgaLayoutModule,
     NgaMenuModule.forRoot({

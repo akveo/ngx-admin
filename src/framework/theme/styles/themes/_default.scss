@@ -311,7 +311,7 @@ $theme: (
   form-control-warning-border-color: color-warning,
 
   form-control-placeholder-color: color-fg,
-  form-control-placeholder-font-size: 0.8rem,
+  form-control-placeholder-font-size: 0.875rem,
   form-control-placeholder-ellipsis: true,
   form-control-placeholder-opacity-transition: true,
 
@@ -328,8 +328,8 @@ $theme: (
 
   form-control-label-font-weight: 400,
 
-  form-control-feedback-font-size: 0.8rem,
-  form-control-feedback-font-weight: 400,
+  form-control-feedback-font-size: 0.875rem,
+  form-control-feedback-font-weight: font-weight-normal,
 );
 
 // register the theme
