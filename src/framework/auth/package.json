@@ -1,6 +1,6 @@
 {
   "name": "@akveo/nga-auth",
-  "version": "2.0.0-alpha.1-dev.1",
+  "version": "2.0.0-alpha.1-dev.2",
   "description": "@akveo/nga-auth",
   "main": "./bundles/auth.umd.js",
   "es2015": "./bundles/auth.es2015.js",
