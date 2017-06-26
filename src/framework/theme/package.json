@@ -1,5 +1,5 @@
 {
-  "name": "@nga/theme",
+  "name": "@akveo/nga-theme",
   "version": "2.0.0-alpha.1",
   "description": "@nga/theme",
   "main": "./bundles/theme.umd.js",
