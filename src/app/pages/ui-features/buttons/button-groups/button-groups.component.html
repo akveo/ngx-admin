@@ -5,26 +5,26 @@
       <div class="col-md-12">
         <div>
           <div>Toogle Types</div>
-          <div class="btn-group btn-group-block btn-group-divider" data-toggle="buttons">
+          <div [(ngModel)]="radioModel" ngbRadioGroup class="btn-group-block btn-group-divider" data-toggle="buttons">
             <label class="btn btn-primary">
-              <input type="checkbox" autocomplete="off"/> Left
+              <input type="radio" value="Left"/> Left
             </label>
             <label class="btn btn-primary">
-              <input type="checkbox" autocomplete="off"/> Middle
+              <input type="radio" value="Middle"/> Middle
             </label>
             <label class="btn btn-primary">
-              <input type="checkbox" autocomplete="off"/> Right
+              <input type="radio" value="Right"/> Right
             </label>
           </div>
           <div class="btn-group btn-group-block btn-group-divider" data-toggle="buttons">
-            <label class="btn btn-primary">
-              <input type="radio" autocomplete="off"/> Left
+            <label class="btn btn-primary" [class.active]="checkboxModel.left">
+              <input type="checkbox" [(ngModel)]="checkboxModel.left"/> Left
             </label>
-            <label class="btn btn-primary">
-              <input type="radio" autocomplete="off"/> Middle
+            <label class="btn btn-primary" [class.active]="checkboxModel.middle">
+              <input type="checkbox" [(ngModel)]="checkboxModel.middle"/> Middle
             </label>
-            <label class="btn btn-primary">
-              <input type="radio" autocomplete="off"/> Right
+            <label class="btn btn-primary" [class.active]="checkboxModel.right">
+              <input type="checkbox" [(ngModel)]="checkboxModel.right"/> Right
             </label>
           </div>
         </div>
@@ -33,19 +33,19 @@
             <div>Pagination</div>
             <div class="btn-group btn-group-divider btn-group-pagination" data-toggle="buttons">
               <label class="btn btn-success">
-                <input type="radio" autocomplete="off"/> 1
+                <input type="radio"/> 1
               </label>
               <label class="btn btn-success">
-                <input type="radio" autocomplete="off"/> 2
+                <input type="radio"/> 2
               </label>
               <label class="btn btn-success">
-                <input type="radio" autocomplete="off"/> 3
+                <input type="radio"/> 3
               </label>
               <label class="btn btn-success">
-                <input type="radio" autocomplete="off"/> 4
+                <input type="radio"/> 4
               </label>
               <label class="btn btn-success">
-                <input type="radio" autocomplete="off"/> 5
+                <input type="radio" /> 5
               </label>
             </div>
           </div>
@@ -53,65 +53,65 @@
             <div>Icon Toolbar</div>
             <div class="btn-group btn-group-divider btn-group-pagination" data-toggle="buttons">
               <label class="btn btn-success">
-                <input type="radio" autocomplete="off"/> <i class="ion-ionic"></i>
+                <input type="radio"/> <i class="ion-ionic"></i>
               </label>
               <label class="btn btn-success">
-                <input type="radio" autocomplete="off"/> <i class="ion-ionic"></i>
+                <input type="radio"/> <i class="ion-ionic"></i>
               </label>
               <label class="btn btn-success">
-                <input type="radio" autocomplete="off"/> <i class="ion-ionic"></i>
+                <input type="radio"/> <i class="ion-ionic"></i>
               </label>
               <label class="btn btn-success">
-                <input type="radio" autocomplete="off"/> <i class="ion-ionic"></i>
+                <input type="radio"/> <i class="ion-ionic"></i>
               </label>
             </div>
           </div>
         </div>
         <div>
           <div>Divided Button Group</div>
-          <div class="btn-group btn-group-block btn-group-ghost" data-toggle="buttons">
-            <label class="btn btn-success">
-              <input type="checkbox" autocomplete="off"/>
+          <div class="btn-group btn-group-block btn-group-divided" data-toggle="buttons">
+            <label class="btn btn-outline-success btn-icon" [class.active]="dividedCheckboxModel.monday">
+              <input type="checkbox" [(ngModel)]="dividedCheckboxModel.monday"/> <i class="ion-paper-airplane"></i>
             </label>
-            <label class="btn btn-success">
-              <input type="checkbox" autocomplete="off"/>
+            <label class="btn btn-outline-success btn-icon" [class.active]="dividedCheckboxModel.tuesday">
+              <input type="checkbox" [(ngModel)]="dividedCheckboxModel.tuesday"/> <i class="ion-paper-airplane"></i>
             </label>
-            <label class="btn btn-success">
-              <input type="checkbox" autocomplete="off"/>
+            <label class="btn btn-outline-success btn-icon" [class.active]="dividedCheckboxModel.wednesday">
+              <input type="checkbox" [(ngModel)]="dividedCheckboxModel.wednesday"/> <i class="ion-paper-airplane"></i>
             </label>
-            <label class="btn btn-success">
-              <input type="checkbox" autocomplete="off"/>
+            <label class="btn btn-outline-success btn-icon" [class.active]="dividedCheckboxModel.thursday">
+              <input type="checkbox" [(ngModel)]="dividedCheckboxModel.thursday"/> <i class="ion-paper-airplane"></i>
             </label>
-            <label class="btn btn-success">
-              <input type="checkbox" autocomplete="off"/>
+            <label class="btn btn-outline-success btn-icon" [class.active]="dividedCheckboxModel.friday">
+              <input type="checkbox" [(ngModel)]="dividedCheckboxModel.friday"/> <i class="ion-paper-airplane"></i>
             </label>
-            <label class="btn btn-success">
-              <input type="checkbox" autocomplete="off"/> Right
+            <label class="btn btn-outline-success btn-icon" [class.active]="dividedCheckboxModel.saturday">
+              <input type="checkbox" [(ngModel)]="dividedCheckboxModel.saturday"/> <i class="ion-paper-airplane"></i>
             </label>
           </div>
         </div>
         <div>
           <div>Divided Button Group</div>
-          <div class="btn-group btn-group-block btn-group-hidden" data-toggle="buttons">
+          <div [(ngModel)]="radioModel" ngbRadioGroup class="btn-group btn-group-block btn-group-divided-hidden" data-toggle="buttons">
             <label class="btn btn-primary">
-              <input type="checkbox" autocomplete="off"/> Left
+              <input type="radio" value="Left"/> Left
             </label>
             <label class="btn btn-primary">
-              <input type="checkbox" autocomplete="off"/> Middle
+              <input type="radio" value="Middle"/> Middle
             </label>
             <label class="btn btn-primary">
-              <input type="checkbox" autocomplete="off"/> Right
+              <input type="radio" value="Right"/> Right
             </label>
           </div>
-          <div class="btn-group btn-group-block btn-group-hidden" data-toggle="buttons">
-            <label class="btn btn-primary">
-              <input type="checkbox" autocomplete="off"/> Left
+          <div class="btn-group btn-group-block btn-group-divided-hidden" data-toggle="buttons">
+            <label class="btn btn-primary" [class.active]="checkboxModel.left">
+              <input type="checkbox" [(ngModel)]="checkboxModel.left"/> Left
             </label>
-            <label class="btn btn-primary">
-              <input type="checkbox" autocomplete="off"/> Middle
+            <label class="btn btn-primary" [class.active]="checkboxModel.middle">
+              <input type="checkbox" [(ngModel)]="checkboxModel.middle"/> Middle
             </label>
-            <label class="btn btn-primary">
-              <input type="checkbox" autocomplete="off"/> Right
+            <label class="btn btn-primary" [class.active]="checkboxModel.right">
+              <input type="checkbox" [(ngModel)]="checkboxModel.right"/> Right
             </label>
           </div>
         </div>
