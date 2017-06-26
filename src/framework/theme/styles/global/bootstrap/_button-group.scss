@@ -4,81 +4,22 @@
  * Licensed under the MIT License. See License.txt in the project root for license information.
  */
 
-@mixin btn-group-divider($color) {
-  border-right-color: shade($color, 14%);
-}
-
-@mixin btn-group-ghost-border($color) {
-  border-color: $color;
-}
-
-
-// Divider
-@mixin btn-group-primary-divider() {
-  @include btn-group-divider(nga-theme(btn-primary-bg));
-}
-
-@mixin btn-group-warning-divider() {
-  @include btn-group-divider(nga-theme(btn-warning-bg));
-}
-
-@mixin btn-group-success-divider() {
-  @include btn-group-divider(nga-theme(btn-success-bg));
-}
-
-@mixin btn-group-info-divider() {
-  @include btn-group-divider(nga-theme(btn-info-bg));
-}
-
-@mixin btn-group-danger-divider() {
-  @include btn-group-divider(nga-theme(btn-danger-bg));
-}
-
-@mixin btn-group-secondary-divider() {
-  @include btn-group-divider(nga-theme(btn-secondary-border));
-}
-
-
-// Border
-@mixin btn-group-ghost-primary-border() {
-  @include btn-group-ghost-border(nga-theme(btn-primary-bg));
-}
-
-@mixin btn-group-ghost-warning-border() {
-  @include btn-group-ghost-border(nga-theme(btn-warning-bg));
-}
-
-@mixin btn-group-ghost-success-border() {
-  @include btn-group-ghost-border(nga-theme(btn-success-bg));
-}
-
-@mixin btn-group-ghost-info-border() {
-  @include btn-group-ghost-border(nga-theme(btn-info-bg));
-}
-
-@mixin btn-group-ghost-danger-border() {
-  @include btn-group-ghost-border(nga-theme(btn-danger-bg));
-}
-
-@mixin btn-group-ghost-secondary-border() {
-  @include btn-group-ghost-border(nga-theme(btn-secondary-border));
-}
-
+@import './hero-buttons';
 
 @mixin nga-b-button-group-theme() {
 
-  .btn + .dropdown-toggle-split,
-  .btn-sm + .dropdown-toggle-split,
-  .btn-lg + .dropdown-toggle-split {
+  .btn + .dropdown-toggle,
+  .btn-sm + .dropdown-toggle,
+  .btn-lg + .dropdown-toggle {
     padding-left: 1rem;
     padding-right: 1rem;
   }
 
-  .btn-group > [class*='btn-outline-']:first-child:not(:last-child):not(.dropdown-toggle) {
+  .btn-group.dropdown > [class*='btn-outline-']:first-child:not(:last-child):not(.dropdown-toggle) {
     border-right-color: transparent;
   }
 
-  .btn-group > [class*='btn-outline-'] + .dropdown-toggle-split {
+  .btn-group > [class*='btn-outline-'] + .dropdown-toggle {
     border-left-color: transparent;
     margin-left: -4px;
     padding-left: calc(1rem + 4px);
@@ -134,39 +75,121 @@
     padding-right: 1.125rem;
   }
 
-  .btn-group.btn-group-ghost > .btn {
-    background-color: transparent;
+  .btn-group.btn-group-divided {
+    .btn.active {
+      &.btn-primary,
+      &.btn-outline-primary {
+        @include btn-primary-glow();
+      }
+
+      &.btn-warning,
+      &.btn-outline-warning {
+        @include btn-warning-glow();
+      }
+
+      &.btn-success,
+      &.btn-outline-success {
+        @include btn-success-glow();
+      }
+
+      &.btn-info,
+      &.btn-outline-info {
+        @include btn-info-glow();
+      }
+
+      &.btn-danger,
+      &.btn-outline-danger {
+        @include btn-danger-glow();
+      }
+
+      &.btn-secondary,
+      &.btn-outline-secondary {
+        @include btn-secondary-glow();
+      }
+    }
+  }
+
+  .btn-group.btn-group-divided > .btn {
     border-radius: nga-theme(btn-border-radius);
+  }
+
+  .btn-group.btn-group-divided > .btn:not(.active) {
     border-color: #342e73;
   }
 
-  .btn-group.btn-group-ghost > .btn:not(:last-child) {
+  .btn-group.btn-group-divided > .btn:not(:last-child) {
     margin-right: 0.5rem;
   }
 
-  .btn-group.btn-group-ghost {
-    .btn-primary {
-      // @include btn-group-ghost-primary-border();
-    }
-
-    .btn-warning {
-      // @include btn-group-ghost-warning-border();
-    }
-
-    .btn-success {
-      // @include btn-group-ghost-success-border();
-    }
-
-    .btn-info {
-      // @include btn-group-ghost-info-border();
-    }
-
-    .btn-danger {
-      // @include btn-group-ghost-danger-border();
-    }
-
-    .btn-secondary {
-      // @include btn-group-ghost-secondary-border();
-    }
+  .btn-group.btn-group-divided-hidden .btn:not(.active) {
+    background-color: transparent;
   }
+
+  .btn-group.btn-group-divided-hidden .btn:not(:last-child) {
+    margin-right: 1rem;
+  }
+
+  .btn-group.btn-group-divided-hidden .btn:first-child:not(:last-child):not(.dropdown-toggle),
+  .btn-group.btn-group-divided .btn:first-child:not(:last-child):not(.dropdown-toggle),
+  .btn-group.btn-group-divided-hidden .btn:not(:first-child):not(:last-child):not(.dropdown-toggle),
+  .btn-group.btn-group-divided .btn:not(:first-child):not(:last-child):not(.dropdown-toggle),
+  .btn-group.btn-group-divided .btn,
+  .btn-group.btn-group-divided-hidden .btn {
+    border-radius: nga-theme(btn-border-radius);
+  }
+}
+
+
+// Divider
+@mixin btn-group-divider($color) {
+  border-right-color: shade($color, 14%);
+}
+
+@mixin btn-group-primary-divider() {
+  @include btn-group-divider(nga-theme(btn-primary-bg));
+}
+
+@mixin btn-group-warning-divider() {
+  @include btn-group-divider(nga-theme(btn-warning-bg));
+}
+
+@mixin btn-group-success-divider() {
+  @include btn-group-divider(nga-theme(btn-success-bg));
+}
+
+@mixin btn-group-info-divider() {
+  @include btn-group-divider(nga-theme(btn-info-bg));
+}
+
+@mixin btn-group-danger-divider() {
+  @include btn-group-divider(nga-theme(btn-danger-bg));
+}
+
+@mixin btn-group-secondary-divider() {
+  @include btn-group-divider(nga-theme(btn-secondary-border));
+}
+
+// Glow
+@mixin btn-primary-glow() {
+  @include btn-hero-primary-glow();
+}
+
+@mixin btn-warning-glow() {
+  @include btn-hero-warning-glow();
+}
+
+@mixin btn-success-glow() {
+  @include btn-hero-success-glow();
+}
+
+@mixin btn-info-glow() {
+  @include btn-hero-info-glow();
+}
+
+@mixin btn-danger-glow() {
+  @include btn-hero-danger-glow();
+}
+
+@mixin btn-secondary-glow() {
+  @include btn-hero-secondary-glow();
 }

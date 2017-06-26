@@ -1,3 +1,23 @@
+/**
+ * @license
+ * Copyright Akveo. All Rights Reserved.
+ * Licensed under the MIT License. See License.txt in the project root for license information.
+ */
+
+@mixin btn-shape() {
+  .btn.btn-rectangle {
+    @include btn-rectangle();
+  }
+
+  .btn.btn-semi-round {
+    @include btn-semi-round();
+  }
+
+  .btn.btn-round {
+    @include btn-round();
+  }
+}
+
 @mixin btn-rectangle() {
   @include button-size(nga-theme(btn-padding-y),
                        nga-theme(btn-padding-x),
@@ -17,18 +37,4 @@
                        nga-theme(btn-padding-x),
                        nga-theme(btn-font-size),
                        nga-theme(btn-round-border-radius));
-}
-
-@mixin btn-shape() {
-  .btn.btn-rectangle {
-    @include btn-rectangle();
-  }
-
-  .btn.btn-semi-round {
-    @include btn-semi-round();
-  }
-
-  .btn.btn-round {
-    @include btn-round();
-  }
 }

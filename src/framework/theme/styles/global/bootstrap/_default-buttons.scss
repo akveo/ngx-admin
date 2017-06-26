@@ -1,106 +1,34 @@
-@function btn-hover-focus($bg, $percentage: 14%) {
-  @return tint(nga-theme($bg), $percentage);
-}
+/**
+ * @license
+ * Copyright Akveo. All Rights Reserved.
+ * Licensed under the MIT License. See License.txt in the project root for license information.
+ */
 
-@function btn-active($bg, $percentage: 14%) {
-  @return shade(nga-theme($bg), $percentage);
-}
+@mixin btn-default() {
 
-@mixin btn-focus($focus) {
-  &:focus,
-  &.focus {
-    background-color: $focus;
-    border-color: transparent;
-    box-shadow: none;
+  .btn.btn-primary {
+    @include btn-primary();
   }
-}
 
-@mixin btn-hover($hover) {
-  &:hover,
-  &.hover {
-    background-color: $hover;
-    border-color: transparent;
+  .btn.btn-warning {
+    @include btn-warning();
   }
-}
 
-@mixin btn-active($active) {
-  &:active,
-  &.active {
-    background-color: $active;
-    border-color: transparent;
+  .btn.btn-info {
+    @include btn-info();
   }
-}
 
-@mixin btn-primary-focus() {
-  @include btn-focus(btn-hover-focus(btn-primary-bg));
-}
+  .btn.btn-success {
+    @include btn-success();
+  }
 
-@mixin btn-primary-hover() {
-  @include btn-hover(btn-hover-focus(btn-primary-bg));
-}
+  .btn.btn-danger {
+    @include btn-danger();
+  }
 
-@mixin btn-primary-active() {
-  @include btn-active(btn-active(btn-primary-bg));
-}
-
-@mixin btn-success-focus() {
-  @include btn-focus(btn-hover-focus(btn-success-bg));
-}
-@mixin btn-success-hover() {
-  @include btn-hover(btn-hover-focus(btn-success-bg));
-}
-@mixin btn-success-active() {
-  @include btn-active(btn-active(btn-success-bg));
-}
-
-@mixin btn-warning-focus() {
-  @include btn-focus(btn-hover-focus(btn-warning-bg));
-}
-@mixin btn-warning-hover() {
-  @include btn-hover(btn-hover-focus(btn-warning-bg));
-}
-@mixin btn-warning-active() {
-  @include btn-active(btn-active(btn-warning-bg));
-}
-
-@mixin btn-info-focus() {
-  @include btn-focus(btn-hover-focus(btn-info-bg));
-}
-@mixin btn-info-hover() {
-  @include btn-hover(btn-hover-focus(btn-info-bg));
-}
-@mixin btn-info-active() {
-  @include btn-active(btn-active(btn-info-bg));
-}
-
-@mixin btn-danger-focus() {
-  @include btn-focus(btn-hover-focus(btn-danger-bg));
-}
-@mixin btn-danger-hover() {
-  @include btn-hover(btn-hover-focus(btn-danger-bg));
-}
-@mixin btn-danger-active() {
-  @include btn-active(btn-active(btn-danger-bg));
-}
-
-@mixin btn-secondary-focus() {
-  @include btn-focus(btn-hover-focus(btn-secondary-border, 5%));
-}
-
-@mixin btn-secondary-hover() {
-  @include btn-hover(btn-hover-focus(btn-secondary-border, 5%));
-}
-
-@mixin btn-secondary-active() {
-  @include btn-active(btn-active(btn-secondary-border));
-}
-
-@mixin btn-secondary-border() {
-  border: 2px solid nga-theme(btn-secondary-border);
-}
-
-@mixin btn-secondary-bg() {
-  background-color: nga-theme(btn-secondary-bg);
+  .btn.btn-secondary {
+    @include btn-secondary();
+  }
 }
 
 @mixin btn-primary() {
@@ -151,29 +79,122 @@
   @include btn-secondary-active();
 }
 
-@mixin btn-default() {
+@function btn-hover($bg, $percentage: 14%) {
+  @return tint(nga-theme($bg), $percentage);
+}
 
-  .btn.btn-primary {
-    @include btn-primary();
-  }
+@function btn-focus-active($bg, $percentage: 14%) {
+  @return shade(nga-theme($bg), $percentage);
+}
 
-  .btn.btn-warning {
-    @include btn-warning();
+@mixin btn-focus($focus) {
+  &:focus,
+  &.focus {
+    background-color: $focus;
+    border-color: transparent;
+    box-shadow: none;
   }
+}
 
-  .btn.btn-info {
-    @include btn-info();
+@mixin btn-hover($hover) {
+  &:hover,
+  &.hover {
+    background-color: $hover;
+    border-color: transparent;
   }
+}
 
-  .btn.btn-success {
-    @include btn-success();
+@mixin btn-active($active) {
+  &:active,
+  &.active {
+    background-color: $active;
+    border-color: transparent;
   }
+}
 
-  .btn.btn-danger {
-    @include btn-danger();
-  }
 
-  .btn.btn-secondary {
-    @include btn-secondary();
-  }
+// Focus
+@mixin btn-primary-focus() {
+  @include btn-focus(btn-focus-active(btn-primary-bg));
+}
+
+@mixin btn-warning-focus() {
+  @include btn-focus(btn-focus-active(btn-warning-bg));
+}
+
+@mixin btn-success-focus() {
+  @include btn-focus(btn-focus-active(btn-success-bg));
+}
+
+@mixin btn-info-focus() {
+  @include btn-focus(btn-focus-active(btn-info-bg));
+}
+
+@mixin btn-danger-focus() {
+  @include btn-focus(btn-focus-active(btn-danger-bg));
+}
+
+@mixin btn-secondary-focus() {
+  @include btn-focus(btn-focus-active(btn-secondary-border));
+}
+
+
+// Hover
+@mixin btn-primary-hover() {
+  @include btn-hover(btn-hover(btn-primary-bg));
+}
+
+@mixin btn-warning-hover() {
+  @include btn-hover(btn-hover(btn-warning-bg));
+}
+
+@mixin btn-success-hover() {
+  @include btn-hover(btn-hover(btn-success-bg));
+}
+
+@mixin btn-info-hover() {
+  @include btn-hover(btn-hover(btn-info-bg));
+}
+
+@mixin btn-danger-hover() {
+  @include btn-hover(btn-hover(btn-danger-bg));
+}
+
+@mixin btn-secondary-hover() {
+  @include btn-hover(btn-hover(btn-secondary-border));
+}
+
+
+// Active
+@mixin btn-primary-active() {
+  @include btn-active(btn-focus-active(btn-primary-bg));
+}
+
+@mixin btn-success-active() {
+  @include btn-active(btn-focus-active(btn-success-bg));
+}
+
+@mixin btn-warning-active() {
+  @include btn-active(btn-focus-active(btn-warning-bg));
+}
+
+@mixin btn-info-active() {
+  @include btn-active(btn-focus-active(btn-info-bg));
+}
+
+@mixin btn-danger-active() {
+  @include btn-active(btn-focus-active(btn-danger-bg));
+}
+
+@mixin btn-secondary-active() {
+  @include btn-active(btn-focus-active(btn-secondary-border));
+}
+
+
+@mixin btn-secondary-border() {
+  border: 2px solid nga-theme(btn-secondary-border);
+}
+
+@mixin btn-secondary-bg() {
+  background-color: nga-theme(btn-secondary-bg);
 }

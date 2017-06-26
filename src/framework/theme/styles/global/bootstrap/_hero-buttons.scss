@@ -1,3 +1,95 @@
+/**
+ * @license
+ * Copyright Akveo. All Rights Reserved.
+ * Licensed under the MIT License. See License.txt in the project root for license information.
+ */
+
+@mixin btn-hero() {
+  .btn.btn-hero-primary {
+    @include btn-hero-primary();
+  }
+
+  .btn.btn-hero-warning {
+    @include btn-hero-warning();
+  }
+
+  .btn.btn-hero-success {
+    @include btn-hero-success();
+  }
+
+  .btn.btn-hero-info {
+    @include btn-hero-info();
+  }
+
+  .btn.btn-hero-danger {
+    @include btn-hero-danger();
+  }
+
+  .btn.btn-hero-secondary {
+    @include btn-hero-secondary();
+  }
+}
+
+@mixin btn-hero-primary() {
+  @include btn-hero-primary-gradient();
+  @include btn-hero-primary-bevel-glow-shadow();
+  @include btn-hero-text();
+  @include btn-hero-primary-focus();
+  @include btn-hero-primary-hover();
+  @include btn-hero-primary-active();
+  @include btn-hero-primary-border();
+}
+
+@mixin btn-hero-warning() {
+  @include btn-hero-warning-gradient();
+  @include btn-hero-warning-bevel-glow-shadow();
+  @include btn-hero-text();
+  @include btn-hero-warning-focus();
+  @include btn-hero-warning-hover();
+  @include btn-hero-warning-active();
+  @include btn-hero-warning-border();
+}
+
+@mixin btn-hero-success() {
+  @include btn-hero-success-gradient();
+  @include btn-hero-success-bevel-glow-shadow();
+  @include btn-hero-text();
+  @include btn-hero-success-focus();
+  @include btn-hero-success-hover();
+  @include btn-hero-success-active();
+  @include btn-hero-success-border();
+}
+
+@mixin btn-hero-info() {
+  @include btn-hero-info-gradient();
+  @include btn-hero-info-bevel-glow-shadow();
+  @include btn-hero-text();
+  @include btn-hero-info-focus();
+  @include btn-hero-info-hover();
+  @include btn-hero-info-active();
+  @include btn-hero-info-border();
+}
+
+@mixin btn-hero-danger() {
+  @include btn-hero-danger-gradient();
+  @include btn-hero-danger-bevel-glow-shadow();
+  @include btn-hero-text();
+  @include btn-hero-danger-focus();
+  @include btn-hero-danger-hover();
+  @include btn-hero-danger-active();
+  @include btn-hero-danger-border();
+}
+
+@mixin btn-hero-secondary() {
+  @include btn-hero-secondary-bg();
+  @include btn-hero-secondary-bevel-glow-shadow();
+  @include btn-hero-text();
+  @include btn-hero-secondary-focus();
+  @include btn-hero-secondary-hover();
+  @include btn-hero-secondary-active();
+  @include btn-hero-secondary-border();
+}
+
 @function btn-hero-gradient-left($color, $degrees: 20deg) {
   @return adjust-hue($color, $degrees);
 }
@@ -88,6 +180,9 @@
   &:focus,
   .focus {
     @include nga-right-gradient($color-left, $color-right);
+
+    box-shadow: none;
+    border-color: transparent;
   }
 }
 
@@ -357,6 +452,7 @@
   &:focus,
   .focus {
     background-color: rgba(nga-theme(btn-secondary-border), 0.14);
+    box-shadow: none;
   }
 }
 
@@ -405,94 +501,5 @@
     border-color: shade($color, 14%);
     box-shadow: none;
     background: none;
-  }
-}
-
-// Hero buttons
-@mixin btn-hero-primary() {
-  @include btn-hero-primary-gradient();
-  @include btn-hero-primary-bevel-glow-shadow();
-  @include btn-hero-text();
-  @include btn-hero-primary-hover();
-  @include btn-hero-primary-focus();
-  @include btn-hero-primary-active();
-  @include btn-hero-primary-border();
-}
-
-@mixin btn-hero-warning() {
-  @include btn-hero-warning-gradient();
-  @include btn-hero-warning-bevel-glow-shadow();
-  @include btn-hero-text();
-  @include btn-hero-warning-hover();
-  @include btn-hero-warning-focus();
-  @include btn-hero-warning-active();
-  @include btn-hero-warning-border();
-}
-
-@mixin btn-hero-success() {
-  @include btn-hero-success-gradient();
-  @include btn-hero-success-bevel-glow-shadow();
-  @include btn-hero-text();
-  @include btn-hero-success-hover();
-  @include btn-hero-success-focus();
-  @include btn-hero-success-active();
-  @include btn-hero-success-border();
-}
-
-@mixin btn-hero-info() {
-  @include btn-hero-info-gradient();
-  @include btn-hero-info-bevel-glow-shadow();
-  @include btn-hero-text();
-  @include btn-hero-info-hover();
-  @include btn-hero-info-focus();
-  @include btn-hero-info-active();
-  @include btn-hero-info-border();
-}
-
-@mixin btn-hero-danger() {
-  @include btn-hero-danger-gradient();
-  @include btn-hero-danger-bevel-glow-shadow();
-  @include btn-hero-text();
-  @include btn-hero-danger-hover();
-  @include btn-hero-danger-focus();
-  @include btn-hero-danger-active();
-  @include btn-hero-danger-border();
-}
-
-@mixin btn-hero-secondary() {
-  @include btn-hero-secondary-bg();
-  @include btn-hero-secondary-bevel-glow-shadow();
-  @include btn-hero-text();
-  @include btn-hero-secondary-hover();
-  @include btn-hero-secondary-focus();
-  @include btn-hero-secondary-active();
-  @include btn-hero-secondary-border();
-}
-
-
-// Initialization
-@mixin btn-hero() {
-  .btn.btn-hero-primary {
-    @include btn-hero-primary();
-  }
-
-  .btn.btn-hero-warning {
-    @include btn-hero-warning();
-  }
-
-  .btn.btn-hero-success {
-    @include btn-hero-success();
-  }
-
-  .btn.btn-hero-info {
-    @include btn-hero-info();
-  }
-
-  .btn.btn-hero-danger {
-    @include btn-hero-danger();
-  }
-
-  .btn.btn-hero-secondary {
-    @include btn-hero-secondary();
   }
 }
