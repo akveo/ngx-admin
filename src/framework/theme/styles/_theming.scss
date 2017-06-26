@@ -65,13 +65,26 @@ $nga-enabled-themes: () !global;
 
   @return $themes-to-install;
 }
-
+// TODO: we hide :host inside of it which is not obvious
 @mixin nga-install-component() {
 
   $themes-to-install: get-enabled-themes();
 
   @each $theme-name, $theme in $themes-to-install {
     :host-context(.nga-theme-#{$theme-name}) {
+      $theme: $theme !global;
+      @content;
+    }
+  }
+}
+
+// TODO: another mixing for the almost same thing
+@mixin nga-install-root-component() {
+
+  $themes-to-install: get-enabled-themes();
+
+  @each $theme-name, $theme in $themes-to-install {
+    :host .nga-theme-#{$theme-name} {
       $theme: $theme !global;
       @content;
     }
