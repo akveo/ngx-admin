@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { NgaActionsModule, NgaSearchModule, NgaUserModule } from '@nga/theme';
+import { NgaActionsModule, NgaSearchModule, NgaUserModule } from '@akveo/nga-theme';
 
 import { SharedModule } from '../../../shared.module';
 

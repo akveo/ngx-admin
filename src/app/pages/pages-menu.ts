@@ -1,4 +1,4 @@
-import { NgaMenuItem } from '@nga/theme';
+import { NgaMenuItem } from '@akveo/nga-theme';
 
 import { List } from 'immutable';
 

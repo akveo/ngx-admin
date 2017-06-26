@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
-import { NgaSidebarService, NgaMenuService } from '@nga/theme';
-import { NgaThemeService } from '@nga/theme/services/theme.service';
+import { NgaSidebarService, NgaMenuService } from '@akveo/nga-theme';
+import { NgaThemeService } from '@akveo/nga-theme/services/theme.service';
 
 @Component({
   selector: 'ngx-header',

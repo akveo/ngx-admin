@@ -1,7 +1,7 @@
 // nga theming framework
-@import '~@nga/theme/styles/theming';
+@import '~@akveo/nga-theme/styles/theming';
 // nga our of the box themes
-@import '~@nga/theme/styles/themes';
+@import '~@akveo/nga-theme/styles/themes';
 
 // which themes you what to enable (empty to enable all - not recommended)
 $nga-enabled-themes: (default, light, cosmic);

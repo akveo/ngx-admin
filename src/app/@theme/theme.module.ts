@@ -12,7 +12,7 @@ import {
   NgaUserModule,
   NgaActionsModule,
   NgaSearchModule,
-} from '@nga/theme';
+} from '@akveo/nga-theme';
 
 import {
   HeaderComponent,

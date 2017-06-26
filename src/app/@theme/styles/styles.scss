@@ -2,8 +2,8 @@
 @import 'variables';
 
 // framework component themes (styles tied to theme variables)
-@import '~@nga/theme/styles/globals';
-@import '~@nga/auth/styles/all';
+@import '~@akveo/nga-theme/styles/globals';
+@import '~@akveo/nga-auth/styles/all';
 
 // custom global styles
 @import 'global';

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 
-import { NgaMenuModule, NgaSidebarModule, NgaThemeModule } from '@nga/theme';
+import { NgaMenuModule, NgaSidebarModule, NgaThemeModule } from '@akveo/nga-theme';
 
 import { menuItems } from './pages-menu';
 

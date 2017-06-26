@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { NgaTabsetModule, NgaRouteTabsetModule, NgaSearchModule } from '@nga/theme';
+import { NgaTabsetModule, NgaRouteTabsetModule, NgaSearchModule } from '@akveo/nga-theme';
 
 import { SharedModule } from '../../shared.module';
 
