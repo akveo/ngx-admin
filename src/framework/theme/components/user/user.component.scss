@@ -7,94 +7,92 @@
 @import '../../styles/core/mixins';
 
 :host {
-  .user-container {
-    position: relative;
-    display: inline-flex;
+  display: flex;
+}
+
+.user-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  &.with-menu {
+    cursor: pointer;
+  }
+}
+
+.user-picture {
+  border-radius: 50%;
+  flex-shrink: 0;
+  border: solid 2px #00ffaa;
+
+  &.image {
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  &.background {
+    display: flex;
     align-items: center;
+    justify-content: center;
+  }
+}
 
-    &.with-menu {
-      cursor: pointer;
-    }
+.user-title {
+  font-size: 0.75rem;
+}
 
-    .user-picture {
-      border-radius: 50%;
-      flex-shrink: 0;
+.info-container {
+  margin-left: 0.5rem;
+}
 
-      &.image {
-        background-size: cover;
-        background-repeat: no-repeat;
+.user-context-menu {
+  @include center-horizontal-absolute();
+
+  z-index: 1000;
+  top: calc(100% + 10px);
+  background-clip: padding-box;
+  border-radius: 5px;
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    li {
+      display: block;
+      white-space: nowrap;
+      > a {
+        padding: 0.25rem 3rem;
+        display: block;
       }
 
-      &.background {
-        display: flex;
-        align-items: center;
-        justify-content: center;
+      &:nth-child(2) > a {
+        padding-top: 0.75rem;
       }
-    }
+      &:last-child > a {
+        padding-bottom: 0.75rem;
+      }
 
-    .user-title, .user-name {
-      margin-left: 0.5rem;
-    }
+      &.arrow {
+        @include center-horizontal-absolute();
 
-    .user-title {
-      font-size: 0.75rem;
-    }
+        top: -22px;
+        width: 0;
+        height: 0;
+        border: 11px solid transparent;
 
-    .info-container {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .user-context-menu {
-      @include center-horizontal-absolute();
-
-      z-index: 1000;
-      top: calc(100% + 10px);
-      background-clip: padding-box;
-      border-radius: 5px;
-      font-size: 0.875rem;
-      line-height: 1.5rem;
-
-      ul {
-        margin: 0;
-        padding: 0;
-        list-style: none;
-
-        li {
+        &::after {
+          position: absolute;
+          content: ' ';
+          width: 0;
+          height: 0;
+          top: -9px;
+          left: 0;
+          margin-left: -10px;
           display: block;
-          white-space: nowrap;
-          > a {
-            padding: 0.25rem 3rem;
-            display: block;
-          }
-
-          &:nth-child(2) > a {
-            padding-top: 0.75rem;
-          }
-          &:last-child > a {
-            padding-bottom: 0.75rem;
-          }
-
-          &.arrow {
-            @include center-horizontal-absolute();
-
-            top: -22px;
-            width: 0;
-            height: 0;
-            border: 11px solid transparent;
-
-            &::after {
-              position: absolute;
-              content: ' ';
-              width: 0;
-              height: 0;
-              top: -9px;
-              left: 0;
-              margin-left: -10px;
-              display: block;
-              border: 10px solid transparent;
-            }
-          }
+          border: 10px solid transparent;
         }
       }
     }

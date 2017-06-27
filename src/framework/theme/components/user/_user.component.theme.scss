@@ -20,6 +20,10 @@
       }
     }
 
+    .user-name {
+      font-family: nga-theme(user-font-family-secondary);
+    }
+
     &.inverse {
       .user-picture {
         background: nga-theme(user-fg);

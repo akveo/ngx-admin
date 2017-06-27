@@ -25,9 +25,8 @@
           color: nga-theme(tabs-fg);
 
           &::before {
-            // TODO: pass this parameter via theme, or move it to the styles
             @include btn-hero-success-gradient();
-            box-shadow: 0 0 16px 0 rgba(35, 255, 181, 0.3);
+            box-shadow: 0 0 16px -2px btn-hero-success-middle-color();
           }
         }
 
@@ -36,7 +35,7 @@
 
           a {
             font-weight: nga-theme(tabs-active-font-weight);
-            color: nga-theme(tabs-head-color);
+            color: nga-theme(tabs-fg-heading);
           }
         }
       }

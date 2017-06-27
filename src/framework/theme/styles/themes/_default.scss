@@ -32,8 +32,9 @@ $theme: (
 
   color-bg: #edf1f7,
   color-fg: #7179a3,
-  color-head: #ffffff,
-  color-secondary: #c9c2d5,
+  color-fg-heading: #ffffff,
+  color-fg-hint: #c9c2d5,
+  color-fg-highlight: #00ffaa,
 
   separator: color-fg,
 
@@ -41,30 +42,14 @@ $theme: (
   color-neutral: transparent,
   color-white: #ffffff,
   color-disabled: rgba(255, 255, 255, 0.4),
-  color-primary: #8066ff,
 
+  color-primary: #8066ff,
   color-success: #00cc66,
   color-info: #3377ff,
   color-warning: #e5b045,
   color-danger: #ff3355,
 
-  color-light-percent: 30%,
-  color-light-primary: color-primary,
-  color-light-info: color-info,
-  color-light-success: color-success,
-  color-light-warning: color-warning,
-  color-light-danger: color-danger,
-
-  color-dark-percent: 10%,
-  color-dark-primary: color-primary,
-  color-dark-secondary: color-info,
-  color-dark-info: color-success,
-  color-dark-success: color-warning,
-  color-dark-warning: color-warning,
-  color-dark-danger: color-danger,
-
-  color-gradient-shadow: rgba(33, 7, 77, 0.5),
-
+  // TODO: move to constants
   social-color-facebook: #3b5998,
   social-color-twitter: #55acee,
   social-color-google: #dd4b39,
@@ -178,7 +163,7 @@ $theme: (
   tabs-header-bg: transparent,
   tabs-separator: separator,
   tabs-fg: color-fg,
-  tabs-head-color: color-head,
+  tabs-fg-heading: color-fg-heading,
   tabs-bg: transparent,
 
   route-tabs-font-size: font-size-lg,
@@ -190,13 +175,14 @@ $theme: (
   route-tabs-header-bg: transparent,
   route-tabs-separator: separator,
   route-tabs-fg: color-fg,
-  route-tabs-head-color: color-head,
+  route-tabs-fg-heading: color-fg-heading,
   route-tabs-bg: transparent,
 
   user-font-size: font-size,
   user-line-height: line-height,
   user-bg: color-bg,
   user-fg: color-fg,
+  user-font-family-secondary: font-secondary,
   user-size-small: 1.5rem,
   user-size-medium: 2.5rem,
   user-size-xmedium: 3.25rem,
@@ -213,14 +199,14 @@ $theme: (
   actions-size-medium: 2.5rem,
   actions-size-large: 4rem,
 
-  search-btn-open-fg: color-secondary,
-  search-btn-close-fg:	color-secondary,
+  search-btn-open-fg: color-fg-hint,
+  search-btn-close-fg:	color-fg-hint,
   search-bg: linear-gradient(to right, #171749, #413789),//TODO: get rid of this hardcode, bg
   search-bg-secondary: color-fg,
   search-text: color-inverse,
-  search-info: color-secondary,
-  search-dash: color-secondary,
-  search-placeholder: color-secondary,
+  search-info: color-fg-hint,
+  search-dash: color-fg-hint,
+  search-placeholder: color-fg-hint,
 
   d3-fg: color-fg,
   d3-legend-bg: #e9e9e9, // TODO: default color?

@@ -26,7 +26,7 @@
 
           &::before {
             @include btn-hero-success-gradient();
-            box-shadow: 0 0 16px 0 rgba(35, 255, 181, 0.3);
+            box-shadow: 0 0 16px -2px btn-hero-success-middle-color();
           }
         }
 
@@ -35,7 +35,7 @@
 
           a {
             font-weight: nga-theme(route-tabs-active-font-weight);
-            color: nga-theme(route-tabs-head-color);
+            color: nga-theme(route-tabs-fg-heading);
           }
         }
       }

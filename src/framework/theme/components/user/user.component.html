@@ -7,8 +7,8 @@
   </div>
 
   <div class="info-container">
-    <span *ngIf="showNameValue && name" class="user-name">{{ name }}</span>
-    <span *ngIf="showTitleValue && title" class="user-title">{{ title }}</span>
+    <div *ngIf="showNameValue && name" class="user-name">{{ name }}</div>
+    <div *ngIf="showTitleValue && title" class="user-title">{{ title }}</div>
   </div>
 
   <div *ngIf="hasMenu()"
