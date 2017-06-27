@@ -1,12 +1,5 @@
 @import '../../@theme/styles/variables';
-@import '~@akveo/nga-theme/styles/global/bootstrap/hero-buttons';
 
 @include nga-install-component() {
-  nga-card-header {
 
-  }
-
-  nga-card.contacts nga-tabset /deep/ ul {
-    border-bottom: 1px solid nga-theme(separator);
-  }
 }

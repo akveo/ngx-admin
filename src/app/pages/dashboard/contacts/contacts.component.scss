@@ -1,0 +1,44 @@
+@import '../../../@theme/styles/variables';
+@import '~@nga/theme/styles/global/bootstrap/hero-buttons';
+
+@include nga-install-component() {
+  nga-tabset /deep/ ul {
+    border-bottom: 1px solid nga-theme(separator);
+  }
+
+  nga-tab {
+    padding: 0;
+  }
+
+  .contact {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    border-bottom: 1px solid nga-theme(separator);
+  }
+
+  i {
+    font-size: 2.5rem;
+    cursor: pointer;
+  }
+
+  nga-user /deep/ {
+    .info-container {
+      margin-left: 0.875rem;
+    }
+
+    .user-name {
+      font-size: 1.25rem;
+      font-weight: nga-theme(font-weight-bolder);
+      color: nga-theme(color-head);
+    }
+
+    .user-title {
+      font-size: 0.875rem;
+      text-transform: uppercase;
+    }
+  }
+}
+
+

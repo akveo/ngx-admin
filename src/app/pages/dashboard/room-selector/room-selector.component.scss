@@ -1,0 +1,59 @@
+:host {
+  display: block;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+svg {
+  display:block;
+  width: 100%;
+  height: 100%;
+}
+
+.stroke-pattern {
+  fill: none;
+  stroke: #a1a1e5;
+  stroke-miterlimit: 10;
+  opacity: 0.1;
+  stroke-width: 1px;
+}
+
+.stroked-element {
+  stroke-width: 4px;
+  stroke: #a1a1e5;
+  stroke-miterlimit: 10;
+  fill: url('#New_Pattern_Swatch_1');
+}
+
+.room-border {
+  stroke-width: 4px;
+  stroke: #a1a1e5;
+  stroke-miterlimit: 10;
+  fill: none;
+  transition: stroke 0.4s ease-out;
+}
+
+.room-bg {
+  fill: transparent;
+  stroke: transparent;
+  cursor: pointer;
+  transition: fill 0.4s ease-out;
+}
+
+.room-text {
+  cursor: pointer;
+  user-select: none;
+}
+
+.selected-room {
+  z-index: 40;
+  .room-bg {
+    stroke: rgba(0, 255, 170, 0.5);
+    fill: rgba(0, 255, 170, 0.5);
+    filter: url('#f2');
+  }
+  .room-border {
+    stroke: #00f9a6;
+  }
+}
