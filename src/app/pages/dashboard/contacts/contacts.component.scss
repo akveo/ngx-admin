@@ -31,11 +31,12 @@
     .user-name {
       font-size: 1.25rem;
       font-weight: nga-theme(font-weight-bolder);
-      color: nga-theme(color-head);
+      color: nga-theme(color-fg-heading);
     }
 
     .user-title {
       font-size: 0.875rem;
+      font-weight: nga-theme(font-weight-light);
       text-transform: uppercase;
     }
   }
