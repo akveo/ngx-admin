@@ -9,8 +9,8 @@
       "@angular/*": [
         "../node_modules/@angular/*"
       ],
-      "@nga/*": [
-        "../node_modules/@nga/*"
+      "@akveo/*": [
+        "../node_modules/@akveo/*"
       ],
       "@ng-bootstrap/*": [
         "../node_modules/@ng-bootstrap/*"
