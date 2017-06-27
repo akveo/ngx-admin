@@ -3,13 +3,14 @@
  * Copyright Akveo. All Rights Reserved.
  * Licensed under the MIT License. See License.txt in the project root for license information.
  */
-import { Injectable } from '@angular/core';
+import { Injectable, Optional, Inject } from '@angular/core';
 import { Observable } from 'rxjs/Rx';
 
 import 'rxjs/add/operator/do';
 
 import { NgaAbstractAuthProvider } from '../providers/abstract-auth.provider';
 import { NgaTokenService } from './token.service';
+import { ngaAuthProvidersToken } from '../auth.options';
 
 export class NgaAuthResult {
 
@@ -70,7 +71,8 @@ export class NgaAuthResult {
 @Injectable()
 export class NgaAuthService {
 
-  constructor(protected providers: any = {}, protected tokenService: NgaTokenService) {
+  constructor(protected tokenService: NgaTokenService,
+              @Optional() @Inject(ngaAuthProvidersToken) protected providers = {}) {
   }
 
   /**

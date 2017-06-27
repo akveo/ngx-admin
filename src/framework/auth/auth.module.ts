@@ -10,7 +10,7 @@ import { NgaAuthService } from './services/auth.service';
 import { NgaDummyAuthProvider } from './providers/dummy-auth.provider';
 import { NgaEmailPassAuthProvider } from './providers/email-pass-auth.provider';
 
-import { NgaAuthOptions, ngaAuthOptionsToken } from './auth.options';
+import { NgaAuthOptions, ngaAuthOptionsToken, ngaAuthProvidersToken } from './auth.options';
 
 import { NgaAuthComponent } from './components/auth.component';
 import { NgaTokenService } from './services/token.service';
@@ -36,7 +36,7 @@ export function ngaAuthServiceFactory(config: any, tokenService: NgaTokenService
     }
   }
 
-  return new NgaAuthService(providers, tokenService);
+  return new NgaAuthService(tokenService, providers);
 }
 
 @NgModule({
@@ -72,6 +72,7 @@ export class NgaAuthModule {
       ngModule: NgaAuthModule,
       providers: [
         { provide: ngaAuthOptionsToken, useValue: ngaAuthOptions },
+        { provide: ngaAuthProvidersToken, useValue: {} },
         {
           provide: NgaAuthService,
           useFactory: ngaAuthServiceFactory,
