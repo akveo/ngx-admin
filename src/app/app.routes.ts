@@ -8,7 +8,6 @@ import { Routes } from '@angular/router';
 import { NgaActionsTestComponent } from './actions-test/actions-test.component';
 import { NgaBootstrapTestComponent } from './bootstrap-test/bootstrap-test.component';
 
-import { NgaCardTestComponent } from './card-test/card-test.component';
 import { NgaFormsTestComponent } from './forms-test/forms-test.component';
 import { NgaLayoutFooterTestComponent } from './layout-test/layout-footer-test.component';
 import { NgaLayoutHeaderTestComponent } from './layout-test/layout-header-test.component';
@@ -39,11 +38,12 @@ import { NgaSidebarTestTwoComponent } from './sidebar-test/sidebar-test-two.comp
 import { NgaSidebarTestComponent } from './sidebar-test/sidebar-test.component';
 import { NgaTabsetTestComponent } from './tabset-test/tabset-test.component';
 import { NgaUserTestComponent } from './user-test/user-test.component';
+import { CardComponent } from './card/card.component';
 
 export const routes: Routes = [
   {
     path: '',
-    component: NgaCardTestComponent,
+    component: CardComponent,
   },
   {
     path: 'layout',
@@ -195,6 +195,6 @@ export const routes: Routes = [
   },
   {
     path: '**',
-    component: NgaCardTestComponent,
+    component: CardComponent,
   },
 ];

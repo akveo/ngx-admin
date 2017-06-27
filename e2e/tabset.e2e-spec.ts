@@ -7,7 +7,7 @@
 import { browser, element, by } from 'protractor';
 import { hasClass } from './e2e-helper';
 
-fdescribe('nga-tabset', () => {
+describe('nga-tabset', () => {
   beforeEach(() => {
     browser.get('#/tabset');
   });

@@ -25,7 +25,6 @@ import { NgaSearchModule } from '@akveo/nga-theme';
 import { NgaMenuItem } from '@akveo/nga-theme';
 
 import { NgaAppComponent } from './app.component';
-import { NgaCardTestComponent } from './card-test/card-test.component';
 import { NgaLayoutTestComponent } from './layout-test/layout-test.component';
 import { NgaLayoutHeaderTestComponent } from './layout-test/layout-header-test.component';
 import { NgaLayoutFooterTestComponent } from './layout-test/layout-footer-test.component';
@@ -63,9 +62,11 @@ import { routes } from './app.routes';
 import { NgaSearchTestComponent } from './search-test/search-test.component';
 import { NgaFormsTestComponent } from './forms-test/forms-test.component';
 
+import { CardComponent } from './card/card.component';
+
 const NGA_TEST_COMPONENTS = [
   NgaAppComponent,
-  NgaCardTestComponent,
+  CardComponent,
   NgaLayoutTestComponent,
   NgaLayoutHeaderTestComponent,
   NgaLayoutFooterTestComponent,
