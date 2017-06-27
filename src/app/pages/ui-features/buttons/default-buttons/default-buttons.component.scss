@@ -3,6 +3,10 @@
 
 @include nga-install-component() {
 
+  .example-container:nth-child(n + 4) {
+    margin-top: 2rem;
+  }
+
   .primary-container {
     .original {
       background-color: nga-theme(btn-primary-bg);
