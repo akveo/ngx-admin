@@ -171,25 +171,25 @@
 
 // Glow
 @mixin btn-primary-glow() {
-  @include btn-hero-primary-glow();
+  box-shadow: btn-hero-primary-glow();
 }
 
 @mixin btn-warning-glow() {
-  @include btn-hero-warning-glow();
+  box-shadow: btn-hero-warning-glow();
 }
 
 @mixin btn-success-glow() {
-  @include btn-hero-success-glow();
+  box-shadow: btn-hero-success-glow();
 }
 
 @mixin btn-info-glow() {
-  @include btn-hero-info-glow();
+  box-shadow: btn-hero-info-glow();
 }
 
 @mixin btn-danger-glow() {
-  @include btn-hero-danger-glow();
+  box-shadow: btn-hero-danger-glow();
 }
 
 @mixin btn-secondary-glow() {
-  @include btn-hero-secondary-glow();
+  box-shadow: btn-hero-secondary-glow();
 }
