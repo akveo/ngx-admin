@@ -1,10 +1,6 @@
 @import '../../../@theme/styles/variables';
 @import '~@akveo/nga-theme/styles/global/bootstrap/buttons';
 
-@mixin btn-bg($background) {
-  background-color: $background;
-}
-
 @include nga-install-component() {
   /deep/ {
     $button-size: 50px;
@@ -12,39 +8,38 @@
 
     .btn-demo {
       width: 180px;
-      height: 48px;
     }
 
-    .states-container .state-container {
+    .state-container {
       display: flex;
-    }
 
-    .states-container .state-container .state-value {
-      width: $button-size;
-      height: $button-size;
-      border-radius: $button-border-radius;
-    }
+      &:not(:last-child) {
+        margin-bottom: 1rem;
+      }
 
-    .states-container .state-container .state-details {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      margin-left: 1rem;
-      height: $button-size;
-    }
+      .state-value {
+        width: $button-size;
+        height: $button-size;
+        border-radius: $button-border-radius;
+      }
 
-    .states-container .state-container .state-details .header {
-      color: white;
-    }
+      .state-details {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-left: 1rem;
+        height: $button-size;
 
-    .states-container .state-container .state-details .subheader {
-      font-size: 0.875rem;
-      line-height: 1rem;
-      font-weight: 300;
-    }
+        .header {
+          color: white;
+        }
 
-    .states-container .state-container:not(:last-child) .state-value {
-      margin-bottom: 1rem;
+        .subheader {
+          font-size: 0.875rem;
+          line-height: 1rem;
+          font-weight: 300;
+        }
+      }
     }
 
     .example-container {
@@ -58,179 +53,6 @@
 
     .example-container .container-btn {
       margin-bottom: 1rem;
-    }
-
-    .hero-buttons {
-      .example-container .states-container.primary-container .gradient {
-        @include btn-hero-primary-gradient();
-      }
-
-      .example-container .states-container.primary-container .glow {
-        @include btn-hero-primary-glow();
-      }
-
-      .example-container .states-container.primary-container .bevel-border {
-        @include btn-hero-primary-bevel();
-      }
-
-      .example-container .states-container.primary-container .shadow {
-        @include btn-hero-shadow();
-      }
-
-      .example-container .states-container.warning-container .gradient {
-        @include btn-hero-warning-gradient();
-      }
-
-      .example-container .states-container.warning-container .glow {
-        @include btn-hero-warning-glow();
-      }
-
-      .example-container .states-container.warning-container .bevel-border {
-        @include btn-hero-warning-bevel();
-      }
-
-      .example-container .states-container.warning-container .shadow {
-        @include btn-hero-shadow();
-      }
-
-      .example-container .states-container.success-container .gradient {
-        @include btn-hero-success-gradient();
-      }
-
-      .example-container .states-container.success-container .glow {
-        @include btn-hero-success-glow();
-      }
-
-      .example-container .states-container.success-container .bevel-border {
-        @include btn-hero-success-bevel();
-      }
-
-      .example-container .states-container.success-container .shadow {
-        @include btn-hero-shadow();
-      }
-
-      .example-container .states-container.info-container .gradient {
-        @include btn-hero-info-gradient();
-      }
-
-      .example-container .states-container.info-container .glow {
-        @include btn-hero-info-glow();
-      }
-
-      .example-container .states-container.info-container .bevel-border {
-        @include btn-hero-info-bevel();
-      }
-
-      .example-container .states-container.info-container .shadow {
-        @include btn-hero-shadow();
-      }
-
-      .example-container .states-container.danger-container .gradient {
-        @include btn-hero-danger-gradient();
-      }
-
-      .example-container .states-container.danger-container .glow {
-        @include btn-hero-danger-glow();
-      }
-
-      .example-container .states-container.danger-container .bevel-border {
-        @include btn-hero-danger-bevel();
-      }
-
-      .example-container .states-container.danger-container .shadow {
-        @include btn-hero-shadow();
-      }
-
-      .example-container .states-container.secondary-container .border {
-        color: nga-theme(btn-secondary-color);
-        border: nga-theme(btn-secondary-border-width) solid nga-theme(btn-secondary-border);
-      }
-
-      .example-container .states-container.secondary-container .glow {
-        @include btn-hero-secondary-glow();
-      }
-
-      .example-container .states-container.secondary-container .bevel-border {
-        @include btn-hero-secondary-bevel();
-      }
-
-      .example-container .states-container.secondary-container .shadow {
-        @include btn-hero-shadow();
-      }
-    }
-
-    .default-buttons {
-      .example-container .states-container.primary-container .original {
-        @include btn-bg(nga-theme(btn-primary-bg));
-      }
-
-      .example-container .states-container.primary-container .hover {
-        @include btn-primary-hover();
-      }
-
-      .example-container .states-container.primary-container .active {
-        @include btn-primary-active();
-      }
-
-      .example-container .states-container.warning-container .original {
-        @include btn-bg(nga-theme(btn-warning-bg));
-      }
-
-      .example-container .states-container.warning-container .hover {
-        @include btn-warning-hover();
-      }
-
-      .example-container .states-container.warning-container .active {
-        @include btn-warning-active();
-      }
-
-      .example-container .states-container.success-container .original {
-        @include btn-bg(nga-theme(btn-success-bg));
-      }
-
-      .example-container .states-container.success-container .hover {
-        @include btn-success-hover();
-      }
-
-      .example-container .states-container.success-container .active {
-        @include btn-success-active();
-      }
-
-      .example-container .states-container.info-container .original {
-        @include btn-bg(nga-theme(btn-info-bg));
-      }
-
-      .example-container .states-container.info-container .hover {
-        @include btn-info-hover();
-      }
-
-      .example-container .states-container.info-container .active {
-        @include btn-info-active();
-      }
-
-      .example-container .states-container.danger-container .original {
-        @include btn-bg(nga-theme(btn-danger-bg));
-      }
-
-      .example-container .states-container.danger-container .hover {
-        @include btn-danger-hover();
-      }
-
-      .example-container .states-container.danger-container .active {
-        @include btn-danger-active();
-      }
-
-      .example-container .states-container.secondary-container .original {
-        @include btn-bg(nga-theme(btn-secondary-border));
-      }
-
-      .example-container .states-container.secondary-container .hover {
-        @include btn-secondary-hover();
-      }
-
-      .example-container .states-container.secondary-container .active {
-        @include btn-secondary-active();
-      }
     }
 
     .actions-groups {

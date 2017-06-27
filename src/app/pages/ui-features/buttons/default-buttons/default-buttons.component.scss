@@ -1,0 +1,77 @@
+@import '../../../../@theme/styles/variables';
+@import '~@nga/theme/styles/global/bootstrap/buttons';
+
+@include nga-install-component() {
+
+  .primary-container {
+    .original {
+      background-color: nga-theme(btn-primary-bg);
+    }
+    .hover {
+      @include btn-primary-hover();
+    }
+    .active {
+      @include btn-primary-active();
+    }
+  }
+
+  .warning-container {
+    .original {
+      background-color: nga-theme(btn-warning-bg);
+    }
+    .hover {
+      @include btn-warning-hover();
+    }
+    .active {
+      @include btn-warning-active();
+    }
+  }
+
+  .success-container {
+    .original {
+      background-color: nga-theme(btn-success-bg);
+    }
+    .hover {
+      @include btn-success-hover();
+    }
+    .active {
+      @include btn-success-active();
+    }
+  }
+
+  .info-container {
+    .original {
+      background-color: nga-theme(btn-info-bg);
+    }
+    .hover {
+      @include btn-info-hover();
+    }
+    .active {
+      @include btn-info-active();
+    }
+  }
+
+  .danger-container {
+    .original {
+      background-color: nga-theme(btn-danger-bg);
+    }
+    .hover {
+      @include btn-danger-hover();
+    }
+    .active {
+      @include btn-danger-active();
+    }
+  }
+
+  .secondary-container {
+    .original {
+      background-color: nga-theme(btn-secondary-border);
+    }
+    .hover {
+      @include btn-secondary-hover();
+    }
+    .active {
+      @include btn-secondary-active();
+    }
+  }
+}
