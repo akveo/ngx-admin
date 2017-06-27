@@ -174,8 +174,8 @@
 }
 
 @mixin btn-hero-focus($color-left, $color-right) {
-  $color-left: tint($color-left, 14%);
-  $color-right: tint($color-right, 14%);
+  $color-left: shade($color-left, 14%);
+  $color-right: shade($color-right, 14%);
 
   &:focus,
   .focus {
@@ -193,6 +193,7 @@
   &:active,
   .active {
     @include nga-right-gradient($color-left, $color-right);
+
     box-shadow: none;
     border-color: transparent;
   }
@@ -449,10 +450,13 @@
 }
 
 @mixin btn-hero-secondary-focus() {
+  $color: nga-theme(btn-secondary-border);
+
   &:focus,
   .focus {
-    background-color: rgba(nga-theme(btn-secondary-border), 0.14);
+    border-color: shade($color, 14%);
     box-shadow: none;
+    background: none;
   }
 }
 
@@ -497,7 +501,6 @@
 
   &:active,
   .active {
-    color: shade($color, 14%);
     border-color: shade($color, 14%);
     box-shadow: none;
     background: none;
