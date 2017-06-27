@@ -1,0 +1,22 @@
+@import '../../../../@theme/styles/variables';
+@import '~@nga/theme/styles/global/bootstrap/buttons';
+
+@include nga-install-component() {
+
+  .toolbars-container {
+    display: flex;
+  }
+
+  .pagination-container {
+    flex: 1;
+    margin-right: 1rem;
+  }
+
+  .icon-toolbar-container {
+    flex: 1;
+  }
+
+  .example-container:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+}

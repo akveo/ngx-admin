@@ -1,18 +1,17 @@
-.row {
-  padding: 0 1rem;
-}
+@import '../../../../@theme/styles/variables';
+@import '~@nga/theme/styles/global/bootstrap/buttons';
 
-.size-container {
-  margin-right: 1rem;
+@include nga-install-component() {
+  .row {
+    padding: 0 1rem;
+  }
 
-  .header {
-    margin-bottom: 0.5rem;
+  .size-container {
+    margin-right: 1rem;
   }
 
   .subheader {
-    color: #ffffff;
     margin-bottom: 1rem;
-    font-size: 0.875rem;
-    font-weight: 300;
+    color: nga-theme(color-fg-heading);
   }
 }

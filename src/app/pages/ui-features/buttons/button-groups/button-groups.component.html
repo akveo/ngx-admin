@@ -1,10 +1,10 @@
 <nga-card>
   <nga-card-header>Button Groups</nga-card-header>
   <nga-card-body>
-    <div class="row button-groups">
+    <div class="row">
       <div class="col-md-12">
-        <div>
-          <div>Toogle Types</div>
+        <div class="example-container">
+          <div class="container-title">Toogle Types</div>
           <div [(ngModel)]="radioModel" ngbRadioGroup class="btn-group-block btn-group-divider" data-toggle="buttons">
             <label class="btn btn-primary">
               <input type="radio" value="Left"/> Left
@@ -28,9 +28,9 @@
             </label>
           </div>
         </div>
-        <div class="toolbars-container">
+        <div class="example-container toolbars-container">
           <div class="pagination-container">
-            <div>Pagination</div>
+            <div class="container-title">Pagination</div>
             <div class="btn-group btn-group-divider btn-group-pagination" data-toggle="buttons">
               <label class="btn btn-success">
                 <input type="radio"/> 1
@@ -50,7 +50,7 @@
             </div>
           </div>
           <div class="icon-toolbar-container">
-            <div>Icon Toolbar</div>
+            <div class="container-title">Icon Toolbar</div>
             <div class="btn-group btn-group-divider btn-group-pagination" data-toggle="buttons">
               <label class="btn btn-success">
                 <input type="radio"/> <i class="ion-ionic"></i>
@@ -67,8 +67,8 @@
             </div>
           </div>
         </div>
-        <div>
-          <div>Divided Button Group</div>
+        <div class="example-container">
+          <div class="container-title">Divided Button Group</div>
           <div class="btn-group btn-group-block btn-group-divided" data-toggle="buttons">
             <label class="btn btn-outline-success btn-icon" [class.active]="dividedCheckboxModel.monday">
               <input type="checkbox" [(ngModel)]="dividedCheckboxModel.monday"/> <i class="ion-paper-airplane"></i>
@@ -90,8 +90,8 @@
             </label>
           </div>
         </div>
-        <div>
-          <div>Divided Button Group</div>
+        <div class="example-container">
+          <div class="container-title">Divided Button Group</div>
           <div [(ngModel)]="radioModel" ngbRadioGroup class="btn-group btn-group-block btn-group-divided-hidden" data-toggle="buttons">
             <label class="btn btn-primary">
               <input type="radio" value="Left"/> Left

@@ -6,6 +6,23 @@
     $button-size: 50px;
     $button-border-radius: 12px;
 
+    .container-title {
+      color: nga-theme(color-fg-hint);
+      font-family: nga-theme(font-secondary);
+      margin-bottom: 0.5rem;
+    }
+
+    .header {
+      color: white;
+    }
+
+    .subheader {
+      font-size: 0.875rem;
+      line-height: 1rem;
+      font-weight: 300;
+      color: nga-theme(color-fg-hint);
+    }
+
     .btn-demo {
       width: 180px;
     }
@@ -29,26 +46,11 @@
         justify-content: center;
         margin-left: 1rem;
         height: $button-size;
-
-        .header {
-          color: white;
-        }
-
-        .subheader {
-          font-size: 0.875rem;
-          line-height: 1rem;
-          font-weight: 300;
-        }
       }
     }
 
     .example-container {
       padding-right: 0;
-    }
-
-    .example-container .container-title {
-      font-family: nga-theme(font-secondary);
-      margin-bottom: 1rem;
     }
 
     .example-container .container-btn {
@@ -60,7 +62,6 @@
     }
 
     .actions-groups .container-title {
-      font-family: nga-theme(font-secondary);
       display: flex;
       flex: 1;
       flex-direction: column;
@@ -70,19 +71,6 @@
 
     .block-level-buttons .btn-group {
       margin-bottom: 1rem;
-    }
-
-    .button-groups .toolbars-container {
-      display: flex;
-    }
-
-    .button-groups .pagination-container {
-      flex: 1;
-      margin-right: 1rem;
-    }
-
-    .button-groups .icon-toolbar-container {
-      flex: 1;
     }
 
     .icon-buttons .btn-group:not(:last-child) {

@@ -1,13 +1,13 @@
-.shape-container .header {
-  margin-bottom: 7px;
-}
+@import '../../../../@theme/styles/variables';
+@import '~@nga/theme/styles/global/bootstrap/buttons';
 
-.shape-container .subheader {
-  margin-bottom: 19px;
-  font-weight: 300;
-  font-size: 0.875rem;
+@include nga-install-component() {
 
-  span:nth-child(2) {
-    color: #ffffff;
+  .subheader {
+    margin-bottom: 19px;
+
+    span:nth-child(2) {
+      color: nga-theme(color-fg-heading);
+    }
   }
 }
