@@ -29,7 +29,6 @@ $theme: (
   margin: 1.25rem,
   line-height: 1.25,
 
-
   color-bg: #edf1f7,
   color-fg: #7179a3,
   color-fg-heading: #ffffff,
@@ -280,7 +279,7 @@ $theme: (
   btn-hero-text-shadow: rgba(0, 0, 0, 0.3),
 
   form-control-text-primary-color: color-white,
-  form-control-text-secondary-color: color-secondary,
+  form-control-text-secondary-color: color-fg-hint,
   form-control-font-family: font-secondary,
   form-control-bg: separator,
   form-control-focus-bg: layout-bg,
@@ -290,7 +289,7 @@ $theme: (
   form-control-border-type: solid,
 
   form-control-primary-border-color: color-primary,
-  form-control-secondary-border-color: color-secondary,
+  form-control-secondary-border-color: color-fg-hint,
   form-control-info-border-color: color-info,
   form-control-success-border-color: color-success,
   form-control-danger-border-color: color-danger,
