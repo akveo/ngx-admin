@@ -100,6 +100,10 @@ export class BaMenuService {
       item.children = this._convertArrayToItems(object.children, item);
     }
 
+    if (parent) {
+      item.parent = parent;
+    }
+
     let prepared = this._prepareItem(item);
 
     // if current item is selected or expanded - then parent is expanded too

@@ -3,8 +3,12 @@
 
   <ul class="breadcrumb al-breadcrumb">
     <li class="breadcrumb-item">
-      <a routerLink="/pages/dashboard" translate>{{'general.home'}}</a>
+      <a routerLink="/pages/information" translate>{{'general.home'}}</a>
     </li>
-    <li class="breadcrumb-item active" translate>{{ activePageTitle }}</li>
+
+    <li *ngIf="activeItem.showingParent && activeItem.parent.title" class="breadcrumb-item active">
+      <a routerLink="{{activeItem.parent.route.path}}" translate>{{ activeItem.parent.title }}</a></li>
+    <li class="breadcrumb-item active" translate>{{ activeItem.title }}</li>
+
   </ul>
 </div>
