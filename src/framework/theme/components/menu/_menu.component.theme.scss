@@ -10,70 +10,66 @@
     line-height: nga-theme(menu-line-height);
 
     &.inverse {
-      ul {
-        li {
-          a, .menu-group {
+      ul > li {
+        a, .menu-group {
+          color: nga-theme(menu-bg);
+
+          @include hover-focus-active {
             color: nga-theme(menu-bg);
+          }
 
-            @include hover-focus-active {
-              color: nga-theme(menu-bg);
-            }
-
-            &.active {
-              background: nga-theme(menu-active-fg);
-              color: nga-theme(menu-active-bg);
-            }
+          &.active {
+            background: nga-theme(menu-active-fg);
+            color: nga-theme(menu-active-bg);
           }
         }
       }
     }
 
-    ul {
+    ul > li {
+      .menu-group {
+        font-weight: nga-theme(menu-group-font-weight);
+        font-size: nga-theme(menu-group-font-size);
+      }
 
-      li {
-        .menu-group {
-          font-weight: nga-theme(menu-group-font-weight);
-          font-size: nga-theme(menu-group-font-size);
-        }
+      a, .menu-group {
+        color: nga-theme(menu-fg);
+        padding: nga-theme(menu-item-padding);
 
-        a, .menu-group {
+        @include hover-focus-active {
           color: nga-theme(menu-fg);
-          padding: nga-theme(menu-item-padding);
-
-          @include hover-focus-active {
-            color: nga-theme(menu-fg);
-          }
-
-          &.active {
-            background: nga-theme(menu-active-bg);
-            color: nga-theme(menu-active-fg);
-          }
         }
 
-        .menu-group {
+        &.active {
+          background: nga-theme(menu-active-bg);
+          color: nga-theme(menu-active-fg);
+        }
+      }
+
+      .menu-group {
+        color: nga-theme(menu-group-fg);
+
+        @include hover-focus-active {
           color: nga-theme(menu-group-fg);
-          @include hover-focus-active {
-            color: nga-theme(menu-group-fg);
-          }
         }
       }
+    }
 
-      &.menu-expanded {
-        li, a, .menu-group {
+    ul.menu-expanded {
+      li, a, .menu-group {
+        color: nga-theme(menu-submenu-fg);
+
+        @include hover-focus-active {
           color: nga-theme(menu-submenu-fg);
-
-          @include hover-focus-active {
-            color: nga-theme(menu-submenu-fg);
-          }
-
-          &.active {
-            background: nga-theme(menu-submenu-active-bg);
-            color: nga-theme(menu-submenu-active-fg);
-          }
         }
-        background: nga-theme(menu-submenu-bg);
 
+        &.active {
+          background: nga-theme(menu-submenu-active-bg);
+          color: nga-theme(menu-submenu-active-fg);
+        }
       }
+
+      background: nga-theme(menu-submenu-bg);
     }
   }
 }
