@@ -42,7 +42,7 @@ export class NgaSecuredHttp {
     return this.onErrorSubject.publish().refCount();
   }
 
-  private prepareOptions(options: RequestOptionsArgs = {}): Observable<RequestOptionsArgs> {
+  protected prepareOptions(options: RequestOptionsArgs = {}): Observable<RequestOptionsArgs> {
     return this.authService.getToken()
       .map((token: any) => {
         options.headers = options.headers || new Headers();
@@ -52,7 +52,7 @@ export class NgaSecuredHttp {
       });
   }
 
-  private doRequest(requestObservable: Observable<Response>): Observable<Response> {
+  protected doRequest(requestObservable: Observable<Response>): Observable<Response> {
     return <Observable<Response>> requestObservable
       .catch((err) => {
         this.onErrorSubject.next(err);
@@ -60,11 +60,11 @@ export class NgaSecuredHttp {
       });
   }
 
-  private addAuthTokenHeader(headers: Headers, token: string) {
+  protected addAuthTokenHeader(headers: Headers, token: string) {
     headers.append('Authorization', `Bearer ${token}`);
   }
 
-  private get authService(): NgaAuthService {
+  protected get authService(): NgaAuthService {
     return this.injector.get(NgaAuthService);
   }
 }
