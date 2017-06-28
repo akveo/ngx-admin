@@ -3,17 +3,15 @@
  * Copyright Akveo. All Rights Reserved.
  * Licensed under the MIT License. See License.txt in the project root for license information.
  */
-:host {
+:host /deep/ {
   display: block;
 
-  /deep/ ul {
+  ul {
     list-style-type: none;
     padding: 0;
     transition: visibility 0s, opacity 0.2s linear;
 
     li {
-
-
       .menu-group {
         display: block;
       }
