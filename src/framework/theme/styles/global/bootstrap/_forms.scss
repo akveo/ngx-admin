@@ -12,14 +12,20 @@
   .form-control {
     color: nga-theme(form-control-text-primary-color);
     background-color: nga-theme(form-control-bg);
-    border: nga-theme(form-control-border-width) nga-theme(form-control-border-type) nga-theme(form-control-border-color);
+    border: nga-theme(form-control-border-width)
+            nga-theme(form-control-border-type)
+            nga-theme(form-control-border-color);
+
     &:focus {
-      border: nga-theme(form-control-border-width) nga-theme(form-control-border-type) nga-theme(form-control-primary-border-color);
+      border: nga-theme(form-control-border-width)
+              nga-theme(form-control-border-type)
+              nga-theme(form-control-primary-border-color);
       background-color: nga-theme(form-control-focus-bg);
     }
 
     @include form-control-validation(nga-theme(form-control-text-secondary-color));
-    @include install-placeholder(nga-theme(form-control-placeholder-color), nga-theme(form-control-placeholder-font-size));
+    @include install-placeholder(nga-theme(form-control-placeholder-color),
+                                 nga-theme(form-control-placeholder-font-size));
   }
 
   .form-control-label {
