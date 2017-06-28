@@ -24,6 +24,8 @@
     "value-list-comma-space-after": "always-single-line",
     "value-list-comma-space-before": "never",
 
+    "shorthand-property-no-redundant-values": true,
+
     "property-case": "lower",
 
     "declaration-block-no-duplicate-properties": [ true, {
@@ -35,6 +37,10 @@
     "declaration-block-semicolon-space-after": "always-single-line",
     "declaration-block-semicolon-newline-before": "never-multi-line",
     "declaration-block-semicolon-newline-after": "always-multi-line",
+    "declaration-property-value-blacklist": [
+      { "/.*/": ["initial"] },
+      { "message": "The `initial` value is not supported in IE."}
+    ],
 
     "block-closing-brace-newline-after": [
       "always",
@@ -57,6 +63,8 @@
     "selector-pseudo-element-colon-notation": "double",
     "selector-pseudo-element-no-unknown": true,
     "selector-type-case": "lower",
-    "selector-no-id": true
+    "selector-no-id": true,
+
+    "max-line-length": 120
   }
 }
