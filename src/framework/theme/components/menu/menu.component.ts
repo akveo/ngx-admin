@@ -44,7 +44,6 @@ export class NgaMenuItemComponent {
   onItemClick(item: NgaMenuItem) {
     this.itemClick.emit(item);
   }
-
 }
 
 @Component({
@@ -85,27 +84,26 @@ export class NgaMenuComponent implements OnInit, OnDestroy {
   private navigateHomeSubscription: Subscription;
   private getSelectedItemSubscription: Subscription;
 
-  // TODO: menu2Service should be renamed 
-  constructor(private menu2Service: NgaMenuInternalService, private router: Router) { }
+  constructor(private menuInternalService: NgaMenuInternalService, private router: Router) { }
 
   ngOnInit() {
-    this.addItemSubscription = this.menu2Service.onAddItem()
+    this.addItemSubscription = this.menuInternalService.onAddItem()
       .subscribe((data: { tag: string, items: List<NgaMenuItem> }) => {
         if (this.compareTag(data.tag)) {
           this.items = this.items.push(...data.items.toJS());
 
-          this.menu2Service.prepareItems(this.items);
+          this.menuInternalService.prepareItems(this.items);
         }
       });
 
-    this.navigateHomeSubscription = this.menu2Service.onNavigateHome()
+    this.navigateHomeSubscription = this.menuInternalService.onNavigateHome()
       .subscribe((data: { tag: string }) => {
         if (this.compareTag(data.tag)) {
           this.navigateHome();
         }
       });
 
-    this.getSelectedItemSubscription = this.menu2Service.onGetSelectedItem()
+    this.getSelectedItemSubscription = this.menuInternalService.onGetSelectedItem()
       .subscribe((data: { tag: string, listener: BehaviorSubject<{ tag: string, item: NgaMenuItem }> }) => {
 
         let selectedItem: NgaMenuItem;
@@ -127,13 +125,13 @@ export class NgaMenuComponent implements OnInit, OnDestroy {
 
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
-        this.menu2Service.prepareItems(this.items);
+        this.menuInternalService.prepareItems(this.items);
       }
     });
 
-    this.items = this.items.push(...this.menu2Service.getItems().toJS());
+    this.items = this.items.push(...this.menuInternalService.getItems().toJS());
 
-    this.menu2Service.prepareItems(this.items);
+    this.menuInternalService.prepareItems(this.items);
   }
 
   ngOnDestroy() {
@@ -143,26 +141,26 @@ export class NgaMenuComponent implements OnInit, OnDestroy {
   }
 
   onHoverItem(item: NgaMenuItem) {
-    this.menu2Service.itemHover(item, this.tag);
+    this.menuInternalService.itemHover(item, this.tag);
   }
 
   onToggleSubMenu(item: NgaMenuItem) {
     item.expanded = !item.expanded;
 
-    this.menu2Service.submenuToggle(item, this.tag);
+    this.menuInternalService.submenuToggle(item, this.tag);
   }
 
   // TODO: is not fired on page reload
   onSelectItem(item: NgaMenuItem) {
-    this.menu2Service.resetItems(this.items);
+    this.menuInternalService.resetItems(this.items);
 
     item.selected = true;
 
-    this.menu2Service.itemSelect(item, this.tag);
+    this.menuInternalService.itemSelect(item, this.tag);
   }
 
   onItemClick(item: NgaMenuItem) {
-    this.menu2Service.itemClick(item, this.tag);
+    this.menuInternalService.itemClick(item, this.tag);
   }
 
   private navigateHome() {
@@ -179,7 +177,7 @@ export class NgaMenuComponent implements OnInit, OnDestroy {
     this.clearStack();
 
     if (homeItem) {
-      this.menu2Service.resetItems(this.items);
+      this.menuInternalService.resetItems(this.items);
 
       homeItem.selected = true;
 
@@ -241,5 +239,4 @@ export class NgaMenuComponent implements OnInit, OnDestroy {
       return this.getSelectedItem(parent.parent);
     }
   }
-
 }
