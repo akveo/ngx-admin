@@ -33,7 +33,7 @@ export const menuItems: List<NgaMenuItem> = List([{
   }, {
     title: 'Animated Searches',
     link: '/pages/ui-features/search-fields',
-  }, 
+  },
   {
     title: 'Tabs',
     link: '/pages/ui-features/tabs',
@@ -89,9 +89,6 @@ export const menuItems: List<NgaMenuItem> = List([{
   children: List<NgaMenuItem>([{
     title: 'Form Inputs',
     link: '/pages/forms/inputs',
-  }, {
-    title: 'Form Layouts',
-    link: '/pages/forms/layouts',
   }]),
 }, {
   title: 'Tables',

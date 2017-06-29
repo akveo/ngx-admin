@@ -1,305 +1,248 @@
 <div class="row">
   <div class="col-md-6">
     <nga-card>
-      <nga-card-header>Text inputs</nga-card-header>
+      <nga-card-header>Default Inputs</nga-card-header>
       <nga-card-body>
-        <div class="form-group row">
-          <label for="example-text-input" class="col-2 col-form-label">Text</label>
-          <div class="col-10">
-            <input class="form-control" type="text" value="Artisanal kale" id="example-text-input">
+        <div class="input-group input-group-lg">
+          <input type="text" placeholder="Project" class="form-control" />
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="input-group input-group-lg">
+              <input type="text" placeholder="Nick" class="form-control" />
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="input-group input-group-lg">
+              <input type="text" placeholder="Last Name" class="form-control" />
+            </div>
           </div>
         </div>
-        <div class="form-group row">
-          <label for="example-search-input" class="col-2 col-form-label">Search</label>
-          <div class="col-10">
-            <input class="form-control" type="search" value="How do I shoot web" id="example-search-input">
-          </div>
+        <div class="input-group input-group-lg">
+          <input type="password" placeholder="Password" class="form-control" />
         </div>
-        <div class="form-group row">
-          <label for="example-email-input" class="col-2 col-form-label">Email</label>
-          <div class="col-10">
-            <input class="form-control" type="email" value="bootstrap@example.com" id="example-email-input">
-          </div>
+        <div class="input-group input-group-lg">
+          <span class="input-group-addon"></span>
+          <input type="text" placeholder="With Icon" class="form-control" />
         </div>
-        <div class="form-group row">
-          <label for="example-url-input" class="col-2 col-form-label">URL</label>
-          <div class="col-10">
-            <input class="form-control" type="url" value="https://getbootstrap.com" id="example-url-input">
-          </div>
+        <div class="input-group input-group-lg">
+          <input type="text" placeholder="Rounded border" class="form-control" />
         </div>
-        <div class="form-group row">
-          <label for="example-tel-input" class="col-2 col-form-label">Telephone</label>
-          <div class="col-10">
-            <input class="form-control" type="tel" value="1-(555)-555-5555" id="example-tel-input">
-          </div>
+        <div class="form-group">
+          <input type="text" placeholder="Project" class="form-control" />
+          <small class="form-text text-muted">A block of help text that breaks into a new line and may extend beyond one line.</small>
         </div>
-        <div class="form-group row">
-          <label for="example-password-input" class="col-2 col-form-label">Password</label>
-          <div class="col-10">
-            <input class="form-control" type="password" value="hunter2" id="example-password-input">
-          </div>
+        <div class="input-group input-group-lg">
+          <input type="text" placeholder="Disabled input" class="form-control" />
         </div>
-        <div class="form-group row">
-          <label for="example-number-input" class="col-2 col-form-label">Number</label>
-          <div class="col-10">
-            <input class="form-control" type="number" value="42" id="example-number-input">
-          </div>
+        <div class="input-group">
+          <textarea rows="5" placeholder="Text Area" class="form-control"></textarea>
         </div>
-        <div class="form-group row">
-          <label for="example-datetime-local-input" class="col-2 col-form-label">Date and time</label>
-          <div class="col-10">
-            <input class="form-control" type="datetime-local" value="2011-08-19T13:45:00" id="example-datetime-local-input">
-          </div>
+        <div class="input-group">
+          <input type="text" placeholder="Small Input" class="form-control" />
         </div>
-        <div class="form-group row">
-          <label for="example-date-input" class="col-2 col-form-label">Date</label>
-          <div class="col-10">
-            <input class="form-control" type="date" value="2011-08-19" id="example-date-input">
-          </div>
+        <div class="input-group input-group-lg">
+          <input type="text" placeholder="Large Input" class="form-control" />
         </div>
-        <div class="form-group row">
-          <label for="example-month-input" class="col-2 col-form-label">Month</label>
-          <div class="col-10">
-            <input class="form-control" type="month" value="2011-08" id="example-month-input">
-          </div>
+      </nga-card-body>
+    </nga-card>
+    <nga-card>
+      <nga-card-header>Input Groups</nga-card-header>
+      <nga-card-body>
+        <div class="input-group">
+          <span class="input-group-addon">@</span>
+          <input type="text" class="form-control" placeholder="Username" />
         </div>
-        <div class="form-group row">
-          <label for="example-week-input" class="col-2 col-form-label">Week</label>
-          <div class="col-10">
-            <input class="form-control" type="week" value="2011-W33" id="example-week-input">
-          </div>
+        <div class="input-group">
+          <span class="input-group-btn">
+            <button class="btn btn-primary">
+              <i class="ion-ios-email-outline"></i>
+            </button>
+          </span>
+          <input type="text" placeholder="Recipient's username" class="form-control">
+          <span class="input-group-btn">
+            <button class="btn btn-primary">
+              @example.com
+            </button>
+          </span>
         </div>
-        <div class="form-group row">
-          <label for="example-time-input" class="col-2 col-form-label">Time</label>
-          <div class="col-10">
-            <input class="form-control" type="time" value="13:45:00" id="example-time-input">
-          </div>
+        <div class="input-group">
+          <input type="text" placeholder="Search for..." class="form-control">
+          <span class="input-group-btn">
+            <button class="btn btn-danger">
+              Search
+            </button>
+          </span>
         </div>
-        <div class="form-group row">
-          <label for="example-color-input" class="col-2 col-form-label">Color</label>
-          <div class="col-10">
-            <input class="form-control" type="color" value="#563d7c" id="example-color-input">
+        <div class="input-group">
+          <div class="input-group-btn" ngbDropdown>
+            <button type="button" class="btn btn-success dropdown-toggle" ngbDropdownToggle>
+              Action
+            </button>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" href="#">Something else here</a>
+              <div role="separator" class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Separated link</a>
+            </div>
           </div>
+          <input type="text" class="form-control">
+        </div>
+      </nga-card-body>
+    </nga-card>
+    <nga-card>
+      <nga-card-header>Selects</nga-card-header>
+      <nga-card-body>
+        <div class="form-group">
+          <label>Simple Select</label>
+          <select class="form-control">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Multiple Select</label>
+          <select multiple class="form-control">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
         </div>
       </nga-card-body>
     </nga-card>
   </div>
   <div class="col-md-6">
     <nga-card>
-      <nga-card-header>Disabled states</nga-card-header>
+      <nga-card-header>Input Styles</nga-card-header>
       <nga-card-body>
-        <form>
-          <fieldset disabled>
-            <div class="form-group">
-              <label for="disabledTextInput">Disabled input</label>
-              <input type="text" id="disabledTextInput" class="form-control" placeholder="Disabled input">
-            </div>
-            <div class="form-group">
-              <label for="disabledSelect">Disabled select menu</label>
-              <select id="disabledSelect" class="form-control">
-                <option>Disabled select</option>
-              </select>
-            </div>
-            <div class="checkbox">
-              <label>
-              <input type="checkbox"> Can't check this
-            </label>
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-          </fieldset>
-        </form>
+        <div class="input-group input-group-lg">
+          <input type="text" placeholder="Border Only" class="form-control" />
+        </div>
+        <div class="input-group input-group-lg">
+          <input type="text" placeholder="Default Input" class="form-control">
+        </div>
+        <div class="input-group input-group-lg">
+          <input type="text" placeholder="Fill Only" class="form-control">
+        </div>
       </nga-card-body>
     </nga-card>
     <nga-card>
-      <nga-card-header>
-        Validation states
-      </nga-card-header>
+      <nga-card-header>Validation States</nga-card-header>
       <nga-card-body>
+        <div class="form-group">
+          <input type="text" placeholder="Input with Success" class="form-control form-control-success">
+        </div>
+        <div class="form-group">
+          <input type="text" placeholder="Input with Warning" class="form-control form-control-warning">
+        </div>
+        <div class="form-group">
+          <input type="text" placeholder="Input with Danger" class="form-control form-control-danger">
+        </div>
+        <div class="form-group validation-checkboxes">
+          <label class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input">
+            <span class="custom-control-indicator"></span>
+            <span class="custom-control-description">Input with Success</span>
+          </label>
+          <label class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input">
+            <span class="custom-control-indicator"></span>
+            <span class="custom-control-description">Input with Warning</span>
+          </label>
+          <label class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input">
+            <span class="custom-control-indicator"></span>
+            <span class="custom-control-description">Input with Danger</span>
+          </label>
+        </div>
         <div class="form-group has-success">
-          <label class="form-control-label" for="inputSuccess1">Input with success</label>
-          <input type="text" class="form-control form-control-success" id="inputSuccess1">
-          <div class="form-control-feedback">Success! You've done it.</div>
-          <small class="form-text text-muted">Example help text that remains unchanged.</small>
+          <input type="text" placeholder="Input with Success Icon" class="form-control form-control-success">
         </div>
         <div class="form-group has-warning">
-          <label class="form-control-label" for="inputWarning1">Input with warning</label>
-          <input type="text" class="form-control form-control-warning" id="inputWarning1">
-          <div class="form-control-feedback">Shucks, check the formatting of that and try again.</div>
-          <small class="form-text text-muted">Example help text that remains unchanged.</small>
+          <input type="text" placeholder="Input with Warning Icon" class="form-control form-control-warning">
         </div>
         <div class="form-group has-danger">
-          <label class="form-control-label" for="inputDanger1">Input with danger</label>
-          <input type="text" class="form-control form-control-danger" id="inputDanger1">
-          <div class="form-control-feedback">Sorry, that username's taken. Try another?</div>
-          <small class="form-text text-muted">Example help text that remains unchanged.</small>
+          <input type="text" placeholder="Input with Danger Icon" class="form-control form-control-danger">
         </div>
       </nga-card-body>
     </nga-card>
-  </div>
-</div>
-<div class="row">
-  <div class="col-md-6">
     <nga-card>
-      <nga-card-header>
-        Form controls
-      </nga-card-header>
+      <nga-card-header>Checkboxes & Radios</nga-card-header>
       <nga-card-body>
-        <form>
-          <div class="form-group">
-            <label for="exampleInputEmail1">Email address</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-          </div>
-          <div class="form-group">
-            <label for="exampleSelect1">Example select</label>
-            <select class="form-control" id="exampleSelect1">
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-              <option>5</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="exampleSelect2">Example multiple select</label>
-            <select multiple class="form-control" id="exampleSelect2">
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-              <option>5</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="exampleTextarea">Example textarea</label>
-            <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
-          </div>
-          <div class="form-group">
-            <label for="exampleInputFile">File input</label>
-            <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
-            <small id="fileHelp" class="form-text text-muted">This is some placeholder block-level help text for the above input. It's a bit lighter and easily wraps to a new line.</small>
-          </div>
-          <fieldset class="form-group">
-            <legend>Radio buttons</legend>
-            <div class="form-check">
-              <label class="form-check-label">
-                <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-                Option one is this and that&mdash;be sure to include why it's great
-              </label>
-            </div>
-            <div class="form-check">
-              <label class="form-check-label">
-                <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="option2">
-                Option two can be something else and selecting it will deselect option one
-              </label>
-            </div>
-            <div class="form-check disabled">
-              <label class="form-check-label">
-                <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios3" value="option3" disabled>
-                Option three is disabled
-              </label>
-            </div>
-          </fieldset>
-          <div class="form-check">
-            <label class="form-check-label">
-            <input type="checkbox" class="form-check-input">
-              Check me out
+        <div class="demo-checkboxes-radio">
+          <div class="demo-checkboxes">
+            <label class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input">
+              <span class="custom-control-indicator"></span>
+              <span class="custom-control-description">Checkbox 1</span>
+            </label>
+            <label class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input">
+              <span class="custom-control-indicator"></span>
+              <span class="custom-control-description">Checkbox 2</span>
+            </label>
+            <label class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input">
+              <span class="custom-control-indicator"></span>
+              <span class="custom-control-description">Checkbox 3</span>
             </label>
           </div>
-          <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
-      </nga-card-body>
-    </nga-card>
-  </div>
-  <div class="col-md-6">
-    <nga-card>
-      <nga-card-header>
-        Input groups
-      </nga-card-header>
-      <nga-card-body>
-        <div class="input-group">
-          <span class="input-group-addon" id="basic-addon1">@</span>
-          <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
-        </div>
-        <br>
-        <div class="input-group">
-          <input type="text" class="form-control" placeholder="Recipient's username" aria-describedby="basic-addon2">
-          <span class="input-group-addon" id="basic-addon2">@example.com</span>
-        </div>
-        <br>
-        <label for="basic-url">Your vanity URL</label>
-        <div class="input-group">
-          <span class="input-group-addon" id="basic-addon3">https://example.com/users/</span>
-          <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
-        </div>
-        <br>
-        <div class="input-group">
-          <span class="input-group-addon">$</span>
-          <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
-          <span class="input-group-addon">.00</span>
-        </div>
-        <br>
-        <div class="input-group">
-          <span class="input-group-addon">$</span>
-          <span class="input-group-addon">0.00</span>
-          <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+          <div class="demo-radio">
+            <label class="custom-control custom-radio">
+              <input type="radio" class="custom-control-input">
+              <span class="custom-control-indicator"></span>
+              <span class="custom-control-description">Radio 1</span>
+            </label>
+            <label class="custom-control custom-radio">
+              <input type="radio" class="custom-control-input">
+              <span class="custom-control-indicator"></span>
+              <span class="custom-control-description">Radio 2</span>
+            </label>
+            <label class="custom-control custom-radio">
+              <input type="radio" class="custom-control-input">
+              <span class="custom-control-indicator"></span>
+              <span class="custom-control-description">Radio 3</span>
+            </label>
+          </div>
+          <div class="demo-disabled-checkbox-radio">
+            <label class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input">
+              <span class="custom-control-indicator"></span>
+              <span class="custom-control-description">Disabled Checkbox</span>
+            </label>
+            <label class="custom-control custom-radio">
+              <input type="radio" class="custom-control-input">
+              <span class="custom-control-indicator"></span>
+              <span class="custom-control-description">Disabled Radio</span>
+            </label>
+          </div>
         </div>
       </nga-card-body>
     </nga-card>
     <nga-card>
-      <nga-card-header>
-        Rating
-      </nga-card-header>
-      <nga-card-body>
+      <nga-card-body class="demo-rating">
+        <span>Rating</span>
         <div>
-          <ngb-rating [(ngModel)]="rate1" max="{{ max1 }}" class="rating">
+          <ngb-rating [(rate)]="currentRate">
             <ng-template let-fill="fill">
-              <i *ngIf="fill === 100" class="ion-android-star"></i>
-              <i *ngIf="fill === 0" class="ion-android-star-outline"></i>
+              <span class="star" [class.filled]="fill === 100">&#9733;</span>
             </ng-template>
           </ngb-rating>
-          <span class="help-block">Rate: {{ rate1 }}</span>
+          <span>{{ currentRate }}</span>
         </div>
         <div>
-          <ngb-rating [(ngModel)]="rate2" max="{{ max2 }}" class="rating">
+          <ngb-rating [(rate)]="currentRate">
             <ng-template let-fill="fill">
-              <i *ngIf="fill === 100" class="ion-ios-heart"></i>
-              <i *ngIf="fill === 0" class="ion-ios-heart-outline"></i>
+              <span class="star" [class.filled]="fill === 100">&#9733;</span>
             </ng-template>
           </ngb-rating>
-          <span class="help-block">Rate: {{ rate2 }}</span>
-        </div>
-      </nga-card-body>
-    </nga-card>
-    <nga-card>
-      <nga-card-header>
-        Selects
-      </nga-card-header>
-      <nga-card-body>
-        <div class="form-group">
-          <label for="exampleSelect1">Example select</label>
-          <select class="form-control" id="exampleSelect1">
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
-          </select>
-        </div>
-
-        <div class="form-group">
-          <label for="exampleSelect2">Example multiple select</label>
-          <select multiple class="form-control" id="exampleSelect2">
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
-          </select>
+          <span>{{ currentRate }}</span>
         </div>
       </nga-card-body>
     </nga-card>

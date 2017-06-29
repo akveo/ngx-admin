@@ -5,11 +5,5 @@ import { Component } from '@angular/core';
   templateUrl: './form-inputs.component.html',
 })
 export class FormInputsComponent {
-
-  rate1: number = 3;
-  rate2: number = 4;
-
-  max1: number = 5;
-  max2: number = 10;
-
+  currentRate: number = 6;
 }
