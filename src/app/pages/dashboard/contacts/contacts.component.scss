@@ -1,5 +1,5 @@
 @import '../../../@theme/styles/variables';
-@import '~@nga/theme/styles/global/bootstrap/hero-buttons';
+@import '~@akveo/nga-theme/styles/global/bootstrap/hero-buttons';
 
 @include nga-install-component() {
   nga-tabset /deep/ ul {
