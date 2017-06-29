@@ -13,7 +13,7 @@
     "outDir": "./lib",
     "rootDir": "./.ng_build",
     "sourceMap": true,
-    "target": "es2015",
+    "target": "es5",
     "inlineSources": true,
     "stripInternal": true,
     "baseUrl": ".",
@@ -33,6 +33,7 @@
     "./.ng_build/**/*.spec.ts"
   ],
   "angularCompilerOptions": {
+    "skipTemplateCodegen": true,
     "strictMetadataEmit": true,
     "genDir": "./.ng_compiled"
   }

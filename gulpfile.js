@@ -187,9 +187,7 @@ gulp.task('default', ['copy-sources']);
 gulp.task('inline-resources', copyResources);
 gulp.task('bundle:umd:theme', bundleUmdTheme);
 gulp.task('bundle:umd:auth', bundleUmdAuth);
-gulp.task('bundle:es2015:theme', bundleES2015Theme);
-gulp.task('bundle:es2015:auth', bundleES2015Auth);
-gulp.task('bundle', ['bundle:umd:theme', 'bundle:umd:auth', 'bundle:es2015:theme', 'bundle:es2015:auth']);
+gulp.task('bundle', ['bundle:umd:theme', 'bundle:umd:auth']);
 
 function copySources() {
   gulp.src('./src/framework/**/*')
@@ -249,32 +247,6 @@ function bundleUmdAuth() {
     entry: `${LIB_DIR}/auth/index.js`,
     format: 'umd',
     output: 'auth.umd.js',
-    dest: `${LIB_DIR}/auth/bundles`,
-  };
-
-  bundle(config);
-}
-
-function bundleES2015Theme() {
-  const config = {
-    src: `${LIB_DIR}/theme/**/*.js`,
-    moduleName: 'nga.theme',
-    entry: `${LIB_DIR}/theme/index.js`,
-    format: 'es',
-    output: 'theme.es2015.js',
-    dest: `${LIB_DIR}/theme/bundles`,
-  };
-
-  bundle(config);
-}
-
-function bundleES2015Auth() {
-  const config = {
-    src: `${LIB_DIR}/auth/**/*.js`,
-    moduleName: 'nga.auth',
-    entry: `${LIB_DIR}/auth/index.js`,
-    format: 'es',
-    output: 'auth.es2015.js',
     dest: `${LIB_DIR}/auth/bundles`,
   };
 
