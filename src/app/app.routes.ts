@@ -39,6 +39,10 @@ import { NgaSidebarTestComponent } from './sidebar-test/sidebar-test.component';
 import { NgaTabsetTestComponent } from './tabset-test/tabset-test.component';
 import { NgaUserTestComponent } from './user-test/user-test.component';
 import { CardComponent } from './card/card.component';
+import {
+  NgaAuthComponent, NgaLoginComponent, NgaRegisterComponent, NgaLogoutComponent,
+  NgaRequestPasswordComponent, NgaResetPasswordComponent
+} from '@akveo/nga-auth';
 
 export const routes: Routes = [
   {
@@ -175,7 +179,33 @@ export const routes: Routes = [
   },
   {
     path: 'auth',
-    loadChildren: '@akveo/nga-auth/auth.module#NgaAuthModule',
+    component: NgaAuthComponent,
+    children: [
+      {
+        path: '',
+        component: NgaLoginComponent,
+      },
+      {
+        path: 'login',
+        component: NgaLoginComponent,
+      },
+      {
+        path: 'register',
+        component: NgaRegisterComponent,
+      },
+      {
+        path: 'logout',
+        component: NgaLogoutComponent,
+      },
+      {
+        path: 'request-password',
+        component: NgaRequestPasswordComponent,
+      },
+      {
+        path: 'reset-password',
+        component: NgaResetPasswordComponent,
+      },
+    ],
   },
   {
     path: 'search',
