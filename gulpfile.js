@@ -8,7 +8,7 @@ const resolve = require('rollup-plugin-node-resolve');
 const inline_recources = require('./scripts/inline-resources');
 
 const BUILD_DIR = './.ng_build';
-const LIB_DIR = './lib';
+const LIB_DIR = './src/.lib';
 const ROLLUP_GLOBALS = {
 
   // Angular dependencies

@@ -1,21 +1,22 @@
 {
   "extends": "../tsconfig.json",
   "compilerOptions": {
-    "outDir": "../out-tsc/app",
+    "outDir": "../out-tsc/app-wp",
     "module": "es2015",
     "baseUrl": "",
     "types": [],
     "paths": {
-      "@akveo/nga-auth/*": [
-        "./framework/auth/*"
-      ],
-      "@akveo/nga-theme/*": [
-        "./framework/theme/*"
+      "@akveo/nga-*": [
+        "./.lib/*"
       ]
     }
   },
+  "include": [
+    "../src/**/*.ts"
+  ],
   "exclude": [
     "test.ts",
-    "**/*.spec.ts"
+    "**/*.spec.ts",
+    "framework/*"
   ]
 }

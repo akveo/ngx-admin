@@ -10,7 +10,7 @@
     "module": "es2015",
     "moduleResolution": "node",
     "noEmitOnError": true,
-    "outDir": "./lib",
+    "outDir": "./src/.lib",
     "rootDir": "./.ng_build",
     "sourceMap": true,
     "target": "es5",

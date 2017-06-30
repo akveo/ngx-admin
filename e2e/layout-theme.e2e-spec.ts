@@ -39,10 +39,10 @@ describe('nga-layout theme', () => {
       expect(value).toEqual(themeBlue);
     });
     cardHeader.getCssValue('color').then(value => {
-      expect(value).toEqual('rgba(255, 0, 0, 1)');
+      expect(value).toEqual('rgba(255, 255, 255, 1)');
     });
     cardHeader.getCssValue('text-decoration').then(value => {
-      expect(value).toMatch('underline');
+      expect(value).toMatch('none');
     });
 
     button.click().then(() => {
@@ -57,7 +57,7 @@ describe('nga-layout theme', () => {
       expect(value).toEqual(themeDefault);
     });
     cardHeader.getCssValue('color').then(value => {
-      expect(value).toEqual('rgba(113, 121, 163, 1)');
+      expect(value).toEqual('rgba(209, 209, 255, 1)');
     });
     cardHeader.getCssValue('text-decoration').then(value => {
       expect(value).toMatch('none');

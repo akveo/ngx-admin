@@ -12,15 +12,15 @@ import { RouterModule } from '@angular/router';
 import { List } from 'immutable';
 
 import { NgaThemeModule } from '@akveo/nga-theme';
-import { NgaCardModule } from '@akveo/nga-theme/components/card/card.module';
-import { NgaLayoutModule } from '@akveo/nga-theme/components/layout/layout.module';
-import { NgaMenuModule } from '@akveo/nga-theme/components/menu/menu.module';
-import { NgaRouteTabsetModule } from '@akveo/nga-theme/components/route-tabset/route-tabset.module';
-import { NgaSidebarModule } from '@akveo/nga-theme/components/sidebar/sidebar.module';
-import { NgaTabsetModule } from '@akveo/nga-theme/components/tabset/tabset.module';
-import { NgaUserModule } from '@akveo/nga-theme/components/user/user.module';
+import { NgaCardModule } from '@akveo/nga-theme';
+import { NgaLayoutModule } from '@akveo/nga-theme';
+import { NgaMenuModule } from '@akveo/nga-theme';
+import { NgaRouteTabsetModule } from '@akveo/nga-theme';
+import { NgaSidebarModule } from '@akveo/nga-theme';
+import { NgaTabsetModule } from '@akveo/nga-theme';
+import { NgaUserModule } from '@akveo/nga-theme';
 import { NgaAuthModule, NgaDummyAuthProvider, NgaEmailPassAuthProvider } from '@akveo/nga-auth';
-import { NgaActionsModule } from '@akveo/nga-theme/components/actions/actions.module';
+import { NgaActionsModule } from '@akveo/nga-theme';
 import { NgaSearchModule } from '@akveo/nga-theme';
 import { NgaMenuItem } from '@akveo/nga-theme';
 

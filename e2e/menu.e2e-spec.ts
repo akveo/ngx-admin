@@ -194,7 +194,7 @@ describe('nga-menu', () => {
           .then(() => {
             element.all(menu333).first().getText()
               .then(val => {
-                expect(val).toEqual('@nga/theme');
+                expect(val).toEqual('@akveo/nga-theme');
               });
 
             element.all(menu333).first().click()

@@ -24,12 +24,6 @@ describe('nga-layout-header', () => {
     });
   });
 
-  it('should have height', () => {
-    element(by.css('nga-layout-header nav')).getCssValue('height').then(value => {
-      expect(value).toEqual('75.5938px');
-    });
-  });
-
   it('should be flex', () => {
     element(by.css('nga-layout-header nav')).getCssValue('display').then(value => {
       expect(value).toEqual('flex');

@@ -6,7 +6,7 @@
 
 import { Component, OnInit } from '@angular/core';
 
-import { NgaSidebarService } from '@akveo/nga-theme/components/sidebar/sidebar.service';
+import { NgaSidebarService } from '@akveo/nga-theme';
 
 @Component({
   selector: 'nga-sidebar-test',
