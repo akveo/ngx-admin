@@ -9,6 +9,8 @@
 @import '../../core/mixins';
 
 @mixin nga-b-forms-theme() {
+
+  .input-group-addon,
   .form-control {
     color: nga-theme(form-control-text-primary-color);
     background-color: nga-theme(form-control-bg);
