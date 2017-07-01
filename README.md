@@ -21,6 +21,9 @@ Installation, customization and other useful articles: https://akveo.github.io/n
 ## Based on
 Angular 2+, Angular CLI, Bootstrap 4, and lots of awesome modules and plugins
 
+## ngx-admin-next
+The next major release is under development in https://github.com/akveo/ng2-admin/tree/ngx-admin branch.
+
 ## BrowserStack
 This project runs its tests on multiple desktop and mobile browsers using [BrowserStack](http://www.browserstack.com).
 
