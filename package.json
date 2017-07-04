@@ -38,7 +38,7 @@
     "clean:tmp:lib": "npm run clean:tmp && rimraf src/.lib",
     "version:bump": "gulp bump",
     "release:prepare": "npm run build:package",
-    "release:validate": "npm run build:wp:ci && npm run e2e:wp",
+    "release:validate": "npm run lint:ci && npm run build:wp:ci && npm run e2e:wp",
     "release": "npm run version:bump && npm run release:prepare && npm run release:validate && npm publish src/.lib/theme && npm publish src/.lib/auth",
     "gulp": "gulp"
   },
