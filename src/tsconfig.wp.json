@@ -16,7 +16,6 @@
   ],
   "exclude": [
     "test.ts",
-    "**/*.spec.ts",
-    "framework/*"
+    "**/*.spec.ts"
   ]
 }

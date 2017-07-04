@@ -8,7 +8,12 @@
     "types": [
       "jasmine",
       "node"
-    ]
+    ],
+    "paths": {
+      "@akveo/nga-*": [
+        "./framework/*"
+      ]
+    }
   },
   "files": [
     "test.ts"
