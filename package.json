@@ -1,6 +1,6 @@
 {
   "name": "akveo",
-  "version": "2.0.0-alpha.0",
+  "version": "2.0.0-alpha.1-dev.8",
   "license": "MIT",
   "author": "akveo <contact@akveo.com>",
   "bugs": {
@@ -36,8 +36,10 @@
     "prepush": "npm run lint:ci",
     "clean:tmp": "rimraf .ng_build .ng_compiled",
     "clean:tmp:lib": "npm run clean:tmp && rimraf src/.lib",
-    "release:prepare": "npm run build:package && npm run build:wp:ci && npm run e2e:wp",
-    "release": "npm run release:prepare && npm publish src/.lib/theme && npm publish src/.lib/auth",
+    "version:bump": "gulp bump",
+    "release:prepare": "npm run build:package",
+    "release:validate": "npm run build:wp:ci && npm run e2e:wp",
+    "release": "npm run version:bump && npm run release:prepare && npm run release:validate && npm publish src/.lib/theme && npm publish src/.lib/auth",
     "gulp": "gulp"
   },
   "keywords": [
@@ -68,6 +70,7 @@
     "d3": "4.8.0",
     "echarts": "3.5.4",
     "font-awesome": "4.7.0",
+    "gulp-bump": "^2.7.0",
     "immutable": "3.8.1",
     "ionicons": "2.0.1",
     "leaflet": "1.0.3",

@@ -11,7 +11,8 @@
 - Try to use changeDetection: ChangeDetectionStrategy.OnPush
 - Never forget typedoc comments
 - Do tests
-- Create playground page per each new component
+- Create playground page per each new component/feature
+
 
 # NEW Feature checklist
 - lint checks are passing
@@ -136,3 +137,14 @@ Each module consists of:
 
 ## Documentation
 Documentation is generated with custom generator built on top of @nga/theme :)
+
+## Release
+
+To start a new release (publish the framework packages no NPM) you need:
+
+1. npm run release:prepare - this will create ready for publishing packages in src/.lib
+2. npm run release:validate - this will build prod & AOT builds of the playground app using prepared packages in src/.lib and run e2e tests again it.
+3. MANUALLY update a version in main ./package.json to a new one
+4. release:
+  * make sure you are logged in as corresponding NPM user
+  * npm run release - will update all package.json's, run prepare & validate and finally publish the packages to NPM

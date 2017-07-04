@@ -4,6 +4,10 @@ const replace = require('gulp-replace');
 const rollup = require('gulp-rollup');
 const rename = require('gulp-rename');
 const resolve = require('rollup-plugin-node-resolve');
+const semver = require('semver');
+const bump = require('gulp-bump');
+
+const VERSION = require('./package.json').version;
 
 const inline_recources = require('./scripts/inline-resources');
 
@@ -188,6 +192,15 @@ gulp.task('inline-resources', copyResources);
 gulp.task('bundle:umd:theme', bundleUmdTheme);
 gulp.task('bundle:umd:auth', bundleUmdAuth);
 gulp.task('bundle', ['bundle:umd:theme', 'bundle:umd:auth']);
+gulp.task('bump', bumpVersions);
+
+function bumpVersions() {
+  gulp.src(['./package.json', './src/framework/theme/package.json', './src/framework/auth/package.json'], {base: './'})
+    .pipe(bump({
+      version: VERSION
+    }))
+    .pipe(gulp.dest('./'));
+}
 
 function copySources() {
   gulp.src('./src/framework/**/*')
