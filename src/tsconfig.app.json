@@ -6,11 +6,8 @@
     "baseUrl": "",
     "types": [],
     "paths": {
-      "@akveo/nga-auth/*": [
-        "./framework/auth/*"
-      ],
-      "@akveo/nga-theme/*": [
-        "./framework/theme/*"
+      "@akveo/nga-*": [
+        "./framework/*"
       ]
     }
   },

@@ -35,6 +35,8 @@ script:
   - npm run build:ci
   - npm run test
   - npm run e2e
+  - npm run release:prepare
+  - npm run release:validate
 
 git:
   depth: 1
