@@ -1,0 +1,63 @@
+/**
+ * @license
+ * Copyright Akveo. All Rights Reserved.
+ * Licensed under the MIT License. See License.txt in the project root for license information.
+ */
+
+@mixin nga-b-input-group-theme() {
+
+  .input-group-addon,
+  .input-group-icon {
+    font-size: 1.5rem;
+    padding: 0.5rem 1rem;
+    border-right: none;
+    color: nga-theme(form-control-placeholder-color);
+  }
+
+  .input-group-addon {
+    &.primary {
+      color: nga-theme(color-primary);
+    }
+
+    &.success {
+      color: nga-theme(color-success);
+    }
+
+    &.warning {
+      color: nga-theme(color-warning);
+    }
+
+    &.info {
+      color: nga-theme(color-info);
+    }
+
+    &.danger {
+      color: nga-theme(color-danger);
+    }
+
+    &.secondary {
+      color: nga-theme(color-secondary);
+    }
+  }
+
+  .input-group-icon + .form-control {
+    border-left: none;
+    padding-left: 0;
+  }
+
+  .input-group-lg > .form-control {
+    padding: 1.125rem 1.5rem;
+  }
+
+  .input-group-rounded > .form-control {
+    border-radius: 1.25rem;
+  }
+
+  .input-group-border-only > .form-control {
+    background: transparent;
+  }
+
+  .input-group-fill-only > .form-control {
+    border-color: transparent;
+  }
+}

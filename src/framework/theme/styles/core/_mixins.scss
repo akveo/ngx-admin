@@ -76,7 +76,7 @@
     ':-ms-input-placeholder'
   );
 
-  &[placeholder] {
+  &::placeholder {
     @include placeholder($color, $font-size);
   }
 
@@ -96,7 +96,7 @@
   font-size: $font-size;
   opacity: 1;
   transition: opacity 0.3s ease;
-  text-overflow:ellipsis;
+  text-overflow: ellipsis;
 }
 
 @mixin placeholder-focus() {

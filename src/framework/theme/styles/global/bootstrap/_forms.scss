@@ -7,11 +7,14 @@
 @import './size-form-control';
 @import './default-form-control';
 @import '../../core/mixins';
+@import './form-group';
+@import './custom-forms';
 
 @mixin nga-b-forms-theme() {
 
   .input-group-addon,
   .form-control {
+    padding: 0.75rem 1.5rem;
     color: nga-theme(form-control-text-primary-color);
     background-color: nga-theme(form-control-bg);
     border: nga-theme(form-control-border-width)
@@ -25,9 +28,20 @@
       background-color: nga-theme(form-control-focus-bg);
     }
 
+    &:disabled {
+      border-color: tint(nga-theme(form-control-bg), 14%);
+
+      @include install-placeholder(shade(nga-theme(form-control-placeholder-color), 40%),
+                                  nga-theme(form-control-placeholder-font-size));
+    }
+
     @include form-control-validation(nga-theme(form-control-text-secondary-color));
-    @include install-placeholder(nga-theme(form-control-placeholder-color),
+    @include install-placeholder(shade(nga-theme(form-control-placeholder-color), 14%),
                                  nga-theme(form-control-placeholder-font-size));
+  }
+
+  select.form-control:not([size]):not([multiple]) {
+    height: calc(2.25rem + 10px);
   }
 
   .form-control-label {
@@ -40,6 +54,15 @@
     font-weight: nga-theme(form-control-feedback-font-weight);
   }
 
+  .form-text {
+    color: nga-theme(color-fg);
+    margin-left: 1rem;
+  }
+
   @include form-control-size();
   @include form-control-default();
+
+  @include form-group();
+
+  @include custom-forms();
 }

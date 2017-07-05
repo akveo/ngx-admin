@@ -11,6 +11,7 @@
 @import './pagination';
 @import './icon-buttons';
 @import './forms';
+@import './input-group';
 
 @mixin nga-bootstrap-theme() {
   @include nga-b-buttons-theme();
@@ -19,4 +20,5 @@
   @include nga-b-pagination-theme();
   @include nga-b-icon-buttons-theme();
   @include nga-b-forms-theme();
+  @include nga-b-input-group-theme();
 }
