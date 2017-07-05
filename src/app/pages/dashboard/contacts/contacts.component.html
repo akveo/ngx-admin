@@ -3,11 +3,14 @@
     <nga-tab tabTitle="Contacts">
       <div class="contact" *ngFor="let c of contacts">
         <nga-user [picture]="c.user.picture" [name]="c.user.name" [title]="c.type" size="xmedium"></nga-user>
-        <i class="ion-ios-telephone-outline"></i>
+        <i class="i-contact ion-ios-telephone-outline"></i>
       </div>
     </nga-tab>
     <nga-tab tabTitle="Recent">
-      <span>Content #2</span>
+      <div class="contact" *ngFor="let c of recent">
+        <nga-user [picture]="c.user.picture" [name]="c.user.name" [title]="c.type" size="xmedium"></nga-user>
+        <span class="time">{{ c.time }}</span>
+      </div>
     </nga-tab>
   </nga-tabset>
 </nga-card>

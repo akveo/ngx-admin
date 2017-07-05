@@ -2,11 +2,19 @@
 @import '~@akveo/nga-theme/styles/global/bootstrap/hero-buttons';
 
 @include nga-install-component() {
-  nga-tabset /deep/ ul {
-    border-bottom: 1px solid nga-theme(separator);
+  nga-tabset {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    /deep/ ul {
+      border-bottom: 1px solid nga-theme(separator);
+    }
   }
 
   nga-tab {
+    flex: 1;
+    overflow-y: scroll;
     padding: 0;
   }
 
@@ -18,9 +26,15 @@
     border-bottom: 1px solid nga-theme(separator);
   }
 
-  i {
+  .i-contact {
     font-size: 2.5rem;
     cursor: pointer;
+  }
+
+  .time {
+    font-size: 0.875rem;
+    font-weight: nga-theme(font-weight-light);
+    text-transform: uppercase;
   }
 
   nga-user /deep/ {
