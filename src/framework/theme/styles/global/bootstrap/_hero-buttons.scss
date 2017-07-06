@@ -156,6 +156,94 @@
 @function btn-hero-secondary-middle-color() {
   @return mix(btn-hero-secondary-left-color(), nga-theme(btn-secondary-border));
 }
+
+// light gradients
+
+@function btn-hero-light-gradient($color-left, $color-right) {
+  $color-left: tint($color-left, 14%);
+  $color-right: tint($color-right, 14%);
+
+  @return linear-gradient(to right, $color-left, $color-right);
+}
+
+@function btn-hero-primary-light-gradient() {
+  $color-right: nga-theme(btn-primary-bg);
+  $color-left: btn-hero-primary-left-color();
+
+  @return btn-hero-light-gradient($color-left, $color-right);
+}
+
+@function btn-hero-warning-light-gradient() {
+  $color-right: nga-theme(btn-warning-bg);
+  $color-left: btn-hero-warning-left-color();
+
+  @return btn-hero-light-gradient($color-left, $color-right);
+}
+
+@function btn-hero-success-light-gradient() {
+  $color-right: nga-theme(btn-success-bg);
+  $color-left: btn-hero-success-left-color();
+
+  @return btn-hero-light-gradient($color-left, $color-right);
+}
+
+@function btn-hero-info-light-gradient() {
+  $color-right: nga-theme(btn-info-bg);
+  $color-left: btn-hero-info-left-color();
+
+  @return btn-hero-light-gradient($color-left, $color-right);
+}
+
+@function btn-hero-danger-light-gradient() {
+  $color-right: nga-theme(btn-danger-bg);
+  $color-left: btn-hero-danger-left-color();
+
+  @return btn-hero-light-gradient($color-left, $color-right);
+}
+
+// dark gradients
+
+@function btn-hero-dark-gradient($color-left, $color-right) {
+  $color-left: shade($color-left, 14%);
+  $color-right: shade($color-right, 14%);
+
+  @return linear-gradient(to right, $color-left, $color-right);
+}
+
+@function btn-hero-primary-dark-gradient() {
+  $color-right: nga-theme(btn-primary-bg);
+  $color-left: btn-hero-primary-left-color();
+
+  @return btn-hero-dark-gradient($color-left, $color-right);
+}
+
+@function btn-hero-warning-dark-gradient() {
+  $color-right: nga-theme(btn-warning-bg);
+  $color-left: btn-hero-warning-left-color();
+
+  @return btn-hero-dark-gradient($color-left, $color-right);
+}
+
+@function btn-hero-success-dark-gradient() {
+  $color-right: nga-theme(btn-success-bg);
+  $color-left: btn-hero-success-left-color();
+
+  @return btn-hero-dark-gradient($color-left, $color-right);
+}
+
+@function btn-hero-info-dark-gradient() {
+  $color-right: nga-theme(btn-info-bg);
+  $color-left: btn-hero-info-left-color();
+
+  @return btn-hero-dark-gradient($color-left, $color-right);
+}
+
+@function btn-hero-danger-dark-gradient() {
+  $color-right: nga-theme(btn-danger-bg);
+  $color-left: btn-hero-danger-left-color();
+
+  @return btn-hero-dark-gradient($color-left, $color-right);
+}
 // End functions
 
 // Help mixins
@@ -163,37 +251,26 @@
   text-shadow: 0 1px 3px nga-theme(btn-hero-text-shadow);
 }
 
-@mixin btn-hero-hover($color-left, $color-right) {
-  $color-left: tint($color-left, 14%);
-  $color-right: tint($color-right, 14%);
-
+@mixin btn-hero-hover($light-gradient) {
   &:hover,
   .hover {
-    @include nga-right-gradient($color-left, $color-right);
+    background-image: $light-gradient;
   }
 }
 
-@mixin btn-hero-focus($color-left, $color-right) {
-  $color-left: shade($color-left, 14%);
-  $color-right: shade($color-right, 14%);
-
+@mixin btn-hero-focus($dark-gradient) {
   &:focus,
   .focus {
-    @include nga-right-gradient($color-left, $color-right);
-
+    background-image: $dark-gradient;
     box-shadow: none;
     border-color: transparent;
   }
 }
 
-@mixin btn-hero-active($color-left, $color-right) {
-  $color-left: shade($color-left, 14%);
-  $color-right: shade($color-right, 14%);
-
+@mixin btn-hero-active($dark-gradient) {
   &:active,
   .active {
-    @include nga-right-gradient($color-left, $color-right);
-
+    background-image: $dark-gradient;
     box-shadow: none;
     border-color: transparent;
   }
@@ -372,38 +449,23 @@
 
 // Hover
 @mixin btn-hero-primary-hover() {
-  $color-right: nga-theme(btn-primary-bg);
-  $color-left: btn-hero-primary-left-color();
-
-  @include btn-hero-hover($color-left, $color-right);
+  @include btn-hero-hover(btn-hero-primary-light-gradient());
 }
 
 @mixin btn-hero-warning-hover() {
-  $color-right: nga-theme(btn-warning-bg);
-  $color-left: btn-hero-warning-left-color();
-
-  @include btn-hero-hover($color-left, $color-right);
+  @include btn-hero-hover(btn-hero-warning-light-gradient());
 }
 
 @mixin btn-hero-success-hover() {
-  $color-right: nga-theme(btn-success-bg);
-  $color-left: btn-hero-success-left-color();
-
-  @include btn-hero-hover($color-left, $color-right);
+  @include btn-hero-hover(btn-hero-success-light-gradient());
 }
 
 @mixin btn-hero-info-hover() {
-  $color-right: nga-theme(btn-info-bg);
-  $color-left: btn-hero-info-left-color();
-
-  @include btn-hero-hover($color-left, $color-right);
+  @include btn-hero-hover(btn-hero-info-light-gradient());
 }
 
 @mixin btn-hero-danger-hover() {
-  $color-right: nga-theme(btn-danger-bg);
-  $color-left: btn-hero-danger-left-color();
-
-  @include btn-hero-hover($color-left, $color-right);
+  @include btn-hero-hover(btn-hero-danger-light-gradient());
 }
 
 @mixin btn-hero-secondary-hover() {
@@ -415,38 +477,23 @@
 
 // Focus
 @mixin btn-hero-primary-focus() {
-  $color-right: nga-theme(btn-primary-bg);
-  $color-left: btn-hero-primary-left-color();
-
-  @include btn-hero-focus($color-left, $color-right);
+  @include btn-hero-focus(btn-hero-primary-dark-gradient());
 }
 
 @mixin btn-hero-warning-focus() {
-  $color-right: nga-theme(btn-warning-bg);
-  $color-left: btn-hero-warning-left-color();
-
-  @include btn-hero-focus($color-left, $color-right);
+  @include btn-hero-focus(btn-hero-warning-dark-gradient());
 }
 
 @mixin btn-hero-success-focus() {
-  $color-right: nga-theme(btn-success-bg);
-  $color-left: btn-hero-success-left-color();
-
-  @include btn-hero-focus($color-left, $color-right);
+  @include btn-hero-focus(btn-hero-success-dark-gradient());
 }
 
 @mixin btn-hero-info-focus() {
-  $color-right: nga-theme(btn-info-bg);
-  $color-left: btn-hero-info-left-color();
-
-  @include btn-hero-focus($color-left, $color-right);
+  @include btn-hero-focus(btn-hero-info-dark-gradient());
 }
 
 @mixin btn-hero-danger-focus() {
-  $color-right: nga-theme(btn-danger-bg);
-  $color-left: btn-hero-danger-left-color();
-
-  @include btn-hero-focus($color-left, $color-right);
+  @include btn-hero-focus(btn-hero-danger-dark-gradient());
 }
 
 @mixin btn-hero-secondary-focus() {
@@ -462,38 +509,23 @@
 
 // Active
 @mixin btn-hero-primary-active() {
-  $color-right: nga-theme(btn-primary-bg);
-  $color-left: btn-hero-primary-left-color();
-
-  @include btn-hero-active($color-left, $color-right);
+  @include btn-hero-active(btn-hero-primary-dark-gradient());
 }
 
 @mixin btn-hero-warning-active() {
-  $color-right: nga-theme(btn-warning-bg);
-  $color-left: btn-hero-warning-left-color();
-
-  @include btn-hero-active($color-left, $color-right);
+  @include btn-hero-active(btn-hero-warning-dark-gradient());
 }
 
 @mixin btn-hero-success-active() {
-  $color-right: nga-theme(btn-success-bg);
-  $color-left: btn-hero-success-left-color();
-
-  @include btn-hero-active($color-left, $color-right);
+  @include btn-hero-active(btn-hero-success-dark-gradient());
 }
 
 @mixin btn-hero-info-active() {
-  $color-right: nga-theme(btn-info-bg);
-  $color-left: btn-hero-info-left-color();
-
-  @include btn-hero-active($color-left, $color-right);
+  @include btn-hero-active(btn-hero-info-dark-gradient());
 }
 
 @mixin btn-hero-danger-active() {
-  $color-right: nga-theme(btn-danger-bg);
-  $color-left: btn-hero-danger-left-color();
-
-  @include btn-hero-active($color-left, $color-right);
+  @include btn-hero-active(btn-hero-danger-dark-gradient());
 }
 
 @mixin btn-hero-secondary-active() {
