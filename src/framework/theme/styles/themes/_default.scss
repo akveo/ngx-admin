@@ -26,7 +26,7 @@ $theme: (
 
   radius: 0.5rem,
   padding: 1.25rem,
-  margin: 1.25rem,
+  margin: 1.5rem,
   line-height: 1.25,
 
   color-bg: #edf1f7,
@@ -84,6 +84,7 @@ $theme: (
   card-shadow: shadow,
   card-border-radius: radius,
   card-padding: padding,
+  card-margin: margin,
   card-scrollbar-width: scrollbar-width,
   card-scrollbar-fg: scrollbar-fg,
   card-scrollbar-bg: scrollbar-bg,
@@ -123,7 +124,7 @@ $theme: (
   layout-fg: color-fg,
   layout-bg: color-bg,
   layout-min-height: 100vh,
-  layout-padding: padding,
+  layout-padding: 2.25rem 2.25rem 0.75rem,
   layout-content-width: 900px,
 
   sidebar-font-size: font-size,
