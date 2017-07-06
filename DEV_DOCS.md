@@ -1,9 +1,9 @@
 # TODO
- - rewrite theme and styles parts to include info about the variables
  - RXJS import
  - steps to start the development
  - describe framework and demo dependencies
- - redo block about overrides
+ - create a new component guide
+ - usage guide
  
 # MUST!
 - Use tslint, styles-lint
@@ -14,7 +14,7 @@
 - Create playground page per each new component/feature
 
 
-# NEW Feature checklist
+# NEW Feature Checklist
 - lint checks are passing
 - tests are added/updated
 - showcase in the playground updated
@@ -22,7 +22,7 @@
 - SCSS variables added/updated
 - tsdocs added/updated
 - commit message is properly formatted
-- for override - registered in a list of overrides
+- for the override - registered in a list of overrides
 - component *.theme registered in a list of component themes
 - looks great on all default themes
 - takes into account `inverse` feature
@@ -33,64 +33,68 @@
 
 - src
     - app - Components playground, used for components development showcase, also covered with UI tests
+    - docs - Documentation and framework website built on top on the framework
     - backend - Small backend example to run UI tests for @nga/auth 
     - framework - Framework itself, divided into npm packages
-        - auth - `@nga/auth` npm package, auth package (login, register, etc)
         - theme - `@nga/theme` npm package, main framework package
+        - auth - `@nga/auth` npm package, auth package (login, register, etc)       
       
       
 # Auth // TODO      
 
 # Theme
-Theme module is a main framework module, consisting from custom UI Kit components (layout, cards, tabs, etc), css-themes support and appearance overrides for 3rd party libraries.
+Theme module is the main framework module, consisting of:
+ 
+  - custom UI Kit components (layout, cards, tabs, etc)
+  - css-themes with hot reload support 
+  - appearance overrides for 3rd party libraries.
 
 ## UI Kit structure 
 
 Located in `theme/components`.
-Each component consists of standart angular component structure + `*.theme.scss` file, which is a customizable part of component's styles.
+Each component consists of the standard angular component structure + `*.theme.scss` file, which is a customizable part (customizable here means dependable on a specific theme variables) of component's styles.
 
 ## Services
 
 Located in `theme/services`.
-Global theme services. 
+Global theme services.
 
 ## Styles structure
 
 Located in `theme/styles`
 
-- core - Mixins and functions
-- themes - Built-in themes
-    - default - Default theme
-        - theme.scss - resulting theme file
-        - variables.scss - theme variables
-    - light - Another theme
-    - theming.scss - connects all component `*.theme` files, global styles and all overrides.
-- components.scss - imports all components themes
-- globals.scss - all global styles   
+- core/ - Common mixins and functions
+- global/ - Root of the 3rd party components overrides and other global styles
+- themes/ - built-in themes
+- all.scss - exports all themes' variables, theming engine and global styles
+- components.scss - exports all themes' variables and theming engine but DOES NOT export global styles (should be used in a component)
+- globals.scss - exports all global styles (overrides, components' `*.theme.scss` themes, fonts, etc)
+- themes.scss - all built-in themes
+- theming.scss - themesation engine 
 
 ### CSS Themes
 
 - Problem
-  Customizable themes support doesn't work good with angular, as encapsulated in framework styles can't access user app variables.
-  Thus, we need to ask a user to include framework styles separately as global styles, so that it is possible to change SASS variables before the theme styles are processed.
+  Customizable themes support doesn't work good with angular, as encapsulated in framework components' styles can't access user app variables unless you make them non-encapsulated and export as scss-files).
+  Thus, we need to ask a user to include the framework styles separately as global styles, so that it is possible to change SASS variables before the theme styles are processed.
   
 - Solution
-  Solution is to divide component styles into configurable (with SASS variables) and non-configurable (hardcoded).
-  Then place hardcoded styles into `*.component.scss`, and configurable styles into `*.theme.scss`.
-  The `*.theme` files will be included into one `*theme` file with access to default theme variables. This files has to be included by the user into their project.
+  The solution is to separate component's styles into configurable (with SASS variables) and non-configurable (hardcoded) styles.
+  Then place hardcoded styles into `*.component.scss`, and dynamic styles into `*.theme.scss`.
+  The `*.theme` files will be included into one `*theme` file with access to the theme variables. This file has to be included by the user into their project.
   
 - Disadvantages
     - We separate styles, thus it's hard to read the styles in the development mode.
-    - Theme styles are not encapsulated.
+    - Theme styles are not encapsulated, basically are global styles.
   
 - Possible future solution
-    - CSS variables
-  
+    - CSS variables (currently lack of browsers support)
+ 
   
 ### Multi Themes
 
 - Problem
-  We cannot change SCSS variables in the runtime as user change the theme (possible with CSS varibles but browser support is very limited). 
+  We cannot change SCSS variables in the runtime as user change the theme (possible with CSS variables but browser support is quite limited). 
   
 - Solution
   Thus, we need to build multiple instances of styles in the runtime and encapsulate each theme's bunch of styles under some .theme-name class:
@@ -107,40 +111,43 @@ Located in `theme/styles`
     }
     
    ```
-  Then, changing css class on some root element (nga-layout) we can change the page appearance in the runtime.
-
+  Then, by changing a css class on the root element (nga-layout) we can change the page appearance in the runtime.
+  
+  - SCSS MAP
+    Moreover, to have an arbitrary amount of themes we need to store the variables as an `SCSS `.
+    Then, each component' styles (user components' styles) needs to be wrapped into `nga-install-component` mixing, 
+    which will be called in a loop for each theme, setting its own variables.
+    Variables then accessible through `nga-theme(var-name)` function.
+    Finally, example of such component will look like:
+    ```
+      @import '@nga/theme/styles/component';
+      
+      @include nga-install-component() {
+        div {
+          color: nga-theme(primary-fg);
+        }
+      }
+    ```
+    
 - Disadvantages
-  - Double (triple, etc) size of generated css file. 
+  - Double (triple, multiple) sizes of generated css file. 
 
 - Possible future solution
   - CSS variables
 
-## Overrides
 
-Located in `theme/overrides`.
-Consists of a list of override modules (module here - is a group of 3rd party components).
-Each module consists of:
-
- - *.module.ts module file which imports and exports 3rd party modules.
- - styles - folder with 3rd party components` styles overrides.
-    - *.theme.scss - component theme override file
-
-
-- Problem
-  Theme also provides custom appearance for 3rd party libraries and frameworks, like bootstrap. We need to customize their styles in order to change their look and feel.
-  
-- Solution
-  Override file per library. Override files are included in the resulting `theme.scss` file.
+// TODO: how to create custom themes
       
 ## JS Themes - // TODO
 
+TBD
 
 ## Documentation
-Documentation is generated with custom generator built on top of @nga/theme :)
+Documentation is generated by the custom generator built on top of @nga/theme.
 
 ## Release
 
-To start a new release (publish the framework packages no NPM) you need:
+To start a new release (publish the framework packages on NPM) you need:
 
 1. npm run release:prepare - this will create ready for publishing packages in src/.lib
 2. npm run release:validate - this will build prod & AOT builds of the playground app using prepared packages in src/.lib and run e2e tests again it.
