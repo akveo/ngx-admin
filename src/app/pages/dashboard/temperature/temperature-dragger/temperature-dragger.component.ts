@@ -1,5 +1,5 @@
 import {
-  Component, HostListener, ViewChild, ElementRef, Input, Output, EventEmitter, AfterViewInit,
+  Component, HostListener, ViewChild, ElementRef, Input, Output, EventEmitter, AfterViewInit, OnChanges,
 } from '@angular/core';
 
 const VIEW_BOX_SIZE = 300;
@@ -9,12 +9,12 @@ const VIEW_BOX_SIZE = 300;
   templateUrl: './temperature-dragger.component.html',
   styleUrls: ['./temperature-dragger.component.scss'],
 })
-export class TemperatureDraggerComponent implements AfterViewInit {
+export class TemperatureDraggerComponent implements AfterViewInit, OnChanges {
 
   @ViewChild('svgRoot') svgRoot: ElementRef;
 
-  @Input() fillColors: String|String[] = '#2ec6ff';
-  @Input() disableArcColor: String = '#999999';
+  @Input() fillColors: string|string[] = '#2ec6ff';
+  @Input() disableArcColor: string = '#999999';
   @Input() bottomAngle: number = 90;
   @Input() arcThickness: number = 6; // CSS pixels
   @Input() knobRadius: number = 10; // CSS pixels
@@ -61,12 +61,20 @@ export class TemperatureDraggerComponent implements AfterViewInit {
   };
 
   private isMouseDown = false;
+  private init = false;
 
   constructor() {
   }
 
   ngAfterViewInit(): void {
     this.invalidate();
+    this.init = true;
+  }
+
+  ngOnChanges(): void {
+    if (this.init) {
+      this.invalidate();
+    }
   }
 
   mouseDown(event) {
@@ -168,24 +176,26 @@ export class TemperatureDraggerComponent implements AfterViewInit {
     let path = `M ${s.outer.start.x},${s.outer.start.y}`; // Start at startangle top
 
     // Outer arc
-    path += ` A ${s.outer.radius},${s.outer.radius}` + // Draw an arc of radius 'radius'
-      ` 0 ${s.big} 1` + // Arc details...
-      ` ${s.outer.end.x},${s.outer.end.y}`; // Arc goes to top end angle coordinate
+    // Draw an arc of radius 'radius'
+    // Arc details...
+    path += ` A ${s.outer.radius},${s.outer.radius}
+       0 ${s.big} 1
+       ${s.outer.end.x},${s.outer.end.y}`; // Arc goes to top end angle coordinate
 
     // Outer to inner connector
-    path += ` A ${s.thickness / 2},${s.thickness / 2}` +
-      ` 0 1 1` +
-      ` ${s.inner.end.x},${s.inner.end.y}`;
+    path += ` A ${s.thickness / 2},${s.thickness / 2}
+       0 1 1
+       ${s.inner.end.x},${s.inner.end.y}`;
 
     // Inner arc
-    path += ` A ${s.inner.radius},${s.inner.radius}` +
-      ` 1 ${s.big} 0` +
-      ` ${s.inner.start.x},${s.inner.start.y}`;
+    path += ` A ${s.inner.radius},${s.inner.radius}
+       1 ${s.big} 0
+       ${s.inner.start.x},${s.inner.start.y}`;
 
     // Outer to inner connector
-    path += ` A ${s.thickness / 2},${s.thickness / 2}` +
-      ` 0 1 1` +
-      ` ${s.outer.start.x},${s.outer.start.y}`;
+    path += ` A ${s.thickness / 2},${s.thickness / 2}
+       0 1 1
+       ${s.outer.start.x},${s.outer.start.y}`;
 
     // Close path
     path += ' Z';
@@ -219,12 +229,12 @@ export class TemperatureDraggerComponent implements AfterViewInit {
     const radius = this.radius;
 
     function getArc(des) {
-      return `M ${radius},${radius}` +
-        ` L ${des.start.x},${des.start.y}` +
-        ` A ${2 * radius},${2 * radius}` +
-        ` 0 ${des.big} 1` +
-        ` ${des.end.x},${des.end.y}` +
-        ` Z`;
+      return `M ${radius},${radius}
+         L ${des.start.x},${des.start.y}
+         A ${2 * radius},${2 * radius}
+         0 ${des.big} 1
+         ${des.end.x},${des.end.y}
+         Z`;
     }
 
     const angleStep = (2 * Math.PI - this.bottomAngleRad) / this.colors.length;
@@ -247,12 +257,12 @@ export class TemperatureDraggerComponent implements AfterViewInit {
     const angle = this.bottomAngleRad / 2 + (1 - this.value) * (2 * Math.PI - this.bottomAngleRad);
     this.styles.nonSelectedArc = {
       color: this.disableArcColor,
-      d: `M ${this.radius},${this.radius}` +
-      ` L ${this.radius},${3 * this.radius}` +
-      ` A ${2 * this.radius},${2 * this.radius}` +
-      ` 1 ${angle > Math.PI ? '1' : '0'} 0` +
-      ` ${this.radius + this.radius * 2 * Math.sin(angle)},${this.radius + this.radius * 2 * Math.cos(angle)}` +
-      ` Z`,
+      d: `M ${this.radius},${this.radius}
+       L ${this.radius},${3 * this.radius}
+       A ${2 * this.radius},${2 * this.radius}
+       1 ${angle > Math.PI ? '1' : '0'} 0
+       ${this.radius + this.radius * 2 * Math.sin(angle)},${this.radius + this.radius * 2 * Math.cos(angle)}
+       Z`,
     };
   }
 
