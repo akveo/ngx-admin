@@ -3,19 +3,7 @@
 
 <div class="row">
   <div class="col-lg-3">
-    <nga-card size="xmedium">
-      <nga-tabset fullWidth>
-        <nga-tab tabTitle="Temperature">
-          <ngx-temperature-dragger [arcThickness]="15" [knobRadius]="15" [(value)]="currentValue" [bottomAngle]="90"
-                               disableArcColor="#2c2961"
-                               [fillColors]="['#2ec6ff', '#31ffad', '#7bff24', '#fff024', '#ff6c00']">
-          </ngx-temperature-dragger>
-        </nga-tab>
-        <nga-tab tabTitle="Humidity">
-          <span>Content #2</span>
-        </nga-tab>
-      </nga-tabset>
-    </nga-card>
+    <ngx-temperature></ngx-temperature>
   </div>
 
   <div class="col-lg-9">
@@ -29,14 +17,7 @@
 
 <div class="row">
   <div class="col-lg-9">
-    <nga-card size="xmedium">
-      <nga-card-header>
-        Room Management
-      </nga-card-header>
-      <nga-card-body>
-        <ngx-room-selector></ngx-room-selector>
-      </nga-card-body>
-    </nga-card>
+    <ngx-rooms></ngx-rooms>
   </div>
 
   <div class="col-lg-3">

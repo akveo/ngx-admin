@@ -4,9 +4,11 @@ import { NgaTabsetModule, NgaUserModule } from '@akveo/nga-theme';
 import { SharedModule } from '../../shared.module';
 import { DashboardComponent } from './dashboard.component';
 import { StatusCardsComponent } from './status-cards/status-cards.component';
-import { TemperatureDraggerComponent } from './temperature-dragger/temperature-dragger.component';
 import { ContactsComponent } from './contacts/contacts.component';
-import { RoomSelectorComponent } from './room-selector/room-selector.component';
+import { RoomsComponent } from './rooms/rooms.component';
+import { RoomSelectorComponent } from './rooms/room-selector/room-selector.component';
+import { TemperatureComponent } from './temperature/temperature.component';
+import { TemperatureDraggerComponent } from './temperature/temperature-dragger/temperature-dragger.component';
 
 @NgModule({
   imports: [
@@ -20,6 +22,8 @@ import { RoomSelectorComponent } from './room-selector/room-selector.component';
     TemperatureDraggerComponent,
     ContactsComponent,
     RoomSelectorComponent,
+    TemperatureComponent,
+    RoomsComponent,
   ],
 })
 export class DashboardModule { }

@@ -8,3 +8,8 @@
     padding-top: 0;
   }
 }
+
+//global styles for thw whole application
+[class^='col-'] {
+  padding: 0 0.75rem;
+}
