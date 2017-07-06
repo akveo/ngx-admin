@@ -11,6 +11,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgaThemeOptions, ngaThemeOptionsToken } from './theme.options';
 import { NgaThemeService } from './services/theme.service';
 import { NgaSpinnerService } from './services/spinner.service';
+import { NgaThemeConfig } from './services/themeConfig.service';
 
 
 @NgModule({
@@ -35,6 +36,7 @@ export class NgaThemeModule {
       ],
       providers: [
         { provide: ngaThemeOptionsToken, useValue: ngaThemeOptions || {} },
+        NgaThemeConfig,
         NgaThemeService,
         NgaSpinnerService,
       ],
