@@ -6,69 +6,116 @@
     flex-direction: row;
     align-items: center;
     height: 6rem;
-    box-shadow: 0 3px 0 0 #322f70, 4px 0 18px 0 rgba(19, 19, 94, 0.4);
     overflow: visible;
     cursor: pointer;
+    color: nga-theme(card-fg-heading);
 
-    position: relative;
-    &::before {
-      position: absolute;
-      content: '';
-      height: calc(100% + 3px);
-      width: 100%;
-      left: 0;
-      top: 0;
-      background: rgba(0, 0, 0, 0.1);
-      border-radius: nga-theme(card-border-radius);
+    $bevel: btn-hero-bevel(nga-theme(card-bg));
+    $shadow: btn-hero-shadow();
+    box-shadow: $bevel, $shadow;
+    transition: all 0.1s ease-out;
+
+    $border-radius: nga-theme(card-border-radius);
+    .icon-container {
+      font-size: 4em;
+      padding: 0.5rem 1.75rem;
+      border-radius: $border-radius 0 0 $border-radius;
+      transition: all 0.1s ease-out, color 0s;
+
+      &.primary {
+        @include btn-hero-primary-gradient();
+        @include btn-hero-primary-bevel-glow-shadow();
+      }
+      &.success {
+        @include btn-hero-success-gradient();
+        @include btn-hero-success-bevel-glow-shadow();
+      }
+      &.info {
+        @include btn-hero-info-gradient();
+        @include btn-hero-info-bevel-glow-shadow();
+      }
+      &.warning {
+        @include btn-hero-warning-gradient();
+        @include btn-hero-warning-bevel-glow-shadow();
+      }
     }
 
-    &.on {
-      box-shadow: inset 0 3px 9px 0 #322f70, 4px 0 18px 0 rgba(19, 19, 94, 0.4);
+    &:hover {
+      background: lighten(nga-theme(card-bg), 5%);
 
       .icon-container {
-        box-shadow: none;
+        &.primary {
+          background-image: btn-hero-primary-light-gradient();
+        }
         &.success {
-          box-shadow: inset 0 5px 9px 0 #00967d,
-                            0 4px 10px 0 rgba(33, 7, 77, 0.5),
-                            0 2px 12px 0 rgba(35, 255, 181, 0.6);
+          background-image: btn-hero-success-light-gradient();
+        }
+        &.info {
+          background-image: btn-hero-info-light-gradient();
+        }
+        &.warning {
+          background-image: btn-hero-warning-light-gradient();
         }
       }
-      &::before {
-        display: none;
+    }
+
+    &:active {
+      box-shadow: none;
+      background: nga-theme(card-bg);
+
+      .icon-container {
+        &.primary, &.success, &.info, &.warning {
+          box-shadow: none;
+        }
+        &.primary {
+          background-image: btn-hero-primary-dark-gradient();
+        }
+        &.success {
+          background-image: btn-hero-success-dark-gradient();
+        }
+        &.info {
+          background-image: btn-hero-info-dark-gradient();
+        }
+        &.warning {
+          background-image: btn-hero-warning-dark-gradient();
+        }
       }
     }
-  }
 
-  .icon-container {
-    font-size: 4em;
-    padding: 0.5rem 1.75rem;
-    color: nga-theme(card-foreground);
-    border-radius: nga-theme(card-border-radius) 0 0 nga-theme(card-border-radius);
+    &.off {
+      color: nga-theme(card-fg);
 
-    &.primary {
-      @include btn-hero-primary();
-    }
-    &.success {
-      @include btn-hero-success();
-    }
-    &.info {
-      @include btn-hero-info();
-    }
-    &.warning {
-      @include btn-hero-warning();
-    }
-  }
+      .icon-container {
+        &.primary, &.success, &.info, &.warning {
+          box-shadow: none;
+          background-image: linear-gradient(to right, transparent, transparent);
+        }
+      }
 
-  .details {
-    margin-left: 1.5rem;
-  }
-  .title {
-    font-size: 1.5rem;
-  }
-  .status {
-    font-size: 1.125rem;
-    font-weight: nga-theme(font-weight-light);
-    text-transform: uppercase;
-    color: nga-theme(card-foreground-secondary);
+      .details {
+        border-left: 1px solid nga-theme(separator);
+      }
+      .status {
+        color: nga-theme(card-fg);
+      }
+    }
+
+    .details {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 100%;
+      padding-left: 1.5rem;
+      border-left: 1px solid transparent;
+    }
+    .title {
+      font-size: 1.5rem;
+    }
+    .status {
+      font-size: 1.125rem;
+      font-weight: nga-theme(font-weight-light);
+      text-transform: uppercase;
+      color: nga-theme(card-fg-heading);
+    }
   }
 }

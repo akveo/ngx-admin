@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   template: `
     <div class="row">
       <div class="col-lg-3" *ngFor="let card of statusCards">
-        <nga-card (click)="card.on = !card.on" [ngClass]="{'on': card.on}">
+        <nga-card (click)="card.on = !card.on" [ngClass]="{'off': !card.on}">
           <div class="icon-container {{card.type}}">
             <i class="{{card.icon}}"></i>
           </div>
