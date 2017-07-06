@@ -6,7 +6,10 @@
  - usage guide
  
 # MUST!
+- Don’t overcomplicate
+- Don’t make things too abstract
 - Use tslint, styles-lint
+- Use lifecycle interfaces
 - Use default angular view encapsulation
 - Try to use changeDetection: ChangeDetectionStrategy.OnPush
 - Never forget typedoc comments
@@ -27,6 +30,19 @@
 - looks great on all default themes
 - takes into account `inverse` feature
 - requires approval from several core team contributors
+
+# Objectives
+The main aim of the project is to create a second version of ng2-admin called ngx-admin which will fix all the architecture issues of the current version:
+
+  - make it modular
+  - publish it npm on package
+  - customizable color themes with HOT reload support
+  - create a library of custom layout components
+  - expanded documentation and guides
+  - replace ng2-bootstrap with ng-bootstrap
+  - get rid of jQuery
+  - follow Angular code style
+  - use Angular CLI
 
 
 # Framework Structure
@@ -136,7 +152,7 @@ Located in `theme/styles`
   - CSS variables
 
 
-// TODO: how to create custom themes
+// TODO: create and use custom themes
       
 ## JS Themes - // TODO
 
