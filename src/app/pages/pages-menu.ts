@@ -89,6 +89,9 @@ export const menuItems: List<NgaMenuItem> = List([{
   children: List<NgaMenuItem>([{
     title: 'Form Inputs',
     link: '/pages/forms/inputs',
+  }, {
+    title: 'Form Layouts',
+    link: '/pages/forms/layouts',
   }]),
 }, {
   title: 'Tables',
