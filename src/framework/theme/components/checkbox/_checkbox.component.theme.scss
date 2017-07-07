@@ -1,0 +1,57 @@
+/**
+ * @license
+ * Copyright Akveo. All Rights Reserved.
+ * Licensed under the MIT License. See License.txt in the project root for license information.
+ */
+
+@mixin nga-checkbox-theme() {
+  @mixin custom-control-indicator-border($color) {
+    border: 2px solid $color;
+  }
+
+  nga-checkbox {
+    .custom-control-indicator {
+      background-color: transparent;
+      width: 1.25rem;
+      height: 1.25rem;
+
+      @include custom-control-indicator-border(nga-theme(color-fg));
+    }
+
+    .custom-control-input {
+      &:focus ~ .custom-control-indicator {
+        box-shadow: none;
+      }
+
+      &:checked ~ .custom-control-indicator {
+        background-color: transparent;
+      }
+
+      &:active ~ .custom-control-indicator {
+        background-color: transparent;
+      }
+    }
+
+    .custom-control-description {
+      line-height: 1.875rem;
+    }
+
+    &.success {
+      .custom-control-indicator {
+        @include custom-control-indicator-border(nga-theme(color-success));
+      }
+    }
+
+    &.warning {
+      .custom-control-indicator {
+        @include custom-control-indicator-border(nga-theme(color-warning));
+      }
+    }
+
+    &.danger {
+      .custom-control-indicator {
+        @include custom-control-indicator-border(nga-theme(color-danger));
+      }
+    }
+  }
+}

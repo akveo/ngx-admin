@@ -20,3 +20,5 @@ export * from './components/user/user.module';
 export * from './components/actions/actions.module';
 export * from './components/search/search.module';
 export * from './components/search/search.service';
+export * from './components/checkbox/checkbox.component';
+export * from './components/checkbox/checkbox.module';
