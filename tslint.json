@@ -120,7 +120,7 @@
     "no-attribute-parameter-decorator": true,
     "use-life-cycle-interface": true,
     "use-pipe-transform-interface": true,
-    "pipe-naming": [true, "camelCase", ["ngx", "test"]],
+//    "pipe-naming": [true, "camelCase", ["ngx", "test"]],
     "component-class-suffix": true,
     "directive-class-suffix": true,
     "templates-use-public": true,

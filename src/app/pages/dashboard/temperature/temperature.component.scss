@@ -1,14 +1,69 @@
 @import '../../../@theme/styles/variables';
-@import '~@akveo/nga-theme/styles/global/bootstrap/hero-buttons';
 
 @include nga-install-component() {
 
+  nga-card {
+    background-image: radial-gradient(circle at 50% 50%, #423f8c, #302c6e);
+  }
+
+  nga-tabset {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
   nga-tab.content-active {
     display: flex;
+    flex: 1;
     justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 100%;
   }
 
   ngx-temperature-dragger {
     width: 80%;
+  }
+
+  .temperature {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .value {
+      position: relative;
+      color: nga-theme(color-fg-heading);
+      font-family: nga-theme(font-secondary);
+      font-size: 4rem;
+      font-weight: nga-theme(font-weight-bolder);
+
+      &::before {
+        position: absolute;
+        content: '°';
+        top: 0;
+        right: -1.25rem;
+      }
+    }
+
+    .desc {
+      color: nga-theme(color-fg);
+      font-weight: nga-theme(font-weight-light);
+    }
+
+    &.off {
+      .value {
+        color: nga-theme(color-fg);
+        letter-spacing: 0.25rem;
+        padding-left: 0.5rem;
+
+        &::before {
+          display: none;
+        }
+      }
+
+      .desc {
+        display: none;
+      }
+    }
   }
 }

@@ -21,6 +21,13 @@ import {
   TinyMCEComponent,
 } from './components';
 
+
+import {
+  CapitalizePipe,
+  PluralPipe,
+  RoundPipe,
+} from './pipes';
+
 import { OneColumnLayoutComponent } from './layouts';
 
 const BASE_MODULES = [
@@ -48,20 +55,27 @@ const COMPONENTS = [
   OneColumnLayoutComponent,
 ];
 
+const PIPES = [
+  CapitalizePipe,
+  PluralPipe,
+  RoundPipe,
+];
+
 @NgModule({
   imports: [
     ...BASE_MODULES,
     ...NGA_MODULES,
-    // TODO:
     NgaSidebarModule.forRoot(),
   ],
   exports: [
     ...BASE_MODULES,
     ...NGA_MODULES,
     ...COMPONENTS,
+    ...PIPES,
   ],
   declarations: [
     ...COMPONENTS,
+    ...PIPES,
   ],
 })
 export class ThemeModule {

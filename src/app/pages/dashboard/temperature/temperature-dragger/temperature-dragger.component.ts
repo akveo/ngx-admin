@@ -16,14 +16,19 @@ export class TemperatureDraggerComponent implements AfterViewInit, OnChanges {
   @Input() fillColors: string|string[] = '#2ec6ff';
   @Input() disableArcColor: string = '#999999';
   @Input() bottomAngle: number = 90;
-  @Input() arcThickness: number = 6; // CSS pixels
-  @Input() knobRadius: number = 10; // CSS pixels
+  @Input() arcThickness: number = 20; // CSS pixels
+  @Input() knobRadius: number = 15; // CSS pixels
 
-  value: number = 0.5;
+  value: number = 50;
   @Output('valueChange') valueChange = new EventEmitter<Number>();
   @Input('value') set setValue(value) {
     this.value = value;
   }
+
+  @Input() min: number = 0; // min output value
+  @Input() max: number = 100; // max output value
+
+  @Output() power = new EventEmitter<boolean>();
 
   @HostListener('mouseup', ['$event'])
   onMouseUp(event) {
@@ -40,6 +45,9 @@ export class TemperatureDraggerComponent implements AfterViewInit, OnChanges {
   onResize(event) {
     this.invalidate();
   }
+
+  off: boolean = false;
+  oldValue: number;
 
   scaleFactor: number = 1;
   bottomAngleRad = 0;
@@ -64,6 +72,7 @@ export class TemperatureDraggerComponent implements AfterViewInit, OnChanges {
   private init = false;
 
   constructor() {
+    this.oldValue = this.value;
   }
 
   ngAfterViewInit(): void {
@@ -79,7 +88,23 @@ export class TemperatureDraggerComponent implements AfterViewInit, OnChanges {
 
   mouseDown(event) {
     this.isMouseDown = true;
-    this.recalculateValue(event);
+    if (!this.off) {
+      this.recalculateValue(event);
+    }
+  }
+
+  switchPower() {
+    this.off = !this.off;
+    this.power.emit(!this.off);
+
+    if (this.off) {
+      this.oldValue = this.value;
+      this.value = this.min;
+    } else {
+      this.value = this.oldValue;
+    }
+
+    this.invalidatePinPosition();
   }
 
   private invalidate(): void {
@@ -254,7 +279,7 @@ export class TemperatureDraggerComponent implements AfterViewInit, OnChanges {
   }
 
   private invalidateNonSelectedArc() {
-    const angle = this.bottomAngleRad / 2 + (1 - this.value) * (2 * Math.PI - this.bottomAngleRad);
+    const angle = this.bottomAngleRad / 2 + (1 - this.getValuePercentage()) * (2 * Math.PI - this.bottomAngleRad);
     this.styles.nonSelectedArc = {
       color: this.disableArcColor,
       d: `M ${this.radius},${this.radius}
@@ -269,7 +294,7 @@ export class TemperatureDraggerComponent implements AfterViewInit, OnChanges {
   private invalidatePinPosition() {
     const radiusOffset = this.thickness / 2;
     const curveRadius = this.radius - radiusOffset;
-    const actualAngle = (2 * Math.PI - this.bottomAngleRad) * this.value + this.bottomAngleRad / 2;
+    const actualAngle = (2 * Math.PI - this.bottomAngleRad) * this.getValuePercentage() + this.bottomAngleRad / 2;
     this.styles.knobPosition = {
       x: curveRadius * (1 - Math.sin(actualAngle)) + radiusOffset,
       y: curveRadius * (1 + Math.cos(actualAngle)) + radiusOffset,
@@ -298,12 +323,18 @@ export class TemperatureDraggerComponent implements AfterViewInit, OnChanges {
         value = (actualAngle - this.bottomAngleRad / 2) / (2 * Math.PI - this.bottomAngleRad);
       }
 
+      value = value * (this.max - this.min) + this.min;
+
       if (this.value !== value) {
         this.value = value;
         this.valueChange.emit(this.value);
         this.invalidatePinPosition();
       }
     }
+  }
+
+  private getValuePercentage() {
+    return (this.value - this.min) / (this.max - this.min);
   }
 
   private static toRad(angle) {

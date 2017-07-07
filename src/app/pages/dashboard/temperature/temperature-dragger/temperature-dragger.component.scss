@@ -1,11 +1,66 @@
-:host {
-  display: block;
-  width: 100%;
-  height: 100%;
-}
+@import '../../../../@theme/styles/variables';
+@import '~@akveo/nga-theme/styles/global/bootstrap/hero-buttons';
 
-.svg-content {
-  display: block;
-  width: 100%;
-  height: 100%;
+@include nga-install-component() {
+  display: flex;
+  position: relative;
+
+  .svg-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+  }
+
+  .temperature-bg {
+    position: absolute;
+    width: 94%;
+    height: 94%;
+    background-color: lighten(nga-theme(layout-bg), 2%);
+    border-radius: 50%;
+    top: 9%;
+    left: 3%;
+    z-index: 1;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .power-bg {
+    position: absolute;
+    width: 5.25rem;
+    height: 5.25rem;
+    background-color: nga-theme(card-bg);
+    border-radius: 50%;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    z-index: 2;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: nga-theme(card-shadow);
+    cursor: pointer;
+    font-size: 2.5rem;
+    color: nga-theme(color-fg-heading);
+    text-shadow: 0 0 6px rgba(255, 255, 255, 0.5);
+    transition: all 0.1s ease-out;
+
+    &:hover {
+      background-color: lighten(nga-theme(card-bg), 5%);
+    }
+
+    &:active {
+      background-color: darken(nga-theme(card-bg), 5%);
+      box-shadow: none;
+    }
+
+    &.off {
+      color: nga-theme(color-fg);
+      text-shadow: none;
+    }
+  }
 }
