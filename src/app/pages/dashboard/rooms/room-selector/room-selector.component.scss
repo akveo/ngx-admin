@@ -39,6 +39,13 @@ svg {
   stroke: transparent;
   cursor: pointer;
   transition: fill 0.4s ease-out;
+  stroke-width: 4px;
+}
+
+.room-bg-border-grad {
+  fill: none;
+  stroke: none;
+  stroke-width: 4px;
 }
 
 .room-text {
@@ -50,8 +57,13 @@ svg {
 .selected-room {
   z-index: 40;
   .room-bg {
-    stroke: rgba(0, 255, 170, 0.5);
+    stroke: rgba(0, 255, 170, 1);
     fill: rgba(0, 255, 170, 0.5);
+    filter: url('#f2');
+  }
+
+  .room-bg-border-grad {
+    stroke: rgba(0, 255, 170, 1);
     filter: url('#f2');
   }
   .room-border {

@@ -10,7 +10,7 @@ export class RoomSelectorComponent {
 
   sortedRooms = [];
 
-  viewBox = '-20 -20 608.88 407.99';
+  viewBox = '-20 -20 618.88 407.99';
 
   roomSvg = {
     borders: [{
