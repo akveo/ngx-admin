@@ -9,7 +9,12 @@
   }
 }
 
-//global styles for thw whole application
+//global styles for the whole application
 [class^='col-'] {
   padding: 0 0.75rem;
+}
+
+.row {
+  margin-right: -0.75rem;
+  margin-left: -0.75rem;
 }

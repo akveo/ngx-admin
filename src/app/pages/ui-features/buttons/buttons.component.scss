@@ -14,10 +14,12 @@
 
     .header {
       color: white;
+      font-size: 0.875rem;
+      line-height: 1rem;
     }
 
     .subheader {
-      font-size: 0.875rem;
+      font-size: 0.75rem;
       line-height: 1rem;
       font-weight: 300;
       color: nga-theme(color-fg-hint);
@@ -54,7 +56,7 @@
     }
 
     .example-container .container-btn {
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem;
     }
 
     .actions-groups {
