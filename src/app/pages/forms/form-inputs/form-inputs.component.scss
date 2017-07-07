@@ -1,4 +1,6 @@
-:host /deep/ {
+@import '../../../@theme/styles/variables';
+
+@include nga-install-component() {
   .input-group {
     margin-bottom: 1rem;
   }
@@ -6,6 +8,10 @@
   .validation-checkboxes {
     display: flex;
     justify-content: space-between;
+
+    .custom-control {
+      margin-left: 1rem;
+    }
   }
 
   .demo-checkboxes {
@@ -35,10 +41,31 @@
 
   .star {
     font-size: 1.5rem;
-    color: #b0c4de;
+    color: nga-theme(color-fg);
   }
 
   .filled {
-    color: #1e90ff;
+    color: nga-theme(color-fg);
+  }
+
+  .header {
+    line-height: 2rem;
+    font-size: 1.25rem;
+    font-family: nga-theme(font-secondary);
+    font-weight: nga-theme(font-weight-bolder);
+  }
+
+  .current-rate {
+    font-size: 1.5rem;
+    padding-left: 1rem;
+    color: nga-theme(color-fg-heading);
+  }
+
+  .full-name-inputs {
+    display: flex;
+
+    .input-group:not(:last-child) {
+      margin-right: 1rem;
+    }
   }
 }

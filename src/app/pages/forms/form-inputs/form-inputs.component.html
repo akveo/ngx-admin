@@ -3,42 +3,40 @@
     <nga-card>
       <nga-card-header>Default Inputs</nga-card-header>
       <nga-card-body>
-        <div class="input-group input-group-lg">
+        <div class="input-group">
           <input type="text" placeholder="Project" class="form-control" />
         </div>
-        <div class="row">
-          <div class="col-md-6">
-            <div class="input-group input-group-lg">
-              <input type="text" placeholder="Nick" class="form-control" />
-            </div>
+        <div class="full-name-inputs">
+          <div class="input-group">
+            <input type="text" placeholder="Nick" class="form-control" />
           </div>
-          <div class="col-md-6">
-            <div class="input-group input-group-lg">
-              <input type="text" placeholder="Last Name" class="form-control" />
-            </div>
+          <div class="input-group">
+            <input type="text" placeholder="Last Name" class="form-control" />
           </div>
         </div>
-        <div class="input-group input-group-lg">
+        <div class="input-group">
           <input type="password" placeholder="Password" class="form-control" />
         </div>
-        <div class="input-group input-group-lg">
-          <span class="input-group-addon"></span>
+        <div class="input-group">
+          <span class="input-group-addon input-group-icon">
+            <i class="ion-ios-person-outline"></i>
+          </span>
           <input type="text" placeholder="With Icon" class="form-control" />
         </div>
-        <div class="input-group input-group-lg">
+        <div class="input-group input-group-rounded">
           <input type="text" placeholder="Rounded border" class="form-control" />
         </div>
         <div class="form-group">
           <input type="text" placeholder="Project" class="form-control" />
-          <small class="form-text text-muted">A block of help text that breaks into a new line and may extend beyond one line.</small>
+          <small class="form-text">A block of help text that breaks into a new line and may extend beyond one line.</small>
         </div>
-        <div class="input-group input-group-lg">
-          <input type="text" placeholder="Disabled input" class="form-control" />
+        <div class="input-group">
+          <input type="text" placeholder="Disabled input" class="form-control" disabled />
         </div>
         <div class="input-group">
           <textarea rows="5" placeholder="Text Area" class="form-control"></textarea>
         </div>
-        <div class="input-group">
+        <div class="input-group input-group-sm">
           <input type="text" placeholder="Small Input" class="form-control" />
         </div>
         <div class="input-group input-group-lg">
@@ -50,12 +48,12 @@
       <nga-card-header>Input Groups</nga-card-header>
       <nga-card-body>
         <div class="input-group">
-          <span class="input-group-addon">@</span>
+          <span class="input-group-addon success">@</span>
           <input type="text" class="form-control" placeholder="Username" />
         </div>
         <div class="input-group">
           <span class="input-group-btn">
-            <button class="btn btn-primary">
+            <button class="btn btn-primary btn-icon">
               <i class="ion-ios-email-outline"></i>
             </button>
           </span>
@@ -121,13 +119,13 @@
     <nga-card>
       <nga-card-header>Input Styles</nga-card-header>
       <nga-card-body>
-        <div class="input-group input-group-lg">
+        <div class="input-group input-group-border-only">
           <input type="text" placeholder="Border Only" class="form-control" />
         </div>
-        <div class="input-group input-group-lg">
+        <div class="input-group">
           <input type="text" placeholder="Default Input" class="form-control">
         </div>
-        <div class="input-group input-group-lg">
+        <div class="input-group input-group-fill-only">
           <input type="text" placeholder="Fill Only" class="form-control">
         </div>
       </nga-card-body>
@@ -145,21 +143,9 @@
           <input type="text" placeholder="Input with Danger" class="form-control form-control-danger">
         </div>
         <div class="form-group validation-checkboxes">
-          <label class="custom-control custom-checkbox">
-            <input type="checkbox" class="custom-control-input">
-            <span class="custom-control-indicator"></span>
-            <span class="custom-control-description">Input with Success</span>
-          </label>
-          <label class="custom-control custom-checkbox">
-            <input type="checkbox" class="custom-control-input">
-            <span class="custom-control-indicator"></span>
-            <span class="custom-control-description">Input with Warning</span>
-          </label>
-          <label class="custom-control custom-checkbox">
-            <input type="checkbox" class="custom-control-input">
-            <span class="custom-control-indicator"></span>
-            <span class="custom-control-description">Input with Danger</span>
-          </label>
+          <nga-checkbox status="success">Checkbox with Success</nga-checkbox>
+          <nga-checkbox status="warning">Checkbox with Warning</nga-checkbox>
+          <nga-checkbox status="danger">Checkbox with Danger</nga-checkbox>
         </div>
         <div class="form-group has-success">
           <input type="text" placeholder="Input with Success Icon" class="form-control form-control-success">
@@ -177,21 +163,9 @@
       <nga-card-body>
         <div class="demo-checkboxes-radio">
           <div class="demo-checkboxes">
-            <label class="custom-control custom-checkbox">
-              <input type="checkbox" class="custom-control-input">
-              <span class="custom-control-indicator"></span>
-              <span class="custom-control-description">Checkbox 1</span>
-            </label>
-            <label class="custom-control custom-checkbox">
-              <input type="checkbox" class="custom-control-input">
-              <span class="custom-control-indicator"></span>
-              <span class="custom-control-description">Checkbox 2</span>
-            </label>
-            <label class="custom-control custom-checkbox">
-              <input type="checkbox" class="custom-control-input">
-              <span class="custom-control-indicator"></span>
-              <span class="custom-control-description">Checkbox 3</span>
-            </label>
+            <nga-checkbox>Checkbox 1</nga-checkbox>
+            <nga-checkbox>Checkbox 2</nga-checkbox>
+            <nga-checkbox>Checkbox 3</nga-checkbox>
           </div>
           <div class="demo-radio">
             <label class="custom-control custom-radio">
@@ -211,11 +185,7 @@
             </label>
           </div>
           <div class="demo-disabled-checkbox-radio">
-            <label class="custom-control custom-checkbox">
-              <input type="checkbox" class="custom-control-input">
-              <span class="custom-control-indicator"></span>
-              <span class="custom-control-description">Disabled Checkbox</span>
-            </label>
+            <nga-checkbox>Disbaled Checkbox</nga-checkbox>
             <label class="custom-control custom-radio">
               <input type="radio" class="custom-control-input">
               <span class="custom-control-indicator"></span>
@@ -227,22 +197,28 @@
     </nga-card>
     <nga-card>
       <nga-card-body class="demo-rating">
-        <span>Rating</span>
+        <span class="header">Rating</span>
         <div>
-          <ngb-rating [(rate)]="currentRate">
+          <ngb-rating [(rate)]="currentRate" max=5>
             <ng-template let-fill="fill">
-              <span class="star" [class.filled]="fill === 100">&#9733;</span>
+              <span class="star fill" [class.filled]="fill === 100">
+                <i class="ion-android-star" *ngIf="fill === 100"></i>
+                <i class="ion-android-star-outline" *ngIf="fill !== 100"></i>
+              </span>
             </ng-template>
           </ngb-rating>
-          <span>{{ currentRate }}</span>
+          <span class="current-rate">{{ currentRate | number : '1.1' }}</span>
         </div>
         <div>
-          <ngb-rating [(rate)]="currentRate">
+          <ngb-rating [(rate)]="currentRate" max=5>
             <ng-template let-fill="fill">
-              <span class="star" [class.filled]="fill === 100">&#9733;</span>
+              <span class="star fill" [class.filled]="fill === 100">
+                <i class="ion-android-star" *ngIf="fill === 100"></i>
+                <i class="ion-android-star-outline" *ngIf="fill !== 100"></i>
+              </span>
             </ng-template>
           </ngb-rating>
-          <span>{{ currentRate }}</span>
+          <span class="current-rate">{{ currentRate | number : '1.1' }}</span>
         </div>
       </nga-card-body>
     </nga-card>
