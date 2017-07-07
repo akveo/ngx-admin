@@ -100,7 +100,7 @@
 }
 
 @function btn-hero-glow($color) {
-  @return 0 2px 12px 0 $color;
+  @return 0 2px 8px 0 $color;
 }
 
 @function btn-hero-shadow() {
