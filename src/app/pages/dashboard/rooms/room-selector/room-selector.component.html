@@ -3,7 +3,7 @@
   <defs>
 
     <filter id="f2" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur result="blurOut" in="StrokePaint" stdDeviation="10" />
+      <feGaussianBlur result="blurOut" in="StrokePaint" stdDeviation="3" />
     </filter>
 
     <pattern id="New_Pattern_Swatch_1" data-name="New Pattern Swatch 1" width="60" height="60"
@@ -74,9 +74,9 @@
   </g>
 
   <g [attr.id]="room.id" [class.selected-room]="selectedRoom == room.id" *ngFor="let room of sortedRooms">
-    <path class="room-bg-border-grad" (click)="roomSelected(room.id)" [attr.d]="room.area.d" />
     <path class="room-bg" (click)="roomSelected(room.id)" [attr.d]="room.area.d" />
     <path class="room-border" [attr.d]="room.border.d" />
+    <path class="room-border room-border-glow" [attr.d]="room.border.d" />
     <text class="room-text" (click)="roomSelected(room.id)" text-anchor="middle"
           [attr.x]="room.name.x" [attr.y]="room.name.y">{{room.name.text}}</text>
   </g>

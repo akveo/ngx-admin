@@ -57,8 +57,8 @@ svg {
 .selected-room {
   z-index: 40;
   .room-bg {
-    stroke: rgba(0, 255, 170, 1);
-    fill: rgba(0, 255, 170, 0.5);
+    //stroke: rgba(0, 255, 170, 1);
+    fill: rgba(0, 255, 170, 0.2);
     filter: url('#f2');
   }
 
@@ -68,5 +68,8 @@ svg {
   }
   .room-border {
     stroke: #00f9a6;
+  }
+  .room-border-glow {
+    filter: url('#f2');
   }
 }
