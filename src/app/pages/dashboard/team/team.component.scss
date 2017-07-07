@@ -1,0 +1,70 @@
+@import '../../../@theme/styles/variables';
+@import '~@akveo/nga-theme/styles/global/bootstrap/hero-buttons';
+
+@include nga-install-component() {
+
+  .team-photo {
+    background-image: url('./~/assets/images/team.jpg');
+    background-position: center;
+    background-size: cover;
+    height: 200px;
+    position: relative;
+    border-top-left-radius: nga-theme(card-border-radius);
+    border-top-right-radius: nga-theme(card-border-radius);
+
+    .team-link {
+      border-radius: 50%;
+      height: 60px;
+      width: 60px;
+      position: absolute;
+      bottom: -2rem;
+      right: 1rem;
+      box-shadow: btn-hero-shadow();
+    }
+  }
+
+  .team-info {
+    padding: 2rem 1.5rem;
+    padding-bottom: 0;
+
+    .team-title {
+      color: nga-theme(color-fg-heading);
+      font-family: nga-theme(font-secondary);
+
+      h2 {
+        margin: 0;
+      }
+    }
+
+    .team-subtitle {
+      margin-bottom: 1rem;
+      color: nga-theme(color-fg-hint);
+    }
+
+    .team-bio {
+      // TODO: nga-theme(color-fg) is not getting needed color
+      // color: nga-theme(color-fg);
+      text-align: justify;
+      color: #d1d1ff;
+    }
+  }
+
+  nga-card > nga-card-body {
+    padding: 0;
+    height: 100%;
+  }
+
+  nga-card > nga-card-footer {
+    display: flex;
+    justify-content: space-around;
+
+    a {
+      text-decoration: none;
+      color: nga-theme(color-fg-hint);
+
+      i {
+        font-size: 2rem;
+      }
+    }
+  }
+}
