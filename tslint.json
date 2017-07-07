@@ -118,7 +118,6 @@
     "use-output-property-decorator": true,
     "use-host-property-decorator": true,
     "no-attribute-parameter-decorator": true,
-    "no-forward-ref": true,
     "use-life-cycle-interface": true,
     "use-pipe-transform-interface": true,
     "pipe-naming": [true, "camelCase", ["ngx", "test"]],
