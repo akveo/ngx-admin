@@ -4,7 +4,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 @Component({
   selector: 'address-cadaster-form',
   templateUrl: './addressCadasterForm.html',
-  styleUrls: ['./inlineForm.scss']
+  styleUrls: ['./addressCadasterForm.scss']
 })
 export class AddressCadasterForm implements OnInit {
 
@@ -18,47 +18,63 @@ groupsList:string[] = ["bras","itauera","savoy","tatuape"];
 @Output()
 protected onAddAddress: EventEmitter<any> = new EventEmitter<any>();
 
-ngOnInit()  {
-    this.formInitialBind();
-}
+  ngOnInit()  {
+      this.formInitialBind();
+  }
 
-formInitialBind():void{
-  this.addForm = this.formBuilder.group({
-              group: [''],
-              publisher: this.formBuilder.group({
-                pubName: ['', Validators.required],
-              }),
-              houseHolder: this.formBuilder.group({
-                hhName: ['', Validators.required],
-                hhGender:['male',Validators.required],
-                hhNationality : ['nigerien',Validators.required],
-                hhPhone : [''],
-                address :  this.formBuilder.group({
-                    hhZipCode :[''],
-                    hhAddress : [],
-                    landmark : []
-                })
-              }),
-                status: this.formBuilder.group({
-                  status: ['', Validators.required],
+  formInitialBind():void{
+    this.addForm = this.formBuilder.group({
+                group: [''],
+                publisher: this.formBuilder.group({
                   pubName: ['', Validators.required],
                 }),
-              hhNotes:['']
-            });
-}
+                houseHolder: this.formBuilder.group({
+                  hhName: ['', Validators.required],
+                  hhGender:['male',Validators.required],
+                  hhNationality : ['nigerien',Validators.required],
+                  hhPhone : [''],
+                  hhZipCode :[''],
+                  hhAddress : [],
+                  landmark : []
+                }),
+                  status: this.formBuilder.group({
+                    status: ['', Validators.required],
+                    pubName: ['', Validators.required],
+                  }),
+                hhNotes:['']
+              });
+  }
 
-addedNewGroup(event){
-    this.groupsList.push(event);
-}
+    isErrorVisible(form:string , field:string, error:string) {
+      let localForm:FormGroup ;
+      if(form)
+        localForm = this.addForm.controls[form] as FormGroup;
+      else
+        localForm = this.addForm; 
 
-onChangeSelectedValue(event){
-    console.log("Event recovered" +  event);
-    this.addForm.controls['group'].setValue(event);
-}
+      return localForm.controls[field].dirty
+              && localForm.controls[field].errors &&
+              localForm.controls[field].errors[error];
 
-addTerritory(){
-      this.onAddAddress.emit(this.addForm);
-      console.log(this.addForm.value);
-}
+    }
+
+
+  get valid() {
+      return this.addForm.valid;
+  }
+
+  addedNewGroup(event){
+      this.groupsList.push(event);
+  }
+
+  onChangeSelectedValue(event){
+      this.addForm.controls['group'].setValue(event);
+  }
+
+  addTerritory(){
+      if(this.valid)
+        this.onAddAddress.emit(this.addForm);
+
+  }
 
 }

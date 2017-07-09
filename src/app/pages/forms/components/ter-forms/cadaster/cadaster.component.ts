@@ -1,5 +1,7 @@
 import {Component} from '@angular/core';
-import {CadasterService} from './cadaster.service';
+import { TerritoriesService } from "app/shared/services/territories.service";
+import { TerritoryTypeEnum } from "app/shared/models/territory";
+
 
 @Component({
   selector: 'cadaster',
@@ -7,10 +9,10 @@ import {CadasterService} from './cadaster.service';
 })
 export class CadasterComponent{
 
-  constructor(private cadasterService:CadasterService) {
+  constructor(private territoryService:TerritoriesService) {
   }
 
-addNewIndication(event){
-  this.cadasterService.addNewTerritory(event.value);
-}
+  addNewIndication(event){
+    this.territoryService.createTerritory(event.value , TerritoryTypeEnum.CONFIRMED).subscribe((address) => {console.log(address)});
+  }
 }

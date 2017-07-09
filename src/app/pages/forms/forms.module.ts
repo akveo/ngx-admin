@@ -32,6 +32,7 @@ import { HorizontalForm } from './components/layouts/components/horizontalForm';
 import { BasicForm } from './components/layouts/components/basicForm';
 import { WithoutLabelsForm } from './components/layouts/components/withoutLabelsForm';
 import { DropdownModule, ModalModule } from 'ng2-bootstrap';
+import { SimpleNotificationsModule } from "angular2-notifications";
 
 @NgModule({
   imports: [
@@ -43,7 +44,8 @@ import { DropdownModule, ModalModule } from 'ng2-bootstrap';
     DropdownModule.forRoot(),
     ModalModule.forRoot(),
     Ng2CompleterModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    SimpleNotificationsModule.forRoot()
   ],
   declarations: [
     Layouts,

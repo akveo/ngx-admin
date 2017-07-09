@@ -2,14 +2,17 @@
 <form [formGroup]="addForm" (ngSubmit)="addTerritory()">
 <fieldset class="form-group" *ngIf="allowInformGroup">
     <legend>Group</legend>
-      <selector-with-add (addedNewValues)="addedNewGroup($event)"   (onChangeSelectedValue)="onChangeSelectedValue($event)" [itemsList]="groupsList" label ="Assing to a Group">
+      <selector-with-add (addedNewValues)="addedNewGroup($event)"  (onChangeSelectedValue)="onChangeSelectedValue($event)" [itemsList]="groupsList" label ="Assing to a Group">
     </selector-with-add>
+    
 </fieldset>
   <fieldset class="form-group" formGroupName="publisher">
     <legend>Publisher</legend>
     <div class="form-group">
       <label for="pubName">Publisher Name</label>
       <input type="text"  formControlName="pubName" class="form-control form-control-lg" id="pubName" placeholder="Publisher Name">
+        <div class="field-error-message"
+                 *ngIf="isErrorVisible('publisher','pubName','required')">field is mandatory</div>
     </div>
   </fieldset>
   <fieldset class="form-group" formGroupName="houseHolder">
@@ -17,6 +20,8 @@
     <div class="form-group">
       <label for="houseHolder">HouseHolder Name</label>
       <input type="text"  formControlName="hhName" class="form-control form-control-lg" id="hhName" placeholder="HouseHolder Name">
+          <div class="field-error-message"
+                  *ngIf="isErrorVisible('houseHolder','hhName','required')">field is mandatory</div>
     </div>
 
     <div class="form-group">
@@ -35,6 +40,8 @@
       </label>
         </div>
       </div>
+       <div class="field-error-message"
+                 *ngIf="isErrorVisible('houseHolder','hhGender','required')">field is mandatory</div>
     </div>
 
     <div class="form-group">
@@ -236,21 +243,29 @@
                         <option value="zimbabwean">Zimbabwean</option>
               </select>
       </div>
-    </div>
+      <div class="field-error-message"
+                 *ngIf="isErrorVisible('houseHolder','hhNationality','required')">field is mandatory</div>
+  </div>
 
     <div class="form-group">
       <label for="hhPhone">Householder Phone</label>
       <input type="tel" formControlName="hhPhone" class="form-control form-control-lg" id="hhPhone" placeholder="11988887777">
+       <div class="field-error-message"
+                 *ngIf="isErrorVisible('houseHolder','hhPhone','required')">field is mandatory</div>
     </div>
 
-<div class="form-group" formGroupName="address" >
+<div class="form-group">
     <div class="form-group">
       <label for="hhZipCode">Householder ZIP Code</label>
       <input type="text" pattern="\d*" formControlName="hhZipCode" class="form-control form-control-lg" id="hhZipCode" placeholder="HouseHolder ZIP Code">
+      <div class="field-error-message"
+                 *ngIf="isErrorVisible('houseHolder','hhZipCode','required')">field is mandatory</div>
     </div>
     <div class="form-group">
       <label for="hhAddress">HouseHolder AddressLine</label>
       <input type="text" formControlName="hhAddress" class="form-control form-control-lg" id="hhAddress" placeholder="Street, Number, Neighborhood ...">
+      <div class="field-error-message"
+                 *ngIf="isErrorVisible('houseHolder','hhAddress','required')">field is mandatory</div>
     </div>
     <div class="form-group">
       <label for="landmark">Address Landmark</label>
@@ -280,15 +295,21 @@
         <span>Study</span>
       </label>
         </div>
+        <div class="field-error-message"
+                 *ngIf="isErrorVisible('status','status','required')">field is mandatory</div>
       </div>
       <label for="pubName" class="form-control-label">Who is visiting?</label>
       <input type="text" formControlName="pubName" class="form-control form-control-lg" id="pubName" placeholder="Publisher Name">
+      <div class="field-error-message"
+                 *ngIf="isErrorVisible('status','pubName','required')">field is mandatory</div>
     </div>
   </fieldset>
   <div class="form-group">
     <label for="hhNotes">Notes</label>
     <div class="form-group">
       <textarea class="form-control"  formControlName="hhNotes"id="hhNotes" placeholder="Ex.: Kids , Family,  More then one ..."></textarea>
+      <div class="field-error-message"
+                 *ngIf="isErrorVisible(null,'hhNotes','required')">field is mandatory</div>
     </div>
   </div>
   <button type="submit" class="btn btn-primary btn-lg">Submit</button>
