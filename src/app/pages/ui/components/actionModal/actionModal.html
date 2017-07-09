@@ -1,0 +1,35 @@
+<div class="widgets" *ngIf="renderUI">
+  <div class="row">
+    <div class="col-md-12">
+      <ba-card title="Action Modal" class="modal-buttons">
+        <button class="btn btn-success" (click)="showActionModal()">Large modal</button>
+      </ba-card>
+    </div>
+  </div>
+</div>
+
+<!-- Large modal -->
+<div bsModal #actionModel="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button class="close" (click)="actionModel.hide()" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title">What do you want to do?</h4>
+      </div>
+      <div class="modal-body">
+          <div class="row">
+              <div class=" btn-group-vertical btn-group-lg col-xs-12"  >
+                <button class="btn col-xs-12" *ngFor="let btn of actionButtonSettings">
+                  <i class="{{btn.icon}}">&nbsp;{{btn.name}}</i>
+                </button>
+              </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-danger" (click)="actionModel.hide()">close</button>
+      </div>
+    </div>
+  </div>
+</div>

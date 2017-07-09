@@ -1,0 +1,1 @@
+export * from './actionModal.component';
