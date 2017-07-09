@@ -29,6 +29,7 @@
     "@angularclass/conventions-loader": "1.0.13",
     "@angularclass/hmr": "1.2.2",
     "@angularclass/hmr-loader": "3.0.2",
+    "@types/lodash": "^4.14.66",
     "amcharts3": "github:amcharts/amcharts3#3.20.20",
     "ammap3": "github:amcharts/ammap3#3.20.20",
     "angularfire2": "^4.0.0-rc.0",
@@ -58,12 +59,14 @@
     "ng2-ckeditor": "1.1.5",
     "ng2-completer": "*",
     "ng2-smart-table": "0.5.3-0",
+    "ng2-smart-table": "^1.2.1",
     "ng2-tree": "2.0.0-alpha.0",
     "ngx-uploader": "2.1.6",
     "normalize.css": "4.2.0",
     "reflect-metadata": "0.1.2",
     "rxjs": "5.0.3",
     "tether": "1.4.0",
+    "typescript": "^2.3.4",
     "zone.js": "0.7.6"
   },
   "devDependencies": {
