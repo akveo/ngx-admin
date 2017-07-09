@@ -1,10 +1,9 @@
 import { NgModule, ApplicationRef } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import { HttpModule , JsonpModule} from '@angular/http';
 import { RouterModule } from '@angular/router';
 import { removeNgStyles, createNewHosts, createInputTransfer } from '@angularclass/hmr';
-
 import { SimpleNotificationsModule } from 'angular2-notifications';
 import {INDICATIONS_SERVICES} from './pages/forms/components/ter-forms/indications';
 import {CADASTER_SERVICES} from './pages/forms/components/ter-forms/cadaster';
@@ -26,7 +25,12 @@ import { PagesModule } from './pages/pages.module';
 import { AngularFireDatabaseModule, AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 import { AngularFireModule } from 'angularfire2';
 import {firebaseConfig} from "../../environments/firebase.config";
+
+
+//services
 import { TerritoriesService } from "app/shared/services/territories.service";
+
+
 // Application wide providers
 const APP_PROVIDERS = [
   AppState,
@@ -55,8 +59,8 @@ export type StoreType = {
     ReactiveFormsModule,
     NgaModule.forRoot(),
     PagesModule,
-    routing
-  ],
+    routing,
+    JsonpModule,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule]
     ,
@@ -64,7 +68,8 @@ export type StoreType = {
     ENV_PROVIDERS,
     APP_PROVIDERS,
     ...INDICATIONS_SERVICES,
-    ...CADASTER_SERVICES
+    ...CADASTER_SERVICES,
+    TerritoriesService
   ]
 })
 
