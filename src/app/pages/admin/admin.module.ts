@@ -3,7 +3,7 @@ import { CommonModule }  from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { NgaModule } from '../../theme/nga.module';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
-
+import { UiModule } from '../ui/ui.module';
 import { routing }       from './admin.routing';
 import { Admin }       from './admin.component';
 import { Territories } from './components/territories';
@@ -16,10 +16,11 @@ import { TerritoriesService } from './components/territories/territories.service
     NgaModule,
     routing,
     Ng2SmartTableModule,
+    UiModule
   ],
   declarations: [
     Admin,
-    Territories,
+    Territories
   ],
   providers: [
     TerritoriesService,
