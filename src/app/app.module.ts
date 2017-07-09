@@ -21,6 +21,10 @@ import { GlobalState } from './global.state';
 import { NgaModule } from './theme/nga.module';
 import { PagesModule } from './pages/pages.module';
 
+//firebase
+import { AngularFireDatabaseModule, AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
+import { AngularFireModule } from 'angularfire2';
+import {firebaseConfig} from "../../environments/firebase.config";
 // Application wide providers
 const APP_PROVIDERS = [
   AppState,
@@ -51,6 +55,8 @@ export type StoreType = {
     PagesModule,
     routing
   ],
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireDatabaseModule]
   providers: [ // expose our Services and Providers into Angular's dependency injection
     ENV_PROVIDERS,
     APP_PROVIDERS,
