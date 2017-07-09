@@ -26,6 +26,7 @@ import { PagesModule } from './pages/pages.module';
 import { AngularFireDatabaseModule, AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 import { AngularFireModule } from 'angularfire2';
 import {firebaseConfig} from "../../environments/firebase.config";
+import { TerritoriesService } from "app/shared/services/territories.service";
 // Application wide providers
 const APP_PROVIDERS = [
   AppState,
