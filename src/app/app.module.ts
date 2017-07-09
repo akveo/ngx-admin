@@ -5,6 +5,7 @@ import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 import { removeNgStyles, createNewHosts, createInputTransfer } from '@angularclass/hmr';
 
+import { SimpleNotificationsModule } from 'angular2-notifications';
 import {INDICATIONS_SERVICES} from './pages/forms/components/ter-forms/indications';
 import {CADASTER_SERVICES} from './pages/forms/components/ter-forms/cadaster';
 
