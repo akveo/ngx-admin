@@ -1,14 +1,14 @@
-<nga-card size="xmedium">
+<nga-card size="large">
   <nga-tabset fullWidth>
     <nga-tab tabTitle="Contacts">
       <div class="contact" *ngFor="let c of contacts">
-        <nga-user [picture]="c.user.picture" [name]="c.user.name" [title]="c.type" size="xmedium"></nga-user>
+        <nga-user [picture]="c.user.picture" [name]="c.user.name" [title]="c.type" size="large"></nga-user>
         <i class="i-contact ion-ios-telephone-outline"></i>
       </div>
     </nga-tab>
     <nga-tab tabTitle="Recent">
       <div class="contact" *ngFor="let c of recent">
-        <nga-user [picture]="c.user.picture" [name]="c.user.name" [title]="c.type" size="xmedium"></nga-user>
+        <nga-user [picture]="c.user.picture" [name]="c.user.name" [title]="c.type" size="large"></nga-user>
         <span class="time">{{ c.time }}</span>
       </div>
     </nga-tab>

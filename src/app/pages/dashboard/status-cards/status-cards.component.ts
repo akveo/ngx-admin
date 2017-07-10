@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./status-cards.component.scss'],
   template: `
     <div class="row">
-      <div class="col-lg-3" *ngFor="let card of statusCards">
+      <div class="col-lg-3" *ngFor="let card of statusCards" size="xsmall">
         <nga-card (click)="card.on = !card.on" [ngClass]="{'off': !card.on}">
           <div class="icon-container {{card.type}}">
             <i class="{{card.icon}}"></i>
@@ -22,8 +22,8 @@ import { Component } from '@angular/core';
 })
 export class StatusCardsComponent {
   statusCards = [
-    { title: 'Light', on: true, type: 'primary', icon: 'ion-ios-game-controller-b-outline' },
-    { title: 'RollerShades', on: true, type: 'success', icon: 'ion-ios-game-controller-b-outline' },
+    { title: 'Light', on: true, type: 'primary', icon: 'ion-ios-lightbulb-outline' },
+    { title: 'Roller Shades', on: true, type: 'success', icon: 'ion-ios-photos-outline' },
     { title: 'Wireless Audio', on: true, type: 'info', icon: 'ion-ios-game-controller-b-outline' },
     { title: 'Coffee Maker', on: true, type: 'warning', icon: 'ion-ios-game-controller-b-outline' },
   ];

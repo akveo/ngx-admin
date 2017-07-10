@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
   selector: 'ngx-rooms',
   styleUrls: ['./rooms.component.scss'],
   template: `
-    <nga-card size="xmedium">
+    <nga-card size="large">
       <nga-card-header>
         Room Management
       </nga-card-header>

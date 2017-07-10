@@ -17,8 +17,12 @@
 
     $border-radius: nga-theme(card-border-radius);
     .icon-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      width: 7rem;
       font-size: 4em;
-      padding: 0.5rem 1.75rem;
       border-radius: $border-radius 0 0 $border-radius;
       transition: all 0.1s ease-out, color 0s;
 
@@ -109,7 +113,9 @@
       border-left: 1px solid transparent;
     }
     .title {
+      font-family: nga-theme(font-secondary);
       font-size: 1.5rem;
+      font-weight: nga-theme(font-weight-bolder);
     }
     .status {
       font-size: 1.125rem;
