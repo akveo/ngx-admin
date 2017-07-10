@@ -5,14 +5,10 @@ import { Component } from '@angular/core';
   template: `
     <nga-card>
       <nga-card-body>
-        <ngx-tiny-mce (editorKeyup)="editorKeyup($event)"></ngx-tiny-mce>
+        <ngx-tiny-mce></ngx-tiny-mce>
       </nga-card-body>
     </nga-card>
   `,
 })
 export class TinyMCEComponent {
-
-  editorKeyup($event) {
-    console.info('keyup', $event);
-  }
 }

@@ -9,7 +9,7 @@ import { NgaThemeService } from '@akveo/nga-theme';
       <nga-tabset fullWidth>
         <nga-tab tabTitle="Temperature">
           <ngx-temperature-dragger [(value)]="temperature" (power)="powerOff = !$event" [min]="12" [max]="30"
-             [arcThickness]="20" [knobRadius]="15" [bottomAngle]="90" [disableArcColor]="themeConfig.layoutBg" 
+             [arcThickness]="20" [knobRadius]="15" [bottomAngle]="90" [disableArcColor]="themeConfig.layoutBg"
              [fillColors]="[themeConfig.colorInfo, themeConfig.colorSuccess, themeConfig.colorWarning]">
 
             <div class="temperature"  [ngClass]="{ 'off': powerOff }">
@@ -18,9 +18,9 @@ import { NgaThemeService } from '@akveo/nga-theme';
               </div>
               <div class="desc">
                 Celsius
-              </div>  
+              </div>
             </div>
-            
+
           </ngx-temperature-dragger>
         </nga-tab>
         <nga-tab tabTitle="Humidity">
