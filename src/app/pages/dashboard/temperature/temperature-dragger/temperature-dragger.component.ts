@@ -303,7 +303,7 @@ export class TemperatureDraggerComponent implements AfterViewInit, OnChanges {
   }
 
   private recalculateValue(event) {
-    if (this.isMouseDown) {
+    if (this.isMouseDown && !this.off) {
       const rect = this.svgRoot.nativeElement.getBoundingClientRect();
       const center = {
         x: rect.left + VIEW_BOX_SIZE * this.scaleFactor / 2,
