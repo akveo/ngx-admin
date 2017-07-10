@@ -14,11 +14,17 @@
 
   nga-tab.content-active {
     display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    height: 100%;
+  }
+
+  .temperature-container {
+    display: flex;
     flex: 1;
     justify-content: center;
     align-items: center;
-    position: relative;
-    height: 100%;
   }
 
   ngx-temperature-dragger {
