@@ -37,7 +37,6 @@ import 'rxjs/add/operator/delay';
   template: `
     <div class="wrapper">
       <div class="search" (keyup.esc)="closeSearch()" >
-      
         <button (click)="closeSearch()">
           <i class="ion-ios-close-outline icon"></i>
         </button>
@@ -50,10 +49,9 @@ import 'rxjs/add/operator/delay';
             <span class="info">Hit enter to search</span>
           </form>
         </div>
-        
       </div>
     </div>
-    `,
+  `,
 })
 export class NgaSearchFieldComponent {
 
