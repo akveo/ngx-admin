@@ -23,7 +23,7 @@ export class BaMenuItem {
     return false;
   }
 
-  private checkChildrenView(): boolean {
+  public checkChildrenView(): boolean {
     if (this.menuItem.children) {
       for (let childrenItem of this.menuItem.children) {
         if (!childrenItem.hidden) {
