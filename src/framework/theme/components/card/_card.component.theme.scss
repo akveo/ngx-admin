@@ -21,20 +21,23 @@
                             nga-theme(card-scrollbar-fg),
                             nga-theme(card-scrollbar-bg));
 
-    &.small-card {
-      height: nga-theme(card-height-small);
-    }
     &.xsmall-card {
       height: nga-theme(card-height-xsmall);
+    }
+    &.small-card {
+      height: nga-theme(card-height-small);
     }
     &.medium-card {
       height: nga-theme(card-height-medium);
     }
-    &.xmedium-card {
-      height: nga-theme(card-height-xmedium);
-    }
     &.large-card {
       height: nga-theme(card-height-large);
+    }
+    &.xlarge-card {
+      height: nga-theme(card-height-xlarge);
+    }
+    &.xxlarge-card {
+      height: nga-theme(card-height-xxlarge);
     }
 
     &.active-card {
@@ -96,7 +99,7 @@
       border-bottom: 1px solid nga-theme(card-header-separator);
       border-top-left-radius: nga-theme(card-border-radius);
       border-top-right-radius: nga-theme(card-border-radius);
-      color: nga-theme(card-header-fg);
+      color: nga-theme(card-header-fg-heading);
 
       font-family: nga-theme(card-header-font-family);
       font-size: nga-theme(card-header-font-size);

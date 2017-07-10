@@ -48,16 +48,16 @@
         width: nga-theme(user-size-medium);
       }
     }
-    &.xmedium {
-      .user-picture {
-        height: nga-theme(user-size-xmedium);
-        width: nga-theme(user-size-xmedium);
-      }
-    }
     &.large {
       .user-picture {
         height: nga-theme(user-size-large);
         width: nga-theme(user-size-large);
+      }
+    }
+    &.xlarge {
+      .user-picture {
+        height: nga-theme(user-size-xlarge);
+        width: nga-theme(user-size-xlarge);
       }
     }
 

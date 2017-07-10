@@ -8,11 +8,12 @@ import { browser, element, by } from 'protractor';
 import { hexToRgbA } from './e2e-helper';
 
 const heights = {
-  small: '120px',
-  xsmall: '192px',
-  medium: '400px',
-  xmedium: '576px',
-  large: '960px',
+  xsmall: '96px',
+  small: '216px',
+  medium: '456px',
+  large: '576px',
+  xlarge: '696px',
+  xxlarge: '816px',
 };
 
 const colors = {
