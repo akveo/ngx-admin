@@ -91,7 +91,6 @@
     "stylelint": "7.10.1",
     "ts-node": "3.0.4",
     "tslint": "5.4.2",
-    "tslint-eslint-rules": "4.1.1",
     "tslint-language-service": "0.9.6",
     "typescript": "2.3.4"
   }
