@@ -11,6 +11,7 @@
 
     background: nga-theme(card-bg);
     color: nga-theme(card-fg);
+    // TODO: move card margin style to layout
     margin-bottom: nga-theme(card-margin);
     border-radius: nga-theme(card-border-radius);
     box-shadow: nga-theme(card-shadow);

@@ -252,6 +252,9 @@ export class NgaSearchComponent implements OnInit, AfterViewInit, OnDestroy {
     this.activateSearchSubscription.unsubscribe();
     this.deactivateSearchSubscription.unsubscribe();
     this.createFieldSubscription.unsubscribe();
-    this.searchFieldComponentRef.destroy();
+    // TODO: fix issue with destroy and remove this condition
+    if (this.searchFieldComponentRef) {
+      this.searchFieldComponentRef.destroy();
+    }
   }
 }
