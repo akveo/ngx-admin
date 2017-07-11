@@ -1,0 +1,95 @@
+@import '../../../@theme/styles/variables';
+
+@include nga-install-component() {
+  nga-card {
+    nga-card-header {
+      padding: 0;
+    }
+
+    nga-card-body {
+      padding: 0;
+    }
+  }
+
+  .cameras-card-header {
+    display: flex;
+
+    .cameras-card-title {
+      flex: 1;
+      padding: 1.25rem;
+      line-height: 1.25rem;
+    }
+  }
+
+  .cameras-filter {
+    display: flex;
+
+    a {
+      font-size: 2rem;
+      line-height: 2rem;
+      padding: 0.75rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      color: nga-theme(color-fg);
+      border-left: 1px solid #342e73;
+    }
+
+    a.active {
+      background-color: #342e73;
+      color: #00d990;
+      text-shadow: 0 4px 10px rgba(33, 7, 77, 0.4), 0 0 12px rgba(0, 217, 144, 0.4);
+    }
+  }
+
+  .cameras {
+    display: flex;
+    flex-wrap: wrap;
+
+    .camera {
+      position: relative;
+      background-position: center;
+      background-size: cover;
+      // TODO: Use calculated height
+      height: 210px;
+      width: 50%;
+
+      span {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        color: white;
+        background: rgba(88, 73, 184, 0.5);
+        font-size: 1rem;
+        line-height: 2.5rem;
+        padding-left: 1rem;
+      }
+    }
+
+    .camera::before {
+      background-color: black;
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 210px;
+      opacity: 0.5;
+    }
+
+    .camera:hover::before {
+      opacity: 0;
+    }
+  }
+
+  .cameras.single-view {
+    .camera {
+      // TODO: Use calculated height
+      height: 420px;
+      width: 100%;
+
+      &::before {
+        // TODO: Use calculated height
+        height: 420px;
+      }
+    }
+  }
+}
