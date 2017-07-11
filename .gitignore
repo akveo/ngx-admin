@@ -3,7 +3,7 @@
 /tmp
 /.ng_compiled
 /.ng_build
-/lib
+.lib
 
 # dependencies
 node_modules
