@@ -73,4 +73,21 @@
       }
     }
   }
+
+  .btn-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-color: nga-theme(form-control-border-color);
+    width: 4.5rem;
+    height: 4.5rem;
+    font-size: 2rem;
+
+    &.active {
+      border-color: nga-theme(color-fg-highlight);
+      box-shadow: 0 2px 12px 0 rgba(nga-theme(color-fg-highlight), 0.25);
+      background-color: rgba(nga-theme(color-fg-highlight), 0.25);
+    }
+  }
 }

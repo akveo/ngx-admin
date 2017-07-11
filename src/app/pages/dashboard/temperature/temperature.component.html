@@ -19,19 +19,19 @@
         </ngx-temperature-dragger>
       </div>
 
-      <div [(ngModel)]="mode" ngbRadioGroup class="btn-group btn-group-block btn-group-divided-hidden"
+      <div [(ngModel)]="temperatureMode" ngbRadioGroup class="btn-group btn-group-block btn-group-divided-hidden"
            data-toggle="buttons">
-        <label class="btn btn-outline-primary btn-icon">
+        <label class="btn btn-icon">
           <input type="radio" value="cool"/><i class="ion-ios-snowy"></i>
         </label>
-        <label class="btn btn-outline-primary btn-icon">
+        <label class="btn btn-icon">
+          <input type="radio" value="warm"/><i class="ion-ios-sunny-outline"></i>
+        </label>
+        <label class="btn btn-icon">
           <input type="radio" value="heat"/><i class="ion-ios-flame-outline"></i>
         </label>
-        <label class="btn btn-outline-primary btn-icon">
-          <input type="radio" value="cool2"/><i class="ion-ios-snowy"></i>
-        </label>
-        <label class="btn btn-outline-primary btn-icon">
-          <input type="radio" value="heat2"/><i class="ion-flame"></i>
+        <label class="btn btn-icon">
+          <input type="radio" value="fan"/><i class="ion-ios-loop"></i>
         </label>
       </div>
     </nga-tab>
