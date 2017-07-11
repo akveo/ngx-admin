@@ -12,6 +12,9 @@
 $theme: (
   color-bg: #3d3780,
   color-fg: #a1a1e5,
+  color-fg-heading: #ffffff,
+  color-fg-text: #d1d1ff,
+  color-fg-highlight: #00f9a6,
 
   color-gray: rgba(81, 113, 165, 0.15),
   color-neutral: transparent,
@@ -27,6 +30,9 @@ $theme: (
   shadow: 0 8px 20px 0 rgba(40, 37, 89, 0.6),
 
   layout-bg: #2c2961,
+
+  radial-gradient: radial-gradient(circle at 50% 50%, #423f8c, #302c6e),
+  linear-gradient: linear-gradient(to right, #171749, #413789),
 
   sidebar-fg: color-secondary,
   sidebar-bg: color-bg,

@@ -4,6 +4,20 @@
  * Licensed under the MIT License. See License.txt in the project root for license information.
  */
 
+@mixin nga-card-header() {
+  padding: nga-theme(card-padding);
+  border-bottom: 1px solid nga-theme(card-header-separator);
+  border-top-left-radius: nga-theme(card-border-radius);
+  border-top-right-radius: nga-theme(card-border-radius);
+  color: nga-theme(card-header-fg-heading);
+
+  font-family: nga-theme(card-header-font-family);
+  font-size: nga-theme(card-header-font-size);
+  font-weight: nga-theme(card-header-font-weight);
+
+  @include nga-headings();
+}
+
 @mixin nga-card-theme() {
   nga-card {
     font-size: nga-theme(card-font-size);
@@ -95,17 +109,7 @@
     }
 
     nga-card-header {
-      padding: nga-theme(card-padding);
-      border-bottom: 1px solid nga-theme(card-header-separator);
-      border-top-left-radius: nga-theme(card-border-radius);
-      border-top-right-radius: nga-theme(card-border-radius);
-      color: nga-theme(card-header-fg-heading);
-
-      font-family: nga-theme(card-header-font-family);
-      font-size: nga-theme(card-header-font-size);
-      font-weight: nga-theme(card-header-font-weight);
-
-      @include nga-headings();
+      @include nga-card-header();
     }
   }
 }

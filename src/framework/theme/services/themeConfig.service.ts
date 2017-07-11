@@ -59,7 +59,7 @@ const builtInThemes = [
       colorPrimary: '#7659ff',
       colorSuccess: '#00d977',
       colorInfo: '#0088ff',
-      colorWarning: '#e6b045',
+      colorWarning: '#eae95f',
       colorDanger: '#ff386a',
 
       layoutBg: '#2c2961',

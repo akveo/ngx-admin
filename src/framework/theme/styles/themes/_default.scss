@@ -30,12 +30,12 @@ $theme: (
   line-height: 1.25,
 
   color-bg: #edf1f7,
-  color-fg: #d1d1ff,
-  color-fg-heading: #ffffff,
-  color-fg-hint: #a1a1e5,
+  color-fg: #555555,
+  color-fg-heading: #333333,
+  color-fg-text: #666666,
   color-fg-highlight: #00f9a6,
 
-  separator: color-fg,
+  separator: color-fg-text,
 
   color-gray: rgba(81, 113, 165, 0.15),
   color-neutral: transparent,
@@ -69,6 +69,9 @@ $theme: (
   scrollbar-fg: rgba(0, 0, 0, 0.6),
   scrollbar-bg: rgba(255, 255, 255, 0.7),
   scrollbar-width: 0.4em,
+
+  radial-gradient: none,
+  linear-gradient: none,
 
   card-font-size: font-size,
   card-line-height: line-height,
@@ -162,6 +165,7 @@ $theme: (
   tabs-active-bg: transparent,
   tabs-active-font-weight: font-weight-bolder,
   tabs-padding: padding,
+  tabs-content-padding: 0,
   tabs-header-min-width: 100px,
   tabs-header-bg: transparent,
   tabs-separator: separator,
@@ -174,7 +178,6 @@ $theme: (
   route-tabs-active-bg: transparent,
   route-tabs-active-font-weight: font-weight-bolder,
   route-tabs-padding: padding,
-  route-tabs-header-min-width: 100px,
   route-tabs-header-bg: transparent,
   route-tabs-separator: separator,
   route-tabs-fg: color-fg,
@@ -203,14 +206,14 @@ $theme: (
   actions-size-medium: 2.5rem,
   actions-size-large: 4rem,
 
-  search-btn-open-fg: color-fg-hint,
-  search-btn-close-fg:	color-fg-hint,
+  search-btn-open-fg: color-fg,
+  search-btn-close-fg:	color-fg,
   search-bg: linear-gradient(to right, #171749, #413789),//TODO: get rid of this hardcode, bg
   search-bg-secondary: color-fg,
   search-text: color-inverse,
-  search-info: color-fg-hint,
-  search-dash: color-fg-hint,
-  search-placeholder: color-fg-hint,
+  search-info: color-fg,
+  search-dash: color-fg,
+  search-placeholder: color-fg,
 
   d3-fg: color-fg,
   d3-legend-bg: #e9e9e9, // TODO: default color?
@@ -284,7 +287,7 @@ $theme: (
   btn-hero-text-shadow: rgba(0, 0, 0, 0.3),
 
   form-control-text-primary-color: color-white,
-  form-control-text-secondary-color: color-fg-hint,
+  form-control-text-secondary-color: color-fg,
   form-control-font-family: font-secondary,
   form-control-bg: separator,
   form-control-focus-bg: layout-bg,
@@ -294,7 +297,7 @@ $theme: (
   form-control-border-type: solid,
 
   form-control-primary-border-color: color-primary,
-  form-control-secondary-border-color: color-fg-hint,
+  form-control-secondary-border-color: color-fg,
   form-control-info-border-color: color-info,
   form-control-success-border-color: color-success,
   form-control-danger-border-color: color-danger,

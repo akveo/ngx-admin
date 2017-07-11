@@ -4,7 +4,7 @@
  * Licensed under the MIT License. See License.txt in the project root for license information.
  */
 
-@import './fonts';
+@import 'typography/fonts';
 
 @import 'bootstrap/bootstrap.theme';
 @import 'charts/d3.theme';
@@ -13,6 +13,7 @@
 @import 'maps/leaflet.theme';
 @import 'tables/smart-table.theme';
 
+@import 'typography/typography';
 
 @mixin nga-theme-overrides() {
   @include nga-bootstrap-theme();
@@ -21,4 +22,5 @@
   @include nga-maps-leaflet-theme();
   @include nga-tables-smart-table-theme();
   @include nga-components-toaster-theme();
+  @include nga-typography();
 }

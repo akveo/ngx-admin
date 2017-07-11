@@ -18,7 +18,6 @@
 
       li {
         background: nga-theme(tabs-header-bg);
-        min-width: nga-theme(tabs-header-min-width);
 
         a {
           padding: nga-theme(tabs-padding);
@@ -45,7 +44,7 @@
       font-size: nga-theme(tabs-content-font-size);
       color: nga-theme(tabs-fg);
       background-color: nga-theme(tabs-bg);
-      padding: nga-theme(tabs-padding);
+      padding: nga-theme(tabs-content-padding);
     }
   }
 }

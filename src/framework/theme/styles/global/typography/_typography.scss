@@ -1,0 +1,41 @@
+@function main-to-text-color($color, $count: 20%) {
+  @return saturate($color, $count);
+}
+
+@function text-primary() {
+  @return main-to-text-color(nga-theme(color-primary));
+}
+
+@function text-warning() {
+  @return main-to-text-color(nga-theme(color-warning));
+}
+
+@function text-success() {
+  @return main-to-text-color(nga-theme(color-success));
+}
+
+@function text-info() {
+  @return main-to-text-color(nga-theme(color-info));
+}
+
+@function text-danger() {
+  @return main-to-text-color(nga-theme(color-danger));
+}
+
+@mixin nga-typography {
+  .text-primary {
+    color: text-primary();
+  }
+  .text-warning {
+    color: text-warning();
+  }
+  .text-success {
+    color: text-success();
+  }
+  .text-info {
+    color: text-info();
+  }
+  .text-danger {
+    color: text-danger();
+  }
+}
