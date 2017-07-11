@@ -1,0 +1,42 @@
+<nga-card size="large">
+  <div class="consumption-table">
+    <div class="table-header">
+      <div>Electricity</div>
+      <div class="subtitle">Consumption</div>
+    </div>
+
+    <nga-tabset fullWidth>
+      <nga-tab tabTitle="2015">
+        <div class="stats-row" *ngFor="let row of data[2015]">
+          <div class="month">
+            <span>{{ row.month }}</span>
+            <span class="delta" [ngClass]="{ 'down': row.down }">{{ row.delta }}</span>
+          </div>
+          <div class="results">
+            <b>{{ row.kWatts }}</b> kWh / <b>{{ row.cost }}</b> USD
+          </div>
+        </div>
+      </nga-tab>
+
+      <nga-tab tabTitle="2016" active>
+        <div class="stats-row" *ngFor="let row of data[2015]">
+          <div>
+            <span class="month">{{ row.month }}</span>
+            <span class="delta" [ngClass]="{ 'down': row.down }">{{ row.delta }}</span>
+          </div>
+          <div class="results">
+            <b>{{ row.kWatts }}</b> kWh / <b>{{ row.cost }}</b> USD
+          </div>
+        </div>
+      </nga-tab>
+
+      <nga-tab tabTitle="2017">
+        2017 year data
+      </nga-tab>
+    </nga-tabset>
+  </div>
+
+  <div class="chart">
+
+  </div>
+</nga-card>

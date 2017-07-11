@@ -3,7 +3,7 @@
 @include nga-install-component() {
 
   nga-card {
-    background-image: radial-gradient(circle at 50% 50%, #423f8c, #302c6e);
+    background-image: nga-theme(radial-gradient);
   }
 
   nga-tabset {

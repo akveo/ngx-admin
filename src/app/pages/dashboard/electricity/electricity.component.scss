@@ -1,0 +1,103 @@
+@import '../../../@theme/styles/variables';
+@import '~@akveo/nga-theme/components/card/card.component.theme';
+@import '~@akveo/nga-theme/styles/global/overrides';
+
+@include nga-install-component() {
+
+  nga-card {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .consumption-table {
+    display: flex;
+    flex-direction: column;
+    width: 20rem;
+    height: 100%;
+  }
+
+  .table-header {
+    @include nga-card-header();
+    font-size: 1.5rem;
+    border-bottom: 1px solid nga-theme(separator);
+
+    .subtitle {
+      color: nga-theme(color-fg);
+      font-family: nga-theme(font-primary);
+      font-size: 1.125rem;
+      font-weight: nga-theme(font-weight-light);
+    }
+  }
+
+  nga-tabset /deep/ {
+    flex: 1;
+
+    ul {
+      align-items: center;
+      padding: 1rem;
+    }
+
+    ul li a {
+      font-weight: nga-theme(font-weight-bolder);
+      padding: 0.5rem 1rem 0.75rem;
+    }
+
+    ul li.active {
+      background-color: nga-theme(color-primary);
+      border-radius: nga-theme(radius);
+
+      a {
+        font-size: 1.5rem;
+      }
+      a::before {
+        display: none;
+      }
+    }
+  }
+
+  .stats-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    border-top: 1px solid nga-theme(separator);
+
+    .month {
+      font-family: nga-theme(font-secondary);
+      font-size: 1.25rem;
+      font-weight: nga-theme(font-weight-bolder);
+      color: nga-theme(color-fg-heading);
+    }
+
+    .delta {
+      display: inline-block;
+      padding-left: 1rem;
+      font-size: 0.75rem;
+      font-weight: nga-theme(font-weight-light);
+
+      color: text-danger();
+
+      &.down {
+        color: text-success();
+      }
+    }
+
+    .results {
+      font-size: 0.875rem;
+      font-weight: nga-theme(font-weight-light);
+
+      b {
+        font-family: nga-theme(font-secondary);
+        font-size: 1rem;
+        font-weight: nga-theme(font-weight-bolder);
+        color: nga-theme(color-fg-heading);
+      }
+    }
+  }
+
+  .chart {
+    flex: 1;
+    height: 100%;
+    background-image: nga-theme(radial-gradient);
+  }
+}

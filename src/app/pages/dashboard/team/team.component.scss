@@ -43,10 +43,8 @@
     }
 
     .team-bio {
-      // TODO: nga-theme(color-fg) is not getting needed color
-      // color: nga-theme(color-fg);
       text-align: justify;
-      color: #d1d1ff;
+      color: nga-theme(color-fg-text);
     }
   }
 
