@@ -18,11 +18,11 @@ const heights = {
 
 const colors = {
   // Make sure that you convert hex to rgba before validation
-  primary: '#8066ff',
-  success: '#00cc66',
-  info: '#3377ff',
-  warning: '#e5b045',
-  danger: '#ff3355',
+  primary: '#a48aff',
+  success: '#00e172',
+  info: '#4e9fff',
+  warning: '#e5c742',
+  danger: '#ff666d',
   default: '#d1d1ff',
   disabled: 'rgba(255, 255, 255, 0.4)',
 };
@@ -68,7 +68,7 @@ describe('nga-card', () => {
       expect(element(by.css(`nga-card:nth-child(${c.elementNumber}) > nga-card-body`))
         .getText()).toEqual('Body');
 
-      if (c.name !== 'small') {
+      if (c.name !== 'xsmall') {
         expect(element(by.css(`nga-card:nth-child(${c.elementNumber}) > nga-card-footer`))
           .getText()).toEqual('Footer');
       }
