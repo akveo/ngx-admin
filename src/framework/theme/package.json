@@ -35,6 +35,7 @@
     "immutable": "3.8.1",
     "ionicons": "2.0.1",
     "normalize.css": "6.0.0",
-    "typeface-exo": "0.0.22"
+    "open-sans-fontface": "^1.4.0",
+    "typeface-exo": "^0.0.22"
   }
 }

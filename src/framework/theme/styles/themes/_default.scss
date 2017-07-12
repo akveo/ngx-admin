@@ -8,8 +8,8 @@
 @import '../core/mixins';
 
 $theme: (
-  font-main: 'Segoe UI',
-  font-secondary: 'Exo',
+  font-main: 'Open Sans',
+  font-secondary: Exo,
 
   font-weight-thin: 200,
   font-weight-light: 300,
@@ -76,7 +76,7 @@ $theme: (
   card-font-size: font-size,
   card-line-height: line-height,
   card-font-weight: font-weight-normal,
-  card-fg: color-fg,
+  card-fg: color-fg-text,
   card-fg-heading: color-fg-heading,
   card-bg: color-bg,
   card-height-xsmall: 96px,

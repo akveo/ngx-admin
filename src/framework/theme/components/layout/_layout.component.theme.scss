@@ -6,6 +6,7 @@
 
 @mixin nga-layout-theme() {
   .layout {
+    font-family: nga-theme(layout-font-family);
     font-size: nga-theme(layout-font-size);
     line-height: nga-theme(layout-line-height);
     color: nga-theme(layout-fg);

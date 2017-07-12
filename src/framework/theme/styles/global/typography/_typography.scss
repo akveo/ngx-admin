@@ -1,5 +1,17 @@
-@function main-to-text-color($color, $count: 20%) {
-  @return saturate($color, $count);
+@function main-to-text-color($color, $count: 15%) {
+  @return tint($color, $count);
+}
+
+@function text-heading() {
+  @return nga-theme(color-fg-heading);
+}
+
+@function text-body() {
+  @return nga-theme(color-fg-text);
+}
+
+@function text-hint() {
+  @return nga-theme(color-fg);
 }
 
 @function text-primary() {
@@ -23,19 +35,110 @@
 }
 
 @mixin nga-typography {
+
+  .font-secondary {
+    font-family: nga-theme(font-secondary);
+
+    .header .name {
+      font-size: 4.5rem;
+    }
+  }
+
+  .font-main {
+    font-family: nga-theme(font-main);
+
+    .header .name {
+      font-size: 2.5rem;
+    }
+  }
+
+  .font-w-light {
+    font-weight: nga-theme(font-weight-light);
+  }
+
+  .font-w-regular {
+    font-weight: nga-theme(font-weight-normal);
+  }
+
+  .font-w-bold {
+    font-weight: nga-theme(font-weight-bold);
+  }
+
   .text-primary {
-    color: text-primary();
+    color: text-primary() !important;
   }
   .text-warning {
-    color: text-warning();
+    color: text-warning() !important;
   }
   .text-success {
-    color: text-success();
+    color: text-success() !important;
   }
   .text-info {
-    color: text-info();
+    color: text-info() !important;
   }
   .text-danger {
-    color: text-danger();
+    color: text-danger() !important;
+  }
+  .text-heading {
+    color: text-heading() !important;
+  }
+  .text-body {
+    color: text-body() !important;
+  }
+  .text-hint {
+    color: text-hint() !important;
+  }
+
+  .bg-primary {
+    background-color: text-primary() !important;
+  }
+  .bg-warning {
+    background-color: text-warning() !important;
+  }
+  .bg-success {
+    background-color: text-success() !important;
+  }
+  .bg-info {
+    background-color: text-info() !important;
+  }
+  .bg-danger {
+    background-color: text-danger() !important;
+  }
+  .bg-heading {
+    background-color: text-heading() !important;
+  }
+  .bg-body {
+    background-color: text-body() !important;
+  }
+  .bg-hint {
+    background-color: text-hint() !important;
+  }
+  .text-indent {
+    text-indent: 2rem;
+  }
+
+  .blockquote {
+    font-size: nga-theme(font-size);
+    border-left: 0.25rem solid nga-theme(color-fg-highlight);
+    color: nga-theme(color-fg-text);
+  }
+  .blockquote-reverse {
+    font-size: nga-theme(font-size);
+    border-right: 0.25rem solid nga-theme(color-fg-highlight);
+    color: nga-theme(color-fg-text);
+  }
+  .blockquote-footer {
+    color: nga-theme(color-fg);
+    font-style: italic;
+    font-size: 100%;
+  }
+
+  h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: nga-theme(font-secondary);
+    color: nga-theme(color-fg-heading);
+    font-weight: nga-theme(font-weight-bolder);
+  }
+  strong, b {
+    font-weight: nga-theme(font-weight-bold);
   }
 }

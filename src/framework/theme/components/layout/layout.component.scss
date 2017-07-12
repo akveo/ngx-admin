@@ -6,6 +6,8 @@
 
 :host {
 
+  -webkit-font-smoothing: antialiased;
+
   .layout {
     display: flex;
     flex-direction: column;
