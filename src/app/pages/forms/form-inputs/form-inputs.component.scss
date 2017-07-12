@@ -68,4 +68,22 @@
       margin-right: 1rem;
     }
   }
+
+  .input-group.has-person-icon {
+    position: relative;
+
+    .form-control {
+      padding-left: 3rem;
+    }
+
+    &::before {
+      content: '\F47D';
+      font-family: 'Ionicons';
+      font-size: 2rem;
+      position: absolute;
+      z-index: 100;
+      left: 1rem;
+      top: 0.25rem;
+    }
+  }
 }

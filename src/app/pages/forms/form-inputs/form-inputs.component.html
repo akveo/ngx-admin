@@ -17,10 +17,7 @@
         <div class="input-group">
           <input type="password" placeholder="Password" class="form-control" />
         </div>
-        <div class="input-group">
-          <span class="input-group-addon input-group-icon">
-            <i class="ion-ios-person-outline"></i>
-          </span>
+        <div class="input-group has-person-icon">
           <input type="text" placeholder="With Icon" class="form-control" />
         </div>
         <div class="input-group input-group-rounded">
@@ -95,21 +92,21 @@
         <div class="form-group">
           <label>Simple Select</label>
           <select class="form-control">
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
+            <option>Minsk</option>
+            <option>Gomel</option>
+            <option>Brest</option>
+            <option>Grodno</option>
+            <option>Mogilev</option>
           </select>
         </div>
         <div class="form-group">
           <label>Multiple Select</label>
           <select multiple class="form-control">
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
+            <option>Item 1</option>
+            <option>Item 2</option>
+            <option>Item 3</option>
+            <option>Item 4</option>
+            <option>Item 5</option>
           </select>
         </div>
       </nga-card-body>
@@ -185,9 +182,9 @@
             </label>
           </div>
           <div class="demo-disabled-checkbox-radio">
-            <nga-checkbox>Disbaled Checkbox</nga-checkbox>
+            <nga-checkbox [disabled]="true">Disbaled Checkbox</nga-checkbox>
             <label class="custom-control custom-radio">
-              <input type="radio" class="custom-control-input">
+              <input type="radio" class="custom-control-input" disabled>
               <span class="custom-control-indicator"></span>
               <span class="custom-control-description">Disabled Radio</span>
             </label>
@@ -199,7 +196,7 @@
       <nga-card-body class="demo-rating">
         <span class="header">Rating</span>
         <div>
-          <ngb-rating [(rate)]="currentRate" max=5>
+          <ngb-rating [(rate)]="starRate" max=5>
             <ng-template let-fill="fill">
               <span class="star fill" [class.filled]="fill === 100">
                 <i class="ion-android-star" *ngIf="fill === 100"></i>
@@ -207,18 +204,18 @@
               </span>
             </ng-template>
           </ngb-rating>
-          <span class="current-rate">{{ currentRate | number : '1.1' }}</span>
+          <span class="current-rate">{{ starRate | number : '1.1' }}</span>
         </div>
         <div>
-          <ngb-rating [(rate)]="currentRate" max=5>
+          <ngb-rating [(rate)]="heartRate" max=5>
             <ng-template let-fill="fill">
               <span class="star fill" [class.filled]="fill === 100">
-                <i class="ion-android-star" *ngIf="fill === 100"></i>
-                <i class="ion-android-star-outline" *ngIf="fill !== 100"></i>
+                <i class="ion-ios-heart" *ngIf="fill === 100"></i>
+                <i class="ion-ios-heart-outline" *ngIf="fill !== 100"></i>
               </span>
             </ng-template>
           </ngb-rating>
-          <span class="current-rate">{{ currentRate | number : '1.1' }}</span>
+          <span class="current-rate">{{ heartRate | number : '1.1' }}</span>
         </div>
       </nga-card-body>
     </nga-card>

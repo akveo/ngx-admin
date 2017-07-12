@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   templateUrl: './form-inputs.component.html',
 })
 export class FormInputsComponent {
-  currentRate: number = 3;
+
+  starRate: number = 3;
+  heartRate: number = 3;
 }
