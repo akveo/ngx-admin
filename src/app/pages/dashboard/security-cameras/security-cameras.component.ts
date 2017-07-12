@@ -21,6 +21,8 @@ export class SecurityCamerasComponent {
     source: '/assets/images/camera4.jpg',
   }];
 
+  selectedCamera: any = this.cameras[0];
+
   userMenu = [{
     title: 'Profile',
   }, {
@@ -28,4 +30,9 @@ export class SecurityCamerasComponent {
   }];
 
   isSingleView: boolean = false;
+
+  selectCamera(camera: any) {
+    this.selectedCamera = camera;
+    this.isSingleView = true;
+  }
 }

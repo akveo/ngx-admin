@@ -14,12 +14,12 @@
   </nga-card-header>
   <nga-card-body>
     <div class="cameras single-view" *ngIf="isSingleView">
-      <div class="camera" [style.background-image]="'url(/assets/images/camera1.jpg)'">
-        <span>Camera #1</span>
+      <div class="camera" [style.background-image]="'url(' + selectedCamera.source + ')'">
+        <span>{{ selectedCamera.title }}</span>
       </div>
     </div>
     <div class="cameras" *ngIf="!isSingleView">
-      <div class="camera" *ngFor="let c of cameras" [style.background-image]="'url(' + c.source + ')'">
+      <div class="camera" *ngFor="let c of cameras" [style.background-image]="'url(' + c.source + ')'" (click)="selectCamera(c)">
         <span>{{ c.title }}</span>
       </div>
     </div>
