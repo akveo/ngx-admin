@@ -9,36 +9,72 @@
     border: 2px solid $color;
   }
 
-  nga-checkbox {
-    .custom-control-indicator {
-      background-color: transparent;
-      width: 1.25rem;
-      height: 1.25rem;
-
-      @include custom-control-indicator-border(nga-theme(color-fg));
+  @mixin custom-control-input($color) {
+    &:checked ~ .custom-control-indicator {
+      background-color: $color;
     }
 
+    &:active ~ .custom-control-indicator {
+      background-color: $color;
+    }
+  }
+
+  nga-checkbox {
     .custom-control-input {
+      background-color: transparent;
+
+      .custom-control-indicator {
+        background-color: transparent;
+        width: 1.25rem;
+        height: 1.25rem;
+
+        @include custom-control-indicator-border(nga-theme(color-fg));
+      }
+
       &:focus ~ .custom-control-indicator {
         box-shadow: none;
       }
 
       &:checked ~ .custom-control-indicator {
-        background-color: transparent;
+        background-image: none;
+        display: flex;
+        justify-content: center;
+
+        &::before {
+          content: '';
+          width: 0.5rem;
+          height: 0.75rem;
+          border: solid nga-theme(color-bg);
+          border-width: 0 2px 2px 0;
+          transform: rotate(45deg);
+        }
       }
 
-      &:active ~ .custom-control-indicator {
+      &:disabled ~ .custom-control-indicator {
         background-color: transparent;
+        border-color: rgba(161, 161, 229, 0.2);
       }
+
+      &:disabled ~ .custom-control-description {
+        color: rgba(161, 161, 229, 0.2);
+      }
+
+      @include custom-control-input(nga-theme(color-fg));
     }
 
     .custom-control-description {
       line-height: 1.875rem;
+      padding-left: 0.25rem;
+      color: nga-theme(color-fg-heading);
     }
 
     &.success {
       .custom-control-indicator {
         @include custom-control-indicator-border(nga-theme(color-success));
+      }
+
+      .custom-control-input {
+        @include custom-control-input(nga-theme(color-success));
       }
     }
 
@@ -46,11 +82,19 @@
       .custom-control-indicator {
         @include custom-control-indicator-border(nga-theme(color-warning));
       }
+
+      .custom-control-input {
+        @include custom-control-input(nga-theme(color-warning));
+      }
     }
 
     &.danger {
       .custom-control-indicator {
         @include custom-control-indicator-border(nga-theme(color-danger));
+      }
+
+      .custom-control-input {
+        @include custom-control-input(nga-theme(color-danger));
       }
     }
   }

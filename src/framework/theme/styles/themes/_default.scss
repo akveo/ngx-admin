@@ -8,8 +8,8 @@
 @import '../core/mixins';
 
 $theme: (
-  font-main: SegoeUI,
-  font-secondary: Exo,
+  font-main: 'Segoe UI',
+  font-secondary: 'Exo',
 
   font-weight-thin: 200,
   font-weight-light: 300,
@@ -289,12 +289,13 @@ $theme: (
   form-control-text-primary-color: color-white,
   form-control-text-secondary-color: color-fg,
   form-control-font-family: font-secondary,
-  form-control-bg: separator,
-  form-control-focus-bg: layout-bg,
+  form-control-bg: #37317a,
+  form-control-focus-bg: #342e73,
 
   form-control-border-width: 2px,
-  form-control-border-color: layout-bg,
+  form-control-border-color: #342e73,
   form-control-border-type: solid,
+  form-control-border-radius: 0.5rem,
 
   form-control-primary-border-color: color-primary,
   form-control-secondary-border-color: color-fg,
@@ -304,10 +305,9 @@ $theme: (
   form-control-warning-border-color: color-warning,
 
   form-control-placeholder-color: color-fg,
-  form-control-placeholder-font-size: 0.875rem,
+  form-control-placeholder-font-size: 1rem,
 
   form-control-font-size: 1rem,
-  form-control-border-radius: 12px,
 
   form-control-font-size-sm: 0.875rem,
   form-control-line-height-sm: 1rem,

@@ -7,19 +7,20 @@
 @import './size-form-control';
 @import './default-form-control';
 @import '../../core/mixins';
-@import './form-group';
 @import './custom-forms';
 
 @mixin nga-b-forms-theme() {
 
   .input-group-addon,
   .form-control {
-    padding: 0.75rem 1.5rem;
+    padding: 0.875rem 1.125rem;
     color: nga-theme(form-control-text-primary-color);
     background-color: nga-theme(form-control-bg);
     border: nga-theme(form-control-border-width)
             nga-theme(form-control-border-type)
             nga-theme(form-control-border-color);
+    font-family: nga-theme(font-main);
+    border-radius: nga-theme(form-control-border-radius);
 
     &:focus {
       border: nga-theme(form-control-border-width)
@@ -29,10 +30,10 @@
     }
 
     &:disabled {
-      border-color: tint(nga-theme(form-control-bg), 14%);
+      border-color: #504b95;
 
-      @include install-placeholder(shade(nga-theme(form-control-placeholder-color), 40%),
-                                  nga-theme(form-control-placeholder-font-size));
+      @include install-placeholder(rgba(161, 161, 229, 0.2),
+                                   nga-theme(form-control-placeholder-font-size));
     }
 
     @include form-control-validation(nga-theme(form-control-text-secondary-color));
@@ -41,7 +42,7 @@
   }
 
   select.form-control:not([size]):not([multiple]) {
-    height: calc(2.25rem + 10px);
+    height: calc(2.25rem + 20px);
   }
 
   .form-control-label {
@@ -57,12 +58,11 @@
   .form-text {
     color: nga-theme(color-fg);
     margin-left: 1rem;
+    font-family: nga-theme(font-main);
   }
 
   @include form-control-size();
   @include form-control-default();
-
-  @include form-group();
 
   @include custom-forms();
 }

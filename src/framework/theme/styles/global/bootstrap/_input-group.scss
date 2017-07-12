@@ -11,6 +11,8 @@
     font-size: 1.5rem;
     padding: 0.5rem 1rem;
     border-right: none;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
     color: nga-theme(form-control-placeholder-color);
   }
 
@@ -45,8 +47,16 @@
     padding-left: 0;
   }
 
+  .form-control + .input-group-icon {
+    border-color: red;
+  }
+
+  .input-group-sm > .form-control {
+    padding: 0.25rem 1.125rem;
+  }
+
   .input-group-lg > .form-control {
-    padding: 1.125rem 1.5rem;
+    padding: 1.125rem;
   }
 
   .input-group-rounded > .form-control {
