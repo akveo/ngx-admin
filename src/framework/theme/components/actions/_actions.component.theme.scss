@@ -18,7 +18,7 @@
         color: nga-theme(actions-fg);
         font-size: nga-theme(actions-size-small);
       }
-      border-left: 1px solid rgba(nga-theme(actions-separator), 0.3);
+      border-left: 1px solid nga-theme(actions-separator);
       background: transparent;
     }
 
@@ -27,12 +27,11 @@
         i.control-icon {
           color: nga-theme(actions-bg);
         }
-        border-left: 1px solid rgba(nga-theme(actions-separator), 0.3);
+        border-left: 1px solid nga-theme(actions-separator);
       }
     }
 
     &.small {
-
       nga-action {
         height: nga-theme(actions-size-small);
         i.control-icon {

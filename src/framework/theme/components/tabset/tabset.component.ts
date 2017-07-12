@@ -21,7 +21,9 @@ import { convertToBoolProperty } from '../helpers';
 @Component({
   selector: 'nga-tab',
   template: `
-    <ng-content></ng-content>
+    <ng-container *ngIf="init">
+      <ng-content></ng-content>
+    </ng-container>
   `,
 })
 export class NgaTabComponent {
@@ -39,7 +41,13 @@ export class NgaTabComponent {
   }
   set active(val: boolean) {
     this.activeValue = convertToBoolProperty(val);
+    if (this.activeValue) {
+      this.init = true;
+    }
   }
+
+  // TODO: it makes sense to add 'lazyLoad' input to 'nga-tabset' component and make this functionality configurable
+  init: boolean = false;
 }
 
 @Component({
@@ -61,7 +69,7 @@ export class NgaTabsetComponent implements AfterContentInit {
   @ContentChildren(NgaTabComponent) tabs: QueryList<NgaTabComponent>;
 
   @HostBinding('class.full-width')
-  fullWidthValue: boolean = false;
+  private fullWidthValue: boolean = false;
 
   @Input()
   set fullWidth(val: boolean) {
