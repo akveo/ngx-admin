@@ -12,6 +12,7 @@ import { TemperatureDraggerComponent } from './temperature/temperature-dragger/t
 import { TeamComponent } from './team/team.component';
 import { SecurityCamerasComponent } from './security-cameras/security-cameras.component';
 import { ElectricityComponent } from './electricity/electricity.component';
+import { WeatherComponent } from './weather/weather.component';
 
 @NgModule({
   imports: [
@@ -30,6 +31,7 @@ import { ElectricityComponent } from './electricity/electricity.component';
     TeamComponent,
     SecurityCamerasComponent,
     ElectricityComponent,
+    WeatherComponent,
   ],
 })
 export class DashboardModule { }
