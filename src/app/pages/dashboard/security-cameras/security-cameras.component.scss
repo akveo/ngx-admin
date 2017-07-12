@@ -51,7 +51,7 @@
       background-position: center;
       background-size: cover;
       // TODO: Use calculated height
-      height: 210px;
+      height: 278px;
       width: 50%;
 
       span {
@@ -71,7 +71,7 @@
       content: '';
       position: absolute;
       width: 100%;
-      height: 210px;
+      height: 278px;
       opacity: 0.2;
       transition: 0.1s;
     }
@@ -84,12 +84,12 @@
   .cameras.single-view {
     .camera {
       // TODO: Use calculated height
-      height: 420px;
+      height: 556px;
       width: 100%;
 
       &::before {
         // TODO: Use calculated height
-        height: 420px;
+        height: 556px;
       }
     }
   }
