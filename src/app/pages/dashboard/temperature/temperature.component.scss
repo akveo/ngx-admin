@@ -74,6 +74,10 @@
     }
   }
 
+  .btn-group {
+    padding: 1.25rem;
+  }
+
   .btn-icon {
     display: flex;
     align-items: center;
@@ -82,12 +86,30 @@
     border-color: nga-theme(form-control-border-color);
     width: 4.5rem;
     height: 4.5rem;
-    font-size: 2rem;
+    padding: 0;
+    margin: 0;
 
     &.active {
       border-color: nga-theme(color-fg-highlight);
       box-shadow: 0 2px 12px 0 rgba(nga-theme(color-fg-highlight), 0.25);
       background-color: rgba(nga-theme(color-fg-highlight), 0.25);
+    }
+
+    i {
+      font-size: 2rem;
+      line-height: 1;
+    }
+    .ion-ios-snowy {
+      font-size: 2.5rem;
+    }
+    .ion-ios-sunny-outline {
+      font-size: 2.5rem;
+    }
+    .ion-ios-flame-outline {
+      font-size: 2.25rem;
+    }
+    .ion-ios-loop {
+      font-size: 1.75rem;
     }
   }
 }

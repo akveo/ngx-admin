@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 
 import { NgaSidebarService, NgaMenuService } from '@akveo/nga-theme';
 import { NgaThemeService } from '@akveo/nga-theme/services/theme.service';
+import { UserService } from '../../../@core/data/users.service';
 
 @Component({
   selector: 'ngx-header',
@@ -22,13 +23,15 @@ import { NgaThemeService } from '@akveo/nga-theme/services/theme.service';
       <nga-action icon="ion-ios-email-outline"></nga-action>
       <nga-action disabled icon="ion-ios-bell-outline"></nga-action>
       <nga-action>
-        <nga-user [menu]="userMenu" name="Han Solo"></nga-user>
+        <nga-user [menu]="userMenu" [name]="user.name" [picture]="user.picture"></nga-user>
       </nga-action>
       <nga-action icon="ion-ios-gear-outline"></nga-action>
     </nga-actions>
   `,
 })
 export class HeaderComponent {
+
+  user: any;
 
   userMenu = [
     {
@@ -41,7 +44,9 @@ export class HeaderComponent {
 
   constructor(private sidebarService: NgaSidebarService,
               private menuService: NgaMenuService,
-              private themeService: NgaThemeService) {
+              private themeService: NgaThemeService,
+              private userService: UserService) {
+    this.user = this.userService.getUsers().nick;
   }
 
   toggleSidebar(): boolean {

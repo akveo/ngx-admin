@@ -14,12 +14,13 @@
     flex-direction: column;
     width: 20rem;
     height: 100%;
+    z-index: 2;
+    box-shadow: nga-theme(card-shadow);
   }
 
   .table-header {
     @include nga-card-header();
     font-size: 1.5rem;
-    border-bottom: 1px solid nga-theme(separator);
 
     .subtitle {
       color: nga-theme(color-fg);
@@ -31,10 +32,15 @@
 
   nga-tabset /deep/ {
     flex: 1;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
 
     ul {
       align-items: center;
       padding: 1rem;
+      border-top: 1px solid nga-theme(separator);
+      border-bottom: 1px solid nga-theme(separator);
     }
 
     ul li a {
@@ -53,16 +59,26 @@
         display: none;
       }
     }
+
+    nga-tab {
+      flex: 1;
+      overflow-y: auto;
+    }
   }
 
-  .stats-row {
+  .stats-month {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 1rem;
-    border-top: 1px solid nga-theme(separator);
+
+    &:not(:first-child) {
+      border-top: 1px solid nga-theme(separator);
+    }
 
     .month {
+      display: inline-block;
+      width: 2.75rem;
       font-family: nga-theme(font-secondary);
       font-size: 1.25rem;
       font-weight: nga-theme(font-weight-bolder);
@@ -70,15 +86,32 @@
     }
 
     .delta {
+      position: relative;
       display: inline-block;
       padding-left: 1rem;
       font-size: 0.75rem;
-      font-weight: nga-theme(font-weight-light);
 
       color: text-danger();
 
+      &::before {
+        position: absolute;
+        content: '';
+        bottom: 3px;
+        left: 2px;
+
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-bottom: 8px solid text-danger();
+      }
+
       &.down {
         color: text-success();
+
+        &::before {
+          top: 3px;
+          border-top: 8px solid text-success();
+          border-bottom: none;
+        }
       }
     }
 

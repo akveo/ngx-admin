@@ -6,37 +6,20 @@
     </div>
 
     <nga-tabset fullWidth>
-      <nga-tab tabTitle="2015">
-        <div class="stats-row" *ngFor="let row of data[2015]">
-          <div class="month">
-            <span>{{ row.month }}</span>
-            <span class="delta" [ngClass]="{ 'down': row.down }">{{ row.delta }}</span>
-          </div>
-          <div class="results">
-            <b>{{ row.kWatts }}</b> kWh / <b>{{ row.cost }}</b> USD
-          </div>
-        </div>
-      </nga-tab>
-
-      <nga-tab tabTitle="2016" active>
-        <div class="stats-row" *ngFor="let row of data[2015]">
+      <nga-tab *ngFor="let year of data" [tabTitle]="year.title" [active]="year.active">
+        <div class="stats-month" *ngFor="let month of year.months">
           <div>
-            <span class="month">{{ row.month }}</span>
-            <span class="delta" [ngClass]="{ 'down': row.down }">{{ row.delta }}</span>
+            <span class="month">{{ month.month }}</span>
+            <span class="delta" [ngClass]="{ 'down': month.down }">{{ month.delta }}</span>
           </div>
           <div class="results">
-            <b>{{ row.kWatts }}</b> kWh / <b>{{ row.cost }}</b> USD
+            <b>{{ month.kWatts }}</b> kWh / <b>{{ month.cost }}</b> USD
           </div>
         </div>
-      </nga-tab>
-
-      <nga-tab tabTitle="2017">
-        2017 year data
       </nga-tab>
     </nga-tabset>
   </div>
 
   <div class="chart">
-
   </div>
 </nga-card>
