@@ -61,9 +61,9 @@ $theme: (
   border-color: color-gray,
   shadow: 4px 0 18px 0 rgba(19, 19, 94, 0.4),
 
-  link-color-active: #285eb8,
+  link-color-active: #00f9a6,
 
-  link-color-hover: #2750a0,
+  link-color-hover: #14ffbe,
   link-color-visited: link-color-active,
 
   scrollbar-fg: rgba(0, 0, 0, 0.6),
@@ -80,8 +80,9 @@ $theme: (
   card-fg: color-fg-text,
   card-fg-heading: color-fg-heading,
   card-bg: color-bg,
-  card-height-xsmall: 96px,
-  card-height-small: 216px,
+  card-height-xxsmall: 96px,
+  card-height-xsmall: 216px,
+  card-height-small: 336px,
   card-height-medium: 456px,
   card-height-large: 576px,
   card-height-xlarge: 696px,

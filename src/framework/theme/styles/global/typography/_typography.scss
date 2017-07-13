@@ -34,6 +34,34 @@
   @return main-to-text-color(nga-theme(color-danger));
 }
 
+@function text-white() {
+  @return nga-theme(color-white);
+}
+
+@mixin nga-alert-variant($body-color) {
+  background-color: nga-theme(layout-bg);
+  border: none;
+  color: $body-color;
+
+  h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    color: $body-color!important;
+  }
+
+  hr {
+    border-top-color: darken($body-color, 10%);
+  }
+  .alert-link {
+    color: $body-color;
+    text-decoration: none;
+    font-weight: nga-theme(font-weight-normal);
+    border-bottom: 1px dashed $body-color;
+
+    @include hover-focus {
+      border-bottom: 1px solid $body-color;
+    }
+  }
+}
+
 @mixin nga-typography {
 
   .font-secondary {
@@ -88,6 +116,9 @@
   .text-hint {
     color: text-hint() !important;
   }
+  .text-white {
+    color: text-white() !important;
+  }
 
   .bg-primary {
     background-color: text-primary() !important;
@@ -113,6 +144,9 @@
   .bg-hint {
     background-color: text-hint() !important;
   }
+  .bg-white {
+    background-color: text-white() !important;
+  }
   .text-indent {
     text-indent: 2rem;
   }
@@ -133,12 +167,55 @@
     font-size: 100%;
   }
 
+  mark, .mark {
+    padding: 0.05em;
+    background-color: text-primary();
+    color: text-white();
+  }
+
   h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     font-family: nga-theme(font-secondary);
     color: nga-theme(color-fg-heading);
     font-weight: nga-theme(font-weight-bolder);
   }
+
   strong, b {
     font-weight: nga-theme(font-weight-bold);
   }
+
+  a {
+    color: nga-theme(link-color-active);
+
+    @include hover-focus {
+      color: nga-theme(link-color-hover);
+    }
+  }
+
+  ol,ul {
+    padding-left: 1.25rem;
+  }
+
+  .alert {
+    border: none!important;
+  }
+
+  .alert-success {
+    @include nga-alert-variant(text-success());
+  }
+  .alert-info {
+    @include nga-alert-variant(text-info());
+  }
+  .alert-warning {
+    @include nga-alert-variant(text-warning());
+  }
+  .alert-danger {
+    @include nga-alert-variant(text-danger());
+  }
+  .alert-primary {
+    @include nga-alert-variant(text-primary());
+  }
+  .alert-hint {
+    @include nga-alert-variant(text-hint());
+  }
+
 }
