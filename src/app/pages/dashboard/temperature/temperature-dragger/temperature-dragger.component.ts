@@ -17,7 +17,7 @@ export class TemperatureDraggerComponent implements AfterViewInit, OnChanges {
   @Input() fillColors: string|string[] = '#2ec6ff';
   @Input() disableArcColor: string = '#999999';
   @Input() bottomAngle: number = 90;
-  @Input() arcThickness: number = 20; // CSS pixels
+  @Input() arcThickness: number = 18; // CSS pixels
   @Input() thumbRadius: number = 15; // CSS pixels
   @Input() thumbDashRadius: number = null;
   @Input() maxLeap: number = 0.4;

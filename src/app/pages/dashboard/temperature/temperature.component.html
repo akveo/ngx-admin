@@ -3,13 +3,13 @@
 
     <nga-tab tabTitle="Temperature">
 
-      <div class="temperature-container">
-        <ngx-temperature-dragger [(value)]="temperature" (power)="temperatureOff = !$event" [min]="12" [max]="30"
-                                 [arcThickness]="20" [thumbRadius]="15" [thumbDashRadius]="22" [bottomAngle]="90" [disableArcColor]="themeConfig.layoutBg"
-                                 [fillColors]="[themeConfig.colorInfo, themeConfig.colorSuccess, themeConfig.colorWarning]">
+      <div class="slider-container">
+        <ngx-temperature-dragger [(value)]="temperature" (power)="temperatureOff = !$event"
+                                 [min]="12" [max]="30" [disableArcColor]="themeConfig.layoutBg"
+                                 [fillColors]="['#2ec7fe', '#31ffad', '#7bff24', '#fff024', '#f7bd59']">
 
-          <div class="temperature"  [ngClass]="{ 'off': temperatureOff }">
-            <div class="value">
+          <div class="slider-value-container"  [ngClass]="{ 'off': temperatureOff }">
+            <div class="value temperature">
               {{ temperatureOff ? '--' : (temperature | ngxRound) }}
             </div>
             <div class="desc">
@@ -38,21 +38,34 @@
 
     <nga-tab tabTitle="Humidity">
 
-      <span>Humidity placeholder</span>
+      <div class="slider-container">
+        <ngx-temperature-dragger [(value)]="humidity" (power)="humidityOff = !$event"
+                                 [min]="0" [max]="100" [disableArcColor]="themeConfig.layoutBg"
+                                 [fillColors]="['#fff024', '#7bff24', '#31ffad', '#2ec7fe']">
 
-      <ngx-temperature-dragger [(value)]="humidity" (power)="humidityOff = !$event" [min]="0" [max]="100"
-           [arcThickness]="20" [thumbRadius]="15" [bottomAngle]="90" [disableArcColor]="themeConfig.layoutBg"
-           [fillColors]="[themeConfig.colorInfo, themeConfig.colorSuccess, themeConfig.colorWarning]">
+          <div class="slider-value-container"  [ngClass]="{ 'off': humidityOff }">
+            <div class="value humidity">
+              {{ humidityOff ? '--' : (humidity | ngxRound) }}
+            </div>
+          </div>
+        </ngx-temperature-dragger>
+      </div>
 
-        <div class="temperature"  [ngClass]="{ 'off': humidityOff }">
-          <div class="value">
-            {{ humidityOff ? '--' : (humidity | ngxRound) }}
-          </div>
-          <div class="desc">
-            Celsius
-          </div>
-        </div>
-      </ngx-temperature-dragger>
+      <div [(ngModel)]="humidityMode" ngbRadioGroup class="btn-group btn-group-block btn-group-divided-hidden"
+           data-toggle="buttons">
+        <label class="btn btn-icon">
+          <input type="radio" value="cool"/><i class="ion-ios-snowy"></i>
+        </label>
+        <label class="btn btn-icon">
+          <input type="radio" value="warm"/><i class="ion-ios-sunny-outline"></i>
+        </label>
+        <label class="btn btn-icon">
+          <input type="radio" value="heat"/><i class="ion-ios-flame-outline"></i>
+        </label>
+        <label class="btn btn-icon">
+          <input type="radio" value="fan"/><i class="ion-ios-loop"></i>
+        </label>
+      </div>
     </nga-tab>
   </nga-tabset>
 </nga-card>

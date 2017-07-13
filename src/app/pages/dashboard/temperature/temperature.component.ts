@@ -8,13 +8,13 @@ import { NgaThemeService } from '@akveo/nga-theme';
 })
 export class TemperatureComponent {
 
-  temperature: number = 23;
+  temperature: number = 28;
   temperatureOff: boolean = false;
   temperatureMode = 'cool';
 
-  humidity: number = 23;
+  humidity: number = 87;
   humidityOff: boolean = false;
-  humidityMode = 'auto';
+  humidityMode = 'heat';
 
   themeConfig: any = {};
 

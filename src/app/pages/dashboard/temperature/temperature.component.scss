@@ -20,7 +20,7 @@
     height: 100%;
   }
 
-  .temperature-container {
+  .slider-container {
     display: flex;
     flex: 1;
     justify-content: center;
@@ -28,11 +28,11 @@
   }
 
   ngx-temperature-dragger {
-    margin-top: -3.5rem;
+    margin-top: -1.5rem;
     width: 80%;
   }
 
-  .temperature {
+  .slider-value-container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -44,11 +44,21 @@
       font-size: 4rem;
       font-weight: nga-theme(font-weight-bolder);
 
-      &::before {
+      &.temperature::before {
         position: absolute;
         content: '°';
         top: 0;
         right: -1.25rem;
+      }
+
+      &.humidity::before {
+        position: absolute;
+        content: '%';
+        bottom: 0.5rem;
+        right: -2.5rem;
+        color: nga-theme(color-fg);
+        font-size: 2.5rem;
+        font-weight: nga-theme(font-weight-light);
       }
     }
 

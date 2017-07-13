@@ -14,10 +14,10 @@
 
   .temperature-bg {
     position: absolute;
-    width: 84%;
-    height: 84%;
-    top: 14%;
-    left: 8%;
+    width: 88%;
+    height: 88%;
+    top: 13%;
+    left: 6%;
     background-color: lighten(nga-theme(layout-bg), 2%);
     border-radius: 50%;
     z-index: 1;
@@ -34,7 +34,7 @@
     height: 5.25rem;
     background-color: nga-theme(card-bg);
     border-radius: 50%;
-    bottom: 5%;
+    bottom: 2%;
     left: 50%;
     transform: translate(-50%, 50%);
     z-index: 2;
