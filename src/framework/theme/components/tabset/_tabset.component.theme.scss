@@ -9,7 +9,11 @@
 @mixin nga-tabset-theme() {
 
   nga-tabset {
-    @include nga-scrollbars(nga-theme(scrollbar-width), nga-theme(scrollbar-fg), nga-theme(scrollbar-bg));
+    // TODO: move to global mixin
+    @include nga-scrollbars(
+        nga-theme(scrollbar-fg),
+        nga-theme(scrollbar-bg),
+        nga-theme(scrollbar-width));
 
     ul {
       border-bottom: 1px solid nga-theme(tabs-separator);

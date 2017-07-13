@@ -59,7 +59,7 @@ $theme: (
   social-color-behance: #0093fa,
 
   border-color: color-gray,
-  shadow: 0 4px 12px 0 rgba(33, 57, 161, 0.08),
+  shadow: 4px 0 18px 0 rgba(19, 19, 94, 0.4),
 
   link-color-active: #285eb8,
 
@@ -68,7 +68,8 @@ $theme: (
 
   scrollbar-fg: rgba(0, 0, 0, 0.6),
   scrollbar-bg: rgba(255, 255, 255, 0.7),
-  scrollbar-width: 0.4em,
+  scrollbar-width: 5px,
+  scrollbar-thumb-radius: 2.5px,
 
   radial-gradient: none,
   linear-gradient: none,
@@ -89,9 +90,6 @@ $theme: (
   card-border-radius: radius,
   card-padding: padding,
   card-margin: margin,
-  card-scrollbar-width: scrollbar-width,
-  card-scrollbar-fg: scrollbar-fg,
-  card-scrollbar-bg: scrollbar-bg,
   card-header-font-family: font-secondary,
   card-header-font-size: font-size-lg,
   card-header-font-weight: font-weight-bolder,

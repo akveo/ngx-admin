@@ -9,7 +9,10 @@
 @mixin nga-route-tabset-theme() {
 
   nga-route-tabset {
-    @include nga-scrollbars(nga-theme(scrollbar-width), nga-theme(scrollbar-fg), nga-theme(scrollbar-bg));
+    @include nga-scrollbars(
+        nga-theme(scrollbar-fg),
+        nga-theme(scrollbar-bg),
+        nga-theme(scrollbar-width));
 
     ul {
       border-bottom: 1px solid nga-theme(route-tabs-separator);

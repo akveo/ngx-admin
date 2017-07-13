@@ -4,25 +4,26 @@
  * Licensed under the MIT License. See License.txt in the project root for license information.
  */
 
-@mixin nga-scrollbars($size, $foreground-color, $background-color: mix($foreground-color, white, 50%)) {
+@mixin nga-scrollbars($fg, $bg, $size, $border-radius: $size / 2) {
   ::-webkit-scrollbar {
     width: $size;
     height: $size;
   }
 
   ::-webkit-scrollbar-thumb {
-    background: $foreground-color;
+    background: $fg;
     cursor: pointer;
+    border-radius: $border-radius;
   }
 
   ::-webkit-scrollbar-track {
-    background: $background-color;
+    background: $bg;
   }
 
   // For Internet Explorer
   body {
-    scrollbar-face-color: $foreground-color;
-    scrollbar-track-color: $background-color;
+    scrollbar-face-color: $fg;
+    scrollbar-track-color: $bg;
   }
 }
 

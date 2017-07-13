@@ -11,7 +11,10 @@
     font-size: nga-theme(sidebar-font-size);
     line-height: nga-theme(sidebar-line-height);
 
-    @include nga-scrollbars(nga-theme(scrollbar-width), nga-theme(card-scrollbar-fg), nga-theme(card-scrollbar-bg));
+    @include nga-scrollbars(
+        nga-theme(scrollbar-fg),
+        nga-theme(scrollbar-bg),
+        nga-theme(scrollbar-width));
 
     > .scrollable {
       height: nga-theme(sidebar-height);

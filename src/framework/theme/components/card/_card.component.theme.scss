@@ -31,9 +31,9 @@
     box-shadow: nga-theme(card-shadow);
     font-weight: nga-theme(card-font-weight);
 
-    @include nga-scrollbars(nga-theme(card-scrollbar-width),
-                            nga-theme(card-scrollbar-fg),
-                            nga-theme(card-scrollbar-bg));
+    @include nga-scrollbars(nga-theme(scrollbar-width),
+                            nga-theme(scrollbar-fg),
+                            nga-theme(scrollbar-bg));
 
     &.xsmall-card {
       height: nga-theme(card-height-xsmall);

@@ -31,6 +31,9 @@ $theme: (
 
   layout-bg: #2c2961,
 
+  scrollbar-fg: #554db3,
+  scrollbar-bg: #332e73,
+
   radial-gradient: radial-gradient(circle at 50% 50%, #423f8c, #302c6e),
   linear-gradient: linear-gradient(to right, #171749, #413789),
 
@@ -63,7 +66,6 @@ $theme: (
   menu-submenu-bg: #2c2966,
   menu-submenu-fg: color-fg,
 
-  card-shadow: 4px 0 18px 0 rgba(37, 26, 75, 0.5),
   card-header-separator: transparent,
 
   tabs-separator: transparent,
