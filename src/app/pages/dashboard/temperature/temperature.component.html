@@ -5,8 +5,8 @@
 
       <div class="temperature-container">
         <ngx-temperature-dragger [(value)]="temperature" (power)="temperatureOff = !$event" [min]="12" [max]="30"
-           [arcThickness]="20" [knobRadius]="15" [bottomAngle]="90" [disableArcColor]="themeConfig.layoutBg"
-           [fillColors]="[themeConfig.colorInfo, themeConfig.colorSuccess, themeConfig.colorWarning]">
+                                 [arcThickness]="20" [thumbRadius]="15" [thumbDashRadius]="22" [bottomAngle]="90" [disableArcColor]="themeConfig.layoutBg"
+                                 [fillColors]="[themeConfig.colorInfo, themeConfig.colorSuccess, themeConfig.colorWarning]">
 
           <div class="temperature"  [ngClass]="{ 'off': temperatureOff }">
             <div class="value">
@@ -41,7 +41,7 @@
       <span>Humidity placeholder</span>
 
       <!--<ngx-temperature-dragger [(value)]="humidity" (power)="humidityOff = !$event" [min]="0" [max]="100"-->
-           <!--[arcThickness]="20" [knobRadius]="15" [bottomAngle]="90" [disableArcColor]="themeConfig.layoutBg"-->
+           <!--[arcThickness]="20" [thumbRadius]="15" [bottomAngle]="90" [disableArcColor]="themeConfig.layoutBg"-->
            <!--[fillColors]="[themeConfig.colorInfo, themeConfig.colorSuccess, themeConfig.colorWarning]">-->
 
         <!--<div class="temperature"  [ngClass]="{ 'off': humidityOff }">-->
