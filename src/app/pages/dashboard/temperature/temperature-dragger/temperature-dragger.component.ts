@@ -30,6 +30,7 @@ export class TemperatureDraggerComponent implements AfterViewInit, OnChanges {
 
   @Input() min: number = 0; // min output value
   @Input() max: number = 100; // max output value
+  @Input() step = 0.1;
 
   @Output() power = new EventEmitter<boolean>();
 
@@ -345,7 +346,7 @@ export class TemperatureDraggerComponent implements AfterViewInit, OnChanges {
   }
 
   private toValueNumber(factor) {
-    return factor * (this.max - this.min) + this.min;
+    return Math.round(factor * (this.max - this.min) / this.step) * this.step + this.min;
   }
 
   private static toRad(angle) {

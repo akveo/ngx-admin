@@ -21,7 +21,8 @@
         <g class="toFilter" filter="url(#blurFilter)">
           <path [attr.d]="arc.d" [attr.fill]="arc.color" *ngFor="let arc of styles.gradArcs"></path>
         </g>
-        <path [attr.d]="styles.nonSelectedArc.d" [attr.fill]="styles.nonSelectedArc.color"></path>
+        <!-- ngFor is a quirk fix for webkit rendering issues -->
+        <path [attr.d]="styles.nonSelectedArc.d" [attr.fill]="styles.nonSelectedArc.color" *ngFor="let number of [0,1,2,3,4,5]"></path>
       </g>
 
       <circle [attr.cx]="styles.thumbPosition.x" [attr.cy]="styles.thumbPosition.y" [attr.r]="pinRadius"
