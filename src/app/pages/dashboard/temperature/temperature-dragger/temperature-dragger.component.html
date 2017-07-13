@@ -3,22 +3,22 @@
        [attr.viewBox]="styles.viewBox" preserveAspectRatio="xMinYMin meet" (mousedown)="mouseDown($event)">
     <defs>
 
-      <filter id="blurFilter" x="0" y="0" width="100%" height="100%">
+      <filter [attr.id]="'blurFilter' + svgControlId" x="0" y="0" width="100%" height="100%">
         <feGaussianBlur in="SourceGraphic" [attr.stdDeviation]="styles.blurRadius" />
         <feComponentTransfer>
           <feFuncA type="discrete" tableValues="1 1"/>
         </feComponentTransfer>
       </filter>
 
-      <clipPath id="sliderClip">
+      <clipPath [attr.id]="'sliderClip' + svgControlId">
         <path [attr.d]="styles.clipPathStr" stroke="black"></path>
       </clipPath>
 
     </defs>
     <g [attr.transform]="styles.arcTranslateStr">
 
-      <g class="toClip" clip-path="url(#sliderClip)">
-        <g class="toFilter" filter="url(#blurFilter)">
+      <g class="toClip" [attr.clip-path]="'url(#sliderClip' + svgControlId +')'">
+        <g class="toFilter" [attr.filter]="'url(#blurFilter' + svgControlId +')'">
           <path [attr.d]="arc.d" [attr.fill]="arc.color" *ngFor="let arc of styles.gradArcs"></path>
         </g>
         <!-- ngFor is a quirk fix for webkit rendering issues -->

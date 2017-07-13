@@ -53,6 +53,7 @@ export class TemperatureDraggerComponent implements AfterViewInit, OnChanges {
   off: boolean = false;
   oldValue: number;
 
+  svgControlId = new Date().getTime();
   scaleFactor: number = 1;
   bottomAngleRad = 0;
   radius: number = 100;
@@ -130,14 +131,14 @@ export class TemperatureDraggerComponent implements AfterViewInit, OnChanges {
     const halfAngle = this.bottomAngleRad / 2;
 
     const svgBoundingRect = this.svgRoot.nativeElement.getBoundingClientRect();
-    const svgAreaFactor = svgBoundingRect.width / svgBoundingRect.height;
+    const svgAreaFactor = svgBoundingRect.height && svgBoundingRect.width / svgBoundingRect.height || 1;
     const svgHeight = VIEW_BOX_SIZE / svgAreaFactor;
     const thumbMaxRadius = Math.max(this.thumbRadius, this.thumbDashRadius);
     const thumbMargin = 2 * thumbMaxRadius > this.arcThickness
       ? (thumbMaxRadius - this.arcThickness / 2) / this.scaleFactor
       : 0;
 
-    this.scaleFactor = svgBoundingRect.width / VIEW_BOX_SIZE;
+    this.scaleFactor = svgBoundingRect.width / VIEW_BOX_SIZE || 1;
     this.styles.viewBox = `0 0 ${VIEW_BOX_SIZE} ${svgHeight}`;
 
 

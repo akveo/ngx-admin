@@ -40,19 +40,19 @@
 
       <span>Humidity placeholder</span>
 
-      <!--<ngx-temperature-dragger [(value)]="humidity" (power)="humidityOff = !$event" [min]="0" [max]="100"-->
-           <!--[arcThickness]="20" [thumbRadius]="15" [bottomAngle]="90" [disableArcColor]="themeConfig.layoutBg"-->
-           <!--[fillColors]="[themeConfig.colorInfo, themeConfig.colorSuccess, themeConfig.colorWarning]">-->
+      <ngx-temperature-dragger [(value)]="humidity" (power)="humidityOff = !$event" [min]="0" [max]="100"
+           [arcThickness]="20" [thumbRadius]="15" [bottomAngle]="90" [disableArcColor]="themeConfig.layoutBg"
+           [fillColors]="[themeConfig.colorInfo, themeConfig.colorSuccess, themeConfig.colorWarning]">
 
-        <!--<div class="temperature"  [ngClass]="{ 'off': humidityOff }">-->
-          <!--<div class="value">-->
-            <!--{{ humidityOff ? '&#45;&#45;' : (humidity | ngxRound) }}-->
-          <!--</div>-->
-          <!--<div class="desc">-->
-            <!--Celsius-->
-          <!--</div>-->
-        <!--</div>-->
-      <!--</ngx-temperature-dragger>-->
+        <div class="temperature"  [ngClass]="{ 'off': humidityOff }">
+          <div class="value">
+            {{ humidityOff ? '--' : (humidity | ngxRound) }}
+          </div>
+          <div class="desc">
+            Celsius
+          </div>
+        </div>
+      </ngx-temperature-dragger>
     </nga-tab>
   </nga-tabset>
 </nga-card>
