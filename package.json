@@ -57,7 +57,7 @@
     "ng2-smart-table": "1.1.0",
     "ng2-tree": "2.0.0-alpha.5",
     "normalize.css": "6.0.0",
-    "roboto-fontface": "0.7.0",
+    "open-sans-fontface": "^1.4.0",
     "rxjs": "5.4.0",
     "tether": "1.4.0",
     "tinymce": "4.5.7",

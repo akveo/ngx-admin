@@ -1,0 +1,80 @@
+@import '../../../@theme/styles/variables';
+
+@include nga-install-component() {
+
+  .font-secondary .header .name {
+    font-size: 4.5rem;
+  }
+
+  .font-main .header .name {
+    font-size: 2.5rem;
+  }
+
+  .font-row {
+    margin-bottom: 3rem;
+  }
+
+  .header {
+    display: flex;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid rgba(nga-theme(color-fg), 0.1);
+    color: nga-theme(color-fg-heading);
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    div:first-child {
+      flex-basis: 50%;
+      line-height: 1;
+      align-items: flex-end;
+
+      h1 {
+        margin-bottom: 0;
+      }
+    }
+
+    .variants {
+      flex: 1;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+
+      span {
+        padding-left: 1rem;
+        font-size: 1.5rem;
+      }
+    }
+
+    .detail {
+      flex: 1;
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-end;
+      color: nga-theme(color-fg);
+    }
+  }
+
+  .colors {
+    display: flex;
+    flex-direction: column;
+
+    .item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1.5rem;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    .color {
+      width: 86px;
+      height: 60px;
+      border-top-right-radius: 1rem;
+      border-bottom-left-radius: 1rem;
+      margin-right: 1rem;
+    }
+  }
+}
