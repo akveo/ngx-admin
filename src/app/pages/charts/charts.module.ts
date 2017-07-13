@@ -12,7 +12,7 @@ import { D3PieComponent } from './d3/pie/pie.component';
 import { EchartsLineComponent } from './echarts/line/line.component';
 import { EchartsPieComponent } from './echarts/pie/pie.component';
 import { EchartsBarComponent } from './echarts/bar/bar.component';
-import { AngularEchartsModule } from 'angular2-echarts';
+import { AngularEchartsModule } from 'ngx-echarts';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { ChartsModule as Ng2Charts } from 'ng2-charts/ng2-charts';
 

@@ -3,12 +3,12 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'ngx-echarts-bar',
   template: `
-    <div echarts [options]="barChartOptions" class="echart"></div>
+    <div echarts [options]="options" class="echart"></div>
   `,
 })
 export class EchartsBarComponent {
 
-  barChartOptions = {
+  options = {
 
     color: ['#3398DB'],
 

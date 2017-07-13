@@ -1,9 +1,13 @@
 @import '../../../@theme/styles/variables';
 
 @include nga-install-component() {
-  display: block;
+
+  ngx-echarts-pie, ngx-echarts-bar, ngx-echarts-line {
+    display: block;
+    height: 100%;
+  }
 
   /deep/ .echart {
-    height: calc(#{nga-theme(card-height-xmedium)} - 50px);
+    height: 100%;
   }
 }
