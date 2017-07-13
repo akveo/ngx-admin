@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { NgaSidebarService, NgaMenuService } from '@akveo/nga-theme';
 import { NgaThemeService } from '@akveo/nga-theme/services/theme.service';
@@ -23,13 +23,13 @@ import { UserService } from '../../../@core/data/users.service';
       <nga-action icon="ion-ios-email-outline"></nga-action>
       <nga-action disabled icon="ion-ios-bell-outline"></nga-action>
       <nga-action>
-        <nga-user [menu]="userMenu" [name]="user.name" [picture]="user.picture"></nga-user>
+        <nga-user [menu]="userMenu" [name]="user?.name" [picture]="user?.picture"></nga-user>
       </nga-action>
       <nga-action icon="ion-ios-gear-outline"></nga-action>
     </nga-actions>
   `,
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit {
 
   user: any;
 
@@ -46,7 +46,11 @@ export class HeaderComponent {
               private menuService: NgaMenuService,
               private themeService: NgaThemeService,
               private userService: UserService) {
-    this.user = this.userService.getUsers().nick;
+  }
+
+  ngOnInit() {
+    this.userService.getUsers()
+      .subscribe((users: any) => this.user = users.nick);
   }
 
   toggleSidebar(): boolean {
