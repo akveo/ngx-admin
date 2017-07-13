@@ -8,7 +8,7 @@ template: article.jade
 
 We tried to make the process of color scheme customization as easy as possible. 
 
-By default ng2-admin has three built-in color profiles: ng2 (default blue sheme), mint and blur.
+By default ng2-admin has three built-in color profiles: ng2 (default blue scheme), mint and blur.
 This article will help you to create your own color profile.
 Let's say you want to make ng2-admin dark theme.
 
@@ -17,7 +17,7 @@ For light themes we suggest taking `src/app/theme/sass/conf/colorScheme/_mint.sc
 dark `src/app/theme/sass/conf/colorScheme/_blue.scss`.
 As we want a dark theme, we're taking `blue`.
 
-1) Copy `src/app/theme/sass/conf/colorScheme/_mint.scss` to `src/app/theme/sass/conf/colorScheme/_dark.scss`:
+1) Copy `src/app/theme/sass/conf/colorScheme/_blue.scss` to `src/app/theme/sass/conf/colorScheme/_dark.scss`:
 <br><br>
 
 2) Include your colorscheme file in `src/app/theme/sass/conf/conf.scss`.

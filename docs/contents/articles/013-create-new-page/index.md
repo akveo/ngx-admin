@@ -6,39 +6,40 @@ group: Customization
 template: article.jade
 ---
 
-ng2-admin uses [Angular 2 Component Router](https://angular.io/docs/ts/latest/guide/router.html) for navigation.
+ng2-admin uses [Angular Component Router](https://angular.io/docs/ts/latest/guide/router.html) for navigation.
 
 We strongly recommend to follow this page structure in your application.
 If it does not fit your needs please create a GitHub issue and tell us why. We would be glad to discuss. 
 
 
-Basically any page is just a common Angular 2 Component with a route defined for it.
+Basically any page is just a common Angular Component with a route defined for it.
 
 ## Let's create a blank page in 6 easy steps
 
 1) Create a new directory for our new page inside of `src/app/pages`. We can call the directory `new`.
 <br><br>
 
-2) Then let's create a blank angular 2 component for our page called 'new.component.ts' inside of `src/app/pages/new`:
+2) Then let's create a blank angular component for our page called 'new.component.ts' inside of `src/app/pages/new`:
 
 ```javascript
-import {Component} from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'new',
-  template: `<strong>My page content here</strong>`
+  template: `<strong>My page content here</strong>`,
 })
 export class NewComponent {
   constructor() {}
 }
 ```
-This will create a simple Angular 2 component. For more detail please check out [official Angular 2 documentation](https://angular.io/docs/ts/latest/guide/displaying-data.html).
+This will create a simple Angular component. For more detail please check out [official Angular documentation](https://angular.io/docs/ts/latest/guide/displaying-data.html).
 <br><br>
 
 3) After that we should create our component routing called `new.routing.ts` in the `new` directory.
 
 ```javascript
-import { Routes, RouterModule }  from '@angular/router';
+import { Routes, RouterModule } from '@angular/router';
+
 import { NewComponent } from './new.component';
 
 const routes: Routes = [
@@ -57,19 +58,22 @@ export const routing = RouterModule.forChild(routes);
 ```javascript
 import { NgModule }      from '@angular/core';
 import { CommonModule }  from '@angular/common';
+import { FormsModule } from '@angular/forms';
+
 import { NewComponent } from './new.component';
 import { routing } from './new.routing';
 
 @NgModule({
   imports: [
     CommonModule,
+    FormsModule,
     routing
   ],
   declarations: [
     NewComponent
   ]
 })
-export default class NewModule {}
+export class NewModule {}
 ```
 <br>
 
@@ -124,14 +128,14 @@ const routes: Routes = [
     component: Pages,
     children: [
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
-      { path: 'dashboard', loadChildren: () => System.import('./dashboard/dashboard.module') },
-      { path: 'new',  loadChildren: () => System.import('./new/new.module') }
+      { path: 'dashboard', loadChildren: './dashboard/dashboard.module#DashboardModule' },
+      { path: 'new',  loadChildren: './new/new.module#NewModule' }
     ]
   }
 ];
 ```
 <br>
 
-And that's it! Now your page is available by the following this url [http://localhost:3000/#/pages/new](http://localhost:3000/#/pages/new).
+And that's it! Now your page is available by the following this url [http://localhost:4200/#/pages/new](http://localhost:4200/#/pages/new).
 Plus, your page is registered inside the sidebar menu. If you don't want to have a link 
 in the menu - just remove the `menu` declaration from the `pages.menu.ts` file.

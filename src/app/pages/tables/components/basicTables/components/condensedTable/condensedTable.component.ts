@@ -4,7 +4,7 @@ import {BasicTablesService} from '../../basicTables.service';
 
 @Component({
   selector: 'condensed-table',
-  template: require('./condensedTable.html')
+  templateUrl: './condensedTable.html'
 })
 export class CondensedTable {
 

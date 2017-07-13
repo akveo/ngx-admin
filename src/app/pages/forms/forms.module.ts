@@ -1,11 +1,12 @@
 import { NgModule }      from '@angular/core';
 import { CommonModule }  from '@angular/common';
 import { FormsModule as AngularFormsModule } from '@angular/forms';
+import { AppTranslationModule } from '../../app.translation.module';
 import { NgaModule } from '../../theme/nga.module';
+import { NgbRatingModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { routing }       from './forms.routing';
 
-import { RatingModule } from 'ng2-bootstrap/ng2-bootstrap';
 import { Forms } from './forms.component';
 import { Inputs } from './components/inputs';
 import { Layouts } from './components/layouts';
@@ -27,8 +28,9 @@ import { WithoutLabelsForm } from './components/layouts/components/withoutLabels
   imports: [
     CommonModule,
     AngularFormsModule,
+    AppTranslationModule,
     NgaModule,
-    RatingModule,
+    NgbRatingModule,
     routing
   ],
   declarations: [
@@ -48,5 +50,5 @@ import { WithoutLabelsForm } from './components/layouts/components/withoutLabels
     WithoutLabelsForm
   ]
 })
-export default class FormsModule {
+export class FormsModule {
 }

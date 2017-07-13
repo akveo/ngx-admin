@@ -1,9 +1,10 @@
 import { Routes, RouterModule }  from '@angular/router';
 
 import { Dashboard } from './dashboard.component';
+import { ModuleWithProviders } from '@angular/core';
 
 // noinspection TypeScriptValidateTypes
-const routes: Routes = [
+export const routes: Routes = [
   {
     path: '',
     component: Dashboard,
@@ -13,4 +14,4 @@ const routes: Routes = [
   }
 ];
 
-export const routing = RouterModule.forChild(routes);
+export const routing: ModuleWithProviders = RouterModule.forChild(routes);

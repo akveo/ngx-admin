@@ -2,7 +2,7 @@ $card-title-height: 44px;
 $card-header-font-size: 16px;
 
 .card.card-blur {
-  $blurredBgUrl: $images-root + 'blur-bg-blurred.jpg';
+  $blurredBgUrl: '/img/blur-bg-blurred.jpg';
   background: url($blurredBgUrl);
   transition: none;
   background-attachment: fixed;
@@ -47,6 +47,7 @@ $card-header-font-size: 16px;
     .card-body {
       height: calc(100% - #{$card-title-height});
       overflow-y: auto;
+      flex: 0 1 auto;
     }
   }
 }

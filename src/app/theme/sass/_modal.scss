@@ -1,0 +1,19 @@
+.modal-header {
+  border: none;
+  padding: 10px 15px 0 15px;
+}
+
+.modal-footer {
+  border: none;
+}
+
+button.close {
+  padding-bottom: 2px;
+  color: #000;
+  text-shadow: 0 1px 0 #fff;
+  opacity: .2;
+
+  &:hover {
+    opacity: .5;
+  }
+}

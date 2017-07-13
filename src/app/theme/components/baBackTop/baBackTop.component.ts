@@ -2,7 +2,7 @@ import {Component, ViewChild, HostListener, Input, ElementRef} from '@angular/co
 
 @Component({
   selector: 'ba-back-top',
-  styles: [require('./baBackTop.scss')],
+  styleUrls: ['./baBackTop.scss'],
   template: `
     <i #baBackTop class="fa fa-angle-up back-top ba-back-top" title="Back to Top"></i>
   `
@@ -13,7 +13,7 @@ export class BaBackTop {
   @Input() showSpeed:number = 500;
   @Input() moveSpeed:number = 1000;
 
-  @ViewChild('baBackTop') private _selector:ElementRef;
+  @ViewChild('baBackTop') _selector:ElementRef;
 
   ngAfterViewInit () {
     this._onWindowScroll();

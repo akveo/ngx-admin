@@ -13,7 +13,7 @@
 
 @mixin svg-icon-class($iconName, $width:'', $height:'') {
   .#{'i-' + $iconName} {
-    @include svg-icon($images-root + $iconName + '.svg', $width, $height);
+    @include svg-icon('/assets/img/' + $iconName + '.svg', $width, $height);
   }
 }
 

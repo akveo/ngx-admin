@@ -1,69 +1,55 @@
 import {Component, ViewChild, Input, Output, EventEmitter, ElementRef, Renderer} from '@angular/core';
-import {Ng2Uploader} from 'ng2-uploader/ng2-uploader';
+import { NgUploaderOptions } from 'ngx-uploader';
 
 @Component({
   selector: 'ba-picture-uploader',
-  styles: [require('./baPictureUploader.scss')],
-  template: require('./baPictureUploader.html'),
-  providers: [Ng2Uploader]
+  styleUrls: ['./baPictureUploader.scss'],
+  templateUrl: './baPictureUploader.html',
 })
 export class BaPictureUploader {
 
   @Input() defaultPicture:string = '';
   @Input() picture:string = '';
 
-  @Input() uploaderOptions:any = {};
+  @Input() uploaderOptions:NgUploaderOptions = { url: '' };
   @Input() canDelete:boolean = true;
 
-  onUpload:EventEmitter<any> = new EventEmitter();
-  onUploadCompleted:EventEmitter<any> = new EventEmitter();
+  @Output() onUpload = new EventEmitter<any>();
+  @Output() onUploadCompleted = new EventEmitter<any>();
 
-  @ViewChild('fileUpload') protected _fileUpload:ElementRef;
+  @ViewChild('fileUpload') public _fileUpload:ElementRef;
 
-  public uploadInProgress:boolean = false;
+  public uploadInProgress:boolean;
 
-  constructor(private renderer:Renderer, protected _uploader:Ng2Uploader) {
+  constructor(private renderer: Renderer) {
   }
 
-  public ngOnInit():void {
-    if (this._canUploadOnServer()) {
-      setTimeout(() => {
-        this._uploader.setOptions(this.uploaderOptions);
-      });
-
-      this._uploader._emitter.subscribe((data) => {
-        this._onUpload(data);
-      });
-    } else {
-      console.warn('Please specify url parameter to be able to upload the file on the back-end');
-    }
-  }
-
-  public onFiles():void {
+  beforeUpload(uploadingFile): void {
     let files = this._fileUpload.nativeElement.files;
 
     if (files.length) {
       const file = files[0];
       this._changePicture(file);
 
-      if (this._canUploadOnServer()) {
+      if (!this._canUploadOnServer()) {
+        uploadingFile.setAbort();
+      } else {
         this.uploadInProgress = true;
-        this._uploader.addFilesToQueue(files);
       }
     }
   }
 
-  public bringFileSelector():boolean {
+  bringFileSelector():boolean {
     this.renderer.invokeElementMethod(this._fileUpload.nativeElement, 'click');
     return false;
   }
 
-  public removePicture():boolean {
+  removePicture():boolean {
     this.picture = '';
     return false;
   }
 
-  protected _changePicture(file:File):void {
+  _changePicture(file:File):void {
     const reader = new FileReader();
     reader.addEventListener('load', (event:Event) => {
       this.picture = (<any> event.target).result;
@@ -71,7 +57,7 @@ export class BaPictureUploader {
     reader.readAsDataURL(file);
   }
 
-  protected _onUpload(data):void {
+  _onUpload(data):void {
     if (data['done'] || data['abort'] || data['error']) {
       this._onUploadCompleted(data);
     } else {
@@ -79,12 +65,12 @@ export class BaPictureUploader {
     }
   }
 
-  protected _onUploadCompleted(data):void {
+  _onUploadCompleted(data):void {
     this.uploadInProgress = false;
     this.onUploadCompleted.emit(data);
   }
 
-  protected _canUploadOnServer():boolean {
+  _canUploadOnServer():boolean {
     return !!this.uploaderOptions['url'];
   }
 }

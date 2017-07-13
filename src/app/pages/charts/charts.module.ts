@@ -7,11 +7,12 @@ import { routing }       from './charts.routing';
 import { Charts } from './charts.component';
 import { ChartistJs } from './components/chartistJs/chartistJs.component';
 import { ChartistJsService } from './components/chartistJs/chartistJs.service';
-
+import { AppTranslationModule } from '../../app.translation.module';
 
 @NgModule({
   imports: [
     CommonModule,
+    AppTranslationModule,
     FormsModule,
     NgaModule,
     routing
@@ -24,4 +25,4 @@ import { ChartistJsService } from './components/chartistJs/chartistJs.service';
     ChartistJsService
   ]
 })
-export default class ChartsModule {}
+export class ChartsModule {}

@@ -65,16 +65,16 @@ Before running build command, switch to *blur* color profile.
 To do so replace theme in `src/app/theme/sass/conf/conf.scss`:
  
 ```scss
-@import 'colorScheme/ng2';
+@import 'colorSchemes/ng2';
 ```
  
 to
  
 ```scss
-@import 'colorScheme/blur';
+@import 'colorSchemes/blur';
 ```
 
-Additionaly, if you would like to use some different background, replace the following images:
+Additionally, if you would like to use some different background, replace the following images:
 
 - `src/assets/img/blur-bg.jpg` (main background image)
 - `src/assets/img/blur-bg-blurred.jpg` (blurred background image used on panels)

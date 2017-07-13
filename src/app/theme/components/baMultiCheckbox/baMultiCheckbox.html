@@ -1,4 +1,4 @@
-<div class="{{baMultiCheckboxClass}}">
+<div class="{{baMultiCheckboxClass}} container-content">
   <ba-checkbox *ngFor="let item of state"
                [(ngModel)]="item[propertiesMapping.model]"
                [baCheckboxClass]="getProp(item, 'baCheckboxClass')"

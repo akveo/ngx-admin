@@ -1,0 +1,77 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "project": {
+    "name": "ng2-admin"
+  },
+  "apps": [
+    {
+      "root": "src",
+      "outDir": "dist",
+      "assets": [
+        "assets",
+        "favicon.ico"
+      ],
+      "index": "index.html",
+      "main": "main.ts",
+      "polyfills": "polyfills.ts",
+      "test": "test.ts",
+      "tsconfig": "tsconfig.app.json",
+      "testTsconfig": "tsconfig.spec.json",
+      "prefix": "app",
+      "styles": [
+        "../node_modules/roboto-fontface/css/roboto/sass/roboto-fontface.scss",
+        "../node_modules/normalize.css/normalize.css",
+        "../node_modules/font-awesome/scss/font-awesome.scss",
+        "../node_modules/ionicons/scss/ionicons.scss",
+        "../node_modules/bootstrap/scss/bootstrap.scss",
+        "../node_modules/leaflet/dist/leaflet.css",
+        "../node_modules/chartist/dist/chartist.css",
+        "../node_modules/fullcalendar/dist/fullcalendar.css",
+        "../node_modules/handsontable/dist/handsontable.full.css",
+        "../node_modules/ng2-slim-loading-bar/style.css",
+        "app/theme/theme.scss",
+        "styles.scss"
+      ],
+      "scripts": [
+        "../node_modules/jquery/dist/jquery.js",
+        "../node_modules/easy-pie-chart/dist/jquery.easypiechart.js",
+        "../node_modules/jquery-slimscroll/jquery.slimscroll.js",
+        "../node_modules/tether/dist/js/tether.js",
+        "../node_modules/bootstrap/dist/js/bootstrap.js",
+        "../node_modules/handsontable/dist/handsontable.full.js",
+        "../node_modules/chroma-js/chroma.js"
+      ],
+      "environmentSource": "environments/environment.ts",
+      "environments": {
+        "dev": "environments/environment.ts",
+        "prod": "environments/environment.prod.ts"
+      }
+    }
+  ],
+  "e2e": {
+    "protractor": {
+      "config": "./protractor.conf.js"
+    }
+  },
+  "lint": [
+    {
+      "project": "src/tsconfig.app.json"
+    },
+    {
+      "project": "src/tsconfig.spec.json"
+    },
+    {
+      "project": "e2e/tsconfig.e2e.json"
+    }
+  ],
+  "test": {
+    "karma": {
+      "config": "./karma.conf.js"
+    }
+  },
+  "defaults": {
+    "styleExt": "scss",
+    "component": {
+    }
+  }
+}

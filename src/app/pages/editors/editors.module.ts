@@ -22,5 +22,5 @@ import { Ckeditor } from './components/ckeditor/ckeditor.component';
     Ckeditor
   ]
 })
-export default class EditorsModule {
+export class EditorsModule {
 }

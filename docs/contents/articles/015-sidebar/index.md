@@ -28,7 +28,7 @@ All menu items are located inside the `src/app/app.routes.ts` file. Each route i
     path: 'dashboard',
     component: Dashboard,
     data: {
-      // here additionaly we define how the menu item should look
+      // here additionally we define how the menu item should look
       menu: {
         title: 'Dashboard', // menu title
         icon: 'ion-android-home', // menu icon

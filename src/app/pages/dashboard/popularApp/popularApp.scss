@@ -1,6 +1,6 @@
 @import "../../../theme/sass/conf/conf";
 
-.card.popular-app {
+/deep/.card.popular-app {
   &>.card-body {
     padding: 0;
   }
@@ -42,12 +42,14 @@
   }
   .row {
     margin: 0;
+    display: flex;
+    justify-content: space-between;
     > div {
       padding: 0;
     }
   }
 }
 
-.blur .card.popular-app .popular-app-img-container {
+/deep/.blur .card.popular-app .popular-app-img-container {
   background: rgba(0, 0, 0, 0.5);
 }

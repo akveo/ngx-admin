@@ -19,4 +19,4 @@ import { routing }       from './register.routing';
     Register
   ]
 })
-export default class RegisterModule {}
+export class RegisterModule {}

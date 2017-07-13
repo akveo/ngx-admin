@@ -1,12 +1,11 @@
-import {Component, ViewEncapsulation} from '@angular/core';
+import {Component} from '@angular/core';
 
 import {FeedService} from './feed.service';
 
 @Component({
   selector: 'feed',
-  encapsulation: ViewEncapsulation.None,
-  styles: [require('./feed.scss')],
-  template: require('./feed.html')
+  templateUrl: './feed.html',
+  styleUrls: ['./feed.scss']
 })
 export class Feed {
 

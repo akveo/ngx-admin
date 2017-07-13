@@ -1,15 +1,15 @@
-<li *ngIf="!menuItem.hidden" [title]="menuItem.title" [ngClass]="{'al-sidebar-list-item': !child, 'ba-sidebar-sublist-item': child, 'selected': menuItem.selected && !menuItem.expanded, 'with-sub-menu': menuItem.children, 'ba-sidebar-item-expanded': menuItem.expanded}">
+<li *ngIf="!menuItem.hidden" [title]="menuItem.title | translate" [ngClass]="{'al-sidebar-list-item': !child, 'ba-sidebar-sublist-item': child, 'selected': menuItem.selected && !menuItem.expanded, 'with-sub-menu': menuItem.children, 'ba-sidebar-item-expanded': menuItem.expanded}">
 
   <a *ngIf="!menuItem.children && !menuItem.url" (mouseenter)="onHoverItem($event, item)" [routerLink]="menuItem.route.paths" class="al-sidebar-list-link">
-    <i *ngIf="menuItem.icon" class="{{ menuItem.icon }}"></i><span>{{ menuItem.title }}</span>
+    <i *ngIf="menuItem.icon" class="{{ menuItem.icon }}"></i><span translate>{{ menuItem.title }}</span>
   </a>
 
   <a *ngIf="!menuItem.children && menuItem.url" (mouseenter)="onHoverItem($event, item)" [href]="menuItem.url" [target]="menuItem.target" class="al-sidebar-list-link">
-    <i *ngIf="menuItem.icon" class="{{ menuItem.icon }}"></i><span>{{ menuItem.title }}</span>
+    <i *ngIf="menuItem.icon" class="{{ menuItem.icon }}"></i><span translate>{{ menuItem.title }}</span>
   </a>
 
   <a *ngIf="menuItem.children" (mouseenter)="onHoverItem($event, item)" href (click)="onToggleSubMenu($event, menuItem)" class="al-sidebar-list-link">
-    <i *ngIf="menuItem.icon" class="{{ menuItem.icon }}"></i><span>{{ menuItem.title }}</span>
+    <i *ngIf="menuItem.icon" class="{{ menuItem.icon }}"></i><span translate>{{ menuItem.title }}</span>
     <b class="fa fa-angle-down" [ngClass]="{'fa-angle-up': menuItem.expanded}"></b>
   </a>
 
