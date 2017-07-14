@@ -24,7 +24,7 @@ const builtInThemes = [
 
       colorBg: '#edf1f7',
       colorFg: '#d1d1ff',
-      colorFgHeading: '#ffffff',
+      colorFgHeading: '#828282',
       colorFgHint: '#a1a1e5',
       colorFgHighlight: '#00f9a6',
       separator: '#d1d1ff',
@@ -49,6 +49,7 @@ const builtInThemes = [
     variables: {
       colorBg: '#3d3780',
       colorFg: '#a1a1e5',
+      colorFgHeading: '#ffffff',
 
       separator: '#342e73',
 

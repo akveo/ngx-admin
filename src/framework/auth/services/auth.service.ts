@@ -4,6 +4,7 @@
  * Licensed under the MIT License. See License.txt in the project root for license information.
  */
 import { Injectable, Optional, Inject } from '@angular/core';
+// TODO: fix the import
 import { Observable } from 'rxjs/Rx';
 
 import 'rxjs/add/operator/do';
