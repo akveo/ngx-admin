@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { NgaTabsetModule, NgaUserModule } from '@akveo/nga-theme';
+import { AngularEchartsModule } from 'ngx-echarts';
 
 import { SharedModule } from '../../shared.module';
 import { DashboardComponent } from './dashboard.component';
@@ -13,6 +14,7 @@ import { TeamComponent } from './team/team.component';
 import { SecurityCamerasComponent } from './security-cameras/security-cameras.component';
 import { ElectricityComponent } from './electricity/electricity.component';
 import { WeatherComponent } from './weather/weather.component';
+import { SolarComponent } from './solar/solar.component';
 import { PlayerComponent } from './player/player.component';
 
 @NgModule({
@@ -20,6 +22,7 @@ import { PlayerComponent } from './player/player.component';
     NgaTabsetModule,
     NgaUserModule,
     SharedModule,
+    AngularEchartsModule,
   ],
   declarations: [
     DashboardComponent,
@@ -34,6 +37,7 @@ import { PlayerComponent } from './player/player.component';
     ElectricityComponent,
     WeatherComponent,
     PlayerComponent,
+    SolarComponent,
   ],
 })
 export class DashboardModule { }

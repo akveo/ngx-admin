@@ -1,0 +1,30 @@
+@import '../../../@theme/styles/variables';
+
+@include nga-install-component() {
+
+  display: flex;
+  height: 100%;
+  width: 100%;
+
+  ngx-echarts-pie, ngx-echarts-bar, ngx-echarts-line {
+    display: block;
+    height: 100%;
+  }
+
+  .echart {
+    flex: 1;
+    height: 100%;
+    width: 40%;
+  }
+
+  .text-hint {
+    font-size: 1rem;
+  }
+
+  .info {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    align-self: center;
+  }
+}
