@@ -17,6 +17,7 @@ import { ElectricityChartComponent } from './electricity/electricity-chart/elect
 import { WeatherComponent } from './weather/weather.component';
 import { SolarComponent } from './solar/solar.component';
 import { PlayerComponent } from './player/player.component';
+import { TrafficComponent } from './traffic/traffic.component';
 
 @NgModule({
   imports: [
@@ -40,6 +41,7 @@ import { PlayerComponent } from './player/player.component';
     WeatherComponent,
     PlayerComponent,
     SolarComponent,
+    TrafficComponent,
   ],
 })
 export class DashboardModule { }
