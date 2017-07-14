@@ -8,12 +8,17 @@
 </fieldset>
   <fieldset class="form-group" formGroupName="publisher">
     <legend>Publisher</legend>
-    <div class="form-group">
+    <div [ngClass]="isErrorVisible('publisher','pubName','required') ? 'form-group form-group has-error ' : ' has-feedback'">
       <label for="pubName">Publisher Name</label>
       <input type="text"  formControlName="pubName" class="form-control form-control-lg" id="pubName" placeholder="Publisher Name">
-        <div class="field-error-message"
-                 *ngIf="isErrorVisible('publisher','pubName','required')">field is mandatory</div>
-    </div>
+      <i class="ion-android-cancel form-control-feedback"  *ngIf="isErrorVisible('publisher','pubName','required')" aria-hidden="true"></i>  
+  </div>
+   <div class="form-group has-error has-feedback">
+      <label class="control-label" for="inputError2">Input with error</label>
+      <input type="text" class="form-control" id="inputError2" aria-describedby="inputError2Status">
+      <i class="ion-android-cancel form-control-feedback" aria-hidden="true"></i>
+      <span id="inputError2Status" class="sr-only">(error)</span>
+  </div>
   </fieldset>
   <fieldset class="form-group" formGroupName="houseHolder">
     <legend>Householder</legend>

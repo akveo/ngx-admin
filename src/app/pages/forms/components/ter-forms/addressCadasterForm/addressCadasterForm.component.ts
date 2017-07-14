@@ -17,6 +17,9 @@ addForm: FormGroup;
 groupsList:string[] = ["bras","itauera","savoy","tatuape"];
 @Output()
 protected onAddAddress: EventEmitter<any> = new EventEmitter<any>();
+errors = {};
+
+
 
   ngOnInit()  {
       this.formInitialBind();
@@ -45,19 +48,27 @@ protected onAddAddress: EventEmitter<any> = new EventEmitter<any>();
               });
   }
 
+
+  
+
     isErrorVisible(form:string , field:string, error:string) {
       let localForm:FormGroup ;
+      
       if(form)
         localForm = this.addForm.controls[form] as FormGroup;
       else
-        localForm = this.addForm; 
-
-      return localForm.controls[field].dirty
+       localForm  = this.addForm; 
+      
+      let hasErrors = localForm.controls[field].dirty
               && localForm.controls[field].errors &&
-              localForm.controls[field].errors[error];
+              localForm.controls[field].errors[error]
+                 
+      return hasErrors;
 
     }
 
+ 
+  
 
   get valid() {
       return this.addForm.valid;
