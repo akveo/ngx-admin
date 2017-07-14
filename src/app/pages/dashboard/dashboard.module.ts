@@ -13,6 +13,7 @@ import { TemperatureDraggerComponent } from './temperature/temperature-dragger/t
 import { TeamComponent } from './team/team.component';
 import { SecurityCamerasComponent } from './security-cameras/security-cameras.component';
 import { ElectricityComponent } from './electricity/electricity.component';
+import { ElectricityChartComponent } from './electricity/electricity-chart/electricity-chart.component';
 import { WeatherComponent } from './weather/weather.component';
 import { SolarComponent } from './solar/solar.component';
 import { PlayerComponent } from './player/player.component';
@@ -35,6 +36,7 @@ import { PlayerComponent } from './player/player.component';
     TeamComponent,
     SecurityCamerasComponent,
     ElectricityComponent,
+    ElectricityChartComponent,
     WeatherComponent,
     PlayerComponent,
     SolarComponent,

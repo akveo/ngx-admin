@@ -8,7 +8,7 @@ import { NgaThemeService } from '@akveo/nga-theme';
 })
 export class TemperatureComponent {
 
-  temperature: number = 28;
+  temperature: number = 24;
   temperatureOff: boolean = false;
   temperatureMode = 'cool';
 

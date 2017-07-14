@@ -128,9 +128,43 @@
     }
   }
 
-  .chart {
+  .chart-container {
     flex: 1;
     height: 100%;
     background-image: nga-theme(radial-gradient);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .chart-header {
+    display: flex;
+    align-items: center;
+    padding: 1rem 2rem;
+  }
+
+  .header-block {
+    margin-right: 3rem;
+
+    .subtitle {
+      font-size: 1.125rem;
+      font-weight: nga-theme(font-weight-light);
+    }
+
+    .value {
+      font-family: nga-theme(font-secondary);
+      font-size: 2rem;
+      font-weight: nga-theme(font-weight-bolder);
+      color: nga-theme(color-fg-heading);
+
+      &.dollar {
+        color: nga-theme(color-fg-highlight);
+      }
+    }
+
+    .unit {
+      font-family: nga-theme(font-secondary);
+      font-size: 1.25rem;
+      font-weight: nga-theme(font-weight-light);
+    }
   }
 }

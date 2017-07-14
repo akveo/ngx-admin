@@ -1,0 +1,11 @@
+@import '../../../../@theme/styles/variables';
+
+@include nga-install-component() {
+
+  display: block;
+  flex: 1;
+
+  .echart {
+    height: 100%;
+  }
+}
