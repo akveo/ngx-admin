@@ -4,6 +4,416 @@
  * Licensed under the MIT License. See License.txt in the project root for license information.
  */
 
-@mixin nga-b-dropdowns-theme() {
+@import './outline-buttons';
 
+@mixin dropdown-menu-background($color) {
+  background-color: $color;
+}
+
+@mixin dropdown-menu-primary-background() {
+  @include dropdown-menu-background(nga-theme(btn-primary-bg));
+}
+
+@mixin dropdown-menu-success-background() {
+  @include dropdown-menu-background(nga-theme(btn-success-bg));
+}
+
+@mixin dropdown-menu-warning-background() {
+  @include dropdown-menu-background(nga-theme(btn-warning-bg));
+}
+
+@mixin dropdown-menu-info-background() {
+  @include dropdown-menu-background(nga-theme(btn-info-bg));
+}
+
+@mixin dropdown-menu-danger-background() {
+  @include dropdown-menu-background(nga-theme(btn-danger-bg));
+}
+
+@mixin dropdown-menu-secondary-background() {
+  @include dropdown-menu-background(nga-theme(btn-secondary-border));
+}
+
+
+@mixin dropdown-menu-divider($color) {
+  border-top: 1px solid shade($color, 14%);
+}
+
+@mixin dropdown-menu-primary-divider() {
+  @include dropdown-menu-divider(nga-theme(btn-primary-bg));
+}
+
+@mixin dropdown-menu-success-divider() {
+  @include dropdown-menu-divider(nga-theme(btn-success-bg));
+}
+
+@mixin dropdown-menu-warning-divider() {
+  @include dropdown-menu-divider(nga-theme(btn-warning-bg));
+}
+
+@mixin dropdown-menu-info-divider() {
+  @include dropdown-menu-divider(nga-theme(btn-info-bg));
+}
+
+@mixin dropdown-menu-danger-divider() {
+  @include dropdown-menu-divider(nga-theme(btn-danger-bg));
+}
+
+@mixin dropdown-menu-secondary-divider() {
+  @include dropdown-menu-divider(nga-theme(btn-secondary-border));
+}
+
+
+@mixin dropdown-item-hover-background($color) {
+  background-color: shade($color, 14%);
+}
+
+@mixin dropdown-item-hover-primary-background() {
+  @include dropdown-item-hover-background(nga-theme(btn-primary-bg));
+}
+
+@mixin dropdown-item-hover-success-background() {
+  @include dropdown-item-hover-background(nga-theme(btn-success-bg));
+}
+
+@mixin dropdown-item-hover-warning-background() {
+  @include dropdown-item-hover-background(nga-theme(btn-warning-bg));
+}
+
+@mixin dropdown-item-hover-info-background() {
+  @include dropdown-item-hover-background(nga-theme(btn-info-bg));
+}
+
+@mixin dropdown-item-hover-danger-background() {
+  @include dropdown-item-hover-background(nga-theme(btn-danger-bg));
+}
+
+@mixin dropdown-item-hover-secondary-background() {
+  @include dropdown-item-hover-background(nga-theme(btn-secondary-border));
+}
+
+
+@mixin dropdown-separator($color) {
+  border-right: 1px solid shade($color, 14%);
+}
+
+@mixin dropdown-primary-separator() {
+  @include dropdown-separator(nga-theme(btn-primary-bg));
+}
+
+@mixin dropdown-success-separator() {
+  @include dropdown-separator(nga-theme(btn-success-bg));
+}
+
+@mixin dropdown-warning-separator() {
+  @include dropdown-separator(nga-theme(btn-warning-bg));
+}
+
+@mixin dropdown-info-separator() {
+  @include dropdown-separator(nga-theme(btn-info-bg));
+}
+
+@mixin dropdown-danger-separator() {
+  @include dropdown-separator(nga-theme(btn-danger-bg));
+}
+
+@mixin dropdown-secondary-separator() {
+  @include dropdown-separator(nga-theme(btn-secondary-bg));
+}
+
+@mixin nga-b-dropdowns-theme() {
+  .dropdown.btn-group {
+    .btn:first-child {
+      width: 90%;
+      text-align: left;
+
+      &.btn-primary {
+        @include dropdown-primary-separator();
+      }
+
+      &.btn-success {
+        @include dropdown-success-separator();
+      }
+
+      &.btn-warning {
+        @include dropdown-warning-separator();
+      }
+
+      &.btn-info {
+        @include dropdown-info-separator();
+      }
+
+      &.btn-danger {
+        @include dropdown-danger-separator();
+      }
+
+      &.btn-secondary {
+        @include dropdown-secondary-separator();
+      }
+    }
+
+    .dropdown-toggle {
+      width: 10%;
+      margin-left: 0;
+    }
+  }
+
+  .dropdown.btn-group > .dropdown-toggle::after {
+    margin-left: 0;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .dropdown.btn-group {
+    width: 100%;
+
+    .btn:first-child {
+      font-family: nga-theme(font-secondary);
+    }
+  }
+
+  .btn-group.dropdown.show {
+    .btn:first-child {
+      border-bottom-left-radius: 0;
+    }
+  }
+
+  .dropdown {
+    .dropdown-toggle {
+      width: 100%;
+      text-align: left;
+      position: relative;
+      font-family: nga-theme(font-secondary);
+    }
+
+    .dropdown-toggle::after {
+      position: absolute;
+    }
+
+    .btn-primary + .dropdown-menu,
+    .btn-outline-primary + .dropdown-menu {
+      @include dropdown-menu-primary-background();
+      @include dropdown-menu-primary-divider();
+    }
+
+    .btn-success + .dropdown-menu,
+    .btn-outline-success + .dropdown-menu {
+      @include dropdown-menu-success-background();
+      @include dropdown-menu-success-divider();
+    }
+
+    .btn-warning + .dropdown-menu,
+    .btn-outline-warning + .dropdown-menu {
+      @include dropdown-menu-warning-background();
+      @include dropdown-menu-warning-divider();
+    }
+
+    .btn-info + .dropdown-menu,
+    .btn-outline-info + .dropdown-menu {
+      @include dropdown-menu-info-background();
+      @include dropdown-menu-info-divider();
+    }
+
+    .btn-danger + .dropdown-menu,
+    .btn-outline-danger + .dropdown-menu {
+      @include dropdown-menu-danger-background();
+      @include dropdown-menu-danger-divider();
+    }
+
+    .btn-secondary + .dropdown-menu,
+    .btn-outline-secondary + .dropdown-menu {
+      @include dropdown-menu-secondary-background();
+      @include dropdown-menu-secondary-divider();
+    }
+
+    .btn-primary + .dropdown-menu > a:hover,
+    .btn-outline-primary + .dropdown-menu > a:hover {
+      @include dropdown-item-hover-primary-background();
+    }
+
+    .btn-success + .dropdown-menu > a:hover,
+    .btn-outline-success + .dropdown-menu > a:hover {
+      @include dropdown-item-hover-success-background();
+    }
+
+    .btn-warning + .dropdown-menu > a:hover,
+    .btn-outline-warning + .dropdown-menu > a:hover {
+      @include dropdown-item-hover-warning-background();
+    }
+
+    .btn-info + .dropdown-menu > a:hover,
+    .btn-outline-info + .dropdown-menu > a:hover {
+      @include dropdown-item-hover-info-background();
+    }
+
+    .btn-danger + .dropdown-menu > a:hover,
+    .btn-outline-danger + .dropdown-menu > a:hover {
+      @include dropdown-item-hover-danger-background();
+    }
+
+    .btn-secondary + .dropdown-menu > a:hover,
+    .btn-outline-secondary + .dropdown-menu > a:hover {
+      @include dropdown-item-hover-secondary-background();
+    }
+
+    .dropdown-menu {
+      margin: 0;
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+      border-bottom-left-radius: nga-theme(btn-border-radius);
+      border-bottom-right-radius: nga-theme(btn-border-radius);
+      border: none;
+      width: 100%;
+    }
+
+    .dropdown-menu > a {
+      color: nga-theme(btn-text-color);
+      padding: 0.75rem 1.5rem;
+      text-transform: uppercase;
+      font-size: 0.875rem;
+      font-family: nga-theme(font-secondary);
+    }
+  }
+
+  .dropdown:not(.btn-group) {
+    .dropdown-toggle::after {
+      top: 1.25rem;
+      right: 1.125rem;
+    }
+  }
+
+  .dropdown.show {
+    .dropdown-toggle {
+      border-color: transparent;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+  }
+
+  .dropdown.ghost-dropdown {
+    .dropdown-toggle {
+      background-color: nga-theme(color-bg);
+    }
+
+    .dropdown-menu {
+      background-color: nga-theme(color-bg);
+    }
+
+    .btn-primary:hover {
+      @include btn-outline-primary-border();
+    }
+
+    .btn-success:hover {
+      @include btn-outline-success-border();
+    }
+
+    .btn-warning:hover {
+      @include btn-outline-warning-border();
+    }
+
+    .btn-info:hover {
+      @include btn-outline-info-border();
+    }
+
+    .btn-danger:hover {
+      @include btn-outline-danger-border();
+    }
+
+    .btn-secondary:hover {
+      @include btn-outline-secondary-border();
+    }
+
+    .btn-primary + .dropdown-menu {
+      @include btn-outline-primary-border();
+
+      border-top: none;
+    }
+
+    .btn-success + .dropdown-menu {
+      @include btn-outline-success-border();
+
+      border-top: none;
+    }
+
+    .btn-warning + .dropdown-menu {
+      @include btn-outline-warning-border();
+
+      border-top: none;
+    }
+
+    .btn-info + .dropdown-menu {
+      @include btn-outline-info-border();
+
+      border-top: none;
+    }
+
+    .btn-danger + .dropdown-menu {
+      @include btn-outline-danger-border();
+
+      border-top: none;
+    }
+
+    .btn-secondary + .dropdown-menu {
+      @include btn-outline-secondary-border();
+
+      border-top: none;
+    }
+
+    .btn-primary + .dropdown-menu > a:hover {
+      background-color: nga-theme(btn-primary-bg);
+    }
+
+    .btn-success + .dropdown-menu > a:hover {
+      background-color: nga-theme(btn-success-bg);
+    }
+
+    .btn-warning + .dropdown-menu > a:hover {
+      background-color: nga-theme(btn-warning-bg);
+    }
+
+    .btn-info + .dropdown-menu > a:hover {
+      background-color: nga-theme(btn-info-bg);
+    }
+
+    .btn-danger + .dropdown-menu > a:hover {
+      background-color: nga-theme(btn-danger-bg);
+    }
+
+    .btn-secondary + .dropdown-menu > a:hover {
+      background-color: nga-theme(btn-secondary-border);
+    }
+  }
+
+  .dropdown.ghost-dropdown.show {
+    .dropdown-toggle {
+      &.btn-primary {
+        @include btn-outline-primary-border();
+      }
+
+      &.btn-success {
+        @include btn-outline-success-border();
+      }
+
+      &.btn-warning {
+        @include btn-outline-warning-border();
+      }
+
+      &.btn-info {
+        @include btn-outline-info-border();
+      }
+
+      &.btn-danger {
+        @include btn-outline-danger-border();
+      }
+
+      &.btn-secondary {
+        @include btn-outline-secondary-border();
+      }
+    }
+
+    .dropdown-menu {
+      margin-top: -2px;
+    }
+  }
 }
