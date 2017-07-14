@@ -1,0 +1,58 @@
+<div class="player">
+  <div class="player-card-header">
+    <div class="player-menu">
+      <i class="ion-navicon"></i>
+    </div>
+    <div class="playlist-name">
+      <span>My Playlist</span>
+    </div>
+  </div>
+  <div class="player-cover">
+    <div class="album-image"></div>
+    <div class="artist-details">
+      <span class="artist-name">Kendrick Lamar</span>
+      <span class="song-name">DNA.</span>
+    </div>
+  </div>
+  <div class="player-progress">
+    <div class="status"></div>
+  </div>
+  <div class="player-commands">
+    <div class="prev">
+      <i class="ion-ios-skipbackward"></i>
+    </div>
+    <div class="play">
+      <i class="ion-ios-play"></i>
+    </div>
+    <div class="next">
+      <i class="ion-ios-skipforward"></i>
+    </div>
+  </div>
+  <div class="player-volume">
+    <div class="minus" (click)="minus()">
+      <i class="ion-ios-minus-outline"></i>
+    </div>
+    <div class="volume-items">
+      <div class="volume-item" *ngFor="let v of volume"
+           (click)="selectedVolume = v"
+           [class.active]="v < selectedVolume"
+           [class.selected]="v === selectedVolume"></div>
+    </div>
+    <div class="plus" (click)="plus()">
+      <i class="ion-ios-plus-outline"></i>
+    </div>
+  </div>
+  <div class="player-playlist-commands">
+    <div class="btn-group btn-group-block btn-group-divider" data-toggle="buttons">
+      <label class="btn btn-primary" [class.active]="playlistCommandsModel.left">
+        <input type="checkbox" [(ngModel)]="playlistCommandsModel.left"/> <i class="ion-plus-round"></i>
+      </label>
+      <label class="btn btn-primary" [class.active]="playlistCommandsModel.middle">
+        <input type="checkbox" [(ngModel)]="playlistCommandsModel.middle"/> <i class="ion-plus-round"></i>
+      </label>
+      <label class="btn btn-primary" [class.active]="playlistCommandsModel.right">
+        <input type="checkbox" [(ngModel)]="playlistCommandsModel.right"/> <i class="ion-plus-round"></i>
+      </label>
+    </div>
+  </div>
+</div>

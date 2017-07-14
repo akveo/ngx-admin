@@ -13,6 +13,7 @@ import { TeamComponent } from './team/team.component';
 import { SecurityCamerasComponent } from './security-cameras/security-cameras.component';
 import { ElectricityComponent } from './electricity/electricity.component';
 import { WeatherComponent } from './weather/weather.component';
+import { PlayerComponent } from './player/player.component';
 
 @NgModule({
   imports: [
@@ -32,6 +33,7 @@ import { WeatherComponent } from './weather/weather.component';
     SecurityCamerasComponent,
     ElectricityComponent,
     WeatherComponent,
+    PlayerComponent,
   ],
 })
 export class DashboardModule { }

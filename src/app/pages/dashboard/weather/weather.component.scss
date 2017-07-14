@@ -6,7 +6,7 @@
     nga-card-body {
       height: 100%;
       padding: 2rem;
-      background-image: radial-gradient(circle at 50% 50%, #423f8c, #302c6e);
+      background-image: nga-theme(radial-gradient);
     }
   }
 
@@ -42,6 +42,7 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
+        margin-top: 2rem;
       }
 
       .icon {

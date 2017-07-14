@@ -48,11 +48,13 @@
     color: nga-theme(color-fg);
   }
 
-  .header {
+  // TODO: Replace with the card header styles mixin
+  .rating-header {
     line-height: 2rem;
     font-size: 1.25rem;
     font-family: nga-theme(font-secondary);
     font-weight: nga-theme(font-weight-bolder);
+    color: nga-theme(color-fg-heading);
   }
 
   .current-rate {

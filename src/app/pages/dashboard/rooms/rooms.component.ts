@@ -5,12 +5,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./rooms.component.scss'],
   template: `
     <nga-card size="large">
-      <nga-card-header>
-        Room Management
-      </nga-card-header>
-      <nga-card-body>
-        <ngx-room-selector></ngx-room-selector>
-      </nga-card-body>
+      <ngx-room-selector></ngx-room-selector>
+      <ngx-player></ngx-player>
     </nga-card>
   `,
 })

@@ -1,0 +1,184 @@
+@import '../../../@theme/styles/variables';
+
+@include nga-install-component() {
+
+  .player {
+    flex: 1;
+
+    // TODO: Replace with the card header styles mixin
+    .player-card-header {
+      display: flex;
+      line-height: 2rem;
+      font-size: 1.25rem;
+      font-family: nga-theme(font-secondary);
+      font-weight: nga-theme(font-weight-bolder);
+      color: nga-theme(color-fg-heading);
+      padding: 1.25rem;
+
+      .player-menu {
+        font-size: 2.5rem;
+        margin-right: 1.25rem;
+        margin-top: -0.25rem;
+      }
+    }
+
+    .player-cover {
+      background: #363175;
+      padding: 1.25rem;
+      display: flex;
+
+      .album-image {
+        background: url('./~/assets/images/damn.jpg');
+        background-size: cover;
+        background-position: center;
+        height: 94px;
+        width: 30%;
+        box-shadow: nga-theme(card-shadow);
+      }
+
+      .artist-details {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-left: 1.25rem;
+
+        .artist-name {
+          color: nga-theme(color-fg-heading);
+          font-size: 1.5rem;
+          font-family: nga-theme(font-secondary);
+          font-weight: nga-theme(font-weight-bold);
+        }
+
+        .song-name {
+          font-family: nga-theme(font-main);
+          font-size: 1.125rem;
+          color: nga-theme(color-fg);
+        }
+      }
+    }
+
+    .player-progress {
+      background-color: #2c2961;
+      height: 2px;
+
+      .status {
+        background-color: #0088ff;
+        height: 2px;
+        width: 70%;
+        box-shadow: 0 4px 8px 0 rgba(33, 7, 77, 0.4), 0 0 12px 0 rgba(51, 139, 255, 0.4);
+        position: relative;
+
+        &::before {
+          content: '';
+          border-radius: 50%;
+          width: 1rem;
+          height: 1rem;
+          position: absolute;
+          background-color: white;
+          right: 0;
+          box-shadow: 0 0 18px 0 rgba(255, 255, 255, 0.4);
+          top: -0.5rem;
+        }
+      }
+    }
+
+    .player-commands {
+      display: flex;
+      justify-content: space-around;
+      font-size: 4rem;
+      color: nga-theme(color-fg-heading);
+      padding: 2.5rem 0;
+      border-bottom: 1px solid nga-theme(separator);
+
+      .prev {
+        color: nga-theme(color-fg);
+      }
+    }
+
+    .player-volume {
+      display: flex;
+      justify-content: space-around;
+      font-size: 4rem;
+      color: nga-theme(color-fg);
+      padding: 2rem 0;
+      border-bottom: 1px solid nga-theme(separator);
+
+      .minus:hover {
+        color: nga-theme(color-fg-heading);
+      }
+
+      .plus:hover {
+        color: nga-theme(color-fg-heading);
+      }
+
+      .volume-items {
+        display: flex;
+        justify-content: space-around;
+        font-size: 2rem;
+        margin: 0 -4rem;
+
+        .volume-item {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+        }
+
+        .volume-item::before {
+          content: '';
+          width: 4px;
+          background-color: nga-theme(separator);
+          height: 30%;
+          border-radius: 1rem;
+          transition: 0.3s;
+        }
+
+        .volume-item:not(:last-child)::before {
+          margin-right: 0.25rem;
+        }
+
+        .volume-item.active::before {
+          background-image: linear-gradient(to right, #4f6fff, #00ccff);
+          box-shadow: 0 4px 10px 0 rgba(33, 7, 77, 0.5), 0 2px 12px 0 rgba(0, 136, 255, 0.7);
+        }
+
+        .volume-item.selected::before {
+          background-color: white;
+          height: 40%;
+          box-shadow: 0 0 18px 0 rgba(255, 255, 255, 0.68);
+        }
+      }
+    }
+
+    .player-playlist-commands {
+      height: 3.5rem;
+    }
+
+    .player-playlist-commands > .btn-group {
+      height: 100%;
+
+      .btn {
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        border: none;
+        font-size: 2rem;
+      }
+
+      .btn.active {
+        background-color: nga-theme(card-bg);
+        color: nga-theme(color-fg);
+      }
+
+      .btn:first-child {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+      }
+
+      .btn:last-child {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: nga-theme(card-border-radius);
+      }
+    }
+  }
+}
