@@ -139,10 +139,16 @@
   .chart-header {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     padding: 1rem 2rem;
   }
 
-  .header-block {
+  .header-stats {
+    display: flex;
+    align-items: center;
+  }
+
+  .stats-block {
     margin-right: 3rem;
 
     .subtitle {

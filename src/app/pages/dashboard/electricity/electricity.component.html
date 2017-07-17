@@ -22,22 +22,36 @@
 
   <div class="chart-container">
     <div class="chart-header">
-      <div class="header-block">
-        <div class="subtitle">Consumed</div>
-        <div>
-          <span class="value">816</span>
-          <span class="unit">kWh</span>
+      <div class="header-stats">
+        <div class="stats-block">
+          <div class="subtitle">Consumed</div>
+          <div>
+            <span class="value">816</span>
+            <span class="unit">kWh</span>
+          </div>
+        </div>
+
+        <div class="stats-block">
+          <div class="subtitle">Value</div>
+          <div>
+            <span class="value dollar">$</span>
+            <span class="value">91</span>
+            <span class="unit">USD</span>
+          </div>
         </div>
       </div>
 
-      <div class="header-block">
-        <div class="subtitle">Value</div>
-        <div>
-          <span class="value dollar">$</span>
-          <span class="value">91</span>
-          <span class="unit">USD</span>
-        </div>
-      </div>
+      <!--<div class="btn-group" ngbDropdown ngbDropdownToggle>-->
+        <!--<button type="button" class="btn btn-primary">Week</button>-->
+        <!--<button type="button" class="btn btn-primary">-->
+          <!--<span class="sr-only">Dropdown</span>-->
+        <!--</button>-->
+        <!--<ul class="dropdown-menu">-->
+          <!--<li class="dropdown-item">Week</li>-->
+          <!--<li class="dropdown-item">Month</li>-->
+          <!--<li class="dropdown-item">Year</li>-->
+        <!--</ul>-->
+      <!--</div>-->
 
     </div>
     <ngx-electricity-chart></ngx-electricity-chart>
