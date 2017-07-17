@@ -6,6 +6,7 @@
 
 @mixin nga-layout-theme() {
   .layout {
+    // TODO: probably we need to separate this form here and move it to the typography scss module
     font-family: nga-theme(layout-font-family);
     font-size: nga-theme(layout-font-size);
     line-height: nga-theme(layout-line-height);
