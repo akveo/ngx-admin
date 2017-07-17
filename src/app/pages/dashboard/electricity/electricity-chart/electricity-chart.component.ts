@@ -31,6 +31,18 @@ export class ElectricityChartComponent implements OnInit {
       },
       tooltip: {
         trigger: 'axis',
+        axisPointer: {
+          type: 'line',
+          lineStyle: {
+            color: 'rgba(255, 255, 255, 0.1)',
+          },
+        },
+        position: 'top',
+        backgroundColor: 'rgba(0, 255, 170, 0.35)',
+        borderColor: '#00f9a6',
+        borderWidth: 3,
+        formatter: '{c0} kWh',
+        extraCssText: 'box-shadow: 0px 2px 46px 0 rgba(0, 255, 170, 0.35); border-radius: 10px;padding: 5px 20px;',
       },
       xAxis: {
         type: 'category',
@@ -78,11 +90,15 @@ export class ElectricityChartComponent implements OnInit {
         {
           type: 'line',
           smooth: true,
-          symbol: 'none',
-          sampling: 'average',
+          symbolSize: 20,
           itemStyle: {
             normal: {
-              color: '#2ec7fe',
+              opacity: 0,
+            },
+            emphasis: {
+              color: 'white',
+              borderWidth: 0,
+              opacity: 1,
             },
           },
           lineStyle: {
@@ -119,12 +135,6 @@ export class ElectricityChartComponent implements OnInit {
           type: 'line',
           smooth: true,
           symbol: 'none',
-          sampling: 'average',
-          itemStyle: {
-            normal: {
-              color: '#2ec7fe',
-            },
-          },
           lineStyle: {
             normal: {
               width: 6,
