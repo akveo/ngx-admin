@@ -6,7 +6,7 @@
 
 @mixin nga-card-header() {
   padding: nga-theme(card-padding);
-  border-bottom: 1px solid nga-theme(card-header-separator);
+  border-bottom: 1px solid nga-theme(card-separator);
   border-top-left-radius: nga-theme(card-border-radius);
   border-top-right-radius: nga-theme(card-border-radius);
   color: nga-theme(card-header-fg-heading);
@@ -105,6 +105,7 @@
 
     nga-card-footer {
       padding: nga-theme(card-padding);
+      border-top: 1px solid nga-theme(card-separator);
       border-bottom-left-radius: nga-theme(card-border-radius);
       border-bottom-right-radius: nga-theme(card-border-radius);
     }

@@ -19,22 +19,13 @@
 }
 
 @mixin btn-rectangle() {
-  @include button-size(nga-theme(btn-padding-y),
-                       nga-theme(btn-padding-x),
-                       nga-theme(btn-font-size),
-                       nga-theme(btn-rectangle-border-radius));
+  @include border-radius(nga-theme(btn-rectangle-border-radius));
 }
 
 @mixin btn-semi-round() {
-  @include button-size(nga-theme(btn-padding-y),
-                       nga-theme(btn-padding-x),
-                       nga-theme(btn-font-size),
-                       nga-theme(btn-semi-round-border-radius));
+  @include border-radius(nga-theme(btn-semi-round-border-radius));
 }
 
 @mixin btn-round() {
-  @include button-size(nga-theme(btn-padding-y),
-                       nga-theme(btn-padding-x),
-                       nga-theme(btn-font-size),
-                       nga-theme(btn-round-border-radius));
+  @include border-radius(nga-theme(btn-round-border-radius));
 }

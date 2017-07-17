@@ -12,6 +12,7 @@
 @import './icon-buttons';
 @import './forms';
 @import './input-group';
+@import './modals';
 
 @mixin nga-bootstrap-theme() {
   @include nga-b-buttons-theme();
@@ -21,4 +22,5 @@
   @include nga-b-icon-buttons-theme();
   @include nga-b-forms-theme();
   @include nga-b-input-group-theme();
+  @include nga-b-modals-theme();
 }

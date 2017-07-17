@@ -94,7 +94,7 @@ $theme: (
   card-header-font-family: font-secondary,
   card-header-font-size: font-size-lg,
   card-header-font-weight: font-weight-bolder,
-  card-header-separator: separator,
+  card-separator: separator,
   card-header-fg: color-fg,
   card-header-fg-heading: color-fg-heading,
   card-header-active-bg: color-fg,
@@ -239,6 +239,7 @@ $theme: (
 
   btn-text-color: color-white,
   btn-font-family: font-secondary,
+  btn-line-height: line-height,
 
   btn-primary-bg: color-primary,
   btn-secondary-bg: transparent,
@@ -250,34 +251,26 @@ $theme: (
   btn-secondary-border: #bdbaff,
   btn-secondary-fill: #665ebd,
 
-  btn-padding-y: 0.75rem,
-  btn-padding-x: 1.5rem,
-  btn-font-size: 1rem,
-  btn-border-radius: 12px,
-
-  btn-padding-y-lg: 1.25rem,
+  btn-padding-y-lg: 0.875rem,
   btn-padding-x-lg: 1.75rem,
   btn-font-size-lg: 1.25rem,
-  btn-line-height-lg: 1.375rem,
-  btn-border-radius-lg: 12px,
+  btn-border-radius-lg: 0.75rem,
 
-  btn-padding-y-md: 1rem,
+  // default size
+  btn-padding-y-md: 0.75rem,
   btn-padding-x-md: 1.5rem,
   btn-font-size-md: 1rem,
-  btn-line-height-md: 1.125rem,
-  btn-border-radius-md: 12px,
+  btn-border-radius-md: 0.75rem,
 
-  btn-padding-y-sm: 0.875rem,
+  btn-padding-y-sm: 0.675rem,
   btn-padding-x-sm: 1.5rem,
   btn-font-size-sm: 0.875rem,
-  btn-line-height-sm: 1rem,
-  btn-border-radius-sm: 12px,
+  btn-border-radius-sm: 0.75rem,
 
-  btn-padding-y-tn: 0.625rem,
+  btn-padding-y-tn: 0.5rem,
   btn-padding-x-tn: 1.25rem,
   btn-font-size-tn: 0.75rem,
-  btn-line-height-tn: 0.875rem,
-  btn-border-radius-tn: 12px,
+  btn-border-radius-tn: 0.75rem,
 
   btn-rectangle-border-radius: 4px,
   btn-semi-round-border-radius: 12px,
@@ -322,7 +315,21 @@ $theme: (
   form-control-feedback-font-size: 0.875rem,
   form-control-feedback-font-weight: font-weight-normal,
 
-  checkbox-fg-color: color-fg
+  checkbox-fg-color: color-fg,
+
+  modal-font-size: font-size,
+  modal-line-height: line-height,
+  modal-font-weight: font-weight-normal,
+  modal-fg: color-fg-text,
+  modal-fg-heading: color-fg-heading,
+  modal-bg: color-bg,
+  modal-border: transparent,
+  modal-border-radius: radius,
+  modal-padding: padding,
+  modal-header-font-family: font-secondary,
+  modal-header-font-size: font-size-lg,
+  modal-header-font-weight: font-weight-bolder,
+  modal-separator: separator,
 );
 
 // register the theme

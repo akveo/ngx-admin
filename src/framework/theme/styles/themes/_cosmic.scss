@@ -66,10 +66,12 @@ $theme: (
   menu-submenu-bg: #2c2966,
   menu-submenu-fg: color-fg,
 
-  card-header-separator: transparent,
+  card-separator: transparent,
 
   tabs-separator: transparent,
   route-tabs-separator: transparent,
+
+  modal-separator: transparent,
 );
 
 // register the theme

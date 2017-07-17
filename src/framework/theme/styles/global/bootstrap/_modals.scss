@@ -1,0 +1,50 @@
+/**
+ * @license
+ * Copyright Akveo. All Rights Reserved.
+ * Licensed under the MIT License. See License.txt in the project root for license information.
+ */
+
+@import '../../core/mixins';
+
+@mixin nga-b-modals-theme() {
+
+  .modal-content {
+    font-size: nga-theme(modal-font-size);
+    line-height: nga-theme(modal-line-height);
+    font-weight: nga-theme(modal-font-weight);
+
+    color: nga-theme(modal-fg);
+    background: nga-theme(modal-bg);
+    border-color: nga-theme(modal-border);
+    border-radius: nga-theme(modal-border-radius);
+  }
+
+  .modal-header {
+    padding: nga-theme(modal-padding);
+    border-bottom: 1px solid nga-theme(modal-separator);
+    border-top-left-radius: nga-theme(modal-border-radius);
+    border-top-right-radius: nga-theme(modal-border-radius);
+    color: nga-theme(modal-fg-heading);
+
+    font-family: nga-theme(modal-header-font-family);
+    font-size: nga-theme(modal-header-font-size);
+    font-weight: nga-theme(modal-header-font-weight);
+
+    @include nga-headings();
+  }
+
+  .modal-body {
+    padding: nga-theme(modal-padding);
+
+    @include nga-scrollbars(nga-theme(scrollbar-width),
+      nga-theme(scrollbar-fg),
+      nga-theme(scrollbar-bg));
+  }
+
+  .modal-footer {
+    padding: nga-theme(modal-padding);
+    border-top: 1px solid nga-theme(modal-separator);
+    border-bottom-left-radius: nga-theme(modal-border-radius);
+    border-bottom-right-radius: nga-theme(modal-border-radius);
+  }
+}
