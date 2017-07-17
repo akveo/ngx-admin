@@ -7,6 +7,18 @@
   nga-card nga-card-header + nga-card-body {
     padding-top: 0;
   }
+
+  nga-card nga-card-body + nga-card-footer {
+    padding-top: 0;
+  }
+
+  .modal-content .modal-header + .modal-body {
+    padding-top: 0;
+  }
+
+  .modal-content .modal-body + .modal-footer {
+    padding-top: 0;
+  }
 }
 
 //global styles for the whole application

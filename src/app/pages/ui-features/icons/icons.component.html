@@ -1,27 +1,30 @@
 <div class="row">
-  <div class="col-6 col-md-6">
+  <div class="col-md-12 col-lg-6">
     <nga-card>
       <nga-card-header>
         Ionicons
       </nga-card-header>
       <nga-card-body>
-        <div class="col-2 icon" *ngFor="let icon of icons.ionicons"><i class="{{ icon }}"></i></div>
+        <div class="icon" *ngFor="let icon of icons.ionicons"><i class="{{ icon }}"></i></div>
       </nga-card-body>
       <nga-card-footer>
         <a href="http://ionicons.com/" target="_blank" class="see-all-icons">See all ionicons icons</a>
       </nga-card-footer>
     </nga-card>
   </div>
-  <div class="col-6 col-md-6">
+
+  <div class="col-md-12 col-lg-6">
     <nga-card>
       <nga-card-header>
         Font awesome icons
       </nga-card-header>
       <nga-card-body>
-        <div class="col-2 icon" *ngFor="let icon of icons.fontAwesome"><i class="fa {{ icon }}"></i></div>
+        <div class="icon" *ngFor="let icon of icons.fontAwesome"><i class="fa {{ icon }}"></i></div>
       </nga-card-body>
       <nga-card-footer>
-        <a href="http://fortawesome.github.io/Font-Awesome/icons/" target="_blank" class="see-all-icons">See all Font Awesome icons</a>
+        <a href="http://fortawesome.github.io/Font-Awesome/icons/" target="_blank" class="see-all-icons">
+          See all Font Awesome icons
+        </a>
       </nga-card-footer>
     </nga-card>
   </div>

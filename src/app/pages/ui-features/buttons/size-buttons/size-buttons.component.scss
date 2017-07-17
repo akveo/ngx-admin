@@ -2,6 +2,12 @@
 @import '~@akveo/nga-theme/styles/global/bootstrap/buttons';
 
 @include nga-install-component() {
+
+  .size-container {
+    display: inline-block;
+    margin: 0 1rem 1rem 0;
+  }
+
   .subheader {
     margin-bottom: 1rem;
     color: nga-theme(color-fg-heading);

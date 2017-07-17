@@ -39,12 +39,14 @@
 
     .team-subtitle {
       margin-bottom: 1rem;
-      color: nga-theme(color-fg-hint);
+      color: nga-theme(color-fg);
+      font-weight: nga-theme(font-weight-light);
     }
 
     .team-bio {
       text-align: justify;
       color: nga-theme(color-fg-text);
+      font-weight: nga-theme(font-weight-light);
     }
   }
 

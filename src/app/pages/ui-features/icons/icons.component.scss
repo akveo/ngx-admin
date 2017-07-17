@@ -1,16 +1,18 @@
+.icon {
+  display: inline-block;
+  width: 4rem;
+  padding: 1.25rem 0;
+  text-align: center;
+  font-size: 1.25rem;
+}
+
 :host {
-  display: block;
+  nga-card-header, nga-card-body {
+    padding-bottom: 0;
+  }
 
-  nga-card {
-    nga-card-body {
-      .icon {
-        float: left;
-        text-align: center;
-      }
-    }
-
-    nga-card-footer {
-      text-align: right;
-    }
+  nga-card-footer {
+    text-align: right;
+    padding-top: 0;
   }
 }

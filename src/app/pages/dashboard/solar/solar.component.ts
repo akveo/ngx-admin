@@ -47,9 +47,7 @@ export class SolarComponent {
                 position: 'center',
                 formatter: '{d}%',
                 textStyle: {
-                  fontSize: '20',
-                  fontWeight: 'bold',
-                  color: 'red',
+                  fontSize: '22',
                   fontFamily: 'Exo',
                 },
               },
