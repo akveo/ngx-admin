@@ -7,6 +7,10 @@
     height: 100%;
   }
 
+  canvas {
+    border-radius: nga-theme(card-border-radius);
+  }
+
   .echart {
     height: 100%;
     width: 100%;
