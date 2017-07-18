@@ -10,6 +10,7 @@ import {
   ComponentFactoryResolver,
   ElementRef,
   HostBinding,
+  HostListener,
   Input,
   OnDestroy,
   Renderer2,
@@ -169,6 +170,9 @@ export class NgaLayoutComponent implements OnDestroy, AfterViewInit {
       this.afterViewInit$.subscribe((_) => resolve());
     }));
     this.spinnerService.load();
+
+    // trigger first time so that after the change we have the initial value
+    this.themeService.changeWindowWidth(window.innerWidth);
   }
 
   ngAfterViewInit(): void {
@@ -194,5 +198,10 @@ export class NgaLayoutComponent implements OnDestroy, AfterViewInit {
     this.removeClassSubscription.unsubscribe();
     this.appendSubscription.unsubscribe();
     this.clearSubscription.unsubscribe();
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event) {
+    this.themeService.changeWindowWidth(event.target.innerWidth);
   }
 }

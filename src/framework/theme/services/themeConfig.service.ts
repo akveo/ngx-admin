@@ -14,6 +14,7 @@ import 'rxjs/add/operator/publish';
 
 import { ngaThemeOptionsToken } from '../theme.options';
 
+// TODO: move to theme config
 const builtInThemes = [
   {
     name: 'default',
@@ -75,7 +76,7 @@ const builtInThemes = [
     },
   },
 ];
-
+// TODO rename it to themeRegistry or smth similar as currently it overlaps with theme options
 @Injectable()
 export class NgaThemeConfig {
 

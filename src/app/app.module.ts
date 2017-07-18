@@ -29,6 +29,7 @@ import { NgaLayoutTestComponent } from './layout-test/layout-test.component';
 import { NgaLayoutHeaderTestComponent } from './layout-test/layout-header-test.component';
 import { NgaLayoutFooterTestComponent } from './layout-test/layout-footer-test.component';
 import { NgaThemeChangeTestComponent } from './layout-test/theme-change-test.component';
+import { NgaThemeBreakpointTestComponent } from './layout-test/theme-breakpoint-test.component';
 import { NgaTabsetTestComponent } from './tabset-test/tabset-test.component';
 import {
   NgaRouteTabsetTestComponent,
@@ -94,6 +95,7 @@ const NGA_TEST_COMPONENTS = [
   NgaBootstrapTestComponent,
   NgaDynamicToAddComponent,
   NgaThemeDynamicTestComponent,
+  NgaThemeBreakpointTestComponent,
   NgaActionsTestComponent,
   NgaFormsTestComponent,
 ];

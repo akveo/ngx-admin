@@ -8,6 +8,7 @@ export * from './theme.options';
 export * from './theme.module';
 export * from './services/theme.service';
 export * from './services/spinner.service';
+export * from './services/breakpoints.service';
 export * from './components/card/card.module';
 export * from './components/layout/layout.module';
 export * from './components/menu/menu.module';

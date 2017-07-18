@@ -14,6 +14,7 @@ import { NgaLayoutHeaderTestComponent } from './layout-test/layout-header-test.c
 import { NgaLayoutTestComponent } from './layout-test/layout-test.component';
 import { NgaThemeChangeTestComponent } from './layout-test/theme-change-test.component';
 import { NgaThemeDynamicTestComponent } from './layout-test/theme-dynamic-test.component';
+import { NgaThemeBreakpointTestComponent } from './layout-test/theme-breakpoint-test.component';
 import {
   NgaMenuItem1Component,
   NgaMenuItem2Component,
@@ -68,6 +69,10 @@ export const routes: Routes = [
   {
     path: 'layout/dynamic',
     component: NgaThemeDynamicTestComponent,
+  },
+  {
+    path: 'layout/breakpoint',
+    component: NgaThemeBreakpointTestComponent,
   },
   {
     path: 'tabset',
