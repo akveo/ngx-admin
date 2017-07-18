@@ -38,6 +38,11 @@
       &.fixed ~ .layout-container {
         padding-top: nga-theme(header-height);
       }
+
+      &.fixed ~ .layout-container > nga-sidebar > .scrollable {
+        margin-top: -#{nga-theme(header-height)};
+        padding-top: nga-theme(header-height);
+      }
     }
 
     .layout-container {
