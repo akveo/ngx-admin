@@ -26,26 +26,26 @@
   @include button-size(nga-theme(btn-padding-y-lg),
                        nga-theme(btn-padding-x-lg),
                        nga-theme(btn-font-size-lg),
-                       nga-theme(btn-border-radius-lg));
+                       nga-theme(btn-border-radius));
 }
 
 @mixin btn-md() {
   @include button-size(nga-theme(btn-padding-y-md),
                        nga-theme(btn-padding-x-md),
                        nga-theme(btn-font-size-md),
-                       nga-theme(btn-border-radius-md));
+                       nga-theme(btn-border-radius));
 }
 
 @mixin btn-sm() {
   @include button-size(nga-theme(btn-padding-y-sm),
                        nga-theme(btn-padding-x-sm),
                        nga-theme(btn-font-size-sm),
-                       nga-theme(btn-border-radius-sm));
+                       nga-theme(btn-border-radius));
 }
 
 @mixin btn-tn() {
   @include button-size(nga-theme(btn-padding-y-tn),
                        nga-theme(btn-padding-x-tn),
                        nga-theme(btn-font-size-tn),
-                       nga-theme(btn-border-radius-tn));
+                       nga-theme(btn-border-radius));
 }

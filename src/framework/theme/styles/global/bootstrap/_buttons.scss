@@ -22,10 +22,7 @@
     border: 2px solid transparent;
     transition: none;
 
-    @include button-size(nga-theme(btn-padding-y-md),
-                         nga-theme(btn-padding-x-md),
-                         nga-theme(btn-font-size-md),
-                         nga-theme(btn-border-radius-md));
+    @include btn-md();
   }
 
   @include btn-shape();
