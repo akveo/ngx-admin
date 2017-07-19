@@ -8,11 +8,15 @@ import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
-import { NgaThemeOptions, ngaThemeOptionsToken } from './theme.options';
+import { ngaMediaBreakpointsToken, NgaThemeOptions, ngaThemeOptionsToken } from './theme.options';
 import { NgaThemeService } from './services/theme.service';
 import { NgaSpinnerService } from './services/spinner.service';
 import { NgaThemeConfig } from './services/themeConfig.service';
-import { NgaMediaBreakpointsService } from './services/breakpoints.service';
+import {
+  DEFAULT_MEDIA_BREAKPOINTS,
+  NgaMediaBreakpoint,
+  NgaMediaBreakpointsService,
+} from './services/breakpoints.service';
 
 
 @NgModule({
@@ -25,8 +29,17 @@ import { NgaMediaBreakpointsService } from './services/breakpoints.service';
   ],
 })
 export class NgaThemeModule {
+
   // TODO: check the options (throw exception?)
-  static forRoot(ngaThemeOptions: NgaThemeOptions): ModuleWithProviders {
+  /**
+   * Main Theme Module
+   *
+   * @param ngaThemeOptions {NgaThemeOptions} Main theme options
+   * @param ngaMediaBreakpoints {NgaMediaBreakpoint} Available media breakpoins
+   *
+   * @returns {ModuleWithProviders}
+   */
+  static forRoot(ngaThemeOptions: NgaThemeOptions, ngaMediaBreakpoints?: NgaMediaBreakpoint[]): ModuleWithProviders {
     return <ModuleWithProviders> {
       ngModule: NgaThemeModule,
       imports: [
@@ -37,6 +50,7 @@ export class NgaThemeModule {
       ],
       providers: [
         { provide: ngaThemeOptionsToken, useValue: ngaThemeOptions || {} },
+        { provide: ngaMediaBreakpointsToken, useValue: ngaMediaBreakpoints || DEFAULT_MEDIA_BREAKPOINTS },
         NgaThemeConfig,
         NgaThemeService,
         NgaMediaBreakpointsService,

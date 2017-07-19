@@ -4,7 +4,8 @@
  * Licensed under the MIT License. See License.txt in the project root for license information.
  */
 
-import { Injectable } from '@angular/core';
+import { Inject, Injectable } from '@angular/core';
+import { ngaMediaBreakpointsToken } from '../theme.options';
 
 /**
  * Media breakpoint type
@@ -16,8 +17,7 @@ export interface NgaMediaBreakpoint {
   width: number;
 }
 
-// TODO: move to theme config
-const breakpoints = [
+export const DEFAULT_MEDIA_BREAKPOINTS = [
   {
     name: 'xs',
     width: 0,
@@ -57,6 +57,10 @@ const breakpoints = [
 @Injectable()
 export class NgaMediaBreakpointsService {
 
+
+  constructor(@Inject(ngaMediaBreakpointsToken) private breakpoints) {
+  }
+
   /**
    * Returns a configured breakpoint by width
    * @param width number
@@ -64,6 +68,7 @@ export class NgaMediaBreakpointsService {
    */
   getBreakpoint(width: number): NgaMediaBreakpoint {
     const unknown = { name: 'unknown', width: width };
+    const breakpoints = this.getBreakpoints();
 
     return breakpoints
       .find((point: any, index: number) => {
@@ -77,6 +82,6 @@ export class NgaMediaBreakpointsService {
    * @returns {{name: string, width: number}[]}
    */
   getBreakpoints(): NgaMediaBreakpoint[] {
-    return breakpoints;
+    return this.breakpoints;
   }
 }

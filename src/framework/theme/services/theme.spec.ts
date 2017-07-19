@@ -6,10 +6,10 @@
 
 import { TestBed, inject, async } from '@angular/core/testing';
 
-import { NgaMediaBreakpointsService } from './breakpoints.service';
+import { DEFAULT_MEDIA_BREAKPOINTS, NgaMediaBreakpointsService } from './breakpoints.service';
 import { NgaThemeService } from './theme.service';
 import { NgaThemeConfig } from './themeConfig.service';
-import { ngaThemeOptionsToken } from '../theme.options';
+import { ngaMediaBreakpointsToken, ngaThemeOptionsToken } from '../theme.options';
 
 describe('breakpoint-service', () => {
   let breakpointService: NgaMediaBreakpointsService;
@@ -19,6 +19,7 @@ describe('breakpoint-service', () => {
     // Configure testbed to prepare services
     TestBed.configureTestingModule({
       providers: [
+        { provide: ngaMediaBreakpointsToken, useValue: DEFAULT_MEDIA_BREAKPOINTS },
         NgaMediaBreakpointsService,
         NgaThemeConfig,
         { provide: ngaThemeOptionsToken, useValue: { name: 'default' } },
