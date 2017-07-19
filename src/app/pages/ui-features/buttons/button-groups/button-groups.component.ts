@@ -7,12 +7,10 @@ import { Component } from '@angular/core';
 })
 export class ButtonGroupsComponent {
 
-  radioModel = 'Left';
-
   checkboxModel = {
-    left: true,
+    left: false,
     middle: false,
-    right: true,
+    right: false,
   };
 
   dividedCheckboxModel = {
@@ -22,5 +20,14 @@ export class ButtonGroupsComponent {
     thursday: false,
     friday: false,
     saturday: false,
+  };
+
+  paginationModel = 1;
+
+  iconToolbarModel = {
+    one: false,
+    two: false,
+    three: true,
+    four: false,
   };
 }

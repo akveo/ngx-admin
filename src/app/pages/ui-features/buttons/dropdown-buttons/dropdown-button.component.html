@@ -1,56 +1,43 @@
 <nga-card>
   <nga-card-header>Button Dropdowns</nga-card-header>
   <nga-card-body>
-    <div class="btn-group btn-group-dropdown-divider" ngbDropdown>
-      <button type="button" class="btn btn-primary">Dropdown</button>
-      <button type="button" class="btn btn-primary" ngbDropdownToggle>
-        <span class="sr-only">Dropdown</span>
-      </button>
-      <div class="dropdown-menu">
-        <a class="dropdown-item" href="#">Action</a>
-        <a class="dropdown-item" href="#">Another action</a>
-        <a class="dropdown-item" href="#">Something else here</a>
-        <div class="dropdown-divider"></div>
-        <a class="dropdown-item" href="#">Separated link</a>
-      </div>
-    </div>
     <div class="btn-group" ngbDropdown>
       <button type="button" class="btn btn-primary">Dropdown</button>
-      <button type="button" class="btn btn-primary" ngbDropdownToggle>
-        <span class="sr-only">Dropdown</span>
-      </button>
+      <button type="button" class="btn btn-primary" ngbDropdownToggle></button>
       <div class="dropdown-menu">
-        <a class="dropdown-item" href="#">Action</a>
-        <a class="dropdown-item" href="#">Another action</a>
-        <a class="dropdown-item" href="#">Something else here</a>
-        <div class="dropdown-divider"></div>
-        <a class="dropdown-item" href="#">Separated link</a>
+        <a class="dropdown-item" href="#">Icon Button</a>
+        <a class="dropdown-item" href="#">Hero Button</a>
+        <a class="dropdown-item" href="#">Default</a>
       </div>
     </div>
-    <div class="btn-group" ngbDropdown>
-      <button type="button" class="btn btn-outline-primary">Dropdown</button>
-      <button type="button" class="btn btn-outline-primary" ngbDropdownToggle>
-        <span class="sr-only">Dropdown</span>
+    <div ngbDropdown>
+      <button class="btn btn-primary" type="button" ngbDropdownToggle>
+        Dropdown
       </button>
       <div class="dropdown-menu">
-        <a class="dropdown-item" href="#">Action</a>
-        <a class="dropdown-item" href="#">Another action</a>
-        <a class="dropdown-item" href="#">Something else here</a>
-        <div class="dropdown-divider"></div>
-        <a class="dropdown-item" href="#">Separated link</a>
+        <a class="dropdown-item" href="#">Icon Button</a>
+        <a class="dropdown-item" href="#">Hero Button</a>
+        <a class="dropdown-item" href="#">Default</a>
       </div>
     </div>
-    <div class="btn-group btn-group-hidden" ngbDropdown>
-      <button type="button" class="btn btn-primary">Dropdown</button>
-      <button type="button" class="btn btn-primary" ngbDropdownToggle>
-        <span class="sr-only">Dropdown</span>
+    <div class="outline-dropdown" ngbDropdown>
+      <button class="btn btn-outline-primary" type="button" ngbDropdownToggle>
+        Dropdown
       </button>
       <div class="dropdown-menu">
-        <a class="dropdown-item" href="#">Action</a>
-        <a class="dropdown-item" href="#">Another action</a>
-        <a class="dropdown-item" href="#">Something else here</a>
-        <div class="dropdown-divider"></div>
-        <a class="dropdown-item" href="#">Separated link</a>
+        <a class="dropdown-item" href="#">Icon Button</a>
+        <a class="dropdown-item" href="#">Hero Button</a>
+        <a class="dropdown-item" href="#">Default</a>
+      </div>
+    </div>
+    <div class="ghost-dropdown" ngbDropdown>
+      <button class="btn btn-primary" type="button" ngbDropdownToggle>
+        Dropdown
+      </button>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="#">Icon Button</a>
+        <a class="dropdown-item" href="#">Hero Button</a>
+        <a class="dropdown-item" href="#">Default</a>
       </div>
     </div>
   </nga-card-body>

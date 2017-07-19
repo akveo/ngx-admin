@@ -1,5 +1,4 @@
 @import '../../../../@theme/styles/variables';
-@import '~@akveo/nga-theme/styles/global/bootstrap/buttons';
 
 @include nga-install-component() {
 
@@ -18,5 +17,21 @@
 
   .example-container:not(:last-child) {
     margin-bottom: 2rem;
+  }
+
+  .btn-toggle-group {
+    width: 100%;
+
+    .btn {
+      width: 100%;
+    }
+  }
+
+  .btn-divided-group-block {
+    width: 100%;
+
+    .btn {
+      width: 100%;
+    }
   }
 }

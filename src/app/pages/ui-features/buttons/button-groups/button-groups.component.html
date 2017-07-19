@@ -4,114 +4,115 @@
     <div class="row">
       <div class="col-md-12">
         <div class="example-container">
-          <div class="container-title">Toogle Types</div>
-          <div [(ngModel)]="radioModel" ngbRadioGroup class="btn-group-block btn-group-divider" data-toggle="buttons">
-            <label class="btn btn-primary">
-              <input type="radio" value="Left"/> Left
+          <div class="container-title">Toggle Types</div>
+          <div class="btn-group btn-toggle-group btn-outline-toggle-group" data-toggle="buttons">
+            <label class="btn btn-outline-primary" [class.active]="checkboxModel.left">
+              <input type="checkbox" [(ngModel)]="checkboxModel.left"> Left
             </label>
-            <label class="btn btn-primary">
-              <input type="radio" value="Middle"/> Middle
+            <label class="btn btn-outline-primary" [class.active]="checkboxModel.middle">
+              <input type="checkbox" [(ngModel)]="checkboxModel.middle"> Middle
             </label>
-            <label class="btn btn-primary">
-              <input type="radio" value="Right"/> Right
+            <label class="btn btn-outline-primary" [class.active]="checkboxModel.right">
+              <input type="checkbox" [(ngModel)]="checkboxModel.right"> Right
             </label>
           </div>
-          <div class="btn-group btn-group-block btn-group-divider" data-toggle="buttons">
+          <div class="btn-group btn-toggle-group" data-toggle="buttons">
             <label class="btn btn-primary" [class.active]="checkboxModel.left">
-              <input type="checkbox" [(ngModel)]="checkboxModel.left"/> Left
+              <input type="checkbox" [(ngModel)]="checkboxModel.left"> Left
             </label>
             <label class="btn btn-primary" [class.active]="checkboxModel.middle">
-              <input type="checkbox" [(ngModel)]="checkboxModel.middle"/> Middle
+              <input type="checkbox" [(ngModel)]="checkboxModel.middle"> Middle
             </label>
             <label class="btn btn-primary" [class.active]="checkboxModel.right">
-              <input type="checkbox" [(ngModel)]="checkboxModel.right"/> Right
+              <input type="checkbox" [(ngModel)]="checkboxModel.right"> Right
             </label>
           </div>
         </div>
         <div class="example-container toolbars-container">
           <div class="pagination-container">
             <div class="container-title">Pagination</div>
-            <div class="btn-group btn-group-divider btn-group-pagination" data-toggle="buttons">
-              <label class="btn btn-success">
-                <input type="radio"/> 1
+            <div class="btn-group btn-group-pagination btn-toggle-group" data-toggle="buttons" [(ngModel)]="paginationModel"
+              ngbRadioGroup>
+              <label class="btn btn-outline-success">
+                <input type="radio" [value]="1"> 1
               </label>
-              <label class="btn btn-success">
-                <input type="radio"/> 2
+              <label class="btn btn-outline-success">
+                <input type="radio" [value]="2"> 2
               </label>
-              <label class="btn btn-success">
-                <input type="radio"/> 3
+              <label class="btn btn-outline-success">
+                <input type="radio" [value]="3"> 3
               </label>
-              <label class="btn btn-success">
-                <input type="radio"/> 4
+              <label class="btn btn-outline-success">
+                <input type="radio" [value]="4"> 4
               </label>
-              <label class="btn btn-success">
-                <input type="radio" /> 5
+              <label class="btn btn-outline-success">
+                <input type="radio" [value]="5"> 5
               </label>
             </div>
           </div>
           <div class="icon-toolbar-container">
             <div class="container-title">Icon Toolbar</div>
-            <div class="btn-group btn-group-divider btn-group-pagination" data-toggle="buttons">
-              <label class="btn btn-success">
-                <input type="radio"/> <i class="ion-ionic"></i>
+            <div class="btn-group btn-group-pagination" data-toggle="buttons">
+              <label class="btn btn-success" [class.active]="iconToolbarModel.one">
+                <input type="checkbox" [(ngModel)]="iconToolbarModel.one"> 1
               </label>
-              <label class="btn btn-success">
-                <input type="radio"/> <i class="ion-ionic"></i>
+              <label class="btn btn-success" [class.active]="iconToolbarModel.two">
+                <input type="checkbox" [(ngModel)]="iconToolbarModel.two"> 2
               </label>
-              <label class="btn btn-success">
-                <input type="radio"/> <i class="ion-ionic"></i>
+              <label class="btn btn-success" [class.active]="iconToolbarModel.three">
+                <input type="checkbox" [(ngModel)]="iconToolbarModel.three"> 3
               </label>
-              <label class="btn btn-success">
-                <input type="radio"/> <i class="ion-ionic"></i>
+              <label class="btn btn-success" [class.active]="iconToolbarModel.four">
+                <input type="checkbox" [(ngModel)]="iconToolbarModel.four"> 4
               </label>
             </div>
           </div>
         </div>
         <div class="example-container">
           <div class="container-title">Divided Button Group</div>
-          <div class="btn-group btn-group-block btn-group-divided" data-toggle="buttons">
+          <div class="btn-group btn-divided-group" data-toggle="buttons">
             <label class="btn btn-outline-success btn-icon" [class.active]="dividedCheckboxModel.monday">
-              <input type="checkbox" [(ngModel)]="dividedCheckboxModel.monday"/> <i class="ion-paper-airplane"></i>
+              <input type="checkbox" [(ngModel)]="dividedCheckboxModel.monday"> <i class="ion-paper-airplane"></i>
             </label>
             <label class="btn btn-outline-success btn-icon" [class.active]="dividedCheckboxModel.tuesday">
-              <input type="checkbox" [(ngModel)]="dividedCheckboxModel.tuesday"/> <i class="ion-paper-airplane"></i>
+              <input type="checkbox" [(ngModel)]="dividedCheckboxModel.tuesday"> <i class="ion-paper-airplane"></i>
             </label>
             <label class="btn btn-outline-success btn-icon" [class.active]="dividedCheckboxModel.wednesday">
-              <input type="checkbox" [(ngModel)]="dividedCheckboxModel.wednesday"/> <i class="ion-paper-airplane"></i>
+              <input type="checkbox" [(ngModel)]="dividedCheckboxModel.wednesday"> <i class="ion-paper-airplane"></i>
             </label>
             <label class="btn btn-outline-success btn-icon" [class.active]="dividedCheckboxModel.thursday">
-              <input type="checkbox" [(ngModel)]="dividedCheckboxModel.thursday"/> <i class="ion-paper-airplane"></i>
+              <input type="checkbox" [(ngModel)]="dividedCheckboxModel.thursday"> <i class="ion-paper-airplane"></i>
             </label>
             <label class="btn btn-outline-success btn-icon" [class.active]="dividedCheckboxModel.friday">
-              <input type="checkbox" [(ngModel)]="dividedCheckboxModel.friday"/> <i class="ion-paper-airplane"></i>
+              <input type="checkbox" [(ngModel)]="dividedCheckboxModel.friday"> <i class="ion-paper-airplane"></i>
             </label>
             <label class="btn btn-outline-success btn-icon" [class.active]="dividedCheckboxModel.saturday">
-              <input type="checkbox" [(ngModel)]="dividedCheckboxModel.saturday"/> <i class="ion-paper-airplane"></i>
+              <input type="checkbox" [(ngModel)]="dividedCheckboxModel.saturday"> <i class="ion-paper-airplane"></i>
             </label>
           </div>
         </div>
         <div class="example-container">
           <div class="container-title">Divided Button Group</div>
-          <div [(ngModel)]="radioModel" ngbRadioGroup class="btn-group btn-group-block btn-group-divided-hidden" data-toggle="buttons">
-            <label class="btn btn-primary">
-              <input type="radio" value="Left"/> Left
+          <div class="btn-group btn-divided-group btn-divided-group-block " data-toggle="buttons">
+            <label class="btn btn-outline-primary" [class.active]="checkboxModel.left">
+              <input type="checkbox" [(ngModel)]="checkboxModel.left"> Left
             </label>
-            <label class="btn btn-primary">
-              <input type="radio" value="Middle"/> Middle
+            <label class="btn btn-outline-primary" [class.active]="checkboxModel.middle">
+              <input type="checkbox" [(ngModel)]="checkboxModel.middle"> Middle
             </label>
-            <label class="btn btn-primary">
-              <input type="radio" value="Right"/> Right
+            <label class="btn btn-outline-primary" [class.active]="checkboxModel.right">
+              <input type="checkbox" [(ngModel)]="checkboxModel.right"> Right
             </label>
           </div>
-          <div class="btn-group btn-group-block btn-group-divided-hidden" data-toggle="buttons">
+          <div class="btn-group btn-divided-group btn-divided-group-block " data-toggle="buttons">
             <label class="btn btn-primary" [class.active]="checkboxModel.left">
-              <input type="checkbox" [(ngModel)]="checkboxModel.left"/> Left
+              <input type="checkbox" [(ngModel)]="checkboxModel.left"> Left
             </label>
             <label class="btn btn-primary" [class.active]="checkboxModel.middle">
-              <input type="checkbox" [(ngModel)]="checkboxModel.middle"/> Middle
+              <input type="checkbox" [(ngModel)]="checkboxModel.middle"> Middle
             </label>
             <label class="btn btn-primary" [class.active]="checkboxModel.right">
-              <input type="checkbox" [(ngModel)]="checkboxModel.right"/> Right
+              <input type="checkbox" [(ngModel)]="checkboxModel.right"> Right
             </label>
           </div>
         </div>

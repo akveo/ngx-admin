@@ -1,3 +1,14 @@
-.dropdown, .btn-group {
-  margin-bottom: 1rem;
+@import '../../../../@theme/styles/variables';
+
+@include nga-install-component() {
+  text-align: center;
+
+  .dropdown, .btn-group {
+    margin-bottom: 1rem;
+  }
+
+  nga-card {
+    overflow-x: visible;
+    overflow-y: visible;
+  }
 }
