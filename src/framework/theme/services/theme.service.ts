@@ -19,7 +19,7 @@ import 'rxjs/add/operator/debounceTime';
 
 import { ngaThemeOptionsToken } from '../theme.options';
 import { NgaThemeConfig } from './themeConfig.service';
-import { NgaThemeBreakpointsService } from './breakpoints.service';
+import { NgaMediaBreakpointsService, NgaMediaBreakpoint } from './breakpoints.service';
 
 @Injectable()
 export class NgaThemeService {
@@ -34,14 +34,14 @@ export class NgaThemeService {
   private changeWindowWidth$ = new Subject<number>();
 
   constructor(@Inject(ngaThemeOptionsToken) protected options: any,
-              private breakpointService: NgaThemeBreakpointsService,
+              private breakpointService: NgaMediaBreakpointsService,
               private themeConfig: NgaThemeConfig) {
     if (options && options.name) {
       this.changeTheme(options.name);
     }
   }
 
-  changeTheme(name?: string): void {
+  changeTheme(name: string): void {
     this.themeChanges$.next({ name, previous: this.currentTheme });
     this.currentTheme = name;
   }
@@ -70,7 +70,15 @@ export class NgaThemeService {
     return observable.asObservable();
   }
 
-  onMediaQueryChange(): Observable<any> {
+  /**
+   * Triggers media query breakpoint change
+   * Returns a pair where the first item is previous media breakpoint and the second item is current breakpoit.
+   * ```
+   *  [{ name: 'xs', width: 0 }, { name: 'md', width: 768 }] // change from `xs` to `md`
+   * ```
+   * @returns {Observable<[NgaMediaBreakpoint, NgaMediaBreakpoint]>}
+   */
+  onMediaQueryChange(): Observable<[NgaMediaBreakpoint, NgaMediaBreakpoint]> {
     return this.changeWindowWidth$
       .pairwise()
       .map(([prevWidth, width]: [number, number]) => {
@@ -79,7 +87,7 @@ export class NgaThemeService {
           this.breakpointService.getBreakpoint(width),
         ]
       })
-      .filter(([prevPoint, point]: [{ name: string, width: number }, { name: string, width: number }]) => {
+      .filter(([prevPoint, point]: [NgaMediaBreakpoint, NgaMediaBreakpoint]) => {
         return prevPoint.name !== point.name;
       })
       .distinctUntilChanged(null, params => params[0].name + params[1].name);
