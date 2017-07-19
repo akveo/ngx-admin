@@ -44,9 +44,10 @@
   .modal-body {
     padding: nga-theme(modal-padding);
 
-    @include nga-scrollbars(nga-theme(scrollbar-width),
-      nga-theme(scrollbar-fg),
-      nga-theme(scrollbar-bg));
+    @include nga-scrollbars(
+        nga-theme(scrollbar-fg),
+        nga-theme(scrollbar-bg),
+        nga-theme(scrollbar-width));
   }
 
   .modal-footer {

@@ -31,9 +31,10 @@
     box-shadow: nga-theme(card-shadow);
     font-weight: nga-theme(card-font-weight);
 
-    @include nga-scrollbars(nga-theme(scrollbar-width),
-                            nga-theme(scrollbar-fg),
-                            nga-theme(scrollbar-bg));
+    @include nga-scrollbars(
+        nga-theme(scrollbar-fg),
+        nga-theme(scrollbar-bg),
+        nga-theme(scrollbar-width));
 
     &.xsmall-card {
       height: nga-theme(card-height-xsmall);
@@ -100,7 +101,12 @@
 
     nga-card-body {
       flex: 1;
+      overflow: auto;
       padding: nga-theme(card-padding);
+      @include nga-scrollbars(
+          nga-theme(scrollbar-fg),
+          nga-theme(scrollbar-bg),
+          nga-theme(scrollbar-width));
     }
 
     nga-card-footer {

@@ -18,9 +18,12 @@ $theme: (
   font-weight-bold: 600,
   font-weight-ultra-bold: 800,
 
-  base-font-size: 16,
+  // TODO: use it as a default font-size
+  base-font-size: 16px,
+
+  font-size-xlg: 1.25rem,
+  font-size-lg: 1.125rem,
   font-size: 1rem,
-  font-size-lg: 1.25rem,
   font-size-sm: 0.875rem,
   font-size-xs: 0.75rem,
 
@@ -30,12 +33,13 @@ $theme: (
   line-height: 1.25,
 
   color-bg: #edf1f7,
+  color-bg-active: rgba(white, 0.3),
   color-fg: #555555,
   color-fg-heading: #333333,
   color-fg-text: #666666,
   color-fg-highlight: #00f9a6,
 
-  separator: color-fg-text,
+  separator: #dddddd,
 
   color-gray: rgba(81, 113, 165, 0.15),
   color-neutral: transparent,
@@ -92,7 +96,7 @@ $theme: (
   card-padding: padding,
   card-margin: margin,
   card-header-font-family: font-secondary,
-  card-header-font-size: font-size-lg,
+  card-header-font-size: font-size-xlg,
   card-header-font-weight: font-weight-bolder,
   card-separator: separator,
   card-header-fg: color-fg,
@@ -150,7 +154,7 @@ $theme: (
   menu-fg: color-bg,
   menu-bg: color-fg,
   menu-active-fg: color-fg,
-  menu-active-bg: color-bg,
+  menu-active-bg: color-bg-active,
   menu-submenu-bg: color-bg,
   menu-submenu-fg: color-fg,
   menu-submenu-active-fg: menu-submenu-bg,
@@ -160,21 +164,23 @@ $theme: (
   menu-group-fg: color-fg,
   menu-item-padding: 0.5rem 1rem,
 
-  tabs-font-size: font-size-lg,
+  tabs-font-family: font-secondary,
+  tabs-font-size: font-size-xlg,
+  tabs-content-font-family: font-main,
   tabs-content-font-size: font-size,
   tabs-active-bg: transparent,
   tabs-active-font-weight: font-weight-bolder,
   tabs-padding: padding,
   tabs-content-padding: 0,
-  tabs-header-min-width: 100px,
   tabs-header-bg: transparent,
   tabs-separator: separator,
   tabs-fg: color-fg,
+  tabs-fg-text: color-fg-text,
   tabs-fg-heading: color-fg-heading,
   tabs-bg: transparent,
 
-  route-tabs-font-size: font-size-lg,
-  route-tabs-content-font-size: font-size,
+  route-tabs-font-family: font-secondary,
+  route-tabs-font-size: font-size-xlg,
   route-tabs-active-bg: transparent,
   route-tabs-active-font-weight: font-weight-bolder,
   route-tabs-padding: padding,
@@ -253,7 +259,7 @@ $theme: (
 
   btn-padding-y-lg: 0.875rem,
   btn-padding-x-lg: 1.75rem,
-  btn-font-size-lg: 1.25rem,
+  btn-font-size-lg: font-size-xlg,
 
   // default size
   btn-padding-y-md: 0.75rem,
@@ -303,7 +309,7 @@ $theme: (
   form-control-line-height-sm: 1rem,
   form-control-border-radius-sm: 12px,
 
-  form-control-font-size-lg: 1.25rem,
+  form-control-font-size-lg: font-size-xlg,
   form-control-line-height-lg: 1.375rem,
   form-control-border-radius-lg: 12px,
 
@@ -324,7 +330,7 @@ $theme: (
   modal-border-radius: radius,
   modal-padding: padding,
   modal-header-font-family: font-secondary,
-  modal-header-font-size: font-size-lg,
+  modal-header-font-size: font-size-xlg,
   modal-header-font-weight: font-weight-bolder,
   modal-separator: separator,
 );

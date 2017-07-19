@@ -11,6 +11,7 @@
 // default the base theme
 $theme: (
   color-bg: #3d3780,
+  color-bg-active: #494299,
   color-fg: #a1a1e5,
   color-fg-heading: #ffffff,
   color-fg-text: #d1d1ff,
@@ -60,15 +61,11 @@ $theme: (
   menu-fg: color-fg,
   menu-bg: color-bg,
   menu-active-fg: color-white,
-  menu-active-bg: #494299,
   menu-group-fg: color-white,
-  menu-submenu-bg: #2c2966,
+  menu-submenu-bg: layout-bg,
   menu-submenu-fg: color-fg,
 
   card-separator: transparent,
-
-  tabs-separator: transparent,
-  route-tabs-separator: transparent,
 
   modal-separator: transparent,
 );

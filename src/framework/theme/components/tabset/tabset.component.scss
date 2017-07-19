@@ -8,13 +8,15 @@
   display: block;
 
 
-  &.full-width ul li {
-    width: 100%;
+  &.full-width ul {
+    justify-content: space-around;
   }
 
   /deep/ nga-tab {
-    display: none;
+    flex: 1;
+    overflow: auto;
 
+    display: none;
     &.content-active {
       display: block;
     }

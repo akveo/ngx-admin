@@ -16,9 +16,11 @@
         nga-theme(scrollbar-width));
 
     ul {
-      border-bottom: 1px solid nga-theme(tabs-separator);
+      font-family: nga-theme(tabs-font-family);
       font-size: nga-theme(tabs-font-size);
+
       padding: 0 nga-theme(tabs-padding);
+      border-bottom: 1px solid nga-theme(tabs-separator);
 
       li {
         background: nga-theme(tabs-header-bg);
@@ -26,6 +28,10 @@
         a {
           padding: nga-theme(tabs-padding);
           color: nga-theme(tabs-fg);
+
+          &:hover {
+            color: nga-theme(color-fg-heading);
+          }
 
           &::before {
             @include btn-hero-success-gradient();
@@ -45,8 +51,9 @@
     }
 
     nga-tab {
+      font-family: nga-theme(tabs-content-font-family);
       font-size: nga-theme(tabs-content-font-size);
-      color: nga-theme(tabs-fg);
+      color: nga-theme(tabs-fg-text);
       background-color: nga-theme(tabs-bg);
       padding: nga-theme(tabs-content-padding);
     }

@@ -38,6 +38,6 @@ ul {
   }
 }
 
-:host.full-width ul li {
-  width: 100%;
+:host.full-width ul {
+  justify-content: space-around;
 }

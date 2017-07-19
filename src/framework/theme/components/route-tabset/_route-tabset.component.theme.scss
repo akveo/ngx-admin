@@ -15,9 +15,11 @@
         nga-theme(scrollbar-width));
 
     ul {
-      border-bottom: 1px solid nga-theme(route-tabs-separator);
+      font-family: nga-theme(route-tabs-font-family);
       font-size: nga-theme(route-tabs-font-size);
+
       padding: 0 nga-theme(route-tabs-padding);
+      border-bottom: 1px solid nga-theme(route-tabs-separator);
 
       li {
         background: nga-theme(route-tabs-header-bg);
