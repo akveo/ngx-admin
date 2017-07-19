@@ -6,7 +6,7 @@
 
 import { Component } from '@angular/core';
 
-import { NgaThemeBreakpointsService, NgaThemeService } from '@akveo/nga-theme';
+import { NgaMediaBreakpointsService, NgaThemeService } from '@akveo/nga-theme';
 
 @Component({
   selector: 'nga-breakpoint-test',
