@@ -1,6 +1,6 @@
 {
   "name": "@akveo/nga-theme",
-  "version": "2.0.0-alpha.1-dev.9",
+  "version": "2.0.0-alpha.1-dev.10",
   "description": "@akveo/nga-theme",
   "main": "./bundles/theme.umd.js",
   "module": "./index.js",

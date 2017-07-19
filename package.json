@@ -1,6 +1,6 @@
 {
   "name": "akveo",
-  "version": "2.0.0-alpha.1-dev.9",
+  "version": "2.0.0-alpha.1-dev.10",
   "license": "MIT",
   "author": "akveo <contact@akveo.com>",
   "bugs": {
@@ -70,16 +70,15 @@
     "core-js": "2.4.1",
     "d3": "4.8.0",
     "echarts": "3.5.4",
-    "gulp-bump": "^2.7.0",
+    "gulp-bump": "2.7.0",
     "immutable": "3.8.1",
     "leaflet": "1.0.3",
     "ng2-charts": "1.5.0",
     "ng2-smart-table": "1.1.0",
     "ng2-tree": "2.0.0-alpha.5",
     "normalize.css": "6.0.0",
-    "open-sans-fontface": "^1.4.0",
+    "open-sans-fontface": "1.4.0",
     "rxjs": "5.4.0",
-    "travis": "^0.1.1",
     "typeface-exo": "0.0.22",
     "zone.js": "0.8.10"
   },
