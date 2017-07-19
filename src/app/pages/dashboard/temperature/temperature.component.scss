@@ -10,6 +10,10 @@
     display: flex;
     flex-direction: column;
     height: 100%;
+
+    /deep/ ul {
+      border: none;
+    }
   }
 
   nga-tab.content-active {

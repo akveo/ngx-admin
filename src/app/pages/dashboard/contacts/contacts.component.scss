@@ -6,10 +6,6 @@
     height: 100%;
     display: flex;
     flex-direction: column;
-
-    /deep/ ul {
-      border-bottom: 1px solid nga-theme(separator);
-    }
   }
 
   nga-tab {
@@ -22,6 +18,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    color: nga-theme(color-fg);
     padding: 1rem;
     border-bottom: 1px solid nga-theme(separator);
   }

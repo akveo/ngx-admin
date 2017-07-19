@@ -2,20 +2,19 @@
   // any global, non-component styles go here
 }
 
-// TODO: probably it makes sense to move it to mixin
 .nga-theme-cosmic {
+  // Styles for cards without separator
   nga-card nga-card-header + nga-card-body {
     padding-top: 0;
   }
-
   nga-card nga-card-body + nga-card-footer {
     padding-top: 0;
   }
 
+  // Styles for modals without separator
   .modal-content .modal-header + .modal-body {
     padding-top: 0;
   }
-
   .modal-content .modal-body + .modal-footer {
     padding-top: 0;
   }

@@ -2,12 +2,11 @@
 
 @include nga-install-component() {
 
-  nga-card {
-    nga-card-body {
-      height: 100%;
-      padding: 2rem;
-      background-image: nga-theme(radial-gradient);
-    }
+  nga-card-body {
+    height: 100%;
+    padding: 2rem;
+    background-image: nga-theme(radial-gradient);
+    color: nga-theme(color-fg);
   }
 
   .location {

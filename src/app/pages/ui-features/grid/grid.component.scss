@@ -1,23 +1,31 @@
 :host {
   .show-grid {
+    .row {
+      margin: -0.5rem;
+    }
+
     div[class^=col-] {
-      padding: 10px;
+      padding: 0.5rem;
       box-sizing: border-box;
 
       div {
         text-align: center;
-        background-color: rgba(white, 0.3);
-        padding: 12px 5px;
+        background-color: #494299;
+        padding: 0.75rem 0.25rem;
+        border-radius: 0.25rem;
       }
     }
   }
 
   .grid-h {
-    margin-top: 40px;
-    margin-bottom: 0;
+    margin-top: 1.5rem;
 
     &:first-child {
       margin-top: 0;
     }
+  }
+
+  .table-responsive {
+    margin-top: 1rem;
   }
 }

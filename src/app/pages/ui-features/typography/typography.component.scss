@@ -2,22 +2,29 @@
 
 @include nga-install-component() {
 
-  .font-secondary .header .name {
+  .font-secondary .font-header .name {
     font-size: 4.5rem;
+    line-height: 4rem;
+    font-weight: nga-theme(font-weight-bold);
   }
 
-  .font-main .header .name {
-    font-size: 2.5rem;
+  .font-main .font-header .name {
+    font-size: 3rem;
+    font-weight: nga-theme(font-weight-bold);
   }
 
   .font-row {
     margin-bottom: 3rem;
+    .header {
+      align-items: baseline;
+    }
   }
 
   .header {
     display: flex;
-    padding-bottom: 1rem;
-    margin-bottom: 1rem;
+    align-items: center;
+    padding-bottom: 1.125rem;
+    margin-bottom: 1.125rem;
     border-bottom: 1px solid rgba(nga-theme(color-fg), 0.1);
     color: nga-theme(color-fg-heading);
 
@@ -30,7 +37,7 @@
       line-height: 1;
       align-items: flex-end;
 
-      h1 {
+      h1, h2, h3, h4, h5, h6 {
         margin-bottom: 0;
       }
     }
