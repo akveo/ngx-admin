@@ -8,8 +8,9 @@ import { browser, element, by } from 'protractor';
 import { hexToRgbA } from './e2e-helper';
 
 const heights = {
-  xsmall: '96px',
-  small: '216px',
+  xxsmall: '96px',
+  xsmall: '216px',
+  small: '336px',
   medium: '456px',
   large: '576px',
   xlarge: '696px',
@@ -23,7 +24,7 @@ const colors = {
   info: '#4e9fff',
   warning: '#e5c742',
   danger: '#ff666d',
-  default: '#d1d1ff',
+  default: '#555555',
   disabled: 'rgba(255, 255, 255, 0.4)',
 };
 
@@ -61,14 +62,15 @@ describe('nga-card', () => {
   });
 
   cards.forEach(c => {
-    it(`should display ${c.name} card with ${c.colorKey} header`, () => {
+
+    it(`should display ${c.colorKey} card with ${c.name} size`, () => {
       expect(element(by.css(`nga-card:nth-child(${c.elementNumber}) > nga-card-header`))
         .getText()).toEqual('Header');
 
-      expect(element(by.css(`nga-card:nth-child(${c.elementNumber}) > nga-card-body`))
-        .getText()).toEqual('Body');
+      if (c.name !== 'xxsmall') {
+        expect(element(by.css(`nga-card:nth-child(${c.elementNumber}) > nga-card-body`))
+          .getText()).toEqual('Body');
 
-      if (c.name !== 'xsmall') {
         expect(element(by.css(`nga-card:nth-child(${c.elementNumber}) > nga-card-footer`))
           .getText()).toEqual('Footer');
       }

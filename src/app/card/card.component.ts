@@ -15,10 +15,10 @@ import { Component } from '@angular/core';
           <nga-card-header>
             <span>Header</span>
           </nga-card-header>
-          <nga-card-body>
+          <nga-card-body *ngIf="card.size !== 'xxsmall'">
             <span>Body</span>
           </nga-card-body>
-          <nga-card-footer>
+          <nga-card-footer *ngIf="card.size !== 'xxsmall'">
             <span>Footer</span>
           </nga-card-footer>
         </nga-card>
@@ -28,7 +28,7 @@ import { Component } from '@angular/core';
 })
 export class CardComponent {
 
-  sizes = ['xsmall', 'small', 'medium', 'large', 'xlarge', 'xxlarge'];
+  sizes = ['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge', 'xxlarge'];
   statuses = ['primary', 'success', 'info', 'warning', 'danger', 'active', 'disabled'];
 
   cards: any[];

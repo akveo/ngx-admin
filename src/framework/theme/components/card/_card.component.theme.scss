@@ -36,6 +36,9 @@
         nga-theme(scrollbar-bg),
         nga-theme(scrollbar-width));
 
+    &.xxsmall-card {
+      height: nga-theme(card-height-xxsmall);
+    }
     &.xsmall-card {
       height: nga-theme(card-height-xsmall);
     }

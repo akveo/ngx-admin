@@ -71,7 +71,7 @@ export class NgaSearchTestComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.searchService.onSearchSubmit().subscribe((data: {term: string, tag: string }) => {
+    this.searchService.onSearchSubmit().subscribe((data: { term: string, tag: string }) => {
       console.info(`term: ${data.term}, from search: ${data.tag}`);
     });
   }

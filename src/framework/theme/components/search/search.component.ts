@@ -38,7 +38,7 @@ import 'rxjs/add/operator/delay';
     <div class="wrapper">
       <div class="search" (keyup.esc)="closeSearch()" >
         <button (click)="closeSearch()">
-          <i class="ion-ios-close-outline icon"></i>
+          <i class="ion-ios-close-outline icon">&nbsp;</i>
         </button>
         <div class="form-wrapper">
           <form class="form" (keyup.enter)="submitSearch(searchInput.value)">
@@ -143,7 +143,7 @@ export class NgaSearchFieldComponent {
   template: `
     <div class="search-wrap">
       <button (click)="openSearch()">
-        <i class="ion-ios-search icon"></i>
+        <i class="ion-ios-search icon">&nbsp;</i>
       </button>
       <ng-template #attachedSearchContainer></ng-template>
     </div>
@@ -165,8 +165,8 @@ export class NgaSearchComponent implements OnInit, AfterViewInit, OnDestroy {
   private deactivateSearchSubscription: Subscription;
 
   constructor(private searchService: NgaSuperSearchService,
-              private themeService: NgaThemeService,
-              private componentFactoryResolver: ComponentFactoryResolver) { }
+    private themeService: NgaThemeService,
+    private componentFactoryResolver: ComponentFactoryResolver) { }
 
   @HostBinding('class.simple-search')
   get simpleSearch() {

@@ -60,8 +60,9 @@ export class NgaCardFooterComponent {
 })
 export class NgaCardComponent {
 
-  static readonly SIZE_SMALL = 'small';
+  static readonly SIZE_XXSMALL = 'xxsmall';
   static readonly SIZE_XSMALL = 'xsmall';
+  static readonly SIZE_SMALL = 'small';
   static readonly SIZE_MEDIUM = 'medium';
   static readonly SIZE_LARGE = 'large';
   static readonly SIZE_XLARGE = 'xlarge';
@@ -78,14 +79,19 @@ export class NgaCardComponent {
   size: string;
   status: string;
 
-  @HostBinding('class.small-card')
-  private get small() {
-    return this.size === NgaCardComponent.SIZE_SMALL;
+  @HostBinding('class.xxsmall-card')
+  private get xxsmall() {
+    return this.size === NgaCardComponent.SIZE_XXSMALL;
   }
 
   @HostBinding('class.xsmall-card')
   private get xsmall() {
     return this.size === NgaCardComponent.SIZE_XSMALL;
+  }
+
+  @HostBinding('class.small-card')
+  private get small() {
+    return this.size === NgaCardComponent.SIZE_SMALL;
   }
 
   @HostBinding('class.medium-card')
