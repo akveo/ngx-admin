@@ -23,6 +23,8 @@
       "tsconfig": "tsconfig.app.json",
       "testTsconfig": "tsconfig.spec.json",
       "styles": [
+        "../node_modules/ionicons/scss/ionicons.scss",
+        "../node_modules/font-awesome/scss/font-awesome.scss"
       ],
       "scripts": [
         "../node_modules/tinymce/tinymce.js",
