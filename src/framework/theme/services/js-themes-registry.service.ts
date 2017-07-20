@@ -34,8 +34,8 @@ export const BUILT_IN_THEMES: NgaJSTheme[] = [
       // TODO: fill in the colors
       colorBg: '#3d3780',
       colorFg: '#a1a1e5',
-      colorFgHeading: '#ffffff',
-      layoutBg: '#2c2961',
+      colorFgHeading: '#3d3780',
+      layoutBg: '#a1a1e5',
       separator: '#342e73',
 
       colorGray: 'rgba(81, 113, 165, 0.15)',
@@ -87,11 +87,9 @@ export class NgaJSThemesRegistry {
   constructor(@Inject(ngaBuiltInJSThemesToken) private builtInThemes: NgaJSTheme[],
               @Inject(ngaJSThemesToken) private newThemes: NgaJSTheme[] = []) {
 
-    builtInThemes.forEach((theme: any) => {
-      this.register(theme.variables, theme.name, theme.base);
-    });
+    const themes = this.combineNewOld(newThemes, builtInThemes);
 
-    newThemes.forEach((theme: any) => {
+    themes.forEach((theme: any) => {
       this.register(theme.variables, theme.name, theme.base);
     });
   }
@@ -111,5 +109,25 @@ export class NgaJSThemesRegistry {
       throw Error(`NgaThemeConfig: no theme '${themeName}' found registered.`);
     }
     return Object.assign({}, this.themes[themeName]);
+  }
+
+  private combineNewOld(newThemes: NgaJSTheme[], oldThemes: NgaJSTheme[]): NgaJSTheme[] {
+    if (newThemes) {
+      const mergedThemes: NgaJSTheme[] = [];
+      newThemes.forEach((theme: NgaJSTheme) => {
+        const sameOld: NgaJSTheme = oldThemes.find((tm: NgaJSTheme) => tm.name === theme.name) || <NgaJSTheme>{};
+
+        theme.variables = Object.assign({}, sameOld.variables, theme.variables);
+        mergedThemes.push(theme);
+      });
+
+      oldThemes.forEach((theme: NgaJSTheme) => {
+        if (!mergedThemes.find((tm: NgaJSTheme) => tm.name === theme.name)) {
+          mergedThemes.push(theme);
+        }
+      });
+      return mergedThemes;
+    }
+    return oldThemes;
   }
 }

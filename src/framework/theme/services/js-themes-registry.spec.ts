@@ -22,7 +22,7 @@ describe('js-themes-registry-service', () => {
     },
     {
       name: 'cosmic',
-      base: 'cosmic',
+      base: 'default',
       variables: {
         someNewValueForCosmic: 'red',
       },
