@@ -31,25 +31,20 @@ export const BUILT_IN_THEMES: NgaJSTheme[] = [
       fontMain: 'Open Sans',
       fontSecondary: 'Exo',
 
-      colorBg: '#edf1f7',
-      colorFg: '#d1d1ff',
-      colorFgHeading: '#828282',
-      colorFgHint: '#a1a1e5',
-      colorFgHighlight: '#00f9a6',
-      separator: '#d1d1ff',
+      // TODO: fill in the colors
+      colorBg: '#3d3780',
+      colorFg: '#a1a1e5',
+      colorFgHeading: '#ffffff',
+      layoutBg: '#2c2961',
+      separator: '#342e73',
 
       colorGray: 'rgba(81, 113, 165, 0.15)',
-      colorNeutral: 'transparent',
-      colorWhite: '#ffffff',
-      colorDisabled: 'rgba(255, 255, 255, 0.4)',
 
-      colorPrimary: '#a48aff',
-      colorSuccess: '#00e172',
-      colorInfo: '#4e9fff',
-      colorWarning: '#e5c742',
-      colorDanger: '#ff666d',
-
-      layoutBg: '#edf1f7',
+      colorPrimary: '#7659ff',
+      colorSuccess: '#00d977',
+      colorInfo: '#0088ff',
+      colorWarning: '#eae95f',
+      colorDanger: '#ff386a',
     },
   },
   {
@@ -59,20 +54,16 @@ export const BUILT_IN_THEMES: NgaJSTheme[] = [
       colorBg: '#3d3780',
       colorFg: '#a1a1e5',
       colorFgHeading: '#ffffff',
-
+      layoutBg: '#2c2961',
       separator: '#342e73',
 
       colorGray: 'rgba(81, 113, 165, 0.15)',
-      colorNeutral: 'transparent',
-      colorWhite: '#ffffff',
 
       colorPrimary: '#7659ff',
       colorSuccess: '#00d977',
       colorInfo: '#0088ff',
       colorWarning: '#eae95f',
       colorDanger: '#ff386a',
-
-      layoutBg: '#2c2961',
     },
   },
   {

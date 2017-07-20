@@ -61,7 +61,7 @@ export class NgaThemeModule {
       providers: [
         { provide: ngaThemeOptionsToken, useValue: ngaThemeOptions || {} },
         { provide: ngaBuiltInJSThemesToken, useValue: BUILT_IN_THEMES },
-        { provide: ngaJSThemesToken, useValue: ngaJSThemes || {} },
+        { provide: ngaJSThemesToken, useValue: ngaJSThemes || [] },
         { provide: ngaMediaBreakpointsToken, useValue: ngaMediaBreakpoints || DEFAULT_MEDIA_BREAKPOINTS },
         NgaJSThemesRegistry,
         NgaThemeService,
