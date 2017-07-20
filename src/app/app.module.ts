@@ -13,6 +13,7 @@ import { CoreModule } from './@core/core.module';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { ThemeModule } from './@theme/theme.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -22,6 +23,8 @@ import { AppRoutingModule } from './app-routing.module';
     HttpModule,
     AppRoutingModule,
     CoreModule,
+    ThemeModule.forRoot(),
+    CoreModule.forRoot(),
   ],
   bootstrap: [AppComponent],
   providers: [

@@ -1,8 +1,9 @@
-import { NgModule } from '@angular/core';
+import { ModuleWithProviders, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import {
+  NgaThemeModule,
   NgaCardModule,
   NgaLayoutModule,
   NgaTabsetModule,
@@ -45,6 +46,7 @@ const NGA_MODULES = [
   NgaUserModule,
   NgaActionsModule,
   NgaSearchModule,
+  NgaSidebarModule,
 ];
 
 const COMPONENTS = [
@@ -61,11 +63,17 @@ const PIPES = [
   RoundPipe,
 ];
 
+const NGA_THEME_PROVIDERS = [
+  ...NgaThemeModule.forRoot({ name: 'cosmic' }).providers,
+  ...NgaSidebarModule.forRoot().providers,
+  ...NgaSidebarModule.forRoot().providers,
+  ...NgaMenuModule.forRoot().providers,
+];
+
 @NgModule({
   imports: [
     ...BASE_MODULES,
     ...NGA_MODULES,
-    NgaSidebarModule.forRoot(),
   ],
   exports: [
     ...BASE_MODULES,
@@ -79,4 +87,13 @@ const PIPES = [
   ],
 })
 export class ThemeModule {
+
+  static forRoot(): ModuleWithProviders {
+    return <ModuleWithProviders>{
+      ngModule: ThemeModule,
+      providers: [
+        ...NGA_THEME_PROVIDERS,
+      ],
+    };
+  }
 }
