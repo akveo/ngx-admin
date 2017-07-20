@@ -116,7 +116,7 @@ describe('theme-service', () => {
     try {
       expect(current).not.toBeUndefined();
       expect(current.fontMain).toEqual('Open Sans');
-      expect(current.colorBg).toEqual('#edf1f7');
+      expect(current.colorBg).toEqual('#3d3780');
 
       themeService.changeTheme('cosmic');
 
