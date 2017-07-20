@@ -9,6 +9,11 @@
   .pagination-container {
     flex: 1;
     margin-right: 1rem;
+
+    .btn-group > .btn {
+      padding-left: 1.125rem;
+      padding-right: 1.125rem;
+    }
   }
 
   .icon-toolbar-container {
@@ -17,21 +22,5 @@
 
   .example-container:not(:last-child) {
     margin-bottom: 2rem;
-  }
-
-  .btn-toggle-group {
-    width: 100%;
-
-    .btn {
-      width: 100%;
-    }
-  }
-
-  .btn-divided-group-block {
-    width: 100%;
-
-    .btn {
-      width: 100%;
-    }
   }
 }
