@@ -9,7 +9,7 @@
   flex-direction: column;
   overflow: hidden;
   transition: width 0.2s;
-  z-index: 1;
+  z-index: 999;
 
   > .scrollable {
     transition: width 0.2s;

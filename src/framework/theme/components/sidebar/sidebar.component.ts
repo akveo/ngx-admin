@@ -4,7 +4,7 @@
  * Licensed under the MIT License. See License.txt in the project root for license information.
  */
 
-import { Component, HostBinding, Input, OnInit, OnDestroy } from '@angular/core';
+import { Component, HostBinding, Input, OnInit, OnDestroy, ElementRef } from '@angular/core';
 import { Subscription } from 'rxjs/Subscription';
 
 import { convertToBoolProperty } from '../helpers';
@@ -98,7 +98,7 @@ export class NgaSidebarFooterComponent {
   selector: 'nga-sidebar',
   styleUrls: ['./sidebar.component.scss'],
   template: `
-    <div class="scrollable">
+    <div class="scrollable" (click)="onClick($event)">
       <ng-content select="nga-sidebar-header"></ng-content>
       <div class="main-container">
         <ng-content></ng-content>
@@ -181,7 +181,8 @@ export class NgaSidebarComponent implements OnInit, OnDestroy {
   private expandSubscription: Subscription;
   private collapseSubscription: Subscription;
 
-  constructor(private sidebarService: NgaSidebarService) { }
+  constructor(private sidebarService: NgaSidebarService,
+              private element: ElementRef) { }
 
   ngOnInit() {
     this.toggleSubscription = this.sidebarService.onToggle()
@@ -212,6 +213,12 @@ export class NgaSidebarComponent implements OnInit, OnDestroy {
     this.collapseSubscription.unsubscribe();
   }
 
+  onClick(event): void {
+    const menu = this.element.nativeElement.querySelector('nga-menu');
+    if (menu && menu.contains(event.target)) {
+      this.expand();
+    }
+  }
 
   /**
    * Some Static method

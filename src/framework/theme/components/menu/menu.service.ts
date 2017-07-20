@@ -156,6 +156,12 @@ export class NgaMenuInternalService {
     });
   }
 
+  collapseAll(items: List<NgaMenuItem>, except?: NgaMenuItem) {
+    items.forEach(i => this.collapseItem(i, except));
+
+    this.clearStack();
+  }
+
   private resetItem(parent: NgaMenuItem) {
     parent.selected = false;
 
@@ -173,6 +179,30 @@ export class NgaMenuInternalService {
 
     if (parent.parent) {
       this.resetItem(parent.parent);
+    }
+  }
+
+  private collapseItem(parent: NgaMenuItem, except?: NgaMenuItem) {
+    if (parent === except) {
+      return;
+    }
+
+    parent.expanded = false;
+
+    this.stack = this.stack.push(parent);
+
+    if (parent.children && parent.children.size > 0) {
+      const firstSelected = parent.children.filter((c: NgaMenuItem) => !this.stack.contains(c)).first();
+
+      if (firstSelected) {
+        firstSelected.expanded = false;
+
+        this.collapseItem(firstSelected);
+      }
+    }
+
+    if (parent.parent) {
+      this.collapseItem(parent.parent);
     }
   }
 
