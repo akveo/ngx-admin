@@ -8,7 +8,6 @@
 @import './buttons';
 @import './button-group';
 @import './dropdowns';
-@import './pagination';
 @import './icon-buttons';
 @import './forms';
 @import './input-group';
@@ -18,7 +17,6 @@
   @include nga-b-buttons-theme();
   @include nga-b-button-group-theme();
   @include nga-b-dropdowns-theme();
-  @include nga-b-pagination-theme();
   @include nga-b-icon-buttons-theme();
   @include nga-b-forms-theme();
   @include nga-b-input-group-theme();

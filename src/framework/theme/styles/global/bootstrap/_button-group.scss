@@ -4,6 +4,8 @@
  * Licensed under the MIT License. See License.txt in the project root for license information.
  */
 
+@import './default-buttons';
+
 @mixin btn-group-separator($color) {
   background-color: shade($color, 20%);
 }
@@ -32,10 +34,62 @@
   @include btn-group-separator(nga-theme(color-primary));
 }
 
+
+@mixin dropdown-separator($color) {
+  border-left: 1px solid shade($color, 14%);
+}
+
+@mixin dropdown-primary-separator() {
+  @include dropdown-separator(nga-theme(btn-primary-bg));
+}
+
+@mixin dropdown-success-separator() {
+  @include dropdown-separator(nga-theme(btn-success-bg));
+}
+
+@mixin dropdown-warning-separator() {
+  @include dropdown-separator(nga-theme(btn-warning-bg));
+}
+
+@mixin dropdown-info-separator() {
+  @include dropdown-separator(nga-theme(btn-info-bg));
+}
+
+@mixin dropdown-danger-separator() {
+  @include dropdown-separator(nga-theme(btn-danger-bg));
+}
+
+@mixin dropdown-secondary-separator() {
+  @include dropdown-separator(nga-theme(btn-secondary-bg));
+}
+
+
 @mixin nga-b-button-group-theme() {
 
-  .btn-toggle-group > .btn {
-    position: relative;
+  .btn-group:not(.btn-toggle-group):not(.btn-divided-group) > .btn + .btn {
+    &.btn-primary {
+      @include dropdown-primary-separator();
+    }
+
+    &.btn-success {
+      @include dropdown-success-separator();
+    }
+
+    &.btn-warning {
+      @include dropdown-warning-separator();
+    }
+
+    &.btn-info {
+      @include dropdown-info-separator();
+    }
+
+    &.btn-danger {
+      @include dropdown-danger-separator();
+    }
+
+    &.btn-secondary {
+      @include dropdown-secondary-separator();
+    }
   }
 
   .btn-group-icon {
@@ -43,18 +97,91 @@
     padding: 0 1rem;
   }
 
-  .btn-group-pagination > .btn {
-    padding-left: 1.125rem;
-    padding-right: 1.125rem;
+  .btn-toggle-group,
+  .btn-divided-group {
+    .btn:not(.active) {
+      background-color: shade(nga-theme(color-bg), 10%);
+    }
+
+    .btn:active,
+    .btn.active {
+      &.btn-primary,
+      &.btn-outline-primary {
+        background-color: nga-theme(btn-primary-bg);
+      }
+
+      &.btn-success,
+      &.btn-outline-success {
+        background-color: nga-theme(btn-success-bg);
+      }
+
+      &.btn-warning,
+      &.btn-outline-warning {
+        background-color: nga-theme(btn-warning-bg);
+      }
+
+      &.btn-info,
+      &.btn-outline-info {
+        background-color: nga-theme(btn-info-bg);
+      }
+
+      &.btn-danger,
+      &.btn-outline-danger {
+        background-color: nga-theme(btn-danger-bg);
+      }
+
+      &.btn-secondary,
+      &.btn-outline-secondary {
+        border-color: nga-theme(btn-secondary-border);
+      }
+    }
+
+    .btn:hover,
+    .btn.hover {
+      &.btn-primary,
+      &.btn-outline-primary {
+        @include btn-primary-hover();
+      }
+
+      &.btn-success,
+      &.btn-outline-success {
+        @include btn-success-hover();
+      }
+
+      &.btn-warning,
+      &.btn-outline-warning {
+        @include btn-warning-hover();
+      }
+
+      &.btn-info,
+      &.btn-outline-info {
+        @include btn-info-hover();
+      }
+
+      &.btn-danger,
+      &.btn-outline-danger {
+        @include btn-danger-hover();
+      }
+
+      &.btn-secondary,
+      &.btn-outline-secondary {
+        @include btn-secondary-hover();
+      }
+    }
   }
 
   .btn-toggle-group {
+    .btn {
+      position: relative;
+    }
+
     .btn:first-child {
       border-right: none;
     }
 
     .btn:last-child {
       border-left: none;
+      margin-left: 0;
     }
 
     .btn:not(:first-child):not(:last-child) {
@@ -62,73 +189,29 @@
       border-right: none;
     }
 
-    .btn + .btn {
-      margin-left: 0;
-    }
-
-    .btn:not(:first-child):not(:last-child) {
-      &::before,
-      &::after {
+    .btn:not(.active):not(:hover) + .btn:not(.active):not(:hover) {
+      &::before {
         content: '';
         position: absolute;
+        background-color: #312c66;
         width: 1px;
         height: 100%;
         top: 0;
-      }
-
-      &::before {
         left: 0;
-      }
-
-      &::after {
-        right: 0;
-      }
-
-      &.btn-primary {
-        &::before,
-        &::after {
-          @include btn-group-primary-separator();
-        }
-      }
-
-      &.btn-success {
-        &::before,
-        &::after {
-          @include btn-group-success-separator();
-        }
-      }
-
-      &.btn-warning {
-        &::before,
-        &::after {
-          @include btn-group-warning-separator();
-        }
-      }
-
-      &.btn-info {
-        &::before,
-        &::after {
-          @include btn-group-info-separator();
-        }
-      }
-
-      &.btn-danger {
-        &::before,
-        &::after {
-          @include btn-group-danger-separator();
-        }
-      }
-
-      &.btn-secondary {
-        &::before,
-        &::after {
-          @include btn-group-secondary-separator();
-        }
       }
     }
   }
 
   .btn-outline-toggle-group {
+    .btn:not(.active) {
+      background-color: transparent;
+    }
+
+    .btn:not(.active):not(:hover) + .btn:not(.active):not(:hover) {
+      &::before {
+        background-color: nga-theme(separator);
+      }
+    }
   }
 
   .btn-divided-group {
@@ -143,6 +226,20 @@
 
     .btn:not(:last-child):not(.dropdown-toggle) {
       border-radius: nga-theme(btn-border-radius);
+    }
+  }
+
+  .btn-outline-divided-group {
+    .btn:not(.active) {
+      background-color: transparent;
+    }
+  }
+
+  .btn-group-full-width {
+    width: 100%;
+
+    .btn:not(.btn-group-icon) {
+      width: 100%;
     }
   }
 }
