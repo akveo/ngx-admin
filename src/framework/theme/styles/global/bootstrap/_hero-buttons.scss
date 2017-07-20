@@ -9,12 +9,12 @@
     @include btn-hero-primary();
   }
 
-  .btn.btn-hero-warning {
-    @include btn-hero-warning();
-  }
-
   .btn.btn-hero-success {
     @include btn-hero-success();
+  }
+
+  .btn.btn-hero-warning {
+    @include btn-hero-warning();
   }
 
   .btn.btn-hero-info {
@@ -38,16 +38,7 @@
   @include btn-hero-primary-hover();
   @include btn-hero-primary-active();
   @include btn-hero-primary-border();
-}
-
-@mixin btn-hero-warning() {
-  @include btn-hero-warning-gradient();
-  @include btn-hero-warning-bevel-glow-shadow();
-  @include btn-hero-text();
-  @include btn-hero-warning-focus();
-  @include btn-hero-warning-hover();
-  @include btn-hero-warning-active();
-  @include btn-hero-warning-border();
+  @include btn-hero-disabled();
 }
 
 @mixin btn-hero-success() {
@@ -58,6 +49,18 @@
   @include btn-hero-success-hover();
   @include btn-hero-success-active();
   @include btn-hero-success-border();
+  @include btn-hero-disabled();
+}
+
+@mixin btn-hero-warning() {
+  @include btn-hero-warning-gradient();
+  @include btn-hero-warning-bevel-glow-shadow();
+  @include btn-hero-text();
+  @include btn-hero-warning-focus();
+  @include btn-hero-warning-hover();
+  @include btn-hero-warning-active();
+  @include btn-hero-warning-border();
+  @include btn-hero-disabled();
 }
 
 @mixin btn-hero-info() {
@@ -68,6 +71,7 @@
   @include btn-hero-info-hover();
   @include btn-hero-info-active();
   @include btn-hero-info-border();
+  @include btn-hero-disabled();
 }
 
 @mixin btn-hero-danger() {
@@ -78,6 +82,7 @@
   @include btn-hero-danger-hover();
   @include btn-hero-danger-active();
   @include btn-hero-danger-border();
+  @include btn-hero-disabled();
 }
 
 @mixin btn-hero-secondary() {
@@ -88,6 +93,7 @@
   @include btn-hero-secondary-hover();
   @include btn-hero-secondary-active();
   @include btn-hero-secondary-border();
+  @include btn-hero-disabled();
 }
 
 @function btn-hero-gradient-left($color, $degrees: 20deg) {
@@ -112,12 +118,12 @@
   @return btn-hero-gradient-left(nga-theme(btn-primary-bg));
 }
 
-@function btn-hero-warning-left-color() {
-  @return btn-hero-gradient-left(nga-theme(btn-warning-bg));
-}
-
 @function btn-hero-success-left-color() {
   @return btn-hero-gradient-left(nga-theme(btn-success-bg));
+}
+
+@function btn-hero-warning-left-color() {
+  @return btn-hero-gradient-left(nga-theme(btn-warning-bg));
 }
 
 @function btn-hero-info-left-color() {
@@ -137,12 +143,12 @@
   @return mix(btn-hero-primary-left-color(), nga-theme(btn-primary-bg));
 }
 
-@function btn-hero-warning-middle-color() {
-  @return mix(btn-hero-warning-left-color(), nga-theme(btn-warning-bg));
-}
-
 @function btn-hero-success-middle-color() {
   @return mix(btn-hero-success-left-color(), nga-theme(btn-success-bg));
+}
+
+@function btn-hero-warning-middle-color() {
+  @return mix(btn-hero-warning-left-color(), nga-theme(btn-warning-bg));
 }
 
 @function btn-hero-info-middle-color() {
@@ -173,16 +179,16 @@
   @return btn-hero-light-gradient($color-left, $color-right);
 }
 
-@function btn-hero-warning-light-gradient() {
-  $color-right: nga-theme(btn-warning-bg);
-  $color-left: btn-hero-warning-left-color();
+@function btn-hero-success-light-gradient() {
+  $color-right: nga-theme(btn-success-bg);
+  $color-left: btn-hero-success-left-color();
 
   @return btn-hero-light-gradient($color-left, $color-right);
 }
 
-@function btn-hero-success-light-gradient() {
-  $color-right: nga-theme(btn-success-bg);
-  $color-left: btn-hero-success-left-color();
+@function btn-hero-warning-light-gradient() {
+  $color-right: nga-theme(btn-warning-bg);
+  $color-left: btn-hero-warning-left-color();
 
   @return btn-hero-light-gradient($color-left, $color-right);
 }
@@ -217,16 +223,16 @@
   @return btn-hero-dark-gradient($color-left, $color-right);
 }
 
-@function btn-hero-warning-dark-gradient() {
-  $color-right: nga-theme(btn-warning-bg);
-  $color-left: btn-hero-warning-left-color();
+@function btn-hero-success-dark-gradient() {
+  $color-right: nga-theme(btn-success-bg);
+  $color-left: btn-hero-success-left-color();
 
   @return btn-hero-dark-gradient($color-left, $color-right);
 }
 
-@function btn-hero-success-dark-gradient() {
-  $color-right: nga-theme(btn-success-bg);
-  $color-left: btn-hero-success-left-color();
+@function btn-hero-warning-dark-gradient() {
+  $color-right: nga-theme(btn-warning-bg);
+  $color-left: btn-hero-warning-left-color();
 
   @return btn-hero-dark-gradient($color-left, $color-right);
 }
@@ -286,16 +292,16 @@
   @include nga-right-gradient($color-left, $color-right);
 }
 
-@mixin btn-hero-warning-gradient() {
-  $color-right: nga-theme(btn-warning-bg);
-  $color-left: btn-hero-warning-left-color();
+@mixin btn-hero-success-gradient() {
+  $color-right: nga-theme(btn-success-bg);
+  $color-left: btn-hero-success-left-color();
 
   @include nga-right-gradient($color-left, $color-right);
 }
 
-@mixin btn-hero-success-gradient() {
-  $color-right: nga-theme(btn-success-bg);
-  $color-left: btn-hero-success-left-color();
+@mixin btn-hero-warning-gradient() {
+  $color-right: nga-theme(btn-warning-bg);
+  $color-left: btn-hero-warning-left-color();
 
   @include nga-right-gradient($color-left, $color-right);
 }
@@ -324,12 +330,12 @@
   @return btn-hero-bevel(btn-hero-primary-middle-color());
 }
 
-@function btn-hero-warning-bevel() {
-  @return btn-hero-bevel(btn-hero-warning-middle-color());
-}
-
 @function btn-hero-success-bevel() {
   @return btn-hero-bevel(btn-hero-success-middle-color());
+}
+
+@function btn-hero-warning-bevel() {
+  @return btn-hero-bevel(btn-hero-warning-middle-color());
 }
 
 @function btn-hero-info-bevel() {
@@ -350,12 +356,12 @@
   @return btn-hero-glow(btn-hero-primary-middle-color());
 }
 
-@function btn-hero-warning-glow() {
-  @return btn-hero-glow(btn-hero-warning-middle-color());
-}
-
 @function btn-hero-success-glow() {
   @return btn-hero-glow(btn-hero-success-middle-color());
+}
+
+@function btn-hero-warning-glow() {
+  @return btn-hero-glow(btn-hero-warning-middle-color());
 }
 
 @function btn-hero-info-glow() {
@@ -380,17 +386,17 @@
   box-shadow: $bevel, $glow, $shadow;
 }
 
-@mixin btn-hero-warning-bevel-glow-shadow() {
-  $bevel: btn-hero-warning-bevel();
-  $glow: btn-hero-warning-glow();
+@mixin btn-hero-success-bevel-glow-shadow() {
+  $bevel: btn-hero-success-bevel();
+  $glow: btn-hero-success-glow();
   $shadow: btn-hero-shadow();
 
   box-shadow: $bevel, $glow, $shadow;
 }
 
-@mixin btn-hero-success-bevel-glow-shadow() {
-  $bevel: btn-hero-success-bevel();
-  $glow: btn-hero-success-glow();
+@mixin btn-hero-warning-bevel-glow-shadow() {
+  $bevel: btn-hero-warning-bevel();
+  $glow: btn-hero-warning-glow();
   $shadow: btn-hero-shadow();
 
   box-shadow: $bevel, $glow, $shadow;
@@ -426,11 +432,11 @@
   border: none;
 }
 
-@mixin btn-hero-warning-border() {
+@mixin btn-hero-success-border() {
   border: none;
 }
 
-@mixin btn-hero-success-border() {
+@mixin btn-hero-warning-border() {
   border: none;
 }
 
@@ -452,12 +458,12 @@
   @include btn-hero-hover(btn-hero-primary-light-gradient());
 }
 
-@mixin btn-hero-warning-hover() {
-  @include btn-hero-hover(btn-hero-warning-light-gradient());
-}
-
 @mixin btn-hero-success-hover() {
   @include btn-hero-hover(btn-hero-success-light-gradient());
+}
+
+@mixin btn-hero-warning-hover() {
+  @include btn-hero-hover(btn-hero-warning-light-gradient());
 }
 
 @mixin btn-hero-info-hover() {
@@ -480,12 +486,12 @@
   @include btn-hero-focus(btn-hero-primary-dark-gradient());
 }
 
-@mixin btn-hero-warning-focus() {
-  @include btn-hero-focus(btn-hero-warning-dark-gradient());
-}
-
 @mixin btn-hero-success-focus() {
   @include btn-hero-focus(btn-hero-success-dark-gradient());
+}
+
+@mixin btn-hero-warning-focus() {
+  @include btn-hero-focus(btn-hero-warning-dark-gradient());
 }
 
 @mixin btn-hero-info-focus() {
@@ -512,12 +518,12 @@
   @include btn-hero-active(btn-hero-primary-dark-gradient());
 }
 
-@mixin btn-hero-warning-active() {
-  @include btn-hero-active(btn-hero-warning-dark-gradient());
-}
-
 @mixin btn-hero-success-active() {
   @include btn-hero-active(btn-hero-success-dark-gradient());
+}
+
+@mixin btn-hero-warning-active() {
+  @include btn-hero-active(btn-hero-warning-dark-gradient());
 }
 
 @mixin btn-hero-info-active() {
@@ -536,5 +542,14 @@
     border-color: shade($color, 14%);
     box-shadow: none;
     background: none;
+  }
+}
+
+
+// Disabled
+@mixin btn-hero-disabled() {
+  &:disabled {
+    opacity: nga-theme(btn-disabled-opacity);
+    box-shadow: none;
   }
 }
