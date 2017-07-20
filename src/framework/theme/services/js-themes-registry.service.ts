@@ -4,23 +4,31 @@
  * Licensed under the MIT License. See License.txt in the project root for license information.
  */
 
-import { Inject, Injectable, Type } from '@angular/core';
+import { Inject, Injectable } from '@angular/core';
 
-import { Observable } from 'rxjs/Observable';
-import { ReplaySubject } from 'rxjs/ReplaySubject';
-import { Subject } from 'rxjs/Subject';
-import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import 'rxjs/add/operator/publish';
 
-import { ngaThemeOptionsToken } from '../theme.options';
+import { ngaBuiltInJSThemesToken, ngaJSThemesToken } from '../theme.options';
 
-// TODO: move to theme config
-const builtInThemes = [
+/**
+ * Js Theme - theme variables accessible from angular components/services
+ */
+export interface NgaJSTheme {
+  name: string;
+  base?: string;
+  variables?: NgaJSThemeVariable;
+}
+
+export interface NgaJSThemeVariable {
+  [key: string]: string;
+}
+
+export const BUILT_IN_THEMES: NgaJSTheme[] = [
   {
     name: 'default',
     base: null,
     variables: {
-      fontMain: 'SegoeUI',
+      fontMain: 'Open Sans',
       fontSecondary: 'Exo',
 
       colorBg: '#edf1f7',
@@ -71,19 +79,28 @@ const builtInThemes = [
     name: 'light',
     base: 'default',
     variables: {
-      colorBg: '#white',
+      colorBg: 'white',
       colorFg: '#2f3234',
     },
   },
 ];
-// TODO rename it to themeRegistry or smth similar as currently it overlaps with theme options
+
+/**
+ * Js Themes registry - provides access to the JS themes' variables.
+ */
 @Injectable()
-export class NgaThemeConfig {
+export class NgaJSThemesRegistry {
 
   private themes: any = {};
 
-  constructor() {
+  constructor(@Inject(ngaBuiltInJSThemesToken) private builtInThemes: NgaJSTheme[],
+              @Inject(ngaJSThemesToken) private newThemes: NgaJSTheme[] = []) {
+
     builtInThemes.forEach((theme: any) => {
+      this.register(theme.variables, theme.name, theme.base);
+    });
+
+    newThemes.forEach((theme: any) => {
       this.register(theme.variables, theme.name, theme.base);
     });
   }
@@ -97,7 +114,8 @@ export class NgaThemeConfig {
     return !!this.themes[themeName];
   }
 
-  get(themeName: string): any {
+  // TODO: probable return a full theme to give access to `name` and `base` parameters
+  get(themeName: string): NgaJSThemeVariable {
     if (!this.themes[themeName]) {
       throw Error(`NgaThemeConfig: no theme '${themeName}' found registered.`);
     }

@@ -25,6 +25,7 @@
     "build:inline-resources": "gulp inline-resources",
     "build:bundle": "gulp bundle",
     "test": "ng test -sr",
+    "test:watch": "ng test -w",
     "test:coverage": "rimraf coverage && ng test -sr -cc",
     "lint": "ng lint --type-check",
     "lint:styles": "stylelint ./src/framework/**/*.scss",

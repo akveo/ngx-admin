@@ -8,10 +8,13 @@ import { TestBed, inject, async } from '@angular/core/testing';
 
 import { DEFAULT_MEDIA_BREAKPOINTS, NgaMediaBreakpointsService } from './breakpoints.service';
 import { NgaThemeService } from './theme.service';
-import { NgaThemeConfig } from './themeConfig.service';
-import { ngaMediaBreakpointsToken, ngaThemeOptionsToken } from '../theme.options';
+import { BUILT_IN_THEMES, NgaJSThemesRegistry } from './js-themes-registry.service';
+import {
+  ngaBuiltInJSThemesToken, ngaJSThemesToken, ngaMediaBreakpointsToken,
+  ngaThemeOptionsToken,
+} from '../theme.options';
 
-describe('breakpoint-service', () => {
+describe('theme-service', () => {
   let breakpointService: NgaMediaBreakpointsService;
   let themeService: NgaThemeService;
 
@@ -21,7 +24,9 @@ describe('breakpoint-service', () => {
       providers: [
         { provide: ngaMediaBreakpointsToken, useValue: DEFAULT_MEDIA_BREAKPOINTS },
         NgaMediaBreakpointsService,
-        NgaThemeConfig,
+        { provide: ngaJSThemesToken, useValue: [] },
+        { provide: ngaBuiltInJSThemesToken, useValue: BUILT_IN_THEMES },
+        NgaJSThemesRegistry,
         { provide: ngaThemeOptionsToken, useValue: { name: 'default' } },
         NgaThemeService,
       ],
@@ -96,6 +101,27 @@ describe('breakpoint-service', () => {
       themeService.changeWindowWidth(sm);
       expect(current[0].name).toEqual(breakpointService.getBreakpoint(xs).name);
       expect(current[1].name).toEqual(breakpointService.getBreakpoint(sm).name);
+    } finally {
+      subscription.unsubscribe();
+    }
+  });
+
+  it('listens to theme variables change', () => {
+    let current: any;
+
+    const subscription = themeService.getJsTheme()
+      .subscribe((change: any) => {
+        current = change;
+      });
+    try {
+      expect(current).not.toBeUndefined();
+      expect(current.fontMain).toEqual('Open Sans');
+      expect(current.colorBg).toEqual('#edf1f7');
+
+      themeService.changeTheme('cosmic');
+
+      expect(current.colorBg).toEqual('#3d3780');
+
     } finally {
       subscription.unsubscribe();
     }

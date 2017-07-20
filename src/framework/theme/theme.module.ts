@@ -8,10 +8,16 @@ import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
-import { ngaMediaBreakpointsToken, NgaThemeOptions, ngaThemeOptionsToken } from './theme.options';
+import {
+  ngaBuiltInJSThemesToken,
+  ngaMediaBreakpointsToken,
+  NgaThemeOptions,
+  ngaThemeOptionsToken,
+  ngaJSThemesToken,
+} from './theme.options';
 import { NgaThemeService } from './services/theme.service';
 import { NgaSpinnerService } from './services/spinner.service';
-import { NgaThemeConfig } from './services/themeConfig.service';
+import { BUILT_IN_THEMES, NgaJSTheme, NgaJSThemesRegistry } from './services/js-themes-registry.service';
 import {
   DEFAULT_MEDIA_BREAKPOINTS,
   NgaMediaBreakpoint,
@@ -35,11 +41,15 @@ export class NgaThemeModule {
    * Main Theme Module
    *
    * @param ngaThemeOptions {NgaThemeOptions} Main theme options
-   * @param ngaMediaBreakpoints {NgaMediaBreakpoint} Available media breakpoins
+   * @param ngaJSThemes {NgaJSTheme[]} List of JS Themes, will be merged with default themes
+   * @param ngaMediaBreakpoints {NgaMediaBreakpoint} Available media breakpoints
    *
    * @returns {ModuleWithProviders}
    */
-  static forRoot(ngaThemeOptions: NgaThemeOptions, ngaMediaBreakpoints?: NgaMediaBreakpoint[]): ModuleWithProviders {
+  static forRoot(ngaThemeOptions: NgaThemeOptions,
+                 ngaJSThemes?: NgaJSTheme[],
+                 ngaMediaBreakpoints?: NgaMediaBreakpoint[]): ModuleWithProviders {
+
     return <ModuleWithProviders> {
       ngModule: NgaThemeModule,
       imports: [
@@ -50,8 +60,10 @@ export class NgaThemeModule {
       ],
       providers: [
         { provide: ngaThemeOptionsToken, useValue: ngaThemeOptions || {} },
+        { provide: ngaBuiltInJSThemesToken, useValue: BUILT_IN_THEMES },
+        { provide: ngaJSThemesToken, useValue: ngaJSThemes || {} },
         { provide: ngaMediaBreakpointsToken, useValue: ngaMediaBreakpoints || DEFAULT_MEDIA_BREAKPOINTS },
-        NgaThemeConfig,
+        NgaJSThemesRegistry,
         NgaThemeService,
         NgaMediaBreakpointsService,
         NgaSpinnerService,
