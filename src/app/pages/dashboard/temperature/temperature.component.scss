@@ -98,10 +98,9 @@
     justify-content: center;
 
     border-color: nga-theme(form-control-border-color);
-    width: 4.5rem;
     height: 4.5rem;
     padding: 0;
-    margin: 0;
+    margin-bottom: 0;
 
     &.active {
       border-color: nga-theme(color-fg-highlight);
