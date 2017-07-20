@@ -6,8 +6,17 @@
 
 @mixin nga-b-icon-buttons-theme() {
 
-  .btn.btn-icon {
+  .btn-icon {
     font-size: 1.5rem;
     padding: 0.5rem 1rem;
+  }
+
+  .btn-with-icon {
+    text-align: left;
+    padding-left: 1rem;
+
+    .icon {
+      margin-right: 1rem;
+    }
   }
 }
