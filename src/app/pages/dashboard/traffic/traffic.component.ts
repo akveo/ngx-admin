@@ -134,7 +134,7 @@ export class TrafficComponent {
   };
 
   constructor(private theme: NgaThemeService) {
-    this.theme.getConfig().subscribe(config => {
+    this.theme.getJsTheme().subscribe(config => {
 
       // const option = Object.assign({}, this.option);
       //

@@ -19,7 +19,7 @@ export class TemperatureComponent {
   themeConfig: any = {};
 
   constructor(private theme: NgaThemeService) {
-    this.theme.getConfig().subscribe(config => {
+    this.theme.getJsTheme().subscribe(config => {
       this.themeConfig = config;
     });
   }
