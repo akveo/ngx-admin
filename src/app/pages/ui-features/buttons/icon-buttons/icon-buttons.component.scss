@@ -1,0 +1,13 @@
+nga-card-body {
+  div:not(:last-child) {
+    margin-bottom: 1rem;
+  }
+}
+
+.btn-with-icon-example {
+  width: 100%;
+
+  .btn {
+    width: 100%;
+  }
+}
