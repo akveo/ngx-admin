@@ -44,7 +44,6 @@ export class NgaActionComponent {
   set disabled(val: boolean) {
     this.disabledValue = convertToBoolProperty(val);
   }
-
 }
 
 /**
@@ -92,6 +91,9 @@ export class NgaActionsComponent {
     return this.sizeValue === NgaActionsComponent.SIZE_LARGE;
   }
 
+  @HostBinding('class.full-width')
+  private fullWidthValue: boolean = false;
+
   /**
    * Size of the component, small|medium|large
    * @type string
@@ -108,5 +110,14 @@ export class NgaActionsComponent {
   @Input()
   set inverse(val: boolean) {
     this.inverseValue = convertToBoolProperty(val);
+  }
+
+  /**
+   * Component will fill full width of the container
+   * @type boolean
+   */
+  @Input()
+  set fullWidth(val: boolean) {
+    this.fullWidthValue = convertToBoolProperty(val);
   }
 }

@@ -55,5 +55,11 @@
         }
       }
     }
+
+    &.full-width nga-action {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
   }
 }
