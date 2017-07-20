@@ -56,7 +56,7 @@ export class RoomSelectorComponent {
   };
 
   constructor() {
-    this.sortRooms();
+    this.selectRoom('2');
   }
 
   private sortRooms() {
@@ -71,7 +71,7 @@ export class RoomSelectorComponent {
     });
   }
 
-  roomSelected(roomNumber) {
+  selectRoom(roomNumber) {
     this.selectedRoom = roomNumber;
     this.sortRooms();
   }

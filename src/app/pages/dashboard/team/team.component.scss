@@ -1,32 +1,31 @@
 @import '../../../@theme/styles/variables';
-@import '~@akveo/nga-theme/styles/global/bootstrap/hero-buttons';
 
 @include nga-install-component() {
 
   .team-photo {
-    background-image: url('./~/assets/images/team.jpg');
+    background-image: url('~/assets/images/team.png');
     background-position: center;
     background-size: cover;
-    // TODO: Use calculated height
-    height: 200px;
     position: relative;
     border-top-left-radius: nga-theme(card-border-radius);
     border-top-right-radius: nga-theme(card-border-radius);
 
+    flex: 1;
+    max-height: 50%;
+
     .team-link {
-      border-radius: 50%;
-      height: 60px;
-      width: 60px;
       position: absolute;
+      height: 4rem;
+      width: 4rem;
       bottom: -2rem;
       right: 1rem;
-      box-shadow: btn-hero-shadow();
+      border-radius: 50%;
+      box-shadow: 0 4px 10px 0 rgba(nga-theme(layout-bg), 0.4), 0 0 12px 0 rgba(nga-theme(color-fg-highlight), 0.2);
     }
   }
 
   .team-info {
-    padding: 2rem 1.5rem;
-    padding-bottom: 0;
+    padding: 1.5rem 1.5rem 0;
 
     .team-title {
       color: nga-theme(color-fg-heading);
@@ -50,21 +49,17 @@
     }
   }
 
-  nga-card > nga-card-body {
-    padding: 0;
-    height: 100%;
-  }
-
-  nga-card > nga-card-footer {
+  .links {
     display: flex;
     justify-content: space-around;
+    padding: 1rem 0;
 
     a {
       text-decoration: none;
       color: nga-theme(color-fg);
 
       i {
-        font-size: 2rem;
+        font-size: 1.75rem;
       }
     }
   }

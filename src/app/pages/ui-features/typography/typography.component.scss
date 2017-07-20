@@ -14,22 +14,31 @@
   }
 
   .font-row {
-    margin-bottom: 3rem;
+    &:first-child {
+      margin-bottom: 2rem;
+    }
+
     .header {
       align-items: baseline;
+    }
+
+    p {
+      margin: 0;
     }
   }
 
   .header {
     display: flex;
     align-items: center;
-    padding-bottom: 1.125rem;
-    margin-bottom: 1.125rem;
-    border-bottom: 1px solid rgba(nga-theme(color-fg), 0.1);
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid nga-theme(separator);
     color: nga-theme(color-fg-heading);
 
     &:last-child {
       border-bottom: none;
+      padding: 0;
+      margin: 0;
     }
 
     div:first-child {
@@ -82,6 +91,10 @@
       border-top-right-radius: 1rem;
       border-bottom-left-radius: 1rem;
       margin-right: 1rem;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      margin-bottom: 0.25rem;
     }
   }
 }

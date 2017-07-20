@@ -7,8 +7,9 @@
     height: 100%;
   }
 
-  canvas {
-    border-radius: nga-theme(card-border-radius);
+  /deep/ canvas {
+    border-bottom-left-radius: nga-theme(card-border-radius);
+    border-bottom-right-radius: nga-theme(card-border-radius);
   }
 
   .echart {

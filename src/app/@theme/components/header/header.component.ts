@@ -8,9 +8,9 @@ import { UserService } from '../../../@core/data/users.service';
   selector: 'ngx-header',
   styleUrls: ['./header.component.scss'],
   template: `
-    <div class="left">
-      <a (click)="toggleSidebar()" href="#"><i class="control-icon ion ion-navicon"></i></a>
-      <span class="logo" (click)="goToHome()">NgX&nbsp;<a>Admin</a></span>
+    <div class="left-container">
+      <a (click)="toggleSidebar()" href="#" class="navigation"><i class="ion-navicon"></i></a>
+      <div class="logo" (click)="goToHome()">NgX&nbsp;<span>Admin</span></div>
       <div class="theme-buttons">
         <button class="btn btn-hero-primary" (click)="selectCosmicTheme()">Cosmic</button>
         <button class="btn btn-hero-warning" (click)="selectLightTheme()">Light</button>

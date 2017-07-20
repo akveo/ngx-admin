@@ -1,14 +1,18 @@
 @import '../../../@theme/styles/variables';
 
 @include nga-install-component() {
-  nga-card {
-    nga-card-header {
-      padding: 0;
-    }
+  nga-card-header {
+    padding: 0;
+    border: none;
+  }
 
-    nga-card-body {
-      padding: 0;
-    }
+  nga-card-body {
+    padding: 0;
+  }
+
+  nga-card-footer {
+    padding: 1rem 0;
+    border: none;
   }
 
   .cameras-card-header {
@@ -32,26 +36,34 @@
       flex-direction: column;
       justify-content: center;
       color: nga-theme(color-fg);
-      border-left: 1px solid #342e73;
+    }
+
+    a:first-child {
+      border-left: 1px solid nga-theme(separator);
+    }
+
+    a:last-child {
+      border-top-right-radius: nga-theme(card-border-radius);
     }
 
     a.active {
-      background-color: #342e73;
-      color: #00d990;
-      text-shadow: 0 4px 10px rgba(33, 7, 77, 0.4), 0 0 12px rgba(0, 217, 144, 0.4);
+      background-color: nga-theme(color-bg-active);
+      color: nga-theme(color-fg-highlight);
+      text-shadow: 0 0 12px rgba(nga-theme(color-fg-highlight), 0.4);
+      border: none;
     }
   }
 
   .cameras {
     display: flex;
     flex-wrap: wrap;
+    height: 100%;
 
     .camera {
       position: relative;
       background-position: center;
       background-size: cover;
-      // TODO: Use calculated height
-      height: 278px;
+      height: 50%;
       width: 50%;
 
       span {
@@ -71,7 +83,7 @@
       content: '';
       position: absolute;
       width: 100%;
-      height: 278px;
+      height: 100%;
       opacity: 0.2;
       transition: 0.1s;
     }
@@ -83,14 +95,27 @@
 
   .cameras.single-view {
     .camera {
-      // TODO: Use calculated height
-      height: 556px;
+      height: 100%;
       width: 100%;
 
       &::before {
-        // TODO: Use calculated height
-        height: 556px;
+        height: 100%;
       }
+    }
+  }
+
+  nga-action {
+    i {
+      color: nga-theme(color-fg);
+      font-size: 2.5rem;
+      margin-right: 1rem;
+    }
+
+    span {
+      font-family: nga-theme(font-family-secondary);
+      font-weight: nga-theme(font-weight-bold);
+      color: nga-theme(color-fg-heading);
+      text-transform: uppercase;
     }
   }
 }

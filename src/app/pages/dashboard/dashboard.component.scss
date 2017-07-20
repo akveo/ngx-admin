@@ -1,5 +1,18 @@
 @import '../../@theme/styles/variables';
 
 @include nga-install-component() {
+  .solar-card nga-card-header {
+    border: none;
+    padding-bottom: 0;
+  }
 
+  .traffic-card {
+    nga-card-header {
+      border: none;
+    }
+
+    nga-card-body {
+      overflow: hidden;
+    }
+  }
 }

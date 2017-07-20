@@ -19,23 +19,26 @@
       </div>
     </div>
     <div class="cameras" *ngIf="!isSingleView">
-      <div class="camera" *ngFor="let c of cameras" [style.background-image]="'url(' + c.source + ')'" (click)="selectCamera(c)">
-        <span>{{ c.title }}</span>
+      <div class="camera" *ngFor="let camera of cameras" [style.background-image]="'url(' + camera.source + ')'"
+           (click)="selectCamera(camera)">
+        <span>{{ camera.title }}</span>
       </div>
     </div>
   </nga-card-body>
   <nga-card-footer>
-    <nga-actions size="medium">
-      <nga-action icon="ion-navicon"></nga-action>
+    <nga-actions size="medium" fullWidth>
       <nga-action>
-        <nga-search type="rotate-layout"></nga-search>
+        <i class="ion-ios-pause-outline"></i><span>Pause</span>
       </nga-action>
-      <nga-action icon="ion-ios-email-outline"></nga-action>
-      <nga-action disabled icon="ion-ios-bell-outline"></nga-action>
       <nga-action>
-        <nga-user [menu]="userMenu" name="Han Solo"></nga-user>
+        <i class="ion-navicon"></i><span>Log View</span>
       </nga-action>
-      <nga-action icon="ion-ios-gear-outline"></nga-action>
+      <nga-action>
+        <i class="ion-ios-search"></i><span>Search</span>
+      </nga-action>
+      <nga-action>
+        <i class="ion-ios-gear-outline"></i><span>Setup</span>
+      </nga-action>
     </nga-actions>
   </nga-card-footer>
 </nga-card>
