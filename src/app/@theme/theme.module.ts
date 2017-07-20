@@ -3,31 +3,22 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import {
-  NgaThemeModule,
+  NgaActionsModule,
   NgaCardModule,
   NgaLayoutModule,
-  NgaTabsetModule,
-  NgaRouteTabsetModule,
-  NgaSidebarModule,
   NgaMenuModule,
-  NgaUserModule,
-  NgaActionsModule,
+  NgaRouteTabsetModule,
   NgaSearchModule,
+  NgaSidebarModule,
+  NgaTabsetModule,
+  NgaThemeModule,
+  NgaUserModule,
 } from '@akveo/nga-theme';
 
-import {
-  HeaderComponent,
-  FooterComponent,
-  SearchInputComponent,
-  TinyMCEComponent,
-} from './components';
+import { FooterComponent, HeaderComponent, SearchInputComponent, TinyMCEComponent } from './components';
 
 
-import {
-  CapitalizePipe,
-  PluralPipe,
-  RoundPipe,
-} from './pipes';
+import { CapitalizePipe, PluralPipe, RoundPipe } from './pipes';
 
 import { OneColumnLayoutComponent } from './layouts';
 
@@ -64,7 +55,70 @@ const PIPES = [
 ];
 
 const NGA_THEME_PROVIDERS = [
-  ...NgaThemeModule.forRoot({ name: 'cosmic' }).providers,
+  ...NgaThemeModule.forRoot({
+      name: 'cosmic',
+    },
+    [
+      {
+        name: 'default',
+        base: 'default',
+        variables: {
+          tempColorGreen: '#7bff24',
+          tempColorLightBlue: '#7bff24',
+          tempColorBlue: '#7bff24',
+          tempColorYellow: '#7bff24',
+          tempColorOrange: '#7bff24',
+
+          solarColorDarkGreen: '#7bff24',
+          solarColorShadow: 'rgba(0, 217, 119, 0.3)',
+          trafficColorBlack: '#7bff24',
+          trafficTooltipBg: 'rgba(0, 255, 170, 0.35)',
+          trafficLineBg: 'rgba(146, 141, 255, 0.5)',
+          trafficShadowLineBg: '#7bff24',
+          trafficShadowLineDarkBg: '#7bff24',
+          trafficShadowLineShadow: '#7bff24',
+          trafficGradFrom: '#7bff24',
+          trafficGradTo: '#7bff24',
+
+          electricityAxisColor: '#7bff24',
+          electricityLineGradFrom: '#7bff24',
+          electricityLineGradTo: '#7bff24',
+          electricityLineShadow: '#7bff24',
+          electricityAreaGradFrom: '#7bff24',
+          electricityAreaGradTo: '#7bff24',
+        },
+      },
+      {
+        name: 'cosmic',
+        base: 'default',
+        variables: {
+          tempColorGreen: '#7bff24',
+          tempColorLightBlue: '#31ffad',
+          tempColorBlue: '#2ec7fe',
+          tempColorYellow: '#fff024',
+          tempColorOrange: '#f7bd59',
+
+          solarColorDarkGreen: '#19977E',
+          solarColorShadow: 'rgba(0, 217, 119, 0.3)',
+          trafficColorBlack: '#000000',
+          trafficTooltipBg: 'rgba(0, 255, 170, 0.35)',
+          trafficLineBg: 'rgba(146, 141, 255, 0.5)',
+          trafficShadowLineBg: '#bdbaff',
+          trafficShadowLineDarkBg: '#a695ff',
+          trafficShadowLineShadow: 'rgba(33, 7, 77, 0.5)',
+          trafficGradFrom: 'rgba(118, 89, 255, 0.4)',
+          trafficGradTo: 'rgba(164, 84, 255, 0.5)',
+
+          electricityAxisColor: '#a1a1e5',
+          electricityLineGradFrom: '#00ffaa',
+          electricityLineGradTo: '#fff835',
+          electricityLineShadow: 'rgba(14, 16, 48, 0.4)',
+          electricityAreaGradFrom: 'rgba(188, 92, 255, 0.5)',
+          electricityAreaGradTo: 'rgba(188, 92, 255, 0)',
+        },
+      },
+    ],
+  ).providers,
   ...NgaSidebarModule.forRoot().providers,
   ...NgaSidebarModule.forRoot().providers,
   ...NgaMenuModule.forRoot().providers,
