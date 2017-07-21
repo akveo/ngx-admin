@@ -46,6 +46,11 @@
     }
 
     .layout-container {
+
+      nga-sidebar.fixed {
+        top: #{nga-theme(header-height)};
+      }
+
       .content {
 
         nga-layout-footer {

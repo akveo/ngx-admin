@@ -59,6 +59,10 @@
           .menu-group {
             display: block;
             color: transparent;
+            width: 0;
+            padding-left: 0;
+            padding-right: 0;
+            overflow: hidden;
           }
           i {
             margin-right: 0;
@@ -72,6 +76,21 @@
         }
 
       }
+    }
+
+    // we need to pull the content
+    &.fixed + .content {
+      margin-left: nga-theme(sidebar-width-compact);
+    }
+
+    &.fixed.right + .content {
+      margin-left: 0;
+      margin-right: nga-theme(sidebar-width-compact);
+    }
+
+    &.fixed.collapsed + .content {
+      margin-left: 0;
+      margin-right: 0;
     }
 
     &.expanded {
