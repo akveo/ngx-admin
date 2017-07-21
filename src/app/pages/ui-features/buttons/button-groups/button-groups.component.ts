@@ -7,6 +7,8 @@ import { Component } from '@angular/core';
 })
 export class ButtonGroupsComponent {
 
+  radioModel = 'left';
+
   checkboxModel = {
     left: false,
     middle: false,
@@ -30,5 +32,13 @@ export class ButtonGroupsComponent {
     three: true,
     four: false,
     five: false,
+  };
+
+  dividedButtonGroupOne = 'left';
+
+  dividedButtonGroupTwo = {
+    left: false,
+    middle: false,
+    right: false,
   };
 }
