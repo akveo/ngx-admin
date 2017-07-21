@@ -3,6 +3,18 @@
 
 @include nga-install-component() {
 
+  nga-card-header {
+    display: flex;
+
+    span {
+      flex: 1;
+    }
+
+    .dropdown {
+      width: 30%;
+    }
+  }
+
   .example-container:nth-child(n + 4) {
     margin-top: 2rem;
   }
@@ -19,16 +31,9 @@
     }
   }
 
-  .warning-container {
-    .original {
-      background-color: nga-theme(btn-warning-bg);
-    }
-    .hover {
-      @include btn-warning-hover();
-    }
-    .active {
-      @include btn-warning-active();
-    }
+  .primary-container.outline .original {
+    background-color: transparent;
+    border: 2px solid nga-theme(btn-primary-bg);
   }
 
   .success-container {
@@ -43,6 +48,28 @@
     }
   }
 
+  .success-container.outline .original {
+    background-color: transparent;
+    border: 2px solid nga-theme(btn-success-bg);
+  }
+
+  .warning-container {
+    .original {
+      background-color: nga-theme(btn-warning-bg);
+    }
+    .hover {
+      @include btn-warning-hover();
+    }
+    .active {
+      @include btn-warning-active();
+    }
+  }
+
+  .warning-container.outline .original {
+    background-color: transparent;
+    border: 2px solid nga-theme(btn-warning-bg);
+  }
+
   .info-container {
     .original {
       background-color: nga-theme(btn-info-bg);
@@ -53,6 +80,11 @@
     .active {
       @include btn-info-active();
     }
+  }
+
+  .info-container.outline .original {
+    background-color: transparent;
+    border: 2px solid nga-theme(btn-info-bg);
   }
 
   .danger-container {
@@ -67,9 +99,14 @@
     }
   }
 
+  .danger-container.outline .original {
+    background-color: transparent;
+    border: 2px solid nga-theme(btn-danger-bg);
+  }
+
   .secondary-container {
     .original {
-      background-color: nga-theme(btn-secondary-border);
+      border: 2px solid nga-theme(btn-secondary-border);
     }
     .hover {
       @include btn-secondary-hover();
@@ -77,5 +114,10 @@
     .active {
       @include btn-secondary-active();
     }
+  }
+
+  .secondary-container.outline .original {
+    background-color: transparent;
+    border: 2px solid nga-theme(btn-secondary-border);
   }
 }

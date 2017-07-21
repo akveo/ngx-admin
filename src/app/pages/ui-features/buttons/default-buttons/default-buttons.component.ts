@@ -7,7 +7,17 @@ import { Component } from '@angular/core';
 })
 export class DefaultButtonsComponent {
 
-  buttons = [{
+  buttonsViews = [{
+    title: 'Default Buttons',
+    key: 'default',
+  }, {
+    title: 'Outline Buttons',
+    key: 'outline',
+  }];
+
+  selectedButtonsView = this.buttonsViews[0];
+
+  defaultButtons = [{
     class: 'btn-primary',
     container: 'primary-container',
     containerTitle: 'Primary Button',
@@ -44,4 +54,47 @@ export class DefaultButtonsComponent {
     title: 'Default',
     default: '#bdbaff',
   }];
+
+  outlineButtons = [{
+    class: 'btn-outline-primary',
+    container: 'primary-container outline',
+    containerTitle: 'Primary Button',
+    title: 'Primary',
+    default: '#7659ff',
+  }, {
+    class: 'btn-outline-warning',
+    container: 'warning-container outline',
+    containerTitle: 'Warning Button',
+    title: 'Warning',
+    default: '#ffcb17',
+  }, {
+    class: 'btn-outline-success',
+    container: 'success-container outline',
+    containerTitle: 'Success Button',
+    title: 'Success',
+    default: '#00d977',
+  }, {
+    class: 'btn-outline-info',
+    container: 'info-container',
+    containerTitle: 'Info Button',
+    title: 'Info',
+    default: '#0088ff',
+  }, {
+    class: 'btn-outline-danger',
+    container: 'danger-container outline',
+    containerTitle: 'Danger Button',
+    title: 'Danger',
+    default: '#ff386a',
+  }, {
+    class: 'btn-outline-secondary',
+    container: 'secondary-container outline',
+    containerTitle: 'Default Button',
+    title: 'Default',
+    default: '#bdbaff',
+  }];
+
+  selectView($event: any, view: any) {
+    $event.preventDefault();
+    this.selectedButtonsView = view;
+  }
 }

@@ -1,8 +1,51 @@
 <nga-card>
-  <nga-card-header>Default Buttons</nga-card-header>
+  <nga-card-header>
+    <span>Default Buttons</span>
+    <div ngbDropdown>
+      <button class="btn btn-primary" type="button" ngbDropdownToggle>
+        {{ selectedButtonsView.title }}
+      </button>
+      <div class="dropdown-menu">
+        <a href="#" class="dropdown-item" *ngFor="let v of buttonsViews" (click)="selectView($event, v)">{{ v.title }}</a>
+      </div>
+    </div>
+  </nga-card-header>
   <nga-card-body>
-    <div class="row">
-      <div class="example-container col-md-4" *ngFor="let b of buttons">
+    <div class="row" *ngIf="selectedButtonsView.key === 'default'">
+      <div class="example-container col-md-4" *ngFor="let b of defaultButtons">
+        <div class="container-title">
+          <span>{{ b.containerTitle }}</span>
+        </div>
+        <div class="container-btn">
+          <button class="btn {{ b.class }} btn-demo">{{ b.title }}</button>
+        </div>
+        <div class="{{ b.container }}">
+          <div class="state-container">
+            <div class="state-value original"></div>
+            <div class="state-details">
+              <span class="header">Default</span>
+              <span class="subheader">{{ b.default }}</span>
+            </div>
+          </div>
+          <div class="state-container">
+            <div class="state-value hover"></div>
+            <div class="state-details">
+              <span class="header">Hover</span>
+              <span class="subheader">14% white</span>
+            </div>
+          </div>
+          <div class="state-container">
+            <div class="state-value active"></div>
+            <div class="state-details">
+              <span class="header">Active</span>
+              <span class="subheader">14% black</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row" *ngIf="selectedButtonsView.key === 'outline'">
+      <div class="example-container col-md-4" *ngFor="let b of outlineButtons">
         <div class="container-title">
           <span>{{ b.containerTitle }}</span>
         </div>
