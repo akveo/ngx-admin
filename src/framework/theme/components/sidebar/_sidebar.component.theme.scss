@@ -46,6 +46,51 @@
       > .scrollable {
         width: nga-theme(sidebar-width-compact);
       }
+
+      nga-menu {
+        width: nga-theme(sidebar-width-compact);
+        ul > li {
+          border-bottom: 1px solid nga-theme(menu-item-separator);
+          transition: border-color 1s ease;
+
+          span, .chevron {
+            display: none;
+          }
+          .menu-group {
+            display: block;
+            color: transparent;
+            width: 0;
+            padding-left: 0;
+            padding-right: 0;
+            overflow: hidden;
+          }
+          i {
+            margin-right: 0;
+          }
+          a {
+            justify-content: center;
+          }
+          & > .menu-expanded {
+            display: none;
+          }
+        }
+
+      }
+    }
+
+    // we need to pull the content
+    &.fixed + .content {
+      margin-left: nga-theme(sidebar-width-compact);
+    }
+
+    &.fixed.right + .content {
+      margin-left: 0;
+      margin-right: nga-theme(sidebar-width-compact);
+    }
+
+    &.fixed.collapsed + .content {
+      margin-left: 0;
+      margin-right: 0;
     }
 
     &.expanded {
@@ -67,6 +112,9 @@
 
     nga-menu {
       margin: 0 -#{nga-theme(sidebar-padding)};
+      ul > li {
+        border-bottom: 1px solid transparent;
+      }
     }
   }
 }

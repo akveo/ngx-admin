@@ -4,12 +4,14 @@
  * Licensed under the MIT License. See License.txt in the project root for license information.
  */
 
-import { Component, HostBinding, Input, OnInit, OnDestroy } from '@angular/core';
+import { Component, HostBinding, Input, OnInit, OnDestroy, ElementRef } from '@angular/core';
 import { Subscription } from 'rxjs/Subscription';
 
 import { convertToBoolProperty } from '../helpers';
-
+import { NgaThemeService } from '../../services/theme.service';
+import { NgaMediaBreakpoint } from '../../services/breakpoints.service';
 import { NgaSidebarService } from './sidebar.service';
+
 
 /**
  * Sidebar header container.
@@ -98,7 +100,7 @@ export class NgaSidebarFooterComponent {
   selector: 'nga-sidebar',
   styleUrls: ['./sidebar.component.scss'],
   template: `
-    <div class="scrollable">
+    <div class="scrollable" (click)="onClick($event)">
       <ng-content select="nga-sidebar-header"></ng-content>
       <div class="main-container">
         <ng-content></ng-content>
@@ -113,7 +115,12 @@ export class NgaSidebarComponent implements OnInit, OnDestroy {
   static readonly STATE_COLLAPSED: string = 'collapsed';
   static readonly STATE_COMPACTED: string = 'compacted';
 
+  static readonly RESPONSIVE_STATE_MOBILE: string = 'mobile';
+  static readonly RESPONSIVE_STATE_TABLET: string = 'tablet';
+  static readonly RESPONSIVE_STATE_PC: string = 'pc';
+
   protected stateValue: string;
+  protected responsiveValue: boolean = false;
 
   @HostBinding('class.fixed') fixedValue: boolean = false;
   @HostBinding('class.right') rightValue: boolean = false;
@@ -170,6 +177,16 @@ export class NgaSidebarComponent implements OnInit, OnDestroy {
   }
 
   /**
+   * Makes sidebar listen to media query events and change its behaviour
+   * @type {boolean}
+   */
+  @Input()
+  set responsive(val: boolean) {
+    this.responsiveValue = convertToBoolProperty(val);
+    this.toggleResponsive(this.responsiveValue);
+  }
+
+  /**
    * Tags a sidebar with some ID, can be later used in sidebar service
    * to determine which sidebar triggered the action, if multiple sidebars exist on the page.
    *
@@ -180,8 +197,21 @@ export class NgaSidebarComponent implements OnInit, OnDestroy {
   private toggleSubscription: Subscription;
   private expandSubscription: Subscription;
   private collapseSubscription: Subscription;
+  private mediaQuerySubscription: Subscription;
+  private responsiveState = NgaSidebarComponent.RESPONSIVE_STATE_PC;
 
-  constructor(private sidebarService: NgaSidebarService) { }
+  constructor(private sidebarService: NgaSidebarService,
+              private themeService: NgaThemeService,
+              private element: ElementRef) {
+  }
+
+  toggleResponsive(enabled: boolean) {
+    if (enabled) {
+      this.mediaQuerySubscription = this.onMediaQueryChanges();
+    } else if (this.mediaQuerySubscription) {
+      this.mediaQuerySubscription.unsubscribe();
+    }
+  }
 
   ngOnInit() {
     this.toggleSubscription = this.sidebarService.onToggle()
@@ -210,8 +240,17 @@ export class NgaSidebarComponent implements OnInit, OnDestroy {
     this.toggleSubscription.unsubscribe();
     this.expandSubscription.unsubscribe();
     this.collapseSubscription.unsubscribe();
+    if (this.mediaQuerySubscription) {
+      this.mediaQuerySubscription.unsubscribe();
+    }
   }
 
+  onClick(event): void {
+    const menu = this.element.nativeElement.querySelector('nga-menu');
+    if (menu && menu.contains(event.target)) {
+      this.expand();
+    }
+  }
 
   /**
    * Some Static method
@@ -268,6 +307,12 @@ export class NgaSidebarComponent implements OnInit, OnDestroy {
    * ```
    */
   toggle(compact: boolean = false) {
+    if (this.responsiveEnabled()) {
+      if (this.responsiveState === NgaSidebarComponent.RESPONSIVE_STATE_MOBILE) {
+        compact = false;
+      }
+    }
+
     const closedStates = [NgaSidebarComponent.STATE_COMPACTED, NgaSidebarComponent.STATE_COLLAPSED];
     if (compact) {
       this.state = closedStates.indexOf(this.stateValue) >= 0 ?
@@ -276,5 +321,34 @@ export class NgaSidebarComponent implements OnInit, OnDestroy {
       this.state = closedStates.indexOf(this.stateValue) >= 0 ?
         NgaSidebarComponent.STATE_EXPANDED : NgaSidebarComponent.STATE_COLLAPSED;
     }
+  }
+
+  protected onMediaQueryChanges(): Subscription {
+    return this.themeService.onMediaQueryChange()
+      .subscribe(([prev, current]: [NgaMediaBreakpoint, NgaMediaBreakpoint]) => {
+
+        // TODO: move this into config
+        const tablet = ['xs', 'sm', 'md'];
+        const mobile = ['xs'];
+
+        if (tablet.indexOf(current.name) !== -1) {
+          this.fixed = true;
+          this.compact();
+          this.responsiveState = NgaSidebarComponent.RESPONSIVE_STATE_TABLET;
+        }
+        if (mobile.indexOf(current.name) !== -1) {
+          this.collapse();
+          this.responsiveState = NgaSidebarComponent.RESPONSIVE_STATE_MOBILE;
+        }
+        if (tablet.indexOf(current.name) === -1  && prev.width < current.width) {
+          this.expand();
+          this.fixed = false;
+          this.responsiveState = NgaSidebarComponent.RESPONSIVE_STATE_PC;
+        }
+      });
+  }
+
+  protected responsiveEnabled(): boolean {
+    return this.responsiveValue;
   }
 }

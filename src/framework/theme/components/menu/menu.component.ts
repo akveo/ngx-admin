@@ -145,6 +145,9 @@ export class NgaMenuComponent implements OnInit, OnDestroy {
   }
 
   onToggleSubMenu(item: NgaMenuItem) {
+    // TODO: make this optional
+    this.menuInternalService.collapseAll(this.items, item);
+
     item.expanded = !item.expanded;
 
     this.menuInternalService.submenuToggle(item, this.tag);

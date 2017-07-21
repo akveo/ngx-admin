@@ -16,6 +16,7 @@ import 'rxjs/add/operator/filter';
 import 'rxjs/add/operator/pairwise';
 import 'rxjs/add/operator/distinctUntilChanged';
 import 'rxjs/add/operator/debounceTime';
+import 'rxjs/add/operator/startWith';
 
 import { ngaThemeOptionsToken } from '../theme.options';
 import { NgaJSThemesRegistry, NgaJSThemeVariable } from './js-themes-registry.service';
@@ -31,7 +32,7 @@ export class NgaThemeService {
   private createLayoutTop$ = new Subject();
   private appendLayoutClass$ = new Subject();
   private removeLayoutClass$ = new Subject();
-  private changeWindowWidth$ = new Subject<number>();
+  private changeWindowWidth$ = new ReplaySubject<number>(2);
 
   constructor(@Inject(ngaThemeOptionsToken) protected options: any,
               private breakpointService: NgaMediaBreakpointsService,
@@ -86,6 +87,7 @@ export class NgaThemeService {
    */
   onMediaQueryChange(): Observable<[NgaMediaBreakpoint, NgaMediaBreakpoint]> {
     return this.changeWindowWidth$
+      .startWith(undefined)
       .pairwise()
       .map(([prevWidth, width]: [number, number]) => {
         return [
@@ -96,7 +98,9 @@ export class NgaThemeService {
       .filter(([prevPoint, point]: [NgaMediaBreakpoint, NgaMediaBreakpoint]) => {
         return prevPoint.name !== point.name;
       })
-      .distinctUntilChanged(null, params => params[0].name + params[1].name);
+      .distinctUntilChanged(null, params => params[0].name + params[1].name)
+      .publish()
+      .refCount();
   }
 
   onThemeChange(): Observable<any> {
