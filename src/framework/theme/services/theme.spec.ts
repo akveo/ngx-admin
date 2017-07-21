@@ -91,7 +91,7 @@ describe('theme-service', () => {
       expect(current).toBeUndefined();
 
       themeService.changeWindowWidth(1920);
-      expect(current).toBeUndefined();
+      expect(current[0].name).toEqual(breakpointService.getBreakpoint(undefined).name);
 
       const xs = 200;
       themeService.changeWindowWidth(xs);
