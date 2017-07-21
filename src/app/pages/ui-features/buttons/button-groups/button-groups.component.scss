@@ -17,6 +17,13 @@
   }
 
   .icon-toolbar-container {
+    .btn-group > .btn {
+      padding-left: 1.125rem;
+      padding-right: 1.125rem;
+    }
+  }
+
+  .icon-toolbar-container {
     flex: 1;
   }
 
