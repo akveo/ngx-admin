@@ -11,6 +11,7 @@ import { Component } from '@angular/core';
       </nga-layout-header>
 
       <nga-sidebar responsive>
+        <button class="btn btn-hero-success main-btn"><i class="ion ion-social-github-outline"></i> Support Us</button>
         <ng-content select="nga-menu"></ng-content>
       </nga-sidebar>
 
