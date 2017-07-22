@@ -11,7 +11,11 @@
     <div [ngClass]="isErrorVisible('publisher','pubName','required') ? 'form-group has-error has-feedback' : ' has-feedback'">
       <label for="pubName">Publisher Name</label>
       <input type="text"  formControlName="pubName" class="form-control form-control-lg" id="pubName" placeholder="Publisher Name">
+<<<<<<< HEAD
       <i class="ion-android-cancel form-control-feedback"  *ngIf="isErrorVisible('publisher','pubName','required')" aria-hidden="true"></i>
+=======
+      <i class="ion-android-cancel form-control-feedback"  *ngIf="isErrorVisible('publisher','pubName','required')" aria-hidden="true"></i>  
+>>>>>>> highlight cadaster form field when it is invalid
   </div>
     </fieldset>
   <fieldset class="form-group" formGroupName="houseHolder">
@@ -19,7 +23,11 @@
     <div [ngClass]="isErrorVisible('houseHolder','hhName','required') ? 'form-group has-error has-feedback' : ' has-feedback'">
       <label for="houseHolder">HouseHolder Name</label>
       <input type="text"  formControlName="hhName" class="form-control form-control-lg" id="hhName" placeholder="HouseHolder Name">
+<<<<<<< HEAD
       <i class="ion-android-cancel form-control-feedback"  *ngIf="isErrorVisible('houseHolder','hhName','required')" aria-hidden="true"></i>
+=======
+      <i class="ion-android-cancel form-control-feedback"  *ngIf="isErrorVisible('houseHolder','hhName','required')" aria-hidden="true"></i>    
+>>>>>>> highlight cadaster form field when it is invalid
     </div>
 
     <div class="form-group">
@@ -249,7 +257,12 @@
       <i class="ion-android-cancel form-control-feedback"  *ngIf="isErrorVisible('houseHolder','hhPhone','required')" aria-hidden="true"></i>
   </div>
 
+<<<<<<< HEAD
     <div [ngClass]="isErrorVisible('houseHolder','hhZipCode','required') ? 'form-group has-error has-feedback' : ' has-feedback'">
+=======
+<div [ngClass]="isErrorVisible('houseHolder','hhZipCode','required') ? 'form-group has-error has-feedback' : ' has-feedback'">
+    <div class="form-group">
+>>>>>>> highlight cadaster form field when it is invalid
       <label for="hhZipCode">Householder ZIP Code</label>
       <input type="text" pattern="\d*" formControlName="hhZipCode" class="form-control form-control-lg" id="hhZipCode" placeholder="HouseHolder ZIP Code">
        <i class="ion-android-cancel form-control-feedback"  *ngIf="isErrorVisible('houseHolder','hhZipCode','required')" aria-hidden="true"></i>
@@ -259,7 +272,11 @@
       <input type="text" formControlName="hhAddress" class="form-control form-control-lg" id="hhAddress" placeholder="Street, Number, Neighborhood ...">
       <i class="ion-android-cancel form-control-feedback"  *ngIf="isErrorVisible('houseHolder','hhAddress','required')" aria-hidden="true"></i>
     </div>
+<<<<<<< HEAD
     <div  [ngClass]="isErrorVisible('houseHolder','landmark','required') ? 'form-group has-error has-feedback' : ' has-feedback'">
+=======
+    <div  [ngClass]="isErrorVisible('houseHolder','hhZipCode','required') ? 'form-group has-error has-feedback' : ' has-feedback'">
+>>>>>>> highlight cadaster form field when it is invalid
       <label for="landmark">Address Landmark</label>
       <input type="text" formControlName="landmark" class="form-control form-control-lg" id="landmark" placeholder="Near to, Supermarket, Business; Color ...">
       <i class="ion-android-cancel form-control-feedback"  *ngIf="isErrorVisible('houseHolder','landmark','required')" aria-hidden="true"></i>
