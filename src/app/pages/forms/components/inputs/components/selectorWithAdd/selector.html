@@ -1,0 +1,43 @@
+<div class="row">
+  <div class=" col-xs-12">
+  <label for="hhNationality" class="control-label">{{label}}</label>
+  <div class="selectContainer input-group">
+    <select class="form-control  form-control-lg with-success-addon" [(ngModel)]="selectedValue" (change)="handleSelectedValue()">
+      <option  value="">-- select one --</option>
+          <option  *ngFor="let item of itemsList;" value="{{item}}">{{item}}</option>
+    </select>
+    <span class="input-group-btn">
+        <button class="btn btn-success  btn-lg" type="button" (click)="lgModal.show(); setInitialState()" ><i ng-reflect-class-name="ion-plus-round" class="ion-plus-round"></i></button>
+    </span>
+  </div>
+  </div>
+</div>
+
+
+
+
+<!-- Large modal -->
+<div bsModal #lgModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button class="close" (click)="lgModal.hide()" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title">Insert a name for a new group</h4>
+      </div>
+      <div class="modal-body">
+        <div class="form-group"  [class]="feedBackClass">
+          <div class="input-group">
+              <span class="input-group-addon addon-left">New Group</span>
+              <ng2-completer [(ngModel)]="value" [datasource]="itemsList" [minSearchLength]="0" inputClass="form-control completer-dropdown-padding" matchClass="completer-dropdown-padding"></ng2-completer>
+              <i class="ion-checkmark-circled form-control-feedback" aria-hidden="true"></i>
+              <span id="inputGroupSuccess1Status" class="sr-only">(success)</span>
+          </div>
+        </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary confirm-btn" (click)="handleNewValues(newGroup)">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>

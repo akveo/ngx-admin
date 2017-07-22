@@ -10,6 +10,7 @@ import { Buttons } from './components/buttons/buttons.component';
 import { Grid } from './components/grid/grid.component';
 import { Icons } from './components/icons/icons.component';
 import { Modals } from './components/modals/modals.component';
+import { ActionModal } from './components/actionModal/actionModal.component';
 import { Typography } from './components/typography/typography.component';
 
 import { FlatButtons } from './components/buttons/components/flatButtons';
@@ -31,12 +32,15 @@ import { IconsService } from './components/icons/icons.service';
     DropdownModule.forRoot(),
     ModalModule.forRoot(),
     routing
+  ],exports : [
+    ActionModal
   ],
   declarations: [
     Buttons,
     Grid,
     Icons,
     Modals,
+    ActionModal,
     Typography,
     Ui,
     FlatButtons,

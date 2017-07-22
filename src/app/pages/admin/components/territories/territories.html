@@ -1,0 +1,13 @@
+<div class="widgets">
+
+  <div class="row">
+    <action-modal #actionModel [renderUI]="false" [actionButtonSettings]="actionButtonSettings"></action-modal>
+  </div>
+  <div class="row">
+    <ba-card title="Territories" baCardClass="with-scroll">
+      <ng2-smart-table [settings]="settings" [source]="source" (deleteConfirm)="onDeleteConfirm($event)"
+                                                    (userRowSelect)="onuserRowSelect($event)"></ng2-smart-table>
+    </ba-card>
+  </div>
+
+</div>

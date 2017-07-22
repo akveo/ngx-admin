@@ -1,0 +1,26 @@
+@import "../../../../theme/sass/conf/conf";
+
+.modal {
+  padding-top: 300px;
+
+
+  .modal-content {
+    background-color: rgba(#000000, 0.55);
+
+    .modal-header {
+      border: none;
+    }
+
+    .modal-footer {
+      border: none;
+    }
+
+    .close {
+      outline: none;
+    }
+  }
+}
+
+.modal-buttons .btn {
+  margin-right: 20px;
+}
