@@ -46,6 +46,12 @@
 .has-error {
   @include validationState($danger-bg, $danger);
   position: relative;
+  }
+
+.has-error .form-control {
+  border: 1px solid #fa758e;
+  background: yellow;
+ 
 }
 
 label.custom-checkbox {
