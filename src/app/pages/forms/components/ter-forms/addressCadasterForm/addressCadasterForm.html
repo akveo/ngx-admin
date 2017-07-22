@@ -4,14 +4,14 @@
     <legend>Group</legend>
       <selector-with-add (addedNewValues)="addedNewGroup($event)"  (onChangeSelectedValue)="onChangeSelectedValue($event)" [itemsList]="groupsList" label ="Assing to a Group">
     </selector-with-add>
-    
+
 </fieldset>
   <fieldset class="form-group" formGroupName="publisher">
     <legend>Publisher</legend>
     <div [ngClass]="isErrorVisible('publisher','pubName','required') ? 'form-group has-error has-feedback' : ' has-feedback'">
       <label for="pubName">Publisher Name</label>
       <input type="text"  formControlName="pubName" class="form-control form-control-lg" id="pubName" placeholder="Publisher Name">
-      <i class="ion-android-cancel form-control-feedback"  *ngIf="isErrorVisible('publisher','pubName','required')" aria-hidden="true"></i>  
+      <i class="ion-android-cancel form-control-feedback"  *ngIf="isErrorVisible('publisher','pubName','required')" aria-hidden="true"></i>
   </div>
     </fieldset>
   <fieldset class="form-group" formGroupName="houseHolder">
@@ -19,7 +19,7 @@
     <div [ngClass]="isErrorVisible('houseHolder','hhName','required') ? 'form-group has-error has-feedback' : ' has-feedback'">
       <label for="houseHolder">HouseHolder Name</label>
       <input type="text"  formControlName="hhName" class="form-control form-control-lg" id="hhName" placeholder="HouseHolder Name">
-      <i class="ion-android-cancel form-control-feedback"  *ngIf="isErrorVisible('houseHolder','hhName','required')" aria-hidden="true"></i>    
+      <i class="ion-android-cancel form-control-feedback"  *ngIf="isErrorVisible('houseHolder','hhName','required')" aria-hidden="true"></i>
     </div>
 
     <div class="form-group">
@@ -264,7 +264,7 @@
       <input type="text" formControlName="landmark" class="form-control form-control-lg" id="landmark" placeholder="Near to, Supermarket, Business; Color ...">
       <i class="ion-android-cancel form-control-feedback"  *ngIf="isErrorVisible('houseHolder','landmark','required')" aria-hidden="true"></i>
     </div>
-  
+
 </fieldset>
   <fieldset class="form-group" formGroupName="status">
     <legend>Status</legend>
