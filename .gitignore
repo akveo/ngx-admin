@@ -55,12 +55,10 @@ npm-debug.log
 /compiled
 /dll
 
-# Doc #
-/doc/
-
 # IDE #
 .idea/
 *.swp
+.vscode/
 
 # Angular #
 *.ngfactory.ts
