@@ -6,7 +6,14 @@ import 'style-loader!leaflet/dist/leaflet.css';
 @Component({
   selector: 'ngx-leaflet',
   styleUrls: ['./leaflet.component.scss'],
-  templateUrl: './leaflet.component.html',
+  template: `
+    <nga-card>
+      <nga-card-header>Leaflet</nga-card-header>
+      <nga-card-body>
+        <div leaflet [leafletOptions]="options"></div>
+      </nga-card-body>
+    </nga-card>
+  `,
 })
 export class LeafletComponent {
 
@@ -17,5 +24,4 @@ export class LeafletComponent {
     zoom: 5,
     center: L.latLng({ lat: 38.991709, lng: -76.886109 }),
   };
-
 }
