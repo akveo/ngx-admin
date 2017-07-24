@@ -56,7 +56,7 @@ export const MENU_ITEMS: List<NgaMenuItem> = List([
         title: 'Tree',
         link: '/pages/components/tree',
       }, {
-        title: 'Toaster',
+        title: 'Notifications',
         link: '/pages/components/notifications',
       },
     ]),
