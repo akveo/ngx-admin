@@ -17,6 +17,9 @@ addForm: FormGroup;
 groupsList:string[] = ["bras","itauera","savoy","tatuape"];
 @Output()
 protected onAddAddress: EventEmitter<any> = new EventEmitter<any>();
+errors = {};
+
+
 
   ngOnInit()  {
       this.formInitialBind();
@@ -31,33 +34,41 @@ protected onAddAddress: EventEmitter<any> = new EventEmitter<any>();
                 houseHolder: this.formBuilder.group({
                   hhName: ['', Validators.required],
                   hhGender:['male',Validators.required],
-                  hhNationality : ['nigerien',Validators.required],
-                  hhPhone : [''],
-                  hhZipCode :[''],
-                  hhAddress : [],
-                  landmark : []
+                  hhNationality : ['niger ien',Validators.required],
+                  hhPhone : ['',Validators.required],
+                  hhZipCode :['',Validators.required],
+                  hhAddress : ['',Validators.required],
+                  landmark : ['',Validators.required]
                 }),
                   status: this.formBuilder.group({
-                    status: ['', Validators.required],
+                    status: ['tbc', Validators.required],
                     pubName: ['', Validators.required],
                   }),
-                hhNotes:['']
+                hhNotes:['',Validators.required]
               });
   }
 
+
+  
+
     isErrorVisible(form:string , field:string, error:string) {
       let localForm:FormGroup ;
+      
       if(form)
         localForm = this.addForm.controls[form] as FormGroup;
       else
-        localForm = this.addForm; 
-
-      return localForm.controls[field].dirty
+       localForm  = this.addForm; 
+      
+      let hasErrors = localForm.controls[field].dirty
               && localForm.controls[field].errors &&
-              localForm.controls[field].errors[error];
+              localForm.controls[field].errors[error]
+                 
+      return hasErrors;
 
     }
 
+ 
+  
 
   get valid() {
       return this.addForm.valid;
