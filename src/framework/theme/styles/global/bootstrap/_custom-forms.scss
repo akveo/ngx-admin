@@ -44,12 +44,12 @@
     .custom-control-input {
       &:checked ~ .custom-control-indicator::before {
         content: '';
-        width: 0.75rem;
-        height: 0.75rem;
+        width: 0.5rem;
+        height: 0.5rem;
         background-color: nga-theme(color-bg);
         border-radius: 50%;
         position: absolute;
-        top: 0.1rem;
+        top: 25%;
       }
     }
   }

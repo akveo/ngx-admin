@@ -13,7 +13,7 @@
 
   .input-group-addon,
   .form-control {
-    padding: 0.875rem 1.125rem;
+    padding: 0.75rem 1.125rem;
     color: nga-theme(form-control-text-primary-color);
     background-color: nga-theme(form-control-bg);
     border: nga-theme(form-control-border-width)
@@ -42,7 +42,7 @@
   }
 
   select.form-control:not([size]):not([multiple]) {
-    height: calc(2.25rem + 20px);
+    height: calc(2rem + 20px);
   }
 
   .form-control-label {
