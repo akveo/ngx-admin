@@ -101,26 +101,26 @@
         border-bottom-color: nga-theme(card-header-danger-bg);
       }
     }
+  }
 
-    nga-card-body {
-      flex: 1;
-      overflow: auto;
-      padding: nga-theme(card-padding);
-      @include nga-scrollbars(
-          nga-theme(scrollbar-fg),
-          nga-theme(scrollbar-bg),
-          nga-theme(scrollbar-width));
-    }
+  nga-card-body {
+    flex: 1;
+    overflow: auto;
+    padding: nga-theme(card-padding);
+    @include nga-scrollbars(
+        nga-theme(scrollbar-fg),
+        nga-theme(scrollbar-bg),
+        nga-theme(scrollbar-width));
+  }
 
-    nga-card-footer {
-      padding: nga-theme(card-padding);
-      border-top: 1px solid nga-theme(card-separator);
-      border-bottom-left-radius: nga-theme(card-border-radius);
-      border-bottom-right-radius: nga-theme(card-border-radius);
-    }
+  nga-card-footer {
+    padding: nga-theme(card-padding);
+    border-top: 1px solid nga-theme(card-separator);
+    border-bottom-left-radius: nga-theme(card-border-radius);
+    border-bottom-right-radius: nga-theme(card-border-radius);
+  }
 
-    nga-card-header {
-      @include nga-card-header();
-    }
+  nga-card-header {
+    @include nga-card-header();
   }
 }
