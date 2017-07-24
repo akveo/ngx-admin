@@ -1,14 +1,14 @@
 import { Component } from '@angular/core';
 import { ToasterService, ToasterConfig, Toast } from 'angular2-toaster';
 
-import 'style-loader!angular2-toaster/toaster.css';
+// import 'style-loader!angular2-notifications/notifications.css';
 
 @Component({
-  selector: 'ngx-toasters',
-  styleUrls: ['toaster.component.scss'],
-  templateUrl: 'toaster.component.html',
+  selector: 'ngx-notifications',
+  styleUrls: ['./notifications.component.scss'],
+  templateUrl: './notifications.component.html',
 })
-export class ToasterComponent {
+export class NotificationsComponent {
   constructor(private toasterService: ToasterService) {}
 
   title: string = 'HI there!';
