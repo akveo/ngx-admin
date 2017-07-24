@@ -8,7 +8,7 @@ import { HeroButtonComponent } from './hero-buttons/hero-buttons.component';
 import { ShapeButtonsComponent } from './shape-buttons/shape-buttons.component';
 import { SizeButtonsComponent } from './size-buttons/size-buttons.component';
 import { ButtonsComponent } from './buttons.component';
-import { ActionsGroupsComponent } from './actions-groups/actions-groups.component';
+import { ActionGroupsComponent } from './action-groups/action-groups.component';
 import { DropdownButtonsComponent } from './dropdown-buttons/dropdown-button.component';
 import { BlockLevelButtonsComponent } from './block-level-buttons/block-level-buttons.component';
 import { ButtonGroupsComponent } from './button-groups/button-groups.component';
@@ -21,7 +21,7 @@ const components = [
   HeroButtonComponent,
   ShapeButtonsComponent,
   SizeButtonsComponent,
-  ActionsGroupsComponent,
+  ActionGroupsComponent,
   DropdownButtonsComponent,
   BlockLevelButtonsComponent,
   ButtonGroupsComponent,
