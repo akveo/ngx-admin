@@ -95,6 +95,10 @@
       width: 100%;
       text-align: left;
       position: relative;
+
+      &.btn {
+        padding-right: 2.75rem;
+      }
     }
 
     .dropdown-toggle::after {
@@ -198,6 +202,7 @@
       width: 100%;
       color: nga-theme(btn-text-color);
       padding: 0.75rem 0;
+      min-width: 100px;
     }
 
     .dropdown-item {
@@ -212,6 +217,7 @@
   .dropdown:not(.btn-group) {
     .dropdown-toggle::after {
       top: 50%;
+      transform: translate(0, -50%);
       right: 1.125rem;
     }
   }
@@ -258,37 +264,31 @@
 
     .btn-primary + .dropdown-menu {
       @include btn-outline-primary-border();
-
       border-top: none;
     }
 
     .btn-success + .dropdown-menu {
       @include btn-outline-success-border();
-
       border-top: none;
     }
 
     .btn-warning + .dropdown-menu {
       @include btn-outline-warning-border();
-
       border-top: none;
     }
 
     .btn-info + .dropdown-menu {
       @include btn-outline-info-border();
-
       border-top: none;
     }
 
     .btn-danger + .dropdown-menu {
       @include btn-outline-danger-border();
-
       border-top: none;
     }
 
     .btn-secondary + .dropdown-menu {
       @include btn-outline-secondary-border();
-
       border-top: none;
     }
 
