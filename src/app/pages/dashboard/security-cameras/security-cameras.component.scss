@@ -21,7 +21,6 @@
     .cameras-card-title {
       flex: 1;
       padding: 1.25rem;
-      line-height: 1.25rem;
     }
   }
 
@@ -30,7 +29,6 @@
 
     a {
       font-size: 2rem;
-      line-height: 2rem;
       padding: 0.75rem 1.5rem;
       display: flex;
       flex-direction: column;
@@ -73,8 +71,7 @@
         color: white;
         background: rgba(88, 73, 184, 0.5);
         font-size: 1rem;
-        line-height: 2.5rem;
-        padding-left: 1rem;
+        padding: 0.5rem 1rem;
       }
     }
 

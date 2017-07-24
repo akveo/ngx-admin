@@ -18,6 +18,7 @@ import { WeatherComponent } from './weather/weather.component';
 import { SolarComponent } from './solar/solar.component';
 import { PlayerComponent } from './player/player.component';
 import { TrafficComponent } from './traffic/traffic.component';
+import { TrafficChartComponent } from './traffic/traffic-chart.component';
 
 @NgModule({
   imports: [
@@ -42,6 +43,7 @@ import { TrafficComponent } from './traffic/traffic.component';
     PlayerComponent,
     SolarComponent,
     TrafficComponent,
+    TrafficChartComponent,
   ],
 })
 export class DashboardModule { }

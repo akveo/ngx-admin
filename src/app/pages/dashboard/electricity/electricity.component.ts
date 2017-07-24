@@ -10,6 +10,9 @@ export class ElectricityComponent {
 
   data: Array<any>;
 
+  type: string = 'week';
+  types = ['week', 'month', 'year'];
+
   constructor(private electricityService: ElectricityService) {
     this.data = electricityService.getData();
   }

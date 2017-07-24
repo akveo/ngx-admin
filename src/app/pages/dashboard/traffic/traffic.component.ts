@@ -1,142 +1,28 @@
-import { Component, Input } from '@angular/core';
-import { NgaThemeService } from '@akveo/nga-theme';
-
-declare const echarts: any;
-
-const points = [300, 520, 435, 530, 730, 620, 660, 860];
-
-const data = points.map((p, index) => ({
-  label: (index % 3 === 1) ? '${index}' : '',
-  value: p,
-}));
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'ngx-traffic',
   styleUrls: ['./traffic.component.scss'],
   template: `
-    <div echarts [options]="option" class="echart">
-    </div>
+    <nga-card size="xsmall">
+      <nga-card-header>
+        <span>Traffic Consumption</span>
+        <div class="ghost-dropdown" ngbDropdown>
+          <button type="button" class="btn btn-sm btn-primary" ngbDropdownToggle>
+            {{ type }}
+          </button>
+          <ul class="dropdown-menu">
+            <li class="dropdown-item" *ngFor="let t of types" (click)="type = t">{{ t }}</li>
+          </ul>
+        </div>
+      </nga-card-header>
+      <nga-card-body class="p-0">
+        <ngx-traffic-chart></ngx-traffic-chart>
+      </nga-card-body>
+    </nga-card>
   `,
 })
 export class TrafficComponent {
-
-  option: any = {};
-
-  constructor(private theme: NgaThemeService) {
-    this.theme.getJsTheme().subscribe(config => {
-
-      this.option = Object.assign({}, {
-        grid: {
-          left: 0,
-          top: 0,
-          right: 0,
-          bottom: 0,
-        },
-        xAxis: {
-          type: 'category',
-          boundaryGap: false,
-          data: data.map(i => i.label),
-        },
-        yAxis: {
-          boundaryGap: [0, '5%'],
-          axisLine: {
-            show: false,
-          },
-          axisLabel: {
-            show: false,
-          },
-          axisTick: {
-            show: false,
-          },
-          splitLine: {
-            show: true,
-            lineStyle: {
-              color: config.trafficColorBlack,
-              opacity: 0.06,
-              width: '1',
-            },
-          },
-        },
-        tooltip: {
-          axisPointer: {
-            type: 'shadow',
-          },
-          position: 'top',
-          backgroundColor: config.trafficTooltipBg,
-          borderColor: config.colorSuccess,
-          borderWidth: 3,
-          formatter: '{c0} MB',
-          extraCssText: `box-shadow: 0px 2px 46px 0 ${config.trafficTooltipBg};border-radius: 10px;padding: 5px 20px;`,
-        },
-        series: [
-          {
-            type: 'line',
-            symbol: 'circle',
-            symbolSize: 8,
-            sampling: 'average',
-            silent: true,
-            itemStyle: {
-              normal: {
-                color: config.trafficLineBg,
-              },
-              emphasis: {
-                color: 'rgba(0,0,0,0)',
-                borderColor: 'rgba(0,0,0,0)',
-                borderWidth: 0,
-              },
-            },
-            lineStyle: {
-              normal: {
-                width: 2,
-                color: config.trafficLineBg,
-              },
-            },
-            data: data.map(i => i.value - 15),
-          },
-          {
-            type: 'line',
-            symbol: 'circle',
-            symbolSize: 6,
-            sampling: 'average',
-            itemStyle: {
-              normal: {
-                color: config.trafficShadowLineBg,
-                borderColor: 'white',
-                borderWidth: 2,
-                shadowColor: config.trafficShadowLineShadow,
-                shadowOffsetX: 0,
-                shadowOffsetY: -3,
-                shadowBlur: 10,
-              },
-              emphasis: {
-                color: 'white',
-                borderColor: 'rgba(0,0,0,0)',
-                borderWidth: 5,
-              },
-            },
-            lineStyle: {
-              normal: {
-                width: 2,
-                color: config.trafficLineBg,
-                shadowColor: config.trafficShadowLineDarkBg,
-                shadowBlur: 14,
-              },
-            },
-            areaStyle: {
-              normal: {
-                color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
-                  offset: 0,
-                  color: config.trafficGradFrom,
-                }, {
-                  offset: 1,
-                  color: config.trafficGradTo,
-                }]),
-              },
-            },
-            data: data.map(i => i.value),
-          },
-        ],
-      });
-    });
-  }
+  type: string = 'month';
+  types = ['week', 'month', 'year'];
 }
