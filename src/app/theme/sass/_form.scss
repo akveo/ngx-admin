@@ -92,6 +92,13 @@ textarea.form-control {
   }
 }
 
+@mixin setSwitchBackgroud($color) {
+  .bootstrap-switch.bootstrap-switch-on {
+    background: $color;
+  }
+}
+
+
 .switch-container {
   display: inline-block;
   &.primary {
@@ -105,6 +112,7 @@ textarea.form-control {
   }
   &.danger {
     @include setSwitchBorder($danger);
+    @include setSwitchBackgroud($warning);
   }
   &.info {
     @include setSwitchBorder($primary-light);
@@ -497,6 +505,10 @@ label.custom-input-danger {
 .has-error {
   @include validationState($danger-bg, $danger);
   position: relative;
+}
+
+.has-error .form-control{
+    background: yellow;
 }
 
 .bootstrap-tagsinput {

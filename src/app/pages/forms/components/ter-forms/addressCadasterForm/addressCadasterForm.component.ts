@@ -34,17 +34,17 @@ errors = {};
                 houseHolder: this.formBuilder.group({
                   hhName: ['', Validators.required],
                   hhGender:['male',Validators.required],
-                  hhNationality : ['nigerien',Validators.required],
-                  hhPhone : [''],
-                  hhZipCode :[''],
-                  hhAddress : [],
-                  landmark : []
+                  hhNationality : ['niger ien',Validators.required],
+                  hhPhone : ['',Validators.required],
+                  hhZipCode :['',Validators.required],
+                  hhAddress : ['',Validators.required],
+                  landmark : ['',Validators.required]
                 }),
                   status: this.formBuilder.group({
-                    status: ['', Validators.required],
+                    status: ['tbc', Validators.required],
                     pubName: ['', Validators.required],
                   }),
-                hhNotes:['']
+                hhNotes:['',Validators.required]
               });
   }
 
