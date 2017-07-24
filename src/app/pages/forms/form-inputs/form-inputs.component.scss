@@ -1,6 +1,11 @@
 @import '../../../@theme/styles/variables';
 
 @include nga-install-component() {
+
+  nga-card-body {
+    overflow: visible;
+  }
+
   .input-group {
     margin-bottom: 1rem;
   }
@@ -87,5 +92,9 @@
       left: 1rem;
       top: 0.25rem;
     }
+  }
+
+  .dropdown {
+    width: 25%;
   }
 }

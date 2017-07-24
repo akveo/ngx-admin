@@ -27,6 +27,18 @@
     flex: 1;
   }
 
+  .toggle-types {
+    .btn-toggle-radio-group {
+      margin-bottom: 1rem;
+    }
+  }
+
+  .divided-button-group {
+    .btn-divided-checkbox-group {
+      margin-bottom: 1rem;
+    }
+  }
+
   .example-container:not(:last-child) {
     margin-bottom: 2rem;
   }
