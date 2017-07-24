@@ -13,6 +13,7 @@ import { DropdownButtonsComponent } from './dropdown-buttons/dropdown-button.com
 import { BlockLevelButtonsComponent } from './block-level-buttons/block-level-buttons.component';
 import { ButtonGroupsComponent } from './button-groups/button-groups.component';
 import { IconButtonsComponent } from './icon-buttons/icon-buttons.component';
+import { LabeledActionsGroupComponent } from './labeled-actions-group/labeled-actions-group.component';
 
 const components = [
   ButtonsComponent,
@@ -25,6 +26,7 @@ const components = [
   BlockLevelButtonsComponent,
   ButtonGroupsComponent,
   IconButtonsComponent,
+  LabeledActionsGroupComponent,
 ];
 
 @NgModule({

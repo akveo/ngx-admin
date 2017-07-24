@@ -1,0 +1,18 @@
+@import '../../../../@theme/styles/variables';
+
+@include nga-install-component() {
+  nga-action {
+    i {
+      color: nga-theme(color-fg);
+      font-size: 2.5rem;
+      margin-right: 1rem;
+    }
+
+    span {
+      font-family: nga-theme(font-family-secondary);
+      font-weight: nga-theme(font-weight-bold);
+      color: nga-theme(color-fg-heading);
+      text-transform: uppercase;
+    }
+  }
+}
