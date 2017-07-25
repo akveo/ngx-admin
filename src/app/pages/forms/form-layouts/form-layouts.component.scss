@@ -1,0 +1,11 @@
+.form-inline {
+  display: flex;
+
+  .fullname {
+    flex: 1;
+  }
+
+  .username {
+    flex: 1;
+  }
+}

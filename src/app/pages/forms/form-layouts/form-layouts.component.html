@@ -6,21 +6,14 @@
       </nga-card-header>
       <nga-card-body>
         <form class="form-inline">
-          <label class="sr-only" for="inlineFormInput">Name</label>
-          <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="inlineFormInput" placeholder="Jane Doe">
-
-          <label class="sr-only" for="inlineFormInputGroup">Username</label>
-          <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+          <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0 fullname" placeholder="Jane Doe">
+          <div class="input-group mb-2 mr-sm-2 mb-sm-0 username">
             <div class="input-group-addon">@</div>
-            <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Username">
+            <input type="text" class="form-control" placeholder="Username">
           </div>
-
           <div class="form-check mb-2 mr-sm-2 mb-sm-0">
-            <label class="form-check-label">
-              <input class="form-check-input" type="checkbox"> Remember me
-            </label>
+            <nga-checkbox>Remember me</nga-checkbox>
           </div>
-
           <button type="submit" class="btn btn-primary">Submit</button>
         </form>
       </nga-card-body>
@@ -49,22 +42,25 @@
             <legend class="col-form-legend col-sm-2">Radios</legend>
             <div class="col-sm-10">
               <div class="form-check">
-                <label class="form-check-label">
-            <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
-            Option one is this and that&mdash;be sure to include why it's great
-          </label>
+                <label class="custom-control custom-radio">
+                  <input type="radio" class="custom-control-input" name="gridRadios" checked>
+                  <span class="custom-control-indicator"></span>
+                  <span class="custom-control-description">Option one is this and that&mdash;be sure to include why it's great</span>
+                </label>
               </div>
               <div class="form-check">
-                <label class="form-check-label">
-            <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
-            Option two can be something else and selecting it will deselect option one
-          </label>
+                <label class="custom-control custom-radio">
+                  <input type="radio" class="custom-control-input" name="gridRadios">
+                  <span class="custom-control-indicator"></span>
+                  <span class="custom-control-description">Option two can be something else and selecting it will deselect option one</span>
+                </label>
               </div>
               <div class="form-check disabled">
-                <label class="form-check-label">
-            <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3" disabled>
-            Option three is disabled
-          </label>
+                <label class="custom-control custom-radio">
+                  <input type="radio" class="custom-control-input" name="gridRadios" disabled>
+                  <span class="custom-control-indicator"></span>
+                  <span class="custom-control-description">Option three is disabled</span>
+                </label>
               </div>
             </div>
           </fieldset>
@@ -72,9 +68,7 @@
             <label class="col-sm-2">Checkbox</label>
             <div class="col-sm-10">
               <div class="form-check">
-                <label class="form-check-label">
-            <input class="form-check-input" type="checkbox"> Check me out
-          </label>
+                <nga-checkbox>Check me out</nga-checkbox>
               </div>
             </div>
           </div>
@@ -122,10 +116,7 @@
             <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
           </div>
           <div class="form-group">
-            <label>
-              Check me out
-              <input type="checkbox"/>
-            </label>
+            <nga-checkbox>Check me out</nga-checkbox>
           </div>
           <button type="submit" class="btn btn-danger">Submit</button>
         </form>
@@ -192,10 +183,7 @@
           <div class="form-group row">
             <div class="offset-sm-2 col-sm-10">
               <div class="checkbox">
-                <label>
-                  Remember me
-                  <input type="checkbox"/>
-                </label>
+                <nga-checkbox>Remember me</nga-checkbox>
               </div>
             </div>
           </div>
