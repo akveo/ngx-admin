@@ -33,6 +33,7 @@ import { BasicForm } from './components/layouts/components/basicForm';
 import { WithoutLabelsForm } from './components/layouts/components/withoutLabelsForm';
 import { DropdownModule, ModalModule } from 'ng2-bootstrap';
 import { SimpleNotificationsModule } from "angular2-notifications";
+import { TextMaskModule } from "angular2-text-mask/dist/angular2TextMask";
 
 @NgModule({
   imports: [
@@ -45,7 +46,8 @@ import { SimpleNotificationsModule } from "angular2-notifications";
     ModalModule.forRoot(),
     Ng2CompleterModule,
     ReactiveFormsModule,
-    SimpleNotificationsModule.forRoot()
+    SimpleNotificationsModule.forRoot(),
+    TextMaskModule
   ],
   declarations: [
     Layouts,

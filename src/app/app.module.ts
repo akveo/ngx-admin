@@ -20,6 +20,8 @@ import { AppState, InternalStateType } from './app.service';
 import { GlobalState } from './global.state';
 import { NgaModule } from './theme/nga.module';
 import { PagesModule } from './pages/pages.module';
+import { TextMaskModule } from 'angular2-text-mask';
+import {  } from '@angular/forms';
 
 //firebase
 import { AngularFireDatabaseModule, AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
@@ -62,7 +64,8 @@ export type StoreType = {
     routing,
     JsonpModule,
     AngularFireModule.initializeApp(firebaseConfig),
-    AngularFireDatabaseModule]
+    AngularFireDatabaseModule,
+    TextMaskModule]
     ,
   providers: [ // expose our Services and Providers into Angular's dependency injection
     ENV_PROVIDERS,
