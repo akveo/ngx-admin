@@ -111,14 +111,12 @@ export class NgaMenuTestComponent implements OnInit, OnDestroy {
   menuItems = List<NgaMenuItem>([{
     title: 'Menu Items',
     group: true,
-    icon: 'ion ion-heart',
   }, {
     title: 'Menu #1',
     link: '/menu/1',
   }, {
     title: 'Menu #2',
     link: '/menu/2',
-    icon: 'ion ion-ionic',
   }]);
 
   private itemClickSubscription: Subscription;
@@ -146,20 +144,17 @@ export class NgaMenuTestComponent implements OnInit, OnDestroy {
       children: List<NgaMenuItem>([{
         title: 'Menu #3.1',
         link: '/menu/3/1',
-        icon: 'ion ion-heart',
       }, {
         title: 'Menu #3.2',
         link: '/menu/3/2',
       }, {
         title: 'Menu #3.3',
-        icon: 'ion ion-icecream',
         children: List<NgaMenuItem>([{
           title: 'Menu #3.3.1',
           link: '/menu/3/3/1',
         }, {
           title: 'Menu #3.3.2',
           link: '/menu/3/3/2',
-          icon: 'ion ion-happy-outline',
           home: true,
         }, {
           title: '@akveo/nga-theme',
@@ -184,5 +179,4 @@ export class NgaMenuTestComponent implements OnInit, OnDestroy {
   navigateHome() {
     this.menuService.navigateHome('firstMenu');
   }
-
 }

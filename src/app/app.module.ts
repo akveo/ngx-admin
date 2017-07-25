@@ -113,10 +113,8 @@ const NGA_TEST_COMPONENTS = [
       items: List<NgaMenuItem>([{
         title: 'Menu #4',
         link: '/menu/4',
-        icon: 'ion ion-ionic',
       }, {
         title: 'Menu #5',
-        icon: 'ion ion-ionic',
       }]),
     }),
     NgaRouteTabsetModule,
