@@ -1,21 +1,13 @@
 @import '../../../@theme/styles/variables';
 
 @include nga-install-component() {
-  nga-card-header {
-    border: none;
-  }
 
   nga-card-body {
     padding: 0;
   }
 
-  agm-map {
+  /deep/ agm-map {
     width: 100%;
     height: 100%;
-
-    /deep/ .agm-map-container-inner {
-      border-bottom-left-radius: nga-theme(card-border-radius);
-      border-bottom-right-radius: nga-theme(card-border-radius);
-    }
   }
 }

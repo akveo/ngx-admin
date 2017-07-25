@@ -1,9 +1,8 @@
 @import '../../../@theme/styles/variables';
 
 @include nga-install-component() {
-  nga-card-header {
-    border: none;
-  }
+
+  $card-header-border: 1px;
 
   nga-card-body {
     padding: 0;
@@ -11,6 +10,7 @@
 
   /deep/ .leaflet-container {
     width: 100%;
-    height: 500px;
+    height: calc(#{nga-theme(card-height-xlarge)} - (#{nga-theme(card-padding) * 2}) -
+                (#{nga-theme(card-header-font-size)} * #{nga-theme(card-line-height)}) - #{$card-header-border});
   }
 }

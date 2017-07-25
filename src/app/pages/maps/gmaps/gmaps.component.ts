@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
   selector: 'ngx-gmaps',
   styleUrls: ['./gmaps.component.scss'],
   template: `
-    <nga-card size="large">
+    <nga-card size="xlarge">
       <nga-card-header>Gmaps</nga-card-header>
       <nga-card-body>
         <agm-map [latitude]="lat" [longitude]="lng">
@@ -15,6 +15,7 @@ import { Component } from '@angular/core';
   `,
 })
 export class GmapsComponent {
+
   lat: number = 51.678418;
   lng: number = 7.809007;
 }
