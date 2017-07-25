@@ -1,7 +1,8 @@
   import {Component , Input, Output ,OnInit, OnDestroy , EventEmitter} from '@angular/core';
   import { FormGroup, FormBuilder, Validators } from '@angular/forms';
   import { TerritoryFieldMasksEnum } from "app/shared/models/territory";
-  
+  const cep = require('cep-promise');
+
 
   @Component({
     selector: 'address-cadaster-form',
@@ -9,8 +10,9 @@
     styleUrls: ['./addressCadasterForm.scss']
   })
   export class AddressCadasterForm implements OnInit {
-
+    
     constructor(private formBuilder: FormBuilder) {
+      
     }
 
   @Input()
@@ -24,8 +26,7 @@
   //Masks
   public  phoneMask = TerritoryFieldMasksEnum.CELLPHONE;
   public  zipMask = TerritoryFieldMasksEnum.ZIP;
-
-
+  
 
     ngOnInit()  {
         this.formInitialBind();
@@ -54,7 +55,7 @@
                 });
     }
 
-
+ 
     
 
       isErrorVisible(form:string , field:string, error:string) {
@@ -74,7 +75,29 @@
       }
 
   
-    
+  handleCepInformed(event){
+    let zipcode = this.sanitize(event.target.value)
+    this.searchZipCode(zipcode).then(address => {
+                                console.log(this.addForm);
+                                let addressLine = this.buildAddressLine(address);
+                                let houseHolderForm = this.addForm.controls['houseHolder'] as FormGroup;
+                                houseHolderForm.controls['hhAddress'].setValue(addressLine);
+                              });
+  }
+
+  searchZipCode(zipCode){
+    return  cep(zipCode);
+  }
+
+  private buildAddressLine(addressObject):string{
+    // {cep: "08275340", state: "SP", city: "São Paulo", neighborhood: "Jardim Nossa Senhora do Carmo", street: "Rua Xavier Palmerim"}
+    const addressLine = `${addressObject.street} , ${addressObject.neighborhood} - ${addressObject.city} - ${addressObject.state} `
+    return addressLine;
+  }
+
+   private updateAddressForm(addressLine){
+
+   } 
 
     get valid() {
         return this.addForm.valid;
@@ -86,6 +109,11 @@
 
     onChangeSelectedValue(event){
         this.addForm.controls['group'].setValue(event);
+    }
+
+    sanitize(value){
+     return value.replace(/[^a-zA-Z 0-9]/g, "");
+     
     }
 
     addTerritory(){

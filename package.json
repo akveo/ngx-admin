@@ -29,6 +29,7 @@
     "animate.css": "3.5.2",
     "bootstrap": "4.0.0-alpha.4",
     "bootstrap-notify": "^3.1.3",
+    "cep-promise": "^2.0.5",
     "chart.js": "1.1.1",
     "chartist": "0.10.1",
     "ckeditor": "4.6.0",
