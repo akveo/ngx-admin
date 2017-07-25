@@ -24,6 +24,7 @@
     "amcharts3": "github:amcharts/amcharts3#3.20.20",
     "ammap3": "github:amcharts/ammap3#3.20.20",
     "angular2-notifications": "^0.7.4",
+    "angular2-text-mask": "^8.0.2",
     "angularfire2": "^4.0.0-rc.0",
     "animate.css": "3.5.2",
     "bootstrap": "4.0.0-alpha.4",

@@ -44,6 +44,8 @@ createTerritory(territory:any , territoryType: any) : Observable<any>{
   dataToSave["territories/" + newTerritoryKey] = territoryToSave;
   dataToSave[`${territoryType}/${newTerritoryKey}`] = true;
 
+  console.log(dataToSave)
+
   return this.firebaseUpdate(dataToSave);
 }
 
