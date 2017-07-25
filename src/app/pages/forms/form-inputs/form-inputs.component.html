@@ -74,13 +74,13 @@
             <button type="button" class="btn btn-success dropdown-toggle" ngbDropdownToggle>
               Action
             </button>
-            <div class="dropdown-menu">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <a class="dropdown-item" href="#">Something else here</a>
+            <ul class="dropdown-menu">
+              <li class="dropdown-item">Action</li>
+              <li class="dropdown-item">Another action</li>
+              <li class="dropdown-item">Something else here</li>
               <div role="separator" class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Separated link</a>
-            </div>
+              <li class="dropdown-item">Separated link</li>
+            </ul>
           </div>
           <input type="text" class="form-control">
         </div>
@@ -160,9 +160,21 @@
       <nga-card-body>
         <div class="demo-checkboxes-radio">
           <div class="demo-checkboxes">
-            <nga-checkbox>Checkbox 1</nga-checkbox>
-            <nga-checkbox>Checkbox 2</nga-checkbox>
-            <nga-checkbox>Checkbox 3</nga-checkbox>
+            <label class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input">
+              <span class="custom-control-indicator"></span>
+              <span class="custom-control-description">Checkbox 1</span>
+            </label>
+            <label class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input">
+              <span class="custom-control-indicator"></span>
+              <span class="custom-control-description">Checkbox 1</span>
+            </label>
+            <label class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input">
+              <span class="custom-control-indicator"></span>
+              <span class="custom-control-description">Checkbox 1</span>
+            </label>
           </div>
           <div class="demo-radio">
             <label class="custom-control custom-radio">
