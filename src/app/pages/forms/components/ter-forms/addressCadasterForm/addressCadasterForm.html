@@ -249,6 +249,7 @@
       <i class="ion-android-cancel form-control-feedback"  *ngIf="isErrorVisible('houseHolder','hhPhone','required')" aria-hidden="true"></i>
   </div>
 
+
     <div [ngClass]="isErrorVisible('houseHolder','hhZipCode','required') ? 'form-group has-error has-feedback' : ' has-feedback'">
       <label for="hhZipCode">Householder ZIP Code</label>
       <input type="text" pattern="\d*" formControlName="hhZipCode" class="form-control form-control-lg" id="hhZipCode" placeholder="HouseHolder ZIP Code">
