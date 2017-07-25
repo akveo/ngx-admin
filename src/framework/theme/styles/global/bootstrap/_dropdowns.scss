@@ -35,8 +35,41 @@
 }
 
 
+@function dropdown-divider($color) {
+  @return shade($color, 14%);
+}
+
+@mixin dropdown-menu-border($color) {
+  border-top: 1px solid dropdown-divider($color);
+}
+
+@mixin dropdown-menu-primary-border() {
+  @include dropdown-menu-border(nga-theme(btn-primary-bg));
+}
+
+@mixin dropdown-menu-success-border() {
+  @include dropdown-menu-border(nga-theme(btn-success-bg));
+}
+
+@mixin dropdown-menu-warning-border() {
+  @include dropdown-menu-border(nga-theme(btn-warning-bg));
+}
+
+@mixin dropdown-menu-info-border() {
+  @include dropdown-menu-border(nga-theme(btn-info-bg));
+}
+
+@mixin dropdown-menu-danger-border() {
+  @include dropdown-menu-border(nga-theme(btn-danger-bg));
+}
+
+@mixin dropdown-menu-secondary-border() {
+  @include dropdown-menu-border(nga-theme(btn-secondary-border));
+}
+
+
 @mixin dropdown-menu-divider($color) {
-  border-top: 1px solid shade($color, 14%);
+  background-color: dropdown-divider($color);
 }
 
 @mixin dropdown-menu-primary-divider() {
@@ -62,6 +95,7 @@
 @mixin dropdown-menu-secondary-divider() {
   @include dropdown-menu-divider(nga-theme(btn-secondary-border));
 }
+
 
 @mixin nga-b-dropdowns-theme() {
   .dropdown.btn-group {
@@ -117,37 +151,37 @@
     .btn-primary + .dropdown-menu,
     .btn-outline-primary + .dropdown-menu {
       @include dropdown-menu-primary-background();
-      @include dropdown-menu-primary-divider();
+      @include dropdown-menu-primary-border();
     }
 
     .btn-success + .dropdown-menu,
     .btn-outline-success + .dropdown-menu {
       @include dropdown-menu-success-background();
-      @include dropdown-menu-success-divider();
+      @include dropdown-menu-success-border();
     }
 
     .btn-warning + .dropdown-menu,
     .btn-outline-warning + .dropdown-menu {
       @include dropdown-menu-warning-background();
-      @include dropdown-menu-warning-divider();
+      @include dropdown-menu-warning-border();
     }
 
     .btn-info + .dropdown-menu,
     .btn-outline-info + .dropdown-menu {
       @include dropdown-menu-info-background();
-      @include dropdown-menu-info-divider();
+      @include dropdown-menu-info-border();
     }
 
     .btn-danger + .dropdown-menu,
     .btn-outline-danger + .dropdown-menu {
       @include dropdown-menu-danger-background();
-      @include dropdown-menu-danger-divider();
+      @include dropdown-menu-danger-border();
     }
 
     .btn-secondary + .dropdown-menu,
     .btn-outline-secondary + .dropdown-menu {
       @include dropdown-menu-secondary-background();
-      @include dropdown-menu-secondary-divider();
+      @include dropdown-menu-secondary-border();
     }
 
     .btn-primary + .dropdown-menu > .dropdown-item,
@@ -190,6 +224,37 @@
       @include btn-secondary-hover();
       @include btn-secondary-focus();
       @include btn-secondary-active();
+    }
+
+
+    .btn-primary + .dropdown-menu > .dropdown-divider,
+    .btn-outline-primary + .dropdown-menu > .dropdown-divider {
+      @include dropdown-menu-primary-divider();
+    }
+
+    .btn-success + .dropdown-menu > .dropdown-divider,
+    .btn-outline-success + .dropdown-menu > .dropdown-divider {
+      @include dropdown-menu-success-divider();
+    }
+
+    .btn-warning + .dropdown-menu > .dropdown-divider,
+    .btn-outline-warning + .dropdown-menu > .dropdown-divider {
+      @include dropdown-menu-warning-divider();
+    }
+
+    .btn-info + .dropdown-menu > .dropdown-divider,
+    .btn-outline-info + .dropdown-menu > .dropdown-divider {
+      @include dropdown-menu-info-divider();
+    }
+
+    .btn-danger + .dropdown-menu > .dropdown-divider,
+    .btn-outline-danger + .dropdown-menu > .dropdown-divider {
+      @include dropdown-menu-danger-divider();
+    }
+
+    .btn-secondary + .dropdown-menu > .dropdown-divider,
+    .btn-outline-secondary + .dropdown-menu > .dropdown-divider {
+      @include dropdown-menu-secondary-divider();
     }
 
     .dropdown-menu {
