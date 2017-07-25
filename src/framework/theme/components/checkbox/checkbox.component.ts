@@ -9,7 +9,6 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
   selector: 'nga-checkbox',
-  styleUrls: ['./checkbox.component.scss'],
   template: `
     <label class="custom-control custom-checkbox">
       <input type="checkbox" class="custom-control-input"

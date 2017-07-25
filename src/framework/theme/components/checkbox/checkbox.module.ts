@@ -7,7 +7,6 @@
 import { NgModule } from '@angular/core';
 
 import { NgaSharedModule } from '../shared/shared.module';
-
 import { NgaCheckboxComponent } from './checkbox.component';
 
 @NgModule({
