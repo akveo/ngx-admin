@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'ngx-tiny-mce-page',
   template: `
-    <nga-card>
+    <nga-card size="xlarge">
       <nga-card-body>
         <ngx-tiny-mce></ngx-tiny-mce>
       </nga-card-body>
