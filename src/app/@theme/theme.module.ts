@@ -56,8 +56,8 @@ const PIPES = [
 
 const NGA_THEME_PROVIDERS = [
   ...NgaThemeModule.forRoot({
-      name: 'cosmic',
-    },
+    name: 'cosmic',
+  },
     [
       {
         name: 'default',
@@ -86,6 +86,17 @@ const NGA_THEME_PROVIDERS = [
           electricityLineShadow: '#7bff24',
           electricityAreaGradFrom: '#7bff24',
           electricityAreaGradTo: '#7bff24',
+
+          bubbleMapTitleColor: '#333333',
+          bubbleMapGeoColor1: '#e6b045',
+          bubbleMapGeoColor2: '#0088ff',
+          bubbleMapGeoColor3: '#ff386a',
+          bubbleMapGeoColor4: '#00d977',
+          bubbleMapGeoColor5: '#7659ff',
+          bubbleMapGeoColor6: '#24dec8',
+          bubbleMapAreaColor: '#2f3234',
+          bubbleMapAreaHoverColor: '#a1a1e5',
+          bubbleMapAreaBorderColor: '#dddddd',
         },
       },
       {
@@ -115,6 +126,17 @@ const NGA_THEME_PROVIDERS = [
           electricityLineShadow: 'rgba(14, 16, 48, 0.4)',
           electricityAreaGradFrom: 'rgba(188, 92, 255, 0.5)',
           electricityAreaGradTo: 'rgba(188, 92, 255, 0)',
+
+          bubbleMapTitleColor: '#ffffff',
+          bubbleMapGeoColor1: '#e6b045',
+          bubbleMapGeoColor2: '#0088ff',
+          bubbleMapGeoColor3: '#ff386a',
+          bubbleMapGeoColor4: '#00d977',
+          bubbleMapGeoColor5: '#7659ff',
+          bubbleMapGeoColor6: '#24dec8',
+          bubbleMapAreaColor: '#2c2961',
+          bubbleMapAreaHoverColor: '#a1a1e5',
+          bubbleMapAreaBorderColor: '#654ddb',
         },
       },
     ],

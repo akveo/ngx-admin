@@ -60,11 +60,14 @@ export const MENU_ITEMS: List<NgaMenuItem> = List([{
   title: 'Maps',
   icon: 'ion ion-ios-location-outline',
   children: List<NgaMenuItem>([{
-    title: 'Gmaps',
+    title: 'Google Maps',
     link: '/pages/maps/gmaps',
   }, {
-    title: 'Leaflet',
+    title: 'Leaflet Maps',
     link: '/pages/maps/leaflet',
+  }, {
+    title: 'Bubble Maps',
+    link: '/pages/maps/bubble',
   }]),
 }, {
   title: 'Charts',

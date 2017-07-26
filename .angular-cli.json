@@ -33,6 +33,7 @@
         "../node_modules/tinymce/plugins/paste/plugin.js",
         "../node_modules/tinymce/plugins/table/plugin.js",
         "../node_modules/echarts/dist/echarts.js",
+        "../node_modules/echarts/map/js/world.js",
         "../node_modules/chart.js/dist/Chart.js"
       ],
       "environmentSource": "environments/environment.ts",

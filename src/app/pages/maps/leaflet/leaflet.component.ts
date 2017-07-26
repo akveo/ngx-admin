@@ -8,7 +8,7 @@ import 'style-loader!leaflet/dist/leaflet.css';
   styleUrls: ['./leaflet.component.scss'],
   template: `
     <nga-card size="xlarge">
-      <nga-card-header>Leaflet</nga-card-header>
+      <nga-card-header>Leaflet Maps</nga-card-header>
       <nga-card-body>
         <div leaflet [leafletOptions]="options"></div>
       </nga-card-body>
