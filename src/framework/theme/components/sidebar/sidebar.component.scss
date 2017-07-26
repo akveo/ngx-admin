@@ -8,14 +8,18 @@
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  transition: width 0.2s;
   z-index: 999;
+  order: 0;
 
-  > .scrollable {
-    transition: width 0.2s;
+  .scrollable {
+    overflow-y: auto;
+    flex: 1;
   }
 
-  order: 0;
+  .main-container {
+    display: flex;
+    flex-direction: column;
+  }
 
   &.right {
     order: 4;
@@ -33,10 +37,6 @@
     &.right {
       right: 0;
     }
-  }
-
-  > .scrollable {
-    overflow-y: auto;
   }
 
   /deep/ nga-sidebar-footer {

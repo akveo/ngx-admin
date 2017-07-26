@@ -16,16 +16,17 @@
         nga-theme(scrollbar-bg),
         nga-theme(scrollbar-width));
 
-    > .scrollable {
-      height: nga-theme(sidebar-height);
+
+    .main-container {
       position: fixed;
+      height: nga-theme(sidebar-height);
       width: nga-theme(sidebar-width);
       background: nga-theme(sidebar-bg);
       box-shadow: nga-theme(sidebar-shadow);
+    }
 
-      > .main-container {
-        padding: nga-theme(sidebar-padding);
-      }
+    .scrollable {
+      padding: nga-theme(sidebar-padding);
     }
 
     width: nga-theme(sidebar-width);
@@ -35,7 +36,7 @@
     &.collapsed {
       width: 0;
       padding: 0;
-      > .scrollable {
+      .main-container {
         width: 0;
         padding: 0;
       }
@@ -43,7 +44,7 @@
 
     &.compacted {
       width: nga-theme(sidebar-width-compact);
-      > .scrollable {
+      .main-container {
         width: nga-theme(sidebar-width-compact);
       }
 

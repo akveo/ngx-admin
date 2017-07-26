@@ -100,9 +100,9 @@ export class NgaSidebarFooterComponent {
   selector: 'nga-sidebar',
   styleUrls: ['./sidebar.component.scss'],
   template: `
-    <div class="scrollable" (click)="onClick($event)">
+    <div class="main-container">
       <ng-content select="nga-sidebar-header"></ng-content>
-      <div class="main-container">
+      <div class="scrollable" (click)="onClick($event)">
         <ng-content></ng-content>
       </div>
       <ng-content select="nga-sidebar-footer"></ng-content>

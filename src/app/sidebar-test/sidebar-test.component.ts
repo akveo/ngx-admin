@@ -30,6 +30,7 @@ import { NgaSidebarService } from '@akveo/nga-theme';
       </nga-sidebar>
 
       <nga-sidebar right state="compacted" tag="right">
+        <nga-sidebar-header>Some Header</nga-sidebar-header>
         {{ content }}
       </nga-sidebar>
 

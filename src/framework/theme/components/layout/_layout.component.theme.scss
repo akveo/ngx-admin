@@ -39,7 +39,7 @@
         padding-top: nga-theme(header-height);
       }
 
-      &.fixed ~ .layout-container > nga-sidebar > .scrollable {
+      &.fixed ~ .layout-container > nga-sidebar > .main-container {
         height: calc(#{nga-theme(sidebar-height)} - #{nga-theme(header-height)});
       }
     }
