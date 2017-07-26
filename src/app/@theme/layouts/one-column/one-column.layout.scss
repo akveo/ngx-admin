@@ -3,6 +3,16 @@
 @include nga-install-root-component() {
 
   nga-sidebar {
+
+    margin-top: nga-theme(sidebar-header-gap);
+
+    /deep/ .scrollable {
+      height: calc(#{nga-theme(sidebar-height)} - #{nga-theme(header-height)} - #{nga-theme(sidebar-header-gap)})!important;
+      border-top-right-radius: 0.75rem;
+    }
+
+    background: transparent;
+
     .main-btn {
       display: block;
       padding: 1rem 3rem;

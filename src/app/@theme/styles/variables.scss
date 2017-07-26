@@ -8,12 +8,15 @@ $nga-enabled-themes: (default, light, cosmic);
 
 $nga-themes: nga-register-theme((
  // app wise variables for each theme
+  sidebar-header-gap: 2rem,
 ), default, default);
 
 $nga-themes: nga-register-theme((
   // app wise variables for each theme
+  sidebar-header-gap: 2rem,
 ), cosmic, cosmic);
 
 $nga-themes: nga-register-theme((
   // app wise variables for each theme
+  sidebar-header-gap: 2rem,
 ), light, light);
