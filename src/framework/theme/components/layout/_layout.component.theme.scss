@@ -40,8 +40,7 @@
       }
 
       &.fixed ~ .layout-container > nga-sidebar > .scrollable {
-        margin-top: -#{nga-theme(header-height)};
-        padding-top: nga-theme(header-height);
+        height: calc(#{nga-theme(sidebar-height)} - #{nga-theme(header-height)});
       }
     }
 
