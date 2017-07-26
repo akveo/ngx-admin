@@ -4,7 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { ChartsComponent } from './charts.component';
 import { EchartsComponent } from './echarts/echarts.component';
 import { D3Component } from './d3/d3.component';
-import { ChartJsComponent } from './chart.js/chart-js.component';
+import { ChartjsComponent } from './chartjs/chartjs.component';
 
 const routes: Routes = [{
   path: '',
@@ -17,7 +17,7 @@ const routes: Routes = [{
     component: D3Component,
   }, {
     path: 'chartjs',
-    component: ChartJsComponent,
+    component: ChartjsComponent,
   }],
 }];
 
@@ -31,5 +31,5 @@ export const routedComponents = [
   ChartsComponent,
   EchartsComponent,
   D3Component,
-  ChartJsComponent,
+  ChartjsComponent,
 ];

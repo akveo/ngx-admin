@@ -18,7 +18,7 @@ import { Component } from '@angular/core';
           [chartType]="barChartType"></canvas>
   `,
 })
-export class ChartJsBarComponent {
+export class ChartjsBarComponent {
 
   barChartOptions: any = {
     scaleShowVerticalLines: false,

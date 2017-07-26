@@ -17,7 +17,7 @@ import { Component } from '@angular/core';
             [chartType]="pieChartType"></canvas>
   `,
 })
-export class ChartJsPieComponent {
+export class ChartjsPieComponent {
 
   pieChartType: string = 'pie';
   pieChartLabels: string[] = ['Download Sales', 'In-Store Sales', 'Mail Sales'];

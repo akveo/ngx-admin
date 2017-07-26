@@ -18,7 +18,7 @@ import { Component } from '@angular/core';
             [chartType]="lineChartType"></canvas>
   `,
 })
-export class ChartJsLineComponent {
+export class ChartjsLineComponent {
 
   lineChartData: any[] = [
     { data: [65, 59, 80, 81, 56, 55, 40], label: 'Series A' },
