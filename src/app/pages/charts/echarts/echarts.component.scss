@@ -1,8 +1,9 @@
 @import '../../../@theme/styles/variables';
 
 @include nga-install-component() {
-
-  ngx-echarts-pie, ngx-echarts-bar, ngx-echarts-line {
+  ngx-echarts-pie,
+  ngx-echarts-bar,
+  ngx-echarts-line {
     display: block;
     height: 100%;
   }

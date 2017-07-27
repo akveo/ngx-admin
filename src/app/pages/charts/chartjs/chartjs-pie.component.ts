@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'ngx-chart-js-pie',
+  selector: 'ngx-chartjs-pie',
   styles: [
     `
       :host {
@@ -10,39 +10,42 @@ import { Component } from '@angular/core';
     `,
   ],
   template: `
-    <canvas baseChart
-            [data]="pieChartData"
-            [labels]="pieChartLabels"
-            [options]="pieChartOptions"
-            [chartType]="pieChartType"></canvas>
+    <canvas baseChart width="400" height="400"
+            [data]="chartData"
+            [labels]="chartLabels"
+            [options]="chartOptions"
+            [chartType]="chartType"></canvas>
   `,
 })
 export class ChartjsPieComponent {
-
-  pieChartType: string = 'pie';
-  pieChartLabels: string[] = ['Download Sales', 'In-Store Sales', 'Mail Sales'];
-  pieChartData: number[] = [300, 500, 100];
-  pieChartOptions: any = {
+  chartType: string = 'pie';
+  chartLabels: string[] = ['Download Sales', 'In-Store Sales', 'Mail Sales'];
+  chartData: number[] = [300, 500, 100];
+  chartOptions: any = {
     responsive: true,
     scales: {
-      xAxes: [{
-        gridLines: {
-          display: true,
-          color: 'rgba(148,159,177,1)',
+      xAxes: [
+        {
+          gridLines: {
+            display: true,
+            color: 'rgba(148,159,177,1)',
+          },
+          ticks: {
+            fontColor: 'white',
+          },
         },
-        ticks: {
-          fontColor: 'white',
+      ],
+      yAxes: [
+        {
+          gridLines: {
+            display: true,
+            color: 'rgba(148,159,177,1)',
+          },
+          ticks: {
+            fontColor: 'white',
+          },
         },
-      }],
-      yAxes: [{
-        gridLines: {
-          display: true,
-          color: 'rgba(148,159,177,1)',
-        },
-        ticks: {
-          fontColor: 'white',
-        },
-      }],
+      ],
     },
     legend: {
       labels: {
@@ -50,5 +53,4 @@ export class ChartjsPieComponent {
       },
     },
   };
-
 }

@@ -18,38 +18,30 @@ import { Component } from '@angular/core';
   `,
 })
 export class D3BarComponent {
-
-  single = [{
-    name: 'Germany',
-    value: 8940000,
-  }, {
-    name: 'USA',
-    value: 5000000,
-  }, {
-    name: 'France',
-    value: 7200000,
-  }];
-
+  single = [
+    {
+      name: 'Germany',
+      value: 8940000,
+    },
+    {
+      name: 'USA',
+      value: 5000000,
+    },
+    {
+      name: 'France',
+      value: 7200000,
+    },
+  ];
   view: any[] = [700, 400];
-
   showLegend = true;
-
   colorScheme = {
     domain: ['#5AA454', '#A10A28', '#C7B42C', '#AAAAAA'],
   };
-
   showXAxis = true;
-
   showYAxis = true;
-
   showLabels = true;
-
   showXAxisLabel = true;
-
   xAxisLabel = 'Country';
-
   showYAxisLabel = true;
-
   yAxisLabel = 'Population';
-
 }

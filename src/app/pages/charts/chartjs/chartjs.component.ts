@@ -4,6 +4,4 @@ import { Component } from '@angular/core';
   selector: 'ngx-chartjs',
   templateUrl: './chartjs.component.html',
 })
-
-export class ChartjsComponent {
-}
+export class ChartjsComponent {}
