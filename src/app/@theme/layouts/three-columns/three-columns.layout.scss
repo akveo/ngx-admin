@@ -2,6 +2,10 @@
 
 @include nga-install-root-component() {
 
+  nga-layout-column.small {
+    flex: 0.15 !important;
+  }
+
   nga-sidebar.menu-sidebar {
 
     margin-top: nga-theme(sidebar-header-gap);

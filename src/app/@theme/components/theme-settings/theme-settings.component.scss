@@ -1,0 +1,22 @@
+@import '../../styles/variables';
+
+@include nga-install-component() {
+  .settings-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 0.5rem;
+    flex-wrap: wrap;
+
+    a {
+      font-size: 2rem;
+      margin-right: 1rem;
+      color: nga-theme(color-white);
+
+      &.selected {
+        color: nga-theme(color-success);
+      }
+    }
+  }
+}
+

@@ -61,6 +61,7 @@ export class ElectricityService {
   constructor() {
   }
 
+  // TODO: observables
   getData() {
     return this.data;
   }

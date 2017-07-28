@@ -5,7 +5,16 @@
   justify-content: space-between;
   width: 100%;
 
-  .left-container {
+  .left {
+    order: 0;
+    flex-direction: row;
+  }
+  .right {
+    order: 1;
+    flex-direction: row-reverse;
+  }
+
+  .header-container {
     display: flex;
     align-items: center;
 

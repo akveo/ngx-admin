@@ -15,12 +15,23 @@ import {
   NgaUserModule,
 } from '@akveo/nga-theme';
 
-import { FooterComponent, HeaderComponent, SearchInputComponent, TinyMCEComponent } from './components';
+import {
+  FooterComponent,
+  HeaderComponent,
+  SearchInputComponent,
+  ThemeSettingsComponent,
+  TinyMCEComponent,
+} from './components';
 
 
 import { CapitalizePipe, PluralPipe, RoundPipe } from './pipes';
 
-import { OneColumnLayoutComponent } from './layouts';
+import {
+  OneColumnLayoutComponent,
+  SampleLayoutComponent,
+  ThreeColumnsLayoutComponent,
+  TwoColumnsLayoutComponent,
+} from './layouts';
 
 const BASE_MODULES = [
   CommonModule,
@@ -45,7 +56,11 @@ const COMPONENTS = [
   FooterComponent,
   SearchInputComponent,
   TinyMCEComponent,
+  ThemeSettingsComponent,
   OneColumnLayoutComponent,
+  TwoColumnsLayoutComponent,
+  ThreeColumnsLayoutComponent,
+  SampleLayoutComponent,
 ];
 
 const PIPES = [
@@ -56,8 +71,8 @@ const PIPES = [
 
 const NGA_THEME_PROVIDERS = [
   ...NgaThemeModule.forRoot({
-    name: 'cosmic',
-  },
+      name: 'cosmic',
+    },
     [
       {
         name: 'default',

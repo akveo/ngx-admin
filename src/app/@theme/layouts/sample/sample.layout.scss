@@ -2,6 +2,25 @@
 
 @include nga-install-root-component() {
 
+  nga-layout-column.small {
+    flex: 0.15 !important;
+  }
+
+  nga-sidebar.settings-sidebar {
+    width: 7rem;
+    /deep/ .main-container {
+      width: 7rem;
+      background: #3a3850;
+    }
+
+    &.collapsed {
+      width: 0;
+      /deep/ .main-container {
+        width: 0;
+      }
+    }
+  }
+
   nga-sidebar.menu-sidebar {
 
     margin-top: nga-theme(sidebar-header-gap);
