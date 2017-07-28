@@ -127,8 +127,7 @@ export class NgaLayoutFooterComponent {
 })
 export class NgaLayoutComponent implements OnDestroy, AfterViewInit {
 
-  // TODO: can we remove this?
-  @HostBinding('class.center') centerValue: boolean = false;
+  centerValue: boolean = false;
 
   @Input()
   set center(val: boolean) {

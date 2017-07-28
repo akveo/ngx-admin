@@ -74,7 +74,7 @@
 
         &.center {
           width: nga-theme(layout-content-width);
-          flex: 0 1 nga-theme(layout-content-width);
+          flex: 0 1 nga-theme(layout-content-width) !important;
         }
 
         .columns {
