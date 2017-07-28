@@ -135,6 +135,9 @@ $theme: (
   layout-min-height: 100vh,
   layout-padding: 2.25rem 2.25rem 0.75rem,
   layout-content-width: 900px,
+  layout-window-mode-max-width: 1920px,
+  layout-window-mode-bg: linear-gradient(to right, #171749, #413789),
+  layout-window-mode-padding-top: 40px,
 
   sidebar-font-size: font-size,
   sidebar-line-height: line-height,

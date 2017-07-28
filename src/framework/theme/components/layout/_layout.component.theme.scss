@@ -5,6 +5,55 @@
  */
 
 @mixin nga-layout-theme() {
+
+  @include nga-scrollbars(
+      nga-theme(scrollbar-fg),
+      nga-theme(scrollbar-bg),
+      nga-theme(scrollbar-width));
+
+  &.window-mode {
+    background: nga-theme(layout-window-mode-bg);
+    display: block;
+
+    .scrollable-container {
+      max-width: nga-theme(layout-window-mode-max-width);
+      margin: 0 auto;
+    }
+
+    .layout nga-layout-header nav {
+      max-width: nga-theme(layout-window-mode-max-width);
+      margin: 0 auto;
+    }
+
+    @media screen and (min-width: nga-theme(layout-window-mode-max-width)) {
+      padding-top: nga-theme(layout-window-mode-padding-top);
+
+      nga-sidebar.fixed {
+        left: calc((100vw - #{nga-theme(layout-window-mode-max-width)}) / 2);
+      }
+
+      .layout .layout-container {
+        nga-sidebar.fixed.right {
+          right: calc((100vw - #{nga-theme(layout-window-mode-max-width)}) / 2);
+        }
+
+        nga-sidebar.fixed {
+          top: calc(#{nga-theme(header-height)} + #{nga-theme(layout-window-mode-padding-top)});
+        }
+      }
+
+      .scrollable-container {
+        height: calc(100vh - #{nga-theme(layout-window-mode-padding-top)});
+      }
+    }
+  }
+
+  .scrollable-container {
+    overflow: auto;
+    height: 100vh;
+    display: block;
+  }
+
   .layout {
     // TODO: probably we need to separate this form here and move it to the typography scss module
     font-family: nga-theme(layout-font-family);
@@ -19,8 +68,8 @@
       font-size: nga-theme(header-font-size);
       line-height: nga-theme(header-line-height);
 
-      box-shadow: nga-theme(header-shadow);
       nav {
+        box-shadow: nga-theme(header-shadow);
         height: nga-theme(header-height);
         padding: nga-theme(header-padding);
         background: nga-theme(header-bg);

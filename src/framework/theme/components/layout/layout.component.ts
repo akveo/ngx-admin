@@ -109,18 +109,20 @@ export class NgaLayoutFooterComponent {
   styleUrls: ['./layout.component.scss'],
   template: `
     <ng-template #layoutTopDynamicArea></ng-template>
-    <div class="layout">
-      <ng-content select="nga-layout-header"></ng-content>
-      <div class="layout-container">
-        <ng-content select="nga-sidebar"></ng-content>
-        <ng-content select="nga-sidebar[left]"></ng-content>
-        <div class="content" [class.center]="centerValue">
-          <div class="columns">
-            <ng-content select="nga-layout-column"></ng-content>
+    <div class="scrollable-container">
+      <div class="layout">
+        <ng-content select="nga-layout-header"></ng-content>
+        <div class="layout-container">
+          <ng-content select="nga-sidebar"></ng-content>
+          <ng-content select="nga-sidebar[left]"></ng-content>
+          <div class="content" [class.center]="centerValue">
+            <div class="columns">
+              <ng-content select="nga-layout-column"></ng-content>
+            </div>
+            <ng-content select="nga-layout-footer"></ng-content>
           </div>
-          <ng-content select="nga-layout-footer"></ng-content>
+          <ng-content select="nga-sidebar[right]"></ng-content>
         </div>
-        <ng-content select="nga-sidebar[right]"></ng-content>
       </div>
     </div>
   `,
@@ -128,10 +130,16 @@ export class NgaLayoutFooterComponent {
 export class NgaLayoutComponent implements OnDestroy, AfterViewInit {
 
   centerValue: boolean = false;
+  @HostBinding('class.window-mode') windowModeValue: boolean = false;
 
   @Input()
   set center(val: boolean) {
     this.centerValue = convertToBoolProperty(val);
+  }
+
+  @Input()
+  set windowMode(val: boolean) {
+    this.windowModeValue = convertToBoolProperty(val);
   }
 
   @ViewChild('layoutTopDynamicArea', { read: ViewContainerRef }) veryTopRef: ViewContainerRef;

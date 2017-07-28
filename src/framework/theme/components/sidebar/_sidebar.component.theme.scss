@@ -18,7 +18,6 @@
 
 
     .main-container {
-      position: fixed;
       height: nga-theme(sidebar-height);
       width: nga-theme(sidebar-width);
       background: nga-theme(sidebar-bg);
@@ -33,10 +32,15 @@
     background: nga-theme(sidebar-bg);
     color: nga-theme(sidebar-fg);
 
+    // TODO: width used to use transition on width
     &.collapsed {
       width: 0;
       padding: 0;
       .main-container {
+        width: 0;
+        padding: 0;
+      }
+      .scrollable {
         width: 0;
         padding: 0;
       }
