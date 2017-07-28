@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NgaThemeService } from '@akveo/nga-theme';
 
 @Component({
   selector: 'ngx-chartjs-multiple-xaxis',
@@ -21,39 +22,6 @@ import { Component } from '@angular/core';
 export class ChartjsMultipleXaxisComponent {
   chartType: string = 'line';
   chartLabels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
-  chartOptions: {
-    responsive: true;
-    legend: {
-      position: 'bottom';
-    };
-    hover: {
-      mode: 'index';
-    };
-    scales: {
-      xAxes: [
-        {
-          display: true;
-          scaleLabel: {
-            display: true;
-            labelString: 'Month';
-          };
-        }
-      ];
-      yAxes: [
-        {
-          display: true;
-          scaleLabel: {
-            display: true;
-            labelString: 'Value';
-          };
-        }
-      ];
-    };
-    title: {
-      display: true;
-      text: 'Chart.js Line Chart - Different point sizes';
-    };
-  };
   chartLegend: boolean = true;
   chartData: any[] = [
     {
@@ -124,6 +92,58 @@ export class ChartjsMultipleXaxisComponent {
       pointHitRadius: 20,
     },
   ];
+  chartOptions: any;
+
+  constructor(private theme: NgaThemeService) {
+    this.theme.getJsTheme().subscribe(config => {
+      this.chartOptions = {
+        responsive: true,
+        legend: {
+          position: 'bottom',
+          labels: {
+            fontColor: config.chartjsLineLegendTextColor,
+          },
+        },
+        hover: {
+          mode: 'index',
+        },
+        scales: {
+          xAxes: [
+            {
+              display: true,
+              scaleLabel: {
+                display: true,
+                labelString: 'Month',
+              },
+              gridLines: {
+                display: true,
+                color: config.chartjsLineXAxisColor,
+              },
+              ticks: {
+                fontColor: config.chartjsLineTickColor,
+              },
+            },
+          ],
+          yAxes: [
+            {
+              display: true,
+              scaleLabel: {
+                display: true,
+                labelString: 'Value',
+              },
+              gridLines: {
+                display: true,
+                color: config.chartjsLineXAxisColor,
+              },
+              ticks: {
+                fontColor: config.chartjsLineTickColor,
+              },
+            },
+          ],
+        },
+      };
+    });
+  }
 
   private randomScalingFactor() {
     return Math.round(Math.random() * 100);

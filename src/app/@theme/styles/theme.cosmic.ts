@@ -85,5 +85,39 @@ export const COSMIC_THEME = {
     echartsRadarLegendTextColor: 'white',
     echartsRadarNameTextColor: 'white',
     echartsRadarSplitAreaStyleColor: 'transparent',
+
+    chartjsPieXAxisColor: 'rgba(148,159,177,1)',
+    chartjsPieYAxisColor: 'rgba(148,159,177,1)',
+    chartjsPieTickColor: 'white',
+    chartjsPieLegendTextColor: 'white',
+
+    chartjsBarXAxisColor: 'rgba(148,159,177,1)',
+    chartjsBarYAxisColor: 'rgba(148,159,177,1)',
+    chartjsBarTickColor: 'white',
+    chartjsBarLegendTextColor: 'white',
+
+    chartjsLineXAxisColor: 'rgba(148,159,177,1)',
+    chartjsLineYAxisColor: 'rgba(148,159,177,1)',
+    chartjsLineTickColor: 'white',
+    chartjsLineLegendTextColor: 'white',
+
+    chartjsMultipleXAxisXAxisColor: 'rgba(148,159,177,1)',
+    chartjsMultipleXAxisYAxisColor: 'rgba(148,159,177,1)',
+    chartjsMultipleXAxisTickColor: 'white',
+    chartjsMultipleXAxisLegendTextColor: 'white',
+
+    chartjsBarHorizontalColor1: 'red',
+    chartjsBarHorizontalColor2: 'blue',
+    chartjsBarHorizontalXAxisColor: 'rgba(148,159,177,1)',
+    chartjsBarHorizontalYAxisColor: 'rgba(148,159,177,1)',
+    chartjsBarHorizontalTickColor: 'white',
+    chartjsBarHorizontalLegendTextColor: 'white',
+
+    chartjsRadarColor1: 'red',
+    chartjsRadarColor2: 'blue',
+    chartjsRadarLegendTextColor: 'white',
+    chartjsRadarScaleGridLinesColor: 'white',
+    chartjsRadarScaleAngleLinesColor: 'white',
+    chartjsRadarPointLabelFontColor: 'white',
   },
 };

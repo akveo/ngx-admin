@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NgaThemeService } from '@akveo/nga-theme';
 
 @Component({
   selector: 'ngx-chartjs-line',
@@ -24,40 +25,45 @@ export class ChartjsLineComponent {
     { data: [28, 48, 40, 19, 86, 27, 90], label: 'Series B' },
     { data: [18, 48, 77, 9, 100, 27, 40], label: 'Series C' },
   ];
-
   chartLabels: any[] = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
-  chartOptions: any = {
-    responsive: true,
-    scales: {
-      xAxes: [
-        {
-          gridLines: {
-            display: true,
-            color: 'rgba(148,159,177,1)',
-          },
-          ticks: {
-            fontColor: 'white',
-          },
-        },
-      ],
-      yAxes: [
-        {
-          gridLines: {
-            display: true,
-            color: 'rgba(148,159,177,1)',
-          },
-          ticks: {
-            fontColor: 'white',
-          },
-        },
-      ],
-    },
-    legend: {
-      labels: {
-        fontColor: 'white',
-      },
-    },
-  };
   chartLegend: boolean = true;
   chatyType: string = 'line';
+  chartOptions: any;
+
+  constructor(private theme: NgaThemeService) {
+    this.theme.getJsTheme().subscribe(config => {
+      this.chartOptions = {
+        responsive: true,
+        scales: {
+          xAxes: [
+            {
+              gridLines: {
+                display: true,
+                color: config.chartjsLineXAxisColor,
+              },
+              ticks: {
+                fontColor: config.chartjsLineTickColor,
+              },
+            },
+          ],
+          yAxes: [
+            {
+              gridLines: {
+                display: true,
+                color: config.chartjsLineYAxisColor,
+              },
+              ticks: {
+                fontColor: config.chartjsLineTickColor,
+              },
+            },
+          ],
+        },
+        legend: {
+          labels: {
+            fontColor: config.chartjsLineLegendTextColor,
+          },
+        },
+      };
+    });
+  }
 }

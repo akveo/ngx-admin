@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NgaThemeService } from '@akveo/nga-theme';
 
 @Component({
   selector: 'ngx-chartjs-bar-horizontal',
@@ -19,57 +20,88 @@ import { Component } from '@angular/core';
   `,
 })
 export class ChartjsBarHorizontalComponent {
-  chartData = [
-    {
-      label: 'Dataset 1',
-      backgroundColor: 'red',
-      borderColor: 'red',
-      borderWidth: 1,
-      data: [
-        this.randomScalingFactor(),
-        this.randomScalingFactor(),
-        this.randomScalingFactor(),
-        this.randomScalingFactor(),
-        this.randomScalingFactor(),
-        this.randomScalingFactor(),
-        this.randomScalingFactor(),
-      ],
-    },
-    {
-      label: 'Dataset 2',
-      backgroundColor: 'blue',
-      borderColor: 'blue',
-      data: [
-        this.randomScalingFactor(),
-        this.randomScalingFactor(),
-        this.randomScalingFactor(),
-        this.randomScalingFactor(),
-        this.randomScalingFactor(),
-        this.randomScalingFactor(),
-        this.randomScalingFactor(),
-      ],
-    },
-  ];
+  chartData: any[];
   chartLabels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
-  chartOptions = {
-    // Elements options apply to all of the options unless overridden in a dataset
-    // In this case, we are setting the border of each horizontal bar to be 2px wide
-    elements: {
-      rectangle: {
-        borderWidth: 2,
-      },
-    },
-    responsive: true,
-    legend: {
-      position: 'right',
-    },
-    title: {
-      display: true,
-      text: 'Chart.js Horizontal Bar Chart',
-    },
-  };
   chartLegend: boolean = true;
   chartType: string = 'horizontalBar';
+  chartOptions: any;
+
+  constructor(private theme: NgaThemeService) {
+    this.theme.getJsTheme().subscribe(config => {
+      this.chartData = [
+        {
+          label: 'Dataset 1',
+          backgroundColor: config.chartjsBarHorizontalColor1,
+          borderColor: config.chartjsBarHorizontalColor1,
+          borderWidth: 1,
+          data: [
+            this.randomScalingFactor(),
+            this.randomScalingFactor(),
+            this.randomScalingFactor(),
+            this.randomScalingFactor(),
+            this.randomScalingFactor(),
+            this.randomScalingFactor(),
+            this.randomScalingFactor(),
+          ],
+        },
+        {
+          label: 'Dataset 2',
+          backgroundColor: config.chartjsBarHorizontalColor2,
+          borderColor: config.chartjsBarHorizontalColor2,
+          data: [
+            this.randomScalingFactor(),
+            this.randomScalingFactor(),
+            this.randomScalingFactor(),
+            this.randomScalingFactor(),
+            this.randomScalingFactor(),
+            this.randomScalingFactor(),
+            this.randomScalingFactor(),
+          ],
+        },
+      ];
+
+      this.chartOptions = {
+        // Elements options apply to all of the options unless overridden in a dataset
+        // In this case, we are setting the border of each horizontal bar to be 2px wide
+        elements: {
+          rectangle: {
+            borderWidth: 2,
+          },
+        },
+        responsive: true,
+        scales: {
+          xAxes: [
+            {
+              gridLines: {
+                display: true,
+                color: config.chartjsBarHorizontalXAxisColor,
+              },
+              ticks: {
+                fontColor: config.chartjsBarHorizontalTickColor,
+              },
+            },
+          ],
+          yAxes: [
+            {
+              gridLines: {
+                display: true,
+                color: config.chartjsBarHorizontalYAxisColor,
+              },
+              ticks: {
+                fontColor: config.chartjsBarHorizontalTickColor,
+              },
+            },
+          ],
+        },
+        legend: {
+          position: 'right',
+          labels: {
+            fontColor: config.chartjsBarHorizontalLegendTextColor,
+          },
+        },
+      };
+    });
+  }
 
   private randomScalingFactor() {
     return Math.round(Math.random() * 100);

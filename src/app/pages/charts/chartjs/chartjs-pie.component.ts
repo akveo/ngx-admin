@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NgaThemeService } from '@akveo/nga-theme';
 
 @Component({
   selector: 'ngx-chartjs-pie',
@@ -10,7 +11,7 @@ import { Component } from '@angular/core';
     `,
   ],
   template: `
-    <canvas baseChart width="400" height="400"
+    <canvas baseChart
             [data]="chartData"
             [labels]="chartLabels"
             [options]="chartOptions"
@@ -21,36 +22,48 @@ export class ChartjsPieComponent {
   chartType: string = 'pie';
   chartLabels: string[] = ['Download Sales', 'In-Store Sales', 'Mail Sales'];
   chartData: number[] = [300, 500, 100];
-  chartOptions: any = {
-    responsive: true,
-    scales: {
-      xAxes: [
-        {
-          gridLines: {
-            display: true,
-            color: 'rgba(148,159,177,1)',
-          },
-          ticks: {
-            fontColor: 'white',
-          },
-        },
-      ],
-      yAxes: [
-        {
-          gridLines: {
-            display: true,
-            color: 'rgba(148,159,177,1)',
-          },
-          ticks: {
-            fontColor: 'white',
+  chartOptions: any;
+
+  constructor(private theme: NgaThemeService) {
+    this.theme.getJsTheme().subscribe(config => {
+      this.chartOptions = {
+        responsive: true,
+        scale: {
+          pointLabels: {
+            fontSize: 14,
+            fontColor: config.chartjsRadarPointLabelFontColor,
           },
         },
-      ],
-    },
-    legend: {
-      labels: {
-        fontColor: 'white',
-      },
-    },
-  };
+        scales: {
+          xAxes: [
+            {
+              gridLines: {
+                display: true,
+                color: config.chartjsPieXAxisColor,
+              },
+              ticks: {
+                fontColor: config.chartjsPitTickColor,
+              },
+            },
+          ],
+          yAxes: [
+            {
+              gridLines: {
+                display: true,
+                color: config.chartjsPieYAxisColor,
+              },
+              ticks: {
+                fontColor: config.chartjsPieTickColor,
+              },
+            },
+          ],
+        },
+        legend: {
+          labels: {
+            fontColor: config.chartjsPieLegendTextColor,
+          },
+        },
+      };
+    });
+  }
 }
