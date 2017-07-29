@@ -152,7 +152,7 @@
 
         .page-item.disabled .page-link, .page-item.disabled .page-link:focus, .page-item.disabled .page-link:hover {
           background-color: nga-theme(smart-table-paging-hover);
-          color: nga-theme(btn-text-color);
+          color: nga-theme(btn-outline-fg);
         }
       }
 
@@ -170,13 +170,13 @@
 
           a, > span {
             background: transparent;
-            color: nga-theme(btn-text-color);
+            color: nga-theme(btn-outline-fg);
             padding: nga-theme(btn-padding-y-md) nga-theme(btn-padding-x-md);
             border: none;
 
             &:hover {
               background-color: nga-theme(smart-table-paging-hover);
-              color: nga-theme(btn-text-color);
+              color: nga-theme(btn-outline-fg);
               text-decoration: none;
             }
           }

@@ -24,7 +24,7 @@ $theme: (
   color-primary: #7659ff,
   color-success: #00d977,
   color-info: #0088ff,
-  color-warning: #e6b045,
+  color-warning: #ff874c,
   color-danger: #ff386a,
 
   separator: #342e73,
@@ -64,6 +64,11 @@ $theme: (
   menu-group-fg: color-white,
   menu-submenu-bg: layout-bg,
   menu-submenu-fg: color-fg,
+
+  btn-hero-shadow: 0 4px 10px 0 rgba(33, 7, 77, 0.5),
+  btn-hero-text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3),
+  btn-hero-bevel-size: 0 3px 0 0,
+  btn-hero-glow-size: 0 2px 8px 0,
 );
 
 // register the theme

@@ -34,6 +34,7 @@
 
 @mixin btn-outline-primary() {
   @include btn-outline-primary-border();
+  @include btn-outline-fg();
   @include btn-outline-bg();
   @include btn-outline-primary-focus();
   @include btn-outline-primary-hover();
@@ -42,6 +43,7 @@
 
 @mixin btn-outline-warning() {
   @include btn-outline-warning-border();
+  @include btn-outline-fg();
   @include btn-outline-bg();
   @include btn-outline-warning-focus();
   @include btn-outline-warning-hover();
@@ -50,6 +52,7 @@
 
 @mixin btn-outline-success() {
   @include btn-outline-success-border();
+  @include btn-outline-fg();
   @include btn-outline-bg();
   @include btn-outline-success-focus();
   @include btn-outline-success-hover();
@@ -58,6 +61,7 @@
 
 @mixin btn-outline-info() {
   @include btn-outline-info-border();
+  @include btn-outline-fg();
   @include btn-outline-bg();
   @include btn-outline-info-focus();
   @include btn-outline-info-hover();
@@ -66,6 +70,7 @@
 
 @mixin btn-outline-danger() {
   @include btn-outline-danger-border();
+  @include btn-outline-fg();
   @include btn-outline-bg();
   @include btn-outline-danger-focus();
   @include btn-outline-danger-hover();
@@ -74,6 +79,7 @@
 
 @mixin btn-outline-secondary() {
   @include btn-outline-secondary-border();
+  @include btn-outline-fg();
   @include btn-outline-bg();
   @include btn-outline-secondary-focus();
   @include btn-outline-secondary-hover();
@@ -82,6 +88,10 @@
 
 @mixin btn-outline-border($color) {
   border: 2px solid $color;
+}
+
+@mixin btn-outline-fg() {
+  color: nga-theme(btn-outline-fg);
 }
 
 @mixin btn-outline-bg() {

@@ -91,6 +91,7 @@
 }
 
 @mixin btn-hero-secondary() {
+  color: nga-theme(btn-outline-fg);
   @include btn-hero-secondary-bg();
   @include btn-hero-secondary-bevel-glow-shadow();
   @include btn-hero-text();
@@ -107,15 +108,11 @@
 
 // Functions for box-shadow
 @function btn-hero-bevel($color) {
-  @return 0 3px 0 0 shade($color, 14%);
+  @return nga-theme(btn-hero-bevel-size) shade($color, 14%);
 }
 
 @function btn-hero-glow($color) {
-  @return 0 2px 8px 0 $color;
-}
-
-@function btn-hero-shadow() {
-  @return 0 4px 10px 0 nga-theme(btn-hero-shadow);
+  @return nga-theme(btn-hero-glow-size) $color;
 }
 
 // Left colors
@@ -128,11 +125,11 @@
 }
 
 @function btn-hero-warning-left-color() {
-  @return btn-hero-gradient-left(nga-theme(btn-warning-bg));
+  @return btn-hero-gradient-left(nga-theme(btn-warning-bg), 10deg);
 }
 
 @function btn-hero-info-left-color() {
-  @return btn-hero-gradient-left(nga-theme(btn-info-bg), -20deg);
+  @return btn-hero-gradient-left(nga-theme(btn-info-bg), -10deg);
 }
 
 @function btn-hero-danger-left-color() {
@@ -259,7 +256,7 @@
 
 // Help mixins
 @mixin btn-hero-text() {
-  text-shadow: 0 1px 3px nga-theme(btn-hero-text-shadow);
+  text-shadow: nga-theme(btn-hero-text-shadow);
 }
 
 @mixin btn-hero-hover($light-gradient) {
@@ -383,52 +380,60 @@
 
 
 // Bevel-glow-shadow
+@mixin btn-hero-bevel-glow-shadow($bevel, $glow, $shadow) {
+  $box-shadow: $bevel, $glow;
+  @if ($shadow != 'none') {
+    $box-shadow: $box-shadow, $shadow;
+  }
+  box-shadow: $box-shadow;
+}
+
 @mixin btn-hero-primary-bevel-glow-shadow() {
   $bevel: btn-hero-primary-bevel();
   $glow: btn-hero-primary-glow();
-  $shadow: btn-hero-shadow();
+  $shadow: nga-theme(btn-hero-shadow);
 
-  box-shadow: $bevel, $glow, $shadow;
+  @include btn-hero-bevel-glow-shadow($bevel, $glow, $shadow);
 }
 
 @mixin btn-hero-success-bevel-glow-shadow() {
   $bevel: btn-hero-success-bevel();
   $glow: btn-hero-success-glow();
-  $shadow: btn-hero-shadow();
+  $shadow: nga-theme(btn-hero-shadow);
 
-  box-shadow: $bevel, $glow, $shadow;
+  @include btn-hero-bevel-glow-shadow($bevel, $glow, $shadow);
 }
 
 @mixin btn-hero-warning-bevel-glow-shadow() {
   $bevel: btn-hero-warning-bevel();
   $glow: btn-hero-warning-glow();
-  $shadow: btn-hero-shadow();
+  $shadow: nga-theme(btn-hero-shadow);
 
-  box-shadow: $bevel, $glow, $shadow;
+  @include btn-hero-bevel-glow-shadow($bevel, $glow, $shadow);
 }
 
 @mixin btn-hero-info-bevel-glow-shadow() {
   $bevel: btn-hero-info-bevel();
   $glow: btn-hero-info-glow();
-  $shadow: btn-hero-shadow();
+  $shadow: nga-theme(btn-hero-shadow);
 
-  box-shadow: $bevel, $glow, $shadow;
+  @include btn-hero-bevel-glow-shadow($bevel, $glow, $shadow);
 }
 
 @mixin btn-hero-danger-bevel-glow-shadow() {
   $bevel: btn-hero-danger-bevel();
   $glow: btn-hero-danger-glow();
-  $shadow: btn-hero-shadow();
+  $shadow: nga-theme(btn-hero-shadow);
 
-  box-shadow: $bevel, $glow, $shadow;
+  @include btn-hero-bevel-glow-shadow($bevel, $glow, $shadow);
 }
 
 @mixin btn-hero-secondary-bevel-glow-shadow() {
   $bevel: btn-hero-secondary-bevel();
   $glow: btn-hero-secondary-glow();
-  $shadow: btn-hero-shadow();
+  $shadow: nga-theme(btn-hero-shadow);
 
-  box-shadow: $bevel, $glow, $shadow;
+  @include btn-hero-bevel-glow-shadow($bevel, $glow, $shadow);
 }
 
 

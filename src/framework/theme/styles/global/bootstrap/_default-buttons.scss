@@ -78,6 +78,7 @@
 
 @mixin btn-secondary() {
   @include btn-secondary-border();
+  @include btn-secondary-fg();
   @include btn-secondary-bg();
   @include btn-secondary-focus();
   @include btn-secondary-hover();
@@ -207,6 +208,10 @@
 
 @mixin btn-secondary-border() {
   border: 2px solid nga-theme(btn-secondary-border);
+}
+
+@mixin btn-secondary-fg() {
+  color: nga-theme(btn-outline-fg);
 }
 
 @mixin btn-secondary-bg() {

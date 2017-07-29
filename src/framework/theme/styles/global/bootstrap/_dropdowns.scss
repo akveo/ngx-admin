@@ -265,7 +265,7 @@
       border-bottom-right-radius: nga-theme(btn-border-radius);
       border: none;
       width: 100%;
-      color: nga-theme(btn-text-color);
+      color: nga-theme(btn-fg);
       padding: 0.75rem 0;
       min-width: 100px;
     }
@@ -297,10 +297,12 @@
 
   .dropdown.ghost-dropdown {
     .dropdown-toggle {
+      color: nga-theme(btn-outline-fg);
       background-color: nga-theme(color-bg);
     }
 
     .dropdown-menu {
+      color: nga-theme(btn-outline-fg);
       background-color: nga-theme(color-bg);
     }
 

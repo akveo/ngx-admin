@@ -13,7 +13,7 @@
 @mixin nga-b-buttons-theme() {
 
   .btn {
-    color: nga-theme(btn-text-color);
+    color: nga-theme(btn-fg);
     text-transform: uppercase;
     letter-spacing: 0.4px;
     font-weight: nga-theme(font-weight-bolder);
