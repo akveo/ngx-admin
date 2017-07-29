@@ -28,8 +28,18 @@ import { NgaThemeService } from '../../services/theme.service';
 import { NgaSpinnerService } from '../../services/spinner.service';
 
 /**
- * Component intended to be used within  the `<nga-layout>` component.
- * It adds styles for a preset column section.
+ * A container component which determines a content position inside of the layout.
+ * The layout could contain unlimited columns (not including the sidebars).
+ *
+ * By default the columns are ordered from the left to the right, by it's also possible to overwrite this behavior
+ * by setting a `left` attribute to the column, moving it to the very first position:
+ * ```
+ * <nga-layout>
+ *   <nga-layout-column>Second</nga-layout-column>
+ *   <nga-layout-column>Third</nga-layout-column>
+ *   <nga-layout-column left>First</nga-layout-column>
+ * </nga-layout>
+ * ```
  */
 @Component({
   selector: 'nga-layout-column',
@@ -41,6 +51,10 @@ export class NgaLayoutColumnComponent {
 
   @HostBinding('class.left') leftValue: boolean;
 
+  /**
+   * Move the column to the very left position in the layout.
+   * @param {boolean} val
+   */
   @Input()
   set left(val: boolean) {
     this.leftValue = convertToBoolProperty(val);
@@ -48,8 +62,10 @@ export class NgaLayoutColumnComponent {
 }
 
 /**
- * Component intended to be used within  the `<nga-layout>` component.
- * It adds styles for a preset header section.
+ * Page header component.
+ * Located on top of the page above the layout columns and sidebars.
+ * Could be made `fixed` by setting the corresponding property. In the fixed mode the header becomes
+ * sticky to the top of the nga-layout (to of the page).
  */
 @Component({
   selector: 'nga-layout-header',
@@ -63,16 +79,20 @@ export class NgaLayoutHeaderComponent {
 
   @HostBinding('class.fixed') fixedValue: boolean;
 
+  /**
+   * Makes the header sticky to the top of the nga-layout.
+   * @param {boolean} val
+   */
   @Input()
   set fixed(val: boolean) {
     this.fixedValue = convertToBoolProperty(val);
   }
-
 }
 
 /**
- * Component intended to be used within  the `<nga-layout>` component.
- * It adds styles for a preset footer section.
+ * Page footer.
+ * Located under the nga-layout content (specifically, under the columns).
+ * Could be made `fixed`, becoming sticky to the bottom of the view port (window).
  */
 @Component({
   selector: 'nga-layout-footer',
@@ -86,6 +106,10 @@ export class NgaLayoutFooterComponent {
 
   @HostBinding('class.fixed') fixedValue: boolean;
 
+  /**
+   * Makes the footer sticky to the bottom of the window.
+   * @param {boolean} val
+   */
   @Input()
   set fixed(val: boolean) {
     this.fixedValue = convertToBoolProperty(val);
@@ -94,15 +118,65 @@ export class NgaLayoutFooterComponent {
 }
 
 /**
- * A basic content container component
+ * The general Nebular component-container.
+ * It is required that all children component of the framework are located inside of the nga-layout.
+ * The theme styles and multi-theming are also applied starting from this component.
  *
- * While this component can be used alone, it also provides a number
- * of child components for common layout sections, including:
- * - nga-sidebar
- * - nga-layout-column
- * - nga-layout-content
- * - nga-layout-header
- * - nga-layout-footer
+ * Can contain the following components inside:
+ * ```
+ * nga-layout-header
+ * nga-layout-column
+ * nga-sidebar
+ * nga-layout-footer
+ * ```
+ * By default the layout fills up the full view-port.
+ * The window scrollbars are disabled on the body and moved inside of the nga-layout, so that the scrollbars
+ * won't mess with the fixed nga-header.
+ *
+ * A simple layout example:
+ * ```
+ * <nga-layout>
+ *   <nga-layout-header>Great Company</nga-layout-header>
+ *
+ *   <nga-layout-column>
+ *     Hello World!
+ *   </nga-layout-column>
+ *
+ *   <nga-layout-footer>Contact us</nga-layout-footer>
+ * </nga-layout>
+ * ```
+ *
+ * The children components are project into the flexible layout structure allowing to adjust the layout behavior
+ * based on the settings provided.
+ *
+ * For example, it is possible to ask the layout to center the columns (notice: we added a `center` attribute
+ * to the layout:
+ * ```
+ * <nga-layout center>
+ *   <nga-layout-header>Great Company</nga-layout-header>
+ *
+ *   <nga-layout-column>
+ *     Hello World!
+ *   </nga-layout-column>
+ *
+ *   <nga-layout-footer>Contact us</nga-layout-footer>
+ * </nga-layout>
+ * ```
+ * Now the layout content (columns) becomes centered when the window width is more than
+ * the value specified in the theme variable `layout-content-width` (900px by default).
+ *
+ * The layout also contains the area on the very top (the first child of the nga-layout), which could be used
+ * to dymanically append some components like modals or spinners/loaders
+ * so that they are located on top of the elements hierarchy.
+ * More details are below under the `ThemeService` section.
+ *
+ * The layout component is also responsible for changing of the application themes.
+ * It listens to the `themeChange` event and change the theme CSS class appended to it.
+ * Based on the class appended a specific CSS-theme is applied to the application.
+ * More details of the theming topic could be found here TODO: link.
+ *
+ * TODO: theme variables
+ *
  */
 @Component({
   selector: 'nga-layout',
@@ -130,11 +204,20 @@ export class NgaLayoutComponent implements OnDestroy, AfterViewInit {
   centerValue: boolean = false;
   @HostBinding('class.window-mode') windowModeValue: boolean = false;
 
+  /**
+   * Defines whether the layout columns will be centered after some width
+   * @param {boolean} val
+   */
   @Input()
   set center(val: boolean) {
     this.centerValue = convertToBoolProperty(val);
   }
 
+  /**
+   * Defines whether the layout enters a 'window' mode, when the layout content (including sidebars and fixed header)
+   * becomes centered by width with a margin from the top of the screen, like a floating window.
+   * @param {boolean} val
+   */
   @Input()
   set windowMode(val: boolean) {
     this.windowModeValue = convertToBoolProperty(val);
