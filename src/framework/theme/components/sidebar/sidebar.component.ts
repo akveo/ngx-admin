@@ -29,20 +29,6 @@ export class NgaSidebarHeaderComponent {
 }
 
 /**
- * Sidebar content container.
- *
- * Placeholder which contains a sidebar main content.
- */
-@Component({
-  selector: 'nga-sidebar-content',
-  template: `
-    <ng-content></ng-content>
-  `,
-})
-export class NgaSidebarContentComponent {
-}
-
-/**
  * Sidebar footer container.
  *
  * Placeholder which contains a sidebar footer content,
@@ -58,31 +44,22 @@ export class NgaSidebarFooterComponent {
 }
 
 /**
- * Main sidebar component.
+ * Layout sidebar component.
  *
- * Sidebar can be place on the left or right side of the layout, can be fixed (shown above the content)
+ * Sidebar can be place on the the left or the right side of the layout, can be fixed (shown above the content)
  * or can push the layout when opened.
  *
- * @styles Available component styles
+ * There are three states - `expanded`, `collapsed`, `compacted`.
+ * By default sidebar content is fixed and saves its position while the page is being scrolled.
  *
- * $nga-sidebar-foreground: $nga-foreground-inverse !default;
- * $nga-sidebar-background: $nga-background-inverse !default;
- * $nga-sidebar-height: 100vh !default;
- * $nga-sidebar-width: 12rem !default;
- * $nga-sidebar-width-compact: 4rem !default;
- * $nga-sidebar-padding: $nga-padding !default;
- * $nga-sidebar-header-height: 3.5rem !default;
- * $nga-sidebar-footer-height: 3.5rem !default;
- *
- * @example Min sidebar example
- *
+ * @example Minimal sidebar example
  * ```
- * <nga-sidebar><nga-sidebar-content>Sidebar content</nga-sidebar-content></nga-sidebar>
+ * <nga-sidebar>
+ *   Sidebar content.
+ * </nga-sidebar>
  * ```
  *
- * @example Fixed sidebar
- *
- * Example of fixed sidebar located on the left side, initially collapsed.
+ * @example Example of fixed sidebar located on the left side, initially collapsed.
  *
  * ```
  * <nga-sidebar left fixed state="collapsed">
@@ -95,6 +72,22 @@ export class NgaSidebarFooterComponent {
  *  </nga-sidebar-footer>
  * </nga-sidebar>
  * ```
+ * Sidebar also supports a `responsive` behavior, listening to window size change and changing its size respectably.
+ *
+ * @styles
+ *
+ * sidebar-font-size: Sidebar content font size
+ * sidebar-line-height: Sidebar content line height
+ * sidebar-fg: Foreground color
+ * sidebar-bg: Background color
+ * sidebar-height: Content height
+ * sidebar-width: Expanded width
+ * sidebar-width-compact: Compacted width
+ * sidebar-padding: Sidebar content padding
+ * sidebar-header-height: Sidebar header height
+ * sidebar-footer-height: Sidebar footer height
+ * sidebar-shadow: Sidebar container shadow
+ *
  */
 @Component({
   selector: 'nga-sidebar',

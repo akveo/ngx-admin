@@ -10,7 +10,6 @@ import { NgaSharedModule } from '../shared/shared.module';
 
 import {
   NgaSidebarComponent,
-  NgaSidebarContentComponent,
   NgaSidebarFooterComponent,
   NgaSidebarHeaderComponent,
 } from './sidebar.component';
@@ -19,7 +18,6 @@ import { NgaSidebarService } from './sidebar.service';
 
 const NGA_SIDEBAR_COMPONENTS = [
   NgaSidebarComponent,
-  NgaSidebarContentComponent,
   NgaSidebarFooterComponent,
   NgaSidebarHeaderComponent,
 ];

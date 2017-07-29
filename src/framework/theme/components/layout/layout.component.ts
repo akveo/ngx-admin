@@ -31,8 +31,9 @@ import { NgaSpinnerService } from '../../services/spinner.service';
  * A container component which determines a content position inside of the layout.
  * The layout could contain unlimited columns (not including the sidebars).
  *
- * By default the columns are ordered from the left to the right, by it's also possible to overwrite this behavior
- * by setting a `left` attribute to the column, moving it to the very first position:
+ * @example By default the columns are ordered from the left to the right,
+ * but it's also possible to overwrite this behavior by setting a `left` attribute to the column,
+ * moving it to the very first position:
  * ```
  * <nga-layout>
  *   <nga-layout-column>Second</nga-layout-column>
@@ -133,7 +134,7 @@ export class NgaLayoutFooterComponent {
  * The window scrollbars are disabled on the body and moved inside of the nga-layout, so that the scrollbars
  * won't mess with the fixed nga-header.
  *
- * A simple layout example:
+ * @example A simple layout example:
  * ```
  * <nga-layout>
  *   <nga-layout-header>Great Company</nga-layout-header>
@@ -149,7 +150,7 @@ export class NgaLayoutFooterComponent {
  * The children components are project into the flexible layout structure allowing to adjust the layout behavior
  * based on the settings provided.
  *
- * For example, it is possible to ask the layout to center the columns (notice: we added a `center` attribute
+ * @example For example, it is possible to ask the layout to center the columns (notice: we added a `center` attribute
  * to the layout:
  * ```
  * <nga-layout center>
