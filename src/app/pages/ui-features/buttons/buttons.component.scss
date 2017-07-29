@@ -7,13 +7,13 @@
     $button-border-radius: 12px;
 
     .container-title {
-      color: nga-theme(color-fg-hint);
+      color: nga-theme(color-fg);
       font-family: nga-theme(font-secondary);
       margin-bottom: 0.5rem;
     }
 
     .header {
-      color: white;
+      color: nga-theme(color-fg-header);
       font-size: 0.875rem;
       line-height: 1rem;
     }
@@ -22,7 +22,7 @@
       font-size: 0.75rem;
       line-height: 1rem;
       font-weight: 300;
-      color: nga-theme(color-fg-hint);
+      color: nga-theme(color-fg);
     }
 
     .btn-demo {

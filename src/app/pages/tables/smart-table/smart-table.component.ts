@@ -55,7 +55,7 @@ export class SmartTableComponent {
   source: LocalDataSource = new LocalDataSource();
 
   constructor(private service: SmartTableService) {
-    let data = this.service.getData();
+    const data = this.service.getData();
     this.source.load(data);
   }
 

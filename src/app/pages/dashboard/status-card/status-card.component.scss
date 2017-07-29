@@ -7,7 +7,6 @@
     align-items: center;
     height: 6rem;
     overflow: visible;
-    color: nga-theme(card-fg-heading);
 
     $bevel: btn-hero-bevel(nga-theme(card-bg));
     $shadow: btn-hero-shadow();
@@ -24,6 +23,7 @@
       font-size: 4em;
       border-radius: $border-radius 0 0 $border-radius;
       transition: all 0.1s ease-out, color 0s;
+      color: nga-theme(color-white);
 
       &.primary {
         @include btn-hero-primary-gradient();
@@ -89,6 +89,8 @@
       color: nga-theme(card-fg);
 
       .icon-container {
+        color: nga-theme(card-fg);
+
         &.primary, &.success, &.info, &.warning {
           box-shadow: none;
           background-image: linear-gradient(to right, transparent, transparent);
@@ -98,7 +100,7 @@
       .details {
         border-left: 1px solid nga-theme(separator);
       }
-      .status {
+      .title {
         color: nga-theme(card-fg);
       }
     }
@@ -111,16 +113,19 @@
       padding-left: 1.5rem;
       border-left: 1px solid transparent;
     }
+
     .title {
       font-family: nga-theme(font-secondary);
       font-size: 1.5rem;
       font-weight: nga-theme(font-weight-bolder);
+      color: nga-theme(card-fg-heading);
     }
+
     .status {
       font-size: 1.125rem;
       font-weight: nga-theme(font-weight-light);
       text-transform: uppercase;
-      color: nga-theme(card-fg-heading);
+      color: nga-theme(card-fg);
     }
   }
 }
