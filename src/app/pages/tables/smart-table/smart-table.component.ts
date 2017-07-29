@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { LocalDataSource } from 'ng2-smart-table';
 
-import { SmartTableService } from './smart-table.service';
+import { SmartTableService } from '../../../@core/data/smart-table.service';
 
 @Component({
   selector: 'ngx-smart-table',
@@ -9,11 +9,9 @@ import { SmartTableService } from './smart-table.service';
 })
 export class SmartTableComponent {
 
-  query: string = '';
-
   settings = {
     add: {
-      addButtonContent: '<i class="ion-ios-plus-outline"></i>',
+      addButtonContent: '<i class="ion-plus"></i>',
       createButtonContent: '<i class="ion-checkmark"></i>',
       cancelButtonContent: '<i class="ion-close"></i>',
     },
@@ -23,7 +21,7 @@ export class SmartTableComponent {
       cancelButtonContent: '<i class="ion-close"></i>',
     },
     delete: {
-      deleteButtonContent: '<i class="ion-trash-a"></i>',
+      deleteButtonContent: '<i class="ion-ios-trash-outline"></i>',
       confirmDelete: true,
     },
     columns: {
@@ -57,9 +55,8 @@ export class SmartTableComponent {
   source: LocalDataSource = new LocalDataSource();
 
   constructor(private service: SmartTableService) {
-    this.service.getData().then((data) => {
-      this.source.load(data);
-    });
+    let data = this.service.getData();
+    this.source.load(data);
   }
 
   onDeleteConfirm(event): void {
@@ -69,5 +66,4 @@ export class SmartTableComponent {
       event.confirm.reject();
     }
   }
-
 }
