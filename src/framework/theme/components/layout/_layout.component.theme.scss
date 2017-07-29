@@ -48,10 +48,12 @@
     }
   }
 
-  .scrollable-container {
-    overflow: auto;
-    height: 100vh;
-    display: block;
+  &.with-scroll {
+    .scrollable-container {
+      overflow: auto;
+      height: 100vh;
+      display: block;
+    }
   }
 
   .layout {

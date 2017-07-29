@@ -15,10 +15,6 @@
 @import '../../components/search/search.component.theme';
 @import '../../components/checkbox/checkbox.component.theme';
 
-// TODO: where is the best place for this?
-body {
-  overflow: hidden;
-}
 
 @mixin nga-theme-components() {
 
