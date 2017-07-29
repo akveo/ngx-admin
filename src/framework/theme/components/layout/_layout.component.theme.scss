@@ -25,7 +25,7 @@
       margin: 0 auto;
     }
 
-    @media screen and (min-width: nga-theme(layout-window-mode-max-width)) {
+    @media screen and (min-width: nga-theme(layout-window-mode-max-width) + 20px) {
       padding-top: nga-theme(layout-window-mode-padding-top);
 
       nga-sidebar.fixed {

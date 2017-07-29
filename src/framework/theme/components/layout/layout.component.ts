@@ -114,14 +114,12 @@ export class NgaLayoutFooterComponent {
         <ng-content select="nga-layout-header"></ng-content>
         <div class="layout-container">
           <ng-content select="nga-sidebar"></ng-content>
-          <ng-content select="nga-sidebar[left]"></ng-content>
           <div class="content" [class.center]="centerValue">
             <div class="columns">
               <ng-content select="nga-layout-column"></ng-content>
             </div>
             <ng-content select="nga-layout-footer"></ng-content>
           </div>
-          <ng-content select="nga-sidebar[right]"></ng-content>
         </div>
       </div>
     </div>

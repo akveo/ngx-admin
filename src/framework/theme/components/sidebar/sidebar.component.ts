@@ -124,7 +124,7 @@ export class NgaSidebarComponent implements OnInit, OnDestroy {
 
   @HostBinding('class.fixed') fixedValue: boolean = false;
   @HostBinding('class.right') rightValue: boolean = false;
-  @HostBinding('class.left') leftValue: boolean = false;
+  @HostBinding('class.left') leftValue: boolean = true;
 
   // TODO: rename stateValue to state (take a look to the card component)
   @HostBinding('class.expanded')
@@ -147,6 +147,7 @@ export class NgaSidebarComponent implements OnInit, OnDestroy {
   @Input()
   set right(val: boolean) {
     this.rightValue = convertToBoolProperty(val);
+    this.leftValue = !this.rightValue;
   }
 
   /**
@@ -156,6 +157,7 @@ export class NgaSidebarComponent implements OnInit, OnDestroy {
   @Input()
   set left(val: boolean) {
     this.leftValue = convertToBoolProperty(val);
+    this.rightValue = !this.leftValue;
   }
 
   /**
@@ -234,6 +236,8 @@ export class NgaSidebarComponent implements OnInit, OnDestroy {
           this.collapse();
         }
       });
+
+    console.log(this);
   }
 
   ngOnDestroy() {

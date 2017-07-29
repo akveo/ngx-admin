@@ -81,20 +81,22 @@
         }
 
       }
+      // we need to pull the content
+      &.left.fixed ~ .content {
+        margin-left: nga-theme(sidebar-width-compact);
+      }
+
+      &.fixed.right ~ .content {
+        margin-left: 0;
+        margin-right: nga-theme(sidebar-width-compact);
+      }
     }
 
-    // we need to pull the content
-    &.fixed + .content {
-      margin-left: nga-theme(sidebar-width-compact);
-    }
-
-    &.fixed.right + .content {
+    &.fixed.left.collapsed + .content {
       margin-left: 0;
-      margin-right: nga-theme(sidebar-width-compact);
     }
 
-    &.fixed.collapsed + .content {
-      margin-left: 0;
+    &.fixed.right.collapsed + .content {
       margin-right: 0;
     }
 
