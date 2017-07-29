@@ -26,6 +26,7 @@
 
     .scrollable {
       padding: nga-theme(sidebar-padding);
+      position: relative;
     }
 
     width: nga-theme(sidebar-width);
@@ -43,6 +44,13 @@
       .scrollable {
         width: 0;
         padding: 0;
+        overflow: hidden;
+      }
+
+      nga-sidebar-header,  nga-sidebar-footer {
+        width: 0;
+        padding: 0;
+        overflow: hidden;
       }
     }
 

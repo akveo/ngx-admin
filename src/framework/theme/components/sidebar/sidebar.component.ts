@@ -236,8 +236,6 @@ export class NgaSidebarComponent implements OnInit, OnDestroy {
           this.collapse();
         }
       });
-
-    console.log(this);
   }
 
   ngOnDestroy() {
