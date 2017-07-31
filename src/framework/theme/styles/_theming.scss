@@ -13,6 +13,7 @@
 @import 'core/functions';
 
 $nga-themes: () !global;
+$nga-themes-export: () !global;
 $nga-themes-non-processed: () !global;
 $nga-enabled-themes: () !global;
 
@@ -35,12 +36,17 @@ $nga-enabled-themes: () !global;
 
 @function nga-register-theme($theme, $name, $default: null) {
 
+  $theme-data: ();
 
   @if ($default != null) {
 
     $theme: map-merge(map-get($nga-themes-non-processed, $default), $theme);
+    $theme-data: map-set($theme-data, data, $theme);
+    $nga-themes-export: map-set($nga-themes-export, $name, map-set($theme-data, parent, $default)) !global;
     $nga-themes-non-processed: map-set($nga-themes-non-processed, $name, $theme) !global;
   } @else {
+    $theme-data: map-set($theme-data, data, $theme);
+    $nga-themes-export: map-set($nga-themes-export, $name, map-set($theme-data, parent, null)) !global;
     $nga-themes-non-processed: map-set($nga-themes-non-processed, $name, $theme) !global;
   }
 
@@ -48,7 +54,7 @@ $nga-enabled-themes: () !global;
   @each $key, $value in $theme {
     $theme-parsed: map-set($theme-parsed, $key, nga-get-value($theme, $key, $value));
   }
-
+  
   @return map-set($nga-themes, $name, $theme-parsed);
 }
 
