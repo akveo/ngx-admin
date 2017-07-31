@@ -3,56 +3,51 @@
  * Copyright Akveo. All Rights Reserved.
  * Licensed under the MIT License. See License.txt in the project root for license information.
  */
+
 :host /deep/ {
   display: block;
 
-  ul {
+  .menu-items {
     list-style-type: none;
-    padding: 0;
+    padding-left: 1.25rem;
     transition: visibility 0s, opacity 0.2s linear;
+    padding: 0;
 
-    li {
-      .menu-group {
-        display: block;
-      }
-
-      & > ul > li > a {
-        padding-left: 2rem;
-      }
-
-      a {
-        display: flex;
-        align-items: center;
-        flex-direction: row;
-        text-decoration: none;
-        font-size: 1em;
-        line-height: 1em;
-
-        i:first-child {
-          margin-right: 1.25rem;
-          font-size: 2rem;
-        }
-
-        i {
-          display: block;
-        }
-
-        span {
-          display: block;
-          flex: 1;
-        }
-      }
-    }
-
-    &.menu-collapsed {
+    &.collapsed {
       visibility: hidden;
       opacity: 0;
       height: 0;
     }
 
-    &.menu-expanded {
+    &.expanded {
       visibility: visible;
       opacity: 1;
+    }
+  }
+
+  .menu-item {
+    a {
+      display: flex;
+      color: inherit;
+      text-decoration: none;
+      align-items: center;
+
+      .menu-icon {
+        font-size: 2rem;
+        margin-right: 1rem;
+        width: 2rem;
+        text-align: center;
+      }
+
+      .menu-title {
+        flex: 1;
+      }
+    }
+  }
+
+  .menu-item > .menu-items > .menu-item {
+    a {
+      padding-left: 2rem;
     }
   }
 }

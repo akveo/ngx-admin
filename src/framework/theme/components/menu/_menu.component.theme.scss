@@ -3,73 +3,59 @@
  * Copyright Akveo. All Rights Reserved.
  * Licensed under the MIT License. See License.txt in the project root for license information.
  */
+
 @mixin nga-menu-theme() {
   nga-menu {
     font-family: nga-theme(menu-font-family);
     font-size: nga-theme(menu-font-size);
-    line-height: nga-theme(menu-line-height);
 
-    &.inverse {
-      ul > li {
-        a, .menu-group {
-          color: nga-theme(menu-bg);
+    .menu-group {
+      font-weight: nga-theme(menu-group-font-weight);
+      font-size: nga-theme(menu-group-font-size);
+      color: nga-theme(menu-group-fg);
+    }
 
-          @include hover-focus-active {
-            color: nga-theme(menu-bg);
-          }
+    .menu-group,
+    .menu-item > a {
+      padding: nga-theme(menu-item-padding);
+    }
 
-          &.active {
-            background: nga-theme(menu-active-fg);
-            color: nga-theme(menu-active-bg);
-          }
-        }
+    .menu-item {
+      a:hover {
+        background-color: nga-theme(menu-active-bg);
+        color: nga-theme(menu-active-fg);
+      }
+
+      a.active {
+        background-color: nga-theme(menu-active-bg);
+        color: nga-theme(menu-active-fg);
       }
     }
 
-    ul > li {
-      .menu-group {
-        font-weight: nga-theme(menu-group-font-weight);
-        font-size: nga-theme(menu-group-font-size);
+    .menu-items.expanded {
+      background-color: nga-theme(menu-submenu-bg);
+    }
+  }
+
+  nga-menu.inverse {
+    .menu-item {
+      a {
+        color: nga-theme(menu-bg);
       }
 
-      a, .menu-group {
-        color: nga-theme(menu-fg);
-        padding: nga-theme(menu-item-padding);
-
-        @include hover-focus-active {
-          color: nga-theme(menu-fg);
-        }
-
-        &.active {
-          background: nga-theme(menu-active-bg);
-          color: nga-theme(menu-active-fg);
-        }
+      a:hover {
+        background-color: nga-theme(menu-active-fg);
+        color: nga-theme(menu-active-bg);
       }
 
-      .menu-group {
-        color: nga-theme(menu-group-fg);
-
-        @include hover-focus-active {
-          color: nga-theme(menu-group-fg);
-        }
+      a.active {
+        background-color: nga-theme(menu-active-fg);
+        color: nga-theme(menu-active-bg);
       }
     }
 
-    ul.menu-expanded {
-      li, a, .menu-group {
-        color: nga-theme(menu-submenu-fg);
-
-        @include hover-focus-active {
-          color: nga-theme(menu-submenu-fg);
-        }
-
-        &.active {
-          background: nga-theme(menu-submenu-active-bg);
-          color: nga-theme(menu-submenu-active-fg);
-        }
-      }
-
-      background: nga-theme(menu-submenu-bg);
+    .menu-group {
+      color: nga-theme(menu-bg);
     }
   }
 }

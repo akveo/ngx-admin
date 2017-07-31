@@ -62,14 +62,16 @@
 
       nga-menu {
         width: nga-theme(sidebar-width-compact);
-        ul > li {
+
+        .menu-items > .menu-item {
           border-bottom: 1px solid nga-theme(menu-item-separator);
           transition: border-color 1s ease;
 
           span, .chevron {
             display: none;
           }
-          .menu-group {
+
+          &.menu-group {
             display: block;
             color: transparent;
             width: 0;
@@ -77,13 +79,16 @@
             padding-right: 0;
             overflow: hidden;
           }
+
           i {
             margin-right: 0;
           }
+
           a {
             justify-content: center;
           }
-          & > .menu-expanded {
+
+          & > .expanded {
             display: none;
           }
         }
@@ -127,7 +132,8 @@
 
     nga-menu {
       margin: 0 -#{nga-theme(sidebar-padding)};
-      ul > li {
+
+      .menu-items > .menu-item {
         border-bottom: 1px solid transparent;
       }
     }

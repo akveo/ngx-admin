@@ -17,9 +17,7 @@ import { NgaThemeService } from '@akveo/nga-theme';
       </nga-layout-header>
 
       <nga-sidebar right>
-        <nga-sidebar-content>
           Sidebar content
-        </nga-sidebar-content>
       </nga-sidebar>
 
       <nga-layout-column>
@@ -39,10 +37,9 @@ import { NgaThemeService } from '@akveo/nga-theme';
 `,
 })
 export class NgaThemeChangeTestComponent {
-
   currentTheme = 'default';
 
-  constructor(private themeService: NgaThemeService) { }
+  constructor(private themeService: NgaThemeService) {}
 
   changeTheme() {
     this.currentTheme = this.currentTheme === 'default' ? 'blue' : 'default';

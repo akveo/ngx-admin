@@ -47,7 +47,6 @@ export const ngaMenuOptionsToken = new InjectionToken<NgaMenuOptions>('NGA_MENU_
 // TODO: map select events to router change events
 @Injectable()
 export class NgaMenuService {
-
   addItems(items: List<NgaMenuItem>, tag?: string) {
     addItems$.next({ tag, items });
   }
@@ -56,42 +55,38 @@ export class NgaMenuService {
     navigateHome$.next({ tag });
   }
 
-  getSelectedItem(tag?: string): Observable<{ tag: string, item: NgaMenuItem }> {
-    const listener = new BehaviorSubject<{ tag: string, item: NgaMenuItem }>(null);
+  getSelectedItem(tag?: string): Observable<{ tag: string; item: NgaMenuItem }> {
+    const listener = new BehaviorSubject<{ tag: string; item: NgaMenuItem }>(null);
 
     getSelectedItem$.next({ tag, listener });
 
     return listener.asObservable();
   }
 
-  onItemClick(): Observable<{ tag: string, item: NgaMenuItem }> {
+  onItemClick(): Observable<{ tag: string; item: NgaMenuItem }> {
     return itemClick$.publish().refCount();
   }
 
-  onItemSelect(): Observable<{ tag: string, item: NgaMenuItem }> {
+  onItemSelect(): Observable<{ tag: string; item: NgaMenuItem }> {
     return itemSelect$.publish().refCount();
   }
 
-  onItemHover(): Observable<{ tag: string, item: NgaMenuItem }> {
+  onItemHover(): Observable<{ tag: string; item: NgaMenuItem }> {
     return itemHover$.publish().refCount();
   }
 
-  onSubmenuToggle(): Observable<{ tag: string, item: NgaMenuItem }> {
+  onSubmenuToggle(): Observable<{ tag: string; item: NgaMenuItem }> {
     return submenuToggle$.publish().refCount();
   }
-
 }
 
 @Injectable()
 export class NgaMenuInternalService {
-
   private stack = List<NgaMenuItem>();
 
   private items = List<NgaMenuItem>();
 
-  constructor(private router: Router,
-              private location: Location,
-              @Inject(ngaMenuOptionsToken) private options: any) {
+  constructor(private router: Router, private location: Location, @Inject(ngaMenuOptionsToken) private options: any) {
     if (options && options.items) {
       this.items = List<NgaMenuItem>(this.options.items);
     } else {
@@ -110,7 +105,7 @@ export class NgaMenuInternalService {
     this.clearStack();
   }
 
-  onAddItem(): Observable<{ tag: string, items: List<NgaMenuItem> }> {
+  onAddItem(): Observable<{ tag: string; items: List<NgaMenuItem> }> {
     return addItems$.publish().refCount();
   }
 
@@ -118,7 +113,7 @@ export class NgaMenuInternalService {
     return navigateHome$.publish().refCount();
   }
 
-  onGetSelectedItem(): Observable<{ tag: string, listener: BehaviorSubject<{ tag: string, item: NgaMenuItem }> }> {
+  onGetSelectedItem(): Observable<{ tag: string; listener: BehaviorSubject<{ tag: string; item: NgaMenuItem }> }> {
     return getSelectedItem$.publish().refCount();
   }
 
@@ -259,5 +254,4 @@ export class NgaMenuInternalService {
   private clearStack() {
     this.stack = this.stack.clear();
   }
-
 }

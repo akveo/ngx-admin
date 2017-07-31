@@ -19,7 +19,6 @@ import { convertToBoolProperty } from '../helpers';
   templateUrl: './menu-item.component.html',
 })
 export class NgaMenuItemComponent {
-
   @Input() menuItem = <NgaMenuItem>null;
 
   @Output() hoverItem = new EventEmitter<any>();
@@ -27,7 +26,7 @@ export class NgaMenuItemComponent {
   @Output() selectItem = new EventEmitter<any>();
   @Output() itemClick = new EventEmitter<any>();
 
-  constructor(private router: Router) { }
+  constructor(private router: Router) {}
 
   onToggleSubMenu(item: NgaMenuItem) {
     this.toggleSubMenu.emit(item);
@@ -50,20 +49,19 @@ export class NgaMenuItemComponent {
   selector: 'nga-menu',
   styleUrls: ['./menu.component.scss'],
   template: `
-    <ul>
+    <ul class="menu-items">
       <li ngaMenuItem *ngFor="let item of items"
                       [menuItem]="item"
-                      [class.expanded]="item.expanded"
-                      [class.collapsed]="!item.expanded"
+                      [class.menu-group]="item.group"
                       (hoverItem)="onHoverItem($event)"
                       (toggleSubMenu)="onToggleSubMenu($event)"
                       (selectItem)="onSelectItem($event)"
-                      (itemClick)="onItemClick($event)"></li>
+                      (itemClick)="onItemClick($event)"
+                      class="menu-item"></li>
     </ul>
   `,
 })
 export class NgaMenuComponent implements OnInit, OnDestroy {
-
   @HostBinding('class.inverse') inverseValue: boolean;
 
   @Input() tag: string;
@@ -84,11 +82,12 @@ export class NgaMenuComponent implements OnInit, OnDestroy {
   private navigateHomeSubscription: Subscription;
   private getSelectedItemSubscription: Subscription;
 
-  constructor(private menuInternalService: NgaMenuInternalService, private router: Router) { }
+  constructor(private menuInternalService: NgaMenuInternalService, private router: Router) {}
 
   ngOnInit() {
-    this.addItemSubscription = this.menuInternalService.onAddItem()
-      .subscribe((data: { tag: string, items: List<NgaMenuItem> }) => {
+    this.addItemSubscription = this.menuInternalService
+      .onAddItem()
+      .subscribe((data: { tag: string; items: List<NgaMenuItem> }) => {
         if (this.compareTag(data.tag)) {
           this.items = this.items.push(...data.items.toJS());
 
@@ -96,30 +95,26 @@ export class NgaMenuComponent implements OnInit, OnDestroy {
         }
       });
 
-    this.navigateHomeSubscription = this.menuInternalService.onNavigateHome()
-      .subscribe((data: { tag: string }) => {
-        if (this.compareTag(data.tag)) {
-          this.navigateHome();
-        }
-      });
+    this.navigateHomeSubscription = this.menuInternalService.onNavigateHome().subscribe((data: { tag: string }) => {
+      if (this.compareTag(data.tag)) {
+        this.navigateHome();
+      }
+    });
 
-    this.getSelectedItemSubscription = this.menuInternalService.onGetSelectedItem()
-      .subscribe((data: { tag: string, listener: BehaviorSubject<{ tag: string, item: NgaMenuItem }> }) => {
-
+    this.getSelectedItemSubscription = this.menuInternalService
+      .onGetSelectedItem()
+      .subscribe((data: { tag: string; listener: BehaviorSubject<{ tag: string; item: NgaMenuItem }> }) => {
         let selectedItem: NgaMenuItem;
-
         this.items.forEach(i => {
           const result = this.getSelectedItem(i);
 
           if (result) {
             selectedItem = result;
-
             return;
           }
         });
 
         this.clearStack();
-
         data.listener.next({ tag: this.tag, item: selectedItem });
       });
 
@@ -128,9 +123,7 @@ export class NgaMenuComponent implements OnInit, OnDestroy {
         this.menuInternalService.prepareItems(this.items);
       }
     });
-
     this.items = this.items.push(...this.menuInternalService.getItems().toJS());
-
     this.menuInternalService.prepareItems(this.items);
   }
 
@@ -147,18 +140,14 @@ export class NgaMenuComponent implements OnInit, OnDestroy {
   onToggleSubMenu(item: NgaMenuItem) {
     // TODO: make this optional
     this.menuInternalService.collapseAll(this.items, item);
-
     item.expanded = !item.expanded;
-
     this.menuInternalService.submenuToggle(item, this.tag);
   }
 
   // TODO: is not fired on page reload
   onSelectItem(item: NgaMenuItem) {
     this.menuInternalService.resetItems(this.items);
-
     item.selected = true;
-
     this.menuInternalService.itemSelect(item, this.tag);
   }
 
@@ -168,7 +157,6 @@ export class NgaMenuComponent implements OnInit, OnDestroy {
 
   private navigateHome() {
     let homeItem: NgaMenuItem;
-
     this.items.forEach(i => {
       const result = this.getHomeItem(i);
 
@@ -176,12 +164,10 @@ export class NgaMenuComponent implements OnInit, OnDestroy {
         homeItem = result;
       }
     });
-
     this.clearStack();
 
     if (homeItem) {
       this.menuInternalService.resetItems(this.items);
-
       homeItem.selected = true;
 
       if (homeItem.link) {
@@ -223,7 +209,6 @@ export class NgaMenuComponent implements OnInit, OnDestroy {
   }
 
   private getSelectedItem(parent: NgaMenuItem): NgaMenuItem {
-
     this.stack = this.stack.push(parent);
 
     if (parent.selected) {

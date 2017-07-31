@@ -16,8 +16,7 @@ import { NgaThemeService } from '@akveo/nga-theme';
     </div>
   `,
 })
-export class NgaDynamicToAddComponent {
-}
+export class NgaDynamicToAddComponent {}
 
 @Component({
   selector: 'nga-dynamic-test',
@@ -30,9 +29,7 @@ export class NgaDynamicToAddComponent {
       </nga-layout-header>
 
       <nga-sidebar right>
-        <nga-sidebar-content>
           Sidebar content
-        </nga-sidebar-content>
       </nga-sidebar>
 
       <nga-layout-column>
@@ -52,16 +49,13 @@ export class NgaDynamicToAddComponent {
 `,
 })
 export class NgaThemeDynamicTestComponent {
-
-  constructor(private themeService: NgaThemeService) { }
+  constructor(private themeService: NgaThemeService) {}
 
   addDynamicComponent() {
-    this.themeService.appendToLayoutTop(NgaDynamicToAddComponent)
-      .subscribe(cRef => console.info(cRef));
+    this.themeService.appendToLayoutTop(NgaDynamicToAddComponent).subscribe(cRef => console.info(cRef));
   }
 
   clearDynamicComponents() {
-    this.themeService.clearLayoutTop()
-      .subscribe(res => console.info(res));
+    this.themeService.clearLayoutTop().subscribe(res => console.info(res));
   }
 }
