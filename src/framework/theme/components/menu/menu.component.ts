@@ -104,6 +104,7 @@ export class NgaMenuComponent implements OnInit, OnDestroy {
       });
 
     this.getSelectedItemSubscription = this.menuInternalService.onGetSelectedItem()
+      .filter(data => !data.tag || data.tag === this.tag)
       .subscribe((data: { tag: string, listener: BehaviorSubject<{ tag: string, item: NgaMenuItem }> }) => {
 
         let selectedItem: NgaMenuItem;
