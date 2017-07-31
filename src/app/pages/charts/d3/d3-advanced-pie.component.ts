@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NgaThemeService } from '@akveo/nga-theme';
 
 @Component({
   selector: 'ngx-d3-advanced-pie',
@@ -26,7 +27,18 @@ export class D3AdvancedPieComponent {
     },
   ];
   view: any[] = [700, 400];
-  colorScheme = {
-    domain: ['#5AA454', '#A10A28', '#C7B42C', '#AAAAAA'],
-  };
+  colorScheme: any;
+
+  constructor(private theme: NgaThemeService) {
+    this.theme.getJsTheme().subscribe(config => {
+      this.colorScheme = {
+        domain: [
+          config.d3AdvancedPieColor1,
+          config.d3AdvancedPieColor2,
+          config.d3AdvancedPieColor3,
+          config.d3AdvancedPieColor4,
+        ],
+      };
+    });
+  }
 }

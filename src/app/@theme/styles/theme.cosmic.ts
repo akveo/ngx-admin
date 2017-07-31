@@ -119,5 +119,35 @@ export const COSMIC_THEME = {
     chartjsRadarScaleGridLinesColor: 'white',
     chartjsRadarScaleAngleLinesColor: 'white',
     chartjsRadarPointLabelFontColor: 'white',
+
+    d3PieColor1: '#5AA454',
+    d3PieColor2: '#A10A28',
+    d3PieColor3: '#C7B42C',
+    d3PieColor4: '#AAAAAA',
+
+    d3BarColor1: '#5AA454',
+    d3BarColor2: '#A10A28',
+    d3BarColor3: '#C7B42C',
+    d3BarColor4: '#AAAAAA',
+
+    d3LineColor1: '#5AA454',
+    d3LineColor2: '#A10A28',
+    d3LineColor3: '#C7B42C',
+    d3LineColor4: '#AAAAAA',
+
+    d3AdvancedPieColor1: '#5AA454',
+    d3AdvancedPieColor2: '#A10A28',
+    d3AdvancedPieColor3: '#C7B42C',
+    d3AdvancedPieColor4: '#AAAAAA',
+
+    d3AreaStackColor1: '#5AA454',
+    d3AreaStackColor2: '#A10A28',
+    d3AreaStackColor3: '#C7B42C',
+    d3AreaStackColor4: '#AAAAAA',
+
+    d3PolarColor1: '#5AA454',
+    d3PolarColor2: '#A10A28',
+    d3PolarColor3: '#C7B42C',
+    d3PolarColor4: '#AAAAAA',
   },
 };

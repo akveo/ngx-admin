@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NgaThemeService } from '@akveo/nga-theme';
 
 @Component({
   selector: 'ngx-d3-bar',
@@ -34,9 +35,6 @@ export class D3BarComponent {
   ];
   view: any[] = [700, 400];
   showLegend = true;
-  colorScheme = {
-    domain: ['#5AA454', '#A10A28', '#C7B42C', '#AAAAAA'],
-  };
   showXAxis = true;
   showYAxis = true;
   showLabels = true;
@@ -44,4 +42,13 @@ export class D3BarComponent {
   xAxisLabel = 'Country';
   showYAxisLabel = true;
   yAxisLabel = 'Population';
+  colorScheme: any;
+
+  constructor(private theme: NgaThemeService) {
+    this.theme.getJsTheme().subscribe(config => {
+      this.colorScheme = {
+        domain: [config.d3BarColor1, config.d3BarColor2, config.d3BarColor3, config.d3BarColor4],
+      };
+    });
+  }
 }

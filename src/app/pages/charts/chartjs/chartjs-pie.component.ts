@@ -28,12 +28,6 @@ export class ChartjsPieComponent {
     this.theme.getJsTheme().subscribe(config => {
       this.chartOptions = {
         responsive: true,
-        scale: {
-          pointLabels: {
-            fontSize: 14,
-            fontColor: config.chartjsRadarPointLabelFontColor,
-          },
-        },
         scales: {
           xAxes: [
             {

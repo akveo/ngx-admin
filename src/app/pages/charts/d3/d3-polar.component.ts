@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NgaThemeService } from '@akveo/nga-theme';
 
 @Component({
   selector: 'ngx-d3-polar',
@@ -74,9 +75,6 @@ export class D3PolarComponent {
   ];
   view: any[] = [700, 400];
   showLegend = true;
-  colorScheme = {
-    domain: ['#5AA454', '#A10A28', '#C7B42C', '#AAAAAA'],
-  };
   autoScale = true;
   showXAxis = true;
   showYAxis = true;
@@ -84,4 +82,13 @@ export class D3PolarComponent {
   showYAxisLabel = true;
   xAxisLabel = 'Country';
   yAxisLabel = 'Population';
+  colorScheme: any;
+
+  constructor(private theme: NgaThemeService) {
+    this.theme.getJsTheme().subscribe(config => {
+      this.colorScheme = {
+        domain: [config.d3PolarColor1, config.d3PolarColor2, config.d3PolarColor3, config.d3PolarColor4],
+      };
+    });
+  }
 }
