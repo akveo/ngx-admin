@@ -36,6 +36,7 @@ export abstract class NgaMenuItem {
   parent?: NgaMenuItem;
   selected?: boolean;
   data?: any;
+  fragment?: string;
 }
 
 export interface NgaMenuOptions {
@@ -90,8 +91,8 @@ export class NgaMenuInternalService {
   private items = List<NgaMenuItem>();
 
   constructor(private router: Router,
-              private location: Location,
-              @Inject(ngaMenuOptionsToken) private options: any) {
+    private location: Location,
+    @Inject(ngaMenuOptionsToken) private options: any) {
     if (options && options.items) {
       this.items = List<NgaMenuItem>(this.options.items);
     } else {
@@ -234,8 +235,11 @@ export class NgaMenuInternalService {
     }
 
     const exact: boolean = parent.pathMath === 'full';
+    const location: string = this.location.path();
 
-    if ((exact && this.location.path() === parent.link) || (!exact && this.location.path().includes(parent.link))) {
+    if ((exact && location === parent.link) || (!exact && location.includes(parent.link))
+      || (exact && parent.fragment && location.substr(location.indexOf('#') + 1).includes(parent.fragment))) {
+
       parent.selected = true;
 
       if (parent.parent) {
