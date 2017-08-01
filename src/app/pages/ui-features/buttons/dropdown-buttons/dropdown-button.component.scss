@@ -1,13 +1,13 @@
 @import '../../../../@theme/styles/variables';
 
-@include nga-install-component() {
+@include nb-install-component() {
   text-align: center;
 
   .dropdown, .btn-group {
     margin-bottom: 1rem;
   }
 
-  nga-card-body {
+  nb-card-body {
     overflow: visible;
   }
 }

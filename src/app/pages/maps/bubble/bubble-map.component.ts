@@ -1,16 +1,16 @@
 import { Component } from '@angular/core';
-import { NgaThemeService } from '@akveo/nga-theme';
+import { NbThemeService } from '@nebular/theme';
 
 @Component({
   selector: 'ngx-bubble-map',
   styleUrls: ['./bubble-map.component.scss'],
   template: `
-    <nga-card size="xlarge">
-    <nga-card-header>Bubble Maps</nga-card-header>
-      <nga-card-body>
+    <nb-card size="xlarge">
+    <nb-card-header>Bubble Maps</nb-card-header>
+      <nb-card-body>
         <div echarts [options]="options" class="echarts"></div>
-      </nga-card-body>
-    </nga-card>
+      </nb-card-body>
+    </nb-card>
   `,
 })
 export class BubbleMapComponent {
@@ -23,7 +23,7 @@ export class BubbleMapComponent {
 
   bubbleTheme: any;
 
-  constructor(private theme: NgaThemeService) {
+  constructor(private theme: NbThemeService) {
 
     this.theme.getJsTheme()
       .subscribe(config => {

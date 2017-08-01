@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NgaThemeService } from '@akveo/nga-theme';
+import { NbThemeService } from '@nebular/theme';
 
 @Component({
   selector: 'ngx-echarts-bar-animation',
@@ -10,7 +10,7 @@ import { NgaThemeService } from '@akveo/nga-theme';
 export class EchartsBarAnimationComponent {
   options: any;
 
-  constructor(private theme: NgaThemeService) {
+  constructor(private theme: NbThemeService) {
     this.theme.getJsTheme().subscribe(config => {
       const xAxisData = [];
       const data1 = [];

@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { NgaActionsModule, NgaSearchModule, NgaUserModule } from '@akveo/nga-theme';
+import { NbActionsModule, NbSearchModule, NbUserModule } from '@nebular/theme';
 
 import { SharedModule } from '../../../shared.module';
 
@@ -32,9 +32,9 @@ const components = [
 @NgModule({
   imports: [
     SharedModule,
-    NgaActionsModule,
-    NgaSearchModule,
-    NgaUserModule,
+    NbActionsModule,
+    NbSearchModule,
+    NbUserModule,
   ],
   exports: [
     ...components,

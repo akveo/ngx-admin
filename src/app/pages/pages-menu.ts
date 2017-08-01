@@ -1,8 +1,8 @@
-import { NgaMenuItem } from '@akveo/nga-theme';
+import { NbMenuItem } from '@nebular/theme';
 
 import { List } from 'immutable';
 
-export const MENU_ITEMS: List<NgaMenuItem> = List([{
+export const MENU_ITEMS: List<NbMenuItem> = List([{
   title: 'Dashboard',
   icon: 'ion ion-ios-home-outline',
   link: '/pages/dashboard',
@@ -14,7 +14,7 @@ export const MENU_ITEMS: List<NgaMenuItem> = List([{
   title: 'UI Features',
   icon: 'ion ion-ios-keypad-outline',
   link: '/pages/ui-features',
-  children: List<NgaMenuItem>([{
+  children: List<NbMenuItem>([{
     title: 'Buttons',
     link: '/pages/ui-features/buttons',
   }, {
@@ -39,7 +39,7 @@ export const MENU_ITEMS: List<NgaMenuItem> = List([{
 }, {
   title: 'Forms',
   icon: 'ion-compose',
-  children: List<NgaMenuItem>([{
+  children: List<NbMenuItem>([{
     title: 'Form Inputs',
     link: '/pages/forms/inputs',
   }, {
@@ -49,7 +49,7 @@ export const MENU_ITEMS: List<NgaMenuItem> = List([{
 }, {
   title: 'Components',
   icon: 'ion ion-ios-gear-outline',
-  children: List<NgaMenuItem>([{
+  children: List<NbMenuItem>([{
     title: 'Tree',
     link: '/pages/components/tree',
   }, {
@@ -59,7 +59,7 @@ export const MENU_ITEMS: List<NgaMenuItem> = List([{
 }, {
   title: 'Maps',
   icon: 'ion ion-ios-location-outline',
-  children: List<NgaMenuItem>([{
+  children: List<NbMenuItem>([{
     title: 'Google Maps',
     link: '/pages/maps/gmaps',
   }, {
@@ -72,7 +72,7 @@ export const MENU_ITEMS: List<NgaMenuItem> = List([{
 }, {
   title: 'Charts',
   icon: 'ion ion-arrow-graph-up-right',
-  children: List<NgaMenuItem>([{
+  children: List<NbMenuItem>([{
     title: 'Echarts',
     link: '/pages/charts/echarts',
   }, {
@@ -85,7 +85,7 @@ export const MENU_ITEMS: List<NgaMenuItem> = List([{
 }, {
   title: 'Editors',
   icon: 'ion ion-edit',
-  children: List<NgaMenuItem>([{
+  children: List<NbMenuItem>([{
     title: 'TinyMCE',
     link: '/pages/editors/tinymce',
   }, {
@@ -95,7 +95,7 @@ export const MENU_ITEMS: List<NgaMenuItem> = List([{
 }, {
   title: 'Tables',
   icon: 'ion-ios-grid-view',
-  children: List<NgaMenuItem>([{
+  children: List<NbMenuItem>([{
     title: 'Smart Table',
     link: '/pages/tables/smart-table',
   }]),

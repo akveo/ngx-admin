@@ -1,16 +1,16 @@
-<nga-card size="large">
-  <nga-tabset fullWidth>
-    <nga-tab tabTitle="Contacts">
+<nb-card size="large">
+  <nb-tabset fullWidth>
+    <nb-tab tabTitle="Contacts">
       <div class="contact" *ngFor="let c of contacts">
-        <nga-user [picture]="c.user.picture" [name]="c.user.name" [title]="c.type" size="large"></nga-user>
+        <nb-user [picture]="c.user.picture" [name]="c.user.name" [title]="c.type" size="large"></nb-user>
         <i class="i-contact ion-ios-telephone-outline"></i>
       </div>
-    </nga-tab>
-    <nga-tab tabTitle="Recent">
+    </nb-tab>
+    <nb-tab tabTitle="Recent">
       <div class="contact" *ngFor="let c of recent">
-        <nga-user [picture]="c.user.picture" [name]="c.user.name" [title]="c.type" size="large"></nga-user>
+        <nb-user [picture]="c.user.picture" [name]="c.user.name" [title]="c.type" size="large"></nb-user>
         <span class="time">{{ c.time }}</span>
       </div>
-    </nga-tab>
-  </nga-tabset>
-</nga-card>
+    </nb-tab>
+  </nb-tabset>
+</nb-card>

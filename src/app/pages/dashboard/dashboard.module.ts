@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { NgaTabsetModule, NgaUserModule } from '@akveo/nga-theme';
+import { NbTabsetModule, NbUserModule } from '@nebular/theme';
 import { AngularEchartsModule } from 'ngx-echarts';
 
 import { SharedModule } from '../../shared.module';
@@ -22,8 +22,8 @@ import { TrafficChartComponent } from './traffic/traffic-chart.component';
 
 @NgModule({
   imports: [
-    NgaTabsetModule,
-    NgaUserModule,
+    NbTabsetModule,
+    NbUserModule,
     SharedModule,
     AngularEchartsModule,
   ],

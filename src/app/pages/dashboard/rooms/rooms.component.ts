@@ -4,10 +4,10 @@ import { Component } from '@angular/core';
   selector: 'ngx-rooms',
   styleUrls: ['./rooms.component.scss'],
   template: `
-    <nga-card size="large">
+    <nb-card size="large">
       <ngx-room-selector></ngx-room-selector>
       <ngx-player></ngx-player>
-    </nga-card>
+    </nb-card>
   `,
 })
 export class RoomsComponent {

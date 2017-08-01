@@ -1,7 +1,7 @@
 @import '../../../../@theme/styles/variables';
-@import '~@akveo/nga-theme/styles/global/bootstrap/hero-buttons';
+@import '~@nebular/theme/styles/global/bootstrap/hero-buttons';
 
-@include nga-install-component() {
+@include nb-install-component() {
   display: flex;
   position: relative;
 
@@ -18,7 +18,7 @@
     height: 88%;
     top: 13%;
     left: 6%;
-    background-color: lighten(nga-theme(layout-bg), 2%);
+    background-color: lighten(nb-theme(layout-bg), 2%);
     border-radius: 50%;
     z-index: 1;
 
@@ -32,7 +32,7 @@
     position: absolute;
     width: 5.25rem;
     height: 5.25rem;
-    background-color: nga-theme(card-bg);
+    background-color: nb-theme(card-bg);
     border-radius: 50%;
     bottom: 2%;
     left: 50%;
@@ -42,24 +42,24 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: nga-theme(card-shadow);
+    box-shadow: nb-theme(card-shadow);
     cursor: pointer;
     font-size: 2.5rem;
-    color: nga-theme(color-fg-heading);
+    color: nb-theme(color-fg-heading);
     text-shadow: 0 0 6px rgba(255, 255, 255, 0.5);
     transition: all 0.1s ease-out;
 
     &:hover {
-      background-color: lighten(nga-theme(card-bg), 5%);
+      background-color: lighten(nb-theme(card-bg), 5%);
     }
 
     &:active {
-      background-color: darken(nga-theme(card-bg), 5%);
+      background-color: darken(nb-theme(card-bg), 5%);
       box-shadow: none;
     }
 
     &.off {
-      color: nga-theme(color-fg);
+      color: nb-theme(color-fg);
       text-shadow: none;
     }
   }

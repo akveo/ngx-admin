@@ -1,18 +1,18 @@
 @import '../../../@theme/styles/variables';
 
-@include nga-install-component() {
-  nga-tabset {
+@include nb-install-component() {
+  nb-tabset {
     height: 100%;
     display: flex;
     flex-direction: column;
   }
 
-  nga-tab {
-    padding: nga-theme(padding);
+  nb-tab {
+    padding: nb-theme(padding);
   }
 
   /deep/ ngx-tab1, /deep/ ngx-tab2 {
     display: block;
-    padding: nga-theme(padding);
+    padding: nb-theme(padding);
   }
 }

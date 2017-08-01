@@ -1,8 +1,8 @@
 @import '../../../@theme/styles/variables';
 
-@include nga-install-component() {
+@include nb-install-component() {
 
-  nga-card-body {
+  nb-card-body {
     overflow: visible;
   }
 
@@ -46,26 +46,26 @@
 
   .star {
     font-size: 1.5rem;
-    color: nga-theme(color-fg);
+    color: nb-theme(color-fg);
   }
 
   .filled {
-    color: nga-theme(color-fg);
+    color: nb-theme(color-fg);
   }
 
   // TODO: Replace with the card header styles mixin
   .rating-header {
     line-height: 2rem;
     font-size: 1.25rem;
-    font-family: nga-theme(font-secondary);
-    font-weight: nga-theme(font-weight-bolder);
-    color: nga-theme(color-fg-heading);
+    font-family: nb-theme(font-secondary);
+    font-weight: nb-theme(font-weight-bolder);
+    color: nb-theme(color-fg-heading);
   }
 
   .current-rate {
     font-size: 1.5rem;
     padding-left: 1rem;
-    color: nga-theme(color-fg-heading);
+    color: nb-theme(color-fg-heading);
   }
 
   .full-name-inputs {

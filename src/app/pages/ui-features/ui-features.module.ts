@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { NgaTabsetModule, NgaRouteTabsetModule, NgaSearchModule } from '@akveo/nga-theme';
+import { NbTabsetModule, NbRouteTabsetModule, NbSearchModule } from '@nebular/theme';
 
 import { SharedModule } from '../../shared.module';
 
@@ -32,9 +32,9 @@ const components = [
   imports: [
     SharedModule,
     UiFeaturesRoutingModule,
-    NgaTabsetModule,
-    NgaRouteTabsetModule,
-    NgaSearchModule,
+    NbTabsetModule,
+    NbRouteTabsetModule,
+    NbSearchModule,
     ButtonsModule,
   ],
   declarations: [

@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 
-import { NgaMenuService, NgaSidebarService } from '@akveo/nga-theme';
-import { NgaThemeService } from '@akveo/nga-theme/services/theme.service';
+import { NbMenuService, NbSidebarService } from '@nebular/theme';
+import { NbThemeService } from '@nebular/theme';
 import { UserService } from '../../../@core/data/users.service';
 
 @Component({
@@ -18,21 +18,21 @@ import { UserService } from '../../../@core/data/users.service';
       </div>
     </div>
 
-    <nga-actions
+    <nb-actions
       size="medium"
       class="header-container"
       [class.right]="position === 'normal'"
       [class.left]="position === 'inverse'">
-      <nga-action icon="ion-ios-gear-outline" (click)="toggleSettings()"></nga-action>
-      <nga-action>
-        <nga-user [menu]="userMenu" [name]="user?.name" [picture]="user?.picture"></nga-user>
-      </nga-action>
-      <nga-action disabled icon="ion-ios-bell-outline"></nga-action>
-      <nga-action icon="ion-ios-email-outline"></nga-action>
-      <nga-action>
-        <nga-search type="rotate-layout"></nga-search>
-      </nga-action>
-    </nga-actions>
+      <nb-action icon="ion-ios-gear-outline" (click)="toggleSettings()"></nb-action>
+      <nb-action>
+        <nb-user [menu]="userMenu" [name]="user?.name" [picture]="user?.picture"></nb-user>
+      </nb-action>
+      <nb-action disabled icon="ion-ios-bell-outline"></nb-action>
+      <nb-action icon="ion-ios-email-outline"></nb-action>
+      <nb-action>
+        <nb-search type="rotate-layout"></nb-search>
+      </nb-action>
+    </nb-actions>
   `,
 })
 export class HeaderComponent implements OnInit {
@@ -51,9 +51,9 @@ export class HeaderComponent implements OnInit {
     },
   ];
 
-  constructor(private sidebarService: NgaSidebarService,
-              private menuService: NgaMenuService,
-              private themeService: NgaThemeService,
+  constructor(private sidebarService: NbSidebarService,
+              private menuService: NbMenuService,
+              private themeService: NbThemeService,
               private userService: UserService) {
   }
 

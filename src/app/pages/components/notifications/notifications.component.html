@@ -1,8 +1,8 @@
-<nga-card>
-  <nga-card-header>
+<nb-card>
+  <nb-card-header>
     Toaster configuration
-  </nga-card-header>
-  <nga-card-body>
+  </nb-card-header>
+  <nb-card-body>
     <toaster-container [toasterconfig]="config"></toaster-container>
 
     <div class="row">
@@ -66,17 +66,17 @@
           </div>
         </div>
 
-        <div><nga-checkbox [(ngModel)]="isNewestOnTop">Newest on top</nga-checkbox></div>
-        <div><nga-checkbox [(ngModel)]="isHideOnClick">Hide on click</nga-checkbox></div>
-        <div><nga-checkbox [(ngModel)]="isDuplicatesPrevented">Prevent arising of duplicate toast</nga-checkbox></div>
-        <div><nga-checkbox [(ngModel)]="isCloseButton">Close button</nga-checkbox></div>
+        <div><nb-checkbox [(ngModel)]="isNewestOnTop">Newest on top</nb-checkbox></div>
+        <div><nb-checkbox [(ngModel)]="isHideOnClick">Hide on click</nb-checkbox></div>
+        <div><nb-checkbox [(ngModel)]="isDuplicatesPrevented">Prevent arising of duplicate toast</nb-checkbox></div>
+        <div><nb-checkbox [(ngModel)]="isCloseButton">Close button</nb-checkbox></div>
       </div>
     </div>
-  </nga-card-body>
+  </nb-card-body>
 
-  <nga-card-footer>
+  <nb-card-footer>
     <button class="btn btn-primary" (click)="makeToast()">Show toast</button>
     <button class="btn btn-success" (click)="openRandomToast()">Random toast</button>
     <button class="btn btn-danger" (click)="clearToasts()">Clear all toasts</button>
-  </nga-card-footer>
-</nga-card>
+  </nb-card-footer>
+</nb-card>

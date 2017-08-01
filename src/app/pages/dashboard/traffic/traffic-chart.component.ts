@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NgaThemeService } from '@akveo/nga-theme';
+import { NbThemeService } from '@nebular/theme';
 
 declare const echarts: any;
 
@@ -18,7 +18,7 @@ export class TrafficChartComponent {
   types = ['week', 'month', 'year'];
   option: any = {};
 
-  constructor(private theme: NgaThemeService) {
+  constructor(private theme: NbThemeService) {
     this.theme.getJsTheme().subscribe(config => {
 
       const trafficTheme: any = config.variables.traffic;

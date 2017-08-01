@@ -1,19 +1,19 @@
 @import '../../../@theme/styles/variables';
-@import '~@akveo/nga-theme/styles/global/bootstrap/hero-buttons';
+@import '~@nebular/theme/styles/global/bootstrap/hero-buttons';
 
-@include nga-install-component() {
-  nga-card {
+@include nb-install-component() {
+  nb-card {
     flex-direction: row;
     align-items: center;
     height: 6rem;
     overflow: visible;
 
-    $bevel: btn-hero-bevel(nga-theme(card-bg));
+    $bevel: btn-hero-bevel(nb-theme(card-bg));
     $shadow: btn-hero-shadow();
     box-shadow: $bevel, $shadow;
     transition: all 0.1s ease-out;
 
-    $border-radius: nga-theme(card-border-radius);
+    $border-radius: nb-theme(card-border-radius);
     .icon-container {
       display: flex;
       align-items: center;
@@ -23,7 +23,7 @@
       font-size: 4em;
       border-radius: $border-radius 0 0 $border-radius;
       transition: all 0.1s ease-out, color 0s;
-      color: nga-theme(color-white);
+      color: nb-theme(color-white);
 
       &.primary {
         @include btn-hero-primary-gradient();
@@ -44,7 +44,7 @@
     }
 
     &:hover {
-      background: lighten(nga-theme(card-bg), 5%);
+      background: lighten(nb-theme(card-bg), 5%);
 
       .icon-container {
         &.primary {
@@ -64,7 +64,7 @@
 
     &:active {
       box-shadow: none;
-      background: nga-theme(card-bg);
+      background: nb-theme(card-bg);
 
       .icon-container {
         &.primary, &.success, &.info, &.warning {
@@ -86,10 +86,10 @@
     }
 
     &.off {
-      color: nga-theme(card-fg);
+      color: nb-theme(card-fg);
 
       .icon-container {
-        color: nga-theme(card-fg);
+        color: nb-theme(card-fg);
 
         &.primary, &.success, &.info, &.warning {
           box-shadow: none;
@@ -98,10 +98,10 @@
       }
 
       .details {
-        border-left: 1px solid nga-theme(separator);
+        border-left: 1px solid nb-theme(separator);
       }
       .title {
-        color: nga-theme(card-fg);
+        color: nb-theme(card-fg);
       }
     }
 
@@ -115,17 +115,17 @@
     }
 
     .title {
-      font-family: nga-theme(font-secondary);
+      font-family: nb-theme(font-secondary);
       font-size: 1.5rem;
-      font-weight: nga-theme(font-weight-bolder);
-      color: nga-theme(card-fg-heading);
+      font-weight: nb-theme(font-weight-bolder);
+      color: nb-theme(card-fg-heading);
     }
 
     .status {
       font-size: 1.125rem;
-      font-weight: nga-theme(font-weight-light);
+      font-weight: nb-theme(font-weight-light);
       text-transform: uppercase;
-      color: nga-theme(card-fg);
+      color: nb-theme(card-fg);
     }
   }
 }

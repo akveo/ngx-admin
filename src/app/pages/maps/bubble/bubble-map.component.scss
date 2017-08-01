@@ -1,17 +1,17 @@
 @import '../../../@theme/styles/variables';
 
-@include nga-install-component() {
+@include nb-install-component() {
 
   $card-header-border: 1px;
 
-  nga-card-body {
-    padding: nga-theme(card-padding) 0 0 0;
+  nb-card-body {
+    padding: nb-theme(card-padding) 0 0 0;
   }
 
   .echarts {
     width: 100%;
-    height: calc(#{nga-theme(card-height-xlarge)} - (#{nga-theme(card-padding) * 2}) -
-                (#{nga-theme(card-header-font-size)} * #{nga-theme(card-line-height)}) -
-                 #{$card-header-border} - #{nga-theme(card-padding)});
+    height: calc(#{nb-theme(card-height-xlarge)} - (#{nb-theme(card-padding) * 2}) -
+                (#{nb-theme(card-header-font-size)} * #{nb-theme(card-line-height)}) -
+                 #{$card-header-border} - #{nb-theme(card-padding)});
   }
 }

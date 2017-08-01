@@ -1,16 +1,16 @@
 @import '../../../@theme/styles/variables';
 
-@include nga-install-component() {
-  nga-card-header {
+@include nb-install-component() {
+  nb-card-header {
     padding: 0;
     border: none;
   }
 
-  nga-card-body {
+  nb-card-body {
     padding: 0;
   }
 
-  nga-card-footer {
+  nb-card-footer {
     padding: 1rem 0;
     border: none;
   }
@@ -33,21 +33,21 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      color: nga-theme(color-fg);
+      color: nb-theme(color-fg);
     }
 
     a:first-child {
-      border-left: 1px solid nga-theme(separator);
+      border-left: 1px solid nb-theme(separator);
     }
 
     a:last-child {
-      border-top-right-radius: nga-theme(card-border-radius);
+      border-top-right-radius: nb-theme(card-border-radius);
     }
 
     a.active {
-      background-color: nga-theme(color-bg-active);
-      color: nga-theme(color-fg-highlight);
-      text-shadow: 0 0 12px rgba(nga-theme(color-fg-highlight), 0.4);
+      background-color: nb-theme(color-bg-active);
+      color: nb-theme(color-fg-highlight);
+      text-shadow: 0 0 12px rgba(nb-theme(color-fg-highlight), 0.4);
       border: none;
     }
   }
@@ -101,17 +101,17 @@
     }
   }
 
-  nga-action {
+  nb-action {
     i {
-      color: nga-theme(color-fg);
+      color: nb-theme(color-fg);
       font-size: 2.5rem;
       margin-right: 1rem;
     }
 
     span {
-      font-family: nga-theme(font-family-secondary);
-      font-weight: nga-theme(font-weight-bold);
-      color: nga-theme(color-fg-heading);
+      font-family: nb-theme(font-family-secondary);
+      font-weight: nb-theme(font-weight-bold);
+      color: nb-theme(color-fg-heading);
       text-transform: uppercase;
     }
   }

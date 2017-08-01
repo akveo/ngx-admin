@@ -1,12 +1,12 @@
 @import '../../../@theme/styles/variables';
 
-@include nga-install-component() {
+@include nb-install-component() {
 
-  nga-card {
-    background-image: nga-theme(radial-gradient);
+  nb-card {
+    background-image: nb-theme(radial-gradient);
   }
 
-  nga-tabset {
+  nb-tabset {
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -16,7 +16,7 @@
     }
   }
 
-  nga-tab.content-active {
+  nb-tab.content-active {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -43,10 +43,10 @@
 
     .value {
       position: relative;
-      color: nga-theme(color-fg-heading);
-      font-family: nga-theme(font-secondary);
+      color: nb-theme(color-fg-heading);
+      font-family: nb-theme(font-secondary);
       font-size: 4rem;
-      font-weight: nga-theme(font-weight-bolder);
+      font-weight: nb-theme(font-weight-bolder);
 
       &.temperature::before {
         position: absolute;
@@ -60,20 +60,20 @@
         content: '%';
         bottom: 0.5rem;
         right: -2.5rem;
-        color: nga-theme(color-fg);
+        color: nb-theme(color-fg);
         font-size: 2.5rem;
-        font-weight: nga-theme(font-weight-light);
+        font-weight: nb-theme(font-weight-light);
       }
     }
 
     .desc {
-      color: nga-theme(color-fg);
-      font-weight: nga-theme(font-weight-light);
+      color: nb-theme(color-fg);
+      font-weight: nb-theme(font-weight-light);
     }
 
     &.off {
       .value {
-        color: nga-theme(color-fg);
+        color: nb-theme(color-fg);
         letter-spacing: 0.25rem;
         padding-left: 0.5rem;
 
@@ -97,15 +97,15 @@
     align-items: center;
     justify-content: center;
 
-    border-color: nga-theme(form-control-border-color);
+    border-color: nb-theme(form-control-border-color);
     height: 4.5rem;
     padding: 0;
     margin-bottom: 0;
 
     &.active {
-      border-color: nga-theme(color-fg-highlight);
-      box-shadow: 0 2px 12px 0 rgba(nga-theme(color-fg-highlight), 0.25);
-      background-color: rgba(nga-theme(color-fg-highlight), 0.25);
+      border-color: nb-theme(color-fg-highlight);
+      box-shadow: 0 2px 12px 0 rgba(nb-theme(color-fg-highlight), 0.25);
+      background-color: rgba(nb-theme(color-fg-highlight), 0.25);
     }
 
     i {

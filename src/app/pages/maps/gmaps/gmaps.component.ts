@@ -4,14 +4,14 @@ import { Component } from '@angular/core';
   selector: 'ngx-gmaps',
   styleUrls: ['./gmaps.component.scss'],
   template: `
-    <nga-card size="xlarge">
-      <nga-card-header>Google Maps</nga-card-header>
-      <nga-card-body>
+    <nb-card size="xlarge">
+      <nb-card-header>Google Maps</nb-card-header>
+      <nb-card-body>
         <agm-map [latitude]="lat" [longitude]="lng">
           <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
         </agm-map>
-      </nga-card-body>
-    </nga-card>
+      </nb-card-body>
+    </nb-card>
   `,
 })
 export class GmapsComponent {

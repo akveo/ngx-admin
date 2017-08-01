@@ -1,30 +1,30 @@
 @import '../../../@theme/styles/variables';
 
-@include nga-install-component() {
+@include nb-install-component() {
 
-  nga-card {
-    background-image: nga-theme(radial-gradient);
+  nb-card {
+    background-image: nb-theme(radial-gradient);
   }
 
-  nga-card-body {
+  nb-card-body {
     height: 100%;
     padding: 2rem;
-    color: nga-theme(color-fg);
+    color: nb-theme(color-fg);
   }
 
   .location {
-    font-family: nga-theme(font-secondary);
+    font-family: nb-theme(font-secondary);
     font-size: 3rem;
     line-height: 3rem;
-    font-weight: nga-theme(font-weight-light);
-    color: nga-theme(color-fg-heading);
+    font-weight: nb-theme(font-weight-light);
+    color: nb-theme(color-fg-heading);
   }
 
   .date {
-    font-family: nga-theme(font-main);
+    font-family: nb-theme(font-main);
     font-size: 1.25rem;
     line-height: 1.25rem;
-    font-weight: nga-theme(font-weight-light);
+    font-weight: nb-theme(font-weight-light);
   }
 
   .daily-forecast {
@@ -38,9 +38,9 @@
 
       .temperature {
         font-size: 5rem;
-        font-weight: nga-theme(font-weight-bolder);
-        font-family: nga-theme(font-secondary);
-        color: nga-theme(color-fg-heading);
+        font-weight: nb-theme(font-weight-bolder);
+        font-family: nb-theme(font-secondary);
+        color: nb-theme(color-fg-heading);
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -66,16 +66,16 @@
         text-align: center;
 
         .parameter-name {
-          font-family: nga-theme(font-main);
+          font-family: nb-theme(font-main);
           font-size: 1.25rem;
-          font-weight: nga-theme(font-weight-light);
+          font-weight: nb-theme(font-weight-light);
           line-height: 2rem;
         }
 
         .parameter-value {
-          font-family: nga-theme(font-secondary);
-          color: nga-theme(color-fg-heading);
-          font-weight: nga-theme(font-weight-bolder);
+          font-family: nb-theme(font-secondary);
+          color: nb-theme(color-fg-heading);
+          font-weight: nb-theme(font-weight-bolder);
         }
       }
     }
@@ -93,9 +93,9 @@
 
       .caption {
         text-transform: uppercase;
-        font-family: nga-theme(font-secondary);
-        color: nga-theme(color-fg-heading);
-        font-weight: nga-theme(font-weight-bold);
+        font-family: nb-theme(font-secondary);
+        color: nb-theme(color-fg-heading);
+        font-weight: nb-theme(font-weight-bold);
         font-size: 1.25rem;
       }
 
@@ -105,9 +105,9 @@
       }
 
       .temperature {
-        color: nga-theme(color-fg-heading);
-        font-family: nga-theme(font-secondary);
-        font-weight: nga-theme(font-weight-bold);
+        color: nb-theme(color-fg-heading);
+        font-family: nb-theme(font-secondary);
+        font-weight: nb-theme(font-weight-bold);
         font-size: 1.25rem;
       }
     }

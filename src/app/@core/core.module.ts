@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { throwIfAlreadyLoaded } from './module-import-guard';
 import { DataModule } from './data/data.module';
 
-const NGA_CORE_PROVIDERS = [
+const NB_CORE_PROVIDERS = [
   ...DataModule.forRoot().providers,
 ];
 
@@ -23,7 +23,7 @@ export class CoreModule {
     return <ModuleWithProviders>{
       ngModule: CoreModule,
       providers: [
-        ...NGA_CORE_PROVIDERS,
+        ...NB_CORE_PROVIDERS,
       ],
     };
   }

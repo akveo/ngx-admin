@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NgaThemeService } from '@akveo/nga-theme';
+import { NbThemeService } from '@nebular/theme';
 
 @Component({
   selector: 'ngx-echarts-area-stack',
@@ -10,7 +10,7 @@ import { NgaThemeService } from '@akveo/nga-theme';
 export class EchartsAreaStackComponent {
   options: any;
 
-  constructor(private theme: NgaThemeService) {
+  constructor(private theme: NbThemeService) {
     this.theme.getJsTheme().subscribe(config => {
 
       const echarts: any = config.variables.echarts;

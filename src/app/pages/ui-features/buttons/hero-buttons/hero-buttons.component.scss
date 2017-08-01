@@ -1,7 +1,7 @@
 @import '../../../../@theme/styles/variables';
-@import '~@akveo/nga-theme/styles/global/bootstrap/buttons';
+@import '~@nebular/theme/styles/global/bootstrap/buttons';
 
-@include nga-install-component() {
+@include nb-install-component() {
 
   .primary-container {
     .gradient {
@@ -80,8 +80,8 @@
 
   .secondary-container {
     .border {
-      color: nga-theme(btn-secondary-color);
-      border: nga-theme(btn-secondary-border-width) solid nga-theme(btn-secondary-border);
+      color: nb-theme(btn-secondary-color);
+      border: nb-theme(btn-secondary-border-width) solid nb-theme(btn-secondary-border);
     }
     .glow {
       box-shadow: btn-hero-secondary-glow();

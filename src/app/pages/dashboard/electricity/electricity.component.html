@@ -1,12 +1,12 @@
-<nga-card size="large">
+<nb-card size="large">
   <div class="consumption-table">
     <div class="table-header">
       <div>Electricity</div>
       <div class="subtitle">Consumption</div>
     </div>
 
-    <nga-tabset fullWidth>
-      <nga-tab *ngFor="let year of data" [tabTitle]="year.title" [active]="year.active">
+    <nb-tabset fullWidth>
+      <nb-tab *ngFor="let year of data" [tabTitle]="year.title" [active]="year.active">
         <div class="stats-month" *ngFor="let month of year.months">
           <div>
             <span class="month">{{ month.month }}</span>
@@ -16,8 +16,8 @@
             <b>{{ month.kWatts }}</b> kWh / <b>{{ month.cost }}</b> USD
           </div>
         </div>
-      </nga-tab>
-    </nga-tabset>
+      </nb-tab>
+    </nb-tabset>
   </div>
 
   <div class="chart-container">
@@ -53,4 +53,4 @@
     </div>
     <ngx-electricity-chart></ngx-electricity-chart>
   </div>
-</nga-card>
+</nb-card>

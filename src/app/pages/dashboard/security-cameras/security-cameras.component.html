@@ -1,5 +1,5 @@
-<nga-card size="xlarge">
-  <nga-card-header>
+<nb-card size="xlarge">
+  <nb-card-header>
     <div class="cameras-card-header">
       <span class="cameras-card-title">Security Cameras</span>
       <span class="cameras-filter">
@@ -11,8 +11,8 @@
         </a>
       </span>
     </div>
-  </nga-card-header>
-  <nga-card-body>
+  </nb-card-header>
+  <nb-card-body>
     <div class="cameras single-view" *ngIf="isSingleView">
       <div class="camera" [style.background-image]="'url(' + selectedCamera.source + ')'">
         <span>{{ selectedCamera.title }}</span>
@@ -24,21 +24,21 @@
         <span>{{ camera.title }}</span>
       </div>
     </div>
-  </nga-card-body>
-  <nga-card-footer>
-    <nga-actions size="medium" fullWidth>
-      <nga-action>
+  </nb-card-body>
+  <nb-card-footer>
+    <nb-actions size="medium" fullWidth>
+      <nb-action>
         <i class="ion-ios-pause-outline"></i><span>Pause</span>
-      </nga-action>
-      <nga-action>
+      </nb-action>
+      <nb-action>
         <i class="ion-navicon"></i><span>Log View</span>
-      </nga-action>
-      <nga-action>
+      </nb-action>
+      <nb-action>
         <i class="ion-ios-search"></i><span>Search</span>
-      </nga-action>
-      <nga-action>
+      </nb-action>
+      <nb-action>
         <i class="ion-ios-gear-outline"></i><span>Setup</span>
-      </nga-action>
-    </nga-actions>
-  </nga-card-footer>
-</nga-card>
+      </nb-action>
+    </nb-actions>
+  </nb-card-footer>
+</nb-card>

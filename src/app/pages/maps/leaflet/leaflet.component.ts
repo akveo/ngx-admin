@@ -7,12 +7,12 @@ import 'style-loader!leaflet/dist/leaflet.css';
   selector: 'ngx-leaflet',
   styleUrls: ['./leaflet.component.scss'],
   template: `
-    <nga-card size="xlarge">
-      <nga-card-header>Leaflet Maps</nga-card-header>
-      <nga-card-body>
+    <nb-card size="xlarge">
+      <nb-card-header>Leaflet Maps</nb-card-header>
+      <nb-card-body>
         <div leaflet [leafletOptions]="options"></div>
-      </nga-card-body>
-    </nga-card>
+      </nb-card-body>
+    </nb-card>
   `,
 })
 export class LeafletComponent {

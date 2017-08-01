@@ -1,9 +1,9 @@
 @import '../../../../@theme/styles/variables';
-@import '~@akveo/nga-theme/styles/global/bootstrap/buttons';
+@import '~@nebular/theme/styles/global/bootstrap/buttons';
 
-@include nga-install-component() {
+@include nb-install-component() {
 
-  nga-card-header {
+  nb-card-header {
     display: flex;
 
     span {
@@ -21,7 +21,7 @@
 
   .primary-container {
     .original {
-      background-color: nga-theme(btn-primary-bg);
+      background-color: nb-theme(btn-primary-bg);
     }
     .hover {
       @include btn-primary-hover();
@@ -33,12 +33,12 @@
 
   .primary-container.outline .original {
     background-color: transparent;
-    border: 2px solid nga-theme(btn-primary-bg);
+    border: 2px solid nb-theme(btn-primary-bg);
   }
 
   .success-container {
     .original {
-      background-color: nga-theme(btn-success-bg);
+      background-color: nb-theme(btn-success-bg);
     }
     .hover {
       @include btn-success-hover();
@@ -50,12 +50,12 @@
 
   .success-container.outline .original {
     background-color: transparent;
-    border: 2px solid nga-theme(btn-success-bg);
+    border: 2px solid nb-theme(btn-success-bg);
   }
 
   .warning-container {
     .original {
-      background-color: nga-theme(btn-warning-bg);
+      background-color: nb-theme(btn-warning-bg);
     }
     .hover {
       @include btn-warning-hover();
@@ -67,12 +67,12 @@
 
   .warning-container.outline .original {
     background-color: transparent;
-    border: 2px solid nga-theme(btn-warning-bg);
+    border: 2px solid nb-theme(btn-warning-bg);
   }
 
   .info-container {
     .original {
-      background-color: nga-theme(btn-info-bg);
+      background-color: nb-theme(btn-info-bg);
     }
     .hover {
       @include btn-info-hover();
@@ -84,12 +84,12 @@
 
   .info-container.outline .original {
     background-color: transparent;
-    border: 2px solid nga-theme(btn-info-bg);
+    border: 2px solid nb-theme(btn-info-bg);
   }
 
   .danger-container {
     .original {
-      background-color: nga-theme(btn-danger-bg);
+      background-color: nb-theme(btn-danger-bg);
     }
     .hover {
       @include btn-danger-hover();
@@ -101,12 +101,12 @@
 
   .danger-container.outline .original {
     background-color: transparent;
-    border: 2px solid nga-theme(btn-danger-bg);
+    border: 2px solid nb-theme(btn-danger-bg);
   }
 
   .secondary-container {
     .original {
-      border: 2px solid nga-theme(btn-secondary-border);
+      border: 2px solid nb-theme(btn-secondary-border);
     }
     .hover {
       @include btn-secondary-hover();
@@ -118,6 +118,6 @@
 
   .secondary-container.outline .original {
     background-color: transparent;
-    border: 2px solid nga-theme(btn-secondary-border);
+    border: 2px solid nb-theme(btn-secondary-border);
   }
 }

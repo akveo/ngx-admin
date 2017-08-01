@@ -1,10 +1,10 @@
 @import '../../../@theme/styles/variables';
-@import '~@akveo/nga-theme/components/card/card.component.theme';
-@import '~@akveo/nga-theme/styles/global/typography/typography';
+@import '~@nebular/theme/components/card/card.component.theme';
+@import '~@nebular/theme/styles/global/typography/typography';
 
-@include nga-install-component() {
+@include nb-install-component() {
 
-  nga-card {
+  nb-card {
     display: flex;
     flex-direction: row;
   }
@@ -15,22 +15,22 @@
     width: 20rem;
     height: 100%;
     z-index: 2;
-    box-shadow: nga-theme(card-shadow);
+    box-shadow: nb-theme(card-shadow);
   }
 
   .table-header {
-    @include nga-card-header();
+    @include nb-card-header();
     font-size: 1.5rem;
 
     .subtitle {
-      color: nga-theme(color-fg);
-      font-family: nga-theme(font-primary);
+      color: nb-theme(color-fg);
+      font-family: nb-theme(font-primary);
       font-size: 1.125rem;
-      font-weight: nga-theme(font-weight-light);
+      font-weight: nb-theme(font-weight-light);
     }
   }
 
-  nga-tabset /deep/ {
+  nb-tabset /deep/ {
     flex: 1;
     overflow: hidden;
     display: flex;
@@ -42,13 +42,13 @@
     }
 
     ul li a {
-      font-weight: nga-theme(font-weight-bolder);
+      font-weight: nb-theme(font-weight-bolder);
       padding: 0.75rem 1rem;
     }
 
     ul li.active {
-      background-color: nga-theme(color-primary);
-      border-radius: nga-theme(radius);
+      background-color: nb-theme(color-primary);
+      border-radius: nb-theme(radius);
 
       a {
         font-size: 1.5rem;
@@ -58,7 +58,7 @@
       }
     }
 
-    nga-tab {
+    nb-tab {
       flex: 1;
       overflow-y: auto;
     }
@@ -71,16 +71,16 @@
     padding: 1rem;
 
     &:not(:first-child) {
-      border-top: 1px solid nga-theme(separator);
+      border-top: 1px solid nb-theme(separator);
     }
 
     .month {
       display: inline-block;
       width: 2.75rem;
-      font-family: nga-theme(font-secondary);
+      font-family: nb-theme(font-secondary);
       font-size: 1.25rem;
-      font-weight: nga-theme(font-weight-bolder);
-      color: nga-theme(color-fg-heading);
+      font-weight: nb-theme(font-weight-bolder);
+      color: nb-theme(color-fg-heading);
     }
 
     .delta {
@@ -115,13 +115,13 @@
 
     .results {
       font-size: 0.875rem;
-      font-weight: nga-theme(font-weight-light);
+      font-weight: nb-theme(font-weight-light);
 
       b {
-        font-family: nga-theme(font-secondary);
+        font-family: nb-theme(font-secondary);
         font-size: 1rem;
-        font-weight: nga-theme(font-weight-bolder);
-        color: nga-theme(color-fg-heading);
+        font-weight: nb-theme(font-weight-bolder);
+        color: nb-theme(color-fg-heading);
       }
     }
   }
@@ -129,7 +129,7 @@
   .chart-container {
     flex: 1;
     height: 100%;
-    background-image: nga-theme(radial-gradient);
+    background-image: nb-theme(radial-gradient);
     display: flex;
     flex-direction: column;
   }
@@ -151,24 +151,24 @@
 
     .subtitle {
       font-size: 1.125rem;
-      font-weight: nga-theme(font-weight-light);
+      font-weight: nb-theme(font-weight-light);
     }
 
     .value {
-      font-family: nga-theme(font-secondary);
+      font-family: nb-theme(font-secondary);
       font-size: 2rem;
-      font-weight: nga-theme(font-weight-bolder);
-      color: nga-theme(color-fg-heading);
+      font-weight: nb-theme(font-weight-bolder);
+      color: nb-theme(color-fg-heading);
 
       &.dollar {
-        color: nga-theme(color-fg-highlight);
+        color: nb-theme(color-fg-highlight);
       }
     }
 
     .unit {
-      font-family: nga-theme(font-secondary);
+      font-family: nb-theme(font-secondary);
       font-size: 1.25rem;
-      font-weight: nga-theme(font-weight-light);
+      font-weight: nb-theme(font-weight-light);
     }
   }
 

@@ -1,6 +1,6 @@
 @import '../../../@theme/styles/variables';
 
-@include nga-install-component() {
+@include nb-install-component() {
   ngx-echarts-pie,
   ngx-echarts-bar,
   ngx-echarts-line {

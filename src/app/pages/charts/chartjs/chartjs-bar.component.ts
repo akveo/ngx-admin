@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NgaThemeService } from '@akveo/nga-theme';
+import { NbThemeService } from '@nebular/theme';
 
 @Component({
   selector: 'ngx-chartjs-bar',
@@ -29,7 +29,7 @@ export class ChartjsBarComponent {
   ];
   chartOptions: any;
 
-  constructor(private theme: NgaThemeService) {
+  constructor(private theme: NbThemeService) {
     this.theme.getJsTheme().subscribe(config => {
 
       const chartjs: any = config.variables.chartjs;

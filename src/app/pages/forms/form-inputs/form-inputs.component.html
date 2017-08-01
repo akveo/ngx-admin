@@ -1,8 +1,8 @@
 <div class="row">
   <div class="col-md-6">
-    <nga-card>
-      <nga-card-header>Default Inputs</nga-card-header>
-      <nga-card-body>
+    <nb-card>
+      <nb-card-header>Default Inputs</nb-card-header>
+      <nb-card-body>
         <div class="input-group">
           <input type="text" placeholder="Project" class="form-control" />
         </div>
@@ -39,11 +39,11 @@
         <div class="input-group input-group-lg">
           <input type="text" placeholder="Large Input" class="form-control" />
         </div>
-      </nga-card-body>
-    </nga-card>
-    <nga-card>
-      <nga-card-header>Input Groups</nga-card-header>
-      <nga-card-body>
+      </nb-card-body>
+    </nb-card>
+    <nb-card>
+      <nb-card-header>Input Groups</nb-card-header>
+      <nb-card-body>
         <div class="input-group">
           <span class="input-group-addon success">@</span>
           <input type="text" class="form-control" placeholder="Username" />
@@ -84,11 +84,11 @@
           </div>
           <input type="text" class="form-control">
         </div>
-      </nga-card-body>
-    </nga-card>
-    <nga-card>
-      <nga-card-header>Selects</nga-card-header>
-      <nga-card-body>
+      </nb-card-body>
+    </nb-card>
+    <nb-card>
+      <nb-card-header>Selects</nb-card-header>
+      <nb-card-body>
         <div class="form-group">
           <label>Simple Select</label>
           <select class="form-control">
@@ -109,13 +109,13 @@
             <option>Item 5</option>
           </select>
         </div>
-      </nga-card-body>
-    </nga-card>
+      </nb-card-body>
+    </nb-card>
   </div>
   <div class="col-md-6">
-    <nga-card>
-      <nga-card-header>Input Styles</nga-card-header>
-      <nga-card-body>
+    <nb-card>
+      <nb-card-header>Input Styles</nb-card-header>
+      <nb-card-body>
         <div class="input-group input-group-border-only">
           <input type="text" placeholder="Border Only" class="form-control" />
         </div>
@@ -125,11 +125,11 @@
         <div class="input-group input-group-fill-only">
           <input type="text" placeholder="Fill Only" class="form-control">
         </div>
-      </nga-card-body>
-    </nga-card>
-    <nga-card>
-      <nga-card-header>Validation States</nga-card-header>
-      <nga-card-body>
+      </nb-card-body>
+    </nb-card>
+    <nb-card>
+      <nb-card-header>Validation States</nb-card-header>
+      <nb-card-body>
         <div class="form-group">
           <input type="text" placeholder="Input with Success" class="form-control form-control-success">
         </div>
@@ -140,9 +140,9 @@
           <input type="text" placeholder="Input with Danger" class="form-control form-control-danger">
         </div>
         <div class="form-group validation-checkboxes">
-          <nga-checkbox status="success">Checkbox with Success</nga-checkbox>
-          <nga-checkbox status="warning">Checkbox with Warning</nga-checkbox>
-          <nga-checkbox status="danger">Checkbox with Danger</nga-checkbox>
+          <nb-checkbox status="success">Checkbox with Success</nb-checkbox>
+          <nb-checkbox status="warning">Checkbox with Warning</nb-checkbox>
+          <nb-checkbox status="danger">Checkbox with Danger</nb-checkbox>
         </div>
         <div class="form-group has-success">
           <input type="text" placeholder="Input with Success Icon" class="form-control form-control-success">
@@ -153,11 +153,11 @@
         <div class="form-group has-danger">
           <input type="text" placeholder="Input with Danger Icon" class="form-control form-control-danger">
         </div>
-      </nga-card-body>
-    </nga-card>
-    <nga-card>
-      <nga-card-header>Checkboxes & Radios</nga-card-header>
-      <nga-card-body>
+      </nb-card-body>
+    </nb-card>
+    <nb-card>
+      <nb-card-header>Checkboxes & Radios</nb-card-header>
+      <nb-card-body>
         <div class="demo-checkboxes-radio">
           <div class="demo-checkboxes">
             <label class="custom-control custom-checkbox">
@@ -194,7 +194,7 @@
             </label>
           </div>
           <div class="demo-disabled-checkbox-radio">
-            <nga-checkbox [disabled]="true">Disabled Checkbox</nga-checkbox>
+            <nb-checkbox [disabled]="true">Disabled Checkbox</nb-checkbox>
             <label class="custom-control custom-radio">
               <input type="radio" class="custom-control-input" disabled>
               <span class="custom-control-indicator"></span>
@@ -202,10 +202,10 @@
             </label>
           </div>
         </div>
-      </nga-card-body>
-    </nga-card>
-    <nga-card>
-      <nga-card-body class="demo-rating">
+      </nb-card-body>
+    </nb-card>
+    <nb-card>
+      <nb-card-body class="demo-rating">
         <span class="rating-header">Rating</span>
         <div>
           <ngb-rating [(rate)]="starRate" max=5>
@@ -229,7 +229,7 @@
           </ngb-rating>
           <span class="current-rate">{{ heartRate | number : '1.1' }}</span>
         </div>
-      </nga-card-body>
-    </nga-card>
+      </nb-card-body>
+    </nb-card>
   </div>
 </div>

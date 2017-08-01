@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NgaThemeService } from '@akveo/nga-theme';
+import { NbThemeService } from '@nebular/theme';
 
 declare const echarts: any;
 
@@ -14,7 +14,7 @@ export class ElectricityChartComponent {
 
   option: any;
 
-  constructor(private theme: NgaThemeService) {
+  constructor(private theme: NbThemeService) {
 
     const points = [490, 490, 495, 500, 505, 510, 520, 530, 550, 580, 630,
       720, 800, 840, 860, 870, 870, 860, 840, 800, 720, 200, 145, 130, 130,

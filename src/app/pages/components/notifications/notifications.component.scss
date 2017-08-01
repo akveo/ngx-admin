@@ -1,8 +1,8 @@
 @import '../../../@theme/styles/variables';
 
-@include nga-install-component() {
+@include nb-install-component() {
 
-  nga-card-footer {
+  nb-card-footer {
     padding-bottom: 0.25rem;
 
     button {

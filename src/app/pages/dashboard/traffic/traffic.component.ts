@@ -4,8 +4,8 @@ import { Component } from '@angular/core';
   selector: 'ngx-traffic',
   styleUrls: ['./traffic.component.scss'],
   template: `
-    <nga-card size="xsmall">
-      <nga-card-header>
+    <nb-card size="xsmall">
+      <nb-card-header>
         <span>Traffic Consumption</span>
         <div class="ghost-dropdown" ngbDropdown>
           <button type="button" class="btn btn-sm btn-primary" ngbDropdownToggle>
@@ -15,11 +15,11 @@ import { Component } from '@angular/core';
             <li class="dropdown-item" *ngFor="let t of types" (click)="type = t">{{ t }}</li>
           </ul>
         </div>
-      </nga-card-header>
-      <nga-card-body class="p-0">
+      </nb-card-header>
+      <nb-card-body class="p-0">
         <ngx-traffic-chart></ngx-traffic-chart>
-      </nga-card-body>
-    </nga-card>
+      </nb-card-body>
+    </nb-card>
   `,
 })
 export class TrafficComponent {

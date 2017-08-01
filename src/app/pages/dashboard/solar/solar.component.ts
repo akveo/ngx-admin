@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { NgaThemeService } from '@akveo/nga-theme';
+import { NbThemeService } from '@nebular/theme';
 
 declare const echarts: any;
 
@@ -27,7 +27,7 @@ export class SolarComponent {
     this.option.series[1].data[0].value = value;
   }
 
-  constructor(private theme: NgaThemeService) {
+  constructor(private theme: NbThemeService) {
     this.theme.getJsTheme().subscribe(config => {
 
       const solarTheme: any = config.variables.solar;

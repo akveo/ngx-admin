@@ -2,15 +2,15 @@
 @import 'variables';
 
 // framework component themes (styles tied to theme variables)
-@import '~@akveo/nga-theme/styles/globals';
-@import '~@akveo/nga-auth/styles/all';
+@import '~@nebular/theme/styles/globals';
+@import '~@nebular/auth/styles/all';
 
 // custom global styles
 @import 'global';
 
 // install the framework and custom global styles
-@include nga-install() {
-  @include nga-theme-global();
-  @include nga-auth-global();
+@include nb-install() {
+  @include nb-theme-global();
+  @include nb-auth-global();
   @include ngx-global-theme();
 };

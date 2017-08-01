@@ -1,6 +1,6 @@
 @import '../../../@theme/styles/variables';
 
-@include nga-install-component() {
+@include nb-install-component() {
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -11,11 +11,11 @@
 
     a {
       padding: 0.4rem;
-      color: nga-theme(color-fg);
+      color: nb-theme(color-fg);
       transition: color ease-out 0.1s;
 
       &:hover {
-        color: nga-theme(color-fg-heading);
+        color: nb-theme(color-fg-heading);
       }
     }
   }

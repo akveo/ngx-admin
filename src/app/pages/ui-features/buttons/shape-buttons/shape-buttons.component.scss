@@ -1,13 +1,13 @@
 @import '../../../../@theme/styles/variables';
-@import '~@akveo/nga-theme/styles/global/bootstrap/buttons';
+@import '~@nebular/theme/styles/global/bootstrap/buttons';
 
-@include nga-install-component() {
+@include nb-install-component() {
 
   .subheader {
     margin-bottom: 19px;
 
     span:nth-child(2) {
-      color: nga-theme(color-fg-heading);
+      color: nb-theme(color-fg-heading);
     }
   }
 }

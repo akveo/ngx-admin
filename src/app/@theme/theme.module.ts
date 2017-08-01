@@ -3,17 +3,17 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import {
-  NgaActionsModule,
-  NgaCardModule,
-  NgaLayoutModule,
-  NgaMenuModule,
-  NgaRouteTabsetModule,
-  NgaSearchModule,
-  NgaSidebarModule,
-  NgaTabsetModule,
-  NgaThemeModule,
-  NgaUserModule,
-} from '@akveo/nga-theme';
+  NbActionsModule,
+  NbCardModule,
+  NbLayoutModule,
+  NbMenuModule,
+  NbRouteTabsetModule,
+  NbSearchModule,
+  NbSidebarModule,
+  NbTabsetModule,
+  NbThemeModule,
+  NbUserModule,
+} from '@nebular/theme';
 
 import {
   FooterComponent,
@@ -34,16 +34,16 @@ import { COSMIC_THEME } from './styles/theme.cosmic';
 
 const BASE_MODULES = [CommonModule, FormsModule, ReactiveFormsModule];
 
-const NGA_MODULES = [
-  NgaCardModule,
-  NgaLayoutModule,
-  NgaTabsetModule,
-  NgaRouteTabsetModule,
-  NgaMenuModule,
-  NgaUserModule,
-  NgaActionsModule,
-  NgaSearchModule,
-  NgaSidebarModule,
+const NB_MODULES = [
+  NbCardModule,
+  NbLayoutModule,
+  NbTabsetModule,
+  NbRouteTabsetModule,
+  NbMenuModule,
+  NbUserModule,
+  NbActionsModule,
+  NbSearchModule,
+  NbSidebarModule,
 ];
 
 const COMPONENTS = [
@@ -60,28 +60,28 @@ const COMPONENTS = [
 
 const PIPES = [CapitalizePipe, PluralPipe, RoundPipe];
 
-const NGA_THEME_PROVIDERS = [
-  ...NgaThemeModule.forRoot(
+const NB_THEME_PROVIDERS = [
+  ...NbThemeModule.forRoot(
     {
       name: 'default',
     },
     [DEFAULT_THEME, COSMIC_THEME],
   ).providers,
-  ...NgaSidebarModule.forRoot().providers,
-  ...NgaSidebarModule.forRoot().providers,
-  ...NgaMenuModule.forRoot().providers,
+  ...NbSidebarModule.forRoot().providers,
+  ...NbSidebarModule.forRoot().providers,
+  ...NbMenuModule.forRoot().providers,
 ];
 
 @NgModule({
-  imports: [...BASE_MODULES, ...NGA_MODULES],
-  exports: [...BASE_MODULES, ...NGA_MODULES, ...COMPONENTS, ...PIPES],
+  imports: [...BASE_MODULES, ...NB_MODULES],
+  exports: [...BASE_MODULES, ...NB_MODULES, ...COMPONENTS, ...PIPES],
   declarations: [...COMPONENTS, ...PIPES],
 })
 export class ThemeModule {
   static forRoot(): ModuleWithProviders {
     return <ModuleWithProviders>{
       ngModule: ThemeModule,
-      providers: [...NGA_THEME_PROVIDERS],
+      providers: [...NB_THEME_PROVIDERS],
     };
   }
 }

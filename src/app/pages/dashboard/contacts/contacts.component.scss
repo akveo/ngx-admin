@@ -1,14 +1,14 @@
 @import '../../../@theme/styles/variables';
-@import '~@akveo/nga-theme/styles/global/bootstrap/hero-buttons';
+@import '~@nebular/theme/styles/global/bootstrap/hero-buttons';
 
-@include nga-install-component() {
-  nga-tabset {
+@include nb-install-component() {
+  nb-tabset {
     height: 100%;
     display: flex;
     flex-direction: column;
   }
 
-  nga-tab {
+  nb-tab {
     flex: 1;
     overflow-y: auto;
     padding: 0;
@@ -18,9 +18,9 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    color: nga-theme(color-fg);
+    color: nb-theme(color-fg);
     padding: 1rem;
-    border-bottom: 1px solid nga-theme(separator);
+    border-bottom: 1px solid nb-theme(separator);
   }
 
   .i-contact {
@@ -30,24 +30,24 @@
 
   .time {
     font-size: 0.875rem;
-    font-weight: nga-theme(font-weight-light);
+    font-weight: nb-theme(font-weight-light);
     text-transform: uppercase;
   }
 
-  nga-user /deep/ {
+  nb-user /deep/ {
     .info-container {
       margin-left: 0.875rem;
     }
 
     .user-name {
       font-size: 1.25rem;
-      font-weight: nga-theme(font-weight-bolder);
-      color: nga-theme(color-fg-heading);
+      font-weight: nb-theme(font-weight-bolder);
+      color: nb-theme(color-fg-heading);
     }
 
     .user-title {
       font-size: 0.875rem;
-      font-weight: nga-theme(font-weight-light);
+      font-weight: nb-theme(font-weight-light);
       text-transform: uppercase;
     }
   }

@@ -1,18 +1,18 @@
 @import '../../../@theme/styles/variables';
 
-@include nga-install-component() {
+@include nb-install-component() {
 
   ngx-room-selector {
     width: 65%;
-    background-image: nga-theme(radial-gradient);
+    background-image: nb-theme(radial-gradient);
   }
 
   ngx-player {
     flex: 1;
-    box-shadow: nga-theme(card-shadow);
+    box-shadow: nb-theme(card-shadow);
   }
 
-  nga-card {
+  nb-card {
     display: flex;
     flex-direction: row;
   }

@@ -1,7 +1,7 @@
 @import '../../../../@theme/styles/variables';
-@import '~@akveo/nga-theme/components/card/card.component.theme';
+@import '~@nebular/theme/components/card/card.component.theme';
 
-@include nga-install-component() {
+@include nb-install-component() {
   .action-groups {
     display: flex;
   }
@@ -9,6 +9,6 @@
   .action-groups-header {
     flex: 1;
 
-    @include nga-card-header();
+    @include nb-card-header();
   }
 }

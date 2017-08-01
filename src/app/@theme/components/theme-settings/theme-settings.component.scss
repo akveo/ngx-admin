@@ -1,6 +1,6 @@
 @import '../../styles/variables';
 
-@include nga-install-component() {
+@include nb-install-component() {
   .settings-row {
     display: flex;
     flex-direction: row;
@@ -11,10 +11,10 @@
     a {
       font-size: 2rem;
       margin-right: 1rem;
-      color: nga-theme(color-white);
+      color: nb-theme(color-white);
 
       &.selected {
-        color: nga-theme(color-success);
+        color: nb-theme(color-success);
       }
     }
   }

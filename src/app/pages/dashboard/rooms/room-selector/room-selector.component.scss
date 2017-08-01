@@ -1,6 +1,6 @@
 @import '../../../../@theme/styles/variables';
 
-@include nga-install-component() {
+@include nb-install-component() {
   :host {
     display: block;
     align-items: center;
@@ -81,9 +81,9 @@
   .rooms-card-header {
     line-height: 2rem;
     font-size: 1.25rem;
-    font-family: nga-theme(font-secondary);
-    font-weight: nga-theme(font-weight-bolder);
-    color: nga-theme(color-fg-heading);
+    font-family: nb-theme(font-secondary);
+    font-weight: nb-theme(font-weight-bolder);
+    color: nb-theme(color-fg-heading);
     padding: 1.25rem;
   }
 }

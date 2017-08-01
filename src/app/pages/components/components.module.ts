@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { NgaCheckboxModule } from '@akveo/nga-theme';
+import { NbCheckboxModule } from '@nebular/theme';
 
 import { TreeModule } from 'ng2-tree';
 import { ToasterModule } from 'angular2-toaster';
@@ -14,7 +14,7 @@ import { ComponentsRoutingModule, routedComponents } from './components-routing.
     ComponentsRoutingModule,
     TreeModule,
     ToasterModule,
-    NgaCheckboxModule,
+    NbCheckboxModule,
   ],
   declarations: [
     ...routedComponents,

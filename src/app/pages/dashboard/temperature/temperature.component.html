@@ -1,7 +1,7 @@
-<nga-card size="large">
-  <nga-tabset fullWidth>
+<nb-card size="large">
+  <nb-tabset fullWidth>
 
-    <nga-tab tabTitle="Temperature">
+    <nb-tab tabTitle="Temperature">
 
       <div class="slider-container">
         <ngx-temperature-dragger [(value)]="temperature" (power)="temperatureOff = !$event"
@@ -34,9 +34,9 @@
           <input type="radio" value="fan"/><i class="ion-ios-loop"></i>
         </label>
       </div>
-    </nga-tab>
+    </nb-tab>
 
-    <nga-tab tabTitle="Humidity">
+    <nb-tab tabTitle="Humidity">
 
       <div class="slider-container">
         <ngx-temperature-dragger [(value)]="humidity" (power)="humidityOff = !$event"
@@ -66,6 +66,6 @@
           <input type="radio" value="fan"/><i class="ion-ios-loop"></i>
         </label>
       </div>
-    </nga-tab>
-  </nga-tabset>
-</nga-card>
+    </nb-tab>
+  </nb-tabset>
+</nb-card>

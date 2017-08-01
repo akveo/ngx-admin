@@ -1,8 +1,8 @@
 @import '../../../@theme/styles/variables';
 
-@include nga-install-component() {
+@include nb-install-component() {
 
-  nga-card-body {
+  nb-card-body {
     padding: 0;
   }
 

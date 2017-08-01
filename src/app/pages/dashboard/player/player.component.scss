@@ -1,6 +1,6 @@
 @import '../../../@theme/styles/variables';
 
-@include nga-install-component() {
+@include nb-install-component() {
 
   .player {
     flex: 1;
@@ -10,9 +10,9 @@
       display: flex;
       line-height: 2rem;
       font-size: 1.25rem;
-      font-family: nga-theme(font-secondary);
-      font-weight: nga-theme(font-weight-bolder);
-      color: nga-theme(color-fg-heading);
+      font-family: nb-theme(font-secondary);
+      font-weight: nb-theme(font-weight-bolder);
+      color: nb-theme(color-fg-heading);
       padding: 1.25rem;
 
       .player-menu {
@@ -33,7 +33,7 @@
         background-position: center;
         height: 94px;
         width: 30%;
-        box-shadow: nga-theme(card-shadow);
+        box-shadow: nb-theme(card-shadow);
       }
 
       .artist-details {
@@ -43,16 +43,16 @@
         margin-left: 1.25rem;
 
         .artist-name {
-          color: nga-theme(color-fg-heading);
+          color: nb-theme(color-fg-heading);
           font-size: 1.5rem;
-          font-family: nga-theme(font-secondary);
-          font-weight: nga-theme(font-weight-bold);
+          font-family: nb-theme(font-secondary);
+          font-weight: nb-theme(font-weight-bold);
         }
 
         .song-name {
-          font-family: nga-theme(font-main);
+          font-family: nb-theme(font-main);
           font-size: 1.125rem;
-          color: nga-theme(color-fg);
+          color: nb-theme(color-fg);
         }
       }
     }
@@ -86,12 +86,12 @@
       display: flex;
       justify-content: space-around;
       font-size: 4rem;
-      color: nga-theme(color-fg-heading);
+      color: nb-theme(color-fg-heading);
       padding: 2.5rem 0;
-      border-bottom: 1px solid nga-theme(separator);
+      border-bottom: 1px solid nb-theme(separator);
 
       .prev {
-        color: nga-theme(color-fg);
+        color: nb-theme(color-fg);
       }
     }
 
@@ -99,16 +99,16 @@
       display: flex;
       justify-content: space-around;
       font-size: 4rem;
-      color: nga-theme(color-fg);
+      color: nb-theme(color-fg);
       padding: 2rem 0;
-      border-bottom: 1px solid nga-theme(separator);
+      border-bottom: 1px solid nb-theme(separator);
 
       .minus:hover {
-        color: nga-theme(color-fg-heading);
+        color: nb-theme(color-fg-heading);
       }
 
       .plus:hover {
-        color: nga-theme(color-fg-heading);
+        color: nb-theme(color-fg-heading);
       }
 
       .volume-items {
@@ -126,7 +126,7 @@
         .volume-item::before {
           content: '';
           width: 4px;
-          background-color: nga-theme(separator);
+          background-color: nb-theme(separator);
           height: 30%;
           border-radius: 1rem;
           transition: 0.3s;
@@ -166,8 +166,8 @@
       }
 
       .btn.active {
-        background-color: nga-theme(card-bg);
-        color: nga-theme(color-fg);
+        background-color: nb-theme(card-bg);
+        color: nb-theme(color-fg);
       }
 
       .btn:first-child {
@@ -177,7 +177,7 @@
 
       .btn:last-child {
         border-top-right-radius: 0;
-        border-bottom-right-radius: nga-theme(card-border-radius);
+        border-bottom-right-radius: nb-theme(card-border-radius);
       }
     }
   }

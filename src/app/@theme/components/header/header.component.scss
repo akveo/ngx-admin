@@ -1,6 +1,6 @@
 @import '../../styles/variables';
 
-@include nga-install-component() {
+@include nb-install-component() {
   display: flex;
   justify-content: space-between;
   width: 100%;
@@ -19,18 +19,18 @@
     align-items: center;
 
     .navigation {
-      padding-right: nga-theme(padding);
+      padding-right: nb-theme(padding);
       font-size: 2.5rem;
     }
 
     .logo {
-      padding: 0 nga-theme(padding);
+      padding: 0 nb-theme(padding);
       font-size: 1.75rem;
-      font-weight: nga-theme(font-weight-bolder);
-      border-left: 1px solid nga-theme(separator);
+      font-weight: nb-theme(font-weight-bolder);
+      border-left: 1px solid nb-theme(separator);
 
       span {
-        font-weight: nga-theme(font-weight-normal);
+        font-weight: nb-theme(font-weight-normal);
       }
     }
 

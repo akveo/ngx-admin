@@ -1,6 +1,6 @@
 import { Component, Input, OnDestroy } from '@angular/core';
 import { List } from 'immutable';
-import { NgaMenuItem } from '@akveo/nga-theme';
+import { NbMenuItem } from '@nebular/theme';
 import { Subscription } from 'rxjs/Subscription';
 
 import { StateService } from '../../../@core/data/state.service';
@@ -10,52 +10,52 @@ import { StateService } from '../../../@core/data/state.service';
   selector: 'ngx-sample-layout',
   styleUrls: ['./sample.layout.scss'],
   template: `
-    <nga-layout [center]="layout.id === 'center-column'" windowMode>
-      <nga-layout-header fixed>
+    <nb-layout [center]="layout.id === 'center-column'" windowMode>
+      <nb-layout-header fixed>
         <ngx-header [position]="sidebar.id === 'left' ? 'normal': 'inverse'"></ngx-header>
-      </nga-layout-header>
+      </nb-layout-header>
 
-      <nga-sidebar class="menu-sidebar"
+      <nb-sidebar class="menu-sidebar"
                    tag="menu-sidebar"
                    responsive
                    [right]="sidebar.id === 'right'">
-        <nga-sidebar-header>
+        <nb-sidebar-header>
           <button class="btn btn-hero-success main-btn">
             <i class="ion ion-social-github"></i> <span>Support Us</span>
           </button>
-        </nga-sidebar-header>
-        <ng-content select="nga-menu"></ng-content>
-      </nga-sidebar>
+        </nb-sidebar-header>
+        <ng-content select="nb-menu"></ng-content>
+      </nb-sidebar>
 
-      <nga-layout-column>
+      <nb-layout-column>
         <ng-content select="router-outlet"></ng-content>
-      </nga-layout-column>
+      </nb-layout-column>
 
-      <nga-layout-column left class="small" *ngIf="layout.id === 'two-column' || layout.id === 'three-column'">
-        <nga-menu [items]="subMenu"></nga-menu>
-      </nga-layout-column>
+      <nb-layout-column left class="small" *ngIf="layout.id === 'two-column' || layout.id === 'three-column'">
+        <nb-menu [items]="subMenu"></nb-menu>
+      </nb-layout-column>
 
-      <nga-layout-column right class="small" *ngIf="layout.id === 'three-column'">
-        <nga-menu [items]="subMenu"></nga-menu>
-      </nga-layout-column>
+      <nb-layout-column right class="small" *ngIf="layout.id === 'three-column'">
+        <nb-menu [items]="subMenu"></nb-menu>
+      </nb-layout-column>
 
-      <nga-layout-footer fixed>
+      <nb-layout-footer fixed>
         <ngx-footer></ngx-footer>
-      </nga-layout-footer>
+      </nb-layout-footer>
 
-      <nga-sidebar class="settings-sidebar"
+      <nb-sidebar class="settings-sidebar"
                    tag="settings-sidebar"
                    state="collapsed"
                    fixed
                    [right]="sidebar.id !== 'right'">
         <ngx-theme-settings></ngx-theme-settings>
-      </nga-sidebar>
-    </nga-layout>
+      </nb-sidebar>
+    </nb-layout>
   `,
 })
 export class SampleLayoutComponent  implements OnDestroy {
 
-  subMenu: List<NgaMenuItem> = List(
+  subMenu: List<NbMenuItem> = List(
     [
       {
         title: 'PAGE LEVEL MENU',

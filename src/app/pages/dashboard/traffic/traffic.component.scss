@@ -1,8 +1,8 @@
 @import '../../../@theme/styles/variables';
 
-@include nga-install-component() {
+@include nb-install-component() {
 
-  nga-card-header {
+  nb-card-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -10,13 +10,13 @@
     border: none;
   }
 
-  nga-card-body {
+  nb-card-body {
     overflow: hidden;
   }
 
   /deep/ canvas {
-    border-bottom-left-radius: nga-theme(card-border-radius);
-    border-bottom-right-radius: nga-theme(card-border-radius);
+    border-bottom-left-radius: nb-theme(card-border-radius);
+    border-bottom-right-radius: nb-theme(card-border-radius);
   }
 
   .echart {

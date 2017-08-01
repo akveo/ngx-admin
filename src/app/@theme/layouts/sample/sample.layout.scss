@@ -1,12 +1,12 @@
 @import '../../styles/variables';
 
-@include nga-install-root-component() {
+@include nb-install-root-component() {
 
-  nga-layout-column.small {
+  nb-layout-column.small {
     flex: 0.15 !important;
   }
 
-  nga-sidebar.settings-sidebar {
+  nb-sidebar.settings-sidebar {
     width: 7rem;
     /deep/ .main-container {
       width: 7rem;
@@ -21,17 +21,17 @@
     }
   }
 
-  nga-sidebar.menu-sidebar {
+  nb-sidebar.menu-sidebar {
 
-    margin-top: nga-theme(sidebar-header-gap);
+    margin-top: nb-theme(sidebar-header-gap);
 
     /deep/ .main-container {
       height:
-        calc(#{nga-theme(sidebar-height)} - #{nga-theme(header-height)} - #{nga-theme(sidebar-header-gap)}) !important;
+        calc(#{nb-theme(sidebar-height)} - #{nb-theme(header-height)} - #{nb-theme(sidebar-header-gap)}) !important;
       border-top-right-radius: 0.75rem;
     }
 
-    /deep/ nga-sidebar-header {
+    /deep/ nb-sidebar-header {
       padding-bottom: 0.5rem;
       text-align: center;
     }
@@ -59,7 +59,7 @@
 
     &.compacted {
 
-      /deep/ nga-sidebar-header {
+      /deep/ nb-sidebar-header {
         padding-left: 0;
         padding-right: 0;
       }

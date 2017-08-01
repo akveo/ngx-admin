@@ -1,16 +1,16 @@
 @import '../../../@theme/styles/variables';
 
-@include nga-install-component() {
+@include nb-install-component() {
 
   .font-secondary .font-header .name {
     font-size: 4.5rem;
     line-height: 4rem;
-    font-weight: nga-theme(font-weight-bold);
+    font-weight: nb-theme(font-weight-bold);
   }
 
   .font-main .font-header .name {
     font-size: 3rem;
-    font-weight: nga-theme(font-weight-bold);
+    font-weight: nb-theme(font-weight-bold);
   }
 
   .font-row {
@@ -32,8 +32,8 @@
     align-items: center;
     padding-bottom: 1rem;
     margin-bottom: 1rem;
-    border-bottom: 1px solid nga-theme(separator);
-    color: nga-theme(color-fg-heading);
+    border-bottom: 1px solid nb-theme(separator);
+    color: nb-theme(color-fg-heading);
 
     &:last-child {
       border-bottom: none;
@@ -68,7 +68,7 @@
       display: flex;
       justify-content: flex-end;
       align-items: flex-end;
-      color: nga-theme(color-fg);
+      color: nb-theme(color-fg);
     }
   }
 

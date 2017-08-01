@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NgaThemeService } from '@akveo/nga-theme';
+import { NbThemeService } from '@nebular/theme';
 
 @Component({
   selector: 'ngx-d3-pie',
@@ -39,7 +39,7 @@ export class D3PieComponent {
   yAxisLabel = 'Population';
   colorScheme: any;
 
-  constructor(private theme: NgaThemeService) {
+  constructor(private theme: NbThemeService) {
     this.theme.getJsTheme().subscribe(config => {
       this.colorScheme = {
         domain: (<any>config.variables.d3).pie,

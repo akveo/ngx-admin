@@ -1,26 +1,26 @@
-// nga theming framework
-@import '~@akveo/nga-theme/styles/theming';
-// nga our of the box themes
-@import '~@akveo/nga-theme/styles/themes';
+// @nebular theming framework
+@import '~@nebular/theme/styles/theming';
+// @nebular our of the box themes
+@import '~@nebular/theme/styles/themes';
 
 // which themes you what to enable (empty to enable all - not recommended)
-$nga-enabled-themes: (default, light, cosmic);
+$nb-enabled-themes: (default, light, cosmic);
 
-$nga-themes: nga-register-theme((
+$nb-themes: nb-register-theme((
  // app wise variables for each theme
   sidebar-header-gap: 2rem,
   sidebar-header-height: initial,
   layout-content-width: 1400px,
 ), default, default);
 
-$nga-themes: nga-register-theme((
+$nb-themes: nb-register-theme((
   // app wise variables for each theme
   sidebar-header-gap: 2rem,
   sidebar-header-height: initial,
   layout-content-width: 1400px,
 ), cosmic, cosmic);
 
-$nga-themes: nga-register-theme((
+$nb-themes: nb-register-theme((
   // app wise variables for each theme
   sidebar-header-gap: 2rem,
   sidebar-header-height: initial,
