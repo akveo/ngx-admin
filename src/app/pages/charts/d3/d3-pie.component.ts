@@ -42,7 +42,7 @@ export class D3PieComponent {
   constructor(private theme: NgaThemeService) {
     this.theme.getJsTheme().subscribe(config => {
       this.colorScheme = {
-        domain: [config.d3PieColor1, config.d3PieColor2, config.d3PieColor3, config.d3PieColor4],
+        domain: (<any>config.variables.d3).pie,
       };
     });
   }

@@ -12,15 +12,12 @@ export class EchartsMultipleXaxisComponent {
 
   constructor(private theme: NgaThemeService) {
     this.theme.getJsTheme().subscribe(config => {
-      const colors = [
-        config.echartsMultipleXAxisColor1,
-        config.echartsMultipleXAxisColor2,
-        config.echartsMultipleXAxisColor3,
-      ];
+
+      const echarts: any = config.variables.echarts;
 
       this.options = {
-        backgroundColor: config.echartsBackgroundColor,
-        color: colors,
+        backgroundColor: echarts.bg,
+        color: echarts.multipleLine.colors,
         tooltip: {
           trigger: 'none',
           axisPointer: {
@@ -30,7 +27,7 @@ export class EchartsMultipleXaxisComponent {
         legend: {
           data: ['2015 Precipitation', '2016 Precipitation'],
           textStyle: {
-            color: config.echartsMultipleXAxisLegendTextColor,
+            color: echarts.legendTextColor,
           },
         },
         grid: {
@@ -46,7 +43,7 @@ export class EchartsMultipleXaxisComponent {
             axisLine: {
               onZero: false,
               lineStyle: {
-                color: colors[1],
+                color: echarts.multipleLine.colors[1],
               },
             },
             axisPointer: {
@@ -81,7 +78,7 @@ export class EchartsMultipleXaxisComponent {
             axisLine: {
               onZero: false,
               lineStyle: {
-                color: colors[0],
+                color: echarts.multipleLine.colors[0],
               },
             },
             axisPointer: {
@@ -114,7 +111,7 @@ export class EchartsMultipleXaxisComponent {
             type: 'value',
             axisLine: {
               lineStyle: {
-                color: config.echartsMultipleXAxisYAxisLineColor,
+                color: echarts.yAxisLineColor,
               },
             },
           },

@@ -16,11 +16,11 @@ export class TemperatureComponent {
   humidityOff: boolean = false;
   humidityMode = 'heat';
 
-  themeConfig: any = {};
+  colors: any;
 
   constructor(private theme: NgaThemeService) {
     this.theme.getJsTheme().subscribe(config => {
-      this.themeConfig = config;
+      this.colors = config.variables;
     });
   }
 }

@@ -87,7 +87,7 @@ export class D3PolarComponent {
   constructor(private theme: NgaThemeService) {
     this.theme.getJsTheme().subscribe(config => {
       this.colorScheme = {
-        domain: [config.d3PolarColor1, config.d3PolarColor2, config.d3PolarColor3, config.d3PolarColor4],
+        domain: (<any>config.variables.d3).polar,
       };
     });
   }

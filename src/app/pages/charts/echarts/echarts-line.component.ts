@@ -12,9 +12,12 @@ export class EchartsLineComponent {
 
   constructor(private theme: NgaThemeService) {
     this.theme.getJsTheme().subscribe(config => {
+
+      const echarts: any = config.variables.echarts;
+
       this.options = {
-        backgroundColor: config.echartsBackgroundColor,
-        color: [config.echartsLineColor1, config.echartsLineColor2, config.echartsLineColor3],
+        backgroundColor: echarts.bg,
+        color: [echarts.line.colors],
         tooltip: {
           trigger: 'item',
           formatter: '{a} <br/>{b} : {c}',
@@ -23,7 +26,7 @@ export class EchartsLineComponent {
           left: 'left',
           data: ['Line 1', 'Line 2', 'Line 3'],
           textStyle: {
-            color: config.echartsLineLegendTextColor,
+            color: echarts.legendTextColor,
           },
         },
         xAxis: {
@@ -33,7 +36,7 @@ export class EchartsLineComponent {
           data: ['1', '2', '3', '4', '5', '6', '7', '8', '9'],
           axisLine: {
             lineStyle: {
-              color: config.echartsLineXAxisLineColor,
+              color: echarts.xAxisLineColor,
             },
           },
         },
@@ -48,7 +51,7 @@ export class EchartsLineComponent {
           name: 'y',
           axisLine: {
             lineStyle: {
-              color: config.echartsLineYAxisLineColor,
+              color: echarts.yAxisLineColor,
             },
           },
         },

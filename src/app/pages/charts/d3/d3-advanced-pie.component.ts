@@ -32,12 +32,7 @@ export class D3AdvancedPieComponent {
   constructor(private theme: NgaThemeService) {
     this.theme.getJsTheme().subscribe(config => {
       this.colorScheme = {
-        domain: [
-          config.d3AdvancedPieColor1,
-          config.d3AdvancedPieColor2,
-          config.d3AdvancedPieColor3,
-          config.d3AdvancedPieColor4,
-        ],
+        domain: (<any>config.variables.d3).advancedPie,
       };
     });
   }

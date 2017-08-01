@@ -12,9 +12,12 @@ export class EchartsBarComponent {
 
   constructor(private theme: NgaThemeService) {
     this.theme.getJsTheme().subscribe(config => {
+
+      const echarts: any = config.variables.echarts;
+
       this.options = {
-        backgroundColor: config.echartsBackgroundColor,
-        color: [config.echartsBarColor1],
+        backgroundColor: echarts.bg,
+        color: [echarts.bar.color],
         tooltip: {
           trigger: 'axis',
           axisPointer: {
@@ -36,7 +39,7 @@ export class EchartsBarComponent {
             },
             axisLine: {
               lineStyle: {
-                color: config.echartsBarXAxisLineColor,
+                color: echarts.xAxisLineColor,
               },
             },
           },
@@ -46,7 +49,7 @@ export class EchartsBarComponent {
             type: 'value',
             axisLine: {
               lineStyle: {
-                color: config.echartsBarYAxisLineColor,
+                color: echarts.yAxisLineColor,
               },
             },
           },

@@ -31,12 +31,15 @@ export class ChartjsBarComponent {
 
   constructor(private theme: NgaThemeService) {
     this.theme.getJsTheme().subscribe(config => {
+
+      const chartjs: any = config.variables.chartjs;
+
       this.chartOptions = {
         scaleShowVerticalLines: false,
         responsive: true,
         legend: {
           labels: {
-            fontColor: config.chartjsBarLegendTextColor,
+            fontColor: chartjs.legendTextColor,
           },
         },
         scales: {
@@ -44,10 +47,10 @@ export class ChartjsBarComponent {
             {
               gridLines: {
                 display: true,
-                color: config.chartjsBarXAxisColor,
+                color: chartjs.xAxisColor,
               },
               ticks: {
-                fontColor: config.chartjsBarTickColor,
+                fontColor: chartjs.tickColor,
               },
             },
           ],
@@ -55,10 +58,10 @@ export class ChartjsBarComponent {
             {
               gridLines: {
                 display: true,
-                color: config.chartjsBarYAxisColor,
+                color: chartjs.yAxisColor,
               },
               ticks: {
-                fontColor: config.chartjsBarTickColor,
+                fontColor: chartjs.tickColor,
               },
             },
           ],

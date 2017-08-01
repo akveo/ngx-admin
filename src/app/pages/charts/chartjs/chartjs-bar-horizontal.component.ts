@@ -28,11 +28,14 @@ export class ChartjsBarHorizontalComponent {
 
   constructor(private theme: NgaThemeService) {
     this.theme.getJsTheme().subscribe(config => {
+
+      const chartjs: any = config.variables.chartjs;
+
       this.chartData = [
         {
           label: 'Dataset 1',
-          backgroundColor: config.chartjsBarHorizontalColor1,
-          borderColor: config.chartjsBarHorizontalColor1,
+          backgroundColor: chartjs.barHorizontal.colors[0],
+          borderColor: chartjs.barHorizontal.colors[0],
           borderWidth: 1,
           data: [
             this.randomScalingFactor(),
@@ -46,8 +49,8 @@ export class ChartjsBarHorizontalComponent {
         },
         {
           label: 'Dataset 2',
-          backgroundColor: config.chartjsBarHorizontalColor2,
-          borderColor: config.chartjsBarHorizontalColor2,
+          backgroundColor: chartjs.barHorizontal.colors[1],
+          borderColor: chartjs.barHorizontal.colors[1],
           data: [
             this.randomScalingFactor(),
             this.randomScalingFactor(),
@@ -74,10 +77,10 @@ export class ChartjsBarHorizontalComponent {
             {
               gridLines: {
                 display: true,
-                color: config.chartjsBarHorizontalXAxisColor,
+                color: chartjs.xAxisColor,
               },
               ticks: {
-                fontColor: config.chartjsBarHorizontalTickColor,
+                fontColor: chartjs.tickColor,
               },
             },
           ],
@@ -85,10 +88,10 @@ export class ChartjsBarHorizontalComponent {
             {
               gridLines: {
                 display: true,
-                color: config.chartjsBarHorizontalYAxisColor,
+                color: chartjs.yAxisColor,
               },
               ticks: {
-                fontColor: config.chartjsBarHorizontalTickColor,
+                fontColor: chartjs.tickColor,
               },
             },
           ],
@@ -96,7 +99,7 @@ export class ChartjsBarHorizontalComponent {
         legend: {
           position: 'right',
           labels: {
-            fontColor: config.chartjsBarHorizontalLegendTextColor,
+            fontColor: chartjs.legendTextColor,
           },
         },
       };

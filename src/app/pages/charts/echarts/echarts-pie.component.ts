@@ -12,15 +12,12 @@ export class EchartsPieComponent {
 
   constructor(private theme: NgaThemeService) {
     this.theme.getJsTheme().subscribe(config => {
+
+      const echarts: any = config.variables.echarts;
+
       this.options = {
-        backgroundColor: config.echartsBackgroundColor,
-        color: [
-          config.echartsPieColor1,
-          config.echartsPieColor2,
-          config.echartsPieColor3,
-          config.echartsPieColor4,
-          config.echartsPieColor5,
-        ],
+        backgroundColor: echarts.bg,
+        color: echarts.pie.colors,
         tooltip: {
           trigger: 'item',
           formatter: '{a} <br/>{b} : {c} ({d}%)',
@@ -30,7 +27,7 @@ export class EchartsPieComponent {
           left: 'left',
           data: ['USA', 'Germany', 'France', 'Canada', 'Russia'],
           textStyle: {
-            color: config.echartsPieLegendTextColor,
+            color: echarts.legendTextColor,
           },
         },
         series: [
@@ -65,7 +62,7 @@ export class EchartsPieComponent {
               emphasis: {
                 shadowBlur: 10,
                 shadowOffsetX: 0,
-                shadowColor: config.echartsPieItemHoverShadowColor,
+                shadowColor: echarts.pie.itemHoverShadowColor,
               },
             },
           },

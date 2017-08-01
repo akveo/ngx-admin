@@ -26,18 +26,21 @@ export class ChartjsRadarComponent {
 
   constructor(private theme: NgaThemeService) {
     this.theme.getJsTheme().subscribe(config => {
+
+      const chartjs: any = config.variables.chartjs;
+
       this.chartData = [
         {
           data: [65, 59, 90, 81, 56, 55, 40],
           label: 'Series A',
-          borderColor: config.chartjsRadarColor1,
-          backgroundColor: config.chartjsRadarColor1,
+          borderColor: chartjs.radar.colors[0],
+          backgroundColor: chartjs.radar.colors[0],
         },
         {
           data: [28, 48, 40, 19, 96, 27, 100],
           label: 'Series B',
-          borderColor: config.chartjsRadarColor2,
-          backgroundColor: config.chartjsRadarColor2,
+          borderColor: chartjs.radar.colors[1],
+          backgroundColor: chartjs.radar.colors[1],
         },
       ];
 
@@ -45,19 +48,19 @@ export class ChartjsRadarComponent {
         scaleFontColor: 'white',
         legend: {
           labels: {
-            fontColor: config.chartjsRadarLegendTextColor,
+            fontColor: chartjs.legendTextColor,
           },
         },
         scale: {
           pointLabels: {
             fontSize: 14,
-            fontColor: config.chartjsRadarPointLabelFontColor,
+            fontColor: chartjs.radar.pointLabelFontColor,
           },
           gridLines: {
-            color: config.chartjsRadarScaleGridLinesColor,
+            color: chartjs.radar.scaleGridLinesColor,
           },
           angleLines: {
-            color: config.chartjsRadarScaleAngleLinesColor,
+            color: chartjs.radar.scaleAngleLinesColor,
           },
         },
       };

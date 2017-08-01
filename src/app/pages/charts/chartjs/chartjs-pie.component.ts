@@ -26,17 +26,26 @@ export class ChartjsPieComponent {
 
   constructor(private theme: NgaThemeService) {
     this.theme.getJsTheme().subscribe(config => {
+
+      const chartjs: any = config.variables.chartjs;
+
       this.chartOptions = {
         responsive: true,
+        scale: {
+          pointLabels: {
+            fontSize: 14,
+            fontColor: chartjs.legendTextColor,
+          },
+        },
         scales: {
           xAxes: [
             {
               gridLines: {
                 display: true,
-                color: config.chartjsPieXAxisColor,
+                color: chartjs.xAxisColor,
               },
               ticks: {
-                fontColor: config.chartjsPitTickColor,
+                fontColor: chartjs.tickColor,
               },
             },
           ],
@@ -44,17 +53,17 @@ export class ChartjsPieComponent {
             {
               gridLines: {
                 display: true,
-                color: config.chartjsPieYAxisColor,
+                color: chartjs.yAxisColor,
               },
               ticks: {
-                fontColor: config.chartjsPieTickColor,
+                fontColor: chartjs.tickColor,
               },
             },
           ],
         },
         legend: {
           labels: {
-            fontColor: config.chartjsPieLegendTextColor,
+            fontColor: chartjs.legendTextColor,
           },
         },
       };

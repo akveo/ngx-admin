@@ -74,7 +74,7 @@ export class D3LineComponent {
   constructor(private theme: NgaThemeService) {
     this.theme.getJsTheme().subscribe(config => {
       this.colorScheme = {
-        domain: [config.d3LineColor1, config.d3LineColor2, config.d3LineColor3, config.d3LineColor4],
+        domain: (<any>config.variables.d3).line,
       };
     });
   }

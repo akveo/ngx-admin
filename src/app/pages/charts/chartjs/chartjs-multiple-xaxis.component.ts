@@ -96,12 +96,15 @@ export class ChartjsMultipleXaxisComponent {
 
   constructor(private theme: NgaThemeService) {
     this.theme.getJsTheme().subscribe(config => {
+
+      const chartjs: any = config.variables.chartjs;
+
       this.chartOptions = {
         responsive: true,
         legend: {
           position: 'bottom',
           labels: {
-            fontColor: config.chartjsLineLegendTextColor,
+            fontColor: chartjs.legendTextColor,
           },
         },
         hover: {
@@ -117,10 +120,10 @@ export class ChartjsMultipleXaxisComponent {
               },
               gridLines: {
                 display: true,
-                color: config.chartjsLineXAxisColor,
+                color: chartjs.xAxisColor,
               },
               ticks: {
-                fontColor: config.chartjsLineTickColor,
+                fontColor: chartjs.tickColor,
               },
             },
           ],
@@ -133,10 +136,10 @@ export class ChartjsMultipleXaxisComponent {
               },
               gridLines: {
                 display: true,
-                color: config.chartjsLineXAxisColor,
+                color: chartjs.xAxisColor,
               },
               ticks: {
-                fontColor: config.chartjsLineTickColor,
+                fontColor: chartjs.tickColor,
               },
             },
           ],

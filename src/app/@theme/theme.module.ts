@@ -63,7 +63,7 @@ const PIPES = [CapitalizePipe, PluralPipe, RoundPipe];
 const NGA_THEME_PROVIDERS = [
   ...NgaThemeModule.forRoot(
     {
-      name: 'cosmic',
+      name: 'default',
     },
     [DEFAULT_THEME, COSMIC_THEME],
   ).providers,

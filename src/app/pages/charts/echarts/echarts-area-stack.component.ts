@@ -12,28 +12,25 @@ export class EchartsAreaStackComponent {
 
   constructor(private theme: NgaThemeService) {
     this.theme.getJsTheme().subscribe(config => {
+
+      const echarts: any = config.variables.echarts;
+
       this.options = {
-        backgroundColor: config.echartsBackgroundColor,
-        color: [
-          config.echartsAreaStackColor1,
-          config.echartsAreaStackColor2,
-          config.echartsAreaStackColor3,
-          config.echartsAreaStackColor4,
-          config.echartsAreaStackColor5,
-        ],
+        backgroundColor: echarts.bg,
+        color: echarts.areaStack.colors,
         tooltip: {
           trigger: 'axis',
           axisPointer: {
             type: 'cross',
             label: {
-              backgroundColor: config.echartsAreaStackTooltipBackgroundColor,
+              backgroundColor: echarts.areaStack.tooltipBackgroundColor,
             },
           },
         },
         legend: {
           data: ['Mail marketing', 'Affiliate advertising', 'Video ad', 'Direct interview', 'Search engine'],
           textStyle: {
-            color: config.echartsAreaStackLegendTextColor,
+            color: echarts.legendTextColor,
           },
         },
         grid: {
@@ -49,7 +46,7 @@ export class EchartsAreaStackComponent {
             data: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
             axisLine: {
               lineStyle: {
-                color: config.echartsAreaStackXAxisLineColor,
+                color: echarts.xAxisLineColor,
               },
             },
           },
@@ -59,7 +56,7 @@ export class EchartsAreaStackComponent {
             type: 'value',
             axisLine: {
               lineStyle: {
-                color: config.echartsAreaStackYAxisLineColor,
+                color: echarts.yAxisLineColor,
               },
             },
           },

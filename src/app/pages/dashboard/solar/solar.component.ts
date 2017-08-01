@@ -30,6 +30,8 @@ export class SolarComponent {
   constructor(private theme: NgaThemeService) {
     this.theme.getJsTheme().subscribe(config => {
 
+      const solarTheme: any = config.variables.solar;
+
       this.option = Object.assign({}, {
         tooltip: {
           trigger: 'item',
@@ -53,8 +55,8 @@ export class SolarComponent {
                     formatter: '{d}%',
                     textStyle: {
                       fontSize: '22',
-                      fontFamily: config.fontSecondary,
-                      color: config.colorFgHeading,
+                      fontFamily: config.variables.fontSecondary,
+                      color: config.variables.colorFgHeading,
                     },
                   },
                 },
@@ -66,14 +68,14 @@ export class SolarComponent {
                     color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
                       {
                         offset: 0,
-                        color: config.tempColorGreen,
+                        color: solarTheme.gradientLeft,
                       },
                       {
                         offset: 1,
-                        color: config.tempColorBlue,
+                        color: solarTheme.gradientRight,
                       },
                     ]),
-                    shadowColor: config.solarColorDarkGreen,
+                    shadowColor: solarTheme.gradientLeft,
                     shadowBlur: 0,
                     shadowOffsetX: 0,
                     shadowOffsetY: 3,
@@ -94,7 +96,7 @@ export class SolarComponent {
                 },
                 itemStyle: {
                   normal: {
-                    color: config.layoutBg,
+                    color: config.variables.layoutBg,
                   },
                 },
               },
@@ -125,14 +127,14 @@ export class SolarComponent {
                     color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
                       {
                         offset: 0,
-                        color: config.tempColorGreen,
+                        color: solarTheme.gradientLeft,
                       },
                       {
                         offset: 1,
-                        color: config.tempColorBlue,
+                        color: solarTheme.gradientRight,
                       },
                     ]),
-                    shadowColor: 'rgba(0, 217, 119, 0.3)',
+                    shadowColor: solarTheme.shadowColor,
                     shadowBlur: 7,
                   },
                 },

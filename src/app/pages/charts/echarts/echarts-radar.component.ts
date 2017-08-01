@@ -12,20 +12,23 @@ export class EchartsRadarComponent {
 
   constructor(private theme: NgaThemeService) {
     this.theme.getJsTheme().subscribe(config => {
+
+      const echarts: any = config.variables.echarts;
+
       this.options = {
-        backgroundColor: config.echartsBackgroundColor,
-        color: [config.echartsRadarColor1, config.echartsRadarColor2],
+        backgroundColor: echarts.bg,
+        color: echarts.radar.colors,
         tooltip: {},
         legend: {
           data: ['Allocated Budget', 'Actual Spending'],
           textStyle: {
-            color: config.echartsRadarLegendTextColor,
+            color: echarts.legendTextColor,
           },
         },
         radar: {
           name: {
             textStyle: {
-              color: config.echartsRadarNameTextColor,
+              color: echarts.radar.nameTextColor,
             },
           },
           indicator: [
@@ -43,7 +46,7 @@ export class EchartsRadarComponent {
           // },
           splitArea: {
             areaStyle: {
-              color: config.echartsRadarSplitAreaStyleColor,
+              color: echarts.radar.splitAreaStyleColor,
             },
           },
         },

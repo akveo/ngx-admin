@@ -5,13 +5,8 @@
 
       <div class="slider-container">
         <ngx-temperature-dragger [(value)]="temperature" (power)="temperatureOff = !$event"
-                                 [min]="12" [max]="30" [disableArcColor]="themeConfig.layoutBg"
-                                 [fillColors]="[
-                                  themeConfig.tempColorBlue,
-                                  themeConfig.tempColorLightBlue,
-                                  themeConfig.tempColorGreen,
-                                  themeConfig.tempColorYellow,
-                                  themeConfig.tempColorOrange]">
+                                 [min]="12" [max]="30" [disableArcColor]="colors.layoutBg"
+                                 [fillColors]="colors.temperature">
 
           <div class="slider-value-container"  [ngClass]="{ 'off': temperatureOff }">
             <div class="value temperature">
@@ -45,13 +40,8 @@
 
       <div class="slider-container">
         <ngx-temperature-dragger [(value)]="humidity" (power)="humidityOff = !$event"
-                                 [min]="0" [max]="100" [disableArcColor]="themeConfig.layoutBg"
-                                 [fillColors]="[
-                                  themeConfig.tempColorBlue,
-                                  themeConfig.tempColorLightBlue,
-                                  themeConfig.tempColorGreen,
-                                  themeConfig.tempColorYellow,
-                                  themeConfig.tempColorOrange]">
+                                 [min]="0" [max]="100" [disableArcColor]="colors.layoutBg"
+                                 [fillColors]="colors.temperature">
 
           <div class="slider-value-container"  [ngClass]="{ 'off': humidityOff }">
             <div class="value humidity">

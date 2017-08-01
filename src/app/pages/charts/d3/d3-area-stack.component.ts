@@ -77,12 +77,7 @@ export class D3AreaStackComponent {
   constructor(private theme: NgaThemeService) {
     this.theme.getJsTheme().subscribe(config => {
       this.colorScheme = {
-        domain: [
-          config.d3AreaStackColor1,
-          config.d3AreaStackColor2,
-          config.d3AreaStackColor3,
-          config.d3AreaStackColor4,
-        ],
+        domain: (<any>config.variables.d3).areaStack,
       };
     });
   }

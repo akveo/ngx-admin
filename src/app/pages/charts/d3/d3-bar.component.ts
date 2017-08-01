@@ -47,7 +47,7 @@ export class D3BarComponent {
   constructor(private theme: NgaThemeService) {
     this.theme.getJsTheme().subscribe(config => {
       this.colorScheme = {
-        domain: [config.d3BarColor1, config.d3BarColor2, config.d3BarColor3, config.d3BarColor4],
+        domain: (<any>config.variables.d3).bar,
       };
     });
   }

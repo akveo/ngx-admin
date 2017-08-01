@@ -16,14 +16,16 @@ export class EchartsBarAnimationComponent {
       const data1 = [];
       const data2 = [];
 
+      const echarts: any = config.variables.echarts;
+
       this.options = {
-        backgroundColor: config.echartsBackgroundColor,
-        color: [config.echartsBarAnimationColor1, config.echartsBarAnimationColor2],
+        backgroundColor: echarts.bg,
+        color: [echarts.barAnimation.colors],
         legend: {
           data: ['bar', 'bar2'],
           align: 'left',
           textStyle: {
-            color: config.echartsBarAnimationLegendTextColor,
+            color: echarts.legendTextColor,
           },
         },
         xAxis: {
@@ -34,14 +36,14 @@ export class EchartsBarAnimationComponent {
           },
           axisLine: {
             lineStyle: {
-              color: config.echartsBarAnimationXAxisLineColor,
+              color: echarts.xAxisLineColor,
             },
           },
         },
         yAxis: {
           axisLine: {
             lineStyle: {
-              color: config.echartsBarAnimationYAxisLineColor,
+              color: echarts.yAxisLineColor,
             },
           },
         },

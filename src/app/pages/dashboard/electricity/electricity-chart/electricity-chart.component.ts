@@ -27,6 +27,9 @@ export class ElectricityChartComponent {
     }));
 
     this.theme.getJsTheme().subscribe(config => {
+
+      const eTheme: any = config.variables.electricity;
+
       this.option = {
         grid: {
           left: 0,
@@ -43,11 +46,11 @@ export class ElectricityChartComponent {
             },
           },
           position: 'top',
-          backgroundColor: config.trafficTooltipBg,
-          borderColor: config.colorSuccess,
+          backgroundColor: eTheme.tooltipBg,
+          borderColor: config.variables.colorSuccess,
           borderWidth: 3,
           formatter: '{c0} kWh',
-          extraCssText: `box-shadow: 0px 2px 46px 0 ${config.trafficTooltipBg};border-radius: 10px;padding: 5px 20px;`,
+          extraCssText: `box-shadow: 0px 2px 46px 0 ${eTheme.tooltipBg};border-radius: 10px;padding: 5px 20px;`,
         },
         xAxis: {
           type: 'category',
@@ -59,13 +62,13 @@ export class ElectricityChartComponent {
           },
           axisLabel: {
             textStyle: {
-              color: config.electricityAxisColor,
+              color: eTheme.axisColor,
               fontSize: 18,
             },
           },
           axisLine: {
             lineStyle: {
-              color: config.electricityAxisColor,
+              color: eTheme.axisColor,
               opacity: 0.3,
               width: '2',
             },
@@ -85,7 +88,7 @@ export class ElectricityChartComponent {
           splitLine: {
             show: true,
             lineStyle: {
-              color: config.electricityAxisColor,
+              color: eTheme.axisColor,
               opacity: 0.2,
               width: '1',
             },
@@ -112,12 +115,12 @@ export class ElectricityChartComponent {
                 type: 'dotted',
                 color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
                   offset: 0,
-                  color: config.electricityLineGradFrom,
+                  color: eTheme.lineGradFrom,
                 }, {
                   offset: 1,
-                  color: config.electricityLineGradTo,
+                  color: eTheme.lineGradTo,
                 }]),
-                shadowColor: config.electricityLineShadow,
+                shadowColor: eTheme.lineShadow,
                 shadowBlur: 6,
                 shadowOffsetY: 12,
               },
@@ -126,10 +129,10 @@ export class ElectricityChartComponent {
               normal: {
                 color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
                   offset: 0,
-                  color: config.electricityAreaGradFrom,
+                  color: eTheme.areaGradFrom,
                 }, {
                   offset: 1,
-                  color: config.electricityAreaGradTo,
+                  color: eTheme.areaGradTo,
                 }]),
               },
             },
@@ -146,12 +149,12 @@ export class ElectricityChartComponent {
                 type: 'dotted',
                 color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
                   offset: 0,
-                  color: config.electricityLineGradFrom,
+                  color: eTheme.lineGradFrom,
                 }, {
                   offset: 1,
-                  color: config.electricityLineGradTo,
+                  color: eTheme.lineGradTo,
                 }]),
-                shadowColor: config.trafficShadowLineDarkBg,
+                shadowColor: eTheme.shadowLineDarkBg,
                 shadowBlur: 14,
               },
             },

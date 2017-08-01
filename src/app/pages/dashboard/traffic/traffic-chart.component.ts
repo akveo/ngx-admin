@@ -21,6 +21,8 @@ export class TrafficChartComponent {
   constructor(private theme: NgaThemeService) {
     this.theme.getJsTheme().subscribe(config => {
 
+      const trafficTheme: any = config.variables.traffic;
+
       this.option = Object.assign({}, {
         grid: {
           left: 0,
@@ -47,7 +49,7 @@ export class TrafficChartComponent {
           splitLine: {
             show: true,
             lineStyle: {
-              color: config.trafficColorBlack,
+              color: trafficTheme.colorBlack,
               opacity: 0.06,
               width: '1',
             },
@@ -58,11 +60,11 @@ export class TrafficChartComponent {
             type: 'shadow',
           },
           position: 'top',
-          backgroundColor: config.trafficTooltipBg,
-          borderColor: config.colorSuccess,
+          backgroundColor: trafficTheme.tooltipBg,
+          borderColor: config.variables.colorSuccess,
           borderWidth: 3,
           formatter: '{c0} MB',
-          extraCssText: `box-shadow: 0px 2px 46px 0 ${config.trafficTooltipBg};border-radius: 10px;padding: 5px 20px;`,
+          extraCssText: `box-shadow: 0px 2px 46px 0 ${trafficTheme.tooltipBg};border-radius: 10px;padding: 5px 20px;`,
         },
         series: [
           {
@@ -73,7 +75,7 @@ export class TrafficChartComponent {
             silent: true,
             itemStyle: {
               normal: {
-                color: config.trafficLineBg,
+                color: trafficTheme.lineBg,
               },
               emphasis: {
                 color: 'rgba(0,0,0,0)',
@@ -84,7 +86,7 @@ export class TrafficChartComponent {
             lineStyle: {
               normal: {
                 width: 2,
-                color: config.trafficLineBg,
+                color: trafficTheme.lineBg,
               },
             },
             data: points.map(p => p - 15),
@@ -96,10 +98,10 @@ export class TrafficChartComponent {
             sampling: 'average',
             itemStyle: {
               normal: {
-                color: config.trafficShadowLineBg,
+                color: trafficTheme.shadowLineBg,
                 borderColor: 'white',
                 borderWidth: 2,
-                shadowColor: config.trafficShadowLineShadow,
+                shadowColor: trafficTheme.shadowLineShadow,
                 shadowOffsetX: 0,
                 shadowOffsetY: -3,
                 shadowBlur: 10,
@@ -113,8 +115,8 @@ export class TrafficChartComponent {
             lineStyle: {
               normal: {
                 width: 2,
-                color: config.trafficLineBg,
-                shadowColor: config.trafficShadowLineDarkBg,
+                color: trafficTheme.lineBg,
+                shadowColor: trafficTheme.shadowLineDarkBg,
                 shadowBlur: 14,
               },
             },
@@ -122,10 +124,10 @@ export class TrafficChartComponent {
               normal: {
                 color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
                   offset: 0,
-                  color: config.trafficGradFrom,
+                  color: trafficTheme.gradFrom,
                 }, {
                   offset: 1,
-                  color: config.trafficGradTo,
+                  color: trafficTheme.gradTo,
                 }]),
               },
             },
