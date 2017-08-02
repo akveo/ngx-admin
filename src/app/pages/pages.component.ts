@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 
-import 'style-loader!../@theme/styles/styles.scss';
 import { MENU_ITEMS } from './pages-menu';
 
 @Component({

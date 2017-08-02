@@ -99,4 +99,20 @@ export const MENU_ITEMS: List<NbMenuItem> = List([{
     title: 'Smart Table',
     link: '/pages/tables/smart-table',
   }]),
+}, {
+  title: 'Auth',
+  icon: 'ion-unlocked',
+  children: List<NgaMenuItem>([{
+    title: 'Login',
+    link: '/auth/login',
+  }, {
+    title: 'Register',
+    link: '/auth/register',
+  }, {
+    title: 'Request Password',
+    link: '/auth/request-password',
+  }, {
+    title: 'Reset Password',
+    link: '/auth/reset-password',
+  }]),
 }]);
