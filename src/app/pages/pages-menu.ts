@@ -102,7 +102,7 @@ export const MENU_ITEMS: List<NbMenuItem> = List([{
 }, {
   title: 'Auth',
   icon: 'ion-unlocked',
-  children: List<NgaMenuItem>([{
+  children: List<NbMenuItem>([{
     title: 'Login',
     link: '/auth/login',
   }, {

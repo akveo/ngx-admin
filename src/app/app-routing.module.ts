@@ -1,43 +1,43 @@
 import { ExtraOptions, RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
 import {
-  NgaAuthComponent,
-  NgaLoginComponent,
-  NgaLogoutComponent,
-  NgaRegisterComponent,
-  NgaRequestPasswordComponent,
-  NgaResetPasswordComponent
-} from '@akveo/nga-auth';
+  NbAuthComponent,
+  NbLoginComponent,
+  NbLogoutComponent,
+  NbRegisterComponent,
+  NbRequestPasswordComponent,
+  NbResetPasswordComponent,
+} from '@nebular/auth';
 
 const routes: Routes = [
   { path: 'pages', loadChildren: 'app/pages/pages.module#PagesModule' },
   {
     path: 'auth',
-    component: NgaAuthComponent,
+    component: NbAuthComponent,
     children: [
       {
         path: '',
-        component: NgaLoginComponent,
+        component: NbLoginComponent,
       },
       {
         path: 'login',
-        component: NgaLoginComponent,
+        component: NbLoginComponent,
       },
       {
         path: 'register',
-        component: NgaRegisterComponent,
+        component: NbRegisterComponent,
       },
       {
         path: 'logout',
-        component: NgaLogoutComponent,
+        component: NbLogoutComponent,
       },
       {
         path: 'request-password',
-        component: NgaRequestPasswordComponent,
+        component: NbRequestPasswordComponent,
       },
       {
         path: 'reset-password',
-        component: NgaResetPasswordComponent,
+        component: NbResetPasswordComponent,
       },
     ],
   },
