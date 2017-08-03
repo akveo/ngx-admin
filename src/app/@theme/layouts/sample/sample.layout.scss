@@ -1,6 +1,6 @@
 @import '../../styles/themes';
 
-@include nb-install-root-component() {
+@include nb-install-component() {
 
   nb-layout-column.small {
     flex: 0.15 !important;
