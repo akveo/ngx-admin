@@ -1,16 +1,25 @@
 // themes - our custom or/and out of the box themes
-@import 'variables';
+@import 'themes';
 
 // framework component themes (styles tied to theme variables)
 @import '~@nebular/theme/styles/globals';
 @import '~@nebular/auth/styles/all';
 
-// custom global styles
-@import 'global';
-
 // install the framework and custom global styles
 @include nb-install() {
+
+  // framework global styles
   @include nb-theme-global();
   @include nb-auth-global();
-  @include ngx-global-theme();
+
+  // other global styles
+
+  [class^='col-'] {
+    padding: 0 0.75rem;
+  }
+
+  .row {
+    margin-right: -0.75rem;
+    margin-left: -0.75rem;
+  }
 };

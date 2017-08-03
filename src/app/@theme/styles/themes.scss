@@ -1,11 +1,9 @@
 // @nebular theming framework
 @import '~@nebular/theme/styles/theming';
-// @nebular our of the box themes
+// @nebular out of the box themes
 @import '~@nebular/theme/styles/themes';
 
-// TODO: rename into themes
-
-// which themes you what to enable (empty to enable all - not recommended)
+// which themes you what to enable (empty to enable all)
 $nb-enabled-themes: (default, light, cosmic);
 
 $nb-themes: nb-register-theme((
