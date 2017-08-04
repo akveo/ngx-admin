@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component } from '@angular/core';
 import { NbThemeService } from '@nebular/theme';
 
 declare const echarts: any;
@@ -12,14 +12,17 @@ const points = [300, 520, 435, 530, 730, 620, 660, 860];
     <div echarts [options]="option" class="echart"></div>
   `,
 })
-export class TrafficChartComponent {
+export class TrafficChartComponent implements AfterViewInit {
 
   type: string = 'month';
   types = ['week', 'month', 'year'];
   option: any = {};
 
   constructor(private theme: NbThemeService) {
-    this.theme.getJsTheme().subscribe(config => {
+  }
+
+  ngAfterViewInit() {
+    this.theme.getJsTheme().delay(1).subscribe(config => {
 
       const trafficTheme: any = config.variables.traffic;
 

@@ -9,7 +9,7 @@
     overflow: visible;
 
     $bevel: btn-hero-bevel(nb-theme(card-bg));
-    $shadow: btn-hero-shadow();
+    $shadow: nb-theme(btn-hero-shadow);
     box-shadow: $bevel, $shadow;
     transition: all 0.1s ease-out;
 

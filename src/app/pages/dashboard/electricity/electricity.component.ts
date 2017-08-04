@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { NbThemeService } from '@nebular/theme';
+
 import { ElectricityService } from '../../../@core/data/electricity.service';
 
 @Component({
@@ -13,7 +15,13 @@ export class ElectricityComponent {
   type: string = 'week';
   types = ['week', 'month', 'year'];
 
-  constructor(private electricityService: ElectricityService) {
-    this.data = electricityService.getData();
+  currentTheme: string;
+
+  constructor(private eService: ElectricityService, private themeService: NbThemeService) {
+    this.data = eService.getData();
+
+    this.themeService.getJsTheme().subscribe(theme => {
+      this.currentTheme = theme.name;
+    });
   }
 }

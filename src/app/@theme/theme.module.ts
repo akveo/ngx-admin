@@ -68,7 +68,6 @@ const NB_THEME_PROVIDERS = [
     [DEFAULT_THEME, COSMIC_THEME],
   ).providers,
   ...NbSidebarModule.forRoot().providers,
-  ...NbSidebarModule.forRoot().providers,
   ...NbMenuModule.forRoot().providers,
 ];
 

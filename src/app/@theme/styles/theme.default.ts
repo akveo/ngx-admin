@@ -3,7 +3,7 @@ export const DEFAULT_THEME = {
   base: null,
   variables: {
 
-    temperature: ['#7bff24', '#31ffad', '#2ec7fe', '#fff024', '#f7bd59'],
+    temperature: ['#42db7d'],
 
     solar: {
       color: '#19977E',
@@ -24,14 +24,27 @@ export const DEFAULT_THEME = {
     },
 
     electricity: {
-      tooltipBg: 'rgba(0, 255, 170, 0.35)',
-      axisColor: '#a1a1e5',
-      lineGradFrom: '#00ffaa',
-      lineGradTo: '#fff835',
-      lineShadow: 'rgba(14, 16, 48, 0.4)',
-      areaGradFrom: 'rgba(188, 92, 255, 0.5)',
-      areaGradTo: 'rgba(188, 92, 255, 0)',
-      shadowLineDarkBg: '#a695ff',
+      tooltipBg: '#ffffff',
+      tooltipLineColor: 'rgba(0, 0, 0, 0)',
+      tooltipLineWidth: '0',
+      tooltipBorderColor: '#ebeef2',
+      tooltipExtraCss: 'border-radius: 10px;padding: 8px 24px;',
+      tooltipTextColor: '#222222',
+
+      xAxisColor: 'rgba(0, 0, 0, 0)',
+      xAxisTextColor: '#222222',
+      yAxisSplitLine: '#ebeef2',
+
+      itemBorderColor: '#42db7d',
+      lineStyle: 'solid',
+      lineWidth: '4',
+      lineGradFrom: '#42db7d',
+      lineGradTo: '#42db7d',
+      lineShadow: 'rgba(0, 0, 0, 0)',
+
+      areaGradFrom: '#ebeef2',
+      areaGradTo: '#ebeef2',
+      shadowLineDarkBg: 'rgba(0, 0, 0, 0)',
     },
 
     bubbleMap: {
