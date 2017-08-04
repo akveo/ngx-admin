@@ -1,8 +1,7 @@
 import { NgModule } from '@angular/core';
-import { NbTabsetModule, NbUserModule } from '@nebular/theme';
 import { AngularEchartsModule } from 'ngx-echarts';
 
-import { SharedModule } from '../../shared.module';
+import { ThemeModule } from '../../@theme/theme.module';
 import { DashboardComponent } from './dashboard.component';
 import { StatusCardComponent } from './status-card/status-card.component';
 import { ContactsComponent } from './contacts/contacts.component';
@@ -20,11 +19,10 @@ import { PlayerComponent } from './player/player.component';
 import { TrafficComponent } from './traffic/traffic.component';
 import { TrafficChartComponent } from './traffic/traffic-chart.component';
 
+
 @NgModule({
   imports: [
-    NbTabsetModule,
-    NbUserModule,
-    SharedModule,
+    ThemeModule,
     AngularEchartsModule,
   ],
   declarations: [

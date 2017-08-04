@@ -2,8 +2,8 @@ import { NgModule } from '@angular/core';
 import { AngularEchartsModule } from 'ngx-echarts';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { ChartsModule as Ng2Charts } from 'ng2-charts/ng2-charts';
+import { ThemeModule } from '../../@theme/theme.module';
 
-import { SharedModule } from '../../shared.module';
 import { ChartsRoutingModule, routedComponents } from './charts-routing.module';
 import { ChartjsBarComponent } from './chartjs/chartjs-bar.component';
 import { ChartjsLineComponent } from './chartjs/chartjs-line.component';
@@ -48,7 +48,7 @@ const components = [
 ];
 
 @NgModule({
-  imports: [SharedModule, ChartsRoutingModule, AngularEchartsModule, NgxChartsModule, Ng2Charts],
+  imports: [ThemeModule, ChartsRoutingModule, AngularEchartsModule, NgxChartsModule, Ng2Charts],
   declarations: [...routedComponents, ...components],
 })
 export class ChartsModule {}

@@ -1,17 +1,12 @@
 import { NgModule } from '@angular/core';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { NbCheckboxModule } from '@nebular/theme';
 
-import { SharedModule } from '../../shared.module';
-
+import { ThemeModule } from '../../@theme/theme.module';
 import { FormsRoutingModule, routedComponents } from './forms-routing.module';
 
 @NgModule({
   imports: [
-    SharedModule,
+    ThemeModule,
     FormsRoutingModule,
-    NgbModule,
-    NbCheckboxModule,
   ],
   declarations: [
     ...routedComponents,

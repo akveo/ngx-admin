@@ -1,10 +1,7 @@
 import { NgModule } from '@angular/core';
-import { NbTabsetModule, NbRouteTabsetModule, NbSearchModule } from '@nebular/theme';
 
-import { SharedModule } from '../../shared.module';
-
+import { ThemeModule } from '../../@theme/theme.module';
 import { ButtonsModule } from './buttons/buttons.module';
-
 import { UiFeaturesRoutingModule } from './ui-features-routing.module';
 import { UiFeaturesComponent } from './ui-features.component';
 import { GridComponent } from './grid/grid.component';
@@ -30,11 +27,8 @@ const components = [
 
 @NgModule({
   imports: [
-    SharedModule,
+    ThemeModule,
     UiFeaturesRoutingModule,
-    NbTabsetModule,
-    NbRouteTabsetModule,
-    NbSearchModule,
     ButtonsModule,
   ],
   declarations: [

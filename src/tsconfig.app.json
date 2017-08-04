@@ -9,34 +9,12 @@
       "@angular/*": [
         "../node_modules/@angular/*"
       ],
-      "@akveo/*": [
-        "../node_modules/@akveo/*"
-      ],
-      "@ng-bootstrap/*": [
-        "../node_modules/@ng-bootstrap/*"
-      ],
-      "bootstrap/*": [
-        "../node_modules/bootstrap/*"
-      ],
-      "font-awesome/*": [
-        "../node_modules/font-awesome/*"
+      "@nebular/*": [
+        "../node_modules/@nebular/*"
       ],
       "immutable/*": [
         "../node_modules/immutable/*"
-      ],
-      "ionicons/*": [
-        "../node_modules/ionicons/*"
-      ],
-      "normalize.css/*": [
-        "../node_modules/normalize.css/*"
-      ],
-      "segoe-fonts/*": [
-        "../node_modules/segoe-fonts/*"
-      ],
-      "typeface-exo/*": [
-        "../node_modules/typeface-exo/*"
       ]
-
     }
   },
   "exclude": [

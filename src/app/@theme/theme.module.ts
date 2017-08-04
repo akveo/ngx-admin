@@ -1,6 +1,7 @@
 import { ModuleWithProviders, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import {
   NbActionsModule,
@@ -13,6 +14,7 @@ import {
   NbTabsetModule,
   NbThemeModule,
   NbUserModule,
+  NbCheckboxModule,
 } from '@nebular/theme';
 
 import {
@@ -44,6 +46,8 @@ const NB_MODULES = [
   NbActionsModule,
   NbSearchModule,
   NbSidebarModule,
+  NbCheckboxModule,
+  NgbModule,
 ];
 
 const COMPONENTS = [
@@ -65,7 +69,7 @@ const NB_THEME_PROVIDERS = [
     {
       name: 'default',
     },
-    [DEFAULT_THEME, COSMIC_THEME],
+    [ DEFAULT_THEME, COSMIC_THEME ],
   ).providers,
   ...NbSidebarModule.forRoot().providers,
   ...NbMenuModule.forRoot().providers,

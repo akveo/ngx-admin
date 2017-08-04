@@ -1,8 +1,6 @@
 import { NgModule } from '@angular/core';
-import { NbActionsModule, NbSearchModule, NbUserModule } from '@nebular/theme';
 
-import { SharedModule } from '../../../shared.module';
-
+import { ThemeModule } from '../../../@theme/theme.module';
 import { DefaultButtonsComponent } from './default-buttons/default-buttons.component';
 import { HeroButtonComponent } from './hero-buttons/hero-buttons.component';
 import { ShapeButtonsComponent } from './shape-buttons/shape-buttons.component';
@@ -31,10 +29,7 @@ const components = [
 
 @NgModule({
   imports: [
-    SharedModule,
-    NbActionsModule,
-    NbSearchModule,
-    NbUserModule,
+    ThemeModule,
   ],
   exports: [
     ...components,
