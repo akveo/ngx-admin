@@ -2,19 +2,6 @@
 @import '~@nebular/theme/components/card/card.component.theme';
 
 @include nb-install-component() {
-  :host {
-    display: block;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-  }
-
-  svg {
-    display:block;
-    width: 100%;
-    height: 80%;
-  }
-
   .stroke-pattern {
     fill: none;
     stroke: #bdc4cd;
@@ -70,9 +57,15 @@
     }
   }
 
-  .rooms-card-header {
+  .header {
     @include nb-card-header();
     border-bottom: none;
+  }
+
+  .room-selector {
+    width: 80%;
+    display: block;
+    margin: 0 auto;
   }
 
   @include nb-for-theme(cosmic) {

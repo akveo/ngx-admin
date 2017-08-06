@@ -1,19 +1,46 @@
 @import '../../../@theme/styles/themes';
+@import '~bootstrap/scss/mixins/breakpoints';
+@import '~@nebular/theme/styles/global/bootstrap/breakpoints';
 
 @include nb-install-component() {
-
   ngx-room-selector {
-    width: 65%;
-    background-image: nb-theme(radial-gradient);
+    width: 70%;
   }
 
   ngx-player {
-    flex: 1;
-    box-shadow: nb-theme(card-shadow);
+    width: 30%;
   }
 
   nb-card {
     display: flex;
     flex-direction: row;
+  }
+
+  @include media-breakpoint-down(xl) {
+    &.expanded ngx-room-selector {
+      display: none;
+    }
+
+    ngx-room-selector, ngx-player {
+      width: 100%;
+    }
+
+    nb-card {
+      flex-direction: column;
+      justify-content: space-between;
+
+      .collapse {
+        display: flex;
+        justify-content: center;
+        align-self: center;
+        font-size: 3rem;
+        color: nb-theme(color-fg);
+        transition: display 0.3s ease;
+
+        &:focus {
+          outline: none;
+        }
+      }
+    }
   }
 }

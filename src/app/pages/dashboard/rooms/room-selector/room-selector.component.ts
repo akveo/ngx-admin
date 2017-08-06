@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'ngx-room-selector',
@@ -6,12 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./room-selector.component.scss'],
 })
 export class RoomSelectorComponent {
+  @Output() select: EventEmitter<number> = new EventEmitter();
+
   selectedRoom: null;
-
   sortedRooms = [];
-
   viewBox = '-20 -20 618.88 407.99';
-
   roomSvg = {
     borders: [{
       d: 'M186.21,130.05H216.37V160H186.21Z',
@@ -72,6 +71,7 @@ export class RoomSelectorComponent {
   }
 
   selectRoom(roomNumber) {
+    this.select.emit(roomNumber);
     this.selectedRoom = roomNumber;
     this.sortRooms();
   }
