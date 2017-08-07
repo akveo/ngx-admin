@@ -18,8 +18,8 @@ export class TemperatureDraggerComponent implements AfterViewInit, OnChanges {
   @Input() disableArcColor: string = '#999999';
   @Input() bottomAngle: number = 90;
   @Input() arcThickness: number = 18; // CSS pixels
-  @Input() thumbRadius: number = 15; // CSS pixels
-  @Input() thumbDashRadius: number = null;
+  @Input() thumbRadius: number = 16; // CSS pixels
+  @Input() thumbBorder: number = 3;
   @Input() maxLeap: number = 0.4;
 
   value: number = 50;
@@ -61,7 +61,6 @@ export class TemperatureDraggerComponent implements AfterViewInit, OnChanges {
   translateYValue = 0;
   thickness = 6;
   pinRadius = 10;
-  pinDashRadius = null;
   colors: any = [];
 
   styles = {
@@ -133,7 +132,7 @@ export class TemperatureDraggerComponent implements AfterViewInit, OnChanges {
     const svgBoundingRect = this.svgRoot.nativeElement.getBoundingClientRect();
     const svgAreaFactor = svgBoundingRect.height && svgBoundingRect.width / svgBoundingRect.height || 1;
     const svgHeight = VIEW_BOX_SIZE / svgAreaFactor;
-    const thumbMaxRadius = Math.max(this.thumbRadius, this.thumbDashRadius);
+    const thumbMaxRadius = this.thumbRadius + this.thumbBorder;
     const thumbMargin = 2 * thumbMaxRadius > this.arcThickness
       ? (thumbMaxRadius - this.arcThickness / 2) / this.scaleFactor
       : 0;
@@ -151,7 +150,6 @@ export class TemperatureDraggerComponent implements AfterViewInit, OnChanges {
       } else {
         this.radius = VIEW_BOX_SIZE / 2 - thumbMargin;
       }
-
     } else {
       this.radius = (svgHeight - 2 * thumbMargin) / (1 + Math.cos(halfAngle));
     }
@@ -163,7 +161,6 @@ export class TemperatureDraggerComponent implements AfterViewInit, OnChanges {
 
     this.thickness = this.arcThickness / this.scaleFactor;
     this.pinRadius = this.thumbRadius / this.scaleFactor;
-    this.pinDashRadius = this.thumbDashRadius && this.thumbDashRadius / this.scaleFactor;
   }
 
   private calculateClipPathSettings() {

@@ -6,21 +6,27 @@ export const DEFAULT_THEME = {
     temperature: ['#42db7d'],
 
     solar: {
-      color: '#19977E',
-      shadowColor: 'rgba(0, 217, 119, 0.3)',
-      gradientLeft: '#7bff24',
-      gradientRight: '#2ec7fe',
+      gradientLeft: '#42db7d',
+      gradientRight: '#42db7d',
+      shadowColor: 'rgba(0, 0, 0, 0)',
+      radius: ['80%', '90%'],
     },
 
     traffic: {
       colorBlack: '#000000',
-      tooltipBg: 'rgba(0, 255, 170, 0.35)',
-      lineBg: 'rgba(146, 141, 255, 0.5)',
-      shadowLineBg: '#bdbaff',
-      shadowLineDarkBg: '#a695ff',
-      shadowLineShadow: 'rgba(33, 7, 77, 0.5)',
-      gradFrom: 'rgba(118, 89, 255, 0.4)',
-      gradTo: 'rgba(164, 84, 255, 0.5)',
+      tooltipBg: '#ffffff',
+      tooltipBorderColor: '#c0c8d1',
+      tooltipExtraCss: 'border-radius: 10px; padding: 4px 16px;',
+      tooltipTextColor: '#222222',
+      lineBg: '#c0c8d1',
+      lineShadowBlur: '1',
+      itemColor: '#bcc3cc',
+      itemBorderColor: '#bcc3cc',
+      itemEmphasisBorderColor: '#42db7d',
+      shadowLineDarkBg: 'rgba(0, 0, 0, 0)',
+      shadowLineShadow: 'rgba(0, 0, 0, 0)',
+      gradFrom: '#ebeef2',
+      gradTo: '#ebeef2',
     },
 
     electricity: {
@@ -28,7 +34,7 @@ export const DEFAULT_THEME = {
       tooltipLineColor: 'rgba(0, 0, 0, 0)',
       tooltipLineWidth: '0',
       tooltipBorderColor: '#ebeef2',
-      tooltipExtraCss: 'border-radius: 10px;padding: 8px 24px;',
+      tooltipExtraCss: 'border-radius: 10px; padding: 8px 24px;',
       tooltipTextColor: '#222222',
 
       xAxisColor: 'rgba(0, 0, 0, 0)',

@@ -46,8 +46,7 @@
 
     a.active {
       background-color: nb-theme(color-bg-active);
-      color: nb-theme(color-fg-highlight);
-      text-shadow: 0 0 12px rgba(nb-theme(color-fg-highlight), 0.4);
+      color: nb-theme(color-fg-heading);
       border: none;
     }
   }
@@ -56,38 +55,6 @@
     display: flex;
     flex-wrap: wrap;
     height: 100%;
-
-    .camera {
-      position: relative;
-      background-position: center;
-      background-size: cover;
-      height: 50%;
-      width: 50%;
-
-      span {
-        position: absolute;
-        bottom: 0;
-        width: 100%;
-        color: white;
-        background: rgba(88, 73, 184, 0.5);
-        font-size: 1rem;
-        padding: 0.5rem 1rem;
-      }
-    }
-
-    .camera::before {
-      background-color: black;
-      content: '';
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      opacity: 0.2;
-      transition: 0.1s;
-    }
-
-    .camera:hover::before {
-      opacity: 0;
-    }
   }
 
   .cameras.single-view {
@@ -98,6 +65,40 @@
       &::before {
         height: 100%;
       }
+    }
+  }
+
+  .camera {
+    position: relative;
+    background-position: center;
+    background-size: cover;
+    height: 50%;
+    width: 50%;
+
+    span {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      color: white;
+      background: rgba(0, 0, 0, 0.4);
+      font-family: nb-theme(font-family-secondary);
+      font-size: 1rem;
+      font-weight: nb-theme(font-weight-bold);
+      padding: 0.5rem 1rem;
+    }
+
+    &::before {
+      background-color: rgba(255, 255, 255, 0.1);
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      opacity: 1;
+      transition: 0.2s;
+    }
+
+    &:hover::before {
+      opacity: 0;
     }
   }
 
@@ -113,6 +114,23 @@
       font-weight: nb-theme(font-weight-bold);
       color: nb-theme(color-fg-heading);
       text-transform: uppercase;
+    }
+  }
+
+  @include nb-for-theme(cosmic) {
+    .cameras-filter a.active {
+      color: nb-theme(color-fg-highlight);
+      text-shadow: 0 0 12px rgba(nb-theme(color-fg-highlight), 0.4);
+    }
+
+    .camera {
+      span {
+        background: rgba(88, 73, 184, 0.5);
+      }
+
+      &::before {
+        background-color: rgba(0, 0, 0, 0.2);
+      }
     }
   }
 }

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { AfterViewInit, Component, Input } from '@angular/core';
 import { NbThemeService } from '@nebular/theme';
 
 declare const echarts: any;
@@ -10,25 +10,23 @@ declare const echarts: any;
     <div echarts [options]="option" class="echart">
     </div>
     <div class="info">
-      <h5 class="mb-3">June 7, 2017</h5>
-      <h2 class="text-success">6. 421 kWh</h2>
-      <h5><span class="text-hint">out of</span> 8.421 kWh</h5>
+      <div class="date">June 7, 2017</div>
+      <div class="value">6. 421 kWh</div>
+      <div class="details"><span>out of</span> 8.421 kWh</div>
     </div>
   `,
 })
-export class SolarComponent {
+export class SolarComponent implements AfterViewInit {
+
+  @Input() chartValue: number;
 
   option: any = {};
 
-  @Input('chartValue')
-  set chartValue(value: number) {
-    this.option.series[0].data[0].value = value;
-    this.option.series[0].data[1].value = 100 - value;
-    this.option.series[1].data[0].value = value;
+  constructor(private theme: NbThemeService) {
   }
 
-  constructor(private theme: NbThemeService) {
-    this.theme.getJsTheme().subscribe(config => {
+  ngAfterViewInit() {
+    this.theme.getJsTheme().delay(1).subscribe(config => {
 
       const solarTheme: any = config.variables.solar;
 
@@ -44,10 +42,10 @@ export class SolarComponent {
             hoverAnimation: false,
             type: 'pie',
             center: ['35%', '50%'],
-            radius: ['70%', '90%'],
+            radius: solarTheme.radius,
             data: [
               {
-                value: 72,
+                value: this.chartValue,
                 name: ' ',
                 label: {
                   normal: {
@@ -75,7 +73,7 @@ export class SolarComponent {
                         color: solarTheme.gradientRight,
                       },
                     ]),
-                    shadowColor: solarTheme.gradientLeft,
+                    shadowColor: solarTheme.shadowColor,
                     shadowBlur: 0,
                     shadowOffsetX: 0,
                     shadowOffsetY: 3,
@@ -84,7 +82,7 @@ export class SolarComponent {
                 hoverAnimation: false,
               },
               {
-                value: 28,
+                value: 100 - this.chartValue,
                 name: ' ',
                 tooltip: {
                   show: false,
@@ -108,10 +106,10 @@ export class SolarComponent {
             hoverAnimation: false,
             type: 'pie',
             center: ['35%', '50%'],
-            radius: ['70%', '90%'],
+            radius: solarTheme.radius,
             data: [
               {
-                value: 72,
+                value: this.chartValue,
                 name: ' ',
                 label: {
                   normal: {

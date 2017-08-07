@@ -5,8 +5,10 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./status-card.component.scss'],
   template: `
     <nb-card (click)="on = !on" [ngClass]="{'off': !on}">
-      <div class="icon-container {{ type }}">
-        <ng-content></ng-content>
+      <div class="icon-container">
+        <div class="icon {{ type }}">
+          <ng-content></ng-content>
+        </div>
       </div>
 
       <div class="details">

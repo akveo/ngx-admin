@@ -12,18 +12,24 @@ export const COSMIC_THEME = {
     ],
 
     solar: {
-      color: '#19977E',
-      shadowColor: 'rgba(0, 217, 119, 0.3)',
       gradientLeft: '#7bff24',
       gradientRight: '#2ec7fe',
+      shadowColor: '#19977E',
+      radius: ['70%', '90%'],
     },
 
     traffic: {
       colorBlack: '#000000',
       tooltipBg: 'rgba(0, 255, 170, 0.35)',
-      lineBg: 'rgba(146, 141, 255, 0.5)',
-      shadowLineBg: '#bdbaff',
-      shadowLineDarkBg: '#a695ff',
+      tooltipBorderColor: '#00d977',
+      tooltipExtraCss: 'box-shadow: 0px 2px 46px 0 rgba(0, 255, 170, 0.35); border-radius: 10px; padding: 4px 16px;',
+      tooltipTextColor: '#ffffff',
+      lineBg: '#d1d1ff',
+      lineShadowBlur: '14',
+      itemColor: '#BEBBFF',
+      itemBorderColor: '#ffffff',
+      itemEmphasisBorderColor: '#ffffff',
+      shadowLineDarkBg: '#655ABD',
       shadowLineShadow: 'rgba(33, 7, 77, 0.5)',
       gradFrom: 'rgba(118, 89, 255, 0.4)',
       gradTo: 'rgba(164, 84, 255, 0.5)',
@@ -34,7 +40,7 @@ export const COSMIC_THEME = {
       tooltipLineColor: 'rgba(255, 255, 255, 0.1)',
       tooltipLineWidth: '1',
       tooltipBorderColor: '#00d977',
-      tooltipExtraCss: 'box-shadow: 0px 2px 46px 0 rgba(0, 255, 170, 0.35);border-radius: 10px;padding: 8px 24px;',
+      tooltipExtraCss: 'box-shadow: 0px 2px 46px 0 rgba(0, 255, 170, 0.35); border-radius: 10px; padding: 8px 24px;',
       tooltipTextColor: '#ffffff',
 
       xAxisColor: 'rgba(161, 161 ,229, 0.3)',

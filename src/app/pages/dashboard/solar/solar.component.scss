@@ -4,11 +4,35 @@
 
   display: flex;
   height: 100%;
+  color: nb-theme(color-fg);
 
   .echart {
     flex: 1;
     height: 100%;
     width: 40%;
+  }
+
+  .date {
+    font-size: 1.25rem;
+    font-weight: nb-theme(font-weight-bolder);
+    margin-bottom: 0.5rem;
+  }
+
+  .value {
+    font-family: nb-theme(font-secondary);
+    font-size: 2rem;
+    font-weight: nb-theme(font-weight-bold);
+    color: nb-theme(color-fg-heading);
+  }
+
+  .details {
+    font-size: 1.25rem;
+    font-weight: nb-theme(font-weight-bold);
+    line-height: 1;
+    span {
+      font-size: 1rem;
+      font-weight: nb-theme(font-weight-light);
+    }
   }
 
   .text-hint {
@@ -20,5 +44,17 @@
     flex-direction: column;
     flex: 1;
     align-self: center;
+  }
+
+  @include nb-for-theme(cosmic) {
+    color: nb-theme(color-fg-heading);
+
+    .value {
+      color: nb-theme(color-success);
+    }
+
+    .details span {
+      color: nb-theme(color-fg);
+    }
   }
 }

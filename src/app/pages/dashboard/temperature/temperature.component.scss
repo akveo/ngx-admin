@@ -104,8 +104,7 @@
 
     &.active {
       border-color: nb-theme(color-fg-highlight);
-      box-shadow: 0 2px 12px 0 rgba(nb-theme(color-fg-highlight), 0.25);
-      background-color: rgba(nb-theme(color-fg-highlight), 0.25);
+      color: nb-theme(color-success);
     }
 
     i {
@@ -123,6 +122,18 @@
     }
     .ion-ios-loop {
       font-size: 1.75rem;
+    }
+  }
+
+  @include nb-for-theme(cosmic) {
+    .btn-icon {
+      border-color: nb-theme(form-control-border-color);
+
+      &.active {
+        border-color: nb-theme(color-fg-highlight);
+        box-shadow: 0 2px 12px 0 rgba(nb-theme(color-fg-highlight), 0.25);
+        background-color: rgba(nb-theme(color-fg-highlight), 0.25);
+      }
     }
   }
 }

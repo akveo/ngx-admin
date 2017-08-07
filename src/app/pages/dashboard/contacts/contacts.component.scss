@@ -20,7 +20,10 @@
     justify-content: space-between;
     color: nb-theme(color-fg);
     padding: 1rem;
-    border-bottom: 1px solid nb-theme(separator);
+
+    &:not(:last-child) {
+      border-bottom: 1px solid nb-theme(separator);
+    }
   }
 
   .i-contact {

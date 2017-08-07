@@ -13,15 +13,20 @@
     box-shadow: $bevel, $shadow;
     transition: all 0.1s ease-out;
 
-    $border-radius: nb-theme(card-border-radius);
     .icon-container {
+      height: 100%;
+      padding: 0.625rem;
+      border-right: 1px solid nb-theme(separator);
+    }
+
+    .icon {
       display: flex;
       align-items: center;
       justify-content: center;
-      height: 100%;
-      width: 7rem;
-      font-size: 4em;
-      border-radius: $border-radius 0 0 $border-radius;
+      width: 5.75rem;
+      height: 4.75rem;
+      font-size: 3.5rem;
+      border-radius: nb-theme(card-border-radius);
       transition: all 0.1s ease-out, color 0s;
       color: nb-theme(color-white);
 
@@ -46,7 +51,7 @@
     &:hover {
       background: lighten(nb-theme(card-bg), 5%);
 
-      .icon-container {
+      .icon {
         &.primary {
           background-image: btn-hero-primary-light-gradient();
         }
@@ -66,7 +71,7 @@
       box-shadow: none;
       background: nb-theme(card-bg);
 
-      .icon-container {
+      .icon {
         &.primary, &.success, &.info, &.warning {
           box-shadow: none;
         }
@@ -89,6 +94,10 @@
       color: nb-theme(card-fg);
 
       .icon-container {
+        border-right: 1px solid nb-theme(separator);
+      }
+
+      .icon {
         color: nb-theme(card-fg);
 
         &.primary, &.success, &.info, &.warning {
@@ -97,9 +106,6 @@
         }
       }
 
-      .details {
-        border-left: 1px solid nb-theme(separator);
-      }
       .title {
         color: nb-theme(card-fg);
       }
@@ -126,6 +132,26 @@
       font-weight: nb-theme(font-weight-light);
       text-transform: uppercase;
       color: nb-theme(card-fg);
+    }
+  }
+
+  @include nb-for-theme(cosmic) {
+    nb-card {
+      .icon-container {
+        padding: 0;
+        border-right: none;
+      }
+
+      .icon {
+        width: 7rem;
+        height: 100%;
+        font-size: 4em;
+        border-radius: nb-theme(card-border-radius) 0 0 nb-theme(card-border-radius);
+      }
+
+      .status {
+        font-weight: nb-theme(font-weight-light);
+      }
     }
   }
 }

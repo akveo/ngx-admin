@@ -50,9 +50,14 @@
       .icon {
         font-size: 10rem;
         line-height: 10rem;
-        text-shadow: 0 3px 0 #665ebd,
-                    0 4px 10px rgba(33, 7, 77, 0.5),
-                    0 2px 10px #928dff;
+        color: nb-theme(color-success);
+
+        @include nb-for-theme(cosmic) {
+          color: nb-theme(color-fg);
+          text-shadow: 0 3px 0 #665ebd,
+          0 4px 10px rgba(33, 7, 77, 0.5),
+          0 2px 10px #928dff;
+        }
       }
     }
 

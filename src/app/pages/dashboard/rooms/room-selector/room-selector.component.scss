@@ -16,7 +16,7 @@
 
   .stroke-pattern {
     fill: none;
-    stroke: #a1a1e5;
+    stroke: #bdc4cd;
     stroke-miterlimit: 10;
     opacity: 0.1;
     stroke-width: 1px;
@@ -24,14 +24,14 @@
 
   .stroked-element {
     stroke-width: 4px;
-    stroke: #a1a1e5;
+    stroke: #bdc4cd;
     stroke-miterlimit: 10;
     fill: url('#New_Pattern_Swatch_1');
   }
 
   .room-border {
     stroke-width: 4px;
-    stroke: #a1a1e5;
+    stroke: #bdc4cd;
     stroke-miterlimit: 10;
     fill: none;
     transition: stroke 0.4s ease-out;
@@ -54,26 +54,18 @@
   .room-text {
     cursor: pointer;
     user-select: none;
-    fill: #fff;
+    fill: nb-theme(color-fg);
   }
 
   .selected-room {
     z-index: 40;
-    .room-bg {
-      //stroke: rgba(0, 255, 170, 1);
-      fill: rgba(0, 255, 170, 0.2);
-      filter: url('#f2');
-    }
 
-    .room-bg-border-grad {
-      stroke: rgba(0, 255, 170, 1);
-      filter: url('#f2');
+    .room-text {
+      fill: nb-theme(color-fg-heading);
+      font-weight: nb-theme(font-weight-bold);
     }
     .room-border {
-      stroke: #00f9a6;
-    }
-    .room-border-glow {
-      filter: url('#f2');
+      stroke: nb-theme(color-success);
     }
   }
 
@@ -85,5 +77,31 @@
     font-weight: nb-theme(font-weight-bolder);
     color: nb-theme(color-fg-heading);
     padding: 1.25rem;
+  }
+
+  @include nb-for-theme(cosmic) {
+    .stroke-pattern, .stroked-element, .room-border {
+      stroke: #a1a1e5;
+    }
+
+    .room-text {
+      fill: nb-theme(color-fg-heading);
+    }
+
+    .selected-room {
+      .room-text {
+        font-weight: nb-theme(font-weight-normal);
+      }
+      .room-bg {
+        fill: rgba(0, 255, 170, 0.2);
+        filter: url('#f2');
+      }
+      .room-border {
+        stroke: #00f9a6;
+      }
+      .room-border-glow {
+        filter: url('#f2');
+      }
+    }
   }
 }

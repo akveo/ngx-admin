@@ -35,7 +35,7 @@ export class ElectricityChartComponent implements AfterViewInit {
     // }
 
     this.data = points.map((p, index) => ({
-      label: (index % 3 === 2) ? `${Math.round(index / 3)}` : '',
+      label: (index % 5 === 3) ? `${Math.round(index / 5)}` : '',
       value: p,
     }));
   }

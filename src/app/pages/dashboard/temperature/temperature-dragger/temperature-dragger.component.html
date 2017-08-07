@@ -26,9 +26,7 @@
       </g>
 
       <circle [attr.cx]="styles.thumbPosition.x" [attr.cy]="styles.thumbPosition.y" [attr.r]="pinRadius"
-              [attr.stroke-width]="1 / scaleFactor" fill="#FFFFFF" stroke="none"></circle>
-      <circle [attr.cx]="styles.thumbPosition.x" [attr.cy]="styles.thumbPosition.y" [attr.r]="pinDashRadius"
-              [attr.stroke-width]="2 / scaleFactor" fill="none" stroke="#FFFFFF" stroke-linecap="round" stroke-dasharray="1, 6" *ngIf="pinDashRadius"></circle>
+              [attr.stroke-width]="thumbBorder / scaleFactor" class="circle"></circle>
     </g>
   </svg>
 </div>
