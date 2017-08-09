@@ -130,6 +130,7 @@
       border-color: nb-theme(form-control-border-color);
 
       &.active {
+        color: nb-theme(color-fg-heading);
         border-color: nb-theme(color-fg-highlight);
         box-shadow: 0 2px 12px 0 rgba(nb-theme(color-fg-highlight), 0.25);
         background-color: rgba(nb-theme(color-fg-highlight), 0.25);

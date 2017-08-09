@@ -41,12 +41,13 @@
         </div>
       </nb-card-body>
     </nb-card>
+
     <nb-card>
       <nb-card-header>Input Groups</nb-card-header>
       <nb-card-body>
         <div class="input-group">
           <span class="input-group-addon success">@</span>
-          <input type="text" class="form-control" placeholder="Username" />
+          <input type="text" class="form-control" placeholder="Username"/>
         </div>
         <div class="input-group">
           <span class="input-group-btn">
@@ -54,7 +55,7 @@
               <i class="ion-ios-email-outline"></i>
             </button>
           </span>
-          <input type="text" placeholder="Recipient's username" class="form-control">
+          <input type="text" class="form-control" placeholder="Recipient's username">
           <span class="input-group-btn">
             <button class="btn btn-primary">
               @example.com
@@ -62,7 +63,7 @@
           </span>
         </div>
         <div class="input-group">
-          <input type="text" placeholder="Search for..." class="form-control">
+          <input type="text" class="form-control" placeholder="Search for...">
           <span class="input-group-btn">
             <button class="btn btn-danger">
               Search
@@ -86,6 +87,7 @@
         </div>
       </nb-card-body>
     </nb-card>
+
     <nb-card>
       <nb-card-header>Selects</nb-card-header>
       <nb-card-body>
@@ -112,6 +114,7 @@
       </nb-card-body>
     </nb-card>
   </div>
+
   <div class="col-md-6">
     <nb-card>
       <nb-card-header>Input Styles</nb-card-header>
@@ -127,6 +130,7 @@
         </div>
       </nb-card-body>
     </nb-card>
+
     <nb-card>
       <nb-card-header>Validation States</nb-card-header>
       <nb-card-body>
@@ -155,13 +159,14 @@
         </div>
       </nb-card-body>
     </nb-card>
+
     <nb-card>
       <nb-card-header>Checkboxes & Radios</nb-card-header>
       <nb-card-body>
         <div class="demo-checkboxes-radio">
           <div class="demo-checkboxes">
             <nb-checkbox>Checkbox 1</nb-checkbox>
-            <nb-checkbox>Checkbox 2</nb-checkbox>
+            <nb-checkbox [value]="true">Checkbox 2</nb-checkbox>
             <label class="custom-control custom-checkbox">
               <input type="checkbox" class="custom-control-input">
               <span class="custom-control-indicator"></span>
@@ -175,7 +180,7 @@
               <span class="custom-control-description">Radio 1</span>
             </label>
             <label class="custom-control custom-radio">
-              <input type="radio" class="custom-control-input" name="customRadio">
+              <input type="radio" class="custom-control-input" name="customRadio" checked>
               <span class="custom-control-indicator"></span>
               <span class="custom-control-description">Radio 2</span>
             </label>
@@ -196,6 +201,7 @@
         </div>
       </nb-card-body>
     </nb-card>
+
     <nb-card>
       <nb-card-body class="demo-rating">
         <span class="rating-header">Rating</span>
@@ -208,7 +214,7 @@
               </span>
             </ng-template>
           </ngb-rating>
-          <span class="current-rate">{{ starRate | number : '1.1' }}</span>
+          <span class="current-rate">{{ starRate }}</span>
         </div>
         <div>
           <ngb-rating [(rate)]="heartRate" max=5>
@@ -219,7 +225,7 @@
               </span>
             </ng-template>
           </ngb-rating>
-          <span class="current-rate">{{ heartRate | number : '1.1' }}</span>
+          <span class="current-rate">{{ heartRate }}</span>
         </div>
       </nb-card-body>
     </nb-card>

@@ -97,4 +97,15 @@
   .dropdown {
     width: 25%;
   }
+
+  .form-group label {
+    padding: 0 0 0.75rem;
+  }
+
+  ngb-rating i {
+    color: nb-theme(color-success);
+    @include nb-for-theme(cosmic) {
+      color: nb-theme(color-primary);
+    }
+  }
 }
