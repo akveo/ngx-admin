@@ -132,6 +132,7 @@ export class TrafficChartComponent implements AfterViewInit {
                   offset: 1,
                   color: trafficTheme.gradTo,
                 }]),
+                opacity: 1,
               },
             },
             data: points,
