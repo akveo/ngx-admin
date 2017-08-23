@@ -1,17 +1,19 @@
-<div class="action-groups">
-  <div class="action-groups-header">
-    <span>Action Groups</span>
-  </div>
-  <nb-actions size="medium">
-    <nb-action icon="ion-navicon"></nb-action>
-    <nb-action>
-      <nb-search type="rotate-layout"></nb-search>
-    </nb-action>
-    <nb-action icon="ion-ios-email-outline"></nb-action>
-    <nb-action disabled icon="ion-ios-bell-outline"></nb-action>
-    <nb-action>
-      <nb-user [menu]="userMenu" name="Han Solo"></nb-user>
-    </nb-action>
-    <nb-action icon="ion-ios-gear-outline"></nb-action>
-  </nb-actions>
-</div>
+<nb-card>
+  <nb-card-body>
+    <div class="action-groups-header">
+      Action Groups
+    </div>
+    <nb-actions size="medium">
+      <nb-action icon="ion-navicon"></nb-action>
+      <nb-action>
+        <nb-search type="rotate-layout"></nb-search>
+      </nb-action>
+      <nb-action icon="ion-ios-email-outline"></nb-action>
+      <nb-action disabled icon="ion-ios-bell-outline"></nb-action>
+      <nb-action>
+        <nb-user [menu]="userMenu" name="Han Solo"></nb-user>
+      </nb-action>
+      <nb-action icon="ion-ios-gear-outline"></nb-action>
+    </nb-actions>
+  </nb-card-body>
+</nb-card>

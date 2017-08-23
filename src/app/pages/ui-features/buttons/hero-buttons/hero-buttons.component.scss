@@ -3,6 +3,37 @@
 
 @include nb-install-component() {
 
+  .none {
+    position: relative;
+    transform: rotate(45deg);
+
+    &::before, &::after {
+      position: absolute;
+      content: '';
+      background: nb-theme(form-control-border-color);
+    }
+
+    &::before {
+      left: 50%;
+      top: 10%;
+      transform: translateX(-50%);
+      width: 1px;
+      height: 80%;
+    }
+
+    &::after {
+      top: 50%;
+      left: 10%;
+      transform: translateY(-50%);
+      height: 1px;
+      width: 80%;
+    }
+  }
+
+  .shadow {
+    box-shadow: nb-theme(btn-hero-shadow);
+  }
+
   .primary-container {
     .gradient {
       @include btn-hero-primary-gradient();
@@ -12,9 +43,6 @@
     }
     .bevel {
       box-shadow: btn-hero-primary-bevel();
-    }
-    .shadow {
-      box-shadow: btn-hero-shadow();
     }
   }
 
@@ -28,9 +56,6 @@
     .bevel {
       box-shadow: btn-hero-warning-bevel();
     }
-    .shadow {
-      box-shadow: btn-hero-shadow();
-    }
   }
 
   .success-container {
@@ -42,9 +67,6 @@
     }
     .bevel {
       box-shadow: btn-hero-success-bevel();
-    }
-    .shadow {
-      box-shadow: btn-hero-shadow();
     }
   }
 
@@ -58,9 +80,6 @@
     .bevel {
       box-shadow: btn-hero-info-bevel();
     }
-    .shadow {
-      box-shadow: btn-hero-shadow();
-    }
   }
 
   .danger-container {
@@ -72,9 +91,6 @@
     }
     .bevel {
       box-shadow: btn-hero-danger-bevel();
-    }
-    .shadow {
-      box-shadow: btn-hero-shadow();
     }
   }
 
@@ -88,9 +104,6 @@
     }
     .bevel {
       box-shadow: btn-hero-secondary-bevel();
-    }
-    .shadow {
-      box-shadow: btn-hero-shadow();
     }
   }
 }

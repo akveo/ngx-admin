@@ -15,13 +15,11 @@
     .header {
       color: nb-theme(color-fg-header);
       font-size: 0.875rem;
-      line-height: 1rem;
     }
 
     .subheader {
       font-size: 0.75rem;
-      line-height: 1rem;
-      font-weight: 300;
+      font-weight: nb-theme(font-weight-light);
       color: nb-theme(color-fg);
     }
 

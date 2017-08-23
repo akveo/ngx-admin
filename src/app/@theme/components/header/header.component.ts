@@ -13,7 +13,6 @@ import { UserService } from '../../../@core/data/users.service';
       <div class="logo" (click)="goToHome()">NgX&nbsp;<span>Admin</span></div>
       <div class="theme-buttons">
         <button class="btn btn-hero-primary" (click)="selectCosmicTheme()">Cosmic</button>
-        <button class="btn btn-hero-warning" (click)="selectLightTheme()">Light</button>
         <button class="btn btn-hero-info" (click)="selectDefaultTheme()">Default</button>
       </div>
     </div>
@@ -78,10 +77,6 @@ export class HeaderComponent implements OnInit {
 
   selectCosmicTheme() {
     this.themeService.changeTheme('cosmic');
-  }
-
-  selectLightTheme() {
-    this.themeService.changeTheme('light');
   }
 
   selectDefaultTheme() {

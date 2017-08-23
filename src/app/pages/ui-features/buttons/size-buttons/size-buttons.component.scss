@@ -3,13 +3,24 @@
 
 @include nb-install-component() {
 
+  nb-card-body {
+    padding: 0 1.25rem 1.25rem 0;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .container-title {
+    margin-bottom: 0.25rem;
+  }
+
   .size-container {
-    display: inline-block;
-    margin: 0 1rem 1rem 0;
+    margin: 1.25rem 0 0 1.25rem;
   }
 
   .subheader {
-    margin-bottom: 1rem;
+    margin-bottom: 0.75rem;
+    font-size: 0.875rem;
+    font-weight: nb-theme(font-weight-bold);
     color: nb-theme(color-fg-heading);
   }
 }

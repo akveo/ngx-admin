@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NbThemeService } from '@nebular/theme';
 
 @Component({
   selector: 'ngx-hero-buttons',
@@ -7,59 +8,111 @@ import { Component } from '@angular/core';
 })
 export class HeroButtonComponent {
 
-  heroButtons = [{
-    class: 'btn-hero-primary',
-    container: 'primary-container',
-    title: 'Primary Button',
-    buttonTitle: 'Primary',
-    gradient: 'to right, #7659ff, #ac63ff',
-    bevelBorder: '#6938c9',
-    shadow: 'rgba (6, 7, 64, 0.5)',
-    glow: 'rgba (137, 66, 254, 0.8)',
-  }, {
-    class: 'btn-hero-warning',
-    container: 'warning-container',
-    title: 'Warning Button',
-    buttonTitle: 'Warning',
-    gradient: 'to right, #ffcb17, #ff874c',
-    bevelBorder: '#ce7b22',
-    shadow: 'rgba (33, 7, 77, 0.5)',
-    glow: 'rgba (255, 193, 38, 0.6)',
-  }, {
-    class: 'btn-hero-success',
-    container: 'success-container',
-    title: 'Success Button',
-    buttonTitle: 'Success',
-    gradient: 'to right, #00c7c7, #00d977',
-    bevelBorder: '#00967d',
-    shadow: 'rgba (33, 7, 77, 0.5)',
-    glow: 'rgba (35, 255, 181, 0.6)',
-  }, {
-    class: 'btn-hero-info',
-    container: 'info-container',
-    title: 'Info Button',
-    buttonTitle: 'Info',
-    gradient: 'to right, #3dafff, #0088ff',
-    bevelBorder: '#4150d9',
-    shadow: 'rgba (33, 7, 77, 0.5)',
-    glow: 'rgba (0, 136, 255, 0.7)',
-  }, {
-    class: 'btn-hero-danger',
-    container: 'danger-container',
-    title: 'Danger Button',
-    buttonTitle: 'Danger',
-    gradient: 'to right, #ff3dae, #ff386a',
-    bevelBorder: '#cc2568',
-    shadow: 'rgba (33, 7, 77, 0.5)',
-    glow: 'rgba (255, 73, 184, 0.8)',
-  }, {
-    class: 'btn-hero-secondary',
-    container: 'secondary-container',
-    title: 'Ghost Button',
-    buttonTitle: 'Ghost',
-    border: 'White',
-    bevelBorder: '#665ebd',
-    shadow: 'rgba (33, 7, 77, 0.5)',
-    glow: 'rgba (146, 141, 255, 1)',
-  }];
+  themeName: string = 'default';
+  settings: Array<any>;
+
+  constructor(private themeService: NbThemeService) {
+    this.themeService.getJsTheme().subscribe(theme => {
+      this.themeName = theme.name;
+      this.init(theme.variables);
+    });
+  }
+
+  init(theme: any) {
+    this.settings = [{
+      class: 'btn-hero-primary',
+      container: 'primary-container',
+      title: 'Primary Button',
+      buttonTitle: 'Primary',
+      default: {
+        gradientLeft: `adjust-hue(${theme.colorPrimary}, 20deg)`,
+        gradientRight: theme.colorPrimary,
+      },
+      cosmic: {
+        gradientLeft: `adjust-hue(${theme.colorPrimary}, 20deg)`,
+        gradientRight: theme.colorPrimary,
+        bevel: `shade(${theme.colorPrimary}, 14%)`,
+        shadow: 'rgba (6, 7, 64, 0.5)',
+        glow: `adjust-hue(${theme.colorPrimary}, 10deg)`,
+      },
+    }, {
+      class: 'btn-hero-warning',
+      container: 'warning-container',
+      title: 'Warning Button',
+      buttonTitle: 'Warning',
+      default: {
+        gradientLeft: `adjust-hue(${theme.colorWarning}, 10deg)`,
+        gradientRight: theme.colorWarning,
+      },
+      cosmic: {
+        gradientLeft: `adjust-hue(${theme.colorWarning}, 10deg)`,
+        gradientRight: theme.colorWarning,
+        bevel: `shade(${theme.colorWarning}, 14%)`,
+        shadow: 'rgba (33, 7, 77, 0.5)',
+        glow: `adjust-hue(${theme.colorWarning}, 5deg)`,
+      },
+    }, {
+      class: 'btn-hero-success',
+      container: 'success-container',
+      title: 'Success Button',
+      buttonTitle: 'Success',
+      default: {
+        gradientLeft: `adjust-hue(${theme.colorSuccess}, 20deg)`,
+        gradientRight: theme.colorSuccess,
+      },
+      cosmic: {
+        gradientLeft: `adjust-hue(${theme.colorSuccess}, 20deg)`,
+        gradientRight: theme.colorSuccess,
+        bevel: `shade(${theme.colorSuccess}, 14%)`,
+        shadow: 'rgba (33, 7, 77, 0.5)',
+        glow: `adjust-hue(${theme.colorSuccess}, 10deg)`,
+      },
+    }, {
+      class: 'btn-hero-info',
+      container: 'info-container',
+      title: 'Info Button',
+      buttonTitle: 'Info',
+      default: {
+        gradientLeft: `adjust-hue(${theme.colorInfo}, -10deg)`,
+        gradientRight: theme.colorInfo,
+      },
+      cosmic: {
+        gradientLeft: `adjust-hue(${theme.colorInfo}, -10deg)`,
+        gradientRight: theme.colorInfo,
+        bevel: `shade(${theme.colorInfo}, 14%)`,
+        shadow: 'rgba (33, 7, 77, 0.5)',
+        glow: `adjust-hue(${theme.colorInfo}, -5deg)`,
+      },
+    }, {
+      class: 'btn-hero-danger',
+      container: 'danger-container',
+      title: 'Danger Button',
+      buttonTitle: 'Danger',
+      default: {
+        gradientLeft: `adjust-hue(${theme.colorDanger}, -20deg)`,
+        gradientRight: theme.colorDanger,
+      },
+      cosmic: {
+        gradientLeft: `adjust-hue(${theme.colorDanger}, -20deg)`,
+        gradientRight: theme.colorDanger,
+        bevel: `shade(${theme.colorDanger}, 14%)`,
+        shadow: 'rgba (33, 7, 77, 0.5)',
+        glow: `adjust-hue(${theme.colorDanger}, -10deg)`,
+      },
+    }, {
+      class: 'btn-hero-secondary',
+      container: 'secondary-container',
+      title: 'Ghost Button',
+      buttonTitle: 'Ghost',
+      default: {
+        border: '#dadfe6',
+      },
+      cosmic: {
+        border: theme.colorPrimary,
+        bevel: '#665ebd',
+        shadow: 'rgba (33, 7, 77, 0.5)',
+        glow: 'rgba (146, 141, 255, 1)',
+      },
+    }];
+  }
 }
