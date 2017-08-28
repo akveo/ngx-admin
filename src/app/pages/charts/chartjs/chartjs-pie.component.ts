@@ -34,7 +34,7 @@ export class ChartjsPieComponent {
         scale: {
           pointLabels: {
             fontSize: 14,
-            fontColor: chartjs.legendTextColor,
+            fontColor: chartjs.textColor,
           },
         },
         scales: {
@@ -63,7 +63,7 @@ export class ChartjsPieComponent {
         },
         legend: {
           labels: {
-            fontColor: chartjs.legendTextColor,
+            fontColor: chartjs.textColor,
           },
         },
       };

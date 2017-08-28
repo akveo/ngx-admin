@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component } from '@angular/core';
 import { NbThemeService } from '@nebular/theme';
 
 @Component({
@@ -7,17 +7,21 @@ import { NbThemeService } from '@nebular/theme';
     <div echarts [options]="options" class="echart"></div>
   `,
 })
-export class EchartsBarComponent {
-  options: any;
+export class EchartsBarComponent implements AfterViewInit {
+  options: any = {};
 
   constructor(private theme: NbThemeService) {
+  }
+
+  ngAfterViewInit() {
     this.theme.getJsTheme().subscribe(config => {
 
+      const colors: any = config.variables;
       const echarts: any = config.variables.echarts;
 
       this.options = {
         backgroundColor: echarts.bg,
-        color: [echarts.bar.color],
+        color: [colors.primaryLight],
         tooltip: {
           trigger: 'axis',
           axisPointer: {
@@ -39,7 +43,12 @@ export class EchartsBarComponent {
             },
             axisLine: {
               lineStyle: {
-                color: echarts.xAxisLineColor,
+                color: echarts.axisLineColor,
+              },
+            },
+            axisLabel: {
+              textStyle: {
+                color: echarts.textColor,
               },
             },
           },
@@ -49,7 +58,17 @@ export class EchartsBarComponent {
             type: 'value',
             axisLine: {
               lineStyle: {
-                color: echarts.yAxisLineColor,
+                color: echarts.axisLineColor,
+              },
+            },
+            splitLine: {
+              lineStyle: {
+                color: echarts.splitLineColor,
+              },
+            },
+            axisLabel: {
+              textStyle: {
+                color: echarts.textColor,
               },
             },
           },

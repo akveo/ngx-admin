@@ -63,7 +63,7 @@ export class ChartjsLineComponent {
         },
         legend: {
           labels: {
-            fontColor: chartjs.legendTextColor,
+            fontColor: chartjs.textColor,
           },
         },
       };

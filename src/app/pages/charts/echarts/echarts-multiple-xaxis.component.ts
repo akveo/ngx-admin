@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, AfterViewInit } from '@angular/core';
 import { NbThemeService } from '@nebular/theme';
 
 @Component({
@@ -7,17 +7,21 @@ import { NbThemeService } from '@nebular/theme';
     <div echarts [options]="options" class="echart"></div>
   `,
 })
-export class EchartsMultipleXaxisComponent {
-  options: any;
+export class EchartsMultipleXaxisComponent implements AfterViewInit {
+  options: any = {};
 
   constructor(private theme: NbThemeService) {
+  }
+
+  ngAfterViewInit() {
     this.theme.getJsTheme().subscribe(config => {
 
+      const colors: any = config.variables;
       const echarts: any = config.variables.echarts;
 
       this.options = {
         backgroundColor: echarts.bg,
-        color: echarts.multipleLine.colors,
+        color: [colors.success, colors.info],
         tooltip: {
           trigger: 'none',
           axisPointer: {
@@ -27,7 +31,7 @@ export class EchartsMultipleXaxisComponent {
         legend: {
           data: ['2015 Precipitation', '2016 Precipitation'],
           textStyle: {
-            color: echarts.legendTextColor,
+            color: echarts.textColor,
           },
         },
         grid: {
@@ -43,7 +47,12 @@ export class EchartsMultipleXaxisComponent {
             axisLine: {
               onZero: false,
               lineStyle: {
-                color: echarts.multipleLine.colors[1],
+                color: colors.info,
+              },
+            },
+            axisLabel: {
+              textStyle: {
+                color: echarts.textColor,
               },
             },
             axisPointer: {
@@ -78,7 +87,12 @@ export class EchartsMultipleXaxisComponent {
             axisLine: {
               onZero: false,
               lineStyle: {
-                color: echarts.multipleLine.colors[0],
+                color: colors.success,
+              },
+            },
+            axisLabel: {
+              textStyle: {
+                color: echarts.textColor,
               },
             },
             axisPointer: {
@@ -111,7 +125,17 @@ export class EchartsMultipleXaxisComponent {
             type: 'value',
             axisLine: {
               lineStyle: {
-                color: echarts.yAxisLineColor,
+                color: echarts.axisLineColor,
+              },
+            },
+            splitLine: {
+              lineStyle: {
+                color: echarts.splitLineColor,
+              },
+            },
+            axisLabel: {
+              textStyle: {
+                color: echarts.textColor,
               },
             },
           },

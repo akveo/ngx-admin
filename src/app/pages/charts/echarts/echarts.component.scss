@@ -3,12 +3,18 @@
 @include nb-install-component() {
   ngx-echarts-pie,
   ngx-echarts-bar,
-  ngx-echarts-line {
+  ngx-echarts-line,
+  ngx-echarts-multiple-xaxis,
+  ngx-echarts-area-stack,
+  ngx-echarts-bar-animation,
+  ngx-echarts-radar {
     display: block;
     height: 100%;
+    width: 100%;
   }
 
   /deep/ .echart {
     height: 100%;
+    width: 100%;
   }
 }

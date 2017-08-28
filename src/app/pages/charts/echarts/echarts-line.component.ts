@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component } from '@angular/core';
 import { NbThemeService } from '@nebular/theme';
 
 @Component({
@@ -7,17 +7,21 @@ import { NbThemeService } from '@nebular/theme';
     <div echarts [options]="options" class="echart"></div>
   `,
 })
-export class EchartsLineComponent {
-  options: any;
+export class EchartsLineComponent implements AfterViewInit {
+  options: any = {};
 
   constructor(private theme: NbThemeService) {
+  }
+
+  ngAfterViewInit() {
     this.theme.getJsTheme().subscribe(config => {
 
+      const colors: any = config.variables;
       const echarts: any = config.variables.echarts;
 
       this.options = {
         backgroundColor: echarts.bg,
-        color: [echarts.line.colors],
+        color: [colors.danger, colors.primary, colors.info],
         tooltip: {
           trigger: 'item',
           formatter: '{a} <br/>{b} : {c}',
@@ -26,34 +30,53 @@ export class EchartsLineComponent {
           left: 'left',
           data: ['Line 1', 'Line 2', 'Line 3'],
           textStyle: {
-            color: echarts.legendTextColor,
+            color: echarts.textColor,
           },
         },
-        xAxis: {
-          type: 'category',
-          name: 'x',
-          splitLine: { show: false },
-          data: ['1', '2', '3', '4', '5', '6', '7', '8', '9'],
-          axisLine: {
-            lineStyle: {
-              color: echarts.xAxisLineColor,
+        xAxis: [
+          {
+            type: 'category',
+            data: ['1', '2', '3', '4', '5', '6', '7', '8', '9'],
+            axisTick: {
+              alignWithLabel: true,
+            },
+            axisLine: {
+              lineStyle: {
+                color: echarts.axisLineColor,
+              },
+            },
+            axisLabel: {
+              textStyle: {
+                color: echarts.textColor,
+              },
             },
           },
-        },
+        ],
+        yAxis: [
+          {
+            type: 'log',
+            axisLine: {
+              lineStyle: {
+                color: echarts.axisLineColor,
+              },
+            },
+            splitLine: {
+              lineStyle: {
+                color: echarts.splitLineColor,
+              },
+            },
+            axisLabel: {
+              textStyle: {
+                color: echarts.textColor,
+              },
+            },
+          },
+        ],
         grid: {
           left: '3%',
           right: '4%',
           bottom: '3%',
           containLabel: true,
-        },
-        yAxis: {
-          type: 'log',
-          name: 'y',
-          axisLine: {
-            lineStyle: {
-              color: echarts.yAxisLineColor,
-            },
-          },
         },
         series: [
           {

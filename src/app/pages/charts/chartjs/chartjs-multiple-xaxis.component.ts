@@ -104,7 +104,7 @@ export class ChartjsMultipleXaxisComponent {
         legend: {
           position: 'bottom',
           labels: {
-            fontColor: chartjs.legendTextColor,
+            fontColor: chartjs.textColor,
           },
         },
         hover: {

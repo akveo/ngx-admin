@@ -68,48 +68,13 @@ export const COSMIC_THEME = {
     },
 
     echarts: {
-      bg: '#363175',
-      legendTextColor: 'white',
-      xAxisLineColor: 'white',
-      yAxisLineColor: 'white',
-
-      pie: {
-        colors: [
-          'rgb(168, 56, 93)',
-          'rgb(122, 163, 229)',
-          'rgb(170, 227, 245)',
-          'rgb(173, 205, 237)',
-          'rgb(162, 126, 168)',
-        ],
-        itemHoverShadowColor: 'rgba(0, 0, 0, 0.5)',
-      },
-
-      bar: {
-        color: '#3398DB',
-      },
-
-      barAnimation: {
-        colors: ['red', 'white'],
-      },
-
-      line: {
-        colors: ['red', 'black', 'white'],
-      },
-
-      multipleLine: {
-        colors: ['#5793f3', '#d14a61', '#675bba'],
-      },
-
-      areaStack: {
-        colors: ['red', 'blue', 'purple', 'yellow', 'pink'],
-        tooltipBackgroundColor: '#6a7985',
-      },
-
-      radar: {
-        colors: ['red', 'white'],
-        nameTextColor: 'white',
-        splitAreaStyleColor: 'transparent',
-      },
+      bg: '#3d3780',
+      textColor: '#ffffff',
+      axisLineColor: '#a1a1e5',
+      splitLineColor: '#342e73',
+      itemHoverShadowColor: 'rgba(0, 0, 0, 0.5)',
+      tooltipBackgroundColor: '#6a7985',
+      areaOpacity: '1',
     },
 
     chartjs: {

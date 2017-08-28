@@ -39,7 +39,7 @@ export class ChartjsBarComponent {
         responsive: true,
         legend: {
           labels: {
-            fontColor: chartjs.legendTextColor,
+            fontColor: chartjs.textColor,
           },
         },
         scales: {

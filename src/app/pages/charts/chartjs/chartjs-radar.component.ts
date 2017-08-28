@@ -48,7 +48,7 @@ export class ChartjsRadarComponent {
         scaleFontColor: 'white',
         legend: {
           labels: {
-            fontColor: chartjs.legendTextColor,
+            fontColor: chartjs.textColor,
           },
         },
         scale: {

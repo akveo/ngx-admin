@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component } from '@angular/core';
 import { NbThemeService } from '@nebular/theme';
 
 @Component({
@@ -7,28 +7,32 @@ import { NbThemeService } from '@nebular/theme';
     <div echarts [options]="options" class="echart"></div>
   `,
 })
-export class EchartsRadarComponent {
-  options: any;
+export class EchartsRadarComponent implements AfterViewInit {
+  options: any = {};
 
   constructor(private theme: NbThemeService) {
+  }
+
+  ngAfterViewInit() {
     this.theme.getJsTheme().subscribe(config => {
 
+      const colors: any = config.variables;
       const echarts: any = config.variables.echarts;
 
       this.options = {
         backgroundColor: echarts.bg,
-        color: echarts.radar.colors,
+        color: [colors.danger, colors.warning],
         tooltip: {},
         legend: {
           data: ['Allocated Budget', 'Actual Spending'],
           textStyle: {
-            color: echarts.legendTextColor,
+            color: echarts.textColor,
           },
         },
         radar: {
           name: {
             textStyle: {
-              color: echarts.radar.nameTextColor,
+              color: echarts.textColor,
             },
           },
           indicator: [
@@ -39,14 +43,9 @@ export class EchartsRadarComponent {
             { name: 'Development', max: 52000 },
             { name: 'Marketing', max: 25000 },
           ],
-          // axisLine: {
-          //   lineStyle: {
-          //     color: 'white',
-          //   },
-          // },
           splitArea: {
             areaStyle: {
-              color: echarts.radar.splitAreaStyleColor,
+              color: 'transparent',
             },
           },
         },

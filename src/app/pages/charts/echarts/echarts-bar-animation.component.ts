@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component } from '@angular/core';
 import { NbThemeService } from '@nebular/theme';
 
 @Component({
@@ -7,46 +7,69 @@ import { NbThemeService } from '@nebular/theme';
     <div echarts [options]="options" class="echart"></div>
   `,
 })
-export class EchartsBarAnimationComponent {
-  options: any;
+export class EchartsBarAnimationComponent implements AfterViewInit {
+  options: any = {};
 
   constructor(private theme: NbThemeService) {
+  }
+
+  ngAfterViewInit() {
     this.theme.getJsTheme().subscribe(config => {
       const xAxisData = [];
       const data1 = [];
       const data2 = [];
 
+      const colors: any = config.variables;
       const echarts: any = config.variables.echarts;
 
       this.options = {
         backgroundColor: echarts.bg,
-        color: [echarts.barAnimation.colors],
+        color: [colors.primaryLight, colors.infoLight],
         legend: {
           data: ['bar', 'bar2'],
           align: 'left',
           textStyle: {
-            color: echarts.legendTextColor,
+            color: echarts.textColor,
           },
         },
-        xAxis: {
-          data: xAxisData,
-          silent: false,
-          splitLine: {
-            show: false,
-          },
-          axisLine: {
-            lineStyle: {
-              color: echarts.xAxisLineColor,
+        xAxis: [
+          {
+            data: xAxisData,
+            silent: false,
+            axisTick: {
+              alignWithLabel: true,
+            },
+            axisLine: {
+              lineStyle: {
+                color: echarts.axisLineColor,
+              },
+            },
+            axisLabel: {
+              textStyle: {
+                color: echarts.textColor,
+              },
             },
           },
-        },
-        yAxis: {
-          axisLine: {
-            lineStyle: {
-              color: echarts.yAxisLineColor,
+        ],
+        yAxis: [
+          {
+            axisLine: {
+              lineStyle: {
+                color: echarts.axisLineColor,
+              },
+            },
+            splitLine: {
+              lineStyle: {
+                color: echarts.splitLineColor,
+              },
+            },
+            axisLabel: {
+              textStyle: {
+                color: echarts.textColor,
+              },
             },
           },
-        },
+        ],
         series: [
           {
             name: 'bar',

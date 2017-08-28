@@ -99,7 +99,7 @@ export class ChartjsBarHorizontalComponent {
         legend: {
           position: 'right',
           labels: {
-            fontColor: chartjs.legendTextColor,
+            fontColor: chartjs.textColor,
           },
         },
       };
