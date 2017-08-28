@@ -18,7 +18,17 @@ declare const echarts: any;
 })
 export class SolarComponent implements AfterViewInit {
 
-  @Input() chartValue: number;
+  private value: number = 0;
+
+  @Input('chartValue')
+  set chartValue(value: number) {
+    this.value = value;
+    if (this.option.series) {
+      this.option.series[0].data[0].value = value;
+      this.option.series[0].data[1].value = 100 - value;
+      this.option.series[1].data[0].value = value;
+    }
+  }
 
   option: any = {};
 
@@ -45,7 +55,7 @@ export class SolarComponent implements AfterViewInit {
             radius: solarTheme.radius,
             data: [
               {
-                value: this.chartValue,
+                value: this.value,
                 name: ' ',
                 label: {
                   normal: {
@@ -82,7 +92,7 @@ export class SolarComponent implements AfterViewInit {
                 hoverAnimation: false,
               },
               {
-                value: 100 - this.chartValue,
+                value: 100 - this.value,
                 name: ' ',
                 tooltip: {
                   show: false,
@@ -109,7 +119,7 @@ export class SolarComponent implements AfterViewInit {
             radius: solarTheme.radius,
             data: [
               {
-                value: this.chartValue,
+                value: this.value,
                 name: ' ',
                 label: {
                   normal: {
