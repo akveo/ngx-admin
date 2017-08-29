@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NbThemeService } from '@nebular/theme';
 
 @Component({
   selector: 'ngx-traffic',
@@ -8,7 +9,8 @@ import { Component } from '@angular/core';
       <nb-card-header>
         <span>Traffic Consumption</span>
         <div class="ghost-dropdown" ngbDropdown>
-          <button type="button" class="btn btn-sm btn-primary" ngbDropdownToggle>
+          <button type="button" class="btn btn-sm" ngbDropdownToggle
+                  [ngClass]="{ 'btn-success': currentTheme == 'default', 'btn-primary': currentTheme != 'default'}">
             {{ type }}
           </button>
           <ul class="dropdown-menu">
@@ -25,4 +27,11 @@ import { Component } from '@angular/core';
 export class TrafficComponent {
   type: string = 'month';
   types = ['week', 'month', 'year'];
+  currentTheme: string;
+
+  constructor(private themeService: NbThemeService) {
+    this.themeService.getJsTheme().subscribe(theme => {
+      this.currentTheme = theme.name;
+    });
+  }
 }

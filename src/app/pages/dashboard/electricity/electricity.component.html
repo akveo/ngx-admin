@@ -42,7 +42,8 @@
       </div>
 
       <div ngbDropdown [ngClass]="{'ghost-dropdown': currentTheme == 'default'}">
-        <button type="button" class="btn btn-primary" ngbDropdownToggle>
+        <button type="button" ngbDropdownToggle class="btn"
+                [ngClass]="{ 'btn-success': currentTheme == 'default', 'btn-primary': currentTheme != 'default'}">
           {{ type }}
         </button>
         <ul class="dropdown-menu">
