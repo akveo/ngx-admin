@@ -5,44 +5,28 @@ import { NbThemeService } from '@nebular/theme';
   selector: 'ngx-d3-pie',
   template: `
     <ngx-charts-pie-chart
-      [view]="view"
       [scheme]="colorScheme"
-      [results]="single"
+      [results]="results"
       [legend]="showLegend"
       [labels]="showLabels">
     </ngx-charts-pie-chart>
   `,
 })
 export class D3PieComponent {
-  single = [
-    {
-      name: 'Germany',
-      value: 8940000,
-    },
-    {
-      name: 'USA',
-      value: 5000000,
-    },
-    {
-      name: 'France',
-      value: 7200000,
-    },
+  results = [
+    { name: 'Germany', value: 8940 },
+    { name: 'USA', value: 5000 },
+    { name: 'France', value: 7200 },
   ];
-  view: any[] = [700, 400];
   showLegend = true;
-  showXAxis = true;
-  showYAxis = true;
   showLabels = true;
-  showXAxisLabel = true;
-  xAxisLabel = 'Country';
-  showYAxisLabel = true;
-  yAxisLabel = 'Population';
   colorScheme: any;
 
   constructor(private theme: NbThemeService) {
     this.theme.getJsTheme().subscribe(config => {
+      const colors: any = config.variables;
       this.colorScheme = {
-        domain: (<any>config.variables.d3).pie,
+        domain: [colors.primaryLight, colors.infoLight, colors.successLight, colors.warningLight, colors.dangerLight],
       };
     });
   }

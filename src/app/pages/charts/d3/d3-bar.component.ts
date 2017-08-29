@@ -5,49 +5,35 @@ import { NbThemeService } from '@nebular/theme';
   selector: 'ngx-d3-bar',
   template: `
     <ngx-charts-bar-vertical
-      [view]="view"
       [scheme]="colorScheme"
-      [results]="single"
+      [results]="results"
       [xAxis]="showXAxis"
       [yAxis]="showYAxis"
       [legend]="showLegend"
-      [showXAxisLabel]="showXAxisLabel"
-      [showYAxisLabel]="showYAxisLabel"
       [xAxisLabel]="xAxisLabel"
       [yAxisLabel]="yAxisLabel">
     </ngx-charts-bar-vertical>
   `,
 })
 export class D3BarComponent {
-  single = [
-    {
-      name: 'Germany',
-      value: 8940000,
-    },
-    {
-      name: 'USA',
-      value: 5000000,
-    },
-    {
-      name: 'France',
-      value: 7200000,
-    },
+
+  results = [
+    { name: 'Germany', value: 8940 },
+    { name: 'USA', value: 5000 },
+    { name: 'France', value: 7200 },
   ];
-  view: any[] = [700, 400];
   showLegend = true;
   showXAxis = true;
   showYAxis = true;
-  showLabels = true;
-  showXAxisLabel = true;
   xAxisLabel = 'Country';
-  showYAxisLabel = true;
   yAxisLabel = 'Population';
   colorScheme: any;
 
   constructor(private theme: NbThemeService) {
     this.theme.getJsTheme().subscribe(config => {
+      const colors: any = config.variables;
       this.colorScheme = {
-        domain: (<any>config.variables.d3).bar,
+        domain: [colors.primaryLight, colors.infoLight, colors.successLight, colors.warningLight, colors.dangerLight],
       };
     });
   }

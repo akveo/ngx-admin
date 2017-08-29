@@ -5,7 +5,6 @@ import { NbThemeService } from '@nebular/theme';
   selector: 'ngx-d3-polar',
   template: `
     <ngx-charts-polar-chart
-      [view]="view"
       [scheme]="colorScheme"
       [results]="multi"
       [xAxis]="showXAxis"
@@ -73,7 +72,6 @@ export class D3PolarComponent {
       ],
     },
   ];
-  view: any[] = [700, 400];
   showLegend = true;
   autoScale = true;
   showXAxis = true;
@@ -86,8 +84,9 @@ export class D3PolarComponent {
 
   constructor(private theme: NbThemeService) {
     this.theme.getJsTheme().subscribe(config => {
+      const colors: any = config.variables;
       this.colorScheme = {
-        domain: (<any>config.variables.d3).polar,
+        domain: [colors.primaryLight, colors.infoLight, colors.successLight, colors.warningLight, colors.dangerLight],
       };
     });
   }

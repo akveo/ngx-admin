@@ -81,14 +81,5 @@ export const COSMIC_THEME = {
       axisLineColor: '#a1a1e5',
       textColor: '#ffffff',
     },
-
-    d3: {
-      pie: ['#5AA454', '#A10A28', '#C7B42C', '#AAAAAA'],
-      bar: ['#5AA454', '#A10A28', '#C7B42C', '#AAAAAA'],
-      line: ['#5AA454', '#A10A28', '#C7B42C', '#AAAAAA'],
-      advancedPie: ['#5AA454', '#A10A28', '#C7B42C', '#AAAAAA'],
-      areaStack: ['#5AA454', '#A10A28', '#C7B42C', '#AAAAAA'],
-      polar: ['#5AA454', '#A10A28', '#C7B42C', '#AAAAAA'],
-    },
   },
 };

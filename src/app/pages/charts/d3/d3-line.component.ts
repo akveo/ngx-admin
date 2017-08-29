@@ -5,7 +5,6 @@ import { NbThemeService } from '@nebular/theme';
   selector: 'ngx-d3-line',
   template: `
     <ngx-charts-line-chart
-      [view]="view"
       [scheme]="colorScheme"
       [results]="multi"
       [xAxis]="showXAxis"
@@ -25,11 +24,11 @@ export class D3LineComponent {
       series: [
         {
           name: '2010',
-          value: 7300000,
+          value: 7300,
         },
         {
           name: '2011',
-          value: 8940000,
+          value: 8940,
         },
       ],
     },
@@ -38,11 +37,11 @@ export class D3LineComponent {
       series: [
         {
           name: '2010',
-          value: 7870000,
+          value: 7870,
         },
         {
           name: '2011',
-          value: 8270000,
+          value: 8270,
         },
       ],
     },
@@ -51,20 +50,18 @@ export class D3LineComponent {
       series: [
         {
           name: '2010',
-          value: 5000002,
+          value: 5002,
         },
         {
           name: '2011',
-          value: 5800000,
+          value: 5800,
         },
       ],
     },
   ];
-  view: any[] = [700, 400];
   showLegend = true;
   showXAxis = true;
   showYAxis = true;
-  showLabels = true;
   showXAxisLabel = true;
   xAxisLabel = 'Country';
   showYAxisLabel = true;
@@ -73,8 +70,9 @@ export class D3LineComponent {
 
   constructor(private theme: NbThemeService) {
     this.theme.getJsTheme().subscribe(config => {
+      const colors: any = config.variables;
       this.colorScheme = {
-        domain: (<any>config.variables.d3).line,
+        domain: [colors.primaryLight, colors.infoLight, colors.successLight, colors.warningLight, colors.dangerLight],
       };
     });
   }

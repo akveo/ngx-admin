@@ -76,11 +76,11 @@ export const MENU_ITEMS: List<NbMenuItem> = List([{
     title: 'Echarts',
     link: '/pages/charts/echarts',
   }, {
-    title: 'D3',
-    link: '/pages/charts/d3',
-  }, {
     title: 'Charts.js',
     link: '/pages/charts/chartjs',
+  }, {
+    title: 'D3',
+    link: '/pages/charts/d3',
   }]),
 }, {
   title: 'Editors',

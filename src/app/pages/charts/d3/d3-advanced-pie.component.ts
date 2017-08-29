@@ -5,7 +5,6 @@ import { NbThemeService } from '@nebular/theme';
   selector: 'ngx-d3-advanced-pie',
   template: `
     <ngx-charts-advanced-pie-chart
-      [view]="view"
       [scheme]="colorScheme"
       [results]="single">
     </ngx-charts-advanced-pie-chart>
@@ -26,13 +25,13 @@ export class D3AdvancedPieComponent {
       value: 7200000,
     },
   ];
-  view: any[] = [700, 400];
   colorScheme: any;
 
   constructor(private theme: NbThemeService) {
     this.theme.getJsTheme().subscribe(config => {
+      const colors: any = config.variables;
       this.colorScheme = {
-        domain: (<any>config.variables.d3).advancedPie,
+        domain: [colors.primaryLight, colors.infoLight, colors.successLight, colors.warningLight, colors.dangerLight],
       };
     });
   }
