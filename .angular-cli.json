@@ -28,6 +28,7 @@
         "../node_modules/open-sans-fontface/open-sans.css",
         "../node_modules/ionicons/scss/ionicons.scss",
         "../node_modules/font-awesome/scss/font-awesome.scss",
+        "../node_modules/nebular-icons/scss/nebular-icons.scss",
         "./app/@theme/styles/styles.scss"
       ],
       "scripts": [
