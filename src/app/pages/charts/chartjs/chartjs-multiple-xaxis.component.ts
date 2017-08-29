@@ -3,104 +3,62 @@ import { NbThemeService } from '@nebular/theme';
 
 @Component({
   selector: 'ngx-chartjs-multiple-xaxis',
-  styles: [
-    `
-      :host {
-        display: block;
-      }
-    `,
-  ],
   template: `
-    <canvas baseChart
-            [datasets]="chartData"
-            [labels]="chartLabels"
-            [options]="chartOptions"
-            [legend]="chartLegend"
-            [chartType]="chartType"></canvas>
+    <chart type="line" [data]="data" [options]="options"></chart>
   `,
 })
 export class ChartjsMultipleXaxisComponent {
-  chartType: string = 'line';
-  chartLabels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
-  chartLegend: boolean = true;
-  chartData: any[] = [
-    {
-      label: 'dataset - big points',
-      data: [
-        this.randomScalingFactor(),
-        this.randomScalingFactor(),
-        this.randomScalingFactor(),
-        this.randomScalingFactor(),
-        this.randomScalingFactor(),
-        this.randomScalingFactor(),
-        this.randomScalingFactor(),
-      ],
-      backgroundColor: 'red',
-      borderColor: 'red',
-      fill: false,
-      borderDash: [5, 5],
-      pointRadius: 15,
-      pointHoverRadius: 10,
-    },
-    {
-      label: 'dataset - individual point sizes',
-      data: [
-        this.randomScalingFactor(),
-        this.randomScalingFactor(),
-        this.randomScalingFactor(),
-        this.randomScalingFactor(),
-        this.randomScalingFactor(),
-        this.randomScalingFactor(),
-        this.randomScalingFactor(),
-      ],
-      backgroundColor: 'blue',
-      borderColor: 'blue',
-      fill: false,
-      borderDash: [5, 5],
-      pointRadius: [2, 4, 6, 18, 0, 12, 20],
-    },
-    {
-      label: 'dataset - large pointHoverRadius',
-      data: [
-        this.randomScalingFactor(),
-        this.randomScalingFactor(),
-        this.randomScalingFactor(),
-        this.randomScalingFactor(),
-        this.randomScalingFactor(),
-        this.randomScalingFactor(),
-        this.randomScalingFactor(),
-      ],
-      backgroundColor: 'green',
-      borderColor: 'green',
-      fill: false,
-      pointHoverRadius: 30,
-    },
-    {
-      label: 'dataset - large pointHitRadius',
-      data: [
-        this.randomScalingFactor(),
-        this.randomScalingFactor(),
-        this.randomScalingFactor(),
-        this.randomScalingFactor(),
-        this.randomScalingFactor(),
-        this.randomScalingFactor(),
-        this.randomScalingFactor(),
-      ],
-      backgroundColor: 'yellow',
-      borderColor: 'yellow',
-      fill: false,
-      pointHitRadius: 20,
-    },
-  ];
-  chartOptions: any;
+  data: {};
+  options: any;
 
   constructor(private theme: NbThemeService) {
     this.theme.getJsTheme().subscribe(config => {
 
+      const colors: any = config.variables;
       const chartjs: any = config.variables.chartjs;
 
-      this.chartOptions = {
+      this.data = {
+        labels: ['January', 'February', 'March', 'April', 'May', 'June'],
+        datasets: [{
+          label: 'dataset - big points',
+          data: [this.random(), this.random(), this.random(), this.random(), this.random(), this.random()],
+          borderColor: colors.primary,
+          backgroundColor: colors.primary,
+          fill: false,
+          borderDash: [5, 5],
+          pointRadius: 8,
+          pointHoverRadius: 10,
+        }, {
+          label: 'dataset - individual point sizes',
+          data: [this.random(), this.random(), this.random(), this.random(), this.random(), this.random()],
+          borderColor: colors.dangerLight,
+          backgroundColor: colors.dangerLight,
+          fill: false,
+          borderDash: [5, 5],
+          pointRadius: 8,
+          pointHoverRadius: 10,
+        }, {
+          label: 'dataset - large pointHoverRadius',
+          data: [this.random(), this.random(), this.random(), this.random(), this.random(), this.random()],
+          borderColor: colors.info,
+          backgroundColor: colors.info,
+          fill: false,
+          pointRadius: 8,
+          pointHoverRadius: 10,
+        }, {
+          label: 'dataset - large pointHitRadius',
+          data: [this.random(), this.random(), this.random(), this.random(), this.random(), this.random()],
+          borderColor: colors.success,
+          backgroundColor: colors.success,
+          fill: false,
+          pointRadius: 8,
+          pointHoverRadius: 10,
+        }],
+      };
+
+      this.options = {
         responsive: true,
+        maintainAspectRatio: false,
         legend: {
           position: 'bottom',
           labels: {
@@ -120,10 +78,10 @@ export class ChartjsMultipleXaxisComponent {
               },
               gridLines: {
                 display: true,
-                color: chartjs.xAxisColor,
+                color: chartjs.axisLineColor,
               },
               ticks: {
-                fontColor: chartjs.tickColor,
+                fontColor: chartjs.textColor,
               },
             },
           ],
@@ -136,10 +94,10 @@ export class ChartjsMultipleXaxisComponent {
               },
               gridLines: {
                 display: true,
-                color: chartjs.xAxisColor,
+                color: chartjs.axisLineColor,
               },
               ticks: {
-                fontColor: chartjs.tickColor,
+                fontColor: chartjs.textColor,
               },
             },
           ],
@@ -148,7 +106,7 @@ export class ChartjsMultipleXaxisComponent {
     });
   }
 
-  private randomScalingFactor() {
+  private random() {
     return Math.round(Math.random() * 100);
   }
 }

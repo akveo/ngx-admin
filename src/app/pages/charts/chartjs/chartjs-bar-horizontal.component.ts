@@ -3,95 +3,63 @@ import { NbThemeService } from '@nebular/theme';
 
 @Component({
   selector: 'ngx-chartjs-bar-horizontal',
-  styles: [
-    `
-      :host {
-        display: block;
-      }
-    `,
-  ],
   template: `
-    <canvas baseChart
-            [datasets]="chartData"
-            [labels]="chartLabels"
-            [options]="chartOptions"
-            [legend]="chartLegend"
-            [chartType]="chartType"></canvas>
+    <chart type="horizontalBar" [data]="data" [options]="options"></chart>
   `,
 })
 export class ChartjsBarHorizontalComponent {
-  chartData: any[];
-  chartLabels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
-  chartLegend: boolean = true;
-  chartType: string = 'horizontalBar';
-  chartOptions: any;
+  data: any;
+  options: any;
 
   constructor(private theme: NbThemeService) {
     this.theme.getJsTheme().subscribe(config => {
 
+      const colors: any = config.variables;
       const chartjs: any = config.variables.chartjs;
 
-      this.chartData = [
-        {
-          label: 'Dataset 1',
-          backgroundColor: chartjs.barHorizontal.colors[0],
-          borderColor: chartjs.barHorizontal.colors[0],
-          borderWidth: 1,
-          data: [
-            this.randomScalingFactor(),
-            this.randomScalingFactor(),
-            this.randomScalingFactor(),
-            this.randomScalingFactor(),
-            this.randomScalingFactor(),
-            this.randomScalingFactor(),
-            this.randomScalingFactor(),
-          ],
-        },
-        {
-          label: 'Dataset 2',
-          backgroundColor: chartjs.barHorizontal.colors[1],
-          borderColor: chartjs.barHorizontal.colors[1],
-          data: [
-            this.randomScalingFactor(),
-            this.randomScalingFactor(),
-            this.randomScalingFactor(),
-            this.randomScalingFactor(),
-            this.randomScalingFactor(),
-            this.randomScalingFactor(),
-            this.randomScalingFactor(),
-          ],
-        },
-      ];
+      this.data = {
+        labels: ['January', 'February', 'March', 'April', 'May', 'June'],
+        datasets: [{
+            label: 'Dataset 1',
+            backgroundColor: colors.infoLight,
+            borderWidth: 1,
+            data: [this.random(), this.random(), this.random(), this.random(), this.random(), this.random()],
+          }, {
+            label: 'Dataset 2',
+            backgroundColor: colors.successLight,
+            data: [this.random(), this.random(), this.random(), this.random(), this.random(), this.random()],
+          },
+        ],
+      };
 
-      this.chartOptions = {
-        // Elements options apply to all of the options unless overridden in a dataset
-        // In this case, we are setting the border of each horizontal bar to be 2px wide
+      this.options = {
+        responsive: true,
+        maintainAspectRatio: false,
         elements: {
           rectangle: {
             borderWidth: 2,
           },
         },
-        responsive: true,
         scales: {
           xAxes: [
             {
               gridLines: {
                 display: true,
-                color: chartjs.xAxisColor,
+                color: chartjs.axisLineColor,
               },
               ticks: {
-                fontColor: chartjs.tickColor,
+                fontColor: chartjs.textColor,
               },
             },
           ],
           yAxes: [
             {
               gridLines: {
-                display: true,
-                color: chartjs.yAxisColor,
+                display: false,
+                color: chartjs.axisLineColor,
               },
               ticks: {
-                fontColor: chartjs.tickColor,
+                fontColor: chartjs.textColor,
               },
             },
           ],
@@ -106,7 +74,7 @@ export class ChartjsBarHorizontalComponent {
     });
   }
 
-  private randomScalingFactor() {
+  private random() {
     return Math.round(Math.random() * 100);
   }
 }

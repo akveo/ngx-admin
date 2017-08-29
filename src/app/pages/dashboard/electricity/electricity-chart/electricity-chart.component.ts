@@ -87,7 +87,7 @@ export class ElectricityChartComponent implements AfterViewInit {
             },
             axisLine: {
               lineStyle: {
-                color: eTheme.xAxisColor,
+                color: eTheme.axisLineColor,
                 width: '2',
               },
             },

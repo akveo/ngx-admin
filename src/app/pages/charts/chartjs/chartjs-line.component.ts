@@ -1,51 +1,55 @@
 import { Component } from '@angular/core';
-import { NbThemeService } from '@nebular/theme';
+import { NbThemeService, NbColorHelper } from '@nebular/theme';
 
 @Component({
   selector: 'ngx-chartjs-line',
-  styles: [
-    `
-      :host {
-        display: block;
-      }
-    `,
-  ],
   template: `
-    <canvas baseChart
-            [datasets]="chartData"
-            [labels]="chartLabels"
-            [options]="chartOptions"
-            [legend]="chartLegend"
-            [chartType]="chatyType"></canvas>
+    <chart type="line" [data]="data" [options]="options"></chart>
   `,
 })
 export class ChartjsLineComponent {
-  chartData: any[] = [
-    { data: [65, 59, 80, 81, 56, 55, 40], label: 'Series A' },
-    { data: [28, 48, 40, 19, 86, 27, 90], label: 'Series B' },
-    { data: [18, 48, 77, 9, 100, 27, 40], label: 'Series C' },
-  ];
-  chartLabels: any[] = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
-  chartLegend: boolean = true;
-  chatyType: string = 'line';
-  chartOptions: any;
+  data: any;
+  options: any;
 
   constructor(private theme: NbThemeService) {
     this.theme.getJsTheme().subscribe(config => {
 
+      const colors: any = config.variables;
       const chartjs: any = config.variables.chartjs;
 
-      this.chartOptions = {
+      this.data = {
+        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+        datasets: [{
+          data: [65, 59, 80, 81, 56, 55, 40],
+          label: 'Series A',
+          backgroundColor: NbColorHelper.hexToRgbA(colors.primary, 0.3),
+          borderColor: colors.primary,
+        }, {
+          data: [28, 48, 40, 19, 86, 27, 90],
+          label: 'Series B',
+          backgroundColor: NbColorHelper.hexToRgbA(colors.danger, 0.3),
+          borderColor: colors.danger,
+        }, {
+          data: [18, 48, 77, 9, 100, 27, 40],
+          label: 'Series C',
+          backgroundColor: NbColorHelper.hexToRgbA(colors.info, 0.3),
+          borderColor: colors.info,
+        },
+        ],
+      };
+
+      this.options = {
         responsive: true,
+        maintainAspectRatio: false,
         scales: {
           xAxes: [
             {
               gridLines: {
                 display: true,
-                color: chartjs.xAxisColor,
+                color: chartjs.axisLineColor,
               },
               ticks: {
-                fontColor: chartjs.tickColor,
+                fontColor: chartjs.textColor,
               },
             },
           ],
@@ -53,10 +57,10 @@ export class ChartjsLineComponent {
             {
               gridLines: {
                 display: true,
-                color: chartjs.yAxisColor,
+                color: chartjs.axisLineColor,
               },
               ticks: {
-                fontColor: chartjs.tickColor,
+                fontColor: chartjs.textColor,
               },
             },
           ],

@@ -43,7 +43,7 @@ export const COSMIC_THEME = {
       tooltipExtraCss: 'box-shadow: 0px 2px 46px 0 rgba(0, 255, 170, 0.35); border-radius: 10px; padding: 8px 24px;',
       tooltipTextColor: '#ffffff',
 
-      xAxisColor: 'rgba(161, 161 ,229, 0.3)',
+      axisLineColor: 'rgba(161, 161 ,229, 0.3)',
       xAxisTextColor: '#a1a1e5',
       yAxisSplitLine: 'rgba(161, 161 ,229, 0.2)',
 
@@ -78,21 +78,8 @@ export const COSMIC_THEME = {
     },
 
     chartjs: {
-      xAxisColor: 'rgba(148,159,177,1)',
-      yAxisColor: 'rgba(148,159,177,1)',
-      tickColor: 'white',
-      legendTextColor: 'white',
-
-      barHorizontal: {
-        colors: ['red', 'blue'],
-      },
-
-      radar: {
-        colors: ['red', 'blue'],
-        scaleGridLinesColor: 'white',
-        scaleAngleLinesColor: 'white',
-        pointLabelFontColor: 'white',
-      },
+      axisLineColor: '#a1a1e5',
+      textColor: '#ffffff',
     },
 
     d3: {

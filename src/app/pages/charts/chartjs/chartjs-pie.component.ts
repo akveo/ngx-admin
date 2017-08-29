@@ -3,33 +3,30 @@ import { NbThemeService } from '@nebular/theme';
 
 @Component({
   selector: 'ngx-chartjs-pie',
-  styles: [
-    `
-      :host {
-        display: block;
-      }
-    `,
-  ],
   template: `
-    <canvas baseChart
-            [data]="chartData"
-            [labels]="chartLabels"
-            [options]="chartOptions"
-            [chartType]="chartType"></canvas>
+    <chart type="pie" [data]="data" [options]="options"></chart>
   `,
 })
 export class ChartjsPieComponent {
-  chartType: string = 'pie';
-  chartLabels: string[] = ['Download Sales', 'In-Store Sales', 'Mail Sales'];
-  chartData: number[] = [300, 500, 100];
-  chartOptions: any;
+  data: any;
+  options: any;
 
   constructor(private theme: NbThemeService) {
     this.theme.getJsTheme().subscribe(config => {
 
+      const colors: any = config.variables;
       const chartjs: any = config.variables.chartjs;
 
-      this.chartOptions = {
+      this.data = {
+        labels: ['Download Sales', 'In-Store Sales', 'Mail Sales'],
+        datasets: [{
+          data: [300, 500, 100],
+          backgroundColor: [colors.primaryLight, colors.infoLight, colors.successLight],
+        }],
+      };
+
+      this.options = {
+        maintainAspectRatio: false,
         responsive: true,
         scale: {
           pointLabels: {
@@ -40,24 +37,12 @@ export class ChartjsPieComponent {
         scales: {
           xAxes: [
             {
-              gridLines: {
-                display: true,
-                color: chartjs.xAxisColor,
-              },
-              ticks: {
-                fontColor: chartjs.tickColor,
-              },
+              display: false,
             },
           ],
           yAxes: [
             {
-              gridLines: {
-                display: true,
-                color: chartjs.yAxisColor,
-              },
-              ticks: {
-                fontColor: chartjs.tickColor,
-              },
+              display: false,
             },
           ],
         },

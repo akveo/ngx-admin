@@ -37,7 +37,7 @@ export const DEFAULT_THEME = {
       tooltipExtraCss: 'border-radius: 10px; padding: 8px 24px;',
       tooltipTextColor: '#222222',
 
-      xAxisColor: 'rgba(0, 0, 0, 0)',
+      axisLineColor: 'rgba(0, 0, 0, 0)',
       xAxisTextColor: '#222222',
       yAxisSplitLine: '#ebeef2',
 
@@ -72,21 +72,8 @@ export const DEFAULT_THEME = {
     },
 
     chartjs: {
-      xAxisColor: 'rgba(148,159,177,1)',
-      yAxisColor: 'rgba(148,159,177,1)',
-      tickColor: 'white',
-      legendTextColor: 'white',
-
-      barHorizontal: {
-        colors: ['red', 'blue'],
-      },
-
-      radar: {
-        colors: ['red', 'blue'],
-        scaleGridLinesColor: 'white',
-        scaleAngleLinesColor: 'white',
-        pointLabelFontColor: 'white',
-      },
+      axisLineColor: '#cccccc',
+      textColor: '#484848',
     },
 
     d3: {
