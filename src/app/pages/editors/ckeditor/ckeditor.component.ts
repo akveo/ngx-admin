@@ -6,9 +6,12 @@ import 'ckeditor';
 @Component({
   selector: 'ngx-ckeditor',
   template: `
-    <nb-card size="xlarge">
+    <nb-card>
+      <nb-card-header>
+        CKEditor
+      </nb-card-header>
       <nb-card-body>
-        <ckeditor [config]="{ extraPlugins: 'divarea', height: '515' }"></ckeditor>
+        <ckeditor [config]="{ extraPlugins: 'divarea', height: '320' }"></ckeditor>
       </nb-card-body>
     </nb-card>
   `,

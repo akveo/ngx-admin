@@ -23,7 +23,7 @@ export class TinyMCEComponent implements OnDestroy, AfterViewInit {
           this.editorKeyup.emit(editor.getContent());
         });
       },
-      height: '540',
+      height: '320',
     });
   }
 
