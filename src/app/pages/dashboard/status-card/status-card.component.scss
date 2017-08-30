@@ -25,7 +25,7 @@
       justify-content: center;
       width: 5.75rem;
       height: 4.75rem;
-      font-size: 3.5rem;
+      font-size: 3rem;
       border-radius: nb-theme(card-border-radius);
       transition: all 0.1s ease-out, color 0s;
       color: nb-theme(color-white);
@@ -63,29 +63,6 @@
         }
         &.warning {
           background-image: btn-hero-warning-light-gradient();
-        }
-      }
-    }
-
-    &:active {
-      box-shadow: none;
-      background: nb-theme(card-bg);
-
-      .icon {
-        &.primary, &.success, &.info, &.warning {
-          box-shadow: none;
-        }
-        &.primary {
-          background-image: btn-hero-primary-dark-gradient();
-        }
-        &.success {
-          background-image: btn-hero-success-dark-gradient();
-        }
-        &.info {
-          background-image: btn-hero-info-dark-gradient();
-        }
-        &.warning {
-          background-image: btn-hero-warning-dark-gradient();
         }
       }
     }
@@ -145,7 +122,7 @@
       .icon {
         width: 7rem;
         height: 100%;
-        font-size: 4em;
+        font-size: 3.5rem;
         border-radius: nb-theme(card-border-radius) 0 0 nb-theme(card-border-radius);
       }
 
