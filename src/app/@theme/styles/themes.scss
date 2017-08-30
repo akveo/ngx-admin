@@ -11,6 +11,8 @@ $nb-themes: nb-register-theme((
   sidebar-header-gap: 2rem,
   sidebar-header-height: initial,
   layout-content-width: 1400px,
+
+  toggle-layout-color: color-success,
 ), default, default);
 
 $nb-themes: nb-register-theme((
@@ -18,6 +20,8 @@ $nb-themes: nb-register-theme((
   sidebar-header-gap: 2rem,
   sidebar-header-height: initial,
   layout-content-width: 1400px,
+
+  toggle-layout-color: link-color-active,
 ), cosmic, cosmic);
 
 $nb-themes: nb-register-theme((

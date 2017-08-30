@@ -22,7 +22,7 @@ import { UserService } from '../../../@core/data/users.service';
       class="header-container"
       [class.right]="position === 'normal'"
       [class.left]="position === 'inverse'">
-      <nb-action icon="ion-ios-gear-outline" (click)="toggleSettings()"></nb-action>
+      <nb-action icon="nb-grid-b" class="toggle-layout" (click)="toggleSettings()"></nb-action>
       <nb-action>
         <nb-user [menu]="userMenu" [name]="user?.name" [picture]="user?.picture"></nb-user>
       </nb-action>

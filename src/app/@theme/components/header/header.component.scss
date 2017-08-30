@@ -41,5 +41,15 @@
       }
     }
   }
+
+  .toggle-layout /deep/ a {
+    text-decoration: none;
+    line-height: 1;
+
+    i {
+      color: nb-theme(toggle-layout-color);
+      font-size: 1.75rem;
+    }
+  }
 }
 
