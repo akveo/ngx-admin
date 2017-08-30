@@ -9,6 +9,16 @@ export class IconsComponent {
 
   icons = {
 
+    nebular: ['nb-alert', 'nb-angle-double-left', 'nb-angle-double-right', 'nb-arrow-back', 'nb-arrow-dropdown',
+      'nb-arrow-left', 'nb-arrow-retweet', 'nb-audio', 'nb-bar-chart', 'nb-checkmark', 'nb-cloudy', 'nb-coffee-maker',
+      'nb-compose', 'nb-create', 'nb-email', 'nb-flame', 'nb-gear', 'nb-grid-a', 'nb-grid-b', 'nb-heart', 'nb-home',
+      'nb-keypad', 'nb-layout-centre', 'nb-layout-default', 'nb-layout-one-column', 'nb-layout-sidebar-left',
+      'nb-layout-sidebar-right', 'nb-layout-two-column', 'nb-lightbulb', 'nb-list', 'nb-location', 'nb-locked',
+      'nb-loop', 'nb-menu', 'nb-notifications', 'nb-paper-plane', 'nb-partlysunny', 'nb-pause', 'nb-person',
+      'nb-phone', 'nb-play', 'nb-plus', 'nb-plus-circled', 'nb-power', 'nb-rainy', 'nb-roller-shades', 'nb-search',
+      'nb-shuffle', 'nb-skip-backward', 'nb-skip-forward', 'nb-snowy', 'nb-square', 'nb-star', 'nb-sunny', 'nb-tables',
+      'nb-title', 'nb-trash', 'nb-volume-high', 'nb-volume-mute'],
+
     ionicons: [
       'ion-ionic', 'ion-arrow-right-b', 'ion-arrow-down-b', 'ion-arrow-left-b', 'ion-arrow-up-c', 'ion-arrow-right-c',
       'ion-arrow-down-c', 'ion-arrow-left-c', 'ion-arrow-return-right', 'ion-arrow-return-left', 'ion-arrow-swap',
