@@ -47,8 +47,13 @@
     line-height: 1;
 
     i {
-      color: nb-theme(toggle-layout-color);
+      color: nb-theme(color-success);
       font-size: 1.75rem;
+
+      @include nb-for-theme(cosmic) {
+        color: nb-theme(link-color-active);
+        text-shadow: 0 0 12px rgba(nb-theme(color-fg-highlight), 0.4);
+      }
     }
   }
 }
