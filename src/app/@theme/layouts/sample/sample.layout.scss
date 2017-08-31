@@ -1,22 +1,26 @@
 @import '../../styles/themes';
 
 @include nb-install-component() {
-
   nb-layout-column.small {
     flex: 0.15 !important;
   }
 
   nb-sidebar.settings-sidebar {
-    width: 7rem;
-    /deep/ .main-container {
-      width: 7rem;
-      background: #3a3850;
-    }
+    $sidebar-width: 7.5rem;
+
+    transition: width 0.3s ease;
+    width: $sidebar-width;
 
     &.collapsed {
       width: 0;
-      /deep/ .main-container {
-        width: 0;
+    }
+
+    /deep/ .main-container {
+      width: $sidebar-width;
+      background: nb-theme(color-bg);
+
+      @include nb-for-theme(cosmic) {
+        background: nb-theme(layout-bg);
       }
     }
   }

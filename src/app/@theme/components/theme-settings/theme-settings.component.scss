@@ -1,20 +1,35 @@
 @import '../../styles/themes';
 
 @include nb-install-component() {
+  h5 {
+    margin-bottom: 1.5rem;
+  }
+
   .settings-row {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding-bottom: 0.5rem;
+    align-items: center;
     flex-wrap: wrap;
 
+    width: 90%;
+    margin: 0 auto 3rem;
+
     a {
-      font-size: 2rem;
-      margin-right: 1rem;
-      color: nb-theme(color-white);
+      text-decoration: none;
+      font-size: 1.75rem;
+      margin-bottom: 0.5rem;
+
+      color: nb-theme(color-fg);
 
       &.selected {
         color: nb-theme(color-success);
+      }
+
+      @include nb-for-theme(cosmic) {
+        &.selected {
+          color: nb-theme(link-color-active);
+        }
       }
     }
   }

@@ -10,23 +10,18 @@ export class StateService {
   protected layouts: any = [
     {
       name: 'One Column',
-      icon: 'ion ion-grid',
+      icon: 'nb-layout-default',
       id: 'one-column',
       selected: true,
     },
     {
       name: 'Two Column',
-      icon: 'ion ion-grid',
+      icon: 'nb-layout-two-column',
       id: 'two-column',
     },
     {
-      name: 'Three Column',
-      icon: 'ion ion-grid',
-      id: 'three-column',
-    },
-    {
       name: 'Center Column',
-      icon: 'ion ion-grid',
+      icon: 'nb-layout-centre',
       id: 'center-column',
     },
   ];
@@ -34,13 +29,13 @@ export class StateService {
   protected sidebars: any = [
     {
       name: 'Left Sidebar',
-      icon: 'ion ion-grid',
+      icon: 'nb-layout-sidebar-left',
       id: 'left',
       selected: true,
     },
     {
       name: 'Right Sidebar',
-      icon: 'ion ion-grid',
+      icon: 'nb-layout-sidebar-right',
       id: 'right',
     },
   ];
