@@ -13,6 +13,9 @@ $nb-themes: nb-register-theme((
   layout-content-width: 1400px,
 
   toggle-layout-color: color-success,
+
+  font-main: Roboto,
+  font-secondary: Exo,
 ), default, default);
 
 $nb-themes: nb-register-theme((
@@ -22,6 +25,9 @@ $nb-themes: nb-register-theme((
   layout-content-width: 1400px,
 
   toggle-layout-color: link-color-active,
+
+  font-main: Roboto,
+  font-secondary: Exo,
 ), cosmic, cosmic);
 
 $nb-themes: nb-register-theme((
@@ -29,4 +35,7 @@ $nb-themes: nb-register-theme((
   sidebar-header-gap: 2rem,
   sidebar-header-height: initial,
   layout-content-width: 1400px,
+
+  font-main: Roboto,
+  font-secondary: Exo,
 ), light, light);

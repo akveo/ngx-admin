@@ -57,7 +57,7 @@
     "ng2-tree": "2.0.0-alpha.5",
     "ngx-echarts": "1.2.2",
     "normalize.css": "6.0.0",
-    "open-sans-fontface": "1.4.0",
+    "roboto-fontface": "0.8.0",
     "rxjs": "5.4.2",
     "tether": "1.4.0",
     "tinymce": "4.5.7",
