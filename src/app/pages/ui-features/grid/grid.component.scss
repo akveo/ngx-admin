@@ -1,4 +1,6 @@
-:host {
+@import '../../../@theme/styles/themes';
+
+@include nb-install-component() {
   .show-grid {
     .row {
       margin: -0.5rem;
@@ -10,7 +12,7 @@
 
       div {
         text-align: center;
-        background-color: #494299;
+        background-color: nb-theme(color-bg-active);
         padding: 0.75rem 0.25rem;
         border-radius: 0.25rem;
       }
