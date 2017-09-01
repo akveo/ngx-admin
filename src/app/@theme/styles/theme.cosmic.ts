@@ -64,7 +64,6 @@ export const COSMIC_THEME = {
 
     bubbleMap: {
       titleColor: '#ffffff',
-      geoColors: ['#e6b045', '#0088ff', '#ff386a', '#00d977', '#7659ff', '#24dec8'],
       areaColor: '#2c2961',
       areaHoverColor: '#a1a1e5',
       areaBorderColor: '#654ddb',
