@@ -1,11 +1,5 @@
-.form-inline {
-  display: flex;
-
-  .fullname {
-    flex: 1;
-  }
-
-  .username {
-    flex: 1;
-  }
+.full-width {
+  flex: 1;
+  margin-right: 1.5rem;
+  min-width: 250px;
 }

@@ -1,25 +1,22 @@
 <div class="row">
   <div class="col-md-12">
     <nb-card>
-      <nb-card-header>
-        Inline form
-      </nb-card-header>
+      <nb-card-header>Inline form</nb-card-header>
       <nb-card-body>
         <form class="form-inline">
-          <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0 fullname" placeholder="Jane Doe">
-          <div class="input-group mb-2 mr-sm-2 mb-sm-0 username">
+          <input type="text" class="form-control full-width" placeholder="Jane Doe">
+          <div class="input-group full-width">
             <div class="input-group-addon">@</div>
-            <input type="text" class="form-control" placeholder="Username">
+            <input type="text" class="form-control" placeholder="Email">
           </div>
-          <div class="form-check mb-2 mr-sm-2 mb-sm-0">
-            <nb-checkbox>Remember me</nb-checkbox>
-          </div>
+          <nb-checkbox>Remember me</nb-checkbox>
           <button type="submit" class="btn btn-primary">Submit</button>
         </form>
       </nb-card-body>
     </nb-card>
   </div>
 </div>
+
 <div class="row">
   <div class="col-md-6">
     <nb-card>
@@ -27,19 +24,19 @@
       <nb-card-body>
         <form>
           <div class="form-group row">
-            <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+            <label for="inputEmail1" class="col-sm-2 col-form-label">Email</label>
             <div class="col-sm-10">
-              <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+              <input type="email" class="form-control" id="inputEmail1" placeholder="Email">
             </div>
           </div>
           <div class="form-group row">
-            <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
+            <label for="inputPassword2" class="col-sm-2 col-form-label">Password</label>
             <div class="col-sm-10">
-              <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+              <input type="password" class="form-control" id="inputPassword2" placeholder="Password">
             </div>
           </div>
-          <fieldset class="form-group row">
-            <legend class="col-form-legend col-sm-2">Radios</legend>
+          <div class="form-group row">
+            <label class="col-sm-2">Radios</label>
             <div class="col-sm-10">
               <div class="form-check">
                 <label class="custom-control custom-radio">
@@ -63,14 +60,6 @@
                 </label>
               </div>
             </div>
-          </fieldset>
-          <div class="form-group row">
-            <label class="col-sm-2">Checkbox</label>
-            <div class="col-sm-10">
-              <div class="form-check">
-                <nb-checkbox>Check me out</nb-checkbox>
-              </div>
-            </div>
           </div>
           <div class="form-group row">
             <div class="offset-sm-2 col-sm-10">
@@ -80,10 +69,9 @@
         </form>
       </nb-card-body>
     </nb-card>
+
     <nb-card>
-      <nb-card-header>
-        Form without labels
-      </nb-card-header>
+      <nb-card-header>Form without labels</nb-card-header>
       <nb-card-body>
         <form>
           <div class="form-group">
@@ -100,11 +88,10 @@
       </nb-card-body>
     </nb-card>
   </div>
+
   <div class="col-md-6">
     <nb-card>
-      <nb-card-header>
-        Basic form
-      </nb-card-header>
+      <nb-card-header>Basic form</nb-card-header>
       <nb-card-body>
         <form>
           <div class="form-group">
@@ -122,10 +109,9 @@
         </form>
       </nb-card-body>
     </nb-card>
+
     <nb-card>
-      <nb-card-header>
-        Block form
-      </nb-card-header>
+      <nb-card-header>Block form</nb-card-header>
       <nb-card-body>
         <div class="row">
           <div class="col-sm-6">
@@ -160,12 +146,11 @@
     </nb-card>
   </div>
 </div>
+
 <div class="row">
   <div class="col-md-6">
     <nb-card>
-      <nb-card-header>
-        Horizontal form
-      </nb-card-header>
+      <nb-card-header>Horizontal form</nb-card-header>
       <nb-card-body>
         <form class="form-horizontal">
           <div class="form-group row">
