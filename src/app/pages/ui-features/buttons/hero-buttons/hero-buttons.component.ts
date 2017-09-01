@@ -18,22 +18,22 @@ export class HeroButtonComponent {
     });
   }
 
-  init(theme: any) {
+  init(colors: any) {
     this.settings = [{
       class: 'btn-hero-primary',
       container: 'primary-container',
       title: 'Primary Button',
       buttonTitle: 'Primary',
       default: {
-        gradientLeft: `adjust-hue(${theme.colorPrimary}, 20deg)`,
-        gradientRight: theme.colorPrimary,
+        gradientLeft: `adjust-hue(${colors.primary}, 20deg)`,
+        gradientRight: colors.primary,
       },
       cosmic: {
-        gradientLeft: `adjust-hue(${theme.colorPrimary}, 20deg)`,
-        gradientRight: theme.colorPrimary,
-        bevel: `shade(${theme.colorPrimary}, 14%)`,
+        gradientLeft: `adjust-hue(${colors.primary}, 20deg)`,
+        gradientRight: colors.primary,
+        bevel: `shade(${colors.primary}, 14%)`,
         shadow: 'rgba (6, 7, 64, 0.5)',
-        glow: `adjust-hue(${theme.colorPrimary}, 10deg)`,
+        glow: `adjust-hue(${colors.primary}, 10deg)`,
       },
     }, {
       class: 'btn-hero-warning',
@@ -41,15 +41,15 @@ export class HeroButtonComponent {
       title: 'Warning Button',
       buttonTitle: 'Warning',
       default: {
-        gradientLeft: `adjust-hue(${theme.colorWarning}, 10deg)`,
-        gradientRight: theme.colorWarning,
+        gradientLeft: `adjust-hue(${colors.warning}, 10deg)`,
+        gradientRight: colors.warning,
       },
       cosmic: {
-        gradientLeft: `adjust-hue(${theme.colorWarning}, 10deg)`,
-        gradientRight: theme.colorWarning,
-        bevel: `shade(${theme.colorWarning}, 14%)`,
+        gradientLeft: `adjust-hue(${colors.warning}, 10deg)`,
+        gradientRight: colors.warning,
+        bevel: `shade(${colors.warning}, 14%)`,
         shadow: 'rgba (33, 7, 77, 0.5)',
-        glow: `adjust-hue(${theme.colorWarning}, 5deg)`,
+        glow: `adjust-hue(${colors.warning}, 5deg)`,
       },
     }, {
       class: 'btn-hero-success',
@@ -57,15 +57,15 @@ export class HeroButtonComponent {
       title: 'Success Button',
       buttonTitle: 'Success',
       default: {
-        gradientLeft: `adjust-hue(${theme.colorSuccess}, 20deg)`,
-        gradientRight: theme.colorSuccess,
+        gradientLeft: `adjust-hue(${colors.success}, 20deg)`,
+        gradientRight: colors.success,
       },
       cosmic: {
-        gradientLeft: `adjust-hue(${theme.colorSuccess}, 20deg)`,
-        gradientRight: theme.colorSuccess,
-        bevel: `shade(${theme.colorSuccess}, 14%)`,
+        gradientLeft: `adjust-hue(${colors.success}, 20deg)`,
+        gradientRight: colors.success,
+        bevel: `shade(${colors.success}, 14%)`,
         shadow: 'rgba (33, 7, 77, 0.5)',
-        glow: `adjust-hue(${theme.colorSuccess}, 10deg)`,
+        glow: `adjust-hue(${colors.success}, 10deg)`,
       },
     }, {
       class: 'btn-hero-info',
@@ -73,15 +73,15 @@ export class HeroButtonComponent {
       title: 'Info Button',
       buttonTitle: 'Info',
       default: {
-        gradientLeft: `adjust-hue(${theme.colorInfo}, -10deg)`,
-        gradientRight: theme.colorInfo,
+        gradientLeft: `adjust-hue(${colors.info}, -10deg)`,
+        gradientRight: colors.info,
       },
       cosmic: {
-        gradientLeft: `adjust-hue(${theme.colorInfo}, -10deg)`,
-        gradientRight: theme.colorInfo,
-        bevel: `shade(${theme.colorInfo}, 14%)`,
+        gradientLeft: `adjust-hue(${colors.info}, -10deg)`,
+        gradientRight: colors.info,
+        bevel: `shade(${colors.info}, 14%)`,
         shadow: 'rgba (33, 7, 77, 0.5)',
-        glow: `adjust-hue(${theme.colorInfo}, -5deg)`,
+        glow: `adjust-hue(${colors.info}, -5deg)`,
       },
     }, {
       class: 'btn-hero-danger',
@@ -89,15 +89,15 @@ export class HeroButtonComponent {
       title: 'Danger Button',
       buttonTitle: 'Danger',
       default: {
-        gradientLeft: `adjust-hue(${theme.colorDanger}, -20deg)`,
-        gradientRight: theme.colorDanger,
+        gradientLeft: `adjust-hue(${colors.danger}, -20deg)`,
+        gradientRight: colors.danger,
       },
       cosmic: {
-        gradientLeft: `adjust-hue(${theme.colorDanger}, -20deg)`,
-        gradientRight: theme.colorDanger,
-        bevel: `shade(${theme.colorDanger}, 14%)`,
+        gradientLeft: `adjust-hue(${colors.danger}, -20deg)`,
+        gradientRight: colors.danger,
+        bevel: `shade(${colors.danger}, 14%)`,
         shadow: 'rgba (33, 7, 77, 0.5)',
-        glow: `adjust-hue(${theme.colorDanger}, -10deg)`,
+        glow: `adjust-hue(${colors.danger}, -10deg)`,
       },
     }, {
       class: 'btn-hero-secondary',
@@ -108,7 +108,7 @@ export class HeroButtonComponent {
         border: '#dadfe6',
       },
       cosmic: {
-        border: theme.colorPrimary,
+        border: colors.primary,
         bevel: '#665ebd',
         shadow: 'rgba (33, 7, 77, 0.5)',
         glow: 'rgba (146, 141, 255, 1)',
