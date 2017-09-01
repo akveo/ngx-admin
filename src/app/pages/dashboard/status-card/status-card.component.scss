@@ -100,7 +100,7 @@
     .title {
       font-family: nb-theme(font-secondary);
       font-size: 1.5rem;
-      font-weight: nb-theme(font-weight-bolder);
+      font-weight: nb-theme(font-weight-bold);
       color: nb-theme(card-fg-heading);
     }
 
@@ -124,6 +124,10 @@
         height: 100%;
         font-size: 3.5rem;
         border-radius: nb-theme(card-border-radius) 0 0 nb-theme(card-border-radius);
+      }
+
+      .title {
+        font-weight: nb-theme(font-weight-bolder);
       }
 
       .status {

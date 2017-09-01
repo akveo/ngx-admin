@@ -63,6 +63,7 @@ export class ElectricityChartComponent implements AfterViewInit {
             textStyle: {
               color: eTheme.tooltipTextColor,
               fontSize: 20,
+              fontWeight: eTheme.tooltipFontWeight,
             },
             position: 'top',
             backgroundColor: eTheme.tooltipBg,

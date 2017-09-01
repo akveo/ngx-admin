@@ -27,7 +27,7 @@
 
   .details {
     font-size: 1.25rem;
-    font-weight: nb-theme(font-weight-bold);
+    font-weight: nb-theme(font-weight-bolder);
     line-height: 1;
     span {
       font-size: 1rem;
@@ -50,7 +50,7 @@
     color: nb-theme(color-fg-heading);
 
     .value {
-      color: nb-theme(color-success);
+      color: nb-theme(color-fg-highlight);
     }
 
     .details span {

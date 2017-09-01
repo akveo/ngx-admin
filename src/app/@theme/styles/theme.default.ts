@@ -17,7 +17,9 @@ export const DEFAULT_THEME = {
       tooltipBg: '#ffffff',
       tooltipBorderColor: '#c0c8d1',
       tooltipExtraCss: 'border-radius: 10px; padding: 4px 16px;',
-      tooltipTextColor: '#222222',
+      tooltipTextColor: '#2a2a2a',
+      tooltipFontWeight: 'bolder',
+
       lineBg: '#c0c8d1',
       lineShadowBlur: '1',
       itemColor: '#bcc3cc',
@@ -35,10 +37,11 @@ export const DEFAULT_THEME = {
       tooltipLineWidth: '0',
       tooltipBorderColor: '#ebeef2',
       tooltipExtraCss: 'border-radius: 10px; padding: 8px 24px;',
-      tooltipTextColor: '#222222',
+      tooltipTextColor: '#2a2a2a',
+      tooltipFontWeight: 'bolder',
 
       axisLineColor: 'rgba(0, 0, 0, 0)',
-      xAxisTextColor: '#222222',
+      xAxisTextColor: '#2a2a2a',
       yAxisSplitLine: '#ebeef2',
 
       itemBorderColor: '#42db7d',

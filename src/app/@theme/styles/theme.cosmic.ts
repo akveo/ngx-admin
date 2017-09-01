@@ -24,6 +24,8 @@ export const COSMIC_THEME = {
       tooltipBorderColor: '#00d977',
       tooltipExtraCss: 'box-shadow: 0px 2px 46px 0 rgba(0, 255, 170, 0.35); border-radius: 10px; padding: 4px 16px;',
       tooltipTextColor: '#ffffff',
+      tooltipFontWeight: 'normal',
+
       lineBg: '#d1d1ff',
       lineShadowBlur: '14',
       itemColor: '#BEBBFF',
@@ -42,6 +44,7 @@ export const COSMIC_THEME = {
       tooltipBorderColor: '#00d977',
       tooltipExtraCss: 'box-shadow: 0px 2px 46px 0 rgba(0, 255, 170, 0.35); border-radius: 10px; padding: 8px 24px;',
       tooltipTextColor: '#ffffff',
+      tooltipFontWeight: 'normal',
 
       axisLineColor: 'rgba(161, 161 ,229, 0.3)',
       xAxisTextColor: '#a1a1e5',

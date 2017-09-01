@@ -81,9 +81,9 @@
       width: 100%;
       color: white;
       background: rgba(0, 0, 0, 0.4);
-      font-family: nb-theme(font-family-secondary);
-      font-size: 1rem;
-      font-weight: nb-theme(font-weight-bold);
+      font-family: nb-theme(font-secondary);
+      font-weight: nb-theme(font-weight-bolder);
+      font-size: 1.25rem;
       padding: 0.5rem 1rem;
     }
 
@@ -110,7 +110,7 @@
     }
 
     span {
-      font-family: nb-theme(font-family-secondary);
+      font-family: nb-theme(font-secondary);
       font-weight: nb-theme(font-weight-bold);
       color: nb-theme(color-fg-heading);
       text-transform: uppercase;
@@ -131,6 +131,10 @@
       &::before {
         background-color: rgba(0, 0, 0, 0.2);
       }
+    }
+
+    nb-action span {
+      font-weight: nb-theme(font-weight-bolder);
     }
   }
 }

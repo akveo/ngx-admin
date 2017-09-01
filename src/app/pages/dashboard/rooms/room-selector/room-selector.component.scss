@@ -1,4 +1,5 @@
 @import '../../../../@theme/styles/themes';
+@import '~@nebular/theme/components/card/card.component.theme';
 
 @include nb-install-component() {
   :host {
@@ -62,21 +63,16 @@
 
     .room-text {
       fill: nb-theme(color-fg-heading);
-      font-weight: nb-theme(font-weight-bold);
+      font-weight: nb-theme(font-weight-bolder);
     }
     .room-border {
       stroke: nb-theme(color-success);
     }
   }
 
-    // TODO: Replace with the card header styles mixin
   .rooms-card-header {
-    line-height: 2rem;
-    font-size: 1.25rem;
-    font-family: nb-theme(font-secondary);
-    font-weight: nb-theme(font-weight-bolder);
-    color: nb-theme(color-fg-heading);
-    padding: 1.25rem;
+    @include nb-card-header();
+    border-bottom: none;
   }
 
   @include nb-for-theme(cosmic) {

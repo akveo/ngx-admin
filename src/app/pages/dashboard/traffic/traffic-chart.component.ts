@@ -64,6 +64,7 @@ export class TrafficChartComponent implements AfterViewInit {
           },
           textStyle: {
             color: trafficTheme.tooltipTextColor,
+            fontWeight: trafficTheme.tooltipFontWeight,
             fontSize: 16,
           },
           position: 'top',

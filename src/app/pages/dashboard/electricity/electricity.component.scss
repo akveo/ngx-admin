@@ -76,17 +76,6 @@
     }
   }
 
-  @include nb-for-theme(cosmic) {
-    nb-tabset /deep/ ul li.active {
-      background-color: nb-theme(color-primary);
-      border-radius: nb-theme(radius);
-
-      &::before {
-        display: none;
-      }
-    }
-  }
-
   .stats-month {
     display: flex;
     align-items: center;
@@ -198,5 +187,16 @@
 
   .dropdown {
     min-width: 130px;
+  }
+
+  @include nb-for-theme(cosmic) {
+    nb-tabset /deep/ ul li.active {
+      background-color: nb-theme(color-primary);
+      border-radius: nb-theme(radius);
+
+      &::before {
+        display: none;
+      }
+    }
   }
 }
