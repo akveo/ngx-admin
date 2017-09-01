@@ -64,7 +64,8 @@ export class SolarComponent implements AfterViewInit {
                     textStyle: {
                       fontSize: '22',
                       fontFamily: config.variables.fontSecondary,
-                      color: config.variables.colorFgHeading,
+                      fontWeight: '600',
+                      color: config.variables.fgHeading,
                     },
                   },
                 },
