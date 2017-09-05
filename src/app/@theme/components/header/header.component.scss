@@ -41,10 +41,12 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      cursor: pointer;
 
-      span {
+      & > span {
         font-size: 1.125rem;
         font-weight: nb-theme(font-weight-bold);
+        transition: opacity 0.3s ease;
 
         &.light {
           color: nb-theme(color-fg-text);
@@ -62,6 +64,10 @@
           &.cosmic {
             color: nb-theme(color-white);
           }
+        }
+
+        &:active {
+          opacity: 0.78;
         }
       }
     }
@@ -83,14 +89,12 @@
 
       .slider {
         position: absolute;
-        cursor: pointer;
         top: 0;
         left: 0;
         right: 0;
         bottom: 0;
         border-radius: 1.75rem;
         background-color: nb-theme(layout-bg);
-        transition: 0.2s;
       }
 
       .slider::before {
@@ -102,11 +106,10 @@
         background-color: nb-theme(color-success);
         transition: 0.2s;
 
-        box-shadow: 0 0.125rem 1rem 0 rgba(nb-theme(color-fg), 0.4);
+        box-shadow: 0 0 0.25rem 0 rgba(nb-theme(color-fg), 0.4);
 
         @include nb-for-theme(cosmic) {
           @include btn-hero-primary-gradient();
-          box-shadow: 0 0.125rem 1rem 0 nb-theme(color-primary);
         }
       }
     }
