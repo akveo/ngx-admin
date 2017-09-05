@@ -3,7 +3,7 @@
     <nb-tab tabTitle="Contacts">
       <div class="contact" *ngFor="let c of contacts">
         <nb-user [picture]="c.user.picture" [name]="c.user.name" [title]="c.type" size="large"></nb-user>
-        <i class="i-contact ion-ios-telephone-outline"></i>
+        <i class="i-contact nb-phone"></i>
       </div>
     </nb-tab>
     <nb-tab tabTitle="Recent">

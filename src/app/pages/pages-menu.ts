@@ -4,7 +4,7 @@ import { List } from 'immutable';
 
 export const MENU_ITEMS: List<NbMenuItem> = List([{
   title: 'Dashboard',
-  icon: 'ion ion-ios-home-outline',
+  icon: 'nb-home',
   link: '/pages/dashboard',
   home: true,
 }, {
@@ -12,7 +12,7 @@ export const MENU_ITEMS: List<NbMenuItem> = List([{
   group: true,
 }, {
   title: 'UI Features',
-  icon: 'ion ion-ios-keypad-outline',
+  icon: 'nb-keypad',
   link: '/pages/ui-features',
   children: List<NbMenuItem>([{
     title: 'Buttons',
@@ -38,7 +38,7 @@ export const MENU_ITEMS: List<NbMenuItem> = List([{
   }]),
 }, {
   title: 'Forms',
-  icon: 'ion-compose',
+  icon: 'nb-compose',
   children: List<NbMenuItem>([{
     title: 'Form Inputs',
     link: '/pages/forms/inputs',
@@ -48,7 +48,7 @@ export const MENU_ITEMS: List<NbMenuItem> = List([{
   }]),
 }, {
   title: 'Components',
-  icon: 'ion ion-ios-gear-outline',
+  icon: 'nb-gear',
   children: List<NbMenuItem>([{
     title: 'Tree',
     link: '/pages/components/tree',
@@ -58,7 +58,7 @@ export const MENU_ITEMS: List<NbMenuItem> = List([{
   }]),
 }, {
   title: 'Maps',
-  icon: 'ion ion-ios-location-outline',
+  icon: 'nb-location',
   children: List<NbMenuItem>([{
     title: 'Google Maps',
     link: '/pages/maps/gmaps',
@@ -71,7 +71,7 @@ export const MENU_ITEMS: List<NbMenuItem> = List([{
   }]),
 }, {
   title: 'Charts',
-  icon: 'ion ion-arrow-graph-up-right',
+  icon: 'nb-bar-chart',
   children: List<NbMenuItem>([{
     title: 'Echarts',
     link: '/pages/charts/echarts',
@@ -84,7 +84,7 @@ export const MENU_ITEMS: List<NbMenuItem> = List([{
   }]),
 }, {
   title: 'Editors',
-  icon: 'ion ion-edit',
+  icon: 'nb-title',
   children: List<NbMenuItem>([{
     title: 'TinyMCE',
     link: '/pages/editors/tinymce',
@@ -94,14 +94,14 @@ export const MENU_ITEMS: List<NbMenuItem> = List([{
   }]),
 }, {
   title: 'Tables',
-  icon: 'ion-ios-grid-view',
+  icon: 'nb-tables',
   children: List<NbMenuItem>([{
     title: 'Smart Table',
     link: '/pages/tables/smart-table',
   }]),
 }, {
   title: 'Auth',
-  icon: 'ion-unlocked',
+  icon: 'nb-locked',
   children: List<NbMenuItem>([{
     title: 'Login',
     link: '/auth/login',

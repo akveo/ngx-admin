@@ -101,10 +101,11 @@
     height: 4.5rem;
     padding: 0;
     margin-bottom: 0;
+    color: nb-theme(color-fg);
 
     &.active {
       border-color: nb-theme(color-fg-highlight);
-      color: nb-theme(color-success);
+      color: nb-theme(color-fg-highlight);
     }
 
     i {
