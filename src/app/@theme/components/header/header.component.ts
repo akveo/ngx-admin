@@ -1,7 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 
-import { NbMenuService, NbSidebarService } from '@nebular/theme';
-import { NbThemeService } from '@nebular/theme';
+import { NbMenuService, NbSidebarService, NbThemeService } from '@nebular/theme';
 import { UserService } from '../../../@core/data/users.service';
 
 @Component({
@@ -11,10 +10,14 @@ import { UserService } from '../../../@core/data/users.service';
     <div class="header-container" [class.left]="position === 'normal'" [class.right]="position === 'inverse'">
       <a (click)="toggleSidebar()" href="#" class="navigation"><i class="ion-navicon"></i></a>
       <div class="logo" (click)="goToHome()">NgX&nbsp;<span>Admin</span></div>
-      <div class="theme-buttons">
-        <button class="btn btn-hero-primary" (click)="selectCosmicTheme()">Cosmic</button>
-        <button class="btn btn-hero-info" (click)="selectDefaultTheme()">Default</button>
-      </div>
+      <label class="theme-switch">
+        <span class="light">Light</span>
+        <div class="switch">
+          <input type="checkbox" (change)="toggleTheme(theme.checked)" #theme>
+          <span class="slider"></span>
+        </div>
+        <span class="cosmic">Cosmic</span>
+      </label>
     </div>
 
     <nb-actions
@@ -75,11 +78,7 @@ export class HeaderComponent implements OnInit {
     this.menuService.navigateHome();
   }
 
-  selectCosmicTheme() {
-    this.themeService.changeTheme('cosmic');
-  }
-
-  selectDefaultTheme() {
-    this.themeService.changeTheme('default');
+  toggleTheme(theme: boolean) {
+    this.themeService.changeTheme(theme ? 'cosmic' : 'default');
   }
 }

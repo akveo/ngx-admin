@@ -1,4 +1,5 @@
 @import '../../styles/themes';
+@import '~@nebular/theme/styles/global/bootstrap/hero-buttons';
 
 @include nb-install-component() {
   display: flex;
@@ -34,10 +35,79 @@
       }
     }
 
-    .theme-buttons {
-      margin-left: 3rem;
-      button {
-        margin-right: 1rem;
+    .theme-switch {
+      margin: 0 0 0 6rem;
+      width: 12rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      span {
+        font-size: 1.125rem;
+        font-weight: nb-theme(font-weight-bold);
+
+        &.light {
+          color: nb-theme(color-fg-text);
+        }
+
+        &.cosmic {
+          color: nb-theme(color-fg);
+        }
+
+        @include nb-for-theme(cosmic) {
+          &.light {
+            color: nb-theme(color-fg);
+          }
+
+          &.cosmic {
+            color: nb-theme(color-white);
+          }
+        }
+      }
+    }
+
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 4rem;
+      height: 1.75rem;
+      margin: 0;
+
+      input {
+        display: none;
+
+        &:checked + .slider::before {
+          transform: translateX(2.25rem);
+        }
+      }
+
+      .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-radius: 1.75rem;
+        background-color: nb-theme(layout-bg);
+        transition: 0.2s;
+      }
+
+      .slider::before {
+        position: absolute;
+        content: '';
+        height: 1.75rem;
+        width: 1.75rem;
+        border-radius: 50%;
+        background-color: nb-theme(color-success);
+        transition: 0.2s;
+
+        box-shadow: 0 0.125rem 1rem 0 rgba(nb-theme(color-fg), 0.4);
+
+        @include nb-for-theme(cosmic) {
+          @include btn-hero-primary-gradient();
+          box-shadow: 0 0.125rem 1rem 0 nb-theme(color-primary);
+        }
       }
     }
   }
