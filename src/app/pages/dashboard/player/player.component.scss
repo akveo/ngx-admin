@@ -192,7 +192,7 @@
     }
   }
 
-  @include media-breakpoint-down(lg) {
+  @include media-breakpoint-down(xl) {
     border: none;
 
     .header {
@@ -259,7 +259,7 @@
       .controls {
         margin: 0;
 
-        .prev, .shuffle, .repeat {
+        .prev, .shuffle, .loop {
           display: none;
         }
 
@@ -275,6 +275,21 @@
 
       .volume {
         display: none;
+      }
+    }
+  }
+
+  @include media-breakpoint-between(xxl, xxxl) {
+    .controls {
+      margin: 0.875rem -1rem;
+      justify-content: space-around;
+    }
+
+    .volume {
+      margin: 0 -1rem;
+
+      i {
+        margin: 0.25rem;
       }
     }
   }
