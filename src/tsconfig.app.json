@@ -11,9 +11,6 @@
       ],
       "@nebular/*": [
         "../node_modules/@nebular/*"
-      ],
-      "immutable/*": [
-        "../node_modules/immutable/*"
       ]
     }
   },

@@ -1,5 +1,4 @@
-import { Component, Input, OnDestroy } from '@angular/core';
-import { List } from 'immutable';
+import { Component, OnDestroy } from '@angular/core';
 import { NbMenuItem } from '@nebular/theme';
 import { Subscription } from 'rxjs/Subscription';
 
@@ -55,49 +54,47 @@ import { StateService } from '../../../@core/data/state.service';
 })
 export class SampleLayoutComponent  implements OnDestroy {
 
-  subMenu: List<NbMenuItem> = List(
-    [
-      {
-        title: 'PAGE LEVEL MENU',
-        group: true,
-      },
-      {
-        title: 'Buttons',
-        icon: 'ion ion-android-radio-button-off',
-        link: '/pages/ui-features/buttons',
-      },
-      {
-        title: 'Grid',
-        icon: 'ion ion-android-radio-button-off',
-        link: '/pages/ui-features/grid',
-      },
-      {
-        title: 'Icons',
-        icon: 'ion ion-android-radio-button-off',
-        link: '/pages/ui-features/icons',
-      },
-      {
-        title: 'Modals',
-        icon: 'ion ion-android-radio-button-off',
-        link: '/pages/ui-features/modals',
-      },
-      {
-        title: 'Typography',
-        icon: 'ion ion-android-radio-button-off',
-        link: '/pages/ui-features/typography',
-      },
-      {
-        title: 'Animated Searches',
-        icon: 'ion ion-android-radio-button-off',
-        link: '/pages/ui-features/search-fields',
-      },
-      {
-        title: 'Tabs',
-        icon: 'ion ion-android-radio-button-off',
-        link: '/pages/ui-features/tabs',
-      },
-    ],
-  );
+  subMenu: NbMenuItem[] = [
+    {
+      title: 'PAGE LEVEL MENU',
+      group: true,
+    },
+    {
+      title: 'Buttons',
+      icon: 'ion ion-android-radio-button-off',
+      link: '/pages/ui-features/buttons',
+    },
+    {
+      title: 'Grid',
+      icon: 'ion ion-android-radio-button-off',
+      link: '/pages/ui-features/grid',
+    },
+    {
+      title: 'Icons',
+      icon: 'ion ion-android-radio-button-off',
+      link: '/pages/ui-features/icons',
+    },
+    {
+      title: 'Modals',
+      icon: 'ion ion-android-radio-button-off',
+      link: '/pages/ui-features/modals',
+    },
+    {
+      title: 'Typography',
+      icon: 'ion ion-android-radio-button-off',
+      link: '/pages/ui-features/typography',
+    },
+    {
+      title: 'Animated Searches',
+      icon: 'ion ion-android-radio-button-off',
+      link: '/pages/ui-features/search-fields',
+    },
+    {
+      title: 'Tabs',
+      icon: 'ion ion-android-radio-button-off',
+      link: '/pages/ui-features/tabs',
+    },
+  ];
   layout: any = {};
   sidebar: any = {};
 
