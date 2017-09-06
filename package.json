@@ -59,6 +59,7 @@
     "normalize.css": "6.0.0",
     "roboto-fontface": "0.8.0",
     "rxjs": "5.4.2",
+    "socicon": "^3.0.5",
     "tether": "1.4.0",
     "tinymce": "4.5.7",
     "typeface-exo": "0.0.22",
