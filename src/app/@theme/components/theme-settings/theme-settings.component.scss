@@ -2,7 +2,7 @@
 
 @include nb-install-component() {
   h5 {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
   }
 
   .settings-row {
@@ -13,7 +13,7 @@
     flex-wrap: wrap;
 
     width: 90%;
-    margin: 0 auto 3rem;
+    margin: 0 auto 2rem;
 
     a {
       text-decoration: none;
