@@ -12,7 +12,7 @@ const NB_CORE_PROVIDERS = [
       email: {
         service: NbDummyAuthProvider,
         config: {
-          delay: 1000,
+          delay: 3000,
           login: {
             rememberMe: true,
           },
