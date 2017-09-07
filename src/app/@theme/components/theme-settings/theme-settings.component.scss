@@ -1,8 +1,8 @@
 @import '../../styles/themes';
 
 @include nb-install-component() {
-  h5 {
-    margin-bottom: 1rem;
+  h6 {
+    margin-bottom: 0.5rem;
   }
 
   .settings-row {
@@ -13,7 +13,7 @@
     flex-wrap: wrap;
 
     width: 90%;
-    margin: 0 auto 2rem;
+    margin: 0 0 1rem;
 
     a {
       text-decoration: none;

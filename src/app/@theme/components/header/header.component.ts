@@ -6,36 +6,7 @@ import { UserService } from '../../../@core/data/users.service';
 @Component({
   selector: 'ngx-header',
   styleUrls: ['./header.component.scss'],
-  template: `
-    <div class="header-container" [class.left]="position === 'normal'" [class.right]="position === 'inverse'">
-      <a (click)="toggleSidebar()" href="#" class="navigation"><i class="ion-navicon"></i></a>
-      <div class="logo" (click)="goToHome()">NgX&nbsp;<span>Admin</span></div>
-      <label class="theme-switch">
-        <span class="light">Light</span>
-        <div class="switch">
-          <input type="checkbox" (change)="toggleTheme(theme.checked)" #theme>
-          <span class="slider"></span>
-        </div>
-        <span class="cosmic">Cosmic</span>
-      </label>
-    </div>
-
-    <nb-actions
-      size="medium"
-      class="header-container"
-      [class.right]="position === 'normal'"
-      [class.left]="position === 'inverse'">
-      <nb-action icon="nb-grid-b" class="toggle-layout" (click)="toggleSettings()"></nb-action>
-      <nb-action>
-        <nb-user [menu]="userMenu" [name]="user?.name" [picture]="user?.picture"></nb-user>
-      </nb-action>
-      <nb-action disabled icon="ion-ios-bell-outline"></nb-action>
-      <nb-action icon="ion-ios-email-outline"></nb-action>
-      <nb-action>
-        <nb-search type="rotate-layout"></nb-search>
-      </nb-action>
-    </nb-actions>
-  `,
+  templateUrl: './header.component.html',
 })
 export class HeaderComponent implements OnInit {
 
@@ -44,14 +15,7 @@ export class HeaderComponent implements OnInit {
 
   user: any;
 
-  userMenu = [
-    {
-      title: 'Profile',
-    },
-    {
-      title: 'Log out',
-    },
-  ];
+  userMenu = [{ title: 'Profile' }, { title: 'Log out' }];
 
   constructor(private sidebarService: NbSidebarService,
               private menuService: NbMenuService,

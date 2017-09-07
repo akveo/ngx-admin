@@ -6,7 +6,7 @@ import { StateService } from '../../../@core/data/state.service';
   selector: 'ngx-theme-settings',
   styleUrls: ['./theme-settings.component.scss'],
   template: `
-    <h5>LAYOUTS</h5>
+    <h6>LAYOUTS</h6>
     <div class="settings-row">
       <a *ngFor="let layout of layouts"
          href="#"
@@ -16,7 +16,7 @@ import { StateService } from '../../../@core/data/state.service';
         <i [attr.class]="layout.icon"></i>
       </a>
     </div>
-    <h5>SIDEBAR</h5>
+    <h6>SIDEBAR</h6>
     <div class="settings-row">
       <a *ngFor="let sidebar of sidebars"
          href="#"
