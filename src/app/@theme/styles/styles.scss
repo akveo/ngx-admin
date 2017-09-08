@@ -11,15 +11,4 @@
   // framework global styles
   @include nb-theme-global();
   @include nb-auth-global();
-
-  // other global styles
-
-  //[class^='col-'] {
-  //  padding: 0 0.75rem;
-  //}
-  //
-  //.row {
-  //  margin-right: -0.75rem;
-  //  margin-left: -0.75rem;
-  //}
 };
