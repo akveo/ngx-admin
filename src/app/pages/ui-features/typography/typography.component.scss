@@ -29,6 +29,7 @@
 
   .header {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     padding-bottom: 1rem;
     margin-bottom: 1rem;
@@ -42,7 +43,7 @@
     }
 
     div:first-child {
-      flex-basis: 50%;
+      flex: 2;
       line-height: 1;
       align-items: flex-end;
 
