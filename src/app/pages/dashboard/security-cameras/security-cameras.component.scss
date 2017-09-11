@@ -1,4 +1,6 @@
 @import '../../../@theme/styles/themes';
+@import '~@nebular/theme/styles/global/bootstrap/breakpoints';
+@import '~bootstrap/scss/mixins/breakpoints';
 
 @include nb-install-component() {
   nb-card-header {
@@ -103,10 +105,12 @@
   }
 
   nb-action {
+    padding: 0 0.5rem 0 0;
+
     i {
       color: nb-theme(color-fg);
-      font-size: 2rem;
-      margin-right: 1rem;
+      font-size: 3rem;
+      margin-right: 0.5rem;
     }
 
     span {
@@ -135,6 +139,18 @@
 
     nb-action span {
       font-weight: nb-theme(font-weight-bolder);
+    }
+  }
+
+  @include media-breakpoint-down(lg) {
+    nb-action {
+      padding: 0;
+      i {
+        margin: 0;
+      }
+      span {
+        display: none;
+      }
     }
   }
 }
