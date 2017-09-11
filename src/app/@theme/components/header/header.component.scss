@@ -1,5 +1,7 @@
 @import '../../styles/themes';
 @import '~@nebular/theme/styles/global/bootstrap/hero-buttons';
+@import '~bootstrap/scss/mixins/breakpoints';
+@import '~@nebular/theme/styles/global/bootstrap/breakpoints';
 
 @include nb-install-component() {
   display: flex;
@@ -7,6 +9,8 @@
   width: 100%;
 
   .left {
+    display: flex;
+    width: 100%;
     order: 0;
     flex-direction: row;
   }
@@ -15,9 +19,26 @@
     flex-direction: row-reverse;
   }
 
+  .logo-containter {
+    display: flex;
+    align-items: center;
+  }
+
+  .switcher-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+  }
+
+  .action-item {
+    display: block;
+  }
+
   .header-container {
     display: flex;
     align-items: center;
+    width: 100%;
 
     .navigation {
       padding-right: nb-theme(padding);
@@ -37,7 +58,6 @@
   }
 
   .theme-switch {
-    margin: 0 6rem;
     width: 12rem;
     display: flex;
     justify-content: space-between;
@@ -116,6 +136,7 @@
   }
 
   .toggle-layout /deep/ a {
+    display: block;
     text-decoration: none;
     line-height: 1;
 
@@ -127,6 +148,33 @@
         color: nb-theme(link-color-active);
         text-shadow: 0 0 12px rgba(nb-theme(color-fg-highlight), 0.4);
       }
+    }
+  }
+
+  nb-user /deep/ .user-name {
+    display: block;
+  }
+
+  @include media-breakpoint-down(md) {
+    .action-item {
+      display: none;
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+
+    nb-user /deep/ .user-name {
+      display: none;
+    }
+  }
+
+  @include media-breakpoint-down(xs) {
+    .toggle-layout {
+      display: none;
+    }
+
+    .switcher-container {
+      display: none;
     }
   }
 }

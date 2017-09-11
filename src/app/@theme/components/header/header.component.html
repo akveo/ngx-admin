@@ -1,16 +1,20 @@
 <div class="header-container"
      [class.left]="position === 'normal'"
      [class.right]="position === 'inverse'">
-  <a (click)="toggleSidebar()" href="#" class="navigation"><i class="ion-navicon"></i></a>
-  <div class="logo" (click)="goToHome()">NgX&nbsp;<span>Admin</span></div>
-  <label class="theme-switch">
-    <span class="light">Light</span>
-    <div class="switch">
-      <input type="checkbox" (change)="toggleTheme(theme.checked)" #theme>
-      <span class="slider"></span>
-    </div>
-    <span class="cosmic">Cosmic</span>
-  </label>
+  <div class="logo-containter">
+    <a (click)="toggleSidebar()" href="#" class="navigation"><i class="ion-navicon"></i></a>
+    <div class="logo" (click)="goToHome()">NgX&nbsp;<span>Admin</span></div>
+  </div>
+  <div class="switcher-container">
+    <label class="theme-switch">
+      <span class="light">Light</span>
+      <div class="switch">
+        <input type="checkbox" (change)="toggleTheme(theme.checked)" #theme>
+        <span class="slider"></span>
+      </div>
+      <span class="cosmic">Cosmic</span>
+    </label>
+  </div>
 </div>
 
 <nb-actions
@@ -22,9 +26,9 @@
   <nb-action>
     <nb-user [menu]="userMenu" [name]="user?.name" [picture]="user?.picture"></nb-user>
   </nb-action>
-  <nb-action disabled icon="nb-notifications"></nb-action>
-  <nb-action icon="nb-email"></nb-action>
-  <nb-action>
+  <nb-action class="action-item" disabled icon="nb-notifications"></nb-action>
+  <nb-action class="action-item" icon="nb-email"></nb-action>
+  <nb-action class="action-item">
     <nb-search type="rotate-layout"></nb-search>
   </nb-action>
 </nb-actions>
