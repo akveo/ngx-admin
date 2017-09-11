@@ -1,4 +1,6 @@
 @import '../../styles/themes';
+@import '~bootstrap/scss/mixins/breakpoints';
+@import '~@nebular/theme/styles/global/bootstrap/breakpoints';
 
 @include nb-install-component() {
   nb-layout-column.small {
@@ -95,6 +97,13 @@
           display: none;
         }
       }
+    }
+  }
+
+  @include media-breakpoint-down(xs) {
+    .main-content {
+      padding: 0.75rem !important;
+
     }
   }
 }
