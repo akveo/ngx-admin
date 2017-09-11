@@ -25,7 +25,7 @@
       justify-content: center;
       width: 5.75rem;
       height: 4.75rem;
-      font-size: 3rem;
+      font-size: 3.75rem;
       border-radius: nb-theme(card-border-radius);
       transition: all 0.1s ease-out, color 0s;
       color: nb-theme(color-white);
@@ -93,7 +93,7 @@
       flex-direction: column;
       justify-content: center;
       height: 100%;
-      padding-left: 1.5rem;
+      padding-left: 1.25rem;
       border-left: 1px solid transparent;
     }
 
@@ -122,7 +122,7 @@
       .icon {
         width: 7rem;
         height: 100%;
-        font-size: 3.5rem;
+        font-size: 4.5rem;
         border-radius: nb-theme(card-border-radius) 0 0 nb-theme(card-border-radius);
       }
 
