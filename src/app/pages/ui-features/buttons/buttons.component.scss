@@ -1,5 +1,7 @@
 @import '../../../@theme/styles/themes';
 @import '~@nebular/theme/styles/global/bootstrap/buttons';
+@import '~bootstrap/scss/mixins/breakpoints';
+@import '~@nebular/theme/styles/global/bootstrap/breakpoints';
 
 @include nb-install-component() {
   /deep/ {
@@ -73,5 +75,59 @@
     .icon-buttons .icon-button-examples:not(:last-child) {
       margin-bottom: 1rem;
     }
+  }
+
+  @include media-breakpoint-down(xs) {
+    ngx-action-groups /deep/ nb-card-body {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 0.7rem;
+
+      nb-action {
+        padding: 0.6rem;
+      }
+
+      .control-icon, .start-search {
+        font-size: 1.7rem;
+      }
+
+      .user-container {
+        font-size: 0.7rem;
+      }
+
+      .user-picture {
+        height: 1.5rem;
+        width: 1.5rem;
+      }
+
+      .action-groups-header {
+        margin: 0 0 10px 10px;
+      }
+    }
+
+    ngx-labeled-actions-group /deep/ {
+      nb-action {
+        font-size: 0.8rem;
+      }
+
+      i {
+        font-size: 1.9rem !important;
+      }
+
+    }
+
+    ngx-labeled-actions-group /deep/ nb-card-body {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    ngx-default-buttons /deep/ nb-card-header {
+      flex-direction: column;
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  @include media-breakpoint-down(xs) {
+
   }
 }

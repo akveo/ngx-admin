@@ -1,4 +1,6 @@
 @import '../../../../@theme/styles/themes';
+@import '~bootstrap/scss/mixins/breakpoints';
+@import '~@nebular/theme/styles/global/bootstrap/breakpoints';
 
 @include nb-install-component() {
 
@@ -36,6 +38,7 @@
   .divided-button-group {
     .btn-divided-checkbox-group {
       margin-bottom: 1rem;
+      flex-wrap: wrap;
     }
   }
 
@@ -46,6 +49,21 @@
   .example-container > div {
     &:not(:last-child) {
       margin-bottom: 1rem;
+    }
+  }
+
+  .example-container > .btn-divided-checkbox-group {
+    flex-wrap: wrap;
+
+    > label {
+      flex-basis: 10%;
+      margin: 0 5px 10px 0;
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    .btn {
+      padding: 0.75rem 0.7rem;
     }
   }
 }

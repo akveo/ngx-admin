@@ -11,7 +11,8 @@
     }
 
     .dropdown {
-      width: 30%;
+      flex-basis: 30%;
+      min-width: 200px;
     }
   }
 

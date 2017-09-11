@@ -1,6 +1,11 @@
 @import '../../../../@theme/styles/themes';
 
 @include nb-install-component() {
+
+  nb-actions > nb-action {
+    padding: 0;
+  }
+
   nb-action {
     i {
       color: nb-theme(color-fg);
