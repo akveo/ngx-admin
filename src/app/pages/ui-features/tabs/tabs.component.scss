@@ -1,4 +1,6 @@
 @import '../../../@theme/styles/themes';
+@import '~bootstrap/scss/mixins/breakpoints';
+@import '~@nebular/theme/styles/global/bootstrap/breakpoints';
 
 @include nb-install-component() {
   nb-tabset {
@@ -14,5 +16,12 @@
   /deep/ ngx-tab1, /deep/ ngx-tab2 {
     display: block;
     padding: nb-theme(padding);
+  }
+
+  @include media-breakpoint-down(xs) {
+    nb-tabset /deep/ul {
+      font-size: 1rem;
+      padding: 0 0.2rem;
+    }
   }
 }
