@@ -1,4 +1,6 @@
 @import '../../styles/themes';
+@import '~@nebular/theme/styles/global/bootstrap/breakpoints';
+@import '~bootstrap/scss/mixins/breakpoints';
 
 @include nb-install-component() {
   width: 100%;
@@ -17,6 +19,12 @@
       &:hover {
         color: nb-theme(color-fg-heading);
       }
+    }
+  }
+
+  @include media-breakpoint-down(is) {
+    .socials {
+      font-size: 1.5rem;
     }
   }
 }
