@@ -30,8 +30,8 @@
     display: flex;
 
     a {
-      font-size: 2rem;
-      padding: 0.75rem 1.5rem;
+      font-size: 2.5rem;
+      padding: 0 0.75rem;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -75,7 +75,7 @@
     background-position: center;
     background-size: cover;
     height: 50%;
-    width: 50%;
+    padding: 0;
 
     span {
       position: absolute;

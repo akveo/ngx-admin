@@ -4,10 +4,10 @@
       <span class="cameras-card-title">Security Cameras</span>
       <span class="cameras-filter">
         <a [class.active]="isSingleView" (click)="isSingleView = true">
-          <i class="ion-android-checkbox-blank"></i>
+          <i class="nb-square"></i>
         </a>
         <a [class.active]="!isSingleView" (click)="isSingleView = false">
-          <i class="ion-android-apps"></i>
+          <i class="nb-grid-a"></i>
         </a>
       </span>
     </div>
@@ -19,7 +19,7 @@
       </div>
     </div>
     <div class="cameras" *ngIf="!isSingleView">
-      <div class="camera" *ngFor="let camera of cameras" [style.background-image]="'url(' + camera.source + ')'"
+      <div class="camera col-sm-6 col-xs-12" *ngFor="let camera of cameras" [style.background-image]="'url(' + camera.source + ')'"
            (click)="selectCamera(camera)">
         <span>{{ camera.title }}</span>
       </div>
