@@ -2,15 +2,19 @@
 
 @include nb-install-component() {
 
+  nb-card-body {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+  }
+
   .picture {
     background-position: center;
     background-size: cover;
     position: relative;
     border-top-left-radius: nb-theme(card-border-radius);
     border-top-right-radius: nb-theme(card-border-radius);
-
     flex: 1;
-    max-height: 50%;
   }
 
   .details {
@@ -39,10 +43,11 @@
     }
   }
 
-  .links {
+  nb-card-footer {
     display: flex;
     justify-content: space-around;
     padding: 0.75rem 0;
+    border: none;
 
     a {
       text-decoration: none;
