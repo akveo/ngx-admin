@@ -32,6 +32,10 @@
       text-align: justify;
       color: nb-theme(color-fg-text);
       font-weight: nb-theme(font-weight-light);
+
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-height: calc(1rem * 8 * #{nb-theme(line-height)});
     }
   }
 
