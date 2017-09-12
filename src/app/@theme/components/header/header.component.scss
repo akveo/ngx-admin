@@ -58,11 +58,11 @@
   }
 
   .theme-switch {
-    width: 12rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
     cursor: pointer;
+    margin: 0;
 
     & > span {
       font-size: 1.125rem;
@@ -71,10 +71,12 @@
 
       &.light {
         color: nb-theme(color-fg-text);
+        padding-right: 10px;
       }
 
       &.cosmic {
         color: nb-theme(color-fg);
+        padding-left: 10px;
       }
 
       @include nb-for-theme(cosmic) {
@@ -164,13 +166,32 @@
     }
   }
 
-  @include media-breakpoint-down(xs) {
+  @include media-breakpoint-down(is) {
+
+    .header-container {
+      .logo {
+        font-size: 1.25rem;
+      }
+    }
+
     .toggle-layout {
       display: none;
     }
 
     .switcher-container {
+      .light, .cosmic {
+        display: none;
+      }
+    }
+  }
+
+  @include media-breakpoint-down(xs) {
+    .right /deep/ {
       display: none;
+    }
+
+    .switcher-container {
+      align-items: flex-end;
     }
   }
 }
