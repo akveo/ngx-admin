@@ -34,13 +34,13 @@
 <div class="footer">
 
   <div class="volume">
-    <i class="nb-volume-mute quiet"></i>
+    <i class="nb-volume-mute"></i>
     <div class="progress-wrap">
       <input type="range" class="progress" [value]="getVolume()" max="100"
              (input)="setVolume(volume.value)" #volume>
       <div class="progress-foreground" [style.width.%]="getVolume()"></div>
     </div>
-    <i class="nb-volume-high loud"></i>
+    <i class="nb-volume-high"></i>
   </div>
 
 </div>

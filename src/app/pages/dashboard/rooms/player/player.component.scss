@@ -1,4 +1,4 @@
-@import '../../../@theme/styles/themes';
+@import '../../../../@theme/styles/themes';
 @import '~bootstrap/scss/mixins/breakpoints';
 @import '~@nebular/theme/components/card/card.component.theme';
 @import '~@nebular/theme/styles/global/bootstrap/breakpoints';
@@ -118,7 +118,7 @@
     }
 
     .shuffle, .loop {
-      font-size: 1.25rem;
+      font-size: 1.5rem;
       color: nb-theme(color-fg);
 
       &.active {
@@ -135,10 +135,7 @@
       height: 3.5rem;
       border: 2px solid nb-theme(separator);
       border-radius: 50%;
-
-      &::before {
-        font-size: 1.25rem;
-      }
+      font-size: 1.75rem;
     }
 
     .play {
@@ -150,8 +147,14 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 0 1.25rem;
+    margin: 0;
     position: relative;
+
+    i {
+      font-size: 1.5rem;
+      margin: 0.25rem;
+      color: nb-theme(color-fg);
+    }
 
     .progress-wrap {
       height: 2.25rem;
@@ -178,118 +181,96 @@
         }
       }
     }
-
-    .quite, .loud {
-      color: nb-theme(color-fg);
-    }
-
-    .quite {
-      font-size: 1.25rem;
-    }
-
-    .loud {
-      font-size: 1.5rem;
-    }
   }
 
-  @include media-breakpoint-down(xl) {
-    border: none;
+  &.collapsed {
 
     .header {
       display: none;
     }
 
-    .controls, .volume {
-      max-width: 20rem;
-      margin: 0 auto;
+    .body {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0;
     }
 
-    &.collapsed {
+    .footer {
+      display: none;
+    }
 
-      .header {
-        display: none;
-      }
+    .cover {
+      height: 4.5rem;
+      flex-direction: row;
+      margin: 0;
 
-      .body {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 0;
-      }
-
-      .footer {
-        display: none;
-      }
-
-      .cover {
+      img {
         height: 4.5rem;
-        flex-direction: row;
+        width: 4.5rem;
         margin: 0;
-
-        img {
-          height: 4.5rem;
-          width: 4.5rem;
-          margin: 0;
-          border-radius: 0 0 0 nb-theme(radius);
-        }
-
-        .details {
-          margin-left: 0.875rem;
-          text-align: left;
-          padding: 0;
-
-          h4 {
-            margin-bottom: 0.125rem;
-          }
-        }
+        border-radius: 0 0 0 nb-theme(radius);
       }
 
-      .progress-wrap {
-        width: calc(100% - 6rem);
-        align-self: flex-start;
-        position: absolute;
-        margin-top: calc(-0.75rem + 1px);
-        margin-left: 4.5rem;
-      }
+      .details {
+        margin-left: 0.875rem;
+        text-align: left;
+        padding: 0;
 
-      .timing {
+        h4 {
+          margin-bottom: 0.125rem;
+        }
+      }
+    }
+
+    .progress-wrap {
+      width: calc(100% - 6rem);
+      align-self: flex-start;
+      position: absolute;
+      margin-top: calc(-0.75rem + 1px);
+      margin-left: 4.5rem;
+    }
+
+    .timing {
+      display: none;
+    }
+
+    .controls {
+      margin: 0;
+
+      .prev, .shuffle, .loop {
         display: none;
       }
 
-      .controls {
-        margin: 0;
-
-        .prev, .shuffle, .loop {
-          display: none;
-        }
-
-        .next {
-          font-size: 1.8rem;
-          border: none;
-        }
-
-        .play {
-          font-size: 2.2rem;
-        }
+      .play, .next {
+        font-size: 2rem;
+        border: none;
       }
+    }
 
-      .volume {
-        display: none;
+    .volume {
+      display: none;
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    .cover {
+      .details {
+        font-size: 0.875rem;
+        h4 {
+          font-size: 1.25rem;
+        }
       }
     }
   }
 
-  @include media-breakpoint-between(xl, xxl) {
-    .controls {
-      margin: 0.875rem -1rem;
-      justify-content: space-around;
-    }
-
-    .volume {
-      margin: 0 -1rem;
-
-      i {
-        margin: 0.25rem;
+  @include media-breakpoint-down(is) {
+    .cover {
+      .details {
+        font-size: 0.75rem;
+        h4 {
+          font-size: 1rem;
+        }
       }
     }
   }

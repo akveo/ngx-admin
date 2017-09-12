@@ -16,7 +16,24 @@
     flex-direction: row;
   }
 
-  @include media-breakpoint-down(xl) {
+  ngx-room-selector {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+
+    /deep/ .room-selector {
+      display: flex;
+      align-items: center;
+      justify-items: center;
+      flex: 1;
+      margin: 0 auto;
+      width: 90%;
+      max-width: 650px;
+      padding-bottom: 1rem;
+    }
+  }
+
+  @include media-breakpoint-down(md) {
     &.expanded ngx-room-selector {
       display: none;
     }

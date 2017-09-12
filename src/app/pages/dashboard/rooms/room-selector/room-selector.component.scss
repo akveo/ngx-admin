@@ -2,6 +2,11 @@
 @import '~@nebular/theme/components/card/card.component.theme';
 
 @include nb-install-component() {
+
+  svg {
+    width: 100%;
+  }
+
   .stroke-pattern {
     fill: none;
     stroke: #bdc4cd;
@@ -60,12 +65,7 @@
   .header {
     @include nb-card-header();
     border-bottom: none;
-  }
-
-  .room-selector {
-    width: 80%;
-    display: block;
-    margin: 0 auto;
+    padding-bottom: 0;
   }
 
   @include nb-for-theme(cosmic) {
