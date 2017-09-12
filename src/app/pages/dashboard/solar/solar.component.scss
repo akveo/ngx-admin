@@ -1,4 +1,6 @@
 @import '../../../@theme/styles/themes';
+@import '~@nebular/theme/styles/global/bootstrap/breakpoints';
+@import '~bootstrap/scss/mixins/breakpoints';
 
 @include nb-install-component() {
 
@@ -10,6 +12,13 @@
     flex: 1;
     height: 100%;
     width: 40%;
+  }
+
+  .info {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    align-self: center;
   }
 
   .date {
@@ -39,13 +48,6 @@
     font-size: 1rem;
   }
 
-  .info {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    align-self: center;
-  }
-
   @include nb-for-theme(cosmic) {
     color: nb-theme(color-fg-heading);
 
@@ -55,6 +57,12 @@
 
     .details span {
       color: nb-theme(color-fg);
+    }
+  }
+
+  @include media-breakpoint-down(xs) {
+    .value {
+      font-size: 1.75rem;
     }
   }
 }

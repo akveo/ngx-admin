@@ -51,7 +51,7 @@ export class SolarComponent implements AfterViewInit {
             clockWise: true,
             hoverAnimation: false,
             type: 'pie',
-            center: ['35%', '50%'],
+            center: ['45%', '50%'],
             radius: solarTheme.radius,
             data: [
               {
@@ -116,7 +116,7 @@ export class SolarComponent implements AfterViewInit {
             clockWise: true,
             hoverAnimation: false,
             type: 'pie',
-            center: ['35%', '50%'],
+            center: ['45%', '50%'],
             radius: solarTheme.radius,
             data: [
               {
