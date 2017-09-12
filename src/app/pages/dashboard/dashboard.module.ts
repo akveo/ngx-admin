@@ -16,7 +16,7 @@ import { ElectricityComponent } from './electricity/electricity.component';
 import { ElectricityChartComponent } from './electricity/electricity-chart/electricity-chart.component';
 import { WeatherComponent } from './weather/weather.component';
 import { SolarComponent } from './solar/solar.component';
-import { PlayerComponent } from './player/player.component';
+import { PlayerComponent } from './rooms/player/player.component';
 import { TrafficComponent } from './traffic/traffic.component';
 import { TrafficChartComponent } from './traffic/traffic-chart.component';
 

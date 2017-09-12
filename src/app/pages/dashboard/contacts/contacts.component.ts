@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NbThemeService, NbMediaBreakpoint } from '@nebular/theme';
+import { NbThemeService, NbMediaBreakpoint, NbMediaBreakpointsService } from '@nebular/theme';
 
 import { UserService } from '../../../@core/data/users.service';
 
@@ -13,8 +13,13 @@ export class ContactsComponent implements OnInit {
   contacts: any[];
   recent: any[];
   breakpoint: NbMediaBreakpoint;
+  breakpoints: any;
 
-  constructor(private userService: UserService, private themeService: NbThemeService) {
+  constructor(private userService: UserService,
+              private themeService: NbThemeService,
+              private breakpointService: NbMediaBreakpointsService) {
+
+    this.breakpoints = breakpointService.getBreakpointsMap();
     themeService.onMediaQueryChange()
       .subscribe(([oldValue, newValue]) => {
         this.breakpoint = newValue;
