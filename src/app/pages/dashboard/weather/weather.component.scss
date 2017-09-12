@@ -1,4 +1,6 @@
 @import '../../../@theme/styles/themes';
+@import '~@nebular/theme/styles/global/bootstrap/breakpoints';
+@import '~bootstrap/scss/mixins/breakpoints';
 
 @include nb-install-component() {
 
@@ -115,6 +117,13 @@
         font-weight: nb-theme(font-weight-bold);
         font-size: 1.25rem;
       }
+    }
+  }
+
+  @include media-breakpoint-down(xs) {
+    nb-card-body {
+      padding-left: 1rem;
+      padding-right: 1rem;
     }
   }
 }
