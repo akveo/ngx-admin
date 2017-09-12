@@ -31,7 +31,7 @@
     width: 50%;
   }
 
-  .action-item {
+  .control-item {
     display: block;
   }
 
@@ -151,12 +151,8 @@
     }
   }
 
-  nb-user /deep/ .user-name {
-    display: block;
-  }
-
   @include media-breakpoint-down(md) {
-    .action-item {
+    .control-item {
       display: none;
     }
   }

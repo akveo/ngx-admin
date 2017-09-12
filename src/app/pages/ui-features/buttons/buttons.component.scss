@@ -81,18 +81,18 @@
     ngx-action-groups /deep/ nb-card-body {
       flex-direction: column;
       align-items: flex-start;
-      padding: 0.7rem;
+      padding: 0.75rem;
 
       nb-action {
-        padding: 0.6rem;
+        padding: 0.5rem;
       }
 
       .control-icon, .start-search {
-        font-size: 1.7rem;
+        font-size: 1.5rem;
       }
 
       .user-container {
-        font-size: 0.7rem;
+        font-size: 0.75rem;
       }
 
       .user-picture {
@@ -101,7 +101,7 @@
       }
 
       .action-groups-header {
-        margin: 0 0 10px 10px;
+        margin: 0 0 0.5rem 0.25rem;
       }
     }
 
@@ -111,7 +111,7 @@
       }
 
       i {
-        font-size: 1.9rem !important;
+        font-size: 2rem !important;
       }
 
     }
