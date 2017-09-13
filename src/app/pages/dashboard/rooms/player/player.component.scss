@@ -236,7 +236,12 @@
     }
 
     .controls {
-      margin: 0;
+      margin: 0 1rem 0 0;
+
+      i {
+        width: inherit;
+        height: inherit;
+      }
 
       .prev, .shuffle, .loop {
         display: none;
