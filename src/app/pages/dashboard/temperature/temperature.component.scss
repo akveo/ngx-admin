@@ -1,4 +1,6 @@
 @import '../../../@theme/styles/themes';
+@import '~bootstrap/scss/mixins/breakpoints';
+@import '~@nebular/theme/styles/global/bootstrap/breakpoints';
 
 @include nb-install-component() {
 
@@ -34,6 +36,7 @@
   ngx-temperature-dragger {
     margin-top: -1.5rem;
     width: 80%;
+    max-width: 300px;
   }
 
   .slider-value-container {
@@ -90,6 +93,7 @@
 
   .btn-group {
     padding: 1.25rem;
+    justify-content: center
   }
 
   .btn-icon {
@@ -98,6 +102,7 @@
     justify-content: center;
 
     border-color: nb-theme(form-control-border-color);
+    width: 4.5rem;
     height: 4.5rem;
     padding: 0;
     margin-bottom: 0;
@@ -124,6 +129,17 @@
         box-shadow: 0 2px 12px 0 rgba(nb-theme(color-fg-highlight), 0.25);
         background-color: rgba(nb-theme(color-fg-highlight), 0.25);
       }
+    }
+  }
+
+  @include media-breakpoint-down(xs) {
+    .btn-icon {
+      width: 3.5rem;
+      height: 3.5rem;
+    }
+
+    nb-tabset /deep/ ul {
+      padding: 0 0.5rem;
     }
   }
 }
