@@ -5,6 +5,7 @@
 @include nb-install-component() {
   ngx-room-selector {
     width: 70%;
+    border-right: 2px solid nb-theme(separator);
   }
 
   ngx-player {
@@ -40,6 +41,7 @@
 
     ngx-room-selector, ngx-player {
       width: 100%;
+      border: none;
     }
 
     nb-card {
@@ -47,9 +49,11 @@
       justify-content: space-between;
 
       .collapse {
-        display: flex;
-        justify-content: center;
-        align-self: center;
+        display: inline-block;
+        position: absolute;
+        top: 0.5rem;
+        left: 50%;
+        transform: translateX(-50%);
         font-size: 3rem;
         color: nb-theme(color-fg);
         transition: display 0.3s ease;

@@ -1,4 +1,4 @@
-<nb-card [size]="breakpoint.width >= breakpoints.xxxl ? 'large' : 'xlarge'">
+<nb-card [size]="breakpoint.width >= breakpoints.xxxl || breakpoint.width < breakpoints.md ? 'large' : 'xlarge'">
   <nb-tabset fullWidth>
     <nb-tab tabTitle="Contacts">
       <div class="contact" *ngFor="let c of contacts">

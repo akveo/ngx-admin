@@ -2,11 +2,11 @@
 
 <div class="body">
 
-  <div class="cover">
-    <img [src]="track.cover">
+  <div class="track-info">
+    <div class="cover" style.background-image="url('{{track.cover}}')"></div>
     <div class="details">
       <h4>{{ track.name }}</h4>
-      <span class="artist">{{ track.artist }}</span>
+      <span>{{ track.artist }}</span>
     </div>
   </div>
 
