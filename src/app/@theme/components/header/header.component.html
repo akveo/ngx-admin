@@ -2,7 +2,7 @@
      [class.left]="position === 'normal'"
      [class.right]="position === 'inverse'">
   <div class="logo-containter">
-    <a (click)="toggleSidebar()" href="#" class="navigation"><i class="ion-navicon"></i></a>
+    <a (click)="toggleSidebar()" href="#" class="navigation"><i class="nb-menu"></i></a>
     <div class="logo" (click)="goToHome()">NgX&nbsp;<span>Admin</span></div>
   </div>
   <div class="switcher-container">
@@ -23,7 +23,7 @@
   [class.right]="position === 'normal'"
   [class.left]="position === 'inverse'">
   <nb-action icon="nb-grid-b" class="toggle-layout" (click)="toggleSettings()"></nb-action>
-  <nb-action>
+  <nb-action class="">
     <nb-user [menu]="userMenu" [name]="user?.name" [picture]="user?.picture"></nb-user>
   </nb-action>
   <nb-action class="control-item" disabled icon="nb-notifications"></nb-action>

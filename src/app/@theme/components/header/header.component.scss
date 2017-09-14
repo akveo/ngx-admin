@@ -43,6 +43,12 @@
     .navigation {
       padding-right: nb-theme(padding);
       font-size: 2.5rem;
+      text-decoration: none;
+
+      i {
+        display: block;
+      }
+
     }
 
     .logo {
@@ -153,8 +159,17 @@
   }
 
   @include media-breakpoint-down(md) {
+
+    nb-action:not(.toggle-layout) {
+      border: none;
+    }
+
     .control-item {
       display: none;
+    }
+
+    .toggle-layout {
+      padding: 0;
     }
   }
 
@@ -181,6 +196,10 @@
       .light, .cosmic {
         display: none;
       }
+    }
+
+    nb-action:not(.toggle-layout) {
+      padding: 0;
     }
   }
 
