@@ -218,7 +218,7 @@
       height: $player-height;
       flex-direction: row;
       padding: 0;
-      flex: initial;
+      flex: none;
 
       .cover {
         height: $player-height;
