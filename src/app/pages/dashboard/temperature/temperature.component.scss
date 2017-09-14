@@ -132,14 +132,28 @@
     }
   }
 
+  @include media-breakpoint-down(is) {
+    ngx-temperature-dragger {
+      max-width: 250px;
+
+      /deep/ .power-bg {
+        width: 4rem;
+        height: 4rem;
+        font-size: 3rem;
+      }
+    }
+  }
   @include media-breakpoint-down(xs) {
     .btn-icon {
-      width: 3.5rem;
-      height: 3.5rem;
+      width: 3.25rem;
+      height: 3.25rem;
     }
 
     nb-tabset /deep/ ul {
       padding: 0 0.5rem;
+      a {
+        padding: 1.25rem 1rem;
+      }
     }
   }
 }
