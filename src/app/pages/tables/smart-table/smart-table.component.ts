@@ -6,9 +6,9 @@ import { SmartTableService } from '../../../@core/data/smart-table.service';
 @Component({
   selector: 'ngx-smart-table',
   templateUrl: './smart-table.component.html',
-  styles:[`
+  styles: [`
     nb-card {
-      transform: translate3d(0,0,0);  
+      transform: translate3d(0, 0, 0);
     }
   `],
 })

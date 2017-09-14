@@ -1,4 +1,6 @@
 @import '../../../../@theme/styles/themes';
+@import '~bootstrap/scss/mixins/breakpoints';
+@import '~@nebular/theme/styles/global/bootstrap/breakpoints';
 
 @include nb-install-component() {
 
@@ -18,6 +20,15 @@
       font-weight: nb-theme(font-weight-bold);
       color: nb-theme(color-fg-heading);
       text-transform: uppercase;
+    }
+  }
+
+  @include media-breakpoint-down(xs) {
+    nb-action {
+      font-size: 0.75rem;
+      i {
+        font-size: 2rem;
+      }
     }
   }
 }

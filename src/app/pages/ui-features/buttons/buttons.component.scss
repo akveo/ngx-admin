@@ -105,17 +105,6 @@
       }
     }
 
-    ngx-labeled-actions-group /deep/ {
-      nb-action {
-        font-size: 0.8rem;
-      }
-
-      i {
-        font-size: 2rem !important;
-      }
-
-    }
-
     ngx-labeled-actions-group /deep/ nb-card-body {
       padding-left: 0;
       padding-right: 0;
@@ -125,9 +114,5 @@
       flex-direction: column;
       margin-bottom: 0.5rem;
     }
-  }
-
-  @include media-breakpoint-down(xs) {
-
   }
 }
