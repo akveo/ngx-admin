@@ -6,12 +6,15 @@
   font-size: 1.25rem;
 }
 
-:host {
-  nb-card-body {
-    padding: 0;
-  }
+.nb-icons .icon {
+  padding: 0.75rem 0;
+  font-size: 1.75rem;
+}
 
-  nb-card-footer {
-    text-align: right;
-  }
+nb-card-body {
+  padding: 0;
+}
+
+nb-card-footer {
+  text-align: right;
 }
