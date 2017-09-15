@@ -31,7 +31,7 @@
   }
 
   .room-bg {
-    fill: transparent;
+    fill: nb-theme(card-bg);
     stroke: transparent;
     cursor: pointer;
     transition: fill 0.4s ease-out;

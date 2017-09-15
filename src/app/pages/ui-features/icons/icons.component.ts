@@ -19,7 +19,7 @@ export class IconsComponent {
       'nb-flame-circled', 'nb-gear', 'nb-grid-a', 'nb-grid-a-outline', 'nb-grid-b', 'nb-grid-b-outline',
       'nb-heart', 'nb-home', 'nb-keypad', 'nb-layout-centre', 'nb-layout-default', 'nb-layout-one-column',
       'nb-layout-sidebar-left', 'nb-layout-sidebar-right', 'nb-layout-two-column', 'nb-lightbulb', 'nb-list',
-      'nb-location', 'nb-locked', 'nb-loop-circled', 'nb-menu', 'nb-notifications', 'nb-paper-plane',
+      'nb-location', 'nb-locked', 'nb-loop', 'nb-loop-circled', 'nb-menu', 'nb-notifications', 'nb-paper-plane',
       'nb-partlysunny', 'nb-pause', 'nb-pause-outline', 'nb-person', 'nb-phone', 'nb-play', 'nb-play-outline',
       'nb-plus', 'nb-plus-circled', 'nb-power', 'nb-rainy', 'nb-search', 'nb-shuffle', 'nb-skip-backward',
       'nb-skip-backward-outline', 'nb-skip-forward', 'nb-skip-forward-outline', 'nb-snowy-circled', 'nb-square',
