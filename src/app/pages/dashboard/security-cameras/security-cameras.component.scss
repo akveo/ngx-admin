@@ -124,7 +124,6 @@
   @include nb-for-theme(cosmic) {
     .cameras-filter a.active {
       color: nb-theme(color-fg-highlight);
-      text-shadow: 0 0 12px rgba(nb-theme(color-fg-highlight), 0.4);
     }
 
     .camera {

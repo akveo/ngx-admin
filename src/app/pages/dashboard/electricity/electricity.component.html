@@ -32,17 +32,17 @@
         </div>
 
         <div class="stats-block">
-          <div class="subtitle">Value</div>
+          <div class="subtitle">Spent</div>
           <div>
-            <span class="value">91</span>
+            <span class="value">291</span>
             <span class="unit">USD</span>
           </div>
         </div>
       </div>
 
-      <div ngbDropdown [ngClass]="{'ghost-dropdown': currentTheme == 'default'}">
+      <div ngbDropdown>
         <button type="button" ngbDropdownToggle class="btn"
-                [ngClass]="{ 'btn-success': currentTheme == 'default', 'btn-primary': currentTheme != 'default'}">
+                [ngClass]="{ 'btn-outline-success': currentTheme == 'default', 'btn-primary': currentTheme != 'default'}">
           {{ type }}
         </button>
         <ul class="dropdown-menu">

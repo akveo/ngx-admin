@@ -16,7 +16,6 @@
     .icon-container {
       height: 100%;
       padding: 0.625rem;
-      border-right: 1px solid nb-theme(separator);
     }
 
     .icon {
@@ -70,10 +69,6 @@
     &.off {
       color: nb-theme(card-fg);
 
-      .icon-container {
-        border-right: 1px solid nb-theme(separator);
-      }
-
       .icon {
         color: nb-theme(card-fg);
 
@@ -93,19 +88,19 @@
       flex-direction: column;
       justify-content: center;
       height: 100%;
-      padding: 0 0.5rem 0 1.25rem;
+      padding: 0 0.5rem 0 0.75rem;
       border-left: 1px solid transparent;
     }
 
     .title {
       font-family: nb-theme(font-secondary);
-      font-size: 1.5rem;
+      font-size: 1.25rem;
       font-weight: nb-theme(font-weight-bold);
       color: nb-theme(card-fg-heading);
     }
 
     .status {
-      font-size: 1.125rem;
+      font-size: 1rem;
       font-weight: nb-theme(font-weight-light);
       text-transform: uppercase;
       color: nb-theme(card-fg);
@@ -114,9 +109,16 @@
 
   @include nb-for-theme(cosmic) {
     nb-card {
+      &.off .icon-container {
+        border-right: 1px solid nb-theme(separator);
+      }
+
       .icon-container {
         padding: 0;
-        border-right: none;
+      }
+
+      .details {
+        padding-left: 1.25rem;
       }
 
       .icon {

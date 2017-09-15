@@ -53,6 +53,7 @@ export const DEFAULT_THEME = {
 
       areaGradFrom: '#ebeef2',
       areaGradTo: '#ebeef2',
+      areaOpacity: '0.5',
       shadowLineDarkBg: 'rgba(0, 0, 0, 0)',
     },
 

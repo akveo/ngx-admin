@@ -22,12 +22,12 @@
 
   .table-header {
     @include nb-card-header();
-    font-size: 1.5rem;
+    font-size: 1.25rem;
 
     .subtitle {
       color: nb-theme(color-fg);
-      font-family: nb-theme(font-primary);
-      font-size: 1.125rem;
+      font-family: nb-theme(font-main);
+      font-size: 1rem;
       font-weight: nb-theme(font-weight-light);
     }
   }
@@ -82,7 +82,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1rem;
+    padding: nb-theme(padding);
     color: nb-theme(color-fg);
 
     &:not(:first-child) {
@@ -153,7 +153,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1rem 1.75rem;
+    padding: 1rem 1.75rem 1rem 1rem;
   }
 
   .header-stats {
@@ -162,21 +162,22 @@
   }
 
   .stats-block {
-    margin-right: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     color: nb-theme(color-fg);
-
-    &:first-child {
-      margin-right: 2.5rem;
-    }
+    padding: 0 1.5rem;
+    border-right: 1px solid nb-theme(separator);
 
     .subtitle {
-      font-size: 1.125rem;
+      font-size: 1rem;
+      font-weight: nb-theme(font-weight-light);
     }
 
     .value {
       font-family: nb-theme(font-secondary);
-      font-size: 2rem;
-      font-weight: nb-theme(font-weight-bolder);
+      font-size: 1.5rem;
+      font-weight: nb-theme(font-weight-bold);
       color: nb-theme(color-fg-heading);
     }
 
@@ -199,6 +200,10 @@
       &::before {
         display: none;
       }
+    }
+
+    .stats-block .value {
+      font-weight: nb-theme(font-weight-bolder);
     }
   }
 

@@ -4,10 +4,6 @@
 
 @include nb-install-component() {
 
-  nb-card {
-    background-image: nb-theme(radial-gradient);
-  }
-
   nb-tabset {
     display: flex;
     flex-direction: column;
@@ -101,7 +97,6 @@
     align-items: center;
     justify-content: center;
 
-    border-color: nb-theme(separator);
     width: 4.5rem;
     height: 4.5rem;
     padding: 0;
@@ -120,15 +115,11 @@
   }
 
   @include nb-for-theme(cosmic) {
-    .btn-icon {
-      border-color: nb-theme(form-control-border-color);
-
-      &.active {
-        color: nb-theme(color-fg-heading);
-        border-color: nb-theme(color-fg-highlight);
-        box-shadow: 0 2px 12px 0 rgba(nb-theme(color-fg-highlight), 0.25);
-        background-color: rgba(nb-theme(color-fg-highlight), 0.25);
-      }
+    .btn-icon.active {
+      color: nb-theme(color-fg-heading);
+      border-color: nb-theme(color-fg-highlight);
+      box-shadow: 0 2px 12px 0 rgba(nb-theme(color-fg-highlight), 0.25);
+      background-color: rgba(nb-theme(color-fg-highlight), 0.25);
     }
   }
 
