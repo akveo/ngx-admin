@@ -27,7 +27,7 @@
 
       @include nb-for-theme(cosmic) {
         &.selected {
-          color: nb-theme(link-color-active);
+          color: nb-theme(link-color);
         }
       }
     }

@@ -64,7 +64,7 @@
       width: 100px;
 
       @include nb-for-theme(cosmic) {
-        background-color: nb-theme(link-color-active);
+        background-color: nb-theme(link-color);
       }
     }
 
@@ -95,7 +95,7 @@
 
       @include nb-for-theme(cosmic) {
         @include install-thumb() {
-          background: nb-theme(link-color-active);
+          background: nb-theme(link-color);
         }
       }
     }
@@ -133,7 +133,7 @@
         color: nb-theme(color-success);
 
         @include nb-for-theme(cosmic) {
-          color: nb-theme(link-color-active);
+          color: nb-theme(link-color);
         }
       }
     }
