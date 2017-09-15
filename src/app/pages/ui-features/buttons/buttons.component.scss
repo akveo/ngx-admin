@@ -6,7 +6,6 @@
 @include nb-install-component() {
   /deep/ {
     $button-size: 50px;
-    $button-border-radius: 12px;
 
     .container-title {
       color: nb-theme(color-fg);
@@ -39,7 +38,7 @@
       .state-value {
         width: $button-size;
         height: $button-size;
-        border-radius: $button-border-radius;
+        border-radius: nb-theme(btn-border-radius);
       }
 
       .state-details {

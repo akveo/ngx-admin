@@ -27,6 +27,21 @@
     }
   }
 
+  .headings-card {
+    nb-card-body {
+      padding: 1rem 1.25rem;
+    }
+    .header {
+      padding-bottom: 0.675rem;
+      margin-bottom: 0.675rem;
+
+      &:last-child {
+        padding-bottom: 0;
+        margin-bottom: 0;
+      }
+    }
+  }
+
   .header {
     display: flex;
     flex-wrap: wrap;
@@ -80,7 +95,7 @@
     .item {
       display: flex;
       align-items: center;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.25rem;
       &:last-child {
         margin-bottom: 0;
       }
@@ -97,5 +112,13 @@
     h1, h2, h3, h4, h5, h6 {
       margin-bottom: 0.25rem;
     }
+  }
+
+  .text-link {
+    color: nb-theme(link-color);
+  }
+
+  .bg-link {
+    background: nb-theme(link-color);
   }
 }
