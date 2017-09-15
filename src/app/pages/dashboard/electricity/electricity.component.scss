@@ -207,6 +207,12 @@
     }
   }
 
+  @include media-breakpoint-down(xxl) {
+    .stats-block {
+      border: none;
+      padding: 0 1rem;
+    }
+  }
   @include media-breakpoint-between(md, xl) {
     .consumption-table {
       display: none;
@@ -215,9 +221,6 @@
   @include media-breakpoint-down(md) {
     .chart-header {
       padding: 1rem;
-    }
-    .stats-block:first-child {
-      margin-right: 1rem;
     }
     .dropdown {
       min-width: 100px;
@@ -234,6 +237,11 @@
   }
   @include media-breakpoint-down(xs) {
     .stats-block {
+      padding: 0;
+      &:first-child {
+        padding: 0 0.5rem;
+      }
+
       .subtitle {
         font-size: 1rem;
       }
