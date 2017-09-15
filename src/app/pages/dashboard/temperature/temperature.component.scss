@@ -101,7 +101,7 @@
     align-items: center;
     justify-content: center;
 
-    border-color: nb-theme(form-control-border-color);
+    border-color: nb-theme(separator);
     width: 4.5rem;
     height: 4.5rem;
     padding: 0;
@@ -114,7 +114,7 @@
     }
 
     i {
-      font-size: 1.75rem;
+      font-size: 2.25rem;
       line-height: 1;
     }
   }
@@ -155,6 +155,9 @@
     .btn-icon {
       width: 3.25rem;
       height: 3.25rem;
+      i {
+        font-size: 1.75rem;
+      }
     }
 
     nb-tabset /deep/ ul {
