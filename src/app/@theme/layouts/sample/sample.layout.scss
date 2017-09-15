@@ -50,7 +50,7 @@
     /deep/ .main-container {
       height:
         calc(#{nb-theme(sidebar-height)} - #{nb-theme(header-height)} - #{nb-theme(sidebar-header-gap)}) !important;
-      border-top-right-radius: 0.75rem;
+      border-top-right-radius: nb-theme(radius);
     }
 
     /deep/ nb-sidebar-header {
