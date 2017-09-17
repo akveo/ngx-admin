@@ -89,7 +89,7 @@ export const PAGES_MENU = [
         path: 'new',  // path for our page
         data: { // custom menu declaration
           menu: {
-            title: 'New Page', // menu title
+            title: 'general.menu.new', // Add this entry to the resource file 
             icon: 'ion-android-home', // menu icon
             pathMatch: 'prefix', // use it if item children not displayed in menu
             selected: false,
@@ -114,6 +114,20 @@ export const PAGES_MENU = [
   }
 ]
 ```
+Add an entry to the resource file src/assets/i18n/US
+
+
+```javascript
+"general": {
+    "akveo": "Akveo",
+    "home": "Home",
+    "forms": {
+      "option1": "Option 1"
+    },
+    "menu": {
+      "new":"New",
+```
+
 If you’d like to highlight menu item when current URL path partially match the menu item
 path - use pathMatch: ‘prefix’. In this case if the menu item has no children in the menu and 
 you navigated to some child route - the item will be highlighted.
@@ -134,6 +148,25 @@ const routes: Routes = [
   }
 ];
 ```
+
+
+7) Add this module to  `src/app/pages/app.module.ts.ts` like this:
+
+```javascript
+imports: [ // import Angular's modules
+    BrowserModule,
+    HttpModule,
+    RouterModule,
+    FormsModule,
+    ReactiveFormsModule,
+    NgaModule.forRoot(),
+    NgbModule.forRoot(),
+    PagesModule,
+    NewModule, // This is my custom module
+    AuthenticationModule,
+    routing
+  ],
+
 <br>
 
 And that's it! Now your page is available by the following this url [http://localhost:4200/#/pages/new](http://localhost:4200/#/pages/new).
