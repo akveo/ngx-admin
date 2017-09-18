@@ -149,12 +149,8 @@
     line-height: 1;
 
     i {
-      color: nb-theme(color-success);
+      color: nb-theme(color-fg-highlight);
       font-size: 2.25rem;
-
-      @include nb-for-theme(cosmic) {
-        color: nb-theme(link-color);
-      }
     }
   }
 
