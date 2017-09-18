@@ -16,17 +16,17 @@ export class SmartTableComponent {
 
   settings = {
     add: {
-      addButtonContent: '<i class="ion-plus"></i>',
-      createButtonContent: '<i class="ion-checkmark"></i>',
-      cancelButtonContent: '<i class="ion-close"></i>',
+      addButtonContent: '<i class="nb-plus"></i>',
+      createButtonContent: '<i class="nb-checkmark"></i>',
+      cancelButtonContent: '<i class="nb-close"></i>',
     },
     edit: {
-      editButtonContent: '<i class="ion-edit"></i>',
-      saveButtonContent: '<i class="ion-checkmark"></i>',
-      cancelButtonContent: '<i class="ion-close"></i>',
+      editButtonContent: '<i class="nb-edit"></i>',
+      saveButtonContent: '<i class="nb-checkmark"></i>',
+      cancelButtonContent: '<i class="nb-close"></i>',
     },
     delete: {
-      deleteButtonContent: '<i class="ion-ios-trash-outline"></i>',
+      deleteButtonContent: '<i class="nb-trash"></i>',
       confirmDelete: true,
     },
     columns: {
