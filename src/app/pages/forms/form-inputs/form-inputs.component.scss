@@ -1,4 +1,6 @@
 @import '../../../@theme/styles/themes';
+@import '~bootstrap/scss/mixins/breakpoints';
+@import '~@nebular/theme/styles/global/bootstrap/breakpoints';
 
 @include nb-install-component() {
 
@@ -22,16 +24,19 @@
   .demo-checkboxes {
     display: flex;
     flex-direction: column;
+    margin-bottom: 1rem;
   }
 
   .demo-radio {
     display: flex;
     flex-direction: column;
+    margin-bottom: 1rem;
   }
 
   .demo-disabled-checkbox-radio {
     display: flex;
     flex-direction: column;
+    margin-bottom: 1rem;
   }
 
   .demo-checkboxes-radio {
@@ -42,6 +47,7 @@
   .demo-rating {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
   }
 
   .star {
@@ -70,10 +76,6 @@
 
   .full-name-inputs {
     display: flex;
-
-    .input-group:not(:last-child) {
-      margin-right: 1rem;
-    }
   }
 
   .input-group.has-person-icon {
@@ -95,7 +97,12 @@
   }
 
   .dropdown {
-    width: 25%;
+    min-width: 7rem;
+  }
+
+  .dropdown-menu {
+    width: auto;
+
   }
 
   .form-group label {
@@ -106,6 +113,13 @@
     color: nb-theme(color-success);
     @include nb-for-theme(cosmic) {
       color: nb-theme(color-primary);
+    }
+  }
+
+  @include media-breakpoint-down(xs) {
+    button:not(.btn-icon) {
+      padding: 0.75rem 1rem;
+      font-size: 0.75rem;
     }
   }
 }

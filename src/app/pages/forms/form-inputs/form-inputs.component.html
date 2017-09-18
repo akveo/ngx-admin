@@ -4,40 +4,41 @@
       <nb-card-header>Default Inputs</nb-card-header>
       <nb-card-body>
         <div class="input-group">
-          <input type="text" placeholder="Project" class="form-control" />
+          <input type="text" placeholder="Project" class="form-control"/>
         </div>
-        <div class="full-name-inputs">
-          <div class="input-group">
-            <input type="text" placeholder="Nick" class="form-control" />
+        <div class="row full-name-inputs">
+          <div class="col-xs-12 col-sm-6 input-group">
+            <input type="text" placeholder="Nick" class="form-control"/>
           </div>
-          <div class="input-group">
-            <input type="text" placeholder="Last Name" class="form-control" />
+          <div class="col-xs-12 col-sm-6 input-group">
+            <input type="text" placeholder="Last Name" class="form-control"/>
           </div>
         </div>
         <div class="input-group">
-          <input type="password" placeholder="Password" class="form-control" />
+          <input type="password" placeholder="Password" class="form-control"/>
         </div>
         <div class="input-group has-person-icon">
-          <input type="text" placeholder="With Icon" class="form-control" />
+          <input type="text" placeholder="With Icon" class="form-control"/>
         </div>
         <div class="input-group input-group-rounded">
-          <input type="text" placeholder="Rounded border" class="form-control" />
+          <input type="text" placeholder="Rounded border" class="form-control"/>
         </div>
         <div class="form-group">
-          <input type="text" placeholder="Project" class="form-control" />
-          <small class="form-text">A block of help text that breaks into a new line and may extend beyond one line.</small>
+          <input type="text" placeholder="Project" class="form-control"/>
+          <small class="form-text">A block of help text that breaks into a new line and may extend beyond one line.
+          </small>
         </div>
         <div class="input-group">
-          <input type="text" placeholder="Disabled input" class="form-control" disabled />
+          <input type="text" placeholder="Disabled input" class="form-control" disabled/>
         </div>
         <div class="input-group">
           <textarea rows="5" placeholder="Text Area" class="form-control"></textarea>
         </div>
         <div class="input-group input-group-sm">
-          <input type="text" placeholder="Small Input" class="form-control" />
+          <input type="text" placeholder="Small Input" class="form-control"/>
         </div>
         <div class="input-group input-group-lg">
-          <input type="text" placeholder="Large Input" class="form-control" />
+          <input type="text" placeholder="Large Input" class="form-control"/>
         </div>
       </nb-card-body>
     </nb-card>
@@ -49,7 +50,7 @@
           <span class="input-group-addon success">@</span>
           <input type="text" class="form-control" placeholder="Username"/>
         </div>
-        <div class="input-group">
+        <div class="input-group mail-btn-group">
           <span class="input-group-btn">
             <button class="btn btn-primary btn-icon">
               <i class="ion-ios-email-outline"></i>
@@ -120,7 +121,7 @@
       <nb-card-header>Input Styles</nb-card-header>
       <nb-card-body>
         <div class="input-group input-group-border-only">
-          <input type="text" placeholder="Border Only" class="form-control" />
+          <input type="text" placeholder="Border Only" class="form-control"/>
         </div>
         <div class="input-group">
           <input type="text" placeholder="Default Input" class="form-control">
@@ -143,10 +144,10 @@
         <div class="form-group">
           <input type="text" placeholder="Input with Danger" class="form-control form-control-danger">
         </div>
-        <div class="form-group validation-checkboxes">
-          <nb-checkbox status="success">Checkbox with Success</nb-checkbox>
-          <nb-checkbox status="warning">Checkbox with Warning</nb-checkbox>
-          <nb-checkbox status="danger">Checkbox with Danger</nb-checkbox>
+        <div class="form-group validation-checkboxes row">
+          <nb-checkbox status="success" class="col-xs-4">Checkbox with Success</nb-checkbox>
+          <nb-checkbox status="warning" class="col-xs-4">Checkbox with Warning</nb-checkbox>
+          <nb-checkbox status="danger" class="col-xs-4">Checkbox with Danger</nb-checkbox>
         </div>
         <div class="form-group has-success">
           <input type="text" placeholder="Input with Success Icon" class="form-control form-control-success">
@@ -163,8 +164,8 @@
     <nb-card>
       <nb-card-header>Checkboxes & Radios</nb-card-header>
       <nb-card-body>
-        <div class="demo-checkboxes-radio">
-          <div class="demo-checkboxes">
+        <div class="row demo-checkboxes-radio">
+          <div class="demo-checkboxes col-xs-4">
             <nb-checkbox>Checkbox 1</nb-checkbox>
             <nb-checkbox [value]="true">Checkbox 2</nb-checkbox>
             <label class="custom-control custom-checkbox">
@@ -173,7 +174,7 @@
               <span class="custom-control-description">Bootstrap Checkbox</span>
             </label>
           </div>
-          <div class="demo-radio">
+          <div class="demo-radio col-xs-4">
             <label class="custom-control custom-radio">
               <input type="radio" class="custom-control-input" name="customRadio">
               <span class="custom-control-indicator"></span>
@@ -190,7 +191,7 @@
               <span class="custom-control-description">Radio 3</span>
             </label>
           </div>
-          <div class="demo-disabled-checkbox-radio">
+          <div class="demo-disabled-checkbox-radio col-xs-4">
             <nb-checkbox disabled>Disabled Checkbox</nb-checkbox>
             <label class="custom-control custom-radio">
               <input type="radio" class="custom-control-input" disabled>
