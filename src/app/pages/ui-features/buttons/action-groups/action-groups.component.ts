@@ -6,10 +6,4 @@ import { Component } from '@angular/core';
   templateUrl: './action-groups.component.html',
 })
 export class ActionGroupsComponent {
-
-  userMenu = [{
-    title: 'Profile',
-  }, {
-    title: 'Log out',
-  }];
 }

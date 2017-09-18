@@ -92,72 +92,12 @@
     }
   }
 
-  @include media-breakpoint-down(sm) {
-    ngx-action-groups /deep/ nb-card-body {
-      flex-direction: column;
-      align-items: flex-start;
-      padding: 0.75rem;
-
-      .action-groups-header {
-        margin: 0 0 0.5rem 0.25rem;
-      }
-    }
-  }
-
-  @include media-breakpoint-down(is) {
-
-    ngx-action-groups /deep/ nb-card-body {
-
-      nb-action {
-        padding: 0.75rem;
-      }
-
-      .control-icon, .start-search {
-        font-size: 1.75rem;
-      }
-
-      .user-container {
-        font-size: 1rem;
-      }
-
-      .user-picture {
-        height: 1.75rem;
-        width: 1.75rem;
-      }
-    }
-  }
-
   @include media-breakpoint-down(xs) {
 
     /deep/.icon-buttons .icon-button-examples {
       button {
         margin-right: 1rem;
       }
-    }
-
-    ngx-action-groups /deep/ nb-card-body {
-
-      nb-action {
-        padding: 0.5rem;
-      }
-
-      .control-icon, .start-search {
-        font-size: 1.5rem;
-      }
-
-      .user-container {
-        font-size: 0.75rem;
-      }
-
-      .user-picture {
-        height: 1.5rem;
-        width: 1.5rem;
-      }
-    }
-
-    ngx-labeled-actions-group /deep/ nb-card-body {
-      padding-left: 0;
-      padding-right: 0;
     }
 
     ngx-default-buttons /deep/ nb-card-header {
