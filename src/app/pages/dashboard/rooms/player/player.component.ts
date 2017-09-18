@@ -21,20 +21,24 @@ export class PlayerComponent {
   }
 
   prev() {
-    if (this.shuffle) {
-      this.track = this.playerService.random();
-    } else {
-      this.track = this.playerService.prev();
+    if (!this.player.loop) {
+      if (this.shuffle) {
+        this.track = this.playerService.random();
+      } else {
+        this.track = this.playerService.prev();
+      }
     }
 
     this.reload();
   }
 
   next() {
-    if (this.shuffle) {
-      this.track = this.playerService.random();
-    } else {
-      this.track = this.playerService.next();
+    if (!this.player.loop) {
+      if (this.shuffle) {
+        this.track = this.playerService.random();
+      } else {
+        this.track = this.playerService.next();
+      }
     }
 
     this.reload();
