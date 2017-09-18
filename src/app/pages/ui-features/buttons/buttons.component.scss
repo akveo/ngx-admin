@@ -61,24 +61,6 @@
     .block-level-buttons .btn-group {
       margin-bottom: 1rem;
     }
-
-    .icon-buttons .btn-group:not(:last-child) {
-      margin-bottom: 1rem;
-    }
-
-    .icon-buttons .icon-button-examples {
-      display: flex;
-      justify-content: flex-start;
-
-      button {
-        margin-right: 2rem;
-        min-width: 4rem;
-      }
-    }
-
-    .icon-buttons .icon-button-examples:not(:last-child) {
-      margin-bottom: 1rem;
-    }
   }
 
   @include media-breakpoint-down(is) {
