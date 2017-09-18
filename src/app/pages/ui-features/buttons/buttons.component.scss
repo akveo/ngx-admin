@@ -81,10 +81,14 @@
     }
   }
 
-  @include media-breakpoint-down(xxxl) {
+  @include media-breakpoint-down(is) {
     ngx-default-buttons /deep/ nb-card-header {
       flex-direction: column;
-      margin-bottom: 0.5rem;
+      align-items: left;
+
+      span {
+        margin-bottom: 1rem;
+      }
     }
   }
 

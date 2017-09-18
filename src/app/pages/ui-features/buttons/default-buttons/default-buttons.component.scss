@@ -5,20 +5,21 @@
 
   nb-card-header {
     display: flex;
-
-    span {
-      flex: 1;
-      margin-bottom: 1rem;
-    }
+    align-items: center;
+    justify-content: space-between;
 
     .dropdown {
       flex-basis: 30%;
-      min-width: 200px;
+      min-width: 220px;
     }
   }
 
+  nb-card-body {
+    padding-bottom: 0;
+  }
+
   .example-container {
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
   }
 
   .primary-container {

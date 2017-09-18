@@ -3,6 +3,10 @@
 
 @include nb-install-component() {
 
+  nb-card-body {
+    padding-bottom: 0;
+  }
+
   .none {
     position: relative;
     transform: rotate(45deg);
@@ -108,6 +112,6 @@
   }
 
   .example-container {
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
   }
 }
