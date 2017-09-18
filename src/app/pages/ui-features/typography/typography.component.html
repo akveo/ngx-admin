@@ -1,7 +1,7 @@
 <div class="row">
-  <div class="col-lg-12 col-xl-8">
+  <div class="col-xxxl-8">
     <div class="row">
-      <div class="col-sm-12 col-md-6 col-xxl-7">
+      <div class="col-md-6 col-xxl-7">
         <nb-card size="medium">
           <nb-card-header>
             Used Fonts
@@ -42,8 +42,32 @@
             </div>
           </nb-card-body>
         </nb-card>
+
+        <nb-card size="small">
+          <nb-card-header>
+            Article Example
+          </nb-card-header>
+          <nb-card-body>
+            <h4>So what's About the grammar?</h4>
+            <p class="text-indent">
+              Far far away, behind the word mountains, far from the countries <strong>Vokalia</strong> and <strong>Consonantia</strong>,
+              there live the blind texts.
+              They live in <strong>Bookmarksgrove</strong>.
+            </p>
+            <p class="text-indent">
+              A small <strong>river named Duden</strong> flows by their place and supplies it with the
+              necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly
+              into your mouth.
+              Even the all-powerful Pointing has no control about the blind texts it is an almost
+              unorthographic life One day however a small
+              line of blind text by the name of
+              <a href="http://google.com" target="_blank">Lorem Ipsum</a> decided to leave for
+              the far <strong>World of Grammar</strong>.
+            </p>
+          </nb-card-body>
+        </nb-card>
       </div>
-      <div class="col-sm-12 col-md-6 col-xxl-5">
+      <div class="col-md-6 col-xxl-5">
         <nb-card size="medium" class="headings-card">
           <nb-card-header>
             Headings
@@ -105,34 +129,7 @@
             </div>
           </nb-card-body>
         </nb-card>
-      </div>
 
-      <div class="col-sm-12 col-md-6 col-xxl-7">
-        <nb-card size="small">
-          <nb-card-header>
-            Article Example
-          </nb-card-header>
-          <nb-card-body>
-            <h4>So what's About the grammar?</h4>
-            <p class="text-indent">
-              Far far away, behind the word mountains, far from the countries <strong>Vokalia</strong> and <strong>Consonantia</strong>,
-              there live the blind texts.
-              They live in <strong>Bookmarksgrove</strong>.
-            </p>
-            <p class="text-indent">
-              A small <strong>river named Duden</strong> flows by their place and supplies it with the
-              necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly
-              into your mouth.
-              Even the all-powerful Pointing has no control about the blind texts it is an almost
-              unorthographic life One day however a small
-              line of blind text by the name of
-              <a href="http://google.com" target="_blank">Lorem Ipsum</a> decided to leave for
-              the far <strong>World of Grammar</strong>.
-            </p>
-          </nb-card-body>
-        </nb-card>
-      </div>
-      <div class="col-sm-12 col-md-6 col-xxl-5">
         <nb-card size="small">
           <nb-card-header>
             Blockquotes
@@ -154,8 +151,9 @@
       </div>
     </div>
   </div>
-  <div class="col-lg-12 col-xl-4">
-    <nb-card size="xxlarge">
+
+  <div class="col-md-6 col-xxxl-4">
+    <nb-card [size]="breakpoint.width >= breakpoints.xxxl ? 'xxlarge' : 'large'">
       <nb-card-header>
         Font Colors
       </nb-card-header>
@@ -228,66 +226,61 @@
       </nb-card-body>
     </nb-card>
   </div>
-</div>
 
-
-<div class="row">
-  <div class="col-lg-12 col-xl-8">
-    <div class="row">
-      <div class="col-sm-12 col-md-6 col-xxl-7">
-        <nb-card size="large">
-          <nb-card-header>
-            Alerts
-          </nb-card-header>
-          <nb-card-body>
-            <div class="alert alert-primary" role="alert">
-              <strong>Oh snap!</strong> <a href="#" class="alert-link">Change a few things up</a> and try submitting again.
-            </div>
-            <div class="alert alert-hint" role="alert">
-              <strong>Heads up!</strong> This <a href="#" class="alert-link">alert needs your attention</a>, but it's not super important.
-            </div>
-            <div class="alert alert-success" role="alert">
-              <strong>Well done!</strong> You successfully read <a href="#" class="alert-link">this important alert message</a>.
-            </div>
-            <div class="alert alert-info" role="alert">
-              <strong>Heads up!</strong> This <a href="#" class="alert-link">alert needs your attention</a>, but it's not super important.
-            </div>
-            <div class="alert alert-warning" role="alert">
-              <strong>Warning!</strong> Better check yourself, you're <a href="#" class="alert-link">not looking too good</a>.
-            </div>
-            <div class="alert alert-danger" role="alert">
-              <strong>Oh snap!</strong> <a href="#" class="alert-link">Change a few things up</a> and try submitting again.
-            </div>
-          </nb-card-body>
-        </nb-card>
-      </div>
-      <div class="col-sm-12 col-md-6 col-xxl-5">
-        <nb-card size="large">
-          <nb-card-header>
-            Text Types
-          </nb-card-header>
-          <nb-card-body>
-            <h4>Highlighted text</h4>
-            <p class="mb-5">
-              Far far away, behind the word mountains, far from the countries
-              Vokalia and <mark>Consonantia, there live the blind texts.</mark>
-            </p>
-            <h4>Bold Text</h4>
-            <p class="mb-5">
-              Far far away, behind the word mountains, far from the countries
-              Vokalia and <strong>Consonantia, there live the blind texts.</strong>
-            </p>
-            <h4>Link Text</h4>
-            <p class="mb-5">
-              Far far away, behind the word mountains, far from the countries
-              Vokalia and <a href="http://google.com" target="_blank">Consonantia, there live the blind texts.</a>
-            </p>
-          </nb-card-body>
-        </nb-card>
-      </div>
-    </div>
+  <div class="col-md-6 col-xxxl-4">
+    <nb-card size="large">
+      <nb-card-header>
+        Alerts
+      </nb-card-header>
+      <nb-card-body>
+        <div class="alert alert-primary" role="alert">
+          <strong>Oh snap!</strong> <a href="#" class="alert-link">Change a few things up</a> and try submitting again.
+        </div>
+        <div class="alert alert-hint" role="alert">
+          <strong>Heads up!</strong> This <a href="#" class="alert-link">alert needs your attention</a>, but it's not super important.
+        </div>
+        <div class="alert alert-success" role="alert">
+          <strong>Well done!</strong> You successfully read <a href="#" class="alert-link">this important alert message</a>.
+        </div>
+        <div class="alert alert-info" role="alert">
+          <strong>Heads up!</strong> This <a href="#" class="alert-link">alert needs your attention</a>, but it's not super important.
+        </div>
+        <div class="alert alert-warning" role="alert">
+          <strong>Warning!</strong> Better check yourself, you're <a href="#" class="alert-link">not looking too good</a>.
+        </div>
+        <div class="alert alert-danger" role="alert">
+          <strong>Oh snap!</strong> <a href="#" class="alert-link">Change a few things up</a> and try submitting again.
+        </div>
+      </nb-card-body>
+    </nb-card>
   </div>
-  <div class="col-lg-12 col-xl-4">
+
+  <div class="col-md-6 col-xxxl-4">
+    <nb-card size="large">
+      <nb-card-header>
+        Text Types
+      </nb-card-header>
+      <nb-card-body>
+        <h4>Highlighted text</h4>
+        <p class="mb-5">
+          Far far away, behind the word mountains, far from the countries
+          Vokalia and <mark>Consonantia, there live the blind texts.</mark>
+        </p>
+        <h4>Bold Text</h4>
+        <p class="mb-5">
+          Far far away, behind the word mountains, far from the countries
+          Vokalia and <strong>Consonantia, there live the blind texts.</strong>
+        </p>
+        <h4>Link Text</h4>
+        <p class="mb-5">
+          Far far away, behind the word mountains, far from the countries
+          Vokalia and <a href="http://google.com" target="_blank">Consonantia, there live the blind texts.</a>
+        </p>
+      </nb-card-body>
+    </nb-card>
+  </div>
+
+  <div class="col-md-6 col-xxxl-4">
     <nb-card size="large">
       <nb-card-header>
         Lists
