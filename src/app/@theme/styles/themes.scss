@@ -25,13 +25,3 @@ $nb-themes: nb-register-theme((
   font-main: Roboto,
   font-secondary: Exo,
 ), cosmic, cosmic);
-
-$nb-themes: nb-register-theme((
-  // app wise variables for each theme
-  sidebar-header-gap: 2rem,
-  sidebar-header-height: initial,
-  layout-content-width: 1400px,
-
-  font-main: Roboto,
-  font-secondary: Exo,
-), light, light);
