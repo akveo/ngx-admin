@@ -23,11 +23,31 @@
     }
   }
 
-  @include media-breakpoint-down(xs) {
+  @include media-breakpoint-down(sm) {
     nb-action {
       font-size: 0.75rem;
       i {
-        font-size: 2rem;
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  @include media-breakpoint-down(is) {
+    nb-action {
+      font-size: 0.625rem;
+    }
+  }
+
+  @include media-breakpoint-down(xs) {
+    nb-action {
+      font-size: 0.5rem;
+
+      span {
+        display: none;
+      }
+
+      i {
+        margin: 0;
       }
     }
   }

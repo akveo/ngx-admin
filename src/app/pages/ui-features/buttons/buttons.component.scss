@@ -68,7 +68,12 @@
 
     .icon-buttons .icon-button-examples {
       display: flex;
-      justify-content: space-between;
+      justify-content: flex-start;
+
+      button {
+        margin-right: 2rem;
+        min-width: 4rem;
+      }
     }
 
     .icon-buttons .icon-button-examples:not(:last-child) {
@@ -76,11 +81,57 @@
     }
   }
 
-  @include media-breakpoint-down(xs) {
+  @include media-breakpoint-down(xxxl) {
+    ngx-default-buttons /deep/ nb-card-header {
+      flex-direction: column;
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
     ngx-action-groups /deep/ nb-card-body {
       flex-direction: column;
       align-items: flex-start;
       padding: 0.75rem;
+
+      .action-groups-header {
+        margin: 0 0 0.5rem 0.25rem;
+      }
+    }
+  }
+
+  @include media-breakpoint-down(is) {
+
+    ngx-action-groups /deep/ nb-card-body {
+
+      nb-action {
+        padding: 0.75rem;
+      }
+
+      .control-icon, .start-search {
+        font-size: 1.75rem;
+      }
+
+      .user-container {
+        font-size: 1rem;
+      }
+
+      .user-picture {
+        height: 1.75rem;
+        width: 1.75rem;
+      }
+    }
+  }
+
+  @include media-breakpoint-down(xs) {
+
+    /deep/.icon-buttons .icon-button-examples {
+      button {
+        margin-right: 1rem;
+      }
+    }
+
+    ngx-action-groups /deep/ nb-card-body {
 
       nb-action {
         padding: 0.5rem;
@@ -98,10 +149,6 @@
         height: 1.5rem;
         width: 1.5rem;
       }
-
-      .action-groups-header {
-        margin: 0 0 0.5rem 0.25rem;
-      }
     }
 
     ngx-labeled-actions-group /deep/ nb-card-body {
@@ -112,6 +159,12 @@
     ngx-default-buttons /deep/ nb-card-header {
       flex-direction: column;
       margin-bottom: 0.5rem;
+    }
+
+    ngx-block-level-buttons /deep/ {
+      .btn-primary {
+        padding: 0.75rem 1rem;
+      }
     }
   }
 }

@@ -9,11 +9,15 @@
   }
 
   .action-groups-header {
-    flex: 1;
+    flex-basis: 20%;
 
     color: nb-theme(card-header-fg-heading);
     font-family: nb-theme(card-header-font-family);
     font-size: nb-theme(card-header-font-size);
     font-weight: nb-theme(card-header-font-weight);
+  }
+
+  .nb-actions {
+    flex-basis: 80%;
   }
 }
