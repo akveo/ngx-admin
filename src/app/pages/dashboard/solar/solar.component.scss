@@ -4,27 +4,24 @@
 
 @include nb-install-component() {
 
-  display: flex;
-  height: 100%;
-  color: nb-theme(color-fg);
+  $padding: 1rem;
+  $padding: 1rem;
+
+  nb-card-body {
+    overflow: hidden;
+    padding: $padding;
+  }
 
   .echart {
-    flex: 1;
-    height: 100%;
+    position: absolute;
+    height: calc(100% - 2 * #{$padding});
     width: 40%;
   }
 
   .info {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    align-self: center;
-  }
-
-  .date {
-    font-size: 1.25rem;
-    font-weight: nb-theme(font-weight-bolder);
-    margin-bottom: 0.5rem;
+    margin-left: 45%;
+    padding-top: 1.5rem;
+    color: nb-theme(color-fg);
   }
 
   .value {
