@@ -242,8 +242,9 @@
       width: calc(100% - 6rem);
       align-self: flex-start;
       position: absolute;
+      left: 0;
       margin-top: calc(-0.75rem + 1px);
-      margin-left: $player-height;
+      margin-left: calc(#{$player-height} + 0.75rem);
     }
 
     .timing {

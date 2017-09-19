@@ -1,4 +1,4 @@
-import { Component, HostBinding, Input } from '@angular/core';
+import { Component, HostBinding, Input, OnDestroy } from '@angular/core';
 import { PlayerService, Track } from '../../../../@core/data/player.service';
 
 @Component({
@@ -6,7 +6,7 @@ import { PlayerService, Track } from '../../../../@core/data/player.service';
   styleUrls: ['./player.component.scss'],
   templateUrl: './player.component.html',
 })
-export class PlayerComponent {
+export class PlayerComponent implements OnDestroy {
   @Input()
   @HostBinding('class.collapsed')
   collapsed: boolean;
@@ -18,6 +18,12 @@ export class PlayerComponent {
   constructor(private playerService: PlayerService) {
     this.track = this.playerService.random();
     this.createPlayer();
+  }
+
+  ngOnDestroy() {
+    this.player.pause();
+    this.player.src = '';
+    this.player.load();
   }
 
   prev() {
