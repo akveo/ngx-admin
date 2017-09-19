@@ -10,6 +10,7 @@
 
   nb-card-body {
     padding: 0;
+    position: relative;
   }
 
   nb-card-footer {
@@ -54,8 +55,10 @@
   }
 
   .cameras {
+    position: absolute;
     display: flex;
     flex-wrap: wrap;
+    width: 100%;
     height: 100%;
   }
 
