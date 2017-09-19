@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
   selector: 'ngx-gmaps',
   styleUrls: ['./gmaps.component.scss'],
   template: `
-    <nb-card size="xlarge">
+    <nb-card>
       <nb-card-header>Google Maps</nb-card-header>
       <nb-card-body>
         <agm-map [latitude]="lat" [longitude]="lng">

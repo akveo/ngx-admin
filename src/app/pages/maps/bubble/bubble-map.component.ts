@@ -5,7 +5,7 @@ import { NbThemeService } from '@nebular/theme';
   selector: 'ngx-bubble-map',
   styleUrls: ['./bubble-map.component.scss'],
   template: `
-    <nb-card size="xlarge">
+    <nb-card>
     <nb-card-header>Bubble Maps</nb-card-header>
       <nb-card-body>
         <div echarts [options]="options" class="echarts"></div>

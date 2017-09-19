@@ -7,7 +7,7 @@ import 'style-loader!leaflet/dist/leaflet.css';
   selector: 'ngx-leaflet',
   styleUrls: ['./leaflet.component.scss'],
   template: `
-    <nb-card size="xlarge">
+    <nb-card>
       <nb-card-header>Leaflet Maps</nb-card-header>
       <nb-card-body>
         <div leaflet [leafletOptions]="options"></div>

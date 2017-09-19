@@ -2,15 +2,12 @@
 
 @include nb-install-component() {
 
-  $card-header-border: 1px;
-
   nb-card-body {
     padding: 0;
   }
 
   /deep/ .leaflet-container {
     width: 100%;
-    height: calc(#{nb-theme(card-height-xlarge)} - (#{nb-theme(card-padding) * 2}) -
-                (#{nb-theme(card-header-font-size)} * #{nb-theme(card-line-height)}) - #{$card-header-border});
+    height: nb-theme(card-height-large);
   }
 }
