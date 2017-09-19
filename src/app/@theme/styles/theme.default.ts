@@ -51,9 +51,8 @@ export const DEFAULT_THEME = {
       lineGradTo: '#42db7d',
       lineShadow: 'rgba(0, 0, 0, 0)',
 
-      areaGradFrom: '#ebeef2',
-      areaGradTo: '#ebeef2',
-      areaOpacity: '0.5',
+      areaGradFrom: 'rgba(235, 238, 242, 0.5)',
+      areaGradTo: 'rgba(235, 238, 242, 0.5)',
       shadowLineDarkBg: 'rgba(0, 0, 0, 0)',
     },
 

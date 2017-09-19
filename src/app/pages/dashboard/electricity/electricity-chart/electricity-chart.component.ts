@@ -153,7 +153,6 @@ export class ElectricityChartComponent implements AfterViewInit {
                     offset: 1,
                     color: eTheme.areaGradTo,
                   }]),
-                  opacity: eTheme.areaOpacity,
                 },
               },
               data: this.data.map(i => i.value),

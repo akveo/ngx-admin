@@ -59,7 +59,6 @@ export const COSMIC_THEME = {
 
       areaGradFrom: 'rgba(188, 92, 255, 0.5)',
       areaGradTo: 'rgba(188, 92, 255, 0)',
-      areaOpacity: '1',
       shadowLineDarkBg: '#a695ff',
     },
 
