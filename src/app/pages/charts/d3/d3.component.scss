@@ -30,6 +30,9 @@
         }
         .legend-label {
           color: nb-theme(color-fg-heading);
+          .active .legend-label-text {
+            color: nb-theme(color-fg-heading);
+          }
         }
       }
     }
