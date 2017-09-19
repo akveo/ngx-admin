@@ -9,7 +9,7 @@
   ngx-d3-polar {
     display: block;
     width: 100%;
-    height: 100%;
+    height: nb-theme(card-height-medium);
 
     /deep/ {
       .pie-label {

@@ -8,7 +8,7 @@
   ngx-chartjs-bar-horizontal,
   ngx-chartjs-radar {
     display: block;
-    height: 100%;
+    height: nb-theme(card-height-medium);
     width: 100%;
 
     /deep/ chart {
