@@ -67,6 +67,7 @@ export class NotificationsComponent {
       body: body,
       timeout: this.timeout,
       showCloseButton: this.isCloseButton,
+      bodyOutputType: BodyOutputType.TrustedHtml,
     };
     this.toasterService.popAsync(toast);
   }
