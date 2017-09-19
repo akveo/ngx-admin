@@ -11,6 +11,10 @@
     flex-direction: row;
   }
 
+  nb-card-body {
+    overflow: hidden;
+  }
+
   .consumption-table {
     display: flex;
     flex-direction: column;
@@ -147,6 +151,7 @@
     background-image: nb-theme(radial-gradient);
     display: flex;
     flex-direction: column;
+    overflow: hidden;
   }
 
   .chart-header {
