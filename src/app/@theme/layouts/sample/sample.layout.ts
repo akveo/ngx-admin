@@ -1,8 +1,18 @@
 import { Component, OnDestroy } from '@angular/core';
-import { NbMenuItem } from '@nebular/theme';
-import { Subscription } from 'rxjs/Subscription';
+import {
+  NbMediaBreakpoint,
+  NbMediaBreakpointsService,
+  NbMenuItem,
+  NbMenuService,
+  NbSidebarService,
+  NbThemeService,
+} from '@nebular/theme';
 
 import { StateService } from '../../../@core/data/state.service';
+
+import { Subscription } from 'rxjs/Subscription';
+import 'rxjs/add/operator/withLatestFrom';
+import 'rxjs/add/operator/delay';
 
 // TODO: move layouts into the framework
 @Component({
@@ -100,8 +110,13 @@ export class SampleLayoutComponent  implements OnDestroy {
 
   protected layoutState$: Subscription;
   protected sidebarState$: Subscription;
+  protected menuClick$: Subscription;
 
-  constructor(protected stateService: StateService) {
+  constructor(protected stateService: StateService,
+              protected menuService: NbMenuService,
+              protected themeService: NbThemeService,
+              protected bpService: NbMediaBreakpointsService,
+              protected sidebarService: NbSidebarService) {
     this.layoutState$ = this.stateService.onLayoutState()
       .subscribe((layout: string) => this.layout = layout);
 
@@ -109,10 +124,22 @@ export class SampleLayoutComponent  implements OnDestroy {
       .subscribe((sidebar: string) => {
         this.sidebar = sidebar
       });
+
+    const isBp = this.bpService.getByName('is');
+    this.menuClick$ = this.menuService.onItemSelect()
+      .withLatestFrom(this.themeService.onMediaQueryChange())
+      .delay(20)
+      .subscribe(([item, [bpFrom, bpTo]]: [any, [NbMediaBreakpoint, NbMediaBreakpoint]]) => {
+
+        if (bpTo.width <= isBp.width) {
+          this.sidebarService.collapse('menu-sidebar');
+        }
+      });
   }
 
   ngOnDestroy() {
     this.layoutState$.unsubscribe();
     this.sidebarState$.unsubscribe();
+    this.menuClick$.unsubscribe();
   }
 }

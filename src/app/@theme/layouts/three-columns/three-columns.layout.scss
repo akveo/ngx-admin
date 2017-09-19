@@ -1,9 +1,46 @@
 @import '../../styles/themes';
+@import '~bootstrap/scss/mixins/breakpoints';
+@import '~@nebular/theme/styles/global/bootstrap/breakpoints';
 
 @include nb-install-component() {
-
   nb-layout-column.small {
     flex: 0.15 !important;
+  }
+
+  nb-sidebar.settings-sidebar {
+    $sidebar-width: 7.5rem;
+
+    transition: width 0.3s ease;
+    width: $sidebar-width;
+    overflow: hidden;
+
+    &.collapsed {
+      width: 0;
+
+      /deep/ .main-container {
+        width: 0;
+
+        .scrollable {
+          width: $sidebar-width;
+          padding: 1.25rem;
+        }
+      }
+    }
+
+    /deep/ .main-container {
+      width: $sidebar-width;
+      background: nb-theme(color-bg);
+      transition: width 0.3s ease;
+      overflow: hidden;
+
+      .scrollable {
+        width: $sidebar-width;
+      }
+
+      @include nb-for-theme(cosmic) {
+        background: nb-theme(layout-bg);
+      }
+    }
   }
 
   nb-sidebar.menu-sidebar {
@@ -60,6 +97,34 @@
           display: none;
         }
       }
+    }
+  }
+
+  @include media-breakpoint-down(xs) {
+    .main-content {
+      padding: 0.75rem !important;
+
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+
+    nb-sidebar.menu-sidebar {
+
+      margin-top: 0;
+
+      /deep/ .main-container {
+        height: calc(#{nb-theme(sidebar-height)} - #{nb-theme(header-height)}) !important;
+        border-top-right-radius: 0;
+
+        .scrollable {
+          padding-top: 0;
+        }
+      }
+    }
+
+    .main-btn {
+      display: none;
     }
   }
 }

@@ -106,4 +106,25 @@
 
     }
   }
+
+  @include media-breakpoint-down(sm) {
+
+    nb-sidebar.menu-sidebar {
+
+      margin-top: 0;
+
+      /deep/ .main-container {
+        height: calc(#{nb-theme(sidebar-height)} - #{nb-theme(header-height)}) !important;
+        border-top-right-radius: 0;
+
+        .scrollable {
+          padding-top: 0;
+        }
+      }
+    }
+
+    .main-btn {
+      display: none;
+    }
+  }
 }
