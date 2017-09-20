@@ -3,7 +3,8 @@ export const DEFAULT_THEME = {
   base: null,
   variables: {
 
-    temperature: ['#42db7d'],
+    // Safari fix
+    temperature: ['#42db7d', '#42db7d'],
 
     solar: {
       gradientLeft: '#42db7d',
