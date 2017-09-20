@@ -1,0 +1,101 @@
+@import '../../styles/themes';
+@import '~@nebular/theme/styles/global/bootstrap/hero-buttons';
+@import '~bootstrap/scss/mixins/breakpoints';
+@import '~@nebular/theme/styles/global/bootstrap/breakpoints';
+
+@include nb-install-component() {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+
+  .theme-switch {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    margin: 0;
+
+    & > span {
+      font-size: 1.125rem;
+      font-weight: nb-theme(font-weight-bold);
+      transition: opacity 0.3s ease;
+
+      &.light {
+        color: nb-theme(color-fg-text);
+        padding-right: 10px;
+      }
+
+      &.cosmic {
+        color: nb-theme(color-fg);
+        padding-left: 10px;
+      }
+
+      @include nb-for-theme(cosmic) {
+        &.light {
+          color: nb-theme(color-fg);
+        }
+
+        &.cosmic {
+          color: nb-theme(color-white);
+        }
+      }
+
+      &:active {
+        opacity: 0.78;
+      }
+    }
+  }
+
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 4rem;
+    height: 1.75rem;
+    margin: 0;
+
+    input {
+      display: none;
+
+      &:checked + .slider::before {
+        transform: translateX(2.25rem);
+      }
+    }
+
+    .slider {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border-radius: 1.75rem;
+      background-color: nb-theme(layout-bg);
+    }
+
+    .slider::before {
+      position: absolute;
+      content: '';
+      height: 1.75rem;
+      width: 1.75rem;
+      border-radius: 50%;
+      background-color: nb-theme(color-success);
+      transition: 0.2s;
+
+      box-shadow: 0 0 0.25rem 0 rgba(nb-theme(color-fg), 0.4);
+
+      @include nb-for-theme(cosmic) {
+        @include btn-hero-primary-gradient();
+      }
+    }
+  }
+
+  @include media-breakpoint-down(is) {
+    .light, .cosmic {
+      display: none;
+    }
+  }
+
+  @include media-breakpoint-down(xs) {
+      align-items: flex-end;
+  }
+}
