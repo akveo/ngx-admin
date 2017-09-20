@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
   selector: 'ngx-tab1',
   template: `
     <p>Early home automation began with labor-saving machines. Self-contained electric or gas powered
-      <a target="_blank" href="https://en.wikipedia.org/wiki/Home_appliances">home appliances</a> 
+      <a target="_blank" href="https://en.wikipedia.org/wiki/Home_appliances">home appliances</a>
       became viable in the 1900s with the introduction of
       <a target="_blank" href="https://en.wikipedia.org/wiki/Electric_power_distribution">electric power distribution
       </a> and led to the introduction of washing machines (1904), water heaters (1889), refrigerators, sewing machines,
