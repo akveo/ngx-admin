@@ -59,6 +59,7 @@
 
     div:first-child {
       flex: 2;
+      -ms-flex: 2 1 auto;
       line-height: 1;
       align-items: flex-end;
 
@@ -69,6 +70,7 @@
 
     .variants {
       flex: 1;
+      -ms-flex: 1 1 auto;
       display: flex;
       justify-content: space-between;
       align-items: flex-end;
