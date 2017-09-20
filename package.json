@@ -35,6 +35,8 @@
     "@angular/platform-browser-dynamic": "4.3.2",
     "@angular/router": "4.3.2",
     "@asymmetrik/angular2-leaflet": "2.1.4",
+    "@nebular/auth": "2.0.0-rc.1",
+    "@nebular/theme": "2.0.0-rc.1",
     "@ng-bootstrap/ng-bootstrap": "1.0.0-alpha.26",
     "@swimlane/ngx-charts": "5.2.0",
     "angular2-chartjs": "^0.3.0",
