@@ -47,6 +47,7 @@
   .room-text {
     cursor: pointer;
     user-select: none;
+    pointer-events: none;
     fill: nb-theme(color-fg);
   }
 
