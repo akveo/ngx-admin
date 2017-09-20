@@ -11,7 +11,9 @@ export class RoomSelectorComponent {
   selectedRoom: null;
   sortedRooms = [];
   viewBox = '-20 -20 618.88 407.99';
-  isIE = !!(navigator.userAgent.match(/Trident/) || !!navigator.userAgent.match(/MSIE/));
+  isIE = !!(navigator.userAgent.match(/Trident/)
+            || navigator.userAgent.match(/MSIE/)
+            || navigator.userAgent.match(/Edge/));
   isFirefox = navigator.userAgent.toLowerCase().indexOf('firefox') >= 0;
   roomSvg = {
     borders: [{
