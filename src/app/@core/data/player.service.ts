@@ -19,9 +19,9 @@ export class PlayerService {
       cover: './assets/images/cover1.jpg',
     },
     {
-      name: 'Good Vibrations',
-      artist: 'Marky Mark And The Funky Bunch',
-      url: 'https://p.scdn.co/mp3-preview/d502c5fa63d28442808779a3832524b4fb1c44fa',
+      name: 'Harder',
+      artist: 'Daft Punk',
+      url: 'https://p.scdn.co/mp3-preview/92a04c7c0e96bf93a1b1b1cae7dfff1921969a7b',
       cover: './assets/images/cover2.jpg',
     },
     {
