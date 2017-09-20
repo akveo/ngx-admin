@@ -4,7 +4,7 @@
 @import '~@nebular/theme/styles/themes';
 
 // which themes you what to enable (empty to enable all)
-$nb-enabled-themes: (default, light, cosmic);
+$nb-enabled-themes: (default, cosmic);
 
 $nb-themes: nb-register-theme((
  // app wise variables for each theme
