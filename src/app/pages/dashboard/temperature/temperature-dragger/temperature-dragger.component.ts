@@ -1,6 +1,5 @@
 import {
   Component, HostListener, ViewChild, ElementRef, Input, Output, EventEmitter, AfterViewInit, OnChanges,
-  ChangeDetectorRef,
 } from '@angular/core';
 
 const VIEW_BOX_SIZE = 300;
@@ -76,14 +75,16 @@ export class TemperatureDraggerComponent implements AfterViewInit, OnChanges {
   private isMouseDown = false;
   private init = false;
 
-  constructor(private changeDetectorRef: ChangeDetectorRef) {
+  constructor() {
     this.oldValue = this.value;
   }
 
   ngAfterViewInit(): void {
-    this.invalidate();
-    this.init = true;
-    this.changeDetectorRef.detectChanges();
+    // IE fix
+    setTimeout(() => {
+      this.invalidate();
+      this.init = true;
+    });
   }
 
   ngOnChanges(): void {

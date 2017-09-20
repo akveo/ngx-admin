@@ -2,11 +2,18 @@
 @import '~@nebular/theme/styles/global/bootstrap/hero-buttons';
 
 @include nb-install-component() {
-  display: flex;
   position: relative;
 
+  img {
+    width: 100%;
+    height: auto;
+    visibility: hidden;
+  }
+
   .svg-container {
-    position: relative;
+    position: absolute;
+    left: 0;
+    top: 0;
     width: 100%;
     height: 100%;
     z-index: 2;
