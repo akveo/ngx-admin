@@ -6,6 +6,22 @@
   nb-layout-column.small {
     flex: 0.15 !important;
   }
+  // hot fix for iOS, TODO: move to framework
+  /deep/ body {
+    position: relative;
+  }
+  // hot fix for iOS, TODO: move to framework
+  nb-sidebar.fixed {
+    -webkit-transform: translate3d(0, 0, 0); // ios optimisation
+    height: calc(100vh - #{nb-theme(header-height)});
+
+    /deep/ .scrollable {
+      @include media-breakpoint-down(sm) {
+        overflow-y: scroll;
+        -webkit-overflow-scrolling: touch;
+      }
+    }
+  }
 
   nb-sidebar.settings-sidebar {
     $sidebar-width: 7.5rem;
