@@ -5,16 +5,7 @@
     <a (click)="toggleSidebar()" href="#" class="navigation"><i class="nb-menu"></i></a>
     <div class="logo" (click)="goToHome()">NgX&nbsp;<span>Admin</span></div>
   </div>
-  <div class="switcher-container">
-    <label class="theme-switch">
-      <span class="light">Light</span>
-      <div class="switch">
-        <input type="checkbox" (change)="toggleTheme(theme.checked)" #theme>
-        <span class="slider"></span>
-      </div>
-      <span class="cosmic">Cosmic</span>
-    </label>
-  </div>
+  <ngx-theme-switcher></ngx-theme-switcher>
 </div>
 
 <nb-actions

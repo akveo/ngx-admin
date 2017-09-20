@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 
-import { NbMenuService, NbSidebarService, NbThemeService } from '@nebular/theme';
+import { NbMenuService, NbSidebarService } from '@nebular/theme';
 import { UserService } from '../../../@core/data/users.service';
 
 @Component({
@@ -19,7 +19,6 @@ export class HeaderComponent implements OnInit {
 
   constructor(private sidebarService: NbSidebarService,
               private menuService: NbMenuService,
-              private themeService: NbThemeService,
               private userService: UserService) {
   }
 
@@ -40,9 +39,5 @@ export class HeaderComponent implements OnInit {
 
   goToHome() {
     this.menuService.navigateHome();
-  }
-
-  toggleTheme(theme: boolean) {
-    this.themeService.changeTheme(theme ? 'cosmic' : 'default');
   }
 }
