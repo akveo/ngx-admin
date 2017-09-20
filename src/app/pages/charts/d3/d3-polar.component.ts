@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { NbThemeService } from '@nebular/theme';
 
 @Component({
@@ -18,7 +18,7 @@ import { NbThemeService } from '@nebular/theme';
     </ngx-charts-polar-chart>
   `,
 })
-export class D3PolarComponent {
+export class D3PolarComponent implements OnDestroy {
   multi = [
     {
       name: 'Germany',
@@ -81,13 +81,18 @@ export class D3PolarComponent {
   xAxisLabel = 'Country';
   yAxisLabel = 'Population';
   colorScheme: any;
+  themeSubscription: any;
 
   constructor(private theme: NbThemeService) {
-    this.theme.getJsTheme().subscribe(config => {
+    this.themeSubscription = this.theme.getJsTheme().subscribe(config => {
       const colors: any = config.variables;
       this.colorScheme = {
         domain: [colors.primaryLight, colors.infoLight, colors.successLight, colors.warningLight, colors.dangerLight],
       };
     });
+  }
+
+  ngOnDestroy(): void {
+    this.themeSubscription.unsubscribe();
   }
 }

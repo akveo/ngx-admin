@@ -1,4 +1,4 @@
-import { AfterViewInit, Component } from '@angular/core';
+import { AfterViewInit, Component, OnDestroy } from '@angular/core';
 import { NbThemeService } from '@nebular/theme';
 
 @Component({
@@ -7,14 +7,15 @@ import { NbThemeService } from '@nebular/theme';
     <div echarts [options]="options" class="echart"></div>
   `,
 })
-export class EchartsBarAnimationComponent implements AfterViewInit {
+export class EchartsBarAnimationComponent implements AfterViewInit, OnDestroy {
   options: any = {};
+  themeSubscription: any;
 
   constructor(private theme: NbThemeService) {
   }
 
   ngAfterViewInit() {
-    this.theme.getJsTheme().subscribe(config => {
+    this.themeSubscription = this.theme.getJsTheme().subscribe(config => {
       const xAxisData = [];
       const data1 = [];
       const data2 = [];
@@ -100,5 +101,9 @@ export class EchartsBarAnimationComponent implements AfterViewInit {
         data2.push((Math.cos(i / 5) * (i / 5 - 10) + i / 6) * 5);
       }
     });
+  }
+
+  ngOnDestroy(): void {
+    this.themeSubscription.unsubscribe();
   }
 }

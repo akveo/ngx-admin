@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { NbThemeService } from '@nebular/theme';
 
 @Component({
@@ -7,12 +7,13 @@ import { NbThemeService } from '@nebular/theme';
     <chart type="pie" [data]="data" [options]="options"></chart>
   `,
 })
-export class ChartjsPieComponent {
+export class ChartjsPieComponent implements OnDestroy {
   data: any;
   options: any;
+  themeSubscription: any;
 
   constructor(private theme: NbThemeService) {
-    this.theme.getJsTheme().subscribe(config => {
+    this.themeSubscription = this.theme.getJsTheme().subscribe(config => {
 
       const colors: any = config.variables;
       const chartjs: any = config.variables.chartjs;
@@ -53,5 +54,9 @@ export class ChartjsPieComponent {
         },
       };
     });
+  }
+
+  ngOnDestroy(): void {
+    this.themeSubscription.unsubscribe();
   }
 }

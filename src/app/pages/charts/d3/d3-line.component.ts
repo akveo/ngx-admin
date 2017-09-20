@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { NbThemeService } from '@nebular/theme';
 
 @Component({
@@ -17,7 +17,7 @@ import { NbThemeService } from '@nebular/theme';
     </ngx-charts-line-chart>
   `,
 })
-export class D3LineComponent {
+export class D3LineComponent implements OnDestroy {
   multi = [
     {
       name: 'Germany',
@@ -67,13 +67,18 @@ export class D3LineComponent {
   showYAxisLabel = true;
   yAxisLabel = 'Population';
   colorScheme: any;
+  themeSubscription: any;
 
   constructor(private theme: NbThemeService) {
-    this.theme.getJsTheme().subscribe(config => {
+    this.themeSubscription = this.theme.getJsTheme().subscribe(config => {
       const colors: any = config.variables;
       this.colorScheme = {
         domain: [colors.primaryLight, colors.infoLight, colors.successLight, colors.warningLight, colors.dangerLight],
       };
     });
+  }
+
+  ngOnDestroy(): void {
+    this.themeSubscription.unsubscribe();
   }
 }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { NbThemeService } from '@nebular/theme';
 
 @Component({
@@ -10,7 +10,7 @@ import { NbThemeService } from '@nebular/theme';
     </ngx-charts-advanced-pie-chart>
   `,
 })
-export class D3AdvancedPieComponent {
+export class D3AdvancedPieComponent implements OnDestroy {
   single = [
     {
       name: 'Germany',
@@ -26,13 +26,18 @@ export class D3AdvancedPieComponent {
     },
   ];
   colorScheme: any;
+  themeSubscription: any;
 
   constructor(private theme: NbThemeService) {
-    this.theme.getJsTheme().subscribe(config => {
+    this.themeSubscription = this.theme.getJsTheme().subscribe(config => {
       const colors: any = config.variables;
       this.colorScheme = {
         domain: [colors.primaryLight, colors.infoLight, colors.successLight, colors.warningLight, colors.dangerLight],
       };
     });
+  }
+
+  ngOnDestroy(): void {
+    this.themeSubscription.unsubscribe();
   }
 }

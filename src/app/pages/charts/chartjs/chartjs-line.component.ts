@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { NbThemeService, NbColorHelper } from '@nebular/theme';
 
 @Component({
@@ -7,12 +7,13 @@ import { NbThemeService, NbColorHelper } from '@nebular/theme';
     <chart type="line" [data]="data" [options]="options"></chart>
   `,
 })
-export class ChartjsLineComponent {
+export class ChartjsLineComponent implements OnDestroy {
   data: any;
   options: any;
+  themeSubscription: any;
 
   constructor(private theme: NbThemeService) {
-    this.theme.getJsTheme().subscribe(config => {
+    this.themeSubscription = this.theme.getJsTheme().subscribe(config => {
 
       const colors: any = config.variables;
       const chartjs: any = config.variables.chartjs;
@@ -72,5 +73,9 @@ export class ChartjsLineComponent {
         },
       };
     });
+  }
+
+  ngOnDestroy(): void {
+    this.themeSubscription.unsubscribe();
   }
 }
