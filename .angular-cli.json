@@ -10,6 +10,7 @@
       "assets": [
         "assets",
         "favicon.ico",
+        "favicon.png",
         {
           "glob": "**/*",
           "input": "../node_modules/leaflet/dist/images",
