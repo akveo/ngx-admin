@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { NbThemeService, NbMediaBreakpoint, NbMediaBreakpointsService } from '@nebular/theme';
 
 @Component({
@@ -6,17 +6,22 @@ import { NbThemeService, NbMediaBreakpoint, NbMediaBreakpointsService } from '@n
   styleUrls: ['./typography.component.scss'],
   templateUrl: './typography.component.html',
 })
-export class TypographyComponent {
+export class TypographyComponent implements OnDestroy {
   breakpoint: NbMediaBreakpoint;
   breakpoints: any;
+  themeSubscription: any;
 
   constructor(private themeService: NbThemeService,
               private breakpointService: NbMediaBreakpointsService) {
 
     this.breakpoints = breakpointService.getBreakpointsMap();
-    themeService.onMediaQueryChange()
+    this.themeSubscription = themeService.onMediaQueryChange()
       .subscribe(([oldValue, newValue]) => {
         this.breakpoint = newValue;
       });
+  }
+
+  ngOnDestroy() {
+    this.themeSubscription.unsubscribe();
   }
 }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { NbThemeService } from '@nebular/theme';
 
 @Component({
@@ -13,7 +13,7 @@ import { NbThemeService } from '@nebular/theme';
     </nb-card>
   `,
 })
-export class BubbleMapComponent {
+export class BubbleMapComponent implements OnDestroy {
 
   latlong: any = {};
   mapData: any[];
@@ -23,10 +23,11 @@ export class BubbleMapComponent {
 
   bubbleTheme: any;
   geoColors: any[];
+  themeSubscription: any;
 
   constructor(private theme: NbThemeService) {
 
-    this.theme.getJsTheme()
+    this.themeSubscription = this.theme.getJsTheme()
       .subscribe(config => {
 
         const colors = config.variables;
@@ -523,6 +524,10 @@ export class BubbleMapComponent {
           ],
         };
       });
+  }
+
+  ngOnDestroy() {
+    this.themeSubscription.unsubscribe();
   }
 
   private getRandomGeoColor() {

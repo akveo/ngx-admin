@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { NbThemeService } from '@nebular/theme';
 
 @Component({
@@ -6,13 +6,14 @@ import { NbThemeService } from '@nebular/theme';
   styleUrls: ['./hero-buttons.component.scss'],
   templateUrl: './hero-buttons.component.html',
 })
-export class HeroButtonComponent {
+export class HeroButtonComponent implements OnDestroy {
 
   themeName: string = 'default';
   settings: Array<any>;
+  themeSubscription: any;
 
   constructor(private themeService: NbThemeService) {
-    this.themeService.getJsTheme().subscribe(theme => {
+    this.themeSubscription = this.themeService.getJsTheme().subscribe(theme => {
       this.themeName = theme.name;
       this.init(theme.variables);
     });
@@ -114,5 +115,9 @@ export class HeroButtonComponent {
         glow: 'rgba (146, 141, 255, 1)',
       },
     }];
+  }
+
+  ngOnDestroy() {
+    this.themeSubscription.unsubscribe();
   }
 }

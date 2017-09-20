@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { NbThemeService } from '@nebular/theme';
 
 @Component({
@@ -6,7 +6,7 @@ import { NbThemeService } from '@nebular/theme';
   styleUrls: ['./temperature.component.scss'],
   templateUrl: './temperature.component.html',
 })
-export class TemperatureComponent {
+export class TemperatureComponent implements OnDestroy {
 
   temperature: number = 24;
   temperatureOff: boolean = false;
@@ -17,10 +17,15 @@ export class TemperatureComponent {
   humidityMode = 'heat';
 
   colors: any;
+  themeSubscription: any;
 
   constructor(private theme: NbThemeService) {
-    this.theme.getJsTheme().subscribe(config => {
+    this.themeSubscription = this.theme.getJsTheme().subscribe(config => {
       this.colors = config.variables;
     });
+  }
+
+  ngOnDestroy() {
+    this.themeSubscription.unsubscribe();
   }
 }

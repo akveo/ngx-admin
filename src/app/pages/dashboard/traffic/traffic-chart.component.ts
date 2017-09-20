@@ -1,4 +1,4 @@
-import { AfterViewInit, Component } from '@angular/core';
+import { AfterViewInit, Component, OnDestroy } from '@angular/core';
 import { NbThemeService } from '@nebular/theme';
 
 declare const echarts: any;
@@ -12,17 +12,18 @@ const points = [300, 520, 435, 530, 730, 620, 660, 860];
     <div echarts [options]="option" class="echart"></div>
   `,
 })
-export class TrafficChartComponent implements AfterViewInit {
+export class TrafficChartComponent implements AfterViewInit, OnDestroy {
 
   type: string = 'month';
   types = ['week', 'month', 'year'];
   option: any = {};
+  themeSubscription: any;
 
   constructor(private theme: NbThemeService) {
   }
 
   ngAfterViewInit() {
-    this.theme.getJsTheme().delay(1).subscribe(config => {
+    this.themeSubscription = this.theme.getJsTheme().delay(1).subscribe(config => {
 
       const trafficTheme: any = config.variables.traffic;
 
@@ -141,5 +142,9 @@ export class TrafficChartComponent implements AfterViewInit {
         ],
       });
     });
+  }
+
+  ngOnDestroy() {
+    this.themeSubscription.unsubscribe();
   }
 }

@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, Input } from '@angular/core';
+import { AfterViewInit, Component, Input, OnDestroy } from '@angular/core';
 import { NbThemeService } from '@nebular/theme';
 
 declare const echarts: any;
@@ -20,7 +20,7 @@ declare const echarts: any;
     </nb-card>
   `,
 })
-export class SolarComponent implements AfterViewInit {
+export class SolarComponent implements AfterViewInit, OnDestroy {
 
   private value: number = 0;
 
@@ -35,12 +35,13 @@ export class SolarComponent implements AfterViewInit {
   }
 
   option: any = {};
+  themeSubscription: any;
 
   constructor(private theme: NbThemeService) {
   }
 
   ngAfterViewInit() {
-    this.theme.getJsTheme().delay(1).subscribe(config => {
+    this.themeSubscription = this.theme.getJsTheme().delay(1).subscribe(config => {
 
       const solarTheme: any = config.variables.solar;
 
@@ -175,5 +176,9 @@ export class SolarComponent implements AfterViewInit {
         ],
       });
     });
+  }
+
+  ngOnDestroy() {
+    this.themeSubscription.unsubscribe();
   }
 }

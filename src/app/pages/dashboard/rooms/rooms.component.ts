@@ -1,4 +1,4 @@
-import { Component, HostBinding } from '@angular/core';
+import { Component, HostBinding, OnDestroy } from '@angular/core';
 import { NbThemeService, NbMediaBreakpoint, NbMediaBreakpointsService } from '@nebular/theme';
 
 @Component({
@@ -12,7 +12,7 @@ import { NbThemeService, NbMediaBreakpoint, NbMediaBreakpointsService } from '@n
     </nb-card>
   `,
 })
-export class RoomsComponent {
+export class RoomsComponent implements OnDestroy {
 
   @HostBinding('class.expanded')
   private expanded: boolean;
@@ -20,12 +20,13 @@ export class RoomsComponent {
 
   breakpoint: NbMediaBreakpoint;
   breakpoints: any;
+  themeSubscription: any;
 
   constructor(private themeService: NbThemeService,
               private breakpointService: NbMediaBreakpointsService) {
 
     this.breakpoints = breakpointService.getBreakpointsMap();
-    themeService.onMediaQueryChange()
+    this.themeSubscription = themeService.onMediaQueryChange()
       .subscribe(([oldValue, newValue]) => {
         this.breakpoint = newValue;
       });
@@ -55,5 +56,9 @@ export class RoomsComponent {
 
   private isSelected(roomNumber): boolean {
     return this.selected === roomNumber;
+  }
+
+  ngOnDestroy() {
+    this.themeSubscription.unsubscribe();
   }
 }

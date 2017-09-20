@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { NbThemeService, NbMediaBreakpoint, NbMediaBreakpointsService } from '@nebular/theme';
 
 import { UserService } from '../../../@core/data/users.service';
@@ -8,19 +8,20 @@ import { UserService } from '../../../@core/data/users.service';
   styleUrls: ['./contacts.component.scss'],
   templateUrl: './contacts.component.html',
 })
-export class ContactsComponent implements OnInit {
+export class ContactsComponent implements OnInit, OnDestroy {
 
   contacts: any[];
   recent: any[];
   breakpoint: NbMediaBreakpoint;
   breakpoints: any;
+  themeSubscription: any;
 
   constructor(private userService: UserService,
               private themeService: NbThemeService,
               private breakpointService: NbMediaBreakpointsService) {
 
     this.breakpoints = breakpointService.getBreakpointsMap();
-    themeService.onMediaQueryChange()
+    this.themeSubscription = themeService.onMediaQueryChange()
       .subscribe(([oldValue, newValue]) => {
         this.breakpoint = newValue;
       });
@@ -50,5 +51,9 @@ export class ContactsComponent implements OnInit {
           {user: users.jack, type: 'mobile', time: '8:01 am'},
         ];
       });
+  }
+
+  ngOnDestroy() {
+    this.themeSubscription.unsubscribe();
   }
 }

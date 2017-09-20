@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { NbThemeService } from '@nebular/theme';
 
 @Component({
@@ -24,14 +24,19 @@ import { NbThemeService } from '@nebular/theme';
     </nb-card>
   `,
 })
-export class TrafficComponent {
+export class TrafficComponent implements OnDestroy {
   type: string = 'month';
   types = ['week', 'month', 'year'];
   currentTheme: string;
+  themeSubscription: any;
 
   constructor(private themeService: NbThemeService) {
-    this.themeService.getJsTheme().subscribe(theme => {
+    this.themeSubscription = this.themeService.getJsTheme().subscribe(theme => {
       this.currentTheme = theme.name;
     });
+  }
+
+  ngOnDestroy() {
+    this.themeSubscription.unsubscribe();
   }
 }
