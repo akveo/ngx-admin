@@ -6,11 +6,11 @@
   ngx-room-selector {
     width: 70%;
     border-right: 2px solid nb-theme(separator);
-    background: url('/assets/images/square_pattern.svg') repeat;
+    background: url('~/assets/images/square_pattern.svg') repeat;
     background-size: 75px;
 
     @include nb-for-theme(cosmic) {
-      background-image: url('/assets/images/square_pattern_cosmic.svg');
+      background-image: url('~/assets/images/square_pattern_cosmic.svg');
     }
   }
 
