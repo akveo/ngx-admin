@@ -34,14 +34,14 @@
         "./app/@theme/styles/styles.scss"
       ],
       "scripts": [
-        "../node_modules/tinymce/tinymce.js",
-        "../node_modules/tinymce/themes/modern/theme.js",
-        "../node_modules/tinymce/plugins/link/plugin.js",
-        "../node_modules/tinymce/plugins/paste/plugin.js",
-        "../node_modules/tinymce/plugins/table/plugin.js",
+        "../node_modules/tinymce/tinymce.min.js",
+        "../node_modules/tinymce/themes/modern/theme.min.js",
+        "../node_modules/tinymce/plugins/link/plugin.min.js",
+        "../node_modules/tinymce/plugins/paste/plugin.min.js",
+        "../node_modules/tinymce/plugins/table/plugin.min.js",
         "./assets/vendors/echarts.min.js",
-        "../node_modules/echarts/map/js/world.js",
-        "../node_modules/chart.js/dist/Chart.js"
+        "./assets/vendors/echarts.world.min.js",
+        "../node_modules/chart.js/dist/Chart.min.js"
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {
