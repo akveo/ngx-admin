@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NbThemeService } from '@nebular/theme';
 import { NbJSThemeOptions } from '@nebular/theme/services/js-themes/theme.options';
+import { AnalyticsService } from '../../../@core/utils/analytics.service';
 
 @Component({
   selector: 'ngx-theme-switcher',
@@ -19,7 +20,7 @@ import { NbJSThemeOptions } from '@nebular/theme/services/js-themes/theme.option
 export class ThemeSwitcherComponent implements OnInit {
   theme: NbJSThemeOptions;
 
-  constructor(private themeService: NbThemeService) {
+  constructor(private themeService: NbThemeService, private analyticsService: AnalyticsService) {
   }
 
   ngOnInit() {
@@ -30,6 +31,7 @@ export class ThemeSwitcherComponent implements OnInit {
   toggleTheme(theme: boolean) {
     const boolTheme = this.boolToTheme(theme);
     this.themeService.changeTheme(boolTheme);
+    this.analyticsService.trackEvent('switchTheme');
   }
 
   currentBoolTheme() {
