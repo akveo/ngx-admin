@@ -30,47 +30,46 @@
           </div>
         </div>
         <div class="example-container toolbars-container">
-          <div class="row">
-            <div class="pagination-container col-xxxl-6">
-              <div class="container-title">Pagination</div>
-              <div class="btn-group btn-toggle-group btn-outline-toggle-group" data-toggle="buttons"
-                   [(ngModel)]="paginationModel" ngbRadioGroup>
-                <label class="btn btn-outline-success">
-                  <input type="radio" [value]="1"> 1
-                </label>
-                <label class="btn btn-outline-success">
-                  <input type="radio" [value]="2"> 2
-                </label>
-                <label class="btn btn-outline-success">
-                  <input type="radio" [value]="3"> 3
-                </label>
-                <label class="btn btn-outline-success">
-                  <input type="radio" [value]="4"> 4
-                </label>
-                <label class="btn btn-outline-success">
-                  <input type="radio" [value]="5"> 5
-                </label>
-              </div>
+          <div class="pagination-container">
+            <div class="container-title">Pagination</div>
+            <div class="btn-group btn-toggle-group btn-outline-toggle-group" data-toggle="buttons"
+                 [(ngModel)]="paginationModel" ngbRadioGroup>
+              <label class="btn btn-outline-success">
+                <input type="radio" [value]="1"> 1
+              </label>
+              <label class="btn btn-outline-success">
+                <input type="radio" [value]="2"> 2
+              </label>
+              <label class="btn btn-outline-success">
+                <input type="radio" [value]="3"> 3
+              </label>
+              <label class="btn btn-outline-success">
+                <input type="radio" [value]="4"> 4
+              </label>
+              <label class="btn btn-outline-success">
+                <input type="radio" [value]="5"> 5
+              </label>
             </div>
-            <div class="icon-toolbar-container col-xxxl-6">
-              <div class="container-title">Icon Toolbar</div>
-              <div class="btn-group btn-toggle-group" data-toggle="buttons">
-                <label class="btn btn-success" [class.active]="iconToolbarModel.one">
-                  <input type="checkbox" [(ngModel)]="iconToolbarModel.one"> 1
-                </label>
-                <label class="btn btn-success" [class.active]="iconToolbarModel.two">
-                  <input type="checkbox" [(ngModel)]="iconToolbarModel.two"> 2
-                </label>
-                <label class="btn btn-success" [class.active]="iconToolbarModel.three">
-                  <input type="checkbox" [(ngModel)]="iconToolbarModel.three"> 3
-                </label>
-                <label class="btn btn-success" [class.active]="iconToolbarModel.four">
-                  <input type="checkbox" [(ngModel)]="iconToolbarModel.four"> 4
-                </label>
-                <label class="btn btn-success" [class.active]="iconToolbarModel.five">
-                  <input type="checkbox" [(ngModel)]="iconToolbarModel.five"> 5
-                </label>
-              </div>
+          </div>
+
+          <div class="icon-toolbar-container">
+            <div class="container-title">Icon Toolbar</div>
+            <div class="btn-group btn-toggle-group" data-toggle="buttons">
+              <label class="btn btn-success" [class.active]="iconToolbarModel.one">
+                <input type="checkbox" [(ngModel)]="iconToolbarModel.one"> 1
+              </label>
+              <label class="btn btn-success" [class.active]="iconToolbarModel.two">
+                <input type="checkbox" [(ngModel)]="iconToolbarModel.two"> 2
+              </label>
+              <label class="btn btn-success" [class.active]="iconToolbarModel.three">
+                <input type="checkbox" [(ngModel)]="iconToolbarModel.three"> 3
+              </label>
+              <label class="btn btn-success" [class.active]="iconToolbarModel.four">
+                <input type="checkbox" [(ngModel)]="iconToolbarModel.four"> 4
+              </label>
+              <label class="btn btn-success" [class.active]="iconToolbarModel.five">
+                <input type="checkbox" [(ngModel)]="iconToolbarModel.five"> 5
+              </label>
             </div>
           </div>
         </div>

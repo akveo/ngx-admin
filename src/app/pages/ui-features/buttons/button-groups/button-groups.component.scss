@@ -6,10 +6,10 @@
 
   .toolbars-container {
     display: flex;
+    flex-direction: column;
   }
 
   .pagination-container {
-    flex: 1;
     margin-right: 1rem;
 
     .btn-group > .btn {
@@ -23,10 +23,6 @@
       padding-left: 1.125rem;
       padding-right: 1.125rem;
     }
-  }
-
-  .icon-toolbar-container {
-    flex: 1;
   }
 
   .toggle-types {
@@ -43,7 +39,7 @@
   }
 
   .example-container:not(:last-child) {
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
   }
 
   .example-container > div {
