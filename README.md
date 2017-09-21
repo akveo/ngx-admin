@@ -36,7 +36,7 @@ We will continue supporting ng2-admin version, but if you are starting from scra
 Here you can find Angular 1.x based version: [Blur Admin](http://akveo.github.io/blur-admin/)
  
 ## Documentation
-This template is based on Nebular framework, documentation and other useful articles could be found [here](https://akveo.github.io/nebular/#/docs/installation/based-on-starter-kit).
+This template is based on [Nebular framework](https://github.com/akveo/nebular), documentation and other useful articles could be found [here](https://akveo.github.io/nebular/#/docs/installation/based-on-starter-kit).
 
 
 ## BrowserStack
