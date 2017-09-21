@@ -27,14 +27,12 @@
     stroke: #bdc4cd;
     stroke-miterlimit: 10;
     fill: none;
-    transition: stroke 0.4s ease-out;
   }
 
   .room-bg {
     fill: nb-theme(card-bg);
     stroke: transparent;
     cursor: pointer;
-    transition: fill 0.4s ease-out;
     stroke-width: 4px;
   }
 

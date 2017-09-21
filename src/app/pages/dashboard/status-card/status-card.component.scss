@@ -11,7 +11,6 @@
     $bevel: btn-hero-bevel(nb-theme(card-bg));
     $shadow: nb-theme(btn-hero-shadow);
     box-shadow: $bevel, $shadow;
-    transition: all 0.1s ease-out;
 
     .icon-container {
       height: 100%;
@@ -26,7 +25,10 @@
       height: 4.75rem;
       font-size: 3.75rem;
       border-radius: nb-theme(card-border-radius);
-      transition: all 0.1s ease-out, color 0s;
+      transition: width 0.4s ease;
+      transform: translate3d(0, 0, 0);
+      -webkit-transform-style: preserve-3d;
+      -webkit-backface-visibility: hidden;
       color: nb-theme(color-white);
 
       &.primary {
