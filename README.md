@@ -7,7 +7,7 @@
 - Bootstrap 4+ & SCSS
 - Responsive layout
 - High resolution
-- Flexibly configurable themes with **hot-reload**
+- Flexibly configurable themes with **hot-reload** (2 themes included)
 - Authentication module with multiple providers
 - Lots of awesome features:
   - Buttons
@@ -22,22 +22,21 @@
   - Maps
   - Charts
   - Editors
-
+  
+And many more!
 
 ### Demo
 
 <a target="_blank" href="http://akveo.com/ngx-admin/">Live Demo</a>
 
-
 ### ng2-admin
-
-Previous version is located in [ng2-admin branch](https://github.com/akveo/ngx-admin/tree/ng2-admin)
+We will continue supporting ng2-admin version, but if you are starting from scratch we recommend using ngx-admin version. Unfortunately, there is no way to update from ng2-admin to ngx-admin, but some parts (Nebular components) could be manually included.
 
 ### Angular 1.x version
 Here you can find Angular 1.x based version: [Blur Admin](http://akveo.github.io/blur-admin/)
  
 ## Documentation
-This template is based on Nebular framework, documentation and other useful articles could be found [here](https://akveo.github.io/nebular/).
+This template is based on Nebular framework, documentation and other useful articles could be found [here](https://akveo.github.io/nebular/#/docs/installation/based-on-starter-kit).
 
 
 ## BrowserStack
@@ -51,9 +50,9 @@ This project runs its tests on multiple desktop and mobile browsers using [Brows
 - Follow us on [Twitter](https://twitter.com/akveo_inc) :feet:
 - Like our page on [Facebook](https://www.facebook.com/akveo/) :thumbsup:
 
-### Can I hire you guys?
-Yes!  Visit [our homepage](http://akveo.com/) or simply leave us a message to [contact@akveo.com](mailto:contact@akveo.com). We will be happy to work with you!
+### Looking for engineering services? 
+Visit [our homepage](http://akveo.com/) or simply leave us a message to [contact@akveo.com](mailto:contact@akveo.com). We will be happy to work with you!
 
 ### From Akveo
-Made with :heart:  by [Akveo team](http://akveo.com/). Follow us on [Twitter](https://twitter.com/akveo_inc) to get the latest news first!
+Made with :heart: by [Akveo team](http://akveo.com/). Follow us on [Twitter](https://twitter.com/akveo_inc) to get the latest news first!
 We're always happy to receive your feedback!
