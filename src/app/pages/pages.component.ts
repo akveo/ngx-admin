@@ -20,10 +20,10 @@ import { PAGES_MENU } from './pages.menu';
       <div class="al-footer-main clearfix">
         <div class="al-copy">&copy; <a href="http://akveo.com" translate>{{'general.akveo'}}</a> 2016</div>
         <ul class="al-share clearfix">
-          <li><i class="socicon socicon-facebook"></i></li>
-          <li><i class="socicon socicon-twitter"></i></li>
-          <li><i class="socicon socicon-google"></i></li>
-          <li><i class="socicon socicon-github"></i></li>
+          <li><a href="https://www.facebook.com/akveo" target="_blank"><i class="socicon socicon-facebook"></i></a></li>
+          <li><a href="https://twitter.com/akveo_inc" target="_blank"><i class="socicon socicon-twitter"></i></a></li>
+          <li><a href="mailto:contact@akveo.com"><i class="socicon socicon-google"></i></a></li>
+          <li><a href="https://github.com/akveo" target="_blank"><i class="socicon socicon-github"></i></a></li>
         </ul>
       </div>
     </footer>
