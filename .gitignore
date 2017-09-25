@@ -4,7 +4,7 @@
 /dist
 /tmp
 /out-tsc
-/docs/build
+/docs/build/ng2-admin
 
 # dependencies
 /node_modules

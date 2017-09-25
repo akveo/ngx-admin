@@ -15,6 +15,7 @@
   "scripts": {
     "ng": "ng",
     "rimraf": "rimraf",
+    "wintersmith": "wintersmith",
     "changelog": "standard-changelog",
     "start": "ng serve",
     "start:hmr": "ng serve --hmr",
@@ -36,7 +37,8 @@
     "clean": "npm cache clean && npm run rimraf -- node_modules doc typings coverage dist",
     "clean:dist": "npm run rimraf -- dist",
     "clean:coverage": "npm run rimraf -- coverage",
-    "docs:deploy": "wintersmith build -C docs && gh-pages -d docs/build",
+    "docs:build": "wintersmith build -C docs -o build/ng2-admin",
+    "docs:deploy": "npm run docs:build && gh-pages -d docs/build -r git@github.com:akveo/akveo.github.io.git -b master",
     "docs:serve": "wintersmith preview -C docs"
   },
   "private": true,
