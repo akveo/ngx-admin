@@ -12,7 +12,7 @@ import { Component } from '@angular/core';
 
       <nb-sidebar class="menu-sidebar" tag="menu-sidebar" responsive>
         <nb-sidebar-header>
-          <a href="https://github.com/akveo/nebular" target="_blank" class="btn btn-hero-success main-btn">
+          <a href="#" class="btn btn-hero-success main-btn">
             <i class="ion ion-social-github"></i> <span>Support Us</span>
           </a>
         </nb-sidebar-header>
