@@ -20,10 +20,10 @@ If you don't have any of these tools installed already, you will need to:
 **Note**: Make sure you have Node version >= 6.0 and NPM >= 3
 ## Clone repository and install dependencies
 
-You will need to clone the source code of ng2-admin GitHub repository:
+You will need to clone the source code of ngx-admin GitHub repository. ng2-admin is located in separate branch now after we released ngx-admin. Following command clones repository and checks out this branch:
 
 ```bash
-git clone https://github.com/akveo/ng2-admin.git
+git clone -b ng2-admin https://github.com/akveo/ngx-admin.git ng2-admin
 ```
 After the repository is cloned, go inside of the repository directory and install dependencies:
 
