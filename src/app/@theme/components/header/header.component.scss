@@ -12,10 +12,12 @@
     width: 100%;
     order: 0;
     flex-direction: row;
+    flex: 1;
   }
   .right {
     order: 1;
     flex-direction: row-reverse;
+    flex: 1.5;
   }
 
   .logo-containter {
@@ -25,12 +27,18 @@
 
   .control-item {
     display: block;
+
+    &.email-text {
+      height: auto;
+      a {
+        text-decoration: underline;
+      }
+    }
   }
 
   .header-container {
     display: flex;
     align-items: center;
-    width: 100%;
 
     .navigation {
       padding-right: nb-theme(padding);
