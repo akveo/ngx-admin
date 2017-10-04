@@ -1,4 +1,4 @@
-# Admin template based on Nebular framework (Angular 4+, Bootstrap 4+)
+# Admin template based on Angular 4+, Bootstrap 4 and <a href="https://github.com/akveo/nebular">Nebular</a>
 <a target="_blank" href="http://akveo.com/ngx-admin/"><img src="https://i.imgur.com/7BxWBBq.png"/></a>
 
 ### What's included:
@@ -36,7 +36,7 @@ We will continue supporting ng2-admin version, but if you are starting from scra
 Here you can find Angular 1.x based version: [Blur Admin](http://akveo.github.io/blur-admin/)
  
 ## Documentation
-This template is based on [Nebular framework](https://github.com/akveo/nebular), documentation and other useful articles could be found [here](https://akveo.github.io/nebular/#/docs/installation/based-on-starter-kit).
+This template is using [Nebular](https://github.com/akveo/nebular) modules set, documentation and other useful articles could be found [here](https://akveo.github.io/nebular/#/docs/installation/based-on-starter-kit).
 
 
 ## BrowserStack
