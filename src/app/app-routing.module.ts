@@ -10,7 +10,7 @@ import {
 } from '@nebular/auth';
 
 const routes: Routes = [
-  { path: 'pages', loadChildren: 'app/pages/pages.module#PagesModule' },
+  { path: 'pages', loadChildren: './pages/pages.module#PagesModule' },
   {
     path: 'auth',
     component: NbAuthComponent,
@@ -46,7 +46,7 @@ const routes: Routes = [
 ];
 
 const config: ExtraOptions = {
-  useHash: true,
+  useHash: false,
 };
 
 @NgModule({
