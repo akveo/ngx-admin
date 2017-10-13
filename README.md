@@ -1,5 +1,5 @@
 # Admin template based on Angular 4+, Bootstrap 4 and <a href="https://github.com/akveo/nebular">Nebular</a>
-<a target="_blank" href="http://akveo.com/ngx-admin/"><img src="https://i.imgur.com/hGncUJl.gif"/></a>
+<a target="_blank" href="http://akveo.com/ngx-admin/"><img src="https://i.imgur.com/XoJtfvK.gif"/></a>
 
 ### What's included:
 
