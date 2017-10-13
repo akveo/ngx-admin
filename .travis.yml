@@ -1,0 +1,34 @@
+sudo: false
+
+language: node_js
+
+node_js:
+  - '6'
+  - '7'
+  - '8'
+
+cache:
+  directories:
+    - node_modules
+
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      - g++-4.8
+
+before_install: if [[ `npm -v` != 5* ]]; then npm i -g npm@5; fi
+
+install:
+  - npm i
+
+script:
+  - npm run lint:ci
+  - npm run build:ci
+
+git:
+  depth: 1
+
+notifications:
+  slack: akveo:q559HckfZMSyZRb803aiLcjH
