@@ -31,6 +31,7 @@
         "../node_modules/font-awesome/scss/font-awesome.scss",
         "../node_modules/nebular-icons/scss/nebular-icons.scss",
         "../node_modules/socicon/css/socicon.css",
+        "./assets/vendors/pace/pace-theme-flash.scss",
         "./app/@theme/styles/styles.scss"
       ],
       "scripts": [
@@ -41,7 +42,8 @@
         "../node_modules/tinymce/plugins/table/plugin.min.js",
         "./assets/vendors/echarts.min.js",
         "./assets/vendors/echarts.world.min.js",
-        "../node_modules/chart.js/dist/Chart.min.js"
+        "../node_modules/chart.js/dist/Chart.min.js",
+        "./assets/vendors/pace/pace.min.js"
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {
