@@ -55,6 +55,7 @@
     "ng2-tree": "2.0.0-alpha.5",
     "ngx-echarts": "1.2.2",
     "normalize.css": "6.0.0",
+    "pace-js": "^1.0.2",
     "roboto-fontface": "0.8.0",
     "rxjs": "5.4.2",
     "socicon": "^3.0.5",
