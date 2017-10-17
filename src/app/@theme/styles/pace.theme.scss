@@ -15,7 +15,8 @@
   }
 
   .pace .pace-activity {
-    border-top-color: nb-theme(color-fg-highlight);
-    border-left-color: nb-theme(color-fg-highlight);
+    display: none;
+    // border-top-color: nb-theme(color-fg-highlight);
+    // border-left-color: nb-theme(color-fg-highlight);
   }
 }
