@@ -19,6 +19,8 @@
     "lint:ci": "npm run lint && npm run lint:styles",
     "pree2e": "webdriver-manager update --standalone false --gecko false",
     "e2e": "ng e2e",
+    "docs": "compodoc -p src/tsconfig.app.json -d docs",
+    "docs:serve": "compodoc -p src/tsconfig.app.json -d docs -s",
     "prepush": "npm run lint:ci"
   },
   "dependencies": {
@@ -69,6 +71,7 @@
     "@angular/cli": "1.2.6",
     "@angular/compiler-cli": "4.3.2",
     "@angular/language-service": "4.3.2",
+    "@compodoc/compodoc": "^1.0.1",
     "@types/d3-color": "1.0.4",
     "@types/jasmine": "2.5.38",
     "@types/jasminewd2": "2.0.2",
