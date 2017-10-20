@@ -14,7 +14,7 @@ const points = [300, 520, 435, 530, 730, 620, 660, 860];
 })
 export class TrafficChartComponent implements AfterViewInit, OnDestroy {
 
-  type: string = 'month';
+  type = 'month';
   types = ['week', 'month', 'year'];
   option: any = {};
   themeSubscription: any;

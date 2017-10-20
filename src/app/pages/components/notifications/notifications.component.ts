@@ -13,18 +13,18 @@ export class NotificationsComponent {
 
   config: ToasterConfig;
 
-  position: string = 'toast-top-right';
-  animationType: string = 'fade';
-  title: string = 'HI there!';
-  content: string = `I'm cool toaster!`;
-  timeout: number = 5000;
-  toastsLimit: number = 5;
-  type: string = 'default';
+  position = 'toast-top-right';
+  animationType = 'fade';
+  title = 'HI there!';
+  content = `I'm cool toaster!`;
+  timeout = 5000;
+  toastsLimit = 5;
+  type = 'default';
 
-  isNewestOnTop: boolean = true;
-  isHideOnClick: boolean = true;
-  isDuplicatesPrevented: boolean = false;
-  isCloseButton: boolean = true;
+  isNewestOnTop = true;
+  isHideOnClick = true;
+  isDuplicatesPrevented = false;
+  isCloseButton = true;
 
   types: string[] = ['default', 'info', 'success', 'warning', 'error'];
   animations: string[] = ['fade', 'flyLeft', 'flyRight', 'slideDown', 'slideUp'];
@@ -49,7 +49,7 @@ export class NotificationsComponent {
     const quote = this.quotes[quoteIndex];
 
     this.showToast(type, quote.title, quote.body);
-  };
+  }
 
   private showToast(type: string, title: string, body: string) {
     this.config = new ToasterConfig({

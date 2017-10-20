@@ -29,7 +29,7 @@ export class SecurityCamerasComponent {
     title: 'Log out',
   }];
 
-  isSingleView: boolean = false;
+  isSingleView = false;
 
   selectCamera(camera: any) {
     this.selectedCamera = camera;

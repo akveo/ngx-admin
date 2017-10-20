@@ -8,7 +8,7 @@ import { NbThemeService } from '@nebular/theme';
 })
 export class HeroButtonComponent implements OnDestroy {
 
-  themeName: string = 'default';
+  themeName = 'default';
   settings: Array<any>;
   themeSubscription: any;
 

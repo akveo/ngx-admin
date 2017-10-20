@@ -22,5 +22,5 @@ export class StatusCardComponent {
 
   @Input() title: string;
   @Input() type: string;
-  @Input() on: boolean = true;
+  @Input() on = true;
 }

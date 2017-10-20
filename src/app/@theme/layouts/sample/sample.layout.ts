@@ -122,7 +122,7 @@ export class SampleLayoutComponent  implements OnDestroy {
 
     this.sidebarState$ = this.stateService.onSidebarState()
       .subscribe((sidebar: string) => {
-        this.sidebar = sidebar
+        this.sidebar = sidebar;
       });
 
     const isBp = this.bpService.getByName('is');

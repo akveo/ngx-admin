@@ -22,7 +22,7 @@ declare const echarts: any;
 })
 export class SolarComponent implements AfterViewInit, OnDestroy {
 
-  private value: number = 0;
+  private value = 0;
 
   @Input('chartValue')
   set chartValue(value: number) {

@@ -25,7 +25,7 @@ import { NbThemeService } from '@nebular/theme';
   `,
 })
 export class TrafficComponent implements OnDestroy {
-  type: string = 'month';
+  type = 'month';
   types = ['week', 'month', 'year'];
   currentTheme: string;
   themeSubscription: any;

@@ -14,21 +14,21 @@ export class TemperatureDraggerComponent implements AfterViewInit, OnChanges {
   @ViewChild('svgRoot') svgRoot: ElementRef;
 
   @Input() fillColors: string|string[] = '#2ec6ff';
-  @Input() disableArcColor: string = '#999999';
-  @Input() bottomAngle: number = 90;
-  @Input() arcThickness: number = 18; // CSS pixels
-  @Input() thumbRadius: number = 16; // CSS pixels
-  @Input() thumbBorder: number = 3;
-  @Input() maxLeap: number = 0.4;
+  @Input() disableArcColor = '#999999';
+  @Input() bottomAngle = 90;
+  @Input() arcThickness = 18; // CSS pixels
+  @Input() thumbRadius = 16; // CSS pixels
+  @Input() thumbBorder = 3;
+  @Input() maxLeap = 0.4;
 
-  value: number = 50;
+  value = 50;
   @Output('valueChange') valueChange = new EventEmitter<Number>();
   @Input('value') set setValue(value) {
     this.value = value;
   }
 
-  @Input() min: number = 0; // min output value
-  @Input() max: number = 100; // max output value
+  @Input() min = 0; // min output value
+  @Input() max = 100; // max output value
   @Input() step = 0.1;
 
   @Output() power = new EventEmitter<boolean>();
@@ -49,13 +49,13 @@ export class TemperatureDraggerComponent implements AfterViewInit, OnChanges {
     this.invalidate();
   }
 
-  off: boolean = false;
+  off = false;
   oldValue: number;
 
   svgControlId = new Date().getTime();
-  scaleFactor: number = 1;
+  scaleFactor = 1;
   bottomAngleRad = 0;
-  radius: number = 100;
+  radius = 100;
   translateXValue = 0;
   translateYValue = 0;
   thickness = 6;
