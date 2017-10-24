@@ -2,6 +2,13 @@
   "name": "ngx-admin",
   "version": "2.0.0",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/akveo/ngx-admin.git"
+  },
+  "bugs": {
+    "url": "https://github.com/akveo/ngx-admin/issues"
+  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -35,13 +42,13 @@
     "@angular/platform-browser-dynamic": "^4.4.6",
     "@angular/router": "^4.4.6",
     "@asymmetrik/angular2-leaflet": "2.1.4",
-    "@nebular/auth": "2.0.0-rc.2",
-    "@nebular/theme": "2.0.0-rc.2",
-    "@ng-bootstrap/ng-bootstrap": "1.0.0-alpha.26",
+    "@nebular/auth": "2.0.0-rc.3",
+    "@nebular/theme": "2.0.0-rc.3",
+    "@ng-bootstrap/ng-bootstrap": "1.0.0-beta.5",
     "@swimlane/ngx-charts": "5.2.0",
     "angular2-chartjs": "^0.3.0",
     "angular2-toaster": "4.0.0",
-    "bootstrap": "4.0.0-alpha.6",
+    "bootstrap": "4.0.0-beta.2",
     "chart.js": "2.5.0",
     "ckeditor": "4.6.2",
     "classlist.js": "1.1.20150312",

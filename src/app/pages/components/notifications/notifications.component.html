@@ -9,11 +9,11 @@
       <div class="col-md-6 col-sm-12">
         <div class="form-group">
           <label class="form-control-label">Place to show toast:</label>
-          <div ngbDropdown>
+          <div class="dropdown" ngbDropdown>
             <button class="btn btn-primary" type="button" ngbDropdownToggle>
               {{ position }}
             </button>
-            <ul class="dropdown-menu">
+            <ul ngbDropdown class="dropdown-menu">
               <li class="dropdown-item" *ngFor="let p of positions" (click)="position = p">
                 {{ p }}
               </li>
@@ -22,11 +22,11 @@
         </div>
         <div class="form-group">
           <label class="form-control-label">Animation type:</label>
-          <div ngbDropdown>
+          <div class="dropdown" ngbDropdown>
             <button class="btn btn-primary" type="button" ngbDropdownToggle>
               {{ animationType }}
             </button>
-            <ul class="dropdown-menu">
+            <ul ngbDropdown class="dropdown-menu">
               <li class="dropdown-item" *ngFor="let at of animations" (click)="animationType = at">
                 {{ at }}
               </li>
@@ -56,11 +56,11 @@
         </div>
         <div class="form-group">
           <label class="form-control-label">Toast type:</label>
-          <div ngbDropdown>
+          <div class="dropdown" ngbDropdown>
             <button class="btn btn-primary" type="button" ngbDropdownToggle>
               {{ type }}
             </button>
-            <ul class="dropdown-menu">
+            <ul ngbDropdown class="dropdown-menu">
               <li class="dropdown-item" *ngFor="let t of types" (click)="type = t">{{ t }}</li>
             </ul>
           </div>

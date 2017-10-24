@@ -1,40 +1,40 @@
 <nb-card>
   <nb-card-header>Button Dropdowns</nb-card-header>
   <nb-card-body>
-    <div class="btn-group" ngbDropdown>
+    <div class="dropdown btn-group" ngbDropdown>
       <button type="button" class="btn btn-primary">Dropdown</button>
       <button type="button" class="btn btn-primary" ngbDropdownToggle></button>
-      <ul class="dropdown-menu">
+      <ul class="dropdown-menu" ngbDropdownMenu>
         <li class="dropdown-item">Icon Button</li>
         <li class="dropdown-item">Hero Button</li>
         <li class="dropdown-item">Default</li>
       </ul>
     </div>
-    <div ngbDropdown>
+    <div class="dropdown" ngbDropdown>
       <button class="btn btn-primary" type="button" ngbDropdownToggle>
         Dropdown
       </button>
-      <ul class="dropdown-menu">
+      <ul class="dropdown-menu" ngbDropdownMenu>
         <li class="dropdown-item">Icon Button</li>
         <li class="dropdown-item">Hero Button</li>
         <li class="dropdown-item">Default</li>
       </ul>
     </div>
-    <div ngbDropdown>
+    <div class="dropdown" placement="top" ngbDropdown>
       <button class="btn btn-outline-primary" type="button" ngbDropdownToggle>
-        Dropdown
+        Dropup
       </button>
-      <ul class="dropdown-menu">
+      <ul class="dropdown-menu" ngbDropdownMenu>
         <li class="dropdown-item">Icon Button</li>
         <li class="dropdown-item">Hero Button</li>
         <li class="dropdown-item">Default</li>
       </ul>
     </div>
-    <div class="ghost-dropdown" ngbDropdown>
+    <div class="dropdown ghost-dropdown" ngbDropdown>
       <button class="btn btn-primary" type="button" ngbDropdownToggle>
         Dropdown
       </button>
-      <ul class="dropdown-menu">
+      <ul class="dropdown-menu" ngbDropdownMenu>
         <li class="dropdown-item">Icon Button</li>
         <li class="dropdown-item">Hero Button</li>
         <li class="dropdown-item">Default</li>

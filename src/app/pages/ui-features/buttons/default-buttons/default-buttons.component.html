@@ -1,11 +1,11 @@
 <nb-card>
   <nb-card-header>
     <span>Default Buttons</span>
-    <div ngbDropdown>
+    <div class="dropdown" ngbDropdown>
       <button class="btn btn-primary" type="button" ngbDropdownToggle>
         {{ selectedView.title }}
       </button>
-      <ul class="dropdown-menu">
+      <ul class="dropdown-menu" ngbDropdownMenu>
         <li class="dropdown-item" *ngFor="let v of buttonsViews" (click)="this.selectedView = v">{{ v.title }}</li>
       </ul>
     </div>

@@ -8,12 +8,12 @@ import { NbThemeService } from '@nebular/theme';
     <nb-card size="xsmall">
       <nb-card-header>
         <span>Traffic Consumption</span>
-        <div class="ghost-dropdown" ngbDropdown>
+        <div class="dropdown ghost-dropdown" ngbDropdown>
           <button type="button" class="btn btn-sm" ngbDropdownToggle
                   [ngClass]="{ 'btn-success': currentTheme == 'default', 'btn-primary': currentTheme != 'default'}">
             {{ type }}
           </button>
-          <ul class="dropdown-menu">
+          <ul ngbDropdown class="dropdown-menu">
             <li class="dropdown-item" *ngFor="let t of types" (click)="type = t">{{ t }}</li>
           </ul>
         </div>

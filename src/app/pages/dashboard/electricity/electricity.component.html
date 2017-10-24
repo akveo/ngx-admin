@@ -40,12 +40,12 @@
         </div>
       </div>
 
-      <div ngbDropdown>
+      <div class="dropdown" ngbDropdown>
         <button type="button" ngbDropdownToggle class="btn"
                 [ngClass]="{ 'btn-outline-success': currentTheme == 'default', 'btn-primary': currentTheme != 'default'}">
           {{ type }}
         </button>
-        <ul class="dropdown-menu">
+        <ul class="dropdown-menu" ngbDropdownMenu>
           <li class="dropdown-item" *ngFor="let t of types" (click)="type = t">{{ t }}</li>
         </ul>
       </div>
