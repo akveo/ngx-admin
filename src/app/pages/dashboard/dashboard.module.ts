@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { AngularEchartsModule } from 'ngx-echarts';
 
 import { ThemeModule } from '../../@theme/theme.module';
@@ -19,6 +19,7 @@ import { SolarComponent } from './solar/solar.component';
 import { PlayerComponent } from './rooms/player/player.component';
 import { TrafficComponent } from './traffic/traffic.component';
 import { TrafficChartComponent } from './traffic/traffic-chart.component';
+import { EnhancedCardsComponent } from './enhanced-cards/enhanced-cards.component';
 
 
 @NgModule({
@@ -44,6 +45,8 @@ import { TrafficChartComponent } from './traffic/traffic-chart.component';
     SolarComponent,
     TrafficComponent,
     TrafficChartComponent,
+    EnhancedCardsComponent,
   ],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
 })
 export class DashboardModule { }

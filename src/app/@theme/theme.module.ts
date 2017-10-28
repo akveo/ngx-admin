@@ -24,6 +24,10 @@ import {
   ThemeSettingsComponent,
   ThemeSwitcherComponent,
   TinyMCEComponent,
+  CardComponent,
+  CardAccentComponent,
+  FlipCardComponent,
+  RevealCardComponent,
 } from './components';
 import { CapitalizePipe, PluralPipe, RoundPipe, TimingPipe } from './pipes';
 import {
@@ -58,6 +62,10 @@ const COMPONENTS = [
   SearchInputComponent,
   ThemeSettingsComponent,
   TinyMCEComponent,
+  CardComponent,
+  CardAccentComponent,
+  FlipCardComponent,
+  RevealCardComponent,
   OneColumnLayoutComponent,
   SampleLayoutComponent,
   ThreeColumnsLayoutComponent,

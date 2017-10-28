@@ -1,0 +1,16 @@
+<div class="revealcard ngx-card-{{size}}" [ngClass]="{'revealed': revealed}">
+  <div class="card-front">
+      <ng-content select=".card-front"></ng-content>
+      <a class="reveal-button" (click)="revealed = true">
+        <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+      </a>
+  </div>
+  <div class="card-back">
+    <div class="reveal">
+        <ng-content select=".card-back"></ng-content>
+        <a class="reveal-button" (click)="revealed = false">
+          <i class="fa fa-times" aria-hidden="true"></i>
+        </a>
+    </div>
+  </div>
+</div>

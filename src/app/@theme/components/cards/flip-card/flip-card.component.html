@@ -1,0 +1,16 @@
+<div class="flipcard-container">
+  <div class="flipcard ngx-card-{{size}}" [ngClass]="{'flipped': flipped}">
+    <div class="card-front">
+      <ng-content select=".card-front"></ng-content>
+      <a class="flip-button" (click)="flipped = true">
+        <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
+      </a>
+    </div>
+    <div class="card-back">
+      <ng-content select=".card-back"></ng-content>
+      <a class="flip-button" (click)="flipped = false">
+        <i class="fa fa-reply" aria-hidden="true"></i>
+      </a>
+    </div>
+  </div>
+</div>
