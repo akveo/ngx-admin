@@ -37,7 +37,8 @@
               "node_modules/nebular-icons/scss/nebular-icons.scss",
               "node_modules/angular-tree-component/dist/angular-tree-component.css",
               "node_modules/pace-js/templates/pace-theme-flash.tmpl.css",
-              "src/app/@theme/styles/styles.scss"
+              "src/app/@theme/styles/styles.scss",
+			  "node_modules/fullcalendar/dist/fullcalendar.css",
             ],
             "scripts": [
               "node_modules/pace-js/pace.min.js",
