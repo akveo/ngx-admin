@@ -15,7 +15,7 @@ const NB_CORE_PROVIDERS = [
         service: NbEmailPassAuthProvider,
         config: {
           delay: 3000,
-          baseEndpoint: AppConfig.API_ENDPOINT,
+          baseEndpoint: AppConfig.RE_API_ENDPOINT,
           login: {
             rememberMe: true,
             endpoint: '/api/authenticate',
