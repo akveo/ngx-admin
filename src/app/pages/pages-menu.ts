@@ -6,7 +6,9 @@ export const MENU_ITEMS: NbMenuItem[] = [
     icon: 'nb-home',
     link: '/pages/dashboard',
     home: true,
-  },
+  }
+
+  /**
   {
     title: 'FEATURES',
     group: true,
@@ -155,4 +157,5 @@ export const MENU_ITEMS: NbMenuItem[] = [
       },
     ],
   },
+  */
 ];
