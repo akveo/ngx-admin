@@ -4,6 +4,7 @@ import { PagesComponent } from './pages.component';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { PagesRoutingModule } from './pages-routing.module';
 import { ThemeModule } from '../@theme/theme.module';
+import { RecoPlaylistsModule } from './rec-playlists/reco-playlists.module';
 
 const PAGES_COMPONENTS = [
   PagesComponent,
@@ -14,6 +15,7 @@ const PAGES_COMPONENTS = [
     PagesRoutingModule,
     ThemeModule,
     DashboardModule,
+    RecoPlaylistsModule,
   ],
   declarations: [
     ...PAGES_COMPONENTS,
