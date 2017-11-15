@@ -22,7 +22,7 @@ export class NluPreferencesService {
   getUserPreferences(userId) {
     console.log("Calling Nlu :"+AppConfig.NLU_API_ENDPOINT+'/user_get_preferences');
 
-    return this.http.post(AppConfig.RE_API_ENDPOINT+'/user_get_preferences', {
+    return this.http.post(AppConfig.NLU_API_ENDPOINT+'/user_get_preferences', {
       user_id: userId
     }).subscribe();
   }
