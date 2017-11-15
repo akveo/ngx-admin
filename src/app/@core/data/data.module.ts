@@ -7,6 +7,7 @@ import { StateService } from './state.service';
 import { SmartTableService } from './smart-table.service';
 import { PlayerService } from './player.service';
 import { RecommendationEngineService } from './recommendation-engine.service';
+import { UserInfo } from './model/user-info.model';
 
 const SERVICES = [
   UserService,
@@ -21,6 +22,7 @@ const SERVICES = [
   imports: [
     CommonModule,
   ],
+  declarations: [ UserInfo ],
   providers: [
     ...SERVICES,
   ],
