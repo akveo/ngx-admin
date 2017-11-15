@@ -8,4 +8,5 @@ export class AppConfig {
 
   public static AUTH_LOGIN = 'api/auth/login';
   public static RE_USER_INFO = 'api/analytics/user';
+  public static RE_USER_PLAYLIST = 'api/analytics/music/playlist';
 }

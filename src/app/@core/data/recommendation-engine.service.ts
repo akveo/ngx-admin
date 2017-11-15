@@ -17,4 +17,12 @@ export class RecommendationEngineService {
       params : new HttpParams().set('user_id', userId)
     });
   }
+
+  getPlaylists(userId) {
+    const endpoint = AppConfig.RE_API_ENDPOINT+AppConfig.RE_USER_PLAYLIST;
+    console.log("getPlaylists => "+endpoint);
+    return this.http.get(endpoint, {
+      params : new HttpParams().set('user_id', userId)
+    });
+  }
 }
