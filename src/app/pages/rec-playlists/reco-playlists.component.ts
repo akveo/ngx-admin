@@ -20,11 +20,7 @@ export class RecoPlaylistsComponent implements OnInit{
   ngOnInit() {
   }
 
-  loadData() {
-    this.getUserInformation();
-  }
-
-  private getUserInformation() {
+  getUserInformation() {
     console.log("get preference :"+this.userId);
     this.recommendationEngine.getUserInfo(this.userId)
     .subscribe((res : UserInfo)=>{

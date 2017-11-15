@@ -6,7 +6,7 @@
                 <div class="input-group">
                     <input type="text" class="form-control" placeholder="User ID..." [(ngModel)]="userId">
                     <span class="input-group-btn">
-              <button class="btn btn-danger" (click)="loadData()">
+              <button class="btn btn-danger" (click)="getUserInformation()">
                 Search
               </button>
             </span>
@@ -53,5 +53,13 @@
                 </nb-tabset>
             </nb-card-body>
         </nb-card>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-xxxl-9 col-xl-12">
+        <button class="btn btn-danger" (click)="loadData()">
+            Refresh Playlists
+          </button>
     </div>
 </div>
