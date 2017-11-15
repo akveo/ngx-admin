@@ -6,6 +6,7 @@ import {Observable} from 'rxjs';
 
 @Component({
   selector: 'reco-playlist',
+  styleUrls: ['./reco-playlists.component.scss'],
   templateUrl: './reco-playlists.component.html',
 })
 export class RecoPlaylistsComponent implements OnInit{
@@ -13,7 +14,8 @@ export class RecoPlaylistsComponent implements OnInit{
     private recommendationEngine: RecommendationEngineService,
   ) {}
 
-  private userInfo: UserInfo;
+  userInfo: UserInfo;
+  userId: string;
 
   ngOnInit() {
   }
@@ -23,9 +25,9 @@ export class RecoPlaylistsComponent implements OnInit{
   }
 
   private getUserInformation() {
-    console.log("get preference");
-
-    this.recommendationEngine.getUserInfo("dulan.dissanayake@iamplus.com").subscribe((res : UserInfo)=>{
+    console.log("get preference :"+this.userId);
+    this.recommendationEngine.getUserInfo(this.userId)
+    .subscribe((res : UserInfo)=>{
       this.userInfo = res;
       console.log(" userInfo "+this.userInfo.user_id);
     });
