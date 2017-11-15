@@ -6,7 +6,6 @@ import { ElectricityService } from './electricity.service';
 import { StateService } from './state.service';
 import { SmartTableService } from './smart-table.service';
 import { PlayerService } from './player.service';
-import { NluPreferencesService } from './nlu-preferences.service';
 import { RecommendationEngineService } from './recommendation-engine.service';
 
 const SERVICES = [
@@ -15,7 +14,6 @@ const SERVICES = [
   StateService,
   SmartTableService,
   PlayerService,
-  NluPreferencesService,
   RecommendationEngineService,
 ];
 

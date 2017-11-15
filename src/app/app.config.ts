@@ -7,6 +7,5 @@ export class AppConfig {
   public static NLU_API_ENDPOINT = 'http://nlu-'+AppConfig.ENVIRONMENT+'.aneeda.ai:8080/';
 
   public static AUTH_LOGIN = 'api/auth/login';
-  public static USER_PREFERENCE_PATH = 'user_get_preferences';
-  public static MUSIC_ARTIST_PATH = 'api/analytics/music/artists';
+  public static RE_USER_INFO = 'api/analytics/user';
 }

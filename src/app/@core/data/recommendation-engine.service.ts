@@ -19,8 +19,8 @@ export class RecommendationEngineService {
 
   }
 
-  getFavouriteHistoryArtists(userId) {
-    const endpoint = AppConfig.RE_API_ENDPOINT+AppConfig.MUSIC_ARTIST_PATH;
+  getUserInfo(userId) {
+    const endpoint = AppConfig.RE_API_ENDPOINT+AppConfig.RE_USER_INFO;
     console.log("Calling RE :"+endpoint);
     let parameters = new HttpParams().set('user_id', userId);
     return this.http.get(endpoint, { params : parameters }).subscribe();
