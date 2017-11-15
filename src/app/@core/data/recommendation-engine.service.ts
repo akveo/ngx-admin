@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient , HttpParams} from '@angular/common/http';
 import 'rxjs/add/observable/of';
 import 'rxjs/add/operator/map';
 import {Observable} from 'rxjs';
@@ -14,17 +14,15 @@ export class UserPreference {
 }
 
 @Injectable()
-export class NluPreferencesService {  
+export class RecommendationEngineService {  
   constructor(private http: HttpClient) {
 
   }
 
-  getUserPreferences(userId) {
-    const endpoint = AppConfig.NLU_API_ENDPOINT+AppConfig.USER_PREFERENCE_PATH;
-    console.log("Calling Nlu :"+endpoint);
-
-    return this.http.post(endpoint, {
-      user_id: userId
-    }).subscribe();
+  getFavouriteHistoryArtists(userId) {
+    const endpoint = AppConfig.RE_API_ENDPOINT+AppConfig.MUSIC_ARTIST_PATH;
+    console.log("Calling RE :"+endpoint);
+    let parameters = new HttpParams().set('user_id', userId);
+    return this.http.get(endpoint, { params : parameters }).subscribe();
   }
 }

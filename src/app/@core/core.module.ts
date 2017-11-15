@@ -18,7 +18,7 @@ const NB_CORE_PROVIDERS = [
           baseEndpoint: AppConfig.RE_API_ENDPOINT,
           login: {
             rememberMe: true,
-            endpoint: '/api/authenticate',
+            endpoint: AppConfig.AUTH_LOGIN,
             redirect: {
               success: '/pages',
               failure: null,
