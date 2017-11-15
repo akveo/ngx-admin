@@ -29,6 +29,5 @@ export class RecoPlaylistsComponent implements OnInit{
       this.userInfo = res;
       console.log(" userInfo "+this.userInfo.user_id);
     });
-    
   }
 }
