@@ -39,6 +39,7 @@
 //     },
 //     "intent":"proactive_recommendations"
 //  }
+import { Track } from './track.model';
 
 export class Playlists {
     fields?: Fields;
@@ -52,24 +53,12 @@ class Fields {
 class Recommendations {
     type?: string;
     name?: string;
-    items?: Items[];
+    items?: Item[];
 }
   
-class Items {
+class Item {
     type?: string;
     title?: string;
     card_token?: string;
-    items?: Tracks[];
-}
-
-class Tracks {
-    name?: string;
-    type?: string;
-    stream_url?: string;
-    duration?: number;
-    album?: Album;
-}
-
-class Album {
-    image?: string;
+    items?: Track[];
 }

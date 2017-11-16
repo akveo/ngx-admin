@@ -4,6 +4,7 @@ import { RecommendationEngineService } from '../../@core/data/recommendation-eng
 import { UserInfo } from '../../@core/data/model/user-info.model';
 import { Playlists } from '../../@core/data/model/playlists.model';
 import {Observable} from 'rxjs';
+import { Output } from '@angular/core/src/metadata/directives';
 
 @Component({
   selector: 'reco-playlist',
@@ -16,6 +17,7 @@ export class RecoPlaylistsComponent implements OnInit{
   ) {}
 
   userInfo: UserInfo;
+  
   playlists: Playlists;
   userId: string;
 
