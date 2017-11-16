@@ -1,14 +1,15 @@
-import { Component, EventEmitter, OnInit, Input } from '@angular/core';
+import { Component, EventEmitter, OnInit, Input, ChangeDetectorRef } from '@angular/core';
 import { Recommendations } from '../../../../@core/data/model/recommendations.model';
+import { Item } from '../../../../@core/data/model/item.model';
 
 @Component({
   selector: 'ngx-playlist-selector',
   template: `
   <nb-tabset>
-    <nb-tab tabTitle="Test" *ngFor="let playlist of recommendations.items">
-      <div class="contact">
-           <nb-user [name]="playlist.title" size="small">
-          </nb-user>
+    <nb-tab *ngFor="let playlist of items" [tabTitle]="playlist.name">
+      <div class="contact" *ngFor="let track of playlist.items">
+           <nb-user [name]="track.name" size="small">
+           </nb-user>
       </div>
     </nb-tab>
   </nb-tabset>
@@ -18,10 +19,20 @@ export class PlaylistSelectorComponent implements OnInit{
   @Input()
   recommendations : Recommendations;
 
-  constructor() {
+  items: Item[];
+
+  constructor(private cdRef: ChangeDetectorRef) {
   }
 
   ngOnInit() {
-    this.recommendations.items
+    this.items = this.recommendations.items;
+  }
+
+  /**
+   * Fix for ExpressionChangedAfterItHasBeenCheckedError issue in angular 4
+   */
+  ngAfterViewChecked()
+  {
+    this.cdRef.detectChanges();
   }
 }

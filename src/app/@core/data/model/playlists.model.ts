@@ -39,7 +39,6 @@
 //     },
 //     "intent":"proactive_recommendations"
 //  }
-import { Recommendations } from './recommendations.model';
 import { Fields } from './fields.model';
 
 export class Playlists {

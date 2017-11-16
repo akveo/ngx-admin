@@ -39,17 +39,10 @@
 //     },
 //     "intent":"proactive_recommendations"
 //  }
-import { Track } from './track.model';
+import { Item } from './item.model';
 
 export class Recommendations {
     type?: string;
     name?: string;
     items?: Item[];
-}
-  
-class Item {
-    type?: string;
-    title?: string;
-    card_token?: string;
-    items?: Track[];
 }
