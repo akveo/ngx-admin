@@ -1,0 +1,71 @@
+<div class="row">
+    <div class="col-xxxl-9 col-xl-12">
+        <nb-card>
+            <nb-card-header>Search</nb-card-header>
+            <nb-card-body>
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="User ID..." [(ngModel)]="userId">
+                    <span class="input-group-btn">
+              <button class="btn btn-danger" (click)="getUserInformation()">
+                Search
+              </button>
+            </span>
+                </div>
+            </nb-card-body>
+        </nb-card>
+    </div>
+</div>
+
+<div class="row" *ngIf="userInfo != null && (userInfo.preference_genres != null || userInfo.favourite_artists != null)">
+    <div class="col-md-12 col-lg-6">
+        <nb-card [size]="small">
+            <nb-card-header>User Preferences</nb-card-header>
+            <nb-card-body>
+                <nb-tabset>
+                    <nb-tab tabTitle="Genres">
+                        <div class="contact" *ngFor="let genre of userInfo.preference_genres">
+                            <nb-user [name]="genre.name" size="small">
+                            </nb-user>
+                        </div>
+                    </nb-tab>
+                    <nb-tab tabTitle="Artists">
+                        <div class="contact" *ngFor="let artist of userInfo.preference_artists">
+                            <nb-user [name]="artist.name" size="small">
+                            </nb-user>
+                        </div>
+                    </nb-tab>
+                </nb-tabset>
+            </nb-card-body>
+        </nb-card>
+    </div>
+
+    <div class="col-md-12 col-lg-6">
+        <nb-card [size]="small">
+            <nb-card-header>User History</nb-card-header>
+            <nb-card-body>
+                <nb-tabset>
+                    <nb-tab tabTitle="Artists">
+                        <div class="contact" *ngFor="let artist of userInfo.favourite_artists">
+                            <nb-user [name]="artist.name" size="small">
+                            </nb-user>
+                        </div>
+                    </nb-tab>
+                </nb-tabset>
+            </nb-card-body>
+        </nb-card>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-xxxl-9 col-xl-12">
+        <button class="btn btn-danger" (click)="getUserPlaylist()">
+            Refresh Playlists
+          </button>
+    </div>
+</div>
+
+<div class="row" *ngIf="playlists != null">
+  <div class="col-xxxl-9 col-xl-12">
+    <ngx-recommendations [playlists]="playlists"></ngx-recommendations>
+  </div>
+</div>

@@ -2,11 +2,19 @@ import { NbMenuItem } from '@nebular/theme';
 
 export const MENU_ITEMS: NbMenuItem[] = [
   {
+    title: 'Playlists',
+    icon: 'nb-play',
+    link: '/pages/reco-playlist',
+    home: true,
+  },
+  {
     title: 'Dashboard',
     icon: 'nb-home',
     link: '/pages/dashboard',
-    home: true,
-  },
+    home: false,
+  }
+
+  /**
   {
     title: 'FEATURES',
     group: true,
@@ -155,4 +163,5 @@ export const MENU_ITEMS: NbMenuItem[] = [
       },
     ],
   },
+  */
 ];

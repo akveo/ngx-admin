@@ -24,6 +24,8 @@ import {
   ThemeSettingsComponent,
   ThemeSwitcherComponent,
   TinyMCEComponent,
+  NgxLoginComponent,
+  NgxAuthBlockComponent,
 } from './components';
 import { CapitalizePipe, PluralPipe, RoundPipe, TimingPipe } from './pipes';
 import {
@@ -62,6 +64,8 @@ const COMPONENTS = [
   SampleLayoutComponent,
   ThreeColumnsLayoutComponent,
   TwoColumnsLayoutComponent,
+  NgxLoginComponent,
+  NgxAuthBlockComponent,
 ];
 
 const PIPES = [

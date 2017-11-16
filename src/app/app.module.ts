@@ -14,6 +14,8 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ThemeModule } from './@theme/theme.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NbAuthJWTInterceptor, NbAuthJWTToken, NB_AUTH_TOKEN_WRAPPER_TOKEN } from '@nebular/auth';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent],
@@ -30,6 +32,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
   bootstrap: [AppComponent],
   providers: [
     { provide: APP_BASE_HREF, useValue: '/' },
+    { provide: NB_AUTH_TOKEN_WRAPPER_TOKEN, useClass: NbAuthJWTToken },
+    { provide: HTTP_INTERCEPTORS, useClass: NbAuthJWTInterceptor, multi: true},
   ],
 })
 export class AppModule {
