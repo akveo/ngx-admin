@@ -39,10 +39,17 @@
 //     },
 //     "intent":"proactive_recommendations"
 //  }
-import { Recommendations } from './recommendations.model';
-import { Fields } from './fields.model';
+import { Track } from './track.model';
 
-export class Playlists {
-    fields?: Fields;
-    intent?: string;
+export class Recommendations {
+    type?: string;
+    name?: string;
+    items?: Item[];
+}
+  
+class Item {
+    type?: string;
+    title?: string;
+    card_token?: string;
+    items?: Track[];
 }

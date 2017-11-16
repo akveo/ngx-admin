@@ -1,10 +1,9 @@
-import { Component,OnInit, Inject } from '@angular/core';
+import { Component,OnInit, Inject, Input } from '@angular/core';
 import {FormGroup, AbstractControl, FormBuilder, Validators} from '@angular/forms';
 import { RecommendationEngineService } from '../../@core/data/recommendation-engine.service';
 import { UserInfo } from '../../@core/data/model/user-info.model';
 import { Playlists } from '../../@core/data/model/playlists.model';
-import {Observable} from 'rxjs';
-import { Output } from '@angular/core/src/metadata/directives';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'reco-playlist',
@@ -12,14 +11,13 @@ import { Output } from '@angular/core/src/metadata/directives';
   templateUrl: './reco-playlists.component.html',
 })
 export class RecoPlaylistsComponent implements OnInit{
+  playlists: Playlists;
+  userInfo: UserInfo;
+  userId: string;
+
   constructor(
     private recommendationEngine: RecommendationEngineService,
   ) {}
-
-  userInfo: UserInfo;
-  
-  playlists: Playlists;
-  userId: string;
 
   ngOnInit() {
   }
@@ -37,7 +35,7 @@ export class RecoPlaylistsComponent implements OnInit{
     this.recommendationEngine.getPlaylists(this.userId)
     .subscribe((res : Playlists)=> {
       this.playlists = res;
-      console.log(" PlayLists "+this.playlists.fields.recommendations.name);
+      console.log(" PlayLists "+this.playlists.intent);
     });
   }
 }
