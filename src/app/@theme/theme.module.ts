@@ -3,8 +3,6 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
-import { ToggleFullscreenModule } from './components/toggle-fullscreen';
-
 import {
   NbActionsModule,
   NbCardModule,
@@ -27,6 +25,7 @@ import {
   ThemeSwitcherComponent,
   TinyMCEComponent,
 } from './components';
+import { ToggleFullscreenDirective } from './directives';
 import { CapitalizePipe, PluralPipe, RoundPipe, TimingPipe } from './pipes';
 import {
   OneColumnLayoutComponent,
@@ -66,6 +65,8 @@ const COMPONENTS = [
   TwoColumnsLayoutComponent,
 ];
 
+const DIRECTIVES = [ ToggleFullscreenDirective ];
+
 const PIPES = [
   CapitalizePipe,
   PluralPipe,
@@ -85,9 +86,9 @@ const NB_THEME_PROVIDERS = [
 ];
 
 @NgModule({
-  imports: [...BASE_MODULES, ...NB_MODULES, ToggleFullscreenModule],
+  imports: [...BASE_MODULES, ...NB_MODULES],
   exports: [...BASE_MODULES, ...NB_MODULES, ...COMPONENTS, ...PIPES],
-  declarations: [...COMPONENTS, ...PIPES],
+  declarations: [...COMPONENTS, ...PIPES, ...DIRECTIVES],
 })
 export class ThemeModule {
   static forRoot(): ModuleWithProviders {
