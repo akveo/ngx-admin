@@ -69,6 +69,7 @@
     "pace-js": "^1.0.2",
     "roboto-fontface": "0.8.0",
     "rxjs": "^5.4.2",
+    "screenfull": "^3.3.2",
     "socicon": "^3.0.5",
     "tether": "1.4.0",
     "tinymce": "4.5.7",
