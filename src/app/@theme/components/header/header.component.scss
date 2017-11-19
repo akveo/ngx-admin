@@ -27,6 +27,15 @@
     display: block;
   }
 
+  nb-action.fullscreen {
+    display: flex;
+    align-items: center;
+  }
+
+  .control-item.fullscreen /deep/ i {
+    font-size: nb-theme(actions-size-small);
+  }
+
   .header-container {
     display: flex;
     align-items: center;
@@ -102,14 +111,13 @@
     }
 
     nb-action:not(.toggle-layout) {
-      padding: 0;
+      padding: nb-theme(actions-padding) /2;
     }
   }
 
   @include media-breakpoint-down(xs) {
-    .right /deep/ {
+    .right nb-action:not(.fullscreen) {
       display: none;
     }
   }
 }
-
