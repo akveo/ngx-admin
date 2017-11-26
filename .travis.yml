@@ -30,5 +30,3 @@ script:
 git:
   depth: 1
 
-notifications:
-  slack: akveo:q559HckfZMSyZRb803aiLcjH
