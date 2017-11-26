@@ -3,20 +3,11 @@ sudo: false
 language: node_js
 
 node_js:
-  - '6'
-  - '7'
   - '8'
 
 cache:
   directories:
     - node_modules
-
-addons:
-  apt:
-    sources:
-      - ubuntu-toolchain-r-test
-    packages:
-      - g++-4.8
 
 before_install: if [[ `npm -v` != 5* ]]; then npm i -g npm@5; fi
 
