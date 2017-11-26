@@ -30,4 +30,4 @@ deploy:
   bucket: $AWS_BUCKET_NAME
   skip_cleanup: true
   region: $AWS_DEFAULT_REGION
-  
+  local_dir: dist
