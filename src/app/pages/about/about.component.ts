@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class AboutComponent implements OnInit {
-  objeto : any;
+  objeto : any ; 
   constructor() {
     this.objeto = {};
   }
