@@ -17,13 +17,11 @@
       true,
       "check-space"
     ],
-    "curly": true,
     "eofline": true,
     "forin": true,
     "import-blacklist": [
       true,
-      "rxjs",
-      "rxjs/Rx"
+      "rxjs"
     ],
     "import-spacing": true,
     "indent": [
@@ -34,14 +32,14 @@
     "label-position": true,
     "max-line-length": [
       true,
-      140
+      120
     ],
     "member-access": false,
     "no-arg": true,
     "no-console": [
       true,
       "debug",
-      "log",
+      "info",
       "time",
       "timeEnd",
       "trace"
@@ -52,10 +50,6 @@
     "no-empty": false,
     "no-empty-interface": true,
     "no-eval": true,
-    "no-inferrable-types": [
-      true,
-      "ignore-params"
-    ],
     "no-misused-new": true,
     "no-non-null-assertion": true,
     "no-shadowed-variable": true,
@@ -64,7 +58,6 @@
     "no-switch-case-fall-through": true,
     "no-trailing-whitespace": true,
     "no-unnecessary-initializer": true,
-    "no-unused-expression": true,
     "no-use-before-declare": true,
     "no-var-keyword": true,
     "object-literal-sort-keys": false,
@@ -125,7 +118,6 @@
     "use-input-property-decorator": true,
     "use-output-property-decorator": true,
     "use-host-property-decorator": true,
-    "no-input-rename": true,
     "no-output-rename": true,
     "use-life-cycle-interface": true,
     "use-pipe-transform-interface": true,
@@ -133,6 +125,8 @@
     "directive-class-suffix": true,
     "no-access-missing-member": true,
     "templates-use-public": true,
-    "invoke-injectable": true
+    "invoke-injectable": true,
+
+    "no-unused-variable": true
   }
 }

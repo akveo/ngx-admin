@@ -17,6 +17,7 @@
     ],
     "plugins": [
       { "name": "tslint-language-service"}
-    ]
+    ],
+    "noUnusedLocals": true
   }
 }
