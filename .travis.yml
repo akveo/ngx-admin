@@ -25,7 +25,7 @@ install:
 
 script:
   - npm run lint:ci
-  - npm run build:ci
+  - npm run build:prod
 
 git:
   depth: 1
