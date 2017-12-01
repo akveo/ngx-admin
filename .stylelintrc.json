@@ -61,7 +61,9 @@
     "selector-pseudo-class-parentheses-space-inside": "never",
     "selector-pseudo-element-case": "lower",
     "selector-pseudo-element-colon-notation": "double",
-    "selector-pseudo-element-no-unknown": true,
+    "selector-pseudo-element-no-unknown": [true, {
+      "ignorePseudoElements": ["ng-deep"]
+    }],
     "selector-type-case": "lower",
     "selector-max-id": 0,
 
