@@ -4,7 +4,7 @@
     "license": "MIT",
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/akveo/ngx-admin.git"
+        "url": "git+https://github.com/kingemma/ngx-admin.git"
     },
     "bugs": {
         "url": "https://github.com/akveo/ngx-admin/issues"
