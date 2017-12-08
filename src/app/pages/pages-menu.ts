@@ -8,10 +8,6 @@ export const MENU_ITEMS: NbMenuItem[] = [
     home: true,
   },
   {
-    title: 'FEATURES',
-    group: true,
-  },
-  {
     title: 'UI Features',
     icon: 'nb-keypad',
     link: '/pages/ui-features',
@@ -57,6 +53,16 @@ export const MENU_ITEMS: NbMenuItem[] = [
       {
         title: 'Form Layouts',
         link: '/pages/forms/layouts',
+      },
+    ],
+  },
+  {
+    title: 'About',
+    icon: 'ion-ios-home-outline',
+    children: [
+      {
+        title: 'about',
+        link: '/pages/about',
       },
     ],
   },
