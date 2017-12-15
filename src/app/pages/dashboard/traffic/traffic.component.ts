@@ -13,7 +13,7 @@ import { NbThemeService } from '@nebular/theme';
                   [ngClass]="{ 'btn-success': currentTheme == 'default', 'btn-primary': currentTheme != 'default'}">
             {{ type }}
           </button>
-          <ul ngbDropdown class="dropdown-menu">
+          <ul ngbDropdownMenu class="dropdown-menu">
             <li class="dropdown-item" *ngFor="let t of types" (click)="type = t">{{ t }}</li>
           </ul>
         </div>
