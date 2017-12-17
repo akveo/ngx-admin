@@ -1,0 +1,86 @@
+@import '../../../styles/themes';
+
+.flipcard-container {
+  -webkit-perspective: 1200px;
+     -moz-perspective: 1200px;
+       -o-perspective: 1200px;
+          perspective: 1200px;
+    margin-bottom: nb-theme(card-padding);
+  }
+.flipcard.flipped {
+	-webkit-transform: rotateY( 180deg );
+     -moz-transform: rotateY( 180deg );
+       -o-transform: rotateY( 180deg );
+          transform: rotateY( 180deg );
+  }
+.flipcard {
+  -webkit-transition: -webkit-transform 0.5s;
+     -moz-transition: -moz-transform 0.5s;
+       -o-transition: -o-transform 0.5s;
+          transition: transform 0.5s;
+  -webkit-transform-style: preserve-3d;
+     -moz-transform-style: preserve-3d;
+       -o-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  position: relative;
+  display: flex;
+  margin-bottom: nb-theme(card-padding);
+}
+
+.card-front, .card-back {
+	-webkit-backface-visibility: hidden;
+     -moz-backface-visibility: hidden;
+       -o-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+
+.card-front {
+	z-index: 2;
+}
+
+.card-back {
+  -webkit-transform: rotateY( 180deg );
+    -moz-transform: rotateY( 180deg );
+      -o-transform: rotateY( 180deg );
+          transform: rotateY( 180deg );
+          z-index: 3;
+}
+
+.card-front, .card-back {
+  width: 100%;
+}
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    .card-front, .card-back {
+        -ms-backface-visibility: visible;
+            backface-visibility: visible;
+    }
+
+    .card-back {
+        visibility: hidden;
+        -ms-transition: all 0.2s cubic-bezier(0.92, 0.01, 0.83, 0.67);
+    }
+    .card-front {
+      z-index: 4;
+    }
+    .flipcard.flipped .card-back {
+      z-index: 5;
+      visibility: visible;
+    }
+}
+.flipcard.flipped .card-back {
+  margin-left: -100%;
+}
+.flipcard:not(.flipped) .card-front {
+  margin-right: -100%;
+}
+
+.flip-button {
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  display: block;
+  padding: nb-theme(card-padding);
+  margin-bottom: nb-theme(card-margin);
+  z-index: 5;
+}

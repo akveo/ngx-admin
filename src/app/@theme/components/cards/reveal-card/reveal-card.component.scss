@@ -1,0 +1,46 @@
+@import '../../../styles/themes';
+
+.revealcard {
+  width: 100%;
+  position: relative;
+  display: flex;
+}
+.card-front, .reveal {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.card-front {
+  z-index: 1;
+}
+.reveal {
+  top: 100%;
+  position: absolute;
+  transition: all 0.3s ease-out;
+  width: 100%;
+  margin-bottom: nb-theme(card-padding);
+}
+.revealcard.revealed > .card-back > .reveal {
+  top: 0;
+  z-index: 2;
+}
+.reveal-button {
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  display: block;
+  padding: nb-theme(card-padding);
+  margin-bottom: nb-theme(card-padding);
+  z-index: 2;
+}
+.reveal > .reveal-button {
+  top: 0;
+}
+.card-back {
+  position: absolute;
+  height:  calc(100% - (#{nb-theme(card-margin)} + #{nb-theme(card-padding)}));
+  width: 100%;
+  bottom: calc(#{nb-theme(card-margin)} + #{nb-theme(card-padding)});
+  overflow: hidden;
+}

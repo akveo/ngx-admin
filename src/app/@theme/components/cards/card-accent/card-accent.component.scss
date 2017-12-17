@@ -1,0 +1,25 @@
+@import '../../../styles/themes';
+
+.accent {
+  position: absolute;
+  width: 100%;
+  height: nb-theme(card-border-radius);
+  border-top-left-radius: nb-theme(card-border-radius);
+  border-top-right-radius: nb-theme(card-border-radius);
+}
+
+.accent-primary {
+  background-color: nb-theme(color-primary);
+}
+.accent-success {
+  background-color: nb-theme(color-success);
+}
+.accent-info {
+  background-color: nb-theme(color-info);
+}
+.accent-warning {
+  background-color: nb-theme(color-warning);
+}
+.accent-danger {
+  background-color: nb-theme(color-danger);
+}

@@ -1,0 +1,35 @@
+@import '../../../styles/themes';
+
+nb-card-header:empty, nb-card-body:empty, nb-card-footer:empty {
+  display: none;
+}
+
+nb-card {
+  position: relative;
+}
+
+:host-context(.card-back)  nb-card {
+  height: 100%;
+}
+
+:host-context(.ngx-card-xxsmall) nb-card {
+  height: nb-theme(card-height-xxsmall);
+}
+:host-context(.ngx-card-xsmall) nb-card {
+  height: nb-theme(card-height-xsmall);
+}
+:host-context(.ngx-card-small) nb-card {
+  height: nb-theme(card-height-small);
+}
+:host-context(.ngx-card-medium) nb-card {
+  height: nb-theme(card-height-medium);
+}
+:host-context(.ngx-card-large) nb-card {
+  height: nb-theme(card-height-large);
+}
+:host-context(.ngx-card-xlarge) nb-card {
+  height: nb-theme(card-height-xlarge);
+}
+:host-context(.ngx-card-xxlarge) nb-card {
+  height: nb-theme(card-height-xxlarge);
+}
