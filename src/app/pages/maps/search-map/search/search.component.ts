@@ -3,7 +3,6 @@ import {
   ViewChild
 } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { CurrentLocationProvider } from '../calc.service';
 import { MapsAPILoader } from '@agm/core';
 import {} from 'googlemaps';
 import { Location } from "../entity/Location";

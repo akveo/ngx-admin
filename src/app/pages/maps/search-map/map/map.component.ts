@@ -1,5 +1,4 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { CurrentLocationProvider } from '../calc.service';
 import { Location } from "../entity/Location";
 
 @Component({
@@ -14,16 +13,19 @@ export class MapComponent implements OnInit {
 
   @Input()
   public set searchedLocation(searchedLocation: Location) {
-    alert('set searchedLocation');
     this.latitude = searchedLocation.latitude;
     this.longitude = searchedLocation.longitude;
     this.zoom = 12;
   };
 
-  constructor(public currentLocationProvider: CurrentLocationProvider) {
-  }
-
   ngOnInit(): void {
-    this.currentLocationProvider.getCurrentPosition();
+    // set up current location
+    if ('geolocation' in navigator) {
+      navigator.geolocation.getCurrentPosition((position) => {
+        this.searchedLocation = new Location(
+          position.coords.latitude, position.coords.longitude
+        );
+      });
+    }
   }
 }
