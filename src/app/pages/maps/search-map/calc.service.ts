@@ -1,28 +1,19 @@
-import {Injectable} from '@angular/core';
+import { EventEmitter, Injectable, Output } from '@angular/core';
+import { Location } from "./entity/Location";
 
 @Injectable()
-export class CalcService {
+export class CurrentLocationProvider {
 
-  latitude: number = 51.678418;
-  longitude: number = 7.809007;
-  zoom: number;
+  @Output('newLocationEvent')
+  newLocationEvent = new EventEmitter<Location>();
 
-  constructor() {
-  }
-
-  setCurrentPosition() {
+  getCurrentPosition(): void {
     if ('geolocation' in navigator) {
       navigator.geolocation.getCurrentPosition((position) => {
-        this.latitude = position.coords.latitude;
-        this.longitude = position.coords.longitude;
-        this.zoom = 10;
+        this.newLocationEvent.emit(
+          new Location(position.coords.latitude, position.coords.longitude)
+        );
       });
     }
-  }
-
-  setCoordinates(lat, lng, zoom): void {
-    this.latitude = lat;
-    this.longitude = lng;
-    this.zoom = zoom;
   }
 }

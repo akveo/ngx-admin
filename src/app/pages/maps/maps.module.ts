@@ -5,7 +5,7 @@ import {AngularEchartsModule} from 'ngx-echarts';
 
 import {ThemeModule} from '../../@theme/theme.module';
 import {MapsRoutingModule, routedComponents} from './maps-routing.module';
-import {CalcService} from "./search-map/calc.service";
+import {CurrentLocationProvider} from "./search-map/calc.service";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
@@ -28,7 +28,7 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
     ],
   providers:
     [
-      CalcService
+      CurrentLocationProvider
     ]
 })
 

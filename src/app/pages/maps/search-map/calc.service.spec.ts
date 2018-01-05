@@ -1,15 +1,15 @@
 import { TestBed, inject } from '@angular/core/testing';
 
-import { CalcService } from './calc.service';
+import { CurrentLocationProvider } from './calc.service';
 
-describe('CalcService', () => {
+describe('CurrentLocationProvider', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [CalcService]
+      providers: [CurrentLocationProvider]
     });
   });
 
-  it('should be created', inject([CalcService], (service: CalcService) => {
+  it('should be created', inject([CurrentLocationProvider], (service: CurrentLocationProvider) => {
     expect(service).toBeTruthy();
   }));
 });

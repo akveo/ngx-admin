@@ -1,5 +1,5 @@
 <div class="container">
   <h1>Google Maps</h1>
-  <app-search></app-search>
-  <app-map></app-map>
+  <app-search (newLocationEvent)="updateLocation($event)"></app-search>
+  <app-map [searchedLocation]="searchedLocation"></app-map>
 </div>

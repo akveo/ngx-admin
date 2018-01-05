@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {AgmCoreModule} from "@agm/core";
-import {BrowserModule} from "@angular/platform-browser";
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { Location } from "./entity/Location";
 
 @Component({
   selector: 'app-search-map',
@@ -10,10 +8,20 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 })
 export class SearchMapComponent implements OnInit {
 
-  constructor() { }
+  searchedLocation: Location = new Location();
 
   ngOnInit() {
-    //setCurrent
+    // set up current location
+    if ('geolocation' in navigator) {
+      navigator.geolocation.getCurrentPosition((position) => {
+        this.searchedLocation = new Location(
+          position.coords.latitude, position.coords.longitude
+        );
+      });
+    }
   }
 
+  updateLocation($event: Location) {
+    this.searchedLocation = new Location($event.latitude, $event.longitude);
+  }
 }
