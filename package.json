@@ -29,7 +29,7 @@
     "release:changelog": "npm run conventional-changelog -- -p angular -i CHANGELOG.md -s"
   },
   "dependencies": {
-    "@agm/core": "1.0.0-beta.0",
+    "@agm/core": "^1.0.0-beta.2",
     "@angular/animations": "4.4.6",
     "@angular/common": "4.4.6",
     "@angular/compiler": "4.4.6",
@@ -78,6 +78,7 @@
     "@angular/language-service": "4.4.6",
     "@compodoc/compodoc": "1.0.1",
     "@types/d3-color": "1.0.4",
+    "@types/googlemaps": "^3.30.4",
     "@types/jasmine": "2.5.54",
     "@types/jasminewd2": "2.0.3",
     "@types/leaflet": "1.0.60",

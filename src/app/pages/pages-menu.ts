@@ -89,6 +89,10 @@ export const MENU_ITEMS: NbMenuItem[] = [
         title: 'Bubble Maps',
         link: '/pages/maps/bubble',
       },
+      {
+        title: 'Search Maps',
+        link: '/pages/maps/searchmap',
+      },
     ],
   },
   {
