@@ -1,5 +1,7 @@
-<div class="container">
-  <h1>Google Maps</h1>
-  <app-search (newLocationEvent)="updateLocation($event)"></app-search>
-  <app-map [searchedLocation]="searchedLocation"></app-map>
-</div>
+<!--<ng-card>-->
+  <div class="container">
+    <h1>Google Maps</h1>
+    <ngx-search (positionChanged)="updateLocation($event)"></ngx-search>
+    <ngx-map [searchedLocation]="searchedLocation"></ngx-map>
+  </div>
+<!--</ng-card>-->

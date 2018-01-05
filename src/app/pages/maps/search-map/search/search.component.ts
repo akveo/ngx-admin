@@ -1,52 +1,52 @@
 import {
   Component, ElementRef, EventEmitter, NgZone, OnInit, Output,
-  ViewChild
+  ViewChild,
 } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { MapsAPILoader } from '@agm/core';
 import {} from 'googlemaps';
-import { Location } from "../entity/Location";
-
+import { Location } from '../entity/Location';
 
 @Component({
-  selector: 'app-search',
+  selector: 'ngx-search',
   templateUrl: './search.component.html',
-  styleUrls: ['./search.component.scss']
+  styleUrls: ['./search.component.scss'],
 })
 export class SearchComponent implements OnInit {
 
   public searchControl: FormControl;
 
-  @Output()
-  newLocationEvent = new EventEmitter<Location>();
+  @Output() positionChanged = new EventEmitter<Location>();
 
   @ViewChild('search')
   public searchElementRef: ElementRef;
 
   constructor(private mapsAPILoader: MapsAPILoader,
-              private ngZone: NgZone,) {
+              private ngZone: NgZone) {
   }
 
   ngOnInit() {
-    //create search FormControl
+    // create search FormControl
     this.searchControl = new FormControl();
 
     // load Places Autocomplete
     this.mapsAPILoader.load().then(() => {
-      let autocomplete = new google.maps.places.Autocomplete(this.searchElementRef.nativeElement, {
-        types: ['address']
+      const autocomplete = new google.maps.places.Autocomplete(this.searchElementRef.nativeElement, {
+        types: ['address'],
       });
       autocomplete.addListener('place_changed', () => {
         this.ngZone.run(() => {
-          //get the place result
-          let place: google.maps.places.PlaceResult = autocomplete.getPlace();
+          // get the place result
+          const place: google.maps.places.PlaceResult = autocomplete.getPlace();
 
-          //verify result
+          // verify result
           if (place.geometry === undefined || place.geometry === null) {
             return;
           }
 
-          this.newLocationEvent.emit(new Location(place.geometry.location.lat(), place.geometry.location.lng()));
+          this.positionChanged.emit(
+            new Location(place.geometry.location.lat(),
+              place.geometry.location.lng()));
         });
       });
     });
