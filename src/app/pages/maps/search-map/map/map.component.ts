@@ -11,8 +11,7 @@ export class MapComponent implements OnInit {
   longitude: number;
   zoom: number;
 
-  @Input()
-  public set searchedLocation(searchedLocation: Location) {
+  @Input() public set searchedLocation(searchedLocation: Location) {
     this.latitude = searchedLocation.latitude;
     this.longitude = searchedLocation.longitude;
     this.zoom = 12;

@@ -10,7 +10,7 @@ export class SearchMapComponent {
 
   searchedLocation: Location = new Location();
 
-  updateLocation(event: Location) {
-    this.searchedLocation = new Location(event.latitude, event.longitude);
+  updateLocation(newSearchedLocation: Location) {
+    this.searchedLocation = newSearchedLocation;
   }
 }
