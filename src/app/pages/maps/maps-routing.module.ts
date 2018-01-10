@@ -5,6 +5,9 @@ import { MapsComponent } from './maps.component';
 import { GmapsComponent } from './gmaps/gmaps.component';
 import { LeafletComponent } from './leaflet/leaflet.component';
 import { BubbleMapComponent } from './bubble/bubble-map.component';
+import { SearchMapComponent } from './search-map/search-map.component';
+import { MapComponent } from './search-map/map/map.component';
+import { SearchComponent } from './search-map/search/search.component';
 
 const routes: Routes = [{
   path: '',
@@ -18,6 +21,9 @@ const routes: Routes = [{
   }, {
     path: 'bubble',
     component: BubbleMapComponent,
+  }, {
+    path: 'searchmap',
+    component: SearchMapComponent,
   }],
 }];
 
@@ -25,11 +31,15 @@ const routes: Routes = [{
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class MapsRoutingModule { }
+export class MapsRoutingModule {
+}
 
 export const routedComponents = [
   MapsComponent,
   GmapsComponent,
   LeafletComponent,
   BubbleMapComponent,
+  SearchMapComponent,
+  MapComponent,
+  SearchComponent,
 ];

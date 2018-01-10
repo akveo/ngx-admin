@@ -9,7 +9,10 @@ import { MapsRoutingModule, routedComponents } from './maps-routing.module';
 @NgModule({
   imports: [
     ThemeModule,
-    AgmCoreModule.forRoot(),
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyCpVhQiwAllg1RAFaxMWSpQruuGARy0Y1k',
+      libraries: ['places'],
+    }),
     LeafletModule.forRoot(),
     MapsRoutingModule,
     AngularEchartsModule,
@@ -19,4 +22,6 @@ import { MapsRoutingModule, routedComponents } from './maps-routing.module';
     ...routedComponents,
   ],
 })
-export class MapsModule { }
+
+export class MapsModule {
+}
