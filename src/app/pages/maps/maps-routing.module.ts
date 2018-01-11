@@ -31,8 +31,7 @@ const routes: Routes = [{
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class MapsRoutingModule {
-}
+export class MapsRoutingModule { }
 
 export const routedComponents = [
   MapsComponent,

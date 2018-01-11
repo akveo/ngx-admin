@@ -22,6 +22,4 @@ import { MapsRoutingModule, routedComponents } from './maps-routing.module';
     ...routedComponents,
   ],
 })
-
-export class MapsModule {
-}
+export class MapsModule { }
