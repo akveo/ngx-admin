@@ -1,6 +1,7 @@
-sudo: false
-
 language: node_js
+
+sudo: false
+dist: trusty
 
 node_js:
   - '6'
@@ -11,6 +12,10 @@ cache:
   directories:
     - node_modules
 
+branches:
+  only:
+  - master
+
 addons:
   apt:
     sources:
@@ -18,10 +23,13 @@ addons:
     packages:
       - g++-4.8
 
-before_install: if [[ `npm -v` != 5* ]]; then npm i -g npm@5; fi
+before_install:
+  - npm i -g npm@latest
 
 install:
-  - npm i
+  - travis_retry npm i
+
+before_script:
 
 script:
   - npm run lint:ci
@@ -29,6 +37,3 @@ script:
 
 git:
   depth: 1
-
-notifications:
-  slack: akveo:q559HckfZMSyZRb803aiLcjH
