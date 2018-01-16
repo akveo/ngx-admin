@@ -25,8 +25,8 @@ export class RoomsComponent implements OnDestroy {
   constructor(private themeService: NbThemeService,
               private breakpointService: NbMediaBreakpointsService) {
 
-    this.breakpoints = breakpointService.getBreakpointsMap();
-    this.themeSubscription = themeService.onMediaQueryChange()
+    this.breakpoints = this.breakpointService.getBreakpointsMap();
+    this.themeSubscription = this.themeService.onMediaQueryChange()
       .subscribe(([oldValue, newValue]) => {
         this.breakpoint = newValue;
       });

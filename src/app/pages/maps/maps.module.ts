@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { AgmCoreModule } from '@agm/core';
-import { LeafletModule } from '@asymmetrik/angular2-leaflet';
-import { AngularEchartsModule } from 'ngx-echarts';
+import { LeafletModule } from '@asymmetrik/ngx-leaflet';
+import { NgxEchartsModule } from 'ngx-echarts';
 
 import { ThemeModule } from '../../@theme/theme.module';
 import { MapsRoutingModule, routedComponents } from './maps-routing.module';
@@ -12,7 +12,7 @@ import { MapsRoutingModule, routedComponents } from './maps-routing.module';
     AgmCoreModule.forRoot(),
     LeafletModule.forRoot(),
     MapsRoutingModule,
-    AngularEchartsModule,
+    NgxEchartsModule,
   ],
   exports: [],
   declarations: [
