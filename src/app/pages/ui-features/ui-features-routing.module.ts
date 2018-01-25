@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-
+import { AmazingTimePickerModule } from 'amazing-time-picker';
 import { UiFeaturesComponent } from './ui-features.component';
 import { ButtonsComponent } from './buttons/buttons.component';
 import { GridComponent } from './grid/grid.component';
+import { TimePickerComponent } from './time-picker/time-picker.component';
 import { IconsComponent } from './icons/icons.component';
 import { ModalsComponent } from './modals/modals.component';
 import { TypographyComponent } from './typography/typography.component';
@@ -19,6 +20,9 @@ const routes: Routes = [{
   }, {
     path: 'grid',
     component: GridComponent,
+  },{
+    path: 'time-picker',
+    component: TimePickerComponent,
   }, {
     path: 'icons',
     component: IconsComponent,
@@ -49,7 +53,7 @@ const routes: Routes = [{
 }];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule],
+  imports: [RouterModule.forChild(routes), AmazingTimePickerModule],
+  exports: [RouterModule, AmazingTimePickerModule],
 })
 export class UiFeaturesRoutingModule { }

@@ -11,6 +11,7 @@ import { ModalComponent } from './modals/modal/modal.component';
 import { TypographyComponent } from './typography/typography.component';
 import { TabsComponent, Tab1Component, Tab2Component } from './tabs/tabs.component';
 import { SearchComponent } from './search-fields/search-fields.component';
+import { TimePickerComponent } from './time-picker/time-picker.component';
 
 const components = [
   UiFeaturesComponent,
@@ -33,6 +34,7 @@ const components = [
   ],
   declarations: [
     ...components,
+    TimePickerComponent,
   ],
   entryComponents: [
     ModalComponent,
