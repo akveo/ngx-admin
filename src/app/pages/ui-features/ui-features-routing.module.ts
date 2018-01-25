@@ -20,7 +20,7 @@ const routes: Routes = [{
   }, {
     path: 'grid',
     component: GridComponent,
-  },{
+  }, {
     path: 'time-picker',
     component: TimePickerComponent,
   }, {
