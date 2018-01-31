@@ -1,0 +1,26 @@
+clone:
+  path: github.com/udistrital/titan_api_crud
+
+build:
+
+  go:
+    image: golang:1.8
+    commands:
+     - go get
+     - go build -o main
+    when:
+      branch: develop
+      event: push
+
+publish:
+
+  docker:
+    repo: oas0/titan_api_crud
+    username: oas0
+    email: computoud@googlegroups.com
+    password: $$DOCKER_PUBLISH_PASSWORD
+    tags:
+      - $$COMMIT
+    when:
+      branch: develop
+      event: push
