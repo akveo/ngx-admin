@@ -16,24 +16,26 @@ export class HeaderComponent implements OnInit {
   @Input() position = 'normal';
 
   user: any;
-
   userMenu: any;
 
   constructor(private sidebarService: NbSidebarService,
               private menuService: NbMenuService,
               private userService: UserService,
-              private analyticsService: AnalyticsService) {
-    const urlLogin = AutenticationService.getAuthorizationUrl();
-    if (AutenticationService.live) {
-      this.userMenu = [{ title: 'Profile'}, { title: 'Log out' }] ;
-    }else {
-      this.userMenu = [{ title: 'Login', url: urlLogin}] ;
-    }
+              private analyticsService: AnalyticsService,
+              private autenticacion: AutenticationService) {
   }
 
   ngOnInit() {
     this.userService.getUsers()
       .subscribe((users: any) => this.user = users.nick);
+      this.autenticacion.init();
+      const urlLogin = this.autenticacion.getAuthorizationUrl();
+      const urlLogout = this.autenticacion.logOut;
+      if (!this.autenticacion.live()) {
+        this.userMenu = [{ title: 'Login', url: urlLogin}] ;
+      }else {
+        this.userMenu = [{ title: this.autenticacion.payload.sub}, { title: 'Log out', url: urlLogout}] ;
+      }
   }
 
   toggleSidebar(): boolean {
