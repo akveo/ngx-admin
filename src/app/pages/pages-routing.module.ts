@@ -3,11 +3,15 @@ import { NgModule } from '@angular/core';
 
 import { PagesComponent } from './pages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { EcDashboardComponent } from './ec-dashboard/ec-dashboard.component';
 
 const routes: Routes = [{
   path: '',
   component: PagesComponent,
   children: [{
+    path: 'ec-dashboard',
+    component: EcDashboardComponent,
+  }, {
     path: 'dashboard',
     component: DashboardComponent,
   }, {
