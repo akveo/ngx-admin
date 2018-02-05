@@ -1,8 +1,8 @@
-import { Injectable} from '@angular/core';
+import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import 'rxjs/add/observable/of';
+import { Observable } from 'rxjs/Rx';
 import { Config } from './../../app-config';
-import {Md5} from 'ts-md5/dist/md5';
+import { Md5 } from 'ts-md5/dist/md5';
 
 @Injectable()
 export class AutenticationService {
@@ -11,16 +11,18 @@ export class AutenticationService {
     private setting_basic: any;
     public payload: any;
     public logOut: any;
+
     constructor(private http: HttpClient) {
         this.setting_basic = {
             headers: new HttpHeaders({
                 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
                 'authorization': 'Basic ' + btoa(Config.LOCAL.TOKEN.CLIENTE_ID + ':'
-                + Config.LOCAL.TOKEN.CLIENT_SECRET),
+                    + Config.LOCAL.TOKEN.CLIENT_SECRET),
                 'cache-control': 'no-cache',
             }),
         }
         this.logOut = '';
+        this.timer();
     }
 
     public post(url, data, header) {
@@ -29,20 +31,25 @@ export class AutenticationService {
     }
 
     public getToken() {
-        let url = Config.LOCAL.TOKEN.REFRESH_TOKEN;
-        const dato = {};
-        url += '?grant_type=authorization_code';
-        url += '&code=' + window.sessionStorage.getItem('code');
-        url += '&redirect_uri=' + Config.LOCAL.TOKEN.REDIRECT_URL;
-        this.post(url, dato, this.setting_basic).subscribe(
-            data => {
-            for (const i in data) {
-                if (data.hasOwnProperty(i)) {
-                window.sessionStorage.setItem(i, data[i]);
-                }
-            }
-            this.session = data;
-        });
+        if (window.sessionStorage.getItem('code') !== null &&
+            window.sessionStorage.getItem('id_token') === null) {
+            let url = Config.LOCAL.TOKEN.REFRESH_TOKEN;
+            const dato = {};
+            url += '?grant_type=authorization_code';
+            url += '&code=' + window.sessionStorage.getItem('code');
+            url += '&redirect_uri=' + Config.LOCAL.TOKEN.REDIRECT_URL;
+            this.post(url, dato, this.setting_basic).subscribe(
+                data => {
+                    for (const i in data) {
+                        if (data.hasOwnProperty(i)) {
+                            window.sessionStorage.setItem(i, data[i]);
+                        }
+                    }
+                    this.session = data;
+                    this.setExpiresAt();
+                });
+        }
+        this.timer();
     }
 
     public init() {
@@ -56,7 +63,7 @@ export class AutenticationService {
         }
         if (!this.live()) {
             this.getToken();
-        }else {
+        } else {
             const id_token = window.sessionStorage.getItem('id_token').split('.');
             this.payload = JSON.parse(atob(id_token[1]));
             this.logOut = Config.LOCAL.TOKEN.SIGN_OUT_URL;
@@ -65,9 +72,9 @@ export class AutenticationService {
         }
     }
     public live() {
-        if (window.sessionStorage.getItem('id_token') !== null ) {
+        if (window.sessionStorage.getItem('id_token') !== null) {
             return true;
-        }else {
+        } else {
             return false;
         }
     }
@@ -81,10 +88,10 @@ export class AutenticationService {
             this.params.state = this.generateState();
         }
         let url = this.params.AUTORIZATION_URL + '?' +
-                'client_id=' + encodeURIComponent(this.params.CLIENTE_ID) + '&' +
-                'redirect_uri=' + encodeURIComponent(this.params.REDIRECT_URL) + '&' +
-                'response_type=' + encodeURIComponent(this.params.RESPONSE_TYPE) + '&' +
-                'scope=' + encodeURIComponent(this.params.SCOPE);
+            'client_id=' + encodeURIComponent(this.params.CLIENTE_ID) + '&' +
+            'redirect_uri=' + encodeURIComponent(this.params.REDIRECT_URL) + '&' +
+            'response_type=' + encodeURIComponent(this.params.RESPONSE_TYPE) + '&' +
+            'scope=' + encodeURIComponent(this.params.SCOPE);
         if (this.params.nonce) {
             url += '&nonce=' + encodeURIComponent(this.params.nonce);
         }
@@ -93,15 +100,36 @@ export class AutenticationService {
     }
 
     refresh() {
+        const url = this.params.REFRESH_TOKEN + '?' +
+            'grant_type=' + encodeURIComponent('refresh_token') + '&' +
+            'refresh_token=' + encodeURIComponent(window.sessionStorage.getItem('refresh_token')) + '&' +
+            'redirect_uri=' + encodeURIComponent(this.params.REDIRECT_URL);
+        const dato = {};
 
+        this.post(url, dato, this.setting_basic).subscribe(
+            data => {
+                for (const i in data) {
+                    if (data.hasOwnProperty(i)) {
+                        window.sessionStorage.setItem(i, data[i]);
+                    }
+                }
+                this.session = data;
+                window.sessionStorage.removeItem('expires_at');
+                this.setExpiresAt();
+            });
     }
 
     setExpiresAt() {
-
+        if (window.sessionStorage.getItem('expires_at') === null) {
+            const expires_at = new Date();
+            expires_at.setSeconds(expires_at.getSeconds() +
+                parseInt(window.sessionStorage.getItem('expires_in'), 10) - 60);
+            window.sessionStorage.setItem('expires_at', expires_at.toUTCString());
+        }
     }
 
     expired() {
-
+        return (new Date(window.sessionStorage.getItem('expires_at')) < new Date());
     }
 
     private generateState() {
@@ -110,8 +138,13 @@ export class AutenticationService {
     }
 
     timer() {
-
+        Observable.interval(5000).subscribe(x => {
+            if (window.sessionStorage.getItem('expires_at') !== null) {
+                if (this.expired()) {
+                    this.refresh();
+                }
+            }
+        });
     }
-
-};
+}
 
