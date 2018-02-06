@@ -9,10 +9,9 @@ build:
     commands:
      - apt-get update -y
      - apt-get install -y zip
-     - npm install -g grunt-cli bower
      - npm install
-     - bower install --allow-root
-     - grunt build
+     - npm run lint:ci
+     - npm run build:prod
      - zip -r app.zip dist/
 
     when:
