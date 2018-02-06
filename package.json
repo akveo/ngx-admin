@@ -41,7 +41,7 @@
     "@angular/router": "~5.1.0",
     "@asymmetrik/ngx-leaflet": "3.0.1",
     "@nebular/auth": "2.0.0-rc.4",
-    "@nebular/theme": "2.0.0-rc.4",
+    "@nebular/theme": "2.0.0-rc.5",
     "@ng-bootstrap/ng-bootstrap": "1.0.0-beta.8",
     "@swimlane/ngx-charts": "7.0.1",
     "angular2-chartjs": "0.4.1",

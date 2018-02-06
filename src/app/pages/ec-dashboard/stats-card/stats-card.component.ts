@@ -1,0 +1,13 @@
+import { Component, Input } from '@angular/core';
+
+@Component({
+  selector: 'ngx-stats-card',
+  styleUrls: ['./stats-card.component.scss'],
+  templateUrl: './stats-card.component.html',
+})
+export class StatsCardComponent {
+
+  @Input() title: string;
+  @Input() type: string;
+  @Input() on = true;
+}
