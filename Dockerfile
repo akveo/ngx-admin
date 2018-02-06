@@ -1,7 +1,8 @@
-# Dockerfile
-FROM debian:stretch
-COPY main /main
-COPY conf/app.conf /conf/app.conf
-RUN chmod +x main
+FROM python:3
+RUN pip install awscli
 WORKDIR /
-ENTRYPOINT ["/main"]
+COPY entrypoint.sh entrypoint.sh
+COPY main main
+COPY conf/app.conf conf/app.conf
+RUN chmod +x main entrypoint.sh
+ENTRYPOINT ["/entrypoint.sh"]
