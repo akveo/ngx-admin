@@ -44,6 +44,7 @@
         "@nebular/theme": "2.0.0-rc.4",
         "@ng-bootstrap/ng-bootstrap": "1.0.0-beta.8",
         "@swimlane/ngx-charts": "7.0.1",
+        "angular-auth-oidc-client": "^4.0.0",
         "angular2-chartjs": "0.4.1",
         "angular2-toaster": "4.0.1",
         "bootstrap": "4.0.0-beta.2",
@@ -65,6 +66,7 @@
         "roboto-fontface": "0.8.0",
         "rxjs": "5.5.5",
         "tinymce": "4.5.7",
+        "ts-md5": "^1.2.4",
         "typeface-exo": "0.0.22",
         "web-animations-js": "2.2.5",
         "zone.js": "0.8.18"

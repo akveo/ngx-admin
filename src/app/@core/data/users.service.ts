@@ -22,6 +22,10 @@ export class UserService {
     // this.userArray = Object.values(this.users);
   }
 
+  addUsers(user): Observable<any> {
+    return Observable.of(this.users);
+  }
+
   getUsers(): Observable<any> {
     return Observable.of(this.users);
   }
