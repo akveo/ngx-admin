@@ -11,9 +11,33 @@ $nb-themes: nb-register-theme((
   sidebar-header-gap: 2rem,
   sidebar-header-height: initial,
   layout-content-width: 1400px,
-
   font-main: Roboto,
   font-secondary: Exo,
+  //smart-table
+  smart-table-border-radius: 0.1rem	,
+  smart-table-header-font-size: 0.8rem,
+  smart-table-font-size: 0.65rem,
+  smart-table-font-weight: 400,
+  smart-table-padding: 0.275rem 0.725rem,
+  smart-table-paging-border-width: 0.5,
+  smart-table-filter-padding: 0.1rem 0.1rem,
+  //form-control
+  form-control-placeholder-font-size: 0.8rem,
+  form-control-font-size: 0.8rem,
+  form-control-border-width: 1px,
+  form-control-border-radius: 0.1rem,
+  //fonts
+  font-weight-thin: 100,
+  font-weight-light: 200,
+  font-weight-normal: 300,
+  font-weight-bolder: 400,
+  font-weight-bold: 500,
+  font-weight-ultra-bold: 600,
+  //general
+  padding: 1rem,
+  font-size: 0.9rem,
+  margin: 1rem,
+
 ), default, default);
 
 $nb-themes: nb-register-theme((
@@ -21,7 +45,30 @@ $nb-themes: nb-register-theme((
   sidebar-header-gap: 2rem,
   sidebar-header-height: initial,
   layout-content-width: 1400px,
-
   font-main: Roboto,
   font-secondary: Exo,
+  //smart-table
+  smart-table-border-radius: 0.1rem	,
+  smart-table-header-font-size: 0.8rem,
+  smart-table-font-size: 0.65rem,
+  smart-table-font-weight: 400,
+  smart-table-padding: 0.275rem 0.725rem,
+  smart-table-paging-border-width: 0.5,
+  smart-table-filter-padding: 0.1rem 0.1rem,
+  //form-control
+  form-control-placeholder-font-size: 0.8rem,
+  form-control-font-size: 0.8rem,
+  form-control-border-width: 1px,
+  form-control-border-radius: 0.1rem,
+  //fonts
+  font-weight-thin: 100,
+  font-weight-light: 200,
+  font-weight-normal: 300,
+  font-weight-bolder: 400,
+  font-weight-bold: 500,
+  font-weight-ultra-bold: 600,
+  //general
+  padding: 1rem,
+  font-size: 0.9rem,
+  margin: 1rem,
 ), cosmic, cosmic);
