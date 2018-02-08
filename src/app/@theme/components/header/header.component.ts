@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, SimpleChanges } from '@angular/core';
 
 import { NbMenuService, NbSidebarService } from '@nebular/theme';
 import { UserService } from '../../../@core/data/users.service';
@@ -11,6 +11,8 @@ import { AutenticationService } from '../../../@core/utils/autentication.service
   templateUrl: './header.component.html',
 })
 export class HeaderComponent implements OnInit {
+
+
 
 
   @Input() position = 'normal';

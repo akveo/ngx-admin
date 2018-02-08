@@ -8,10 +8,6 @@ export const MENU_ITEMS: NbMenuItem[] = [
     home: true,
   },
   {
-    title: 'FEATURES',
-    group: true,
-  },
-  {
     title: 'UI Features',
     icon: 'nb-keypad',
     link: '/pages/ui-features',

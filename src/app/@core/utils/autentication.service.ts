@@ -47,28 +47,42 @@ export class AutenticationService {
                     }
                     this.session = data;
                     this.setExpiresAt();
+                    this.clearUrl();
                 });
         }
         this.timer();
+    }
+
+    clearUrl() {
+        const uri = window.location.toString();
+        if (uri.indexOf('?') > 0) {
+            const clean_uri = uri.substring(0, uri.indexOf('?'));
+            window.history.replaceState({}, document.title, clean_uri);
+        }
     }
 
     public init() {
         const queryString = location.search.substring(1);
         const regex = /([^&=]+)=([^&]*)/g;
         let m;
-        while (!!(m = regex.exec(queryString))) {
-            if (window.sessionStorage.getItem(decodeURIComponent(m[1])) !== undefined) {
-                window.sessionStorage.setItem(decodeURIComponent(m[1]), decodeURIComponent(m[2]))
+        if (this.logoutValid()) {
+            this.clearUrl();
+        }else {
+            while (!!(m = regex.exec(queryString))) {
+                if (window.sessionStorage.getItem(decodeURIComponent(m[1])) !== undefined) {
+                    window.sessionStorage.setItem(decodeURIComponent(m[1]), decodeURIComponent(m[2]))
+                }
             }
-        }
-        if (!this.live()) {
-            this.getToken();
-        } else {
-            const id_token = window.sessionStorage.getItem('id_token').split('.');
-            this.payload = JSON.parse(atob(id_token[1]));
-            this.logOut = Config.LOCAL.TOKEN.SIGN_OUT_URL;
-            this.logOut += '?id_token_hint=' + window.sessionStorage.getItem('id_token');
-            this.logOut += '&post_logout_redirect_uri=' + Config.LOCAL.TOKEN.SIGN_OUT_REDIRECT_URL;
+            if (!this.live()) {
+                this.getToken();
+            } else {
+                const id_token = window.sessionStorage.getItem('id_token').split('.');
+                this.payload = JSON.parse(atob(id_token[1]));
+                this.logOut = Config.LOCAL.TOKEN.SIGN_OUT_URL;
+                this.logOut += '?id_token_hint=' + window.sessionStorage.getItem('id_token');
+                this.logOut += '&post_logout_redirect_uri=' + Config.LOCAL.TOKEN.SIGN_OUT_REDIRECT_URL;
+                this.logOut += '&state=' + window.sessionStorage.getItem('state');
+            }
         }
     }
     public live() {
@@ -77,6 +91,23 @@ export class AutenticationService {
         } else {
             return false;
         }
+    }
+    public logoutValid() {
+        let state: any;
+        let valid = true;
+        const queryString = location.search.substring(1);
+        const regex = /([^&=]+)=([^&]*)/g;
+        let m;
+        while (!!(m = regex.exec(queryString))) {
+            state = decodeURIComponent(m[2]);
+        }
+        if (window.sessionStorage.getItem('state') === state) {
+            window.sessionStorage.clear();
+            valid = true;
+        }else {
+            valid = false;
+        }
+        return valid;
     }
 
     public getAuthorizationUrl(): string {
@@ -147,4 +178,3 @@ export class AutenticationService {
         });
     }
 }
-
