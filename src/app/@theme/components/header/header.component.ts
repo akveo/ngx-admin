@@ -13,6 +13,8 @@ import { AutenticationService } from '../../../@core/utils/autentication.service
 export class HeaderComponent implements OnInit {
 
 
+
+
   @Input() position = 'normal';
 
   user: any;
