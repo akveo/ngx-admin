@@ -1,0 +1,19 @@
+<nb-card class="{{normalform.clase}}">
+    <nb-card-body>
+      <form class="form-horizontal">
+        <fieldset>
+          <legend align="{{normalform.alineacion_titulo}}">{{normalform.titulo}}</legend>
+          <div class="form-group row" *ngFor="let c of normalform.campos">
+            <label for="{{c.nombre}}" class="col-sm-3 form-control-label">{{c.label}}</label>
+            <div class="col-sm-6">
+              <input [(ngModel)]="c.valor" (ngModelChange)="validCampo(c)" [ngModelOptions]="{standalone: true}" type="{{c.tipo}}" id="{{c.nombre}}" class="{{c.clase}}" placeholder="{{c.placeholder}}" />
+            </div>
+            <small id="{{c.nombre}}" class=" col-sm-3 text-muted">
+              {{c.alerta}}
+            </small>
+          </div>
+          <button class="btn btn-success btn-sm" (click)="validForm()">{{normalform.btn}}</button>
+        </fieldset>
+      </form>
+    </nb-card-body>
+</nb-card>

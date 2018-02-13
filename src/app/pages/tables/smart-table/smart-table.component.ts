@@ -59,9 +59,49 @@ export class SmartTableComponent {
 
   source: LocalDataSource = new LocalDataSource();
 
+  myform = {
+    titulo: 'Formulario de prueba',
+    clase: 'col-12',
+    btn:'Aceptar',
+    modelo:'persona',
+    campos: [{
+      etiqueta: 'input',
+      nombre: 'direccion',
+      label: 'Dirección',
+      placeholder: 'Ingrese Dirección',
+      requierido: true,
+      tipo: 'text',
+    },{
+      etiqueta: 'input',
+      nombre: 'telefono',
+      label: 'Teléfono',
+      placeholder: 'Ingrese Teléfono',
+      tipo: 'number'
+    },{
+      etiqueta: 'input',
+      nombre: 'primernombre',
+      label: 'milabel',
+      placeholder: 'placeholder',
+      requierido: false,
+      tipo: 'text'
+    },{
+      etiqueta: 'input',
+      nombre: 'alejandro',
+      valor : 'es gay',
+      label: 'Alejandro',
+      placeholder: 'ingrese a alejandro',
+      requierido: true,
+      tipo: 'text'
+    }]
+  };
+
   constructor(private service: SmartTableService) {
     const data = this.service.getData();
     this.source.load(data);
+  }
+
+  traerPersona(event){
+    console.log(event);
   }
 
   onDeleteConfirm(event): void {
