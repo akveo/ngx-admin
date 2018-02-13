@@ -6,7 +6,7 @@
         <div class="example-container toggle-types">
           <div class="container-title">Toggle Types</div>
           <div [(ngModel)]="radioModel" ngbRadioGroup
-               class="btn-group btn-toggle-group btn-outline-toggle-group btn-group-full-width btn-toggle-radio-group">
+               class="btn-group btn-group-toggle btn-outline-toggle-group btn-group-full-width btn-toggle-radio-group">
             <label ngbButtonLabel class="btn btn-outline-primary">
               <input ngbButton type="radio" value="left"> Left
             </label>
@@ -17,7 +17,7 @@
               <input ngbButton type="radio" value="right"> Right
             </label>
           </div>
-          <div class="btn-group btn-toggle-group btn-group-full-width" data-toggle="buttons">
+          <div class="btn-group btn-group-toggle btn-group-full-width" data-toggle="buttons">
             <label ngbButtonLabel class="btn btn-primary" [class.active]="checkboxModel.left">
               <input ngbButton type="checkbox" [(ngModel)]="checkboxModel.left"> Left
             </label>
@@ -32,7 +32,7 @@
         <div class="example-container toolbars-container">
           <div class="pagination-container">
             <div class="container-title">Pagination</div>
-            <div class="btn-group btn-toggle-group btn-outline-toggle-group" data-toggle="buttons"
+            <div class="btn-group btn-group-toggle btn-outline-toggle-group" data-toggle="buttons"
                  [(ngModel)]="paginationModel" ngbRadioGroup>
               <label ngbButtonLabel class="btn btn-outline-success">
                 <input ngbButton type="radio" [value]="1"> 1
@@ -54,7 +54,7 @@
 
           <div class="icon-toolbar-container">
             <div class="container-title">Icon Toolbar</div>
-            <div class="btn-group btn-toggle-group" data-toggle="buttons">
+            <div class="btn-group btn-group-toggle" data-toggle="buttons">
               <label ngbButtonLabel class="btn btn-success" [class.active]="iconToolbarModel.one">
                 <input ngbButton type="checkbox" [(ngModel)]="iconToolbarModel.one"> 1
               </label>
@@ -75,7 +75,7 @@
         </div>
         <div class="example-container">
           <div class="container-title divided-button-group">Divided Button Group</div>
-          <div class="btn-group btn-divided-group btn-outline-divided-group btn-group-full-width btn-divided-checkbox-group "
+          <div class="btn-group btn-group-toggle btn-divided-group btn-outline-divided-group btn-group-full-width btn-divided-checkbox-group "
             data-toggle="buttons">
             <label ngbButtonLabel class="btn btn-outline-success btn-icon" [class.active]="dividedCheckboxModel.monday">
               <input ngbButton type="checkbox" [(ngModel)]="dividedCheckboxModel.monday"> <i
@@ -105,7 +105,7 @@
           <div class="container-title">Divided Button Group</div>
           <div class="row">
             <div [(ngModel)]="dividedButtonGroupOne" ngbRadioGroup
-                 class="btn-group btn-divided-group btn-outline-divided-group btn-group-full-width col-md-12">
+                 class="btn-group btn-group-toggle btn-divided-group btn-outline-divided-group btn-group-full-width col-md-12">
               <label ngbButtonLabel class="btn btn-outline-primary">
                 <input ngbButton type="radio" value="left"> Left
               </label>
@@ -117,7 +117,7 @@
               </label>
             </div>
           </div>
-          <div class="btn-group btn-divided-group btn-group-full-width" data-toggle="buttons">
+          <div class="btn-group btn-group-toggle btn-divided-group btn-group-full-width" data-toggle="buttons">
             <label ngbButtonLabel class="btn btn-primary" [class.active]="dividedButtonGroupTwo.left">
               <input ngbButton type="checkbox" [(ngModel)]="dividedButtonGroupTwo.left"> Left
             </label>
