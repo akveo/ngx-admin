@@ -1,7 +1,19 @@
 <nb-flip-card>
   <nb-card-front>
     <nb-card>
-      <nb-card-body>Front Side</nb-card-body>
+      <div class="info">
+        <div class="details">
+          <div class="title">{{ title }}</div>
+          <div class="value">{{ value }}</div>
+        </div>
+        <div class="icon">
+          <i class="{{ icon }}"></i>
+        </div>
+      </div>
+      <div class="progress-container">
+        <ngb-progressbar [value]="percent"></ngb-progressbar>
+        <div class="stats">{{ label }}</div>
+      </div>
     </nb-card>
   </nb-card-front>
   <nb-card-back>

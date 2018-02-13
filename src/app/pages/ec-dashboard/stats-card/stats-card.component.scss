@@ -2,6 +2,62 @@
 
 @include nb-install-component() {
   nb-card {
-    height: 7rem;
+    height: 8rem;
+
+    .info {
+      display: flex;
+      flex-direction: row;
+      flex: 1;
+      padding: 1.25rem;
+      align-items: center;
+    }
+
+    .details {
+      flex: 1;
+    }
+
+    .title {
+      margin-bottom: 0.75rem;
+    }
+
+    .value {
+      font-family: nb-theme(font-secondary);
+      font-size: 1.25rem;
+      font-weight: nb-theme(font-weight-bold);
+      color: nb-theme(card-fg-heading);
+    }
+
+    i {
+      font-size: 3rem;
+    }
+
+    .stats {
+      padding: 0.25rem 1.25rem;
+    }
+
+    ::ng-deep ngb-progressbar {
+      .progress {
+        height: 0.5rem;
+      }
+    }
+  }
+
+  @include nb-for-theme(cosmic) {
+    nb-card {
+      .title {
+        font-weight: nb-theme(font-weight-bolder);
+      }
+
+      ::ng-deep ngb-progressbar {
+        .progress {
+          background-color: nb-theme(layout-bg);
+        }
+
+        .progress-bar {
+          background-color: nb-theme(color-success);
+        }
+      }
+
+    }
   }
 }

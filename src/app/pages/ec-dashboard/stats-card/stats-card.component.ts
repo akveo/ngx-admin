@@ -8,6 +8,8 @@ import { Component, Input } from '@angular/core';
 export class StatsCardComponent {
 
   @Input() title: string;
-  @Input() type: string;
-  @Input() on = true;
+  @Input() value: string;
+  @Input() percent: string;
+  @Input() label: string;
+  @Input() icon: string;
 }
