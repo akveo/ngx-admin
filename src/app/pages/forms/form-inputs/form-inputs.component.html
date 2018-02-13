@@ -50,23 +50,24 @@
           <span class="input-group-addon success">@</span>
           <input type="text" class="form-control" placeholder="Username"/>
         </div>
+
         <div class="input-group mail-btn-group">
-          <span class="input-group-btn">
-            <button class="btn btn-primary btn-icon">
+          <span class="input-group-prepend">
+            <button class="btn btn-primary btn-icon input-group-text">
               <i class="ion-ios-email-outline"></i>
             </button>
           </span>
           <input type="text" class="form-control" placeholder="Recipient's username">
-          <span class="input-group-btn">
-            <button class="btn btn-primary">
+          <span class="input-group-append">
+            <button class="btn btn-primary input-group-text">
               @example.com
             </button>
           </span>
         </div>
         <div class="input-group">
           <input type="text" class="form-control" placeholder="Search for...">
-          <span class="input-group-btn">
-            <button class="btn btn-danger">
+          <span class="input-group-append">
+            <button class="btn btn-danger input-group-text">
               Search
             </button>
           </span>
@@ -168,11 +169,11 @@
           <div class="demo-checkboxes col-sm-4">
             <nb-checkbox>Checkbox 1</nb-checkbox>
             <nb-checkbox [value]="true">Checkbox 2</nb-checkbox>
-            <label class="custom-control custom-checkbox">
-              <input type="checkbox" class="custom-control-input">
-              <span class="custom-control-indicator"></span>
-              <span class="custom-control-description">Bootstrap Checkbox</span>
-            </label>
+
+            <div class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input" id="b-checkbox">
+              <label class="custom-control-label" for="b-checkbox">Bootstrap Checkbox</label>
+            </div>
           </div>
           <div class="demo-radio col-sm-4">
             <label class="custom-control custom-radio">
