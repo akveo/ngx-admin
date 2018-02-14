@@ -1,7 +1,9 @@
-<ngx-dinamicform [normalform]="myform" (result)="traerPersona($event)" ></ngx-dinamicform>
-<nb-card>
-  <nb-card-body>
-    <ng2-smart-table [settings]="settings" [source]="source" (deleteConfirm)="onDeleteConfirm($event)">
-    </ng2-smart-table>
-  </nb-card-body>
-</nb-card>
+<div class="row">
+  <div class="col-6">
+      <ngx-dinamicform [normalform]="myform1" (result)="traerPersona($event)" ></ngx-dinamicform>
+  </div>
+  <div class="col-6">
+      <ngx-dinamicform [normalform]="myform2" (resultSmart)="traerPersonaSmart($event)" ></ngx-dinamicform>
+  </div>
+</div>
+

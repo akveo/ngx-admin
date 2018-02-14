@@ -59,11 +59,67 @@ export class SmartTableComponent {
 
   source: LocalDataSource = new LocalDataSource();
 
-  myform = {
-    titulo: 'Formulario de prueba',
-    clase: 'col-12',
-    btn:'Aceptar',
-    modelo:'persona',
+  myform1 = {
+    titulo: 'Persona',
+    clase: 'col-6',
+    btn: 'Aceptar',
+    btnLimpiar: 'Limpiar',
+    modelo: 'persona',
+    campos: [{
+      etiqueta: 'input',
+      nombre: 'direccion',
+      label: 'Dirección',
+      placeholder: 'Ingrese Dirección',
+      requierido: true,
+      tipo: 'range',
+    }, {
+      etiqueta: 'input',
+      nombre: 'telefono',
+      label: 'Teléfono',
+      placeholder: 'Ingrese Teléfono',
+      tipo: 'number',
+    }, {
+      etiqueta: 'input',
+      nombre: 'primernombre',
+      label: 'milabel',
+      placeholder: 'placeholder',
+      requierido: false,
+      tipo: 'text',
+    }, {
+      etiqueta: 'input',
+      nombre: 'color',
+      label: 'Color',
+      requierido: true,
+      tipo: 'color',
+    }, {
+      etiqueta: 'textarea',
+      nombre: 'descripcion',
+      label: 'Descripción',
+      placeholder: 'ingrese a descripción',
+      requierido: true,
+      tipo: 'color',
+    }, {
+      etiqueta: 'select',
+      nombre: 'numeros',
+      label: 'Números',
+      placeholder: 'Seleccione el Número',
+      requierido: true,
+      valor: { id: 0 },
+      opciones: [
+        { id: 0, valor: "SELECCIONE ..." },
+        { id: 1, valor: "UNO" },
+        { id: 2, valor: "DOS" },
+        { id: 3, valor: "TRES" },
+        { id: 4, valor: "CUATRO" },
+        { id: 5, valor: "CINCO" },
+      ],
+    }]
+  };
+
+  myform2 = {
+    titulo: 'Persona',
+    clase: 'col-6',
+    modelo: 'persona',
     campos: [{
       etiqueta: 'input',
       nombre: 'direccion',
@@ -71,28 +127,27 @@ export class SmartTableComponent {
       placeholder: 'Ingrese Dirección',
       requierido: true,
       tipo: 'text',
-    },{
+    }, {
       etiqueta: 'input',
       nombre: 'telefono',
       label: 'Teléfono',
       placeholder: 'Ingrese Teléfono',
-      tipo: 'number'
-    },{
+      tipo: 'number',
+    }, {
       etiqueta: 'input',
       nombre: 'primernombre',
       label: 'milabel',
       placeholder: 'placeholder',
       requierido: false,
-      tipo: 'text'
-    },{
+      tipo: 'text',
+    }, {
       etiqueta: 'input',
-      nombre: 'alejandro',
-      valor : 'es gay',
-      label: 'Alejandro',
+      nombre: 'color',
+      label: 'Color',
       placeholder: 'ingrese a alejandro',
       requierido: true,
-      tipo: 'text'
-    }]
+      tipo: 'color',
+    }],
   };
 
   constructor(private service: SmartTableService) {
@@ -100,7 +155,11 @@ export class SmartTableComponent {
     this.source.load(data);
   }
 
-  traerPersona(event){
+  traerPersona(event) {
+    console.log(event);
+  }
+
+  traerPersonaSmart(event) {
     console.log(event);
   }
 

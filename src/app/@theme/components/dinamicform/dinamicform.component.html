@@ -1,19 +1,33 @@
-<nb-card class="{{normalform.clase}}">
-    <nb-card-body>
-      <form class="form-horizontal">
-        <fieldset>
-          <legend align="{{normalform.alineacion_titulo}}">{{normalform.titulo}}</legend>
-          <div class="form-group row" *ngFor="let c of normalform.campos">
-            <label for="{{c.nombre}}" class="col-sm-3 form-control-label">{{c.label}}</label>
-            <div class="col-sm-6">
-              <input [(ngModel)]="c.valor" (ngModelChange)="validCampo(c)" [ngModelOptions]="{standalone: true}" type="{{c.tipo}}" id="{{c.nombre}}" class="{{c.clase}}" placeholder="{{c.placeholder}}" />
-            </div>
-            <small id="{{c.nombre}}" class=" col-sm-3 text-muted">
-              {{c.alerta}}
-            </small>
-          </div>
-          <button class="btn btn-success btn-sm" (click)="validForm()">{{normalform.btn}}</button>
-        </fieldset>
-      </form>
-    </nb-card-body>
+<nb-card>
+  <form class="form-horizontal">
+    <fieldset>
+      <legend align="{{normalform.alineacion_titulo}}">{{normalform.titulo}}</legend>
+      <div class="form-group row" *ngFor="let c of normalform.campos" [ngSwitch]="c.etiqueta">
+        <label for="{{c.nombre}}" class="col-sm-3 form-control-label">{{c.label}}</label>
+        <div class="col-sm-6">
+          <input *ngSwitchCase="'input'" [(ngModel)]="c.valor" (ngModelChange)="validCampo(c)" [ngModelOptions]="{standalone: true}"
+            type="{{c.tipo}}" id="{{c.nombre}}" class="{{c.clase}}" placeholder="{{c.placeholder}}" />
+
+          <textarea *ngSwitchCase="'textarea'" [(ngModel)]="c.valor" (ngModelChange)="validCampo(c)" [ngModelOptions]="{standalone: true}"
+            type="text" id="{{c.nombre}}" class="{{c.clase}}" placeholder="{{c.placeholder}}"></textarea>
+
+          <select *ngSwitchCase="'select'" [(ngModel)]="c.valor.id" (ngModelChange)="validCampo(c)" class="{{c.clase}}" [ngModelOptions]="{standalone: true}">
+            <option class="{{c.clase}}" *ngFor="let item of c.opciones" [ngValue]="item.id" [selected]="c.valor.id === item.id">{{item.valor}}</option>
+          </select>
+        </div>
+        <small id="{{c.nombre}}" class=" col-sm-3 text-muted">
+          {{c.alerta}}
+        </small>
+      </div>
+      <div align="center">
+        <button class="btn btn-primary btn-tiny" (click)="clearForm()" *ngIf="normalform.btnLimpiar">{{normalform.btnLimpiar}}</button>
+        <button class="btn btn-success btn-tiny" (click)="validForm()" *ngIf="normalform.btn">{{normalform.btn}}</button>
+      </div>
+    </fieldset>
+  </form>
 </nb-card>
+
+<!-- <select name="requisito" ng-model="TiposAvance.requisito" class="form-control" ng-required="true">
+    <option selected value="" disabled>{{'SELECCIONE' | translate }} ...</option>
+    <option ng-repeat="r in TiposAvance.requisito_select" value="{{r.Id}}">{{"(" + r.CodigoAbreviacion + ")\t" + r.Nombre}}</option>
+ </select> -->
