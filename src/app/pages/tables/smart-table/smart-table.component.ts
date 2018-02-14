@@ -106,14 +106,14 @@ export class SmartTableComponent {
       requierido: true,
       valor: { id: 0 },
       opciones: [
-        { id: 0, valor: "SELECCIONE ..." },
-        { id: 1, valor: "UNO" },
-        { id: 2, valor: "DOS" },
-        { id: 3, valor: "TRES" },
-        { id: 4, valor: "CUATRO" },
-        { id: 5, valor: "CINCO" },
+        { id: 0, valor: 'SELECCIONE ...' },
+        { id: 1, valor: 'UNO' },
+        { id: 2, valor: 'DOS' },
+        { id: 3, valor: 'TRES' },
+        { id: 4, valor: 'CUATRO' },
+        { id: 5, valor: 'CINCO' },
       ],
-    }]
+    }],
   };
 
   myform2 = {
@@ -156,11 +156,9 @@ export class SmartTableComponent {
   }
 
   traerPersona(event) {
-    console.log(event);
   }
 
   traerPersonaSmart(event) {
-    console.log(event);
   }
 
   onDeleteConfirm(event): void {

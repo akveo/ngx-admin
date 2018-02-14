@@ -3,7 +3,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 @Component({
   selector: 'ngx-dinamicform',
   templateUrl: './dinamicform.component.html',
-  styleUrls: ['./dinamicform.component.scss']
+  styleUrls: ['./dinamicform.component.scss'],
 })
 export class DinamicformComponent implements OnInit {
   @Input('normalform') normalform: any;
@@ -24,7 +24,6 @@ export class DinamicformComponent implements OnInit {
   }
 
   validCampo(c) {
-    console.log(c);
     if (c.valor === '') {
       c.clase = 'form-control form-control-danger'
     } else {
@@ -52,9 +51,9 @@ export class DinamicformComponent implements OnInit {
 
   clearForm() {
     this.normalform.campos = this.normalform.campos.map(d => {
-      if(d.valor.id){
+      if (d.valor.id) {
         d.valor.id = 0;
-      }else{
+      } else {
         d.valor = '';
       }
       return d;
@@ -63,7 +62,7 @@ export class DinamicformComponent implements OnInit {
 
   validForm() {
     let result = '';
-    let objeto = {
+    const objeto = {
       valid: true,
       data: {},
     };
