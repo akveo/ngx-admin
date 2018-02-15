@@ -162,10 +162,11 @@ export class PosgradoComponent {
     ],
   }
   traerDatos(event) {
-    console.log(event)
+    // console.log(event)
   }
 
   traerPersonaSmart(event) {
+    // console.log(event)
   }
 
   constructor() { }
