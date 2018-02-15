@@ -82,6 +82,16 @@ export class DinamicformComponent implements OnInit {
           d.clase = 'form-control form-control-success'
         }
       }
+      if (d.etiqueta === 'radio') {
+        if (d.valor.Id === undefined) {
+          objeto.valid = false;
+          d.clase = 'form-control form-control-danger'
+          d.alerta = 'Seleccione el campo'
+        } else {
+          d.alerta = ''
+          d.clase = 'form-control form-control-success'
+        }
+      }
       if (d.requierido && d.valor === '') {
         objeto.valid = false;
         d.alerta = '** Debe llenar este campo';
@@ -100,5 +110,8 @@ export class DinamicformComponent implements OnInit {
     }
     this.result.emit(objeto);
     return objeto;
+  }
+  isEqual(obj1, obj2) {
+    return obj1 === obj2;
   }
 }

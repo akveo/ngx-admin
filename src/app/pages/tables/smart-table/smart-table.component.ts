@@ -30,7 +30,7 @@ export class SmartTableComponent {
       confirmDelete: true,
     },
     columns: {
-      id: {
+      Id: {
         title: 'ID',
         type: 'number',
       },
@@ -63,24 +63,26 @@ export class SmartTableComponent {
     titulo: 'Persona',
     clase: 'col-6',
     btn: 'Aceptar',
+    alertas: true,
     btnLimpiar: 'Limpiar',
-    modelo: 'persona',
+    modelo: 'Persona',
     campos: [{
       etiqueta: 'input',
-      nombre: 'direccion',
+      nombre: 'Direccion',
       label: 'Dirección',
       placeholder: 'Ingrese Dirección',
       requierido: true,
       tipo: 'range',
     }, {
       etiqueta: 'input',
-      nombre: 'telefono',
+      nombre: 'Telefono',
       label: 'Teléfono',
+      requierido: true,
       placeholder: 'Ingrese Teléfono',
       tipo: 'number',
     }, {
       etiqueta: 'input',
-      nombre: 'primernombre',
+      nombre: 'Primernombre',
       label: 'milabel',
       placeholder: 'placeholder',
       requierido: false,
@@ -97,6 +99,7 @@ export class SmartTableComponent {
       label: 'Descripción',
       placeholder: 'ingrese a descripción',
       requierido: true,
+      valor: 'Mi descripción',
       tipo: 'color',
     }, {
       etiqueta: 'select',
@@ -104,22 +107,45 @@ export class SmartTableComponent {
       label: 'Números',
       placeholder: 'Seleccione el Número',
       requierido: true,
-      valor: { id: 0 },
+      valor: { Id: 0 },
       opciones: [
-        { id: 0, valor: 'SELECCIONE ...' },
-        { id: 1, valor: 'UNO' },
-        { id: 2, valor: 'DOS' },
-        { id: 3, valor: 'TRES' },
-        { id: 4, valor: 'CUATRO' },
-        { id: 5, valor: 'CINCO' },
+        { Id: 0, valor: 'SELECCIONE ...' },
+        { Id: 1, valor: 'UNO' },
+        { Id: 2, valor: 'DOS' },
+        { Id: 3, valor: 'TRES' },
+        { Id: 4, valor: 'CUATRO' },
+        { Id: 5, valor: 'CINCO' },
       ],
+    }, {
+      etiqueta: 'radio',
+      nombre: 'numeros_radio',
+      label: 'Números',
+      placeholder: 'Seleccione el Número',
+      requierido: true,
+      valor: { Id: 1 },
+      opciones: [
+        { Id: 1, valor: 'UNO' },
+        { Id: 2, valor: 'DOS' },
+        { Id: 3, valor: 'TRES' },
+        { Id: 4, valor: 'CUATRO' },
+        { Id: 5, valor: 'CINCO' },
+      ],
+    }, {
+      etiqueta: 'input',
+      nombre: 'fecha',
+      label: 'Fecha',
+      valor: new Date(),
+      placeholder: 'ingrese la fecha',
+      requierido: true,
+      tipo: 'date',
     }],
   };
 
   myform2 = {
-    titulo: 'Persona',
+    titulo: 'Otra persona',
     clase: 'col-6',
-    modelo: 'persona',
+    alertas: true,
+    modelo: 'otra_persona',
     campos: [{
       etiqueta: 'input',
       nombre: 'direccion',
@@ -147,6 +173,13 @@ export class SmartTableComponent {
       placeholder: 'ingrese a alejandro',
       requierido: true,
       tipo: 'color',
+    }, {
+      etiqueta: 'input',
+      nombre: 'fecha',
+      label: 'Fecha',
+      placeholder: 'ingrese la fecha',
+      requierido: true,
+      tipo: 'date',
     }],
   };
 

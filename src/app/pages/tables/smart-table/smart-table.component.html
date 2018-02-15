@@ -1,9 +1,10 @@
-<div class="row">
-  <div class="col-6">
-      <ngx-dinamicform [normalform]="myform1" (result)="traerPersona($event)" ></ngx-dinamicform>
+<nb-card>
+  <div class="row">
+    <div class="col-6">
+      <ngx-dinamicform [normalform]="myform1" (result)="traerPersona($event)"></ngx-dinamicform>
+    </div>
+    <div class="col-6">
+      <ngx-dinamicform [normalform]="myform2" (resultSmart)="traerPersonaSmart($event)"></ngx-dinamicform>
+    </div>
   </div>
-  <div class="col-6">
-      <ngx-dinamicform [normalform]="myform2" (resultSmart)="traerPersonaSmart($event)" ></ngx-dinamicform>
-  </div>
-</div>
-
+</nb-card>

@@ -5,59 +5,50 @@
   nb-card-body {
     overflow: visible;
   }
-
   .input-group {
     margin-bottom: 1rem;
   }
-
+  legend {
+    padding: 10px;
+  }
   .validation-checkboxes {
     display: flex;
     justify-content: space-between;
-
     .custom-control {
       margin-left: 1rem;
     }
   }
-
   .demo-checkboxes {
     display: flex;
     flex-direction: column;
     margin-bottom: 1rem;
   }
-
   .demo-radio {
     display: flex;
     flex-direction: column;
     margin-bottom: 1rem;
   }
-
   .demo-disabled-checkbox-radio {
     display: flex;
     flex-direction: column;
     margin-bottom: 1rem;
   }
-
   .demo-checkboxes-radio {
     display: flex;
     justify-content: space-between;
   }
-
   .demo-rating {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
   }
-
   .star {
     font-size: 1.5rem;
     color: nb-theme(color-fg);
   }
-
   .filled {
     color: nb-theme(color-fg);
-  }
-
-  // TODO: Replace with the card header styles mixin
+  } // TODO: Replace with the card header styles mixin
   .rating-header {
     line-height: 2rem;
     font-size: 1.25rem;
@@ -65,24 +56,19 @@
     font-weight: nb-theme(font-weight-bolder);
     color: nb-theme(color-fg-heading);
   }
-
   .current-rate {
     font-size: 1.5rem;
     padding-left: 1rem;
     color: nb-theme(color-fg-heading);
   }
-
   .full-name-inputs {
     display: flex;
   }
-
   .input-group.has-person-icon {
     position: relative;
-
     .form-control {
       padding-left: 3rem;
     }
-
     &::before {
       content: '\F47D';
       font-family: 'Ionicons';
@@ -93,32 +79,46 @@
       top: 0.25rem;
     }
   }
-
   .dropdown {
     min-width: 7rem;
   }
-
   .dropdown-menu {
     width: auto;
   }
-
   .form-group label {
     padding-right: 1rem;
-    text-align: right;
+    text-align: left;
     vertical-align: middle;
   }
-
+  nb-card {
+    padding: 1rem;
+  }
   fieldset {
     display: block;
-    padding-left: 2px;
-    padding-right: 2px;
-    border: 1px;
+    -moz-margin-start: 1rem;
+    -moz-margin-end: 1rem;
+    -moz-padding-before: 1rem;
+    -moz-padding-start: 1rem;
+    -moz-padding-end: 1rem;
+    -moz-padding-after: 1rem;
+    -webkit-margin-start: 1rem;
+    -webkit-margin-end: 1rem;
+    -webkit-padding-before: 1rem;
+    -webkit-padding-start: 1rem;
+    -webkit-padding-end: 1rem;
+    -webkit-padding-after: 1rem;
+    min-width: -moz-min-content;
+    border-width: 2px;
+    border-radius: 0.2rem;
+    border-style: groove;
+    border-color: nb-theme(color-success);
+    @include nb-for-theme(cosmic) {
+      border-color: nb-theme(color-primary);
+    }
   }
-
   ngb-rating {
     outline: none;
   }
-
   ngb-rating i {
     color: nb-theme(color-success);
     @include nb-for-theme(cosmic) {
