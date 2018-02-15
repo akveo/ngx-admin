@@ -29,6 +29,16 @@ export const MENU_ITEMS: NbMenuItem[] = [
         link: '/pages/inscripcion/ver-aspirantes',
       },
     ],
+  }, {
+    title: 'Inscripciones',
+    icon: 'nb-compose',
+    link: '/pages/inscripciones',
+    children: [
+      {
+        title: 'Posgrado',
+        link: '/pages/inscripciones/posgrado',
+      },
+    ],
   },
   {
     title: 'UI Features',
