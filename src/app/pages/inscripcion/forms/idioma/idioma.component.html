@@ -1,0 +1,83 @@
+<nb-card>
+  <nb-card-body>
+    <div>
+      <label class="cabecera">Para ingresar los idiomas los cuaes tenga conocimiento, ingrese la respectiva información y presione el botón agregar. Realizar esto por cada uno.</label>
+      <div class="nombreidioma">
+        <label for="nombreidioma">*Idioma: </label>
+        <br>
+        <select class="form-control" id="pidioma" name="pidioma">
+          <option value="espanol">Español</option>
+          <option value="italiano">Italiano</option>
+          <option value="portugues">Portugués</option>          
+          <option value="ruso">Ruso</option>
+          <option value="ingles">Inglés</option>
+          <option value="madarin">Mandarín</option>
+        </select>
+      </div>
+      <div class="nativo">
+        <label for="nativo">*¿Es su idioma natal?</label>
+        <br>
+        <select class="form-control" id="nativo" name="nativo">
+          <option value="falso">Sí</option>
+          <option value="verdadero">No</option>
+        </select>     
+      </div>
+      <div class="habla">
+        <label for="habla">*Nivel de habla</label>
+        <br>
+        <select class="form-control" id="habla" name="habla">
+          <option value="bajo">Bajo</option>
+          <option value="medio">Regular</option>
+          <option value="alto">Alto</option>          
+        </select>
+      </div>
+      <div class="escucha">
+        <label for="escucha">*Nivel de escucha</label>
+        <br>
+        <select class="form-control" id="escucha" name="escucha">
+          <option value="bajo">Bajo</option>
+          <option value="medio">Regular</option>
+          <option value="alto">Alto</option>          
+        </select>
+      </div>
+      <div class="escritura">
+        <label for="escritura">*Nivel de escritura</label>
+        <br>
+        <select class="form-control" id="escritura" name="escritura">
+          <option value="bajo">Bajo</option>
+          <option value="medio">Regular</option>
+          <option value="alto">Alto</option>          
+        </select>
+      </div>
+      <div class="lectura">
+        <label for="lectura">*Nivel de lectura</label>
+        <br>
+        <select class="form-control" id="lectura" name="lectura">
+          <option value="bajo">Bajo</option>
+          <option value="medio">Regular</option>
+          <option value="alto">Alto</option>          
+        </select>
+      </div>   
+      <div class="agregar">
+        <input class="btn btn-success" type="button" value="Agregar información">
+      </div>
+      <hr>              
+      <ng2-smart-table [settings]="settings" [source]="source" (deleteConfirm)="onDeleteConfirm($event)">
+      </ng2-smart-table>
+      <hr>
+      <div class="seguir">
+        <div class="col-xs-6 col-xs-offset-3">
+          <label class="progreso">
+            <progress max="100" value="16"></progress> 16%
+          </label>
+        </div>
+        <div class="col-xs-6 col-xs-offset-3">
+          <a ui-sref="form.interests" class="btn btn-info siguiente" (click)="mostrarAreaSiguiente()">
+                     Siguiente
+            <i _ngcontent-c24="" class="ion-arrow-right-b"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nb-card-body>
+</nb-card>

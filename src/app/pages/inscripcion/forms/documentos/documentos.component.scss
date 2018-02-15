@@ -1,0 +1,60 @@
+@import '../../../../@theme/styles/themes';
+@import '~bootstrap/scss/mixins/breakpoints';
+@import '~@nebular/theme/styles/global/bootstrap/breakpoints';
+
+@include nb-install-component() {
+    div {
+        font-size: 13px;
+        margin-top: 5px;
+    }
+
+    input {
+        height: auto !important;
+        font-size: 13px;
+    }
+
+    .documento {
+        float: left;
+        margin-bottom: 10px;
+    }
+
+    .archivonombre {
+        display: inline-block;
+        width: 74%;
+    }
+
+    .seguir {
+        width:100%;
+        float: left;
+    }
+
+    .btn-warning {
+        height: auto !important;
+        font-size: 13px;
+    }
+
+    .col-xs-6, .col-xs-offset-3 {
+        float: left;
+        margin-right: 10px;
+        align-content: center;
+    }
+
+    .btn-info {
+        height: auto !important;
+        font-size: 13px;
+    }
+
+    .progreso {
+        font-size: 16px;
+        vertical-align: middle;
+    }
+
+    progress {
+        height: 44px;
+        margin-right: 10px;
+    }
+
+    .siguiente {
+        margin-left: 10px;
+    }
+}

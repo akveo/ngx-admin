@@ -1,0 +1,47 @@
+<div>
+    <div class="grupoinvestigacion">
+        <label for="grupoinvestigacion">¿Con qué grupo de investigación desea realizar su proyecto de grado?</label>
+        <select class="form-control" id="grupoinvestigacion" name="grupoinvestigacion">
+            <option value="ga">Grupo A</option>
+            <option value="gb">Grupo B</option>
+            <option value="gc">Grupo C</option>
+        </select>
+    </div>
+    <div class="lineainvestigacion">
+        <label for="lineainvestigacion">¿Qué línea de investigación desea seguir para su proyecto de grado?</label>
+        <select class="form-control" id="lineainvestigacion" name="lineainvestigacion">
+            <option value="lineaa">Linea A</option>
+            <option value="lineab">Linea B</option>
+            <option value="lineac">Linea C</option>
+        </select>
+    </div>
+    <div class="titulopropuesta">
+        <label for="nombrepropuestatrabajogrado">Título de la propuesta de trabajo de grado</label>
+        <input type="text" class="form-control" name="nombrepropuestatrabajogrado" placeholder="Título del trabajo de grado" ng-model="formData.name">
+    </div>
+    <div class="propuesta">
+        <label for="propuesta">Propuesta de trabajo de grado</label>
+        <br>
+        <span class="btn btn-warning">
+            Agregar&hellip;
+            <input type="file">
+            <!--style="display: none;">-->
+        </span>
+        <input class="propuestanombre form-control" type="text" placeholder="Ej. propuesta.pdf" name="propuestatrabajo" ng-model="formData.name"
+            disabled/>
+        <input type="button" class="btn btn-danger" value="Eliminar">
+    </div>
+    <div class="seguir">
+        <div class="col-xs-6 col-xs-offset-3">
+            <label class="progreso">
+                <progress max="100" value="80"></progress> 80%
+            </label>
+        </div>
+        <div class="col-xs-6 col-xs-offset-3">
+            <a ui-sref="form.interests" class="btn btn-info siguiente" (click)="mostrarAreaSiguiente()">
+                Siguiente
+                <i _ngcontent-c24="" class="ion-arrow-right-b"></i>
+            </a>
+        </div>
+    </div>
+</div>

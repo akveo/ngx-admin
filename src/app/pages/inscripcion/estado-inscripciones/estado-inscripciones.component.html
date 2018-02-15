@@ -1,0 +1,36 @@
+<nb-card>
+  <nb-card-header>
+      <h2>Estado de inscripciones</h2>
+  </nb-card-header>
+  <nb-card-body>
+    <div class="programa">
+      <label for="programa">*Programa</label>
+      <select class="form-control" id="programa" name="programa">
+        <option value="educación" for="programa1_true">Educación - Facultad de Educación </option>
+        <option value="ciencia">Ciencia - Facultad de ciencias </option>
+        <option value="tecnologia">Tecnología - Facultad de Tecnología</option>
+      </select>
+    </div>  
+    <div class="anio">
+      <label for="anio">*Nivel de escritura</label>
+      <br>
+      <select class="form-control" id="anio" name="anio">
+        <option value="2016">2016</option>
+        <option value="2017">2017</option>
+        <option value="2018">2018</option>          
+        <option value="2019">2019</option>          
+      </select>
+    </div>
+    <div class="periodo">
+      <label for="periodo">*Período académico</label>
+      <br>
+      <select class="form-control" id="periodo" name="periodo">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>          
+      </select>
+    </div>      
+    <ng2-smart-table [settings]="settings" [source]="source" (deleteConfirm)="onDeleteConfirm($event)">
+    </ng2-smart-table>
+  </nb-card-body>
+</nb-card>

@@ -1,0 +1,17 @@
+@import '../../../@theme/styles/themes';
+@import '~bootstrap/scss/mixins/breakpoints';
+@import '~@nebular/theme/styles/global/bootstrap/breakpoints';
+
+@include nb-install-component() {
+  h2 {
+    line-height:2.1;
+  }
+
+  nb-card-body {
+    overflow: visible;
+  }
+
+  nb-card-header {
+    text-align: center;
+  }
+}

@@ -1,0 +1,66 @@
+<nb-card>
+  <div class="modal-header">
+    <h2>Formulario de registro</h2>     
+    <button class="close" aria-label="Close" (click)="closeModal()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div> 
+  <div class="modal-body">
+    <div class="nombres">
+      <label for="nombres">*Nombres</label>
+      <input type="text" placeholder="Ej. Andrés Luis" class="form-control" name="nombres" ng-model="formData.name">  
+    </div>
+    <div class="apellidos">
+      <label for="apellidos">*Apellidos</label>
+      <input type="text" placeholder="Ej. Alvaréz Urrutia" class="form-control" name="apellidos" ng-model="formData.name">  
+    </div> 
+    <div class="tipodocumento">
+      <label for="tipodocumento">*Tipo de documento</label>
+      <select class="form-control" id="tipodocumento" name="tipodocumento">
+        <option value="ti">Tarjeta de identidad</option>
+        <option value="cc">Cédula de ciudadanía</option>
+        <option value="ce">Cédula de extranjería</option>
+        <option value="ps">Pasaporte</option>
+      </select>
+    </div>
+    <div class="numerodocumento">
+      <label for="numerodocumento">*Número de documento</label>
+      <input type="number" placeholder="Ej. 5525252" min="10000000" max="100000000000000000000" step="1" class="form-control" name="numerodocumento" ng-model="formData.name">
+    </div>
+    <div class="genero">
+      <label for="genero">*Género</label>
+      <select class="form-control" id="genero" name="genero">
+        <option value="mujer">Mujer</option>
+        <option value="hombre">Hombre</option>
+        <option value="otro">Otro</option>
+        <option value="nodice">No quiero decirlo</option>
+      </select>
+    </div>    
+    <div class="fechanacimiento">
+      <label for="fechanacimiento">*Fecha de nacimiento</label>
+      <input type="date" class="form-control" name="fechanacimiento" placeholder="Ej. 01/01/2010" ng-model="formData.name">
+    </div>   
+    <div class="correo">
+      <label for="correo">*Correo electrónico</label>
+      <input type="email" placeholder="Ej. algo@algo.com" class="form-control" name="correo" ng-model="formData.name">  
+    </div> 
+    <div class="ccorreo">
+      <label for="ccorreo">*Confirmar correo electrónico</label>
+      <input type="email" placeholder="Ej. algo@algo.com" class="form-control" name="ccorreo" ng-model="formData.name">  
+    </div>  
+    <div class="contrasena">
+      <label for="contrasena">*Contraseña</label>
+      <input type="password" placeholder="Ingrese su contraseña" class="form-control" name="contrasena" ng-model="formData.name">  
+    </div> 
+    <div class="ccontrasena">
+      <label for="ccontrasena">*Confirmar contraseña</label>
+      <input type="password" placeholder="Repita su contraseña" class="form-control" name="ccontrasena" ng-model="formData.name">  
+    </div> 
+  </div>
+  <div class="modal-footer">
+    <div class="text-center">
+      <span class="glyphicon glyphicon-heart"></span>
+      <button type="submit" class="btn btn-success">Enviar</button>
+    </div>        
+  </div>
+</nb-card>

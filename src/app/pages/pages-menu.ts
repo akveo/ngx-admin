@@ -8,6 +8,29 @@ export const MENU_ITEMS: NbMenuItem[] = [
     home: true,
   },
   {
+    title: 'Inscripcion',
+    icon: 'nb-compose',
+    link: '/pages/inscripcion',
+    children: [
+      {
+        title: 'Mockup registro',
+        link: '/pages/inscripcion/registro',
+      },
+      {
+        title: 'Mockup inscripcion',
+        link: '/pages/inscripcion/forms',
+      },
+      {
+        title: 'Mockup estado inscripciones',
+        link: '/pages/inscripcion/estado-inscripciones',
+      },
+      {
+        title: 'Mockup consultar aspirantes',
+        link: '/pages/inscripcion/ver-aspirantes',
+      },
+    ],
+  },
+  {
     title: 'UI Features',
     icon: 'nb-keypad',
     link: '/pages/ui-features',
