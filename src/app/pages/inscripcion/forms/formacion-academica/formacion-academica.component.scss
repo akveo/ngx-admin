@@ -1,0 +1,126 @@
+@import '../../../../@theme/styles/themes';
+@import '~bootstrap/scss/mixins/breakpoints';
+@import '~@nebular/theme/styles/global/bootstrap/breakpoints';
+
+@include nb-install-component() {
+    nb-card {
+        transform: translate3d(0, 0, 0);
+    }
+
+    div {
+        font-size: 13px;
+        margin-top: 5px;
+    }
+
+    select {
+        height: auto !important;
+        font-size: 13px;
+    }
+
+    input {
+        height: auto !important;
+        font-size: 13px;
+    }
+
+    textarea {
+        font-size: 13px;
+    }
+
+    .cabecera {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    .nformacion {
+        width: 49%;
+        float: left;
+        margin-right: 10px;
+        margin-bottom: 10px;
+    }
+
+    .anioinicio {
+        width: 24%;
+        float: left;
+        margin-right: 10px;
+        margin-bottom: 10px;
+    }
+
+    .aniogrado {
+        width: 24%;
+        float: left;
+        margin-bottom: 10px;
+    }
+
+    .paisuniversidad {
+        width: 49%;
+        float: left;
+        margin-right: 10px;
+        margin-bottom: 10px;
+    }
+
+    .ciudaduniversidad {
+        width: 49%;
+        float: left;
+        margin-bottom: 10px;
+    }
+
+    .nuniversidad {
+        width: 49%;
+        float: left;
+        margin-right: 10px;
+        margin-bottom: 10px;
+    }
+
+    .modalidad {
+        width: 49%;
+        float: left;
+        margin-bottom: 10px;
+    }
+
+    .titulogrado {
+        width: 49%;
+        float: left;
+        margin-right: 10px;
+        margin-bottom: 10px;
+    }
+
+    .nombretrabajogrado {
+        width: 49%;
+        float: left;
+        margin-bottom: 10px;
+    }
+
+    .btn-success {
+        height: auto !important;
+        font-size: 13px;
+    }
+
+    .btn-info {
+        height: auto !important;
+        font-size: 13px;
+    }
+
+    .agregar {
+        text-align: center;
+    }
+
+    .col-xs-6, .col-xs-offset-3 {
+        float: left;
+        margin-right: 10px;
+        align-content: center;
+    }
+
+    .progreso {
+        font-size: 16px;
+        vertical-align: middle;
+    }
+
+    progress {
+        height: 44px;
+        margin-right: 10px;
+    }
+
+    .siguiente {
+        margin-left: 10px;
+    }
+}

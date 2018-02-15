@@ -1,0 +1,50 @@
+<nb-card>
+    <nb-card-header>
+        <h2>Formulario de inscripción</h2>
+        <!--<div class="text-center status-buttons">
+                <a (click)="mostrarArea1()">
+                    <span [class.area-selected]="mostrarParte1 === true">1</span>Datos básicos</a>
+                <a (click)="mostrarArea2()">
+                    <span [class.area-selected]="mostrarParte2 === true">2</span>Formación académica</a>
+                <a (click)="mostrarArea3()">
+                    <span [class.area-selected]="mostrarParte3 === true">3</span>Formación laboral</a>
+                <a (click)="mostrarArea4()">
+                    <span [class.area-selected]="mostrarParte4 === true">4</span>Documentos</a>
+                <a (click)="mostrarArea5()">
+                    <span [class.area-selected]="mostrarParte5 === true">5</span>Descuentos</a>
+                <a (click)="mostrarArea6()">
+                    <span [class.area-selected]="mostrarParte6 === true">6</span>Trabajo de grado</a>
+        </div>-->       
+    </nb-card-header>
+    <nb-card-body>
+        <nb-tabset fullWidth>
+            <nb-tab tabTitle="1. Datos básicos">
+                <ngx-datos-basicos></ngx-datos-basicos>
+            </nb-tab>
+            <nb-tab tabTitle="2. Formación académica">
+                <ngx-formacion-academica></ngx-formacion-academica>
+            </nb-tab>
+            <nb-tab tabTitle="3. Idiomas">
+                <ngx-idiomas></ngx-idiomas>
+            </nb-tab>            
+            <nb-tab tabTitle="4. Formación laboral">
+                <ngx-formacion-laboral></ngx-formacion-laboral>
+            </nb-tab>
+            <nb-tab tabTitle="5. Documentos">
+                <ngx-documentos></ngx-documentos>
+            </nb-tab>
+            <nb-tab tabTitle="6. Descuentos">
+                <ngx-descuentos></ngx-descuentos>
+            </nb-tab>
+            <nb-tab tabTitle="7. Trabajo de grado">
+                <ngx-trabajo-grado></ngx-trabajo-grado>
+            </nb-tab>   
+            <nb-tab tabTitle="8. Fin">
+                <ngx-fin-inscripcion></ngx-fin-inscripcion>
+            </nb-tab>                           
+        </nb-tabset>
+    </nb-card-body>
+</nb-card>
+
+
+  

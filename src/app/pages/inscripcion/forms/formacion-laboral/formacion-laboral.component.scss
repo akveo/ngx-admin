@@ -1,0 +1,118 @@
+@import '../../../../@theme/styles/themes';
+@import '~bootstrap/scss/mixins/breakpoints';
+@import '~@nebular/theme/styles/global/bootstrap/breakpoints';
+
+@include nb-install-component() {
+    nb-card {
+        transform: translate3d(0, 0, 0);
+    }
+
+    div {
+        font-size: 13px;
+        margin-top: 5px;
+    }
+
+    select {
+        height: auto !important;
+        font-size: 13px;
+    }
+
+    input {
+        height: auto !important;
+        font-size: 13px;
+    }
+
+    textarea {
+        font-size: 13px;
+    }
+
+    .cabecera {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    .nempresa {
+        width: 49%;
+        float: left;
+        margin-right: 10px;
+        margin-bottom: 10px;
+    }
+
+    .dempresa {
+        width: 49%;
+        float: left;
+        margin-bottom: 10px;
+    }
+
+    .emailempresa {
+        width: 49%;
+        float: left;
+        margin-right: 10px;
+        margin-bottom: 10px;
+    }
+
+    .telefonoempresa {
+        width: 49%;
+        float: left;
+        margin-bottom: 10px;
+    }
+
+    .fechaini {
+        width: 24%;
+        float: left;
+        margin-right: 10px;
+        margin-bottom: 10px;
+    }
+
+    .fechafin {
+        width: 24%;
+        float: left;
+        margin-right: 10px;
+        margin-bottom: 10px;
+    }
+
+    .cargo {
+        width: 49%;
+        float: left;
+        margin-bottom: 10px;
+    }
+
+    .seguir {
+        width:100%;
+        float: left;
+    }
+
+    .col-xs-6, .col-xs-offset-3 {
+        float: left;
+        margin-right: 10px;
+        align-content: center;
+    }
+
+    .btn-success {
+        height: auto !important;
+        font-size: 13px;
+    }
+
+    .btn-info {
+        height: auto !important;
+        font-size: 13px;
+    }
+
+    .agregar {
+        text-align: center;
+    }
+
+    .progreso {
+        font-size: 16px;
+        vertical-align: middle;
+    }
+
+    progress {
+        height: 44px;
+        margin-right: 10px;
+    }
+
+    .siguiente {
+        margin-left: 10px;
+    }
+}
