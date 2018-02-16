@@ -40,8 +40,7 @@
         "../node_modules/tinymce/plugins/link/plugin.min.js",
         "../node_modules/tinymce/plugins/paste/plugin.min.js",
         "../node_modules/tinymce/plugins/table/plugin.min.js",
-        "./assets/vendors/echarts.min.js",
-        "./assets/vendors/echarts.world.min.js",
+        "../node_modules/echarts/dist/echarts.min.js",
         "../node_modules/chart.js/dist/Chart.min.js"
       ],
       "environmentSource": "environments/environment.ts",
