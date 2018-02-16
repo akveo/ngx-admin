@@ -9,7 +9,7 @@ import { Component } from '@angular/core';
       Made with
       <b>
         <a href="https://akveo.github.io/nebular/#/home?utm_source=ngx-admin&utm_medium=footer_link" target="_blank">
-        Nebular
+        Nebular.
         </a>
       </b>
     </span>
