@@ -3,7 +3,7 @@
 @include nb-install-component() {
 
   .team-photo {
-    background-image: url('~/assets/images/team.png');
+    background-image: url('/assets/images/team.png');
     background-position: center;
     background-size: cover;
     position: relative;

@@ -1,3 +1,19 @@
+<a name="2.0.2"></a>
+## [2.0.2](https://github.com/akveo/ngx-admin/compare/v2.0.1...v2.0.2) (2018-01-04)
+
+
+### Bug Fixes
+
+* **dashboard:** fix mistyped ngbDropdownMenu in some ngbDropdown ul elements ([#1458](https://github.com/akveo/ngx-admin/issues/1458)) ([fa83572](https://github.com/akveo/ngx-admin/commit/fa83572))
+* **dashboard:** fix typo in styles ([#1460](https://github.com/akveo/ngx-admin/issues/1460)) ([630c249](https://github.com/akveo/ngx-admin/commit/630c249))
+
+
+### Features
+
+* **dependencies:** update dependencies, angular 5+, nebular rc.4 ([26e16ed](https://github.com/akveo/ngx-admin/commit/26e16ed))
+
+
+
 <a name="2.0.1"></a>
 ## [2.0.1](https://github.com/akveo/ngx-admin/compare/v2.0.0...v2.0.1) (2017-10-26)
 
