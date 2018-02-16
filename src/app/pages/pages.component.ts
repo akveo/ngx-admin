@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component } from '@angular/core';
 
 import { MENU_ITEMS } from './pages-menu';
 
@@ -10,7 +10,6 @@ import { MENU_ITEMS } from './pages-menu';
       <router-outlet></router-outlet>
     </ngx-sample-layout>
   `,
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PagesComponent {
 
