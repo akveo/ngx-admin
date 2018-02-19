@@ -1,0 +1,13 @@
+button.with-margins {
+  margin: 0 0.75rem 2rem 0;
+}
+
+/deep/ nb-card.popover-card {
+  margin-bottom: 0;
+  width: 300px;
+  box-shadow: none;
+}
+
+:host /deep/ .btn-outline-secondary {
+  margin: 0 0.5rem 0.5rem 0;
+}
