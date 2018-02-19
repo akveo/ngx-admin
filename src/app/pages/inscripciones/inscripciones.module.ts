@@ -6,6 +6,8 @@ import { InscripcionesRoutingModule, routedComponents } from './inscripciones-ro
 import { PosgradoComponent } from './posgrado/posgrado.component';
 import { InscripcionesComponent } from './inscripciones.component';
 
+
+
 @NgModule({
   imports: [
     ThemeModule,
