@@ -34,6 +34,11 @@
         text-decoration: underline;
       }
     }
+
+    &.github-start {
+      width: 140px;
+      display: flex;
+    }
   }
 
   .header-container {
@@ -75,7 +80,16 @@
     }
   }
 
+  @include media-breakpoint-down(lg) {
+
+    .control-item.email, .control-item.notifications {
+      display: none;
+    }
+
+  }
+
   @include media-breakpoint-down(md) {
+
 
     nb-action:not(.toggle-layout) {
       border: none;
@@ -84,9 +98,12 @@
     .control-item {
       display: none;
     }
-
     .toggle-layout {
       padding: 0;
+    }
+
+    .toggle-layout {
+      display: none;
     }
   }
 
@@ -95,18 +112,15 @@
     nb-user /deep/ .user-name {
       display: none;
     }
-  }
 
-  @include media-breakpoint-down(is) {
+    .control-item.github-start {
+      display: none;
+    }
 
     .header-container {
       .logo {
         font-size: 1.25rem;
       }
-    }
-
-    .toggle-layout {
-      display: none;
     }
 
     nb-action:not(.toggle-layout) {
