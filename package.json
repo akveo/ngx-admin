@@ -75,6 +75,7 @@
     "@angular/compiler-cli": "~5.1.0",
     "@angular/language-service": "~5.1.0",
     "@compodoc/compodoc": "1.0.1",
+    "@types/googlemaps": "3.30.4",
     "@types/d3-color": "1.0.5",
     "@types/jasmine": "2.5.54",
     "@types/jasminewd2": "2.0.3",
