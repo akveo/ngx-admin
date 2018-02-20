@@ -17,6 +17,8 @@ import {
   NbCheckboxModule,
 } from '@nebular/theme';
 
+import { NbSecurityModule } from '@nebular/security';
+
 import {
   FooterComponent,
   HeaderComponent,
@@ -49,6 +51,7 @@ const NB_MODULES = [
   NbSidebarModule,
   NbCheckboxModule,
   NgbModule,
+  NbSecurityModule, // *nbIsGranted directive
 ];
 
 const COMPONENTS = [
