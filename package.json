@@ -42,11 +42,11 @@
     "@asymmetrik/ngx-leaflet": "3.0.1",
     "@nebular/auth": "2.0.0-rc.4",
     "@nebular/theme": "2.0.0-rc.4",
-    "@ng-bootstrap/ng-bootstrap": "1.0.0-beta.8",
+    "@ng-bootstrap/ng-bootstrap": "1.0.0",
     "@swimlane/ngx-charts": "7.0.1",
     "angular2-chartjs": "0.4.1",
     "angular2-toaster": "4.0.1",
-    "bootstrap": "4.0.0-beta.2",
+    "bootstrap": "4.0.0",
     "chart.js": "2.7.1",
     "ckeditor": "4.7.3",
     "classlist.js": "1.1.20150312",
@@ -71,7 +71,7 @@
     "zone.js": "0.8.18"
   },
   "devDependencies": {
-    "@angular/cli": "1.6.3",
+    "@angular/cli": "1.6.7",
     "@angular/compiler-cli": "~5.1.0",
     "@angular/language-service": "~5.1.0",
     "@compodoc/compodoc": "1.0.1",
