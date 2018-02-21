@@ -39,7 +39,7 @@ export let DATOS_PERSONALES = {
       nombre: 'soporte',
       label: 'Soporte Documento',
       requerido: true,
-      type: 'IMAGE'
+      type: 'IMAGE',
     }, {
       etiqueta: 'select',
       nombre: 'GrupoSanguineo',

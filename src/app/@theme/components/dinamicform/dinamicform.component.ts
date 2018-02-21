@@ -24,10 +24,10 @@ export class DinamicformComponent implements OnInit {
   }
 
   onChange(event, c) {
-    console.log(event);
+    // console.log(event);
     c.valor = event.srcElement.files[0];
     event.srcElement.files = new FileList();
-    console.log('file', c.valor);
+    // console.log('file', c.valor);
     this.validCampo(c);
   }
 
@@ -144,7 +144,7 @@ export class DinamicformComponent implements OnInit {
         if (d.requerido) {
           resueltos++;
         }
-        this.data.files.push({nombre: d.nombre,file: d.valor});
+        this.data.files.push({ nombre: d.nombre, file: d.valor });
       }
     });
     if (this.data.valid && (resueltos / requeridos) === 1) {
