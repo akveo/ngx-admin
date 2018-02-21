@@ -61,9 +61,8 @@
         <!-- <input-file *ngSwitchCase="'input-file'" [(model)]="c.valor" ></input-file> -->
         <!-- <ngx-input-file-upload *ngSwitchCase="'input-file'" [acceptHtml]="acceptHtml" [(ngModel)]="c.valor" (ngModelChange)="change()" [acceptTs]="acceptTs" [activeColor]="activeColor">
         </ngx-input-file-upload> -->
-        <input type="file" class="{{c.clase}}" *ngSwitchCase="'file'" (change)="onChange($event,c)"/>
-        
-        
+        <input type="file" name="{{c.nombre}}" class="{{c.clase}}" *ngSwitchCase="'file'" (change)="onChange($event,c)"/>
+
       </div>
     </div>
   </fieldset>

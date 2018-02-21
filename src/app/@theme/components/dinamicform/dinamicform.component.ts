@@ -8,20 +8,26 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 
 export class DinamicformComponent implements OnInit {
-  acceptHtml = '';
-  acceptTs = '';
-  activeColor: string = '#3366CC';
 
   @Input('normalform') normalform: any;
   @Output('result') result: EventEmitter<any> = new EventEmitter();
   @Output('resultSmart') resultSmart: EventEmitter<any> = new EventEmitter();
-  data = {};
+  data: any;
 
   constructor() {
+    this.data = {
+      valid: true,
+      data: {},
+      percentage: 0,
+      files: [],
+    };
   }
 
   onChange(event, c) {
-    c.valor = event.srcElement.files;
+    console.log(event);
+    c.valor = event.srcElement.files[0];
+    event.srcElement.files = new FileList();
+    console.log('file', c.valor);
     this.validCampo(c);
   }
 
@@ -81,11 +87,10 @@ export class DinamicformComponent implements OnInit {
     let requeridos = 0;
     let resueltos = 0;
 
-    const objeto = {
-      valid: true,
-      data: {},
-      percentage: 0,
-    };
+    this.data.valid = true;
+    this.data.data = {};
+    this.data.percentage = 0;
+    this.data.files = [];
 
     if (this.normalform.modelo) {
       result = '{"' + this.normalform.modelo + '":{';
@@ -98,7 +103,7 @@ export class DinamicformComponent implements OnInit {
       }
       if (d.etiqueta === 'select') {
         if (d.valor.id === 0) {
-          objeto.valid = false;
+          this.data.valid = false;
           d.clase = 'form-control form-control-danger'
           d.alerta = 'Seleccione el campo'
         } else {
@@ -108,7 +113,7 @@ export class DinamicformComponent implements OnInit {
       }
       if (d.tipo === 'file') {
         if (d.valor.id === 0) {
-          objeto.valid = false;
+          this.data.valid = false;
           d.clase = 'form-control form-control-danger'
           d.alerta = 'Seleccione el campo'
         } else {
@@ -118,7 +123,7 @@ export class DinamicformComponent implements OnInit {
       }
       if (d.etiqueta === 'radio') {
         if (d.valor.Id === undefined) {
-          objeto.valid = false;
+          this.data.valid = false;
           d.clase = 'form-control form-control-danger'
           d.alerta = 'Seleccione el campo'
         } else {
@@ -127,27 +132,32 @@ export class DinamicformComponent implements OnInit {
         }
       }
       if (d.requerido && (d.valor === '')) {
-        objeto.valid = false;
+        this.data.valid = false;
         d.alerta = '** Debe llenar este campo';
         d.clase = 'form-control form-control-danger';
-      } else if (d.valor !== '') {
+      } else if (d.valor !== '' && d.etiqueta !== 'file') {
         if (d.requerido) {
           resueltos++;
         }
         result += '"' + d.nombre + '":' + JSON.stringify(d.valor) + ',';
+      } else if (d.valor !== {} && d.etiqueta === 'file') {
+        if (d.requerido) {
+          resueltos++;
+        }
+        this.data.files.push({nombre: d.nombre,file: d.valor});
       }
     });
-    if (objeto.valid) {
+    if (this.data.valid && (resueltos / requeridos) === 1) {
       if (this.normalform.modelo) {
         result = result.substring(0, result.length - 1) + '}}';
       } else {
         result = result.substring(0, result.length - 1) + '}';
       }
-      objeto.data = JSON.parse(result);
+      this.data.data = JSON.parse(result);
     }
-    objeto.percentage = (resueltos / requeridos);
-    this.result.emit(objeto);
-    return objeto;
+    this.data.percentage = (resueltos / requeridos);
+    this.result.emit(this.data);
+    return this.data;
   }
 
   isEqual(obj1, obj2) {
