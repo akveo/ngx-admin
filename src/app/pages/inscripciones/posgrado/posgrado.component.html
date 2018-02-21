@@ -1,0 +1,33 @@
+<nb-card>
+  <nb-card-header>
+    <h2>Formulario de inscripción</h2>
+  </nb-card-header>
+  <nb-card-body>
+    <mat-progress-bar mode="determinate" [value]="percentage" [color]="color"></mat-progress-bar>
+    <nb-tabset fullWidth>
+      <nb-tab tabTitle="1. Datos básicos">
+        <nb-card>
+          <div class="col-6">
+            <br>
+            <ngx-dinamicform [normalform]="formDatosBasicos" (result)="traerDatos($event)"></ngx-dinamicform>
+          </div>
+        </nb-card>
+      </nb-tab>
+      <nb-tab tabTitle="2. Formación académica">
+      </nb-tab>
+      <nb-tab tabTitle="3. Idiomas">
+      </nb-tab>
+      <nb-tab tabTitle="4. Formación laboral">
+      </nb-tab>
+      <nb-tab tabTitle="5. Documentos">
+      </nb-tab>
+      <nb-tab tabTitle="6. Descuentos">
+      </nb-tab>
+      <nb-tab tabTitle="7. Trabajo de grado">
+      </nb-tab>
+      <nb-tab tabTitle="8. Fin">
+      </nb-tab>
+    </nb-tabset>
+  </nb-card-body>
+
+</nb-card>

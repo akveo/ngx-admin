@@ -4,7 +4,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AutenticationService } from '../@core/utils/autentication.service';
 
-
 import {
   NbActionsModule,
   NbCardModule,
@@ -28,15 +27,19 @@ import {
   TinyMCEComponent,
   DinamicformComponent,
 } from './components';
+
 import { CapitalizePipe, PluralPipe, RoundPipe, TimingPipe } from './pipes';
+
 import {
   OneColumnLayoutComponent,
   SampleLayoutComponent,
   ThreeColumnsLayoutComponent,
   TwoColumnsLayoutComponent,
 } from './layouts';
+
 import { DEFAULT_THEME } from './styles/theme.default';
 import { COSMIC_THEME } from './styles/theme.cosmic';
+
 const BASE_MODULES = [CommonModule, FormsModule, ReactiveFormsModule];
 
 const NB_MODULES = [
@@ -77,7 +80,7 @@ const PIPES = [
 const NB_THEME_PROVIDERS = [
   ...NbThemeModule.forRoot(
     {
-      name: 'cosmic',
+      name: 'default',
     },
     [DEFAULT_THEME, COSMIC_THEME],
   ).providers,

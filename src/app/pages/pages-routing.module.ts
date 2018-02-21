@@ -14,6 +14,9 @@ const routes: Routes = [{
     path: 'inscripcion',
     loadChildren: './inscripcion/mockup.module#MockupModule',
   }, {
+    path: 'inscripciones',
+    loadChildren: './inscripciones/inscripciones.module#InscripcionesModule',
+  }, {
     path: 'ui-features',
     loadChildren: './ui-features/ui-features.module#UiFeaturesModule',
   }, {

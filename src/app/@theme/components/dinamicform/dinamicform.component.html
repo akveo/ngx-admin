@@ -1,13 +1,18 @@
 <form class="form-horizontal">
   <fieldset>
-    <legend align="{{normalform.alineacion_titulo}}">{{normalform.titulo}}</legend>
+    <legend align="{{normalform.alineacion_titulo}}"><small>{{normalform.titulo}}</small></legend>
     <div class="form-group row" *ngFor="let c of normalform.campos" [ngSwitch]="c.etiqueta">
-      <label for="{{c.nombre}}" class="col-sm-3 form-control-label"><small>{{c.label}}</small></label>
+      <label for="{{c.nombre}}" class="col-sm-3 form-control-label"><small>{{c.label}}</small><br>
+        <small id="{{c.nombre}}" class="text-muted" [hidden]="!normalform.alertas">
+            {{c.alerta}}
+          </small>
+      </label>
+
       <div class="{{normalform.clase}}">
 
         <!-- input -->
         <input *ngSwitchCase="'input'" [(ngModel)]="c.valor" (ngModelChange)="validCampo(c)" [ngModelOptions]="{standalone: true}"
-          type="{{c.tipo}}" id="{{c.nombre}}" class="{{c.clase}}" placeholder="{{c.placeholder}}" />
+          type="{{c.tipo}}" id="{{c.nombre}}" class="{{c.clase}}" placeholder="{{c.placeholder}}" [disabled]="c.deshabilitar"/>
 
         <!-- textarea -->
         <textarea *ngSwitchCase="'textarea'" [(ngModel)]="c.valor" (ngModelChange)="validCampo(c)" [ngModelOptions]="{standalone: true}"
@@ -29,7 +34,7 @@
           </div>
         </div>
 
-        <!-- radio -->
+        <!-- checkbox -->
         <div *ngSwitchCase="'checkbox'">
           <div *ngFor="let item of c.opciones" class="form-check">
             <label class="row custom-control custom-radio">
@@ -42,8 +47,9 @@
               </span>
             </label>
           </div>
-        </div>      
+        </div>
 
+        <!-- select -->
         <select *ngSwitchCase="'select'" [(ngModel)]="c.valor.Id" (ngModelChange)="validCampo(c)" class="{{c.clase}}" [ngModelOptions]="{standalone: true}">
               <option class="{{c.clase}}" *ngFor="let item of c.opciones" [ngValue]="item.Id" [selected]="c.valor.Id === item.Id">
                 {{item.valor}}
@@ -51,12 +57,13 @@
               </option>
           </select>
 
-
+        <!-- input-file -->
+        <!-- <input-file *ngSwitchCase="'input-file'" [(model)]="c.valor" ></input-file> -->
+        <!-- <ngx-input-file-upload *ngSwitchCase="'input-file'" [acceptHtml]="acceptHtml" [(ngModel)]="c.valor" (ngModelChange)="change()" [acceptTs]="acceptTs" [activeColor]="activeColor">
+        </ngx-input-file-upload> -->
+        <input type="file" name="{{c.nombre}}" class="{{c.clase}}" *ngSwitchCase="'file'" (change)="onChange($event,c)"/>
 
       </div>
-      <small id="{{c.nombre}}" class=" col-sm-3 text-muted" [hidden]="!normalform.alertas">
-            {{c.alerta}}
-          </small>
     </div>
   </fieldset>
   <br>
