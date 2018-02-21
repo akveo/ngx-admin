@@ -163,18 +163,14 @@
     </nb-card>
 
     <nb-card>
-      <nb-card-header>Checkboxes & Radios</nb-card-header>
+      <nb-card-header>Checkboxes & Radios (Nebular)</nb-card-header>
       <nb-card-body>
         <div class="row demo-checkboxes-radio">
           <div class="demo-checkboxes col-sm-4">
             <nb-checkbox>Checkbox 1</nb-checkbox>
             <nb-checkbox [value]="true">Checkbox 2</nb-checkbox>
-
-            <div class="custom-control custom-checkbox">
-              <input type="checkbox" class="custom-control-input" id="b-checkbox">
-              <label class="custom-control-label" for="b-checkbox">Bootstrap Checkbox</label>
-            </div>
           </div>
+          <!--TODO replace bootstrap radio to nb-radio-->
           <div class="demo-radio col-sm-4">
             <label class="custom-control custom-radio">
               <input type="radio" class="custom-control-input" name="customRadio">
@@ -194,11 +190,64 @@
           </div>
           <div class="demo-disabled-checkbox-radio col-sm-4">
             <nb-checkbox disabled>Disabled Checkbox</nb-checkbox>
+            <!--TODO replace bootstrap radio to nb-radio-->
             <label class="custom-control custom-radio">
               <input type="radio" class="custom-control-input" disabled>
               <span class="custom-control-indicator"></span>
               <span class="custom-control-description">Disabled Radio</span>
             </label>
+          </div>
+        </div>
+      </nb-card-body>
+    </nb-card>
+
+    <nb-card>
+      <nb-card-header>Checkboxes & Radios (Bootstrap)</nb-card-header>
+      <nb-card-body>
+        <div class="row demo-checkboxes-radio">
+          <div class="demo-checkboxes col-sm-3">
+            <div class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input" id="b-checkbox">
+              <label class="custom-control-label" for="b-checkbox">Checkbox 1</label>
+            </div>
+            <div class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input" id="b-checkbox-2" checked="true">
+              <label class="custom-control-label" for="b-checkbox-2">Checkbox 2</label>
+            </div>
+          </div>
+          <div class="demo-radio col-sm-3">
+            <div class="custom-control custom-radio">
+              <input id="radio-1" name="radio" type="radio" class="custom-control-input" required="">
+              <label class="custom-control-label" for="radio-1">Radio 1</label>
+            </div>
+            <div class="custom-control custom-radio">
+              <input id="radio-2" name="radio" type="radio" class="custom-control-input" checked="" required="">
+              <label class="custom-control-label" for="radio-2">Radio 2</label>
+            </div>
+            <div class="custom-control custom-radio">
+              <input id="radio-3" name="radio" type="radio" class="custom-control-input" required="">
+              <label class="custom-control-label" for="radio-3">Radio 3</label>
+            </div>
+          </div>
+          <div class="demo-disabled-checkbox-radio col-sm-3">
+            <div class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input" id="b-checkbox-3" disabled="true">
+              <label class="custom-control-label" for="b-checkbox-3">Disabled Checkbox 1</label>
+            </div>
+            <div class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input" id="b-checkbox-4" disabled checked>
+              <label class="custom-control-label" for="b-checkbox-4">Disabled Checkbox 2</label>
+            </div>
+          </div>
+          <div class="demo-disabled-checkbox-radio col-sm-3">
+            <div class="custom-control custom-radio">
+              <input id="d-radio-1" name="d-radio" type="radio" class="custom-control-input" disabled required="">
+              <label class="custom-control-label" for="d-radio-1">Disabled Radio 1</label>
+            </div>
+            <div class="custom-control custom-radio">
+              <input id="d-radio-2" name="d-radio" type="radio" class="custom-control-input" checked="" disabled required="">
+              <label class="custom-control-label" for="d-radio-2">Disabled Radio 2</label>
+            </div>
           </div>
         </div>
       </nb-card-body>
