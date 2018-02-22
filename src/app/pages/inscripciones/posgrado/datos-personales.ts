@@ -156,8 +156,8 @@ export let DATOS_BASICOS = {
                 Discapacidad visceral
             </span>
         </label>
-    </div>    
-    **/    
+    </div>
+    **/
     {
         etiqueta: 'select',
         nombre: 'PaisNacimiento',
