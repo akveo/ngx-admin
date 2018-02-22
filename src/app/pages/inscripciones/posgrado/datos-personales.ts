@@ -24,7 +24,9 @@ export let DATOS_BASICOS = {
         label: '* Foto',
         placeholder: 'Ingrese su foto',
         requerido: true,
-        tipo: 'IMAGE',
+        tipo: 'image',
+        formatos: 'png, jpg, jpeg',
+        tamanoMaximo: 2,
     }, {
         etiqueta: 'select',
         nombre: 'GrupoSanguineo',
@@ -67,6 +69,7 @@ export let DATOS_BASICOS = {
         placeholder: 'Ej. 55555555',
         requerido: false,
         tipo: 'number',
+        minimo: 0,
         /**
          * min="10000000"
          * max="100000000000000000000"
@@ -138,6 +141,7 @@ export let DATOS_BASICOS = {
         placeholder: 'Ej. 555',
         requerido: false,
         tipo: 'number',
+        minimo: 0,
         /**
          * min="100"
          * max="100000"
@@ -150,6 +154,7 @@ export let DATOS_BASICOS = {
         placeholder: 'Ej. 5525252',
         requerido: true,
         tipo: 'number',
+        minimo: 0,
         /**
          * min="100"
          * max="100000000000000000000"

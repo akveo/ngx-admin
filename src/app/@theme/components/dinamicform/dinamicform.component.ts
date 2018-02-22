@@ -24,9 +24,8 @@ export class DinamicformComponent implements OnInit {
   }
 
   onChange(event, c) {
-     // console.log(event);
     c.valor = event.srcElement.files[0];
-     // console.log('file', c.valor);
+    console.log('file', c.valor);
     this.validCampo(c);
   }
 
@@ -60,6 +59,29 @@ export class DinamicformComponent implements OnInit {
         c.clase = 'form-control form-control-success'
       }
     }
+    if (c.etiqueta === 'file') {
+      if (c.valor !== undefined) {
+        if (c.valor.size > c.tamanoMaximo * 1024000) {
+          c.clase = 'form-control form-control-danger';
+          c.alerta = 'El tamaño del archivo es superior a : ' + c.tamanoMaximo + 'MB';
+        } else {
+          c.alerta = ''
+          c.clase = 'form-control form-control-success'
+        }
+        if ((c.valor.type.split('/'))[0].indexOf(c.tipo) === -1 ||
+          (c.formatos.indexOf(c.valor.type.split('/')[1]) === -1) ) {
+          c.clase = 'form-control form-control-danger';
+          c.alerta += 'Solo se admiten los siguientes formatos: ' + c.formatos;
+        } else {
+          c.alerta = ''
+          c.clase = 'form-control form-control-success'
+        }
+      } else {
+        c.alerta = '** Debe llenar este campo';
+        c.clase = 'form-control form-control-danger';
+      }
+    }
+
 
     if (!this.normalform.btn) {
       if (this.validForm().valid) {
