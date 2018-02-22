@@ -10,7 +10,6 @@ export let DATOS_BASICOS = {
         etiqueta: 'select',
         nombre: 'Programa',
         label: '* Programa al que aspira',
-        placeholder: 'Seleccione el programa ...',
         requerido: true,
         valor: { Id: 0 },
         opciones: [
@@ -30,7 +29,6 @@ export let DATOS_BASICOS = {
         etiqueta: 'select',
         nombre: 'GrupoSanguineo',
         label: '* Grupo sanguíneo',
-        placeholder: 'Seleccione su grupo sanguíneo ...',
         requerido: true,
         valor: { Id: 0 },
         opciones: [
@@ -44,7 +42,6 @@ export let DATOS_BASICOS = {
         etiqueta: 'select',
         nombre: 'RH',
         label: '* RH',
-        placeholder: 'Seleccione su RH ...',
         requerido: true,
         valor: { Id: 0 },
         opciones: [
@@ -56,7 +53,6 @@ export let DATOS_BASICOS = {
         etiqueta: 'select',
         nombre: 'TipoLibretaMilitar',
         label: 'Tipo de libreta militar',
-        placeholder: 'Seleccione su tipo de libreta ...',
         requerido: false,
         valor: { Id: 0 },
         opciones: [
@@ -80,7 +76,6 @@ export let DATOS_BASICOS = {
         etiqueta: 'select',
         nombre: 'PaisNacimiento',
         label: '* País de nacimiento',
-        placeholder: 'Seleccione su país de nacimiento ...',
         requerido: true,
         valor: { Id: 0 },
         opciones: [
@@ -94,7 +89,6 @@ export let DATOS_BASICOS = {
         etiqueta: 'select',
         nombre: 'CiudadNacimiento',
         label: '* Ciudad de nacimiento',
-        placeholder: 'Seleccione su ciudad de nacimiento ...',
         requerido: true,
         valor: { Id: 0 },
         opciones: [
@@ -108,7 +102,6 @@ export let DATOS_BASICOS = {
         etiqueta: 'select',
         nombre: 'PaisResidencia',
         label: '* País de residencia',
-        placeholder: 'Seleccione su país de residencia ...',
         requerido: true,
         valor: { Id: 0 },
         opciones: [
@@ -122,7 +115,6 @@ export let DATOS_BASICOS = {
         etiqueta: 'select',
         nombre: 'CiudadResidencia',
         label: '* Ciudad de residencia',
-        placeholder: 'Seleccione su ciudad de residencia ...',
         requerido: true,
         valor: { Id: 0 },
         opciones: [
@@ -170,6 +162,7 @@ export let DATOS_BASICOS = {
         placeholder: 'Ej. 5525252',
         requerido: true,
         tipo: 'number',
+        minimo: 0,
         /**
          * min="100"
          * max="100000000000000000000"

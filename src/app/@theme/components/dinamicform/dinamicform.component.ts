@@ -24,10 +24,9 @@ export class DinamicformComponent implements OnInit {
   }
 
   onChange(event, c) {
-    // console.log(event);
+     console.log(event);
     c.valor = event.srcElement.files[0];
-    event.srcElement.files = new FileList();
-    // console.log('file', c.valor);
+     console.log('file', c.valor);
     this.validCampo(c);
   }
 
@@ -73,7 +72,7 @@ export class DinamicformComponent implements OnInit {
   clearForm() {
     this.normalform.campos = this.normalform.campos.map(d => {
       if (d.valor.id) {
-        d.valor.id = 0;
+        d.valor.Id = 0;
       } else {
         d.valor = '';
       }
@@ -102,7 +101,7 @@ export class DinamicformComponent implements OnInit {
         requeridos++;
       }
       if (d.etiqueta === 'select') {
-        if (d.valor.id === 0) {
+        if (d.valor.Id === 0) {
           this.data.valid = false;
           d.clase = 'form-control form-control-danger'
           d.alerta = 'Seleccione el campo'
@@ -111,11 +110,21 @@ export class DinamicformComponent implements OnInit {
           d.clase = 'form-control form-control-success'
         }
       }
-      if (d.tipo === 'file') {
-        if (d.valor.id === 0) {
+      if (d.etiqueta === 'file') {
+        if (d.valor.Id === 0) {
           this.data.valid = false;
           d.clase = 'form-control form-control-danger'
           d.alerta = 'Seleccione el campo'
+        } else {
+          d.alerta = ''
+          d.clase = 'form-control form-control-success'
+        }
+      }
+      if (d.etiqueta === 'input' && d.tipo === 'number') {
+        if (parseInt(d.valor, 10) < d.minimo) {
+          this.data.valid = false;
+          d.clase = 'form-control form-control-danger'
+          d.alerta = 'El valor no puede ser menor que ' + d.minimo
         } else {
           d.alerta = ''
           d.clase = 'form-control form-control-success'
