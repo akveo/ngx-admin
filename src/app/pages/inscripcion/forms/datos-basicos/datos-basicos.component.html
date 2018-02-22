@@ -24,7 +24,7 @@
             <option value="a">A</option>
             <option value="ab">AB</option>
             <option value="b">B </option>
-            <option value="o">O</option>            
+            <option value="o">O</option>
         </select>
     </div>
     <div class="rh">
@@ -33,18 +33,88 @@
             <option value="positivo">Positivo</option>
             <option value="negativo">Negativo</option>
         </select>
-    </div>  
+    </div>
     <div class="tipolibreta">
         <label for="paisnacimiento">Tipo de libreta militar</label>
         <select class="form-control" id="tipolibreta" name="tipolibreta">
             <option value="primera">Primera clase</option>
             <option value="segunda">Segunda clase</option>
         </select>
-    </div>   
+    </div>
     <div class="numerolibreta">
         <label for="telefono">Número de la libreta militar</label>
-        <input type="number" placeholder="Ej. 5525252" min="10000000" max="100000000000000000000" step="1" class="form-control" name="numerolibreta" ng-model="formData.name">
-    </div>     
+        <input type="number" placeholder="Ej. 5525252" min="10000000" max="100000000000000000000" step="1" class="form-control" name="numerolibreta"
+            ng-model="formData.name">
+    </div>
+    <div class="estadocivil">
+        <label for="estadocivil">* Estado civil</label>
+        <select class="form-control" id="estadocivil" name="estadocivil">
+            <option value="soltero">Soltero(a)</option>
+            <option value="casado">Casado(a)</option>
+            <option value="viudo">Viudo(a)</option>
+            <option value="primera">Unión libre</option>
+            <option value="primera">Divorciado(a)</option>
+        </select>
+    </div>
+    <div class="grupoetnico">
+        <label for="grupoetnico">* Grupo étnico o de minoria al que pertenece</label>
+        <select class="form-control" id="grupoetnico" name="grupoetnico">
+            <option value="noaplica">No aplica</option>
+            <option value="indigena">Indígena</option>
+            <option value="afrodescendiente">Afrodescendiente</option>
+            <option value="rom">Comunidad rom</option>
+            <option value="gitano">Comuidad gitana</option>
+            <option value="raizal">Comunidad raizal</option>
+            <option value="palenquero">Comunidad palenquero</option>
+            <option value="desplazado">Comunidad desplazada</option>
+        </select>
+    </div>
+    <div class="discapacidad">
+        <label for="discapacidad">* Tipos de discapacidad que posea</label>
+        <br>
+        <label class="custom-control custom-checkbox">
+            <input class="custom-control-input" type="checkbox">
+            <span class="custom-control-indicator"></span>
+            <span class="custom-control-description">
+                Ninguna
+            </span>
+        </label>
+        <label class="custom-control custom-checkbox">
+            <input class="custom-control-input" type="checkbox">
+            <span class="custom-control-indicator"></span>
+            <span class="custom-control-description">
+                Discapacidad auditiva
+            </span>
+        </label>
+        <label class="custom-control custom-checkbox">
+            <input class="custom-control-input" type="checkbox">
+            <span class="custom-control-indicator"></span>
+            <span class="custom-control-description">
+                Discapacidad visual
+            </span>
+        </label>
+        <label class="custom-control custom-checkbox">
+            <input class="custom-control-input" type="checkbox">
+            <span class="custom-control-indicator"></span>
+            <span class="custom-control-description">
+                Discapacidad motriz
+            </span>
+        </label>
+        <label class="custom-control custom-checkbox">
+            <input class="custom-control-input" type="checkbox">
+            <span class="custom-control-indicator"></span>
+            <span class="custom-control-description">
+                Discapacidad intelectual
+            </span>
+        </label>
+        <label class="custom-control custom-checkbox">
+            <input class="custom-control-input" type="checkbox">
+            <span class="custom-control-indicator"></span>
+            <span class="custom-control-description">
+                Discapacidad visceral
+            </span>
+        </label>
+    </div>
     <div class="paisnacimiento">
         <label for="paisnacimiento">* País de nacimiento</label>
         <select class="form-control" id="paisnacimiento" name="paisnacimiento">
@@ -87,11 +157,13 @@
     </div>
     <div class="telefono">
         <label for="telefono">* Teléfono</label>
-        <input type="number" placeholder="Ej. 5525252" min="100" max="100000000000000000000" step="1" class="form-control" name="telefono" ng-model="formData.name">
+        <input type="number" placeholder="Ej. 5525252" min="100" max="100000000000000000000" step="1" class="form-control" name="telefono"
+            ng-model="formData.name">
     </div>
     <div class="telefonoalt">
         <label for="telefonocontacto">* Teléfono de contacto</label>
-        <input type="number" placeholder="Ej. 5525252" min="100" max="100000000000000000000" step="1" class="form-control" name="telefonocontacto" ng-model="formData.name">
+        <input type="number" placeholder="Ej. 5525252" min="100" max="100000000000000000000" step="1" class="form-control" name="telefonocontacto"
+            ng-model="formData.name">
     </div>
     <div class="seguir">
         <div class="col-xs-6 col-xs-offset-3">

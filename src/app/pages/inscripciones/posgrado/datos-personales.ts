@@ -78,6 +78,88 @@ export let DATOS_BASICOS = {
          **/
     }, {
         etiqueta: 'select',
+        nombre: 'EstadoCivil',
+        label: '* Estado civil',
+        placeholder: 'Seleccione ...',
+        requerido: true,
+        valor: { Id: 0 },
+        opciones: [
+            { Id: 0, valor: 'Seleccione ...' },
+            { Id: 1, valor: 'Soltero(a)' },
+            { Id: 2, valor: 'Casado(a)' },
+            { Id: 3, valor: 'Viudo(a)' },
+            { Id: 4, valor: 'Unión libre' },
+            { Id: 5, valor: 'Divorciado(a)' },
+        ],
+    }, {
+        etiqueta: 'select',
+        nombre: 'GrupoEtnico',
+        label: '* Grupo étnico o de minoria al que pertenece',
+        placeholder: 'Seleccione ...',
+        requerido: true,
+        valor: { Id: 0 },
+        opciones: [
+            { Id: 0, valor: 'Seleccione ...' },
+            { Id: 1, valor: 'No aplica' },
+            { Id: 2, valor: 'Comunidad indígena' },
+            { Id: 3, valor: 'Comunidad afrodescendiente' },
+            { Id: 4, valor: 'Comunidad rom' },
+            { Id: 4, valor: 'Comuidad gitana' },
+            { Id: 4, valor: 'Comunidad raizal' },
+            { Id: 4, valor: 'Comunidad palenquero' },
+            { Id: 4, valor: 'Comunidad desplazada' },
+        ],
+    },
+    /**
+    <div class="discapacidad">
+        <label for="discapacidad">* Tipos de discapacidad que posea</label>
+        <br>
+        <label class="custom-control custom-checkbox">
+            <input class="custom-control-input" type="checkbox">
+            <span class="custom-control-indicator"></span>
+            <span class="custom-control-description">
+                Ninguna
+            </span>
+        </label>
+        <label class="custom-control custom-checkbox">
+            <input class="custom-control-input" type="checkbox">
+            <span class="custom-control-indicator"></span>
+            <span class="custom-control-description">
+                Discapacidad auditiva
+            </span>
+        </label>
+        <label class="custom-control custom-checkbox">
+            <input class="custom-control-input" type="checkbox">
+            <span class="custom-control-indicator"></span>
+            <span class="custom-control-description">
+                Discapacidad visual
+            </span>
+        </label>
+        <label class="custom-control custom-checkbox">
+            <input class="custom-control-input" type="checkbox">
+            <span class="custom-control-indicator"></span>
+            <span class="custom-control-description">
+                Discapacidad motriz
+            </span>
+        </label>
+        <label class="custom-control custom-checkbox">
+            <input class="custom-control-input" type="checkbox">
+            <span class="custom-control-indicator"></span>
+            <span class="custom-control-description">
+                Discapacidad intelectual
+            </span>
+        </label>
+        <label class="custom-control custom-checkbox">
+            <input class="custom-control-input" type="checkbox">
+            <span class="custom-control-indicator"></span>
+            <span class="custom-control-description">
+                Discapacidad visceral
+            </span>
+        </label>
+    </div>    
+    **/    
+    {
+        etiqueta: 'select',
         nombre: 'PaisNacimiento',
         label: '* País de nacimiento',
         placeholder: 'Seleccione su país de nacimiento ...',
