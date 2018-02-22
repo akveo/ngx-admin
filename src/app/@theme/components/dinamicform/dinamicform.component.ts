@@ -24,9 +24,9 @@ export class DinamicformComponent implements OnInit {
   }
 
   onChange(event, c) {
-     console.log(event);
+     // console.log(event);
     c.valor = event.srcElement.files[0];
-     console.log('file', c.valor);
+     // console.log('file', c.valor);
     this.validCampo(c);
   }
 
