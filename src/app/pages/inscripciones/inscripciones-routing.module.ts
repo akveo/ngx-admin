@@ -1,14 +1,16 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {InscripcionesComponent} from './inscripciones.component'
+
+import { InscripcionesComponent } from './inscripciones.component';
 import { PosgradoComponent } from './posgrado/posgrado.component';
+
 const routes: Routes = [{
     path: '',
     component: InscripcionesComponent,
-    children: [
-        {
+    children: [{
         path: 'posgrado',
         component: PosgradoComponent,
+        children: [],
     }],
 }];
 
@@ -20,9 +22,11 @@ const routes: Routes = [{
         RouterModule,
     ],
 })
-
 export class InscripcionesRoutingModule {
 
 }
 
-export const routedComponents = [];
+export const routedComponents = [
+    InscripcionesComponent,
+    PosgradoComponent,
+];

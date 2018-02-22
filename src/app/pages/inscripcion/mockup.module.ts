@@ -15,6 +15,15 @@ import { SmartTableService } from '../../@core/data/smart-table.service';
 import { RegistroComponent } from './registro/registro.component';
 import { VerAspirantesComponent } from './ver-aspirantes/ver-aspirantes.component';
 import { EstadoInscripcionesComponent } from './estado-inscripciones/estado-inscripciones.component';
+import { VerInformacionAspiranteComponent } from './ver-informacion-aspirante/ver-informacion-aspirante.component';
+import { VerDatosBasicosComponent } from './ver-informacion-aspirante/ver-datos-basicos/ver-datos-basicos.component';
+import { VerFormacionAcademicaComponent } from './ver-informacion-aspirante/ver-form-academ/ver-form-academ.component';
+import { VerIdiomasComponent } from './ver-informacion-aspirante/ver-idiomas/ver-idiomas.component';
+import { VerFormacionLaboralComponent } from './ver-informacion-aspirante/ver-form-laboral/ver-form-laboral.component';
+import { VerDocumentosComponent } from './ver-informacion-aspirante/ver-documentos/ver-documentos.component';
+import { VerDescuentosComponent } from './ver-informacion-aspirante/ver-descuentos/ver-descuentos.component';
+import { VerTrabajoGradoComponent } from './ver-informacion-aspirante/ver-trabajo-grado/ver-trabajo-grado.component';
+import { AsignarEntrevistadorComponent } from './asignar-entrevistador/asignar-entrevistador.component';
 
 @NgModule({
   imports: [
@@ -35,6 +44,15 @@ import { EstadoInscripcionesComponent } from './estado-inscripciones/estado-insc
     RegistroComponent,
     VerAspirantesComponent,
     EstadoInscripcionesComponent,
+    VerInformacionAspiranteComponent,
+    VerDatosBasicosComponent,
+    VerFormacionAcademicaComponent,
+    VerIdiomasComponent,
+    VerFormacionLaboralComponent,
+    VerDocumentosComponent,
+    VerDescuentosComponent,
+    VerTrabajoGradoComponent,
+    AsignarEntrevistadorComponent,
   ],
   providers: [
     SmartTableService,

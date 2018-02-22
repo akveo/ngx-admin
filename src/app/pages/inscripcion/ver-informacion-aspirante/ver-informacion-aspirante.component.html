@@ -1,0 +1,61 @@
+<nb-card>
+  <nb-card-header>
+    <div class='datos1'>
+      <div class='nombre'>
+        <label><strong>AAAAA AAAAA AAAAA AAAA</strong></label>
+      </div>
+      <div class='documento'>
+        <label>C.C. 1299249439234</label>
+        <br>
+        <label><strong>Fecha de nacimiento:</strong> dd/mm/aaaa</label>
+        <br>
+        <label><strong>Edad:</strong> xx años</label>
+        <br>
+        <label><strong>Correo electrónico:</strong> aaaaaaaa@aaaaa.aa</label>
+        <div class="estado">
+          <label for="estado"><strong>Estado: </strong></label>
+          <label class="labelestado" for="estado">Pago</label>
+        </div>
+      </div>
+    </div>
+    <div class='foto'>
+      <div class="user-picture image" style="background-image: url(&quot;assets/images/nick.png&quot;);"></div>
+    </div>
+  </nb-card-header>
+  <nb-card-body>
+    <nb-tabset fullWidth>
+      <nb-tab tabTitle="1. Datos básicos">
+        <ngx-ver-datos-basicos></ngx-ver-datos-basicos>
+      </nb-tab>
+      <nb-tab tabTitle="2. Formación académica">
+        <ngx-ver-formacion-academica></ngx-ver-formacion-academica>
+      </nb-tab>
+      <nb-tab tabTitle="3. Idiomas">
+        <ngx-ver-idiomas></ngx-ver-idiomas>
+      </nb-tab>
+      <nb-tab tabTitle="4. Formación laboral">
+        <ngx-ver-formacion-laboral></ngx-ver-formacion-laboral>
+      </nb-tab>
+      <nb-tab tabTitle="5. Documentos">
+        <ngx-ver-documentos></ngx-ver-documentos>
+      </nb-tab>
+      <nb-tab tabTitle="6. Descuentos">
+        <ngx-ver-descuentos></ngx-ver-descuentos>
+      </nb-tab>
+      <nb-tab tabTitle="7. Trabajo de grado">
+        <ngx-ver-trabajo-grado></ngx-ver-trabajo-grado>
+      </nb-tab>
+    </nb-tabset>
+  </nb-card-body>
+  <nb-card-footer>
+    <div class="col-xs-6 col-xs-offset-3">
+      <a ui-sref="form.interests" class="btn btn-danger siguiente">
+        <i _ngcontent-c24="" class="ion-arrow-left-b"></i> Volver
+      </a>
+      <a ui-sref="form.interests" class="btn btn-info siguiente">
+        Descargar información
+        <i _ngcontent-c24="" class="ion-arrow-down-b"></i>
+      </a>
+    </div>
+  </nb-card-footer>
+</nb-card>

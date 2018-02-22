@@ -28,14 +28,23 @@ export const MENU_ITEMS: NbMenuItem[] = [
         title: 'Mockup consultar aspirantes',
         link: '/pages/inscripcion/ver-aspirantes',
       },
+      {
+        title: 'Mockup ver información aspirante',
+        link: '/pages/inscripcion/ver-informacion-aspirante',
+      },
+      {
+        title: 'Mockup asignar docente entrevistador',
+        link: '/pages/inscripcion/asignar-entrevistador',
+      },
     ],
-  }, {
+  },
+  {
     title: 'Inscripciones',
     icon: 'nb-compose',
     link: '/pages/inscripciones',
     children: [
       {
-        title: 'Posgrado',
+        title: 'Posgrados',
         link: '/pages/inscripciones/posgrado',
       },
     ],

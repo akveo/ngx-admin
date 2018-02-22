@@ -6,28 +6,28 @@
     <mat-progress-bar mode="determinate" [value]="percentage" [color]="color"></mat-progress-bar>
     <nb-tabset fullWidth>
       <nb-tab tabTitle="1. Datos básicos">
-        <nb-card>
-          <div class="col-6">
-            <br>
-            <ngx-dinamicform [normalform]="formDatosBasicos" (result)="traerDatos($event)"></ngx-dinamicform>
-          </div>
-        </nb-card>
+        <ngx-dinamicform [normalform]="formDatosBasicos" (result)="traerDatosBasicos($event)"></ngx-dinamicform>
       </nb-tab>
       <nb-tab tabTitle="2. Formación académica">
+        <ngx-dinamicform [normalform]="formFormacionAcademica" (result)="traerFormacionAcademica($event)"></ngx-dinamicform>
       </nb-tab>
       <nb-tab tabTitle="3. Idiomas">
+        <ngx-dinamicform [normalform]="formIdiomas" (result)="traerIdiomas($event)"></ngx-dinamicform>
       </nb-tab>
       <nb-tab tabTitle="4. Formación laboral">
+        <ngx-dinamicform [normalform]="formFormacionLaboral" (result)="traerFormacionLaboral($event)"></ngx-dinamicform>
       </nb-tab>
       <nb-tab tabTitle="5. Documentos">
+        <ngx-dinamicform [normalform]="formDocumentos" (result)="traerDocumentos($event)"></ngx-dinamicform>
       </nb-tab>
       <nb-tab tabTitle="6. Descuentos">
+        <ngx-dinamicform [normalform]="formDescuentos" (result)="traerDescuentos($event)"></ngx-dinamicform>
       </nb-tab>
       <nb-tab tabTitle="7. Trabajo de grado">
+        <ngx-dinamicform [normalform]="formDatos" (result)="traerDatos($event)"></ngx-dinamicform>
       </nb-tab>
       <nb-tab tabTitle="8. Fin">
       </nb-tab>
     </nb-tabset>
   </nb-card-body>
-
 </nb-card>

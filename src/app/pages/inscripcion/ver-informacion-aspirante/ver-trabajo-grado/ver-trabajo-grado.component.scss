@@ -1,0 +1,45 @@
+@import '../../../../@theme/styles/themes';
+@import '~bootstrap/scss/mixins/breakpoints';
+@import '~@nebular/theme/styles/global/bootstrap/breakpoints';
+
+@include nb-install-component() {
+    div {
+        margin-top: 10px;
+    }
+
+    .grupoinvestigacion {
+        width: 49%;
+        float: left;
+        margin-right: 10px;
+        margin-bottom: 10px;
+    }
+
+    .lineainvestigacion {
+        width: 49%;
+        float: left;
+        margin-bottom: 10px;
+    }
+
+    .titulopropuesta {
+        width: 49%;
+        float: left;
+        margin-right: 10px;
+        margin-bottom: 10px;
+    }
+
+    .propuesta {
+        width: 49%;
+        float: left;
+        margin-bottom: 10px;
+    }
+
+    .propuestanombre {
+        display: inline-block;
+        width: 74%;
+    }
+
+    .btn-warning {
+        height: auto !important;
+        font-size: 13px;
+    }
+}

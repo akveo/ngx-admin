@@ -1,0 +1,76 @@
+@import '../../../../@theme/styles/themes';
+@import '~bootstrap/scss/mixins/breakpoints';
+@import '~@nebular/theme/styles/global/bootstrap/breakpoints';
+
+@include nb-install-component() {
+    div {
+        margin-top: 10px;
+    }
+
+    .gruposanguineo {
+        width: 49%;
+        float: left;
+        margin-right: 10px;
+        margin-bottom: 10px;
+    }
+
+    .libreta {
+        width: 49%;
+        float: left;
+        margin-bottom: 10px;
+    }
+    
+    .paisnacimiento {
+        width: 49%;
+        float: left;
+        margin-right: 10px;
+        margin-bottom: 10px;
+    }
+
+    .paisresidencia {
+        width: 49%;
+        float: left;
+        margin-bottom: 10px;
+    }
+
+    .direccion {
+        width: 49%;
+        float: left;
+        margin-right: 10px;
+        margin-bottom: 10px;
+    }
+
+    .postal {
+        width: 49%;
+        float: left;
+        margin-bottom: 10px;
+    }
+
+    .telefono {
+        width: 49%;
+        float: left;
+        margin-right: 10px;
+        margin-bottom: 10px;
+    }
+
+    .telefonoalt {
+        width: 49%;
+        float: left;
+        margin-bottom: 10px;
+    }
+
+    .fotonombre {
+        display: inline-block;
+        width: 74%;
+    }
+
+    .btn-warning {
+        height: auto !important;
+        font-size: 13px;
+    }
+
+    .btn-info {
+        height: auto !important;
+        font-size: 13px;
+    }
+}

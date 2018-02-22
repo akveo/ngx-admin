@@ -1,0 +1,60 @@
+@import '../../../../@theme/styles/themes';
+@import '~bootstrap/scss/mixins/breakpoints';
+@import '~@nebular/theme/styles/global/bootstrap/breakpoints';
+
+@include nb-install-component() {
+    div {
+        margin-top: 10px;
+    }
+
+    .laboral1 {
+        border-bottom: 1px solid #00ff00;
+        border-right: 1px solid #00ff00;
+    }
+
+    .nempresa {
+        width: 49%;
+        float: left;
+        margin-right: 10px;
+        margin-bottom: 10px;
+    }
+
+    .dempresa {
+        width: 49%;
+        float: left;
+        margin-bottom: 10px;
+    }
+
+    .emailempresa {
+        width: 49%;
+        float: left;
+        margin-right: 10px;
+        margin-bottom: 10px;
+    }
+
+    .telefonoempresa {
+        width: 49%;
+        float: left;
+        margin-bottom: 10px;
+    }
+
+    .fechaini {
+        width: 24%;
+        float: left;
+        margin-right: 10px;
+        margin-bottom: 10px;
+    }
+
+    .fechafin {
+        width: 24%;
+        float: left;
+        margin-right: 10px;
+        margin-bottom: 10px;
+    }
+
+    .cargo {
+        width: 49%;
+        float: left;
+        margin-bottom: 10px;
+    }
+}

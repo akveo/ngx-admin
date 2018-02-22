@@ -48,6 +48,10 @@ export class IdiomaComponent implements OnInit {
         title: 'Nivel de escritura',
         type: 'string',
       },
+      acciones: {
+        title: 'Eliminar',
+        type: 'string',
+      },
     },
   };
   source: LocalDataSource = new LocalDataSource();

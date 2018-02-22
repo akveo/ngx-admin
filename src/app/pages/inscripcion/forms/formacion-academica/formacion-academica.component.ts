@@ -40,6 +40,10 @@ export class FormacionAcademicaComponent implements OnInit {
         title: 'Universidad',
         type: 'string',
       },
+      acciones: {
+        title: 'Eliminar',
+        type: 'string',
+      },
     },
   };
   source: LocalDataSource = new LocalDataSource();

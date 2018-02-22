@@ -40,6 +40,10 @@ export class FormacionLaboralComponent implements OnInit {
         title: 'Cargo',
         type: 'string',
       },
+      acciones: {
+        title: 'Eliminar',
+        type: 'string',
+      },
     },
   };
   source: LocalDataSource = new LocalDataSource();

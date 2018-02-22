@@ -40,6 +40,18 @@ export class EstadoInscripcionesComponent implements OnInit {
         title: 'Número de matriculados',
         type: 'number',
       },
+      accion1: {
+        title: 'Ver pre-inscritos',
+        type: 'number',
+      },
+      accion2: {
+        title: 'Ver inscritos',
+        type: 'number',
+      },
+      accion3: {
+        title: 'Ver matriculados',
+        type: 'number',
+      },
     },
   };
   source: LocalDataSource = new LocalDataSource();

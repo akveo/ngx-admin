@@ -44,6 +44,14 @@ export class VerAspirantesComponent implements OnInit {
         title: 'Número de documento',
         type: 'string',
       },
+      accion1: {
+        title: 'Descargar información',
+        type: 'string',
+      },
+      accion2: {
+        title: 'Ver información',
+        type: 'string',
+      },
     },
   };
   source: LocalDataSource = new LocalDataSource();

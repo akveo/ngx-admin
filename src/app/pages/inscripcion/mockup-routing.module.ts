@@ -14,6 +14,8 @@ import { TrabajoGradoComponent } from './forms/trabajo-grado/trabajo-grado.compo
 import { RegistroComponent } from './registro/registro.component';
 import { VerAspirantesComponent } from './ver-aspirantes/ver-aspirantes.component';
 import { EstadoInscripcionesComponent } from './estado-inscripciones/estado-inscripciones.component';
+import { VerInformacionAspiranteComponent } from './ver-informacion-aspirante/ver-informacion-aspirante.component';
+import { AsignarEntrevistadorComponent } from './asignar-entrevistador/asignar-entrevistador.component';
 
 const routes: Routes = [{
     path: '',
@@ -55,6 +57,12 @@ const routes: Routes = [{
     }, {
         path: 'estado-inscripciones',
         component: EstadoInscripcionesComponent,
+    }, {
+        path: 'ver-informacion-aspirante',
+        component: VerInformacionAspiranteComponent,
+    }, {
+        path: 'asignar-entrevistador',
+        component: AsignarEntrevistadorComponent,
     }],
 }];
 
@@ -84,4 +92,6 @@ export const routedComponents = [
     RegistroComponent,
     VerAspirantesComponent,
     EstadoInscripcionesComponent,
+    VerInformacionAspiranteComponent,
+    AsignarEntrevistadorComponent,
 ];
