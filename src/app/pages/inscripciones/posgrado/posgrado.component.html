@@ -3,7 +3,7 @@
     <h2>Formulario de inscripción</h2>
   </nb-card-header>
   <nb-card-body>
-    <mat-progress-bar mode="determinate" [value]="percentage" [color]="color"></mat-progress-bar>
+    <p><ngb-progressbar showValue="true" type="success" [value]="percentage" [animated]="true" [height]="'25px'"></ngb-progressbar></p>
     <nb-tabset fullWidth>
       <nb-tab tabTitle="1. Datos básicos">
         <ngx-dinamicform [normalform]="formDatosBasicos" (result)="traerDatosBasicos($event)"></ngx-dinamicform>
