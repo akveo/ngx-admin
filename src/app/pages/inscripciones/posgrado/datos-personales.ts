@@ -1,7 +1,7 @@
 
 export let DATOS_BASICOS = {
     titulo: 'Datos básicos',
-    clase: 'col-6',
+    clase: 'col-9',
     btn: 'Siguiente',
     alertas: true,
     btnLimpiar: 'Salir',
@@ -20,12 +20,12 @@ export let DATOS_BASICOS = {
             { Id: 3, valor: 'Ingeniería - Facultad de ingeniería' },
         ],
     }, {
-        etiqueta: 'input',
+        etiqueta: 'file',
         nombre: 'Foto',
         label: '* Foto',
         placeholder: 'Ingrese su foto',
         requerido: true,
-        tipo: 'file',
+        tipo: 'IMAGE',
     }, {
         etiqueta: 'select',
         nombre: 'GrupoSanguineo',
