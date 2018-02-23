@@ -24,9 +24,7 @@ export class DinamicformComponent implements OnInit {
   }
 
   onChange(event, c) {
-    // console.log(event);
     c.valor = event.srcElement.files[0];
-    event.srcElement.files = new FileList();
     // console.log('file', c.valor);
     this.validCampo(c);
   }
@@ -61,6 +59,29 @@ export class DinamicformComponent implements OnInit {
         c.clase = 'form-control form-control-success'
       }
     }
+    if (c.etiqueta === 'file') {
+      if (c.valor !== undefined) {
+        if (c.valor.size > c.tamanoMaximo * 1024000) {
+          c.clase = 'form-control form-control-danger';
+          c.alerta = 'El tamaño del archivo es superior a : ' + c.tamanoMaximo + 'MB';
+        } else {
+          c.alerta = ''
+          c.clase = 'form-control form-control-success'
+        }
+        if ((c.valor.type.split('/'))[0].indexOf(c.tipo) === -1 ||
+          (c.formatos.indexOf(c.valor.type.split('/')[1]) === -1) ) {
+          c.clase = 'form-control form-control-danger';
+          c.alerta += 'Solo se admiten los siguientes formatos: ' + c.formatos;
+        } else {
+          c.alerta = ''
+          c.clase = 'form-control form-control-success'
+        }
+      } else {
+        c.alerta = '** Debe llenar este campo';
+        c.clase = 'form-control form-control-danger';
+      }
+    }
+
 
     if (!this.normalform.btn) {
       if (this.validForm().valid) {
@@ -73,7 +94,7 @@ export class DinamicformComponent implements OnInit {
   clearForm() {
     this.normalform.campos = this.normalform.campos.map(d => {
       if (d.valor.id) {
-        d.valor.id = 0;
+        d.valor.Id = 0;
       } else {
         d.valor = '';
       }
@@ -102,7 +123,7 @@ export class DinamicformComponent implements OnInit {
         requeridos++;
       }
       if (d.etiqueta === 'select') {
-        if (d.valor.id === 0) {
+        if (d.valor.Id === 0) {
           this.data.valid = false;
           d.clase = 'form-control form-control-danger'
           d.alerta = 'Seleccione el campo'
@@ -111,11 +132,21 @@ export class DinamicformComponent implements OnInit {
           d.clase = 'form-control form-control-success'
         }
       }
-      if (d.tipo === 'file') {
-        if (d.valor.id === 0) {
+      if (d.etiqueta === 'file') {
+        if (d.valor.Id === 0) {
           this.data.valid = false;
           d.clase = 'form-control form-control-danger'
           d.alerta = 'Seleccione el campo'
+        } else {
+          d.alerta = ''
+          d.clase = 'form-control form-control-success'
+        }
+      }
+      if (d.etiqueta === 'input' && d.tipo === 'number') {
+        if (parseInt(d.valor, 10) < d.minimo) {
+          this.data.valid = false;
+          d.clase = 'form-control form-control-danger'
+          d.alerta = 'El valor no puede ser menor que ' + d.minimo
         } else {
           d.alerta = ''
           d.clase = 'form-control form-control-success'
