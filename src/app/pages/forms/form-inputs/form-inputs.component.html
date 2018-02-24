@@ -8,7 +8,7 @@
         </div>
         <div class="row full-name-inputs">
           <div class="col-sm-6 input-group">
-            <input type="text" placeholder="Nick" class="form-control"/>
+            <input type="text" placeholder="Nick" class="form-control"/>          
           </div>
           <div class="col-sm-6 input-group">
             <input type="text" placeholder="Last Name" class="form-control"/>
@@ -39,6 +39,60 @@
         </div>
         <div class="input-group input-group-lg">
           <input type="text" placeholder="Large Input" class="form-control"/>
+        </div>
+      </nb-card-body>
+    </nb-card>
+
+    <nb-card>
+      <nb-card-header>Float Label Inputs</nb-card-header>
+      <nb-card-body>
+        <div class="input-group has-float-label">          
+          <input id="project" type="text" placeholder="Project" class="form-control"/>
+          <label for="project">Project</label>
+        </div>
+        <div class="row full-name-inputs">
+          <div class="col-sm-6 input-group has-float-label">
+            <input id="nick" type="text" placeholder="Nick" class="form-control"/>
+            <label for="nick">Nick</label>
+          </div>
+          <div class="col-sm-6 input-group  has-float-label">
+            <input id="last-name" type="text" placeholder="Last Name" class="form-control"/>
+            <label for="last-name">Last Name</label>
+          </div>
+        </div>
+        <div class="input-group has-float-label">
+          <input id="password" type="password" placeholder="Password" class="form-control"/>
+          <label for="password">Password</label>
+        </div>
+        <div class="input-group has-person-icon has-float-label">
+          <input id="with-icon" type="text" placeholder="With Icon" class="form-control"/>
+          <label for="with-icon">With Icon</label>
+        </div>
+        <div class="input-group input-group-rounded has-float-label">
+          <input id="rounded-border" type="text" placeholder="Rounded border" class="form-control"/>
+          <label for="rounded-border">Rounded border</label>
+        </div>
+        <div class="form-group has-float-label">
+          <input id="project-2" type="text" placeholder="Project" class="form-control"/>
+          <label for="project-2">Project</label>
+          <small class="form-text">A block of help text that breaks into a new line and may extend beyond one line.
+          </small>
+        </div>
+        <div class="input-group has-float-label">
+          <input id="disable-input" type="text" placeholder="Disabled input" class="form-control" disabled/>
+          <label for="disable-input">Disabled input</label>
+        </div>
+        <div class="input-group has-float-label">
+          <textarea id="text-area" rows="5" placeholder="Text Area" class="form-control"></textarea>
+          <label for="text-area">Text Area</label>
+        </div>
+        <div class="input-group input-group-sm has-float-label">
+          <input id="small-input" type="text" placeholder="Small Input" class="form-control"/>
+          <label for="small-input">Small Input</label>
+        </div>
+        <div class="input-group input-group-lg has-float-label">
+          <input id="large-input" type="text" placeholder="Large Input" class="form-control"/>
+          <label for="large-input">Large Input</label>
         </div>
       </nb-card-body>
     </nb-card>

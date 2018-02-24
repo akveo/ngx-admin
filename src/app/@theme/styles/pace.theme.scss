@@ -6,6 +6,26 @@
 
  @mixin ngx-pace-theme() {
 
+  .has-float-label label::after {
+    background: transparent;
+  }
+
+  .has-float-label label {
+    left: 1.75rem;
+  }
+
+  .has-float-label .form-control:placeholder-shown:not(:focus)+label{
+    top: 0.5em;
+  }
+
+  .has-float-label .form-control:placeholder-shown:focus+label{
+    top: 0.5em;
+  }
+
+  .nb-theme-cosmic[_nghost-c12] .input-group.has-person-icon[_ngcontent-c12]::before, .nb-theme-cosmic [_nghost-c12] .input-group.has-person-icon[_ngcontent-c12]::before {
+    left: 0.5rem;
+  }
+
   .pace .pace-progress {
     background: nb-theme(color-fg-highlight);
   }
