@@ -1,6 +1,6 @@
 <div>
     <div class="programa">
-        <label for="programa">* Programa al que aspira</label>
+        <label for="programa">* {{ 'DATOS_BASICOS.PROGRAMA' | translate }}</label>
         <select class="form-control" id="programa" name="programa">
             <option value="educación" for="programa1_true">Educación - Facultad de Educación </option>
             <option value="ciencia">Ciencia - Facultad de ciencias </option>
@@ -8,7 +8,7 @@
         </select>
     </div>
     <div class="foto">
-        <label for="foto">* Foto</label>
+        <label for="foto">* {{ 'DATOS_BASICOS.FOTO' | translate }}</label>
         <br>
         <span class="btn btn-warning">
             Agregar&hellip;
@@ -19,7 +19,7 @@
         <input type="button" class="btn btn-danger" value="Eliminar">
     </div>
     <div class="gruposanguineo">
-        <label for="gruposanguineo">* Grupo sanguíneo</label>
+        <label for="gruposanguineo">* {{ 'DATOS_BASICOS.GRUPO_SANGUINEO' | translate }}</label>
         <select class="form-control" id="gruposanguineo" name="gruposanguineo">
             <option value="a">A</option>
             <option value="ab">AB</option>
@@ -28,26 +28,26 @@
         </select>
     </div>
     <div class="rh">
-        <label for="rh">* RH</label>
+        <label for="rh">* {{ 'DATOS_BASICOS.RH' | translate }}</label>
         <select class="form-control" id="rh" name="rh">
             <option value="positivo">Positivo</option>
             <option value="negativo">Negativo</option>
         </select>
     </div>
     <div class="tipolibreta">
-        <label for="paisnacimiento">Tipo de libreta militar</label>
+        <label for="paisnacimiento">{{ 'DATOS_BASICOS.TIPO_LIBRETA_MILITAR' | translate }}</label>
         <select class="form-control" id="tipolibreta" name="tipolibreta">
             <option value="primera">Primera clase</option>
             <option value="segunda">Segunda clase</option>
         </select>
     </div>
     <div class="numerolibreta">
-        <label for="telefono">Número de la libreta militar</label>
+        <label for="telefono">{{ 'DATOS_BASICOS.NUMERO_LIBRETA_MILITAR' | translate }}</label>
         <input type="number" placeholder="Ej. 5525252" min="10000000" max="100000000000000000000" step="1" class="form-control" name="numerolibreta"
             ng-model="formData.name">
     </div>
     <div class="estadocivil">
-        <label for="estadocivil">* Estado civil</label>
+        <label for="estadocivil">* {{ 'DATOS_BASICOS.ESTADO_CIVIL' | translate }}</label>
         <select class="form-control" id="estadocivil" name="estadocivil">
             <option value="soltero">Soltero(a)</option>
             <option value="casado">Casado(a)</option>
@@ -57,7 +57,7 @@
         </select>
     </div>
     <div class="grupoetnico">
-        <label for="grupoetnico">* Grupo étnico o de minoria al que pertenece</label>
+        <label for="grupoetnico">* {{ 'DATOS_BASICOS.GRUPO_ETNICO' | translate }}</label>
         <select class="form-control" id="grupoetnico" name="grupoetnico">
             <option value="noaplica">No aplica</option>
             <option value="indigena">Indígena</option>
@@ -70,7 +70,7 @@
         </select>
     </div>
     <div class="discapacidad">
-        <label for="discapacidad">* Tipos de discapacidad que posea</label>
+        <label for="discapacidad">* {{ 'DATOS_BASICOS.DISCAPACIDAD' | translate }}</label>
         <br>
         <label class="custom-control custom-checkbox">
             <input class="custom-control-input" type="checkbox">
@@ -116,7 +116,7 @@
         </label>
     </div>
     <div class="paisnacimiento">
-        <label for="paisnacimiento">* País de nacimiento</label>
+        <label for="paisnacimiento">* {{ 'DATOS_BASICOS.PAIS_NACIMIENTO' | translate }}</label>
         <select class="form-control" id="paisnacimiento" name="paisnacimiento">
             <option value="peru">Peru</option>
             <option value="chile">Chile </option>
@@ -124,7 +124,7 @@
         </select>
     </div>
     <div class="ciudadnacimiento">
-        <label for="ciudadnacimiento">* Ciudad de nacimiento</label>
+        <label for="ciudadnacimiento">* {{ 'DATOS_BASICOS.CIUDAD_NACIMIENTO' | translate }}</label>
         <select class="form-control" id="ciudadnacimiento" name="ciudadnacimiento">
             <option value="aa">AA</option>
             <option value="bb">BB </option>
@@ -132,7 +132,7 @@
         </select>
     </div>
     <div class="paisresidencia">
-        <label for="paisresidencia">* País de residencia</label>
+        <label for="paisresidencia">* {{ 'DATOS_BASICOS.PAIS_RESIDENCIA' | translate }}</label>
         <select class="form-control" id="paisresidencia" name="paisresidencia">
             <option value="peru">Peru</option>
             <option value="chile">Chile </option>
@@ -140,7 +140,7 @@
         </select>
     </div>
     <div class="ciudadresidencia">
-        <label for="ciudadresidencia">* Ciudad de residencia</label>
+        <label for="ciudadresidencia">* {{ 'DATOS_BASICOS.CIUDAD_RESIDENCIA' | translate }}</label>
         <select class="form-control" id="ciudadresidencia" name="ciudadresidencia">
             <option value="aa">AA</option>
             <option value="bb">BB </option>
@@ -148,20 +148,20 @@
         </select>
     </div>
     <div class="direccion">
-        <label for="direccionresidencia">* Dirección de residencia</label>
+        <label for="direccionresidencia">* {{ 'DATOS_BASICOS.DIRECCION_RESIDENCIA' | translate }}</label>
         <input type="text" placeholder="Ej. Cll 123 # 123 - 123" class="form-control" name="direccionresidencia" ng-model="formData.name">
     </div>
     <div class="postal">
-        <label for="postal">Código postal</label>
+        <label for="postal">{{ 'DATOS_BASICOS.CODIGO_POSTAL' | translate }}</label>
         <input type="number" placeholder="Ej. 552" min="0" max="100000" step="1" class="form-control" name="postal" ng-model="formData.name">
     </div>
     <div class="telefono">
-        <label for="telefono">* Teléfono</label>
+        <label for="telefono">* {{ 'DATOS_BASICOS.TELEFONO' | translate }}</label>
         <input type="number" placeholder="Ej. 5525252" min="100" max="100000000000000000000" step="1" class="form-control" name="telefono"
             ng-model="formData.name">
     </div>
     <div class="telefonoalt">
-        <label for="telefonocontacto">* Teléfono de contacto</label>
+        <label for="telefonocontacto">* {{ 'DATOS_BASICOS.TELEFONO_ALT' | translate }}</label>
         <input type="number" placeholder="Ej. 5525252" min="100" max="100000000000000000000" step="1" class="form-control" name="telefonocontacto"
             ng-model="formData.name">
     </div>
@@ -173,7 +173,7 @@
         </div>
         <div class="col-xs-6 col-xs-offset-3">
             <a ui-sref="form.interests" class="btn btn-info siguiente" (click)="mostrarAreaSiguiente()">
-                Siguiente
+                {{ 'DATOS_BASICOS.SIGUIENTE' | translate }}
                 <i _ngcontent-c24="" class="ion-arrow-right-b"></i>
             </a>
         </div>

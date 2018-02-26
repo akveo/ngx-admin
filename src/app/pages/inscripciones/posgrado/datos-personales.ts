@@ -70,11 +70,6 @@ export let DATOS_BASICOS = {
         requerido: false,
         tipo: 'number',
         minimo: 0,
-        /**
-         * min="10000000"
-         * max="100000000000000000000"
-         * step="1"
-         **/
     }, {
         etiqueta: 'select',
         nombre: 'EstadoCivil',
@@ -224,11 +219,6 @@ export let DATOS_BASICOS = {
         requerido: false,
         tipo: 'number',
         minimo: 0,
-        /**
-         * min="100"
-         * max="100000"
-         * step="1"
-         **/
     }, {
         etiqueta: 'input',
         nombre: 'Telefono',
@@ -236,12 +226,7 @@ export let DATOS_BASICOS = {
         placeholder: 'Ej. 5525252',
         requerido: true,
         tipo: 'number',
-        minimo: 0,
-        /**
-         * min="100"
-         * max="100000000000000000000"
-         * step="1"
-         **/
+        minimo: 100,
     }, {
         etiqueta: 'input',
         nombre: 'TelefonoContacto',
@@ -249,12 +234,7 @@ export let DATOS_BASICOS = {
         placeholder: 'Ej. 5525252',
         requerido: true,
         tipo: 'number',
-        minimo: 0,
-        /**
-         * min="100"
-         * max="100000000000000000000"
-         * step="1"
-         **/
+        minimo: 100,
     }],
     /**
         <div class="seguir">

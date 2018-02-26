@@ -1,7 +1,7 @@
 
 export let IDIOMAS = {
     titulo: 'Idiomas',
-    clase: 'col-6',
+    clase: 'col-9',
     btn: 'Siguiente',
     alertas: true,
     btnLimpiar: 'Salir',

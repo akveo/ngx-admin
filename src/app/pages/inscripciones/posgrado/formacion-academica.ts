@@ -1,7 +1,7 @@
 
 export let FORMACION_ACADEMICA = {
     titulo: 'Formación académica',
-    clase: 'col-6',
+    clase: 'col-9',
     btn: 'Siguiente',
     alertas: true,
     btnLimpiar: 'Salir',
@@ -34,11 +34,7 @@ export let FORMACION_ACADEMICA = {
             placeholder: 'Ej. 2018',
             requerido: true,
             tipo: 'number',
-            /**
-             * min="1900"
-             * max="2018"
-             * step="1"
-             **/
+            minimo: 1900,
         }, {
             etiqueta: 'input',
             nombre: 'AnioGrado',
@@ -46,11 +42,7 @@ export let FORMACION_ACADEMICA = {
             placeholder: 'Ej. 2018',
             requerido: true,
             tipo: 'number',
-            /**
-             * min="1900"
-             * max="2018"
-             * step="1"
-             **/
+            minimo: 1900,
         }, {
             etiqueta: 'select',
             nombre: 'PaisUniversidad',
