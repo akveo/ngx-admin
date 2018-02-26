@@ -66,7 +66,7 @@ export let DATOS_BASICOS = {
             { Id: 2, valor: 'Segunda clase' },
         ],
     }, {
-        claseGrid : 'col-6',
+        claseGrid : 'col-3',
         etiqueta: 'input',
         nombre: 'NumeroLibretaMilitar',
         label: 'Número de la libreta militar',
@@ -75,7 +75,7 @@ export let DATOS_BASICOS = {
         tipo: 'number',
         minimo: 0,
     }, {
-        claseGrid : 'col-6',
+        claseGrid : 'col-3',
         etiqueta: 'select',
         nombre: 'EstadoCivil',
         label: '* Estado civil',
