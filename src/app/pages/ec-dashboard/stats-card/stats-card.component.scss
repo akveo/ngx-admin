@@ -42,6 +42,19 @@
     }
   }
 
+  ::ng-deep nb-flip-card {
+    .flip-button {
+      top: 0;
+      width: 5rem;
+      height: 5rem;
+      margin-bottom: 0;
+
+      i {
+        display: none;
+      }
+    }
+  }
+
   @include nb-for-theme(cosmic) {
     nb-card {
       .title {

@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 import {NbColorHelper, NbThemeService} from '@nebular/theme';
 
 @Component({
-  selector: 'ngx-charts-panel',
-  styleUrls: ['./charts-panel.component.scss'],
-  templateUrl: './charts-panel.component.html',
+  selector: 'ngx-orders-chart',
+  styleUrls: ['./orders-chart.component.scss'],
+  templateUrl: './orders-chart.component.html',
 })
-export class ChartsPanelComponent {
+export class OrdersChartComponent {
   data: any;
   options: any;
   themeSubscription: any;

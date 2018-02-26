@@ -7,11 +7,15 @@
   </div>
 
   <div class="col-xxxl-9">
-    <nb-card>
-      <nb-card-header>Revenue</nb-card-header>
-      <nb-card-body>
-        <ngx-charts-panel></ngx-charts-panel>
-      </nb-card-body>
+    <nb-card size="large">
+      <nb-tabset fullWidth>
+        <nb-tab tabTitle="Orders">
+          <ngx-orders-chart></ngx-orders-chart>
+        </nb-tab>
+        <nb-tab tabTitle="Profit">
+          <ngx-profit-chart></ngx-profit-chart>
+        </nb-tab>
+      </nb-tabset>
     </nb-card>
   </div>
 </div>
