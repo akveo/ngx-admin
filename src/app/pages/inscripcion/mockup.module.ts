@@ -3,6 +3,7 @@ import { Ng2SmartTableModule } from 'ng2-smart-table';
 
 import { ThemeModule } from '../../@theme/theme.module';
 import { MockupRoutingModule, routedComponents } from './mockup-routing.module';
+import { SharedModule } from '../../shared/shared.module';
 import { DatosBasicosComponent } from './forms/datos-basicos/datos-basicos.component';
 import { FormacionAcademicaComponent } from './forms/formacion-academica/formacion-academica.component';
 import { IdiomaComponent } from './forms/idioma/idioma.component';
@@ -30,6 +31,7 @@ import { AsignarEntrevistadorComponent } from './asignar-entrevistador/asignar-e
     ThemeModule,
     MockupRoutingModule,
     Ng2SmartTableModule,
+    SharedModule,
   ],
   declarations: [
     ...routedComponents,
@@ -56,6 +58,7 @@ import { AsignarEntrevistadorComponent } from './asignar-entrevistador/asignar-e
   ],
   providers: [
     SmartTableService,
+    SharedModule,
   ],
 })
 export class MockupModule { }

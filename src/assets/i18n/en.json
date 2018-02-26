@@ -1,0 +1,64 @@
+{
+  "HOME": {
+    "SELECT": "Change language"
+  },
+  "REGISTRO": {
+    "TITULO": "Register form",
+    "NOMBRE": "Names",
+    "APELLIDOS": "Lastnames",
+    "TIPO_DOCUMENTO": "Document type",
+    "NUMERO_DOCUMENTO": "Document number",
+    "GENERO": "Gender",
+    "FECHA_NACIMIENTO": "Birthdate",
+    "CORREO_ELECTRONICO": "E-mail",
+    "CON_CORREO_ELECTRONICO": "Confirm e-mail",
+    "CONTRASENA": "Password",
+    "CON_CONTRASENA": "Confirm password",
+    "ENVIAR": "Send"
+  },
+  "INSCRIPCION": {
+    "TITULO": "Inscription form"
+  },
+  "DATOS_BASICOS": {
+    "TITULO": "Basic information",
+    "PROGRAMA": "Which program you want?",
+    "FOTO": "Photo",
+    "GRUPO_SANGUINEO": "Blood type",
+    "RH": "RH",
+    "TIPO_LIBRETA_MILITAR": "Colombian military card type",
+    "NUMERO_LIBRETA_MILITAR": "Colombian militar card number",
+    "ESTADO_CIVIL": "Civil status",
+    "GRUPO_ETNICO": "Colombian ethnic or minority group to which you belong",
+    "DISCAPACIDAD": "Disability types what you have",
+    "PAIS_NACIMIENTO": "Birth country",
+    "CIUDAD_NACIMIENTO": "Birth city",
+    "PAIS_RESIDENCIA": "Residence country",
+    "CIUDAD_RESIDENCIA": "Residence city",
+    "DIRECCION_RESIDENCIA": "Residence address",
+    "CODIGO_POSTAL": "Postal code",
+    "TELEFONO": "Telephone",
+    "TELEFONO_ALT": "Alternative telephone",
+    "SIGUIENTE": "Next"
+  },
+  "FORMACION_ACADEMICA": {
+    "TITULO": "Academic training"
+  },
+  "FORMACION_LABORAL": {
+    "TITULO": "Job training"
+  },
+  "IDIOMAS": {
+    "TITULO": "Languages"
+  },
+  "DOCUMENTOS": {
+    "TITULO": "Documents"
+  },
+  "DESCUENTOS": {
+    "TITULO": "Discounts"
+  },
+  "PROPUESTA_TRABAJO_GRADO": {
+    "TITULO": "Thesis proporsal"
+  },
+  "ENVIO":{
+    "TITULO": "Finish"
+  }
+}
