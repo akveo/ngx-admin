@@ -38,6 +38,10 @@
     &.github-start {
       width: 140px;
       display: flex;
+
+      iframe {
+        width: 100px;
+      }
     }
   }
 
