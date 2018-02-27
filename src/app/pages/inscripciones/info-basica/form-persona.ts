@@ -1,0 +1,47 @@
+
+export let FORM_PERSONA = {
+  titulo: '',
+  clase: 'col-12',
+  btn: 'Guardar',
+  alertas: true,
+  btnLimpiar: 'Salir',
+  modelo: 'Persona',
+  campos: [{
+      etiqueta: 'input',
+      grid_clase: 'col-sm-4',
+      nombre: 'PrimerNombre',
+      label: 'Primer nombre',
+      placeholder: 'Ej. Jose',
+      requerido: true,
+      tipo: 'text',
+      },{
+        etiqueta: 'input',
+        grid_clase: 'col-sm-4',
+        nombre: 'SegundoNombre',
+        label: 'Segundo nombre',
+        placeholder: 'Ej. Steven',
+        requerido: true,
+        tipo: 'text',
+    },{
+      etiqueta: 'input',
+      nombre: 'PrimerApellido',
+      label: 'Primer apellido',
+      placeholder: 'Ej. Rodriguez',
+      requerido: true,
+      tipo: 'text',
+    }, {
+      etiqueta: 'input',
+      nombre: 'SegundoApellido',
+      label: 'Segundo apellido',
+      placeholder: 'Ej. Perez',
+      requerido: true,
+      tipo: 'text',
+    },{
+      etiqueta: 'input',
+      nombre: 'FechaNacimiento',
+      label: '* Fecha de nacimiento',
+      placeholder: 'Ej. 01/01/2010',
+      requerido: true,
+      tipo: 'date',
+    }],
+}

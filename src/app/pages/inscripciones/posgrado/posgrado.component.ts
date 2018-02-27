@@ -28,7 +28,7 @@ export class PosgradoComponent {
   }
 
   traerDatosBasicos(event) {
-    // console.log(event)
+    console.log(event)
   }
 
   traerFormacionAcademica(event) {

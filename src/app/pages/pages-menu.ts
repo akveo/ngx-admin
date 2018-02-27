@@ -47,6 +47,10 @@ export const MENU_ITEMS: NbMenuItem[] = [
         title: 'Posgrados',
         link: '/pages/inscripciones/posgrado',
       },
+      {
+        title: 'Perfil',
+        link: '/pages/inscripciones/info-basica',
+      },
     ],
   },
   {

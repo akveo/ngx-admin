@@ -15,7 +15,7 @@ export class PersonaService {
     }
 
     get(endpoint) {
-        return this.http.get(path + endpoint);
+        return this.http.get(path + endpoint);//.map(response => response.json());
     }
     post(endpoint, element) {
         return this.http.post(path + endpoint, element, httpOptions);

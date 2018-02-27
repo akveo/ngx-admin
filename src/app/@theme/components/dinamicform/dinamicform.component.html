@@ -23,7 +23,7 @@
         <div *ngSwitchCase="'radio'">
           <div *ngFor="let item of c.opciones" class="form-check">
             <label class="row custom-control custom-radio">
-              <input type="radio" checked class="custom-control-input" name="{{c.nombre}}" 
+              <input type="radio" checked class="custom-control-input" name="{{c.nombre}}"
               [value]="item" [(ngModel)]="c.valor" [ngModelOptions]="{standalone: true}" checked="{{isEqual(item.Id, c.valor.Id)}}">
               <span class="custom-control-indicator">
               </span>
@@ -38,7 +38,7 @@
         <div *ngSwitchCase="'checkbox'">
           <div *ngFor="let item of c.opciones" class="form-check">
             <label class="row custom-control custom-radio">
-              <input type="radio" checked class="custom-control-input" name="{{c.nombre}}" 
+              <input type="radio" checked class="custom-control-input" name="{{c.nombre}}"
               [value]="item" [(ngModel)]="c.valor" [ngModelOptions]="{standalone: true}" checked="{{isEqual(item.Id, c.valor.Id)}}u">{{isEqual(item.Id, c.valor.Id)}}
               <span class="custom-control-indicator">
               </span>
