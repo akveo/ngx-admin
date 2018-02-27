@@ -15,7 +15,7 @@ export class AppComponent implements OnInit {
   constructor(private analytics: AnalyticsService) {
   }
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.analytics.trackPageViews();
   }
 }
