@@ -65,42 +65,6 @@ export class SampleLayoutComponent implements OnDestroy {
   subMenu: NbMenuItem[] = [
     {
       title: 'PAGE LEVEL MENU',
-      group: true,
-    },
-    {
-      title: 'Buttons',
-      icon: 'ion ion-android-radio-button-off',
-      link: '/pages/ui-features/buttons',
-    },
-    {
-      title: 'Grid',
-      icon: 'ion ion-android-radio-button-off',
-      link: '/pages/ui-features/grid',
-    },
-    {
-      title: 'Icons',
-      icon: 'ion ion-android-radio-button-off',
-      link: '/pages/ui-features/icons',
-    },
-    {
-      title: 'Modals',
-      icon: 'ion ion-android-radio-button-off',
-      link: '/pages/ui-features/modals',
-    },
-    {
-      title: 'Typography',
-      icon: 'ion ion-android-radio-button-off',
-      link: '/pages/ui-features/typography',
-    },
-    {
-      title: 'Animated Searches',
-      icon: 'ion ion-android-radio-button-off',
-      link: '/pages/ui-features/search-fields',
-    },
-    {
-      title: 'Tabs',
-      icon: 'ion ion-android-radio-button-off',
-      link: '/pages/ui-features/tabs',
     },
   ];
   layout: any = {};
