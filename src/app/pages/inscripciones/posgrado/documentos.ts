@@ -1,7 +1,7 @@
 
 export let DOCUMENTOS = {
     titulo: 'Documentos',
-    clase: 'col-6',
+    clase: 'col-9',
     btn: 'Siguiente',
     alertas: true,
     btnLimpiar: 'Salir',

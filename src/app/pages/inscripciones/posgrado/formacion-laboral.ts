@@ -1,7 +1,7 @@
 
 export let FORMACION_LABORAL = {
     titulo: 'Formación laboral',
-    clase: 'col-6',
+    clase: 'col-9',
     btn: 'Siguiente',
     alertas: true,
     btnLimpiar: 'Salir',
@@ -40,11 +40,7 @@ export let FORMACION_LABORAL = {
             placeholder: 'Ej. 55555555',
             requerido: true,
             tipo: 'number',
-            /**
-             * min="10000000"
-             * max="100000000000000000000"
-             * step="1"
-             **/
+            minimo: 100,
         }, {
             etiqueta: 'input',
             nombre: 'FechaInicio',
