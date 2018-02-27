@@ -30,6 +30,9 @@ export class DinamicformComponent implements OnInit {
   }
 
   ngOnInit() {
+    if (!this.normalform.tipo_formulario) {
+      this.normalform.tipo_formulario = 'grid';
+    }
     this.normalform.campos = this.normalform.campos.map(d => {
       d.clase = 'form-control';
       if (!d.valor) {
@@ -63,13 +66,13 @@ export class DinamicformComponent implements OnInit {
       if (c.valor !== undefined) {
         if (c.valor.size > c.tamanoMaximo * 1024000) {
           c.clase = 'form-control form-control-danger';
-          c.alerta = 'El tamaño del archivo es superior a : ' + c.tamanoMaximo + 'MB';
+          c.alerta = 'El tamaño del archivo es superior a : ' + c.tamanoMaximo + 'MB. ';
         } else {
           c.alerta = ''
           c.clase = 'form-control form-control-success'
         }
         if ((c.valor.type.split('/'))[0].indexOf(c.tipo) === -1 ||
-          (c.formatos.indexOf(c.valor.type.split('/')[1]) === -1) ) {
+          (c.formatos.indexOf(c.valor.type.split('/')[1]) === -1)) {
           c.clase = 'form-control form-control-danger';
           c.alerta += 'Solo se admiten los siguientes formatos: ' + c.formatos;
         } else {
