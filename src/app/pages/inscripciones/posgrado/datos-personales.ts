@@ -1,12 +1,11 @@
 
 export let DATOS_BASICOS = {
+    tipo_formulario: 'basic',
     titulo: 'Datos básicos',
-    clase: 'col-9',
-    btn: 'Siguiente',
     alertas: true,
-    btnLimpiar: 'Salir',
     modelo: 'Persona',
     campos: [{
+        claseGrid : 'col-12',
         etiqueta: 'select',
         nombre: 'Programa',
         label: '* Programa al que aspira',
@@ -19,6 +18,7 @@ export let DATOS_BASICOS = {
             { Id: 3, valor: 'Ingeniería - Facultad de ingeniería' },
         ],
     }, {
+        claseGrid : 'col-3',
         etiqueta: 'file',
         nombre: 'Foto',
         label: '* Foto',
@@ -28,6 +28,7 @@ export let DATOS_BASICOS = {
         formatos: 'png, jpg, jpeg',
         tamanoMaximo: 2,
     }, {
+        claseGrid : 'col-3',
         etiqueta: 'select',
         nombre: 'GrupoSanguineo',
         label: '* Grupo sanguíneo',
@@ -41,6 +42,7 @@ export let DATOS_BASICOS = {
             { Id: 4, valor: 'O' },
         ],
     }, {
+        claseGrid : 'col-3',
         etiqueta: 'select',
         nombre: 'RH',
         label: '* RH',
@@ -52,6 +54,7 @@ export let DATOS_BASICOS = {
             { Id: 2, valor: 'Negativo' },
         ],
     }, {
+        claseGrid : 'col-3',
         etiqueta: 'select',
         nombre: 'TipoLibretaMilitar',
         label: 'Tipo de libreta militar',
@@ -63,6 +66,7 @@ export let DATOS_BASICOS = {
             { Id: 2, valor: 'Segunda clase' },
         ],
     }, {
+        claseGrid : 'col-3',
         etiqueta: 'input',
         nombre: 'NumeroLibretaMilitar',
         label: 'Número de la libreta militar',
@@ -71,6 +75,7 @@ export let DATOS_BASICOS = {
         tipo: 'number',
         minimo: 0,
     }, {
+        claseGrid : 'col-3',
         etiqueta: 'select',
         nombre: 'EstadoCivil',
         label: '* Estado civil',
@@ -86,6 +91,7 @@ export let DATOS_BASICOS = {
             { Id: 5, valor: 'Divorciado(a)' },
         ],
     }, {
+        claseGrid : 'col-6',
         etiqueta: 'select',
         nombre: 'GrupoEtnico',
         label: '* Grupo étnico o de minoria al que pertenece',
@@ -153,6 +159,7 @@ export let DATOS_BASICOS = {
     </div>
     **/
     {
+        claseGrid : 'col-6',
         etiqueta: 'select',
         nombre: 'PaisNacimiento',
         label: '* País de nacimiento',
@@ -166,6 +173,7 @@ export let DATOS_BASICOS = {
             { Id: 4, valor: 'Rusia' },
         ],
     }, {
+        claseGrid : 'col-6',
         etiqueta: 'select',
         nombre: 'CiudadNacimiento',
         label: '* Ciudad de nacimiento',
@@ -179,6 +187,7 @@ export let DATOS_BASICOS = {
             { Id: 4, valor: 'DDD' },
         ],
     }, {
+        claseGrid : 'col-6',
         etiqueta: 'select',
         nombre: 'PaisResidencia',
         label: '* País de residencia',
@@ -192,6 +201,7 @@ export let DATOS_BASICOS = {
             { Id: 4, valor: 'Rusia' },
         ],
     }, {
+        claseGrid : 'col-6',
         etiqueta: 'select',
         nombre: 'CiudadResidencia',
         label: '* Ciudad de residencia',
@@ -205,6 +215,7 @@ export let DATOS_BASICOS = {
             { Id: 4, valor: 'DDD' },
         ],
     }, {
+        claseGrid : 'col-3',
         etiqueta: 'input',
         nombre: 'Direccion',
         label: '* Dirección',
@@ -212,6 +223,7 @@ export let DATOS_BASICOS = {
         requerido: true,
         tipo: 'text',
     }, {
+        claseGrid : 'col-3',
         etiqueta: 'input',
         nombre: 'CodigoPostal',
         label: 'Código postal',
@@ -220,6 +232,7 @@ export let DATOS_BASICOS = {
         tipo: 'number',
         minimo: 0,
     }, {
+        claseGrid : 'col-3',
         etiqueta: 'input',
         nombre: 'Telefono',
         label: '* Teléfono',
@@ -228,6 +241,7 @@ export let DATOS_BASICOS = {
         tipo: 'number',
         minimo: 100,
     }, {
+        claseGrid : 'col-3',
         etiqueta: 'input',
         nombre: 'TelefonoContacto',
         label: '* Teléfono de contacto',

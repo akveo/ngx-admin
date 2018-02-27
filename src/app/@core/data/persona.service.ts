@@ -10,7 +10,6 @@ const path = 'http://localhost:8080/v1/';
 
 @Injectable()
 export class PersonaService {
-
     constructor(private http: HttpClient) {
     }
 
