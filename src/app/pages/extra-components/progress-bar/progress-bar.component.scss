@@ -1,7 +1,0 @@
-@import '../../../@theme/styles/themes';
-
-@include nb-install-component() {
-  nb-progress-bar ~ nb-progress-bar {
-    margin-top: 1rem;
-  }
-}
