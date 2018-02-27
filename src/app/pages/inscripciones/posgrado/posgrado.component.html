@@ -6,7 +6,7 @@
     <p><ngb-progressbar showValue="true" type="success" [value]="percentage" [animated]="true" [height]="'25px'"></ngb-progressbar></p>
     <nb-tabset fullWidth>
       <nb-tab tabTitle="1. Datos básicos">
-        <ngx-dinamicform [normalform]="formDatosBasicos" (result)="traerDatosBasicos($event)"></ngx-dinamicform>
+        <ngx-dinamicform [normalform]="formDatosBasicos" (resultSmart)="traerDatosBasicos($event)"></ngx-dinamicform>
       </nb-tab>
       <nb-tab tabTitle="2. Formación académica">
         <ngx-dinamicform [normalform]="formFormacionAcademica" (result)="traerFormacionAcademica($event)"></ngx-dinamicform>

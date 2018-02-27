@@ -25,7 +25,6 @@ export class DinamicformComponent implements OnInit {
 
   onChange(event, c) {
     c.valor = event.srcElement.files[0];
-    // console.log('file', c.valor);
     this.validCampo(c);
   }
 
@@ -65,6 +64,7 @@ export class DinamicformComponent implements OnInit {
     if (c.etiqueta === 'file') {
       if (c.valor !== undefined) {
         if (c.valor.size > c.tamanoMaximo * 1024000) {
+          console.info(c);
           c.clase = 'form-control form-control-danger';
           c.alerta = 'El tamaño del archivo es superior a : ' + c.tamanoMaximo + 'MB. ';
         } else {
@@ -125,26 +125,7 @@ export class DinamicformComponent implements OnInit {
       if (d.requerido) {
         requeridos++;
       }
-      if (d.etiqueta === 'select') {
-        if (d.valor.Id === 0) {
-          this.data.valid = false;
-          d.clase = 'form-control form-control-danger'
-          d.alerta = 'Seleccione el campo'
-        } else {
-          d.alerta = ''
-          d.clase = 'form-control form-control-success'
-        }
-      }
-      if (d.etiqueta === 'file') {
-        if (d.valor.Id === 0) {
-          this.data.valid = false;
-          d.clase = 'form-control form-control-danger'
-          d.alerta = 'Seleccione el campo'
-        } else {
-          d.alerta = ''
-          d.clase = 'form-control form-control-success'
-        }
-      }
+
       if (d.etiqueta === 'input' && d.tipo === 'number') {
         if (parseInt(d.valor, 10) < d.minimo) {
           this.data.valid = false;
@@ -180,6 +161,18 @@ export class DinamicformComponent implements OnInit {
         }
         this.data.files.push({ nombre: d.nombre, file: d.valor });
       }
+
+      if (d.etiqueta === 'select') {
+        if (d.valor.Id === 0) {
+          this.data.valid = false;
+          d.clase = 'form-control form-control-danger'
+          d.alerta = 'Seleccione el campo'
+        } else {
+          d.alerta = ''
+          d.clase = 'form-control form-control-success'
+        }
+      }
+
     });
     if (this.data.valid && (resueltos / requeridos) === 1) {
       if (this.normalform.modelo) {

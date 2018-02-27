@@ -1,4 +1,5 @@
 <div [ngSwitch]="normalform.tipo_formulario">
+  <!-- Form tipo basic -->
   <form class="form-horizontal" *ngSwitchCase="'basic'">
     <fieldset>
       <legend align="{{normalform.alineacion_titulo}}"><small>{{normalform.titulo}}</small></legend>
@@ -58,9 +59,6 @@
               </select>
 
             <!-- input-file -->
-            <!-- <input-file *ngSwitchCase="'input-file'" [(model)]="c.valor" ></input-file> -->
-            <!-- <ngx-input-file-upload *ngSwitchCase="'input-file'" [acceptHtml]="acceptHtml" [(ngModel)]="c.valor" (ngModelChange)="change()" [acceptTs]="acceptTs" [activeColor]="activeColor">
-            </ngx-input-file-upload> -->
             <input type="file" name="{{c.nombre}}" class="{{c.clase}}" *ngSwitchCase="'file'" (change)="onChange($event,c)" />
           </div>
         </div>
@@ -74,7 +72,7 @@
     <br>
   </form>
 
-
+  <!-- Form tipo grid -->
   <form class="form-horizontal" *ngSwitchCase="'grid'">
     <fieldset>
       <legend align="{{normalform.alineacion_titulo}}"><small>{{normalform.titulo}}</small></legend>
@@ -136,9 +134,6 @@
             </select>
 
           <!-- input-file -->
-          <!-- <input-file *ngSwitchCase="'input-file'" [(model)]="c.valor" ></input-file> -->
-          <!-- <ngx-input-file-upload *ngSwitchCase="'input-file'" [acceptHtml]="acceptHtml" [(ngModel)]="c.valor" (ngModelChange)="change()" [acceptTs]="acceptTs" [activeColor]="activeColor">
-          </ngx-input-file-upload> -->
           <input type="file" name="{{c.nombre}}" class="{{c.clase}}" *ngSwitchCase="'file'" (change)="onChange($event,c)" />
 
         </div>
