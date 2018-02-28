@@ -14,10 +14,10 @@ import { Component } from '@angular/core';
       </b>
     </span>
     <div class="socials">
-      <a href="#" target="_blank" class="ion ion-social-github"></a>
-      <a href="#" target="_blank" class="ion ion-social-facebook"></a>
-      <a href="#" target="_blank" class="ion ion-social-twitter"></a>
-      <a href="#" target="_blank" class="ion ion-social-linkedin"></a>
+      <a href="https://github.com/akveo/ngx-admin" target="_blank" class="ion ion-social-github"></a>
+      <a href="https://www.facebook.com/akveo/" target="_blank" class="ion ion-social-facebook"></a>
+      <a href="https://twitter.com/akveo_inc" target="_blank" class="ion ion-social-twitter"></a>
+      <a href="https://www.linkedin.com/company/akveo" target="_blank" class="ion ion-social-linkedin"></a>
     </div>
   `,
 })
