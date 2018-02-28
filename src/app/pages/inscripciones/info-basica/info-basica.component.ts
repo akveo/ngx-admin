@@ -13,28 +13,31 @@ export class InfoBasicaComponent implements OnInit {
 
   public formulario: any;
   private token: any;
-  ejemplo: any;
+  public ejemplo: any;
+  public percentage: any;
 
   constructor(private persona: PersonaService, private autenticacion: AutenticationService) {
     this.formulario=FORM_PERSONA;
+    this.percentage=0.0;
   }
 
   ngOnInit() {
-    this.persona.get("persona")
-      .subscribe(res => {
-      this.ejemplo = res;
-  });
-
-  this.token =  this.autenticacion.getPayload();
-
   }
 
   traerDatosBasicos(event) {
     if(event.valid){
-      console.log("entro");
-
+      event.data.Persona.FechaNacimiento = new Date(event.data.Persona.FechaNacimiento);
+      event.data.Persona.CiudadNacimiento = event.data.Persona.CiudadNacimiento.Id;
+      event.data.Persona.Usuario = this.autenticacion.getPayload().sub;
+      this.persona.post("persona", event.data.Persona)
+        .subscribe(res => {
+        this.ejemplo = res;
+        console.info(this.ejemplo)
+      });
     }
-    console.log(event)
+   // this.ejemplo=event;
+   // this.ejemplo.Usuario=this.autenticacion.getPayload().sub;
+
   }
 }
 
