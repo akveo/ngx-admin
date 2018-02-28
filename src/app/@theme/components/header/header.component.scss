@@ -12,10 +12,12 @@
     width: 100%;
     order: 0;
     flex-direction: row;
+    flex: 1;
   }
   .right {
     order: 1;
     flex-direction: row-reverse;
+    flex: 1.5;
   }
 
   .logo-containter {
@@ -25,12 +27,27 @@
 
   .control-item {
     display: block;
+
+    &.email-text {
+      height: auto;
+      a {
+        text-decoration: underline;
+      }
+    }
+
+    &.github-start {
+      width: 140px;
+      display: flex;
+
+      iframe {
+        width: 100px;
+      }
+    }
   }
 
   .header-container {
     display: flex;
     align-items: center;
-    width: 100%;
 
     .navigation {
       padding-right: nb-theme(padding);
@@ -67,7 +84,16 @@
     }
   }
 
+  @include media-breakpoint-down(lg) {
+
+    .control-item.email, .control-item.notifications {
+      display: none;
+    }
+
+  }
+
   @include media-breakpoint-down(md) {
+
 
     nb-action:not(.toggle-layout) {
       border: none;
@@ -76,9 +102,12 @@
     .control-item {
       display: none;
     }
-
     .toggle-layout {
       padding: 0;
+    }
+
+    .toggle-layout {
+      display: none;
     }
   }
 
@@ -87,18 +116,15 @@
     nb-user /deep/ .user-name {
       display: none;
     }
-  }
 
-  @include media-breakpoint-down(is) {
+    .control-item.github-start {
+      display: none;
+    }
 
     .header-container {
       .logo {
         font-size: 1.25rem;
       }
-    }
-
-    .toggle-layout {
-      display: none;
     }
 
     nb-action:not(.toggle-layout) {
