@@ -37,6 +37,10 @@ export const MENU_ITEMS: NbMenuItem[] = [
         link: '/pages/ui-features/modals',
       },
       {
+        title: 'Popovers',
+        link: '/pages/ui-features/popovers',
+      },
+      {
         title: 'Typography',
         link: '/pages/ui-features/typography',
       },
@@ -92,6 +96,10 @@ export const MENU_ITEMS: NbMenuItem[] = [
       {
         title: 'Bubble Maps',
         link: '/pages/maps/bubble',
+      },
+      {
+        title: 'Search Maps',
+        link: '/pages/maps/searchmap',
       },
     ],
   },

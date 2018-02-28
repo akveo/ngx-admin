@@ -12,6 +12,11 @@ import { TypographyComponent } from './typography/typography.component';
 import { TabsComponent, Tab1Component, Tab2Component } from './tabs/tabs.component';
 import { SearchComponent } from './search-fields/search-fields.component';
 import { TimePickerComponent } from './time-picker/time-picker.component';
+import { PopoversComponent } from './popovers/popovers.component';
+import {
+  NgxPopoverCardComponent, NgxPopoverFormComponent,
+  NgxPopoverTabsComponent,
+} from './popovers/popover-examples.component';
 
 const components = [
   UiFeaturesComponent,
@@ -24,6 +29,10 @@ const components = [
   Tab1Component,
   Tab2Component,
   SearchComponent,
+  PopoversComponent,
+  NgxPopoverCardComponent,
+  NgxPopoverFormComponent,
+  NgxPopoverTabsComponent,
 ];
 
 @NgModule({
@@ -38,6 +47,9 @@ const components = [
   ],
   entryComponents: [
     ModalComponent,
+    NgxPopoverCardComponent,
+    NgxPopoverFormComponent,
+    NgxPopoverTabsComponent,
   ],
 })
 export class UiFeaturesModule { }
