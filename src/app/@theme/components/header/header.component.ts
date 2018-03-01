@@ -4,6 +4,7 @@ import { NbMenuService, NbSidebarService } from '@nebular/theme';
 import { UserService } from '../../../@core/data/users.service';
 import { AnalyticsService } from '../../../@core/utils/analytics.service';
 import { AutenticationService } from '../../../@core/utils/autentication.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'ngx-header',
@@ -19,23 +20,27 @@ export class HeaderComponent implements OnInit {
   title: any;
 
   constructor(private sidebarService: NbSidebarService,
-              private menuService: NbMenuService,
-              private userService: UserService,
-              private analyticsService: AnalyticsService,
-              private autenticacion: AutenticationService) {
+    private menuService: NbMenuService,
+    private userService: UserService,
+    private analyticsService: AnalyticsService,
+    private autenticacion: AutenticationService,
+    private translate: TranslateService) {
+    this.translate = translate;
   }
-
+  useLanguage(language: string) {
+    this.translate.use(language);
+  }
   ngOnInit() {
     this.userService.getUsers()
       .subscribe((users: any) => this.user = users.nick);
-      this.autenticacion.init();
-      const urlLogin = this.autenticacion.getAuthorizationUrl();
-      const urlLogout = this.autenticacion.logOut;
-      if (!this.autenticacion.live()) {
-        this.userMenu = [{ title: 'Login', url: urlLogin}] ;
-      }else {
-        this.userMenu = [{ title: this.autenticacion.payload.sub}, { title: 'Log out', url: urlLogout}] ;
-      }
+    this.autenticacion.init();
+    const urlLogin = this.autenticacion.getAuthorizationUrl();
+    const urlLogout = this.autenticacion.logOut;
+    if (!this.autenticacion.live()) {
+      this.userMenu = [{ title: 'Login', url: urlLogin }];
+    } else {
+      this.userMenu = [{ title: this.autenticacion.payload.sub }, { title: 'Log out', url: urlLogout }];
+    }
   }
 
   toggleSidebar(): boolean {

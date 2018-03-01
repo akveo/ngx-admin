@@ -7,12 +7,14 @@ import { InscripcionesRoutingModule, routedComponents } from './inscripciones-ro
 import { PosgradoComponent } from './posgrado/posgrado.component';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { InfoBasicaComponent } from './info-basica/info-basica.component';
+import { SharedModule } from '../../shared/shared.module';
 
 @NgModule({
   imports: [
     ThemeModule,
     InscripcionesRoutingModule,
     Ng2SmartTableModule,
+    SharedModule,
   ],
   declarations: [
     ...routedComponents,
@@ -22,6 +24,7 @@ import { InfoBasicaComponent } from './info-basica/info-basica.component';
   providers: [
     PersonaService,
     AutenticationService,
+    SharedModule,
   ],
 })
 export class InscripcionesModule { }

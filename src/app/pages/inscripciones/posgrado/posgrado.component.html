@@ -1,32 +1,32 @@
 <nb-card>
   <nb-card-header>
-    <h2>Formulario de inscripción</h2>
+    <h2>{{ 'INSCRIPCION.TITULO' | translate }}</h2>
   </nb-card-header>
   <nb-card-body>
     <p><ngb-progressbar showValue="true" type="success" [value]="percentage" [animated]="true" [height]="'25px'"></ngb-progressbar></p>
     <nb-tabset fullWidth>
-      <nb-tab tabTitle="1. Datos básicos">
+      <nb-tab tabTitle="1. {{ 'DATOS_BASICOS.TITULO' | translate }}">
         <ngx-dinamicform [normalform]="formDatosBasicos" (result)="traerDatosBasicos($event)"></ngx-dinamicform>
       </nb-tab>
-      <nb-tab tabTitle="2. Formación académica">
+      <nb-tab tabTitle="2. {{ 'FORMACION_ACADEMICA.TITULO' | translate }}">
         <ngx-dinamicform [normalform]="formFormacionAcademica" (result)="traerFormacionAcademica($event)"></ngx-dinamicform>
       </nb-tab>
-      <nb-tab tabTitle="3. Idiomas">
+      <nb-tab tabTitle="3. {{ 'IDIOMAS.TITULO' | translate }}">
         <ngx-dinamicform [normalform]="formIdiomas" (result)="traerIdiomas($event)"></ngx-dinamicform>
       </nb-tab>
-      <nb-tab tabTitle="4. Formación laboral">
+      <nb-tab tabTitle="4. {{ 'FORMACION_LABORAL.TITULO' | translate }}">
         <ngx-dinamicform [normalform]="formFormacionLaboral" (result)="traerFormacionLaboral($event)"></ngx-dinamicform>
       </nb-tab>
-      <nb-tab tabTitle="5. Documentos">
+      <nb-tab tabTitle="5. {{ 'DOCUMENTOS.TITULO' | translate }}">
         <ngx-dinamicform [normalform]="formDocumentos" (result)="traerDocumentos($event)"></ngx-dinamicform>
       </nb-tab>
-      <nb-tab tabTitle="6. Descuentos">
+      <nb-tab tabTitle="6. {{ 'DESCUENTOS.TITULO' | translate }}">
         <ngx-dinamicform [normalform]="formDescuentos" (result)="traerDescuentos($event)"></ngx-dinamicform>
       </nb-tab>
-      <nb-tab tabTitle="7. Trabajo de grado">
+      <nb-tab tabTitle="7. {{ 'PROPUESTA_TRABAJO_GRADO.TITULO' | translate }}">
         <ngx-dinamicform [normalform]="formDatos" (result)="traerDatos($event)"></ngx-dinamicform>
       </nb-tab>
-      <nb-tab tabTitle="8. Fin">
+      <nb-tab tabTitle="8. {{ 'ENVIO.TITULO' | translate }}">
       </nb-tab>
     </nb-tabset>
   </nb-card-body>
