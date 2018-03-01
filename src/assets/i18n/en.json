@@ -1,6 +1,71 @@
 {
   "HOME": {
+    "TITLE": "Virtual campus",
     "SELECT": "Change language"
+  },
+  "MENU": {
+    "dashboard": "Home",
+    "inscription": {
+      "inscription": "Inscription",
+      "mockup-register": "Register mockup",
+      "mockup-inscription": "Inscription mockup",
+      "mockup-inscription-state": "Inscription state mockup",
+      "mockup-candidate-query": "Candidate query mockup",
+      "mockup-candidate-information": "Candidate information mockup",
+      "mockup-choose-interviewer": "Choose interviewer-teacher mockup"    
+    },
+    "inscriptions": {
+      "inscriptions": "Inscriptions",
+      "postgraduate": "Postgraduate"
+    },
+    "ui-features": {
+      "ui-features": "UI Features",
+      "buttons": "Buttons",
+      "grid": "Grid",
+      "icons": "Icons",
+      "modals": "Modals",
+      "typography": "Typography",
+      "animated-searches": "Animated Searches",
+      "tabs": "Tabs"
+    },
+    "forms": {
+      "forms": "Forms",
+      "form-inputs": "Form Inputs",
+      "form-layouts": "Form Layouts"
+    },
+    "components": {
+      "components": "Components",
+      "tree": "Tree",
+      "notifications": "Notifications"
+    },
+    "maps": {
+      "maps": "Maps",
+      "google-maps": "Google Maps",
+      "leaflet-maps": "Leaflet Maps",
+      "bubble-maps": "Bubble Maps" 
+    },
+    "charts": {
+      "charts": "Charts",
+      "echarts": "Echarts",
+      "charts-js": "Charts.js",
+      "d3": "D3"
+    },
+    "editors": {
+      "editors": "Editors",
+      "tinymce": "TinyMCE",
+      "ckeditor": "CKEditor"
+    },
+    "tables": {
+      "tables": "Tables",
+      "smart-table": "Smart Table"
+    },
+    "auth": {
+      "auth": "Auth",
+      "login": "Login",
+      "register": "Register",
+      "request-password": "Request Password",
+      "reset-password": "Reset Password"
+    }
   },
   "REGISTRO": {
     "TITULO": "Register form",
@@ -58,7 +123,7 @@
   "PROPUESTA_TRABAJO_GRADO": {
     "TITULO": "Thesis proporsal"
   },
-  "ENVIO":{
+  "ENVIO": {
     "TITULO": "Finish"
   }
 }
