@@ -23,7 +23,7 @@ export class InfoBasicaComponent implements OnInit {
   }
 
   traerDatosBasicos(event) {
-    if(event.valid) {
+    if (event.valid) {
       event.data.Persona.FechaNacimiento = new Date(event.data.Persona.FechaNacimiento);
       event.data.Persona.CiudadNacimiento = event.data.Persona.CiudadNacimiento.Id;
       event.data.Persona.Usuario = this.autenticacion.getPayload().sub;
