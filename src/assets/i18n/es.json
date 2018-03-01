@@ -1,6 +1,71 @@
 {
   "HOME": {
-    "SELECT": "Seleccione su lenguaje"
+    "TITLE": "Campus virtual",
+    "SELECT": "Cambiar idioma"
+  },
+  "MENU": {
+    "dashboard": "Inicio",
+    "inscription": {
+      "inscription": "Inscripción",
+      "mockup-register": "Mockup de registro",
+      "mockup-inscription": "Mockup inscripcion",
+      "mockup-inscription-state": "Mockup estado inscripciones",
+      "mockup-candidate-query": "Mockup consultar aspirantes",
+      "mockup-candidate-information": "Mockup ver información aspirante",
+      "mockup-choose-interviewer": "Mockup asignar docente entrevistador"    
+    },
+    "inscriptions": {
+      "inscriptions": "Inscripciones",
+      "postgraduate": "Posgrado"
+    },
+    "ui-features": {
+      "ui-features": "Caracteristicas UI",
+      "buttons": "Botones",
+      "grid": "Rejillas",
+      "icons": "Iconos",
+      "modals": "Modales",
+      "typography": "Tipografía",
+      "animated-searches": "Búsquedas animadas",
+      "tabs": "Pestañas"
+    },
+    "forms": {
+      "forms": "Formularios",
+      "form-inputs": "Entradas de formulario",
+      "form-layouts": "Layouts de formulario"
+    },
+    "components": {
+      "components": "Componentes",
+      "tree": "Árbol",
+      "notifications": "Notificaciones"
+    },
+    "maps": {
+      "maps": "Mapas",
+      "google-maps": "Mapas de Google",
+      "leaflet-maps": "Mapas de Leaflet",
+      "bubble-maps": "Mapas de Bubble" 
+    },
+    "charts": {
+      "charts": "Gráficas",
+      "echarts": "Echarts",
+      "charts-js": "Charts.js",
+      "d3": "D3"
+    },
+    "editors": {
+      "editors": "Editores",
+      "tinymce": "TinyMCE",
+      "ckeditor": "CKEditor"
+    },
+    "tables": {
+      "tables": "Tablas",
+      "smart-table": "Smart Table"
+    },
+    "auth": {
+      "auth": "Autenticación",
+      "login": "Login",
+      "register": "Registro",
+      "request-password": "Recuperar Contraseña",
+      "reset-password": "Reiniciar Contraseña"
+    }
   },
   "REGISTRO": {
     "TITULO": "Formulario de registro",

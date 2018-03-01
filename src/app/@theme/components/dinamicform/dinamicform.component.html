@@ -1,4 +1,5 @@
 <div [ngSwitch]="normalform.tipo_formulario">
+
   <!-- Form tipo basic -->
   <form class="form-horizontal" *ngSwitchCase="'basic'">
     <fieldset>
@@ -11,10 +12,12 @@
                   {{c.alerta}}
                 </small>
             </label>
+
             <!-- input -->
             <input *ngSwitchCase="'input'" [(ngModel)]="c.valor" (ngModelChange)="validCampo(c)" [ngModelOptions]="{standalone: true}"
               type="{{c.tipo}}" id="{{c.nombre}}" class="{{c.clase}}" placeholder="{{c.placeholder}}" [disabled]="c.deshabilitar"
             />
+
             <!-- textarea -->
             <textarea *ngSwitchCase="'textarea'" [(ngModel)]="c.valor" (ngModelChange)="validCampo(c)" [ngModelOptions]="{standalone: true}"
               type="text" id="{{c.nombre}}" class="{{c.clase}}" placeholder="{{c.placeholder}}">
@@ -65,6 +68,7 @@
       </div>
     </fieldset>
     <br>
+    <!-- Botones de form con acción de botones -->
     <div align="center">
       <button class="btn btn-primary btn-tiny" (click)="clearForm()" [hidden]="!normalform.btnLimpiar">{{normalform.btnLimpiar}}</button>
       <button class="btn btn-success btn-tiny" (click)="validForm()" [hidden]="!normalform.btn">{{normalform.btn}}</button>

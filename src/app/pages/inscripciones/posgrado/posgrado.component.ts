@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 import { DATOS_PERSONALES } from './forms';
 import { DATOS_BASICOS } from './datos-personales';
 import { FORMACION_ACADEMICA } from './formacion-academica';
@@ -69,7 +70,8 @@ export class PosgradoComponent {
     console.info(event)
   }
 
-  constructor() {
+  constructor(private translate: TranslateService) {
+    this.translate = translate;
     this.formDatosBasicos = DATOS_BASICOS;
     this.formDatos = DATOS_PERSONALES;
     this.formFormacionAcademica = FORMACION_ACADEMICA;
@@ -79,5 +81,8 @@ export class PosgradoComponent {
     this.formDescuentos = DESCUENTOS;
     this.percentage = 0;
     this.nForms = 7;
+  }
+  useLanguage(language: string) {
+    this.translate.use(language);
   }
 }
