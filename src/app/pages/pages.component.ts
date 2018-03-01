@@ -6,15 +6,6 @@ import { MENU_ITEMS } from './pages-menu';
 @Component({
   selector: 'ngx-pages',
   template: `
-    <div>
-      <label>
-        {{ 'HOME.SELECT' | translate }}
-        <select #langSelect (change)="translate.use(langSelect.value)">
-          <option *ngFor="let lang of translate.getLangs()" [value]="lang" [selected]="lang === translate.currentLang"
-          >{{ lang }}</option>
-        </select>
-      </label>
-    </div>
     <ngx-sample-layout>
       <nb-menu [items]="menu"></nb-menu>
       <router-outlet></router-outlet>
