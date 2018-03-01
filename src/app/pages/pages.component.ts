@@ -41,7 +41,7 @@ export class PagesComponent implements OnInit {
   ngOnInit() {
     this.menu = MENU_ITEMS;
     this.translateMenu();
-    this.translate.onLangChange.subscribe((event: LangChangeEvent) => { //Live reload
+    this.translate.onLangChange.subscribe((event: LangChangeEvent) => { // Live reload
       this.translateMenu();
     });
   }
@@ -65,7 +65,7 @@ export class PagesComponent implements OnInit {
         : PagesComponent.getMenuItemKey(menuItem);
     }
     catch (e) {
-      //Key not found, don't change the menu item
+      // Key not found, don't change the menu item
       return;
     }
 
@@ -73,9 +73,9 @@ export class PagesComponent implements OnInit {
       menuItem.title = translation;
     });
     if (menuItem.children != null) {
-      //apply same on every child
+      // apply same on every child
       menuItem.children.forEach((childMenuItem: MenuItem) => {
-        //We remove the nested key and then use it as prefix for every child
+        // We remove the nested key and then use it as prefix for every child
         this.translateMenuTitle(childMenuItem, PagesComponent.trimLastSelector(key));
       });
     }
@@ -94,7 +94,7 @@ export class PagesComponent implements OnInit {
 
     const key = menuItem.key.toLowerCase();
     if (menuItem.children != null) {
-      return prefix + '.' + key + '.' + key; //Translation is nested
+      return prefix + '.' + key + '.' + key; // Translation is nested
     }
     return prefix + '.' + key;
   }

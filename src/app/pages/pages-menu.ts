@@ -43,7 +43,7 @@ export const MENU_ITEMS: MenuItem[] = [
       {
         title: 'Mockup asignar docente entrevistador',
         link: '/pages/inscripcion/asignar-entrevistador',
-        key: 'mockup-choose-interviewer'
+        key: 'mockup-choose-interviewer',
       },
     ],
   },
@@ -56,7 +56,7 @@ export const MENU_ITEMS: MenuItem[] = [
       {
         title: 'Posgrados',
         link: '/pages/inscripciones/posgrado',
-        key: 'postgraduate'
+        key: 'postgraduate',
       },
     ],
   },
