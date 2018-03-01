@@ -14,6 +14,8 @@ import { DESCUENTOS } from './descuentos';
   styleUrls: ['./posgrado.component.scss'],
 })
 export class PosgradoComponent {
+  tabs: number;
+  persona: any;
   formDatos: any;
   formDatosBasicos: any;
   formFormacionAcademica: any;
@@ -21,39 +23,46 @@ export class PosgradoComponent {
   formFormacionLaboral: any;
   formDocumentos: any;
   formDescuentos: any;
-  percentage = 90;
+  percentage: any;
   color = 'primary'
 
+  setPercentage(number) {
+    this.percentage = (number * 100) / this.tabs;
+  }
+
   traerDatos(event) {
-    // console.log(event)
+    this.persona = event;
+    this.setPercentage(event.percentage);
   }
 
   traerDatosBasicos(event) {
-    // console.log(event)
+    console.info(event)
+    this.setPercentage(event.percentage);
   }
 
   traerFormacionAcademica(event) {
-    // console.log(event)
+    console.info(event)
+    this.setPercentage(event.percentage);
   }
 
   traerIdiomas(event) {
-    // console.log(event)
+    console.info(event)
   }
 
   traerFormacionLaboral(event) {
-    // console.log(event)
+    console.info(event)
   }
 
   traerDocumentos(event) {
-    // console.log(event)
+    console.info(event)
   }
 
   traerDescuentos(event) {
-    // console.log(event)
+    console.info(event)
   }
 
   traerPersonaSmart(event) {
-    // console.log(event)
+    console.info(event)
   }
 
   constructor(private translate: TranslateService) {
@@ -65,6 +74,8 @@ export class PosgradoComponent {
     this.formFormacionLaboral = FORMACION_LABORAL;
     this.formDocumentos = DOCUMENTOS;
     this.formDescuentos = DESCUENTOS;
+    this.percentage = 0;
+    this.tabs = 7;
   }
   useLanguage(language: string) {
     this.translate.use(language);
