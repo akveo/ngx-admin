@@ -4,6 +4,7 @@ import { ThemeModule } from '../../@theme/theme.module';
 import { InscripcionesRoutingModule, routedComponents } from './inscripciones-routing.module';
 import { PosgradoComponent } from './posgrado/posgrado.component';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
+import { UtilidadesService } from '../../@core/utils/utilidades.service';
 import { SharedModule } from '../../shared/shared.module';
 
 @NgModule({
@@ -18,6 +19,7 @@ import { SharedModule } from '../../shared/shared.module';
     PosgradoComponent,
   ],
   providers: [
+    UtilidadesService,
     SharedModule,
   ],
 })
