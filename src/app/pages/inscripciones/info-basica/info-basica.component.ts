@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'ngx-info-basica',
   templateUrl: './info-basica.component.html',
-  styleUrls: ['./info-basica.component.scss']
+  styleUrls: ['./info-basica.component.scss'],
 })
 export class InfoBasicaComponent implements OnInit {
 
@@ -15,15 +15,15 @@ export class InfoBasicaComponent implements OnInit {
   public percentage: any;
 
   constructor(private persona: PersonaService, private autenticacion: AutenticationService) {
-    this.formulario=FORM_PERSONA;
-    this.percentage=0.0;
+    this.formulario = FORM_PERSONA;
+    this.percentage = 0.0;
   }
 
   ngOnInit() {
   }
 
   traerDatosBasicos(event) {
-    if(event.valid){
+    if(event.valid) {
       event.data.Persona.FechaNacimiento = new Date(event.data.Persona.FechaNacimiento);
       event.data.Persona.CiudadNacimiento = event.data.Persona.CiudadNacimiento.Id;
       event.data.Persona.Usuario = this.autenticacion.getPayload().sub;

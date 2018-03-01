@@ -8,7 +8,7 @@ describe('InfoBasicaComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ InfoBasicaComponent ]
+      declarations: [ InfoBasicaComponent ],
     })
     .compileComponents();
   }));

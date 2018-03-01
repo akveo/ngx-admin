@@ -85,7 +85,7 @@ export class AutenticationService {
             }
         }
     }
-    getPayload(){
+    getPayload() {
       const id_token = window.sessionStorage.getItem('id_token').split('.');
       return JSON.parse(atob(id_token[1]));
     }

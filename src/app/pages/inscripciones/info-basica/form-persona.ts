@@ -14,7 +14,7 @@ export let FORM_PERSONA = {
       placeholder: 'Ej. Jose',
       requerido: true,
       tipo: 'text',
-      },{
+      }, {
         etiqueta: 'input',
         claseGrid : 'col-6',
         nombre: 'SegundoNombre',
@@ -22,7 +22,7 @@ export let FORM_PERSONA = {
         placeholder: 'Ej. Steven',
         requerido: false,
         tipo: 'text',
-    },{
+    }, {
       etiqueta: 'input',
       claseGrid : 'col-6',
       nombre: 'PrimerApellido',
@@ -38,7 +38,7 @@ export let FORM_PERSONA = {
       placeholder: 'Ej. Perez',
       requerido: false,
       tipo: 'text',
-    },{
+    }, {
         claseGrid : 'col-4',
         etiqueta: 'select',
         nombre: 'PaisNacimiento',
@@ -66,7 +66,7 @@ export let FORM_PERSONA = {
             { Id: 3, valor: 'CCC' },
             { Id: 4, valor: 'DDD' },
         ],
-    },{
+    }, {
       etiqueta: 'input',
       claseGrid : 'col-4',
       nombre: 'FechaNacimiento',
