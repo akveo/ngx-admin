@@ -1,40 +1,49 @@
-import { NbMenuItem } from '@nebular/theme';
+// import { NbMenuItem } from '@nebular/theme';
+import { MenuItem } from './menu-item';
 
-export const MENU_ITEMS: NbMenuItem[] = [
+export const MENU_ITEMS: MenuItem[] = [
   {
     title: 'Dashboard',
     icon: 'nb-home',
     link: '/pages/dashboard',
     home: true,
+    key: 'dashboard',
   },
   {
     title: 'Inscripcion',
     icon: 'nb-compose',
     link: '/pages/inscripcion',
+    key: 'inscription',
     children: [
       {
         title: 'Mockup registro',
         link: '/pages/inscripcion/registro',
+        key: 'mockup-register',
       },
       {
         title: 'Mockup inscripcion',
         link: '/pages/inscripcion/forms',
+        key: 'mockup-inscription',
       },
       {
         title: 'Mockup estado inscripciones',
         link: '/pages/inscripcion/estado-inscripciones',
+        key: 'mockup-inscription-state',
       },
       {
         title: 'Mockup consultar aspirantes',
         link: '/pages/inscripcion/ver-aspirantes',
+        key: 'mockup-candidate-query',
       },
       {
         title: 'Mockup ver información aspirante',
         link: '/pages/inscripcion/ver-informacion-aspirante',
+        key: 'mockup-candidate-information',
       },
       {
         title: 'Mockup asignar docente entrevistador',
         link: '/pages/inscripcion/asignar-entrevistador',
+        key: 'mockup-choose-interviewer'
       },
     ],
   },
@@ -42,10 +51,12 @@ export const MENU_ITEMS: NbMenuItem[] = [
     title: 'Inscripciones',
     icon: 'nb-compose',
     link: '/pages/inscripciones',
+    key: 'inscriptions',
     children: [
       {
         title: 'Posgrados',
         link: '/pages/inscripciones/posgrado',
+        key: 'postgraduate'
       },
     ],
   },

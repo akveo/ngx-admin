@@ -1,6 +1,22 @@
 {
   "HOME": {
-    "SELECT": "Seleccione su lenguaje"
+    "SELECT": "Cambiar idioma"
+  },
+  "MENU": {
+    "dashboard": "Inicio",
+    "inscription": {
+      "inscription": "Inscripción",
+      "mockup-register": "Mockup de registro",
+      "mockup-inscription": "Mockup inscripcion",
+      "mockup-inscription-state": "Mockup estado inscripciones",
+      "mockup-candidate-query": "Mockup consultar aspirantes",
+      "mockup-candidate-information": "Mockup ver información aspirante",
+      "mockup-choose-interviewer": "Mockup asignar docente entrevistador"    
+    },
+    "inscriptions": {
+      "inscriptions": "Inscripciones",
+      "postgraduate": "Posgrado"
+    }
   },
   "REGISTRO": {
     "TITULO": "Formulario de registro",

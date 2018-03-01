@@ -2,6 +2,22 @@
   "HOME": {
     "SELECT": "Change language"
   },
+  "MENU": {
+    "dashboard": "Home",
+    "inscription": {
+      "inscription": "Inscription",
+      "mockup-register": "Register mockup",
+      "mockup-inscription": "Inscription mockup",
+      "mockup-inscription-state": "Inscription state mockup",
+      "mockup-candidate-query": "Candidate query mockup",
+      "mockup-candidate-information": "Candidate information mockup",
+      "mockup-choose-interviewer": "Choose interviewer-teacher mockup"    
+    },
+    "inscriptions": {
+      "inscriptions": "Inscriptions",
+      "postgraduate": "Postgraduate"
+    }
+  },
   "REGISTRO": {
     "TITULO": "Register form",
     "NOMBRE": "Names",
@@ -58,7 +74,7 @@
   "PROPUESTA_TRABAJO_GRADO": {
     "TITULO": "Thesis proporsal"
   },
-  "ENVIO":{
+  "ENVIO": {
     "TITULO": "Finish"
   }
 }
