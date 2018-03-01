@@ -63,8 +63,7 @@ export class PagesComponent implements OnInit {
       key = (prefix !== '')
         ? PagesComponent.getMenuItemKey(menuItem, prefix)
         : PagesComponent.getMenuItemKey(menuItem);
-    }
-    catch (e) {
+    } catch (e) {
       // Key not found, don't change the menu item
       return;
     }
