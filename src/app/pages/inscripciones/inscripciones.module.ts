@@ -7,6 +7,7 @@ import { InscripcionesRoutingModule, routedComponents } from './inscripciones-ro
 import { PosgradoComponent } from './posgrado/posgrado.component';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { InfoBasicaComponent } from './info-basica/info-basica.component';
+import { UtilidadesService } from '../../@core/utils/utilidades.service';
 import { SharedModule } from '../../shared/shared.module';
 
 @NgModule({
@@ -24,6 +25,7 @@ import { SharedModule } from '../../shared/shared.module';
   providers: [
     PersonaService,
     AutenticationService,
+    UtilidadesService,
     SharedModule,
   ],
 })

@@ -7,6 +7,7 @@ import { IDIOMAS } from './idiomas';
 import { FORMACION_LABORAL } from './formacion-laboral';
 import { DOCUMENTOS } from './documentos';
 import { DESCUENTOS } from './descuentos';
+import { UtilidadesService } from '../../../@core/utils/utilidades.service';
 
 @Component({
   selector: 'ngx-posgrado',
@@ -14,7 +15,8 @@ import { DESCUENTOS } from './descuentos';
   styleUrls: ['./posgrado.component.scss'],
 })
 export class PosgradoComponent {
-  tabs: number;
+
+  nForms: number;
   persona: any;
   formDatos: any;
   formDatosBasicos: any;
@@ -25,41 +27,43 @@ export class PosgradoComponent {
   formDescuentos: any;
   percentage: any;
   color = 'primary'
+  percentageTab = [];
 
-  setPercentage(number) {
-    this.percentage = (number * 100) / this.tabs;
-  }
-
-  traerDatos(event) {
-    this.persona = event;
-    this.setPercentage(event.percentage);
+  setPercentage(number, tab) {
+    console.info(number);
+    this.percentageTab[tab] = (number * 100) / this.nForms;
+    console.info(this.percentageTab);
+    this.percentage = Math.round(UtilidadesService.getSumArray(this.percentageTab));
   }
 
   traerDatosBasicos(event) {
     console.info(event)
-    this.setPercentage(event.percentage);
-
+    this.setPercentage(event.percentage, 0);
   }
 
   traerFormacionAcademica(event) {
     console.info(event)
-    this.setPercentage(event.percentage);
+    this.setPercentage(event.percentage, 1);
   }
 
   traerIdiomas(event) {
-    console.info(event)
+    console.info(event);
+    this.setPercentage(event.percentage, 2);
   }
 
   traerFormacionLaboral(event) {
     console.info(event)
+    this.setPercentage(event.percentage, 3);
   }
 
   traerDocumentos(event) {
     console.info(event)
+    this.setPercentage(event.percentage, 4);
   }
 
   traerDescuentos(event) {
-    console.info(event)
+    console.info(event);
+    this.setPercentage(event.percentage, 5);
   }
 
   traerPersonaSmart(event) {
@@ -76,7 +80,7 @@ export class PosgradoComponent {
     this.formDocumentos = DOCUMENTOS;
     this.formDescuentos = DESCUENTOS;
     this.percentage = 0;
-    this.tabs = 7;
+    this.nForms = 7;
   }
   useLanguage(language: string) {
     this.translate.use(language);
