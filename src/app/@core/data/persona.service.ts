@@ -10,12 +10,13 @@ const path = 'http://localhost:8080/v1/';
 
 @Injectable()
 export class PersonaService {
+
     constructor(private http: HttpClient) {
     }
 
     get(endpoint) {
         return this.http.get(path + endpoint);
-    }
+      }
     post(endpoint, element) {
         return this.http.post(path + endpoint, element, httpOptions);
     }
