@@ -71,6 +71,7 @@ import 'zone.js/dist/zone';  // Included with Angular CLI.
 import 'intl';  // Run `npm install --save intl`.
 import 'intl/locale-data/jsonp/en';
 import 'core-js/es7/array';
+import 'core-js/es7/object';
 
 if (typeof SVGElement.prototype.contains === 'undefined') {
   SVGElement.prototype.contains = HTMLDivElement.prototype.contains;
