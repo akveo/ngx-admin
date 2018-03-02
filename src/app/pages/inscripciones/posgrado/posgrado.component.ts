@@ -8,6 +8,8 @@ import { FORMACION_LABORAL } from './formacion-laboral';
 import { DOCUMENTOS } from './documentos';
 import { DESCUENTOS } from './descuentos';
 import { UtilidadesService } from '../../../@core/utils/utilidades.service';
+import { NuxeoService } from '../../../@core/utils/nuxeo.service';
+
 
 @Component({
   selector: 'ngx-posgrado',
@@ -39,6 +41,7 @@ export class PosgradoComponent {
   traerDatosBasicos(event) {
     console.info(event)
     this.setPercentage(event.percentage, 0);
+    console.info(NuxeoService.guardar(event.files));
   }
 
   traerFormacionAcademica(event) {

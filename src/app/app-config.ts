@@ -1,5 +1,13 @@
 export const Config = {
     LOCAL : {
+        NUXEO: {
+            PATH: 'https://documental.udistrital.edu.co/nuxeo/',
+            AUTH: {
+                method: 'basic',
+                username: 'Administrator',
+                password: 'S1st3m4s04S=Fr331P4',
+            },
+        },
         WSO2_SERVICE: 'http://jbpm.udistritaloas.edu.co:8280/services',
         TOKEN: {
             AUTORIZATION_URL: 'https://10.20.0.162:9443/oauth2/authorize',
