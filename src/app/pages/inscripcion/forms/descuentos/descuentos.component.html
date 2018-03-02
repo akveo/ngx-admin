@@ -1,104 +1,101 @@
 <div>
-    <label class="cabecera">Indique cuales de estos descuentos posee, agregue el respectivo comprobante</label>
+    <label class="cabecera">{{ 'DESCUENTOS.INDICACION' | translate }}</label>
     <div class="descuentop">
-        <label for="votacion">Si usted es colombiano y mayor de edad, ¿Tiene usted el certificado de votación de las últimas elecciones?</label>
+        <label for="votacion">{{ 'DESCUENTOS.DESCUENTO_ELECTORAL' | translate }}</label>
         <div class="radio">
             <span>
                 <input type="radio" value="true" name="votacion" id="descuento1_true" checked="checked">
-                <label for="descuento1_true" class="collection_radio_buttons">Si</label>
+                <label for="descuento1_true" class="collection_radio_buttons">{{ 'DESCUENTOS.SI' | translate }}</label>
             </span>
             <span>
                 <input type="radio" value="false" name="votacion" id="descuento1_false">
-                <label for="descuento1_false" class="collection_radio_buttons">No</label>
+                <label for="descuento1_false" class="collection_radio_buttons">{{ 'DESCUENTOS.NO' | translate }}</label>
             </span>
         </div>
         <br>
-        <span class="btn btn-warning">
-            Agregar&hellip;
+        <!--<span class="btn btn-warning">
+            Agregar&hellip;-->
             <input type="file">
             <!-- style="display: none;" multiple>-->
-        </span>
+        <!--</span>
         <input class="descuentonombre form-control" type="text" name="descuento" placeholder="Seleccione su archivo.." disabled/>
-        <input type="button" class="btn btn-danger" value="Eliminar">        
+        <input type="button" class="btn btn-danger" value="Eliminar">-->  
     </div>
     <div class="descuentop">
-        <label for="usadescuento">¿Ha utilizado algún beneficio y/o descuento para estudiar en la Universidad Distrital Francisco José de Caldas?</label>
+        <label for="usadescuento">{{ 'DESCUENTOS.USO_DESCUENTO' | translate }}</label>
         <div class="radio">
             <span>
                 <input type="radio" value="true" name="usadescuento" id="descuento0_true" checked="checked">
-                <label for="descuento0_true" class="collection_radio_buttons">Si</label>
+                <label for="descuento0_true" class="collection_radio_buttons">{{ 'DESCUENTOS.SI' | translate }}</label>
             </span>
             <span>
                 <input type="radio" value="false" name="usadescuento" id="descuento0_false">
-                <label for="descuento0_false" class="collection_radio_buttons">No</label>
+                <label for="descuento0_false" class="collection_radio_buttons">{{ 'DESCUENTOS.NO' | translate }}</label>
             </span>
         </div>
         <br>        
         <div class="descuento">
-            <label for="egresado">¿Es usted egresado de un pregrado de la Universidad Distrital Francisco José de Caldas?</label>
+            <label for="egresado">{{ 'DESCUENTOS.DESCUENTO_EGRESADO' | translate }}</label>
             <div class="radio">
                 <span>
                     <input type="radio" value="true" name="distrital" id="descuento2_true">
-                    <label for="descuento2_true" class="collection_radio_buttons">Si</label>
+                    <label for="descuento2_true" class="collection_radio_buttons">{{ 'DESCUENTOS.SI' | translate }}</label>
                 </span>
                 <span>
                     <input type="radio" value="false" name="distrital" id="descuento2_false" checked="checked">
-                    <label for="descuento2_false" class="collection_radio_buttons">No</label>
+                    <label for="descuento2_false" class="collection_radio_buttons">{{ 'DESCUENTOS.NO' | translate }}</label>
                 </span>
             </div>
         </div>
         <div class="descuento">
-            <label for="egresado">¿Fue usted monitor académico o administrativo de la Universidad Distrital Francisco José
-                de Caldas?</label>
+            <label for="egresado">{{ 'DESCUENTOS.DESCUENTO_MONITOR' | translate }}</label>
             <div class="radio">
                 <span>
                     <input type="radio" value="true" name="monitor" id="descuento3_true">
-                    <label for="descuento3_true" class="collection_radio_buttons">Si</label>
+                    <label for="descuento3_true" class="collection_radio_buttons">{{ 'DESCUENTOS.SI' | translate }}</label>
                 </span>
                 <span>
                     <input type="radio" value="false" name="monitor" id="descuento3_false" checked="checked">
-                    <label for="descuento3_false" class="collection_radio_buttons">No</label>
+                    <label for="descuento3_false" class="collection_radio_buttons">{{ 'DESCUENTOS.NO' | translate }}</label>
                 </span>
             </div>
         </div>
         <div class="descuento">
-            <label for="egresado">¿Fue usted representante estudiantil ante el consejo superior universitario, consejo académico ó consejo de facultad de la Universidad Distrital Francisco José de Caldas?</label>
+            <label for="egresado">{{ 'DESCUENTOS.DESCUENTO_CONCEJO' | translate }}</label>
             <div class="radio">
                 <span>
                     <input type="radio" value="true" name="consejo" id="descuento4_true">
-                    <label for="descuento4_true" class="collection_radio_buttons">Si</label>
+                    <label for="descuento4_true" class="collection_radio_buttons">{{ 'DESCUENTOS.SI' | translate }}</label>
                 </span>
                 <span>
                     <input type="radio" value="false" name="consejo" id="descuento4_false" checked="checked">
-                    <label for="descuento4_false" class="collection_radio_buttons">No</label>
+                    <label for="descuento4_false" class="collection_radio_buttons">{{ 'DESCUENTOS.NO' | translate }}</label>
                 </span>
             </div>
         </div>
         <div class="descuento">
-            <label for="egresado">¿Es usted personal de planta de la Universidad Distrital Francisco José de Caldas ó familiar
-                de uno de ellos?</label>
+            <label for="egresado">{{ 'DESCUENTOS.DESCUENTO_PLANTA' | translate }}</label>
             <div class="radio">
                 <span>
                     <input type="radio" value="true" name="planta" id="descuento5_true">
-                    <label for="descuento5_true" class="collection_radio_buttons">Si</label>
+                    <label for="descuento5_true" class="collection_radio_buttons">{{ 'DESCUENTOS.SI' | translate }}</label>
                 </span>
                 <span>
                     <input type="radio" value="false" name="planta" id="descuento5_false" checked="checked">
-                    <label for="descuento5_false" class="collection_radio_buttons">No</label>
+                    <label for="descuento5_false" class="collection_radio_buttons">{{ 'DESCUENTOS.NO' | translate }}</label>
                 </span>
             </div>
         </div>
         <div class="descuento">
-            <label for="ecaes">¿Es usted una persona becada por su desempeño en la prueba Saber-Pro (antes ECAES) de
-                egresados de la Universidad Distrital Francisco José de Caldas?</label>
+            <label for="ecaes">{{ 'DESCUENTOS.DESCUENTO_ECAES' | translate }}</label>
             <div class="radio">
                 <span>
                     <input type="radio" value="true" name="ecaes" id="descuento6_true">
-                    <label for="descuento6_true" class="collection_radio_buttons">Si</label>
+                    <label for="descuento6_true" class="collection_radio_buttons">{{ 'DESCUENTOS.SI' | translate }}</label>
                 </span>
                 <span>
                     <input type="radio" value="false" name="ecaes" id="descuento6_false" checked="checked">
-                    <label for="descuento6_false" class="collection_radio_buttons">No</label>
+                    <label for="descuento6_false" class="collection_radio_buttons">{{ 'DESCUENTOS.NO' | translate }}</label>
                 </span>
             </div>
         </div>
@@ -111,7 +108,7 @@
         </div>
         <div class="col-xs-6 col-xs-offset-3">
             <a ui-sref="form.interests" class="btn btn-info siguiente" (click)="mostrarAreaSiguiente()">
-                Siguiente
+                {{ 'DESCUENTOS.SIGUIENTE' | translate }}
                 <i _ngcontent-c24="" class="ion-arrow-right-b"></i>
             </a>
         </div>

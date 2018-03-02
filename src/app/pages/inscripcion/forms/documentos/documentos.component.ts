@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'ngx-documentos',
@@ -6,7 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./documentos.component.scss'],
 })
 export class DocumentosComponent implements OnInit {
-  constructor() { }
+  constructor(private translate: TranslateService) {
+    this.translate = translate;
+  }
+  useLanguage(language: string) {
+    this.translate.use(language);
+  }
   ngOnInit() {
   }
 }

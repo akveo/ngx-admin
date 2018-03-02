@@ -54,6 +54,11 @@
         font-weight: nb-theme(font-weight-normal);
       }
     }
+    
+    .select {
+      display: inline-flex;
+      width: auto;
+    }
   }
 
   .toggle-layout /deep/ a {

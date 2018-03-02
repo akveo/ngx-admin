@@ -1,42 +1,41 @@
 <div>
-    <label class="cabecera">Para ingresar la formación laboral, ingrese la respectiva información y presione el botón
-        agregar. Realizar esto por cada labor desempeñada.</label>
+    <label class="cabecera">{{ 'FORMACION_LABORAL.AVISO' | translate }}</label>
     <div class="nempresa">
-        <label for="nempresa">* Nombre de la empresa</label>
+        <label for="nempresa">* {{ 'FORMACION_LABORAL.NOMBRE_EMPRESA' | translate }}</label>
         <input type="text" class="form-control" name="nempresa" placeholder="Ej. Empresa S.A." ng-model="formData.name">
     </div>
     <div class="dempresa">
-        <label for="dempresa">* Dirección de la empresa</label>
+        <label for="dempresa">* {{ 'FORMACION_LABORAL.DIRECCION_EMPRESA' | translate }}</label>
         <input type="text" class="form-control" name="dempresa" placeholder="Ej. Cll 123 # 123 - 123" ng-model="formData.name">
     </div>
     <div class="emailempresa">
-        <label for="emailempresa">* Correo electrónico de la empresa</label>
+        <label for="emailempresa">* {{ 'FORMACION_LABORAL.CORREO_EMPRESA' | translate }}</label>
         <input type="email" class="form-control" name="emailempresa" placeholder="Ej. algo@algo.com" ng-model="formData.name">
     </div>
     <div class="telefonoempresa">
-        <label for="telefonoempresa">* Teléfono de la empresa</label>
+        <label for="telefonoempresa">* {{ 'FORMACION_LABORAL.TELEFONO_EMPRESA' | translate }}</label>
         <input type="number" placeholder="Ej. 5525252" min="100" max="100000000000000000000" step="1" class="form-control" name="telefonoempresa"
             ng-model="formData.name">
     </div>
     <div class="fechaini">
-        <label for="fechaini">* Fecha de inicio</label>
+        <label for="fechaini">* {{ 'FORMACION_LABORAL.ANIO_INICIO' | translate }}</label>
         <input type="date" class="form-control" name="fechaini" placeholder="Ej. 01/01/2010" ng-model="formData.name">
     </div>
     <div class="fechafin">
-        <label for="fechafin">Fecha de finalizaión</label>
+        <label for="fechafin">{{ 'FORMACION_LABORAL.ANIO_FIN' | translate }}</label>
         <input type="date" class="form-control" name="fechafin" placeholder="Ej. 01/01/2010" ng-model="formData.name">
     </div>
     <div class="cargo">
-        <label for="cargo">* Cargo desempeñado</label>
+        <label for="cargo">* {{ 'FORMACION_LABORAL.CARGO' | translate }}</label>
         <input type="text" class="form-control" name="cargo" placeholder="Ej. Docente" ng-model="formData.name">
     </div>
     <div class="form-group">
-        <label for="descripcioncargo">* Descripción del cargo y sus funciones</label>
+        <label for="descripcioncargo">* {{ 'FORMACION_LABORAL.DESCRIPCION_CARGO' | translate }}</label>
         <textarea name="descripcioncargo" rows="5" placeholder="Descripción del cargo desempeñado" class="form-control"></textarea>
     </div>
     <hr>
     <div class="agregar">
-        <input class="btn btn-success" type="button" value="Agregar información">
+        <input class="btn btn-success" type="button" value="{{ 'FORMACION_LABORAL.AGREGAR' | translate }}">
     </div>
     <hr>    
     <ng2-smart-table [settings]="settings" [source]="source" (deleteConfirm)="onDeleteConfirm($event)">
@@ -50,7 +49,7 @@
         </div>
         <div class="col-xs-6 col-xs-offset-3">
             <a ui-sref="form.interests" class="btn btn-info siguiente" (click)="mostrarAreaSiguiente()">
-                Siguiente
+                {{ 'FORMACION_LABORAL.SIGUIENTE' | translate }}
                 <i _ngcontent-c24="" class="ion-arrow-right-b"></i>
             </a>
         </div>

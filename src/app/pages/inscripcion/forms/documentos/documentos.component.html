@@ -3,13 +3,13 @@
         <label for="docu1">
             <b>1. Cédula de ciudadanía: </b>descripción indicada del documento - 5 MB</label>
         <br>
-        <span class="btn btn-warning">
-            Agregar&hellip;
-            <input type="file">
-            <!-- style="display: none;" multiple>-->
-        </span>
+        <!--<span class="btn btn-warning">
+            Agregar&hellip;-->
+        <input type="file">
+        <!-- style="display: none;" multiple>-->
+        <!--</span>
         <input class="archivonombre form-control" type="text" name="archivo" placeholder="Seleccione su archivo.." disabled/>
-        <input type="button" class="btn btn-danger" value="Eliminar">
+        <input type="button" class="btn btn-danger" value="Eliminar">-->
     </div>
     <div class="seguir">
         <div class="col-xs-6 col-xs-offset-3">
@@ -19,7 +19,7 @@
         </div>
         <div class="col-xs-6 col-xs-offset-3">
             <a ui-sref="form.interests" class="btn btn-info siguiente" (click)="mostrarAreaSiguiente()">
-                Siguiente
+                {{ 'DOCUMENTOS.SIGUIENTE' | translate }}
                 <i _ngcontent-c24="" class="ion-arrow-right-b"></i>
             </a>
         </div>
