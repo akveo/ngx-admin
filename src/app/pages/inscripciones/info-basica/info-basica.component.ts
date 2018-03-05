@@ -24,6 +24,7 @@ export class InfoBasicaComponent implements OnInit {
 
   traerDatosBasicos(event) {
     if (event.valid) {
+      console.info(event)
       event.data.Persona.Usuario = this.autenticacion.getPayload().sub;
       this.persona.post('persona', event.data.Persona)
         .subscribe(res => {
