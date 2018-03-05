@@ -9,6 +9,7 @@ import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { InfoBasicaComponent } from './info-basica/info-basica.component';
 import { UtilidadesService } from '../../@core/utils/utilidades.service';
 import { SharedModule } from '../../shared/shared.module';
+import { IdiomasComponent } from './posgrado/idiomas/idiomas.component';
 
 @NgModule({
   imports: [
@@ -21,6 +22,7 @@ import { SharedModule } from '../../shared/shared.module';
     ...routedComponents,
     PosgradoComponent,
     InfoBasicaComponent,
+    IdiomasComponent,
   ],
   providers: [
     PersonaService,

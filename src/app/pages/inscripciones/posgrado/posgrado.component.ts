@@ -28,6 +28,7 @@ export class PosgradoComponent {
   percentage: any;
   color = 'primary'
   percentageTab = [];
+  tabs: any[];
 
   setPercentage(number, tab) {
     console.info(number);
@@ -72,6 +73,16 @@ export class PosgradoComponent {
 
   constructor(private translate: TranslateService) {
     this.translate = translate;
+    this.tabs = [
+      {
+        title: '3. ' + this.translate.instant('IDIOMAS.TITULO'),
+        route: '/pages/inscripciones/posgrado/idiomas',
+      },
+      {
+        title: 'Route tab #2',
+        route: '/pages/ui-features/tabs/tab2',
+      },
+    ];
     this.formDatosBasicos = DATOS_BASICOS;
     this.formDatos = DATOS_PERSONALES;
     this.formFormacionAcademica = FORMACION_ACADEMICA;
