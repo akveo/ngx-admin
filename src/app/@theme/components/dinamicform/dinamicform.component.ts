@@ -10,6 +10,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export class DinamicformComponent implements OnInit {
 
   @Input('normalform') normalform: any;
+  @Input('modeloData') modeloData: any;
   @Output('result') result: EventEmitter<any> = new EventEmitter();
   @Output('resultSmart') resultSmart: EventEmitter<any> = new EventEmitter();
   data: any;
@@ -29,11 +30,16 @@ export class DinamicformComponent implements OnInit {
   }
 
   ngOnInit() {
+
     if (!this.normalform.tipo_formulario) {
       this.normalform.tipo_formulario = 'grid';
     }
+
     this.normalform.campos = this.normalform.campos.map(d => {
       d.clase = 'form-control';
+      if (!d.relacion) {
+        d.relacion = true;
+      }
       if (!d.valor) {
         d.valor = '';
       }
@@ -42,6 +48,20 @@ export class DinamicformComponent implements OnInit {
       }
       return d;
     });
+
+    if (this.modeloData) {
+      if (this.normalform.campos) {
+        this.normalform.campos.forEach(element => {
+          for (const i in this.modeloData) {
+            if (this.modeloData.hasOwnProperty(i)) {
+              if (i === this.normalform.campos.nombre) {
+                this.normalform.valor = this.modeloData[i];
+              }
+            }
+          }
+        });
+      }
+    }
   }
 
   validCampo(c) {
@@ -154,7 +174,17 @@ export class DinamicformComponent implements OnInit {
         if (d.requerido) {
           resueltos++;
         }
-        result += '"' + d.nombre + '":' + JSON.stringify(d.valor) + ',';
+        if (d.etiqueta === 'input' && d.tipo === 'date') {
+          if (d.valor !== undefined) {
+            result += '"' + d.nombre + '":' + JSON.stringify(new Date(d.valor)) + ',';
+          }
+        } else {
+          if (d.relacion) {
+            result += '"' + d.nombre + '":' + JSON.stringify(d.valor) + ',';
+          } else {
+            result += '"' + d.nombre + '":' + JSON.stringify(d.valor.Id) + ',';
+          }
+        }
       } else if (d.valor !== {} && d.etiqueta === 'file') {
         if (d.requerido) {
           resueltos++;
