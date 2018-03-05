@@ -57,7 +57,19 @@
     
     .select {
       display: inline-flex;
+      padding: 0px 15px 0px 15px;
+      height: 34px;
+      float: left;
       width: auto;
+    }
+
+    .icono {
+      margin: 0px 5px 0px 0px;
+      padding: 0px 0px 0px 0px;
+      float: left;
+      height: 32px;
+      width: 32px;
+      font-size: 1.85rem;
     }
   }
 
