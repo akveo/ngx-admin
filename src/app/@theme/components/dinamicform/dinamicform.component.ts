@@ -37,7 +37,7 @@ export class DinamicformComponent implements OnInit {
 
     this.normalform.campos = this.normalform.campos.map(d => {
       d.clase = 'form-control';
-      if (!d.relacion) {
+      if (d.relacion === undefined) {
         d.relacion = true;
       }
       if (!d.valor) {
