@@ -12,7 +12,6 @@ build:
      - npm install
      - npm run lint:ci
      - npm run build:prod
-     - zip -r app.zip dist/
 
     when:
       branch: develop
@@ -26,8 +25,8 @@ publish:
     bucket: "drone-helper-bucket"
     access_key: $$DRONE_AWS_ACCESS_KEY_ID
     secret_key: $$DRONE_AWS_SECRET_ACCESS_KEY
-    source: app.zip
-    target: /apps/campus_cliente-$$BRANCH.zip
+    source: dist/
+    target: /client/campus_cliente-$$BRANCH.zip
     when:
       branch: develop
       event: push
