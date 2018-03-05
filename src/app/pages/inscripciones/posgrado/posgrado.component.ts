@@ -70,6 +70,10 @@ export class PosgradoComponent {
     console.info(event)
   }
 
+  traerDatos(event) {
+    console.info(event)
+  }
+
   constructor(private translate: TranslateService) {
     this.translate = translate;
     this.formDatosBasicos = DATOS_BASICOS;
