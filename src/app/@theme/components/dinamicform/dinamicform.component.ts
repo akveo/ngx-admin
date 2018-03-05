@@ -156,6 +156,11 @@ export class DinamicformComponent implements OnInit {
           d.clase = 'form-control form-control-success'
         }
       }
+      if (d.etiqueta === 'input' && d.tipo === 'date') {
+        if (d.valor !== undefined) {
+          d.valor = new Date(d.valor);
+        }
+      }
       if (d.etiqueta === 'radio') {
         if (d.valor.Id === undefined) {
           this.data.valid = false;

@@ -25,7 +25,9 @@ export class AutenticationService {
         this.logOut = '';
         this.timer();
     }
-
+    public getLogoutUrl() {
+        return this.logOut;
+    }
     public post(url, data, header) {
         const body = JSON.stringify(data);
         return this.http.post(url, body, header)
@@ -68,7 +70,7 @@ export class AutenticationService {
         let m;
         if (this.logoutValid()) {
             this.clearUrl();
-        }else {
+        } else {
             while (!!(m = regex.exec(queryString))) {
                 if (window.sessionStorage.getItem(decodeURIComponent(m[1])) !== undefined) {
                     window.sessionStorage.setItem(decodeURIComponent(m[1]), decodeURIComponent(m[2]))
@@ -87,8 +89,8 @@ export class AutenticationService {
         }
     }
     getPayload() {
-      const id_token = window.sessionStorage.getItem('id_token').split('.');
-      return JSON.parse(atob(id_token[1]));
+        const id_token = window.sessionStorage.getItem('id_token').split('.');
+        return JSON.parse(atob(id_token[1]));
     }
     public live() {
         if (window.sessionStorage.getItem('id_token') !== null) {
@@ -109,7 +111,7 @@ export class AutenticationService {
         if (window.sessionStorage.getItem('state') === state) {
             window.sessionStorage.clear();
             valid = true;
-        }else {
+        } else {
             valid = false;
         }
         return valid;

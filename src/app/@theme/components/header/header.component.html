@@ -13,7 +13,24 @@
 <nb-actions size="medium" class="header-container" [class.right]="position === 'normal'" [class.left]="position === 'inverse'">
   <nb-action icon="nb-grid-b" class="toggle-layout" (click)="toggleSettings()"></nb-action>
   <nb-action>
-    <nb-user [menu]="userMenu" [name]="user?.name" [picture]="user?.picture"></nb-user>
+    <div class="dropdown ghost-dropdown" ngbDropdown [hidden]="!liveToken()">
+      <button class="btn btn-primary" type="button" ngbDropdownToggle>
+        <i class="nb-person"></i> {{username}}
+      </button>
+      <ul class="dropdown-menu" ngbDropdownMenu>
+        <li class="dropdown-item" (click)="logout()">Logout</li>
+      </ul>
+    </div>
+  </nb-action>
+  <nb-action>
+    <div class="dropdown ghost-dropdown" ngbDropdown [hidden]="liveToken()">
+      <div class="btn-with-icon-example">
+        <button type="button" class="btn btn-primary btn-with-icon" (click)="login()">
+          <i class="nb-user"></i>
+          <span>Login</span>
+        </button>
+      </div>
+    </div>
   </nb-action>
   <nb-action>
     <div>
