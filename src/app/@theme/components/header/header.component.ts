@@ -25,7 +25,7 @@ export class HeaderComponent implements OnInit {
     private userService: UserService,
     private analyticsService: AnalyticsService,
     private autenticacion: AutenticationService,
-    private translate: TranslateService) {
+    public translate: TranslateService) {
     this.translate = translate;
   }
   useLanguage(language: string) {
