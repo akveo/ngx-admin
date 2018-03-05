@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { InscripcionesComponent } from './inscripciones.component';
 import { PosgradoComponent } from './posgrado/posgrado.component';
+import { InfoBasicaComponent } from './info-basica/info-basica.component';
 
 const routes: Routes = [{
     path: '',
@@ -10,6 +11,11 @@ const routes: Routes = [{
     children: [{
         path: 'posgrado',
         component: PosgradoComponent,
+        children: [],
+    },
+      {
+        path: 'info-basica',
+        component: InfoBasicaComponent,
         children: [],
     }],
 }];
@@ -29,4 +35,6 @@ export class InscripcionesRoutingModule {
 export const routedComponents = [
     InscripcionesComponent,
     PosgradoComponent,
+    InfoBasicaComponent,
 ];
+

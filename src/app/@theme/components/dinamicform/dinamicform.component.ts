@@ -30,9 +30,11 @@ export class DinamicformComponent implements OnInit {
   }
 
   ngOnInit() {
+
     if (!this.normalform.tipo_formulario) {
       this.normalform.tipo_formulario = 'grid';
     }
+
     this.normalform.campos = this.normalform.campos.map(d => {
       d.clase = 'form-control';
       if (!d.relacion) {
@@ -46,6 +48,7 @@ export class DinamicformComponent implements OnInit {
       }
       return d;
     });
+
     if (this.modeloData) {
       if (this.normalform.campos) {
         this.normalform.campos.forEach(element => {

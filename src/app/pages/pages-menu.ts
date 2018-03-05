@@ -58,6 +58,10 @@ export const MENU_ITEMS: MenuItem[] = [
         link: '/pages/inscripciones/posgrado',
         key: 'postgraduate',
       },
+      {
+        title: 'Perfil',
+        link: '/pages/inscripciones/info-basica',
+      },
     ],
   },
   {

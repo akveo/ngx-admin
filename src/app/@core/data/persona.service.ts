@@ -18,7 +18,7 @@ export class PersonaService {
 
     get(endpoint) {
         return this.http.get(path + endpoint);
-    }
+      }
     post(endpoint, element) {
         return this.http.post(path + endpoint, element, httpOptions);
     }
