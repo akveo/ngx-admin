@@ -12,8 +12,8 @@
 
 <nb-actions size="medium" class="header-container" [class.right]="position === 'normal'" [class.left]="position === 'inverse'">
   <nb-action icon="nb-grid-b" class="toggle-layout" (click)="toggleSettings()"></nb-action>
-  <nb-action>
-    <div class="dropdown ghost-dropdown" ngbDropdown [hidden]="!liveToken()">
+  <nb-action [hidden]="!liveToken()"> 
+    <div class="dropdown ghost-dropdown" ngbDropdown >
       <button class="btn btn-primary" type="button" ngbDropdownToggle>
         <i class="nb-person"></i> {{username}}
       </button>
@@ -22,8 +22,8 @@
       </ul>
     </div>
   </nb-action>
-  <nb-action>
-    <div class="dropdown ghost-dropdown" ngbDropdown [hidden]="liveToken()">
+  <nb-action [hidden]="liveToken()">
+    <div class="dropdown ghost-dropdown" ngbDropdown >
       <div class="btn-with-icon-example">
         <button type="button" class="btn btn-primary btn-with-icon" (click)="login()">
           <i class="nb-user"></i>
@@ -33,14 +33,9 @@
     </div>
   </nb-action>
   <nb-action>
-    <div>
-      <label>
-        {{ 'HOME.SELECT' | translate }}
-        <select #langSelect (change)="translate.use(langSelect.value)">
-          <option *ngFor="let lang of translate.getLangs()" [value]="lang" [selected]="lang === translate.currentLang">{{ lang }}</option>
+    <select #langSelect (change)="translate.use(langSelect.value)" class="form-control">
+          <option *ngFor="let lang of translate.getLangs()" class="form-control" [value]="lang" [selected]="lang === translate.currentLang">{{ lang }}</option>
         </select>
-      </label>
-    </div>
   </nb-action>
   <nb-action class="control-item" disabled icon="nb-notifications"></nb-action>
   <nb-action class="control-item" icon="nb-email"></nb-action>

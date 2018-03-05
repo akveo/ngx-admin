@@ -156,11 +156,6 @@ export class DinamicformComponent implements OnInit {
           d.clase = 'form-control form-control-success'
         }
       }
-      if (d.etiqueta === 'input' && d.tipo === 'date') {
-        if (d.valor !== undefined) {
-          d.valor = new Date(d.valor);
-        }
-      }
       if (d.etiqueta === 'radio') {
         if (d.valor.Id === undefined) {
           this.data.valid = false;
@@ -179,10 +174,16 @@ export class DinamicformComponent implements OnInit {
         if (d.requerido) {
           resueltos++;
         }
-        if (d.relacion) {
-          result += '"' + d.nombre + '":' + JSON.stringify(d.valor) + ',';
+        if (d.etiqueta === 'input' && d.tipo === 'date') {
+          if (d.valor !== undefined) {
+            result += '"' + d.nombre + '":' + JSON.stringify(new Date(d.valor)) + ',';
+          }
         } else {
-          result += '"' + d.nombre + '":' + JSON.stringify(d.valor.Id) + ',';
+          if (d.relacion) {
+            result += '"' + d.nombre + '":' + JSON.stringify(d.valor) + ',';
+          } else {
+            result += '"' + d.nombre + '":' + JSON.stringify(d.valor.Id) + ',';
+          }
         }
       } else if (d.valor !== {} && d.etiqueta === 'file') {
         if (d.requerido) {
