@@ -34,6 +34,9 @@ export class DinamicformComponent implements OnInit {
     }
     this.normalform.campos = this.normalform.campos.map(d => {
       d.clase = 'form-control';
+      if (!d.relacion) {
+        d.relacion = true;
+      }
       if (!d.valor) {
         d.valor = '';
       }
@@ -154,7 +157,11 @@ export class DinamicformComponent implements OnInit {
         if (d.requerido) {
           resueltos++;
         }
-        result += '"' + d.nombre + '":' + JSON.stringify(d.valor) + ',';
+        if (d.relacion) {
+          result += '"' + d.nombre + '":' + JSON.stringify(d.valor) + ',';
+        } else {
+          result += '"' + d.nombre + '":' + JSON.stringify(d.valor.Id) + ',';
+        }
       } else if (d.valor !== {} && d.etiqueta === 'file') {
         if (d.requerido) {
           resueltos++;
