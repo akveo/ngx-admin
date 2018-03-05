@@ -10,6 +10,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export class DinamicformComponent implements OnInit {
 
   @Input('normalform') normalform: any;
+  @Input('modeloData') modeloData: any;
   @Output('result') result: EventEmitter<any> = new EventEmitter();
   @Output('resultSmart') resultSmart: EventEmitter<any> = new EventEmitter();
   data: any;
@@ -45,6 +46,19 @@ export class DinamicformComponent implements OnInit {
       }
       return d;
     });
+    if (this.modeloData) {
+      if (this.normalform.campos) {
+        this.normalform.campos.forEach(element => {
+          for (const i in this.modeloData) {
+            if (this.modeloData.hasOwnProperty(i)) {
+              if (i === this.normalform.campos.nombre) {
+                this.normalform.valor = this.modeloData[i];
+              }
+            }
+          }
+        });
+      }
+    }
   }
 
   validCampo(c) {
