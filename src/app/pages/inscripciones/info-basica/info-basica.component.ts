@@ -13,6 +13,7 @@ export class InfoBasicaComponent implements OnInit {
   public formulario: any;
   public ejemplo: any;
   public percentage: any;
+  public usuario: any;
 
   constructor(private persona: PersonaService, private autenticacion: AutenticationService) {
     this.formulario = FORM_PERSONA;
@@ -20,16 +21,34 @@ export class InfoBasicaComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.persona.get('persona/full/?userid='+this.autenticacion.getPayload().sub)
+        .subscribe(res => {
+          if(res !== null){
+            this.usuario = res;
+            this.usuario  = this.usuario.Persona;
+            this.usuario.CiudadNacimiento={Id:this.usuario.CiudadNacimiento};
+            console.info(this.usuario);
+          }
+      });
   }
 
   traerDatosBasicos(event) {
     if (event.valid) {
-      console.info(event)
       event.data.Persona.Usuario = this.autenticacion.getPayload().sub;
-      this.persona.post('persona', event.data.Persona)
+      if(this.usuario === undefined) {
+        this.persona.post('persona', event.data.Persona)
         .subscribe(res => {
-        this.ejemplo = res;
-      });
+        this.usuario = res;
+        });
+      }else {
+        event.data.Persona.Id = this.usuario.Id;
+        this.persona.put('persona', event.data.Persona)
+        .subscribe(res => {
+          this.usuario = res;
+          console.info(res);
+        });
+      }
+
     }
 
   }

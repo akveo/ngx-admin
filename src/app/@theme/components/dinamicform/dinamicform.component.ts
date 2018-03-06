@@ -24,6 +24,27 @@ export class DinamicformComponent implements OnInit {
     };
   }
 
+  ngOnChanges(changes) {
+    console.info(changes);
+    this.modeloData = changes.modeloData.currentValue;
+      if (this.normalform.campos) {
+        this.normalform.campos.forEach(element => {
+          for (const i in this.modeloData) {
+            if (this.modeloData.hasOwnProperty(i)) {
+              if (i === element.nombre) {
+                if (element.etiqueta === 'input' && element.tipo === 'date') {
+                  element.valor=(new Date(this.modeloData[i])).toISOString().substring(0, 10);
+                }else{
+                  element.valor = this.modeloData[i];
+                }
+              }
+            }
+          }
+        });
+      }
+      console.info(this.normalform.campos);
+  }
+
   onChange(event, c) {
     c.valor = event.srcElement.files[0];
     this.validCampo(c);
@@ -48,20 +69,6 @@ export class DinamicformComponent implements OnInit {
       }
       return d;
     });
-
-    if (this.modeloData) {
-      if (this.normalform.campos) {
-        this.normalform.campos.forEach(element => {
-          for (const i in this.modeloData) {
-            if (this.modeloData.hasOwnProperty(i)) {
-              if (i === this.normalform.campos.nombre) {
-                this.normalform.valor = this.modeloData[i];
-              }
-            }
-          }
-        });
-      }
-    }
   }
 
   validCampo(c) {

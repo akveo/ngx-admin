@@ -25,7 +25,7 @@
   <nb-card-body>
     <nb-tabset fullWidth>
       <nb-tab tabTitle="Datos básicos">
-        <ngx-dinamicform [normalform]="formulario" (result)="traerDatosBasicos($event)"></ngx-dinamicform>
+        <ngx-dinamicform [normalform]="formulario" [modeloData]="usuario" (result)="traerDatosBasicos($event)"></ngx-dinamicform>
       </nb-tab>
     </nb-tabset>
   </nb-card-body>
