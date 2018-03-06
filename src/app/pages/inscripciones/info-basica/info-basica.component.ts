@@ -21,13 +21,13 @@ export class InfoBasicaComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.persona.get('persona/full/?userid='+this.autenticacion.getPayload().sub)
+    this.persona.get('persona/full/?userid=' + this.autenticacion.getPayload().sub)
         .subscribe(res => {
-          if(res !== null){
+          if (res !== null) {
             this.usuario = res;
-            this.usuario  = this.usuario.Persona;
-            this.usuario.CiudadNacimiento={Id:this.usuario.CiudadNacimiento};
-            console.info(this.usuario);
+            this.usuario = this.usuario.Persona;
+            this.usuario.CiudadNacimiento = { Id : this.usuario.CiudadNacimiento };
+            console.info( this.usuario );
           }
       });
   }
@@ -35,7 +35,7 @@ export class InfoBasicaComponent implements OnInit {
   traerDatosBasicos(event) {
     if (event.valid) {
       event.data.Persona.Usuario = this.autenticacion.getPayload().sub;
-      if(this.usuario === undefined) {
+      if (this.usuario === undefined) {
         this.persona.post('persona', event.data.Persona)
         .subscribe(res => {
         this.usuario = res;

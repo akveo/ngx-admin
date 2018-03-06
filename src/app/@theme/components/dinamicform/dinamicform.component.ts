@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, OnChanges } from '@angular/core';
 
 @Component({
   selector: 'ngx-dinamicform',
@@ -7,7 +7,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 
 
-export class DinamicformComponent implements OnInit {
+export class DinamicformComponent implements OnInit, OnChanges {
 
   @Input('normalform') normalform: any;
   @Input('modeloData') modeloData: any;
@@ -25,7 +25,6 @@ export class DinamicformComponent implements OnInit {
   }
 
   ngOnChanges(changes) {
-    console.info(changes);
     this.modeloData = changes.modeloData.currentValue;
       if (this.normalform.campos) {
         this.normalform.campos.forEach(element => {
@@ -33,8 +32,8 @@ export class DinamicformComponent implements OnInit {
             if (this.modeloData.hasOwnProperty(i)) {
               if (i === element.nombre) {
                 if (element.etiqueta === 'input' && element.tipo === 'date') {
-                  element.valor=(new Date(this.modeloData[i])).toISOString().substring(0, 10);
-                }else{
+                  element.valor = (new Date(this.modeloData[i])).toISOString().substring(0, 10);
+                } else {
                   element.valor = this.modeloData[i];
                 }
               }
@@ -42,7 +41,6 @@ export class DinamicformComponent implements OnInit {
           }
         });
       }
-      console.info(this.normalform.campos);
   }
 
   onChange(event, c) {
