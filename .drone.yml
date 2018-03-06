@@ -19,7 +19,7 @@ build:
 
 publish:
 
-  # upload app.zip to s3 bucket for CodePipline
+  # upload directory dist/ to s3 bucket
   s3_sync:
     region: "us-east-1"
     bucket: "drone-helper-bucket"
