@@ -20,13 +20,14 @@ build:
 publish:
 
   # upload app.zip to s3 bucket for CodePipline
-  s3:
+  s3_sync:
     region: "us-east-1"
     bucket: "drone-helper-bucket"
     access_key: $$DRONE_AWS_ACCESS_KEY_ID
     secret_key: $$DRONE_AWS_SECRET_ACCESS_KEY
-    source: dist/*
+    source: dist
     target: /client/campus_cliente-$$BRANCH
+    delete: true
     when:
       branch: develop
       event: push
