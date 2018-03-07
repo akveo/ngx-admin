@@ -70,31 +70,43 @@ export class PosgradoComponent {
   construirTab() {
     this.tabs = [
       {
-        title: '4. ' + this.translate.instant('FORMACION_ACADEMICA.TITULO'),
+        title: '2. ' + this.translate.instant('DATOS_BASICOS.TITULO2'),
+        route: '/pages/inscripciones/posgrado/informacion-adicional',
+      },
+      {
+        title: '3. ' + this.translate.instant('DATOS_BASICOS.TITULO3'),
+        route: '/pages/inscripciones/posgrado/informacion-contacto',
+      },
+      {
+        title: '4. ' + this.translate.instant('DATOS_BASICOS.TITULO4'),
+        route: '/pages/inscripciones/posgrado/seleccion-programa',
+      },
+      {
+        title: '5. ' + this.translate.instant('FORMACION_ACADEMICA.TITULO'),
         route: '/pages/inscripciones/posgrado/formacion-academica',
       },
       {
-        title: '5. ' + this.translate.instant('IDIOMAS.TITULO'),
+        title: '6. ' + this.translate.instant('IDIOMAS.TITULO'),
         route: '/pages/inscripciones/posgrado/idiomas',
       },
       {
-        title: '6. ' + this.translate.instant('FORMACION_LABORAL.TITULO'),
+        title: '7. ' + this.translate.instant('FORMACION_LABORAL.TITULO'),
         route: '/pages/inscripciones/posgrado/formacion-laboral',
       },
       {
-        title: '7. ' + this.translate.instant('DOCUMENTOS.TITULO'),
+        title: '8. ' + this.translate.instant('DOCUMENTOS.TITULO'),
         route: '/pages/inscripciones/posgrado/documentos',
       },
       {
-        title: '8. ' + this.translate.instant('DESCUENTOS.TITULO'),
+        title: '9. ' + this.translate.instant('DESCUENTOS.TITULO'),
         route: '/pages/inscripciones/posgrado/descuentos',
       },
       {
-        title: '9. ' + this.translate.instant('PROPUESTA_TRABAJO_GRADO.TITULO'),
+        title: '10. ' + this.translate.instant('PROPUESTA_TRABAJO_GRADO.TITULO'),
         route: '/pages/inscripciones/posgrado/trabajo-grado',
       },
       {
-        title: '10. ' + this.translate.instant('ENVIO.TITULO'),
+        title: '11. ' + this.translate.instant('ENVIO.TITULO'),
         route: '/pages/inscripciones/posgrado/fin-inscripcion',
       },
     ];

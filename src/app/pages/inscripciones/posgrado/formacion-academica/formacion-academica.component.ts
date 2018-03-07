@@ -163,7 +163,7 @@ export class FormacionAcademicaComponent implements OnInit {
     ];
   }
   constructor(private translate: TranslateService) {
-    this.nForms = 9;
+    this.nForms = 10;
     this.construirForm();
     this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
       this.construirForm();

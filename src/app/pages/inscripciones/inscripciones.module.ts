@@ -16,6 +16,9 @@ import { TrabajoGradoComponent } from './posgrado/trabajo-grado/trabajo-grado.co
 import { FinInscripcionComponent } from './posgrado/fin-inscripcion/fin-inscripcion.component';
 import { FormacionLaboralComponent } from './posgrado/formacion-laboral/formacion-laboral.component';
 import { FormacionAcademicaComponent } from './posgrado/formacion-academica/formacion-academica.component';
+import { InformacionContactoComponent } from './posgrado/informacion-contacto/informacion-contacto.component';
+import { InformacionAdicionalComponent } from './posgrado/informacion-adicional/informacion-adicional.component';
+import { SeleccionProgramaComponent } from './posgrado/seleccion-programa/seleccion-programa.component';
 
 @NgModule({
   imports: [
@@ -35,6 +38,9 @@ import { FormacionAcademicaComponent } from './posgrado/formacion-academica/form
     FinInscripcionComponent,
     FormacionLaboralComponent,
     FormacionAcademicaComponent,
+    InformacionContactoComponent,
+    InformacionAdicionalComponent,
+    SeleccionProgramaComponent,
   ],
   providers: [
     PersonaService,

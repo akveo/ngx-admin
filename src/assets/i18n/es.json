@@ -88,6 +88,9 @@
   },
   "DATOS_BASICOS": {
     "TITULO": "Datos básicos",
+    "TITULO2": "Información adicional",
+    "TITULO3": "Información de contacto",
+    "TITULO4": "Seleccion de programa académico",
     "PROGRAMA": "Programa al que aspira",
     "FOTO": "Foto",
     "GRUPO_SANGUINEO": "Grupo sanguíneo",

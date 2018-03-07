@@ -88,6 +88,9 @@
   },
   "DATOS_BASICOS": {
     "TITULO": "Basic information",
+    "TITULO2": "Additional information",
+    "TITULO3": "Contact information",
+    "TITULO4": "Selection of academic program",
     "PROGRAMA": "Which program you want?",
     "FOTO": "Photo",
     "GRUPO_SANGUINEO": "Blood type",
