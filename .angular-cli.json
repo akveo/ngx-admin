@@ -6,7 +6,7 @@
   "apps": [
     {
       "root": "src",
-      "outDir": "dist",
+      "outDir": "dist/browser",
       "assets": [
         "assets",
         "favicon.ico",
@@ -44,6 +44,22 @@
         "../node_modules/echarts/dist/echarts.min.js",
         "../node_modules/chart.js/dist/Chart.min.js"
       ],
+      "environmentSource": "environments/environment.ts",
+      "environments": {
+        "dev": "environments/environment.ts",
+        "prod": "environments/environment.prod.ts"
+      }
+    },
+    {
+      "name": "universal",
+      "platform": "server",
+      "root": "src",
+      "outDir": "dist/server",
+      "index": "index.html",
+      "main": "main.server.ts",
+      "test": "test.ts",
+      "tsconfig": "tsconfig.server.json",
+      "testTsconfig": "tsconfig.spec.json",
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",
