@@ -30,7 +30,7 @@ export class InfoBasicaComponent implements OnInit {
   actualizarInfoPersona(persona: any): void {
     persona.Id = this.usuario.Id;
     persona.usuario = this.usuario.Usuario;
-    this.persona.put('persona',persona)
+    this.persona.put('persona', persona)
     .subscribe(res => {
       this.cargarInfoPersona();
     });
