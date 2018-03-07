@@ -9,6 +9,13 @@ import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { InfoBasicaComponent } from './info-basica/info-basica.component';
 import { UtilidadesService } from '../../@core/utils/utilidades.service';
 import { SharedModule } from '../../shared/shared.module';
+import { IdiomasComponent } from './posgrado/idiomas/idiomas.component';
+import { DocumentosComponent } from './posgrado/documentos/documentos.component';
+import { DescuentosComponent } from './posgrado/descuentos/descuentos.component';
+import { TrabajoGradoComponent } from './posgrado/trabajo-grado/trabajo-grado.component';
+import { FinInscripcionComponent } from './posgrado/fin-inscripcion/fin-inscripcion.component';
+import { FormacionLaboralComponent } from './posgrado/formacion-laboral/formacion-laboral.component';
+import { FormacionAcademicaComponent } from './posgrado/formacion-academica/formacion-academica.component';
 
 @NgModule({
   imports: [
@@ -21,6 +28,13 @@ import { SharedModule } from '../../shared/shared.module';
     ...routedComponents,
     PosgradoComponent,
     InfoBasicaComponent,
+    IdiomasComponent,
+    DocumentosComponent,
+    DescuentosComponent,
+    TrabajoGradoComponent,
+    FinInscripcionComponent,
+    FormacionLaboralComponent,
+    FormacionAcademicaComponent,
   ],
   providers: [
     PersonaService,

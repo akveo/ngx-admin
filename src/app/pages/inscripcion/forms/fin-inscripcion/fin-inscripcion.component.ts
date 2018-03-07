@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'ngx-fin-inscripcion',
@@ -6,7 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./fin-inscripcion.component.scss'],
 })
 export class FinInscripcionComponent implements OnInit {
-  constructor() { }
+  constructor(private translate: TranslateService) {
+    this.translate = translate;
+  }
+  useLanguage(language: string) {
+    this.translate.use(language);
+  }
   ngOnInit() {
   }
 }
