@@ -23,6 +23,7 @@ export class PersonaService {
         return this.http.post(path + endpoint, element, httpOptions);
     }
     put(endpoint, element) {
+        console.info(element);
         return this.http.put(path + endpoint + '/' + element.Id, element, httpOptions);
     }
     delete(endpoint, element) {

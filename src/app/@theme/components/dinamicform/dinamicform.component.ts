@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, OnChanges } from '@angular/core';
 
 @Component({
   selector: 'ngx-dinamicform',
@@ -7,7 +7,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 
 
-export class DinamicformComponent implements OnInit {
+export class DinamicformComponent implements OnInit, OnChanges {
 
   @Input('normalform') normalform: any;
   @Input('modeloData') modeloData: any;
@@ -22,6 +22,25 @@ export class DinamicformComponent implements OnInit {
       percentage: 0,
       files: [],
     };
+  }
+
+  ngOnChanges(changes) {
+    this.modeloData = changes.modeloData.currentValue;
+      if (this.normalform.campos) {
+        this.normalform.campos.forEach(element => {
+          for (const i in this.modeloData) {
+            if (this.modeloData.hasOwnProperty(i)) {
+              if (i === element.nombre) {
+                if (element.etiqueta === 'input' && element.tipo === 'date') {
+                  element.valor = (new Date(this.modeloData[i])).toISOString().substring(0, 10);
+                } else {
+                  element.valor = this.modeloData[i];
+                }
+              }
+            }
+          }
+        });
+      }
   }
 
   onChange(event, c) {
@@ -48,20 +67,6 @@ export class DinamicformComponent implements OnInit {
       }
       return d;
     });
-
-    if (this.modeloData) {
-      if (this.normalform.campos) {
-        this.normalform.campos.forEach(element => {
-          for (const i in this.modeloData) {
-            if (this.modeloData.hasOwnProperty(i)) {
-              if (i === this.normalform.campos.nombre) {
-                this.normalform.valor = this.modeloData[i];
-              }
-            }
-          }
-        });
-      }
-    }
   }
 
   validCampo(c) {

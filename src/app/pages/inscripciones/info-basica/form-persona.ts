@@ -4,7 +4,6 @@ export let FORM_PERSONA = {
     tipo_formulario: 'basic',
     btn: 'Guardar',
     alertas: true,
-    btnLimpiar: 'Salir',
     modelo: 'Persona',
     campos: [{
         etiqueta: 'input',
