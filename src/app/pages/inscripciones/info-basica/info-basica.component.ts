@@ -17,7 +17,7 @@ export class InfoBasicaComponent implements OnInit {
     this.formulario = FORM_PERSONA;
   }
 
-  cargarInfoPersona():void {
+  cargarInfoPersona(): void {
     this.persona.get('persona/?query=Usuario:' + this.autenticacion.getPayload().sub)
         .subscribe(res => {
           if (res !== null) {
@@ -27,21 +27,21 @@ export class InfoBasicaComponent implements OnInit {
       });
   }
 
-  actualizarInfoPersona(persona:any):void {
-    persona.Id=this.usuario.Id;
-    persona.usuario=this.usuario.Usuario;
+  actualizarInfoPersona(persona: any): void {
+    persona.Id = this.usuario.Id;
+    persona.usuario = this.usuario.Usuario;
     this.persona.put('persona',persona)
     .subscribe(res => {
       this.cargarInfoPersona();
     });
   }
 
-  registrarPersona(persona:any):void {
+  registrarPersona(persona: any): void {
     persona.Usuario = this.autenticacion.getPayload().sub;
     this.persona.post('persona', persona)
         .subscribe(res => {
         this.usuario = res;
-        //this.cargarInfoPersona();
+        // this.cargarInfoPersona();
         });
   }
 
