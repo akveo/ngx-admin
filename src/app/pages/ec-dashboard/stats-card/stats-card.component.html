@@ -1,14 +1,15 @@
 <nb-flip-card>
   <nb-card-front>
     <nb-card>
-      <div class="info">
-        <div class="details">
-          <div class="title">{{title}}</div>
-          <div class="value">{{value}}</div>
-        </div>
+      <div class="header">
+        <div class="title">{{title}}</div>
         <div class="icon">
           <i class="{{icon}}"></i>
         </div>
+      </div>
+      <div class="info">
+        <div class="value">{{value}}</div>
+        <div class="prev-value">{{prevValue}}</div>
       </div>
       <div class="progress-container">
         <ngb-progressbar [value]="percent"></ngb-progressbar>
@@ -18,7 +19,7 @@
   </nb-card-front>
   <nb-card-back>
     <nb-card>
-      <nb-card-body>Back Side</nb-card-body>
+      <ngx-stats-card-back [chartValue]="percent"></ngx-stats-card-back>
     </nb-card>
   </nb-card-back>
 </nb-flip-card>

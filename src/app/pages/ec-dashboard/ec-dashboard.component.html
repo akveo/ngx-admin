@@ -1,9 +1,8 @@
 <div class="row">
   <div class="col-xxxl-3">
-    <ngx-stats-card title="Profit" icon="ion-social-usd" value="10 000$" percent="50" label="Better than last week"></ngx-stats-card>
-    <ngx-stats-card title="Orders" icon="ion-ios-cart" value="1 000" percent="10" label="Better than last week"></ngx-stats-card>
-    <ngx-stats-card title="Visits" icon="ion-ios-pulse-strong" value="2 000" percent="35" label="Better than last week"></ngx-stats-card>
-    <ngx-stats-card title="New Clients" icon="ion-android-contact" value="100" percent="70" label="Better than last week"></ngx-stats-card>
+    <ngx-stats-card title="Profit" icon="ion-social-usd" [value]="'10 000$'" [prevValue]="'5 000$'" [percent]="50" label="Last week"></ngx-stats-card>
+    <ngx-stats-card title="Orders" icon="ion-ios-cart" [value]="'1 000'" [prevValue]="'900'" [percent]="10" label="Last 24 hours"></ngx-stats-card>
+    <ngx-stats-card title="Visits" icon="ion-ios-pulse-strong" [value]="'2 000'" [prevValue]="'1 300'" [percent]="35" label="Last hour"></ngx-stats-card>
   </div>
 
   <div class="col-xxxl-9">

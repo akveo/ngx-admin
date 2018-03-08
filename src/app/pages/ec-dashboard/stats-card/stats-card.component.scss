@@ -1,23 +1,18 @@
 @import '../../../@theme/styles/themes';
 
 @include nb-install-component() {
-  nb-card {
-    height: 8rem;
+  ::ng-deep nb-card {
+    height: 11rem;
+
+    .header {
+      padding: 1rem;
+    }
 
     .info {
       display: flex;
-      flex-direction: row;
+      flex-direction: column;
       flex: 1;
-      padding: 1.25rem;
-      align-items: center;
-    }
-
-    .details {
-      flex: 1;
-    }
-
-    .title {
-      margin-bottom: 0.75rem;
+      padding: 0 1.25rem;
     }
 
     .value {
@@ -25,19 +20,23 @@
       font-size: 1.25rem;
       font-weight: nb-theme(font-weight-bold);
       color: nb-theme(card-fg-heading);
+      padding-bottom: 0.75rem;
     }
 
-    i {
+    .icon {
+      position: absolute;
       font-size: 3rem;
+      top: 1rem;
+      right: 1rem;
     }
 
     .stats {
-      padding: 0.25rem 1.25rem;
+      padding: 0.75rem 1.25rem;
     }
 
     ::ng-deep ngb-progressbar {
       .progress {
-        height: 0.5rem;
+        height: 0.75rem;
       }
     }
   }

@@ -1,0 +1,23 @@
+@import '../../../../@theme/styles/themes';
+
+@include nb-install-component() {
+  height: 100%;
+
+  .echart {
+    padding-left: 2rem;
+    height: 9rem;
+    width: 9rem;
+    margin-top: -1.5rem;
+  }
+
+  .details {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+  }
+
+  .info {
+    margin-top: 1rem;
+  }
+
+}
