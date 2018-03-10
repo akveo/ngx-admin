@@ -1,4 +1,4 @@
-import { Component, ElementRef, EventEmitter, Output, OnChanges, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Output, OnChanges, Input, OnInit } from '@angular/core';
 
 @Component({
     selector: 'ngx-select',
