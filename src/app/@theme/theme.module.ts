@@ -27,6 +27,7 @@ import {
   ThemeSwitcherComponent,
   TinyMCEComponent,
   DinamicformComponent,
+  SelectComponent,
 } from './components';
 
 import { CapitalizePipe, PluralPipe, RoundPipe, TimingPipe } from './pipes';
@@ -69,6 +70,7 @@ const COMPONENTS = [
   ThreeColumnsLayoutComponent,
   TwoColumnsLayoutComponent,
   DinamicformComponent,
+  SelectComponent,
 ];
 
 const PIPES = [
@@ -92,7 +94,7 @@ const NB_THEME_PROVIDERS = [
 @NgModule({
   imports: [...BASE_MODULES, ...NB_MODULES, SharedModule],
   exports: [...BASE_MODULES, ...NB_MODULES, ...COMPONENTS, ...PIPES],
-  declarations: [...COMPONENTS, ...PIPES, DinamicformComponent],
+  declarations: [...COMPONENTS, ...PIPES, DinamicformComponent, SelectComponent],
 })
 export class ThemeModule {
   static forRoot(): ModuleWithProviders {

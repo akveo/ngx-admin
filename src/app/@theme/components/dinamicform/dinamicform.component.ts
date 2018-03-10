@@ -13,6 +13,7 @@ export class DinamicformComponent implements OnInit, OnChanges {
   @Input('modeloData') modeloData: any;
   @Output('result') result: EventEmitter<any> = new EventEmitter();
   @Output('resultSmart') resultSmart: EventEmitter<any> = new EventEmitter();
+  @Output('interlaced') interlaced: EventEmitter<any> = new EventEmitter();
   data: any;
 
   constructor() {
@@ -25,6 +26,8 @@ export class DinamicformComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(changes) {
+    console.log(changes);
+    this.normalform = changes.normalform.currentValue;
     this.modeloData = changes.modeloData.currentValue;
       if (this.normalform.campos) {
         this.normalform.campos.forEach(element => {
@@ -70,6 +73,9 @@ export class DinamicformComponent implements OnInit, OnChanges {
   }
 
   validCampo(c) {
+    if(c.entrelazado){
+      this.interlaced.emit(c);
+    }
     if (c.valor === '') {
       c.clase = 'form-control form-control-danger'
     } else {

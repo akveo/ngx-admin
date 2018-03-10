@@ -1,3 +1,6 @@
-
-<ngx-dinamicform class="nb-card" [normalform]="formulario" [modeloData]="usuario" (result)="validarForm($event)"></ngx-dinamicform>
-
+<nb-card>
+    <nb-card-body>
+        <ngx-dinamicform [normalform]="formulario" [modeloData]="usuario" (result)="validarForm($event)" (interlaced)="getInfo($event)">
+        </ngx-dinamicform>
+    </nb-card-body>
+</nb-card>
