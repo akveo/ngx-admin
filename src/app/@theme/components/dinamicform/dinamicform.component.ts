@@ -26,9 +26,11 @@ export class DinamicformComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(changes) {
-    console.log(changes);
-    this.normalform = changes.normalform.currentValue;
-    this.modeloData = changes.modeloData.currentValue;
+    if (changes.normalform.currentValue !== undefined) {
+      this.normalform = changes.normalform.currentValue;
+    }
+    if (changes.modeloData.currentValue !== undefined) {
+      this.modeloData = changes.modeloData.currentValue;
       if (this.normalform.campos) {
         this.normalform.campos.forEach(element => {
           for (const i in this.modeloData) {
@@ -44,6 +46,7 @@ export class DinamicformComponent implements OnInit, OnChanges {
           }
         });
       }
+    }
   }
 
   onChange(event, c) {
@@ -73,7 +76,7 @@ export class DinamicformComponent implements OnInit, OnChanges {
   }
 
   validCampo(c) {
-    if(c.entrelazado){
+    if (c.entrelazado) {
       this.interlaced.emit(c);
     }
     if (c.valor === '') {

@@ -25,10 +25,10 @@ export class SelectComponent implements OnChanges, OnInit {
 
     ngOnInit(): void {
         if (!this.campo.valor) {
-            this.campo.valor = {Id:0};
+            this.campo.valor = { Id: 0 };
         }
         if (!this.campo.valor) {
-            this.campo.valor = {Id:0};
+            this.campo.valor = { Id: 0 };
         }
         this.campo.clase = 'form-control';
     }
@@ -39,9 +39,9 @@ export class SelectComponent implements OnChanges, OnInit {
 
     validCampo(c) {
         c.valor = this.valor;
-        if(c.valor.Id !== 0){
+        if (c.valor.Id !== 0) {
             this.valor.emit(c);
-        }else{
+        } else {
             this.valor.emit(false);
         }
     }

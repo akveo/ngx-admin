@@ -22,11 +22,13 @@ export class InfoBasicaComponent implements OnInit {
 
   getInfo(event) {
     console.info(event);
-    const temp = [{ Id: 1, valor: 'AAA' },
-    { Id: 2, valor: 'BBB' },
-    { Id: 3, valor: 'CCC' },
-    { Id: 4, valor: 'DDD' }]
-    this.formulario.campos[5].opciones = [...this.formulario.campos[5].opciones, ...temp];
+    const temp = [
+      { Id: 1, valor: 'AAA' },
+      { Id: 2, valor: 'BBB' },
+      { Id: 3, valor: 'CCC' },
+      { Id: 4, valor: 'DDD' }];
+    temp.unshift(this.formulario.campos[5].opciones[0]);
+    this.formulario.campos[5].opciones = [...temp];
     console.info(this.formulario.campos[5].opciones)
   }
 
