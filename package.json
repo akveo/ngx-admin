@@ -27,10 +27,12 @@
     "docs:serve": "compodoc -p src/tsconfig.app.json -d docs -s",
     "prepush": "npm run lint:ci",
     "release:changelog": "npm run conventional-changelog -- -p angular -i CHANGELOG.md -s",
-    "build:ssr": "run-s build:client-and-server-bundles webpack:server",
-    "serve:ssr": "node dist/server.js",
-    "build:client-and-server-bundles": "run-p \"ng build --prod\" \"ng build --prod --app=universal --output-hashing=false\"",
-    "webpack:server": "webpack --config webpack.server.config.js --progress --colors"
+    "build:ssr": "run-p \"build:*-app -- {@}\" --",
+    "build:client-app": "ng build --prod",
+    "build:server-app": "ng build --app=universal --output-hashing=false --dev --aot",
+    "postbuild:server-app": "npm run build:server",
+    "build:server": "webpack --config webpack.server.config.js --progress --colors",
+    "serve:ssr": "node dist/server.js"
   },
   "dependencies": {
     "@agm/core": "1.0.0-beta.2",
