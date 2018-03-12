@@ -1,5 +1,6 @@
 import { AutenticationService } from './../../@core/utils/autentication.service';
 import { PersonaService } from './../../@core/data/persona.service';
+import { UbicacionesService } from './../../@core/data/ubicaciones.service';
 import { NgModule } from '@angular/core';
 
 import { ThemeModule } from '../../@theme/theme.module';
@@ -24,6 +25,7 @@ import { SharedModule } from '../../shared/shared.module';
   ],
   providers: [
     PersonaService,
+    UbicacionesService
     AutenticationService,
     UtilidadesService,
     SharedModule,

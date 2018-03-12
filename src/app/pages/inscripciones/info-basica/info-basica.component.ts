@@ -2,6 +2,7 @@ import { FORM_PERSONA } from './form-persona';
 
 import { AutenticationService } from './../../../@core/utils/autentication.service';
 import { PersonaService } from './../../../@core/data/persona.service';
+import { UbicacionesService } from './../../../@core/data/ubicaciones.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -16,7 +17,7 @@ export class InfoBasicaComponent implements OnInit {
   public campo: any;
 
 
-  constructor(private persona: PersonaService, private autenticacion: AutenticationService) {
+  constructor(private persona: PersonaService, private autenticacion: AutenticationService, private ubicaciones: UbicacionesService) {
     this.formulario = FORM_PERSONA;
   }
 
@@ -33,6 +34,9 @@ export class InfoBasicaComponent implements OnInit {
   }
 
   cargarInfoPersona(): void {
+
+    
+
     if (this.autenticacion.live()) {
       this.persona.get('persona/?query=Usuario:' + this.autenticacion.getPayload().sub)
         .subscribe(res => {
@@ -78,5 +82,3 @@ export class InfoBasicaComponent implements OnInit {
   }
 
 }
-
-
