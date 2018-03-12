@@ -1,4 +1,5 @@
-import { Component, OnInit, Input, Output, EventEmitter, OnChanges } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, OnChanges, ViewChild } from '@angular/core';
+import { MatDatepicker } from '@angular/material/datepicker';
 
 @Component({
   selector: 'ngx-dinamicform',
@@ -13,8 +14,9 @@ export class DinamicformComponent implements OnInit, OnChanges {
   @Input('modeloData') modeloData: any;
   @Output('result') result: EventEmitter<any> = new EventEmitter();
   @Output('resultSmart') resultSmart: EventEmitter<any> = new EventEmitter();
+  @Output('interlaced') interlaced: EventEmitter<any> = new EventEmitter();
   data: any;
-
+  @ViewChild(MatDatepicker) datepicker: MatDatepicker<Date>;
   constructor() {
     this.data = {
       valid: true,
@@ -25,7 +27,11 @@ export class DinamicformComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(changes) {
-    this.modeloData = changes.modeloData.currentValue;
+    if (changes.normalform.currentValue !== undefined) {
+      this.normalform = changes.normalform.currentValue;
+    }
+    if (changes.modeloData.currentValue !== undefined) {
+      this.modeloData = changes.modeloData.currentValue;
       if (this.normalform.campos) {
         this.normalform.campos.forEach(element => {
           for (const i in this.modeloData) {
@@ -41,6 +47,7 @@ export class DinamicformComponent implements OnInit, OnChanges {
           }
         });
       }
+    }
   }
 
   onChange(event, c) {
@@ -69,7 +76,16 @@ export class DinamicformComponent implements OnInit, OnChanges {
     });
   }
 
+  onChangeDate(event, c) {
+    console.info('event', event);
+    console.info('c', c);
+  }
+
   validCampo(c) {
+    console.info(c);
+    if (c.entrelazado) {
+      this.interlaced.emit(c);
+    }
     if (c.valor === '') {
       c.clase = 'form-control form-control-danger'
     } else {

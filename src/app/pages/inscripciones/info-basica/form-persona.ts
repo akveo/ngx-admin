@@ -43,6 +43,7 @@ export let FORM_PERSONA = {
         nombre: 'PaisNacimiento',
         label: 'País de nacimiento*:',
         requerido: true,
+        entrelazado: true,
         valor: { Id: 0 },
         opciones: [
             { Id: 0, valor: 'Seleccione su país de nacimiento ...' },
@@ -61,13 +62,9 @@ export let FORM_PERSONA = {
         valor: { Id: 0 },
         opciones: [
             { Id: 0, valor: 'Seleccione su ciudad de nacimiento ...' },
-            { Id: 1, valor: 'AAA' },
-            { Id: 2, valor: 'BBB' },
-            { Id: 3, valor: 'CCC' },
-            { Id: 4, valor: 'DDD' },
         ],
     }, {
-        etiqueta: 'input',
+        etiqueta: 'mat-date',
         claseGrid: 'col-4',
         nombre: 'FechaNacimiento',
         label: 'Fecha de nacimiento*:',
@@ -76,3 +73,4 @@ export let FORM_PERSONA = {
         tipo: 'date',
     }],
 }
+
