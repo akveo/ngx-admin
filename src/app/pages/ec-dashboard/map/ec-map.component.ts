@@ -1,11 +1,10 @@
-import {Component, OnInit} from '@angular/core';
+import { Component } from '@angular/core';
 
 import * as L from 'leaflet';
 import 'style-loader!leaflet/dist/leaflet.css';
 
 import { EcMapService } from './ec-map.service';
-import {control, Layer} from 'leaflet';
-import layers = control.layers;
+import { Layer } from 'leaflet';
 
 @Component({
   selector: 'ngx-ec-map',
