@@ -14,7 +14,7 @@
               <small id="{{c.nombre}}" class="text-muted" [hidden]="!normalform.alertas">
                 {{c.alerta}}
               </small>
-            </label>
+            </label><br>
 
             <!-- input -->
             <input *ngSwitchCase="'input'" [(ngModel)]="c.valor" (ngModelChange)="validCampo(c)" [ngModelOptions]="{standalone: true}"
@@ -59,7 +59,7 @@
             <!-- date material -->
 
             <mat-form-field *ngSwitchCase="'mat-date'">
-              <input matInput [matDatepicker]="picker" (dateChange)="onChangeDate($event,c)">
+              <input matInput  [(ngModel)]="c.valor" [matDatepicker]="picker" (dateChange)="onChangeDate($event,c)" [ngModelOptions]="{standalone: true}">
               <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
               <mat-datepicker #picker></mat-datepicker>
             </mat-form-field>
