@@ -77,12 +77,11 @@ export class DinamicformComponent implements OnInit, OnChanges {
   }
 
   onChangeDate(event, c) {
-    console.info('event', event);
+    c.valor = event.value;
     console.info('c', c);
   }
 
   validCampo(c) {
-    console.info(c);
     if (c.entrelazado) {
       this.interlaced.emit(c);
     }

@@ -59,7 +59,7 @@
             <!-- date material -->
 
             <mat-form-field *ngSwitchCase="'mat-date'">
-              <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+              <input matInput [matDatepicker]="picker" (dateChange)="onChangeDate($event,c)">
               <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
               <mat-datepicker #picker></mat-datepicker>
             </mat-form-field>
@@ -80,8 +80,9 @@
     <br>
     <!-- Botones de form con acción de botones -->
     <div align="center">
-      <button class="btn btn-primary btn-tiny" (click)="clearForm()" [hidden]="!normalform.btnLimpiar">{{normalform.btnLimpiar}}</button>
       <button class="btn btn-success btn-tiny" (click)="validForm()" [hidden]="!normalform.btn">{{normalform.btn}}</button>
+      <button class="btn btn-primary btn-tiny" (click)="clearForm()" [hidden]="!normalform.btnLimpiar">{{normalform.btnLimpiar}}</button>
+
     </div>
     <br>
   </form>
@@ -146,9 +147,8 @@
 
 
           <!-- date material -->
-
           <mat-form-field *ngSwitchCase="'mat-date'">
-            <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+            <input matInput [matDatepicker]="picker" (dateChange)="onChangeDate($event,c)">
             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
             <mat-datepicker #picker></mat-datepicker>
           </mat-form-field>
@@ -169,8 +169,8 @@
     </fieldset>
     <br>
     <div align="center">
-      <button class="btn btn-primary btn-tiny" (click)="clearForm()" [hidden]="!normalform.btnLimpiar">{{normalform.btnLimpiar}}</button>
       <button class="btn btn-success btn-tiny" (click)="validForm()" [hidden]="!normalform.btn">{{normalform.btn}}</button>
+      <button class="btn btn-primary btn-tiny" (click)="clearForm()" [hidden]="!normalform.btnLimpiar">{{normalform.btnLimpiar}}</button>
     </div>
     <br>
   </form>
@@ -229,9 +229,11 @@
           </div>
 
           <!-- date material -->
+
           <mat-form-field *ngSwitchCase="'mat-date'">
-            <input matInput [matDatepicker]="c.valor" (dateChange)="onChangeDate($event,c)">
-            <mat-datepicker #{{c.nombre}}></mat-datepicker>
+            <input matInput [matDatepicker]="picker" (dateChange)="onChangeDate($event,c)">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
           </mat-form-field>
 
           <!-- select -->
@@ -250,8 +252,8 @@
     <br>
     <!-- Botones de form con acción de botones -->
     <div align="center">
-      <button class="btn btn-primary btn-tiny" (click)="clearForm()" [hidden]="!normalform.btnLimpiar">{{normalform.btnLimpiar}}</button>
       <button class="btn btn-success btn-tiny" (click)="validForm()" [hidden]="!normalform.btn">{{normalform.btn}}</button>
+      <button class="btn btn-primary btn-tiny" (click)="clearForm()" [hidden]="!normalform.btnLimpiar">{{normalform.btnLimpiar}}</button>
     </div>
     <br>
   </form>
