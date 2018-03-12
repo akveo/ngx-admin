@@ -6,8 +6,10 @@ import { StatsCardComponent } from './stats-card/stats-card.component';
 import { OrdersChartComponent } from './charts-panel/orders/orders-chart.component';
 import { ProfitChartComponent } from './charts-panel/profit/profit-chart.component';
 import { ChartModule } from 'angular2-chartjs';
-import {StatsCardBackComponent} from './stats-card/back-side/stats-card-back.component';
-import {NgxEchartsModule} from 'ngx-echarts';
+import { StatsCardBackComponent } from './stats-card/back-side/stats-card-back.component';
+import { EcMapComponent } from './map/ec-map.component';
+import { NgxEchartsModule } from 'ngx-echarts';
+import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 
 
 @NgModule({
@@ -15,6 +17,7 @@ import {NgxEchartsModule} from 'ngx-echarts';
     ThemeModule,
     ChartModule,
     NgxEchartsModule,
+    LeafletModule,
   ],
   declarations: [
     EcDashboardComponent,
@@ -22,6 +25,7 @@ import {NgxEchartsModule} from 'ngx-echarts';
     OrdersChartComponent,
     ProfitChartComponent,
     StatsCardBackComponent,
+    EcMapComponent,
   ],
 })
 export class EcDashboardModule { }
