@@ -10,7 +10,7 @@ import { Component, EventEmitter, Output, OnChanges, Input, OnInit } from '@angu
                     {{campo.alerta}}
                 </small>
             </label>
-            <select [(ngModel)]="campo.valor.Id" (ngModelChange)="validCampo(c)" class="{{campo.clase}}"
+            <select [(ngModel)]="campo.valor.Id" (ngModelChange)="validCampo()" class="{{campo.clase}}"
             [ngModelOptions]="{standalone: true}">
                 <option class="{{campo.clase}}" *ngFor="let item of campo.opciones"
                 [ngValue]="item.Id" [selected]="campo.valor.Id === item.Id">
@@ -37,10 +37,10 @@ export class SelectComponent implements OnChanges, OnInit {
     @Input('tipo') tipo: any;
     @Output('valor') valor: EventEmitter<any> = new EventEmitter();
 
-    validCampo(c) {
-        c.valor = this.valor;
-        if (c.valor.Id !== 0) {
-            this.valor.emit(c);
+    validCampo() {
+        this.campo.valor = this.valor;
+        if (this.campo.valor.Id !== 0) {
+            this.valor.emit(this.campo);
         } else {
             this.valor.emit(false);
         }

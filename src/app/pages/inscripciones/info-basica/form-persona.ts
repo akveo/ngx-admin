@@ -61,10 +61,10 @@ export let FORM_PERSONA = {
         relacion: false,
         valor: { Id: 0 },
         opciones: [
-            { Id: 0, valor: 'Seleccione su ciudad de nacimiento ...' }
+            { Id: 0, valor: 'Seleccione su ciudad de nacimiento ...' },
         ],
     }, {
-        etiqueta: 'input',
+        etiqueta: 'mat-date',
         claseGrid: 'col-4',
         nombre: 'FechaNacimiento',
         label: 'Fecha de nacimiento*:',

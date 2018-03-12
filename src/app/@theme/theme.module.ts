@@ -4,6 +4,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AutenticationService } from '../@core/utils/autentication.service';
 import { SharedModule } from '../shared/shared.module';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatFormFieldModule } from '@angular/material';
+import { MatInputModule } from '@angular/material';
 
 import {
   NbActionsModule,
@@ -41,6 +44,7 @@ import {
 
 import { DEFAULT_THEME } from './styles/theme.default';
 import { COSMIC_THEME } from './styles/theme.cosmic';
+import { MatNativeDateModule } from '@angular/material/core';
 
 const BASE_MODULES = [CommonModule, FormsModule, ReactiveFormsModule];
 
@@ -57,6 +61,13 @@ const NB_MODULES = [
   NbCheckboxModule,
   NgbModule,
 ];
+
+const MAT_MODULES = [
+  MatDatepickerModule,
+  MatNativeDateModule,
+  MatFormFieldModule,
+  MatInputModule,
+]
 
 const COMPONENTS = [
   ThemeSwitcherComponent,
@@ -91,8 +102,9 @@ const NB_THEME_PROVIDERS = [
   ...NbMenuModule.forRoot().providers,
 ];
 
+
 @NgModule({
-  imports: [...BASE_MODULES, ...NB_MODULES, SharedModule],
+  imports: [...BASE_MODULES, ...NB_MODULES, SharedModule, ...MAT_MODULES],
   exports: [...BASE_MODULES, ...NB_MODULES, ...COMPONENTS, ...PIPES],
   declarations: [...COMPONENTS, ...PIPES, DinamicformComponent, SelectComponent],
 })

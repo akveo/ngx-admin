@@ -56,6 +56,14 @@
               </div>
             </div>
 
+            <!-- date material -->
+
+            <mat-form-field *ngSwitchCase="'mat-date'">
+              <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+
             <!-- select -->
             <select *ngSwitchCase="'select'" [(ngModel)]="c.valor.Id" (ngModelChange)="validCampo(c)" class="{{c.clase}}" [ngModelOptions]="{standalone: true}">
               <option class="{{c.clase}}" *ngFor="let item of c.opciones" [ngValue]="item.Id" [selected]="c.valor.Id === item.Id">
@@ -136,6 +144,15 @@
             </div>
           </div>
 
+
+          <!-- date material -->
+
+          <mat-form-field *ngSwitchCase="'mat-date'">
+            <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+
           <!-- select -->
           <select *ngSwitchCase="'select'" [(ngModel)]="c.valor.Id" (ngModelChange)="validCampo(c)" class="{{c.clase}}" [ngModelOptions]="{standalone: true}">
             <option class="{{c.clase}}" *ngFor="let item of c.opciones" [ngValue]="item.Id" [selected]="c.valor.Id === item.Id">
@@ -162,68 +179,74 @@
   <!-- Form simple -->
   <form class="form-horizontal" *ngSwitchCase="'simple'">
     <div class="row">
-        <div *ngFor="let c of normalform.campos" class="{{c.claseGrid}}" [ngSwitch]="c.etiqueta">
-          <div class="form-group">
-            <label for="{{c.nombre}}" class="form-control-label">
-              <small>{{c.label}}</small>
-              <small id="{{c.nombre}}" class="text-muted" [hidden]="!normalform.alertas">
-                {{c.alerta}}
-              </small>
-            </label>
+      <div *ngFor="let c of normalform.campos" class="{{c.claseGrid}}" [ngSwitch]="c.etiqueta">
+        <div class="form-group">
+          <label for="{{c.nombre}}" class="form-control-label">
+            <small>{{c.label}}</small>
+            <small id="{{c.nombre}}" class="text-muted" [hidden]="!normalform.alertas">
+              {{c.alerta}}
+            </small>
+          </label>
 
-            <!-- input -->
-            <input *ngSwitchCase="'input'" [(ngModel)]="c.valor" (ngModelChange)="validCampo(c)" [ngModelOptions]="{standalone: true}"
-              type="{{c.tipo}}" id="{{c.nombre}}" class="{{c.clase}}" placeholder="{{c.placeholder}}" [disabled]="c.deshabilitar"
-            />
+          <!-- input -->
+          <input *ngSwitchCase="'input'" [(ngModel)]="c.valor" (ngModelChange)="validCampo(c)" [ngModelOptions]="{standalone: true}"
+            type="{{c.tipo}}" id="{{c.nombre}}" class="{{c.clase}}" placeholder="{{c.placeholder}}" [disabled]="c.deshabilitar"
+          />
 
-            <!-- textarea -->
-            <textarea *ngSwitchCase="'textarea'" [(ngModel)]="c.valor" (ngModelChange)="validCampo(c)" [ngModelOptions]="{standalone: true}"
-              type="text" id="{{c.nombre}}" class="{{c.clase}}" placeholder="{{c.placeholder}}">
+          <!-- textarea -->
+          <textarea *ngSwitchCase="'textarea'" [(ngModel)]="c.valor" (ngModelChange)="validCampo(c)" [ngModelOptions]="{standalone: true}"
+            type="text" id="{{c.nombre}}" class="{{c.clase}}" placeholder="{{c.placeholder}}">
                 </textarea>
 
-            <!-- radio -->
-            <div *ngSwitchCase="'radio'">
-              <div *ngFor="let item of c.opciones" class="form-check">
-                <label class="row custom-control custom-radio">
-                  <input type="radio" checked class="custom-control-input" name="{{c.nombre}}" [value]="item" [(ngModel)]="c.valor" [ngModelOptions]="{standalone: true}"
-                    checked="{{isEqual(item.Id, c.valor.Id)}}">
-                  <span class="custom-control-indicator">
-                  </span>
-                  <span class="custom-control-description">
-                    {{item.valor}}
-                  </span>
-                </label>
-              </div>
+          <!-- radio -->
+          <div *ngSwitchCase="'radio'">
+            <div *ngFor="let item of c.opciones" class="form-check">
+              <label class="row custom-control custom-radio">
+                <input type="radio" checked class="custom-control-input" name="{{c.nombre}}" [value]="item" [(ngModel)]="c.valor" [ngModelOptions]="{standalone: true}"
+                  checked="{{isEqual(item.Id, c.valor.Id)}}">
+                <span class="custom-control-indicator">
+                </span>
+                <span class="custom-control-description">
+                  {{item.valor}}
+                </span>
+              </label>
             </div>
-
-            <!-- checkbox -->
-            <div *ngSwitchCase="'checkbox'">
-              <div *ngFor="let item of c.opciones" class="form-check">
-                <label class="row custom-control custom-radio">
-                  <input type="radio" checked class="custom-control-input" name="{{c.nombre}}" [value]="item" [(ngModel)]="c.valor" [ngModelOptions]="{standalone: true}"
-                    checked="{{isEqual(item.Id, c.valor.Id)}}u">{{isEqual(item.Id, c.valor.Id)}}
-                  <span class="custom-control-indicator">
-                  </span>
-                  <span class="custom-control-description">
-                    {{item.valor}}
-                  </span>
-                </label>
-              </div>
-            </div>
-
-            <!-- select -->
-            <select *ngSwitchCase="'select'" [(ngModel)]="c.valor.Id" (ngModelChange)="validCampo(c)" class="{{c.clase}}" [ngModelOptions]="{standalone: true}">
-              <option class="{{c.clase}}" *ngFor="let item of c.opciones" [ngValue]="item.Id" [selected]="c.valor.Id === item.Id">
-                {{item.valor}}
-
-              </option>
-            </select>
-
-            <!-- input-file -->
-            <input type="file" name="{{c.nombre}}" class="{{c.clase}}" *ngSwitchCase="'file'" (change)="onChange($event,c)" />
           </div>
+
+          <!-- checkbox -->
+          <div *ngSwitchCase="'checkbox'">
+            <div *ngFor="let item of c.opciones" class="form-check">
+              <label class="row custom-control custom-radio">
+                <input type="radio" checked class="custom-control-input" name="{{c.nombre}}" [value]="item" [(ngModel)]="c.valor" [ngModelOptions]="{standalone: true}"
+                  checked="{{isEqual(item.Id, c.valor.Id)}}u">{{isEqual(item.Id, c.valor.Id)}}
+                <span class="custom-control-indicator">
+                </span>
+                <span class="custom-control-description">
+                  {{item.valor}}
+                </span>
+              </label>
+            </div>
+          </div>
+
+          <!-- date material -->
+          <mat-form-field *ngSwitchCase="'mat-date'">
+            <input matInput [matDatepicker]="c.valor" (dateChange)="onChangeDate($event,c)">
+            <mat-datepicker #{{c.nombre}}></mat-datepicker>
+          </mat-form-field>
+
+          <!-- select -->
+          <select *ngSwitchCase="'select'" [(ngModel)]="c.valor.Id" (ngModelChange)="validCampo(c)" class="{{c.clase}}" [ngModelOptions]="{standalone: true}">
+            <option class="{{c.clase}}" *ngFor="let item of c.opciones" [ngValue]="item.Id" [selected]="c.valor.Id === item.Id">
+              {{item.valor}}
+
+            </option>
+          </select>
+
+          <!-- input-file -->
+          <input type="file" name="{{c.nombre}}" class="{{c.clase}}" *ngSwitchCase="'file'" (change)="onChange($event,c)" />
         </div>
       </div>
+    </div>
     <br>
     <!-- Botones de form con acción de botones -->
     <div align="center">

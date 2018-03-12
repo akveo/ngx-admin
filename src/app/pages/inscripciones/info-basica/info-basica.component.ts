@@ -45,6 +45,7 @@ export class InfoBasicaComponent implements OnInit {
   }
 
   actualizarInfoPersona(persona: any): void {
+    console.info(persona);
     persona.Id = this.usuario.Id;
     persona.usuario = this.usuario.Usuario;
     this.persona.put('persona', persona)
