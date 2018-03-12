@@ -66,6 +66,7 @@ export let FORM_PERSONA = {
     }, {
         etiqueta: 'mat-date',
         claseGrid: 'col-4',
+        valor: new Date('Tue Mar 13 2018 00:00:00 GMT-0500 (-05)'),
         nombre: 'FechaNacimiento',
         label: 'Fecha de nacimiento*:',
         placeholder: 'Ej. 01/01/2010',
