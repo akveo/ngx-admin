@@ -45,12 +45,8 @@ const routes: Routes = [
   { path: '**', redirectTo: 'pages' },
 ];
 
-const config: ExtraOptions = {
-  useHash: true,
-};
-
 @NgModule({
-  imports: [RouterModule.forRoot(routes, config)],
+  imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
 export class AppRoutingModule {
