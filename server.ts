@@ -1,13 +1,14 @@
+import 'zone.js/dist/zone-node';
+import 'reflect-metadata';
 import { join } from 'path';
-import { readFileSync } from 'fs';
 import * as express from 'express';
 import { ngExpressEngine } from '@nguniversal/express-engine';
 import { provideModuleMap } from '@nguniversal/module-map-ngfactory-loader';
 
-const { AppServerModuleNgFactory, LAZY_MODULE_MAP } = require('./dist/server/main.bundle');
-
 const PORT = process.env.PORT || 4000;
-const DIST_FOLDER = join(__dirname, 'dist/browser');
+const DIST_PATH = join(process.cwd(), 'dist/browser');
+
+const { AppServerModuleNgFactory, LAZY_MODULE_MAP } = require('./dist/server/main.bundle');
 
 const app = express();
 
@@ -17,9 +18,9 @@ app.engine('html', ngExpressEngine({
 }));
 
 app.set('view engine', 'html');
-app.set('views', DIST_FOLDER);
+app.set('views', DIST_PATH);
 
-app.get('*.*', express.static(DIST_FOLDER));
+app.get('*.*', express.static(DIST_PATH));
 app.get('*', (req, res) => {
   res.render('index', { req, res });
 });
