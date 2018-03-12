@@ -8,6 +8,7 @@ import { ProfitChartComponent } from './charts-panel/profit/profit-chart.compone
 import { ChartModule } from 'angular2-chartjs';
 import { StatsCardBackComponent } from './stats-card/back-side/stats-card-back.component';
 import { EcMapComponent } from './map/ec-map.component';
+import { EcMapService } from './map/ec-map.service'
 import { NgxEchartsModule } from 'ngx-echarts';
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 
@@ -26,6 +27,9 @@ import { LeafletModule } from '@asymmetrik/ngx-leaflet';
     ProfitChartComponent,
     StatsCardBackComponent,
     EcMapComponent,
+  ],
+  providers: [
+    EcMapService,
   ],
 })
 export class EcDashboardModule { }
