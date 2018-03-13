@@ -15,24 +15,25 @@ export class InfoBasicaComponent implements OnInit {
   public formulario: any;
   public usuario: any;
   public campo: any;
+  public departamentos: any;
 
   constructor(private persona: PersonaService, private autenticacion: AutenticationService, private ubicacionService: UbicacionesService) {
     this.formulario = FORM_PERSONA;
   }
 
   getInfo(event) {
-    var departamentos=new Array();
 
     this.ubicacionService.get("relacion_lugares?query=LugarPadre.Id:"+event.valor.Id+",LugarHijo.TipoLugar.Id:4,Activo:true")
       .subscribe(res => {
-        for (let entry of res) {
-          entry.Id=entry.LugarHijo.Id
-          entry.valor=entry.LugarHijo.Nombre
-          departamentos.push(entry);
 
-        }
-        departamentos.unshift(this.formulario.campos[5].opciones[0]);
-        this.formulario.campos[5].opciones = departamentos;
+        this.departamentos=<Array<Object>>res;
+        this.departamentos.forEach(element => {
+          Object.defineProperty(element, "valor",
+          Object.getOwnPropertyDescriptor(element.LugarHijo, "Nombre"));
+        });
+
+        this.departamentos.unshift(this.formulario.campos[5].opciones[0]);
+        this.formulario.campos[5].opciones = this.departamentos;
       });
 
   }
