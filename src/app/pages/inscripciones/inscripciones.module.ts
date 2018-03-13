@@ -25,7 +25,7 @@ import { SharedModule } from '../../shared/shared.module';
   ],
   providers: [
     PersonaService,
-    UbicacionesService
+    UbicacionesService,
     AutenticationService,
     UtilidadesService,
     SharedModule,

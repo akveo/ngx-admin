@@ -16,27 +16,28 @@ export class InfoBasicaComponent implements OnInit {
   public usuario: any;
   public campo: any;
 
-
-  constructor(private persona: PersonaService, private autenticacion: AutenticationService, private ubicaciones: UbicacionesService) {
+  constructor(private persona: PersonaService, private autenticacion: AutenticationService, private ubicacionService: UbicacionesService) {
     this.formulario = FORM_PERSONA;
   }
 
   getInfo(event) {
-    console.info(event);
-    const temp = [
-      { Id: 1, valor: 'AAA' },
-      { Id: 2, valor: 'BBB' },
-      { Id: 3, valor: 'CCC' },
-      { Id: 4, valor: 'DDD' }];
-    temp.unshift(this.formulario.campos[5].opciones[0]);
-    this.formulario.campos[5].opciones = [...temp];
-    console.info(this.formulario.campos[5].opciones)
+    var departamentos=new Array();
+
+    this.ubicacionService.get("relacion_lugares?query=LugarPadre.Id:"+event.valor.Id+",LugarHijo.TipoLugar.Id:4,Activo:true")
+      .subscribe(res => {
+        for (let entry of res) {
+          entry.Id=entry.LugarHijo.Id
+          entry.valor=entry.LugarHijo.Nombre
+          departamentos.push(entry);
+
+        }
+        departamentos.unshift(this.formulario.campos[5].opciones[0]);
+        this.formulario.campos[5].opciones = departamentos;
+      });
+
   }
 
   cargarInfoPersona(): void {
-
-    
-
     if (this.autenticacion.live()) {
       this.persona.get('persona/?query=Usuario:' + this.autenticacion.getPayload().sub)
         .subscribe(res => {
@@ -46,6 +47,21 @@ export class InfoBasicaComponent implements OnInit {
           }
         });
     }
+  }
+
+  cargarPaises(): void {
+    var paises:Array<Object>=[];
+    this.ubicacionService.get("lugar?query=TipoLugar.Id%3A1,TipoLugar.Activo:true")
+      .subscribe(res => {
+        paises=<Array<Object>>res;
+        paises.forEach(element => {
+          Object.defineProperty(element, "valor",
+          Object.getOwnPropertyDescriptor(element, "Nombre"));
+        });
+        paises.unshift(this.formulario.campos[4].opciones[0]);
+        this.formulario.campos[4].opciones = paises;
+      });
+
   }
 
   actualizarInfoPersona(persona: any): void {
@@ -69,6 +85,7 @@ export class InfoBasicaComponent implements OnInit {
 
   ngOnInit() {
     this.cargarInfoPersona();
+    this.cargarPaises();
   }
 
   validarForm(event) {

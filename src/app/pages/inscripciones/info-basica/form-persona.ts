@@ -46,11 +46,7 @@ export let FORM_PERSONA = {
         entrelazado: true,
         valor: { Id: 0 },
         opciones: [
-            { Id: 0, valor: 'Seleccione su país de nacimiento ...' },
-            { Id: 1, valor: 'Perú' },
-            { Id: 2, valor: 'Chile' },
-            { Id: 3, valor: 'Colombia' },
-            { Id: 4, valor: 'Rusia' },
+            { Id: 0, valor: 'Seleccione su país de nacimiento ...' }
         ],
     }, {
         claseGrid: 'col-4',
@@ -74,4 +70,3 @@ export let FORM_PERSONA = {
         tipo: 'date',
     }],
 }
-
