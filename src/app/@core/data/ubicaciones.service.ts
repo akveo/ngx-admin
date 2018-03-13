@@ -6,8 +6,7 @@ const httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
 };
 
-const path = 'http://localhost:8085/v1/';
-
+const path = Config.LOCAL.UBICACION_SERVICE;
 
 @Injectable()
 export class UbicacionesService {
