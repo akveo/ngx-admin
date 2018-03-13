@@ -14,8 +14,8 @@ export class UbicacionesService {
     constructor(private http: HttpClient) {
     }
 
-    get(endpoint) {
-        return this.http.get(path + endpoint);
+    get(endpoint, params) {
+            return this.http.get(path + endpoint + '?' + params);
     }
     post(endpoint, element) {
         return this.http.post(path + endpoint, element, httpOptions);

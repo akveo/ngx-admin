@@ -16,26 +16,59 @@ export class InfoBasicaComponent implements OnInit {
   public usuario: any;
   public campo: any;
   public departamentos: any;
+  public municipios: any;
 
-  constructor(private persona: PersonaService, private autenticacion: AutenticationService, private ubicacionService: UbicacionesService) {
+  constructor(
+     private persona: PersonaService,
+     private autenticacion: AutenticationService,
+     private ubicacionService: UbicacionesService) {
     this.formulario = FORM_PERSONA;
   }
 
   getInfo(event) {
+    console.info(event.nombre);
+    switch (event.nombre){
+       case 'PaisNacimiento': {
+         const query =  'query=LugarPadre.Id:' +  event.valor.Id +
+                        ',LugarHijo.TipoLugar.Id:4' +
+                        ',Activo:true';
+         this.ubicacionService.get('relacion_lugares', new URLSearchParams(query))
+           .subscribe(res => {
+             this.departamentos = <Array<Object>>res;
+             this.departamentos.forEach(element => {
+               Object.defineProperty(element, "valor",
+               Object.getOwnPropertyDescriptor(element.LugarHijo, "Nombre"));
+             });
 
-    this.ubicacionService.get("relacion_lugares?query=LugarPadre.Id:"+event.valor.Id+",LugarHijo.TipoLugar.Id:4,Activo:true")
-      .subscribe(res => {
+             this.departamentos.unshift(this.formulario.campos[5].opciones[0]);
+             this.formulario.campos[5].opciones = this.departamentos;
+           });
+           break;
+       }
+       case 'DepartamentoNacimiento': {
+         console.info(event);
+         const query =  'query=LugarPadre.Id:' +  event.valor.Id +
+                        ',LugarHijo.TipoLugar.Id:2' +
+                        ',Activo:true';
+         this.ubicacionService.get('relacion_lugares', new URLSearchParams(query))
+           .subscribe(res => {
+             console.info(res);
+             this.municipios=<Array<Object>>res;
+             this.municipios.forEach(element => {
+               Object.defineProperty(element, "valor",
+               Object.getOwnPropertyDescriptor(element.LugarHijo, "Nombre"));
+             });
 
-        this.departamentos=<Array<Object>>res;
-        this.departamentos.forEach(element => {
-          Object.defineProperty(element, "valor",
-          Object.getOwnPropertyDescriptor(element.LugarHijo, "Nombre"));
-        });
-
-        this.departamentos.unshift(this.formulario.campos[5].opciones[0]);
-        this.formulario.campos[5].opciones = this.departamentos;
-      });
-
+             this.municipios.unshift(this.formulario.campos[6].opciones[0]);
+             this.formulario.campos[6].opciones = this.municipios;
+           });
+          break;
+       }
+       default: {
+          //statements;
+          break;
+       }
+     }
   }
 
   cargarInfoPersona(): void {
@@ -52,7 +85,11 @@ export class InfoBasicaComponent implements OnInit {
 
   cargarPaises(): void {
     var paises:Array<Object>=[];
-    this.ubicacionService.get("lugar?query=TipoLugar.Id%3A1,TipoLugar.Activo:true")
+    const query =  'query=TipoLugar.Id:1' +
+                   ',TipoLugar.Activo:true' +
+                   ',Activo:true';
+
+    this.ubicacionService.get('lugar' ,new URLSearchParams(query))
       .subscribe(res => {
         paises=<Array<Object>>res;
         paises.forEach(element => {
