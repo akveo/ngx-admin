@@ -20,6 +20,9 @@
       "inscriptions": "Inscripciones",
       "postgraduate": "Posgrado"
     },
+    "certificates": {
+      "certificates": "Certificados"
+    },
     "ui-features": {
       "ui-features": "Caracteristicas UI",
       "buttons": "Botones",

@@ -49,4 +49,5 @@ import { SeleccionProgramaComponent } from './posgrado/seleccion-programa/selecc
     SharedModule,
   ],
 })
-export class InscripcionesModule { }
+export class InscripcionesModule {
+}

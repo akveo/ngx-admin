@@ -18,6 +18,7 @@ export class InformacionAdicionalComponent implements OnInit {
     campos: [],
   };
   percentage: any;
+  language: string;
   percentageTab = [];
   nForms: number;
 

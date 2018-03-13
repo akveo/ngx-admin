@@ -1,0 +1,12 @@
+<nb-card>
+  <nb-card-header>
+    <h2>QR y PDF</h2>
+  </nb-card-header>
+  <nb-card-body id="mytable">
+    <ngx-qrcode qrc-element-type="url" [qrc-value]="campusvirtual" qrc-version="3"></ngx-qrcode>
+    <ngx-qrcode qrc-element-type="url" [qrc-value]="google" qrc-version="3" qrc-errorCorrectionLevel="H"></ngx-qrcode>
+
+    <button (click)="exportAs('pdf')">export as pdf</button>
+    <button (click)="exportAs('png')">export as png</button>
+  </nb-card-body>
+</nb-card>

@@ -20,6 +20,9 @@
       "inscriptions": "Inscriptions",
       "postgraduate": "Postgraduate"
     },
+    "certificates": {
+      "certificates": "Certificates"
+    },
     "ui-features": {
       "ui-features": "UI Features",
       "buttons": "Buttons",
