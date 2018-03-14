@@ -110,7 +110,7 @@
   @include media-breakpoint-down(sm) {
 
     nb-sidebar.menu-sidebar {
-
+      z-index: 9999;
       margin-top: 0;
 
       /deep/ .main-container {
