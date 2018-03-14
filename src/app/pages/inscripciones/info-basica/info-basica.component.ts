@@ -15,8 +15,6 @@ export class InfoBasicaComponent implements OnInit {
   public formulario: any;
   public usuario: any;
   public campo: any;
-  public departamentos: any;
-  public municipios: any;
 
   constructor(
      private persona: PersonaService,
@@ -26,41 +24,47 @@ export class InfoBasicaComponent implements OnInit {
   }
 
   getInfo(event) {
-    console.info(event.nombre);
     switch (event.nombre){
        case 'PaisNacimiento': {
+         let departamentos:Array<Object>=[];
          const query =  'query=LugarPadre.Id:' +  event.valor.Id +
                         ',LugarHijo.TipoLugar.Id:4' +
                         ',Activo:true';
          this.ubicacionService.get('relacion_lugares', new URLSearchParams(query))
            .subscribe(res => {
-             this.departamentos = <Array<Object>>res;
-             this.departamentos.forEach(element => {
-               Object.defineProperty(element, "valor",
-               Object.getOwnPropertyDescriptor(element.LugarHijo, "Nombre"));
-             });
+             if (res !== null) {
+               departamentos = <Array<Object>>res;
 
-             this.departamentos.unshift(this.formulario.campos[5].opciones[0]);
-             this.formulario.campos[5].opciones = this.departamentos;
+               departamentos.forEach(element => {
+                 Object.defineProperty(element, "valor",
+                 Object.getOwnPropertyDescriptor(element.LugarHijo, "Nombre"));
+                 Object.defineProperty(element, "Id",
+                 Object.getOwnPropertyDescriptor(element.LugarHijo, "Id"));
+               });
+             }
+             departamentos.unshift(this.formulario.campos[5].opciones[0]);
+             this.formulario.campos[5].opciones = departamentos;
            });
            break;
        }
        case 'DepartamentoNacimiento': {
-         console.info(event);
+         let municipios:Array<Object>=[];
          const query =  'query=LugarPadre.Id:' +  event.valor.Id +
                         ',LugarHijo.TipoLugar.Id:2' +
                         ',Activo:true';
          this.ubicacionService.get('relacion_lugares', new URLSearchParams(query))
            .subscribe(res => {
-             console.info(res);
-             this.municipios=<Array<Object>>res;
-             this.municipios.forEach(element => {
-               Object.defineProperty(element, "valor",
-               Object.getOwnPropertyDescriptor(element.LugarHijo, "Nombre"));
-             });
-
-             this.municipios.unshift(this.formulario.campos[6].opciones[0]);
-             this.formulario.campos[6].opciones = this.municipios;
+             if (res !== null) {
+               municipios=<Array<Object>>res;
+               municipios.forEach(element => {
+                 Object.defineProperty(element, "valor",
+                 Object.getOwnPropertyDescriptor(element.LugarHijo, "Nombre"));
+                 Object.defineProperty(element, "Id",
+                 Object.getOwnPropertyDescriptor(element.LugarHijo, "Id"));
+               });
+             }
+             municipios.unshift(this.formulario.campos[6].opciones[0]);
+             this.formulario.campos[6].opciones = municipios;
            });
           break;
        }
@@ -84,18 +88,20 @@ export class InfoBasicaComponent implements OnInit {
   }
 
   cargarPaises(): void {
-    var paises:Array<Object>=[];
+    let paises:Array<Object>=[];
     const query =  'query=TipoLugar.Id:1' +
                    ',TipoLugar.Activo:true' +
                    ',Activo:true';
 
     this.ubicacionService.get('lugar' ,new URLSearchParams(query))
       .subscribe(res => {
-        paises=<Array<Object>>res;
-        paises.forEach(element => {
-          Object.defineProperty(element, "valor",
-          Object.getOwnPropertyDescriptor(element, "Nombre"));
-        });
+        if (res !== null) {
+          paises=<Array<Object>>res;
+          paises.forEach(element => {
+            Object.defineProperty(element, "valor",
+            Object.getOwnPropertyDescriptor(element, "Nombre"));
+          });
+        }
         paises.unshift(this.formulario.campos[4].opciones[0]);
         this.formulario.campos[4].opciones = paises;
       });
