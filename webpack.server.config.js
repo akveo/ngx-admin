@@ -5,7 +5,7 @@ const srcPath = path.join(__dirname, 'src');
 const distPath = path.join(__dirname, 'dist');
 
 module.exports = {
-  entry: {  server: './server.ts' },
+  entry: { server: './server.ts' },
   resolve: { extensions: ['.js', '.ts'] },
   target: 'node',
   externals: [/(node_modules|main\..*\.js)/],
