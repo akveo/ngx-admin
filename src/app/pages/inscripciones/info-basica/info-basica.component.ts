@@ -26,15 +26,14 @@ export class InfoBasicaComponent implements OnInit {
   getInfo(event) {
     switch (event.nombre){
        case 'PaisNacimiento': {
-         let departamentos:Array<Object>=[];
+         let departamentos:Array<any>=[];
          const query =  'query=LugarPadre.Id:' +  event.valor.Id +
                         ',LugarHijo.TipoLugar.Id:4' +
                         ',Activo:true';
          this.ubicacionService.get('relacion_lugares', new URLSearchParams(query))
            .subscribe(res => {
              if (res !== null) {
-               departamentos = <Array<Object>>res;
-
+               departamentos = <Array<any>>res;
                departamentos.forEach(element => {
                  Object.defineProperty(element, "valor",
                  Object.getOwnPropertyDescriptor(element.LugarHijo, "Nombre"));
@@ -48,14 +47,14 @@ export class InfoBasicaComponent implements OnInit {
            break;
        }
        case 'DepartamentoNacimiento': {
-         let municipios:Array<Object>=[];
+         let municipios:Array<any>=[];
          const query =  'query=LugarPadre.Id:' +  event.valor.Id +
                         ',LugarHijo.TipoLugar.Id:2' +
                         ',Activo:true';
          this.ubicacionService.get('relacion_lugares', new URLSearchParams(query))
            .subscribe(res => {
              if (res !== null) {
-               municipios=<Array<Object>>res;
+               municipios=<Array<any>>res;
                municipios.forEach(element => {
                  Object.defineProperty(element, "valor",
                  Object.getOwnPropertyDescriptor(element.LugarHijo, "Nombre"));
