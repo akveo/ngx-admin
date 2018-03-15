@@ -1,4 +1,5 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, OnChanges, ViewChild } from '@angular/core';
+import { MatDatepicker } from '@angular/material/datepicker';
 
 @Component({
   selector: 'ngx-dinamicform',
@@ -7,14 +8,15 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 
 
-export class DinamicformComponent implements OnInit {
+export class DinamicformComponent implements OnInit, OnChanges {
 
   @Input('normalform') normalform: any;
   @Input('modeloData') modeloData: any;
   @Output('result') result: EventEmitter<any> = new EventEmitter();
   @Output('resultSmart') resultSmart: EventEmitter<any> = new EventEmitter();
+  @Output('interlaced') interlaced: EventEmitter<any> = new EventEmitter();
   data: any;
-
+  @ViewChild(MatDatepicker) datepicker: MatDatepicker<Date>;
   constructor() {
     this.data = {
       valid: true,
@@ -22,6 +24,37 @@ export class DinamicformComponent implements OnInit {
       percentage: 0,
       files: [],
     };
+  }
+
+  ngOnChanges(changes) {
+    if (changes.normalform !== undefined) {
+      if (changes.normalform.currentValue !== undefined) {
+        this.normalform = changes.normalform.currentValue;
+      }
+    }
+    if (changes.modeloData !== undefined) {
+      if (changes.modeloData.currentValue !== undefined) {
+        this.modeloData = changes.modeloData.currentValue;
+        if (this.normalform.campos) {
+          this.normalform.campos.forEach(element => {
+            for (const i in this.modeloData) {
+              if (this.modeloData.hasOwnProperty(i)) {
+                if (i === element.nombre) {
+                  if (element.etiqueta === 'input' && element.tipo === 'date') {
+                    element.valor = (new Date(this.modeloData[i])).toISOString().substring(0, 10);
+                  } else {
+                    element.valor = this.modeloData[i];
+                  }
+                  if (element.etiqueta === 'mat-date') {
+                    element.valor = new Date(this.modeloData[i]);
+                  }
+                }
+              }
+            }
+          });
+        }
+      }
+    }
   }
 
   onChange(event, c) {
@@ -48,23 +81,17 @@ export class DinamicformComponent implements OnInit {
       }
       return d;
     });
+  }
 
-    if (this.modeloData) {
-      if (this.normalform.campos) {
-        this.normalform.campos.forEach(element => {
-          for (const i in this.modeloData) {
-            if (this.modeloData.hasOwnProperty(i)) {
-              if (i === this.normalform.campos.nombre) {
-                this.normalform.valor = this.modeloData[i];
-              }
-            }
-          }
-        });
-      }
-    }
+  onChangeDate(event, c) {
+    c.valor = event.value;
+    console.info('c', c);
   }
 
   validCampo(c) {
+    if (c.entrelazado) {
+      this.interlaced.emit(c);
+    }
     if (c.valor === '') {
       c.clase = 'form-control form-control-danger'
     } else {

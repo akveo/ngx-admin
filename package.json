@@ -31,11 +31,13 @@
     "dependencies": {
         "@agm/core": "1.0.0-beta.2",
         "@angular/animations": "~5.1.0",
+        "@angular/cdk": "github:angular/cdk-builds",
         "@angular/common": "~5.1.0",
         "@angular/compiler": "~5.1.0",
         "@angular/core": "~5.1.0",
         "@angular/forms": "~5.1.0",
         "@angular/http": "~5.1.0",
+        "@angular/material": "github:angular/material2-builds",
         "@angular/platform-browser": "~5.1.0",
         "@angular/platform-browser-dynamic": "~5.1.0",
         "@angular/router": "~5.1.0",

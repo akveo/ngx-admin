@@ -5,3 +5,4 @@ export * from './tiny-mce/tiny-mce.component';
 export * from './theme-settings/theme-settings.component';
 export * from './theme-switcher/theme-switcher.component';
 export * from './dinamicform/dinamicform.component';
+export * from './select/select.component';

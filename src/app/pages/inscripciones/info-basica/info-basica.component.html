@@ -1,32 +1,6 @@
-<!--div class="row">
-    <div class="col-lg-12">
-      <nb-card>
-        <nb-card-header>Información de Perfil</nb-card-header>
-        <nb-card-body>
-          <div class="col-lg-12">
-              <ngx-dinamicform [normalform]="formulario" (result)="traerDatosBasicos($event)"></ngx-dinamicform>
-          </div>
-
-        </nb-card-body>
-      </nb-card>
-    </div>
-  </div-->
-
-<!--pre>
-    {{ejemplo |json}}
-  {{token |json}}
-</pre-->
 <nb-card>
-  <nb-card-header>
-    <h2>Información de Perfil</h2>
-    <ngb-progressbar showValue="true" type="success" [value]="percentage" [animated]="true" [height]="'15px'"></ngb-progressbar>
-
-  </nb-card-header>
-  <nb-card-body>
-    <nb-tabset fullWidth>
-      <nb-tab tabTitle="Datos básicos">
-        <ngx-dinamicform [normalform]="formulario" (result)="traerDatosBasicos($event)"></ngx-dinamicform>
-      </nb-tab>
-    </nb-tabset>
-  </nb-card-body>
+    <nb-card-body>
+        <ngx-dinamicform [normalform]="formulario" [modeloData]="usuario" (result)="validarForm($event)" (interlaced)="getInfo($event)">
+        </ngx-dinamicform>
+    </nb-card-body>
 </nb-card>
