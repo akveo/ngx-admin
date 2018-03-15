@@ -24,9 +24,9 @@ export class InfoBasicaComponent implements OnInit {
   }
 
   getInfo(event) {
-    switch (event.nombre){
+    switch (event.nombre) {
        case 'PaisNacimiento': {
-         let departamentos:Array<any>=[];
+         let departamentos: Array<any> = [];
          const query =  'query=LugarPadre.Id:' +  event.valor.Id +
                         ',LugarHijo.TipoLugar.Id:4' +
                         ',Activo:true';
@@ -35,10 +35,10 @@ export class InfoBasicaComponent implements OnInit {
              if (res !== null) {
                departamentos = <Array<any>>res;
                departamentos.forEach(element => {
-                 Object.defineProperty(element, "valor",
-                 Object.getOwnPropertyDescriptor(element.LugarHijo, "Nombre"));
-                 Object.defineProperty(element, "Id",
-                 Object.getOwnPropertyDescriptor(element.LugarHijo, "Id"));
+                 Object.defineProperty(element, 'valor',
+                 Object.getOwnPropertyDescriptor(element.LugarHijo, 'Nombre'));
+                 Object.defineProperty(element, 'Id',
+                 Object.getOwnPropertyDescriptor(element.LugarHijo, 'Id'));
                });
              }
              departamentos.unshift(this.formulario.campos[5].opciones[0]);
@@ -47,19 +47,19 @@ export class InfoBasicaComponent implements OnInit {
            break;
        }
        case 'DepartamentoNacimiento': {
-         let municipios:Array<any>=[];
+         let municipios: Array<any> = [];
          const query =  'query=LugarPadre.Id:' +  event.valor.Id +
                         ',LugarHijo.TipoLugar.Id:2' +
                         ',Activo:true';
          this.ubicacionService.get('relacion_lugares', new URLSearchParams(query))
            .subscribe(res => {
              if (res !== null) {
-               municipios=<Array<any>>res;
+               municipios = <Array<any>>res;
                municipios.forEach(element => {
-                 Object.defineProperty(element, "valor",
-                 Object.getOwnPropertyDescriptor(element.LugarHijo, "Nombre"));
-                 Object.defineProperty(element, "Id",
-                 Object.getOwnPropertyDescriptor(element.LugarHijo, "Id"));
+                 Object.defineProperty(element, 'valor',
+                 Object.getOwnPropertyDescriptor(element.LugarHijo, 'Nombre'));
+                 Object.defineProperty(element, 'Id',
+                 Object.getOwnPropertyDescriptor(element.LugarHijo, 'Id'));
                });
              }
              municipios.unshift(this.formulario.campos[6].opciones[0]);
@@ -68,7 +68,7 @@ export class InfoBasicaComponent implements OnInit {
           break;
        }
        default: {
-          //statements;
+          // statements;
           break;
        }
      }
@@ -87,18 +87,18 @@ export class InfoBasicaComponent implements OnInit {
   }
 
   cargarPaises(): void {
-    let paises:Array<Object>=[];
+    let paises: Array<Object> = [];
     const query =  'query=TipoLugar.Id:1' +
                    ',TipoLugar.Activo:true' +
                    ',Activo:true';
 
-    this.ubicacionService.get('lugar' ,new URLSearchParams(query))
+    this.ubicacionService.get('lugar', new URLSearchParams(query))
       .subscribe(res => {
         if (res !== null) {
-          paises=<Array<Object>>res;
+          paises = <Array<Object>>res;
           paises.forEach(element => {
-            Object.defineProperty(element, "valor",
-            Object.getOwnPropertyDescriptor(element, "Nombre"));
+            Object.defineProperty(element, 'valor',
+            Object.getOwnPropertyDescriptor(element, 'Nombre'));
           });
         }
         paises.unshift(this.formulario.campos[4].opciones[0]);
@@ -108,7 +108,6 @@ export class InfoBasicaComponent implements OnInit {
   }
 
   actualizarInfoPersona(persona: any): void {
-    console.info(persona);
     persona.Id = this.usuario.Id;
     persona.usuario = this.usuario.Usuario;
     this.persona.put('persona', persona)

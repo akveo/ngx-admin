@@ -46,7 +46,7 @@ export let FORM_PERSONA = {
         entrelazado: true,
         valor: { Id: 0 },
         opciones: [
-            { Id: 0, valor: 'Seleccione su país de nacimiento ...' }
+            { Id: 0, valor: 'Seleccione su país de nacimiento ...' },
         ],
     }, {
         claseGrid: 'col-4',
@@ -63,7 +63,7 @@ export let FORM_PERSONA = {
     }, {
         claseGrid: 'col-4',
         etiqueta: 'select',
-        nombre: 'MunicipioNacimiento',
+        nombre: 'CiudadNacimiento',
         label: 'Municipio de nacimiento*:',
         requerido: true,
         relacion: false,
@@ -71,7 +71,7 @@ export let FORM_PERSONA = {
         opciones: [
             { Id: 0, valor: 'Seleccione su municipio de nacimiento ...' },
         ],
-    },{
+    }, {
         etiqueta: 'mat-date',
         claseGrid: 'col-4',
         valor: new Date('Tue Mar 13 2018 00:00:00 GMT-0500 (-05)'),
