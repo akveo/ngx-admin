@@ -1,9 +1,9 @@
 <nb-card>
   <nb-card-body>
     <div>
-      <label class="cabecera">Para ingresar los idiomas los cuaes tenga conocimiento, ingrese la respectiva información y presione el botón agregar. Realizar esto por cada uno.</label>
+      <label class="cabecera">{{ 'IDIOMAS.AVISO' | translate }}</label>
       <div class="nombreidioma">
-        <label for="nombreidioma">* Idioma: </label>
+        <label for="nombreidioma">* {{ 'IDIOMAS.IDIOMA' | translate }}</label>
         <br>
         <select class="form-control" id="pidioma" name="pidioma">
           <option value="espanol">Español</option>
@@ -15,7 +15,7 @@
         </select>
       </div>
       <div class="nativo">
-        <label for="nativo">* ¿Es su idioma natal?</label>
+        <label for="nativo">* {{ 'IDIOMAS.NATAL' | translate }}</label>
         <br>
         <select class="form-control" id="nativo" name="nativo">
           <option value="falso">Sí</option>
@@ -23,7 +23,7 @@
         </select>     
       </div>
       <div class="habla">
-        <label for="habla">* Nivel de habla</label>
+        <label for="habla">* {{ 'IDIOMAS.NIVEL_HABLA' | translate }}</label>
         <br>
         <select class="form-control" id="habla" name="habla">
           <option value="bajo">Bajo</option>
@@ -32,7 +32,7 @@
         </select>
       </div>
       <div class="escucha">
-        <label for="escucha">* Nivel de escucha</label>
+        <label for="escucha">* {{ 'IDIOMAS.NIVEL_ESCUCHA' | translate }}</label>
         <br>
         <select class="form-control" id="escucha" name="escucha">
           <option value="bajo">Bajo</option>
@@ -41,7 +41,7 @@
         </select>
       </div>
       <div class="escritura">
-        <label for="escritura">* Nivel de escritura</label>
+        <label for="escritura">* {{ 'IDIOMAS.NIVEL_ESCRITURA' | translate }}</label>
         <br>
         <select class="form-control" id="escritura" name="escritura">
           <option value="bajo">Bajo</option>
@@ -50,7 +50,7 @@
         </select>
       </div>
       <div class="lectura">
-        <label for="lectura">* Nivel de lectura</label>
+        <label for="lectura">* {{ 'IDIOMAS.NIVEL_LECTURA' | translate }}</label>
         <br>
         <select class="form-control" id="lectura" name="lectura">
           <option value="bajo">Bajo</option>
@@ -59,7 +59,7 @@
         </select>
       </div>   
       <div class="agregar">
-        <input class="btn btn-success" type="button" value="Agregar información">
+        <input class="btn btn-success" type="button" value="{{ 'IDIOMAS.AGREGAR' | translate }}">
       </div>
       <hr>              
       <ng2-smart-table [settings]="settings" [source]="source" (deleteConfirm)="onDeleteConfirm($event)">
@@ -73,7 +73,7 @@
         </div>
         <div class="col-xs-6 col-xs-offset-3">
           <a ui-sref="form.interests" class="btn btn-info siguiente">
-                     Siguiente
+            {{ 'IDIOMAS.SIGUIENTE' | translate }}
             <i _ngcontent-c24="" class="ion-arrow-right-b"></i>
           </a>
         </div>

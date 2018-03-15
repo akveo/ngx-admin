@@ -64,6 +64,18 @@ export const MENU_ITEMS: MenuItem[] = [
       },
     ],
   },
+  {
+    title: 'Certificados',
+    icon: 'nb-compose',
+    link: '/pages/certificados',
+    key: 'certificates',
+    children: [
+      {
+        title: 'Prueba QR',
+        link: '/pages/certificados/prueba-qr',
+      },
+    ],
+  },
   // {
   //   title: 'UI Features',
   //   icon: 'nb-keypad',
