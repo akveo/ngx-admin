@@ -1,8 +1,13 @@
-const path = require('path');
+const { join } = require('path');
 const webpack = require('webpack');
 
-const srcPath = path.join(__dirname, 'src');
-const distPath = path.join(__dirname, 'dist');
+const srcPath = join(__dirname, 'src');
+const distPath = join(__dirname, 'dist');
+const mocksPath = join(srcPath, 'app/pages/server-mocks');
+
+const noopMockPath = join(mocksPath, 'noop');
+const leafletMockPath = join(mocksPath, 'ngx-leaflet/ngx-leaflet.module');
+const ngCkeditorMockPath = join(mocksPath, 'ng2-ckeditor/ng2-ckeditor.module');
 
 module.exports = {
   entry: { server: './server.ts' },
@@ -30,6 +35,19 @@ module.exports = {
       /(.+)?express(\\|\/)(.+)?/,
       srcPath,
       {}
-    )
+    ),
+    new webpack.DefinePlugin({ MouseEvent: {} }), // 💩
+    new webpack.NormalModuleReplacementPlugin(
+      /^@asymmetrik\/ngx-leaflet$/,
+      leafletMockPath
+    ),
+    new webpack.NormalModuleReplacementPlugin(
+      /^ng2-ckeditor$/,
+      ngCkeditorMockPath
+    ),
+    new webpack.NormalModuleReplacementPlugin(
+      /(^(ckeditor|leaflet)|ckeditor\.loader\.ts)$/,
+      noopMockPath
+    ),
   ]
 }
