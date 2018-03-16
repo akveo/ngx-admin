@@ -2,6 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { NbThemeService, NbMediaBreakpoint, NbMediaBreakpointsService } from '@nebular/theme';
 
 import { UserService } from '../../../@core/data/users.service';
+import { takeWhile } from 'rxjs/operators';
 
 @Component({
   selector: 'ngx-contacts',
@@ -15,6 +16,7 @@ export class ContactsComponent implements OnInit, OnDestroy {
   breakpoint: NbMediaBreakpoint;
   breakpoints: any;
   themeSubscription: any;
+  alive = true;
 
   constructor(private userService: UserService,
               private themeService: NbThemeService,
@@ -30,6 +32,7 @@ export class ContactsComponent implements OnInit, OnDestroy {
   ngOnInit() {
 
     this.userService.getUsers()
+      .pipe(takeWhile(() => this.alive))
       .subscribe((users: any) => {
         this.contacts = [
           {user: users.nick, type: 'mobile'},
@@ -54,6 +57,6 @@ export class ContactsComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    this.themeSubscription.unsubscribe();
+    this.alive = false;
   }
 }

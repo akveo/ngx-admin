@@ -1,5 +1,6 @@
 import { AfterViewInit, Component, Input, OnDestroy } from '@angular/core';
 import { NbThemeService } from '@nebular/theme';
+import { delay, takeWhile } from 'rxjs/operators';
 
 declare const echarts: any;
 
@@ -37,12 +38,18 @@ export class SolarComponent implements AfterViewInit, OnDestroy {
   option: any = {};
   themeSubscription: any;
 
+  alive = true;
+
   constructor(private theme: NbThemeService) {
   }
 
   ngAfterViewInit() {
-    this.themeSubscription = this.theme.getJsTheme().delay(1).subscribe(config => {
-
+    this.themeSubscription = this.theme.getJsTheme()
+    .pipe(
+      takeWhile(() => this.alive),
+      delay(1),
+    )
+    .subscribe(config => {
       const solarTheme: any = config.variables.solar;
 
       this.option = Object.assign({}, {
@@ -179,6 +186,6 @@ export class SolarComponent implements AfterViewInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    this.themeSubscription.unsubscribe();
+    this.alive = false;
   }
 }

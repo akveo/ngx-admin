@@ -1,5 +1,6 @@
 import { Component, AfterViewInit, OnDestroy } from '@angular/core';
 import { NbThemeService } from '@nebular/theme';
+import { takeWhile } from 'rxjs/operators';
 
 @Component({
   selector: 'ngx-echarts-multiple-xaxis',
@@ -10,12 +11,15 @@ import { NbThemeService } from '@nebular/theme';
 export class EchartsMultipleXaxisComponent implements AfterViewInit, OnDestroy {
   options: any = {};
   themeSubscription: any;
+  alive = true;
 
   constructor(private theme: NbThemeService) {
   }
 
   ngAfterViewInit() {
-    this.themeSubscription = this.theme.getJsTheme().subscribe(config => {
+    this.themeSubscription = this.theme.getJsTheme()
+    .pipe(takeWhile(() => this.alive))
+    .subscribe(config => {
 
       const colors: any = config.variables;
       const echarts: any = config.variables.echarts;
@@ -161,6 +165,6 @@ export class EchartsMultipleXaxisComponent implements AfterViewInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    this.themeSubscription.unsubscribe();
+    this.alive = false;
   }
 }

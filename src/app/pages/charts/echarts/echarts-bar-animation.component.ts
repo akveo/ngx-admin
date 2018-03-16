@@ -1,5 +1,6 @@
 import { AfterViewInit, Component, OnDestroy } from '@angular/core';
 import { NbThemeService } from '@nebular/theme';
+import { takeWhile } from 'rxjs/operators';
 
 @Component({
   selector: 'ngx-echarts-bar-animation',
@@ -10,12 +11,15 @@ import { NbThemeService } from '@nebular/theme';
 export class EchartsBarAnimationComponent implements AfterViewInit, OnDestroy {
   options: any = {};
   themeSubscription: any;
+  alive = true;
 
   constructor(private theme: NbThemeService) {
   }
 
   ngAfterViewInit() {
-    this.themeSubscription = this.theme.getJsTheme().subscribe(config => {
+    this.themeSubscription = this.theme.getJsTheme()
+    .pipe(takeWhile(() => this.alive))
+    .subscribe(config => {
       const xAxisData = [];
       const data1 = [];
       const data2 = [];
@@ -104,6 +108,6 @@ export class EchartsBarAnimationComponent implements AfterViewInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    this.themeSubscription.unsubscribe();
+    this.alive = false;
   }
 }
