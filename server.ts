@@ -8,12 +8,12 @@ import { provideModuleMap } from '@nguniversal/module-map-ngfactory-loader';
 const PORT = process.env.PORT || 4000;
 const DIST_PATH = join(process.cwd(), 'dist/browser');
 
-const { AppServerModuleNgFactory, LAZY_MODULE_MAP } = require('./dist/server/main.bundle');
+const { AppServerModule, LAZY_MODULE_MAP } = require('./dist/server/main.bundle');
 
 const app = express();
 
 app.engine('html', ngExpressEngine({
-  bootstrap: AppServerModuleNgFactory,
+  bootstrap: AppServerModule,
   providers: [ provideModuleMap(LAZY_MODULE_MAP) ],
 }));
 
