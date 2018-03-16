@@ -29,7 +29,7 @@
     "release:changelog": "npm run conventional-changelog -- -p angular -i CHANGELOG.md -s",
     "build:ssr": "run-p \"build:*-app -- {@}\" --",
     "build:client-app": "ng build --prod",
-    "build:server-app": "ng build --app=universal --output-hashing=false --dev --aot",
+    "build:server-app": "ng build --app=universal --output-hashing=false --prod --aot=false",
     "postbuild:server-app": "npm run build:server",
     "build:server": "webpack --config webpack.server.config.js --progress --colors",
     "serve:ssr": "node dist/server.js"
