@@ -5,10 +5,10 @@ import { NbThemeService, NbMediaBreakpoint, NbMediaBreakpointsService } from '@n
   selector: 'ngx-rooms',
   styleUrls: ['./rooms.component.scss'],
   template: `
-    <nb-card [size]="breakpoint.width >= breakpoints.sm ? 'large' : 'medium'">
+    <nb-card [size]="breakpoint?.width >= breakpoints.sm ? 'large' : 'medium'">
       <i (click)="collapse()" class="nb-arrow-down collapse" [hidden]="isCollapsed()"></i>
       <ngx-room-selector (select)="select($event)"></ngx-room-selector>
-      <ngx-player [collapsed]="isCollapsed() && breakpoint.width <= breakpoints.md"></ngx-player>
+      <ngx-player [collapsed]="isCollapsed() && breakpoint?.width <= breakpoints.md"></ngx-player>
     </nb-card>
   `,
 })
