@@ -1,5 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Inject, PLATFORM_ID } from '@angular/core';
 import { Location } from '../entity/Location';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'ngx-map',
@@ -18,9 +19,11 @@ export class MapComponent implements OnInit {
     this.zoom = 12;
   }
 
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
+
   ngOnInit(): void {
     // set up current location
-    if ('geolocation' in navigator) {
+    if (isPlatformBrowser(this.platformId) && 'geolocation' in navigator) {
       navigator.geolocation.getCurrentPosition((position) => {
         this.searchedLocation = new Location(
           position.coords.latitude, position.coords.longitude,

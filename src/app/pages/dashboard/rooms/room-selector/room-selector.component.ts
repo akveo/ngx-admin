@@ -1,4 +1,14 @@
 import { Component, EventEmitter, Output } from '@angular/core';
+import { DeviceDetectorService } from 'ngx-device-detector';
+
+function isIE (userAgent) {
+  return !!(userAgent.match(/Trident/)
+    || userAgent.match(/MSIE/)
+    || userAgent.match(/Edge/));
+}
+function isFirefox (userAgent) {
+  return userAgent.toLowerCase().indexOf('firefox') >= 0
+}
 
 @Component({
   selector: 'ngx-room-selector',
@@ -11,10 +21,8 @@ export class RoomSelectorComponent {
   selectedRoom: null;
   sortedRooms = [];
   viewBox = '-20 -20 618.88 407.99';
-  isIE = !!(navigator.userAgent.match(/Trident/)
-            || navigator.userAgent.match(/MSIE/)
-            || navigator.userAgent.match(/Edge/));
-  isFirefox = navigator.userAgent.toLowerCase().indexOf('firefox') >= 0;
+  isIE;
+  isFirefox;
   roomSvg = {
     borders: [{
       d: 'M186.21,130.05H216.37V160H186.21Z',
@@ -58,8 +66,10 @@ export class RoomSelectorComponent {
     ],
   };
 
-  constructor() {
+  constructor(deviceService: DeviceDetectorService) {
     this.selectRoom('2');
+    this.isIE = isIE(deviceService.userAgent);
+    this.isFirefox = isFirefox(deviceService.userAgent);
   }
 
   private sortRooms() {

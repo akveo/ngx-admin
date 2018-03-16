@@ -70,6 +70,7 @@
     "ng2-ckeditor": "1.1.13",
     "ng2-smart-table": "1.2.2",
     "ng2-tree": "2.0.0-rc.4",
+    "ngx-device-detector": "^1.2.1",
     "ngx-echarts": "2.0.1",
     "normalize.css": "6.0.0",
     "pace-js": "1.0.2",
