@@ -1,5 +1,6 @@
-import { Component, HostBinding, Input, OnDestroy } from '@angular/core';
+import { Component, HostBinding, Input, OnDestroy, Inject, PLATFORM_ID, Renderer2 } from '@angular/core';
 import { PlayerService, Track } from '../../../../@core/data/player.service';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'ngx-player',
@@ -15,15 +16,21 @@ export class PlayerComponent implements OnDestroy {
   player: HTMLAudioElement;
   shuffle: boolean;
 
-  constructor(private playerService: PlayerService) {
+  constructor(
+    private playerService: PlayerService,
+    private renderer: Renderer2,
+    @Inject(PLATFORM_ID) private platformId: Object,
+  ) {
     this.track = this.playerService.random();
     this.createPlayer();
   }
 
   ngOnDestroy() {
-    this.player.pause();
     this.player.src = '';
-    this.player.load();
+    if (isPlatformBrowser(this.platformId)) {
+      this.player.pause();
+      this.player.load();
+    }
   }
 
   prev() {
@@ -83,7 +90,7 @@ export class PlayerComponent implements OnDestroy {
   }
 
   private createPlayer() {
-    this.player = new Audio();
+    this.player = this.renderer.createElement('audio');
     this.player.onended = () => this.next();
     this.setTrack();
   }
@@ -95,6 +102,8 @@ export class PlayerComponent implements OnDestroy {
 
   private setTrack() {
     this.player.src = this.track.url;
-    this.player.load();
+    if (isPlatformBrowser(this.platformId)) {
+      this.player.load();
+    }
   }
 }
