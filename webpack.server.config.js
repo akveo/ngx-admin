@@ -36,7 +36,6 @@ module.exports = {
       srcPath,
       {}
     ),
-    new webpack.DefinePlugin({ MouseEvent: {} }), // 💩
     new webpack.NormalModuleReplacementPlugin(
       /^@asymmetrik\/ngx-leaflet$/,
       leafletMockPath
