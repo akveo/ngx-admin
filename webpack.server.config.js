@@ -8,6 +8,7 @@ const mocksPath = join(srcPath, 'app/pages/server-mocks');
 const noopMockPath = join(mocksPath, 'noop');
 const leafletMockPath = join(mocksPath, 'ngx-leaflet/ngx-leaflet.module');
 const ngCkeditorMockPath = join(mocksPath, 'ng2-ckeditor/ng2-ckeditor.module');
+const ngxEchartMockPath = join(mocksPath, 'ngx-echarts/ngx-echarts.module');
 
 module.exports = {
   entry: { server: './server.ts' },
@@ -47,6 +48,10 @@ module.exports = {
     new webpack.NormalModuleReplacementPlugin(
       /(^(ckeditor|leaflet)|ckeditor\.loader\.ts)$/,
       noopMockPath
+    ),
+    new webpack.NormalModuleReplacementPlugin(
+      /^ngx-echarts$/,
+      ngxEchartMockPath
     ),
   ]
 }
