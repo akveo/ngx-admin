@@ -1,6 +1,20 @@
 import {
-  Component, HostListener, ViewChild, ElementRef, Input, Output, EventEmitter, AfterViewInit, OnChanges,
+  Component,
+  HostListener,
+  ViewChild,
+  ElementRef,
+  Input,
+  Output,
+  EventEmitter,
+  AfterViewInit,
+  OnChanges,
+  Inject,
+  PLATFORM_ID,
+  Optional,
 } from '@angular/core';
+import { Router } from '@angular/router';
+import { REQUEST } from '@nguniversal/express-engine';
+import { isPlatformBrowser } from '@angular/common';
 
 const VIEW_BOX_SIZE = 300;
 
@@ -75,8 +89,19 @@ export class TemperatureDraggerComponent implements AfterViewInit, OnChanges {
   private isMouseDown = false;
   private init = false;
 
-  constructor() {
+  constructor(
+    private router: Router,
+    @Inject(PLATFORM_ID) private platformId: Object,
+    @Optional() @Inject(REQUEST) private req,
+  ) {
     this.oldValue = this.value;
+  }
+
+  svgUrl(svgId) {
+    const path = isPlatformBrowser(this.platformId)
+      ? this.router.url
+      : this.req.path;
+    return `url(${path}#${svgId}${this.svgControlId})`;
   }
 
   ngAfterViewInit(): void {
