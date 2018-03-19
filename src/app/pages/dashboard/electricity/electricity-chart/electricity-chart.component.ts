@@ -1,8 +1,7 @@
-import { AfterViewInit, Component, OnDestroy } from '@angular/core';
+import { AfterViewInit, Component, OnDestroy, Inject, PLATFORM_ID } from '@angular/core';
 import { NbThemeService } from '@nebular/theme';
 import { delay, takeWhile } from 'rxjs/operators';
-
-declare const echarts: any;
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'ngx-electricity-chart',
@@ -18,23 +17,14 @@ export class ElectricityChartComponent implements AfterViewInit, OnDestroy {
   themeSubscription: any;
   alive = true;
 
-  constructor(private theme: NbThemeService) {
-
+  constructor(
+    private theme: NbThemeService,
+    @Inject(PLATFORM_ID) private platformId: Object,
+  ) {
     const points = [490, 490, 495, 500, 505, 510, 520, 530, 550, 580, 630,
       720, 800, 840, 860, 870, 870, 860, 840, 800, 720, 200, 145, 130, 130,
       145, 200, 570, 635, 660, 670, 670, 660, 630, 580, 460, 380, 350, 340,
       340, 340, 340, 340, 340, 340, 340, 340];
-
-    // const points = [];
-    // let pointsCount = 100;
-    // let min = -3;
-    // let max = 3;
-    // let xStep = (max - min) / pointsCount;
-    //
-    // for(let x = -3; x <= 3; x += xStep) {
-    //   let res = x**3 - 5*x + 17;
-    //   points.push(Math.round(res * 25));
-    // }
 
     this.data = points.map((p, index) => ({
       label: (index % 5 === 3) ? `${Math.round(index / 5)}` : '',
@@ -43,6 +33,12 @@ export class ElectricityChartComponent implements AfterViewInit, OnDestroy {
   }
 
   ngAfterViewInit(): void {
+    const linearGradient = (...args) => {
+      return isPlatformBrowser(this.platformId)
+        ? new echarts.graphic.LinearGradient(...args)
+        : null;
+    };
+
     this.themeSubscription = this.theme.getJsTheme()
     .pipe(
       takeWhile(() => this.alive),
@@ -139,7 +135,7 @@ export class ElectricityChartComponent implements AfterViewInit, OnDestroy {
                 normal: {
                   width: eTheme.lineWidth,
                   type: eTheme.lineStyle,
-                  color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                  color: linearGradient(0, 0, 0, 1, [{
                     offset: 0,
                     color: eTheme.lineGradFrom,
                   }, {
@@ -153,7 +149,7 @@ export class ElectricityChartComponent implements AfterViewInit, OnDestroy {
               },
               areaStyle: {
                 normal: {
-                  color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                  color: linearGradient(0, 0, 0, 1, [{
                     offset: 0,
                     color: eTheme.areaGradFrom,
                   }, {
@@ -173,7 +169,7 @@ export class ElectricityChartComponent implements AfterViewInit, OnDestroy {
                 normal: {
                   width: eTheme.lineWidth,
                   type: eTheme.lineStyle,
-                  color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                  color: linearGradient(0, 0, 0, 1, [{
                     offset: 0,
                     color: eTheme.lineGradFrom,
                   }, {

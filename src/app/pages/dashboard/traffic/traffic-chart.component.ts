@@ -1,6 +1,7 @@
-import { AfterViewInit, Component, OnDestroy } from '@angular/core';
+import { AfterViewInit, Component, OnDestroy, Inject, PLATFORM_ID } from '@angular/core';
 import { NbThemeService } from '@nebular/theme';
 import { takeWhile, delay } from 'rxjs/operators';
+import { isPlatformBrowser } from '@angular/common';
 
 declare const echarts: any;
 
@@ -22,10 +23,18 @@ export class TrafficChartComponent implements AfterViewInit, OnDestroy {
 
   alive = true;
 
-  constructor(private theme: NbThemeService) {
-  }
+  constructor(
+    private theme: NbThemeService,
+    @Inject(PLATFORM_ID) private platformId: Object,
+  ) {}
 
   ngAfterViewInit() {
+    const linearGradient = (...args) => {
+      return isPlatformBrowser(this.platformId)
+        ? new echarts.graphic.LinearGradient(...args)
+        : null;
+    };
+
     this.themeSubscription = this.theme.getJsTheme()
       .pipe(
         takeWhile(() => this.alive),
@@ -135,7 +144,7 @@ export class TrafficChartComponent implements AfterViewInit, OnDestroy {
               },
               areaStyle: {
                 normal: {
-                  color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                  color: linearGradient(0, 0, 0, 1, [{
                     offset: 0,
                     color: trafficTheme.gradFrom,
                   }, {
