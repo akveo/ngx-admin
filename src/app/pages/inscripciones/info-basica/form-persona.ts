@@ -47,21 +47,29 @@ export let FORM_PERSONA = {
         valor: { Id: 0 },
         opciones: [
             { Id: 0, valor: 'Seleccione su país de nacimiento ...' },
-            { Id: 1, valor: 'Perú' },
-            { Id: 2, valor: 'Chile' },
-            { Id: 3, valor: 'Colombia' },
-            { Id: 4, valor: 'Rusia' },
+        ],
+    }, {
+        claseGrid: 'col-4',
+        etiqueta: 'select',
+        nombre: 'DepartamentoNacimiento',
+        label: 'Departamento de nacimiento*:',
+        requerido: true,
+        entrelazado: true,
+        relacion: false,
+        valor: { Id: 0 },
+        opciones: [
+            { Id: 0, valor: 'Seleccione su departamento de nacimiento ...' },
         ],
     }, {
         claseGrid: 'col-4',
         etiqueta: 'select',
         nombre: 'CiudadNacimiento',
-        label: 'Ciudad de nacimiento*:',
+        label: 'Municipio de nacimiento*:',
         requerido: true,
         relacion: false,
         valor: { Id: 0 },
         opciones: [
-            { Id: 0, valor: 'Seleccione su ciudad de nacimiento ...' },
+            { Id: 0, valor: 'Seleccione su municipio de nacimiento ...' },
         ],
     }, {
         etiqueta: 'mat-date',
@@ -74,4 +82,3 @@ export let FORM_PERSONA = {
         tipo: 'date',
     }],
 }
-
