@@ -83,21 +83,20 @@ export class InfoBasicaComponent implements OnInit {
             info = res[0];
             info.CiudadNacimiento = { Id: info.CiudadNacimiento };
 
-            //con la ciudad buscar el departamento y país
+            // con la ciudad buscar el departamento y país
             const query =  'query=LugarHijo.Id:' + info.CiudadNacimiento.Id + ',LugarPadre.TipoLugar.Id:4';
             this.ubicacionService.get('relacion_lugares', new URLSearchParams(query))
-              .subscribe(res => {
-                console.info(res);
-                if (res !== null) {
-                  info.DepartamentoNacimiento = { Id: res[0].LugarPadre.Id };
-                  this.cargarPaises3(info.DepartamentoNacimiento.Id);
-                  //con el departamento, buscar país
-                  const query =  'query=LugarHijo.Id:'+res[0].LugarPadre.Id+',LugarPadre.TipoLugar.Id:1';
-                  this.ubicacionService.get('relacion_lugares', new URLSearchParams(query))
-                    .subscribe(res => {
-                      if (res !== null) {
-                        info.PaisNacimiento = { Id: res[0].LugarPadre.Id };
-                        this.cargarPaises2(info.PaisNacimiento.Id);
+              .subscribe(resDepartamento => {
+                if (resDepartamento !== null) {
+                  info.DepartamentoNacimiento = { Id: resDepartamento[0].LugarPadre.Id };
+                  this.cargarMunicipios(info.DepartamentoNacimiento.Id);
+                  // con el departamento, buscar país
+                  const queryPais =  'query=LugarHijo.Id:' + resDepartamento[0].LugarPadre.Id + ',LugarPadre.TipoLugar.Id:1';
+                  this.ubicacionService.get('relacion_lugares', new URLSearchParams(queryPais))
+                    .subscribe(resPais => {
+                      if (resPais !== null) {
+                        info.PaisNacimiento = { Id: resPais[0].LugarPadre.Id };
+                        this.cargarDepartamentos(info.PaisNacimiento.Id);
                         this.usuario = info;
                       }
                     });
@@ -109,7 +108,7 @@ export class InfoBasicaComponent implements OnInit {
     }
   }
 
-  cargarPaises3(valor): void {
+  cargarMunicipios(valor): void {
     console.info(valor);
     let municipios: Array<any> = [];
     const query =  'query=LugarPadre.Id:' +  valor +
@@ -127,18 +126,16 @@ export class InfoBasicaComponent implements OnInit {
           });
         }
         municipios.unshift(this.formulario.campos[6].opciones[0]);
-        console.info("municipios");
-        console.info(municipios);
         this.formulario.campos[6].opciones = municipios;
       });
   }
 
-  cargarPaises2(valor): void {
+  cargarDepartamentos(valor): void {
     console.info(valor);
     let departamentos: Array<any> = [];
-    const query =  'query=LugarPadre.Id:' +  valor+
-                   ',LugarHijo.TipoLugar.Id:4' +
-                   ',Activo:true';
+    const query = 'query=LugarPadre.Id:' +  valor +
+                  ',LugarHijo.TipoLugar.Id:4' +
+                  ',Activo:true';
     this.ubicacionService.get('relacion_lugares', new URLSearchParams(query))
       .subscribe(res => {
         if (res !== null) {
@@ -152,8 +149,6 @@ export class InfoBasicaComponent implements OnInit {
         }
 
         departamentos.unshift(this.formulario.campos[5].opciones[0]);
-        console.info("departamentos");
-        console.info(departamentos);
         this.formulario.campos[5].opciones = departamentos;
       });
   }
