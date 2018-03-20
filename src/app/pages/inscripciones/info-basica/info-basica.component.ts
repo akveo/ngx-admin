@@ -91,7 +91,8 @@ export class InfoBasicaComponent implements OnInit {
                   info.DepartamentoNacimiento = { Id: resDepartamento[0].LugarPadre.Id };
                   this.cargarMunicipios(info.DepartamentoNacimiento.Id);
                   // con el departamento, buscar país
-                  const queryPais =  'query=LugarHijo.Id:' + resDepartamento[0].LugarPadre.Id + ',LugarPadre.TipoLugar.Id:1';
+                  const queryPais =  'query=LugarHijo.Id:'
+                  + resDepartamento[0].LugarPadre.Id + ',LugarPadre.TipoLugar.Id:1';
                   this.ubicacionService.get('relacion_lugares', new URLSearchParams(queryPais))
                     .subscribe(resPais => {
                       if (resPais !== null) {
