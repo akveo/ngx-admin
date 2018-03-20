@@ -109,7 +109,6 @@ export class InfoBasicaComponent implements OnInit {
   }
 
   cargarMunicipios(valor): void {
-    console.info(valor);
     let municipios: Array<any> = [];
     const query =  'query=LugarPadre.Id:' +  valor +
                    ',LugarHijo.TipoLugar.Id:2' +
@@ -131,7 +130,6 @@ export class InfoBasicaComponent implements OnInit {
   }
 
   cargarDepartamentos(valor): void {
-    console.info(valor);
     let departamentos: Array<any> = [];
     const query = 'query=LugarPadre.Id:' +  valor +
                   ',LugarHijo.TipoLugar.Id:4' +
