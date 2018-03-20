@@ -75,15 +75,87 @@ export class InfoBasicaComponent implements OnInit {
   }
 
   cargarInfoPersona(): void {
+    let info: any = {};
     if (this.autenticacion.live()) {
       this.persona.get('persona/?query=Usuario:' + this.autenticacion.getPayload().sub)
         .subscribe(res => {
           if (res !== null) {
-            this.usuario = res[0];
-            this.usuario.CiudadNacimiento = { Id: this.usuario.CiudadNacimiento };
+            info = res[0];
+            info.CiudadNacimiento = { Id: info.CiudadNacimiento };
+
+            //con la ciudad buscar el departamento y país
+            const query =  'query=LugarHijo.Id:' + info.CiudadNacimiento.Id + ',LugarPadre.TipoLugar.Id:4';
+            this.ubicacionService.get('relacion_lugares', new URLSearchParams(query))
+              .subscribe(res => {
+                console.info(res);
+                if (res !== null) {
+                  info.DepartamentoNacimiento = { Id: res[0].LugarPadre.Id };
+                  this.cargarPaises3(info.DepartamentoNacimiento.Id);
+                  //con el departamento, buscar país
+                  const query =  'query=LugarHijo.Id:'+res[0].LugarPadre.Id+',LugarPadre.TipoLugar.Id:1';
+                  this.ubicacionService.get('relacion_lugares', new URLSearchParams(query))
+                    .subscribe(res => {
+                      if (res !== null) {
+                        info.PaisNacimiento = { Id: res[0].LugarPadre.Id };
+                        this.cargarPaises2(info.PaisNacimiento.Id);
+                        this.usuario = info;
+                      }
+                    });
+
+                }
+              });
           }
         });
     }
+  }
+
+  cargarPaises3(valor): void {
+    console.info(valor);
+    let municipios: Array<any> = [];
+    const query =  'query=LugarPadre.Id:' +  valor +
+                   ',LugarHijo.TipoLugar.Id:2' +
+                   ',Activo:true';
+    this.ubicacionService.get('relacion_lugares', new URLSearchParams(query))
+      .subscribe(res => {
+        if (res !== null) {
+          municipios = <Array<any>>res;
+          municipios.forEach(element => {
+            Object.defineProperty(element, 'valor',
+            Object.getOwnPropertyDescriptor(element.LugarHijo, 'Nombre'));
+            Object.defineProperty(element, 'Id',
+            Object.getOwnPropertyDescriptor(element.LugarHijo, 'Id'));
+          });
+        }
+        municipios.unshift(this.formulario.campos[6].opciones[0]);
+        console.info("municipios");
+        console.info(municipios);
+        this.formulario.campos[6].opciones = municipios;
+      });
+  }
+
+  cargarPaises2(valor): void {
+    console.info(valor);
+    let departamentos: Array<any> = [];
+    const query =  'query=LugarPadre.Id:' +  valor+
+                   ',LugarHijo.TipoLugar.Id:4' +
+                   ',Activo:true';
+    this.ubicacionService.get('relacion_lugares', new URLSearchParams(query))
+      .subscribe(res => {
+        if (res !== null) {
+          departamentos = <Array<any>>res;
+          departamentos.forEach(element => {
+            Object.defineProperty(element, 'valor',
+            Object.getOwnPropertyDescriptor(element.LugarHijo, 'Nombre'));
+            Object.defineProperty(element, 'Id',
+            Object.getOwnPropertyDescriptor(element.LugarHijo, 'Id'));
+          });
+        }
+
+        departamentos.unshift(this.formulario.campos[5].opciones[0]);
+        console.info("departamentos");
+        console.info(departamentos);
+        this.formulario.campos[5].opciones = departamentos;
+      });
   }
 
   cargarPaises(): void {
@@ -121,13 +193,12 @@ export class InfoBasicaComponent implements OnInit {
     this.persona.post('persona', persona)
       .subscribe(res => {
         this.usuario = res;
-        // this.cargarInfoPersona();
       });
   }
 
   ngOnInit() {
-    this.cargarInfoPersona();
     this.cargarPaises();
+    this.cargarInfoPersona();
   }
 
   validarForm(event) {
