@@ -54,6 +54,33 @@
         font-weight: nb-theme(font-weight-normal);
       }
     }
+    
+    .select {
+      display: inline-flex;
+      padding-right: 15px;
+      padding-left: 15px;
+      padding-top: unset;
+      padding-bottom: unset;
+      height: 34px;
+      float: left;
+      width: auto;
+    }
+
+    .icono {
+      margin-right: 5px;
+      float: left;
+      height: 32px;
+      width: 32px;
+      font-size: 1.85rem;
+    }
+
+    .login {
+      padding: 5px;
+    }
+
+    .user {
+      padding: 5px 30px;
+    }
   }
 
   .toggle-layout /deep/ a {

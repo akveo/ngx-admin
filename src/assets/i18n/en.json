@@ -1,7 +1,9 @@
 {
   "HOME": {
     "TITLE": "Virtual campus",
-    "SELECT": "Change language"
+    "SELECT": "Change language",
+    "LOGIN": "Login",
+    "LOGOUT": "Logout"
   },
   "MENU": {
     "dashboard": "Home",
@@ -12,11 +14,14 @@
       "mockup-inscription-state": "Inscription state mockup",
       "mockup-candidate-query": "Candidate query mockup",
       "mockup-candidate-information": "Candidate information mockup",
-      "mockup-choose-interviewer": "Choose interviewer-teacher mockup"    
+      "mockup-choose-interviewer": "Choose interviewer-teacher mockup"
     },
     "inscriptions": {
       "inscriptions": "Inscriptions",
       "postgraduate": "Postgraduate"
+    },
+    "certificates": {
+      "certificates": "Certificates"
     },
     "ui-features": {
       "ui-features": "UI Features",
@@ -42,7 +47,7 @@
       "maps": "Maps",
       "google-maps": "Google Maps",
       "leaflet-maps": "Leaflet Maps",
-      "bubble-maps": "Bubble Maps" 
+      "bubble-maps": "Bubble Maps"
     },
     "charts": {
       "charts": "Charts",
@@ -86,6 +91,9 @@
   },
   "DATOS_BASICOS": {
     "TITULO": "Basic information",
+    "TITULO2": "Additional information",
+    "TITULO3": "Contact information",
+    "TITULO4": "Selection of academic program",
     "PROGRAMA": "Which program you want?",
     "FOTO": "Photo",
     "GRUPO_SANGUINEO": "Blood type",
@@ -103,27 +111,95 @@
     "CODIGO_POSTAL": "Postal code",
     "TELEFONO": "Telephone",
     "TELEFONO_ALT": "Alternative telephone",
-    "SIGUIENTE": "Next"
+    "SIGUIENTE": "Next",
+    "SALIR": "Exit"
   },
   "FORMACION_ACADEMICA": {
-    "TITULO": "Academic training"
+    "TITULO": "Academic training",
+    "AVISO": "To add the academic training, enter the respective information and press the add button. Do this for each study that you have.",
+    "NIVEL_FORMACION": "Training level",
+    "ANIO_INICIO": "Starting year",
+    "ANIO_FIN": "Graduation year",
+    "PAIS_UNIVERSIDAD": "University country",
+    "CIUDAD_UNIVERSIDAD": "University city",
+    "NOMBRE_UNIVERSIDAD": "Universisy name",
+    "MODALIDAD": "Study mode",
+    "TITULO_OBTENIDO": "Obtained title",
+    "TITULO_TRABAJO_GRADO": "Thesis title",
+    "DESCRIPCION_TRABAJO_GRADO": "Thesis description",
+    "AGREGAR": "Add information",
+    "ELIMINAR": "Delete",
+    "SIGUIENTE": "Next",
+    "SALIR": "Exit",
+    "MENSAJE": "Are you sure you want to delete?"
   },
   "FORMACION_LABORAL": {
-    "TITULO": "Job training"
+    "TITULO": "Job training",
+    "MENSAJE": "Are you sure you want to delete?",
+    "EMPRESA": "Company",
+    "ANIO_INICIO": "Starting date",
+    "ANIO_FIN": "Ending date",
+    "CARGO": "Role",
+    "ELIMINAR": "Delete",
+    "SIGUIENTE": "Next",
+    "SALIR": "Exit",
+    "AGREGAR": "Add information",
+    "AVISO": "To add the job training, enter the respective information and press the add button. Do this for each job performed.",
+    "NOMBRE_EMPRESA": "Company name",
+    "DIRECCION_EMPRESA": "Company address",
+    "CORREO_EMPRESA": "Company e-mail",
+    "TELEFONO_EMPRESA": "Company telephone",
+    "DESCRIPCION_CARGO": "Description of the role and its functions"
   },
   "IDIOMAS": {
-    "TITULO": "Languages"
+    "TITULO": "Languages",
+    "AVISO": "To add languages which you have knowledge, enter the respective information and press the add button. Do this for each one.",
+    "IDIOMA": "Language",
+    "NATAL": "Is it your native language?",
+    "NIVEL_ESCUCHA": "Listening level",
+    "NIVEL_ESCRITURA": "Writting level",
+    "NIVEL_LECTURA": "Reading level",
+    "NIVEL_HABLA": "Speaking level",
+    "IDIOMA_NATAL": "Native language",
+    "ELIMINAR": "Delete",
+    "AGREGAR": "Add information",
+    "SIGUIENTE": "Next",
+    "SALIR": "Exit",
+    "MENSAJE": "Are you sure you want to delete?"
   },
   "DOCUMENTOS": {
-    "TITULO": "Documents"
+    "TITULO": "Documents",
+    "SIGUIENTE": "Next",
+    "SALIR": "Exit"
   },
   "DESCUENTOS": {
-    "TITULO": "Discounts"
+    "TITULO": "Discounts",
+    "INDICACION": "Indicate which of these discounts you have, add the respective soport",
+    "DESCUENTO_ELECTORAL": "If you are colombian and of legal age, do you have the voting certificate of the last elections?",
+    "USO_DESCUENTO": "Have you used any benefit and / or discount to study at the Universidad Distrital Francisco José de Caldas?",
+    "DESCUENTO_EGRESADO": "Are you a graduate of the Universidad Distrital Francisco José de Caldas?",
+    "DESCUENTO_MONITOR": "Were you an academic or administrative assistant of the Universidad Distrital Francisco José de Caldas?",
+    "DESCUENTO_CONCEJO": "Have you been a student representative by the university superior council, academic council or faculty council of the Universidad Distrital Francisco José de Caldas?",
+    "DESCUENTO_PLANTA": "Are you a staff member of the Universidad Distrital Francisco José de Caldas or a family member of one of them?",
+    "DESCUENTO_ECAES": "Are you a person with a scholarship for your performance in the Saber-Pro test (before ECAES) of graduates of the Universidad Distrital Francisco José de Caldas?",
+    "NO": "No",
+    "SI": "Yes",
+    "SOPORTE": "Attach the soport document",
+    "SIGUIENTE": "Next",
+    "SALIR": "Exit"
   },
   "PROPUESTA_TRABAJO_GRADO": {
-    "TITULO": "Thesis proporsal"
+    "TITULO": "Thesis proporsal",
+    "GRUPO_INVESTIGACION": "What research group do you want to your thesis?",
+    "LINEA_INVESTIGACION": "What research line do you want to follow for your thesis?",
+    "TITULO_PROPUESTA": "Thesis proporsal title",
+    "ARCHIVO_PROPUESTA": "Thesis proporsal",
+    "SIGUIENTE": "Next",
+    "SALIR": "Exit"
   },
   "ENVIO": {
-    "TITULO": "Finish"
+    "TITULO": "Finish",
+    "AVISO": "Thank you for registering",
+    "ENVIAR": "Send"
   }
 }

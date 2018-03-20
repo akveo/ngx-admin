@@ -10,6 +10,7 @@ import { Component } from '@angular/core';
       </a> and led to the introduction of washing machines (1904), water heaters (1889), refrigerators, sewing machines,
       dishwashers, and clothes dryers.
     </p>
+    <input type="text">
   `,
 })
 export class Tab1Component { }

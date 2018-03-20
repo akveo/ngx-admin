@@ -17,6 +17,9 @@ const routes: Routes = [{
     path: 'inscripciones',
     loadChildren: './inscripciones/inscripciones.module#InscripcionesModule',
   }, {
+    path: 'certificados',
+    loadChildren: './certificados/certificados.module#CertificadosModule',
+  }, {
     path: 'ui-features',
     loadChildren: './ui-features/ui-features.module#UiFeaturesModule',
   }, {
