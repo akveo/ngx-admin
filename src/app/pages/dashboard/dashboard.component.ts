@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
-import {NgbCarouselConfig} from '@ng-bootstrap/ng-bootstrap';
+import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 
 
 @Component({
   selector: 'ngx-dashboard',
   styleUrls: ['./dashboard.component.scss'],
   templateUrl: './dashboard.component.html',
-  providers: [NgbCarouselConfig] // add NgbCarouselConfig to the component providers
+  providers: [NgbCarouselConfig], // add NgbCarouselConfig to the component providers
 })
 export class DashboardComponent {
   constructor(config: NgbCarouselConfig) {
