@@ -1,0 +1,14 @@
+@import '../../../../@theme/styles/themes';
+
+@include nb-install-component() {
+
+  display: block;
+  height: nb-theme(card-height-small);
+  width: 100%;
+
+  /deep/ chart {
+    display: block;
+    height: 100%;
+    width: 100%;
+  }
+}

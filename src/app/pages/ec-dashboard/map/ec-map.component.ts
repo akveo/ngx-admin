@@ -1,9 +1,10 @@
-import {Component} from '@angular/core';
+import {Component, ViewChild} from '@angular/core';
 
 import * as L from 'leaflet';
 import 'style-loader!leaflet/dist/leaflet.css';
 
 import {EcMapService} from './ec-map.service';
+
 
 @Component({
   selector: 'ngx-ec-map',
@@ -12,12 +13,19 @@ import {EcMapService} from './ec-map.service';
     <nb-card>
       <nb-card-header>Leaflet Maps</nb-card-header>
       <nb-card-body>
-        <div leaflet [leafletOptions]="options" [leafletLayers]="layers"></div>
+        <div class="container">
+          <div leaflet [leafletOptions]="options" [leafletLayers]="layers"></div>
+          <ngx-ec-map-chart [categories]="selectedCategories" [values]="selectedValues"></ngx-ec-map-chart>
+        </div>
       </nb-card-body>
     </nb-card>
   `,
 })
 export class EcMapComponent {
+
+
+  selectedCategories: string[];
+  selectedValues: number[];
 
   layers = [];
 
@@ -25,7 +33,7 @@ export class EcMapComponent {
     layers: [
       L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {maxZoom: 18, attribution: '...'}),
     ],
-    zoom: 5,
+    zoom: 3,
     center: L.latLng({lat: 38.991709, lng: -76.886109}),
   };
 
@@ -41,15 +49,21 @@ export class EcMapComponent {
       (cords) as any,
       {
         style: () => ({color: '#00d977'}),
-        onEachFeature: (f, l) => { this.onEachFeature(f, l) },
+        onEachFeature: (f, l) => {
+          this.onEachFeature(f, l)
+        },
       })
   }
 
   private onEachFeature(feature, layer) {
     layer.on({
       mouseover: this.highlightFeature,
-      mouseout: (e) => { this.resetHighlight(e) },
-      click: this.selectFeature,
+      mouseout: (e) => {
+        this.resetHighlight(e)
+      },
+      click: (e) => {
+        this.selectFeature(e)
+      },
     });
   }
 
@@ -74,6 +88,8 @@ export class EcMapComponent {
   }
 
   private selectFeature(e) {
+    this.selectedCategories = e.target.feature.properties.categories;
+    this.selectedValues = e.target.feature.properties.values;
   }
 
 }

@@ -6,8 +6,18 @@
     padding: 0;
   }
 
-  /deep/ .leaflet-container {
-    width: 100%;
-    height: nb-theme(card-height-large);
+  .container {
+    display: flex;
+    flex-direction: row;
   }
+
+  /deep/ .leaflet-container {
+    height: nb-theme(card-height-small);
+    flex: 2;
+  }
+
+  /deep/ ngx-ec-map-chart {
+    flex: 3;
+  }
+
 }
