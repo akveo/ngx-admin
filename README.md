@@ -9,7 +9,7 @@
 
 | Cosmic Theme | Business Theme |
 |:------------:|:--------------:|
-|<a target="_blank" href="http://akveo.com/ngx-admin/"><img src="https://i.imgur.com/FgRZcqL.png"/></a>|<a target="_blank" href="http://akveo.com/ngx-admin/"><img src="https://i.imgur.com/fozHlRJ.png"/></a>|
+|<a target="_blank" href="http://akveo.com/ngx-admin/?theme=cosmic"><img src="https://i.imgur.com/FgRZcqL.png"/></a>|<a target="_blank" href="http://akveo.com/ngx-admin/?theme=default"><img src="https://i.imgur.com/fozHlRJ.png"/></a>|
 
 ### What's included:
 
