@@ -1,5 +1,6 @@
-import { Component, HostBinding, OnDestroy } from '@angular/core';
+import { Component, HostBinding, OnDestroy, Inject, PLATFORM_ID } from '@angular/core';
 import { NbThemeService, NbMediaBreakpoint, NbMediaBreakpointsService } from '@nebular/theme';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'ngx-rooms',
@@ -21,15 +22,18 @@ export class RoomsComponent implements OnDestroy {
   breakpoint: NbMediaBreakpoint;
   breakpoints: any;
   themeSubscription: any;
+  isPlatformBrowser: boolean;
 
   constructor(private themeService: NbThemeService,
-              private breakpointService: NbMediaBreakpointsService) {
+              private breakpointService: NbMediaBreakpointsService,
+              @Inject(PLATFORM_ID) platformId: Object) {
 
     this.breakpoints = this.breakpointService.getBreakpointsMap();
     this.themeSubscription = this.themeService.onMediaQueryChange()
       .subscribe(([oldValue, newValue]) => {
         this.breakpoint = newValue;
       });
+    this.isPlatformBrowser = isPlatformBrowser(platformId);
   }
 
   select(roomNumber) {
@@ -51,7 +55,7 @@ export class RoomsComponent implements OnDestroy {
   }
 
   isCollapsed() {
-    return !this.expanded;
+    return this.isPlatformBrowser && !this.expanded;
   }
 
   private isSelected(roomNumber): boolean {
