@@ -1,5 +1,6 @@
-import { Component, OnDestroy } from '@angular/core';
+import { Component, OnDestroy, Inject, PLATFORM_ID } from '@angular/core';
 import { NbThemeService, NbMediaBreakpoint, NbMediaBreakpointsService } from '@nebular/theme';
+import { isPlatformServer } from '@angular/common';
 
 @Component({
   selector: 'ngx-typography',
@@ -12,13 +13,21 @@ export class TypographyComponent implements OnDestroy {
   themeSubscription: any;
 
   constructor(private themeService: NbThemeService,
-              private breakpointService: NbMediaBreakpointsService) {
+              private breakpointService: NbMediaBreakpointsService,
+              @Inject(PLATFORM_ID) private platformId: Object,
+  ) {
 
     this.breakpoints = this.breakpointService.getBreakpointsMap();
     this.themeSubscription = this.themeService.onMediaQueryChange()
       .subscribe(([oldValue, newValue]) => {
         this.breakpoint = newValue;
       });
+  }
+
+  getCardSize() {
+    return isPlatformServer(this.platformId) || this.breakpoint.width >= this.breakpoints.xxxl
+      ? 'xxlarge'
+      : 'large';
   }
 
   ngOnDestroy() {
