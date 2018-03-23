@@ -3,20 +3,14 @@ import { NavigationEnd, Router } from '@angular/router';
 import { Location } from '@angular/common';
 
 import { filter } from 'rxjs/operator/filter';
-import { NbThemeService } from '@nebular/theme';
 
 declare const ga: any;
 
 @Injectable()
 export class AnalyticsService {
-  private enabled: boolean;
+  private enabled = true;
 
-  constructor(private location: Location, private router: Router, private themeService: NbThemeService) {
-    this.enabled = false;
-
-    document.addEventListener('variant-load', (e) => {
-      this.themeService.changeTheme('default');
-    }, false);
+  constructor(private location: Location, private router: Router) {
   }
 
   trackPageViews() {
@@ -28,9 +22,9 @@ export class AnalyticsService {
     }
   }
 
-  trackEvent(eventName: string) {
+  trackEvent(eventName: string, eventVal: string = '') {
     if (this.enabled) {
-      ga('send', 'event', eventName);
+      ga('send', 'event', eventName, eventVal);
     }
   }
 }
