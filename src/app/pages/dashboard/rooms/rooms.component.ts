@@ -6,7 +6,7 @@ import { isPlatformBrowser } from '@angular/common';
   selector: 'ngx-rooms',
   styleUrls: ['./rooms.component.scss'],
   template: `
-    <nb-card [size]="breakpoint?.width >= breakpoints.sm ? 'large' : 'medium'">
+    <nb-card [size]="getCardSize()">
       <i (click)="collapse()" class="nb-arrow-down collapse" [hidden]="isCollapsed()"></i>
       <ngx-room-selector (select)="select($event)"></ngx-room-selector>
       <ngx-player [collapsed]="isCollapsed() && breakpoint?.width <= breakpoints.md"></ngx-player>
@@ -60,6 +60,13 @@ export class RoomsComponent implements OnDestroy {
 
   private isSelected(roomNumber): boolean {
     return this.selected === roomNumber;
+  }
+
+  getCardSize() {
+    const isPlatformServer = !this.isPlatformBrowser;
+    return isPlatformServer || this.breakpoint.width >= this.breakpoints.sm
+      ? 'large'
+      : 'medium';
   }
 
   ngOnDestroy() {
