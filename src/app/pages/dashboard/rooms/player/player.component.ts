@@ -78,7 +78,9 @@ export class PlayerComponent implements OnDestroy {
   }
 
   getVolume(): number {
-    return this.player.volume * 100;
+    return isPlatformBrowser(this.platformId)
+      ? this.player.volume * 100
+      : 50;
   }
 
   setProgress(duration: number) {
