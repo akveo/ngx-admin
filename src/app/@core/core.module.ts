@@ -1,6 +1,6 @@
-import { ModuleWithProviders, NgModule, Optional, SkipSelf } from '@angular/core';
+import { ModuleWithProviders, NgModule, Optional, SkipSelf, PLATFORM_ID } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NbAuthModule, NbDummyAuthProvider } from '@nebular/auth';
+import { NbAuthModule, NbDummyAuthProvider, NB_AUTH_TOKEN_CLASS, NbTokenStorage } from '@nebular/auth';
 import { NbSecurityModule, NbRoleProvider } from '@nebular/security';
 import { of as observableOf } from 'rxjs/observable/of';
 
@@ -8,6 +8,7 @@ import { throwIfAlreadyLoaded } from './module-import-guard';
 import { DataModule } from './data/data.module';
 import { AnalyticsService } from './utils/analytics.service';
 import { DeviceDetectorModule } from 'ngx-device-detector';
+import { tokenStorageFactory } from './auth/token-storage.factory';
 
 const socialLinks = [
   {
@@ -73,6 +74,11 @@ const NB_CORE_PROVIDERS = [
   },
   AnalyticsService,
   DeviceDetectorModule.forRoot().providers,
+  {
+    provide: NbTokenStorage,
+    useFactory: tokenStorageFactory,
+    deps: [ PLATFORM_ID, NB_AUTH_TOKEN_CLASS ],
+  },
 ];
 
 @NgModule({
