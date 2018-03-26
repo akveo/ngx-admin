@@ -1,5 +1,1 @@
-export class MapsAPILoader {
-  load() {
-    return Promise.resolve();
-  }
-}
+export class MapsAPILoader {}

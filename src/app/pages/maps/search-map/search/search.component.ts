@@ -1,7 +1,17 @@
-import { Component, ElementRef, EventEmitter, NgZone, OnInit, Output, ViewChild } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  EventEmitter,
+  NgZone,
+  OnInit,
+  Output,
+  ViewChild,
+  PLATFORM_ID,
+  Inject } from '@angular/core';
 import { MapsAPILoader } from '@agm/core';
 import { Location } from '../entity/Location';
 import {} from 'googlemaps';
+import { isPlatformServer } from '@angular/common';
 
 @Component({
   selector: 'ngx-search',
@@ -15,10 +25,15 @@ export class SearchComponent implements OnInit {
   public searchElementRef: ElementRef;
 
   constructor(private mapsAPILoader: MapsAPILoader,
-              private ngZone: NgZone) {
+              private ngZone: NgZone,
+              @Inject(PLATFORM_ID) private platformId: Object) {
   }
 
   ngOnInit() {
+    if (isPlatformServer(this.platformId)) {
+      return;
+    }
+
     // load Places Autocomplete
     this.mapsAPILoader.load().then(() => {
       const autocomplete = new google.maps.places.Autocomplete(this.searchElementRef.nativeElement, {
