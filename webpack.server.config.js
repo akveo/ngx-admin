@@ -11,6 +11,7 @@ const ngCkeditorMockPath = join(mocksPath, 'ng2-ckeditor/ng2-ckeditor.module');
 const ngxEchartMockPath = join(mocksPath, 'ngx-echarts/ngx-echarts.module');
 const agmMock = join(mocksPath, 'agm/agm.module');
 const chartjsMock = join(mocksPath, 'ng2-chartjs/ng2-chartjs.module');
+const ngxChartsMock = join(mocksPath, 'ngx-charts/ngx-charts.module');
 
 module.exports = {
   entry: { server: './server.ts' },
@@ -62,6 +63,10 @@ module.exports = {
     new webpack.NormalModuleReplacementPlugin(
       /^angular2-chartjs$/,
       chartjsMock
+    ),
+    new webpack.NormalModuleReplacementPlugin(
+      /^@swimlane\/ngx-charts$/,
+      ngxChartsMock
     ),
   ]
 }
