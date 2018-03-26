@@ -3,7 +3,7 @@ const webpack = require('webpack');
 
 const srcPath = join(__dirname, 'src');
 const distPath = join(__dirname, 'dist');
-const mocksPath = join(srcPath, 'app/pages/server-mocks');
+const mocksPath = join(srcPath, 'app/@theme/server-mocks');
 
 const noopMockPath = join(mocksPath, 'noop');
 const leafletMockPath = join(mocksPath, 'ngx-leaflet/ngx-leaflet.module');
