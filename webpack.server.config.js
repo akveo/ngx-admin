@@ -9,6 +9,7 @@ const noopMockPath = join(mocksPath, 'noop');
 const leafletMockPath = join(mocksPath, 'ngx-leaflet/ngx-leaflet.module');
 const ngCkeditorMockPath = join(mocksPath, 'ng2-ckeditor/ng2-ckeditor.module');
 const ngxEchartMockPath = join(mocksPath, 'ngx-echarts/ngx-echarts.module');
+const agmMock = join(mocksPath, 'agm/agm.module');
 const chartjsMock = join(mocksPath, 'ng2-chartjs/ng2-chartjs.module');
 
 module.exports = {
@@ -53,6 +54,10 @@ module.exports = {
     new webpack.NormalModuleReplacementPlugin(
       /^ngx-echarts$/,
       ngxEchartMockPath
+    ),
+    new webpack.NormalModuleReplacementPlugin(
+      /^@agm\/core$/,
+      agmMock
     ),
     new webpack.NormalModuleReplacementPlugin(
       /^angular2-chartjs$/,
