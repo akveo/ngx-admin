@@ -1,4 +1,14 @@
-import { Component, OnDestroy, AfterViewInit, Output, EventEmitter, ElementRef } from '@angular/core';
+import {
+  Component,
+  OnDestroy,
+  AfterViewInit,
+  Output,
+  EventEmitter,
+  ElementRef,
+  Inject,
+  PLATFORM_ID,
+} from '@angular/core';
+import { isPlatformServer } from '@angular/common';
 
 @Component({
   selector: 'ngx-tiny-mce',
@@ -9,10 +19,21 @@ export class TinyMCEComponent implements OnDestroy, AfterViewInit {
   @Output() editorKeyup = new EventEmitter<any>();
 
   editor: any;
+  isServer: boolean;
 
-  constructor(private host: ElementRef) { }
+  constructor(
+    private host: ElementRef,
+    @Inject(PLATFORM_ID) platformId: Object,
+  ) {
+
+    this.isServer = isPlatformServer(platformId)
+  }
 
   ngAfterViewInit() {
+    if (this.isServer) {
+      return;
+    }
+
     tinymce.init({
       target: this.host.nativeElement,
       plugins: ['link', 'paste', 'table'],
@@ -28,6 +49,10 @@ export class TinyMCEComponent implements OnDestroy, AfterViewInit {
   }
 
   ngOnDestroy() {
+    if (this.isServer) {
+      return;
+    }
+
     tinymce.remove(this.editor);
   }
 }
