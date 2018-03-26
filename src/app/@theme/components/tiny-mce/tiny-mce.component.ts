@@ -37,6 +37,7 @@ export class TinyMCEComponent implements OnDestroy, AfterViewInit {
     tinymce.init({
       target: this.host.nativeElement,
       plugins: ['link', 'paste', 'table'],
+      document_base_url: '/',
       skin_url: 'assets/skins/lightgray',
       setup: editor => {
         this.editor = editor;
