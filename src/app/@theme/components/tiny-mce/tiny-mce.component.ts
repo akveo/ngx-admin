@@ -26,7 +26,7 @@ export class TinyMCEComponent implements OnDestroy, AfterViewInit {
     @Inject(PLATFORM_ID) platformId: Object,
   ) {
 
-    this.isServer = isPlatformServer(platformId)
+    this.isServer = isPlatformServer(platformId);
   }
 
   ngAfterViewInit() {
