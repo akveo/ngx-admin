@@ -11,6 +11,7 @@
         "assets",
         "favicon.ico",
         "favicon.png",
+        "google46533d2e7a851062.html",
         {
           "glob": "**/*",
           "input": "../node_modules/leaflet/dist/images",
