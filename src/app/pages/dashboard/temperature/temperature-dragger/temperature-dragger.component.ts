@@ -11,6 +11,7 @@ import {
   Inject,
   PLATFORM_ID,
   Optional,
+  ChangeDetectorRef,
 } from '@angular/core';
 import { Router } from '@angular/router';
 import { REQUEST } from '@nguniversal/express-engine';
@@ -92,6 +93,7 @@ export class TemperatureDraggerComponent implements AfterViewInit, OnChanges {
     private router: Router,
     @Inject(PLATFORM_ID) private platformId: Object,
     @Optional() @Inject(REQUEST) private req,
+    private cd: ChangeDetectorRef,
   ) {
     this.oldValue = this.value;
   }
@@ -104,11 +106,9 @@ export class TemperatureDraggerComponent implements AfterViewInit, OnChanges {
   }
 
   ngAfterViewInit(): void {
-    // IE fix
-    setTimeout(() => {
-      this.invalidate();
-      this.init = true;
-    });
+    this.invalidate();
+    this.init = true;
+    this.cd.detectChanges();
   }
 
   ngOnChanges(): void {
