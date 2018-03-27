@@ -27,8 +27,13 @@
         <path [attr.d]="styles.nonSelectedArc.d" [attr.fill]="styles.nonSelectedArc.color" *ngFor="let number of [0,1,2,3,4,5]"></path>
       </g>
 
-      <circle [attr.cx]="styles.thumbPosition.x" [attr.cy]="styles.thumbPosition.y" [attr.r]="pinRadius"
-              [attr.stroke-width]="thumbBorder" class="circle"></circle>
+      <circle
+        *ngIf="styles.thumbPosition.x && styles.thumbPosition.y"
+        [attr.cx]="styles.thumbPosition.x"
+        [attr.cy]="styles.thumbPosition.y"
+        [attr.r]="pinRadius"
+        [attr.stroke-width]="thumbBorder" class="circle">
+      </circle>
     </g>
   </svg>
 </div>
