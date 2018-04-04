@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-  // tslint:disable-next-line
+  // tslint:disable-next-line:component-selector
   selector: 'ckeditor',
   template: '',
 })
