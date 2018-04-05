@@ -44,7 +44,7 @@ import 'rxjs/add/operator/delay';
         <nb-menu [items]="subMenu"></nb-menu>
       </nb-layout-column>
 
-      <nb-layout-column right class="small" *ngIf="layout.id === 'three-column'">
+      <nb-layout-column class="small" *ngIf="layout.id === 'three-column'">
         <nb-menu [items]="subMenu"></nb-menu>
       </nb-layout-column>
 
