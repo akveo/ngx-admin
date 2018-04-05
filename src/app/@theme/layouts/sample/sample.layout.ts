@@ -40,7 +40,7 @@ import 'rxjs/add/operator/delay';
         <ng-content select="router-outlet"></ng-content>
       </nb-layout-column>
 
-      <nb-layout-column left class="small" *ngIf="layout.id === 'two-column' || layout.id === 'three-column'">
+      <nb-layout-column start class="small" *ngIf="layout.id === 'two-column' || layout.id === 'three-column'">
         <nb-menu [items]="subMenu"></nb-menu>
       </nb-layout-column>
 
