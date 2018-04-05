@@ -1,4 +1,4 @@
-import { Component, HostBinding, ElementRef } from '@angular/core';
+import { Component, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'ngx-loader',

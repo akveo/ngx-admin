@@ -1,11 +1,4 @@
-import {
-  ViewContainerRef,
-  ComponentFactoryResolver,
-  Injectable,
-  ElementRef,
-  Renderer2,
-  EmbeddedViewRef,
-} from '@angular/core';
+import { ViewContainerRef, ComponentFactoryResolver, Injectable, ElementRef, Renderer2 } from '@angular/core';
 import { LoaderComponent } from './loader.component';
 
 @Injectable()
