@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'ngx-charts-advanced-pie-chart',
-  template: '',
+  template: '<ngx-loader></ngx-loader>',
 })
 export class AdvancedPieComponent {
   @Input() scheme;
@@ -11,7 +11,7 @@ export class AdvancedPieComponent {
 
 @Component({
   selector: 'ngx-charts-area-chart',
-  template: '',
+  template: '<ngx-loader></ngx-loader>',
 })
 export class AreaStackComponent {
   @Input() scheme;
@@ -28,7 +28,7 @@ export class AreaStackComponent {
 
 @Component({
   selector: 'ngx-charts-bar-vertical',
-  template: '',
+  template: '<ngx-loader></ngx-loader>',
 })
 export class BarComponent {
   @Input() scheme;
@@ -42,7 +42,7 @@ export class BarComponent {
 
 @Component({
   selector: 'ngx-charts-line-chart',
-  template: '',
+  template: '<ngx-loader></ngx-loader>',
 })
 export class LineComponent {
   @Input() scheme;
@@ -58,7 +58,7 @@ export class LineComponent {
 
 @Component({
   selector: 'ngx-charts-pie-chart',
-  template: '',
+  template: '<ngx-loader></ngx-loader>',
 })
 export class PieComponent {
   @Input() scheme;
@@ -69,7 +69,7 @@ export class PieComponent {
 
 @Component({
   selector: 'ngx-charts-polar-chart',
-  template: '',
+  template: '<ngx-loader></ngx-loader>',
 })
 export class PolarComponent {
   @Input() scheme;

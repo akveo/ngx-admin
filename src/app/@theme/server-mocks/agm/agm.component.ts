@@ -3,7 +3,7 @@ import { Component, Input } from '@angular/core';
 @Component({
   // tslint:disable-next-line:component-selector
   selector: 'agm-map',
-  template: '',
+  template: '<ngx-loader></ngx-loader>',
 })
 export class AgmComponent {
   @Input() latitude;

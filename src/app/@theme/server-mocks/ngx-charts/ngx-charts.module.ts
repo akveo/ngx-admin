@@ -8,6 +8,7 @@ import {
   PieComponent,
   PolarComponent,
 } from './components';
+import { LoaderModule } from '../loader/loader.module';
 
 const components = [
   AdvancedPieComponent,
@@ -19,6 +20,7 @@ const components = [
 ];
 
 @NgModule({
+  imports: [ LoaderModule ],
   declarations: [ ...components ],
   exports: [ ...components ],
 })

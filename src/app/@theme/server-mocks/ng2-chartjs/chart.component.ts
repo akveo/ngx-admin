@@ -3,7 +3,7 @@ import { Component, Input } from '@angular/core';
 @Component({
   // tslint:disable-next-line:component-selector
   selector: 'chart',
-  template: '',
+  template: '<ngx-loader></ngx-loader>',
 })
 export class ChartComponent {
   @Input() type;
