@@ -21,13 +21,13 @@ import 'rxjs/add/operator/delay';
   template: `
     <nb-layout [center]="layout.id === 'center-column'" windowMode>
       <nb-layout-header fixed>
-        <ngx-header [position]="sidebar.id === 'left' ? 'normal': 'inverse'"></ngx-header>
+        <ngx-header [position]="sidebar.id === 'start' ? 'normal': 'inverse'"></ngx-header>
       </nb-layout-header>
 
       <nb-sidebar class="menu-sidebar"
                    tag="menu-sidebar"
                    responsive
-                   [right]="sidebar.id === 'right'">
+                   [end]="sidebar.id === 'end'">
         <nb-sidebar-header>
           <a href="#" class="btn btn-hero-success main-btn">
             <i class="ion ion-social-github"></i> <span>Support Us</span>
@@ -56,7 +56,7 @@ import 'rxjs/add/operator/delay';
                    tag="settings-sidebar"
                    state="collapsed"
                    fixed
-                   [right]="sidebar.id !== 'right'">
+                   [end]="sidebar.id !== 'end'">
         <ngx-theme-settings></ngx-theme-settings>
       </nb-sidebar>
     </nb-layout>

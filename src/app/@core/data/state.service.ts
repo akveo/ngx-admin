@@ -30,13 +30,13 @@ export class StateService {
     {
       name: 'Left Sidebar',
       icon: 'nb-layout-sidebar-left',
-      id: 'left',
+      id: 'start',
       selected: true,
     },
     {
       name: 'Right Sidebar',
       icon: 'nb-layout-sidebar-right',
-      id: 'right',
+      id: 'end',
     },
   ];
 
