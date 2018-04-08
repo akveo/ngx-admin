@@ -1,0 +1,7 @@
+<header1 [data]="data"></header1>
+<p>
+  lesson1 works!
+</p>
+<div *ngFor="let item of colors; let i = index;" [style.color]="item">{{item+i}}</div>
+<div>{{"what-is-this?"|toCamel|slice:2}}</div>
+<div (sendMessage)="send()" appDemo>this is a send</div>

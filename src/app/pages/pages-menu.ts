@@ -142,6 +142,16 @@ export const MENU_ITEMS: NbMenuItem[] = [
     ],
   },
   {
+    title: 'Lessons',
+    icon: 'nb-tables',
+    children: [
+      {
+        title: 'Lesson1',
+        link: '/pages/lessons/lesson1',
+      },
+    ],
+  },
+  {
     title: 'Auth',
     icon: 'nb-locked',
     children: [
