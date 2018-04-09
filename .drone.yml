@@ -22,11 +22,11 @@ publish:
   # upload directory dist/ to s3 bucket
   s3_sync:
     region: "us-east-1"
-    bucket: "drone-helper-bucket"
+    bucket: "cliente-develop"
     access_key: $$DRONE_AWS_ACCESS_KEY_ID
     secret_key: $$DRONE_AWS_SECRET_ACCESS_KEY
     source: dist
-    target: /client/campus_cliente-$$BRANCH
+    target: /campus_cliente-$$BRANCH
     delete: true
     when:
       branch: develop
