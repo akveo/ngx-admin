@@ -2,11 +2,6 @@
 @import '~bootstrap/scss/mixins/breakpoints';
 @import '~@nebular/theme/styles/global/bootstrap/breakpoints';
 
-ngb-carousel ng-template img {
-  width: 100%;
-  height: 100%;
-}
-
 @include nb-install-component() {
   .solar-card nb-card-header {
     border: none;
