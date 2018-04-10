@@ -32,19 +32,19 @@ publish:
       branch: develop
       event: push
 
-# notify:
-#
-#   # notify telegram
-#   webhook:
-#     urls:
-#       - https://api.telegram.org/bot$$DRONE_TELEGRAM_TOKEN/sendMessage
-#     content_type: application/json
-#     template: >
-#       {
-#         "chat_id": "-129350403",
-#         "parse_mode": "Markdown",
-#         "text": "`{{repo.full_name}}` [{{uppercase build.status}}]({{build.link_url}}) `{{build.branch}}`@{{truncate build.commit 7}}"
-#       }
-#     when:
-#       branch: develop
-#       event: push
+notify:
+
+  # notify telegram
+  webhook:
+    urls:
+      - https://api.telegram.org/bot$$DRONE_TELEGRAM_TOKEN/sendMessage
+    content_type: application/json
+    template: >
+      {
+        "chat_id": "-129350403",
+        "parse_mode": "Markdown",
+        "text": "`{{repo.full_name}}` [{{uppercase build.status}}]({{build.link_url}}) `{{build.branch}}`@{{truncate build.commit 7}}"
+      }
+    when:
+      branch: develop
+      event: push
