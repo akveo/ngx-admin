@@ -8,10 +8,9 @@ declare const ga: any;
 
 @Injectable()
 export class AnalyticsService {
-  private enabled: boolean;
+  private enabled = true;
 
   constructor(private location: Location, private router: Router) {
-    this.enabled = false;
   }
 
   trackPageViews() {
@@ -23,9 +22,9 @@ export class AnalyticsService {
     }
   }
 
-  trackEvent(eventName: string) {
+  trackEvent(eventName: string, eventVal: string = '') {
     if (this.enabled) {
-      ga('send', 'event', eventName);
+      ga('send', 'event', eventName, eventVal);
     }
   }
 }
