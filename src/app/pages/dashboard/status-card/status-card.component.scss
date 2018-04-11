@@ -140,3 +140,25 @@
     }
   }
 }
+
+@include nb-install-component('[dir=rtl]') {
+  nb-card .details {
+    padding: 0 0.75rem 0 0.5rem;
+  }
+
+  @include nb-for-theme(cosmic) {
+    nb-card {
+      &.off .icon-container {
+        border-right: none;
+        border-left: 1px solid nb-theme(separator);
+      }
+      .icon {
+        border-radius: 0 nb-theme(card-border-radius) nb-theme(card-border-radius) 0;
+      }
+      .details {
+        padding-left: 1.25rem;
+        padding: 0 0.75rem 0 0.5rem;
+      }
+    }
+  }
+}
