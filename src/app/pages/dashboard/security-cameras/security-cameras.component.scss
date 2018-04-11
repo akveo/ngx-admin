@@ -155,3 +155,17 @@
     }
   }
 }
+
+@include nb-install-component('[dir=rtl]') {
+  .cameras-filter {
+    a:first-child {
+      border-left: none;
+      border-right: 1px solid nb-theme(separator);
+    }
+
+    a:last-child {
+      border-top-left-radius: nb-theme(card-border-radius);
+      border-top-right-radius: 0;
+    }
+  }
+}
