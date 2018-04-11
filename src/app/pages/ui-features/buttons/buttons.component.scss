@@ -46,6 +46,7 @@
         flex-direction: column;
         justify-content: center;
         margin-left: 1rem;
+        margin-right: 1rem;
         height: $button-size;
       }
     }
@@ -90,6 +91,22 @@
     ngx-block-level-buttons /deep/ {
       .btn-primary {
         padding: 0.75rem 1rem;
+      }
+    }
+  }
+}
+
+@include nb-install-component('[dir=rtl]') {
+  /deep/ .example-container {
+    padding-left: 0;
+    padding-right: 15px;
+  }
+
+  @include media-breakpoint-down(xs) {
+    /deep/.icon-buttons .icon-button-examples {
+      button {
+        margin-left: 1em;
+        margin-right: 0;
       }
     }
   }
