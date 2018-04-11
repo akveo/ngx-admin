@@ -28,8 +28,8 @@ publish:
     access_key: $$DRONE_AWS_ACCESS_KEY_ID
     secret_key: $$DRONE_AWS_SECRET_ACCESS_KEY
     source: test.txt
-    target: /campus_cliente-$$BRANCH
-    delete: false
+    target: /campus_cliente-$$BRANCH/
+    delete: true
     when:
       branch: develop
       event: push
