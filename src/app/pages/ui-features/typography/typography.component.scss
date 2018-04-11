@@ -124,3 +124,10 @@
     background: nb-theme(link-color);
   }
 }
+
+@include nb-install-component('[dir=rtl]') {
+  .colors .color {
+    margin-left: 1rem;
+    margin-right: 0;
+  }
+}
