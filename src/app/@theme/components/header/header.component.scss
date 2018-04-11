@@ -113,3 +113,15 @@
   }
 }
 
+@include nb-install-component('[dir=rtl]') {
+  .header-container {
+    .navigation {
+      padding-left: nb-theme(padding);
+      padding-right: 0;
+    }
+    .logo {
+      border-right: 1px solid nb-theme(separator);
+      border-left: none;
+    }
+  }
+}
