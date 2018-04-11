@@ -9,6 +9,7 @@ build:
     commands:
      - apt-get update -y
      - echo 'prueba rsync to S3' > test.txt
+     - echo $test.txt
      # - apt-get install -y zip
      # - npm install
      # - npm run lint:ci
