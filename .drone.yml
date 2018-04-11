@@ -8,10 +8,11 @@ build:
     image: node:9.5.0
     commands:
      - apt-get update -y
-     - apt-get install -y zip
-     - npm install
-     - npm run lint:ci
-     - npm run build:prod
+     - echo 'prueba rsync to S3' > test.txt
+     # - apt-get install -y zip
+     # - npm install
+     # - npm run lint:ci
+     # - npm run build:prod
 
     when:
       branch: develop
@@ -22,16 +23,31 @@ publish:
   # upload directory dist/ to s3 bucket
   s3_sync:
     region: "us-east-1"
-    bucket: "drone-helper-bucket"
+    bucket: "drone-cliente-develop"
     access_key: $$DRONE_AWS_ACCESS_KEY_ID
     secret_key: $$DRONE_AWS_SECRET_ACCESS_KEY
-    source: dist
-    target: /client/campus_cliente-$$BRANCH
+    source: test.txt
+    target: /campus_cliente-$$BRANCH
     delete: true
     when:
       branch: develop
       event: push
 
+# publish:
+#
+#   # upload directory dist/ to s3 bucket
+#   s3_sync:
+#     region: "us-east-1"
+#     bucket: "drone-cliente-develop"
+#     access_key: $$DRONE_AWS_ACCESS_KEY_ID
+#     secret_key: $$DRONE_AWS_SECRET_ACCESS_KEY
+#     source: dist
+#     target: /campus_cliente-$$BRANCH
+#     delete: true
+#     when:
+#       branch: develop
+#       event: push
+#
 # notify:
 #
 #   # notify telegram
