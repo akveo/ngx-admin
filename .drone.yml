@@ -9,7 +9,7 @@ build:
     commands:
      - apt-get update -y
      - echo 'prueba rsync to S3' > test.txt
-     - pwd
+     - ls
      # - apt-get install -y zip
      # - npm install
      # - npm run lint:ci
@@ -28,7 +28,7 @@ publish:
     access_key: $$DRONE_AWS_ACCESS_KEY_ID
     secret_key: $$DRONE_AWS_SECRET_ACCESS_KEY
     source: test.txt
-    target: /campus_cliente-$$BRANCH
+    target: /
     delete: true
     when:
       branch: develop
