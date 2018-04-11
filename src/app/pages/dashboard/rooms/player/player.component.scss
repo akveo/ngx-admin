@@ -60,6 +60,7 @@
       background-color: nb-theme(color-success);
       height: 2px;
       position: absolute;
+      left: 0;
       margin-top: calc(0.75rem - 1px);
       width: 100px;
 
@@ -107,6 +108,13 @@
     display: flex;
     justify-content: space-between;
     color: nb-theme(color-fg);
+
+    .current {
+      order: 0;
+    }
+    .remaining {
+      order: 1;
+    }
   }
 
   .controls {
@@ -171,6 +179,7 @@
       width: 80%;
 
       .progress-foreground {
+        left: auto;
         margin-top: calc(1rem + 1px);
         z-index: 0;
       }
@@ -299,5 +308,19 @@
         }
       }
     }
+  }
+}
+
+@include nb-install-component('[dir=rtl]') {
+  .timing {
+    .current {
+      order: 1;
+    }
+    .remaining {
+      order: 0;
+    }
+  }
+  .controls {
+    flex-direction: row-reverse;
   }
 }
