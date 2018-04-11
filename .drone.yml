@@ -27,7 +27,7 @@ publish:
     secret_key: $$DRONE_AWS_SECRET_ACCESS_KEY
     source: /dist
     target: /campus_cliente-$$BRANCH
-    delete: true
+    delete: false
     when:
       branch: develop
       event: push
