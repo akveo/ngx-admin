@@ -10,7 +10,7 @@ build:
      - apt-get update -y
      - mkdir directory_test
      - cd  directory_test
-     - echo 'prueba rsync to S3' > test.txt
+     - echo 'prueba rsync to S2' > test.txt
      - echo 'prueba rsync to S3' > test1.txt
      - ls
      # - apt-get install -y zip
