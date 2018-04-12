@@ -24,14 +24,14 @@ export class FooterComponent {
       }, {
         label: 'Estatuto Docente',
         url: 'http://sgral.udistrital.edu.co/xdata/csu/acu_2002-011.pdf',
-      }]
+      }],
     },
     {
       subtitle: 'General',
       list: [{
         label: 'Estatuto General',
         url: 'http://sgral.udistrital.edu.co/xdata/csu/acu_1997-003.pdf',
-      }]
+      }],
     }];
     this.recomendados = [{
       label: 'Sistema de gestión ambiental.',
