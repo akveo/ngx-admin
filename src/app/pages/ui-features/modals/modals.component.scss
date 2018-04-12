@@ -1,4 +1,7 @@
+@import '~@nebular/theme/styles/core/mixins';
 
-button {
-  margin: 0 0.75rem 2rem 0;
+:host {
+  button {
+    @include rtl(margin, 0 0.75rem 2rem 0, 0 0 2rem 0.75rem);
+  }
 }
