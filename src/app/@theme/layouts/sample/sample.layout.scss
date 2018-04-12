@@ -128,3 +128,27 @@
     }
   }
 }
+
+@include nb-install-component('[dir=rtl]') {
+  nb-sidebar.menu-sidebar {
+    /deep/ .main-container {
+      border-top-right-radius: 0;
+      border-top-left-radius: nb-theme(radius);
+    }
+
+    .main-btn {
+      span {
+        padding-left: 0;
+        padding-right: 0.25rem;
+      }
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    nb-sidebar.menu-sidebar {
+      /deep/ .main-container {
+        border-top-left-radius: 0;
+      }
+    }
+  }
+}
