@@ -11,9 +11,9 @@
     font-size: 2rem;
 
     a {
-      padding: .4rem;
+      padding: 0.4rem;
       color: nb-theme(color-fg);
-      transition: color ease-out .1s;
+      transition: color ease-out 0.1s;
 
       &:hover {
         color: nb-theme(color-fg-heading);
@@ -39,7 +39,7 @@
 }
 
 .footer-title {
-  border-bottom: .1rem solid;
+  border-bottom: 0.1rem solid;
   border-bottom-color: red;
   text-align: center;
   margin-bottom: 1rem;
@@ -52,14 +52,14 @@
 
 .list-footer > a:hover,
 .list-footer:hover {
-  padding-left: .5rem;
+  padding-left: 0.5rem;
   color: #fdb400 !important;
   text-decoration: none;
 }
 
 .list-footer {
   display: block;
-  margin: .3rem;
+  margin: 0.3rem;
   text-indent: 0;
   text-align: left;
   list-style: none;
