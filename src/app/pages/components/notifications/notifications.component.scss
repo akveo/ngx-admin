@@ -26,3 +26,9 @@
     }
   }
 }
+
+@include nb-install-component('[dir=rtl]') {
+  nb-card-footer button {
+    margin: 0 0 1rem 1rem;
+  }
+}
