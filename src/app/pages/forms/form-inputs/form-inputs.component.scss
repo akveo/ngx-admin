@@ -82,6 +82,7 @@
     position: relative;
 
     .form-control {
+
       padding-left: 3rem;
     }
 
@@ -124,5 +125,12 @@
       padding: 0.75rem 1rem;
       font-size: 0.75rem;
     }
+  }
+}
+
+@include nb-install-component('[dir=rtl]') {
+  .current-rate {
+    padding-left: 0;
+    padding-right: 1rem;
   }
 }
