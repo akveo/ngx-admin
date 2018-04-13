@@ -63,3 +63,14 @@
     }
   }
 }
+
+@include nb-install-component('[dir=rtl]') {
+  .pagination-container {
+    margin-right: 0;
+    margin-left: 1rem;
+  }
+
+  .example-container > .btn-divided-checkbox-group > label {
+    margin: 0 0 0.5rem 0.25rem;
+  }
+}
