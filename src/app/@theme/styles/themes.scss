@@ -10,6 +10,10 @@
 $nb-enabled-themes: (default, cosmic);
 
 $nb-themes: nb-register-theme((
+  // footer
+  footer-fg: #fff,
+  footer-bg: #606060,
+  footer-height: auto,
  // app wise variables for each theme
   sidebar-header-gap: 2rem,
   sidebar-header-height: initial,
@@ -44,6 +48,8 @@ $nb-themes: nb-register-theme((
 ), default, default);
 
 $nb-themes: nb-register-theme((
+  //footer
+  footer-height: auto,
   // app wise variables for each theme
   sidebar-header-gap: 2rem,
   sidebar-header-height: initial,
