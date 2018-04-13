@@ -52,3 +52,16 @@
     }
   }
 }
+
+@include nb-install-component('[dir=rtl]') {
+  nb-action i {
+    margin-left: 1rem;
+    margin-right: 0;
+  }
+  @include media-breakpoint-down(sm) {
+    nb-action i {
+      margin-left: 0.5rem;
+      margin-right: 0;
+    }
+  }
+}
