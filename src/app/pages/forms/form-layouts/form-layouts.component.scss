@@ -1,3 +1,5 @@
+@import '../../../@theme/styles/themes';
+
 .full-width {
   flex: 1;
   min-width: 220px;
@@ -13,4 +15,10 @@ nb-checkbox {
 
 nb-card.inline-form-card nb-card-body {
   padding-bottom: 0;
+}
+
+@include nb-install-component('[dir=rtl]') {
+  .form-inline > * {
+    margin: 0 0 1.5rem 1.5rem;
+  }
 }
