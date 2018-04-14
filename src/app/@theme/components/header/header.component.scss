@@ -56,6 +56,7 @@
     }
   }
 
+  ngx-layout-direction-switcher,
   ngx-theme-switcher {
     margin: 0 1em;
   }
@@ -90,6 +91,8 @@
     .toggle-layout {
       padding: 0;
     }
+
+    ngx-layout-direction-switcher,
     ngx-theme-switcher {
       display: none;
     }

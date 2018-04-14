@@ -27,6 +27,7 @@ import {
   SearchInputComponent,
   ThemeSettingsComponent,
   SwitcherComponent,
+  LayoutDirectionSwitcherComponent,
   ThemeSwitcherComponent,
   TinyMCEComponent,
 } from './components';
@@ -61,6 +62,7 @@ const NB_MODULES = [
 
 const COMPONENTS = [
   SwitcherComponent,
+  LayoutDirectionSwitcherComponent,
   ThemeSwitcherComponent,
   HeaderComponent,
   FooterComponent,
