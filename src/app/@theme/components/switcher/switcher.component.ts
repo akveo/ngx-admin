@@ -1,7 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { NbThemeService } from '@nebular/theme';
-import { NbJSThemeOptions } from '@nebular/theme/services/js-themes/theme.options';
-import { AnalyticsService } from '../../../@core/utils/analytics.service';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'ngx-switcher',
