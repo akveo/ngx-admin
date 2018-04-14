@@ -56,6 +56,16 @@
     }
   }
 
+  ngx-theme-switcher {
+    margin: 0 1em;
+  }
+
+  @include media-breakpoint-down(xl) {
+    ngx-layout-direction-switcher {
+      display: none;
+    }
+  }
+
   .toggle-layout /deep/ a {
     display: block;
     text-decoration: none;
@@ -79,6 +89,9 @@
 
     .toggle-layout {
       padding: 0;
+    }
+    ngx-theme-switcher {
+      display: none;
     }
   }
 

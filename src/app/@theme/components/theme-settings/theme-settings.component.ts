@@ -26,6 +26,10 @@ import { StateService } from '../../../@core/data/state.service';
         <i [attr.class]="sidebar.icon"></i>
       </a>
     </div>
+    <h6>SETTINGS</h6>
+    <div class="switcher">
+      <ngx-theme-switcher [vertical]="true"></ngx-theme-switcher>
+    </div>
   `,
 })
 export class ThemeSettingsComponent {
