@@ -27,10 +27,4 @@ export class NewsComponent {
 
         }];
     }
-
-
-
-    ngOnDestroy() {
-        this.themeSubscription.unsubscribe();
-    }
 }
