@@ -1,0 +1,97 @@
+<div class="row">
+  <div class="col-md-3 col-sm-6">
+    <div class="footer-title">
+      <h5> Universidad Distrital Francisco José de Caldas
+      </h5>
+      <h5 class="nit">
+        899.999.230.7
+      </h5>
+    </div>
+    <label>
+      Institución de Educación Superior sujeta a inspección y vigilancia por el Ministerio de Educación Nacional
+    </label>
+    <div>
+      <div class="list-footer">
+        <a href="http://www.alcaldiabogota.gov.co/sisjur/normas/Norma1.jsp?i=3499"
+          target="_blank">
+          <label>
+            <i class="fa fa-university"></i>Acuerdo de creación N° 10 de 1948 del Concejo de Bogotá
+          </label>
+        </a>
+      </div>
+      <div class="list-footer">
+          <a href="http://autoevaluacion.udistrital.edu.co/version3/varios/acreditacion_23096_institucional.pdf"
+            target="_blank">
+            <label>
+              <i class="fa fa-trophy"></i>Acreditación Institucional de Alta Calidad - Resolución N° 23096 del 15 de diciembre del 2016
+            </label>
+          </a>
+        </div>
+    </div>
+    <div class="socials">
+      <a href="https://plus.google.com/106543869133961089207?hl=es" target="_blank" class="ion ion-social-google"></a>
+      <a href="https://www.facebook.com/UniversidadDistrital" target="_blank" class="ion ion-social-facebook"></a>
+      <a href="https://twitter.com/udistrital" target="_blank" class="ion ion-social-twitter"></a>
+      <a href="https://www.youtube.com/user/udistritaltv" target="_blank" class="ion ion-social-youtube"></a>
+    </div>
+  </div>
+
+  <div class="col-md-3 col-sm-6">
+    <div class="footer-title">
+      <h4> Normatividad </h4>
+    </div>
+    <div *ngFor="let element of normatividad">
+      <h5>{{element.subtitle}}</h5>
+      <div class="list-footer" *ngFor="let norma of element.list">
+        <a href="{{norma.url}}" target="_blank">
+          <label>{{norma.label}}</label>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-3 col-sm-6">
+    <div class="footer-title">
+      <h4> Normatividad </h4>
+    </div>
+    <div>
+      <div class="list-footer" *ngFor="let recomendado of recomendados">
+        <a href="{{recomendado.url}}" target="_blank">
+          <label>{{recomendado.label}}</label>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-3 col-sm-6">
+    <div class="footer-title">
+      <h4> Contáctenos </h4>
+    </div>
+    <b>REPRESENTANTE LEGAL:</b>
+    <br> Rector Dr. Ricardo García Duarte
+    <br> rectoria@udistrital.edu.co
+    <div>
+      <div class="list-footer">
+        <a href="https://www.google.com.co/maps/place/Cra.+7+%2340b-53,+Bogot%C3%A1/@4.627975,-74.0674144,17z/data=!3m1!4b1!4m5!3m4!1s0x8e3f9a27df920b1f:0xa76ca105bf30d7fc!8m2!3d4.6280856!4d-74.0652811?hl=es"
+          target="_blank">
+          <label>
+            <i class="fa fa-map-pin"></i> Carrera 7 # 40B - 53 - Bogotá D.C. - Colombia
+          </label>
+        </a>
+      </div>
+      <div class="list-footer">
+        <label>
+          <i class="fa fa-phone"></i> Teléfono (Colombia) : +57 3 323 9300</label>
+      </div>
+      <div class="list-footer">
+        <label>
+          <i class="fa fa-envelope"></i> E-mail : atencion@udistrital.edu.co</label>
+      </div>
+      <div class="list-footer">
+        <label>
+          <i class="fa fa-handshake-o"></i> Lunes a Viernes de 8:00 a.m. a 5:00 p.m.</label>
+      </div>
+    </div>
+
+  </div>
+</div>

@@ -2,11 +2,18 @@
 @import '~@nebular/theme/styles/theming';
 // @nebular out of the box themes
 @import '~@nebular/theme/styles/themes';
+// import angular material theme
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
 
 // which themes you what to enable (empty to enable all)
 $nb-enabled-themes: (default, cosmic);
 
 $nb-themes: nb-register-theme((
+  // footer
+  footer-fg: #fff,
+  footer-bg: #606060,
+  footer-height: auto,
  // app wise variables for each theme
   sidebar-header-gap: 2rem,
   sidebar-header-height: initial,
@@ -41,6 +48,8 @@ $nb-themes: nb-register-theme((
 ), default, default);
 
 $nb-themes: nb-register-theme((
+  //footer
+  footer-height: auto,
   // app wise variables for each theme
   sidebar-header-gap: 2rem,
   sidebar-header-height: initial,

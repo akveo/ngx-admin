@@ -18,13 +18,14 @@ export class HeaderComponent implements OnInit {
   user: any;
   userMenu: any;
   title: any;
+  username = '';
 
   constructor(private sidebarService: NbSidebarService,
     private menuService: NbMenuService,
     private userService: UserService,
     private analyticsService: AnalyticsService,
     private autenticacion: AutenticationService,
-    private translate: TranslateService) {
+    public translate: TranslateService) {
     this.translate = translate;
   }
   useLanguage(language: string) {
@@ -34,13 +35,20 @@ export class HeaderComponent implements OnInit {
     this.userService.getUsers()
       .subscribe((users: any) => this.user = users.nick);
     this.autenticacion.init();
-    const urlLogin = this.autenticacion.getAuthorizationUrl();
-    const urlLogout = this.autenticacion.logOut;
-    if (!this.autenticacion.live()) {
-      this.userMenu = [{ title: 'Login', url: urlLogin }];
-    } else {
-      this.userMenu = [{ title: this.autenticacion.payload.sub }, { title: 'Log out', url: urlLogout }];
+  }
+  liveToken() {
+    if (this.autenticacion.live()) {
+      this.username = (this.autenticacion.getPayload()).sub;
     }
+    return this.autenticacion.live();
+  }
+
+  login() {
+    location.href = this.autenticacion.getAuthorizationUrl();
+  }
+
+  logout() {
+    location.href = this.autenticacion.getLogoutUrl();
   }
 
   toggleSidebar(): boolean {
