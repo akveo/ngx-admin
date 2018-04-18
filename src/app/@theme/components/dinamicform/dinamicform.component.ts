@@ -12,6 +12,7 @@ export class DinamicformComponent implements OnInit, OnChanges {
 
   @Input('normalform') normalform: any;
   @Input('modeloData') modeloData: any;
+  @Input('clean') clean: boolean;
   @Output('result') result: EventEmitter<any> = new EventEmitter();
   @Output('resultSmart') resultSmart: EventEmitter<any> = new EventEmitter();
   @Output('interlaced') interlaced: EventEmitter<any> = new EventEmitter();
@@ -55,6 +56,11 @@ export class DinamicformComponent implements OnInit, OnChanges {
         }
       }
     }
+    if (changes.clean !== undefined) {
+      this.clearForm();
+      this.clean = false;
+    }
+
   }
 
   onChange(event, c) {
@@ -100,7 +106,7 @@ export class DinamicformComponent implements OnInit, OnChanges {
     }
 
     if (c.etiqueta === 'select') {
-      if (c.valor === 0) {
+      if (c.valor == null) {
         c.clase = 'form-control form-control-danger'
         c.alerta = 'Seleccione el campo'
       } else {
@@ -142,13 +148,8 @@ export class DinamicformComponent implements OnInit, OnChanges {
 
 
   clearForm() {
-    this.normalform.campos = this.normalform.campos.map(d => {
-      if (d.valor.id) {
-        d.valor.Id = 0;
-      } else {
-        d.valor = '';
-      }
-      return d;
+    this.normalform.campos.forEach(d => {
+      d.valor = null;
     });
   }
 
@@ -162,7 +163,6 @@ export class DinamicformComponent implements OnInit, OnChanges {
     this.data.data = {};
     this.data.percentage = 0;
     this.data.files = [];
-
     if (this.normalform.modelo) {
       result = '{"' + this.normalform.modelo + '":{';
     } else {
@@ -174,7 +174,8 @@ export class DinamicformComponent implements OnInit, OnChanges {
       }
 
       if (d.etiqueta === 'input' && d.tipo === 'number') {
-        if (parseInt(d.valor, 10) < d.minimo) {
+        d.valor = parseInt(d.valor, 10);
+        if (d.valor < d.minimo) {
           this.data.valid = false;
           d.clase = 'form-control form-control-danger'
           d.alerta = 'El valor no puede ser menor que ' + d.minimo
@@ -193,7 +194,7 @@ export class DinamicformComponent implements OnInit, OnChanges {
           d.clase = 'form-control form-control-success'
         }
       }
-      if (d.requerido && (d.valor === '')) {
+      if (d.requerido && (d.valor === '' || d.valor === null)) {
         this.data.valid = false;
         d.alerta = '** Debe llenar este campo';
         d.clase = 'form-control form-control-danger';
@@ -212,7 +213,7 @@ export class DinamicformComponent implements OnInit, OnChanges {
             result += '"' + d.nombre + '":' + JSON.stringify(d.valor.Id) + ',';
           }
         }
-      } else if (d.valor !== {} && d.etiqueta === 'file') {
+      } else if ((d.valor !== {} || d.valor !== {}) && d.etiqueta === 'file') {
         if (d.requerido) {
           resueltos++;
         }
@@ -220,7 +221,7 @@ export class DinamicformComponent implements OnInit, OnChanges {
       }
 
       if (d.etiqueta === 'select') {
-        if (d.valor.Id === 0) {
+        if (d.valor === null) {
           this.data.valid = false;
           d.clase = 'form-control form-control-danger'
           d.alerta = 'Seleccione el campo'
@@ -240,6 +241,11 @@ export class DinamicformComponent implements OnInit, OnChanges {
       this.data.data = JSON.parse(result);
     }
     this.data.percentage = (resueltos / requeridos);
+    for (const key in this.modeloData) {  // Agrega parametros faltantes del modelo
+      if (!this.data.data[this.normalform.modelo].hasOwnProperty(key)) {
+        this.data.data[this.normalform.modelo][key] = this.modeloData[key];
+      }
+    }
     this.result.emit(this.data);
     return this.data;
   }
