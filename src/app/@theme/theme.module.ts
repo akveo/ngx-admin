@@ -31,6 +31,7 @@ import {
   TinyMCEComponent,
   DinamicformComponent,
   SelectComponent,
+  NuxeoComponent,
 } from './components';
 
 import { CapitalizePipe, PluralPipe, RoundPipe, TimingPipe } from './pipes';
@@ -82,6 +83,7 @@ const COMPONENTS = [
   TwoColumnsLayoutComponent,
   DinamicformComponent,
   SelectComponent,
+  NuxeoComponent,
 ];
 
 const PIPES = [
