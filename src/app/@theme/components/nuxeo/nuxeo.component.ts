@@ -1,5 +1,5 @@
 import * as Nuxeo from 'nuxeo';
-import { Component, OnInit, Input, Output, EventEmitter, OnChanges, ViewChild } from '@angular/core';
+import { Component, Input, OnChanges } from '@angular/core';
 import { Config } from './../../../app-config'
 
 
