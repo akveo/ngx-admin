@@ -10,11 +10,12 @@ import { UtilidadesService } from '../../../../@core/utils/utilidades.service';
 export class TrabajoGradoComponent implements OnInit {
   formTrabajoGrado: any = {
     titulo: this.translate.instant('PROPUESTA_TRABAJO_GRADO.TITULO'),
-    clase: 'col-9',
+    clase: 'col-12',
     btn: this.translate.instant('PROPUESTA_TRABAJO_GRADO.SIGUIENTE'),
     alertas: true,
     btnLimpiar: this.translate.instant('PROPUESTA_TRABAJO_GRADO.SALIR'),
     modelo: 'TrabajoGrado',
+    tipo_formulario: 'basic',
     campos: [],
   };
   percentage: any;
@@ -37,6 +38,8 @@ export class TrabajoGradoComponent implements OnInit {
     this.formTrabajoGrado.btnLimpiar = this.translate.instant('PROPUESTA_TRABAJO_GRADO.SALIR');
     this.formTrabajoGrado.campos = [
       {
+        claseGrid: 'col-6',
+        clase: 'form-control',
         etiqueta: 'select',
         nombre: 'Idioma',
         label: '* ' + this.translate.instant('PROPUESTA_TRABAJO_GRADO.GRUPO_INVESTIGACION'),
@@ -50,6 +53,8 @@ export class TrabajoGradoComponent implements OnInit {
           { Id: 3, valor: 'C' },
         ],
       }, {
+        claseGrid: 'col-6',
+        clase: 'form-control',
         etiqueta: 'select',
         nombre: 'Idioma',
         label: '* ' + this.translate.instant('PROPUESTA_TRABAJO_GRADO.LINEA_INVESTIGACION'),
@@ -63,6 +68,8 @@ export class TrabajoGradoComponent implements OnInit {
           { Id: 3, valor: 'CC' },
         ],
       }, {
+        claseGrid: 'col-6',
+        clase: 'form-control',
         etiqueta: 'input',
         nombre: 'NombrePropuestaTrabajoGrado',
         label: '* ' + this.translate.instant('PROPUESTA_TRABAJO_GRADO.TITULO_PROPUESTA'),
@@ -70,6 +77,8 @@ export class TrabajoGradoComponent implements OnInit {
         requerido: true,
         tipo: 'text',
       }, {
+        claseGrid: 'col-6',
+        clase: 'form-control',
         etiqueta: 'input',
         nombre: 'ArchivoPropuesta',
         label: '* ' + this.translate.instant('PROPUESTA_TRABAJO_GRADO.ARCHIVO_PROPUESTA'),

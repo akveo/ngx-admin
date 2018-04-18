@@ -10,11 +10,12 @@ import { UtilidadesService } from '../../../../@core/utils/utilidades.service';
 export class DescuentosComponent implements OnInit {
   formDescuentos: any = {
     titulo: this.translate.instant('DESCUENTOS.TITULO'),
-    clase: 'col-9',
+    clase: 'col-12',
     btn: this.translate.instant('DESCUENTOS.SIGUIENTE'),
     alertas: true,
     btnLimpiar: this.translate.instant('DESCUENTOS.SALIR'),
     modelo: 'Descuentos',
+    tipo_formulario: 'basic',
     campos: [],
   };
   percentage: any;
@@ -41,6 +42,8 @@ export class DescuentosComponent implements OnInit {
         agregue el respectivo comprobante</label>
       **/
       {
+        claseGrid: 'col-12',
+        clase: 'form-control',
         etiqueta: 'radio',
         nombre: 'Descuento1',
         label: this.translate.instant('DESCUENTOS.DESCUENTO_ELECTORAL'),
@@ -52,6 +55,8 @@ export class DescuentosComponent implements OnInit {
           { Id: 2, valor: this.translate.instant('DESCUENTOS.NO') },
         ],
       }, {
+        claseGrid: 'col-6',
+        clase: 'form-control',
         etiqueta: 'input',
         nombre: 'DocumentoDescuento1',
         label: this.translate.instant('DESCUENTOS.SOPORTE'),
@@ -59,6 +64,8 @@ export class DescuentosComponent implements OnInit {
         requerido: true,
         tipo: 'file',
       }, {
+        claseGrid: 'col-12',
+        clase: 'form-control',
         etiqueta: 'radio',
         nombre: 'Descuento2',
         label: this.translate.instant('DESCUENTOS.USO_DESCUENTO'),
@@ -70,6 +77,8 @@ export class DescuentosComponent implements OnInit {
           { Id: 2, valor: this.translate.instant('DESCUENTOS.NO') },
         ],
       }, {
+        claseGrid: 'col-9',
+        clase: 'form-control',
         etiqueta: 'radio',
         nombre: 'Descuento2-1',
         label: this.translate.instant('DESCUENTOS.DESCUENTO_EGRESADO'),
@@ -81,6 +90,8 @@ export class DescuentosComponent implements OnInit {
           { Id: 2, valor: this.translate.instant('DESCUENTOS.NO') },
         ],
       }, {
+        claseGrid: 'col-9',
+        clase: 'form-control',
         etiqueta: 'radio',
         nombre: 'Descuento2-2',
         label: this.translate.instant('DESCUENTOS.DESCUENTO_MONITOR'),
@@ -92,6 +103,8 @@ export class DescuentosComponent implements OnInit {
           { Id: 2, valor: this.translate.instant('DESCUENTOS.NO') },
         ],
       }, {
+        claseGrid: 'col-9',
+        clase: 'form-control',
         etiqueta: 'radio',
         nombre: 'Descuento2-3',
         label: this.translate.instant('DESCUENTOS.DESCUENTO_CONCEJO'),
@@ -103,6 +116,8 @@ export class DescuentosComponent implements OnInit {
           { Id: 2, valor: this.translate.instant('DESCUENTOS.NO') },
         ],
       }, {
+        claseGrid: 'col-9',
+        clase: 'form-control',
         etiqueta: 'radio',
         nombre: 'Descuento2-4',
         label: this.translate.instant('DESCUENTOS.DESCUENTO_PLANTA'),
@@ -114,6 +129,8 @@ export class DescuentosComponent implements OnInit {
           { Id: 2, valor: this.translate.instant('DESCUENTOS.NO') },
         ],
       }, {
+        claseGrid: 'col-9',
+        clase: 'form-control',
         etiqueta: 'radio',
         nombre: 'Descuento2-5',
         label: this.translate.instant('DESCUENTOS.DESCUENTO_ECAES'),
