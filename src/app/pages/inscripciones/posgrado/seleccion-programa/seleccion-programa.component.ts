@@ -10,11 +10,12 @@ import { UtilidadesService } from '../../../../@core/utils/utilidades.service';
 export class SeleccionProgramaComponent implements OnInit {
   formPrograma: any = {
     titulo: this.translate.instant('DATOS_BASICOS.TITULO4'),
-    clase: 'col-9',
+    clase: 'col-12',
     btn: this.translate.instant('DATOS_BASICOS.SIGUIENTE'),
     alertas: true,
     btnLimpiar: this.translate.instant('DATOS_BASICOS.SALIR'),
     modelo: 'ProgramaSeleccionado',
+    tipo_formulario: 'basic',
     campos: [],
   };
   percentage: any;
@@ -37,6 +38,8 @@ export class SeleccionProgramaComponent implements OnInit {
     this.formPrograma.btnLimpiar = this.translate.instant('DATOS_BASICOS.SALIR');
     this.formPrograma.campos = [
       {
+        claseGrid: 'col-12',
+        clase: 'form-control',
         etiqueta: 'select',
         nombre: 'Programa',
         label: '* ' + this.translate.instant('DATOS_BASICOS.PROGRAMA'),

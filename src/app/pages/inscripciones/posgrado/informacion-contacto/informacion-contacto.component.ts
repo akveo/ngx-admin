@@ -10,11 +10,12 @@ import { UtilidadesService } from '../../../../@core/utils/utilidades.service';
 export class InformacionContactoComponent implements OnInit {
   formInformacionContacto: any = {
     titulo: this.translate.instant('DATOS_BASICOS.TITULO3'),
-    clase: 'col-9',
+    clase: 'col-12',
     btn: this.translate.instant('DATOS_BASICOS.SIGUIENTE'),
     alertas: true,
     btnLimpiar: this.translate.instant('DATOS_BASICOS.SALIR'),
     modelo: 'InformacionContacto',
+    tipo_formulario: 'basic',
     campos: [],
   };
   percentage: any;
@@ -37,6 +38,8 @@ export class InformacionContactoComponent implements OnInit {
     this.formInformacionContacto.btnLimpiar = this.translate.instant('DATOS_BASICOS.SALIR');
     this.formInformacionContacto.campos = [
       {
+        claseGrid: 'col-6',
+        clase: 'form-control',
         etiqueta: 'select',
         nombre: 'PaisResidencia',
         label: '* ' + this.translate.instant('DATOS_BASICOS.PAIS_RESIDENCIA'),
@@ -50,6 +53,8 @@ export class InformacionContactoComponent implements OnInit {
           { Id: 4, valor: 'Rusia' },
         ],
       }, {
+        claseGrid: 'col-6',
+        clase: 'form-control',
         etiqueta: 'select',
         nombre: 'CiudadResidencia',
         label: '* ' + this.translate.instant('DATOS_BASICOS.CIUDAD_RESIDENCIA'),
@@ -63,6 +68,8 @@ export class InformacionContactoComponent implements OnInit {
           { Id: 4, valor: 'DDD' },
         ],
       }, {
+        claseGrid: 'col-6',
+        clase: 'form-control',
         etiqueta: 'input',
         nombre: 'Direccion',
         label: '* ' + this.translate.instant('DATOS_BASICOS.DIRECCION_RESIDENCIA'),
@@ -70,6 +77,8 @@ export class InformacionContactoComponent implements OnInit {
         requerido: true,
         tipo: 'text',
       }, {
+        claseGrid: 'col-6',
+        clase: 'form-control',
         etiqueta: 'input',
         nombre: 'CodigoPostal',
         label: this.translate.instant('DATOS_BASICOS.CODIGO_POSTAL'),
@@ -78,6 +87,8 @@ export class InformacionContactoComponent implements OnInit {
         tipo: 'number',
         minimo: 0,
       }, {
+        claseGrid: 'col-6',
+        clase: 'form-control',
         etiqueta: 'input',
         nombre: 'Telefono',
         label: '* ' + this.translate.instant('DATOS_BASICOS.TELEFONO'),
@@ -86,6 +97,8 @@ export class InformacionContactoComponent implements OnInit {
         tipo: 'number',
         minimo: 100,
       }, {
+        claseGrid: 'col-6',
+        clase: 'form-control',
         etiqueta: 'input',
         nombre: 'TelefonoContacto',
         label: '* ' + this.translate.instant('DATOS_BASICOS.TELEFONO_ALT'),

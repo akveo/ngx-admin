@@ -10,10 +10,11 @@ import { UtilidadesService } from '../../../../@core/utils/utilidades.service';
 export class FinInscripcionComponent implements OnInit {
   formFin: any = {
     titulo: this.translate.instant('ENVIO.TITULO'),
-    clase: 'col-9',
+    clase: 'col-12',
     btn: this.translate.instant('ENVIO.ENVIAR'),
     alertas: true,
     modelo: 'Fin',
+    tipo_formulario: 'basic',
     campos: [],
   };
   percentage: any;
