@@ -10,11 +10,12 @@ import { UtilidadesService } from '../../../../@core/utils/utilidades.service';
 export class DocumentosComponent implements OnInit {
   formDocumentos: any = {
     titulo: this.translate.instant('DOCUMENTOS.TITULO'),
-    clase: 'col-9',
+    clase: 'col-12',
     btn: this.translate.instant('DOCUMENTOS.SIGUIENTE'),
     alertas: true,
     btnLimpiar: this.translate.instant('DOCUMENTOS.SALIR'),
     modelo: 'Documentos',
+    tipo_formulario: 'basic',
     campos: [],
   };
   percentage: any;
@@ -37,6 +38,8 @@ export class DocumentosComponent implements OnInit {
     this.formDocumentos.btnLimpiar = this.translate.instant('DOCUMENTOS.SALIR');
     this.formDocumentos.campos = [
       {
+        claseGrid: 'col-9',
+        clase: 'form-control',
         etiqueta: 'input',
         nombre: 'Documento1',
         label: '1. Cédula de ciudadanía: descripción indicada del documento - 5 MB',
