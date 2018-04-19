@@ -5,7 +5,7 @@ import { DashboardModule } from './dashboard/dashboard.module';
 import { PagesRoutingModule } from './pages-routing.module';
 import { ThemeModule } from '../@theme/theme.module';
 import { SharedModule } from '../shared/shared.module';
-import { HttpClientModule } from '@angular/common/http';
+import { MenuService } from '../@core/data/menu.service';
 
 const PAGES_COMPONENTS = [
   PagesComponent,
@@ -17,10 +17,12 @@ const PAGES_COMPONENTS = [
     ThemeModule,
     DashboardModule,
     SharedModule,
-    HttpClientModule,
   ],
   declarations: [
     ...PAGES_COMPONENTS,
+  ],
+  providers: [
+    MenuService,
   ],
 })
 export class PagesModule {

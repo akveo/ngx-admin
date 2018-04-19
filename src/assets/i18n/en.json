@@ -18,7 +18,8 @@
     },
     "inscriptions": {
       "inscriptions": "Inscriptions",
-      "postgraduate": "Postgraduate"
+      "postgraduate": "Postgraduate",
+      "profile": "Profile"
     },
     "certificates": {
       "certificates": "Certificates"
@@ -102,7 +103,13 @@
     "NUMERO_LIBRETA_MILITAR": "Colombian militar card number",
     "ESTADO_CIVIL": "Civil status",
     "GRUPO_ETNICO": "Colombian ethnic or minority group to which you belong",
-    "DISCAPACIDAD": "Disability types what you have",
+    "DISCAPACIDAD": "Impairment types what you have",
+    "DIS_NINGUNA": "None",
+    "DIS_AUDITIVA": "Hearing impairment",
+    "DIS_VISUAL": "Visual impairment",
+    "DIS_MOTRIZ": "Motor impairment",
+    "DIS_INTELECTUAL": "Intellectual impairment",
+    "DIS_VISCERAL": "Visceral impairment",
     "PAIS_NACIMIENTO": "Birth country",
     "CIUDAD_NACIMIENTO": "Birth city",
     "PAIS_RESIDENCIA": "Residence country",
@@ -134,7 +141,7 @@
     "MENSAJE": "Are you sure you want to delete?"
   },
   "FORMACION_LABORAL": {
-    "TITULO": "Job training",
+    "TITULO": "Job information",
     "MENSAJE": "Are you sure you want to delete?",
     "EMPRESA": "Company",
     "ANIO_INICIO": "Starting date",
@@ -144,7 +151,7 @@
     "SIGUIENTE": "Next",
     "SALIR": "Exit",
     "AGREGAR": "Add information",
-    "AVISO": "To add the job training, enter the respective information and press the add button. Do this for each job performed.",
+    "AVISO": "To add the job information, enter the respective data and press the add button. Do this for each job performed.",
     "NOMBRE_EMPRESA": "Company name",
     "DIRECCION_EMPRESA": "Company address",
     "CORREO_EMPRESA": "Company e-mail",
