@@ -25,6 +25,7 @@ export const Config = {
             SIGN_OUT_APPEND_TOKEN: 'true',
             REFRESH_TOKEN: 'https://10.20.0.162:9443/oauth2/token',
         },
+        CONF_MENU_SERVICE: 'http://10.20.0.254/configuracion_api/v1/menu_opcion_padre/ArbolMenus/',
     },
 
     PROD : {
@@ -41,6 +42,7 @@ export const Config = {
             REFRESH_TOKEN: 'https://10.20.0.162:9443/oauth2/token',
             CLIENT_SECRET: '',
         },
+        CONF_MENU_SERVICE: 'http://10.20.0.254/configuracion_api/v1/menu_opcion_padre/ArbolMenus/',
     },
     PREPROD : {
         WSO2_SERVICE: 'http://jbpm.udistritaloas.edu.co:8280/services',
@@ -59,4 +61,5 @@ export const Config = {
             CLIENT_SECRET: 'lrVuDATX1o8TfXxz_jrEzBA2iIoa',
         },
     },
+    CONF_MENU_SERVICE: 'http://10.20.0.254/configuracion_api/v1/menu_opcion_padre/ArbolMenus/',
 };
