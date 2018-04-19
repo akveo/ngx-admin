@@ -1,5 +1,5 @@
 import * as Nuxeo from 'nuxeo';
-import { Component, Input, OnChanges } from '@angular/core';
+import { Component, Input, OnChanges, Output, EventEmitter} from '@angular/core';
 import { Config } from './../../../app-config'
 
 
@@ -10,6 +10,7 @@ import { Config } from './../../../app-config'
 export class NuxeoComponent implements OnChanges {
     nuxeo: Nuxeo;
     @Input('files') files: any;
+    @Output('save') save: EventEmitter<any> = new EventEmitter();
 
     constructor() {
 
@@ -45,6 +46,7 @@ export class NuxeoComponent implements OnChanges {
                             .upload(nuxeoBlob)
                             .then(function () {
                                 element.uuid = doc.uuid;
+                                this.save.emit(element);
                             })
                     })
                     .catch(function (error) {

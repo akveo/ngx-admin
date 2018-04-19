@@ -17,6 +17,7 @@ import { NuxeoService } from '../../../@core/utils/nuxeo.service';
   styleUrls: ['./posgrado.component.scss'],
 })
 export class PosgradoComponent {
+  documentosFiles: any;
   nForms: number;
   persona: any;
   formDatos: any;
@@ -41,7 +42,10 @@ export class PosgradoComponent {
   traerDatosBasicos(event) {
     console.info(event)
     this.setPercentage(event.percentage, 0);
-    console.info(NuxeoService.guardar(event.files));
+    this.documentosFiles = event.files;
+  }
+  saveDocumentosFiles(event){
+    console.info(event);
   }
   traerFormacionAcademica(event) {
     console.info(event)
@@ -58,6 +62,7 @@ export class PosgradoComponent {
   traerDocumentos(event) {
     console.info(event)
     this.setPercentage(event.percentage, 4);
+    this.documentosFiles = event.files;
   }
   traerDescuentos(event) {
     console.info(event);
