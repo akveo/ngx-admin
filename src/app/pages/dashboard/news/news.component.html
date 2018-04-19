@@ -1,0 +1,19 @@
+<div class="row">
+    <div class="col-xl-3 col-md-4 col-lg-3 col-sm-6" *ngFor="let new of news">
+        <nb-card size="small">
+            <nb-card-body>
+                <img class="carousel-image" src="{{new.img}}" alt="imagen">
+                <div class="details">
+                    <div class="title">
+                        {{new.title}}
+                    </div>
+                    <div class="description">
+                        {{new.description}}
+                        <br>
+                        <a href="{{new.url}}">Leer mas...</a>
+                    </div>
+                </div>
+            </nb-card-body>
+        </nb-card>
+    </div>
+</div>

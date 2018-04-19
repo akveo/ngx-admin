@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { TranslateService, LangChangeEvent} from '@ngx-translate/core';
+import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import { DATOS_PERSONALES } from './forms';
 import { DATOS_BASICOS } from './datos-personales';
 import { FORMACION_ACADEMICA } from './formacion-academica';
@@ -8,7 +8,6 @@ import { FORMACION_LABORAL } from './formacion-laboral';
 import { DOCUMENTOS } from './documentos';
 import { DESCUENTOS } from './descuentos';
 import { UtilidadesService } from '../../../@core/utils/utilidades.service';
-import { NuxeoService } from '../../../@core/utils/nuxeo.service';
 
 
 @Component({
@@ -44,7 +43,7 @@ export class PosgradoComponent {
     this.setPercentage(event.percentage, 0);
     this.documentosFiles = event.files;
   }
-  saveDocumentosFiles(event){
+  saveDocumentosFiles(event) {
     console.info(event);
   }
   traerFormacionAcademica(event) {
