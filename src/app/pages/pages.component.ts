@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import { MenuItem } from './menu-item';
 import { MENU_ITEMS } from './pages-menu';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { HttpErrorResponse } from '@angular/common/http';
+import { MenuService } from '../@core/data/menu.service';
 
 @Component({
   selector: 'ngx-pages',
@@ -13,17 +14,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
     </ngx-sample-layout>
   `,
 })
-/**export class PagesComponent {
-  menu = MENU_ITEMS;
-  constructor(private translate: TranslateService) {
-    this.translate = translate;
-    this.translate.addLangs(['es', 'en']);
-    this.translate.setDefaultLang('es');
-    // let
-    const browserLang = this.translate.getBrowserLang();
-    this.translate.use(browserLang.match(/es|en/) ? browserLang : 'es');
-  }
-}**/
+
 export class PagesComponent implements OnInit {
 
   public menu = [];
@@ -32,18 +23,10 @@ export class PagesComponent implements OnInit {
   hijo: MenuItem;
   hijo2: MenuItem;
 
-  constructor(private translate: TranslateService, private http: HttpClient) {}
+  constructor(private translate: TranslateService, private menu_ws: MenuService) {}
 
   ngOnInit() {
-    interface Response {
-      Id: number;
-      Nombre: string;
-      Url: string;
-      TipoOpcion: string;
-      Opciones: Response[];
-    }
-    this.http.get<Response[]>(
-      'http://10.20.0.254/configuracion_api/v1/menu_opcion_padre/ArbolMenus/Menu%20campus/campus').subscribe(
+    this.menu_ws.get('Menu%20campus/campus').subscribe(
       data => {
         for (let i = 0; i < data.length; i++) {
           if (!data[i].Opciones) {

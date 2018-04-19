@@ -18,7 +18,8 @@
     },
     "inscriptions": {
       "inscriptions": "Inscripciones",
-      "postgraduate": "Posgrado"
+      "postgraduate": "Posgrado",
+      "profile": "Perfil"
     },
     "certificates": {
       "certificates": "Certificados"
@@ -103,6 +104,12 @@
     "ESTADO_CIVIL": "Estado civil",
     "GRUPO_ETNICO": "Grupo étnico o de minoria al que pertenece",
     "DISCAPACIDAD": "Tipos de discapacidad que posea",
+    "DIS_NINGUNA": "Ninguna",
+    "DIS_AUDITIVA": "Discapacidad auditiva",
+    "DIS_VISUAL": "Discapacidad visual",
+    "DIS_MOTRIZ": "Discapacidad motriz",
+    "DIS_INTELECTUAL": "Discapacidad intelectual",
+    "DIS_VISCERAL": "Discapacidad visceral",
     "PAIS_NACIMIENTO": "País de nacimiento",
     "CIUDAD_NACIMIENTO": "Ciudad de nacimiento",
     "PAIS_RESIDENCIA": "País de residencia",
@@ -134,7 +141,7 @@
     "MENSAJE": "¿Realmente desea eliminar el registro?"
   },
   "FORMACION_LABORAL": {
-    "TITULO": "Formación laboral",
+    "TITULO": "Información laboral",
     "MENSAJE": "¿Realmente desea eliminar el registro?",
     "EMPRESA": "Empresa",
     "ANIO_INICIO": "Fecha de inicio",
@@ -144,7 +151,7 @@
     "SIGUIENTE": "Siguiente",
     "SALIR": "Salir",
     "AGREGAR": "Agregar información",
-    "AVISO": "Para ingresar la formación laboral, ingrese la respectiva información y presione el botón agregar. Realizar esto por cada labor desempeñada.",
+    "AVISO": "Para ingresar la información laboral, ingrese los respectivos datos y presione el botón agregar. Realizar esto por cada labor desempeñada.",
     "NOMBRE_EMPRESA": "Nombre de la empresa",
     "DIRECCION_EMPRESA": "Dirección de la empresa",
     "CORREO_EMPRESA": "Correo electrónico de la empresa",
