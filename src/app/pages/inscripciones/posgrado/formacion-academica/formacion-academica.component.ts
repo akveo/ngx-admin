@@ -10,11 +10,12 @@ import { UtilidadesService } from '../../../../@core/utils/utilidades.service';
 export class FormacionAcademicaComponent implements OnInit {
   formFormacionAcademica: any = {
     titulo: this.translate.instant('FORMACION_ACADEMICA.TITULO'),
-    clase: 'col-9',
+    clase: 'col-12',
     btn: this.translate.instant('FORMACION_ACADEMICA.SIGUIENTE'),
     alertas: true,
     btnLimpiar: this.translate.instant('FORMACION_ACADEMICA.SALIR'),
     modelo: 'FormacionAcademica',
+    tipo_formulario: 'basic',
     campos: [],
   };
   percentage: any;
@@ -42,6 +43,8 @@ export class FormacionAcademicaComponent implements OnInit {
           Realizar esto por cada estudio que posea.</label>
       **/
       {
+        claseGrid: 'col-6',
+        clase: 'form-control',
         etiqueta: 'select',
         nombre: 'NivelFormacion',
         label: '* ' + this.translate.instant('FORMACION_ACADEMICA.NIVEL_FORMACION'),
@@ -57,6 +60,8 @@ export class FormacionAcademicaComponent implements OnInit {
           { Id: 5, valor: 'Doctorado' },
         ],
       }, {
+        claseGrid: 'col-3',
+        clase: 'form-control',
         etiqueta: 'input',
         nombre: 'AnioInicio',
         label: '* ' + this.translate.instant('FORMACION_ACADEMICA.ANIO_INICIO'),
@@ -65,6 +70,8 @@ export class FormacionAcademicaComponent implements OnInit {
         tipo: 'number',
         minimo: 1900,
       }, {
+        claseGrid: 'col-3',
+        clase: 'form-control',
         etiqueta: 'input',
         nombre: 'AnioGrado',
         label: '* ' + this.translate.instant('FORMACION_ACADEMICA.ANIO_FIN'),
@@ -73,6 +80,8 @@ export class FormacionAcademicaComponent implements OnInit {
         tipo: 'number',
         minimo: 1900,
       }, {
+        claseGrid: 'col-6',
+        clase: 'form-control',
         etiqueta: 'select',
         nombre: 'PaisUniversidad',
         label: '* ' + this.translate.instant('FORMACION_ACADEMICA.PAIS_UNIVERSIDAD'),
@@ -87,6 +96,8 @@ export class FormacionAcademicaComponent implements OnInit {
           { Id: 4, valor: 'Rusia' },
         ],
       }, {
+        claseGrid: 'col-6',
+        clase: 'form-control',
         etiqueta: 'select',
         nombre: 'CiudadUniversidad',
         label: '* ' + this.translate.instant('FORMACION_ACADEMICA.CIUDAD_UNIVERSIDAD'),
@@ -101,6 +112,8 @@ export class FormacionAcademicaComponent implements OnInit {
           { Id: 4, valor: 'DDD' },
         ],
       }, {
+        claseGrid: 'col-6',
+        clase: 'form-control',
         etiqueta: 'input',
         nombre: 'NombreUniversidad',
         label: '* ' + this.translate.instant('FORMACION_ACADEMICA.NOMBRE_UNIVERSIDAD'),
@@ -108,6 +121,8 @@ export class FormacionAcademicaComponent implements OnInit {
         requerido: true,
         tipo: 'text',
       }, {
+        claseGrid: 'col-6',
+        clase: 'form-control',
         etiqueta: 'select',
         nombre: 'Modalidad',
         label: '* ' + this.translate.instant('FORMACION_ACADEMICA.MODALIDAD'),
@@ -121,6 +136,8 @@ export class FormacionAcademicaComponent implements OnInit {
           { Id: 3, valor: 'Virtual' },
         ],
       }, {
+        claseGrid: 'col-6',
+        clase: 'form-control',
         etiqueta: 'input',
         nombre: 'TituloGrado',
         label: '* ' + this.translate.instant('FORMACION_ACADEMICA.TITULO_OBTENIDO'),
@@ -128,6 +145,8 @@ export class FormacionAcademicaComponent implements OnInit {
         requerido: true,
         tipo: 'text',
       }, {
+        claseGrid: 'col-6',
+        clase: 'form-control',
         etiqueta: 'input',
         nombre: 'TituloTrabajoGrado',
         label: '* ' + this.translate.instant('FORMACION_ACADEMICA.TITULO_TRABAJO_GRADO'),
@@ -135,6 +154,8 @@ export class FormacionAcademicaComponent implements OnInit {
         requerido: true,
         tipo: 'text',
       }, {
+        claseGrid: 'col-12',
+        clase: 'form-control',
         etiqueta: 'textarea',
         nombre: 'DescripcionTrabajoGrado',
         label: '* ' + this.translate.instant('FORMACION_ACADEMICA.DESCRIPCION_TRABAJO_GRADO'),

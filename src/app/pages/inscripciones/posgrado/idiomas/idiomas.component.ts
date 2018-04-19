@@ -10,11 +10,12 @@ import { UtilidadesService } from '../../../../@core/utils/utilidades.service';
 export class IdiomasComponent implements OnInit {
   formIdiomas: any = {
     titulo: this.translate.instant('IDIOMAS.TITULO'),
-    clase: 'col-9',
+    clase: 'col-12',
     btn: this.translate.instant('IDIOMAS.SIGUIENTE'),
     alertas: true,
     btnLimpiar: this.translate.instant('IDIOMAS.SALIR'),
     modelo: 'Idiomas',
+    tipo_formulario: 'basic',
     campos: [],
   };
   percentage: any;
@@ -42,6 +43,8 @@ export class IdiomasComponent implements OnInit {
           Realizar esto por cada uno.</label>
       **/
       {
+        claseGrid: 'col-6',
+        clase: 'form-control',
         etiqueta: 'select',
         nombre: 'Idioma',
         label: '* ' + this.translate.instant('IDIOMAS.TITULO'),
@@ -58,6 +61,8 @@ export class IdiomasComponent implements OnInit {
           { Id: 6, valor: 'Ruso' },
         ],
       }, {
+        claseGrid: 'col-6',
+        clase: 'form-control',
         etiqueta: 'select',
         nombre: 'IdiomaMaterno',
         label: '* ' + this.translate.instant('IDIOMAS.NATAL'),
@@ -70,6 +75,8 @@ export class IdiomasComponent implements OnInit {
           { Id: 2, valor: 'No' },
         ],
       }, {
+        claseGrid: 'col-6',
+        clase: 'form-control',
         etiqueta: 'select',
         nombre: 'NivelHabla',
         label: '* ' + this.translate.instant('IDIOMAS.NIVEL_HABLA'),
@@ -83,6 +90,8 @@ export class IdiomasComponent implements OnInit {
           { Id: 3, valor: 'Alto' },
         ],
       }, {
+        claseGrid: 'col-6',
+        clase: 'form-control',
         etiqueta: 'select',
         nombre: 'NivelEscucha',
         label: '* ' + this.translate.instant('IDIOMAS.NIVEL_ESCUCHA'),
@@ -96,6 +105,8 @@ export class IdiomasComponent implements OnInit {
           { Id: 3, valor: 'Alto' },
         ],
       }, {
+        claseGrid: 'col-6',
+        clase: 'form-control',
         etiqueta: 'select',
         nombre: 'NivelEscritura',
         label: '* ' + this.translate.instant('IDIOMAS.NIVEL_ESCRITURA'),
@@ -109,6 +120,8 @@ export class IdiomasComponent implements OnInit {
           { Id: 3, valor: 'Alto' },
         ],
       }, {
+        claseGrid: 'col-6',
+        clase: 'form-control',
         etiqueta: 'select',
         nombre: 'NivelLectura',
         label: '* ' + this.translate.instant('IDIOMAS.NIVEL_LECTURA'),

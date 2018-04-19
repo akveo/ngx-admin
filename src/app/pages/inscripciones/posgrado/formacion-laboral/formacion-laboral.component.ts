@@ -10,11 +10,12 @@ import { UtilidadesService } from '../../../../@core/utils/utilidades.service';
 export class FormacionLaboralComponent implements OnInit {
   formFormacionLaboral: any = {
     titulo: this.translate.instant('FORMACION_LABORAL.TITULO'),
-    clase: 'col-9',
+    clase: 'col-12',
     btn: this.translate.instant('FORMACION_LABORAL.SIGUIENTE'),
     alertas: true,
     btnLimpiar: this.translate.instant('FORMACION_LABORAL.SALIR'),
     modelo: 'FormacionLaboral',
+    tipo_formulario: 'basic',
     campos: [],
   };
   percentage: any;
@@ -42,6 +43,8 @@ export class FormacionLaboralComponent implements OnInit {
           Realizar esto por cada labor desempeñada.</label>
       **/
       {
+        claseGrid: 'col-6',
+        clase: 'form-control',
         etiqueta: 'input',
         nombre: 'NombreEmpresa',
         label: '* ' + this.translate.instant('FORMACION_LABORAL.NOMBRE_EMPRESA'),
@@ -49,6 +52,8 @@ export class FormacionLaboralComponent implements OnInit {
         requerido: true,
         tipo: 'text',
       }, {
+        claseGrid: 'col-6',
+        clase: 'form-control',
         etiqueta: 'input',
         nombre: 'DireccionEmpresa',
         label: '* ' + this.translate.instant('FORMACION_LABORAL.DIRECCION_EMPRESA'),
@@ -56,6 +61,8 @@ export class FormacionLaboralComponent implements OnInit {
         requerido: true,
         tipo: 'text',
       }, {
+        claseGrid: 'col-6',
+        clase: 'form-control',
         etiqueta: 'input',
         nombre: 'EmailEmpresa',
         label: '* ' + this.translate.instant('FORMACION_LABORAL.CORREO_EMPRESA'),
@@ -63,6 +70,8 @@ export class FormacionLaboralComponent implements OnInit {
         requerido: true,
         tipo: 'email',
       }, {
+        claseGrid: 'col-6',
+        clase: 'form-control',
         etiqueta: 'input',
         nombre: 'TelefonoEmpresa',
         label: '* ' + this.translate.instant('FORMACION_LABORAL.TELEFONO_EMPRESA'),
@@ -71,6 +80,8 @@ export class FormacionLaboralComponent implements OnInit {
         tipo: 'number',
         minimo: 100,
       }, {
+        claseGrid: 'col-3',
+        clase: 'form-control',
         etiqueta: 'input',
         nombre: 'FechaInicio',
         label: '* ' + this.translate.instant('FORMACION_LABORAL.ANIO_INICIO'),
@@ -78,6 +89,8 @@ export class FormacionLaboralComponent implements OnInit {
         requerido: true,
         tipo: 'date',
       }, {
+        claseGrid: 'col-3',
+        clase: 'form-control',
         etiqueta: 'input',
         nombre: 'FechaFin',
         label: this.translate.instant('FORMACION_LABORAL.ANIO_FIN'),
@@ -85,6 +98,8 @@ export class FormacionLaboralComponent implements OnInit {
         requerido: false,
         tipo: 'date',
       }, {
+        claseGrid: 'col-6',
+        clase: 'form-control',
         etiqueta: 'input',
         nombre: 'Cargo',
         label: '* ' + this.translate.instant('FORMACION_LABORAL.CARGO'),
@@ -92,6 +107,8 @@ export class FormacionLaboralComponent implements OnInit {
         requerido: true,
         tipo: 'text',
       }, {
+        claseGrid: 'col-12',
+        clase: 'form-control',
         etiqueta: 'textarea',
         nombre: 'DescripcionCargo',
         label: '* ' + this.translate.instant('FORMACION_LABORAL.DESCRIPCION_CARGO'),
