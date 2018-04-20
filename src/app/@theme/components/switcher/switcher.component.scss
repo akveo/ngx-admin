@@ -32,11 +32,13 @@
       color: nb-theme(color-fg);
 
       &.first {
-        padding-right: 10px;
+        @include nb-ltr(padding-right, 10px);
+        @include nb-rtl(padding-left, 10px);
       }
 
       &.second {
-        padding-left: 10px;
+        @include nb-ltr(padding-left, 10px);
+        @include nb-rtl(padding-right, 10px);
       }
 
       &.active {
@@ -68,7 +70,8 @@
       display: none;
 
       &:checked + .slider::before {
-        transform: translateX(2.25rem);
+        @include nb-ltr(transform, translateX(2.25rem));
+        @include nb-rtl(transform, translateX(-2.25rem));
       }
     }
 
@@ -101,24 +104,5 @@
 
   @include media-breakpoint-down(xs) {
     align-items: flex-end;
-  }
-}
-
-@include nb-install-component('[dir=rtl]') {
-  .switch-label > span {
-    &.first {
-      padding-left: 10px;
-      padding-right: 0;
-    }
-    &.second {
-      padding-right: 10px;
-      padding-left: 0;
-    }
-  }
-
-  .switch input {
-    &:checked + .slider::before {
-      transform: translateX(-2.25rem);
-    }
   }
 }
