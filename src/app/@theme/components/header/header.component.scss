@@ -34,7 +34,7 @@
 
     .navigation {
       @include nb-ltr(padding-right, nb-theme(padding));
-      @include nb-rtr(padding-left, nb-theme(padding));
+      @include nb-rtl(padding-left, nb-theme(padding));
       font-size: 2.5rem;
       text-decoration: none;
 
