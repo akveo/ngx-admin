@@ -10,7 +10,8 @@
   }
 
   .pagination-container {
-    margin-right: 1rem;
+    @include nb-ltr(margin-right, 1rem);
+    @include nb-rtl(margin-left, 1rem);
 
     .btn-group > .btn {
       padding-left: 1.125rem;
@@ -53,7 +54,8 @@
 
     > label {
       flex-basis: 10%;
-      margin: 0 0.25rem 0.5rem 0;
+      @include nb-ltr(margin, 0 0.25rem 0.5rem 0);
+      @include nb-rtl(margin, 0 0 0.5rem 0.25rem);
     }
   }
 
@@ -61,16 +63,5 @@
     .btn {
       padding: 0.75rem 0.7rem;
     }
-  }
-}
-
-@include nb-install-component('[dir=rtl]') {
-  .pagination-container {
-    margin-right: 0;
-    margin-left: 1rem;
-  }
-
-  .example-container > .btn-divided-checkbox-group > label {
-    margin: 0 0 0.5rem 0.25rem;
   }
 }

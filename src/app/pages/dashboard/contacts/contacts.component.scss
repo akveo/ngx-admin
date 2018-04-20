@@ -39,7 +39,8 @@
 
   nb-user /deep/ {
     .info-container {
-      margin-left: 0.875rem;
+      @include nb-ltr(margin-left, 0.875rem);
+      @include nb-rtl(margin-right, 0.875rem);
     }
 
     .user-name {
@@ -60,5 +61,3 @@
     }
   }
 }
-
-

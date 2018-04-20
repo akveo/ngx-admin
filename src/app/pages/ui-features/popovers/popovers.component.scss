@@ -8,10 +8,12 @@
 
 :host {
   button.with-margins {
-    @include rtl(margin, 0 0.75rem 2rem 0, 0 0 2rem 0.75rem);
+    @include nb-ltr(margin, 0 0.75rem 2rem 0);
+    @include nb-rtl(margin, 0 0 2rem 0.75rem);
   }
 
   /deep/ .btn-outline-secondary {
-    @include rtl(margin, 0 0.5rem 0.5rem 0, 0 0 0.5rem 0.5rem);
+    @include nb-ltr(margin, 0 0.5rem 0.5rem 0);
+    @include nb-rtl(margin, 0 0 0.5rem 0.5rem);
   }
 }

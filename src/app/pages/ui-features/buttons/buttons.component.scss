@@ -52,7 +52,8 @@
     }
 
     .example-container {
-      padding-right: 0;
+      @include nb-ltr(padding-right, 0);
+      @include nb-rtl(padding-left, 0);
     }
 
     .example-container .container-btn {
@@ -79,7 +80,8 @@
 
     /deep/.icon-buttons .icon-button-examples {
       button {
-        margin-right: 1rem;
+        @include nb-ltr(margin-right, 1rem);
+        @include nb-rtl(margin-left, 1rem);
       }
     }
 
@@ -91,22 +93,6 @@
     ngx-block-level-buttons /deep/ {
       .btn-primary {
         padding: 0.75rem 1rem;
-      }
-    }
-  }
-}
-
-@include nb-install-component('[dir=rtl]') {
-  /deep/ .example-container {
-    padding-left: 0;
-    padding-right: 15px;
-  }
-
-  @include media-breakpoint-down(xs) {
-    /deep/.icon-buttons .icon-button-examples {
-      button {
-        margin-left: 1rem;
-        margin-right: 0;
       }
     }
   }

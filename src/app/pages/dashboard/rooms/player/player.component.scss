@@ -110,10 +110,12 @@
     color: nb-theme(color-fg);
 
     .current {
-      order: 0;
+      @include nb-ltr(order, 0);
+      @include nb-rtl(order, 1);
     }
     .remaining {
-      order: 1;
+      @include nb-ltr(order, 1);
+      @include nb-rtl(order, 0);
     }
   }
 
@@ -121,6 +123,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    @include nb-rtl(flex-direction, row-reverse);
     padding: 0.25rem 2rem 1rem;
     max-width: 400px;
     width: 100%;
@@ -308,19 +311,5 @@
         }
       }
     }
-  }
-}
-
-@include nb-install-component('[dir=rtl]') {
-  .timing {
-    .current {
-      order: 1;
-    }
-    .remaining {
-      order: 0;
-    }
-  }
-  .controls {
-    flex-direction: row-reverse;
   }
 }
