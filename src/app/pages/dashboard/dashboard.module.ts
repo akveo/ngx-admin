@@ -14,7 +14,7 @@ import { SolarComponent } from './solar/solar.component';
 import { TrafficComponent } from './traffic/traffic.component';
 import { TrafficChartComponent } from './traffic/traffic-chart.component';
 import { CarouselComponent } from './carousel/carousel.component';
-
+import { NewsComponent } from './news/news.component';
 
 
 @NgModule({
@@ -35,6 +35,7 @@ import { CarouselComponent } from './carousel/carousel.component';
     TrafficComponent,
     TrafficChartComponent,
     CarouselComponent,
+    NewsComponent,
   ],
 })
 export class DashboardModule { }

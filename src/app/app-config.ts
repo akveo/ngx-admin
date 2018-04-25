@@ -1,6 +1,8 @@
 export const Config = {
     LOCAL : {
         WSO2_SERVICE: 'http://jbpm.udistritaloas.edu.co:8280/services',
+        CORE_SERVICE: 'http://pruebasapi.intranetoas.udistrital.edu.co:8083/v1/',
+        UBICACION_SERVICE: 'http://pruebasapi.intranetoas.udistrital.edu.co:8085/v1/',
         PERSONA_SERVICE: 'http://localhost:8080/v1/',
         TOKEN: {
             AUTORIZATION_URL: 'https://10.20.0.162:9443/oauth2/authorize',
@@ -16,6 +18,7 @@ export const Config = {
             SIGN_OUT_APPEND_TOKEN: 'true',
             REFRESH_TOKEN: 'https://10.20.0.162:9443/oauth2/token',
         },
+        CONF_MENU_SERVICE: 'http://10.20.0.254/configuracion_api/v1/menu_opcion_padre/ArbolMenus/',
     },
 
     PROD : {
@@ -32,6 +35,7 @@ export const Config = {
             REFRESH_TOKEN: 'https://10.20.0.162:9443/oauth2/token',
             CLIENT_SECRET: '',
         },
+        CONF_MENU_SERVICE: 'http://10.20.0.254/configuracion_api/v1/menu_opcion_padre/ArbolMenus/',
     },
     PREPROD : {
         WSO2_SERVICE: 'http://jbpm.udistritaloas.edu.co:8280/services',
@@ -49,5 +53,6 @@ export const Config = {
             REFRESH_TOKEN: 'https://10.20.0.162:9443/oauth2/token',
             CLIENT_SECRET: 'lrVuDATX1o8TfXxz_jrEzBA2iIoa',
         },
+        CONF_MENU_SERVICE: 'http://10.20.0.254/configuracion_api/v1/menu_opcion_padre/ArbolMenus/',
     },
 }

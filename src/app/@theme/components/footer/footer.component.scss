@@ -6,15 +6,12 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-
   footer-title .socials {
     font-size: 2rem;
-
     a {
       padding: 0.4rem;
       color: nb-theme(color-fg);
       transition: color ease-out 0.1s;
-
       &:hover {
         color: nb-theme(color-fg-heading);
       }
@@ -36,11 +33,12 @@
   text-align: center;
   display: block;
   font-size: 2.5rem;
+  color: #fff !important;
 }
 
 .footer-title {
   border-bottom: 0.1rem solid;
-  border-bottom-color: red;
+  border-bottom-color: #00f9a6;
   text-align: center;
   margin-bottom: 1rem;
 }
@@ -53,7 +51,7 @@
 .list-footer > a:hover,
 .list-footer:hover {
   padding-left: 0.5rem;
-  color: #fdb400 !important;
+  color: #00f9a6 !important;
   text-decoration: none;
 }
 
@@ -64,4 +62,16 @@
   text-align: left;
   list-style: none;
   transition: padding-left 1.5s;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  color: #818181;
+}
+
+.socials a:hover {
+  color: #00f9a6 !important;
 }
