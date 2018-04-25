@@ -1,212 +1,48 @@
 {
   "HOME": {
-    "TITLE": "Virtual campus",
-    "SELECT": "Change language",
-    "LOGIN": "Login",
-    "LOGOUT": "Logout"
+    "TITLE": "PERSONA",
+    "SELECT": "Cambiar idioma",
+    "LOGIN": "Iniciar sesion",
+    "LOGOUT": "Cerra sesion"
   },
   "MENU": {
-    "dashboard": "Home",
-    "inscription": {
-      "inscription": "Inscription",
-      "mockup-register": "Register mockup",
-      "mockup-inscription": "Inscription mockup",
-      "mockup-inscription-state": "Inscription state mockup",
-      "mockup-candidate-query": "Candidate query mockup",
-      "mockup-candidate-information": "Candidate information mockup",
-      "mockup-choose-interviewer": "Choose interviewer-teacher mockup"
+    "dashboard": "Inicio",
+    "genero": {
+      "genero": "genero",
+      "lista_genero": "lista genero",
+      "crud_genero": "Crud genero"
     },
-    "inscriptions": {
-      "inscriptions": "Inscriptions",
-      "postgraduate": "Postgraduate",
-      "profile": "Profile"
+    "grupo_etnico": {
+      "grupo_etnico": "grupo_etnico",
+      "lista_grupo_etnico": "lista grupo_etnico",
+      "crud_grupo_etnico": "Crud grupo_etnico"
     },
-    "certificates": {
-      "certificates": "Certificates"
+    "estado_civil": {
+      "estado_civil": "estado_civil",
+      "lista_estado_civil": "lista estado_civil",
+      "crud_estado_civil": "Crud estado_civil"
     },
-    "ui-features": {
-      "ui-features": "UI Features",
-      "buttons": "Buttons",
-      "grid": "Grid",
-      "icons": "Icons",
-      "modals": "Modals",
-      "typography": "Typography",
-      "animated-searches": "Animated Searches",
-      "tabs": "Tabs"
+    "tipo_discapacidad": {
+      "tipo_discapacidad": "tipo_discapacidad",
+      "lista_tipo_discapacidad": "lista tipo_discapacidad",
+      "crud_tipo_discapacidad": "Crud tipo_discapacidad"
     },
-    "forms": {
-      "forms": "Forms",
-      "form-inputs": "Form Inputs",
-      "form-layouts": "Form Layouts"
+    "persona": {
+      "persona": "persona",
+      "lista_persona": "lista persona",
+      "crud_persona": "Crud persona"
     },
-    "components": {
-      "components": "Components",
-      "tree": "Tree",
-      "notifications": "Notifications"
-    },
-    "maps": {
-      "maps": "Maps",
-      "google-maps": "Google Maps",
-      "leaflet-maps": "Leaflet Maps",
-      "bubble-maps": "Bubble Maps"
-    },
-    "charts": {
-      "charts": "Charts",
-      "echarts": "Echarts",
-      "charts-js": "Charts.js",
-      "d3": "D3"
-    },
-    "editors": {
-      "editors": "Editors",
-      "tinymce": "TinyMCE",
-      "ckeditor": "CKEditor"
-    },
-    "tables": {
-      "tables": "Tables",
-      "smart-table": "Smart Table"
+    "info_persona": {
+      "info_persona": "info_persona",
+      "lista_info_persona": "lista info_persona",
+      "crud_info_persona": "Crud info_persona"
     },
     "auth": {
-      "auth": "Auth",
+      "auth": "Autenticacion",
       "login": "Login",
-      "register": "Register",
-      "request-password": "Request Password",
-      "reset-password": "Reset Password"
+      "register": "Registro",
+      "request-password": "Recuperar Password",
+      "reset-password": "Reiniciar Password"
     }
-  },
-  "REGISTRO": {
-    "TITULO": "Register form",
-    "NOMBRE": "Names",
-    "APELLIDOS": "Lastnames",
-    "TIPO_DOCUMENTO": "Document type",
-    "NUMERO_DOCUMENTO": "Document number",
-    "GENERO": "Gender",
-    "FECHA_NACIMIENTO": "Birthdate",
-    "CORREO_ELECTRONICO": "E-mail",
-    "CON_CORREO_ELECTRONICO": "Confirm e-mail",
-    "CONTRASENA": "Password",
-    "CON_CONTRASENA": "Confirm password",
-    "ENVIAR": "Send"
-  },
-  "INSCRIPCION": {
-    "TITULO": "Inscription form"
-  },
-  "DATOS_BASICOS": {
-    "TITULO": "Basic information",
-    "TITULO2": "Additional information",
-    "TITULO3": "Contact information",
-    "TITULO4": "Selection of academic program",
-    "PROGRAMA": "Which program you want?",
-    "FOTO": "Photo",
-    "GRUPO_SANGUINEO": "Blood type",
-    "RH": "RH",
-    "TIPO_LIBRETA_MILITAR": "Colombian military card type",
-    "NUMERO_LIBRETA_MILITAR": "Colombian militar card number",
-    "ESTADO_CIVIL": "Civil status",
-    "GRUPO_ETNICO": "Colombian ethnic or minority group to which you belong",
-    "DISCAPACIDAD": "Impairment types what you have",
-    "DIS_NINGUNA": "None",
-    "DIS_AUDITIVA": "Hearing impairment",
-    "DIS_VISUAL": "Visual impairment",
-    "DIS_MOTRIZ": "Motor impairment",
-    "DIS_INTELECTUAL": "Intellectual impairment",
-    "DIS_VISCERAL": "Visceral impairment",
-    "PAIS_NACIMIENTO": "Birth country",
-    "CIUDAD_NACIMIENTO": "Birth city",
-    "PAIS_RESIDENCIA": "Residence country",
-    "CIUDAD_RESIDENCIA": "Residence city",
-    "DIRECCION_RESIDENCIA": "Residence address",
-    "CODIGO_POSTAL": "Postal code",
-    "TELEFONO": "Telephone",
-    "TELEFONO_ALT": "Alternative telephone",
-    "SIGUIENTE": "Next",
-    "SALIR": "Exit"
-  },
-  "FORMACION_ACADEMICA": {
-    "TITULO": "Academic training",
-    "AVISO": "To add the academic training, enter the respective information and press the add button. Do this for each study that you have.",
-    "NIVEL_FORMACION": "Training level",
-    "ANIO_INICIO": "Starting year",
-    "ANIO_FIN": "Graduation year",
-    "PAIS_UNIVERSIDAD": "University country",
-    "CIUDAD_UNIVERSIDAD": "University city",
-    "NOMBRE_UNIVERSIDAD": "Universisy name",
-    "MODALIDAD": "Study mode",
-    "TITULO_OBTENIDO": "Obtained title",
-    "TITULO_TRABAJO_GRADO": "Thesis title",
-    "DESCRIPCION_TRABAJO_GRADO": "Thesis description",
-    "AGREGAR": "Add information",
-    "ELIMINAR": "Delete",
-    "SIGUIENTE": "Next",
-    "SALIR": "Exit",
-    "MENSAJE": "Are you sure you want to delete?"
-  },
-  "FORMACION_LABORAL": {
-    "TITULO": "Job information",
-    "MENSAJE": "Are you sure you want to delete?",
-    "EMPRESA": "Company",
-    "ANIO_INICIO": "Starting date",
-    "ANIO_FIN": "Ending date",
-    "CARGO": "Role",
-    "ELIMINAR": "Delete",
-    "SIGUIENTE": "Next",
-    "SALIR": "Exit",
-    "AGREGAR": "Add information",
-    "AVISO": "To add the job information, enter the respective data and press the add button. Do this for each job performed.",
-    "NOMBRE_EMPRESA": "Company name",
-    "DIRECCION_EMPRESA": "Company address",
-    "CORREO_EMPRESA": "Company e-mail",
-    "TELEFONO_EMPRESA": "Company telephone",
-    "DESCRIPCION_CARGO": "Description of the role and its functions"
-  },
-  "IDIOMAS": {
-    "TITULO": "Languages",
-    "AVISO": "To add languages which you have knowledge, enter the respective information and press the add button. Do this for each one.",
-    "IDIOMA": "Language",
-    "NATAL": "Is it your native language?",
-    "NIVEL_ESCUCHA": "Listening level",
-    "NIVEL_ESCRITURA": "Writting level",
-    "NIVEL_LECTURA": "Reading level",
-    "NIVEL_HABLA": "Speaking level",
-    "IDIOMA_NATAL": "Native language",
-    "ELIMINAR": "Delete",
-    "AGREGAR": "Add information",
-    "SIGUIENTE": "Next",
-    "SALIR": "Exit",
-    "MENSAJE": "Are you sure you want to delete?"
-  },
-  "DOCUMENTOS": {
-    "TITULO": "Documents",
-    "SIGUIENTE": "Next",
-    "SALIR": "Exit"
-  },
-  "DESCUENTOS": {
-    "TITULO": "Discounts",
-    "INDICACION": "Indicate which of these discounts you have, add the respective soport",
-    "DESCUENTO_ELECTORAL": "If you are colombian and of legal age, do you have the voting certificate of the last elections?",
-    "USO_DESCUENTO": "Have you used any benefit and / or discount to study at the Universidad Distrital Francisco José de Caldas?",
-    "DESCUENTO_EGRESADO": "Are you a graduate of the Universidad Distrital Francisco José de Caldas?",
-    "DESCUENTO_MONITOR": "Were you an academic or administrative assistant of the Universidad Distrital Francisco José de Caldas?",
-    "DESCUENTO_CONCEJO": "Have you been a student representative by the university superior council, academic council or faculty council of the Universidad Distrital Francisco José de Caldas?",
-    "DESCUENTO_PLANTA": "Are you a staff member of the Universidad Distrital Francisco José de Caldas or a family member of one of them?",
-    "DESCUENTO_ECAES": "Are you a person with a scholarship for your performance in the Saber-Pro test (before ECAES) of graduates of the Universidad Distrital Francisco José de Caldas?",
-    "NO": "No",
-    "SI": "Yes",
-    "SOPORTE": "Attach the soport document",
-    "SIGUIENTE": "Next",
-    "SALIR": "Exit"
-  },
-  "PROPUESTA_TRABAJO_GRADO": {
-    "TITULO": "Thesis proporsal",
-    "GRUPO_INVESTIGACION": "What research group do you want to your thesis?",
-    "LINEA_INVESTIGACION": "What research line do you want to follow for your thesis?",
-    "TITULO_PROPUESTA": "Thesis proporsal title",
-    "ARCHIVO_PROPUESTA": "Thesis proporsal",
-    "SIGUIENTE": "Next",
-    "SALIR": "Exit"
-  },
-  "ENVIO": {
-    "TITULO": "Finish",
-    "AVISO": "Thank you for registering",
-    "ENVIAR": "Send"
   }
 }

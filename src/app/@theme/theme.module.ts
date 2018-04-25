@@ -6,7 +6,8 @@ import { AutenticationService } from '../@core/utils/autentication.service';
 import { SharedModule } from '../shared/shared.module';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatFormFieldModule } from '@angular/material';
-import { MatInputModule } from '@angular/material';
+import { MatInputModule, MatSelectModule } from '@angular/material';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 import {
   NbActionsModule,
@@ -67,6 +68,8 @@ const MAT_MODULES = [
   MatNativeDateModule,
   MatFormFieldModule,
   MatInputModule,
+  MatSelectModule,
+  MatCheckboxModule,
 ]
 
 const COMPONENTS = [

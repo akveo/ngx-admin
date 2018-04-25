@@ -76,6 +76,7 @@
         "roboto-fontface": "0.8.0",
         "rxjs": "^5.5.2",
         "style-loader": "^0.20.2",
+        "sweetalert2": "^7.18.0",
         "tinymce": "4.5.7",
         "ts-md5": "^1.2.4",
         "typeface-exo": "0.0.22",
