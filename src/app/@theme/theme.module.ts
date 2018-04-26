@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 // import { AutenticationService } from '../@core/utils/autentication.service';
-import { ImplicitAutenticationService } from "../@core/utils/implicit_autentication.service";
+import { ImplicitAutenticationService } from '../@core/utils/implicit_autentication.service';
 import { SharedModule } from '../shared/shared.module';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatFormFieldModule } from '@angular/material';

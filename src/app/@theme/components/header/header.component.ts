@@ -5,7 +5,7 @@ import { UserService } from '../../../@core/data/users.service';
 import { AnalyticsService } from '../../../@core/utils/analytics.service';
 // import { AutenticationService } from '../../../@core/utils/autentication.service';
 import { TranslateService } from '@ngx-translate/core';
-import { ImplicitAutenticationService } from "../../../@core/utils/implicit_autentication.service";
+import { ImplicitAutenticationService } from '../../../@core/utils/implicit_autentication.service';
 
 @Component({
   selector: 'ngx-header',

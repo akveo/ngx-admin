@@ -1,12 +1,12 @@
 
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs/Rx';
 import { Config } from './../../app-config';
 import { Md5 } from 'ts-md5/dist/md5';
 
 @Injectable()
 export class ImplicitAutenticationService {
+    bearer: { headers: HttpHeaders; };
 
     init(): void {
     }
@@ -17,6 +17,13 @@ export class ImplicitAutenticationService {
     public logOut: any;
 
     constructor(private http: HttpClient) {
+        this.bearer = {
+            headers: new HttpHeaders({
+                'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
+                'authorization': 'Bearer ' + window.localStorage.getItem('access_token'),
+                'cache-control': 'no-cache',
+            }),
+        }
         this.logOut = '';
     }
     public getLogoutUrl() {

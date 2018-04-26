@@ -12,17 +12,17 @@ import { environment } from './environments/environment';
 if (environment.production) {
   enableProdMode();
 }
-var params = {},
+const params = {},
   queryString = location.hash.substring(1),
-  regex = /([^&=]+)=([^&]*)/g,
-  m;
+  regex = /([^&=]+)=([^&]*)/g;
+let  m;
 while (m = regex.exec(queryString)) {
   params[decodeURIComponent(m[1])] = decodeURIComponent(m[2]);
 }
 // And send the token over to the server
-var req = new XMLHttpRequest();
+const req = new XMLHttpRequest();
 // consider using POST so query isn't logged
-var query = 'https://' + window.location.host + '?' + queryString;
+const query = 'https://' + window.location.host + '?' + queryString;
 // console.log(query);
 req.open('GET', query, true);
 if (params['id_token'] !== null && params['id_token'] !== undefined) {
