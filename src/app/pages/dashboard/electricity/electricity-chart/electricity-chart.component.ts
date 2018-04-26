@@ -81,10 +81,8 @@ export class ElectricityChartComponent implements AfterViewInit, OnDestroy {
               show: false,
             },
             axisLabel: {
-              textStyle: {
-                color: eTheme.xAxisTextColor,
-                fontSize: 18,
-              },
+              color: eTheme.xAxisTextColor,
+              fontSize: 18,
             },
             axisLine: {
               lineStyle: {
