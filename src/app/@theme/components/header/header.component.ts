@@ -49,6 +49,7 @@ export class HeaderComponent implements OnInit {
   }
 
   logout() {
+    console.info(this.autenticacion.getLogoutUrl())
     location.href = this.autenticacion.getLogoutUrl();
   }
 

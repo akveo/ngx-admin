@@ -1,5 +1,5 @@
 export const Config = {
-    LOCAL : {
+    LOCAL: {
         NUXEO: {
             PATH: 'https://documental.udistrital.edu.co/nuxeo/',
             AUTH: {
@@ -23,11 +23,11 @@ export const Config = {
             SIGN_OUT_REDIRECT_URL: 'http://localhost:9000/',
             SIGN_OUT_APPEND_TOKEN: 'true',
             REFRESH_TOKEN: 'https://autenticacion.udistrital.edu.co/oauth2/token',
-          },
+        },
         CONF_MENU_SERVICE: 'http://10.20.0.254/configuracion_api/v1/menu_opcion_padre/ArbolMenus/',
     },
 
-    PROD : {
+    PROD: {
         WSO2_SERVICE: 'http://jbpm.udistritaloas.edu.co:8280/services',
         TOKEN: {
             AUTORIZATION_URL: 'https://autenticacion.udistrital.edu.co/oauth2/authorize',
@@ -41,10 +41,10 @@ export const Config = {
             SIGN_OUT_REDIRECT_URL: 'http://localhost:9000/',
             SIGN_OUT_APPEND_TOKEN: 'true',
             REFRESH_TOKEN: 'https://autenticacion.udistrital.edu.co/oauth2/token',
-          },
+        },
         CONF_MENU_SERVICE: 'http://10.20.0.254/configuracion_api/v1/menu_opcion_padre/ArbolMenus/',
     },
-    PREPROD : {
+    PREPROD: {
         WSO2_SERVICE: 'http://jbpm.udistritaloas.edu.co:8280/services',
         TOKEN: {
             AUTORIZATION_URL: 'https://autenticacion.udistrital.edu.co/oauth2/authorize',
@@ -58,7 +58,11 @@ export const Config = {
             SIGN_OUT_REDIRECT_URL: 'http://localhost:9000/',
             SIGN_OUT_APPEND_TOKEN: 'true',
             REFRESH_TOKEN: 'https://autenticacion.udistrital.edu.co/oauth2/token',
-          },
+        },
     },
     CONF_MENU_SERVICE: 'http://10.20.0.254/configuracion_api/v1/menu_opcion_padre/ArbolMenus/',
+};
+
+export const general = {
+    ENTORNO: Config.LOCAL,
 };
