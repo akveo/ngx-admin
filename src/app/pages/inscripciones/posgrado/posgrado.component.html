@@ -19,6 +19,7 @@
       </nb-tab>
       <nb-tab tabTitle="5. {{ 'DOCUMENTOS.TITULO' | translate }}">
         <ngx-dinamicform [normalform]="formDocumentos" (result)="traerDocumentos($event)"></ngx-dinamicform>
+        <ngx-nuxeo [files]="documentosFiles" (save)="saveDocumentosFiles($event)"></ngx-nuxeo>
       </nb-tab>
       <nb-tab tabTitle="6. {{ 'DESCUENTOS.TITULO' | translate }}">
         <ngx-dinamicform [normalform]="formDescuentos" (result)="traerDescuentos($event)"></ngx-dinamicform>

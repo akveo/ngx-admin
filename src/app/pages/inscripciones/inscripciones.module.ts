@@ -9,6 +9,7 @@ import { PosgradoComponent } from './posgrado/posgrado.component';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { InfoBasicaComponent } from './info-basica/info-basica.component';
 import { UtilidadesService } from '../../@core/utils/utilidades.service';
+import { NuxeoService } from '../../@core/utils/nuxeo.service';
 import { SharedModule } from '../../shared/shared.module';
 import { IdiomasComponent } from './posgrado/idiomas/idiomas.component';
 import { DocumentosComponent } from './posgrado/documentos/documentos.component';
@@ -49,6 +50,7 @@ import { SeleccionProgramaComponent } from './posgrado/seleccion-programa/selecc
     AutenticationService,
     UtilidadesService,
     SharedModule,
+    NuxeoService,
   ],
 })
 export class InscripcionesModule {

@@ -17,8 +17,9 @@ export class AutenticationService {
         this.setting_basic = {
             headers: new HttpHeaders({
                 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
-                'authorization': 'Basic ' + btoa(Config.LOCAL.TOKEN.CLIENTE_ID + ':'
-                    + Config.LOCAL.TOKEN.CLIENT_SECRET),
+                'authorization': 'Basic ' + btoa(Config.LOCAL.TOKEN.CLIENTE_ID + ':',
+                    //    + Config.LOCAL.TOKEN.CLIENT_SECRET
+                ),
                 'cache-control': 'no-cache',
             }),
         }

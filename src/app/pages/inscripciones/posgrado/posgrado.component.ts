@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { TranslateService, LangChangeEvent} from '@ngx-translate/core';
+import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import { DATOS_PERSONALES } from './forms';
 import { DATOS_BASICOS } from './datos-personales';
 import { FORMACION_ACADEMICA } from './formacion-academica';
@@ -9,12 +9,14 @@ import { DOCUMENTOS } from './documentos';
 import { DESCUENTOS } from './descuentos';
 import { UtilidadesService } from '../../../@core/utils/utilidades.service';
 
+
 @Component({
   selector: 'ngx-posgrado',
   templateUrl: './posgrado.component.html',
   styleUrls: ['./posgrado.component.scss'],
 })
 export class PosgradoComponent {
+  documentosFiles: any;
   nForms: number;
   persona: any;
   formDatos: any;
@@ -39,6 +41,10 @@ export class PosgradoComponent {
   traerDatosBasicos(event) {
     console.info(event)
     this.setPercentage(event.percentage, 0);
+    this.documentosFiles = event.files;
+  }
+  saveDocumentosFiles(event) {
+    console.info(event);
   }
   traerFormacionAcademica(event) {
     console.info(event)
@@ -55,6 +61,7 @@ export class PosgradoComponent {
   traerDocumentos(event) {
     console.info(event)
     this.setPercentage(event.percentage, 4);
+    this.documentosFiles = event.files;
   }
   traerDescuentos(event) {
     console.info(event);
