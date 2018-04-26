@@ -1,3 +1,23 @@
+<a name="2.1.1"></a>
+## [2.1.1](https://github.com/akveo/ngx-admin/compare/v2.1.0...v2.1.1) (2018-04-26)
+
+
+### Bug Fixes
+
+* **dashboard:** fix temp/humidity buttons ([0f494dc](https://github.com/akveo/ngx-admin/commit/0f494dc))
+* **echarts:** fix x-axis style ([ba6877c](https://github.com/akveo/ngx-admin/commit/ba6877c))
+* **icons:** remove All Nebular Icons link as there are no more icons ([edb05b7](https://github.com/akveo/ngx-admin/commit/edb05b7)), closes [#1597](https://github.com/akveo/ngx-admin/issues/1597)
+* **ie:** add es7 object polyfill for IE ([0630fe7](https://github.com/akveo/ngx-admin/commit/0630fe7))
+* **map:** get the bubble map back (thanks to @SUlbrichA) ([#1655](https://github.com/akveo/ngx-admin/issues/1655)) ([19f9d0e](https://github.com/akveo/ngx-admin/commit/19f9d0e)), closes [#1576](https://github.com/akveo/ngx-admin/issues/1576)
+
+
+### Features
+
+* **search-map:** set default location Minsk ([#1573](https://github.com/akveo/ngx-admin/issues/1573)) ([b54ab9f](https://github.com/akveo/ngx-admin/commit/b54ab9f))
+* update nebular to rc.7 ([#1658](https://github.com/akveo/ngx-admin/issues/1658)) ([510d3c2](https://github.com/akveo/ngx-admin/commit/510d3c2))
+
+
+
 <a name="2.1.0"></a>
 # [2.1.0](https://github.com/akveo/ngx-admin/compare/v2.0.2...v2.1.0) (2018-02-26)
 
