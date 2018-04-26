@@ -18,7 +18,8 @@ export class AutenticationService {
             headers: new HttpHeaders({
                 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
                 'authorization': 'Basic ' + btoa(Config.LOCAL.TOKEN.CLIENTE_ID + ':'
-                    + Config.LOCAL.TOKEN.CLIENT_SECRET),
+                    //    + Config.LOCAL.TOKEN.CLIENT_SECRET
+                ),
                 'cache-control': 'no-cache',
             }),
         }
