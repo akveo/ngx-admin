@@ -26,7 +26,7 @@ publish:
     access_key: $$DRONE_AWS_ACCESS_KEY_ID
     secret_key: $$DRONE_AWS_SECRET_ACCESS_KEY
     source: dist
-    target: /campus_cliente-$$BRANCH
+    target: /campus_cliente_$$BRANCH
     recursive: true
     when:
       branch: develop
