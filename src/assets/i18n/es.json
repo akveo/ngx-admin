@@ -1,212 +1,48 @@
 {
   "HOME": {
-    "TITLE": "Campus virtual",
+    "TITLE": "Campus Virtual",
     "SELECT": "Cambiar idioma",
-    "LOGIN": "Iniciar sesión",
-    "LOGOUT": "Cerra sesión"
+    "LOGIN": "Iniciar sesion",
+    "LOGOUT": "Cerra sesion"
   },
   "MENU": {
     "dashboard": "Inicio",
-    "inscription": {
-      "inscription": "Inscripción",
-      "mockup-register": "Mockup de registro",
-      "mockup-inscription": "Mockup inscripcion",
-      "mockup-inscription-state": "Mockup estado inscripciones",
-      "mockup-candidate-query": "Mockup consultar aspirantes",
-      "mockup-candidate-information": "Mockup ver información aspirante",
-      "mockup-choose-interviewer": "Mockup asignar docente entrevistador"    
+    "genero": {
+      "genero": "genero",
+      "lista_genero": "lista genero",
+      "crud_genero": "Crud genero"
     },
-    "inscriptions": {
-      "inscriptions": "Inscripciones",
-      "postgraduate": "Posgrado",
-      "profile": "Perfil"
+    "grupo_etnico": {
+      "grupo_etnico": "grupo_etnico",
+      "lista_grupo_etnico": "lista grupo_etnico",
+      "crud_grupo_etnico": "Crud grupo_etnico"
     },
-    "certificates": {
-      "certificates": "Certificados"
+    "estado_civil": {
+      "estado_civil": "estado_civil",
+      "lista_estado_civil": "lista estado_civil",
+      "crud_estado_civil": "Crud estado_civil"
     },
-    "ui-features": {
-      "ui-features": "Caracteristicas UI",
-      "buttons": "Botones",
-      "grid": "Rejillas",
-      "icons": "Iconos",
-      "modals": "Modales",
-      "typography": "Tipografía",
-      "animated-searches": "Búsquedas animadas",
-      "tabs": "Pestañas"
+    "tipo_discapacidad": {
+      "tipo_discapacidad": "tipo_discapacidad",
+      "lista_tipo_discapacidad": "lista tipo_discapacidad",
+      "crud_tipo_discapacidad": "Crud tipo_discapacidad"
     },
-    "forms": {
-      "forms": "Formularios",
-      "form-inputs": "Entradas de formulario",
-      "form-layouts": "Layouts de formulario"
+    "persona": {
+      "persona": "persona",
+      "lista_persona": "lista persona",
+      "crud_persona": "Crud persona"
     },
-    "components": {
-      "components": "Componentes",
-      "tree": "Árbol",
-      "notifications": "Notificaciones"
-    },
-    "maps": {
-      "maps": "Mapas",
-      "google-maps": "Mapas de Google",
-      "leaflet-maps": "Mapas de Leaflet",
-      "bubble-maps": "Mapas de Bubble" 
-    },
-    "charts": {
-      "charts": "Gráficas",
-      "echarts": "Echarts",
-      "charts-js": "Charts.js",
-      "d3": "D3"
-    },
-    "editors": {
-      "editors": "Editores",
-      "tinymce": "TinyMCE",
-      "ckeditor": "CKEditor"
-    },
-    "tables": {
-      "tables": "Tablas",
-      "smart-table": "Smart Table"
+    "info_persona": {
+      "info_persona": "info_persona",
+      "lista_info_persona": "lista info_persona",
+      "crud_info_persona": "Crud info_persona"
     },
     "auth": {
-      "auth": "Autenticación",
+      "auth": "Autenticacion",
       "login": "Login",
       "register": "Registro",
-      "request-password": "Recuperar Contraseña",
-      "reset-password": "Reiniciar Contraseña"
+      "request-password": "Recuperar Password",
+      "reset-password": "Reiniciar Password"
     }
-  },
-  "REGISTRO": {
-    "TITULO": "Formulario de registro",
-    "NOMBRE": "Nombres",
-    "APELLIDOS": "Apellidos",
-    "TIPO_DOCUMENTO": "Tipo de documento",
-    "NUMERO_DOCUMENTO": "Número de documento",
-    "GENERO": "Género",
-    "FECHA_NACIMIENTO": "Fecha de nacimiento",
-    "CORREO_ELECTRONICO": "Correo electrónico",
-    "CON_CORREO_ELECTRONICO": "Confirmar correo electrónico",
-    "CONTRASENA": "Contraseña",
-    "CON_CONTRASENA": "Confirmar contraseña",
-    "ENVIAR": "Enviar"
-  },
-  "INSCRIPCION": {
-    "TITULO": "Formulario de inscripción"
-  },
-  "DATOS_BASICOS": {
-    "TITULO": "Datos básicos",
-    "TITULO2": "Información adicional",
-    "TITULO3": "Información de contacto",
-    "TITULO4": "Seleccion de programa académico",
-    "PROGRAMA": "Programa al que aspira",
-    "FOTO": "Foto",
-    "GRUPO_SANGUINEO": "Grupo sanguíneo",
-    "RH": "RH",
-    "TIPO_LIBRETA_MILITAR": "Tipo de libreta militar",
-    "NUMERO_LIBRETA_MILITAR": "Número de la libreta militar",
-    "ESTADO_CIVIL": "Estado civil",
-    "GRUPO_ETNICO": "Grupo étnico o de minoria al que pertenece",
-    "DISCAPACIDAD": "Tipos de discapacidad que posea",
-    "DIS_NINGUNA": "Ninguna",
-    "DIS_AUDITIVA": "Discapacidad auditiva",
-    "DIS_VISUAL": "Discapacidad visual",
-    "DIS_MOTRIZ": "Discapacidad motriz",
-    "DIS_INTELECTUAL": "Discapacidad intelectual",
-    "DIS_VISCERAL": "Discapacidad visceral",
-    "PAIS_NACIMIENTO": "País de nacimiento",
-    "CIUDAD_NACIMIENTO": "Ciudad de nacimiento",
-    "PAIS_RESIDENCIA": "País de residencia",
-    "CIUDAD_RESIDENCIA": "Ciudad de residencia",
-    "DIRECCION_RESIDENCIA": "Dirección de residencia",
-    "CODIGO_POSTAL": "Código postal",
-    "TELEFONO": "Teléfono",
-    "TELEFONO_ALT": "Teléfono de contacto",
-    "SIGUIENTE": "Siguiente",
-    "SALIR": "Salir"
-  },
-  "FORMACION_ACADEMICA": {
-    "TITULO": "Formación académica",
-    "AVISO": "Para ingresar la formación académica, ingrese la respectiva información y presione el botón agregar. Realizar esto por cada estudio que posea.",
-    "NIVEL_FORMACION": "Nivel de formación",
-    "ANIO_INICIO": "Año de inicio",
-    "ANIO_FIN": "Año de graduación",
-    "PAIS_UNIVERSIDAD": "País de universidad",
-    "CIUDAD_UNIVERSIDAD": "Ciudad de universidad",
-    "NOMBRE_UNIVERSIDAD": "Nombre de universidad",
-    "MODALIDAD": "Modalidad de estudio",
-    "TITULO_OBTENIDO": "Título obtenido",
-    "TITULO_TRABAJO_GRADO": "Título del trabajo de grado",
-    "DESCRIPCION_TRABAJO_GRADO": "Descripción trabajo de grado",
-    "AGREGAR": "Agregar información",
-    "ELIMINAR": "Eliminar",
-    "SIGUIENTE": "Siguiente",
-    "SALIR": "Salir",
-    "MENSAJE": "¿Realmente desea eliminar el registro?"
-  },
-  "FORMACION_LABORAL": {
-    "TITULO": "Información laboral",
-    "MENSAJE": "¿Realmente desea eliminar el registro?",
-    "EMPRESA": "Empresa",
-    "ANIO_INICIO": "Fecha de inicio",
-    "ANIO_FIN": "Fecha de finalización",
-    "CARGO": "Cargo",
-    "ELIMINAR": "Eliminar",
-    "SIGUIENTE": "Siguiente",
-    "SALIR": "Salir",
-    "AGREGAR": "Agregar información",
-    "AVISO": "Para ingresar la información laboral, ingrese los respectivos datos y presione el botón agregar. Realizar esto por cada labor desempeñada.",
-    "NOMBRE_EMPRESA": "Nombre de la empresa",
-    "DIRECCION_EMPRESA": "Dirección de la empresa",
-    "CORREO_EMPRESA": "Correo electrónico de la empresa",
-    "TELEFONO_EMPRESA": "Teléfono de la empresa",
-    "DESCRIPCION_CARGO": "Descripción del cargo y sus funciones"
-  },
-  "IDIOMAS": {
-    "TITULO": "Idiomas",
-    "AVISO": "Para ingresar los idiomas los cuaes tenga conocimiento, ingrese la respectiva información y presione el botón agregar. Realizar esto por cada uno.",
-    "IDIOMA": "Idioma",
-    "NATAL": "¿Es su idioma natal?",
-    "NIVEL_ESCUCHA": "Nivel de escucha",
-    "NIVEL_ESCRITURA": "Nivel de escritura",
-    "NIVEL_LECTURA": "Nivel de lectura",
-    "NIVEL_HABLA": "Nivel de habla",
-    "AGREGAR": "Agregar información",
-    "IDIOMA_NATAL": "Idioma natal",
-    "ELIMINAR": "Eliminar",
-    "SIGUIENTE": "Siguiente",
-    "SALIR": "Salir",
-    "MENSAJE": "¿Realmente desea eliminar el registro?"
-  },
-  "DOCUMENTOS": {
-    "TITULO": "Documentos",
-    "SIGUIENTE": "Siguiente",
-    "SALIR": "Salir"
-  },
-  "DESCUENTOS": {
-    "TITULO": "Descuentos",
-    "INDICACION": "Indique cuales de estos descuentos posee, agregue el respectivo comprobante",
-    "DESCUENTO_ELECTORAL": "Si usted es colombiano y mayor de edad, ¿Tiene usted el certificado de votación de las últimas elecciones?",
-    "USO_DESCUENTO": "¿Ha utilizado algún beneficio y/o descuento para estudiar en la Universidad Distrital Francisco José de Caldas?",
-    "DESCUENTO_EGRESADO": "¿Es usted egresado de un pregrado de la Universidad Distrital Francisco José de Caldas?",
-    "DESCUENTO_MONITOR": "¿Fue usted monitor académico o administrativo de la Universidad Distrital Francisco José de Caldas?",
-    "DESCUENTO_CONCEJO": "¿Fue usted representante estudiantil ante el concejo superior universitario, concejo académico ó concejo de facultad de la Universidad Distrital Francisco José de Caldas?",
-    "DESCUENTO_PLANTA": "¿Es usted personal de planta de la Universidad Distrital Francisco José de Caldas ó familiar de uno de ellos?",
-    "DESCUENTO_ECAES": "¿Es usted una persona becada por su desempeño en la prueba Saber-Pro (antes ECAES) de egresados de la Universidad Distrital Francisco José de Caldas?",
-    "NO": "No",
-    "SI": "Sí",
-    "SOPORTE": "Ingrese el soporte",
-    "SIGUIENTE": "Siguiente",
-    "SALIR": "Salir"
-  },
-  "PROPUESTA_TRABAJO_GRADO": {
-    "TITULO": "Propuesta de trabajo de grado",
-    "GRUPO_INVESTIGACION": "¿Con qué grupo de investigación desea realizar su proyecto de grado?",
-    "LINEA_INVESTIGACION": "¿Qué línea de investigación desea seguir para su proyecto de grado?",
-    "TITULO_PROPUESTA": "Título de la propuesta de trabajo de grado",
-    "ARCHIVO_PROPUESTA": "Propuesta de trabajo de grado",
-    "SIGUIENTE": "Siguiente",
-    "SALIR": "Salir"
-  },
-  "ENVIO": {
-    "TITULO": "Fin",
-    "AVISO": "Gracias por realizar la inscripción",
-    "ENVIAR": "Enviar"
   }
 }

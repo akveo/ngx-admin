@@ -45,6 +45,7 @@ export class DinamicformComponent implements OnInit, OnChanges {
                     element.valor = (new Date(this.modeloData[i])).toISOString().substring(0, 10);
                   } else {
                     element.valor = this.modeloData[i];
+                    this.validCampo(element);
                   }
                   if (element.etiqueta === 'mat-date') {
                     element.valor = new Date(this.modeloData[i]);
@@ -91,59 +92,63 @@ export class DinamicformComponent implements OnInit, OnChanges {
 
   onChangeDate(event, c) {
     c.valor = event.value;
-    console.info('c', c);
   }
 
-  validCampo(c) {
+  validCampo(c): boolean {
+
+    if (c.requerido && (c.valor === '' || c.valor === null || c.valor === undefined || JSON.stringify(c.valor) === '{}' || JSON.stringify(c.valor) === '[]')) {
+        c.alerta = '** Debe llenar este campo';
+        c.clase = 'form-control form-control-danger';
+        return false;
+      }
+    if (c.etiqueta === 'input' && c.tipo === 'number') {
+      c.valor = parseInt(c.valor, 10);
+      if (c.valor < c.minimo) {
+        c.clase = 'form-control form-control-danger';
+        c.alerta = 'El valor no puede ser menor que ' + c.minimo;
+        return false;
+      }
+    }
+    if (c.etiqueta === 'radio') {
+      if (c.valor.Id === undefined) {
+        c.clase = 'form-control form-control-danger';
+        c.alerta = 'Seleccione el campo';
+        return false;
+      }
+    }
     if (c.entrelazado) {
       this.interlaced.emit(c);
     }
-    if (c.valor === '') {
-      c.clase = 'form-control form-control-danger'
-    } else {
-      c.alerta = ''
-      c.clase = 'form-control form-control-success'
-    }
-
     if (c.etiqueta === 'select') {
       if (c.valor == null) {
-        c.clase = 'form-control form-control-danger'
-        c.alerta = 'Seleccione el campo'
-      } else {
-        c.alerta = ''
-        c.clase = 'form-control form-control-success'
+        c.clase = 'form-control form-control-danger';
+        c.alerta = 'Seleccione el campo';
+        return false;
       }
     }
     if (c.etiqueta === 'file') {
       if (c.valor !== undefined) {
         if (c.valor.size > c.tamanoMaximo * 1024000) {
-          console.info(c);
           c.clase = 'form-control form-control-danger';
           c.alerta = 'El tamaño del archivo es superior a : ' + c.tamanoMaximo + 'MB. ';
-        } else {
-          c.alerta = ''
-          c.clase = 'form-control form-control-success'
+          return false;
         }
         if ((c.valor.type.split('/'))[0].indexOf(c.tipo) === -1 ||
           (c.formatos.indexOf(c.valor.type.split('/')[1]) === -1)) {
           c.clase = 'form-control form-control-danger';
           c.alerta += 'Solo se admiten los siguientes formatos: ' + c.formatos;
-        } else {
-          c.alerta = ''
-          c.clase = 'form-control form-control-success'
+          return false;
         }
-      } else {
-        c.alerta = '** Debe llenar este campo';
-        c.clase = 'form-control form-control-danger';
       }
     }
-
-
     if (!this.normalform.btn) {
       if (this.validForm().valid) {
         this.resultSmart.emit(this.validForm());
       }
     }
+    c.clase = 'form-control form-control-success';
+    c.alerta = '';
+    return true;
   }
 
 
@@ -155,97 +160,46 @@ export class DinamicformComponent implements OnInit, OnChanges {
 
   validForm() {
 
-    let result = '';
+    const result = {};
     let requeridos = 0;
     let resueltos = 0;
-
-    this.data.valid = true;
     this.data.data = {};
     this.data.percentage = 0;
     this.data.files = [];
-    if (this.normalform.modelo) {
-      result = '{"' + this.normalform.modelo + '":{';
-    } else {
-      result = '{';
-    }
+    this.data.valid = true;
+
     this.normalform.campos.forEach(d => {
-      if (d.requerido) {
-        requeridos++;
-      }
-
-      if (d.etiqueta === 'input' && d.tipo === 'number') {
-        d.valor = parseInt(d.valor, 10);
-        if (d.valor < d.minimo) {
-          this.data.valid = false;
-          d.clase = 'form-control form-control-danger'
-          d.alerta = 'El valor no puede ser menor que ' + d.minimo
-        } else {
-          d.alerta = ''
-          d.clase = 'form-control form-control-success'
+      requeridos = d.requerido ? requeridos + 1 : requeridos;
+      if (this.validCampo(d)) {
+        if (d.etiqueta === 'file') {
+          this.data.files.push({ nombre: d.nombre, file: d.valor });
         }
-      }
-      if (d.etiqueta === 'radio') {
-        if (d.valor.Id === undefined) {
-          this.data.valid = false;
-          d.clase = 'form-control form-control-danger'
-          d.alerta = 'Seleccione el campo'
+        if (d.etiqueta === 'select') {
+          result[d.nombre] = d.relacion ? d.valor : d.valor.Id;
         } else {
-          d.alerta = ''
-          d.clase = 'form-control form-control-success'
+          result[d.nombre] = d.valor;
         }
-      }
-      if (d.requerido && (d.valor === '' || d.valor === null)) {
+        resueltos++;
+      } else {
         this.data.valid = false;
-        d.alerta = '** Debe llenar este campo';
-        d.clase = 'form-control form-control-danger';
-      } else if (d.valor !== '' && d.etiqueta !== 'file') {
-        if (d.requerido) {
-          resueltos++;
-        }
-        if (d.etiqueta === 'input' && d.tipo === 'date') {
-          if (d.valor !== undefined) {
-            result += '"' + d.nombre + '":' + JSON.stringify(new Date(d.valor)) + ',';
-          }
-        } else {
-          if (d.relacion) {
-            result += '"' + d.nombre + '":' + JSON.stringify(d.valor) + ',';
-          } else {
-            result += '"' + d.nombre + '":' + JSON.stringify(d.valor.Id) + ',';
-          }
-        }
-      } else if ((d.valor !== {} || d.valor !== {}) && d.etiqueta === 'file') {
-        if (d.requerido) {
-          resueltos++;
-        }
-        this.data.files.push({ nombre: d.nombre, file: d.valor });
       }
-
-      if (d.etiqueta === 'select') {
-        if (d.valor === null) {
-          this.data.valid = false;
-          d.clase = 'form-control form-control-danger'
-          d.alerta = 'Seleccione el campo'
-        } else {
-          d.alerta = ''
-          d.clase = 'form-control form-control-success'
-        }
-      }
-
     });
+
     if (this.data.valid && (resueltos / requeridos) === 1) {
       if (this.normalform.modelo) {
-        result = result.substring(0, result.length - 1) + '}}';
+        this.data.data[this.normalform.modelo] = result;
       } else {
-        result = result.substring(0, result.length - 1) + '}';
+        this.data.data = result;
       }
-      this.data.data = JSON.parse(result);
     }
+
     this.data.percentage = (resueltos / requeridos);
     for (const key in this.modeloData) {  // Agrega parametros faltantes del modelo
-      if (!this.data.data[this.normalform.modelo].hasOwnProperty(key)) {
+      if (this.data.data[this.normalform.modelo] !== undefined && !this.data.data[this.normalform.modelo].hasOwnProperty(key)) {
         this.data.data[this.normalform.modelo][key] = this.modeloData[key];
       }
     }
+
     this.result.emit(this.data);
     return this.data;
   }
