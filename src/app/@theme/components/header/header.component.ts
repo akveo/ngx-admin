@@ -2,8 +2,9 @@ import { Component, Input, OnInit } from '@angular/core';
 
 import { NbMenuService, NbSidebarService } from '@nebular/theme';
 import { AnalyticsService } from '../../../@core/utils/analytics.service';
-import { AutenticationService } from '../../../@core/utils/autentication.service';
+// import { AutenticationService } from '../../../@core/utils/autentication.service';
 import { TranslateService } from '@ngx-translate/core';
+import { ImplicitAutenticationService } from '../../../@core/utils/implicit_autentication.service';
 
 @Component({
   selector: 'ngx-header',
@@ -22,7 +23,7 @@ export class HeaderComponent implements OnInit {
   constructor(private sidebarService: NbSidebarService,
     private menuService: NbMenuService,
     private analyticsService: AnalyticsService,
-    private autenticacion: AutenticationService,
+    private autenticacion: ImplicitAutenticationService,
     public translate: TranslateService) {
     this.translate = translate;
   }
@@ -44,6 +45,7 @@ export class HeaderComponent implements OnInit {
   }
 
   logout() {
+    console.info(this.autenticacion.getLogoutUrl())
     location.href = this.autenticacion.getLogoutUrl();
   }
 

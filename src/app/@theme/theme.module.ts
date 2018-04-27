@@ -2,7 +2,8 @@ import { ModuleWithProviders, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { AutenticationService } from '../@core/utils/autentication.service';
+// import { AutenticationService } from '../@core/utils/autentication.service';
+import { ImplicitAutenticationService } from '../@core/utils/implicit_autentication.service';
 import { SharedModule } from '../shared/shared.module';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatFormFieldModule } from '@angular/material';
@@ -32,6 +33,7 @@ import {
   TinyMCEComponent,
   DinamicformComponent,
   SelectComponent,
+  NuxeoComponent,
 } from './components';
 
 import { CapitalizePipe, PluralPipe, RoundPipe, TimingPipe } from './pipes';
@@ -85,6 +87,7 @@ const COMPONENTS = [
   TwoColumnsLayoutComponent,
   DinamicformComponent,
   SelectComponent,
+  NuxeoComponent,
 ];
 
 const PIPES = [
@@ -116,7 +119,7 @@ export class ThemeModule {
     return <ModuleWithProviders>{
       ngModule: ThemeModule,
       providers: [...NB_THEME_PROVIDERS,
-        AutenticationService],
+        ImplicitAutenticationService],
     };
   }
 }
