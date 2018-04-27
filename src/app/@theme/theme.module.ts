@@ -8,6 +8,8 @@ import { SharedModule } from '../shared/shared.module';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatFormFieldModule } from '@angular/material';
 import { MatInputModule } from '@angular/material';
+import * as Nuxeo from 'nuxeo';
+
 
 import {
   NbActionsModule,
@@ -116,7 +118,7 @@ export class ThemeModule {
     return <ModuleWithProviders>{
       ngModule: ThemeModule,
       providers: [...NB_THEME_PROVIDERS,
-        ImplicitAutenticationService],
+        ImplicitAutenticationService, Nuxeo],
     };
   }
 }

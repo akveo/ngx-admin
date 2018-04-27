@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import { UtilidadesService } from '../../../../@core/utils/utilidades.service';
 
@@ -7,7 +7,7 @@ import { UtilidadesService } from '../../../../@core/utils/utilidades.service';
   templateUrl: './informacion-contacto.component.html',
   styleUrls: ['./informacion-contacto.component.scss'],
 })
-export class InformacionContactoComponent implements OnInit {
+export class InformacionContactoComponent {
   formInformacionContacto: any = {
     titulo: this.translate.instant('DATOS_BASICOS.TITULO3'),
     clase: 'col-12',
@@ -29,8 +29,11 @@ export class InformacionContactoComponent implements OnInit {
     this.percentage = Math.round(UtilidadesService.getSumArray(this.percentageTab));
   }
   traerInformacionContacto(event) {
-    console.info(event);
+    console.info(event.files);
     this.setPercentage(event.percentage, 2);
+  }
+  guardarFileService(event) {
+    console.info(event);
   }
   construirForm() {
     this.formInformacionContacto.titulo = this.translate.instant('DATOS_BASICOS.TITULO3');
@@ -127,7 +130,5 @@ export class InformacionContactoComponent implements OnInit {
   }
   useLanguage(language: string) {
     this.translate.use(language);
-  }
-  ngOnInit() {
   }
 }

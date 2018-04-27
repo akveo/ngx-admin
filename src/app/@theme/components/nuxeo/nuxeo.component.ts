@@ -1,6 +1,6 @@
 import * as Nuxeo from 'nuxeo';
 import { Component, Input, OnChanges, Output, EventEmitter } from '@angular/core';
-import { Config } from './../../../app-config'
+import { general } from './../../../app-config'
 
 
 @Component({
@@ -8,15 +8,14 @@ import { Config } from './../../../app-config'
     template: ``,
 })
 export class NuxeoComponent implements OnChanges {
-    nuxeo: Nuxeo;
     @Input('files') files: any;
     @Output('save') save: EventEmitter<any> = new EventEmitter();
 
-    constructor() {
-
+    constructor(public nuxeo: Nuxeo) {
     }
 
     ngOnChanges(changes) {
+        console.info(changes);
         if (changes.files !== undefined || changes.files !== []) {
             if (changes.files.currentValue !== undefined) {
                 this.files = changes.files.currentValue;
@@ -30,16 +29,17 @@ export class NuxeoComponent implements OnChanges {
 
     guardar(Files): any {
         this.nuxeo = new Nuxeo({
-            baseURL: Config.LOCAL.NUXEO.PATH,
-            auth: Config.LOCAL.NUXEO.AUTH,
+            baseURL: general.ENTORNO.NUXEO.PATH,
+            auth: general.ENTORNO.NUXEO.AUTH,
         });
         this.nuxeo.connect().then(function (client) {
             Files.forEach(element => {
+                console.info(client);
                 this.nuxeo.operation('Document.Create')
                     .params({
                         type: 'File',
-                        name: element.nombre,
-                        properties: 'dc:title=' + element.nombre,
+                        name: 'Foto_prueba',
+                        properties: 'dc:title=' + 'Foto prueba',
                     })
                     .input('/default-domain/workspaces/Pruebas Planestic')
                     .execute()

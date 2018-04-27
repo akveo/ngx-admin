@@ -8,6 +8,7 @@ import { UtilidadesService } from '../../../../@core/utils/utilidades.service';
   styleUrls: ['./informacion-adicional.component.scss'],
 })
 export class InformacionAdicionalComponent implements OnInit {
+  filesUp: any;
   formInformacionAdicional: any = {
     titulo: this.translate.instant('DATOS_BASICOS.TITULO2'),
     btn: this.translate.instant('DATOS_BASICOS.SIGUIENTE'),
@@ -31,6 +32,7 @@ export class InformacionAdicionalComponent implements OnInit {
   }
   traerInformacionAdicional(event) {
     console.info(event);
+    this.filesUp = event.files;
     this.setPercentage(event.percentage, 2);
   }
   construirForm() {
