@@ -8,48 +8,44 @@ import { general } from './../../../app-config'
     template: ``,
 })
 export class NuxeoComponent implements OnChanges {
+    static nuxeo: any;
     @Input('files') files: any;
-    @Output('save') save: EventEmitter<any> = new EventEmitter();
-
-    constructor(public nuxeo: Nuxeo) {
-    }
+    @Output('saveApi') static saveApi: EventEmitter<any> = new EventEmitter();
 
     ngOnChanges(changes) {
         console.info(changes);
         if (changes.files !== undefined || changes.files !== []) {
             if (changes.files.currentValue !== undefined) {
                 this.files = changes.files.currentValue;
-                this.guardar(this.files);
+                NuxeoComponent.guardar(this.files);
             }
         }
     }
 
-    traer(Files): any {
-    }
 
-    guardar(Files): any {
-        this.nuxeo = new Nuxeo({
+    static guardar(Files): any {
+        NuxeoComponent.nuxeo = new Nuxeo({
             baseURL: general.ENTORNO.NUXEO.PATH,
             auth: general.ENTORNO.NUXEO.AUTH,
         });
-        this.nuxeo.connect().then(function (client) {
+        NuxeoComponent.nuxeo.connect().then(function (client) {
             Files.forEach(element => {
-                console.info(client);
-                this.nuxeo.operation('Document.Create')
+                NuxeoComponent.nuxeo.operation('Document.Create')
                     .params({
                         type: 'File',
-                        name: 'Foto_prueba',
-                        properties: 'dc:title=' + 'Foto prueba',
+                        name: element.nombre,
+                        properties: 'dc:title=' + element.nombre,
                     })
                     .input('/default-domain/workspaces/Pruebas Planestic')
                     .execute()
                     .then(function (doc) {
                         const nuxeoBlob = new Nuxeo.Blob({ content: element.file });
-                        this.nuxeo.batchUpload()
+                        NuxeoComponent.nuxeo.batchUpload()
                             .upload(nuxeoBlob)
                             .then(function () {
-                                element.uuid = doc.uuid;
-                                this.save.emit(element);
+                                console.info(doc);
+                                element.uuid = doc.uid;
+                                NuxeoComponent.saveApi.emit(element);
                             })
                     })
                     .catch(function (error) {

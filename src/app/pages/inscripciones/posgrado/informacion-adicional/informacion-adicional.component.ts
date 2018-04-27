@@ -35,6 +35,10 @@ export class InformacionAdicionalComponent implements OnInit {
     this.filesUp = event.files;
     this.setPercentage(event.percentage, 2);
   }
+
+  guardarFileService(event){
+    console.info(event);
+  }
   construirForm() {
     this.formInformacionAdicional.titulo = this.translate.instant('DATOS_BASICOS.TITULO2');
     this.formInformacionAdicional.btn = this.translate.instant('DATOS_BASICOS.SIGUIENTE');
