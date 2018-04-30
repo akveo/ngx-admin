@@ -135,7 +135,7 @@ export class CrudInfoPersonaComponent implements OnInit {
   }
 
   validarForm(event) {
-    console.info("evento",event)
+    console.info('evento',event)
    /* if (event.valid) {
       if (this.info_info_persona === undefined) {
         this.createInfoPersona(event.data.InfoPersona);
