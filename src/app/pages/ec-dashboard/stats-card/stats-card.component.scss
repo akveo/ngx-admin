@@ -3,73 +3,18 @@
 @include nb-install-component() {
   ::ng-deep nb-card {
     height: 11rem;
-
-    .header {
-      padding: 1rem;
-    }
-
-    .info {
-      display: flex;
-      flex-direction: column;
-      flex: 1;
-      padding: 0 1.25rem;
-    }
-
-    .value {
-      font-family: nb-theme(font-secondary);
-      font-size: 1.25rem;
-      font-weight: nb-theme(font-weight-bold);
-      color: nb-theme(card-fg-heading);
-      padding-bottom: 0.75rem;
-    }
-
-    .icon {
-      position: absolute;
-      font-size: 3rem;
-      top: 1rem;
-      right: 1rem;
-    }
-
-    .stats {
-      padding: 0.75rem 1.25rem;
-    }
-
-    ::ng-deep ngb-progressbar {
-      .progress {
-        height: 0.75rem;
-      }
-    }
   }
 
   ::ng-deep nb-flip-card {
     .flip-button {
       top: 0;
-      width: 5rem;
-      height: 5rem;
+      width: 2rem;
+      height: 2rem;
       margin-bottom: 0;
 
       i {
         display: none;
       }
-    }
-  }
-
-  @include nb-for-theme(cosmic) {
-    nb-card {
-      .title {
-        font-weight: nb-theme(font-weight-bolder);
-      }
-
-      ::ng-deep ngb-progressbar {
-        .progress {
-          background-color: nb-theme(layout-bg);
-        }
-
-        .progress-bar {
-          background-color: nb-theme(color-success);
-        }
-      }
-
     }
   }
 }
