@@ -18,7 +18,7 @@ export class NuxeoService {
             Files.forEach(element => {
                 NuxeoService.nuxeo.operation('Document.Create')
                     .params({
-                        type: 'File',
+                        type: 'Picture',
                         name: element.nombre,
                         properties: 'dc:title=' + element.nombre,
                     })
@@ -29,7 +29,7 @@ export class NuxeoService {
                         NuxeoService.nuxeo.batchUpload()
                             .upload(nuxeoBlob)
                             .then(function () {
-                                element.uuid = doc.uuid;
+                                element.uuid = doc.uid;
                             })
                     })
                     .catch(function (error) {
