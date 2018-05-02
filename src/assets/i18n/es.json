@@ -2,47 +2,62 @@
   "HOME": {
     "TITLE": "Campus Virtual",
     "SELECT": "Cambiar idioma",
-    "LOGIN": "Iniciar sesion",
-    "LOGOUT": "Cerra sesion"
+    "LOGIN": "Iniciar sesión",
+    "LOGOUT": "Cerrar sesión"
   },
   "MENU": {
     "dashboard": "Inicio",
     "genero": {
-      "genero": "genero",
-      "lista_genero": "lista genero",
-      "crud_genero": "Crud genero"
+      "genero": "Género",
+      "lista_genero": "Listado de género",
+      "crud_genero": "Crud de género"
     },
     "grupo_etnico": {
-      "grupo_etnico": "grupo_etnico",
-      "lista_grupo_etnico": "lista grupo_etnico",
-      "crud_grupo_etnico": "Crud grupo_etnico"
+      "grupo_etnico": "Grupo étnico",
+      "lista_grupo_etnico": "Lista de grupo étnico",
+      "crud_grupo_etnico": "Crud de grupo étnico"
     },
     "estado_civil": {
-      "estado_civil": "estado_civil",
-      "lista_estado_civil": "lista estado_civil",
-      "crud_estado_civil": "Crud estado_civil"
+      "estado_civil": "Estado civil",
+      "lista_estado_civil": "Listado estado civil",
+      "crud_estado_civil": "Crud de estado civil"
     },
     "tipo_discapacidad": {
-      "tipo_discapacidad": "tipo_discapacidad",
-      "lista_tipo_discapacidad": "lista tipo_discapacidad",
-      "crud_tipo_discapacidad": "Crud tipo_discapacidad"
+      "tipo_discapacidad": "Tipo de discapacidad",
+      "lista_tipo_discapacidad": "Listado de tipo de discapacidad",
+      "crud_tipo_discapacidad": "Crud de tipo de discapacidad"
     },
     "persona": {
-      "persona": "persona",
-      "lista_persona": "lista persona",
-      "crud_persona": "Crud persona"
+      "persona": "Persona",
+      "lista_persona": "Listado de persona",
+      "crud_persona": "Crud de persona"
     },
     "info_persona": {
-      "info_persona": "info_persona",
-      "lista_info_persona": "lista info_persona",
-      "crud_info_persona": "Crud info_persona"
+      "info_persona": "Información de persona",
+      "lista_info_persona": "Listado de información de persona",
+      "crud_info_persona": "Crud de información de persona"
     },
     "auth": {
-      "auth": "Autenticacion",
-      "login": "Login",
+      "auth": "Autenticación",
+      "login": "Inicio de sesión",
       "register": "Registro",
-      "request-password": "Recuperar Password",
-      "reset-password": "Reiniciar Password"
+      "request-password": "Recuperar contraseña",
+      "reset-password": "Reiniciar contraseña"
     }
+  },
+  "FORM_GENERO": {
+    "Genero": "Género",
+    "Guardar": "Guardar",
+    "Id": "Id",
+    "PlaceId": "Ejem. 555",
+    "Nombre": "Nombre",
+    "PlaceNombre": "Ejem. Pedro Perez",
+    "Descripcion": "Descripción",
+    "PlaceDescripcion": "Ejem. Descripción",
+    "CodigoAbreviacion": "Codigo de abreviación",
+    "PlaceCodigoAbreviacion": "Ejem. 555",
+    "Activo": "Activo",
+    "NumeroOrden": "Número de orden",
+    "PlaceNumeroOrden": "Ejem. 555"
   }
 }
