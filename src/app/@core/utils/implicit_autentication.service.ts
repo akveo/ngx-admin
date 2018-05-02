@@ -30,9 +30,15 @@ export class ImplicitAutenticationService {
         this.logOut = GENERAL.ENTORNO.TOKEN.SIGN_OUT_URL;
         this.logOut += '?id_token_hint=' + window.localStorage.getItem('id_token');
         this.logOut += '&post_logout_redirect_uri=' + GENERAL.ENTORNO.TOKEN.SIGN_OUT_REDIRECT_URL;
-        this.logOut += '&state=' + window.localStorage.getItem('state');
+        return this.logOut;
     }
-
+    clearUrl() {
+        const uri = window.location.toString();
+        if (uri.indexOf('?') > 0) {
+            const clean_uri = uri.substring(0, uri.indexOf('?'));
+            window.history.replaceState({}, document.title, clean_uri);
+        }
+    }
 
     getPayload() {
         if (this.live) {
@@ -55,28 +61,10 @@ export class ImplicitAutenticationService {
             this.logOut = GENERAL.ENTORNO.TOKEN.SIGN_OUT_URL;
             this.logOut += '?id_token_hint=' + window.localStorage.getItem('id_token');
             this.logOut += '&post_logout_redirect_uri=' + GENERAL.ENTORNO.TOKEN.SIGN_OUT_REDIRECT_URL;
-            this.logOut += '&state=' + window.localStorage.getItem('state');
             return true;
         } else {
             return false;
         }
-    }
-    public logoutValid() {
-        let state: any;
-        let valid = true;
-        const queryString = location.search.substring(1);
-        const regex = /([^&=]+)=([^&]*)/g;
-        let m;
-        while (!!(m = regex.exec(queryString))) {
-            state = decodeURIComponent(m[2]);
-        }
-        if (window.localStorage.getItem('state') === state) {
-            window.localStorage.clear();
-            valid = true;
-        } else {
-            valid = false;
-        }
-        return valid;
     }
 
     public getAuthorizationUrl(): string {

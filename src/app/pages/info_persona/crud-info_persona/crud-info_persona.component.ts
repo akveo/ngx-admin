@@ -1,6 +1,4 @@
-import { TipoDiscapacidad } from './../../../@core/data/models/tipo_discapacidad';
 import { EstadoCivil } from './../../../@core/data/models/estado_civil';
-import { GrupoEtnico } from './../../../@core/data/models/grupo_etnico';
 import { Genero } from './../../../@core/data/models/genero';
 
 import { InfoPersona } from './../../../@core/data/models/info_persona';
@@ -35,22 +33,10 @@ export class CrudInfoPersonaComponent implements OnInit {
 
   constructor(private personaService: PersonaService, private toasterService: ToasterService) {
     this.formInfoPersona = FORM_INFO_PERSONA;
-    this.loadOptionsTipoDiscapacidad();
     this.loadOptionsEstadoCivil();
-    this.loadOptionsGrupoEtnico();
     this.loadOptionsGenero();
    }
 
-  loadOptionsTipoDiscapacidad(): void {
-    let tipoDiscapacidad: Array<any> = [];
-      this.personaService.get('tipo_discapacidad/?limit=0')
-        .subscribe(res => {
-          if (res !== null) {
-            tipoDiscapacidad = <Array<TipoDiscapacidad>>res;
-          }
-          this.formInfoPersona.campos[ this.getIndexForm('TipoDiscapacidad') ].opciones = tipoDiscapacidad;
-        });
-  }
   loadOptionsEstadoCivil(): void {
     let estadoCivil: Array<any> = [];
       this.personaService.get('estado_civil/?limit=0')
@@ -59,16 +45,6 @@ export class CrudInfoPersonaComponent implements OnInit {
             estadoCivil = <Array<EstadoCivil>>res;
           }
           this.formInfoPersona.campos[ this.getIndexForm('EstadoCivil') ].opciones = estadoCivil;
-        });
-  }
-  loadOptionsGrupoEtnico(): void {
-    let grupoEtnico: Array<any> = [];
-      this.personaService.get('grupo_etnico/?limit=0')
-        .subscribe(res => {
-          if (res !== null) {
-            grupoEtnico = <Array<GrupoEtnico>>res;
-          }
-          this.formInfoPersona.campos[ this.getIndexForm('GrupoEtnico') ].opciones = grupoEtnico;
         });
   }
   loadOptionsGenero(): void {
@@ -159,13 +135,14 @@ export class CrudInfoPersonaComponent implements OnInit {
   }
 
   validarForm(event) {
-    if (event.valid) {
+    console.info('evento', event)
+   /* if (event.valid) {
       if (this.info_info_persona === undefined) {
         this.createInfoPersona(event.data.InfoPersona);
       } else {
         this.updateInfoPersona(event.data.InfoPersona);
       }
-    }
+    } */
   }
 
   private showToast(type: string, title: string, body: string) {

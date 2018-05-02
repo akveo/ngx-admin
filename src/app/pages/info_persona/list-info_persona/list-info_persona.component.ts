@@ -31,13 +31,6 @@ export class ListInfoPersonaComponent implements OnInit {
     },
     mode: 'external',
     columns: {
-      Id: {
-        title: 'Id',
-        // type: 'number;',
-        valuePrepareFunction: (value) => {
-          return value;
-        },
-      },
       PrimerNombre: {
         title: 'PrimerNombre',
         // type: 'string;',
@@ -73,13 +66,6 @@ export class ListInfoPersonaComponent implements OnInit {
           return value;
         },
       },
-      Usuario: {
-        title: 'Usuario',
-        // type: 'string;',
-        valuePrepareFunction: (value) => {
-          return value;
-        },
-      },
       Foto: {
         title: 'Foto',
         // type: 'string;',
@@ -87,23 +73,9 @@ export class ListInfoPersonaComponent implements OnInit {
           return value;
         },
       },
-      TipoDiscapacidad: {
-        title: 'TipoDiscapacidad',
-        // type: 'tipo_discapacidad;',
-        valuePrepareFunction: (value) => {
-          return value;
-        },
-      },
       EstadoCivil: {
         title: 'EstadoCivil',
         // type: 'estado_civil;',
-        valuePrepareFunction: (value) => {
-          return value;
-        },
-      },
-      GrupoEtnico: {
-        title: 'GrupoEtnico',
-        // type: 'grupo_etnico;',
         valuePrepareFunction: (value) => {
           return value;
         },
