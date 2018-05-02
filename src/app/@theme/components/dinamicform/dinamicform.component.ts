@@ -128,7 +128,6 @@ export class DinamicformComponent implements OnInit, OnChanges {
       }
     }
     if (c.etiqueta === 'file' && c.valor !== null && c.valor !== undefined && c.valor !== '' ) {
-      console.log("entro",c)
       if (c.valor.size > c.tamanoMaximo * 1024000) {
         c.clase = 'form-control form-control-danger';
         c.alerta = 'El tamaño del archivo es superior a : ' + c.tamanoMaximo + 'MB. ';
@@ -179,7 +178,7 @@ export class DinamicformComponent implements OnInit, OnChanges {
         } else {
           result[d.nombre] = d.valor;
         }
-        resueltos=d.requerido?resueltos+1:resueltos;
+        resueltos = d.requerido ? resueltos + 1 : resueltos;
       } else {
         this.data.valid = false;
       }
