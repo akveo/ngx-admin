@@ -1,6 +1,6 @@
 
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpHeaders } from '@angular/common/http';
 import { GENERAL } from './../../app-config';
 import { Md5 } from 'ts-md5/dist/md5';
 
@@ -16,7 +16,7 @@ export class ImplicitAutenticationService {
     public payload: any;
     public logOut: any;
 
-    constructor(private http: HttpClient) {
+    constructor() {
         this.bearer = {
             headers: new HttpHeaders({
                 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',

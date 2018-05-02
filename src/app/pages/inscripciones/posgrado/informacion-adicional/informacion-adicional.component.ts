@@ -36,7 +36,7 @@ export class InformacionAdicionalComponent implements OnInit {
     this.setPercentage(event.percentage, 2);
   }
 
-  guardarFileService(event){
+  guardarFileService(event) {
     console.info(event);
   }
   construirForm() {
