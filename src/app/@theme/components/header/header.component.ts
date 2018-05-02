@@ -41,13 +41,12 @@ export class HeaderComponent implements OnInit {
   }
 
   login() {
-    window.location.href = this.autenticacion.getAuthorizationUrl();
+    window.location.replace(this.autenticacion.getAuthorizationUrl());
   }
 
   logout() {
     console.info(this.autenticacion.logout());
-    window.location.href = this.autenticacion.logout();
-    window.localStorage.clear();
+    // window.location.replace(this.autenticacion.logout());
   }
 
   toggleSidebar(): boolean {

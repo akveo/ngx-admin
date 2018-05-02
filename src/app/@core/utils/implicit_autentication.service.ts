@@ -9,6 +9,7 @@ export class ImplicitAutenticationService {
     bearer: { headers: HttpHeaders; };
 
     init(): void {
+        this.clearUrl();
     }
 
     private params: any;
@@ -30,6 +31,7 @@ export class ImplicitAutenticationService {
         this.logOut = GENERAL.ENTORNO.TOKEN.SIGN_OUT_URL;
         this.logOut += '?id_token_hint=' + window.localStorage.getItem('id_token');
         this.logOut += '&post_logout_redirect_uri=' + GENERAL.ENTORNO.TOKEN.SIGN_OUT_REDIRECT_URL;
+        this.logOut += '&state=state_1';
         return this.logOut;
     }
     clearUrl() {
@@ -58,9 +60,6 @@ export class ImplicitAutenticationService {
                     'cache-control': 'no-cache',
                 }),
             }
-            this.logOut = GENERAL.ENTORNO.TOKEN.SIGN_OUT_URL;
-            this.logOut += '?id_token_hint=' + window.localStorage.getItem('id_token');
-            this.logOut += '&post_logout_redirect_uri=' + GENERAL.ENTORNO.TOKEN.SIGN_OUT_REDIRECT_URL;
             return true;
         } else {
             return false;

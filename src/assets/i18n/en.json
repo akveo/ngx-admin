@@ -46,6 +46,9 @@
     }
   },
   "FORM_GENERO": {
+    "Listado": "List",
+    "Formulario": "Form",
+    "Atras": "Return",
     "Genero": "Gender",
     "Guardar": "Save",
     "Id": "Id",
@@ -58,6 +61,24 @@
     "PlaceCodigoAbreviacion": "E.g. 555",
     "Activo": "Active",
     "NumeroOrden": "Order number",
-    "PlaceNumeroOrden": "E.g. 555"
+    "PlaceNumeroOrden": "E.g. 555",
+    "ActualizarTitulo": "Update",
+    "ActualizarTexto": "Do you want to update it?",
+    "ActualizarAceptar": "Ok",
+    "ActualizarCancelar": "Cancel",
+    "ActualizarTituloConfirmado": "Updated",
+    "ActualizarConfirmado": "Gender has been updated!",
+    "CrearTitulo": "Create",
+    "CrearTexto": "Do you want to create it?",
+    "CrearAceptar": "Ok",
+    "CrearCancelar": "Cancel",
+    "CrearTituloConfirmado": "Created",
+    "CrearConfirmado": "Gender has been created!",
+    "EliminarTitulo": "Delete",
+    "EliminarTexto": "Do you want to delete it?",
+    "EliminarAceptar": "Ok",
+    "EliminarCancelar": "Cancel",
+    "EliminarTituloConfirmado": "Deleted",
+    "EliminarConfirmado": "Gender has been deleted!"
   }
 }
