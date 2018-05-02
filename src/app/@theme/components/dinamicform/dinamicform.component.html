@@ -385,7 +385,7 @@
                 <label for="{{c.nombre}}" class="upload-file">
                   {{c.label}}
               </label>
-                <input type="file" id="{{c.nombre}}" class="{{c.clase}} mat-input-element" (change)="onChange($event,c)" />
+                <input type="file" id="{{c.nombre}}" class="{{c.clase}}" (change)="onChange($event,c)" />
                 <mat-hint class="text-danger">{{c.alerta}}</mat-hint>
               </div>
             </div>
