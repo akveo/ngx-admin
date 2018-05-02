@@ -46,6 +46,9 @@
     }
   },
   "FORM_GENERO": {
+    "Listado": "Listado",
+    "Formulario": "Formulario",
+    "Atras": "Volver",
     "Genero": "Género",
     "Guardar": "Guardar",
     "Id": "Id",
@@ -58,6 +61,24 @@
     "PlaceCodigoAbreviacion": "Ejem. 555",
     "Activo": "Activo",
     "NumeroOrden": "Número de orden",
-    "PlaceNumeroOrden": "Ejem. 555"
+    "PlaceNumeroOrden": "Ejem. 555",
+    "ActualizarTitulo": "Actualizar",
+    "ActualizarTexto": "¿Desea actualizar los datos?",
+    "ActualizarAceptar": "Aceptar",
+    "Actualizarcancelar": "Cancelar",
+    "ActualizarTituloConfirmado": "Actualizado",
+    "ActualizarConfirmado": "¡El género ha sido actualizado!",
+    "CrearTitulo": "Crear",
+    "CrearTexto": "¿Desea crear los datos?",
+    "CrearAceptar": "Aceptar",
+    "CrearCancelar": "Cancelar",
+    "CrearTituloConfirmado": "Creado",
+    "CrearConfirmado": "¡El género ha sido creado!",
+    "EliminarTitulo": "Eliminar",
+    "EliminarTexto": "¿Desea eliminar los datos?",
+    "EliminarAceptar": "Aceptar",
+    "EliminarCancelar": "Cancelar",
+    "EliminarTituloConfirmado": "Eliminado",
+    "EliminarConfirmado": "¡El género ha sido eliminado!"
   }
 }
