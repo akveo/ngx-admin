@@ -1,5 +1,5 @@
 import { Component, OnDestroy } from '@angular/core';
-import { NbThemeService, NbColorHelper } from '@nebular/theme';
+import { NbThemeService } from '@nebular/theme';
 
 @Component({
   selector: 'ngx-stats-ares-chart',
@@ -20,14 +20,14 @@ export class StatsAreaChartComponent implements OnDestroy {
       this.data = {
         labels: ['2006', '2007', '2008', '2010', '2011', '2012'],
         datasets: [{
-          //todo move to config
+          // todo move to config
           borderColor: '#fff',
           pointBackgroundColor: '#fff',
           backgroundColor: colors.success,
           lineTension: 0.000001,
           fill: 'origin',
-          data: [65, 59, 80, 56, 90, 60]
-        }]
+          data: [65, 59, 80, 56, 90, 60],
+        }],
       };
 
       this.options = {
@@ -50,9 +50,9 @@ export class StatsAreaChartComponent implements OnDestroy {
         maintainAspectRatio: false,
         plugins: {
           filler: {
-            propagate: true
-          }
-        }
+            propagate: true,
+          },
+        },
       }
     });
   }
