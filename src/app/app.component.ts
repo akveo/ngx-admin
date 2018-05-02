@@ -19,6 +19,5 @@ export class AppComponent implements OnInit {
     this.translateService.addLangs(['es', 'en']);
     this.translateService.setDefaultLang('es');
     this.translateService.use(this.translateService.getBrowserLang());
-    // 'es');
   }
 }
