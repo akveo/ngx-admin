@@ -11,6 +11,7 @@ export const Config = {
         WSO2_SERVICE: 'http://jbpm.udistritaloas.edu.co:8280/services',
         CORE_SERVICE: 'http://pruebasapi.intranetoas.udistrital.edu.co:8083/v1/',
         UBICACION_SERVICE: 'http://pruebasapi.intranetoas.udistrital.edu.co:8085/v1/',
+        PERSONA_SERVICE: 'http://pruebasapi.intranetoas.udistrital.edu.co:8083/v1/',
         TOKEN: {
             AUTORIZATION_URL: 'https://autenticacion.udistrital.edu.co/oauth2/authorize',
             URL_USER_INFO: 'https://autenticacion.udistrital.edu.co/oauth2/userinfo',
@@ -49,8 +50,8 @@ export const Config = {
         TOKEN: {
             AUTORIZATION_URL: 'https://autenticacion.udistrital.edu.co/oauth2/authorize',
             URL_USER_INFO: 'https://autenticacion.udistrital.edu.co/oauth2/userinfo',
-            CLIENTE_ID: 'pszmROXqfec4pTShgF_fn2DAAX0a',
-            REDIRECT_URL: 'http://localhost:9000/',
+            CLIENTE_ID: '8u_51nEfExxfw_KyhDF50cU1DGca',
+            REDIRECT_URL: window.location.href,
             RESPONSE_TYPE: 'id_token token',
             SCOPE: 'openid email profile document',
             BUTTON_CLASS: 'btn btn-warning btn-sm',
@@ -59,10 +60,10 @@ export const Config = {
             SIGN_OUT_APPEND_TOKEN: 'true',
             REFRESH_TOKEN: 'https://autenticacion.udistrital.edu.co/oauth2/token',
         },
+        CONF_MENU_SERVICE: 'http://10.20.0.254/configuracion_api/v1/menu_opcion_padre/ArbolMenus/',
     },
-    CONF_MENU_SERVICE: 'http://10.20.0.254/configuracion_api/v1/menu_opcion_padre/ArbolMenus/',
 };
 
-export const general = {
+export const GENERAL = {
     ENTORNO: Config.LOCAL,
 };

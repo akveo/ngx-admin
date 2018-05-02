@@ -1,7 +1,7 @@
 
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { general } from './../../app-config';
+import { GENERAL } from './../../app-config';
 import { Md5 } from 'ts-md5/dist/md5';
 
 @Injectable()
@@ -26,13 +26,13 @@ export class ImplicitAutenticationService {
         }
         this.logOut = '';
     }
-    public getLogoutUrl() {
-        return this.logOut;
+    public logout() {
+        this.logOut = GENERAL.ENTORNO.TOKEN.SIGN_OUT_URL;
+        this.logOut += '?id_token_hint=' + window.localStorage.getItem('id_token');
+        this.logOut += '&post_logout_redirect_uri=' + GENERAL.ENTORNO.TOKEN.SIGN_OUT_REDIRECT_URL;
+        this.logOut += '&state=' + window.localStorage.getItem('state');
     }
-    public post(url, data, header) {
-        const body = JSON.stringify(data);
-        return this.http.post(url, body, header)
-    }
+
 
     getPayload() {
         if (this.live) {
@@ -42,6 +42,7 @@ export class ImplicitAutenticationService {
             return false;
         }
     }
+
     public live() {
         if (window.localStorage.getItem('id_token') !== null && window.localStorage.getItem('id_token') !== undefined) {
             this.bearer = {
@@ -51,9 +52,9 @@ export class ImplicitAutenticationService {
                     'cache-control': 'no-cache',
                 }),
             }
-            this.logOut = general.ENTORNO.TOKEN.SIGN_OUT_URL;
+            this.logOut = GENERAL.ENTORNO.TOKEN.SIGN_OUT_URL;
             this.logOut += '?id_token_hint=' + window.localStorage.getItem('id_token');
-            this.logOut += '&post_logout_redirect_uri=' + general.ENTORNO.TOKEN.SIGN_OUT_REDIRECT_URL;
+            this.logOut += '&post_logout_redirect_uri=' + GENERAL.ENTORNO.TOKEN.SIGN_OUT_REDIRECT_URL;
             this.logOut += '&state=' + window.localStorage.getItem('state');
             return true;
         } else {
@@ -79,7 +80,7 @@ export class ImplicitAutenticationService {
     }
 
     public getAuthorizationUrl(): string {
-        this.params = general.ENTORNO.TOKEN;
+        this.params = GENERAL.ENTORNO.TOKEN;
         if (!this.params.nonce) {
             this.params.nonce = this.generateState();
         }

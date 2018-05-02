@@ -47,6 +47,10 @@
     justify-content: space-between;
     flex-wrap: wrap;
   }
+  textarea {
+    border-color: none !important;
+    border: none !important;
+  }
   .star {
     font-size: 1.5rem;
     color: nb-theme(color-fg);

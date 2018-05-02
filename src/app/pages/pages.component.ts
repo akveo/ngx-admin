@@ -23,7 +23,7 @@ export class PagesComponent implements OnInit {
   hijo: MenuItem;
   hijo2: MenuItem;
 
-  constructor(private translate: TranslateService, private menu_ws: MenuService) {}
+  constructor(private translate: TranslateService, private menu_ws: MenuService) { }
 
   ngOnInit() {
     this.menu_ws.get('Menu%20campus/campus').subscribe(
@@ -82,7 +82,8 @@ export class PagesComponent implements OnInit {
           this.results.push(this.object);
           // console.log(data[i]);
         }
-        this.menu = this.results;
+         this.menu = MENU_ITEMS;
+        // this.menu = this.results;
         this.translateMenu();
       },
       (err: HttpErrorResponse) => {
@@ -92,6 +93,7 @@ export class PagesComponent implements OnInit {
           // console.log('El error ocurrió en el lado del servidor.');
         }
         this.menu = MENU_ITEMS;
+        this.translateMenu();
       },
     );
     this.translateMenu();

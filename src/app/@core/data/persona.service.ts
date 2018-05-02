@@ -7,7 +7,7 @@ const httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
 };
 
-const path = Config.LOCAL.CORE_SERVICE;
+const path = Config.LOCAL.PERSONA_SERVICE;
 
 
 @Injectable()
@@ -23,7 +23,6 @@ export class PersonaService {
         return this.http.post(path + endpoint, element, httpOptions);
     }
     put(endpoint, element) {
-        console.info(element);
         return this.http.put(path + endpoint + '/' + element.Id, element, httpOptions);
     }
     delete(endpoint, element) {

@@ -1,6 +1,6 @@
 import * as Nuxeo from 'nuxeo';
 import { Component, Input, OnChanges, Output, EventEmitter } from '@angular/core';
-import { general } from './../../../app-config'
+import { GENERAL } from './../../../app-config'
 
 
 @Component({
@@ -25,8 +25,8 @@ export class NuxeoComponent implements OnChanges {
 
     static guardar(Files): any {
         NuxeoComponent.nuxeo = new Nuxeo({
-            baseURL: general.ENTORNO.NUXEO.PATH,
-            auth: general.ENTORNO.NUXEO.AUTH,
+            baseURL: GENERAL.ENTORNO.NUXEO.PATH,
+            auth: GENERAL.ENTORNO.NUXEO.AUTH,
         });
         NuxeoComponent.nuxeo.connect().then(function (client) {
             Files.forEach(element => {
