@@ -8,52 +8,58 @@ import { GENERAL } from './../../../app-config'
     template: ``,
 })
 export class NuxeoComponent implements OnChanges {
-    static nuxeo: any;
+    nuxeo: any;
     @Input('files') files: any;
-    @Output('saveApi') static saveApi: EventEmitter<any> = new EventEmitter();
+    @Output('saveApi') saveApi: EventEmitter<any> = new EventEmitter();
+
+    guardar(Files, nuxeo, saveApi): any {
+        nuxeo.connect()
+            .then(function (client) {
+                Files.forEach(element => {
+                    nuxeo.operation('Document.Create')
+                        .params({
+                            type: 'Picture',
+                            name: element.nombre,
+                            properties: 'dc:title=' + element.nombre,
+                        })
+                        .input('/default-domain/workspaces/Pruebas Planestic')
+                        .execute()
+                        .then(function (doc) {
+                            const nuxeoBlob = new Nuxeo.Blob({ content: element.file });
+                            nuxeo.batchUpload()
+                                .upload(nuxeoBlob)
+                                .then(function (res) {
+                                    element.uid = doc.uid
+                                    saveApi.emit(element);
+                                    return nuxeo.operation('Blob.AttachOnDocument')
+                                        .param('document', doc.uid)
+                                        .input(res.blob)
+                                        .execute();
+                                })
+                                .catch(function (error) {
+                                    console.info(error);
+                                    throw error;
+                                });
+                        })
+                        .catch(function (error) {
+                            console.info(error);
+                            throw error;
+                        });
+                })
+            });
+    }
 
     ngOnChanges(changes) {
         console.info(changes);
         if (changes.files !== undefined || changes.files !== []) {
             if (changes.files.currentValue !== undefined) {
                 this.files = changes.files.currentValue;
-                NuxeoComponent.guardar(this.files);
+                this.nuxeo = new Nuxeo({
+                    baseURL: GENERAL.ENTORNO.NUXEO.PATH,
+                    auth: GENERAL.ENTORNO.NUXEO.AUTH,
+                });
+                this.guardar(this.files, this.nuxeo, this.saveApi);
             }
         }
-    }
-
-
-    static guardar(Files): any {
-        NuxeoComponent.nuxeo = new Nuxeo({
-            baseURL: GENERAL.ENTORNO.NUXEO.PATH,
-            auth: GENERAL.ENTORNO.NUXEO.AUTH,
-        });
-        NuxeoComponent.nuxeo.connect().then(function (client) {
-            Files.forEach(element => {
-                NuxeoComponent.nuxeo.operation('Document.Create')
-                    .params({
-                        type: 'File',
-                        name: element.nombre,
-                        properties: 'dc:title=' + element.nombre,
-                    })
-                    .input('/default-domain/workspaces/Pruebas Planestic')
-                    .execute()
-                    .then(function (doc) {
-                        const nuxeoBlob = new Nuxeo.Blob({ content: element.file });
-                        NuxeoComponent.nuxeo.batchUpload()
-                            .upload(nuxeoBlob)
-                            .then(function () {
-                                console.info(doc);
-                                element.uuid = doc.uid;
-                                NuxeoComponent.saveApi.emit(element);
-                            })
-                    })
-                    .catch(function (error) {
-                        console.info(error);
-                        throw error;
-                    });
-            })
-            return Files;
-        });
     }
 }

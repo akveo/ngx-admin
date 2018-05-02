@@ -13,6 +13,7 @@ import 'style-loader!angular2-toaster/toaster.css';
   styleUrls: ['./crud-persona.component.scss'],
 })
 export class CrudPersonaComponent implements OnInit {
+  filesUp: any;
   config: ToasterConfig;
   persona_id: number;
 
@@ -31,7 +32,7 @@ export class CrudPersonaComponent implements OnInit {
 
   constructor(private personaService: PersonaService, private toasterService: ToasterService) {
     this.formPersona = FORM_PERSONA;
-   }
+  }
 
 
   getIndexForm(nombre: String): number {
@@ -53,7 +54,7 @@ export class CrudPersonaComponent implements OnInit {
             this.info_persona = <Persona>res[0];
           }
         });
-    } else  {
+    } else {
       this.info_persona = undefined;
       this.clean = !this.clean;
     }
@@ -70,17 +71,17 @@ export class CrudPersonaComponent implements OnInit {
       showCancelButton: true,
     };
     Swal(opt)
-    .then((willDelete) => {
-      if (willDelete.value) {
-        this.info_persona = <Persona>persona;
-        this.personaService.put('persona', this.info_persona)
-          .subscribe(res => {
-            this.loadPersona();
-            this.eventChange.emit(true);
-            this.showToast('info', 'updated', 'Persona updated');
-          });
-      }
-    });
+      .then((willDelete) => {
+        if (willDelete.value) {
+          this.info_persona = <Persona>persona;
+          this.personaService.put('persona', this.info_persona)
+            .subscribe(res => {
+              this.loadPersona();
+              this.eventChange.emit(true);
+              this.showToast('info', 'updated', 'Persona updated');
+            });
+        }
+      });
   }
 
   createPersona(persona: any): void {
@@ -93,21 +94,26 @@ export class CrudPersonaComponent implements OnInit {
       showCancelButton: true,
     };
     Swal(opt)
-    .then((willDelete) => {
-      if (willDelete.value) {
-        this.info_persona = <Persona>persona;
-        this.personaService.post('persona', this.info_persona)
-          .subscribe(res => {
-            this.info_persona = <Persona>res;
-            this.eventChange.emit(true);
-            this.showToast('info', 'created', 'Persona created');
-          });
-      }
-    });
+      .then((willDelete) => {
+        if (willDelete.value) {
+          this.info_persona = <Persona>persona;
+          this.personaService.post('persona', this.info_persona)
+            .subscribe(res => {
+              this.info_persona = <Persona>res;
+              this.eventChange.emit(true);
+              this.showToast('info', 'created', 'Persona created');
+            });
+        }
+      });
   }
 
   ngOnInit() {
     this.loadPersona();
+  }
+
+
+  guardarFileService(event) {
+    console.info(event);
   }
 
   validarForm(event) {
@@ -117,6 +123,7 @@ export class CrudPersonaComponent implements OnInit {
       } else {
         this.updatePersona(event.data.Persona);
       }
+      this.filesUp = event.files;
     }
   }
 
