@@ -13,9 +13,9 @@ export class NuxeoComponent implements OnChanges {
     @Output('saveApi') saveApi: EventEmitter<any> = new EventEmitter();
 
     guardar(Files, nuxeo, saveApi): any {
-        Files.forEach(element => {
-            nuxeo.connect()
-                .then(function (client) {
+        nuxeo.connect()
+            .then(function (client) {
+                Files.forEach(element => {
                     nuxeo.operation('Document.Create')
                         .params({
                             type: 'Picture',
@@ -29,9 +29,12 @@ export class NuxeoComponent implements OnChanges {
                             nuxeo.batchUpload()
                                 .upload(nuxeoBlob)
                                 .then(function (res) {
-                                    console.info(res);
-                                    element.uuid = doc.uid;
+                                    element.uid = doc.uid
                                     saveApi.emit(element);
+                                    return nuxeo.operation('Blob.AttachOnDocument')
+                                        .param('document', doc.uid)
+                                        .input(res.blob)
+                                        .execute();
                                 })
                                 .catch(function (error) {
                                     console.info(error);
@@ -43,11 +46,7 @@ export class NuxeoComponent implements OnChanges {
                             throw error;
                         });
                 })
-                .catch(function (error) {
-                    console.info(error);
-                    throw error;
-                });
-        });
+            });
     }
 
     ngOnChanges(changes) {
