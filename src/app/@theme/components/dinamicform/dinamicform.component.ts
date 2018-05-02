@@ -96,7 +96,8 @@ export class DinamicformComponent implements OnInit, OnChanges {
 
   validCampo(c): boolean {
 
-    if (c.requerido && (c.valor === '' || c.valor === null || c.valor === undefined || JSON.stringify(c.valor) === '{}' || JSON.stringify(c.valor) === '[]')) {
+    if (c.requerido && (c.valor === '' || c.valor === null || c.valor === undefined ||
+    (JSON.stringify(c.valor) === '{}' && c.etiqueta !== 'file')  || JSON.stringify(c.valor) === '[]')) {
         c.alerta = '** Debe llenar este campo';
         c.clase = 'form-control form-control-danger';
         return false;
@@ -126,19 +127,16 @@ export class DinamicformComponent implements OnInit, OnChanges {
         return false;
       }
     }
-    if (c.etiqueta === 'file') {
-      if (c.valor !== undefined) {
-        if (c.valor.size > c.tamanoMaximo * 1024000) {
-          c.clase = 'form-control form-control-danger';
-          c.alerta = 'El tamaño del archivo es superior a : ' + c.tamanoMaximo + 'MB. ';
-          return false;
-        }
-        if ((c.valor.type.split('/'))[0].indexOf(c.tipo) === -1 ||
-          (c.formatos.indexOf(c.valor.type.split('/')[1]) === -1)) {
-          c.clase = 'form-control form-control-danger';
-          c.alerta += 'Solo se admiten los siguientes formatos: ' + c.formatos;
-          return false;
-        }
+    if (c.etiqueta === 'file' && c.valor !== null && c.valor !== undefined && c.valor !== '' ) {
+      if (c.valor.size > c.tamanoMaximo * 1024000) {
+        c.clase = 'form-control form-control-danger';
+        c.alerta = 'El tamaño del archivo es superior a : ' + c.tamanoMaximo + 'MB. ';
+        return false;
+      }
+      if (c.formatos.indexOf(c.valor.type.split('/')[1]) === -1) {
+        c.clase = 'form-control form-control-danger';
+        c.alerta = 'Solo se admiten los siguientes formatos: ' + c.formatos;
+        return false;
       }
     }
     if (!this.normalform.btn) {
@@ -173,13 +171,14 @@ export class DinamicformComponent implements OnInit, OnChanges {
       if (this.validCampo(d)) {
         if (d.etiqueta === 'file') {
           this.data.files.push({ nombre: d.nombre, file: d.valor });
-        }
-        if (d.etiqueta === 'select') {
+          result[d.nombre] = d.valor;
+          // result[d.nombre].push({ nombre: d.name, file: d.valor });
+        } else if (d.etiqueta === 'select') {
           result[d.nombre] = d.relacion ? d.valor : d.valor.Id;
         } else {
           result[d.nombre] = d.valor;
         }
-        resueltos++;
+        resueltos = d.requerido ? resueltos + 1 : resueltos;
       } else {
         this.data.valid = false;
       }
