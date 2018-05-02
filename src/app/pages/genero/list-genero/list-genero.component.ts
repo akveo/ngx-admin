@@ -49,42 +49,42 @@ export class ListGeneroComponent implements OnInit {
       mode: 'external',
       columns: {
         Id: {
-          title: 'Id',
+          title: this.translate.instant('FORM_GENERO.Id'),
           // type: 'number;',
           valuePrepareFunction: (value) => {
             return value;
           },
         },
         Nombre: {
-          title: 'Nombre',
+          title: this.translate.instant('FORM_GENERO.Nombre'),
           // type: 'string;',
           valuePrepareFunction: (value) => {
             return value;
           },
         },
         Descripcion: {
-          title: 'Descripcion',
+          title: this.translate.instant('FORM_GENERO.Descripcion'),
           // type: 'string;',
           valuePrepareFunction: (value) => {
             return value;
           },
         },
         CodigoAbreviacion: {
-          title: 'CodigoAbreviacion',
+          title: this.translate.instant('FORM_GENERO.CodigoAbreviacion'),
           // type: 'string;',
           valuePrepareFunction: (value) => {
             return value;
           },
         },
         Activo: {
-          title: 'Activo',
+          title: this.translate.instant('FORM_GENERO.Activo'),
           // type: 'boolean;',
           valuePrepareFunction: (value) => {
             return value;
           },
         },
         NumeroOrden: {
-          title: 'NumeroOrden',
+          title: this.translate.instant('FORM_GENERO.NumeroOrden'),
           // type: 'number;',
           valuePrepareFunction: (value) => {
             return value;
