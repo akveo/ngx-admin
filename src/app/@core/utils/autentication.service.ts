@@ -37,7 +37,7 @@ export class AutenticationService {
     public getToken() {
         if (window.sessionStorage.getItem('code') !== null &&
             window.sessionStorage.getItem('id_token') === null) {
-            let url = Config.LOCAL.TOKEN.REFRESH_TOKEN;
+            let url = ''; // Config.LOCAL.TOKEN.REFRESH_TOKEN;
             const dato = {};
             url += '?grant_type=authorization_code';
             url += '&code=' + window.sessionStorage.getItem('code');
@@ -140,7 +140,7 @@ export class AutenticationService {
 
     refresh() {
         this.params = Config.LOCAL.TOKEN;
-        const url = this.params.REFRESH_TOKEN + '?' +
+        const url = ''; // this.params.REFRESH_TOKEN + '?' +
             'grant_type=' + encodeURIComponent('refresh_token') + '&' +
             'refresh_token=' + encodeURIComponent(window.sessionStorage.getItem('refresh_token')) + '&' +
             'redirect_uri=' + encodeURIComponent(this.params.REDIRECT_URL);

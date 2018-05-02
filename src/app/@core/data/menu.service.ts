@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { general } from './../../app-config';
+import { GENERAL } from './../../app-config';
 
-const path = general.ENTORNO.CONF_MENU_SERVICE;
+const path = GENERAL.ENTORNO.CONF_MENU_SERVICE;
 
 @Injectable()
 export class MenuService {

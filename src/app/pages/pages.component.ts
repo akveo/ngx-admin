@@ -82,8 +82,8 @@ export class PagesComponent implements OnInit {
           this.results.push(this.object);
           // console.log(data[i]);
         }
-        // this.menu = MENU_ITEMS;
-        this.menu = this.results;
+         this.menu = MENU_ITEMS;
+        // this.menu = this.results;
         this.translateMenu();
       },
       (err: HttpErrorResponse) => {
