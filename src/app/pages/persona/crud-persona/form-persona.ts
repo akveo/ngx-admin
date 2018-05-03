@@ -79,13 +79,16 @@ export let FORM_PERSONA = {
         tipo: 'number',
     },
     {
-        etiqueta: 'input',
+        etiqueta: 'file',
         claseGrid: 'col-6',
+        clase: 'form-control',
         nombre: 'Foto',
         label_i18n: 'foto',
         placeholder_i18n: 'foto',
         requerido: true,
-        tipo: 'text',
+        tipo: 'image',
+        formatos: 'png/jpg/jpeg',
+        tamanoMaximo: 2,
     },
     ],
 }

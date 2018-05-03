@@ -14,6 +14,7 @@ import 'style-loader!angular2-toaster/toaster.css';
   styleUrls: ['./crud-persona.component.scss'],
 })
 export class CrudPersonaComponent implements OnInit {
+  filesUp: any;
   config: ToasterConfig;
   persona_id: number;
 
@@ -128,6 +129,10 @@ export class CrudPersonaComponent implements OnInit {
     this.loadPersona();
   }
 
+  guardarFileService(event) {
+    console.info(event);
+  }
+
   validarForm(event) {
     if (event.valid) {
       if (this.info_persona === undefined) {
@@ -135,6 +140,7 @@ export class CrudPersonaComponent implements OnInit {
       } else {
         this.updatePersona(event.data.Persona);
       }
+      this.filesUp = event.files;
     }
   }
 
