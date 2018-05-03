@@ -1,84 +1,101 @@
 {
   "HOME": {
-    "TITLE": "Campus Virtual",
+    "TITLE": "PERSONA",
     "SELECT": "Cambiar idioma",
-    "LOGIN": "Iniciar sesión",
-    "LOGOUT": "Cerrar sesión"
+    "LOGIN": "Iniciar sesion",
+    "LOGOUT": "Cerra sesion"
   },
   "MENU": {
     "dashboard": "Inicio",
     "genero": {
-      "genero": "Género",
-      "lista_genero": "Listado de género",
-      "crud_genero": "Crud de género"
+      "genero": "genero",
+      "lista_genero": "lista genero",
+      "crud_genero": "Crud genero"
     },
     "grupo_etnico": {
-      "grupo_etnico": "Grupo étnico",
-      "lista_grupo_etnico": "Lista de grupo étnico",
-      "crud_grupo_etnico": "Crud de grupo étnico"
+      "grupo_etnico": "grupo_etnico",
+      "lista_grupo_etnico": "lista grupo_etnico",
+      "crud_grupo_etnico": "Crud grupo_etnico"
     },
     "estado_civil": {
-      "estado_civil": "Estado civil",
-      "lista_estado_civil": "Listado estado civil",
-      "crud_estado_civil": "Crud de estado civil"
+      "estado_civil": "estado_civil",
+      "lista_estado_civil": "lista estado_civil",
+      "crud_estado_civil": "Crud estado_civil"
     },
     "tipo_discapacidad": {
-      "tipo_discapacidad": "Tipo de discapacidad",
-      "lista_tipo_discapacidad": "Listado de tipo de discapacidad",
-      "crud_tipo_discapacidad": "Crud de tipo de discapacidad"
+      "tipo_discapacidad": "tipo_discapacidad",
+      "lista_tipo_discapacidad": "lista tipo_discapacidad",
+      "crud_tipo_discapacidad": "Crud tipo_discapacidad"
     },
     "persona": {
-      "persona": "Persona",
-      "lista_persona": "Listado de persona",
-      "crud_persona": "Crud de persona"
+      "persona": "persona",
+      "lista_persona": "lista persona",
+      "crud_persona": "Crud persona"
     },
     "info_persona": {
-      "info_persona": "Información de persona",
-      "lista_info_persona": "Listado de información de persona",
-      "crud_info_persona": "Crud de información de persona"
+      "info_persona": "info_persona",
+      "lista_info_persona": "lista info_persona",
+      "crud_info_persona": "Crud info_persona"
     },
     "auth": {
-      "auth": "Autenticación",
-      "login": "Inicio de sesión",
+      "auth": "Autenticacion",
+      "login": "Login",
       "register": "Registro",
-      "request-password": "Recuperar contraseña",
-      "reset-password": "Reiniciar contraseña"
+      "request-password": "Recuperar Password",
+      "reset-password": "Reiniciar Password"
     }
   },
-  "FORM_GENERO": {
-    "Listado": "Listado",
-    "Formulario": "Formulario",
-    "Atras": "Volver",
-    "Genero": "Género",
-    "Guardar": "Guardar",
-    "Id": "Id",
-    "PlaceId": "Ejem. 555",
-    "Nombre": "Nombre",
-    "PlaceNombre": "Ejem. Pedro Perez",
-    "Descripcion": "Descripción",
-    "PlaceDescripcion": "Ejem. Descripción",
-    "CodigoAbreviacion": "Codigo de abreviación",
-    "PlaceCodigoAbreviacion": "Ejem. 555",
-    "Activo": "Activo",
-    "NumeroOrden": "Número de orden",
-    "PlaceNumeroOrden": "Ejem. 555",
-    "ActualizarTitulo": "Actualizar",
-    "ActualizarTexto": "¿Desea actualizar los datos?",
-    "ActualizarAceptar": "Aceptar",
-    "Actualizarcancelar": "Cancelar",
-    "ActualizarTituloConfirmado": "Actualizado",
-    "ActualizarConfirmado": "¡El género ha sido actualizado!",
-    "CrearTitulo": "Crear",
-    "CrearTexto": "¿Desea crear los datos?",
-    "CrearAceptar": "Aceptar",
-    "CrearCancelar": "Cancelar",
-    "CrearTituloConfirmado": "Creado",
-    "CrearConfirmado": "¡El género ha sido creado!",
-    "EliminarTitulo": "Eliminar",
-    "EliminarTexto": "¿Desea eliminar los datos?",
-    "EliminarAceptar": "Aceptar",
-    "EliminarCancelar": "Cancelar",
-    "EliminarTituloConfirmado": "Eliminado",
-    "EliminarConfirmado": "¡El género ha sido eliminado!"
+  "GLOBAL": {
+    "genero": "genero",
+    "placeholder_genero": "ej: genero",
+    "id": "id",
+    "placeholder_id": "ej: id",
+    "nombre": "nombre",
+    "placeholder_nombre": "ej: nombre",
+    "descripcion": "descripcion",
+    "placeholder_descripcion": "ej: descripcion",
+    "codigo_abreviacion": "codigo_abreviacion",
+    "placeholder_codigo_abreviacion": "ej: codigo_abreviacion",
+    "activo": "activo",
+    "placeholder_activo": "ej: activo",
+    "numero_orden": "numero_orden",
+    "placeholder_numero_orden": "ej: numero_orden",
+    "grupo_etnico": "grupo_etnico",
+    "placeholder_grupo_etnico": "ej: grupo_etnico",
+    "estado_civil": "estado_civil",
+    "placeholder_estado_civil": "ej: estado_civil",
+    "tipo_discapacidad": "tipo_discapacidad",
+    "placeholder_tipo_discapacidad": "ej: tipo_discapacidad",
+    "persona": "persona",
+    "placeholder_persona": "ej: persona",
+    "primer_nombre": "primer_nombre",
+    "placeholder_primer_nombre": "ej: primer_nombre",
+    "segundo_nombre": "segundo_nombre",
+    "placeholder_segundo_nombre": "ej: segundo_nombre",
+    "primer_apellido": "primer_apellido",
+    "placeholder_primer_apellido": "ej: primer_apellido",
+    "segundo_apellido": "segundo_apellido",
+    "placeholder_segundo_apellido": "ej: segundo_apellido",
+    "fecha_nacimiento": "fecha_nacimiento",
+    "placeholder_fecha_nacimiento": "ej: fecha_nacimiento",
+    "usuario": "usuario",
+    "placeholder_usuario": "ej: usuario",
+    "ente": "ente",
+    "placeholder_ente": "ej: ente",
+    "foto": "foto",
+    "placeholder_foto": "ej: foto",
+    "info_persona": "info_persona",
+    "placeholder_info_persona": "ej: info_persona",
+    "aceptar": "aceptar",
+    "cancelar": "cancelar",
+    "salir": "salir",
+    "eliminar": "eliminar",
+    "actualizar": "actualizar",
+    "crear": "crear",
+    "registrar": "registrar",
+    "guardar" : "guardar",
+    "formulario": "formulario",
+    "lista": "lista",
+    "regresar": "regresar"
   }
 }

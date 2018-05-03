@@ -3,21 +3,21 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
-import { CrudGrupoEtnicoComponent } from './crud-grupo_etnico.component';
+import { ListGrupoEtnicoComponent } from './list-grupo_etnico.component';
 
-describe('CrudGrupoEtnicoComponent', () => {
-  let component: CrudGrupoEtnicoComponent;
-  let fixture: ComponentFixture<CrudGrupoEtnicoComponent>;
+describe('ListGrupoEtnicoComponent', () => {
+  let component: ListGrupoEtnicoComponent;
+  let fixture: ComponentFixture<ListGrupoEtnicoComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CrudGrupoEtnicoComponent ],
+      declarations: [ ListGrupoEtnicoComponent ],
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CrudGrupoEtnicoComponent);
+    fixture = TestBed.createComponent(ListGrupoEtnicoComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

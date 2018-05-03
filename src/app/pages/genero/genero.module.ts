@@ -19,7 +19,6 @@ import { SharedModule } from '../../shared/shared.module';
   ],
   providers: [
     PersonaService,
-    SharedModule,
   ],
 })
 export class GeneroModule { }
