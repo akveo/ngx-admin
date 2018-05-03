@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { LocalDataSource } from 'ng2-smart-table';
 import { PersonaService } from '../../../@core/data/persona.service';
 import { ToasterService, ToasterConfig, Toast, BodyOutputType } from 'angular2-toaster';
+import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import Swal from 'sweetalert2';
 import 'style-loader!angular2-toaster/toaster.css';
 
@@ -14,72 +15,88 @@ export class ListGeneroComponent implements OnInit {
   uid: number;
   cambiotab: boolean = false;
   config: ToasterConfig;
-  settings = {
-    add: {
-      addButtonContent: '<i class="nb-plus"></i>',
-      createButtonContent: '<i class="nb-checkmark"></i>',
-      cancelButtonContent: '<i class="nb-close"></i>',
-    },
-    edit: {
-      editButtonContent: '<i class="nb-edit"></i>',
-      saveButtonContent: '<i class="nb-checkmark"></i>',
-      cancelButtonContent: '<i class="nb-close"></i>',
-    },
-    delete: {
-      deleteButtonContent: '<i class="nb-trash"></i>',
-      confirmDelete: true,
-    },
-    mode: 'external',
-    columns: {
-      Id: {
-        title: 'Id',
-        // type: 'number;',
-        valuePrepareFunction: (value) => {
-          return value;
-        },
-      },
-      Nombre: {
-        title: 'Nombre',
-        // type: 'string;',
-        valuePrepareFunction: (value) => {
-          return value;
-        },
-      },
-      Descripcion: {
-        title: 'Descripcion',
-        // type: 'string;',
-        valuePrepareFunction: (value) => {
-          return value;
-        },
-      },
-      CodigoAbreviacion: {
-        title: 'CodigoAbreviacion',
-        // type: 'string;',
-        valuePrepareFunction: (value) => {
-          return value;
-        },
-      },
-      Activo: {
-        title: 'Activo',
-        // type: 'boolean;',
-        valuePrepareFunction: (value) => {
-          return value;
-        },
-      },
-      NumeroOrden: {
-        title: 'NumeroOrden',
-        // type: 'number;',
-        valuePrepareFunction: (value) => {
-          return value;
-        },
-      },
-    },
-  };
+  settingsAux: any;
+  settings = {};
 
   source: LocalDataSource = new LocalDataSource();
 
-  constructor(private personaService: PersonaService, private toasterService: ToasterService) {
+  constructor(private translate: TranslateService, private personaService: PersonaService, private toasterService: ToasterService) {
+    this.translate = translate;
+    this.cargarCampos();
     this.loadData();
+    this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
+      this.cargarCampos();
+      this.loadData();
+    });
+  }
+
+  cargarCampos() {
+    this.settingsAux = {
+      add: {
+        addButtonContent: '<i class="nb-plus"></i>',
+        createButtonContent: '<i class="nb-checkmark"></i>',
+        cancelButtonContent: '<i class="nb-close"></i>',
+      },
+      edit: {
+        editButtonContent: '<i class="nb-edit"></i>',
+        saveButtonContent: '<i class="nb-checkmark"></i>',
+        cancelButtonContent: '<i class="nb-close"></i>',
+      },
+      delete: {
+        deleteButtonContent: '<i class="nb-trash"></i>',
+        confirmDelete: true,
+      },
+      mode: 'external',
+      columns: {
+        Id: {
+          title: this.translate.instant('FORM_GENERO.Id'),
+          // type: 'number;',
+          valuePrepareFunction: (value) => {
+            return value;
+          },
+        },
+        Nombre: {
+          title: this.translate.instant('FORM_GENERO.Nombre'),
+          // type: 'string;',
+          valuePrepareFunction: (value) => {
+            return value;
+          },
+        },
+        Descripcion: {
+          title: this.translate.instant('FORM_GENERO.Descripcion'),
+          // type: 'string;',
+          valuePrepareFunction: (value) => {
+            return value;
+          },
+        },
+        CodigoAbreviacion: {
+          title: this.translate.instant('FORM_GENERO.CodigoAbreviacion'),
+          // type: 'string;',
+          valuePrepareFunction: (value) => {
+            return value;
+          },
+        },
+        Activo: {
+          title: this.translate.instant('FORM_GENERO.Activo'),
+          // type: 'boolean;',
+          valuePrepareFunction: (value) => {
+            return value;
+          },
+        },
+        NumeroOrden: {
+          title: this.translate.instant('FORM_GENERO.NumeroOrden'),
+          // type: 'number;',
+          valuePrepareFunction: (value) => {
+            return value;
+          },
+        },
+      },
+    };
+    this.settings = this.settingsAux;
+  }
+
+  useLanguage(language: string) {
+    this.translate.use(language);
   }
 
   loadData(): void {

@@ -1,7 +1,7 @@
 
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { general } from './../../app-config';
+import { HttpHeaders } from '@angular/common/http';
+import { GENERAL } from './../../app-config';
 import { Md5 } from 'ts-md5/dist/md5';
 
 @Injectable()
@@ -9,6 +9,7 @@ export class ImplicitAutenticationService {
     bearer: { headers: HttpHeaders; };
 
     init(): void {
+        this.clearUrl();
     }
 
     private params: any;
@@ -16,7 +17,7 @@ export class ImplicitAutenticationService {
     public payload: any;
     public logOut: any;
 
-    constructor(private http: HttpClient) {
+    constructor() {
         this.bearer = {
             headers: new HttpHeaders({
                 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
@@ -26,12 +27,19 @@ export class ImplicitAutenticationService {
         }
         this.logOut = '';
     }
-    public getLogoutUrl() {
+    public logout() {
+        this.logOut = GENERAL.ENTORNO.TOKEN.SIGN_OUT_URL;
+        this.logOut += '?id_token_hint=' + window.localStorage.getItem('id_token');
+        this.logOut += '&post_logout_redirect_uri=' + GENERAL.ENTORNO.TOKEN.SIGN_OUT_REDIRECT_URL;
+        this.logOut += '&state=state_1';
         return this.logOut;
     }
-    public post(url, data, header) {
-        const body = JSON.stringify(data);
-        return this.http.post(url, body, header)
+    clearUrl() {
+        const uri = window.location.toString();
+        if (uri.indexOf('?') > 0) {
+            const clean_uri = uri.substring(0, uri.indexOf('?'));
+            window.history.replaceState({}, document.title, clean_uri);
+        }
     }
 
     getPayload() {
@@ -42,6 +50,7 @@ export class ImplicitAutenticationService {
             return false;
         }
     }
+
     public live() {
         if (window.localStorage.getItem('id_token') !== null && window.localStorage.getItem('id_token') !== undefined) {
             this.bearer = {
@@ -51,35 +60,14 @@ export class ImplicitAutenticationService {
                     'cache-control': 'no-cache',
                 }),
             }
-            this.logOut = general.ENTORNO.TOKEN.SIGN_OUT_URL;
-            this.logOut += '?id_token_hint=' + window.localStorage.getItem('id_token');
-            this.logOut += '&post_logout_redirect_uri=' + general.ENTORNO.TOKEN.SIGN_OUT_REDIRECT_URL;
-            this.logOut += '&state=' + window.localStorage.getItem('state');
             return true;
         } else {
             return false;
         }
     }
-    public logoutValid() {
-        let state: any;
-        let valid = true;
-        const queryString = location.search.substring(1);
-        const regex = /([^&=]+)=([^&]*)/g;
-        let m;
-        while (!!(m = regex.exec(queryString))) {
-            state = decodeURIComponent(m[2]);
-        }
-        if (window.localStorage.getItem('state') === state) {
-            window.localStorage.clear();
-            valid = true;
-        } else {
-            valid = false;
-        }
-        return valid;
-    }
 
     public getAuthorizationUrl(): string {
-        this.params = general.ENTORNO.TOKEN;
+        this.params = GENERAL.ENTORNO.TOKEN;
         if (!this.params.nonce) {
             this.params.nonce = this.generateState();
         }

@@ -1,9 +1,9 @@
-
 import { Genero } from './../../../@core/data/models/genero';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { PersonaService } from '../../../@core/data/persona.service';
 import { FORM_GENERO } from './form-genero';
 import { ToasterService, ToasterConfig, Toast, BodyOutputType } from 'angular2-toaster';
+import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import Swal from 'sweetalert2';
 import 'style-loader!angular2-toaster/toaster.css';
 
@@ -28,11 +28,35 @@ export class CrudGeneroComponent implements OnInit {
   formGenero: any;
   regGenero: any;
   clean: boolean;
+  formAux: any;
 
-  constructor(private personaService: PersonaService, private toasterService: ToasterService) {
-    this.formGenero = FORM_GENERO;
-   }
+  constructor(private translate: TranslateService, private personaService: PersonaService, private toasterService: ToasterService) {
+    this.translate = translate;
+    this.construirForm();
+    this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
+      this.construirForm();
+    });
+  }
 
+  construirForm() {
+    this.formAux = FORM_GENERO;
+    // console.log(this.formAux);
+    this.formAux.titulo = this.translate.instant('FORM_GENERO.Genero');
+    this.formAux.btn = this.translate.instant('FORM_GENERO.Guardar');
+    for (let i = 0; i < this.formAux.campos.length; i++) {
+      if (this.formAux.campos[i].requerido) {
+        this.formAux.campos[i].label = '* ' + this.translate.instant('FORM_GENERO.' + this.formAux.campos[i].nombre);
+      }else {
+        this.formAux.campos[i].label = this.translate.instant('FORM_GENERO.' + this.formAux.campos[i].nombre);
+      }
+      this.formAux.campos[i].placeholder = this.translate.instant('FORM_GENERO.Place' + this.formAux.campos[i].nombre);
+    }
+    this.formGenero = this.formAux;
+  }
+
+  useLanguage(language: string) {
+    this.translate.use(language);
+  }
 
   getIndexForm(nombre: String): number {
     for (let index = 0; index < this.formGenero.campos.length; index++) {

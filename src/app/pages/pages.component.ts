@@ -14,17 +14,7 @@ import { MenuService } from '../@core/data/menu.service';
     </ngx-sample-layout>
   `,
 })
-/**export class PagesComponent {
-  menu = MENU_ITEMS;
-  constructor(private translate: TranslateService) {
-    this.translate = translate;
-    this.translate.addLangs(['es', 'en']);
-    this.translate.setDefaultLang('es');
-    // let
-    const browserLang = this.translate.getBrowserLang();
-    this.translate.use(browserLang.match(/es|en/) ? browserLang : 'es');
-  }
-}**/
+
 export class PagesComponent implements OnInit {
 
   public menu = [];
@@ -92,7 +82,7 @@ export class PagesComponent implements OnInit {
           this.results.push(this.object);
           // console.log(data[i]);
         }
-        this.menu = MENU_ITEMS;
+         this.menu = MENU_ITEMS;
         // this.menu = this.results;
         this.translateMenu();
       },
@@ -103,6 +93,7 @@ export class PagesComponent implements OnInit {
           // console.log('El error ocurrió en el lado del servidor.');
         }
         this.menu = MENU_ITEMS;
+        this.translateMenu();
       },
     );
     this.translateMenu();
