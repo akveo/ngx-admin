@@ -4,6 +4,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { PersonaService } from '../../../@core/data/persona.service';
 import { FORM_ESTADO_CIVIL } from './form-estado_civil';
 import { ToasterService, ToasterConfig, Toast, BodyOutputType } from 'angular2-toaster';
+import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import Swal from 'sweetalert2';
 import 'style-loader!angular2-toaster/toaster.css';
 
@@ -29,9 +30,26 @@ export class CrudEstadoCivilComponent implements OnInit {
   regEstadoCivil: any;
   clean: boolean;
 
-  constructor(private personaService: PersonaService, private toasterService: ToasterService) {
+  constructor(private translate: TranslateService, private personaService: PersonaService, private toasterService: ToasterService) {
     this.formEstadoCivil = FORM_ESTADO_CIVIL;
+    this.construirForm();
+    this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
+      this.construirForm();
+    });
    }
+
+  construirForm() {
+    this.formEstadoCivil.titulo = this.translate.instant('GLOBAL.estado_civil');
+    this.formEstadoCivil.btn = this.translate.instant('GLOBAL.guardar');
+    for (let i = 0; i < this.formEstadoCivil.campos.length; i++) {
+      this.formEstadoCivil.campos[i].label = this.translate.instant('GLOBAL.' + this.formEstadoCivil.campos[i].label_i18n);
+      this.formEstadoCivil.campos[i].placeholder = this.translate.instant('GLOBAL.placeholder_' + this.formEstadoCivil.campos[i].label_i18n);
+    }
+  }
+
+  useLanguage(language: string) {
+    this.translate.use(language);
+  }
 
 
   getIndexForm(nombre: String): number {

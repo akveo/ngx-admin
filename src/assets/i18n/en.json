@@ -1,84 +1,101 @@
 {
   "HOME": {
-    "TITLE": "Virtual Campus",
-    "SELECT": "Change language",
-    "LOGIN": "Log in",
-    "LOGOUT": "Log out"
+    "TITLE": "PERSONA",
+    "SELECT": "Cambiar idioma",
+    "LOGIN": "Iniciar sesion",
+    "LOGOUT": "Cerra sesion"
   },
   "MENU": {
-    "dashboard": "Home",
+    "dashboard": "Inicio",
     "genero": {
-      "genero": "Gender",
-      "lista_genero": "Gender list",
-      "crud_genero": "Gender crud"
+      "genero": "genero",
+      "lista_genero": "lista genero",
+      "crud_genero": "Crud genero"
     },
     "grupo_etnico": {
-      "grupo_etnico": "Ethnic group",
-      "lista_grupo_etnico": "Ethnic group list",
-      "crud_grupo_etnico": "Ethnic group crud"
+      "grupo_etnico": "grupo_etnico",
+      "lista_grupo_etnico": "lista grupo_etnico",
+      "crud_grupo_etnico": "Crud grupo_etnico"
     },
     "estado_civil": {
-      "estado_civil": "Civil status",
-      "lista_estado_civil": "Civil status list",
-      "crud_estado_civil": "Civil status crud"
+      "estado_civil": "estado_civil",
+      "lista_estado_civil": "lista estado_civil",
+      "crud_estado_civil": "Crud estado_civil"
     },
     "tipo_discapacidad": {
-      "tipo_discapacidad": "Impairment types",
-      "lista_tipo_discapacidad": "Impairment types list",
-      "crud_tipo_discapacidad": "Impairment types crud"
+      "tipo_discapacidad": "tipo_discapacidad",
+      "lista_tipo_discapacidad": "lista tipo_discapacidad",
+      "crud_tipo_discapacidad": "Crud tipo_discapacidad"
     },
     "persona": {
-      "persona": "Person",
-      "lista_persona": "Person list",
-      "crud_persona": "Person crud"
+      "persona": "persona",
+      "lista_persona": "lista persona",
+      "crud_persona": "Crud persona"
     },
     "info_persona": {
-      "info_persona": "Person data",
-      "lista_info_persona": "Person data list",
-      "crud_info_persona": "Person data crud"
+      "info_persona": "info_persona",
+      "lista_info_persona": "lista info_persona",
+      "crud_info_persona": "Crud info_persona"
     },
     "auth": {
-      "auth": "Authentication",
-      "login": "Log in",
-      "register": "Register",
-      "request-password": "Request password",
-      "reset-password": "Reset password"
+      "auth": "Autenticacion",
+      "login": "Login",
+      "register": "Registro",
+      "request-password": "Recuperar Password",
+      "reset-password": "Reiniciar Password"
     }
   },
-  "FORM_GENERO": {
-    "Listado": "List",
-    "Formulario": "Form",
-    "Atras": "Return",
-    "Genero": "Gender",
-    "Guardar": "Save",
-    "Id": "Id",
-    "PlaceId": "E.g. 555",
-    "Nombre": "Name",
-    "PlaceNombre": "E.g. John Do",
-    "Descripcion": "Description",
-    "PlaceDescripcion": "Eg. Description",
-    "CodigoAbreviacion": "Abbreviation code",
-    "PlaceCodigoAbreviacion": "E.g. 555",
-    "Activo": "Active",
-    "NumeroOrden": "Order number",
-    "PlaceNumeroOrden": "E.g. 555",
-    "ActualizarTitulo": "Update",
-    "ActualizarTexto": "Do you want to update it?",
-    "ActualizarAceptar": "Ok",
-    "ActualizarCancelar": "Cancel",
-    "ActualizarTituloConfirmado": "Updated",
-    "ActualizarConfirmado": "Gender has been updated!",
-    "CrearTitulo": "Create",
-    "CrearTexto": "Do you want to create it?",
-    "CrearAceptar": "Ok",
-    "CrearCancelar": "Cancel",
-    "CrearTituloConfirmado": "Created",
-    "CrearConfirmado": "Gender has been created!",
-    "EliminarTitulo": "Delete",
-    "EliminarTexto": "Do you want to delete it?",
-    "EliminarAceptar": "Ok",
-    "EliminarCancelar": "Cancel",
-    "EliminarTituloConfirmado": "Deleted",
-    "EliminarConfirmado": "Gender has been deleted!"
+  "GLOBAL": {
+    "genero": "Gender",
+    "placeholder_genero": "ej: genero",
+    "id": "id",
+    "placeholder_id": "ej: id",
+    "nombre": "Name",
+    "placeholder_nombre": "E.g. John Do",
+    "descripcion": "Description",
+    "placeholder_descripcion": "Eg. Some description",
+    "codigo_abreviacion": "Abbreviation code",
+    "placeholder_codigo_abreviacion": "ej: UD",
+    "activo": "Active",
+    "placeholder_activo": "ej: Active",
+    "numero_orden": "Order number",
+    "placeholder_numero_orden": "ej: 26",
+    "grupo_etnico": "grupo_etnico",
+    "placeholder_grupo_etnico": "ej: grupo_etnico",
+    "estado_civil": "estado_civil",
+    "placeholder_estado_civil": "ej: estado_civil",
+    "tipo_discapacidad": "tipo_discapacidad",
+    "placeholder_tipo_discapacidad": "ej: tipo_discapacidad",
+    "persona": "persona",
+    "placeholder_persona": "ej: persona",
+    "primer_nombre": "primer_nombre",
+    "placeholder_primer_nombre": "ej: primer_nombre",
+    "segundo_nombre": "segundo_nombre",
+    "placeholder_segundo_nombre": "ej: segundo_nombre",
+    "primer_apellido": "primer_apellido",
+    "placeholder_primer_apellido": "ej: primer_apellido",
+    "segundo_apellido": "segundo_apellido",
+    "placeholder_segundo_apellido": "ej: segundo_apellido",
+    "fecha_nacimiento": "fecha_nacimiento",
+    "placeholder_fecha_nacimiento": "ej: fecha_nacimiento",
+    "usuario": "usuario",
+    "placeholder_usuario": "ej: usuario",
+    "ente": "ente",
+    "placeholder_ente": "ej: ente",
+    "foto": "foto",
+    "placeholder_foto": "ej: foto",
+    "info_persona": "info_persona",
+    "placeholder_info_persona": "ej: info_persona",
+    "aceptar": "aceptar",
+    "cancelar": "Cancel",
+    "salir": "Exit",
+    "eliminar": "Delete",
+    "actualizar": "Update",
+    "crear": "crear",
+    "registrar": "registrar",
+    "guardar" : "Save",
+    "formulario": "Form",
+    "lista": "List",
+    "regresar": "Return"
   }
 }

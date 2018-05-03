@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { LocalDataSource } from 'ng2-smart-table';
 import { PersonaService } from '../../../@core/data/persona.service';
 import { ToasterService, ToasterConfig, Toast, BodyOutputType } from 'angular2-toaster';
+import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import Swal from 'sweetalert2';
 import 'style-loader!angular2-toaster/toaster.css';
 
@@ -14,86 +15,98 @@ export class ListInfoPersonaComponent implements OnInit {
   uid: number;
   cambiotab: boolean = false;
   config: ToasterConfig;
-  settings = {
-    add: {
-      addButtonContent: '<i class="nb-plus"></i>',
-      createButtonContent: '<i class="nb-checkmark"></i>',
-      cancelButtonContent: '<i class="nb-close"></i>',
-    },
-    edit: {
-      editButtonContent: '<i class="nb-edit"></i>',
-      saveButtonContent: '<i class="nb-checkmark"></i>',
-      cancelButtonContent: '<i class="nb-close"></i>',
-    },
-    delete: {
-      deleteButtonContent: '<i class="nb-trash"></i>',
-      confirmDelete: true,
-    },
-    mode: 'external',
-    columns: {
-      PrimerNombre: {
-        title: 'PrimerNombre',
-        // type: 'string;',
-        valuePrepareFunction: (value) => {
-          return value;
-        },
-      },
-      SegundoNombre: {
-        title: 'SegundoNombre',
-        // type: 'string;',
-        valuePrepareFunction: (value) => {
-          return value;
-        },
-      },
-      PrimerApellido: {
-        title: 'PrimerApellido',
-        // type: 'string;',
-        valuePrepareFunction: (value) => {
-          return value;
-        },
-      },
-      SegundoApellido: {
-        title: 'SegundoApellido',
-        // type: 'string;',
-        valuePrepareFunction: (value) => {
-          return value;
-        },
-      },
-      FechaNacimiento: {
-        title: 'FechaNacimiento',
-        // type: 'Date;',
-        valuePrepareFunction: (value) => {
-          return value;
-        },
-      },
-      Foto: {
-        title: 'Foto',
-        // type: 'string;',
-        valuePrepareFunction: (value) => {
-          return value;
-        },
-      },
-      EstadoCivil: {
-        title: 'EstadoCivil',
-        // type: 'estado_civil;',
-        valuePrepareFunction: (value) => {
-          return value;
-        },
-      },
-      Genero: {
-        title: 'Genero',
-        // type: 'genero;',
-        valuePrepareFunction: (value) => {
-          return value;
-        },
-      },
-    },
-  };
+  settings: any;
 
   source: LocalDataSource = new LocalDataSource();
 
-  constructor(private personaService: PersonaService, private toasterService: ToasterService) {
+  constructor(private translate: TranslateService, private personaService: PersonaService, private toasterService: ToasterService) {
     this.loadData();
+    this.cargarCampos();
+    this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
+      this.cargarCampos();
+    });
+  }
+
+  cargarCampos() {
+    this.settings = {
+      add: {
+        addButtonContent: '<i class="nb-plus"></i>',
+        createButtonContent: '<i class="nb-checkmark"></i>',
+        cancelButtonContent: '<i class="nb-close"></i>',
+      },
+      edit: {
+        editButtonContent: '<i class="nb-edit"></i>',
+        saveButtonContent: '<i class="nb-checkmark"></i>',
+        cancelButtonContent: '<i class="nb-close"></i>',
+      },
+      delete: {
+        deleteButtonContent: '<i class="nb-trash"></i>',
+        confirmDelete: true,
+      },
+      mode: 'external',
+      columns: {
+        PrimerNombre: {
+          title: this.translate.instant('GLOBAL.primer_nombre'),
+          // type: 'string;',
+          valuePrepareFunction: (value) => {
+            return value;
+          },
+        },
+        SegundoNombre: {
+          title: this.translate.instant('GLOBAL.segundo_nombre'),
+          // type: 'string;',
+          valuePrepareFunction: (value) => {
+            return value;
+          },
+        },
+        PrimerApellido: {
+          title: this.translate.instant('GLOBAL.primer_apellido'),
+          // type: 'string;',
+          valuePrepareFunction: (value) => {
+            return value;
+          },
+        },
+        SegundoApellido: {
+          title: this.translate.instant('GLOBAL.segundo_apellido'),
+          // type: 'string;',
+          valuePrepareFunction: (value) => {
+            return value;
+          },
+        },
+        FechaNacimiento: {
+          title: this.translate.instant('GLOBAL.fecha_nacimiento'),
+          // type: 'Date;',
+          valuePrepareFunction: (value) => {
+            return value;
+          },
+        },
+        Foto: {
+          title: this.translate.instant('GLOBAL.foto'),
+          // type: 'string;',
+          valuePrepareFunction: (value) => {
+            return value;
+          },
+        },
+        EstadoCivil: {
+          title: this.translate.instant('GLOBAL.estado_civil'),
+          // type: 'estado_civil;',
+          valuePrepareFunction: (value) => {
+            return value;
+          },
+        },
+        Genero: {
+          title: this.translate.instant('GLOBAL.genero'),
+          // type: 'genero;',
+          valuePrepareFunction: (value) => {
+            return value;
+          },
+        },
+      },
+    };
+  }
+
+  useLanguage(language: string) {
+    this.translate.use(language);
   }
 
   loadData(): void {
@@ -146,7 +159,7 @@ export class ListInfoPersonaComponent implements OnInit {
   }
 
   selectTab(event): void {
-    if (event.tabTitle === 'Lista') {
+    if (event.tabTitle === this.translate.instant('GLOBAL.lista')) {
       this.cambiotab = false;
     } else {
       this.cambiotab = true;

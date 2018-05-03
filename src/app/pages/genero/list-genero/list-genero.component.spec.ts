@@ -3,21 +3,21 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
-import { CrudGeneroComponent } from './crud-genero.component';
+import { ListGeneroComponent } from './list-genero.component';
 
-describe('CrudGeneroComponent', () => {
-  let component: CrudGeneroComponent;
-  let fixture: ComponentFixture<CrudGeneroComponent>;
+describe('ListGeneroComponent', () => {
+  let component: ListGeneroComponent;
+  let fixture: ComponentFixture<ListGeneroComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CrudGeneroComponent ],
+      declarations: [ ListGeneroComponent ],
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CrudGeneroComponent);
+    fixture = TestBed.createComponent(ListGeneroComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,3 +1,4 @@
+
 import { Genero } from './../../../@core/data/models/genero';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { PersonaService } from '../../../@core/data/persona.service';
@@ -28,35 +29,28 @@ export class CrudGeneroComponent implements OnInit {
   formGenero: any;
   regGenero: any;
   clean: boolean;
-  formAux: any;
 
   constructor(private translate: TranslateService, private personaService: PersonaService, private toasterService: ToasterService) {
-    this.translate = translate;
+    this.formGenero = FORM_GENERO;
     this.construirForm();
     this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
       this.construirForm();
     });
-  }
+   }
 
   construirForm() {
-    this.formAux = FORM_GENERO;
-    // console.log(this.formAux);
-    this.formAux.titulo = this.translate.instant('FORM_GENERO.Genero');
-    this.formAux.btn = this.translate.instant('FORM_GENERO.Guardar');
-    for (let i = 0; i < this.formAux.campos.length; i++) {
-      if (this.formAux.campos[i].requerido) {
-        this.formAux.campos[i].label = '* ' + this.translate.instant('FORM_GENERO.' + this.formAux.campos[i].nombre);
-      }else {
-        this.formAux.campos[i].label = this.translate.instant('FORM_GENERO.' + this.formAux.campos[i].nombre);
-      }
-      this.formAux.campos[i].placeholder = this.translate.instant('FORM_GENERO.Place' + this.formAux.campos[i].nombre);
+    this.formGenero.titulo = this.translate.instant('GLOBAL.genero');
+    this.formGenero.btn = this.translate.instant('GLOBAL.guardar');
+    for (let i = 0; i < this.formGenero.campos.length; i++) {
+      this.formGenero.campos[i].label = this.translate.instant('GLOBAL.' + this.formGenero.campos[i].label_i18n);
+      this.formGenero.campos[i].placeholder = this.translate.instant('GLOBAL.placeholder_' + this.formGenero.campos[i].label_i18n);
     }
-    this.formGenero = this.formAux;
   }
 
   useLanguage(language: string) {
     this.translate.use(language);
   }
+
 
   getIndexForm(nombre: String): number {
     for (let index = 0; index < this.formGenero.campos.length; index++) {

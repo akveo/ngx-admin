@@ -3,21 +3,21 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
-import { CrudTipoDiscapacidadComponent } from './crud-tipo_discapacidad.component';
+import { ListTipoDiscapacidadComponent } from './list-tipo_discapacidad.component';
 
-describe('CrudTipoDiscapacidadComponent', () => {
-  let component: CrudTipoDiscapacidadComponent;
-  let fixture: ComponentFixture<CrudTipoDiscapacidadComponent>;
+describe('ListTipoDiscapacidadComponent', () => {
+  let component: ListTipoDiscapacidadComponent;
+  let fixture: ComponentFixture<ListTipoDiscapacidadComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CrudTipoDiscapacidadComponent ],
+      declarations: [ ListTipoDiscapacidadComponent ],
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CrudTipoDiscapacidadComponent);
+    fixture = TestBed.createComponent(ListTipoDiscapacidadComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

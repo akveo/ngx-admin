@@ -6,6 +6,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { PersonaService } from '../../../@core/data/persona.service';
 import { FORM_INFO_PERSONA } from './form-info_persona';
 import { ToasterService, ToasterConfig, Toast, BodyOutputType } from 'angular2-toaster';
+import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import Swal from 'sweetalert2';
 import 'style-loader!angular2-toaster/toaster.css';
 
@@ -31,11 +32,28 @@ export class CrudInfoPersonaComponent implements OnInit {
   regInfoPersona: any;
   clean: boolean;
 
-  constructor(private personaService: PersonaService, private toasterService: ToasterService) {
+  constructor(private translate: TranslateService, private personaService: PersonaService, private toasterService: ToasterService) {
     this.formInfoPersona = FORM_INFO_PERSONA;
+    this.construirForm();
+    this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
+      this.construirForm();
+    });
     this.loadOptionsEstadoCivil();
     this.loadOptionsGenero();
    }
+
+  construirForm() {
+    this.formInfoPersona.titulo = this.translate.instant('GLOBAL.info_persona');
+    this.formInfoPersona.btn = this.translate.instant('GLOBAL.guardar');
+    for (let i = 0; i < this.formInfoPersona.campos.length; i++) {
+      this.formInfoPersona.campos[i].label = this.translate.instant('GLOBAL.' + this.formInfoPersona.campos[i].label_i18n);
+      this.formInfoPersona.campos[i].placeholder = this.translate.instant('GLOBAL.placeholder_' + this.formInfoPersona.campos[i].label_i18n);
+    }
+  }
+
+  useLanguage(language: string) {
+    this.translate.use(language);
+  }
 
   loadOptionsEstadoCivil(): void {
     let estadoCivil: Array<any> = [];
@@ -135,14 +153,13 @@ export class CrudInfoPersonaComponent implements OnInit {
   }
 
   validarForm(event) {
-    console.info('evento', event)
-   /* if (event.valid) {
+    if (event.valid) {
       if (this.info_info_persona === undefined) {
         this.createInfoPersona(event.data.InfoPersona);
       } else {
         this.updateInfoPersona(event.data.InfoPersona);
       }
-    } */
+    }
   }
 
   private showToast(type: string, title: string, body: string) {

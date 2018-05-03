@@ -3,21 +3,21 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
-import { CrudPersonaComponent } from './crud-persona.component';
+import { ListPersonaComponent } from './list-persona.component';
 
-describe('CrudPersonaComponent', () => {
-  let component: CrudPersonaComponent;
-  let fixture: ComponentFixture<CrudPersonaComponent>;
+describe('ListPersonaComponent', () => {
+  let component: ListPersonaComponent;
+  let fixture: ComponentFixture<ListPersonaComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CrudPersonaComponent ],
+      declarations: [ ListPersonaComponent ],
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CrudPersonaComponent);
+    fixture = TestBed.createComponent(ListPersonaComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
