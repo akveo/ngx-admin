@@ -284,7 +284,7 @@
 
               <!-- input -->
             <mat-form-field *ngSwitchCase="'input'" style="width: 100%;" class="form-group">
-            <mat-label>{{c.label}}</mat-label>
+            <mat-label>{{c.requerido?'* '+c.label:c.label}}</mat-label>
             <input matInput [(ngModel)]="c.valor" (ngModelChange)="validCampo(c)" [ngModelOptions]="{standalone: true}"
               type="{{c.tipo}}" id="{{c.nombre}}"  [placeholder]="c.placeholder" [disabled]="c.deshabilitar"
             />
@@ -299,13 +299,13 @@
              <mat-checkbox type="checkbox" class="customised-control-input"
              [disabled]="c.deshabilitar" color="primary"
              [(checked)]="c.valor" (change)="c.valor = !c.valor"
-             >{{c.label}}?</mat-checkbox>
+             >{{c.requerido?'* '+c.label:c.label}}?</mat-checkbox>
           </div>
 
           <!-- textarea -->
 
           <mat-form-field  *ngSwitchCase="'textarea'" style="width: 100%;" class="form-group">
-            <mat-label>{{c.label}}</mat-label>
+            <mat-label>{{c.requerido?'* '+c.label:c.label}}</mat-label>
             <textarea matInput placeholder="Autosize textarea" matTextareaAutosize matAutosizeMinRows="3"
                       matAutosizeMaxRows="6"
                       [(ngModel)]="c.valor" (ngModelChange)="validCampo(c)" [ngModelOptions]="{standalone: true}"
@@ -335,7 +335,7 @@
           <!-- date material -->
 
           <mat-form-field *ngSwitchCase="'mat-date'" style="width: 100%;">
-            <mat-label>{{c.label}}</mat-label>
+            <mat-label>{{c.requerido?'* '+c.label:c.label}}</mat-label>
             <input matInput  [(ngModel)]="c.valor" [matDatepicker]="picker" (dateChange)="onChangeDate($event,c); validCampo(c)" [ngModelOptions]="{standalone: true}" [placeholder]="c.placeholder">
             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
             <mat-datepicker #picker></mat-datepicker>
@@ -344,7 +344,7 @@
 
           <!-- select -->
           <mat-form-field *ngSwitchCase="'select'" style="width: 100%;" floatLabel="{{c.valor?'always':'auto'}}">
-            <mat-label>{{c.label}}</mat-label>
+            <mat-label>{{c.requerido?'* '+c.label:c.label}}</mat-label>
             <mat-select [placeholder]="c.valor?(c.key?c.valor[c.key]:c.valor|json):c.placeholder" [(ngModel)]="c.valor"
              (ngModelChange)="validCampo(c)" [ngModelOptions]="{standalone: true}">
               <mat-option >--Seleccionar--</mat-option>
@@ -363,7 +363,7 @@
 
            <!-- select multiple-->
            <mat-form-field *ngSwitchCase="'selectmultiple'" style="width: 100%;" floatLabel="{{c.valor?'always':'auto'}}">
-            <mat-label>{{c.label}}</mat-label>
+            <mat-label>{{c.requerido?'* '+c.label:c.label}}</mat-label>
             <mat-select [placeholder]="c.placeholder" [(ngModel)]="c.valor"
              (ngModelChange)="validCampo(c)" [ngModelOptions]="{standalone: true}" multiple>
               <mat-option *ngFor="let item of c.opciones" [value]="item" >
@@ -383,7 +383,7 @@
             <!-- input-file -->
               <div *ngSwitchCase="'file'">
                 <label for="{{c.nombre}}" class="upload-file">
-                  {{c.label}}
+                  {{c.requerido?'* '+c.label:c.label}}
               </label>
                 <input type="file" id="{{c.nombre}}" class="{{c.clase}}" (change)="onChange($event,c)" />
                 <mat-hint class="text-danger">{{c.alerta}}</mat-hint>
