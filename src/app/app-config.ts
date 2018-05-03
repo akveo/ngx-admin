@@ -38,7 +38,18 @@ export const Config = {
         CONF_MENU_SERVICE: 'http://10.20.0.254/configuracion_api/v1/menu_opcion_padre/ArbolMenus/',
     },
     PREPROD: {
+        NUXEO: {
+            PATH: 'https://documental.udistrital.edu.co/nuxeo/',
+            AUTH: {
+                method: 'basic',
+                username: 'Administrator',
+                password: 'S1st3m4s04S=Fr331P4',
+            },
+        },
         WSO2_SERVICE: 'http://jbpm.udistritaloas.edu.co:8280/services',
+        CORE_SERVICE: 'http://pruebasapi.intranetoas.udistrital.edu.co:8083/v1/',
+        UBICACION_SERVICE: 'http://pruebasapi.intranetoas.udistrital.edu.co:8085/v1/',
+        PERSONA_SERVICE: 'http://pruebasapi.intranetoas.udistrital.edu.co:8083/v1/',
         TOKEN: {
             AUTORIZATION_URL: 'https://autenticacion.udistrital.edu.co/oauth2/authorize',
             CLIENTE_ID: '8u_51nEfExxfw_KyhDF50cU1DGca',
