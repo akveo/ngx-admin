@@ -116,4 +116,22 @@ export const MENU_ITEMS: MenuItem[] = [
       },
     ],
   },
+  {
+    title: 'Info Caracteristica',
+    icon: 'nb-compose',
+    link: '/pages/info_caracteristica',
+    key: 'info_caracteristica',
+    children: [
+      {
+        title: 'Lista Info Caracteristica',
+        link: '/pages/info_caracteristica/list-info_caracteristica',
+        key: 'lista_info_caracteristica',
+      },
+      {
+        title: 'CRUD Info Caracteristica',
+        link: '/pages/info_caracteristica/crud-info_caracteristica',
+        key: 'crud_info_caracteristica',
+      },
+    ],
+  },
 ]

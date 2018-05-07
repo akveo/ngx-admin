@@ -37,6 +37,11 @@
       "lista_info_persona": "Person data list",
       "crud_info_persona": "Person data crud"
     },
+    "info_caracteristica": {
+      "info_caracteristica": "Caracteristic info",
+      "lista_info_caracteristica": "Caracteristic info list",
+      "crud_info_caracteristica": "Caracteristic info crud"
+    },
     "auth": {
       "auth": "Authentication",
       "login": "Log in",
@@ -86,6 +91,12 @@
     "placeholder_foto": "ej: foto",
     "info_persona": "info_persona",
     "placeholder_info_persona": "ej: info_persona",
+    "info_caracteristica": "Caracteristic info",
+    "placeholder_info_caracteristica": "ej: Caracteristic info",
+    "grupo_sanguineo": "grupo_sanguineo",
+    "placeholder_grupo_sanguineo": "ej: grupo_sanguineo",
+    "rh": "rh",
+    "placeholder_rh": "ej: rh",
     "aceptar": "aceptar",
     "cancelar": "Cancel",
     "salir": "Exit",
