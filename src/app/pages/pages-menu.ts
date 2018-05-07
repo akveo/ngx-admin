@@ -142,6 +142,16 @@ export const MENU_ITEMS: NbMenuItem[] = [
     ],
   },
   {
+    title: 'Miscellaneous',
+    icon: 'nb-shuffle',
+    children: [
+      {
+        title: '404',
+        link: '/pages/miscellaneous/404',
+      },
+    ],
+  },
+  {
     title: 'Auth',
     icon: 'nb-locked',
     children: [
