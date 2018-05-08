@@ -12,7 +12,11 @@ export class NuxeoService {
     static guardar(Files): any {
         NuxeoService.nuxeo = new Nuxeo({
             baseURL: Config.LOCAL.NUXEO.PATH,
-            auth: Config.LOCAL.NUXEO.AUTH,
+            auth: {
+                method: 'basic',
+                username: 'Administrator',
+                password: 'S1st3m4s04S=Fr331P4',
+            },
         });
         NuxeoService.nuxeo.connect().then(function (client) {
             Files.forEach(element => {
