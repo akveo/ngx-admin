@@ -22,11 +22,11 @@ publish:
   # upload directory /dist to s3 bucket
   s3:
     region: "us-east-1"
-    bucket: "drone-cliente-develop"
+    bucket: "campus-cliente-$$BRANCH"
     access_key: $$DRONE_AWS_ACCESS_KEY_ID
     secret_key: $$DRONE_AWS_SECRET_ACCESS_KEY
     source: dist
-    target: /campus_cliente_$$BRANCH
+    target: /
     recursive: true
     when:
       branch: develop
