@@ -19,7 +19,7 @@ build:
 
 publish:
 
-  # upload directory /dist to s3 bucket
+  # upload directory /dist to s3 bucket, campus-cliente-develop o campus-cliente-master
   s3:
     region: "us-east-1"
     bucket: "campus-cliente-$$BRANCH"
