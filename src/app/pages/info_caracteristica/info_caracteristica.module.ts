@@ -1,4 +1,4 @@
-import { TipoDiscapacidadRoutingModule, routedComponents } from './tipo_discapacidad-routing.module';
+import { InfoCaracteristicaRoutingModule, routedComponents } from './info_caracteristica-routing.module';
 import { NgModule } from '@angular/core';
 import { ThemeModule } from '../../@theme/theme.module';
 import { PersonaService } from '../../@core/data/persona.service';
@@ -9,7 +9,7 @@ import { SharedModule } from '../../shared/shared.module';
 @NgModule({
   imports: [
     ThemeModule,
-    TipoDiscapacidadRoutingModule,
+    InfoCaracteristicaRoutingModule,
     Ng2SmartTableModule,
     ToasterModule,
     SharedModule,
@@ -21,4 +21,4 @@ import { SharedModule } from '../../shared/shared.module';
     PersonaService,
   ],
 })
-export class TipoDiscapacidadModule { }
+export class InfoCaracteristicaModule { }

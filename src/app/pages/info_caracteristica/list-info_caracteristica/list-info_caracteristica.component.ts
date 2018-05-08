@@ -7,11 +7,11 @@ import Swal from 'sweetalert2';
 import 'style-loader!angular2-toaster/toaster.css';
 
 @Component({
-  selector: 'ngx-list-info-persona',
-  templateUrl: './list-info_persona.component.html',
-  styleUrls: ['./list-info_persona.component.scss'],
+  selector: 'ngx-list-info-caracteristica',
+  templateUrl: './list-info_caracteristica.component.html',
+  styleUrls: ['./list-info_caracteristica.component.scss'],
   })
-export class ListInfoPersonaComponent implements OnInit {
+export class ListInfoCaracteristicaComponent implements OnInit {
   uid: number;
   cambiotab: boolean = false;
   config: ToasterConfig;
@@ -45,58 +45,30 @@ export class ListInfoPersonaComponent implements OnInit {
       },
       mode: 'external',
       columns: {
-        PrimerNombre: {
-          title: this.translate.instant('GLOBAL.primer_nombre'),
+        GrupoSanguineo: {
+          title: this.translate.instant('GLOBAL.grupo_sanguineo'),
           // type: 'string;',
           valuePrepareFunction: (value) => {
             return value;
           },
         },
-        SegundoNombre: {
-          title: this.translate.instant('GLOBAL.segundo_nombre'),
+        Rh: {
+          title: this.translate.instant('GLOBAL.rh'),
           // type: 'string;',
           valuePrepareFunction: (value) => {
             return value;
           },
         },
-        PrimerApellido: {
-          title: this.translate.instant('GLOBAL.primer_apellido'),
-          // type: 'string;',
+        GrupoEtnico: {
+          title: this.translate.instant('GLOBAL.grupo_etnico'),
+          // type: 'grupo_etnico;',
           valuePrepareFunction: (value) => {
             return value;
           },
         },
-        SegundoApellido: {
-          title: this.translate.instant('GLOBAL.segundo_apellido'),
-          // type: 'string;',
-          valuePrepareFunction: (value) => {
-            return value;
-          },
-        },
-        FechaNacimiento: {
-          title: this.translate.instant('GLOBAL.fecha_nacimiento'),
-          // type: 'Date;',
-          valuePrepareFunction: (value) => {
-            return value;
-          },
-        },
-        Foto: {
-          title: this.translate.instant('GLOBAL.foto'),
-          // type: 'string;',
-          valuePrepareFunction: (value) => {
-            return value;
-          },
-        },
-        EstadoCivil: {
-          title: this.translate.instant('GLOBAL.estado_civil'),
-          // type: 'estado_civil;',
-          valuePrepareFunction: (value) => {
-            return value;
-          },
-        },
-        Genero: {
-          title: this.translate.instant('GLOBAL.genero'),
-          // type: 'genero;',
+        TipoDiscapacidad: {
+          title: this.translate.instant('GLOBAL.tipo_discapacidad'),
+          // type: 'tipo_discapacidad;',
           valuePrepareFunction: (value) => {
             return value;
           },
@@ -110,7 +82,7 @@ export class ListInfoPersonaComponent implements OnInit {
   }
 
   loadData(): void {
-    this.personaService.get('info_persona/?limit=0').subscribe(res => {
+    this.personaService.get('info_caracteristica/?limit=0').subscribe(res => {
       if (res !== null) {
         const data = <Array<any>>res;
         this.source.load(data);
@@ -134,7 +106,7 @@ export class ListInfoPersonaComponent implements OnInit {
   onDelete(event): void {
     const opt: any = {
       title: 'Deleting?',
-      text: 'Delete InfoPersona!',
+      text: 'Delete InfoCaracteristica!',
       icon: 'warning',
       buttons: true,
       dangerMode: true,
@@ -144,10 +116,10 @@ export class ListInfoPersonaComponent implements OnInit {
     .then((willDelete) => {
 
       if (willDelete.value) {
-        this.personaService.delete('info_persona/', event.data).subscribe(res => {
+        this.personaService.delete('info_caracteristica/', event.data).subscribe(res => {
           if (res !== null) {
             this.loadData();
-            this.showToast('info', 'deleted', 'InfoPersona deleted');
+            this.showToast('info', 'deleted', 'InfoCaracteristica deleted');
             }
          });
       }

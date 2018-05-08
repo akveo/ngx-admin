@@ -37,6 +37,10 @@ const routes: Routes = [{
     loadChildren: './info_persona/info_persona.module#InfoPersonaModule',
     },
     {
+      path: 'info_caracteristica',
+      loadChildren: './info_caracteristica/info_caracteristica.module#InfoCaracteristicaModule',
+      },
+    {
     path: '',
     redirectTo: 'dashboard',
     pathMatch: 'full',

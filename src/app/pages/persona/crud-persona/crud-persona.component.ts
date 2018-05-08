@@ -4,6 +4,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { PersonaService } from '../../../@core/data/persona.service';
 import { FORM_PERSONA } from './form-persona';
 import { ToasterService, ToasterConfig, Toast, BodyOutputType } from 'angular2-toaster';
+import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import Swal from 'sweetalert2';
 import 'style-loader!angular2-toaster/toaster.css';
 
@@ -30,8 +31,25 @@ export class CrudPersonaComponent implements OnInit {
   regPersona: any;
   clean: boolean;
 
-  constructor(private personaService: PersonaService, private toasterService: ToasterService) {
+  constructor(private translate: TranslateService, private personaService: PersonaService, private toasterService: ToasterService) {
     this.formPersona = FORM_PERSONA;
+    this.construirForm();
+    this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
+      this.construirForm();
+    });
+   }
+
+  construirForm() {
+    this.formPersona.titulo = this.translate.instant('GLOBAL.persona');
+    this.formPersona.btn = this.translate.instant('GLOBAL.guardar');
+    for (let i = 0; i < this.formPersona.campos.length; i++) {
+      this.formPersona.campos[i].label = this.translate.instant('GLOBAL.' + this.formPersona.campos[i].label_i18n);
+      this.formPersona.campos[i].placeholder = this.translate.instant('GLOBAL.placeholder_' + this.formPersona.campos[i].label_i18n);
+    }
+  }
+
+  useLanguage(language: string) {
+    this.translate.use(language);
   }
 
 
@@ -54,7 +72,7 @@ export class CrudPersonaComponent implements OnInit {
             this.info_persona = <Persona>res[0];
           }
         });
-    } else {
+    } else  {
       this.info_persona = undefined;
       this.clean = !this.clean;
     }
@@ -71,17 +89,17 @@ export class CrudPersonaComponent implements OnInit {
       showCancelButton: true,
     };
     Swal(opt)
-      .then((willDelete) => {
-        if (willDelete.value) {
-          this.info_persona = <Persona>persona;
-          this.personaService.put('persona', this.info_persona)
-            .subscribe(res => {
-              this.loadPersona();
-              this.eventChange.emit(true);
-              this.showToast('info', 'updated', 'Persona updated');
-            });
-        }
-      });
+    .then((willDelete) => {
+      if (willDelete.value) {
+        this.info_persona = <Persona>persona;
+        this.personaService.put('persona', this.info_persona)
+          .subscribe(res => {
+            this.loadPersona();
+            this.eventChange.emit(true);
+            this.showToast('info', 'updated', 'Persona updated');
+          });
+      }
+    });
   }
 
   createPersona(persona: any): void {
@@ -94,23 +112,22 @@ export class CrudPersonaComponent implements OnInit {
       showCancelButton: true,
     };
     Swal(opt)
-      .then((willDelete) => {
-        if (willDelete.value) {
-          this.info_persona = <Persona>persona;
-          this.personaService.post('persona', this.info_persona)
-            .subscribe(res => {
-              this.info_persona = <Persona>res;
-              this.eventChange.emit(true);
-              this.showToast('info', 'created', 'Persona created');
-            });
-        }
-      });
+    .then((willDelete) => {
+      if (willDelete.value) {
+        this.info_persona = <Persona>persona;
+        this.personaService.post('persona', this.info_persona)
+          .subscribe(res => {
+            this.info_persona = <Persona>res;
+            this.eventChange.emit(true);
+            this.showToast('info', 'created', 'Persona created');
+          });
+      }
+    });
   }
 
   ngOnInit() {
     this.loadPersona();
   }
-
 
   guardarFileService(event) {
     console.info(event);

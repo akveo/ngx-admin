@@ -15,23 +15,20 @@ export class ListGeneroComponent implements OnInit {
   uid: number;
   cambiotab: boolean = false;
   config: ToasterConfig;
-  settingsAux: any;
-  settings = {};
+  settings: any;
 
   source: LocalDataSource = new LocalDataSource();
 
   constructor(private translate: TranslateService, private personaService: PersonaService, private toasterService: ToasterService) {
-    this.translate = translate;
-    this.cargarCampos();
     this.loadData();
+    this.cargarCampos();
     this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
       this.cargarCampos();
-      this.loadData();
     });
   }
 
   cargarCampos() {
-    this.settingsAux = {
+    this.settings = {
       add: {
         addButtonContent: '<i class="nb-plus"></i>',
         createButtonContent: '<i class="nb-checkmark"></i>',
@@ -49,42 +46,42 @@ export class ListGeneroComponent implements OnInit {
       mode: 'external',
       columns: {
         Id: {
-          title: this.translate.instant('FORM_GENERO.Id'),
+          title: this.translate.instant('GLOBAL.id'),
           // type: 'number;',
           valuePrepareFunction: (value) => {
             return value;
           },
         },
         Nombre: {
-          title: this.translate.instant('FORM_GENERO.Nombre'),
+          title: this.translate.instant('GLOBAL.nombre'),
           // type: 'string;',
           valuePrepareFunction: (value) => {
             return value;
           },
         },
         Descripcion: {
-          title: this.translate.instant('FORM_GENERO.Descripcion'),
+          title: this.translate.instant('GLOBAL.descripcion'),
           // type: 'string;',
           valuePrepareFunction: (value) => {
             return value;
           },
         },
         CodigoAbreviacion: {
-          title: this.translate.instant('FORM_GENERO.CodigoAbreviacion'),
+          title: this.translate.instant('GLOBAL.codigo_abreviacion'),
           // type: 'string;',
           valuePrepareFunction: (value) => {
             return value;
           },
         },
         Activo: {
-          title: this.translate.instant('FORM_GENERO.Activo'),
+          title: this.translate.instant('GLOBAL.activo'),
           // type: 'boolean;',
           valuePrepareFunction: (value) => {
             return value;
           },
         },
         NumeroOrden: {
-          title: this.translate.instant('FORM_GENERO.NumeroOrden'),
+          title: this.translate.instant('GLOBAL.numero_orden'),
           // type: 'number;',
           valuePrepareFunction: (value) => {
             return value;
@@ -92,7 +89,6 @@ export class ListGeneroComponent implements OnInit {
         },
       },
     };
-    this.settings = this.settingsAux;
   }
 
   useLanguage(language: string) {
@@ -149,7 +145,7 @@ export class ListGeneroComponent implements OnInit {
   }
 
   selectTab(event): void {
-    if (event.tabTitle === 'Lista') {
+    if (event.tabTitle === this.translate.instant('GLOBAL.lista')) {
       this.cambiotab = false;
     } else {
       this.cambiotab = true;
