@@ -56,7 +56,11 @@ export class NuxeoComponent implements OnChanges {
                 this.files = changes.files.currentValue;
                 this.nuxeo = new Nuxeo({
                     baseURL: GENERAL.ENTORNO.NUXEO.PATH,
-                    auth: GENERAL.ENTORNO.NUXEO.AUTH,
+                    auth: {
+                        method: 'basic',
+                        username: 'Administrator',
+                        password: 'S1st3m4s04S=Fr331P4',
+                    },
                 });
                 this.guardar(this.files, this.nuxeo, this.saveApi);
             }

@@ -76,7 +76,7 @@ export class ImplicitAutenticationService {
         }
         let url = this.params.AUTORIZATION_URL + '?' +
             'client_id=' + encodeURIComponent(this.params.CLIENTE_ID) + '&' +
-            'redirect_uri=' + encodeURIComponent(this.params.REDIRECT_URL) + '&' +
+            'redirect_uri=' + encodeURIComponent(window.location.href) + '&' +
             'response_type=' + encodeURIComponent(this.params.RESPONSE_TYPE) + '&' +
             'scope=' + encodeURIComponent(this.params.SCOPE);
         if (this.params.nonce) {
