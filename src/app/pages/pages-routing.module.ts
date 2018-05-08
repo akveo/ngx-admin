@@ -39,7 +39,27 @@ const routes: Routes = [{
     {
       path: 'info_caracteristica',
       loadChildren: './info_caracteristica/info_caracteristica.module#InfoCaracteristicaModule',
-      },
+    },
+    {
+    path: 'tipo_lugar',
+    loadChildren: './tipo_lugar/tipo_lugar.module#TipoLugarModule',
+    },
+    {
+    path: 'lugar',
+    loadChildren: './lugar/lugar.module#LugarModule',
+    },
+    {
+    path: 'lugar_ubicacion',
+    loadChildren: './lugar_ubicacion/lugar_ubicacion.module#LugarUbicacionModule',
+    },
+    {
+    path: 'tipo_contacto',
+    loadChildren: './tipo_contacto/tipo_contacto.module#TipoContactoModule',
+    },
+    {
+    path: 'informacion_contacto',
+    loadChildren: './informacion_contacto/informacion_contacto.module#InformacionContactoModule',
+    },
     {
     path: '',
     redirectTo: 'dashboard',

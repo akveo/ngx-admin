@@ -1,8 +1,7 @@
-import { UbicacionesService } from './../../@core/data/ubicaciones.service';
-import { InfoCaracteristicaRoutingModule, routedComponents } from './info_caracteristica-routing.module';
+import { TipoLugarRoutingModule, routedComponents } from './tipo_lugar-routing.module';
 import { NgModule } from '@angular/core';
 import { ThemeModule } from '../../@theme/theme.module';
-import { PersonaService } from '../../@core/data/persona.service';
+import { UbicacionesService } from '../../@core/data/ubicaciones.service';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { ToasterModule } from 'angular2-toaster';
 import { SharedModule } from '../../shared/shared.module';
@@ -10,7 +9,7 @@ import { SharedModule } from '../../shared/shared.module';
 @NgModule({
   imports: [
     ThemeModule,
-    InfoCaracteristicaRoutingModule,
+    TipoLugarRoutingModule,
     Ng2SmartTableModule,
     ToasterModule,
     SharedModule,
@@ -19,8 +18,7 @@ import { SharedModule } from '../../shared/shared.module';
     ...routedComponents,
   ],
   providers: [
-    PersonaService,
     UbicacionesService,
   ],
 })
-export class InfoCaracteristicaModule { }
+export class TipoLugarModule { }

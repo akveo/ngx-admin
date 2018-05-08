@@ -10,7 +10,7 @@ export const Config = {
         },
         WSO2_SERVICE: 'http://jbpm.udistritaloas.edu.co:8280/services',
         CORE_SERVICE: 'http://pruebasapi.intranetoas.udistrital.edu.co:8083/v1/',
-        UBICACION_SERVICE: 'http://pruebasapi.intranetoas.udistrital.edu.co:8085/v1/',
+        UBICACIONES_SERVICE: 'http://pruebasapi.intranetoas.udistrital.edu.co:8085/v1/',
         PERSONA_SERVICE: 'http://pruebasapi.intranetoas.udistrital.edu.co:8083/v1/',
         TOKEN: {
             AUTORIZATION_URL: 'https://autenticacion.udistrital.edu.co/oauth2/authorize',
@@ -35,7 +35,7 @@ export const Config = {
         },
         WSO2_SERVICE: 'http://jbpm.udistritaloas.edu.co:8280/services',
         CORE_SERVICE: 'http://pruebasapi.intranetoas.udistrital.edu.co:8083/v1/',
-        UBICACION_SERVICE: 'http://pruebasapi.intranetoas.udistrital.edu.co:8085/v1/',
+        UBICACIONES_SERVICE: 'http://pruebasapi.intranetoas.udistrital.edu.co:8085/v1/',
         PERSONA_SERVICE: 'http://pruebasapi.intranetoas.udistrital.edu.co:8083/v1/',
         TOKEN: {
             AUTORIZATION_URL: 'https://autenticacion.udistrital.edu.co/oauth2/authorize',
@@ -59,7 +59,7 @@ export const Config = {
         },
         WSO2_SERVICE: 'http://jbpm.udistritaloas.edu.co:8280/services',
         CORE_SERVICE: 'http://pruebasapi.intranetoas.udistrital.edu.co:8083/v1/',
-        UBICACION_SERVICE: 'http://pruebasapi.intranetoas.udistrital.edu.co:8085/v1/',
+        UBICACIONES_SERVICE: 'http://pruebasapi.intranetoas.udistrital.edu.co:8085/v1/',
         PERSONA_SERVICE: 'http://pruebasapi.intranetoas.udistrital.edu.co:8083/v1/',
         TOKEN: {
             AUTORIZATION_URL: 'https://autenticacion.udistrital.edu.co/oauth2/authorize',
