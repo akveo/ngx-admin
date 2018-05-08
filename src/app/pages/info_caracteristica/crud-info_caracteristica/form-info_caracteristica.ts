@@ -48,5 +48,16 @@ export let FORM_INFO_CARACTERISTICA = {
         // key: 'Name',
         opciones: [],
     },
+    {
+      etiqueta: 'select',
+      claseGrid: 'col-6',
+      nombre: 'PaisNacimiento',
+      label_i18n: 'pais_nacimiento',
+      placeholder_i18n: 'pais_nacimiento',
+      requerido: true,
+      tipo: 'Lugar',
+      // key: 'Name',
+      opciones: [],
+    },
     ],
 }

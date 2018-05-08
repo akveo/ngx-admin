@@ -26,6 +26,7 @@ export class PagesComponent implements OnInit {
   constructor(private translate: TranslateService, private menu_ws: MenuService) { }
 
   ngOnInit() {
+    this.menu = MENU_ITEMS;
     this.menu_ws.get('Menu%20campus/campus').subscribe(
       data => {
         for (let i = 0; i < data.length; i++) {

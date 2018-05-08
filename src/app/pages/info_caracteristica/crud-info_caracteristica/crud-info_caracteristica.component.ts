@@ -1,9 +1,11 @@
 import { GrupoEtnico } from './../../../@core/data/models/grupo_etnico';
 import { TipoDiscapacidad } from './../../../@core/data/models/tipo_discapacidad';
+import { Lugar } from './../../../@core/data/models/lugar';
 
 import { InfoCaracteristica } from './../../../@core/data/models/info_caracteristica';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { PersonaService } from '../../../@core/data/persona.service';
+import { UbicacionesService } from '../../../@core/data/ubicaciones.service';
 import { FORM_INFO_CARACTERISTICA } from './form-info_caracteristica';
 import { ToasterService, ToasterConfig, Toast, BodyOutputType } from 'angular2-toaster';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
@@ -32,7 +34,8 @@ export class CrudInfoCaracteristicaComponent implements OnInit {
   regInfoCaracteristica: any;
   clean: boolean;
 
-  constructor(private translate: TranslateService, private personaService: PersonaService, private toasterService: ToasterService) {
+  constructor(private translate: TranslateService, private ubicacionesService: UbicacionesService,
+    private personaService: PersonaService, private toasterService: ToasterService) {
     this.formInfoCaracteristica = FORM_INFO_CARACTERISTICA;
     this.construirForm();
     this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
@@ -40,6 +43,7 @@ export class CrudInfoCaracteristicaComponent implements OnInit {
     });
     this.loadOptionsGrupoEtnico();
     this.loadOptionsTipoDiscapacidad();
+    this.loadOptionsPaisNacimiento();
    }
 
   construirForm() {
@@ -73,6 +77,16 @@ export class CrudInfoCaracteristicaComponent implements OnInit {
             tipoDiscapacidad = <Array<TipoDiscapacidad>>res;
           }
           this.formInfoCaracteristica.campos[ this.getIndexForm('TipoDiscapacidad') ].opciones = tipoDiscapacidad;
+        });
+  }
+  loadOptionsPaisNacimiento(): void {
+    let paisNacimiento: Array<any> = [];
+      this.ubicacionesService.get('lugar/?limit=0')
+        .subscribe(res => {
+          if (res !== null) {
+            paisNacimiento = <Array<Lugar>>res;
+          }
+          this.formInfoCaracteristica.campos[ this.getIndexForm('PaisNacimiento') ].opciones = paisNacimiento;
         });
   }
 

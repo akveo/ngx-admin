@@ -42,6 +42,31 @@
       "lista_info_caracteristica": "Caracteristic info list",
       "crud_info_caracteristica": "Caracteristic info crud"
     },
+    "tipo_lugar": {
+      "tipo_lugar": "tipo_lugar",
+      "lista_tipo_lugar": "lista tipo_lugar",
+      "crud_tipo_lugar": "Crud tipo_lugar"
+    },
+    "lugar": {
+      "lugar": "lugar",
+      "lista_lugar": "lista lugar",
+      "crud_lugar": "Crud lugar"
+    },
+    "lugar_ubicacion": {
+      "lugar_ubicacion": "lugar_ubicacion",
+      "lista_lugar_ubicacion": "lista lugar_ubicacion",
+      "crud_lugar_ubicacion": "Crud lugar_ubicacion"
+    },
+    "tipo_contacto": {
+      "tipo_contacto": "tipo_contacto",
+      "lista_tipo_contacto": "lista tipo_contacto",
+      "crud_tipo_contacto": "Crud tipo_contacto"
+    },
+    "informacion_contacto": {
+      "informacion_contacto": "informacion_contacto",
+      "lista_informacion_contacto": "lista informacion_contacto",
+      "crud_informacion_contacto": "Crud informacion_contacto"
+    },
     "auth": {
       "auth": "Authentication",
       "login": "Log in",
@@ -107,6 +132,34 @@
     "guardar" : "Save",
     "formulario": "Form",
     "lista": "List",
-    "regresar": "Return"
+    "regresar": "Return",
+    "lugar_ubicacion": "lugar_ubicacion",
+    "placeholder_lugar_ubicacion": "ej: lugar_ubicacion",
+    "direccion": "direccion",
+    "placeholder_direccion": "ej: direccion",
+    "codigo_postal": "codigo_postal",
+    "placeholder_codigo_postal": "ej: codigo_postal",
+    "estrato": "estrato",
+    "placeholder_estrato": "ej: estrato",
+    "tipo_lugar": "tipo_lugar",
+    "placeholder_tipo_lugar": "ej: tipo_lugar",
+    "lugar": "lugar",
+    "placeholder_lugar": "ej: lugar",
+    "pais_nacimiento": "pais_nacimiento",
+    "placeholder_pais_nacimiento": "ej: pais_nacimiento",
+    "tipo_contacto": "tipo_contacto",
+    "placeholder_tipo_contacto": "ej: tipo_contacto",
+    "informacion_contacto": "informacion_contacto",
+    "placeholder_informacion_contacto": "ej: informacion_contacto",
+    "pais_residencia": "pais_residencia",
+    "placeholder_pais_residencia": "ej: pais_residencia",
+    "ciudad_residencia": "ciudad_residencia",
+    "placeholder_ciudad_residencia": "ej: ciudad_residencia",
+    "direccion_residencia": "direccion_residencia",
+    "placeholder_direccion_residencia": "ej: direccion_residencia",
+    "estrato_residencia": "estrato_residencia",
+    "placeholder_estrato_residencia": "ej: estrato_residencia",
+    "telefono": "telefono",
+    "placeholder_telefono": "ej: telefono"
   }
 }
