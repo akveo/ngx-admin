@@ -134,4 +134,94 @@ export const MENU_ITEMS: MenuItem[] = [
       },
     ],
   },
+  {
+    title: 'Tipo Lugar',
+    icon: 'nb-compose',
+    link: '/pages/tipo_lugar',
+    key: 'tipo_lugar',
+    children: [
+      {
+        title: 'Lista Tipo Lugar',
+        link: '/pages/tipo_lugar/list-tipo_lugar',
+        key: 'lista_tipo_lugar',
+      },
+      {
+        title: 'CRUD Tipo Lugar',
+        link: '/pages/tipo_lugar/crud-tipo_lugar',
+        key: 'crud_tipo_lugar',
+      },
+    ],
+  },
+  {
+    title: 'Lugar',
+    icon: 'nb-compose',
+    link: '/pages/lugar',
+    key: 'lugar',
+    children: [
+      {
+        title: 'Lista Lugar',
+        link: '/pages/lugar/list-lugar',
+        key: 'lista_lugar',
+      },
+      {
+        title: 'CRUD Lugar',
+        link: '/pages/lugar/crud-lugar',
+        key: 'crud_lugar',
+      },
+    ],
+  },
+  {
+    title: 'Lugar Ubicacion',
+    icon: 'nb-compose',
+    link: '/pages/lugar_ubicacion',
+    key: 'lugar_ubicacion',
+    children: [
+      {
+        title: 'Lista Lugar Ubicacion',
+        link: '/pages/lugar_ubicacion/list-lugar_ubicacion',
+        key: 'lista_lugar_ubicacion',
+      },
+      {
+        title: 'CRUD Lugar Ubicacion',
+        link: '/pages/lugar_ubicacion/crud-lugar_ubicacion',
+        key: 'crud_lugar_ubicacion',
+      },
+    ],
+  },
+  {
+    title: 'Tipo Contacto',
+    icon: 'nb-compose',
+    link: '/pages/tipo_contacto',
+    key: 'tipo_contacto',
+    children: [
+      {
+        title: 'Lista Tipo Contacto',
+        link: '/pages/tipo_contacto/list-tipo_contacto',
+        key: 'lista_tipo_contacto',
+      },
+      {
+        title: 'CRUD Tipo Contacto',
+        link: '/pages/tipo_contacto/crud-tipo_contacto',
+        key: 'crud_tipo_contacto',
+      },
+    ],
+  },
+  {
+    title: 'Informacion Contacto',
+    icon: 'nb-compose',
+    link: '/pages/informacion_contacto',
+    key: 'informacion_contacto',
+    children: [
+      {
+        title: 'Lista Informacion Contacto',
+        link: '/pages/informacion_contacto/list-informacion_contacto',
+        key: 'lista_informacion_contacto',
+      },
+      {
+        title: 'CRUD Informacion Contacto',
+        link: '/pages/informacion_contacto/crud-informacion_contacto',
+        key: 'crud_informacion_contacto',
+      },
+    ],
+  },
 ]
