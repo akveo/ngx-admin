@@ -26,6 +26,13 @@ const socialLinks = [
   },
 ];
 
+export class NbSimpleRoleProvider extends NbRoleProvider {
+  getRole() {
+    // here you could provide any role based on any auth flow
+    return observableOf('guest');
+  },
+}
+
 export const NB_CORE_PROVIDERS = [
   ...DataModule.forRoot().providers,
   ...NbAuthModule.forRoot({
@@ -63,12 +70,7 @@ export const NB_CORE_PROVIDERS = [
     },
   }).providers,
   {
-    provide: NbRoleProvider,
-    useValue: {
-      getRole: () => {
-        return observableOf('guest'); // here you could provide any role based on any auth flow
-      },
-    },
+    provide: NbRoleProvider, useClass: NbSimpleRoleProvider,
   },
   AnalyticsService,
 ];
