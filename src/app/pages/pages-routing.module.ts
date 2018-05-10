@@ -13,6 +13,10 @@ const routes: Routes = [{
     component: DashboardComponent,
     },
     {
+    path: 'inscripcion',
+    loadChildren: './inscripcion/inscripcion.module#InscripcionModule',
+    },
+    {
     path: 'genero',
     loadChildren: './genero/genero.module#GeneroModule',
     },

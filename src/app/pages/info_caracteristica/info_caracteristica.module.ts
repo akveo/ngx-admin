@@ -6,6 +6,7 @@ import { PersonaService } from '../../@core/data/persona.service';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { ToasterModule } from 'angular2-toaster';
 import { SharedModule } from '../../shared/shared.module';
+import { CrudInfoCaracteristicaComponent } from './crud-info_caracteristica/crud-info_caracteristica.component';
 
 @NgModule({
   imports: [
@@ -21,6 +22,9 @@ import { SharedModule } from '../../shared/shared.module';
   providers: [
     PersonaService,
     UbicacionesService,
+  ],
+  exports: [
+    CrudInfoCaracteristicaComponent,
   ],
 })
 export class InfoCaracteristicaModule { }
