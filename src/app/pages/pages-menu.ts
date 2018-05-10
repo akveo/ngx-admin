@@ -9,6 +9,19 @@ export const MENU_ITEMS: MenuItem[] = [
     key: 'dashboard',
   },
   {
+    title: 'Inscripcion',
+    icon: 'nb-compose',
+    link: '/pages/inscripcion',
+    key: 'inscripcion',
+    children: [
+      {
+        title: 'Posgrado',
+        link: '/pages/inscripcion/posgrado',
+        key: 'inscripcion_posgrado',
+      },
+    ],
+  },
+  {
     title: 'Genero',
     icon: 'nb-compose',
     link: '/pages/genero',

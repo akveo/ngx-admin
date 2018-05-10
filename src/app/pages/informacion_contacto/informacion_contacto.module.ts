@@ -5,6 +5,7 @@ import { UbicacionesService } from '../../@core/data/ubicaciones.service';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { ToasterModule } from 'angular2-toaster';
 import { SharedModule } from '../../shared/shared.module';
+import { CrudInformacionContactoComponent } from './crud-informacion_contacto/crud-informacion_contacto.component';
 
 @NgModule({
   imports: [
@@ -19,6 +20,9 @@ import { SharedModule } from '../../shared/shared.module';
   ],
   providers: [
     UbicacionesService,
+  ],
+  exports: [
+    CrudInformacionContactoComponent,
   ],
 })
 export class InformacionContactoModule { }
