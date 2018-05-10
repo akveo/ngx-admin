@@ -1,4 +1,6 @@
 import { Component, OnDestroy } from '@angular/core';
+import { delay, withLatestFrom } from 'rxjs/operators';
+import { Subscription } from 'rxjs';
 import {
   NbMediaBreakpoint,
   NbMediaBreakpointsService,
@@ -9,10 +11,6 @@ import {
 } from '@nebular/theme';
 
 import { StateService } from '../../../@core/data/state.service';
-
-import { Subscription } from 'rxjs/Subscription';
-import 'rxjs/add/operator/withLatestFrom';
-import 'rxjs/add/operator/delay';
 
 // TODO: move layouts into the framework
 @Component({
@@ -62,7 +60,7 @@ import 'rxjs/add/operator/delay';
     </nb-layout>
   `,
 })
-export class SampleLayoutComponent  implements OnDestroy {
+export class SampleLayoutComponent implements OnDestroy {
 
   subMenu: NbMenuItem[] = [
     {
@@ -127,8 +125,10 @@ export class SampleLayoutComponent  implements OnDestroy {
 
     const isBp = this.bpService.getByName('is');
     this.menuClick$ = this.menuService.onItemSelect()
-      .withLatestFrom(this.themeService.onMediaQueryChange())
-      .delay(20)
+      .pipe(
+        withLatestFrom(this.themeService.onMediaQueryChange()),
+        delay(20),
+      )
       .subscribe(([item, [bpFrom, bpTo]]: [any, [NbMediaBreakpoint, NbMediaBreakpoint]]) => {
 
         if (bpTo.width <= isBp.width) {

@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { PagesComponent } from './pages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { NotFoundComponent } from './miscellaneous/not-found/not-found.component';
 
 const routes: Routes = [{
   path: '',
@@ -32,9 +33,15 @@ const routes: Routes = [{
     path: 'tables',
     loadChildren: './tables/tables.module#TablesModule',
   }, {
+    path: 'miscellaneous',
+    loadChildren: './miscellaneous/miscellaneous.module#MiscellaneousModule',
+  }, {
     path: '',
     redirectTo: 'dashboard',
     pathMatch: 'full',
+  }, {
+    path: '**',
+    component: NotFoundComponent,
   }],
 }];
 

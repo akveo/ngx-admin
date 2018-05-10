@@ -1,9 +1,6 @@
 import { Injectable, OnDestroy } from '@angular/core';
+import { of as observableOf,  Observable,  BehaviorSubject } from 'rxjs';
 
-import { Observable } from 'rxjs/Observable';
-import { BehaviorSubject } from 'rxjs/BehaviorSubject';
-import { takeWhile } from 'rxjs/operators/takeWhile';
-import 'rxjs/add/observable/of';
 import { NbLayoutDirectionService, NbLayoutDirection } from '@nebular/theme';
 
 @Injectable()
@@ -73,7 +70,7 @@ export class StateService implements OnDestroy {
   }
 
   getLayoutStates(): Observable<any[]> {
-    return Observable.of(this.layouts);
+    return observableOf(this.layouts);
   }
 
   onLayoutState(): Observable<any> {
@@ -85,7 +82,7 @@ export class StateService implements OnDestroy {
   }
 
   getSidebarStates(): Observable<any[]> {
-    return Observable.of(this.sidebars);
+    return observableOf(this.sidebars);
   }
 
   onSidebarState(): Observable<any> {
