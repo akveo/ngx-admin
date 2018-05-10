@@ -1,8 +1,7 @@
+
+import { of as observableOf,  Observable ,  BehaviorSubject } from 'rxjs';
 import { Injectable } from '@angular/core';
 
-import { Observable } from 'rxjs/Observable';
-import { BehaviorSubject } from 'rxjs/BehaviorSubject';
-import 'rxjs/add/observable/of';
 
 @Injectable()
 export class StateService {
@@ -48,7 +47,7 @@ export class StateService {
   }
 
   getLayoutStates(): Observable<any[]> {
-    return Observable.of(this.layouts);
+    return observableOf(this.layouts);
   }
 
   onLayoutState(): Observable<any> {
@@ -60,7 +59,7 @@ export class StateService {
   }
 
   getSidebarStates(): Observable<any[]> {
-    return Observable.of(this.sidebars);
+    return observableOf(this.sidebars);
   }
 
   onSidebarState(): Observable<any> {
