@@ -12,6 +12,7 @@ import { environment } from './environments/environment';
 if (environment.production) {
   enableProdMode();
 }
+
 if (window.localStorage.getItem('access_token') === null ||
   window.localStorage.getItem('access_token') === undefined) {
   const params = {},
@@ -46,6 +47,22 @@ if (window.localStorage.getItem('access_token') === null ||
       }
     }
   };
+} else {
+  let state: any;
+  const queryString = location.search.substring(1);
+  const regex = /([^&=]+)=([^&]*)/g;
+  let m;
+  while (!!(m = regex.exec(queryString))) {
+    state = decodeURIComponent(m[2]);
+  }
+  if (window.localStorage.getItem('state') === state) {
+    window.localStorage.clear();
+    const uri = window.location.toString();
+    if (uri.indexOf('?') > 0) {
+      const clean_uri = uri.substring(0, uri.indexOf('?'));
+      window.history.replaceState({}, document.title, clean_uri);
+    }
+  }
 }
 
 

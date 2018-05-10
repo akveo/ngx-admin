@@ -31,7 +31,8 @@ export class ImplicitAutenticationService {
         this.logOut = GENERAL.ENTORNO.TOKEN.SIGN_OUT_URL;
         this.logOut += '?id_token_hint=' + window.localStorage.getItem('id_token');
         this.logOut += '&post_logout_redirect_uri=' + GENERAL.ENTORNO.TOKEN.SIGN_OUT_REDIRECT_URL;
-        this.logOut += '&state=state_1';
+        this.logOut += '&state=' + window.localStorage.getItem('state');
+        window.location.replace(this.logOut);
         return this.logOut;
     }
     clearUrl() {
@@ -85,7 +86,6 @@ export class ImplicitAutenticationService {
         url += '&state=' + encodeURIComponent(this.params.state);
         return url;
     }
-
 
     private generateState() {
         const text = ((Date.now() + Math.random()) * Math.random()).toString().replace('.', '');
