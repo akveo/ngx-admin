@@ -53,7 +53,7 @@ export const Config = {
             SCOPE: 'openid email role documento',
             REDIRECT_URL: 'https://pruebascampus.portaloas.udistrital.edu.co/',
             SIGN_OUT_URL: 'https://autenticacion.udistrital.edu.co/oidc/logout',
-            SIGN_OUT_REDIRECT_URL: 'https://cliente.portaloas.udistrital.edu.co/campus_cliente_develop/index.html',
+            SIGN_OUT_REDIRECT_URL: 'https://pruebascampus.portaloas.udistrital.edu.co/',
         },
         CONF_MENU_SERVICE: 'http://10.20.0.254/configuracion_api/v1/menu_opcion_padre/ArbolMenus/',
     },
