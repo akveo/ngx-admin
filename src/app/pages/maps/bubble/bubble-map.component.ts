@@ -1,7 +1,7 @@
 import { Component, OnDestroy } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { combineLatest } from 'rxjs/observable/combineLatest';
-import { takeWhile } from 'rxjs/operators/takeWhile';
+import { combineLatest } from 'rxjs';
+import { takeWhile } from 'rxjs/operators';
 import { NgxEchartsService } from 'ngx-echarts';
 import { NbThemeService } from '@nebular/theme';
 

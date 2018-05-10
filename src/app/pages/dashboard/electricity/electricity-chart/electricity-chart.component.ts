@@ -1,3 +1,4 @@
+import { delay } from 'rxjs/operators';
 import { AfterViewInit, Component, OnDestroy } from '@angular/core';
 import { NbThemeService } from '@nebular/theme';
 
@@ -41,7 +42,7 @@ export class ElectricityChartComponent implements AfterViewInit, OnDestroy {
   }
 
   ngAfterViewInit(): void {
-    this.themeSubscription = this.theme.getJsTheme().delay(1).subscribe(config => {
+    this.themeSubscription = this.theme.getJsTheme().pipe(delay(1)).subscribe(config => {
       const eTheme: any = config.variables.electricity;
 
       this.option = {
