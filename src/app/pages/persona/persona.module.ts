@@ -5,6 +5,7 @@ import { PersonaService } from '../../@core/data/persona.service';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { ToasterModule } from 'angular2-toaster';
 import { SharedModule } from '../../shared/shared.module';
+import { CrudPersonaComponent } from './crud-persona/crud-persona.component';
 
 @NgModule({
   imports: [
@@ -19,6 +20,9 @@ import { SharedModule } from '../../shared/shared.module';
   ],
   providers: [
     PersonaService,
+  ],
+  exports: [
+    CrudPersonaComponent,
   ],
 })
 export class PersonaModule { }
