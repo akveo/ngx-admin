@@ -12,7 +12,8 @@
     i {
       color: nb-theme(color-fg);
       font-size: 2.5rem;
-      margin-right: 1rem;
+      @include nb-ltr(margin-right, 1rem);
+      @include nb-rtl(margin-left, 1rem);
     }
 
     span {
@@ -37,7 +38,8 @@
       font-size: 0.75rem;
       i {
         font-size: 2rem;
-        margin-right: 0.5rem;
+        @include nb-ltr(margin-right, 0.5rem);
+        @include nb-rtl(margin-left, 0.5rem);
       }
     }
   }

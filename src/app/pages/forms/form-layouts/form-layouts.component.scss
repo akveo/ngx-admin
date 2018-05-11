@@ -1,16 +1,21 @@
-.full-width {
-  flex: 1;
-  min-width: 220px;
-}
+@import '../../../@theme/styles/themes';
 
-nb-checkbox {
-  margin-bottom: 1rem;
-}
+@include nb-install-component() {
+  .full-width {
+    flex: 1;
+    min-width: 220px;
+  }
 
-.form-inline > * {
-  margin: 0 1.5rem 1.5rem 0;
-}
+  nb-checkbox {
+    margin-bottom: 1rem;
+  }
 
-nb-card.inline-form-card nb-card-body {
-  padding-bottom: 0;
+  .form-inline > * {
+    @include nb-ltr(margin, 0 1.5rem 1.5rem 0);
+    @include nb-rtl(margin, 0 0 1.5rem 1.5rem);
+  }
+
+  nb-card.inline-form-card nb-card-body {
+    padding-bottom: 0;
+  }
 }

@@ -70,7 +70,8 @@
 
   .current-rate {
     font-size: 1.5rem;
-    padding-left: 1rem;
+    @include nb-ltr(padding-left, 1rem);
+    @include nb-rtl(padding-right, 1rem);
     color: nb-theme(color-fg-heading);
   }
 
@@ -82,6 +83,7 @@
     position: relative;
 
     .form-control {
+
       padding-left: 3rem;
     }
 

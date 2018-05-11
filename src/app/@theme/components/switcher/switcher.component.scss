@@ -4,39 +4,51 @@
 @import '~@nebular/theme/styles/global/bootstrap/breakpoints';
 
 @include nb-install-component() {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 50%;
-
-  .theme-switch {
+  .switch-label {
     display: flex;
     justify-content: space-between;
     align-items: center;
     cursor: pointer;
     margin: 0;
 
+    &.vertical {
+      flex-direction: column;
+      align-items: flex-start;
+
+      .first,
+      .second {
+        padding: 0;
+      }
+
+      .switch {
+        margin-top: 0.5em;
+      }
+    }
+
     & > span {
       font-size: 1.125rem;
       font-weight: nb-theme(font-weight-bold);
       transition: opacity 0.3s ease;
+      color: nb-theme(color-fg);
 
-      &.light {
-        color: nb-theme(color-fg-text);
-        padding-right: 10px;
+      &.first {
+        @include nb-ltr(padding-right, 10px);
+        @include nb-rtl(padding-left, 10px);
       }
 
-      &.cosmic {
-        color: nb-theme(color-fg);
-        padding-left: 10px;
+      &.second {
+        @include nb-ltr(padding-left, 10px);
+        @include nb-rtl(padding-right, 10px);
+      }
+
+      &.active {
+        color: nb-theme(color-fg-text);
       }
 
       @include nb-for-theme(cosmic) {
-        &.light {
-          color: nb-theme(color-fg);
-        }
+        color: nb-theme(color-fg);
 
-        &.cosmic {
+        &.active {
           color: nb-theme(color-white);
         }
       }
@@ -58,7 +70,8 @@
       display: none;
 
       &:checked + .slider::before {
-        transform: translateX(2.25rem);
+        @include nb-ltr(transform, translateX(2.25rem));
+        @include nb-rtl(transform, translateX(-2.25rem));
       }
     }
 
@@ -89,13 +102,7 @@
     }
   }
 
-  @include media-breakpoint-down(is) {
-    .light, .cosmic {
-      display: none;
-    }
-  }
-
   @include media-breakpoint-down(xs) {
-      align-items: flex-end;
+    align-items: flex-end;
   }
 }

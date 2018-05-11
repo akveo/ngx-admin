@@ -40,11 +40,13 @@
     }
 
     a:first-child {
-      border-left: 1px solid nb-theme(separator);
+      @include nb-ltr(border-left, 1px solid nb-theme(separator));
+      @include nb-rtl(border-right, 1px solid nb-theme(separator));
     }
 
     a:last-child {
-      border-top-right-radius: nb-theme(card-border-radius);
+      @include nb-ltr(border-top-right-radius, nb-theme(card-border-radius));
+      @include nb-rtl(border-top-left-radius, nb-theme(card-border-radius));
     }
 
     a.active {

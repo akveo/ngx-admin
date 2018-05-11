@@ -1,6 +1,4 @@
-button.with-margins {
-  margin: 0 0.75rem 2rem 0;
-}
+@import '~@nebular/theme/styles/core/mixins';
 
 /deep/ nb-card.popover-card {
   margin-bottom: 0;
@@ -8,6 +6,14 @@ button.with-margins {
   box-shadow: none;
 }
 
-:host /deep/ .btn-outline-secondary {
-  margin: 0 0.5rem 0.5rem 0;
+:host {
+  button.with-margins {
+    @include nb-ltr(margin, 0 0.75rem 2rem 0);
+    @include nb-rtl(margin, 0 0 2rem 0.75rem);
+  }
+
+  /deep/ .btn-outline-secondary {
+    @include nb-ltr(margin, 0 0.5rem 0.5rem 0);
+    @include nb-rtl(margin, 0 0 0.5rem 0.5rem);
+  }
 }

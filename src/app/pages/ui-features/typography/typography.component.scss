@@ -76,6 +76,7 @@
       align-items: flex-end;
 
       span {
+        padding-right: 1rem;
         padding-left: 1rem;
         font-size: 1.5rem;
       }
@@ -108,7 +109,8 @@
       height: 60px;
       border-top-right-radius: 1rem;
       border-bottom-left-radius: 1rem;
-      margin-right: 1rem;
+      @include nb-ltr(margin-right, 1rem);
+      @include nb-rtl(margin-left, 1rem);
     }
 
     h1, h2, h3, h4, h5, h6 {
