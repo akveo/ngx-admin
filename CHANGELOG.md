@@ -1,3 +1,15 @@
+<a name="2.2.0"></a>
+# [2.2.0](https://github.com/akveo/ngx-admin/compare/v2.1.1...v2.2.0) (2018-05-14)
+
+
+### Features
+
+* add NotFound page ([#1672](https://github.com/akveo/ngx-admin/issues/1672)) ([fa3cdf7](https://github.com/akveo/ngx-admin/commit/fa3cdf7))
+* RTL support ([#1634](https://github.com/akveo/ngx-admin/issues/1634)) ([3b63759](https://github.com/akveo/ngx-admin/commit/3b63759))
+* update to Angular 6 ([#1684](https://github.com/akveo/ngx-admin/issues/1684)) ([06d2197](https://github.com/akveo/ngx-admin/commit/06d2197))
+
+
+
 <a name="2.1.1"></a>
 ## [2.1.1](https://github.com/akveo/ngx-admin/compare/v2.1.0...v2.1.1) (2018-04-26)
 
