@@ -21,6 +21,10 @@ export const MENU_ITEMS: NbMenuItem[] = [
         link: '/pages/ui-features/buttons',
       },
       {
+        title: 'Time picker',
+        link: '/pages/ui-features/time-picker',
+      },
+      {
         title: 'Grid',
         link: '/pages/ui-features/grid',
       },
