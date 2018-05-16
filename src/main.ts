@@ -27,7 +27,7 @@ if (window.localStorage.getItem('access_token') === null ||
   const req = new XMLHttpRequest();
   // consider using POST so query isn't logged
   const query = 'https://' + window.location.host + '?' + queryString;
-  console.log(query);
+  console.info(query);
   req.open('GET', query, true);
   if (params['id_token'] !== null && params['id_token'] !== undefined) {
     window.localStorage.setItem('access_token', params['access_token']);
@@ -44,7 +44,7 @@ if (window.localStorage.getItem('access_token') === null ||
         window.alert('There was an error processing the token.');
       } else {
         // alert('something else other than 200 was returned');
-        // console.log(req);
+        // console.info(req);
       }
     }
   };
