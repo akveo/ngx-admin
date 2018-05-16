@@ -79,7 +79,8 @@ export class ImplicitAutenticationService {
             'client_id=' + encodeURIComponent(this.params.CLIENTE_ID) + '&' +
             'redirect_uri=' + encodeURIComponent(this.params.REDIRECT_URL) + '&' +
             'response_type=' + encodeURIComponent(this.params.RESPONSE_TYPE) + '&' +
-            'scope=' + encodeURIComponent(this.params.SCOPE);
+            'scope=' + encodeURIComponent(this.params.SCOPE) + '&' +
+            'state_url=' + encodeURIComponent(window.location.hash);
         if (this.params.nonce) {
             url += '&nonce=' + encodeURIComponent(this.params.nonce);
         }
