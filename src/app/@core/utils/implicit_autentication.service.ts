@@ -20,9 +20,8 @@ export class ImplicitAutenticationService {
     constructor() {
         this.bearer = {
             headers: new HttpHeaders({
-                'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
+                'Accept': 'application/json',
                 'authorization': 'Bearer ' + window.localStorage.getItem('access_token'),
-                'cache-control': 'no-cache',
             }),
         }
         this.logOut = '';
@@ -79,7 +78,8 @@ export class ImplicitAutenticationService {
             'client_id=' + encodeURIComponent(this.params.CLIENTE_ID) + '&' +
             'redirect_uri=' + encodeURIComponent(this.params.REDIRECT_URL) + '&' +
             'response_type=' + encodeURIComponent(this.params.RESPONSE_TYPE) + '&' +
-            'scope=' + encodeURIComponent(this.params.SCOPE);
+            'scope=' + encodeURIComponent(this.params.SCOPE) + '&' +
+            'state_url=' + encodeURIComponent(window.location.hash);
         if (this.params.nonce) {
             url += '&nonce=' + encodeURIComponent(this.params.nonce);
         }

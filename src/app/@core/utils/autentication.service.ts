@@ -130,7 +130,8 @@ export class AutenticationService {
             'client_id=' + encodeURIComponent(this.params.CLIENTE_ID) + '&' +
             'redirect_uri=' + encodeURIComponent(window.location.href) + '&' +
             'response_type=' + encodeURIComponent(this.params.RESPONSE_TYPE) + '&' +
-            'scope=' + encodeURIComponent(this.params.SCOPE);
+            'scope=' + encodeURIComponent(this.params.SCOPE) + '&' +
+            'state_url=' + encodeURIComponent(window.location.hash);
         if (this.params.nonce) {
             url += '&nonce=' + encodeURIComponent(this.params.nonce);
         }
