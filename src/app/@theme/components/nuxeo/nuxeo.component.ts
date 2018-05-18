@@ -96,17 +96,15 @@ export class NuxeoComponent implements OnChanges {
             },
         });
         console.info(changes);
-        if (changes.files !== undefined || changes.files !== []) {
+        if (changes.files !== undefined && changes.files !== []) {
             if (changes.files.currentValue !== undefined) {
                 this.files = changes.files.currentValue;
                 this.guardar(this.files, this.nuxeo, this.saveApi);
             }
         }
-        if (changes.uid !== undefined || changes.uid !== '') {
-            if (changes.uid.currentValue !== undefined) {
-                this.uid = changes.uid.currentValue;
-                this.cargar(this.uid, this.nuxeo, this.urlFile);
-            }
+        if (changes.uid !== undefined && changes.uid !== null) {
+            this.cargar(this.uid, this.nuxeo, this.urlFile);
         }
     }
 }
+// "5fafa8b3-b1ad-4f29-944d-05515dbb4f79"
