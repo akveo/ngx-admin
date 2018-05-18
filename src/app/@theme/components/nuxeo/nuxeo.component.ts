@@ -31,14 +31,14 @@ export class NuxeoComponent implements OnChanges {
                             const nuxeoBlob = new Nuxeo.Blob({ content: element.file });
                             nuxeo.batchUpload()
                                 .upload(nuxeoBlob)
-                                .then(function (res) {
+                                .then(function (response) {
                                     element.uid = doc.uid
                                     return nuxeo.operation('Blob.AttachOnDocument')
                                         .param('document', doc.uid)
-                                        .input(res.blob)
+                                        .input(response.blob)
                                         .execute()
-                                        .then(function (res) {
-                                            console.info(res);
+                                        .then(function (respuesta) {
+                                            console.info(respuesta);
                                             saveApi.emit(element);
                                         });
                                 })
@@ -64,19 +64,19 @@ export class NuxeoComponent implements OnChanges {
                 .get()
                 .then(function (response) {
                     response.fetchBlob()
-                        .then(function (res) {
-                            console.log(res);
-                            url = URL.createObjectURL(res);
+                        .then(function (fileUrl) {
+                            console.info(fileUrl);
+                            url = URL.createObjectURL(fileUrl);
                             urlfile.emit(url);
                             window.open(url);
                         })
-                        .catch(function (error) {
-                            error = error;
+                        .catch(function (response2) {
+                            error = response2;
                         });
                     console.info(response);
                 })
-                .catch(function (error) {
-                    error = error
+                .catch(function (response) {
+                    error = response
                 });
             if (error !== null) {
                 console.info(error);
