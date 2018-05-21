@@ -251,12 +251,23 @@
           </select>
 
           <!-- input-file -->
-          <input type="file" name="{{c.nombre}}" class="{{c.clase}}" *ngSwitchCase="'file'" (change)="onChange($event,c)" />
+          <div class="{{c.clase}} ">
+            <input type="file" name="{{c.nombre}}" class="{{c.clase}}" *ngSwitchCase="'file'" (change)="onChange($event,c)" />
+            <div class="{{c.clase}}">
+              <nb-card size="small">
+                  <nb-card-body>
+                      <img class="carousel-image" src="{{new.img}}" alt="imagen">
+                  </nb-card-body>
+              </nb-card>
+            </div>
+          </div>
+          
+
         </div>
       </div>
     </div>
     <br>
-    <!-- Botones de form con acción de botones -->
+    <!-- Botones de form con accaión de botones -->
     <div align="center">
       <button class="btn btn-success btn-tiny" (click)="validForm()" [hidden]="!normalform.btn">{{normalform.btn}}</button>
       <button class="btn btn-primary btn-tiny" (click)="clearForm()" [hidden]="!normalform.btnLimpiar">{{normalform.btnLimpiar}}</button>
