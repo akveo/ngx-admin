@@ -3,6 +3,17 @@
 @import '~@nebular/theme/styles/global/bootstrap/breakpoints';
 
 @include nb-install-component() {
+
+  /deep/ .mat-input-element::placeholder {
+    color: nb-theme(color-fg-heading);
+}
+
+/deep/ .mat-input-placeholder {
+  color: nb-theme(color-fg-heading);
+}
+/deep/ .mat-form-field-underline {
+  background-color: nb-theme(color-fg);
+}
   nb-card-body {
     overflow: visible;
   }
@@ -103,26 +114,15 @@
     padding: 1rem;
   }
 
-  fieldset {
-    display: block;
-
-    -moz-margin-start: 1rem;
-    -moz-margin-end: 1rem;
-    -moz-padding-before: 1rem;
+  .fieldseter {
+    display: flow-root;
     -moz-padding-start: 1rem;
     -moz-padding-end: 1rem;
     -moz-padding-after: 1rem;
 
-    -webkit-margin-start: 1rem;
-    -webkit-margin-end: 1rem;
-    -webkit-padding-before: 1rem;
-    -webkit-padding-start: 1rem;
-    -webkit-padding-end: 1rem;
-    -webkit-padding-after: 1rem;
-
     min-width: -moz-min-content;
     border-width: 2px;
-    border-radius: 0.2rem;
+    border-radius: 0.4rem;
     border-style: groove;
     border-color: nb-theme(color-success);
     @include nb-for-theme(cosmic) {
