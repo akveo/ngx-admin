@@ -5,15 +5,14 @@
 @include nb-install-component() {
 
   /deep/ .mat-input-element::placeholder {
-    color: nb-theme(color-fg-heading);
-}
-
-/deep/ .mat-input-placeholder {
-  color: nb-theme(color-fg-heading);
-}
-/deep/ .mat-form-field-underline {
-  background-color: nb-theme(color-fg);
-}
+      color: transparentize($color: nb-theme(color-fg-heading), $amount: 0.6);
+  }
+  /deep/ .mat-input-placeholder {
+    color: nb-theme(color-fg-text);
+  }
+  /deep/ .mat-form-field-underline {
+    background-color: nb-theme(color-fg);
+  }
   nb-card-body {
     overflow: visible;
   }
