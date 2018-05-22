@@ -266,7 +266,7 @@
 
  <!-- Form  mini -->
  <form class="form-horizontal" *ngSwitchCase="'mini'">
-    <fieldset [ngClass]="{'fieldseter':'!fieldset'}">
+    <fieldset [ngClass]="{'fieldseter':!normalform.hidefield}">
       <legend align="{{normalform.alineacion_titulo}}">
         <small>{{normalform.titulo}}</small>
       </legend>
