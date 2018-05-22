@@ -398,6 +398,9 @@
               </label>
                 <input type="file" id="{{c.nombre}}" class="{{c.clase}}" (change)="onChange($event,c)" />
                 <mat-hint class="text-danger">{{c.alerta}}</mat-hint>
+                 <nb-card-body>
+                <img class="carousel-image" [src]="c.url" alt="imagen">
+            </nb-card-body>
               </div>
             </div>
           </div>

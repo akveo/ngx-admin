@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter, OnChanges, ViewChild } from '@angular/core';
 import { MatDatepicker } from '@angular/material/datepicker';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 @Component({
   selector: 'ngx-dinamicform',
@@ -18,7 +19,7 @@ export class DinamicformComponent implements OnInit, OnChanges {
   @Output('interlaced') interlaced: EventEmitter<any> = new EventEmitter();
   data: any;
   @ViewChild(MatDatepicker) datepicker: MatDatepicker<Date>;
-  constructor() {
+  constructor(private sanitization: DomSanitizer) {
     this.data = {
       valid: true,
       data: {},
@@ -65,8 +66,17 @@ export class DinamicformComponent implements OnInit, OnChanges {
   }
 
   onChange(event, c) {
-    c.valor = event.srcElement.files[0];
-    this.validCampo(c);
+    if (c.valor !== undefined) {
+      c.valor = event.srcElement.files[0];
+      console.info("valor", c.valor);
+      c.url = this.cleanURL(URL.createObjectURL(event.srcElement.files[0]));
+      console.info(c);
+      this.validCampo(c);
+    }
+  }
+
+  cleanURL(oldURL : string): SafeResourceUrl{
+    return this.sanitization.bypassSecurityTrustUrl(oldURL);
   }
 
   ngOnInit() {
@@ -97,11 +107,11 @@ export class DinamicformComponent implements OnInit, OnChanges {
   validCampo(c): boolean {
 
     if (c.requerido && (c.valor === '' || c.valor === null || c.valor === undefined ||
-    (JSON.stringify(c.valor) === '{}' && c.etiqueta !== 'file')  || JSON.stringify(c.valor) === '[]')) {
-        c.alerta = '** Debe llenar este campo';
-        c.clase = 'form-control form-control-danger';
-        return false;
-      }
+      (JSON.stringify(c.valor) === '{}' && c.etiqueta !== 'file') || JSON.stringify(c.valor) === '[]')) {
+      c.alerta = '** Debe llenar este campo';
+      c.clase = 'form-control form-control-danger';
+      return false;
+    }
     if (c.etiqueta === 'input' && c.tipo === 'number') {
       c.valor = parseInt(c.valor, 10);
       if (c.valor < c.minimo) {
@@ -127,7 +137,7 @@ export class DinamicformComponent implements OnInit, OnChanges {
         return false;
       }
     }
-    if (c.etiqueta === 'file' && c.valor !== null && c.valor !== undefined && c.valor !== '' ) {
+    if (c.etiqueta === 'file' && c.valor !== null && c.valor !== undefined && c.valor !== '') {
       if (c.valor.size > c.tamanoMaximo * 1024000) {
         c.clase = 'form-control form-control-danger';
         c.alerta = 'El tamaño del archivo es superior a : ' + c.tamanoMaximo + 'MB. ';
