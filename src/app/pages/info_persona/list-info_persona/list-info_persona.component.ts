@@ -133,12 +133,14 @@ export class ListInfoPersonaComponent implements OnInit {
 
   onDelete(event): void {
     const opt: any = {
-      title: 'Deleting?',
-      text: 'Delete InfoPersona!',
+      title: this.translate.instant('GLOBAL.eliminar'),
+      text: this.translate.instant('GLOBAL.eliminar') + '?',
       icon: 'warning',
       buttons: true,
       dangerMode: true,
       showCancelButton: true,
+      confirmButtonText: this.translate.instant('GLOBAL.aceptar'),
+      cancelButtonText: this.translate.instant('GLOBAL.cancelar'),
     };
     Swal(opt)
     .then((willDelete) => {
@@ -147,7 +149,8 @@ export class ListInfoPersonaComponent implements OnInit {
         this.personaService.delete('info_persona/', event.data).subscribe(res => {
           if (res !== null) {
             this.loadData();
-            this.showToast('info', 'deleted', 'InfoPersona deleted');
+            this.showToast('info', this.translate.instant('GLOBAL.eliminar'),
+            this.translate.instant('GLOBAL.confirmarEliminar'));
             }
          });
       }
