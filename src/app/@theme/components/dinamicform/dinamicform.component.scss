@@ -10,6 +10,12 @@
   /deep/ .mat-input-placeholder {
     color: nb-theme(color-fg-text);
   }
+  /deep/ .mat-select-value{
+    color: nb-theme(color-fg-text);
+  }
+  /deep/ .mat-select-placeholder{
+    color: transparentize($color: nb-theme(color-fg-heading), $amount: 0.6);
+  }
   /deep/ .mat-form-field-underline {
     background-color: nb-theme(color-fg);
   }
