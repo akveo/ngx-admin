@@ -17,7 +17,7 @@
     color: transparentize($color: nb-theme(color-fg-heading), $amount: 0.6);
   }
   /deep/ .mat-form-field-underline {
-    background-color: nb-theme(color-fg);
+    background-color: nb-theme(form-control-border-color);
   }
   nb-card-body {
     overflow: visible;
@@ -37,6 +37,7 @@
   }
   .dinamic-form {
     background-color: nb-theme(color-bg);
+    color: nb-theme(card-fg-heading);
     padding: 1rem;
   }
   .demo-checkboxes {

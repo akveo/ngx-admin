@@ -8,8 +8,14 @@
 
 // which themes you what to enable (empty to enable all)
 $nb-enabled-themes: (default, cosmic);
+//0095DD F2F2F2
+$primary-color-theme: #0095DD;
+$secundary-color-theme: #F2F2F2;
 
 $nb-themes: nb-register-theme((
+
+
+
   // footer
   footer-fg: #fff,
   footer-bg: #252525,
@@ -44,6 +50,49 @@ $nb-themes: nb-register-theme((
   padding: 1rem,
   font-size: 0.9rem,
   margin: 1rem,
+  layout-padding: 2rem 0.2rem 3rem,
+
+  sidebar-bg: #212121,
+  sidebar-fg: $secundary-color-theme,
+  sidebar-shadow: none,
+  sidebar-padding: 0.3rem,
+  sidebar-margin-top: 0rem,
+  tabs-fg: gray,
+
+  color-fg: $secundary-color-theme,
+
+  card-shadow: 0 2px 8px 0 rgba(43, 43, 43, 0.494),
+
+  menu-bg: #212121,
+  menu-fg: $secundary-color-theme,
+  menu-active-bg: $primary-color-theme,
+  menu-font-size: 0.8rem,
+  menu-item-separator: $primary-color-theme,
+
+  menu-submenu-bg: #24292E,
+  menu-submenu-fg: $secundary-color-theme,
+  menu-submenu-active-bg: #24292E,
+  menu-submenu-active-fg: $primary-color-theme,
+  menu-submenu-item-border-width: none,
+  menu-submenu-item-padding: none,
+  menu-submenu-item-container-padding: none,
+  menu-submenu-padding: none,
+  menu-submenu-item-border-radius: none,
+
+  scrollbar-fg: #212121,
+  scrollbar-bg: #24292E,
+
+
+  //header
+  header-font-family: "sans-serif",
+  header-font-size: 0.7rem,
+  header-height: 3.5rem,
+  header-padding: none,
+  header-fg: $secundary-color-theme,
+  header-bg: $primary-color-theme,
+  header-shadow: none,
+
+  footer-shadow: none,
 
 ), default, default);
 
