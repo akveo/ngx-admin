@@ -18,7 +18,7 @@
   // loading progress bar
   @include ngx-pace-theme();
 
-  nb-sidebar{
+  nb-sidebar {
     @include nb-for-theme(default) {
       margin-top: nb-theme(sidebar-margin-top) !important;
       background: nb-theme(sidebar-bg) !important;

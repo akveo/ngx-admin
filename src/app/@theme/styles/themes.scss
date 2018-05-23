@@ -9,8 +9,8 @@
 // which themes you what to enable (empty to enable all)
 $nb-enabled-themes: (default, cosmic);
 //0095DD F2F2F2
-$primary-color-theme: #0095DD;
-$secundary-color-theme: #F2F2F2;
+$primary-color-theme: #0095dd;
+$secundary-color-theme: #f2f2f2;
 
 $nb-themes: nb-register-theme((
 
@@ -56,7 +56,7 @@ $nb-themes: nb-register-theme((
   sidebar-fg: $secundary-color-theme,
   sidebar-shadow: none,
   sidebar-padding: 0.3rem,
-  sidebar-margin-top: 0rem,
+  sidebar-margin-top: 0px,
   tabs-fg: gray,
 
   color-fg: $secundary-color-theme,
@@ -69,9 +69,9 @@ $nb-themes: nb-register-theme((
   menu-font-size: 0.8rem,
   menu-item-separator: $primary-color-theme,
 
-  menu-submenu-bg: #24292E,
+  menu-submenu-bg: #24292e,
   menu-submenu-fg: $secundary-color-theme,
-  menu-submenu-active-bg: #24292E,
+  menu-submenu-active-bg: #24292e,
   menu-submenu-active-fg: $primary-color-theme,
   menu-submenu-item-border-width: none,
   menu-submenu-item-padding: none,
@@ -80,7 +80,7 @@ $nb-themes: nb-register-theme((
   menu-submenu-item-border-radius: none,
 
   scrollbar-fg: #212121,
-  scrollbar-bg: #24292E,
+  scrollbar-bg: #24292e,
 
 
   //header
