@@ -73,11 +73,11 @@ $nb-themes: nb-register-theme((
   menu-submenu-fg: $secundary-color-theme,
   menu-submenu-active-bg: #24292e,
   menu-submenu-active-fg: $primary-color-theme,
-  menu-submenu-item-border-width: none,
+  menu-submenu-item-border-width: 0,
   menu-submenu-item-padding: none,
   menu-submenu-item-container-padding: none,
   menu-submenu-padding: none,
-  menu-submenu-item-border-radius: none,
+  menu-submenu-item-border-radius: 0,
 
   scrollbar-fg: #212121,
   scrollbar-bg: #24292e,
