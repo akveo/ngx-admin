@@ -56,7 +56,7 @@ $nb-themes: nb-register-theme((
   sidebar-fg: $secundary-color-theme,
   sidebar-shadow: none,
   sidebar-padding: 0.3rem,
-  sidebar-margin-top: 0px,
+  sidebar-margin-top: 0,
   tabs-fg: gray,
 
   color-fg: $secundary-color-theme,
@@ -84,7 +84,7 @@ $nb-themes: nb-register-theme((
 
 
   //header
-  header-font-family: "sans-serif",
+  header-font-family: 'sans-serif',
   header-font-size: 0.7rem,
   header-height: 3.5rem,
   header-padding: none,
