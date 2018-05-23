@@ -5,10 +5,16 @@
 @include nb-install-component() {
 
   /deep/ .mat-input-element::placeholder {
-      color: transparentize($color: nb-theme(color-fg-heading), $amount: 0.6);
+    color: transparentize($color: nb-theme(color-fg-heading), $amount: 0.6);
   }
   /deep/ .mat-input-placeholder {
     color: nb-theme(color-fg-text);
+  }
+  /deep/ .mat-select-value {
+    color: nb-theme(color-fg-text);
+  }
+  /deep/ .mat-select-placeholder {
+    color: transparentize($color: nb-theme(color-fg-heading), $amount: 0.6);
   }
   /deep/ .mat-form-field-underline {
     background-color: nb-theme(color-fg);
@@ -118,6 +124,13 @@
     -moz-padding-start: 1rem;
     -moz-padding-end: 1rem;
     -moz-padding-after: 1rem;
+
+    -webkit-margin-start: 1rem;
+    -webkit-margin-end: 1rem;
+    -webkit-padding-before: 1rem;
+    -webkit-padding-start: 1rem;
+    -webkit-padding-end: 1rem;
+    -webkit-padding-after: 1rem;
 
     min-width: -moz-min-content;
     border-width: 2px;
