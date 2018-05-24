@@ -37,7 +37,7 @@ export const Config = {
             SIGN_OUT_URL: 'https://autenticacion.udistrital.edu.co/oidc/logout',
             SIGN_OUT_REDIRECT_URL: 'http://localhost:9000/',
         },
-        CONF_MENU_SERVICE: 'http://10.20.0.254/configuracion_api/v1/menu_opcion_padre/ArbolMenus/',
+        CONF_MENU_SERVICE: 'http://pruebasapi.intranetoas.udistrital.edu.co:8086/v1/menu_opcion_padre/ArbolMenus/',
         INFO_PERSONA_SERVICE: 'http://localhost:8088/v1/',
     },
     PREPROD: {
@@ -57,7 +57,7 @@ export const Config = {
             SIGN_OUT_URL: 'https://autenticacion.udistrital.edu.co/oidc/logout',
             SIGN_OUT_REDIRECT_URL: 'https://pruebascampus.portaloas.udistrital.edu.co/',
         },
-        CONF_MENU_SERVICE: 'http://10.20.0.254/configuracion_api/v1/menu_opcion_padre/ArbolMenus/',
+        CONF_MENU_SERVICE: 'http://pruebasapi.intranetoas.udistrital.edu.co:8086/v1/menu_opcion_padre/ArbolMenus/',
         INFO_PERSONA_SERVICE: 'http://localhost:8088/v1/',
     },
 };
