@@ -392,15 +392,25 @@
           </select-->
 
             <!-- input-file -->
-              <div *ngSwitchCase="'file'">
-                <label for="{{c.nombre}}" class="upload-file">
-                  {{c.requerido?'* '+c.label:c.label}}
-              </label>
-                <input type="file" id="{{c.nombre}}" class="{{c.clase}}" (change)="onChange($event,c)" />
-                <mat-hint class="text-danger">{{c.alerta}}</mat-hint>
-                 <nb-card-body>
-                <img class="carousel-image" [src]="c.url" alt="imagen">
-            </nb-card-body>
+              <div *ngSwitchCase="'file'" class="{{c.clase}}">
+                <div class="row">
+                  <div class="col-8">
+                      <label for="{{c.nombre}}" class="upload-file">
+                          {{c.requerido?'* '+c.label:c.label}}
+                      </label>
+                      <input type="file" id="{{c.nombre}}" (change)="onChange($event,c)" /><br>
+                      <mat-hint class="text-danger">{{c.alerta}}</mat-hint>
+
+                  </div>
+                  <div class="col-4">
+                      <nb-card-body class="col-4" *ngIf="c.tipo == 'image'">
+                          <img class="carousel-image" [src]="c.url" (click)="download(c.urlTemp)"class="img-thumbnail" alt="Foto" width="100px" height="100px">
+                      </nb-card-body>
+                      <nb-card-body class="col-4" *ngIf="!(c.tipo == 'image')">
+                          <img class="carousel-image" [src]="'assets/images/file.png'" (click)="download(c.urlTemp)"class="img-thumbnail" alt="Foto" width="100px" height="100px">
+                      </nb-card-body>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

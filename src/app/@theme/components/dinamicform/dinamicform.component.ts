@@ -65,11 +65,16 @@ export class DinamicformComponent implements OnInit, OnChanges {
 
   }
 
+  download(url){
+    window.open(url);
+  }
+
   onChange(event, c) {
     if (c.valor !== undefined) {
       c.valor = event.srcElement.files[0];
       console.info("valor", c.valor);
-      c.url = this.cleanURL(URL.createObjectURL(event.srcElement.files[0]));
+      c.urlTemp = URL.createObjectURL(event.srcElement.files[0])
+      c.url = this.cleanURL(c.urlTemp);
       console.info(c);
       this.validCampo(c);
     }
