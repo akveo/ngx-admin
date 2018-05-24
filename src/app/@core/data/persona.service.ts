@@ -19,7 +19,8 @@ export class PersonaService {
     }
 
     get(endpoint) {
-        return this.http.get(path + endpoint);
+        console.info(httpOptions);
+        return this.http.get(path + endpoint, httpOptions);
     }
     post(endpoint, element) {
         return this.http.post(path + endpoint, element, httpOptions);
@@ -28,6 +29,6 @@ export class PersonaService {
         return this.http.put(path + endpoint + '/' + element.Id, element, httpOptions);
     }
     delete(endpoint, element) {
-        return this.http.delete(path + endpoint + '/' + element.Id);
+        return this.http.delete(path + endpoint + '/' + element.Id, httpOptions);
     }
 }
