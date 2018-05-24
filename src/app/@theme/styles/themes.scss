@@ -65,10 +65,10 @@ $nb-themes: nb-register-theme((
 
   menu-bg: #212121,
   menu-fg: $secundary-color-theme,
-  menu-active-bg: $primary-color-theme,
+  menu-active-bg: #ffefef,
+  menu-active-fg: $primary-color-theme,
   menu-font-size: 0.8rem,
-  menu-item-separator: $primary-color-theme,
-
+  menu-item-separator: #777777,
   menu-submenu-bg: #24292e,
   menu-submenu-fg: $secundary-color-theme,
   menu-submenu-active-bg: #24292e,
