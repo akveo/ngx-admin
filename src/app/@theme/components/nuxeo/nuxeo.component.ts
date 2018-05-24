@@ -10,7 +10,10 @@ import { GENERAL } from './../../../app-config'
 export class NuxeoComponent implements OnChanges {
     nuxeo: any;
     @Input('files') files: any;
+    @Input('uid') uid: any;
     @Output('saveApi') saveApi: EventEmitter<any> = new EventEmitter();
+    @Output('urlFile') urlFile: EventEmitter<any> = new EventEmitter();
+
 
     guardar(Files, nuxeo, saveApi): any {
         nuxeo.connect()
@@ -28,13 +31,16 @@ export class NuxeoComponent implements OnChanges {
                             const nuxeoBlob = new Nuxeo.Blob({ content: element.file });
                             nuxeo.batchUpload()
                                 .upload(nuxeoBlob)
-                                .then(function (res) {
+                                .then(function (response) {
                                     element.uid = doc.uid
-                                    saveApi.emit(element);
                                     return nuxeo.operation('Blob.AttachOnDocument')
                                         .param('document', doc.uid)
-                                        .input(res.blob)
-                                        .execute();
+                                        .input(response.blob)
+                                        .execute()
+                                        .then(function (respuesta) {
+                                            console.info(respuesta);
+                                            saveApi.emit(element);
+                                        });
                                 })
                                 .catch(function (error) {
                                     console.info(error);
@@ -49,21 +55,56 @@ export class NuxeoComponent implements OnChanges {
             });
     }
 
+    cargar(docid, nuxeo, urlfile) {
+        let url = '';
+        let error = null;
+        if (docid != null) {
+            nuxeo.header('X-NXDocumentProperties', '*');
+            nuxeo.request('/id/' + docid)
+                .get()
+                .then(function (response) {
+                    response.fetchBlob()
+                        .then(function (fileUrl) {
+                            console.info(fileUrl);
+                            url = URL.createObjectURL(fileUrl);
+                            urlfile.emit(url);
+                            window.open(url);
+                        })
+                        .catch(function (response2) {
+                            error = response2;
+                        });
+                    console.info(response);
+                })
+                .catch(function (response) {
+                    error = response
+                });
+            if (error !== null) {
+                console.info(error);
+            } else {
+                console.info(url);
+            }
+        };
+    }
+
     ngOnChanges(changes) {
+        this.nuxeo = new Nuxeo({
+            baseURL: GENERAL.ENTORNO.NUXEO.PATH,
+            auth: {
+                method: 'basic',
+                username: 'Administrator',
+                password: 'S1st3m4s04S=Fr331P4',
+            },
+        });
         console.info(changes);
-        if (changes.files !== undefined || changes.files !== []) {
+        if (changes.files !== undefined && changes.files !== []) {
             if (changes.files.currentValue !== undefined) {
                 this.files = changes.files.currentValue;
-                this.nuxeo = new Nuxeo({
-                    baseURL: GENERAL.ENTORNO.NUXEO.PATH,
-                    auth: {
-                        method: 'basic',
-                        username: 'Administrator',
-                        password: 'S1st3m4s04S=Fr331P4',
-                    },
-                });
                 this.guardar(this.files, this.nuxeo, this.saveApi);
             }
         }
+        if (changes.uid !== undefined && changes.uid !== null) {
+            this.cargar(this.uid, this.nuxeo, this.urlFile);
+        }
     }
 }
+// "5fafa8b3-b1ad-4f29-944d-05515dbb4f79"

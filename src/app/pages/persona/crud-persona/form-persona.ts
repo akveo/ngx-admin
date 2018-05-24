@@ -88,6 +88,7 @@ export let FORM_PERSONA = {
         requerido: true,
         tipo: 'image',
         formatos: 'png/jpg/jpeg',
+        url: 'assets/images/foto.png',
         tamanoMaximo: 2,
     },
     ],
