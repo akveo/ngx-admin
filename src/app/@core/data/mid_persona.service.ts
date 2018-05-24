@@ -6,10 +6,10 @@ const httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
 };
 
-const path = GENERAL.ENTORNO.INFO_PERSONA_SERVICE;
+const path = GENERAL.ENTORNO.MID_PERSONA_SERVICE;
 
 @Injectable()
-export class InfoPersonaService {
+export class MidPersonaService {
 
     constructor(private http: HttpClient) {
     }

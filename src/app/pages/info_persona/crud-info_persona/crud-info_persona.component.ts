@@ -1,10 +1,9 @@
 import { EstadoCivil } from './../../../@core/data/models/estado_civil';
 import { Genero } from './../../../@core/data/models/genero';
-import { ImplicitAutenticationService } from './../../../@core/utils/implicit_autentication.service';
 import { InfoPersona } from './../../../@core/data/models/info_persona';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { PersonaService } from '../../../@core/data/persona.service';
-import { InfoPersonaService } from '../../../@core/data/info_persona.service';
+import { MidPersonaService } from '../../../@core/data/mid_persona.service';
 import { FORM_INFO_PERSONA } from './form-info_persona';
 import { ToasterService, ToasterConfig, Toast, BodyOutputType } from 'angular2-toaster';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
@@ -34,9 +33,8 @@ export class CrudInfoPersonaComponent implements OnInit {
   clean: boolean;
 
   constructor(
-    private autenticacion: ImplicitAutenticationService,
     private translate: TranslateService,
-    private infoPersonaService: InfoPersonaService,
+    private midPersonaService: MidPersonaService,
     private personaService: PersonaService,
     private toasterService: ToasterService) {
     this.formInfoPersona = FORM_INFO_PERSONA;
@@ -92,10 +90,10 @@ export class CrudInfoPersonaComponent implements OnInit {
     return 0;
   }
 
-
   public loadInfoPersona(): void {
-    if (this.autenticacion.live()) {
-      this.infoPersonaService.get('persona/consultapersona/' + this.autenticacion.getPayload().sub)
+    if (this.info_persona_id !== undefined && this.info_persona_id !== 0) {
+      // esto retornará error hasta que no se ajuste mid
+      this.midPersonaService.get('persona/consultapersona/' + this.info_persona_id)
         .subscribe(res => {
           if (res !== null) {
             this.info_info_persona = <InfoPersona>res;
@@ -122,7 +120,7 @@ export class CrudInfoPersonaComponent implements OnInit {
     .then((willDelete) => {
       if (willDelete.value) {
         this.info_info_persona = <InfoPersona>infoPersona;
-        this.infoPersonaService.put('persona/ActualizarPersona', this.info_info_persona)
+        this.midPersonaService.put('persona/ActualizarPersona', this.info_info_persona)
           .subscribe(res => {
             this.loadInfoPersona();
             this.eventChange.emit(true);
@@ -149,7 +147,7 @@ export class CrudInfoPersonaComponent implements OnInit {
     .then((willDelete) => {
       if (willDelete.value) {
         this.info_info_persona = <InfoPersona>infoPersona;
-        this.infoPersonaService.post('persona/GuardarPersona', this.info_info_persona)
+        this.midPersonaService.post('persona/GuardarPersona', this.info_info_persona)
           .subscribe(res => {
             this.info_info_persona = <InfoPersona>res;
             this.eventChange.emit(true);
