@@ -14,7 +14,7 @@
   <nb-action icon="nb-grid-b" class="toggle-layout" (click)="toggleSettings()"></nb-action>
   <nb-action [hidden]="!liveToken()">
     <div class="dropdown ghost-dropdown" ngbDropdown>
-      <button class="btn btn-primary user" type="button" ngbDropdownToggle>
+      <button type="button" class="btn btn-success user" type="button" ngbDropdownToggle>
         <i class="nb-person"></i> {{username}}
       </button>
       <ul class="dropdown-menu" ngbDropdownMenu>
@@ -25,7 +25,7 @@
   <nb-action [hidden]="liveToken()">
     <div class="dropdown ghost-dropdown">
       <div class="btn-with-icon-example">
-        <button type="button" class="btn btn-primary btn-with-icon login" (click)="login()">
+        <button type="button" class="btn btn-success btn-with-icon login" (click)="login()">
           <i class="nb-user"></i>
           <span>{{ 'HOME.LOGIN' | translate }}</span>
         </button>
@@ -38,8 +38,8 @@
       <option *ngFor="let lang of translate.getLangs()" class="form-control" [value]="lang" [selected]="lang === translate.currentLang">{{ lang }}</option>
     </select>
   </nb-action>
-  <nb-action class="control-item" disabled icon="nb-notifications"></nb-action>
-  <nb-action class="control-item" icon="nb-email"></nb-action>
+  <nb-action [hidden]="!liveToken()" class="control-item" disabled icon="nb-notifications"></nb-action>
+  <nb-action [hidden]="!liveToken()" class="control-item" icon="nb-email"></nb-action>
   <nb-action class="control-item">
     <nb-search type="rotate-layout" (click)="startSearch()"></nb-search>
   </nb-action>

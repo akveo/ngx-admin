@@ -4,6 +4,7 @@ import { MenuItem } from './menu-item';
 import { MENU_ITEMS } from './pages-menu';
 import { HttpErrorResponse } from '@angular/common/http';
 import { MenuService } from '../@core/data/menu.service';
+import { ImplicitAutenticationService } from '../@core/utils/implicit_autentication.service';
 
 @Component({
   selector: 'ngx-pages',
@@ -22,86 +23,98 @@ export class PagesComponent implements OnInit {
   object: MenuItem;
   hijo: MenuItem;
   hijo2: MenuItem;
+  rol: String;
 
-  constructor(private translate: TranslateService, private menu_ws: MenuService) { }
+  constructor(
+    private autenticacion: ImplicitAutenticationService,
+    private translate: TranslateService,
+    private menu_ws: MenuService) { }
 
-  ngOnInit() {
-    this.menu = MENU_ITEMS;
-    this.menu_ws.get('Menu%20campus/campus').subscribe(
-      data => {
-        for (let i = 0; i < data.length; i++) {
-          if (!data[i].Opciones) {
-            this.object = {
-              title: '',
-              icon: '',
-              link: '',
-              home: false,
-              key: '',
-            };
-            this.object.title = data[i].Nombre;
-            this.object.key = data[i].Nombre;
-            this.object.link = data[i].Url;
-            if (i === 0) {
-              this.object.title = 'Dashboard';
-              this.object.icon = 'nb-home';
-              this.object.home = true;
-            }
-          } else {
-            this.object = {
-              title: '',
-              icon: '',
-              link: '',
-              home: false,
-              key: '',
-              children: [],
-            };
-            this.object.title = data[i].Nombre;
-            this.object.key = data[i].Nombre;
-            this.object.link = data[i].Url;
-            if (i === 0) {
-              this.object.title = 'Dashboard';
-              this.object.icon = 'nb-home';
-              this.object.home = true;
-            }
-            for (let j = 0; j < data[i].Opciones.length; j++) {
-              if (!data[i].Opciones[j].Opciones) {
-                this.hijo = {
+    ngOnInit() {
+      if (this.autenticacion.live()) {
+        this.rol = 'Menu%20campus';
+      }else {
+        this.rol = 'Publico';
+      }
+      this.menu_ws.get(this.rol + '/campus').subscribe(
+        data => {
+          for (let i = 0; i < data.length; i++) {
+            if (data[i].TipoOpcion === 'Menú') {
+              if (!data[i].Opciones) {
+                this.object = {
                   title: '',
                   icon: '',
                   link: '',
                   home: false,
                   key: '',
                 };
-                this.hijo.title = data[i].Opciones[j].Nombre;
-                this.hijo.key = data[i].Opciones[j].Nombre;
-                this.hijo.link = data[i].Opciones[j].Url;
+                this.object.title = data[i].Nombre;
+                this.object.key = data[i].Nombre;
+                this.object.link = data[i].Url;
+                if (i === 0) {
+                  this.object.title = 'Dashboard';
+                  this.object.icon = 'nb-home';
+                  this.object.home = true;
+                }
+              } else {
+                this.object = {
+                  title: '',
+                  icon: '',
+                  link: '',
+                  home: false,
+                  key: '',
+                  children: [],
+                };
+                this.object.title = data[i].Nombre;
+                this.object.key = data[i].Nombre;
+                this.object.link = data[i].Url;
+                if (i === 0) {
+                  this.object.title = 'Dashboard';
+                  this.object.icon = 'nb-home';
+                  this.object.home = true;
+                }
+                for (let j = 0; j < data[i].Opciones.length; j++) {
+                  if (data[i].TipoOpcion === 'Menú') {
+                    if (!data[i].Opciones[j].Opciones) {
+                      this.hijo = {
+                        title: '',
+                        icon: '',
+                        link: '',
+                        home: false,
+                        key: '',
+                      };
+                      this.hijo.title = data[i].Opciones[j].Nombre;
+                      this.hijo.key = data[i].Opciones[j].Nombre;
+                      this.hijo.link = data[i].Opciones[j].Url;
+                    }
+                    this.object.children.push(this.hijo);
+                    // console.log('hijo: ' + data[i].Opciones[j]);
+                  }
+                }
               }
-              this.object.children.push(this.hijo);
-              // console.log('hijo: ' + data[i].Opciones[j]);
+              this.results.push(this.object);
+              // console.log(data[i]);
             }
           }
-          this.results.push(this.object);
-          // console.log(data[i]);
-        }
-         this.menu = MENU_ITEMS;
-        // this.menu = this.results;
-        this.translateMenu();
-      },
-      (err: HttpErrorResponse) => {
-        if (err.error instanceof Error) {
-          // console.log('El error ocurrió en el lado del cliente.');
-        } else {
-          // console.log('El error ocurrió en el lado del servidor.');
-        }
-        this.menu = MENU_ITEMS;
-        this.translateMenu();
-      },
-    );
-    this.translateMenu();
-    this.translate.onLangChange.subscribe((event: LangChangeEvent) => { // Live reload
+          // this.menu = MENU_ITEMS;
+          this.menu = this.results;
+          this.translateMenu();
+        },
+        (err: HttpErrorResponse) => {
+          if (err.error instanceof Error) {
+            // console.log('El error ocurrió en el lado del cliente.');
+          } else {
+            // console.log('El error ocurrió en el lado del servidor.');
+          }
+          this.menu = MENU_ITEMS;
+          this.translateMenu();
+        },
+      );
       this.translateMenu();
-    });
-  }
+      this.translate.onLangChange.subscribe((event: LangChangeEvent) => { // Live reload
+        this.translateMenu();
+      });
+    }
 
   private translateMenu(): void {
     this.menu.forEach((menuItem: MenuItem) => {

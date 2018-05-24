@@ -62,17 +62,16 @@ export class DinamicformComponent implements OnInit, OnChanges {
       this.clearForm();
       this.clean = false;
     }
-
   }
 
-  download(url){
+  download(url) {
     window.open(url);
   }
 
   onChange(event, c) {
     if (c.valor !== undefined) {
       c.valor = event.srcElement.files[0];
-      console.info("valor", c.valor);
+      console.info('valor', c.valor);
       c.urlTemp = URL.createObjectURL(event.srcElement.files[0])
       c.url = this.cleanURL(c.urlTemp);
       console.info(c);
@@ -80,7 +79,7 @@ export class DinamicformComponent implements OnInit, OnChanges {
     }
   }
 
-  cleanURL(oldURL : string): SafeResourceUrl{
+  cleanURL(oldURL: string): SafeResourceUrl {
     return this.sanitization.bypassSecurityTrustUrl(oldURL);
   }
 

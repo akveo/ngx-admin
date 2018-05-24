@@ -1,9 +1,10 @@
 import { EstadoCivil } from './../../../@core/data/models/estado_civil';
 import { Genero } from './../../../@core/data/models/genero';
-
+import { ImplicitAutenticationService } from './../../../@core/utils/implicit_autentication.service';
 import { InfoPersona } from './../../../@core/data/models/info_persona';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { PersonaService } from '../../../@core/data/persona.service';
+import { InfoPersonaService } from '../../../@core/data/info_persona.service';
 import { FORM_INFO_PERSONA } from './form-info_persona';
 import { ToasterService, ToasterConfig, Toast, BodyOutputType } from 'angular2-toaster';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
@@ -32,7 +33,12 @@ export class CrudInfoPersonaComponent implements OnInit {
   regInfoPersona: any;
   clean: boolean;
 
-  constructor(private translate: TranslateService, private personaService: PersonaService, private toasterService: ToasterService) {
+  constructor(
+    private autenticacion: ImplicitAutenticationService,
+    private translate: TranslateService,
+    private infoPersonaService: InfoPersonaService,
+    private personaService: PersonaService,
+    private toasterService: ToasterService) {
     this.formInfoPersona = FORM_INFO_PERSONA;
     this.construirForm();
     this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
@@ -88,38 +94,41 @@ export class CrudInfoPersonaComponent implements OnInit {
 
 
   public loadInfoPersona(): void {
-    if (this.info_persona_id !== undefined && this.info_persona_id !== 0) {
-      this.personaService.get('info_persona/?query=id:' + this.info_persona_id)
+    if (this.autenticacion.live()) {
+      this.infoPersonaService.get('persona/consultapersona/' + this.autenticacion.getPayload().sub)
         .subscribe(res => {
           if (res !== null) {
-            this.info_info_persona = <InfoPersona>res[0];
+            this.info_info_persona = <InfoPersona>res;
           }
         });
     } else  {
-      this.info_info_persona = undefined;
+      this.info_info_persona = undefined
       this.clean = !this.clean;
     }
   }
 
   updateInfoPersona(infoPersona: any): void {
-
     const opt: any = {
-      title: 'Update?',
-      text: 'Update InfoPersona!',
+      title: this.translate.instant('GLOBAL.actualizar'),
+      text: this.translate.instant('GLOBAL.actualizar') + '?',
       icon: 'warning',
       buttons: true,
       dangerMode: true,
       showCancelButton: true,
+      confirmButtonText: this.translate.instant('GLOBAL.aceptar'),
+      cancelButtonText: this.translate.instant('GLOBAL.cancelar'),
     };
     Swal(opt)
     .then((willDelete) => {
       if (willDelete.value) {
         this.info_info_persona = <InfoPersona>infoPersona;
-        this.personaService.put('info_persona', this.info_info_persona)
+        this.infoPersonaService.put('persona/ActualizarPersona', this.info_info_persona)
           .subscribe(res => {
             this.loadInfoPersona();
             this.eventChange.emit(true);
-            this.showToast('info', 'updated', 'InfoPersona updated');
+            this.showToast('info', this.translate.instant('GLOBAL.actualizar'),
+            this.translate.instant('GLOBAL.info_persona') + ' ' +
+             this.translate.instant('GLOBAL.confirmarActualizar'));
           });
       }
     });
@@ -127,22 +136,25 @@ export class CrudInfoPersonaComponent implements OnInit {
 
   createInfoPersona(infoPersona: any): void {
     const opt: any = {
-      title: 'Create?',
-      text: 'Create InfoPersona!',
+      title: this.translate.instant('GLOBAL.crear'),
+      text: this.translate.instant('GLOBAL.crear') + '?',
       icon: 'warning',
       buttons: true,
       dangerMode: true,
       showCancelButton: true,
+      confirmButtonText: this.translate.instant('GLOBAL.aceptar'),
+      cancelButtonText: this.translate.instant('GLOBAL.cancelar'),
     };
     Swal(opt)
     .then((willDelete) => {
       if (willDelete.value) {
         this.info_info_persona = <InfoPersona>infoPersona;
-        this.personaService.post('info_persona', this.info_info_persona)
+        this.infoPersonaService.post('persona/GuardarPersona', this.info_info_persona)
           .subscribe(res => {
             this.info_info_persona = <InfoPersona>res;
             this.eventChange.emit(true);
-            this.showToast('info', 'created', 'InfoPersona created');
+            this.showToast('info', this.translate.instant('GLOBAL.crear'),
+            this.translate.instant('GLOBAL.info_persona') + ' ' + this.translate.instant('GLOBAL.confirmarCrear'));
           });
       }
     });
