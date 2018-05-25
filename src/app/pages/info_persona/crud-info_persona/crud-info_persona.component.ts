@@ -154,7 +154,6 @@ export class CrudInfoPersonaComponent implements OnInit {
           this.info_info_persona = <InfoPersona>infoPersona;
           array.push({ nombre: this.autenticationService.getPayload().sub, file: this.info_info_persona.Foto, IdDocumento: 1 });
           this.filesUp = array;
-          console.info(infoPersona);
           this.midPersonaService.post('persona/GuardarPersona', this.info_info_persona)
             .subscribe(res => {
               this.info_info_persona = <InfoPersona>res;
@@ -208,6 +207,8 @@ export class CrudInfoPersonaComponent implements OnInit {
   }
   getUrlFile(event) {
     console.info('url', event);
+    this.showToast('info', this.translate.instant('GLOBAL.crear'),
+      this.translate.instant('GLOBAL.alerta_documental_image'));
   }
 
 }

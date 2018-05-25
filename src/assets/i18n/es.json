@@ -89,6 +89,8 @@
     }
   },
   "GLOBAL": {
+    "alerta_documental_image": "La imagen se ha guardado en nuestro gestor documental",
+    "alerta_documental_documento": "El documento se ha guardado en nuestro gestor documental",    
     "genero": "Género",
     "placeholder_genero": "Ej: Género",
     "id": "Id",

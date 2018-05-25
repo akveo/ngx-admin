@@ -28,7 +28,7 @@ export class NuxeoComponent implements OnChanges {
                                 console.info(res);
                                 nuxeo.operation('Document.Create')
                                     .params({
-                                        type: res.Workspace,
+                                        type: res.Extension,
                                         name: element.nombre,
                                         properties: 'dc:title=' + element.nombre,
                                     })
