@@ -24,4 +24,9 @@
       background: nb-theme(sidebar-bg) !important;
     }
   }
+
+  ngx-header i {
+    color: nb-theme(header-fg) !important;
+  }
+
 };

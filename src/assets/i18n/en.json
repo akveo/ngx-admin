@@ -7,6 +7,15 @@
   },
   "MENU": {
     "dashboard": "Home",
+    "parametricas": {
+      "parametricas": "Parametric Tables",
+      "genero": "Gender",
+      "grupo_etnico": "Ethnic group",
+      "estado_civil": "Civil status",
+      "tipo_discapacidad": "Impairment types",
+      "tipo_lugar": "Place type",
+      "tipo_contacto": "Contact type"
+    },
     "genero": {
       "genero": "Gender",
       "lista_genero": "Gender list",
@@ -153,9 +162,9 @@
     "lugar": "Place",
     "placeholder_lugar": "E.g. Place",
     "pais_nacimiento": "Birth country",
-    "placeholder_pais_nacimiento": "E.g. Birth country", 
+    "placeholder_pais_nacimiento": "E.g. Birth country",
     "tipo_contacto": "Contact type",
-    "placeholder_tipo_contacto": "E.g. Contact type", 
+    "placeholder_tipo_contacto": "E.g. Contact type",
     "informacion_contacto": "Contact data",
     "placeholder_informacion_contacto": "E.g. Contact data",
     "pais_residencia": "Residence country",

@@ -22,6 +22,80 @@ export const MENU_ITEMS: MenuItem[] = [
     ],
   },
   {
+    title: 'Parametricas',
+    icon: 'nb-compose',
+    link: '/pages/parametricas',
+    key: 'parametricas',
+    children: [
+      {
+        title: 'Genero',
+        link: '/pages/genero/list-genero',
+        key: 'genero',
+      },
+      {
+        title: 'Grupo Etnico',
+        link: '/pages/grupo_etnico/list-grupo_etnico',
+        key: 'grupo_etnico',
+      },
+      {
+        title: 'Estado Civil',
+        link: '/pages/estado_civil/list-estado_civil',
+        key: 'estado_civil',
+      },
+      {
+        title: 'Tipo Discapacidad',
+        link: '/pages/tipo_discapacidad/list-tipo_discapacidad',
+        key: 'tipo_discapacidad',
+      },
+      {
+        title: 'Tipo Lugar',
+        link: '/pages/tipo_lugar/list-tipo_lugar',
+        key: 'tipo_lugar',
+      },
+      {
+        title: 'Tipo Contacto',
+        link: '/pages/tipo_contacto/list-tipo_contacto',
+        key: 'tipo_contacto',
+      },
+    ],
+  },
+  /*{
+    title: 'Tipo Lugar',
+    icon: 'nb-compose',
+    link: '/pages/tipo_lugar',
+    key: 'tipo_lugar',
+    children: [
+      {
+        title: 'Lista Tipo Lugar',
+        link: '/pages/tipo_lugar/list-tipo_lugar',
+        key: 'lista_tipo_lugar',
+      },
+      {
+        title: 'CRUD Tipo Lugar',
+        link: '/pages/tipo_lugar/crud-tipo_lugar',
+        key: 'crud_tipo_lugar',
+      },
+    ],
+  },
+  {
+    title: 'Tipo Contacto',
+    icon: 'nb-compose',
+    link: '/pages/tipo_contacto',
+    key: 'tipo_contacto',
+    children: [
+      {
+        title: 'Lista Tipo Contacto',
+        link: '/pages/tipo_contacto/list-tipo_contacto',
+        key: 'lista_tipo_contacto',
+      },
+      {
+        title: 'CRUD Tipo Contacto',
+        link: '/pages/tipo_contacto/crud-tipo_contacto',
+        key: 'crud_tipo_contacto',
+      },
+    ],
+  },
+  {
     title: 'Genero',
     icon: 'nb-compose',
     link: '/pages/genero',
@@ -92,7 +166,7 @@ export const MENU_ITEMS: MenuItem[] = [
         key: 'crud_tipo_discapacidad',
       },
     ],
-  },
+  },*/
   {
     title: 'Persona',
     icon: 'nb-compose',
@@ -148,24 +222,6 @@ export const MENU_ITEMS: MenuItem[] = [
     ],
   },
   {
-    title: 'Tipo Lugar',
-    icon: 'nb-compose',
-    link: '/pages/tipo_lugar',
-    key: 'tipo_lugar',
-    children: [
-      {
-        title: 'Lista Tipo Lugar',
-        link: '/pages/tipo_lugar/list-tipo_lugar',
-        key: 'lista_tipo_lugar',
-      },
-      {
-        title: 'CRUD Tipo Lugar',
-        link: '/pages/tipo_lugar/crud-tipo_lugar',
-        key: 'crud_tipo_lugar',
-      },
-    ],
-  },
-  {
     title: 'Lugar',
     icon: 'nb-compose',
     link: '/pages/lugar',
@@ -198,24 +254,6 @@ export const MENU_ITEMS: MenuItem[] = [
         title: 'CRUD Lugar Ubicacion',
         link: '/pages/lugar_ubicacion/crud-lugar_ubicacion',
         key: 'crud_lugar_ubicacion',
-      },
-    ],
-  },
-  {
-    title: 'Tipo Contacto',
-    icon: 'nb-compose',
-    link: '/pages/tipo_contacto',
-    key: 'tipo_contacto',
-    children: [
-      {
-        title: 'Lista Tipo Contacto',
-        link: '/pages/tipo_contacto/list-tipo_contacto',
-        key: 'lista_tipo_contacto',
-      },
-      {
-        title: 'CRUD Tipo Contacto',
-        link: '/pages/tipo_contacto/crud-tipo_contacto',
-        key: 'crud_tipo_contacto',
       },
     ],
   },
