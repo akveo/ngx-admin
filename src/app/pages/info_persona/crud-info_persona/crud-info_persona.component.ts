@@ -16,6 +16,8 @@ import 'style-loader!angular2-toaster/toaster.css';
   styleUrls: ['./crud-info_persona.component.scss'],
 })
 export class CrudInfoPersonaComponent implements OnInit {
+  filesUp: any;
+  uidFile: any;
   config: ToasterConfig;
   info_persona_id: number;
 
@@ -191,6 +193,15 @@ export class CrudInfoPersonaComponent implements OnInit {
       bodyOutputType: BodyOutputType.TrustedHtml,
     };
     this.toasterService.popAsync(toast);
+  }
+
+  // Nuxeo functions
+  guardarFileService(event) {
+    console.info('file', event);
+    this.uidFile = event.uid;
+  }
+  getUrlFile(event) {
+    console.info('url', event);
   }
 
 }

@@ -10,11 +10,10 @@ const httpOptions = {
     }),
 }
 
-const path = GENERAL.ENTORNO.PERSONA_SERVICE;
+const path = GENERAL.ENTORNO.DOCUMENTO_SERVICE;
 
 @Injectable()
-export class PersonaService {
-
+export class DocumentoService {
     constructor(private http: HttpClient) {
     }
     get(endpoint) {
