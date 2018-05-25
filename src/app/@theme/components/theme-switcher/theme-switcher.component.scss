@@ -22,12 +22,12 @@
       transition: opacity 0.3s ease;
 
       &.light {
-        color: nb-theme(color-fg);
+        color: nb-theme(header-fg);
         padding-right: 10px;
       }
 
       &.cosmic {
-        color: nb-theme(color-fg);
+        color: nb-theme(header-fg);
         padding-left: 10px;
       }
 

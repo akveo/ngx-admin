@@ -59,8 +59,8 @@ $nb-themes: nb-register-theme((
   sidebar-margin-top: 0,
   tabs-fg: gray,
 
-  color-fg: $secundary-color-theme,
-
+  color-fg: #777777,
+  menu-icon-color: $secundary-color-theme,
   card-shadow: 0 2px 8px 0 rgba(43, 43, 43, 0.494),
 
   menu-bg: #212121,
@@ -69,6 +69,7 @@ $nb-themes: nb-register-theme((
   menu-active-fg: #212121,
   menu-font-size: 0.8rem,
   menu-item-separator: #777777,
+
   menu-submenu-bg: #24292e,
   menu-submenu-fg: $secundary-color-theme,
   menu-submenu-active-bg: #24292e,
