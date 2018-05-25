@@ -9,6 +9,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatFormFieldModule } from '@angular/material';
 import { MatInputModule, MatSelectModule } from '@angular/material';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import { DocumentoService } from '../@core/data/documento.service';
 
 import {
   NbActionsModule,
@@ -119,7 +120,8 @@ export class ThemeModule {
     return <ModuleWithProviders>{
       ngModule: ThemeModule,
       providers: [...NB_THEME_PROVIDERS,
-        ImplicitAutenticationService],
+        ImplicitAutenticationService,
+        DocumentoService],
     };
   }
 }
