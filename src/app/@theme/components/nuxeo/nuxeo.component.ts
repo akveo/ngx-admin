@@ -1,6 +1,7 @@
 import * as Nuxeo from 'nuxeo';
 import { Component, Input, OnChanges, Output, EventEmitter } from '@angular/core';
 import { GENERAL } from './../../../app-config'
+// import { PersonaService } from '../../../@core/data/persona.service';
 
 
 @Component({
