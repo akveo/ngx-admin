@@ -1,10 +1,10 @@
 import { EstadoCivil } from './../../../@core/data/models/estado_civil';
+import { ImplicitAutenticationService } from '../../../@core/utils/implicit_autentication.service';
 import { Genero } from './../../../@core/data/models/genero';
-import { ImplicitAutenticationService } from './../../../@core/utils/implicit_autentication.service';
 import { InfoPersona } from './../../../@core/data/models/info_persona';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { PersonaService } from '../../../@core/data/persona.service';
-import { InfoPersonaService } from '../../../@core/data/info_persona.service';
+import { MidPersonaService } from '../../../@core/data/mid_persona.service';
 import { FORM_INFO_PERSONA } from './form-info_persona';
 import { ToasterService, ToasterConfig, Toast, BodyOutputType } from 'angular2-toaster';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
@@ -17,6 +17,8 @@ import 'style-loader!angular2-toaster/toaster.css';
   styleUrls: ['./crud-info_persona.component.scss'],
 })
 export class CrudInfoPersonaComponent implements OnInit {
+  filesUp: any;
+  uidFile: any;
   config: ToasterConfig;
   info_persona_id: number;
 
@@ -34,9 +36,9 @@ export class CrudInfoPersonaComponent implements OnInit {
   clean: boolean;
 
   constructor(
-    private autenticacion: ImplicitAutenticationService,
     private translate: TranslateService,
-    private infoPersonaService: InfoPersonaService,
+    private midPersonaService: MidPersonaService,
+    private autenticationService: ImplicitAutenticationService,
     private personaService: PersonaService,
     private toasterService: ToasterService) {
     this.formInfoPersona = FORM_INFO_PERSONA;
@@ -46,7 +48,7 @@ export class CrudInfoPersonaComponent implements OnInit {
     });
     this.loadOptionsEstadoCivil();
     this.loadOptionsGenero();
-   }
+  }
 
   construirForm() {
     this.formInfoPersona.titulo = this.translate.instant('GLOBAL.info_persona');
@@ -63,23 +65,23 @@ export class CrudInfoPersonaComponent implements OnInit {
 
   loadOptionsEstadoCivil(): void {
     let estadoCivil: Array<any> = [];
-      this.personaService.get('estado_civil/?limit=0')
-        .subscribe(res => {
-          if (res !== null) {
-            estadoCivil = <Array<EstadoCivil>>res;
-          }
-          this.formInfoPersona.campos[ this.getIndexForm('EstadoCivil') ].opciones = estadoCivil;
-        });
+    this.personaService.get('estado_civil/?limit=0')
+      .subscribe(res => {
+        if (res !== null) {
+          estadoCivil = <Array<EstadoCivil>>res;
+        }
+        this.formInfoPersona.campos[this.getIndexForm('EstadoCivil')].opciones = estadoCivil;
+      });
   }
   loadOptionsGenero(): void {
     let genero: Array<any> = [];
-      this.personaService.get('genero/?limit=0')
-        .subscribe(res => {
-          if (res !== null) {
-            genero = <Array<Genero>>res;
-          }
-          this.formInfoPersona.campos[ this.getIndexForm('Genero') ].opciones = genero;
-        });
+    this.personaService.get('genero/?limit=0')
+      .subscribe(res => {
+        if (res !== null) {
+          genero = <Array<Genero>>res;
+        }
+        this.formInfoPersona.campos[this.getIndexForm('Genero')].opciones = genero;
+      });
   }
 
   getIndexForm(nombre: String): number {
@@ -92,16 +94,16 @@ export class CrudInfoPersonaComponent implements OnInit {
     return 0;
   }
 
-
   public loadInfoPersona(): void {
-    if (this.autenticacion.live()) {
-      this.infoPersonaService.get('persona/consultapersona/' + this.autenticacion.getPayload().sub)
+    if (this.info_persona_id !== undefined && this.info_persona_id !== 0) {
+      // esto retornará error hasta que no se ajuste mid
+      this.midPersonaService.get('persona/consultapersona/' + this.info_persona_id)
         .subscribe(res => {
           if (res !== null) {
             this.info_info_persona = <InfoPersona>res;
           }
         });
-    } else  {
+    } else {
       this.info_info_persona = undefined
       this.clean = !this.clean;
     }
@@ -119,19 +121,19 @@ export class CrudInfoPersonaComponent implements OnInit {
       cancelButtonText: this.translate.instant('GLOBAL.cancelar'),
     };
     Swal(opt)
-    .then((willDelete) => {
-      if (willDelete.value) {
-        this.info_info_persona = <InfoPersona>infoPersona;
-        this.infoPersonaService.put('persona/ActualizarPersona', this.info_info_persona)
-          .subscribe(res => {
-            this.loadInfoPersona();
-            this.eventChange.emit(true);
-            this.showToast('info', this.translate.instant('GLOBAL.actualizar'),
-            this.translate.instant('GLOBAL.info_persona') + ' ' +
-             this.translate.instant('GLOBAL.confirmarActualizar'));
-          });
-      }
-    });
+      .then((willDelete) => {
+        if (willDelete.value) {
+          this.info_info_persona = <InfoPersona>infoPersona;
+          this.midPersonaService.put('persona/ActualizarPersona', this.info_info_persona)
+            .subscribe(res => {
+              this.loadInfoPersona();
+              this.eventChange.emit(true);
+              this.showToast('info', this.translate.instant('GLOBAL.actualizar'),
+                this.translate.instant('GLOBAL.info_persona') + ' ' +
+                this.translate.instant('GLOBAL.confirmarActualizar'));
+            });
+        }
+      });
   }
 
   createInfoPersona(infoPersona: any): void {
@@ -146,18 +148,21 @@ export class CrudInfoPersonaComponent implements OnInit {
       cancelButtonText: this.translate.instant('GLOBAL.cancelar'),
     };
     Swal(opt)
-    .then((willDelete) => {
-      if (willDelete.value) {
-        this.info_info_persona = <InfoPersona>infoPersona;
-        this.infoPersonaService.post('persona/GuardarPersona', this.info_info_persona)
-          .subscribe(res => {
-            this.info_info_persona = <InfoPersona>res;
-            this.eventChange.emit(true);
-            this.showToast('info', this.translate.instant('GLOBAL.crear'),
-            this.translate.instant('GLOBAL.info_persona') + ' ' + this.translate.instant('GLOBAL.confirmarCrear'));
-          });
-      }
-    });
+      .then((willDelete) => {
+        if (willDelete.value) {
+          const array = []
+          this.info_info_persona = <InfoPersona>infoPersona;
+          array.push({ nombre: this.autenticationService.getPayload().sub, file: this.info_info_persona.Foto, IdDocumento: 1 });
+          this.filesUp = array;
+          this.midPersonaService.post('persona/GuardarPersona', this.info_info_persona)
+            .subscribe(res => {
+              this.info_info_persona = <InfoPersona>res;
+              this.eventChange.emit(true);
+              this.showToast('info', this.translate.instant('GLOBAL.crear'),
+                this.translate.instant('GLOBAL.info_persona') + ' ' + this.translate.instant('GLOBAL.confirmarCrear'));
+            });
+        }
+      });
   }
 
   ngOnInit() {
@@ -193,6 +198,17 @@ export class CrudInfoPersonaComponent implements OnInit {
       bodyOutputType: BodyOutputType.TrustedHtml,
     };
     this.toasterService.popAsync(toast);
+  }
+
+  // Nuxeo functions
+  guardarFileService(event) {
+    console.info('file', event);
+    this.uidFile = event.uid;
+  }
+  getUrlFile(event) {
+    console.info('url', event);
+    this.showToast('info', this.translate.instant('GLOBAL.crear'),
+      this.translate.instant('GLOBAL.alerta_documental_image'));
   }
 
 }

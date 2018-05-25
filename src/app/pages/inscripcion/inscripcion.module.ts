@@ -4,6 +4,7 @@ import { ThemeModule } from '../../@theme/theme.module';
 import { SharedModule } from '../../shared/shared.module';
 import { ToasterModule } from 'angular2-toaster';
 import { PersonaService } from '../../@core/data/persona.service';
+import { MidPersonaService } from '../../@core/data/mid_persona.service';
 import { UbicacionesService } from '../../@core/data/ubicaciones.service';
 import { CrudInfoCaracteristicaComponent } from '../info_caracteristica/crud-info_caracteristica/crud-info_caracteristica.component';
 import { CrudInformacionContactoComponent } from '../informacion_contacto/crud-informacion_contacto/crud-informacion_contacto.component';
@@ -11,6 +12,8 @@ import { CrudInfoPersonaComponent } from '../info_persona/crud-info_persona/crud
 import { InformacionContactoModule } from '../informacion_contacto/informacion_contacto.module';
 import { InfoPersonaModule } from '../info_persona/info_persona.module';
 import { InfoCaracteristicaModule } from '../info_caracteristica/info_caracteristica.module';
+import { ImplicitAutenticationService } from './../../@core/utils/implicit_autentication.service';
+import {MatExpansionModule} from '@angular/material/expansion';
 
 @NgModule({
   imports: [
@@ -21,12 +24,15 @@ import { InfoCaracteristicaModule } from '../info_caracteristica/info_caracteris
     InformacionContactoModule,
     InfoPersonaModule,
     InfoCaracteristicaModule,
+    MatExpansionModule,
   ],
   declarations: [
     ...routedComponents,
   ],
   providers: [
+    ImplicitAutenticationService,
     PersonaService,
+    MidPersonaService,
     UbicacionesService,
   ],
   entryComponents: [

@@ -14,10 +14,11 @@ import 'style-loader!angular2-toaster/toaster.css';
   styleUrls: ['./crud-persona.component.scss'],
 })
 export class CrudPersonaComponent implements OnInit {
+
   filesUp: any;
+  uidFile: any;
   config: ToasterConfig;
   persona_id: number;
-  uidFile: any;
 
   @Input('persona_id')
   set name(persona_id: number) {

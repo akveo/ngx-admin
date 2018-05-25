@@ -2,13 +2,36 @@
     <nb-card>
       <nb-card-body>
         <nb-tabset fullWidth (changeTab)="selectTab($event)">
-            <nb-tab  tabTitle="{{ 'GLOBAL.info_persona' | translate }}">
-                <ngx-crud-info-persona (eventChange)="onChange($event)"></ngx-crud-info-persona>
-            </nb-tab>
-            <nb-tab tabTitle="{{ 'GLOBAL.info_caracteristica' | translate }}">
+            <nb-tab  tabTitle="{{ 'GLOBAL.info_persona' | translate }}" [active]="cambioTab === 0">
+                <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle="true">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            {{ 'GLOBAL.info_persona' | translate }}
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <ngx-crud-info-persona info_persona_id="{{this.info_persona_id}}" (eventChange)="onChange($event)"></ngx-crud-info-persona>
+                </mat-expansion-panel>
+                <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)" hideToggle="true">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            {{ 'GLOBAL.info_caracteristica' | translate }}
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <ngx-crud-info-caracteristica (eventChange)="onChange($event)"></ngx-crud-info-caracteristica>
+                </mat-expansion-panel>
+                <mat-expansion-panel [expanded]="step === 2" (opened)="setStep(2)" hideToggle="true">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            {{ 'GLOBAL.informacion_contacto' | translate }}
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <ngx-crud-informacion-contacto (eventChange)="onChange($event)"></ngx-crud-informacion-contacto>
+                </mat-expansion-panel>                      
+            </nb-tab>        
+            <nb-tab tabTitle="{{ 'GLOBAL.info_caracteristica' | translate }}" [active]="cambioTab === 1">
                 <ngx-crud-info-caracteristica (eventChange)="onChange($event)"></ngx-crud-info-caracteristica>
             </nb-tab>
-            <nb-tab tabTitle="{{ 'GLOBAL.informacion_contacto' | translate }}">
+            <nb-tab tabTitle="{{ 'GLOBAL.informacion_contacto' | translate }}" [active]="cambioTab === 2">
                 <ngx-crud-informacion-contacto (eventChange)="onChange($event)"></ngx-crud-informacion-contacto>
             </nb-tab>
         </nb-tabset>
