@@ -7,10 +7,10 @@ export const Config = {
         CORE_SERVICE: 'http://pruebasapi.intranetoas.udistrital.edu.co:8083/v1/',
         UBICACIONES_SERVICE: 'http://pruebasapi.intranetoas.udistrital.edu.co:8085/v1/',
         PERSONA_SERVICE: 'http://pruebasapi.intranetoas.udistrital.edu.co:8083/v1/',
-        DOCUMENTO_SERVICE: 'http://pruebasapi.intranetoas.udistrital.edu.co:8094/v1/',
+        DOCUMENTO_SERVICE: 'http://pruebasapi.intranetoas.udistrital.edu.co:8094',
         TOKEN: {
-            AUTORIZATION_URL: 'https://autenticacion.udistrital.edu.co:8244/authorize', // 'https://autenticacion.udistrital.edu.co/oauth2/authorize',
-            CLIENTE_ID: 'pszmROXqfec4pTShgF_fn2DAAX0a', // 'pszmROXqfec4pTShgF_fn2DAAX0a',
+            AUTORIZATION_URL: 'https://autenticacion.udistrital.edu.co:8244/authorize',
+            CLIENTE_ID: 'pszmROXqfec4pTShgF_fn2DAAX0a',
             RESPONSE_TYPE: 'id_token token',
             REDIRECT_URL: 'http://localhost:9000/',
             SCOPE: 'openid email role documento',

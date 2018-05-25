@@ -1,7 +1,7 @@
 import * as Nuxeo from 'nuxeo';
 import { Component, Input, OnChanges, Output, EventEmitter } from '@angular/core';
 import { GENERAL } from './../../../app-config'
-// import { PersonaService } from '../../../@core/data/persona.service';
+import { DocumentoService } from '../../../@core/data/documento.service';
 
 
 @Component({
@@ -15,8 +15,10 @@ export class NuxeoComponent implements OnChanges {
     @Output('saveApi') saveApi: EventEmitter<any> = new EventEmitter();
     @Output('urlFile') urlFile: EventEmitter<any> = new EventEmitter();
 
+    constructor(private documentoService: DocumentoService) {
+    }
 
-    guardar(Files, nuxeo, saveApi): any {
+    guardar(Files, nuxeo, saveApi, documentservice): any {
         nuxeo.connect()
             .then(function (client) {
                 Files.forEach(element => {
@@ -97,15 +99,18 @@ export class NuxeoComponent implements OnChanges {
             },
         });
         console.info(changes);
-        if (changes.files !== undefined && changes.files !== []) {
-            if (changes.files.currentValue !== undefined) {
-                this.files = changes.files.currentValue;
-                this.guardar(this.files, this.nuxeo, this.saveApi);
+        this.documentoService.isRun().subscribe(res => {
+            if (res === { Status: "Ok" })
+                if (changes.files !== undefined && changes.files !== []) {
+                    if (changes.files.currentValue !== undefined) {
+                        this.files = changes.files.currentValue;
+                        this.guardar(this.files, this.nuxeo, this.saveApi, this.documentoService);
+                    }
+                }
+            if (changes.uid !== undefined && changes.uid !== null) {
+                this.cargar(this.uid, this.nuxeo, this.urlFile);
             }
-        }
-        if (changes.uid !== undefined && changes.uid !== null) {
-            this.cargar(this.uid, this.nuxeo, this.urlFile);
-        }
+        });
     }
 }
 // "5fafa8b3-b1ad-4f29-944d-05515dbb4f79"

@@ -10,7 +10,7 @@ const httpOptions = {
     }),
 }
 
-const path = GENERAL.ENTORNO.DOCUMENTO_SERVICE;
+const path = GENERAL.ENTORNO.DOCUMENTO_SERVICE + '/v1/';
 
 @Injectable()
 export class DocumentoService {
@@ -27,5 +27,8 @@ export class DocumentoService {
     }
     delete(endpoint, element) {
         return this.http.delete(path + endpoint + '/' + element.Id, httpOptions);
+    }
+    isRun() {
+        return this.http.get(GENERAL.ENTORNO.DOCUMENTO_SERVICE, httpOptions);
     }
 }
