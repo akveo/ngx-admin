@@ -3,6 +3,32 @@
       <nb-card-body>
         <nb-tabset fullWidth (changeTab)="selectTab($event)">
             <nb-tab  tabTitle="{{ 'GLOBAL.info_persona' | translate }}">
+                <mat-expansion-panel hideToggle="true">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            {{ 'GLOBAL.info_persona' | translate }}
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <ngx-crud-info-persona info_persona_id="{{this.info_persona_id}}" (eventChange)="onChange($event)"></ngx-crud-info-persona>
+                </mat-expansion-panel>
+                <mat-expansion-panel hideToggle="true">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            {{ 'GLOBAL.info_caracteristica' | translate }}
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <ngx-crud-info-caracteristica (eventChange)="onChange($event)"></ngx-crud-info-caracteristica>
+                </mat-expansion-panel>
+                <mat-expansion-panel hideToggle="true">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            {{ 'GLOBAL.informacion_contacto' | translate }}
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <ngx-crud-informacion-contacto (eventChange)="onChange($event)"></ngx-crud-informacion-contacto>
+                </mat-expansion-panel>                      
+            </nb-tab>        
+            <nb-tab  tabTitle="{{ 'GLOBAL.info_persona' | translate }}">
                 <ngx-crud-info-persona info_persona_id="{{this.info_persona_id}}" (eventChange)="onChange($event)"></ngx-crud-info-persona>
             </nb-tab>
             <nb-tab tabTitle="{{ 'GLOBAL.info_caracteristica' | translate }}">

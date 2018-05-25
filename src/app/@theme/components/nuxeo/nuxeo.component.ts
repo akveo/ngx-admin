@@ -113,4 +113,3 @@ export class NuxeoComponent implements OnChanges {
         });
     }
 }
-// "5fafa8b3-b1ad-4f29-944d-05515dbb4f79"
