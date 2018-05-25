@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Config } from './../../app-config';
+import { GENERAL } from './../../app-config';
 
 
 const httpOptions = {
@@ -9,8 +9,8 @@ const httpOptions = {
         'authorization': 'Bearer ' + window.localStorage.getItem('access_token'),
     }),
 }
-const path = Config.LOCAL.PERSONA_SERVICE;
 
+const path = GENERAL.ENTORNO.PERSONA_SERVICE;
 
 @Injectable()
 export class PersonaService {
@@ -19,8 +19,9 @@ export class PersonaService {
     }
 
     get(endpoint) {
-        return this.http.get(path + endpoint);
-      }
+        console.info(httpOptions);
+        return this.http.get(path + endpoint, httpOptions);
+    }
     post(endpoint, element) {
         return this.http.post(path + endpoint, element, httpOptions);
     }
@@ -28,6 +29,6 @@ export class PersonaService {
         return this.http.put(path + endpoint + '/' + element.Id, element, httpOptions);
     }
     delete(endpoint, element) {
-        return this.http.delete(path + endpoint + '/' + element.Id);
+        return this.http.delete(path + endpoint + '/' + element.Id, httpOptions);
     }
 }

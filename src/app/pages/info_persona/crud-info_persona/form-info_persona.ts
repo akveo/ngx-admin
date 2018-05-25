@@ -68,7 +68,7 @@ export let FORM_INFO_PERSONA = {
         placeholder_i18n: 'estado_civil',
         requerido: true,
         tipo: 'EstadoCivil',
-        // key: 'Name',
+        key: 'Name',
         opciones: [],
     },
     {
@@ -79,7 +79,7 @@ export let FORM_INFO_PERSONA = {
         placeholder_i18n: 'genero',
         requerido: true,
         tipo: 'Genero',
-        // key: 'Name',
+        key: 'Name',
         opciones: [],
     },
     ],

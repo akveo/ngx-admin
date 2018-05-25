@@ -19,7 +19,6 @@ if (window.localStorage.getItem('access_token') === null ||
     queryString = location.hash.substring(1),
     regex = /([^&=]+)=([^&]*)/g;
   let m;
-  console.info(queryString);
   while (m = regex.exec(queryString)) {
     params[decodeURIComponent(m[1])] = decodeURIComponent(m[2]);
   }
@@ -27,7 +26,6 @@ if (window.localStorage.getItem('access_token') === null ||
   const req = new XMLHttpRequest();
   // consider using POST so query isn't logged
   const query = 'https://' + window.location.host + '?' + queryString;
-  console.info(query);
   req.open('GET', query, true);
   if (params['id_token'] !== null && params['id_token'] !== undefined) {
     window.localStorage.setItem('access_token', params['access_token']);
