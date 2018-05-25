@@ -13,6 +13,8 @@ export class PosgradoComponent implements OnInit {
   cambiotab: boolean = false;
   info_persona_id: any;
   info_info_persona: any;
+  step = 0;
+  cambioTab = 0;
 
   constructor(
     private autenticacion: ImplicitAutenticationService,
@@ -45,22 +47,41 @@ export class PosgradoComponent implements OnInit {
     this.translate.use(language);
   }
 
-  activetab(): void {
-    this.cambiotab = !this.cambiotab;
-  }
-
-  selectTab(event): void {
-    if (event.tabTitle === 'Lista') {
-      this.cambiotab = false;
-    } else {
-      this.cambiotab = true;
-    }
+  nextTab() {
+    this.cambioTab++;
   }
 
   onChange(event) {
     if (event) {
-      this.cambiotab = !this.cambiotab;
+      if (this.step < 3) {
+        this.nextStep();
+      }else {
+        this.step = 0;
+        this.nextTab();
+      }
     }
+  }
+
+  selectTab(event): void {
+    if (event.tabTitle === this.translate.instant('GLOBAL.info_persona')) {
+      this.cambioTab = 0;
+    } else if (event.tabTitle === this.translate.instant('GLOBAL.info_persona')) {
+      this.cambioTab = 1;
+    } else if (event.tabTitle === this.translate.instant('GLOBAL.informacion_contacto')) {
+      this.cambioTab = 2;
+    }
+  }
+
+  setStep(index: number) {
+    this.step = index;
+  }
+
+  nextStep() {
+    this.step++;
+  }
+
+  prevStep() {
+    this.step--;
   }
 
   ngOnInit() {
