@@ -36,7 +36,7 @@ export class PagesComponent implements OnInit {
       }else {
         this.rol = 'Publico';
       }
-      this.menu_ws.get(this.rol + '/campus').subscribe(
+      /*this.menu_ws.get(this.rol + '/campus').subscribe(
         data => {
           for (let i = 0; i < data.length; i++) {
             if (data[i].TipoOpcion === 'Menú') {
@@ -109,7 +109,8 @@ export class PagesComponent implements OnInit {
           this.menu = MENU_ITEMS;
           this.translateMenu();
         },
-      );
+      );*/
+      this.menu = MENU_ITEMS;
       this.translateMenu();
       this.translate.onLangChange.subscribe((event: LangChangeEvent) => { // Live reload
         this.translateMenu();
