@@ -48,7 +48,7 @@ export class NuxeoComponent implements OnChanges {
                                                         const documentoPost = {
                                                             Enlace: doc.uid,
                                                             Nombre: element.nombre,
-                                                            "TipoDocumento": { "Id": element.IdDocumento }
+                                                            TipoDocumento: { Id: element.IdDocumento },
                                                         }
                                                         documentoservice.post('documento', documentoPost)
                                                             .subscribe(resuestaPost => {
