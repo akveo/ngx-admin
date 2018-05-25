@@ -18,41 +18,56 @@ export class NuxeoComponent implements OnChanges {
     constructor(private documentoService: DocumentoService) {
     }
 
-    guardar(Files, nuxeo, saveApi, documentservice): any {
+    guardar(Files, nuxeo, saveApi, documentoservice): any {
         nuxeo.connect()
             .then(function (client) {
                 Files.forEach(element => {
-                    nuxeo.operation('Document.Create')
-                        .params({
-                            type: 'Picture',
-                            name: element.nombre,
-                            properties: 'dc:title=' + element.nombre,
-                        })
-                        .input('/default-domain/workspaces/Pruebas Planestic')
-                        .execute()
-                        .then(function (doc) {
-                            const nuxeoBlob = new Nuxeo.Blob({ content: element.file });
-                            nuxeo.batchUpload()
-                                .upload(nuxeoBlob)
-                                .then(function (response) {
-                                    element.uid = doc.uid
-                                    return nuxeo.operation('Blob.AttachOnDocument')
-                                        .param('document', doc.uid)
-                                        .input(response.blob)
-                                        .execute()
-                                        .then(function (respuesta) {
-                                            console.info(respuesta);
-                                            saveApi.emit(element);
-                                        });
-                                })
-                                .catch(function (error) {
-                                    console.info(error);
-                                    throw error;
-                                });
-                        })
-                        .catch(function (error) {
-                            console.info(error);
-                            throw error;
+                    documentoservice.get('tipo_documento/' + element.IdDocumento)
+                        .subscribe(res => {
+                            if (res !== null) {
+                                console.info(res);
+                                nuxeo.operation('Document.Create')
+                                    .params({
+                                        type: res.Workspace,
+                                        name: element.nombre,
+                                        properties: 'dc:title=' + element.nombre,
+                                    })
+                                    .input(res.Workspace)
+                                    .execute()
+                                    .then(function (doc) {
+                                        const nuxeoBlob = new Nuxeo.Blob({ content: element.file });
+                                        nuxeo.batchUpload()
+                                            .upload(nuxeoBlob)
+                                            .then(function (response) {
+                                                element.uid = doc.uid
+                                                return nuxeo.operation('Blob.AttachOnDocument')
+                                                    .param('document', doc.uid)
+                                                    .input(response.blob)
+                                                    .execute()
+                                                    .then(function (respuesta) {
+                                                        const documentoPost = {
+                                                            Enlace: doc.uid,
+                                                            Nombre: element.nombre,
+                                                            "TipoDocumento": { "Id": element.IdDocumento }
+                                                        }
+                                                        documentoservice.post('documento', documentoPost)
+                                                            .subscribe(resuestaPost => {
+                                                                console.info(resuestaPost);
+                                                                saveApi.emit(resuestaPost);
+                                                            })
+                                                    });
+                                            })
+                                            .catch(function (error) {
+                                                console.info(error);
+                                                throw error;
+                                            });
+                                    })
+                                    .catch(function (error) {
+                                        console.info(error);
+                                        throw error;
+                                    })
+
+                            }
                         });
                 })
             });
@@ -98,15 +113,17 @@ export class NuxeoComponent implements OnChanges {
                 password: 'S1st3m4s04S=Fr331P4',
             },
         });
-        console.info(changes);
         this.documentoService.isRun().subscribe(res => {
-            if (res === { Status: 'Ok' })
+            if (res !== null) {
                 if (changes.files !== undefined && changes.files !== []) {
+                    console.info(changes);
                     if (changes.files.currentValue !== undefined) {
                         this.files = changes.files.currentValue;
                         this.guardar(this.files, this.nuxeo, this.saveApi, this.documentoService);
                     }
                 }
+            }
+
             if (changes.uid !== undefined && changes.uid !== null) {
                 this.cargar(this.uid, this.nuxeo, this.urlFile);
             }

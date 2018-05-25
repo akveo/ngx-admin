@@ -1,4 +1,5 @@
 import { EstadoCivil } from './../../../@core/data/models/estado_civil';
+import { ImplicitAutenticationService } from '../../../@core/utils/implicit_autentication.service';
 import { Genero } from './../../../@core/data/models/genero';
 import { InfoPersona } from './../../../@core/data/models/info_persona';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
@@ -37,6 +38,7 @@ export class CrudInfoPersonaComponent implements OnInit {
   constructor(
     private translate: TranslateService,
     private midPersonaService: MidPersonaService,
+    private autenticationService: ImplicitAutenticationService,
     private personaService: PersonaService,
     private toasterService: ToasterService) {
     this.formInfoPersona = FORM_INFO_PERSONA;
@@ -46,7 +48,7 @@ export class CrudInfoPersonaComponent implements OnInit {
     });
     this.loadOptionsEstadoCivil();
     this.loadOptionsGenero();
-   }
+  }
 
   construirForm() {
     this.formInfoPersona.titulo = this.translate.instant('GLOBAL.info_persona');
@@ -63,23 +65,23 @@ export class CrudInfoPersonaComponent implements OnInit {
 
   loadOptionsEstadoCivil(): void {
     let estadoCivil: Array<any> = [];
-      this.personaService.get('estado_civil/?limit=0')
-        .subscribe(res => {
-          if (res !== null) {
-            estadoCivil = <Array<EstadoCivil>>res;
-          }
-          this.formInfoPersona.campos[ this.getIndexForm('EstadoCivil') ].opciones = estadoCivil;
-        });
+    this.personaService.get('estado_civil/?limit=0')
+      .subscribe(res => {
+        if (res !== null) {
+          estadoCivil = <Array<EstadoCivil>>res;
+        }
+        this.formInfoPersona.campos[this.getIndexForm('EstadoCivil')].opciones = estadoCivil;
+      });
   }
   loadOptionsGenero(): void {
     let genero: Array<any> = [];
-      this.personaService.get('genero/?limit=0')
-        .subscribe(res => {
-          if (res !== null) {
-            genero = <Array<Genero>>res;
-          }
-          this.formInfoPersona.campos[ this.getIndexForm('Genero') ].opciones = genero;
-        });
+    this.personaService.get('genero/?limit=0')
+      .subscribe(res => {
+        if (res !== null) {
+          genero = <Array<Genero>>res;
+        }
+        this.formInfoPersona.campos[this.getIndexForm('Genero')].opciones = genero;
+      });
   }
 
   getIndexForm(nombre: String): number {
@@ -101,7 +103,7 @@ export class CrudInfoPersonaComponent implements OnInit {
             this.info_info_persona = <InfoPersona>res;
           }
         });
-    } else  {
+    } else {
       this.info_info_persona = undefined
       this.clean = !this.clean;
     }
@@ -119,19 +121,19 @@ export class CrudInfoPersonaComponent implements OnInit {
       cancelButtonText: this.translate.instant('GLOBAL.cancelar'),
     };
     Swal(opt)
-    .then((willDelete) => {
-      if (willDelete.value) {
-        this.info_info_persona = <InfoPersona>infoPersona;
-        this.midPersonaService.put('persona/ActualizarPersona', this.info_info_persona)
-          .subscribe(res => {
-            this.loadInfoPersona();
-            this.eventChange.emit(true);
-            this.showToast('info', this.translate.instant('GLOBAL.actualizar'),
-            this.translate.instant('GLOBAL.info_persona') + ' ' +
-             this.translate.instant('GLOBAL.confirmarActualizar'));
-          });
-      }
-    });
+      .then((willDelete) => {
+        if (willDelete.value) {
+          this.info_info_persona = <InfoPersona>infoPersona;
+          this.midPersonaService.put('persona/ActualizarPersona', this.info_info_persona)
+            .subscribe(res => {
+              this.loadInfoPersona();
+              this.eventChange.emit(true);
+              this.showToast('info', this.translate.instant('GLOBAL.actualizar'),
+                this.translate.instant('GLOBAL.info_persona') + ' ' +
+                this.translate.instant('GLOBAL.confirmarActualizar'));
+            });
+        }
+      });
   }
 
   createInfoPersona(infoPersona: any): void {
@@ -146,18 +148,22 @@ export class CrudInfoPersonaComponent implements OnInit {
       cancelButtonText: this.translate.instant('GLOBAL.cancelar'),
     };
     Swal(opt)
-    .then((willDelete) => {
-      if (willDelete.value) {
-        this.info_info_persona = <InfoPersona>infoPersona;
-        this.midPersonaService.post('persona/GuardarPersona', this.info_info_persona)
-          .subscribe(res => {
-            this.info_info_persona = <InfoPersona>res;
-            this.eventChange.emit(true);
-            this.showToast('info', this.translate.instant('GLOBAL.crear'),
-            this.translate.instant('GLOBAL.info_persona') + ' ' + this.translate.instant('GLOBAL.confirmarCrear'));
-          });
-      }
-    });
+      .then((willDelete) => {
+        if (willDelete.value) {
+          const array = []
+          this.info_info_persona = <InfoPersona>infoPersona;
+          array.push({ nombre: this.autenticationService.getPayload().sub, file: this.info_info_persona.Foto, IdDocumento: 1 });
+          this.filesUp = array;
+          console.info(infoPersona);
+          this.midPersonaService.post('persona/GuardarPersona', this.info_info_persona)
+            .subscribe(res => {
+              this.info_info_persona = <InfoPersona>res;
+              this.eventChange.emit(true);
+              this.showToast('info', this.translate.instant('GLOBAL.crear'),
+                this.translate.instant('GLOBAL.info_persona') + ' ' + this.translate.instant('GLOBAL.confirmarCrear'));
+            });
+        }
+      });
   }
 
   ngOnInit() {

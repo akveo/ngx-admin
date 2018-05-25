@@ -87,7 +87,7 @@ export let FORM_PERSONA = {
             placeholder_i18n: 'foto',
             requerido: true,
             tipo: 'image',
-            tipoAPI: 1,
+            tipoDocumento: 1,
             formatos: 'png/jpg/jpeg',
             url: 'assets/images/foto.png',
             tamanoMaximo: 2,
