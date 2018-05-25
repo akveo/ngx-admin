@@ -100,7 +100,7 @@ export class NuxeoComponent implements OnChanges {
         });
         console.info(changes);
         this.documentoService.isRun().subscribe(res => {
-            if (res === { Status: "Ok" })
+            if (res === { Status: 'Ok' })
                 if (changes.files !== undefined && changes.files !== []) {
                     if (changes.files.currentValue !== undefined) {
                         this.files = changes.files.currentValue;
