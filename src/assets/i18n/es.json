@@ -7,6 +7,15 @@
   },
   "MENU": {
     "dashboard": "Inicio",
+    "parametricas": {
+      "parametricas": "Tablas parametricas",
+      "genero": "Género",
+      "grupo_etnico": "Grupo étnico",
+      "estado_civil": "Estado civil",
+      "tipo_discapacidad": "Tipo de discapacidad",
+      "tipo_lugar": "Tipo de lugar",
+      "tipo_contacto": "Tipo de contacto"
+    },
     "genero": {
       "genero": "Género",
       "lista_genero": "Listado de género",
