@@ -63,12 +63,10 @@ export class PosgradoComponent implements OnInit {
   }
 
   selectTab(event): void {
-    if (event.tabTitle === this.translate.instant('GLOBAL.info_persona')) {
+    if (event.tabTitle === this.translate.instant('GLOBAL.info_basica')) {
       this.cambioTab = 0;
-    } else if (event.tabTitle === this.translate.instant('GLOBAL.info_persona')) {
+    } else if (event.tabTitle === this.translate.instant('GLOBAL.hoja_vida')) {
       this.cambioTab = 1;
-    } else if (event.tabTitle === this.translate.instant('GLOBAL.informacion_contacto')) {
-      this.cambioTab = 2;
     }
   }
 

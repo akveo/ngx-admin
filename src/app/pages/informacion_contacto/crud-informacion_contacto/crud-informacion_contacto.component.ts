@@ -1,8 +1,8 @@
 import { Lugar } from './../../../@core/data/models/lugar';
-
 import { InformacionContacto } from './../../../@core/data/models/informacion_contacto';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { UbicacionesService } from '../../../@core/data/ubicaciones.service';
+import { MidPersonaService } from '../../../@core/data/mid_persona.service';
 import { FORM_INFORMACION_CONTACTO } from './form-informacion_contacto';
 import { ToasterService, ToasterConfig, Toast, BodyOutputType } from 'angular2-toaster';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
@@ -31,7 +31,11 @@ export class CrudInformacionContactoComponent implements OnInit {
   regInformacionContacto: any;
   clean: boolean;
 
-  constructor(private translate: TranslateService, private ubicacionesService: UbicacionesService, private toasterService: ToasterService) {
+  constructor(
+    private translate: TranslateService,
+    private midPersonaService: MidPersonaService,
+    private ubicacionesService: UbicacionesService,
+    private toasterService: ToasterService) {
     this.formInformacionContacto = FORM_INFORMACION_CONTACTO;
     this.construirForm();
     this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
@@ -42,7 +46,7 @@ export class CrudInformacionContactoComponent implements OnInit {
    }
 
   construirForm() {
-    this.formInformacionContacto.titulo = this.translate.instant('GLOBAL.informacion_contacto');
+    // this.formInformacionContacto.titulo = this.translate.instant('GLOBAL.informacion_contacto');
     this.formInformacionContacto.btn = this.translate.instant('GLOBAL.guardar');
     for (let i = 0; i < this.formInformacionContacto.campos.length; i++) {
       this.formInformacionContacto.campos[i].label = this.translate.instant('GLOBAL.' + this.formInformacionContacto.campos[i].label_i18n);
@@ -87,8 +91,9 @@ export class CrudInformacionContactoComponent implements OnInit {
 
 
   public loadInformacionContacto(): void {
-    if (this.informacion_contacto_id !== undefined && this.informacion_contacto_id !== 0) {
-      this.ubicacionesService.get('informacion_contacto/?query=id:' + this.informacion_contacto_id)
+    if (this.informacion_contacto_id !== undefined && this.informacion_contacto_id !== 0 &&
+      this.informacion_contacto_id.toString() !== '') {
+        this.midPersonaService.get('informacion_contacto/?query=id:' + this.informacion_contacto_id)
         .subscribe(res => {
           if (res !== null) {
             this.info_informacion_contacto = <InformacionContacto>res[0];
@@ -101,37 +106,42 @@ export class CrudInformacionContactoComponent implements OnInit {
   }
 
   updateInformacionContacto(informacionContacto: any): void {
-
     const opt: any = {
-      title: 'Update?',
-      text: 'Update InformacionContacto!',
+      title: this.translate.instant('GLOBAL.actualizar'),
+      text: this.translate.instant('GLOBAL.actualizar') + '?',
       icon: 'warning',
       buttons: true,
       dangerMode: true,
       showCancelButton: true,
+      confirmButtonText: this.translate.instant('GLOBAL.aceptar'),
+      cancelButtonText: this.translate.instant('GLOBAL.cancelar'),
     };
     Swal(opt)
     .then((willDelete) => {
       if (willDelete.value) {
         this.info_informacion_contacto = <InformacionContacto>informacionContacto;
-        this.ubicacionesService.put('informacion_contacto', this.info_informacion_contacto)
+        this.midPersonaService.put('informacion_contacto', this.info_informacion_contacto)
           .subscribe(res => {
             this.loadInformacionContacto();
             this.eventChange.emit(true);
-            this.showToast('info', 'updated', 'InformacionContacto updated');
-          });
+            this.showToast('info', this.translate.instant('GLOBAL.actualizar'),
+            this.translate.instant('GLOBAL.informacion_contacto') + ' ' +
+            this.translate.instant('GLOBAL.confirmarActualizar'));
+        });
       }
     });
   }
 
   createInformacionContacto(informacionContacto: any): void {
     const opt: any = {
-      title: 'Create?',
-      text: 'Create InformacionContacto!',
+      title: this.translate.instant('GLOBAL.crear'),
+      text: this.translate.instant('GLOBAL.crear') + '?',
       icon: 'warning',
       buttons: true,
       dangerMode: true,
       showCancelButton: true,
+      confirmButtonText: this.translate.instant('GLOBAL.aceptar'),
+      cancelButtonText: this.translate.instant('GLOBAL.cancelar'),
     };
     Swal(opt)
     .then((willDelete) => {
@@ -141,8 +151,10 @@ export class CrudInformacionContactoComponent implements OnInit {
           .subscribe(res => {
             this.info_informacion_contacto = <InformacionContacto>res;
             this.eventChange.emit(true);
-            this.showToast('info', 'created', 'InformacionContacto created');
-          });
+            this.showToast('info', this.translate.instant('GLOBAL.crear'),
+            this.translate.instant('GLOBAL.informacion_contacto') + ' ' +
+            this.translate.instant('GLOBAL.confirmarCrear'));
+        });
       }
     });
   }

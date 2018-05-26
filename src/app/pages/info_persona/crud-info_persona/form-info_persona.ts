@@ -1,6 +1,6 @@
 
 export let FORM_INFO_PERSONA = {
-    titulo: 'InfoPersona',
+    // titulo: 'InfoPersona',
     tipo_formulario: 'mini',
     alertas: true,
     btn: 'Guardar',
@@ -8,7 +8,7 @@ export let FORM_INFO_PERSONA = {
     campos: [
     {
         etiqueta: 'input',
-        claseGrid: 'col-lg-6 col-md-6 col-sm-12',
+        claseGrid: 'col-lg-6 col-md-6 col-sm-12 col-xs-12',
         nombre: 'PrimerNombre',
         label_i18n: 'primer_nombre',
         placeholder_i18n: 'primer_nombre',
@@ -17,7 +17,7 @@ export let FORM_INFO_PERSONA = {
     },
     {
         etiqueta: 'input',
-        claseGrid: 'col-lg-6 col-md-6 col-sm-12',
+        claseGrid: 'col-lg-6 col-md-6 col-sm-12 col-xs-12',
         nombre: 'SegundoNombre',
         label_i18n: 'segundo_nombre',
         placeholder_i18n: 'segundo_nombre',
@@ -26,7 +26,7 @@ export let FORM_INFO_PERSONA = {
     },
     {
         etiqueta: 'input',
-        claseGrid: 'col-lg-6 col-md-6 col-sm-12',
+        claseGrid: 'col-lg-6 col-md-6 col-sm-12 col-xs-12',
         nombre: 'PrimerApellido',
         label_i18n: 'primer_apellido',
         placeholder_i18n: 'primer_apellido',
@@ -35,7 +35,7 @@ export let FORM_INFO_PERSONA = {
     },
     {
         etiqueta: 'input',
-        claseGrid: 'col-lg-6 col-md-6 col-sm-12',
+        claseGrid: 'col-lg-6 col-md-6 col-sm-12 col-xs-12',
         nombre: 'SegundoApellido',
         label_i18n: 'segundo_apellido',
         placeholder_i18n: 'segundo_apellido',
@@ -44,7 +44,7 @@ export let FORM_INFO_PERSONA = {
     },
     {
         etiqueta: 'file',
-        claseGrid: 'col-lg-3 col-md-6 col-sm-12',
+        claseGrid: 'col-lg-3 col-md-6 col-sm-12 col-xs-12',
         clase: 'form-control',
         nombre: 'Foto',
         label_i18n: 'foto',
@@ -58,7 +58,7 @@ export let FORM_INFO_PERSONA = {
     },
     {
         etiqueta: 'mat-date',
-        claseGrid: 'col-lg-3 col-md-6 col-sm-12',
+        claseGrid: 'col-lg-3 col-md-6 col-sm-12 col-xs-12',
         nombre: 'FechaNacimiento',
         label_i18n: 'fecha_nacimiento',
         placeholder_i18n: 'fecha_nacimiento',
@@ -67,7 +67,7 @@ export let FORM_INFO_PERSONA = {
     },
     {
         etiqueta: 'select',
-        claseGrid: 'col-lg-3 col-md-6 col-sm-12',
+        claseGrid: 'col-lg-3 col-md-6 col-sm-12 col-xs-12',
         nombre: 'EstadoCivil',
         label_i18n: 'estado_civil',
         placeholder_i18n: 'estado_civil',
@@ -78,7 +78,7 @@ export let FORM_INFO_PERSONA = {
     },
     {
         etiqueta: 'select',
-        claseGrid: 'col-lg-3 col-md-6 col-sm-12',
+        claseGrid: 'col-lg-3 col-md-6 col-sm-12 col-xs-12',
         nombre: 'Genero',
         label_i18n: 'genero',
         placeholder_i18n: 'genero',

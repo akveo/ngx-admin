@@ -89,6 +89,12 @@
     }
   },
   "GLOBAL": {
+    "alerta_documental_image": "The image has been saved in our document manager",
+    "alerta_documental_documento": "The document has been saved in our document manager",    
+    "info_basica": "Basic data",
+    "placeholder_info_basica": "E.g. Basic data",
+    "hoja_vida": "Curriculum vitae",
+    "placeholder_hoja_vida": "E.g. Curriculum vitae",
     "genero": "Gender",
     "placeholder_genero": "E.g. gender",
     "id": "Id",
@@ -176,6 +182,8 @@
     "estrato_residencia": "Residence stratum",
     "placeholder_estrato_residencia": "E.g. 1",
     "telefono": "Telephone",
-    "placeholder_telefono": "E.g. 5565656"
+    "placeholder_telefono": "E.g. 5565656",
+    "telefono_alternativo": "Alternative telephone",
+    "placeholder_telefono_alternativo": "E.g. 5565656"
   }
 }

@@ -1,11 +1,11 @@
 import { GrupoEtnico } from './../../../@core/data/models/grupo_etnico';
 import { TipoDiscapacidad } from './../../../@core/data/models/tipo_discapacidad';
 import { Lugar } from './../../../@core/data/models/lugar';
-
 import { InfoCaracteristica } from './../../../@core/data/models/info_caracteristica';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { PersonaService } from '../../../@core/data/persona.service';
 import { UbicacionesService } from '../../../@core/data/ubicaciones.service';
+import { MidPersonaService } from '../../../@core/data/mid_persona.service';
 import { FORM_INFO_CARACTERISTICA } from './form-info_caracteristica';
 import { ToasterService, ToasterConfig, Toast, BodyOutputType } from 'angular2-toaster';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
@@ -34,8 +34,12 @@ export class CrudInfoCaracteristicaComponent implements OnInit {
   regInfoCaracteristica: any;
   clean: boolean;
 
-  constructor(private translate: TranslateService, private ubicacionesService: UbicacionesService,
-    private personaService: PersonaService, private toasterService: ToasterService) {
+  constructor(
+    private translate: TranslateService,
+    private midPersonaService: MidPersonaService,
+    private ubicacionesService: UbicacionesService,
+    private personaService: PersonaService,
+    private toasterService: ToasterService) {
     this.formInfoCaracteristica = FORM_INFO_CARACTERISTICA;
     this.construirForm();
     this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
@@ -47,7 +51,7 @@ export class CrudInfoCaracteristicaComponent implements OnInit {
    }
 
   construirForm() {
-    this.formInfoCaracteristica.titulo = this.translate.instant('GLOBAL.info_caracteristica');
+    // this.formInfoCaracteristica.titulo = this.translate.instant('GLOBAL.info_caracteristica');
     this.formInfoCaracteristica.btn = this.translate.instant('GLOBAL.guardar');
     for (let i = 0; i < this.formInfoCaracteristica.campos.length; i++) {
       this.formInfoCaracteristica.campos[i].label = this.translate.instant('GLOBAL.' + this.formInfoCaracteristica.campos[i].label_i18n);
@@ -102,8 +106,9 @@ export class CrudInfoCaracteristicaComponent implements OnInit {
 
 
   public loadInfoCaracteristica(): void {
-    if (this.info_caracteristica_id !== undefined && this.info_caracteristica_id !== 0) {
-      this.personaService.get('info_caracteristica/?query=id:' + this.info_caracteristica_id)
+    if (this.info_caracteristica_id !== undefined && this.info_caracteristica_id !== 0 &&
+      this.info_caracteristica_id.toString() !== '') {
+      this.midPersonaService.get('info_caracteristica/?query=id:' + this.info_caracteristica_id)
         .subscribe(res => {
           if (res !== null) {
             this.info_info_caracteristica = <InfoCaracteristica>res[0];
@@ -116,48 +121,55 @@ export class CrudInfoCaracteristicaComponent implements OnInit {
   }
 
   updateInfoCaracteristica(infoCaracteristica: any): void {
-
     const opt: any = {
-      title: 'Update?',
-      text: 'Update InfoCaracteristica!',
+      title: this.translate.instant('GLOBAL.actualizar'),
+      text: this.translate.instant('GLOBAL.actualizar') + '?',
       icon: 'warning',
       buttons: true,
       dangerMode: true,
       showCancelButton: true,
+      confirmButtonText: this.translate.instant('GLOBAL.aceptar'),
+      cancelButtonText: this.translate.instant('GLOBAL.cancelar'),
     };
     Swal(opt)
     .then((willDelete) => {
       if (willDelete.value) {
         this.info_info_caracteristica = <InfoCaracteristica>infoCaracteristica;
-        this.personaService.put('info_caracteristica', this.info_info_caracteristica)
+        this.midPersonaService.put('info_caracteristica', this.info_info_caracteristica)
           .subscribe(res => {
             this.loadInfoCaracteristica();
             this.eventChange.emit(true);
-            this.showToast('info', 'updated', 'InfoCaracteristica updated');
-          });
-      }
+            this.showToast('info', this.translate.instant('GLOBAL.actualizar'),
+            this.translate.instant('GLOBAL.info_caracteristica') + ' ' +
+            this.translate.instant('GLOBAL.confirmarActualizar'));
+        });
+  }
     });
   }
 
   createInfoCaracteristica(infoCaracteristica: any): void {
     const opt: any = {
-      title: 'Create?',
-      text: 'Create InfoCaracteristica!',
+      title: this.translate.instant('GLOBAL.crear'),
+      text: this.translate.instant('GLOBAL.crear') + '?',
       icon: 'warning',
       buttons: true,
       dangerMode: true,
       showCancelButton: true,
+      confirmButtonText: this.translate.instant('GLOBAL.aceptar'),
+      cancelButtonText: this.translate.instant('GLOBAL.cancelar'),
     };
     Swal(opt)
     .then((willDelete) => {
       if (willDelete.value) {
         this.info_info_caracteristica = <InfoCaracteristica>infoCaracteristica;
-        this.personaService.post('info_caracteristica', this.info_info_caracteristica)
+        this.midPersonaService.post('info_caracteristica', this.info_info_caracteristica)
           .subscribe(res => {
             this.info_info_caracteristica = <InfoCaracteristica>res;
             this.eventChange.emit(true);
-            this.showToast('info', 'created', 'InfoCaracteristica created');
-          });
+            this.showToast('info', this.translate.instant('GLOBAL.crear'),
+            this.translate.instant('GLOBAL.info_caracteristica') + ' ' +
+            this.translate.instant('GLOBAL.confirmarCrear'));
+        });
       }
     });
   }

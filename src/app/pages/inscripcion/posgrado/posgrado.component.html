@@ -2,7 +2,7 @@
     <nb-card>
       <nb-card-body>
         <nb-tabset fullWidth (changeTab)="selectTab($event)">
-            <nb-tab  tabTitle="{{ 'GLOBAL.info_persona' | translate }}" [active]="cambioTab === 0">
+            <nb-tab  tabTitle="{{ 'GLOBAL.info_basica' | translate }}" [active]="cambioTab === 0">
                 <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle="true">
                     <mat-expansion-panel-header>
                         <mat-panel-title>
@@ -28,11 +28,7 @@
                     <ngx-crud-informacion-contacto (eventChange)="onChange($event)"></ngx-crud-informacion-contacto>
                 </mat-expansion-panel>                      
             </nb-tab>        
-            <nb-tab tabTitle="{{ 'GLOBAL.info_caracteristica' | translate }}" [active]="cambioTab === 1">
-                <ngx-crud-info-caracteristica (eventChange)="onChange($event)"></ngx-crud-info-caracteristica>
-            </nb-tab>
-            <nb-tab tabTitle="{{ 'GLOBAL.informacion_contacto' | translate }}" [active]="cambioTab === 2">
-                <ngx-crud-informacion-contacto (eventChange)="onChange($event)"></ngx-crud-informacion-contacto>
+            <nb-tab tabTitle="{{ 'GLOBAL.hoja_vida' | translate }}" [active]="cambioTab === 1">
             </nb-tab>
         </nb-tabset>
       </nb-card-body>

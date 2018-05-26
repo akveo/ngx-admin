@@ -51,7 +51,7 @@ export class CrudInfoPersonaComponent implements OnInit {
   }
 
   construirForm() {
-    this.formInfoPersona.titulo = this.translate.instant('GLOBAL.info_persona');
+    // this.formInfoPersona.titulo = this.translate.instant('GLOBAL.info_persona');
     this.formInfoPersona.btn = this.translate.instant('GLOBAL.guardar');
     for (let i = 0; i < this.formInfoPersona.campos.length; i++) {
       this.formInfoPersona.campos[i].label = this.translate.instant('GLOBAL.' + this.formInfoPersona.campos[i].label_i18n);
@@ -95,9 +95,11 @@ export class CrudInfoPersonaComponent implements OnInit {
   }
 
   public loadInfoPersona(): void {
-    if (this.info_persona_id !== undefined && this.info_persona_id !== 0) {
+    if (this.info_persona_id !== undefined && this.info_persona_id !== 0 &&
+      this.info_persona_id.toString() !== '') {
       // esto retornará error hasta que no se ajuste mid
-      this.midPersonaService.get('persona/consultapersona/' + this.info_persona_id)
+      this.midPersonaService.get('persona/consultapersona/' + this.autenticationService.getPayload().sub)
+      // this.info_persona_id)
         .subscribe(res => {
           if (res !== null) {
             this.info_info_persona = <InfoPersona>res;
