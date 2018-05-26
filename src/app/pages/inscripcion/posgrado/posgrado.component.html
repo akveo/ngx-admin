@@ -1,6 +1,9 @@
 <div class="col-md-12 col-lg-12 ">
     <nb-card>
       <nb-card-body>
+        <p>
+            <ngb-progressbar showValue="true" type="success" [value]="percentage" [animated]="true" [height]="'25px'"></ngb-progressbar>
+        </p>
         <nb-tabset fullWidth (changeTab)="selectTab($event)">
             <nb-tab  tabTitle="{{ 'GLOBAL.info_basica' | translate }}" [active]="cambioTab === 0">
                 <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle="true">
@@ -9,7 +12,7 @@
                             {{ 'GLOBAL.info_persona' | translate }}
                         </mat-panel-title>
                     </mat-expansion-panel-header>
-                    <ngx-crud-info-persona info_persona_id="{{this.info_persona_id}}" (eventChange)="onChange($event)"></ngx-crud-info-persona>
+                    <ngx-crud-info-persona info_persona_id="{{this.info_persona_id}}" (eventChange)="onChange($event)" (result)="traerInfoPersona($event)"></ngx-crud-info-persona>
                 </mat-expansion-panel>
                 <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)" hideToggle="true">
                     <mat-expansion-panel-header>

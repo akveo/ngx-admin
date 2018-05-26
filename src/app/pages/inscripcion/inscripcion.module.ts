@@ -14,6 +14,7 @@ import { InfoPersonaModule } from '../info_persona/info_persona.module';
 import { InfoCaracteristicaModule } from '../info_caracteristica/info_caracteristica.module';
 import { ImplicitAutenticationService } from './../../@core/utils/implicit_autentication.service';
 import {MatExpansionModule} from '@angular/material/expansion';
+import { UtilidadesService } from '../../@core/utils/utilidades.service';
 
 @NgModule({
   imports: [
@@ -34,6 +35,7 @@ import {MatExpansionModule} from '@angular/material/expansion';
     PersonaService,
     MidPersonaService,
     UbicacionesService,
+    UtilidadesService,
   ],
   entryComponents: [
     CrudInfoPersonaComponent,

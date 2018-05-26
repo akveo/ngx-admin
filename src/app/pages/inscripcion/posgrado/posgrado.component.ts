@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import { ImplicitAutenticationService } from './../../../@core/utils/implicit_autentication.service';
 import { MidPersonaService } from '../../../@core/data/mid_persona.service';
+import { UtilidadesService } from '../../../@core/utils/utilidades.service';
 
 @Component({
   selector: 'ngx-posgrado',
@@ -10,11 +11,13 @@ import { MidPersonaService } from '../../../@core/data/mid_persona.service';
   })
 export class PosgradoComponent implements OnInit {
 
-  cambiotab: boolean = false;
   info_persona_id: any;
   info_info_persona: any;
   step = 0;
   cambioTab = 0;
+  nForms: number;
+  percentage: any;
+  percentageTab = [];
 
   constructor(
     private autenticacion: ImplicitAutenticationService,
@@ -23,7 +26,21 @@ export class PosgradoComponent implements OnInit {
     this.translate = translate;
     this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
     });
+    this.percentage = 0;
+    this.nForms = 4;
     this.getInfoPersonaId();
+  }
+
+  setPercentage(number, tab) {
+    console.info(number);
+    this.percentageTab[tab] = (number * 100) / this.nForms;
+    console.info(this.percentageTab);
+    this.percentage = Math.round(UtilidadesService.getSumArray(this.percentageTab));
+  }
+
+  traerInfoPersona(event) {
+    console.info(event)
+    this.setPercentage(event.percentage, 0);
   }
 
   getInfoPersonaId() {
