@@ -113,20 +113,16 @@ export class NuxeoComponent implements OnChanges {
                 password: 'S1st3m4s04S=Fr331P4',
             },
         });
-        this.documentoService.isRun().subscribe(res => {
-            if (res !== null) {
-                if (changes.files !== undefined && changes.files !== []) {
-                    console.info(changes);
-                    if (changes.files.currentValue !== undefined) {
-                        this.files = changes.files.currentValue;
-                        this.guardar(this.files, this.nuxeo, this.saveApi, this.documentoService);
-                    }
-                }
+        if (changes.files !== undefined && changes.files !== []) {
+            console.info(changes);
+            if (changes.files.currentValue !== undefined) {
+                this.files = changes.files.currentValue;
+                this.guardar(this.files, this.nuxeo, this.saveApi, this.documentoService);
             }
 
             if (changes.uid !== undefined && changes.uid !== null) {
                 this.cargar(this.uid, this.nuxeo, this.urlFile);
             }
-        });
+        }
     }
 }

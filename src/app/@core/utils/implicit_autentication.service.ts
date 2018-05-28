@@ -1,6 +1,7 @@
 
 import { Injectable } from '@angular/core';
 import { HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs/Rx';
 import { GENERAL } from './../../app-config';
 import { Md5 } from 'ts-md5/dist/md5';
 
@@ -25,6 +26,7 @@ export class ImplicitAutenticationService {
             }),
         }
         this.logOut = '';
+        this.timer();
     }
     public logout() {
         this.logOut = GENERAL.ENTORNO.TOKEN.SIGN_OUT_URL;
@@ -60,6 +62,7 @@ export class ImplicitAutenticationService {
                     'cache-control': 'no-cache',
                 }),
             }
+            this.setExpiresAt();
             return true;
         } else {
             return false;
@@ -90,6 +93,29 @@ export class ImplicitAutenticationService {
     private generateState() {
         const text = ((Date.now() + Math.random()) * Math.random()).toString().replace('.', '');
         return Md5.hashStr(text);
+    }
+
+    setExpiresAt() {
+        if (window.localStorage.getItem('expires_at') === null) {
+            const expires_at = new Date();
+            expires_at.setSeconds(expires_at.getSeconds() +
+                parseInt(window.localStorage.getItem('expires_in'), 10) - 60);
+            window.localStorage.setItem('expires_at', expires_at.toUTCString());
+        }
+    }
+
+    expired() {
+        return (new Date(window.localStorage.getItem('expires_at')) < new Date());
+    }
+
+    timer() {
+        Observable.interval(5000).subscribe(x => {
+            if (window.localStorage.getItem('expires_at') !== null) {
+                if (this.expired()) {
+                    window.localStorage.clear();
+                }
+            }
+        });
     }
 
 }

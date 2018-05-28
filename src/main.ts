@@ -28,8 +28,10 @@ if (window.localStorage.getItem('access_token') === null ||
   const query = 'https://' + window.location.host + '?' + queryString;
   req.open('GET', query, true);
   if (params['id_token'] !== null && params['id_token'] !== undefined) {
+    console.info(params);
     window.localStorage.setItem('access_token', params['access_token']);
     window.localStorage.setItem('id_token', params['id_token']);
+    window.localStorage.setItem('expires_in', params['expires_in']);
     window.localStorage.setItem('state', params['state']);
   } else {
     window.localStorage.clear();

@@ -91,6 +91,10 @@
   "GLOBAL": {
     "alerta_documental_image": "La imagen se ha guardado en nuestro gestor documental",
     "alerta_documental_documento": "El documento se ha guardado en nuestro gestor documental",    
+    "info_basica": "Información básica",
+    "placeholder_info_basica": "E.j. Información básica",
+    "hoja_vida": "Hoja de vida",
+    "placeholder_hoja_vida": "E.j. Hoja de vida",
     "genero": "Género",
     "placeholder_genero": "Ej: Género",
     "id": "Id",
@@ -108,7 +112,7 @@
     "grupo_etnico": "Grupo étnico",
     "placeholder_grupo_etnico": "Ej: Grupo étnico",
     "estado_civil": "Estado civil",
-    "placeholder_estado_civil": "Eej: Estado civil",
+    "placeholder_estado_civil": "Ej: Estado civil",
     "tipo_discapacidad": "Tipo de discapacidad",
     "placeholder_tipo_discapacidad": "Ej: Tipo de discapacidad",
     "persona": "Persona",
@@ -122,7 +126,7 @@
     "segundo_apellido": "Segundo apellido",
     "placeholder_segundo_apellido": "Ej: Peréz",
     "fecha_nacimiento": "Fecha de nacimiento",
-    "placeholder_fecha_nacimiento": "Ej: 05-05-1995",
+    "placeholder_fecha_nacimiento": "Ej: 05/05/1995",
     "usuario": "Usuario",
     "placeholder_usuario": "Ej: usuario01",
     "ente": "Ente",
@@ -178,6 +182,8 @@
     "estrato_residencia": "Estrato de la residencia",
     "placeholder_estrato_residencia": "Ej: 1",
     "telefono": "Teléfono",
-    "placeholder_telefono": "Ej: 55555555"
+    "placeholder_telefono": "Ej: 55555555",
+    "telefono_alterno": "Teléfono alternativo",
+    "placeholder_telefono_alterno": "Ej: 55555555"
   }
 }
