@@ -4,7 +4,7 @@ import { ThemeModule } from '../../@theme/theme.module';
 import { SharedModule } from '../../shared/shared.module';
 import { ToasterModule } from 'angular2-toaster';
 import { PersonaService } from '../../@core/data/persona.service';
-import { MidPersonaService } from '../../@core/data/mid_persona.service';
+import { CampusMidService } from '../../@core/data/campus_mid.service';
 import { UbicacionesService } from '../../@core/data/ubicaciones.service';
 import { CrudInfoCaracteristicaComponent } from '../info_caracteristica/crud-info_caracteristica/crud-info_caracteristica.component';
 import { CrudInformacionContactoComponent } from '../informacion_contacto/crud-informacion_contacto/crud-informacion_contacto.component';
@@ -33,7 +33,7 @@ import { UtilidadesService } from '../../@core/utils/utilidades.service';
   providers: [
     ImplicitAutenticationService,
     PersonaService,
-    MidPersonaService,
+    CampusMidService,
     UbicacionesService,
     UtilidadesService,
   ],
