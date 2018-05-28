@@ -119,8 +119,6 @@
   @include media-breakpoint-down(sm) {
 
     nb-sidebar.menu-sidebar {
-      position: absolute;
-
       margin-top: 0;
 
       /deep/ .main-container {
