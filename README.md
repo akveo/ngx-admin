@@ -4,7 +4,7 @@
 
 [Who uses ngx-admin?](https://github.com/akveo/ngx-admin/issues/1645)
 
-# Admin template based on Angular 5+, Bootstrap 4 and <a href="https://github.com/akveo/nebular">Nebular</a>
+# Admin template based on Angular 6+, Bootstrap 4 and <a href="https://github.com/akveo/nebular">Nebular</a>
 <a target="_blank" href="http://akveo.com/ngx-admin/#/pages/dashboard?utm_source=github&utm_medium=ngx_admin_readme&utm_campaign=demo"><img src="https://i.imgur.com/XoJtfvK.gif"/></a>
 
 ### Two themes available:
@@ -15,7 +15,7 @@
 
 ### What's included:
 
-- Angular 5+ & Typescript
+- Angular 6+ & Typescript
 - Bootstrap 4+ & SCSS
 - Responsive layout
 - RTL support
@@ -52,8 +52,8 @@ We will continue supporting [ng2-admin](https://github.com/akveo/ngx-admin/tree/
 ### Empty starter kit
 Don't need all the pages and modules and just looking for an empty starter kit for your next project? Check out our [starter-kit branch](https://github.com/akveo/ngx-admin/tree/starter-kit).
 
-### Angular 1.x version
-Here you can find Angular 1.x based version: [Blur Admin](http://akveo.github.io/blur-admin/)
+### AngularJS 1.x version
+Here you can find AngularJS 1.x based version: [Blur Admin](http://akveo.github.io/blur-admin/)
 
 ## BrowserStack
 This project runs its tests on multiple desktop and mobile browsers using [BrowserStack](http://www.browserstack.com).
