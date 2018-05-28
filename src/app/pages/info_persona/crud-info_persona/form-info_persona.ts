@@ -49,7 +49,7 @@ export let FORM_INFO_PERSONA = {
         nombre: 'Foto',
         label_i18n: 'foto',
         placeholder_i18n: 'foto',
-        requerido: true,
+        requerido: false,
         tipo: 'image',
         tipoDocumento: 1,
         formatos: 'png/jpg/jpeg',

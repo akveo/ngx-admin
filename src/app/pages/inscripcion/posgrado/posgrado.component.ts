@@ -39,7 +39,6 @@ export class PosgradoComponent implements OnInit {
   }
 
   traerInfoPersona(event) {
-    console.info(event)
     this.setPercentage(event.percentage, 0);
   }
 

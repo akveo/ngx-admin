@@ -29,6 +29,7 @@ export class CrudInfoPersonaComponent implements OnInit {
   }
 
   @Output() eventChange = new EventEmitter();
+  @Output('result') result: EventEmitter<any> = new EventEmitter();
 
   info_info_persona: InfoPersona;
   formInfoPersona: any;
@@ -178,6 +179,7 @@ export class CrudInfoPersonaComponent implements OnInit {
       } else {
         this.updateInfoPersona(event.data.InfoPersona);
       }
+      this.result.emit(event);
     }
   }
 

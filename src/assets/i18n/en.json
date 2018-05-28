@@ -126,7 +126,7 @@
     "segundo_apellido": "Second lastname",
     "placeholder_segundo_apellido": "E.g. Jones",
     "fecha_nacimiento": "Birthdate",
-    "placeholder_fecha_nacimiento": "E.g. 05-05-1995",
+    "placeholder_fecha_nacimiento": "E.g. 05/05/1995",
     "usuario": "User",
     "placeholder_usuario": "E.g. user01",
     "guardar" : "Save",
