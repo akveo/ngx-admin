@@ -29,6 +29,7 @@ import 'rxjs/add/operator/delay';
                    responsive
                    [right]="sidebar.id === 'right'">
         <ng-content select="nb-menu"></ng-content>
+        <img src='../../../../assets/images/logoUDfullv.png' width="100%" class="logoud" >
       </nb-sidebar>
 
       <nb-layout-column class="main-content">

@@ -58,6 +58,15 @@
       text-align: center;
     }
 
+    .logoud {
+      opacity: 0.8;
+      filter: alpha(opacity=80); /* For IE8 and earlier */
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 1rem;
+    }
+
     background: transparent;
 
     .main-btn {
@@ -110,7 +119,6 @@
   @include media-breakpoint-down(sm) {
 
     nb-sidebar.menu-sidebar {
-
       margin-top: 0;
 
       /deep/ .main-container {
