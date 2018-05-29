@@ -3,13 +3,17 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { GENERAL } from './../../app-config';
 
 const httpOptions = {
-    headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
-};
+    headers: new HttpHeaders({
+        'Accept': 'application/json',
+        'authorization': 'Bearer ' + window.localStorage.getItem('access_token'),
+    }),
+}
 
-const path = GENERAL.ENTORNO.MID_PERSONA_SERVICE;
+
+const path = GENERAL.ENTORNO.CAMPUS_MID;
 
 @Injectable()
-export class MidPersonaService {
+export class CampusMidService {
 
     constructor(private http: HttpClient) {
     }

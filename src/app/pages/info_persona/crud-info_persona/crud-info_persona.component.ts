@@ -4,7 +4,7 @@ import { Genero } from './../../../@core/data/models/genero';
 import { InfoPersona } from './../../../@core/data/models/info_persona';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { PersonaService } from '../../../@core/data/persona.service';
-import { MidPersonaService } from '../../../@core/data/mid_persona.service';
+import { CampusMidService } from '../../../@core/data/campus_mid.service';
 import { FORM_INFO_PERSONA } from './form-info_persona';
 import { ToasterService, ToasterConfig, Toast, BodyOutputType } from 'angular2-toaster';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
@@ -38,7 +38,7 @@ export class CrudInfoPersonaComponent implements OnInit {
 
   constructor(
     private translate: TranslateService,
-    private midPersonaService: MidPersonaService,
+    private campusMidService: CampusMidService,
     private autenticationService: ImplicitAutenticationService,
     private personaService: PersonaService,
     private toasterService: ToasterService) {
@@ -99,7 +99,7 @@ export class CrudInfoPersonaComponent implements OnInit {
     if (this.info_persona_id !== undefined && this.info_persona_id !== 0 &&
       this.info_persona_id.toString() !== '') {
       // esto retornará error hasta que no se ajuste mid
-      this.midPersonaService.get('persona/consultapersona/' + this.autenticationService.getPayload().sub)
+      this.campusMidService.get('persona/consultapersona/' + this.autenticationService.getPayload().sub)
       // this.info_persona_id)
         .subscribe(res => {
           if (res !== null) {
@@ -127,7 +127,7 @@ export class CrudInfoPersonaComponent implements OnInit {
       .then((willDelete) => {
         if (willDelete.value) {
           this.info_info_persona = <InfoPersona>infoPersona;
-          this.midPersonaService.put('persona/ActualizarPersona', this.info_info_persona)
+          this.campusMidService.put('persona/ActualizarPersona', this.info_info_persona)
             .subscribe(res => {
               this.loadInfoPersona();
               this.eventChange.emit(true);
@@ -157,7 +157,7 @@ export class CrudInfoPersonaComponent implements OnInit {
           this.info_info_persona = <InfoPersona>infoPersona;
           array.push({ nombre: this.autenticationService.getPayload().sub, file: this.info_info_persona.Foto, IdDocumento: 1 });
           this.filesUp = array;
-          this.midPersonaService.post('persona/GuardarPersona', this.info_info_persona)
+          this.campusMidService.post('persona/GuardarPersona', this.info_info_persona)
             .subscribe(res => {
               this.info_info_persona = <InfoPersona>res;
               this.eventChange.emit(true);
