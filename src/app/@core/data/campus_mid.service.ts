@@ -19,7 +19,7 @@ export class CampusMidService {
     }
 
     get(endpoint) {
-        return this.http.get(path + endpoint);
+        return this.http.get(path + endpoint, httpOptions);
     }
 
     post(endpoint, element) {
@@ -31,6 +31,6 @@ export class CampusMidService {
     }
 
     delete(endpoint, element) {
-        return this.http.delete(path + endpoint + '/' + element.Id);
+        return this.http.delete(path + endpoint + '/' + element.Id, httpOptions);
     }
 }

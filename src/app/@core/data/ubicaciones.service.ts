@@ -18,7 +18,7 @@ export class UbicacionesService {
     }
 
     get(endpoint) {
-            return this.http.get(path + endpoint);
+            return this.http.get(path + endpoint, httpOptions);
     }
     post(endpoint, element) {
         return this.http.post(path + endpoint, element, httpOptions);
@@ -27,6 +27,6 @@ export class UbicacionesService {
         return this.http.put(path + endpoint + '/' + element.Id, element, httpOptions);
     }
     delete(endpoint, element) {
-        return this.http.delete(path + endpoint + '/' + element.Id);
+        return this.http.delete(path + endpoint + '/' + element.Id, httpOptions);
     }
 };
