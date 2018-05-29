@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import { ImplicitAutenticationService } from './../../../@core/utils/implicit_autentication.service';
-import { MidPersonaService } from '../../../@core/data/mid_persona.service';
+import { CampusMidService } from '../../../@core/data/campus_mid.service';
 import { UtilidadesService } from '../../../@core/utils/utilidades.service';
 
 @Component({
@@ -21,7 +21,7 @@ export class PosgradoComponent implements OnInit {
 
   constructor(
     private autenticacion: ImplicitAutenticationService,
-    private midPersonaService: MidPersonaService,
+    private campusMidService: CampusMidService,
     private translate: TranslateService) {
     this.translate = translate;
     this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
@@ -47,7 +47,7 @@ export class PosgradoComponent implements OnInit {
       Id: number;
     }
     if (this.autenticacion.live()) {
-      this.midPersonaService.get('persona/consultapersona/' + this.autenticacion.getPayload().sub)
+      this.campusMidService.get('persona/consultapersona/' + this.autenticacion.getPayload().sub)
         .subscribe(res => {
           if (res !== null) {
             this.info_info_persona = <ResponseId>res;

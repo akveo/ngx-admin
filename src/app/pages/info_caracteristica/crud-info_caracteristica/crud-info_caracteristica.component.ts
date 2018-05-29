@@ -5,7 +5,7 @@ import { InfoCaracteristica } from './../../../@core/data/models/info_caracteris
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { PersonaService } from '../../../@core/data/persona.service';
 import { UbicacionesService } from '../../../@core/data/ubicaciones.service';
-import { MidPersonaService } from '../../../@core/data/mid_persona.service';
+import { CampusMidService } from '../../../@core/data/campus_mid.service';
 import { FORM_INFO_CARACTERISTICA } from './form-info_caracteristica';
 import { ToasterService, ToasterConfig, Toast, BodyOutputType } from 'angular2-toaster';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
@@ -36,7 +36,7 @@ export class CrudInfoCaracteristicaComponent implements OnInit {
 
   constructor(
     private translate: TranslateService,
-    private midPersonaService: MidPersonaService,
+    private campusMidService: CampusMidService,
     private ubicacionesService: UbicacionesService,
     private personaService: PersonaService,
     private toasterService: ToasterService) {
@@ -108,7 +108,7 @@ export class CrudInfoCaracteristicaComponent implements OnInit {
   public loadInfoCaracteristica(): void {
     if (this.info_caracteristica_id !== undefined && this.info_caracteristica_id !== 0 &&
       this.info_caracteristica_id.toString() !== '') {
-      this.midPersonaService.get('info_caracteristica/?query=id:' + this.info_caracteristica_id)
+      this.campusMidService.get('info_caracteristica/?query=id:' + this.info_caracteristica_id)
         .subscribe(res => {
           if (res !== null) {
             this.info_info_caracteristica = <InfoCaracteristica>res[0];
@@ -135,7 +135,7 @@ export class CrudInfoCaracteristicaComponent implements OnInit {
     .then((willDelete) => {
       if (willDelete.value) {
         this.info_info_caracteristica = <InfoCaracteristica>infoCaracteristica;
-        this.midPersonaService.put('info_caracteristica', this.info_info_caracteristica)
+        this.campusMidService.put('info_caracteristica', this.info_info_caracteristica)
           .subscribe(res => {
             this.loadInfoCaracteristica();
             this.eventChange.emit(true);
@@ -162,7 +162,7 @@ export class CrudInfoCaracteristicaComponent implements OnInit {
     .then((willDelete) => {
       if (willDelete.value) {
         this.info_info_caracteristica = <InfoCaracteristica>infoCaracteristica;
-        this.midPersonaService.post('info_caracteristica', this.info_info_caracteristica)
+        this.campusMidService.post('info_caracteristica', this.info_info_caracteristica)
           .subscribe(res => {
             this.info_info_caracteristica = <InfoCaracteristica>res;
             this.eventChange.emit(true);

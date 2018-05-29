@@ -2,7 +2,7 @@ import { Lugar } from './../../../@core/data/models/lugar';
 import { InformacionContacto } from './../../../@core/data/models/informacion_contacto';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { UbicacionesService } from '../../../@core/data/ubicaciones.service';
-import { MidPersonaService } from '../../../@core/data/mid_persona.service';
+import { CampusMidService } from '../../../@core/data/campus_mid.service';
 import { FORM_INFORMACION_CONTACTO } from './form-informacion_contacto';
 import { ToasterService, ToasterConfig, Toast, BodyOutputType } from 'angular2-toaster';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
@@ -33,7 +33,7 @@ export class CrudInformacionContactoComponent implements OnInit {
 
   constructor(
     private translate: TranslateService,
-    private midPersonaService: MidPersonaService,
+    private campusMidService: CampusMidService,
     private ubicacionesService: UbicacionesService,
     private toasterService: ToasterService) {
     this.formInformacionContacto = FORM_INFORMACION_CONTACTO;
@@ -93,7 +93,7 @@ export class CrudInformacionContactoComponent implements OnInit {
   public loadInformacionContacto(): void {
     if (this.informacion_contacto_id !== undefined && this.informacion_contacto_id !== 0 &&
       this.informacion_contacto_id.toString() !== '') {
-        this.midPersonaService.get('informacion_contacto/?query=id:' + this.informacion_contacto_id)
+        this.campusMidService.get('informacion_contacto/?query=id:' + this.informacion_contacto_id)
         .subscribe(res => {
           if (res !== null) {
             this.info_informacion_contacto = <InformacionContacto>res[0];
@@ -120,7 +120,7 @@ export class CrudInformacionContactoComponent implements OnInit {
     .then((willDelete) => {
       if (willDelete.value) {
         this.info_informacion_contacto = <InformacionContacto>informacionContacto;
-        this.midPersonaService.put('informacion_contacto', this.info_informacion_contacto)
+        this.campusMidService.put('informacion_contacto', this.info_informacion_contacto)
           .subscribe(res => {
             this.loadInformacionContacto();
             this.eventChange.emit(true);

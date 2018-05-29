@@ -18,7 +18,7 @@ export const Config = {
             SIGN_OUT_REDIRECT_URL: 'http://localhost:9000/',
         },
         CONF_MENU_SERVICE: 'http://10.20.0.254/configuracion_api/v1/menu_opcion_padre/ArbolMenus/',
-        MID_PERSONA_SERVICE: 'http://pruebasapi.intranetoas.udistrital.edu.co:8095/v1/',
+        CAMPUS_MID: 'http://pruebasapi.intranetoas.udistrital.edu.co:8095/v1/',
     },
     PREPROD: {
         NUXEO: {
@@ -26,7 +26,7 @@ export const Config = {
         },
         WSO2_SERVICE: 'http://jbpm.udistritaloas.edu.co:8280/services',
         CORE_SERVICE: 'http://pruebasapi.intranetoas.udistrital.edu.co:8083/v1/',
-        UBICACIONES_SERVICE: 'http://pruebasapi.intranetoas.udistrital.edu.co:8085/v1/',
+        UBICACIONES_SERVICE: 'https://autenticacion.udistrital.edu.co:8244/ubicaciones_crud/v1/',
         PERSONA_SERVICE: 'https://autenticacion.udistrital.edu.co:8244/persona_crud/v1/',
         DOCUMENTO_SERVICE: 'https://autenticacion.udistrital.edu.co:8244/documentos_crud/v1/',
         TOKEN: {
@@ -39,7 +39,7 @@ export const Config = {
             SIGN_OUT_REDIRECT_URL: 'https://pruebascampus.portaloas.udistrital.edu.co/',
         },
         CONF_MENU_SERVICE: 'http://pruebasapi.intranetoas.udistrital.edu.co:8086/v1/menu_opcion_padre/ArbolMenus/',
-        MID_PERSONA_SERVICE: 'http://pruebasapi.intranetoas.udistrital.edu.co:8095/v1/',
+        CAMPUS_MID: 'http://pruebasapi.intranetoas.udistrital.edu.co:8095/v1/',
     },
 };
 
