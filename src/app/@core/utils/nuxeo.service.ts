@@ -1,6 +1,6 @@
 import * as Nuxeo from 'nuxeo';
 import { Injectable } from '@angular/core';
-import { Config } from './../../app-config'
+import { GENERAL } from './../../app-config';
 
 
 @Injectable()
@@ -11,7 +11,7 @@ export class NuxeoService {
     }
     static guardar(Files): any {
         NuxeoService.nuxeo = new Nuxeo({
-            baseURL: Config.LOCAL.NUXEO.PATH,
+            baseURL: GENERAL.ENTORNO.NUXEO.PATH,
             auth: {
                 method: 'basic',
                 username: 'Administrator',
