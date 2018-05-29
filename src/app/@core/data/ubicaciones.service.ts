@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Config } from './../../app-config';
+import { GENERAL } from './../../app-config';
 
 const httpOptions = {
     headers: new HttpHeaders({
@@ -9,7 +9,7 @@ const httpOptions = {
     }),
 }
 
-const path = Config.LOCAL.UBICACIONES_SERVICE;
+const path = GENERAL.ENTORNO.UBICACIONES_SERVICE;
 
 @Injectable()
 export class UbicacionesService {
