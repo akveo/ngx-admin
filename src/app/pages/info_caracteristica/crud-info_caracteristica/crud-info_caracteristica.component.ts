@@ -28,6 +28,7 @@ export class CrudInfoCaracteristicaComponent implements OnInit {
   }
 
   @Output() eventChange = new EventEmitter();
+  @Output('result') result: EventEmitter<any> = new EventEmitter();
 
   info_info_caracteristica: InfoCaracteristica;
   formInfoCaracteristica: any;
@@ -185,6 +186,7 @@ export class CrudInfoCaracteristicaComponent implements OnInit {
       } else {
         this.updateInfoCaracteristica(event.data.InfoCaracteristica);
       }
+      this.result.emit(event);
     }
   }
 

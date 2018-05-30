@@ -42,6 +42,14 @@ export class PosgradoComponent implements OnInit {
     this.setPercentage(event.percentage, 0);
   }
 
+  traerInfoCaracteristica(event) {
+    this.setPercentage(event.percentage, 1);
+  }
+
+  traerInfoContacto(event) {
+    this.setPercentage(event.percentage, 2);
+  }
+
   getInfoPersonaId() {
     interface ResponseId {
       Id: number;
