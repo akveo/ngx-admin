@@ -1,12 +1,15 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Config } from './../../app-config';
+import { GENERAL } from './../../app-config';
 
 const httpOptions = {
-    headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
-};
+    headers: new HttpHeaders({
+        'Accept': 'application/json',
+        'authorization': 'Bearer ' + window.localStorage.getItem('access_token'),
+    }),
+}
 
-const path = Config.LOCAL.UBICACIONES_SERVICE;
+const path = GENERAL.ENTORNO.UBICACIONES_SERVICE;
 
 @Injectable()
 export class UbicacionesService {
@@ -15,7 +18,7 @@ export class UbicacionesService {
     }
 
     get(endpoint) {
-            return this.http.get(path + endpoint);
+            return this.http.get(path + endpoint, httpOptions);
     }
     post(endpoint, element) {
         return this.http.post(path + endpoint, element, httpOptions);
@@ -24,6 +27,6 @@ export class UbicacionesService {
         return this.http.put(path + endpoint + '/' + element.Id, element, httpOptions);
     }
     delete(endpoint, element) {
-        return this.http.delete(path + endpoint + '/' + element.Id);
+        return this.http.delete(path + endpoint + '/' + element.Id, httpOptions);
     }
 };

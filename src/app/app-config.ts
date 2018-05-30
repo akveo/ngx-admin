@@ -38,11 +38,11 @@ export const Config = {
             SIGN_OUT_URL: 'https://autenticacion.udistrital.edu.co/oidc/logout',
             SIGN_OUT_REDIRECT_URL: 'https://pruebascampus.portaloas.udistrital.edu.co/',
         },
-        CONF_MENU_SERVICE: 'http://pruebasapi.intranetoas.udistrital.edu.co:8086/v1/menu_opcion_padre/ArbolMenus/',
-        CAMPUS_MID: 'http://pruebasapi.intranetoas.udistrital.edu.co:8095/v1/',
+        CONF_MENU_SERVICE: 'https://autenticacion.udistrital.edu.co:8244/configuracion_crud_api/v1/menu_opcion_padre/ArbolMenus/',
+        CAMPUS_MID: 'https://autenticacion.udistrital.edu.co:8244/campus_mid/v1/',
     },
 };
 
 export const GENERAL = {
-    ENTORNO: Config.LOCAL,
+    ENTORNO: Config.PREPROD,
 };
