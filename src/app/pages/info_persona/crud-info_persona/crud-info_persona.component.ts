@@ -99,7 +99,7 @@ export class CrudInfoPersonaComponent implements OnInit {
     if (this.info_persona_id !== undefined && this.info_persona_id !== 0 &&
       this.info_persona_id.toString() !== '') {
       // esto retornará error hasta que no se ajuste mid
-      this.campusMidService.get('persona/consultapersona/' + this.autenticationService.getPayload().sub)
+      this.campusMidService.get('persona/ConsultaPersona/' + this.autenticationService.getPayload().sub)
       // this.info_persona_id)
         .subscribe(res => {
           if (res !== null) {
