@@ -55,7 +55,7 @@ export class PosgradoComponent implements OnInit {
       Id: number;
     }
     if (this.autenticacion.live()) {
-      this.campusMidService.get('persona/consultapersona/' + this.autenticacion.getPayload().sub)
+      this.campusMidService.get('persona/ConsultaPersona/' + this.autenticacion.getPayload().sub)
         .subscribe(res => {
           if (res !== null) {
             this.info_info_persona = <ResponseId>res;
