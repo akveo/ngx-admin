@@ -25,6 +25,7 @@ export class CrudInformacionContactoComponent implements OnInit {
   }
 
   @Output() eventChange = new EventEmitter();
+  @Output('result') result: EventEmitter<any> = new EventEmitter();
 
   info_informacion_contacto: InformacionContacto;
   formInformacionContacto: any;
@@ -170,6 +171,7 @@ export class CrudInformacionContactoComponent implements OnInit {
       } else {
         this.updateInformacionContacto(event.data.InformacionContacto);
       }
+      this.result.emit(event);
     }
   }
 
