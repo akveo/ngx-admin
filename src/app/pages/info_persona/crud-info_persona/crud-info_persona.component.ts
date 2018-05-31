@@ -1,5 +1,6 @@
 import { EstadoCivil } from './../../../@core/data/models/estado_civil';
 import { ImplicitAutenticationService } from '../../../@core/utils/implicit_autentication.service';
+import { NuxeoService } from '../../../@core/utils/nuxeo.service';
 import { Genero } from './../../../@core/data/models/genero';
 import { InfoPersona } from './../../../@core/data/models/info_persona';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
@@ -40,6 +41,7 @@ export class CrudInfoPersonaComponent implements OnInit {
     private translate: TranslateService,
     private campusMidService: CampusMidService,
     private autenticationService: ImplicitAutenticationService,
+    private nuxeoService: NuxeoService,
     private personaService: PersonaService,
     private toasterService: ToasterService) {
     this.formInfoPersona = FORM_INFO_PERSONA;
@@ -100,7 +102,7 @@ export class CrudInfoPersonaComponent implements OnInit {
       this.info_persona_id.toString() !== '') {
       // esto retornará error hasta que no se ajuste mid
       this.campusMidService.get('persona/ConsultaPersona/' + this.autenticationService.getPayload().sub)
-      // this.info_persona_id)
+        // this.info_persona_id)
         .subscribe(res => {
           if (res !== null) {
             this.info_info_persona = <InfoPersona>res;
@@ -156,7 +158,11 @@ export class CrudInfoPersonaComponent implements OnInit {
           const array = []
           this.info_info_persona = <InfoPersona>infoPersona;
           array.push({ nombre: this.autenticationService.getPayload().sub, file: this.info_info_persona.Foto, IdDocumento: 1 });
-          this.filesUp = array;
+          // this.filesUp = array;
+          this.nuxeoService.guardar(array)
+            .subscribe(res => {
+              console.info(res);
+            })
           this.campusMidService.post('persona/GuardarPersona', this.info_info_persona)
             .subscribe(res => {
               this.info_info_persona = <InfoPersona>res;

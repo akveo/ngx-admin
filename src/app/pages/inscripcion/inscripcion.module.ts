@@ -13,6 +13,7 @@ import { InformacionContactoModule } from '../informacion_contacto/informacion_c
 import { InfoPersonaModule } from '../info_persona/info_persona.module';
 import { InfoCaracteristicaModule } from '../info_caracteristica/info_caracteristica.module';
 import { ImplicitAutenticationService } from './../../@core/utils/implicit_autentication.service';
+import { NuxeoService } from './../../@core/utils/nuxeo.service';
 import {MatExpansionModule} from '@angular/material/expansion';
 import { UtilidadesService } from '../../@core/utils/utilidades.service';
 
@@ -32,6 +33,7 @@ import { UtilidadesService } from '../../@core/utils/utilidades.service';
   ],
   providers: [
     ImplicitAutenticationService,
+    NuxeoService,
     PersonaService,
     CampusMidService,
     UbicacionesService,
