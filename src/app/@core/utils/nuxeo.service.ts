@@ -1,9 +1,6 @@
 import * as Nuxeo from 'nuxeo';
 import { Injectable, OnInit } from '@angular/core';
 import { GENERAL } from './../../app-config';
-import { Observable } from 'rxjs/Observable';
-import { Subject } from 'rxjs/Subject';
-import { Documento } from './../data/models/documento'
 import { DocumentoService } from '../../@core/data/documento.service';
 
 
@@ -21,11 +18,11 @@ export class NuxeoService implements OnInit {
         });
     }
 
-    constructor(private documentoService: DocumentoService) {
+    constructor(documentoService: DocumentoService) {
     }
 
     public guardar(Files) {
-        let promise = new Promise(function (resolve, reject) {
+        const promise = new Promise(function (resolve, reject) {
             this.nuxeo.connect()
                 .then(function (client) {
                     Files.forEach(element => {
@@ -59,17 +56,18 @@ export class NuxeoService implements OnInit {
                                                             }
                                                             this.documentoService.post('documento', documentoPost)
                                                                 .subscribe(respuestaPost => {
+                                                                    console.info(respuestaPost)
                                                                     resolve(respuestaPost);
                                                                 })
                                                         });
                                                 })
                                                 .catch(function (error) {
-                                                    reject("Error: " + error);
+                                                    reject('Error: ' + error);
                                                     throw error;
                                                 });
                                         })
                                         .catch(function (error) {
-                                            reject("Error: " + error);
+                                            reject('Error: ' + error);
                                             throw error;
                                         })
                                 }

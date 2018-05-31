@@ -161,9 +161,9 @@ export class CrudInfoPersonaComponent implements OnInit {
           // this.filesUp = array;
           this.nuxeoService.guardar(array)
             .then(function (resolveOutput) {
-              console.log(resolveOutput);
+              console.info(resolveOutput);
             }, function (rejectOutput) {
-              console.log(rejectOutput);
+              console.info(rejectOutput);
             });
           this.campusMidService.post('persona/GuardarPersona', this.info_info_persona)
             .subscribe(res => {
