@@ -86,7 +86,7 @@ export class CrudInfoCaracteristicaComponent implements OnInit {
   }
   loadOptionsPaisNacimiento(): void {
     let paisNacimiento: Array<any> = [];
-      this.ubicacionesService.get('lugar/?limit=0')
+      this.ubicacionesService.get('lugar/?query=TipoLugar.Nombre:PAIS')
         .subscribe(res => {
           if (res !== null) {
             paisNacimiento = <Array<Lugar>>res;

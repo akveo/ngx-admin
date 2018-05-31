@@ -1,5 +1,5 @@
 
 <toaster-container [toasterconfig]="config"></toaster-container>
-<ngx-dinamicform [normalform]="formInformacionContacto" [modeloData]="info_informacion_contacto" (result)="validarForm($event)" [clean]="clean">
+<ngx-dinamicform [normalform]="formInformacionContacto" [modeloData]="info_informacion_contacto" (result)="validarForm($event)" [clean]="clean" (interlaced)="getPais($event)">
 </ngx-dinamicform>
 

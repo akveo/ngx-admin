@@ -154,7 +154,7 @@
     "grupo_sanguineo": "Blood group",
     "placeholder_grupo_sanguineo": "E.g. AB",
     "rh": "RH",
-    "placeholder_rh": "E.g. Negative",
+    "placeholder_rh": "E.g. - (Negative)",
     "lugar_ubicacion": "Location place",
     "placeholder_lugar_ubicacion": "E.g. Location place",
     "direccion": "Address",

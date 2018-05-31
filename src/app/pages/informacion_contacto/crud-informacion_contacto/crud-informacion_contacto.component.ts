@@ -31,6 +31,7 @@ export class CrudInformacionContactoComponent implements OnInit {
   formInformacionContacto: any;
   regInformacionContacto: any;
   clean: boolean;
+  paisSelecccionado: any;
 
   constructor(
     private translate: TranslateService,
@@ -43,7 +44,6 @@ export class CrudInformacionContactoComponent implements OnInit {
       this.construirForm();
     });
     this.loadOptionsPaisResidencia();
-    this.loadOptionsCiudadResidencia();
    }
 
   construirForm() {
@@ -59,9 +59,14 @@ export class CrudInformacionContactoComponent implements OnInit {
     this.translate.use(language);
   }
 
+  getPais(event) {
+    this.paisSelecccionado = event.valor;
+    this.loadOptionsCiudadResidencia();
+  }
+
   loadOptionsPaisResidencia(): void {
     let paisResidencia: Array<any> = [];
-      this.ubicacionesService.get('lugar/?limit=0')
+      this.ubicacionesService.get('lugar/?query=TipoLugar.Nombre:PAIS')
         .subscribe(res => {
           if (res !== null) {
             paisResidencia = <Array<Lugar>>res;
@@ -70,14 +75,20 @@ export class CrudInformacionContactoComponent implements OnInit {
         });
   }
   loadOptionsCiudadResidencia(): void {
-    let ciudadResidencia: Array<any> = [];
-      this.ubicacionesService.get('lugar/?limit=0')
-        .subscribe(res => {
-          if (res !== null) {
-            ciudadResidencia = <Array<Lugar>>res;
-          }
-          this.formInformacionContacto.campos[ this.getIndexForm('CiudadResidencia') ].opciones = ciudadResidencia;
-        });
+    let consultaHijos: Array<any> = [];
+    const ciudadResidencia: Array<any> = [];
+      if (this.paisSelecccionado) {
+        this.ubicacionesService.get('relacion_lugares/?query=LugarPadre.Id:' + this.paisSelecccionado.Id)
+          .subscribe(res => {
+            if (res !== null) {
+              consultaHijos = <Array<Lugar>>res;
+              for (let i = 0; i < consultaHijos.length; i++) {
+                ciudadResidencia.push(consultaHijos[i].LugarHijo);
+              }
+            }
+            this.formInformacionContacto.campos[ this.getIndexForm('CiudadResidencia') ].opciones = ciudadResidencia;
+          });
+      }
   }
 
   getIndexForm(nombre: String): number {
