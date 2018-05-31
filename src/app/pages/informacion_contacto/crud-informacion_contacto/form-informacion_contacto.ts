@@ -16,6 +16,7 @@ export let FORM_INFORMACION_CONTACTO = {
         tipo: 'Lugar',
         key: 'Nombre',
         opciones: [],
+        entrelazado: true,
     },
     {
         etiqueta: 'select',
