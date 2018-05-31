@@ -32,6 +32,7 @@ export class CrudInformacionContactoComponent implements OnInit {
   regInformacionContacto: any;
   clean: boolean;
   paisSelecccionado: any;
+  datosPost: any;
 
   constructor(
     private translate: TranslateService,
@@ -159,7 +160,38 @@ export class CrudInformacionContactoComponent implements OnInit {
     .then((willDelete) => {
       if (willDelete.value) {
         this.info_informacion_contacto = <InformacionContacto>informacionContacto;
-        this.ubicacionesService.post('informacion_contacto', this.info_informacion_contacto)
+        this.datosPost = {
+          'Ente': this.informacion_contacto_id,
+          'ContactoEnte': [
+            {
+              'TipoContacto': 1,
+              'Valor': '' + this.info_informacion_contacto.Telefono,
+            },
+            {
+              'TipoContacto': 2,
+              'Valor': '' + this.info_informacion_contacto.TelefonoAlterno,
+            },
+          ],
+          'UbicacionEnte': {
+            'Lugar': this.info_informacion_contacto.CiudadResidencia.Id,
+            'TipoRelacionUbicacionEnte': 2,
+            'Atributos': [
+              {
+                'AtributoUbicacion': 1,
+                'Valor': this.info_informacion_contacto.DireccionResidencia,
+              },
+              {
+                'AtributoUbicacion': 2,
+                'Valor': '' + this.info_informacion_contacto.EstratoResidencia,
+              },
+              {
+                'AtributoUbicacion': 3,
+                'Valor': this.info_informacion_contacto.CodigoPostal,
+              },
+            ],
+          },
+        };
+        this.campusMidService.post('persona/GuardarDatosContacto/', this.datosPost)
           .subscribe(res => {
             this.info_informacion_contacto = <InformacionContacto>res;
             this.eventChange.emit(true);

@@ -69,7 +69,7 @@ export let FORM_INFORMACION_CONTACTO = {
     {
         etiqueta: 'input',
         claseGrid: 'col-lg-6 col-md-6 col-sm-12 col-xs-12',
-        nombre: 'Telefono alterno',
+        nombre: 'TelefonoAlterno',
         label_i18n: 'telefono_alterno',
         placeholder_i18n: 'telefono_alterno',
         requerido: true,

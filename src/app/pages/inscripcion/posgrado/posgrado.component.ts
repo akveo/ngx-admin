@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import { ImplicitAutenticationService } from './../../../@core/utils/implicit_autentication.service';
-import { CampusMidService } from '../../../@core/data/campus_mid.service';
+import { PersonaService } from '../../../@core/data/persona.service';
 import { UtilidadesService } from '../../../@core/utils/utilidades.service';
 
 @Component({
@@ -12,6 +12,7 @@ import { UtilidadesService } from '../../../@core/utils/utilidades.service';
 export class PosgradoComponent implements OnInit {
 
   info_persona_id: any;
+  info_ente_id: any;
   info_info_persona: any;
   step = 0;
   cambioTab = 0;
@@ -21,7 +22,7 @@ export class PosgradoComponent implements OnInit {
 
   constructor(
     private autenticacion: ImplicitAutenticationService,
-    private campusMidService: CampusMidService,
+    private personaService: PersonaService,
     private translate: TranslateService) {
     this.translate = translate;
     this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
@@ -53,17 +54,20 @@ export class PosgradoComponent implements OnInit {
   getInfoPersonaId() {
     interface ResponseId {
       Id: number;
+      Ente: number;
     }
     if (this.autenticacion.live()) {
-      this.campusMidService.get('persona/ConsultaPersona/' + this.autenticacion.getPayload().sub)
+      this.personaService.get('persona/?query=Usuario:' + this.autenticacion.getPayload().sub)
         .subscribe(res => {
           if (res !== null) {
             this.info_info_persona = <ResponseId>res;
             this.info_persona_id = this.info_info_persona.Id;
+            this.info_ente_id = this.info_info_persona.Ente;
           }
         });
     } else  {
       this.info_persona_id = undefined;
+      this.info_ente_id = undefined;
     }
   }
 

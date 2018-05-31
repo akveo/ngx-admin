@@ -12,7 +12,7 @@
                             {{ 'GLOBAL.info_persona' | translate }}
                         </mat-panel-title>
                     </mat-expansion-panel-header>
-                    <ngx-crud-info-persona info_persona_id="{{this.info_persona_id}}" (eventChange)="onChange($event)" (result)="traerInfoPersona($event)"></ngx-crud-info-persona>
+                    <ngx-crud-info-persona info_persona_id={{this.info_persona_id}} (eventChange)="onChange($event)" (result)="traerInfoPersona($event)"></ngx-crud-info-persona>
                 </mat-expansion-panel>
                 <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)" hideToggle="true">
                     <mat-expansion-panel-header>
@@ -28,7 +28,7 @@
                             {{ 'GLOBAL.informacion_contacto' | translate }}
                         </mat-panel-title>
                     </mat-expansion-panel-header>
-                    <ngx-crud-informacion-contacto (eventChange)="onChange($event)" (result)="traerInfoContacto($event)"></ngx-crud-informacion-contacto>
+                    <ngx-crud-informacion-contacto informacion_contacto_id={{this.info_ente_id}} (eventChange)="onChange($event)" (result)="traerInfoContacto($event)"></ngx-crud-informacion-contacto>
                 </mat-expansion-panel>                      
             </nb-tab>        
             <nb-tab tabTitle="{{ 'GLOBAL.hoja_vida' | translate }}" [active]="cambioTab === 1">

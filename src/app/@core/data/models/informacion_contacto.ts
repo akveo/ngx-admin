@@ -8,4 +8,5 @@ export class InformacionContacto {
   EstratoResidencia: number;
   CodigoPostal: string;
   Telefono: string;
+  TelefonoAlterno: string;
 }
