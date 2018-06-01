@@ -17,6 +17,10 @@ const routes: Routes = [{
     loadChildren: './inscripcion/inscripcion.module#InscripcionModule',
     },
     {
+      path: 'idiomas',
+      loadChildren: './idiomas/idiomas.module#IdiomasModule',
+    },
+    {
     path: 'genero',
     loadChildren: './genero/genero.module#GeneroModule',
     },

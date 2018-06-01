@@ -15,6 +15,9 @@ import { InfoCaracteristicaModule } from '../info_caracteristica/info_caracteris
 import { ImplicitAutenticationService } from './../../@core/utils/implicit_autentication.service';
 import {MatExpansionModule} from '@angular/material/expansion';
 import { UtilidadesService } from '../../@core/utils/utilidades.service';
+import { IdiomasModule } from '../idiomas/idiomas.module';
+import { ListIdiomasComponent } from '../idiomas/list-idiomas/list-idiomas.component';
+import { CrudIdiomasComponent } from '../idiomas/crud-idiomas/crud-idiomas.component';
 
 @NgModule({
   imports: [
@@ -26,6 +29,7 @@ import { UtilidadesService } from '../../@core/utils/utilidades.service';
     InfoPersonaModule,
     InfoCaracteristicaModule,
     MatExpansionModule,
+    IdiomasModule,
   ],
   declarations: [
     ...routedComponents,
@@ -38,6 +42,8 @@ import { UtilidadesService } from '../../@core/utils/utilidades.service';
     UtilidadesService,
   ],
   entryComponents: [
+    ListIdiomasComponent,
+    CrudIdiomasComponent,
     CrudInfoPersonaComponent,
     CrudInfoCaracteristicaComponent,
     CrudInformacionContactoComponent,

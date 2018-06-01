@@ -80,6 +80,11 @@
       "inscripcion": "Inscription",
       "inscripcion_posgrado": "Posgrade"
     },
+    "idiomas": {
+      "idiomas": "Languages",
+      "lista_idiomas": "Languages list",
+      "crud_idiomas": "Languages crud"
+    },
     "auth": {
       "auth": "Authentication",
       "login": "Log in",
@@ -184,6 +189,22 @@
     "telefono": "Telephone",
     "placeholder_telefono": "E.g. 5565656",
     "telefono_alternativo": "Alternative telephone",
-    "placeholder_telefono_alternativo": "E.g. 5565656"
+    "placeholder_telefono_alternativo": "E.g. 5565656",
+    "idiomas": "Languages",
+    "placeholder_idiomas": "E.g. Languages",
+    "idioma": "Language",
+    "placeholder_idioma": "E.g. English",
+    "idioma_nativo": "Native language",
+    "placeholder_idioma_nativo": "E.g. No",
+    "idioma_nativo_pregunta": "Is this language your native language?",
+    "placeholder_idioma_nativo_pregunta": "E.g. No",
+    "nivel_escritura": "Writing level",
+    "placeholder_nivel_escritura": "E.g. Middle",
+    "nivel_escucha": "Listening level",
+    "placeholder_nivel_escucha": "E.g. Middle",
+    "nivel_habla": "Speaking level",
+    "placeholder_nivel_habla": "E.g. Middle",
+    "nivel_lectura": "Reading level",
+    "placeholder_nivel_lectura": "E.g. Middle"
   }
 }

@@ -28,7 +28,7 @@ export class PosgradoComponent implements OnInit {
     this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
     });
     this.percentage = 0;
-    this.nForms = 4;
+    this.nForms = 5;
     this.getInfoPersonaId();
   }
 
@@ -49,6 +49,10 @@ export class PosgradoComponent implements OnInit {
 
   traerInfoContacto(event) {
     this.setPercentage(event.percentage, 2);
+  }
+
+  traerInfoIdiomas(event) {
+    this.setPercentage(event.percentage, 3);
   }
 
   getInfoPersonaId() {
@@ -77,6 +81,7 @@ export class PosgradoComponent implements OnInit {
 
   nextTab() {
     this.cambioTab++;
+    this.step = 0;
   }
 
   onChange(event) {
@@ -84,7 +89,6 @@ export class PosgradoComponent implements OnInit {
       if (this.step < 3) {
         this.nextStep();
       }else {
-        this.step = 0;
         this.nextTab();
       }
     }
@@ -96,6 +100,7 @@ export class PosgradoComponent implements OnInit {
     } else if (event.tabTitle === this.translate.instant('GLOBAL.hoja_vida')) {
       this.cambioTab = 1;
     }
+    this.step = 0;
   }
 
   setStep(index: number) {

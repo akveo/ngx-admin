@@ -32,6 +32,14 @@
                 </mat-expansion-panel>                      
             </nb-tab>        
             <nb-tab tabTitle="{{ 'GLOBAL.hoja_vida' | translate }}" [active]="cambioTab === 1">
+                <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle="true">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            {{ 'GLOBAL.idiomas' | translate }}
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <ngx-list-idiomas></ngx-list-idiomas>
+                </mat-expansion-panel>
             </nb-tab>
         </nb-tabset>
       </nb-card-body>

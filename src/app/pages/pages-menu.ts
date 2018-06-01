@@ -22,6 +22,24 @@ export const MENU_ITEMS: MenuItem[] = [
     ],
   },
   {
+    title: 'Idiomas',
+    icon: 'nb-compose',
+    link: '/pages/idiomas',
+    key: 'idiomas',
+    children: [
+      {
+        title: 'Lista Idiomas',
+        link: '/pages/idiomas/list-idiomas',
+        key: 'lista_idiomas',
+      },
+      {
+        title: 'CRUD Idiomas',
+        link: '/pages/idiomas/crud-idiomas',
+        key: 'crud_idiomas',
+      },
+    ],
+  },
+  {
     title: 'Parametricas',
     icon: 'nb-compose',
     link: '/pages/parametricas',
