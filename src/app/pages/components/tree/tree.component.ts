@@ -1,33 +1,33 @@
 import { Component } from '@angular/core';
-import { TreeModel } from 'ng2-tree';
 
 @Component({
   selector: 'ngx-tree',
   templateUrl: './tree.component.html',
+  styleUrls: ['./tree.component.scss'],
 })
 export class TreeComponent {
 
-  tree: TreeModel = {
-    value: 'Programming languages by programming paradigm',
+  nodes = [{
+    name: 'Programming languages by programming paradigm',
     children: [{
-      value: 'Object-oriented programming',
+      name: 'Object-oriented programming',
       children: [{
-        value: 'Java',
+        name: 'Java',
       }, {
-        value: 'C++',
+        name: 'C++',
       }, {
-        value: 'C#',
+        name: 'C#',
       }],
     }, {
-      value: 'Prototype-based programming',
+      name: 'Prototype-based programming',
       children: [{
-        value: 'JavaScript',
+        name: 'JavaScript',
       }, {
-        value: 'CoffeeScript',
+        name: 'CoffeeScript',
       }, {
-        value: 'Lua',
+        name: 'Lua',
       }],
     }],
-  };
+  }];
 
 }
