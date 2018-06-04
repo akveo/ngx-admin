@@ -14,6 +14,7 @@
   /deep/ .leaflet-container {
     height: nb-theme(card-height-small);
     flex: 2;
+    background-color: nb-theme(color-bg);
   }
 
   /deep/ ngx-ec-map-chart {
