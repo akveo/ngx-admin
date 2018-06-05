@@ -22,6 +22,24 @@ export const MENU_ITEMS: MenuItem[] = [
     ],
   },
   {
+    title: 'Formacion Academica',
+    icon: 'nb-compose',
+    link: '/pages/formacion_academica',
+    key: 'formacion_academica',
+    children: [
+      {
+        title: 'Lista Formacion Academica',
+        link: '/pages/formacion_academica/list-formacion_academica',
+        key: 'lista_formacion_academica',
+      },
+      {
+        title: 'CRUD Formacion Academica',
+        link: '/pages/formacion_academica/crud-formacion_academica',
+        key: 'crud_formacion_academica',
+      },
+    ],
+  },
+  {
     title: 'Idiomas',
     icon: 'nb-compose',
     link: '/pages/idiomas',
@@ -36,6 +54,42 @@ export const MENU_ITEMS: MenuItem[] = [
         title: 'CRUD Idiomas',
         link: '/pages/idiomas/crud-idiomas',
         key: 'crud_idiomas',
+      },
+    ],
+  },
+  {
+    title: 'Publicaciones',
+    icon: 'nb-compose',
+    link: '/pages/publicaciones',
+    key: 'publicaciones',
+    children: [
+      {
+        title: 'Lista Publicaciones',
+        link: '/pages/publicaciones/list-publicaciones',
+        key: 'lista_publicaciones',
+      },
+      {
+        title: 'CRUD Publicaciones',
+        link: '/pages/publicaciones/crud-publicaciones',
+        key: 'crud_publicaciones',
+      },
+    ],
+  },
+  {
+    title: 'Experiencia Laboral',
+    icon: 'nb-compose',
+    link: '/pages/experiencia_laboral',
+    key: 'experiencia_laboral',
+    children: [
+      {
+        title: 'Lista Experiencia Laboral',
+        link: '/pages/experiencia_laboral/list-experiencia_laboral',
+        key: 'lista_experiencia_laboral',
+      },
+      {
+        title: 'CRUD Experiencia Laboral',
+        link: '/pages/experiencia_laboral/crud-experiencia_laboral',
+        key: 'crud_experiencia_laboral',
       },
     ],
   },

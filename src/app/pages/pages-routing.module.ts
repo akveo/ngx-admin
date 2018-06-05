@@ -17,9 +17,21 @@ const routes: Routes = [{
     loadChildren: './inscripcion/inscripcion.module#InscripcionModule',
     },
     {
+      path: 'formacion_academica',
+      loadChildren: './formacion_academica/formacion_academica.module#FormacionAcademicaModule',
+    },
+    {
       path: 'idiomas',
       loadChildren: './idiomas/idiomas.module#IdiomasModule',
     },
+    /**{
+      path: 'publicaciones',
+      loadChildren: './publicaciones/publicaciones.module#PublicacionesModule',
+    },
+    {
+      path: 'experiencia_laboral',
+      loadChildren: './experiencia_laboral/experiencia_laboral.module#ExperienciaLaboralModule',
+    },**/
     {
     path: 'genero',
     loadChildren: './genero/genero.module#GeneroModule',

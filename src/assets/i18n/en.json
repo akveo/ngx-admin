@@ -80,10 +80,25 @@
       "inscripcion": "Inscription",
       "inscripcion_posgrado": "Posgrade"
     },
+    "formacion_academica": {
+      "formacion_academica": "Academic training",
+      "lista_formacion_academica": "Academic training list",
+      "crud_formacion_academica": "Academic training crud"
+    },
     "idiomas": {
       "idiomas": "Languages",
       "lista_idiomas": "Languages list",
       "crud_idiomas": "Languages crud"
+    },
+    "publicaciones": {
+      "publicaciones": "Publications",
+      "lista_publicaciones": "Publications list",
+      "crud_publicaciones": "Publications crud"
+    },
+    "experiencica_laboral": {
+      "experiencica_laboral": "Job experience",
+      "lista_experiencica_laboral": "Job experience list",
+      "crud_experiencica_laboral": "Job experience crud"
     },
     "auth": {
       "auth": "Authentication",
@@ -205,6 +220,28 @@
     "nivel_habla": "Speaking level",
     "placeholder_nivel_habla": "E.g. Middle",
     "nivel_lectura": "Reading level",
-    "placeholder_nivel_lectura": "E.g. Middle"
+    "placeholder_nivel_lectura": "E.g. Middle",
+    "formacion_academica": "Academic training",
+    "placeholder_formacion_academica": "E.g. Academic training",
+    "nivel_formacion": "Training level",
+    "placeholder_nivel_formacion": "E.g. Professional",
+    "anio_inicio": "Starting year",
+    "placeholder_anio_inicio": "E.g. 2008",
+    "anio_graduacion": "Graduation year",
+    "placeholder_anio_graduacion": "E.g. 2008",
+    "pais_universidad": "University country",
+    "placeholder_pais_universidad": "E.g. USA",
+    "ciudad_universidad": "University city",
+    "placeholder_ciudad_universidad": "E.g. Washington",
+    "nombre_universidad": "University name",
+    "placeholder_nombre_universidad": "E.g. Francisco José de Caldas Distrital University",
+    "modalidad": "Study mode",
+    "placeholder_modalidad": "E.g. Virtual",
+    "titulo_obtenido": "Obtained title",
+    "placeholder_titulo_obtenido": "E.g. Electronic engineer",
+    "titulo_trabajo_grado": "Thesis title",
+    "placeholder_titulo_trabajo_grado": "E.g. Thesis title",
+    "descripcion_trabajo_grado": "Thesis description",
+    "placeholder_descripcion_trabajo_grado": "E.g. Thesis description"
   }
 }

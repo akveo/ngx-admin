@@ -80,10 +80,25 @@
       "inscripcion": "Inscripción",
       "inscripcion_posgrado": "Posgrado"
     },
+    "formacion_academica": {
+      "formacion_academica": "Formación académica",
+      "lista_formacion_academica": "Listado de formación académica",
+      "crud_formacion_academica": "Crud de formación académica"
+    },
     "idiomas": {
       "idiomas": "Idiomas",
       "lista_idiomas": "Listado de idiomas",
       "crud_idiomas": "Crud de idiomas"
+    },
+    "publicaciones": {
+      "publicaciones": "Publicaciones",
+      "lista_publicaciones": "Listado de publicaciones",
+      "crud_publicaciones": "Crud de publicaciones"
+    },
+    "experiencica_laboral": {
+      "experiencica_laboral": "Experiencia laboral",
+      "lista_experiencica_laboral": "Listado de experiencia laboral",
+      "crud_experiencica_laboral": "Crud de experiencia laboral"
     },
     "auth": {
       "auth": "Autenticación",
@@ -205,6 +220,28 @@
     "nivel_habla": "Nivel de habla",
     "placeholder_nivel_habla": "Ej: Medio",
     "nivel_lectura": "Nivel de lectura",
-    "placeholder_nivel_lectura": "Ej: Medio"
+    "placeholder_nivel_lectura": "Ej: Medio",
+    "formacion_academica": "Formación académica",
+    "placeholder_formacion_academica": "Ej. Formación académica",
+    "nivel_formacion": "Nivel de formación",
+    "placeholder_nivel_formacion": "Ej. Profesional",
+    "anio_inicio": "Año de inicio",
+    "placeholder_anio_inicio": "Ej. 2008",
+    "anio_graduacion": "Año de graduación",
+    "placeholder_anio_graduacion": "Ej. 2008",
+    "pais_universidad": "País de la universidad",
+    "placeholder_pais_universidad": "Ej. Colombia",
+    "ciudad_universidad": "Ciudad de la universidad",
+    "placeholder_ciudad_universidad": "Ej. Bogotá",
+    "nombre_universidad": "Nombre de la universidad",
+    "placeholder_nombre_universidad": "Ej. Universidad Distrital Francisco José de Caldas",
+    "modalidad": "Modalidad de estudio",
+    "placeholder_modalidad": "Ej. Virtual",
+    "titulo_obtenido": "Título obtenido",
+    "placeholder_titulo_obtenido": "Ej. Ingeniero civil",
+    "titulo_trabajo_grado": "Título del trabajo de grado",
+    "placeholder_titulo_trabajo_grado": "Ej. Título del trabajo de grado",
+    "descripcion_trabajo_grado": "Descripción del trabajo de grado",
+    "placeholder_descripcion_trabajo_grado": "Ej. Descripción del trabajo de grado"
   }
 }

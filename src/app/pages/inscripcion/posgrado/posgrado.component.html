@@ -35,10 +35,32 @@
                 <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle="true">
                     <mat-expansion-panel-header>
                         <mat-panel-title>
+                            {{ 'GLOBAL.formacion_academica' | translate }}
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <ngx-list-formacion-academica></ngx-list-formacion-academica>
+                </mat-expansion-panel>
+                <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)" hideToggle="true">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
                             {{ 'GLOBAL.idiomas' | translate }}
                         </mat-panel-title>
                     </mat-expansion-panel-header>
                     <ngx-list-idiomas></ngx-list-idiomas>
+                </mat-expansion-panel>
+                <mat-expansion-panel [expanded]="step === 2" (opened)="setStep(2)" hideToggle="true">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            {{ 'GLOBAL.experiencia_laboral' | translate }}
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                </mat-expansion-panel>
+                <mat-expansion-panel [expanded]="step === 3" (opened)="setStep(3)" hideToggle="true">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            {{ 'GLOBAL.publicaciones' | translate }}
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
                 </mat-expansion-panel>
             </nb-tab>
         </nb-tabset>

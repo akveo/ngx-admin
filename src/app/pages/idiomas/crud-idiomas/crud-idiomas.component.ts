@@ -41,7 +41,7 @@ export class CrudIdiomasComponent implements OnInit {
   }
 
   construirForm() {
-    // this.formInfoPersona.titulo = this.translate.instant('GLOBAL.idiomas');
+    // this.formInfoIdioma.titulo = this.translate.instant('GLOBAL.idiomas');
     this.formInfoIdioma.btn = this.translate.instant('GLOBAL.guardar');
     for (let i = 0; i < this.formInfoIdioma.campos.length; i++) {
       this.formInfoIdioma.campos[i].label = this.translate.instant('GLOBAL.' + this.formInfoIdioma.campos[i].label_i18n);

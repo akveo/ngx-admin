@@ -18,6 +18,9 @@ import { UtilidadesService } from '../../@core/utils/utilidades.service';
 import { IdiomasModule } from '../idiomas/idiomas.module';
 import { ListIdiomasComponent } from '../idiomas/list-idiomas/list-idiomas.component';
 import { CrudIdiomasComponent } from '../idiomas/crud-idiomas/crud-idiomas.component';
+import { FormacionAcademicaModule } from '../formacion_academica/formacion_academica.module';
+import { ListFormacionAcademicaComponent } from '../formacion_academica/list-formacion_academica/list-formacion_academica.component';
+import { CrudFormacionAcademicaComponent } from '../formacion_academica/crud-formacion_academica/crud-formacion_academica.component';
 
 @NgModule({
   imports: [
@@ -30,6 +33,7 @@ import { CrudIdiomasComponent } from '../idiomas/crud-idiomas/crud-idiomas.compo
     InfoCaracteristicaModule,
     MatExpansionModule,
     IdiomasModule,
+    FormacionAcademicaModule,
   ],
   declarations: [
     ...routedComponents,
@@ -44,6 +48,8 @@ import { CrudIdiomasComponent } from '../idiomas/crud-idiomas/crud-idiomas.compo
   entryComponents: [
     ListIdiomasComponent,
     CrudIdiomasComponent,
+    ListFormacionAcademicaComponent,
+    CrudFormacionAcademicaComponent,
     CrudInfoPersonaComponent,
     CrudInfoCaracteristicaComponent,
     CrudInformacionContactoComponent,
