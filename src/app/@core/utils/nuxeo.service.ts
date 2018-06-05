@@ -86,26 +86,22 @@ export class NuxeoService {
                     password: 'S1st3m4s04S=Fr331P4',
                 },
             });
-            let url = '';
-            let error = null;
             if (docid != null) {
                 NuxeoService.nuxeo.header('X-NXDocumentProperties', '*');
                 NuxeoService.nuxeo.request('/id/' + docid)
                     .get()
                     .then(function (response) {
                         response.fetchBlob()
-                            .then(function (blob) {
+                            .then(function (blob: any) {
                                 url = blob.url
                                 resolve(blob);
                             })
                             .catch(function (response2) {
                                 reject('Error: ' + response2);
-                                throw error;
                             });
                     })
                     .catch(function (response) {
                         reject('Error: ' + response);
-                        throw error;
                     });
             };
         });

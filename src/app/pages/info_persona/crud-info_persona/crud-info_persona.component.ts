@@ -43,7 +43,6 @@ export class CrudInfoPersonaComponent implements OnInit {
     private translate: TranslateService,
     private campusMidService: CampusMidService,
     private autenticationService: ImplicitAutenticationService,
-    private nuxeoService: NuxeoService,
     private personaService: PersonaService,
     private documentoService: DocumentoService,
     private toasterService: ToasterService) {
@@ -176,23 +175,24 @@ export class CrudInfoPersonaComponent implements OnInit {
             .then(function (resolveOutput) {
               if (resolveOutput !== null) {
                 const documento = <Documento>resolveOutput;
-                console.info(resolveOutput);
+                console.info(documento);
+                this.info_info_persona.Foto = documento.Id;
+                this.campusMidService.post('persona/GuardarPersona', this.info_info_persona)
+                .subscribe(res => {
+                  this.info_info_persona = <InfoPersona>res;
+                  this.eventChange.emit(true);
+                  this.showToast('info', this.translate.instant('GLOBAL.crear'),
+                    this.translate.instant('GLOBAL.info_persona') + ' ' + this.translate.instant('GLOBAL.confirmarCrear'));
+                });
               }
-
             }, function (rejectOutput) {
               // console.info(rejectOutput);
             });
-          this.campusMidService.post('persona/GuardarPersona', this.info_info_persona)
-            .subscribe(res => {
-              this.info_info_persona = <InfoPersona>res;
-              this.eventChange.emit(true);
-              this.showToast('info', this.translate.instant('GLOBAL.crear'),
-                this.translate.instant('GLOBAL.info_persona') + ' ' + this.translate.instant('GLOBAL.confirmarCrear'));
-            });
+
         }
       });
   }
-
+  th
   ngOnInit() {
     this.loadInfoPersona();
   }
