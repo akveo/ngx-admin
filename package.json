@@ -47,7 +47,7 @@
     "@swimlane/ngx-charts": "7.0.1",
     "angular-tree-component": "7.2.0",
     "angular2-chartjs": "0.4.1",
-    "angular2-toaster": "4.0.1",
+    "angular2-toaster": "6.0.0",
     "bootstrap": "4.0.0",
     "chart.js": "2.7.1",
     "ckeditor": "4.7.3",
