@@ -118,13 +118,22 @@
             </div>
           </div>
           <div class="btn-group btn-group-toggle btn-divided-group btn-group-full-width" data-toggle="buttons">
-            <label ngbButtonLabel class="btn btn-primary" [class.active]="dividedButtonGroupTwo.left">
+            <label ngbButtonLabel
+                   class="btn btn-primary"
+                   [class.active]="dividedButtonGroupTwo.left"
+                   [class.focus]="dividedButtonGroupTwo.left">
               <input ngbButton type="checkbox" [(ngModel)]="dividedButtonGroupTwo.left"> Left
             </label>
-            <label ngbButtonLabel class="btn btn-primary" [class.active]="dividedButtonGroupTwo.middle">
+            <label ngbButtonLabel
+                   class="btn btn-primary"
+                   [class.active]="dividedButtonGroupTwo.middle"
+                   [class.focus]="dividedButtonGroupTwo.middle">
               <input ngbButton type="checkbox" [(ngModel)]="dividedButtonGroupTwo.middle"> Middle
             </label>
-            <label ngbButtonLabel class="btn btn-primary" [class.active]="dividedButtonGroupTwo.right">
+            <label ngbButtonLabel
+                   class="btn btn-primary"
+                   [class.active]="dividedButtonGroupTwo.right"
+                   [class.focus]="dividedButtonGroupTwo.right">
               <input ngbButton type="checkbox" [(ngModel)]="dividedButtonGroupTwo.right"> Right
             </label>
           </div>
