@@ -2,9 +2,11 @@ import { EstadoCivil } from './../../../@core/data/models/estado_civil';
 import { ImplicitAutenticationService } from '../../../@core/utils/implicit_autentication.service';
 import { NuxeoService } from '../../../@core/utils/nuxeo.service';
 import { Genero } from './../../../@core/data/models/genero';
+import { Documento } from './../../../@core/data/models/documento';
 import { InfoPersona } from './../../../@core/data/models/info_persona';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { PersonaService } from '../../../@core/data/persona.service';
+import { DocumentoService } from '../../../@core/data/documento.service';
 import { CampusMidService } from '../../../@core/data/campus_mid.service';
 import { FORM_INFO_PERSONA } from './form-info_persona';
 import { ToasterService, ToasterConfig, Toast, BodyOutputType } from 'angular2-toaster';
@@ -43,6 +45,7 @@ export class CrudInfoPersonaComponent implements OnInit {
     private autenticationService: ImplicitAutenticationService,
     private nuxeoService: NuxeoService,
     private personaService: PersonaService,
+    private documentoService: DocumentoService,
     private toasterService: ToasterService) {
     this.formInfoPersona = FORM_INFO_PERSONA;
     this.construirForm();
@@ -106,6 +109,16 @@ export class CrudInfoPersonaComponent implements OnInit {
         .subscribe(res => {
           if (res !== null) {
             this.info_info_persona = <InfoPersona>res;
+            // NuxeoService.cargar(documento.Enlace, this.formInfoPersona.campos[this.getIndexForm('Foto')].url)
+            // .then(function (resolve: any) {
+            //   if (resolve.url !== null) {
+            //     console.info(resolve);
+            //     // this.formInfoPersona.campos[this.getIndexForm('Foto')].url = resolve.url;
+            //     // this.nuxeoService.cargar(documento.Enlace)
+            //   }
+            // }, function (reject) {
+            //   console.info(reject);
+            // });
           }
         });
     } else {
@@ -158,12 +171,16 @@ export class CrudInfoPersonaComponent implements OnInit {
           const array = []
           this.info_info_persona = <InfoPersona>infoPersona;
           array.push({ nombre: this.autenticationService.getPayload().sub, file: this.info_info_persona.Foto, IdDocumento: 1 });
-          // this.filesUp = array;
-          this.nuxeoService.guardar(array)
+          //          this.filesUp = array;
+          NuxeoService.guardar(array, this.documentoService)
             .then(function (resolveOutput) {
-              console.info(resolveOutput);
+              if (resolveOutput !== null) {
+                const documento = <Documento>resolveOutput;
+                console.info(resolveOutput);
+              }
+
             }, function (rejectOutput) {
-              console.info(rejectOutput);
+              // console.info(rejectOutput);
             });
           this.campusMidService.post('persona/GuardarPersona', this.info_info_persona)
             .subscribe(res => {
