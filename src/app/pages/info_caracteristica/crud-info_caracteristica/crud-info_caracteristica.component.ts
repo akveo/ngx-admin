@@ -33,6 +33,8 @@ export class CrudInfoCaracteristicaComponent implements OnInit {
   info_info_caracteristica: InfoCaracteristica;
   formInfoCaracteristica: any;
   regInfoCaracteristica: any;
+  paisSeleccionado: any;
+  departamentoSeleccionado: any;
   clean: boolean;
 
   constructor(
@@ -64,6 +66,16 @@ export class CrudInfoCaracteristicaComponent implements OnInit {
     this.translate.use(language);
   }
 
+  getSeleccion(event) {
+    if (event.nombre === 'PaisNacimiento') {
+      this.paisSeleccionado = event.valor;
+      this.loadOptionsDepartamentoNacimiento();
+    } else if (event.nombre === 'DepartamentoNacimiento') {
+      this.departamentoSeleccionado = event.valor;
+      this.loadOptionsCiudadNacimiento();
+    }
+  }
+
   loadOptionsGrupoEtnico(): void {
     let grupoEtnico: Array<any> = [];
       this.personaService.get('grupo_etnico/?limit=0')
@@ -93,6 +105,38 @@ export class CrudInfoCaracteristicaComponent implements OnInit {
           }
           this.formInfoCaracteristica.campos[ this.getIndexForm('PaisNacimiento') ].opciones = paisNacimiento;
         });
+  }
+  loadOptionsDepartamentoNacimiento(): void {
+    let consultaHijos: Array<any> = [];
+    const departamentoNacimiento: Array<any> = [];
+      if (this.paisSeleccionado) {
+        this.ubicacionesService.get('relacion_lugares/?query=LugarPadre.Id:' + this.paisSeleccionado.Id)
+          .subscribe(res => {
+            if (res !== null) {
+              consultaHijos = <Array<Lugar>>res;
+              for (let i = 0; i < consultaHijos.length; i++) {
+                departamentoNacimiento.push(consultaHijos[i].LugarHijo);
+              }
+            }
+            this.formInfoCaracteristica.campos[ this.getIndexForm('DepartamentoNacimiento') ].opciones = departamentoNacimiento;
+          });
+      }
+  }
+  loadOptionsCiudadNacimiento(): void {
+    let consultaHijos: Array<any> = [];
+    const ciudadNacimiento: Array<any> = [];
+      if (this.departamentoSeleccionado) {
+        this.ubicacionesService.get('relacion_lugares/?query=LugarPadre.Id:' + this.departamentoSeleccionado.Id)
+          .subscribe(res => {
+            if (res !== null) {
+              consultaHijos = <Array<Lugar>>res;
+              for (let i = 0; i < consultaHijos.length; i++) {
+                ciudadNacimiento.push(consultaHijos[i].LugarHijo);
+              }
+            }
+            this.formInfoCaracteristica.campos[ this.getIndexForm('CiudadNacimiento') ].opciones = ciudadNacimiento;
+          });
+      }
   }
 
   getIndexForm(nombre: String): number {

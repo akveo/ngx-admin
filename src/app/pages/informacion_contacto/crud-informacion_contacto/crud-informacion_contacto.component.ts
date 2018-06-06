@@ -31,7 +31,8 @@ export class CrudInformacionContactoComponent implements OnInit {
   formInformacionContacto: any;
   regInformacionContacto: any;
   clean: boolean;
-  paisSelecccionado: any;
+  paisSeleccionado: any;
+  departamentoSeleccionado: any;
   datosPost: any;
 
   constructor(
@@ -60,9 +61,14 @@ export class CrudInformacionContactoComponent implements OnInit {
     this.translate.use(language);
   }
 
-  getPais(event) {
-    this.paisSelecccionado = event.valor;
-    this.loadOptionsCiudadResidencia();
+  getSeleccion(event) {
+    if (event.nombre === 'PaisResidencia') {
+      this.paisSeleccionado = event.valor;
+      this.loadOptionsDepartamentoResidencia();
+    } else if (event.nombre === 'DepartamentoResidencia') {
+      this.departamentoSeleccionado = event.valor;
+      this.loadOptionsCiudadResidencia();
+    }
   }
 
   loadOptionsPaisResidencia(): void {
@@ -75,11 +81,27 @@ export class CrudInformacionContactoComponent implements OnInit {
           this.formInformacionContacto.campos[ this.getIndexForm('PaisResidencia') ].opciones = paisResidencia;
         });
   }
+  loadOptionsDepartamentoResidencia(): void {
+    let consultaHijos: Array<any> = [];
+    const departamentoResidencia: Array<any> = [];
+      if (this.paisSeleccionado) {
+        this.ubicacionesService.get('relacion_lugares/?query=LugarPadre.Id:' + this.paisSeleccionado.Id)
+          .subscribe(res => {
+            if (res !== null) {
+              consultaHijos = <Array<Lugar>>res;
+              for (let i = 0; i < consultaHijos.length; i++) {
+                departamentoResidencia.push(consultaHijos[i].LugarHijo);
+              }
+            }
+            this.formInformacionContacto.campos[ this.getIndexForm('DepartamentoResidencia') ].opciones = departamentoResidencia;
+          });
+      }
+  }
   loadOptionsCiudadResidencia(): void {
     let consultaHijos: Array<any> = [];
     const ciudadResidencia: Array<any> = [];
-      if (this.paisSelecccionado) {
-        this.ubicacionesService.get('relacion_lugares/?query=LugarPadre.Id:' + this.paisSelecccionado.Id)
+      if (this.departamentoSeleccionado) {
+        this.ubicacionesService.get('relacion_lugares/?query=LugarPadre.Id:' + this.departamentoSeleccionado.Id)
           .subscribe(res => {
             if (res !== null) {
               consultaHijos = <Array<Lugar>>res;

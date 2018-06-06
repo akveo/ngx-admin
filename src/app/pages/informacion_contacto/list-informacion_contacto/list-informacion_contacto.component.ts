@@ -52,6 +52,13 @@ export class ListInformacionContactoComponent implements OnInit {
             return value;
           },
         },
+        DepartamentoResidencia: {
+          title: this.translate.instant('GLOBAL.departamento_residencia'),
+          // type: 'lugar;',
+          valuePrepareFunction: (value) => {
+            return value;
+          },
+        },
         CiudadResidencia: {
           title: this.translate.instant('GLOBAL.ciudad_residencia'),
           // type: 'lugar;',
@@ -82,6 +89,13 @@ export class ListInformacionContactoComponent implements OnInit {
         },
         Telefono: {
           title: this.translate.instant('GLOBAL.telefono'),
+          // type: 'string;',
+          valuePrepareFunction: (value) => {
+            return value;
+          },
+        },
+        TelefonoAlterno: {
+          title: this.translate.instant('GLOBAL.telefono_alternativo'),
           // type: 'string;',
           valuePrepareFunction: (value) => {
             return value;

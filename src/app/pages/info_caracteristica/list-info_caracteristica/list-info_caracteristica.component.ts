@@ -73,6 +73,27 @@ export class ListInfoCaracteristicaComponent implements OnInit {
             return value;
           },
         },
+        PaisNacimiento: {
+          title: this.translate.instant('GLOBAL.pais_nacimiento'),
+          // type: 'Lugar;',
+          valuePrepareFunction: (value) => {
+            return value;
+          },
+        },
+        DepartamentoNacimiento: {
+          title: this.translate.instant('GLOBAL.departamento_nacimiento'),
+          // type: 'Lugar;',
+          valuePrepareFunction: (value) => {
+            return value;
+          },
+        },
+        CiudadNacimiento: {
+          title: this.translate.instant('GLOBAL.ciudad_nacimiento'),
+          // type: 'Lugar;',
+          valuePrepareFunction: (value) => {
+            return value;
+          },
+        },
       },
     };
   }
