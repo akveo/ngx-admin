@@ -36,6 +36,7 @@ export class CrudInfoCaracteristicaComponent implements OnInit {
   paisSeleccionado: any;
   departamentoSeleccionado: any;
   clean: boolean;
+  denied_acces: boolean = false;
 
   constructor(
     private translate: TranslateService,
@@ -134,7 +135,7 @@ export class CrudInfoCaracteristicaComponent implements OnInit {
                 ciudadNacimiento.push(consultaHijos[i].LugarHijo);
               }
             }
-            this.formInfoCaracteristica.campos[ this.getIndexForm('CiudadNacimiento') ].opciones = ciudadNacimiento;
+            this.formInfoCaracteristica.campos[ this.getIndexForm('Lugar') ].opciones = ciudadNacimiento;
           });
       }
   }
@@ -153,6 +154,8 @@ export class CrudInfoCaracteristicaComponent implements OnInit {
   public loadInfoCaracteristica(): void {
     if (this.info_caracteristica_id !== undefined && this.info_caracteristica_id !== 0 &&
       this.info_caracteristica_id.toString() !== '') {
+      this.info_info_caracteristica = new InfoCaracteristica();
+      this.info_info_caracteristica.Ente = this.info_caracteristica_id;
       this.campusMidService.get('info_caracteristica/?query=id:' + this.info_caracteristica_id)
         .subscribe(res => {
           if (res !== null) {
@@ -162,6 +165,7 @@ export class CrudInfoCaracteristicaComponent implements OnInit {
     } else  {
       this.info_info_caracteristica = undefined;
       this.clean = !this.clean;
+      this.denied_acces = true; //  no muestra el formulario a menos que se le pase un id del ente info_caracteristica_id
     }
   }
 
@@ -180,7 +184,7 @@ export class CrudInfoCaracteristicaComponent implements OnInit {
     .then((willDelete) => {
       if (willDelete.value) {
         this.info_info_caracteristica = <InfoCaracteristica>infoCaracteristica;
-        this.campusMidService.put('info_caracteristica', this.info_info_caracteristica)
+        this.campusMidService.put('persona/DatosComplementariosPersona', this.info_info_caracteristica)
           .subscribe(res => {
             this.loadInfoCaracteristica();
             this.eventChange.emit(true);
@@ -207,7 +211,7 @@ export class CrudInfoCaracteristicaComponent implements OnInit {
     .then((willDelete) => {
       if (willDelete.value) {
         this.info_info_caracteristica = <InfoCaracteristica>infoCaracteristica;
-        this.campusMidService.post('info_caracteristica', this.info_info_caracteristica)
+        this.campusMidService.post('persona/DatosComplementariosPersona', this.info_info_caracteristica)
           .subscribe(res => {
             this.info_info_caracteristica = <InfoCaracteristica>res;
             this.eventChange.emit(true);
@@ -225,7 +229,7 @@ export class CrudInfoCaracteristicaComponent implements OnInit {
 
   validarForm(event) {
     if (event.valid) {
-      if (this.info_info_caracteristica === undefined) {
+      if (this.info_info_caracteristica === undefined && !this.denied_acces) {
         this.createInfoCaracteristica(event.data.InfoCaracteristica);
       } else {
         this.updateInfoCaracteristica(event.data.InfoCaracteristica);
