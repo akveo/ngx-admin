@@ -27,11 +27,11 @@ const routes: Routes = [{
     /**{
       path: 'publicaciones',
       loadChildren: './publicaciones/publicaciones.module#PublicacionesModule',
-    },
+    },**/
     {
       path: 'experiencia_laboral',
       loadChildren: './experiencia_laboral/experiencia_laboral.module#ExperienciaLaboralModule',
-    },**/
+    },
     {
     path: 'genero',
     loadChildren: './genero/genero.module#GeneroModule',

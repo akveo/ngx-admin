@@ -248,6 +248,22 @@
     "titulo_trabajo_grado": "Thesis title",
     "placeholder_titulo_trabajo_grado": "E.g. Thesis title",
     "descripcion_trabajo_grado": "Thesis description",
-    "placeholder_descripcion_trabajo_grado": "E.g. Thesis description"
+    "placeholder_descripcion_trabajo_grado": "E.g. Thesis description",
+    "experiencica_laboral": "Job experience",
+    "placeholder_experiencia_laboral": "E.g. Job experience",
+    "nombre_empresa": "Company name",
+    "placeholder_nombre_empresa": "E.g. Francisco José de Caldas Distrital University",
+    "direccion_empresa": "Company address",
+    "placeholder_direccion_empresa": "E.g. St. unkwon # 123",
+    "correo_empresa": "Company e-mail",
+    "placeholder_correo_empresa": "E.g. something@something.com",
+    "telefono_empresa": "Company telephone",
+    "placeholder_telefono_empresa": "E.g. 55555555",
+    "anio_fin": "Ending date",
+    "placeholder_anio_fin": "E.g. 2008",
+    "cargo": "Role",
+    "placeholder_cargo": "E.g. Teacher",
+    "descripcion_cargo": "Description of the role and its functions",
+    "placeholder_descripcion_cargo": "E.g. Description of the role and its functions"
   }
 }

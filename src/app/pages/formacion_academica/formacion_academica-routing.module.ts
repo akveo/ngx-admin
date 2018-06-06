@@ -8,10 +8,10 @@ const routes: Routes = [{
   path: '',
   component: FormacionAcademicaComponent,
   children: [{
-    path: 'list-idiomas',
+    path: 'list-formacion_academica',
     component: ListFormacionAcademicaComponent,
   }, {
-    path: 'crud-idiomas',
+    path: 'crud-formacion_academica',
     component: CrudFormacionAcademicaComponent,
   }],
 }];

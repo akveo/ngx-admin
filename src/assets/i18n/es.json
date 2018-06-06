@@ -248,6 +248,22 @@
     "titulo_trabajo_grado": "Título del trabajo de grado",
     "placeholder_titulo_trabajo_grado": "Ej. Título del trabajo de grado",
     "descripcion_trabajo_grado": "Descripción del trabajo de grado",
-    "placeholder_descripcion_trabajo_grado": "Ej. Descripción del trabajo de grado"
+    "placeholder_descripcion_trabajo_grado": "Ej. Descripción del trabajo de grado",
+    "experiencia_laboral": "Experiencia laboral",
+    "placeholder_experiencia_laboral": "Ej. Experiencia laboral",
+    "nombre_empresa": "Nombre de la empresa",
+    "placeholder_nombre_empresa": "Ej. Universidad Distrital Francisco José de Caldas",
+    "direccion_empresa": "Dirección de la empresa",
+    "placeholder_direccion_empresa": "Ej: Calle 123 # 123 - 123",
+    "correo_empresa": "Correo electrónico de la empresa",
+    "placeholder_correo_empresa": "Ej: algo@algo.com",
+    "telefono_empresa": "Teléfono de la empresa",
+    "placeholder_telefono_empresa": "Ej: 55555555",
+    "anio_fin": "Año de finalización",
+    "placeholder_anio_fin": "Ej. 2008",
+    "cargo": "Cargo",
+    "placeholder_cargo": "Ej. Docente",
+    "descripcion_cargo": "Descripción del cargo y sus funciones",
+    "placeholder_descripcion_cargo": "Ej. Descripción del cargo y sus funciones"
   }
 }

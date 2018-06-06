@@ -21,6 +21,9 @@ import { CrudIdiomasComponent } from '../idiomas/crud-idiomas/crud-idiomas.compo
 import { FormacionAcademicaModule } from '../formacion_academica/formacion_academica.module';
 import { ListFormacionAcademicaComponent } from '../formacion_academica/list-formacion_academica/list-formacion_academica.component';
 import { CrudFormacionAcademicaComponent } from '../formacion_academica/crud-formacion_academica/crud-formacion_academica.component';
+import { ExperienciaLaboralModule } from '../experiencia_laboral/experiencia_laboral.module';
+import { ListExperienciaLaboralComponent } from '../experiencia_laboral/list-experiencia_laboral/list-experiencia_laboral.component';
+import { CrudExperienciaLaboralComponent } from '../experiencia_laboral/crud-experiencia_laboral/crud-experiencia_laboral.component';
 
 @NgModule({
   imports: [
@@ -34,6 +37,7 @@ import { CrudFormacionAcademicaComponent } from '../formacion_academica/crud-for
     MatExpansionModule,
     IdiomasModule,
     FormacionAcademicaModule,
+    ExperienciaLaboralModule,
   ],
   declarations: [
     ...routedComponents,
@@ -50,6 +54,8 @@ import { CrudFormacionAcademicaComponent } from '../formacion_academica/crud-for
     CrudIdiomasComponent,
     ListFormacionAcademicaComponent,
     CrudFormacionAcademicaComponent,
+    ListExperienciaLaboralComponent,
+    CrudExperienciaLaboralComponent,
     CrudInfoPersonaComponent,
     CrudInfoCaracteristicaComponent,
     CrudInformacionContactoComponent,
