@@ -20,7 +20,7 @@
                             {{ 'GLOBAL.info_caracteristica' | translate }}
                         </mat-panel-title>
                     </mat-expansion-panel-header>
-                    <ngx-crud-info-caracteristica (eventChange)="onChange($event)" (result)="traerInfoCaracteristica($event)"></ngx-crud-info-caracteristica>
+                    <ngx-crud-info-caracteristica info_caracteristica_id={{this.info_ente_id}} (eventChange)="onChange($event)" (result)="traerInfoCaracteristica($event)"></ngx-crud-info-caracteristica>
                 </mat-expansion-panel>
                 <mat-expansion-panel [expanded]="step === 2" (opened)="setStep(2)" hideToggle="true">
                     <mat-expansion-panel-header>
@@ -29,8 +29,8 @@
                         </mat-panel-title>
                     </mat-expansion-panel-header>
                     <ngx-crud-informacion-contacto informacion_contacto_id={{this.info_ente_id}} (eventChange)="onChange($event)" (result)="traerInfoContacto($event)"></ngx-crud-informacion-contacto>
-                </mat-expansion-panel>                      
-            </nb-tab>        
+                </mat-expansion-panel>
+            </nb-tab>
             <nb-tab tabTitle="{{ 'GLOBAL.hoja_vida' | translate }}" [active]="cambioTab === 1">
                 <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle="true">
                     <mat-expansion-panel-header>
