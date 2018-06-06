@@ -45,6 +45,7 @@ export class CrudInfoPersonaComponent implements OnInit {
     private autenticationService: ImplicitAutenticationService,
     private personaService: PersonaService,
     private documentoService: DocumentoService,
+    private nuxeoService: NuxeoService,
     private toasterService: ToasterService) {
     this.formInfoPersona = FORM_INFO_PERSONA;
     this.construirForm();
@@ -170,25 +171,20 @@ export class CrudInfoPersonaComponent implements OnInit {
           const array = []
           this.info_info_persona = <InfoPersona>infoPersona;
           array.push({ nombre: this.autenticationService.getPayload().sub, file: this.info_info_persona.Foto, IdDocumento: 1 });
-          //          this.filesUp = array;
-          NuxeoService.guardar(array, this.documentoService)
-            .then(function (resolveOutput) {
-              if (resolveOutput !== null) {
-                const documento = <Documento>resolveOutput;
-                console.info(documento);
-                this.info_info_persona.Foto = documento.Id;
-                this.campusMidService.post('persona/GuardarPersona', this.info_info_persona)
+          this.nuxeoService.getDocumentos$(array, this.documentoService)
+            .subscribe(response => {
+              const foto = <Documento[]>response;
+              this.info_info_persona.Foto = foto[0].Id + '';
+              this.info_info_persona.Usuario = this.autenticationService.getPayload().sub;
+              this.campusMidService.post('persona/GuardarPersona', this.info_info_persona)
                 .subscribe(res => {
+                  console.info(res);
                   this.info_info_persona = <InfoPersona>res;
                   this.eventChange.emit(true);
                   this.showToast('info', this.translate.instant('GLOBAL.crear'),
                     this.translate.instant('GLOBAL.info_persona') + ' ' + this.translate.instant('GLOBAL.confirmarCrear'));
                 });
-              }
-            }, function (rejectOutput) {
-              // console.info(rejectOutput);
-            });
-
+            })
         }
       });
   }
@@ -227,17 +223,6 @@ export class CrudInfoPersonaComponent implements OnInit {
       bodyOutputType: BodyOutputType.TrustedHtml,
     };
     this.toasterService.popAsync(toast);
-  }
-
-  // Nuxeo functions
-  guardarFileService(event) {
-    console.info('file', event);
-    this.uidFile = event.uid;
-  }
-  getUrlFile(event) {
-    console.info('url', event);
-    this.showToast('info', this.translate.instant('GLOBAL.crear'),
-      this.translate.instant('GLOBAL.alerta_documental_image'));
   }
 
 }

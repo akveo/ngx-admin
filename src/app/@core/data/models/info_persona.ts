@@ -9,6 +9,7 @@ export class InfoPersona {
   SegundoApellido: string;
   FechaNacimiento: Date;
   Foto: string;
+  Usuario: string;
   EstadoCivil: EstadoCivil;
   Genero: Genero;
 }
