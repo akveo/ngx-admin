@@ -12,13 +12,8 @@ export class NuxeoService {
     private documentos$ = new Subject<Documento[]>();
     private documentos: Documento[];
 
-    constructor(){
+    constructor() {
         this.documentos = [];
-    }
-
-    private addDocumento(documento: Documento) {
-        this.documentos.push(documento);
-        this.documentos$.next(this.documentos);
     }
 
     public getDocumentos$(file, documentoService): Observable<Documento[]> {
@@ -27,6 +22,7 @@ export class NuxeoService {
     }
 
     saveFiles(files, documentoService, nuxeoservice) {
+        this.documentos$.next(this.documentos);
         NuxeoService.nuxeo = new Nuxeo({
             baseURL: GENERAL.ENTORNO.NUXEO.PATH,
             auth: {
@@ -38,55 +34,56 @@ export class NuxeoService {
         NuxeoService.nuxeo.connect()
             .then(function (client) {
                 files.forEach(file => {
-                documentoService.get('tipo_documento/' + file.IdDocumento)
-                    .subscribe(res => {
-                        if (res !== null) {
-                            const tipoDocumento = <TipoDocumento>res;
-                            NuxeoService.nuxeo.operation('Document.Create')
-                                .params({
-                                    type: tipoDocumento.Extension,
-                                    name: file.nombre,
-                                    properties: 'dc:title=' + file.nombre,
-                                })
-                                .input(tipoDocumento.Workspace)
-                                .execute()
-                                .then(function (doc) {
-                                    const nuxeoBlob = new Nuxeo.Blob({ content: file.file });
-                                    NuxeoService.nuxeo.batchUpload()
-                                        .upload(nuxeoBlob)
-                                        .then(function (response) {
-                                            file.uid = doc.uid
-                                            NuxeoService.nuxeo.operation('Blob.AttachOnDocument')
-                                                .param('document', doc.uid)
-                                                .input(response.blob)
-                                                .execute()
-                                                .then(function (respuesta) {
-                                                    let documentoPost = new Documento;
-                                                    documentoPost.Enlace = file.uid;
-                                                    documentoPost.Nombre = file.nombre;
-                                                    documentoPost.TipoDocumento = tipoDocumento;
-                                                    documentoService.post('documento', documentoPost)
-                                                    .subscribe(resuestaPost => {
-                                                        nuxeoservice.addDocumento(resuestaPost);
-                                                    })
+                    documentoService.get('tipo_documento/' + file.IdDocumento)
+                        .subscribe(res => {
+                            if (res !== null) {
+                                const tipoDocumento = <TipoDocumento>res;
+                                NuxeoService.nuxeo.operation('Document.Create')
+                                    .params({
+                                        type: tipoDocumento.Extension,
+                                        name: file.nombre,
+                                        properties: 'dc:title=' + file.nombre,
+                                    })
+                                    .input(tipoDocumento.Workspace)
+                                    .execute()
+                                    .then(function (doc) {
+                                        const nuxeoBlob = new Nuxeo.Blob({ content: file.file });
+                                        NuxeoService.nuxeo.batchUpload()
+                                            .upload(nuxeoBlob)
+                                            .then(function (response) {
+                                                file.uid = doc.uid
+                                                NuxeoService.nuxeo.operation('Blob.AttachOnDocument')
+                                                    .param('document', doc.uid)
+                                                    .input(response.blob)
+                                                    .execute()
+                                                    .then(function (respuesta) {
+                                                        const documentoPost = new Documento;
+                                                        documentoPost.Enlace = file.uid;
+                                                        documentoPost.Nombre = file.nombre;
+                                                        documentoPost.TipoDocumento = tipoDocumento;
+                                                        documentoService.post('documento', documentoPost)
+                                                            .subscribe(resuestaPost => {
+                                                                nuxeoservice.documentos.push(resuestaPost);
+                                                                this.documentos$.next(nuxeoservice.documentos);
+                                                            })
 
-                                                });
-                                        })
-                                        .catch(function (error) {
-                                            return error;
-                                        });
-                                })
-                                .catch(function (error) {
-                                    return error;
-                                })
-                        }
-                    });
+                                                    });
+                                            })
+                                            .catch(function (error) {
+                                                return error;
+                                            });
+                                    })
+                                    .catch(function (error) {
+                                        return error;
+                                    })
+                            }
+                        });
                 });
             });
     }
 
 
-    static cargar(docid, url) {
+    static cargar(docid) {
         const promise = new Promise(function (resolve, reject) {
             this.nuxeo = new Nuxeo({
                 baseURL: GENERAL.ENTORNO.NUXEO.PATH,
@@ -103,8 +100,7 @@ export class NuxeoService {
                     .then(function (response) {
                         response.fetchBlob()
                             .then(function (blob: any) {
-                                url = blob.url
-                                resolve(blob);
+                                resolve(blob.url);
                             })
                             .catch(function (response2) {
                                 reject('Error: ' + response2);
