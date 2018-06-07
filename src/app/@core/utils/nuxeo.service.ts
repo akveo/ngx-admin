@@ -73,7 +73,7 @@ export class NuxeoService {
                                                         documentoService.post('documento', documentoPost)
                                                             .subscribe(resuestaPost => {
                                                                 nuxeoservice.documentos.push(resuestaPost);
-                                                                this.documentos$.next(nuxeoservice.documentos);
+                                                                nuxeoservice.documentos$.next(nuxeoservice.documentos);
                                                             })
 
                                                     });
@@ -104,8 +104,7 @@ export class NuxeoService {
                                 response.fetchBlob()
                                     .then(function (blob) {
                                         nuxeoservice.blobDocument.push(blob);
-                                        console.info(nuxeoservice.blobDocument);
-                                        this.blobDocument$.next(nuxeoservice.blobDocument);
+                                        nuxeoservice.blobDocument$.next(nuxeoservice.blobDocument);
                                     })
                                     .catch(function (response2) {
                                     });
