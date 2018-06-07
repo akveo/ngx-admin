@@ -230,16 +230,14 @@ export class CrudInformacionContactoComponent implements OnInit {
   }
 
   validarForm(event) {
-    console.log(event.data.InformacionContacto);
-
-    /*if (event.valid) {
+    if (event.valid) {
       if (this.info_informacion_contacto === undefined) {
         this.createInformacionContacto(event.data.InformacionContacto);
       } else {
         this.updateInformacionContacto(event.data.InformacionContacto);
       }
       this.result.emit(event);
-    }*/
+    }
   }
 
   private showToast(type: string, title: string, body: string) {
