@@ -12,17 +12,11 @@ export class NuxeoService {
     private documentos$ = new Subject<Documento[]>();
     private documentos: Documento[];
 
+    private blobDocument$ = new Subject<[object]>();
+    private blobDocument: object[];
+
     constructor() {
         this.documentos = [];
-    }
-
-    public getDocumentos$(file, documentoService): Observable<Documento[]> {
-        this.saveFiles(file, documentoService, this);
-        return this.documentos$.asObservable();
-    }
-
-    saveFiles(files, documentoService, nuxeoservice) {
-        this.documentos$.next(this.documentos);
         NuxeoService.nuxeo = new Nuxeo({
             baseURL: GENERAL.ENTORNO.NUXEO.PATH,
             auth: {
@@ -31,6 +25,20 @@ export class NuxeoService {
                 password: 'S1st3m4s04S=Fr331P4',
             },
         });
+    }
+
+    public getDocumentos$(file, documentoService): Observable<Documento[]> {
+        this.saveFiles(file, documentoService, this);
+        return this.documentos$.asObservable();
+    }
+
+    public getDocumentoById$(Id, documentoService): Observable<object[]> {
+        this.getFile(Id, documentoService, this);
+        return this.blobDocument$.asObservable();
+    }
+
+    saveFiles(files, documentoService, nuxeoservice) {
+        console.info(this.documentos);
         NuxeoService.nuxeo.connect()
             .then(function (client) {
                 files.forEach(file => {
@@ -82,35 +90,29 @@ export class NuxeoService {
             });
     }
 
-
-    static cargar(docid) {
-        const promise = new Promise(function (resolve, reject) {
-            this.nuxeo = new Nuxeo({
-                baseURL: GENERAL.ENTORNO.NUXEO.PATH,
-                auth: {
-                    method: 'basic',
-                    username: 'Administrator',
-                    password: 'S1st3m4s04S=Fr331P4',
-                },
-            });
-            if (docid != null) {
-                this.nuxeo.header('X-NXDocumentProperties', '*');
-                this.nuxeo.request('/id/' + docid)
-                    .get()
-                    .then(function (response) {
-                        response.fetchBlob()
-                            .then(function (blob: any) {
-                                resolve(blob.url);
+    getFile(Id, documentoService, nuxeoservice) {
+        console.info(this.blobDocument);
+        documentoService.get('documento/' + Id)
+            .subscribe(res => {
+                if (res !== null) {
+                    if (res.Enlace != null) {
+                        NuxeoService.nuxeo.header('X-NXDocumentProperties', '*');
+                        NuxeoService.nuxeo.request('/id/' + res.Enlace)
+                            .get()
+                            .then(function (response) {
+                                response.fetchBlob()
+                                    .then(function (blob) {
+                                        nuxeoservice.blobDocument.push(blob);
+                                        console.info(nuxeoservice.blobDocument);
+                                        this.blobDocument$.next(nuxeoservice.blobDocument);
+                                    })
+                                    .catch(function (response2) {
+                                    });
                             })
-                            .catch(function (response2) {
-                                reject('Error: ' + response2);
+                            .catch(function (response) {
                             });
-                    })
-                    .catch(function (response) {
-                        reject('Error: ' + response);
-                    });
-            };
-        });
-        return promise;
+                    }
+                }
+            });
     }
 }

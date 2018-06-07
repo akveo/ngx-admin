@@ -103,22 +103,18 @@ export class CrudInfoPersonaComponent implements OnInit {
   public loadInfoPersona(): void {
     if (this.info_persona_id !== undefined && this.info_persona_id !== 0 &&
       this.info_persona_id.toString() !== '') {
-      // esto retornará error hasta que no se ajuste mid
       this.campusMidService.get('persona/ConsultaPersona/' + this.autenticationService.getPayload().sub)
         // this.info_persona_id)
         .subscribe(res => {
           if (res !== null) {
-            this.info_info_persona = <InfoPersona>res;
-            // NuxeoService.cargar(documento.Enlace, this.formInfoPersona.campos[this.getIndexForm('Foto')].url)
-            // .then(function (resolve: any) {
-            //   if (resolve.url !== null) {
-            //     console.info(resolve);
-            //     // this.formInfoPersona.campos[this.getIndexForm('Foto')].url = resolve.url;
-            //     // this.nuxeoService.cargar(documento.Enlace)
-            //   }
-            // }, function (reject) {
-            //   console.info(reject);
-            // });
+            const temp = <InfoPersona>res;
+            this.nuxeoService.getDocumentoById$(temp.Foto, this.documentoService)
+              .subscribe(response => {
+                // this.info_info_persona.Foto
+                console.info(response);
+                console.info(this.formInfoPersona.campos[this.getIndexForm('Foto')]);
+                // this.formInfoPersona.campos[this.getIndexForm('Foto')].url = response;
+              });
           }
         });
     } else {
@@ -188,7 +184,6 @@ export class CrudInfoPersonaComponent implements OnInit {
         }
       });
   }
-  th
   ngOnInit() {
     this.loadInfoPersona();
   }
