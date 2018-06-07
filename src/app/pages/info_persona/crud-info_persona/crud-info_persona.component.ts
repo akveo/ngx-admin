@@ -110,10 +110,10 @@ export class CrudInfoPersonaComponent implements OnInit {
             const temp = <InfoPersona>res;
             this.nuxeoService.getDocumentoById$(temp.Foto, this.documentoService)
               .subscribe(response => {
-                // this.info_info_persona.Foto
-                const temp: any = response;
+                this.info_info_persona = <InfoPersona>response[0];
+                this.info_info_persona.Foto
                 console.info(this.formInfoPersona.campos[this.getIndexForm('Foto')]);
-                this.formInfoPersona.campos[this.getIndexForm('Foto')].url = temp.url;
+                this.formInfoPersona.campos[this.getIndexForm('Foto')].url = response[0];
               });
           }
         });
