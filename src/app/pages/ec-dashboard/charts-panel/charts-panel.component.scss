@@ -1,0 +1,15 @@
+@import '../../../@theme/styles/themes';
+
+@include nb-install-component() {
+
+  nb-tabset {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  nb-tab {
+    flex: 1;
+    padding: 1.25rem;
+  }
+}

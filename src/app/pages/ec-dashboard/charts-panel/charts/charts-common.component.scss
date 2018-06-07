@@ -2,7 +2,7 @@
 
 @include nb-install-component() {
   display: block;
-  height: nb-theme(card-height-medium);
+  height: 100%;
   width: 100%;
 
   /deep/ chart {

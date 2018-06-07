@@ -1,12 +1,14 @@
-import { Component } from '@angular/core';
-import {NbColorHelper, NbThemeService} from '@nebular/theme';
+import { Component, OnDestroy } from '@angular/core';
+import { NbThemeService, NbColorHelper } from '@nebular/theme';
 
 @Component({
-  selector: 'ngx-orders-chart',
-  styleUrls: ['./orders-chart.component.scss'],
-  templateUrl: './orders-chart.component.html',
+  selector: 'ngx-profit-chart',
+  styleUrls: ['./charts-common.component.scss'],
+  template: `
+    <chart type="bar" [data]="data" [options]="options"></chart>
+  `,
 })
-export class OrdersChartComponent {
+export class ProfitChartComponent implements OnDestroy {
   data: any;
   options: any;
   themeSubscription: any;
@@ -18,34 +20,31 @@ export class OrdersChartComponent {
       const chartjs: any = config.variables.chartjs;
 
       this.data = {
-        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+        labels: ['2006', '2007', '2008', '2009', '2010', '2011', '2012'],
         datasets: [{
           data: [65, 59, 80, 81, 56, 55, 40],
           label: 'Series A',
-          backgroundColor: NbColorHelper.hexToRgbA(colors.primary, 0.3),
-          borderColor: colors.primary,
+          backgroundColor: NbColorHelper.hexToRgbA(colors.primaryLight, 0.8),
         }, {
           data: [28, 48, 40, 19, 86, 27, 90],
           label: 'Series B',
-          backgroundColor: NbColorHelper.hexToRgbA(colors.danger, 0.3),
-          borderColor: colors.danger,
-        }, {
-          data: [18, 48, 77, 9, 100, 27, 40],
-          label: 'Series C',
-          backgroundColor: NbColorHelper.hexToRgbA(colors.info, 0.3),
-          borderColor: colors.info,
-        },
-        ],
+          backgroundColor: NbColorHelper.hexToRgbA(colors.infoLight, 0.8),
+        }],
       };
 
       this.options = {
-        responsive: true,
         maintainAspectRatio: false,
+        responsive: true,
+        legend: {
+          labels: {
+            fontColor: chartjs.textColor,
+          },
+        },
         scales: {
           xAxes: [
             {
               gridLines: {
-                display: true,
+                display: false,
                 color: chartjs.axisLineColor,
               },
               ticks: {
@@ -65,12 +64,11 @@ export class OrdersChartComponent {
             },
           ],
         },
-        legend: {
-          labels: {
-            fontColor: chartjs.textColor,
-          },
-        },
       };
     });
+  }
+
+  ngOnDestroy(): void {
+    this.themeSubscription.unsubscribe();
   }
 }
