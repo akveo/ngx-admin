@@ -156,6 +156,7 @@ export class CrudInfoCaracteristicaComponent implements OnInit {
       this.info_caracteristica_id.toString() !== '') {
       this.info_info_caracteristica = new InfoCaracteristica();
       this.info_info_caracteristica.Ente = this.info_caracteristica_id;
+      this.info_info_caracteristica.TipoRelacionUbicacionEnte = 1;
       this.campusMidService.get('info_caracteristica/?query=id:' + this.info_caracteristica_id)
         .subscribe(res => {
           if (res !== null) {
@@ -192,7 +193,7 @@ export class CrudInfoCaracteristicaComponent implements OnInit {
             this.translate.instant('GLOBAL.info_caracteristica') + ' ' +
             this.translate.instant('GLOBAL.confirmarActualizar'));
         });
-  }
+      }
     });
   }
 
