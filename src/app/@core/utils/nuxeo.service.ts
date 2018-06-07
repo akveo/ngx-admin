@@ -17,6 +17,7 @@ export class NuxeoService {
 
     constructor() {
         this.documentos = [];
+        this.blobDocument = [];
         NuxeoService.nuxeo = new Nuxeo({
             baseURL: GENERAL.ENTORNO.NUXEO.PATH,
             auth: {
