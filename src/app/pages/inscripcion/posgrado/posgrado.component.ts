@@ -11,8 +11,8 @@ import { UtilidadesService } from '../../../@core/utils/utilidades.service';
   })
 export class PosgradoComponent implements OnInit {
 
-  info_persona_id: any;
-  info_ente_id: any;
+  info_persona_id: number;
+  info_ente_id: number;
   info_info_persona: any;
   step = 0;
   cambioTab = 0;
@@ -64,7 +64,7 @@ export class PosgradoComponent implements OnInit {
       this.personaService.get('persona/?query=Usuario:' + this.autenticacion.getPayload().sub)
         .subscribe(res => {
           if (res !== null) {
-            this.info_info_persona = <ResponseId>res;
+            this.info_info_persona = <ResponseId>res[0];
             this.info_persona_id = this.info_info_persona.Id;
             this.info_ente_id = this.info_info_persona.Ente;
           }

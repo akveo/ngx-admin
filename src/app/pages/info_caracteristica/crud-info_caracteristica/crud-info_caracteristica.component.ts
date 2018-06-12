@@ -154,10 +154,11 @@ export class CrudInfoCaracteristicaComponent implements OnInit {
   public loadInfoCaracteristica(): void {
     if (this.info_caracteristica_id !== undefined && this.info_caracteristica_id !== 0 &&
       this.info_caracteristica_id.toString() !== '') {
+      this.denied_acces = false;
       this.info_info_caracteristica = new InfoCaracteristica();
       this.info_info_caracteristica.Ente = this.info_caracteristica_id;
       this.info_info_caracteristica.TipoRelacionUbicacionEnte = 1;
-      this.campusMidService.get('info_caracteristica/?query=id:' + this.info_caracteristica_id)
+      this.campusMidService.get('/persona/DatosComplementarios/' + this.info_caracteristica_id)
         .subscribe(res => {
           if (res !== null) {
             this.info_info_caracteristica = <InfoCaracteristica>res[0];
@@ -185,7 +186,7 @@ export class CrudInfoCaracteristicaComponent implements OnInit {
     .then((willDelete) => {
       if (willDelete.value) {
         this.info_info_caracteristica = <InfoCaracteristica>infoCaracteristica;
-        this.campusMidService.put('persona/DatosComplementariosPersona', this.info_info_caracteristica)
+        this.campusMidService.put('/persona/DatosComplementarios/', this.info_info_caracteristica)
           .subscribe(res => {
             this.loadInfoCaracteristica();
             this.eventChange.emit(true);
@@ -212,7 +213,7 @@ export class CrudInfoCaracteristicaComponent implements OnInit {
     .then((willDelete) => {
       if (willDelete.value) {
         this.info_info_caracteristica = <InfoCaracteristica>infoCaracteristica;
-        this.campusMidService.post('persona/DatosComplementariosPersona', this.info_info_caracteristica)
+        this.campusMidService.post('/persona/DatosComplementarios/', this.info_info_caracteristica)
           .subscribe(res => {
             this.info_info_caracteristica = <InfoCaracteristica>res;
             this.eventChange.emit(true);

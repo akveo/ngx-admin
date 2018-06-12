@@ -9,5 +9,12 @@ export class InformacionContacto {
   EstratoResidencia: number;
   CodigoPostal: string;
   Telefono: string;
-  TelefonoAlterno: number;
+  TelefonoAlterno: string;
+  Ente: number;
+  IdLugarEnte: number;
+  IdDireccionEnte: number;
+  IdEstratoEnte: number;
+  IdCodigoEnte: number;
+  IdTelefonoEnte: number;
+  IdTelefonoAlternoEnte: number;
 }

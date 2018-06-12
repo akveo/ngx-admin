@@ -1,5 +1,7 @@
 import { Lugar } from './../../../@core/data/models/lugar';
 import { InformacionContacto } from './../../../@core/data/models/informacion_contacto';
+import { InfoContactoGet } from './../../../@core/data/models/info_contacto_get';
+import { InfoContactoPut } from './../../../@core/data/models/info_contacto_put';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { UbicacionesService } from '../../../@core/data/ubicaciones.service';
 import { CampusMidService } from '../../../@core/data/campus_mid.service';
@@ -31,9 +33,12 @@ export class CrudInformacionContactoComponent implements OnInit {
   formInformacionContacto: any;
   regInformacionContacto: any;
   clean: boolean;
+  denied_acces: boolean = false;
   paisSeleccionado: any;
   departamentoSeleccionado: any;
   datosPost: any;
+  datosGet: any;
+  datosPut: any;
 
   constructor(
     private translate: TranslateService,
@@ -124,19 +129,49 @@ export class CrudInformacionContactoComponent implements OnInit {
     return 0;
   }
 
-
   public loadInformacionContacto(): void {
     if (this.informacion_contacto_id !== undefined && this.informacion_contacto_id !== 0 &&
       this.informacion_contacto_id.toString() !== '') {
-        this.campusMidService.get('informacion_contacto/?query=id:' + this.informacion_contacto_id)
+        this.denied_acces = false;
+        this.campusMidService.get('persona/DatosContacto/' + this.informacion_contacto_id)
         .subscribe(res => {
           if (res !== null) {
-            this.info_informacion_contacto = <InformacionContacto>res[0];
+            this.datosGet = <InfoContactoGet>res;
+            this.info_informacion_contacto = {
+              Ente: (1 * this.informacion_contacto_id),
+              PaisResidencia: this.datosGet.UbicacionEnte[0].Lugar.PAIS,
+              DepartamentoResidencia: this.datosGet.UbicacionEnte[0].Lugar.DEPARTAMENTO,
+              CiudadResidencia: this.datosGet.UbicacionEnte[0].Lugar.CIUDAD,
+              IdLugarEnte: this.datosGet.UbicacionEnte[0].Id,
+              IdDireccionEnte: this.datosGet.UbicacionEnte[0].Atributos[1].Id,
+              DireccionResidencia: this.datosGet.UbicacionEnte[0].Atributos[1].Valor,
+              IdEstratoEnte: this.datosGet.UbicacionEnte[0].Atributos[0].Id,
+              EstratoResidencia: this.datosGet.UbicacionEnte[0].Atributos[0].Valor,
+              IdCodigoEnte: this.datosGet.UbicacionEnte[0].Atributos[2].Id,
+              CodigoPostal: '' + this.datosGet.UbicacionEnte[0].Atributos[2].Valor,
+              IdTelefonoEnte: this.datosGet.ContactoEnte[0].Id,
+              Telefono: '' + this.datosGet.ContactoEnte[0].Valor,
+              IdTelefonoAlternoEnte: this.datosGet.ContactoEnte[1].Id,
+              TelefonoAlterno: '' + this.datosGet.ContactoEnte[1].Valor,
+            };
+            for (let i = 0; i < this.datosGet.UbicacionEnte[0].Atributos.length; i++) {
+              if (this.datosGet.UbicacionEnte[0].Atributos[i].AtributoUbicacion.Nombre === 'direccion') {
+                this.info_informacion_contacto.IdDireccionEnte = this.datosGet.UbicacionEnte[0].Atributos[i].Id;
+                this.info_informacion_contacto.DireccionResidencia = this.datosGet.UbicacionEnte[0].Atributos[i].Valor;
+              }else if (this.datosGet.UbicacionEnte[0].Atributos[i].AtributoUbicacion.Nombre === 'Estrato') {
+                this.info_informacion_contacto.IdEstratoEnte = this.datosGet.UbicacionEnte[0].Atributos[i].Id;
+                this.info_informacion_contacto.EstratoResidencia = this.datosGet.UbicacionEnte[0].Atributos[i].Valor;
+              }else if (this.datosGet.UbicacionEnte[0].Atributos[i].AtributoUbicacion.Nombre === 'Código postal') {
+                this.info_informacion_contacto.IdCodigoEnte = this.datosGet.UbicacionEnte[0].Atributos[i].Id;
+                this.info_informacion_contacto.CodigoPostal = this.datosGet.UbicacionEnte[0].Atributos[i].Valor;
+              }
+            }
           }
         });
     } else  {
       this.info_informacion_contacto = undefined;
       this.clean = !this.clean;
+      this.denied_acces = true; //  no muestra el formulario a menos que se le pase un id del ente info_caracteristica_id
     }
   }
 
@@ -155,7 +190,39 @@ export class CrudInformacionContactoComponent implements OnInit {
     .then((willDelete) => {
       if (willDelete.value) {
         this.info_informacion_contacto = <InformacionContacto>informacionContacto;
-        this.campusMidService.put('informacion_contacto', this.info_informacion_contacto)
+        this.datosPut = <InfoContactoPut>{
+          Ente: (1 * this.info_informacion_contacto.Ente),
+          ContactoEnte: [
+            {
+              Id: this.info_informacion_contacto.IdTelefonoEnte,
+              Valor: '' + this.info_informacion_contacto.Telefono,
+            },
+            {
+              Id: this.info_informacion_contacto.IdTelefonoAlternoEnte,
+              Valor: '' + this.info_informacion_contacto.TelefonoAlterno,
+            },
+          ],
+          UbicacionEnte: {
+            Id: this.info_informacion_contacto.IdLugarEnte,
+            Lugar: {
+              Id: this.info_informacion_contacto.CiudadResidencia.Id,
+            },
+            Atributos: [
+              {
+                Id: this.info_informacion_contacto.IdDireccionEnte,
+                Valor: this.info_informacion_contacto.DireccionResidencia,
+              },
+              {
+                Id: this.info_informacion_contacto.IdEstratoEnte,
+                Valor: '' + this.info_informacion_contacto.EstratoResidencia,
+              }, {
+                Id: this.info_informacion_contacto.IdCodigoEnte,
+                Valor: this.info_informacion_contacto.CodigoPostal,
+              },
+            ],
+          },
+        };
+        this.campusMidService.put('persona/DatosContacto/', this.datosPut)
           .subscribe(res => {
             this.loadInformacionContacto();
             this.eventChange.emit(true);
@@ -182,8 +249,9 @@ export class CrudInformacionContactoComponent implements OnInit {
     .then((willDelete) => {
       if (willDelete.value) {
         this.info_informacion_contacto = <InformacionContacto>informacionContacto;
+        this.info_informacion_contacto.Ente = this.informacion_contacto_id;
         this.datosPost = {
-          'Ente': this.informacion_contacto_id,
+          'Ente': (1 * this.info_informacion_contacto.Ente.valueOf()),
           'ContactoEnte': [
             {
               'TipoContacto': 1,
@@ -195,7 +263,9 @@ export class CrudInformacionContactoComponent implements OnInit {
             },
           ],
           'UbicacionEnte': {
-            'Lugar': this.info_informacion_contacto.CiudadResidencia.Id,
+            'Lugar': {
+              'Id': this.info_informacion_contacto.CiudadResidencia.Id,
+            },
             'TipoRelacionUbicacionEnte': 2,
             'Atributos': [
               {
@@ -207,13 +277,13 @@ export class CrudInformacionContactoComponent implements OnInit {
                 'Valor': '' + this.info_informacion_contacto.EstratoResidencia,
               },
               {
-                'AtributoUbicacion': 3,
+                'AtributoUbicacion': 4,
                 'Valor': this.info_informacion_contacto.CodigoPostal,
               },
             ],
           },
         };
-        this.campusMidService.post('persona/GuardarDatosContacto/', this.datosPost)
+        this.campusMidService.post('persona/DatosContacto/', this.datosPost)
           .subscribe(res => {
             this.info_informacion_contacto = <InformacionContacto>res;
             this.eventChange.emit(true);
