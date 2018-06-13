@@ -9,6 +9,8 @@ export class InfoCaracteristica {
   GrupoEtnico: GrupoEtnico;
   TipoDiscapacidad: Array<TipoDiscapacidad>;
   Lugar: Lugar;
+  PaisNacimiento: Lugar;
+  DepartamentoNacimiento: Lugar;
   TipoRelacionUbicacionEnte: number;
   Ente: number;
 }

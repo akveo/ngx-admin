@@ -150,18 +150,16 @@ export class CrudInfoCaracteristicaComponent implements OnInit {
     return 0;
   }
 
-
   public loadInfoCaracteristica(): void {
     if (this.info_caracteristica_id !== undefined && this.info_caracteristica_id !== 0 &&
       this.info_caracteristica_id.toString() !== '') {
       this.denied_acces = false;
-      this.info_info_caracteristica = new InfoCaracteristica();
-      this.info_info_caracteristica.Ente = this.info_caracteristica_id;
-      this.info_info_caracteristica.TipoRelacionUbicacionEnte = 1;
       this.campusMidService.get('/persona/DatosComplementarios/' + this.info_caracteristica_id)
         .subscribe(res => {
           if (res !== null) {
-            this.info_info_caracteristica = <InfoCaracteristica>res[0];
+            this.info_info_caracteristica = <InfoCaracteristica>res;
+            this.info_info_caracteristica.Ente = (1 * this.info_caracteristica_id);
+            this.info_info_caracteristica.TipoRelacionUbicacionEnte = 1;
           }
         });
     } else  {
