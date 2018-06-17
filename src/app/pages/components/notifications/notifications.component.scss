@@ -8,13 +8,14 @@
     padding-bottom: 0.25rem;
 
     button {
-      margin: 0 1rem 1rem 0;
+      @include nb-ltr(margin, 0 1rem 1rem 0);
+      @include nb-rtl(margin, 0 0 1rem 1rem);
     }
   }
 
   /* stylelint-disable */
   toaster-container /deep/ {
-     #toast-container .toast-close-button {
+    #toast-container .toast-close-button {
       right: 0;
     }
   }

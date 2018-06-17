@@ -32,5 +32,40 @@
       }
     }
   }
-}
 
+  .settings {
+    margin-bottom: 1em;
+  }
+
+  .switcher {
+    margin-bottom: 1rem;
+
+    /deep/ ngx-switcher {
+      .switch-label span {
+        font-size: 1em;
+        font-weight: normal;
+      }
+
+      .switch {
+        height: 1.5em;
+        width: 3em;
+
+        .slider::before {
+          height: 1.5em;
+          width: 1.5em;
+        }
+
+        input:checked + .slider::before {
+          @include nb-ltr(transform, translateX(1.5rem)!important);
+          @include nb-rtl(transform, translateX(-1.5rem)!important);
+        }
+      }
+
+      @include nb-for-theme(cosmic) {
+        .switch .slider {
+          background-color: nb-theme(color-bg);
+        }
+      }
+    }
+  }
+}

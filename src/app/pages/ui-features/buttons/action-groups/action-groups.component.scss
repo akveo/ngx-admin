@@ -30,7 +30,8 @@
       padding: 0.75rem;
 
       .action-groups-header {
-        margin: 0 0 0.5rem 0.25rem;
+        @include nb-ltr(margin, 0 0 0.5rem 0.25rem);
+        @include nb-rtl(margin, 0 0.25rem 0.5rem 0);
       }
     }
 

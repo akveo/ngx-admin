@@ -1,0 +1,20 @@
+@import '../../../@theme/styles/themes';
+
+@include nb-install-component() {
+
+  /deep/ .angular-tree-component {
+    cursor: default;
+
+    .node-wrapper {
+      .node-content-wrapper {
+        background: none;
+        box-shadow: none;
+        cursor: default;
+      }
+
+      .toggle-children-wrapper {
+        cursor: pointer;
+      }
+    }
+  }
+}

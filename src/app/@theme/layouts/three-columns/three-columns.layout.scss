@@ -50,7 +50,8 @@
     /deep/ .main-container {
       height:
         calc(#{nb-theme(sidebar-height)} - #{nb-theme(header-height)} - #{nb-theme(sidebar-header-gap)}) !important;
-      border-top-right-radius: nb-theme(radius);
+      @include nb-ltr(border-top-right-radius, nb-theme(radius));
+      @include nb-rtl(border-top-left-radius, nb-theme(radius));
     }
 
     /deep/ nb-sidebar-header {
@@ -71,7 +72,8 @@
         text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
       }
       span {
-        padding-left: 0.25rem;
+        @include nb-ltr(padding-left, 0.25rem);
+        @include nb-rtl(padding-right, 0.25rem);
       }
 
       i, span {
@@ -115,7 +117,8 @@
 
       /deep/ .main-container {
         height: calc(#{nb-theme(sidebar-height)} - #{nb-theme(header-height)}) !important;
-        border-top-right-radius: 0;
+        @include nb-ltr(border-top-right-radius, 0);
+        @include nb-rtl(border-top-left-radius, 0);
 
         .scrollable {
           padding-top: 0;

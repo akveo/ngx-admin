@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import 'rxjs/add/observable/of';
 
 export class Track {
   name: string;

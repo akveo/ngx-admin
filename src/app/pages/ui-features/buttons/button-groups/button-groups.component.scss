@@ -10,7 +10,8 @@
   }
 
   .pagination-container {
-    margin-right: 1rem;
+    @include nb-ltr(margin-right, 1rem);
+    @include nb-rtl(margin-left, 1rem);
 
     .btn-group > .btn {
       padding-left: 1.125rem;
@@ -53,7 +54,8 @@
 
     > label {
       flex-basis: 10%;
-      margin: 0 0.25rem 0.5rem 0;
+      @include nb-ltr(margin, 0 0.25rem 0.5rem 0);
+      @include nb-rtl(margin, 0 0 0.5rem 0.25rem);
     }
   }
 

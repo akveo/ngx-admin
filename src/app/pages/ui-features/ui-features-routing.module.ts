@@ -9,6 +9,7 @@ import { ModalsComponent } from './modals/modals.component';
 import { TypographyComponent } from './typography/typography.component';
 import { TabsComponent, Tab1Component, Tab2Component } from './tabs/tabs.component';
 import { SearchComponent } from './search-fields/search-fields.component';
+import { PopoversComponent } from './popovers/popovers.component';
 
 const routes: Routes = [{
   path: '',
@@ -25,6 +26,9 @@ const routes: Routes = [{
   }, {
     path: 'modals',
     component: ModalsComponent,
+  }, {
+    path: 'popovers',
+    component: PopoversComponent,
   }, {
     path: 'typography',
     component: TypographyComponent,

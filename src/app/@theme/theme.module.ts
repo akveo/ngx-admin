@@ -15,13 +15,19 @@ import {
   NbThemeModule,
   NbUserModule,
   NbCheckboxModule,
+  NbPopoverModule,
+  NbContextMenuModule,
 } from '@nebular/theme';
+
+import { NbSecurityModule } from '@nebular/security';
 
 import {
   FooterComponent,
   HeaderComponent,
   SearchInputComponent,
   ThemeSettingsComponent,
+  SwitcherComponent,
+  LayoutDirectionSwitcherComponent,
   ThemeSwitcherComponent,
   TinyMCEComponent,
 } from './components';
@@ -48,10 +54,15 @@ const NB_MODULES = [
   NbSearchModule,
   NbSidebarModule,
   NbCheckboxModule,
+  NbPopoverModule,
+  NbContextMenuModule,
   NgbModule,
+  NbSecurityModule, // *nbIsGranted directive
 ];
 
 const COMPONENTS = [
+  SwitcherComponent,
+  LayoutDirectionSwitcherComponent,
   ThemeSwitcherComponent,
   HeaderComponent,
   FooterComponent,

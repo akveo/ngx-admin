@@ -33,7 +33,8 @@
     width: 100%;
 
     .navigation {
-      padding-right: nb-theme(padding);
+      @include nb-ltr(padding-right, nb-theme(padding));
+      @include nb-rtl(padding-left, nb-theme(padding));
       font-size: 2.5rem;
       text-decoration: none;
 
@@ -47,12 +48,24 @@
       padding: 0 nb-theme(padding);
       font-size: 1.75rem;
       font-weight: nb-theme(font-weight-bolder);
-      border-left: 1px solid nb-theme(separator);
+      @include nb-ltr(border-left, 1px solid nb-theme(separator));
+      @include nb-rtl(border-right, 1px solid nb-theme(separator));
       white-space: nowrap;
 
       span {
         font-weight: nb-theme(font-weight-normal);
       }
+    }
+  }
+
+  ngx-layout-direction-switcher,
+  ngx-theme-switcher {
+    margin: 0 1em;
+  }
+
+  @include media-breakpoint-down(xl) {
+    ngx-layout-direction-switcher {
+      display: none;
     }
   }
 
@@ -64,6 +77,54 @@
     i {
       color: nb-theme(color-fg-highlight);
       font-size: 2.25rem;
+      border-radius: 50%;
+      position: relative;
+      animation-name: pulse-light;
+
+      &::after {
+        content: ' ';
+        // hack to be able to set border-radius
+        background-image: url('data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7');
+        border-radius: 50%;
+        pointer-events: none;
+
+        position: absolute;
+        top: 52.3%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 13%;
+        height: 13%;
+
+        animation: 3s linear infinite pulse;
+
+        @include nb-for-theme(default) {
+          animation-name: pulse-light;
+        }
+      }
+    }
+  }
+
+  @include keyframes(pulse) {
+    0% {
+      box-shadow: 0 0 1px 0 rgba(nb-theme(color-fg-highlight), 0);
+    }
+    20% {
+      box-shadow: 0 0 3px 10px rgba(nb-theme(color-fg-highlight), 0.4);
+    }
+    100% {
+      box-shadow: 0 0 5px 20px rgba(nb-theme(color-fg-highlight), 0);
+    }
+  }
+
+  @include keyframes(pulse-light) {
+    0% {
+      box-shadow: 0 0 1px 0 rgba(115, 255, 208, 0);
+    }
+    20% {
+      box-shadow: 0 0 3px 10px rgba(115, 255, 208, 0.4);
+    }
+    100% {
+      box-shadow: 0 0 5px 20px rgba(115, 255, 208, 0);
     }
   }
 
@@ -79,6 +140,11 @@
 
     .toggle-layout {
       padding: 0;
+    }
+
+    ngx-layout-direction-switcher,
+    ngx-theme-switcher {
+      display: none;
     }
   }
 
@@ -112,4 +178,3 @@
     }
   }
 }
-

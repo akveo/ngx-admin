@@ -1,3 +1,4 @@
+import { delay } from 'rxjs/operators';
 import { AfterViewInit, Component, Input, OnDestroy } from '@angular/core';
 import { NbThemeService } from '@nebular/theme';
 
@@ -41,7 +42,7 @@ export class SolarComponent implements AfterViewInit, OnDestroy {
   }
 
   ngAfterViewInit() {
-    this.themeSubscription = this.theme.getJsTheme().delay(1).subscribe(config => {
+    this.themeSubscription = this.theme.getJsTheme().pipe(delay(1)).subscribe(config => {
 
       const solarTheme: any = config.variables.solar;
 

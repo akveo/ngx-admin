@@ -18,10 +18,9 @@ nb-card-body {
 
 .icon-button-examples {
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
 
   button {
-    margin-right: 2rem;
     min-width: 4rem;
   }
 }

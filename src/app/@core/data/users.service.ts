@@ -1,6 +1,7 @@
+
+import { of as observableOf,  Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/observable/of';
+
 
 let counter = 0;
 
@@ -23,15 +24,15 @@ export class UserService {
   }
 
   getUsers(): Observable<any> {
-    return Observable.of(this.users);
+    return observableOf(this.users);
   }
 
   getUserArray(): Observable<any[]> {
-    return Observable.of(this.userArray);
+    return observableOf(this.userArray);
   }
 
   getUser(): Observable<any> {
     counter = (counter + 1) % this.userArray.length;
-    return Observable.of(this.userArray[counter]);
+    return observableOf(this.userArray[counter]);
   }
 }
