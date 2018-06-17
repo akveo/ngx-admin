@@ -29,13 +29,6 @@
       display: flex;
     }
 
-    .delimiter {
-      position: absolute;
-      right: 50%;
-      height: 7rem;
-      border-right: 1px solid #d1d1ff;
-    }
-
     .period {
       display: flex;
       flex-direction: column;
@@ -46,29 +39,37 @@
       }
     }
 
+    .time-interval {
+      color: nb-theme(color-fg);
+    }
+
     .value {
       font-family: nb-theme(font-secondary), serif;
       font-size: 1.25rem;
       font-weight: nb-theme(font-weight-bold);
       color: nb-theme(card-fg-heading);
+
+      .currency {
+        color: nb-theme(color-success);
+      }
     }
 
-    .changes {
+    .result {
       position: absolute;
       right: 1rem;
       display: flex;
-      color: nb-theme(card-fg-heading);
+      color: nb-theme(color-success);
     }
 
-    .nb-arrow-dropup {
-      //todo
-      color: #00f9a6;
-    }
+  }
+
+  ngx-stats-ares-chart {
+    flex: 1;
   }
 
   ::ng-deep chart {
     display: block;
-    height: 6.5rem;
+    height: 4rem;
     width: 100%;
 
     canvas {
