@@ -48,19 +48,17 @@ export class DinamicformComponent implements OnInit, OnChanges {
                       element.valor = [];
                       if (this.modeloData[i].length > 0) {
                         this.modeloData[i].forEach((e1) => element.opciones.forEach((e2) => {
-                          if(e1.Id === e2.Id) {
+                          if (e1.Id === e2.Id) {
                               element.valor.push(e2);
                             }
-                          }
-                        ));
+                          }));
                       }
                   } else if (element.etiqueta === 'select' && element.opciones.length > 0) {
                     element.opciones.forEach((e1) => {
-                      if(e1.Id === this.modeloData[i].Id) {
+                      if (e1.Id === this.modeloData[i].Id) {
                           element.valor = e1;
                         }
-                      }
-                    );
+                      });
                   } else {
                       element.valor = this.modeloData[i];
                   }
