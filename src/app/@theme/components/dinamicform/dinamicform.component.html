@@ -256,12 +256,12 @@
             <div class="{{c.clase}}">
               <nb-card size="small">
                   <nb-card-body>
-                      <img class="carousel-image" src="{{new.img}}" alt="imagen">
+                      <img class="carousel-image" src="{{c.img}}" alt="imagen">
                   </nb-card-body>
               </nb-card>
             </div>
           </div>
-          
+
 
         </div>
       </div>
@@ -354,7 +354,7 @@
            <!-- select multiple-->
            <mat-form-field *ngSwitchCase="'selectmultiple'" style="width: 100%;" floatLabel="always">
             <mat-label>{{c.requerido?'* '+c.label:c.label}}:</mat-label>
-            <mat-select [placeholder]="c.placeholder" [(ngModel)]="c.valor"
+            <mat-select [placeholder]="c.valor?(c.key?c.valor[c.key]:c.valor|json):c.placeholder" [(ngModel)]="c.valor"
              (ngModelChange)="validCampo(c)" [ngModelOptions]="{standalone: true}" multiple>
               <mat-option *ngFor="let item of c.opciones" [value]="item" >
                 {{c.key?item[c.key]:item | json}}

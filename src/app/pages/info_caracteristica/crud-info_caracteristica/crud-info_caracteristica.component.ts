@@ -166,8 +166,8 @@ export class CrudInfoCaracteristicaComponent implements OnInit {
             this.info_info_caracteristica.Ente = (1 * this.info_caracteristica_id);
             this.info_info_caracteristica.TipoRelacionUbicacionEnte = 1;
             this.info_info_caracteristica.IdLugarEnte = this.datosGet.Lugar[0].Id;
-            this.info_info_caracteristica.DepartamentoNacimiento = this.datosGet.Lugar[0].Lugar.DEPARTAMENTO;
             this.info_info_caracteristica.PaisNacimiento = this.datosGet.Lugar[0].Lugar.PAIS;
+            this.info_info_caracteristica.DepartamentoNacimiento = this.datosGet.Lugar[0].Lugar.DEPARTAMENTO;
             this.info_info_caracteristica.Lugar = this.datosGet.Lugar[0].Lugar.CIUDAD;
           }
         });
