@@ -11,4 +11,6 @@ export class InfoPersona {
   Foto: string;
   EstadoCivil: EstadoCivil;
   Genero: Genero;
+  Id: number;
+  Usuario: string;
 }
