@@ -174,7 +174,7 @@ export class CrudInfoCaracteristicaComponent implements OnInit {
     } else  {
       this.info_info_caracteristica = undefined;
       this.clean = !this.clean;
-      this.denied_acces = true; //  no muestra el formulario a menos que se le pase un id del ente info_caracteristica_id
+      this.denied_acces = true; // no muestra el formulario a menos que se le pase un id del ente info_caracteristica_id
     }
   }
 
