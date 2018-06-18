@@ -104,7 +104,6 @@ export class CrudInfoPersonaComponent implements OnInit {
             this.info_info_persona = <InfoPersona>res;
             this.info_info_persona.Id = (1 * this.info_persona_id);
             this.info_info_persona.Usuario =  this.autenticationService.getPayload().sub;
-            console.log(this.info_info_persona);
           }
         });
     } else {
