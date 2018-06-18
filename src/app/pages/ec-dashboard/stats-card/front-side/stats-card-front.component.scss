@@ -1,8 +1,11 @@
 @import '../../../../@theme/styles/themes';
 
 @include nb-install-component() {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 
-  ::ng-deep nb-card-header {
+  /deep/ nb-card-header {
     display: flex;
     justify-content: space-between;
     padding: 0.75rem;
@@ -16,9 +19,8 @@
     }
   }
 
-  ::ng-deep nb-card-body {
-    padding: 0;
-    overflow-y: hidden;
+  /deep/ nb-card-body {
+    overflow: hidden;
 
     display: flex;
     flex-direction: column;
@@ -65,16 +67,17 @@
 
   ngx-stats-ares-chart {
     flex: 1;
+    position: relative;
   }
 
-  ::ng-deep chart {
-    display: block;
-    height: 4rem;
+  /deep/ canvas {
+    border-bottom-left-radius: nb-theme(card-border-radius);
+    border-bottom-right-radius: nb-theme(card-border-radius);
+  }
+
+  .echart {
+    position: absolute;
+    height: 100%;
     width: 100%;
-
-    canvas {
-      border-radius: 0 0 0.5rem 0.5rem;
-    }
-
   }
 }
