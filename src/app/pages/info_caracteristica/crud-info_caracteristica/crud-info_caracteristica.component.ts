@@ -2,6 +2,7 @@ import { GrupoEtnico } from './../../../@core/data/models/grupo_etnico';
 import { TipoDiscapacidad } from './../../../@core/data/models/tipo_discapacidad';
 import { Lugar } from './../../../@core/data/models/lugar';
 import { InfoCaracteristica } from './../../../@core/data/models/info_caracteristica';
+import { InfoCaracteristicaGet } from './../../../@core/data/models/info_caracteristica_get';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { PersonaService } from '../../../@core/data/persona.service';
 import { UbicacionesService } from '../../../@core/data/ubicaciones.service';
@@ -31,6 +32,7 @@ export class CrudInfoCaracteristicaComponent implements OnInit {
   @Output('result') result: EventEmitter<any> = new EventEmitter();
 
   info_info_caracteristica: InfoCaracteristica;
+  datosGet: InfoCaracteristicaGet;
   formInfoCaracteristica: any;
   regInfoCaracteristica: any;
   paisSeleccionado: any;
@@ -157,9 +159,16 @@ export class CrudInfoCaracteristicaComponent implements OnInit {
       this.campusMidService.get('/persona/DatosComplementarios/' + this.info_caracteristica_id)
         .subscribe(res => {
           if (res !== null) {
+            this.datosGet = <InfoCaracteristicaGet>res;
             this.info_info_caracteristica = <InfoCaracteristica>res;
+            this.info_info_caracteristica.GrupoSanguineo = <any>{Id: this.info_info_caracteristica.GrupoSanguineo};
+            this.info_info_caracteristica.Rh = <any>{Id: this.info_info_caracteristica.Rh};
             this.info_info_caracteristica.Ente = (1 * this.info_caracteristica_id);
             this.info_info_caracteristica.TipoRelacionUbicacionEnte = 1;
+            this.info_info_caracteristica.IdLugarEnte = this.datosGet.Lugar[0].Id;
+            this.info_info_caracteristica.DepartamentoNacimiento = this.datosGet.Lugar[0].Lugar.DEPARTAMENTO;
+            this.info_info_caracteristica.PaisNacimiento = this.datosGet.Lugar[0].Lugar.PAIS;
+            this.info_info_caracteristica.Lugar = this.datosGet.Lugar[0].Lugar.CIUDAD;
           }
         });
     } else  {
