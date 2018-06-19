@@ -9,5 +9,6 @@ export class TipoDocumento {
     Nombre: string;
     NumeroOrden: number;
     Tamano: number;
-    Workspace: string
+    Workspace: string;
+    TipoDocumentoNuxeo: string;
 }

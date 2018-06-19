@@ -169,9 +169,11 @@ export class CrudInfoPersonaComponent implements OnInit {
           array.push({ nombre: this.autenticationService.getPayload().sub, file: this.info_info_persona.Foto, IdDocumento: 1 });
           this.nuxeoService.getDocumentos$(array, this.documentoService)
             .subscribe(response => {
-              const foto = <Documento[]>response;
-              this.info_info_persona.Foto = foto[0].Id + '';
+              const foto = <any[]>response;
+              console.info(foto);
+              this.info_info_persona.Foto = foto[0].Body.Id;
               this.info_info_persona.Usuario = this.autenticationService.getPayload().sub;
+              console.info(this.info_info_persona);
               this.campusMidService.post('persona/GuardarPersona', this.info_info_persona)
                 .subscribe(res => {
                   console.info(res);

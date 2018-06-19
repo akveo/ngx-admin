@@ -49,7 +49,7 @@ export class NuxeoService {
                                 const tipoDocumento = <TipoDocumento>res;
                                 NuxeoService.nuxeo.operation('Document.Create')
                                     .params({
-                                        type: tipoDocumento.Extension,
+                                        type: tipoDocumento.TipoDocumentoNuxeo,
                                         name: file.nombre,
                                         properties: 'dc:title=' + file.nombre,
                                     })
@@ -73,7 +73,9 @@ export class NuxeoService {
                                                         documentoService.post('documento', documentoPost)
                                                             .subscribe(resuestaPost => {
                                                                 nuxeoservice.documentos.push(resuestaPost);
-                                                                nuxeoservice.documentos$.next(nuxeoservice.documentos);
+                                                                if (nuxeoservice.documentos.lenght === files.lenght) {
+                                                                    nuxeoservice.documentos$.next(nuxeoservice.documentos);
+                                                                }
                                                             })
 
                                                     });
