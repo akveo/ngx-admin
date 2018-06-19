@@ -2,7 +2,6 @@ import { EstadoCivil } from './../../../@core/data/models/estado_civil';
 import { ImplicitAutenticationService } from '../../../@core/utils/implicit_autentication.service';
 import { NuxeoService } from '../../../@core/utils/nuxeo.service';
 import { Genero } from './../../../@core/data/models/genero';
-import { Documento } from './../../../@core/data/models/documento';
 import { InfoPersona } from './../../../@core/data/models/info_persona';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { PersonaService } from '../../../@core/data/persona.service';
