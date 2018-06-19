@@ -70,6 +70,12 @@ export const DEFAULT_THEME = {
       areaBorderColor: '#ebeef2',
     },
 
+    profitBarEchart: {
+      gradientFrom: '#00d977',
+      gradientTo: '#00d9bf',
+      shadow: '#00bb85',
+    },
+
     echarts: {
       bg: '#ffffff',
       textColor: '#484848',

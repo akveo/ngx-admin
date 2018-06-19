@@ -1,23 +1,67 @@
 @import '../../../../@theme/styles/themes';
 
 @include nb-install-component() {
-  height: 100%;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 
-  .echart {
-    padding-left: 2rem;
-    height: 9rem;
-    width: 9rem;
-    margin-top: -1.5rem;
-  }
-
-  .details {
+  /deep/ nb-card-header {
     display: flex;
-    flex-direction: row;
-    height: 100%;
+    justify-content: space-between;
+    padding: 0.75rem;
+
+    .header-container {
+      display: flex;
+    }
+
+    .title {
+      padding-left: 1rem;
+    }
   }
 
-  .info {
-    margin-top: 1rem;
-  }
+  /deep/ nb-card-body {
+    display: flex;
+    position: relative;
+    flex: 1;
 
+    .period {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      justify-content: flex-end;
+    }
+
+    .time-interval {
+      color: nb-theme(color-fg);
+    }
+
+    .value {
+      font-family: nb-theme(font-secondary), serif;
+      font-size: 1.25rem;
+      font-weight: nb-theme(font-weight-bold);
+      color: nb-theme(card-fg-heading);
+
+      .currency {
+        color: nb-theme(color-success);
+      }
+    }
+
+    .result {
+      position: absolute;
+      right: 1rem;
+      display: flex;
+      color: nb-theme(color-success);
+    }
+
+    ngx-stats-bar-chart {
+      display: flex;
+      flex: 1;
+      height: 100%;
+
+      .echart {
+        height: 100%;
+        width: 100%;
+      }
+    }
+  }
 }

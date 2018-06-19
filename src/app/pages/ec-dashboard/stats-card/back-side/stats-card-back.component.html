@@ -1,13 +1,31 @@
-<div class="header">
-  <div class="title">Orders</div>
-  <div class="icon">
-    <i class="ion-social-usd"></i>
+<nb-card-header>
+  <!--TODO same content with front side-->
+  <div class="header-container">
+    <div class="icon">
+      <i class="ion-social-usd"></i>
+    </div>
+    <span class="title">Profit</span>
   </div>
-</div>
-<div class="details">
-  <div echarts [options]="option" class="echart"></div>
-  <div class="info">
-    <div class="value">1000</div>
-    <div class="prev-value">900 previous value</div>
+  <i class="nb-arrow-right"></i>
+</nb-card-header>
+<nb-card-body>
+  <div class="period">
+    <span class="time-interval">Jun 1 - Jun 30</span>
+    <div class="value">
+      <span class="currency">$</span>
+      1,260
+    </div>
   </div>
-</div>
+  <ngx-stats-bar-chart></ngx-stats-bar-chart>
+  <div class="period">
+    <span class="time-interval">Jul 1 - Jul 30</span>
+    <div class="value">
+      <span class="currency">$</span>
+      1,970
+    </div>
+  </div>
+  <div class="result">
+    <i class="nb-arrow-dropup"></i>
+    <span>60%</span>
+  </div>
+</nb-card-body>

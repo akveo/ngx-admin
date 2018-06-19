@@ -14,6 +14,7 @@ import { EcMapService } from './map/ec-map.service'
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 import { EcMapChartComponent } from './map/chart/ec-map-chart.component';
 import { StatsAreaChartComponent } from './stats-card/front-side/stats-area-chart.component';
+import { StatsBarChartComponent } from './stats-card/back-side/stats-bar-chart.component';
 import { StatsCardFrontComponent } from './stats-card/front-side/stats-card-front.component';
 import { EcChartsPanelComponent } from './charts-panel/charts-panel.component';
 
@@ -30,6 +31,7 @@ import { EcChartsPanelComponent } from './charts-panel/charts-panel.component';
     EcDashboardComponent,
     StatsCardFrontComponent,
     StatsAreaChartComponent,
+    StatsBarChartComponent,
     StatsCardComponent,
     EcChartsPanelComponent,
     OrdersChartComponent,

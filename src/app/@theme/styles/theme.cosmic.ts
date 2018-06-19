@@ -69,6 +69,12 @@ export const COSMIC_THEME = {
       areaBorderColor: '#654ddb',
     },
 
+    profitBarEchart: {
+      gradientFrom: '#00d977',
+      gradientTo: '#00d9bf',
+      shadow: '#00bb85',
+    },
+
     echarts: {
       bg: '#3d3780',
       textColor: '#ffffff',
