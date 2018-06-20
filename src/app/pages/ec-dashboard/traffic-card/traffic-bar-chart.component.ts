@@ -30,14 +30,21 @@ export class TrafficBarChartComponent implements AfterViewInit, OnDestroy {
           left: 0,
           top: 0,
           right: 0,
-          // bottom: 0,
+          bottom: 0,
+          containLabel: true
         },
         xAxis: {
           type : 'category',
           data :
             ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun', 'Mon'],
+          axisLabel: {
+            color: trafficTheme.textColor
+          },
+          axisLine: {
+            show: false,
+          },
           axisTick: {
-            alignWithLabel: true,
+            show: false,
           },
         },
         yAxis: {

@@ -79,6 +79,13 @@ export const COSMIC_THEME = {
       gradientFrom: '#fc0',
       gradientTo: '#ffa100',
       shadow: '#ffb600',
+      textColor: '#ffffff',
+
+      tooltipBg: 'rgba(0, 255, 170, 0.35)',
+      tooltipBorderColor: '#00d977',
+      tooltipExtraCss: 'box-shadow: 0px 2px 46px 0 rgba(0, 255, 170, 0.35); border-radius: 10px; padding: 4px 16px;',
+      tooltipTextColor: '#ffffff',
+      tooltipFontWeight: 'normal',
     },
 
     echarts: {

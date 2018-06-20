@@ -80,6 +80,14 @@ export const DEFAULT_THEME = {
       gradientFrom: '#fc0',
       gradientTo: '#ffa100',
       shadow: '#ffb600',
+      textColor: '#484848',
+
+      tooltipBg: '#ffffff',
+      tooltipBorderColor: '#c0c8d1',
+      tooltipExtraCss: 'border-radius: 10px; padding: 4px 16px;',
+      tooltipTextColor: '#2a2a2a',
+      tooltipFontWeight: 'bolder',
+
     },
 
     echarts: {
