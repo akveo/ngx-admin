@@ -12,8 +12,6 @@ declare const echarts: any;
 })
 export class TrafficBarChartComponent implements AfterViewInit, OnDestroy {
 
-  type = 'month';
-  types = ['week', 'month', 'year'];
   option: any = {};
   themeSubscription: any;
 
