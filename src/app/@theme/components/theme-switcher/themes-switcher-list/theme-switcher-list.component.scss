@@ -1,0 +1,71 @@
+@import '../../../styles/themes';
+@import '~@nebular/theme/styles/core/mixins';
+@import '~bootstrap/scss/mixins/breakpoints';
+@import '~@nebular/theme/styles/global/bootstrap/breakpoints';
+
+@include nb-install-component() {
+  /deep/ .themes-switcher-list {
+    padding: 1rem 2rem 1.25rem 0.5rem;
+    margin: 0;
+
+    @include nb-ltr(text-align, start);
+    @include nb-rtl(text-align, end);
+
+    .themes-switcher-item {
+      list-style: none;
+      cursor: pointer;
+
+      &:hover {
+        span {
+          opacity: 0.5;
+        }
+      }
+
+      i {
+        font-size: 2rem;
+
+        &.drop-icon-default {
+          color: #0bbb79;
+
+          // Hack for IE11, IE11 should not set background
+          background: -webkit-linear-gradient(#01dbb5, #0bbb79);
+        }
+
+        &.drop-icon-cosmic {
+          color: #7958fa;
+
+          // Hack for IE11, IE11 should not set background
+          background: -webkit-linear-gradient(#a258fe, #7958fa);
+        }
+
+        &.drop-icon-corporate {
+          color: #a7a2be;
+
+          // Hack for IE11, IE11 should not set background
+          background: -webkit-linear-gradient(#e9e8eb, #a7a2be);
+        }
+
+        &.drop-icon-default,
+        &.drop-icon-cosmic,
+        &.drop-icon-corporate {
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+
+        }
+      }
+
+      span {
+        font-weight: 300;
+        vertical-align: super;
+        padding-left: 1rem;
+        color: nb-theme(color-fg-heading);
+      }
+    }
+  }
+
+  @include media-breakpoint-down(is) {
+    /deep/ .themes-switcher-list {
+      display: none;
+    }
+  }
+}

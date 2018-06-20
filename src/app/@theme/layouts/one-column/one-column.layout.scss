@@ -47,11 +47,31 @@
 
     margin-top: nb-theme(sidebar-header-gap);
 
+    @include nb-for-theme(corporate) {
+      margin-top: 0;
+    }
+
     /deep/ .main-container {
       height:
         calc(#{nb-theme(sidebar-height)} - #{nb-theme(header-height)} - #{nb-theme(sidebar-header-gap)}) !important;
       @include nb-ltr(border-top-right-radius, nb-theme(radius));
       @include nb-rtl(border-top-left-radius, nb-theme(radius));
+
+      @include nb-for-theme(corporate) {
+        border: 1px solid nb-theme(separator);
+        height:
+          calc(#{nb-theme(sidebar-height)} - #{nb-theme(header-height)}) !important;
+      }
+    }
+
+    /deep/ .scrollable {
+      @include nb-for-theme(corporate) {
+        padding-top: 0;
+
+        .menu-item:first-child {
+          border-top: none;
+        }
+      }
     }
 
     /deep/ nb-sidebar-header {
@@ -66,6 +86,10 @@
       margin-top: -2rem;
       font-weight: bold;
       transition: padding 0.3s cubic-bezier(0.18, 0.89, 0.32, 1.48);
+
+      @include nb-for-theme(corporate) {
+        border-radius: nb-theme(radius);
+      }
 
       i {
         font-size: 2rem;

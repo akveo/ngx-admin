@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
+import { NbThemeService } from '@nebular/theme';
+import { Subscription } from 'rxjs/Subscription';
 
 // TODO: move layouts into the framework
 @Component({
@@ -11,7 +13,7 @@ import { Component } from '@angular/core';
       </nb-layout-header>
 
       <nb-sidebar class="menu-sidebar" tag="menu-sidebar" responsive >
-        <nb-sidebar-header>
+        <nb-sidebar-header *ngIf="currentTheme !== 'corporate'">
           <a href="#" class="btn btn-hero-success main-btn">
             <i class="ion ion-social-github"></i> <span>Support Us</span>
           </a>
@@ -33,5 +35,18 @@ import { Component } from '@angular/core';
     </nb-layout>
   `,
 })
-export class TwoColumnsLayoutComponent {
+export class TwoColumnsLayoutComponent implements OnDestroy {
+  protected themeSubscription: Subscription;
+
+  currentTheme: string;
+
+  constructor(protected themeService: NbThemeService) {
+    this.themeSubscription = this.themeService.getJsTheme().subscribe(theme => {
+      this.currentTheme = theme.name;
+    });
+  }
+
+  ngOnDestroy() {
+    this.themeSubscription.unsubscribe();
+  }
 }

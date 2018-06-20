@@ -12,6 +12,11 @@
     @include nb-for-theme(cosmic) {
       background-image: url('../../../../assets/images/square_pattern_cosmic.svg');
     }
+
+    @include nb-for-theme(corporate) {
+      background: none;
+      border-right-color: nb-theme(tabs-separator);
+    }
   }
 
   ngx-player {

@@ -1,24 +1,28 @@
 <div class="row">
   <div class="col-xxxl-3 col-md-6">
-    <ngx-status-card title="Light" type="primary">
+    <ngx-status-card title="Light"
+                     [type]="statusCardTypes[currentTheme][0]">
       <i class="nb-lightbulb"></i>
     </ngx-status-card>
   </div>
 
   <div class="col-xxxl-3 col-md-6">
-    <ngx-status-card title="Roller Shades" type="success">
+    <ngx-status-card title="Roller Shades"
+                     [type]="statusCardTypes[currentTheme][1]">
       <i class="nb-roller-shades"></i>
     </ngx-status-card>
   </div>
 
   <div class="col-xxxl-3 col-md-6">
-    <ngx-status-card title="Wireless Audio" type="info">
+    <ngx-status-card title="Wireless Audio"
+                     [type]="statusCardTypes[currentTheme][2]">
       <i class="nb-audio"></i>
     </ngx-status-card>
   </div>
 
   <div class="col-xxxl-3 col-md-6">
-    <ngx-status-card title="Coffee Maker" type="warning">
+    <ngx-status-card title="Coffee Maker"
+                     [type]="statusCardTypes[currentTheme][3]">
       <i class="nb-coffee-maker"></i>
     </ngx-status-card>
   </div>

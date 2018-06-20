@@ -14,6 +14,10 @@
       font-size: 2.5rem;
       @include nb-ltr(margin-right, 1rem);
       @include nb-rtl(margin-left, 1rem);
+
+      @include nb-for-theme(corporate) {
+        color: nb-theme(actions-fg);
+      }
     }
 
     span {

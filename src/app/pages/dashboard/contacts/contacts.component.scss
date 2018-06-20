@@ -23,6 +23,10 @@
 
     &:not(:last-child) {
       border-bottom: 1px solid nb-theme(separator);
+
+      @include nb-for-theme(corporate) {
+        border-bottom-color: nb-theme(tabs-separator);
+      }
     }
   }
 

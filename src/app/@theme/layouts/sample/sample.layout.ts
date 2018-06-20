@@ -26,7 +26,7 @@ import { StateService } from '../../../@core/data/state.service';
                    tag="menu-sidebar"
                    responsive
                    [end]="sidebar.id === 'end'">
-        <nb-sidebar-header>
+        <nb-sidebar-header *ngIf="currentTheme !== 'corporate'">
           <a href="#" class="btn btn-hero-success main-btn">
             <i class="ion ion-social-github"></i> <span>Support Us</span>
           </a>
@@ -109,6 +109,9 @@ export class SampleLayoutComponent implements OnDestroy {
   protected layoutState$: Subscription;
   protected sidebarState$: Subscription;
   protected menuClick$: Subscription;
+  protected themeSubscription: Subscription;
+
+  currentTheme: string;
 
   constructor(protected stateService: StateService,
               protected menuService: NbMenuService,
@@ -135,11 +138,16 @@ export class SampleLayoutComponent implements OnDestroy {
           this.sidebarService.collapse('menu-sidebar');
         }
       });
+
+    this.themeSubscription = this.themeService.getJsTheme().subscribe(theme => {
+      this.currentTheme = theme.name;
+    });
   }
 
   ngOnDestroy() {
     this.layoutState$.unsubscribe();
     this.sidebarState$.unsubscribe();
     this.menuClick$.unsubscribe();
+    this.themeSubscription.unsubscribe();
   }
 }

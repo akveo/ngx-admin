@@ -34,19 +34,29 @@
             <div class="container-title">Pagination</div>
             <div class="btn-group btn-group-toggle btn-outline-toggle-group" data-toggle="buttons"
                  [(ngModel)]="paginationModel" ngbRadioGroup>
-              <label ngbButtonLabel class="btn btn-outline-success">
+              <label ngbButtonLabel
+                     class="btn"
+                     [ngClass]="{ 'btn-outline-success': currentTheme !== 'corporate', 'btn-outline-primary': currentTheme === 'corporate'}">
                 <input ngbButton type="radio" [value]="1"> 1
               </label>
-              <label ngbButtonLabel class="btn btn-outline-success">
+              <label ngbButtonLabel
+                     class="btn"
+                     [ngClass]="{ 'btn-outline-success': currentTheme !== 'corporate', 'btn-outline-primary': currentTheme === 'corporate'}">
                 <input ngbButton type="radio" [value]="2"> 2
               </label>
-              <label ngbButtonLabel class="btn btn-outline-success">
+              <label ngbButtonLabel
+                     class="btn"
+                     [ngClass]="{ 'btn-outline-success': currentTheme !== 'corporate', 'btn-outline-primary': currentTheme === 'corporate'}">
                 <input ngbButton type="radio" [value]="3"> 3
               </label>
-              <label ngbButtonLabel class="btn btn-outline-success">
+              <label ngbButtonLabel
+                     class="btn"
+                     [ngClass]="{ 'btn-outline-success': currentTheme !== 'corporate', 'btn-outline-primary': currentTheme === 'corporate'}">
                 <input ngbButton type="radio" [value]="4"> 4
               </label>
-              <label ngbButtonLabel class="btn btn-outline-success">
+              <label ngbButtonLabel
+                     class="btn"
+                     [ngClass]="{ 'btn-outline-success': currentTheme !== 'corporate', 'btn-outline-primary': currentTheme === 'corporate'}">
                 <input ngbButton type="radio" [value]="5"> 5
               </label>
             </div>
@@ -55,19 +65,29 @@
           <div class="icon-toolbar-container">
             <div class="container-title">Icon Toolbar</div>
             <div class="btn-group btn-group-toggle" data-toggle="buttons">
-              <label ngbButtonLabel class="btn btn-success" [class.active]="iconToolbarModel.one">
+              <label ngbButtonLabel
+                     class="btn"
+                     [ngClass]="{ 'btn-success': currentTheme !== 'corporate', 'btn-primary': currentTheme === 'corporate', 'active': iconToolbarModel.one}">
                 <input ngbButton type="checkbox" [(ngModel)]="iconToolbarModel.one"> 1
               </label>
-              <label ngbButtonLabel class="btn btn-success" [class.active]="iconToolbarModel.two">
+              <label ngbButtonLabel
+                     class="btn"
+                     [ngClass]="{ 'btn-success': currentTheme !== 'corporate', 'btn-primary': currentTheme === 'corporate', 'active': iconToolbarModel.two}">
                 <input ngbButton type="checkbox" [(ngModel)]="iconToolbarModel.two"> 2
               </label>
-              <label ngbButtonLabel class="btn btn-success" [class.active]="iconToolbarModel.three">
+              <label ngbButtonLabel
+                     class="btn"
+                     [ngClass]="{ 'btn-success': currentTheme !== 'corporate', 'btn-primary': currentTheme === 'corporate', 'active': iconToolbarModel.three}">
                 <input ngbButton type="checkbox" [(ngModel)]="iconToolbarModel.three"> 3
               </label>
-              <label ngbButtonLabel class="btn btn-success" [class.active]="iconToolbarModel.four">
+              <label ngbButtonLabel
+                     class="btn"
+                     [ngClass]="{ 'btn-success': currentTheme !== 'corporate', 'btn-primary': currentTheme === 'corporate', 'active': iconToolbarModel.four}">
                 <input ngbButton type="checkbox" [(ngModel)]="iconToolbarModel.four"> 4
               </label>
-              <label ngbButtonLabel class="btn btn-success" [class.active]="iconToolbarModel.five">
+              <label ngbButtonLabel
+                     class="btn"
+                     [ngClass]="{ 'btn-success': currentTheme !== 'corporate', 'btn-primary': currentTheme === 'corporate', 'active': iconToolbarModel.five}">
                 <input ngbButton type="checkbox" [(ngModel)]="iconToolbarModel.five"> 5
               </label>
             </div>
@@ -77,25 +97,43 @@
           <div class="container-title divided-button-group">Divided Button Group</div>
           <div class="btn-group btn-group-toggle btn-divided-group btn-outline-divided-group btn-group-full-width btn-divided-checkbox-group "
             data-toggle="buttons">
-            <label ngbButtonLabel class="btn btn-outline-success btn-icon" [class.active]="dividedCheckboxModel.monday">
+            <label ngbButtonLabel
+                   class="btn btn-icon"
+                   [ngClass]="{ 'btn-outline-success': currentTheme !== 'corporate', 'btn-outline-primary': currentTheme === 'corporate'}"
+                   [class.active]="dividedCheckboxModel.monday">
               <input ngbButton type="checkbox" [(ngModel)]="dividedCheckboxModel.monday"> <i
               class="nb-arrow-thin-down"></i>
             </label>
-            <label ngbButtonLabel class="btn btn-outline-success btn-icon" [class.active]="dividedCheckboxModel.tuesday">
+            <label ngbButtonLabel
+                   class="btn btn-icon"
+                   [ngClass]="{ 'btn-outline-success': currentTheme !== 'corporate', 'btn-outline-primary': currentTheme === 'corporate'}"
+                   [class.active]="dividedCheckboxModel.tuesday">
               <input ngbButton type="checkbox" [(ngModel)]="dividedCheckboxModel.tuesday"> <i
               class="nb-arrow-thin-up"></i>
             </label>
-            <label ngbButtonLabel class="btn btn-outline-success btn-icon" [class.active]="dividedCheckboxModel.wednesday">
+            <label ngbButtonLabel
+                   class="btn btn-icon"
+                   [ngClass]="{ 'btn-outline-success': currentTheme !== 'corporate', 'btn-outline-primary': currentTheme === 'corporate'}"
+                   [class.active]="dividedCheckboxModel.wednesday">
               <input ngbButton type="checkbox" [(ngModel)]="dividedCheckboxModel.wednesday"> <i class="nb-arrow-thin-left"></i>
             </label>
-            <label ngbButtonLabel class="btn btn-outline-success btn-icon" [class.active]="dividedCheckboxModel.thursday">
+            <label ngbButtonLabel
+                   class="btn btn-icon"
+                   [ngClass]="{ 'btn-outline-success': currentTheme !== 'corporate', 'btn-outline-primary': currentTheme === 'corporate'}"
+                   [class.active]="dividedCheckboxModel.thursday">
               <input ngbButton type="checkbox" [(ngModel)]="dividedCheckboxModel.thursday"> <i
               class="nb-arrow-thin-right"></i>
             </label>
-            <label ngbButtonLabel class="btn btn-outline-success btn-icon" [class.active]="dividedCheckboxModel.friday">
+            <label ngbButtonLabel
+                   class="btn btn-icon"
+                   [ngClass]="{ 'btn-outline-success': currentTheme !== 'corporate', 'btn-outline-primary': currentTheme === 'corporate'}"
+                   [class.active]="dividedCheckboxModel.friday">
               <input ngbButton type="checkbox" [(ngModel)]="dividedCheckboxModel.friday"> <i class="nb-arrow-left"></i>
             </label>
-            <label ngbButtonLabel class="btn btn-outline-success btn-icon" [class.active]="dividedCheckboxModel.saturday">
+            <label ngbButtonLabel
+                   class="btn btn-icon"
+                   [ngClass]="{ 'btn-outline-success': currentTheme !== 'corporate', 'btn-outline-primary': currentTheme === 'corporate'}"
+                   [class.active]="dividedCheckboxModel.saturday">
               <input ngbButton type="checkbox" [(ngModel)]="dividedCheckboxModel.saturday"> <i
               class="nb-arrow-right"></i>
             </label>

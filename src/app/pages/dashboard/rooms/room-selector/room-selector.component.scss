@@ -92,4 +92,12 @@
       }
     }
   }
+
+  @include nb-for-theme(corporate) {
+    .selected-room {
+      .room-border {
+        stroke: nb-theme(color-primary);
+      }
+    }
+  }
 }

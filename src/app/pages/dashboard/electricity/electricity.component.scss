@@ -22,6 +22,10 @@
     height: 100%;
     z-index: 2;
     box-shadow: nb-theme(card-shadow);
+
+    @include nb-for-theme(corporate) {
+      border-right: 1px solid nb-theme(card-border-color);
+    }
   }
 
   .table-header {
@@ -91,6 +95,10 @@
 
     &:not(:first-child) {
       border-top: 1px solid nb-theme(separator);
+
+      @include nb-for-theme(corporate) {
+        border-top-color: nb-theme(tabs-separator);
+      }
     }
 
     .month {
@@ -169,7 +177,7 @@
   .stats-block {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: normal;
     color: nb-theme(color-fg);
     padding: 0 1.5rem;
     border-right: 1px solid nb-theme(separator);
@@ -209,6 +217,45 @@
 
     .stats-block .value {
       font-weight: nb-theme(font-weight-bolder);
+    }
+  }
+
+  @include nb-for-theme(corporate) {
+    nb-tabset /deep/ ul li.active {
+      &::before {
+        display: none;
+      }
+    }
+
+    .stats-block {
+      border-right: none;
+    }
+
+    .stats-month {
+      &:hover {
+        position: relative;
+        background-color: nb-theme(layout-bg);
+
+        &::before {
+          position: absolute;
+          content: '';
+          height: 100%;
+          width: 6px;
+          left: 0;
+          background-color: nb-theme(color-primary);
+          border-radius: nb-theme(radius);
+        }
+      }
+
+      .delta {
+        &.down {
+          color: text-primary();
+
+          &::before {
+            border-top: 8px solid text-primary();
+          }
+        }
+      }
     }
   }
 

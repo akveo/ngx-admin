@@ -1,0 +1,78 @@
+@import '../../styles/themes';
+@import '~@nebular/theme/styles/core/mixins';
+@import '~@nebular/theme/styles/core/functions';
+
+@include nb-install-component() {
+  $default-switcher-background: #ebeff5;
+  $cosmic-switcher-background: #4e41a5;
+  $corporate-switcher-background: #2b2d34;
+
+  .themes-switcher {
+    display: flex;
+    font-size: 1.25rem;
+    padding: 0.8rem 1.25rem;
+    align-items: center;
+    cursor: pointer;
+    background-color: $default-switcher-background;
+    border-radius: nb-theme(radius);
+
+    @include nb-for-theme(cosmic) {
+      background-color: $cosmic-switcher-background;
+    }
+
+    @include nb-for-theme(corporate) {
+      background-color: $corporate-switcher-background;
+    }
+
+    &:hover {
+      background-color: tint($default-switcher-background, 14%);
+
+      @include nb-for-theme(cosmic) {
+        background-color: tint($cosmic-switcher-background, 14%);
+      }
+
+      @include nb-for-theme(corporate) {
+        background-color: tint($corporate-switcher-background, 14%);
+      }
+    }
+
+    span {
+      margin: 0 1.2rem;
+    }
+
+    i {
+      color: nb-theme(color-primary);
+      font-size: 1.8rem;
+      border-radius: 50%;
+      position: relative;
+
+      @include nb-for-theme(default) {
+        color: nb-theme(color-success);
+      }
+
+      @include nb-for-theme(corporate) {
+        color: nb-theme(color-fg-highlight);
+      }
+
+      &::before {
+        // Hack for IE11, IE11 should not set background
+        background: -webkit-linear-gradient(#01dbb5, #0bbb79);
+
+        @include nb-for-theme(cosmic) {
+          // Hack for IE11, IE11 should not set background
+          background: -webkit-linear-gradient(#a258fe, #7958fa);
+        }
+
+        @include nb-for-theme(corporate) {
+          // Hack for IE11, IE11 should not set background
+          background: -webkit-linear-gradient(#e9e8eb, #a7a2be);
+        }
+
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    }
+  }
+}
+
+

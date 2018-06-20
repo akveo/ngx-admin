@@ -39,6 +39,10 @@
         width: $button-size;
         height: $button-size;
         border-radius: nb-theme(btn-border-radius);
+
+        @include nb-for-theme(corporate) {
+          border-radius: nb-theme(btn-semi-round-border-radius);
+        }
       }
 
       .state-details {
