@@ -76,6 +76,12 @@ export const DEFAULT_THEME = {
       shadow: '#00bb85',
     },
 
+    trafficBarEchart: {
+      gradientFrom: '#fc0',
+      gradientTo: '#ffa100',
+      shadow: '#ffb600',
+    },
+
     echarts: {
       bg: '#ffffff',
       textColor: '#484848',

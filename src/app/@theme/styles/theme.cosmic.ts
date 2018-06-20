@@ -75,6 +75,12 @@ export const COSMIC_THEME = {
       shadow: '#00bb85',
     },
 
+    trafficBarEchart: {
+      gradientFrom: '#fc0',
+      gradientTo: '#ffa100',
+      shadow: '#ffb600',
+    },
+
     echarts: {
       bg: '#3d3780',
       textColor: '#ffffff',

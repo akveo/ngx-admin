@@ -1,11 +1,11 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'ngx-stats-card',
-  styleUrls: ['./stats-card.component.scss'],
-  templateUrl: './stats-card.component.html',
+  selector: 'ngx-profit-card',
+  styleUrls: ['./profit-card.component.scss'],
+  templateUrl: './profit-card.component.html',
 })
-export class StatsCardComponent {
+export class ProfitCardComponent {
 
   @Input() title: string;
   @Input() value: string;
