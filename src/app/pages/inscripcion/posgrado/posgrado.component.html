@@ -1,5 +1,5 @@
 <div class="col-md-12 col-lg-12 ">
-    <nb-card>
+    <nb-card [hidden]="show_form" >
       <nb-card-body>
         <p>
             <ngb-progressbar showValue="true" type="success" [value]="percentage" [animated]="true" [height]="'25px'"></ngb-progressbar>
@@ -67,4 +67,33 @@
         </nb-tabset>
       </nb-card-body>
     </nb-card>
+
+      <div [hidden]="show_profile">
+          <ngx-perfil></ngx-perfil>
+      </div>
+
+
+
+        <div class="row container">
+
+            <nb-card class="col-6 col-sm-3 exp-card" (click)="show_form=false; show_profile=true" >
+                <nb-card-header> Formulario </nb-card-header>
+                <nb-card-body align="center">
+                    <i class="ion-clipboard" style="font-size: 5rem"></i>
+                </nb-card-body>
+              </nb-card>
+
+              <nb-card class="col-6 col-sm-3 exp-card" (click)="show_profile=false; show_form=true">
+                  <nb-card-header> Perfil </nb-card-header>
+                  <nb-card-body align="center">
+                      <i class="nb-person" style="font-size: 5rem"></i>
+                  </nb-card-body>
+              </nb-card>
+        </div>
+
+
+
+
 </div>
+
+

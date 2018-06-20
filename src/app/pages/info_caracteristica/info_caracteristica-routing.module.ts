@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { InfoCaracteristicaComponent } from './info_caracteristica.component';
 import { ListInfoCaracteristicaComponent } from './list-info_caracteristica/list-info_caracteristica.component';
 import { CrudInfoCaracteristicaComponent } from './crud-info_caracteristica/crud-info_caracteristica.component';
+import { ViewInfoCaracteristicaComponent } from './view-info_caracteristica/view-info_caracteristica.component';
 
 
 
@@ -33,4 +34,5 @@ export const routedComponents = [
   InfoCaracteristicaComponent,
   ListInfoCaracteristicaComponent,
   CrudInfoCaracteristicaComponent,
+  ViewInfoCaracteristicaComponent,
 ];
