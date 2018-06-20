@@ -1,4 +1,4 @@
-import {ChangeDetectorRef, Component, OnDestroy} from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { NbThemeService } from '@nebular/theme';
 
 @Component({
@@ -17,13 +17,11 @@ export class TemperatureComponent implements OnDestroy {
   humidityMode = 'heat';
 
   colors: any;
-  temperatureColors: string[] = [];
   themeSubscription: any;
 
   constructor(private theme: NbThemeService) {
     this.themeSubscription = this.theme.getJsTheme().subscribe(config => {
       this.colors = config.variables;
-      this.temperatureColors = [...config.variables.temperature as any[]];
     });
   }
 
