@@ -19,6 +19,8 @@ export class PosgradoComponent implements OnInit {
   nForms: number;
   percentage: any;
   percentageTab = [];
+  show_form = true;
+  show_profile = true;
 
   constructor(
     private autenticacion: ImplicitAutenticationService,

@@ -1,3 +1,19 @@
-<p>
-  view-info-persona works!
-</p>
+
+<nb-card *ngIf="info_info_persona">
+  <nb-card-header>{{"GLOBAL.info_basica" | translate}} "{{info_info_persona.Usuario}}"</nb-card-header>
+  <nb-card-body class="row container">
+      <div class="col-md-6 col-sm-6col-sm-6 col-xs-12">
+        <ul>
+            <li><label><strong>{{"GLOBAL.nombre" | translate}}: </strong></label> {{info_info_persona.PrimerNombre}} {{info_info_persona.SegundoNombre}} {{info_info_persona.PrimerApellido}} {{info_info_persona.SegundoApellido}}</li>
+            <li><label><strong>{{"GLOBAL.fecha_nacimiento" | translate}}: </strong></label> {{info_info_persona.FechaNacimiento | date : "yyyy/MM/dd"}}</li>
+            <li><label><strong>{{"GLOBAL.genero" | translate}}: </strong></label> {{info_info_persona.Genero.Nombre}}</li>
+            <li><label><strong>{{"GLOBAL.estado_civil" | translate}}: </strong></label> {{info_info_persona.EstadoCivil.Nombre}}</li>
+        </ul>
+          <a href=""><i class="ion-edit"></i>{{"GLOBAL.actualizar" | translate}}</a>
+      </div>
+      <div class="col-md-6 col-sm-6 col-xs-12 pull-right">
+          <img class="user-picture image" src="../../../../assets/images/foto.png">
+      </div>
+  </nb-card-body>
+</nb-card>
+

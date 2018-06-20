@@ -15,10 +15,12 @@ export class ViewInfoPersonaComponent implements OnInit {
   @Input('info_persona_id')
   set name(info_persona_id: number) {
     this.info_persona_id = info_persona_id;
-    // this.loadInfoPersona();
+    this.loadInfoPersona();
   }
 
-  constructor(private campusMidService: CampusMidService) { }
+  constructor(private campusMidService: CampusMidService) {
+    this.loadInfoPersona();
+   }
 
   ngOnInit() {
   }
@@ -26,7 +28,7 @@ export class ViewInfoPersonaComponent implements OnInit {
   public loadInfoPersona(): void {
     if (this.info_persona_id !== undefined && this.info_persona_id !== 0 &&
       this.info_persona_id.toString() !== '') {
-      this.campusMidService.get('persona/ConsultaPersona/' + this.info_persona_id)
+      this.campusMidService.get('persona/ConsultaPersona/Utest0' + this.info_persona_id)
         .subscribe(res => {
           if (res !== null) {
             this.info_info_persona = <InfoPersona>res;
