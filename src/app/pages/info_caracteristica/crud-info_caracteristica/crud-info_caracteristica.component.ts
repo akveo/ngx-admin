@@ -156,14 +156,15 @@ export class CrudInfoCaracteristicaComponent implements OnInit {
     if (this.info_caracteristica_id !== undefined && this.info_caracteristica_id !== 0 &&
       this.info_caracteristica_id.toString() !== '') {
       this.denied_acces = false;
-      this.campusMidService.get('/persona/DatosComplementarios/' + this.info_caracteristica_id)
+      this.campusMidService.get('persona/DatosComplementarios/' + this.info_caracteristica_id +
+        '?query=TipoRelacionUbicacionEnte:1')
         .subscribe(res => {
           if (res !== null) {
             this.datosGet = <InfoCaracteristicaGet>res;
             this.info_info_caracteristica = <InfoCaracteristica>res;
+            this.info_info_caracteristica.Ente = (1 * this.info_caracteristica_id);
             this.info_info_caracteristica.GrupoSanguineo = <any>{Id: this.info_info_caracteristica.GrupoSanguineo};
             this.info_info_caracteristica.Rh = <any>{Id: this.info_info_caracteristica.Rh};
-            this.info_info_caracteristica.Ente = (1 * this.info_caracteristica_id);
             this.info_info_caracteristica.TipoRelacionUbicacionEnte = 1;
             this.info_info_caracteristica.IdLugarEnte = this.datosGet.Lugar[0].Id;
             this.info_info_caracteristica.PaisNacimiento = this.datosGet.Lugar[0].Lugar.PAIS;
@@ -193,7 +194,7 @@ export class CrudInfoCaracteristicaComponent implements OnInit {
     .then((willDelete) => {
       if (willDelete.value) {
         this.info_info_caracteristica = <InfoCaracteristica>infoCaracteristica;
-        this.campusMidService.put('/persona/DatosComplementarios/', this.info_info_caracteristica)
+        this.campusMidService.put('persona/DatosComplementarios', this.info_info_caracteristica)
           .subscribe(res => {
             this.loadInfoCaracteristica();
             this.eventChange.emit(true);
@@ -220,7 +221,7 @@ export class CrudInfoCaracteristicaComponent implements OnInit {
     .then((willDelete) => {
       if (willDelete.value) {
         this.info_info_caracteristica = <InfoCaracteristica>infoCaracteristica;
-        this.campusMidService.post('/persona/DatosComplementarios/', this.info_info_caracteristica)
+        this.campusMidService.post('persona/DatosComplementarios', this.info_info_caracteristica)
           .subscribe(res => {
             this.info_info_caracteristica = <InfoCaracteristica>res;
             this.eventChange.emit(true);
