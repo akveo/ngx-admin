@@ -65,6 +65,24 @@ export let FORM_EXPERIENCIA_LABORAL = {
     {
       etiqueta: 'input',
       claseGrid: 'col-lg-6 col-md-6 col-sm-12 col-xs-12',
+      nombre: 'TipoVinculacion',
+      label_i18n: 'tipo_vinculacion',
+      placeholder_i18n: 'tipo_vinculacion',
+      requerido: true,
+      tipo: 'text',
+    },
+    {
+      etiqueta: 'input',
+      claseGrid: 'col-lg-6 col-md-6 col-sm-12 col-xs-12',
+      nombre: 'TipoDedicacion',
+      label_i18n: 'tipo_dedicacion',
+      placeholder_i18n: 'tipo_dedicacion',
+      requerido: true,
+      tipo: 'text',
+    },
+    {
+      etiqueta: 'input',
+      claseGrid: 'col-lg-6 col-md-6 col-sm-12 col-xs-12',
       nombre: 'Cargo',
       label_i18n: 'cargo',
       placeholder_i18n: 'cargo',
@@ -73,7 +91,7 @@ export let FORM_EXPERIENCIA_LABORAL = {
     },
     {
       etiqueta: 'input',
-      claseGrid: 'col-lg-6 col-md-6 col-sm-12 col-xs-12',
+      claseGrid: 'col-lg-12 col-md-12 col-sm-12 col-xs-12',
       nombre: 'DescripcionCargo',
       label_i18n: 'descripcion_cargo',
       placeholder_i18n: 'descripcion_cargo',
