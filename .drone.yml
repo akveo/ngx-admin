@@ -24,8 +24,9 @@ pipeline:
     secrets: [ aws_access_key_id, aws_secret_access_key ]
     region: "us-east-1"
     bucket: "campus-cliente-${DRONE_BRANCH}"
-    source: dist/**/*
+    source: dist/*
     target: /
+    strip_prefix: dist/
     recursive: true
     when:
       branch: [master, develop]
