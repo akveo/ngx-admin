@@ -25,9 +25,12 @@ export class ViewInformacionContactoComponent implements OnInit {
       this.informacion_contacto_id.toString() !== '') {
         this.campusMidService.get('persona/DatosContacto/' + this.informacion_contacto_id)
         .subscribe(res => {
-          if (res !== null) {
+          const r = <any>res;
+          if (r !== null && r.Type !== 'error') {
             this.info_informacion_contacto = <InfoContactoGet>res;
-            }
+          } else  {
+            this.info_informacion_contacto = undefined;
+          }
         });
     } else  {
       this.info_informacion_contacto = undefined;

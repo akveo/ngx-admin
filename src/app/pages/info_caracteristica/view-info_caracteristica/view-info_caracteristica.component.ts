@@ -25,8 +25,11 @@ export class ViewInfoCaracteristicaComponent implements OnInit {
       this.info_caracteristica_id.toString() !== '') {
       this.campusMidService.get('/persona/DatosComplementarios/' + this.info_caracteristica_id)
         .subscribe(res => {
-          if (res !== null) {
+          const r = <any>res;
+          if (r !== null && r.Type !== 'error') {
             this.info_info_caracteristica = <InfoCaracteristica>res;
+          } else  {
+            this.info_info_caracteristica = undefined;
           }
         });
     } else  {

@@ -11,6 +11,7 @@ export class ViewInfoPersonaComponent implements OnInit {
 
   info_persona_id: number;
   info_info_persona: InfoPersona;
+  info_persona_user: string;
 
   @Input('info_persona_id')
   set name(info_persona_id: number) {
@@ -26,12 +27,15 @@ export class ViewInfoPersonaComponent implements OnInit {
   }
 
   public loadInfoPersona(): void {
-    if (this.info_persona_id !== undefined && this.info_persona_id !== 0 &&
-      this.info_persona_id.toString() !== '') {
-      this.campusMidService.get('persona/ConsultaPersona/Utest0' + this.info_persona_id)
+    const id = this.info_persona_id ? this.info_persona_id : this.info_persona_user ? this.info_persona_user : undefined;
+    if (id !== undefined && id !== 0 && id.toString() !== '') {
+      this.campusMidService.get('persona/ConsultaPersona/' + id)
         .subscribe(res => {
-          if (res !== null) {
+          const r = <any>res;
+          if (r !== null && r.Type !== 'error') {
             this.info_info_persona = <InfoPersona>res;
+          } else {
+            this.info_info_persona = undefined;
           }
         });
     } else {
