@@ -42,17 +42,17 @@ export class DinamicformComponent implements OnInit, OnChanges {
             for (const i in this.modeloData) {
               if (this.modeloData.hasOwnProperty(i)) {
                 if (i === element.nombre) {
+                  if (element.etiqueta === 'mat-date') {
+                    element.valor = new Date(this.modeloData[i]);
+                  }
+                  if (element.etiqueta === 'file') {
+                    element.url = this.cleanURL(this.modeloData[i]);
+                  }
                   if (element.etiqueta === 'input' && element.tipo === 'date') {
                     element.valor = (new Date(this.modeloData[i])).toISOString().substring(0, 10);
                   } else {
                     element.valor = this.modeloData[i];
                     this.validCampo(element);
-                  }
-                  if (element.etiqueta === 'mat-date') {
-                    element.valor = new Date(this.modeloData[i]);
-                  }
-                  if (element.etiqueta === 'file') {
-                    element.url = this.modeloData[i];
                   }
                 }
               }

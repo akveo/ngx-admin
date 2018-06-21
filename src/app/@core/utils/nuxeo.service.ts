@@ -93,8 +93,11 @@ export class NuxeoService {
             });
     }
 
-    getFile(Id, documentoService, nuxeoservice) {
+    getFile(Id, documentoService, nuxeoservice, ) {
         console.info(this.blobDocument);
+        let canvas, ctx, dataURL, base64;
+        canvas = document.createElement("canvas");
+        ctx = canvas.getContext("2d");
         documentoService.get('documento/' + Id)
             .subscribe(res => {
                 if (res !== null) {
@@ -105,8 +108,13 @@ export class NuxeoService {
                             .then(function (response) {
                                 response.fetchBlob()
                                     .then(function (blob) {
-                                        nuxeoservice.blobDocument.push(blob);
-                                        nuxeoservice.blobDocument$.next(nuxeoservice.blobDocument);
+                                        blob.blob()
+                                        .then(function (responseblob) {
+                                            const url = URL.createObjectURL(responseblob)
+                                            nuxeoservice.blobDocument.push(url);
+                                            nuxeoservice.blobDocument$.next(nuxeoservice.blobDocument);
+                                        });
+ 
                                     })
                                     .catch(function (response2) {
                                     });
@@ -116,5 +124,9 @@ export class NuxeoService {
                     }
                 }
             });
+    }
+    getFileImg(Id, documentoService, nuxeoservice) {
+
+
     }
 }
