@@ -22,27 +22,35 @@
       }
 
       i {
+        $icon-color-default: #0bbb79;
+        $icon-color-cosmic: #7958fa;
+        $icon-color-corporate: #a7a2be;
+
+        $icon-top-color-default: #01dbb5;
+        $icon-top-color-cosmic: #a258fe;
+        $icon-top-color-corporate: #e9e8eb;
+
         font-size: 2rem;
 
         &.drop-icon-default {
-          color: #0bbb79;
+          color: $icon-color-default;
 
           // Hack for IE11, IE11 should not set background
-          background: -webkit-linear-gradient(#01dbb5, #0bbb79);
+          background: -webkit-linear-gradient($icon-top-color-default, $icon-color-default);
         }
 
         &.drop-icon-cosmic {
-          color: #7958fa;
+          color: $icon-color-cosmic;
 
           // Hack for IE11, IE11 should not set background
-          background: -webkit-linear-gradient(#a258fe, #7958fa);
+          background: -webkit-linear-gradient($icon-top-color-cosmic, $icon-color-cosmic);
         }
 
         &.drop-icon-corporate {
-          color: #a7a2be;
+          color: $icon-color-corporate;
 
           // Hack for IE11, IE11 should not set background
-          background: -webkit-linear-gradient(#e9e8eb, #a7a2be);
+          background: -webkit-linear-gradient($icon-top-color-corporate, $icon-color-corporate);
         }
 
         &.drop-icon-default,

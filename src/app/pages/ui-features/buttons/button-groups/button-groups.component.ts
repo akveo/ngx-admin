@@ -1,13 +1,11 @@
-import {Component, OnDestroy} from '@angular/core';
-import { NbThemeService } from '@nebular/theme';
-import { Subscription } from 'rxjs';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'ngx-button-groups',
   styleUrls: ['./button-groups.component.scss'],
   templateUrl: './button-groups.component.html',
 })
-export class ButtonGroupsComponent implements OnDestroy {
+export class ButtonGroupsComponent {
 
   radioModel = 'left';
 
@@ -43,17 +41,4 @@ export class ButtonGroupsComponent implements OnDestroy {
     middle: false,
     right: false,
   };
-
-  currentTheme: string;
-  themeSubscription: Subscription;
-
-  constructor(private themeService: NbThemeService) {
-    this.themeSubscription = this.themeService.getJsTheme().subscribe(theme => {
-      this.currentTheme = theme.name;
-    });
-  }
-
-  ngOnDestroy() {
-    this.themeSubscription.unsubscribe();
-  }
 }

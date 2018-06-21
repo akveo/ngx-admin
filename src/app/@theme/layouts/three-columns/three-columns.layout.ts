@@ -1,6 +1,6 @@
 import { Component, OnDestroy } from '@angular/core';
 import { NbThemeService } from '@nebular/theme';
-import { Subscription } from 'rxjs/Subscription';
+import { takeWhile } from 'rxjs/operators/takeWhile';
 
 // TODO: move layouts into the framework
 @Component({
@@ -38,17 +38,20 @@ import { Subscription } from 'rxjs/Subscription';
   `,
 })
 export class ThreeColumnsLayoutComponent implements OnDestroy {
-  protected themeSubscription: Subscription;
+
+  private alive = true;
 
   currentTheme: string;
 
   constructor(protected themeService: NbThemeService) {
-    this.themeSubscription = this.themeService.getJsTheme().subscribe(theme => {
-      this.currentTheme = theme.name;
+    this.themeService.getJsTheme()
+      .pipe(takeWhile(() => this.alive))
+      .subscribe(theme => {
+        this.currentTheme = theme.name;
     });
   }
 
   ngOnDestroy() {
-    this.themeSubscription.unsubscribe();
+    this.alive = false;
   }
 }

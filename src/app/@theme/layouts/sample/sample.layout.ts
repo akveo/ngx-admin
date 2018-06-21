@@ -1,6 +1,5 @@
 import { Component, OnDestroy } from '@angular/core';
-import { delay, withLatestFrom } from 'rxjs/operators';
-import { Subscription } from 'rxjs';
+import { delay, withLatestFrom, takeWhile } from 'rxjs/operators';
 import {
   NbMediaBreakpoint,
   NbMediaBreakpointsService,
@@ -106,10 +105,7 @@ export class SampleLayoutComponent implements OnDestroy {
   layout: any = {};
   sidebar: any = {};
 
-  protected layoutState$: Subscription;
-  protected sidebarState$: Subscription;
-  protected menuClick$: Subscription;
-  protected themeSubscription: Subscription;
+  private alive = true;
 
   currentTheme: string;
 
@@ -118,17 +114,20 @@ export class SampleLayoutComponent implements OnDestroy {
               protected themeService: NbThemeService,
               protected bpService: NbMediaBreakpointsService,
               protected sidebarService: NbSidebarService) {
-    this.layoutState$ = this.stateService.onLayoutState()
+    this.stateService.onLayoutState()
+      .pipe(takeWhile(() => this.alive))
       .subscribe((layout: string) => this.layout = layout);
 
-    this.sidebarState$ = this.stateService.onSidebarState()
+    this.stateService.onSidebarState()
+      .pipe(takeWhile(() => this.alive))
       .subscribe((sidebar: string) => {
         this.sidebar = sidebar;
       });
 
     const isBp = this.bpService.getByName('is');
-    this.menuClick$ = this.menuService.onItemSelect()
+    this.menuService.onItemSelect()
       .pipe(
+        takeWhile(() => this.alive),
         withLatestFrom(this.themeService.onMediaQueryChange()),
         delay(20),
       )
@@ -139,15 +138,14 @@ export class SampleLayoutComponent implements OnDestroy {
         }
       });
 
-    this.themeSubscription = this.themeService.getJsTheme().subscribe(theme => {
-      this.currentTheme = theme.name;
+    this.themeService.getJsTheme()
+      .pipe(takeWhile(() => this.alive))
+      .subscribe(theme => {
+        this.currentTheme = theme.name;
     });
   }
 
   ngOnDestroy() {
-    this.layoutState$.unsubscribe();
-    this.sidebarState$.unsubscribe();
-    this.menuClick$.unsubscribe();
-    this.themeSubscription.unsubscribe();
+    this.alive = false;
   }
 }

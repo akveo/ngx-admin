@@ -13,27 +13,13 @@
     padding: 0.8rem 1.25rem;
     align-items: center;
     cursor: pointer;
-    background-color: $default-switcher-background;
+    background-color: nb-theme(switcher-background);
     border-radius: nb-theme(radius);
 
-    @include nb-for-theme(cosmic) {
-      background-color: $cosmic-switcher-background;
-    }
-
-    @include nb-for-theme(corporate) {
-      background-color: $corporate-switcher-background;
-    }
-
     &:hover {
-      background-color: tint($default-switcher-background, 14%);
+      $color: nb-theme(switcher-background);
 
-      @include nb-for-theme(cosmic) {
-        background-color: tint($cosmic-switcher-background, 14%);
-      }
-
-      @include nb-for-theme(corporate) {
-        background-color: tint($corporate-switcher-background, 14%);
-      }
+      background-color: tint($color, 14%);
     }
 
     span {
@@ -56,18 +42,7 @@
 
       &::before {
         // Hack for IE11, IE11 should not set background
-        background: -webkit-linear-gradient(#01dbb5, #0bbb79);
-
-        @include nb-for-theme(cosmic) {
-          // Hack for IE11, IE11 should not set background
-          background: -webkit-linear-gradient(#a258fe, #7958fa);
-        }
-
-        @include nb-for-theme(corporate) {
-          // Hack for IE11, IE11 should not set background
-          background: -webkit-linear-gradient(#e9e8eb, #a7a2be);
-        }
-
+        background: nb-theme(drops-icon-line-gadient);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
       }
