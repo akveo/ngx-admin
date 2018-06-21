@@ -1,7 +1,8 @@
-clone:
-  path: github.com/udistrital/campus_cliente
+workspace:
+  base: /go
+  path: src/github.com/udistrital/${DRONE_REPO##udistrital/}
 
-build:
+pipeline:
 
   # build and test the go program
   nodejs:
@@ -17,34 +18,31 @@ build:
       branch: develop
       event: push
 
-publish:
-
-  # upload directory /dist to s3 bucket, campus-cliente-develop o campus-cliente-master 
-  s3:
+  # upload app.zip to s3 bucket for CodePipline
+  publish_s3:
+    image: plugins/s3
+    secrets: [ aws_access_key_id, aws_secret_access_key ]
     region: "us-east-1"
-    bucket: "campus-cliente-$$BRANCH"
-    access_key: $$DRONE_AWS_ACCESS_KEY_ID
-    secret_key: $$DRONE_AWS_SECRET_ACCESS_KEY
+    bucket: "campus-cliente-${DRONE_BRANCH}"
     source: dist
     target: /
     recursive: true
     when:
-      branch: develop
+      branch: [master, develop]
       event: push
 
-notify:
-
-  # notify telegram
-  webhook:
-    urls:
-      - https://api.telegram.org/bot$$DRONE_TELEGRAM_TOKEN/sendMessage
-    content_type: application/json
-    template: >
-      {
-        "chat_id": "-129350403",
-        "parse_mode": "Markdown",
-        "text": "`{{repo.full_name}}` [{{uppercase build.status}}]({{build.link_url}}) `{{build.branch}}`@{{truncate build.commit 7}}"
-      }
+  #Notify results to telegram    
+  notify_telegram:
+    image: appleboy/drone-telegram    
+    secrets: [ telegram_token, telegram_to ]
+    format: html
+    message: >
+      {{#success build.status}}
+        <code>{{repo.owner}}/{{repo.name}}</code> <a href="{{build.link}}">SUCCESS</a> 
+        <code>{{commit.branch}}</code>@<a href="{{commit.link}}">{{truncate commit.sha 7}}</a>
+      {{else}}
+        <code>{{repo.owner}}/{{repo.name}}</code> <a href="{{build.link}}">FAILURE</a>
+        <code>{{commit.branch}}</code>@<a href="{{commit.link}}">{{truncate commit.sha 7}}</a>
+      {{/success}}
     when:
-      branch: develop
-      event: push
+      status: [success, failure]
