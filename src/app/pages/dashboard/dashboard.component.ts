@@ -2,7 +2,7 @@ import {Component, OnDestroy} from '@angular/core';
 import { NbThemeService } from '@nebular/theme';
 import { takeWhile } from 'rxjs/operators/takeWhile' ;
 
-interface ICardSettings {
+interface CardSettings {
   title: string;
   iconClass: string;
   type: string;
@@ -17,22 +17,22 @@ export class DashboardComponent implements OnDestroy {
 
   private alive = true;
 
-  lightCard: ICardSettings = {
+  lightCard: CardSettings = {
     title: 'Light',
     iconClass: 'nb-lightbulb',
     type: 'primary',
   };
-  rollerShadesCard: ICardSettings = {
+  rollerShadesCard: CardSettings = {
     title: 'Roller Shades',
     iconClass: 'nb-roller-shades',
     type: 'success',
   };
-  wirelessAudioCard: ICardSettings = {
+  wirelessAudioCard: CardSettings = {
     title: 'Wireless Audio',
     iconClass: 'nb-audio',
     type: 'info',
   };
-  coffeeMakerCard: ICardSettings = {
+  coffeeMakerCard: CardSettings = {
     title: 'Coffee Maker',
     iconClass: 'nb-coffee-maker',
     type: 'warning',
@@ -40,7 +40,7 @@ export class DashboardComponent implements OnDestroy {
 
   statusCards: string;
 
-  commonStatusCardsSet: ICardSettings[] = [
+  commonStatusCardsSet: CardSettings[] = [
     this.lightCard,
     this.rollerShadesCard,
     this.wirelessAudioCard,
@@ -48,9 +48,9 @@ export class DashboardComponent implements OnDestroy {
   ];
 
   statusCardsByThemes: {
-    default: ICardSettings[];
-    cosmic: ICardSettings[];
-    corporate: ICardSettings[];
+    default: CardSettings[];
+    cosmic: CardSettings[];
+    corporate: CardSettings[];
   } = {
     default: this.commonStatusCardsSet,
     cosmic: this.commonStatusCardsSet,

@@ -16,6 +16,7 @@ $nb-themes: nb-register-theme((
   font-secondary: Exo,
 
   switcher-background: #ebeff5,
+  switcher-background-percentage: 50%,
   drops-icon-line-gadient: -webkit-linear-gradient(#01dbb5, #0bbb79),
 ), default, default);
 
@@ -29,6 +30,7 @@ $nb-themes: nb-register-theme((
   font-secondary: Exo,
 
   switcher-background: #4e41a5,
+  switcher-background-percentage: 14%,
   drops-icon-line-gadient: -webkit-linear-gradient(#a258fe, #7958fa),
 ), cosmic, cosmic);
 
@@ -42,5 +44,6 @@ $nb-themes: nb-register-theme((
   font-secondary: Exo,
 
   switcher-background: #2b2d34,
+  switcher-background-percentage: 14%,
   drops-icon-line-gadient: -webkit-linear-gradient(#e9e8eb, #a7a2be),
 ), corporate, corporate);
