@@ -3,6 +3,14 @@
 @import '~bootstrap/scss/mixins/breakpoints';
 @import '~@nebular/theme/styles/global/bootstrap/breakpoints';
 
+$icon-color-default: #0bbb79;
+$icon-color-cosmic: #7958fa;
+$icon-color-corporate: #a7a2be;
+
+$icon-top-color-default: #01dbb5;
+$icon-top-color-cosmic: #a258fe;
+$icon-top-color-corporate: #e9e8eb;
+
 @include nb-install-component() {
   /deep/ .themes-switcher-list {
     padding: 1rem 2rem 1.25rem 0.5rem;
@@ -15,21 +23,11 @@
       list-style: none;
       cursor: pointer;
 
-      &:hover {
-        span {
-          opacity: 0.5;
-        }
+      &:hover span {
+        opacity: 0.5;
       }
 
       i {
-        $icon-color-default: #0bbb79;
-        $icon-color-cosmic: #7958fa;
-        $icon-color-corporate: #a7a2be;
-
-        $icon-top-color-default: #01dbb5;
-        $icon-top-color-cosmic: #a258fe;
-        $icon-top-color-corporate: #e9e8eb;
-
         font-size: 2rem;
 
         &.drop-icon-default {
@@ -58,7 +56,6 @@
         &.drop-icon-corporate {
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
-
         }
       }
 
