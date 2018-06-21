@@ -1,16 +1,19 @@
-import { Injectable } from '@angular/core';
+import { Inject, Injectable } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { filter } from 'rxjs/operators';
+import { NB_WINDOW } from '@nebular/theme';
 
 declare const ga: any;
 
 @Injectable()
 export class AnalyticsService {
-  private enabled: boolean;
+  private enabled = false;
 
-  constructor(private location: Location, private router: Router) {
-    this.enabled = false;
+  constructor(@Inject(NB_WINDOW) private window,
+              private location: Location,
+              private router: Router) {
+    this.enabled = this.window.location.href.indexOf('akveo.com') >= 0;
   }
 
   trackPageViews() {
@@ -24,9 +27,9 @@ export class AnalyticsService {
     }
   }
 
-  trackEvent(eventName: string) {
+  trackEvent(eventName: string, eventVal: string = '') {
     if (this.enabled) {
-      ga('send', 'event', eventName);
+      ga('send', 'event', eventName, eventVal);
     }
   }
 }
