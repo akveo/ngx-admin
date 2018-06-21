@@ -67,6 +67,10 @@
       @include nb-for-theme(cosmic) {
         background-color: nb-theme(link-color);
       }
+
+      @include nb-for-theme(corporate) {
+        background-color: nb-theme(color-primary);
+      }
     }
 
     .progress {
@@ -97,6 +101,12 @@
       @include nb-for-theme(cosmic) {
         @include install-thumb() {
           background: nb-theme(link-color);
+        }
+      }
+
+      @include nb-for-theme(corporate) {
+        @include install-thumb() {
+          background: nb-theme(color-primary);
         }
       }
     }

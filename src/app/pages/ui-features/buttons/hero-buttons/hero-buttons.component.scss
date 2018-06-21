@@ -39,6 +39,9 @@
   }
 
   .primary-container {
+    .color {
+      background-color: nb-theme(color-primary);
+    }
     .gradient {
       @include btn-hero-primary-gradient();
     }
@@ -51,6 +54,9 @@
   }
 
   .warning-container {
+    .color {
+      background-color: nb-theme(color-warning);
+    }
     .gradient {
       @include btn-hero-warning-gradient();
     }
@@ -63,6 +69,9 @@
   }
 
   .success-container {
+    .color {
+      background-color: nb-theme(color-success);
+    }
     .gradient {
       @include btn-hero-success-gradient();
     }
@@ -75,6 +84,9 @@
   }
 
   .info-container {
+    .color {
+      background-color: nb-theme(color-info);
+    }
     .gradient {
       @include btn-hero-info-gradient();
     }
@@ -87,6 +99,9 @@
   }
 
   .danger-container {
+    .color {
+      background-color: nb-theme(color-danger);
+    }
     .gradient {
       @include btn-hero-danger-gradient();
     }
@@ -99,6 +114,9 @@
   }
 
   .secondary-container {
+    .color {
+      background-color: nb-theme(btn-secondary-bg);
+    }
     .border {
       color: nb-theme(btn-secondary-color);
       border: nb-theme(btn-secondary-border-width) solid nb-theme(btn-secondary-border);

@@ -4,7 +4,7 @@
 @import '~@nebular/theme/styles/themes';
 
 // which themes you what to enable (empty to enable all)
-$nb-enabled-themes: (default, cosmic);
+$nb-enabled-themes: (default, cosmic, corporate);
 
 $nb-themes: nb-register-theme((
  // app wise variables for each theme
@@ -14,6 +14,9 @@ $nb-themes: nb-register-theme((
 
   font-main: Roboto,
   font-secondary: Exo,
+
+  switcher-background: #ebeff5,
+  drops-icon-line-gadient: -webkit-linear-gradient(#01dbb5, #0bbb79),
 ), default, default);
 
 $nb-themes: nb-register-theme((
@@ -24,4 +27,20 @@ $nb-themes: nb-register-theme((
 
   font-main: Roboto,
   font-secondary: Exo,
+
+  switcher-background: #4e41a5,
+  drops-icon-line-gadient: -webkit-linear-gradient(#a258fe, #7958fa),
 ), cosmic, cosmic);
+
+$nb-themes: nb-register-theme((
+  // app wise variables for each theme
+  sidebar-header-gap: 2rem,
+  sidebar-header-height: initial,
+  layout-content-width: 1400px,
+
+  font-main: Roboto,
+  font-secondary: Exo,
+
+  switcher-background: #2b2d34,
+  drops-icon-line-gadient: -webkit-linear-gradient(#e9e8eb, #a7a2be),
+), corporate, corporate);

@@ -62,16 +62,16 @@
   .switch {
     position: relative;
     display: inline-block;
-    width: 4rem;
-    height: 1.75rem;
+    width: 3rem;
+    height: 1.5rem;
     margin: 0;
 
     input {
       display: none;
 
       &:checked + .slider::before {
-        @include nb-ltr(transform, translateX(2.25rem));
-        @include nb-rtl(transform, translateX(-2.25rem));
+        @include nb-ltr(transform, translateX(1.5rem));
+        @include nb-rtl(transform, translateX(-1.5rem));
       }
     }
 
@@ -88,8 +88,8 @@
     .slider::before {
       position: absolute;
       content: '';
-      height: 1.75rem;
-      width: 1.75rem;
+      height: 1.5rem;
+      width: 1.5rem;
       border-radius: 50%;
       background-color: nb-theme(color-success);
       transition: 0.2s;
@@ -98,6 +98,10 @@
 
       @include nb-for-theme(cosmic) {
         @include btn-hero-primary-gradient();
+      }
+
+      @include nb-for-theme(corporate) {
+        background-color: nb-theme(color-primary);
       }
     }
   }

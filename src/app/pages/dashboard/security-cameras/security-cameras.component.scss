@@ -115,6 +115,10 @@
       color: nb-theme(color-fg);
       font-size: 3rem;
       margin-right: 0.5rem;
+
+      @include nb-for-theme(corporate) {
+        color: nb-theme(actions-fg);
+      }
     }
 
     span {
@@ -142,6 +146,19 @@
 
     nb-action span {
       font-weight: nb-theme(font-weight-bolder);
+    }
+  }
+
+  @include nb-for-theme(corporate) {
+    .cameras-filter a {
+      &.active {
+        color: nb-theme(color-primary);
+      }
+
+      &:first-child {
+        @include nb-ltr(border-left, 1px solid nb-theme(border-color));
+        @include nb-rtl(border-right, 1px solid nb-theme(border-color));
+      }
     }
   }
 

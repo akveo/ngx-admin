@@ -47,6 +47,26 @@
         @include btn-hero-warning-gradient();
         @include btn-hero-warning-bevel-glow-shadow();
       }
+      &.danger {
+        @include btn-hero-danger-gradient();
+        @include btn-hero-danger-bevel-glow-shadow();
+      }
+      &.secondary {
+        @include btn-hero-secondary-bg();
+        @include btn-hero-secondary-bevel-glow-shadow();
+        color: nb-theme(card-fg);
+      }
+
+      @include nb-for-theme(corporate) {
+        &.primary,
+        &.success,
+        &.info,
+        &.warning,
+        &.danger,
+        &.secondary {
+          box-shadow: none;
+        }
+      }
     }
 
     &:hover {
@@ -65,6 +85,12 @@
         &.warning {
           background-image: btn-hero-warning-light-gradient();
         }
+        &.danger {
+          background-image: btn-hero-danger-light-gradient();
+        }
+        &.secondary {
+          background-image: btn-hero-secondary-light-gradient();
+        }
       }
     }
 
@@ -74,9 +100,13 @@
       .icon {
         color: nb-theme(card-fg);
 
-        &.primary, &.success, &.info, &.warning {
+        &.primary, &.success, &.info, &.warning, &.danger {
           box-shadow: none;
           background-image: linear-gradient(to right, transparent, transparent);
+        }
+
+        &.secondary {
+          background: transparent;
         }
       }
 
@@ -140,6 +170,14 @@
 
       .status {
         font-weight: nb-theme(font-weight-light);
+      }
+    }
+  }
+
+  @include nb-for-theme(corporate) {
+    nb-card {
+      .icon-container {
+        height: auto;
       }
     }
   }

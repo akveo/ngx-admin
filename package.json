@@ -9,6 +9,11 @@
   "bugs": {
     "url": "https://github.com/akveo/ngx-admin/issues"
   },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "IE 11"
+  ],
   "scripts": {
     "ng": "ng",
     "conventional-changelog": "conventional-changelog",
