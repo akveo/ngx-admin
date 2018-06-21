@@ -93,40 +93,36 @@ export class NuxeoService {
             });
     }
 
-    getFile(Id, documentoService, nuxeoservice, ) {
+    getFile(Ids, documentoService, nuxeoservice) {
         console.info(this.blobDocument);
-        let canvas, ctx, dataURL, base64;
-        canvas = document.createElement("canvas");
-        ctx = canvas.getContext("2d");
-        documentoService.get('documento/' + Id)
-            .subscribe(res => {
-                if (res !== null) {
-                    if (res.Enlace != null) {
-                        NuxeoService.nuxeo.header('X-NXDocumentProperties', '*');
-                        NuxeoService.nuxeo.request('/id/' + res.Enlace)
-                            .get()
-                            .then(function (response) {
-                                response.fetchBlob()
-                                    .then(function (blob) {
-                                        blob.blob()
-                                        .then(function (responseblob) {
-                                            const url = URL.createObjectURL(responseblob)
-                                            nuxeoservice.blobDocument.push(url);
-                                            nuxeoservice.blobDocument$.next(nuxeoservice.blobDocument);
+        Ids.forEach(Id => {
+            documentoService.get('documento/' + Id)
+                .subscribe(res => {
+                    if (res !== null) {
+                        if (res.Enlace != null) {
+                            NuxeoService.nuxeo.header('X-NXDocumentProperties', '*');
+                            NuxeoService.nuxeo.request('/id/' + res.Enlace)
+                                .get()
+                                .then(function (response) {
+                                    response.fetchBlob()
+                                        .then(function (blob) {
+                                            blob.blob()
+                                                .then(function (responseblob) {
+                                                    const url = URL.createObjectURL(responseblob)
+                                                    nuxeoservice.blobDocument.push(url);
+                                                    if (nuxeoservice.blobDocument.lenght === Ids.lenght) {
+                                                        nuxeoservice.blobDocument$.next(nuxeoservice.blobDocument);
+                                                    }
+                                                });
+                                        })
+                                        .catch(function (response2) {
                                         });
- 
-                                    })
-                                    .catch(function (response2) {
-                                    });
-                            })
-                            .catch(function (response) {
-                            });
+                                })
+                                .catch(function (response) {
+                                });
+                        }
                     }
-                }
-            });
-    }
-    getFileImg(Id, documentoService, nuxeoservice) {
-
-
+                });
+        });
     }
 }
