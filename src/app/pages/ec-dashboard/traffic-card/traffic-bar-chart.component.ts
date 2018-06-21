@@ -34,7 +34,7 @@ export class TrafficBarChartComponent implements AfterViewInit, OnDestroy, OnCha
         }],
         xAxis: {
           data: this.labels,
-        }
+        },
       })
     }
   }

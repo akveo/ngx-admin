@@ -37,7 +37,7 @@ export class TrafficCardComponent {
   }, {
     duration: 'year',
     data: [10, 15, 19, 7, 20, 13, 15, 19, 11],
-    labels: ['2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018']
+    labels: ['2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018'],
   }];
   selectedPeriod = this.periods[0];
   currentTheme: string;
