@@ -31,7 +31,7 @@
           </div>
         </div>
 
-        <div class="stats-block">
+        <div class="stats-block currency">
           <div class="subtitle">Spent</div>
           <div>
             <span class="value">291</span>
@@ -40,7 +40,9 @@
         </div>
       </div>
 
-      <div class="dropdown" ngbDropdown>
+      <div class="dropdown"
+           [ngClass]="{ 'ghost-dropdown': currentTheme === 'corporate' }"
+           ngbDropdown>
         <button type="button" ngbDropdownToggle class="btn"
                 [ngClass]="{ 'btn-outline-success': currentTheme == 'default', 'btn-primary': currentTheme != 'default'}">
           {{ type }}

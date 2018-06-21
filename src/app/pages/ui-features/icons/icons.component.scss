@@ -4,6 +4,11 @@
   padding: 1.25rem 0;
   text-align: center;
   font-size: 1.25rem;
+
+  i:hover {
+    opacity: 0.8;
+    cursor: pointer;
+  }
 }
 
 .nb-icons .icon {

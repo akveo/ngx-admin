@@ -17,6 +17,13 @@
               <span class="subheader">{{ hb[themeName].border }}</span>
             </div>
           </div>
+          <div class="state-container" *ngIf="hb[themeName].color">
+            <div class="state-value color"></div>
+            <div class="state-details">
+              <span class="header">Color</span>
+              <span class="subheader">{{ hb[themeName].color }}</span>
+            </div>
+          </div>
           <div class="state-container" *ngIf="hb[themeName].gradientLeft">
             <div class="state-value gradient"></div>
             <div class="state-details">
@@ -51,8 +58,8 @@
             <div class="state-value glow" [ngClass]="{ 'none': !hb[themeName].glow }"></div>
             <div class="state-details" *ngIf="hb[themeName].glow">
               <span class="header">Glow</span>
-              <span class="subheader">0 2px 12px 0</span>
-              <span class="subheader">{{ hb[themeName].glow }}</span>
+              <span class="subheader">{{ hb[themeName].glow.params }}</span>
+              <span class="subheader">{{ hb[themeName].glow.color }}</span>
             </div>
             <div class="state-details" *ngIf="!hb[themeName].glow">
               <span class="header">No Glow</span>

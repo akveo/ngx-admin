@@ -5,6 +5,9 @@
 @import '~@nebular/theme/styles/globals';
 @import '~@nebular/auth/styles/all';
 
+// global app font size
+@import './font-size';
+
 // loading progress bar theme
 @import './pace.theme';
 

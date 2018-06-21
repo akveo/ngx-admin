@@ -1,25 +1,8 @@
 <div class="row">
-  <div class="col-xxxl-3 col-md-6">
-    <ngx-status-card title="Light" type="primary">
-      <i class="nb-lightbulb"></i>
-    </ngx-status-card>
-  </div>
-
-  <div class="col-xxxl-3 col-md-6">
-    <ngx-status-card title="Roller Shades" type="success">
-      <i class="nb-roller-shades"></i>
-    </ngx-status-card>
-  </div>
-
-  <div class="col-xxxl-3 col-md-6">
-    <ngx-status-card title="Wireless Audio" type="info">
-      <i class="nb-audio"></i>
-    </ngx-status-card>
-  </div>
-
-  <div class="col-xxxl-3 col-md-6">
-    <ngx-status-card title="Coffee Maker" type="warning">
-      <i class="nb-coffee-maker"></i>
+  <div class="col-xxxl-3 col-md-6" *ngFor="let statusCard of statusCards">
+    <ngx-status-card [title]="statusCard.title"
+                     [type]="statusCard.type">
+      <i [ngClass]="statusCard.iconClass"></i>
     </ngx-status-card>
   </div>
 </div>
