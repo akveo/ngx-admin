@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { MENU_ITEMS } from './pages-menu';
 
@@ -11,7 +11,13 @@ import { MENU_ITEMS } from './pages-menu';
     </ngx-sample-layout>
   `,
 })
-export class PagesComponent {
+export class PagesComponent implements OnInit {
 
   menu = MENU_ITEMS;
+
+  ngOnInit() {
+    if (window['dataLayer']) {
+      window['dataLayer'].push({'event': 'optimize.activate'});
+    }
+  }
 }

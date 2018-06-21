@@ -21,6 +21,7 @@
               "src/assets",
               "src/favicon.ico",
               "src/favicon.png",
+              "src/google46533d2e7a851062.html",
               {
                 "glob": "**/*",
                 "input": "node_modules/leaflet/dist/images",
@@ -122,6 +123,7 @@
               "src/assets",
               "src/favicon.ico",
               "src/favicon.png",
+              "src/google46533d2e7a851062.html",
               {
                 "glob": "**/*",
                 "input": "node_modules/leaflet/dist/images",
