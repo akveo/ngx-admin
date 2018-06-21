@@ -3,10 +3,6 @@
 @import '~@nebular/theme/styles/core/functions';
 
 @include nb-install-component() {
-  $default-switcher-background: #ebeff5;
-  $cosmic-switcher-background: #4e41a5;
-  $corporate-switcher-background: #2b2d34;
-
   .themes-switcher {
     display: flex;
     font-size: 1.25rem;

@@ -58,16 +58,19 @@ export class DashboardComponent implements OnDestroy {
       {
         ...this.lightCard,
         type: 'warning',
-      },{
+      },
+      {
         ...this.rollerShadesCard,
         type: 'primary',
-      },{
+      },
+      {
         ...this.wirelessAudioCard,
         type: 'danger',
-      },{
+      },
+      {
         ...this.coffeeMakerCard,
         type: 'secondary',
-      }
+      },
     ],
   };
 
