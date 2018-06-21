@@ -14,8 +14,9 @@
 
     &:hover {
       $color: nb-theme(switcher-background);
+      $percentage: nb-theme(switcher-background-percentage);
 
-      background-color: tint($color, 14%);
+      background-color: tint($color, $percentage);
     }
 
     span {
