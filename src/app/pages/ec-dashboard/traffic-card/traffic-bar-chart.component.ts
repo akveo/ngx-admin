@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, OnDestroy } from '@angular/core';
+import { AfterViewInit, Component, Input, OnChanges, OnDestroy, SimpleChanges } from '@angular/core';
 import { NbThemeService } from '@nebular/theme';
 
 declare const echarts: any;
@@ -7,15 +7,36 @@ declare const echarts: any;
   selector: 'ngx-traffic-bar-chart',
   styleUrls: ['traffic-card.component.scss'],
   template: `
-    <div echarts [options]="option" class="echart"></div>
+    <div echarts [options]="option" class="echart" (chartInit)="onChartInit($event)"></div>
   `,
 })
-export class TrafficBarChartComponent implements AfterViewInit, OnDestroy {
+export class TrafficBarChartComponent implements AfterViewInit, OnDestroy, OnChanges {
+
+  @Input() data: number[];
+  @Input() labels: string[];
 
   option: any = {};
   themeSubscription: any;
+  echartsInstance;
 
   constructor(private theme: NbThemeService) {
+  }
+
+  onChartInit(ec) {
+    this.echartsInstance = ec;
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (!changes.data.isFirstChange() && !changes.labels.isFirstChange()) {
+      this.echartsInstance.setOption({
+        series: [{
+          data: this.data,
+        }],
+        xAxis: {
+          data: this.labels,
+        }
+      })
+    }
   }
 
   ngAfterViewInit() {
@@ -33,8 +54,7 @@ export class TrafficBarChartComponent implements AfterViewInit, OnDestroy {
         },
         xAxis: {
           type : 'category',
-          data :
-            ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun', 'Mon'],
+          data : this.labels,
           axisLabel: {
             color: trafficTheme.textColor,
           },
@@ -68,7 +88,7 @@ export class TrafficBarChartComponent implements AfterViewInit, OnDestroy {
           {
             type: 'bar',
             barWidth: '60%',
-            data: [10, 52, 200, 334, 390, 330, 220, 10, 52, 200, 334, 390, 330, 220, 99],
+            data: this.data,
             itemStyle: {
               normal: {
                 color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
