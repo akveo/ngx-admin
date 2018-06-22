@@ -21,6 +21,7 @@ import 'style-loader!angular2-toaster/toaster.css';
 export class CrudInfoPersonaComponent implements OnInit {
   filesUp: any;
   uidFile: any;
+  Foto: any;
   config: ToasterConfig;
   info_persona_id: number;
 
@@ -111,6 +112,7 @@ export class CrudInfoPersonaComponent implements OnInit {
             this.nuxeoService.getDocumentoById$(foto, this.documentoService)
               .subscribe(response => {
                 this.info_info_persona = temp;
+                this.Foto = this.info_info_persona.Foto;
                 this.info_info_persona.Foto = response[0] + '';
               });
           }
@@ -136,8 +138,10 @@ export class CrudInfoPersonaComponent implements OnInit {
       .then((willDelete) => {
         if (willDelete.value) {
           this.info_info_persona = <InfoPersona>infoPersona;
+          this.info_info_persona.Foto = this.Foto;
           this.campusMidService.put('persona/ActualizarPersona', this.info_info_persona)
             .subscribe(res => {
+              console.info(res);
               this.loadInfoPersona();
               this.eventChange.emit(true);
               this.showToast('info', this.translate.instant('GLOBAL.actualizar'),
