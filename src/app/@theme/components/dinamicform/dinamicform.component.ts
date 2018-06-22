@@ -48,7 +48,7 @@ export class DinamicformComponent implements OnInit, OnChanges {
                   if (element.etiqueta === 'file') {
                     element.url = this.cleanURL(this.modeloData[i]);
                   }
-                  if(element.etiqueta !== 'mat-date' && element.etiqueta !== 'file' ) {
+                  if (element.etiqueta !== 'mat-date' && element.etiqueta !== 'file') {
                     element.valor = this.modeloData[i];
                     this.validCampo(element);
                   }
