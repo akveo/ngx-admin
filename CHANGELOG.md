@@ -1,3 +1,26 @@
+<a name="2.3.0"></a>
+# [2.3.0 - Corporate Theme](https://github.com/akveo/ngx-admin/compare/v2.2.0...v2.3.0) (2018-06-22)
+
+
+### Bug Fixes
+
+* **buttons:** Uncheck checkbox after click ([#1721](https://github.com/akveo/ngx-admin/issues/1721)) ([fbe12a9](https://github.com/akveo/ngx-admin/commit/fbe12a9)), closes [#1697](https://github.com/akveo/ngx-admin/issues/1697)
+* **readme:** update docs link ([#1743](https://github.com/akveo/ngx-admin/issues/1743)) ([a6d5d49](https://github.com/akveo/ngx-admin/commit/a6d5d49))
+* **temperature:** fix temperature dragger gradient, fix switcher button hover background ([#1745](https://github.com/akveo/ngx-admin/issues/1745)) ([f12bd9f](https://github.com/akveo/ngx-admin/commit/f12bd9f))
+* **tree:** fix tree component, replace ng2-tree on the angular-tree-component ([22c161f](https://github.com/akveo/ngx-admin/commit/22c161f)), closes [#1690](https://github.com/akveo/ngx-admin/issues/1690)
+
+
+### Features
+
+* update Nebular to rc.9 ([#1741](https://github.com/akveo/ngx-admin/issues/1741)) ([18a4750](https://github.com/akveo/ngx-admin/commit/18a4750))
+* **app:** set default font-size to 14px ([#1742](https://github.com/akveo/ngx-admin/issues/1742)) ([6d705d2](https://github.com/akveo/ngx-admin/commit/6d705d2))
+* **icons:** update icons, add new nebular icons to icons list ([#1738](https://github.com/akveo/ngx-admin/issues/1738)) ([cef6ea6](https://github.com/akveo/ngx-admin/commit/cef6ea6))
+* **readme:** add new theme ([#1744](https://github.com/akveo/ngx-admin/issues/1744)) ([d25ad7a](https://github.com/akveo/ngx-admin/commit/d25ad7a))
+* **theme:** add corporate theme ([#1727](https://github.com/akveo/ngx-admin/issues/1727)) ([e37f12d](https://github.com/akveo/ngx-admin/commit/e37f12d))
+* **toaster:** update toaster to latest version (6.0.0) ([#1722](https://github.com/akveo/ngx-admin/issues/1722)) ([b85034e](https://github.com/akveo/ngx-admin/commit/b85034e))
+
+
+
 <a name="2.2.0"></a>
 # [2.2.0](https://github.com/akveo/ngx-admin/compare/v2.1.1...v2.2.0) (2018-05-14)
 
