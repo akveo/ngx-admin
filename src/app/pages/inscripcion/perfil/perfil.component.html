@@ -1,0 +1,20 @@
+<nb-card>
+  <nb-card-body >
+    <div>
+        <h1>Perfil</h1>
+    </div>
+
+    <div class="row">
+        <ngx-view-info-persona info_persona_id="{{info_persona_id}}" class="col-md-12"></ngx-view-info-persona>
+
+        <ngx-view-info-caracteristica info_caracteristica_id="{{info_persona_id}}" class="col-md-6"></ngx-view-info-caracteristica>
+
+        <ngx-view-informacion-contacto informacion_contacto_id="{{info_persona_id}}" class="col-md-6"></ngx-view-informacion-contacto>
+    </div>
+
+
+  </nb-card-body>
+</nb-card>
+
+
+

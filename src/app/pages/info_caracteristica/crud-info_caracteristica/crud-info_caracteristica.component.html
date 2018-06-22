@@ -1,5 +1,8 @@
 
-<toaster-container [toasterconfig]="config"></toaster-container>
-<ngx-dinamicform [normalform]="formInfoCaracteristica" [modeloData]="info_info_caracteristica" (result)="validarForm($event)" [clean]="clean">
-</ngx-dinamicform>
+<div *ngIf="!denied_acces">
+  <toaster-container [toasterconfig]="config"></toaster-container>
+  <ngx-dinamicform [normalform]="formInfoCaracteristica" [modeloData]="info_info_caracteristica" (result)="validarForm($event)" [clean]="clean" (interlaced)="getSeleccion($event)">
+  </ngx-dinamicform>
+</div>
+
 

@@ -12,4 +12,5 @@ export class InfoPersona {
   Usuario: string;
   EstadoCivil: EstadoCivil;
   Genero: Genero;
+  Id: number;
 }

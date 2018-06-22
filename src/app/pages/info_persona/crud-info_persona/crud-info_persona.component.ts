@@ -115,6 +115,7 @@ export class CrudInfoPersonaComponent implements OnInit {
                 this.Foto = this.info_info_persona.Foto;
                 this.info_info_persona.Foto = response[0] + '';
               });
+
           }
         });
     } else {

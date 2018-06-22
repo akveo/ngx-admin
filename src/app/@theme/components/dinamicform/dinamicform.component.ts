@@ -42,15 +42,35 @@ export class DinamicformComponent implements OnInit, OnChanges {
             for (const i in this.modeloData) {
               if (this.modeloData.hasOwnProperty(i)) {
                 if (i === element.nombre) {
-                  if (element.etiqueta === 'mat-date') {
-                    element.valor = new Date(this.modeloData[i]);
-                  }
-                  if (element.etiqueta === 'file') {
-                    element.url = this.cleanURL(this.modeloData[i]);
-                  }
-                  if (element.etiqueta !== 'mat-date' && element.etiqueta !== 'file') {
-                    element.valor = this.modeloData[i];
-                    this.validCampo(element);
+                  switch (element.etiqueta) {
+                    case 'selectmultiple':
+                      element.valor = [];
+                      if (this.modeloData[i].length > 0) {
+                        this.modeloData[i].forEach((e1) => element.opciones.forEach((e2) => {
+                          if (e1.Id === e2.Id) {
+                            element.valor.push(e2);
+                          }
+                        }));
+                      }
+                      break;
+                    case 'select':
+                      if (element.opciones.length > 0) {
+                        element.opciones.forEach((e1) => {
+                          if (e1.Id === this.modeloData[i].Id) {
+                            element.valor = e1;
+                          }
+                        });
+                      }
+                      break;
+                    case 'mat-date':
+                      element.valor = new Date(this.modeloData[i]);
+                      break;
+                    case 'file':
+                      element.url = this.cleanURL(this.modeloData[i]);
+                      break;
+                    default:
+                      element.valor = this.modeloData[i];
+                      this.validCampo(element);
                   }
                 }
               }
@@ -217,6 +237,6 @@ export class DinamicformComponent implements OnInit, OnChanges {
   }
 
   isEqual(obj1, obj2) {
-    return obj1 === obj2;
+    return JSON.stringify(obj1) === JSON.stringify(obj2);
   }
 }
