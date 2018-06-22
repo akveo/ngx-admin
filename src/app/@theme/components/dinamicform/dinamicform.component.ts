@@ -48,9 +48,7 @@ export class DinamicformComponent implements OnInit, OnChanges {
                   if (element.etiqueta === 'file') {
                     element.url = this.cleanURL(this.modeloData[i]);
                   }
-                  if (element.etiqueta === 'input' && element.tipo === 'date') {
-                    element.valor = (new Date(this.modeloData[i])).toISOString().substring(0, 10);
-                  } else {
+                  if(element.etiqueta !== 'mat-date' && element.etiqueta !== 'file' ) {
                     element.valor = this.modeloData[i];
                     this.validCampo(element);
                   }
@@ -74,10 +72,8 @@ export class DinamicformComponent implements OnInit, OnChanges {
   onChange(event, c) {
     if (c.valor !== undefined) {
       c.valor = event.srcElement.files[0];
-      console.info('valor', c.valor);
       c.urlTemp = URL.createObjectURL(event.srcElement.files[0])
       c.url = this.cleanURL(c.urlTemp);
-      console.info(c);
       this.validCampo(c);
     }
   }
