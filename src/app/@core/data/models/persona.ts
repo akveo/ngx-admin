@@ -9,5 +9,5 @@ export class Persona {
   FechaNacimiento: Date;
   Usuario: string;
   Ente: number;
-  Foto: string;
+  Foto: number;
 }

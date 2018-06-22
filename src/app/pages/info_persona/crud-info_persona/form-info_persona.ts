@@ -70,7 +70,7 @@ export let FORM_INFO_PERSONA = {
     },
     {
         etiqueta: 'select',
-        claseGrid: 'col-lg-3 col-md-6 col-sm-12 col-xs-12',
+        claseGrid: 'col-lg-4 col-md-6 col-sm-12 col-xs-12',
         nombre: 'EstadoCivil',
         label_i18n: 'estado_civil',
         placeholder_i18n: 'estado_civil',
@@ -81,7 +81,7 @@ export let FORM_INFO_PERSONA = {
     },
     {
         etiqueta: 'select',
-        claseGrid: 'col-lg-3 col-md-6 col-sm-12 col-xs-12',
+        claseGrid: 'col-lg-4 col-md-6 col-sm-12 col-xs-12',
         nombre: 'Genero',
         label_i18n: 'genero',
         placeholder_i18n: 'genero',
