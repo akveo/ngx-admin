@@ -15,6 +15,15 @@ import { InfoCaracteristicaModule } from '../info_caracteristica/info_caracteris
 import { ImplicitAutenticationService } from './../../@core/utils/implicit_autentication.service';
 import {MatExpansionModule} from '@angular/material/expansion';
 import { UtilidadesService } from '../../@core/utils/utilidades.service';
+import { IdiomasModule } from '../idiomas/idiomas.module';
+import { ListIdiomasComponent } from '../idiomas/list-idiomas/list-idiomas.component';
+import { CrudIdiomasComponent } from '../idiomas/crud-idiomas/crud-idiomas.component';
+import { FormacionAcademicaModule } from '../formacion_academica/formacion_academica.module';
+import { ListFormacionAcademicaComponent } from '../formacion_academica/list-formacion_academica/list-formacion_academica.component';
+import { CrudFormacionAcademicaComponent } from '../formacion_academica/crud-formacion_academica/crud-formacion_academica.component';
+import { ExperienciaLaboralModule } from '../experiencia_laboral/experiencia_laboral.module';
+import { ListExperienciaLaboralComponent } from '../experiencia_laboral/list-experiencia_laboral/list-experiencia_laboral.component';
+import { CrudExperienciaLaboralComponent } from '../experiencia_laboral/crud-experiencia_laboral/crud-experiencia_laboral.component';
 
 @NgModule({
   imports: [
@@ -26,6 +35,9 @@ import { UtilidadesService } from '../../@core/utils/utilidades.service';
     InfoPersonaModule,
     InfoCaracteristicaModule,
     MatExpansionModule,
+    IdiomasModule,
+    FormacionAcademicaModule,
+    ExperienciaLaboralModule,
   ],
   declarations: [
     ...routedComponents,
@@ -38,6 +50,12 @@ import { UtilidadesService } from '../../@core/utils/utilidades.service';
     UtilidadesService,
   ],
   entryComponents: [
+    ListIdiomasComponent,
+    CrudIdiomasComponent,
+    ListFormacionAcademicaComponent,
+    CrudFormacionAcademicaComponent,
+    ListExperienciaLaboralComponent,
+    CrudExperienciaLaboralComponent,
     CrudInfoPersonaComponent,
     CrudInfoCaracteristicaComponent,
     CrudInformacionContactoComponent,

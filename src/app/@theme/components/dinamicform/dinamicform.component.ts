@@ -44,10 +44,25 @@ export class DinamicformComponent implements OnInit, OnChanges {
                 if (i === element.nombre) {
                   if (element.etiqueta === 'input' && element.tipo === 'date') {
                     element.valor = (new Date(this.modeloData[i])).toISOString().substring(0, 10);
+                  } else if (element.etiqueta === 'selectmultiple') {
+                      element.valor = [];
+                      if (this.modeloData[i].length > 0) {
+                        this.modeloData[i].forEach((e1) => element.opciones.forEach((e2) => {
+                          if (e1.Id === e2.Id) {
+                              element.valor.push(e2);
+                            }
+                          }));
+                      }
+                  } else if (element.etiqueta === 'select' && element.opciones.length > 0) {
+                    element.opciones.forEach((e1) => {
+                      if (e1.Id === this.modeloData[i].Id) {
+                          element.valor = e1;
+                        }
+                      });
                   } else {
-                    element.valor = this.modeloData[i];
-                    this.validCampo(element);
+                      element.valor = this.modeloData[i];
                   }
+                  this.validCampo(element);
                   if (element.etiqueta === 'mat-date') {
                     element.valor = new Date(this.modeloData[i]);
                   }
@@ -218,6 +233,6 @@ export class DinamicformComponent implements OnInit, OnChanges {
   }
 
   isEqual(obj1, obj2) {
-    return obj1 === obj2;
+    return JSON.stringify(obj1) === JSON.stringify(obj2);
   }
 }

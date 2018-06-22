@@ -7,6 +7,7 @@ import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { ToasterModule } from 'angular2-toaster';
 import { SharedModule } from '../../shared/shared.module';
 import { CrudInfoPersonaComponent } from './crud-info_persona/crud-info_persona.component';
+import { ViewInfoPersonaComponent } from './view-info-persona/view-info-persona.component';
 
 @NgModule({
   imports: [
@@ -25,6 +26,7 @@ import { CrudInfoPersonaComponent } from './crud-info_persona/crud-info_persona.
   ],
   exports: [
     CrudInfoPersonaComponent,
+    ViewInfoPersonaComponent,
   ],
 })
 export class InfoPersonaModule { }

@@ -21,6 +21,18 @@ export let FORM_INFORMACION_CONTACTO = {
     {
         etiqueta: 'select',
         claseGrid: 'col-lg-6 col-md-6 col-sm-12 col-xs-12',
+        nombre: 'DepartamentoResidencia',
+        label_i18n: 'departamento_residencia',
+        placeholder_i18n: 'departamento_residencia',
+        requerido: true,
+        tipo: 'Lugar',
+        key: 'Nombre',
+        opciones: [],
+        entrelazado: true,
+    },
+    {
+        etiqueta: 'select',
+        claseGrid: 'col-lg-6 col-md-6 col-sm-12 col-xs-12',
         nombre: 'CiudadResidencia',
         label_i18n: 'ciudad_residencia',
         placeholder_i18n: 'ciudad_residencia',
@@ -58,7 +70,7 @@ export let FORM_INFORMACION_CONTACTO = {
     },
     {
         etiqueta: 'input',
-        claseGrid: 'col-lg-6 col-md-6 col-sm-12 col-xs-12',
+        claseGrid: 'col-lg-3 col-md-6 col-sm-12 col-xs-12',
         nombre: 'Telefono',
         label_i18n: 'telefono',
         placeholder_i18n: 'telefono',
@@ -68,8 +80,8 @@ export let FORM_INFORMACION_CONTACTO = {
     },
     {
         etiqueta: 'input',
-        claseGrid: 'col-lg-6 col-md-6 col-sm-12 col-xs-12',
-        nombre: 'Telefono alterno',
+        claseGrid: 'col-lg-3 col-md-6 col-sm-12 col-xs-12',
+        nombre: 'TelefonoAlterno',
         label_i18n: 'telefono_alterno',
         placeholder_i18n: 'telefono_alterno',
         requerido: true,
