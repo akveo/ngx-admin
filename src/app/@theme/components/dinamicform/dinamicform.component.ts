@@ -41,7 +41,7 @@ export class DinamicformComponent implements OnInit, OnChanges {
           this.normalform.campos.forEach(element => {
             for (const i in this.modeloData) {
               if (this.modeloData.hasOwnProperty(i)) {
-                if (i === element.nombre) {
+                if (i === element.nombre && this.modeloData[i] !== null ) {
                   switch (element.etiqueta) {
                     case 'selectmultiple':
                       element.valor = [];
@@ -54,10 +54,12 @@ export class DinamicformComponent implements OnInit, OnChanges {
                       }
                       break;
                     case 'select':
-                      if (element.opciones.length > 0) {
+                      if (element.hasOwnProperty('opciones')) {
                         element.opciones.forEach((e1) => {
-                          if (e1.Id === this.modeloData[i].Id) {
-                            element.valor = e1;
+                          if (this.modeloData[i].Id !== null) {
+                            if (e1.Id === this.modeloData[i].Id) {
+                              element.valor = e1;
+                            }
                           }
                         });
                       }
@@ -70,8 +72,8 @@ export class DinamicformComponent implements OnInit, OnChanges {
                       break;
                     default:
                       element.valor = this.modeloData[i];
-                      this.validCampo(element);
                   }
+                  this.validCampo(element);
                 }
               }
             }
