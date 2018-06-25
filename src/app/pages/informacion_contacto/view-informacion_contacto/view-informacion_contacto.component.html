@@ -20,7 +20,7 @@
                 </ng-template>
               </li>
           </ul>
-          <a href=""><i class="ion-edit"></i>{{"GLOBAL.actualizar" | translate}}</a>
+          <span  *ngIf="url_editar"  (click)="editar()" class="link"><i class="ion-edit"></i>{{"GLOBAL.actualizar" | translate}}</span>
         </div>
     </nb-card-body>
   </nb-card>

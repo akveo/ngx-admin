@@ -8,8 +8,12 @@
               <label><strong>{{lugar.TipoRelacionUbicacionEnte.Nombre}}: </strong></label>
               {{lugar.Lugar.CIUDAD.Nombre}} / {{lugar.Lugar.DEPARTAMENTO.Nombre}} / {{lugar.Lugar.PAIS.Nombre}}
             </li>
-            <li><label><strong> {{"GLOBAL.grupo_sanguineo" | translate}} {{"GLOBAL.rh" | translate}}: </strong></label> {{info_info_caracteristica.GrupoSanguineo}} {{info_info_caracteristica.Rh}}</li>
-            <li><label><strong>{{"GLOBAL.grupo_etnico" | translate}}: </strong></label> {{info_info_caracteristica.GrupoEtnico?info_info_caracteristica.GrupoEtnico.Nombre:'NA'}} </li>
+            <li><label><strong> {{"GLOBAL.grupo_sanguineo" | translate}} {{"GLOBAL.rh" | translate}}: </strong></label>
+              {{info_info_caracteristica.GrupoSanguineo?info_info_caracteristica.GrupoSanguineo + ' ' + info_info_caracteristica.Rh:'N/A'}}
+            </li>
+            <li><label><strong>{{"GLOBAL.grupo_etnico" | translate}}: </strong></label>
+              {{info_info_caracteristica.GrupoEtnico?info_info_caracteristica.GrupoEtnico.Nombre:'N/A'}}
+            </li>
             <li><label><strong>{{"GLOBAL.tipo_discapacidad" | translate}}: </strong></label>
               <ul *ngIf="info_info_caracteristica.TipoDiscapacidad; else elseTemplate">
                 <li *ngFor="let discapacidad of info_info_caracteristica.TipoDiscapacidad">
@@ -17,11 +21,11 @@
                 </li>
               </ul>
               <ng-template #elseTemplate>
-                NA
+                N/A
               </ng-template>
             </li>
         </ul>
-        <a href=""><i class="ion-edit"></i>{{"GLOBAL.actualizar" | translate}}</a>
+        <span  *ngIf="url_editar"  (click)="editar()" class="link"><i class="ion-edit"></i>{{"GLOBAL.actualizar" | translate}}</span>
       </div>
   </nb-card-body>
 </nb-card>

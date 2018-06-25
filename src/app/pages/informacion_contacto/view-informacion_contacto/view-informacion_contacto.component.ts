@@ -1,5 +1,5 @@
 import { InfoContactoGet } from './../../../@core/data/models/info_contacto_get';
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { CampusMidService } from '../../../@core/data/campus_mid.service';
 
 @Component({
@@ -18,7 +18,13 @@ export class ViewInformacionContactoComponent implements OnInit {
     this.loadInformacionContacto();
   }
 
+  @Output('url_editar') url_editar: EventEmitter<boolean> = new EventEmitter();
+
   constructor(private campusMidService: CampusMidService) { }
+
+  public editar(): void {
+    this.url_editar.emit(true);
+  }
 
   public loadInformacionContacto(): void {
     if (this.informacion_contacto_id !== undefined && this.informacion_contacto_id !== 0 &&
