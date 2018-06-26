@@ -11,6 +11,19 @@
 // install the framework and custom global styles
 @include nb-install() {
 
+  .link {
+    cursor: pointer;
+    color: nb-theme(link-color);
+    &:hover {
+      color: nb-theme(link-color-hover);
+      @include nb-for-theme(default) {
+        color: #4ba0e2 !important;
+      }
+      text-decoration: underline;
+    }
+
+  }
+
   // framework global styles
   @include nb-theme-global();
   @include nb-auth-global();

@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { InfoPersonaComponent } from './info_persona.component';
 import { ListInfoPersonaComponent } from './list-info_persona/list-info_persona.component';
 import { CrudInfoPersonaComponent } from './crud-info_persona/crud-info_persona.component';
-
+import { ViewInfoPersonaComponent } from './view-info-persona/view-info-persona.component';
 
 
 const routes: Routes = [{
@@ -33,4 +33,5 @@ export const routedComponents = [
   InfoPersonaComponent,
   ListInfoPersonaComponent,
   CrudInfoPersonaComponent,
+  ViewInfoPersonaComponent,
 ];

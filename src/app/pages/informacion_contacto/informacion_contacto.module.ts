@@ -6,6 +6,7 @@ import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { ToasterModule } from 'angular2-toaster';
 import { SharedModule } from '../../shared/shared.module';
 import { CrudInformacionContactoComponent } from './crud-informacion_contacto/crud-informacion_contacto.component';
+import { ViewInformacionContactoComponent } from './view-informacion_contacto/view-informacion_contacto.component';
 
 @NgModule({
   imports: [
@@ -17,12 +18,13 @@ import { CrudInformacionContactoComponent } from './crud-informacion_contacto/cr
   ],
   declarations: [
     ...routedComponents,
-  ],
+],
   providers: [
     UbicacionesService,
   ],
   exports: [
     CrudInformacionContactoComponent,
+    ViewInformacionContactoComponent,
   ],
 })
 export class InformacionContactoModule { }

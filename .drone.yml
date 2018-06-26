@@ -1,6 +1,9 @@
 workspace:
   base: /go
   path: src/github.com/udistrital/${DRONE_REPO##udistrital/}
+  when:
+      branch: [master, develop]
+      event: push
 
 pipeline:
 
@@ -46,4 +49,5 @@ pipeline:
       {{/success}}
     when:
       status: [success, failure]
-      
+      branch: [master, develop]
+      event: push

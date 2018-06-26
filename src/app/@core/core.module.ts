@@ -5,6 +5,7 @@ import { NbAuthModule, NbDummyAuthProvider } from '@nebular/auth';
 import { throwIfAlreadyLoaded } from './module-import-guard';
 import { DataModule } from './data/data.module';
 import { AnalyticsService } from './utils/analytics.service';
+import {DocumentoService} from './data/documento.service'
 
 const NB_CORE_PROVIDERS = [
   ...DataModule.forRoot().providers,
@@ -43,6 +44,7 @@ export class CoreModule {
       ngModule: CoreModule,
       providers: [
         ...NB_CORE_PROVIDERS,
+        DocumentoService,
       ],
     };
   }

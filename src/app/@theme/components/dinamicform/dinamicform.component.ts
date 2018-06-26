@@ -41,16 +41,39 @@ export class DinamicformComponent implements OnInit, OnChanges {
           this.normalform.campos.forEach(element => {
             for (const i in this.modeloData) {
               if (this.modeloData.hasOwnProperty(i)) {
-                if (i === element.nombre) {
-                  if (element.etiqueta === 'input' && element.tipo === 'date') {
-                    element.valor = (new Date(this.modeloData[i])).toISOString().substring(0, 10);
-                  } else {
-                    element.valor = this.modeloData[i];
-                    this.validCampo(element);
+                if (i === element.nombre && this.modeloData[i] !== null ) {
+                  switch (element.etiqueta) {
+                    case 'selectmultiple':
+                      element.valor = [];
+                      if (this.modeloData[i].length > 0) {
+                        this.modeloData[i].forEach((e1) => element.opciones.forEach((e2) => {
+                          if (e1.Id === e2.Id) {
+                            element.valor.push(e2);
+                          }
+                        }));
+                      }
+                      break;
+                    case 'select':
+                      if (element.hasOwnProperty('opciones')) {
+                        element.opciones.forEach((e1) => {
+                          if (this.modeloData[i].Id !== null) {
+                            if (e1.Id === this.modeloData[i].Id) {
+                              element.valor = e1;
+                            }
+                          }
+                        });
+                      }
+                      break;
+                    case 'mat-date':
+                      element.valor = new Date(this.modeloData[i]);
+                      break;
+                    case 'file':
+                      element.url = this.cleanURL(this.modeloData[i]);
+                      break;
+                    default:
+                      element.valor = this.modeloData[i];
                   }
-                  if (element.etiqueta === 'mat-date') {
-                    element.valor = new Date(this.modeloData[i]);
-                  }
+                  this.validCampo(element);
                 }
               }
             }
@@ -71,10 +94,8 @@ export class DinamicformComponent implements OnInit, OnChanges {
   onChange(event, c) {
     if (c.valor !== undefined) {
       c.valor = event.srcElement.files[0];
-      console.info('valor', c.valor);
       c.urlTemp = URL.createObjectURL(event.srcElement.files[0])
       c.url = this.cleanURL(c.urlTemp);
-      console.info(c);
       this.validCampo(c);
     }
   }
@@ -218,6 +239,6 @@ export class DinamicformComponent implements OnInit, OnChanges {
   }
 
   isEqual(obj1, obj2) {
-    return obj1 === obj2;
+    return JSON.stringify(obj1) === JSON.stringify(obj2);
   }
 }
