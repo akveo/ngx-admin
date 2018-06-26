@@ -1,5 +1,5 @@
 import { InfoCaracteristica } from './../../../@core/data/models/info_caracteristica';
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { CampusMidService } from '../../../@core/data/campus_mid.service';
 
 @Component({
@@ -13,12 +13,18 @@ export class ViewInfoCaracteristicaComponent implements OnInit {
   info_caracteristica_id: number;
 
   @Input('info_caracteristica_id')
-  set name(info_caracteristica_id: number) {
-    this.info_caracteristica_id = info_caracteristica_id;
+  set info(info: number) {
+    this.info_caracteristica_id = info;
     this.loadInfoCaracteristica();
-  }
+  };
+
+  @Output('url_editar') url_editar: EventEmitter<boolean> = new EventEmitter();
 
   constructor( private campusMidService: CampusMidService ) { }
+
+  public editar(): void {
+    this.url_editar.emit(true);
+  }
 
   public loadInfoCaracteristica(): void {
     if (this.info_caracteristica_id !== undefined && this.info_caracteristica_id !== 0 &&

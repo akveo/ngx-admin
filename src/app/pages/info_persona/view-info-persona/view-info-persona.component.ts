@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { CampusMidService } from '../../../@core/data/campus_mid.service';
 import { InfoPersona } from '../../../@core/data/models/info_persona';
 
@@ -19,9 +19,16 @@ export class ViewInfoPersonaComponent implements OnInit {
     this.loadInfoPersona();
   }
 
+  @Output('url_editar') url_editar: EventEmitter<boolean> = new EventEmitter();
+
+
   constructor(private campusMidService: CampusMidService) {
     this.loadInfoPersona();
    }
+
+  public editar(): void {
+    this.url_editar.emit(true);
+  }
 
   ngOnInit() {
   }

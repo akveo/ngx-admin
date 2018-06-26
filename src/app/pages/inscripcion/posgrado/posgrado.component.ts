@@ -23,6 +23,9 @@ export class PosgradoComponent implements OnInit {
   show_profile = false;
   show_acad = false;
   show_expe = false;
+  info_contacto: boolean;
+  info_persona: boolean;
+  info_caracteristica: boolean;
 
   constructor(
     private autenticacion: ImplicitAutenticationService,
@@ -97,6 +100,40 @@ export class PosgradoComponent implements OnInit {
       }else {
         this.nextTab();
       }
+    }
+  }
+
+  perfil_editar(event): void {
+    switch (event) {
+      case 'info_contacto':
+        this.show_info = true;
+        this.show_profile = false;
+        this.show_acad = false;
+        this.show_expe = false;
+        this.info_contacto = true;
+        this.info_caracteristica = false;
+        this.info_persona = false;
+        break;
+      case 'info_caracteristica':
+        this.show_info = true;
+        this.show_profile = false;
+        this.show_acad = false;
+        this.show_expe = false;
+        this.info_contacto = false;
+        this.info_caracteristica = true;
+        this.info_persona = false;
+        break;
+      case 'info_persona':
+        this.show_info = true;
+        this.show_profile = false;
+        this.show_acad = false;
+        this.show_expe = false;
+        this.info_contacto = false;
+        this.info_caracteristica = false;
+        this.info_persona = true;
+        break;
+      default:
+        break;
     }
   }
 

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'ngx-perfil',
@@ -14,7 +14,13 @@ export class PerfilComponent implements OnInit {
     this.info_persona_id = info_persona_id;
   }
 
+  @Output('url_editar') url_editar: EventEmitter<boolean> = new EventEmitter();
+
   constructor() { }
+
+  public editar(event, obj): any {
+    this.url_editar.emit(obj);
+  }
 
   ngOnInit() {
   }
