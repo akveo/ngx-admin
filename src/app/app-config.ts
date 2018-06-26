@@ -40,7 +40,7 @@ export const Config = {
             SIGN_OUT_URL: 'https://autenticacion.udistrital.edu.co/oidc/logout',
             SIGN_OUT_REDIRECT_URL: 'http://localhost:9000/',
         },
-       
+
     },
     PREPROD: {
         NUXEO: {
