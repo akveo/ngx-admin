@@ -10,7 +10,7 @@
             <li><label><strong>{{"GLOBAL.genero" | translate}}: </strong></label> {{info_info_persona.Genero.Nombre}}</li>
             <li><label><strong>{{"GLOBAL.estado_civil" | translate}}: </strong></label> {{info_info_persona.EstadoCivil.Nombre}}</li>
         </ul>
-          <a href=""><i class="ion-edit"></i>{{"GLOBAL.actualizar" | translate}}</a>
+        <span  *ngIf="url_editar"  (click)="editar()" class="link"><i class="ion-edit"></i>{{"GLOBAL.actualizar" | translate}}</span>
       </div>
       <div class="col-md-6 col-sm-6 col-xs-12 pull-right">
           <img class="user-picture image" src="../../../../assets/images/foto.png">
