@@ -7,6 +7,7 @@ import { EcDashboardComponent } from './ec-dashboard.component';
 import { ProfitCardComponent } from './profit-card/profit-card.component';
 import { OrdersChartComponent } from './charts-panel/charts/orders-chart.component';
 import { ProfitChartComponent } from './charts-panel/charts/profit-chart.component';
+import { ChartsHeaderComponent } from './charts-panel/charts-header/charts-header.component';
 import { ChartModule } from 'angular2-chartjs';
 import { StatsCardBackComponent } from './profit-card/back-side/stats-card-back.component';
 import { EcMapComponent } from './map/ec-map.component';
@@ -36,6 +37,7 @@ import { TrafficBarChartComponent } from './traffic-card/traffic-bar-chart.compo
     StatsBarChartComponent,
     ProfitCardComponent,
     EcChartsPanelComponent,
+    ChartsHeaderComponent,
     OrdersChartComponent,
     ProfitChartComponent,
     StatsCardBackComponent,

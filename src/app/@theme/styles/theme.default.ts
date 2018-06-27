@@ -104,5 +104,51 @@ export const DEFAULT_THEME = {
       axisLineColor: '#cccccc',
       textColor: '#484848',
     },
+
+    // TODO: need design for default theme
+    orders: {
+      tooltipBg: 'rgba(0, 255, 170, 0.35)',
+      tooltipLineColor: 'rgba(255, 255, 255, 0.1)',
+      tooltipLineWidth: '1',
+      tooltipBorderColor: '#00d977',
+      tooltipExtraCss: 'box-shadow: 0px 2px 46px 0 rgba(0, 255, 170, 0.35); border-radius: 10px; padding: 8px 24px;',
+      tooltipTextColor: '#ffffff',
+      tooltipFontWeight: 'normal',
+
+      axisLineColor: 'rgba(161, 161 ,229, 0.3)',
+      xAxisTextColor: '#a1a1e5',
+      yAxisSplitLine: 'rgba(161, 161 ,229, 0.2)',
+
+      itemBorderColor: '#ffffff',
+      lineStyle: 'solid',
+      lineWidth: '6',
+
+      // green line
+      greenLineGradFrom: '#00bece',
+      greenLineGradTo: '#00da78',
+      greenLineShadow: 'rgba(14, 16, 48, 0.4)',
+
+      greenAreaGradFrom: 'rgba(31 ,106, 124, 0.5)',
+      greenAreaGradTo: 'rgba(4, 126, 230, 0)',
+      greenShadowLineDarkBg: '#2c5a85',
+
+      // purple line
+      purpleLineGradFrom: '#8069ff',
+      purpleLineGradTo: '#8357ff',
+      purpleLineShadow: 'rgba(14, 16, 48, 0.4)',
+
+      purpleAreaGradFrom: 'rgba(188, 92, 255, 0.5)',
+      purpleAreaGradTo: 'rgba(188, 92, 255, 0)',
+      purpleShadowLineDarkBg: '#a695ff',
+
+      // blue line
+      blueLineGradFrom: '#3bb0ff',
+      blueLineGradTo: '#0089ff',
+      blueLineShadow: 'rgba(14, 16, 48, 0.4)',
+
+      blueAreaGradFrom: 'rgba(4, 126, 230, 1)',
+      blueAreaGradTo: 'rgba(4, 126, 230, 0)',
+      blueShadowLineDarkBg: '#018dff',
+    },
   },
 };

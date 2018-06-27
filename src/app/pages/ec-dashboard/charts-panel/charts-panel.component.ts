@@ -1,21 +1,27 @@
-import { Component } from '@angular/core';
+import {Component, ViewChild} from '@angular/core';
+import { OrdersChartComponent } from './charts/orders-chart.component';
+import { ProfitChartComponent } from './charts/profit-chart.component';
 
 @Component({
   selector: 'ngx-ec-charts',
   styleUrls: ['./charts-panel.component.scss'],
-  template: `
-    <nb-card size="medium">
-      <nb-tabset fullWidth>
-        <nb-tab tabTitle="Orders">
-          <ngx-orders-chart></ngx-orders-chart>
-        </nb-tab>
-        <nb-tab tabTitle="Profit">
-          <ngx-profit-chart></ngx-profit-chart>
-        </nb-tab>
-      </nb-tabset>
-    </nb-card>
-
-  `,
+  templateUrl: './charts-panel.component.html',
 })
 export class EcChartsPanelComponent {
+  period: string = 'week';
+
+  @ViewChild('ordersChart') ordersChart: OrdersChartComponent;
+  @ViewChild('profitChart') profitChart: ProfitChartComponent;
+
+  setPeriod(value: string): void {
+    this.period = value;
+  }
+
+  changeTab(selectedTab) {
+    if (selectedTab.tabTitle === 'Profit') {
+      this.profitChart.resizeChart();
+    } else {
+      this.ordersChart.resizeChart();
+    }
+  }
 }

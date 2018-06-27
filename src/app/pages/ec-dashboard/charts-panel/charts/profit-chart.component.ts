@@ -1,74 +1,113 @@
-import { Component, OnDestroy } from '@angular/core';
-import { NbThemeService, NbColorHelper } from '@nebular/theme';
+import {AfterViewInit, Component, OnDestroy} from '@angular/core';
+import { NbThemeService } from '@nebular/theme';
+import { takeWhile } from 'rxjs/operators';
 
+// TODO: need design, temporary solution
 @Component({
   selector: 'ngx-profit-chart',
   styleUrls: ['./charts-common.component.scss'],
   template: `
-    <chart type="bar" [data]="data" [options]="options"></chart>
+    <div echarts [options]="options" class="echart" (chartInit)="onChartInit($event)"></div>
   `,
 })
-export class ProfitChartComponent implements OnDestroy {
-  data: any;
-  options: any;
-  themeSubscription: any;
+export class ProfitChartComponent implements AfterViewInit, OnDestroy {
+
+  private alive = true;
+
+  echartsIntance: any;
+  options: any = {};
 
   constructor(private theme: NbThemeService) {
-    this.themeSubscription = this.theme.getJsTheme().subscribe(config => {
+  }
 
-      const colors: any = config.variables;
-      const chartjs: any = config.variables.chartjs;
+  ngAfterViewInit() {
+    this.theme.getJsTheme()
+      .pipe(takeWhile(() => this.alive))
+      .subscribe(config => {
+        const colors: any = config.variables;
+        const echarts: any = config.variables.echarts;
 
-      this.data = {
-        labels: ['2006', '2007', '2008', '2009', '2010', '2011', '2012'],
-        datasets: [{
-          data: [65, 59, 80, 81, 56, 55, 40],
-          label: 'Series A',
-          backgroundColor: NbColorHelper.hexToRgbA(colors.primaryLight, 0.8),
-        }, {
-          data: [28, 48, 40, 19, 86, 27, 90],
-          label: 'Series B',
-          backgroundColor: NbColorHelper.hexToRgbA(colors.infoLight, 0.8),
-        }],
-      };
-
-      this.options = {
-        maintainAspectRatio: false,
-        responsive: true,
-        legend: {
-          labels: {
-            fontColor: chartjs.textColor,
+        this.options = {
+          backgroundColor: echarts.bg,
+          color: [colors.primaryLight],
+          tooltip: {
+            trigger: 'axis',
+            axisPointer: {
+              type: 'shadow',
+            },
           },
-        },
-        scales: {
-          xAxes: [
+          grid: {
+            left: '3%',
+            right: '4%',
+            bottom: '3%',
+            containLabel: true,
+          },
+          xAxis: [
             {
-              gridLines: {
-                display: false,
-                color: chartjs.axisLineColor,
+              type: 'category',
+              data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+              axisTick: {
+                alignWithLabel: true,
               },
-              ticks: {
-                fontColor: chartjs.textColor,
+              axisLine: {
+                lineStyle: {
+                  color: echarts.axisLineColor,
+                },
+              },
+              axisLabel: {
+                textStyle: {
+                  color: echarts.textColor,
+                },
               },
             },
           ],
-          yAxes: [
+          yAxis: [
             {
-              gridLines: {
-                display: true,
-                color: chartjs.axisLineColor,
+              type: 'value',
+              axisLine: {
+                lineStyle: {
+                  color: echarts.axisLineColor,
+                },
               },
-              ticks: {
-                fontColor: chartjs.textColor,
+              splitLine: {
+                lineStyle: {
+                  color: echarts.splitLineColor,
+                },
+              },
+              axisLabel: {
+                textStyle: {
+                  color: echarts.textColor,
+                },
               },
             },
           ],
-        },
-      };
+          series: [
+            {
+              name: 'Score',
+              type: 'bar',
+              barWidth: '60%',
+              data: [10, 52, 200, 334, 390, 330, 220],
+            },
+          ],
+        };
     });
   }
 
+  onChartInit(echarts) {
+    this.echartsIntance = echarts;
+  }
+
+  resizeChart() {
+    if (this.echartsIntance) {
+      // Fix recalculation chart size
+      // TODO: investigate more deeply
+      setTimeout(() => {
+        this.echartsIntance.resize();
+      });
+    }
+  }
+
   ngOnDestroy(): void {
-    this.themeSubscription.unsubscribe();
+    this.alive = false;
   }
 }
