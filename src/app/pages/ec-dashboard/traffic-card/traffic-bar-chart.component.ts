@@ -14,6 +14,7 @@ export class TrafficBarChartComponent implements AfterViewInit, OnDestroy, OnCha
 
   @Input() data: number[];
   @Input() labels: string[];
+  @Input() formatter: string;
 
   option: any = {};
   themeSubscription: any;
@@ -27,7 +28,7 @@ export class TrafficBarChartComponent implements AfterViewInit, OnDestroy, OnCha
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    if (!changes.data.isFirstChange() && !changes.labels.isFirstChange()) {
+    if (!changes.data.isFirstChange() && !changes.labels.isFirstChange() && !changes.data.isFirstChange()) {
       this.echartsInstance.setOption({
         series: [{
           data: this.data,
@@ -35,6 +36,9 @@ export class TrafficBarChartComponent implements AfterViewInit, OnDestroy, OnCha
         xAxis: {
           data: this.labels,
         },
+        tooltip: {
+          formatter: this.formatter,
+        }
       })
     }
   }
@@ -67,6 +71,16 @@ export class TrafficBarChartComponent implements AfterViewInit, OnDestroy, OnCha
         },
         yAxis: {
           show: false,
+          axisLine: {
+            show: false,
+          },
+          axisLabel: {
+            show: false,
+          },
+          axisTick: {
+            show: false,
+          },
+          boundaryGap: [0, '5%'],
         },
         tooltip: {
           axisPointer: {
@@ -81,7 +95,7 @@ export class TrafficBarChartComponent implements AfterViewInit, OnDestroy, OnCha
           backgroundColor: trafficTheme.tooltipBg,
           borderColor: trafficTheme.tooltipBorderColor,
           borderWidth: 3,
-          formatter: '{c0} MB',
+          formatter: this.formatter,
           extraCssText: trafficTheme.tooltipExtraCss,
         },
         series: [
