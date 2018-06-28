@@ -13,6 +13,6 @@ export class InfoPersona {
   EstadoCivil: EstadoCivil;
   Genero: Genero;
   Id: number;
-  TipoDocumento:TipoIdentificacion;
-  NumeroDocumento:string;
+  TipoDocumento: TipoIdentificacion;
+  NumeroDocumento: string;
 }
