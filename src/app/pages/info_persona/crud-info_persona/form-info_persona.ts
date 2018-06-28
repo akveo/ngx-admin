@@ -1,4 +1,3 @@
-
 export let FORM_INFO_PERSONA = {
     // titulo: 'InfoPersona',
     tipo_formulario: 'mini',
