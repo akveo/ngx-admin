@@ -10,7 +10,7 @@ import { InputComponent } from './input.component';
   templateUrl: './tree.component.html',
   styleUrls: ['./tree.component.scss'],
 })
-export class TreeComponent implements OnInit{
+export class TreeAComponent implements OnInit{
 
   nodes = [{
     name: 'Programming languages by programming paradigm',

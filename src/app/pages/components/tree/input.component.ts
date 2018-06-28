@@ -48,9 +48,7 @@ export class InputComponent implements OnInit {
 
     constructor(private activeModal: NgbActiveModal,
         private fb: FormBuilder,
-        private customersService: CustomersService,
         private toastr: ToastrService,
-        private authService: NbAuthService,
     ) { }
 
     ngOnInit() {
