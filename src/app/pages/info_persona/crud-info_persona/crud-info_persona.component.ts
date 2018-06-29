@@ -118,7 +118,7 @@ export class CrudInfoPersonaComponent implements OnInit {
   public loadInfoPersona(): void {
     if (this.info_persona_id !== undefined && this.info_persona_id !== 0 &&
       this.info_persona_id.toString() !== '') {
-      this.campusMidService.get('persona/ConsultaPersona/' + this.autenticationService.getPayload().sub)
+      this.campusMidService.get('persona/ConsultaPersona/?userid=' + this.autenticationService.getPayload().sub)
         .subscribe(res => {
           if (res !== null) {
             const temp = <InfoPersona>res;
@@ -210,13 +210,12 @@ export class CrudInfoPersonaComponent implements OnInit {
 
   validarForm(event) {
     if (event.valid) {
-      console.info(event.data.InfoPersona);
-      /*if (this.info_info_persona === undefined) {
+      if (this.info_info_persona === undefined) {
         this.createInfoPersona(event.data.InfoPersona);
       } else {
         this.updateInfoPersona(event.data.InfoPersona);
       }
-      this.result.emit(event);*/
+      this.result.emit(event);
     }
   }
 
