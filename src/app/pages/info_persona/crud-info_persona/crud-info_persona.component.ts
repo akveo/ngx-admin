@@ -1,10 +1,12 @@
 import { EstadoCivil } from './../../../@core/data/models/estado_civil';
+import { TipoIdentificacion } from './../../../@core/data/models/tipo_identificacion';
 import { ImplicitAutenticationService } from '../../../@core/utils/implicit_autentication.service';
 import { NuxeoService } from '../../../@core/utils/nuxeo.service';
 import { Genero } from './../../../@core/data/models/genero';
 import { InfoPersona } from './../../../@core/data/models/info_persona';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { PersonaService } from '../../../@core/data/persona.service';
+import { EnteService } from '../../../@core/data/ente.service';
 import { DocumentoService } from '../../../@core/data/documento.service';
 import { CampusMidService } from '../../../@core/data/campus_mid.service';
 import { FORM_INFO_PERSONA } from './form-info_persona';
@@ -44,6 +46,7 @@ export class CrudInfoPersonaComponent implements OnInit {
     private campusMidService: CampusMidService,
     private autenticationService: ImplicitAutenticationService,
     private personaService: PersonaService,
+    private enteService: EnteService,
     private documentoService: DocumentoService,
     private nuxeoService: NuxeoService,
     private toasterService: ToasterService) {
@@ -54,6 +57,7 @@ export class CrudInfoPersonaComponent implements OnInit {
     });
     this.loadOptionsEstadoCivil();
     this.loadOptionsGenero();
+    this.loadOptionsTipoIdentificacion();
   }
 
   construirForm() {
@@ -67,6 +71,17 @@ export class CrudInfoPersonaComponent implements OnInit {
 
   useLanguage(language: string) {
     this.translate.use(language);
+  }
+
+  loadOptionsTipoIdentificacion(): void {
+    let tipoIdentificacion: Array<any> = [];
+    this.enteService.get('tipo_identificacion/?limit=0')
+      .subscribe(res => {
+        if (res !== null) {
+          tipoIdentificacion = <Array<TipoIdentificacion>>res;
+        }
+        this.formInfoPersona.campos[this.getIndexForm('TipoIdentificacion')].opciones = tipoIdentificacion;
+      });
   }
 
   loadOptionsEstadoCivil(): void {
@@ -103,7 +118,7 @@ export class CrudInfoPersonaComponent implements OnInit {
   public loadInfoPersona(): void {
     if (this.info_persona_id !== undefined && this.info_persona_id !== 0 &&
       this.info_persona_id.toString() !== '') {
-      this.campusMidService.get('persona/ConsultaPersona/' + this.autenticationService.getPayload().sub)
+      this.campusMidService.get('persona/ConsultaPersona/?userid=' + this.autenticationService.getPayload().sub)
         .subscribe(res => {
           if (res !== null) {
             const temp = <InfoPersona>res;
