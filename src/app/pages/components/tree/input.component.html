@@ -1,0 +1,21 @@
+<form class="form" role="form" [formGroup]="form" (ngSubmit)="okClick()">
+    <fieldset>
+    <div class="modal-header">
+        <span>{{ modalHeader }}</span>
+        <button class="close" aria-label="Close" (click)="closeModal()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+  
+      <div class="modal-body">
+       <div class=" form-group" >
+  <input type="text" placeholder="Name" class="form-control"  [formControl]="form.controls['node']" [ngClass] = "{'form-control-danger': form.controls['node'].hasError('required') && form.controls['node'].touched}"/>
+  <div style="color:red" class="m-1 form-control-feedback" *ngIf="form.controls['node'].hasError('required') && form.controls['node'].touched">Name is required</div>
+     </div>
+  
+      </div>
+      <div class="modal-footer">
+        <button  type="submit" [disabled]="!form.valid" class="btn btn-md btn-primary" >Save</button>
+      </div>
+      </fieldset>
+  </form>
