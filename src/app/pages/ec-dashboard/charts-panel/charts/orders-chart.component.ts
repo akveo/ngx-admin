@@ -40,6 +40,40 @@ const easingFunctions = {
 export class OrdersChartComponent implements AfterViewInit, OnDestroy {
 
   private alive = true;
+  private greenLineData = [
+    5, 63, 113, 156, 194, 225,
+    250, 270, 283, 289, 290,
+    286, 277, 264, 244, 220,
+    194, 171, 157, 151, 150,
+    152, 155, 160, 166, 170,
+    167, 153, 135, 115, 97,
+    82, 71, 64, 63, 62, 61,
+    62, 65, 73, 84, 102,
+    127, 159, 203, 259, 333,
+  ];
+  private purpleLineData = [
+    6, 83, 148, 200, 240,
+    265, 273, 259, 211,
+    122, 55, 30, 28, 36,
+    50, 68, 88, 109, 129,
+    146, 158, 163, 165,
+    173, 187, 208, 236,
+    271, 310, 346, 375,
+    393, 400, 398, 387,
+    368, 341, 309, 275,
+    243, 220, 206, 202,
+    207, 222, 247, 286, 348,
+  ];
+  private blueLineData = [
+    398, 348, 315, 292, 274,
+    261, 251, 243, 237, 231,
+    222, 209, 192, 172, 152,
+    132, 116, 102, 90, 80, 71,
+    64, 58, 53, 49, 48, 54, 66,
+    84, 104, 125, 142, 156, 166,
+    172, 174, 172, 167, 159, 149,
+    136, 121, 105, 86, 67, 45, 22,
+  ];
 
   echartsIntance: any;
 
@@ -50,9 +84,9 @@ export class OrdersChartComponent implements AfterViewInit, OnDestroy {
       const series = this.option.series.map((line, index) => {
         return {
           ...line,
-          data: this.easingFunctionsSet[value][index] ?
-            this.getLineData(this.easingFunctionsSet[value][index])
-            : this.data.map(i => i.value),
+          data: Array.isArray(this.easingFunctionsSet[value][index]) ?
+            this.easingFunctionsSet[value][index]
+            : this.getLineData(this.easingFunctionsSet[value][index]),
         };
       });
 
@@ -69,9 +103,9 @@ export class OrdersChartComponent implements AfterViewInit, OnDestroy {
   // TODO: remove after function generator will be implemented
   easingFunctionsSet = {
     week: [
-      null,
-      easingFunctions.quarticOut,
-      easingFunctions.bounceInOut,
+      this.greenLineData,
+      this.purpleLineData,
+      this.blueLineData,
     ],
     month: [
       easingFunctions.bounceIn,
@@ -86,12 +120,6 @@ export class OrdersChartComponent implements AfterViewInit, OnDestroy {
   };
 
   constructor(private theme: NbThemeService) {
-
-    const points = [49, 49, 49, 50, 51, 51, 52, 53, 55, 58, 63,
-      72, 80, 84, 86, 87, 87, 86, 84, 80, 72, 20, 14, 13, 13,
-      15, 20, 57, 63, 66, 67, 67, 66, 63, 58, 46, 38, 35, 34,
-      34, 34, 34, 34, 34, 34, 34];
-
     const months = [
       'Jan', 'Feb', 'Mar',
       'Apr', 'May', 'Jun',
@@ -99,18 +127,7 @@ export class OrdersChartComponent implements AfterViewInit, OnDestroy {
       'Oct', 'Nov', 'Dec',
     ];
 
-    // const points = [];
-    // let pointsCount = 100;
-    // let min = -3;
-    // let max = 3;
-    // let xStep = (max - min) / pointsCount;
-    //
-    // for(let x = -3; x <= 3; x += xStep) {
-    //   let res = x**3 - 5*x + 17;
-    //   points.push(Math.round(res * 25));
-    // }
-
-    this.data = points.map((p, index) => {
+    this.data = this.greenLineData.map((p, index) => {
       const monthIndex = Math.round(index / 4);
       const label = (index % 4 === 0) ?  months[monthIndex] : '';
 
@@ -306,7 +323,7 @@ export class OrdersChartComponent implements AfterViewInit, OnDestroy {
           }]),
         },
       },
-      data: this.getLineData(easingFunctions.quarticOut),
+      data: this.purpleLineData,
     };
   }
 
@@ -353,7 +370,7 @@ export class OrdersChartComponent implements AfterViewInit, OnDestroy {
           }]),
         },
       },
-      data: this.getLineData(easingFunctions.bounceInOut),
+      data: this.blueLineData,
     };
   }
 

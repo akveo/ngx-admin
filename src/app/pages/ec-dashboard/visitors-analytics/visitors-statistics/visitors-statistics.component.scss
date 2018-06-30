@@ -9,14 +9,12 @@
 
   .toggle-statistics {
     display: block;
-    height: 2rem;
-    width: 2rem;
+    font-size: 2rem;
     top: 1.5rem;
     right: 1.5rem;
     cursor: pointer;
+    background-color: nb-theme(card-bg);
     z-index: 1;
-
-    background-color: red;
   }
 
   .visitors-statistics-container {
@@ -43,7 +41,7 @@
     right: 0;
     width: 100%;
     position: absolute;
-    background-color: #423f8c;
+    background-color: nb-theme(card-bg);
     box-shadow: -2px 0 3px rgba(19, 19, 94, 0.9);
     filter: blur(3px);
     opacity: 0.9;

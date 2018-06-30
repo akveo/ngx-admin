@@ -1,4 +1,7 @@
-<i class="toggle-statistics" (click)="toggleStatistics()"></i>
+<i class="toggle-statistics"
+   [class.nb-expand]="!showVisitorsStatistics"
+   [class.nb-collapse]="showVisitorsStatistics"
+   (click)="toggleStatistics()"></i>
 <div class="visitors-statistics-container"
      [class.expanded]="showVisitorsStatistics">
   <div class="visitors-statistics">
