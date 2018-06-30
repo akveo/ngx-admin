@@ -1,0 +1,117 @@
+@import '../../../../@theme/styles/themes';
+
+@include nb-install-component() {
+  .visitors-statistics-container,
+  .toggle-statistics,
+  .visitors-statistics {
+    position: absolute;
+  }
+
+  .toggle-statistics {
+    display: block;
+    height: 2rem;
+    width: 2rem;
+    top: 1.5rem;
+    right: 1.5rem;
+    cursor: pointer;
+    z-index: 1;
+
+    background-color: red;
+  }
+
+  .visitors-statistics-container {
+    width: 30%;
+    left: calc(100% - 6rem);
+
+    .visitors-statistics {
+      right: -6rem;
+      transition: all 0.5s ease-out;
+    }
+  }
+
+  .visitors-statistics-container,
+  .visitors-statistics-container::before {
+    height: calc(100% - #{nb-theme(card-margin)} / 2);
+    padding: 1.5rem;
+    top: 0;
+    overflow: hidden;
+    transition: all 0.5s ease-out;
+  }
+
+  .visitors-statistics-container::before {
+    content: '';
+    right: 0;
+    width: 100%;
+    position: absolute;
+    background-color: #423f8c;
+    box-shadow: -2px 0 3px rgba(19, 19, 94, 0.9);
+    filter: blur(3px);
+    opacity: 0.9;
+  }
+
+  .visitors-statistics-container.expanded {
+    left: calc(100% - 30%);
+    padding: 1.5rem;
+
+    .visitors-statistics {
+      right: -1.5rem;
+    }
+  }
+
+  .visitors-value {
+    font-size: 3rem;
+    font-weight: nb-theme(font-weight-light);
+    color: nb-theme(color-white);
+  }
+
+  .visitors-title {
+    font-size: 1.25rem;
+    color: nb-theme(color-fg);
+  }
+
+  .visitors-statistics {
+    width: 100%;
+  }
+
+  .statistics-chart {
+    margin-top: 3.5rem;
+    margin-bottom: 1.5rem;
+    width: 100%;
+
+    .echart {
+      display: block;
+      height: 190px;
+      width: 100%;
+    }
+  }
+
+  .chart-value {
+    display: inline-block;
+    color: nb-theme(color-white);
+    font-size: 2rem;
+    font-weight: nb-theme(font-weight-bold);
+    margin-bottom: 1rem;
+    margin-left: 8rem;
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+
+  // legend start
+  .visitors-statistics-legend {
+    /deep/ .legends {
+      padding: 0;
+      margin-left: 0;
+    }
+
+    /deep/ .legend {
+      margin-left: 4.6rem;
+
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+  }
+  // legend end
+}

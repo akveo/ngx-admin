@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, Input, OnDestroy } from '@angular/core';
+import { AfterViewInit, Component, Input, OnDestroy } from '@angular/core';
 import { NbThemeService } from '@nebular/theme';
 import { delay, takeWhile } from 'rxjs/operators';
 
@@ -91,6 +91,7 @@ export class OrdersChartComponent implements AfterViewInit, OnDestroy {
       72, 80, 84, 86, 87, 87, 86, 84, 80, 72, 20, 14, 13, 13,
       15, 20, 57, 63, 66, 67, 67, 66, 63, 58, 46, 38, 35, 34,
       34, 34, 34, 34, 34, 34, 34];
+
     const months = [
       'Jan', 'Feb', 'Mar',
       'Apr', 'May', 'Jun',
@@ -159,7 +160,9 @@ export class OrdersChartComponent implements AfterViewInit, OnDestroy {
         backgroundColor: eTheme.tooltipBg,
         borderColor: eTheme.tooltipBorderColor,
         borderWidth: 3,
-        formatter: '{c0}',
+        formatter: (params) => {
+          return Math.round(parseInt(params.value, 10));
+        },
         extraCssText: eTheme.tooltipExtraCss,
       },
       xAxis: {

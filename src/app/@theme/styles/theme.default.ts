@@ -150,5 +150,50 @@ export const DEFAULT_THEME = {
       blueAreaGradTo: 'rgba(4, 126, 230, 0)',
       blueShadowLineDarkBg: '#018dff',
     },
+
+    // TODO: need design for default theme
+    visitors: {
+      tooltipBg: 'rgba(0, 255, 170, 0.35)',
+      tooltipLineColor: 'rgba(255, 255, 255, 0.1)',
+      tooltipLineWidth: '1',
+      tooltipBorderColor: '#00d977',
+      tooltipExtraCss: 'box-shadow: 0px 2px 46px 0 rgba(0, 255, 170, 0.35); border-radius: 10px; padding: 8px 24px;',
+      tooltipTextColor: '#ffffff',
+      tooltipFontWeight: 'normal',
+
+      axisLineColor: 'rgba(161, 161 ,229, 0.3)',
+      xAxisTextColor: '#a1a1e5',
+      yAxisSplitLine: 'rgba(161, 161 ,229, 0.2)',
+
+      itemBorderColor: '#ffffff',
+      lineStyle: 'dotted',
+      lineWidth: '6',
+      lineGradFrom: '#ffffff',
+      lineGradTo: '#ffffff',
+      lineShadow: 'rgba(14, 16, 48, 0.4)',
+
+      areaGradFrom: 'rgba(188, 92, 255, 1)',
+      areaGradTo: 'rgba(188, 92, 255, 0.5)',
+      shadowLineDarkBg: '#a695ff',
+
+      innerLineStyle: 'solid',
+      innerLineWidth: '1',
+
+      innerAreaGradFrom: 'rgba(59, 165, 243, 1)',
+      innerAreaGradTo: 'rgba(4, 133, 243 , 1)',
+    },
+
+    // TODO: need design for default theme
+    visitorsPie: {
+      firstPieGradientLeft: '#7bff24',
+      firstPieGradientRight: '#2ec7fe',
+      firstPieShadowColor: '#19977E',
+      firstPieRadius: ['70%', '90%'],
+
+      secondPieGradientLeft: '#ff894a',
+      secondPieGradientRight: '#ffcc10',
+      secondPieShadowColor: '#cf7c1c',
+      secondPieRadius: ['60%', '95%'],
+    },
   },
 };

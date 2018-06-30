@@ -1,0 +1,6 @@
+<div class="legends">
+  <div *ngFor="let legend of legendItems" class="legend">
+    <div class="legend-item-color" [ngClass]="legend.iconColor + '-square'"></div>
+    <div class="legend-title">{{ legend.title }}</div>
+  </div>
+</div>
