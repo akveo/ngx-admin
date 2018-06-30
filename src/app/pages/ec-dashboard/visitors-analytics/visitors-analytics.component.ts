@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
-import {NgdLEgendItemColor} from "../legend-chart/enum.legend-item-color";
+
+import {NgdLEgendItemColor} from '../legend-chart/enum.legend-item-color';
 
 @Component({
   selector: 'ngx-ec-visitors-analytics',

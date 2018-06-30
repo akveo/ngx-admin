@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {AfterViewInit, Component, OnDestroy } from '@angular/core';
 import { NbThemeService } from '@nebular/theme';
 import { delay, takeWhile } from 'rxjs/operators';
 
@@ -9,7 +9,7 @@ import {NgdLEgendItemColor} from '../../legend-chart/enum.legend-item-color';
   styleUrls: ['./visitors-statistics.component.scss'],
   templateUrl: './visitors-statistics.component.html',
 })
-export class EcVisitorsStatisticsComponent {
+export class EcVisitorsStatisticsComponent implements AfterViewInit, OnDestroy {
 
   private alive = true;
   private value = 75;
