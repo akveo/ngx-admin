@@ -3,12 +3,12 @@
 @include nb-install-component() {
 
   display: block;
-  height: nb-theme(card-height-small);
-  width: 100%;
+  height: 100%;
+  width: 40%;
 
-  /deep/ chart {
-    display: block;
+  .leaflet-container {
     height: 100%;
-    width: 100%;
+    background-color: nb-theme(color-bg);
   }
+
 }

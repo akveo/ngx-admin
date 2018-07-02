@@ -10,10 +10,6 @@ import { ProfitChartComponent } from './charts-panel/charts/profit-chart.compone
 import { ChartsHeaderComponent } from './charts-panel/charts-header/charts-header.component';
 import { ChartModule } from 'angular2-chartjs';
 import { StatsCardBackComponent } from './profit-card/back-side/stats-card-back.component';
-import { EcMapComponent } from './map/ec-map.component';
-import { EcMapService } from './map/ec-map.service'
-import { LeafletModule } from '@asymmetrik/ngx-leaflet';
-import { EcMapChartComponent } from './map/chart/ec-map-chart.component';
 import { StatsAreaChartComponent } from './profit-card/front-side/stats-area-chart.component';
 import { StatsBarChartComponent } from './profit-card/back-side/stats-bar-chart.component';
 import { StatsCardFrontComponent } from './profit-card/front-side/stats-card-front.component';
@@ -21,6 +17,11 @@ import { EcChartsPanelComponent } from './charts-panel/charts-panel.component';
 import { TrafficCardComponent } from './traffic-card/traffic-card.component';
 import { TrafficBarChartComponent } from './traffic-card/traffic-bar-chart.component';
 
+import { CountriesStatisticsComponent } from './countries-statistics/countries-statistics.component';
+import { EcMapComponent } from './countries-statistics/map/ec-map.component';
+import { EcMapService } from './countries-statistics/map/ec-map.service'
+import { LeafletModule } from '@asymmetrik/ngx-leaflet';
+import { EcMapChartComponent } from './countries-statistics/chart/ec-map-chart.component';
 
 @NgModule({
   imports: [
@@ -41,10 +42,11 @@ import { TrafficBarChartComponent } from './traffic-card/traffic-bar-chart.compo
     OrdersChartComponent,
     ProfitChartComponent,
     StatsCardBackComponent,
-    EcMapComponent,
-    EcMapChartComponent,
     TrafficCardComponent,
     TrafficBarChartComponent,
+    CountriesStatisticsComponent,
+    EcMapComponent,
+    EcMapChartComponent,
   ],
   providers: [
     EcMapService,
