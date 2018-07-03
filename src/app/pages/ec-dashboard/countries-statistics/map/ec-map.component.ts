@@ -10,11 +10,10 @@ import {EcMapService} from './ec-map.service';
   selector: 'ngx-ec-map',
   styleUrls: ['./ec-map.component.scss'],
   template: `
-    <div leaflet [leafletOptions]="options" [leafletLayers]="layers"></div>
+    <div leaflet [leafletOptions]="options" [leafletLayers]="layers" (leafletMapReady)="mapReady($event)">></div>
   `,
 })
 export class EcMapComponent {
-
 
   selectedCategories: string[];
   selectedValues: number[];
@@ -23,6 +22,7 @@ export class EcMapComponent {
 
   options = {
     zoom: 3,
+    zoomControl: false,
     center: L.latLng({lat: 38.991709, lng: -76.886109}),
   };
 
@@ -31,6 +31,10 @@ export class EcMapComponent {
       .subscribe(cords => {
         this.layers.push(this.createGeoJsonLayer(cords));
       });
+  }
+
+  mapReady(map: L.Map) {
+    map.addControl(L.control.zoom({ position: 'bottomright' }));
   }
 
   private createGeoJsonLayer(cords) {
