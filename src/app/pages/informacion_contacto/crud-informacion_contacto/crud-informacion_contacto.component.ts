@@ -133,7 +133,7 @@ export class CrudInformacionContactoComponent implements OnInit {
     if (this.informacion_contacto_id !== undefined && this.informacion_contacto_id !== 0 &&
       this.informacion_contacto_id.toString() !== '') {
         this.denied_acces = false;
-        this.campusMidService.get('persona/DatosContacto/' + this.informacion_contacto_id+'?query=TipoRelacionUbicacionEnte:2')
+        this.campusMidService.get('persona/DatosContacto/' + this.informacion_contacto_id + '?query=TipoRelacionUbicacionEnte:2')
         .subscribe(res => {
           if (res !== null) {
             this.datosGet = <InfoContactoGet>res;
@@ -167,7 +167,7 @@ export class CrudInformacionContactoComponent implements OnInit {
               }
             }
 
-            this.formInformacionContacto.campos[ this.getIndexForm('DepartamentoResidencia') ].opciones[0] = this.info_informacion_contacto.DepartamentoResidencia;
+            this.formInformacionContacto.campos[this.getIndexForm('DepartamentoResidencia')].opciones[0] = this.datosGet.UbicacionEnte[0].Lugar.DEPARTAMENTO;
             this.formInformacionContacto.campos[ this.getIndexForm('CiudadResidencia') ].opciones[0] = this.info_informacion_contacto.CiudadResidencia;
           }
         });

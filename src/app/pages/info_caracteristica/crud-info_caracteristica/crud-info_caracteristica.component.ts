@@ -171,7 +171,7 @@ export class CrudInfoCaracteristicaComponent implements OnInit {
             this.info_info_caracteristica.DepartamentoNacimiento = this.datosGet.Lugar[0].Lugar.DEPARTAMENTO;
             this.info_info_caracteristica.Lugar = this.datosGet.Lugar[0].Lugar.CIUDAD;
 
-            this.formInfoCaracteristica.campos[ this.getIndexForm('DepartamentoNacimiento') ].opciones[0] = this.info_info_caracteristica.DepartamentoNacimiento;
+            this.formInfoCaracteristica.campos[this.getIndexForm('DepartamentoNacimiento')].opciones[0] = this.info_info_caracteristica.DepartamentoNacimiento;
             this.formInfoCaracteristica.campos[ this.getIndexForm('Lugar') ].opciones[0] = this.info_info_caracteristica.Lugar;
 
           }
