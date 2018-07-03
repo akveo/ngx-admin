@@ -22,6 +22,8 @@ export class EcMapComponent {
 
   options = {
     zoom: 3,
+    minZoom: 2,
+    maxZoom: 6,
     zoomControl: false,
     center: L.latLng({lat: 38.991709, lng: -76.886109}),
   };
