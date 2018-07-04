@@ -59,7 +59,7 @@ export const Config = {
             RESPONSE_TYPE: 'id_token token',
             SCOPE: 'openid email role documento',
             REDIRECT_URL: 'https://pruebascampus.portaloas.udistrital.edu.co/',
-            SIGN_OUT_URL: 'https://autenticacion.udistrital.edu.co/oidc/logout',
+            SIGN_OUT_URL: 'https://autenticacion.portaloas.udistrital.edu.co/oidc/logout',
             SIGN_OUT_REDIRECT_URL: 'https://pruebascampus.portaloas.udistrital.edu.co/',
         },
     },
