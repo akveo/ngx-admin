@@ -11,8 +11,7 @@
   }
 
   nb-card-body {
-    padding-left: 0;
-    padding-right: 0;
+    padding: 0;
   }
 
   .dropdown {
@@ -33,15 +32,15 @@
     color: nb-theme(color-fg);
     padding: nb-theme(card-padding);
     border-bottom:
-      nb-theme(card-header-border-width)
+      nb-theme(list-item-border-width)
       nb-theme(card-header-border-type)
-      nb-theme(card-header-border-color);
+      nb-theme(separator);
 
     &:first-child {
       border-top:
-        nb-theme(card-header-border-width)
+        nb-theme(list-item-border-width)
         nb-theme(card-header-border-type)
-        nb-theme(card-header-border-color);
+        nb-theme(separator);
     }
 
     &:hover {
@@ -72,7 +71,7 @@
 
   .value {
     text-align: right;
-    color: nb-theme(color-white);
+    color: nb-theme(color-fg-heading);
   }
 
   @include nb-for-theme(cosmic) {
@@ -91,6 +90,12 @@
 
   @include nb-for-theme(corporate) {
     .user-activity-list li {
+      border-color: nb-theme(tabs-separator);
+
+      &:first-child {
+        border-color: nb-theme(tabs-separator);
+      }
+
       &:hover {
         &::before {
           background-color: nb-theme(color-primary);

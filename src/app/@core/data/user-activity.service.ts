@@ -25,42 +25,57 @@ export class UserActivityService {
     'Oct', 'Nov', 'Dec',
   ];
 
-  private data = {
-    week: (): UserActive[] => {
-      const date = new Date();
-      const days = date.getDate();
-      const month = this.months[date.getMonth()];
+  private weeks: string[] = [
+    'Sun', 'Mon', 'Tue',
+    'Wed', 'Thu',
+    'Fri', 'Sat',
+  ];
 
-      return Array.from(Array(days)).map((_, index) => {
-        return {
-          date: `${index + 1} ${month}`,
-          pagesVisitCount: this.getRandomUpToThousand(),
-          percentageNewVisits: `${this.getRandomUpToThousand() / 10}, %`,
-        };
-      });
+  data = {};
 
-    },
-    month: (): UserActive[] => {
-      return this.months.map((month) => {
-        return {
-          date: month,
-          pagesVisitCount: this.getRandomUpToThousand(),
-          percentageNewVisits: `${this.getRandomUpToThousand() / 10}, %`,
-        };
-      });
-    },
-    year: (): UserActive[] => {
-      return this.years.map((year) => {
-        return {
-          date: year,
-          pagesVisitCount: this.getRandomUpToThousand(),
-          percentageNewVisits: `${this.getRandomUpToThousand() / 10}, %`,
-        };
-      });
-    },
-  };
+  constructor() {
+    this.data = {
+      week: this.getDataWeek(),
+      month: this.getDataMonth(),
+      year: this.getDataYear(),
+    };
+  }
+
+  private getDataWeek(): UserActive[] {
+    return this.weeks.map((week) => {
+      return {
+        date: week,
+        pagesVisitCount: this.getRandomUpToThousand(),
+        percentageNewVisits: `${this.getRandomUpToThousand() / 10} %`,
+      };
+    });
+  }
+
+  private getDataMonth(): UserActive[] {
+    const date = new Date();
+    const days = date.getDate();
+    const month = this.months[date.getMonth()];
+
+    return Array.from(Array(days)).map((_, index) => {
+      return {
+        date: `${index + 1} ${month}`,
+        pagesVisitCount: this.getRandomUpToThousand(),
+        percentageNewVisits: `${this.getRandomUpToThousand() / 10} %`,
+      };
+    });
+  }
+
+  private getDataYear(): UserActive[] {
+    return this.years.map((year) => {
+      return {
+        date: year,
+        pagesVisitCount: this.getRandomUpToThousand(),
+        percentageNewVisits: `${this.getRandomUpToThousand() / 10} %`,
+      };
+    });
+  }
 
   getUserActivityData(period: string): Observable<UserActive[]> {
-    return observableOf(this.data[period]());
+    return observableOf(this.data[period]);
   }
 }

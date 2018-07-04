@@ -17,7 +17,11 @@ import { UserActivityService, UserActive } from '../../../@core/data/user-activi
             {{ type }}
           </button>
           <ul ngbDropdownMenu class="dropdown-menu">
-            <li class="dropdown-item" *ngFor="let t of types" (click)="getUserActivity(t)">{{ t }}</li>
+            <li class="dropdown-item"
+                *ngFor="let t of types"
+                (click)="getUserActivity(t); type = t">
+              {{ t }}
+            </li>
           </ul>
         </div>
       </nb-card-header>
@@ -66,7 +70,7 @@ export class EcUserActivityComponent implements OnDestroy, OnInit {
   getUserActivity(period: string) {
     this.userActivityService.getUserActivityData(period)
       .subscribe(userActivityData => {
-        this.userActivity = userActivityData
+        this.userActivity = userActivityData;
       });
   }
 

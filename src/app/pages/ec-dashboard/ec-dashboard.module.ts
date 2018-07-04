@@ -29,6 +29,7 @@ import {
 } from './visitors-analytics/visitors-statistics/visitors-statistics.component';
 import { EcLegendChartComponent } from './legend-chart/legend-chart.component';
 import { EcUserActivityComponent } from './user-activity/user-activity.component';
+import { EcProgressSectionComponent } from './progress-section/progress-section.component';
 
 
 @NgModule({
@@ -59,6 +60,7 @@ import { EcUserActivityComponent } from './user-activity/user-activity.component
     EcVisitorsStatisticsComponent,
     EcLegendChartComponent,
     EcUserActivityComponent,
+    EcProgressSectionComponent,
   ],
   providers: [
     EcMapService,

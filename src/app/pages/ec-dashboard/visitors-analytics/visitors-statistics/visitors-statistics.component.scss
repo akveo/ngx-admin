@@ -59,7 +59,7 @@
   .visitors-value {
     font-size: 3rem;
     font-weight: nb-theme(font-weight-light);
-    color: nb-theme(color-white);
+    color: nb-theme(color-fg-heading);
   }
 
   .visitors-title {
@@ -85,7 +85,7 @@
 
   .chart-value {
     display: inline-block;
-    color: nb-theme(color-white);
+    color: nb-theme(color-fg-heading);
     font-size: 2rem;
     font-weight: nb-theme(font-weight-bold);
     margin-bottom: 1rem;
