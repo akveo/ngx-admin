@@ -75,6 +75,38 @@ export class OrdersChartComponent implements AfterViewInit, OnDestroy {
     136, 121, 105, 86, 67, 45, 22,
   ];
 
+  // Month
+  private greenLineMonthData = [
+    55, 63, 74, 88, 107, 105, 97,
+    93, 85, 72, 50, 24, 20, 43, 89,
+    166, 205, 205, 182, 154, 112,
+    75, 48, 45, 68, 96, 119, 115,
+    95, 77, 60, 47, 44, 42, 53, 62,
+    77, 86, 93, 102, 123, 140,
+    147, 150, 158, 161, 160,
+  ];
+
+  private purpleLineMonthData = [
+    104, 82, 67, 52, 41, 32, 50, 77,
+    113, 156, 189, 221, 228, 222,
+    197, 162, 143, 115, 102, 92,
+    78, 73, 75, 66, 57, 56, 55,
+    54, 61, 67, 77, 89, 105, 131,
+    160, 164, 158, 154, 152, 146,
+    145, 146, 148, 144, 140, 136, 133,
+  ];
+
+  private blueLineMonthData = [
+    206, 180, 159, 142, 130, 139,
+    166, 176, 184, 186, 186, 188,
+    175, 167, 160, 153, 145, 152,
+    163, 184, 207, 230, 240, 238,
+    228, 213, 191, 168, 149, 118,
+    89, 70, 63, 70, 88, 107, 117,
+    127, 129, 140, 162, 176, 187,
+    188, 168, 188, 219, 224,
+  ];
+
   echartsIntance: any;
 
   @Input()
@@ -108,9 +140,9 @@ export class OrdersChartComponent implements AfterViewInit, OnDestroy {
       this.blueLineData,
     ],
     month: [
-      easingFunctions.bounceIn,
-      easingFunctions.bounceInOut,
-      easingFunctions.quarticOut,
+      this.greenLineMonthData,
+      this.purpleLineMonthData,
+      this.blueLineMonthData,
     ],
     year: [
       easingFunctions.quarticOut,

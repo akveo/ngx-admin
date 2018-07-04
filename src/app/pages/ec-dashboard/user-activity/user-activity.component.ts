@@ -1,6 +1,8 @@
-import { Component, OnDestroy } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { NbThemeService } from '@nebular/theme';
 import { takeWhile } from 'rxjs/operators';
+
+import { UserActivityService, UserActive } from '../../../@core/data/user-activity.service';
 
 @Component({
   selector: 'ngx-user-activity',
@@ -15,114 +17,23 @@ import { takeWhile } from 'rxjs/operators';
             {{ type }}
           </button>
           <ul ngbDropdownMenu class="dropdown-menu">
-            <li class="dropdown-item" *ngFor="let t of types" (click)="type = t">{{ t }}</li>
+            <li class="dropdown-item" *ngFor="let t of types" (click)="getUserActivity(t)">{{ t }}</li>
           </ul>
         </div>
       </nb-card-header>
       <nb-card-body>
         <ul class="user-activity-list">
-          <li>
+          <li *ngFor="let item of userActivity">
             <div class="visited-date">
-              1 May
+              {{ item.date }}
             </div>
             <div class="visited-pages-count">
               <div class="title">Pages Visit</div>
-              <div class="value">336</div>
+              <div class="value">{{ item.pagesVisitCount }}</div>
             </div>
             <div class="visited-percentages">
               <div class="title">New visits, %</div>
-              <div class="value">100%</div>
-            </div>
-          </li>
-          <li>
-            <div class="visited-date">
-              1 May
-            </div>
-            <div class="visited-pages-count">
-              <div class="title">Pages Visit</div>
-              <div class="value">336</div>
-            </div>
-            <div class="visited-percentages">
-              <div class="title">New visits, %</div>
-              <div class="value">100%</div>
-            </div>
-          </li>
-          <li>
-            <div class="visited-date">
-              1 May
-            </div>
-            <div class="visited-pages-count">
-              <div class="title">Pages Visit</div>
-              <div class="value">336</div>
-            </div>
-            <div class="visited-percentages">
-              <div class="title">New visits, %</div>
-              <div class="value">100%</div>
-            </div>
-          </li>
-          <li>
-            <div class="visited-date">
-              1 May
-            </div>
-            <div class="visited-pages-count">
-              <div class="title">Pages Visit</div>
-              <div class="value">336</div>
-            </div>
-            <div class="visited-percentages">
-              <div class="title">New visits, %</div>
-              <div class="value">100%</div>
-            </div>
-          </li>
-          <li>
-            <div class="visited-date">
-              1 May
-            </div>
-            <div class="visited-pages-count">
-              <div class="title">Pages Visit</div>
-              <div class="value">336</div>
-            </div>
-            <div class="visited-percentages">
-              <div class="title">New visits, %</div>
-              <div class="value">100%</div>
-            </div>
-          </li>
-          <li>
-            <div class="visited-date">
-              1 May
-            </div>
-            <div class="visited-pages-count">
-              <div class="title">Pages Visit</div>
-              <div class="value">336</div>
-            </div>
-            <div class="visited-percentages">
-              <div class="title">New visits, %</div>
-              <div class="value">100%</div>
-            </div>
-          </li>
-          <li>
-            <div class="visited-date">
-              1 May
-            </div>
-            <div class="visited-pages-count">
-              <div class="title">Pages Visit</div>
-              <div class="value">336</div>
-            </div>
-            <div class="visited-percentages">
-              <div class="title">New visits, %</div>
-              <div class="value">100%</div>
-            </div>
-          </li>
-          <li>
-            <div class="visited-date">
-              1 May
-            </div>
-            <div class="visited-pages-count">
-              <div class="title">Pages Visit</div>
-              <div class="value">336</div>
-            </div>
-            <div class="visited-percentages">
-              <div class="title">New visits, %</div>
-              <div class="value">100%</div>
+              <div class="value">{{ item.percentageNewVisits }}</div>
             </div>
           </li>
         </ul>
@@ -130,20 +41,33 @@ import { takeWhile } from 'rxjs/operators';
     </nb-card>
   `,
 })
-export class EcUserActivityComponent implements OnDestroy {
+export class EcUserActivityComponent implements OnDestroy, OnInit {
 
   private alive = true;
 
+  userActivity: UserActive[] = [];
   type = 'month';
   types = ['week', 'month', 'year'];
   currentTheme: string;
 
-  constructor(private themeService: NbThemeService) {
+  constructor(private themeService: NbThemeService,
+              private userActivityService: UserActivityService) {
     this.themeService.getJsTheme()
       .pipe(takeWhile(() => this.alive))
       .subscribe(theme => {
         this.currentTheme = theme.name;
     });
+  }
+
+  ngOnInit() {
+    this.getUserActivity(this.type);
+  }
+
+  getUserActivity(period: string) {
+    this.userActivityService.getUserActivityData(period)
+      .subscribe(userActivityData => {
+        this.userActivity = userActivityData
+      });
   }
 
   ngOnDestroy() {
