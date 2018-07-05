@@ -1,3 +1,4 @@
+# base Docker image, remove "-alpine" if having trouble
 FROM node:10.5.0-alpine
 
 # added this step to prevent angular.json not found error
