@@ -89,6 +89,9 @@ export const COSMIC_THEME = {
     },
 
     countriesStatistics: {
+      countryBorderColor: '#a1a1e5',
+      hoveredCountryColor: '#00d977',
+
       chartAxisLineColor: 'rgba(161, 161 ,229, 0.3)',
       chartAxisTextColor: '#a1a1e5',
       chartGradientTo: '#00c7c7',

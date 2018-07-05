@@ -24,12 +24,7 @@ export class EcMapChartComponent implements AfterViewInit, OnDestroy, OnChanges 
   echartsInstance;
   dataShadow = [5, 5, 5, 5, 5];
 
-
   constructor(private theme: NbThemeService) {
-  }
-
-  onChartInit(ec) {
-    this.echartsInstance = ec;
   }
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -80,7 +75,7 @@ export class EcMapChartComponent implements AfterViewInit, OnDestroy, OnChanges 
           },
         },
         yAxis: {
-          data : this.labels,
+          data: this.labels,
           axisLabel: {
             color: countriesTheme.chartAxisTextColor,
             fontSize: 18,
@@ -134,6 +129,10 @@ export class EcMapChartComponent implements AfterViewInit, OnDestroy, OnChanges 
         ],
       });
     });
+  }
+
+  onChartInit(ec) {
+    this.echartsInstance = ec;
   }
 
   ngOnDestroy() {

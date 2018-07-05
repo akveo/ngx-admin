@@ -1,9 +1,12 @@
-import {Component} from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 
 import * as L from 'leaflet';
 import 'style-loader!leaflet/dist/leaflet.css';
 
-import {EcMapService} from './ec-map.service';
+import { EcMapService } from './ec-map.service';
+import { NbThemeService } from '@nebular/theme';
+import { combineLatest } from 'rxjs';
+import { takeWhile } from 'rxjs/operators';
 
 
 @Component({
@@ -13,12 +16,13 @@ import {EcMapService} from './ec-map.service';
     <div leaflet [leafletOptions]="options" [leafletLayers]="layers" (leafletMapReady)="mapReady($event)"></div>
   `,
 })
-export class EcMapComponent {
+export class EcMapComponent implements OnDestroy {
 
   selectedCategories: string[];
   selectedValues: number[];
-
   layers = [];
+  currentTheme: any;
+  alive = true;
 
   options = {
     zoom: 3,
@@ -28,22 +32,31 @@ export class EcMapComponent {
     center: L.latLng({lat: 38.991709, lng: -76.886109}),
   };
 
-  constructor(private ecMapService: EcMapService) {
-    this.ecMapService.getCords()
-      .subscribe(cords => {
+  constructor(private ecMapService: EcMapService,
+              private theme: NbThemeService) {
+
+    combineLatest([
+      this.ecMapService.getCords(),
+      this.theme.getJsTheme(),
+    ])
+      .pipe(takeWhile(() => this.alive))
+      .subscribe(([cords, config]: [any, any]) => {
+        this.currentTheme = config.variables.countriesStatistics;
         this.layers.push(this.createGeoJsonLayer(cords));
+
       });
   }
 
+
   mapReady(map: L.Map) {
-    map.addControl(L.control.zoom({ position: 'bottomright' }));
+    map.addControl(L.control.zoom({position: 'bottomright'}));
   }
 
   private createGeoJsonLayer(cords) {
     return L.geoJSON(
       (cords) as any,
       {
-        style: () => ({color: '#00d977'}),
+        style: () => ({color: this.currentTheme.countryBorderColor}),
         onEachFeature: (f, l) => {
           this.onEachFeature(f, l)
         },
@@ -52,7 +65,7 @@ export class EcMapComponent {
 
   private onEachFeature(feature, layer) {
     layer.on({
-      mouseover: this.highlightFeature,
+      mouseover: this.highlightFeature.bind(this),
       mouseout: (e) => {
         this.resetHighlight(e)
       },
@@ -66,10 +79,10 @@ export class EcMapComponent {
     const layer = e.target;
 
     layer.setStyle({
-      weight: 5,
-      color: '#3d6636',
+      weight: 4,
+      color: this.currentTheme.hoveredCountryColor,
+      fillColor: this.currentTheme.countryBorderColor,
       dashArray: '',
-      fillOpacity: 0.7,
     });
 
     if (!L.Browser.ie && !L.Browser.opera12 && !L.Browser.edge) {
@@ -85,6 +98,10 @@ export class EcMapComponent {
   private selectFeature(e) {
     this.selectedCategories = e.target.feature.properties.categories;
     this.selectedValues = e.target.feature.properties.values;
+  }
+
+  ngOnDestroy(): void {
+    this.alive = false;
   }
 
 }

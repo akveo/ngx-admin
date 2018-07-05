@@ -90,6 +90,9 @@ export const DEFAULT_THEME = {
     },
 
     countriesStatistics: {
+      countryBorderColor: '#2a2a2a',
+      hoveredCountryColor: '#00d977',
+
       chartAxisLineColor: 'rgba(0, 0, 0, 0)',
       chartAxisTextColor: '#2a2a2a',
       chartGradientTo: '#00c7c7',
