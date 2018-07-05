@@ -133,7 +133,7 @@ export class CrudInformacionContactoComponent implements OnInit {
     if (this.informacion_contacto_id !== undefined && this.informacion_contacto_id !== 0 &&
       this.informacion_contacto_id.toString() !== '') {
         this.denied_acces = false;
-        this.campusMidService.get('persona/DatosContacto/' + this.informacion_contacto_id)
+        this.campusMidService.get('persona/DatosContacto/' + this.informacion_contacto_id + '?query=TipoRelacionUbicacionEnte:2')
         .subscribe(res => {
           if (res !== null) {
             this.datosGet = <InfoContactoGet>res;
@@ -155,7 +155,7 @@ export class CrudInformacionContactoComponent implements OnInit {
               TelefonoAlterno: '' + this.datosGet.ContactoEnte[1].Valor,
             };
             for (let i = 0; i < this.datosGet.UbicacionEnte[0].Atributos.length; i++) {
-              if (this.datosGet.UbicacionEnte[0].Atributos[i].AtributoUbicacion.Nombre === 'direccion') {
+              if (this.datosGet.UbicacionEnte[0].Atributos[i].AtributoUbicacion.Nombre === 'Dirección') {
                 this.info_informacion_contacto.IdDireccionEnte = this.datosGet.UbicacionEnte[0].Atributos[i].Id;
                 this.info_informacion_contacto.DireccionResidencia = this.datosGet.UbicacionEnte[0].Atributos[i].Valor;
               }else if (this.datosGet.UbicacionEnte[0].Atributos[i].AtributoUbicacion.Nombre === 'Estrato') {
@@ -166,6 +166,9 @@ export class CrudInformacionContactoComponent implements OnInit {
                 this.info_informacion_contacto.CodigoPostal = this.datosGet.UbicacionEnte[0].Atributos[i].Valor;
               }
             }
+
+            this.formInformacionContacto.campos[this.getIndexForm('DepartamentoResidencia')].opciones[0] = this.datosGet.UbicacionEnte[0].Lugar.DEPARTAMENTO;
+            this.formInformacionContacto.campos[ this.getIndexForm('CiudadResidencia') ].opciones[0] = this.info_informacion_contacto.CiudadResidencia;
           }
         });
     } else  {
@@ -222,7 +225,7 @@ export class CrudInformacionContactoComponent implements OnInit {
             ],
           },
         };
-        this.campusMidService.put('persona/DatosContacto/', this.datosPut)
+        this.campusMidService.put('persona/DatosContacto', this.datosPut)
           .subscribe(res => {
             this.loadInformacionContacto();
             this.eventChange.emit(true);
@@ -277,7 +280,7 @@ export class CrudInformacionContactoComponent implements OnInit {
                 'Valor': '' + this.info_informacion_contacto.EstratoResidencia,
               },
               {
-                'AtributoUbicacion': 4,
+                'AtributoUbicacion': 3,
                 'Valor': this.info_informacion_contacto.CodigoPostal,
               },
             ],

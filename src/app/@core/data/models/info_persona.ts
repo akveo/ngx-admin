@@ -1,4 +1,4 @@
-
+import { TipoIdentificacion } from './tipo_identificacion';
 import { EstadoCivil } from './estado_civil';
 import { Genero } from './genero';
 
@@ -13,4 +13,6 @@ export class InfoPersona {
   EstadoCivil: EstadoCivil;
   Genero: Genero;
   Id: number;
+  TipoDocumento: TipoIdentificacion;
+  NumeroDocumento: string;
 }
