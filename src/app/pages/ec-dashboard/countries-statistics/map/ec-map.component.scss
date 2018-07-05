@@ -17,7 +17,7 @@
     a {
       background-color: nb-theme(color-primary);
       color: nb-theme(color-white);
-      border-bottom: 1px solid nb-theme(separator);
+      border-bottom: none;
       height: 2.5rem;
     }
 
@@ -27,6 +27,7 @@
     }
 
     .leaflet-control-zoom-out {
+      margin-top: 1px;
       border-bottom-left-radius: nb-theme(btn-border-radius);
       border-bottom-right-radius: nb-theme(btn-border-radius);
     }

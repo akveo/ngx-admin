@@ -10,7 +10,7 @@ import {EcMapService} from './ec-map.service';
   selector: 'ngx-ec-map',
   styleUrls: ['./ec-map.component.scss'],
   template: `
-    <div leaflet [leafletOptions]="options" [leafletLayers]="layers" (leafletMapReady)="mapReady($event)">></div>
+    <div leaflet [leafletOptions]="options" [leafletLayers]="layers" (leafletMapReady)="mapReady($event)"></div>
   `,
 })
 export class EcMapComponent {

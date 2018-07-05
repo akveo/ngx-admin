@@ -1,103 +1,143 @@
-import {Component, Input, OnChanges, OnDestroy, SimpleChanges, ViewChild} from '@angular/core';
+import { AfterViewInit, Component, Input, OnChanges, OnDestroy, SimpleChanges } from '@angular/core';
 import { NbThemeService } from '@nebular/theme';
-import { ChartComponent } from 'angular2-chartjs';
 
 
 @Component({
   selector: 'ngx-ec-map-chart',
   styleUrls: ['./ec-map-chart.component.scss'],
   template: `
-    <chart type="horizontalBar" [data]="data" [options]="options"></chart>
+    <div class="header">
+      <span class="title">Selected country</span>
+      <h4>{{countryName}}</h4>
+    </div>
+    <div echarts [options]="option" class="echart" (chartInit)="onChartInit($event)"></div>
   `,
 })
-export class EcMapChartComponent implements OnDestroy, OnChanges {
+export class EcMapChartComponent implements AfterViewInit, OnDestroy, OnChanges {
 
-  @ViewChild(ChartComponent) chart: ChartComponent;
+  @Input() countryName = 'Equador';
+  @Input() data: number[] = [1, 2, 3, 4, 5];
+  @Input() labels: string[] = ['6', '7', '8', '9', '10'];
 
-
-  @Input() categories: string[];
-  @Input() values: number[];
-
-  data: any;
-  options: any;
+  option: any = {};
   themeSubscription: any;
+  echartsInstance;
+  dataShadow = [5, 5, 5, 5, 5];
 
-  ngOnChanges(changes: SimpleChanges) {
-    if (changes.categories && !changes.categories.isFirstChange()) {
-      this.chart.chart.data.labels = changes.categories.currentValue;
-      this.chart.chart.update();
-    }
-    if (changes.values && !changes.values.isFirstChange()) {
-      this.data.datasets[0].data = changes.values.currentValue;
-      this.chart.chart.update();
+
+  constructor(private theme: NbThemeService) {
+  }
+
+  onChartInit(ec) {
+    this.echartsInstance = ec;
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (!changes.data.isFirstChange() && !changes.labels.isFirstChange()) {
+      this.echartsInstance.setOption({
+        series: [{
+          data: this.data,
+        }],
+        xAxis: {
+          data: this.labels,
+        },
+      })
     }
   }
 
-  constructor(private theme: NbThemeService) {
+  ngAfterViewInit() {
     this.themeSubscription = this.theme.getJsTheme().subscribe(config => {
 
-      const colors: any = config.variables;
-      const chartjs: any = config.variables.chartjs;
+      const countriesTheme: any = config.variables.countriesStatistics;
 
-      this.data = {
-        labels: this.categories,
-        datasets: [{
-          label: 'Categories',
-          backgroundColor: colors.infoLight,
-          borderWidth: 1,
-          data: [this.random(), this.random(), this.random(), this.random(), this.random(), this.random()],
-        }],
-      };
-
-      this.options = {
-        responsive: true,
-        maintainAspectRatio: false,
-        elements: {
-          rectangle: {
-            borderWidth: 2,
+      this.option = Object.assign({}, {
+        grid: {
+          left: '3%',
+          right: '3%',
+          bottom: '3%',
+          top: '3%',
+          containLabel: true,
+        },
+        xAxis: {
+          axisLabel: {
+            color: countriesTheme.chartAxisTextColor,
+            fontSize: 18,
+          },
+          axisLine: {
+            lineStyle: {
+              color: countriesTheme.chartAxisLineColor,
+              width: '2',
+            },
+          },
+          axisTick: {
+            show: false,
+          },
+          splitLine: {
+            lineStyle: {
+              color: countriesTheme.chartAxisSplitLine,
+              width: '1',
+            },
           },
         },
-        scales: {
-          xAxes: [
-            {
-              gridLines: {
-                display: true,
-                color: chartjs.axisLineColor,
-              },
-              ticks: {
-                fontColor: chartjs.textColor,
-                beginAtZero: true,
-                max: 10,
-              },
+        yAxis: {
+          data : this.labels,
+          axisLabel: {
+            color: countriesTheme.chartAxisTextColor,
+            fontSize: 18,
+          },
+          axisLine: {
+            lineStyle: {
+              color: countriesTheme.chartAxisLineColor,
+              width: '2',
             },
-          ],
-          yAxes: [
-            {
-              gridLines: {
-                display: false,
-                color: chartjs.axisLineColor,
-              },
-              ticks: {
-                fontColor: chartjs.textColor,
-              },
-            },
-          ],
-        },
-        legend: {
-          position: 'right',
-          labels: {
-            fontColor: chartjs.textColor,
+          },
+          axisTick: {
+            show: false,
           },
         },
-      };
+        series: [
+          { // For shadow
+            type: 'bar',
+            data: this.dataShadow,
+            cursor: 'default',
+            itemStyle: {
+              normal: {
+                color: 'rgba(0,0,0,0.05)'
+              },
+              opacity: 1,
+            },
+            barWidth: '30%',
+            barGap:'-100%',
+            barCategoryGap:'30%',
+            animation: false,
+          },
+          {
+            type: 'bar',
+            barWidth: '30%',
+            data: this.data,
+            cursor: 'default',
+            itemStyle: {
+              normal: {
+                color: new echarts.graphic.LinearGradient(1, 0, 0, 0, [{
+                  offset: 0,
+                  color: countriesTheme.chartGradientFrom,
+                }, {
+                  offset: 1,
+                  color: countriesTheme.chartGradientTo,
+                }]),
+                opacity: 1,
+                shadowColor: countriesTheme.chartGradientFrom,
+                shadowBlur: 5,
+              },
+            },
+          },
+        ],
+      });
     });
   }
 
-  ngOnDestroy(): void {
+  ngOnDestroy() {
     this.themeSubscription.unsubscribe();
   }
 
-  private random() {
-    return Math.round(Math.random() * 10);
-  }
 }

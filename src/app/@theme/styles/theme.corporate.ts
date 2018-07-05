@@ -68,6 +68,28 @@ export const CORPORATE_THEME = {
       areaBorderColor: '#ebeef2',
     },
 
+    trafficBarEchart: {
+      gradientFrom: '#bdc4cd',
+      gradientTo: '#c0c8d1',
+      shadow: 'rgba(0, 0, 0, 0)',
+      textColor: '#484848',
+
+      tooltipBg: '#edf0f4',
+      tooltipBorderColor: '#ebeef2',
+      tooltipExtraCss: 'border-radius: 10px; padding: 8px 24px;',
+      tooltipTextColor: '#2a2a2a',
+      tooltipFontWeight: 'bolder',
+    },
+
+    countriesStatistics: {
+      chartAxisLineColor: 'rgba(0, 0, 0, 0)',
+      chartAxisTextColor: '#2a2a2a',
+      chartGradientTo: '#00c7c7',
+      chartGradientFrom: '#00d977',
+      chartAxisSplitLine: '#ebeef2',
+      chartShadowLineColor: '#2f296b',
+    },
+
     echarts: {
       bg: '#ffffff',
       textColor: '#484848',

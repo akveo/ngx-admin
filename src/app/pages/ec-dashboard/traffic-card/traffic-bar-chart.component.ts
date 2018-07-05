@@ -28,7 +28,7 @@ export class TrafficBarChartComponent implements AfterViewInit, OnDestroy, OnCha
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    if (!changes.data.isFirstChange() && !changes.labels.isFirstChange() && !changes.data.isFirstChange()) {
+    if (!changes.data.isFirstChange() && !changes.labels.isFirstChange()) {
       this.echartsInstance.setOption({
         series: [{
           data: this.data,
