@@ -1,5 +1,6 @@
 @import '../../../../@theme/styles/themes';
 
+// TODO: refactoring
 @include nb-install-component() {
   .visitors-statistics-container,
   .toggle-statistics,
@@ -15,14 +16,21 @@
     cursor: pointer;
     background-color: nb-theme(card-bg);
     z-index: 1;
+    @include nb-rtl(right, auto);
+    @include nb-rtl(left, 1.5rem);
   }
 
   .visitors-statistics-container {
     width: 30%;
     left: calc(100% - 6rem);
+    @include nb-rtl(left, auto);
+    @include nb-rtl(right, calc(100% - 6rem));
 
     .visitors-statistics {
       right: -6rem;
+      @include nb-rtl(right, auto);
+      @include nb-rtl(left, -6.5rem);
+      top: 0.8rem;
       transition: all 0.5s ease-out;
     }
   }
@@ -39,6 +47,8 @@
   .visitors-statistics-container::before {
     content: '';
     right: 0;
+    @include nb-rtl(right, auto);
+    @include nb-rtl(left, 0);
     width: 100%;
     position: absolute;
     background-color: nb-theme(card-bg);
@@ -49,10 +59,14 @@
 
   .visitors-statistics-container.expanded {
     left: calc(100% - 30%);
+    @include nb-rtl(left, auto);
+    @include nb-rtl(right, calc(100% - 30%));
     padding: 1.5rem;
 
     .visitors-statistics {
       right: -1.5rem;
+      @include nb-rtl(right, auto);
+      @include nb-rtl(left, -1.5rem);
     }
   }
 
@@ -90,9 +104,12 @@
     font-weight: nb-theme(font-weight-bold);
     margin-bottom: 1rem;
     margin-left: 8rem;
+    @include nb-rtl(margin-left, 0);
+    @include nb-rtl(margin-right, 8rem);
 
     &:first-child {
       margin-left: 0;
+      @include nb-rtl(margin-right, 0);
     }
   }
 

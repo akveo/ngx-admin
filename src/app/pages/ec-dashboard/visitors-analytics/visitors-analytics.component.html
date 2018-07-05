@@ -1,16 +1,14 @@
-<nb-card nb-card size="medium">
+<nb-card size="medium">
   <nb-card-header>
-    <div class="title">Visitors analytics</div>
+    <div class="title">Visitors Analytics</div>
     <div class="sub-title">Consumption</div>
   </nb-card-header>
   <nb-card-body>
-    <div class="container">
-      <div class="chart-container">
-        <div class="chart-header">
-          <ngx-legend-chart [legendItems]="chartLegend"></ngx-legend-chart>
-        </div>
-        <ngx-visitors-analytics-chart></ngx-visitors-analytics-chart>
+    <div class="chart-container">
+      <div class="chart-header">
+        <ngx-legend-chart [legendItems]="chartLegend"></ngx-legend-chart>
       </div>
+      <ngx-visitors-analytics-chart></ngx-visitors-analytics-chart>
     </div>
   </nb-card-body>
 </nb-card>

@@ -56,7 +56,7 @@ export class EcVisitorsStatisticsComponent implements AfterViewInit, OnDestroy {
           clockWise: true,
           hoverAnimation: false,
           type: 'pie',
-          center: ['45%', '50%'],
+          center: ['50%', '50%'],
           radius: visitorsPie.firstPieRadius,
           data: [
             {
@@ -121,7 +121,7 @@ export class EcVisitorsStatisticsComponent implements AfterViewInit, OnDestroy {
           clockWise: true,
           hoverAnimation: false,
           type: 'pie',
-          center: ['45%', '50%'],
+          center: ['50%', '50%'],
           radius: visitorsPie.secondPieRadius,
           data: [
             {

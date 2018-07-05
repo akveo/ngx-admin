@@ -2,33 +2,7 @@ import { AfterViewInit, Component, Input, OnDestroy } from '@angular/core';
 import { NbThemeService } from '@nebular/theme';
 import { delay, takeWhile } from 'rxjs/operators';
 
-// TODO: remove after function generator will be implemented
-const easingFunctions = {
-  bounceIn(k) {
-    return 1 - easingFunctions.bounceOut(1 - k);
-  },
-  bounceOut(k) {
-    if (k < (1 / 2.75)) {
-      return easingFunctions.quarticOut(k);
-    } else if (k < (2 / 2.75)) {
-      return 7.5625 * (k -= (1.5 / 2.75)) * k + 0.75;
-    } else if (k < (2.5 / 2.75)) {
-      return 7.5625 * (k -= (2.25 / 2.75)) * k + 0.9375;
-    } else {
-      return 7.5625 * (k -= (2.625 / 2.75)) * k + 0.984375;
-    }
-  },
-  quarticOut(k) {
-    return 1 - (--k * k * k * k);
-  },
-  bounceInOut(k) {
-    if (k < 0.5) {
-      return easingFunctions.bounceIn(k * 2) * 0.5;
-    }
-
-    return easingFunctions.bounceOut(k * 2 - 1) * 0.5 + 0.5;
-  },
-};
+import { OrdersChartService, OrdersChart } from '../../../../@core/data/orders-chart.service';
 
 @Component({
   selector: 'ngx-orders-chart',
@@ -40,134 +14,20 @@ const easingFunctions = {
 export class OrdersChartComponent implements AfterViewInit, OnDestroy {
 
   private alive = true;
-  private greenLineData = [
-    5, 63, 113, 156, 194, 225,
-    250, 270, 283, 289, 290,
-    286, 277, 264, 244, 220,
-    194, 171, 157, 151, 150,
-    152, 155, 160, 166, 170,
-    167, 153, 135, 115, 97,
-    82, 71, 64, 63, 62, 61,
-    62, 65, 73, 84, 102,
-    127, 159, 203, 259, 333,
-  ];
-  private purpleLineData = [
-    6, 83, 148, 200, 240,
-    265, 273, 259, 211,
-    122, 55, 30, 28, 36,
-    50, 68, 88, 109, 129,
-    146, 158, 163, 165,
-    173, 187, 208, 236,
-    271, 310, 346, 375,
-    393, 400, 398, 387,
-    368, 341, 309, 275,
-    243, 220, 206, 202,
-    207, 222, 247, 286, 348,
-  ];
-  private blueLineData = [
-    398, 348, 315, 292, 274,
-    261, 251, 243, 237, 231,
-    222, 209, 192, 172, 152,
-    132, 116, 102, 90, 80, 71,
-    64, 58, 53, 49, 48, 54, 66,
-    84, 104, 125, 142, 156, 166,
-    172, 174, 172, 167, 159, 149,
-    136, 121, 105, 86, 67, 45, 22,
-  ];
-
-  // Month
-  private greenLineMonthData = [
-    55, 63, 74, 88, 107, 105, 97,
-    93, 85, 72, 50, 24, 20, 43, 89,
-    166, 205, 205, 182, 154, 112,
-    75, 48, 45, 68, 96, 119, 115,
-    95, 77, 60, 47, 44, 42, 53, 62,
-    77, 86, 93, 102, 123, 140,
-    147, 150, 158, 161, 160,
-  ];
-
-  private purpleLineMonthData = [
-    104, 82, 67, 52, 41, 32, 50, 77,
-    113, 156, 189, 221, 228, 222,
-    197, 162, 143, 115, 102, 92,
-    78, 73, 75, 66, 57, 56, 55,
-    54, 61, 67, 77, 89, 105, 131,
-    160, 164, 158, 154, 152, 146,
-    145, 146, 148, 144, 140, 136, 133,
-  ];
-
-  private blueLineMonthData = [
-    206, 180, 159, 142, 130, 139,
-    166, 176, 184, 186, 186, 188,
-    175, 167, 160, 153, 145, 152,
-    163, 184, 207, 230, 240, 238,
-    228, 213, 191, 168, 149, 118,
-    89, 70, 63, 70, 88, 107, 117,
-    127, 129, 140, 162, 176, 187,
-    188, 168, 188, 219, 224,
-  ];
 
   echartsIntance: any;
 
   @Input()
   set period(value: string) {
-    // TODO: move to service after function generator will be implemented
-    if (this.option) {
-      const series = this.option.series.map((line, index) => {
-        return {
-          ...line,
-          data: Array.isArray(this.easingFunctionsSet[value][index]) ?
-            this.easingFunctionsSet[value][index]
-            : this.getLineData(this.easingFunctionsSet[value][index]),
-        };
-      });
-
-      this.option = {
-        ...this.option,
-        series,
-      };
-    }
+    this.updateOrdersChartData(value);
   }
 
   option: any;
-  data: Array<any>;
+  ordersChartData: OrdersChart;
 
-  // TODO: remove after function generator will be implemented
-  easingFunctionsSet = {
-    week: [
-      this.greenLineData,
-      this.purpleLineData,
-      this.blueLineData,
-    ],
-    month: [
-      this.greenLineMonthData,
-      this.purpleLineMonthData,
-      this.blueLineMonthData,
-    ],
-    year: [
-      easingFunctions.quarticOut,
-      easingFunctions.bounceOut,
-      easingFunctions.bounceIn,
-    ],
-  };
 
-  constructor(private theme: NbThemeService) {
-    const months = [
-      'Jan', 'Feb', 'Mar',
-      'Apr', 'May', 'Jun',
-      'Jul', 'Aug', 'Sep',
-      'Oct', 'Nov', 'Dec',
-    ];
-
-    this.data = this.greenLineData.map((p, index) => {
-      const monthIndex = Math.round(index / 4);
-      const label = (index % 4 === 0) ?  months[monthIndex] : '';
-
-      return {
-        label,
-        value: p,
-      };
-    });
+  constructor(private theme: NbThemeService,
+              private ordersChartService: OrdersChartService ) {
   }
 
   ngAfterViewInit(): void {
@@ -218,7 +78,7 @@ export class OrdersChartComponent implements AfterViewInit, OnDestroy {
         type: 'category',
         boundaryGap: false,
         offset: 5,
-        data: this.data.map(i => i.label),
+        data: this.ordersChartData.chartLabel,
         axisTick: {
           show: false,
         },
@@ -258,14 +118,14 @@ export class OrdersChartComponent implements AfterViewInit, OnDestroy {
         },
       },
       series: [
-        this.getGreenLine(eTheme),
-        this.getPurpleLine(eTheme),
-        this.getBlueLine(eTheme),
+        this.getFirstLine(eTheme),
+        this.getSecondleLine(eTheme),
+        this.getThirdLine(eTheme),
       ],
     };
   }
 
-  getGreenLine(eTheme) {
+  getFirstLine(eTheme) {
     return {
       type: 'line',
       smooth: true,
@@ -308,11 +168,11 @@ export class OrdersChartComponent implements AfterViewInit, OnDestroy {
           }]),
         },
       },
-      data: this.data.map(i => i.value),
+      data: this.ordersChartData.firstLineData,
     };
   }
 
-  getPurpleLine(eTheme) {
+  getSecondleLine(eTheme) {
     return         {
       type: 'line',
       smooth: true,
@@ -355,11 +215,11 @@ export class OrdersChartComponent implements AfterViewInit, OnDestroy {
           }]),
         },
       },
-      data: this.purpleLineData,
+      data: this.ordersChartData.secondLineData,
     };
   }
 
-  getBlueLine(eTheme) {
+  getThirdLine(eTheme) {
     return {
       type: 'line',
       smooth: true,
@@ -402,19 +262,15 @@ export class OrdersChartComponent implements AfterViewInit, OnDestroy {
           }]),
         },
       },
-      data: this.blueLineData,
+      data: this.ordersChartData.thirdLineData,
     };
   }
 
-  // TODO: remove after function generator will be implemented
-  getLineData(easingFunction): number[] {
-    const nPoint = 47;
-
-    return Array.from(Array(nPoint)).map((_, index) => {
-      const x = index / nPoint;
-
-      return easingFunction(x) * 100;
-    });
+  updateOrdersChartData(period: string) {
+    this.ordersChartService.getOrdersChartData(period)
+      .subscribe(ordersChartData => {
+        this.ordersChartData = ordersChartData;
+      });
   }
 
   onChartInit(echarts) {

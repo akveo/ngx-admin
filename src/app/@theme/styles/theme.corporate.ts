@@ -94,7 +94,7 @@ export const CORPORATE_THEME = {
       tooltipFontWeight: 'normal',
 
       axisLineColor: 'rgba(161, 161 ,229, 0.3)',
-      xAxisTextColor: '#a1a1e5',
+      xAxisTextColor: '#2a2a2a',
       yAxisSplitLine: 'rgba(161, 161 ,229, 0.2)',
 
       itemBorderColor: '#ffffff',
@@ -140,7 +140,7 @@ export const CORPORATE_THEME = {
       tooltipFontWeight: 'normal',
 
       axisLineColor: 'rgba(161, 161 ,229, 0.3)',
-      xAxisTextColor: '#a1a1e5',
+      xAxisTextColor: '#2a2a2a',
       yAxisSplitLine: 'rgba(161, 161 ,229, 0.2)',
 
       itemBorderColor: '#ffffff',
