@@ -170,6 +170,10 @@ export class CrudInfoCaracteristicaComponent implements OnInit {
             this.info_info_caracteristica.PaisNacimiento = this.datosGet.Lugar[0].Lugar.PAIS;
             this.info_info_caracteristica.DepartamentoNacimiento = this.datosGet.Lugar[0].Lugar.DEPARTAMENTO;
             this.info_info_caracteristica.Lugar = this.datosGet.Lugar[0].Lugar.CIUDAD;
+
+            this.formInfoCaracteristica.campos[this.getIndexForm('DepartamentoNacimiento')].opciones[0] = this.info_info_caracteristica.DepartamentoNacimiento;
+            this.formInfoCaracteristica.campos[ this.getIndexForm('Lugar') ].opciones[0] = this.info_info_caracteristica.Lugar;
+
           }
         });
     } else  {
@@ -221,6 +225,8 @@ export class CrudInfoCaracteristicaComponent implements OnInit {
     .then((willDelete) => {
       if (willDelete.value) {
         this.info_info_caracteristica = <InfoCaracteristica>infoCaracteristica;
+        this.info_info_caracteristica.TipoRelacionUbicacionEnte = 1;
+        this.info_info_caracteristica.Ente = (1 * this.info_caracteristica_id);
         this.campusMidService.post('persona/DatosComplementarios', this.info_info_caracteristica)
           .subscribe(res => {
             this.info_info_caracteristica = <InfoCaracteristica>res;
