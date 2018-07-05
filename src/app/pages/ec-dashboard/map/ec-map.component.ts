@@ -10,7 +10,7 @@ import {EcMapService} from './ec-map.service';
   selector: 'ngx-ec-map',
   styleUrls: ['./ec-map.component.scss'],
   template: `
-    <nb-card>
+    <nb-card size="medium">
       <nb-card-header>Leaflet Maps</nb-card-header>
       <nb-card-body>
         <div class="container">

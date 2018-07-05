@@ -11,6 +11,7 @@
 
     .header-container {
       display: flex;
+      @include nb-rtl(flex-direction, row-reverse);
     }
 
     .title {
@@ -28,6 +29,7 @@
       padding: 0.75rem;
       padding-bottom: 0.5rem;
       display: flex;
+      @include nb-rtl(flex-direction, row-reverse);
     }
 
     .period {
@@ -60,6 +62,8 @@
       right: 1rem;
       display: flex;
       color: nb-theme(color-success);
+      @include nb-rtl(right, auto);
+      @include nb-rtl(left, 1rem);
     }
 
   }

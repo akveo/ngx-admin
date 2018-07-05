@@ -20,6 +20,16 @@ import { StatsCardFrontComponent } from './profit-card/front-side/stats-card-fro
 import { EcChartsPanelComponent } from './charts-panel/charts-panel.component';
 import { TrafficCardComponent } from './traffic-card/traffic-card.component';
 import { TrafficBarChartComponent } from './traffic-card/traffic-bar-chart.component';
+import { EcVisitorsAnalyticsComponent } from './visitors-analytics/visitors-analytics.component';
+import {
+  EcVisitorsAnalyticsChartComponent,
+} from './visitors-analytics/visitors-analytics-chart/visitors-analytics-chart.component';
+import {
+  EcVisitorsStatisticsComponent,
+} from './visitors-analytics/visitors-statistics/visitors-statistics.component';
+import { EcLegendChartComponent } from './legend-chart/legend-chart.component';
+import { EcUserActivityComponent } from './user-activity/user-activity.component';
+import { EcProgressSectionComponent } from './progress-section/progress-section.component';
 
 
 @NgModule({
@@ -45,6 +55,12 @@ import { TrafficBarChartComponent } from './traffic-card/traffic-bar-chart.compo
     EcMapChartComponent,
     TrafficCardComponent,
     TrafficBarChartComponent,
+    EcVisitorsAnalyticsComponent,
+    EcVisitorsAnalyticsChartComponent,
+    EcVisitorsStatisticsComponent,
+    EcLegendChartComponent,
+    EcUserActivityComponent,
+    EcProgressSectionComponent,
   ],
   providers: [
     EcMapService,

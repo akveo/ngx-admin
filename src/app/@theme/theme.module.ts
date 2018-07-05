@@ -17,6 +17,7 @@ import {
   NbCheckboxModule,
   NbPopoverModule,
   NbContextMenuModule,
+  NbProgressBarModule,
 } from '@nebular/theme';
 
 import { NbSecurityModule } from '@nebular/security';
@@ -32,7 +33,13 @@ import {
   TinyMCEComponent,
   ThemeSwitcherListComponent,
 } from './components';
-import { CapitalizePipe, PluralPipe, RoundPipe, TimingPipe } from './pipes';
+import {
+  CapitalizePipe,
+  PluralPipe,
+  RoundPipe,
+  TimingPipe,
+  NumberWithCommasPipe,
+} from './pipes';
 import {
   OneColumnLayoutComponent,
   SampleLayoutComponent,
@@ -59,7 +66,8 @@ const NB_MODULES = [
   NbPopoverModule,
   NbContextMenuModule,
   NgbModule,
-  NbSecurityModule, // *nbIsGranted directive
+  NbSecurityModule, // *nbIsGranted directive,
+  NbProgressBarModule,
 ];
 
 const COMPONENTS = [
@@ -87,6 +95,7 @@ const PIPES = [
   PluralPipe,
   RoundPipe,
   TimingPipe,
+  NumberWithCommasPipe,
 ];
 
 const NB_THEME_PROVIDERS = [

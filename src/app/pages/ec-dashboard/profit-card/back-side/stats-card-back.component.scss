@@ -11,6 +11,7 @@
 
     .header-container {
       display: flex;
+      @include nb-rtl(flex-direction, row-reverse);
     }
 
     .title {
