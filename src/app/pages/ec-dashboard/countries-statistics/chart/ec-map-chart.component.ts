@@ -102,13 +102,13 @@ export class EcMapChartComponent implements AfterViewInit, OnDestroy, OnChanges 
             cursor: 'default',
             itemStyle: {
               normal: {
-                color: 'rgba(0,0,0,0.05)'
+                color: 'rgba(0,0,0,0.05)',
               },
               opacity: 1,
             },
             barWidth: '30%',
-            barGap:'-100%',
-            barCategoryGap:'30%',
+            barGap: '-100%',
+            barCategoryGap: '30%',
             animation: false,
           },
           {

@@ -11,7 +11,7 @@ import { Component } from '@angular/core';
         <ngx-ec-map-chart></ngx-ec-map-chart>
       </nb-card-body>
     </nb-card>
-  `
+  `,
 })
 export class CountriesStatisticsComponent {
 }

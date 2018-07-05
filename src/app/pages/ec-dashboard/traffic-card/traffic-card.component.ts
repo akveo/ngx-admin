@@ -19,8 +19,8 @@ import { NbThemeService } from '@nebular/theme';
         </div>
       </nb-card-header>
       <nb-card-body>
-        <ngx-traffic-bar-chart [data]="selectedPeriod.data" 
-                               [labels]="selectedPeriod.labels" 
+        <ngx-traffic-bar-chart [data]="selectedPeriod.data"
+                               [labels]="selectedPeriod.labels"
                                [formatter]="selectedPeriod.formatter">
         </ngx-traffic-bar-chart>
       </nb-card-body>
