@@ -4,7 +4,9 @@
       <div class="title">{{ item.title }}</div>
       <div class="value">{{ item.value | ngxNumberWithCommas }}</div>
       <nb-progress-bar [value]="item.activeProgress"></nb-progress-bar>
-      <div class="description">{{ item.description }}</div>
+      <div class="description">
+        <bdi>{{ item.description }}</bdi>
+      </div>
     </div>
   </nb-card-body>
 </nb-card>
