@@ -1,0 +1,112 @@
+@import '../../styles/themes';
+@import '~@nebular/theme/styles/global/bootstrap/hero-buttons';
+@import '~bootstrap/scss/mixins/breakpoints';
+@import '~@nebular/theme/styles/global/bootstrap/breakpoints';
+
+@include nb-install-component() {
+  .switch-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    margin: 0;
+
+    &.vertical {
+      flex-direction: column;
+      align-items: flex-start;
+
+      .first,
+      .second {
+        padding: 0;
+      }
+
+      .switch {
+        margin-top: 0.5em;
+      }
+    }
+
+    & > span {
+      font-size: 1.125rem;
+      font-weight: nb-theme(font-weight-bold);
+      transition: opacity 0.3s ease;
+      color: nb-theme(color-fg);
+
+      &.first {
+        @include nb-ltr(padding-right, 10px);
+        @include nb-rtl(padding-left, 10px);
+      }
+
+      &.second {
+        @include nb-ltr(padding-left, 10px);
+        @include nb-rtl(padding-right, 10px);
+      }
+
+      &.active {
+        color: nb-theme(color-fg-text);
+      }
+
+      @include nb-for-theme(cosmic) {
+        color: nb-theme(color-fg);
+
+        &.active {
+          color: nb-theme(color-white);
+        }
+      }
+
+      &:active {
+        opacity: 0.78;
+      }
+    }
+  }
+
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 3rem;
+    height: 1.5rem;
+    margin: 0;
+
+    input {
+      display: none;
+
+      &:checked + .slider::before {
+        @include nb-ltr(transform, translateX(1.5rem));
+        @include nb-rtl(transform, translateX(-1.5rem));
+      }
+    }
+
+    .slider {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border-radius: 1.75rem;
+      background-color: nb-theme(layout-bg);
+    }
+
+    .slider::before {
+      position: absolute;
+      content: '';
+      height: 1.5rem;
+      width: 1.5rem;
+      border-radius: 50%;
+      background-color: nb-theme(color-success);
+      transition: 0.2s;
+
+      box-shadow: 0 0 0.25rem 0 rgba(nb-theme(color-fg), 0.4);
+
+      @include nb-for-theme(cosmic) {
+        @include btn-hero-primary-gradient();
+      }
+
+      @include nb-for-theme(corporate) {
+        background-color: nb-theme(color-primary);
+      }
+    }
+  }
+
+  @include media-breakpoint-down(xs) {
+    align-items: flex-end;
+  }
+}

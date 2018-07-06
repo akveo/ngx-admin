@@ -5,8 +5,13 @@
 @import '~@nebular/theme/styles/globals';
 @import '~@nebular/auth/styles/all';
 
+// global app font size
+@import './font-size';
+
 // loading progress bar theme
 @import './pace.theme';
+
+@import './bootstrap-rtl';
 
 // install the framework and custom global styles
 @include nb-install() {
@@ -42,4 +47,9 @@
     color: nb-theme(header-fg) !important;
   }
 
+  // fixed in rc.9 and can be removed after upgrade
+  .custom-control .custom-control-indicator {
+    border-radius: 50%; // TODO: quickfix for https://github.com/akveo/nebular/issues/275
+  }
+  @include bootstrap-rtl();
 };

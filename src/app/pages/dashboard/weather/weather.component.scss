@@ -59,6 +59,10 @@
           0 4px 10px rgba(33, 7, 77, 0.5),
           0 2px 10px #928dff;
         }
+
+        @include nb-for-theme(corporate) {
+          color: nb-theme(color-warning);
+        }
       }
     }
 

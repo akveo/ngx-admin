@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
+import { NbThemeService } from '@nebular/theme';
+import { takeWhile } from 'rxjs/operators/takeWhile';
 
 // TODO: move layouts into the framework
 @Component({
@@ -11,13 +13,21 @@ import { Component } from '@angular/core';
       </nb-layout-header>
 
       <nb-sidebar class="menu-sidebar" tag="menu-sidebar" responsive >
+<<<<<<< HEAD
+=======
+        <nb-sidebar-header *ngIf="currentTheme !== 'corporate'">
+          <a href="#" class="btn btn-hero-success main-btn">
+            <i class="ion ion-social-github"></i> <span>Support Us</span>
+          </a>
+        </nb-sidebar-header>
+>>>>>>> upstream/master
         <ng-content select="nb-menu"></ng-content>
       </nb-sidebar>
 
       <nb-layout-column class="small">
       </nb-layout-column>
 
-      <nb-layout-column right>
+      <nb-layout-column>
         <ng-content select="router-outlet"></ng-content>
       </nb-layout-column>
 
@@ -28,5 +38,21 @@ import { Component } from '@angular/core';
     </nb-layout>
   `,
 })
-export class TwoColumnsLayoutComponent {
+export class TwoColumnsLayoutComponent implements OnDestroy {
+
+  private alive = true;
+
+  currentTheme: string;
+
+  constructor(protected themeService: NbThemeService) {
+    this.themeService.getJsTheme()
+      .pipe(takeWhile(() => this.alive))
+      .subscribe(theme => {
+        this.currentTheme = theme.name;
+    });
+  }
+
+  ngOnDestroy() {
+    this.alive = false;
+  }
 }

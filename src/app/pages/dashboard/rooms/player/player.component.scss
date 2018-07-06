@@ -1,0 +1,325 @@
+@import '../../../../@theme/styles/themes';
+@import '~bootstrap/scss/mixins/breakpoints';
+@import '~@nebular/theme/components/card/card.component.theme';
+@import '~@nebular/theme/styles/global/bootstrap/breakpoints';
+@import '~@nebular/theme/styles/core/mixins';
+
+@include nb-install-component() {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+
+  .header {
+    @include nb-card-header();
+  }
+
+  .body {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  .footer {
+    padding: nb-theme(card-padding);
+    border-top: 1px solid nb-theme(separator);
+  }
+
+  .track-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    flex: 1;
+    padding: nb-theme(card-padding);
+
+    .cover {
+      border-radius: nb-theme(radius) / 2;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      width: 10rem;
+      height: 10rem;
+    }
+
+    .details {
+      text-align: center;
+      padding-top: 1.5rem;
+
+      span {
+        color: nb-theme(color-fg);
+      }
+    }
+  }
+
+  .progress-wrap {
+    position: relative;
+    height: 1rem;
+
+    .progress-foreground {
+      background-color: nb-theme(color-success);
+      height: 2px;
+      position: absolute;
+      left: 0;
+      margin-top: calc(0.75rem - 1px);
+      width: 100px;
+
+      @include nb-for-theme(cosmic) {
+        background-color: nb-theme(link-color);
+      }
+
+      @include nb-for-theme(corporate) {
+        background-color: nb-theme(color-primary);
+      }
+    }
+
+    .progress {
+      -webkit-appearance: none;
+      width: 100%;
+      background: transparent;
+      height: 1.5rem;
+      outline: none;
+      position: absolute;
+
+      @include install-thumb() {
+        width: 1rem;
+        height: 1rem;
+        border-radius: 50%;
+        background: nb-theme(color-success);
+        cursor: pointer;
+        margin-top: calc(-0.5rem + 1px);
+        border: none;
+      }
+
+      @include install-track() {
+        width: 100%;
+        height: 2px;
+        cursor: pointer;
+        background: nb-theme(separator);
+      }
+
+      @include nb-for-theme(cosmic) {
+        @include install-thumb() {
+          background: nb-theme(link-color);
+        }
+      }
+
+      @include nb-for-theme(corporate) {
+        @include install-thumb() {
+          background: nb-theme(color-primary);
+        }
+      }
+    }
+  }
+
+  .timing {
+    padding-top: 0.5rem;
+    margin: 0 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    color: nb-theme(color-fg);
+
+    .current {
+      @include nb-ltr(order, 0);
+      @include nb-rtl(order, 1);
+    }
+    .remaining {
+      @include nb-ltr(order, 1);
+      @include nb-rtl(order, 0);
+    }
+  }
+
+  .controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include nb-rtl(flex-direction, row-reverse);
+    padding: 0.25rem 2rem 1rem;
+    max-width: 400px;
+    width: 100%;
+    margin: 0 auto;
+
+    i {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    .shuffle, .loop {
+      font-size: 1.5rem;
+      color: nb-theme(color-fg);
+
+      &.active {
+        color: nb-theme(color-success);
+
+        @include nb-for-theme(cosmic) {
+          color: nb-theme(link-color);
+        }
+      }
+    }
+
+    .prev, .next {
+      width: 3.5rem;
+      height: 3.5rem;
+      border: 2px solid nb-theme(separator);
+      border-radius: 50%;
+      font-size: 1.75rem;
+    }
+
+    .play {
+      font-size: 2rem;
+    }
+  }
+
+  .volume {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    position: relative;
+    max-width: 400px;
+
+    i {
+      font-size: 1.5rem;
+      margin: 0.25rem;
+      color: nb-theme(color-fg);
+    }
+
+    .progress-wrap {
+      height: 2.25rem;
+      margin: 0;
+      width: 80%;
+
+      .progress-foreground {
+        left: auto;
+        margin-top: calc(1rem + 1px);
+        z-index: 0;
+      }
+
+      .progress {
+        height: 2.25rem;
+
+        @include install-thumb() {
+          width: 1.5rem;
+          height: 1.5rem;
+          background-color: nb-theme(color-white);
+          box-shadow: 0 0.125rem 0.5rem 0 rgba(nb-theme(color-fg), 0.4);
+          border: solid 1px rgba(nb-theme(color-fg), 0.4);
+          margin-top: calc(-0.875rem + 1px);
+          position: relative;
+          z-index: 10;
+        }
+      }
+    }
+  }
+
+  &.collapsed {
+    $player-height: 4.5rem;
+
+    border: none;
+    height: $player-height;
+
+    .header {
+      display: none;
+    }
+
+    .body {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0;
+    }
+
+    .footer {
+      display: none;
+    }
+
+    .track-info {
+      height: $player-height;
+      flex-direction: row;
+      padding: 0;
+      flex: none;
+
+      .cover {
+        height: $player-height;
+        width: $player-height;
+        border-radius: 0 0 0 nb-theme(radius);
+        flex: none;
+      }
+
+      .details {
+        margin-left: 0.875rem;
+        text-align: left;
+        padding: 0;
+
+        h4 {
+          margin-bottom: 0.125rem;
+        }
+      }
+    }
+
+    .progress-wrap {
+      width: calc(100% - 6rem);
+      align-self: flex-start;
+      position: absolute;
+      left: 0;
+      margin-top: calc(-0.75rem + 1px);
+      margin-left: calc(#{$player-height} + 0.75rem);
+    }
+
+    .timing {
+      display: none;
+    }
+
+    .controls {
+      padding: 0 1rem 0 0;
+      max-width: inherit;
+      width: inherit;
+      margin: 0;
+
+      i {
+        width: inherit;
+        height: inherit;
+      }
+
+      .prev, .shuffle, .loop {
+        display: none;
+      }
+
+      .play, .next {
+        font-size: 2rem;
+        border: none;
+      }
+    }
+
+    .volume {
+      display: none;
+    }
+
+    .track-info .details {
+      @include media-breakpoint-down(sm) {
+        h4 {
+          font-size: 1.25rem;
+        }
+        span {
+          font-size: 0.875rem;
+        }
+      }
+
+      @include media-breakpoint-down(is) {
+        h4 {
+          font-size: 1rem;
+        }
+        span {
+          font-size: 0.75rem;
+          display: inline-block;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          max-height: calc(0.75rem * #{nb-theme(line-height)});
+        }
+      }
+    }
+  }
+}

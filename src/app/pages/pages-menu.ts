@@ -201,6 +201,10 @@ export const MENU_ITEMS: MenuItem[] = [
         link: '/pages/grupo_etnico/crud-grupo_etnico',
         key: 'crud_grupo_etnico',
       },
+      {
+        title: 'Search Maps',
+        link: '/pages/maps/searchmap',
+      },
     ],
   },
   {
