@@ -1,4 +1,4 @@
-import { Component, OnDestroy } from '@angular/core';
+import { Component, EventEmitter, OnDestroy, Output } from '@angular/core';
 
 import * as L from 'leaflet';
 import 'style-loader!leaflet/dist/leaflet.css';
@@ -18,8 +18,8 @@ import { takeWhile } from 'rxjs/operators';
 })
 export class EcMapComponent implements OnDestroy {
 
-  selectedCategories: string[];
-  selectedValues: number[];
+  @Output() select: EventEmitter<any> = new EventEmitter();
+
   layers = [];
   currentTheme: any;
   alive = true;
@@ -44,10 +44,8 @@ export class EcMapComponent implements OnDestroy {
       .subscribe(([cords, config]: [any, any]) => {
         this.currentTheme = config.variables.countriesStatistics;
         this.layers.push(this.createGeoJsonLayer(cords));
-
       });
   }
-
 
   mapReady(map: L.Map) {
     map.addControl(L.control.zoom({position: 'bottomright'}));
@@ -65,6 +63,10 @@ export class EcMapComponent implements OnDestroy {
   }
 
   private onEachFeature(feature, layer) {
+    if (feature.id === 'CAN') {
+      this.selectFeature(feature.id)
+    }
+
     layer.on({
       mouseover: (e) => {
         this.highlightFeature(e.target)
@@ -113,16 +115,12 @@ export class EcMapComponent implements OnDestroy {
   private selectFeature(e) {
     const country = e.target;
 
-    if (country === this.selectedCountry) {
-      this.resetHighlight(e);
-      this.selectedCountry = null;
-    } else {
+    if (country !== this.selectedCountry) {
       this.resetHighlight(this.selectedCountry);
       this.highlightFeature(country);
       this.selectedCountry = country;
+      this.select.emit({id: country.feature.id, name: country.feature.properties.name});
     }
-    this.selectedCategories = e.target.feature.properties.categories;
-    this.selectedValues = e.target.feature.properties.values;
   }
 
   ngOnDestroy(): void {

@@ -15,14 +15,14 @@ import { NbThemeService } from '@nebular/theme';
 })
 export class EcMapChartComponent implements AfterViewInit, OnDestroy, OnChanges {
 
-  @Input() countryName = 'Equador';
-  @Input() data: number[] = [1, 2, 3, 4, 5];
-  @Input() labels: string[] = ['6', '7', '8', '9', '10'];
+  @Input() countryName: string;
+  @Input() data: number[];
+  @Input() maxValue: number;
+  @Input() labels: string[];
 
   option: any = {};
   themeSubscription: any;
   echartsInstance;
-  dataShadow = [5, 5, 5, 5, 5];
 
   constructor(private theme: NbThemeService) {
   }
@@ -31,9 +31,11 @@ export class EcMapChartComponent implements AfterViewInit, OnDestroy, OnChanges 
     if (!changes.data.isFirstChange() && !changes.labels.isFirstChange()) {
       this.echartsInstance.setOption({
         series: [{
+          data: this.data.map(v => this.maxValue),
+        }, {
           data: this.data,
         }],
-        xAxis: {
+        yAxis: {
           data: this.labels,
         },
       })
@@ -93,7 +95,7 @@ export class EcMapChartComponent implements AfterViewInit, OnDestroy, OnChanges 
         series: [
           { // For shadow
             type: 'bar',
-            data: this.dataShadow,
+            data: this.data.map(v => this.maxValue),
             cursor: 'default',
             itemStyle: {
               normal: {
