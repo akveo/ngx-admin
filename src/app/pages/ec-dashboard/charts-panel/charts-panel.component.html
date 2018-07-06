@@ -3,7 +3,7 @@
     <nb-tab tabTitle="Orders">
       <div class="chart-container">
         <ngx-chart-header [type]="period" (periodChange)="setPeriod($event)"></ngx-chart-header>
-        <ngx-orders-chart #ordersChart [period]="period"></ngx-orders-chart>
+        <ngx-orders-chart #ordersChart [ordersChartData]="ordersChartData"></ngx-orders-chart>
       </div>
     </nb-tab>
     <nb-tab tabTitle="Profit" [lazyLoad]="true">
