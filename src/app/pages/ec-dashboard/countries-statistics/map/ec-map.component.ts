@@ -23,6 +23,7 @@ export class EcMapComponent implements OnDestroy {
   layers = [];
   currentTheme: any;
   alive = true;
+  selectedCountry;
 
   options = {
     zoom: 3,
@@ -65,9 +66,11 @@ export class EcMapComponent implements OnDestroy {
 
   private onEachFeature(feature, layer) {
     layer.on({
-      mouseover: this.highlightFeature.bind(this),
+      mouseover: (e) => {
+        this.highlightFeature(e.target)
+      },
       mouseout: (e) => {
-        this.resetHighlight(e)
+        this.moveout(e)
       },
       click: (e) => {
         this.selectFeature(e)
@@ -75,27 +78,49 @@ export class EcMapComponent implements OnDestroy {
     });
   }
 
-  private highlightFeature(e) {
-    const layer = e.target;
+  private highlightFeature(layer) {
+    if (layer) {
+      layer.setStyle({
+        weight: 4,
+        color: this.currentTheme.hoveredCountryColor,
+        fillColor: this.currentTheme.countryBorderColor,
+        dashArray: '',
+      });
 
-    layer.setStyle({
-      weight: 4,
-      color: this.currentTheme.hoveredCountryColor,
-      fillColor: this.currentTheme.countryBorderColor,
-      dashArray: '',
-    });
-
-    if (!L.Browser.ie && !L.Browser.opera12 && !L.Browser.edge) {
-      layer.bringToFront();
+      if (!L.Browser.ie && !L.Browser.opera12 && !L.Browser.edge) {
+        layer.bringToFront();
+      }
     }
   }
 
-  private resetHighlight(e) {
-    const layer = this.layers[0];
-    layer.resetStyle(e.target);
+  private moveout(e) {
+    const county = e.target;
+    if (county !== this.selectedCountry) {
+      this.resetHighlight(county);
+
+      // When countries have common border we should highlight selected country once again
+      this.highlightFeature(this.selectedCountry);
+    }
+  }
+
+  private resetHighlight(feature) {
+    if (feature) {
+      const layer = this.layers[0];
+      layer.resetStyle(feature);
+    }
   }
 
   private selectFeature(e) {
+    const country = e.target;
+
+    if (country === this.selectedCountry) {
+      this.resetHighlight(e);
+      this.selectedCountry = null;
+    } else {
+      this.resetHighlight(this.selectedCountry);
+      this.highlightFeature(country);
+      this.selectedCountry = country;
+    }
     this.selectedCategories = e.target.feature.properties.categories;
     this.selectedValues = e.target.feature.properties.values;
   }
