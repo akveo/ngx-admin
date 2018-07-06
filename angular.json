@@ -169,8 +169,11 @@
   "defaultProject": "ngx-admin-demo",
   "schematics": {
     "@schematics/angular:component": {
+      "prefix": "ngx",
       "styleext": "scss"
     },
-    "@schematics/angular:directive": {}
+    "@schematics/angular:directive": {
+      "prefix": "ngx"
+    }
   }
 }
