@@ -3,8 +3,8 @@ import { NbThemeService } from '@nebular/theme';
 
 
 @Component({
-  selector: 'ngx-ec-map-chart',
-  styleUrls: ['./ec-map-chart.component.scss'],
+  selector: 'ngx-country-orders-chart',
+  styleUrls: ['./country-orders-chart.component.scss'],
   template: `
     <div class="header">
       <span class="title">Selected country</span>
@@ -13,7 +13,7 @@ import { NbThemeService } from '@nebular/theme';
     <div echarts [options]="option" class="echart" (chartInit)="onChartInit($event)"></div>
   `,
 })
-export class EcMapChartComponent implements AfterViewInit, OnDestroy, OnChanges {
+export class CountryOrdersChartComponent implements AfterViewInit, OnDestroy, OnChanges {
 
   @Input() countryName: string;
   @Input() data: number[];

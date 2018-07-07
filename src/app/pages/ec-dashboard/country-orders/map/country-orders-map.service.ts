@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 
 
 @Injectable()
-export class EcMapService {
+export class CountryOrdersMapService {
 
   constructor(private http: HttpClient) {}
 

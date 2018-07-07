@@ -27,11 +27,11 @@ import { EcLegendChartComponent } from './legend-chart/legend-chart.component';
 import { EcUserActivityComponent } from './user-activity/user-activity.component';
 import { EcProgressSectionComponent } from './progress-section/progress-section.component';
 
-import { CountriesStatisticsComponent } from './countries-statistics/countries-statistics.component';
-import { EcMapComponent } from './countries-statistics/map/ec-map.component';
-import { EcMapService } from './countries-statistics/map/ec-map.service'
+import { CountryOrdersComponent } from './country-orders/country-orders.component';
+import { CountryOrdersMapComponent } from './country-orders/map/country-orders-map.component';
+import { CountryOrdersMapService } from './country-orders/map/country-orders-map.service'
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
-import { EcMapChartComponent } from './countries-statistics/chart/ec-map-chart.component';
+import { CountryOrdersChartComponent } from './country-orders/chart/conutry-orders-chart.component';
 
 @NgModule({
   imports: [
@@ -54,9 +54,9 @@ import { EcMapChartComponent } from './countries-statistics/chart/ec-map-chart.c
     StatsCardBackComponent,
     TrafficCardComponent,
     TrafficBarChartComponent,
-    CountriesStatisticsComponent,
-    EcMapComponent,
-    EcMapChartComponent,
+    CountryOrdersComponent,
+    CountryOrdersMapComponent,
+    CountryOrdersChartComponent,
     EcVisitorsAnalyticsComponent,
     EcVisitorsAnalyticsChartComponent,
     EcVisitorsStatisticsComponent,
@@ -65,7 +65,7 @@ import { EcMapChartComponent } from './countries-statistics/chart/ec-map-chart.c
     EcProgressSectionComponent,
   ],
   providers: [
-    EcMapService,
+    CountryOrdersMapService,
   ],
 })
 export class EcDashboardModule { }

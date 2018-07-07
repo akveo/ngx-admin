@@ -3,20 +3,20 @@ import { Component, EventEmitter, Input, OnDestroy, Output } from '@angular/core
 import * as L from 'leaflet';
 import 'style-loader!leaflet/dist/leaflet.css';
 
-import { EcMapService } from './ec-map.service';
+import { CountryOrdersMapService } from './country-orders-map.service';
 import { NbThemeService } from '@nebular/theme';
 import { combineLatest } from 'rxjs';
 import { takeWhile } from 'rxjs/operators';
 
 
 @Component({
-  selector: 'ngx-ec-map',
-  styleUrls: ['./ec-map.component.scss'],
+  selector: 'ngx-country-orders-map',
+  styleUrls: ['./country-orders-map.component.scss'],
   template: `
     <div leaflet [leafletOptions]="options" [leafletLayers]="layers" (leafletMapReady)="mapReady($event)"></div>
   `,
 })
-export class EcMapComponent implements OnDestroy {
+export class CountryOrdersMapComponent implements OnDestroy {
 
   @Input() countryId: string;
 
@@ -35,7 +35,7 @@ export class EcMapComponent implements OnDestroy {
     center: L.latLng({lat: 38.991709, lng: -76.886109}),
   };
 
-  constructor(private ecMapService: EcMapService,
+  constructor(private ecMapService: CountryOrdersMapService,
               private theme: NbThemeService) {
 
     combineLatest([

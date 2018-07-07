@@ -1,24 +1,24 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'ngx-countries-statistics',
-  styleUrls: ['./countries-statistics.component.scss'],
+  selector: 'ngx-country-orders',
+  styleUrls: ['./country-orders.component.scss'],
   template: `
     <nb-card size="medium">
-      <nb-card-header>Countries Statistics</nb-card-header>
+      <nb-card-header>Country Orders Statistics</nb-card-header>
       <nb-card-body>
-        <ngx-ec-map (select)="selectCountryById($event)"
-                    countryId="USA"></ngx-ec-map>
-        <ngx-ec-map-chart [countryName]="countryName"
-                          [data]="countryData.data"
-                          [labels]="countryData.categories"
-                          maxValue="20">
-        </ngx-ec-map-chart>
+        <ngx-country-orders-map (select)="selectCountryById($event)"
+                                countryId="USA"></ngx-country-orders-map>
+        <ngx-country-orders-chart [countryName]="countryName"
+                                  [data]="countryData.data"
+                                  [labels]="countryData.categories"
+                                  maxValue="20">
+        </ngx-country-orders-chart>
       </nb-card-body>
     </nb-card>
   `,
 })
-export class CountriesStatisticsComponent implements OnInit {
+export class CountryOrdersComponent implements OnInit {
 
   countryName: string;
   countryData;
