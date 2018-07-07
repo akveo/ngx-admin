@@ -10,10 +10,6 @@ import { ProfitChartComponent } from './charts-panel/charts/profit-chart.compone
 import { ChartsHeaderComponent } from './charts-panel/charts-header/charts-header.component';
 import { ChartModule } from 'angular2-chartjs';
 import { StatsCardBackComponent } from './profit-card/back-side/stats-card-back.component';
-import { EcMapComponent } from './map/ec-map.component';
-import { EcMapService } from './map/ec-map.service'
-import { LeafletModule } from '@asymmetrik/ngx-leaflet';
-import { EcMapChartComponent } from './map/chart/ec-map-chart.component';
 import { StatsAreaChartComponent } from './profit-card/front-side/stats-area-chart.component';
 import { StatsBarChartComponent } from './profit-card/back-side/stats-bar-chart.component';
 import { StatsCardFrontComponent } from './profit-card/front-side/stats-card-front.component';
@@ -32,6 +28,11 @@ import { EcUserActivityComponent } from './user-activity/user-activity.component
 import { EcProgressSectionComponent } from './progress-section/progress-section.component';
 import { SlideOutComponent } from './slide-out/slide-out.component';
 
+import { CountryOrdersComponent } from './country-orders/country-orders.component';
+import { CountryOrdersMapComponent } from './country-orders/map/country-orders-map.component';
+import { CountryOrdersMapService } from './country-orders/map/country-orders-map.service'
+import { LeafletModule } from '@asymmetrik/ngx-leaflet';
+import { CountryOrdersChartComponent } from './country-orders/chart/country-orders-chart.component';
 
 @NgModule({
   imports: [
@@ -52,10 +53,11 @@ import { SlideOutComponent } from './slide-out/slide-out.component';
     OrdersChartComponent,
     ProfitChartComponent,
     StatsCardBackComponent,
-    EcMapComponent,
-    EcMapChartComponent,
     TrafficCardComponent,
     TrafficBarChartComponent,
+    CountryOrdersComponent,
+    CountryOrdersMapComponent,
+    CountryOrdersChartComponent,
     EcVisitorsAnalyticsComponent,
     EcVisitorsAnalyticsChartComponent,
     EcVisitorsStatisticsComponent,
@@ -65,7 +67,7 @@ import { SlideOutComponent } from './slide-out/slide-out.component';
     SlideOutComponent,
   ],
   providers: [
-    EcMapService,
+    CountryOrdersMapService,
   ],
 })
 export class EcDashboardModule { }

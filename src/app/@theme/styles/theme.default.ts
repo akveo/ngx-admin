@@ -87,7 +87,18 @@ export const DEFAULT_THEME = {
       tooltipExtraCss: 'border-radius: 10px; padding: 4px 16px;',
       tooltipTextColor: '#2a2a2a',
       tooltipFontWeight: 'bolder',
+    },
 
+    countriesStatistics: {
+      countryBorderColor: '#2a2a2a',
+      hoveredCountryColor: '#00d977',
+
+      chartAxisLineColor: 'rgba(0, 0, 0, 0)',
+      chartAxisTextColor: '#2a2a2a',
+      chartGradientTo: '#00c7c7',
+      chartGradientFrom: '#00d977',
+      chartAxisSplitLine: '#ebeef2',
+      chartShadowLineColor: '#2f296b',
     },
 
     echarts: {
