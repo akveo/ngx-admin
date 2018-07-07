@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, OnDestroy } from '@angular/core';
+import { AfterViewInit, Component, OnDestroy } from '@angular/core';
 import { NbThemeService } from '@nebular/theme';
 import { delay, takeWhile } from 'rxjs/operators';
 
@@ -14,9 +14,7 @@ export class EcVisitorsStatisticsComponent implements AfterViewInit, OnDestroy {
   private alive = true;
   private value = 75;
 
-  showVisitorsStatistics = false;
   option: any = {};
-
   chartLegend = [
     {
       iconColor: NgdLEgendItemColor.YELLOW,
@@ -45,7 +43,7 @@ export class EcVisitorsStatisticsComponent implements AfterViewInit, OnDestroy {
   setOptions(config) {
     const visitorsPie: any = config.variables.visitorsPie;
 
-    this.option = Object.assign({}, {
+    this.option = {
       tooltip: {
         trigger: 'item',
         formatter: '',
@@ -182,11 +180,7 @@ export class EcVisitorsStatisticsComponent implements AfterViewInit, OnDestroy {
           ],
         },
       ],
-    });
-  }
-
-  toggleStatistics() {
-    this.showVisitorsStatistics = !this.showVisitorsStatistics;
+    };
   }
 
   ngOnDestroy() {

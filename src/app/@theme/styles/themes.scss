@@ -20,6 +20,8 @@ $nb-themes: nb-register-theme((
   drops-icon-line-gadient: -webkit-linear-gradient(#01dbb5, #0bbb79),
 
   list-item-border-width: 1px,
+
+  slide-out-container-width: 30%,
 ), default, default);
 
 $nb-themes: nb-register-theme((
@@ -36,6 +38,8 @@ $nb-themes: nb-register-theme((
   drops-icon-line-gadient: -webkit-linear-gradient(#a258fe, #7958fa),
 
   list-item-border-width: 1px,
+
+  slide-out-container-width: 30%,
 ), cosmic, cosmic);
 
 $nb-themes: nb-register-theme((
@@ -52,4 +56,6 @@ $nb-themes: nb-register-theme((
   drops-icon-line-gadient: -webkit-linear-gradient(#e9e8eb, #a7a2be),
 
   list-item-border-width: 1px,
+
+  slide-out-container-width: 30%,
 ), corporate, corporate);

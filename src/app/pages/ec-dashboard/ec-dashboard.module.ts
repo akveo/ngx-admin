@@ -30,6 +30,7 @@ import {
 import { EcLegendChartComponent } from './legend-chart/legend-chart.component';
 import { EcUserActivityComponent } from './user-activity/user-activity.component';
 import { EcProgressSectionComponent } from './progress-section/progress-section.component';
+import { SlideOutComponent } from './slide-out/slide-out.component';
 
 
 @NgModule({
@@ -61,6 +62,7 @@ import { EcProgressSectionComponent } from './progress-section/progress-section.
     EcLegendChartComponent,
     EcUserActivityComponent,
     EcProgressSectionComponent,
+    SlideOutComponent,
   ],
   providers: [
     EcMapService,

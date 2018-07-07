@@ -1,0 +1,11 @@
+<i class="show-hide-toggle"
+   [class.nb-expand]="!showVisitorsStatistics"
+   [class.nb-collapse]="showVisitorsStatistics"
+   (click)="toggleStatistics()"></i>
+<div class="slide-out-container"
+     [class.expanded]="showVisitorsStatistics"
+     [class.collapsed]="!showVisitorsStatistics">
+  <div class="content-wrapper">
+    <ng-content></ng-content>
+  </div>
+</div>
