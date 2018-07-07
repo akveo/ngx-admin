@@ -31,7 +31,7 @@ import { CountryOrdersComponent } from './country-orders/country-orders.componen
 import { CountryOrdersMapComponent } from './country-orders/map/country-orders-map.component';
 import { CountryOrdersMapService } from './country-orders/map/country-orders-map.service'
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
-import { CountryOrdersChartComponent } from './country-orders/chart/conutry-orders-chart.component';
+import { CountryOrdersChartComponent } from './country-orders/chart/country-orders-chart.component';
 
 @NgModule({
   imports: [
