@@ -122,8 +122,8 @@ export class EcMapComponent implements OnDestroy {
   private findFeatureLayerByCountryId(id) {
     const layers = this.layers[0].getLayers();
 
-    for (let key in layers) {
-      let value = layers[key];
+    for (const key of Object.keys(layers)) {
+      const value = layers[key];
       if (value.feature.id === id) {
         return value;
       }

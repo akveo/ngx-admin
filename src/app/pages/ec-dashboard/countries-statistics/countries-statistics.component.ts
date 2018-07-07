@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
     <nb-card size="medium">
       <nb-card-header>Countries Statistics</nb-card-header>
       <nb-card-body>
-        <ngx-ec-map (select)="selectCountryById($event)" 
+        <ngx-ec-map (select)="selectCountryById($event)"
                     countryId="USA"></ngx-ec-map>
         <ngx-ec-map-chart [countryName]="countryName"
                           [data]="countryData.data"
@@ -26,11 +26,11 @@ export class CountriesStatisticsComponent implements OnInit {
   countriesData = [{
     id: 'USA',
     categories: ['Sofas', 'Furniture', 'Lighting', 'Tables', 'Textiles'],
-    data: [15, 11, 10, 13, 18]
+    data: [15, 11, 10, 13, 18],
   }, {
     id: 'CAN',
     categories: ['Sofas', 'Furniture', 'Lighting', 'Tables', 'Textiles'],
-    data: [11, 18, 13, 10, 15]
+    data: [11, 18, 13, 10, 15],
   }];
 
   selectCountryById(country) {
@@ -48,7 +48,7 @@ export class CountriesStatisticsComponent implements OnInit {
     this.countryData = {
       id: '',
       categories: ['Sofas', 'Furniture', 'Lighting', 'Tables', 'Textiles'],
-      data: [0, 0, 0, 0, 0]
+      data: [0, 0, 0, 0, 0],
     }
   }
 
