@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnDestroy, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnDestroy, Output } from '@angular/core';
 
 import * as L from 'leaflet';
 import 'style-loader!leaflet/dist/leaflet.css';
@@ -17,6 +17,8 @@ import { takeWhile } from 'rxjs/operators';
   `,
 })
 export class EcMapComponent implements OnDestroy {
+
+  @Input() countryId: string;
 
   @Output() select: EventEmitter<any> = new EventEmitter();
 
@@ -44,6 +46,7 @@ export class EcMapComponent implements OnDestroy {
       .subscribe(([cords, config]: [any, any]) => {
         this.currentTheme = config.variables.countriesStatistics;
         this.layers.push(this.createGeoJsonLayer(cords));
+        this.selectFeature(this.findFeatureLayerByCountryId(this.countryId));
       });
   }
 
@@ -63,26 +66,22 @@ export class EcMapComponent implements OnDestroy {
   }
 
   private onEachFeature(feature, layer) {
-    if (feature.id === 'CAN') {
-      this.selectFeature(feature.id)
-    }
-
     layer.on({
       mouseover: (e) => {
         this.highlightFeature(e.target)
       },
       mouseout: (e) => {
-        this.moveout(e)
+        this.moveout(e.target)
       },
       click: (e) => {
-        this.selectFeature(e)
+        this.selectFeature(e.target)
       },
     });
   }
 
-  private highlightFeature(layer) {
-    if (layer) {
-      layer.setStyle({
+  private highlightFeature(featureLayer) {
+    if (featureLayer) {
+      featureLayer.setStyle({
         weight: 4,
         color: this.currentTheme.hoveredCountryColor,
         fillColor: this.currentTheme.countryBorderColor,
@@ -90,37 +89,47 @@ export class EcMapComponent implements OnDestroy {
       });
 
       if (!L.Browser.ie && !L.Browser.opera12 && !L.Browser.edge) {
-        layer.bringToFront();
+        featureLayer.bringToFront();
       }
     }
   }
 
-  private moveout(e) {
-    const county = e.target;
-    if (county !== this.selectedCountry) {
-      this.resetHighlight(county);
+  private moveout(featureLayer) {
+    if (featureLayer !== this.selectedCountry) {
+      this.resetHighlight(featureLayer);
 
       // When countries have common border we should highlight selected country once again
       this.highlightFeature(this.selectedCountry);
     }
   }
 
-  private resetHighlight(feature) {
-    if (feature) {
-      const layer = this.layers[0];
-      layer.resetStyle(feature);
+  private resetHighlight(featureLayer) {
+    if (featureLayer) {
+      const geoJsonLayer = this.layers[0];
+      geoJsonLayer.resetStyle(featureLayer);
     }
   }
 
-  private selectFeature(e) {
-    const country = e.target;
-
-    if (country !== this.selectedCountry) {
+  private selectFeature(featureLayer) {
+    if (featureLayer !== this.selectedCountry) {
       this.resetHighlight(this.selectedCountry);
-      this.highlightFeature(country);
-      this.selectedCountry = country;
-      this.select.emit({id: country.feature.id, name: country.feature.properties.name});
+      this.highlightFeature(featureLayer);
+      this.selectedCountry = featureLayer;
+      this.select.emit({id: featureLayer.feature.id, name: featureLayer.feature.properties.name});
     }
+  }
+
+  private findFeatureLayerByCountryId(id) {
+    const layers = this.layers[0].getLayers();
+
+    for (let key in layers) {
+      let value = layers[key];
+      if (value.feature.id === id) {
+        return value;
+      }
+    }
+
+    return null;
   }
 
   ngOnDestroy(): void {

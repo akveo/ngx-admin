@@ -28,7 +28,7 @@ export class EcMapChartComponent implements AfterViewInit, OnDestroy, OnChanges 
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    if (!changes.data.isFirstChange() && !changes.labels.isFirstChange()) {
+    if (changes.data && !changes.data.isFirstChange() && changes.labels && !changes.labels.isFirstChange()) {
       this.echartsInstance.setOption({
         series: [{
           data: this.data.map(v => this.maxValue),

@@ -7,7 +7,8 @@ import { Component, OnInit } from '@angular/core';
     <nb-card size="medium">
       <nb-card-header>Countries Statistics</nb-card-header>
       <nb-card-body>
-        <ngx-ec-map (select)="selectCountryById($event)"></ngx-ec-map>
+        <ngx-ec-map (select)="selectCountryById($event)" 
+                    countryId="USA"></ngx-ec-map>
         <ngx-ec-map-chart [countryName]="countryName"
                           [data]="countryData.data"
                           [labels]="countryData.categories"
@@ -19,17 +20,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CountriesStatisticsComponent implements OnInit {
 
-  countryData;
   countryName: string;
+  countryData;
 
   countriesData = [{
     id: 'USA',
-    categories: ['food', 'phones', 'cars', 'games', 'tvs'],
-    data: [6, 8, 9, 3, 5]
+    categories: ['Sofas', 'Furniture', 'Lighting', 'Tables', 'Textiles'],
+    data: [15, 11, 10, 13, 18]
   }, {
     id: 'CAN',
-    categories: ['food', 'phones', 'cars', 'games', 'tvs'],
-    data: [2, 6, 7, 6, 8]
+    categories: ['Sofas', 'Furniture', 'Lighting', 'Tables', 'Textiles'],
+    data: [11, 18, 13, 10, 15]
   }];
 
   selectCountryById(country) {
@@ -46,13 +47,13 @@ export class CountriesStatisticsComponent implements OnInit {
   private resetCountryData() {
     this.countryData = {
       id: '',
-      categories: ['food', 'phones', 'cars', 'games', 'tvs'],
+      categories: ['Sofas', 'Furniture', 'Lighting', 'Tables', 'Textiles'],
       data: [0, 0, 0, 0, 0]
     }
   }
 
   ngOnInit(): void {
     this.countryData = this.countriesData[0];
-    this.countryName = 'CANADA';
+    this.countryName = '';
   }
 }
