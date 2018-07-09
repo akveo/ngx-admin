@@ -128,7 +128,6 @@ export class CountryOrdersChartComponent implements AfterViewInit, OnDestroy, On
               barWidth: '30%',
               barGap: '-100%',
               barCategoryGap: '30%',
-              animation: false,
               z: 2,
             },
             {
