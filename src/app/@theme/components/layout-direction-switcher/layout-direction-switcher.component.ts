@@ -7,7 +7,6 @@ import { TranslateService } from '@ngx-translate/core';
   selector: 'ngx-layout-direction-switcher',
   template: `
     <ngx-switcher
-      
       [firstValue]="directions.RTL"
       [secondValue]="directions.LTR"
       [firstValueLabel]="'Arabic' | translate"
@@ -36,7 +35,7 @@ export class LayoutDirectionSwitcherComponent implements OnDestroy {
 
   toggleDirection(newDirection) {
     this.directionService.setDirection(newDirection);
-    if(newDirection == "rtl") {
+    if (newDirection === 'rtl') {
       this.translate.use('ar');
     } else {
       this.translate.use('en');
