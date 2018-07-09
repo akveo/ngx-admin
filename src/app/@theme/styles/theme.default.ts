@@ -99,6 +99,10 @@ export const DEFAULT_THEME = {
       chartGradientFrom: '#00d977',
       chartAxisSplitLine: '#ebeef2',
       chartShadowLineColor: '#2f296b',
+
+      chartLineBottomShadowColor: '#00977e',
+
+      chartInnerLineColor: '#2f296b',
     },
 
     echarts: {

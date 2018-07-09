@@ -32,11 +32,17 @@ export class CountryOrdersChartComponent implements AfterViewInit, OnDestroy, On
   ngOnChanges(changes: SimpleChanges): void {
     if (changes.data && !changes.data.isFirstChange() && changes.labels && !changes.labels.isFirstChange()) {
       this.echartsInstance.setOption({
-        series: [{
-          data: this.data.map(v => this.maxValue),
-        }, {
-          data: this.data,
-        }],
+        series: [
+          {
+            data: this.data.map(v => this.maxValue),
+          },
+          {
+            data: this.data,
+          },
+          {
+            data: this.data,
+          },
+        ],
         yAxis: {
           data: this.labels,
         },
@@ -48,7 +54,6 @@ export class CountryOrdersChartComponent implements AfterViewInit, OnDestroy, On
     this.theme.getJsTheme()
       .pipe(takeWhile(() => this.alive))
       .subscribe(config => {
-
         const countriesTheme: any = config.variables.countriesStatistics;
 
         this.option = Object.assign({}, {
@@ -103,7 +108,7 @@ export class CountryOrdersChartComponent implements AfterViewInit, OnDestroy, On
               cursor: 'default',
               itemStyle: {
                 normal: {
-                  color: 'rgba(0,0,0,0.05)',
+                  color: countriesTheme.chartInnerLineColor,
                 },
                 opacity: 1,
               },
@@ -111,10 +116,27 @@ export class CountryOrdersChartComponent implements AfterViewInit, OnDestroy, On
               barGap: '-100%',
               barCategoryGap: '30%',
               animation: false,
+              z: 1,
+            },
+            { // For bottom line
+              type: 'bar',
+              data: this.data,
+              cursor: 'default',
+              itemStyle: {
+                normal: {
+                  color: countriesTheme.chartLineBottomShadowColor,
+                },
+                opacity: 1,
+              },
+              barWidth: '30%',
+              barGap: '-100%',
+              barCategoryGap: '30%',
+              animation: false,
+              z: 2,
             },
             {
               type: 'bar',
-              barWidth: '30%',
+              barWidth: '25%',
               data: this.data,
               cursor: 'default',
               itemStyle: {
@@ -126,11 +148,9 @@ export class CountryOrdersChartComponent implements AfterViewInit, OnDestroy, On
                     offset: 1,
                     color: countriesTheme.chartGradientTo,
                   }]),
-                  opacity: 1,
-                  shadowColor: countriesTheme.chartGradientFrom,
-                  shadowBlur: 5,
                 },
               },
+              z: 3,
             },
           ],
         });
