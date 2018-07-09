@@ -163,6 +163,30 @@ export const DEFAULT_THEME = {
     },
 
     // TODO: need design for default theme
+    profit: {
+      bg: '#3d3780',
+      textColor: '#ffffff',
+      axisLineColor: '#a1a1e5',
+      splitLineColor: '#342e73',
+      areaOpacity: '1',
+
+      // green bar
+      greenLineGradFrom: '#00bece',
+      greenLineGradTo: '#00da78',
+      greenLineShadow: 'rgba(14, 16, 48, 0.4)',
+
+      // purple bar
+      purpleLineGradFrom: '#8069ff',
+      purpleLineGradTo: '#8357ff',
+      purpleLineShadow: 'rgba(14, 16, 48, 0.4)',
+
+      // blue bar
+      blueLineGradFrom: '#3bb0ff',
+      blueLineGradTo: '#0089ff',
+      blueLineShadow: 'rgba(14, 16, 48, 0.4)',
+    },
+
+    // TODO: need design for default theme
     visitors: {
       tooltipBg: 'rgba(0, 255, 170, 0.35)',
       tooltipLineColor: 'rgba(255, 255, 255, 0.1)',
