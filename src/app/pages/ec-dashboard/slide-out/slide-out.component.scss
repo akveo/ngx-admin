@@ -1,0 +1,71 @@
+@import '../../../@theme/styles/themes';
+
+@include nb-install-component() {
+  $slide-out-container-width: nb-theme(slide-out-container-width);
+
+  // toggle button
+  .show-hide-toggle {
+    position: absolute;
+    display: block;
+    font-size: 2rem;
+    top: 1.5rem;
+    right: 1.5rem;
+    cursor: pointer;
+    background-color: nb-theme(card-bg);
+    z-index: 2;
+    @include nb-rtl(right, auto);
+    @include nb-rtl(left, 1.5rem);
+  }
+  // toggle button
+
+  .slide-out-container {
+    position: absolute;
+    overflow: hidden;
+  }
+
+  .slide-out-container,
+  .slide-out-container::before {
+    display: block;
+    width: $slide-out-container-width;
+    height: 100%;
+    top: 0;
+    overflow: hidden;
+    transition: all 0.5s ease-out;
+  }
+
+  .slide-out-container::before {
+    content: '';
+    right: 0;
+    @include nb-rtl(right, auto);
+    @include nb-rtl(left, 0);
+    width: 100%;
+    position: absolute;
+    background-color: nb-theme(card-bg);
+    box-shadow: -2px 0 3px rgba(19, 19, 94, 0.9);
+    @include nb-rtl(box-shadow, 2px 0 3px rgba(19, 19, 94, 0.9));
+    filter: blur(3px);
+    opacity: 0.9;
+    z-index: 1;
+  }
+
+  .slide-out-container.collapsed {
+    left: calc(100% - 6rem);
+    padding: 1.5rem 1.5rem 1.5rem 6rem;
+    @include nb-rtl(left, auto);
+    @include nb-rtl(right, calc(100% - 6rem));
+    @include nb-rtl(padding, 1.5rem 6.5rem 1.5rem 1.5rem);
+  }
+
+  .slide-out-container.expanded {
+    left: calc(100% - #{$slide-out-container-width});
+    @include nb-rtl(left, auto);
+    @include nb-rtl(right, calc(100% - #{$slide-out-container-width}));
+    padding: 1.5rem;
+  }
+
+  .content-wrapper {
+    z-index: 1;
+    position: relative;
+    width: 100%;
+  }
+}

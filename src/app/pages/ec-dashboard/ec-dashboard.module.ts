@@ -26,6 +26,7 @@ import {
 import { EcLegendChartComponent } from './legend-chart/legend-chart.component';
 import { EcUserActivityComponent } from './user-activity/user-activity.component';
 import { EcProgressSectionComponent } from './progress-section/progress-section.component';
+import { SlideOutComponent } from './slide-out/slide-out.component';
 
 import { CountryOrdersComponent } from './country-orders/country-orders.component';
 import { CountryOrdersMapComponent } from './country-orders/map/country-orders-map.component';
@@ -63,6 +64,7 @@ import { CountryOrdersChartComponent } from './country-orders/chart/country-orde
     EcLegendChartComponent,
     EcUserActivityComponent,
     EcProgressSectionComponent,
+    SlideOutComponent,
   ],
   providers: [
     CountryOrdersMapService,

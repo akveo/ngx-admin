@@ -2,14 +2,24 @@
 
 @include nb-install-component() {
 
-  ::ng-deep nb-flip-card {
-    .flip-button {
-      top: 0;
-      width: 2rem;
-      height: 2rem;
-      margin-bottom: 0;
+  .nb-arrow-right {
+    position: absolute;
+    right: 0;
+    @include nb-rtl(right, auto);
+    @include nb-rtl(left, 0);
+    padding: 1.5rem;
+    cursor: pointer;
+  }
 
-      i {
+  ::ng-deep .flipped {
+    .back-container {
+      .nb-arrow-right {
+        transform: scaleX(-1);
+      }
+    }
+
+    .front-container {
+      .nb-arrow-right {
         display: none;
       }
     }

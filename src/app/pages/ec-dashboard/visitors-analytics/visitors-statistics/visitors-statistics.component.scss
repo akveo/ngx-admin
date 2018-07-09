@@ -1,82 +1,16 @@
 @import '../../../../@theme/styles/themes';
 
-// TODO: refactoring
 @include nb-install-component() {
-  .visitors-statistics-container,
-  .toggle-statistics,
-  .visitors-statistics {
-    position: absolute;
-  }
-
-  .toggle-statistics {
-    display: block;
-    font-size: 2rem;
-    top: 1.5rem;
-    right: 1.5rem;
-    cursor: pointer;
-    background-color: nb-theme(card-bg);
-    z-index: 1;
-    @include nb-rtl(right, auto);
-    @include nb-rtl(left, 1.5rem);
-  }
-
-  .visitors-statistics-container {
-    width: 30%;
-    left: calc(100% - 6rem);
-    @include nb-rtl(left, auto);
-    @include nb-rtl(right, calc(100% - 6rem));
-
-    .visitors-statistics {
-      right: -6rem;
-      @include nb-rtl(right, auto);
-      @include nb-rtl(left, -6.5rem);
-      top: 0.8rem;
-      transition: all 0.5s ease-out;
-    }
-  }
-
-  .visitors-statistics-container,
-  .visitors-statistics-container::before {
-    height: calc(100% - #{nb-theme(card-margin)} / 2);
-    padding: 1.5rem;
-    top: 0;
-    overflow: hidden;
-    transition: all 0.5s ease-out;
-  }
-
-  .visitors-statistics-container::before {
-    content: '';
-    right: 0;
-    @include nb-rtl(right, auto);
-    @include nb-rtl(left, 0);
-    width: 100%;
-    position: absolute;
-    background-color: nb-theme(card-bg);
-    box-shadow: -2px 0 3px rgba(19, 19, 94, 0.9);
-    filter: blur(3px);
-    opacity: 0.9;
-  }
-
-  .visitors-statistics-container.expanded {
-    left: calc(100% - 30%);
-    @include nb-rtl(left, auto);
-    @include nb-rtl(right, calc(100% - 30%));
-    padding: 1.5rem;
-
-    .visitors-statistics {
-      right: -1.5rem;
-      @include nb-rtl(right, auto);
-      @include nb-rtl(left, -1.5rem);
-    }
-  }
 
   .visitors-value {
     font-size: 3rem;
     font-weight: nb-theme(font-weight-light);
     color: nb-theme(color-fg-heading);
+    line-height: 0.8;
   }
 
   .visitors-title {
+    margin-top: 1rem;
     font-size: 1.25rem;
     color: nb-theme(color-fg);
   }
@@ -97,20 +31,16 @@
     }
   }
 
+  .chart-values {
+    display: flex;
+  }
+
   .chart-value {
-    display: inline-block;
     color: nb-theme(color-fg-heading);
     font-size: 2rem;
     font-weight: nb-theme(font-weight-bold);
     margin-bottom: 1rem;
-    margin-left: 8rem;
-    @include nb-rtl(margin-left, 0);
-    @include nb-rtl(margin-right, 8rem);
-
-    &:first-child {
-      margin-left: 0;
-      @include nb-rtl(margin-right, 0);
-    }
+    flex: 1;
   }
 
   // legend start
@@ -121,11 +51,9 @@
     }
 
     /deep/ .legend {
-      margin-left: 4.6rem;
-
-      &:first-child {
-        margin-left: 0;
-      }
+      flex: 1;
+      margin-left: 0;
+      justify-content: flex-start;
     }
   }
   // legend end

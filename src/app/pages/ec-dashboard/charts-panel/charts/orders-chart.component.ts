@@ -1,8 +1,8 @@
-import { AfterViewInit, Component, Input, OnDestroy } from '@angular/core';
+import { AfterViewInit, Component, Input, OnChanges, OnDestroy } from '@angular/core';
 import { NbThemeService } from '@nebular/theme';
 import { delay, takeWhile } from 'rxjs/operators';
 
-import { OrdersChartService, OrdersChart } from '../../../../@core/data/orders-chart.service';
+import { OrdersChart } from '../../../../@core/data/orders-chart.service';
 
 @Component({
   selector: 'ngx-orders-chart',
@@ -11,23 +11,24 @@ import { OrdersChartService, OrdersChart } from '../../../../@core/data/orders-c
     <div echarts [options]="option" class="echart" (chartInit)="onChartInit($event)"></div>
   `,
 })
-export class OrdersChartComponent implements AfterViewInit, OnDestroy {
+export class OrdersChartComponent implements AfterViewInit, OnDestroy, OnChanges {
+
+  @Input()
+  ordersChartData: OrdersChart;
 
   private alive = true;
 
   echartsIntance: any;
+  option: any;
 
-  @Input()
-  set period(value: string) {
-    this.updateOrdersChartData(value);
+  ngOnChanges(): void {
+    if (this.option) {
+      this.updateOrdersChartOptions(this.ordersChartData);
+    }
   }
 
-  option: any;
-  ordersChartData: OrdersChart;
 
-
-  constructor(private theme: NbThemeService,
-              private ordersChartService: OrdersChartService ) {
+  constructor(private theme: NbThemeService) {
   }
 
   ngAfterViewInit(): void {
@@ -40,6 +41,7 @@ export class OrdersChartComponent implements AfterViewInit, OnDestroy {
         const eTheme: any = config.variables.orders;
 
         this.setOptions(eTheme);
+        this.updateOrdersChartOptions(this.ordersChartData);
       });
   }
 
@@ -78,7 +80,7 @@ export class OrdersChartComponent implements AfterViewInit, OnDestroy {
         type: 'category',
         boundaryGap: false,
         offset: 5,
-        data: this.ordersChartData.chartLabel,
+        data: [],
         axisTick: {
           show: false,
         },
@@ -168,7 +170,7 @@ export class OrdersChartComponent implements AfterViewInit, OnDestroy {
           }]),
         },
       },
-      data: this.ordersChartData.firstLineData,
+      data: [],
     };
   }
 
@@ -215,7 +217,7 @@ export class OrdersChartComponent implements AfterViewInit, OnDestroy {
           }]),
         },
       },
-      data: this.ordersChartData.secondLineData,
+      data: [],
     };
   }
 
@@ -262,15 +264,36 @@ export class OrdersChartComponent implements AfterViewInit, OnDestroy {
           }]),
         },
       },
-      data: this.ordersChartData.thirdLineData,
+      data: [],
     };
   }
 
-  updateOrdersChartData(period: string) {
-    this.ordersChartService.getOrdersChartData(period)
-      .subscribe(ordersChartData => {
-        this.ordersChartData = ordersChartData;
-      });
+  updateOrdersChartOptions(ordersChartData: OrdersChart) {
+    const options = this.option;
+    const series = this.getNewSeries(options.series, ordersChartData.linesData);
+    const xAxis = this.getNewXAxis(options.xAxis, ordersChartData.chartLabel);
+
+    this.option = {
+      ...options,
+      xAxis,
+      series,
+    };
+  }
+
+  getNewSeries(series, linesData: number[][]) {
+    return series.map((line, index) => {
+      return {
+        ...line,
+        data: linesData[index],
+      };
+    });
+  }
+
+  getNewXAxis(xAxis, chartLabel: string[]) {
+    return {
+      ...xAxis,
+      data: chartLabel,
+    };
   }
 
   onChartInit(echarts) {
