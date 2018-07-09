@@ -1,16 +1,16 @@
 <div class="row">
   <div class="col-md-12">
     <nb-card class="inline-form-card">
-      <nb-card-header>Inline form</nb-card-header>
+      <nb-card-header translate>Inline form</nb-card-header>
       <nb-card-body>
         <form class="form-inline">
-          <input type="text" class="form-control full-width" placeholder="Jane Doe">
+          <input type="text" class="form-control full-width" placeholder="{{'Jane Doe' | translate}}">
           <div class="input-group full-width">
             <div class="input-group-addon">@</div>
-            <input type="text" class="form-control" placeholder="Email">
+            <input type="text" class="form-control" placeholder="{{'Email' | translate}}">
           </div>
-          <nb-checkbox>Remember me</nb-checkbox>
-          <button type="submit" class="btn btn-primary">Submit</button>
+          <nb-checkbox translate>Remember me</nb-checkbox>
+          <button type="submit" class="btn btn-primary" translate>Submit</button>
         </form>
       </nb-card-body>
     </nb-card>
@@ -20,23 +20,23 @@
 <div class="row">
   <div class="col-md-6">
     <nb-card>
-      <nb-card-header>Using the Grid</nb-card-header>
+      <nb-card-header translate>Using the Grid</nb-card-header>
       <nb-card-body>
         <form>
           <div class="form-group row">
-            <label for="inputEmail1" class="col-sm-3 col-form-label">Email</label>
+            <label for="inputEmail1" class="col-sm-3 col-form-label" translate>Email</label>
             <div class="col-sm-9">
-              <input type="email" class="form-control" id="inputEmail1" placeholder="Email">
+              <input type="email" class="form-control" id="inputEmail1" placeholder="{{'Email' | translate}}">
             </div>
           </div>
           <div class="form-group row">
-            <label for="inputPassword2" class="col-sm-3 col-form-label">Password</label>
+            <label for="inputPassword2" class="col-sm-3 col-form-label" translate="">Password</label>
             <div class="col-sm-9">
-              <input type="password" class="form-control" id="inputPassword2" placeholder="Password">
+              <input type="password" class="form-control" id="inputPassword2" placeholder="{{'Password' | translate}}">
             </div>
           </div>
           <div class="form-group row">
-            <label class="col-sm-3">Radios</label>
+            <label class="col-sm-3" translate>Radios</label>
             <div class="col-sm-9">
               <div class="form-check">
                 <label class="custom-control custom-radio">
@@ -63,7 +63,7 @@
           </div>
           <div class="form-group row">
             <div class="offset-sm-3 col-sm-9">
-              <button type="submit" class="btn btn-primary">Sign in</button>
+              <button type="submit" class="btn btn-primary" translate>Sign in</button>
             </div>
           </div>
         </form>
@@ -71,19 +71,19 @@
     </nb-card>
 
     <nb-card>
-      <nb-card-header>Form without labels</nb-card-header>
+      <nb-card-header translate>Form without labels</nb-card-header>
       <nb-card-body>
         <form>
           <div class="form-group">
-            <input type="text" class="form-control" placeholder="Recipients">
+            <input type="text" class="form-control" placeholder="{{'Recipients' | translate}}">
           </div>
           <div class="form-group">
-            <input type="text" class="form-control" placeholder="Subject">
+            <input type="text" class="form-control" placeholder="{{'Subject' | translate}}">
           </div>
           <div class="form-group">
-            <textarea class="form-control" placeholder="Message"></textarea>
+            <textarea class="form-control" placeholder="{{'Message' | translate}}"></textarea>
           </div>
-          <button type="submit" class="btn btn-success">Send</button>
+          <button type="submit" class="btn btn-success" translate>Send</button>
         </form>
       </nb-card-body>
     </nb-card>
@@ -91,57 +91,57 @@
 
   <div class="col-md-6">
     <nb-card>
-      <nb-card-header>Basic form</nb-card-header>
+      <nb-card-header translate>Basic form</nb-card-header>
       <nb-card-body>
         <form>
           <div class="form-group">
-            <label for="exampleInputEmail1">Email address</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+            <label for="exampleInputEmail1" translate>Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="{{'Email' | translate}}">
           </div>
           <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            <label for="exampleInputPassword1" translate>Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="{{'Password' | translate}}">
           </div>
           <div class="form-group">
-            <nb-checkbox>Check me out</nb-checkbox>
+            <nb-checkbox translate>Check me out</nb-checkbox>
           </div>
-          <button type="submit" class="btn btn-danger">Submit</button>
+          <button type="submit" class="btn btn-danger" translate>Submit</button>
         </form>
       </nb-card-body>
     </nb-card>
 
     <nb-card>
-      <nb-card-header>Block form</nb-card-header>
+      <nb-card-header translate>Block form</nb-card-header>
       <nb-card-body>
         <div class="row">
           <div class="col-sm-6">
             <div class="form-group">
-              <label for="inputFirstName">First Name</label>
-              <input type="text" class="form-control" id="inputFirstName" placeholder="First Name">
+              <label for="inputFirstName" translate>First Name</label>
+              <input type="text" class="form-control" id="inputFirstName" placeholder="{{'First Name' | translate}}">
             </div>
           </div>
           <div class="col-sm-6">
             <div class="form-group">
-              <label for="inputLastName">Last Name</label>
-              <input type="text" class="form-control" id="inputLastName" placeholder="Last Name">
+              <label for="inputLastName" translate>Last Name</label>
+              <input type="text" class="form-control" id="inputLastName" placeholder="{{'Last Name' | translate}}">
             </div>
           </div>
         </div>
         <div class="row">
           <div class="col-sm-6">
             <div class="form-group">
-              <label for="inputEmail">Email</label>
-              <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+              <label for="inputEmail" translate>Email</label>
+              <input type="email" class="form-control" id="inputEmail" placeholder="{{'Email' | translate}}">
             </div>
           </div>
           <div class="col-sm-6">
             <div class="form-group">
-              <label for="inputWebsite">Website</label>
-              <input type="text" class="form-control" id="inputWebsite" placeholder="Website">
+              <label for="inputWebsite" translate>Website</label>
+              <input type="text" class="form-control" id="inputWebsite" placeholder="{{'Website' | translate}}">
             </div>
           </div>
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary" translate>Submit</button>
       </nb-card-body>
     </nb-card>
   </div>
@@ -154,27 +154,27 @@
       <nb-card-body>
         <form class="form-horizontal">
           <div class="form-group row">
-            <label for="inputEmail3" class="col-sm-3 form-control-label">Email</label>
+            <label for="inputEmail3" class="col-sm-3 form-control-label" translate>Email</label>
             <div class="col-sm-9">
-              <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+              <input type="email" class="form-control" id="inputEmail3" placeholder="{{'Email' | translate}}">
             </div>
           </div>
           <div class="form-group row">
-            <label for="inputPassword3" class="col-sm-3 form-control-label">Password</label>
+            <label for="inputPassword3" class="col-sm-3 form-control-label" translate>Password</label>
             <div class="col-sm-9">
-              <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+              <input type="password" class="form-control" id="inputPassword3" placeholder="{{'Password' | translate}}">
             </div>
           </div>
           <div class="form-group row">
             <div class="offset-sm-3 col-sm-9">
               <div class="checkbox">
-                <nb-checkbox>Remember me</nb-checkbox>
+                <nb-checkbox translate>Remember me</nb-checkbox>
               </div>
             </div>
           </div>
           <div class="form-group row">
             <div class="offset-sm-3 col-sm-9">
-              <button type="submit" class="btn btn-warning">Sign in</button>
+              <button type="submit" class="btn btn-warning" translate>Sign in</button>
             </div>
           </div>
         </form>

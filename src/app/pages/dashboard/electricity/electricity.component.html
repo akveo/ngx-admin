@@ -1,8 +1,8 @@
 <nb-card size="large">
   <div class="consumption-table">
     <div class="table-header">
-      <div>Electricity</div>
-      <div class="subtitle">Consumption</div>
+      <div translate>Electricity</div>
+      <div class="subtitle" translate>Consumption</div>
     </div>
 
     <nb-tabset fullWidth>
@@ -12,7 +12,7 @@
             <span class="month">{{ month.month }}</span>
             <span class="delta" [ngClass]="{ 'down': month.down }">{{ month.delta }}</span>
           </div>
-          <div class="results">
+          <div class="results" translate>
             <b>{{ month.kWatts }}</b> kWh / <b>{{ month.cost }}</b> USD
           </div>
         </div>
@@ -24,18 +24,18 @@
     <div class="chart-header">
       <div class="header-stats">
         <div class="stats-block">
-          <div class="subtitle">Consumed</div>
+          <div class="subtitle" translate>Consumed</div>
           <div>
-            <span class="value">816</span>
-            <span class="unit">kWh</span>
+            <span class="value" >816</span>
+            <span class="unit" translate>kWh</span>
           </div>
         </div>
 
         <div class="stats-block currency">
-          <div class="subtitle">Spent</div>
+          <div class="subtitle" translate>Spent</div>
           <div>
             <span class="value">291</span>
-            <span class="unit">USD</span>
+            <span class="unit" translate>USD</span>
           </div>
         </div>
       </div>

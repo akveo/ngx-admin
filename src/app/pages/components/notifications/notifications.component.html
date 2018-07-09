@@ -1,5 +1,5 @@
 <nb-card>
-  <nb-card-header>
+  <nb-card-header translate>
     Toaster configuration
   </nb-card-header>
   <nb-card-body>
@@ -8,7 +8,7 @@
     <div class="row">
       <div class="col-md-6 col-sm-12">
         <div class="form-group">
-          <label class="form-control-label">Place to show toast:</label>
+          <label class="form-control-label" translate>Place to show toast:</label>
           <div class="dropdown" ngbDropdown>
             <button class="btn btn-primary" type="button" ngbDropdownToggle>
               {{ position }}
@@ -21,7 +21,7 @@
           </div>
         </div>
         <div class="form-group">
-          <label class="form-control-label">Animation type:</label>
+          <label class="form-control-label" translate>Animation type:</label>
           <div class="dropdown" ngbDropdown>
             <button class="btn btn-primary" type="button" ngbDropdownToggle>
               {{ animationType }}
@@ -34,28 +34,28 @@
           </div>
         </div>
         <div class="form-group">
-          <label class="form-control-label">Title:</label>
+          <label class="form-control-label" translate>Title:</label>
           <input class="form-control" [(ngModel)]="title" name="title">
         </div>
         <form>
           <div class="form-group">
-            <label class="form-control-label">Content:</label>
+            <label class="form-control-label" translate>Content:</label>
             <input class="form-control" [(ngModel)]="content" name="content">
           </div>
         </form>
         <div class="form-group">
-          <label class="form-control-label">Time to hide toast, ms. 0 to persistent toast:</label>
+          <label class="form-control-label" translate>Time to hide toast, ms. 0 to persistent toast:</label>
           <input class="form-control" type="number" [(ngModel)]="timeout"name="timeout">
         </div>
       </div>
 
       <div class="col-md-6 col-sm-12">
         <div class="form-group">
-          <label class="form-control-label">Limit number of toasts:</label>
+          <label class="form-control-label" translate>Limit number of toasts:</label>
           <input class="form-control" type="number" [(ngModel)]="toastsLimit" name="limit">
         </div>
         <div class="form-group">
-          <label class="form-control-label">Toast type:</label>
+          <label class="form-control-label" translate>Toast type:</label>
           <div class="dropdown" ngbDropdown>
             <button class="btn btn-primary" type="button" ngbDropdownToggle>
               {{ type }}
@@ -66,17 +66,17 @@
           </div>
         </div>
 
-        <div><nb-checkbox [(ngModel)]="isNewestOnTop">Newest on top</nb-checkbox></div>
-        <div><nb-checkbox [(ngModel)]="isHideOnClick">Hide on click</nb-checkbox></div>
-        <div><nb-checkbox [(ngModel)]="isDuplicatesPrevented">Prevent arising of duplicate toast</nb-checkbox></div>
-        <div><nb-checkbox [(ngModel)]="isCloseButton">Close button</nb-checkbox></div>
+        <div><nb-checkbox [(ngModel)]="isNewestOnTop" translate>Newest on top</nb-checkbox></div>
+        <div><nb-checkbox [(ngModel)]="isHideOnClick" translate>Hide on click</nb-checkbox></div>
+        <div><nb-checkbox [(ngModel)]="isDuplicatesPrevented" translate>Prevent arising of duplicate toast</nb-checkbox></div>
+        <div><nb-checkbox [(ngModel)]="isCloseButton" translate>Close button</nb-checkbox></div>
       </div>
     </div>
   </nb-card-body>
 
   <nb-card-footer>
-    <button class="btn btn-primary" (click)="makeToast()">Show toast</button>
-    <button class="btn btn-success" (click)="openRandomToast()">Random toast</button>
-    <button class="btn btn-danger" (click)="clearToasts()">Clear all toasts</button>
+    <button class="btn btn-primary" (click)="makeToast()" translate>Show toast</button>
+    <button class="btn btn-success" (click)="openRandomToast()" translate>Random toast</button>
+    <button class="btn btn-danger" (click)="clearToasts()" translate>Clear all toasts</button>
   </nb-card-footer>
 </nb-card>
