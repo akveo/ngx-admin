@@ -14,7 +14,7 @@ export class InputComponent implements OnInit {
     modalNode: any;
     modalTree: any;
     modalTreeData: any;
-    
+
 
 
     constructor(private activeModal: NgbActiveModal,
