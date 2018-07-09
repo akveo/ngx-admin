@@ -27,7 +27,6 @@ export class OrdersChartComponent implements AfterViewInit, OnDestroy, OnChanges
     }
   }
 
-
   constructor(private theme: NbThemeService) {
   }
 

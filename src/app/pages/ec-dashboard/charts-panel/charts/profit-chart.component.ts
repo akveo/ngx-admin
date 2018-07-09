@@ -1,6 +1,8 @@
-import {AfterViewInit, Component, OnDestroy} from '@angular/core';
+import { AfterViewInit, Component, Input, OnChanges, OnDestroy } from '@angular/core';
 import { NbThemeService } from '@nebular/theme';
 import { takeWhile } from 'rxjs/operators';
+
+import { ProfitChart } from '../../../../@core/data/profit-chart.service';
 
 // TODO: need design, temporary solution
 @Component({
@@ -10,7 +12,10 @@ import { takeWhile } from 'rxjs/operators';
     <div echarts [options]="options" class="echart" (chartInit)="onChartInit($event)"></div>
   `,
 })
-export class ProfitChartComponent implements AfterViewInit, OnDestroy {
+export class ProfitChartComponent implements AfterViewInit, OnDestroy, OnChanges {
+
+  @Input()
+  profitChartData: ProfitChart;
 
   private alive = true;
 
@@ -20,76 +25,151 @@ export class ProfitChartComponent implements AfterViewInit, OnDestroy {
   constructor(private theme: NbThemeService) {
   }
 
+  ngOnChanges(): void {
+    if (this.echartsIntance) {
+      this.updateProfitChartOptions(this.profitChartData);
+    }
+  }
+
   ngAfterViewInit() {
     this.theme.getJsTheme()
       .pipe(takeWhile(() => this.alive))
       .subscribe(config => {
-        const colors: any = config.variables;
-        const echarts: any = config.variables.echarts;
+        const eTheme: any = config.variables.profit;
 
-        this.options = {
-          backgroundColor: echarts.bg,
-          color: [colors.primaryLight],
-          tooltip: {
-            trigger: 'axis',
-            axisPointer: {
-              type: 'shadow',
+        this.setOptions(eTheme);
+      });
+  }
+
+  setOptions(eTheme) {
+    this.options = {
+      backgroundColor: eTheme.bg,
+      tooltip: {
+        trigger: 'axis',
+        axisPointer: {
+          type: 'shadow',
+        },
+      },
+      grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '3%',
+        containLabel: true,
+      },
+      xAxis: [
+        {
+          type: 'category',
+          data: this.profitChartData.chartLabel,
+          axisTick: {
+            alignWithLabel: true,
+          },
+          axisLine: {
+            lineStyle: {
+              color: eTheme.axisLineColor,
             },
           },
-          grid: {
-            left: '3%',
-            right: '4%',
-            bottom: '3%',
-            containLabel: true,
+          axisLabel: {
+            textStyle: {
+              color: eTheme.textColor,
+            },
           },
-          xAxis: [
-            {
-              type: 'category',
-              data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-              axisTick: {
-                alignWithLabel: true,
-              },
-              axisLine: {
-                lineStyle: {
-                  color: echarts.axisLineColor,
-                },
-              },
-              axisLabel: {
-                textStyle: {
-                  color: echarts.textColor,
-                },
-              },
+        },
+      ],
+      yAxis: [
+        {
+          type: 'value',
+          axisLine: {
+            lineStyle: {
+              color: eTheme.axisLineColor,
             },
-          ],
-          yAxis: [
-            {
-              type: 'value',
-              axisLine: {
-                lineStyle: {
-                  color: echarts.axisLineColor,
-                },
-              },
-              splitLine: {
-                lineStyle: {
-                  color: echarts.splitLineColor,
-                },
-              },
-              axisLabel: {
-                textStyle: {
-                  color: echarts.textColor,
-                },
-              },
+          },
+          splitLine: {
+            lineStyle: {
+              color: eTheme.splitLineColor,
             },
-          ],
-          series: [
-            {
-              name: 'Score',
-              type: 'bar',
-              barWidth: '60%',
-              data: [10, 52, 200, 334, 390, 330, 220],
+          },
+          axisLabel: {
+            textStyle: {
+              color: eTheme.textColor,
             },
-          ],
-        };
+          },
+        },
+      ],
+      series: [
+        {
+          name: 'All orders',
+          type: 'bar',
+          barGap: 0,
+          barWidth: '20%',
+          itemStyle: {
+            normal: {
+              color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                offset: 0,
+                color: eTheme.greenLineGradFrom,
+              }, {
+                offset: 1,
+                color: eTheme.greenLineGradTo,
+              }]),
+            },
+          },
+          data: this.profitChartData.data[0],
+        },
+        {
+          name: 'Payment',
+          type: 'bar',
+          barWidth: '20%',
+          itemStyle: {
+            normal: {
+              color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                offset: 0,
+                color: eTheme.purpleLineGradFrom,
+              }, {
+                offset: 1,
+                color: eTheme.purpleLineGradTo,
+              }]),
+            },
+          },
+          data: this.profitChartData.data[1],
+        },
+        {
+          name: 'Canceled',
+          type: 'bar',
+          barWidth: '20%',
+          itemStyle: {
+            normal: {
+              color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                offset: 0,
+                color: eTheme.blueLineGradFrom,
+              }, {
+                offset: 1,
+                color: eTheme.blueLineGradTo,
+              }]),
+            },
+          },
+          data: this.profitChartData.data[2],
+        },
+      ],
+    };
+  }
+
+  updateProfitChartOptions(profitChartData: ProfitChart) {
+    const options = this.options;
+    const series = this.getNewSeries(options.series, profitChartData.data);
+
+    this.echartsIntance.setOption({
+      series: series,
+      xAxis: {
+        data: this.profitChartData.chartLabel,
+      },
+    })
+  }
+
+  getNewSeries(series, data: number[][]) {
+    return series.map((line, index) => {
+      return {
+        ...line,
+        data: data[index],
+      };
     });
   }
 

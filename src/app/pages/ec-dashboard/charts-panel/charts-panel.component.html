@@ -9,7 +9,7 @@
     <nb-tab tabTitle="Profit" [lazyLoad]="true">
       <div class="chart-container">
         <ngx-chart-header [type]="period" (periodChange)="setPeriod($event)"></ngx-chart-header>
-        <ngx-profit-chart #profitChart></ngx-profit-chart>
+        <ngx-profit-chart #profitChart [profitChartData]="profitChartData"></ngx-profit-chart>
       </div>
     </nb-tab>
   </nb-tabset>

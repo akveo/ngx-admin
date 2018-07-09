@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'ngx-country-orders',
@@ -10,50 +10,30 @@ import { Component, OnInit } from '@angular/core';
         <ngx-country-orders-map (select)="selectCountryById($event)"
                                 countryId="USA"></ngx-country-orders-map>
         <ngx-country-orders-chart [countryName]="countryName"
-                                  [data]="countryData.data"
-                                  [labels]="countryData.categories"
+                                  [data]="countryData"
+                                  [labels]="countriesCategories"
                                   maxValue="20">
         </ngx-country-orders-chart>
       </nb-card-body>
     </nb-card>
   `,
 })
-export class CountryOrdersComponent implements OnInit {
+export class CountryOrdersComponent {
 
-  countryName: string;
-  countryData;
+  countryName = '';
+  countryData = [];
+  countriesCategories = ['Sofas', 'Furniture', 'Lighting', 'Tables', 'Textiles'];
 
-  countriesData = [{
-    id: 'USA',
-    categories: ['Sofas', 'Furniture', 'Lighting', 'Tables', 'Textiles'],
-    data: [15, 11, 10, 13, 18],
-  }, {
-    id: 'CAN',
-    categories: ['Sofas', 'Furniture', 'Lighting', 'Tables', 'Textiles'],
-    data: [11, 18, 13, 10, 15],
-  }];
-
-  selectCountryById(country) {
-    this.resetCountryData();
-    this.countryName = country.name;
-
-    this.countriesData.forEach((c) => {
-      if (c.id === country.id) {
-        this.countryData = c;
-      }
-    })
+  private getRandomData(nPoints: number): number[] {
+    return Array.from(Array(nPoints)).map(() => {
+      return Math.round(Math.random() * 20);
+    });
   }
 
-  private resetCountryData() {
-    this.countryData = {
-      id: '',
-      categories: ['Sofas', 'Furniture', 'Lighting', 'Tables', 'Textiles'],
-      data: [0, 0, 0, 0, 0],
-    }
-  }
+  selectCountryById(countryName: string) {
+    const nPoint = this.countriesCategories.length;
 
-  ngOnInit(): void {
-    this.countryData = this.countriesData[0];
-    this.countryName = '';
+    this.countryName = countryName;
+    this.countryData = this.getRandomData(nPoint);
   }
 }

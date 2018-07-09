@@ -22,6 +22,10 @@ $nb-themes: nb-register-theme((
   list-item-border-width: 1px,
 
   slide-out-container-width: 30%,
+
+  // todo[ecommerce]: need design
+  slide-out-background: radial-gradient(circle, #302c6e 0%, #423f8c 100%),
+  slide-out-shadow-color: rgba(19, 19, 94, 0.9),
 ), default, default);
 
 $nb-themes: nb-register-theme((
@@ -40,6 +44,8 @@ $nb-themes: nb-register-theme((
   list-item-border-width: 1px,
 
   slide-out-container-width: 30%,
+  slide-out-background: radial-gradient(circle, #302c6e 0%, #423f8c 100%),
+  slide-out-shadow-color: rgba(19, 19, 94, 0.9),
 ), cosmic, cosmic);
 
 $nb-themes: nb-register-theme((
@@ -58,4 +64,8 @@ $nb-themes: nb-register-theme((
   list-item-border-width: 1px,
 
   slide-out-container-width: 30%,
+
+  // todo[ecommerce]: need design
+  slide-out-background: radial-gradient(circle, #302c6e 0%, #423f8c 100%),
+  slide-out-shadow-color: rgba(19, 19, 94, 0.9),
 ), corporate, corporate);

@@ -33,6 +33,11 @@ export class CountryOrdersMapComponent implements OnDestroy {
     maxZoom: 6,
     zoomControl: false,
     center: L.latLng({lat: 38.991709, lng: -76.886109}),
+    maxBounds: new L.LatLngBounds(
+      new L.LatLng(-89.98155760646617, -180),
+      new L.LatLng(89.99346179538875, 180),
+    ),
+    maxBoundsViscosity: 1.0,
   };
 
   constructor(private ecMapService: CountryOrdersMapService,
@@ -115,7 +120,7 @@ export class CountryOrdersMapComponent implements OnDestroy {
       this.resetHighlight(this.selectedCountry);
       this.highlightFeature(featureLayer);
       this.selectedCountry = featureLayer;
-      this.select.emit({id: featureLayer.feature.id, name: featureLayer.feature.properties.name});
+      this.select.emit(featureLayer.feature.properties.name);
     }
   }
 

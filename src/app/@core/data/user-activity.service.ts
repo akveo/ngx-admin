@@ -26,9 +26,13 @@ export class UserActivityService {
   ];
 
   private weeks: string[] = [
-    'Sun', 'Mon', 'Tue',
-    'Wed', 'Thu',
-    'Fri', 'Sat',
+    'Sun',
+    'Mon',
+    'Tue',
+    'Wed',
+    'Thu',
+    'Fri',
+    'Sat',
   ];
 
   data = {};
