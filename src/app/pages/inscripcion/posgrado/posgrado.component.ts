@@ -71,6 +71,7 @@ export class PosgradoComponent implements OnInit {
       this.personaService.get('persona/?query=Usuario:' + this.autenticacion.getPayload().sub)
         .subscribe(res => {
           if (res !== null) {
+            console.info(res);
             this.info_info_persona = <ResponseId>res[0];
             this.info_persona_id = this.info_info_persona.Id;
             this.info_ente_id = this.info_info_persona.Ente;
