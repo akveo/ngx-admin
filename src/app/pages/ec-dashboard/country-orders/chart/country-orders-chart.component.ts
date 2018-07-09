@@ -30,7 +30,7 @@ export class CountryOrdersChartComponent implements AfterViewInit, OnDestroy, On
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    if (changes.data && !changes.data.isFirstChange() && changes.labels && !changes.labels.isFirstChange()) {
+    if (changes.data && !changes.data.isFirstChange()) {
       this.echartsInstance.setOption({
         series: [
           {
@@ -43,9 +43,6 @@ export class CountryOrdersChartComponent implements AfterViewInit, OnDestroy, On
             data: this.data,
           },
         ],
-        yAxis: {
-          data: this.labels,
-        },
       })
     }
   }

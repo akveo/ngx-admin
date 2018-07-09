@@ -10,8 +10,8 @@ import { Component, OnInit } from '@angular/core';
         <ngx-country-orders-map (select)="selectCountryById($event)"
                                 countryId="USA"></ngx-country-orders-map>
         <ngx-country-orders-chart [countryName]="countryName"
-                                  [data]="countryData.data"
-                                  [labels]="countryData.categories"
+                                  [data]="countryData"
+                                  [labels]="countriesCategories"
                                   maxValue="20">
         </ngx-country-orders-chart>
       </nb-card-body>
@@ -20,40 +20,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CountryOrdersComponent implements OnInit {
 
+  private defaultCountryData = [15, 11, 10, 13, 18];
+
   countryName: string;
-  countryData;
+  countryData: number[];
 
-  countriesData = [{
-    id: 'USA',
-    categories: ['Sofas', 'Furniture', 'Lighting', 'Tables', 'Textiles'],
-    data: [15, 11, 10, 13, 18],
-  }, {
-    id: 'CAN',
-    categories: ['Sofas', 'Furniture', 'Lighting', 'Tables', 'Textiles'],
-    data: [11, 18, 13, 10, 15],
-  }];
+  countriesCategories = ['Sofas', 'Furniture', 'Lighting', 'Tables', 'Textiles'];
 
-  selectCountryById(country) {
-    this.resetCountryData();
-    this.countryName = country.name;
-
-    this.countriesData.forEach((c) => {
-      if (c.id === country.id) {
-        this.countryData = c;
-      }
-    })
+  private getRandomData(nPoints: number): number[] {
+    return Array.from(Array(nPoints)).map(() => {
+      return Math.round(Math.random() * 20);
+    });
   }
 
-  private resetCountryData() {
-    this.countryData = {
-      id: '',
-      categories: ['Sofas', 'Furniture', 'Lighting', 'Tables', 'Textiles'],
-      data: [0, 0, 0, 0, 0],
-    }
+  selectCountryById(countryName: string) {
+    const nPoint = this.countryData.length;
+
+    this.countryName = countryName;
+    this.countryData = this.getRandomData(nPoint);
   }
 
   ngOnInit(): void {
-    this.countryData = this.countriesData[0];
+    this.countryData = this.defaultCountryData;
     this.countryName = '';
   }
 }
