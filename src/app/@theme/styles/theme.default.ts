@@ -89,9 +89,11 @@ export const DEFAULT_THEME = {
       tooltipFontWeight: 'bolder',
     },
 
-    countriesStatistics: {
-      countryBorderColor: '#2a2a2a',
-      hoveredCountryColor: '#00d977',
+    countryOrders: {
+      countryBorderColor: '#525dbd',
+      countryFillColor: '#00d977',
+      hoveredCountryBorderColor: '#00f9a6',
+      hoveredCountryFillColor: '#377aa7',
 
       chartAxisLineColor: 'rgba(0, 0, 0, 0)',
       chartAxisTextColor: '#2a2a2a',

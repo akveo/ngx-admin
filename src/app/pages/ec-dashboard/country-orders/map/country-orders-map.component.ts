@@ -49,7 +49,7 @@ export class CountryOrdersMapComponent implements OnDestroy {
     ])
       .pipe(takeWhile(() => this.alive))
       .subscribe(([cords, config]: [any, any]) => {
-        this.currentTheme = config.variables.countriesStatistics;
+        this.currentTheme = config.variables.countryOrders;
         this.layers.push(this.createGeoJsonLayer(cords));
         this.selectFeature(this.findFeatureLayerByCountryId(this.countryId));
       });
@@ -63,7 +63,13 @@ export class CountryOrdersMapComponent implements OnDestroy {
     return L.geoJSON(
       (cords) as any,
       {
-        style: () => ({color: this.currentTheme.countryBorderColor}),
+        style: () => ({
+          weight: 2,
+          fillColor: this.currentTheme.countryFillColor,
+          fillOpacity: 1,
+          color: this.currentTheme.countryBorderColor,
+          opacity: 1,
+        }),
         onEachFeature: (f, l) => {
           this.onEachFeature(f, l)
         },
@@ -88,9 +94,8 @@ export class CountryOrdersMapComponent implements OnDestroy {
     if (featureLayer) {
       featureLayer.setStyle({
         weight: 4,
-        color: this.currentTheme.hoveredCountryColor,
-        fillColor: this.currentTheme.countryBorderColor,
-        dashArray: '',
+        fillColor: this.currentTheme.hoveredCountryFillColor,
+        color: this.currentTheme.hoveredCountryBorderColor,
       });
 
       if (!L.Browser.ie && !L.Browser.opera12 && !L.Browser.edge) {

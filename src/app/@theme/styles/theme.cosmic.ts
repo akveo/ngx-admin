@@ -88,9 +88,11 @@ export const COSMIC_THEME = {
       tooltipFontWeight: 'normal',
     },
 
-    countriesStatistics: {
-      countryBorderColor: '#a1a1e5',
-      hoveredCountryColor: '#00d977',
+    countryOrders: {
+      countryBorderColor: '#525dbd',
+      countryFillColor: '#4f41a6',
+      hoveredCountryBorderColor: '#00f9a6',
+      hoveredCountryFillColor: '#377aa7',
 
       chartAxisLineColor: 'rgba(161, 161 ,229, 0.3)',
       chartAxisTextColor: '#a1a1e5',

@@ -51,7 +51,7 @@ export class CountryOrdersChartComponent implements AfterViewInit, OnDestroy, On
     this.theme.getJsTheme()
       .pipe(takeWhile(() => this.alive))
       .subscribe(config => {
-        const countriesTheme: any = config.variables.countriesStatistics;
+        const countriesTheme: any = config.variables.countryOrders;
 
         this.option = Object.assign({}, {
           grid: {
