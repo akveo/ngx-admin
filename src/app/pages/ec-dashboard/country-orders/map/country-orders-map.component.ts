@@ -32,7 +32,7 @@ export class CountryOrdersMapComponent implements OnDestroy {
     minZoom: 2,
     maxZoom: 6,
     zoomControl: false,
-    center: L.latLng({lat: 38.991709, lng: -76.886109}),
+    center: L.latLng({lat: 1.227332, lng: -42.629552}),
     maxBounds: new L.LatLngBounds(
       new L.LatLng(-89.98155760646617, -180),
       new L.LatLng(89.99346179538875, 180),

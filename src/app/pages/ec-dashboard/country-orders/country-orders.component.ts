@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
       <nb-card-header>Country Orders Statistics</nb-card-header>
       <nb-card-body>
         <ngx-country-orders-map (select)="selectCountryById($event)"
-                                countryId="USA"></ngx-country-orders-map>
+                                countryId="VEN"></ngx-country-orders-map>
         <ngx-country-orders-chart [countryName]="countryName"
                                   [data]="countryData"
                                   [labels]="countriesCategories"
