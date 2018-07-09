@@ -17,13 +17,13 @@ export class OrdersChartService {
   ];
 
   private week = [
+    'Sun',
     'Mon',
     'Tue',
     'Wed',
     'Thu',
     'Fri',
     'Sat',
-    'Sun',
   ];
 
   private year = [

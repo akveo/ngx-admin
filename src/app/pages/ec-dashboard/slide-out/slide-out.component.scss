@@ -50,7 +50,7 @@
 
   .slide-out-container.collapsed {
     left: calc(100% - 6rem);
-    padding: 1.5rem 1.5rem 1.5rem 6rem;
+    padding: 1.5rem 1.5rem 1.5rem 6.5rem;
     @include nb-rtl(left, auto);
     @include nb-rtl(right, calc(100% - 6rem));
     @include nb-rtl(padding, 1.5rem 6.5rem 1.5rem 1.5rem);

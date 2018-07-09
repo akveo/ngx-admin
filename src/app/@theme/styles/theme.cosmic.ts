@@ -130,7 +130,7 @@ export const COSMIC_THEME = {
 
       itemBorderColor: '#ffffff',
       lineStyle: 'solid',
-      lineWidth: '6',
+      lineWidth: '4',
 
       // green line
       greenLineGradFrom: '#00bece',
@@ -158,6 +158,29 @@ export const COSMIC_THEME = {
       blueAreaGradFrom: 'rgba(4, 126, 230, 1)',
       blueAreaGradTo: 'rgba(4, 126, 230, 0)',
       blueShadowLineDarkBg: '#018dff',
+    },
+
+    profit: {
+      bg: '#3d3780',
+      textColor: '#ffffff',
+      axisLineColor: '#a1a1e5',
+      splitLineColor: '#342e73',
+      areaOpacity: '1',
+
+      // green bar
+      greenLineGradFrom: '#00bece',
+      greenLineGradTo: '#00da78',
+      greenLineShadow: 'rgba(14, 16, 48, 0.4)',
+
+      // purple bar
+      purpleLineGradFrom: '#8069ff',
+      purpleLineGradTo: '#8357ff',
+      purpleLineShadow: 'rgba(14, 16, 48, 0.4)',
+
+      // blue bar
+      blueLineGradFrom: '#3bb0ff',
+      blueLineGradTo: '#0089ff',
+      blueLineShadow: 'rgba(14, 16, 48, 0.4)',
     },
 
     visitors: {

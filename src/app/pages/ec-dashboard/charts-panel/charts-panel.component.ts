@@ -2,6 +2,7 @@ import {Component, ViewChild} from '@angular/core';
 import { OrdersChartComponent } from './charts/orders-chart.component';
 import { ProfitChartComponent } from './charts/profit-chart.component';
 import { OrdersChartService, OrdersChart } from '../../../@core/data/orders-chart.service';
+import { ProfitChartService, ProfitChart } from '../../../@core/data/profit-chart.service';
 
 @Component({
   selector: 'ngx-ec-charts',
@@ -11,16 +12,20 @@ import { OrdersChartService, OrdersChart } from '../../../@core/data/orders-char
 export class EcChartsPanelComponent {
   period: string = 'week';
   ordersChartData: OrdersChart;
+  profitChartData: ProfitChart;
 
   @ViewChild('ordersChart') ordersChart: OrdersChartComponent;
   @ViewChild('profitChart') profitChart: ProfitChartComponent;
 
-  constructor(private ordersChartService: OrdersChartService) {
+  constructor(private ordersChartService: OrdersChartService,
+              private profitChartService: ProfitChartService) {
     this.getOrdersChartData(this.period);
+    this.getProfitChartData(this.period);
   }
 
   setPeriod(value: string): void {
     this.getOrdersChartData(value);
+    this.getProfitChartData(value);
     this.period = value;
   }
 
@@ -36,6 +41,13 @@ export class EcChartsPanelComponent {
     this.ordersChartService.getOrdersChartData(period)
       .subscribe(ordersChartData => {
         this.ordersChartData = ordersChartData;
+      });
+  }
+
+  getProfitChartData(period: string) {
+    this.profitChartService.getProfitChartData(period)
+      .subscribe(profitChartData => {
+        this.profitChartData = profitChartData;
       });
   }
 }

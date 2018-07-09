@@ -132,7 +132,7 @@ export const DEFAULT_THEME = {
 
       itemBorderColor: '#ffffff',
       lineStyle: 'solid',
-      lineWidth: '6',
+      lineWidth: '4',
 
       // green line
       greenLineGradFrom: '#00bece',
