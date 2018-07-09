@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'ngx-country-orders',
@@ -18,13 +18,10 @@ import { Component, OnInit } from '@angular/core';
     </nb-card>
   `,
 })
-export class CountryOrdersComponent implements OnInit {
+export class CountryOrdersComponent {
 
-  private defaultCountryData = [15, 11, 10, 13, 18];
-
-  countryName: string;
-  countryData: number[];
-
+  countryName = '';
+  countryData = [];
   countriesCategories = ['Sofas', 'Furniture', 'Lighting', 'Tables', 'Textiles'];
 
   private getRandomData(nPoints: number): number[] {
@@ -34,14 +31,9 @@ export class CountryOrdersComponent implements OnInit {
   }
 
   selectCountryById(countryName: string) {
-    const nPoint = this.countryData.length;
+    const nPoint = this.countriesCategories.length;
 
     this.countryName = countryName;
     this.countryData = this.getRandomData(nPoint);
-  }
-
-  ngOnInit(): void {
-    this.countryData = this.defaultCountryData;
-    this.countryName = '';
   }
 }
