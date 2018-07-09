@@ -250,8 +250,11 @@ export class CrudInfoCaracteristicaComponent implements OnInit {
       } else {
         this.updateInfoCaracteristica(event.data.InfoCaracteristica);
       }
-      this.result.emit(event);
     }
+  }
+
+  setPercentage(event) {
+    this.result.emit(event);
   }
 
   private showToast(type: string, title: string, body: string) {
