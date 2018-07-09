@@ -6,7 +6,7 @@
           <ngb-progressbar showValue="true" type="success" [value]="percentage" [animated]="true" [height]="'15px'"></ngb-progressbar>
         </div>
         <div class="col-md-1" align="right">
-          <button (click)="show_profile=false; show_info=false; show_acad=false; show_expe=false;">X</button>
+          <button class="btn btn-danger btn-icon input-group-text" (click)="show_profile=false; show_info=false; show_acad=false; show_expe=false;">X</button>
         </div>
       </div>
       <nb-tabset fullWidth (changeTab)="selectTab($event)">
@@ -32,7 +32,7 @@
           <ngb-progressbar showValue="true" type="success" [value]="percentage" [animated]="true" [height]="'15px'"></ngb-progressbar>
         </div>
         <div class="col-md-1" align="right">
-          <button (click)="show_profile=false; show_info=false; show_acad=false; show_expe=false;">X</button>
+          <button class="btn btn-danger btn-icon input-group-text" (click)="show_profile=false; show_info=false; show_acad=false; show_expe=false;">X</button>
         </div>
       </div>
       <nb-tabset fullWidth (changeTab)="selectTab($event)">
@@ -54,7 +54,7 @@
           <ngb-progressbar showValue="true" type="success" [value]="percentage" [animated]="true" [height]="'15px'"></ngb-progressbar>
         </div>
         <div class="col-md-1" align="right">
-          <button (click)="show_profile=false; show_info=false; show_acad=false; show_expe=false;">X</button>
+          <button class="btn btn-danger btn-icon input-group-text" (click)="show_profile=false; show_info=false; show_acad=false; show_expe=false;">X</button>
         </div>
       </div>
       <nb-tabset fullWidth (changeTab)="selectTab($event)">
@@ -75,33 +75,33 @@
   <div class="row" [hidden]="show_profile || show_info || show_acad || show_expe">
     <div class="col-sm-6 col-md-4 col-lg-3" align="center">
       <nb-card class="exp-card" (click)="show_info=true; show_profile=false; show_acad=false; show_expe=false;">
-        <nb-card-header> Informacion basica </nb-card-header>
-        <nb-card-body>
-          <i class="nb-person" style="font-size: 5rem"></i>
+        <nb-card-header> Información Básica </nb-card-header>
+        <nb-card-body class="icon-form">
+          <i class="fa fa-address-card-o fa-5x"></i>
         </nb-card-body>
       </nb-card>
     </div>
     <div class="col-sm-6 col-md-4 col-lg-3" align="center">
       <nb-card class="exp-card" (click)="show_profile=false; show_info=false; show_acad=true; show_expe=false;">
-        <nb-card-header> Formacion Academica </nb-card-header>
-        <nb-card-body>
-          <i class="nb-person" style="font-size: 5rem"></i>
+        <nb-card-header> Formación Académica </nb-card-header>
+        <nb-card-body class="icon-form">
+          <i class="fa fa-graduation-cap fa-5x"></i>
         </nb-card-body>
       </nb-card>
     </div>
     <div class="col-sm-6 col-md-4 col-lg-3" align="center">
       <nb-card class="exp-card" (click)="show_profile=false; show_info=false; show_acad=false; show_expe=true;">
         <nb-card-header> Experiencia Laboral </nb-card-header>
-        <nb-card-body>
-          <i class="nb-person" style="font-size: 5rem"></i>
+        <nb-card-body class="icon-form">
+          <i class="fa fa-briefcase fa-5x"></i>
         </nb-card-body>
       </nb-card>
     </div>
     <div class="col-sm-6 col-md-4 col-lg-3" align="center">
       <nb-card class=" exp-card" (click)="show_profile=true; show_info=false; show_acad=false; show_expe=false;">
         <nb-card-header> Perfil </nb-card-header>
-        <nb-card-body>
-          <i class="nb-person" style="font-size: 5rem"></i>
+        <nb-card-body class="icon-form">
+          <i class="fa fa-user fa-5x"></i>
         </nb-card-body>
       </nb-card>
     </div>

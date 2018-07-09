@@ -22,6 +22,15 @@
 .exp-card {
   align-content: center;
   cursor: pointer;
-  width: 13rem;
-  height: 13rem;
+  width: 13.5rem;
+  height: 13.5rem;
+  transition: background-color 1s;
+}
+
+.exp-card:hover {
+  background-color: #3FC380;
+}
+
+.icon-form {
+  vertical-align: middle;
 }
