@@ -5,7 +5,7 @@ import { NbThemeService } from '@nebular/theme';
   selector: 'ngx-traffic-card',
   styleUrls: ['./traffic-card.component.scss'],
   template: `
-    <nb-card size="xsmall">
+    <nb-card size="small">
       <nb-card-header>
         <span>Traffic</span>
         <div class="dropdown ghost-dropdown" ngbDropdown>
