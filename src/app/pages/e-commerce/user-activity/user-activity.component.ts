@@ -45,7 +45,7 @@ import { UserActivityService, UserActive } from '../../../@core/data/user-activi
     </nb-card>
   `,
 })
-export class EcUserActivityComponent implements OnDestroy, OnInit {
+export class ECommerceUserActivityComponent implements OnDestroy, OnInit {
 
   private alive = true;
 

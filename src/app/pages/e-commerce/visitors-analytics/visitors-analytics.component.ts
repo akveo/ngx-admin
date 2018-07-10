@@ -3,11 +3,11 @@ import {Component} from '@angular/core';
 import {NgdLEgendItemColor} from '../legend-chart/enum.legend-item-color';
 
 @Component({
-  selector: 'ngx-ec-visitors-analytics',
+  selector: 'ngx-ecommerce-visitors-analytics',
   styleUrls: ['./visitors-analytics.component.scss'],
   templateUrl: './visitors-analytics.component.html',
 })
-export class EcVisitorsAnalyticsComponent {
+export class ECommerceVisitorsAnalyticsComponent {
   chartLegend = [
     {
       iconColor: NgdLEgendItemColor.BLUE,

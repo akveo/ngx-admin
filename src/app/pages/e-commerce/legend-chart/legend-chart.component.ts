@@ -7,7 +7,7 @@ import { NgdLEgendItemColor } from './enum.legend-item-color';
   styleUrls: ['./legend-chart.component.scss'],
   templateUrl: './legend-chart.component.html',
 })
-export class EcLegendChartComponent {
+export class ECommerceLegendChartComponent {
 
   /**
    * Take an array of legend items

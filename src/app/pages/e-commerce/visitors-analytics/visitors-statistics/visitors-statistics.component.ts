@@ -9,7 +9,7 @@ import {NgdLEgendItemColor} from '../../legend-chart/enum.legend-item-color';
   styleUrls: ['./visitors-statistics.component.scss'],
   templateUrl: './visitors-statistics.component.html',
 })
-export class EcVisitorsStatisticsComponent implements AfterViewInit, OnDestroy {
+export class ECommerceVisitorsStatisticsComponent implements AfterViewInit, OnDestroy {
 
   private alive = true;
   private value = 75;

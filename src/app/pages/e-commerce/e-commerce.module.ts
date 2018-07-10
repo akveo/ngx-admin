@@ -3,7 +3,7 @@ import { NgxEchartsModule } from 'ngx-echarts';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 import { ThemeModule } from '../../@theme/theme.module';
-import { EcDashboardComponent } from './ec-dashboard.component';
+import { ECommerceComponent } from './e-commerce.component';
 import { ProfitCardComponent } from './profit-card/profit-card.component';
 import { OrdersChartComponent } from './charts-panel/charts/orders-chart.component';
 import { ProfitChartComponent } from './charts-panel/charts/profit-chart.component';
@@ -13,19 +13,21 @@ import { StatsCardBackComponent } from './profit-card/back-side/stats-card-back.
 import { StatsAreaChartComponent } from './profit-card/front-side/stats-area-chart.component';
 import { StatsBarChartComponent } from './profit-card/back-side/stats-bar-chart.component';
 import { StatsCardFrontComponent } from './profit-card/front-side/stats-card-front.component';
-import { EcChartsPanelComponent } from './charts-panel/charts-panel.component';
+import { ECommerceChartsPanelComponent } from './charts-panel/charts-panel.component';
 import { TrafficCardComponent } from './traffic-card/traffic-card.component';
 import { TrafficBarChartComponent } from './traffic-card/traffic-bar-chart.component';
-import { EcVisitorsAnalyticsComponent } from './visitors-analytics/visitors-analytics.component';
 import {
-  EcVisitorsAnalyticsChartComponent,
+  ECommerceVisitorsAnalyticsComponent,
+} from './visitors-analytics/visitors-analytics.component';
+import {
+  ECommerceVisitorsAnalyticsChartComponent,
 } from './visitors-analytics/visitors-analytics-chart/visitors-analytics-chart.component';
 import {
-  EcVisitorsStatisticsComponent,
+  ECommerceVisitorsStatisticsComponent,
 } from './visitors-analytics/visitors-statistics/visitors-statistics.component';
-import { EcLegendChartComponent } from './legend-chart/legend-chart.component';
-import { EcUserActivityComponent } from './user-activity/user-activity.component';
-import { EcProgressSectionComponent } from './progress-section/progress-section.component';
+import { ECommerceLegendChartComponent } from './legend-chart/legend-chart.component';
+import { ECommerceUserActivityComponent } from './user-activity/user-activity.component';
+import { ECommerceProgressSectionComponent } from './progress-section/progress-section.component';
 import { SlideOutComponent } from './slide-out/slide-out.component';
 
 import { CountryOrdersComponent } from './country-orders/country-orders.component';
@@ -43,12 +45,12 @@ import { CountryOrdersChartComponent } from './country-orders/chart/country-orde
     LeafletModule,
   ],
   declarations: [
-    EcDashboardComponent,
+    ECommerceComponent,
     StatsCardFrontComponent,
     StatsAreaChartComponent,
     StatsBarChartComponent,
     ProfitCardComponent,
-    EcChartsPanelComponent,
+    ECommerceChartsPanelComponent,
     ChartsHeaderComponent,
     OrdersChartComponent,
     ProfitChartComponent,
@@ -58,16 +60,16 @@ import { CountryOrdersChartComponent } from './country-orders/chart/country-orde
     CountryOrdersComponent,
     CountryOrdersMapComponent,
     CountryOrdersChartComponent,
-    EcVisitorsAnalyticsComponent,
-    EcVisitorsAnalyticsChartComponent,
-    EcVisitorsStatisticsComponent,
-    EcLegendChartComponent,
-    EcUserActivityComponent,
-    EcProgressSectionComponent,
+    ECommerceVisitorsAnalyticsComponent,
+    ECommerceVisitorsAnalyticsChartComponent,
+    ECommerceVisitorsStatisticsComponent,
+    ECommerceLegendChartComponent,
+    ECommerceUserActivityComponent,
+    ECommerceProgressSectionComponent,
     SlideOutComponent,
   ],
   providers: [
     CountryOrdersMapService,
   ],
 })
-export class EcDashboardModule { }
+export class ECommerceModule { }

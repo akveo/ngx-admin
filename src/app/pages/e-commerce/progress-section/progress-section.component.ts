@@ -5,7 +5,7 @@ import {Component} from '@angular/core';
   styleUrls: ['./progress-section.component.scss'],
   templateUrl: './progress-section.component.html',
 })
-export class EcProgressSectionComponent {
+export class ECommerceProgressSectionComponent {
   progressInfoData = [
     {
       title: 'Today’s Profit',

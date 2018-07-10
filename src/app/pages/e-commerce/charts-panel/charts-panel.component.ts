@@ -5,11 +5,11 @@ import { OrdersChartService, OrdersChart } from '../../../@core/data/orders-char
 import { ProfitChartService, ProfitChart } from '../../../@core/data/profit-chart.service';
 
 @Component({
-  selector: 'ngx-ec-charts',
+  selector: 'ngx-ecommerce-charts',
   styleUrls: ['./charts-panel.component.scss'],
   templateUrl: './charts-panel.component.html',
 })
-export class EcChartsPanelComponent {
+export class ECommerceChartsPanelComponent {
   period: string = 'week';
   ordersChartData: OrdersChart;
   profitChartData: ProfitChart;

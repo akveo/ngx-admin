@@ -9,7 +9,7 @@ import { NbThemeService } from '@nebular/theme';
     <div echarts [options]="option" class="echart"></div>
   `,
 })
-export class EcVisitorsAnalyticsChartComponent implements AfterViewInit, OnDestroy {
+export class ECommerceVisitorsAnalyticsChartComponent implements AfterViewInit, OnDestroy {
 
   private alive = true;
   private innerLinePoints: number[] = [
