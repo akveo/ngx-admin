@@ -1,0 +1,37 @@
+@import '../../../../@theme/styles/themes';
+
+@include nb-install-component() {
+
+  display: block;
+  height: 100%;
+  width: 60%;
+
+  .leaflet-container {
+    height: 100%;
+    background-color: nb-theme(color-bg);
+  }
+
+  /deep/ .leaflet-control-zoom {
+    border: none;
+
+    a {
+      background-color: nb-theme(color-primary);
+      color: nb-theme(color-white);
+      border-bottom: none;
+      height: 2.5rem;
+    }
+
+    .leaflet-control-zoom-in {
+      border-top-left-radius: nb-theme(btn-border-radius);
+      border-top-right-radius: nb-theme(btn-border-radius);
+    }
+
+    .leaflet-control-zoom-out {
+      margin-top: 1px;
+      border-bottom-left-radius: nb-theme(btn-border-radius);
+      border-bottom-right-radius: nb-theme(btn-border-radius);
+    }
+
+  }
+
+}

@@ -1,0 +1,56 @@
+@import '../../../@theme/styles/themes';
+
+$legend-green: #00977e;
+$legend-purple: #6935ca;
+$legend-blue: #3f4fda;
+$legend-yellow: #cf7c1c;
+
+@include nb-install-component() {
+  .legends {
+    display: flex;
+    @include nb-rtl(flex-direction, row-reverse);
+    color: nb-theme(color-fg);
+    padding: 0 0 0 2.75rem;
+  }
+
+  .legend {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-left: 4rem;
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+
+  .legend-item-color {
+    min-width: 12px;
+    min-height: 12px;
+
+    &.green-square {
+      box-shadow: 0 3px 0 $legend-green;
+      background: linear-gradient(90deg, #00c7c7 0%, #00d977 100%);
+    }
+
+    &.purple-square {
+      box-shadow: 0 3px 0 $legend-purple;
+      background: linear-gradient(90deg, #a454ff 0%, #7659ff 100%);
+    }
+
+    &.blue-square {
+      box-shadow: 0 3px 0 $legend-blue;
+      background: linear-gradient(90deg, #0088ff 0%, #3dafff 100%);
+    }
+
+    &.yellow-square {
+      box-shadow: 0 3px 0 $legend-yellow;
+      background: linear-gradient(90deg, #ffcb17 0%, #ff874c 100%);
+    }
+  }
+
+  .legend-title {
+    padding: 0 0.75rem;
+    white-space: nowrap;
+  }
+}

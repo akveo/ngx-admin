@@ -80,7 +80,9 @@ export const DEFAULT_THEME = {
       gradientFrom: '#fc0',
       gradientTo: '#ffa100',
       shadow: '#ffb600',
-      textColor: '#484848',
+
+      axisTextColor: '#2a2a2a',
+      axisFontSize: '12',
 
       tooltipBg: '#ffffff',
       tooltipBorderColor: '#c0c8d1',
@@ -99,6 +101,7 @@ export const DEFAULT_THEME = {
 
       chartAxisLineColor: 'rgba(0, 0, 0, 0)',
       chartAxisTextColor: '#2a2a2a',
+      chartAxisFontSize: '16',
       chartGradientTo: '#00c7c7',
       chartGradientFrom: '#00d977',
       chartAxisSplitLine: '#ebeef2',
@@ -133,9 +136,11 @@ export const DEFAULT_THEME = {
       tooltipExtraCss: 'box-shadow: 0px 2px 46px 0 rgba(0, 255, 170, 0.35); border-radius: 10px; padding: 8px 24px;',
       tooltipTextColor: '#ffffff',
       tooltipFontWeight: 'normal',
+      tooltipFontSize: '20',
 
       axisLineColor: 'rgba(161, 161 ,229, 0.3)',
-      xAxisTextColor: '#2a2a2a',
+      axisFontSize: '16',
+      axisTextColor: '#2a2a2a',
       yAxisSplitLine: 'rgba(161, 161 ,229, 0.2)',
 
       itemBorderColor: '#ffffff',
@@ -178,6 +183,9 @@ export const DEFAULT_THEME = {
       splitLineColor: '#342e73',
       areaOpacity: '1',
 
+      axisFontSize: '16',
+      axisTextColor: '#2a2a2a',
+
       // green bar
       greenLineGradFrom: '#00bece',
       greenLineGradTo: '#00da78',
@@ -205,7 +213,8 @@ export const DEFAULT_THEME = {
       tooltipFontWeight: 'normal',
 
       axisLineColor: 'rgba(161, 161 ,229, 0.3)',
-      xAxisTextColor: '#2a2a2a',
+      axisFontSize: '16',
+      axisTextColor: '#2a2a2a',
       yAxisSplitLine: 'rgba(161, 161 ,229, 0.2)',
 
       itemBorderColor: '#ffffff',

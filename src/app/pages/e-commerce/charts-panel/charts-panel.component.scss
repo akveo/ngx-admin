@@ -1,0 +1,32 @@
+@import '../../../@theme/styles/themes';
+
+$legend-all-orders-color: #00977e;
+$legend-payment-color: #6935ca;
+$legend-canceled-color: #3f4fda;
+
+@include nb-install-component() {
+
+  nb-tabset {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  nb-tab {
+    flex: 1;
+    padding: 1.25rem;
+  }
+
+  .chart-container {
+    flex: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  // todo: remove after design will be implemented
+  .indent {
+    margin-top: 4rem;
+  }
+}

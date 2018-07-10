@@ -2,9 +2,9 @@ import { NbMenuItem } from '@nebular/theme';
 
 export const MENU_ITEMS: NbMenuItem[] = [
   {
-    title: 'EComDashboard',
+    title: 'E-Commerce',
     icon: 'nb-home',
-    link: '/pages/ec-dashboard',
+    link: '/pages/e-commerce',
     home: true,
   },
   {
