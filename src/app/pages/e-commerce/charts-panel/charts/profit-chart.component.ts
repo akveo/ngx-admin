@@ -69,9 +69,8 @@ export class ProfitChartComponent implements AfterViewInit, OnDestroy, OnChanges
             },
           },
           axisLabel: {
-            textStyle: {
-              color: eTheme.textColor,
-            },
+            color: eTheme.axisTextColor,
+            fontSize: eTheme.axisFontSize,
           },
         },
       ],
@@ -89,9 +88,8 @@ export class ProfitChartComponent implements AfterViewInit, OnDestroy, OnChanges
             },
           },
           axisLabel: {
-            textStyle: {
-              color: eTheme.textColor,
-            },
+            color: eTheme.axisTextColor,
+            fontSize: eTheme.axisFontSize,
           },
         },
       ],

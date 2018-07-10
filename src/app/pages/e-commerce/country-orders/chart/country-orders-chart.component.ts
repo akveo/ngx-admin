@@ -8,8 +8,8 @@ import { takeWhile } from 'rxjs/operators';
   styleUrls: ['./country-orders-chart.component.scss'],
   template: `
     <div class="header">
-      <span class="title">Selected country</span>
-      <h4>{{countryName}}</h4>
+      <span class="title">Selected Country</span>
+      <h2>{{countryName}}</h2>
     </div>
     <div echarts [options]="option" class="echart" (chartInit)="onChartInit($event)"></div>
   `,
@@ -64,7 +64,7 @@ export class CountryOrdersChartComponent implements AfterViewInit, OnDestroy, On
           xAxis: {
             axisLabel: {
               color: countriesTheme.chartAxisTextColor,
-              fontSize: 18,
+              fontSize: countriesTheme.chartAxisFontSize,
             },
             axisLine: {
               lineStyle: {
@@ -86,7 +86,7 @@ export class CountryOrdersChartComponent implements AfterViewInit, OnDestroy, On
             data: this.labels,
             axisLabel: {
               color: countriesTheme.chartAxisTextColor,
-              fontSize: 18,
+              fontSize: countriesTheme.chartAxisFontSize,
             },
             axisLine: {
               lineStyle: {
@@ -109,7 +109,7 @@ export class CountryOrdersChartComponent implements AfterViewInit, OnDestroy, On
                 },
                 opacity: 1,
               },
-              barWidth: '30%',
+              barWidth: '40%',
               barGap: '-100%',
               barCategoryGap: '30%',
               animation: false,
@@ -125,14 +125,14 @@ export class CountryOrdersChartComponent implements AfterViewInit, OnDestroy, On
                 },
                 opacity: 1,
               },
-              barWidth: '30%',
+              barWidth: '40%',
               barGap: '-100%',
               barCategoryGap: '30%',
               z: 2,
             },
             {
               type: 'bar',
-              barWidth: '25%',
+              barWidth: '35%',
               data: this.data,
               cursor: 'default',
               itemStyle: {

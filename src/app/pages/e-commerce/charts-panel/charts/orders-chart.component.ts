@@ -63,7 +63,7 @@ export class OrdersChartComponent implements AfterViewInit, OnDestroy, OnChanges
         },
         textStyle: {
           color: eTheme.tooltipTextColor,
-          fontSize: 20,
+          fontSize: eTheme.tooltipFontSize,
           fontWeight: eTheme.tooltipFontWeight,
         },
         position: 'top',
@@ -84,8 +84,8 @@ export class OrdersChartComponent implements AfterViewInit, OnDestroy, OnChanges
           show: false,
         },
         axisLabel: {
-          color: eTheme.xAxisTextColor,
-          fontSize: 18,
+          color: eTheme.axisTextColor,
+          fontSize: eTheme.axisFontSize,
         },
         axisLine: {
           lineStyle: {
@@ -104,8 +104,8 @@ export class OrdersChartComponent implements AfterViewInit, OnDestroy, OnChanges
           },
         },
         axisLabel: {
-          color: eTheme.xAxisTextColor,
-          fontSize: 18,
+          color: eTheme.axisTextColor,
+          fontSize: eTheme.axisFontSize,
         },
         axisTick: {
           show: false,

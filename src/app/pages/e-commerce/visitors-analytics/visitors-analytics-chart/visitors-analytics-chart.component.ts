@@ -107,8 +107,8 @@ export class ECommerceVisitorsAnalyticsChartComponent implements AfterViewInit, 
           show: false,
         },
         axisLabel: {
-          color: eTheme.xAxisTextColor,
-          fontSize: 18,
+          color: eTheme.axisTextColor,
+          fontSize: eTheme.axisFontSize,
         },
         axisLine: {
           lineStyle: {
@@ -127,8 +127,8 @@ export class ECommerceVisitorsAnalyticsChartComponent implements AfterViewInit, 
           },
         },
         axisLabel: {
-          color: eTheme.xAxisTextColor,
-          fontSize: 18,
+          color: eTheme.axisTextColor,
+          fontSize: eTheme.axisFontSize,
         },
         axisTick: {
           show: false,

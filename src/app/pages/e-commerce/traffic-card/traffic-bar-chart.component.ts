@@ -60,7 +60,8 @@ export class TrafficBarChartComponent implements AfterViewInit, OnDestroy, OnCha
           type : 'category',
           data : this.labels,
           axisLabel: {
-            color: trafficTheme.textColor,
+            color: trafficTheme.axisTextColor,
+            fontSize: trafficTheme.axisFontSize,
           },
           axisLine: {
             show: false,

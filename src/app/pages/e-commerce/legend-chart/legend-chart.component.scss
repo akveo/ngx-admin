@@ -16,7 +16,7 @@ $legend-yellow: #cf7c1c;
   .legend {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: baseline;
     margin-left: 4rem;
 
     &:first-child {

@@ -1,24 +1,26 @@
 @import '../../../../@theme/styles/themes';
 
 @include nb-install-component() {
-
   display: flex;
   flex-direction: column;
   height: 100%;
   flex: 1;
   padding: nb-theme(card-padding);
+  border-left:
+    nb-theme(card-header-border-width)
+    nb-theme(card-header-border-type)
+    nb-theme(card-header-border-color);
 
   .header {
-    display: flex;
-    flex-direction: column;
+    margin-left: 1.1rem;
   }
 
   .title {
+    font-family: nb-theme(card-header-font-family);
     color: nb-theme(color-fg);
   }
 
   .echart {
-    flex: 1;
+    height: 85%;
   }
-
 }
