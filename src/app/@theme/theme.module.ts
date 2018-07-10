@@ -31,6 +31,8 @@ import {
   ThemeSwitcherComponent,
   TinyMCEComponent,
   ThemeSwitcherListComponent,
+  LangSwitcherComponent,
+  LangSwitcherListComponent,
 } from './components';
 import { CapitalizePipe, PluralPipe, RoundPipe, TimingPipe } from './pipes';
 import {
@@ -68,6 +70,8 @@ const COMPONENTS = [
   LayoutDirectionSwitcherComponent,
   ThemeSwitcherComponent,
   ThemeSwitcherListComponent,
+  LangSwitcherComponent,
+  LangSwitcherListComponent,
   HeaderComponent,
   FooterComponent,
   SearchInputComponent,
@@ -81,6 +85,7 @@ const COMPONENTS = [
 
 const ENTRY_COMPONENTS = [
   ThemeSwitcherListComponent,
+  LangSwitcherListComponent,
 ];
 
 const PIPES = [
