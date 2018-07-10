@@ -92,8 +92,10 @@ export const DEFAULT_THEME = {
     countryOrders: {
       countryBorderColor: '#525dbd',
       countryFillColor: '#00d977',
+      countryBorderWidth: '2',
       hoveredCountryBorderColor: '#00f9a6',
       hoveredCountryFillColor: '#377aa7',
+      hoveredCountryBorderWidth: '3',
 
       chartAxisLineColor: 'rgba(0, 0, 0, 0)',
       chartAxisTextColor: '#2a2a2a',

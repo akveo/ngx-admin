@@ -101,7 +101,7 @@ export class TrafficBarChartComponent implements AfterViewInit, OnDestroy, OnCha
         series: [
           {
             type: 'bar',
-            barWidth: '60%',
+            barWidth: '40%',
             data: this.data,
             itemStyle: {
               normal: {

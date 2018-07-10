@@ -64,7 +64,7 @@ export class CountryOrdersMapComponent implements OnDestroy {
       (cords) as any,
       {
         style: () => ({
-          weight: 2,
+          weight: this.currentTheme.countryBorderWidth,
           fillColor: this.currentTheme.countryFillColor,
           fillOpacity: 1,
           color: this.currentTheme.countryBorderColor,
@@ -93,7 +93,7 @@ export class CountryOrdersMapComponent implements OnDestroy {
   private highlightFeature(featureLayer) {
     if (featureLayer) {
       featureLayer.setStyle({
-        weight: 4,
+        weight: this.currentTheme.hoveredCountryBorderWidth,
         fillColor: this.currentTheme.hoveredCountryFillColor,
         color: this.currentTheme.hoveredCountryBorderColor,
       });
