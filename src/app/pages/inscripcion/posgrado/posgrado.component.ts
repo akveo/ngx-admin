@@ -17,8 +17,12 @@ export class PosgradoComponent implements OnInit {
   step = 0;
   cambioTab = 0;
   nForms: number;
-  percentage: any;
-  percentageTab = [];
+  percentage_info: number = 0;
+  percentage_acad: number = 0;
+  percentage_expe: number = 0;
+  percentage_tab_info = [];
+  percentage_tab_expe = [];
+  percentage_tab_acad = [];
   show_info = false;
   show_profile = false;
   show_acad = false;
@@ -34,33 +38,27 @@ export class PosgradoComponent implements OnInit {
     this.translate = translate;
     this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
     });
-    this.percentage = 0;
-    this.nForms = 8;
     this.getInfoPersonaId();
   }
 
-  setPercentage(number, tab) {
-    console.info(number);
-    this.percentageTab[tab] = (number * 100) / this.nForms;
-    console.info(this.percentageTab);
-    this.percentage = Math.round(UtilidadesService.getSumArray(this.percentageTab));
+  setPercentage_info(number, tab) {
+    this.percentage_tab_info[tab] = (number * 100) / 3;
+    this.percentage_info = Math.round(UtilidadesService.getSumArray(this.percentage_tab_info));
   }
 
-  traerInfoPersona(event) {
-    this.setPercentage(event, 0);
+  setPercentage_acad(number, tab) {
+    this.percentage_tab_info[tab] = (number * 100) / 1;
+    this.percentage_info = Math.round(UtilidadesService.getSumArray(this.percentage_tab_info));
+  }
+
+  setPercentage_expe(number, tab) {
+    this.percentage_tab_info[tab] = (number * 100) / 1;
+    this.percentage_info = Math.round(UtilidadesService.getSumArray(this.percentage_tab_info));
+  }
+
+  traerInfoPersona(event, tab) {
+    this.setPercentage_info(event, tab);
     if (event !== 0) this.getInfoPersonaId();
-  }
-
-  traerInfoCaracteristica(event) {
-    this.setPercentage(event, 1);
-  }
-
-  traerInfoContacto(event) {
-    this.setPercentage(event, 2);
-  }
-
-  traerInfoIdiomas(event) {
-    this.setPercentage(event, 4);
   }
 
   getInfoPersonaId() {
