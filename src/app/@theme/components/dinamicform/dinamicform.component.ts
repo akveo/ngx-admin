@@ -17,8 +17,10 @@ export class DinamicformComponent implements OnInit, OnChanges {
   @Output('result') result: EventEmitter<any> = new EventEmitter();
   @Output('resultSmart') resultSmart: EventEmitter<any> = new EventEmitter();
   @Output('interlaced') interlaced: EventEmitter<any> = new EventEmitter();
+  @Output('percentage') percentage: EventEmitter<any> = new EventEmitter();
   data: any;
   @ViewChild(MatDatepicker) datepicker: MatDatepicker<Date>;
+
   constructor(private sanitization: DomSanitizer) {
     this.data = {
       valid: true,
@@ -78,6 +80,7 @@ export class DinamicformComponent implements OnInit, OnChanges {
               }
             }
           });
+          this.setPercentage()
         }
       }
     }
@@ -234,8 +237,23 @@ export class DinamicformComponent implements OnInit, OnChanges {
       }
     }
 
+    this.modeloData = this.data.data[this.normalform.modelo];
+
     this.result.emit(this.data);
+    this.percentage.emit(this.data.percentage);
     return this.data;
+  }
+
+  setPercentage(): void {
+    let requeridos = 0;
+    let resueltos = 0;
+    this.normalform.campos.forEach(form_element => {
+      if (form_element.requerido) {
+        requeridos = requeridos + 1;
+        resueltos = form_element.valor ? resueltos + 1 : resueltos;
+      }
+    });
+    this.percentage.emit(resueltos / requeridos);
   }
 
   isEqual(obj1, obj2) {
