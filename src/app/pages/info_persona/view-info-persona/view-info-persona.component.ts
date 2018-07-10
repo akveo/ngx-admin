@@ -36,7 +36,7 @@ export class ViewInfoPersonaComponent implements OnInit {
   public loadInfoPersona(): void {
     const id = this.info_persona_id ? this.info_persona_id : this.info_persona_user ? this.info_persona_user : undefined;
     if (id !== undefined && id !== 0 && id.toString() !== '') {
-      this.campusMidService.get('persona/ConsultaPersona/id=' + id)
+      this.campusMidService.get('persona/ConsultaPersona/?id=' + id)
         .subscribe(res => {
           const r = <any>res;
           if (r !== null && r.Type !== 'error') {

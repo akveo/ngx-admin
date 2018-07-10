@@ -47,19 +47,20 @@ export class PosgradoComponent implements OnInit {
   }
 
   traerInfoPersona(event) {
-    this.setPercentage(event.percentage, 0);
+    this.setPercentage(event, 0);
+    if (event !== 0) this.getInfoPersonaId();
   }
 
   traerInfoCaracteristica(event) {
-    this.setPercentage(event.percentage, 1);
+    this.setPercentage(event, 1);
   }
 
   traerInfoContacto(event) {
-    this.setPercentage(event.percentage, 2);
+    this.setPercentage(event, 2);
   }
 
   traerInfoIdiomas(event) {
-    this.setPercentage(event.percentage, 4);
+    this.setPercentage(event, 4);
   }
 
   getInfoPersonaId() {
@@ -70,7 +71,8 @@ export class PosgradoComponent implements OnInit {
     if (this.autenticacion.live()) {
       this.personaService.get('persona/?query=Usuario:' + this.autenticacion.getPayload().sub)
         .subscribe(res => {
-          if (res !== null) {
+          const r = <any>res;
+          if (res !== null && r.Type !== 'error') {
             this.info_info_persona = <ResponseId>res[0];
             this.info_persona_id = this.info_info_persona.Id;
             this.info_ente_id = this.info_info_persona.Ente;
@@ -84,23 +86,6 @@ export class PosgradoComponent implements OnInit {
 
   useLanguage(language: string) {
     this.translate.use(language);
-  }
-
-  nextTab() {
-    this.step = 0;
-    this.cambioTab++;
-  }
-
-  onChange(event) {
-    if (event) {
-      if (this.cambioTab === 0 && this.step < 3) {
-        this.nextStep();
-      }else if (this.cambioTab === 1 && this.step < 4) {
-        this.nextStep();
-      }else {
-        this.nextTab();
-      }
-    }
   }
 
   perfil_editar(event): void {
@@ -138,25 +123,13 @@ export class PosgradoComponent implements OnInit {
   }
 
   selectTab(event): void {
-    if (event.tabTitle === this.translate.instant('GLOBAL.info_basica')) {
-      this.step = 0;
-      this.cambioTab = 0;
-    } else if (event.tabTitle === this.translate.instant('GLOBAL.hoja_vida')) {
-      this.step = 0;
-      this.cambioTab = 1;
+    if (event.tabTitle === this.translate.instant('GLOBAL.info_persona')) {
+      this.perfil_editar('info_persona');
+    } else if (event.tabTitle === this.translate.instant('GLOBAL.info_caracteristica')) {
+      this.perfil_editar('info_caracteristica');
+    } else if (event.tabTitle === this.translate.instant('GLOBAL.informacion_contacto')) {
+      this.perfil_editar('info_contacto');
     }
-  }
-
-  setStep(index: number) {
-    this.step = index;
-  }
-
-  nextStep() {
-    this.step++;
-  }
-
-  prevStep() {
-    this.step--;
   }
 
   ngOnInit() {
