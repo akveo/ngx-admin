@@ -237,8 +237,6 @@ export class DinamicformComponent implements OnInit, OnChanges {
       }
     }
 
-    this.modeloData = this.data.data[this.normalform.modelo];
-
     this.result.emit(this.data);
     this.percentage.emit(this.data.percentage);
     return this.data;
