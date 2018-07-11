@@ -93,6 +93,37 @@ export class NuxeoService {
             });
     }
 
+    updateFile(file, documento, documentoService, nuxeoservice) {
+        if (file.file !== undefined){
+            const nuxeoBlob = new Nuxeo.Blob({ content: file.file });
+            documentoService.get('documento?query=Id:' + documento)
+                .subscribe(res => {
+                    if (res !== null) {
+                        const documento_temp = <any>res[0];
+                        console.info(res);
+                        console.info(this.documentos);
+                        NuxeoService.nuxeo.connect()
+                        NuxeoService.nuxeo.batchUpload()
+                            .upload(nuxeoBlob)
+                            .then(function (response) {
+                                NuxeoService.nuxeo.operation('Blob.AttachOnDocument')
+                                    .params({
+                                        type: documento_temp.TipoDocumento.TipoDocumentoNuxeo,
+                                        name: documento_temp.Nombre,
+                                        properties: 'dc:title=' + file.nombre,
+                                    })
+                                    .param('document', documento_temp.Enlace)
+                                    .input(response.blob)
+                                    .execute()
+                                    .then(function (respuesta) {
+                                        console.info(respuesta);
+                                    });
+                            });
+                    }
+                });
+        }
+    };
+
     getFile(Ids, documentoService, nuxeoservice) {
         console.info(this.blobDocument);
         Ids.forEach(Id => {

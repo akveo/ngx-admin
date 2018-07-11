@@ -95,11 +95,12 @@ export class DinamicformComponent implements OnInit, OnChanges {
   }
 
   onChange(event, c) {
+    console.info(c.valor);
     if (c.valor !== undefined) {
-      c.valor = event.srcElement.files[0];
       c.urlTemp = URL.createObjectURL(event.srcElement.files[0])
       c.url = this.cleanURL(c.urlTemp);
       this.validCampo(c);
+      c.File = event.srcElement.files[0];
     }
   }
 
@@ -208,8 +209,7 @@ export class DinamicformComponent implements OnInit, OnChanges {
       requeridos = d.requerido ? requeridos + 1 : requeridos;
       if (this.validCampo(d)) {
         if (d.etiqueta === 'file') {
-          this.data.files.push({ nombre: d.nombre, file: d.valor });
-          result[d.nombre] = d.valor;
+          result[d.nombre] = { nombre: d.nombre, file: d.File };
           // result[d.nombre].push({ nombre: d.name, file: d.valor });
         } else if (d.etiqueta === 'select') {
           result[d.nombre] = d.relacion ? d.valor : d.valor.Id;
