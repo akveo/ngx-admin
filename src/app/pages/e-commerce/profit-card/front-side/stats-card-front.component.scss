@@ -8,6 +8,7 @@
   /deep/ nb-card-header {
     display: flex;
     justify-content: space-between;
+    border-bottom: none;
 
     .header-container {
       display: flex;
@@ -51,6 +52,10 @@
       font-size: 1.25rem;
       font-weight: nb-theme(font-weight-bold);
       color: nb-theme(card-fg-heading);
+
+      @include nb-for-theme(default) {
+        color: nb-theme(color-success);
+      }
 
       .currency {
         color: nb-theme(color-success);

@@ -29,23 +29,35 @@ $legend-yellow: #cf7c1c;
     min-height: 12px;
 
     &.green-square {
-      box-shadow: 0 3px 0 $legend-green;
-      background: linear-gradient(90deg, #00c7c7 0%, #00d977 100%);
+      background: nb-theme(legend-chart-green-square-background);
+
+      @include nb-for-theme(cosmic) {
+        box-shadow: 0 3px 0 $legend-green;
+      }
     }
 
     &.purple-square {
-      box-shadow: 0 3px 0 $legend-purple;
-      background: linear-gradient(90deg, #a454ff 0%, #7659ff 100%);
+      background: nb-theme(legend-chart-purple-square-background);
+
+      @include nb-for-theme(cosmic) {
+        box-shadow: 0 3px 0 $legend-purple;
+      }
     }
 
     &.blue-square {
-      box-shadow: 0 3px 0 $legend-blue;
-      background: linear-gradient(90deg, #0088ff 0%, #3dafff 100%);
+      background: nb-theme(legend-chart-blue-square-background);
+
+      @include nb-for-theme(cosmic) {
+        box-shadow: 0 3px 0 $legend-blue;
+      }
     }
 
     &.yellow-square {
-      box-shadow: 0 3px 0 $legend-yellow;
-      background: linear-gradient(90deg, #ffcb17 0%, #ff874c 100%);
+      background: nb-theme(legend-chart-yellow-square-background);
+
+      @include nb-for-theme(cosmic) {
+        box-shadow: 0 3px 0 $legend-yellow;
+      }
     }
   }
 
