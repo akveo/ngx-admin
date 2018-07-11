@@ -94,7 +94,7 @@ export class NuxeoService {
     }
 
     updateFile(file, documento, documentoService, nuxeoservice) {
-        if (file.file !== undefined){
+        if (file.file !== undefined) {
             const nuxeoBlob = new Nuxeo.Blob({ content: file.file });
             documentoService.get('documento?query=Id:' + documento)
                 .subscribe(res => {
