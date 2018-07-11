@@ -3,13 +3,13 @@
 @import '~@nebular/theme/styles/core/functions';
 
 @include nb-install-component() {
-  .themes-switcher {
+  .languages-switcher {
     display: flex;
     font-size: 1.25rem;
     padding: 0.8rem 1.25rem;
     align-items: center;
     cursor: pointer;
-    background-color: nb-theme(switcher-background);
+    // background-color: nb-theme(switcher-background);
     border-radius: nb-theme(radius);
 
     &:hover {

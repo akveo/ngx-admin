@@ -1,6 +1,6 @@
 {
   "Arabic": "عربي",
-  "English": "إنكليزي",
+  "English": "English",
   "Dashboard": "Dashboard",
   "UI Features": "UI Features",
   "Buttons": "Buttons",
@@ -85,7 +85,7 @@
   "Setup": "Setup",
 
 
-  "Project" : "مشروع",
+  "Project" : "Project",
   "Default Inputs": "Default Inputs",
   "Nick": "Nick",
   "Password": "Password",
@@ -98,7 +98,7 @@
   "Large Input": "Large Input",
   "Input Groups": "Input Groups",
   "Username": "Username",
-  "Recipient's username": "اسم المستقبل",
+  "Recipient's username": "Recipient's username",
   "Search for...": "Search for...",
   "Action": "Action",
   "Another action": "Another action",

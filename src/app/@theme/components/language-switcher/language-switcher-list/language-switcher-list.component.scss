@@ -12,19 +12,24 @@ $icon-top-color-cosmic: #a258fe;
 $icon-top-color-corporate: #e9e8eb;
 
 @include nb-install-component() {
-  /deep/ .themes-switcher-list {
+  /deep/ .languages-switcher-list {
     padding: 1rem 2rem 1.25rem 0.5rem;
     margin: 0;
 
     @include nb-ltr(text-align, start);
     @include nb-rtl(text-align, end);
 
-    .themes-switcher-item {
+    .languages-switcher-item {
       list-style: none;
       cursor: pointer;
 
       &:hover span {
         opacity: 0.5;
+      }
+
+      img {
+        // padding-bottom: 1rem;
+        vertical-align: super;
       }
 
       i {
@@ -69,7 +74,7 @@ $icon-top-color-corporate: #e9e8eb;
   }
 
   @include media-breakpoint-down(is) {
-    /deep/ .themes-switcher-list {
+    /deep/ .languages-switcher-list {
       display: none;
     }
   }

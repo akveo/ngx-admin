@@ -6,7 +6,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AnalyticsService } from './@core/utils/analytics.service';
 import { TranslateService } from '@ngx-translate/core';
-import { NbLayoutDirectionService } from '@nebular/theme';
 
 @Component({
   selector: 'ngx-app',
@@ -16,8 +15,7 @@ export class AppComponent implements OnInit {
 
   constructor(
     private translate: TranslateService,
-    private analytics: AnalyticsService,
-    private directionService: NbLayoutDirectionService) {
+    private analytics: AnalyticsService) {
       this.initTranslate();
   }
 
@@ -27,15 +25,9 @@ export class AppComponent implements OnInit {
 
 
   initTranslate() {
-    // Set the default language for translation strings, and the current language.
+    // TODO: Set the default language for translation strings, and the current language.
     this.translate.setDefaultLang('en');
-    // const browserLang = this.translate.getBrowserLang();
-    const direction = this.directionService.getDirection();
-    if (direction.toString() === 'ar' ) {
-      this.translate.use('ar');
-    } else {
-      this.translate.use('en');
-    }
+
 
     // if (browserLang) {
     //   if (browserLang === 'zh') {

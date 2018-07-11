@@ -1,43 +1,53 @@
-import {Component, Input} from '@angular/core';
-import { NbPopoverDirective } from '@nebular/theme';
+import { Component, Input } from '@angular/core';
+import { NbPopoverDirective, NbLayoutDirection, NbLayoutDirectionService } from '@nebular/theme';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'ngx-lang-switcher-list',
-  template: `
-    <ul class="themes-switcher-list">
-      <li class="themes-switcher-item"
-          *ngFor="let lang of languages"
-          (click)="onToggleLang(lang.key)">
-        <!-- <i class="nb-drop" [ngClass]="'drop-icon-' + lang.key"></i> -->
-        <span>{{ lang.title }}</span>
-      </li>
-    </ul>
-  `,
+  templateUrl: './language-switcher-list.component.html',
   styleUrls: ['./language-switcher-list.component.scss'],
 })
+
 export class LangSwitcherListComponent {
 
   @Input() popover: NbPopoverDirective;
+  directions = NbLayoutDirection;
+  currentDirection: NbLayoutDirection;
 
-  languages = [
-    {
-      title: 'English',
-      key: 'en',
-    },
-    {
-      title: 'Arabic',
-      key: 'ar',
-    },
-    {
-      title: 'Russian',
-      key: 'ru',
-    },
-  ];
+  languages = [];
 
-  constructor() {}
+  constructor(private translate: TranslateService, private directionService: NbLayoutDirectionService) {
+
+    this.translate.get(['English', 'Arabic']).subscribe(translations => {
+      this.languages = [
+        {
+          title: translations.English,
+          imgUrl: 'assets/flags/en.png',
+          key: 'en',
+        },
+        {
+          title: translations.Arabic,
+          imgUrl: 'assets/flags/eg.png',
+          key: 'ar',
+        },
+      ];
+    })
+
+
+    this.currentDirection = this.directionService.getDirection();
+    this.directionService.onDirectionChange()
+      .subscribe(newDirection => this.currentDirection = newDirection);
+  }
+
 
   onToggleLang(langKey: string) {
-    // TODO: get language key and do change language
+    if (langKey === 'ar') {
+      this.translate.use('ar');
+      this.directionService.setDirection(this.directions.RTL);
+    } else {
+      this.translate.use('en');
+      this.directionService.setDirection(this.directions.LTR);
+    }
     this.popover.hide();
   }
 }
