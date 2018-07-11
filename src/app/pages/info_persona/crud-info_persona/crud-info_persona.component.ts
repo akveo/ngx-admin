@@ -36,7 +36,7 @@ export class CrudInfoPersonaComponent implements OnInit {
   @Output() eventChange = new EventEmitter();
   @Output('result') result: EventEmitter<any> = new EventEmitter();
 
-  info_info_persona: InfoPersona;
+  info_info_persona: any;
   formInfoPersona: any;
   regInfoPersona: any;
   clean: boolean;
@@ -122,6 +122,7 @@ export class CrudInfoPersonaComponent implements OnInit {
         .subscribe(res => {
           if (res !== null) {
             const temp = <InfoPersona>res;
+            console.info(temp);
             const foto = [];
             foto.push(temp.Foto);
             this.nuxeoService.getDocumentoById$(foto, this.documentoService)
@@ -153,16 +154,17 @@ export class CrudInfoPersonaComponent implements OnInit {
     Swal(opt)
       .then((willDelete) => {
         if (willDelete.value) {
-          this.info_info_persona = <InfoPersona>infoPersona;
+          this.info_info_persona = <any>infoPersona;
+          console.info(infoPersona);
+          this.nuxeoService.updateFile(this.info_info_persona.Foto, this.Foto, this.documentoService, this.nuxeoService);
           this.info_info_persona.Foto = this.Foto;
           this.campusMidService.put('persona/ActualizarPersona', this.info_info_persona)
-            .subscribe(res => {
-              console.info(res);
-              this.loadInfoPersona();
-              this.eventChange.emit(true);
-              this.showToast('info', this.translate.instant('GLOBAL.actualizar'),
-                this.translate.instant('GLOBAL.info_persona') + ' ' +
-                this.translate.instant('GLOBAL.confirmarActualizar'));
+             .subscribe(res => {
+               this.eventChange.emit(true);
+               this.loadInfoPersona();
+               this.showToast('info', this.translate.instant('GLOBAL.actualizar'),
+                 this.translate.instant('GLOBAL.info_persona') + ' ' +
+                 this.translate.instant('GLOBAL.confirmarActualizar'));
             });
         }
       });
@@ -183,8 +185,8 @@ export class CrudInfoPersonaComponent implements OnInit {
       .then((willDelete) => {
         if (willDelete.value) {
           const array = []
-          this.info_info_persona = <InfoPersona>infoPersona;
-          array.push({ nombre: this.autenticationService.getPayload().sub, file: this.info_info_persona.Foto, IdDocumento: 1 });
+          this.info_info_persona = <any>infoPersona;
+          array.push({ nombre: this.autenticationService.getPayload().sub, file: this.info_info_persona.Foto.file, IdDocumento: 1 });
           this.nuxeoService.getDocumentos$(array, this.documentoService)
             .subscribe(response => {
               const foto = <any[]>response;
