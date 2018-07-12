@@ -16,7 +16,7 @@ export class ProfitCardComponent {
   @Input() label: string;
   @Input() icon: string;
 
-  toggleFlipView() {
+  toggleView() {
     this.flipped = !this.flipped;
   }
 }

@@ -1,4 +1,6 @@
-import {Component, ViewChild} from '@angular/core';
+import { Component, OnDestroy, ViewChild } from '@angular/core';
+import { takeWhile } from 'rxjs/operators';
+
 import { OrdersChartComponent } from './charts/orders-chart.component';
 import { ProfitChartComponent } from './charts/profit-chart.component';
 import { OrdersChartService, OrdersChart } from '../../../@core/data/orders-chart.service';
@@ -9,7 +11,10 @@ import { ProfitChartService, ProfitChart } from '../../../@core/data/profit-char
   styleUrls: ['./charts-panel.component.scss'],
   templateUrl: './charts-panel.component.html',
 })
-export class ECommerceChartsPanelComponent {
+export class ECommerceChartsPanelComponent implements OnDestroy {
+
+  private alive = true;
+
   period: string = 'week';
   ordersChartData: OrdersChart;
   profitChartData: ProfitChart;
@@ -26,7 +31,6 @@ export class ECommerceChartsPanelComponent {
   setPeriod(value: string): void {
     this.getOrdersChartData(value);
     this.getProfitChartData(value);
-    this.period = value;
   }
 
   changeTab(selectedTab) {
@@ -39,6 +43,7 @@ export class ECommerceChartsPanelComponent {
 
   getOrdersChartData(period: string) {
     this.ordersChartService.getOrdersChartData(period)
+      .pipe(takeWhile(() => this.alive))
       .subscribe(ordersChartData => {
         this.ordersChartData = ordersChartData;
       });
@@ -46,8 +51,13 @@ export class ECommerceChartsPanelComponent {
 
   getProfitChartData(period: string) {
     this.profitChartService.getProfitChartData(period)
+      .pipe(takeWhile(() => this.alive))
       .subscribe(profitChartData => {
         this.profitChartData = profitChartData;
       });
+  }
+
+  ngOnDestroy() {
+    this.alive = false;
   }
 }
