@@ -1,8 +1,8 @@
-import {Component, EventEmitter, Input, OnDestroy, Output} from '@angular/core';
+import { Component, EventEmitter, Input, OnDestroy, Output } from '@angular/core';
 import { NbThemeService } from '@nebular/theme';
 import { takeWhile } from 'rxjs/operators';
 
-import { NgdLEgendItemColor } from '../../legend-chart/enum.legend-item-color';
+import { NgxLegendItemColor } from '../../legend-chart/enum.legend-item-color';
 
 @Component({
   selector: 'ngx-chart-header',
@@ -19,15 +19,15 @@ export class ChartsHeaderComponent implements OnDestroy {
 
   chartLegend = [
     {
-      iconColor: NgdLEgendItemColor.GREEN,
+      iconColor: NgxLegendItemColor.GREEN,
       title: 'All orders',
     },
     {
-      iconColor: NgdLEgendItemColor.PURPLE,
+      iconColor: NgxLegendItemColor.PURPLE,
       title: 'Payment',
     },
     {
-      iconColor: NgdLEgendItemColor.BLUE,
+      iconColor: NgxLegendItemColor.BLUE,
       title: 'Canceled',
     },
   ];
