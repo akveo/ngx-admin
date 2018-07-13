@@ -99,6 +99,9 @@ export class CrudFormacionAcademicaComponent implements OnInit {
     }
     return 0;
   }
+  searchDoc(event){
+    console.info(event);
+  }
 
   public loadInfoFormacionAcademica(): void {
     if (this.info_formacion_academica_id !== undefined &&

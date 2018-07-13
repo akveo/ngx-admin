@@ -15,6 +15,7 @@ export class DinamicformComponent implements OnInit, OnChanges {
   @Input('modeloData') modeloData: any;
   @Input('clean') clean: boolean;
   @Output('result') result: EventEmitter<any> = new EventEmitter();
+  @Output('resultAux') resultAux: EventEmitter<any> = new EventEmitter();
   @Output('resultSmart') resultSmart: EventEmitter<any> = new EventEmitter();
   @Output('interlaced') interlaced: EventEmitter<any> = new EventEmitter();
   @Output('percentage') percentage: EventEmitter<any> = new EventEmitter();
@@ -240,6 +241,20 @@ export class DinamicformComponent implements OnInit, OnChanges {
     this.result.emit(this.data);
     this.percentage.emit(this.data.percentage);
     return this.data;
+  }
+
+  auxButton(c) {
+    for (const key in this.modeloData) {  // Agrega parametros faltantes del modelo
+      if (this.data.data[this.normalform.modelo] !== undefined && !this.data.data[this.normalform.modelo].hasOwnProperty(key)) {
+        this.data.data[this.normalform.modelo][key] = this.modeloData[key];
+        const data = {
+          data: this.data,
+          button: c.nombre,
+        }
+        this.resultAux.emit(data);
+      }
+    }
+
   }
 
   setPercentage(): void {
