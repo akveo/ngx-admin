@@ -7,6 +7,47 @@ export let FORM_FORMACION_ACADEMICA = {
   campos: [
     {
       etiqueta: 'select',
+      claseGrid: 'col-lg-4 col-md-6 col-sm-12 col-xs-12',
+      nombre: 'TipoDocumento',
+      label_i18n: 'tipo_documento',
+      placeholder_i18n: 'tipo_documento',
+      requerido: true,
+      tipo: 'text',
+      key: 'valor',
+      opciones: [
+        { Id: 1, valor: 'Nit' },
+        { Id: 2, valor: 'Internacional' },
+      ],
+    },
+    {
+      etiqueta: 'input',
+      claseGrid: 'col-lg-3 col-md-6 col-sm-11 col-xs-11',
+      nombre: 'NumeroDocumento',
+      label_i18n: 'numero_documento',
+      placeholder_i18n: 'numero_documento',
+      requerido: true,
+      tipo: 'number',
+    },
+
+    {
+      etiqueta: 'input',
+      claseGrid: 'col-lg-4 col-md-6 col-sm-11 col-xs-11',
+      nombre: 'NombreUniversidad',
+      label_i18n: 'nombre_universidad',
+      placeholder_i18n: 'nombre_universidad',
+      requerido: true,
+      tipo: 'text',
+    },
+    {
+      etiqueta: 'button',
+      claseGrid: 'col-1',
+      nombre: 'BusquedaBoton',
+      claseBoton: 'btn btn-success btn-xs btn-icon',
+      icono: 'fa fa-search',
+    },
+
+    {
+      etiqueta: 'select',
       claseGrid: 'col-lg-6 col-md-6 col-sm-12 col-xs-12',
       nombre: 'NivelFormacion',
       label_i18n: 'nivel_formacion',
@@ -70,7 +111,7 @@ export let FORM_FORMACION_ACADEMICA = {
         { Id: 'Meses' },
         { Id: 'Horas' },
       ],
-  },
+    },
     {
       etiqueta: 'select',
       claseGrid: 'col-lg-6 col-md-6 col-sm-12 col-xs-12',
@@ -93,15 +134,6 @@ export let FORM_FORMACION_ACADEMICA = {
       tipo: 'Lugar',
       key: 'Nombre',
       opciones: [],
-    },
-    {
-      etiqueta: 'input',
-      claseGrid: 'col-lg-6 col-md-6 col-sm-12 col-xs-12',
-      nombre: 'NombreUniversidad',
-      label_i18n: 'nombre_universidad',
-      placeholder_i18n: 'nombre_universidad',
-      requerido: true,
-      tipo: 'text',
     },
     {
       etiqueta: 'select',

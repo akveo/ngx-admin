@@ -15,6 +15,7 @@ export class DinamicformComponent implements OnInit, OnChanges {
   @Input('modeloData') modeloData: any;
   @Input('clean') clean: boolean;
   @Output('result') result: EventEmitter<any> = new EventEmitter();
+  @Output('resultAux') resultAux: EventEmitter<any> = new EventEmitter();
   @Output('resultSmart') resultSmart: EventEmitter<any> = new EventEmitter();
   @Output('interlaced') interlaced: EventEmitter<any> = new EventEmitter();
   @Output('percentage') percentage: EventEmitter<any> = new EventEmitter();
@@ -43,7 +44,7 @@ export class DinamicformComponent implements OnInit, OnChanges {
           this.normalform.campos.forEach(element => {
             for (const i in this.modeloData) {
               if (this.modeloData.hasOwnProperty(i)) {
-                if (i === element.nombre && this.modeloData[i] !== null ) {
+                if (i === element.nombre && this.modeloData[i] !== null) {
                   switch (element.etiqueta) {
                     case 'selectmultiple':
                       element.valor = [];
@@ -241,6 +242,25 @@ export class DinamicformComponent implements OnInit, OnChanges {
     this.percentage.emit(this.data.percentage);
     return this.data;
   }
+
+  auxButton(c) {
+    const result = {};
+    this.normalform.campos.forEach(d => {
+      if (d.etiqueta === 'file') {
+        result[d.nombre] = { nombre: d.nombre, file: d.File };
+      } else if (d.etiqueta === 'select') {
+        result[d.nombre] = d.relacion ? d.valor : d.valor.Id;
+      } else {
+        result[d.nombre] = d.valor;
+      }
+    });
+    const dataTemp = {
+      data: result,
+      button: c.nombre,
+    }
+    this.resultAux.emit(dataTemp);
+  }
+
 
   setPercentage(): void {
     let requeridos = 0;

@@ -1,6 +1,5 @@
-
 <div class="col-md-12 col-lg-12 ">
-  <nb-card [hidden]="!show_info" >
+  <nb-card [hidden]="!show_info">
     <nb-card-body>
       <div class="row">
         <div class="col-md-11">
@@ -11,14 +10,16 @@
         </div>
       </div>
       <nb-tabset fullWidth (changeTab)="selectTab($event)">
-          <nb-tab  tabTitle="{{ 'GLOBAL.info_persona' | translate }}" [active]="info_persona">
-              <ngx-crud-info-persona info_persona_id={{this.info_ente_id}} (eventChange)="perfil_editar('info_caracteristica')" (result)="traerInfoPersona($event,0)"></ngx-crud-info-persona>
-            </nb-tab>
-      <nb-tab  tabTitle="{{ 'GLOBAL.info_caracteristica' | translate }}" [active]="info_caracteristica">
-            <ngx-crud-info-caracteristica info_caracteristica_id={{this.info_ente_id}} (eventChange)="perfil_editar('info_contacto')" (result)="setPercentage_info($event,1)"></ngx-crud-info-caracteristica>
-      </nb-tab>
-      <nb-tab  tabTitle="{{ 'GLOBAL.informacion_contacto' | translate }}" [active]="info_contacto">
-          <ngx-crud-informacion-contacto informacion_contacto_id={{this.info_ente_id}} (eventChange)="perfil_editar('info_contacto')" (result)="setPercentage_info($event,2)"></ngx-crud-informacion-contacto>
+        <nb-tab tabTitle="{{ 'GLOBAL.info_persona' | translate }}" [active]="info_persona">
+          <ngx-crud-info-persona info_persona_id={{this.info_ente_id}} (eventChange)="perfil_editar('info_caracteristica')" (result)="traerInfoPersona($event,0)"></ngx-crud-info-persona>
+        </nb-tab>
+        <nb-tab tabTitle="{{ 'GLOBAL.info_caracteristica' | translate }}" [active]="info_caracteristica">
+          <ngx-crud-info-caracteristica info_caracteristica_id={{this.info_ente_id}} (eventChange)="perfil_editar('info_contacto')"
+            (result)="setPercentage_info($event,1)"></ngx-crud-info-caracteristica>
+        </nb-tab>
+        <nb-tab tabTitle="{{ 'GLOBAL.informacion_contacto' | translate }}" [active]="info_contacto">
+          <ngx-crud-informacion-contacto informacion_contacto_id={{this.info_ente_id}} (eventChange)="perfil_editar('info_contacto')"
+            (result)="setPercentage_info($event,2)"></ngx-crud-informacion-contacto>
         </nb-tab>
       </nb-tabset>
     </nb-card-body>
@@ -68,8 +69,8 @@
     </nb-card-body>
   </nb-card>
 
-  <div [hidden]="!show_profile" *ngIf="info_ente_id && show_profile" >
-      <ngx-perfil (url_editar)="perfil_editar($event)" info_persona_id="{{info_ente_id}}"></ngx-perfil>
+  <div [hidden]="!show_profile" *ngIf="info_ente_id && show_profile">
+    <ngx-perfil (url_editar)="perfil_editar($event)" info_persona_id="{{info_ente_id}}"></ngx-perfil>
   </div>
 
   <div class="row" [hidden]="show_profile || show_info || show_acad || show_expe">

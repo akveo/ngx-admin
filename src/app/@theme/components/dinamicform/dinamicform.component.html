@@ -14,12 +14,12 @@
               <small id="{{c.nombre}}" class="text-muted" [hidden]="!normalform.alertas">
                 {{c.alerta}}
               </small>
-            </label><br>
+            </label>
+            <br>
 
             <!-- input -->
-            <input [(ngModel)]="c.valor" (ngModelChange)="validCampo(c)" [ngModelOptions]="{standalone: true}"
-              type="{{c.tipo}}" id="{{c.nombre}}"  placeholder="{{c.placeholder}}" [disabled]="c.deshabilitar"
-            />
+            <input [(ngModel)]="c.valor" (ngModelChange)="validCampo(c)" [ngModelOptions]="{standalone: true}" type="{{c.tipo}}" id="{{c.nombre}}"
+              placeholder="{{c.placeholder}}" [disabled]="c.deshabilitar" />
 
             <!-- textarea -->
             <textarea *ngSwitchCase="'textarea'" [(ngModel)]="c.valor" (ngModelChange)="validCampo(c)" [ngModelOptions]="{standalone: true}"
@@ -42,17 +42,14 @@
             </div>
 
             <!-- checkbox -->
-            <div *ngSwitchCase="'checkbox'" class="form-group validation-checkboxes" >
-              <input type="checkbox" class="customised-control-input"
-              [disabled]="c.deshabilitar"
-              [checked]="c.valor"
-              (change)="c.valor = !c.valor"> {{c.nombre}}?
+            <div *ngSwitchCase="'checkbox'" class="form-group validation-checkboxes">
+              <input type="checkbox" class="customised-control-input" [disabled]="c.deshabilitar" [checked]="c.valor" (change)="c.valor = !c.valor"> {{c.nombre}}?
             </div>
 
             <!-- date material -->
 
             <mat-form-field *ngSwitchCase="'mat-date'">
-              <input matInput  [(ngModel)]="c.valor" [matDatepicker]="picker" (dateChange)="onChangeDate($event,c)" [ngModelOptions]="{standalone: true}">
+              <input matInput [(ngModel)]="c.valor" [matDatepicker]="picker" (dateChange)="onChangeDate($event,c)" [ngModelOptions]="{standalone: true}">
               <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
               <mat-datepicker #picker></mat-datepicker>
             </mat-form-field>
@@ -65,7 +62,8 @@
             </select>
 
             <!-- select multiple-->
-            <select multiple *ngSwitchCase="'selectmultiple'" [(ngModel)]="c.valor" (ngModelChange)="validCampo(c)" class="{{c.clase}} " [ngModelOptions]="{standalone: true}">
+            <select multiple *ngSwitchCase="'selectmultiple'" [(ngModel)]="c.valor" (ngModelChange)="validCampo(c)" class="{{c.clase}} "
+              [ngModelOptions]="{standalone: true}">
               <option *ngFor="let item of c.opciones" [ngValue]="item" [selected]="c.valor === item">
                 {{item.valor}}
               </option>
@@ -75,7 +73,7 @@
             <div *ngSwitchCase="'file'">wrq
               <label for="{{c.nombre}}" class="upload-file">
                 add_a_photo
-             </label>
+              </label>
               <input type="file" id="{{c.nombre}}" class="{{c.clase}}" (change)="onChange($event,c)" />
             </div>
 
@@ -137,11 +135,8 @@
           </div>
 
           <!-- checkbox -->
-          <div *ngSwitchCase="'checkbox'" class="form-group validation-checkboxes" >
-            <input type="checkbox" class="customised-control-input"
-             [disabled]="c.deshabilitar"
-             [checked]="c.valor"
-             (change)="c.valor = !c.valor"> {{c.nombre}}?
+          <div *ngSwitchCase="'checkbox'" class="form-group validation-checkboxes">
+            <input type="checkbox" class="customised-control-input" [disabled]="c.deshabilitar" [checked]="c.valor" (change)="c.valor = !c.valor"> {{c.nombre}}?
           </div>
 
 
@@ -161,7 +156,8 @@
           </select>
 
           <!-- select multiple-->
-          <select multiple *ngSwitchCase="'selectmultiple'" [(ngModel)]="c.valor" (ngModelChange)="validCampo(c)" class="{{c.clase}} " [ngModelOptions]="{standalone: true}">
+          <select multiple *ngSwitchCase="'selectmultiple'" [(ngModel)]="c.valor" (ngModelChange)="validCampo(c)" class="{{c.clase}} "
+            [ngModelOptions]="{standalone: true}">
             <option *ngFor="let item of c.opciones" [ngValue]="item" [selected]="c.valor === item">
               {{item.valor}}
             </option>
@@ -202,7 +198,7 @@
           <!-- textarea -->
           <textarea *ngSwitchCase="'textarea'" [(ngModel)]="c.valor" (ngModelChange)="validCampo(c)" [ngModelOptions]="{standalone: true}"
             type="text" id="{{c.nombre}}" class="{{c.clase}}" placeholder="{{c.placeholder}}">
-                </textarea>
+          </textarea>
 
           <!-- radio -->
           <div *ngSwitchCase="'radio'">
@@ -220,11 +216,8 @@
           </div>
 
           <!-- checkbox -->
-          <div *ngSwitchCase="'checkbox'" class="form-group validation-checkboxes" >
-            <input type="checkbox" class="customised-control-input"
-             [disabled]="c.deshabilitar"
-             [checked]="c.valor"
-             (change)="c.valor = !c.valor"> {{c.nombre}}?
+          <div *ngSwitchCase="'checkbox'" class="form-group validation-checkboxes">
+            <input type="checkbox" class="customised-control-input" [disabled]="c.deshabilitar" [checked]="c.valor" (change)="c.valor = !c.valor"> {{c.nombre}}?
           </div>
 
           <!-- date material -->
@@ -244,7 +237,8 @@
           </select>
 
           <!-- select multiple-->
-          <select multiple *ngSwitchCase="'selectmultiple'" [(ngModel)]="c.valor" (ngModelChange)="validCampo(c)" class="{{c.clase}} " [ngModelOptions]="{standalone: true}">
+          <select multiple *ngSwitchCase="'selectmultiple'" [(ngModel)]="c.valor" (ngModelChange)="validCampo(c)" class="{{c.clase}} "
+            [ngModelOptions]="{standalone: true}">
             <option *ngFor="let item of c.opciones" [ngValue]="item" [selected]="c.valor === item">
               {{item.valor}}
             </option>
@@ -255,9 +249,9 @@
             <input type="file" name="{{c.nombre}}" class="{{c.clase}}" *ngSwitchCase="'file'" (change)="onChange($event,c)" />
             <div class="{{c.clase}}">
               <nb-card size="small">
-                  <nb-card-body>
-                      <img class="carousel-image" src="{{c.img}}" alt="imagen">
-                  </nb-card-body>
+                <nb-card-body>
+                  <img class="carousel-image" src="{{c.img}}" alt="imagen">
+                </nb-card-body>
               </nb-card>
             </div>
           </div>
@@ -275,8 +269,8 @@
     <br>
   </form>
 
- <!-- Form  mini -->
- <form class="form-horizontal" *ngSwitchCase="'mini'">
+  <!-- Form  mini -->
+  <form class="form-horizontal" *ngSwitchCase="'mini'">
     <fieldset [ngClass]="{'fieldseter':!normalform.hidefield}">
       <legend align="{{normalform.alineacion_titulo}}">
         <small>{{normalform.titulo}}</small>
@@ -284,119 +278,118 @@
       <div class="row">
         <div *ngFor="let c of normalform.campos" class="{{c.claseGrid}}" [ngSwitch]="c.etiqueta">
           <div class=" form-group">
-            <div>
-
-              <!-- input -->
+            <!-- input -->
             <mat-form-field *ngSwitchCase="'input'" style="width: 100%;" class="form-group" floatLabel="always">
-            <mat-label>{{c.requerido?'* '+c.label:c.label}}:</mat-label>
-            <input matInput [(ngModel)]="c.valor" (ngModelChange)="validCampo(c)" [ngModelOptions]="{standalone: true}"
-              type="{{c.tipo}}" id="{{c.nombre}}"  [placeholder]="c.placeholder" [disabled]="c.deshabilitar"
-            />
-            <mat-hint class="text-danger">{{c.alerta}}</mat-hint>
+              <mat-label>{{c.requerido?'* '+c.label:c.label}}:</mat-label>
+              <input matInput [(ngModel)]="c.valor" (ngModelChange)="validCampo(c)" [ngModelOptions]="{standalone: true}" type="{{c.tipo}}"
+                id="{{c.nombre}}" [placeholder]="c.placeholder" [disabled]="c.deshabilitar" />
+              <mat-hint class="text-danger">{{c.alerta}}</mat-hint>
             </mat-form-field>
 
-          <!-- checkbox -->
-          <div *ngSwitchCase="'checkbox'" class="form-group validation-checkboxes" >
-             <mat-checkbox type="checkbox" class="customised-control-input"
-             [disabled]="c.deshabilitar" color="primary"
-             [(checked)]="c.valor" (change)="c.valor = !c.valor"
-             >{{c.requerido?'* '+c.label:c.label}}?</mat-checkbox>
-          </div>
-
-          <!-- textarea -->
-          <mat-form-field  *ngSwitchCase="'textarea'" style="width: 100%;" class="form-group" floatLabel="always">
-            <mat-label>{{c.requerido?'* '+c.label:c.label}}:</mat-label>
-            <textarea matInput placeholder="Autosize textarea" matTextareaAutosize matAutosizeMinRows="3"
-                      matAutosizeMaxRows="6"
-                      [(ngModel)]="c.valor" (ngModelChange)="validCampo(c)" [ngModelOptions]="{standalone: true}"
-            type="text" id="{{c.nombre}}" class="{{c.clase}}" placeholder="{{c.placeholder}}"
-            ></textarea>
-            <mat-hint class="text-danger">{{c.alerta}}</mat-hint>
-          </mat-form-field>
-
-          <!-- radio -->
-          <div *ngSwitchCase="'radio'">
-            <div *ngFor="let item of c.opciones" class="form-check">
-              <label class="row custom-control custom-radio">
-                <input type="radio" checked class="custom-control-input" name="{{c.nombre}}" [value]="item" [(ngModel)]="c.valor" [ngModelOptions]="{standalone: true}"
-                  checked="{{isEqual(item.Id, c.valor.Id)}}">
-                <span class="custom-control-indicator">
-                </span>
-                <span class="custom-control-description">
-                  {{item.valor}}
-                </span>
-              </label>
+            <!-- checkbox -->
+            <div *ngSwitchCase="'checkbox'" class="form-group validation-checkboxes">
+              <mat-checkbox type="checkbox" class="customised-control-input" [disabled]="c.deshabilitar" color="primary" [(checked)]="c.valor"
+                (change)="c.valor = !c.valor">{{c.requerido?'* '+c.label:c.label}}?</mat-checkbox>
             </div>
-          </div>
 
-          <!-- date material -->
-          <mat-form-field *ngSwitchCase="'mat-date'" style="width: 100%;" floatLabel="always">
-            <mat-label>{{c.requerido?'* '+c.label:c.label}}:</mat-label>
-            <input matInput  [(ngModel)]="c.valor" [matDatepicker]="picker" (dateChange)="onChangeDate($event,c); validCampo(c)" [ngModelOptions]="{standalone: true}" [placeholder]="c.placeholder">
-            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-            <mat-datepicker #picker></mat-datepicker>
-            <mat-hint class="text-danger">{{c.alerta}}</mat-hint>
-          </mat-form-field>
-
-          <!-- select -->
-          <mat-form-field *ngSwitchCase="'select'" style="width: 100%;" floatLabel="always">
-            <mat-label>{{c.requerido?'* '+c.label:c.label}}:</mat-label>
-            <mat-select [placeholder]="c.valor?(c.key?c.valor[c.key]:c.valor|json):c.placeholder" [(ngModel)]="c.valor"
-             (ngModelChange)="validCampo(c)" [ngModelOptions]="{standalone: true}">
-              <mat-option >--Seleccionar--</mat-option>
-              <mat-option *ngFor="let item of c.opciones" [value]="item" >
-                {{c.key?item[c.key]:item | json}}
-              </mat-option>
-            </mat-select>
-            <mat-hint class="text-danger">{{c.alerta}}</mat-hint>
+            <!-- textarea -->
+            <mat-form-field *ngSwitchCase="'textarea'" style="width: 100%;" class="form-group" floatLabel="always">
+              <mat-label>{{c.requerido?'* '+c.label:c.label}}:</mat-label>
+              <textarea matInput placeholder="Autosize textarea" matTextareaAutosize matAutosizeMinRows="3" matAutosizeMaxRows="6" [(ngModel)]="c.valor"
+                (ngModelChange)="validCampo(c)" [ngModelOptions]="{standalone: true}" type="text" id="{{c.nombre}}" class="{{c.clase}}"
+                placeholder="{{c.placeholder}}"></textarea>
+              <mat-hint class="text-danger">{{c.alerta}}</mat-hint>
             </mat-form-field>
 
-           <!-- select multiple-->
-           <mat-form-field *ngSwitchCase="'selectmultiple'" style="width: 100%;" floatLabel="always">
-            <mat-label>{{c.requerido?'* '+c.label:c.label}}:</mat-label>
-            <mat-select [placeholder]="c.valor?(c.key?c.valor[c.key]:c.valor|json):c.placeholder" [(ngModel)]="c.valor"
-             (ngModelChange)="validCampo(c)" [ngModelOptions]="{standalone: true}" multiple>
-              <mat-option *ngFor="let item of c.opciones" [value]="item" >
-                {{c.key?item[c.key]:item | json}}
-              </mat-option>
-            </mat-select>
-            <mat-hint class="text-danger">{{c.alerta}}</mat-hint>
+            <!-- radio -->
+            <div *ngSwitchCase="'radio'">
+              <div *ngFor="let item of c.opciones" class="form-check">
+                <label class="row custom-control custom-radio">
+                  <input type="radio" checked class="custom-control-input" name="{{c.nombre}}" [value]="item" [(ngModel)]="c.valor" [ngModelOptions]="{standalone: true}"
+                    checked="{{isEqual(item.Id, c.valor.Id)}}">
+                  <span class="custom-control-indicator">
+                  </span>
+                  <span class="custom-control-description">
+                    {{item.valor}}
+                  </span>
+                </label>
+              </div>
+            </div>
+
+            <!-- date material -->
+            <mat-form-field *ngSwitchCase="'mat-date'" style="width: 100%;" floatLabel="always">
+              <mat-label>{{c.requerido?'* '+c.label:c.label}}:</mat-label>
+              <input matInput [(ngModel)]="c.valor" [matDatepicker]="picker" (dateChange)="onChangeDate($event,c); validCampo(c)" [ngModelOptions]="{standalone: true}"
+                [placeholder]="c.placeholder">
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+              <mat-hint class="text-danger">{{c.alerta}}</mat-hint>
+            </mat-form-field>
+
+            <!-- select -->
+            <mat-form-field *ngSwitchCase="'select'" style="width: 100%;" floatLabel="always">
+              <mat-label>{{c.requerido?'* '+c.label:c.label}}:</mat-label>
+              <mat-select [placeholder]="c.valor?(c.key?c.valor[c.key]:c.valor|json):c.placeholder" [(ngModel)]="c.valor" (ngModelChange)="validCampo(c)"
+                [ngModelOptions]="{standalone: true}">
+                <mat-option>--Seleccionar--</mat-option>
+                <mat-option *ngFor="let item of c.opciones" [value]="item">
+                  {{c.key?item[c.key]:item | json}}
+                </mat-option>
+              </mat-select>
+              <mat-hint class="text-danger">{{c.alerta}}</mat-hint>
+            </mat-form-field>
+
+            <!-- select multiple-->
+            <mat-form-field *ngSwitchCase="'selectmultiple'" style="width: 100%;" floatLabel="always">
+              <mat-label>{{c.requerido?'* '+c.label:c.label}}:</mat-label>
+              <mat-select [placeholder]="c.valor?(c.key?c.valor[c.key]:c.valor|json):c.placeholder" [(ngModel)]="c.valor" (ngModelChange)="validCampo(c)"
+                [ngModelOptions]="{standalone: true}" multiple>
+                <mat-option *ngFor="let item of c.opciones" [value]="item">
+                  {{c.key?item[c.key]:item | json}}
+                </mat-option>
+              </mat-select>
+              <mat-hint class="text-danger">{{c.alerta}}</mat-hint>
             </mat-form-field>
 
             <!-- input-file -->
-              <div *ngSwitchCase="'file'" class="{{c.clase}}">
-                <div class="row">
-                  <div class="col-8">
-                      <label for="{{c.nombre}}" class="upload-file">
-                          {{c.requerido?'* '+c.label:c.label}}
-                      </label>
-                      <input type="file" id="{{c.nombre}}" (change)="onChange($event,c)" /><br>
-                      <mat-hint class="text-danger">{{c.alerta}}</mat-hint>
+            <div *ngSwitchCase="'file'" class="{{c.clase}}">
+              <div class="row">
+                <div class="col-8">
+                  <label for="{{c.nombre}}" class="upload-file">
+                    {{c.requerido?'* '+c.label:c.label}}
+                  </label>
+                  <input type="file" id="{{c.nombre}}" (change)="onChange($event,c)" />
+                  <br>
+                  <mat-hint class="text-danger">{{c.alerta}}</mat-hint>
 
-                  </div>
-                  <div class="col-4">
-                      <nb-card-body class="col-4" *ngIf="c.tipo == 'image'">
-                          <img id="{{c.nombre}}" class="carousel-image" [src]="c.url" (click)="download(c.urlTemp)"class="img-thumbnail" alt="Foto" width="100px" height="100px">
-                      </nb-card-body>
-                      <nb-card-body class="col-4" *ngIf="!(c.tipo == 'image')">
-                          <img class="carousel-image" [src]="'assets/images/file.png'" (click)="download(c.urlTemp)"class="img-thumbnail" alt="Foto" width="100px" height="100px">
-                      </nb-card-body>
-                  </div>
+                </div>
+                <div class="col-4">
+                  <nb-card-body class="col-4" *ngIf="c.tipo == 'image'">
+                    <img id="{{c.nombre}}" class="carousel-image" [src]="c.url" (click)="download(c.urlTemp)" class="img-thumbnail" alt="Foto"
+                      width="100px" height="100px">
+                  </nb-card-body>
+                  <nb-card-body class="col-4" *ngIf="!(c.tipo == 'image')">
+                    <img class="carousel-image" [src]="'assets/images/file.png'" (click)="download(c.urlTemp)" class="img-thumbnail" alt="Foto"
+                      width="100px" height="100px">
+                  </nb-card-body>
                 </div>
               </div>
-
             </div>
+
+            <!--buttton -->
+            <button class="{{c.claseBoton}}" *ngSwitchCase="'button'" (click)="auxButton(c)">
+              {{c.info}}
+              <i class="{{c.icono}}"></i>
+            </button>
           </div>
         </div>
       </div>
       <div align="right" class="form-group">
-          <button class="btn btn-primary btn-sm" (click)="clearForm()" [hidden]="!normalform.btnLimpiar">{{normalform.btnLimpiar}}</button>
-          <button class="btn btn-success btn-sm" (click)="validForm()" [hidden]="!normalform.btn">{{normalform.btn}}</button>
-        </div>
+        <button class="btn btn-primary btn-sm" (click)="clearForm()" [hidden]="!normalform.btnLimpiar">{{normalform.btnLimpiar}}</button>
+        <button class="btn btn-success btn-sm" (click)="validForm()" [hidden]="!normalform.btn">{{normalform.btn}}</button>
+      </div>
 
     </fieldset>
     <!-- Botones de form con acción de botones -->
   </form>
 </div>
-
-

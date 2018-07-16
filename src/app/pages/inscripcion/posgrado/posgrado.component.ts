@@ -8,7 +8,7 @@ import { UtilidadesService } from '../../../@core/utils/utilidades.service';
   selector: 'ngx-posgrado',
   templateUrl: './posgrado.component.html',
   styleUrls: ['./posgrado.component.scss'],
-  })
+})
 export class PosgradoComponent implements OnInit {
 
   info_persona_id: number;
@@ -76,7 +76,7 @@ export class PosgradoComponent implements OnInit {
             this.info_ente_id = this.info_info_persona.Ente;
           }
         });
-    } else  {
+    } else {
       this.info_persona_id = undefined;
       this.info_ente_id = undefined;
     }
