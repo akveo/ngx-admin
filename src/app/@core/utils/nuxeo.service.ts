@@ -104,6 +104,7 @@ export class NuxeoService {
     }
 
     updateFile(file, documento, documentoService, nuxeoservice) {
+        console.info(this.updateDoc);
         if (file.file !== undefined) {
             const nuxeoBlob = new Nuxeo.Blob({ content: file.file });
             documentoService.get('documento?query=Id:' + documento)
@@ -127,11 +128,14 @@ export class NuxeoService {
                                     .execute()
                                     .then(function (respuesta) {
                                         nuxeoservice.updateDoc.push(respuesta);
-                                        nuxeoservice.updateDoc$.next(nuxeoservice.blobDocument);
+                                        nuxeoservice.updateDoc$.next(nuxeoservice.updateDoc);
                                     });
                             });
                     }
                 });
+        } else {
+            nuxeoservice.updateDoc.push(false);
+            nuxeoservice.updateDoc$.next(nuxeoservice.updateDoc);
         }
     };
 
