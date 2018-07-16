@@ -9,11 +9,16 @@ import { Subject } from 'rxjs/Subject';
 @Injectable()
 export class NuxeoService {
     static nuxeo: Nuxeo
+
     private documentos$ = new Subject<Documento[]>();
     private documentos: Documento[];
 
     private blobDocument$ = new Subject<[object]>();
     private blobDocument: object[];
+
+
+    private updateDoc$ = new Subject<[object]>();
+    private updateDoc: object[];
 
     constructor() {
         this.documentos = [];
@@ -36,6 +41,11 @@ export class NuxeoService {
     public getDocumentoById$(Id, documentoService): Observable<object[]> {
         this.getFile(Id, documentoService, this);
         return this.blobDocument$.asObservable();
+    }
+
+    public updateDocument$(file, document, documentoService): Observable<object[]> {
+        this.updateFile(file, document, documentoService, this);
+        return this.updateDoc$.asObservable();
     }
 
     saveFiles(files, documentoService, nuxeoservice) {
@@ -116,7 +126,8 @@ export class NuxeoService {
                                     .input(response.blob)
                                     .execute()
                                     .then(function (respuesta) {
-                                        console.info(respuesta);
+                                        nuxeoservice.updateDoc.push(respuesta);
+                                        nuxeoservice.updateDoc$.next(nuxeoservice.blobDocument);
                                     });
                             });
                     }

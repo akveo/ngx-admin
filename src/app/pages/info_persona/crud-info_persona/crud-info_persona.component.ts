@@ -156,15 +156,18 @@ export class CrudInfoPersonaComponent implements OnInit {
         if (willDelete.value) {
           this.info_info_persona = <any>infoPersona;
           console.info(infoPersona);
-          this.nuxeoService.updateFile(this.info_info_persona.Foto, this.Foto, this.documentoService, this.nuxeoService);
-          this.info_info_persona.Foto = this.Foto;
-          this.campusMidService.put('persona/ActualizarPersona', this.info_info_persona)
-             .subscribe(res => {
-               this.eventChange.emit(true);
-               this.loadInfoPersona();
-               this.showToast('info', this.translate.instant('GLOBAL.actualizar'),
-                 this.translate.instant('GLOBAL.info_persona') + ' ' +
-                 this.translate.instant('GLOBAL.confirmarActualizar'));
+          this.nuxeoService.updateDocument$(this.info_info_persona.Foto, this.Foto, this.documentoService)
+            .subscribe(response => {
+              console.info(response);
+              this.info_info_persona.Foto = this.Foto;
+              this.campusMidService.put('persona/ActualizarPersona', this.info_info_persona)
+                .subscribe(res => {
+                  this.eventChange.emit(true);
+                  this.loadInfoPersona();
+                  this.showToast('info', this.translate.instant('GLOBAL.actualizar'),
+                    this.translate.instant('GLOBAL.info_persona') + ' ' +
+                    this.translate.instant('GLOBAL.confirmarActualizar'));
+                });
             });
         }
       });

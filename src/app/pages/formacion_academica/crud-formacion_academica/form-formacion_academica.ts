@@ -8,7 +8,7 @@ export let FORM_FORMACION_ACADEMICA = {
     {
       etiqueta: 'select',
       claseGrid: 'col-lg-4 col-md-6 col-sm-12 col-xs-12',
-      nombre: 'NivelFormacion',
+      nombre: 'TipoDocumento',
       label_i18n: 'tipo_documento',
       placeholder_i18n: 'tipo_documento',
       requerido: true,
@@ -26,7 +26,7 @@ export let FORM_FORMACION_ACADEMICA = {
       label_i18n: 'numero_documento',
       placeholder_i18n: 'numero_documento',
       requerido: true,
-      tipo: 'text',
+      tipo: 'number',
     },
 
     {
@@ -134,15 +134,6 @@ export let FORM_FORMACION_ACADEMICA = {
       tipo: 'Lugar',
       key: 'Nombre',
       opciones: [],
-    },
-    {
-      etiqueta: 'input',
-      claseGrid: 'col-lg-6 col-md-6 col-sm-12 col-xs-12',
-      nombre: 'NombreUniversidad',
-      label_i18n: 'nombre_universidad',
-      placeholder_i18n: 'nombre_universidad',
-      requerido: true,
-      tipo: 'text',
     },
     {
       etiqueta: 'select',
