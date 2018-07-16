@@ -4,11 +4,11 @@ export const Config = {
             PATH: 'https://documental.udistrital.edu.co/nuxeo/',
         },
         WSO2_SERVICE: 'http://jbpm.udistritaloas.edu.co:8280/services',
-        UBICACIONES_SERVICE: 'http://192.168.1.61:8085/v1/',
-        PERSONA_SERVICE: 'http://192.168.1.61:8083/v1/',
-        DOCUMENTO_SERVICE: 'http://192.168.1.61:8094/v1/',
-        ENTE_SERVICE: 'http://192.168.1.61:8096/v1/',
-        CAMPUS_MID: 'http://192.168.1.61:8095/v1/',
+        UBICACIONES_SERVICE: 'http://localhost:8085/v1/',
+        PERSONA_SERVICE: 'http://localhost:8083/v1/',
+        DOCUMENTO_SERVICE: 'http://localhost:8094/v1/',
+        ENTE_SERVICE: 'http://localhost:8096/v1/',
+        CAMPUS_MID: 'http://localhost:8095/v1/',
         CONF_MENU_SERVICE: 'http://10.20.0.254/configuracion_api/v1/menu_opcion_padre/ArbolMenus/',
         TOKEN: {
             AUTORIZATION_URL: 'https://autenticacion.udistrital.edu.co:8244/authorize',
@@ -42,7 +42,28 @@ export const Config = {
         },
 
     },
-    PREPROD: {
+    PREPROD_LOCAL: {
+        NUXEO: {
+            PATH: 'https://documental.udistrital.edu.co/nuxeo/',
+        },
+        WSO2_SERVICE: 'http://jbpm.udistritaloas.edu.co:8280/services',
+        UBICACIONES_SERVICE: 'https://autenticacion.udistrital.edu.co:8244/ubicacion_crud/v1/',
+        PERSONA_SERVICE: 'https://autenticacion.udistrital.edu.co:8244/personas_crud/v1/',
+        ENTE_SERVICE: 'https://autenticacion.udistrital.edu.co:8244/ente_crud/v1/',
+        DOCUMENTO_SERVICE: 'https://autenticacion.udistrital.edu.co:8244/documento_crud/v1/',
+        CAMPUS_MID: 'https://autenticacion.udistrital.edu.co:8244/campus_mid_service/v1/',
+        CONF_MENU_SERVICE: 'https://autenticacion.udistrital.edu.co:8244/api/configuracion_crud_api/v1/menu_opcion_padre/ArbolMenus/',
+        TOKEN: {
+            AUTORIZATION_URL: 'https://autenticacion.udistrital.edu.co:8244/authorize',
+            CLIENTE_ID: 'iKu3JoaAbsqLoQTpIjjFlz9RfIga',
+            RESPONSE_TYPE: 'id_token token',
+            REDIRECT_URL: 'https://pruebascampus.portaloas.udistrital.edu.co/',
+            SCOPE: 'openid email role documento',
+            SIGN_OUT_URL: 'https://autenticacion.udistrital.edu.co/oidc/logout',
+            SIGN_OUT_REDIRECT_URL: 'https://pruebascampus.portaloas.udistrital.edu.co/',
+        },
+    },
+    PREPROD_NUBE: {
         NUXEO: {
             PATH: 'https://documental.udistrital.edu.co/nuxeo/',
         },
@@ -66,5 +87,5 @@ export const Config = {
 };
 
 export const GENERAL = {
-    ENTORNO: Config.LOCAL,
+    ENTORNO: Config.PREPROD_LOCAL,
 };
