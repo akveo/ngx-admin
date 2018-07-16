@@ -55,7 +55,7 @@ export const Config = {
         CONF_MENU_SERVICE: 'https://autenticacion.udistrital.edu.co:8244/api/configuracion_crud_api/v1/menu_opcion_padre/ArbolMenus/',
         TOKEN: {
             AUTORIZATION_URL: 'https://autenticacion.udistrital.edu.co:8244/authorize',
-            CLIENTE_ID: 'iKu3JoaAbsqLoQTpIjjFlz9RfIga',
+            CLIENTE_ID: '860WlkU_AfhfieBuquBqTx4uuAYa',
             RESPONSE_TYPE: 'id_token token',
             REDIRECT_URL: 'https://pruebascampus.portaloas.udistrital.edu.co/',
             SCOPE: 'openid email role documento',
