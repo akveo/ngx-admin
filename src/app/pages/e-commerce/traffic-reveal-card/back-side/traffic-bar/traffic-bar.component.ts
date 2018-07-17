@@ -7,6 +7,6 @@ import { Component, Input } from '@angular/core';
 })
 export class TrafficBarComponent {
 
-  @Input() barData: { prevDate: string; prevValue: number; nextDate: string; next: number };
+  @Input() barData: { prevDate: string; prevValue: number; nextDate: string; nextValue: number };
   @Input() successDelta: boolean;
 }
