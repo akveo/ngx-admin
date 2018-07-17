@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { of as observableOf,  Observable } from 'rxjs';
+import { PeriodsService } from './periods.service';
 
 export class UserActive {
   date: string;
@@ -12,32 +13,9 @@ export class UserActivityService {
 
   private getRandomUpToThousand = () => Math.round(Math.random() * 1000);
 
-  private years: string[] = [
-    '2010', '2011', '2012',
-    '2013', '2014', '2015',
-    '2016', '2017', '2018',
-  ];
-
-  private months: string[] = [
-    'Jan', 'Feb', 'Mar',
-    'Apr', 'May', 'Jun',
-    'Jul', 'Aug', 'Sep',
-    'Oct', 'Nov', 'Dec',
-  ];
-
-  private weeks: string[] = [
-    'Sun',
-    'Mon',
-    'Tue',
-    'Wed',
-    'Thu',
-    'Fri',
-    'Sat',
-  ];
-
   data = {};
 
-  constructor() {
+  constructor(private periods: PeriodsService) {
     this.data = {
       week: this.getDataWeek(),
       month: this.getDataMonth(),
@@ -46,7 +24,7 @@ export class UserActivityService {
   }
 
   private getDataWeek(): UserActive[] {
-    return this.weeks.map((week) => {
+    return this.periods.getWeeks().map((week) => {
       return {
         date: week,
         pagesVisitCount: this.getRandomUpToThousand(),
@@ -58,7 +36,7 @@ export class UserActivityService {
   private getDataMonth(): UserActive[] {
     const date = new Date();
     const days = date.getDate();
-    const month = this.months[date.getMonth()];
+    const month = this.periods.getMonths()[date.getMonth()];
 
     return Array.from(Array(days)).map((_, index) => {
       return {
@@ -70,7 +48,7 @@ export class UserActivityService {
   }
 
   private getDataYear(): UserActive[] {
-    return this.years.map((year) => {
+    return this.periods.getYears().map((year) => {
       return {
         date: year,
         pagesVisitCount: this.getRandomUpToThousand(),

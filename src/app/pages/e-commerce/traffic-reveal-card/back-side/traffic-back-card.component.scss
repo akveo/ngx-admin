@@ -4,6 +4,15 @@
 @import '~bootstrap/scss/mixins/breakpoints';
 
 @include nb-install-component() {
+  overflow: auto;
+
+  nb-card-body {
+    padding: 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+
   .traffic-list {
     padding: 0;
     margin: 0;
@@ -85,46 +94,6 @@
         top: 2px;
         border-bottom: 10px solid text-success();
       }
-    }
-  }
-
-  li {
-    .traffic-bar {
-      flex: 0.5;
-    }
-  }
-  .traffic-bar {
-    display: flex;
-    align-self: stretch;
-    position: relative;
-
-    > * {
-      margin-left: 0.5rem;
-    }
-  }
-
-  .period-from, .period-to {
-    align-self: flex-end;
-    font-size: 1rem;
-    line-height: 0.8;
-  }
-
-  .period-from {
-    position: absolute;
-    right: 100%;
-    bottom: 0;
-    white-space: nowrap;
-  }
-
-  .vertical-progress-bar {
-    height: 100%;
-    width: 0.85rem;
-    transform: rotate(180deg);
-
-    .progress-line {
-      background-color: #0bbb79;
-      width: 100%;
-      height: 67%;
     }
   }
 

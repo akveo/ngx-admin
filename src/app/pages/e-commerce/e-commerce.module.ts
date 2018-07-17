@@ -19,6 +19,7 @@ import { TrafficBarChartComponent } from './traffic-reveal-card/front-side/traff
 import { TrafficFrontCardComponent } from './traffic-reveal-card/front-side/traffic-front-card.component';
 import { TrafficCardsHeaderComponent } from './traffic-reveal-card/traffic-cards-header/traffic-cards-header.component';
 import { TrafficBackCardComponent } from './traffic-reveal-card/back-side/traffic-back-card.component';
+import { TrafficBarComponent } from './traffic-reveal-card/back-side/traffic-bar/traffic-bar.component';
 import {
   ECommerceVisitorsAnalyticsComponent,
 } from './visitors-analytics/visitors-analytics.component';
@@ -62,6 +63,7 @@ import { CountryOrdersChartComponent } from './country-orders/chart/country-orde
     TrafficBarChartComponent,
     TrafficFrontCardComponent,
     TrafficBackCardComponent,
+    TrafficBarComponent,
     TrafficCardsHeaderComponent,
     CountryOrdersComponent,
     CountryOrdersMapComponent,

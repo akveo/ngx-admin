@@ -10,6 +10,7 @@ import { NgdLEgendItemColor } from '../../legend-chart/enum.legend-item-color';
   templateUrl: './charts-header.component.html',
 })
 export class ChartsHeaderComponent implements OnDestroy {
+
   private alive = true;
 
   @Output() periodChange = new EventEmitter<string>();

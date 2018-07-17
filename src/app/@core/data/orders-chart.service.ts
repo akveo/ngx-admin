@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { of as observableOf,  Observable } from 'rxjs';
+import { PeriodsService } from './periods.service';
 
 export class OrdersChart {
   chartLabel: string[];
@@ -8,23 +9,6 @@ export class OrdersChart {
 
 @Injectable()
 export class OrdersChartService {
-
-  private month = [
-    'Jan', 'Feb', 'Mar',
-    'Apr', 'May', 'Jun',
-    'Jul', 'Aug', 'Sep',
-    'Oct', 'Nov', 'Dec',
-  ];
-
-  private week = [
-    'Sun',
-    'Mon',
-    'Tue',
-    'Wed',
-    'Thu',
-    'Fri',
-    'Sat',
-  ];
 
   private year = [
     '2012',
@@ -36,15 +20,19 @@ export class OrdersChartService {
     '2018',
   ];
 
-  private data = {
-    week: this.getDataForWeekPeriod(),
-    month: this.getDataForMonthPeriod(),
-    year: this.getDataForYearPeriod(),
-  };
+  private data = { };
+
+  constructor(private period: PeriodsService) {
+    this.data = {
+      week: this.getDataForWeekPeriod(),
+      month: this.getDataForMonthPeriod(),
+      year: this.getDataForYearPeriod(),
+    };
+  }
 
   private getDataForWeekPeriod(): OrdersChart {
     return {
-      chartLabel: this.getDataLabels(42, this.week),
+      chartLabel: this.getDataLabels(42, this.period.getWeeks()),
       linesData: [
         [
           5, 54, 96, 134, 168, 198, 224,
@@ -79,7 +67,7 @@ export class OrdersChartService {
 
   private getDataForMonthPeriod(): OrdersChart {
     return {
-      chartLabel: this.getDataLabels(47, this.month),
+      chartLabel: this.getDataLabels(47, this.period.getMonths()),
       linesData: [
         [
           5, 63, 113, 156, 194, 225,

@@ -3,6 +3,7 @@
 @include nb-install-component() {
   .nb-arrow-up, .nb-arrow-down {
     position: absolute;
+    top: 0;
     right: 0;
     @include nb-rtl(right, auto);
     @include nb-rtl(left, 0);

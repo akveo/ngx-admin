@@ -1,0 +1,49 @@
+@import '../../../../../@theme/styles/themes';
+@import '~@nebular/theme/styles/global/bootstrap/hero-buttons';
+
+@include nb-install-component() {
+  height: 100%;
+
+  .traffic-bar {
+    display: flex;
+    align-self: stretch;
+    position: relative;
+    height: 100%;
+
+    > * {
+      margin-left: 0.5rem;
+    }
+  }
+
+  .period-from, .period-to {
+    align-self: flex-end;
+    font-size: 1rem;
+    line-height: 0.8;
+  }
+
+  .period-from {
+    position: absolute;
+    right: 100%;
+    bottom: 0;
+    white-space: nowrap;
+  }
+
+  .vertical-progress-bar {
+    height: 100%;
+    width: 0.7rem;
+    transform: rotate(180deg);
+
+    .progress-line {
+      width: 100%;
+      @include btn-hero-primary-gradient();
+
+      &.success {
+        @include btn-hero-success-gradient();
+      }
+
+      &.failure {
+        @include btn-hero-danger-gradient();
+      }
+    }
+  }
+}
