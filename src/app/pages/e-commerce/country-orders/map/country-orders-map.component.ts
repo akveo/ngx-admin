@@ -50,7 +50,7 @@ export class CountryOrdersMapComponent implements OnDestroy {
       .pipe(takeWhile(() => this.alive))
       .subscribe(([cords, config]: [any, any]) => {
         this.currentTheme = config.variables.countryOrders;
-        this.layers.push(this.createGeoJsonLayer(cords));
+        this.layers = [this.createGeoJsonLayer(cords)];
         this.selectFeature(this.findFeatureLayerByCountryId(this.countryId));
       });
   }
@@ -116,6 +116,7 @@ export class CountryOrdersMapComponent implements OnDestroy {
   private resetHighlight(featureLayer) {
     if (featureLayer) {
       const geoJsonLayer = this.layers[0];
+
       geoJsonLayer.resetStyle(featureLayer);
     }
   }
@@ -131,15 +132,11 @@ export class CountryOrdersMapComponent implements OnDestroy {
 
   private findFeatureLayerByCountryId(id) {
     const layers = this.layers[0].getLayers();
+    const featureLayer = layers.find(item => {
+      return item.feature.id === id;
+    });
 
-    for (const key of Object.keys(layers)) {
-      const value = layers[key];
-      if (value.feature.id === id) {
-        return value;
-      }
-    }
-
-    return null;
+    return featureLayer ? featureLayer : null;
   }
 
   ngOnDestroy(): void {

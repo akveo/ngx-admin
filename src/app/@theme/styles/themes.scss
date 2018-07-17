@@ -23,9 +23,13 @@ $nb-themes: nb-register-theme((
 
   slide-out-container-width: 30%,
 
-  // todo[ecommerce]: need design
-  slide-out-background: radial-gradient(circle, #302c6e 0%, #423f8c 100%),
+  slide-out-background: #ffffff,
   slide-out-shadow-color: rgba(19, 19, 94, 0.9),
+
+  legend-chart-green-square-background: linear-gradient(90deg, #3edd81 0%, #3bddad 100%),
+  legend-chart-purple-square-background: linear-gradient(90deg, #8d7fff 0%, #b17fff 100%),
+  legend-chart-blue-square-background: linear-gradient(90deg, #4ac3ff 0%, #4bacfe 100%),
+  legend-chart-yellow-square-background: linear-gradient(90deg, #ffcb17 0%, #ff874c 100%),
 ), default, default);
 
 $nb-themes: nb-register-theme((
@@ -46,6 +50,11 @@ $nb-themes: nb-register-theme((
   slide-out-container-width: 30%,
   slide-out-background: radial-gradient(circle, #302c6e 0%, #423f8c 100%),
   slide-out-shadow-color: rgba(19, 19, 94, 0.9),
+
+  legend-chart-green-square-background: linear-gradient(90deg, #00c7c7 0%, #00d977 100%),
+  legend-chart-purple-square-background: linear-gradient(90deg, #a454ff 0%, #7659ff 100%),
+  legend-chart-blue-square-background: linear-gradient(90deg, #0088ff 0%, #3dafff 100%),
+  legend-chart-yellow-square-background: linear-gradient(90deg, #ffcb17 0%, #ff874c 100%),
 ), cosmic, cosmic);
 
 $nb-themes: nb-register-theme((
@@ -66,6 +75,11 @@ $nb-themes: nb-register-theme((
   slide-out-container-width: 30%,
 
   // todo[ecommerce]: need design
-  slide-out-background: radial-gradient(circle, #302c6e 0%, #423f8c 100%),
+  slide-out-background: #ffffff,
   slide-out-shadow-color: rgba(19, 19, 94, 0.9),
+
+  legend-chart-green-square-background: linear-gradient(90deg, #3edd81 0%, #3bddad 100%),
+  legend-chart-purple-square-background: linear-gradient(90deg, #8d7fff 0%, #b17fff 100%),
+  legend-chart-blue-square-background: linear-gradient(90deg, #4ac3ff 0%, #4bacfe 100%),
+  legend-chart-yellow-square-background: linear-gradient(90deg, #ffcb17 0%, #ff874c 100%),
 ), corporate, corporate);

@@ -21,6 +21,10 @@ $shadow-green: #00977e;
     font-size: 3rem;
     font-weight: nb-theme(font-weight-light);
     margin-top: 0.5rem;
+
+    @include nb-for-theme(default) {
+      color: nb-theme(color-success);
+    }
   }
 
   .description {
@@ -38,8 +42,12 @@ $shadow-green: #00977e;
 
     .progress-value {
       height: 0.6rem;
-      box-shadow: 0 0.2rem $shadow-green;
-      background: linear-gradient(90deg, #00c7c7 0%, #00d977 100%);
+      background: linear-gradient(90deg, #3edd81 0%, #3bddaf 100%);
+
+      @include nb-for-theme(cosmic) {
+        box-shadow: 0 0.2rem $shadow-green;
+        background: linear-gradient(90deg, #00c7c7 0%, #00d977 100%);
+      }
     }
   }
 }

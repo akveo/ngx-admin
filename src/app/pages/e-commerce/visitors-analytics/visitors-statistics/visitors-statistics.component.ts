@@ -2,7 +2,7 @@ import { AfterViewInit, Component, OnDestroy } from '@angular/core';
 import { NbThemeService } from '@nebular/theme';
 import { delay, takeWhile } from 'rxjs/operators';
 
-import {NgdLEgendItemColor} from '../../legend-chart/enum.legend-item-color';
+import {NgxLegendItemColor} from '../../legend-chart/enum.legend-item-color';
 
 @Component({
   selector: 'ngx-visitors-statistics',
@@ -17,11 +17,11 @@ export class ECommerceVisitorsStatisticsComponent implements AfterViewInit, OnDe
   option: any = {};
   chartLegend = [
     {
-      iconColor: NgdLEgendItemColor.YELLOW,
+      iconColor: NgxLegendItemColor.YELLOW,
       title: 'New Visitors',
     },
     {
-      iconColor: NgdLEgendItemColor.GREEN,
+      iconColor: NgxLegendItemColor.GREEN,
       title: 'Return Visitors',
     },
   ];

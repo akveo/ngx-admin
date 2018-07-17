@@ -85,24 +85,24 @@ export const CORPORATE_THEME = {
     },
 
     countryOrders: {
-      countryBorderColor: '#525dbd',
-      countryFillColor: '#4f41a6',
-      countryBorderWidth: '2',
-      hoveredCountryBorderColor: '#00f9a6',
-      hoveredCountryFillColor: '#377aa7',
+      countryBorderColor: '#40dc7e',
+      countryFillColor: '#ffffff',
+      countryBorderWidth: '1',
+      hoveredCountryBorderColor: '#40dc7e',
+      hoveredCountryFillColor: '#c7f4d9',
       hoveredCountryBorderWidth: '3',
 
       chartAxisLineColor: 'rgba(0, 0, 0, 0)',
-      chartAxisTextColor: '#2a2a2a',
+      chartAxisTextColor: '#b2bac2',
       chartAxisFontSize: '16',
-      chartGradientTo: '#00c7c7',
-      chartGradientFrom: '#00d977',
+      chartGradientTo: '#3edd81',
+      chartGradientFrom: '#3bddaf',
       chartAxisSplitLine: '#ebeef2',
       chartShadowLineColor: '#2f296b',
 
-      chartLineBottomShadowColor: '#00977e',
+      chartLineBottomShadowColor: '#eceff4',
 
-      chartInnerLineColor: '#2f296b',
+      chartInnerLineColor: '#eceff4',
     },
 
     echarts: {
@@ -122,62 +122,62 @@ export const CORPORATE_THEME = {
 
     // TODO: need design for corporate theme
     orders: {
-      tooltipBg: 'rgba(0, 255, 170, 0.35)',
-      tooltipLineColor: 'rgba(255, 255, 255, 0.1)',
-      tooltipLineWidth: '1',
-      tooltipBorderColor: '#00d977',
-      tooltipExtraCss: 'box-shadow: 0px 2px 46px 0 rgba(0, 255, 170, 0.35); border-radius: 10px; padding: 8px 24px;',
-      tooltipTextColor: '#ffffff',
-      tooltipFontWeight: 'normal',
+      tooltipBg: '#ffffff',
+      tooltipLineColor: 'rgba(0, 0, 0, 0)',
+      tooltipLineWidth: '0',
+      tooltipBorderColor: '#ebeef2',
+      tooltipExtraCss: 'border-radius: 10px; padding: 8px 24px;',
+      tooltipTextColor: '#2a2a2a',
+      tooltipFontWeight: 'bolder',
       tooltipFontSize: '20',
 
       axisLineColor: 'rgba(161, 161 ,229, 0.3)',
       axisFontSize: '16',
-      axisTextColor: '#2a2a2a',
+      axisTextColor: '#b2bac2',
       yAxisSplitLine: 'rgba(161, 161 ,229, 0.2)',
 
-      itemBorderColor: '#ffffff',
+      itemBorderColor: '#42db7d',
       lineStyle: 'solid',
       lineWidth: '4',
 
-      // green line
-      greenLineGradFrom: '#00bece',
-      greenLineGradTo: '#00da78',
-      greenLineShadow: 'rgba(14, 16, 48, 0.4)',
+      // first line
+      firstLineGradFrom: 'rgba(55, 220, 136, 1)',
+      firstLineGradTo: 'rgba(55, 220, 136, 1)',
+      firstLineShadow: 'rgba(0, 0, 0, 0)',
 
-      greenAreaGradFrom: 'rgba(31 ,106, 124, 0.5)',
-      greenAreaGradTo: 'rgba(4, 126, 230, 0)',
-      greenShadowLineDarkBg: '#2c5a85',
+      firstAreaGradFrom: 'rgba(31 ,106, 124, 0.1)',
+      firstAreaGradTo: 'rgba(4, 126, 230, 0)',
+      firstShadowLineDarkBg: 'rgba(0, 0, 0, 0)',
 
-      // purple line
-      purpleLineGradFrom: '#8069ff',
-      purpleLineGradTo: '#8357ff',
-      purpleLineShadow: 'rgba(14, 16, 48, 0.4)',
+      // second line
+      secondLineGradFrom: 'rgba(164, 123, 255, 1)',
+      secondLineGradTo: 'rgba(164, 123, 255, 1)',
+      secondLineShadow: 'rgba(0, 0, 0, 0)',
 
-      purpleAreaGradFrom: 'rgba(188, 92, 255, 0.5)',
-      purpleAreaGradTo: 'rgba(188, 92, 255, 0)',
-      purpleShadowLineDarkBg: '#a695ff',
+      secondAreaGradFrom: 'rgba(188, 92, 255, 0.1)',
+      secondAreaGradTo: 'rgba(188, 92, 255, 0)',
+      secondShadowLineDarkBg: 'rgba(0, 0, 0, 0)',
 
-      // blue line
-      blueLineGradFrom: '#3bb0ff',
-      blueLineGradTo: '#0089ff',
-      blueLineShadow: 'rgba(14, 16, 48, 0.4)',
+      // third line
+      thirdLineGradFrom: 'rgba(67, 190, 255, 1)',
+      thirdLineGradTo: 'rgba(67, 190, 255, 1)',
+      thirdLineShadow: 'rgba(0, 0, 0, 0)',
 
-      blueAreaGradFrom: 'rgba(4, 126, 230, 1)',
-      blueAreaGradTo: 'rgba(4, 126, 230, 0)',
-      blueShadowLineDarkBg: '#018dff',
+      thirdAreaGradFrom: 'rgba(4, 126, 230, 0.1)',
+      thirdAreaGradTo: 'rgba(4, 126, 230, 0)',
+      thirdShadowLineDarkBg: 'rgba(0, 0, 0, 0)',
     },
 
     // TODO: need design for default theme
     profit: {
-      bg: '#3d3780',
+      bg: '#ffffff',
       textColor: '#ffffff',
-      axisLineColor: '#a1a1e5',
-      splitLineColor: '#342e73',
+      axisLineColor: 'rgba(161, 161 ,229, 0.3)',
+      splitLineColor: 'rgba(161, 161 ,229, 0.2)',
       areaOpacity: '1',
 
       axisFontSize: '16',
-      axisTextColor: '#2a2a2a',
+      axisTextColor: '#b2bac2',
 
       // green bar
       greenLineGradFrom: '#00bece',
@@ -197,20 +197,21 @@ export const CORPORATE_THEME = {
 
     // TODO: need design for default theme
     visitors: {
-      tooltipBg: 'rgba(0, 255, 170, 0.35)',
-      tooltipLineColor: 'rgba(255, 255, 255, 0.1)',
-      tooltipLineWidth: '1',
-      tooltipBorderColor: '#00d977',
-      tooltipExtraCss: 'box-shadow: 0px 2px 46px 0 rgba(0, 255, 170, 0.35); border-radius: 10px; padding: 8px 24px;',
-      tooltipTextColor: '#ffffff',
-      tooltipFontWeight: 'normal',
+      tooltipBg: '#ffffff',
+      tooltipLineColor: 'rgba(0, 0, 0, 0)',
+      tooltipLineWidth: '0',
+      tooltipBorderColor: '#ebeef2',
+      tooltipExtraCss: 'border-radius: 10px; padding: 8px 24px;',
+      tooltipTextColor: '#2a2a2a',
+      tooltipFontWeight: 'bolder',
+      tooltipFontSize: '20',
 
       axisLineColor: 'rgba(161, 161 ,229, 0.3)',
       axisFontSize: '16',
-      axisTextColor: '#2a2a2a',
+      axisTextColor: '#b2bac2',
       yAxisSplitLine: 'rgba(161, 161 ,229, 0.2)',
 
-      itemBorderColor: '#ffffff',
+      itemBorderColor: '#42db7d',
       lineStyle: 'dotted',
       lineWidth: '6',
       lineGradFrom: '#ffffff',
@@ -224,8 +225,8 @@ export const CORPORATE_THEME = {
       innerLineStyle: 'solid',
       innerLineWidth: '1',
 
-      innerAreaGradFrom: 'rgba(59, 165, 243, 1)',
-      innerAreaGradTo: 'rgba(4, 133, 243 , 1)',
+      innerAreaGradFrom: 'rgba(60, 221, 156, 1)',
+      innerAreaGradTo: 'rgba(60, 221, 156, 1)',
     },
 
     // TODO: need design for default theme

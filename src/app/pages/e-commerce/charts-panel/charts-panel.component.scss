@@ -6,10 +6,14 @@ $legend-canceled-color: #3f4fda;
 
 @include nb-install-component() {
 
-  nb-tabset {
+  /deep/ nb-tabset {
     display: flex;
     flex-direction: column;
     flex: 1;
+
+    ul {
+      border-bottom: none;
+    }
   }
 
   nb-tab {

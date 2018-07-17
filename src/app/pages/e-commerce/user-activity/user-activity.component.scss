@@ -64,12 +64,24 @@
     font-size: 1.25rem;
   }
 
+  .visited-date {
+    color: nb-theme(color-fg-heading);
+
+    @include nb-for-theme(cosmic) {
+      color: nb-theme(color-fg);
+    }
+  }
+
   .title {
     font-size: 0.875rem;
   }
 
   .value {
-    color: nb-theme(color-fg-heading);
+    color: nb-theme(color-success);
+
+    @include nb-for-theme(cosmic) {
+      color: nb-theme(color-fg-heading);
+    }
   }
 
   @include nb-for-theme(cosmic) {
