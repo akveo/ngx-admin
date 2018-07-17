@@ -8,17 +8,21 @@
 
   .leaflet-container {
     height: 100%;
-    background-color: nb-theme(color-bg);
+    background-color: nb-theme(layout-bg);
   }
 
   /deep/ .leaflet-control-zoom {
     border: none;
 
     a {
-      background-color: nb-theme(color-primary);
+      background-color: nb-theme(color-success);
       color: nb-theme(color-white);
       border-bottom: none;
       height: 2.5rem;
+
+      @include nb-for-theme(cosmic) {
+        background-color: nb-theme(color-primary);
+      }
     }
 
     .leaflet-control-zoom-in {
@@ -31,7 +35,5 @@
       border-bottom-left-radius: nb-theme(btn-border-radius);
       border-bottom-right-radius: nb-theme(btn-border-radius);
     }
-
   }
-
 }

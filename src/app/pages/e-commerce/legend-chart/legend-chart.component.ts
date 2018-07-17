@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 
-import { NgdLEgendItemColor } from './enum.legend-item-color';
+import { NgxLegendItemColor } from './enum.legend-item-color';
 
 @Component({
   selector: 'ngx-legend-chart',
@@ -15,5 +15,5 @@ export class ECommerceLegendChartComponent {
    * @type {{iconColor: string; title: string}[]}
    */
   @Input()
-  legendItems: {iconColor: NgdLEgendItemColor; title: string}[];
+  legendItems: {iconColor: NgxLegendItemColor; title: string}[];
 }
