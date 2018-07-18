@@ -16,13 +16,14 @@ export class NuxeoService {
     private blobDocument$ = new Subject<[object]>();
     private blobDocument: object[];
 
-
     private updateDoc$ = new Subject<[object]>();
     private updateDoc: object[];
 
     constructor() {
         this.documentos = [];
         this.blobDocument = [];
+        this.updateDoc = [];
+
         NuxeoService.nuxeo = new Nuxeo({
             baseURL: GENERAL.ENTORNO.NUXEO.PATH,
             auth: {
@@ -43,13 +44,13 @@ export class NuxeoService {
         return this.blobDocument$.asObservable();
     }
 
-    public updateDocument$(file, document, documentoService): Observable<object[]> {
-        this.updateFile(file, document, documentoService, this);
+    public updateDocument$(files, documentoService): Observable<object[]> {
+        this.updateFile(files, documentoService, this);
         return this.updateDoc$.asObservable();
     }
 
     saveFiles(files, documentoService, nuxeoservice) {
-        console.info(this.documentos);
+        this.documentos = [];
         NuxeoService.nuxeo.connect()
             .then(function (client) {
                 files.forEach(file => {
@@ -103,44 +104,51 @@ export class NuxeoService {
             });
     }
 
-    updateFile(file, documento, documentoService, nuxeoservice) {
-        console.info(this.updateDoc);
-        if (file.file !== undefined) {
-            const nuxeoBlob = new Nuxeo.Blob({ content: file.file });
-            documentoService.get('documento?query=Id:' + documento)
-                .subscribe(res => {
-                    if (res !== null) {
-                        const documento_temp = <any>res[0];
-                        console.info(res);
-                        console.info(this.documentos);
-                        NuxeoService.nuxeo.connect()
-                        NuxeoService.nuxeo.batchUpload()
-                            .upload(nuxeoBlob)
-                            .then(function (response) {
-                                NuxeoService.nuxeo.operation('Blob.AttachOnDocument')
-                                    .params({
-                                        type: documento_temp.TipoDocumento.TipoDocumentoNuxeo,
-                                        name: documento_temp.Nombre,
-                                        properties: 'dc:title=' + file.nombre,
-                                    })
-                                    .param('document', documento_temp.Enlace)
-                                    .input(response.blob)
-                                    .execute()
-                                    .then(function (respuesta) {
-                                        nuxeoservice.updateDoc.push(respuesta);
-                                        nuxeoservice.updateDoc$.next(nuxeoservice.updateDoc);
-                                    });
-                            });
-                    }
-                });
-        } else {
-            nuxeoservice.updateDoc.push(false);
-            nuxeoservice.updateDoc$.next(nuxeoservice.updateDoc);
-        }
+    updateFile(files, documentoService, nuxeoservice) {
+        this.updateDoc = [];
+        files.forEach(file => {
+            if (file.file !== undefined) {
+                const nuxeoBlob = new Nuxeo.Blob({ content: file.file });
+                documentoService.get('documento?query=Id:' + file.documento)
+                    .subscribe(res => {
+                        if (res !== null) {
+                            const documento_temp = <any>res[0];
+                            console.info(this.documentos);
+                            NuxeoService.nuxeo.connect()
+                            NuxeoService.nuxeo.batchUpload()
+                                .upload(nuxeoBlob)
+                                .then(function (response) {
+                                    NuxeoService.nuxeo.operation('Blob.AttachOnDocument')
+                                        .params({
+                                            type: documento_temp.TipoDocumento.TipoDocumentoNuxeo,
+                                            name: documento_temp.Nombre,
+                                            properties: 'dc:title=' + file.nombre,
+                                        })
+                                        .param('document', documento_temp.Enlace)
+                                        .input(response.blob)
+                                        .execute()
+                                        .then(function (respuesta) {
+                                            respuesta.blob()
+                                                .then(function (responseblob) {
+                                                    const url = URL.createObjectURL(responseblob);
+                                                    const response_update = {
+                                                        documento: documento_temp,
+                                                        url: url,
+                                                    };
+                                                    console.info(response_update);
+                                                    nuxeoservice.updateDoc.push(response_update);
+                                                    nuxeoservice.updateDoc$.next(nuxeoservice.updateDoc);
+                                                });
+                                        });
+                                });
+                        }
+                    });
+            }
+        });
     };
 
     getFile(Ids, documentoService, nuxeoservice) {
-        console.info(this.blobDocument);
+        this.blobDocument = [];
         Ids.forEach(Id => {
             documentoService.get('documento/' + Id)
                 .subscribe(res => {

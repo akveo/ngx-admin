@@ -24,6 +24,7 @@ export class CrudInfoPersonaComponent implements OnInit {
   filesUp: any;
   uidFile: any;
   Foto: any;
+  Documento: any;
   config: ToasterConfig;
   info_persona_id: number;
 
@@ -155,13 +156,23 @@ export class CrudInfoPersonaComponent implements OnInit {
       .then((willDelete) => {
         if (willDelete.value) {
           this.info_info_persona = <any>infoPersona;
-          console.info(infoPersona);
-          this.nuxeoService.updateDocument$(this.info_info_persona.Foto, this.Foto, this.documentoService)
+          const files = [];
+          if (this.info_info_persona.Foto.file !== undefined) {
+            files.push({file: this.info_info_persona.Foto.file, documento: this.Foto});
+          }
+          if (this.info_info_persona.Documento.file !== undefined) {
+            files.push({file: this.info_info_persona.Documento.file, documento: this.Documento});
+          }
+          console.info(files);
+          this.nuxeoService.updateDocument$(files, this.documentoService)
             .subscribe(response => {
+              let documentos_actualizados: any[];
+              documentos_actualizados = response;
               console.info(response);
               this.info_info_persona.Foto = this.Foto;
               this.campusMidService.put('persona/ActualizarPersona', this.info_info_persona)
                 .subscribe(res => {
+                  this.info_info_persona.Foto = documentos_actualizados[0].url + '';
                   this.eventChange.emit(true);
                   this.loadInfoPersona();
                   this.showToast('info', this.translate.instant('GLOBAL.actualizar'),
