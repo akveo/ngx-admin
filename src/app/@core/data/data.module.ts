@@ -9,6 +9,8 @@ import { PlayerService } from './player.service';
 import { UserActivityService } from './user-activity.service';
 import { OrdersChartService } from './orders-chart.service';
 import { ProfitChartService } from './profit-chart.service';
+import { TrafficListService } from './traffic-list.service';
+import { PeriodsService } from './periods.service';
 
 const SERVICES = [
   UserService,
@@ -19,6 +21,8 @@ const SERVICES = [
   UserActivityService,
   OrdersChartService,
   ProfitChartService,
+  TrafficListService,
+  PeriodsService,
 ];
 
 @NgModule({
