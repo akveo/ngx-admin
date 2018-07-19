@@ -4,6 +4,7 @@ import { ImplicitAutenticationService } from '../../../@core/utils/implicit_aute
 import { NuxeoService } from '../../../@core/utils/nuxeo.service';
 import { Genero } from './../../../@core/data/models/genero';
 import { InfoPersona } from './../../../@core/data/models/info_persona';
+import { Documento } from './../../../@core/data/models/documento';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { PersonaService } from '../../../@core/data/persona.service';
 import { EnteService } from '../../../@core/data/ente.service';
@@ -22,7 +23,6 @@ import 'style-loader!angular2-toaster/toaster.css';
 })
 export class CrudInfoPersonaComponent implements OnInit {
   filesUp: any;
-  uidFile: any;
   Foto: any;
   SoporteDocumento: any;
   config: ToasterConfig;
@@ -133,9 +133,13 @@ export class CrudInfoPersonaComponent implements OnInit {
             console.info(files);
             this.nuxeoService.getDocumentoById$(files, this.documentoService)
               .subscribe(response => {
-                this.info_info_persona = temp;
-                this.Foto = this.info_info_persona.Foto;
-                this.info_info_persona.Foto = response[0] + '';
+                if (response.length === files.length) {
+                  this.info_info_persona = temp;
+                  this.Foto = this.info_info_persona.Foto;
+                  this.SoporteDocumento = this.info_info_persona.SoporteDocumento;
+                  this.info_info_persona.Foto = response[0] + '';
+                  this.info_info_persona.SoporteDocumento = response[1] + '';
+                }
               });
 
           }
@@ -214,19 +218,27 @@ export class CrudInfoPersonaComponent implements OnInit {
           }
           this.nuxeoService.getDocumentos$(array, this.documentoService)
             .subscribe(response => {
-              const files = <any[]>response;
-              this.info_info_persona.Foto = files[0].Body.Id;
-              this.info_info_persona.SoporteDocumento = files[1].Body.Id;
-              this.info_info_persona.Usuario = this.autenticationService.getPayload().sub;
-              console.info(JSON.stringify(this.info_info_persona));
-              this.campusMidService.post('persona/GuardarPersona', this.info_info_persona)
-                .subscribe(res => {
-                  console.info(res);
-                  this.info_info_persona = <InfoPersona>res;
-                  this.eventChange.emit(true);
-                  this.showToast('info', this.translate.instant('GLOBAL.crear'),
-                    this.translate.instant('GLOBAL.info_persona') + ' ' + this.translate.instant('GLOBAL.confirmarCrear'));
-                });
+              if (response.length === array.length) {
+                this.filesUp = <Documento[]>response;
+                console.info(this.filesUp);
+                const foto = this.filesUp[0];
+                const soporte = this.filesUp[1];
+                console.info('foto', foto);
+                console.info('soporte', soporte);
+                this.info_info_persona.Foto = this.filesUp[0].Id;
+                this.info_info_persona.SoporteDocumento = this.filesUp[1].Id;
+                this.info_info_persona.Usuario = this.autenticationService.getPayload().sub;
+                console.info(JSON.stringify(this.info_info_persona));
+                this.campusMidService.post('persona/GuardarPersona', this.info_info_persona)
+                  .subscribe(res => {
+                    console.info(res);
+                    this.info_info_persona = <InfoPersona>res;
+                    this.eventChange.emit(true);
+                    this.showToast('info', this.translate.instant('GLOBAL.crear'),
+                      this.translate.instant('GLOBAL.info_persona') + ' ' + this.translate.instant('GLOBAL.confirmarCrear'));
+                  });
+              }
+
             })
         }
       });
@@ -238,6 +250,7 @@ export class CrudInfoPersonaComponent implements OnInit {
   validarForm(event) {
     if (event.valid) {
       if (this.info_info_persona === undefined) {
+        console.info('create', event);
         this.createInfoPersona(event.data.InfoPersona);
       } else {
         this.updateInfoPersona(event.data.InfoPersona);

@@ -12,7 +12,6 @@ import { environment } from './environments/environment';
 if (environment.production) {
   enableProdMode();
 }
-
 if (window.localStorage.getItem('access_token') === null ||
   window.localStorage.getItem('access_token') === undefined) {
   const params = {},

@@ -51,6 +51,7 @@ export class NuxeoService {
 
     saveFiles(files, documentoService, nuxeoservice) {
         this.documentos = [];
+        nuxeoservice.documentos = [];
         NuxeoService.nuxeo.connect()
             .then(function (client) {
                 files.forEach(file => {
@@ -58,6 +59,7 @@ export class NuxeoService {
                         .subscribe(res => {
                             if (res !== null) {
                                 const tipoDocumento = <TipoDocumento>res;
+                                console.info(tipoDocumento);
                                 NuxeoService.nuxeo.operation('Document.Create')
                                     .params({
                                         type: tipoDocumento.TipoDocumentoNuxeo,
@@ -83,19 +85,20 @@ export class NuxeoService {
                                                         documentoPost.TipoDocumento = tipoDocumento;
                                                         documentoService.post('documento', documentoPost)
                                                             .subscribe(resuestaPost => {
-                                                                nuxeoservice.documentos.push(resuestaPost);
-                                                                if (nuxeoservice.documentos.lenght === files.lenght) {
-                                                                    nuxeoservice.documentos$.next(nuxeoservice.documentos);
-                                                                }
+                                                                console.info(nuxeoservice.documentos)
+                                                                nuxeoservice.documentos.push(resuestaPost.Body);
+                                                                nuxeoservice.documentos$.next(nuxeoservice.documentos);
                                                             })
 
                                                     });
                                             })
                                             .catch(function (error) {
+                                                console.info(error);
                                                 return error;
                                             });
                                     })
                                     .catch(function (error) {
+                                        console.info(error);
                                         return error;
                                     })
                             }
@@ -106,6 +109,7 @@ export class NuxeoService {
 
     updateFile(files, documentoService, nuxeoservice) {
         this.updateDoc = [];
+        nuxeoservice.updateDoc = [];
         files.forEach(file => {
             if (file.file !== undefined) {
                 const nuxeoBlob = new Nuxeo.Blob({ content: file.file });
@@ -149,6 +153,7 @@ export class NuxeoService {
 
     getFile(Ids, documentoService, nuxeoservice) {
         this.blobDocument = [];
+        nuxeoservice.blobDocument = [];
         Ids.forEach(Id => {
             documentoService.get('documento/' + Id)
                 .subscribe(res => {
@@ -164,9 +169,7 @@ export class NuxeoService {
                                                 .then(function (responseblob) {
                                                     const url = URL.createObjectURL(responseblob)
                                                     nuxeoservice.blobDocument.push(url);
-                                                    if (nuxeoservice.blobDocument.lenght === Ids.lenght) {
-                                                        nuxeoservice.blobDocument$.next(nuxeoservice.blobDocument);
-                                                    }
+                                                    nuxeoservice.blobDocument$.next(nuxeoservice.blobDocument);
                                                 });
                                         })
                                         .catch(function (response2) {

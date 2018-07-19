@@ -365,11 +365,11 @@
                 </div>
                 <div class="col-4">
                   <nb-card-body class="col-4" *ngIf="c.tipo == 'image'">
-                    <img id="{{c.nombre}}" class="carousel-image" [src]="c.url" (click)="download(c.urlTemp)" class="img-thumbnail" alt="Foto"
+                    <img id="{{c.nombre}}" class="carousel-image" [src]="c.url" (click)="download(c.urlTemp,c.nombre,300,300)" class="img-thumbnail" alt="Foto"
                       width="100px" height="100px">
                   </nb-card-body>
                   <nb-card-body class="col-4" *ngIf="!(c.tipo == 'image')">
-                    <img class="carousel-image" [src]="'assets/images/file.png'" (click)="download(c.urlTemp)" class="img-thumbnail" alt="Foto"
+                    <img class="carousel-image" [src]="'assets/images/file.png'" (click)="download(c.urlTemp,c.nombre,500,500)" class="img-thumbnail" alt="Foto"
                       width="100px" height="100px">
                   </nb-card-body>
                 </div>

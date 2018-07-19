@@ -1,80 +1,98 @@
 @import '../../../@theme/styles/themes';
 @import '~bootstrap/scss/mixins/breakpoints';
 @import '~@nebular/theme/styles/global/bootstrap/breakpoints';
-
 @include nb-install-component() {
-
   /deep/ .mat-input-element::placeholder {
     color: transparentize($color: nb-theme(color-fg-heading), $amount: 0.6);
   }
+
   /deep/ .mat-input-placeholder {
     color: nb-theme(color-fg-text);
   }
+
   /deep/ .mat-select-value {
     color: nb-theme(color-fg-text);
   }
+
   /deep/ .mat-select-placeholder {
     color: transparentize($color: nb-theme(color-fg-heading), $amount: 0.6);
   }
+
   /deep/ .mat-form-field-underline {
     background-color: nb-theme(form-control-border-color);
   }
+
   nb-card-body {
     overflow: visible;
   }
+
   .input-group {
     margin-bottom: 1rem;
   }
+
   legend {
     padding: 10px;
   }
+
   .validation-checkboxes {
     display: flex;
     justify-content: space-between;
+
     .custom-control {
       margin-left: 1rem;
     }
   }
+
   .dinamic-form {
     background-color: nb-theme(color-bg);
     color: nb-theme(card-fg-heading);
     padding: 1rem;
   }
+
   .demo-checkboxes {
     display: flex;
     flex-direction: column;
     margin-bottom: 1rem;
   }
+
   .demo-radio {
     display: flex;
     flex-direction: column;
     margin-bottom: 1rem;
   }
+
   .demo-disabled-checkbox-radio {
     display: flex;
     flex-direction: column;
     margin-bottom: 1rem;
   }
+
   .demo-checkboxes-radio {
     display: flex;
     justify-content: space-between;
   }
+
   .demo-rating {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
   }
+
   textarea {
     border-color: none !important;
     border: none !important;
   }
+
   .star {
     font-size: 1.5rem;
     color: nb-theme(color-fg);
   }
+
   .filled {
     color: nb-theme(color-fg);
-  } // TODO: Replace with the card header styles mixin
+  }
+  // TODO: Replace with the card header styles mixin
+
   .rating-header {
     line-height: 2rem;
     font-size: 1.25rem;
@@ -82,19 +100,24 @@
     font-weight: nb-theme(font-weight-bolder);
     color: nb-theme(color-fg-heading);
   }
+
   .current-rate {
     font-size: 1.5rem;
     padding-left: 1rem;
     color: nb-theme(color-fg-heading);
   }
+
   .full-name-inputs {
     display: flex;
   }
+
   .input-group.has-person-icon {
     position: relative;
+
     .form-control {
       padding-left: 3rem;
     }
+
     &::before {
       content: '\F47D';
       font-family: 'Ionicons';
@@ -102,24 +125,28 @@
       position: absolute;
       z-index: 100;
       left: 1rem;
-      top: 0.25rem;
+      top: .25rem;
     }
   }
+
   .dropdown {
     min-width: 7rem;
   }
+
   .dropdown-menu {
     width: auto;
   }
+
   .form-group label {
     padding-right: 1rem;
     text-align: left;
     vertical-align: middle;
   }
+
   nb-card {
     padding: 1rem;
   }
-  
+
   .fieldseter {
     display: flow-root;
     -moz-padding-start: 1rem;
@@ -135,7 +162,7 @@
 
     min-width: -moz-min-content;
     border-width: 2px;
-    border-radius: 0.4rem;
+    border-radius: .4rem;
     border-style: groove;
     border-color: nb-theme(color-success);
     @include nb-for-theme(cosmic) {
@@ -143,9 +170,14 @@
     }
   }
 
+  img {
+    cursor: pointer;
+    }
+
   ngb-rating {
     outline: none;
   }
+
   ngb-rating i {
     color: nb-theme(color-success);
     @include nb-for-theme(cosmic) {
@@ -154,8 +186,8 @@
   }
   @include media-breakpoint-down(xs) {
     button:not(.btn-icon) {
-      padding: 0.75rem 1rem;
-      font-size: 0.75rem;
+      padding: .75rem 1rem;
+      font-size: .75rem;
     }
   }
 }
