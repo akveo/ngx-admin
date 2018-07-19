@@ -169,25 +169,28 @@ export class CrudInfoPersonaComponent implements OnInit {
           if (this.info_info_persona.Foto.file !== undefined) {
             files.push({ file: this.info_info_persona.Foto.file, documento: this.Foto });
           }
-          if (this.info_info_persona.Documento.file !== undefined) {
-            files.push({ file: this.info_info_persona.Documento.file, documento: this.SoporteDocumento });
+          if (this.info_info_persona.SoporteDocumento.file !== undefined) {
+            files.push({ file: this.info_info_persona.SoporteDocumento.file, documento: this.SoporteDocumento });
           }
           console.info(files);
           this.nuxeoService.updateDocument$(files, this.documentoService)
             .subscribe(response => {
-              let documentos_actualizados: any[];
-              documentos_actualizados = response;
-              console.info(response);
-              this.info_info_persona.Foto = this.Foto;
-              this.campusMidService.put('persona/ActualizarPersona', this.info_info_persona)
-                .subscribe(res => {
-                  this.info_info_persona.Foto = documentos_actualizados[0].url + '';
-                  this.eventChange.emit(true);
-                  this.loadInfoPersona();
-                  this.showToast('info', this.translate.instant('GLOBAL.actualizar'),
-                    this.translate.instant('GLOBAL.info_persona') + ' ' +
-                    this.translate.instant('GLOBAL.confirmarActualizar'));
-                });
+              if (response.length === files.length) {
+                let documentos_actualizados: any[];
+                documentos_actualizados = response;
+                console.info(response);
+                this.info_info_persona.Foto = this.Foto;
+                this.info_info_persona.SoporteDocumento = this.SoporteDocumento;
+                this.campusMidService.put('persona/ActualizarPersona', this.info_info_persona)
+                  .subscribe(res => {
+                    this.info_info_persona.Foto = documentos_actualizados[0].url + '';
+                    this.eventChange.emit(true);
+                    this.loadInfoPersona();
+                    this.showToast('info', this.translate.instant('GLOBAL.actualizar'),
+                      this.translate.instant('GLOBAL.info_persona') + ' ' +
+                      this.translate.instant('GLOBAL.confirmarActualizar'));
+                  });
+              }
             });
         }
       });
