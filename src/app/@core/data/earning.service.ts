@@ -44,7 +44,7 @@ export class EarningService {
       liveChart: [],
       delta: {
         up: true,
-        value: 4
+        value: 4,
       },
       dailyIncome: 45895,
     },
@@ -67,7 +67,7 @@ export class EarningService {
   };
 
   generateRandomEarningLiveUpdateChartData(currency) {
-    let data = this.liveUpdateChartData[currency.toLowerCase()];
+    const data = this.liveUpdateChartData[currency.toLowerCase()];
 
     data.liveChart = this.getRandomData(12);
 

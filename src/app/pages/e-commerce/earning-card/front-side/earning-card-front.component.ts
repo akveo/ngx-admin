@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnDestroy, Output } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { EarningService, PieChart } from '../../../../@core/data/earning.service';
 import { takeWhile } from 'rxjs/operators';
 
@@ -7,10 +7,10 @@ import { takeWhile } from 'rxjs/operators';
   styleUrls: ['./earning-card-front.component.scss'],
   templateUrl: './earning-card-front.component.html',
 })
-export class EarningCardFrontComponent implements OnDestroy{
+export class EarningCardFrontComponent implements OnDestroy {
   private alive = true;
 
-  earningPieChartData: PieChart;
+  earningPieChartData: PieChart[];
   name: string;
   color: string;
   value: number;

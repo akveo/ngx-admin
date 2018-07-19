@@ -40,7 +40,7 @@ export class EarningLiveUpdateChartComponent implements AfterViewInit, OnDestroy
     this.themeSubscription = this.theme.getJsTheme()
       .pipe(
         delay(1),
-        takeWhile(() => this.alive)
+        takeWhile(() => this.alive),
       )
       .subscribe(config => {
         const trafficTheme: any = config.variables.traffic;
@@ -54,7 +54,7 @@ export class EarningLiveUpdateChartComponent implements AfterViewInit, OnDestroy
 
   appendRandomData() {
     // TODO: move from this file, set new data as input
-    let newPoints = [...this.liveUpdateChartData];
+    const newPoints = [...this.liveUpdateChartData];
 
     this.timeTicket = setInterval( () => {
       const max = 500;
@@ -66,8 +66,8 @@ export class EarningLiveUpdateChartComponent implements AfterViewInit, OnDestroy
 
       this.echartsInstance.setOption({
         series: [{
-          data: newPoints
-        }]
+          data: newPoints,
+        }],
       });
     }, 700);
   }
@@ -146,8 +146,8 @@ export class EarningLiveUpdateChartComponent implements AfterViewInit, OnDestroy
 
     this.echartsInstance.setOption({
       series: [{
-        data: chartData
-      }]
+        data: chartData,
+      }],
     });
 
     this.appendRandomData();
