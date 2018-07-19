@@ -14,8 +14,12 @@ import { StatsAreaChartComponent } from './profit-card/front-side/stats-area-cha
 import { StatsBarChartComponent } from './profit-card/back-side/stats-bar-chart.component';
 import { StatsCardFrontComponent } from './profit-card/front-side/stats-card-front.component';
 import { ECommerceChartsPanelComponent } from './charts-panel/charts-panel.component';
-import { TrafficCardComponent } from './traffic-card/traffic-card.component';
-import { TrafficBarChartComponent } from './traffic-card/traffic-bar-chart.component';
+import { TrafficRevealCardComponent } from './traffic-reveal-card/traffic-reveal-card.component';
+import { TrafficBarChartComponent } from './traffic-reveal-card/front-side/traffic-bar-chart.component';
+import { TrafficFrontCardComponent } from './traffic-reveal-card/front-side/traffic-front-card.component';
+import { TrafficCardsHeaderComponent } from './traffic-reveal-card/traffic-cards-header/traffic-cards-header.component';
+import { TrafficBackCardComponent } from './traffic-reveal-card/back-side/traffic-back-card.component';
+import { TrafficBarComponent } from './traffic-reveal-card/back-side/traffic-bar/traffic-bar.component';
 import {
   ECommerceVisitorsAnalyticsComponent,
 } from './visitors-analytics/visitors-analytics.component';
@@ -60,8 +64,12 @@ import { EarningLiveUpdateChartComponent } from './earning-card/back-side/earnin
     OrdersChartComponent,
     ProfitChartComponent,
     StatsCardBackComponent,
-    TrafficCardComponent,
+    TrafficRevealCardComponent,
     TrafficBarChartComponent,
+    TrafficFrontCardComponent,
+    TrafficBackCardComponent,
+    TrafficBarComponent,
+    TrafficCardsHeaderComponent,
     CountryOrdersComponent,
     CountryOrdersMapComponent,
     CountryOrdersChartComponent,

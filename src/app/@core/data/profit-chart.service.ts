@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { of as observableOf,  Observable } from 'rxjs';
+import { PeriodsService } from './periods.service';
 
 export class ProfitChart {
   chartLabel: string[];
@@ -8,23 +9,6 @@ export class ProfitChart {
 
 @Injectable()
 export class ProfitChartService {
-
-  private month = [
-    'Jan', 'Feb', 'Mar',
-    'Apr', 'May', 'Jun',
-    'Jul', 'Aug', 'Sep',
-    'Oct', 'Nov', 'Dec',
-  ];
-
-  private week = [
-    'Sun',
-    'Mon',
-    'Tue',
-    'Wed',
-    'Thu',
-    'Fri',
-    'Sat',
-  ];
 
   private year = [
     '2012',
@@ -36,17 +20,21 @@ export class ProfitChartService {
     '2018',
   ];
 
-  private data = {
-    week: this.getDataForWeekPeriod(),
-    month: this.getDataForMonthPeriod(),
-    year: this.getDataForYearPeriod(),
-  };
+  private data = { };
+
+  constructor(private period: PeriodsService) {
+    this.data = {
+      week: this.getDataForWeekPeriod(),
+      month: this.getDataForMonthPeriod(),
+      year: this.getDataForYearPeriod(),
+    };
+  }
 
   private getDataForWeekPeriod(): ProfitChart {
-    const nPoint = this.week.length;
+    const nPoint = this.period.getWeeks().length;
 
     return {
-      chartLabel: this.week,
+      chartLabel: this.period.getWeeks(),
       data: [
         this.getRandomData(nPoint),
         this.getRandomData(nPoint),
@@ -56,10 +44,10 @@ export class ProfitChartService {
   }
 
   private getDataForMonthPeriod(): ProfitChart {
-    const nPoint = this.month.length;
+    const nPoint = this.period.getMonths().length;
 
     return {
-      chartLabel: this.month,
+      chartLabel: this.period.getMonths(),
       data: [
         this.getRandomData(nPoint),
         this.getRandomData(nPoint),

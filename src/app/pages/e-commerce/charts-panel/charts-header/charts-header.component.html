@@ -5,11 +5,15 @@
        [ngClass]="{ 'ghost-dropdown': currentTheme === 'corporate' }"
        ngbDropdown>
     <button type="button" ngbDropdownToggle class="btn"
-            [ngClass]="{ 'btn-success': currentTheme === 'default', 'btn-primary': currentTheme !== 'default'}">
+            [ngClass]="{
+              'btn-outline-success': currentTheme === 'default',
+              'btn-primary': currentTheme !== 'default'}">
       {{ type }}
     </button>
     <ul class="dropdown-menu" ngbDropdownMenu>
-      <li class="dropdown-item" *ngFor="let period of types" (click)="changePeriod(period)">{{ period }}</li>
+      <li class="dropdown-item" *ngFor="let period of types" (click)="changePeriod(period)">
+        {{ period }}
+      </li>
     </ul>
   </div>
 </div>
