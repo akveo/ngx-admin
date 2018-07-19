@@ -24,7 +24,7 @@ export class CrudInfoPersonaComponent implements OnInit {
   filesUp: any;
   uidFile: any;
   Foto: any;
-  Documento: any;
+  SoporteDocumento: any;
   config: ToasterConfig;
   info_persona_id: number;
 
@@ -123,10 +123,15 @@ export class CrudInfoPersonaComponent implements OnInit {
         .subscribe(res => {
           if (res !== null) {
             const temp = <InfoPersona>res;
-            console.info(temp);
-            const foto = [];
-            foto.push(temp.Foto);
-            this.nuxeoService.getDocumentoById$(foto, this.documentoService)
+            const files = []
+            if (temp.Foto + '' !== '0') {
+              files.push(temp.Foto);
+            }
+            if (temp.SoporteDocumento + '' !== '0') {
+              files.push(temp.SoporteDocumento);
+            }
+            console.info(files);
+            this.nuxeoService.getDocumentoById$(files, this.documentoService)
               .subscribe(response => {
                 this.info_info_persona = temp;
                 this.Foto = this.info_info_persona.Foto;
@@ -158,10 +163,10 @@ export class CrudInfoPersonaComponent implements OnInit {
           this.info_info_persona = <any>infoPersona;
           const files = [];
           if (this.info_info_persona.Foto.file !== undefined) {
-            files.push({file: this.info_info_persona.Foto.file, documento: this.Foto});
+            files.push({ file: this.info_info_persona.Foto.file, documento: this.Foto });
           }
           if (this.info_info_persona.Documento.file !== undefined) {
-            files.push({file: this.info_info_persona.Documento.file, documento: this.Documento});
+            files.push({ file: this.info_info_persona.Documento.file, documento: this.SoporteDocumento });
           }
           console.info(files);
           this.nuxeoService.updateDocument$(files, this.documentoService)
@@ -200,12 +205,18 @@ export class CrudInfoPersonaComponent implements OnInit {
         if (willDelete.value) {
           const array = []
           this.info_info_persona = <any>infoPersona;
-          array.push({ nombre: this.autenticationService.getPayload().sub, file: this.info_info_persona.Foto.file, IdDocumento: 1 });
+          console.info(this.info_info_persona);
+          if (this.info_info_persona.Foto.file !== undefined) {
+            array.push({ nombre: this.autenticationService.getPayload().sub, file: this.info_info_persona.Foto.file, IdDocumento: 1 });
+          }
+          if (this.info_info_persona.SoporteDocumento.file !== undefined) {
+            array.push({ nombre: this.autenticationService.getPayload().sub, file: this.info_info_persona.SoporteDocumento.file, IdDocumento: 2 });
+          }
           this.nuxeoService.getDocumentos$(array, this.documentoService)
             .subscribe(response => {
-              const foto = <any[]>response;
-              console.info(foto);
-              this.info_info_persona.Foto = foto[0].Body.Id;
+              const files = <any[]>response;
+              this.info_info_persona.Foto = files[0].Body.Id;
+              this.info_info_persona.SoporteDocumento = files[1].Body.Id;
               this.info_info_persona.Usuario = this.autenticationService.getPayload().sub;
               console.info(JSON.stringify(this.info_info_persona));
               this.campusMidService.post('persona/GuardarPersona', this.info_info_persona)
