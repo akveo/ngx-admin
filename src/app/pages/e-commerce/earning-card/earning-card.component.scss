@@ -11,7 +11,7 @@
     cursor: pointer;
   }
 
-  ::ng-deep .flipped {
+  /deep/ .flipped {
     .back-container {
       .nb-arrow-right {
         transform: scaleX(-1);
@@ -23,5 +23,24 @@
         display: none;
       }
     }
+  }
+
+  ngx-earning-card-back, ngx-earning-card-front {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  /deep/ nb-card-header {
+    display: flex;
+    justify-content: space-between;
+    @include nb-rtl(flex-direction, row-reverse);
+    padding-left: 1rem;
+    border-bottom: none;
+  }
+
+  /deep/ nb-card-body {
+    overflow: hidden;
+    display: flex;
   }
 }
