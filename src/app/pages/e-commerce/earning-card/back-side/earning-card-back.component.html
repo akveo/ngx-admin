@@ -1,0 +1,26 @@
+<nb-card-header>
+  <div class="dropdown"
+       [ngClass]="{ 'ghost-dropdown': currentTheme === 'corporate' }"
+       ngbDropdown>
+    <button type="button" ngbDropdownToggle class="btn"
+            [ngClass]="{ 'btn-success': currentTheme === 'default', 'btn-primary': currentTheme !== 'default'}">
+      {{ selectedCurrency }}
+    </button>
+    <ul class="dropdown-menu" ngbDropdownMenu>
+      <li class="dropdown-item" *ngFor="let currency of currencies" (click)="changeCurrency(currency)">{{ currency }}</li>
+    </ul>
+  </div>
+</nb-card-header>
+<nb-card-body>
+  <div class="chart-info">
+    <div class="title">Daily Income</div>
+    <div class="value">{{ earningLiveUpdateChartData.dailyIncome | ngxNumberWithCommas }}</div>
+    <div class="delta"
+         [class.up]="earningLiveUpdateChartData.delta.up"
+         [class.down]="!earningLiveUpdateChartData.delta.up">
+      {{ earningLiveUpdateChartData.delta.value }}%
+    </div>
+  </div>
+  <ngx-earning-live-update-chart [liveUpdateChartData]="earningLiveUpdateChartData.liveChart">
+  </ngx-earning-live-update-chart>
+</nb-card-body>

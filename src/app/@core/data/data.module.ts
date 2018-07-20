@@ -11,6 +11,7 @@ import { OrdersChartService } from './orders-chart.service';
 import { ProfitChartService } from './profit-chart.service';
 import { TrafficListService } from './traffic-list.service';
 import { PeriodsService } from './periods.service';
+import { EarningService } from './earning.service';
 import { OrdersProfitChartService } from './orders-profit-chart.service';
 
 const SERVICES = [
@@ -24,6 +25,7 @@ const SERVICES = [
   ProfitChartService,
   TrafficListService,
   PeriodsService,
+  EarningService,
   OrdersProfitChartService,
 ];
 

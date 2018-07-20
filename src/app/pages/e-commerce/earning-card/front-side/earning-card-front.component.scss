@@ -1,0 +1,31 @@
+@import '../../../../@theme/styles/themes';
+
+@include nb-install-component() {
+  ngx-earning-pie-chart, .chart-info {
+    flex: 1;
+  }
+
+  .chart-info {
+    padding-top: 0.7rem;
+  }
+
+  .title {
+    font-size: nb-theme(font-size-xlg);
+  }
+
+  .time-period {
+    margin-top: 1.5rem;
+  }
+
+  .value {
+    margin-top: 0.2rem;
+    font-size: 1.5rem;
+    color: nb-theme(color-white);
+  }
+
+  .echart {
+    position: absolute;
+    width: calc(50% - #{nb-theme(card-padding)});
+    height: calc(100% - 2 * #{nb-theme(card-padding)});
+  }
+}

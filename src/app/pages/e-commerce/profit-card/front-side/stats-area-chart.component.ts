@@ -2,8 +2,6 @@ import { delay } from 'rxjs/operators';
 import { AfterViewInit, Component, OnDestroy } from '@angular/core';
 import { NbThemeService } from '@nebular/theme';
 
-declare const echarts: any;
-
 const points = [300, 520, 435, 530, 730, 620, 660, 860];
 
 @Component({
@@ -15,8 +13,6 @@ const points = [300, 520, 435, 530, 730, 620, 660, 860];
 })
 export class StatsAreaChartComponent implements AfterViewInit, OnDestroy {
 
-  type = 'month';
-  types = ['week', 'month', 'year'];
   option: any = {};
   themeSubscription: any;
 
