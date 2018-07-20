@@ -37,7 +37,7 @@ export class TreeComponent implements OnInit {
       }],
     }],
   }];
-  
+
   options: ITreeOptions = {
     displayField: 'name',
     isExpandedField: 'expanded',
@@ -54,8 +54,6 @@ export class TreeComponent implements OnInit {
     animateSpeed: 30,
     animateAcceleration: 1.2,
   }
-
- 
 
   constructor(
     private modalService: NgbModal,
