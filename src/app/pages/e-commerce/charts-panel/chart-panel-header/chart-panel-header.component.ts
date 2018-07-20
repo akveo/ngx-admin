@@ -5,11 +5,11 @@ import { takeWhile } from 'rxjs/operators';
 import { NgxLegendItemColor } from '../../legend-chart/enum.legend-item-color';
 
 @Component({
-  selector: 'ngx-chart-header',
-  styleUrls: ['./charts-header.component.scss'],
-  templateUrl: './charts-header.component.html',
+  selector: 'ngx-chart-panel-header',
+  styleUrls: ['./chart-panel-header.component.scss'],
+  templateUrl: './chart-panel-header.component.html',
 })
-export class ChartsHeaderComponent implements OnDestroy {
+export class ChartPanelHeaderComponent implements OnDestroy {
 
   private alive = true;
 

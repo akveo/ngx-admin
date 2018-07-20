@@ -3,8 +3,9 @@ import { takeWhile } from 'rxjs/operators';
 
 import { OrdersChartComponent } from './charts/orders-chart.component';
 import { ProfitChartComponent } from './charts/profit-chart.component';
-import { OrdersChartService, OrdersChart } from '../../../@core/data/orders-chart.service';
-import { ProfitChartService, ProfitChart } from '../../../@core/data/profit-chart.service';
+import { OrdersChart } from '../../../@core/data/orders-chart.service';
+import { ProfitChart } from '../../../@core/data/profit-chart.service';
+import { OrdersProfitChartService, OrderProfitChartSummary } from '../../../@core/data/orders-profit-chart.service';
 
 @Component({
   selector: 'ngx-ecommerce-charts',
@@ -15,6 +16,7 @@ export class ECommerceChartsPanelComponent implements OnDestroy {
 
   private alive = true;
 
+  chartPanelSummary: OrderProfitChartSummary[];
   period: string = 'week';
   ordersChartData: OrdersChart;
   profitChartData: ProfitChart;
@@ -22,8 +24,13 @@ export class ECommerceChartsPanelComponent implements OnDestroy {
   @ViewChild('ordersChart') ordersChart: OrdersChartComponent;
   @ViewChild('profitChart') profitChart: ProfitChartComponent;
 
-  constructor(private ordersChartService: OrdersChartService,
-              private profitChartService: ProfitChartService) {
+  constructor(private ordersProfitChartService: OrdersProfitChartService) {
+    this.ordersProfitChartService.getOrderProfitChartSummary()
+      .pipe(takeWhile(() => this.alive))
+      .subscribe((summary) => {
+        this.chartPanelSummary = summary;
+      });
+
     this.getOrdersChartData(this.period);
     this.getProfitChartData(this.period);
   }
@@ -42,7 +49,7 @@ export class ECommerceChartsPanelComponent implements OnDestroy {
   }
 
   getOrdersChartData(period: string) {
-    this.ordersChartService.getOrdersChartData(period)
+    this.ordersProfitChartService.getOrdersChartData(period)
       .pipe(takeWhile(() => this.alive))
       .subscribe(ordersChartData => {
         this.ordersChartData = ordersChartData;
@@ -50,7 +57,7 @@ export class ECommerceChartsPanelComponent implements OnDestroy {
   }
 
   getProfitChartData(period: string) {
-    this.profitChartService.getProfitChartData(period)
+    this.ordersProfitChartService.getProfitChartData(period)
       .pipe(takeWhile(() => this.alive))
       .subscribe(profitChartData => {
         this.profitChartData = profitChartData;

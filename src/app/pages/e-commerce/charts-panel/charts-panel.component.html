@@ -2,15 +2,15 @@
   <nb-tabset fullWidth (changeTab)="changeTab($event)">
     <nb-tab tabTitle="Orders">
       <div class="chart-container">
-        <div class="indent"></div>
-        <ngx-chart-header (periodChange)="setPeriod($event)"></ngx-chart-header>
+        <ngx-chart-panel-summary [summary]="chartPanelSummary"></ngx-chart-panel-summary>
+        <ngx-chart-panel-header (periodChange)="setPeriod($event)"></ngx-chart-panel-header>
         <ngx-orders-chart #ordersChart [ordersChartData]="ordersChartData"></ngx-orders-chart>
       </div>
     </nb-tab>
     <nb-tab tabTitle="Profit" [lazyLoad]="true">
       <div class="chart-container">
-        <div class="indent"></div>
-        <ngx-chart-header (periodChange)="setPeriod($event)"></ngx-chart-header>
+        <ngx-chart-panel-summary [summary]="chartPanelSummary"></ngx-chart-panel-summary>
+        <ngx-chart-panel-header (periodChange)="setPeriod($event)"></ngx-chart-panel-header>
         <ngx-profit-chart #profitChart [profitChartData]="profitChartData"></ngx-profit-chart>
       </div>
     </nb-tab>

@@ -1,16 +1,11 @@
 @import '../../../@theme/styles/themes';
 
-$legend-green: #00977e;
-$legend-purple: #6935ca;
-$legend-blue: #3f4fda;
-$legend-yellow: #cf7c1c;
-
 @include nb-install-component() {
   .legends {
     display: flex;
     @include nb-rtl(flex-direction, row-reverse);
     color: nb-theme(color-fg);
-    padding: 0 0 0 2.75rem;
+    padding: 0 0 0 2.85rem;
   }
 
   .legend {
@@ -30,34 +25,18 @@ $legend-yellow: #cf7c1c;
 
     &.green-square {
       background: nb-theme(legend-chart-green-square-background);
-
-      @include nb-for-theme(cosmic) {
-        box-shadow: 0 3px 0 $legend-green;
-      }
     }
 
     &.purple-square {
       background: nb-theme(legend-chart-purple-square-background);
-
-      @include nb-for-theme(cosmic) {
-        box-shadow: 0 3px 0 $legend-purple;
-      }
     }
 
     &.blue-square {
       background: nb-theme(legend-chart-blue-square-background);
-
-      @include nb-for-theme(cosmic) {
-        box-shadow: 0 3px 0 $legend-blue;
-      }
     }
 
     &.yellow-square {
       background: nb-theme(legend-chart-yellow-square-background);
-
-      @include nb-for-theme(cosmic) {
-        box-shadow: 0 3px 0 $legend-yellow;
-      }
     }
   }
 
