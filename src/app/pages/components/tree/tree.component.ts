@@ -1,6 +1,6 @@
-import { Component , OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ViewChild } from '@angular/core';
-import { TreeComponent as AngularTreeComponent, TREE_ACTIONS,  ITreeOptions } from 'angular-tree-component';
+import { TreeComponent as AngularTreeComponent, TREE_ACTIONS, ITreeOptions } from 'angular-tree-component';
 import * as _ from 'lodash';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { InputComponent } from './input.component';
@@ -10,6 +10,9 @@ import { InputComponent } from './input.component';
   styleUrls: ['./tree.component.scss'],
 })
 export class TreeComponent implements OnInit {
+
+  @ViewChild(AngularTreeComponent)
+
   nodes = [{
     name: 'Programming languages by programming paradigm',
     children: [{
@@ -48,28 +51,33 @@ export class TreeComponent implements OnInit {
     animateSpeed: 30,
     animateAcceleration: 1.2,
   }
+
+  private tree: AngularTreeComponent;
+
   constructor(
     private modalService: NgbModal,
   ) { }
+
   ngOnInit() {
   }
-  @ViewChild(AngularTreeComponent)
-  private tree: AngularTreeComponent;
-  actionClick(node, tree, op) {
+
+
+  actionClick(node, tree, op): void {
     switch (op) {
       case 1:
-        this.openPopup(node, tree , 'Edit' , 1);
+        this.openPopup(node, tree, 'Edit', 1);
         break;
       case 2:
-        this.openPopup(node, tree , 'Add Node' , 2);
+        this.openPopup(node, tree, 'Add Node', 2);
         break;
       case 3:
-        this.openPopup(node, tree , 'Add Catagery', 3);
+        this.openPopup(node, tree, 'Add Catagery', 3);
         break;
       default: alert('Invalid Action');
     }
   }
-  openPopup(node , tree , header , ops) {
+
+  openPopup(node, tree, header, ops): void {
     const activeModal = this.modalService.open(InputComponent, { size: 'lg', container: 'nb-layout' });
     activeModal.componentInstance.modalHeader = header;
     activeModal.componentInstance.modalOperation = ops;
@@ -80,7 +88,8 @@ export class TreeComponent implements OnInit {
     }, () => {
     });
   }
-  deleteNode(node, tree) {
+
+  deleteNode(node, tree): void {
     if (confirm('Are you sure to delete ' + node.data.name)) {
       const parentNode = node.realParent ? node.realParent : node.treeModel.virtualRoot;
       _.remove(parentNode.data.children, function (child) {
