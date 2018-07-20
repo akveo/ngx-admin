@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { of as observableOf,  Observable } from 'rxjs';
 import { PeriodsService } from './periods.service';
 
 export class OrdersChart {
@@ -155,7 +154,7 @@ export class OrdersChartService {
     });
   }
 
-  getOrdersChartData(period: string): Observable<OrdersChart> {
-    return observableOf(this.data[period]);
+  getOrdersChartData(period: string): OrdersChart {
+    return this.data[period];
   }
 }

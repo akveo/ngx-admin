@@ -1,0 +1,18 @@
+@import '../../../../@theme/styles/themes';
+
+@include nb-install-component() {
+  .summary-container {
+    display: flex;
+    flex: 1;
+    background-color: rgba(0, 0, 0, 0.1);
+    box-shadow: nb-theme(chart-panel-summary-box-shadow);
+    justify-content: space-between;
+    padding: 1.5rem 4rem 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .value {
+    font-size: 2rem;
+    color: nb-theme(color-fg-heading);
+  }
+}
