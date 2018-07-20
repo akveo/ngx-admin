@@ -13,6 +13,8 @@ export class TreeComponent implements OnInit {
 
   @ViewChild(AngularTreeComponent)
 
+  tree: AngularTreeComponent;
+
   nodes = [{
     name: 'Programming languages by programming paradigm',
     children: [{
@@ -35,6 +37,7 @@ export class TreeComponent implements OnInit {
       }],
     }],
   }];
+  
   options: ITreeOptions = {
     displayField: 'name',
     isExpandedField: 'expanded',
@@ -52,7 +55,7 @@ export class TreeComponent implements OnInit {
     animateAcceleration: 1.2,
   }
 
-  private tree: AngularTreeComponent;
+ 
 
   constructor(
     private modalService: NgbModal,
