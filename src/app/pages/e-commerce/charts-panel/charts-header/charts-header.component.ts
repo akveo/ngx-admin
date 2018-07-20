@@ -21,15 +21,15 @@ export class ChartsHeaderComponent implements OnDestroy {
   chartLegend = [
     {
       iconColor: NgxLegendItemColor.GREEN,
-      title: 'All orders',
-    },
-    {
-      iconColor: NgxLegendItemColor.PURPLE,
       title: 'Payment',
     },
     {
-      iconColor: NgxLegendItemColor.BLUE,
+      iconColor: NgxLegendItemColor.PURPLE,
       title: 'Canceled',
+    },
+    {
+      iconColor: NgxLegendItemColor.LIGHT_PURPLE,
+      title: 'All orders',
     },
   ];
 

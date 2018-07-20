@@ -141,29 +141,23 @@ export const CORPORATE_THEME = {
       lineWidth: '4',
 
       // first line
-      firstLineGradFrom: 'rgba(55, 220, 136, 1)',
-      firstLineGradTo: 'rgba(55, 220, 136, 1)',
-      firstLineShadow: 'rgba(0, 0, 0, 0)',
-
-      firstAreaGradFrom: 'rgba(31 ,106, 124, 0.1)',
-      firstAreaGradTo: 'rgba(4, 126, 230, 0)',
+      firstAreaGradFrom: 'rgba(78, 64, 164, 0.3)',
+      firstAreaGradTo: 'rgba(78, 64, 164, 0.3)',
       firstShadowLineDarkBg: 'rgba(0, 0, 0, 0)',
 
       // second line
       secondLineGradFrom: 'rgba(164, 123, 255, 1)',
       secondLineGradTo: 'rgba(164, 123, 255, 1)',
-      secondLineShadow: 'rgba(0, 0, 0, 0)',
 
-      secondAreaGradFrom: 'rgba(188, 92, 255, 0.1)',
+      secondAreaGradFrom: 'rgba(188, 92, 255, 0.2)',
       secondAreaGradTo: 'rgba(188, 92, 255, 0)',
       secondShadowLineDarkBg: 'rgba(0, 0, 0, 0)',
 
       // third line
-      thirdLineGradFrom: 'rgba(67, 190, 255, 1)',
-      thirdLineGradTo: 'rgba(67, 190, 255, 1)',
-      thirdLineShadow: 'rgba(0, 0, 0, 0)',
+      thirdLineGradFrom: 'rgba(55, 220, 136, 1)',
+      thirdLineGradTo: 'rgba(55, 220, 136, 1)',
 
-      thirdAreaGradFrom: 'rgba(4, 126, 230, 0.1)',
+      thirdAreaGradFrom: 'rgba(31 ,106, 124, 0.2)',
       thirdAreaGradTo: 'rgba(4, 126, 230, 0)',
       thirdShadowLineDarkBg: 'rgba(0, 0, 0, 0)',
     },
@@ -179,20 +173,20 @@ export const CORPORATE_THEME = {
       axisFontSize: '16',
       axisTextColor: '#b2bac2',
 
-      // green bar
-      greenLineGradFrom: '#00bece',
-      greenLineGradTo: '#00da78',
-      greenLineShadow: 'rgba(14, 16, 48, 0.4)',
+      // first bar
+      firstLineGradFrom: '#00bece',
+      firstLineGradTo: '#00da78',
+      firstLineShadow: 'rgba(14, 16, 48, 0.4)',
 
-      // purple bar
-      purpleLineGradFrom: '#8069ff',
-      purpleLineGradTo: '#8357ff',
-      purpleLineShadow: 'rgba(14, 16, 48, 0.4)',
+      // second bar
+      secondLineGradFrom: '#8069ff',
+      secondLineGradTo: '#8357ff',
+      secondLineShadow: 'rgba(14, 16, 48, 0.4)',
 
-      // blue bar
-      blueLineGradFrom: '#3bb0ff',
-      blueLineGradTo: '#0089ff',
-      blueLineShadow: 'rgba(14, 16, 48, 0.4)',
+      // third bar
+      thirdLineGradFrom: 'rgba(78, 64, 164, 0.3)',
+      thirdLineGradTo: 'rgba(78, 64, 164, 0.3)',
+      thirdLineShadow: 'rgba(14, 16, 48, 0.4)',
     },
 
     // TODO: need design for default theme
@@ -259,6 +253,11 @@ export const CORPORATE_THEME = {
       thirdPieGradientLeft: '#ffca00',
       thirdPieGradientRight: '#ffca00',
       thirdPieShadowColor: 'rgba(0, 0, 0, 0)',
+    },
+
+    earningLine: {
+      gradFrom: '#ffffff',
+      gradTo: '#ffffff',
     },
   },
 };

@@ -43,11 +43,11 @@ export class EarningLiveUpdateChartComponent implements AfterViewInit, OnDestroy
         takeWhile(() => this.alive),
       )
       .subscribe(config => {
-        const trafficTheme: any = config.variables.traffic;
+        const earningLineTheme: any = config.variables.earningLine;
 
         clearInterval(this.timeTicket);
 
-        this.setChartOption(trafficTheme);
+        this.setChartOption(earningLineTheme);
         this.appendRandomData();
     });
   }
@@ -72,7 +72,7 @@ export class EarningLiveUpdateChartComponent implements AfterViewInit, OnDestroy
     }, 700);
   }
 
-  setChartOption(trafficTheme) {
+  setChartOption(earningLineTheme) {
     this.option = {
       grid: {
         left: 0,
@@ -127,10 +127,10 @@ export class EarningLiveUpdateChartComponent implements AfterViewInit, OnDestroy
             normal: {
               color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
                 offset: 0,
-                color: trafficTheme.gradFrom,
+                color: earningLineTheme.gradFrom,
               }, {
                 offset: 1,
-                color: trafficTheme.gradTo,
+                color: earningLineTheme.gradTo,
               }]),
               opacity: 1,
             },
