@@ -1,6 +1,6 @@
 import { Component , OnInit} from '@angular/core';
 import { ViewChild } from '@angular/core';
-import { TreeComponent, TREE_ACTIONS,  ITreeOptions } from 'angular-tree-component';
+import { TreeComponent as AngularTreeComponent, TREE_ACTIONS,  ITreeOptions } from 'angular-tree-component';
 import * as _ from 'lodash';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { InputComponent } from './input.component';
@@ -9,7 +9,7 @@ import { InputComponent } from './input.component';
   templateUrl: './tree.component.html',
   styleUrls: ['./tree.component.scss'],
 })
-export class TreeAComponent implements OnInit {
+export class TreeComponent implements OnInit {
   nodes = [{
     name: 'Programming languages by programming paradigm',
     children: [{
@@ -53,8 +53,8 @@ export class TreeAComponent implements OnInit {
   ) { }
   ngOnInit() {
   }
-  @ViewChild(TreeComponent)
-  private tree: TreeComponent;
+  @ViewChild(AngularTreeComponent)
+  private tree: AngularTreeComponent;
   actionClick(node, tree, op) {
     switch (op) {
       case 1:

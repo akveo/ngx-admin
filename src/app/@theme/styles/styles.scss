@@ -31,25 +31,24 @@
   @include bootstrap-rtl();
 };
 
-.tree-menu .tree-menu-option:hover {
+// .tree-menu .tree-menu-option:hover {
+//   background-color: transparent;
+//   margin-bottom: 40px;
+// }
 
-  background-color: transparent;
-  margin-bottom: 40px;
-}
+// .fa {
+//   padding: 5px;
+//   padding-bottom: 40px;
+// }
 
-.fa {
-  padding: 5px;
-  padding-bottom: 40px;
-}
+// .node-content-wrapper:hover, .node-content-wrapper-active, 
+// .node-content-wrapper.node-content-wrapper-active:hover, 
+// .node-content-wrapper-active.node-content-wrapper-focused,
+// .node-content-wrapper-focused {
+//   background-color: rgba(233, 221, 212, 0.29);
+//   padding-bottom: 26px;
+// }
 
-.node-content-wrapper:hover, .node-content-wrapper-active, 
-.node-content-wrapper.node-content-wrapper-active:hover, 
-.node-content-wrapper-active.node-content-wrapper-focused,
-.node-content-wrapper-focused {
- background-color: rgba(233, 221, 212, 0.29);
-padding-bottom: 26px;
-}
-
-.node-content-wrapper:hover .tree-menu {
-display: inline !important;
-}
+// .node-content-wrapper:hover .tree-menu {
+//   display: inline !important;
+// }

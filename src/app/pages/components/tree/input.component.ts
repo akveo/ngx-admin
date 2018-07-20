@@ -8,14 +8,12 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class InputComponent implements OnInit {
 
-    public form: FormGroup;
+    form: FormGroup;
     modalHeader: string;
     modalOperation: number;
     modalNode: any;
     modalTree: any;
     modalTreeData: any;
-
-
 
     constructor(private activeModal: NgbActiveModal,
         private fb: FormBuilder,
@@ -32,11 +30,11 @@ export class InputComponent implements OnInit {
         }
     }
 
-    closeModal() {
+    closeModal(): void {
         this.activeModal.close();
     }
 
-    okClick() {
+    okClick(): void {
         switch (this.modalOperation) {
             case 1:
                 this.editNode(this.modalNode)
@@ -51,17 +49,17 @@ export class InputComponent implements OnInit {
         }
     }
 
-    addNode(node) {
+    addNode(node): void {
         node.data.children.push({ name: this.form.value.node });
         this.activeModal.close();
     }
 
-    addCategory(node) {
+    addCategory(node): void {
         node.data.children.push({ name: this.form.value.node, children: [] });
         this.activeModal.close();
     }
 
-    editNode(node) {
+    editNode(node): void {
         node.data.name = this.form.value.node;
         this.activeModal.close();
     }
