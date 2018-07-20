@@ -245,5 +245,24 @@ export const DEFAULT_THEME = {
       secondPieShadowColor: 'rgba(0, 0, 0, 0)',
       secondPieRadius: ['60%', '97%'],
     },
+
+    earningPie: {
+      radius: ['65%', '100%'],
+      center: ['50%', '50%'],
+
+      fontSize: '22',
+
+      firstPieGradientLeft: '#00d77f',
+      firstPieGradientRight: '#00d77f',
+      firstPieShadowColor: 'rgba(0, 0, 0, 0)',
+
+      secondPieGradientLeft: '#7756f7',
+      secondPieGradientRight: '#7756f7',
+      secondPieShadowColor: 'rgba(0, 0, 0, 0)',
+
+      thirdPieGradientLeft: '#ffca00',
+      thirdPieGradientRight: '#ffca00',
+      thirdPieShadowColor: 'rgba(0, 0, 0, 0)',
+    },
   },
 };

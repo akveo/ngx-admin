@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'ngx-profit-card',
@@ -8,13 +8,6 @@ import { Component, Input } from '@angular/core';
 export class ProfitCardComponent {
 
   flipped = false;
-
-  @Input() title: string;
-  @Input() value: string;
-  @Input() prevValue: string;
-  @Input() percent: number;
-  @Input() label: string;
-  @Input() icon: string;
 
   toggleView() {
     this.flipped = !this.flipped;
