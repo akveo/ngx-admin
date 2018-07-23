@@ -48,6 +48,9 @@ export class ProfitChartComponent implements AfterViewInit, OnDestroy, OnChanges
         trigger: 'axis',
         axisPointer: {
           type: 'shadow',
+          shadowStyle: {
+            color: 'rgba(0, 0, 0, 0.3)',
+          },
         },
       },
       grid: {
@@ -95,7 +98,7 @@ export class ProfitChartComponent implements AfterViewInit, OnDestroy, OnChanges
       ],
       series: [
         {
-          name: 'All orders',
+          name: 'Canceled',
           type: 'bar',
           barGap: 0,
           barWidth: '20%',
@@ -103,10 +106,10 @@ export class ProfitChartComponent implements AfterViewInit, OnDestroy, OnChanges
             normal: {
               color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
                 offset: 0,
-                color: eTheme.greenLineGradFrom,
+                color: eTheme.firstLineGradFrom,
               }, {
                 offset: 1,
-                color: eTheme.greenLineGradTo,
+                color: eTheme.firstLineGradTo,
               }]),
             },
           },
@@ -120,27 +123,27 @@ export class ProfitChartComponent implements AfterViewInit, OnDestroy, OnChanges
             normal: {
               color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
                 offset: 0,
-                color: eTheme.purpleLineGradFrom,
+                color: eTheme.secondLineGradFrom,
               }, {
                 offset: 1,
-                color: eTheme.purpleLineGradTo,
+                color: eTheme.secondLineGradTo,
               }]),
             },
           },
           data: this.profitChartData.data[1],
         },
         {
-          name: 'Canceled',
+          name: 'All orders',
           type: 'bar',
           barWidth: '20%',
           itemStyle: {
             normal: {
               color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
                 offset: 0,
-                color: eTheme.blueLineGradFrom,
+                color: eTheme.thirdLineGradFrom,
               }, {
                 offset: 1,
-                color: eTheme.blueLineGradTo,
+                color: eTheme.thirdLineGradTo,
               }]),
             },
           },

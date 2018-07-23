@@ -146,31 +146,25 @@ export const COSMIC_THEME = {
       lineWidth: '4',
 
       // first line
-      firstLineGradFrom: '#00bece',
-      firstLineGradTo: '#00da78',
-      firstLineShadow: 'rgba(14, 16, 48, 0.4)',
+      firstAreaGradFrom: 'rgba(78, 64, 164, 1)',
+      firstAreaGradTo: 'rgba(78, 64, 164, 1)',
+      firstShadowLineDarkBg: '#018dff',
 
-      firstAreaGradFrom: 'rgba(31 ,106, 124, 0.5)',
-      firstAreaGradTo: 'rgba(4, 126, 230, 0)',
-      firstShadowLineDarkBg: '#2c5a85',
+      // second line
+      secondLineGradFrom: '#00bece',
+      secondLineGradTo: '#00da78',
 
-      // purple line
-      purpleLineGradFrom: '#8069ff',
-      purpleLineGradTo: '#8357ff',
-      purpleLineShadow: 'rgba(14, 16, 48, 0.4)',
-
-      purpleAreaGradFrom: 'rgba(188, 92, 255, 0.5)',
-      purpleAreaGradTo: 'rgba(188, 92, 255, 0)',
-      purpleShadowLineDarkBg: '#a695ff',
+      secondAreaGradFrom: 'rgba(38, 139, 145, 0.8)',
+      secondAreaGradTo: 'rgba(38, 139, 145, 0.5)',
+      secondShadowLineDarkBg: '#2c5a85',
 
       // third line
-      thirdLineGradFrom: '#3bb0ff',
-      thirdLineGradTo: '#0089ff',
-      thirdLineShadow: 'rgba(14, 16, 48, 0.4)',
+      thirdLineGradFrom: '#8069ff',
+      thirdLineGradTo: '#8357ff',
 
-      thirdAreaGradFrom: 'rgba(4, 126, 230, 1)',
-      thirdAreaGradTo: 'rgba(4, 126, 230, 0)',
-      thirdShadowLineDarkBg: '#018dff',
+      thirdAreaGradFrom: 'rgba(118, 73, 208, 0.7)',
+      thirdAreaGradTo: 'rgba(188, 92, 255, 0.4)',
+      thirdShadowLineDarkBg: '#a695ff',
     },
 
     profit: {
@@ -183,20 +177,20 @@ export const COSMIC_THEME = {
       axisFontSize: '16',
       axisTextColor: '#a1a1e5',
 
-      // green bar
-      greenLineGradFrom: '#00bece',
-      greenLineGradTo: '#00da78',
-      greenLineShadow: 'rgba(14, 16, 48, 0.4)',
+      // first bar
+      firstLineGradFrom: '#00bece',
+      firstLineGradTo: '#00da78',
+      firstLineShadow: 'rgba(14, 16, 48, 0.4)',
 
-      // purple bar
-      purpleLineGradFrom: '#8069ff',
-      purpleLineGradTo: '#8357ff',
-      purpleLineShadow: 'rgba(14, 16, 48, 0.4)',
+      // second bar
+      secondLineGradFrom: '#8069ff',
+      secondLineGradTo: '#8357ff',
+      secondLineShadow: 'rgba(14, 16, 48, 0.4)',
 
-      // blue bar
-      blueLineGradFrom: '#3bb0ff',
-      blueLineGradTo: '#0089ff',
-      blueLineShadow: 'rgba(14, 16, 48, 0.4)',
+      // third bar
+      thirdLineGradFrom: '#4e40a4',
+      thirdLineGradTo: '#4e40a4',
+      thirdLineShadow: 'rgba(14, 16, 48, 0.4)',
     },
 
     visitors: {
@@ -260,6 +254,11 @@ export const COSMIC_THEME = {
       thirdPieGradientLeft: '#ffca00',
       thirdPieGradientRight: '#ffca00',
       thirdPieShadowColor: 'rgba(0, 0, 0, 0)',
+    },
+
+    earningLine: {
+      gradFrom: 'rgba(118, 89, 255, 0.4)',
+      gradTo: 'rgba(164, 84, 255, 0.5)',
     },
   },
 };

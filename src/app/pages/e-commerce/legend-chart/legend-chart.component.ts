@@ -11,7 +11,7 @@ export class ECommerceLegendChartComponent {
 
   /**
    * Take an array of legend items
-   * Available iconColor: 'green', 'purple', 'blue', 'yellow'
+   * Available iconColor: 'green', 'purple', 'light-purple', 'blue', 'yellow'
    * @type {{iconColor: string; title: string}[]}
    */
   @Input()
