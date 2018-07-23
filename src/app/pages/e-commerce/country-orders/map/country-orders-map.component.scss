@@ -9,6 +9,10 @@
   .leaflet-container {
     height: 100%;
     background-color: nb-theme(layout-bg);
+
+    @include nb-for-theme(corporate) {
+      background-color: nb-theme(color-white);
+    }
   }
 
   /deep/ .leaflet-control-zoom {
@@ -21,6 +25,10 @@
       height: 2.5rem;
 
       @include nb-for-theme(cosmic) {
+        background-color: nb-theme(color-primary);
+      }
+
+      @include nb-for-theme(corporate) {
         background-color: nb-theme(color-primary);
       }
     }

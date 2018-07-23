@@ -1,5 +1,8 @@
 @import '../../../../../@theme/styles/themes';
 @import '~@nebular/theme/styles/global/bootstrap/hero-buttons';
+@import '~@nebular/theme/styles/global/typography/typography';
+
+$traffic-bar-background-color: #d0d8e3;
 
 @include nb-install-component() {
   height: 100%;
@@ -35,14 +38,32 @@
 
     .progress-line {
       width: 100%;
-      @include btn-hero-primary-gradient();
+      background-color: $traffic-bar-background-color;
 
       &.success {
-        @include btn-hero-success-gradient();
+        background-color: text-success();
+
+        @include nb-for-theme(corporate) {
+          background-color: text-primary();
+        }
       }
 
       &.failure {
-        @include btn-hero-danger-gradient();
+        background-color: text-danger();
+      }
+    }
+
+    @include nb-for-theme(cosmic) {
+      .progress-line {
+        @include btn-hero-primary-gradient();
+
+        &.success {
+          @include btn-hero-success-gradient();
+        }
+
+        &.failure {
+          @include btn-hero-danger-gradient();
+        }
       }
     }
   }

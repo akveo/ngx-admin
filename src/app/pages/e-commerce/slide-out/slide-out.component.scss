@@ -8,10 +8,12 @@
     position: absolute;
     display: block;
     font-size: 2rem;
+    font-weight: nb-theme(font-weight-bold);
     top: 1.5rem;
     right: 1.5rem;
     cursor: pointer;
-    background-color: nb-theme(card-bg);
+    color: nb-theme(color-fg);
+    background-color: transparent;
     z-index: 2;
     @include nb-rtl(right, auto);
     @include nb-rtl(left, 1.5rem);
@@ -42,8 +44,8 @@
     width: 100%;
     position: absolute;
     background: nb-theme(slide-out-background);
-    box-shadow: 2px 0 3px nb-theme(slide-out-shadow-color);
-    @include nb-rtl(box-shadow, -2px 0 3px nb-theme(slide-out-shadow-color));
+    box-shadow: nb-theme(slide-out-shadow-color);
+    @include nb-rtl(box-shadow, nb-theme(slide-out-shadow-color-rtl));
     filter: blur(3px);
     opacity: 0.9;
     z-index: 1;

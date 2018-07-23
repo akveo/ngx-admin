@@ -80,10 +80,6 @@
   .value {
     margin-top: 0.5rem;
     color: nb-theme(color-success);
-
-    @include nb-for-theme(cosmic) {
-      color: nb-theme(color-fg-heading);
-    }
   }
 
   .delta {
@@ -100,12 +96,16 @@
     }
 
     &.down {
+      color: text-danger();
+
       &::before {
         border-top: 6px solid text-danger();
       }
     }
 
     &.up {
+      color: text-success();
+
       &::before {
         border-bottom: 6px solid text-success();
       }
@@ -124,6 +124,12 @@
         }
       }
     }
+
+    .delta {
+      &.down, &.up {
+        color: nb-theme(color-fg-heading);
+      }
+    }
   }
 
   @include nb-for-theme(corporate) {
@@ -137,6 +143,22 @@
       &:hover {
         &::before {
           background-color: nb-theme(color-primary);
+        }
+      }
+    }
+
+    .visited-pages-count {
+      .value {
+        color: nb-theme(color-fg-heading);
+      }
+    }
+
+    .delta {
+      &.up {
+        color: text-primary();
+
+        &::before {
+          border-bottom-color: text-primary();
         }
       }
     }

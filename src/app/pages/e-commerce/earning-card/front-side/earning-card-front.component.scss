@@ -15,12 +15,13 @@
 
   .time-period {
     margin-top: 1.5rem;
+    color: nb-theme(color-fg);
   }
 
   .value {
     margin-top: 0.2rem;
     font-size: 1.5rem;
-    color: nb-theme(color-white);
+    color: nb-theme(color-fg-heading);
   }
 
   .echart {

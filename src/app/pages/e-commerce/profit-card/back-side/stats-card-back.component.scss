@@ -43,14 +43,11 @@
 
       .currency {
         color: nb-theme(color-success);
-      }
-    }
 
-    .result {
-      position: absolute;
-      right: 1rem;
-      display: flex;
-      color: nb-theme(color-success);
+        @include nb-for-theme(corporate) {
+          color: nb-theme(color-primary);
+        }
+      }
     }
 
     ngx-stats-bar-chart {

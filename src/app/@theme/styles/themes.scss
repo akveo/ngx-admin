@@ -22,17 +22,18 @@ $nb-themes: nb-register-theme((
   list-item-border-width: 1px,
 
   slide-out-container-width: 30%,
+  slide-out-background: 	linear-gradient(270deg, #f7fafb 0%, #ecf2f5 100%),
+  slide-out-shadow-color: 0 4px 14px 0 #a2d2c8,
+  slide-out-shadow-color-rtl: 0 4px 14px 0 #a2d2c8,
 
-  slide-out-background: #ffffff,
-  slide-out-shadow-color: rgba(19, 19, 94, 0.9),
+  chart-panel-summary-box-shadow: none,
+  chart-panel-summary-background-color: #ecf2f5,
+  chart-panel-summary-border-color: #ebeff1,
+  chart-panel-summary-border-width: 1px,
 
-  legend-chart-green-square-background: linear-gradient(90deg, #3edd81 0%, #3bddad 100%),
-  legend-chart-purple-square-background: linear-gradient(90deg, #8d7fff 0%, #b17fff 100%),
-  legend-chart-light-purple-square-background: rgba(78, 64, 164, 0.3),
-  legend-chart-blue-square-background: linear-gradient(90deg, #4ac3ff 0%, #4bacfe 100%),
-  legend-chart-yellow-square-background: linear-gradient(90deg, #ffcb17 0%, #ff874c 100%),
+  ecommerce-card-border-width: 1px,
 
-  chart-panel-summary-box-shadow: 0 4px 14px 0 rgba(19, 19, 94, 0.4),
+  progress-bar-background: linear-gradient(90deg, #3edd81 0%, #3bddaf 100%),
 ), default, default);
 
 $nb-themes: nb-register-theme((
@@ -52,15 +53,17 @@ $nb-themes: nb-register-theme((
 
   slide-out-container-width: 30%,
   slide-out-background: radial-gradient(circle, #302c6e 0%, #423f8c 100%),
-  slide-out-shadow-color: rgba(19, 19, 94, 0.9),
-
-  legend-chart-green-square-background: linear-gradient(90deg, #00c7c7 0%, #00d977 100%),
-  legend-chart-purple-square-background: linear-gradient(90deg, #a454ff 0%, #7659ff 100%),
-  legend-chart-light-purple-square-background: #4e40a4,
-  legend-chart-blue-square-background: linear-gradient(90deg, #0088ff 0%, #3dafff 100%),
-  legend-chart-yellow-square-background: linear-gradient(90deg, #ffcb17 0%, #ff874c 100%),
+  slide-out-shadow-color: 2px 0 3px rgba(19, 19, 94, 0.9),
+  slide-out-shadow-color-rtl: -2px 0 3px rgba(19, 19, 94, 0.9),
 
   chart-panel-summary-box-shadow: 0 4px 14px 0 rgba(19, 19, 94, 0.4),
+  chart-panel-summary-background-color: rgba(0, 0, 0, 0.1),
+  chart-panel-summary-border-color: #ebeff1,
+  chart-panel-summary-border-width: 0,
+
+  ecommerce-card-border-width: 1px,
+
+  progress-bar-background: linear-gradient(90deg, #00c7c7 0%, #00d977 100%),
 ), cosmic, cosmic);
 
 $nb-themes: nb-register-theme((
@@ -79,16 +82,16 @@ $nb-themes: nb-register-theme((
   list-item-border-width: 1px,
 
   slide-out-container-width: 30%,
+  slide-out-background: 	linear-gradient(270deg, #f7fafb 0%, #ecf2f5 100%),
+  slide-out-shadow-color: 0 4px 14px 0 #a2d2c8,
+  slide-out-shadow-color-rtl: 0 4px 14px 0 #a2d2c8,
 
-  // todo[ecommerce]: need design
-  slide-out-background: #ffffff,
-  slide-out-shadow-color: rgba(19, 19, 94, 0.9),
+  chart-panel-summary-box-shadow: none,
+  chart-panel-summary-background-color: #f7fafb,
+  chart-panel-summary-border-color: #ebeff1,
+  chart-panel-summary-border-width: 1px,
 
-  legend-chart-green-square-background: linear-gradient(90deg, #3edd81 0%, #3bddad 100%),
-  legend-chart-purple-square-background: linear-gradient(90deg, #8d7fff 0%, #b17fff 100%),
-  legend-chart-light-purple-square-background: rgba(78, 64, 164, 0.3),
-  legend-chart-blue-square-background: linear-gradient(90deg, #4ac3ff 0%, #4bacfe 100%),
-  legend-chart-yellow-square-background: linear-gradient(90deg, #ffcb17 0%, #ff874c 100%),
+  ecommerce-card-border-width: 1px,
 
-  chart-panel-summary-box-shadow: 0 4px 14px 0 rgba(19, 19, 94, 0.4),
+  progress-bar-background: linear-gradient(90deg, #ff9f6f 0%, #ff8b97 100%),
 ), corporate, corporate);

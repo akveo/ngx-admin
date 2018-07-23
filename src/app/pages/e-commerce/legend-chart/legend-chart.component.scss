@@ -22,26 +22,6 @@
   .legend-item-color {
     min-width: 12px;
     min-height: 12px;
-
-    &.green-square {
-      background: nb-theme(legend-chart-green-square-background);
-    }
-
-    &.purple-square {
-      background: nb-theme(legend-chart-purple-square-background);
-    }
-
-    &.light-purple-square {
-      background: nb-theme(legend-chart-light-purple-square-background);
-    }
-
-    &.blue-square {
-      background: nb-theme(legend-chart-blue-square-background);
-    }
-
-    &.yellow-square {
-      background: nb-theme(legend-chart-yellow-square-background);
-    }
   }
 
   .legend-title {

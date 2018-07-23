@@ -73,12 +73,14 @@ export const COSMIC_THEME = {
       gradientFrom: '#00d977',
       gradientTo: '#00d9bf',
       shadow: '#00bb85',
+      shadowBlur: '5',
     },
 
     trafficBarEchart: {
       gradientFrom: '#fc0',
       gradientTo: '#ffa100',
       shadow: '#ffb600',
+      shadowBlur: '5',
 
       axisTextColor: '#a1a1e5',
       axisFontSize: '12',
@@ -193,6 +195,12 @@ export const COSMIC_THEME = {
       thirdLineShadow: 'rgba(14, 16, 48, 0.4)',
     },
 
+    orderProfitLegend: {
+      firstItem: 'linear-gradient(90deg, #00c7c7 0%, #00d977 100%)',
+      secondItem: 'linear-gradient(90deg, #a454ff 0%, #7659ff 100%)',
+      thirdItem: '#4e40a4',
+    },
+
     visitors: {
       tooltipBg: 'rgba(0, 255, 170, 0.35)',
       tooltipLineColor: 'rgba(255, 255, 255, 0.1)',
@@ -225,6 +233,11 @@ export const COSMIC_THEME = {
       innerAreaGradTo: 'rgba(4, 133, 243 , 1)',
     },
 
+    visitorsLegend: {
+      firstIcon: 'linear-gradient(90deg, #0088ff 0%, #3dafff 100%)',
+      secondIcon: 'linear-gradient(90deg, #a454ff 0%, #7659ff 100%)',
+    },
+
     visitorsPie: {
       firstPieGradientLeft: '#7bff24',
       firstPieGradientRight: '#2ec7fe',
@@ -235,6 +248,13 @@ export const COSMIC_THEME = {
       secondPieGradientRight: '#ffcc10',
       secondPieShadowColor: '#cf7c1c',
       secondPieRadius: ['60%', '95%'],
+      shadowOffsetX: '0',
+      shadowOffsetY: '3',
+    },
+
+    visitorsPieLegend: {
+      firstSection: 'linear-gradient(90deg, #ffcb17 0%, #ff874c 100%)',
+      secondSection: 'linear-gradient(90deg, #00c7c7 0%, #00d977 100%)',
     },
 
     earningPie: {

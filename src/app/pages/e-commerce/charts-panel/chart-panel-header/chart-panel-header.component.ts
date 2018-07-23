@@ -2,7 +2,6 @@ import { Component, EventEmitter, Input, OnDestroy, Output } from '@angular/core
 import { NbThemeService } from '@nebular/theme';
 import { takeWhile } from 'rxjs/operators';
 
-import { NgxLegendItemColor } from '../../legend-chart/enum.legend-item-color';
 
 @Component({
   selector: 'ngx-chart-panel-header',
@@ -18,20 +17,7 @@ export class ChartPanelHeaderComponent implements OnDestroy {
   @Input() type: string = 'week';
   types: string[] = ['week', 'month', 'year'];
 
-  chartLegend = [
-    {
-      iconColor: NgxLegendItemColor.GREEN,
-      title: 'Payment',
-    },
-    {
-      iconColor: NgxLegendItemColor.PURPLE,
-      title: 'Canceled',
-    },
-    {
-      iconColor: NgxLegendItemColor.LIGHT_PURPLE,
-      title: 'All orders',
-    },
-  ];
+  chartLegend: {iconColor: string; title: string}[];
 
   currentTheme: string;
 
@@ -39,8 +25,28 @@ export class ChartPanelHeaderComponent implements OnDestroy {
     this.themeService.getJsTheme()
       .pipe(takeWhile(() => this.alive))
       .subscribe(theme => {
+        const orderProfitLegend = theme.variables.orderProfitLegend;
+
         this.currentTheme = theme.name;
+        this.setLegendItems(orderProfitLegend);
       });
+  }
+
+  setLegendItems(orderProfitLegend) {
+    this.chartLegend = [
+      {
+        iconColor: orderProfitLegend.firstItem,
+        title: 'Payment',
+      },
+      {
+        iconColor: orderProfitLegend.secondItem,
+        title: 'Canceled',
+      },
+      {
+        iconColor: orderProfitLegend.thirdItem,
+        title: 'All orders',
+      },
+    ];
   }
 
   changePeriod(period: string): void {

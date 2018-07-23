@@ -4,11 +4,17 @@
   .summary-container {
     display: flex;
     flex: 1;
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: nb-theme(chart-panel-summary-background-color);
     box-shadow: nb-theme(chart-panel-summary-box-shadow);
     justify-content: space-between;
     padding: 1.5rem 4rem 1rem;
     margin-bottom: 1rem;
+    border:
+      nb-theme(chart-panel-summary-border-width)
+      solid
+      nb-theme(chart-panel-summary-border-color);
+    border-left: none;
+    border-right: none;
   }
 
   .value {

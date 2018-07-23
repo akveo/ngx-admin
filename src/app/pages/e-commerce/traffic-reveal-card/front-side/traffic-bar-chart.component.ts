@@ -115,7 +115,7 @@ export class TrafficBarChartComponent implements AfterViewInit, OnDestroy, OnCha
                 }]),
                 opacity: 1,
                 shadowColor: trafficTheme.gradientFrom,
-                shadowBlur: 5,
+                shadowBlur: trafficTheme.shadowBlur,
               },
             },
           },
