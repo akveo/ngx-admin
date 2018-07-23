@@ -61,15 +61,6 @@
         color: nb-theme(color-success);
       }
     }
-
-    .result {
-      position: absolute;
-      right: 1rem;
-      display: flex;
-      color: nb-theme(color-success);
-      @include nb-rtl(right, auto);
-      @include nb-rtl(left, 1rem);
-    }
   }
 
   ngx-stats-ares-chart {

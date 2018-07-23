@@ -5,13 +5,14 @@ import { PeriodsService } from './periods.service';
 export class UserActive {
   date: string;
   pagesVisitCount: number;
-  percentageNewVisits: string;
+  deltaUp: boolean;
+  newVisits: number;
 }
 
 @Injectable()
 export class UserActivityService {
 
-  private getRandomUpToThousand = () => Math.round(Math.random() * 1000);
+  private getRandom = (roundTo: number) => Math.round(Math.random() * roundTo);
 
   data = {};
 
@@ -27,8 +28,9 @@ export class UserActivityService {
     return this.periods.getWeeks().map((week) => {
       return {
         date: week,
-        pagesVisitCount: this.getRandomUpToThousand(),
-        percentageNewVisits: `${this.getRandomUpToThousand() / 10} %`,
+        pagesVisitCount: this.getRandom(1000),
+        deltaUp: this.getRandom(1) % 2 === 0,
+        newVisits: this.getRandom(100),
       };
     });
   }
@@ -41,8 +43,9 @@ export class UserActivityService {
     return Array.from(Array(days)).map((_, index) => {
       return {
         date: `${index + 1} ${month}`,
-        pagesVisitCount: this.getRandomUpToThousand(),
-        percentageNewVisits: `${this.getRandomUpToThousand() / 10} %`,
+        pagesVisitCount: this.getRandom(1000),
+        deltaUp: this.getRandom(1) % 2 === 0,
+        newVisits: this.getRandom(100),
       };
     });
   }
@@ -51,8 +54,9 @@ export class UserActivityService {
     return this.periods.getYears().map((year) => {
       return {
         date: year,
-        pagesVisitCount: this.getRandomUpToThousand(),
-        percentageNewVisits: `${this.getRandomUpToThousand() / 10} %`,
+        pagesVisitCount: this.getRandom(1000),
+        deltaUp: this.getRandom(1) % 2 === 0,
+        newVisits: this.getRandom(100),
       };
     });
   }

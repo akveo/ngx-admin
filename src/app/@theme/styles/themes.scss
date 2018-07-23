@@ -31,6 +31,8 @@ $nb-themes: nb-register-theme((
   legend-chart-light-purple-square-background: rgba(78, 64, 164, 0.3),
   legend-chart-blue-square-background: linear-gradient(90deg, #4ac3ff 0%, #4bacfe 100%),
   legend-chart-yellow-square-background: linear-gradient(90deg, #ffcb17 0%, #ff874c 100%),
+
+  chart-panel-summary-box-shadow: 0 4px 14px 0 rgba(19, 19, 94, 0.4),
 ), default, default);
 
 $nb-themes: nb-register-theme((
@@ -57,6 +59,8 @@ $nb-themes: nb-register-theme((
   legend-chart-light-purple-square-background: #4e40a4,
   legend-chart-blue-square-background: linear-gradient(90deg, #0088ff 0%, #3dafff 100%),
   legend-chart-yellow-square-background: linear-gradient(90deg, #ffcb17 0%, #ff874c 100%),
+
+  chart-panel-summary-box-shadow: 0 4px 14px 0 rgba(19, 19, 94, 0.4),
 ), cosmic, cosmic);
 
 $nb-themes: nb-register-theme((
@@ -85,4 +89,6 @@ $nb-themes: nb-register-theme((
   legend-chart-light-purple-square-background: rgba(78, 64, 164, 0.3),
   legend-chart-blue-square-background: linear-gradient(90deg, #4ac3ff 0%, #4bacfe 100%),
   legend-chart-yellow-square-background: linear-gradient(90deg, #ffcb17 0%, #ff874c 100%),
+
+  chart-panel-summary-box-shadow: 0 4px 14px 0 rgba(19, 19, 94, 0.4),
 ), corporate, corporate);

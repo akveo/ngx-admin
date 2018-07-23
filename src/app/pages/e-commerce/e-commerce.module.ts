@@ -5,15 +5,16 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { ThemeModule } from '../../@theme/theme.module';
 import { ECommerceComponent } from './e-commerce.component';
 import { ProfitCardComponent } from './profit-card/profit-card.component';
+import { ECommerceChartsPanelComponent } from './charts-panel/charts-panel.component';
 import { OrdersChartComponent } from './charts-panel/charts/orders-chart.component';
 import { ProfitChartComponent } from './charts-panel/charts/profit-chart.component';
-import { ChartsHeaderComponent } from './charts-panel/charts-header/charts-header.component';
+import { ChartPanelHeaderComponent } from './charts-panel/chart-panel-header/chart-panel-header.component';
+import { ChartPanelSummaryComponent } from './charts-panel/chart-panel-summary/chart-panel-summary.component';
 import { ChartModule } from 'angular2-chartjs';
 import { StatsCardBackComponent } from './profit-card/back-side/stats-card-back.component';
 import { StatsAreaChartComponent } from './profit-card/front-side/stats-area-chart.component';
 import { StatsBarChartComponent } from './profit-card/back-side/stats-bar-chart.component';
 import { StatsCardFrontComponent } from './profit-card/front-side/stats-card-front.component';
-import { ECommerceChartsPanelComponent } from './charts-panel/charts-panel.component';
 import { TrafficRevealCardComponent } from './traffic-reveal-card/traffic-reveal-card.component';
 import { TrafficBarChartComponent } from './traffic-reveal-card/front-side/traffic-bar-chart.component';
 import { TrafficFrontCardComponent } from './traffic-reveal-card/front-side/traffic-front-card.component';
@@ -60,7 +61,8 @@ import { EarningLiveUpdateChartComponent } from './earning-card/back-side/earnin
     StatsBarChartComponent,
     ProfitCardComponent,
     ECommerceChartsPanelComponent,
-    ChartsHeaderComponent,
+    ChartPanelHeaderComponent,
+    ChartPanelSummaryComponent,
     OrdersChartComponent,
     ProfitChartComponent,
     StatsCardBackComponent,

@@ -37,7 +37,11 @@ import { UserActivityService, UserActive } from '../../../@core/data/user-activi
             </div>
             <div class="visited-percentages">
               <div class="title">New visits, %</div>
-              <div class="value">{{ item.percentageNewVisits }}</div>
+              <div class="delta value"
+                   [class.up]="item.deltaUp"
+                   [class.down]="!item.deltaUp">
+                {{ item.newVisits }}%
+              </div>
             </div>
           </li>
         </ul>

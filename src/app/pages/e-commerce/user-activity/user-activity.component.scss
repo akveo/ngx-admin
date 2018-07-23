@@ -1,4 +1,5 @@
 @import '../../../@theme/styles/themes';
+@import '~@nebular/theme/styles/global/typography/typography';
 
 @include nb-install-component() {
 
@@ -26,7 +27,7 @@
     list-style: none;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-end;
     position: relative;
     color: nb-theme(color-fg);
     padding: nb-theme(card-padding);
@@ -73,14 +74,41 @@
   }
 
   .title {
-    font-size: 0.875rem;
+    font-size: 1rem;
   }
 
   .value {
+    margin-top: 0.5rem;
     color: nb-theme(color-success);
 
     @include nb-for-theme(cosmic) {
       color: nb-theme(color-fg-heading);
+    }
+  }
+
+  .delta {
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    &::before {
+      content: '';
+      right: 100%;
+      margin-right: 0.7rem;
+      border-left: 6px solid transparent;
+      border-right: 6px solid transparent;
+    }
+
+    &.down {
+      &::before {
+        border-top: 6px solid text-danger();
+      }
+    }
+
+    &.up {
+      &::before {
+        border-bottom: 6px solid text-success();
+      }
     }
   }
 

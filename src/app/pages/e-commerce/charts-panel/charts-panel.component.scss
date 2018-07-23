@@ -18,7 +18,7 @@ $legend-canceled-color: #3f4fda;
 
   nb-tab {
     flex: 1;
-    padding: 1.25rem;
+    padding: 1.25rem 0;
   }
 
   .chart-container {
@@ -29,8 +29,7 @@ $legend-canceled-color: #3f4fda;
     overflow: hidden;
   }
 
-  // todo: remove after design will be implemented
-  .indent {
-    margin-top: 4rem;
+  ngx-chart-panel-header, ngx-profit-chart, ngx-orders-chart {
+    padding: 0 1.25rem;
   }
 }
