@@ -8,6 +8,16 @@ export let FORM_EXPERIENCIA_LABORAL = {
     {
       etiqueta: 'input',
       claseGrid: 'col-lg-6 col-md-6 col-sm-12 col-xs-12',
+      nombre: 'NombreEmpresa',
+      label_i18n: 'nombre_empresa',
+      placeholder_i18n: 'nombre_empresa',
+      requerido: true,
+      deshabilitar: true,
+      tipo: 'text',
+    },
+    {
+      etiqueta: 'input',
+      claseGrid: 'col-lg-5 col-md-5 col-sm-11 col-xs-11',
       nombre: 'Nit',
       label_i18n: 'nit',
       placeholder_i18n: 'nit',
@@ -15,13 +25,11 @@ export let FORM_EXPERIENCIA_LABORAL = {
       tipo: 'text',
     },
     {
-      etiqueta: 'input',
-      claseGrid: 'col-lg-6 col-md-6 col-sm-12 col-xs-12',
-      nombre: 'NombreEmpresa',
-      label_i18n: 'nombre_empresa',
-      placeholder_i18n: 'nombre_empresa',
-      requerido: true,
-      tipo: 'text',
+      etiqueta: 'button',
+      claseGrid: 'col-lg-1 col-md-1 col-sm-1 col-xs-1',
+      nombre: 'BusquedaBoton',
+      claseBoton: 'btn btn-success btn-xs btn-icon',
+      icono: 'fa fa-search',
     },
     {
       etiqueta: 'select',
@@ -30,6 +38,7 @@ export let FORM_EXPERIENCIA_LABORAL = {
       label_i18n: 'tipo_organizacion',
       placeholder_i18n: 'tipo_organizacion',
       requerido: true,
+      deshabilitar: true,
       key: 'Nombre',
       opciones: [],
     },
@@ -40,6 +49,7 @@ export let FORM_EXPERIENCIA_LABORAL = {
       label_i18n: 'direccion_empresa',
       placeholder_i18n: 'direccion_empresa',
       requerido: true,
+      deshabilitar: true,
       tipo: 'text',
     },
     {
@@ -49,6 +59,7 @@ export let FORM_EXPERIENCIA_LABORAL = {
       label_i18n: 'correo_empresa',
       placeholder_i18n: 'correo_empresa',
       requerido: true,
+      deshabilitar: true,
       tipo: 'email',
     },
     {
@@ -58,10 +69,11 @@ export let FORM_EXPERIENCIA_LABORAL = {
       label_i18n: 'telefono_empresa',
       placeholder_i18n: 'telefono_empresa',
       requerido: true,
+      deshabilitar: true,
       tipo: 'number',
       minimo: 1000,
     },
-   /* {
+    {
       etiqueta: 'input',
       claseGrid: 'col-lg-3 col-md-3 col-sm-12 col-xs-12',
       nombre: 'AnioInicio',
@@ -116,6 +128,6 @@ export let FORM_EXPERIENCIA_LABORAL = {
       placeholder_i18n: 'descripcion_cargo',
       requerido: true,
       tipo: 'text',
-    },*/
+    },
   ],
 }

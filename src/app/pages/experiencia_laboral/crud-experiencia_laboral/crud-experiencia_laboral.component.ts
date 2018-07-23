@@ -124,23 +124,31 @@ export class CrudExperienciaLaboralComponent implements OnInit {
       });
   }
 
- searchOrganizacion(nit: any) : void {
-    this.campusMidService.get('organizacion/identificacion/?id='+nit+'&tipoid=5')
-      .subscribe(res => {
+ searchOrganizacion(data: any) : void {
+   const nit = data.data.Nit;
+   this.campusMidService.get('organizacion/identificacion/?id=' + nit + '&tipoid=5')
+     .subscribe(res => {
         if (res !== null) {
           console.log(res)
           let model = <any>res;
           this.formInfoExperienciaLaboral.campos[this.getIndexForm('Nit')].valor = model.NumeroIdentificacion;
           this.formInfoExperienciaLaboral.campos[this.getIndexForm('NombreEmpresa')].valor = model.Nombre;
           let index = this.getIndexForm('TipoOrganizacion');
-            this.formInfoExperienciaLaboral.campos[index].opciones.forEach(element => {
-              if (element.Id === model.TipoOrganizacion.Id) {
-                this.formInfoExperienciaLaboral.campos[index].valor = element;
-              }
-            });
+          this.formInfoExperienciaLaboral.campos[index].opciones.forEach(element => {
+            if (element.Id === model.TipoOrganizacion.Id) {
+              this.formInfoExperienciaLaboral.campos[index].valor = element;
+            }
+          });
           this.formInfoExperienciaLaboral.campos[this.getIndexForm('Direccion')].valor = model.Ubicacion[0].Valor;
           this.formInfoExperienciaLaboral.campos[this.getIndexForm('Correo')].valor = model.Nombre;
           this.formInfoExperienciaLaboral.campos[this.getIndexForm('Telefono')].valor = model.Contacto[0].Valor;
+        } else {
+          this.formInfoExperienciaLaboral.campos[this.getIndexForm('Nit')].deshabilitar = false;
+          this.formInfoExperienciaLaboral.campos[this.getIndexForm('NombreEmpresa')].deshabilitar = false;
+          this.formInfoExperienciaLaboral.campos[this.getIndexForm('TipoOrganizacion')].deshabilitar = false;
+          this.formInfoExperienciaLaboral.campos[this.getIndexForm('Direccion')].deshabilitar = false;
+          this.formInfoExperienciaLaboral.campos[this.getIndexForm('Correo')].deshabilitar = false;
+          this.formInfoExperienciaLaboral.campos[this.getIndexForm('Telefono')].deshabilitar = false;
         }
     });
   }

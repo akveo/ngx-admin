@@ -330,7 +330,7 @@
             <mat-form-field *ngSwitchCase="'select'" style="width: 100%;" floatLabel="always">
               <mat-label>{{c.requerido?'* '+c.label:c.label}}:</mat-label>
               <mat-select [placeholder]="c.valor?(c.key?c.valor[c.key]:c.valor|json):c.placeholder" [(ngModel)]="c.valor" (ngModelChange)="validCampo(c)"
-                [ngModelOptions]="{standalone: true}">
+                [ngModelOptions]="{standalone: true}" [disabled]="c.deshabilitar">
                 <mat-option>--Seleccionar--</mat-option>
                 <mat-option *ngFor="let item of c.opciones" [value]="item">
                   {{c.key?item[c.key]:item | json}}
@@ -377,10 +377,13 @@
             </div>
 
             <!--buttton -->
-            <button class="{{c.claseBoton}}" *ngSwitchCase="'button'" (click)="auxButton(c)">
-              {{c.info}}
-              <i class="{{c.icono}}"></i>
-            </button>
+            <div *ngSwitchCase="'button'"  style="width: 100%;">
+              <button type="button" class="{{c.claseBoton}}"  (click)="auxButton(c)">
+                {{c.info}}
+                <i class="{{c.icono}}"></i>
+              </button>
+            </div>
+
           </div>
         </div>
       </div>

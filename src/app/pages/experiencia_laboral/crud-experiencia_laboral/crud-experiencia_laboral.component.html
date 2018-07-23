@@ -1,5 +1,5 @@
 <toaster-container [toasterconfig]="config"></toaster-container>
-<ngx-dinamicform [normalform]="formInfoExperienciaLaboral" [modeloData]="info_experiencia_laboral" (result)="validarForm($event)" [clean]="clean">
+<ngx-dinamicform [normalform]="formInfoExperienciaLaboral" [modeloData]="info_experiencia_laboral" (result)="validarForm($event)" (resultAux)="searchOrganizacion($event)" [clean]="clean">
 </ngx-dinamicform>
 
 <!--pre>{{formInfoExperienciaLaboral | json}}</pre-->
