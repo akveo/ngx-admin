@@ -2,7 +2,6 @@ import { AfterViewInit, Component, OnDestroy } from '@angular/core';
 import { NbThemeService } from '@nebular/theme';
 import { delay, takeWhile } from 'rxjs/operators';
 
-import {NgxLegendItemColor} from '../../legend-chart/enum.legend-item-color';
 
 @Component({
   selector: 'ngx-visitors-statistics',
@@ -15,16 +14,7 @@ export class ECommerceVisitorsStatisticsComponent implements AfterViewInit, OnDe
   private value = 75;
 
   option: any = {};
-  chartLegend = [
-    {
-      iconColor: NgxLegendItemColor.YELLOW,
-      title: 'New Visitors',
-    },
-    {
-      iconColor: NgxLegendItemColor.GREEN,
-      title: 'Return Visitors',
-    },
-  ];
+  chartLegend: {iconColor: string; title: string}[];
 
   constructor(private theme: NbThemeService) {
   }
@@ -36,12 +26,29 @@ export class ECommerceVisitorsStatisticsComponent implements AfterViewInit, OnDe
         delay(1),
       )
       .subscribe(config => {
-        this.setOptions(config);
+        const variables: any = config.variables;
+        const visitorsPieLegend: any = config.variables.visitorsPieLegend;
+
+        this.setOptions(variables);
+        this.setLegendItems(visitorsPieLegend);
     });
   }
 
-  setOptions(config) {
-    const visitorsPie: any = config.variables.visitorsPie;
+  setLegendItems(visitorsPieLegend) {
+    this.chartLegend = [
+      {
+        iconColor: visitorsPieLegend.firstSection,
+        title: 'New Visitors',
+      },
+      {
+        iconColor: visitorsPieLegend.secondSection,
+        title: 'Return Visitors',
+      },
+    ];
+  }
+
+  setOptions(variables) {
+    const visitorsPie: any = variables.visitorsPie;
 
     this.option = {
       tooltip: {
@@ -66,9 +73,9 @@ export class ECommerceVisitorsStatisticsComponent implements AfterViewInit, OnDe
                   formatter: '',
                   textStyle: {
                     fontSize: '22',
-                    fontFamily: config.variables.fontSecondary,
+                    fontFamily: variables.fontSecondary,
                     fontWeight: '600',
-                    color: config.variables.fgHeading,
+                    color: variables.fgHeading,
                   },
                 },
               },
@@ -108,7 +115,7 @@ export class ECommerceVisitorsStatisticsComponent implements AfterViewInit, OnDe
               },
               itemStyle: {
                 normal: {
-                  color: config.variables.layoutBg,
+                  color: variables.layoutBg,
                 },
               },
             },
@@ -131,9 +138,9 @@ export class ECommerceVisitorsStatisticsComponent implements AfterViewInit, OnDe
                   formatter: '',
                   textStyle: {
                     fontSize: '22',
-                    fontFamily: config.variables.fontSecondary,
+                    fontFamily: variables.fontSecondary,
                     fontWeight: '600',
-                    color: config.variables.fgHeading,
+                    color: variables.fgHeading,
                   },
                 },
               },
@@ -172,8 +179,8 @@ export class ECommerceVisitorsStatisticsComponent implements AfterViewInit, OnDe
                   ]),
                   shadowColor: visitorsPie.secondPieShadowColor,
                   shadowBlur: 0,
-                  shadowOffsetX: 0,
-                  shadowOffsetY: 3,
+                  shadowOffsetX: visitorsPie.shadowOffsetX,
+                  shadowOffsetY: visitorsPie.shadowOffsetY,
                 },
               },
             },

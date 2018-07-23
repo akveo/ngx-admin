@@ -74,12 +74,14 @@ export const DEFAULT_THEME = {
       gradientFrom: '#00d977',
       gradientTo: '#00d9bf',
       shadow: '#00bb85',
+      shadowBlur: '0',
     },
 
     trafficBarEchart: {
       gradientFrom: '#fc0',
       gradientTo: '#ffa100',
       shadow: '#ffb600',
+      shadowBlur: '0',
 
       axisTextColor: '#b2bac2',
       axisFontSize: '12',
@@ -195,6 +197,12 @@ export const DEFAULT_THEME = {
       thirdLineShadow: 'rgba(14, 16, 48, 0.4)',
     },
 
+    orderProfitLegend: {
+      firstItem: 'linear-gradient(90deg, #3edd81 0%, #3bddad 100%)',
+      secondItem: 'linear-gradient(90deg, #8d7fff 0%, #b17fff 100%)',
+      thirdItem: 'rgba(78, 64, 164, 0.3)',
+    },
+
     visitors: {
       tooltipBg: '#ffffff',
       tooltipLineColor: 'rgba(0, 0, 0, 0)',
@@ -228,6 +236,11 @@ export const DEFAULT_THEME = {
       innerAreaGradTo: 'rgba(60, 221, 156, 1)',
     },
 
+    visitorsLegend: {
+      firstIcon: 'linear-gradient(90deg, #3edd81 0%, #3bddad 100%)',
+      secondIcon: 'linear-gradient(90deg, #8d7fff 0%, #b17fff 100%)',
+    },
+
     visitorsPie: {
       firstPieGradientLeft: '#8defbb',
       firstPieGradientRight: '#8defbb',
@@ -238,6 +251,13 @@ export const DEFAULT_THEME = {
       secondPieGradientRight: '#ffcc10',
       secondPieShadowColor: 'rgba(0, 0, 0, 0)',
       secondPieRadius: ['60%', '97%'],
+      shadowOffsetX: '0',
+      shadowOffsetY: '0',
+    },
+
+    visitorsPieLegend: {
+      firstSection: 'linear-gradient(90deg, #ffcb17 0%, #ff874c 100%)',
+      secondSection: '#8defbb',
     },
 
     earningPie: {

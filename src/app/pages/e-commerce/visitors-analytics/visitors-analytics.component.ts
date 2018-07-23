@@ -2,7 +2,6 @@ import { Component, OnDestroy } from '@angular/core';
 import { takeWhile } from 'rxjs/operators';
 import { NbThemeService } from '@nebular/theme';
 
-import { NgxLegendItemColor } from '../legend-chart/enum.legend-item-color';
 
 @Component({
   selector: 'ngx-ecommerce-visitors-analytics',
@@ -12,26 +11,24 @@ import { NgxLegendItemColor } from '../legend-chart/enum.legend-item-color';
 export class ECommerceVisitorsAnalyticsComponent implements OnDestroy {
   private alive = true;
 
-  chartLegend;
+  chartLegend: {iconColor: string; title: string}[];
 
   constructor(private themeService: NbThemeService) {
     this.themeService.getJsTheme()
       .pipe(takeWhile(() => this.alive))
       .subscribe(theme => {
-        this.setLegendItems(theme.name);
+        this.setLegendItems(theme.variables.visitorsLegend);
       });
   }
 
-  setLegendItems(themeName: string): void {
+  setLegendItems(visitorsLegend): void {
     this.chartLegend = [
       {
-        iconColor: themeName === 'cosmic' ?
-          NgxLegendItemColor.BLUE :
-          NgxLegendItemColor.GREEN,
+        iconColor: visitorsLegend.firstIcon,
         title: 'Unique Visitors',
       },
       {
-        iconColor: NgxLegendItemColor.PURPLE,
+        iconColor: visitorsLegend.secondIcon,
         title: 'Page Views',
       },
     ];

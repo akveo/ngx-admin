@@ -60,6 +60,12 @@
     }
   }
 
+  .date {
+    @include nb-for-theme(corporate) {
+      color: nb-theme(color-fg-heading);
+    }
+  }
+
   .value {
     color: nb-theme(color-fg-heading);
   }
@@ -74,16 +80,16 @@
       position: absolute;
       content: '';
       right: 100%;
-      border-left: 6px solid transparent;
-      border-right: 6px solid transparent;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
     }
 
     &.down {
       color: text-danger();
 
       &::before {
-        bottom: 4px;
-        border-top: 10px solid text-danger();
+        bottom: 5px;
+        border-top: 6px solid text-danger();
       }
     }
 
@@ -91,8 +97,8 @@
       color: text-success();
 
       &::before {
-        top: 2px;
-        border-bottom: 10px solid text-success();
+        top: 5px;
+        border-bottom: 6px solid text-success();
       }
     }
   }
@@ -122,6 +128,20 @@
       &:hover {
         &::before {
           background-color: nb-theme(color-primary);
+        }
+      }
+    }
+
+    .date {
+      color: nb-theme(color-fg-heading);
+    }
+
+    .delta {
+      &.up {
+        color: text-primary();
+
+        &::before {
+          border-bottom-color: text-primary();
         }
       }
     }

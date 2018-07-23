@@ -49,7 +49,7 @@ export class StatsBarChartComponent implements AfterViewInit, OnDestroy {
                 }]),
                 opacity: 1,
                 shadowColor: profit.gradientFrom,
-                shadowBlur: 5,
+                shadowBlur: profit.shadowBlur,
               },
             },
           },
