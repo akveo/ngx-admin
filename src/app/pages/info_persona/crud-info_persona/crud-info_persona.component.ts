@@ -202,10 +202,10 @@ export class CrudInfoPersonaComponent implements OnInit {
                 this.showToast('info', this.translate.instant('GLOBAL.actualizar'),
                   this.translate.instant('GLOBAL.info_persona') + ' ' +
                   this.translate.instant('GLOBAL.confirmarActualizar'));
-              }
-
+              });
+          }
         }
-        });
+      });
   }
 
   createInfoPersona(infoPersona: any): void {
