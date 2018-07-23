@@ -45,7 +45,7 @@ export let FORM_INFO_CARACTERISTICA = {
         nombre: 'TipoLibretaMilitar',
         label_i18n: 'tipo_libreta_militar',
         placeholder_i18n: 'tipo_libreta_militar',
-        requerido: true,
+        requerido: false,
         tipo: 'text',
         key: 'Id',
         opciones: [

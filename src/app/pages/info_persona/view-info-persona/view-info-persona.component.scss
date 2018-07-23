@@ -1,13 +1,11 @@
 .user-picture, image {
-  width: 120px;
+  width: 10rem;
   float: right;
-  height: 120px;
+  height: 10rem;
   background-size: cover;
   background-repeat: no-repeat;
-  bottom: 20px;
-  right: 20px;
-  padding-left: 20px;
-  padding-right: 20px;
+  border-radius: 50%;
+  margin: 1rem;
 }
 .container {
   position: relative;

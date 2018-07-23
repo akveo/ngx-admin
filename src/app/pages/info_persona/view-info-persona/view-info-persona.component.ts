@@ -1,6 +1,10 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { CampusMidService } from '../../../@core/data/campus_mid.service';
 import { InfoPersona } from '../../../@core/data/models/info_persona';
+import { NuxeoService } from '../../../@core/utils/nuxeo.service';
+import { DocumentoService } from '../../../@core/data/documento.service';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+
 
 @Component({
   selector: 'ngx-view-info-persona',
@@ -12,6 +16,7 @@ export class ViewInfoPersonaComponent implements OnInit {
   info_persona_id: number;
   info_info_persona: InfoPersona;
   info_persona_user: string;
+  foto: any;
 
   @Input('info_persona_id')
   set name(info_persona_id: number) {
@@ -22,12 +27,19 @@ export class ViewInfoPersonaComponent implements OnInit {
   @Output('url_editar') url_editar: EventEmitter<boolean> = new EventEmitter();
 
 
-  constructor(private campusMidService: CampusMidService) {
+  constructor(private campusMidService: CampusMidService,
+    private documentoService: DocumentoService,
+    private sanitization: DomSanitizer,
+    private nuxeoService: NuxeoService) {
     this.loadInfoPersona();
    }
 
   public editar(): void {
     this.url_editar.emit(true);
+  }
+
+  public cleanURL(oldURL: string): SafeResourceUrl {
+    return this.sanitization.bypassSecurityTrustUrl(oldURL);
   }
 
   ngOnInit() {
@@ -41,6 +53,12 @@ export class ViewInfoPersonaComponent implements OnInit {
           const r = <any>res;
           if (r !== null && r.Type !== 'error') {
             this.info_info_persona = <InfoPersona>res;
+            const foto = [];
+            foto.push(this.info_info_persona.Foto);
+            this.nuxeoService.getDocumentoById$(foto, this.documentoService)
+              .subscribe(response => {
+                this.foto = this.cleanURL(response[0] + '');
+              });
           } else {
             this.info_info_persona = undefined;
           }
