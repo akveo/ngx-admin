@@ -8,6 +8,15 @@ export let FORM_EXPERIENCIA_LABORAL = {
     {
       etiqueta: 'input',
       claseGrid: 'col-lg-6 col-md-6 col-sm-12 col-xs-12',
+      nombre: 'Nit',
+      label_i18n: 'nit',
+      placeholder_i18n: 'nit',
+      requerido: true,
+      tipo: 'text',
+    },
+    {
+      etiqueta: 'input',
+      claseGrid: 'col-lg-6 col-md-6 col-sm-12 col-xs-12',
       nombre: 'NombreEmpresa',
       label_i18n: 'nombre_empresa',
       placeholder_i18n: 'nombre_empresa',
@@ -15,9 +24,19 @@ export let FORM_EXPERIENCIA_LABORAL = {
       tipo: 'text',
     },
     {
+      etiqueta: 'select',
+      claseGrid: 'col-lg-6 col-md-6 col-sm-12 col-xs-12',
+      nombre: 'TipoOrganizacion',
+      label_i18n: 'tipo_organizacion',
+      placeholder_i18n: 'tipo_organizacion',
+      requerido: true,
+      key: 'Nombre',
+      opciones: [],
+    },
+    {
       etiqueta: 'input',
       claseGrid: 'col-lg-6 col-md-6 col-sm-12 col-xs-12',
-      nombre: 'DireccionEmpresa',
+      nombre: 'Direccion',
       label_i18n: 'direccion_empresa',
       placeholder_i18n: 'direccion_empresa',
       requerido: true,
@@ -26,7 +45,7 @@ export let FORM_EXPERIENCIA_LABORAL = {
     {
       etiqueta: 'input',
       claseGrid: 'col-lg-6 col-md-6 col-sm-12 col-xs-12',
-      nombre: 'CorreoEmpresa',
+      nombre: 'Correo',
       label_i18n: 'correo_empresa',
       placeholder_i18n: 'correo_empresa',
       requerido: true,
@@ -35,14 +54,14 @@ export let FORM_EXPERIENCIA_LABORAL = {
     {
       etiqueta: 'input',
       claseGrid: 'col-lg-6 col-md-6 col-sm-12 col-xs-12',
-      nombre: 'TelefonoEmpresa',
+      nombre: 'Telefono',
       label_i18n: 'telefono_empresa',
       placeholder_i18n: 'telefono_empresa',
       requerido: true,
       tipo: 'number',
       minimo: 1000,
     },
-    {
+   /* {
       etiqueta: 'input',
       claseGrid: 'col-lg-3 col-md-3 col-sm-12 col-xs-12',
       nombre: 'AnioInicio',
@@ -97,6 +116,6 @@ export let FORM_EXPERIENCIA_LABORAL = {
       placeholder_i18n: 'descripcion_cargo',
       requerido: true,
       tipo: 'text',
-    },
+    },*/
   ],
 }

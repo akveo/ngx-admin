@@ -1,3 +1,4 @@
+import { OrganizacionService } from '../../@core/data/organizacion.service';
 import { ExperienciaLaboralRoutingModule, routedComponents } from './experiencia_laboral-routing.module';
 import { NgModule } from '@angular/core';
 import { ThemeModule } from '../../@theme/theme.module';
@@ -21,6 +22,7 @@ import { ListExperienciaLaboralComponent } from './list-experiencia_laboral/list
   ],
   providers: [
     CampusMidService,
+    OrganizacionService,
   ],
   exports: [
     CrudExperienciaLaboralComponent,

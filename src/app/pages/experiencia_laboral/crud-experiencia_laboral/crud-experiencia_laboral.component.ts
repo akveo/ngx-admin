@@ -1,3 +1,5 @@
+import { CampusMidService } from './../../../@core/data/campus_mid.service';
+import { Organizacion } from './../../../@core/data/models/organizacion';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { InfoExperienciaLaboral } from './../../../@core/data/models/info_experiencia_laboral';
 import { FORM_EXPERIENCIA_LABORAL } from './form-experiencia_laboral';
@@ -5,6 +7,7 @@ import { ToasterService, ToasterConfig, Toast, BodyOutputType } from 'angular2-t
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import Swal from 'sweetalert2';
 import 'style-loader!angular2-toaster/toaster.css';
+import { OrganizacionService } from '../../../@core/data/organizacion.service';
 
 @Component({
   selector: 'ngx-crud-experiencia-laboral',
@@ -30,12 +33,15 @@ export class CrudExperienciaLaboralComponent implements OnInit {
 
   constructor(
     private translate: TranslateService,
-    private toasterService: ToasterService) {
+    private toasterService: ToasterService,
+    private organizacionService: OrganizacionService,
+    private campusMidService: CampusMidService,) {
     this.formInfoExperienciaLaboral = FORM_EXPERIENCIA_LABORAL;
     this.construirForm();
     this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
       this.construirForm();
     });
+    this.loadOptionsTipoOrganizacion();
   }
 
   construirForm() {
@@ -105,6 +111,40 @@ export class CrudExperienciaLaboralComponent implements OnInit {
       });
   }
 
+  loadOptionsTipoOrganizacion(): void {
+    console.log("----------------------------------------------------------------");
+
+    let tipoOrganizacion: Array<any> = [];
+    this.organizacionService.get('tipo_organizacion/?limit=0')
+      .subscribe(res => {
+        if (res !== null) {
+          tipoOrganizacion = <Array<any>>res;
+        }
+        this.formInfoExperienciaLaboral.campos[this.getIndexForm('TipoOrganizacion')].opciones = tipoOrganizacion;
+      });
+  }
+
+ searchOrganizacion(nit: any) : void {
+    this.campusMidService.get('organizacion/identificacion/?id='+nit+'&tipoid=5')
+      .subscribe(res => {
+        if (res !== null) {
+          console.log(res)
+          let model = <any>res;
+          this.formInfoExperienciaLaboral.campos[this.getIndexForm('Nit')].valor = model.NumeroIdentificacion;
+          this.formInfoExperienciaLaboral.campos[this.getIndexForm('NombreEmpresa')].valor = model.Nombre;
+          let index = this.getIndexForm('TipoOrganizacion');
+            this.formInfoExperienciaLaboral.campos[index].opciones.forEach(element => {
+              if (element.Id === model.TipoOrganizacion.Id) {
+                this.formInfoExperienciaLaboral.campos[index].valor = element;
+              }
+            });
+          this.formInfoExperienciaLaboral.campos[this.getIndexForm('Direccion')].valor = model.Ubicacion[0].Valor;
+          this.formInfoExperienciaLaboral.campos[this.getIndexForm('Correo')].valor = model.Nombre;
+          this.formInfoExperienciaLaboral.campos[this.getIndexForm('Telefono')].valor = model.Contacto[0].Valor;
+        }
+    });
+  }
+
   createInfoExperienciaLaboral(infoExperienciaLaboral: any): void {
     const opt: any = {
       title: this.translate.instant('GLOBAL.crear'),
@@ -137,11 +177,15 @@ export class CrudExperienciaLaboralComponent implements OnInit {
   }
 
   validarForm(event) {
+    console.log(event);
+
     if (event.valid) {
+      this.searchOrganizacion(event.data.InfoExperienciaLaboral.Nit)
       if (this.info_experiencia_laboral === undefined) {
-        this.createInfoExperienciaLaboral(event.data.InfoExperienciaLaboral);
+        this.searchOrganizacion(event.data.InfoExperienciaLaboral.Nit)
+        //this.createInfoExperienciaLaboral(event.data.InfoExperienciaLaboral);
       } else {
-        this.updateInfoExperienciaLaboral(event.data.InfoExperienciaLaboral);
+       // this.updateInfoExperienciaLaboral(event.data.InfoExperienciaLaboral);
       }
       this.result.emit(event);
     }
