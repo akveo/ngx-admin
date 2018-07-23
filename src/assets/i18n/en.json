@@ -109,6 +109,7 @@
     }
   },
   "GLOBAL": {
+    "soporte_documento":"Document pdf",
     "alerta_documental_image": "The image has been saved in our document manager",
     "alerta_documental_documento": "The document has been saved in our document manager",    
     "info_basica": "Basic data",

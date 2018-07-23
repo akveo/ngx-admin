@@ -15,4 +15,5 @@ export class InfoPersona {
   Id: number;
   TipoDocumento: TipoIdentificacion;
   NumeroDocumento: string;
+  SoporteDocumento: string;
 }

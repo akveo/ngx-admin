@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter, OnChanges, ViewChild } from '@angular/core';
 import { MatDatepicker } from '@angular/material/datepicker';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'ngx-dinamicform',
@@ -22,7 +23,8 @@ export class DinamicformComponent implements OnInit, OnChanges {
   data: any;
   @ViewChild(MatDatepicker) datepicker: MatDatepicker<Date>;
 
-  constructor(private sanitization: DomSanitizer) {
+  constructor(private sanitization: DomSanitizer,
+    private http: HttpClient) {
     this.data = {
       valid: true,
       data: {},
@@ -72,6 +74,7 @@ export class DinamicformComponent implements OnInit, OnChanges {
                       break;
                     case 'file':
                       element.url = this.cleanURL(this.modeloData[i]);
+                      element.urlTemp = this.modeloData[i];
                       break;
                     default:
                       element.valor = this.modeloData[i];
@@ -91,8 +94,13 @@ export class DinamicformComponent implements OnInit, OnChanges {
     }
   }
 
-  download(url) {
-    window.open(url);
+  download(url, title, w, h) {
+    const left = (screen.width / 2) - (w / 2);
+    const top = (screen.height / 2) - (h / 2);
+    window.open(url, title, 'toolbar=no,' +
+      'location=no, directories=no, status=no, menubar=no,' +
+      'scrollbars=no, resizable=no, copyhistory=no, ' +
+      'width=' + w + ', height=' + h + ', top=' + top + ', left=' + left);
   }
 
   onChange(event, c) {
@@ -100,6 +108,8 @@ export class DinamicformComponent implements OnInit, OnChanges {
     if (c.valor !== undefined) {
       c.urlTemp = URL.createObjectURL(event.srcElement.files[0])
       c.url = this.cleanURL(c.urlTemp);
+      c.valor = event.srcElement.files[0];
+      console.info(c);
       this.validCampo(c);
       c.File = event.srcElement.files[0];
     }
@@ -137,7 +147,7 @@ export class DinamicformComponent implements OnInit, OnChanges {
   validCampo(c): boolean {
 
     if (c.requerido && (c.valor === '' || c.valor === null || c.valor === undefined ||
-      (JSON.stringify(c.valor) === '{}' && c.etiqueta !== 'file') || JSON.stringify(c.valor) === '[]')) {
+      (JSON.stringify(c.valor) === '{}' && c.etiqueta !== 'file') || JSON.stringify(c.valor) === '[]') && (c.etiqueta === 'file' && c.url === undefined)) {
       c.alerta = '** Debe llenar este campo';
       c.clase = 'form-control form-control-danger';
       return false;
