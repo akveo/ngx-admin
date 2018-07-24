@@ -18,13 +18,10 @@ export class EarningLiveUpdateChartComponent implements AfterViewInit, OnDestroy
   @Input() liveUpdateChartData: number[];
 
   option: any;
-  themeSubscription: any;
-  timeTicket: any;
   echartsInstance;
 
   constructor(private theme: NbThemeService) {
   }
-
 
   ngOnChanges(): void {
     if (this.option) {
@@ -37,7 +34,7 @@ export class EarningLiveUpdateChartComponent implements AfterViewInit, OnDestroy
   }
 
   ngAfterViewInit() {
-    this.themeSubscription = this.theme.getJsTheme()
+    this.theme.getJsTheme()
       .pipe(
         delay(1),
         takeWhile(() => this.alive),
@@ -45,31 +42,8 @@ export class EarningLiveUpdateChartComponent implements AfterViewInit, OnDestroy
       .subscribe(config => {
         const earningLineTheme: any = config.variables.earningLine;
 
-        clearInterval(this.timeTicket);
-
         this.setChartOption(earningLineTheme);
-        this.appendRandomData();
-    });
-  }
-
-  appendRandomData() {
-    // TODO: move from this file, set new data as input
-    const newPoints = [...this.liveUpdateChartData];
-
-    this.timeTicket = setInterval( () => {
-      const max = 500;
-      const min = 300;
-      const newItem = Math.floor(Math.random() * (max - min + 1) + min);
-
-      newPoints.shift();
-      newPoints.push(newItem);
-
-      this.echartsInstance.setOption({
-        series: [{
-          data: newPoints,
-        }],
       });
-    }, 700);
   }
 
   setChartOption(earningLineTheme) {
@@ -81,9 +55,19 @@ export class EarningLiveUpdateChartComponent implements AfterViewInit, OnDestroy
         bottom: 0,
       },
       xAxis: {
-        type: 'category',
-        boundaryGap: false,
-        data: this.liveUpdateChartData,
+        type: 'time',
+        axisLine: {
+          show: false,
+        },
+        axisLabel: {
+          show: false,
+        },
+        axisTick: {
+          show: false,
+        },
+        splitLine: {
+          show: false,
+        },
       },
       yAxis: {
         boundaryGap: [0, '5%'],
@@ -142,20 +126,14 @@ export class EarningLiveUpdateChartComponent implements AfterViewInit, OnDestroy
   }
 
   updateChartOptions(chartData: number[]) {
-    clearInterval(this.timeTicket);
-
     this.echartsInstance.setOption({
       series: [{
         data: chartData,
       }],
     });
-
-    this.appendRandomData();
   }
 
   ngOnDestroy() {
     this.alive = false;
-
-    clearInterval(this.timeTicket);
   }
 }
