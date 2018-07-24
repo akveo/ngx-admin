@@ -285,6 +285,12 @@
     "nit": "Nit",
     "placeholder_nit": "Ej. 777777777",
     "tipo_organizacion": "Tipo de organización",
-    "placeholder_tipo_organizacion": "Ej. Bancaria"
+    "placeholder_tipo_organizacion": "Ej. Bancaria",
+    "fecha_inicio": "Fecha Inicio",
+    "placeholder_fecha_inicio": "E.g. 24/12/2016",
+    "fecha_fin": "Fecha Fin",
+    "placeholder_fecha_fin": "E.g. 24/08/2018",
+    "pais_empresa": "Pais empresa",
+    "placeholder_pais_empresa": "Ej. Colombia"
   }
 }

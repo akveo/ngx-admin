@@ -285,6 +285,12 @@
     "nit": "Nit",
     "placeholder_nit": "E.g. 777777777",
     "tipo_organizacion": "Organization type",
-    "placeholder_tipo_organizacion": "E.g. "
+    "placeholder_tipo_organizacion": "E.g. ",
+    "fecha_inicio": "Start date",
+    "placeholder_fecha_inicio": "E.g. 24/12/2016",
+    "fecha_fin": "End date",
+    "placeholder_fecha_fin": "E.g. 24/08/2018",
+    "pais_empresa": "Organization country",
+    "placeholder_pais_empresa": "E.g. Colombia"
   }
 }

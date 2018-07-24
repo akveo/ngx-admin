@@ -8,6 +8,7 @@ import { ToasterModule } from 'angular2-toaster';
 import { SharedModule } from '../../shared/shared.module';
 import { CrudExperienciaLaboralComponent } from './crud-experiencia_laboral/crud-experiencia_laboral.component';
 import { ListExperienciaLaboralComponent } from './list-experiencia_laboral/list-experiencia_laboral.component';
+import { ExperienciaService } from '../../@core/data/experiencia.service';
 
 @NgModule({
   imports: [
@@ -23,6 +24,7 @@ import { ListExperienciaLaboralComponent } from './list-experiencia_laboral/list
   providers: [
     CampusMidService,
     OrganizacionService,
+    ExperienciaService,
   ],
   exports: [
     CrudExperienciaLaboralComponent,

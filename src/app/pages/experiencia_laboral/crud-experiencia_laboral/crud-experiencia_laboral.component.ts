@@ -1,3 +1,4 @@
+import { TipoContacto } from './../../../@core/data/models/tipo_contacto';
 import { CampusMidService } from './../../../@core/data/campus_mid.service';
 import { Organizacion } from './../../../@core/data/models/organizacion';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
@@ -8,6 +9,9 @@ import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import Swal from 'sweetalert2';
 import 'style-loader!angular2-toaster/toaster.css';
 import { OrganizacionService } from '../../../@core/data/organizacion.service';
+import { UbicacionesService } from '../../../@core/data/ubicaciones.service';
+import { Lugar } from '../../../@core/data/models/lugar';
+import { ExperienciaService } from '../../../@core/data/experiencia.service';
 
 @Component({
   selector: 'ngx-crud-experiencia-laboral',
@@ -17,6 +21,7 @@ import { OrganizacionService } from '../../../@core/data/organizacion.service';
 export class CrudExperienciaLaboralComponent implements OnInit {
   config: ToasterConfig;
   info_experiencia_laboral_id: number;
+  organizacion: Organizacion;
 
   @Input('info_experiencia_laboral_id')
   set name(info_experiencia_laboral_id: number) {
@@ -35,13 +40,19 @@ export class CrudExperienciaLaboralComponent implements OnInit {
     private translate: TranslateService,
     private toasterService: ToasterService,
     private organizacionService: OrganizacionService,
-    private campusMidService: CampusMidService,) {
+    private campusMidService: CampusMidService,
+    private ubicacionesService: UbicacionesService,
+    private experienciaService: ExperienciaService,) {
     this.formInfoExperienciaLaboral = FORM_EXPERIENCIA_LABORAL;
     this.construirForm();
     this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
       this.construirForm();
     });
     this.loadOptionsTipoOrganizacion();
+    this.loadOptionsPais();
+    this.loadOptionsCargo();
+    this.loadOptionsTipoDedicacion();
+    this.loadOptionsTipoVinculacion();
   }
 
   construirForm() {
@@ -112,8 +123,6 @@ export class CrudExperienciaLaboralComponent implements OnInit {
   }
 
   loadOptionsTipoOrganizacion(): void {
-    console.log("----------------------------------------------------------------");
-
     let tipoOrganizacion: Array<any> = [];
     this.organizacionService.get('tipo_organizacion/?limit=0')
       .subscribe(res => {
@@ -124,36 +133,109 @@ export class CrudExperienciaLaboralComponent implements OnInit {
       });
   }
 
- searchOrganizacion(data: any) : void {
-   const nit = data.data.Nit;
-   this.campusMidService.get('organizacion/identificacion/?id=' + nit + '&tipoid=5')
+  loadOptionsPais(): void {
+    let paisNacimiento: Array<any> = [];
+      this.ubicacionesService.get('lugar/?query=TipoLugar.Nombre:PAIS')
+        .subscribe(res => {
+          if (res !== null) {
+            paisNacimiento = <Array<Lugar>>res;
+          }
+          this.formInfoExperienciaLaboral.campos[ this.getIndexForm('Pais') ].opciones = paisNacimiento;
+        });
+  }
+
+  loadOptionsCargo(): void {
+    let cargo: Array<any> = [];
+      this.experienciaService.get('cargo/?limit=0')
+        .subscribe(res => {
+          if (res !== null) {
+            cargo = <Array<any>>res;
+          }
+          this.formInfoExperienciaLaboral.campos[ this.getIndexForm('Cargo') ].opciones = cargo;
+        });
+  }
+
+  loadOptionsTipoVinculacion(): void {
+    let tipoVinculacion: Array<any> = [];
+      this.experienciaService.get('tipo_vinculacion/?limit=0')
+        .subscribe(res => {
+          if (res !== null) {
+            tipoVinculacion = <Array<any>>res;
+          }
+          this.formInfoExperienciaLaboral.campos[ this.getIndexForm('TipoVinculacion') ].opciones = tipoVinculacion;
+        });
+  }
+
+  loadOptionsTipoDedicacion(): void {
+    let dedicacion: Array<any> = [];
+      this.experienciaService.get('tipo_dedicacion/?limit=0')
+        .subscribe(res => {
+          if (res !== null) {
+            dedicacion = <Array<any>>res;
+          }
+          this.formInfoExperienciaLaboral.campos[ this.getIndexForm('TipoDedicacion') ].opciones = dedicacion;
+        });
+  }
+
+  searchOrganizacion(data: any) : void {   const nit = typeof data === "string"? data : data.data.Nit;
+    this.campusMidService.get('organizacion/identificacion/?id=' + nit + '&tipoid=5')
      .subscribe(res => {
+        const init = this.getIndexForm('Nit');
+        const inombre = this.getIndexForm('NombreEmpresa');
+        const itipo = this.getIndexForm('TipoOrganizacion');
+        const idir = this.getIndexForm('Direccion');
+        const itel = this.getIndexForm('Telefono');
+        const icorreo = this.getIndexForm('Correo');
+        const ipais = this.getIndexForm('Pais');
+        this.organizacion = new Organizacion();
         if (res !== null) {
-          console.log(res)
-          let model = <any>res;
-          this.formInfoExperienciaLaboral.campos[this.getIndexForm('Nit')].valor = model.NumeroIdentificacion;
-          this.formInfoExperienciaLaboral.campos[this.getIndexForm('NombreEmpresa')].valor = model.Nombre;
-          let index = this.getIndexForm('TipoOrganizacion');
-          this.formInfoExperienciaLaboral.campos[index].opciones.forEach(element => {
-            if (element.Id === model.TipoOrganizacion.Id) {
-              this.formInfoExperienciaLaboral.campos[index].valor = element;
-            }
-          });
-          this.formInfoExperienciaLaboral.campos[this.getIndexForm('Direccion')].valor = model.Ubicacion[0].Valor;
-          this.formInfoExperienciaLaboral.campos[this.getIndexForm('Correo')].valor = model.Nombre;
-          this.formInfoExperienciaLaboral.campos[this.getIndexForm('Telefono')].valor = model.Contacto[0].Valor;
+          this.organizacion = <Organizacion>res;
         } else {
-          this.formInfoExperienciaLaboral.campos[this.getIndexForm('Nit')].deshabilitar = false;
-          this.formInfoExperienciaLaboral.campos[this.getIndexForm('NombreEmpresa')].deshabilitar = false;
-          this.formInfoExperienciaLaboral.campos[this.getIndexForm('TipoOrganizacion')].deshabilitar = false;
-          this.formInfoExperienciaLaboral.campos[this.getIndexForm('Direccion')].deshabilitar = false;
-          this.formInfoExperienciaLaboral.campos[this.getIndexForm('Correo')].deshabilitar = false;
-          this.formInfoExperienciaLaboral.campos[this.getIndexForm('Telefono')].deshabilitar = false;
+          this.organizacion.NumeroIdentificacion = nit;
         }
+        this.formInfoExperienciaLaboral.campos[init].valor = this.organizacion.NumeroIdentificacion;
+        this.formInfoExperienciaLaboral.campos[inombre].valor = this.organizacion.Nombre;
+        this.formInfoExperienciaLaboral.campos[itipo].opciones.forEach(element => {
+          if (this.organizacion.TipoOrganizacion && element.Id === this.organizacion.TipoOrganizacion.Id) {
+            this.formInfoExperienciaLaboral.campos[itipo].valor = element;
+          }
+        });
+        if(this.organizacion.Ubicacion)
+        this.organizacion.Ubicacion.forEach(element => {
+          if (element.AtributoUbicacion.Id === 1 && element.UbicacionEnte.TipoRelacionUbicacionEnte.Id === 1) {
+            this.formInfoExperienciaLaboral.campos[idir].valor = element.Valor;
+            this.formInfoExperienciaLaboral.campos[ipais].opciones.forEach(e => {
+              if ( e.Id === element.UbicacionEnte.Lugar) {
+                this.formInfoExperienciaLaboral.campos[ipais].valor = e;
+              }
+            });
+
+          }
+        });
+        if(this.organizacion.Contacto)
+        this.organizacion.Contacto.forEach(element => {
+          if (element.TipoContacto.Id === 1) {
+            this.formInfoExperienciaLaboral.campos[itel].valor = element.Valor;
+          }
+          if (element.TipoContacto.Id === 4) {
+            this.formInfoExperienciaLaboral.campos[icorreo].valor = element.Valor;
+          }
+        });
+        [this.formInfoExperienciaLaboral.campos[inombre],
+        this.formInfoExperienciaLaboral.campos[itipo],
+        this.formInfoExperienciaLaboral.campos[idir],
+        this.formInfoExperienciaLaboral.campos[icorreo],
+        this.formInfoExperienciaLaboral.campos[ipais],
+        this.formInfoExperienciaLaboral.campos[itel]]
+        .forEach(element => {
+          element.deshabilitar = element.valor ? true : false
+        });
     });
   }
 
   createInfoExperienciaLaboral(infoExperienciaLaboral: any): void {
+    console.log(JSON.stringify(infoExperienciaLaboral) );
+
     const opt: any = {
       title: this.translate.instant('GLOBAL.crear'),
       text: this.translate.instant('GLOBAL.crear') + '?',
@@ -168,16 +250,30 @@ export class CrudExperienciaLaboralComponent implements OnInit {
       .then((willDelete) => {
         if (willDelete.value) {
           this.info_experiencia_laboral = <InfoExperienciaLaboral>infoExperienciaLaboral;
-          /** this.Service.post('', this.info_experiencia_laboral)
+          this.campusMidService.post('experiencia_laboral', this.info_experiencia_laboral)
             .subscribe(res => {
-              this.info_experiencia_laboral = <InfoExperienciaLaboral>res; **/
-              this.eventChange.emit(true);
-              this.showToast('info', this.translate.instant('GLOBAL.crear'),
-                this.translate.instant('GLOBAL.experiencia_laboral') + ' ' +
-                this.translate.instant('GLOBAL.confirmarCrear'));
-            /** }); **/
-        }
+              let r = <any>res;
+              if (r !== null && r.Type !== "error") {
+                this.eventChange.emit(true);
+                this.showToast('info', this.translate.instant('GLOBAL.crear'),
+                  this.translate.instant('GLOBAL.experiencia_laboral') + ' ' +
+                  this.translate.instant('GLOBAL.confirmarCrear'));
+              }
+            });
+          }
+              //this.info_experiencia_laboral = <InfoExperienciaLaboral>res;
       });
+  }
+
+  createOrganizacion(org: any, exp: any): void {
+    this.campusMidService.post('organizacion',org)
+    .subscribe(res => {
+      const identificacion = <any>res;
+      if (identificacion !== null && identificacion.Type !== "error") {
+        exp.Organizacion = identificacion.Body.Ente.Id;
+        this.createInfoExperienciaLaboral(exp);
+      }
+    });
   }
 
   ngOnInit() {
@@ -188,9 +284,37 @@ export class CrudExperienciaLaboralComponent implements OnInit {
     console.log(event);
 
     if (event.valid) {
-      this.searchOrganizacion(event.data.InfoExperienciaLaboral.Nit)
+     // this.searchOrganizacion(event.data.InfoExperienciaLaboral.Nit)
+     let experiencia = {
+          Persona: this.info_experiencia_laboral_id,
+          Actividades: event.data.InfoExperienciaLaboral.Actividades,
+          FechaInicio: event.data.InfoExperienciaLaboral.FechaInicio,
+          FechaFinalizacion:event.data.InfoExperienciaLaboral.FechaFinalizacion,
+          Organizacion: this.organizacion.Ente ? this.organizacion.Ente.Id : null,
+          TipoDedicacion: event.data.InfoExperienciaLaboral.TipoDedicacion,
+          Cargo: event.data.InfoExperienciaLaboral.Cargo,
+          TipoVinculacion: event.data.InfoExperienciaLaboral.TipoVinculacion,
+          Soportes: event.data.InfoExperienciaLaboral.Soportes
+      }
+
       if (this.info_experiencia_laboral === undefined) {
-        this.searchOrganizacion(event.data.InfoExperienciaLaboral.Nit)
+
+        if (experiencia.Organizacion !== null) {
+          this.createInfoExperienciaLaboral(experiencia);
+        } else {
+          let org = {
+            NumeroIdentificacion: event.data.InfoExperienciaLaboral.Nit,
+            //LugarExpedicion: ,
+            Nombre: event.data.InfoExperienciaLaboral.NombreEmpresa,
+            TipoOrganizacion: event.data.InfoExperienciaLaboral.TipoOrganizacion,
+            TipoIdentificacion: {
+              Id: 5
+            }
+            //"FechaExpedicion": "string"
+          }
+          this.createOrganizacion(org, experiencia);
+        }
+
         //this.createInfoExperienciaLaboral(event.data.InfoExperienciaLaboral);
       } else {
        // this.updateInfoExperienciaLaboral(event.data.InfoExperienciaLaboral);

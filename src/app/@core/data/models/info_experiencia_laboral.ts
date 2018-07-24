@@ -1,11 +1,12 @@
 
 export class InfoExperienciaLaboral {
-  NombreEmpresa: string;
-  DireccionEmpresa: string;
-  CorreoEmpresa: string;
-  TelefonoEmpresa: number;
-  AnioInicio: number;
-  AnioFin: number;
-  Cargo: string;
-  DescripcionCargo: string;
+  Persona: number;
+  Actividades: string;
+  Organizacion: number;
+  FechaInicio: Date;
+  FechaFinalizacion: Date;
+  TipoDedicacion: any;
+  Cargo: any;
+  TipoVinculacion: any;
+  Soportes: any;
 }

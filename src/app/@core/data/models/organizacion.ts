@@ -1,10 +1,14 @@
+import { TipoIdentificacion } from "./tipo_identificacion";
+import { ContactoEnte } from "./contacto_ente";
 
 export class Organizacion {
-  Id: number;
-  Ente: number;
+  Ente: any;
   Nombre: string;
-  Nit: string;
-  Direccion: string;
-  Correo: string;
-  telefono: string;
+  Contacto: Array<ContactoEnte>;
+  FechaExpedicion: Date;
+  LugarExpedicion: number;
+  NumeroIdentificacion: string;
+  TipoIdentificacion: TipoIdentificacion;
+  TipoOrganizacion: any;
+  Ubicacion: any;
 }

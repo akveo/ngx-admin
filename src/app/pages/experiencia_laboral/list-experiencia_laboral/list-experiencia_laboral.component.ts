@@ -20,6 +20,7 @@ export class ListExperienciaLaboralComponent implements OnInit {
   constructor(private translate: TranslateService, private toasterService: ToasterService) {
     this.loadData();
     this.cargarCampos();
+    this.uid = 1;
     this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
       this.cargarCampos();
     });
