@@ -125,7 +125,7 @@
       position: absolute;
       z-index: 100;
       left: 1rem;
-      top: .25rem;
+      top: 0.25rem;
     }
   }
 
@@ -162,7 +162,7 @@
 
     min-width: -moz-min-content;
     border-width: 2px;
-    border-radius: .4rem;
+    border-radius: 0.4rem;
     border-style: groove;
     border-color: nb-theme(color-success);
     @include nb-for-theme(cosmic) {
@@ -186,8 +186,8 @@
   }
   @include media-breakpoint-down(xs) {
     button:not(.btn-icon) {
-      padding: .75rem 1rem;
-      font-size: .75rem;
+      padding: 0.75rem 1rem;
+      font-size: 0.75rem;
     }
   }
 }
