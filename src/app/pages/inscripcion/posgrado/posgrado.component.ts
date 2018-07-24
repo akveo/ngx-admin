@@ -116,6 +116,13 @@ export class PosgradoComponent implements OnInit {
         this.info_persona = true;
         break;
       default:
+      this.show_info = false;
+      this.show_profile = false;
+      this.show_acad = false;
+      this.show_expe = false;
+      this.info_contacto = false;
+      this.info_caracteristica = false;
+      this.info_persona = false;
         break;
     }
   }

@@ -11,18 +11,20 @@ export class NuxeoService {
     static nuxeo: Nuxeo
 
     private documentos$ = new Subject<Documento[]>();
-    private documentos: Documento[];
+    private documentos: object;
 
     private blobDocument$ = new Subject<[object]>();
-    private blobDocument: object[];
+    private blobDocument: object;
 
     private updateDoc$ = new Subject<[object]>();
-    private updateDoc: object[];
+    private updateDoc: object
 
     constructor() {
-        this.documentos = [];
-        this.blobDocument = [];
-        this.updateDoc = [];
+        this.documentos = {};
+        this.blobDocument = {};
+        this.updateDoc = {};
+        console.info(this.blobDocument);
+        console.info(this.updateDoc);
 
         NuxeoService.nuxeo = new Nuxeo({
             baseURL: GENERAL.ENTORNO.NUXEO.PATH,
@@ -50,8 +52,8 @@ export class NuxeoService {
     }
 
     saveFiles(files, documentoService, nuxeoservice) {
-        this.documentos = [];
-        nuxeoservice.documentos = [];
+        this.documentos = {};
+        nuxeoservice.documentos = {};
         NuxeoService.nuxeo.connect()
             .then(function (client) {
                 files.forEach(file => {
@@ -85,8 +87,7 @@ export class NuxeoService {
                                                         documentoPost.TipoDocumento = tipoDocumento;
                                                         documentoService.post('documento', documentoPost)
                                                             .subscribe(resuestaPost => {
-                                                                console.info(nuxeoservice.documentos)
-                                                                nuxeoservice.documentos.push(resuestaPost.Body);
+                                                                nuxeoservice.documentos[file.key] = resuestaPost.Body;
                                                                 nuxeoservice.documentos$.next(nuxeoservice.documentos);
                                                             })
 
@@ -108,8 +109,8 @@ export class NuxeoService {
     }
 
     updateFile(files, documentoService, nuxeoservice) {
-        this.updateDoc = [];
-        nuxeoservice.updateDoc = [];
+        this.updateDoc = {};
+        nuxeoservice.updateDoc = {};
         files.forEach(file => {
             if (file.file !== undefined) {
                 const nuxeoBlob = new Nuxeo.Blob({ content: file.file });
@@ -139,8 +140,7 @@ export class NuxeoService {
                                                         documento: documento_temp,
                                                         url: url,
                                                     };
-                                                    console.info(response_update);
-                                                    nuxeoservice.updateDoc.push(response_update);
+                                                    nuxeoservice.updateDoc[file.key] = response_update;
                                                     nuxeoservice.updateDoc$.next(nuxeoservice.updateDoc);
                                                 });
                                         });
@@ -151,11 +151,11 @@ export class NuxeoService {
         });
     };
 
-    getFile(Ids, documentoService, nuxeoservice) {
-        this.blobDocument = [];
-        nuxeoservice.blobDocument = [];
-        Ids.forEach(Id => {
-            documentoService.get('documento/' + Id)
+    getFile(files, documentoService, nuxeoservice) {
+        this.blobDocument = {};
+        nuxeoservice.blobDocument = {};
+        files.forEach(file => {
+            documentoService.get('documento/' + file.Id)
                 .subscribe(res => {
                     if (res !== null) {
                         if (res.Enlace != null) {
@@ -168,7 +168,7 @@ export class NuxeoService {
                                             blob.blob()
                                                 .then(function (responseblob) {
                                                     const url = URL.createObjectURL(responseblob)
-                                                    nuxeoservice.blobDocument.push(url);
+                                                    nuxeoservice.blobDocument[file.key] = url;
                                                     nuxeoservice.blobDocument$.next(nuxeoservice.blobDocument);
                                                 });
                                         })
