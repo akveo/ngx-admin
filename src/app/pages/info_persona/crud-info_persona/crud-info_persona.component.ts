@@ -132,9 +132,9 @@ export class CrudInfoPersonaComponent implements OnInit {
             if (temp.SoporteDocumento + '' !== '0') {
               files.push({ Id: temp.SoporteDocumento, key: 'SoporteDocumento' });
             }
-            console.info(temp);
             this.nuxeoService.getDocumentoById$(files, this.documentoService)
               .subscribe(response => {
+                console.info(temp);
                 const filesResponse = <any>response;
                 if (Object.keys(filesResponse).length === files.length) {
                   this.info_info_persona = temp;
@@ -150,6 +150,7 @@ export class CrudInfoPersonaComponent implements OnInit {
     } else {
       this.info_info_persona = undefined
       this.clean = !this.clean;
+      this.loading = false;
     }
   }
 
@@ -166,8 +167,8 @@ export class CrudInfoPersonaComponent implements OnInit {
     };
     Swal(opt)
       .then((willDelete) => {
-        this.loading = true;
         if (willDelete.value) {
+          this.loading = true;
           this.info_info_persona = <any>infoPersona;
           const files = [];
           if (this.info_info_persona.Foto.file !== undefined) {
@@ -208,6 +209,7 @@ export class CrudInfoPersonaComponent implements OnInit {
               .subscribe(res => {
                 this.eventChange.emit(true);
                 this.loadInfoPersona();
+                this.loading = false;
                 this.showToast('info', this.translate.instant('GLOBAL.actualizar'),
                   this.translate.instant('GLOBAL.info_persona') + ' ' +
                   this.translate.instant('GLOBAL.confirmarActualizar'));
