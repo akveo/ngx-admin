@@ -1,25 +1,14 @@
 <nb-card-header>
-  <div class="dropdown"
-       ngbDropdown>
-    <button type="button" ngbDropdownToggle class="btn"
-            [ngClass]="{ 'btn-success': currentTheme === 'default', 'btn-primary': currentTheme !== 'default'}">
-      {{ selectedCurrency }}
-    </button>
-    <ul class="dropdown-menu" ngbDropdownMenu>
-      <li class="dropdown-item" *ngFor="let currency of currencies" (click)="changeCurrency(currency)">{{ currency }}</li>
-    </ul>
-  </div>
+  Earnings
 </nb-card-header>
 <nb-card-body>
   <div class="chart-info">
-    <div class="title">Daily Income</div>
-    <div class="value">{{ earningLiveUpdateChartData.dailyIncome | ngxNumberWithCommas }}</div>
-    <div class="delta"
-         [class.up]="earningLiveUpdateChartData.delta.up"
-         [class.down]="!earningLiveUpdateChartData.delta.up">
-      {{ earningLiveUpdateChartData.delta.value }}%
-    </div>
+    <div class="title" [style.color]="color">{{ name }}</div>
+    <div class="time-period">Last week</div>
+    <div class="value">{{ value }}%</div>
   </div>
-  <ngx-earning-live-update-chart [liveUpdateChartData]="earningLiveUpdateChartData.liveChart">
-  </ngx-earning-live-update-chart>
+  <ngx-earning-pie-chart [values]="earningPieChartData"
+                         (selectPie)="changeChartInfo($event)"
+                         [defaultSelectedCurrency]="defaultSelectedCurrency">
+  </ngx-earning-pie-chart>
 </nb-card-body>

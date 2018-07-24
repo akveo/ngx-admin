@@ -1,10 +1,10 @@
 @import '../../../@theme/styles/themes';
 
 @include nb-install-component() {
-
   .nb-arrow-right {
     position: absolute;
     right: 0;
+    top: 0;
     @include nb-rtl(right, auto);
     @include nb-rtl(left, 0);
     padding: 1.5rem;

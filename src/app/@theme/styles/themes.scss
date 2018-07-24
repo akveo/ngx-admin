@@ -56,10 +56,10 @@ $nb-themes: nb-register-theme((
   slide-out-shadow-color: 2px 0 3px rgba(19, 19, 94, 0.9),
   slide-out-shadow-color-rtl: -2px 0 3px rgba(19, 19, 94, 0.9),
 
-  chart-panel-summary-box-shadow: 0 4px 14px 0 rgba(19, 19, 94, 0.4),
+  chart-panel-summary-box-shadow: none,
   chart-panel-summary-background-color: rgba(0, 0, 0, 0.1),
-  chart-panel-summary-border-color: #ebeff1,
-  chart-panel-summary-border-width: 0,
+  chart-panel-summary-border-color: #332e73,
+  chart-panel-summary-border-width: 1px,
 
   ecommerce-card-border-width: 1px,
 
