@@ -10,4 +10,10 @@
     padding: 1.5rem;
     cursor: pointer;
   }
+
+  nb-card-back {
+    /deep/ nb-card-header {
+      border: none;
+    }
+  }
 }

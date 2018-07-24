@@ -1,72 +1,36 @@
-import { Component, Input, OnDestroy, OnInit } from '@angular/core';
-import { NbThemeService } from '@nebular/theme';
+import { Component, OnDestroy } from '@angular/core';
+import { EarningService, PieChart } from '../../../../@core/data/earning.service';
 import { takeWhile } from 'rxjs/operators';
-import { EarningService, LiveUpdateChart } from '../../../../@core/data/earning.service';
 
 @Component({
   selector: 'ngx-earning-card-back',
   styleUrls: ['./earning-card-back.component.scss'],
   templateUrl: './earning-card-back.component.html',
 })
-export class EarningCardBackComponent implements OnDestroy, OnInit {
+export class EarningCardBackComponent implements OnDestroy {
   private alive = true;
 
-  @Input() selectedCurrency: string = 'Bitcoin';
+  earningPieChartData: PieChart[];
+  name: string;
+  color: string;
+  value: number;
+  defaultSelectedCurrency: string = 'Bitcoin';
 
-  currencies: string[] = ['Bitcoin', 'Tether', 'Ethereum'];
-  currentTheme: string;
-  earningLiveUpdateCardData: LiveUpdateChart;
-  liveUpdateChartData: {value: [string, number]}[];
-  timeTicket: any;
-
-
-  constructor(private themeService: NbThemeService,
-              private earningService: EarningService) {
-    this.themeService.getJsTheme()
+  constructor(private earningService: EarningService ) {
+    this.earningService.getEarningPieChartData()
       .pipe(takeWhile(() => this.alive))
-      .subscribe(theme => {
-        this.currentTheme = theme.name;
+      .subscribe((earningPieChartData) => {
+        this.earningPieChartData = earningPieChartData;
       });
   }
 
-  ngOnInit() {
-    this.getEarningCardData(this.selectedCurrency);
-  }
-
-  changeCurrency(currency) {
-    if (this.selectedCurrency !== currency) {
-      this.selectedCurrency = currency;
-
-      this.getEarningCardData(this.selectedCurrency);
-    }
-  }
-
-  private getEarningCardData(currency) {
-    this.earningService.getEarningLiveUpdateCardData(currency)
-      .pipe(takeWhile(() => this.alive))
-      .subscribe((earningLiveUpdateCardData) => {
-        this.earningLiveUpdateCardData = earningLiveUpdateCardData;
-        this.liveUpdateChartData = earningLiveUpdateCardData.liveChart;
-
-        this.startReceivingLiveData(currency);
-      });
-  }
-
-  startReceivingLiveData(currency) {
-    clearInterval(this.timeTicket);
-
-    this.timeTicket = setInterval( () => {
-      this.earningService.generateRandomEarningLiveUpdateChartData(currency)
-        .pipe(takeWhile(() => this.alive))
-        .subscribe((liveUpdateChartData) => {
-          this.liveUpdateChartData = [...liveUpdateChartData];
-        });
-    }, 100);
+  changeChartInfo(pieData: {value: number; name: string; color: any}) {
+    this.value = pieData.value;
+    this.name = pieData.name;
+    this.color = pieData.color;
   }
 
   ngOnDestroy() {
     this.alive = false;
-
-    clearInterval(this.timeTicket);
   }
 }

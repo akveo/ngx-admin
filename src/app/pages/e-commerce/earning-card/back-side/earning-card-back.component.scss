@@ -1,112 +1,36 @@
 @import '../../../../@theme/styles/themes';
-@import '~@nebular/theme/styles/global/typography/typography';
 
 @include nb-install-component() {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-
   nb-card-header {
-    padding-top: 0.5rem;
+    flex-direction: row;
   }
 
-  .dropdown {
-    min-width: 8.125rem;
-  }
-
-  nb-card-body {
-    padding: 0;
-    flex-direction: column;
+  ngx-earning-pie-chart, .chart-info {
     flex: 1;
   }
 
   .chart-info {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    margin: 0 nb-theme(card-padding);
+    padding-top: 0.7rem;
   }
 
   .title {
-    color: nb-theme(color-fg-heading);
+    font-size: nb-theme(font-size-xlg);
+  }
+
+  .time-period {
+    margin-top: 1.5rem;
+    color: nb-theme(color-fg);
   }
 
   .value {
-    color: nb-theme(color-success);
+    margin-top: 0.2rem;
     font-size: 1.5rem;
-
-    @include nb-for-theme(corporate) {
-      color: nb-theme(color-primary);
-    }
-  }
-
-  .delta {
-    position: absolute;
-    display: inline-block;
     color: nb-theme(color-fg-heading);
-    padding-left: 0.5rem;
-    font-size: 1rem;
-    top: 0;
-    right: 0;
-
-    &::before {
-      position: absolute;
-      content: '';
-      right: 100%;
-      border-left: 6px solid transparent;
-      border-right: 6px solid transparent;
-    }
-
-    &.down {
-      &::before {
-        bottom: 4px;
-        border-top: 7px solid text-danger();
-      }
-    }
-
-    &.up {
-      &::before {
-        top: 4px;
-        border-bottom: 7px solid text-success();
-      }
-    }
-  }
-
-  ngx-earning-live-update-chart {
-    flex: 1;
-    position: relative;
-  }
-
-  /deep/ canvas {
-    border-bottom-left-radius: nb-theme(card-border-radius);
-    border-bottom-right-radius: nb-theme(card-border-radius);
   }
 
   .echart {
     position: absolute;
-    height: 100%;
-    width: 105%;
-  }
-
-  @include nb-for-theme(corporate) {
-    .delta {
-      &.down {
-        color: text-danger();
-
-        &::before {
-          bottom: 4px;
-          border-top: 7px solid text-danger();
-        }
-      }
-
-      &.up {
-        color: text-primary();
-
-        &::before {
-          top: 4px;
-          border-bottom: 7px solid text-primary();
-        }
-      }
-    }
+    width: calc(50% - #{nb-theme(card-padding)});
+    height: calc(100% - 2 * #{nb-theme(card-padding)});
   }
 }
