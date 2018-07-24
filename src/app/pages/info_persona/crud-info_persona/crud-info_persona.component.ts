@@ -41,6 +41,7 @@ export class CrudInfoPersonaComponent implements OnInit {
   formInfoPersona: any;
   regInfoPersona: any;
   clean: boolean;
+  loading: boolean;
 
   constructor(
     private translate: TranslateService,
@@ -59,6 +60,7 @@ export class CrudInfoPersonaComponent implements OnInit {
     this.loadOptionsEstadoCivil();
     this.loadOptionsGenero();
     this.loadOptionsTipoIdentificacion();
+    this.loading = false;
   }
 
   construirForm() {
@@ -117,6 +119,7 @@ export class CrudInfoPersonaComponent implements OnInit {
   }
 
   public loadInfoPersona(): void {
+    this.loading = true;
     if (this.info_persona_id !== undefined && this.info_persona_id !== 0 &&
       this.info_persona_id.toString() !== '') {
       this.campusMidService.get('persona/ConsultaPersona/?id=' + this.info_persona_id)
@@ -140,6 +143,7 @@ export class CrudInfoPersonaComponent implements OnInit {
                   this.SoporteDocumento = this.info_info_persona.SoporteDocumento;
                   this.info_info_persona.Foto = filesResponse['Foto'] + '';
                   this.info_info_persona.SoporteDocumento = filesResponse['SoporteDocumento'] + '';
+                  this.loading = false;
                 }
               });
           }
@@ -163,6 +167,7 @@ export class CrudInfoPersonaComponent implements OnInit {
     };
     Swal(opt)
       .then((willDelete) => {
+        this.loading = true;
         if (willDelete.value) {
           this.info_info_persona = <any>infoPersona;
           const files = [];
@@ -187,6 +192,7 @@ export class CrudInfoPersonaComponent implements OnInit {
                       if (documentos_actualizados['SoporteDocumento'] !== undefined) {
                         this.info_info_persona.SoporteDocumento = documentos_actualizados['SoporteDocumento'].url + '';
                       }
+                      this.loading = false;
                       this.eventChange.emit(true);
                       this.loadInfoPersona();
                       this.showToast('info', this.translate.instant('GLOBAL.actualizar'),
@@ -225,6 +231,7 @@ export class CrudInfoPersonaComponent implements OnInit {
     };
     Swal(opt)
       .then((willDelete) => {
+        this.loading = true;
         if (willDelete.value) {
           const files = []
           this.info_info_persona = <any>infoPersona;
@@ -256,6 +263,7 @@ export class CrudInfoPersonaComponent implements OnInit {
                     console.info(res);
                     this.info_info_persona = <InfoPersona>res;
                     this.loadInfoPersona();
+                    this.loading = false;
                     this.eventChange.emit(true);
                     this.showToast('info', this.translate.instant('GLOBAL.crear'),
                       this.translate.instant('GLOBAL.info_persona') + ' ' + this.translate.instant('GLOBAL.confirmarCrear'));
