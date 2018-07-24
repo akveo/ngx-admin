@@ -15,7 +15,8 @@ export class EarningCardBackComponent implements OnDestroy {
 
   currencies: string[] = ['Bitcoin', 'Tether', 'Ethereum'];
   currentTheme: string;
-  earningLiveUpdateChartData: LiveUpdateChart;
+  earningLiveUpdateChartData: LiveUpdateChart = new LiveUpdateChart();
+  timeTicket: any;
 
 
   constructor(private themeService: NbThemeService,
@@ -25,7 +26,7 @@ export class EarningCardBackComponent implements OnDestroy {
       .subscribe(theme => {
         this.currentTheme = theme.name;
 
-        this.getEarningLiveUpdateChartData(this.selectedCurrency);
+        this.startReceivingLiveData(this.selectedCurrency);
       });
   }
 
@@ -33,19 +34,23 @@ export class EarningCardBackComponent implements OnDestroy {
     if (this.selectedCurrency !== currency) {
       this.selectedCurrency = currency;
 
-      this.getEarningLiveUpdateChartData(currency);
+      clearInterval(this.timeTicket);
+      this.startReceivingLiveData(this.selectedCurrency);
     }
   }
 
-  getEarningLiveUpdateChartData(currency: string) {
-    this.earningService.getEarningLiveUpdateChartData(currency)
-      .pipe(takeWhile(() => this.alive))
-      .subscribe((earningLiveUpdateChartData) => {
-        this.earningLiveUpdateChartData = earningLiveUpdateChartData;
-      });
+  private startReceivingLiveData(currency) {
+    this.timeTicket = setInterval( () => {
+      this.earningService.getEarningLiveUpdateChartData(currency)
+        .pipe(takeWhile(() => this.alive))
+        .subscribe((earningLiveUpdateChartData) => {
+          this.earningLiveUpdateChartData = earningLiveUpdateChartData;
+        });
+    }, 100);
   }
 
   ngOnDestroy() {
     this.alive = false;
+    clearInterval(this.timeTicket);
   }
 }

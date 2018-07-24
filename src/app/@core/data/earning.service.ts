@@ -1,13 +1,19 @@
 import { Injectable } from '@angular/core';
-import { of as observableOf,  Observable } from 'rxjs';
+import { of as observableOf, Observable } from 'rxjs';
 
 export class LiveUpdateChart {
-  liveChart: number[];
+  liveChart: any[];
   delta: {
     up: boolean;
     value: number;
   };
   dailyIncome: number;
+
+  constructor() {
+    this.liveChart = [];
+    this.delta = {up: true, value: 0};
+    this.dailyIncome = 0;
+  }
 }
 
 export class PieChart {
@@ -18,11 +24,9 @@ export class PieChart {
 @Injectable()
 export class EarningService {
 
-  private getRandomData(nPoints: number): number[] {
-    return Array.from(Array(nPoints)).map(() => {
-      return Math.round(Math.random() * 1000);
-    });
-  }
+  private currentDate: Date = new Date();
+  private currentValue = Math.random() * 1000;
+  private ONE_DAY = 24 * 3600 * 1000;
 
   private pieChartData = [
     {
@@ -69,12 +73,34 @@ export class EarningService {
   generateRandomEarningLiveUpdateChartData(currency) {
     const data = this.liveUpdateChartData[currency.toLowerCase()];
 
-    data.liveChart = this.getRandomData(12);
+    if (data.liveChart.length > 0) {
+      const newValue = this.generateRandomData();
+
+      data.liveChart.shift();
+      data.liveChart.push(newValue);
+
+      data.liveChart = [...data.liveChart];
+    } else {
+      data.liveChart = Array.from(Array(500))
+        .map(item => this.generateRandomData());
+    }
 
     return data;
   }
 
-  getEarningLiveUpdateChartData(currency: string): Observable<LiveUpdateChart> {
+  generateRandomData() {
+    this.currentDate = new Date(+this.currentDate + this.ONE_DAY);
+    this.currentValue = this.currentValue + Math.random() * 21 - 10;
+
+    return {
+      value: [
+        [this.currentDate.getFullYear(), this.currentDate.getMonth(), this.currentDate.getDate()].join('/'),
+        Math.round(this.currentValue),
+      ],
+    }
+  }
+
+  getEarningLiveUpdateChartData(currency: string) {
     return observableOf(this.generateRandomEarningLiveUpdateChartData(currency));
   }
 
