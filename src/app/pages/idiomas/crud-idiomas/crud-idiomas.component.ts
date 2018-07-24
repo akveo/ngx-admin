@@ -10,7 +10,6 @@ import 'style-loader!angular2-toaster/toaster.css';
 @Component({
   selector: 'ngx-crud-idiomas',
   templateUrl: './crud-idiomas.component.html',
-  styleUrls: ['./crud-idiomas.component.scss'],
 })
 export class CrudIdiomasComponent implements OnInit {
   config: ToasterConfig;

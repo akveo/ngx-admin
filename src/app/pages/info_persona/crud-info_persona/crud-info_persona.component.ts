@@ -125,23 +125,23 @@ export class CrudInfoPersonaComponent implements OnInit {
             const temp = <InfoPersona>res;
             const files = []
             if (temp.Foto + '' !== '0') {
-              files.push(temp.Foto);
+              files.push({ Id: temp.Foto, key: 'Foto' });
             }
             if (temp.SoporteDocumento + '' !== '0') {
-              files.push(temp.SoporteDocumento);
+              files.push({ Id: temp.SoporteDocumento, key: 'SoporteDocumento' });
             }
-            console.info(files);
+            console.info(temp);
             this.nuxeoService.getDocumentoById$(files, this.documentoService)
               .subscribe(response => {
-                if (response.length === files.length) {
+                const filesResponse = <any>response;
+                if (Object.keys(filesResponse).length === files.length) {
                   this.info_info_persona = temp;
                   this.Foto = this.info_info_persona.Foto;
                   this.SoporteDocumento = this.info_info_persona.SoporteDocumento;
-                  this.info_info_persona.Foto = response[0] + '';
-                  this.info_info_persona.SoporteDocumento = response[1] + '';
+                  this.info_info_persona.Foto = filesResponse['Foto'] + '';
+                  this.info_info_persona.SoporteDocumento = filesResponse['SoporteDocumento'] + '';
                 }
               });
-
           }
         });
     } else {
@@ -167,22 +167,26 @@ export class CrudInfoPersonaComponent implements OnInit {
           this.info_info_persona = <any>infoPersona;
           const files = [];
           if (this.info_info_persona.Foto.file !== undefined) {
-            files.push({ file: this.info_info_persona.Foto.file, documento: this.Foto });
+            files.push({ file: this.info_info_persona.Foto.file, documento: this.Foto, key: 'Foto' });
           }
           if (this.info_info_persona.SoporteDocumento.file !== undefined) {
-            files.push({ file: this.info_info_persona.SoporteDocumento.file, documento: this.SoporteDocumento });
+            files.push({ file: this.info_info_persona.SoporteDocumento.file, documento: this.SoporteDocumento, key: 'SoporteDocumento' });
           }
           if (files.length !== 0) {
             this.nuxeoService.updateDocument$(files, this.documentoService)
               .subscribe(response => {
-                if (response.length === files.length) {
-                  let documentos_actualizados: any[];
-                  documentos_actualizados = response;
+                if (Object.keys(response).length === files.length) {
+                  const documentos_actualizados = <any>response;
                   this.info_info_persona.Foto = this.Foto;
                   this.info_info_persona.SoporteDocumento = this.SoporteDocumento;
                   this.campusMidService.put('persona/ActualizarPersona', this.info_info_persona)
                     .subscribe(res => {
-                      this.info_info_persona.Foto = documentos_actualizados[0].url + '';
+                      if (documentos_actualizados['Foto'] !== undefined) {
+                        this.info_info_persona.Foto = documentos_actualizados['Foto'].url + '';
+                      }
+                      if (documentos_actualizados['SoporteDocumento'] !== undefined) {
+                        this.info_info_persona.SoporteDocumento = documentos_actualizados['SoporteDocumento'].url + '';
+                      }
                       this.eventChange.emit(true);
                       this.loadInfoPersona();
                       this.showToast('info', this.translate.instant('GLOBAL.actualizar'),
@@ -222,32 +226,36 @@ export class CrudInfoPersonaComponent implements OnInit {
     Swal(opt)
       .then((willDelete) => {
         if (willDelete.value) {
-          const array = []
+          const files = []
           this.info_info_persona = <any>infoPersona;
           console.info(this.info_info_persona);
           if (this.info_info_persona.Foto.file !== undefined) {
-            array.push({ nombre: this.autenticationService.getPayload().sub, file: this.info_info_persona.Foto.file, IdDocumento: 1 });
+            files.push({
+              nombre: this.autenticationService.getPayload().sub, key: 'Foto',
+              file: this.info_info_persona.Foto.file, IdDocumento: 1});
           }
           if (this.info_info_persona.SoporteDocumento.file !== undefined) {
-            array.push({ nombre: this.autenticationService.getPayload().sub, file: this.info_info_persona.SoporteDocumento.file, IdDocumento: 2 });
+            files.push({
+              nombre: this.autenticationService.getPayload().sub, key: 'SoporteDocumento',
+              file: this.info_info_persona.SoporteDocumento.file, IdDocumento: 2});
           }
-          this.nuxeoService.getDocumentos$(array, this.documentoService)
+          this.nuxeoService.getDocumentos$(files, this.documentoService)
             .subscribe(response => {
-              if (response.length === array.length) {
-                this.filesUp = <Documento[]>response;
-                console.info(this.filesUp);
-                const foto = this.filesUp[0];
-                const soporte = this.filesUp[1];
-                console.info('foto', foto);
-                console.info('soporte', soporte);
-                this.info_info_persona.Foto = this.filesUp[0].Id;
-                this.info_info_persona.SoporteDocumento = this.filesUp[1].Id;
+              if (Object.keys(response).length === files.length) {
+                this.filesUp = <any>response;
+                if (this.filesUp['Foto'] !== undefined) {
+                  this.info_info_persona.Foto = this.filesUp['Foto'].Id;
+                }
+                if (this.filesUp['SoporteDocumento'] !== undefined) {
+                  this.info_info_persona.SoporteDocumento = this.filesUp['SoporteDocumento'].Id;
+                }
                 this.info_info_persona.Usuario = this.autenticationService.getPayload().sub;
-                console.info(JSON.stringify(this.info_info_persona));
+                console.info(this.info_info_persona);
                 this.campusMidService.post('persona/GuardarPersona', this.info_info_persona)
                   .subscribe(res => {
                     console.info(res);
                     this.info_info_persona = <InfoPersona>res;
+                    this.loadInfoPersona();
                     this.eventChange.emit(true);
                     this.showToast('info', this.translate.instant('GLOBAL.crear'),
                       this.translate.instant('GLOBAL.info_persona') + ' ' + this.translate.instant('GLOBAL.confirmarCrear'));

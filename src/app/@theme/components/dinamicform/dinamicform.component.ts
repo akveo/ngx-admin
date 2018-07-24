@@ -146,8 +146,12 @@ export class DinamicformComponent implements OnInit, OnChanges {
 
   validCampo(c): boolean {
 
-    if (c.requerido && (c.valor === '' || c.valor === null || c.valor === undefined ||
-      (JSON.stringify(c.valor) === '{}' && c.etiqueta !== 'file') || JSON.stringify(c.valor) === '[]') && (c.etiqueta === 'file' && c.url === undefined)) {
+    if (c.etiqueta === 'file') {
+      console.info((c.etiqueta === 'file' && c.valor.name === undefined));
+    }
+    if (c.requerido && ((c.valor === '' && c.etiqueta !== 'file') || c.valor === null || c.valor === undefined ||
+      (JSON.stringify(c.valor) === '{}' && c.etiqueta !== 'file') || JSON.stringify(c.valor) === '[]')
+      || ((c.etiqueta === 'file' && c.valor.name === undefined) && (c.etiqueta === 'file' && c.urlTemp === undefined))) {
       c.alerta = '** Debe llenar este campo';
       c.clase = 'form-control form-control-danger';
       return false;
