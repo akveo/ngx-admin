@@ -4,7 +4,6 @@ import { ImplicitAutenticationService } from '../../../@core/utils/implicit_aute
 import { NuxeoService } from '../../../@core/utils/nuxeo.service';
 import { Genero } from './../../../@core/data/models/genero';
 import { InfoPersona } from './../../../@core/data/models/info_persona';
-import { Documento } from './../../../@core/data/models/documento';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { PersonaService } from '../../../@core/data/persona.service';
 import { EnteService } from '../../../@core/data/ente.service';

@@ -1,7 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter, OnChanges, ViewChild } from '@angular/core';
 import { MatDatepicker } from '@angular/material/datepicker';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
-import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'ngx-dinamicform',
@@ -23,8 +22,7 @@ export class DinamicformComponent implements OnInit, OnChanges {
   data: any;
   @ViewChild(MatDatepicker) datepicker: MatDatepicker<Date>;
 
-  constructor(private sanitization: DomSanitizer,
-    private http: HttpClient) {
+  constructor(private sanitization: DomSanitizer) {
     this.data = {
       valid: true,
       data: {},

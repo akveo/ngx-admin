@@ -23,6 +23,8 @@ export class NuxeoService {
         this.documentos = {};
         this.blobDocument = {};
         this.updateDoc = {};
+        console.info(this.blobDocument);
+        console.info(this.updateDoc);
 
         NuxeoService.nuxeo = new Nuxeo({
             baseURL: GENERAL.ENTORNO.NUXEO.PATH,

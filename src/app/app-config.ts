@@ -4,12 +4,12 @@ export const Config = {
             PATH: 'https://documental.udistrital.edu.co/nuxeo/',
         },
         WSO2_SERVICE: 'http://jbpm.udistritaloas.edu.co:8280/services',
-        UBICACIONES_SERVICE: 'http://192.168.1.61:8085/v1/',
-        PERSONA_SERVICE: 'http://192.168.1.61:8083/v1/',
-        DOCUMENTO_SERVICE: 'http://192.168.1.61:8094/v1/',
-        ENTE_SERVICE: 'http://192.168.1.61:8096/v1/',
-        CAMPUS_MID: 'http://192.168.1.61:8095/v1/',
-        ORGANIZACION: 'http://192.168.1.61.8097/v1/',
+        UBICACIONES_SERVICE: 'http://localhost:8085/v1/',
+        PERSONA_SERVICE: 'http://localhost:8083/v1/',
+        DOCUMENTO_SERVICE: 'http://localhost:8094/v1/',
+        ENTE_SERVICE: 'http://localhost:8096/v1/',
+        CAMPUS_MID: 'http://localhost:8095/v1/',
+        ORGANIZACION: 'http://localhost.8097/v1/',
         CONF_MENU_SERVICE: 'http://10.20.0.254/configuracion_api/v1/menu_opcion_padre/ArbolMenus/',
         TOKEN: {
             AUTORIZATION_URL: 'https://autenticacion.udistrital.edu.co:8244/authorize',
@@ -88,5 +88,5 @@ export const Config = {
 };
 
 export const GENERAL = {
-    ENTORNO: Config.LOCAL,
+    ENTORNO: Config.PREPROD_LOCAL,
 };
