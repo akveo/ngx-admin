@@ -55,8 +55,12 @@
       }
     }
 
-    > div {
+    > * {
       flex: 1;
+    }
+
+    ngx-traffic-bar {
+      flex: 0;
     }
   }
 
@@ -71,15 +75,17 @@
   }
 
   .delta {
-    position: relative;
-    display: inline-block;
+    display: flex;
     padding-left: 0.5rem;
     font-size: 1rem;
+    align-items: center;
 
     &::before {
-      position: absolute;
       content: '';
       right: 100%;
+      margin-right: 0.7rem;
+      @include nb-rtl(margin-left, 0.7rem);
+      @include nb-rtl(margin-right, 0);
       border-left: 5px solid transparent;
       border-right: 5px solid transparent;
     }

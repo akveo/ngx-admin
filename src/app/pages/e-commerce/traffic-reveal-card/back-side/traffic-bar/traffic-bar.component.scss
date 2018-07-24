@@ -27,6 +27,8 @@ $traffic-bar-background-color: #d0d8e3;
   .period-from {
     position: absolute;
     right: 100%;
+    @include nb-rtl(right, inherit);
+    @include nb-rtl(left, 100%);
     bottom: 0;
     white-space: nowrap;
   }

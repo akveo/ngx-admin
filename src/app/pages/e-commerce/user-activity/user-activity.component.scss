@@ -2,7 +2,6 @@
 @import '~@nebular/theme/styles/global/typography/typography';
 
 @include nb-install-component() {
-
   nb-card-header {
     display: flex;
     align-items: center;
@@ -91,6 +90,8 @@
       content: '';
       right: 100%;
       margin-right: 0.7rem;
+      @include nb-rtl(margin-right, 0);
+      @include nb-rtl(margin-left, 0.7rem);
       border-left: 6px solid transparent;
       border-right: 6px solid transparent;
     }
