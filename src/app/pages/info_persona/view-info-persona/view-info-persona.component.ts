@@ -54,10 +54,10 @@ export class ViewInfoPersonaComponent implements OnInit {
           if (r !== null && r.Type !== 'error') {
             this.info_info_persona = <InfoPersona>res;
             const foto = [];
-            foto.push(this.info_info_persona.Foto);
+            foto.push({Id: this.info_info_persona.Foto, key: 'Foto'});
             this.nuxeoService.getDocumentoById$(foto, this.documentoService)
               .subscribe(response => {
-                this.foto = this.cleanURL(response[0] + '');
+                this.foto = this.cleanURL(response['Foto'] + '');
               });
           } else {
             this.info_info_persona = undefined;
