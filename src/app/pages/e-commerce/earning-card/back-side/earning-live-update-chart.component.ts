@@ -18,7 +18,6 @@ export class EarningLiveUpdateChartComponent implements AfterViewInit, OnDestroy
   @Input() liveUpdateChartData: number[];
 
   option: any;
-  themeSubscription: any;
   echartsInstance;
 
   constructor(private theme: NbThemeService) {
@@ -35,7 +34,7 @@ export class EarningLiveUpdateChartComponent implements AfterViewInit, OnDestroy
   }
 
   ngAfterViewInit() {
-    this.themeSubscription = this.theme.getJsTheme()
+    this.theme.getJsTheme()
       .pipe(
         delay(1),
         takeWhile(() => this.alive),

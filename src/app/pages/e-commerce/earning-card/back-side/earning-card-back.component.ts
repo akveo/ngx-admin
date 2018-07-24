@@ -1,4 +1,4 @@
-import { Component, Input, OnDestroy } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { NbThemeService } from '@nebular/theme';
 import { takeWhile } from 'rxjs/operators';
 import { EarningService, LiveUpdateChart } from '../../../../@core/data/earning.service';
@@ -8,14 +8,15 @@ import { EarningService, LiveUpdateChart } from '../../../../@core/data/earning.
   styleUrls: ['./earning-card-back.component.scss'],
   templateUrl: './earning-card-back.component.html',
 })
-export class EarningCardBackComponent implements OnDestroy {
+export class EarningCardBackComponent implements OnDestroy, OnInit {
   private alive = true;
 
   @Input() selectedCurrency: string = 'Bitcoin';
 
   currencies: string[] = ['Bitcoin', 'Tether', 'Ethereum'];
   currentTheme: string;
-  earningLiveUpdateChartData: LiveUpdateChart = new LiveUpdateChart();
+  earningLiveUpdateCardData: LiveUpdateChart;
+  liveUpdateChartData: {value: [string, number]}[];
   timeTicket: any;
 
 
@@ -25,32 +26,47 @@ export class EarningCardBackComponent implements OnDestroy {
       .pipe(takeWhile(() => this.alive))
       .subscribe(theme => {
         this.currentTheme = theme.name;
-
-        this.startReceivingLiveData(this.selectedCurrency);
       });
+  }
+
+  ngOnInit() {
+    this.getEarningCardData(this.selectedCurrency);
   }
 
   changeCurrency(currency) {
     if (this.selectedCurrency !== currency) {
       this.selectedCurrency = currency;
 
-      clearInterval(this.timeTicket);
-      this.startReceivingLiveData(this.selectedCurrency);
+      this.getEarningCardData(this.selectedCurrency);
     }
   }
 
-  private startReceivingLiveData(currency) {
+  private getEarningCardData(currency) {
+    this.earningService.getEarningLiveUpdateCardData(currency)
+      .pipe(takeWhile(() => this.alive))
+      .subscribe((earningLiveUpdateCardData) => {
+        this.earningLiveUpdateCardData = earningLiveUpdateCardData;
+        this.liveUpdateChartData = earningLiveUpdateCardData.liveChart;
+
+        this.startReceivingLiveData(currency);
+      });
+  }
+
+  startReceivingLiveData(currency) {
+    clearInterval(this.timeTicket);
+
     this.timeTicket = setInterval( () => {
-      this.earningService.getEarningLiveUpdateChartData(currency)
+      this.earningService.generateRandomEarningLiveUpdateChartData(currency)
         .pipe(takeWhile(() => this.alive))
-        .subscribe((earningLiveUpdateChartData) => {
-          this.earningLiveUpdateChartData = earningLiveUpdateChartData;
+        .subscribe((liveUpdateChartData) => {
+          this.liveUpdateChartData = [...liveUpdateChartData];
         });
     }, 100);
   }
 
   ngOnDestroy() {
     this.alive = false;
+
     clearInterval(this.timeTicket);
   }
 }

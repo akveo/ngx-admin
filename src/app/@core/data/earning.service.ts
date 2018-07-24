@@ -2,18 +2,12 @@ import { Injectable } from '@angular/core';
 import { of as observableOf, Observable } from 'rxjs';
 
 export class LiveUpdateChart {
-  liveChart: any[];
+  liveChart: {value: [string, number]}[];
   delta: {
     up: boolean;
     value: number;
   };
   dailyIncome: number;
-
-  constructor() {
-    this.liveChart = [];
-    this.delta = {up: true, value: 0};
-    this.dailyIncome = 0;
-  }
 }
 
 export class PieChart {
@@ -70,25 +64,15 @@ export class EarningService {
     },
   };
 
-  generateRandomEarningLiveUpdateChartData(currency) {
-    const data = this.liveUpdateChartData[currency.toLowerCase()];
+  getDefaultLiveChartData(elementsNumber: number) {
+    this.currentDate = new Date();
+    this.currentValue = Math.random() * 1000;
 
-    if (data.liveChart.length > 0) {
-      const newValue = this.generateRandomData();
-
-      data.liveChart.shift();
-      data.liveChart.push(newValue);
-
-      data.liveChart = [...data.liveChart];
-    } else {
-      data.liveChart = Array.from(Array(500))
-        .map(item => this.generateRandomData());
-    }
-
-    return data;
+    return Array.from(Array(elementsNumber))
+      .map(item => this.generateRandomLiveChartData());
   }
 
-  generateRandomData() {
+  generateRandomLiveChartData() {
     this.currentDate = new Date(+this.currentDate + this.ONE_DAY);
     this.currentValue = this.currentValue + Math.random() * 21 - 10;
 
@@ -100,8 +84,22 @@ export class EarningService {
     }
   }
 
-  getEarningLiveUpdateChartData(currency: string) {
-    return observableOf(this.generateRandomEarningLiveUpdateChartData(currency));
+  generateRandomEarningLiveUpdateChartData(currency) {
+    const data = this.liveUpdateChartData[currency.toLowerCase()];
+    const newValue = this.generateRandomLiveChartData();
+
+    data.liveChart.shift();
+    data.liveChart.push(newValue);
+
+    return observableOf(data.liveChart);
+  }
+
+  getEarningLiveUpdateCardData(currency: string) {
+    const data = this.liveUpdateChartData[currency.toLowerCase()];
+
+    data.liveChart = this.getDefaultLiveChartData(100);
+
+    return observableOf(data);
   }
 
   getEarningPieChartData(): Observable<PieChart[]> {
