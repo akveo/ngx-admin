@@ -7,9 +7,10 @@ export const Config = {
         UBICACIONES_SERVICE: 'http://localhost:8085/v1/',
         PERSONA_SERVICE: 'http://localhost:8083/v1/',
         DOCUMENTO_SERVICE: 'http://localhost:8094/v1/',
+        ORGANIZACION_SERVICE: 'http://localhost:8097/v1/',
+        EXPERIENCIASERVICE: 'http://localhost:8099/v1/',
         ENTE_SERVICE: 'http://localhost:8096/v1/',
         CAMPUS_MID: 'http://localhost:8095/v1/',
-        ORGANIZACION: 'http://localhost.8097/v1/',
         CONF_MENU_SERVICE: 'http://10.20.0.254/configuracion_api/v1/menu_opcion_padre/ArbolMenus/',
         TOKEN: {
             AUTORIZATION_URL: 'https://autenticacion.udistrital.edu.co:8244/authorize',
@@ -29,6 +30,8 @@ export const Config = {
         UBICACIONES_SERVICE: 'http://pruebasapi.intranetoas.udistrital.edu.co:8085/v1/',
         PERSONA_SERVICE: 'http://pruebasapi.intranetoas.udistrital.edu.co:8083/v1/',
         DOCUMENTO_SERVICE: 'http://pruebasapi.intranetoas.udistrital.edu.co:8094/v1/',
+        ORGANIZACION_SERVICE: 'http://localhost:8097/v1/',
+        EXPERIENCIASERVICE: 'http://localhost:8099/v1/',
         ENTE_SERVICE: 'http://pruebasapi.intranetoas.udistrital.edu.co:8096/v1/',
         CAMPUS_MID: 'http://pruebasapi.intranetoas.udistrital.edu.co:8095/v1/',
         CONF_MENU_SERVICE: 'http://10.20.0.254/configuracion_api/v1/menu_opcion_padre/ArbolMenus/',
@@ -52,6 +55,8 @@ export const Config = {
         PERSONA_SERVICE: 'https://autenticacion.udistrital.edu.co:8244/persona_crud/v1/',
         ENTE_SERVICE: 'https://autenticacion.udistrital.edu.co:8244/ente_crud/v1/',
         DOCUMENTO_SERVICE: 'https://autenticacion.udistrital.edu.co:8244/documentos_crud/v1/',
+        ORGANIZACION_SERVICE: 'http://localhost:8097/v1/',
+        EXPERIENCIASERVICE: 'http://localhost:8099/v1/',
         CAMPUS_MID: 'https://autenticacion.udistrital.edu.co:8244/campus_mid/v1/',
         CONF_MENU_SERVICE: 'https://autenticacion.udistrital.edu.co:8244/api/configuracion_crud_api/v1/menu_opcion_padre/ArbolMenus/',
         TOKEN: {
@@ -73,6 +78,8 @@ export const Config = {
         PERSONA_SERVICE: 'https://autenticacion.portaloas.udistrital.edu.co/api/personas_crud/v1/',
         ENTE_SERVICE: 'https://autenticacion.portaloas.udistrital.edu.co/api/ente_crud/v1/',
         DOCUMENTO_SERVICE: 'https://autenticacion.portaloas.udistrital.edu.co/api/documento_crud/v1/',
+        ORGANIZACION_SERVICE: 'http://localhost:8097/v1/',
+        EXPERIENCIASERVICE: 'http://localhost:8099/v1/',
         CAMPUS_MID: 'https://autenticacion.portaloas.udistrital.edu.co/api/campus_mid_service/v1/',
         CONF_MENU_SERVICE: 'https://autenticacion.portaloas.udistrital.edu.co/api/configuracion_crud_api/v1/menu_opcion_padre/ArbolMenus/',
         TOKEN: {
