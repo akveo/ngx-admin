@@ -7,3 +7,5 @@ export * from './theme-switcher/theme-switcher.component';
 export * from './dinamicform/dinamicform.component';
 export * from './select/select.component';
 export * from './nuxeo/nuxeo.component';
+export * from './loading/loading.component';
+
