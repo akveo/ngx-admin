@@ -125,7 +125,7 @@ export class TemperatureDraggerComponent implements AfterViewInit, OnChanges {
     // TODO: review set data to styles object
     setTimeout(() => {
       this.invalidateGradientArcs();
-    })
+    });
   }
 
   private calculateVars() {
