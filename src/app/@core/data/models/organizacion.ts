@@ -1,5 +1,5 @@
-import { TipoIdentificacion } from "./tipo_identificacion";
-import { ContactoEnte } from "./contacto_ente";
+import { TipoIdentificacion } from './tipo_identificacion';
+import { ContactoEnte } from './contacto_ente';
 
 export class Organizacion {
   Ente: any;

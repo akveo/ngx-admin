@@ -1,5 +1,6 @@
 
 export class InfoExperienciaLaboral {
+  Id: number;
   Persona: number;
   Actividades: string;
   Organizacion: number;
