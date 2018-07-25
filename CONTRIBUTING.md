@@ -188,7 +188,7 @@ Must be one of the following:
 * **build**: Changes that affect the build system, CI configuration or external dependencies
             (example scopes: gulp, broccoli, npm)
 * **chore**: Other changes that don't modify `src` or `test` files
-* **relese**: Release version commit
+* **release**: Release version commit
 
 ### Scope
 The scope could be anything specifying place of the commit change. For example
