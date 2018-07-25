@@ -111,7 +111,7 @@
   "GLOBAL": {
     "soporte_documento":"Soporte de documento",
     "alerta_documental_image": "La imagen se ha guardado en nuestro gestor documental",
-    "alerta_documental_documento": "El documento se ha guardado en nuestro gestor documental",    
+    "alerta_documental_documento": "El documento se ha guardado en nuestro gestor documental",
     "info_basica": "Información básica",
     "placeholder_info_basica": "E.j. Información básica",
     "hoja_vida": "Hoja de vida",
@@ -281,6 +281,16 @@
     "tipo_dedicacion": "Tipo dedicación",
     "placeholder_tipo_dedicacion": "Ej. Tiempo completo",
     "tipo_vinculacion": "Tipo de vinculación",
-    "placeholder_tipo_vinculacion": "Ej. Contrato a término indefinido"
+    "placeholder_tipo_vinculacion": "Ej. Contrato a término indefinido",
+    "nit": "Nit",
+    "placeholder_nit": "Ej. 777777777",
+    "tipo_organizacion": "Tipo de organización",
+    "placeholder_tipo_organizacion": "Ej. Bancaria",
+    "fecha_inicio": "Fecha Inicio",
+    "placeholder_fecha_inicio": "E.g. 24/12/2016",
+    "fecha_fin": "Fecha Fin",
+    "placeholder_fecha_fin": "E.g. 24/08/2018",
+    "pais_empresa": "Pais empresa",
+    "placeholder_pais_empresa": "Ej. Colombia"
   }
 }
