@@ -167,17 +167,17 @@ export class ECommerceVisitorsAnalyticsChartComponent implements AfterViewInit, 
       lineStyle: {
         normal: {
           width: eTheme.lineWidth,
-            type: eTheme.lineStyle,
-            color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+          type: eTheme.lineStyle,
+          color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
             offset: 0,
             color: eTheme.lineGradFrom,
           }, {
             offset: 1,
             color: eTheme.lineGradTo,
           }]),
-            shadowColor: eTheme.lineShadow,
-            shadowBlur: 6,
-            shadowOffsetY: 12,
+          shadowColor: eTheme.lineShadow,
+          shadowBlur: 6,
+          shadowOffsetY: 12,
         },
       },
       areaStyle: {

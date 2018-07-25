@@ -223,7 +223,7 @@ export const DEFAULT_THEME = {
       lineWidth: '6',
       lineGradFrom: '#ffffff',
       lineGradTo: '#ffffff',
-      lineShadow: 'rgba(14, 16, 48, 0.4)',
+      lineShadow: 'rgba(14, 16, 48, 0)',
 
       areaGradFrom: 'rgba(188, 92, 255, 1)',
       areaGradTo: 'rgba(188, 92, 255, 0.5)',

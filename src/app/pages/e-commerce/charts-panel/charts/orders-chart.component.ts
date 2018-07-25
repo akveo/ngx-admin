@@ -136,10 +136,7 @@ export class OrdersChartComponent implements AfterViewInit, OnDestroy, OnChanges
           opacity: 0,
         },
         emphasis: {
-          color: '#ffffff',
-          borderColor: eTheme.itemBorderColor,
-          borderWidth: 2,
-          opacity: 1,
+          opacity: 0,
         },
       },
       lineStyle: {
@@ -156,7 +153,7 @@ export class OrdersChartComponent implements AfterViewInit, OnDestroy, OnChanges
             offset: 1,
             color: eTheme.firstAreaGradTo,
           }]),
-          opacity: 0.7,
+          opacity: 1,
         },
       },
       data: [],
