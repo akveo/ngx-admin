@@ -142,13 +142,13 @@ export const CORPORATE_THEME = {
       axisTextColor: '#b2bac2',
       yAxisSplitLine: 'rgba(161, 161 ,229, 0.2)',
 
-      itemBorderColor: '#42db7d',
+      itemBorderColor: '#73a1ff',
       lineStyle: 'solid',
       lineWidth: '4',
 
       // first line
-      firstAreaGradFrom: 'rgba(227, 236, 254, 1)',
-      firstAreaGradTo: 'rgba(227, 236, 254, 1)',
+      firstAreaGradFrom: 'rgba(227, 236, 254, 0.7)',
+      firstAreaGradTo: 'rgba(227, 236, 254, 0.7)',
       firstShadowLineDarkBg: 'rgba(0, 0, 0, 0)',
 
       // second line
