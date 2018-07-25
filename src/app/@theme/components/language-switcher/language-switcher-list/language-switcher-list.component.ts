@@ -31,7 +31,7 @@ export class LangSwitcherListComponent {
           key: 'ar',
         },
       ];
-    })
+    });
 
 
     this.currentDirection = this.directionService.getDirection();
