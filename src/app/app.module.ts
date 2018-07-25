@@ -23,7 +23,6 @@ export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/translations/', '.json');
 }
 
-
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -47,5 +46,4 @@ export function createTranslateLoader(http: HttpClient) {
     { provide: APP_BASE_HREF, useValue: '/' },
   ],
 })
-export class AppModule {
-}
+export class AppModule {}

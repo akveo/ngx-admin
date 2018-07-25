@@ -39,7 +39,7 @@ export class LangSwitcherListComponent {
       .subscribe(newDirection => this.currentDirection = newDirection);
   }
 
-
+  // TODO: Need to convert onToggleLang to more generic function
   onToggleLang(langKey: string) {
     if (langKey === 'ar') {
       this.translate.use('ar');

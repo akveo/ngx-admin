@@ -1,6 +1,7 @@
 {
   "Arabic": "عربي",
   "English": "English",
+  "Language": "Language",
   "Dashboard": "Dashboard",
   "UI Features": "UI Features",
   "Buttons": "Buttons",
@@ -34,18 +35,12 @@
   "Register": "Register",
   "Request Password": "Request Password",
   "Reset Password": "Reset Password",
-
-
-
-
   "Bar": "Bar",
   "Pie": "Pie",
   "Line": "Line",
   "Multiple x-axis": "Multiple x-axis",
   "Bar Horizontal": "Bar Horizontal",
   "Radar": "Radar",
-
-
   "Toaster configuration": "Toaster configuration",
   "Place to show toast:": "Place to show toast:",
   "Animation type:": "Animation type:", 
@@ -61,30 +56,19 @@
   "Show toast": "Show toast",
   "Random toast": "Random toast",
   "Clear all toasts": "Clear all toasts",
-
-
-
   "Tree": "Tree",
-
-
   "Electricity": "Electricity",
   "Consumption": "Consumption",
   "Consumed": "Consumed",
   "kWh": "kWh",
   "Spent": "Spent",
   "USD": "USD",
-
   "React Native UI Kitten": "React Native UI Kitten",
-  "React Native Quote": "React Native UI Kitten is a framework that contains a set of commonly used UI components styled in a similar way. The most awesome thing: you can change themes on the fly by just passing a different set of variables. 100% native. Give our kitten a try!",
-
-
   "Security Cameras": "Security Cameras",
   "Pause": "Pause",
   "Logs": "Logs",
   "Search": "Search",
   "Setup": "Setup",
-
-
   "Project" : "Project",
   "Default Inputs": "Default Inputs",
   "Nick": "Nick",
@@ -141,8 +125,6 @@
   "Disabled Checkbox": "Disabled Checkbox",
   "Disabled Radio": "Disabled Radio",
   "Rating": "Rating",
-  
-
   "Inline form": "Inline form",
   "Jane Doe": "Jane Doe",
   "Email": "Email",
@@ -165,8 +147,6 @@
   "Website": "Website",
   "Horizontal form": "Horizontal form",
   "Smart Table": "Smart Table",
-
-
   "Logged in as": "Logged in as",
   "Login": "Login",
   "Logout": "Logout",
