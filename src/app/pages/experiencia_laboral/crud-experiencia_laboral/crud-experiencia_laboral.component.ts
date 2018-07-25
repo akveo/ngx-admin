@@ -110,14 +110,14 @@ export class CrudExperienciaLaboralComponent implements OnInit {
       .then((willDelete) => {
         if (willDelete.value) {
           this.info_experiencia_laboral = <InfoExperienciaLaboral>infoExperienciaLaboral;
-          /** this.Service.put('', this.info_experiencia_laboral)
-            .subscribe(res => { **/
+          this.campusMidService.put('experiencialaboral/:id', this.info_experiencia_laboral)
+            .subscribe(res => {
               this.loadInfoExperienciaLaboral();
               this.eventChange.emit(true);
               this.showToast('info', this.translate.instant('GLOBAL.actualizar'),
                 this.translate.instant('GLOBAL.experiencia_laboral') + ' ' +
                 this.translate.instant('GLOBAL.confirmarActualizar'));
-            /** }); **/
+             });
         }
       });
   }
@@ -296,26 +296,22 @@ export class CrudExperienciaLaboralComponent implements OnInit {
           TipoVinculacion: event.data.InfoExperienciaLaboral.TipoVinculacion,
           Soportes: event.data.InfoExperienciaLaboral.Soportes
       }
-
+      let org = {
+        NumeroIdentificacion: event.data.InfoExperienciaLaboral.Nit,
+        //LugarExpedicion: ,
+        Nombre: event.data.InfoExperienciaLaboral.NombreEmpresa,
+        TipoOrganizacion: event.data.InfoExperienciaLaboral.TipoOrganizacion,
+        TipoIdentificacion: {
+          Id: 5
+        }
+        //"FechaExpedicion": "string"
+      }
       if (this.info_experiencia_laboral === undefined) {
-
         if (experiencia.Organizacion !== null) {
           this.createInfoExperienciaLaboral(experiencia);
         } else {
-          let org = {
-            NumeroIdentificacion: event.data.InfoExperienciaLaboral.Nit,
-            //LugarExpedicion: ,
-            Nombre: event.data.InfoExperienciaLaboral.NombreEmpresa,
-            TipoOrganizacion: event.data.InfoExperienciaLaboral.TipoOrganizacion,
-            TipoIdentificacion: {
-              Id: 5
-            }
-            //"FechaExpedicion": "string"
-          }
           this.createOrganizacion(org, experiencia);
         }
-
-        //this.createInfoExperienciaLaboral(event.data.InfoExperienciaLaboral);
       } else {
        // this.updateInfoExperienciaLaboral(event.data.InfoExperienciaLaboral);
       }

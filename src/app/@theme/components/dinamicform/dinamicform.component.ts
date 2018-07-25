@@ -1,7 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter, OnChanges, ViewChild } from '@angular/core';
 import { MatDatepicker } from '@angular/material/datepicker';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
-import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'ngx-dinamicform',
@@ -23,8 +22,7 @@ export class DinamicformComponent implements OnInit, OnChanges {
   data: any;
   @ViewChild(MatDatepicker) datepicker: MatDatepicker<Date>;
 
-  constructor(private sanitization: DomSanitizer,
-    private http: HttpClient) {
+  constructor(private sanitization: DomSanitizer) {
     this.data = {
       valid: true,
       data: {},
@@ -146,8 +144,12 @@ export class DinamicformComponent implements OnInit, OnChanges {
 
   validCampo(c): boolean {
 
-    if (c.requerido && (c.valor === '' || c.valor === null || c.valor === undefined ||
-      (JSON.stringify(c.valor) === '{}' && c.etiqueta !== 'file') || JSON.stringify(c.valor) === '[]') && (c.etiqueta === 'file' && c.url === undefined)) {
+    if (c.etiqueta === 'file') {
+      console.info((c.etiqueta === 'file' && c.valor.name === undefined));
+    }
+    if (c.requerido && ((c.valor === '' && c.etiqueta !== 'file') || c.valor === null || c.valor === undefined ||
+      (JSON.stringify(c.valor) === '{}' && c.etiqueta !== 'file') || JSON.stringify(c.valor) === '[]')
+      || ((c.etiqueta === 'file' && c.valor.name === undefined) && (c.etiqueta === 'file' && c.urlTemp === undefined))) {
       c.alerta = '** Debe llenar este campo';
       c.clase = 'form-control form-control-danger';
       return false;

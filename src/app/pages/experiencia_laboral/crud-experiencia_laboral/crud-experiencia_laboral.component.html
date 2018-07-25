@@ -1,4 +1,4 @@
-<div *ngIf="info_experiencia_laboral_id" >
+<div>
   <toaster-container [toasterconfig]="config"></toaster-container>
   <ngx-dinamicform [normalform]="formInfoExperienciaLaboral" [modeloData]="info_experiencia_laboral" (result)="validarForm($event)" (resultAux)="searchOrganizacion($event)" [clean]="clean">
   </ngx-dinamicform>
