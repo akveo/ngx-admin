@@ -282,6 +282,7 @@ export class CrudExperienciaLaboralComponent implements OnInit {
                 this.showToast('info', this.translate.instant('GLOBAL.crear'),
                   this.translate.instant('GLOBAL.experiencia_laboral') + ' ' +
                   this.translate.instant('GLOBAL.confirmarCrear'));
+                  this.clean = !this.clean;
               }
             });
           }
