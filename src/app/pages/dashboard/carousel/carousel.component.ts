@@ -12,35 +12,35 @@ export class CarouselComponent {
     slides: any;
     constructor(config: NgbCarouselConfig) {
         // customize default values of carousels used by this component tree
-        config.interval = 1000;
+        config.interval = 5000;
         config.wrap = false;
         config.keyboard = true;
         this.slides = [{
-            image: 'http://www.deososycolmenas.com/wp-content/uploads/2016/02/IMG-20160218-WA0009-1000x300.jpg',
+            image: 'https://cursos.paginaswebbogota.com/WwordPress/wp-content/uploads/2013/11/slider-wp-1-783x350.png',
             title: 'First slide label',
             info: 'Nulla vitae elit libero, a pharetra augue mollis interdum.',
             url: 'https://campusvirtual.udistrital.edu.co/',
             alt: 'Random first slide',
         }, {
-            image: 'http://www.deososycolmenas.com/wp-content/uploads/2016/02/IMG-20160218-WA0009-1000x300.jpg',
+            image: 'https://cursos.paginaswebbogota.com/WwordPress/wp-content/uploads/2013/11/slider-wp-1-783x350.png',
             title: 'First slide label',
             info: 'Nulla vitae elit libero, a pharetra augue mollis interdum.',
             url: 'https://campusvirtual.udistrital.edu.co/',
             alt: 'Random first slide',
         }, {
-            image: 'http://www.deososycolmenas.com/wp-content/uploads/2016/02/IMG-20160218-WA0009-1000x300.jpg',
+            image: 'https://cursos.paginaswebbogota.com/WwordPress/wp-content/uploads/2013/11/slider-wp-1-783x350.png',
             title: 'First slide label',
             info: 'Nulla vitae elit libero, a pharetra augue mollis interdum.',
             url: 'https://campusvirtual.udistrital.edu.co/',
             alt: 'Random first slide',
         }, {
-            image: 'http://www.deososycolmenas.com/wp-content/uploads/2016/02/IMG-20160218-WA0009-1000x300.jpg',
+            image: 'https://cursos.paginaswebbogota.com/WwordPress/wp-content/uploads/2013/11/slider-wp-1-783x350.png',
             title: 'First slide label',
             info: 'Nulla vitae elit libero, a pharetra augue mollis interdum.',
             url: 'https://campusvirtual.udistrital.edu.co/',
             alt: 'Random first slide',
         }, {
-            image: 'http://www.deososycolmenas.com/wp-content/uploads/2016/02/IMG-20160218-WA0009-1000x300.jpg',
+            image: 'https://cursos.paginaswebbogota.com/WwordPress/wp-content/uploads/2013/11/slider-wp-1-783x350.png',
             title: 'First slide label',
             info: 'Nulla vitae elit libero, a pharetra augue mollis interdum.',
             url: 'https://campusvirtual.udistrital.edu.co/',

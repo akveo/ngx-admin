@@ -7,7 +7,7 @@ export let FORM_FORMACION_ACADEMICA = {
   campos: [
     {
       etiqueta: 'select',
-      claseGrid: 'col-lg-4 col-md-6 col-sm-12 col-xs-12',
+      claseGrid: 'col-lg-5 col-md-5 col-sm-10 col-xs-10',
       nombre: 'TipoDocumento',
       label_i18n: 'tipo_documento',
       placeholder_i18n: 'tipo_documento',
@@ -21,31 +21,29 @@ export let FORM_FORMACION_ACADEMICA = {
     },
     {
       etiqueta: 'input',
-      claseGrid: 'col-lg-3 col-md-6 col-sm-11 col-xs-11',
+      claseGrid: 'col-lg-5 col-md-5 col-sm-10 col-xs-10',
       nombre: 'NumeroDocumento',
       label_i18n: 'numero_documento',
       placeholder_i18n: 'numero_documento',
       requerido: true,
       tipo: 'number',
     },
-
+    {
+      etiqueta: 'button',
+      claseGrid: 'col-2',
+      nombre: 'BusquedaBoton',
+      claseBoton: 'btn btn-primary btn-sm',
+      icono: 'fa fa-search',
+    },
     {
       etiqueta: 'input',
-      claseGrid: 'col-lg-4 col-md-6 col-sm-11 col-xs-11',
+      claseGrid: 'col-lg-6 col-md-6 col-sm-11 col-xs-11',
       nombre: 'NombreUniversidad',
       label_i18n: 'nombre_universidad',
       placeholder_i18n: 'nombre_universidad',
       requerido: true,
       tipo: 'text',
     },
-    {
-      etiqueta: 'button',
-      claseGrid: 'col-1',
-      nombre: 'BusquedaBoton',
-      claseBoton: 'btn btn-success btn-xs btn-icon',
-      icono: 'fa fa-search',
-    },
-
     {
       etiqueta: 'select',
       claseGrid: 'col-lg-6 col-md-6 col-sm-12 col-xs-12',
