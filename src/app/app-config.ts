@@ -58,7 +58,7 @@ export const Config = {
         ORGANIZACION_SERVICE: 'https://autenticacion.udistrital.edu.co:8244/organizacion_crud/v1/',
         EXPERIENCIASERVICE: 'https://autenticacion.udistrital.edu.co:8244/experiencia_academica_crud/v1/',
         CAMPUS_MID: 'https://autenticacion.udistrital.edu.co:8244/campus_mid/v1/',
-        CONF_MENU_SERVICE: 'https://autenticacion.udistrital.edu.co:8244/api/configuracion_crud_api/v1/menu_opcion_padre/ArbolMenus/',
+        CONF_MENU_SERVICE: 'https://autenticacion.udistrital.edu.co:8244/configuracion_crud_api/v1/menu_opcion_padre/ArbolMenus/',
         TOKEN: {
             AUTORIZATION_URL: 'https://autenticacion.udistrital.edu.co:8244/authorize',
             CLIENTE_ID: '860WlkU_AfhfieBuquBqTx4uuAYa',
