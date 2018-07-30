@@ -1,5 +1,5 @@
 import { OrganizacionService } from './../../../@core/data/organizacion.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { LocalDataSource } from 'ng2-smart-table';
 import { ToasterService, ToasterConfig, Toast, BodyOutputType } from 'angular2-toaster';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
@@ -21,6 +21,11 @@ export class ListExperienciaLaboralComponent implements OnInit {
   data: Array<any>;
   crud = false;
 
+  @Input('ente_id')
+  set name(ente_id: number) {
+    this.uid = ente_id;
+    // this.loadData();
+  }
   constructor(private translate: TranslateService, private toasterService: ToasterService,
     private experienciaService: ExperienciaService, private organizacionService: OrganizacionService) {
     this.loadData();

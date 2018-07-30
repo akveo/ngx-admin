@@ -220,14 +220,14 @@ export class CrudExperienciaLaboralComponent implements OnInit {
         });
         if (this.organizacion.Ubicacion) {
           this.organizacion.Ubicacion.forEach(element => {
-            if (element.AtributoUbicacion.Id === 1 && element.UbicacionEnte.TipoRelacionUbicacionEnte.Id === 1) {
+            // identificadores del tipo de relacion y atributo para formulario
+            if (element.AtributoUbicacion.Id === 1 && element.UbicacionEnte.TipoRelacionUbicacionEnte.Id === 3) {
               this.formInfoExperienciaLaboral.campos[idir].valor = element.Valor;
               this.formInfoExperienciaLaboral.campos[ipais].opciones.forEach(e => {
                 if ( e.Id === element.UbicacionEnte.Lugar) {
                   this.formInfoExperienciaLaboral.campos[ipais].valor = e;
                 }
               });
-
             }
           });
         } else {
@@ -239,7 +239,7 @@ export class CrudExperienciaLaboralComponent implements OnInit {
             if (element.TipoContacto.Id === 1) {
               this.formInfoExperienciaLaboral.campos[itel].valor = element.Valor;
             }
-            if (element.TipoContacto.Id === 4) {
+            if (element.TipoContacto.Id === 3) {
               this.formInfoExperienciaLaboral.campos[icorreo].valor = element.Valor;
             }
           });
@@ -282,10 +282,21 @@ export class CrudExperienciaLaboralComponent implements OnInit {
                 this.showToast('info', this.translate.instant('GLOBAL.crear'),
                   this.translate.instant('GLOBAL.experiencia_laboral') + ' ' +
                   this.translate.instant('GLOBAL.confirmarCrear'));
+                  this.clean = !this.clean;
               }
             });
           }
       });
+  }
+
+  addUbicacionOrganizacion(ubicacion: any): void {
+    this.campusMidService.post('persona/RegistrarUbicaciones', ubicacion).subscribe(res => {
+      const r = res as any;
+      if (res !== null && r.Type === 'error') {
+        this.showToast('error', 'error',
+              'ocurrio un error agregando la ubicación');
+      }
+    });
   }
 
   createOrganizacion(org: any, exp: any): void {
@@ -293,7 +304,16 @@ export class CrudExperienciaLaboralComponent implements OnInit {
       const identificacion = <any>res;
       if (identificacion !== null && identificacion.Type !== 'error') {
         exp.Organizacion = identificacion.Body.Ente.Id;
-        this.createInfoExperienciaLaboral(exp);
+        const ubicacion = {
+          Ente: identificacion.Body.Ente.Id,
+          Lugar: org.Pais,
+          TipoRelacionUbicacionEnte: 3,
+          Atributos: [{
+              AtributoUbicacion: 1,
+              Valor: org.Direccion,
+            }],
+        };
+        this.addUbicacionOrganizacion(ubicacion);
         if (this.info_experiencia_laboral === undefined) {
           this.createInfoExperienciaLaboral(exp);
         } else {
@@ -322,14 +342,31 @@ export class CrudExperienciaLaboralComponent implements OnInit {
       }
       const org = {
         NumeroIdentificacion: event.data.InfoExperienciaLaboral.Nit,
+        Direccion: event.data.InfoExperienciaLaboral.Direccion,
+        Pais: event.data.InfoExperienciaLaboral.Pais,
         // LugarExpedicion: ,
         Nombre: event.data.InfoExperienciaLaboral.NombreEmpresa,
         TipoOrganizacion: event.data.InfoExperienciaLaboral.TipoOrganizacion,
         TipoIdentificacion: {
           Id: 5,
         },
+        Contacto: [],
         // "FechaExpedicion": "string"
       }
+
+      if (event.data.InfoExperienciaLaboral.Telefono) {
+        org.Contacto.push({
+          TipoContacto: { Id: 1 }, // corresponde al tipo telefono
+          Valor: event.data.InfoExperienciaLaboral.Telefono,
+        });
+      }
+      if (event.data.InfoExperienciaLaboral.Correo) {
+        org.Contacto.push({
+          TipoContacto: { Id: 3 }, // corresponde al tipo correo
+          Valor: event.data.InfoExperienciaLaboral.Correo,
+        });
+      }
+
       if (this.info_experiencia_laboral === undefined) {
         if (experiencia.Organizacion !== null) {
           this.createInfoExperienciaLaboral(experiencia);
