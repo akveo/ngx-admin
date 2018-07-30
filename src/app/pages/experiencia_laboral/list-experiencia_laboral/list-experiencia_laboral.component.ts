@@ -86,7 +86,7 @@ export class ListExperienciaLaboralComponent implements OnInit {
   }
 
   loadData(): void {
-     this.experienciaService.get('experiencia_laboral').subscribe(res => {
+     this.experienciaService.get('experiencia_laboral/?query=Persona:' + this.uid).subscribe(res => {
       if (res !== null) {
         this.data = <Array<any>>res;
         this.data.forEach(element => {
