@@ -348,7 +348,7 @@ export class CrudExperienciaLaboralComponent implements OnInit {
         Nombre: event.data.InfoExperienciaLaboral.NombreEmpresa,
         TipoOrganizacion: event.data.InfoExperienciaLaboral.TipoOrganizacion,
         TipoIdentificacion: {
-          Id: 5,
+          Id: 5, // tipo nit
         },
         Contacto: [],
         // "FechaExpedicion": "string"
