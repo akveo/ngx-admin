@@ -1,13 +1,7 @@
 import { Component, OnDestroy } from '@angular/core';
 import { TrafficList, TrafficListService } from '../../../@core/data/traffic-list.service';
 import { takeWhile } from 'rxjs/operators';
-
-// TODO: move to service
-class BackCardData {
-  data: number[];
-  labels: string[];
-  formatter: string;
-}
+import { TrafficBar, TrafficBarService } from '../../../@core/data/traffic-bar.service';
 
 @Component({
   selector: 'ngx-traffic-reveal-card',
@@ -18,63 +12,13 @@ export class TrafficRevealCardComponent implements OnDestroy {
 
   private alive = true;
 
-  // TODO: move to service
-  private trafficBackCardDataSet = {
-    week: {
-      data: [10, 15, 19, 7, 20, 13, 15],
-      labels: [
-        'Mon',
-        'Tue',
-        'Wed',
-        'Thu',
-        'Fri',
-        'Sat',
-        'Sun',
-      ],
-      formatter: '{c0} MB',
-    },
-    month: {
-      data: [0.5, 0.3, 0.8, 0.2, 0.3, 0.7, 0.8, 1, 0.7, 0.8, 0.6, 0.7],
-      labels: [
-        'Jan',
-        'Feb',
-        'Mar',
-        'Apr',
-        'May',
-        'Jun',
-        'Jul',
-        'Aug',
-        'Sep',
-        'Oct',
-        'Nov',
-        'Dec',
-      ],
-      formatter: '{c0} GB',
-    },
-    year: {
-      data: [10, 15, 19, 7, 20, 13, 15, 19, 11],
-      labels: [
-        '2010',
-        '2011',
-        '2012',
-        '2013',
-        '2014',
-        '2015',
-        '2016',
-        '2017',
-        '2018',
-      ],
-      formatter: '{c0} GB',
-    },
-  };
-
-
-  backCardData: BackCardData;
+  trafficBarData: TrafficBar;
   trafficListData: TrafficList;
   revealed = false;
   period: string = 'week';
 
-  constructor(private trafficListService: TrafficListService) {
+  constructor(private trafficListService: TrafficListService,
+              private trafficBarService: TrafficBarService) {
     this.getTrafficFrontCardData(this.period);
     this.getTrafficBackCardData(this.period);
   }
@@ -89,7 +33,11 @@ export class TrafficRevealCardComponent implements OnDestroy {
   }
 
   getTrafficBackCardData(period: string) {
-    this.backCardData = this.trafficBackCardDataSet[period];
+    this.trafficBarService.getTrafficBarData(period)
+      .pipe(takeWhile(() => this.alive ))
+      .subscribe(trafficBarData => {
+        this.trafficBarData = trafficBarData;
+      });
   }
 
   getTrafficFrontCardData(period: string) {
@@ -97,7 +45,7 @@ export class TrafficRevealCardComponent implements OnDestroy {
       .pipe(takeWhile(() => this.alive ))
       .subscribe(trafficListData => {
         this.trafficListData = trafficListData;
-      })
+      });
   }
 
   ngOnDestroy() {

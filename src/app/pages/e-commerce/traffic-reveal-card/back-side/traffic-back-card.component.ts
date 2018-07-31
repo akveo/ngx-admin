@@ -11,7 +11,7 @@ export class TrafficBackCardComponent implements OnDestroy {
 
   private alive = true;
 
-  @Input() backCardData: any;
+  @Input() trafficBarData: any;
 
   currentTheme: string;
 
