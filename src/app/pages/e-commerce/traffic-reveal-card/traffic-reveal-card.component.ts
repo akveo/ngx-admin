@@ -3,7 +3,7 @@ import { TrafficList, TrafficListService } from '../../../@core/data/traffic-lis
 import { takeWhile } from 'rxjs/operators';
 
 // TODO: move to service
-class FrontCardData {
+class BackCardData {
   data: number[];
   labels: string[];
   formatter: string;
@@ -19,7 +19,7 @@ export class TrafficRevealCardComponent implements OnDestroy {
   private alive = true;
 
   // TODO: move to service
-  private trafficFrontCardDataSet = {
+  private trafficBackCardDataSet = {
     week: {
       data: [10, 15, 19, 7, 20, 13, 15],
       labels: [
@@ -69,7 +69,7 @@ export class TrafficRevealCardComponent implements OnDestroy {
   };
 
 
-  frontCardData: FrontCardData;
+  backCardData: BackCardData;
   trafficListData: TrafficList;
   revealed = false;
   period: string = 'week';
@@ -88,11 +88,11 @@ export class TrafficRevealCardComponent implements OnDestroy {
     this.getTrafficBackCardData(value);
   }
 
-  getTrafficFrontCardData(period: string) {
-    this.frontCardData = this.trafficFrontCardDataSet[period];
+  getTrafficBackCardData(period: string) {
+    this.backCardData = this.trafficBackCardDataSet[period];
   }
 
-  getTrafficBackCardData(period: string) {
+  getTrafficFrontCardData(period: string) {
     this.trafficListService.getTrafficListData(period)
       .pipe(takeWhile(() => this.alive ))
       .subscribe(trafficListData => {

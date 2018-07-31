@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'ngx-stats-card-front',
@@ -6,4 +6,5 @@ import { Component } from '@angular/core';
   templateUrl: './stats-card-front.component.html',
 })
 export class StatsCardFrontComponent {
+
 }

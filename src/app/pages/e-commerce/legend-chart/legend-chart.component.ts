@@ -15,5 +15,5 @@ export class ECommerceLegendChartComponent {
    * @type {{iconColor: string; title: string}[]}
    */
   @Input()
-  legendItems: {iconColor: NgxLegendItemColor; title: string}[];
+  legendItems: { iconColor: NgxLegendItemColor; title: string }[] = [];
 }

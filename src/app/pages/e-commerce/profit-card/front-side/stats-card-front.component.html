@@ -1,4 +1,5 @@
 <nb-card-header>
+  <!--TODO same content with front side-->
   <div class="header-container">
     <div class="icon">
       <i class="ion-social-usd"></i>
@@ -6,22 +7,20 @@
     <span class="title">Profit</span>
   </div>
 </nb-card-header>
-<nb-card-body class="p-0">
-  <div class="info">
-    <div class="period">
-      <span class="time-interval">Jun 1 - Jun 30</span>
-      <div class="value">
-        <span class="currency">$</span>
-        1,260
-      </div>
-    </div>
-    <div class="period latest">
-      <span class="time-interval">Jul 1 - Jul 30</span>
-      <div class="value">
-        <span class="currency">$</span>
-        1,970
-      </div>
+<nb-card-body>
+  <div class="period">
+    <span class="time-interval">Jun 1 - Jun 30</span>
+    <div class="value">
+      <span class="currency">$</span>
+      1,260
     </div>
   </div>
-  <ngx-stats-ares-chart></ngx-stats-ares-chart>
+  <ngx-stats-bar-chart></ngx-stats-bar-chart>
+  <div class="period">
+    <span class="time-interval">Jul 1 - Jul 30</span>
+    <div class="value">
+      <span class="currency">$</span>
+      1,970
+    </div>
+  </div>
 </nb-card-body>

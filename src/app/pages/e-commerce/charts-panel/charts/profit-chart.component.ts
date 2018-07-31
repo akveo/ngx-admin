@@ -4,7 +4,6 @@ import { takeWhile } from 'rxjs/operators';
 
 import { ProfitChart } from '../../../../@core/data/profit-chart.service';
 
-// TODO: need design, temporary solution
 @Component({
   selector: 'ngx-profit-chart',
   styleUrls: ['./charts-common.component.scss'],

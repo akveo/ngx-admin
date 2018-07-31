@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'ngx-stats-card-back',
@@ -6,5 +6,4 @@ import {Component} from '@angular/core';
   templateUrl: './stats-card-back.component.html',
 })
 export class StatsCardBackComponent {
-
 }

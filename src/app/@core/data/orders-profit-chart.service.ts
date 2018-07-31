@@ -32,7 +32,6 @@ export class OrdersProfitChartService {
 
   constructor(private ordersChartService: OrdersChartService,
               private profitChartService: ProfitChartService) {
-
   }
 
   getOrderProfitChartSummary(): Observable<OrderProfitChartSummary[]> {

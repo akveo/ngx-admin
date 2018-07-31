@@ -20,26 +20,15 @@
   }
 
   /deep/ nb-card-body {
-    overflow: hidden;
-
     display: flex;
-    flex-direction: column;
-
-    .info {
-      padding: 0.75rem;
-      padding-bottom: 0.5rem;
-      display: flex;
-      @include nb-rtl(flex-direction, row-reverse);
-    }
+    position: relative;
+    flex: 1;
 
     .period {
       display: flex;
       flex-direction: column;
       flex: 1;
-
-      &.latest {
-        padding-left: 0.75rem;
-      }
+      justify-content: flex-end;
     }
 
     .time-interval {
@@ -52,10 +41,6 @@
       font-weight: nb-theme(font-weight-bold);
       color: nb-theme(card-fg-heading);
 
-      @include nb-for-theme(default) {
-        color: nb-theme(color-success);
-      }
-
       .currency {
         color: nb-theme(color-success);
 
@@ -64,21 +49,16 @@
         }
       }
     }
-  }
 
-  ngx-stats-ares-chart {
-    flex: 1;
-    position: relative;
-  }
+    ngx-stats-bar-chart {
+      display: flex;
+      flex: 1;
+      height: 100%;
 
-  /deep/ canvas {
-    border-bottom-left-radius: nb-theme(card-border-radius);
-    border-bottom-right-radius: nb-theme(card-border-radius);
-  }
-
-  .echart {
-    position: absolute;
-    height: 100%;
-    width: 100%;
+      .echart {
+        height: 100%;
+        width: 100%;
+      }
+    }
   }
 }

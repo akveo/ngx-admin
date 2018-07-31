@@ -1,7 +1,6 @@
 import { Component, EventEmitter, Input, OnDestroy, Output } from '@angular/core';
 
 import * as L from 'leaflet';
-import 'style-loader!leaflet/dist/leaflet.css';
 
 import { CountryOrdersMapService } from './country-orders-map.service';
 import { NbThemeService } from '@nebular/theme';
@@ -61,7 +60,7 @@ export class CountryOrdersMapComponent implements OnDestroy {
 
   private createGeoJsonLayer(cords) {
     return L.geoJSON(
-      (cords) as any,
+      cords as any,
       {
         style: () => ({
           weight: this.currentTheme.countryBorderWidth,

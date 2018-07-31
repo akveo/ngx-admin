@@ -43,7 +43,7 @@ export class CountryOrdersChartComponent implements AfterViewInit, OnDestroy, On
             data: this.data,
           },
         ],
-      })
+      });
     }
   }
 
