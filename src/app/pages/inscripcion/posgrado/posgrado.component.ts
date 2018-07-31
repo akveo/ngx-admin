@@ -116,19 +116,20 @@ export class PosgradoComponent implements OnInit {
         this.info_persona = true;
         break;
       default:
-      this.show_info = false;
-      this.show_profile = false;
-      this.show_acad = false;
-      this.show_expe = false;
-      this.info_contacto = false;
-      this.info_caracteristica = false;
-      this.info_persona = false;
+        this.show_info = false;
+        this.show_profile = false;
+        this.show_acad = false;
+        this.show_expe = false;
+        this.info_contacto = false;
+        this.info_caracteristica = false;
+        this.info_persona = false;
         break;
     }
   }
 
   selectTab(event): void {
     if (event.tabTitle === this.translate.instant('GLOBAL.info_persona')) {
+      if (this.info_persona)
       this.perfil_editar('info_persona');
     } else if (event.tabTitle === this.translate.instant('GLOBAL.info_caracteristica')) {
       this.perfil_editar('info_caracteristica');
