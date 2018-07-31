@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./footer.component.scss'],
   template: `
     <span class="created-by">
-        Created with ♥ by <b><a href="https://akveo.com" target="_blank">Akveo</a></b> {{currentYear}}
+      Created with ♥ by <b><a href="https://akveo.com" target="_blank">Akveo</a></b> {{ currentYear }}
     </span>
     <div class="socials">
       <a href="#" target="_blank" class="ion ion-social-github"></a>
@@ -17,6 +17,6 @@ import { Component } from '@angular/core';
 })
 export class FooterComponent {
   get currentYear(): number {
-      return (new Date()).getFullYear();
+    return (new Date()).getFullYear();
   }
 }
