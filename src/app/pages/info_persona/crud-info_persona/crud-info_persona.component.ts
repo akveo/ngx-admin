@@ -22,8 +22,8 @@ import 'style-loader!angular2-toaster/toaster.css';
 })
 export class CrudInfoPersonaComponent implements OnInit {
   filesUp: any;
-  uidFile: any;
   Foto: any;
+  SoporteDocumento: any;
   config: ToasterConfig;
   info_persona_id: number;
 
@@ -36,10 +36,11 @@ export class CrudInfoPersonaComponent implements OnInit {
   @Output() eventChange = new EventEmitter();
   @Output('result') result: EventEmitter<any> = new EventEmitter();
 
-  info_info_persona: InfoPersona;
+  info_info_persona: any;
   formInfoPersona: any;
   regInfoPersona: any;
   clean: boolean;
+  loading: boolean;
 
   constructor(
     private translate: TranslateService,
@@ -58,6 +59,7 @@ export class CrudInfoPersonaComponent implements OnInit {
     this.loadOptionsEstadoCivil();
     this.loadOptionsGenero();
     this.loadOptionsTipoIdentificacion();
+    this.loading = false;
   }
 
   construirForm() {
@@ -116,26 +118,39 @@ export class CrudInfoPersonaComponent implements OnInit {
   }
 
   public loadInfoPersona(): void {
+    this.loading = true;
     if (this.info_persona_id !== undefined && this.info_persona_id !== 0 &&
       this.info_persona_id.toString() !== '') {
-      this.campusMidService.get('persona/ConsultaPersona/?userid=' + this.autenticationService.getPayload().sub)
+      this.campusMidService.get('persona/ConsultaPersona/?id=' + this.info_persona_id)
         .subscribe(res => {
           if (res !== null) {
             const temp = <InfoPersona>res;
-            const foto = [];
-            foto.push(temp.Foto);
-            this.nuxeoService.getDocumentoById$(foto, this.documentoService)
+            const files = []
+            if (temp.Foto + '' !== '0') {
+              files.push({ Id: temp.Foto, key: 'Foto' });
+            }
+            if (temp.SoporteDocumento + '' !== '0') {
+              files.push({ Id: temp.SoporteDocumento, key: 'SoporteDocumento' });
+            }
+            this.nuxeoService.getDocumentoById$(files, this.documentoService)
               .subscribe(response => {
-                this.info_info_persona = temp;
-                this.Foto = this.info_info_persona.Foto;
-                this.info_info_persona.Foto = response[0] + '';
+                console.info(temp);
+                const filesResponse = <any>response;
+                if (Object.keys(filesResponse).length === files.length) {
+                  this.info_info_persona = temp;
+                  this.Foto = this.info_info_persona.Foto;
+                  this.SoporteDocumento = this.info_info_persona.SoporteDocumento;
+                  this.info_info_persona.Foto = filesResponse['Foto'] + '';
+                  this.info_info_persona.SoporteDocumento = filesResponse['SoporteDocumento'] + '';
+                  this.loading = false;
+                }
               });
-
           }
         });
     } else {
       this.info_info_persona = undefined
       this.clean = !this.clean;
+      this.loading = false;
     }
   }
 
@@ -153,17 +168,53 @@ export class CrudInfoPersonaComponent implements OnInit {
     Swal(opt)
       .then((willDelete) => {
         if (willDelete.value) {
-          this.info_info_persona = <InfoPersona>infoPersona;
-          this.info_info_persona.Foto = this.Foto;
-          this.campusMidService.put('persona/ActualizarPersona', this.info_info_persona)
-            .subscribe(res => {
-              console.info(res);
-              this.loadInfoPersona();
-              this.eventChange.emit(true);
-              this.showToast('info', this.translate.instant('GLOBAL.actualizar'),
-                this.translate.instant('GLOBAL.info_persona') + ' ' +
-                this.translate.instant('GLOBAL.confirmarActualizar'));
-            });
+          this.loading = true;
+          this.info_info_persona = <any>infoPersona;
+          const files = [];
+          if (this.info_info_persona.Foto.file !== undefined) {
+            files.push({ file: this.info_info_persona.Foto.file, documento: this.Foto, key: 'Foto' });
+          }
+          if (this.info_info_persona.SoporteDocumento.file !== undefined) {
+            files.push({ file: this.info_info_persona.SoporteDocumento.file, documento: this.SoporteDocumento, key: 'SoporteDocumento' });
+          }
+          if (files.length !== 0) {
+            this.nuxeoService.updateDocument$(files, this.documentoService)
+              .subscribe(response => {
+                if (Object.keys(response).length === files.length) {
+                  const documentos_actualizados = <any>response;
+                  this.info_info_persona.Foto = this.Foto;
+                  this.info_info_persona.SoporteDocumento = this.SoporteDocumento;
+                  this.campusMidService.put('persona/ActualizarPersona', this.info_info_persona)
+                    .subscribe(res => {
+                      if (documentos_actualizados['Foto'] !== undefined) {
+                        this.info_info_persona.Foto = documentos_actualizados['Foto'].url + '';
+                      }
+                      if (documentos_actualizados['SoporteDocumento'] !== undefined) {
+                        this.info_info_persona.SoporteDocumento = documentos_actualizados['SoporteDocumento'].url + '';
+                      }
+                      this.loading = false;
+                      this.eventChange.emit(true);
+                      this.loadInfoPersona();
+                      this.showToast('info', this.translate.instant('GLOBAL.actualizar'),
+                        this.translate.instant('GLOBAL.info_persona') + ' ' +
+                        this.translate.instant('GLOBAL.confirmarActualizar'));
+                    });
+                }
+              });
+          } else {
+            console.info(this.info_info_persona);
+            this.info_info_persona.Foto = this.Foto;
+            this.info_info_persona.SoporteDocumento = this.SoporteDocumento;
+            this.campusMidService.put('persona/ActualizarPersona', this.info_info_persona)
+              .subscribe(res => {
+                this.eventChange.emit(true);
+                this.loadInfoPersona();
+                this.loading = false;
+                this.showToast('info', this.translate.instant('GLOBAL.actualizar'),
+                  this.translate.instant('GLOBAL.info_persona') + ' ' +
+                  this.translate.instant('GLOBAL.confirmarActualizar'));
+              });
+          }
         }
       });
   }
@@ -181,25 +232,45 @@ export class CrudInfoPersonaComponent implements OnInit {
     };
     Swal(opt)
       .then((willDelete) => {
+        this.loading = true;
         if (willDelete.value) {
-          const array = []
-          this.info_info_persona = <InfoPersona>infoPersona;
-          array.push({ nombre: this.autenticationService.getPayload().sub, file: this.info_info_persona.Foto, IdDocumento: 1 });
-          this.nuxeoService.getDocumentos$(array, this.documentoService)
+          const files = []
+          this.info_info_persona = <any>infoPersona;
+          console.info(this.info_info_persona);
+          if (this.info_info_persona.Foto.file !== undefined) {
+            files.push({
+              nombre: this.autenticationService.getPayload().sub, key: 'Foto',
+              file: this.info_info_persona.Foto.file, IdDocumento: 1});
+          }
+          if (this.info_info_persona.SoporteDocumento.file !== undefined) {
+            files.push({
+              nombre: this.autenticationService.getPayload().sub, key: 'SoporteDocumento',
+              file: this.info_info_persona.SoporteDocumento.file, IdDocumento: 2});
+          }
+          this.nuxeoService.getDocumentos$(files, this.documentoService)
             .subscribe(response => {
-              const foto = <any[]>response;
-              console.info(foto);
-              this.info_info_persona.Foto = foto[0].Body.Id;
-              this.info_info_persona.Usuario = this.autenticationService.getPayload().sub;
-              console.info(JSON.stringify(this.info_info_persona));
-              this.campusMidService.post('persona/GuardarPersona', this.info_info_persona)
-                .subscribe(res => {
-                  console.info(res);
-                  this.info_info_persona = <InfoPersona>res;
-                  this.eventChange.emit(true);
-                  this.showToast('info', this.translate.instant('GLOBAL.crear'),
-                    this.translate.instant('GLOBAL.info_persona') + ' ' + this.translate.instant('GLOBAL.confirmarCrear'));
-                });
+              if (Object.keys(response).length === files.length) {
+                this.filesUp = <any>response;
+                if (this.filesUp['Foto'] !== undefined) {
+                  this.info_info_persona.Foto = this.filesUp['Foto'].Id;
+                }
+                if (this.filesUp['SoporteDocumento'] !== undefined) {
+                  this.info_info_persona.SoporteDocumento = this.filesUp['SoporteDocumento'].Id;
+                }
+                this.info_info_persona.Usuario = this.autenticationService.getPayload().sub;
+                console.info(this.info_info_persona);
+                this.campusMidService.post('persona/GuardarPersona', this.info_info_persona)
+                  .subscribe(res => {
+                    console.info(res);
+                    this.info_info_persona = <InfoPersona>res;
+                    this.loadInfoPersona();
+                    this.loading = false;
+                    this.eventChange.emit(true);
+                    this.showToast('info', this.translate.instant('GLOBAL.crear'),
+                      this.translate.instant('GLOBAL.info_persona') + ' ' + this.translate.instant('GLOBAL.confirmarCrear'));
+                  });
+              }
+
             })
         }
       });
@@ -211,12 +282,16 @@ export class CrudInfoPersonaComponent implements OnInit {
   validarForm(event) {
     if (event.valid) {
       if (this.info_info_persona === undefined) {
+        console.info('create', event);
         this.createInfoPersona(event.data.InfoPersona);
       } else {
         this.updateInfoPersona(event.data.InfoPersona);
       }
-      this.result.emit(event);
     }
+  }
+
+  setPercentage(event) {
+    this.result.emit(event);
   }
 
   private showToast(type: string, title: string, body: string) {

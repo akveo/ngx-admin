@@ -10,7 +10,7 @@ export const COSMIC_THEME = {
       '#fff024',
       '#f7bd59',
     ],
-
+    loading: '#00f9a6',
     solar: {
       gradientLeft: '#7bff24',
       gradientRight: '#2ec7fe',

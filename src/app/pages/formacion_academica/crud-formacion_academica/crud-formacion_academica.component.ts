@@ -49,7 +49,7 @@ export class CrudFormacionAcademicaComponent implements OnInit {
     for (let i = 0; i < this.formInfoFormacionAcademica.campos.length; i++) {
       this.formInfoFormacionAcademica.campos[i].label = this.translate.instant('GLOBAL.' + this.formInfoFormacionAcademica.campos[i].label_i18n);
       this.formInfoFormacionAcademica.campos[i].placeholder = this.translate.instant('GLOBAL.placeholder_' +
-      this.formInfoFormacionAcademica.campos[i].label_i18n);
+        this.formInfoFormacionAcademica.campos[i].label_i18n);
     }
   }
 
@@ -64,30 +64,30 @@ export class CrudFormacionAcademicaComponent implements OnInit {
 
   loadOptionsPaisUniversidad(): void {
     let paisUniversidad: Array<any> = [];
-      this.ubicacionesService.get('lugar/?query=TipoLugar.Nombre:PAIS')
-        .subscribe(res => {
-          if (res !== null) {
-            paisUniversidad = <Array<Lugar>>res;
-          }
-          this.formInfoFormacionAcademica.campos[ this.getIndexForm('PaisUniversidad') ].opciones = paisUniversidad;
-        });
+    this.ubicacionesService.get('lugar/?query=TipoLugar.Nombre:PAIS')
+      .subscribe(res => {
+        if (res !== null) {
+          paisUniversidad = <Array<Lugar>>res;
+        }
+        this.formInfoFormacionAcademica.campos[this.getIndexForm('PaisUniversidad')].opciones = paisUniversidad;
+      });
   }
 
   loadOptionsCiudadUniversidad(): void {
     let consultaHijos: Array<any> = [];
     const ciudadUniversidad: Array<any> = [];
-      if (this.paisSelecccionado) {
-        this.ubicacionesService.get('relacion_lugares/?query=LugarPadre.Id:' + this.paisSelecccionado.Id)
-          .subscribe(res => {
-            if (res !== null) {
-              consultaHijos = <Array<Lugar>>res;
-              for (let i = 0; i < consultaHijos.length; i++) {
-                ciudadUniversidad.push(consultaHijos[i].LugarHijo);
-              }
+    if (this.paisSelecccionado) {
+      this.ubicacionesService.get('relacion_lugares/?query=LugarPadre.Id:' + this.paisSelecccionado.Id)
+        .subscribe(res => {
+          if (res !== null) {
+            consultaHijos = <Array<Lugar>>res;
+            for (let i = 0; i < consultaHijos.length; i++) {
+              ciudadUniversidad.push(consultaHijos[i].LugarHijo);
             }
-            this.formInfoFormacionAcademica.campos[ this.getIndexForm('CiudadUniversidad') ].opciones = ciudadUniversidad;
-          });
-      }
+          }
+          this.formInfoFormacionAcademica.campos[this.getIndexForm('CiudadUniversidad')].opciones = ciudadUniversidad;
+        });
+    }
   }
 
   getIndexForm(nombre: String): number {
@@ -98,6 +98,9 @@ export class CrudFormacionAcademicaComponent implements OnInit {
       }
     }
     return 0;
+  }
+  searchDoc(event) {
+    console.info(event);
   }
 
   public loadInfoFormacionAcademica(): void {
@@ -133,12 +136,12 @@ export class CrudFormacionAcademicaComponent implements OnInit {
           this.info_formacion_academica = <InfoFormacionAcademica>infoFormacionAcademica;
           /** this.Service.put('', this.info_formacion_academica)
             .subscribe(res => { **/
-              this.loadInfoFormacionAcademica();
-              this.eventChange.emit(true);
-              this.showToast('info', this.translate.instant('GLOBAL.actualizar'),
-                this.translate.instant('GLOBAL.formacion_academica') + ' ' +
-                this.translate.instant('GLOBAL.confirmarActualizar'));
-            /** }); **/
+          this.loadInfoFormacionAcademica();
+          this.eventChange.emit(true);
+          this.showToast('info', this.translate.instant('GLOBAL.actualizar'),
+            this.translate.instant('GLOBAL.formacion_academica') + ' ' +
+            this.translate.instant('GLOBAL.confirmarActualizar'));
+          /** }); **/
         }
       });
   }
@@ -161,11 +164,11 @@ export class CrudFormacionAcademicaComponent implements OnInit {
           /** this.Service.post('', this.info_formacion_academica)
             .subscribe(res => {
               this.info_formacion_academica = <InfoFormacionAcademica>res; **/
-              this.eventChange.emit(true);
-              this.showToast('info', this.translate.instant('GLOBAL.crear'),
-                this.translate.instant('GLOBAL.formacion_academica') + ' ' +
-                this.translate.instant('GLOBAL.confirmarCrear'));
-            /** }); **/
+          this.eventChange.emit(true);
+          this.showToast('info', this.translate.instant('GLOBAL.crear'),
+            this.translate.instant('GLOBAL.formacion_academica') + ' ' +
+            this.translate.instant('GLOBAL.confirmarCrear'));
+          /** }); **/
         }
       });
   }

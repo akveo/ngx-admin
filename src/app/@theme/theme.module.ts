@@ -42,6 +42,7 @@ import {
   SelectComponent,
   NuxeoComponent,
   ThemeSwitcherListComponent,
+  LoadingComponent,
 } from './components';
 
 import { CapitalizePipe, PluralPipe, RoundPipe, TimingPipe } from './pipes';
@@ -101,6 +102,7 @@ const COMPONENTS = [
   DinamicformComponent,
   SelectComponent,
   NuxeoComponent,
+  LoadingComponent,
 ];
 
 const ENTRY_COMPONENTS = [

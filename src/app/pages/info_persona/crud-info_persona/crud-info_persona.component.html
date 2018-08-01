@@ -1,4 +1,5 @@
 
 <toaster-container [toasterconfig]="config"></toaster-container>
-<ngx-dinamicform [normalform]="formInfoPersona" [modeloData]="info_info_persona" (result)="validarForm($event)" [clean]="clean">
+<ngx-dinamicform [normalform]="formInfoPersona" [modeloData]="info_info_persona" (result)="validarForm($event)" [clean]="clean" (percentage)="setPercentage($event)">
 </ngx-dinamicform>
+<ngx-loading [hidden]="!loading"></ngx-loading>

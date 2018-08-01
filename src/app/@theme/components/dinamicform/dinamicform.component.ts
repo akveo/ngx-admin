@@ -15,10 +15,13 @@ export class DinamicformComponent implements OnInit, OnChanges {
   @Input('modeloData') modeloData: any;
   @Input('clean') clean: boolean;
   @Output('result') result: EventEmitter<any> = new EventEmitter();
+  @Output('resultAux') resultAux: EventEmitter<any> = new EventEmitter();
   @Output('resultSmart') resultSmart: EventEmitter<any> = new EventEmitter();
   @Output('interlaced') interlaced: EventEmitter<any> = new EventEmitter();
+  @Output('percentage') percentage: EventEmitter<any> = new EventEmitter();
   data: any;
   @ViewChild(MatDatepicker) datepicker: MatDatepicker<Date>;
+
   constructor(private sanitization: DomSanitizer) {
     this.data = {
       valid: true,
@@ -41,7 +44,7 @@ export class DinamicformComponent implements OnInit, OnChanges {
           this.normalform.campos.forEach(element => {
             for (const i in this.modeloData) {
               if (this.modeloData.hasOwnProperty(i)) {
-                if (i === element.nombre && this.modeloData[i] !== null ) {
+                if (i === element.nombre && this.modeloData[i] !== null) {
                   switch (element.etiqueta) {
                     case 'selectmultiple':
                       element.valor = [];
@@ -69,6 +72,7 @@ export class DinamicformComponent implements OnInit, OnChanges {
                       break;
                     case 'file':
                       element.url = this.cleanURL(this.modeloData[i]);
+                      element.urlTemp = this.modeloData[i];
                       break;
                     default:
                       element.valor = this.modeloData[i];
@@ -78,6 +82,7 @@ export class DinamicformComponent implements OnInit, OnChanges {
               }
             }
           });
+          this.setPercentage()
         }
       }
     }
@@ -87,16 +92,24 @@ export class DinamicformComponent implements OnInit, OnChanges {
     }
   }
 
-  download(url) {
-    window.open(url);
+  download(url, title, w, h) {
+    const left = (screen.width / 2) - (w / 2);
+    const top = (screen.height / 2) - (h / 2);
+    window.open(url, title, 'toolbar=no,' +
+      'location=no, directories=no, status=no, menubar=no,' +
+      'scrollbars=no, resizable=no, copyhistory=no, ' +
+      'width=' + w + ', height=' + h + ', top=' + top + ', left=' + left);
   }
 
   onChange(event, c) {
+    console.info(c.valor);
     if (c.valor !== undefined) {
-      c.valor = event.srcElement.files[0];
       c.urlTemp = URL.createObjectURL(event.srcElement.files[0])
       c.url = this.cleanURL(c.urlTemp);
+      c.valor = event.srcElement.files[0];
+      console.info(c);
       this.validCampo(c);
+      c.File = event.srcElement.files[0];
     }
   }
 
@@ -131,8 +144,12 @@ export class DinamicformComponent implements OnInit, OnChanges {
 
   validCampo(c): boolean {
 
-    if (c.requerido && (c.valor === '' || c.valor === null || c.valor === undefined ||
-      (JSON.stringify(c.valor) === '{}' && c.etiqueta !== 'file') || JSON.stringify(c.valor) === '[]')) {
+    if (c.etiqueta === 'file') {
+      console.info((c.etiqueta === 'file' && c.valor.name === undefined));
+    }
+    if (c.requerido && ((c.valor === '' && c.etiqueta !== 'file') || c.valor === null || c.valor === undefined ||
+      (JSON.stringify(c.valor) === '{}' && c.etiqueta !== 'file') || JSON.stringify(c.valor) === '[]')
+      || ((c.etiqueta === 'file' && c.valor.name === undefined) && (c.etiqueta === 'file' && c.urlTemp === undefined))) {
       c.alerta = '** Debe llenar este campo';
       c.clase = 'form-control form-control-danger';
       return false;
@@ -205,8 +222,7 @@ export class DinamicformComponent implements OnInit, OnChanges {
       requeridos = d.requerido ? requeridos + 1 : requeridos;
       if (this.validCampo(d)) {
         if (d.etiqueta === 'file') {
-          this.data.files.push({ nombre: d.nombre, file: d.valor });
-          result[d.nombre] = d.valor;
+          result[d.nombre] = { nombre: d.nombre, file: d.File };
           // result[d.nombre].push({ nombre: d.name, file: d.valor });
         } else if (d.etiqueta === 'select') {
           result[d.nombre] = d.relacion ? d.valor : d.valor.Id;
@@ -235,7 +251,39 @@ export class DinamicformComponent implements OnInit, OnChanges {
     }
 
     this.result.emit(this.data);
+    this.percentage.emit(this.data.percentage);
     return this.data;
+  }
+
+  auxButton(c) {
+    const result = {};
+    this.normalform.campos.forEach(d => {
+      if (d.etiqueta === 'file') {
+        result[d.nombre] = { nombre: d.nombre, file: d.File };
+      } else if (d.etiqueta === 'select') {
+        result[d.nombre] = d.relacion ? d.valor : d.valor.Id;
+      } else {
+        result[d.nombre] = d.valor;
+      }
+    });
+    const dataTemp = {
+      data: result,
+      button: c.nombre,
+    }
+    this.resultAux.emit(dataTemp);
+  }
+
+
+  setPercentage(): void {
+    let requeridos = 0;
+    let resueltos = 0;
+    this.normalform.campos.forEach(form_element => {
+      if (form_element.requerido) {
+        requeridos = requeridos + 1;
+        resueltos = form_element.valor ? resueltos + 1 : resueltos;
+      }
+    });
+    this.percentage.emit(resueltos / requeridos);
   }
 
   isEqual(obj1, obj2) {

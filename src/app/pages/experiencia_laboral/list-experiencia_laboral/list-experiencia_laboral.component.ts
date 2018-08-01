@@ -1,9 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { OrganizacionService } from './../../../@core/data/organizacion.service';
+import { Component, OnInit, Input } from '@angular/core';
 import { LocalDataSource } from 'ng2-smart-table';
 import { ToasterService, ToasterConfig, Toast, BodyOutputType } from 'angular2-toaster';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import Swal from 'sweetalert2';
 import 'style-loader!angular2-toaster/toaster.css';
+import { ExperienciaService } from '../../../@core/data/experiencia.service';
 
 @Component({
   selector: 'ngx-list-experiencia-laboral',
@@ -16,8 +18,16 @@ export class ListExperienciaLaboralComponent implements OnInit {
   config: ToasterConfig;
   settings: any;
   source: LocalDataSource = new LocalDataSource();
+  data: Array<any>;
+  crud = false;
 
-  constructor(private translate: TranslateService, private toasterService: ToasterService) {
+  @Input('ente_id')
+  set name(ente_id: number) {
+    this.uid = ente_id;
+    // this.loadData();
+  }
+  constructor(private translate: TranslateService, private toasterService: ToasterService,
+    private experienciaService: ExperienciaService, private organizacionService: OrganizacionService) {
     this.loadData();
     this.cargarCampos();
     this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
@@ -43,38 +53,20 @@ export class ListExperienciaLaboralComponent implements OnInit {
       },
       mode: 'external',
       columns: {
-        NombreEmpresa: {
+        Organizacion: {
           title: this.translate.instant('GLOBAL.nombre_empresa'),
           valuePrepareFunction: (value) => {
-            return value;
+            return value.Nombre;
           },
         },
-        DireccionEmpresa: {
-          title: this.translate.instant('GLOBAL.direccion_empresa'),
+        FechaInicio: {
+          title: this.translate.instant('GLOBAL.fecha_inicio'),
           valuePrepareFunction: (value) => {
             return value;
           },
         },
-        CorreoEmpresa: {
-          title: this.translate.instant('GLOBAL.correo_empresa'),
-          valuePrepareFunction: (value) => {
-            return value;
-          },
-        },
-        TelefonoEmpresa: {
-          title: this.translate.instant('GLOBAL.telefono_empresa'),
-          valuePrepareFunction: (value) => {
-            return value;
-          },
-        },
-        AnioInicio: {
-          title: this.translate.instant('GLOBAL.anio_inicio'),
-          valuePrepareFunction: (value) => {
-            return value;
-          },
-        },
-        AnioFin: {
-          title: this.translate.instant('GLOBAL.anio_fin'),
+        FechaFinalizacion: {
+          title: this.translate.instant('GLOBAL.fecha_fin'),
           valuePrepareFunction: (value) => {
             return value;
           },
@@ -82,13 +74,7 @@ export class ListExperienciaLaboralComponent implements OnInit {
         Cargo: {
           title: this.translate.instant('GLOBAL.cargo'),
           valuePrepareFunction: (value) => {
-            return value;
-          },
-        },
-        DescripcionCargo: {
-          title: this.translate.instant('GLOBAL.descripcion_cargo'),
-          valuePrepareFunction: (value) => {
-            return value;
+            return value.Nombre;
           },
         },
       },
@@ -100,29 +86,32 @@ export class ListExperienciaLaboralComponent implements OnInit {
   }
 
   loadData(): void {
-    /** this.Service.get('').subscribe(res => {
+     this.experienciaService.get('experiencia_laboral/?query=Persona:' + this.uid).subscribe(res => {
       if (res !== null) {
-        const data = <Array<any>>res;
-        this.source.load(data);
+        this.data = <Array<any>>res;
+        this.data.forEach(element => {
+          this.organizacionService.get('organizacion/?query=Ente:' + element.Organizacion).subscribe(r => {
+            if (res !== null) {
+              element.Organizacion = r[0];
+            }
+            this.source.load(this.data);
+          });
+        });
       }
-    }); **/
+    });
   }
 
   ngOnInit() {
   }
 
-  activetab(): void {
-    this.cambiotab = !this.cambiotab;
-  }
-
-  onEdit(event): void {
+    onEdit(event): void {
     this.uid = event.data.Id;
-    this.activetab();
+    this.crud = true;
   }
 
   onCreate(event): void {
     this.uid = 0;
-    this.activetab();
+    this.crud = true;
   }
 
   selectTab(event): void {
@@ -157,13 +146,13 @@ export class ListExperienciaLaboralComponent implements OnInit {
     Swal(opt)
       .then((willDelete) => {
         if (willDelete.value) {
-          /** this.Service.delete('', event.data).subscribe(res => {
-            if (res !== null) { **/
+           this.experienciaService.delete('experiencia_laboral', event.data).subscribe(res => {
+            if (res !== null) {
               this.loadData();
               this.showToast('info', this.translate.instant('GLOBAL.eliminar'),
               this.translate.instant('GLOBAL.confirmarEliminar'));
-            /** }
-          }); **/
+            }
+          });
         }
     });
   }

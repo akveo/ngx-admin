@@ -11,6 +11,7 @@ export const DEFAULT_THEME = {
       '#42db7d',
       '#42db7d',
     ],
+    loading: '#7f8c8d',
 
     solar: {
       gradientLeft: '#42db7d',

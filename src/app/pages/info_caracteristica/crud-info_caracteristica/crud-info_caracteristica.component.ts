@@ -173,13 +173,12 @@ export class CrudInfoCaracteristicaComponent implements OnInit {
 
             this.formInfoCaracteristica.campos[this.getIndexForm('DepartamentoNacimiento')].opciones[0] = this.info_info_caracteristica.DepartamentoNacimiento;
             this.formInfoCaracteristica.campos[ this.getIndexForm('Lugar') ].opciones[0] = this.info_info_caracteristica.Lugar;
-
           }
         });
     } else  {
       this.info_info_caracteristica = undefined;
       this.clean = !this.clean;
-      this.denied_acces = true; // no muestra el formulario a menos que se le pase un id del ente info_caracteristica_id
+      this.denied_acces = false; // no muestra el formulario a menos que se le pase un id del ente info_caracteristica_id
     }
   }
 
@@ -250,8 +249,11 @@ export class CrudInfoCaracteristicaComponent implements OnInit {
       } else {
         this.updateInfoCaracteristica(event.data.InfoCaracteristica);
       }
-      this.result.emit(event);
     }
+  }
+
+  setPercentage(event) {
+    this.result.emit(event);
   }
 
   private showToast(type: string, title: string, body: string) {

@@ -32,9 +32,9 @@ export class PagesComponent implements OnInit {
 
   ngOnInit() {
     if (this.autenticacion.live()) {
-      // console.log(this.autenticacion.getPayload().role);
+      console.info(this.autenticacion.getPayload().role);
       this.rol = 'Menu%20campus';
-    }else {
+    } else {
       this.rol = 'Publico';
     }
     this.menu_ws.get(this.rol + '/campus').subscribe(
