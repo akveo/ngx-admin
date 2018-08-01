@@ -37,13 +37,13 @@ export class InputComponent implements OnInit {
     okClick(): void {
         switch (this.modalOperation) {
             case 1:
-                this.editNode(this.modalNode)
+                this.editNode(this.modalNode);
                 break;
             case 2:
-                this.addNode(this.modalNode)
+                this.addNode(this.modalNode);
                 break;
             case 3:
-                this.addCategory(this.modalNode)
+                this.addCategory(this.modalNode);
                 break;
             default: alert('Invalid Action');
         }

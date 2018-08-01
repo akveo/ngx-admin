@@ -53,7 +53,7 @@ export class TreeComponent implements OnInit {
     animateExpand: true,
     animateSpeed: 30,
     animateAcceleration: 1.2,
-  }
+  };
 
   constructor(
     private modalService: NgbModal,
