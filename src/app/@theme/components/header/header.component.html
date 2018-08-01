@@ -4,10 +4,10 @@
       <i class="nb-menu"></i>
     </a>
     <div class="logo" (click)="goToHome()">
-      <span>{{ 'HOME.TITLE' | translate }}</span>
+      <span>{{ 'HOME.TITLE' | translate:param }}</span>
     </div>
   </div>
-  <ngx-layout-direction-switcher></ngx-layout-direction-switcher>
+  <ngx-theme-switcher></ngx-theme-switcher>
 </div>
 
 <nb-actions size="medium" class="header-container" [class.right]="position === 'normal'" [class.left]="position === 'inverse'">

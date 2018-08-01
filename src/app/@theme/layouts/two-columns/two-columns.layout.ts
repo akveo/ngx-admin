@@ -13,14 +13,11 @@ import { takeWhile } from 'rxjs/operators/takeWhile';
       </nb-layout-header>
 
       <nb-sidebar class="menu-sidebar" tag="menu-sidebar" responsive >
-<<<<<<< HEAD
-=======
         <nb-sidebar-header *ngIf="currentTheme !== 'corporate'">
           <a href="#" class="btn btn-hero-success main-btn">
             <i class="ion ion-social-github"></i> <span>Support Us</span>
           </a>
         </nb-sidebar-header>
->>>>>>> upstream/master
         <ng-content select="nb-menu"></ng-content>
       </nb-sidebar>
 
