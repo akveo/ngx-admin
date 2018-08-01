@@ -6,7 +6,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ImplicitAutenticationService } from '../@core/utils/implicit_autentication.service';
 import { SharedModule } from '../shared/shared.module';
 import { MatDatepickerModule } from '@angular/material/datepicker';
-import { MatFormFieldModule } from '@angular/material';
+import { MatFormFieldModule, MatNativeDateModule} from '@angular/material';
 import { MatInputModule, MatSelectModule } from '@angular/material';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { DocumentoService } from '../@core/data/documento.service';
@@ -83,6 +83,7 @@ const MAT_MODULES = [
   MatInputModule,
   MatSelectModule,
   MatCheckboxModule,
+  MatNativeDateModule,
 ]
 
 const COMPONENTS = [
