@@ -86,7 +86,6 @@ export class TreeComponent implements OnInit {
     activeModal.componentInstance.modalTree = tree;
     activeModal.result.then(() => {
       this.tree.treeModel.update();
-    }, () => {
     });
   }
 
