@@ -6,7 +6,7 @@ const points = [300, 520, 435, 530, 730, 620, 660, 860];
 
 @Component({
   selector: 'ngx-stats-ares-chart',
-  styleUrls: ['stats-card-front.component.scss'],
+  styleUrls: ['stats-card-back.component.scss'],
   template: `
     <div echarts [options]="option" class="echart"></div>
   `,

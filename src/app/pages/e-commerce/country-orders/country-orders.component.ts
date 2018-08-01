@@ -21,15 +21,15 @@ import { Component } from '@angular/core';
 })
 export class CountryOrdersComponent {
 
-  countryName = '';
-  countryData = [];
-  countriesCategories = ['Sofas', 'Furniture', 'Lighting', 'Tables', 'Textiles'];
-
   private getRandomData(nPoints: number): number[] {
     return Array.from(Array(nPoints)).map(() => {
       return Math.round(Math.random() * 20);
     });
   }
+
+  countryName = '';
+  countryData = [];
+  countriesCategories = ['Sofas', 'Furniture', 'Lighting', 'Tables', 'Textiles'];
 
   selectCountryById(countryName: string) {
     const nPoint = this.countriesCategories.length;

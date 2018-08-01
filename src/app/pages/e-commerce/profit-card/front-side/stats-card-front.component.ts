@@ -6,4 +6,5 @@ import { Component } from '@angular/core';
   templateUrl: './stats-card-front.component.html',
 })
 export class StatsCardFrontComponent {
+
 }

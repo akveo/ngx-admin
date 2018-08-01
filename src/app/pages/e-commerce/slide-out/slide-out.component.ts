@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'ngx-slide-out',
@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class SlideOutComponent {
 
-  showVisitorsStatistics = false;
+  @Input() showVisitorsStatistics: boolean = false;
 
   toggleStatistics() {
     this.showVisitorsStatistics = !this.showVisitorsStatistics;

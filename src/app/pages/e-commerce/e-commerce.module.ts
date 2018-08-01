@@ -12,15 +12,15 @@ import { ChartPanelHeaderComponent } from './charts-panel/chart-panel-header/cha
 import { ChartPanelSummaryComponent } from './charts-panel/chart-panel-summary/chart-panel-summary.component';
 import { ChartModule } from 'angular2-chartjs';
 import { StatsCardBackComponent } from './profit-card/back-side/stats-card-back.component';
-import { StatsAreaChartComponent } from './profit-card/front-side/stats-area-chart.component';
-import { StatsBarChartComponent } from './profit-card/back-side/stats-bar-chart.component';
+import { StatsAreaChartComponent } from './profit-card/back-side/stats-area-chart.component';
+import { StatsBarChartComponent } from './profit-card/front-side/stats-bar-chart.component';
 import { StatsCardFrontComponent } from './profit-card/front-side/stats-card-front.component';
 import { TrafficRevealCardComponent } from './traffic-reveal-card/traffic-reveal-card.component';
-import { TrafficBarChartComponent } from './traffic-reveal-card/front-side/traffic-bar-chart.component';
+import { TrafficBarComponent } from './traffic-reveal-card/front-side/traffic-bar/traffic-bar.component';
 import { TrafficFrontCardComponent } from './traffic-reveal-card/front-side/traffic-front-card.component';
 import { TrafficCardsHeaderComponent } from './traffic-reveal-card/traffic-cards-header/traffic-cards-header.component';
 import { TrafficBackCardComponent } from './traffic-reveal-card/back-side/traffic-back-card.component';
-import { TrafficBarComponent } from './traffic-reveal-card/back-side/traffic-bar/traffic-bar.component';
+import { TrafficBarChartComponent } from './traffic-reveal-card/back-side/traffic-bar-chart.component';
 import {
   ECommerceVisitorsAnalyticsComponent,
 } from './visitors-analytics/visitors-analytics.component';

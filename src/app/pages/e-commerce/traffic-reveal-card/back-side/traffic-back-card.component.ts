@@ -2,8 +2,6 @@ import { Component, Input, OnDestroy } from '@angular/core';
 import { NbThemeService } from '@nebular/theme';
 import { takeWhile } from 'rxjs/operators';
 
-import { TrafficList } from '../../../../@core/data/traffic-list.service';
-
 @Component({
   selector: 'ngx-traffic-back-card',
   styleUrls: ['./traffic-back-card.component.scss'],
@@ -13,7 +11,7 @@ export class TrafficBackCardComponent implements OnDestroy {
 
   private alive = true;
 
-  @Input() backCardData: TrafficList;
+  @Input() trafficBarData: any;
 
   currentTheme: string;
 
@@ -23,10 +21,6 @@ export class TrafficBackCardComponent implements OnDestroy {
       .subscribe(theme => {
         this.currentTheme = theme.name;
     });
-  }
-
-  trackByDate(_, item) {
-    return item.date;
   }
 
   ngOnDestroy() {

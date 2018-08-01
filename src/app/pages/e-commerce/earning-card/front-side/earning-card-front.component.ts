@@ -19,7 +19,6 @@ export class EarningCardFrontComponent implements OnDestroy, OnInit {
   liveUpdateChartData: {value: [string, number]}[];
   timeTicket: any;
 
-
   constructor(private themeService: NbThemeService,
               private earningService: EarningService) {
     this.themeService.getJsTheme()
