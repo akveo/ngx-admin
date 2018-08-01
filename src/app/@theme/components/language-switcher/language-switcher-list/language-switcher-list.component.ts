@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { NbPopoverDirective, NbLayoutDirection, NbLayoutDirectionService } from '@nebular/theme';
 import { TranslateService } from '@ngx-translate/core';
+import { I18nService } from '../../../../@core/data/i18n.service';
 
 @Component({
   selector: 'ngx-lang-switcher-list',
@@ -16,7 +17,10 @@ export class LangSwitcherListComponent {
 
   languages = [];
 
-  constructor(private translate: TranslateService, private directionService: NbLayoutDirectionService) {
+  constructor(
+    private translate: TranslateService,
+    private i18nService: I18nService,
+    private directionService: NbLayoutDirectionService) {
 
     this.translate.get(['English', 'Arabic']).subscribe(translations => {
       this.languages = [
@@ -39,15 +43,8 @@ export class LangSwitcherListComponent {
       .subscribe(newDirection => this.currentDirection = newDirection);
   }
 
-  // TODO: Need to convert onToggleLang to more generic function
   onToggleLang(langKey: string) {
-    if (langKey === 'ar') {
-      this.translate.use('ar');
-      this.directionService.setDirection(this.directions.RTL);
-    } else {
-      this.translate.use('en');
-      this.directionService.setDirection(this.directions.LTR);
-    }
+    this.i18nService.language = langKey;
     this.popover.hide();
   }
 }

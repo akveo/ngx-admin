@@ -5,7 +5,10 @@
  */
 import { Component, OnInit } from '@angular/core';
 import { AnalyticsService } from './@core/utils/analytics.service';
-import { TranslateService } from '@ngx-translate/core';
+import { I18nService } from './@core/data/i18n.service';
+import { environment } from '../environments/environment';
+
+
 
 @Component({
   selector: 'ngx-app',
@@ -14,36 +17,16 @@ import { TranslateService } from '@ngx-translate/core';
 export class AppComponent implements OnInit {
 
   constructor(
-    private translate: TranslateService,
-    private analytics: AnalyticsService) {
-      this.initTranslate();
+    private analytics: AnalyticsService,
+    private i18nService: I18nService) {
   }
 
   ngOnInit(): void {
     this.analytics.trackPageViews();
+    // Setup translations
+    this.i18nService.init(environment.defaultLanguage, environment.supportedLanguages);
   }
 
 
-  initTranslate() {
-    // TODO: Set the default language for translation strings, and the current language.
-    this.translate.setDefaultLang('en');
-
-
-    // if (browserLang) {
-    //   if (browserLang === 'zh') {
-    //     const browserCultureLang = this.translate.getBrowserCultureLang();
-
-    //     if (browserCultureLang.match(/-CN|CHS|Hans/i)) {
-    //       this.translate.use('zh-cmn-Hans');
-    //     } else if (browserCultureLang.match(/-TW|CHT|Hant/i)) {
-    //       this.translate.use('zh-cmn-Hant');
-    //     }
-    //   } else {
-    //     this.translate.use(this.translate.getBrowserLang());
-    //   }
-    // } else {
-    //   this.translate.use('en'); // Set your language here
-    // }
-  }
 
 }
