@@ -6,7 +6,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ImplicitAutenticationService } from '../@core/utils/implicit_autentication.service';
 import { SharedModule } from '../shared/shared.module';
 import { MatDatepickerModule } from '@angular/material/datepicker';
-import { MatFormFieldModule } from '@angular/material';
+import { MatFormFieldModule, MatNativeDateModule} from '@angular/material';
 import { MatInputModule, MatSelectModule } from '@angular/material';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { DocumentoService } from '../@core/data/documento.service';
@@ -23,18 +23,25 @@ import {
   NbThemeModule,
   NbUserModule,
   NbCheckboxModule,
+  NbPopoverModule,
+  NbContextMenuModule,
 } from '@nebular/theme';
+
+import { NbSecurityModule } from '@nebular/security';
 
 import {
   FooterComponent,
   HeaderComponent,
   SearchInputComponent,
   ThemeSettingsComponent,
+  SwitcherComponent,
+  LayoutDirectionSwitcherComponent,
   ThemeSwitcherComponent,
   TinyMCEComponent,
   DinamicformComponent,
   SelectComponent,
   NuxeoComponent,
+  ThemeSwitcherListComponent,
   LoadingComponent,
 } from './components';
 
@@ -49,7 +56,7 @@ import {
 
 import { DEFAULT_THEME } from './styles/theme.default';
 import { COSMIC_THEME } from './styles/theme.cosmic';
-import { MatNativeDateModule } from '@angular/material/core';
+import { CORPORATE_THEME } from './styles/theme.corporate';
 
 const BASE_MODULES = [CommonModule, FormsModule, ReactiveFormsModule];
 
@@ -64,20 +71,26 @@ const NB_MODULES = [
   NbSearchModule,
   NbSidebarModule,
   NbCheckboxModule,
+  NbPopoverModule,
+  NbContextMenuModule,
   NgbModule,
+  NbSecurityModule, // *nbIsGranted directive
 ];
 
 const MAT_MODULES = [
   MatDatepickerModule,
-  MatNativeDateModule,
   MatFormFieldModule,
   MatInputModule,
   MatSelectModule,
   MatCheckboxModule,
+  MatNativeDateModule,
 ]
 
 const COMPONENTS = [
+  SwitcherComponent,
+  LayoutDirectionSwitcherComponent,
   ThemeSwitcherComponent,
+  ThemeSwitcherListComponent,
   HeaderComponent,
   FooterComponent,
   SearchInputComponent,
@@ -93,6 +106,10 @@ const COMPONENTS = [
   LoadingComponent,
 ];
 
+const ENTRY_COMPONENTS = [
+  ThemeSwitcherListComponent,
+];
+
 const PIPES = [
   CapitalizePipe,
   PluralPipe,
@@ -105,7 +122,7 @@ const NB_THEME_PROVIDERS = [
     {
       name: 'default',
     },
-    [DEFAULT_THEME, COSMIC_THEME],
+    [ DEFAULT_THEME, COSMIC_THEME, CORPORATE_THEME ],
   ).providers,
   ...NbSidebarModule.forRoot().providers,
   ...NbMenuModule.forRoot().providers,
@@ -116,6 +133,7 @@ const NB_THEME_PROVIDERS = [
   imports: [...BASE_MODULES, ...NB_MODULES, SharedModule, ...MAT_MODULES],
   exports: [...BASE_MODULES, ...NB_MODULES, ...COMPONENTS, ...PIPES],
   declarations: [...COMPONENTS, ...PIPES, DinamicformComponent, SelectComponent],
+  entryComponents: [...ENTRY_COMPONENTS],
 })
 export class ThemeModule {
   static forRoot(): ModuleWithProviders {

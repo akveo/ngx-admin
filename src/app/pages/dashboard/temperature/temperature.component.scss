@@ -124,6 +124,14 @@
     }
   }
 
+  @include nb-for-theme(corporate) {
+    .btn-icon.active {
+      color: nb-theme(color-primary);
+      border: none;
+      background-color: nb-theme(layout-bg);
+    }
+  }
+
   @include media-breakpoint-down(is) {
     ngx-temperature-dragger {
       max-width: 250px;

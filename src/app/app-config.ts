@@ -95,5 +95,5 @@ export const Config = {
 };
 
 export const GENERAL = {
-    ENTORNO: Config.PREPROD_LOCAL,
+    ENTORNO: Config.LOCAL,
 };

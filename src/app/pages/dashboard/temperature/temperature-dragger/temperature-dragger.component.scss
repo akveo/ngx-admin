@@ -91,4 +91,14 @@
       text-shadow: 0 0 6px rgba(255, 255, 255, 0.5);
     }
   }
+
+  @include nb-for-theme(corporate) {
+    .circle {
+      stroke: nb-theme(color-warning);
+    }
+
+    .power-bg {
+      color: nb-theme(separator);
+    }
+  }
 }

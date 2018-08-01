@@ -13,6 +13,7 @@
 
   .echart {
     position: absolute;
+    left: 1em;
     height: calc(100% - 2 * #{$padding});
     width: 40%;
   }
