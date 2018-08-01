@@ -16,6 +16,8 @@ import { TrafficComponent } from './traffic/traffic.component';
 import { TrafficChartComponent } from './traffic/traffic-chart.component';
 import { CarouselComponent } from './carousel/carousel.component';
 import { NewsComponent } from './news/news.component';
+import { ElectricityComponent } from './electricity/electricity.component';
+import { ElectricityChartComponent } from './electricity/electricity-chart/electricity-chart.component';
 
 
 @NgModule({
@@ -37,6 +39,8 @@ import { NewsComponent } from './news/news.component';
     TrafficChartComponent,
     CarouselComponent,
     NewsComponent,
+    ElectricityComponent,
+    ElectricityChartComponent,
   ],
 })
 export class DashboardModule { }
