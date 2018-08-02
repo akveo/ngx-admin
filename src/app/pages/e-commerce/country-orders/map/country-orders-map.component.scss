@@ -1,4 +1,6 @@
 @import '../../../../@theme/styles/themes';
+@import '~bootstrap/scss/mixins/breakpoints';
+@import '~@nebular/theme/styles/global/bootstrap/breakpoints';
 
 @include nb-install-component() {
 
@@ -43,5 +45,10 @@
       border-bottom-left-radius: nb-theme(btn-border-radius);
       border-bottom-right-radius: nb-theme(btn-border-radius);
     }
+  }
+
+  @include media-breakpoint-down(sm) {
+    width: 100%;
+    height: 50%;
   }
 }

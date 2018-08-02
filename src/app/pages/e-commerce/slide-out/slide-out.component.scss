@@ -1,4 +1,6 @@
 @import '../../../@theme/styles/themes';
+@import '~bootstrap/scss/mixins/breakpoints';
+@import '~@nebular/theme/styles/global/bootstrap/breakpoints';
 
 @include nb-install-component() {
   $slide-out-container-width: nb-theme(slide-out-container-width);
@@ -22,14 +24,13 @@
 
   .slide-out-container {
     position: absolute;
-    overflow: hidden;
     padding: 1.5rem;
+    width: $slide-out-container-width;
   }
 
   .slide-out-container,
   .slide-out-container::before {
     display: block;
-    width: $slide-out-container-width;
     height: 100%;
     top: 0;
     overflow: hidden;
@@ -73,5 +74,40 @@
 
   .expanded .content-wrapper {
     margin: 0;
+  }
+
+  @include media-breakpoint-down(md) {
+    $slide-out-container-width: 50%;
+
+    .slide-out-container {
+      width: $slide-out-container-width;
+    }
+
+    .slide-out-container.expanded {
+      left: calc(100% - #{$slide-out-container-width});
+      @include nb-rtl(right, calc(100% - #{$slide-out-container-width}));
+    }
+  }
+
+  @include media-breakpoint-down(is) {
+    $slide-out-container-width: 100%;
+
+    .show-hide-toggle {
+      right: 0.5rem;
+    }
+
+    .slide-out-container {
+      width: $slide-out-container-width;
+    }
+
+    .slide-out-container.collapsed {
+      left: calc(100% - 3rem);
+      @include nb-rtl(right, calc(100% - 3rem));
+    }
+
+    .slide-out-container.expanded {
+      left: calc(100% - #{$slide-out-container-width});
+      @include nb-rtl(right, calc(100% - #{$slide-out-container-width}));
+    }
   }
 }

@@ -1,4 +1,6 @@
 @import '../../../@theme/styles/themes';
+@import '~bootstrap/scss/mixins/breakpoints';
+@import '~@nebular/theme/styles/global/bootstrap/breakpoints';
 
 @include nb-install-component() {
 
@@ -6,5 +8,11 @@
     display: flex;
     height: 100%;
     padding: 0;
+  }
+
+  @include media-breakpoint-down(sm) {
+    nb-card-body {
+      flex-direction: column;
+    }
   }
 }

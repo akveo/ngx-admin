@@ -1,8 +1,9 @@
 <nb-card-header>
-  <div class="dropdown"
-       ngbDropdown>
+  <div class="dropdown ghost-dropdown" ngbDropdown>
     <button type="button" ngbDropdownToggle class="btn"
-            [ngClass]="{ 'btn-success': currentTheme === 'default', 'btn-primary': currentTheme !== 'default'}">
+            [ngClass]="{
+              'btn-success': currentTheme === 'default',
+              'btn-primary': currentTheme !== 'default'}">
       {{ selectedCurrency }}
     </button>
     <ul class="dropdown-menu" ngbDropdownMenu>

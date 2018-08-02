@@ -1,4 +1,6 @@
 @import '../../../@theme/styles/themes';
+@import '~bootstrap/scss/mixins/breakpoints';
+@import '~@nebular/theme/styles/global/bootstrap/breakpoints';
 
 @include nb-install-component() {
   position: relative;
@@ -40,5 +42,14 @@
     display: flex;
     justify-content: space-between;
     margin-bottom: 2.125rem;
+  }
+
+  @include media-breakpoint-down(is) {
+    ngx-legend-chart {
+      /deep/ .legends {
+        padding-left: 0;
+        font-size: nb-theme(font-size-sm);
+      }
+    }
   }
 }

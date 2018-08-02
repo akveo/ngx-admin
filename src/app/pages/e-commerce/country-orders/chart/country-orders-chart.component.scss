@@ -1,4 +1,6 @@
 @import '../../../../@theme/styles/themes';
+@import '~bootstrap/scss/mixins/breakpoints';
+@import '~@nebular/theme/styles/global/bootstrap/breakpoints';
 
 @include nb-install-component() {
   display: flex;
@@ -22,5 +24,13 @@
 
   .echart {
     height: 85%;
+  }
+
+  @include media-breakpoint-down(sm) {
+    height: 50%;
+    border-top:
+      nb-theme(card-border-width)
+      nb-theme(card-header-border-type)
+      nb-theme(card-header-border-color);
   }
 }
