@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ViewChild } from '@angular/core';
 import { TreeComponent as AngularTreeComponent, TREE_ACTIONS, ITreeOptions } from 'angular-tree-component';
-import * as _ from 'lodash';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { InputComponent } from './input.component';
 @Component({
@@ -92,9 +91,7 @@ export class TreeComponent implements OnInit {
   deleteNode(node, tree): void {
     if (confirm('Are you sure to delete ' + node.data.name)) {
       const parentNode = node.realParent ? node.realParent : node.treeModel.virtualRoot;
-      _.remove(parentNode.data.children, function (child) {
-        return child === node.data;
-      });
+      parentNode.data.children = parentNode.data.children.filter((child) => child !== node.data);
       tree.treeModel.update();
       if (node.parent.data.children.length === 0) {
         node.parent.data.hasChildren = false;
