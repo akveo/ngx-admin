@@ -1,0 +1,98 @@
+.navbar-default {
+    background: #2980B9;
+    border: none;
+}
+.navbar-default .navbar-brand {
+    color: #fcfcfc;
+}
+.menu {
+    background: #343131;
+    color: #fcfcfc;
+}
+.menu ul.list li a {
+    color: #fcfcfc;
+}
+
+.menu ul.list li a.active {
+    color: #0099e5;
+}
+
+.menu ul.list li.title {
+    background: #2980B9;
+    padding-bottom: 5px;
+}
+
+.menu ul.list li:nth-child(2) {
+    margin-top: 0;
+}
+
+.menu ul.list li.chapter a, .menu ul.list li.chapter .simple {
+    color: #555;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.menu ul.list li.chapter ul.links a {
+    color: #b3b3b3;
+    text-transform: none;
+    padding-left: 35px;
+}
+.menu ul.list li.chapter ul.links a:hover {
+    background: #4E4A4A;
+}
+
+.menu ul.list li.chapter ul.links {
+    padding-left: 0;
+}
+
+.menu ul.list li.divider {
+    background: rgba(255, 255, 255, 0.07);
+}
+
+#book-search-input input, #book-search-input input:focus, #book-search-input input:hover {
+    color: #949494;
+}
+
+.copyright {
+    color: #b3b3b3;
+}
+
+.content {
+    background: #fcfcfc;
+}
+
+.content a {
+    color: #2980B9;
+}
+.content a:hover {
+    color: #3091d1;
+}
+.content a:visited {
+    color: #9B59B6;
+}
+.copyright {
+    background: #272525;
+}
+.menu ul.list li:nth-last-child(2) {
+    background: none;
+}
+code {
+    white-space: nowrap;
+    max-width: 100%;
+    background: #fff;
+    padding: 2px 5px;
+    color: #E74C3C;
+    overflow-x: auto;
+    border-radius: 0;
+}
+pre {
+    white-space: pre;
+    margin: 0;
+    padding: 12px 12px;
+    font-size: 12px;
+    line-height: 1.5;
+    display: block;
+    overflow: auto;
+    color: #404040;
+    background: rgba(238,238,238,.35);
+}

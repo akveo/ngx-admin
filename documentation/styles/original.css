@@ -1,0 +1,47 @@
+.navbar-default .navbar-brand, .menu ul.list li.title {
+    font-weight: bold;
+    color: #3c3c3c;
+    padding-bottom: 5px;
+}
+
+.menu ul.list li a[data-type="chapter-link"], .menu ul.list li.chapter .simple {
+    font-weight: bold;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    font-size: 14px;
+}
+
+.menu ul.list li a[href="./routes.html"] {
+    border-bottom: none;
+}
+
+.menu ul.list > li:nth-child(2) {
+    display: none;
+}
+
+.menu ul.list li.chapter ul.links {
+    background: #fff;
+    padding-left: 0;
+}
+
+.menu ul.list li.chapter ul.links li {
+    border-bottom: 1px solid #ddd;
+    padding-left: 20px;
+}
+
+.menu ul.list li.chapter ul.links li:last-child {
+    border-bottom: none;
+}
+
+.menu ul.list li a.active {
+    color: inherit;
+    font-weight: bold;
+}
+
+#book-search-input {
+    margin-bottom: 0;
+    border-bottom: none;
+}
+.menu ul.list li.divider {
+    margin: 0;
+}

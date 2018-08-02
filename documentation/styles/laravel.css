@@ -1,0 +1,69 @@
+.navbar-default .navbar-brand {
+    color: #f4645f;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.menu ul.list li a[data-type="chapter-link"], .menu ul.list li.chapter .simple {
+    color: #525252;
+    border-bottom: 1px dashed rgba(0,0,0,.1);
+}
+
+.content h1, .content h2, .content h3, .content h4, .content h5 {
+    color: #292e31;
+    font-weight: normal;
+}
+
+.content {
+    color: #4c555a;
+}
+
+a {
+    color: #f4645f;
+    text-decoration: underline;
+}
+a:hover {
+    color: #f1362f;
+}
+
+.menu ul.list li:nth-child(2) {
+    margin-top: 0;
+}
+
+.menu ul.list li.title a {
+    color: #f4645f;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.menu ul.list li a {
+    color: #f4645f;
+    text-decoration: none;
+}
+.menu ul.list li a.active {
+    color: #f4645f;
+    font-weight: bold;
+}
+
+code {
+    box-sizing: border-box;
+    display: inline-block;
+    padding: 0 5px;
+    background: #f0f2f1;
+    border-radius: 3px;
+    color: #b93d6a;
+    font-size: 13px;
+    line-height: 20px;
+    box-shadow: 0 1px 1px rgba(0,0,0,.125);
+}
+
+pre {
+    margin: 0;
+    padding: 12px 12px;
+    background: rgba(238,238,238,.35);
+    border-radius: 3px;
+    font-size: 13px;
+    line-height: 1.5em;
+    font-weight: 500;
+    box-shadow: 0 1px 1px rgba(0,0,0,.125);
+}

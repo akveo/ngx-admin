@@ -31,7 +31,8 @@
     "docs": "compodoc -p src/tsconfig.app.json -d docs",
     "docs:serve": "compodoc -p src/tsconfig.app.json -d docs -s",
     "prepush": "npm run lint:ci",
-    "release:changelog": "npm run conventional-changelog -- -p angular -i CHANGELOG.md -s"
+    "release:changelog": "npm run conventional-changelog -- -p angular -i CHANGELOG.md -s",
+    "compodoc": "./node_modules/.bin/compodoc -p src/tsconfig.app.json"
   },
   "dependencies": {
     "@agm/core": "1.0.0-beta.2",
@@ -86,10 +87,11 @@
     "zone.js": "^0.8.26"
   },
   "devDependencies": {
+    "@angular-devkit/build-angular": "~0.6.0",
     "@angular/cli": "6.0.0",
     "@angular/compiler-cli": "6.0.0",
     "@angular/language-service": "6.0.0",
-    "@compodoc/compodoc": "1.0.1",
+    "@compodoc/compodoc": "^1.0.1",
     "@types/d3-color": "1.0.5",
     "@types/googlemaps": "3.30.4",
     "@types/jasmine": "2.5.54",
@@ -114,7 +116,6 @@
     "ts-node": "3.2.2",
     "tslint": "5.7.0",
     "tslint-language-service": "0.9.6",
-    "typescript": "2.7.2",
-    "@angular-devkit/build-angular": "~0.6.0"
+    "typescript": "2.7.2"
   }
 }

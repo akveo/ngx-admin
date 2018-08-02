@@ -1,0 +1,210 @@
+.navbar-default {
+    background: #FFDE00;
+    border: none;
+}
+.navbar-default .navbar-brand {
+    color: #333;
+    font-weight: bold;
+}
+.menu {
+    background: #333;
+    color: #fcfcfc;
+}
+.menu ul.list li a {
+    color: #333;
+}
+
+.menu ul.list li.title {
+    background: #FFDE00;
+    color: #333;
+    padding-bottom: 5px;
+}
+
+.menu ul.list li:nth-child(2) {
+    margin-top: 0;
+}
+
+.menu ul.list li.chapter a, .menu ul.list li.chapter .simple {
+    color: white;
+    text-decoration: none;
+}
+
+.menu ul.list li.chapter ul.links a {
+    color: #949494;
+    text-transform: none;
+    padding-left: 35px;
+}
+.menu ul.list li.chapter ul.links a:hover, .menu ul.list li.chapter ul.links a.active {
+    color: #FFDE00;
+}
+
+.menu ul.list li.chapter ul.links {
+    padding-left: 0;
+}
+
+.menu ul.list li.divider {
+    background: rgba(255, 255, 255, 0.07);
+}
+
+#book-search-input input, #book-search-input input:focus, #book-search-input input:hover {
+    color: #949494;
+}
+
+.copyright {
+    color: #b3b3b3;
+}
+
+.content {
+    background: #fcfcfc;
+}
+
+.content a {
+    color: #007DCC;
+}
+.content a:visited {
+    color: #0165a5;
+}
+.copyright {
+    background: #272525;
+}
+.menu ul.list li:nth-last-child(2) {
+    background: none;
+}
+.list-group-item:first-child, .list-group-item:last-child {
+    border-radius: 0;
+}
+
+.menu ul.list li.title a {
+    text-decoration: none;
+    font-weight: bold;
+}
+.menu ul.list li.title a:hover {
+    background: rgba(255,255,255,0.1);
+}
+
+.breadcrumb>li+li:before {
+     content: "»\00a0"
+}
+
+.breadcrumb {
+    padding-bottom: 15px;
+    border-bottom: 1px solid #e1e4e5;
+}
+code {
+    white-space: nowrap;
+    max-width: 100%;
+    background: #F5F5F5;
+    padding: 2px 5px;
+    color: #666666;
+    overflow-x: auto;
+    border-radius: 0;
+}
+pre {
+    white-space: pre;
+    margin: 0;
+    padding: 12px 12px;
+    font-size: 12px;
+    line-height: 1.5;
+    display: block;
+    overflow: auto;
+    color: #404040;
+    background: #f3f3f3;
+}
+pre code.hljs {
+    border: none;
+    background: inherit;
+}
+
+/*
+Atom One Light by Daniel Gamage
+Original One Light Syntax theme from https://github.com/atom/one-light-syntax
+base:    #fafafa
+mono-1:  #383a42
+mono-2:  #686b77
+mono-3:  #a0a1a7
+hue-1:   #0184bb
+hue-2:   #4078f2
+hue-3:   #a626a4
+hue-4:   #50a14f
+hue-5:   #e45649
+hue-5-2: #c91243
+hue-6:   #986801
+hue-6-2: #c18401
+*/
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  color: #383a42;
+  background: #fafafa;
+}
+
+.hljs-comment,
+.hljs-quote {
+  color: #a0a1a7;
+  font-style: italic;
+}
+
+.hljs-doctag,
+.hljs-keyword,
+.hljs-formula {
+  color: #a626a4;
+}
+
+.hljs-section,
+.hljs-name,
+.hljs-selector-tag,
+.hljs-deletion,
+.hljs-subst {
+  color: #e45649;
+}
+
+.hljs-literal {
+  color: #0184bb;
+}
+
+.hljs-string,
+.hljs-regexp,
+.hljs-addition,
+.hljs-attribute,
+.hljs-meta-string {
+  color: #50a14f;
+}
+
+.hljs-built_in,
+.hljs-class .hljs-title {
+  color: #c18401;
+}
+
+.hljs-attr,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-type,
+.hljs-selector-class,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-number {
+  color: #986801;
+}
+
+.hljs-symbol,
+.hljs-bullet,
+.hljs-link,
+.hljs-meta,
+.hljs-selector-id,
+.hljs-title {
+  color: #4078f2;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+
+.hljs-link {
+  text-decoration: underline;
+}

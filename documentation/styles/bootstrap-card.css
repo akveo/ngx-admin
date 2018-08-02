@@ -1,0 +1,219 @@
+.card {
+  position: relative;
+  display: block;
+  margin-bottom: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.card-block {
+  padding: 15px;
+}
+.card-block:before, .card-block:after {
+  content: " ";
+  display: table;
+}
+.card-block:after {
+  clear: both;
+}
+
+.card-title {
+  margin: 5px;
+  margin-bottom: 2px;
+  text-align: center;
+}
+
+.card-subtitle {
+  margin-top: -10px;
+  margin-bottom: 0;
+}
+
+.card-text:last-child {
+  margin-bottom: 0;
+  margin-top: 10px;
+}
+
+.card-link:hover {
+  text-decoration: none;
+}
+.card-link + .card-link {
+  margin-left: 15px;
+}
+
+.card > .list-group:first-child .list-group-item:first-child {
+  border-top-right-radius: 4px;
+  border-top-left-radius: 4px;
+}
+.card > .list-group:last-child .list-group-item:last-child {
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+
+.card-header {
+  padding: 10px 15px;
+  background-color: #f5f5f5;
+  border-bottom: 1px solid #ddd;
+}
+.card-header:before, .card-header:after {
+  content: " ";
+  display: table;
+}
+.card-header:after {
+  clear: both;
+}
+.card-header:first-child {
+  border-radius: 4px 4px 0 0;
+}
+
+.card-footer {
+  padding: 10px 15px;
+  background-color: #f5f5f5;
+  border-top: 1px solid #ddd;
+}
+.card-footer:before, .card-footer:after {
+  content: " ";
+  display: table;
+}
+.card-footer:after {
+  clear: both;
+}
+.card-footer:last-child {
+  border-radius: 0 0 4px 4px;
+}
+
+.card-header-tabs {
+  margin-right: -5px;
+  margin-bottom: -10px;
+  margin-left: -5px;
+  border-bottom: 0;
+}
+
+.card-header-pills {
+  margin-right: -5px;
+  margin-left: -5px;
+}
+
+.card-primary {
+  background-color: #337ab7;
+  border-color: #337ab7;
+}
+.card-primary .card-header,
+.card-primary .card-footer {
+  background-color: transparent;
+}
+
+.card-success {
+  background-color: #5cb85c;
+  border-color: #5cb85c;
+}
+.card-success .card-header,
+.card-success .card-footer {
+  background-color: transparent;
+}
+
+.card-info {
+  background-color: #5bc0de;
+  border-color: #5bc0de;
+}
+.card-info .card-header,
+.card-info .card-footer {
+  background-color: transparent;
+}
+
+.card-warning {
+  background-color: #f0ad4e;
+  border-color: #f0ad4e;
+}
+.card-warning .card-header,
+.card-warning .card-footer {
+  background-color: transparent;
+}
+
+.card-danger {
+  background-color: #d9534f;
+  border-color: #d9534f;
+}
+.card-danger .card-header,
+.card-danger .card-footer {
+  background-color: transparent;
+}
+
+.card-outline-primary {
+  background-color: transparent;
+  border-color: #337ab7;
+}
+
+.card-outline-secondary {
+  background-color: transparent;
+  border-color: #ccc;
+}
+
+.card-outline-info {
+  background-color: transparent;
+  border-color: #5bc0de;
+}
+
+.card-outline-success {
+  background-color: transparent;
+  border-color: #5cb85c;
+}
+
+.card-outline-warning {
+  background-color: transparent;
+  border-color: #f0ad4e;
+}
+
+.card-outline-danger {
+  background-color: transparent;
+  border-color: #d9534f;
+}
+
+.card-inverse .card-header,
+.card-inverse .card-footer {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+.card-inverse .card-header,
+.card-inverse .card-footer,
+.card-inverse .card-title,
+.card-inverse .card-blockquote {
+  color: #fff;
+}
+.card-inverse .card-link,
+.card-inverse .card-text,
+.card-inverse .card-subtitle,
+.card-inverse .card-blockquote .blockquote-footer {
+  color: rgba(255, 255, 255, 0.65);
+}
+.card-inverse .card-link:hover, .card-inverse .card-link:focus {
+  color: #fff;
+}
+
+.card-blockquote {
+  padding: 0;
+  margin-bottom: 0;
+  border-left: 0;
+}
+
+.card-img {
+  border-radius: .25em;
+}
+
+.card-img-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 15px;
+}
+
+.card-img-top {
+  border-top-right-radius: 4px;
+  border-top-left-radius: 4px;
+}
+
+.card-img-bottom {
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+}

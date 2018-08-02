@@ -1,0 +1,96 @@
+.navbar-default .navbar-brand {
+    background: white;
+    color: #8d9ba8;
+}
+
+.menu .list {
+    background: #0c5593;
+}
+
+.menu .chapter {
+    padding: 0 20px;
+}
+
+.menu ul.list li a[data-type="chapter-link"], .menu ul.list li.chapter .simple {
+    color: white;
+    text-transform: uppercase;
+    border-bottom: 1px solid rgba(255,255,255,0.4);
+}
+
+.content h1, .content h2, .content h3, .content h4, .content h5 {
+    color: #292e31;
+    font-weight: normal;
+}
+
+.content {
+    color: #4c555a;
+}
+
+a {
+    color: #0094bf;
+    text-decoration: underline;
+}
+a:hover {
+    color: #f1362f;
+}
+
+.menu ul.list li.title {
+    background: white;
+    padding-bottom: 5px;
+}
+
+.menu ul.list li:nth-child(2) {
+    margin-top: 0;
+}
+
+.menu ul.list li:nth-last-child(2) {
+    background: none;
+}
+
+.menu ul.list li.title a {
+    padding: 10px 15px;
+}
+
+.menu ul.list li.title a, .navbar a {
+    color: #8d9ba8;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.menu ul.list li a {
+    color: white;
+    padding: 10px;
+    font-weight: 300;
+    text-decoration: none;
+}
+.menu ul.list li a.active {
+    color: white;
+    font-weight: bold;
+}
+
+.copyright {
+    color: white;
+    background: #000;
+}
+
+code {
+    box-sizing: border-box;
+    display: inline-block;
+    padding: 0 5px;
+    background: rgba(0,148,191,0.1);
+    border-radius: 3px;
+    color: #0094bf;
+    font-size: 13px;
+    line-height: 20px;
+}
+
+pre {
+    margin: 0;
+    padding: 12px 12px;
+    background: rgba(238,238,238,.35);
+    border-radius: 3px;
+    font-size: 13px;
+    line-height: 1.5em;
+    font-weight: 500;
+}
