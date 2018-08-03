@@ -31,7 +31,7 @@ export class ImplicitAutenticationService {
     public logout() {
         this.logOut = GENERAL.ENTORNO.TOKEN.SIGN_OUT_URL;
         this.logOut += '?id_token_hint=' + window.localStorage.getItem('id_token');
-        this.logOut += '&post_logout_redirect_uri=' + GENERAL.ENTORNO.TOKEN.SIGN_OUT_REDIRECT_URL;
+        this.logOut += '&post_logout_redirect_uri=' + GENERAL.ENTORNO.TOKEN.SIGN_OUT_REDIRECT_URL; // // + window.location.href; para redirect con regex
         this.logOut += '&state=' + window.localStorage.getItem('state');
         window.location.replace(this.logOut);
         return this.logOut;
@@ -79,7 +79,7 @@ export class ImplicitAutenticationService {
         }
         let url = this.params.AUTORIZATION_URL + '?' +
             'client_id=' + encodeURIComponent(this.params.CLIENTE_ID) + '&' +
-            'redirect_uri=' + encodeURIComponent(this.params.REDIRECT_URL) + '&' +
+            'redirect_uri=' + encodeURIComponent(this.params.REDIRECT_URL) + '&' + // + window.location.href + '&' para redirect con regex
             'response_type=' + encodeURIComponent(this.params.RESPONSE_TYPE) + '&' +
             'scope=' + encodeURIComponent(this.params.SCOPE) + '&' +
             'state_url=' + encodeURIComponent(window.location.hash);
@@ -87,6 +87,7 @@ export class ImplicitAutenticationService {
             url += '&nonce=' + encodeURIComponent(this.params.nonce);
         }
         url += '&state=' + encodeURIComponent(this.params.state);
+        // alert(url);
         return url;
     }
 
