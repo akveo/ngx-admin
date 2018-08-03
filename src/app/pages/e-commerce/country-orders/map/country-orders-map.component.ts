@@ -56,6 +56,11 @@ export class CountryOrdersMapComponent implements OnDestroy {
 
   mapReady(map: L.Map) {
     map.addControl(L.control.zoom({position: 'bottomright'}));
+
+    // fix the map fully displaying, existing leaflet bag
+    setTimeout(() => {
+      map.invalidateSize();
+    }, 0);
   }
 
   private createGeoJsonLayer(cords) {

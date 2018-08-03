@@ -35,7 +35,11 @@ export class ECommerceChartsPanelComponent implements OnDestroy {
     this.getProfitChartData(this.period);
   }
 
-  setPeriod(value: string): void {
+  setPeriodAndGetChartData(value: string): void {
+    if (this.period !== value) {
+      this.period = value;
+    }
+
     this.getOrdersChartData(value);
     this.getProfitChartData(value);
   }
