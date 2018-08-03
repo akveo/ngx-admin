@@ -183,7 +183,7 @@ export class ProfitChartComponent implements AfterViewInit, OnDestroy, OnChanges
       // TODO: investigate more deeply
       setTimeout(() => {
         this.echartsIntance.resize();
-      });
+      }, 0);
     }
   }
 

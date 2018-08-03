@@ -7,7 +7,8 @@
     <button type="button" ngbDropdownToggle class="btn"
             [ngClass]="{
               'btn-outline-success': currentTheme === 'default',
-              'btn-primary': currentTheme !== 'default'}">
+              'btn-primary': currentTheme !== 'default',
+              'btn-sm': breakpoint.width <= breakpoints.is}">
       {{ type }}
     </button>
     <ul class="dropdown-menu" ngbDropdownMenu>

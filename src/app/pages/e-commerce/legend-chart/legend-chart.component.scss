@@ -1,4 +1,6 @@
 @import '../../../@theme/styles/themes';
+@import '~bootstrap/scss/mixins/breakpoints';
+@import '~@nebular/theme/styles/global/bootstrap/breakpoints';
 
 @include nb-install-component() {
   .legends {
@@ -27,5 +29,11 @@
   .legend-title {
     padding: 0 0.75rem;
     white-space: nowrap;
+  }
+
+  @include media-breakpoint-down(md) {
+    .legend {
+      margin-left: 1.5rem;
+    }
   }
 }

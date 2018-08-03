@@ -1,4 +1,6 @@
 @import '../../../../@theme/styles/themes';
+@import '~bootstrap/scss/mixins/breakpoints';
+@import '~@nebular/theme/styles/global/bootstrap/breakpoints';
 
 @include nb-install-component() {
   .summary-container {
@@ -20,5 +22,30 @@
   .value {
     font-size: 2rem;
     color: nb-theme(color-fg-heading);
+  }
+
+  @include media-breakpoint-down(sm) {
+    .value, .title {
+      font-weight: nb-theme(font-weight-bold);
+    }
+
+    .title {
+      font-size: nb-theme(font-size-sm);
+    }
+
+    .value {
+      font-size: nb-theme(font-size-xlg);
+    }
+  }
+
+  @include media-breakpoint-down(is) {
+    .summary-container {
+      padding-left: nb-theme(padding);
+      padding-right: nb-theme(padding);
+    }
+
+    .value {
+      margin-top: 0.5rem;
+    }
   }
 }
