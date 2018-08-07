@@ -9,7 +9,8 @@ export class IconsComponent {
 
   icons = {
 
-    nebular: ['nb-alert', 'nb-angle-double-left', 'nb-arrow-down', 'nb-arrow-dropdown', 'nb-arrow-dropleft',
+    nebular: ['nb-alert', 'nb-angle-double-left', 'nb-angle-double-right',
+      'nb-arrow-down', 'nb-arrow-dropdown', 'nb-arrow-dropleft',
       'nb-arrow-dropright', 'nb-arrow-dropup', 'nb-arrow-left', 'nb-arrow-retweet', 'nb-arrow-right',
       'nb-arrow-thin-down', 'nb-arrow-thin-left', 'nb-arrow-thin-right', 'nb-arrow-thin-up',
       'nb-arrow-up', 'nb-audio', 'nb-bar-chart', 'nb-checkmark', 'nb-chevron-down',
@@ -25,7 +26,8 @@ export class IconsComponent {
       'nb-rainy', 'nb-roller-shades', 'nb-search', 'nb-shuffle', 'nb-skip-backward',
       'nb-skip-backward-outline', 'nb-skip-forward', 'nb-skip-forward-outline', 'nb-snowy-circled',
       'nb-square', 'nb-square-outline', 'nb-star', 'nb-sunny', 'nb-sunny-circled', 'nb-tables', 'nb-title',
-      'nb-trash', 'nb-volume-high', 'nb-volume-mute', 'nb-drop', 'nb-drops', 'nb-info'],
+      'nb-trash', 'nb-volume-high', 'nb-volume-mute', 'nb-drop', 'nb-drops', 'nb-info', 'nb-expand', 'nb-collapse',
+      'nb-e-commerce'],
 
     ionicons: [
       'ion-ionic', 'ion-arrow-right-b', 'ion-arrow-down-b', 'ion-arrow-left-b', 'ion-arrow-up-c', 'ion-arrow-right-c',

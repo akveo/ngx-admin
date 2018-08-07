@@ -84,7 +84,7 @@ export class EarningService {
     }
   }
 
-  generateRandomEarningLiveUpdateChartData(currency) {
+  generateRandomEarningData(currency) {
     const data = this.liveUpdateChartData[currency.toLowerCase()];
     const newValue = this.generateRandomLiveChartData();
 

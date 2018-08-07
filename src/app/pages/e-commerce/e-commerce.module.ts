@@ -13,7 +13,7 @@ import { ChartPanelSummaryComponent } from './charts-panel/chart-panel-summary/c
 import { ChartModule } from 'angular2-chartjs';
 import { StatsCardBackComponent } from './profit-card/back-side/stats-card-back.component';
 import { StatsAreaChartComponent } from './profit-card/back-side/stats-area-chart.component';
-import { StatsBarChartComponent } from './profit-card/front-side/stats-bar-chart.component';
+import { StatsBarAnimationChartComponent } from './profit-card/front-side/stats-bar-animation-chart.component';
 import { StatsCardFrontComponent } from './profit-card/front-side/stats-card-front.component';
 import { TrafficRevealCardComponent } from './traffic-reveal-card/traffic-reveal-card.component';
 import { TrafficBarComponent } from './traffic-reveal-card/front-side/traffic-bar/traffic-bar.component';
@@ -58,7 +58,7 @@ import { EarningLiveUpdateChartComponent } from './earning-card/front-side/earni
     ECommerceComponent,
     StatsCardFrontComponent,
     StatsAreaChartComponent,
-    StatsBarChartComponent,
+    StatsBarAnimationChartComponent,
     ProfitCardComponent,
     ECommerceChartsPanelComponent,
     ChartPanelHeaderComponent,

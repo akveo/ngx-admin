@@ -84,10 +84,21 @@ export class EarningLiveUpdateChartComponent implements AfterViewInit, OnDestroy
           show: false,
         },
       },
-
       tooltip: {
-        show: false,
-        extraCssText: '',
+        axisPointer: {
+          type: 'shadow',
+        },
+        textStyle: {
+          color: earningLineTheme.tooltipTextColor,
+          fontWeight: earningLineTheme.tooltipFontWeight,
+          fontSize: earningLineTheme.tooltipFontSize,
+        },
+        position: 'top',
+        backgroundColor: earningLineTheme.tooltipBg,
+        borderColor: earningLineTheme.tooltipBorderColor,
+        borderWidth: earningLineTheme.tooltipBorderWidth,
+        formatter: params => `$ ${Math.round(parseInt(params.value[1], 10))}`,
+        extraCssText: earningLineTheme.tooltipExtraCss,
       },
       series: [
         {

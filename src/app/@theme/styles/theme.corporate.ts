@@ -68,11 +68,23 @@ export const CORPORATE_THEME = {
       areaBorderColor: '#ebeef2',
     },
 
-    profitBarEchart: {
-      gradientFrom: '#ff8ea0',
-      gradientTo: '#ffa36b',
-      shadowBlur: '0',
-      shadow: '#ff8ea0',
+    profitBarAnimationEchart: {
+      textColor: '#b2bac2',
+
+      firstAnimationBarColor: '#719efc',
+      secondAnimationBarColor: '#5dcfe3',
+
+      splitLineStyleOpacity: '0.06',
+      splitLineStyleWidth: '1',
+      splitLineStyleColor: '#000000',
+
+      tooltipTextColor: '#2a2a2a',
+      tooltipFontWeight: '400',
+      tooltipFontSize: '16',
+      tooltipBg: '#eef2f5',
+      tooltipBorderColor: '#eef2f5',
+      tooltipBorderWidth: '3',
+      tooltipExtraCss: 'border-radius: 10px; padding: 4px 16px;',
     },
 
     trafficBarEchart: {
@@ -279,6 +291,14 @@ export const CORPORATE_THEME = {
     earningLine: {
       gradFrom: '#e3ecfe',
       gradTo: '#e3ecfe',
+
+      tooltipTextColor: '#2a2a2a',
+      tooltipFontWeight: '400',
+      tooltipFontSize: '16',
+      tooltipBg: '#eef2f5',
+      tooltipBorderColor: '#eef2f5',
+      tooltipBorderWidth: '3',
+      tooltipExtraCss: 'border-radius: 10px; padding: 4px 16px;',
     },
   },
 };

@@ -22,10 +22,6 @@ $shadow-green: #00977e;
     font-size: 3rem;
     font-weight: nb-theme(font-weight-light);
     margin-top: 0.5rem;
-
-    @include nb-for-theme(default) {
-      color: nb-theme(color-success);
-    }
   }
 
   .description {

@@ -12,9 +12,17 @@
     height: 100%;
     background-color: nb-theme(layout-bg);
 
+    @include nb-for-theme(default) {
+      background-color: nb-theme(color-white);
+    }
+
     @include nb-for-theme(corporate) {
       background-color: nb-theme(color-white);
     }
+  }
+
+  /deep/ .leaflet-bar {
+    box-shadow: none;
   }
 
   /deep/ .leaflet-control-zoom {
@@ -44,6 +52,14 @@
       margin-top: 1px;
       border-bottom-left-radius: nb-theme(btn-border-radius);
       border-bottom-right-radius: nb-theme(btn-border-radius);
+    }
+  }
+
+  /deep/ .leaflet-control-attribution {
+    background: transparent;
+
+    a {
+      color: nb-theme(color-fg);
     }
   }
 

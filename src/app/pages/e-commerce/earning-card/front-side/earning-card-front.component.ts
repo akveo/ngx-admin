@@ -1,7 +1,9 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { NbThemeService } from '@nebular/theme';
-import { takeWhile } from 'rxjs/operators';
+import { interval } from 'rxjs';
+import { switchMap, takeWhile } from 'rxjs/operators';
 import { EarningService, LiveUpdateChart } from '../../../../@core/data/earning.service';
+import { Subscription } from 'rxjs/Subscription';
 
 @Component({
   selector: 'ngx-earning-card-front',
@@ -13,11 +15,11 @@ export class EarningCardFrontComponent implements OnDestroy, OnInit {
 
   @Input() selectedCurrency: string = 'Bitcoin';
 
+  intervalSubscription: Subscription;
   currencies: string[] = ['Bitcoin', 'Tether', 'Ethereum'];
   currentTheme: string;
   earningLiveUpdateCardData: LiveUpdateChart;
   liveUpdateChartData: {value: [string, number]}[];
-  timeTicket: any;
 
   constructor(private themeService: NbThemeService,
               private earningService: EarningService) {
@@ -52,20 +54,21 @@ export class EarningCardFrontComponent implements OnDestroy, OnInit {
   }
 
   startReceivingLiveData(currency) {
-    clearInterval(this.timeTicket);
+    if (this.intervalSubscription) {
+      this.intervalSubscription.unsubscribe();
+    }
 
-    this.timeTicket = setInterval( () => {
-      this.earningService.generateRandomEarningLiveUpdateChartData(currency)
-        .pipe(takeWhile(() => this.alive))
-        .subscribe((liveUpdateChartData) => {
-          this.liveUpdateChartData = [...liveUpdateChartData];
-        });
-    }, 100);
+    this.intervalSubscription = interval(200)
+      .pipe(
+        takeWhile(() => this.alive),
+        switchMap(() => this.earningService.generateRandomEarningData(currency)),
+      )
+      .subscribe((liveUpdateChartData) => {
+        this.liveUpdateChartData = [...liveUpdateChartData];
+      });
   }
 
   ngOnDestroy() {
     this.alive = false;
-
-    clearInterval(this.timeTicket);
   }
 }

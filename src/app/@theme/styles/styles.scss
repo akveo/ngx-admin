@@ -28,11 +28,4 @@
     border-radius: 50%; // TODO: quickfix for https://github.com/akveo/nebular/issues/275
   }
   @include bootstrap-rtl();
-
-  @include media-breakpoint-down(is) {
-    .row {
-      margin-left: -10px;
-      margin-right: -10px;
-    }
-  }
 };
