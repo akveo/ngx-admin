@@ -69,11 +69,23 @@ export const COSMIC_THEME = {
       areaBorderColor: '#654ddb',
     },
 
-    profitBarEchart: {
-      gradientFrom: '#00d977',
-      gradientTo: '#00d9bf',
-      shadow: '#00bb85',
-      shadowBlur: '5',
+    profitBarAnimationEchart: {
+      textColor: '#ffffff',
+
+      firstAnimationBarColor: '#0088ff',
+      secondAnimationBarColor: '#7659ff',
+
+      splitLineStyleOpacity: '0.06',
+      splitLineStyleWidth: '1',
+      splitLineStyleColor: '#000000',
+
+      tooltipTextColor: '#ffffff',
+      tooltipFontWeight: 'normal',
+      tooltipFontSize: '16',
+      tooltipBg: 'rgba(0, 255, 170, 0.35)',
+      tooltipBorderColor: '#00d977',
+      tooltipBorderWidth: '3',
+      tooltipExtraCss: 'box-shadow: 0px 2px 46px 0 rgba(0, 255, 170, 0.35); border-radius: 10px; padding: 4px 16px;',
     },
 
     trafficBarEchart: {
@@ -279,6 +291,14 @@ export const COSMIC_THEME = {
     earningLine: {
       gradFrom: 'rgba(118, 89, 255, 0.4)',
       gradTo: 'rgba(164, 84, 255, 0.5)',
+
+      tooltipTextColor: '#ffffff',
+      tooltipFontWeight: 'normal',
+      tooltipFontSize: '16',
+      tooltipBg: 'rgba(0, 255, 170, 0.35)',
+      tooltipBorderColor: '#00d977',
+      tooltipBorderWidth: '3',
+      tooltipExtraCss: 'box-shadow: 0px 2px 46px 0 rgba(0, 255, 170, 0.35); border-radius: 10px; padding: 4px 16px;',
     },
   },
 };

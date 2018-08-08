@@ -1,4 +1,6 @@
 @import '../../../../@theme/styles/themes';
+@import '~bootstrap/scss/mixins/breakpoints';
+@import '~@nebular/theme/styles/global/bootstrap/breakpoints';
 
 @include nb-install-component() {
   nb-card-header {
@@ -33,5 +35,17 @@
     position: absolute;
     width: calc(50% - #{nb-theme(card-padding)});
     height: calc(100% - 2 * #{nb-theme(card-padding)});
+  }
+
+  @include media-breakpoint-between(xl, xl) {
+    ngx-earning-pie-chart {
+      flex: 2;
+    }
+  }
+
+  @include media-breakpoint-between(sm, sm) {
+    ngx-earning-pie-chart {
+      flex: 2;
+    }
   }
 }

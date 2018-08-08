@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { of as observableOf, Observable } from 'rxjs';
 
 export class LiveUpdateChart {
-  liveChart: {value: [string, number]}[];
+  liveChart: { value: [string, number] }[];
   delta: {
     up: boolean;
     value: number;
@@ -74,17 +74,25 @@ export class EarningService {
 
   generateRandomLiveChartData() {
     this.currentDate = new Date(+this.currentDate + this.ONE_DAY);
-    this.currentValue = this.currentValue + Math.random() * 21 - 10;
+    this.currentValue = this.currentValue + Math.random() * 20 - 11;
+
+    if (this.currentValue < 0) {
+      this.currentValue = Math.random() * 100;
+    }
 
     return {
       value: [
-        [this.currentDate.getFullYear(), this.currentDate.getMonth(), this.currentDate.getDate()].join('/'),
+        [
+          this.currentDate.getFullYear(),
+          this.currentDate.getMonth(),
+          this.currentDate.getDate(),
+        ].join('/'),
         Math.round(this.currentValue),
       ],
     }
   }
 
-  generateRandomEarningLiveUpdateChartData(currency) {
+  generateRandomEarningData(currency) {
     const data = this.liveUpdateChartData[currency.toLowerCase()];
     const newValue = this.generateRandomLiveChartData();
 
@@ -97,7 +105,7 @@ export class EarningService {
   getEarningLiveUpdateCardData(currency: string) {
     const data = this.liveUpdateChartData[currency.toLowerCase()];
 
-    data.liveChart = this.getDefaultLiveChartData(100);
+    data.liveChart = this.getDefaultLiveChartData(150);
 
     return observableOf(data);
   }

@@ -15,7 +15,7 @@ import { NbThemeService } from '@nebular/theme';
 export class EarningLiveUpdateChartComponent implements AfterViewInit, OnDestroy, OnChanges {
   private alive = true;
 
-  @Input() liveUpdateChartData: number[];
+  @Input() liveUpdateChartData: { value: [string, number] }[];
 
   option: any;
   echartsInstance;
@@ -84,10 +84,21 @@ export class EarningLiveUpdateChartComponent implements AfterViewInit, OnDestroy
           show: false,
         },
       },
-
       tooltip: {
-        show: false,
-        extraCssText: '',
+        axisPointer: {
+          type: 'shadow',
+        },
+        textStyle: {
+          color: earningLineTheme.tooltipTextColor,
+          fontWeight: earningLineTheme.tooltipFontWeight,
+          fontSize: earningLineTheme.tooltipFontSize,
+        },
+        position: 'top',
+        backgroundColor: earningLineTheme.tooltipBg,
+        borderColor: earningLineTheme.tooltipBorderColor,
+        borderWidth: earningLineTheme.tooltipBorderWidth,
+        formatter: params => `$ ${Math.round(parseInt(params.value[1], 10))}`,
+        extraCssText: earningLineTheme.tooltipExtraCss,
       },
       series: [
         {
@@ -122,10 +133,11 @@ export class EarningLiveUpdateChartComponent implements AfterViewInit, OnDestroy
           data: this.liveUpdateChartData,
         },
       ],
+      animation: true,
     };
   }
 
-  updateChartOptions(chartData: number[]) {
+  updateChartOptions(chartData: { value: [string, number] }[]) {
     this.echartsInstance.setOption({
       series: [{
         data: chartData,

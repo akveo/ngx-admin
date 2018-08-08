@@ -23,6 +23,8 @@
     display: flex;
     position: relative;
     flex: 1;
+    padding: 0;
+    overflow: hidden;
 
     .period {
       display: flex;
@@ -63,10 +65,9 @@
       }
     }
 
-    ngx-stats-bar-chart {
-      display: flex;
+    ngx-stats-bar-animation-chart {
       flex: 1;
-      height: 100%;
+      position: relative;
 
       .echart {
         height: 100%;

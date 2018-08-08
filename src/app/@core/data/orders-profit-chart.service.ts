@@ -17,12 +17,12 @@ export class OrdersProfitChartService {
       value: 3654,
     },
     {
-      title: 'Last Week',
+      title: 'Last Month',
       value: 946,
     },
     {
-      title: 'Last Month',
-      value: 946,
+      title: 'Last Week',
+      value: 654,
     },
     {
       title: 'Today',

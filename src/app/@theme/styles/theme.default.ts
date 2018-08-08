@@ -70,11 +70,23 @@ export const DEFAULT_THEME = {
       areaBorderColor: '#ebeef2',
     },
 
-    profitBarEchart: {
-      gradientFrom: '#00d977',
-      gradientTo: '#00d9bf',
-      shadow: '#00bb85',
-      shadowBlur: '0',
+    profitBarAnimationEchart: {
+      textColor: '#484848',
+
+      firstAnimationBarColor: '#3edd81',
+      secondAnimationBarColor: '#8d7fff',
+
+      splitLineStyleOpacity: '0.06',
+      splitLineStyleWidth: '1',
+      splitLineStyleColor: '#000000',
+
+      tooltipTextColor: '#2a2a2a',
+      tooltipFontWeight: 'bolder',
+      tooltipFontSize: '16',
+      tooltipBg: '#ffffff',
+      tooltipBorderColor: '#c0c8d1',
+      tooltipBorderWidth: '3',
+      tooltipExtraCss: 'border-radius: 10px; padding: 4px 16px;',
     },
 
     trafficBarEchart: {
@@ -94,8 +106,8 @@ export const DEFAULT_THEME = {
     },
 
     countryOrders: {
-      countryBorderColor: '#40dc7e',
-      countryFillColor: '#ffffff',
+      countryBorderColor: 'rgba(255, 255, 255, 1)',
+      countryFillColor: 'rgba(236, 242, 245, 1)',
       countryBorderWidth: '1',
       hoveredCountryBorderColor: '#40dc7e',
       hoveredCountryFillColor: '#c7f4d9',
@@ -149,8 +161,8 @@ export const DEFAULT_THEME = {
       lineWidth: '4',
 
       // first line
-      firstAreaGradFrom: 'rgba(78, 64, 164, 0.3)',
-      firstAreaGradTo: 'rgba(78, 64, 164, 0.3)',
+      firstAreaGradFrom: 'rgba(236, 242, 245, 0.8)',
+      firstAreaGradTo: 'rgba(236, 242, 245, 0.8)',
       firstShadowLineDarkBg: 'rgba(0, 0, 0, 0)',
 
       // second line
@@ -192,15 +204,15 @@ export const DEFAULT_THEME = {
       secondLineShadow: 'rgba(14, 16, 48, 0.4)',
 
       // third bar
-      thirdLineGradFrom: 'rgba(78, 64, 164, 0.3)',
-      thirdLineGradTo: 'rgba(78, 64, 164, 0.3)',
+      thirdLineGradFrom: 'rgba(236, 242, 245, 0.8)',
+      thirdLineGradTo: 'rgba(236, 242, 245, 0.8)',
       thirdLineShadow: 'rgba(14, 16, 48, 0.4)',
     },
 
     orderProfitLegend: {
       firstItem: 'linear-gradient(90deg, #3edd81 0%, #3bddad 100%)',
       secondItem: 'linear-gradient(90deg, #8d7fff 0%, #b17fff 100%)',
-      thirdItem: 'rgba(78, 64, 164, 0.3)',
+      thirdItem: 'rgba(236, 242, 245, 0.8)',
     },
 
     visitors: {
@@ -280,8 +292,16 @@ export const DEFAULT_THEME = {
     },
 
     earningLine: {
-      gradFrom: '#ebeef2',
-      gradTo: '#ebeef2',
+      gradFrom: 'rgba(188, 92, 255, 0.5)',
+      gradTo: 'rgba(188, 92, 255, 0.5)',
+
+      tooltipTextColor: '#2a2a2a',
+      tooltipFontWeight: 'bolder',
+      tooltipFontSize: '16',
+      tooltipBg: '#ffffff',
+      tooltipBorderColor: '#c0c8d1',
+      tooltipBorderWidth: '3',
+      tooltipExtraCss: 'border-radius: 10px; padding: 4px 16px;',
     },
   },
 };

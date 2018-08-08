@@ -7,19 +7,5 @@
   </div>
 </nb-card-header>
 <nb-card-body>
-  <div class="period start-period">
-    <span class="time-interval">Jun 1 - Jun 30</span>
-    <div class="value">
-      <span class="currency">$</span>
-      1,260
-    </div>
-  </div>
-  <ngx-stats-bar-chart></ngx-stats-bar-chart>
-  <div class="period end-period">
-    <span class="time-interval">Jul 1 - Jul 30</span>
-    <div class="value">
-      <span class="currency">$</span>
-      1,970
-    </div>
-  </div>
+  <ngx-stats-bar-animation-chart [linesData]="linesData"></ngx-stats-bar-animation-chart>
 </nb-card-body>

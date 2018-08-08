@@ -57,14 +57,14 @@ $traffic-bar-background-color: #d0d8e3;
 
     @include nb-for-theme(cosmic) {
       .progress-line {
-        @include btn-hero-primary-gradient();
+        background: linear-gradient(180deg, #a054fe 0%, #7a58ff 100%);
 
         &.success {
-          @include btn-hero-success-gradient();
+          background: linear-gradient(0deg, #00caba 0%, #00d77f 100%);
         }
 
         &.failure {
-          @include btn-hero-danger-gradient();
+          background: linear-gradient(180deg, #ff38ab 0%, #ff386c 100%);
         }
       }
     }
