@@ -50,8 +50,6 @@ export class StatsBarAnimationChartComponent implements AfterViewInit, OnDestroy
         borderRadius: 0,
         itemWidth: 15,
         itemHeight: 15,
-        // selectedMode: 'single',
-
         textStyle: {
           color: chartVariables.textColor,
         },
