@@ -19,7 +19,7 @@ export class EarningCardFrontComponent implements OnDestroy, OnInit {
   currencies: string[] = ['Bitcoin', 'Tether', 'Ethereum'];
   currentTheme: string;
   earningLiveUpdateCardData: LiveUpdateChart;
-  liveUpdateChartData: {value: [string, number]}[];
+  liveUpdateChartData: { value: [string, number] }[];
 
   constructor(private themeService: NbThemeService,
               private earningService: EarningService) {
