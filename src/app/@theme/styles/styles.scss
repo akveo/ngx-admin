@@ -16,6 +16,38 @@
 // install the framework and custom global styles
 @include nb-install() {
 
+    /deep/ .mat-input-element::placeholder {
+    color: transparentize($color: nb-theme(color-fg-heading), $amount: 0.6);
+  }
+
+  /deep/ .mat-input-placeholder {
+    color: nb-theme(color-fg-text);
+  }
+
+  /deep/ .mat-select-value {
+    color: nb-theme(color-fg-text);
+  }
+
+  /deep/ .mat-select-placeholder {
+    color: transparentize($color: nb-theme(color-fg-heading), $amount: 0.6);
+  }
+
+  /deep/ .mat-form-field-underline {
+    background-color: nb-theme(form-control-border-color);
+  }
+
+  /deep/ .mat-form-field-label {
+    color: transparentize($color: nb-theme(color-fg-heading), $amount: 0.6);
+  }
+
+  /deep/ .progress {
+    background-color: nb-theme(layout-bg) !important;
+  }
+
+  /deep/ .progress-bar {
+    color: nb-theme(color-fg-text) !important;
+  }
+
   .link {
     cursor: pointer;
     color: nb-theme(link-color);

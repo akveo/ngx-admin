@@ -1,4 +1,79 @@
-<div class="col-md-12 col-lg-12 ">
+<div class="col-md-12 col-lg-12 " >
+
+  <nb-card [hidden]="show_profile || show_info || show_acad || show_expe">
+    <nb-card-header>
+         <!-- select -->
+         <mat-form-field style="width: 100%;">
+            <mat-label>Seleccione el posgrado al que desea inscribirse:</mat-label>
+            <mat-select placeholder="dfsdfs">
+              <mat-option>--Seleccionar--</mat-option>
+              <mat-option *ngFor="let item of posgrados" [value]="item">
+                {{item.Nombre}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <div class="row" >
+
+            <div class="col-sm-6 col-md-4 col-lg-3" align="center">
+              <nb-card class="exp-card" (click)="show_info=true; show_profile=false; show_acad=false; show_expe=false;">
+                <nb-card-header> Información Básica </nb-card-header>
+                <nb-card-body class="icon-form">
+                  <i class="fa fa-address-card-o fa-5x"></i>
+                  <p class="percentage">{{percentage_info}} %</p>
+                </nb-card-body>
+              </nb-card>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3" align="center">
+              <nb-card class="exp-card" *ngIf="info_ente_id" (click)="show_profile=false; show_info=false; show_acad=true; show_expe=false;">
+                <nb-card-header> Formación Académica </nb-card-header>
+                <nb-card-body class="icon-form">
+                  <i class="fa fa-graduation-cap fa-5x"></i>
+                  <p class="percentage">{{percentage_acad}} %</p>
+
+                </nb-card-body>
+              </nb-card>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3" align="center">
+              <nb-card class="exp-card" *ngIf="info_ente_id" (click)="show_profile=false; show_info=false; show_acad=false; show_expe=true;">
+                <nb-card-header> Experiencia Laboral </nb-card-header>
+                <nb-card-body class="icon-form">
+                  <i class="fa fa-briefcase fa-5x"></i>
+                  <p class="percentage">{{percentage_expe}} %</p>
+                </nb-card-body>
+              </nb-card>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3" align="center">
+              <nb-card class=" exp-card" *ngIf="info_ente_id"  (click)="show_profile=true; show_info=false; show_acad=false; show_expe=false;">
+                <nb-card-header> Perfil </nb-card-header>
+                <nb-card-body class="icon-form">
+                  <i class="fa fa-user fa-5x"></i>
+                </nb-card-body>
+              </nb-card>
+            </div>
+
+          </div>
+        </nb-card-header>
+
+        <nb-card-body>
+
+          <div class="col-md-12">
+
+            <blockquote class="blockquote ">
+              <li>
+                Para el registro a un posgrado es neceario completar cada uno de los bloques de informacion que son solicitados al 100
+              </li>
+            </blockquote>
+
+            <button class="btn btn-success pull-right" disabled>Inscribirse</button>
+          </div>
+
+    </nb-card-body>
+  </nb-card>
+
   <nb-card [hidden]="!show_info">
     <nb-card-body>
       <div class="row">
@@ -47,7 +122,7 @@
     </nb-card-body>
   </nb-card>
 
-  <nb-card [hidden]="!show_expe">
+  <nb-card [hidden]="!show_expe" *ngIf="info_ente_id" >
     <nb-card-body>
       <div class="row">
         <div class="col-md-11">
@@ -71,49 +146,5 @@
 
   <div [hidden]="!show_profile" *ngIf="info_ente_id && show_profile">
     <ngx-perfil (url_editar)="perfil_editar($event)" info_persona_id="{{info_ente_id}}"></ngx-perfil>
-  </div>
-
-  <div class="row" [hidden]="show_profile || show_info || show_acad || show_expe">
-
-    <div class="col-sm-6 col-md-4 col-lg-3" align="center">
-      <nb-card class="exp-card" (click)="show_info=true; show_profile=false; show_acad=false; show_expe=false;">
-        <nb-card-header> Información Básica </nb-card-header>
-        <nb-card-body class="icon-form">
-          <i class="fa fa-address-card-o fa-5x"></i>
-          <p class="percentage">{{percentage_info}} %</p>
-        </nb-card-body>
-      </nb-card>
-    </div>
-
-    <div class="col-sm-6 col-md-4 col-lg-3" align="center">
-      <nb-card class="exp-card" *ngIf="info_ente_id" (click)="show_profile=false; show_info=false; show_acad=true; show_expe=false;">
-        <nb-card-header> Formación Académica </nb-card-header>
-        <nb-card-body class="icon-form">
-          <i class="fa fa-graduation-cap fa-5x"></i>
-          <p class="percentage">{{percentage_acad}} %</p>
-
-        </nb-card-body>
-      </nb-card>
-    </div>
-
-    <div class="col-sm-6 col-md-4 col-lg-3" align="center">
-      <nb-card class="exp-card" *ngIf="info_ente_id" (click)="show_profile=false; show_info=false; show_acad=false; show_expe=true;">
-        <nb-card-header> Experiencia Laboral </nb-card-header>
-        <nb-card-body class="icon-form">
-          <i class="fa fa-briefcase fa-5x"></i>
-          <p class="percentage">{{percentage_expe}} %</p>
-        </nb-card-body>
-      </nb-card>
-    </div>
-
-    <div class="col-sm-6 col-md-4 col-lg-3" align="center">
-      <nb-card class=" exp-card" *ngIf="info_ente_id"  (click)="show_profile=true; show_info=false; show_acad=false; show_expe=false;">
-        <nb-card-header> Perfil </nb-card-header>
-        <nb-card-body class="icon-form">
-          <i class="fa fa-user fa-5x"></i>
-        </nb-card-body>
-      </nb-card>
-    </div>
-
   </div>
 </div>
