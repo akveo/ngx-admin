@@ -22,11 +22,16 @@ export class CrudExperienciaLaboralComponent implements OnInit {
   config: ToasterConfig;
   info_experiencia_laboral_id: number;
   organizacion: Organizacion;
+  ente_id: number;
 
   @Input('info_experiencia_laboral_id')
   set name(info_experiencia_laboral_id: number) {
     this.info_experiencia_laboral_id = info_experiencia_laboral_id;
     this.loadInfoExperienciaLaboral();
+  }
+  @Input('ente_id')
+  set ente_experiencia(ente_id: any) {
+    this.ente_id = Number(ente_id);
   }
   @Output() eventChange = new EventEmitter();
   @Output('result') result: EventEmitter<any> = new EventEmitter();
@@ -330,7 +335,7 @@ export class CrudExperienciaLaboralComponent implements OnInit {
   validarForm(event) {
     if (event.valid) {
      const experiencia = {
-          Persona: this.info_experiencia_laboral_id,
+          Persona: this.ente_id,
           Actividades: event.data.InfoExperienciaLaboral.Actividades,
           FechaInicio: event.data.InfoExperienciaLaboral.FechaInicio,
           FechaFinalizacion: event.data.InfoExperienciaLaboral.FechaFinalizacion,

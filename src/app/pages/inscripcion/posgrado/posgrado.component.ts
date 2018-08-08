@@ -3,6 +3,7 @@ import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import { ImplicitAutenticationService } from './../../../@core/utils/implicit_autentication.service';
 import { PersonaService } from '../../../@core/data/persona.service';
 import { UtilidadesService } from '../../../@core/utils/utilidades.service';
+import { ProgramaAcademicoService } from '../../../@core/data/programa_academico.service';
 
 @Component({
   selector: 'ngx-posgrado',
@@ -23,6 +24,7 @@ export class PosgradoComponent implements OnInit {
   percentage_tab_info = [];
   percentage_tab_expe = [];
   percentage_tab_acad = [];
+  posgrados = [];
   show_info = false;
   show_profile = false;
   show_acad = false;
@@ -34,11 +36,13 @@ export class PosgradoComponent implements OnInit {
   constructor(
     private autenticacion: ImplicitAutenticationService,
     private personaService: PersonaService,
-    private translate: TranslateService) {
+    private translate: TranslateService,
+    private programaService: ProgramaAcademicoService) {
     this.translate = translate;
     this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
     });
     this.getInfoPersonaId();
+    this.loadInfoPostgrados();
   }
 
   setPercentage_info(number, tab) {
@@ -59,6 +63,16 @@ export class PosgradoComponent implements OnInit {
   traerInfoPersona(event, tab) {
     this.setPercentage_info(event, tab);
     if (event !== 0) this.getInfoPersonaId();
+  }
+
+  loadInfoPostgrados() {
+    this.programaService.get('programa_academico')
+        .subscribe(res => {
+          const r = <any>res;
+          if (res !== null && r.Type !== 'error') {
+            this.posgrados = <any>res;
+          }
+        });
   }
 
   getInfoPersonaId() {

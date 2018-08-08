@@ -131,7 +131,7 @@ const NB_THEME_PROVIDERS = [
 
 @NgModule({
   imports: [...BASE_MODULES, ...NB_MODULES, SharedModule, ...MAT_MODULES],
-  exports: [...BASE_MODULES, ...NB_MODULES, ...COMPONENTS, ...PIPES],
+  exports: [...BASE_MODULES, ...NB_MODULES, ...COMPONENTS, ...PIPES, ...MAT_MODULES],
   declarations: [...COMPONENTS, ...PIPES, DinamicformComponent, SelectComponent],
   entryComponents: [...ENTRY_COMPONENTS],
 })

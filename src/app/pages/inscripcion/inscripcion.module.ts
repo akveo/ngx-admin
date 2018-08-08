@@ -25,6 +25,7 @@ import { CrudFormacionAcademicaComponent } from '../formacion_academica/crud-for
 import { ExperienciaLaboralModule } from '../experiencia_laboral/experiencia_laboral.module';
 import { ListExperienciaLaboralComponent } from '../experiencia_laboral/list-experiencia_laboral/list-experiencia_laboral.component';
 import { CrudExperienciaLaboralComponent } from '../experiencia_laboral/crud-experiencia_laboral/crud-experiencia_laboral.component';
+import { ProgramaAcademicoService } from '../../@core/data/programa_academico.service';
 
 @NgModule({
   imports: [
@@ -50,6 +51,7 @@ import { CrudExperienciaLaboralComponent } from '../experiencia_laboral/crud-exp
     CampusMidService,
     UbicacionesService,
     UtilidadesService,
+    ProgramaAcademicoService,
   ],
   entryComponents: [
     ListIdiomasComponent,

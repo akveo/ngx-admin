@@ -4,7 +4,7 @@
           <nb-card class="row" [hidden]="!crud">
             <nb-card-body>
               <a class="pull-right text-danger link" (click)="crud = false"><strong>X</strong></a>
-              <ngx-crud-experiencia-laboral [info_experiencia_laboral_id]="uid" (eventChange)="onChange($event)"></ngx-crud-experiencia-laboral>
+              <ngx-crud-experiencia-laboral [info_experiencia_laboral_id]="uid" [ente_id]="eid" (eventChange)="onChange($event)"></ngx-crud-experiencia-laboral>
             </nb-card-body>
           </nb-card>
 

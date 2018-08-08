@@ -14,6 +14,7 @@ import { ExperienciaService } from '../../../@core/data/experiencia.service';
 })
 export class ListExperienciaLaboralComponent implements OnInit {
   uid: number;
+  eid: number;
   cambiotab: boolean = false;
   config: ToasterConfig;
   settings: any;
@@ -23,8 +24,8 @@ export class ListExperienciaLaboralComponent implements OnInit {
 
   @Input('ente_id')
   set name(ente_id: number) {
-    this.uid = ente_id;
-    // this.loadData();
+    this.eid = ente_id;
+    this.loadData();
   }
   constructor(private translate: TranslateService, private toasterService: ToasterService,
     private experienciaService: ExperienciaService, private organizacionService: OrganizacionService) {
@@ -86,7 +87,7 @@ export class ListExperienciaLaboralComponent implements OnInit {
   }
 
   loadData(): void {
-     this.experienciaService.get('experiencia_laboral/?query=Persona:' + this.uid).subscribe(res => {
+     this.experienciaService.get('experiencia_laboral/?query=Persona:' + this.eid).subscribe(res => {
       if (res !== null) {
         this.data = <Array<any>>res;
         this.data.forEach(element => {
