@@ -1,0 +1,14 @@
+<nb-card-header>
+  Earnings
+</nb-card-header>
+<nb-card-body>
+  <div class="chart-info">
+    <div class="title" [style.color]="color">{{ name }}</div>
+    <div class="time-period">Last week</div>
+    <div class="value">{{ value }}%</div>
+  </div>
+  <ngx-earning-pie-chart [values]="earningPieChartData"
+                         (selectPie)="changeChartInfo($event)"
+                         [defaultSelectedCurrency]="defaultSelectedCurrency">
+  </ngx-earning-pie-chart>
+</nb-card-body>
