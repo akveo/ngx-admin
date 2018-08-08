@@ -37,7 +37,7 @@ import { SlideOutComponent } from './slide-out/slide-out.component';
 
 import { CountryOrdersComponent } from './country-orders/country-orders.component';
 import { CountryOrdersMapComponent } from './country-orders/map/country-orders-map.component';
-import { CountryOrdersMapService } from './country-orders/map/country-orders-map.service'
+import { CountryOrdersMapService } from './country-orders/map/country-orders-map.service';
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 import { CountryOrdersChartComponent } from './country-orders/chart/country-orders-chart.component';
 import { EarningCardComponent } from './earning-card/earning-card.component';

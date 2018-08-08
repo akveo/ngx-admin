@@ -75,22 +75,16 @@ export class CountryOrdersMapComponent implements OnDestroy {
           opacity: 1,
         }),
         onEachFeature: (f, l) => {
-          this.onEachFeature(f, l)
+          this.onEachFeature(f, l);
         },
-      })
+      });
   }
 
   private onEachFeature(feature, layer) {
     layer.on({
-      mouseover: (e) => {
-        this.highlightFeature(e.target)
-      },
-      mouseout: (e) => {
-        this.moveout(e.target)
-      },
-      click: (e) => {
-        this.selectFeature(e.target)
-      },
+      mouseover: (e) => this.highlightFeature(e.target),
+      mouseout: (e) => this.moveout(e.target),
+      click: (e) => this.selectFeature(e.target),
     });
   }
 

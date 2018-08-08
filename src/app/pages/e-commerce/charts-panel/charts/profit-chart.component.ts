@@ -161,7 +161,7 @@ export class ProfitChartComponent implements AfterViewInit, OnDestroy, OnChanges
       xAxis: {
         data: this.profitChartData.chartLabel,
       },
-    })
+    });
   }
 
   getNewSeries(series, data: number[][]) {
