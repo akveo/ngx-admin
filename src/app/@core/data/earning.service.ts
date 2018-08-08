@@ -74,7 +74,7 @@ export class EarningService {
 
   generateRandomLiveChartData() {
     this.currentDate = new Date(+this.currentDate + this.ONE_DAY);
-    this.currentValue = this.currentValue + Math.random() * 30 - 16;
+    this.currentValue = this.currentValue + Math.random() * 20 - 11;
 
     if (this.currentValue < 0) {
       this.currentValue = Math.random() * 100;
