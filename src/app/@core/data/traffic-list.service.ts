@@ -47,7 +47,7 @@ export class TrafficListService {
       const date = new Date();
       const prevYear = date.getFullYear() - 1;
 
-      return `${months[months.length - 1]}, ${prevYear}`
+      return `${months[months.length - 1]}, ${prevYear}`;
     };
 
     return this.reduceData(this.period.getMonths(), getFirstDateInPeriod);

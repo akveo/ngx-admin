@@ -89,7 +89,7 @@ export class EarningService {
         ].join('/'),
         Math.round(this.currentValue),
       ],
-    }
+    };
   }
 
   generateRandomEarningData(currency) {

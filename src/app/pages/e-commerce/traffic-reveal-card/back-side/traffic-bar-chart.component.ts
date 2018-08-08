@@ -41,7 +41,7 @@ export class TrafficBarChartComponent implements AfterViewInit, OnDestroy, OnCha
         tooltip: {
           formatter: this.formatter,
         },
-      })
+      });
     }
   }
 
