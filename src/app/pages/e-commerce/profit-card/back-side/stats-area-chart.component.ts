@@ -1,6 +1,7 @@
 import { delay, takeWhile } from 'rxjs/operators';
 import { AfterViewInit, Component, OnDestroy } from '@angular/core';
 import { NbThemeService } from '@nebular/theme';
+import { LayoutService } from '../../../../@core/data/layout.service';
 
 const points = [300, 520, 435, 530, 730, 620, 660, 860];
 
@@ -8,16 +9,29 @@ const points = [300, 520, 435, 530, 730, 620, 660, 860];
   selector: 'ngx-stats-ares-chart',
   styleUrls: ['stats-card-back.component.scss'],
   template: `
-    <div echarts [options]="option" class="echart"></div>
+    <div echarts [options]="option"
+         class="echart"
+         (chartInit)="onChartInit($event)">
+    </div>
   `,
 })
 export class StatsAreaChartComponent implements AfterViewInit, OnDestroy {
 
   private alive = true;
 
+  echartsIntance: any;
   option: any = {};
 
-  constructor(private theme: NbThemeService) {
+  constructor(private theme: NbThemeService,
+              private layoutService: LayoutService) {
+    this.layoutService.onChangeLayoutSize()
+      .pipe(
+        takeWhile(() => this.alive),
+        delay(1),
+      )
+      .subscribe(() => {
+        this.resizeChart();
+      });
   }
 
   ngAfterViewInit() {
@@ -144,6 +158,16 @@ export class StatsAreaChartComponent implements AfterViewInit, OnDestroy {
           ],
         });
     });
+  }
+
+  onChartInit(echarts) {
+    this.echartsIntance = echarts;
+  }
+
+  resizeChart() {
+    if (this.echartsIntance) {
+      this.echartsIntance.resize();
+    }
   }
 
   ngOnDestroy() {
