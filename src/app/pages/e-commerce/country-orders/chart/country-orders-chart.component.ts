@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, Input, OnChanges, OnDestroy, SimpleChanges } from '@angular/core';
 import { NbThemeService } from '@nebular/theme';
-import { delay, takeWhile } from 'rxjs/operators';
+import { takeWhile } from 'rxjs/operators';
 import { LayoutService } from '../../../../@core/data/layout.service';
 
 
