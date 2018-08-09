@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
-import { share } from 'rxjs/operators';
+import { delay, share } from 'rxjs/operators';
 
 @Injectable()
 export class LayoutService {
@@ -12,6 +12,9 @@ export class LayoutService {
   }
 
   onChangeLayoutSize(): Observable<any> {
-    return this.layoutSize$.pipe(share());
+    return this.layoutSize$.pipe(
+      share(),
+      delay(1),
+    );
   }
 }

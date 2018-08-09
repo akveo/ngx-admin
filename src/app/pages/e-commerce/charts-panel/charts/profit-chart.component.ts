@@ -28,9 +28,7 @@ export class ProfitChartComponent implements AfterViewInit, OnDestroy, OnChanges
       .pipe(
         takeWhile(() => this.alive),
       )
-      .subscribe(() => {
-        this.resizeChart();
-      });
+      .subscribe(() => this.resizeChart());
   }
 
   ngOnChanges(): void {

@@ -63,11 +63,8 @@ export class ECommerceVisitorsAnalyticsChartComponent implements AfterViewInit, 
     this.layoutService.onChangeLayoutSize()
       .pipe(
         takeWhile(() => this.alive),
-        delay(1),
       )
-      .subscribe(() => {
-        this.resizeChart();
-      });
+      .subscribe(() => this.resizeChart());
   }
 
   ngAfterViewInit(): void {

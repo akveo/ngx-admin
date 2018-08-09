@@ -36,11 +36,8 @@ export class CountryOrdersChartComponent implements AfterViewInit, OnDestroy, On
     this.layoutService.onChangeLayoutSize()
       .pipe(
         takeWhile(() => this.alive),
-        delay(1),
       )
-      .subscribe(() => {
-        this.resizeChart();
-      });
+      .subscribe(() => this.resizeChart());
   }
 
   ngOnChanges(changes: SimpleChanges): void {

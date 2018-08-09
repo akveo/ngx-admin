@@ -27,11 +27,8 @@ export class StatsAreaChartComponent implements AfterViewInit, OnDestroy {
     this.layoutService.onChangeLayoutSize()
       .pipe(
         takeWhile(() => this.alive),
-        delay(1),
       )
-      .subscribe(() => {
-        this.resizeChart();
-      });
+      .subscribe(() => this.resizeChart());
   }
 
   ngAfterViewInit() {
