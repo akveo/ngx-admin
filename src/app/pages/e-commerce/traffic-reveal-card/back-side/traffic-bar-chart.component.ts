@@ -1,6 +1,7 @@
 import { AfterViewInit, Component, Input, OnChanges, OnDestroy, SimpleChanges } from '@angular/core';
 import { NbThemeService } from '@nebular/theme';
 import { takeWhile } from 'rxjs/operators';
+import { LayoutService } from '../../../../@core/data/layout.service';
 
 declare const echarts: any;
 
@@ -8,7 +9,11 @@ declare const echarts: any;
   selector: 'ngx-traffic-bar-chart',
   styleUrls: ['traffic-back-card.component.scss'],
   template: `
-    <div echarts [options]="option" class="echart" (chartInit)="onChartInit($event)"></div>
+    <div echarts
+         [options]="option"
+         class="echart"
+         (chartInit)="onChartInit($event)">
+    </div>
   `,
 })
 export class TrafficBarChartComponent implements AfterViewInit, OnDestroy, OnChanges {
@@ -20,13 +25,25 @@ export class TrafficBarChartComponent implements AfterViewInit, OnDestroy, OnCha
   private alive = true;
 
   option: any = {};
-  echartsInstance;
+  echartsInstance: any;
 
-  constructor(private theme: NbThemeService) {
+  constructor(private theme: NbThemeService,
+              private layoutService: LayoutService) {
+    this.layoutService.onChangeLayoutSize()
+      .pipe(
+        takeWhile(() => this.alive),
+      )
+      .subscribe(() => this.resizeChart());
   }
 
   onChartInit(ec) {
     this.echartsInstance = ec;
+  }
+
+  resizeChart() {
+    if (this.echartsInstance) {
+      this.echartsInstance.resize();
+    }
   }
 
   ngOnChanges(changes: SimpleChanges): void {

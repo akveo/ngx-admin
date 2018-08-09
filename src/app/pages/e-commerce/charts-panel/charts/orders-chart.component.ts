@@ -3,12 +3,17 @@ import { NbThemeService } from '@nebular/theme';
 import { delay, takeWhile } from 'rxjs/operators';
 
 import { OrdersChart } from '../../../../@core/data/orders-chart.service';
+import { LayoutService } from '../../../../@core/data/layout.service';
 
 @Component({
   selector: 'ngx-orders-chart',
   styleUrls: ['./charts-common.component.scss'],
   template: `
-    <div echarts [options]="option" class="echart" (chartInit)="onChartInit($event)"></div>
+    <div echarts
+         [options]="option"
+         class="echart"
+         (chartInit)="onChartInit($event)">
+    </div>
   `,
 })
 export class OrdersChartComponent implements AfterViewInit, OnDestroy, OnChanges {
@@ -27,7 +32,13 @@ export class OrdersChartComponent implements AfterViewInit, OnDestroy, OnChanges
     }
   }
 
-  constructor(private theme: NbThemeService) {
+  constructor(private theme: NbThemeService,
+              private layoutService: LayoutService) {
+    this.layoutService.onChangeLayoutSize()
+      .pipe(
+        takeWhile(() => this.alive),
+      )
+      .subscribe(() => this.resizeChart());
   }
 
   ngAfterViewInit(): void {

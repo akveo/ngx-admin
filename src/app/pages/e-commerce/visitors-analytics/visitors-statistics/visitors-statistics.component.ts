@@ -1,6 +1,7 @@
 import { AfterViewInit, Component, OnDestroy } from '@angular/core';
 import { NbThemeService } from '@nebular/theme';
 import { delay, takeWhile } from 'rxjs/operators';
+import { LayoutService } from '../../../../@core/data/layout.service';
 
 
 @Component({
@@ -15,8 +16,15 @@ export class ECommerceVisitorsStatisticsComponent implements AfterViewInit, OnDe
 
   option: any = {};
   chartLegend: {iconColor: string; title: string}[];
+  echartsIntance: any;
 
-  constructor(private theme: NbThemeService) {
+  constructor(private theme: NbThemeService,
+              private layoutService: LayoutService) {
+    this.layoutService.onChangeLayoutSize()
+      .pipe(
+        takeWhile(() => this.alive),
+      )
+      .subscribe(() => this.resizeChart());
   }
 
   ngAfterViewInit() {
@@ -188,6 +196,16 @@ export class ECommerceVisitorsStatisticsComponent implements AfterViewInit, OnDe
         },
       ],
     };
+  }
+
+  onChartInit(echarts) {
+    this.echartsIntance = echarts;
+  }
+
+  resizeChart() {
+    if (this.echartsIntance) {
+      this.echartsIntance.resize();
+    }
   }
 
   ngOnDestroy() {

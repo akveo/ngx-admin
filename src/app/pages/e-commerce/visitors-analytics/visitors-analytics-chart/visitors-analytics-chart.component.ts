@@ -1,24 +1,29 @@
 import { delay, takeWhile } from 'rxjs/operators';
 import { AfterViewInit, Component, OnDestroy } from '@angular/core';
 import { NbThemeService } from '@nebular/theme';
+import { LayoutService } from '../../../../@core/data/layout.service';
 
 @Component({
   selector: 'ngx-visitors-analytics-chart',
   styleUrls: ['./visitors-analytics-chart.component.scss'],
   template: `
-    <div echarts [options]="option" class="echart"></div>
+    <div echarts
+         [options]="option"
+         class="echart"
+         (chartInit)="onChartInit($event)">
+    </div>
   `,
 })
 export class ECommerceVisitorsAnalyticsChartComponent implements AfterViewInit, OnDestroy {
 
   private alive = true;
   private innerLinePoints: number[] = [
-      94, 188, 225, 244, 253, 254, 249, 235, 208,
-      173, 141, 118, 105, 97, 94, 96, 104, 121, 147,
-      183, 224, 265, 302, 333, 358, 375, 388, 395,
-      400, 400, 397, 390, 377, 360, 338, 310, 278,
-      241, 204, 166, 130, 98, 71, 49, 32, 20, 13, 9,
-    ];
+    94, 188, 225, 244, 253, 254, 249, 235, 208,
+    173, 141, 118, 105, 97, 94, 96, 104, 121, 147,
+    183, 224, 265, 302, 333, 358, 375, 388, 395,
+    400, 400, 397, 390, 377, 360, 338, 310, 278,
+    241, 204, 166, 130, 98, 71, 49, 32, 20, 13, 9,
+  ];
   private outerLinePoints: number[] = [
     85, 71, 59, 50, 45, 42, 41, 44 , 58, 88,
     136 , 199, 267, 326, 367, 391, 400, 397,
@@ -36,8 +41,10 @@ export class ECommerceVisitorsAnalyticsChartComponent implements AfterViewInit, 
   option: any;
   data: Array<any>;
   themeSubscription: any;
+  echartsIntance: any;
 
-  constructor(private theme: NbThemeService) {
+  constructor(private theme: NbThemeService,
+              private layoutService: LayoutService) {
     const outerLinePointsLength = this.outerLinePoints.length;
     const monthsLength = this.months.length;
 
@@ -52,6 +59,12 @@ export class ECommerceVisitorsAnalyticsChartComponent implements AfterViewInit, 
         value: p,
       };
     });
+
+    this.layoutService.onChangeLayoutSize()
+      .pipe(
+        takeWhile(() => this.alive),
+      )
+      .subscribe(() => this.resizeChart());
   }
 
   ngAfterViewInit(): void {
@@ -233,6 +246,16 @@ export class ECommerceVisitorsAnalyticsChartComponent implements AfterViewInit, 
       },
       data: this.innerLinePoints,
     };
+  }
+
+  onChartInit(echarts) {
+    this.echartsIntance = echarts;
+  }
+
+  resizeChart() {
+    if (this.echartsIntance) {
+      this.echartsIntance.resize();
+    }
   }
 
   ngOnDestroy() {

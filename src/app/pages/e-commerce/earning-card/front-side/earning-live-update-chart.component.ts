@@ -1,6 +1,7 @@
 import { delay, takeWhile } from 'rxjs/operators';
 import { AfterViewInit, Component, Input, OnChanges, OnDestroy } from '@angular/core';
 import { NbThemeService } from '@nebular/theme';
+import { LayoutService } from '../../../../@core/data/layout.service';
 
 @Component({
   selector: 'ngx-earning-live-update-chart',
@@ -20,17 +21,19 @@ export class EarningLiveUpdateChartComponent implements AfterViewInit, OnDestroy
   option: any;
   echartsInstance;
 
-  constructor(private theme: NbThemeService) {
+  constructor(private theme: NbThemeService,
+              private layoutService: LayoutService) {
+    this.layoutService.onChangeLayoutSize()
+      .pipe(
+        takeWhile(() => this.alive),
+      )
+      .subscribe(() => this.resizeChart());
   }
 
   ngOnChanges(): void {
     if (this.option) {
       this.updateChartOptions(this.liveUpdateChartData);
     }
-  }
-
-  onChartInit(ec) {
-    this.echartsInstance = ec;
   }
 
   ngAfterViewInit() {
@@ -143,6 +146,16 @@ export class EarningLiveUpdateChartComponent implements AfterViewInit, OnDestroy
         data: chartData,
       }],
     });
+  }
+
+  onChartInit(ec) {
+    this.echartsInstance = ec;
+  }
+
+  resizeChart() {
+    if (this.echartsInstance) {
+      this.echartsInstance.resize();
+    }
   }
 
   ngOnDestroy() {

@@ -3,6 +3,7 @@ import { NbThemeService } from '@nebular/theme';
 import { takeWhile } from 'rxjs/operators';
 
 import { ProfitChart } from '../../../../@core/data/profit-chart.service';
+import { LayoutService } from '../../../../@core/data/layout.service';
 
 @Component({
   selector: 'ngx-profit-chart',
@@ -21,7 +22,13 @@ export class ProfitChartComponent implements AfterViewInit, OnDestroy, OnChanges
   echartsIntance: any;
   options: any = {};
 
-  constructor(private theme: NbThemeService) {
+  constructor(private theme: NbThemeService,
+              private layoutService: LayoutService) {
+    this.layoutService.onChangeLayoutSize()
+      .pipe(
+        takeWhile(() => this.alive),
+      )
+      .subscribe(() => this.resizeChart());
   }
 
   ngOnChanges(): void {

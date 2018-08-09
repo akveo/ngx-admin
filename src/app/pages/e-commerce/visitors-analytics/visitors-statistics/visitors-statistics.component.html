@@ -4,7 +4,12 @@
     <div class="visitors-title">New Visitors</div>
   </div>
   <div class="statistics-chart">
-    <div echarts [options]="option" class="echart"></div>
+    <div echarts
+         [options]="option"
+         class="echart"
+         (chartInit)="onChartInit($event)"
+    >
+    </div>
   </div>
   <div class="statistics-footer">
     <div class="chart-values">

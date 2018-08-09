@@ -1,11 +1,16 @@
 import { AfterViewInit, Component, Input, OnDestroy } from '@angular/core';
 import { NbThemeService } from '@nebular/theme';
 import { takeWhile } from 'rxjs/operators';
+import { LayoutService } from '../../../../@core/data/layout.service';
 
 @Component({
   selector: 'ngx-stats-bar-animation-chart',
   template: `
-    <div echarts [options]="options" class="echart"></div>
+    <div echarts
+         [options]="options"
+         class="echart"
+         (chartInit)="onChartInit($event)">
+    </div>
   `,
 })
 export class StatsBarAnimationChartComponent implements AfterViewInit, OnDestroy {
@@ -17,9 +22,16 @@ export class StatsBarAnimationChartComponent implements AfterViewInit, OnDestroy
     secondLine: [],
   };
 
+  echartsIntance: any;
   options: any = {};
 
-  constructor(private theme: NbThemeService) {
+  constructor(private theme: NbThemeService,
+              private layoutService: LayoutService) {
+    this.layoutService.onChangeLayoutSize()
+      .pipe(
+        takeWhile(() => this.alive),
+      )
+      .subscribe(() => this.resizeChart());
   }
 
   ngAfterViewInit() {
@@ -123,6 +135,16 @@ export class StatsBarAnimationChartComponent implements AfterViewInit, OnDestroy
       animationEasing: 'elasticOut',
       animationDelayUpdate: idx => idx * 5,
     };
+  }
+
+  onChartInit(echarts) {
+    this.echartsIntance = echarts;
+  }
+
+  resizeChart() {
+    if (this.echartsIntance) {
+      this.echartsIntance.resize();
+    }
   }
 
   ngOnDestroy(): void {
