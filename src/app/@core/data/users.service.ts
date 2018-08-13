@@ -5,10 +5,10 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { GENERAL } from './../../app-config';
 
 const httpOptions = {
-    headers: new HttpHeaders({
-        'Accept': 'application/json',
-        'authorization': 'Bearer ' + window.localStorage.getItem('access_token'),
-    }),
+  headers: new HttpHeaders({
+    'Accept': 'application/json',
+    'authorization': 'Bearer ' + window.localStorage.getItem('access_token'),
+  }),
 }
 
 
@@ -24,16 +24,16 @@ export class UserService {
       const id_token = window.localStorage.getItem('id_token').split('.');
       const payload = JSON.parse(atob(id_token[1]));
       this.http.get(path + 'persona/?query=Usuario:' + payload.sub)
-      .subscribe(res => {
-        if (res !== null) {
-          this.users = res;
-        }
-      });
+        .subscribe(res => {
+          if (res !== null) {
+            this.users = res;
+          }
+        });
     }
   }
-  
+
   getUser(): Observable<any> {
     return observableOf(this.users);
   }
-  
+
 }
