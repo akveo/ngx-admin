@@ -23,7 +23,7 @@ export class UserService {
     if (window.localStorage.getItem('id_token') !== null && window.localStorage.getItem('id_token') !== undefined) {
       const id_token = window.localStorage.getItem('id_token').split('.');
       const payload = JSON.parse(atob(id_token[1]));
-      this.http.get(path + 'persona/?query=Usuario:' + payload.sub)
+      this.http.get(path + 'persona/?query=Usuario:' + payload.sub, httpOptions)
         .subscribe(res => {
           if (res !== null) {
             this.users = res;
