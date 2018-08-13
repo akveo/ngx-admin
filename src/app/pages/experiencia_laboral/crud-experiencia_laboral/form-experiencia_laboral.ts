@@ -157,6 +157,6 @@ export let FORM_EXPERIENCIA_LABORAL = {
       formatos: 'pdf',
       url: '',
       tamanoMaximo: 2,
-  },
+    },
   ],
 }
