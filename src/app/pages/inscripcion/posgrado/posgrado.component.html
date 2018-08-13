@@ -93,7 +93,7 @@
             (result)="setPercentage_info($event,1)"></ngx-crud-info-caracteristica>
         </nb-tab>
         <nb-tab tabTitle="{{ 'GLOBAL.informacion_contacto' | translate }}" [active]="info_contacto">
-          <ngx-crud-informacion-contacto informacion_contacto_id={{this.info_ente_id}} (eventChange)="perfil_editar('info_contacto')"
+          <ngx-crud-informacion-contacto informacion_contacto_id={{this.info_ente_id}} (eventChange)="perfil_editar('default')"
             (result)="setPercentage_info($event,2)"></ngx-crud-informacion-contacto>
         </nb-tab>
       </nb-tabset>
