@@ -1,4 +1,4 @@
-FROM python:2.7
+FROM python:3.0
 RUN pip install awscli
 WORKDIR /
 COPY entrypoint.sh entrypoint.sh
