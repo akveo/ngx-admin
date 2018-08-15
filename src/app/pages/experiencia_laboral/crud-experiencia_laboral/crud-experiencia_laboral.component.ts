@@ -120,16 +120,21 @@ export class CrudExperienciaLaboralComponent implements OnInit {
     Swal(opt)
       .then((willDelete) => {
         if (willDelete.value) {
-          this.info_experiencia_laboral = <InfoExperienciaLaboral>infoExperienciaLaboral;
+          this.info_experiencia_laboral = <any>infoExperienciaLaboral;
           this.info_experiencia_laboral.Id = this.info_experiencia_laboral_id;
-          this.experienciaService.put('experiencia_laboral', this.info_experiencia_laboral)
-            .subscribe(res => {
-              this.loadInfoExperienciaLaboral();
-              this.eventChange.emit(true);
-              this.showToast('info', this.translate.instant('GLOBAL.actualizar'),
-                this.translate.instant('GLOBAL.experiencia_laboral') + ' ' +
-                this.translate.instant('GLOBAL.confirmarActualizar'));
-             });
+          console.info(this.info_experiencia_laboral);
+          const files = [];
+          if (this.info_experiencia_laboral.Soportes.file !== undefined) {
+            files.push({ file: this.info_experiencia_laboral.Soportes.file, documento: this.info_experiencia_laboral.Soportes, key: 'SoporteDocumento' });
+          }
+          // this.experienciaService.put('experiencia_laboral', this.info_experiencia_laboral)
+          //   .subscribe(res => {
+          //     this.loadInfoExperienciaLaboral();
+          //     this.eventChange.emit(true);
+          //     this.showToast('info', this.translate.instant('GLOBAL.actualizar'),
+          //       this.translate.instant('GLOBAL.experiencia_laboral') + ' ' +
+          //       this.translate.instant('GLOBAL.confirmarActualizar'));
+          //    });
         }
       });
   }
@@ -278,7 +283,13 @@ export class CrudExperienciaLaboralComponent implements OnInit {
     Swal(opt)
       .then((willDelete) => {
         if (willDelete.value) {
-          this.info_experiencia_laboral = <InfoExperienciaLaboral>infoExperienciaLaboral;
+          this.info_experiencia_laboral = <any>infoExperienciaLaboral;
+          const files = [];
+          if (this.info_experiencia_laboral.Soportes.file !== undefined) {
+            files.push({
+              nombre: this.info_experiencia_laboral.Cargo.Nombre, key: 'Soportes',
+              file: this.info_experiencia_laboral.Soportes.file, IdDocumento: 2});
+          }
           this.experienciaService.post('experiencia_laboral', this.info_experiencia_laboral)
             .subscribe(res => {
               const r = <any>res;
@@ -343,7 +354,7 @@ export class CrudExperienciaLaboralComponent implements OnInit {
           TipoDedicacion: event.data.InfoExperienciaLaboral.TipoDedicacion,
           Cargo: event.data.InfoExperienciaLaboral.Cargo,
           TipoVinculacion: event.data.InfoExperienciaLaboral.TipoVinculacion,
-          Soportes: event.data.InfoExperienciaLaboral.Soportes,
+          Soportes: event.data.InfoExperienciaLaboral.SoporteDocumento,
       }
       const org = {
         NumeroIdentificacion: event.data.InfoExperienciaLaboral.Nit,
