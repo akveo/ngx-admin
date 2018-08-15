@@ -12,9 +12,6 @@ const routes: Routes = [{
   children: [{
     path: 'list-tipo_contacto',
     component: ListTipoContactoComponent,
-  }, {
-    path: 'crud-tipo_contacto',
-    component: CrudTipoContactoComponent,
   }],
 }];
 

@@ -9,6 +9,7 @@
             <li><label><strong>{{"GLOBAL.fecha_nacimiento" | translate}}: </strong></label> {{info_info_persona.FechaNacimiento | date : "yyyy/MM/dd"}}</li>
             <li><label><strong>{{"GLOBAL.genero" | translate}}: </strong></label> {{info_info_persona.Genero.Nombre}}</li>
             <li><label><strong>{{"GLOBAL.estado_civil" | translate}}: </strong></label> {{info_info_persona.EstadoCivil.Nombre}}</li>
+            <li><label><strong>{{info_info_persona.TipoIdentificacion.CodigoAbreviacion}}: </strong></label> {{info_info_persona.NumeroDocumento}}</li>
         </ul>
         <span  *ngIf="url_editar"  (click)="editar()" class="link"><i class="ion-edit"></i>{{"GLOBAL.actualizar" | translate}}</span>
       </div>

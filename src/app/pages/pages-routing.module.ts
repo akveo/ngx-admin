@@ -16,22 +16,10 @@ const routes: Routes = [{
     path: 'inscripcion',
     loadChildren: './inscripcion/inscripcion.module#InscripcionModule',
     },
-    {
-      path: 'formacion_academica',
-      loadChildren: './formacion_academica/formacion_academica.module#FormacionAcademicaModule',
-    },
-    {
-      path: 'idiomas',
-      loadChildren: './idiomas/idiomas.module#IdiomasModule',
-    },
     /**{
       path: 'publicaciones',
       loadChildren: './publicaciones/publicaciones.module#PublicacionesModule',
     },**/
-    {
-      path: 'experiencia_laboral',
-      loadChildren: './experiencia_laboral/experiencia_laboral.module#ExperienciaLaboralModule',
-    },
     {
     path: 'genero',
     loadChildren: './genero/genero.module#GeneroModule',
@@ -53,14 +41,6 @@ const routes: Routes = [{
     loadChildren: './persona/persona.module#PersonaModule',
     },
     {
-    path: 'info_persona',
-    loadChildren: './info_persona/info_persona.module#InfoPersonaModule',
-    },
-    {
-      path: 'info_caracteristica',
-      loadChildren: './info_caracteristica/info_caracteristica.module#InfoCaracteristicaModule',
-    },
-    {
     path: 'tipo_lugar',
     loadChildren: './tipo_lugar/tipo_lugar.module#TipoLugarModule',
     },
@@ -69,16 +49,8 @@ const routes: Routes = [{
     loadChildren: './lugar/lugar.module#LugarModule',
     },
     {
-    path: 'lugar_ubicacion',
-    loadChildren: './lugar_ubicacion/lugar_ubicacion.module#LugarUbicacionModule',
-    },
-    {
     path: 'tipo_contacto',
     loadChildren: './tipo_contacto/tipo_contacto.module#TipoContactoModule',
-    },
-    {
-    path: 'informacion_contacto',
-    loadChildren: './informacion_contacto/informacion_contacto.module#InformacionContactoModule',
     },
     {
     path: '',

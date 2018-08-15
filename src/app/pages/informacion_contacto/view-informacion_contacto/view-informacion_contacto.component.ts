@@ -1,4 +1,4 @@
-import { InfoContactoGet } from './../../../@core/data/models/info_contacto_get';
+import { InfoContactoGet } from '../../../@core/data/models/info_contacto_get';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { CampusMidService } from '../../../@core/data/campus_mid.service';
 
@@ -29,7 +29,7 @@ export class ViewInformacionContactoComponent implements OnInit {
   public loadInformacionContacto(): void {
     if (this.informacion_contacto_id !== undefined && this.informacion_contacto_id !== 0 &&
       this.informacion_contacto_id.toString() !== '') {
-        this.campusMidService.get('persona/DatosContacto/' + this.informacion_contacto_id)
+        this.campusMidService.get('persona/DatosContacto/' + this.informacion_contacto_id + '/?query=TipoRelacionUbicacionEnte.CodigoAbreviacion:LR')
         .subscribe(res => {
           const r = <any>res;
           if (r !== null && r.Type !== 'error') {

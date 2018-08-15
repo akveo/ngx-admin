@@ -22,78 +22,6 @@ export const MENU_ITEMS: MenuItem[] = [
     ],
   },
   {
-    title: 'Formacion Academica',
-    icon: 'nb-compose',
-    link: '/pages/formacion_academica',
-    key: 'formacion_academica',
-    children: [
-      {
-        title: 'Lista Formacion Academica',
-        link: '/pages/formacion_academica/list-formacion_academica',
-        key: 'lista_formacion_academica',
-      },
-      {
-        title: 'CRUD Formacion Academica',
-        link: '/pages/formacion_academica/crud-formacion_academica',
-        key: 'crud_formacion_academica',
-      },
-    ],
-  },
-  {
-    title: 'Idiomas',
-    icon: 'nb-compose',
-    link: '/pages/idiomas',
-    key: 'idiomas',
-    children: [
-      {
-        title: 'Lista Idiomas',
-        link: '/pages/idiomas/list-idiomas',
-        key: 'lista_idiomas',
-      },
-      {
-        title: 'CRUD Idiomas',
-        link: '/pages/idiomas/crud-idiomas',
-        key: 'crud_idiomas',
-      },
-    ],
-  },
-  {
-    title: 'Publicaciones',
-    icon: 'nb-compose',
-    link: '/pages/publicaciones',
-    key: 'publicaciones',
-    children: [
-      {
-        title: 'Lista Publicaciones',
-        link: '/pages/publicaciones/list-publicaciones',
-        key: 'lista_publicaciones',
-      },
-      {
-        title: 'CRUD Publicaciones',
-        link: '/pages/publicaciones/crud-publicaciones',
-        key: 'crud_publicaciones',
-      },
-    ],
-  },
-  {
-    title: 'Experiencia Laboral',
-    icon: 'nb-compose',
-    link: '/pages/experiencia_laboral',
-    key: 'experiencia_laboral',
-    children: [
-      {
-        title: 'Lista Experiencia Laboral',
-        link: '/pages/experiencia_laboral/list-experiencia_laboral',
-        key: 'lista_experiencia_laboral',
-      },
-      {
-        title: 'CRUD Experiencia Laboral',
-        link: '/pages/experiencia_laboral/crud-experiencia_laboral',
-        key: 'crud_experiencia_laboral',
-      },
-    ],
-  },
-  {
     title: 'Parametricas',
     icon: 'nb-compose',
     link: '/pages/parametricas',
@@ -262,42 +190,6 @@ export const MENU_ITEMS: MenuItem[] = [
     ],
   },
   {
-    title: 'Info Persona',
-    icon: 'nb-compose',
-    link: '/pages/info_persona',
-    key: 'info_persona',
-    children: [
-      {
-        title: 'Lista Info Persona',
-        link: '/pages/info_persona/list-info_persona',
-        key: 'lista_info_persona',
-      },
-      {
-        title: 'CRUD Info Persona',
-        link: '/pages/info_persona/crud-info_persona',
-        key: 'crud_info_persona',
-      },
-    ],
-  },
-  {
-    title: 'Info Caracteristica',
-    icon: 'nb-compose',
-    link: '/pages/info_caracteristica',
-    key: 'info_caracteristica',
-    children: [
-      {
-        title: 'Lista Info Caracteristica',
-        link: '/pages/info_caracteristica/list-info_caracteristica',
-        key: 'lista_info_caracteristica',
-      },
-      {
-        title: 'CRUD Info Caracteristica',
-        link: '/pages/info_caracteristica/crud-info_caracteristica',
-        key: 'crud_info_caracteristica',
-      },
-    ],
-  },
-  {
     title: 'Lugar',
     icon: 'nb-compose',
     link: '/pages/lugar',
@@ -307,47 +199,6 @@ export const MENU_ITEMS: MenuItem[] = [
         title: 'Lista Lugar',
         link: '/pages/lugar/list-lugar',
         key: 'lista_lugar',
-      },
-      {
-        title: 'CRUD Lugar',
-        link: '/pages/lugar/crud-lugar',
-        key: 'crud_lugar',
-      },
-    ],
-  },
-  {
-    title: 'Lugar Ubicacion',
-    icon: 'nb-compose',
-    link: '/pages/lugar_ubicacion',
-    key: 'lugar_ubicacion',
-    children: [
-      {
-        title: 'Lista Lugar Ubicacion',
-        link: '/pages/lugar_ubicacion/list-lugar_ubicacion',
-        key: 'lista_lugar_ubicacion',
-      },
-      {
-        title: 'CRUD Lugar Ubicacion',
-        link: '/pages/lugar_ubicacion/crud-lugar_ubicacion',
-        key: 'crud_lugar_ubicacion',
-      },
-    ],
-  },
-  {
-    title: 'Informacion Contacto',
-    icon: 'nb-compose',
-    link: '/pages/informacion_contacto',
-    key: 'informacion_contacto',
-    children: [
-      {
-        title: 'Lista Informacion Contacto',
-        link: '/pages/informacion_contacto/list-informacion_contacto',
-        key: 'lista_informacion_contacto',
-      },
-      {
-        title: 'CRUD Informacion Contacto',
-        link: '/pages/informacion_contacto/crud-informacion_contacto',
-        key: 'crud_informacion_contacto',
       },
     ],
   },

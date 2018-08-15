@@ -9,7 +9,7 @@
                 <label><strong>{{contacto.TipoContacto.Nombre}}: </strong></label> {{contacto.Valor}}
               </li>
               <li *ngFor="let ubicacion of info_informacion_contacto.UbicacionEnte">
-                <label><strong>{{ubicacion.TipoRelacionUbicacionEnte.Nombre}}: </strong></label>
+                <label><strong>{{ubicacion.TipoRelacionUbicacionEnte.Nombre}}: </strong> {{ubicacion.Lugar.CIUDAD.Nombre}} / {{ubicacion.Lugar.DEPARTAMENTO.Nombre}} / {{ubicacion.Lugar.PAIS.Nombre}} </label>
                 <ul *ngIf="ubicacion.Lugar; else elseTemplate">
                   <li *ngFor="let lugar of ubicacion.Atributos">
                       <label><strong>{{lugar.AtributoUbicacion.Nombre}}: </strong></label> {{lugar.Valor}}

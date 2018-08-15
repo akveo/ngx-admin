@@ -1,7 +1,6 @@
-
+import { EnteService } from './../../../@core/data/ente.service';
 import { TipoContacto } from './../../../@core/data/models/tipo_contacto';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { PersonaService } from '../../../@core/data/persona.service';
 import { FORM_TIPO_CONTACTO } from './form-tipo_contacto';
 import { ToasterService, ToasterConfig, Toast, BodyOutputType } from 'angular2-toaster';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
@@ -30,7 +29,7 @@ export class CrudTipoContactoComponent implements OnInit {
   regTipoContacto: any;
   clean: boolean;
 
-  constructor(private translate: TranslateService, private personaService: PersonaService, private toasterService: ToasterService) {
+  constructor(private translate: TranslateService, private enteService: EnteService, private toasterService: ToasterService) {
     this.formTipoContacto = FORM_TIPO_CONTACTO;
     this.construirForm();
     this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
@@ -65,7 +64,7 @@ export class CrudTipoContactoComponent implements OnInit {
 
   public loadTipoContacto(): void {
     if (this.tipo_contacto_id !== undefined && this.tipo_contacto_id !== 0) {
-      this.personaService.get('tipo_contacto/?query=id:' + this.tipo_contacto_id)
+      this.enteService.get('tipo_contacto/?query=id:' + this.tipo_contacto_id)
         .subscribe(res => {
           if (res !== null) {
             this.info_tipo_contacto = <TipoContacto>res[0];
@@ -91,7 +90,7 @@ export class CrudTipoContactoComponent implements OnInit {
     .then((willDelete) => {
       if (willDelete.value) {
         this.info_tipo_contacto = <TipoContacto>tipoContacto;
-        this.personaService.put('tipo_contacto', this.info_tipo_contacto)
+        this.enteService.put('tipo_contacto', this.info_tipo_contacto)
           .subscribe(res => {
             this.loadTipoContacto();
             this.eventChange.emit(true);
@@ -114,7 +113,7 @@ export class CrudTipoContactoComponent implements OnInit {
     .then((willDelete) => {
       if (willDelete.value) {
         this.info_tipo_contacto = <TipoContacto>tipoContacto;
-        this.personaService.post('tipo_contacto', this.info_tipo_contacto)
+        this.enteService.post('tipo_contacto', this.info_tipo_contacto)
           .subscribe(res => {
             this.info_tipo_contacto = <TipoContacto>res;
             this.eventChange.emit(true);
