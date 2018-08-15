@@ -12,9 +12,6 @@ const routes: Routes = [{
   children: [{
     path: 'list-tipo_discapacidad',
     component: ListTipoDiscapacidadComponent,
-  }, {
-    path: 'crud-tipo_discapacidad',
-    component: CrudTipoDiscapacidadComponent,
   }],
 }];
 

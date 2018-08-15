@@ -12,9 +12,6 @@ const routes: Routes = [{
   children: [{
     path: 'list-tipo_lugar',
     component: ListTipoLugarComponent,
-  }, {
-    path: 'crud-tipo_lugar',
-    component: CrudTipoLugarComponent,
   }],
 }];
 

@@ -12,9 +12,6 @@ const routes: Routes = [{
   children: [{
     path: 'list-estado_civil',
     component: ListEstadoCivilComponent,
-  }, {
-    path: 'crud-estado_civil',
-    component: CrudEstadoCivilComponent,
   }],
 }];
 

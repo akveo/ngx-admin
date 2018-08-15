@@ -1,6 +1,6 @@
+import { EnteService } from '../../../@core/data/ente.service';
 import { Component, OnInit } from '@angular/core';
 import { LocalDataSource } from 'ng2-smart-table';
-import { PersonaService } from '../../../@core/data/persona.service';
 import { ToasterService, ToasterConfig, Toast, BodyOutputType } from 'angular2-toaster';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import Swal from 'sweetalert2';
@@ -19,7 +19,7 @@ export class ListTipoContactoComponent implements OnInit {
 
   source: LocalDataSource = new LocalDataSource();
 
-  constructor(private translate: TranslateService, private personaService: PersonaService, private toasterService: ToasterService) {
+  constructor(private translate: TranslateService, private enteService: EnteService, private toasterService: ToasterService) {
     this.loadData();
     this.cargarCampos();
     this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
@@ -96,7 +96,7 @@ export class ListTipoContactoComponent implements OnInit {
   }
 
   loadData(): void {
-    this.personaService.get('tipo_contacto/?limit=0').subscribe(res => {
+    this.enteService.get('tipo_contacto/?limit=0').subscribe(res => {
       if (res !== null) {
         const data = <Array<any>>res;
         this.source.load(data);
@@ -130,7 +130,7 @@ export class ListTipoContactoComponent implements OnInit {
     .then((willDelete) => {
 
       if (willDelete.value) {
-        this.personaService.delete('tipo_contacto/', event.data).subscribe(res => {
+        this.enteService.delete('tipo_contacto/', event.data).subscribe(res => {
           if (res !== null) {
             this.loadData();
             this.showToast('info', 'deleted', 'TipoContacto deleted');

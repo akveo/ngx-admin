@@ -12,9 +12,6 @@ const routes: Routes = [{
   children: [{
     path: 'list-genero',
     component: ListGeneroComponent,
-  }, {
-    path: 'crud-genero',
-    component: CrudGeneroComponent,
   }],
 }];
 
