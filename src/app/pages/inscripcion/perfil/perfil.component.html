@@ -1,7 +1,14 @@
 <nb-card>
   <nb-card-body >
     <div>
-        <h1>Perfil</h1>
+        <div class="row">
+            <div class="col-md-11">
+                <h1>Perfil</h1>
+            </div>
+            <div class="col-md-1" align="right">
+              <button class="btn btn-danger btn-icon input-group-text btn-tn" (click)="editar($event,'salir_perfil')">X</button>
+            </div>
+          </div>
     </div>
 
     <div class="row">

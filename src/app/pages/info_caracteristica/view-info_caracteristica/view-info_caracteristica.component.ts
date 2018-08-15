@@ -29,7 +29,7 @@ export class ViewInfoCaracteristicaComponent implements OnInit {
   public loadInfoCaracteristica(): void {
     if (this.info_caracteristica_id !== undefined && this.info_caracteristica_id !== 0 &&
       this.info_caracteristica_id.toString() !== '') {
-      this.campusMidService.get('/persona/DatosComplementarios/' + this.info_caracteristica_id)
+      this.campusMidService.get('/persona/DatosComplementarios/' + this.info_caracteristica_id + '?query=TipoRelacionUbicacionEnte.CodigoAbreviacion:LN')
         .subscribe(res => {
           const r = <any>res;
           if (r !== null && r.Type !== 'error') {
