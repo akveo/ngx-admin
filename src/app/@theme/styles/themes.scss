@@ -14,9 +14,6 @@ $secundary-color-theme: #f2f2f2;
 $nb-enabled-themes: (default, cosmic, corporate);
 
 $nb-themes: nb-register-theme((
-
-
-
   // footer
   footer-fg: #fff,
   footer-bg: #252525,
@@ -97,8 +94,8 @@ $nb-themes: nb-register-theme((
   footer-shadow: none,
 
 
-  switcher-background: #ebeff5,
-  switcher-background-percentage: 50%,
+  switcher-background: $primary-color-theme,
+  switcher-background-percentage: 14%,
   drops-icon-line-gadient: -webkit-linear-gradient(#01dbb5, #0bbb79),
 ), default, default);
 
@@ -136,12 +133,16 @@ $nb-themes: nb-register-theme((
   font-size: 0.9rem,
   margin: 1rem,
 
-  switcher-background: #4e41a5,
+  switcher-background: #554db3,
   switcher-background-percentage: 14%,
   drops-icon-line-gadient: -webkit-linear-gradient(#a258fe, #7958fa),
 ), cosmic, cosmic);
 
 $nb-themes: nb-register-theme((
+    // footer
+    footer-fg: #fff,
+    footer-bg: #252525,
+    footer-height: auto,
   // app wise variables for each theme
   sidebar-header-gap: 2rem,
   sidebar-header-height: initial,
@@ -150,7 +151,37 @@ $nb-themes: nb-register-theme((
   font-main: Roboto,
   font-secondary: Exo,
 
-  switcher-background: #2b2d34,
+  switcher-background: #000,
   switcher-background-percentage: 14%,
   drops-icon-line-gadient: -webkit-linear-gradient(#e9e8eb, #a7a2be),
+  sidebar-bg: #212121,
+  sidebar-fg: $secundary-color-theme,
+  sidebar-shadow: none,
+  sidebar-padding: 0.3rem,
+  sidebar-margin-top: 0,
+  tabs-fg: gray,
+
+  color-fg: #777777,
+  menu-icon-color: $secundary-color-theme,
+  card-shadow: 0 2px 8px 0 rgba(43, 43, 43, 0.494),
+
+  menu-bg: #000,
+  menu-fg: $secundary-color-theme,
+  menu-active-bg: #f2f2f2,
+  menu-active-fg: #212121,
+  menu-font-size: 0.8rem,
+  menu-item-separator: #212121,
+
+  menu-submenu-bg: #000,
+  menu-submenu-fg: $secundary-color-theme,
+  menu-submenu-active-bg: #f2f2f2,
+  menu-submenu-active-fg: $primary-color-theme,
+  menu-submenu-item-border-width: 0,
+  menu-submenu-item-padding: none,
+  menu-submenu-item-container-padding: none,
+  menu-submenu-padding: none,
+  menu-submenu-item-border-radius: 0,
+  menu-icon-font-size: 1.5rem,
+  scrollbar-fg: #21212100,
+  scrollbar-bg: #fff,
 ), corporate, corporate);

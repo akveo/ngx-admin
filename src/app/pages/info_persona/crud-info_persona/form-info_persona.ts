@@ -103,7 +103,7 @@ export let FORM_INFO_PERSONA = {
             placeholder_i18n: 'soporte_documento',
             requerido: false,
             tipo: 'pdf',
-            tipoDocumento: 1,
+            tipoDocumento: 2,
             formatos: 'pdf',
             url: '',
             tamanoMaximo: 2,
