@@ -25,6 +25,7 @@ export class CrudExperienciaLaboralComponent implements OnInit {
   info_experiencia_laboral_id: number;
   organizacion: Organizacion;
   ente_id: number;
+  soporte: any;
 
   @Input('info_experiencia_laboral_id')
   set name(info_experiencia_laboral_id: number) {
@@ -96,12 +97,34 @@ export class CrudExperienciaLaboralComponent implements OnInit {
       this.campusMidService.get('experiencia_laboral/' + this.info_experiencia_laboral_id)
         .subscribe(res => {
           if (res !== null) {
-            this.info_experiencia_laboral = <InfoExperienciaLaboral>res;
-            this.enteService.get('identificacion/?query=Ente.Id:' + this.info_experiencia_laboral.Organizacion + ',TipoIdentificacion.Id:5').subscribe(r => {
-              if (r !== null) {
-                this.searchOrganizacion(r[0].NumeroIdentificacion);
-              }
-            });
+            const temp = <any>res;
+            const files = []
+            if (temp.Soporte + '' !== '0') {
+              files.push({ Id: temp.Soporte, key: 'Soporte' });
+              this.nuxeoService.getDocumentoById$(files, this.documentoService)
+                .subscribe(response => {
+                  const filesResponse = <any>response;
+                  if (Object.keys(filesResponse).length === files.length) {
+                    this.info_experiencia_laboral = <any>res;
+                    this.soporte = this.info_experiencia_laboral.Soporte;
+                    this.info_experiencia_laboral.Soporte = filesResponse['Soporte'] + '';
+                    console.info(this.info_experiencia_laboral);
+                    this.enteService.get('identificacion/?query=Ente.Id:' + this.info_experiencia_laboral.Organizacion + ',TipoIdentificacion.Id:5').subscribe(r => {
+                      if (r !== null) {
+                        this.searchOrganizacion(r[0].NumeroIdentificacion);
+                      }
+                    });
+                  }
+                })
+            } else {
+              this.info_experiencia_laboral = <any>res;
+              this.enteService.get('identificacion/?query=Ente.Id:' + this.info_experiencia_laboral.Organizacion + ',TipoIdentificacion.Id:5').subscribe(r => {
+                if (r !== null) {
+                  this.searchOrganizacion(r[0].NumeroIdentificacion);
+                }
+              });
+            }
+
           }
         });
     } else {
@@ -128,17 +151,38 @@ export class CrudExperienciaLaboralComponent implements OnInit {
           this.info_experiencia_laboral.Id = this.info_experiencia_laboral_id;
           console.info(this.info_experiencia_laboral);
           const files = [];
-          if (this.info_experiencia_laboral.Soportes.file !== undefined) {
-            files.push({ file: this.info_experiencia_laboral.Soportes.file, documento: this.info_experiencia_laboral.Soportes, key: 'SoporteDocumento' });
+          if (this.info_experiencia_laboral.Soporte.file !== undefined) {
+            files.push({ file: this.info_experiencia_laboral.Soporte.file, documento: this.soporte, key: 'Soporte' });
           }
-          // this.experienciaService.put('experiencia_laboral', this.info_experiencia_laboral)
-          //   .subscribe(res => {
-          //     this.loadInfoExperienciaLaboral();
-          //     this.eventChange.emit(true);
-          //     this.showToast('info', this.translate.instant('GLOBAL.actualizar'),
-          //       this.translate.instant('GLOBAL.experiencia_laboral') + ' ' +
-          //       this.translate.instant('GLOBAL.confirmarActualizar'));
-          //    });
+          if (files.length !== 0) {
+            this.nuxeoService.updateDocument$(files, this.documentoService)
+              .subscribe(response => {
+                if (Object.keys(response).length === files.length) {
+                  const documentos_actualizados = <any>response;
+                  this.info_experiencia_laboral.Soporte = this.soporte;
+                  this.experienciaService.put('experiencia_laboral', this.info_experiencia_laboral)
+                    .subscribe(res => {
+                      if (documentos_actualizados['Soporte'] !== undefined) {
+                        this.info_experiencia_laboral.Soporte = documentos_actualizados['Soporte'].url + '';
+                      }
+                      this.loadInfoExperienciaLaboral();
+                      this.eventChange.emit(true);
+                      this.showToast('info', this.translate.instant('GLOBAL.actualizar'),
+                        this.translate.instant('GLOBAL.experiencia_laboral') + ' ' +
+                        this.translate.instant('GLOBAL.confirmarActualizar'));
+                    });
+                }
+              });
+          } else {
+            this.experienciaService.put('experiencia_laboral', this.info_experiencia_laboral)
+              .subscribe(res => {
+                this.loadInfoExperienciaLaboral();
+                this.eventChange.emit(true);
+                this.showToast('info', this.translate.instant('GLOBAL.actualizar'),
+                  this.translate.instant('GLOBAL.experiencia_laboral') + ' ' +
+                  this.translate.instant('GLOBAL.confirmarActualizar'));
+              });
+          }
         }
       });
   }
