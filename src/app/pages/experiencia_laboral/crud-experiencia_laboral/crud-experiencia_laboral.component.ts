@@ -2,7 +2,6 @@ import { EnteService } from './../../../@core/data/ente.service';
 import { CampusMidService } from './../../../@core/data/campus_mid.service';
 import { Organizacion } from './../../../@core/data/models/organizacion';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { InfoExperienciaLaboral } from './../../../@core/data/models/info_experiencia_laboral';
 import { FORM_EXPERIENCIA_LABORAL } from './form-experiencia_laboral';
 import { ToasterService, ToasterConfig, Toast, BodyOutputType } from 'angular2-toaster';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
@@ -70,7 +69,8 @@ export class CrudExperienciaLaboralComponent implements OnInit {
     // this.formInfoExperienciaLaboral.titulo = this.translate.instant('GLOBAL.experiencia_laboral');
     this.formInfoExperienciaLaboral.btn = this.translate.instant('GLOBAL.guardar');
     for (let i = 0; i < this.formInfoExperienciaLaboral.campos.length; i++) {
-      this.formInfoExperienciaLaboral.campos[i].label = this.translate.instant('GLOBAL.' + this.formInfoExperienciaLaboral.campos[i].label_i18n);
+      this.formInfoExperienciaLaboral.campos[i].label = this.translate.instant('GLOBAL.' +
+        this.formInfoExperienciaLaboral.campos[i].label_i18n);
       this.formInfoExperienciaLaboral.campos[i].placeholder = this.translate.instant('GLOBAL.placeholder_' +
         this.formInfoExperienciaLaboral.campos[i].label_i18n);
     }
@@ -109,20 +109,22 @@ export class CrudExperienciaLaboralComponent implements OnInit {
                     this.soporte = this.info_experiencia_laboral.Soporte;
                     this.info_experiencia_laboral.Soporte = filesResponse['Soporte'] + '';
                     console.info(this.info_experiencia_laboral);
-                    this.enteService.get('identificacion/?query=Ente.Id:' + this.info_experiencia_laboral.Organizacion + ',TipoIdentificacion.Id:5').subscribe(r => {
-                      if (r !== null) {
-                        this.searchOrganizacion(r[0].NumeroIdentificacion);
-                      }
-                    });
+                    this.enteService.get('identificacion/?query=Ente.Id:' +
+                      this.info_experiencia_laboral.Organizacion + ',TipoIdentificacion.Id:5').subscribe(r => {
+                        if (r !== null) {
+                          this.searchOrganizacion(r[0].NumeroIdentificacion);
+                        }
+                      });
                   }
                 })
             } else {
               this.info_experiencia_laboral = <any>res;
-              this.enteService.get('identificacion/?query=Ente.Id:' + this.info_experiencia_laboral.Organizacion + ',TipoIdentificacion.Id:5').subscribe(r => {
-                if (r !== null) {
-                  this.searchOrganizacion(r[0].NumeroIdentificacion);
-                }
-              });
+              this.enteService.get('identificacion/?query=Ente.Id:' +
+                this.info_experiencia_laboral.Organizacion + ',TipoIdentificacion.Id:5').subscribe(r => {
+                  if (r !== null) {
+                    this.searchOrganizacion(r[0].NumeroIdentificacion);
+                  }
+                });
             }
 
           }
