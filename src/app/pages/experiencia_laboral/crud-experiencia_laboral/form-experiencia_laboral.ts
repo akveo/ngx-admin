@@ -148,7 +148,7 @@ export let FORM_EXPERIENCIA_LABORAL = {
       etiqueta: 'file',
       claseGrid: 'col-lg-6 col-md-6 col-sm-12 col-xs-12',
       clase: 'form-control',
-      nombre: 'SoporteDocumento',
+      nombre: 'Soporte',
       label_i18n: 'soporte_documento',
       placeholder_i18n: 'soporte_documento',
       requerido: false,

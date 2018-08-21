@@ -134,7 +134,6 @@ export class CrudInfoPersonaComponent implements OnInit {
             }
             this.nuxeoService.getDocumentoById$(files, this.documentoService)
               .subscribe(response => {
-                console.info(temp);
                 const filesResponse = <any>response;
                 if (Object.keys(filesResponse).length === files.length) {
                   this.info_info_persona = temp;
