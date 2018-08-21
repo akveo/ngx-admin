@@ -93,7 +93,7 @@ export class CrudFormacionAcademicaComponent implements OnInit {
     this.programaService.get('programa_academico')
       .subscribe(res => {
         if (res !== null) {
-          let r = <any>res;
+          const r = <any>res;
           this.formInfoFormacionAcademica.campos[this.getIndexForm('ProgramaAcademico')].opciones = r;
           console.info(this.formInfoFormacionAcademica.campos[this.getIndexForm('ProgramaAcademico')]);
         }
