@@ -53,6 +53,26 @@ const routes: Routes = [{
     loadChildren: './tipo_contacto/tipo_contacto.module#TipoContactoModule',
     },
     {
+    path: 'titulacion',
+    loadChildren: './titulacion/titulacion.module#TitulacionModule',
+    },
+    {
+    path: 'nivel_formacion',
+    loadChildren: './nivel_formacion/nivel_formacion.module#NivelFormacionModule',
+    },
+    {
+    path: 'metodologia',
+    loadChildren: './metodologia/metodologia.module#MetodologiaModule',
+    },
+    {
+    path: 'programa_academico',
+    loadChildren: './programa_academico/programa_academico.module#ProgramaAcademicoModule',
+    },
+    {
+    path: 'enfasis',
+    loadChildren: './enfasis/enfasis.module#EnfasisModule',
+    },
+    {
     path: '',
     redirectTo: 'dashboard',
     pathMatch: 'full',

@@ -14,7 +14,12 @@
       "estado_civil": "Estado civil",
       "tipo_discapacidad": "Tipo de discapacidad",
       "tipo_lugar": "Tipo de lugar",
-      "tipo_contacto": "Tipo de contacto"
+      "tipo_contacto": "Tipo de contacto",
+      "enfasis": "Enfasis",
+      "programa_academico": "Programas academicos",
+      "metodologia": "Metodologias",
+      "nivel_formacion": "Niveles de formacion",
+      "titulacion": "Titulaciones"
     },
     "genero": {
       "genero": "Género",
@@ -291,6 +296,20 @@
     "fecha_fin": "Fecha Fin",
     "placeholder_fecha_fin": "E.g. 24/08/2018",
     "pais_empresa": "Pais empresa",
-    "placeholder_pais_empresa": "Ej. Colombia"
+    "placeholder_pais_empresa": "Ej. Colombia",
+    "programa_academico": "Programa Academico",
+    "placeholder_programa_academico": "ej: Sistemas",
+    "codigo_snies": "Código SNIES",
+    "placeholder_codigo_snies": "ej: 45648",
+    "institucion": "Institucion",
+    "placeholder_institucion": "ej: Universidad Distrital",
+    "duracion": "Duracion",
+    "placeholder_duracion": "ej: 30",
+    "unidad_tiempo": "Unidad de tiempo",
+    "placeholder_unidad_tiempo": "ej: Dias",
+    "enfasis": "Enfasis",
+    "placeholder_enfasis": "ej: Ambiental",
+    "titulacion": "Titulacion",
+    "placeholder_titulacion": "ej: Ingeniero"
   }
 }

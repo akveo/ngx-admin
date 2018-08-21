@@ -1,0 +1,26 @@
+<div class="col-md-12 col-lg-12 ">
+  <nb-card>
+    <nb-card-body>
+        <toaster-container [toasterconfig]="config"></toaster-container>
+        <nb-tabset fullWidth (changeTab)="selectTab($event)">
+            <nb-tab tabTitle="{{ 'GLOBAL.lista' | translate }}" [active]="!cambiotab">
+              <br />
+                  <ng2-smart-table [settings]="settings" [source]="source" (delete)="onDelete($event)" (rowSelect)="itemselec($event)" (edit)="onEdit($event)" (create)="onCreate($event)">
+                    </ng2-smart-table>
+
+
+              <!--button (click)="activetab()" >cambiar</button-->
+            </nb-tab>
+            <nb-tab tabTitle="{{ 'GLOBAL.formulario' | translate }}" [active]="cambiotab">
+              <ngx-crud-titulacion [titulacion_id]="uid" (eventChange)="onChange($event)"></ngx-crud-titulacion>
+              <button (click)="activetab()" class="btn btn-info btn-sm"> <i class="nb-arrow-dropleft"></i> {{ 'GLOBAL.regresar' | translate }}</button>
+            </nb-tab>
+          </nb-tabset>
+    </nb-card-body>
+  </nb-card>
+</div>
+
+
+
+
+

@@ -14,7 +14,12 @@
       "estado_civil": "Civil status",
       "tipo_discapacidad": "Impairment types",
       "tipo_lugar": "Place type",
-      "tipo_contacto": "Contact type"
+      "tipo_contacto": "Contact type",
+      "enfasis": "Emphasis",
+      "programa_academico": "Academic program",
+      "metodologia": "Methodology",
+      "nivel_formacion": "Training level",
+      "titulacion": "Certification"
     },
     "genero": {
       "genero": "Gender",
@@ -291,6 +296,20 @@
     "fecha_fin": "End date",
     "placeholder_fecha_fin": "E.g. 24/08/2018",
     "pais_empresa": "Organization country",
-    "placeholder_pais_empresa": "E.g. Colombia"
+    "placeholder_pais_empresa": "E.g. Colombia",
+    "programa_academico": "Program",
+    "placeholder_programa_academico": "ej: Engineer",
+    "codigo_snies": "SNIES Code",
+    "placeholder_codigo_snies": "ej: 4567",
+    "institucion": "Institution",
+    "placeholder_institucion": "ej: Universidad Distrital",
+    "duracion": "Duration",
+    "placeholder_duracion": "ej: 30",
+    "unidad_tiempo": "Time unit",
+    "placeholder_unidad_tiempo": "ej: Year",
+    "enfasis": "Emphasis",
+    "placeholder_enfasis": "ej: Software",
+    "titulacion": "Certification",
+    "placeholder_titulacion": "ej: Engineer"
   }
 }
