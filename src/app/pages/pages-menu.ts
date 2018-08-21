@@ -82,6 +82,29 @@ export const MENU_ITEMS: MenuItem[] = [
         link: '/pages/enfasis/list-enfasis',
         key: 'enfasis',
       },
+      {
+        title: 'Lista Estado Admision',
+        link: '/pages/estado_admision/list-estado_admision',
+        key: 'estado_admision',
+      },
+      {
+        title: 'Lista Linea Investigacion',
+        link: '/pages/linea_investigacion/list-linea_investigacion',
+        key: 'linea_investigacion',
+      },
+    ],
+  },
+  {
+    title: 'Admision',
+    icon: 'nb-compose',
+    link: '/pages/admision',
+    key: 'admision',
+    children: [
+      {
+        title: 'Lista Admision',
+        link: '/pages/admision/list-admision',
+        key: 'admision',
+      },
     ],
   },
   /*{

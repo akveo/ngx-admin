@@ -19,7 +19,12 @@
       "programa_academico": "Academic program",
       "metodologia": "Methodology",
       "nivel_formacion": "Training level",
-      "titulacion": "Certification"
+      "titulacion": "Certification",
+      "linea_investigacion": "Line of research",
+      "estado_admision": "Admission States"
+    },
+    "admision": {
+      "admision": "Admissions"
     },
     "genero": {
       "genero": "Gender",
@@ -310,6 +315,24 @@
     "enfasis": "Emphasis",
     "placeholder_enfasis": "ej: Software",
     "titulacion": "Certification",
-    "placeholder_titulacion": "ej: Engineer"
+    "placeholder_titulacion": "ej: Engineer",
+    "estado_admision": "Admission status",
+    "placeholder_estado_admision": "ej: Active",
+    "linea_investigacion": "Line of research",
+    "placeholder_linea_investigacion": "ej: Ciencias ",
+    "grupo_investigacion": "Investigation Group",
+    "placeholder_grupo_investigacion": "ej: OAS",
+    "admision": "Admission",
+    "placeholder_admision": "ej: admisiones",
+    "aspirante": "Candidate",
+    "placeholder_aspirante": "ej: Jose",
+    "recibo_matricula": "Registration receipt",
+    "placeholder_recibo_matricula": "ej: 456",
+    "recibo_inscripcion": "Registration receipt",
+    "placeholder_recibo_inscripcion": "ej: 4654",
+    "periodo": "Period",
+    "placeholder_periodo": "ej: 10",
+    "propuesta": "Proposal",
+    "placeholder_propuesta": "ej: ..."
   }
 }

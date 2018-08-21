@@ -11,6 +11,7 @@ export const Config = {
         EXPERIENCIASERVICE: 'http://localhost:8099/v1/',
         ENTE_SERVICE: 'http://localhost:8096/v1/',
         CAMPUS_MID: 'http://localhost:8095/v1/',
+        ADMISIONES_SERVICE: 'http://localhost:8080/v1/',
         PROGRAMA_ACADEMICO_SERVICE: 'http://localhost:8101/v1/',
         CONF_MENU_SERVICE: 'http://10.20.0.254/configuracion_api/v1/menu_opcion_padre/ArbolMenus/',
         TOKEN: {
@@ -35,6 +36,7 @@ export const Config = {
         EXPERIENCIASERVICE: 'http://localhost:8099/v1/',
         ENTE_SERVICE: 'http://pruebasapi.intranetoas.udistrital.edu.co:8096/v1/',
         CAMPUS_MID: 'http://pruebasapi.intranetoas.udistrital.edu.co:8095/v1/',
+        ADMISIONES_SERVICE: 'http://localhost:8080/v1/',
         PROGRAMA_ACADEMICO_SERVICE: 'http://localhost:8101/v1/',
         CONF_MENU_SERVICE: 'http://10.20.0.254/configuracion_api/v1/menu_opcion_padre/ArbolMenus/',
         TOKEN: {
@@ -60,6 +62,7 @@ export const Config = {
         ORGANIZACION_SERVICE: 'https://autenticacion.udistrital.edu.co:8244/organizacion_crud/v1/',
         EXPERIENCIASERVICE: 'https://autenticacion.udistrital.edu.co:8244/experiencia_academica_crud/v1/',
         CAMPUS_MID: 'https://autenticacion.udistrital.edu.co:8244/campus_mid/v1/',
+        ADMISIONES_SERVICE: 'http://localhost:8080/v1/',
         PROGRAMA_ACADEMICO_SERVICE: 'http://localhost:8101/v1/',
         CONF_MENU_SERVICE: 'https://autenticacion.udistrital.edu.co:8244/configuracion_crud_api/v1/menu_opcion_padre/ArbolMenus/',
         TOKEN: {
@@ -84,6 +87,7 @@ export const Config = {
         ORGANIZACION_SERVICE: 'http://localhost:8097/v1/',
         EXPERIENCIASERVICE: 'http://localhost:8099/v1/',
         CAMPUS_MID: 'https://autenticacion.portaloas.udistrital.edu.co/api/campus_mid_service/v1/',
+        ADMISIONES_SERVICE: 'http://localhost:8080/v1/',
         PROGRAMA_ACADEMICO_SERVICE: 'http://localhost:8101/v1/',
         CONF_MENU_SERVICE: 'https://autenticacion.portaloas.udistrital.edu.co/api/configuracion_crud_api/v1/menu_opcion_padre/ArbolMenus/',
         TOKEN: {

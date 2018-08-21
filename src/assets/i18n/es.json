@@ -19,7 +19,12 @@
       "programa_academico": "Programas academicos",
       "metodologia": "Metodologias",
       "nivel_formacion": "Niveles de formacion",
-      "titulacion": "Titulaciones"
+      "titulacion": "Titulaciones",
+      "linea_investigacion": "Lineas de investigacion",
+      "estado_admision": "Estados admision"
+    },
+    "admision": {
+      "admision": "Admisiones"
     },
     "genero": {
       "genero": "Género",
@@ -297,19 +302,23 @@
     "placeholder_fecha_fin": "E.g. 24/08/2018",
     "pais_empresa": "Pais empresa",
     "placeholder_pais_empresa": "Ej. Colombia",
-    "programa_academico": "Programa Academico",
-    "placeholder_programa_academico": "ej: Sistemas",
-    "codigo_snies": "Código SNIES",
-    "placeholder_codigo_snies": "ej: 45648",
-    "institucion": "Institucion",
-    "placeholder_institucion": "ej: Universidad Distrital",
-    "duracion": "Duracion",
-    "placeholder_duracion": "ej: 30",
-    "unidad_tiempo": "Unidad de tiempo",
-    "placeholder_unidad_tiempo": "ej: Dias",
-    "enfasis": "Enfasis",
-    "placeholder_enfasis": "ej: Ambiental",
-    "titulacion": "Titulacion",
-    "placeholder_titulacion": "ej: Ingeniero"
+    "estado_admision": "Estado admision",
+    "placeholder_estado_admision": "ej: estado admision",
+    "linea_investigacion": "Linea de investigacion",
+    "placeholder_linea_investigacion": "ej: Ciencias ",
+    "grupo_investigacion": "Grupo de investigacion",
+    "placeholder_grupo_investigacion": "ej: OAS",
+    "admision": "Admision",
+    "placeholder_admision": "ej: admisiones",
+    "aspirante": "Aspirante",
+    "placeholder_aspirante": "ej: Jose",
+    "recibo_matricula": "Recibo de matricula",
+    "placeholder_recibo_matricula": "ej: 456",
+    "recibo_inscripcion": "Recibo de inscripcion",
+    "placeholder_recibo_inscripcion": "ej: 4654",
+    "periodo": "Periodo",
+    "placeholder_periodo": "ej: 10",
+    "propuesta": "Propuesta",
+    "placeholder_propuesta": "ej: ..."
   }
 }

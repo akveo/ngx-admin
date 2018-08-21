@@ -73,6 +73,18 @@ const routes: Routes = [{
     loadChildren: './enfasis/enfasis.module#EnfasisModule',
     },
     {
+    path: 'estado_admision',
+    loadChildren: './estado_admision/estado_admision.module#EstadoAdmisionModule',
+    },
+    {
+    path: 'linea_investigacion',
+    loadChildren: './linea_investigacion/linea_investigacion.module#LineaInvestigacionModule',
+    },
+    {
+    path: 'admision',
+    loadChildren: './admision/admision.module#AdmisionModule',
+    },
+    {
     path: '',
     redirectTo: 'dashboard',
     pathMatch: 'full',
