@@ -49,14 +49,14 @@ export class ListFormacionAcademicaComponent implements OnInit {
             return value;
           },
         },
-        AnioInicio: {
-          title: this.translate.instant('GLOBAL.anio_inicio'),
+        FechaInicio: {
+          title: this.translate.instant('GLOBAL.fecha_inicio'),
           valuePrepareFunction: (value) => {
             return value;
           },
         },
-        AnioGraduacion: {
-          title: this.translate.instant('GLOBAL.anio_graduacion'),
+        FechaFinalizacion: {
+          title: this.translate.instant('GLOBAL.fecha_fin'),
           valuePrepareFunction: (value) => {
             return value;
           },
@@ -67,26 +67,8 @@ export class ListFormacionAcademicaComponent implements OnInit {
             return value;
           },
         },
-        CiudadUniversidad: {
-          title: this.translate.instant('GLOBAL.ciudad_universidad'),
-          valuePrepareFunction: (value) => {
-            return value;
-          },
-        },
         NombreUniversidad: {
           title: this.translate.instant('GLOBAL.nombre_universidad'),
-          valuePrepareFunction: (value) => {
-            return value;
-          },
-        },
-        Modalidad: {
-          title: this.translate.instant('GLOBAL.modalidad'),
-          valuePrepareFunction: (value) => {
-            return value;
-          },
-        },
-        TituloObtenido: {
-          title: this.translate.instant('GLOBAL.titulo_obtenido'),
           valuePrepareFunction: (value) => {
             return value;
           },

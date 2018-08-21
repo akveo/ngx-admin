@@ -12,7 +12,7 @@ const httpOptions = {
 }
 
 
-const path = GENERAL.ENTORNO.CAMPUS_MID;
+const path = GENERAL.ENTORNO.PERSONA_SERVICE;
 
 @Injectable()
 export class UserService {
@@ -26,7 +26,7 @@ export class UserService {
       this.http.get(path + 'persona/?query=Usuario:' + payload.sub, httpOptions)
         .subscribe(res => {
           if (res !== null) {
-            this.users = res;
+            this.users = res[0];
           }
         });
     }
