@@ -262,7 +262,6 @@ export class CrudInfoPersonaComponent implements OnInit {
                   .subscribe(res => {
                     console.info(res);
                     this.info_info_persona = <InfoPersona>res;
-                    console.info("algo anda mal");
                     this.loadInfoPersona();
                     this.loading = false;
                     this.eventChange.emit(true);

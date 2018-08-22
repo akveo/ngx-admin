@@ -315,7 +315,7 @@ export class CrudFormacionAcademicaComponent implements OnInit {
         Documento: event.data.InfoFormacionAcademica.Documento,
       }
       console.info(formacion);
-      const Organizacion = this.organizacion.Ente ? this.organizacion.Ente.Id : null;
+      const organizacion = this.organizacion.Ente ? this.organizacion.Ente.Id : null;
 
       const org = {
         NumeroIdentificacion: event.data.InfoFormacionAcademica.Nit,
@@ -344,7 +344,7 @@ export class CrudFormacionAcademicaComponent implements OnInit {
       }
 
       if (this.info_formacion_academica === undefined) {
-        if (Organizacion !== null) {
+        if (organizacion !== null) {
           this.createInfoFormacionAcademica(formacion);
         } else {
           this.createOrganizacion(org, formacion);

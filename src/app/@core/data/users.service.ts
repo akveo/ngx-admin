@@ -1,5 +1,5 @@
 
-import { of as observableOf, Observable, Subject } from 'rxjs';
+import { Subject } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { GENERAL } from './../../app-config';
@@ -29,17 +29,17 @@ export class UserService {
           if (res !== null) {
             this.user = res[0];
             this.user$.next(this.user);
-            window.localStorage.setItem('ente',res[0].Ente);
+            window.localStorage.setItem('ente', res[0].Ente);
           }
         });
     }
   }
 
-  public getEnte(){
-    return parseInt(window.localStorage.getItem('ente'));
+  public getEnte(): number {
+    return parseInt(window.localStorage.getItem('ente'), 10);
   }
 
-  public getUser(){
+  public getUser() {
     return this.user$.asObservable();
   }
 }

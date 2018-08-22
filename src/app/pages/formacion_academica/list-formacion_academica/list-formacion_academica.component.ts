@@ -3,6 +3,7 @@ import { LocalDataSource } from 'ng2-smart-table';
 import { ToasterService, ToasterConfig, Toast, BodyOutputType } from 'angular2-toaster';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import { FormacionAcademicaService } from '../../../@core/data/formacion_academica.service';
+import { UserService } from '../../../@core/data/users.service';
 
 import Swal from 'sweetalert2';
 import 'style-loader!angular2-toaster/toaster.css';
@@ -19,9 +20,10 @@ export class ListFormacionAcademicaComponent implements OnInit {
   settings: any;
   source: LocalDataSource = new LocalDataSource();
 
-  constructor(private translate: TranslateService, 
+  constructor(private translate: TranslateService,
     private toasterService: ToasterService,
-  private formacionAcademica: FormacionAcademicaService) {
+    private userService:UserService,
+    private formacionAcademica: FormacionAcademicaService) {
     this.loadData();
     this.cargarCampos();
     this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
@@ -92,7 +94,8 @@ export class ListFormacionAcademicaComponent implements OnInit {
   }
 
   loadData(): void {
-    this.formacionAcademica.get('formacion_academica').subscribe(res => {
+    this.formacionAcademica.get('formacion_academica/?query=Persona:' + this.userService.getEnte())
+    .subscribe(res => {
       if (res !== null) {
         const data = <Array<any>>res;
         this.source.load(data);
@@ -151,13 +154,13 @@ export class ListFormacionAcademicaComponent implements OnInit {
         if (willDelete.value) {
           /** this.Service.delete('', event.data).subscribe(res => {
             if (res !== null) { **/
-              this.loadData();
-              this.showToast('info', this.translate.instant('GLOBAL.eliminar'),
-              this.translate.instant('GLOBAL.confirmarEliminar'));
-            /** }
-          }); **/
+          this.loadData();
+          this.showToast('info', this.translate.instant('GLOBAL.eliminar'),
+            this.translate.instant('GLOBAL.confirmarEliminar'));
+          /** }
+        }); **/
         }
-    });
+      });
   }
 
   private showToast(type: string, title: string, body: string) {
