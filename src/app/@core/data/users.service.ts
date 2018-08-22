@@ -1,5 +1,5 @@
 
-import { of as observableOf, Observable } from 'rxjs';
+import { of as observableOf, Observable, Subject } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { GENERAL } from './../../app-config';
@@ -17,7 +17,8 @@ const path = GENERAL.ENTORNO.PERSONA_SERVICE;
 @Injectable()
 export class UserService {
 
-  private users = {};
+  private user$ = new Subject<[object]>();
+  public user: any;
 
   constructor(private http: HttpClient) {
     if (window.localStorage.getItem('id_token') !== null && window.localStorage.getItem('id_token') !== undefined) {
@@ -26,14 +27,19 @@ export class UserService {
       this.http.get(path + 'persona/?query=Usuario:' + payload.sub, httpOptions)
         .subscribe(res => {
           if (res !== null) {
-            this.users = res[0];
+            this.user = res[0];
+            this.user$.next(this.user);
+            window.localStorage.setItem('ente',res[0].Ente);
           }
         });
     }
   }
 
-  getUser(): Observable<any> {
-    return observableOf(this.users);
+  public getEnte(){
+    return parseInt(window.localStorage.getItem('ente'));
   }
 
+  public getUser(){
+    return this.user$.asObservable();
+  }
 }

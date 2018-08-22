@@ -22,7 +22,7 @@ export class CrudFormacionAcademicaComponent implements OnInit {
   config: ToasterConfig;
   info_formacion_academica_id: number;
   organizacion: any;
-  user: any;
+  ente: number;
 
   @Input('info_formacion_academica_id')
   set name(info_formacion_academica_id: number) {
@@ -52,11 +52,7 @@ export class CrudFormacionAcademicaComponent implements OnInit {
     });
     this.loadOptionsPais();
     this.loadInfoPostgrados();
-    this.users.getUser()
-      .subscribe(res => {
-        this.user = res;
-        console.info(this.user);
-      })
+    this.ente = this.users.getEnte();
   }
 
   construirForm() {
@@ -286,15 +282,20 @@ export class CrudFormacionAcademicaComponent implements OnInit {
     Swal(opt)
       .then((willDelete) => {
         if (willDelete.value) {
-          this.info_formacion_academica = <InfoFormacionAcademica>infoFormacionAcademica;
-          /** this.Service.post('/formacion/formacionacademica', this.info_formacion_academica)
+          infoFormacionAcademica.Documento = 0;
+          this.info_formacion_academica = <any>infoFormacionAcademica;
+          this.campusMidService.post('formacion/formacionacademica', this.info_formacion_academica)
             .subscribe(res => {
-              this.info_formacion_academica = <InfoFormacionAcademica>res; **/
-          this.eventChange.emit(true);
-          this.showToast('info', this.translate.instant('GLOBAL.crear'),
-            this.translate.instant('GLOBAL.formacion_academica') + ' ' +
-            this.translate.instant('GLOBAL.confirmarCrear'));
-          /** }); **/
+              const r = <any>res;
+              console.info(r);
+              if (r !== null && r.Type !== 'error') {
+                this.eventChange.emit(true);
+                this.showToast('info', this.translate.instant('GLOBAL.crear'),
+                  this.translate.instant('GLOBAL.experiencia_laboral') + ' ' +
+                  this.translate.instant('GLOBAL.confirmarCrear'));
+                this.clean = !this.clean;
+              }
+            });
         }
       });
   }
@@ -306,20 +307,20 @@ export class CrudFormacionAcademicaComponent implements OnInit {
   validarForm(event) {
     if (event.valid) {
       const formacion = {
-        Ente: this.user.Ente,
+        Ente: { Id: this.ente },
+        ProgramaAcademico: event.data.InfoFormacionAcademica.ProgramaAcademico,
         FechaInicio: event.data.InfoFormacionAcademica.FechaInicio,
         FechaFinalizacion: event.data.InfoFormacionAcademica.FechaFinalizacion,
-        Organizacion: this.organizacion.Ente ? this.organizacion.Ente.Id : null,
         DescripcionTrabajoGrado: event.data.InfoFormacionAcademica.DescripcionTrabajoGrado,
-        TituloTrabajoGrado: event.data.InfoFormacionAcademica.TituloTrabajoGrado,
         Documento: event.data.InfoFormacionAcademica.Documento,
       }
       console.info(formacion);
+      const Organizacion = this.organizacion.Ente ? this.organizacion.Ente.Id : null;
+
       const org = {
         NumeroIdentificacion: event.data.InfoFormacionAcademica.Nit,
         Direccion: event.data.InfoFormacionAcademica.Direccion,
         Pais: event.data.InfoFormacionAcademica.Pais,
-        // LugarExpedicion: ,
         Nombre: event.data.InfoFormacionAcademica.NombreEmpresa,
         TipoOrganizacion: event.data.InfoFormacionAcademica.TipoOrganizacion,
         TipoIdentificacion: {
@@ -343,7 +344,7 @@ export class CrudFormacionAcademicaComponent implements OnInit {
       }
 
       if (this.info_formacion_academica === undefined) {
-        if (formacion.Organizacion !== null) {
+        if (Organizacion !== null) {
           this.createInfoFormacionAcademica(formacion);
         } else {
           this.createOrganizacion(org, formacion);

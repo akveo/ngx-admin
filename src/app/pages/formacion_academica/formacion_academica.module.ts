@@ -8,6 +8,7 @@ import { SharedModule } from '../../shared/shared.module';
 import { CrudFormacionAcademicaComponent } from './crud-formacion_academica/crud-formacion_academica.component';
 import { ListFormacionAcademicaComponent } from './list-formacion_academica/list-formacion_academica.component';
 import { UserService } from '../../@core/data/users.service';
+import { FormacionAcademicaService } from '../../@core/data/formacion_academica.service';
 
 @NgModule({
   imports: [
@@ -23,6 +24,7 @@ import { UserService } from '../../@core/data/users.service';
   providers: [
     CampusMidService,
     UserService,
+    FormacionAcademicaService,
   ],
   exports: [
     CrudFormacionAcademicaComponent,

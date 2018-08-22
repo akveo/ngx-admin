@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { LocalDataSource } from 'ng2-smart-table';
 import { ToasterService, ToasterConfig, Toast, BodyOutputType } from 'angular2-toaster';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
+import { FormacionAcademicaService } from '../../../@core/data/formacion_academica.service';
+
 import Swal from 'sweetalert2';
 import 'style-loader!angular2-toaster/toaster.css';
 
@@ -17,7 +19,9 @@ export class ListFormacionAcademicaComponent implements OnInit {
   settings: any;
   source: LocalDataSource = new LocalDataSource();
 
-  constructor(private translate: TranslateService, private toasterService: ToasterService) {
+  constructor(private translate: TranslateService, 
+    private toasterService: ToasterService,
+  private formacionAcademica: FormacionAcademicaService) {
     this.loadData();
     this.cargarCampos();
     this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
@@ -79,12 +83,6 @@ export class ListFormacionAcademicaComponent implements OnInit {
             return value;
           },
         },
-        DescripcionTrabajoGrado: {
-          title: this.translate.instant('GLOBAL.descripcion_trabajo_grado'),
-          valuePrepareFunction: (value) => {
-            return value;
-          },
-        },
       },
     };
   }
@@ -94,12 +92,12 @@ export class ListFormacionAcademicaComponent implements OnInit {
   }
 
   loadData(): void {
-    /** this.Service.get('').subscribe(res => {
+    this.formacionAcademica.get('formacion_academica').subscribe(res => {
       if (res !== null) {
         const data = <Array<any>>res;
         this.source.load(data);
       }
-    }); **/
+    });
   }
 
   ngOnInit() {
