@@ -22,7 +22,7 @@ export class ListFormacionAcademicaComponent implements OnInit {
 
   constructor(private translate: TranslateService,
     private toasterService: ToasterService,
-    private userService:UserService,
+    private userService: UserService,
     private formacionAcademica: FormacionAcademicaService) {
     this.loadData();
     this.cargarCampos();
@@ -95,12 +95,12 @@ export class ListFormacionAcademicaComponent implements OnInit {
 
   loadData(): void {
     this.formacionAcademica.get('formacion_academica/?query=Persona:' + this.userService.getEnte())
-    .subscribe(res => {
-      if (res !== null) {
-        const data = <Array<any>>res;
-        this.source.load(data);
-      }
-    });
+      .subscribe(res => {
+        if (res !== null) {
+          const data = <Array<any>>res;
+          this.source.load(data);
+        }
+      });
   }
 
   ngOnInit() {
