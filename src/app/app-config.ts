@@ -11,7 +11,7 @@ export const Config = {
         EXPERIENCIASERVICE: 'http://localhost:8099/v1/',
         ENTE_SERVICE: 'http://localhost:8096/v1/',
         CAMPUS_MID: 'http://localhost:8095/v1/',
-        ADMISIONES_SERVICE: 'http://localhost:8080/v1/',
+        ADMISIONES_SERVICE: 'http://localhost:8887/v1/',
         PROGRAMA_ACADEMICO_SERVICE: 'http://localhost:8101/v1/',
         CONF_MENU_SERVICE: 'http://10.20.0.254/configuracion_api/v1/menu_opcion_padre/ArbolMenus/',
         TOKEN: {

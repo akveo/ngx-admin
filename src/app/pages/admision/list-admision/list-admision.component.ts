@@ -45,13 +45,6 @@ export class ListAdmisionComponent implements OnInit {
       },
       mode: 'external',
       columns: {
-        Id: {
-          title: this.translate.instant('GLOBAL.id'),
-          // type: 'number;',
-          valuePrepareFunction: (value) => {
-            return value;
-          },
-        },
         Aspirante: {
           title: this.translate.instant('GLOBAL.aspirante'),
           // type: 'number;',
@@ -66,29 +59,8 @@ export class ListAdmisionComponent implements OnInit {
             return value;
           },
         },
-        ReciboMatricula: {
-          title: this.translate.instant('GLOBAL.recibo_matricula'),
-          // type: 'number;',
-          valuePrepareFunction: (value) => {
-            return value;
-          },
-        },
-        ReciboInscripcion: {
-          title: this.translate.instant('GLOBAL.recibo_inscripcion'),
-          // type: 'number;',
-          valuePrepareFunction: (value) => {
-            return value;
-          },
-        },
         Periodo: {
           title: this.translate.instant('GLOBAL.periodo'),
-          // type: 'number;',
-          valuePrepareFunction: (value) => {
-            return value;
-          },
-        },
-        Propuesta: {
-          title: this.translate.instant('GLOBAL.propuesta'),
           // type: 'number;',
           valuePrepareFunction: (value) => {
             return value;
@@ -97,20 +69,6 @@ export class ListAdmisionComponent implements OnInit {
         EstadoAdmision: {
           title: this.translate.instant('GLOBAL.estado_admision'),
           // type: 'estado_admision;',
-          valuePrepareFunction: (value) => {
-            return value;
-          },
-        },
-        LineaInvestigacion: {
-          title: this.translate.instant('GLOBAL.linea_investigacion'),
-          // type: 'linea_investigacion;',
-          valuePrepareFunction: (value) => {
-            return value;
-          },
-        },
-        Enfasis: {
-          title: this.translate.instant('GLOBAL.enfasis'),
-          // type: 'enfasis;',
           valuePrepareFunction: (value) => {
             return value;
           },

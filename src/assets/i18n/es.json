@@ -319,6 +319,20 @@
     "periodo": "Periodo",
     "placeholder_periodo": "ej: 10",
     "propuesta": "Propuesta",
-    "placeholder_propuesta": "ej: ..."
+    "placeholder_propuesta": "ej: ...",
+    "programa_academico": "Programa",
+    "placeholder_programa_academico": "ej: Sistemas",
+    "enfasis": "Enfasis",
+    "placeholder_enfasis": "ej: Ing. Software",
+    "telefono_alternativo": "Telefono alternativo",
+    "placeholder_telefono_alternativo": "ej. 5565656",
+    "codigo_snies": "Código SNIES",
+    "placeholder_codigo_snies": "ej: 4567",
+    "institucion": "Institución",
+    "placeholder_institucion": "ej: Universidad Distrital",
+    "duracion": "Duración",
+    "placeholder_duracion": "ej: 30",
+    "unidad_tiempo": "Unidad de tiempo",
+    "placeholder_unidad_tiempo": "ej: año"
   }
 }

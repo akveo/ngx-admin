@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import { MenuItem } from './menu-item';
 import { MENU_ITEMS } from './pages-menu';
-import { HttpErrorResponse } from '@angular/common/http';
-import { MenuService } from '../@core/data/menu.service';
+// import { HttpErrorResponse } from '@angular/common/http';
+// import { MenuService } from '../@core/data/menu.service';
 import { ImplicitAutenticationService } from '../@core/utils/implicit_autentication.service';
 
 @Component({
@@ -28,16 +28,18 @@ export class PagesComponent implements OnInit {
   constructor(
     private autenticacion: ImplicitAutenticationService,
     private translate: TranslateService,
-    private menu_ws: MenuService) { }
+    // private menu_ws: MenuService
+  ) { }
 
   ngOnInit() {
     if (this.autenticacion.live()) {
       console.info(this.autenticacion.getPayload().role);
       this.rol = 'Menu%20campus';
+      this.menu = MENU_ITEMS;
     } else {
       this.rol = 'Publico';
     }
-    this.menu_ws.get(this.rol + '/campus').subscribe(
+    /* this.menu_ws.get(this.rol + '/campus').subscribe(
       data => {
         for (let i = 0; i < data.length; i++) {
           if (data[i].TipoOpcion === 'Menú') {
@@ -101,7 +103,7 @@ export class PagesComponent implements OnInit {
         this.menu = MENU_ITEMS;
         this.translateMenu();
       },
-    );
+    ); */
     this.translateMenu();
     this.translate.onLangChange.subscribe((event: LangChangeEvent) => { // Live reload
       this.translateMenu();
