@@ -7,6 +7,11 @@ import { ToasterService, ToasterConfig, Toast, BodyOutputType } from 'angular2-t
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import Swal from 'sweetalert2';
 import 'style-loader!angular2-toaster/toaster.css';
+import { CampusMidService } from '../../../@core/data/campus_mid.service';
+import { Organizacion } from '../../../@core/data/models/organizacion';
+import { ProgramaAcademicoService } from '../../../@core/data/programa_academico.service';
+import { UserService } from '../../../@core/data/users.service';
+
 
 @Component({
   selector: 'ngx-crud-formacion-academica',
@@ -16,6 +21,8 @@ import 'style-loader!angular2-toaster/toaster.css';
 export class CrudFormacionAcademicaComponent implements OnInit {
   config: ToasterConfig;
   info_formacion_academica_id: number;
+  organizacion: any;
+  ente: number;
 
   @Input('info_formacion_academica_id')
   set name(info_formacion_academica_id: number) {
@@ -34,13 +41,18 @@ export class CrudFormacionAcademicaComponent implements OnInit {
   constructor(
     private translate: TranslateService,
     private ubicacionesService: UbicacionesService,
+    private campusMidService: CampusMidService,
+    private programaService: ProgramaAcademicoService,
+    private users: UserService,
     private toasterService: ToasterService) {
     this.formInfoFormacionAcademica = FORM_FORMACION_ACADEMICA;
     this.construirForm();
     this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
       this.construirForm();
     });
-    this.loadOptionsPaisUniversidad();
+    this.loadOptionsPais();
+    this.loadInfoPostgrados();
+    this.ente = this.users.getEnte();
   }
 
   construirForm() {
@@ -62,14 +74,25 @@ export class CrudFormacionAcademicaComponent implements OnInit {
     this.loadOptionsCiudadUniversidad();
   }
 
-  loadOptionsPaisUniversidad(): void {
-    let paisUniversidad: Array<any> = [];
+  loadOptionsPais(): void {
+    let paisNacimiento: Array<any> = [];
     this.ubicacionesService.get('lugar/?query=TipoLugar.Nombre:PAIS')
       .subscribe(res => {
         if (res !== null) {
-          paisUniversidad = <Array<Lugar>>res;
+          paisNacimiento = <Array<Lugar>>res;
         }
-        this.formInfoFormacionAcademica.campos[this.getIndexForm('PaisUniversidad')].opciones = paisUniversidad;
+        this.formInfoFormacionAcademica.campos[this.getIndexForm('Pais')].opciones = paisNacimiento;
+      });
+  }
+
+  loadInfoPostgrados() {
+    this.programaService.get('programa_academico')
+      .subscribe(res => {
+        if (res !== null) {
+          const r = <any>res;
+          this.formInfoFormacionAcademica.campos[this.getIndexForm('ProgramaAcademico')].opciones = r;
+          console.info(this.formInfoFormacionAcademica.campos[this.getIndexForm('ProgramaAcademico')]);
+        }
       });
   }
 
@@ -99,8 +122,107 @@ export class CrudFormacionAcademicaComponent implements OnInit {
     }
     return 0;
   }
-  searchDoc(event) {
-    console.info(event);
+
+
+  addUbicacionOrganizacion(ubicacion: any): void {
+    this.campusMidService.post('persona/RegistrarUbicaciones', ubicacion).subscribe(res => {
+      const r = res as any;
+      if (res !== null && r.Type === 'error') {
+        this.showToast('error', 'error',
+          'ocurrio un error agregando la ubicación');
+      }
+    });
+  }
+
+  createOrganizacion(org: any, exp: any): void {
+    this.campusMidService.post('organizacion', org).subscribe(res => {
+      const identificacion = <any>res;
+      if (identificacion !== null && identificacion.Type !== 'error') {
+        exp.Organizacion = identificacion.Body.Ente.Id;
+        const ubicacion = {
+          Ente: identificacion.Body.Ente.Id,
+          Lugar: org.Pais,
+          TipoRelacionUbicacionEnte: 3,
+          Atributos: [{
+            AtributoUbicacion: 1,
+            Valor: org.Direccion,
+          }],
+        };
+        this.addUbicacionOrganizacion(ubicacion);
+        if (this.info_formacion_academica === undefined) {
+          this.createInfoFormacionAcademica(exp);
+        } else {
+          this.updateInfoFormacionAcademica(exp);
+        }
+      }
+    });
+  }
+
+  searchDoc(data) {
+    console.info(data);
+    const nit = typeof data === 'string' ? data : data.data.Nit;
+    this.campusMidService.get('organizacion/identificacion/?id=' + nit + '&tipoid=5')
+      .subscribe(res => {
+        const init = this.getIndexForm('Nit');
+        const inombre = this.getIndexForm('NombreEmpresa');
+        const idir = this.getIndexForm('Direccion');
+        const itel = this.getIndexForm('Telefono');
+        const icorreo = this.getIndexForm('Correo');
+        const ipais = this.getIndexForm('Pais');
+        this.organizacion = new Organizacion();
+        if (res !== null) {
+          this.organizacion = <Organizacion>res;
+        } else {
+          this.organizacion.NumeroIdentificacion = nit;
+          [this.formInfoFormacionAcademica.campos[inombre],
+          this.formInfoFormacionAcademica.campos[idir],
+          this.formInfoFormacionAcademica.campos[icorreo],
+          this.formInfoFormacionAcademica.campos[ipais],
+          this.formInfoFormacionAcademica.campos[itel]]
+            .forEach(element => {
+              element.valor = null;
+            });
+        }
+        this.formInfoFormacionAcademica.campos[init].valor = this.organizacion.NumeroIdentificacion;
+        this.formInfoFormacionAcademica.campos[inombre].valor = this.organizacion.Nombre;
+        if (this.organizacion.Ubicacion) {
+          this.organizacion.Ubicacion.forEach(element => {
+            // identificadores del tipo de relacion y atributo para formulario
+            if (element.AtributoUbicacion.Id === 1 && element.UbicacionEnte.TipoRelacionUbicacionEnte.Id === 3) {
+              this.formInfoFormacionAcademica.campos[idir].valor = element.Valor;
+              this.formInfoFormacionAcademica.campos[ipais].opciones.forEach(e => {
+                if (e.Id === element.UbicacionEnte.Lugar) {
+                  this.formInfoFormacionAcademica.campos[ipais].valor = e;
+                }
+              });
+            }
+          });
+        } else {
+          this.formInfoFormacionAcademica.campos[idir].valor = null;
+          this.formInfoFormacionAcademica.campos[ipais].valor = null;
+        }
+        if (this.organizacion.Contacto) {
+          this.organizacion.Contacto.forEach(element => {
+            if (element.TipoContacto.Id === 1) {
+              this.formInfoFormacionAcademica.campos[itel].valor = element.Valor;
+            }
+            if (element.TipoContacto.Id === 3) {
+              this.formInfoFormacionAcademica.campos[icorreo].valor = element.Valor;
+            }
+          });
+        } else {
+          this.formInfoFormacionAcademica.campos[itel].valor = null;
+          this.formInfoFormacionAcademica.campos[icorreo].valor = null;
+        }
+        [this.formInfoFormacionAcademica.campos[inombre],
+        this.formInfoFormacionAcademica.campos[idir],
+        this.formInfoFormacionAcademica.campos[icorreo],
+        this.formInfoFormacionAcademica.campos[ipais],
+        this.formInfoFormacionAcademica.campos[itel]]
+          .forEach(element => {
+            element.deshabilitar = element.valor ? true : false
+          });
+      });
   }
 
   public loadInfoFormacionAcademica(): void {
@@ -160,15 +282,20 @@ export class CrudFormacionAcademicaComponent implements OnInit {
     Swal(opt)
       .then((willDelete) => {
         if (willDelete.value) {
-          this.info_formacion_academica = <InfoFormacionAcademica>infoFormacionAcademica;
-          /** this.Service.post('', this.info_formacion_academica)
+          infoFormacionAcademica.Documento = 0;
+          this.info_formacion_academica = <any>infoFormacionAcademica;
+          this.campusMidService.post('formacion/formacionacademica', this.info_formacion_academica)
             .subscribe(res => {
-              this.info_formacion_academica = <InfoFormacionAcademica>res; **/
-          this.eventChange.emit(true);
-          this.showToast('info', this.translate.instant('GLOBAL.crear'),
-            this.translate.instant('GLOBAL.formacion_academica') + ' ' +
-            this.translate.instant('GLOBAL.confirmarCrear'));
-          /** }); **/
+              const r = <any>res;
+              console.info(r);
+              if (r !== null && r.Type !== 'error') {
+                this.eventChange.emit(true);
+                this.showToast('info', this.translate.instant('GLOBAL.crear'),
+                  this.translate.instant('GLOBAL.experiencia_laboral') + ' ' +
+                  this.translate.instant('GLOBAL.confirmarCrear'));
+                this.clean = !this.clean;
+              }
+            });
         }
       });
   }
@@ -179,10 +306,55 @@ export class CrudFormacionAcademicaComponent implements OnInit {
 
   validarForm(event) {
     if (event.valid) {
+      const formacion = {
+        Ente: { Id: this.ente },
+        ProgramaAcademico: event.data.InfoFormacionAcademica.ProgramaAcademico,
+        FechaInicio: event.data.InfoFormacionAcademica.FechaInicio,
+        FechaFinalizacion: event.data.InfoFormacionAcademica.FechaFinalizacion,
+        DescripcionTrabajoGrado: event.data.InfoFormacionAcademica.DescripcionTrabajoGrado,
+        Documento: event.data.InfoFormacionAcademica.Documento,
+      }
+      console.info(formacion);
+      const organizacion = this.organizacion.Ente ? this.organizacion.Ente.Id : null;
+
+      const org = {
+        NumeroIdentificacion: event.data.InfoFormacionAcademica.Nit,
+        Direccion: event.data.InfoFormacionAcademica.Direccion,
+        Pais: event.data.InfoFormacionAcademica.Pais,
+        Nombre: event.data.InfoFormacionAcademica.NombreEmpresa,
+        TipoOrganizacion: event.data.InfoFormacionAcademica.TipoOrganizacion,
+        TipoIdentificacion: {
+          Id: 5, // tipo nit
+        },
+        Contacto: [],
+        // "FechaExpedicion": "string"
+      }
+
+      if (event.data.InfoFormacionAcademica.Telefono) {
+        org.Contacto.push({
+          TipoContacto: { Id: 1 }, // corresponde al tipo telefono
+          Valor: event.data.InfoFormacionAcademica.Telefono,
+        });
+      }
+      if (event.data.InfoFormacionAcademica.Correo) {
+        org.Contacto.push({
+          TipoContacto: { Id: 3 }, // corresponde al tipo correo
+          Valor: event.data.InfoFormacionAcademica.Correo,
+        });
+      }
+
       if (this.info_formacion_academica === undefined) {
-        this.createInfoFormacionAcademica(event.data.InfoFormacionAcademica);
+        if (organizacion !== null) {
+          this.createInfoFormacionAcademica(formacion);
+        } else {
+          this.createOrganizacion(org, formacion);
+        }
       } else {
-        this.updateInfoFormacionAcademica(event.data.InfoFormacionAcademica);
+        if (this.organizacion.Ente) {
+          this.updateInfoFormacionAcademica(formacion);
+        } else {
+          this.createOrganizacion(org, formacion);
+        }
       }
       this.result.emit(event);
     }

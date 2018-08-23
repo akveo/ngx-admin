@@ -4,6 +4,5 @@
                 <ngx-crud-formacion-academica [info_formacion_academica_id]="uid" (eventChange)="onChange($event)"></ngx-crud-formacion-academica>
                 <ng2-smart-table [settings]="settings" [source]="source" (delete)="onDelete($event)" (rowSelect)="itemselec($event)" (edit)="onEdit($event)" (create)="onCreate($event)">
                 </ng2-smart-table>
-                <button (click)="activetab()" class="btn btn-info btn-sm"> <i class="nb-arrow-dropleft"></i> {{ 'GLOBAL.regresar' | translate }}</button>
     </nb-card-body>
 </nb-card>

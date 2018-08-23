@@ -1,5 +1,4 @@
 export let FORM_EXPERIENCIA_LABORAL = {
-  // titulo: 'ExperienciaLaboral',
   tipo_formulario: 'mini',
   alertas: true,
   btn: 'Guardar',
