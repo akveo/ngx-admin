@@ -13,6 +13,7 @@ export const Config = {
         CAMPUS_MID: 'http://localhost:8095/v1/',
         ADMISIONES_SERVICE: 'http://localhost:8887/v1/',
         PROGRAMA_ACADEMICO_SERVICE: 'http://localhost:8101/v1/',
+        FORMACION_ACADEMICA_SERVICE: 'http://localhost:8098/v1/',
         CONF_MENU_SERVICE: 'http://10.20.0.254/configuracion_api/v1/menu_opcion_padre/ArbolMenus/',
         TOKEN: {
             AUTORIZATION_URL: 'https://autenticacion.udistrital.edu.co:8244/authorize',
@@ -38,6 +39,7 @@ export const Config = {
         CAMPUS_MID: 'http://pruebasapi.intranetoas.udistrital.edu.co:8095/v1/',
         ADMISIONES_SERVICE: 'http://localhost:8080/v1/',
         PROGRAMA_ACADEMICO_SERVICE: 'http://localhost:8101/v1/',
+        FORMACION_ACADEMICA_SERVICE: 'http://localhost:8098/v1/',
         CONF_MENU_SERVICE: 'http://10.20.0.254/configuracion_api/v1/menu_opcion_padre/ArbolMenus/',
         TOKEN: {
             AUTORIZATION_URL: 'https://autenticacion.udistrital.edu.co:8244/authorize',
