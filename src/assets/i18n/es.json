@@ -14,7 +14,17 @@
       "estado_civil": "Estado civil",
       "tipo_discapacidad": "Tipo de discapacidad",
       "tipo_lugar": "Tipo de lugar",
-      "tipo_contacto": "Tipo de contacto"
+      "tipo_contacto": "Tipo de contacto",
+      "enfasis": "Enfasis",
+      "programa_academico": "Programas academicos",
+      "metodologia": "Metodologias",
+      "nivel_formacion": "Niveles de formacion",
+      "titulacion": "Titulaciones",
+      "linea_investigacion": "Lineas de investigacion",
+      "estado_admision": "Estados admision"
+    },
+    "admision": {
+      "admision": "Admisiones"
     },
     "genero": {
       "genero": "Género",
@@ -291,6 +301,38 @@
     "fecha_fin": "Fecha Fin",
     "placeholder_fecha_fin": "E.g. 24/08/2018",
     "pais_empresa": "Pais empresa",
-    "placeholder_pais_empresa": "Ej. Colombia"
+    "placeholder_pais_empresa": "Ej. Colombia",
+    "estado_admision": "Estado admision",
+    "placeholder_estado_admision": "ej: estado admision",
+    "linea_investigacion": "Linea de investigacion",
+    "placeholder_linea_investigacion": "ej: Ciencias ",
+    "grupo_investigacion": "Grupo de investigacion",
+    "placeholder_grupo_investigacion": "ej: OAS",
+    "admision": "Admision",
+    "placeholder_admision": "ej: admisiones",
+    "aspirante": "Aspirante",
+    "placeholder_aspirante": "ej: Jose",
+    "recibo_matricula": "Recibo de matricula",
+    "placeholder_recibo_matricula": "ej: 456",
+    "recibo_inscripcion": "Recibo de inscripcion",
+    "placeholder_recibo_inscripcion": "ej: 4654",
+    "periodo": "Periodo",
+    "placeholder_periodo": "ej: 10",
+    "propuesta": "Propuesta",
+    "placeholder_propuesta": "ej: ...",
+    "programa_academico": "Programa",
+    "placeholder_programa_academico": "ej: Sistemas",
+    "enfasis": "Enfasis",
+    "placeholder_enfasis": "ej: Ing. Software",
+    "telefono_alternativo": "Telefono alternativo",
+    "placeholder_telefono_alternativo": "ej. 5565656",
+    "codigo_snies": "Código SNIES",
+    "placeholder_codigo_snies": "ej: 4567",
+    "institucion": "Institución",
+    "placeholder_institucion": "ej: Universidad Distrital",
+    "duracion": "Duración",
+    "placeholder_duracion": "ej: 30",
+    "unidad_tiempo": "Unidad de tiempo",
+    "placeholder_unidad_tiempo": "ej: año"
   }
 }

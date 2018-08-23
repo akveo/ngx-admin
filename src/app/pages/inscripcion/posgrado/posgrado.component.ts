@@ -129,14 +129,29 @@ export class PosgradoComponent implements OnInit {
         this.info_caracteristica = false;
         this.info_persona = true;
         break;
+      case 'experiencia_laboral':
+        this.show_info = false;
+        this.show_profile = false;
+        this.show_acad = false;
+        this.show_expe = true;
+        break;
+      case 'formacion_academica':
+        this.show_info = false;
+        this.show_profile = false;
+        this.show_acad = true;
+        this.show_expe = false;
+        break;
+      case 'perfil':
+        this.show_info = false;
+        this.show_profile = true;
+        this.show_acad = false;
+        this.show_expe = false;
+        break;
       default:
         this.show_info = false;
         this.show_profile = false;
         this.show_acad = false;
         this.show_expe = false;
-        this.info_contacto = false;
-        this.info_caracteristica = false;
-        this.info_persona = false;
         break;
     }
   }

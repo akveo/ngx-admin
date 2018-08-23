@@ -57,6 +57,54 @@ export const MENU_ITEMS: MenuItem[] = [
         link: '/pages/tipo_contacto/list-tipo_contacto',
         key: 'tipo_contacto',
       },
+      {
+        title: 'Lista Titulacion',
+        link: '/pages/titulacion/list-titulacion',
+        key: 'titulacion',
+      },
+      {
+        title: 'Lista Nivel Formacion',
+        link: '/pages/nivel_formacion/list-nivel_formacion',
+        key: 'nivel_formacion',
+      },
+      {
+        title: 'Lista Metodologia',
+        link: '/pages/metodologia/list-metodologia',
+        key: 'metodologia',
+      },
+      {
+        title: 'Lista Programa Academico',
+        link: '/pages/programa_academico/list-programa_academico',
+        key: 'programa_academico',
+      },
+      {
+        title: 'Lista Enfasis',
+        link: '/pages/enfasis/list-enfasis',
+        key: 'enfasis',
+      },
+      {
+        title: 'Lista Estado Admision',
+        link: '/pages/estado_admision/list-estado_admision',
+        key: 'estado_admision',
+      },
+      {
+        title: 'Lista Linea Investigacion',
+        link: '/pages/linea_investigacion/list-linea_investigacion',
+        key: 'linea_investigacion',
+      },
+    ],
+  },
+  {
+    title: 'Admision',
+    icon: 'nb-compose',
+    link: '/pages/admision',
+    key: 'admision',
+    children: [
+      {
+        title: 'Lista Admision',
+        link: '/pages/admision/list-admision',
+        key: 'admision',
+      },
     ],
   },
   /*{
