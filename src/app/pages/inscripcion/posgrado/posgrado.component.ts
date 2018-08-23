@@ -4,6 +4,8 @@ import { ImplicitAutenticationService } from './../../../@core/utils/implicit_au
 import { PersonaService } from '../../../@core/data/persona.service';
 import { UtilidadesService } from '../../../@core/utils/utilidades.service';
 import { ProgramaAcademicoService } from '../../../@core/data/programa_academico.service';
+import * as jspdf from 'jspdf';
+import html2canvas from 'html2canvas';
 
 @Component({
   selector: 'ngx-posgrado',
@@ -67,12 +69,12 @@ export class PosgradoComponent implements OnInit {
 
   loadInfoPostgrados() {
     this.programaService.get('programa_academico')
-        .subscribe(res => {
-          const r = <any>res;
-          if (res !== null && r.Type !== 'error') {
-            this.posgrados = <any>res;
-          }
-        });
+      .subscribe(res => {
+        const r = <any>res;
+        if (res !== null && r.Type !== 'error') {
+          this.posgrados = <any>res;
+        }
+      });
   }
 
   getInfoPersonaId() {
@@ -159,7 +161,7 @@ export class PosgradoComponent implements OnInit {
   selectTab(event): void {
     if (event.tabTitle === this.translate.instant('GLOBAL.info_persona')) {
       if (this.info_persona)
-      this.perfil_editar('info_persona');
+        this.perfil_editar('info_persona');
     } else if (event.tabTitle === this.translate.instant('GLOBAL.info_caracteristica')) {
       this.perfil_editar('info_caracteristica');
     } else if (event.tabTitle === this.translate.instant('GLOBAL.informacion_contacto')) {
@@ -168,5 +170,20 @@ export class PosgradoComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  public captureScreen() {
+    const data = document.getElementById('contentToConvert');
+    html2canvas(data).then(canvas => {
+      const imgWidth = 208;
+      // const pageHeight = 295;
+      const imgHeight = (canvas.height * imgWidth) / canvas.width;
+      // const heightLeft = imgHeight;
+      const contentDataURL = canvas.toDataURL('image/png');
+      const pdf = new jspdf('p', 'mm', 'a4');
+      const position = 0;
+      pdf.addImage(contentDataURL, 'PNG', 0, position, imgWidth, imgHeight);
+      pdf.save('MYPdf.pdf');
+    });
   }
 }
