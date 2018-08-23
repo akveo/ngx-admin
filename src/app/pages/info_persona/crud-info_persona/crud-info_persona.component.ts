@@ -41,6 +41,7 @@ export class CrudInfoPersonaComponent implements OnInit {
   regInfoPersona: any;
   clean: boolean;
   loading: boolean;
+  percentage: number;
 
   constructor(
     private translate: TranslateService,
@@ -260,13 +261,18 @@ export class CrudInfoPersonaComponent implements OnInit {
                 console.info(this.info_info_persona);
                 this.campusMidService.post('persona/GuardarPersona', this.info_info_persona)
                   .subscribe(res => {
-                    console.info(res);
-                    this.info_info_persona = <InfoPersona>res;
-                    this.loadInfoPersona();
-                    this.loading = false;
-                    this.eventChange.emit(true);
-                    this.showToast('info', this.translate.instant('GLOBAL.crear'),
+                    const r = <any>res
+                    if (r !== null && r.Type !== 'error') {
+                      this.info_persona_id = r.Body.Ente;
+                      this.loadInfoPersona();
+                      this.loading = false;
+                      this.eventChange.emit(true);
+                      this.showToast('info', this.translate.instant('GLOBAL.crear'),
                       this.translate.instant('GLOBAL.info_persona') + ' ' + this.translate.instant('GLOBAL.confirmarCrear'));
+                    } else {
+                      this.showToast('error', this.translate.instant('GLOBAL.error'),
+                      this.translate.instant('GLOBAL.error'));
+                    }
                   });
               }
 
@@ -275,13 +281,11 @@ export class CrudInfoPersonaComponent implements OnInit {
       });
   }
   ngOnInit() {
-    this.loadInfoPersona();
   }
 
   validarForm(event) {
     if (event.valid) {
       if (this.info_info_persona === undefined) {
-        console.info('create', event);
         this.createInfoPersona(event.data.InfoPersona);
       } else {
         this.updateInfoPersona(event.data.InfoPersona);
@@ -290,7 +294,8 @@ export class CrudInfoPersonaComponent implements OnInit {
   }
 
   setPercentage(event) {
-    this.result.emit(event);
+    this.percentage = event;
+    this.result.emit(this.percentage);
   }
 
   private showToast(type: string, title: string, body: string) {

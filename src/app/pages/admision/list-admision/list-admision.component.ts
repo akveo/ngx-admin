@@ -70,7 +70,7 @@ export class ListAdmisionComponent implements OnInit {
           title: this.translate.instant('GLOBAL.estado_admision'),
           // type: 'estado_admision;',
           valuePrepareFunction: (value) => {
-            return value;
+            return value.Nombre;
           },
         },
       },
