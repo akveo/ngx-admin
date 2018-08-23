@@ -1,75 +1,75 @@
-<div class="col-md-12 col-lg-12 " >
+<div class="col-md-12 col-lg-12 ">
 
   <nb-card [hidden]="show_profile || show_info || show_acad || show_expe">
     <nb-card-header>
-         <!-- select -->
-         <mat-form-field style="width: 100%;">
-            <mat-label>Seleccione el posgrado al que desea inscribirse:</mat-label>
-            <mat-select placeholder="dfsdfs">
-              <mat-option>--Seleccionar--</mat-option>
-              <mat-option *ngFor="let item of posgrados" [value]="item">
-                {{item.Nombre}}
-              </mat-option>
-            </mat-select>
-          </mat-form-field>
+      <!-- select -->
+      <mat-form-field style="width: 100%;">
+        <mat-label>Seleccione el posgrado al que desea inscribirse:</mat-label>
+        <mat-select placeholder="dfsdfs">
+          <mat-option>--Seleccionar--</mat-option>
+          <mat-option *ngFor="let item of posgrados" [value]="item">
+            {{item.Nombre}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
 
-          <div class="row" >
+      <div class="row">
 
-            <div class="col-sm-6 col-md-4 col-lg-3" align="center">
-              <nb-card class="exp-card" (click)="perfil_editar('info_persona')">
-                <nb-card-header> Información Básica </nb-card-header>
-                <nb-card-body class="icon-form">
-                  <i class="fa fa-address-card-o fa-5x"></i>
-                  <p class="percentage">{{percentage_info}} %</p>
-                </nb-card-body>
-              </nb-card>
-            </div>
+        <div class="col-sm-6 col-md-4 col-lg-3" align="center">
+          <nb-card class="exp-card" (click)="perfil_editar('info_persona')">
+            <nb-card-header> Información Básica </nb-card-header>
+            <nb-card-body class="icon-form">
+              <i class="fa fa-address-card-o fa-5x"></i>
+              <p class="percentage">{{percentage_info}} %</p>
+            </nb-card-body>
+          </nb-card>
+        </div>
 
-            <div class="col-sm-6 col-md-4 col-lg-3" align="center">
-              <nb-card class="exp-card" *ngIf="info_ente_id" (click)="perfil_editar('formacion_academica')">
-                <nb-card-header> Formación Académica </nb-card-header>
-                <nb-card-body class="icon-form">
-                  <i class="fa fa-graduation-cap fa-5x"></i>
-                  <p class="percentage">{{percentage_acad}} %</p>
+        <div class="col-sm-6 col-md-4 col-lg-3" align="center">
+          <nb-card class="exp-card" *ngIf="info_ente_id" (click)="perfil_editar('formacion_academica')">
+            <nb-card-header> Formación Académica </nb-card-header>
+            <nb-card-body class="icon-form">
+              <i class="fa fa-graduation-cap fa-5x"></i>
+              <p class="percentage">{{percentage_acad}} %</p>
 
-                </nb-card-body>
-              </nb-card>
-            </div>
+            </nb-card-body>
+          </nb-card>
+        </div>
 
-            <div class="col-sm-6 col-md-4 col-lg-3" align="center">
-              <nb-card class="exp-card" *ngIf="info_ente_id" (click)="perfil_editar('experiencia_laboral')">
-                <nb-card-header> Experiencia Laboral </nb-card-header>
-                <nb-card-body class="icon-form">
-                  <i class="fa fa-briefcase fa-5x"></i>
-                  <p class="percentage">{{percentage_expe}} %</p>
-                </nb-card-body>
-              </nb-card>
-            </div>
+        <div class="col-sm-6 col-md-4 col-lg-3" align="center">
+          <nb-card class="exp-card" *ngIf="info_ente_id" (click)="perfil_editar('experiencia_laboral')">
+            <nb-card-header> Experiencia Laboral </nb-card-header>
+            <nb-card-body class="icon-form">
+              <i class="fa fa-briefcase fa-5x"></i>
+              <p class="percentage">{{percentage_expe}} %</p>
+            </nb-card-body>
+          </nb-card>
+        </div>
 
-            <div class="col-sm-6 col-md-4 col-lg-3" align="center">
-              <nb-card class=" exp-card" *ngIf="info_ente_id"  (click)="perfil_editar('perfil')">
-                <nb-card-header> Perfil </nb-card-header>
-                <nb-card-body class="icon-form">
-                  <i class="fa fa-user fa-5x"></i>
-                </nb-card-body>
-              </nb-card>
-            </div>
+        <div class="col-sm-6 col-md-4 col-lg-3" align="center">
+          <nb-card class=" exp-card" *ngIf="info_ente_id" (click)="perfil_editar('perfil')">
+            <nb-card-header> Perfil </nb-card-header>
+            <nb-card-body class="icon-form">
+              <i class="fa fa-user fa-5x"></i>
+            </nb-card-body>
+          </nb-card>
+        </div>
 
-          </div>
-        </nb-card-header>
+      </div>
+    </nb-card-header>
 
-        <nb-card-body>
+    <nb-card-body>
 
-          <div class="col-md-12">
+      <div class="col-md-12">
 
-            <blockquote class="blockquote ">
-              <li>
-                Para el registro a un posgrado es neceario completar cada uno de los bloques de informacion que son solicitados al 100
-              </li>
-            </blockquote>
+        <blockquote class="blockquote ">
+          <li>
+            Para el registro a un posgrado es neceario completar cada uno de los bloques de informacion que son solicitados al 100
+          </li>
+        </blockquote>
 
-            <button class="btn btn-success pull-right" disabled>Inscribirse</button>
-          </div>
+        <button class="btn btn-success pull-right" disabled>Inscribirse</button>
+      </div>
 
     </nb-card-body>
   </nb-card>
@@ -93,8 +93,7 @@
             (result)="setPercentage_info($event,1)"></ngx-crud-info-caracteristica>
         </nb-tab>
         <nb-tab tabTitle="{{ 'GLOBAL.informacion_contacto' | translate }}" [active]="info_contacto">
-          <ngx-crud-informacion-contacto informacion_contacto_id={{this.info_ente_id}} (eventChange)="perfil_editar('default')"
-            (result)="setPercentage_info($event,2)"></ngx-crud-informacion-contacto>
+          <ngx-crud-informacion-contacto informacion_contacto_id={{this.info_ente_id}} (eventChange)="perfil_editar('default')" (result)="setPercentage_info($event,2)"></ngx-crud-informacion-contacto>
         </nb-tab>
       </nb-tabset>
     </nb-card-body>
@@ -121,7 +120,7 @@
     </nb-card-body>
   </nb-card>
 
-  <nb-card [hidden]="!show_expe" *ngIf="info_ente_id" >
+  <nb-card [hidden]="!show_expe" *ngIf="info_ente_id">
     <nb-card-body>
       <div class="row">
         <div class="col-md-11">
@@ -146,4 +145,53 @@
   <div [hidden]="!show_profile" *ngIf="info_ente_id && show_profile">
     <ngx-perfil (url_editar)="perfil_editar($event)" info_persona_id="{{info_ente_id}}"></ngx-perfil>
   </div>
+</div>
+
+
+<div id="content" #content>
+  <div class="alert alert-info">
+    <strong>Html To PDF Conversion - Angular 6</strong>
+  </div>
+  <div>
+    <input type="button" value="campture" (click)="captureScreen()">
+  </div>
+</div>
+<div >
+  <table id="contentToConvert">
+    <tr>
+      <th>Column1</th>
+      <th>Column2</th>
+      <th>Column3</th>
+    </tr>
+    <tr>
+      <td>Row 1</td>
+      <td>Row 1</td>
+      <td>Row 1</td>
+    </tr>
+    <tr>
+      <td>Row 2</td>
+      <td>Row 2</td>
+      <td>Row 2</td>
+    </tr>
+    <tr>
+      <td>Row 3</td>
+      <td>Row 3</td>
+      <td>Row 3</td>
+    </tr>
+    <tr>
+      <td>Row 4</td>
+      <td>Row 4</td>
+      <td>Row 4</td>
+    </tr>
+    <tr>
+      <td>Row 5</td>
+      <td>Row 5</td>
+      <td>Row 5</td>
+    </tr>
+    <tr>
+      <td>Row 6</td>
+      <td>Row 6</td>
+      <td>Row 6</td>
+    </tr>
+  </table>
 </div>
