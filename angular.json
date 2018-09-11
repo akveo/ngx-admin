@@ -108,7 +108,6 @@
               "node_modules/chart.js/dist/Chart.min.js"
             ],
             "styles": [
-              "node_modules/bootstrap/dist/css/bootstrap.css",
               "node_modules/typeface-exo/index.css",
               "node_modules/roboto-fontface/css/roboto/roboto-fontface.css",
               "node_modules/ionicons/scss/ionicons.scss",
