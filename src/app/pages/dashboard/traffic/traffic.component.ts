@@ -7,7 +7,7 @@ import { NbThemeService } from '@nebular/theme';
   template: `
     <nb-card size="xsmall">
       <nb-card-header>
-        <span>Traffic Consumption</span>
+        <span translate>Traffic Consumption</span>
         <div class="dropdown ghost-dropdown" ngbDropdown>
           <button type="button" class="btn btn-sm" ngbDropdownToggle
                   [ngClass]="{ 'btn-success': currentTheme == 'default', 'btn-primary': currentTheme != 'default'}">
