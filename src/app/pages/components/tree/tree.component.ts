@@ -89,7 +89,7 @@ export class TreeComponent implements OnInit {
   }
 
   deleteNode(node, tree): void {
-    if (confirm('Are you sure to delete ' + node.data.name)) {
+    if (confirm('Are you sure to delete this' + node.data.name)) {
       const parentNode = node.realParent ? node.realParent : node.treeModel.virtualRoot;
       parentNode.data.children = parentNode.data.children.filter((child) => child !== node.data);
       tree.treeModel.update();
