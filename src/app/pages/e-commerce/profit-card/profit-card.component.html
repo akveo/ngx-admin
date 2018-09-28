@@ -1,0 +1,14 @@
+<nb-flip-card [showToggleButton]="false" [flipped]="flipped">
+  <nb-card-front>
+    <nb-card size="xsmall">
+      <ngx-stats-card-front></ngx-stats-card-front>
+      <i class="nb-arrow-right" (click)="toggleView()"></i>
+    </nb-card>
+  </nb-card-front>
+  <nb-card-back>
+    <nb-card size="xsmall">
+      <ngx-stats-card-back></ngx-stats-card-back>
+      <i class="nb-arrow-right" (click)="toggleView()"></i>
+    </nb-card>
+  </nb-card-back>
+</nb-flip-card>

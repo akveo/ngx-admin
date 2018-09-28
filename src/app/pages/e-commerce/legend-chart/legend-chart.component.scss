@@ -1,0 +1,40 @@
+@import '../../../@theme/styles/themes';
+@import '~bootstrap/scss/mixins/breakpoints';
+@import '~@nebular/theme/styles/global/bootstrap/breakpoints';
+
+@include nb-install-component() {
+  .legends {
+    display: flex;
+    @include nb-rtl(flex-direction, row-reverse);
+    color: nb-theme(color-fg);
+    padding: 0 0 0 2.85rem;
+  }
+
+  .legend {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-left: 4rem;
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+
+  .legend-item-color {
+    min-width: 15px;
+    min-height: 15px;
+    border-radius: 0.2rem;
+  }
+
+  .legend-title {
+    padding: 0 0.75rem;
+    white-space: nowrap;
+  }
+
+  @include media-breakpoint-down(md) {
+    .legend {
+      margin-left: 1.5rem;
+    }
+  }
+}

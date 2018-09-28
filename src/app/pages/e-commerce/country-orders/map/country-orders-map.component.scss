@@ -1,0 +1,70 @@
+@import '../../../../@theme/styles/themes';
+@import '~bootstrap/scss/mixins/breakpoints';
+@import '~@nebular/theme/styles/global/bootstrap/breakpoints';
+
+@include nb-install-component() {
+
+  display: block;
+  height: 100%;
+  width: 60%;
+
+  .leaflet-container {
+    height: 100%;
+    background-color: nb-theme(layout-bg);
+
+    @include nb-for-theme(default) {
+      background-color: nb-theme(color-white);
+    }
+
+    @include nb-for-theme(corporate) {
+      background-color: nb-theme(color-white);
+    }
+  }
+
+  /deep/ .leaflet-bar {
+    box-shadow: none;
+  }
+
+  /deep/ .leaflet-control-zoom {
+    border: none;
+
+    a {
+      background-color: nb-theme(color-success);
+      color: nb-theme(color-white);
+      border-bottom: none;
+      height: 2.5rem;
+
+      @include nb-for-theme(cosmic) {
+        background-color: nb-theme(color-primary);
+      }
+
+      @include nb-for-theme(corporate) {
+        background-color: nb-theme(color-primary);
+      }
+    }
+
+    .leaflet-control-zoom-in {
+      border-top-left-radius: nb-theme(btn-border-radius);
+      border-top-right-radius: nb-theme(btn-border-radius);
+    }
+
+    .leaflet-control-zoom-out {
+      margin-top: 1px;
+      border-bottom-left-radius: nb-theme(btn-border-radius);
+      border-bottom-right-radius: nb-theme(btn-border-radius);
+    }
+  }
+
+  /deep/ .leaflet-control-attribution {
+    background: transparent;
+
+    a {
+      color: nb-theme(color-fg);
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    width: 100%;
+    height: 50%;
+  }
+}

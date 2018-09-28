@@ -1,0 +1,116 @@
+@import '../../../../@theme/styles/themes';
+@import '~@nebular/theme/styles/global/typography/typography';
+
+@include nb-install-component() {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+
+  nb-card-header {
+    flex-direction: row;
+    padding-top: 0.45rem;
+    padding-bottom: 0.45rem;
+  }
+
+  .dropdown {
+    min-width: 8.125rem;
+  }
+
+  nb-card-body {
+    padding: 1rem 0 0;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  .chart-info {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin: 0 nb-theme(card-padding);
+  }
+
+  .title {
+    color: nb-theme(color-fg-heading);
+  }
+
+  .value {
+    color: nb-theme(color-success);
+    font-size: 1.5rem;
+
+    @include nb-for-theme(corporate) {
+      color: nb-theme(color-primary);
+    }
+  }
+
+  .delta {
+    position: absolute;
+    display: inline-block;
+    color: nb-theme(color-fg-heading);
+    padding-left: 0.5rem;
+    font-size: 1rem;
+    top: 0;
+    right: 0;
+    @include nb-rtl(left, 1.25rem);
+    @include nb-rtl(right, inherit);
+
+    &::before {
+      position: absolute;
+      content: '';
+      right: 100%;
+      border-left: 6px solid transparent;
+      border-right: 6px solid transparent;
+    }
+
+    &.down {
+      &::before {
+        bottom: 4px;
+        border-top: 7px solid text-danger();
+      }
+    }
+
+    &.up {
+      &::before {
+        top: 4px;
+        border-bottom: 7px solid text-success();
+      }
+    }
+  }
+
+  ngx-earning-live-update-chart {
+    flex: 1;
+    position: relative;
+  }
+
+  /deep/ canvas {
+    border-bottom-left-radius: nb-theme(card-border-radius);
+    border-bottom-right-radius: nb-theme(card-border-radius);
+  }
+
+  .echart {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+  }
+
+  @include nb-for-theme(corporate) {
+    .delta {
+      &.down {
+        color: text-danger();
+
+        &::before {
+          bottom: 4px;
+          border-top: 7px solid text-danger();
+        }
+      }
+
+      &.up {
+        color: text-primary();
+
+        &::before {
+          top: 4px;
+          border-bottom: 7px solid text-primary();
+        }
+      }
+    }
+  }
+}
