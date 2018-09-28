@@ -105,6 +105,28 @@
       }
     }
 
+    /deep/ nb-menu {
+      & > .menu-items {
+        & > .menu-item:first-child {
+          .menu-title {
+            &::after {
+              content: 'new';
+              color: nb-theme(color-white);
+              margin-left: 1rem;
+              background: nb-theme(color-danger);
+              padding: 0 0.5rem;
+              border-radius: nb-theme(radius);
+              font-size: nb-theme(font-size-sm);
+            }
+          }
+        }
+      }
+
+      .nb-e-commerce {
+        font-size: 2rem;
+      }
+    }
+
     &.compacted {
 
       /deep/ nb-sidebar-header {

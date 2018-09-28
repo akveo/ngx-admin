@@ -1,0 +1,16 @@
+@import '../../../../@theme/styles/themes';
+
+@include nb-install-component() {
+  nb-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.675rem 4rem 0.5rem 1.25rem;
+    @include nb-rtl(padding-right, 1.25rem);
+    @include nb-rtl(padding-left, 4rem);
+  }
+
+  .dropdown {
+    min-width: 120px;
+  }
+}

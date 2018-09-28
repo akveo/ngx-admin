@@ -1,0 +1,167 @@
+@import '../../../@theme/styles/themes';
+@import '~@nebular/theme/styles/global/typography/typography';
+
+@include nb-install-component() {
+  nb-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: none;
+  }
+
+  nb-card-body {
+    padding: 0;
+  }
+
+  .dropdown {
+    min-width: 120px;
+  }
+
+  .user-activity-list {
+    padding: 0;
+    margin: 0;
+  }
+
+  .user-activity-list li {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    position: relative;
+    color: nb-theme(color-fg);
+    padding: nb-theme(card-padding);
+    border-bottom:
+      nb-theme(list-item-border-width)
+      nb-theme(card-header-border-type)
+      nb-theme(separator);
+
+    &:first-child {
+      border-top:
+        nb-theme(list-item-border-width)
+        nb-theme(card-header-border-type)
+        nb-theme(separator);
+    }
+
+    &:hover {
+      background-color: nb-theme(layout-bg);
+
+      &::before {
+        position: absolute;
+        content: '';
+        height: 100%;
+        width: 6px;
+        left: 0;
+        top: 0;
+        background-color: nb-theme(color-success);
+        border-radius: nb-theme(radius);
+      }
+    }
+  }
+
+  .visited-date,
+  .value,
+  .title {
+    font-size: 1.25rem;
+  }
+
+  .visited-date {
+    color: nb-theme(color-fg-heading);
+
+    @include nb-for-theme(cosmic) {
+      color: nb-theme(color-fg);
+    }
+  }
+
+  .title {
+    font-size: 1rem;
+  }
+
+  .value {
+    margin-top: 0.5rem;
+    color: nb-theme(color-success);
+  }
+
+  .delta {
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    &::before {
+      content: '';
+      right: 100%;
+      margin-right: 0.7rem;
+      @include nb-rtl(margin-right, 0);
+      @include nb-rtl(margin-left, 0.7rem);
+      border-left: 6px solid transparent;
+      border-right: 6px solid transparent;
+    }
+
+    &.down {
+      color: text-danger();
+
+      &::before {
+        border-top: 6px solid text-danger();
+      }
+    }
+
+    &.up {
+      color: text-success();
+
+      &::before {
+        border-bottom: 6px solid text-success();
+      }
+    }
+  }
+
+  @include nb-for-theme(cosmic) {
+    .user-activity-list li {
+      &:hover {
+        &::before {
+          $color-top: nb-theme(btn-success-bg);
+          $color-bottom: btn-hero-success-left-color();
+
+          background-image: linear-gradient(to top, $color-top, $color-bottom);
+          box-shadow: 0 0 16px -2px btn-hero-success-middle-color();
+        }
+      }
+    }
+
+    .delta {
+      &.down, &.up {
+        color: nb-theme(color-fg-heading);
+      }
+    }
+  }
+
+  @include nb-for-theme(corporate) {
+    .user-activity-list li {
+      border-color: nb-theme(tabs-separator);
+
+      &:first-child {
+        border-color: nb-theme(tabs-separator);
+      }
+
+      &:hover {
+        &::before {
+          background-color: nb-theme(color-primary);
+        }
+      }
+    }
+
+    .visited-pages-count {
+      .value {
+        color: nb-theme(color-fg-heading);
+      }
+    }
+
+    .delta {
+      &.up {
+        color: text-primary();
+
+        &::before {
+          border-bottom-color: text-primary();
+        }
+      }
+    }
+  }
+}

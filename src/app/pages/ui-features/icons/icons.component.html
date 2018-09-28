@@ -19,7 +19,7 @@
       <nb-card-body>
         <div class="icon"
              *ngFor="let icon of icons.fontAwesome">
-          <i class="fa {{ icon }}" [nbPopover]="icon"></i>
+          <i class="{{ icon }}" [nbPopover]="icon"></i>
         </div>
       </nb-card-body>
       <nb-card-footer>

@@ -1,0 +1,78 @@
+@import '../../../../@theme/styles/themes';
+
+@include nb-install-component() {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+
+  /deep/ nb-card-header {
+    display: flex;
+    justify-content: space-between;
+
+    .header-container {
+      display: flex;
+      @include nb-rtl(flex-direction, row-reverse);
+    }
+
+    .title {
+      padding-left: 1rem;
+    }
+  }
+
+  /deep/ nb-card-body {
+    display: flex;
+    position: relative;
+    flex: 1;
+    padding: 0;
+    overflow: hidden;
+
+    .period {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      justify-content: flex-end;
+    }
+
+    .time-interval {
+      font-size: nb-theme(font-size-sm);
+      color: nb-theme(color-fg);
+      white-space: nowrap;
+    }
+
+    .value {
+      font-family: nb-theme(font-secondary), serif;
+      font-weight: nb-theme(font-weight-bold);
+      color: nb-theme(card-fg-heading);
+
+      .currency {
+        color: nb-theme(color-success);
+
+        @include nb-for-theme(corporate) {
+          color: nb-theme(color-primary);
+        }
+      }
+    }
+
+    .start-period {
+      .time-interval, .value {
+        text-align: right;
+      }
+    }
+
+    .end-period {
+      .time-interval, .value {
+        text-align: left;
+      }
+    }
+
+    ngx-stats-bar-animation-chart {
+      flex: 1;
+      position: relative;
+
+      .echart {
+        height: 100%;
+        width: 100%;
+      }
+    }
+  }
+}
