@@ -4,7 +4,7 @@
   position: fixed;
   @include nb-ltr(right, 1.5rem);
   @include nb-rtl(left, 1.5rem);
-  top: 8vh;
+  top: 40vh;
   border-radius: 5px;
   box-shadow: 0 5px 12px 0 rgba(0, 32, 128, 0.14);
   z-index: 99999999;
@@ -54,5 +54,9 @@
     margin: 0.725rem 0.8rem;
     text-transform: uppercase;
     font-weight: 600;
+  }
+
+  @media screen and (max-width: 63rem) {
+    display: none;
   }
 }
