@@ -34,6 +34,11 @@ $nb-themes: nb-register-theme((
   ecommerce-card-border-width: 1px,
 
   progress-bar-background: linear-gradient(90deg, #3edd81 0%, #3bddaf 100%),
+
+  release-banner-fg: #ffffff,
+  release-banner-bg: #3366ff,
+  release-banner-cta: release-banner-fg,
+  release-banner-separator: #2454e3,
 ), default, default);
 
 $nb-themes: nb-register-theme((
@@ -64,6 +69,11 @@ $nb-themes: nb-register-theme((
   ecommerce-card-border-width: 1px,
 
   progress-bar-background: linear-gradient(90deg, #00c7c7 0%, #00d977 100%),
+
+  release-banner-fg: #3366ff,
+  release-banner-bg: #ffffff,
+  release-banner-cta: #5d72b3,
+  release-banner-separator: #ebedf2,
 ), cosmic, cosmic);
 
 $nb-themes: nb-register-theme((
@@ -94,4 +104,9 @@ $nb-themes: nb-register-theme((
   ecommerce-card-border-width: 1px,
 
   progress-bar-background: linear-gradient(90deg, #ff9f6f 0%, #ff8b97 100%),
+
+  release-banner-fg: #ffffff,
+  release-banner-bg: #3366ff,
+  release-banner-cta: release-banner-fg,
+  release-banner-separator: #2454e3,
 ), corporate, corporate);

@@ -57,6 +57,7 @@ import { StateService } from '../../../@core/data/state.service';
         <ngx-theme-settings></ngx-theme-settings>
       </nb-sidebar>
     </nb-layout>
+    <ngx-release-banner></ngx-release-banner>
   `,
 })
 export class SampleLayoutComponent implements OnDestroy {
