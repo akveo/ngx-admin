@@ -1,0 +1,58 @@
+@import '../../styles/themes';
+
+:host {
+  position: fixed;
+  @include nb-ltr(right, 1.5rem);
+  @include nb-rtl(left, 1.5rem);
+  top: 8vh;
+  border-radius: 5px;
+  box-shadow: 0 5px 12px 0 rgba(0, 32, 128, 0.14);
+  z-index: 99999999;
+
+  .heading-with-icon {
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    display: flex;
+    align-items: center;
+  }
+
+  .icon {
+    height: auto;
+    width: 4rem;
+    margin: 0 1.625rem;
+  }
+
+  .banner-heading {
+    font-size: 1.5rem;
+    line-height: 1.5;
+    font-weight: 600;
+    margin: 1.625rem 0;
+  }
+
+  .close-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-bottom: auto;
+    padding: 0.625rem;
+  }
+
+  .nb-close {
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+
+  .cta {
+    margin: 0;
+    text-align: center;
+  }
+
+  .cta-link {
+    border-radius: 1.8px;
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    margin: 0.725rem 0.8rem;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+}

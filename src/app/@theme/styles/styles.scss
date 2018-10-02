@@ -15,6 +15,8 @@
 
 @import './bootstrap-rtl';
 
+@import '../components/banner/banner.component.theme';
+
 // install the framework and custom global styles
 @include nb-install() {
 
@@ -25,6 +27,8 @@
 
   // loading progress bar
   @include ngx-pace-theme();
+
+  @include ngx-release-banner-component();
 
   // fixed in rc.9 and can be removed after upgrade
   .custom-control .custom-control-indicator {
