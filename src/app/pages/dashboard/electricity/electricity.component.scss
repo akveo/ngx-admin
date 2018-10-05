@@ -2,8 +2,8 @@
 @import '~@nebular/theme/components/card/card.component.theme';
 @import '~@nebular/theme/styles/global/typography/typography';
 @import '~bootstrap/scss/mixins/breakpoints';
-@import '~@nebular/theme/styles/global/bootstrap/breakpoints';
-@import '~@nebular/theme/styles/global/bootstrap/hero-buttons';
+@import '~@nebular/theme/styles/global/breakpoints';
+@import '~@nebular/bootstrap/styles/hero-buttons';
 
 @include nb-install-component() {
 

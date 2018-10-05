@@ -1,7 +1,7 @@
 @import '../../../../@theme/styles/themes';
 @import '~bootstrap/scss/mixins/breakpoints';
 @import '~@nebular/theme/components/card/card.component.theme';
-@import '~@nebular/theme/styles/global/bootstrap/breakpoints';
+@import '~@nebular/theme/styles/global/breakpoints';
 @import '~@nebular/theme/styles/core/mixins';
 
 @include nb-install-component() {
