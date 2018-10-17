@@ -1,0 +1,45 @@
+<nb-card>
+  <nb-card-header>
+    Dialog
+  </nb-card-header>
+  <nb-card-body>
+    <div>
+      <button nbButton (click)="open()">Open Dialog</button>
+    </div>
+
+    <div>
+      <button nbButton (click)="open2(dialog)">Open Dialog with template</button>
+    </div>
+
+    <div>
+      <button nbButton hero status="primary" (click)="open3()">Enter Name</button>
+      <br>
+      <h3>Names:</h3>
+      <ul>
+        <li *ngFor="let name of names">{{ name }}</li>
+      </ul>
+    </div>
+
+    <div>
+      <button nbButton hero (click)="openWithoutBackdrop(dialog)">Open without backdrop</button>
+    </div>
+
+    <div>
+      <button nbButton hero (click)="openWithoutBackdropClick(dialog)">Open without backdrop</button>
+    </div>
+
+    <div>
+      <button nbButton hero (click)="openWithoutEscClose(dialog)">Open without backdrop</button>
+    </div>
+
+    <ng-template #dialog let-data let-ref="dialogRef">
+      <nb-card>
+        <nb-card-header>Template Dialog</nb-card-header>
+        <nb-card-body>{{ data }}</nb-card-body>
+        <nb-card-footer>
+          <button nbButton (click)="ref.close()">Close Dialog</button>
+        </nb-card-footer>
+      </nb-card>
+    </ng-template>
+  </nb-card-body>
+</nb-card>

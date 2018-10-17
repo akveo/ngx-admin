@@ -1,0 +1,9 @@
+@import '../../../@theme/styles/themes';
+
+@include nb-install-component() {
+  .accordion-container {
+    &:not(:first-child) {
+      margin-top: 3rem;
+    }
+  }
+}

@@ -1,0 +1,24 @@
+<nb-card>
+  <nb-card-header>
+    Datepicker
+  </nb-card-header>
+  <nb-card-body>
+    <div>
+      <input nbInput
+             placeholder="Form Picker"
+             [nbDatepicker]="formpicker">
+      <nb-datepicker #formpicker></nb-datepicker>
+    </div>
+    <div>
+      <input nbInput placeholder="Form Picker" [nbDatepicker]="formcontrol" [formControl]="formControl">
+      <nb-datepicker #formcontrol></nb-datepicker>
+
+      <input nbInput placeholder="Form Picker" [nbDatepicker]="ngmodel" [(ngModel)]="ngModelDate">
+      <nb-datepicker #ngmodel></nb-datepicker>
+    </div>
+    <div>
+      <input nbInput placeholder="Form Picker" [nbDatepicker]="picker">
+      <nb-datepicker #picker [min]="min" [max]="max"></nb-datepicker>
+    </div>
+  </nb-card-body>
+</nb-card>

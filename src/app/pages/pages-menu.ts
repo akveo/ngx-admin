@@ -17,6 +17,32 @@ export const MENU_ITEMS: NbMenuItem[] = [
     group: true,
   },
   {
+    title: 'Nebular',
+    icon: 'nb-keypad',
+    children: [
+      {
+        title: 'Calendar',
+        link: '/pages/nebular/calendar',
+      },
+      {
+        title: 'Datepicker',
+        link: '/pages/nebular/datepicker',
+      },
+      {
+        title: 'Stepper',
+        link: '/pages/nebular/stepper',
+      },
+      {
+        title: 'Accordion',
+        link: '/pages/nebular/accordion',
+      },
+      {
+        title: 'Dialog',
+        link: '/pages/nebular/dialog',
+      },
+    ],
+  },
+  {
     title: 'UI Features',
     icon: 'nb-keypad',
     link: '/pages/ui-features',
