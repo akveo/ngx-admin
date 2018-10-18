@@ -7,6 +7,7 @@ import { StepperComponent } from './stepper/stepper.component';
 import { AccordionComponent } from './accordion/accordion.component';
 import { DatepickerComponent } from './datepicker/datepicker.component';
 import { DialogComponent } from './dialog/dialog.component';
+import { WindowComponent } from './window/window.component';
 
 const routes: Routes = [{
   path: '',
@@ -31,6 +32,10 @@ const routes: Routes = [{
     {
       path: 'dialog',
       component: DialogComponent,
+    },
+    {
+      path: 'window',
+      component: WindowComponent,
     },
   ],
 }];

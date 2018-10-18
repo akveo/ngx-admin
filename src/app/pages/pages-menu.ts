@@ -40,6 +40,10 @@ export const MENU_ITEMS: NbMenuItem[] = [
         title: 'Dialog',
         link: '/pages/nebular/dialog',
       },
+      {
+        title: 'Window',
+        link: '/pages/nebular/window',
+      },
     ],
   },
   {

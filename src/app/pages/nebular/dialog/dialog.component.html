@@ -12,9 +12,9 @@
     </div>
 
     <div>
-      <button nbButton hero status="primary" (click)="open3()">Enter Name</button>
+      <button nbButton (click)="open3()">Enter Name</button>
       <br>
-      <h3>Names:</h3>
+      <h3 class="title">Names:</h3>
       <ul>
         <li *ngFor="let name of names">{{ name }}</li>
       </ul>

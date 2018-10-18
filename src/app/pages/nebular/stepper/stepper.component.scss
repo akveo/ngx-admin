@@ -13,6 +13,10 @@
   .steppers-container {
     display: flex;
 
+    .input-group {
+      margin-bottom: 0.5rem;
+    }
+
     nb-card {
       flex: 1;
 

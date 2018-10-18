@@ -24,7 +24,9 @@ import {
   NbButtonModule,
   NbInputModule,
   NbAccordionModule,
-  NbDatepickerModule, NbDialogModule,
+  NbDatepickerModule,
+  NbDialogModule,
+  NbWindowModule,
 } from '@nebular/theme';
 
 import { NbSecurityModule } from '@nebular/security';
@@ -83,6 +85,7 @@ const NB_MODULES = [
   NbAccordionModule,
   NbDatepickerModule,
   NbDialogModule,
+  NbWindowModule,
 ];
 
 const COMPONENTS = [
@@ -124,6 +127,7 @@ const NB_THEME_PROVIDERS = [
   ...NbMenuModule.forRoot().providers,
   ...NbDatepickerModule.forRoot().providers,
   ...NbDialogModule.forRoot().providers,
+  ...NbWindowModule.forRoot().providers,
 ];
 
 @NgModule({
