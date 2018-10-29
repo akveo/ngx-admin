@@ -7,6 +7,7 @@ import { ToasterModule } from 'angular2-toaster';
 import { SharedModule } from '../../shared/shared.module';
 import { CrudIdiomasComponent } from './crud-idiomas/crud-idiomas.component';
 import { ListIdiomasComponent } from './list-idiomas/list-idiomas.component';
+import { UserService } from '../../@core/data/users.service';
 
 @NgModule({
   imports: [
@@ -20,6 +21,7 @@ import { ListIdiomasComponent } from './list-idiomas/list-idiomas.component';
     ...routedComponents,
   ],
   providers: [
+    UserService,
     IdiomaService,
   ],
   exports: [

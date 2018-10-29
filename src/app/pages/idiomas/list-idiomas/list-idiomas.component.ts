@@ -3,6 +3,7 @@ import { LocalDataSource } from 'ng2-smart-table';
 import { IdiomaService } from '../../../@core/data/idioma.service';
 import { ToasterService, ToasterConfig, Toast, BodyOutputType } from 'angular2-toaster';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
+import { UserService } from '../../../@core/data/users.service';
 import Swal from 'sweetalert2';
 import 'style-loader!angular2-toaster/toaster.css';
 
@@ -20,6 +21,7 @@ export class ListIdiomasComponent implements OnInit {
 
     constructor(private translate: TranslateService,
         private idiomaService: IdiomaService,
+        private userService: UserService,
         private toasterService: ToasterService) {
         this.loadData();
         this.cargarCampos();
@@ -91,7 +93,8 @@ export class ListIdiomasComponent implements OnInit {
     }
 
     loadData(): void {
-        this.idiomaService.get('conocimiento_idioma/?query=persona:1').subscribe(res => {
+        this.idiomaService.get('conocimiento_idioma/?query=persona:' + this.userService.getEnte())
+        .subscribe(res => {
             if (res !== null) {
                 const data = <Array<any>>res;
                 this.source.load(data);

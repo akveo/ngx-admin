@@ -7,6 +7,7 @@ import { FORM_IDIOMAS } from './form-idiomas';
 import { ToasterService, ToasterConfig, Toast, BodyOutputType } from 'angular2-toaster';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import { IdiomaService } from '../../../@core/data/idioma.service';
+import { UserService } from '../../../@core/data/users.service';
 import Swal from 'sweetalert2';
 import 'style-loader!angular2-toaster/toaster.css';
 
@@ -17,6 +18,7 @@ import 'style-loader!angular2-toaster/toaster.css';
 export class CrudIdiomasComponent implements OnInit {
   config: ToasterConfig;
   info_idioma_id: number;
+  ente: number;
 
   @Input('info_idioma_id')
   set name(info_idioma_id: number) {
@@ -35,6 +37,7 @@ export class CrudIdiomasComponent implements OnInit {
 
   constructor(
     private translate: TranslateService,
+    private users: UserService,
     private idiomaService: IdiomaService,
     private toasterService: ToasterService) {
     this.formInfoIdioma = FORM_IDIOMAS;
@@ -45,7 +48,7 @@ export class CrudIdiomasComponent implements OnInit {
     this.loadOptionsIdiomas();
     this.loadOptionsNiveles()
     this.loadOptionsClasificacion()
-    this.loading = false;
+    this.ente = this.users.getEnte();
   }
 
   construirForm() {
