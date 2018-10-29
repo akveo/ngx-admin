@@ -105,33 +105,12 @@ export class ListIdiomasComponent implements OnInit {
     ngOnInit() {
     }
 
-    activetab(): void {
-        this.cambiotab = !this.cambiotab;
-    }
-
     onEdit(event): void {
         this.uid = event.data.Id;
-        this.activetab();
     }
 
     onCreate(event): void {
         this.uid = 0;
-        this.activetab();
-    }
-
-    selectTab(event): void {
-        if (event.tabTitle === this.translate.instant('GLOBAL.lista')) {
-          this.cambiotab = false;
-        } else {
-          this.cambiotab = true;
-        }
-    }
-
-    onChange(event) {
-        if (event) {
-            this.loadData();
-            this.cambiotab = !this.cambiotab;
-        }
     }
 
     itemselec(event): void {
