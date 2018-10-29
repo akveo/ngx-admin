@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LocalDataSource } from 'ng2-smart-table';
+import { IdiomaService } from '../../../@core/data/idioma.service';
 import { ToasterService, ToasterConfig, Toast, BodyOutputType } from 'angular2-toaster';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import Swal from 'sweetalert2';
@@ -17,7 +18,9 @@ export class ListIdiomasComponent implements OnInit {
     settings: any;
     source: LocalDataSource = new LocalDataSource();
 
-    constructor(private translate: TranslateService, private toasterService: ToasterService) {
+    constructor(private translate: TranslateService,
+        private idiomaService: IdiomaService,
+        private toasterService: ToasterService) {
         this.loadData();
         this.cargarCampos();
         this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
@@ -49,13 +52,13 @@ export class ListIdiomasComponent implements OnInit {
                         return value;
                     },
                 },
-                IdiomaNativo: {
+                Nativo: {
                     title: this.translate.instant('GLOBAL.idioma_nativo'),
                     valuePrepareFunction: (value) => {
                         return value;
                     },
                 },
-                NivelEscritura: {
+                NivelEscribe: {
                     title: this.translate.instant('GLOBAL.nivel_escritura'),
                     valuePrepareFunction: (value) => {
                         return value;
@@ -73,7 +76,7 @@ export class ListIdiomasComponent implements OnInit {
                         return value;
                     },
                 },
-                NivelLectuta: {
+                NivelLee: {
                     title: this.translate.instant('GLOBAL.nivel_lectura'),
                     valuePrepareFunction: (value) => {
                         return value;
@@ -88,12 +91,12 @@ export class ListIdiomasComponent implements OnInit {
     }
 
     loadData(): void {
-        /** this.Service.get('').subscribe(res => {
+        this.idiomaService.get('conocimiento_idioma/?query=persona:1').subscribe(res => {
             if (res !== null) {
                 const data = <Array<any>>res;
                 this.source.load(data);
             }
-        }); **/
+        });
     }
 
     ngOnInit() {
@@ -145,14 +148,15 @@ export class ListIdiomasComponent implements OnInit {
         Swal(opt)
         .then((willDelete) => {
             if (willDelete.value) {
-                /** this.Service.delete('', event.data).subscribe(res => {
-                    if (res !== null) { **/
-                        this.loadData();
-                        this.showToast('info', this.translate.instant('GLOBAL.eliminar'),
-                        this.translate.instant('GLOBAL.confirmarEliminar'));
-                    /** }
-                }); **/
-            }
+            this.idiomaService.delete('conocimiento_idioma/', event.data).subscribe(res => {
+              if (res !== null) {
+                this.loadData();
+                this.showToast('info', this.translate.instant('GLOBAL.eliminar'),
+                this.translate.instant('GLOBAL.idioma') + ' ' +
+                this.translate.instant('GLOBAL.confirmarEliminar'));
+                }
+             });
+          }
         });
     }
 
