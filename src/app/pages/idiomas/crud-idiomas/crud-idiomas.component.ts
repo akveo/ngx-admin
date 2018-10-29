@@ -167,7 +167,7 @@ export class CrudIdiomasComponent implements OnInit {
       .then((willDelete) => {
         if (willDelete.value) {
           this.info_idioma = <InfoIdioma>infoIdioma;
-          this.info_idioma.Persona=1;
+          this.info_idioma.Persona = 1;
           this.idiomaService.post('conocimiento_idioma', this.info_idioma)
             .subscribe(res => {
               this.info_idioma = <InfoIdioma>res;
@@ -187,7 +187,6 @@ export class CrudIdiomasComponent implements OnInit {
   validarForm(event) {
     if (event.valid) {
       if (this.info_idioma === undefined) {
-        console.log(JSON.stringify(event.data.InfoIdioma));
         this.createInfoIdioma(event.data.InfoIdioma);
       } else {
         this.updateInfoIdioma(event.data.InfoIdioma);
