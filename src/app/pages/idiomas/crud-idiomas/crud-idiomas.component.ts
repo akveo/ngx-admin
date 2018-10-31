@@ -10,6 +10,7 @@ import { IdiomaService } from '../../../@core/data/idioma.service';
 import { UserService } from '../../../@core/data/users.service';
 import Swal from 'sweetalert2';
 import 'style-loader!angular2-toaster/toaster.css';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'ngx-crud-idiomas',
@@ -111,13 +112,26 @@ export class CrudIdiomasComponent implements OnInit {
   }
 
   public loadInfoIdioma(): void {
+    console.log(this.info_idioma_id);
+
     if (this.info_idioma_id !== undefined && this.info_idioma_id !== 0 &&
       this.info_idioma_id.toString() !== '') {
-      this.idiomaService.get('conocimiento_idioma/?query=id:' + this.info_idioma_id)
+      this.idiomaService.get('conocimiento_idioma/?query=ide:10' + this.info_idioma_id)
         .subscribe(res => {
           if (res !== null) {
-            this.info_idioma = <InfoIdioma>res;
+            console.log(res);
+
+            this.info_idioma = <InfoIdioma>res[0];
           }
+      },
+      (error: HttpErrorResponse )=> {
+        console.log(error);
+        Swal({
+          type: 'error',
+          title: error.status + '',
+          text: error.message,
+          footer: '<a href>Why do I have this issue?</a>'
+        })
       });
     } else {
       this.info_idioma = undefined
@@ -167,7 +181,7 @@ export class CrudIdiomasComponent implements OnInit {
       .then((willDelete) => {
         if (willDelete.value) {
           this.info_idioma = <InfoIdioma>infoIdioma;
-          this.info_idioma.Persona = 1;
+          this.info_idioma.Persona = this.users.getEnte();
           this.idiomaService.post('conocimiento_idioma', this.info_idioma)
             .subscribe(res => {
               this.info_idioma = <InfoIdioma>res;

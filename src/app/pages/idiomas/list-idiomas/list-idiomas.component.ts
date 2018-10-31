@@ -51,7 +51,7 @@ export class ListIdiomasComponent implements OnInit {
                 Idioma: {
                     title: this.translate.instant('GLOBAL.idioma'),
                     valuePrepareFunction: (value) => {
-                        return value;
+                        return value.Nombre;
                     },
                 },
                 Nativo: {
@@ -63,25 +63,25 @@ export class ListIdiomasComponent implements OnInit {
                 NivelEscribe: {
                     title: this.translate.instant('GLOBAL.nivel_escritura'),
                     valuePrepareFunction: (value) => {
-                        return value;
+                        return value.Nombre;
                     },
                 },
                 NivelEscucha: {
                     title: this.translate.instant('GLOBAL.nivel_escucha'),
                     valuePrepareFunction: (value) => {
-                        return value;
+                        return value.Nombre;
                     },
                 },
                 NivelHabla: {
                     title: this.translate.instant('GLOBAL.nivel_habla'),
                     valuePrepareFunction: (value) => {
-                        return value;
+                        return value.Nombre;
                     },
                 },
                 NivelLee: {
                     title: this.translate.instant('GLOBAL.nivel_lectura'),
                     valuePrepareFunction: (value) => {
-                        return value;
+                        return value.Nombre;
                     },
                 },
             },
@@ -106,6 +106,8 @@ export class ListIdiomasComponent implements OnInit {
     }
 
     onEdit(event): void {
+      console.log('--->', event);
+
         this.uid = event.data.Id;
     }
 
@@ -114,6 +116,12 @@ export class ListIdiomasComponent implements OnInit {
     }
 
     itemselec(event): void {
+    }
+
+    onChange(event) {
+      if (event) {
+        this.loadData();
+      }
     }
 
     onDelete(event): void {
