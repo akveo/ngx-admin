@@ -6,6 +6,27 @@
 
  @mixin ngx-pace-theme() {
 
+  .input-group div[class$='icon'] .has-float-label {
+    left: 0.1rem !important;
+  }
+
+  .has-float-label label::after {
+    background: transparent;
+  }
+
+  .has-float-label label {
+    left: 1.97rem !important;
+    font-size: 0.97em !important;
+  }
+
+  .has-float-label .form-control:placeholder-shown:not(:focus) + label {
+    top: 1.2em !important;
+  }
+
+  .has-float-label .form-control:placeholder-shown:focus + label {
+    top: 0.4em !important;
+  }
+
   .pace .pace-progress {
     background: nb-theme(color-fg-highlight);
   }
