@@ -106,8 +106,6 @@ export class ListIdiomasComponent implements OnInit {
     }
 
     onEdit(event): void {
-      console.log('--->', event);
-
         this.uid = event.data.Id;
     }
 
