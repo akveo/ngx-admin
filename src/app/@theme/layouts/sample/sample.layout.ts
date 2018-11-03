@@ -61,7 +61,7 @@ import { StateService } from '../../../@core/data/state.service';
   `,
 })
 export class SampleLayoutComponent implements OnDestroy {
-  @ViewChild('settingsSidebar') settingsSidebar;
+  @ViewChild('settingsSidebar') settingsSidebarRef;
 
   subMenu: NbMenuItem[] = [
     {
@@ -148,9 +148,8 @@ export class SampleLayoutComponent implements OnDestroy {
 
     window.addEventListener('load', function () {
 
-      var element = 
-            this.settingsSidebar.element.nativeElement;
-      element.classList.remove("preload");
+      var settingsSidebarElement = this.settingsSidebarRef.element.nativeElement;
+      settingsSidebarElement.classList.remove("preload");
       
     }.bind(this), false);
   }
