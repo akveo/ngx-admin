@@ -148,7 +148,7 @@ export class SampleLayoutComponent implements OnDestroy {
 
     window.addEventListener('load', function () {
 
-      var settingsSidebarElement = this.settingsSidebarRef.element.nativeElement;
+      let settingsSidebarElement = this.settingsSidebarRef.element.nativeElement;
       settingsSidebarElement.classList.remove("preload");
       
     }.bind(this), false);
