@@ -1,4 +1,4 @@
-import { Component, OnDestroy } from '@angular/core';
+import { Component, OnDestroy, ViewChild } from '@angular/core';
 import { delay, withLatestFrom, takeWhile } from 'rxjs/operators';
 import {
   NbMediaBreakpoint,
@@ -49,7 +49,8 @@ import { StateService } from '../../../@core/data/state.service';
         <ngx-footer></ngx-footer>
       </nb-layout-footer>
 
-      <nb-sidebar class="settings-sidebar"
+      <nb-sidebar #settingsSidebar
+                   class="settings-sidebar preload"
                    tag="settings-sidebar"
                    state="collapsed"
                    fixed
@@ -60,6 +61,7 @@ import { StateService } from '../../../@core/data/state.service';
   `,
 })
 export class SampleLayoutComponent implements OnDestroy {
+  @ViewChild('settingsSidebar') settingsSidebar;
 
   subMenu: NbMenuItem[] = [
     {
@@ -143,6 +145,14 @@ export class SampleLayoutComponent implements OnDestroy {
       .subscribe(theme => {
         this.currentTheme = theme.name;
     });
+
+    window.addEventListener('load', function () {
+
+      var element = 
+            this.settingsSidebar.element.nativeElement;
+      element.classList.remove("preload");
+      
+    }.bind(this), false);
   }
 
   ngOnDestroy() {

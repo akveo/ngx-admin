@@ -14,6 +14,13 @@
     width: $sidebar-width;
     overflow: hidden;
 
+    &.preload {
+      transition: none !important;
+      -webkit-transition: none !important;
+      -moz-transition: none !important;
+      -o-transition: none !important;
+    }
+
     &.collapsed {
       width: 0;
 
