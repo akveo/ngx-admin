@@ -8,6 +8,7 @@ import { throwIfAlreadyLoaded } from './module-import-guard';
 import { DataModule } from './data/data.module';
 import { AnalyticsService } from './utils/analytics.service';
 import {DocumentoService} from './data/documento.service'
+import { AuthGuard } from './_guards/auth.guard';
 
 const socialLinks = [
   {
@@ -82,6 +83,9 @@ export const NB_CORE_PROVIDERS = [
     NbAuthModule,
   ],
   declarations: [],
+  providers: [
+    AuthGuard,
+  ],
 })
 export class CoreModule {
   constructor(@Optional() @SkipSelf() parentModule: CoreModule) {
