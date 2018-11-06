@@ -78,7 +78,7 @@
     "nuxeo": "^3.6.0",
     "pace-js": "1.0.2",
     "roboto-fontface": "0.8.0",
-    "rxjs": "^6.1.0",
+    "rxjs": "^6.2.0",
     "rxjs-compat": "^6.1.0",
     "socicon": "3.0.5",
     "sweetalert2": "^7.24.4",
