@@ -5,8 +5,8 @@ dist: trusty
 
 node_js:
   - '8'
-  - '9'
   - '10'
+  - 'node'
 
 branches:
   only:
