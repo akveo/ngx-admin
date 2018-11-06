@@ -20,22 +20,22 @@ export class AdmisionesService {
 
     get(endpoint) {
         return this.http.get(path + endpoint).pipe(
-          catchError(this.handleError)
+          catchError(this.handleError),
         );
       }
     post(endpoint, element) {
         return this.http.post(path + endpoint, element, httpOptions).pipe(
-          catchError(this.handleError)
+          catchError(this.handleError),
         );
     }
     put(endpoint, element) {
         return this.http.put(path + endpoint + '/' + element.Id, element, httpOptions).pipe(
-          catchError(this.handleError)
+          catchError(this.handleError),
         );
     }
     delete(endpoint, element) {
         return this.http.delete(path + endpoint + '/' + element.Id).pipe(
-          catchError(this.handleError)
+          catchError(this.handleError),
         );
     }
 
