@@ -57,6 +57,16 @@
       "reset-password": "Reset password"
     }
   },
+  "ERROR": {
+    "400": "The request contains incorrect syntax",
+    "401": "Authorization is not possible, has failed or has not yet been provided",
+    "403": "The server refuses to respond because the client does not have the appropriate privileges",
+    "404": "Resource not found",
+    "405": "The request was made using an unsupported application method",
+    "408": "You have exceeded the time limit in returning answer",
+    "409": "The request could not be processed due to a conflict with the current state of the resource",
+    "500": "Internal error on the server"
+  },
   "GLOBAL": {
     "aceptar": "Accept",
     "cancelar": "Cancel",
@@ -67,14 +77,21 @@
     "registrar": "Add",
     "guardar" : "Save",
     "regresar": "Return",
+    "inscribirse": "Register",
+    "ir_inicio": "Go to dashboard",
+    "no_existe": "The page you were looking for doesn't exist",
+    "404": "Error 404 - Page not found",
     "confirmarEliminar": "has been removed",
     "confirmarActualizar": "has been updated",
     "confirmarCrear": "has been created",
     "formulario": "Form",
     "lista": "List",
+    "perfil": "Profile",
     "soporte_documento":"Document support",
     "alerta_documental_image": "The image has been saved in our document manager",
     "alerta_documental_documento": "The document has been saved in our document manager",
+    "aviso_progreso": "For the registration to a postgraduate course it is necessary to complete each one of the blocks of information that are requested at 100%",
+    "aviso_programa": "Select the postgraduate course you wish to register",
     "info_basica": "Basic information",
     "placeholder_info_basica": "E.g.: Basic information",
     "info_persona": "Personal information",

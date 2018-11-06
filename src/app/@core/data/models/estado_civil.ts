@@ -1,5 +1,3 @@
-
-
 export class EstadoCivil {
   Id: number;
   Nombre: string;

@@ -1,4 +1,3 @@
-
 export class Idioma {
   Id: number;
   Nombre: string;

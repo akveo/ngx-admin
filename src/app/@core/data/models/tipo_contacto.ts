@@ -1,5 +1,3 @@
-
-
 export class TipoContacto {
   Id: number;
   Nombre: string;

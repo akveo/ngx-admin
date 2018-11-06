@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 
 @Component({
   selector: 'ngx-perfil',
@@ -16,7 +17,14 @@ export class PerfilComponent implements OnInit {
 
   @Output('url_editar') url_editar: EventEmitter<boolean> = new EventEmitter();
 
-  constructor() { }
+  constructor(private translate: TranslateService) {
+    this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
+    });
+  }
+
+  useLanguage(language: string) {
+    this.translate.use(language);
+  }
 
   public editar(event, obj): any {
     this.url_editar.emit(obj);

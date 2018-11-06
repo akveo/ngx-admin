@@ -1,4 +1,3 @@
-
 import { TipoDocumento } from './tipo_documento';
 
 export class Documento {

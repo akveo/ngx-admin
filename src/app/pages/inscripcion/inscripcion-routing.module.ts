@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { InscripcionComponent } from './inscripcion.component';
 import { PosgradoComponent } from './posgrado/posgrado.component';
 import { PerfilComponent } from './perfil/perfil.component';
+import { AuthGuard } from '../../@core/_guards/auth.guard';
 
 const routes: Routes = [{
   path: '',
@@ -10,6 +11,7 @@ const routes: Routes = [{
   children: [{
     path: 'posgrado',
     component: PosgradoComponent,
+    canActivate: [AuthGuard],
   }],
 }];
 

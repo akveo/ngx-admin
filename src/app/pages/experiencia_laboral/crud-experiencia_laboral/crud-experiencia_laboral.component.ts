@@ -13,6 +13,7 @@ import { Lugar } from '../../../@core/data/models/lugar';
 import { ExperienciaService } from '../../../@core/data/experiencia.service';
 import { NuxeoService } from '../../../@core/utils/nuxeo.service';
 import { DocumentoService } from '../../../@core/data/documento.service';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'ngx-crud-experiencia-laboral',
@@ -31,10 +32,12 @@ export class CrudExperienciaLaboralComponent implements OnInit {
     this.info_experiencia_laboral_id = info_experiencia_laboral_id;
     this.loadInfoExperienciaLaboral();
   }
+
   @Input('ente_id')
   set ente_experiencia(ente_id: any) {
     this.ente_id = Number(ente_id);
   }
+
   @Output() eventChange = new EventEmitter();
   @Output('result') result: EventEmitter<any> = new EventEmitter();
 
@@ -114,8 +117,24 @@ export class CrudExperienciaLaboralComponent implements OnInit {
                         if (r !== null) {
                           this.searchOrganizacion(r[0].NumeroIdentificacion);
                         }
+                      },
+                      (error: HttpErrorResponse) => {
+                        Swal({
+                          type: 'error',
+                          title: error.status + '',
+                          text: this.translate.instant('ERROR.' + error.status),
+                          confirmButtonText: this.translate.instant('GLOBAL.aceptar'),
+                        });
                       });
                   }
+                },
+                (error: HttpErrorResponse) => {
+                  Swal({
+                    type: 'error',
+                    title: error.status + '',
+                    text: this.translate.instant('ERROR.' + error.status),
+                    confirmButtonText: this.translate.instant('GLOBAL.aceptar'),
+                  });
                 })
             } else {
               this.info_experiencia_laboral = <any>res;
@@ -124,10 +143,26 @@ export class CrudExperienciaLaboralComponent implements OnInit {
                   if (r !== null) {
                     this.searchOrganizacion(r[0].NumeroIdentificacion);
                   }
+                },
+                (error: HttpErrorResponse) => {
+                  Swal({
+                    type: 'error',
+                    title: error.status + '',
+                    text: this.translate.instant('ERROR.' + error.status),
+                    confirmButtonText: this.translate.instant('GLOBAL.aceptar'),
+                  });
                 });
             }
 
           }
+        },
+        (error: HttpErrorResponse) => {
+          Swal({
+            type: 'error',
+            title: error.status + '',
+            text: this.translate.instant('ERROR.' + error.status),
+            confirmButtonText: this.translate.instant('GLOBAL.aceptar'),
+          });
         });
     } else {
       this.info_experiencia_laboral = undefined
@@ -172,8 +207,24 @@ export class CrudExperienciaLaboralComponent implements OnInit {
                       this.showToast('info', this.translate.instant('GLOBAL.actualizar'),
                         this.translate.instant('GLOBAL.experiencia_laboral') + ' ' +
                         this.translate.instant('GLOBAL.confirmarActualizar'));
+                    },
+                    (error: HttpErrorResponse) => {
+                      Swal({
+                        type: 'error',
+                        title: error.status + '',
+                        text: this.translate.instant('ERROR.' + error.status),
+                        confirmButtonText: this.translate.instant('GLOBAL.aceptar'),
+                      });
                     });
                 }
+              },
+              (error: HttpErrorResponse) => {
+                Swal({
+                  type: 'error',
+                  title: error.status + '',
+                  text: this.translate.instant('ERROR.' + error.status),
+                  confirmButtonText: this.translate.instant('GLOBAL.aceptar'),
+                });
               });
           } else {
             this.experienciaService.put('experiencia_laboral', this.info_experiencia_laboral)
@@ -183,6 +234,14 @@ export class CrudExperienciaLaboralComponent implements OnInit {
                 this.showToast('info', this.translate.instant('GLOBAL.actualizar'),
                   this.translate.instant('GLOBAL.experiencia_laboral') + ' ' +
                   this.translate.instant('GLOBAL.confirmarActualizar'));
+              },
+              (error: HttpErrorResponse) => {
+                Swal({
+                  type: 'error',
+                  title: error.status + '',
+                  text: this.translate.instant('ERROR.' + error.status),
+                  confirmButtonText: this.translate.instant('GLOBAL.aceptar'),
+                });
               });
           }
         }
@@ -197,6 +256,14 @@ export class CrudExperienciaLaboralComponent implements OnInit {
           tipoOrganizacion = <Array<any>>res;
         }
         this.formInfoExperienciaLaboral.campos[this.getIndexForm('TipoOrganizacion')].opciones = tipoOrganizacion;
+      },
+      (error: HttpErrorResponse) => {
+        Swal({
+          type: 'error',
+          title: error.status + '',
+          text: this.translate.instant('ERROR.' + error.status),
+          confirmButtonText: this.translate.instant('GLOBAL.aceptar'),
+        });
       });
   }
 
@@ -208,6 +275,14 @@ export class CrudExperienciaLaboralComponent implements OnInit {
           paisNacimiento = <Array<Lugar>>res;
         }
         this.formInfoExperienciaLaboral.campos[this.getIndexForm('Pais')].opciones = paisNacimiento;
+      },
+      (error: HttpErrorResponse) => {
+        Swal({
+          type: 'error',
+          title: error.status + '',
+          text: this.translate.instant('ERROR.' + error.status),
+          confirmButtonText: this.translate.instant('GLOBAL.aceptar'),
+        });
       });
   }
 
@@ -219,6 +294,14 @@ export class CrudExperienciaLaboralComponent implements OnInit {
           cargo = <Array<any>>res;
         }
         this.formInfoExperienciaLaboral.campos[this.getIndexForm('Cargo')].opciones = cargo;
+      },
+      (error: HttpErrorResponse) => {
+        Swal({
+          type: 'error',
+          title: error.status + '',
+          text: this.translate.instant('ERROR.' + error.status),
+          confirmButtonText: this.translate.instant('GLOBAL.aceptar'),
+        });
       });
   }
 
@@ -230,6 +313,14 @@ export class CrudExperienciaLaboralComponent implements OnInit {
           tipoVinculacion = <Array<any>>res;
         }
         this.formInfoExperienciaLaboral.campos[this.getIndexForm('TipoVinculacion')].opciones = tipoVinculacion;
+      },
+      (error: HttpErrorResponse) => {
+        Swal({
+          type: 'error',
+          title: error.status + '',
+          text: this.translate.instant('ERROR.' + error.status),
+          confirmButtonText: this.translate.instant('GLOBAL.aceptar'),
+        });
       });
   }
 
@@ -316,6 +407,14 @@ export class CrudExperienciaLaboralComponent implements OnInit {
           .forEach(element => {
             element.deshabilitar = element.valor ? true : false
           });
+      },
+      (error: HttpErrorResponse) => {
+        Swal({
+          type: 'error',
+          title: error.status + '',
+          text: this.translate.instant('ERROR.' + error.status),
+          confirmButtonText: this.translate.instant('GLOBAL.aceptar'),
+        });
       });
   }
 
@@ -360,8 +459,24 @@ export class CrudExperienciaLaboralComponent implements OnInit {
                         this.translate.instant('GLOBAL.confirmarCrear'));
                       this.clean = !this.clean;
                     }
+                  },
+                  (error: HttpErrorResponse) => {
+                    Swal({
+                      type: 'error',
+                      title: error.status + '',
+                      text: this.translate.instant('ERROR.' + error.status),
+                      confirmButtonText: this.translate.instant('GLOBAL.aceptar'),
+                    });
                   });
               }
+            },
+            (error: HttpErrorResponse) => {
+              Swal({
+                type: 'error',
+                title: error.status + '',
+                text: this.translate.instant('ERROR.' + error.status),
+                confirmButtonText: this.translate.instant('GLOBAL.aceptar'),
+              });
             });
         }
       });
@@ -374,6 +489,14 @@ export class CrudExperienciaLaboralComponent implements OnInit {
         this.showToast('error', 'error',
           'ocurrio un error agregando la ubicación');
       }
+    },
+    (error: HttpErrorResponse) => {
+      Swal({
+        type: 'error',
+        title: error.status + '',
+        text: this.translate.instant('ERROR.' + error.status),
+        confirmButtonText: this.translate.instant('GLOBAL.aceptar'),
+      });
     });
   }
 
@@ -398,6 +521,14 @@ export class CrudExperienciaLaboralComponent implements OnInit {
           this.updateInfoExperienciaLaboral(exp);
         }
       }
+    },
+    (error: HttpErrorResponse) => {
+      Swal({
+        type: 'error',
+        title: error.status + '',
+        text: this.translate.instant('ERROR.' + error.status),
+        confirmButtonText: this.translate.instant('GLOBAL.aceptar'),
+      });
     });
   }
 

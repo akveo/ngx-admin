@@ -1,4 +1,3 @@
-
 import { Injectable } from '@angular/core';
 import { HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs/Rx';
@@ -28,6 +27,7 @@ export class ImplicitAutenticationService {
         this.logOut = '';
         this.timer();
     }
+
     public logout() {
         this.logOut = GENERAL.ENTORNO.TOKEN.SIGN_OUT_URL;
         this.logOut += '?id_token_hint=' + window.localStorage.getItem('id_token');
@@ -36,6 +36,7 @@ export class ImplicitAutenticationService {
         window.location.replace(this.logOut);
         return this.logOut;
     }
+
     clearUrl() {
         const uri = window.location.toString();
         if (uri.indexOf('?') > 0) {

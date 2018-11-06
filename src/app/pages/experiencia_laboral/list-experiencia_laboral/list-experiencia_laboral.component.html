@@ -1,14 +1,13 @@
 <nb-card>
-    <nb-card-body>
-        <toaster-container [toasterconfig]="config"></toaster-container>
-          <nb-card class="row" [hidden]="!crud">
-            <nb-card-body>
-              <a class="pull-right text-danger link" (click)="crud = false"><strong>X</strong></a>
-              <ngx-crud-experiencia-laboral [info_experiencia_laboral_id]="uid" [ente_id]="eid" (eventChange)="onChange($event)"></ngx-crud-experiencia-laboral>
-            </nb-card-body>
-          </nb-card>
-
-                <ng2-smart-table [settings]="settings" [source]="source" (delete)="onDelete($event)" (rowSelect)="itemselec($event)" (edit)="onEdit($event)" (create)="onCreate($event)">
-                </ng2-smart-table>
-    </nb-card-body>
+  <nb-card-body>
+    <toaster-container [toasterconfig]="config"></toaster-container>
+    <nb-card class="row" [hidden]="!crud">
+      <nb-card-body>
+        <a class="pull-right text-danger link" (click)="crud = false"><strong>X</strong></a>
+        <ngx-crud-experiencia-laboral [info_experiencia_laboral_id]="uid" [ente_id]="eid" (eventChange)="onChange($event)"></ngx-crud-experiencia-laboral>
+      </nb-card-body>
+    </nb-card>
+    <ng2-smart-table [settings]="settings" [source]="source" (delete)="onDelete($event)" (rowSelect)="itemselec($event)" (edit)="onEdit($event)" (create)="onCreate($event)">
+    </ng2-smart-table>
+  </nb-card-body>
 </nb-card>

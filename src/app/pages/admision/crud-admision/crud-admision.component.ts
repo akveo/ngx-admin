@@ -1,13 +1,13 @@
 import { EstadoAdmision } from './../../../@core/data/models/estado_admision';
 import { LineaInvestigacion } from './../../../@core/data/models/linea_investigacion';
 import { Enfasis } from './../../../@core/data/models/enfasis';
-
 import { Admision } from './../../../@core/data/models/admision';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { AdmisionesService } from '../../../@core/data/admisiones.service';
 import { FORM_ADMISION } from './form-admision';
 import { ToasterService, ToasterConfig, Toast, BodyOutputType } from 'angular2-toaster';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
+import { HttpErrorResponse } from '@angular/common/http';
 import Swal from 'sweetalert2';
 import 'style-loader!angular2-toaster/toaster.css';
 
@@ -65,8 +65,17 @@ export class CrudAdmisionComponent implements OnInit {
             estadoAdmision = <Array<EstadoAdmision>>res;
           }
           this.formAdmision.campos[ this.getIndexForm('EstadoAdmision') ].opciones = estadoAdmision;
+        },
+        (error: HttpErrorResponse) => {
+          Swal({
+            type: 'error',
+            title: error.status + '',
+            text: this.translate.instant('ERROR.' + error.status),
+            confirmButtonText: this.translate.instant('GLOBAL.aceptar'),
+          });
         });
   }
+
   loadOptionsLineaInvestigacion(): void {
     let lineaInvestigacion: Array<any> = [];
       this.admisionesService.get('linea_investigacion/?limit=0')
@@ -75,8 +84,17 @@ export class CrudAdmisionComponent implements OnInit {
             lineaInvestigacion = <Array<LineaInvestigacion>>res;
           }
           this.formAdmision.campos[ this.getIndexForm('LineaInvestigacion') ].opciones = lineaInvestigacion;
+        },
+        (error: HttpErrorResponse) => {
+          Swal({
+            type: 'error',
+            title: error.status + '',
+            text: this.translate.instant('ERROR.' + error.status),
+            confirmButtonText: this.translate.instant('GLOBAL.aceptar'),
+          });
         });
   }
+
   loadOptionsEnfasis(): void {
     let enfasis: Array<any> = [];
       this.admisionesService.get('enfasis/?limit=0')
@@ -85,6 +103,14 @@ export class CrudAdmisionComponent implements OnInit {
             enfasis = <Array<Enfasis>>res;
           }
           this.formAdmision.campos[ this.getIndexForm('Enfasis') ].opciones = enfasis;
+        },
+        (error: HttpErrorResponse) => {
+          Swal({
+            type: 'error',
+            title: error.status + '',
+            text: this.translate.instant('ERROR.' + error.status),
+            confirmButtonText: this.translate.instant('GLOBAL.aceptar'),
+          });
         });
   }
 
@@ -98,7 +124,6 @@ export class CrudAdmisionComponent implements OnInit {
     return 0;
   }
 
-
   public loadAdmision(): void {
     if (this.admision_id !== undefined && this.admision_id !== 0) {
       this.admisionesService.get('admision/?query=id:' + this.admision_id)
@@ -106,6 +131,14 @@ export class CrudAdmisionComponent implements OnInit {
           if (res !== null) {
             this.info_admision = <Admision>res[0];
           }
+        },
+        (error: HttpErrorResponse) => {
+          Swal({
+            type: 'error',
+            title: error.status + '',
+            text: this.translate.instant('ERROR.' + error.status),
+            confirmButtonText: this.translate.instant('GLOBAL.aceptar'),
+          });
         });
     } else  {
       this.info_admision = undefined;
@@ -114,14 +147,15 @@ export class CrudAdmisionComponent implements OnInit {
   }
 
   updateAdmision(admision: any): void {
-
     const opt: any = {
-      title: 'Update?',
-      text: 'Update Admision!',
+      title: this.translate.instant('GLOBAL.actualizar'),
+      text: this.translate.instant('GLOBAL.actualizar') + '?',
       icon: 'warning',
       buttons: true,
       dangerMode: true,
       showCancelButton: true,
+      confirmButtonText: this.translate.instant('GLOBAL.aceptar'),
+      cancelButtonText: this.translate.instant('GLOBAL.cancelar'),
     };
     Swal(opt)
     .then((willDelete) => {
@@ -131,7 +165,17 @@ export class CrudAdmisionComponent implements OnInit {
           .subscribe(res => {
             this.loadAdmision();
             this.eventChange.emit(true);
-            this.showToast('info', 'updated', 'Admision updated');
+            this.showToast('info', this.translate.instant('GLOBAL.actualizar'),
+            this.translate.instant('GLOBAL.admision') + ' ' +
+            this.translate.instant('GLOBAL.confirmarActualizar'));
+          },
+          (error: HttpErrorResponse) => {
+            Swal({
+              type: 'error',
+              title: error.status + '',
+              text: this.translate.instant('ERROR.' + error.status),
+              confirmButtonText: this.translate.instant('GLOBAL.aceptar'),
+            });
           });
       }
     });
@@ -139,12 +183,14 @@ export class CrudAdmisionComponent implements OnInit {
 
   createAdmision(admision: any): void {
     const opt: any = {
-      title: 'Create?',
-      text: 'Create Admision!',
+      title: this.translate.instant('GLOBAL.crear'),
+      text: this.translate.instant('GLOBAL.crear') + '?',
       icon: 'warning',
       buttons: true,
       dangerMode: true,
       showCancelButton: true,
+      confirmButtonText: this.translate.instant('GLOBAL.aceptar'),
+      cancelButtonText: this.translate.instant('GLOBAL.cancelar'),
     };
     Swal(opt)
     .then((willDelete) => {
@@ -154,7 +200,17 @@ export class CrudAdmisionComponent implements OnInit {
           .subscribe(res => {
             this.info_admision = <Admision>res;
             this.eventChange.emit(true);
-            this.showToast('info', 'created', 'Admision created');
+            this.showToast('info', this.translate.instant('GLOBAL.crear'),
+            this.translate.instant('GLOBAL.admision') + ' ' +
+            this.translate.instant('GLOBAL.confirmarCrear'));
+          },
+          (error: HttpErrorResponse) => {
+            Swal({
+              type: 'error',
+              title: error.status + '',
+              text: this.translate.instant('ERROR.' + error.status),
+              confirmButtonText: this.translate.instant('GLOBAL.aceptar'),
+            });
           });
       }
     });

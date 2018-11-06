@@ -1,5 +1,3 @@
-
-
 export class TipoLugar {
   Id: number;
   Nombre: string;

@@ -1,6 +1,10 @@
 import { InfoContactoGet } from '../../../@core/data/models/info_contacto_get';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { CampusMidService } from '../../../@core/data/campus_mid.service';
+import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
+import { HttpErrorResponse } from '@angular/common/http';
+import Swal from 'sweetalert2';
+import 'style-loader!angular2-toaster/toaster.css';
 
 @Component({
   selector: 'ngx-view-informacion-contacto',
@@ -20,7 +24,16 @@ export class ViewInformacionContactoComponent implements OnInit {
 
   @Output('url_editar') url_editar: EventEmitter<boolean> = new EventEmitter();
 
-  constructor(private campusMidService: CampusMidService) { }
+  constructor(
+    private campusMidService: CampusMidService,
+    private translate: TranslateService) {
+    this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
+    });
+  }
+
+  useLanguage(language: string) {
+    this.translate.use(language);
+  }
 
   public editar(): void {
     this.url_editar.emit(true);
@@ -37,6 +50,14 @@ export class ViewInformacionContactoComponent implements OnInit {
           } else  {
             this.info_informacion_contacto = undefined;
           }
+        },
+        (error: HttpErrorResponse) => {
+          Swal({
+            type: 'error',
+            title: error.status + '',
+            text: this.translate.instant('ERROR.' + error.status),
+            confirmButtonText: this.translate.instant('GLOBAL.aceptar'),
+          });
         });
     } else  {
       this.info_informacion_contacto = undefined;
@@ -45,5 +66,4 @@ export class ViewInformacionContactoComponent implements OnInit {
 
   ngOnInit() {
   }
-
 }

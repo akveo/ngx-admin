@@ -1,5 +1,3 @@
-
-
 export class Persona {
   Id: number;
   PrimerNombre: string;

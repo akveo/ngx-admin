@@ -1,4 +1,3 @@
-
 import { Subject } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
@@ -10,7 +9,6 @@ const httpOptions = {
     'authorization': 'Bearer ' + window.localStorage.getItem('access_token'),
   }),
 }
-
 
 const path = GENERAL.ENTORNO.PERSONA_SERVICE;
 

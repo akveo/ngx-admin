@@ -26,6 +26,7 @@ export class CrudIdiomasComponent implements OnInit {
     this.info_idioma_id = info_idioma_id;
     this.loadInfoIdioma();
   }
+
   @Output() eventChange = new EventEmitter();
   @Output('result') result: EventEmitter<any> = new EventEmitter();
 
@@ -73,6 +74,14 @@ export class CrudIdiomasComponent implements OnInit {
           idioma = <Array<Idioma>>res;
         }
         this.formInfoIdioma.campos[this.getIndexForm('Idioma')].opciones = idioma;
+      },
+      (error: HttpErrorResponse) => {
+        Swal({
+          type: 'error',
+          title: error.status + '',
+          text: this.translate.instant('ERROR.' + error.status),
+          confirmButtonText: this.translate.instant('GLOBAL.aceptar'),
+        });
       });
   }
 
@@ -87,6 +96,14 @@ export class CrudIdiomasComponent implements OnInit {
         this.formInfoIdioma.campos[this.getIndexForm('NivelEscucha')].opciones = nivel;
         this.formInfoIdioma.campos[this.getIndexForm('NivelHabla')].opciones = nivel;
         this.formInfoIdioma.campos[this.getIndexForm('NivelLee')].opciones = nivel;
+      },
+      (error: HttpErrorResponse) => {
+        Swal({
+          type: 'error',
+          title: error.status + '',
+          text: this.translate.instant('ERROR.' + error.status),
+          confirmButtonText: this.translate.instant('GLOBAL.aceptar'),
+        });
       });
   }
 
@@ -98,6 +115,14 @@ export class CrudIdiomasComponent implements OnInit {
           clasificacion = <Array<ClasificacionNivelIdioma>>res;
         }
         this.formInfoIdioma.campos[this.getIndexForm('ClasificacionNivelIdioma')].opciones = clasificacion;
+      },
+      (error: HttpErrorResponse) => {
+        Swal({
+          type: 'error',
+          title: error.status + '',
+          text: this.translate.instant('ERROR.' + error.status),
+          confirmButtonText: this.translate.instant('GLOBAL.aceptar'),
+        });
       });
   }
 
@@ -124,8 +149,8 @@ export class CrudIdiomasComponent implements OnInit {
         Swal({
           type: 'error',
           title: error.status + '',
-          text: error.message,
-          footer: '<a href>Why do I have this issue?</a>',
+          text: this.translate.instant('ERROR.' + error.status),
+          confirmButtonText: this.translate.instant('GLOBAL.aceptar'),
         });
       });
     } else {
@@ -156,6 +181,14 @@ export class CrudIdiomasComponent implements OnInit {
               this.showToast('info', this.translate.instant('GLOBAL.actualizar'),
                 this.translate.instant('GLOBAL.idioma') + ' ' +
                 this.translate.instant('GLOBAL.confirmarActualizar'));
+            },
+            (error: HttpErrorResponse) => {
+              Swal({
+                type: 'error',
+                title: error.status + '',
+                text: this.translate.instant('ERROR.' + error.status),
+                confirmButtonText: this.translate.instant('GLOBAL.aceptar'),
+              });
             });
         }
       });
@@ -184,6 +217,14 @@ export class CrudIdiomasComponent implements OnInit {
               this.showToast('info', this.translate.instant('GLOBAL.crear'),
               this.translate.instant('GLOBAL.idioma') + ' ' +
               this.translate.instant('GLOBAL.confirmarCrear'));
+            },
+            (error: HttpErrorResponse) => {
+              Swal({
+                type: 'error',
+                title: error.status + '',
+                text: this.translate.instant('ERROR.' + error.status),
+                confirmButtonText: this.translate.instant('GLOBAL.aceptar'),
+              });
             });
         }
       });
