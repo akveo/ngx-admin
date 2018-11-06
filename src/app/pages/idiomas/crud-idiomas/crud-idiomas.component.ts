@@ -1,11 +1,16 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Idioma } from './../../../@core/data/models/idioma';
+import { ClasificacionNivelIdioma } from './../../../@core/data/models/clasificacion_idioma';
+import { NivelIdioma } from './../../../@core/data/models/nivel_idioma';
 import { InfoIdioma } from './../../../@core/data/models/info_idioma';
 import { FORM_IDIOMAS } from './form-idiomas';
 import { ToasterService, ToasterConfig, Toast, BodyOutputType } from 'angular2-toaster';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
+import { IdiomaService } from '../../../@core/data/idioma.service';
+import { UserService } from '../../../@core/data/users.service';
 import Swal from 'sweetalert2';
 import 'style-loader!angular2-toaster/toaster.css';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'ngx-crud-idiomas',
@@ -14,6 +19,7 @@ import 'style-loader!angular2-toaster/toaster.css';
 export class CrudIdiomasComponent implements OnInit {
   config: ToasterConfig;
   info_idioma_id: number;
+  ente: number;
 
   @Input('info_idioma_id')
   set name(info_idioma_id: number) {
@@ -27,9 +33,13 @@ export class CrudIdiomasComponent implements OnInit {
   formInfoIdioma: any;
   regInfoIdioma: any;
   clean: boolean;
+  loading: boolean;
+  percentage: number;
 
   constructor(
     private translate: TranslateService,
+    private users: UserService,
+    private idiomaService: IdiomaService,
     private toasterService: ToasterService) {
     this.formInfoIdioma = FORM_IDIOMAS;
     this.construirForm();
@@ -37,6 +47,9 @@ export class CrudIdiomasComponent implements OnInit {
       this.construirForm();
     });
     this.loadOptionsIdiomas();
+    this.loadOptionsNiveles()
+    this.loadOptionsClasificacion()
+    this.ente = this.users.getEnte();
   }
 
   construirForm() {
@@ -54,13 +67,38 @@ export class CrudIdiomasComponent implements OnInit {
 
   loadOptionsIdiomas(): void {
     let idioma: Array<any> = [];
-    /** this.Service.get('')
+    this.idiomaService.get('idioma/?limit=0')
       .subscribe(res => {
-        if (res !== null) { **/
-          idioma = <Array<Idioma>>idioma; // res;
-        /**}
+        if (res !== null) {
+          idioma = <Array<Idioma>>res;
+        }
         this.formInfoIdioma.campos[this.getIndexForm('Idioma')].opciones = idioma;
-       }); **/
+      });
+  }
+
+  loadOptionsNiveles(): void {
+    let nivel: Array<any> = [];
+    this.idiomaService.get('valor_nivel_idioma/?limit=0')
+      .subscribe(res => {
+        if (res !== null) {
+          nivel = <Array<NivelIdioma>>res;
+        }
+        this.formInfoIdioma.campos[this.getIndexForm('NivelEscribe')].opciones = nivel;
+        this.formInfoIdioma.campos[this.getIndexForm('NivelEscucha')].opciones = nivel;
+        this.formInfoIdioma.campos[this.getIndexForm('NivelHabla')].opciones = nivel;
+        this.formInfoIdioma.campos[this.getIndexForm('NivelLee')].opciones = nivel;
+      });
+  }
+
+  loadOptionsClasificacion(): void {
+    let clasificacion: Array<any> = [];
+    this.idiomaService.get('clasificacion_nivel_idioma/?limit=0')
+      .subscribe(res => {
+        if (res !== null) {
+          clasificacion = <Array<ClasificacionNivelIdioma>>res;
+        }
+        this.formInfoIdioma.campos[this.getIndexForm('ClasificacionNivelIdioma')].opciones = clasificacion;
+      });
   }
 
   getIndexForm(nombre: String): number {
@@ -76,14 +114,22 @@ export class CrudIdiomasComponent implements OnInit {
   public loadInfoIdioma(): void {
     if (this.info_idioma_id !== undefined && this.info_idioma_id !== 0 &&
       this.info_idioma_id.toString() !== '') {
-      /** this.Service.get('')
+      this.idiomaService.get('conocimiento_idioma/?query=ide:10' + this.info_idioma_id)
         .subscribe(res => {
           if (res !== null) {
-            this.info_idioma = <InfoIdioma>res;
+            this.info_idioma = <InfoIdioma>res[0];
           }
-        }); **/
+      },
+      (error: HttpErrorResponse) => {
+        Swal({
+          type: 'error',
+          title: error.status + '',
+          text: error.message,
+          footer: '<a href>Why do I have this issue?</a>',
+        });
+      });
     } else {
-      this.info_idioma = undefined
+      this.info_idioma = undefined;
       this.clean = !this.clean;
     }
   }
@@ -103,14 +149,14 @@ export class CrudIdiomasComponent implements OnInit {
       .then((willDelete) => {
         if (willDelete.value) {
           this.info_idioma = <InfoIdioma>infoIdioma;
-          /** this.Service.put('', this.info_idioma)
-            .subscribe(res => { **/
+          this.idiomaService.put('conocimiento_idioma', this.info_idioma)
+            .subscribe(res => {
               this.loadInfoIdioma();
               this.eventChange.emit(true);
               this.showToast('info', this.translate.instant('GLOBAL.actualizar'),
                 this.translate.instant('GLOBAL.idioma') + ' ' +
                 this.translate.instant('GLOBAL.confirmarActualizar'));
-            /** }); **/
+            });
         }
       });
   }
@@ -130,13 +176,15 @@ export class CrudIdiomasComponent implements OnInit {
       .then((willDelete) => {
         if (willDelete.value) {
           this.info_idioma = <InfoIdioma>infoIdioma;
-          /** this.Service.post('', this.info_idioma)
+          this.info_idioma.Persona = this.users.getEnte();
+          this.idiomaService.post('conocimiento_idioma', this.info_idioma)
             .subscribe(res => {
-              this.info_idioma = <InfoIdioma>res; **/
+              this.info_idioma = <InfoIdioma>res;
               this.eventChange.emit(true);
               this.showToast('info', this.translate.instant('GLOBAL.crear'),
-                this.translate.instant('GLOBAL.idioma') + ' ' + this.translate.instant('GLOBAL.confirmarCrear'));
-            /** }); **/
+              this.translate.instant('GLOBAL.idioma') + ' ' +
+              this.translate.instant('GLOBAL.confirmarCrear'));
+            });
         }
       });
   }

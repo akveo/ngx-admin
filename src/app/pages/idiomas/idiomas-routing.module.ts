@@ -4,8 +4,6 @@ import { IdiomasComponent } from './idiomas.component';
 import { ListIdiomasComponent } from './list-idiomas/list-idiomas.component';
 import { CrudIdiomasComponent } from './crud-idiomas/crud-idiomas.component';
 
-
-
 const routes: Routes = [{
   path: '',
   component: IdiomasComponent,
