@@ -1,0 +1,20 @@
+export const REDUCER_LIST = {
+    Genero: 'Genero',
+    ClasificacionNivelIdioma: 'ClasificacionNivelIdioma',
+    EstadoAdmision: 'EstadoAdmision',
+    EstadoCivil: 'EstadoCivil',
+    GrupoEtnico: 'GrupoEtnico',
+    Idioma: 'Idioma',
+    LineaInvestigacion: 'LineaInvestigacion',
+    Pais: 'Pais',
+    Ciudad: 'Ciudad',
+    Lugar: 'Lugar',
+    Metodologia: 'Metodologia',
+    NivelFormacion: 'NivelFormacion',
+    NivelIdioma: 'NivelIdioma',
+    ProgramaAcademico: 'ProgramaAcademico',
+    TipoContacto: 'TipoContacto',
+    TipoDiscapacidad: 'TipoDiscapacidad',
+    TipoLugar: 'TipoLugar',
+    Titulacion: 'Titulacion'
+};

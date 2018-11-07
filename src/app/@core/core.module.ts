@@ -9,6 +9,7 @@ import { DataModule } from './data/data.module';
 import { AnalyticsService } from './utils/analytics.service';
 import {DocumentoService} from './data/documento.service'
 import { AuthGuard } from './_guards/auth.guard';
+import { ListService } from './store/services/list.service';
 
 const socialLinks = [
   {
@@ -85,6 +86,7 @@ export const NB_CORE_PROVIDERS = [
   declarations: [],
   providers: [
     AuthGuard,
+    ListService,
   ],
 })
 export class CoreModule {

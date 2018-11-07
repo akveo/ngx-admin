@@ -52,6 +52,7 @@
     "@nebular/security": "2.0.0-rc.9",
     "@nebular/theme": "2.0.0-rc.9",
     "@ng-bootstrap/ng-bootstrap": "1.0.0",
+    "@ngrx/store": "^6.1.2",
     "@ngx-translate/core": "^9.1.1",
     "@ngx-translate/http-loader": "^2.0.1",
     "@swimlane/ngx-charts": "7.0.1",
