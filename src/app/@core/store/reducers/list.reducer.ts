@@ -1,6 +1,4 @@
-import { Lugar } from '../../data/models/lugar';
 import { REDUCER_LIST } from '../reducer.constants';
-
 
   export function ListReducer(state: Array<any> =  new Array, action) {
     switch (action.type) {
@@ -41,7 +39,7 @@ import { REDUCER_LIST } from '../reducer.constants';
       case REDUCER_LIST.Titulacion:
         return [...state, action.payload];
       default:
-            return state;
+        return state;
       }
   }
 

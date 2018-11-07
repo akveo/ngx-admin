@@ -16,5 +16,5 @@ export const REDUCER_LIST = {
     TipoContacto: 'TipoContacto',
     TipoDiscapacidad: 'TipoDiscapacidad',
     TipoLugar: 'TipoLugar',
-    Titulacion: 'Titulacion'
+    Titulacion: 'Titulacion',
 };

@@ -3,7 +3,6 @@ import { Injectable } from '@angular/core';
 import { IAppState } from '../app.state';
 import { Store } from '@ngrx/store';
 import { REDUCER_LIST } from '../reducer.constants';
-import { Genero } from '../../data/models/genero';
 import { AdmisionesService } from '../../data/admisiones.service';
 import { IdiomaService } from '../../data/idioma.service';
 import { UbicacionesService } from '../../data/ubicaciones.service';
@@ -39,7 +38,7 @@ export class ListService {
             },
           );
         }
-      }
+      },
     );
   }
 
@@ -57,7 +56,7 @@ export class ListService {
             },
           );
         }
-      }
+      },
     );
   }
 
@@ -75,7 +74,7 @@ export class ListService {
             },
           );
         }
-      }
+      },
     );
   }
 
@@ -93,7 +92,7 @@ export class ListService {
             },
           );
         }
-      }
+      },
     );
   }
 
@@ -111,7 +110,7 @@ export class ListService {
             },
           );
         }
-      }
+      },
     );
   }
 
@@ -129,7 +128,7 @@ export class ListService {
             },
           );
         }
-      }
+      },
     );
   }
 
@@ -147,7 +146,7 @@ export class ListService {
             },
           );
         }
-      }
+      },
     );
   }
 
@@ -165,7 +164,7 @@ export class ListService {
             },
           );
         }
-      }
+      },
     );
   }
 
@@ -183,7 +182,7 @@ export class ListService {
             },
           );
         }
-      }
+      },
     );
   }
 
@@ -201,7 +200,7 @@ export class ListService {
             },
           );
         }
-      }
+      },
     );
   }
 
@@ -219,7 +218,7 @@ export class ListService {
             },
           );
         }
-      }
+      },
     );
   }
 
@@ -237,7 +236,7 @@ export class ListService {
             },
           );
         }
-      }
+      },
     );
   }
 
@@ -255,7 +254,7 @@ export class ListService {
             },
           );
         }
-      }
+      },
     );
   }
 
@@ -273,7 +272,7 @@ export class ListService {
             },
           );
         }
-      }
+      },
     );
   }
 
@@ -291,7 +290,7 @@ export class ListService {
             },
           );
         }
-      }
+      },
     );
   }
 
@@ -309,7 +308,7 @@ export class ListService {
             },
           );
         }
-      }
+      },
     );
   }
 
@@ -327,7 +326,7 @@ export class ListService {
             },
           );
         }
-      }
+      },
     );
   }
 
@@ -345,7 +344,7 @@ export class ListService {
             },
           );
         }
-      }
+      },
     );
   }
 
