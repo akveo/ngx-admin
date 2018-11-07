@@ -36,7 +36,7 @@ export class ListService {
             },
             error => {
               this.addList(REDUCER_LIST.Genero, []);
-            }
+            },
           );
         }
       }
@@ -54,7 +54,7 @@ export class ListService {
             },
             error => {
               this.addList(REDUCER_LIST.ClasificacionNivelIdioma, []);
-            }
+            },
           );
         }
       }
@@ -72,7 +72,7 @@ export class ListService {
             },
             error => {
               this.addList(REDUCER_LIST.EstadoAdmision, []);
-            }
+            },
           );
         }
       }
@@ -90,7 +90,7 @@ export class ListService {
             },
             error => {
               this.addList(REDUCER_LIST.EstadoCivil, []);
-            }
+            },
           );
         }
       }
@@ -108,7 +108,7 @@ export class ListService {
             },
             error => {
               this.addList(REDUCER_LIST.GrupoEtnico, []);
-            }
+            },
           );
         }
       }
@@ -126,7 +126,7 @@ export class ListService {
             },
             error => {
               this.addList(REDUCER_LIST.Idioma, []);
-            }
+            },
           );
         }
       }
@@ -144,7 +144,7 @@ export class ListService {
             },
             error => {
               this.addList(REDUCER_LIST.LineaInvestigacion, []);
-            }
+            },
           );
         }
       }
@@ -162,7 +162,7 @@ export class ListService {
             },
             error => {
               this.addList(REDUCER_LIST.Pais, []);
-            }
+            },
           );
         }
       }
@@ -180,7 +180,7 @@ export class ListService {
             },
             error => {
               this.addList(REDUCER_LIST.Ciudad, []);
-            }
+            },
           );
         }
       }
@@ -198,7 +198,7 @@ export class ListService {
             },
             error => {
               this.addList(REDUCER_LIST.Lugar, []);
-            }
+            },
           );
         }
       }
@@ -216,7 +216,7 @@ export class ListService {
             },
             error => {
               this.addList(REDUCER_LIST.Metodologia, []);
-            }
+            },
           );
         }
       }
@@ -234,7 +234,7 @@ export class ListService {
             },
             error => {
               this.addList(REDUCER_LIST.NivelFormacion, []);
-            }
+            },
           );
         }
       }
@@ -252,7 +252,7 @@ export class ListService {
             },
             error => {
               this.addList(REDUCER_LIST.NivelIdioma, []);
-            }
+            },
           );
         }
       }
@@ -270,7 +270,7 @@ export class ListService {
             },
             error => {
               this.addList(REDUCER_LIST.ProgramaAcademico, []);
-            }
+            },
           );
         }
       }
@@ -288,7 +288,7 @@ export class ListService {
             },
             error => {
               this.addList(REDUCER_LIST.TipoContacto, []);
-            }
+            },
           );
         }
       }
@@ -306,7 +306,7 @@ export class ListService {
             },
             error => {
               this.addList(REDUCER_LIST.TipoDiscapacidad, []);
-            }
+            },
           );
         }
       }
@@ -324,7 +324,7 @@ export class ListService {
             },
             error => {
               this.addList(REDUCER_LIST.TipoLugar, []);
-            }
+            },
           );
         }
       }
@@ -342,7 +342,7 @@ export class ListService {
             },
             error => {
               this.addList(REDUCER_LIST.Titulacion, []);
-            }
+            },
           );
         }
       }
@@ -354,7 +354,7 @@ export class ListService {
   private addList(type: string, object: Array < any > ) {
     this.store.dispatch({
       type: type,
-      payload: object
+      payload: object,
     });
   }
 }
