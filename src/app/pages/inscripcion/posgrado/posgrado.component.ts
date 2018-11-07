@@ -34,6 +34,8 @@ export class PosgradoComponent implements OnInit {
   info_contacto: boolean;
   info_persona: boolean;
   info_caracteristica: boolean;
+  button_politica: boolean = true;
+  check_politica: boolean = false;
 
   constructor(
     private autenticacion: ImplicitAutenticationService,
