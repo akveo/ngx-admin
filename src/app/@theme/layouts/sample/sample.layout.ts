@@ -34,6 +34,7 @@ import { StateService } from '../../../@core/data/state.service';
       </nb-sidebar>
 
       <nb-layout-column class="main-content">
+        <ngx-breadcrumbs></ngx-breadcrumbs>
         <ng-content select="router-outlet"></ng-content>
       </nb-layout-column>
 
