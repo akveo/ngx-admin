@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { AdmisionComponent } from './admision.component';
 import { ListAdmisionComponent } from './list-admision/list-admision.component';
 import { CrudAdmisionComponent } from './crud-admision/crud-admision.component';
-import { AuthGuard } from '../../@core/_guards/auth.guard';
+// import { AuthGuard } from '../../@core/_guards/auth.guard';
 
 const routes: Routes = [{
   path: '',
@@ -11,11 +11,11 @@ const routes: Routes = [{
   children: [{
     path: 'list-admision',
     component: ListAdmisionComponent,
-    canActivate: [AuthGuard],
+    // canActivate: [AuthGuard],
 }, {
     path: 'crud-admision',
     component: CrudAdmisionComponent,
-    canActivate: [AuthGuard],
+    // canActivate: [AuthGuard],
   }],
 }];
 

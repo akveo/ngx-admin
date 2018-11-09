@@ -4,7 +4,7 @@ import { InformacionContactoComponent } from './informacion_contacto.component';
 import { ListInformacionContactoComponent } from './list-informacion_contacto/list-informacion_contacto.component';
 import { CrudInformacionContactoComponent } from './crud-informacion_contacto/crud-informacion_contacto.component';
 import { ViewInformacionContactoComponent } from './view-informacion_contacto/view-informacion_contacto.component';
-import { AuthGuard } from '../../@core/_guards/auth.guard';
+// import { AuthGuard } from '../../@core/_guards/auth.guard';
 
 const routes: Routes = [{
   path: '',
@@ -12,11 +12,11 @@ const routes: Routes = [{
   children: [{
     path: 'list-informacion_contacto',
     component: ListInformacionContactoComponent,
-    canActivate: [AuthGuard],
+    // canActivate: [AuthGuard],
   }, {
     path: 'crud-informacion_contacto',
     component: CrudInformacionContactoComponent,
-    canActivate: [AuthGuard],
+    // canActivate: [AuthGuard],
   }],
 }];
 
