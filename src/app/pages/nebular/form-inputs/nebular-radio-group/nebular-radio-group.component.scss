@@ -1,0 +1,12 @@
+@import '../../../../@theme/styles/themes';
+
+@include nb-install-component() {
+  .value {
+    font-weight: nb-theme(font-weight-bold);
+  }
+  
+  nb-radio-group {
+    display: block;
+    margin-top: 0.5rem;
+  }
+}

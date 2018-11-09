@@ -44,6 +44,34 @@ export const MENU_ITEMS: NbMenuItem[] = [
         title: 'Window',
         link: '/pages/nebular/window',
       },
+      {
+        title: 'List',
+        link: '/pages/nebular/list',
+      },
+      {
+        title: 'Infinite List',
+        link: '/pages/nebular/infinite-list',
+      },
+      {
+        title: 'Toastr',
+        link: '/pages/nebular/toastr',
+      },
+      {
+        title: 'Alert',
+        link: '/pages/nebular/alert',
+      },
+      {
+        title: 'Progress Bar',
+        link: '/pages/nebular/progress-bar',
+      },
+      {
+        title: 'Spinner',
+        link: '/pages/nebular/spinner',
+      },
+      {
+        title: 'Form Inputs',
+        link: '/pages/nebular/form-inputs',
+      },
     ],
   },
   {

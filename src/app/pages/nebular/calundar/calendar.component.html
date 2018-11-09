@@ -1,26 +1,21 @@
-<nb-card>
-  <nb-card-header>
-    Calendar
-  </nb-card-header>
-  <nb-card-body>
-    <div class="nebular-calendar">
-      <h2>
-        Selected date: {{ date | date }}
-      </h2>
-      <nb-calendar [(date)]="date" [boundingMonth]="true"></nb-calendar>
-    </div>
-    <div class="nebular-calendar">
-      <h2>
-        Selected range: {{ range.start | date }} - {{ range.end | date }}
-      </h2>
-      <nb-calendar-range [(range)]="range"></nb-calendar-range>
-    </div>
-    <div class="nebular-calendar">
-      <h1>Selected date: {{ date2 | date }}</h1>
-      <nb-calendar
-        [(date)]="date2"
-        [dayCellComponent]="dayCellComponent"
-      ></nb-calendar>
-    </div>
-  </nb-card-body>
-</nb-card>
+<div class="calendars-container">
+  <div class="nebular-calendar">
+    <h2>
+      Selected date: {{ date | date }}
+    </h2>
+    <nb-calendar [(date)]="date" [boundingMonth]="true"></nb-calendar>
+  </div>
+  <div class="nebular-calendar">
+    <h2>
+      Selected range: {{ range.start | date }} - {{ range.end | date }}
+    </h2>
+    <nb-calendar-range [(range)]="range"></nb-calendar-range>
+  </div>
+  <div class="nebular-calendar">
+    <h1>Selected date: {{ date2 | date }}</h1>
+    <nb-calendar
+      [(date)]="date2"
+      [dayCellComponent]="dayCellComponent"
+    ></nb-calendar>
+  </div>
+</div>

@@ -1,0 +1,7 @@
+@import '../../../../@theme/styles/themes';
+
+@include nb-install-component() {
+  [nbInput] {
+    margin-bottom: 1rem;
+  }
+}

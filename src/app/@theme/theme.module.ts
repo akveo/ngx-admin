@@ -27,6 +27,12 @@ import {
   NbDatepickerModule,
   NbDialogModule,
   NbWindowModule,
+  NbListModule,
+  NbToastrModule,
+  NbAlertModule,
+  NbSpinnerModule,
+  NbRadioModule,
+  NbSelectModule,
 } from '@nebular/theme';
 
 import { NbSecurityModule } from '@nebular/security';
@@ -81,11 +87,17 @@ const NB_MODULES = [
   NbCalendarRangeModule,
   NbStepperModule,
   NbButtonModule,
+  NbListModule,
+  NbToastrModule,
   NbInputModule,
   NbAccordionModule,
   NbDatepickerModule,
   NbDialogModule,
   NbWindowModule,
+  NbAlertModule,
+  NbSpinnerModule,
+  NbRadioModule,
+  NbSelectModule,
 ];
 
 const COMPONENTS = [
@@ -128,6 +140,7 @@ const NB_THEME_PROVIDERS = [
   ...NbDatepickerModule.forRoot().providers,
   ...NbDialogModule.forRoot().providers,
   ...NbWindowModule.forRoot().providers,
+  ...NbToastrModule.forRoot().providers,
 ];
 
 @NgModule({

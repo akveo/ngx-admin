@@ -1,0 +1,10 @@
+<div>Selected value: <span class="value">{{ option }}</span></div>
+
+<nb-radio-group [(ngModel)]="option">
+  <nb-radio
+    *ngFor="let option of options"
+    [disabled]="option.disabled"
+    [value]="option.value">
+    {{ option.label }}
+  </nb-radio>
+</nb-radio-group>

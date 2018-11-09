@@ -1,0 +1,40 @@
+<nb-card>
+  <nb-card-header>Infinite List</nb-card-header>
+</nb-card>
+
+<div class="infinite-cards">
+  <nb-card class="own-scroll">
+    <nb-card-header>
+      Own scroll
+    </nb-card-header>
+    <nb-list
+      nbInfiniteList
+      [threshold]="500"
+      (bottomThreshold)="loadNext(firstCard)">
+      <nb-list-item *ngFor="let newsPost of firstCard.news">
+        <ngx-news-post [post]="newsPost"></ngx-news-post>
+      </nb-list-item>
+      <nb-list-item *ngFor="let _ of firstCard.placeholders">
+        <ngx-news-post-placeholder></ngx-news-post-placeholder>
+      </nb-list-item>
+    </nb-list>
+  </nb-card>
+
+  <nb-card>
+    <nb-card-header>
+      Window scroll
+    </nb-card-header>
+    <nb-list
+      nbInfiniteList
+      listenWindowScroll
+      [threshold]="500"
+      (bottomThreshold)="loadNext(secondCard)">
+      <nb-list-item *ngFor="let newsPost of secondCard.news">
+        <ngx-news-post [post]="newsPost"></ngx-news-post>
+      </nb-list-item>
+      <nb-list-item *ngFor="let _ of secondCard.placeholders">
+        <ngx-news-post-placeholder></ngx-news-post-placeholder>
+      </nb-list-item>
+    </nb-list>
+  </nb-card>
+</div>

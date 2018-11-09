@@ -8,6 +8,13 @@ import { AccordionComponent } from './accordion/accordion.component';
 import { DatepickerComponent } from './datepicker/datepicker.component';
 import { DialogComponent } from './dialog/dialog.component';
 import { WindowComponent } from './window/window.component';
+import { ListComponent } from './list/list.component';
+import { InfiniteListComponent } from './infinite-list/infinite-list.component';
+import { ToastrComponent } from './toastr/toastr.component';
+import { AlertComponent } from './alert/alert.component';
+import { ProgressBarComponent } from './progress-bar/progress-bar.component';
+import { SpinnerComponent } from './spinner/spinner.component';
+import { NebularFormInputsComponent } from './form-inputs/nebular-form-inputs.component';
 
 const routes: Routes = [{
   path: '',
@@ -36,6 +43,34 @@ const routes: Routes = [{
     {
       path: 'window',
       component: WindowComponent,
+    },
+    {
+      path: 'list',
+      component: ListComponent,
+    },
+    {
+      path: 'infinite-list',
+      component: InfiniteListComponent,
+    },
+    {
+      path: 'toastr',
+      component: ToastrComponent,
+    },
+    {
+      path: 'alert',
+      component: AlertComponent,
+    },
+    {
+      path: 'progress-bar',
+      component: ProgressBarComponent,
+    },
+    {
+      path: 'spinner',
+      component: SpinnerComponent,
+    },
+    {
+      path: 'form-inputs',
+      component: NebularFormInputsComponent,
     },
   ],
 }];

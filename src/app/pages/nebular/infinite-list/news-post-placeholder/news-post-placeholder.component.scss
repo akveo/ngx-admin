@@ -1,0 +1,25 @@
+@import '../../../../@theme/styles/themes';
+
+@include nb-install-component() {
+  display: block;
+
+  .title-placeholder {
+    height: 1.8rem;
+    margin-bottom: 0.5rem;
+    width: 80%;
+  }
+
+  .text-placeholder {
+    height: 4rem;
+    margin-bottom: 1rem;
+  }
+
+  .link-placeholder {
+    height: 1.25rem;
+    width: 5rem;
+  }
+
+  [class$='placeholder'] {
+    background: rgba(nb-theme(layout-bg), 0.6);
+  }
+}

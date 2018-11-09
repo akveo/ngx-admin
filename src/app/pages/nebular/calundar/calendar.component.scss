@@ -2,7 +2,7 @@
 
 @include nb-install-component() {
 
-  nb-card-body {
+  .calendars-container {
     display: flex;
     justify-content: space-between;
     align-items: center;

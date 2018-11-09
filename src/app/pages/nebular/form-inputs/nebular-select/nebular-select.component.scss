@@ -1,0 +1,21 @@
+@import '../../../../@theme/styles/themes';
+
+@include nb-install-component() {
+  nb-select {
+    display: block;
+    width: 15rem;
+  }
+
+  .select-form-binding,
+  .select-disabled,
+  .select-statuses,
+  .select-sizes,
+  .select-outline,
+  .select-color,
+  .select-shape {
+    nb-select {
+      margin-right: 0.75rem;
+      margin-bottom: 1rem;
+    }
+  }
+}

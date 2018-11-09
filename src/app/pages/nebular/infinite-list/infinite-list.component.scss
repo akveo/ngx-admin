@@ -1,0 +1,20 @@
+@import '../../../@theme/styles/themes';
+
+@include nb-install-component() {
+  .infinite-cards {
+    display: flex;
+
+    nb-card {
+      flex: 1 1 45%;
+      margin-left: 2.5%;
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      &.own-scroll {
+        height: 50vh;
+      }
+    }
+  }
+}
