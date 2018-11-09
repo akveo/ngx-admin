@@ -137,9 +137,10 @@ export class CrudIdiomasComponent implements OnInit {
   }
 
   public loadInfoIdioma(): void {
+    console.info(this.info_idioma_id);
     if (this.info_idioma_id !== undefined && this.info_idioma_id !== 0 &&
       this.info_idioma_id.toString() !== '') {
-      this.idiomaService.get('conocimiento_idioma/?query=ide:10' + this.info_idioma_id)
+      this.idiomaService.get('conocimiento_idioma/?query=id:' + this.info_idioma_id)
         .subscribe(res => {
           if (res !== null) {
             this.info_idioma = <InfoIdioma>res[0];
@@ -176,11 +177,12 @@ export class CrudIdiomasComponent implements OnInit {
           this.info_idioma = <InfoIdioma>infoIdioma;
           this.idiomaService.put('conocimiento_idioma', this.info_idioma)
             .subscribe(res => {
-              this.loadInfoIdioma();
               this.eventChange.emit(true);
               this.showToast('info', this.translate.instant('GLOBAL.actualizar'),
                 this.translate.instant('GLOBAL.idioma') + ' ' +
                 this.translate.instant('GLOBAL.confirmarActualizar'));
+              this.info_idioma_id = 0;
+              this.loadInfoIdioma();
             },
             (error: HttpErrorResponse) => {
               Swal({

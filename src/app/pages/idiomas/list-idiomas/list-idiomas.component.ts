@@ -55,12 +55,6 @@ export class ListIdiomasComponent implements OnInit {
                         return value.Nombre;
                     },
                 },
-                Nativo: {
-                    title: this.translate.instant('GLOBAL.idioma_nativo'),
-                    valuePrepareFunction: (value) => {
-                        return value;
-                    },
-                },
                 NivelEscribe: {
                     title: this.translate.instant('GLOBAL.nivel_escribe'),
                     valuePrepareFunction: (value) => {
