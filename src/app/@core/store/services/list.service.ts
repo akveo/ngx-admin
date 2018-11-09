@@ -348,6 +348,24 @@ export class ListService {
     );
   }
 
+  public findTipoIdentificacion() {
+    this.store.select(REDUCER_LIST.TipoIdentificacion).subscribe(
+      (list: any) => {
+        if (!list || list.length === 0) {
+          this.enteService.get('tipo_identificacion/?limit=0')
+          .subscribe(
+            (result: any[]) => {
+              this.addList(REDUCER_LIST.TipoIdentificacion, result);
+            },
+            error => {
+              this.addList(REDUCER_LIST.TipoIdentificacion, []);
+            },
+          );
+        }
+      },
+    );
+  }
+
 
 
   private addList(type: string, object: Array < any > ) {

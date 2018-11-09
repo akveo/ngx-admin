@@ -14,6 +14,7 @@ import {EstadoAdmision} from '../data/models/estado_admision';
 import {ClasificacionNivelIdioma} from '../data/models/clasificacion_idioma';
 import {Genero} from '../data/models/genero';
 import { Titulacion } from '../data/models/titulacion';
+import { TipoIdentificacion } from '../data/models/tipo_identificacion';
 
 export interface IAppState {
   listGenero: Genero[],
@@ -33,5 +34,6 @@ export interface IAppState {
   listTipoContacto: TipoContacto[],
   listTipoDiscapacidad: TipoDiscapacidad[],
   listTipoLugar: TipoLugar[],
-  listTitulacion: Titulacion[]
+  listTitulacion: Titulacion[],
+  listTipoIdentificacion: TipoIdentificacion[],
 }
