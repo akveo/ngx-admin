@@ -18,7 +18,7 @@ export const Config = {
         CONF_MENU_SERVICE: 'http://10.20.0.254/configuracion_api/v1/menu_opcion_padre/ArbolMenus/',
         TOKEN: {
             AUTORIZATION_URL: 'https://autenticacion.udistrital.edu.co:8244/authorize',
-            CLIENTE_ID: 'bpT1LDoodD1wNUTPD3I2QM_0JVYa',
+            CLIENTE_ID: 'iuvMU32Ufb6ocOiysiOpjWuHrNga',
             RESPONSE_TYPE: 'id_token token',
             REDIRECT_URL: 'http://localhost:4200/',
             SCOPE: 'openid email role documento',

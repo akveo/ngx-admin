@@ -1,13 +1,22 @@
+import { EnteService } from './data/ente.service';
+import { UbicacionesService } from './data/ubicaciones.service';
+import { PersonaService } from './data/persona.service';
 import { ModuleWithProviders, NgModule, Optional, SkipSelf } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NbAuthModule, NbDummyAuthStrategy } from '@nebular/auth';
 import { NbSecurityModule, NbRoleProvider } from '@nebular/security';
 import { of as observableOf } from 'rxjs';
-
 import { throwIfAlreadyLoaded } from './module-import-guard';
 import { DataModule } from './data/data.module';
 import { AnalyticsService } from './utils/analytics.service';
 import {DocumentoService} from './data/documento.service'
+import { AuthGuard } from './_guards/auth.guard';
+import { ListService } from './store/services/list.service';
+import { StoreModule } from '@ngrx/store';
+import { rootReducer } from './store/rootReducer';
+import { AdmisionesService } from './data/admisiones.service';
+import { IdiomaService } from './data/idioma.service';
+import { ProgramaAcademicoService } from './data/programa_academico.service';
 
 const socialLinks = [
   {
@@ -77,11 +86,22 @@ export const NB_CORE_PROVIDERS = [
 @NgModule({
   imports: [
     CommonModule,
+    StoreModule.forRoot(rootReducer),
   ],
   exports: [
     NbAuthModule,
   ],
   declarations: [],
+  providers: [
+    AuthGuard,
+    ListService,
+    PersonaService,
+    AdmisionesService,
+    IdiomaService,
+    UbicacionesService,
+    ProgramaAcademicoService,
+    EnteService,
+  ],
 })
 export class CoreModule {
   constructor(@Optional() @SkipSelf() parentModule: CoreModule) {
