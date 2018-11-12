@@ -4,6 +4,7 @@ import { IdiomaService } from '../../../@core/data/idioma.service';
 import { ToasterService, ToasterConfig, Toast, BodyOutputType } from 'angular2-toaster';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import { UserService } from '../../../@core/data/users.service';
+import { HttpErrorResponse } from '@angular/common/http';
 import Swal from 'sweetalert2';
 import 'style-loader!angular2-toaster/toaster.css';
 
@@ -54,14 +55,8 @@ export class ListIdiomasComponent implements OnInit {
                         return value.Nombre;
                     },
                 },
-                Nativo: {
-                    title: this.translate.instant('GLOBAL.idioma_nativo'),
-                    valuePrepareFunction: (value) => {
-                        return value;
-                    },
-                },
                 NivelEscribe: {
-                    title: this.translate.instant('GLOBAL.nivel_escritura'),
+                    title: this.translate.instant('GLOBAL.nivel_escribe'),
                     valuePrepareFunction: (value) => {
                         return value.Nombre;
                     },
@@ -79,7 +74,7 @@ export class ListIdiomasComponent implements OnInit {
                     },
                 },
                 NivelLee: {
-                    title: this.translate.instant('GLOBAL.nivel_lectura'),
+                    title: this.translate.instant('GLOBAL.nivel_lee'),
                     valuePrepareFunction: (value) => {
                         return value.Nombre;
                     },
@@ -99,6 +94,14 @@ export class ListIdiomasComponent implements OnInit {
                 const data = <Array<any>>res;
                 this.source.load(data);
             }
+        },
+        (error: HttpErrorResponse) => {
+          Swal({
+            type: 'error',
+            title: error.status + '',
+            text: this.translate.instant('ERROR.' + error.status),
+            confirmButtonText: this.translate.instant('GLOBAL.aceptar'),
+          });
         });
     }
 
@@ -143,7 +146,15 @@ export class ListIdiomasComponent implements OnInit {
                 this.translate.instant('GLOBAL.idioma') + ' ' +
                 this.translate.instant('GLOBAL.confirmarEliminar'));
                 }
-             });
+             },
+            (error: HttpErrorResponse) => {
+              Swal({
+                type: 'error',
+                title: error.status + '',
+                text: this.translate.instant('ERROR.' + error.status),
+                confirmButtonText: this.translate.instant('GLOBAL.aceptar'),
+              });
+            });
           }
         });
     }

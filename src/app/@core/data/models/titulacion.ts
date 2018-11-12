@@ -1,4 +1,3 @@
-
 export class Titulacion {
   Id: number;
   Nombre: string;

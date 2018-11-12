@@ -4,7 +4,7 @@ import { ToasterService, ToasterConfig, Toast, BodyOutputType } from 'angular2-t
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import { FormacionAcademicaService } from '../../../@core/data/formacion_academica.service';
 import { UserService } from '../../../@core/data/users.service';
-
+import { HttpErrorResponse } from '@angular/common/http';
 import Swal from 'sweetalert2';
 import 'style-loader!angular2-toaster/toaster.css';
 
@@ -100,6 +100,14 @@ export class ListFormacionAcademicaComponent implements OnInit {
           const data = <Array<any>>res;
           this.source.load(data);
         }
+      },
+      (error: HttpErrorResponse) => {
+        Swal({
+          type: 'error',
+          title: error.status + '',
+          text: this.translate.instant('ERROR.' + error.status),
+          confirmButtonText: this.translate.instant('GLOBAL.aceptar'),
+        });
       });
   }
 
@@ -156,8 +164,17 @@ export class ListFormacionAcademicaComponent implements OnInit {
             if (res !== null) { **/
           this.loadData();
           this.showToast('info', this.translate.instant('GLOBAL.eliminar'),
+            this.translate.instant('GLOBAL.formacion_academica') + ' ' +
             this.translate.instant('GLOBAL.confirmarEliminar'));
           /** }
+        },
+        (error: HttpErrorResponse) => {
+          Swal({
+            type: 'error',
+            title: error.status + '',
+            text: this.translate.instant('ERROR.' + error.status),
+            confirmButtonText: this.translate.instant('GLOBAL.aceptar'),
+          });
         }); **/
         }
       });

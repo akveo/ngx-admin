@@ -1,4 +1,3 @@
-
 import { Lugar } from './lugar';
 
 export class LugarUbicacion {

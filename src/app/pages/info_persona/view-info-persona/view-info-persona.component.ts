@@ -4,7 +4,10 @@ import { InfoPersona } from '../../../@core/data/models/info_persona';
 import { NuxeoService } from '../../../@core/utils/nuxeo.service';
 import { DocumentoService } from '../../../@core/data/documento.service';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
-
+import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
+import { HttpErrorResponse } from '@angular/common/http';
+import Swal from 'sweetalert2';
+import 'style-loader!angular2-toaster/toaster.css';
 
 @Component({
   selector: 'ngx-view-info-persona',
@@ -26,13 +29,19 @@ export class ViewInfoPersonaComponent implements OnInit {
 
   @Output('url_editar') url_editar: EventEmitter<boolean> = new EventEmitter();
 
-
   constructor(private campusMidService: CampusMidService,
     private documentoService: DocumentoService,
     private sanitization: DomSanitizer,
-    private nuxeoService: NuxeoService) {
+    private nuxeoService: NuxeoService,
+    private translate: TranslateService) {
+    this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
+    });
     this.loadInfoPersona();
-   }
+  }
+
+  useLanguage(language: string) {
+    this.translate.use(language);
+  }
 
   public editar(): void {
     this.url_editar.emit(true);
@@ -62,10 +71,17 @@ export class ViewInfoPersonaComponent implements OnInit {
           } else {
             this.info_info_persona = undefined;
           }
+        },
+        (error: HttpErrorResponse) => {
+          Swal({
+            type: 'error',
+            title: error.status + '',
+            text: this.translate.instant('ERROR.' + error.status),
+            confirmButtonText: this.translate.instant('GLOBAL.aceptar'),
+          });
         });
     } else {
       this.info_info_persona = undefined
     }
   }
-
 }

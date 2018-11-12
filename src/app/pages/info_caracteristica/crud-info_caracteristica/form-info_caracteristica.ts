@@ -1,4 +1,3 @@
-
 export let FORM_INFO_CARACTERISTICA = {
     // titulo: 'InfoCaracteristica',
     tipo_formulario: 'mini',

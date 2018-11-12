@@ -8,6 +8,7 @@ import { CampusMidService } from '../../../@core/data/campus_mid.service';
 import { FORM_INFORMACION_CONTACTO } from './form-informacion_contacto';
 import { ToasterService, ToasterConfig, Toast, BodyOutputType } from 'angular2-toaster';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
+import { HttpErrorResponse } from '@angular/common/http';
 import Swal from 'sweetalert2';
 import 'style-loader!angular2-toaster/toaster.css';
 
@@ -84,8 +85,17 @@ export class CrudInformacionContactoComponent implements OnInit {
           paisResidencia = <Array<Lugar>>res;
         }
         this.formInformacionContacto.campos[this.getIndexForm('PaisResidencia')].opciones = paisResidencia;
+      },
+      (error: HttpErrorResponse) => {
+        Swal({
+          type: 'error',
+          title: error.status + '',
+          text: this.translate.instant('ERROR.' + error.status),
+          confirmButtonText: this.translate.instant('GLOBAL.aceptar'),
+        });
       });
   }
+
   loadOptionsDepartamentoResidencia(): void {
     let consultaHijos: Array<any> = [];
     const departamentoResidencia: Array<any> = [];
@@ -99,9 +109,18 @@ export class CrudInformacionContactoComponent implements OnInit {
             }
           }
           this.formInformacionContacto.campos[this.getIndexForm('DepartamentoResidencia')].opciones = departamentoResidencia;
+        },
+        (error: HttpErrorResponse) => {
+          Swal({
+            type: 'error',
+            title: error.status + '',
+            text: this.translate.instant('ERROR.' + error.status),
+            confirmButtonText: this.translate.instant('GLOBAL.aceptar'),
+          });
         });
     }
   }
+
   loadOptionsCiudadResidencia(): void {
     let consultaHijos: Array<any> = [];
     const ciudadResidencia: Array<any> = [];
@@ -115,6 +134,14 @@ export class CrudInformacionContactoComponent implements OnInit {
             }
           }
           this.formInformacionContacto.campos[this.getIndexForm('CiudadResidencia')].opciones = ciudadResidencia;
+        },
+        (error: HttpErrorResponse) => {
+          Swal({
+            type: 'error',
+            title: error.status + '',
+            text: this.translate.instant('ERROR.' + error.status),
+            confirmButtonText: this.translate.instant('GLOBAL.aceptar'),
+          });
         });
     }
   }
@@ -170,6 +197,14 @@ export class CrudInformacionContactoComponent implements OnInit {
             this.formInformacionContacto.campos[this.getIndexForm('DepartamentoResidencia')].opciones[0] = this.datosGet.UbicacionEnte[0].Lugar.DEPARTAMENTO;
             this.formInformacionContacto.campos[this.getIndexForm('CiudadResidencia')].opciones[0] = this.info_informacion_contacto.CiudadResidencia;
           }
+        },
+        (error: HttpErrorResponse) => {
+          Swal({
+            type: 'error',
+            title: error.status + '',
+            text: this.translate.instant('ERROR.' + error.status),
+            confirmButtonText: this.translate.instant('GLOBAL.aceptar'),
+          });
         });
     } else {
       this.info_informacion_contacto = undefined;
@@ -232,6 +267,14 @@ export class CrudInformacionContactoComponent implements OnInit {
               this.showToast('info', this.translate.instant('GLOBAL.actualizar'),
                 this.translate.instant('GLOBAL.informacion_contacto') + ' ' +
                 this.translate.instant('GLOBAL.confirmarActualizar'));
+            },
+            (error: HttpErrorResponse) => {
+              Swal({
+                type: 'error',
+                title: error.status + '',
+                text: this.translate.instant('ERROR.' + error.status),
+                confirmButtonText: this.translate.instant('GLOBAL.aceptar'),
+              });
             });
         }
       });
@@ -293,6 +336,14 @@ export class CrudInformacionContactoComponent implements OnInit {
               this.showToast('info', this.translate.instant('GLOBAL.crear'),
                 this.translate.instant('GLOBAL.informacion_contacto') + ' ' +
                 this.translate.instant('GLOBAL.confirmarCrear'));
+            },
+            (error: HttpErrorResponse) => {
+              Swal({
+                type: 'error',
+                title: error.status + '',
+                text: this.translate.instant('ERROR.' + error.status),
+                confirmButtonText: this.translate.instant('GLOBAL.aceptar'),
+              });
             });
         }
       });

@@ -1,5 +1,3 @@
-
-
 export class TipoDocumento {
     Activo: boolean;
     CodigoAbreviacion: string;

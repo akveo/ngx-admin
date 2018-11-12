@@ -1,4 +1,3 @@
-
 export let FORM_INFORMACION_CONTACTO = {
     // titulo: 'InformacionContacto',
     tipo_formulario: 'mini',
@@ -82,8 +81,8 @@ export let FORM_INFORMACION_CONTACTO = {
         etiqueta: 'input',
         claseGrid: 'col-lg-3 col-md-6 col-sm-12 col-xs-12',
         nombre: 'TelefonoAlterno',
-        label_i18n: 'telefono_alterno',
-        placeholder_i18n: 'telefono_alterno',
+        label_i18n: 'telefono_alternativo',
+        placeholder_i18n: 'telefono_alternativo',
         requerido: true,
         tipo: 'number',
         minimo: 1000,

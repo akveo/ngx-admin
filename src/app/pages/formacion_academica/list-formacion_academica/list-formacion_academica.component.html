@@ -1,8 +1,8 @@
 <nb-card>
     <nb-card-body>
         <toaster-container [toasterconfig]="config"></toaster-container>
-                <ngx-crud-formacion-academica [info_formacion_academica_id]="uid" (eventChange)="onChange($event)"></ngx-crud-formacion-academica>
-                <ng2-smart-table [settings]="settings" [source]="source" (delete)="onDelete($event)" (rowSelect)="itemselec($event)" (edit)="onEdit($event)" (create)="onCreate($event)">
-                </ng2-smart-table>
+        <ngx-crud-formacion-academica [info_formacion_academica_id]="uid" (eventChange)="onChange($event)"></ngx-crud-formacion-academica>
+        <ng2-smart-table [settings]="settings" [source]="source" (delete)="onDelete($event)" (rowSelect)="itemselec($event)" (edit)="onEdit($event)" (create)="onCreate($event)">
+        </ng2-smart-table>
     </nb-card-body>
 </nb-card>

@@ -1,4 +1,3 @@
-
 export let FORM_ADMISION = {
     titulo: 'Admision',
     tipo_formulario: 'mini',
@@ -77,7 +76,7 @@ export let FORM_ADMISION = {
         placeholder_i18n: 'estado_admision',
         requerido: true,
         tipo: 'EstadoAdmision',
-        // key: 'Name',
+        key: 'Nombre',
         opciones: [],
     },
     {
@@ -88,7 +87,7 @@ export let FORM_ADMISION = {
         placeholder_i18n: 'linea_investigacion',
         requerido: true,
         tipo: 'LineaInvestigacion',
-        // key: 'Name',
+        key: 'Nombre',
         opciones: [],
     },
     {
@@ -99,7 +98,7 @@ export let FORM_ADMISION = {
         placeholder_i18n: 'enfasis',
         requerido: true,
         tipo: 'Enfasis',
-        // key: 'Name',
+        key: 'Nombre',
         opciones: [],
     },
     ],
