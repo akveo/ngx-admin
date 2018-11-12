@@ -2,7 +2,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
-
 import { ViewInformacionContactoComponent } from './view-informacion_contacto.component';
 
 describe('ViewInformacionContactoComponent', () => {

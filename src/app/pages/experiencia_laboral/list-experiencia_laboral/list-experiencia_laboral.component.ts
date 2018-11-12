@@ -6,6 +6,7 @@ import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import Swal from 'sweetalert2';
 import 'style-loader!angular2-toaster/toaster.css';
 import { ExperienciaService } from '../../../@core/data/experiencia.service';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'ngx-list-experiencia-laboral',
@@ -27,6 +28,7 @@ export class ListExperienciaLaboralComponent implements OnInit {
     this.eid = ente_id;
     this.loadData();
   }
+
   constructor(private translate: TranslateService, private toasterService: ToasterService,
     private experienciaService: ExperienciaService, private organizacionService: OrganizacionService) {
     this.loadData();
@@ -96,9 +98,25 @@ export class ListExperienciaLaboralComponent implements OnInit {
               element.Organizacion = r[0];
             }
             this.source.load(this.data);
+          },
+          (error: HttpErrorResponse) => {
+            Swal({
+              type: 'error',
+              title: error.status + '',
+              text: this.translate.instant('ERROR.' + error.status),
+              confirmButtonText: this.translate.instant('GLOBAL.aceptar'),
+            });
           });
         });
       }
+    },
+    (error: HttpErrorResponse) => {
+      Swal({
+        type: 'error',
+        title: error.status + '',
+        text: this.translate.instant('ERROR.' + error.status),
+        confirmButtonText: this.translate.instant('GLOBAL.aceptar'),
+      });
     });
   }
 
@@ -151,8 +169,17 @@ export class ListExperienciaLaboralComponent implements OnInit {
             if (res !== null) {
               this.loadData();
               this.showToast('info', this.translate.instant('GLOBAL.eliminar'),
+              this.translate.instant('GLOBAL.experiencia_laboral') + ' ' +
               this.translate.instant('GLOBAL.confirmarEliminar'));
             }
+          },
+          (error: HttpErrorResponse) => {
+            Swal({
+              type: 'error',
+              title: error.status + '',
+              text: this.translate.instant('ERROR.' + error.status),
+              confirmButtonText: this.translate.instant('GLOBAL.aceptar'),
+            });
           });
         }
     });

@@ -1,5 +1,3 @@
-
-
 export class TipoDiscapacidad {
   Id: number;
   Nombre: string;

@@ -11,7 +11,7 @@ import { CampusMidService } from '../../../@core/data/campus_mid.service';
 import { Organizacion } from '../../../@core/data/models/organizacion';
 import { ProgramaAcademicoService } from '../../../@core/data/programa_academico.service';
 import { UserService } from '../../../@core/data/users.service';
-
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'ngx-crud-formacion-academica',
@@ -29,6 +29,7 @@ export class CrudFormacionAcademicaComponent implements OnInit {
     this.info_formacion_academica_id = info_formacion_academica_id;
     this.loadInfoFormacionAcademica();
   }
+
   @Output() eventChange = new EventEmitter();
   @Output('result') result: EventEmitter<any> = new EventEmitter();
 
@@ -82,6 +83,14 @@ export class CrudFormacionAcademicaComponent implements OnInit {
           paisNacimiento = <Array<Lugar>>res;
         }
         this.formInfoFormacionAcademica.campos[this.getIndexForm('Pais')].opciones = paisNacimiento;
+      },
+      (error: HttpErrorResponse) => {
+        Swal({
+          type: 'error',
+          title: error.status + '',
+          text: this.translate.instant('ERROR.' + error.status),
+          confirmButtonText: this.translate.instant('GLOBAL.aceptar'),
+        });
       });
   }
 
@@ -93,6 +102,14 @@ export class CrudFormacionAcademicaComponent implements OnInit {
           this.formInfoFormacionAcademica.campos[this.getIndexForm('ProgramaAcademico')].opciones = r;
           console.info(this.formInfoFormacionAcademica.campos[this.getIndexForm('ProgramaAcademico')]);
         }
+      },
+      (error: HttpErrorResponse) => {
+        Swal({
+          type: 'error',
+          title: error.status + '',
+          text: this.translate.instant('ERROR.' + error.status),
+          confirmButtonText: this.translate.instant('GLOBAL.aceptar'),
+        });
       });
   }
 
@@ -109,6 +126,14 @@ export class CrudFormacionAcademicaComponent implements OnInit {
             }
           }
           this.formInfoFormacionAcademica.campos[this.getIndexForm('CiudadUniversidad')].opciones = ciudadUniversidad;
+        },
+        (error: HttpErrorResponse) => {
+          Swal({
+            type: 'error',
+            title: error.status + '',
+            text: this.translate.instant('ERROR.' + error.status),
+            confirmButtonText: this.translate.instant('GLOBAL.aceptar'),
+          });
         });
     }
   }
@@ -123,7 +148,6 @@ export class CrudFormacionAcademicaComponent implements OnInit {
     return 0;
   }
 
-
   addUbicacionOrganizacion(ubicacion: any): void {
     this.campusMidService.post('persona/RegistrarUbicaciones', ubicacion).subscribe(res => {
       const r = res as any;
@@ -131,6 +155,14 @@ export class CrudFormacionAcademicaComponent implements OnInit {
         this.showToast('error', 'error',
           'ocurrio un error agregando la ubicación');
       }
+    },
+    (error: HttpErrorResponse) => {
+      Swal({
+        type: 'error',
+        title: error.status + '',
+        text: this.translate.instant('ERROR.' + error.status),
+        confirmButtonText: this.translate.instant('GLOBAL.aceptar'),
+      });
     });
   }
 
@@ -155,14 +187,22 @@ export class CrudFormacionAcademicaComponent implements OnInit {
           this.updateInfoFormacionAcademica(exp);
         }
       }
+    },
+    (error: HttpErrorResponse) => {
+      Swal({
+        type: 'error',
+        title: error.status + '',
+        text: this.translate.instant('ERROR.' + error.status),
+        confirmButtonText: this.translate.instant('GLOBAL.aceptar'),
+      });
     });
   }
 
   searchDoc(data) {
-    console.info(data);
     const nit = typeof data === 'string' ? data : data.data.Nit;
     this.campusMidService.get('organizacion/identificacion/?id=' + nit + '&tipoid=5')
       .subscribe(res => {
+        console.info(JSON.stringify(res));
         const init = this.getIndexForm('Nit');
         const inombre = this.getIndexForm('NombreEmpresa');
         const idir = this.getIndexForm('Direccion');
@@ -222,6 +262,14 @@ export class CrudFormacionAcademicaComponent implements OnInit {
           .forEach(element => {
             element.deshabilitar = element.valor ? true : false
           });
+      },
+      (error: HttpErrorResponse) => {
+        Swal({
+          type: 'error',
+          title: error.status + '',
+          text: this.translate.instant('ERROR.' + error.status),
+          confirmButtonText: this.translate.instant('GLOBAL.aceptar'),
+        });
       });
   }
 
@@ -234,6 +282,14 @@ export class CrudFormacionAcademicaComponent implements OnInit {
           if (res !== null) {
             this.info_formacion_academica = <InfoFormacionAcademica>res;
           }
+        },
+        (error: HttpErrorResponse) => {
+          Swal({
+            type: 'error',
+            title: error.status + '',
+            text: this.translate.instant('ERROR.' + error.status),
+            confirmButtonText: this.translate.instant('GLOBAL.aceptar'),
+          });
         }); **/
     } else {
       this.info_formacion_academica = undefined
@@ -263,7 +319,15 @@ export class CrudFormacionAcademicaComponent implements OnInit {
           this.showToast('info', this.translate.instant('GLOBAL.actualizar'),
             this.translate.instant('GLOBAL.formacion_academica') + ' ' +
             this.translate.instant('GLOBAL.confirmarActualizar'));
-          /** }); **/
+          /** },
+          (error: HttpErrorResponse) => {
+            Swal({
+              type: 'error',
+              title: error.status + '',
+              text: this.translate.instant('ERROR.' + error.status),
+              confirmButtonText: this.translate.instant('GLOBAL.aceptar'),
+            });
+          }); **/
         }
       });
   }
@@ -291,10 +355,18 @@ export class CrudFormacionAcademicaComponent implements OnInit {
               if (r !== null && r.Type !== 'error') {
                 this.eventChange.emit(true);
                 this.showToast('info', this.translate.instant('GLOBAL.crear'),
-                  this.translate.instant('GLOBAL.experiencia_laboral') + ' ' +
+                  this.translate.instant('GLOBAL.formacion_academica') + ' ' +
                   this.translate.instant('GLOBAL.confirmarCrear'));
                 this.clean = !this.clean;
               }
+            },
+            (error: HttpErrorResponse) => {
+              Swal({
+                type: 'error',
+                title: error.status + '',
+                text: this.translate.instant('ERROR.' + error.status),
+                confirmButtonText: this.translate.instant('GLOBAL.aceptar'),
+              });
             });
         }
       });

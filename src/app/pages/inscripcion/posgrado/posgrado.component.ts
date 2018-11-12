@@ -4,6 +4,9 @@ import { ImplicitAutenticationService } from './../../../@core/utils/implicit_au
 import { PersonaService } from '../../../@core/data/persona.service';
 import { UtilidadesService } from '../../../@core/utils/utilidades.service';
 import { ProgramaAcademicoService } from '../../../@core/data/programa_academico.service';
+import { HttpErrorResponse } from '@angular/common/http';
+import Swal from 'sweetalert2';
+import 'style-loader!angular2-toaster/toaster.css';
 import * as jspdf from 'jspdf';
 import html2canvas from 'html2canvas';
 
@@ -74,6 +77,14 @@ export class PosgradoComponent implements OnInit {
         if (res !== null && r.Type !== 'error') {
           this.posgrados = <any>res;
         }
+      },
+      (error: HttpErrorResponse) => {
+        Swal({
+          type: 'error',
+          title: error.status + '',
+          text: this.translate.instant('ERROR.' + error.status),
+          confirmButtonText: this.translate.instant('GLOBAL.aceptar'),
+        });
       });
   }
 
@@ -91,6 +102,14 @@ export class PosgradoComponent implements OnInit {
             this.info_persona_id = this.info_info_persona.Id;
             this.info_ente_id = this.info_info_persona.Ente;
           }
+        },
+        (error: HttpErrorResponse) => {
+          Swal({
+            type: 'error',
+            title: error.status + '',
+            text: this.translate.instant('ERROR.' + error.status),
+            confirmButtonText: this.translate.instant('GLOBAL.aceptar'),
+          });
         });
     } else {
       this.info_persona_id = undefined;

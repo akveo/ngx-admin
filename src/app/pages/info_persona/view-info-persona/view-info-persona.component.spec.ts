@@ -1,5 +1,4 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { ViewInfoPersonaComponent } from './view-info-persona.component';
 
 describe('ViewInfoPersonaComponent', () => {

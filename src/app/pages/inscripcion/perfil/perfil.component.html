@@ -1,27 +1,19 @@
 <nb-card>
   <nb-card-body >
     <div>
-        <div class="row">
-            <div class="col-md-11">
-                <h1>Perfil</h1>
-            </div>
-            <div class="col-md-1" align="right">
-              <button class="btn btn-danger btn-icon input-group-text btn-tn" (click)="editar($event,'salir_perfil')">X</button>
-            </div>
-          </div>
+      <div class="row">
+        <div class="col-md-11">
+          <h1>{{ 'GLOBAL.perfil' | translate }}</h1>
+        </div>
+        <div class="col-md-1" align="right">
+          <button class="btn btn-danger btn-icon input-group-text btn-tn" (click)="editar($event,'salir_perfil')">X</button>
+        </div>
+      </div>
     </div>
-
     <div class="row">
-        <ngx-view-info-persona (url_editar)="editar($event,'info_persona')" info_persona_id="{{info_persona_id}}" class="col-md-12"></ngx-view-info-persona>
-
-        <ngx-view-info-caracteristica (url_editar)="editar($event,'info_caracteristica')" info_caracteristica_id="{{info_persona_id}}" class="col-md-6"></ngx-view-info-caracteristica>
-
-        <ngx-view-informacion-contacto (url_editar)="editar($event,'info_contacto')" informacion_contacto_id="{{info_persona_id}}" class="col-md-6"></ngx-view-informacion-contacto>
+      <ngx-view-info-persona (url_editar)="editar($event,'info_persona')" info_persona_id="{{info_persona_id}}" class="col-md-12"></ngx-view-info-persona>
+      <ngx-view-info-caracteristica (url_editar)="editar($event,'info_caracteristica')" info_caracteristica_id="{{info_persona_id}}" class="col-md-6"></ngx-view-info-caracteristica>
+      <ngx-view-informacion-contacto (url_editar)="editar($event,'info_contacto')" informacion_contacto_id="{{info_persona_id}}" class="col-md-6"></ngx-view-informacion-contacto>
     </div>
-
-
   </nb-card-body>
 </nb-card>
-
-
-

@@ -10,8 +10,10 @@ const httpOptions = {
         'authorization': 'Bearer ' + window.localStorage.getItem('access_token'),
     }),
 }
+
 @Injectable()
 export class MenuService {
+
   constructor(private http: HttpClient) {
   }
 

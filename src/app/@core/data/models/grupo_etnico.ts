@@ -1,5 +1,3 @@
-
-
 export class GrupoEtnico {
   Id: number;
   Nombre: string;

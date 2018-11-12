@@ -1,4 +1,3 @@
-
 export class NivelFormacion {
   Id: number;
   Nombre: string;

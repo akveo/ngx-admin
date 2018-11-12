@@ -1,4 +1,3 @@
-
 export class Metodologia {
   Id: number;
   Nombre: string;

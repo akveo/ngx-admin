@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { FormacionAcademicaComponent } from './formacion_academica.component';
 import { ListFormacionAcademicaComponent } from './list-formacion_academica/list-formacion_academica.component';
 import { CrudFormacionAcademicaComponent } from './crud-formacion_academica/crud-formacion_academica.component';
+// import { AuthGuard } from '../../@core/_guards/auth.guard';
 
 const routes: Routes = [{
   path: '',
@@ -10,9 +11,11 @@ const routes: Routes = [{
   children: [{
     path: 'list-formacion_academica',
     component: ListFormacionAcademicaComponent,
+    // canActivate: [AuthGuard],
   }, {
     path: 'crud-formacion_academica',
     component: CrudFormacionAcademicaComponent,
+    // canActivate: [AuthGuard],
   }],
 }];
 

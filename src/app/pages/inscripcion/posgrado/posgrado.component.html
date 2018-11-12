@@ -1,10 +1,9 @@
 <div class="col-md-12 col-lg-12 ">
-
   <nb-card [hidden]="show_profile || show_info || show_acad || show_expe">
     <nb-card-header>
       <!-- select -->
-     <mat-form-field style="width: 100%;">
-        <mat-label>Seleccione el posgrado al que desea inscribirse:</mat-label>
+      <mat-form-field style="width: 100%;">
+        <mat-label>{{ 'GLOBAL.aviso_programa' | translate }}:</mat-label>
         <mat-select placeholder="dfsdfs">
           <mat-option>--Seleccionar--</mat-option>
           <mat-option *ngFor="let item of posgrados" [value]="item">
@@ -13,10 +12,9 @@
         </mat-select>
       </mat-form-field>
       <div class="row">
-
         <div class="col-sm-6 col-md-4 col-lg-3" align="center">
           <nb-card class="exp-card" (click)="perfil_editar('info_persona')">
-            <nb-card-header> Información Básica </nb-card-header>
+            <nb-card-header>{{ 'GLOBAL.info_basica' | translate }}</nb-card-header>
             <nb-card-body class="icon-form">
               <i class="fa fa-address-card-o fa-5x"></i>
               <p class="percentage">{{percentage_info}} %</p>
@@ -26,18 +24,17 @@
 
         <div class="col-sm-6 col-md-4 col-lg-3" align="center">
           <nb-card class="exp-card" *ngIf="info_ente_id" (click)="perfil_editar('formacion_academica')">
-            <nb-card-header> Formación Académica </nb-card-header>
+            <nb-card-header>{{ 'GLOBAL.formacion_academica' | translate }}</nb-card-header>
             <nb-card-body class="icon-form">
               <i class="fa fa-graduation-cap fa-5x"></i>
               <p class="percentage">{{percentage_acad}} %</p>
-
             </nb-card-body>
           </nb-card>
         </div>
 
         <div class="col-sm-6 col-md-4 col-lg-3" align="center">
           <nb-card class="exp-card" *ngIf="info_ente_id" (click)="perfil_editar('experiencia_laboral')">
-            <nb-card-header> Experiencia Laboral </nb-card-header>
+            <nb-card-header>{{ 'GLOBAL.experiencia_laboral' | translate }}</nb-card-header>
             <nb-card-body class="icon-form">
               <i class="fa fa-briefcase fa-5x"></i>
               <p class="percentage">{{percentage_expe}} %</p>
@@ -47,29 +44,22 @@
 
         <div class="col-sm-6 col-md-4 col-lg-3" align="center">
           <nb-card class=" exp-card" *ngIf="info_ente_id" (click)="perfil_editar('perfil')">
-            <nb-card-header> Perfil </nb-card-header>
+            <nb-card-header>{{ 'GLOBAL.perfil' | translate }}</nb-card-header>
             <nb-card-body class="icon-form">
               <i class="fa fa-user fa-5x"></i>
             </nb-card-body>
           </nb-card>
         </div>
-
       </div>
     </nb-card-header>
 
     <nb-card-body>
-
       <div class="col-md-12">
-
         <blockquote class="blockquote ">
-          <li>
-            Para el registro a un posgrado es neceario completar cada uno de los bloques de informacion que son solicitados al 100
-          </li>
+          <li>{{ 'GLOBAL.aviso_progreso' | translate}}</li>
         </blockquote>
-
-        <button class="btn btn-success pull-right" disabled>Inscribirse</button>
+        <button class="btn btn-success pull-right" disabled>{{ 'GLOBAL.inscribirse' | translate }}</button>
       </div>
-
     </nb-card-body>
   </nb-card>
 
@@ -131,7 +121,6 @@
         </div>
       </div>
       <nb-tabset fullWidth (changeTab)="selectTab($event)">
-
         <nb-tab tabTitle="{{ 'GLOBAL.experiencia_laboral' | translate }}">
           <ngx-list-experiencia-laboral ente_id="{{info_ente_id}}"></ngx-list-experiencia-laboral>
         </nb-tab>
@@ -146,7 +135,6 @@
     <ngx-perfil (url_editar)="perfil_editar($event)" info_persona_id="{{info_ente_id}}"></ngx-perfil>
   </div>
 </div>
-
 
 <div id="content" #content>
   <div class="alert alert-info">

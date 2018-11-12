@@ -1,4 +1,3 @@
-
 import { GrupoEtnico } from './grupo_etnico';
 import { TipoDiscapacidad } from './tipo_discapacidad';
 import { Lugar } from './lugar';
