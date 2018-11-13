@@ -1,17 +1,8 @@
 @import '../../../@theme/styles/themes';
 
 @include nb-install-component() {
-
   nb-card-body {
     display: flex;
     justify-content: space-between;
-
-/*    & > div {
-      margin-left: 5rem;
-
-      &:first-child {
-        margin-left: 0;
-      }
-    }*/
   }
 }

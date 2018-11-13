@@ -10,14 +10,11 @@
       <nb-datepicker #formpicker></nb-datepicker>
     </div>
     <div>
-      <input nbInput placeholder="Form Picker" [nbDatepicker]="formcontrol" [formControl]="formControl">
-      <nb-datepicker #formcontrol></nb-datepicker>
-
-      <input nbInput placeholder="Form Picker" [nbDatepicker]="ngmodel" [(ngModel)]="ngModelDate">
-      <nb-datepicker #ngmodel></nb-datepicker>
+      <input nbInput placeholder="Range Picker" [nbDatepicker]="rangepicker">
+      <nb-rangepicker #rangepicker></nb-rangepicker>
     </div>
     <div>
-      <input nbInput placeholder="Form Picker" [nbDatepicker]="picker">
+      <input nbInput placeholder="Min Max Picker" [nbDatepicker]="picker">
       <nb-datepicker #picker [min]="min" [max]="max"></nb-datepicker>
     </div>
   </nb-card-body>

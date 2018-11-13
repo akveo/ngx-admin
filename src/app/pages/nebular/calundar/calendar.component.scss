@@ -1,14 +1,16 @@
 @import '../../../@theme/styles/themes';
 
 @include nb-install-component() {
-
   .calendars-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    margin-top: 2rem;
+  }
+
+  h2 {
+    text-align: center;
   }
 
   .nebular-calendar {
+    margin-bottom: 3rem;
     flex: 1;
     display: flex;
     flex-direction: column;

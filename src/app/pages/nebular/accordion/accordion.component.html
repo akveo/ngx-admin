@@ -1,6 +1,7 @@
-<div class="accordions-container">
-  <div class="accordion-container">
+<div class="accordions-container row">
+  <div class="accordion-container col-md-12 col-lg-6 col-xxxl-6">
     <nb-card>
+      <nb-card-header>Toggle Accordion by button</nb-card-header>
       <nb-card-body>
         <button nbButton (click)="toggle()">Toggle First Item</button>
       </nb-card-body>
@@ -42,7 +43,11 @@
     </nb-accordion>
   </div>
 
-  <div class="accordion-container">
+  <div class="accordion-container col-md-12 col-lg-6 col-xxxl-6">
+    <nb-card>
+      <nb-card-header>Accordion</nb-card-header>
+    </nb-card>
+
     <nb-accordion multi>
       <nb-accordion-item>
         <nb-accordion-item-header>

@@ -9,20 +9,4 @@
       margin: 0.5rem;
     }
   }
-
-  .steppers-container {
-    display: flex;
-
-    .input-group {
-      margin-bottom: 0.5rem;
-    }
-
-    nb-card {
-      flex: 1;
-
-      &:not(:first-child) {
-        margin-left: 1rem;
-      }
-    }
-  }
 }

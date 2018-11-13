@@ -72,6 +72,10 @@ export const MENU_ITEMS: NbMenuItem[] = [
         title: 'Form Inputs',
         link: '/pages/nebular/form-inputs',
       },
+      {
+        title: 'Chat',
+        link: '/pages/nebular/chat',
+      },
     ],
   },
   {

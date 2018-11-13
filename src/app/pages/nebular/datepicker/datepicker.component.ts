@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { FormControl } from '@angular/forms';
 import { NbDateService } from '@nebular/theme';
 
 @Component({
@@ -11,8 +10,6 @@ export class DatepickerComponent {
 
   min: Date;
   max: Date;
-  formControl = new FormControl(new Date());
-  ngModelDate = new Date();
 
   constructor(protected dateService: NbDateService<Date>) {
     this.min = this.dateService.addDay(this.dateService.today(), -5);

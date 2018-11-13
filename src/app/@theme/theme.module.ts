@@ -33,6 +33,7 @@ import {
   NbSpinnerModule,
   NbRadioModule,
   NbSelectModule,
+  NbChatModule,
 } from '@nebular/theme';
 
 import { NbSecurityModule } from '@nebular/security';
@@ -98,6 +99,7 @@ const NB_MODULES = [
   NbSpinnerModule,
   NbRadioModule,
   NbSelectModule,
+  NbChatModule,
 ];
 
 const COMPONENTS = [
@@ -141,6 +143,9 @@ const NB_THEME_PROVIDERS = [
   ...NbDialogModule.forRoot().providers,
   ...NbWindowModule.forRoot().providers,
   ...NbToastrModule.forRoot().providers,
+  ...NbChatModule.forRoot({
+    messageGoogleMapKey: 'AIzaSyA_wNuCzia92MAmdLRzmqitRGvCF7wCZPY',
+  }).providers,
 ];
 
 @NgModule({
