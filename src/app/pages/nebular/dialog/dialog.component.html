@@ -1,56 +1,49 @@
-<nb-card>
-  <nb-card-header>
-    Dialog
-  </nb-card-header>
-</nb-card>
-
 <div class="row">
-  <div class="col-md-12 col-lg-4 col-xxxl-3">
+  <div class="col-md-12 col-lg-6 col-xxxl-3">
     <nb-card>
       <nb-card-header>Open Dialog</nb-card-header>
       <nb-card-body>
-        <button nbButton (click)="open()">Open Dialog</button>
-      </nb-card-body>
-    </nb-card>
-  </div>
+        <button nbButton (click)="open()">Open Dialog with component</button>
 
-  <div class="col-md-12 col-lg-4 col-xxxl-3">
-    <nb-card>
-      <nb-card-header>Dialog With Template</nb-card-header>
-      <nb-card-body>
         <button nbButton (click)="open2(dialog)">Open Dialog with template</button>
       </nb-card-body>
     </nb-card>
   </div>
 
-  <div class="col-md-12 col-lg-4 col-xxxl-3">
+  <div class="col-md-12 col-lg-6 col-xxxl-3">
     <nb-card>
       <nb-card-header>Open Without Backdrop</nb-card-header>
       <nb-card-body>
-        <button nbButton (click)="openWithoutBackdrop(dialog)">Open without backdrop</button>
+        <button nbButton (click)="open()">Open Dialog with backdrop</button>
+
+        <button nbButton (click)="openWithoutBackdrop(dialog)">Open Dialog without backdrop</button>
       </nb-card-body>
     </nb-card>
   </div>
 
-  <div class="col-md-12 col-lg-4 col-xxxl-3">
+  <div class="col-md-12 col-lg-6 col-xxxl-3">
     <nb-card>
       <nb-card-header>Open Without Esc Close</nb-card-header>
       <nb-card-body>
-        <button nbButton (click)="openWithoutEscClose(dialog)">Open without esc close</button>
+        <button nbButton (click)="open()">Open Dialog with esc close</button>
+
+        <button nbButton (click)="openWithoutEscClose(dialog)">Open Dialog without esc close</button>
       </nb-card-body>
     </nb-card>
   </div>
 
-  <div class="col-md-12 col-lg-4 col-xxxl-3">
+  <div class="col-md-12 col-lg-6 col-xxxl-3">
     <nb-card>
       <nb-card-header>Open Without Backdrop Click</nb-card-header>
       <nb-card-body>
+        <button nbButton (click)="open()">Open Dialog with backdrop click</button>
+
         <button nbButton (click)="openWithoutBackdropClick(dialog)">Open without backdrop click</button>
       </nb-card-body>
     </nb-card>
   </div>
 
-  <div class="col-md-12 col-lg-4 col-xxxl-3">
+  <div class="col-md-12 col-lg-6 col-xxxl-3">
     <nb-card class="form-input-card">
       <nb-card-header>Return Result From Dialog</nb-card-header>
       <nb-card-body class="result-from-dialog">

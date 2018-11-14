@@ -1,13 +1,21 @@
+@import '~bootstrap/scss/mixins/breakpoints';
+@import '~@nebular/theme/styles/global/breakpoints';
+
 @import '../../../@theme/styles/themes';
 
 @include nb-install-component() {
   nb-card-body {
-    display: flex;
-    justify-content: space-between;
-  }
+    display: block;
 
-  .title {
-    margin-top: 2rem;
+    button {
+      width: 100%;
+      margin-bottom: 2rem;
+      display: block;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
   }
 
   .result-from-dialog {
@@ -17,6 +25,18 @@
   .form-input-card {
     nb-card-body {
       display: block;
+    }
+  }
+
+  @include media-breakpoint-down(lg) {
+    button {
+      padding: 0.8rem;
+    }
+  }
+
+  @include media-breakpoint-down(is) {
+    button {
+      padding: 0.75rem;
     }
   }
 }

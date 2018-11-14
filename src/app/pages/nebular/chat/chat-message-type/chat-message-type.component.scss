@@ -1,21 +1,19 @@
 @import '~bootstrap/scss/mixins/breakpoints';
 @import '~@nebular/theme/styles/global/breakpoints';
 
-@import '../../../@theme/styles/themes';
+@import '../../../../@theme/styles/themes';
 
 @include nb-install-component() {
-  /deep/ nb-layout-column {
-    justify-content: center;
+  nb-card-body {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
   }
 
   nb-chat {
-    margin: 0 auto;
     width: 500px;
-  }
-
-  .chat-container {
-    margin-bottom: 3rem;
+    margin: 0 auto;
   }
 
   @include media-breakpoint-down(xxl) {

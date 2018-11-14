@@ -1,0 +1,61 @@
+<nb-chat title="Message Types" [size]="'xlarge'">
+  <nb-chat-message
+    message="Gif message"
+    type="file"
+    sender="John Doe"
+    [reply]="true"
+    [date]="date"
+    [files]="[ { url: 'http://www.reactiongifs.com/r/wnd1.gif', type: 'image/gif' } ]"
+    avatar="https://i.gifer.com/no.gif">
+  </nb-chat-message>
+  <nb-chat-message
+    message="Image message"
+    type="file"
+    sender="John Doe"
+    [reply]="true"
+    [date]="date"
+    [files]="[ { url: 'https://picsum.photos/320/240/?image=387', type: 'image/jpeg' } ]"
+    avatar="https://i.gifer.com/no.gif">
+  </nb-chat-message>
+  <nb-chat-message
+    message="Map message"
+    type="map"
+    sender="John Doe"
+    [reply]="true"
+    [date]="date"
+    [latitude]="53.914321"
+    [longitude]="27.5998355"
+    avatar="https://i.gifer.com/no.gif">
+  </nb-chat-message>
+  <nb-chat-message
+    message="File message"
+    type="file"
+    sender="John Doe"
+    [reply]="true"
+    [date]="date"
+    [files]="[ { url: 'http://google.com', icon: 'nb-compose' } ]"
+    [avatar]="'https://i.gifer.com/no.gif'">
+  </nb-chat-message>
+  <nb-chat-message
+    message="Quote message"
+    type="quote"
+    sender="John Doe"
+    [reply]="true"
+    quote="Quooted message here"
+    [date]="date"
+    avatar="https://i.gifer.com/no.gif">
+  </nb-chat-message>
+  <nb-chat-message
+    message="Group of files message"
+    type="file"
+    sender="John Doe"
+    [reply]="true"
+    [date]="date"
+    [files]="[
+          { url: 'http://google.com', icon: 'nb-compose' },
+          { url: 'https://picsum.photos/320/240/?image=387', type: 'image/jpeg' },
+          { url: 'http://www.reactiongifs.com/r/wnd1.gif', type: 'image/gif' }
+         ]"
+    avatar="https://i.gifer.com/no.gif">
+  </nb-chat-message>
+</nb-chat>
