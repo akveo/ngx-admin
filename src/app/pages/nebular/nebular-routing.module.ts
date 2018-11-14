@@ -16,6 +16,7 @@ import { ProgressBarComponent } from './progress-bar/progress-bar.component';
 import { SpinnerComponent } from './spinner/spinner.component';
 import { NebularFormInputsComponent } from './form-inputs/nebular-form-inputs.component';
 import { ChatComponent } from './chat/chat.component';
+import { TooltipComponent } from './tooltip/tooltip.component';
 
 const routes: Routes = [{
   path: '',
@@ -56,6 +57,10 @@ const routes: Routes = [{
     {
       path: 'toastr',
       component: ToastrComponent,
+    },
+    {
+      path: 'tooltip',
+      component: TooltipComponent,
     },
     {
       path: 'alert',

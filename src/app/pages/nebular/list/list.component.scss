@@ -1,18 +1,7 @@
 @import '../../../@theme/styles/themes';
 
 @include nb-install-component() {
-  .lists {
-    display: flex;
-  }
-
   .list-card {
-    width: 20rem;
-    margin-left: 10rem;
-
-    &:first-child {
-      margin-left: 0;
-    }
-
     nb-card-header {
       border-bottom: none;
     }

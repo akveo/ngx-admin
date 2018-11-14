@@ -2,14 +2,36 @@
   <nb-card-header>
     Window
   </nb-card-header>
-  <nb-card-body>
-    <button (click)="openWindowForm()" nbButton>Open window form</button>
-
-    <button (click)="openWindow(contentTemplate)" nbButton>Open window</button>
-
-    <button (click)="openWindowWithoutBackdrop()" nbButton>Open window without backdrop</button>
-  </nb-card-body>
 </nb-card>
+
+<div class="row">
+  <div class="col-md-12 col-lg-4 col-xxxl-4">
+    <nb-card>
+      <nb-card-header>Window Form</nb-card-header>
+      <nb-card-body>
+        <button (click)="openWindowForm()" nbButton>Open window form</button>
+      </nb-card-body>
+    </nb-card>
+  </div>
+
+  <div class="col-md-12 col-lg-4 col-xxxl-4">
+    <nb-card>
+      <nb-card-header>Window Template</nb-card-header>
+      <nb-card-body>
+        <button (click)="openWindow(contentTemplate)" nbButton>Open window</button>
+      </nb-card-body>
+    </nb-card>
+  </div>
+
+  <div class="col-md-12 col-lg-4 col-xxxl-4">
+    <nb-card>
+      <nb-card-header>Window Without Backdrop</nb-card-header>
+      <nb-card-body>
+        <button (click)="openWindowWithoutBackdrop()" nbButton>Open window without backdrop</button>
+      </nb-card-body>
+    </nb-card>
+  </div>
+</div>
 
 <ng-template #contentTemplate let-data>
   <p>Here is the text provided via config: "{{ data.title }}"</p>

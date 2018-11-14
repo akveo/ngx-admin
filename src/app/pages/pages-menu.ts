@@ -53,8 +53,8 @@ export const MENU_ITEMS: NbMenuItem[] = [
         link: '/pages/nebular/infinite-list',
       },
       {
-        title: 'Toastr',
-        link: '/pages/nebular/toastr',
+        title: 'Tooltip',
+        link: '/pages/nebular/tooltip',
       },
       {
         title: 'Alert',

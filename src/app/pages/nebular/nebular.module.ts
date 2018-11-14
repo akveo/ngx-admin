@@ -36,6 +36,7 @@ import { NebularCheckboxComponent } from './form-inputs/nebular-checkbox/nebular
 import { NebularRadioGroupComponent } from './form-inputs/nebular-radio-group/nebular-radio-group.component';
 import { NebularSelectComponent } from './form-inputs/nebular-select/nebular-select.component';
 import { ChatComponent } from './chat/chat.component';
+import { TooltipComponent } from './tooltip/tooltip.component';
 
 // services
 import { NewsService } from './services/news.service';
@@ -73,6 +74,7 @@ const COMPONENTS = [
   NebularRadioGroupComponent,
   NebularSelectComponent,
   ChatComponent,
+  TooltipComponent,
 ];
 
 const ENTRY_COMPONENTS = [

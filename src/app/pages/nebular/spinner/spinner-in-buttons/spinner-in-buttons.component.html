@@ -1,36 +1,36 @@
-<nb-card accent="primary" size="small">
+<nb-card>
   <nb-card-header>Button With Spinner</nb-card-header>
   <nb-card-body>
-    <div class="d-flex align-items-start">
-      <div class="size-large-group">
-        <button nbButton status="success" size="large" (click)="toggleLoadingAnimation()"
-                [nbSpinner]="loading" nbSpinnerStatus="success" nbSpinnerSize="large" nbSpinnerMessage="">
+    <div class="row">
+      <div class="col-md-12 col-lg-12 col-xxxl-12">
+        <button nbButton status="success" size="large" (click)="toggleLoadingLargeGroupAnimation()"
+                [nbSpinner]="loadingLargeGroup" nbSpinnerStatus="success" nbSpinnerSize="large" nbSpinnerMessage="">
           Download
         </button>
 
-        <button nbButton status="primary" size="large" (click)="toggleLoadingAnimation()"
-                [nbSpinner]="loading" nbSpinnerStatus="primary" nbSpinnerSize="large" nbSpinnerMessage="">
+        <button nbButton status="primary" size="large" (click)="toggleLoadingLargeGroupAnimation()"
+                [nbSpinner]="loadingLargeGroup" nbSpinnerStatus="primary" nbSpinnerSize="large" nbSpinnerMessage="">
           Download
         </button>
 
-        <button nbButton status="warning" size="large" (click)="toggleLoadingAnimation()"
-                [nbSpinner]="loading" nbSpinnerStatus="warning" nbSpinnerSize="large" nbSpinnerMessage="">
+        <button nbButton status="warning" size="large" (click)="toggleLoadingLargeGroupAnimation()"
+                [nbSpinner]="loadingLargeGroup" nbSpinnerStatus="warning" nbSpinnerSize="large" nbSpinnerMessage="">
           Download
         </button>
       </div>
-      <div class="size-medium-group">
-        <button nbButton status="danger" size="medium" (click)="toggleLoadingAnimation()"
-                [nbSpinner]="loading" nbSpinnerStatus="danger" nbSpinnerMessage="">
+      <div class="col-md-12 col-lg-12 col-xxxl-12 size-medium-group">
+        <button nbButton status="danger" size="medium" (click)="toggleLoadingMediumGroupAnimation()"
+                [nbSpinner]="loadingMediumGroup" nbSpinnerStatus="danger" nbSpinnerMessage="">
           Download
         </button>
 
-        <button nbButton status="info" size="medium" (click)="toggleLoadingAnimation()"
-                [nbSpinner]="loading" nbSpinnerStatus="info" nbSpinnerSize="small" nbSpinnerMessage="">
+        <button nbButton status="info" size="medium" (click)="toggleLoadingMediumGroupAnimation()"
+                [nbSpinner]="loadingMediumGroup" nbSpinnerStatus="info" nbSpinnerSize="small" nbSpinnerMessage="">
           Download
         </button>
 
-        <button nbButton status="info" size="medium" (click)="toggleLoadingAnimation()"
-                [nbSpinner]="loading" nbSpinnerStatus="info" nbSpinnerSize="xsmall" nbSpinnerMessage="">
+        <button nbButton status="primary" size="medium" (click)="toggleLoadingMediumGroupAnimation()"
+                [nbSpinner]="loadingMediumGroup" nbSpinnerStatus="primary" nbSpinnerSize="xsmall" nbSpinnerMessage="">
           Download
         </button>
       </div>

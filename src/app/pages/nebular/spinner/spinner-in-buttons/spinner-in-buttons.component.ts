@@ -8,10 +8,18 @@ import { Component } from '@angular/core';
 
 export class SpinnerInButtonsComponent {
 
-  loading = false;
+  loadingLargeGroup = false;
+  loadingMediumGroup = false;
 
-  toggleLoadingAnimation() {
-    this.loading = true;
-    setTimeout(() => this.loading = false, 3000);
+  toggleLoadingLargeGroupAnimation() {
+    this.loadingLargeGroup = true;
+
+    setTimeout(() => this.loadingLargeGroup = false, 3000);
+  }
+
+  toggleLoadingMediumGroupAnimation() {
+    this.loadingMediumGroup = true;
+
+    setTimeout(() => this.loadingMediumGroup = false, 3000);
   }
 }

@@ -7,6 +7,16 @@
   }
 
   .title {
-    margin-top: 1rem;
+    margin-top: 2rem;
+  }
+
+  .result-from-dialog {
+    flex-direction: column;
+  }
+
+  .form-input-card {
+    nb-card-body {
+      display: block;
+    }
   }
 }

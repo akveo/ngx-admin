@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'ngx-nebular-select',
@@ -9,9 +8,5 @@ import { FormControl } from '@angular/forms';
 export class NebularSelectComponent {
 
   commonSelectedItem = '2';
-
-  selectedItemNgModel;
-  selectedItemFormControl = new FormControl();
-
   selectedItem;
 }
