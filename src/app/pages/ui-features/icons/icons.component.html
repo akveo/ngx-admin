@@ -1,5 +1,23 @@
 <div class="row">
   <div class="col-md-12 col-lg-6">
+    <nb-card>
+      <nb-card-header>
+        Eva Icons
+      </nb-card-header>
+      <nb-card-body>
+        <div class="icon" *ngFor="let icon of evaIcons">
+          <i [nbPopover]="icon">
+            <i [innerHTML]="icon | eva: { fill: '#d1d1ff', animationType: 'pulse' }"></i>
+          </i>
+        </div>
+      </nb-card-body>
+      <nb-card-footer>
+        <a href="https://akveo.github.io/eva-icons/" target="_blank">See all eva-icons</a>
+      </nb-card-footer>
+    </nb-card>
+  </div>
+
+  <div class="col-md-12 col-lg-6">
     <nb-card class="nb-icons">
       <nb-card-header>
         Nebular
@@ -28,9 +46,7 @@
         </a>
       </nb-card-footer>
     </nb-card>
-  </div>
 
-  <div class="col-md-12 col-lg-6">
     <nb-card>
       <nb-card-header>
         Ionicons
@@ -41,8 +57,9 @@
         </div>
       </nb-card-body>
       <nb-card-footer>
-        <a href="http://ionicons.com/" target="_blank">See all ionicons icons</a>
+        <a href="http://ionicons.com/" target="_blank">See all ionicons</a>
       </nb-card-footer>
     </nb-card>
+
   </div>
 </div>
