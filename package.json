@@ -68,7 +68,7 @@
     "ng2-ckeditor": "1.1.13",
     "ng2-completer": "2.0.8",
     "ng2-smart-table": "1.3.5",
-    "ngx-echarts": "2.0.1",
+    "ngx-echarts": "^4.0.1",
     "normalize.css": "6.0.0",
     "pace-js": "1.0.2",
     "roboto-fontface": "0.8.0",
