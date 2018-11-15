@@ -42,6 +42,7 @@ export class CrudInfoPersonaComponent implements OnInit {
   clean: boolean;
   loading: boolean;
   percentage: number;
+  aceptaTerminos: boolean;
 
   constructor(
     private translate: TranslateService,
@@ -286,11 +287,31 @@ export class CrudInfoPersonaComponent implements OnInit {
   validarForm(event) {
     if (event.valid) {
       if (this.info_info_persona === undefined) {
-        this.createInfoPersona(event.data.InfoPersona);
+        this.validarTerminos(event);
+        // this.createInfoPersona(event.data.InfoPersona);
       } else {
         this.updateInfoPersona(event.data.InfoPersona);
       }
     }
+  }
+
+  validarTerminos(event) {
+    Swal({
+      title: ' Política de privacidad y tratamiento de Datos ',
+      allowOutsideClick: false,
+      allowEscapeKey: false,
+      html: '<embed src="/assets/pdf/politicasUD.pdf" type="application/pdf" style="width:100%; height:375px;" frameborder="0"></embed>',
+      input: 'checkbox',
+      inputPlaceholder: 'He leido y estoy de acuerdo con los terminos de la política de tratamiento y privacidad de la información',
+      confirmButtonText: '<u>Aceptar</u>',
+    }).then((result) => {
+        if (result.value) {
+            this.createInfoPersona(event.data.InfoPersona);
+          } else if (result.value === 0) {
+              Swal({type: 'error', text: ' Para poder guardar acepte los terminos'});
+              this.aceptaTerminos = false;
+            }
+          });
   }
 
   setPercentage(event) {

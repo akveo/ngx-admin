@@ -13,4 +13,5 @@ export class Admision {
   EstadoAdmision: EstadoAdmision;
   LineaInvestigacion: LineaInvestigacion;
   Enfasis: Enfasis;
+  AceptaTerminos: boolean;
 }

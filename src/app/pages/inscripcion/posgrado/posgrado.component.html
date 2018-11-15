@@ -15,7 +15,7 @@
       <div class="row">
 
         <div class="col-sm-6 col-md-4 col-lg-3" align="center">
-          <nb-card class="exp-card" *ngIf="check_politica" (click)="perfil_editar('info_persona')">
+          <nb-card class="exp-card" (click)="perfil_editar('info_persona')">
             <nb-card-header> Información Básica </nb-card-header>
             <nb-card-body class="icon-form">
               <i class="fa fa-address-card-o fa-5x"></i>
@@ -70,7 +70,7 @@
         <button class="btn btn-success pull-right" disabled>Inscribirse</button>
       </div>
 
-      <div *ngIf="!check_politica" class="col-md-12">
+<!--      <div *ngIf="!check_politica" class="col-md-12">
 
           <input type="checkbox" *ngIf="!button_politica" checked (click)="button_politica=true">
           <input type="checkbox" *ngIf="button_politica" (click)="button_politica=false">
@@ -79,7 +79,7 @@
 
         <button class="btn btn-success pull-right" [disabled]="button_politica" (click)="check_politica=true">Aceptar</button>
       </div>
-
+-->
 
     </nb-card-body>
   </nb-card>
