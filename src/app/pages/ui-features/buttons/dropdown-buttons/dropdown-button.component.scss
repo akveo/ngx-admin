@@ -9,5 +9,12 @@
 
   nb-card-body {
     overflow: visible;
+
+    .dropdown-menu {
+      &.show {
+        width: auto;
+        min-width: 100%;
+      }
+    }
   }
 }
