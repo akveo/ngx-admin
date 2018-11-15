@@ -10,23 +10,43 @@
   }
 
   nb-chat {
-    margin: 0 auto;
+    margin: 3rem auto 0;
     width: 500px;
   }
 
   .chat-container {
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
+    font-size: nb-theme(font-size-xlg);
+
+    li {
+      padding-top: 1rem;
+    }
+  }
+
+  .chart-description {
+    font-size: nb-theme(font-size-xlg);
+    text-align: center;
+    margin: 0 auto;
+    width: 52%;
+  }
+
+  .chart-features {
+    margin-top: 2.75rem;
   }
 
   @include media-breakpoint-down(xxl) {
     nb-chat {
-      width: 600px;
+      width: 400px;
     }
   }
 
   @include media-breakpoint-down(md) {
     nb-chat {
       width: 400px;
+    }
+
+    .chart-description {
+      width: 90%;
     }
   }
 
