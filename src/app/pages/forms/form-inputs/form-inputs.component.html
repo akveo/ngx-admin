@@ -4,24 +4,30 @@
       <nb-card-header>Default Inputs</nb-card-header>
       <nb-card-body>
         <div class="input-group">
-          <input type="text" placeholder="Project" class="form-control"/>
+          <input type="text" nbInput fullWidth placeholder="Project">
         </div>
         <div class="row full-name-inputs">
           <div class="col-sm-6 input-group">
-            <input type="text" placeholder="Nick" class="form-control"/>
+            <input type="text" nbInput fullWidth placeholder="Nick">
           </div>
           <div class="col-sm-6 input-group">
-            <input type="text" placeholder="Last Name" class="form-control"/>
+            <input type="text" nbInput fullWidth placeholder="Last Name">
           </div>
         </div>
         <div class="input-group">
-          <input type="password" placeholder="Password" class="form-control"/>
+          <input type="password" nbInput fullWidth placeholder="Password">
         </div>
         <div class="input-group has-person-icon">
           <input type="text" placeholder="With Icon" class="form-control"/>
         </div>
-        <div class="input-group input-group-rounded">
-          <input type="text" placeholder="Rounded border" class="form-control"/>
+        <div class="input-group">
+          <input type="text" nbInput fullWidth shape="rectangle" placeholder="Rectangle border">
+        </div>
+        <div class="input-group">
+          <input type="text" nbInput fullWidth shape="semi-round" placeholder="Semi-round border">
+        </div>
+        <div class="input-group">
+          <input type="text" nbInput fullWidth shape="round" placeholder="Rounded border">
         </div>
         <div class="form-group">
           <input type="text" placeholder="Project" class="form-control"/>
@@ -29,16 +35,19 @@
           </small>
         </div>
         <div class="input-group">
-          <input type="text" placeholder="Disabled input" class="form-control" disabled/>
+          <input type="text" nbInput fullWidth placeholder="Disabled input" disabled/>
         </div>
         <div class="input-group">
-          <textarea rows="5" placeholder="Text Area" class="form-control"></textarea>
+          <textarea rows="5" nbInput fullWidth shape="round"  placeholder="Text Area"></textarea>
         </div>
         <div class="input-group input-group-sm">
-          <input type="text" placeholder="Small Input" class="form-control"/>
+          <input type="text" nbInput fullWidth fieldSize="small"  placeholder="Small Input">
         </div>
         <div class="input-group input-group-lg">
-          <input type="text" placeholder="Large Input" class="form-control"/>
+          <input type="text" nbInput fullWidth fieldSize="medium"  placeholder="Medium Input">
+        </div>
+        <div class="input-group input-group-lg">
+          <input type="text" nbInput fullWidth fieldSize="large"  placeholder="Large Input">
         </div>
       </nb-card-body>
     </nb-card>
@@ -137,27 +146,21 @@
       <nb-card-header>Validation States</nb-card-header>
       <nb-card-body>
         <div class="form-group">
-          <input type="text" placeholder="Input with Success" class="form-control form-control-success">
+          <input type="text" nbInput fullWidth status="info"  placeholder="Input with Info">
         </div>
         <div class="form-group">
-          <input type="text" placeholder="Input with Warning" class="form-control form-control-warning">
+          <input type="text" nbInput fullWidth status="success"  placeholder="Input with Warning">
         </div>
         <div class="form-group">
-          <input type="text" placeholder="Input with Danger" class="form-control form-control-danger">
+          <input type="text" nbInput fullWidth status="warning"  placeholder="Input with Danger">
+        </div>
+        <div class="form-group">
+          <input type="text" nbInput fullWidth status="danger" placeholder="Input with Danger">
         </div>
         <div class="form-group validation-checkboxes row">
           <nb-checkbox status="success" class="col-sm-4">Checkbox with Success</nb-checkbox>
           <nb-checkbox status="warning" class="col-sm-4">Checkbox with Warning</nb-checkbox>
           <nb-checkbox status="danger" class="col-sm-4">Checkbox with Danger</nb-checkbox>
-        </div>
-        <div class="form-group has-success">
-          <input type="text" placeholder="Input with Success Icon" class="form-control form-control-success">
-        </div>
-        <div class="form-group has-warning">
-          <input type="text" placeholder="Input with Warning Icon" class="form-control form-control-warning">
-        </div>
-        <div class="form-group has-danger">
-          <input type="text" placeholder="Input with Danger Icon" class="form-control form-control-danger">
         </div>
       </nb-card-body>
     </nb-card>
@@ -176,29 +179,29 @@
             </div>
           </div>
           <div class="demo-radio col-sm-4">
-            <label class="custom-control custom-radio">
-              <input type="radio" class="custom-control-input" name="customRadio">
-              <span class="custom-control-indicator"></span>
-              <span class="custom-control-description">Radio 1</span>
-            </label>
-            <label class="custom-control custom-radio">
-              <input type="radio" class="custom-control-input" name="customRadio" checked>
-              <span class="custom-control-indicator"></span>
-              <span class="custom-control-description">Radio 2</span>
-            </label>
-            <label class="custom-control custom-radio">
-              <input type="radio" class="custom-control-input" name="customRadio">
-              <span class="custom-control-indicator"></span>
-              <span class="custom-control-description">Radio 3</span>
-            </label>
+            <nb-radio-group [(value)]="radioGroupValue">
+              <nb-radio
+                [value]="'This is value 1'">
+                Radio 1
+              </nb-radio>
+              <nb-radio
+                [value]="'This is value 2'">
+                Radio 2
+              </nb-radio>
+              <nb-radio
+                [value]="'This is value 3'">
+                Radio 3
+              </nb-radio>
+            </nb-radio-group>
           </div>
           <div class="demo-disabled-checkbox-radio col-sm-4">
             <nb-checkbox disabled>Disabled Checkbox</nb-checkbox>
-            <label class="custom-control custom-radio">
-              <input type="radio" class="custom-control-input" disabled>
-              <span class="custom-control-indicator"></span>
-              <span class="custom-control-description">Disabled Radio</span>
-            </label>
+            <nb-radio-group>
+              <nb-radio
+                [value]="'Disabled Value'">
+                Disabled Radio
+              </nb-radio>
+            </nb-radio-group>
           </div>
         </div>
       </nb-card-body>

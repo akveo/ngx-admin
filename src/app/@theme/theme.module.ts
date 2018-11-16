@@ -35,6 +35,7 @@ import {
   NbSelectModule,
   NbChatModule,
   NbTooltipModule,
+  NbCalendarKitModule,
 } from '@nebular/theme';
 
 import { NbSecurityModule } from '@nebular/security';
@@ -102,6 +103,7 @@ const NB_MODULES = [
   NbSelectModule,
   NbChatModule,
   NbTooltipModule,
+  NbCalendarKitModule,
 ];
 
 const COMPONENTS = [

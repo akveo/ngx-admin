@@ -16,14 +16,14 @@ const routes: Routes = [{
     path: 'iot-dashboard',
     component: DashboardComponent,
   }, {
-    path: 'nebular',
-    loadChildren: './nebular/nebular.module#NebularModule',
-  }, {
     path: 'ui-features',
     loadChildren: './ui-features/ui-features.module#UiFeaturesModule',
   }, {
-    path: 'components',
-    loadChildren: './components/components.module#ComponentsModule',
+    path: 'modal-overlays',
+    loadChildren: './modal-overlays/modal-overlays.module#ModalOverlaysModule',
+  }, {
+    path: 'extra-components',
+    loadChildren: './extra-components/extra-components.module#ExtraComponentsModule',
   }, {
     path: 'maps',
     loadChildren: './maps/maps.module#MapsModule',
