@@ -18,6 +18,24 @@ import {
   NbPopoverModule,
   NbContextMenuModule,
   NbProgressBarModule,
+  NbCalendarModule,
+  NbCalendarRangeModule,
+  NbStepperModule,
+  NbButtonModule,
+  NbInputModule,
+  NbAccordionModule,
+  NbDatepickerModule,
+  NbDialogModule,
+  NbWindowModule,
+  NbListModule,
+  NbToastrModule,
+  NbAlertModule,
+  NbSpinnerModule,
+  NbRadioModule,
+  NbSelectModule,
+  NbChatModule,
+  NbTooltipModule,
+  NbCalendarKitModule,
 } from '@nebular/theme';
 
 import { NbSecurityModule } from '@nebular/security';
@@ -68,6 +86,24 @@ const NB_MODULES = [
   NgbModule,
   NbSecurityModule, // *nbIsGranted directive,
   NbProgressBarModule,
+  NbCalendarModule,
+  NbCalendarRangeModule,
+  NbStepperModule,
+  NbButtonModule,
+  NbListModule,
+  NbToastrModule,
+  NbInputModule,
+  NbAccordionModule,
+  NbDatepickerModule,
+  NbDialogModule,
+  NbWindowModule,
+  NbAlertModule,
+  NbSpinnerModule,
+  NbRadioModule,
+  NbSelectModule,
+  NbChatModule,
+  NbTooltipModule,
+  NbCalendarKitModule,
 ];
 
 const COMPONENTS = [
@@ -107,6 +143,13 @@ const NB_THEME_PROVIDERS = [
   ).providers,
   ...NbSidebarModule.forRoot().providers,
   ...NbMenuModule.forRoot().providers,
+  ...NbDatepickerModule.forRoot().providers,
+  ...NbDialogModule.forRoot().providers,
+  ...NbWindowModule.forRoot().providers,
+  ...NbToastrModule.forRoot().providers,
+  ...NbChatModule.forRoot({
+    messageGoogleMapKey: 'AIzaSyA_wNuCzia92MAmdLRzmqitRGvCF7wCZPY',
+  }).providers,
 ];
 
 @NgModule({

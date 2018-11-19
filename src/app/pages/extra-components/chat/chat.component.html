@@ -1,0 +1,39 @@
+<nb-card>
+  <nb-card-header>
+    <p class="chart-description">Here's a complete example build in a bot-like app. Type <code>help</code> to be able to receive different message types.
+      Enjoy the conversation and the beautiful UI.</p>
+  </nb-card-header>
+  <nb-card-body>
+    <div class="row">
+      <div class="chat-container col-md-12 col-lg-6 col-xxxl-6">
+        <nb-chat title="Nebular Conversational UI" size="large" status="success">
+          <nb-chat-message *ngFor="let msg of messages"
+                           [type]="msg.type"
+                           [message]="msg.text"
+                           [reply]="msg.reply"
+                           [sender]="msg.user.name"
+                           [date]="msg.date"
+                           [files]="msg.files"
+                           [quote]="msg.quote"
+                           [latitude]="msg.latitude"
+                           [longitude]="msg.longitude"
+                           [avatar]="msg.user.avatar">
+          </nb-chat-message>
+          <nb-chat-form (send)="sendMessage($event)" [dropFiles]="true">
+          </nb-chat-form>
+        </nb-chat>
+      </div>
+      <div class="chat-container col-md-12 col-lg-6 col-xxxl-6">
+        <div class="chart-features">
+          <p>Main features:</p>
+          <ul>
+            <li>different message types support (text, image, file, file group, map, etc)</li>
+            <li>drag &amp; drop for images and files with preview</li>
+            <li>different UI styles</li>
+            <li>custom action buttons (coming soon)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nb-card-body>
+</nb-card>

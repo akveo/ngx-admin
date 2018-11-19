@@ -19,8 +19,14 @@ const routes: Routes = [{
     path: 'ui-features',
     loadChildren: './ui-features/ui-features.module#UiFeaturesModule',
   }, {
-    path: 'components',
-    loadChildren: './components/components.module#ComponentsModule',
+    path: 'modal-overlays',
+    loadChildren: './modal-overlays/modal-overlays.module#ModalOverlaysModule',
+  }, {
+    path: 'extra-components',
+    loadChildren: './extra-components/extra-components.module#ExtraComponentsModule',
+  }, {
+    path: 'bootstrap',
+    loadChildren: './bootstrap/bootstrap.module#BootstrapModule',
   }, {
     path: 'maps',
     loadChildren: './maps/maps.module#MapsModule',

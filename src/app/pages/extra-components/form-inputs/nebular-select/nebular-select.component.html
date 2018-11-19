@@ -1,0 +1,344 @@
+<div class="row">
+  <div class="col-md-12 col-lg-6 col-xxxl-4">
+    <nb-card>
+      <nb-card-header>Select</nb-card-header>
+      <nb-card-body>
+        <nb-select placeholder="Select Showcase" [(selected)]="commonSelectedItem">
+          <nb-option value="1">Option 1</nb-option>
+          <nb-option value="2">Option 2</nb-option>
+          <nb-option value="3">Option 3</nb-option>
+          <nb-option value="4">Option 4</nb-option>
+        </nb-select>
+      </nb-card-body>
+    </nb-card>
+  </div>
+
+  <div class="col-md-12 col-lg-6 col-xxxl-4">
+    <nb-card>
+      <nb-card-header>Multiple Select</nb-card-header>
+      <nb-card-body>
+        <nb-select multiple placeholder="Multiple Select">
+          <nb-option value="1">Option 1</nb-option>
+          <nb-option value="2">Option 2</nb-option>
+          <nb-option value="3">Option 3</nb-option>
+          <nb-option value="4">Option 4</nb-option>
+        </nb-select>
+      </nb-card-body>
+    </nb-card>
+  </div>
+
+  <div class="col-md-12 col-lg-6 col-xxxl-4">
+    <nb-card>
+      <nb-card-header>Cleanable</nb-card-header>
+      <nb-card-body>
+        <nb-select placeholder="Cleanable">
+          <nb-option>Clean</nb-option>
+          <nb-option value="1">Option 1</nb-option>
+          <nb-option value="2">Option 2</nb-option>
+          <nb-option value="3">Option 3</nb-option>
+          <nb-option value="4">Option 4</nb-option>
+        </nb-select>
+      </nb-card-body>
+    </nb-card>
+  </div>
+
+  <div class="col-md-12 col-lg-6 col-xxxl-4">
+    <nb-card>
+      <nb-card-header>Placeholder</nb-card-header>
+      <nb-card-body>
+        <nb-select placeholder="Placeholder" status="primary">
+          <nb-option value="1">Option 1</nb-option>
+          <nb-option value="2">Option 2</nb-option>
+          <nb-option value="3">Option 3</nb-option>
+          <nb-option value="4">Option 4</nb-option>
+        </nb-select>
+      </nb-card-body>
+    </nb-card>
+  </div>
+
+  <div class="col-md-12 col-lg-6 col-xxxl-4">
+    <nb-card>
+      <nb-card-header>Custom Label</nb-card-header>
+      <nb-card-body>
+        <nb-select placeholder="Custom Label" [(selected)]="selectedItem">
+          <nb-select-label>
+            Selected: {{ selectedItem }}
+          </nb-select-label>
+
+          <nb-option value="1">Option 1</nb-option>
+          <nb-option value="2">Option 2</nb-option>
+          <nb-option value="3">Option 3</nb-option>
+          <nb-option value="4">Option 4</nb-option>
+        </nb-select>
+      </nb-card-body>
+    </nb-card>
+  </div>
+
+  <div class="col-md-12 col-lg-6 col-xxxl-4">
+    <nb-card>
+      <nb-card-header>Select Groups</nb-card-header>
+      <nb-card-body>
+        <nb-select placeholder="Select Groups">
+
+          <nb-option-group title="Group 1">
+            <nb-option value="1">Option 1</nb-option>
+            <nb-option value="2">Option 2</nb-option>
+            <nb-option value="3">Option 3</nb-option>
+            <nb-option value="4">Option 4</nb-option>
+          </nb-option-group>
+
+          <nb-option-group title="Group 2">
+            <nb-option value="21">Option 21</nb-option>
+            <nb-option value="22">Option 22</nb-option>
+            <nb-option value="23">Option 23</nb-option>
+            <nb-option value="24">Option 24</nb-option>
+          </nb-option-group>
+
+          <nb-option-group title="Group 3">
+            <nb-option value="31">Option 31</nb-option>
+            <nb-option value="32">Option 32</nb-option>
+            <nb-option value="33">Option 33</nb-option>
+            <nb-option value="34">Option 34</nb-option>
+          </nb-option-group>
+        </nb-select>
+      </nb-card-body>
+    </nb-card>
+  </div>
+
+  <div class="col-md-12 col-lg-6 col-xxxl-4">
+    <nb-card>
+      <nb-card-header>Disabled Select</nb-card-header>
+      <nb-card-body class="select-group">
+        <nb-select disabled placeholder="Disabled">
+          <nb-option value="1">Option 1</nb-option>
+          <nb-option value="2">Option 2</nb-option>
+          <nb-option value="3">Option 3</nb-option>
+          <nb-option value="4">Option 4</nb-option>
+        </nb-select>
+
+        <nb-select placeholder="Disabled Items">
+          <nb-option value="1">Option 1</nb-option>
+          <nb-option value="2" disabled>Option 2</nb-option>
+          <nb-option value="3">Option 3</nb-option>
+          <nb-option value="4" disabled>Option 4</nb-option>
+        </nb-select>
+
+        <nb-select placeholder="Disabled Groups">
+
+          <nb-option-group title="Group 1">
+            <nb-option value="1">Option 1</nb-option>
+            <nb-option value="2" disabled>Option 2</nb-option>
+            <nb-option value="3">Option 3</nb-option>
+            <nb-option value="4">Option 4</nb-option>
+          </nb-option-group>
+
+          <nb-option-group title="Group 2" disabled>
+            <nb-option value="21">Option 21</nb-option>
+            <nb-option value="22">Option 22</nb-option>
+            <nb-option value="23">Option 23</nb-option>
+            <nb-option value="24">Option 24</nb-option>
+          </nb-option-group>
+
+          <nb-option-group title="Group 3">
+            <nb-option value="31">Option 31</nb-option>
+            <nb-option value="32">Option 32</nb-option>
+            <nb-option value="33">Option 33</nb-option>
+            <nb-option value="34">Option 34</nb-option>
+          </nb-option-group>
+
+        </nb-select>
+      </nb-card-body>
+    </nb-card>
+  </div>
+
+  <div class="col-md-12 col-lg-6 col-xxxl-4">
+    <nb-card>
+      <nb-card-header>Select Shapes</nb-card-header>
+      <nb-card-body class="select-group">
+        <nb-select placeholder="Round" shape="round">
+          <nb-option value="1">Option 1</nb-option>
+          <nb-option value="2">Option 2</nb-option>
+          <nb-option value="3">Option 3</nb-option>
+          <nb-option value="4">Option 4</nb-option>
+        </nb-select>
+
+        <nb-select placeholder="Rectangle" shape="rectangle">
+          <nb-option value="1">Option 1</nb-option>
+          <nb-option value="2">Option 2</nb-option>
+          <nb-option value="3">Option 3</nb-option>
+          <nb-option value="4">Option 4</nb-option>
+        </nb-select>
+
+        <nb-select placeholder="Semi-round" shape="semi-round">
+          <nb-option value="1">Option 1</nb-option>
+          <nb-option value="2">Option 2</nb-option>
+          <nb-option value="3">Option 3</nb-option>
+          <nb-option value="4">Option 4</nb-option>
+        </nb-select>
+      </nb-card-body>
+    </nb-card>
+  </div>
+
+  <div class="col-md-12 col-lg-6 col-xxxl-4">
+    <nb-card>
+      <nb-card-header>Select Sizes</nb-card-header>
+      <nb-card-body class="select-group">
+        <nb-select placeholder="XSmall" size="xsmall">
+          <nb-option value="1">Option 1</nb-option>
+          <nb-option value="2">Option 2</nb-option>
+          <nb-option value="3">Option 3</nb-option>
+          <nb-option value="4">Option 4</nb-option>
+        </nb-select>
+
+        <nb-select placeholder="Small" size="small">
+          <nb-option value="1">Option 1</nb-option>
+          <nb-option value="2">Option 2</nb-option>
+          <nb-option value="3">Option 3</nb-option>
+          <nb-option value="4">Option 4</nb-option>
+        </nb-select>
+
+        <nb-select placeholder="Medium" size="medium">
+          <nb-option value="1">Option 1</nb-option>
+          <nb-option value="2">Option 2</nb-option>
+          <nb-option value="3">Option 3</nb-option>
+          <nb-option value="4">Option 4</nb-option>
+        </nb-select>
+
+        <nb-select placeholder="Large" size="large">
+          <nb-option value="1">Option 1</nb-option>
+          <nb-option value="2">Option 2</nb-option>
+          <nb-option value="3">Option 3</nb-option>
+          <nb-option value="4">Option 4</nb-option>
+        </nb-select>
+      </nb-card-body>
+    </nb-card>
+  </div>
+
+  <div class="col-md-12 col-lg-6 col-xxxl-4">
+    <nb-card>
+      <nb-card-header>Select Statuses</nb-card-header>
+      <nb-card-body class="select-group">
+        <nb-select placeholder="Primary" status="primary">
+          <nb-option value="1">Option 1</nb-option>
+          <nb-option value="2">Option 2</nb-option>
+          <nb-option value="3">Option 3</nb-option>
+          <nb-option value="4">Option 4</nb-option>
+        </nb-select>
+
+        <nb-select placeholder="Info" status="info">
+          <nb-option value="1">Option 1</nb-option>
+          <nb-option value="2">Option 2</nb-option>
+          <nb-option value="3">Option 3</nb-option>
+          <nb-option value="4">Option 4</nb-option>
+        </nb-select>
+
+        <nb-select placeholder="Danger" status="danger">
+          <nb-option value="1">Option 1</nb-option>
+          <nb-option value="2">Option 2</nb-option>
+          <nb-option value="3">Option 3</nb-option>
+          <nb-option value="4">Option 4</nb-option>
+        </nb-select>
+
+        <nb-select placeholder="Success" status="success">
+          <nb-option value="1">Option 1</nb-option>
+          <nb-option value="2">Option 2</nb-option>
+          <nb-option value="3">Option 3</nb-option>
+          <nb-option value="4">Option 4</nb-option>
+        </nb-select>
+
+        <nb-select placeholder="Warning" status="warning">
+          <nb-option value="1">Option 1</nb-option>
+          <nb-option value="2">Option 2</nb-option>
+          <nb-option value="3">Option 3</nb-option>
+          <nb-option value="4">Option 4</nb-option>
+        </nb-select>
+      </nb-card-body>
+    </nb-card>
+  </div>
+
+
+  <div class="col-md-12 col-lg-6 col-xxxl-4">
+    <nb-card>
+      <nb-card-header>Outline Select</nb-card-header>
+      <nb-card-body class="select-group">
+        <nb-select placeholder="Primary" outline status="primary">
+          <nb-option value="1">Option 1</nb-option>
+          <nb-option value="2">Option 2</nb-option>
+          <nb-option value="3">Option 3</nb-option>
+          <nb-option value="4">Option 4</nb-option>
+        </nb-select>
+
+        <nb-select placeholder="Info" outline status="info">
+          <nb-option value="1">Option 1</nb-option>
+          <nb-option value="2">Option 2</nb-option>
+          <nb-option value="3">Option 3</nb-option>
+          <nb-option value="4">Option 4</nb-option>
+        </nb-select>
+
+        <nb-select placeholder="Danger" outline status="danger">
+          <nb-option value="1">Option 1</nb-option>
+          <nb-option value="2">Option 2</nb-option>
+          <nb-option value="3">Option 3</nb-option>
+          <nb-option value="4">Option 4</nb-option>
+        </nb-select>
+
+        <nb-select placeholder="Success" outline status="success">
+          <nb-option value="1">Option 1</nb-option>
+          <nb-option value="2">Option 2</nb-option>
+          <nb-option value="3">Option 3</nb-option>
+          <nb-option value="4">Option 4</nb-option>
+        </nb-select>
+
+        <nb-select placeholder="Warning" outline status="warning">
+          <nb-option value="1">Option 1</nb-option>
+          <nb-option value="2">Option 2</nb-option>
+          <nb-option value="3">Option 3</nb-option>
+          <nb-option value="4">Option 4</nb-option>
+        </nb-select>
+      </nb-card-body>
+    </nb-card>
+  </div>
+
+
+  <div class="col-md-12 col-lg-6 col-xxxl-4">
+    <nb-card>
+      <nb-card-header>Select Colors</nb-card-header>
+      <nb-card-body class="select-group">
+        <nb-select placeholder="Primary" hero status="primary">
+          <nb-option value="1">Option 1</nb-option>
+          <nb-option value="2">Option 2</nb-option>
+          <nb-option value="3">Option 3</nb-option>
+          <nb-option value="4">Option 4</nb-option>
+        </nb-select>
+
+        <nb-select placeholder="Info" hero status="info">
+          <nb-option value="1">Option 1</nb-option>
+          <nb-option value="2">Option 2</nb-option>
+          <nb-option value="3">Option 3</nb-option>
+          <nb-option value="4">Option 4</nb-option>
+        </nb-select>
+
+        <nb-select placeholder="Danger" hero status="danger">
+          <nb-option value="1">Option 1</nb-option>
+          <nb-option value="2">Option 2</nb-option>
+          <nb-option value="3">Option 3</nb-option>
+          <nb-option value="4">Option 4</nb-option>
+        </nb-select>
+
+        <nb-select placeholder="Success" hero status="success">
+          <nb-option value="1">Option 1</nb-option>
+          <nb-option value="2">Option 2</nb-option>
+          <nb-option value="3">Option 3</nb-option>
+          <nb-option value="4">Option 4</nb-option>
+        </nb-select>
+
+        <nb-select placeholder="Warning" hero status="warning">
+          <nb-option value="1">Option 1</nb-option>
+          <nb-option value="2">Option 2</nb-option>
+          <nb-option value="3">Option 3</nb-option>
+          <nb-option value="4">Option 4</nb-option>
+        </nb-select>
+      </nb-card-body>
+    </nb-card>
+  </div>
+</div>

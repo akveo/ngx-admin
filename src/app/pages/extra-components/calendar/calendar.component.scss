@@ -1,0 +1,19 @@
+@import '../../../@theme/styles/themes';
+
+@include nb-install-component() {
+  .calendars-container {
+    margin-top: 2rem;
+  }
+
+  h2 {
+    font-size: nb-theme(font-size-xlg);
+    text-align: center;
+  }
+
+  .nebular-calendar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 3rem;
+  }
+}

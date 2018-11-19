@@ -1,0 +1,10 @@
+@import '../../../../@theme/styles/themes';
+
+@include nb-install-component() {
+  text-align: center;
+
+  span {
+    font-size: 75%;
+    opacity: 0.75;
+  }
+}
