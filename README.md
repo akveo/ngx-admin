@@ -24,7 +24,7 @@
 
 ### What's included:
 
-- Angular 6+ & Typescript
+- Angular 7+ & Typescript
 - Bootstrap 4+ & SCSS
 - Responsive layout
 - RTL support
