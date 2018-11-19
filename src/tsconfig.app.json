@@ -4,7 +4,6 @@
     "outDir": "../out-tsc/app",
     "module": "es2015",
     "baseUrl": "./",
-    "types": [],
     "paths": {
       "@angular/*": [
         "../node_modules/@angular/*"
