@@ -4,7 +4,7 @@
 
 [Who uses ngx-admin?](https://github.com/akveo/ngx-admin/issues/1645)
 
-# Admin template based on Angular 6+, Bootstrap 4 and <a href="https://github.com/akveo/nebular">Nebular</a>
+# Admin template based on Angular 7+, Bootstrap 4 and <a href="https://github.com/akveo/nebular">Nebular</a>
 
 ### Three themes available:
 
