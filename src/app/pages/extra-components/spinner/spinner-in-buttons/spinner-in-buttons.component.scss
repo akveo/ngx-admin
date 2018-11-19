@@ -1,0 +1,12 @@
+@import '../../../../@theme/styles/themes';
+
+@include nb-install-component() {
+  button {
+    margin: 1rem;
+  }
+  
+  .size-medium-group {
+    margin-top: 2rem;
+    border-top: 1px solid nb-theme(separator);
+  }
+}

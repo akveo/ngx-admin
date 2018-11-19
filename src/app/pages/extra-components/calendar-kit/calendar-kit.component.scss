@@ -1,0 +1,13 @@
+@import '../../../@theme/styles/themes';
+
+@include nb-install-component() {
+  nb-card-header {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+
+    p {
+      width: 80%;
+    }
+  }
+}

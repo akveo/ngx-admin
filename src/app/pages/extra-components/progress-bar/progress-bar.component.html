@@ -1,0 +1,35 @@
+<div class="row">
+  <div class="col-md-12 col-lg-12 col-xxxl-6">
+    <nb-card>
+      <nb-card-header>Progress Bar Status</nb-card-header>
+      <nb-card-body>
+        <nb-progress-bar [value]="20" status="primary">primary</nb-progress-bar>
+        <nb-progress-bar [value]="40" status="info">info</nb-progress-bar>
+        <nb-progress-bar [value]="60" status="success">success</nb-progress-bar>
+        <nb-progress-bar [value]="80" status="warning">warning</nb-progress-bar>
+        <nb-progress-bar [value]="100" status="danger">danger</nb-progress-bar>
+      </nb-card-body>
+    </nb-card>
+    <ngx-interactive-progress-bar></ngx-interactive-progress-bar>
+  </div>
+  <div class="col-md-12 col-lg-12 col-xxxl-6">
+    <nb-card>
+      <nb-card-header>Progress Bar Size</nb-card-header>
+      <nb-card-body>
+        <nb-progress-bar [value]="20" size="xs">xs</nb-progress-bar>
+        <nb-progress-bar [value]="40" size="sm">sm</nb-progress-bar>
+        <nb-progress-bar [value]="60">none</nb-progress-bar>
+        <nb-progress-bar [value]="80" size="lg">lg</nb-progress-bar>
+        <nb-progress-bar [value]="100" size="xlg">xlg</nb-progress-bar>
+      </nb-card-body>
+    </nb-card>
+
+    <nb-card>
+      <nb-card-header>Progress Bar Value</nb-card-header>
+      <nb-card-body>
+        <nb-progress-bar [value]="40" status="primary" [displayValue]="true"></nb-progress-bar>
+        <nb-progress-bar [value]="60" status="primary">Custom value</nb-progress-bar>
+      </nb-card-body>
+    </nb-card>
+  </div>
+</div>

@@ -1,0 +1,45 @@
+<nb-card>
+  <nb-card-header>
+    <span>Default Buttons</span>
+  </nb-card-header>
+  <nb-card-body>
+    <div class="row">
+      <div class="example-container col-md-4" *ngFor="let b of buttons">
+        <div class="container-title">
+          <span>{{ b.containerTitle }}</span>
+        </div>
+        <div class="container-btn">
+          <button nbButton
+                  outline
+                  status="{{ b.status }}"
+                  class="btn-demo">
+            {{ b.title }}
+          </button>
+        </div>
+        <div class="{{ b.container }}">
+          <div class="state-container">
+            <div class="state-value original"></div>
+            <div class="state-details">
+              <span class="header">Default</span>
+              <span class="subheader">{{ b.default }}</span>
+            </div>
+          </div>
+          <div class="state-container">
+            <div class="state-value hover"></div>
+            <div class="state-details">
+              <span class="header">Hover</span>
+              <span class="subheader">14% white</span>
+            </div>
+          </div>
+          <div class="state-container">
+            <div class="state-value active"></div>
+            <div class="state-details">
+              <span class="header">Active</span>
+              <span class="subheader">14% black</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nb-card-body>
+</nb-card>

@@ -1,0 +1,130 @@
+@import '../../../../@theme/styles/themes';
+@import '~@nebular/bootstrap/styles/buttons';
+@import '~bootstrap/scss/mixins/breakpoints';
+@import '~@nebular/theme/styles/global/breakpoints';
+
+@include nb-install-component() {
+
+  nb-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  nb-card-body {
+    padding-bottom: 0;
+  }
+
+  .example-container {
+    margin-bottom: 1.5rem;
+  }
+
+  .primary-container {
+    .original {
+      background-color: nb-theme(btn-primary-bg);
+    }
+    .hover {
+      @include btn-primary-hover();
+    }
+    .active {
+      @include btn-primary-active();
+    }
+  }
+
+  .primary-container.outline .original {
+    background-color: transparent;
+    border: 2px solid nb-theme(btn-primary-bg);
+  }
+
+  .success-container {
+    .original {
+      background-color: nb-theme(btn-success-bg);
+    }
+    .hover {
+      @include btn-success-hover();
+    }
+    .active {
+      @include btn-success-active();
+    }
+  }
+
+  .success-container.outline .original {
+    background-color: transparent;
+    border: 2px solid nb-theme(btn-success-bg);
+  }
+
+  .warning-container {
+    .original {
+      background-color: nb-theme(btn-warning-bg);
+    }
+    .hover {
+      @include btn-warning-hover();
+    }
+    .active {
+      @include btn-warning-active();
+    }
+  }
+
+  .warning-container.outline .original {
+    background-color: transparent;
+    border: 2px solid nb-theme(btn-warning-bg);
+  }
+
+  .info-container {
+    .original {
+      background-color: nb-theme(btn-info-bg);
+    }
+    .hover {
+      @include btn-info-hover();
+    }
+    .active {
+      @include btn-info-active();
+    }
+  }
+
+  .info-container.outline .original {
+    background-color: transparent;
+    border: 2px solid nb-theme(btn-info-bg);
+  }
+
+  .danger-container {
+    .original {
+      background-color: nb-theme(btn-danger-bg);
+    }
+    .hover {
+      @include btn-danger-hover();
+    }
+    .active {
+      @include btn-danger-active();
+    }
+  }
+
+  .danger-container.outline .original {
+    background-color: transparent;
+    border: 2px solid nb-theme(btn-danger-bg);
+  }
+
+  .secondary-container {
+    .original {
+      border: 2px solid nb-theme(btn-secondary-border);
+    }
+    .hover {
+      @include btn-secondary-hover();
+    }
+    .active {
+      @include btn-secondary-active();
+    }
+  }
+
+  .secondary-container.outline .original {
+    background-color: transparent;
+    border: 2px solid nb-theme(btn-secondary-border);
+  }
+
+  @include media-breakpoint-up(xxl) {
+    .example-container {
+      flex: 0 0 20%;
+      max-width: 20%;
+    }
+  }
+}

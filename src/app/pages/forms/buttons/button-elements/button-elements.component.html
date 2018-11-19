@@ -1,0 +1,17 @@
+<nb-card>
+  <nb-card-header>Button Elements</nb-card-header>
+  <nb-card-body>
+    <div class="button-container">
+      <button (click)="onClick()" nbButton>Button</button>
+    </div>
+    <div class="button-container">
+      <input (click)="onClick()" nbButton type="submit" value="Input Submit"/>
+    </div>
+    <div class="button-container">
+      <input (click)="onClick()" nbButton type="button" value="Input Button"/>
+    </div>
+    <div class="button-container">
+      <a (click)="onClick()" href="#" nbButton>Link</a>
+    </div>
+  </nb-card-body>
+</nb-card>
