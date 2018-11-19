@@ -18,8 +18,6 @@ import {
   NgxPopoverCardComponent, NgxPopoverFormComponent,
   NgxPopoverTabsComponent,
 } from './popovers/popover-examples.component';
-import { ModalsComponent } from './modals/modals.component';
-import { ModalComponent } from './modals/modal/modal.component';
 import { TooltipComponent } from './tooltip/tooltip.component';
 
 
@@ -32,8 +30,6 @@ const COMPONENTS = [
   WindowComponent,
   WindowFormComponent,
   PopoversComponent,
-  ModalsComponent,
-  ModalComponent,
   NgxPopoverCardComponent,
   NgxPopoverFormComponent,
   NgxPopoverTabsComponent,
@@ -41,7 +37,6 @@ const COMPONENTS = [
 ];
 
 const ENTRY_COMPONENTS = [
-  ModalComponent,
   ShowcaseDialogComponent,
   DialogNamePromptComponent,
   WindowFormComponent,

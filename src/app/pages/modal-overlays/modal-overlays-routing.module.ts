@@ -5,7 +5,6 @@ import { DialogComponent } from './dialog/dialog.component';
 import { WindowComponent } from './window/window.component';
 import { PopoversComponent } from './popovers/popovers.component';
 import { ToastrComponent } from './toastr/toastr.component';
-import { ModalsComponent } from './modals/modals.component';
 import { TooltipComponent } from './tooltip/tooltip.component';
 
 const routes: Routes = [{
@@ -19,10 +18,6 @@ const routes: Routes = [{
     {
       path: 'window',
       component: WindowComponent,
-    },
-    {
-      path: 'modal',
-      component: ModalsComponent,
     },
     {
       path: 'popover',

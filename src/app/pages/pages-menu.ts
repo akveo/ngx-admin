@@ -18,7 +18,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
   },
   {
     title: 'Extra Components',
-    icon: 'nb-gear',
+    icon: 'nb-star',
     children: [
       {
         title: 'Calendar',
@@ -128,10 +128,6 @@ export const MENU_ITEMS: NbMenuItem[] = [
         link: '/pages/modal-overlays/window',
       },
       {
-        title: 'Modal',
-        link: '/pages/modal-overlays/modal',
-      },
-      {
         title: 'Popover',
         link: '/pages/modal-overlays/popover',
       },
@@ -142,6 +138,24 @@ export const MENU_ITEMS: NbMenuItem[] = [
       {
         title: 'Tooltip',
         link: '/pages/modal-overlays/tooltip',
+      },
+    ],
+  },
+  {
+    title: 'Bootstrap',
+    icon: 'nb-gear',
+    children: [
+      {
+        title: 'Form Inputs',
+        link: '/pages/bootstrap/inputs',
+      },
+      {
+        title: 'Buttons',
+        link: '/pages/bootstrap/buttons',
+      },
+      {
+        title: 'Modal',
+        link: '/pages/bootstrap/modal',
       },
     ],
   },

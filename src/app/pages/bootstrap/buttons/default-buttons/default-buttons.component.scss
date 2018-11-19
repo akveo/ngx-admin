@@ -1,7 +1,5 @@
 @import '../../../../@theme/styles/themes';
 @import '~@nebular/bootstrap/styles/buttons';
-@import '~bootstrap/scss/mixins/breakpoints';
-@import '~@nebular/theme/styles/global/breakpoints';
 
 @include nb-install-component() {
 
@@ -9,6 +7,11 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    .dropdown {
+      flex-basis: 30%;
+      min-width: 220px;
+    }
   }
 
   nb-card-body {
@@ -119,12 +122,5 @@
   .secondary-container.outline .original {
     background-color: transparent;
     border: 2px solid nb-theme(btn-secondary-border);
-  }
-
-  @include media-breakpoint-up(xxl) {
-    .example-container {
-      flex: 0 0 20%;
-      max-width: 20%;
-    }
   }
 }

@@ -1,30 +1,30 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'ngx-default-buttons',
-  styleUrls: ['./default-buttons.component.scss'],
-  templateUrl: './default-buttons.component.html',
+  selector: 'ngx-outline-buttons',
+  styleUrls: ['./outline-buttons.component.scss'],
+  templateUrl: './outline-buttons.component.html',
 })
-export class DefaultButtonsComponent {
+export class OutlineButtonsComponent {
 
   buttons = [
     {
       status: 'primary',
-      container: 'primary-container',
+      container: 'primary-container outline',
       containerTitle: 'Primary Button',
       title: 'Primary',
       default: '#7659ff',
     },
     {
       status: 'warning',
-      container: 'warning-container',
+      container: 'warning-container outline',
       containerTitle: 'Warning Button',
       title: 'Warning',
       default: '#ffcb17',
     },
     {
       status: 'success',
-      container: 'success-container',
+      container: 'success-container outline',
       containerTitle: 'Success Button',
       title: 'Success',
       default: '#00d977',
@@ -38,7 +38,7 @@ export class DefaultButtonsComponent {
     },
     {
       status: 'danger',
-      container: 'danger-container',
+      container: 'danger-container outline',
       containerTitle: 'Danger Button',
       title: 'Danger',
       default: '#ff386a',

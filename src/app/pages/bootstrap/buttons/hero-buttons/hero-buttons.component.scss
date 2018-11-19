@@ -1,7 +1,5 @@
 @import '../../../../@theme/styles/themes';
 @import '~@nebular/bootstrap/styles/buttons';
-@import '~bootstrap/scss/mixins/breakpoints';
-@import '~@nebular/theme/styles/global/breakpoints';
 
 @include nb-install-component() {
 
@@ -133,12 +131,5 @@
 
   .example-container {
     margin-bottom: 1.5rem;
-  }
-
-  @include media-breakpoint-up(xxl) {
-    .example-container {
-      flex: 0 0 20%;
-      max-width: 20%;
-    }
   }
 }

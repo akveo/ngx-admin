@@ -1,0 +1,15 @@
+@import '../../../../@theme/styles/themes';
+@import '~@nebular/bootstrap/styles/buttons';
+
+@include nb-install-component() {
+
+  nb-card-body {
+    padding: 0 1.25rem 1.25rem 0;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .button-container {
+    margin: 1.25rem 0 0 1.25rem;
+  }
+}
