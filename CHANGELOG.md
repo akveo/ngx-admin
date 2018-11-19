@@ -1,3 +1,41 @@
+<a name="3.0.0"></a>
+# [3.0.0](https://github.com/akveo/ngx-admin/compare/v2.3.0...v3.0.0) (2018-11-19)
+
+
+### Bug Fixes
+
+* **buttons:** change tiny button class to x-small ([#1826](https://github.com/akveo/ngx-admin/issues/1826)) ([a721fd8](https://github.com/akveo/ngx-admin/commit/a721fd8))
+* **chart:** resize chart on sidebar expand/collapse ([#1816](https://github.com/akveo/ngx-admin/issues/1816)) ([aa8e7cd](https://github.com/akveo/ngx-admin/commit/aa8e7cd))
+* **readme:** update doc (starter kit) link ([#1770](https://github.com/akveo/ngx-admin/issues/1770)) ([6456141](https://github.com/akveo/ngx-admin/commit/6456141))
+* **tslint:** add correct semicolon option ([#1777](https://github.com/akveo/ngx-admin/issues/1777)) ([00e6ca5](https://github.com/akveo/ngx-admin/commit/00e6ca5))
+
+
+### Features
+
+* **app:** update Nebular to the latest 2.0.1 version ([#1868](https://github.com/akveo/ngx-admin/issues/1868)) ([16bcc90](https://github.com/akveo/ngx-admin/commit/16bcc90)), closes [#1866](https://github.com/akveo/ngx-admin/issues/1866)
+* **dashboard:** add new E-commerce dashboard ([#1754](https://github.com/akveo/ngx-admin/issues/1754)) ([56e4709](https://github.com/akveo/ngx-admin/commit/56e4709))
+* **icons:** update font awesome to 5.2.0 ([#1798](https://github.com/akveo/ngx-admin/issues/1798)) ([f20c371](https://github.com/akveo/ngx-admin/commit/f20c371))
+* add a bunch of new Nebular demos ([#1911](https://github.com/akveo/ngx-admin/issues/1911)) ([3f1f4c5](https://github.com/akveo/ngx-admin/commit/3f1f4c5))
+* **icons:** add eva-icons ([#1912](https://github.com/akveo/ngx-admin/issues/1912)) ([b3d7b7b](https://github.com/akveo/ngx-admin/commit/b3d7b7b))
+* add ng2-completer to dependencies list ([3482404](https://github.com/akveo/ngx-admin/commit/3482404))
+* **app:** angular 7+ update ([#1910](https://github.com/akveo/ngx-admin/issues/1910)) ([aa7579c](https://github.com/akveo/ngx-admin/commit/aa7579c)), closes [#1890](https://github.com/akveo/ngx-admin/issues/1890)
+* **app:** update Nebular to 3.0.0 version ([#1916](https://github.com/akveo/ngx-admin/issues/1916)) ([c594a5a](https://github.com/akveo/ngx-admin/commit/c594a5a))
+* **app:** update Nebular to rc.10 ([50961f3](https://github.com/akveo/ngx-admin/commit/50961f3))
+
+
+### BREAKING CHANGES
+
+* Angular 7+ now required.
+The following libraries were updated:
+- @agm/core
+- @ng-bootstrap/ng-bootstrap
+- @swimlane/ngx-charts
+- ng2-ckeditor
+- ngx-echarts
+* **icons:** Since this is a major package update we recommend looking through the upgrade guide https://fontawesome.com/how-to-use/on-the-web/setup/upgrading-from-version-4
+
+
+
 <a name="2.3.0"></a>
 # [2.3.0 - Corporate Theme](https://github.com/akveo/ngx-admin/compare/v2.2.0...v2.3.0) (2018-06-22)
 
