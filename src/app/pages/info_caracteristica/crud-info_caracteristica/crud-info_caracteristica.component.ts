@@ -13,6 +13,9 @@ import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import { HttpErrorResponse } from '@angular/common/http';
 import Swal from 'sweetalert2';
 import 'style-loader!angular2-toaster/toaster.css';
+import { ListService } from '../../../@core/store/services/list.service';
+import { Store } from '@ngrx/store';
+import { IAppState } from '../../../@core/store/app.state';
 
 @Component({
   selector: 'ngx-crud-info-caracteristica',
@@ -46,15 +49,20 @@ export class CrudInfoCaracteristicaComponent implements OnInit {
     private campusMidService: CampusMidService,
     private ubicacionesService: UbicacionesService,
     private personaService: PersonaService,
+    private store: Store < IAppState >,
+    private listService: ListService,
     private toasterService: ToasterService) {
     this.formInfoCaracteristica = FORM_INFO_CARACTERISTICA;
     this.construirForm();
     this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
       this.construirForm();
     });
-    this.loadOptionsGrupoEtnico();
-    this.loadOptionsTipoDiscapacidad();
-    this.loadOptionsPaisNacimiento();
+
+    this.listService.findPais();
+    this.listService.findGrupoEtnico();
+    this.listService.findTipoDiscapacidad();
+    this.loadLists()
+
    }
 
   construirForm() {
@@ -78,63 +86,6 @@ export class CrudInfoCaracteristicaComponent implements OnInit {
       this.departamentoSeleccionado = event.valor;
       this.loadOptionsCiudadNacimiento();
     }
-  }
-
-  loadOptionsGrupoEtnico(): void {
-    let grupoEtnico: Array<any> = [];
-      this.personaService.get('grupo_etnico/?limit=0')
-        .subscribe(res => {
-          if (res !== null) {
-            grupoEtnico = <Array<GrupoEtnico>>res;
-          }
-          this.formInfoCaracteristica.campos[ this.getIndexForm('GrupoEtnico') ].opciones = grupoEtnico;
-        },
-        (error: HttpErrorResponse) => {
-          Swal({
-            type: 'error',
-            title: error.status + '',
-            text: this.translate.instant('ERROR.' + error.status),
-            confirmButtonText: this.translate.instant('GLOBAL.aceptar'),
-          });
-        });
-  }
-
-  loadOptionsTipoDiscapacidad(): void {
-    let tipoDiscapacidad: Array<any> = [];
-      this.personaService.get('tipo_discapacidad/?limit=0')
-        .subscribe(res => {
-          if (res !== null) {
-            tipoDiscapacidad = <Array<TipoDiscapacidad>>res;
-          }
-          this.formInfoCaracteristica.campos[ this.getIndexForm('TipoDiscapacidad') ].opciones = tipoDiscapacidad;
-        },
-        (error: HttpErrorResponse) => {
-          Swal({
-            type: 'error',
-            title: error.status + '',
-            text: this.translate.instant('ERROR.' + error.status),
-            confirmButtonText: this.translate.instant('GLOBAL.aceptar'),
-          });
-        });
-  }
-
-  loadOptionsPaisNacimiento(): void {
-    let paisNacimiento: Array<any> = [];
-      this.ubicacionesService.get('lugar/?query=TipoLugar.Nombre:PAIS')
-        .subscribe(res => {
-          if (res !== null) {
-            paisNacimiento = <Array<Lugar>>res;
-          }
-          this.formInfoCaracteristica.campos[ this.getIndexForm('PaisNacimiento') ].opciones = paisNacimiento;
-        },
-        (error: HttpErrorResponse) => {
-          Swal({
-            type: 'error',
-            title: error.status + '',
-            text: this.translate.instant('ERROR.' + error.status),
-            confirmButtonText: this.translate.instant('GLOBAL.aceptar'),
-          });
-        });
   }
 
   loadOptionsDepartamentoNacimiento(): void {
@@ -343,6 +294,16 @@ export class CrudInfoCaracteristicaComponent implements OnInit {
       bodyOutputType: BodyOutputType.TrustedHtml,
     };
     this.toasterService.popAsync(toast);
+  }
+
+  public loadLists() {
+    this.store.select((state) => state).subscribe(
+      (list) => {
+        this.formInfoCaracteristica.campos[ this.getIndexForm('PaisNacimiento') ].opciones = list.listPais[0];
+        this.formInfoCaracteristica.campos[ this.getIndexForm('GrupoEtnico') ].opciones = list.listGrupoEtnico[0];
+        this.formInfoCaracteristica.campos[ this.getIndexForm('TipoDiscapacidad') ].opciones = list.listTipoDiscapacidad[0];
+      },
+    );
   }
 
 }

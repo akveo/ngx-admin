@@ -35,7 +35,7 @@ export class PagesComponent implements OnInit {
     if (this.autenticacion.live()) {
       console.info(this.autenticacion.getPayload().role);
       this.rol = 'Menu%20campus';
-      this.menu = MENU_ITEMS;
+      // this.menu = MENU_ITEMS;
     } else {
       this.rol = 'Publico';
     }
