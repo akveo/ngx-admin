@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import { MenuItem } from './menu-item';
-import { MENU_ITEMS } from './pages-menu';
+// import { MENU_ITEMS } from './pages-menu';
 // import { HttpErrorResponse } from '@angular/common/http';
 // import { MenuService } from '../@core/data/menu.service';
 import { ImplicitAutenticationService } from '../@core/utils/implicit_autentication.service';
@@ -35,7 +35,7 @@ export class PagesComponent implements OnInit {
     if (this.autenticacion.live()) {
       console.info(this.autenticacion.getPayload().role);
       this.rol = 'Menu%20campus';
-      this.menu = MENU_ITEMS;
+      // this.menu = MENU_ITEMS;
     } else {
       this.rol = 'Publico';
     }
