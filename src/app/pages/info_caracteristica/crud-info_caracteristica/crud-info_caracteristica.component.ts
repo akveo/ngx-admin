@@ -1,5 +1,3 @@
-import { GrupoEtnico } from './../../../@core/data/models/grupo_etnico';
-import { TipoDiscapacidad } from './../../../@core/data/models/tipo_discapacidad';
 import { Lugar } from './../../../@core/data/models/lugar';
 import { InfoCaracteristica } from './../../../@core/data/models/info_caracteristica';
 import { InfoCaracteristicaGet } from './../../../@core/data/models/info_caracteristica_get';
@@ -48,7 +46,6 @@ export class CrudInfoCaracteristicaComponent implements OnInit {
     private translate: TranslateService,
     private campusMidService: CampusMidService,
     private ubicacionesService: UbicacionesService,
-    private personaService: PersonaService,
     private store: Store < IAppState >,
     private listService: ListService,
     private toasterService: ToasterService) {
