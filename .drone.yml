@@ -26,12 +26,24 @@ pipeline:
     image: plugins/s3
     secrets: [ aws_access_key_id, aws_secret_access_key ]
     region: "us-east-1"
-    bucket: "campus-cliente-${DRONE_BRANCH}"
+    bucket: "campusvirtualudpreprod.udistrital.edu.co"
     source: dist/**/*
     target: /
     strip_prefix: dist/
     when:
-      branch: [master, develop]
+      branch: [develop]
+      event: push
+      
+  publish_s3:
+    image: plugins/s3
+    secrets: [ aws_access_key_id, aws_secret_access_key ]
+    region: "us-east-1"
+    bucket: "campusvirtualud.udistrital.edu.co"
+    source: dist/**/*
+    target: /
+    strip_prefix: dist/
+    when:
+      branch: [master]
       event: push
 
   #Notify results to telegram    
