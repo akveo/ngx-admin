@@ -2,7 +2,6 @@ import { Lugar } from './../../../@core/data/models/lugar';
 import { InfoCaracteristica } from './../../../@core/data/models/info_caracteristica';
 import { InfoCaracteristicaGet } from './../../../@core/data/models/info_caracteristica_get';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { PersonaService } from '../../../@core/data/persona.service';
 import { UbicacionesService } from '../../../@core/data/ubicaciones.service';
 import { CampusMidService } from '../../../@core/data/campus_mid.service';
 import { FORM_INFO_CARACTERISTICA } from './form-info_caracteristica';
