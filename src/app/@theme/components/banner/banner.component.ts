@@ -9,7 +9,7 @@ const HIDE_BANNER_KEY = 'HIDE_RELEASE_2_BANNER';
   template: `
     <div class="heading-with-icon">
       <img class="icon" [src]="getBellPath()" alt="bell">
-      <h1 class="banner-heading">Nebular 2.0 stable <br> with 30+ components is out!</h1>
+      <h1 class="banner-heading">Nebular 3.0 stable <br> with 30+ components is out!</h1>
       <button class="close-button" aria-label="close" (click)="closeBanner()">
         <span class="nb-close"></span>
       </button>
