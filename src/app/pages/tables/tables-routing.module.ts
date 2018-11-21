@@ -3,14 +3,20 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { TablesComponent } from './tables.component';
 import { SmartTableComponent } from './smart-table/smart-table.component';
+import {WithOptionsComponent} from "./with-options/with-options.component";
 
 const routes: Routes = [{
   path: '',
   component: TablesComponent,
-  children: [{
+  children: [
+    {
     path: 'smart-table',
     component: SmartTableComponent,
-  }],
+  },{
+    path: 'with-options',
+    component: WithOptionsComponent,
+  },
+  ],
 }];
 
 @NgModule({
