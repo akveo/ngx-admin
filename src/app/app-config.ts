@@ -95,12 +95,12 @@ export const Config = {
         CONF_MENU_SERVICE: 'https://autenticacion.portaloas.udistrital.edu.co/api/configuracion_crud_api/v1/menu_opcion_padre/ArbolMenus/',
         TOKEN: {
             AUTORIZATION_URL: 'https://autenticacion.portaloas.udistrital.edu.co/oauth2/authorize',
-            CLIENTE_ID: 'iKu3JoaAbsqLoQTpIjjFlz9RfIga',
+            CLIENTE_ID: '7AxAGQAvdCo_PfdFKOVCI9zeuqga',
             RESPONSE_TYPE: 'id_token token',
             SCOPE: 'openid email role documento',
-            REDIRECT_URL: 'https://pruebascampus.portaloas.udistrital.edu.co/',
+            REDIRECT_URL: 'https://campusvirtualudpreprod.portaloas.udistrital.edu.co/',
             SIGN_OUT_URL: 'https://autenticacion.portaloas.udistrital.edu.co/oidc/logout',
-            SIGN_OUT_REDIRECT_URL: 'https://pruebascampus.portaloas.udistrital.edu.co/',
+            SIGN_OUT_REDIRECT_URL: 'https://campusvirtualudpreprod.portaloas.udistrital.edu.co/',
         },
     },
 };
