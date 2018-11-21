@@ -55,9 +55,9 @@
     "text": "In this post I’m going to show you how I test my selectors by putting the selectors from a previous post “Clean NgRx reducers using Immer”, where we created a small shopping cart application, under test. In the application there is a collection of products (the catalog) and the cart items, together they form the state of the application."
   },
   {
-    "title": "Angular 6 or Angular 7? Yes please!",
+    "title": "Angular 5 or Angular 6? Yes please!",
     "link": "https://blog.angularindepth.com/angular-5-or-angular-6-yes-please-d71b08b5e59b",
-    "text": "And, I’m glad you asked: YES, you should move all your projects to Angular 7 now or sooner! But … and it is a big but. Like me, you may be in the situation where you are working on multiple projects and many of them are going to be stuck in Angular 5 for a while. So, you need to support a development environment where you can work on and even create new Angular applications in both Angular 5 and Angular 7."
+    "text": "And, I’m glad you asked: YES, you should move all your projects to Angular 6 now or sooner! But … and it is a big but. Like me, you may be in the situation where you are working on multiple projects and many of them are going to be stuck in Angular 5 for a while. So, you need to support a development environment where you can work on and even create new Angular applications in both Angular 5 and Angular 6."
   },
   {
     "title": "Total Guide To Dynamic Angular Animations That Can Be Customized At Runtime",
@@ -80,7 +80,7 @@
     "text": "NGXS is a state management pattern + library for Angular. Just like Redux and NgRx it’s modeled after the CQRS pattern. NGXS uses TypeScript functionality to its fullest extent and because of this it may feel more Angular-y."
   },
   {
-    "title": "Upgrading a project without CLI to Angular 7",
+    "title": "Upgrading a project without CLI to Angular 6",
     "link": "https://blog.angularindepth.com/upgrading-a-project-without-cli-to-angular-6-b07b105adc02",
     "text": "In the following article, I’m going to describe the challenging process of updating an Angular application with custom Webpack configuration, which our team had to pull through 3 weeks ago. I guess our experience would be useful for those who use Angular with acustom Webpack config. For others, it is an illustration of where modern front-end could lead us and how to live with that."
   },
@@ -97,7 +97,7 @@
   {
     "title": "The Angular Library Series - Creating a Library with the Angular CLI",
     "link": "https://blog.angularindepth.com/creating-a-library-in-angular-6-87799552e7e5",
-    "text": "Angular 7 was just released. Many of the improvements were to the Angular CLI. The one I have really been looking forward to is the integration of the Angular CLI with ng-packagr to generate and build Angular libraries. ng-packagr is a fantastic tool created by David Herges that transpiles your library to the Angular Package Format."
+    "text": "Angular 6 was just released. Many of the improvements were to the Angular CLI. The one I have really been looking forward to is the integration of the Angular CLI with ng-packagr to generate and build Angular libraries. ng-packagr is a fantastic tool created by David Herges that transpiles your library to the Angular Package Format."
   },
   {
     "title": "RxJS: Avoiding takeUntil Leaks",
