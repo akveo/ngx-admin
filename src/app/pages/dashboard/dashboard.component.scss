@@ -6,6 +6,12 @@
     border: none;
     padding-bottom: 0;
   }
+  .center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
   @include media-breakpoint-down(sm) {
     ngx-traffic {
       display: none;

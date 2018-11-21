@@ -11,6 +11,9 @@ import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import { HttpErrorResponse } from '@angular/common/http';
 import Swal from 'sweetalert2';
 import 'style-loader!angular2-toaster/toaster.css';
+import { IAppState } from '../../../@core/store/app.state';
+import { ListService } from '../../../@core/store/services/list.service';
+import { Store } from '@ngrx/store';
 
 @Component({
   selector: 'ngx-crud-informacion-contacto',
@@ -45,13 +48,16 @@ export class CrudInformacionContactoComponent implements OnInit {
     private translate: TranslateService,
     private campusMidService: CampusMidService,
     private ubicacionesService: UbicacionesService,
+    private store: Store < IAppState >,
+    private listService: ListService,
     private toasterService: ToasterService) {
     this.formInformacionContacto = FORM_INFORMACION_CONTACTO;
     this.construirForm();
     this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
       this.construirForm();
     });
-    this.loadOptionsPaisResidencia();
+    this.listService.findPais();
+    this.loadLists();
   }
 
   construirForm() {
@@ -75,25 +81,6 @@ export class CrudInformacionContactoComponent implements OnInit {
       this.departamentoSeleccionado = event.valor;
       this.loadOptionsCiudadResidencia();
     }
-  }
-
-  loadOptionsPaisResidencia(): void {
-    let paisResidencia: Array<any> = [];
-    this.ubicacionesService.get('lugar/?query=TipoLugar.Nombre:PAIS')
-      .subscribe(res => {
-        if (res !== null) {
-          paisResidencia = <Array<Lugar>>res;
-        }
-        this.formInformacionContacto.campos[this.getIndexForm('PaisResidencia')].opciones = paisResidencia;
-      },
-      (error: HttpErrorResponse) => {
-        Swal({
-          type: 'error',
-          title: error.status + '',
-          text: this.translate.instant('ERROR.' + error.status),
-          confirmButtonText: this.translate.instant('GLOBAL.aceptar'),
-        });
-      });
   }
 
   loadOptionsDepartamentoResidencia(): void {
@@ -386,6 +373,14 @@ export class CrudInformacionContactoComponent implements OnInit {
       bodyOutputType: BodyOutputType.TrustedHtml,
     };
     this.toasterService.popAsync(toast);
+  }
+
+  public loadLists() {
+    this.store.select((state) => state).subscribe(
+      (list) => {
+        this.formInformacionContacto.campos[this.getIndexForm('PaisResidencia')].opciones = list.listPais[0];
+      },
+    );
   }
 
 }
