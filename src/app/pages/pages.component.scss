@@ -1,0 +1,19 @@
+@import '../@theme/styles/themes';
+
+@include nb-install-component() {
+  /*
+  * TODO: hot fix, in prod mode popover arrow has wong style.
+  * Delete this after weill be fixed https://github.com/akveo/nebular/issues/1006
+  */
+  $popover-border-width: calc(#{nb-theme(popover-arrow-size)} - 2px);
+
+  /deep/ nb-popover {
+    .arrow {
+      &::after {
+        border-left-width: $popover-border-width;
+        border-right-width: $popover-border-width;
+        border-bottom-width: $popover-border-width;
+      }
+    }
+  }
+}

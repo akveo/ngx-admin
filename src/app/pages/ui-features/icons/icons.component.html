@@ -6,13 +6,13 @@
       </nb-card-header>
       <nb-card-body>
         <div class="icon" *ngFor="let icon of evaIcons">
-          <i [nbPopover]="icon">
-            <i [innerHTML]="icon | eva: { fill: '#d1d1ff', animationType: 'pulse' }"></i>
+          <i class="eva-icon-container" [nbPopover]="icon">
+            <i [innerHTML]="icon | eva: { animationType: 'pulse' }"></i>
           </i>
         </div>
       </nb-card-body>
       <nb-card-footer>
-        <a href="https://akveo.github.io/eva-icons/" target="_blank">See all eva-icons</a>
+        <a href="https://akveo.github.io/eva-icons/" target="_blank">See all Eva Icons</a>
       </nb-card-footer>
     </nb-card>
   </div>
