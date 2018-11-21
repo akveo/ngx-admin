@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'ngx-with-options',
   templateUrl: './with-options.component.html',
-  styleUrls: ['./with-options.component.scss']
+  // styleUrls: ['./with-options.component.scss']
 })
 export class WithOptionsComponent implements OnInit {
 

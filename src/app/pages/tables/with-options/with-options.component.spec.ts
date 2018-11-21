@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { WithOptionsComponent } from './with-options.component';
+import {WithOptionsComponent} from './with-options.component';
 
 describe('WithOptionsComponent', () => {
   let component: WithOptionsComponent;
@@ -8,9 +8,9 @@ describe('WithOptionsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ WithOptionsComponent ]
+      declarations: [WithOptionsComponent],
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
