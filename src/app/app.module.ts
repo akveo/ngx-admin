@@ -26,10 +26,11 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     BrowserAnimationsModule,
     HttpClientModule,
     AppRoutingModule,
-    DataTablesModule,
+
     NgbModule.forRoot(),
     ThemeModule.forRoot(),
     CoreModule.forRoot(),
+    DataTablesModule.forRoot(),
   ],
   bootstrap: [AppComponent],
   providers: [

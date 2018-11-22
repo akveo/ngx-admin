@@ -4,6 +4,7 @@ import {Routes, RouterModule} from '@angular/router';
 import {TablesComponent} from './tables.component';
 import {SmartTableComponent} from './smart-table/smart-table.component';
 import {WithOptionsComponent} from './with-options/with-options.component';
+import {DataTablesModule} from 'angular-datatables';
 
 const routes: Routes = [{
   path: '',
@@ -20,7 +21,10 @@ const routes: Routes = [{
 }];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
+  imports: [
+    RouterModule.forChild(routes),
+    DataTablesModule
+  ],
   exports: [RouterModule],
 })
 export class TablesRoutingModule {

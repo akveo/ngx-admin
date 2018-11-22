@@ -5,12 +5,14 @@ import { ThemeModule } from '../../@theme/theme.module';
 import { TablesRoutingModule, routedComponents } from './tables-routing.module';
 import { SmartTableService } from '../../@core/data/smart-table.service';
 import { WithOptionsComponent } from './with-options/with-options.component';
+import {DataTablesModule} from 'angular-datatables';
 
 @NgModule({
   imports: [
     ThemeModule,
     TablesRoutingModule,
     Ng2SmartTableModule,
+    DataTablesModule,
   ],
   declarations: [
     ...routedComponents,
