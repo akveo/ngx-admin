@@ -23,7 +23,7 @@ const routes: Routes = [{
 @NgModule({
   imports: [
     RouterModule.forChild(routes),
-    DataTablesModule
+    DataTablesModule,
   ],
   exports: [RouterModule],
 })
