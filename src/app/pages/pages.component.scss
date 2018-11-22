@@ -7,7 +7,7 @@
   */
   $popover-border-width: calc(#{nb-theme(popover-arrow-size)} - 2px);
 
-  /deep/ nb-popover {
+  /deep/ nb-popover, /deep/ nb-datepicker-container {
     .arrow {
       &::after {
         border-left-width: $popover-border-width;
