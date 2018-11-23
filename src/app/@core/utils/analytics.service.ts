@@ -4,8 +4,6 @@ import { Location } from '@angular/common';
 import { filter } from 'rxjs/operators';
 import { NB_WINDOW } from '@nebular/theme';
 
-declare const ga: any;
-
 @Injectable()
 export class AnalyticsService {
   private enabled = false;
