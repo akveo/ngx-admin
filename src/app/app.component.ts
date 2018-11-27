@@ -26,7 +26,7 @@ export class AppComponent implements OnInit {
 
     this.themeService.onThemeChange()
       .subscribe((theme: any) => {
-        this.analytics.trackEvent('themeUsed', theme.name);
+        this.analytics.trackEvent('changeTheme', theme.name);
       });
 
     this.activatedRoute.queryParams
