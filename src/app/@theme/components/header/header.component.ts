@@ -41,7 +41,7 @@ export class HeaderComponent implements OnInit , OnDestroy {
         }
 
         if (selection && selection.toString() === 'contact@akveo.com') {
-          this.analytics.trackEvent('contactEmail', 'select');
+          this.analytics.trackEvent('clickContactEmail', 'select');
         }
       });
   }
@@ -75,7 +75,7 @@ export class HeaderComponent implements OnInit , OnDestroy {
   }
 
   trackEmailClick() {
-    this.analytics.trackEvent('contactEmail', 'click');
+    this.analytics.trackEvent('clickContactEmail', 'click');
   }
 
   ngOnDestroy() {
