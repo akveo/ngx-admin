@@ -20,28 +20,18 @@ export class AnalyticsService {
         filter((event) => event instanceof NavigationEnd),
       )
         .subscribe(() => {
-          this.gtm({'pageview': this.location.path()});
+          this.gtmPushToDataLayer({event: 'pageView' , path: this.location.path()});
         });
     }
   }
 
   trackEvent(eventName: string, eventVal: string = '') {
     if (this.enabled) {
-      this.gtm({ event: eventName, value: eventVal });
+      this.gtmPushToDataLayer({ event: eventName, eventValue: eventVal });
     }
   }
 
-  private isGaLoaded() {
-    return this.window.ga;
-  }
-
-  private gtm(params) {
-    if (this.isGaLoaded()) {
-      this.window.dataLayer.push(params);
-    } else {
-      setTimeout(() => {
-        this.gtm(params);
-      }, 500);
-    }
+  private gtmPushToDataLayer(params) {
+    this.window.dataLayer.push(params);
   }
 }
