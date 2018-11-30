@@ -1,0 +1,40 @@
+/**
+ * @license
+ * Copyright Akveo. All Rights Reserved.
+ * Licensed under the MIT License. See License.txt in the project root for license information.
+ */
+
+$helvetica-neue-font-path: 'assets/fonts/helvetica-neue' !default;
+
+@font-face {
+  font-family: 'Helvetica Neue Light';
+  src: url('#{$helvetica-neue-font-path}/HelveticaNeue-Light.eot');
+  src: local('Helvetica Neue Light'), local('HelveticaNeue-Light'),
+  url('#{$helvetica-neue-font-path}/HelveticaNeue-Light.eot?#iefix') format('embedded-opentype'),
+  url('#{$helvetica-neue-font-path}/HelveticaNeue-Light.woff') format('woff'),
+  url('#{$helvetica-neue-font-path}/HelveticaNeue-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue Medium';
+  src: url('#{$helvetica-neue-font-path}/HelveticaNeue-Medium.eot');
+  src: local('Helvetica Neue Medium'), local('HelveticaNeue-Medium'),
+  url('#{$helvetica-neue-font-path}/HelveticaNeue-Medium.eot?#iefix') format('embedded-opentype'),
+  url('#{$helvetica-neue-font-path}/HelveticaNeue-Medium.woff') format('woff'),
+  url('#{$helvetica-neue-font-path}/HelveticaNeue-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue Bold';
+  src: url('#{$helvetica-neue-font-path}/HelveticaNeue-Bold.eot');
+  src: local('Helvetica Neue Bold'), local('HelveticaNeue-Bold'),
+  url('#{$helvetica-neue-font-path}/HelveticaNeue-Bold.eot?#iefix') format('embedded-opentype'),
+  url('#{$helvetica-neue-font-path}/HelveticaNeue-Bold.woff') format('woff'),
+  url('#{$helvetica-neue-font-path}/HelveticaNeue-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}

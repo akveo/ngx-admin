@@ -1,0 +1,152 @@
+/**
+ * @license
+ * Copyright Akveo. All Rights Reserved.
+ * Licensed under the MIT License. See License.txt in the project root for license information.
+ */
+
+@import '../../../@theme/styles/themes';
+@import '~@nebular/theme/styles/global/breakpoints';
+
+@include nb-install-component() {
+  $left-section-width: nb-theme(sidebar-width);
+  $right-section-width: nb-theme(settings-col-width);
+  $logo-fg: nb-theme(header-fg);
+  $version-fg: nb-theme(color-fg-heading-light);
+  $menu-item-fg: nb-theme(color-fg-heading-light);
+  $menu-item-fg-active: nb-theme(header-menu-fg-active);
+  $contacts-fg: nb-theme(color-fg-heading-light);
+  $contacts-active-fg: nb-theme(header-menu-fg-active);
+
+  display: flex;
+  flex: 1 0 auto;
+  flex-direction: row;
+  align-items: center;
+
+  .section {
+    display: flex;
+    padding: 0.875rem 0.5rem;
+
+    &.left {
+      width: $left-section-width;
+    }
+
+    &.middle {
+      flex: 1;
+    }
+  }
+
+  .logo {
+    display: flex;
+    flex: 1 0 auto;
+    flex-direction: row;
+
+    a {
+      font-family: nb-theme(font-main), sans-serif;
+      font-size: 1.275rem;
+      color: $logo-fg;
+      text-decoration: none !important;
+      font-weight: bold;
+    }
+
+    .version {
+      display: none;
+      font-size: 0.75rem;
+      font-weight: bold;
+      color: $version-fg;
+    }
+  }
+
+  /deep/ nb-menu {
+    flex: 1;
+    .menu-items {
+      display: flex;
+      justify-content: flex-end;
+
+      .menu-item {
+        border: none;
+        width: 5.375rem;
+
+        a {
+          padding: 0.675rem 1.375rem;
+          color: $menu-item-fg;
+          display: block;
+
+          &:hover, &.active, &:focus {
+            font-family: nb-theme(font-main), sans-serif;
+            color: $menu-item-fg-active;
+            text-shadow: 0.1px 0 0 currentColor;
+            font-weight: nb-theme(font-weight-bolder);
+            outline: none!important;
+          }
+        }
+      }
+
+      li:not(:first-child) {
+        display: none;
+      }
+    }
+  }
+
+  .section.right {
+    color: $contacts-fg;
+
+    a {
+      font-family: nb-theme(font-main), sans-serif;
+      color: $contacts-active-fg;
+      text-shadow: 0.1px 0 0 currentColor;
+      margin-left: 0.375rem;
+    }
+  }
+
+  @include media-breakpoint-up(is) {
+    .section {
+      padding: 0.875rem 0;
+    }
+  }
+
+  @include media-breakpoint-up(sm) {
+    .logo {
+      align-items: baseline;
+      flex: 1 0 auto;
+
+      a {
+        color: #000000;
+        margin-right: 0.5rem;
+      }
+      .version {
+        display: inline;
+      }
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    .logo {
+      flex: 1 0 auto;
+      flex-direction: column;
+      align-items: flex-start;
+
+      .version {
+        margin-left: 0;
+      }
+    }
+    /deep/ nb-menu .menu-items li:nth-child(2) {
+      display: list-item;
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    /deep/ nb-menu .menu-items {
+      justify-content: flex-start;
+
+      li:not(:first-child) {
+        display: list-item;
+      }
+    }
+  }
+
+  @include media-breakpoint-up(xl) {
+    .sidebar-toggle {
+      display: none;
+    }
+  }
+}

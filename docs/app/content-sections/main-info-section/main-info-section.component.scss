@@ -1,0 +1,91 @@
+/**
+ * @license
+ * Copyright Akveo. All Rights Reserved.
+ * Licensed under the MIT License. See License.txt in the project root for license information.
+ */
+
+@import '../../@theme/styles/themes';
+@import '~@nebular/theme/styles/global/breakpoints';
+
+@include nb-install-component() {
+  $color-active: nb-theme(color-active-fg);
+  
+  display: flex;
+  padding: 54px 0 0;
+  background-color: nb-theme(gray-section-bg);
+
+  .main-img {
+    width: 807px;
+    height: 764px;
+  }
+
+  .main-inf {
+    margin: 4.625rem 5.875rem 0 2.625rem;
+  }
+
+  h1 {
+    font-family: 'Helvetica Neue Bold', sans-serif;
+    font-size: 4rem;
+    color: $color-active;
+    margin: 0;
+    text-shadow: 0.1px 0 0 currentColor;
+  }
+
+  p {
+    font-family: nb-theme(font-secondary), sans-serif;
+    font-size: nb-theme(font-size-lg);
+    line-height: 1.5;
+    margin-top: 2.25rem;
+    margin-bottom: 0;
+
+    span {
+      font-family: nb-theme(font-main), sans-serif;
+      color: nb-theme(color-active-fg);;
+    }
+  }
+
+  .badges {
+    display: flex;
+    margin-top: 2.75rem;
+    flex-direction: row;
+    align-items: center;
+
+    .stars {
+      width: 95px;
+      height: 20px;
+      margin-right: 1rem;
+    }
+  }
+
+  .buttons {
+    margin-top: 1.875rem;
+  }
+
+  .btn {
+    font-family: nb-theme(font-main), sans-serif;
+    border-radius: 3px;
+    border: none;
+    background: #ffffff;
+    color: #000000;
+    padding: 1.125rem 1em;
+    box-shadow: 0 8px 20px 0 rgba(218, 224, 235, 0.6);
+    cursor: pointer;
+    text-transform: uppercase;
+
+    &.btn-demo {
+      margin-left: 1em;
+      padding: 1.125rem 4rem;
+      color: #ffffff;
+      background-color: nb-theme(color-active-fg);
+      box-shadow: 0 6px 34px 0 rgba(0, 219, 146, 0.32);
+    }
+
+    &:hover {
+      // box-shadow: $btn-shadow-hover;
+    }
+
+    &:active {
+      // box-shadow: $btn-shadow-active;
+    }
+  }
+}
