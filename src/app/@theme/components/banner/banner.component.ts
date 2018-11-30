@@ -15,7 +15,13 @@ const HIDE_BANNER_KEY = 'HIDE_RELEASE_2_BANNER';
       </button>
     </div>
     <p class="cta">
-      Don't forget to <a class="cta-link" href="https://github.com/akveo/nebular">check out</a> and star our repo :)
+      Don't forget to
+      <a class="cta-link"
+         href="https://akveo.github.io/nebular?utm_source=ngx-admin-demo&utm_medium=banner"
+         target="_blank">
+        check out
+      </a>
+      and star our repo :)
     </p>
   `,
   styleUrls: ['./banner.component.scss'],
