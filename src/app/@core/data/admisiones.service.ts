@@ -2,13 +2,15 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Config } from './../../app-config';
 
+import { GENERAL } from './../../app-config';
 
 const httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
 };
 
-const path = Config.LOCAL.ADMISIONES_SERVICE;
+// const path = Config.LOCAL.ADMISIONES_SERVICE;
 
+const path = GENERAL.ENTORNO.ADMISIONES_SERVICE;
 
 @Injectable()
 export class AdmisionesService {
