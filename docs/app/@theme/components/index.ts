@@ -6,8 +6,10 @@
 
 import { NgxFooterComponent } from './footer/footer.component';
 import { NgxHeaderComponent } from './header/header.component';
+import { NgxSectionTitleComponent } from './section-title/section-title.component';
 
 export {
   NgxHeaderComponent,
   NgxFooterComponent,
+  NgxSectionTitleComponent,
 };

@@ -8,12 +8,25 @@
 @import '~@nebular/theme/styles/global/breakpoints';
 
 @include nb-install-component() {
+  $content-width: nb-theme(content-width);
+  $left-right-offset: 8.125rem;
+
+  width: calc(#{$content-width} - #{$left-right-offset} * 2);
   display: flex;
+  margin: 0 auto;
   position: relative;
-  top: -3rem;
+  top: -3.25rem;
 
   .descriptions {
     flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 1.375rem;
+
+    &:first-child {
+      margin-left: 0;
+    }
   }
 
   .icons-block {
@@ -25,5 +38,20 @@
     border-radius: 50%;
     background-color: #ffffff;
     box-shadow: 0 8px 20px 0 rgba(218, 224, 235, 0.6);
+  }
+
+  .title {
+    color: #000000;
+    font-size: 1.5rem;
+    margin-top: 2.75rem;
+
+  }
+
+  .description {
+    color: nb-theme(color-fg);
+    font-family: nb-theme(font-secondary), sans-serif;
+    margin-top: 1.25rem;
+    text-align: center;
+    line-height: 1.8;
   }
 }

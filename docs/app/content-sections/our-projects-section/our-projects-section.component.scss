@@ -1,0 +1,64 @@
+/**
+ * @license
+ * Copyright Akveo. All Rights Reserved.
+ * Licensed under the MIT License. See License.txt in the project root for license information.
+ */
+
+@import '../../@theme/styles/themes';
+@import '~@nebular/theme/styles/global/breakpoints';
+
+@include nb-install-component() {
+  $our-projects-section-offset: 7.125rem;
+
+  display: block;
+
+  img {
+    width: 39.75rem;
+    height: 20.125rem;
+  }
+
+  ul {
+    width: calc(100% - #{$our-projects-section-offset} * 2);
+    margin: 0 auto;
+    padding: 4.75rem 0 3.5rem;
+  }
+
+  li {
+    list-style: none;
+    display: flex;
+    margin-top: 5.5rem;
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    & > div {
+      margin-left: 3.75rem;
+      margin-top: 0.125rem;
+    }
+  }
+
+  .title {
+    font-family: 'Helvetica Neue Bold', sans-serif;
+    color: #000000;
+    font-size: 3rem;
+  }
+  
+  .description {
+    font-family: nb-theme(font-secondary), sans-serif;
+    font-size: nb-theme(font-size-lg);
+    margin-top: 1.125rem;
+    line-height: 1.5;
+  }
+  
+  .btn {
+    font-family: nb-theme(font-main), sans-serif;
+    background-color: nb-theme(color-active-bg);
+    border-radius: 3px;
+    box-shadow: 0 6px 34px 0 rgba(0, 219, 146, 0.32);
+    color: #ffffff;
+    cursor: pointer;
+    margin-top: 2.625rem;
+    padding: 1rem 0.875rem;
+  }
+}

@@ -8,18 +8,7 @@
 @import '~@nebular/theme/styles/global/breakpoints';
 
 @include nb-install-component() {
-  $blur-background: #e9eaec;
   $content-width: nb-theme(content-width);
-  $popover-border-width: calc(#{nb-theme(popover-arrow-size)} - 2px);
-
-  .content-center {
-    max-width: $content-width;
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    display: flex;
-    flex-wrap: wrap;
-  }
 
   .contact-us {
     padding: 5rem 1rem;
@@ -38,12 +27,11 @@
   }
 
   /deep/ nb-layout .layout-container .columns {
-    max-width: $content-width;
     margin: 0 auto;
   }
 
   /deep/ nb-layout-header {
-    // box-shadow: 0 8px 20px 0 rgba(218, 224, 235, 0.6);
+    box-shadow: 0 8px 20px 0 rgba(218, 224, 235, 0.6);
 
     nav {
       max-width: calc(#{$content-width} - 8.125rem * 2);
@@ -54,7 +42,7 @@
   /deep/ .content nb-layout-footer {
     width: 100%;
     background-color: nb-theme(color-white);
-    // box-shadow: 0 8px 20px 0 rgba(218, 224, 235, 0.6);
+    box-shadow: 0 8px 20px 0 rgba(218, 224, 235, 0.6);
 
     nav {
       max-width: $content-width;

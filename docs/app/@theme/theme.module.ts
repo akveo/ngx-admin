@@ -12,6 +12,7 @@ import { CommonModule } from '@angular/common';
 import {
   NgxFooterComponent,
   NgxHeaderComponent,
+  NgxSectionTitleComponent,
 } from './components';
 // components
 
@@ -39,6 +40,7 @@ const NB_MODULES = [
 const COMPONENTS = [
   NgxFooterComponent,
   NgxHeaderComponent,
+  NgxSectionTitleComponent,
 ];
 
 const PIPES = [
@@ -65,6 +67,7 @@ const PIPES = [
 
     NgxFooterComponent,
     NgxHeaderComponent,
+    NgxSectionTitleComponent,
 
     ...PIPES,
   ],
