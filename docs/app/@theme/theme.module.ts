@@ -7,6 +7,7 @@
 import { RouterModule } from '@angular/router';
 import { ModuleWithProviders, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 // components
 import {
@@ -26,15 +27,16 @@ import { EvaIconsPipe } from './pipes/eva-icons.pipe';
 
 import {
   NbLayoutModule,
-  NbCardModule,
   NbThemeModule,
   NbMenuModule,
+  NbCheckboxModule,
 } from '@nebular/theme';
+
+const BASE_MODULES = [CommonModule, FormsModule, ReactiveFormsModule];
 
 const NB_MODULES = [
   NbLayoutModule,
-  NbCardModule,
-  NbMenuModule,
+  NbCheckboxModule,
 ];
 
 const COMPONENTS = [
@@ -50,7 +52,11 @@ const PIPES = [
 @NgModule({
   imports: [
     RouterModule,
-    CommonModule,
+
+    ...BASE_MODULES,
+
+    NbMenuModule,
+    NbCheckboxModule,
 
     ...NB_MODULES,
   ],
@@ -61,7 +67,8 @@ const PIPES = [
   ],
   exports: [
     RouterModule,
-    CommonModule,
+
+    ...BASE_MODULES,
 
     ...NB_MODULES,
 

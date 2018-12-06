@@ -191,6 +191,7 @@
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.css",
               "node_modules/nebular-icons/scss/nebular-icons.scss",
+              "node_modules/swiper/dist/css/swiper.min.css",
               "docs/app/@theme/styles/styles.scss"
             ]
           },

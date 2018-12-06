@@ -8,6 +8,7 @@ import { NgModule } from '@angular/core';
 
 // modules
 import { NgxLandingThemeModule } from '../@theme/theme.module';
+import { SwiperModule } from 'ngx-swiper-wrapper';
 // modules
 
 // components
@@ -40,6 +41,7 @@ const COMPONENTS = [
   ],
   imports: [
     NgxLandingThemeModule,
+    SwiperModule,
   ],
   exports: [
     ContentSectionsComponent,

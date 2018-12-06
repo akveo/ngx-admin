@@ -19,6 +19,7 @@ $nb-themes: nb-register-theme((
   color-primary: #3366ff,
 
   separator: transparent,
+  color-success: #00db92,
   color-bg: transparent,
   color-fg: #8994a3,
   color-fg-heading: #546d8d,
@@ -26,8 +27,8 @@ $nb-themes: nb-register-theme((
   color-fg-icon: #c4c8d1,
   color-gray-bg: #edf0f5,
   color-fg-heading-light: #8994a3,
-  color-active-fg: #00db92,
-  color-active-bg: #00db92,
+  color-active-fg: color-success,
+  color-active-bg: color-success,
 
   shadow: none,
 
@@ -68,7 +69,12 @@ $nb-themes: nb-register-theme((
 
   switcher-view-bg: #d8e1f0,
 
+  checkbox-size: 1.5rem,
+  checkbox-border-color: form-control-border-color,
+  checkbox-checkmark: transparent,
+
   checkbox-checked-bg: color-active-fg,
+  checkbox-checked-size: 1.5rem,
   checkbox-checked-border-color: checkbox-checked-bg,
   checkbox-checked-checkmark: color-white,
 

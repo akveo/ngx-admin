@@ -9,4 +9,119 @@
 
 @include nb-install-component() {
   display: block;
+  padding-top: 5.75rem;
+  padding-bottom: 7.5rem;
+
+  .description {
+    font-family: nb-theme(font-secondary), sans-serif;
+    font-size: nb-theme(font-size-lg);
+    width: 40%;
+    margin: 1.625rem auto 0;
+    text-align: center;
+  }
+
+  .sending-block {
+    max-width: 33.5rem;
+    margin: 3rem auto 0;
+  }
+
+  .email-form {
+    label {
+      display: block;
+    }
+
+    .email {
+      width: 75%;
+      font-size: nb-theme(font-size-sm);
+      padding: 1.125rem 0 1rem 1rem;
+      border: none;
+      box-shadow: 0 8px 20px 0 rgba(218, 224, 235, 0.6);
+      border-radius: 4px 0 0 4px;
+
+      &::placeholder {
+        color: #434a59;
+        opacity: 0.24;
+      }
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    .submit-input {
+      width: 25%;
+      padding: 1rem 0;
+      border: none;
+      color: #ffffff;
+      text-transform: uppercase;
+      background-color: nb-theme(color-active-bg);
+      border-radius: 4px 4px 0 0;
+      box-shadow: 0 6px 34px 0 rgba(0, 219, 146, 0.32);
+      cursor: pointer;
+
+      &:disabled {
+        cursor: not-allowed;
+        opacity: 0.5;
+      }
+    }
+  }
+
+  .agreement-block {
+    display: flex;
+    margin-top: 1rem;
+
+    /deep/ nb-checkbox {
+      .customised-control {
+        padding: 0.125rem 0.125rem 0 0;
+      }
+
+      .customised-control-indicator {
+      }
+    }
+  }
+  
+  .agreement {
+    font-family: nb-theme(font-secondary), sans-serif;
+    font-size: nb-theme(font-size-xs);
+
+    .highlight {
+      font-family: nb-theme(font-main), sans-serif;
+    }
+
+    .active {
+      font-family: nb-theme(font-main), sans-serif;
+      color: nb-theme(color-active-fg);
+    }
+  }
+
+  .separator {
+    margin-top: 2.875rem;
+    border-top: 2px solid #dde1eb;
+    color: #8994a3;
+    text-transform: uppercase;
+    position: relative;
+    opacity: 0.5;
+
+    div {
+      $block-or-padding: 1.375rem;
+
+      font-size: nb-theme(font-size-sm);
+      padding: 0 $block-or-padding;
+      position: absolute;
+      left: calc(50% - #{$block-or-padding});
+      top: -0.625rem;
+      background-color: #ffffff;
+    }
+  }
+
+  .contact-us {
+    display: block;
+    font-family: nb-theme(font-main), sans-serif;
+    background-color: nb-theme(color-active-bg);
+    margin-top: 3.625rem;
+    padding: 1rem 0;
+    border-radius: 0.25rem;
+    color: #ffffff;
+    cursor: pointer;
+  }
 }

@@ -9,4 +9,96 @@
 
 @include nb-install-component() {
   display: block;
+  text-align: center;
+  padding-top: 5.25rem;
+  padding-bottom: 5.125rem;
+
+  .social-button {
+    display: inline-flex;
+    align-items: center;
+    box-shadow: 0 8px 20px 0 rgba(218, 224, 235, 0.6);
+    background-color: nb-theme(color-white);
+    padding-left: 2rem;
+    border-radius: 0.25rem;
+    color: #000000;
+    text-decoration: none;
+    cursor: pointer;
+
+    .info {
+      margin-left: 2rem;
+      text-align: left;
+    }
+
+    .appeal {
+      font-family: nb-theme(font-secondary), sans-serif;
+    }
+
+    .title {
+      font-size: 1.5rem;
+    }
+  }
+
+  p {
+    font-family: nb-theme(font-secondary), sans-serif;
+    font-size: nb-theme(font-size-lg);
+    width: 36%;
+    margin: 1.25rem auto 0;
+    line-height: 1.5;
+  }
+
+  .github {
+    margin-top: 2rem;
+    margin-left: 1.25rem;
+    padding-right: 6.5rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .sub-title {
+    color: #000000;
+    margin-top: 2.5rem;
+    font-size: 1.5rem;
+  }
+
+  .buttons-group {
+    display: flex;
+    justify-content: center;
+    margin-top: 2.5rem;
+
+    .social-button {
+      margin-left: 1.5rem;
+
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+  }
+
+  .facebook {
+    padding: 1.5rem 6.625rem 1.25rem 1.375rem;
+
+    .info {
+      margin-left: 1.125rem;
+    }
+
+    .title {
+      margin-top: 0.25rem;
+    }
+  }
+
+  .linkedin {
+    padding: 1.5rem 7rem 1.25rem 1.625rem;
+
+    .info {
+      margin-left: 1.75rem;
+    }
+  }
+
+  .twitter {
+    padding: 1.5rem 8rem 1.25rem 1.625rem;
+
+    .info {
+      margin-left: 1.75rem;
+    }
+  }
 }

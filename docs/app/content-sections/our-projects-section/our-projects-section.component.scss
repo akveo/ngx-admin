@@ -11,6 +11,7 @@
   $our-projects-section-offset: 7.125rem;
 
   display: block;
+  padding-top: 5.125rem;
 
   img {
     width: 39.75rem;
@@ -20,7 +21,7 @@
   ul {
     width: calc(100% - #{$our-projects-section-offset} * 2);
     margin: 0 auto;
-    padding: 4.75rem 0 3.5rem;
+    padding: 4rem 0 3.5rem;
   }
 
   li {

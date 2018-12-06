@@ -1,3 +1,41 @@
 <ngx-landing-section-title>
   Stay tuned
 </ngx-landing-section-title>
+
+<p class="description">
+  Subscribe to get notified about new versions of ngx-admin and other cool projects that we are working on
+</p>
+
+<div class="sending-block">
+  <form class="email-form"
+        action="https://formspree.io/marketing@akveo.com"
+        method="POST">
+    <label for="email">Your Email</label>
+    <input id="email"
+           [attr.disabled]="disabledControl"
+           placeholder="johndoe@gmail.com"
+           class="email"
+           type="email"
+           name="replyto">
+    <input class="submit-input"
+           type="submit"
+           value="Subscribe"
+           [attr.disabled]="disabledControl">
+  </form>
+  <div class="agreement-block">
+    <nb-checkbox status="success"
+                 [(ngModel)]="isAgree">
+    </nb-checkbox>
+    <p class="agreement">
+      <span class="highlight">I agree</span> to get news on what’s going on around Akveo products and community.<br />
+      The administrator processes data following <span class="active">the Privacy Policy</span>. I understand that I can opt out at any time
+    </p>
+  </div>
+
+  <div class="separator">
+    <div>or</div>
+  </div>
+
+  <a class="btn contact-us"
+     href="mailto:contact@akveo.com">Contact Us</a>
+</div>

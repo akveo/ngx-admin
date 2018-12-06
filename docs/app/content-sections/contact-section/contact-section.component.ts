@@ -12,5 +12,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./contact-section.component.scss'],
 })
 export class ContactSectionComponent {
+  isAgree = true;
 
+  get disabledControl() {
+    return this.isAgree ? null : 'disabled';
+  }
 }

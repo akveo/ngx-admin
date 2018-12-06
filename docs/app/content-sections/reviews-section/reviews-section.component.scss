@@ -9,4 +9,126 @@
 
 @include nb-install-component() {
   display: block;
+  padding-top: 6rem;
+  padding-bottom: 7.875rem;
+
+  .carousel-container {
+    position: relative;
+  }
+
+  .reviews {
+    max-width: 55.125rem;
+    display: flex;
+    margin: 0 auto;
+    margin-top: 4.625rem;
+  }
+
+  .review-card {
+    background-color: #ffffff;
+    box-shadow: 0 8px 20px 0 rgba(218, 224, 235, 0.6);
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    .header-card {
+      display: flex;
+      position: relative;
+      padding-top: 1rem;
+      padding-left: 1rem;
+      padding-right: 3.125rem;
+      overflow: hidden;
+    }
+
+    .social-icon {
+      position: absolute;
+      right: 1.375rem;
+      top: 1.875rem;
+    }
+
+    .avatar {
+      background-color: black; // TODO: remove
+
+      min-width: 3.375rem;
+      height: 3.375rem;
+      border-radius: 50%;
+    }
+
+    .personal-info {
+      font-family: nb-theme(font-main), sans-serif;
+      margin-left: 1.25rem;
+      margin-top: 0.5rem;
+      color: #000000;
+      word-break: break-all;
+    }
+    
+    .body-card {
+      font-family: nb-theme(font-secondary), sans-serif;
+      color: #000000;
+      padding: 0 1rem;
+      margin-top: 1.75rem;
+      line-height: 1.8;
+      height: 10.375rem;
+    }
+
+    .footer-card {
+      border-top: 1px solid #eaeaea;
+    }
+  }
+
+  .go-to-button {
+    display: block;
+    font-family: nb-theme(font-main), sans-serif;
+    color: nb-theme(color-active-fg);
+    padding: 1rem;
+    cursor: pointer;
+    position: relative;
+
+    i {
+      position: absolute;
+      right: 1.375rem;
+      top: 1rem;
+    }
+  }
+
+  .swiper-container {
+    position: static;
+  }
+
+  .swiper-button-prev, .swiper-button-next {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: none;
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    box-shadow: 0 8px 20px 0 rgba(218, 224, 235, 0.6);
+    top: 144px;
+  }
+
+  .swiper-button-prev {
+    left: 8.125rem;
+  }
+
+  .swiper-button-next {
+    right: 8.125rem;
+  }
+
+  .swiper-pagination {
+    top: 110%;
+
+    /deep/ span {
+      height: 0.75rem;
+      width: 0.75rem;
+      opacity: 0.08;
+      background-color: #000000;
+
+      &.swiper-pagination-bullet-active {
+        opacity: 1;
+        background: nb-theme(color-active-bg);
+      }
+    }
+  }
 }

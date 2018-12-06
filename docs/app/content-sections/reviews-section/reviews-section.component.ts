@@ -5,6 +5,7 @@
  */
 
 import { Component } from '@angular/core';
+import { SwiperConfigInterface } from 'ngx-swiper-wrapper';
 
 @Component({
   selector: 'ngx-landing-reviews-section',
@@ -13,4 +14,17 @@ import { Component } from '@angular/core';
 })
 export class ReviewsSectionComponent {
 
+  swiperConfig: SwiperConfigInterface = {
+    direction: 'horizontal',
+    spaceBetween: 24,
+    slidesPerView: 3,
+    keyboard: true,
+    mousewheel: true,
+    navigation: true,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+      hideOnClick: false,
+    },
+  };
 }
