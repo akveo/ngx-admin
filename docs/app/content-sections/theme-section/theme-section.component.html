@@ -1,3 +1,34 @@
 <ngx-landing-section-title>
   Multiple theme
 </ngx-landing-section-title>
+
+<div class="carousel-container">
+  <div  class="swiper-container reviews"
+        [swiper]="swiperConfig"
+        [(index)]="sliderIndex">
+    <div class="swiper-wrapper">
+      <div class="image-container swiper-slide">
+        <img src="assets/img/light-theme.png" />
+      </div>
+      <div class="image-container swiper-slide">
+        <img src="assets/img/cosmic-theme.png" />
+      </div>
+      <div class="image-container swiper-slide">
+        <img src="assets/img/corporate-theme.png" />
+      </div>
+    </div>
+
+    <div class="swiper-pagination"></div>
+
+    <div class="swiper-button-prev">
+      <i [innerHTML]="'arrow-ios-back' | eva: { width: 36, height: 36, fill: '#00db92' }"></i>
+    </div>
+    <div class="swiper-button-next">
+      <i [innerHTML]="'arrow-ios-forward' | eva: { width: 36, height: 36, fill: '#00db92' }"></i>
+    </div>
+  </div>
+</div>
+
+<a class="btn btn-demo"
+   href="http://akveo.com/ngx-admin?utm_source=ngx_admin_landing&utm_medium=theme_section"
+   target="_blank">View demo</a>
