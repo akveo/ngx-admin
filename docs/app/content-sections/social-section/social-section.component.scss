@@ -10,13 +10,13 @@
 @include nb-install-component() {
   display: block;
   text-align: center;
-  padding-top: 5.25rem;
+  padding-top: 4.75rem;
   padding-bottom: 5.125rem;
 
   .social-button {
     display: inline-flex;
     align-items: center;
-    box-shadow: 0 8px 20px 0 rgba(218, 224, 235, 0.6);
+    box-shadow: nb-theme(shadow-default);;
     background-color: nb-theme(color-white);
     padding-left: 2rem;
     border-radius: 0.25rem;

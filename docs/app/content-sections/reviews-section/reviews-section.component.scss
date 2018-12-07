@@ -25,7 +25,7 @@
 
   .review-card {
     background-color: #ffffff;
-    box-shadow: 0 8px 20px 0 rgba(218, 224, 235, 0.6);
+    box-shadow: nb-theme(shadow-default);;
 
     &:first-child {
       margin-left: 0;
@@ -100,12 +100,12 @@
     justify-content: center;
     align-items: center;
     background-image: none;
-    height: 80px;
-    width: 80px;
+    height: 5rem;
+    width: 5rem;
     border-radius: 50%;
     background-color: #ffffff;
-    box-shadow: 0 8px 20px 0 rgba(218, 224, 235, 0.6);
-    top: 144px;
+    box-shadow: nb-theme(shadow-default);;
+    top: 9rem;
   }
 
   .swiper-button-prev {

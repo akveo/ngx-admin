@@ -10,13 +10,13 @@
 @include nb-install-component() {
 
   display: block;
-  padding-top: 100px;
-  padding-bottom: 82px;
+  padding-top: 6.25rem;
+  padding-bottom: 5.125rem;
   text-align: center;
 
   .image-container {
-    width: 1038px;
-    height: 634px;
+    width: 64.875rem;
+    height: 39.625rem;
   }
 
   img {
@@ -25,7 +25,7 @@
   }
 
   .carousel-container {
-    margin-top: 64px;
+    margin-top: 4rem;
   }
 
   .swiper-container {
@@ -33,7 +33,7 @@
   }
 
   .swiper-wrapper {
-    padding-top: 66px;
+    padding-top: 4.125rem;
   }
 
   .swiper-button-prev, .swiper-button-next {
@@ -41,36 +41,36 @@
     justify-content: center;
     align-items: center;
     background-image: none;
-    height: 80px;
-    width: 80px;
+    height: 5rem;
+    width: 5rem;
     border-radius: 50%;
     background-color: #ffffff;
-    box-shadow: 0 8px 20px 0 rgba(218, 224, 235, 0.6);
-    top: 362px;
+    box-shadow: nb-theme(shadow-default);;
+    top: 22.625rem;
   }
 
   .swiper-button-prev {
-    left: 216px;
+    left: 13.5rem;
   }
 
   .swiper-button-next {
-    right: 216px;
+    right: 13.5rem;
   }
 
   .swiper-pagination {
     display: inline-flex;
     justify-content: center;
-    left: 24px;
+    left: 1.5rem;
     top: 0;
 
     /deep/ .swiper-pagination-bullet {
-      height: 4px;
+      height: 0.25rem;
       width: auto;
       border-radius: 0;
       font-family: nb-theme(font-main), sans-serif;
       font-size: nb-theme(font-size-lg);
       color: nb-theme(color-fg);
-      text-shadow: 0 12px 34px rgba(0, 60, 183, 0.25);
+      text-shadow: 0 0.75rem 2.125rem rgba(0, 60, 183, 0.25);
       background: transparent;
       margin: 0;
       opacity: 0.56;
@@ -85,7 +85,7 @@
 
       span {
         display: inline-block;
-        padding: 12px 56px;
+        padding: 0.75rem 3.5rem;
         width: 100%;
       }
 
@@ -94,7 +94,7 @@
         color: nb-theme(color-active-fg);
 
         &::after {
-          border-radius: 6px;
+          border-radius: 0.375rem;
           background: nb-theme(color-active-bg);
         }
       }
@@ -107,16 +107,16 @@
     border: none;
     background: #ffffff;
     color: #000000;
-    box-shadow: 0 8px 20px 0 rgba(218, 224, 235, 0.6);
+    box-shadow: nb-theme(shadow-default);;
     cursor: pointer;
     text-transform: uppercase;
 
     &.btn-demo {
-      margin-top: 6px;
-      padding: 1.125rem 100px;
+      margin-top: 0.375rem;
+      padding: 1.125rem 6.25rem;
       color: #ffffff;
       background-color: nb-theme(color-active-fg);
-      box-shadow: 0 6px 34px 0 rgba(0, 219, 146, 0.32);
+      box-shadow: 0 0.375rem 2.125rem 0 rgba(0, 219, 146, 0.32);
     }
 
     &:hover {

@@ -31,7 +31,7 @@
   }
 
   /deep/ nb-layout-header {
-    box-shadow: 0 8px 20px 0 rgba(218, 224, 235, 0.6);
+    box-shadow: nb-theme(shadow-default);;
 
     nav {
       max-width: calc(#{$content-width} - 8.125rem * 2);
@@ -42,7 +42,7 @@
   /deep/ .content nb-layout-footer {
     width: 100%;
     background-color: nb-theme(color-white);
-    box-shadow: 0 8px 20px 0 rgba(218, 224, 235, 0.6);
+    box-shadow: nb-theme(shadow-default);;
 
     nav {
       max-width: $content-width;

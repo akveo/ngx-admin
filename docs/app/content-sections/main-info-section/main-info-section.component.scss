@@ -11,11 +11,11 @@
   $color-active: nb-theme(color-active-fg);
   
   display: flex;
-  padding: 54px 0 0;
+  padding: 3.375rem 0 0;
 
   .main-img {
-    width: 807px;
-    height: 764px;
+    max-width: 50.375rem;
+    max-height: 47.75rem;
   }
 
   .main-inf {
@@ -50,8 +50,8 @@
     align-items: center;
 
     .stars {
-      width: 100px;
-      height: 20px;
+      width: 6.25rem;
+      height: 1.25rem;
       margin-right: 1rem;
     }
   }
@@ -67,7 +67,7 @@
     background: #ffffff;
     color: #000000;
     padding: 1.125rem 1em;
-    box-shadow: 0 8px 20px 0 rgba(218, 224, 235, 0.6);
+    box-shadow: nb-theme(shadow-default);
     cursor: pointer;
     text-transform: uppercase;
 
@@ -76,7 +76,7 @@
       padding: 1.125rem 4rem;
       color: #ffffff;
       background-color: nb-theme(color-active-fg);
-      box-shadow: 0 6px 34px 0 rgba(0, 219, 146, 0.32);
+      box-shadow: 0 0.375rem 2.125rem 0 rgba(0, 219, 146, 0.32);
     }
 
     &:hover {
