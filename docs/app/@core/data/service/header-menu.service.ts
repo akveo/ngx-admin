@@ -12,10 +12,6 @@ export class HeaderMenuService {
       link: '/home',
     },
     {
-      title: 'Demo',
-      link: '/demo',
-    },
-    {
       title: 'Docs',
       link: '/docs',
     },

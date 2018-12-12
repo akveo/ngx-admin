@@ -12,10 +12,10 @@ const routes: Routes = [{
       path: 'home',
       loadChildren: './home/ngx-admin-landing-home.module#NgxAdminLandingHomeModule',
     },
-/*    {
+    {
       path: 'docs',
       loadChildren: './docs/ngx-admin-landing-docs.module#NgxAdminLandingDocsModule',
-    },*/
+    },
     {
       path: '',
       redirectTo: 'home',
