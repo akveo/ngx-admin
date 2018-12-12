@@ -13,8 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgxLandingThemeModule } from './@theme/theme.module';
 import { CoreModule } from './@core/core.module';
 import { AppComponent } from './app.component';
-import { RouterModule } from '@angular/router';
-import { ContentSectionsModule } from './content-sections/content-sections.module';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -24,19 +23,10 @@ import { ContentSectionsModule } from './content-sections/content-sections.modul
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    RouterModule.forRoot(
-      [
-        { path: '', component: AppComponent },
-        { path: '**', redirectTo: '' },
-      ],
-      {
-        useHash: true,
-      },
-    ),
+    AppRoutingModule,
 
     NgxLandingThemeModule.forRoot(),
     CoreModule.forRoot(),
-    ContentSectionsModule,
   ],
   bootstrap: [AppComponent],
   providers: [

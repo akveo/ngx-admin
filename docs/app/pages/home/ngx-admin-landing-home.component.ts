@@ -7,11 +7,11 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'ngx-landing-content-sections',
-  templateUrl: './content-sections.component.html',
-  styleUrls: ['./content-sections.component.scss'],
+  selector: 'ngx-admin-landing-home',
+  templateUrl: './ngx-admin-landing-home.component.html',
+  styleUrls: ['./ngx-admin-landing-home.component.scss'],
 })
-export class ContentSectionsComponent {
+export class NgxAdminLandingHomeComponent {
 
   constructor() {
   }
