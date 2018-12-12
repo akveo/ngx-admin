@@ -3,8 +3,6 @@ import { of as observableOf,  Observable } from 'rxjs';
 
 import { NbMenuItem } from '@nebular/theme';
 
-
-
 @Injectable()
 export class HeaderMenuService {
 

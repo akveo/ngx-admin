@@ -61,6 +61,14 @@
     cursor: pointer;
     margin-top: 2.625rem;
     padding: 1rem 0.875rem;
+
+    &:hover {
+      box-shadow: nb-theme(shadow-hover-green-btn);
+    }
+
+    &:active {
+      box-shadow: nb-theme(shadow-active-green-btn);
+    }
   }
 
   @include media-breakpoint-down(xl) {

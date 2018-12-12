@@ -1,10 +1,14 @@
-<img *ngIf="breakpoint.width >= breakpoints.md" class="main-img" src="assets/img/ngx-admin.png"/>
+<div class="main-img-container">
+  <img *ngIf="breakpoint.width >= breakpoints.md" class="main-img" src="assets/img/ngx-admin.png"/>
+</div>
 <div class="main-inf">
   <h1>ngx-admin</h1>
   <p class="description">
     Get your Premium admin dashboard framework, based on Angular 6+, Bootstrap 4 and <span>Nebular</span>. NGX admin is Free, including for commercial projects, and it is Open Source
   </p>
-  <img *ngIf="breakpoint.width <= breakpoints.sm" class="main-img" src="assets/img/corporate-theme.png"/>
+  <div class="main-img-container">
+    <img *ngIf="breakpoint.width <= breakpoints.sm" class="main-img" src="assets/img/corporate-theme.png"/>
+  </div>
   <div class="badges">
     <iframe class="stars"
             src="https://ghbtns.com/github-btn.html?user=akveo&repo=ngx-admin&type=star&count=true"

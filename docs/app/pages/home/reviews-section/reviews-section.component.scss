@@ -25,7 +25,7 @@
 
   .review-card {
     background-color: #ffffff;
-    box-shadow: nb-theme(shadow-default);;
+    box-shadow: nb-theme(shadow-default);
 
     &:first-child {
       margin-left: 0;
@@ -47,11 +47,15 @@
     }
 
     .avatar {
-      background-color: black; // TODO: remove
-
-      min-width: 3.375rem;
+      max-width: 3.375rem;
       height: 3.375rem;
       border-radius: 50%;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
     }
 
     .personal-info {
@@ -104,8 +108,16 @@
     width: 5rem;
     border-radius: 50%;
     background-color: #ffffff;
-    box-shadow: nb-theme(shadow-default);;
+    box-shadow: nb-theme(shadow-default);
     top: 9rem;
+
+    &:hover {
+      box-shadow: nb-theme(shadow-hover-btn);
+    }
+
+    &:active {
+      box-shadow: nb-theme(shadow-active-btn);
+    }
   }
 
   .swiper-button-prev {

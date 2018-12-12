@@ -6,128 +6,27 @@
 
   <div  class="swiper-container reviews" [swiper]="swiperConfig">
     <div class="swiper-wrapper">
-      <div class="review-card swiper-slide">
+      <div *ngFor="let review of reviews" class="review-card swiper-slide">
         <div class="header-card">
           <div class="social-icon">
-            <i [innerHTML]="'facebook' | eva: { width: 26, height: 26, fill: '#3b5998' }"></i>
+            <i [innerHTML]="review.socialIcon | eva: { width: 26, height: 26, fill: '#3b5998' }"></i>
           </div>
-          <div class="avatar"></div>
+          <div class="avatar">
+            <img src="{{ review.avatar }}" />
+          </div>
           <div class="personal-info">
-            <div class="name">Marcin</div>
-            <div class="surname">Masiorski</div>
+            <div class="name">{{ review.firstName }}</div>
+            <div class="surname">{{ review.lastName }}</div>
           </div>
         </div>
         <div class="body-card">
-          Awesome template! You are doing great job! Regards.
+          {{ review.review }}
         </div>
         <div class="footer-card">
-          <a class="go-to-button">
-            Go to comment
-            <i [innerHTML]="'arrow-ios-forward' | eva: { width: 24, height: 24, fill: '#e5e5e5' }"></i>
-          </a>
-        </div>
-      </div>
-      <div class="review-card swiper-slide">
-        <div class="header-card">
-          <div class="social-icon">
-            <i [innerHTML]="'facebook' | eva: { width: 26, height: 26, fill: '#3b5998' }"></i>
-          </div>
-          <div class="avatar"></div>
-          <div class="personal-info">
-            <div class="name">Rashid</div>
-            <div class="surname">Thompson</div>
-          </div>
-        </div>
-        <div class="body-card">
-          I just want to say you have the best admin template I have seen so far as a new developer (Trust me I have searched).
-        </div>
-        <div class="footer-card">
-          <a class="go-to-button">
-            Go to comment
-            <i [innerHTML]="'arrow-ios-forward' | eva: { width: 24, height: 24, fill: '#e5e5e5' }"></i>
-          </a>
-        </div>
-      </div>
-      <div class="review-card swiper-slide">
-        <div class="header-card">
-          <div class="social-icon">
-            <i [innerHTML]="'facebook' | eva: { width: 26, height: 26, fill: '#3b5998' }"></i>
-          </div>
-          <div class="avatar"></div>
-          <div class="personal-info">
-            <div class="name">Yuriy</div>
-            <div class="surname">Marshall</div>
-          </div>
-        </div>
-        <div class="body-card">
-          Thanks for free angular theme! Design and file/system structure is on high level! Love you, Akveo!)
-        </div>
-        <div class="footer-card">
-          <a class="go-to-button">
-            Go to comment
-            <i [innerHTML]="'arrow-ios-forward' | eva: { width: 24, height: 24, fill: '#e5e5e5' }"></i>
-          </a>
-        </div>
-      </div>
-      <div class="review-card swiper-slide">
-        <div class="header-card">
-          <div class="social-icon">
-            <i [innerHTML]="'facebook' | eva: { width: 26, height: 26, fill: '#3b5998' }"></i>
-          </div>
-          <div class="avatar"></div>
-          <div class="personal-info">
-            <div class="name">Yuriy</div>
-            <div class="surname">Marshall</div>
-          </div>
-        </div>
-        <div class="body-card">
-          Thanks for free angular theme! Design and file/system structure is on high level! Love you, Akveo!)
-        </div>
-        <div class="footer-card">
-          <a class="go-to-button">
-            Go to comment
-            <i [innerHTML]="'arrow-ios-forward' | eva: { width: 24, height: 24, fill: '#e5e5e5' }"></i>
-          </a>
-        </div>
-      </div>
-      <div class="review-card swiper-slide">
-        <div class="header-card">
-          <div class="social-icon">
-            <i [innerHTML]="'facebook' | eva: { width: 26, height: 26, fill: '#3b5998' }"></i>
-          </div>
-          <div class="avatar"></div>
-          <div class="personal-info">
-            <div class="name">Yuriy</div>
-            <div class="surname">Marshall</div>
-          </div>
-        </div>
-        <div class="body-card">
-          Thanks for free angular theme! Design and file/system structure is on high level! Love you, Akveo!)
-        </div>
-        <div class="footer-card">
-          <a class="go-to-button">
-            Go to comment
-            <i [innerHTML]="'arrow-ios-forward' | eva: { width: 24, height: 24, fill: '#e5e5e5' }"></i>
-          </a>
-        </div>
-      </div>
-      <div class="review-card swiper-slide">
-        <div class="header-card">
-          <div class="social-icon">
-            <i [innerHTML]="'facebook' | eva: { width: 26, height: 26, fill: '#3b5998' }"></i>
-          </div>
-          <div class="avatar"></div>
-          <div class="personal-info">
-            <div class="name">Yuriy</div>
-            <div class="surname">Marshall</div>
-          </div>
-        </div>
-        <div class="body-card">
-          Thanks for free angular theme! Design and file/system structure is on high level! Love you, Akveo!)
-        </div>
-        <div class="footer-card">
-          <a class="go-to-button">
-            Go to comment
+          <a class="go-to-button"
+             href="{{ review.link }}"
+             target="_blank">
+              Go to comment
             <i [innerHTML]="'arrow-ios-forward' | eva: { width: 24, height: 24, fill: '#e5e5e5' }"></i>
           </a>
         </div>

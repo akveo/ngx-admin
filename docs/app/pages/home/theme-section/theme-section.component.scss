@@ -45,8 +45,16 @@
     width: 5rem;
     border-radius: 50%;
     background-color: #ffffff;
-    box-shadow: nb-theme(shadow-default);;
+    box-shadow: nb-theme(shadow-default);
     top: 22.625rem;
+
+    &:hover {
+      box-shadow: nb-theme(shadow-hover-btn);
+    }
+
+    &:active {
+      box-shadow: nb-theme(shadow-active-btn);
+    }
   }
 
   .swiper-button-prev {
@@ -120,11 +128,11 @@
     }
 
     &:hover {
-      // box-shadow: $btn-shadow-hover;
+      box-shadow: nb-theme(shadow-hover-green-btn);
     }
 
     &:active {
-      // box-shadow: $btn-shadow-active;
+      box-shadow: nb-theme(shadow-active-green-btn);
     }
   }
 

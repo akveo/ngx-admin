@@ -8,6 +8,7 @@ import { Component, OnDestroy } from '@angular/core';
 import { SwiperConfigInterface } from 'ngx-swiper-wrapper';
 import { NbMediaBreakpointsService, NbThemeService } from '@nebular/theme';
 import { takeWhile } from 'rxjs/operators';
+import { Review, ReviewsService } from '../../../@core/data/service/reviews.service';
 
 @Component({
   selector: 'ngx-landing-reviews-section',
@@ -49,16 +50,21 @@ export class ReviewsSectionComponent implements OnDestroy {
   };
 
   breakpoints: any;
+  reviews: Review[];
 
   constructor(private themeService: NbThemeService,
-              private breakpointService: NbMediaBreakpointsService) {
-
+              private breakpointService: NbMediaBreakpointsService,
+              private reviewsService: ReviewsService) {
     this.breakpoints = this.breakpointService.getBreakpointsMap();
     this.themeService.onMediaQueryChange()
       .pipe(takeWhile(() => this.alive))
       .subscribe(([oldValue, newValue]) => {
         this.changeSwiperConfig(newValue.width);
       });
+
+    this.reviewsService.getReviews()
+      .pipe(takeWhile(() => this.alive))
+      .subscribe((reviews) => this.reviews = reviews);
   }
 
   changeSwiperConfig(currentWidth: number): void {

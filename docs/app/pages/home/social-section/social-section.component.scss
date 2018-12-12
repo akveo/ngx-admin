@@ -16,13 +16,21 @@
   .social-button {
     display: inline-flex;
     align-items: center;
-    box-shadow: nb-theme(shadow-default);;
+    box-shadow: nb-theme(shadow-default);
     background-color: nb-theme(color-white);
     padding-left: 2rem;
     border-radius: 0.25rem;
     color: #000000;
     text-decoration: none;
     cursor: pointer;
+
+    &:hover {
+      box-shadow: nb-theme(shadow-hover-btn);
+    }
+
+    &:active {
+      box-shadow: nb-theme(shadow-active-btn);
+    }
 
     .info {
       margin-left: 2rem;
