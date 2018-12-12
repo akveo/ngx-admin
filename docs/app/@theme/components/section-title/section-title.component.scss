@@ -14,4 +14,11 @@
     color: #000000;
     text-align: center;
   }
+
+
+  @include media-breakpoint-down(is) {
+    h2 {
+      font-size: 1.5rem;
+    }
+  }
 }

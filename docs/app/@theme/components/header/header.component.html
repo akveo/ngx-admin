@@ -10,3 +10,9 @@
 <div class="section right">
   Need some help? Let us know! <a (click)="trackEmailClick()" href="mailto:contact@akveo.com">contact@akveo.com</a>
 </div>
+
+<div class="toggle-menu-button"
+     (click)="toggleMobileMenu()">
+  <i *ngIf="mobileMenuIsOpen" [innerHTML]="'close' | eva: { width: 24, height: 24, fill: '#0d1c2e' }"></i>
+  <i *ngIf="!mobileMenuIsOpen" [innerHTML]="'menu' | eva: { width: 24, height: 24, fill: '#0d1c2e' }"></i>
+</div>

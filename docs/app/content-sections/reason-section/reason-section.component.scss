@@ -70,4 +70,41 @@
 
     }
   }
+
+  @include media-breakpoint-down(xl) {
+    .reasons {
+      width: 100%;
+      padding: 0 1rem;
+      margin: 0;
+
+      .number {
+        font-size: 6rem;
+      }
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    padding-top: 2.625rem;
+    padding-bottom: 0;
+
+    .reasons {
+      flex-direction: column;
+
+      .reason {
+        width: 100%;
+        margin: 1.625rem 0 0.375rem;
+        padding: 0;
+
+        &:nth-child(2n) {
+          padding: 0;
+
+        }
+      }
+
+      .number {
+        font-size: 5rem;
+        line-height: 1.3;
+      }
+    }
+  }
 }

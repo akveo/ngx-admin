@@ -8,23 +8,27 @@
 
 <div class="sending-block">
   <form class="email-form"
-        action="https://formspree.io/marketing@akveo.com"
-        method="POST">
+        action="https://akveo.us19.list-manage.com/subscribe/post?u=e8ac0871a095839ba14553eff&amp;id=cd45c56765"
+        method="post"
+        target="_blank"
+        novalidate>
     <label for="email">Your Email</label>
     <input id="email"
+           type="email"
+           value=""
+           name="EMAIL"
+           class="email"
            [attr.disabled]="disabledControl"
            placeholder="johndoe@gmail.com"
-           class="email"
-           type="email"
-           name="replyto">
+           required>
     <input class="submit-input"
            type="submit"
            value="Subscribe"
+           name="subscribe"
            [attr.disabled]="disabledControl">
   </form>
   <div class="agreement-block">
-    <nb-checkbox status="success"
-                 [(ngModel)]="isAgree">
+    <nb-checkbox status="success">
     </nb-checkbox>
     <p class="agreement">
       <span class="highlight">I agree</span> to get news on what’s going on around Akveo products and community.<br />

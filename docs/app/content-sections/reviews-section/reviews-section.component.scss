@@ -131,4 +131,41 @@
       }
     }
   }
+
+  @include media-breakpoint-down(xl) {
+    .swiper-button-prev {
+      left: 5%;
+    }
+
+    .swiper-button-next {
+      right: 5%;
+    }
+  }
+
+  @include media-breakpoint-down(lg) {
+    .swiper-button-prev, .swiper-button-next {
+      display: none;
+    }
+  }
+
+  @include media-breakpoint-down(is) {
+    padding-top: 4rem;
+    padding-bottom: 4.375rem;
+
+    .reviews {
+      margin-top: 2.25rem;
+    }
+
+    .swiper-pagination {
+      top: 108%;
+    }
+
+    .swiper-button-prev, .swiper-button-next {
+      display: none;
+    }
+
+    .swiper-slide {
+      width: 80%;
+    }
+  }
 }

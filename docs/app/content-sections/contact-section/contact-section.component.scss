@@ -104,12 +104,13 @@
     opacity: 0.5;
 
     div {
+      $width: 1.375rem;
       $block-or-padding: 1.375rem;
 
       font-size: nb-theme(font-size-sm);
       padding: 0 $block-or-padding;
       position: absolute;
-      left: calc(50% - #{$block-or-padding});
+      left: calc(50% - #{$block-or-padding} - #{$width} / 2);
       top: -0.625rem;
       background-color: #ffffff;
     }
@@ -124,5 +125,43 @@
     border-radius: 0.25rem;
     color: #ffffff;
     cursor: pointer;
+  }
+
+  @include media-breakpoint-down(md) {
+    .description {
+      width: 80%;
+    }
+  }
+
+  @include media-breakpoint-down(is) {
+    padding: 2.125rem 1rem;
+
+    .description {
+      width: 100%;
+      font-size: nb-theme(font-size);
+    }
+
+    .sending-block {
+      margin-top: 2.375rem;
+    }
+
+    .email-form {
+      .email {
+        width: 100%;
+      }
+
+      .submit-input {
+        width: 100%;
+        margin-top: 1.5rem;
+      }
+    }
+
+    .separator {
+      margin-top: 2rem;
+    }
+
+    .contact-us {
+      margin-top: 2rem;
+    }
   }
 }

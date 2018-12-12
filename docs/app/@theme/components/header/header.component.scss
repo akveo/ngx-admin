@@ -49,7 +49,6 @@
     }
 
     .version {
-      display: none;
       font-size: 0.75rem;
       font-weight: bold;
       color: $version-fg;
@@ -58,6 +57,7 @@
 
   /deep/ nb-menu {
     flex: 1;
+
     .menu-items {
       display: flex;
       justify-content: flex-end;
@@ -72,11 +72,8 @@
           display: block;
 
           &:hover, &.active, &:focus {
-            font-family: nb-theme(font-main), sans-serif;
             color: $menu-item-fg-active;
-            text-shadow: 0.1px 0 0 currentColor;
-            font-weight: nb-theme(font-weight-bolder);
-            outline: none!important;
+            outline: none !important;
           }
         }
       }
@@ -98,6 +95,10 @@
     }
   }
 
+  .toggle-menu-button {
+    display: none;
+  }
+
   @include media-breakpoint-up(is) {
     .section {
       padding: 0.875rem 0;
@@ -113,6 +114,7 @@
         color: #000000;
         margin-right: 0.5rem;
       }
+
       .version {
         display: inline;
       }
@@ -129,6 +131,7 @@
         margin-left: 0;
       }
     }
+
     /deep/ nb-menu .menu-items li:nth-child(2) {
       display: list-item;
     }
@@ -147,6 +150,37 @@
   @include media-breakpoint-up(xl) {
     .sidebar-toggle {
       display: none;
+    }
+  }
+
+
+  @include media-breakpoint-down(is) {
+    padding: 0 1rem;
+
+    .logo {
+      flex: 1 0 auto;
+      flex-direction: column;
+      align-items: flex-start;
+
+      a {
+        color: #000000;
+      }
+
+      .version {
+        margin-left: 0;
+      }
+    }
+
+    .section {
+      &.middle, &.right {
+        display: none;
+      }
+    }
+
+    .toggle-menu-button {
+      display: block;
+      flex: 1;
+      text-align: right;
     }
   }
 }

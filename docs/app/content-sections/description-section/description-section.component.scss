@@ -54,4 +54,54 @@
     text-align: center;
     line-height: 1.8;
   }
+
+  @include media-breakpoint-down(lg) {
+    flex-wrap: wrap;
+    width: 100%;
+
+    .descriptions {
+      margin-left: 0;
+      padding: 0 1rem;
+      flex: auto;
+      width: 50%;
+      margin-bottom: 1rem;
+    }
+  }
+
+  @include media-breakpoint-down(is) {
+    flex-direction: column;
+    top: 0;
+    padding-top: 4.125rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+
+    .descriptions {
+      width: 100%;
+      flex: 1;
+      padding: 0;
+      margin: 1.5rem 0 0;
+
+      &:first-child {
+        margin: 0;
+      }
+    }
+
+    .title {
+      margin-top: 1.5rem;
+    }
+
+    .description {
+      margin-bottom: 0;
+    }
+
+    .icons-block {
+      width: 4rem;
+      height: 4rem;
+    }
+
+    /deep/ svg {
+      width: 1.875rem;
+      height: 1.875rem;
+    }
+  }
 }

@@ -31,7 +31,7 @@
   }
 
   /deep/ nb-layout-header {
-    box-shadow: nb-theme(shadow-default);;
+    box-shadow: nb-theme(shadow-default);
 
     nav {
       max-width: calc(#{$content-width} - 8.125rem * 2);
@@ -39,10 +39,10 @@
     }
   }
 
-  /deep/ .content nb-layout-footer {
+  /deep/ .layout .layout-container .content nb-layout-footer.footer {
     width: 100%;
     background-color: nb-theme(color-white);
-    box-shadow: nb-theme(shadow-default);;
+    box-shadow: nb-theme(shadow-default);
 
     nav {
       max-width: $content-width;
@@ -56,6 +56,12 @@
     nb-layout-header /deep/ nav {
       height: 8.25rem;
       display: block;
+    }
+  }
+
+  @include media-breakpoint-down(is) {
+    nb-layout-header /deep/ nav {
+      height: 3.75rem;
     }
   }
 }

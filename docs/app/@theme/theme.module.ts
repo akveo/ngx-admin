@@ -32,7 +32,7 @@ import {
   NbCheckboxModule,
 } from '@nebular/theme';
 
-const BASE_MODULES = [CommonModule, FormsModule, ReactiveFormsModule];
+const BASE_MODULES = [CommonModule/*, FormsModule, ReactiveFormsModule*/];
 
 const NB_MODULES = [
   NbLayoutModule,

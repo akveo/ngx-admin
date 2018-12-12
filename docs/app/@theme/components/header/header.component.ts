@@ -20,6 +20,7 @@ export class NgxHeaderComponent implements OnDestroy {
 
   private alive = true;
 
+  mobileMenuIsOpen = false;
   currentVersion: string;
   headerMenu = [];
 
@@ -34,6 +35,10 @@ export class NgxHeaderComponent implements OnDestroy {
   }
 
   trackEmailClick() {
+  }
+
+  toggleMobileMenu() {
+    this.mobileMenuIsOpen = !this.mobileMenuIsOpen;
   }
 
   ngOnDestroy() {

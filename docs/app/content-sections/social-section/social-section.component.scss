@@ -101,4 +101,58 @@
       margin-left: 1.75rem;
     }
   }
+
+  @include media-breakpoint-down(md) {
+    p {
+      width: 80%;
+    }
+
+    .facebook {
+      padding-right: 1.5rem;
+    }
+
+    .linkedin {
+      padding-right: 1.5rem;
+    }
+
+    .twitter {
+      padding-right: 3rem;
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    padding: 4.25rem 1rem 2.125rem;
+
+    p {
+      width: 100%;
+      font-size: nb-theme(font-size);
+    }
+
+    .github {
+      margin-top: 2rem;
+      margin-left: 0;
+      padding-right: 0;
+      padding-top: 1.25rem;
+      padding-bottom: 1.25rem;
+      width: 100%;
+    }
+
+    .sub-title {
+      margin-top: 2.25rem;
+    }
+
+    .buttons-group {
+      margin-top: 1.875rem;
+      flex-direction: column;
+
+      .social-button {
+        margin-top: 1rem;
+        margin-left: 0;
+
+        &:first-child {
+          margin-top: 0;
+        }
+      }
+    }
+  }
 }
