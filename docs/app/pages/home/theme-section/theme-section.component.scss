@@ -78,7 +78,6 @@
       font-family: nb-theme(font-main), sans-serif;
       font-size: nb-theme(font-size-lg);
       color: nb-theme(color-fg);
-      text-shadow: 0 0.75rem 2.125rem rgba(0, 60, 183, 0.25);
       background: transparent;
       margin: 0;
       opacity: 0.56;
@@ -156,6 +155,17 @@
 
     .swiper-button-prev, .swiper-button-next {
       display: none;
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    img {
+      transition: opacity 1s;
+      opacity: 0;
+
+      &.ng-lazyloaded {
+        opacity: 1;
+      }
     }
   }
 

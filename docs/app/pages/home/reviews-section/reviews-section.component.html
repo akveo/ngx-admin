@@ -3,7 +3,6 @@
 </ngx-landing-section-title>
 
 <div class="carousel-container">
-
   <div  class="swiper-container reviews" [swiper]="swiperConfig">
     <div class="swiper-wrapper">
       <div *ngFor="let review of reviews" class="review-card swiper-slide">
@@ -12,7 +11,9 @@
             <i [innerHTML]="review.socialIcon | eva: { width: 26, height: 26, fill: '#3b5998' }"></i>
           </div>
           <div class="avatar">
-            <img src="{{ review.avatar }}" />
+            <img alt="Reviewer Avatar"
+                 data-src="{{ review.avatar }}"
+                 class="swiper-lazy"/>
           </div>
           <div class="personal-info">
             <div class="name">{{ review.firstName }}</div>
@@ -43,7 +44,3 @@
     </div>
   </div>
 </div>
-
-
-
-<!--    <div class="reviews">-->

@@ -22,7 +22,6 @@ export class ReviewsSectionComponent implements OnDestroy {
   private desktopSwiperConfig: SwiperConfigInterface = {
     slidesPerView: 3,
     keyboard: true,
-    mousewheel: true,
     navigation: true,
   };
 
@@ -35,13 +34,14 @@ export class ReviewsSectionComponent implements OnDestroy {
     slidesPerView: 'auto',
     centeredSlides: true,
     keyboard: false,
-    mousewheel: false,
     navigation: false,
   };
 
   swiperConfig: SwiperConfigInterface = {
     direction: 'horizontal',
     spaceBetween: 24,
+    mousewheel: false,
+    lazy: true,
     pagination: {
       el: '.swiper-pagination',
       clickable: true,

@@ -1,5 +1,5 @@
 <div class="main-img-container">
-  <img *ngIf="breakpoint.width >= breakpoints.md" class="main-img" src="assets/img/ngx-admin.png"/>
+  <img *ngIf="breakpoint.width >= breakpoints.md" class="main-img" lazyLoad="assets/img/ngx-admin.png"/>
 </div>
 <div class="main-inf">
   <h1>ngx-admin</h1>
@@ -7,8 +7,8 @@
     Get your Premium admin dashboard framework, based on Angular 7+, Bootstrap 4+ and <a href="https://akveo.github.io/nebular/?utm_source=ngx_admin_landing&utm_medium=main_section"
                                                                                         target="_blank">Nebular</a>. NGX admin is Free, including for commercial projects, and it is Open Source
   </p>
-  <div class="main-img-container">
-    <img *ngIf="breakpoint.width <= breakpoints.sm" class="main-img" src="assets/img/corporate-theme.png"/>
+  <div class="mobile-main-img-container">
+    <img *ngIf="breakpoint.width <= breakpoints.sm" class="main-img" lazyLoad="assets/img/corporate-theme.png" alt="Light theme Dashboard"/>
   </div>
   <div class="badges">
     <iframe class="stars"
@@ -17,9 +17,6 @@
             width="170px"
             scrolling="0">
     </iframe>
-    <a href="https://www.npmjs.com/package/@nebular/theme" target="_blank">
-      <img src="https://img.shields.io/npm/dt/@nebular/theme.svg">
-    </a>
   </div>
   <div class="buttons">
     <a class="btn btn-installation-guidelines"

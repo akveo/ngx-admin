@@ -8,6 +8,7 @@ import { RouterModule } from '@angular/router';
 import { ModuleWithProviders, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { LazyLoadImageModule } from 'ng-lazyload-image';
 
 // components
 import {
@@ -39,7 +40,12 @@ import {
   NbTabsetModule,
 } from '@nebular/theme';
 
-const BASE_MODULES = [CommonModule, FormsModule, ReactiveFormsModule];
+const BASE_MODULES = [
+  CommonModule,
+  FormsModule,
+  ReactiveFormsModule,
+  LazyLoadImageModule,
+];
 
 const NB_MODULES = [
   NbLayoutModule,

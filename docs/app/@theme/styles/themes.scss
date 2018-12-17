@@ -29,8 +29,7 @@ $nb-enabled-themes: (ngx-landing, docs-page);
 
 /* stylelint-disable */
 $nb-themes: nb-register-theme((
-  font-main: unquote('"Helvetica Neue Medium", sans-serif'),
-  font-secondary: unquote('"Helvetica Neue Light", sans-serif'),
+  font-main: unquote('-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"'),
 
   content-width: 1440px,
   settings-col-width: 16rem,
@@ -39,14 +38,14 @@ $nb-themes: nb-register-theme((
   color-primary: #3366ff,
 
   separator: transparent,
-  color-success: #00db92,
+  color-success: #3ec57c,
   color-bg: transparent,
-  color-fg: #8994a3,
+  color-fg: #405571,
   color-fg-heading: #546d8d,
   color-fg-text: #919fb1,
   color-fg-icon: #c4c8d1,
   color-gray-bg: #edf0f5,
-  color-fg-heading-light: #8994a3,
+  color-fg-heading-light: #405571,
   color-active-fg: color-success,
   color-active-bg: color-success,
 
@@ -131,7 +130,7 @@ $nb-themes: nb-register-theme((
   settings-col-width: 16rem,
   settings-col-margin: 1.875rem,
   color-gray-light: #ced5dd,
-  color-fg-heading-light: #8994a3,
+  color-fg-heading-light: #405571,
   code-block-bg: linear-gradient(225deg, #333c66 0%, #1d2447 100%),
   color-info: #5699f0,
   color-warning: #f09301,

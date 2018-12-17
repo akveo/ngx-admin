@@ -7,30 +7,6 @@
 $helvetica-neue-font-path: 'assets/fonts/helvetica-neue' !default;
 
 @font-face {
-  font-family: 'Helvetica Neue Light';
-  font-display: swap;
-  src: url('#{$helvetica-neue-font-path}/HelveticaNeue-Light.eot');
-  src: local('Helvetica Neue Light'), local('HelveticaNeue-Light'),
-  url('#{$helvetica-neue-font-path}/HelveticaNeue-Light.eot?#iefix') format('embedded-opentype'),
-  url('#{$helvetica-neue-font-path}/HelveticaNeue-Light.woff') format('woff'),
-  url('#{$helvetica-neue-font-path}/HelveticaNeue-Light.ttf') format('truetype');
-  font-weight: 300;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Helvetica Neue Medium';
-  font-display: swap;
-  src: url('#{$helvetica-neue-font-path}/HelveticaNeue-Medium.eot');
-  src: local('Helvetica Neue Medium'), local('HelveticaNeue-Medium'),
-  url('#{$helvetica-neue-font-path}/HelveticaNeue-Medium.eot?#iefix') format('embedded-opentype'),
-  url('#{$helvetica-neue-font-path}/HelveticaNeue-Medium.woff') format('woff'),
-  url('#{$helvetica-neue-font-path}/HelveticaNeue-Medium.ttf') format('truetype');
-  font-weight: 500;
-  font-style: normal;
-}
-
-@font-face {
   font-family: 'Helvetica Neue Bold';
   font-display: swap;
   src: url('#{$helvetica-neue-font-path}/HelveticaNeue-Bold.eot');

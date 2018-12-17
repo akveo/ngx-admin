@@ -16,6 +16,12 @@
   img {
     max-width: 39.75rem;
     max-height: 20.375rem;
+    transition: opacity 1s;
+    opacity: 0;
+
+    &.ng-lazyloaded {
+      opacity: 1;
+    }
   }
 
   ul {

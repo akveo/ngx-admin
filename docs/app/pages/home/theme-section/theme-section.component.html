@@ -8,13 +8,31 @@
         [(index)]="sliderIndex">
     <div class="swiper-wrapper">
       <div class="image-container swiper-slide">
-        <img src="assets/img/light-theme.png" />
+        <img *ngIf="breakpoint.width <= breakpoints.sm"
+             data-src="assets/img/light-theme.png"
+             class="swiper-lazy"
+             alt="Light Theme" />
+        <img *ngIf="!(breakpoint.width <= breakpoints.sm)"
+             lazyLoad="assets/img/light-theme.png"
+             alt="Light Theme" />
       </div>
       <div class="image-container swiper-slide">
-        <img src="assets/img/cosmic-theme.png" />
+        <img *ngIf="breakpoint.width <= breakpoints.sm"
+             data-src="assets/img/cosmic-theme.png"
+             class="swiper-lazy"
+             alt="Cosmic Theme" />
+        <img *ngIf="!(breakpoint.width <= breakpoints.sm)"
+             lazyLoad="assets/img/cosmic-theme.png"
+             alt="Cosmic Theme" />
       </div>
       <div class="image-container swiper-slide">
-        <img src="assets/img/corporate-theme.png" />
+        <img *ngIf="breakpoint.width <= breakpoints.sm"
+             data-src="assets/img/corporate-theme.png"
+             class="swiper-lazy"
+             alt="Corporate Theme" />
+        <img *ngIf="!(breakpoint.width <= breakpoints.sm)"
+             lazyLoad="assets/img/corporate-theme.png"
+             alt="Corporate Theme" />
       </div>
     </div>
 

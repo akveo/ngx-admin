@@ -4,7 +4,7 @@
  * Licensed under the MIT License. See License.txt in the project root for license information.
  */
 
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'ngx-landing-contact-section',
@@ -13,10 +13,25 @@ import { Component } from '@angular/core';
 })
 export class ContactSectionComponent {
 
-  email: string = '';
+  @ViewChild('contactForm') contactForm: HTMLFormElement;
+  @ViewChild('emailInput') emailInput: ElementRef;
+
   isAgree = false;
+  invalid = false;
 
   constructor() {
+  }
+
+  submitForm() {
+    if (!this.emailInput.nativeElement.value) {
+      this.invalid = true;
+
+      return;
+    }
+
+    this.contactForm.nativeElement.submit();
+    this.invalid = false;
+    this.emailInput.nativeElement.value = '';
   }
 
   get disabledControl() {

@@ -39,6 +39,10 @@
       box-shadow: nb-theme(shadow-default);
       border-radius: 0.25rem 0 0 0.25rem;
 
+      &.invalid {
+        box-shadow: 0 0 1.25rem 0 rgba(210, 45, 45, 0.6);
+      }
+
       &::placeholder {
         color: #434a59;
         opacity: 0.24;
@@ -82,7 +86,7 @@
 
   .agreement-block {
     display: flex;
-    margin-top: 1rem;
+    margin-top: 1.25rem;
 
     /deep/ nb-checkbox {
       .customised-control {
@@ -96,7 +100,7 @@
   
   .agreement {
     font-family: nb-theme(font-secondary), sans-serif;
-    font-size: nb-theme(font-size-xs);
+    font-size: nb-theme(font-size-sm);
 
     .highlight {
       font-family: nb-theme(font-main), sans-serif;
@@ -166,8 +170,13 @@
 
       .submit-input {
         width: 100%;
+        border-radius: 0.25rem;
         margin-top: 1.5rem;
       }
+    }
+
+    .agreement-block {
+      margin-top: 1.25rem;
     }
 
     .separator {

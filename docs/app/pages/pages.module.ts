@@ -9,7 +9,6 @@ const PAGES_COMPONENTS = [
 
 @NgModule({
   imports: [
-
     PagesRoutingModule,
   ],
   declarations: [

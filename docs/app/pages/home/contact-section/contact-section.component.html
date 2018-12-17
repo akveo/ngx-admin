@@ -15,17 +15,19 @@
         novalidate>
     <label for="email">Your Email</label>
     <input id="email"
+           #emailInput
            type="email"
            value=""
            name="email"
            class="email"
+           [class.invalid]="invalid"
            placeholder="johndoe@gmail.com"
            required>
     <input class="submit-input"
            type="submit"
            value="Subscribe"
            name="subscribe"
-           (click)="contactForm.submit()"
+           (click)="submitForm()"
            [attr.disabled]="disabledControl">
   </form>
   <div class="agreement-block">
