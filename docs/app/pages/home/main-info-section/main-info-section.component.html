@@ -4,7 +4,8 @@
 <div class="main-inf">
   <h1>ngx-admin</h1>
   <p class="description">
-    Get your Premium admin dashboard framework, based on Angular 6+, Bootstrap 4 and <span>Nebular</span>. NGX admin is Free, including for commercial projects, and it is Open Source
+    Get your Premium admin dashboard framework, based on Angular 7+, Bootstrap 4+ and <a href="https://akveo.github.io/nebular/?utm_source=ngx_admin_landing&utm_medium=main_section"
+                                                                                        target="_blank">Nebular</a>. NGX admin is Free, including for commercial projects, and it is Open Source
   </p>
   <div class="main-img-container">
     <img *ngIf="breakpoint.width <= breakpoints.sm" class="main-img" src="assets/img/corporate-theme.png"/>
@@ -22,8 +23,7 @@
   </div>
   <div class="buttons">
     <a class="btn btn-installation-guidelines"
-       href="https://akveo.github.io/nebular/docs/guides/install-based-on-starter-kit?utm_source=ngx_admin_landing&utm_medium=main_section"
-       target="_blank">Installation Guidelines</a>
+       [routerLink]="'/docs/getting-started/installation-guidelines'">Installation Guidelines</a>
     <a class="btn btn-demo"
        href="http://akveo.com/ngx-admin?utm_source=ngx_admin_landing&utm_medium=main_section"
        target="_blank">Demo</a>

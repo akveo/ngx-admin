@@ -4,8 +4,9 @@
  * Licensed under the MIT License. See License.txt in the project root for license information.
  */
 
-import { Component, OnDestroy } from '@angular/core';
+import { Component, HostBinding, Input, OnDestroy } from '@angular/core';
 import { takeWhile } from 'rxjs/operators';
+import { NbSidebarService } from '@nebular/theme';
 
 /*import { NgxAnalytics } from '../../services/analytics.service';*/
 import { NgxVersionService } from '../../services/version.service';
@@ -16,15 +17,19 @@ import { HeaderMenuService } from '../../../@core/data/service/header-menu.servi
   styleUrls: ['./header.component.scss'],
   templateUrl: './header.component.html',
 })
-export class NgxHeaderComponent implements OnDestroy {
+export class NgxLandingHeaderComponent implements OnDestroy {
 
   private alive = true;
 
-  mobileMenuIsOpen = false;
+  @HostBinding('class.docs-page') @Input() isDocs = false;
+
+  @Input() sidebarTag: string = '';
+
   currentVersion: string;
   headerMenu = [];
 
   constructor(/*private analytics: NgxAnalytics,*/
+              private sidebarService: NbSidebarService,
               private versionService: NgxVersionService,
               private headerMenuService: HeaderMenuService) {
     this.currentVersion = this.versionService.getNgxVersion();
@@ -37,8 +42,8 @@ export class NgxHeaderComponent implements OnDestroy {
   trackEmailClick() {
   }
 
-  toggleMobileMenu() {
-    this.mobileMenuIsOpen = !this.mobileMenuIsOpen;
+  toggleSidebar() {
+    this.sidebarService.toggle(false, this.sidebarTag);
   }
 
   ngOnDestroy() {

@@ -5,7 +5,7 @@
  */
 
 import { APP_BASE_HREF } from '@angular/common';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, Title } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
@@ -14,6 +14,10 @@ import { NgxLandingThemeModule } from './@theme/theme.module';
 import { CoreModule } from './@core/core.module';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+
+import { DOCS, STRUCTURE } from './app.options';
+const docs = require('../output.json');
+import { structure  } from '../structure';
 
 @NgModule({
   declarations: [
@@ -30,7 +34,10 @@ import { AppRoutingModule } from './app-routing.module';
   ],
   bootstrap: [AppComponent],
   providers: [
+    Title,
     { provide: APP_BASE_HREF, useValue: '/' },
+    { provide: STRUCTURE, useValue: structure },
+    { provide: DOCS, useValue: docs },
   ],
 })
 export class AppModule { }

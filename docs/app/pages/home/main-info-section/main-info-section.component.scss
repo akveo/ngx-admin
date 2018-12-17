@@ -42,7 +42,8 @@
     margin-top: 2.25rem;
     margin-bottom: 0;
 
-    span {
+    a {
+      text-decoration: none;
       font-family: nb-theme(font-main), sans-serif;
       color: nb-theme(color-active-fg);;
     }
@@ -82,7 +83,7 @@
       padding-right: 4rem;
       color: #ffffff;
       background-color: nb-theme(color-active-fg);
-      box-shadow: 0 0.375rem 2.125rem 0 rgba(0, 219, 146, 0.32);
+      box-shadow: nb-theme(shadow-btn);
 
       &:hover {
         box-shadow: nb-theme(shadow-hover-green-btn);
@@ -113,6 +114,7 @@
 
     .main-img-container {
       max-height: 28.75rem;
+      max-width: 1000px;
     }
 
     .main-inf {
@@ -124,6 +126,7 @@
   @include media-breakpoint-down(md) {
     .main-img-container {
       max-height: 21.875rem;
+      max-width: 780px;
     }
 
     .main-inf {

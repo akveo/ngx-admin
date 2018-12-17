@@ -11,9 +11,13 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 // components
 import {
-  NgxFooterComponent,
-  NgxHeaderComponent,
+  NgxLandingFooterComponent,
   NgxSectionTitleComponent,
+  NgxFragmentTargetDirective,
+  NgxPageTocComponent,
+  NgxPageTabsComponent,
+  NgxLandingHeaderComponent,
+  NgxDocsFooterComponent,
 } from './components';
 // components
 
@@ -30,19 +34,30 @@ import {
   NbThemeModule,
   NbMenuModule,
   NbCheckboxModule,
+  NbCardModule,
+  NbSidebarModule,
+  NbTabsetModule,
 } from '@nebular/theme';
 
-const BASE_MODULES = [CommonModule/*, FormsModule, ReactiveFormsModule*/];
+const BASE_MODULES = [CommonModule, FormsModule, ReactiveFormsModule];
 
 const NB_MODULES = [
   NbLayoutModule,
   NbCheckboxModule,
+  NbMenuModule,
+  NbCardModule,
+  NbSidebarModule,
+  NbTabsetModule,
 ];
 
 const COMPONENTS = [
-  NgxFooterComponent,
-  NgxHeaderComponent,
+  NgxLandingFooterComponent,
   NgxSectionTitleComponent,
+  NgxFragmentTargetDirective,
+  NgxPageTocComponent,
+  NgxPageTabsComponent,
+  NgxLandingHeaderComponent,
+  NgxDocsFooterComponent,
 ];
 
 const PIPES = [
@@ -54,9 +69,6 @@ const PIPES = [
     RouterModule,
 
     ...BASE_MODULES,
-
-    NbMenuModule,
-    NbCheckboxModule,
 
     ...NB_MODULES,
   ],
@@ -72,9 +84,7 @@ const PIPES = [
 
     ...NB_MODULES,
 
-    NgxFooterComponent,
-    NgxHeaderComponent,
-    NgxSectionTitleComponent,
+    ...COMPONENTS,
 
     ...PIPES,
   ],
@@ -88,6 +98,7 @@ export class NgxLandingThemeModule {
       providers: [
         ...NbThemeModule.forRoot({ name: 'ngx-landing' }).providers,
         ...NbMenuModule.forRoot().providers,
+        ...NbSidebarModule.forRoot().providers,
 
         ...ngxLandingServices,
       ],

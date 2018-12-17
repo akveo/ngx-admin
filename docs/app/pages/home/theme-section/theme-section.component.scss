@@ -124,7 +124,7 @@
       padding: 1.125rem 6.25rem;
       color: #ffffff;
       background-color: nb-theme(color-active-fg);
-      box-shadow: 0 0.375rem 2.125rem 0 rgba(0, 219, 146, 0.32);
+      box-shadow: nb-theme(shadow-btn);
     }
 
     &:hover {

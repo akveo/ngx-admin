@@ -2,7 +2,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
 
 import { PagesComponent } from './pages.component';
-/*import { NotFoundComponent } from './miscellaneous/not-found/not-found.component';*/
 
 const routes: Routes = [{
   path: '',
@@ -10,21 +9,21 @@ const routes: Routes = [{
   children: [
     {
       path: 'home',
-      loadChildren: './home/ngx-admin-landing-home.module#NgxAdminLandingHomeModule',
+      loadChildren: './home/landing-home.module#LandingHomeModule',
     },
     {
       path: 'docs',
-      loadChildren: './docs/ngx-admin-landing-docs.module#NgxAdminLandingDocsModule',
+      loadChildren: './docs/landing-docs.module#LandingDocsModule',
     },
     {
       path: '',
       redirectTo: 'home',
       pathMatch: 'full',
     },
-/*    {
+    {
       path: '**',
-      component: NotFoundComponent,
-    }*/
+      redirectTo: 'home',
+    },
   ],
 }];
 

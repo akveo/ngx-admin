@@ -12,7 +12,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./contact-section.component.scss'],
 })
 export class ContactSectionComponent {
-  isAgree = true;
+
+  email: string = '';
+  isAgree = false;
+
+  constructor() {
+  }
 
   get disabledControl() {
     return this.isAgree ? null : 'disabled';

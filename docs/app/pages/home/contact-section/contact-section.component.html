@@ -8,6 +8,7 @@
 
 <div class="sending-block">
   <form class="email-form"
+        #contactForm
         action="https://akveo.us19.list-manage.com/subscribe/post?u=e8ac0871a095839ba14553eff&amp;id=cd45c56765"
         method="post"
         target="_blank"
@@ -16,24 +17,24 @@
     <input id="email"
            type="email"
            value=""
-           name="EMAIL"
+           name="email"
            class="email"
-           [attr.disabled]="disabledControl"
            placeholder="johndoe@gmail.com"
            required>
     <input class="submit-input"
            type="submit"
            value="Subscribe"
            name="subscribe"
+           (click)="contactForm.submit()"
            [attr.disabled]="disabledControl">
   </form>
   <div class="agreement-block">
-    <nb-checkbox status="success">
+    <nb-checkbox [(ngModel)]="isAgree" status="success">
+      <p class="agreement">
+          <span class="highlight">I agree</span> to get news on what’s going on around Akveo products and community.<br />
+          The administrator processes data following <a class="active" href="https://www.akveo.com/privacy-policy?utm_source=ngx_admin_landing&utm_medium=contact_section" target="_blank">the Privacy Policy</a>. I understand that I can opt out at any time
+      </p>
     </nb-checkbox>
-    <p class="agreement">
-      <span class="highlight">I agree</span> to get news on what’s going on around Akveo products and community.<br />
-      The administrator processes data following <span class="active">the Privacy Policy</span>. I understand that I can opt out at any time
-    </p>
   </div>
 
   <div class="separator">
@@ -41,5 +42,5 @@
   </div>
 
   <a class="btn contact-us"
-     href="mailto:contact@akveo.com">Contact Us</a>
+     href="https://www.akveo.com/contacts?utm_source=ngx_admin_landing&utm_medium=contact_section">Contact Us</a>
 </div>
