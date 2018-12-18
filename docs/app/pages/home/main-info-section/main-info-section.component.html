@@ -1,13 +1,16 @@
 <div class="main-img-container">
-  <img *ngIf="breakpoint.width >= breakpoints.md"
+  <a href="https://akveo.github.io/nebular/?utm_source=ngx_admin_landing&utm_medium=main_section_image"
+     target="_blank">
+    <img *ngIf="breakpoint.width >= breakpoints.md"
        class="main-img"
        lazyLoad="assets/img/ngx-admin.png"/>
+  </a>
 </div>
 <div class="main-inf">
   <h1>ngx-admin</h1>
   <p class="description">
-    Get your Premium admin dashboard framework, based on Angular 7+, Bootstrap 4+ and <a href="https://akveo.github.io/nebular/?utm_source=ngx_admin_landing&utm_medium=main_section"
-                                                                                        target="_blank">Nebular</a>. NGX admin is Free, including for commercial projects, and it is Open Source
+    The most popular admin dashboard based on <strong>Angular 7+</strong>, Bootstrap 4+ and <a href="https://akveo.github.io/nebular/?utm_source=ngx_admin_landing&utm_medium=main_section"
+                                                                                        target="_blank">Nebular</a>. Free and Open Source for both commercial and non-profit usage.
   </p>
   <div class="mobile-main-img-container">
     <img *ngIf="breakpoint.width <= breakpoints.sm" class="main-img" lazyLoad="assets/img/corporate-theme.png" alt="Light theme Dashboard"/>

@@ -42,6 +42,7 @@ export class NgxMenuService {
         menuItem.link = this.createItemLink<NbMenuItem>(menuItem);
 
         if (item.children && item.children.some(child => child.type === 'page' || child.type === 'tabs')) {
+          menuItem.expanded = true;
           menuItem.children = this.prepareMenu(item.children, menuItem);
         }
 

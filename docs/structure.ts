@@ -38,4 +38,43 @@ export const structure = [
       },
     ],
   },
+  {
+    type: 'section',
+    name: 'Guides',
+    children: [
+      {
+        type: 'page',
+        name: 'Theme System',
+        children: [
+          {
+            type: 'block',
+            block: 'markdown',
+            source: 'concept-theme-system.md',
+          },
+        ],
+      },
+      {
+        type: 'page',
+        name: 'Change Theme',
+        children: [
+          {
+            type: 'block',
+            block: 'markdown',
+            source: 'theme-change.md',
+          },
+        ],
+      },
+      {
+        type: 'page',
+        name: 'Backend integration',
+        children: [
+          {
+            type: 'block',
+            block: 'markdown',
+            source: 'backend-integration.md',
+          },
+        ],
+      },
+    ],
+  },
 ];
