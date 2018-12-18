@@ -60,7 +60,7 @@
       color: #ffffff;
       text-transform: uppercase;
       background-color: nb-theme(color-active-bg);
-      border-radius: 0.25rem 0.25rem 0 0;
+      border-radius: 0 0.25rem 0.25rem 0;
       box-shadow: nb-theme(shadow-btn);
       cursor: pointer;
 
@@ -134,15 +134,19 @@
     }
   }
 
+  .contact-us-container {
+    text-align: center;
+  }
+
   .contact-us {
-    display: block;
+    display: inline-block;
     font-family: nb-theme(font-main), sans-serif;
-    background-color: nb-theme(color-active-bg);
+    font-weight: nb-theme(font-weight-bold);
     margin-top: 3.625rem;
-    padding: 1rem 0;
-    border-radius: 0.25rem;
-    color: #ffffff;
+    color: nb-theme(color-active-bg);
     cursor: pointer;
+    text-transform: uppercase;
+    text-decoration: none;
   }
 
   @include media-breakpoint-down(md) {
