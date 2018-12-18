@@ -8,7 +8,7 @@ const routes: Routes = [{
   component: PagesComponent,
   children: [
     {
-      path: 'home',
+      path: '',
       loadChildren: './home/landing-home.module#LandingHomeModule',
     },
     {
@@ -16,13 +16,8 @@ const routes: Routes = [{
       loadChildren: './docs/landing-docs.module#LandingDocsModule',
     },
     {
-      path: '',
-      redirectTo: 'home',
-      pathMatch: 'full',
-    },
-    {
       path: '**',
-      redirectTo: 'home',
+      redirectTo: '',
     },
   ],
 }];

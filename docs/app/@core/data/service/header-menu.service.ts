@@ -9,7 +9,7 @@ export class HeaderMenuService {
   private headerMenu: NbMenuItem[] = [
     {
       title: 'Home',
-      link: '/home',
+      link: '/',
     },
     {
       title: 'Docs',

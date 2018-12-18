@@ -13,14 +13,21 @@
   display: block;
   padding-top: 5.125rem;
 
-  img {
-    max-width: 39.75rem;
-    max-height: 20.375rem;
-    transition: opacity 1s;
-    opacity: 0;
+  .project-img {
+    min-width: 39.75rem;
+    min-height: 20.375rem;
 
-    &.ng-lazyloaded {
-      opacity: 1;
+    .lazy-load-image {
+      width: 100%;
+      height: 100%;
+      visibility: hidden;
+      transition: opacity 1s;
+      opacity: 0;
+
+      &.ng-lazyloaded {
+        visibility: visible;
+        opacity: 1;
+      }
     }
   }
 
@@ -42,6 +49,10 @@
     & > div {
       margin-left: 3.75rem;
       margin-top: 0.125rem;
+    }
+
+    .project-img {
+      margin: 0;
     }
   }
 
@@ -86,15 +97,17 @@
   }
 
   @include media-breakpoint-down(lg) {
-    img {
-      max-width: 100%;
-      max-height: 16.25rem;
+    .project-img {
+      min-width: 33rem;
+      min-height: 16.25rem;
     }
   }
 
   @include media-breakpoint-down(md) {
-    img {
-      max-height: 11.25rem;
+    .project-img {
+      min-width: 25rem;
+      min-height: auto;
+      max-height: 17rem;
     }
   }
 
@@ -102,8 +115,9 @@
   @include media-breakpoint-down(sm) {
     padding-top: 2.5rem;
 
-    img {
+    .project-img {
       max-height: 100%;
+      min-width: 100%;
     }
 
     li {
