@@ -7,8 +7,9 @@
 </p>
 
 <div class="sending-block">
-  <form class="email-form"
+  <form id="email-form"
         #contactForm
+        class="email-form"
         action="https://akveo.us19.list-manage.com/subscribe/post?u=e8ac0871a095839ba14553eff&amp;id=cd45c56765"
         method="post"
         target="_blank"
@@ -17,14 +18,13 @@
     <input id="email"
            #emailInput
            type="email"
-           value=""
-           name="email"
+           name="EMAIL"
            class="email"
            [class.invalid]="invalid"
            placeholder="johndoe@gmail.com"
            required>
     <input class="submit-input"
-           type="submit"
+           type="button"
            value="Subscribe"
            name="subscribe"
            (click)="submitForm()"

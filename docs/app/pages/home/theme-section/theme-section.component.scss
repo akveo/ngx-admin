@@ -15,8 +15,8 @@
   text-align: center;
 
   .image-container {
-    width: 64.875rem;
-    height: 39.625rem;
+    width: 75.875rem;
+    height: 46.625rem;
   }
 
   img {
@@ -58,11 +58,11 @@
   }
 
   .swiper-button-prev {
-    left: 13.5rem;
+    left: 18%;
   }
 
   .swiper-button-next {
-    right: 13.5rem;
+    right: 18%;
   }
 
   .swiper-pagination {
@@ -142,6 +142,13 @@
 
     .swiper-button-next {
       right: 10%;
+    }
+  }
+
+  @include media-breakpoint-down(xxl) {
+    .image-container {
+      width: 64.875rem;
+      height: 39.625rem;
     }
   }
 

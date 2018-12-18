@@ -14,7 +14,7 @@
   padding: 3.375rem 0 0;
 
   .main-img-container {
-    min-width: 50.625rem;
+    min-width: 60.625rem;
     min-height: 47.875rem;
 
     .main-img {
@@ -30,7 +30,8 @@
   }
 
   .main-inf {
-    margin: 4.625rem 5.875rem 0 2.625rem;
+    width: 44%;
+    margin: 4.625rem 9% 0 6%;
   }
 
   h1 {
@@ -105,6 +106,18 @@
 
     &:active {
       box-shadow: nb-theme(shadow-active-btn);
+    }
+  }
+
+  @include media-breakpoint-down(xxl) {
+    .main-img-container {
+      min-width: 50.625rem;
+      min-height: 47.875rem;
+    }
+
+    .main-inf {
+      width: 100%;
+      margin: 4.625rem 5.875rem 0 2.625rem;
     }
   }
 

@@ -38,7 +38,7 @@ $nb-themes: nb-register-theme((
   color-primary: #3366ff,
 
   separator: transparent,
-  color-success: #3ec57c,
+  color-success: #18cb90,
   color-bg: transparent,
   color-fg: #405571,
   color-fg-heading: #546d8d,
@@ -114,10 +114,10 @@ $nb-themes: nb-register-theme((
   gray-section-bg: #fafafa,
 
   shadow-default: 0 0.5rem 1.25rem 0 rgba(218, 224, 235, 0.6),
-  shadow-btn: 0 0.375rem 2.125rem 0 rgba(0, 219, 146, 0.32),
+  shadow-btn: 0 0.375rem 2.125rem 0 rgba(184, 255, 231, 0.5),
   shadow-hover-btn: 0 0.5rem 2rem 0 #dae0eb,
   shadow-active-btn: 0 0.5rem 1.25rem 0 rgba(218, 224, 235, 0.6),
-  shadow-hover-green-btn: 0 0.5rem 2rem 0 rgba(0, 219, 146, 0.64),
+  shadow-hover-green-btn: 0 0.5rem 2rem 0 rgba(0, 219, 146, 0.25),
   shadow-active-green-btn: 0 0.375rem 2.125rem 0 rgba(0, 219, 146, 0.32),
 ), ngx-landing, corporate);
 
