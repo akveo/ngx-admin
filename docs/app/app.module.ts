@@ -35,7 +35,6 @@ import { structure  } from '../structure';
   bootstrap: [AppComponent],
   providers: [
     Title,
-    { provide: APP_BASE_HREF, useValue: '/' },
     { provide: STRUCTURE, useValue: structure },
     { provide: DOCS, useValue: docs },
   ],

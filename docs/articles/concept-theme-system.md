@@ -1,6 +1,6 @@
-# Nebular Theme System
+# Theme System
 
-Nebular Theme System is a set of rules we put into how SCSS files and variables are organized to achieve the following goals:
+<a href="https://akveo.github.io/nebular/?utm_source=ngx_admin_landing&utm_medium=docs_theme_system" target="_blank">Nebular</a> Theme System is a set of rules we put into how SCSS files and variables are organized to achieve the following goals:
 
 - ability to flexibly change looks & feel of the application by managing variables, without changing SCSS itself;
 - ability to switch between visual themes in a runtime without reloading the page;
@@ -121,7 +121,4 @@ The only requirement for the feature to work is to wrap all of your component st
 
 ## Related Articles
 
-- [Enable Theme System](docs/guides/enable-theme-system)
-- [Default Theme variables table](docs/themes/default)
-- [Cosmic Theme variables table](docs/themes/cosmic)
-- [Corporate Theme variables table](docs/themes/corporate)
+- [Change Theme](docs/guides/change-theme)

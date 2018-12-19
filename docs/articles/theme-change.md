@@ -51,7 +51,4 @@ And of course it is possible to subscribe to an event when the current theme get
 
 ## Related Articles
 
-- [Enable Theme System](docs/guides/enable-theme-system)
-- [Default Theme variables table](docs/themes/default)
-- [Cosmic Theme variables table](docs/themes/cosmic)
-- [Corporate Theme variables table](docs/themes/corporate)
+- [Theme System](docs/guides/theme-system)
