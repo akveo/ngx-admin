@@ -42,6 +42,8 @@ export class ReviewsSectionComponent implements OnDestroy {
     spaceBetween: 24,
     mousewheel: false,
     lazy: true,
+    loop: true,
+    autoplay: true,
     pagination: {
       el: '.swiper-pagination',
       clickable: true,
