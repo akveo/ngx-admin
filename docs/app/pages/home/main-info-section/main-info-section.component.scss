@@ -140,12 +140,20 @@
       margin-right: 0.75rem;
       margin-left: 1rem;
     }
+
+    .btn {
+        &.btn-demo {
+          padding-left: 3.25rem;
+          padding-right: 3.25rem;
+        }
+    }
   }
 
   @include media-breakpoint-down(md) {
     .main-img-container {
       min-height: 21.875rem;
       min-width: 23rem;
+      width: 75rem;
     }
 
     .main-inf {
@@ -207,6 +215,7 @@
       margin: 1.375rem 0 0;
       min-width: 0;
       min-height: 0;
+      width: 0;
     }
 
     .badges {
