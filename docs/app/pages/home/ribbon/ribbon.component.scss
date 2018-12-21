@@ -1,0 +1,19 @@
+.ribbon-dont-hunt {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  font-size: 11px;
+  text-transform: uppercase;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  width: 300px;
+  color: rgb(218, 85, 47);
+  background: rgb(255, 255, 255);
+  position: fixed;
+  text-align: center;
+  line-height: 40px;
+  transform: rotate(40deg);
+  box-shadow: rgba(50, 69, 93, 0.15) 0px 4px 7px 0px, rgba(0, 0, 0, 0.08) 0px -1px 4px 0px;
+  top: 55px;
+  right: -60px;
+}
