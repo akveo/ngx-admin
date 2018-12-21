@@ -8,17 +8,17 @@
 <a target="_blank" href="http://akveo.com/ngx-admin/#/pages/dashboard?theme=corporate&utm_source=github&utm_medium=ngx_admin_readme&utm_campaign=themes"><img src="https://i.imgur.com/OIL7rt8.png"/></a>
 
 
+### With 3 stunning visual themes
 
+#### Cosmic
+<a target="_blank" href="http://akveo.com/ngx-admin/?theme=cosmic&utm_source=github&utm_medium=ngx_admin_readme&utm_campaign=themes#/pages/dashboard"><img src="https://i.imgur.com/tvAJJhW.png"/></a>
 
-| Cosmic Theme | Light Theme |
-|:------------:|:--------------:|
-|<a target="_blank" href="http://akveo.com/ngx-admin/#/pages/dashboard?theme=cosmic&utm_source=github&utm_medium=ngx_admin_readme&utm_campaign=themes"><img src="https://i.imgur.com/FgRZcqL.png"/></a>|<a target="_blank" href="http://akveo.com/ngx-admin/#/pages/dashboard?theme=default&utm_source=github&utm_medium=ngx_admin_readme&utm_campaign=themes"><img src="https://i.imgur.com/fozHlRJ.png"/></a>|
+#### Corporate
+<a target="_blank" href="http://akveo.com/ngx-admin/?theme=corporate&utm_source=github&utm_medium=ngx_admin_readme&utm_campaign=themes#/pages/dashboard"><img src="https://i.imgur.com/wbEtUX4.jpg"/></a>
 
-### Ecommerce dashboard
+#### Light
 
-| Ecommerce Template |
-|:---------------:|
-|<a target="_blank" href="http://akveo.com/ngx-admin/#/pages/dashboard?utm_source=github&utm_medium=ngx_admin_readme&utm_campaign=themes&utm_content=ecommerce"><img src="https://i.imgur.com/UW7ZmcP.png"/></a>|
+<a target="_blank" href="http://akveo.com/ngx-admin/?theme=default&utm_source=github&utm_medium=ngx_admin_readme&utm_campaign=themes#/pages/dashboard"><img src="https://i.imgur.com/cb9U34M.jpg"/></a>
 
 ### What's included:
 
@@ -27,24 +27,10 @@
 - Responsive layout
 - RTL support
 - High resolution
-- Flexibly configurable themes with **hot-reload** (2 themes included)
+- Flexibly configurable themes with **hot-reload** (3 themes included)
 - Authentication module with multiple providers
-- Lots of awesome features:
-  - Buttons
-  - Modals
-  - Popovers
-  - Icons
-  - Typography
-  - Animated searches
-  - Forms
-  - Tabs
-  - Notifications
-  - Tables
-  - Maps
-  - Charts
-  - Editors
-  
-And many more!
+- 40+ Angular Components
+- 60+ Usage Examples
 
 ### Hot Themes Reload
 
@@ -56,9 +42,6 @@ And many more!
 
 ## Documentation
 This template is using [Nebular](https://github.com/akveo/nebular) modules set, [here you can find documentation and other useful articles](https://akveo.github.io/nebular/docs/guides/install-based-on-starter-kit).
-
-### ng2-admin
-We will continue supporting [ng2-admin](https://github.com/akveo/ngx-admin/tree/ng2-admin) version, but if you are starting from scratch we recommend using `ngx-admin`. Unfortunately, there is no way to automatically update from ng2-admin to ngx-admin, but some parts (Nebular components) could be manually included.
 
 ### Empty starter kit
 Don't need all the pages and modules and just looking for an empty starter kit for your next project? Check out our [starter-kit branch](https://github.com/akveo/ngx-admin/tree/starter-kit).
