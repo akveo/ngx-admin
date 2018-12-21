@@ -5,12 +5,10 @@
 [Who uses ngx-admin?](https://github.com/akveo/ngx-admin/issues/1645)
 
 # Admin template based on Angular 7+, Bootstrap 4 and <a href="https://github.com/akveo/nebular">Nebular</a>
+<a target="_blank" href="http://akveo.com/ngx-admin/#/pages/dashboard?theme=corporate&utm_source=github&utm_medium=ngx_admin_readme&utm_campaign=themes"><img src="https://i.imgur.com/OIL7rt8.png"/></a>
 
-### Three themes available:
 
-| Corporate Theme |
-|:---------------:|
-|<a target="_blank" href="http://akveo.com/ngx-admin/#/pages/dashboard?theme=corporate&utm_source=github&utm_medium=ngx_admin_readme&utm_campaign=themes"><img src="https://i.imgur.com/axbJYdN.png"/></a>|
+
 
 | Cosmic Theme | Light Theme |
 |:------------:|:--------------:|
