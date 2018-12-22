@@ -1,7 +1,8 @@
 import { Component, OnDestroy } from '@angular/core';
 import { NbThemeService } from '@nebular/theme';
 
-import { ElectricityService } from '../../../@core/data/electricity.service';
+import { Electricity, ElectricityService } from '../../../@core/data/electricity.service';
+import { takeWhile } from 'rxjs/operators';
 
 @Component({
   selector: 'ngx-electricity',
@@ -10,7 +11,9 @@ import { ElectricityService } from '../../../@core/data/electricity.service';
 })
 export class ElectricityComponent implements OnDestroy {
 
-  data: Array<any>;
+  private alive = true;
+
+  data: Electricity[];
 
   type = 'week';
   types = ['week', 'month', 'year'];
@@ -19,14 +22,20 @@ export class ElectricityComponent implements OnDestroy {
   themeSubscription: any;
 
   constructor(private eService: ElectricityService, private themeService: NbThemeService) {
-    this.data = this.eService.getData();
+    this.eService.getListData()
+      .pipe(takeWhile(() => this.alive))
+      .subscribe((data) => {
+        this.data = data;
+      });
 
-    this.themeSubscription = this.themeService.getJsTheme().subscribe(theme => {
-      this.currentTheme = theme.name;
+    this.themeService.getJsTheme()
+      .pipe(takeWhile(() => this.alive))
+      .subscribe(theme => {
+        this.currentTheme = theme.name;
     });
   }
 
   ngOnDestroy() {
-    this.themeSubscription.unsubscribe();
+    this.alive = false;
   }
 }
