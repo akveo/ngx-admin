@@ -1,0 +1,111 @@
+/**
+ * @license
+ * Copyright Akveo. All Rights Reserved.
+ * Licensed under the MIT License. See License.txt in the project root for license information.
+ */
+
+@import '../../../@theme/styles/themes';
+@import '~@nebular/theme/styles/global/breakpoints';
+
+@include nb-install-component() {
+  $reasons-section-offset: 10.625rem;
+
+  display: block;
+  padding: 5.25rem 0;
+
+  .reasons {
+    width: calc(100% - #{$reasons-section-offset} * 2);
+    margin: 0 auto;
+    margin-top: -1.375rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    padding: 0;
+
+    .reason {
+      display: flex;
+      width: 50%;
+      list-style: none;
+      padding-right: 3.75rem;
+      padding-left: 0.25rem;
+      margin-top: 7.875rem;
+
+      &:nth-child(2n) {
+        padding-right: 0;
+        padding-left: 3.75rem;
+      }
+    }
+
+    .number {
+      font-family: 'Helvetica Neue Bold', sans-serif;
+      font-size: 8.75rem;
+      color: #ffffff;
+      text-shadow: 0 0.5rem 1rem #dae0eb;
+      line-height: 0.3;
+    }
+
+    .description {
+      &::before {
+        content: '';
+        display: block;
+        height: 0.25rem;
+        width: 3.5rem;
+        margin-bottom: 0.375rem;
+        background-color: nb-theme(color-active-bg);
+      }
+
+      font-family: nb-theme(font-secondary), sans-serif;
+      font-size: nb-theme(font-size-lg);
+      line-height: 1.5;
+      margin-left: 1.75rem;
+    }
+
+    .highlight {
+      font-family: nb-theme(font-main), sans-serif;
+    }
+    
+    .active {
+      text-decoration: none;
+      font-family: nb-theme(font-main), sans-serif;
+      color: nb-theme(color-active-fg);
+
+    }
+  }
+
+  @include media-breakpoint-down(xl) {
+    .reasons {
+      width: 100%;
+      padding: 0 1rem;
+      margin: 0;
+
+      .number {
+        font-size: 6rem;
+      }
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    padding-top: 2.625rem;
+    padding-bottom: 0;
+
+    .reasons {
+      flex-direction: column;
+
+      .reason {
+        width: 100%;
+        margin: 1.625rem 0 0.375rem;
+        padding: 0;
+
+        &:nth-child(2n) {
+          padding: 0;
+
+        }
+      }
+
+      .number {
+        font-size: 5rem;
+        line-height: 1.3;
+      }
+    }
+  }
+}
