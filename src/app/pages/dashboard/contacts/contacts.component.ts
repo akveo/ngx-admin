@@ -28,6 +28,7 @@ export class ContactsComponent implements OnDestroy {
       .subscribe(([oldValue, newValue]) => {
         this.breakpoint = newValue;
       });
+
     forkJoin(
       this.userService.getContacts(),
       this.userService.getRecentUsers(),
