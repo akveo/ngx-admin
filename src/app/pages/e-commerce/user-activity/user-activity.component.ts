@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { NbThemeService } from '@nebular/theme';
 import { takeWhile } from 'rxjs/operators';
 
@@ -49,7 +49,7 @@ import { UserActivityService, UserActive } from '../../../@core/data/user-activi
     </nb-card>
   `,
 })
-export class ECommerceUserActivityComponent implements OnDestroy, OnInit {
+export class ECommerceUserActivityComponent implements OnDestroy {
 
   private alive = true;
 
@@ -65,14 +65,13 @@ export class ECommerceUserActivityComponent implements OnDestroy, OnInit {
       .subscribe(theme => {
         this.currentTheme = theme.name;
     });
-  }
 
-  ngOnInit() {
     this.getUserActivity(this.type);
   }
 
   getUserActivity(period: string) {
     this.userActivityService.getUserActivityData(period)
+      .pipe(takeWhile(() => this.alive))
       .subscribe(userActivityData => {
         this.userActivity = userActivityData;
       });

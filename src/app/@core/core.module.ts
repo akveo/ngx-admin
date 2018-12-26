@@ -9,6 +9,8 @@ import { DataModule } from './data/data.module';
 import {
   AnalyticsService,
   LayoutService,
+  PlayerService,
+  StateService,
 } from './utils';
 
 const socialLinks = [
@@ -75,6 +77,8 @@ export const NB_CORE_PROVIDERS = [
   },
   AnalyticsService,
   LayoutService,
+  PlayerService,
+  StateService,
 ];
 
 @NgModule({

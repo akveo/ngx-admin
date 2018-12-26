@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, OnDestroy } from '@angular/core';
+import { AfterViewInit, Component, Input, OnDestroy } from '@angular/core';
 import { NbThemeService } from '@nebular/theme';
 import { delay, takeWhile } from 'rxjs/operators';
 import { LayoutService } from '../../../../@core/utils/layout.service';
@@ -12,10 +12,11 @@ import { LayoutService } from '../../../../@core/utils/layout.service';
 export class ECommerceVisitorsStatisticsComponent implements AfterViewInit, OnDestroy {
 
   private alive = true;
-  private value = 75;
+
+  @Input() value: number;
 
   option: any = {};
-  chartLegend: {iconColor: string; title: string}[];
+  chartLegend: { iconColor: string; title: string }[];
   echartsIntance: any;
 
   constructor(private theme: NbThemeService,
