@@ -1,0 +1,13 @@
+<button type="button"
+        *ngIf="hasViewSwitch"
+        class="btn action-item action-button"
+        (click)="switchToLiveView()">
+  <i class="icon feather-image"></i>
+  <span class="text">Live view</span>
+</button>
+
+<nb-tabset class="tabs-container">
+  <nb-tab *ngFor="let example of examples" tabTitle="{{ example.extension }}" [active]="example.active">
+    <ngx-code-block [path]="example.path" [code]="example.code"></ngx-code-block>
+  </nb-tab>
+</nb-tabset>
