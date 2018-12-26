@@ -1,6 +1,21 @@
 @import '../@theme/styles/themes';
 
 @include nb-install-component() {
+  /deep/ router-outlet + * {
+    display: block;
+    animation: fade 1s;
+
+    @keyframes fade {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+  }
+
   /*
   * TODO: hot fix, in prod mode popover arrow has wong style.
   * Delete this after weill be fixed https://github.com/akveo/nebular/issues/1006
