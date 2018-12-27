@@ -1,8 +1,9 @@
 import { Component, OnDestroy } from '@angular/core';
 import { NbThemeService } from '@nebular/theme';
 
-import { Electricity, ElectricityService } from '../../../@core/data/electricity.service';
+import { Electricity, ElectricityChart, ElectricityService } from '../../../@core/data/electricity.service';
 import { takeWhile } from 'rxjs/operators';
+import { forkJoin } from 'rxjs';
 
 @Component({
   selector: 'ngx-electricity',
@@ -13,7 +14,8 @@ export class ElectricityComponent implements OnDestroy {
 
   private alive = true;
 
-  data: Electricity[];
+  listData: Electricity[];
+  chartData: ElectricityChart[];
 
   type = 'week';
   types = ['week', 'month', 'year'];
@@ -21,18 +23,23 @@ export class ElectricityComponent implements OnDestroy {
   currentTheme: string;
   themeSubscription: any;
 
-  constructor(private eService: ElectricityService, private themeService: NbThemeService) {
-    this.eService.getListData()
-      .pipe(takeWhile(() => this.alive))
-      .subscribe((data) => {
-        this.data = data;
-      });
-
+  constructor(private electricityService: ElectricityService,
+              private themeService: NbThemeService) {
     this.themeService.getJsTheme()
       .pipe(takeWhile(() => this.alive))
       .subscribe(theme => {
         this.currentTheme = theme.name;
     });
+
+    forkJoin(
+      this.electricityService.getListData(),
+      this.electricityService.getChartData(),
+    )
+      .pipe(takeWhile(() => this.alive))
+      .subscribe(([listData, chartData]) => {
+        this.listData = listData;
+        this.chartData = chartData;
+      });
   }
 
   ngOnDestroy() {

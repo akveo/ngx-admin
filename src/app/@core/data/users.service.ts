@@ -7,17 +7,19 @@ class User {
   picture: string;
 }
 
-class Contacts {
+export class Contacts {
   user: User;
   type: string;
 }
 
-class RecentUsers extends Contacts {
-  time: string;
+export class RecentUsers extends Contacts {
+  time: number;
 }
 
 @Injectable()
 export class UserService {
+
+  private time: Date = new Date;
 
   private users = {
     nick: { name: 'Nick Jones', picture: 'assets/images/nick.png' },
@@ -41,14 +43,14 @@ export class UserService {
     { user: this.users.kate, type: this.types.work },
   ];
   private recentUsers: RecentUsers[]  = [
-    { user: this.users.alan, type: this.types.home, time: '9:12 pm'},
-    { user: this.users.eva, type: this.types.home, time: '7:45 pm'},
-    { user: this.users.nick, type: this.types.mobile, time: '5:29 pm'},
-    { user: this.users.lee, type: this.types.mobile, time: '11:24 am'},
-    { user: this.users.jack, type: this.types.mobile, time: '10:45 am'},
-    { user: this.users.kate, type: this.types.work, time: '9:42 am'},
-    { user: this.users.kate, type: this.types.work, time: '9:31 am'},
-    { user: this.users.jack, type: this.types.mobile, time: '8:00 am'},
+    { user: this.users.alan, type: this.types.home, time: this.time.setHours(21, 12)},
+    { user: this.users.eva, type: this.types.home, time: this.time.setHours(17, 45)},
+    { user: this.users.nick, type: this.types.mobile, time: this.time.setHours(5, 29)},
+    { user: this.users.lee, type: this.types.mobile, time: this.time.setHours(11, 24)},
+    { user: this.users.jack, type: this.types.mobile, time: this.time.setHours(10, 45)},
+    { user: this.users.kate, type: this.types.work, time: this.time.setHours(9, 42)},
+    { user: this.users.kate, type: this.types.work, time: this.time.setHours(9, 31)},
+    { user: this.users.jack, type: this.types.mobile, time: this.time.setHours(8, 0)},
   ];
 
   getUsers(): Observable<any> {

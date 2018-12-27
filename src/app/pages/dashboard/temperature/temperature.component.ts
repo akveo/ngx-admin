@@ -38,11 +38,11 @@ export class TemperatureComponent implements OnDestroy {
       this.temperatureHumidityService.getTemperatureData(),
       this.temperatureHumidityService.getHumidityData(),
     )
-      .subscribe((data) => {
-        this.temperatureData = data[0];
+      .subscribe(([temperatureData, humidityData]: [Temperature, Temperature]) => {
+        this.temperatureData = temperatureData;
         this.temperature = this.temperatureData.value;
 
-        this.humidityData = data[1];
+        this.humidityData = humidityData;
         this.humidity = this.humidityData.value;
       });
   }

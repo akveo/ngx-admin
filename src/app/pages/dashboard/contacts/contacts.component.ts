@@ -3,7 +3,7 @@ import { NbThemeService, NbMediaBreakpoint, NbMediaBreakpointsService } from '@n
 import { takeWhile } from 'rxjs/operators';
 import { forkJoin } from 'rxjs';
 
-import { UserService } from '../../../@core/data/users.service';
+import { Contacts, RecentUsers, UserService } from '../../../@core/data/users.service';
 
 @Component({
   selector: 'ngx-contacts',
@@ -34,9 +34,9 @@ export class ContactsComponent implements OnDestroy {
       this.userService.getRecentUsers(),
     )
       .pipe(takeWhile(() => this.alive))
-      .subscribe((data) => {
-        this.contacts = data[0];
-        this.recent = data[1];
+      .subscribe(([contacts, recent]: [Contacts[], RecentUsers[]]) => {
+        this.contacts = contacts;
+        this.recent = recent;
       });
   }
 

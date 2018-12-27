@@ -1,8 +1,8 @@
 import { delay, takeWhile } from 'rxjs/operators';
-import { AfterViewInit, Component, OnDestroy } from '@angular/core';
+import { AfterViewInit, Component, Input, OnDestroy } from '@angular/core';
 import { NbThemeService } from '@nebular/theme';
 import { LayoutService } from '../../../../@core/utils';
-import { ElectricityChart, ElectricityService } from '../../../../@core/data/electricity.service';
+import { ElectricityChart } from '../../../../@core/data/electricity.service';
 
 @Component({
   selector: 'ngx-electricity-chart',
@@ -19,19 +19,13 @@ export class ElectricityChartComponent implements AfterViewInit, OnDestroy {
 
   private alive = true;
 
+  @Input() data: ElectricityChart[];
+
   option: any;
-  data: ElectricityChart[];
   echartsIntance: any;
 
   constructor(private theme: NbThemeService,
-              private layoutService: LayoutService,
-              private electricityService: ElectricityService) {
-    this.electricityService.getChartData()
-      .pipe(takeWhile(() => this.alive))
-      .subscribe((chartData) => {
-        this.data = chartData;
-      });
-
+              private layoutService: LayoutService) {
     this.layoutService.onChangeLayoutSize()
       .pipe(
         takeWhile(() => this.alive),

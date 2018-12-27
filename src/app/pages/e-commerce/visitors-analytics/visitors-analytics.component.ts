@@ -31,13 +31,13 @@ export class ECommerceVisitorsAnalyticsComponent implements OnDestroy {
       this.visitorsAnalyticsChartService.getPieChartData(),
     )
       .pipe(takeWhile(() => this.alive))
-      .subscribe((data) => {
+      .subscribe(([innerLine, outerLine, pieChartValue]: [number[], OutlineData[], number]) => {
         this.visitorsAnalyticsData = {
-          innerLine: data[0],
-          outerLine: data[1],
+          innerLine: innerLine,
+          outerLine: outerLine,
         };
 
-        this.pieChartValue = data[2];
+        this.pieChartValue = pieChartValue;
       });
   }
 
