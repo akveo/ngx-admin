@@ -1,11 +1,10 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 
-import { NbMenuService, NbSidebarService } from '@nebular/theme';
+import { NbMenuService, NbSidebarService, NbThemeService } from '@nebular/theme';
 import { UserService } from '../../../@core/data/users.service';
 import { AnalyticsService } from '../../../@core/utils/analytics.service';
 import { takeWhile } from 'rxjs/operators/takeWhile';
 import { fromEvent as observableFromEvent } from 'rxjs/observable/fromEvent';
-import { AbService } from '../../../@core/utils/ab.service';
 import { LayoutService } from '../../../@core/utils';
 
 @Component({
@@ -18,17 +17,17 @@ export class HeaderComponent implements OnInit , OnDestroy {
   @Input() position = 'normal';
 
   user: any;
-  hireTextVariant: string = 'solution-hire';
   userMenu = [{ title: 'Profile' }, { title: 'Log out' }];
 
   private alive = true;
+  currentTheme: string;
 
   constructor(private sidebarService: NbSidebarService,
               private menuService: NbMenuService,
               private userService: UserService,
               private analytics: AnalyticsService,
-              private abService: AbService,
-              private layoutService: LayoutService) {
+              private layoutService: LayoutService,
+              private themeService: NbThemeService) {
 
     observableFromEvent(document, 'mouseup')
       .pipe(takeWhile(() => this.alive))
@@ -44,13 +43,17 @@ export class HeaderComponent implements OnInit , OnDestroy {
           this.analytics.trackEvent('clickContactEmail', 'select');
         }
       });
+
+    this.themeService.getJsTheme()
+      .pipe(takeWhile(() => this.alive))
+      .subscribe(theme => {
+        this.currentTheme = theme.name;
+      });
   }
 
   ngOnInit() {
     this.userService.getUsers()
       .subscribe((users: any) => this.user = users.nick);
-
-    this.listenForVariants();
   }
 
   toggleSidebar(): boolean {
@@ -74,20 +77,5 @@ export class HeaderComponent implements OnInit , OnDestroy {
 
   ngOnDestroy() {
     this.alive = false;
-  }
-
-  listenForVariants() {
-    const variants = [
-      AbService.VARIANT_DEVELOPERS_HIRE,
-      AbService.VARIANT_HIGHLIGHT_HIRE,
-      AbService.VARIANT_SOLUTION_HIRE,
-    ];
-
-    this.abService.onAbEvent()
-      .subscribe((e: { name: string }) => {
-        if (variants.includes(e.name)) {
-          this.hireTextVariant = e.name;
-        }
-      });
   }
 }

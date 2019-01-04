@@ -11,6 +11,7 @@ $nb-themes: nb-register-theme((
   sidebar-header-gap: 2rem,
   sidebar-header-height: initial,
   layout-content-width: 1400px,
+  header-height: 5.45rem,
 
   font-main: Roboto,
   font-secondary: Exo,
@@ -46,6 +47,7 @@ $nb-themes: nb-register-theme((
   sidebar-header-gap: 2rem,
   sidebar-header-height: initial,
   layout-content-width: 1400px,
+  header-height: 5.45rem,
 
   font-main: Roboto,
   font-secondary: Exo,
@@ -81,6 +83,7 @@ $nb-themes: nb-register-theme((
   sidebar-header-gap: 2rem,
   sidebar-header-height: initial,
   layout-content-width: 1400px,
+  header-height: 5.45rem,
 
   font-main: Roboto,
   font-secondary: Exo,
@@ -88,6 +91,9 @@ $nb-themes: nb-register-theme((
   switcher-background: #2b2d34,
   switcher-background-percentage: 14%,
   drops-icon-line-gadient: -webkit-linear-gradient(#e9e8eb, #a7a2be),
+
+  header-button-background: #2b2d34,
+  header-button-background-percentage: 14%,
 
   list-item-border-width: 1px,
 

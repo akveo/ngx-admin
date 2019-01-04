@@ -12,12 +12,10 @@
     width: 100%;
     order: 0;
     flex-direction: row;
-    flex: 1;
   }
   .right {
     order: 1;
     flex-direction: row-reverse;
-    flex: 1.5;
   }
 
   .logo-containter {
@@ -32,16 +30,43 @@
     &.email-text {
       height: auto;
       a {
-        text-decoration: underline;
+        font-size: 1.285rem;
+        font-family: nb-theme(font-main);
+        text-transform: none;
+        vertical-align: middle;
+        padding: 0.55rem 1.1rem 0.55rem 0.8rem;
+      }
+      i {
+        font-size: 2rem;
+        vertical-align: middle;
+        margin-right: 0.6rem;
       }
     }
 
     &.github-start {
-      width: 140px;
+      width: 245px;
       display: flex;
+      font-size: 1.285rem;
 
       iframe {
         width: 100px;
+        margin-left: 1rem;
+      }
+    }
+
+    &.download-count {
+      display: flex;
+      font-size: 1.285rem;
+      font-family: nb-theme(font-secondary);
+
+      .icon {
+        fill: nb-theme(color-white);
+        margin-right: 0.5rem;
+        font-size: 0;
+
+        @include nb-for-theme(default) {
+          fill: #bfc7cf;
+        }
       }
     }
   }
@@ -93,6 +118,18 @@
     .header-container /deep/ ngx-theme-switcher .dropdown-toggle {
       color: nb-theme(color-white);
       background: transparent;
+    }
+
+    .control-item.email-text a {
+      background-color: nb-theme(header-button-background);
+      color: nb-theme(color-white);
+
+      &:hover {
+        $color: nb-theme(header-button-background);
+        $percentage: nb-theme(header-button-background-percentage);
+
+        background-color: tint($color, $percentage);
+      }
     }
   }
 
