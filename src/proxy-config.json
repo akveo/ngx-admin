@@ -1,0 +1,37 @@
+{
+	"/api/auth/users/*": {
+		"target": "http://localhost:8180",
+		"secure": false,
+		"pathRewrite": {
+		 	"^/api/auth": ""
+	 	 }
+	},
+  "/api/auth/tokens/*": {
+     "target": "http://localhost:8180",
+     "secure":false,
+     "pathRewrite": {
+         "^/api/auth": ""
+      }
+  },
+  "/api/things/*": {
+     "target": "http://localhost:8180",
+     "secure":false,
+     "pathRewrite": {
+         "^/api": ""
+      }
+  },
+  "/api/channels/*": {
+     "target": "http://localhost:8180",
+     "secure":false,
+     "pathRewrite": {
+         "^/api": ""
+      }
+  }
+  "/api/channels/*/things/*": {
+     "target": "http://localhost:8180",
+     "secure":false,
+     "pathRewrite": {
+         "^/api": ""
+      }
+  }
+}

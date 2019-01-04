@@ -1,0 +1,26 @@
+@import '../../../../@theme/styles/themes';
+
+@include nb-install-component() {
+  /deep/ .form {
+    display: flex;
+    flex-direction: column;
+
+    .text-label {
+      margin-top: 1.5rem;
+    },
+     nb-select {
+      margin-right: 0.75rem;
+      margin-bottom: 1rem;
+    },
+
+    :host {
+      display: block;
+      width: 15rem;
+      height: 30rem;
+    },
+
+    button {
+      margin: 1rem;
+    }
+  },
+}

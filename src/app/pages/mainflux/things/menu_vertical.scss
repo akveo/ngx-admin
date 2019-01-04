@@ -1,0 +1,12 @@
+@import '../../../../@theme/styles/themes';
+
+@include nb-install-component() {
+  /deep/ .smartmenu {
+
+     nb-actions {
+	actions-bg: #4d3780;
+	actions-separator: #342e73;
+    },
+
+  },
+}

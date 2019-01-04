@@ -1,0 +1,11 @@
+<nb-card>
+  <nb-card-header>
+    Device Management
+  </nb-card-header>
+
+    <nb-card-header>Customer</nb-card-header>
+    <nb-card-body>
+    	<ng2-smart-table [settings]="settings" [source]="source" (deleteConfirm)="onDeleteConfirm($event)" (editConfirm)="onSaveConfirm($event)" (createConfirm)="onCreateConfirm($event)">
+    	</ng2-smart-table>
+    </nb-card-body>
+</nb-card>

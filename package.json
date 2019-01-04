@@ -1,5 +1,5 @@
 {
-  "name": "ngx-admin",
+  "name": "mainflux-admin",
   "version": "3.0.0",
   "license": "MIT",
   "repository": {
@@ -17,7 +17,7 @@
   "scripts": {
     "ng": "ng",
     "conventional-changelog": "conventional-changelog",
-    "start": "ng serve",
+    "start": "ng serve --proxy-config=proxy-config.json",
     "build": "ng build",
     "build:prod": "npm run build -- --prod --aot",
     "test": "ng test",
@@ -46,6 +46,7 @@
     "@angular/platform-browser-dynamic": "^7.0.3",
     "@angular/router": "^7.0.3",
     "@asymmetrik/ngx-leaflet": "3.0.1",
+    "ngx-auth": "^2.2.0",
     "@nebular/auth": "3.0.0",
     "@nebular/bootstrap": "3.0.0",
     "@nebular/security": "3.0.0",

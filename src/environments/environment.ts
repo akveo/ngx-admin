@@ -10,4 +10,8 @@
 
 export const environment = {
   production: false,
+  signupUrl: '/users',
+  loginUrl: '/tokens',
+  thingsUrl: '/api/things',
+  channelsUrl: '/api/channels',
 };

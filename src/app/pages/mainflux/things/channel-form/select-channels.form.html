@@ -1,0 +1,12 @@
+<form class="form">
+	<nb-card>
+  		<nb-card-header>Connected Channels</nb-card-header>
+  		<nb-card-body>
+      			<nb-list>
+        			<nb-list-item *ngFor="let channel of this.thingsList">
+        			{{channel.name}},{{channel.channelID}}
+        			</nb-list-item>
+      			</nb-list>
+  		</nb-card-body>
+	</nb-card>
+</form>

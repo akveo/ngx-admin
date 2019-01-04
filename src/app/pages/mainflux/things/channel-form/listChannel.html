@@ -1,0 +1,10 @@
+    <nb-card size="medium">
+      <nb-card-header>
+     	Channels 
+      </nb-card-header>
+      <nb-list>
+        <nb-list-item *ngFor="let channel of this.thingsList">
+	{{channel.name}},{{channel.id}}
+        </nb-list-item>
+      </nb-list>
+    </nb-card>

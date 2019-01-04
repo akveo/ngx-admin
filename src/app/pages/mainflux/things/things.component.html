@@ -1,0 +1,33 @@
+
+<nb-card>
+  <nb-card-header>
+    Device Management
+  </nb-card-header>
+
+    <nb-card-header>Customer</nb-card-header>
+    <nb-card-body>
+	<div class="form-group">
+  	<div class="form-group col-md-4">
+          <div class="btn-group col-md-4 offset-md-4">
+                  <button type="button" class="btn btn-primary btn-group-icon btn-group-divider">
+                  <i class="nb-arrow-retweet"></i>
+                  </button>
+                  <button type="button" class="btn btn-primary">Upload Bulk CSV Provisiong</button>
+
+                  <button type="button" class="btn btn-primary btn-group-icon btn-group-divider">
+                  <i class="nb-loop-circled"></i>
+                  </button>
+                  <button type="button" class="btn btn-primary">Connect Channels</button>
+
+                  <button type="button" class="btn btn-primary btn-group-icon btn-group-divider">
+                  <i class="nb-close-circled"></i>
+                  </button>
+                  <button type="button" class="btn btn-primary" status="danger">Disconnect Channels</button>
+          </div>
+  	</div>
+	</div>
+    	<ng2-smart-table [settings]="settings" [source]="source" (deleteConfirm)="onDeleteConfirm($event)" (editConfirm)="onSaveConfirm($event)"
+      (createConfirm)="onCreateConfirm($event)" (userRowSelect)="onSelection($event)">
+    	</ng2-smart-table>
+    </nb-card-body>
+</nb-card>
