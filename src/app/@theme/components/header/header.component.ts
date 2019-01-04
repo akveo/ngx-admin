@@ -1,7 +1,8 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 
-import { NbMenuService, NbSidebarService } from '@nebular/theme';
+import { NbMenuService, NbSidebarService, NbThemeService } from '@nebular/theme';
 import { UserService } from '../../../@core/data/users.service';
+import { takeWhile } from 'rxjs/operators/takeWhile';
 import { AnalyticsService } from '../../../@core/utils/analytics.service';
 import { LayoutService } from '../../../@core/data/layout.service';
 
@@ -10,7 +11,7 @@ import { LayoutService } from '../../../@core/data/layout.service';
   styleUrls: ['./header.component.scss'],
   templateUrl: './header.component.html',
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent implements OnInit , OnDestroy {
 
   @Input() position = 'normal';
 
@@ -18,11 +19,22 @@ export class HeaderComponent implements OnInit {
 
   userMenu = [{ title: 'Profile' }, { title: 'Log out' }];
 
+  private alive = true;
+
+  currentTheme: string;
+
   constructor(private sidebarService: NbSidebarService,
               private menuService: NbMenuService,
               private userService: UserService,
               private analyticsService: AnalyticsService,
-              private layoutService: LayoutService) {
+              private layoutService: LayoutService,
+              private themeService: NbThemeService) {
+
+    this.themeService.getJsTheme()
+      .pipe(takeWhile(() => this.alive))
+      .subscribe(theme => {
+        this.currentTheme = theme.name;
+      });
   }
 
   ngOnInit() {
@@ -37,17 +49,15 @@ export class HeaderComponent implements OnInit {
     return false;
   }
 
-  toggleSettings(): boolean {
-    this.sidebarService.toggle(false, 'settings-sidebar');
-
-    return false;
-  }
-
   goToHome() {
     this.menuService.navigateHome();
   }
 
   startSearch() {
     this.analyticsService.trackEvent('startSearch');
+  }
+
+  ngOnDestroy() {
+    this.alive = false;
   }
 }

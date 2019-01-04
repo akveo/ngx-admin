@@ -26,6 +26,33 @@
 
   .control-item {
     display: block;
+
+    &.email-text {
+      height: auto;
+      a {
+        font-size: 16px;
+        font-family: nb-theme(font-main);
+        text-transform: none;
+        vertical-align: middle;
+        padding: 0.55rem 1.1rem 0.55rem 0.8rem;
+      }
+      i {
+        font-size: 2rem;
+        vertical-align: middle;
+        margin-right: 0.6rem;
+      }
+    }
+
+    &.github-start {
+      width: 245px;
+      display: flex;
+      font-size: 1.285rem;
+
+      iframe {
+        width: 100px;
+        margin-left: 1rem;
+      }
+    }
   }
 
   .header-container {
@@ -75,6 +102,18 @@
     .header-container /deep/ ngx-theme-switcher .dropdown-toggle {
       color: nb-theme(color-white);
       background: transparent;
+    }
+
+    .control-item.email-text a {
+      background-color: nb-theme(header-button-background);
+      color: #ffffff;
+
+      &:hover {
+        $color: nb-theme(header-button-background);
+        $percentage: nb-theme(header-button-background-percentage);
+
+        background-color: tint($color, $percentage);
+      }
     }
   }
 
@@ -184,6 +223,10 @@
   }
 
   @include media-breakpoint-down(is) {
+
+    .control-item.github-start {
+      display: none;
+    }
 
     .header-container {
       .logo {
