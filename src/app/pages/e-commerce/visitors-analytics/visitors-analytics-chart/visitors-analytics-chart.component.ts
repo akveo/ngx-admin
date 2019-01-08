@@ -1,7 +1,8 @@
 import { delay, takeWhile } from 'rxjs/operators';
-import { AfterViewInit, Component, OnDestroy } from '@angular/core';
+import { AfterViewInit, Component, Input, OnDestroy } from '@angular/core';
 import { NbThemeService } from '@nebular/theme';
-import { LayoutService } from '../../../../@core/data/layout.service';
+import { LayoutService } from '../../../../@core/utils';
+import { OutlineData } from '../../../../@core/data/visitors-analytics.service';
 
 @Component({
   selector: 'ngx-visitors-analytics-chart',
@@ -17,49 +18,18 @@ import { LayoutService } from '../../../../@core/data/layout.service';
 export class ECommerceVisitorsAnalyticsChartComponent implements AfterViewInit, OnDestroy {
 
   private alive = true;
-  private innerLinePoints: number[] = [
-    94, 188, 225, 244, 253, 254, 249, 235, 208,
-    173, 141, 118, 105, 97, 94, 96, 104, 121, 147,
-    183, 224, 265, 302, 333, 358, 375, 388, 395,
-    400, 400, 397, 390, 377, 360, 338, 310, 278,
-    241, 204, 166, 130, 98, 71, 49, 32, 20, 13, 9,
-  ];
-  private outerLinePoints: number[] = [
-    85, 71, 59, 50, 45, 42, 41, 44 , 58, 88,
-    136 , 199, 267, 326, 367, 391, 400, 397,
-    376, 319, 200, 104, 60, 41, 36, 37, 44,
-    55, 74, 100 , 131, 159, 180, 193, 199, 200,
-    195, 184, 164, 135, 103, 73, 50, 33, 22, 15, 11,
-  ];
-  private months: string[] = [
-    'Jan', 'Feb', 'Mar',
-    'Apr', 'May', 'Jun',
-    'Jul', 'Aug', 'Sep',
-    'Oct', 'Nov', 'Dec',
-  ];
+
+  @Input() chartData: {
+    innerLine: number[];
+    outerLine: OutlineData[];
+  };
 
   option: any;
-  data: Array<any>;
   themeSubscription: any;
   echartsIntance: any;
 
   constructor(private theme: NbThemeService,
               private layoutService: LayoutService) {
-    const outerLinePointsLength = this.outerLinePoints.length;
-    const monthsLength = this.months.length;
-
-    this.data = this.outerLinePoints.map((p, index) => {
-      const monthIndex = Math.round(index / 4);
-      const label = (index % Math.round(outerLinePointsLength / monthsLength) === 0)
-        ?  this.months[monthIndex]
-        : '';
-
-      return {
-        label,
-        value: p,
-      };
-    });
-
     this.layoutService.onChangeLayoutSize()
       .pipe(
         takeWhile(() => this.alive),
@@ -115,7 +85,7 @@ export class ECommerceVisitorsAnalyticsChartComponent implements AfterViewInit, 
         type: 'category',
         boundaryGap: false,
         offset: 25,
-        data: this.data.map(i => i.label),
+        data: this.chartData.outerLine.map(i => i.label),
         axisTick: {
           show: false,
         },
@@ -204,7 +174,7 @@ export class ECommerceVisitorsAnalyticsChartComponent implements AfterViewInit, 
           }]),
         },
       },
-      data: this.data.map(i => i.value),
+      data: this.chartData.outerLine.map(i => i.value),
     };
   }
 
@@ -244,7 +214,7 @@ export class ECommerceVisitorsAnalyticsChartComponent implements AfterViewInit, 
           opacity: 1,
         },
       },
-      data: this.innerLinePoints,
+      data: this.chartData.innerLine,
     };
   }
 

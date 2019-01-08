@@ -1,9 +1,7 @@
 import { delay, takeWhile } from 'rxjs/operators';
-import { AfterViewInit, Component, OnDestroy } from '@angular/core';
+import { AfterViewInit, Component, Input, OnDestroy } from '@angular/core';
 import { NbThemeService } from '@nebular/theme';
-import { LayoutService } from '../../../../@core/data/layout.service';
-
-const points = [300, 520, 435, 530, 730, 620, 660, 860];
+import { LayoutService } from '../../../../@core/utils';
 
 @Component({
   selector: 'ngx-stats-ares-chart',
@@ -18,6 +16,8 @@ const points = [300, 520, 435, 530, 730, 620, 660, 860];
 export class StatsAreaChartComponent implements AfterViewInit, OnDestroy {
 
   private alive = true;
+
+  @Input() points: number[];
 
   echartsIntance: any;
   option: any = {};
@@ -50,7 +50,7 @@ export class StatsAreaChartComponent implements AfterViewInit, OnDestroy {
           xAxis: {
             type: 'category',
             boundaryGap: false,
-            data: points,
+            data: this.points,
           },
           yAxis: {
             boundaryGap: [0, '5%'],
@@ -111,7 +111,7 @@ export class StatsAreaChartComponent implements AfterViewInit, OnDestroy {
                   color: trafficTheme.shadowLineDarkBg,
                 },
               },
-              data: points.map(p => p - 15),
+              data: this.points.map(p => p - 15),
             },
             {
               type: 'line',
@@ -150,7 +150,7 @@ export class StatsAreaChartComponent implements AfterViewInit, OnDestroy {
                   opacity: 1,
                 },
               },
-              data: points,
+              data: this.points,
             },
           ],
         });

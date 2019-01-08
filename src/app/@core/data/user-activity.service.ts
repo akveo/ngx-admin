@@ -13,6 +13,14 @@ export class UserActive {
 export class UserActivityService {
 
   private getRandom = (roundTo: number) => Math.round(Math.random() * roundTo);
+  private generateUserActivityRandomData(date) {
+    return {
+      date,
+      pagesVisitCount: this.getRandom(1000),
+      deltaUp: this.getRandom(1) % 2 === 0,
+      newVisits: this.getRandom(100),
+    };
+  }
 
   data = {};
 
@@ -26,38 +34,25 @@ export class UserActivityService {
 
   private getDataWeek(): UserActive[] {
     return this.periods.getWeeks().map((week) => {
-      return {
-        date: week,
-        pagesVisitCount: this.getRandom(1000),
-        deltaUp: this.getRandom(1) % 2 === 0,
-        newVisits: this.getRandom(100),
-      };
+      return this.generateUserActivityRandomData(week);
     });
   }
 
   private getDataMonth(): UserActive[] {
-    const date = new Date();
-    const days = date.getDate();
-    const month = this.periods.getMonths()[date.getMonth()];
+    const currentDate = new Date();
+    const days = currentDate.getDate();
+    const month = this.periods.getMonths()[currentDate.getMonth()];
 
     return Array.from(Array(days)).map((_, index) => {
-      return {
-        date: `${index + 1} ${month}`,
-        pagesVisitCount: this.getRandom(1000),
-        deltaUp: this.getRandom(1) % 2 === 0,
-        newVisits: this.getRandom(100),
-      };
+      const date = `${index + 1} ${month}`;
+
+      return this.generateUserActivityRandomData(date);
     });
   }
 
   private getDataYear(): UserActive[] {
     return this.periods.getYears().map((year) => {
-      return {
-        date: year,
-        pagesVisitCount: this.getRandom(1000),
-        deltaUp: this.getRandom(1) % 2 === 0,
-        newVisits: this.getRandom(100),
-      };
+      return this.generateUserActivityRandomData(year);
     });
   }
 

@@ -28,6 +28,7 @@ export class SolarComponent implements AfterViewInit, OnDestroy {
   @Input('chartValue')
   set chartValue(value: number) {
     this.value = value;
+
     if (this.option.series) {
       this.option.series[0].data[0].value = value;
       this.option.series[0].data[1].value = 100 - value;
