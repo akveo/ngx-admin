@@ -4,7 +4,7 @@ import { takeWhile } from 'rxjs/operators';
 
 @Component({
   selector: 'ngx-cta-card',
-  styleUrls: ['./cta-card.component.scss'],
+  styleUrls: ['./call-to-action-card.component.scss'],
   template: `
     <nb-card>
       <div class="icon-container hidden-sm-down">
@@ -25,7 +25,7 @@ import { takeWhile } from 'rxjs/operators';
     </nb-card>
   `,
 })
-export class CtaCardComponent implements OnDestroy {
+export class CallToActionCardComponent implements OnDestroy {
 
   private alive = true;
 
