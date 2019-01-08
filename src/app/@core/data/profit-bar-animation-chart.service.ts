@@ -35,7 +35,7 @@ export class ProfitBarAnimationChartService {
     return Array.from(Array(nPoints));
   }
 
-  getChartData(): Observable<{ firstLine: number[]; secondLine: number[] }> {
+  getChartData(): Observable<{ firstLine: number[]; secondLine: number[]; }> {
     return observableOf(this.data);
   }
 }
