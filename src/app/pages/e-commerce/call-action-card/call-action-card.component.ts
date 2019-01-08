@@ -3,8 +3,8 @@ import { NbThemeService } from '@nebular/theme';
 import { takeWhile } from 'rxjs/operators';
 
 @Component({
-  selector: 'ngx-cta-card',
-  styleUrls: ['./call-to-action-card.component.scss'],
+  selector: 'ngx-call-action-card',
+  styleUrls: ['./call-action-card.component.scss'],
   template: `
     <nb-card>
       <div class="icon-container hidden-sm-down">
@@ -25,7 +25,7 @@ import { takeWhile } from 'rxjs/operators';
     </nb-card>
   `,
 })
-export class CallToActionCardComponent implements OnDestroy {
+export class CallActionCardComponent implements OnDestroy {
 
   private alive = true;
 
