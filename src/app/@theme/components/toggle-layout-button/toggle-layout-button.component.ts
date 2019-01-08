@@ -15,14 +15,17 @@ import { StateService } from '../../../@core/data/state.service';
   `,
 })
 export class ToggleLayoutButtonComponent {
+
   sidebarEnd = false;
   expanded = false;
+
   constructor (private sidebarService: NbSidebarService, protected stateService: StateService) {
     this.stateService.onSidebarState()
       .subscribe(({ id }) => {
         this.sidebarEnd = id === 'end';
       });
   }
+
   toggleSettings() {
     this.sidebarService.toggle(false, 'settings-sidebar');
     this.expanded = !this.expanded;

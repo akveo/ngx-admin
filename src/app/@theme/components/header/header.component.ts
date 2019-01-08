@@ -1,6 +1,6 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 
-import { NbMenuService, NbSidebarService, NbThemeService } from '@nebular/theme';
+import { NbMenuService, NbSidebarService } from '@nebular/theme';
 import { UserService } from '../../../@core/data/users.service';
 import { AnalyticsService } from '../../../@core/utils/analytics.service';
 import { takeWhile } from 'rxjs/operators/takeWhile';
@@ -26,8 +26,7 @@ export class HeaderComponent implements OnInit , OnDestroy {
               private menuService: NbMenuService,
               private userService: UserService,
               private analytics: AnalyticsService,
-              private layoutService: LayoutService,
-              private themeService: NbThemeService) {
+              private layoutService: LayoutService) {
 
     observableFromEvent(document, 'mouseup')
       .pipe(takeWhile(() => this.alive))
@@ -42,12 +41,6 @@ export class HeaderComponent implements OnInit , OnDestroy {
         if (selection && selection.toString() === 'contact@akveo.com') {
           this.analytics.trackEvent('clickContactEmail', 'select');
         }
-      });
-
-    this.themeService.getJsTheme()
-      .pipe(takeWhile(() => this.alive))
-      .subscribe(theme => {
-        this.currentTheme = theme.name;
       });
   }
 

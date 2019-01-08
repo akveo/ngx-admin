@@ -14,7 +14,6 @@ import { takeWhile } from 'rxjs/operators';
 
       <div class="details">
         <div class="title">{{ title }}</div>
-        <ng-content></ng-content>
       </div>
       <div class="actions">
         <a nbButton size="large" hero href="{{ link }}" [ngClass]="{
@@ -28,12 +27,15 @@ import { takeWhile } from 'rxjs/operators';
 })
 export class CtaCardComponent implements OnDestroy {
 
+  private alive = true;
+
   @Input() title: string;
   @Input() type: string;
   @Input() link: string;
   @Input() linkTitle: string;
-  private alive = true;
+
   currentTheme: string;
+
   constructor(private themeService: NbThemeService) {
     this.themeService.getJsTheme()
       .pipe(takeWhile(() => this.alive))

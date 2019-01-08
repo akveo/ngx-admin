@@ -28,14 +28,23 @@
     display: block;
 
     &.email-text {
-      height: auto;
+      display: flex;
+
       a {
         font-size: 1.285rem;
         font-family: nb-theme(font-main);
         text-transform: none;
         vertical-align: middle;
         padding: 0.55rem 1.1rem 0.55rem 0.8rem;
+        background-color: nb-theme(header-button-background);
+        color: nb-theme(header-button-color);
+        border-color: nb-theme(header-button-outline);
+
+        &:hover {
+          background-color: nb-theme(header-button-background-hover);
+        }
       }
+
       i {
         font-size: 2rem;
         vertical-align: middle;
@@ -119,18 +128,6 @@
       color: nb-theme(color-white);
       background: transparent;
     }
-
-    .control-item.email-text a {
-      background-color: nb-theme(header-button-background);
-      color: nb-theme(color-white);
-
-      &:hover {
-        $color: nb-theme(header-button-background);
-        $percentage: nb-theme(header-button-background-percentage);
-
-        background-color: tint($color, $percentage);
-      }
-    }
   }
 
   ngx-layout-direction-switcher {
@@ -210,13 +207,21 @@
 
   @include media-breakpoint-down(xl) {
 
-    .control-item.email, .control-item.notifications {
+    .control-item.search, .control-item.notifications, .control-item.github-start span {
       display: none;
+    }
+
+    .control-item.github-start {
+      width: auto;
+      iframe {
+        margin: 0;
+      }
     }
   }
 
   @include media-breakpoint-down(lg) {
-    .control-item.search {
+
+    nb-user /deep/ .user-name, .control-item.download-count {
       display: none;
     }
   }
@@ -225,6 +230,10 @@
 
     nb-action:not(.toggle-settings) {
       border: none;
+    }
+
+    ngx-theme-switcher {
+      display: none;
     }
 
     .control-item {
@@ -246,11 +255,7 @@
 
   @include media-breakpoint-down(sm) {
 
-    nb-user /deep/ .user-name {
-      display: none;
-    }
-
-    .control-item.github-start {
+    .control-item.email-text {
       display: none;
     }
 
