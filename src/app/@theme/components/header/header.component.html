@@ -14,7 +14,6 @@
     size="medium"
     [class.right]="position === 'normal'"
     [class.left]="position === 'inverse'">
-    <nb-action icon="nb-gear" class="toggle-layout" (click)="toggleSettings()"></nb-action>
     <nb-action *nbIsGranted="['view', 'user']" >
       <nb-user [nbContextMenu]="userMenu" [name]="user?.name" [picture]="user?.picture"></nb-user>
     </nb-action>
