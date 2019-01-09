@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NbSidebarService } from '@nebular/theme';
-import { StateService } from '../../../@core/data/state.service';
+import { StateService } from '../../../@core/utils';
 
 @Component({
   selector: 'ngx-toggle-layout-button',
@@ -19,9 +19,9 @@ export class ToggleLayoutButtonComponent {
   sidebarEnd = false;
   expanded = false;
 
-  constructor (private sidebarService: NbSidebarService, protected stateService: StateService) {
+  constructor(private sidebarService: NbSidebarService, protected stateService: StateService) {
     this.stateService.onSidebarState()
-      .subscribe(({ id }) => {
+      .subscribe(({id}) => {
         this.sidebarEnd = id === 'end';
       });
   }
