@@ -1,4 +1,6 @@
 @import '../../styles/themes';
+@import '~bootstrap/scss/mixins/breakpoints';
+@import '~@nebular/theme/styles/global/breakpoints';
 
 @include nb-install-component() {
   .toggle-layout {
@@ -84,6 +86,12 @@
       @include nb-for-theme(corporate) {
         color: nb-theme(color-warning);
       }
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    .toggle-layout {
+      display: none;
     }
   }
 }
