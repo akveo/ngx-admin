@@ -21,6 +21,10 @@
     }
   }
 
+  /deep/ .leaflet-top, /deep/ .leaflet-bottom {
+    z-index: 997;
+  }
+
   /deep/ .leaflet-bar {
     box-shadow: none;
   }

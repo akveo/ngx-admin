@@ -9,7 +9,7 @@
     border: none;
     transition: transform 0.3s ease, background-image 0.3s ease;
     transform: translate(0, -50%);
-    z-index: 999;
+    z-index: 998;
 
     @include nb-ltr() {
       border-top-left-radius: nb-theme(radius);
