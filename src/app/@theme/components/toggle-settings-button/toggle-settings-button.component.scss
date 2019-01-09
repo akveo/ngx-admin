@@ -1,0 +1,97 @@
+@import '../../styles/themes';
+@import '~bootstrap/scss/mixins/breakpoints';
+@import '~@nebular/theme/styles/global/breakpoints';
+
+@include nb-install-component() {
+  .toggle-settings {
+    position: fixed;
+    top: 50%;
+    height: 8.575rem;
+    width: 8.575rem;
+    border: none;
+    transition: transform 0.3s ease, background-image 0.3s ease;
+    transform: translate(0, -50%);
+    z-index: 998;
+
+    @include nb-ltr() {
+      border-top-left-radius: nb-theme(radius);
+      border-bottom-left-radius: nb-theme(radius);
+      right: 0;
+
+      &.sidebarEnd {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        right: auto;
+        border-top-right-radius: nb-theme(radius);
+        border-bottom-right-radius: nb-theme(radius);
+        left: 0;
+      }
+    }
+
+    @include nb-rtl() {
+      border-top-right-radius: nb-theme(radius);
+      border-bottom-right-radius: nb-theme(radius);
+      left: 0;
+
+      &.sidebarEnd {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        left: auto;
+        border-top-left-radius: nb-theme(radius);
+        border-bottom-left-radius: nb-theme(radius);
+        right: 0;
+      }
+    }
+
+    &.expanded {
+      @include nb-ltr(transform, translate(-19rem, -50%));
+      @include nb-rtl(transform, translate(19rem, -50%));
+
+      &.sidebarEnd {
+        @include nb-rtl(transform, translate(-19rem, -50%));
+        @include nb-ltr(transform, translate(19rem, -50%));
+      }
+    }
+
+    @include nb-for-theme(cosmic) {
+      box-shadow: 0 0 3.4285rem 0 rgba(19, 19, 94, 0.72);
+      background-image: linear-gradient(to right, #a054fe 0%, #7a58ff 100%);
+
+      &.expanded {
+        background-image: linear-gradient(to right, #2f296b 0%, #2f296b 100%);
+      }
+    }
+
+    @include nb-for-theme(default) {
+      border: 1px solid #d5dbe0;
+      box-shadow: 0 8px 24px 0 rgba(48, 59, 67, 0.15);
+      background-color: #ffffff;
+    }
+
+    @include nb-for-theme(corporate) {
+      border: 1px solid #d5dbe0;
+      box-shadow: 0 8px 24px 0 rgba(48, 59, 67, 0.15);
+      color: nb-theme(color-danger);
+      background-color: #ffffff;
+    }
+
+    i {
+      font-size: 6rem;
+      color: #ffffff;
+
+      @include nb-for-theme(default) {
+        color: nb-theme(color-danger);
+      }
+
+      @include nb-for-theme(corporate) {
+        color: nb-theme(color-warning);
+      }
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    .toggle-settings {
+      display: none;
+    }
+  }
+}

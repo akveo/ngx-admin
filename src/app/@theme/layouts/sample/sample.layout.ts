@@ -9,7 +9,7 @@ import {
   NbThemeService,
 } from '@nebular/theme';
 
-import { StateService } from '../../../@core/utils/state.service';
+import { StateService } from '../../../@core/utils';
 
 // TODO: move layouts into the framework
 @Component({
@@ -57,6 +57,7 @@ import { StateService } from '../../../@core/utils/state.service';
         <ngx-theme-settings></ngx-theme-settings>
       </nb-sidebar>
     </nb-layout>
+    <ngx-toggle-settings-button></ngx-toggle-settings-button>
   `,
 })
 export class SampleLayoutComponent implements OnDestroy {
