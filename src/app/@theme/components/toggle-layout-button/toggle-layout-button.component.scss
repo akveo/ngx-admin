@@ -17,6 +17,9 @@
       right: 0;
 
       &.sidebarEnd {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        right: auto;
         border-top-right-radius: nb-theme(radius);
         border-bottom-right-radius: nb-theme(radius);
         left: 0;
@@ -29,6 +32,9 @@
       left: 0;
 
       &.sidebarEnd {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        left: auto;
         border-top-left-radius: nb-theme(radius);
         border-bottom-left-radius: nb-theme(radius);
         right: 0;
