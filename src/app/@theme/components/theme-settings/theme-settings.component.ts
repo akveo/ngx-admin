@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { StateService } from '../../../@core/data/state.service';
+import { StateService } from '../../../@core/utils';
 
 @Component({
   selector: 'ngx-theme-settings',

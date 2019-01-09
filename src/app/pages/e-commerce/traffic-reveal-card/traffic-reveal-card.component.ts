@@ -27,7 +27,9 @@ export class TrafficRevealCardComponent implements OnDestroy {
     this.revealed = !this.revealed;
   }
 
-  setPeriod(value: string): void {
+  setPeriodAngGetData(value: string): void {
+    this.period = value;
+
     this.getTrafficFrontCardData(value);
     this.getTrafficBackCardData(value);
   }

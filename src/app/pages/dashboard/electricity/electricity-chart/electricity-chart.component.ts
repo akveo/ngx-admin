@@ -1,7 +1,8 @@
 import { delay, takeWhile } from 'rxjs/operators';
-import { AfterViewInit, Component, OnDestroy } from '@angular/core';
+import { AfterViewInit, Component, Input, OnDestroy } from '@angular/core';
 import { NbThemeService } from '@nebular/theme';
-import { LayoutService } from '../../../../@core/data/layout.service';
+import { LayoutService } from '../../../../@core/utils';
+import { ElectricityChart } from '../../../../@core/data/electricity.service';
 
 @Component({
   selector: 'ngx-electricity-chart',
@@ -18,23 +19,13 @@ export class ElectricityChartComponent implements AfterViewInit, OnDestroy {
 
   private alive = true;
 
+  @Input() data: ElectricityChart[];
+
   option: any;
-  data: Array<any>;
   echartsIntance: any;
 
   constructor(private theme: NbThemeService,
               private layoutService: LayoutService) {
-
-    const points = [490, 490, 495, 500, 505, 510, 520, 530, 550, 580, 630,
-      720, 800, 840, 860, 870, 870, 860, 840, 800, 720, 200, 145, 130, 130,
-      145, 200, 570, 635, 660, 670, 670, 660, 630, 580, 460, 380, 350, 340,
-      340, 340, 340, 340, 340, 340, 340, 340];
-
-    this.data = points.map((p, index) => ({
-      label: (index % 5 === 3) ? `${Math.round(index / 5)}` : '',
-      value: p,
-    }));
-
     this.layoutService.onChangeLayoutSize()
       .pipe(
         takeWhile(() => this.alive),

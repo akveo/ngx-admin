@@ -1,6 +1,7 @@
 import { Component, OnDestroy } from '@angular/core';
 import { NbMediaBreakpoint, NbMediaBreakpointsService, NbThemeService } from '@nebular/theme';
 import { takeWhile } from 'rxjs/operators';
+import { CountryOrderService } from '../../../@core/data/country-order.service';
 
 @Component({
   selector: 'ngx-country-orders',
@@ -25,33 +26,36 @@ export class CountryOrdersComponent implements OnDestroy {
 
   private alive = true;
 
-  private getRandomData(nPoints: number): number[] {
-    return Array.from(Array(nPoints)).map(() => {
-      return Math.round(Math.random() * 20);
-    });
-  }
-
   countryName = '';
-  countryData = [];
-  countriesCategories = ['Sofas', 'Furniture', 'Lighting', 'Tables', 'Textiles'];
+  countryData: number[] = [];
+  countriesCategories: string[];
   breakpoint: NbMediaBreakpoint = { name: '', width: 0 };
   breakpoints: any;
 
   constructor(private themeService: NbThemeService,
-              private breakpointService: NbMediaBreakpointsService) {
+              private breakpointService: NbMediaBreakpointsService,
+              private countryOrderService: CountryOrderService) {
     this.breakpoints = this.breakpointService.getBreakpointsMap();
     this.themeService.onMediaQueryChange()
       .pipe(takeWhile(() => this.alive))
       .subscribe(([oldValue, newValue]) => {
         this.breakpoint = newValue;
       });
+    this.countryOrderService.getCountriesCategories()
+      .pipe(takeWhile(() => this.alive))
+      .subscribe((countriesCategories) => {
+        this.countriesCategories = countriesCategories;
+      });
   }
 
   selectCountryById(countryName: string) {
-    const nPoint = this.countriesCategories.length;
-
     this.countryName = countryName;
-    this.countryData = this.getRandomData(nPoint);
+
+    this.countryOrderService.getCountriesCategoriesData()
+      .pipe(takeWhile(() => this.alive))
+      .subscribe((countryData) => {
+        this.countryData = countryData;
+      });
   }
 
   ngOnDestroy() {
