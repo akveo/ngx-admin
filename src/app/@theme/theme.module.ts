@@ -50,7 +50,7 @@ import {
   ThemeSwitcherComponent,
   TinyMCEComponent,
   ThemeSwitcherListComponent,
-  ToggleLayoutButtonComponent,
+  ToggleSettingsButtonComponent,
 } from './components';
 import {
   CapitalizePipe,
@@ -122,7 +122,7 @@ const COMPONENTS = [
   SampleLayoutComponent,
   ThreeColumnsLayoutComponent,
   TwoColumnsLayoutComponent,
-  ToggleLayoutButtonComponent,
+  ToggleSettingsButtonComponent,
 ];
 
 const ENTRY_COMPONENTS = [

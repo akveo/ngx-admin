@@ -94,7 +94,7 @@
     }
   }
 
-  .toggle-layout /deep/ a {
+  .toggle-settings /deep/ a {
     display: block;
     text-decoration: none;
     line-height: 1;
@@ -155,7 +155,7 @@
 
   @include media-breakpoint-down(md) {
 
-    nb-action:not(.toggle-layout) {
+    nb-action:not(.toggle-settings) {
       border: none;
     }
 
@@ -163,7 +163,7 @@
       display: none;
     }
 
-    .toggle-layout {
+    .toggle-settings {
       padding: 0;
     }
 
@@ -191,7 +191,7 @@
       }
     }
 
-    .toggle-layout {
+    .toggle-settings {
       display: none;
     }
 
@@ -199,7 +199,7 @@
       display: none;
     }
 
-    nb-action:not(.toggle-layout) {
+    nb-action:not(.toggle-settings) {
       padding: 0;
     }
   }

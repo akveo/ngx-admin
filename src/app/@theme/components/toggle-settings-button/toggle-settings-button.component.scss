@@ -3,7 +3,7 @@
 @import '~@nebular/theme/styles/global/breakpoints';
 
 @include nb-install-component() {
-  .toggle-layout {
+  .toggle-settings {
     position: fixed;
     top: 50%;
     height: 8.575rem;
@@ -90,7 +90,7 @@
   }
 
   @include media-breakpoint-down(sm) {
-    .toggle-layout {
+    .toggle-settings {
       display: none;
     }
   }

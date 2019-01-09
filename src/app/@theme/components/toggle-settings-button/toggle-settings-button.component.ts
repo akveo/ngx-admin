@@ -3,10 +3,10 @@ import { NbSidebarService } from '@nebular/theme';
 import { StateService } from '../../../@core/utils';
 
 @Component({
-  selector: 'ngx-toggle-layout-button',
-  styleUrls: ['./toggle-layout-button.component.scss'],
+  selector: 'ngx-toggle-settings-button',
+  styleUrls: ['./toggle-settings-button.component.scss'],
   template: `
-    <button class="toggle-layout"
+    <button class="toggle-settings"
             (click)="toggleSettings()"
             [class.expanded]="expanded"
             [class.sidebarEnd]="sidebarEnd">
@@ -14,7 +14,7 @@ import { StateService } from '../../../@core/utils';
     </button>
   `,
 })
-export class ToggleLayoutButtonComponent {
+export class ToggleSettingsButtonComponent {
 
   sidebarEnd = false;
   expanded = false;
