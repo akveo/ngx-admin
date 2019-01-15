@@ -55,6 +55,12 @@ export class HeaderComponent implements OnInit , OnDestroy {
     return false;
   }
 
+  toggleSettings(): boolean {
+    this.sidebarService.toggle(false, 'settings-sidebar');
+
+    return false;
+  }
+
   goToHome() {
     this.menuService.navigateHome();
   }
