@@ -8,25 +8,22 @@
   }
 
   nb-sidebar.settings-sidebar {
-    $sidebar-width: 19rem;
+    $sidebar-width: 7.5rem;
 
-    transition: transform 0.3s ease;
+    transition: width 0.3s ease;
     width: $sidebar-width;
     overflow: hidden;
-    @include nb-ltr(transform, translateX(100%));
-    @include nb-rtl(transform, translateX(-100%));
-    &.start {
-      @include nb-ltr(transform, translateX(-100%));
-      @include nb-rtl(transform, translateX(100%));
-    }
 
-    &.expanded, &.expanded.start {
-      transform: translateX(0);
-    }
+    &.collapsed {
+      width: 0;
 
-    /deep/ .scrollable {
-      width: $sidebar-width;
-      padding: 3.4rem 0.25rem;
+      /deep/ .main-container {
+        width: 0;
+        .scrollable {
+          width: $sidebar-width;
+          padding: 1.25rem;
+        }
+      }
     }
 
     /deep/ .main-container {

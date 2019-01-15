@@ -26,10 +26,8 @@ import { StateService } from '../../../@core/utils';
         <i [attr.class]="sidebar.icon"></i>
       </a>
     </div>
-    <div class="settings-row">
-      <div class="switcher">
-        <ngx-layout-direction-switcher></ngx-layout-direction-switcher>
-      </div>
+    <div class="switcher">
+      <ngx-layout-direction-switcher [vertical]="true"></ngx-layout-direction-switcher>
     </div>
   `,
 })
