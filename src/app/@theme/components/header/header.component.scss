@@ -25,13 +25,15 @@
   }
 
   .control-item {
-    display: block;
+    display: flex;
+    font-weight: 500;
 
     &.email-text {
       display: flex;
 
       a {
-        font-size: 1.285rem;
+        font-size: 1.1428rem;
+        font-weight: 700;
         font-family: nb-theme(font-main);
         text-transform: none;
         vertical-align: middle;
