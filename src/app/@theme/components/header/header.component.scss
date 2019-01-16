@@ -61,7 +61,8 @@
 
       iframe {
         width: 100px;
-        margin-left: 1rem;
+        @include nb-ltr(margin-left, 1rem);
+        @include nb-rtl(margin-right, 1rem);
       }
     }
 

@@ -1,6 +1,6 @@
-import { Component, Input, OnDestroy, OnInit } from '@angular/core';
+import { Component, Input,  OnInit } from '@angular/core';
 
-import { NbMenuService, NbSidebarService, NbThemeService } from '@nebular/theme';
+import { NbMenuService, NbSidebarService } from '@nebular/theme';
 import { UserService } from '../../../@core/data/users.service';
 import { AnalyticsService } from '../../../@core/utils';
 import { LayoutService } from '../../../@core/utils';
@@ -10,7 +10,7 @@ import { LayoutService } from '../../../@core/utils';
   styleUrls: ['./header.component.scss'],
   templateUrl: './header.component.html',
 })
-export class HeaderComponent implements OnInit , OnDestroy {
+export class HeaderComponent implements OnInit {
 
   @Input() position = 'normal';
 
@@ -46,9 +46,5 @@ export class HeaderComponent implements OnInit , OnDestroy {
 
   trackEmailClick() {
     this.analytics.trackEvent('clickContactEmail', 'click');
-  }
-
-  ngOnDestroy() {
-    this.alive = false;
   }
 }
