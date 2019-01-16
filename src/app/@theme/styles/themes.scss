@@ -7,10 +7,11 @@
 $nb-enabled-themes: (default, cosmic, corporate);
 
 $nb-themes: nb-register-theme((
- // app wise variables for each theme
+  // app wise variables for each theme
   sidebar-header-gap: 2rem,
   sidebar-header-height: initial,
   layout-content-width: 1400px,
+  header-height: 5.45rem,
 
   font-main: Roboto,
   font-secondary: Exo,
@@ -18,6 +19,11 @@ $nb-themes: nb-register-theme((
   switcher-background: #ebeff5,
   switcher-background-percentage: 50%,
   drops-icon-line-gadient: -webkit-linear-gradient(#01dbb5, #0bbb79),
+
+  header-button-background: #f5f7fa,
+  header-button-background-hover: #ebeff5,
+  header-button-color: #2a2a2a,
+  header-button-outline: #42db7d,
 
   list-item-border-width: 1px,
 
@@ -46,6 +52,7 @@ $nb-themes: nb-register-theme((
   sidebar-header-gap: 2rem,
   sidebar-header-height: initial,
   layout-content-width: 1400px,
+  header-height: 5.45rem,
 
   font-main: Roboto,
   font-secondary: Exo,
@@ -53,6 +60,11 @@ $nb-themes: nb-register-theme((
   switcher-background: #4e41a5,
   switcher-background-percentage: 14%,
   drops-icon-line-gadient: -webkit-linear-gradient(#a258fe, #7958fa),
+
+  header-button-background: #4e41a5,
+  header-button-background-hover: #675cb2,
+  header-button-color: #ffffff,
+  header-button-outline: #7659ff,
 
   list-item-border-width: 1px,
 
@@ -81,6 +93,7 @@ $nb-themes: nb-register-theme((
   sidebar-header-gap: 2rem,
   sidebar-header-height: initial,
   layout-content-width: 1400px,
+  header-height: 5.45rem,
 
   font-main: Roboto,
   font-secondary: Exo,
@@ -88,6 +101,11 @@ $nb-themes: nb-register-theme((
   switcher-background: #2b2d34,
   switcher-background-percentage: 14%,
   drops-icon-line-gadient: -webkit-linear-gradient(#e9e8eb, #a7a2be),
+
+  header-button-background: #2b2d34,
+  header-button-background-hover: #494a50,
+  header-button-color: #ffffff,
+  header-button-outline: #a4abb3,
 
   list-item-border-width: 1px,
 
