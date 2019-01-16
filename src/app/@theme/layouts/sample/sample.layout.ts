@@ -19,6 +19,7 @@ import { StateService } from '../../../@core/utils';
     <nb-layout [center]="layout.id === 'center-column'" windowMode>
       <nb-layout-header fixed>
         <ngx-header [position]="sidebar.id === 'start' ? 'normal': 'inverse'"></ngx-header>
+        <ngx-toggle-settings-button></ngx-toggle-settings-button>
       </nb-layout-header>
 
       <nb-sidebar class="menu-sidebar"
@@ -57,7 +58,6 @@ import { StateService } from '../../../@core/utils';
         <ngx-theme-settings></ngx-theme-settings>
       </nb-sidebar>
     </nb-layout>
-    <ngx-toggle-settings-button></ngx-toggle-settings-button>
   `,
 })
 export class SampleLayoutComponent implements OnDestroy {
