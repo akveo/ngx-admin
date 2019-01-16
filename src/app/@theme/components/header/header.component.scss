@@ -73,7 +73,8 @@
 
       .icon {
         fill: nb-theme(color-white);
-        margin-right: 0.5rem;
+        @include nb-ltr(margin-right, 0.5rem);
+        @include nb-rtl(margin-left, 0.5rem);
         font-size: 0;
 
         @include nb-for-theme(default) {
