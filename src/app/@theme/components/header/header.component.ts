@@ -1,10 +1,9 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 
-import { NbMenuService, NbSidebarService } from '@nebular/theme';
+import { NbMenuService, NbSidebarService, NbThemeService } from '@nebular/theme';
 import { UserService } from '../../../@core/data/users.service';
-import { AnalyticsService } from '../../../@core/utils/analytics.service';
 import { takeWhile } from 'rxjs/operators/takeWhile';
-import { fromEvent as observableFromEvent } from 'rxjs/observable/fromEvent';
+import { AnalyticsService } from '../../../@core/utils';
 import { LayoutService } from '../../../@core/utils';
 
 @Component({
@@ -17,29 +16,24 @@ export class HeaderComponent implements OnInit , OnDestroy {
   @Input() position = 'normal';
 
   user: any;
+
   userMenu = [{ title: 'Profile' }, { title: 'Log out' }];
 
   private alive = true;
+
+  currentTheme: string;
 
   constructor(private sidebarService: NbSidebarService,
               private menuService: NbMenuService,
               private userService: UserService,
               private analytics: AnalyticsService,
-              private layoutService: LayoutService) {
+              private layoutService: LayoutService,
+              private themeService: NbThemeService) {
 
-    observableFromEvent(document, 'mouseup')
+    this.themeService.getJsTheme()
       .pipe(takeWhile(() => this.alive))
-      .subscribe(() => {
-        let selection: any;
-        if (window.getSelection) {
-          selection = window.getSelection();
-        } else if ((<any> document).selection) {
-          selection = (<any> document).selection.createRange();
-        }
-
-        if (selection && selection.toString() === 'contact@akveo.com') {
-          this.analytics.trackEvent('clickContactEmail', 'select');
-        }
+      .subscribe(theme => {
+        this.currentTheme = theme.name;
       });
   }
 
@@ -51,12 +45,6 @@ export class HeaderComponent implements OnInit , OnDestroy {
   toggleSidebar(): boolean {
     this.sidebarService.toggle(true, 'menu-sidebar');
     this.layoutService.changeLayoutSize();
-
-    return false;
-  }
-
-  toggleSettings(): boolean {
-    this.sidebarService.toggle(false, 'settings-sidebar');
 
     return false;
   }
