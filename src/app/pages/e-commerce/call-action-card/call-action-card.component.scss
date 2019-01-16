@@ -1,0 +1,99 @@
+@import '../../../@theme/styles/themes';
+@import '~@nebular/theme/styles/global/breakpoints';
+
+@include nb-install-component() {
+  nb-card {
+    flex-direction: row;
+    align-items: center;
+    height: 6rem;
+    overflow: visible;
+
+    $shadow: nb-theme(btn-hero-shadow);
+    box-shadow: $shadow;
+
+    .icon-container {
+      height: 100%;
+      padding: 0;
+
+      @include nb-for-theme(cosmic) {
+        background-image: linear-gradient(to right, #a054fe 0%, #7a58ff 100%);
+      }
+
+      @include nb-for-theme(corporate) {
+        background-image: linear-gradient(to right, #ff9f6f 0%, #ff9f6f 100%);
+      }
+
+      @include nb-for-theme(default) {
+        background-image: linear-gradient(to right, #ff4c6f 0%, #ff4c9f 100%);
+      }
+
+      @include nb-ltr(border-radius, nb-theme(card-border-radius) 0 0 nb-theme(card-border-radius));
+      @include nb-rtl(border-radius, 0 nb-theme(card-border-radius) nb-theme(card-border-radius) 0);
+
+      @include media-breakpoint-down(lg) {
+        display: none;
+      }
+    }
+
+    .icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 7rem;
+      height: 100%;
+      font-size: 3.2rem;
+      border-radius: nb-theme(card-border-radius);
+      transition: width 0.4s ease;
+      transform: translate3d(0, 0, 0);
+      -webkit-transform-style: preserve-3d;
+      -webkit-backface-visibility: hidden;
+
+      /deep/ svg {
+        width: 2.6rem;
+        height: 2.6rem;
+        vertical-align: middle;
+        fill: nb-theme(color-white);
+      }
+    }
+
+    .details {
+      flex: 1 1 auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 100%;
+      @include nb-ltr(padding, 0 0.5rem 0 1.15rem);
+      @include nb-rtl(padding, 0 1.15rem 0 0.5rem);
+      border-left: 1px solid transparent;
+    }
+
+    .title {
+      font-family: nb-theme(font-secondary);
+      font-size: 1.25rem;
+      font-weight: nb-theme(font-weight-bold);
+      color: nb-theme(card-fg-heading);
+    }
+
+    .status {
+      font-size: 1rem;
+      font-weight: nb-theme(font-weight-light);
+      text-transform: uppercase;
+      color: nb-theme(card-fg);
+    }
+
+    .actions {
+      @include nb-ltr(padding, 0 1.15rem 0 0.5rem);
+      @include nb-rtl(padding, 0 0.5rem 0 1.15rem);
+    }
+
+    [nbButton] {
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+      min-width: 11.4rem;
+      font-weight: 800;
+      font-size: 1.15rem;
+      text-shadow: 0 0 16px rgba(0, 0, 0, 0.16);
+      box-shadow: none;
+    }
+  }
+}

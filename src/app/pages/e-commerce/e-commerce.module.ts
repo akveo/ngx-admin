@@ -4,6 +4,7 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 import { ThemeModule } from '../../@theme/theme.module';
 import { ECommerceComponent } from './e-commerce.component';
+import { CallActionCardComponent } from './call-action-card/call-action-card.component';
 import { ProfitCardComponent } from './profit-card/profit-card.component';
 import { ECommerceChartsPanelComponent } from './charts-panel/charts-panel.component';
 import { OrdersChartComponent } from './charts-panel/charts/orders-chart.component';
@@ -56,6 +57,7 @@ import { EarningLiveUpdateChartComponent } from './earning-card/front-side/earni
   ],
   declarations: [
     ECommerceComponent,
+    CallActionCardComponent,
     StatsCardFrontComponent,
     StatsAreaChartComponent,
     StatsBarAnimationChartComponent,
