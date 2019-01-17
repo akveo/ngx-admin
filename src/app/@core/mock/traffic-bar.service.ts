@@ -4,7 +4,7 @@ import { PeriodsService } from './periods.service';
 import { TrafficBarData, TrafficBar } from '../data/traffic-bar.interface';
 
 @Injectable()
-export class TrafficBarService extends TrafficBarData{
+export class TrafficBarService extends TrafficBarData {
 
   private data = { };
 

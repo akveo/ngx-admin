@@ -3,7 +3,7 @@ import { PeriodsService } from './periods.service';
 import { OrdersChart, OrdersChartData } from '../data/orders-chart.interface';
 
 @Injectable()
-export class OrdersChartService extends OrdersChartData{
+export class OrdersChartService extends OrdersChartData {
 
   private year = [
     '2012',

@@ -3,7 +3,7 @@ import { of as observableOf, Observable } from 'rxjs';
 import { CountryOrderData } from '../data/country-order.interface';
 
 @Injectable()
-export class CountryOrderService extends CountryOrderData{
+export class CountryOrderService extends CountryOrderData {
 
   private countriesCategories = [
     'Sofas',
