@@ -41,6 +41,7 @@
         background-color: nb-theme(header-button-background);
         color: nb-theme(header-button-color);
         border-color: nb-theme(header-button-outline);
+        cursor: pointer;
 
         &:hover {
           background-color: nb-theme(header-button-background-hover);
