@@ -51,7 +51,7 @@ export class CountryOrdersComponent implements OnDestroy {
   selectCountryById(countryName: string) {
     this.countryName = countryName;
 
-    this.countryOrderService.getCountriesCategoriesData()
+    this.countryOrderService.getCountriesCategoriesData(countryName)
       .pipe(takeWhile(() => this.alive))
       .subscribe((countryData) => {
         this.countryData = countryData;

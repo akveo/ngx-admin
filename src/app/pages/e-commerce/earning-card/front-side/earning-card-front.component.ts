@@ -42,7 +42,7 @@ export class EarningCardFrontComponent implements OnDestroy, OnInit {
   }
 
   private getEarningCardData(currency) {
-    this.earningService.getEarningLiveUpdateCardData(currency)
+    this.earningService.getEarningCardData(currency)
       .pipe(takeWhile(() => this.alive))
       .subscribe((earningLiveUpdateCardData: LiveUpdateChart) => {
         this.earningLiveUpdateCardData = earningLiveUpdateCardData;
@@ -60,7 +60,7 @@ export class EarningCardFrontComponent implements OnDestroy, OnInit {
     this.intervalSubscription = interval(200)
       .pipe(
         takeWhile(() => this.alive),
-        switchMap(() => this.earningService.generateRandomEarningData(currency)),
+        switchMap(() => this.earningService.getEarningLiveUpdateCardData(currency)),
       )
       .subscribe((liveUpdateChartData: any[]) => {
         this.liveUpdateChartData = [...liveUpdateChartData];

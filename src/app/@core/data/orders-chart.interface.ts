@@ -4,6 +4,5 @@ export interface OrdersChart {
 }
 
 export abstract class OrdersChartData {
-  abstract getDataLabels(nPoints: number, labelsArray: string[]): string[];
   abstract getOrdersChartData(period: string): OrdersChart;
 }
