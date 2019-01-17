@@ -2,7 +2,7 @@ import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { NbThemeService } from '@nebular/theme';
 import { interval , Subscription } from 'rxjs';
 import { switchMap, takeWhile } from 'rxjs/operators';
-import { EarningService, LiveUpdateChart } from '../../../../@core/data/earning.service';
+import { LiveUpdateChart, EarningData } from '../../../../@core/data/earning.interface';
 
 @Component({
   selector: 'ngx-earning-card-front',
@@ -21,7 +21,7 @@ export class EarningCardFrontComponent implements OnDestroy, OnInit {
   liveUpdateChartData: { value: [string, number] }[];
 
   constructor(private themeService: NbThemeService,
-              private earningService: EarningService) {
+              private earningService: EarningData) {
     this.themeService.getJsTheme()
       .pipe(takeWhile(() => this.alive))
       .subscribe(theme => {
@@ -44,7 +44,7 @@ export class EarningCardFrontComponent implements OnDestroy, OnInit {
   private getEarningCardData(currency) {
     this.earningService.getEarningLiveUpdateCardData(currency)
       .pipe(takeWhile(() => this.alive))
-      .subscribe((earningLiveUpdateCardData) => {
+      .subscribe((earningLiveUpdateCardData: LiveUpdateChart) => {
         this.earningLiveUpdateCardData = earningLiveUpdateCardData;
         this.liveUpdateChartData = earningLiveUpdateCardData.liveChart;
 
@@ -62,7 +62,7 @@ export class EarningCardFrontComponent implements OnDestroy, OnInit {
         takeWhile(() => this.alive),
         switchMap(() => this.earningService.generateRandomEarningData(currency)),
       )
-      .subscribe((liveUpdateChartData) => {
+      .subscribe((liveUpdateChartData: any[]) => {
         this.liveUpdateChartData = [...liveUpdateChartData];
       });
   }
