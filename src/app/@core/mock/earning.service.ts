@@ -79,7 +79,7 @@ export class EarningService extends EarningData {
     };
   }
 
-  generateRandomEarningData(currency): Observable<any[]> {
+  getEarningLiveUpdateCardData(currency): Observable<any[]> {
     const data = this.liveUpdateChartData[currency.toLowerCase()];
     const newValue = this.generateRandomLiveChartData();
 
@@ -89,7 +89,7 @@ export class EarningService extends EarningData {
     return observableOf(data.liveChart);
   }
 
-  getEarningLiveUpdateCardData(currency: string): Observable<LiveUpdateChart> {
+  getEarningCardData(currency: string): Observable<LiveUpdateChart> {
     const data = this.liveUpdateChartData[currency.toLowerCase()];
 
     data.liveChart = this.getDefaultLiveChartData(150);
