@@ -14,6 +14,7 @@ export class AbService {
   static readonly VARIANT_HIGHLIGHT_HIRE = 'highlight-hire';
   static readonly VARIANT_DEVELOPERS_HIRE = 'developers-hire';
   static readonly VARIANT_SOLUTION_HIRE = 'solution-hire';
+  static readonly VARIANT_HIDE_CALL_ACTION = 'call-action-hide';
   // static readonly VARIANT_BANNER_HIRE = 'banner-hire';
 
   private static readonly EVENT_NAME = 'ab-variant';
