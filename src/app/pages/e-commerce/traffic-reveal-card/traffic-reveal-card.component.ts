@@ -1,7 +1,7 @@
 import { Component, OnDestroy } from '@angular/core';
-import { TrafficList, TrafficListService } from '../../../@core/data/traffic-list.service';
+import { TrafficList, TrafficListData } from '../../../@core/data/traffic-list';
+import { TrafficBarData, TrafficBar } from '../../../@core/data/traffic-bar';
 import { takeWhile } from 'rxjs/operators';
-import { TrafficBar, TrafficBarService } from '../../../@core/data/traffic-bar.service';
 
 @Component({
   selector: 'ngx-traffic-reveal-card',
@@ -17,8 +17,8 @@ export class TrafficRevealCardComponent implements OnDestroy {
   revealed = false;
   period: string = 'week';
 
-  constructor(private trafficListService: TrafficListService,
-              private trafficBarService: TrafficBarService) {
+  constructor(private trafficListService: TrafficListData,
+              private trafficBarService: TrafficBarData) {
     this.getTrafficFrontCardData(this.period);
     this.getTrafficBackCardData(this.period);
   }

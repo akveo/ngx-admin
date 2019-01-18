@@ -1,5 +1,5 @@
 import { Component, OnDestroy } from '@angular/core';
-import { ProgressInfo, StatsProgressBarService } from '../../../@core/data/stats-progress-bar.service';
+import { ProgressInfo, StatsProgressBarData } from '../../../@core/data/stats-progress-bar';
 import { takeWhile } from 'rxjs/operators';
 
 @Component({
@@ -13,7 +13,7 @@ export class ECommerceProgressSectionComponent implements OnDestroy {
 
   progressInfoData: ProgressInfo[];
 
-  constructor(private statsProgressBarService: StatsProgressBarService) {
+  constructor(private statsProgressBarService: StatsProgressBarData) {
     this.statsProgressBarService.getProgressInfoData()
       .pipe(takeWhile(() => this.alive))
       .subscribe((data) => {

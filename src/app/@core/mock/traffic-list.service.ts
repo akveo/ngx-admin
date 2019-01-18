@@ -1,29 +1,16 @@
 import { Injectable } from '@angular/core';
 import { of as observableOf,  Observable } from 'rxjs';
 import { PeriodsService } from './periods.service';
-
-export class TrafficList {
-  date: string;
-  value: number;
-  delta: {
-    up: boolean;
-    value: number;
-  };
-  comparison: {
-    prevDate: string;
-    prevValue: number;
-    nextDate: string;
-    nextValue: number;
-  };
-}
+import { TrafficList, TrafficListData } from '../data/traffic-list';
 
 @Injectable()
-export class TrafficListService {
+export class TrafficListService extends TrafficListData {
 
   private getRandom = (roundTo: number) => Math.round(Math.random() * roundTo);
   private data = {};
 
   constructor(private period: PeriodsService) {
+    super();
     this.data = {
       week: this.getDataWeek(),
       month: this.getDataMonth(),

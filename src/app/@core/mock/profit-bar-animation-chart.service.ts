@@ -1,12 +1,14 @@
 import { Injectable } from '@angular/core';
 import { of as observableOf,  Observable } from 'rxjs';
+import { ProfitBarAnimationChartData } from '../data/profit-bar-animation-chart';
 
 @Injectable()
-export class ProfitBarAnimationChartService {
+export class ProfitBarAnimationChartService extends ProfitBarAnimationChartData {
 
   private data: any;
 
   constructor() {
+    super();
     this.data = {
       firstLine: this.getDataForFirstLine(),
       secondLine: this.getDataForSecondLine(),

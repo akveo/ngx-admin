@@ -1,13 +1,9 @@
 import { Injectable } from '@angular/core';
 import { PeriodsService } from './periods.service';
-
-export class OrdersChart {
-  chartLabel: string[];
-  linesData: number[][];
-}
+import { OrdersChart, OrdersChartData } from '../data/orders-chart';
 
 @Injectable()
-export class OrdersChartService {
+export class OrdersChartService extends OrdersChartData {
 
   private year = [
     '2012',
@@ -22,6 +18,7 @@ export class OrdersChartService {
   private data = { };
 
   constructor(private period: PeriodsService) {
+    super();
     this.data = {
       week: this.getDataForWeekPeriod(),
       month: this.getDataForMonthPeriod(),

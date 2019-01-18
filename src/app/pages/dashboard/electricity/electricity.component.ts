@@ -1,7 +1,7 @@
 import { Component, OnDestroy } from '@angular/core';
 import { NbThemeService } from '@nebular/theme';
 
-import { Electricity, ElectricityChart, ElectricityService } from '../../../@core/data/electricity.service';
+import { Electricity, ElectricityChart, ElectricityData } from '../../../@core/data/electricity';
 import { takeWhile } from 'rxjs/operators';
 import { forkJoin } from 'rxjs';
 
@@ -23,7 +23,7 @@ export class ElectricityComponent implements OnDestroy {
   currentTheme: string;
   themeSubscription: any;
 
-  constructor(private electricityService: ElectricityService,
+  constructor(private electricityService: ElectricityData,
               private themeService: NbThemeService) {
     this.themeService.getJsTheme()
       .pipe(takeWhile(() => this.alive))
@@ -36,7 +36,7 @@ export class ElectricityComponent implements OnDestroy {
       this.electricityService.getChartData(),
     )
       .pipe(takeWhile(() => this.alive))
-      .subscribe(([listData, chartData]) => {
+      .subscribe(([listData, chartData]: [Electricity[], ElectricityChart[]] ) => {
         this.listData = listData;
         this.chartData = chartData;
       });

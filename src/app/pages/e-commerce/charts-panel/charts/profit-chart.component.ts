@@ -2,7 +2,7 @@ import { AfterViewInit, Component, Input, OnChanges, OnDestroy } from '@angular/
 import { NbThemeService } from '@nebular/theme';
 import { takeWhile } from 'rxjs/operators';
 
-import { ProfitChart } from '../../../../@core/data/profit-chart.service';
+import { ProfitChart } from '../../../../@core/data/profit-chart';
 import { LayoutService } from '../../../../@core/utils/layout.service';
 
 @Component({

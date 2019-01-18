@@ -1,27 +1,9 @@
 import { Injectable } from '@angular/core';
 import { of as observableOf, Observable } from 'rxjs';
-
-class Month {
-  month: string;
-  delta: string;
-  down: boolean;
-  kWatts: string;
-  cost: string;
-}
-
-export class Electricity {
-  title: string;
-  active?: boolean;
-  months: Month[];
-}
-
-export class ElectricityChart {
-  label: string;
-  value: number;
-}
+import { Electricity, ElectricityChart, ElectricityData } from '../data/electricity';
 
 @Injectable()
-export class ElectricityService {
+export class ElectricityService extends ElectricityData {
 
   private listData: Electricity[] = [
     {
@@ -96,6 +78,7 @@ export class ElectricityService {
   chartData: ElectricityChart[];
 
   constructor() {
+    super();
     this.chartData = this.chartPoints.map((p, index) => ({
       label: (index % 5 === 3) ? `${Math.round(index / 5)}` : '',
       value: p,

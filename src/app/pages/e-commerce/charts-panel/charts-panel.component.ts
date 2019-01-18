@@ -3,9 +3,9 @@ import { takeWhile } from 'rxjs/operators';
 
 import { OrdersChartComponent } from './charts/orders-chart.component';
 import { ProfitChartComponent } from './charts/profit-chart.component';
-import { OrdersChart } from '../../../@core/data/orders-chart.service';
-import { ProfitChart } from '../../../@core/data/profit-chart.service';
-import { OrdersProfitChartService, OrderProfitChartSummary } from '../../../@core/data/orders-profit-chart.service';
+import { OrdersChart } from '../../../@core/data/orders-chart';
+import { ProfitChart } from '../../../@core/data/profit-chart';
+import { OrderProfitChartSummary, OrdersProfitChartData } from '../../../@core/data/orders-profit-chart';
 
 @Component({
   selector: 'ngx-ecommerce-charts',
@@ -24,7 +24,7 @@ export class ECommerceChartsPanelComponent implements OnDestroy {
   @ViewChild('ordersChart') ordersChart: OrdersChartComponent;
   @ViewChild('profitChart') profitChart: ProfitChartComponent;
 
-  constructor(private ordersProfitChartService: OrdersProfitChartService) {
+  constructor(private ordersProfitChartService: OrdersProfitChartData) {
     this.ordersProfitChartService.getOrderProfitChartSummary()
       .pipe(takeWhile(() => this.alive))
       .subscribe((summary) => {

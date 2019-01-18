@@ -1,23 +1,9 @@
-
 import { of as observableOf,  Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
-
-class User {
-  name: string;
-  picture: string;
-}
-
-export class Contacts {
-  user: User;
-  type: string;
-}
-
-export class RecentUsers extends Contacts {
-  time: number;
-}
+import { Contacts, RecentUsers, UserData } from '../data/users';
 
 @Injectable()
-export class UserService {
+export class UserService extends UserData {
 
   private time: Date = new Date;
 

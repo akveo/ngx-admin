@@ -2,7 +2,7 @@ import { Component, OnDestroy } from '@angular/core';
 import { NbThemeService } from '@nebular/theme';
 import { takeWhile } from 'rxjs/operators';
 
-import { UserActivityService, UserActive } from '../../../@core/data/user-activity.service';
+import { UserActivityData, UserActive } from '../../../@core/data/user-activity';
 
 @Component({
   selector: 'ngx-user-activity',
@@ -59,7 +59,7 @@ export class ECommerceUserActivityComponent implements OnDestroy {
   currentTheme: string;
 
   constructor(private themeService: NbThemeService,
-              private userActivityService: UserActivityService) {
+              private userActivityService: UserActivityData) {
     this.themeService.getJsTheme()
       .pipe(takeWhile(() => this.alive))
       .subscribe(theme => {

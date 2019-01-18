@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { of as observableOf, Observable } from 'rxjs';
+import { CountryOrderData } from '../data/country-order';
 
 @Injectable()
-export class CountryOrderService {
+export class CountryOrderService extends CountryOrderData {
 
   private countriesCategories = [
     'Sofas',
@@ -22,7 +23,7 @@ export class CountryOrderService {
     return observableOf(this.countriesCategories);
   }
 
-  getCountriesCategoriesData(): Observable<number[]> {
+  getCountriesCategoriesData(country: string): Observable<number[]> {
     return observableOf(this.generateRandomData(this.countriesCategoriesLength));
   }
 }

@@ -1,16 +1,13 @@
 import { Injectable } from '@angular/core';
 import { of as observableOf, Observable } from 'rxjs';
 import { PeriodsService } from './periods.service';
-
-export class OutlineData {
-  label: string;
-  value: number;
-}
+import { OutlineData, VisitorsAnalyticsData } from '../data/visitors-analytics';
 
 @Injectable()
-export class VisitorsAnalyticsService {
+export class VisitorsAnalyticsService extends VisitorsAnalyticsData {
 
   constructor(private periodService: PeriodsService) {
+    super();
   }
 
   private pieChartValue = 75;

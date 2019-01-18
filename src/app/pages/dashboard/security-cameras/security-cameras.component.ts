@@ -1,5 +1,5 @@
 import { Component, OnDestroy } from '@angular/core';
-import { Camera, SecurityCamerasService } from '../../../@core/data/security-cameras.service';
+import { Camera, SecurityCamerasData } from '../../../@core/data/security-cameras';
 import { takeWhile } from 'rxjs/operators';
 
 @Component({
@@ -15,7 +15,7 @@ export class SecurityCamerasComponent implements OnDestroy {
   selectedCamera: Camera;
   isSingleView = false;
 
-  constructor(private securityCamerasService: SecurityCamerasService) {
+  constructor(private securityCamerasService: SecurityCamerasData) {
     this.securityCamerasService.getCamerasData()
       .pipe(takeWhile(() => this.alive))
       .subscribe((cameras: Camera[]) => {

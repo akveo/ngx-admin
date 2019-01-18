@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ProfitBarAnimationChartService } from '../../../../@core/data/profit-bar-animation-chart.service';
+import { ProfitBarAnimationChartData } from '../../../../@core/data/profit-bar-animation-chart';
 import { takeWhile } from 'rxjs/operators';
 
 @Component({
@@ -13,7 +13,7 @@ export class StatsCardFrontComponent {
 
   linesData: { firstLine: number[]; secondLine: number[] };
 
-  constructor(private profitBarAnimationChartService: ProfitBarAnimationChartService) {
+  constructor(private profitBarAnimationChartService: ProfitBarAnimationChartData) {
     this.profitBarAnimationChartService.getChartData()
       .pipe(takeWhile(() => this.alive))
       .subscribe((linesData) => {

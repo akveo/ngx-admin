@@ -1,7 +1,7 @@
 import { Component, OnDestroy } from '@angular/core';
 import { NbThemeService } from '@nebular/theme';
 import { takeWhile } from 'rxjs/operators';
-import { TrafficChartService } from '../../../@core/data/traffic-chart.service';
+import { TrafficChartData } from '../../../@core/data/traffic-chart';
 
 @Component({
   selector: 'ngx-traffic',
@@ -36,7 +36,7 @@ export class TrafficComponent implements OnDestroy {
   currentTheme: string;
 
   constructor(private themeService: NbThemeService,
-              private trafficChartService: TrafficChartService) {
+              private trafficChartService: TrafficChartData) {
     this.themeService.getJsTheme()
       .pipe(takeWhile(() => this.alive))
       .subscribe(theme => {

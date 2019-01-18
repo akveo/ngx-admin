@@ -1,15 +1,9 @@
 import { Injectable } from '@angular/core';
 import { of as observableOf, Observable } from 'rxjs';
-
-export class ProgressInfo {
-  title: string;
-  value: number;
-  activeProgress: number;
-  description: string;
-}
+import { ProgressInfo, StatsProgressBarData } from '../data/stats-progress-bar';
 
 @Injectable()
-export class StatsProgressBarService {
+export class StatsProgressBarService extends StatsProgressBarData {
   private progressInfoData: ProgressInfo[] = [
     {
       title: 'Today’s Profit',

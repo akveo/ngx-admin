@@ -3,7 +3,7 @@ import { NbThemeService, NbMediaBreakpoint, NbMediaBreakpointsService } from '@n
 import { takeWhile } from 'rxjs/operators';
 import { forkJoin } from 'rxjs';
 
-import { Contacts, RecentUsers, UserService } from '../../../@core/data/users.service';
+import { Contacts, RecentUsers, UserData } from '../../../@core/data/users';
 
 @Component({
   selector: 'ngx-contacts',
@@ -19,7 +19,7 @@ export class ContactsComponent implements OnDestroy {
   breakpoint: NbMediaBreakpoint;
   breakpoints: any;
 
-  constructor(private userService: UserService,
+  constructor(private userService: UserData,
               private themeService: NbThemeService,
               private breakpointService: NbMediaBreakpointsService) {
     this.breakpoints = this.breakpointService.getBreakpointsMap();

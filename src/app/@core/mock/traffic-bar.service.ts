@@ -1,19 +1,15 @@
 import { Injectable } from '@angular/core';
 import { of as observableOf,  Observable } from 'rxjs';
 import { PeriodsService } from './periods.service';
-
-export class TrafficBar {
-  data: number[];
-  labels: string[];
-  formatter: string;
-}
+import { TrafficBarData, TrafficBar } from '../data/traffic-bar';
 
 @Injectable()
-export class TrafficBarService {
+export class TrafficBarService extends TrafficBarData {
 
   private data = { };
 
   constructor(private period: PeriodsService) {
+    super();
     this.data = {
       week: this.getDataForWeekPeriod(),
       month: this.getDataForMonthPeriod(),
