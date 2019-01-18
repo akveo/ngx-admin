@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { of as observableOf, Observable } from 'rxjs';
-import { StatsBarData } from '../data/stats-bar.interface';
+import { StatsBarData } from '../data/stats-bar';
 
 @Injectable()
 export class StatsBarService extends StatsBarData {

@@ -1,6 +1,6 @@
 import { Observable } from 'rxjs';
-import { OrdersChart } from './orders-chart.interface';
-import { ProfitChart  } from './profit-chart.interface';
+import { OrdersChart } from './orders-chart';
+import { ProfitChart  } from './profit-chart';
 
 export interface OrderProfitChartSummary {
   title: string;

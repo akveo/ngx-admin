@@ -1,7 +1,7 @@
 import { Component, OnDestroy } from '@angular/core';
 import { NbMediaBreakpoint, NbMediaBreakpointsService, NbThemeService } from '@nebular/theme';
 import { takeWhile } from 'rxjs/operators';
-import { CountryOrderData } from '../../../@core/data/country-order.interface';
+import { CountryOrderData } from '../../../@core/data/country-order';
 
 @Component({
   selector: 'ngx-country-orders',

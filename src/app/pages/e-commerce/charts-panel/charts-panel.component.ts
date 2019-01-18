@@ -3,9 +3,9 @@ import { takeWhile } from 'rxjs/operators';
 
 import { OrdersChartComponent } from './charts/orders-chart.component';
 import { ProfitChartComponent } from './charts/profit-chart.component';
-import { OrdersChart } from '../../../@core/data/orders-chart.interface';
-import { ProfitChart } from '../../../@core/data/profit-chart.interface';
-import { OrderProfitChartSummary, OrdersProfitChartData } from '../../../@core/data/orders-profit-chart.interface';
+import { OrdersChart } from '../../../@core/data/orders-chart';
+import { ProfitChart } from '../../../@core/data/profit-chart';
+import { OrderProfitChartSummary, OrdersProfitChartData } from '../../../@core/data/orders-profit-chart';
 
 @Component({
   selector: 'ngx-ecommerce-charts',

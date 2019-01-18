@@ -11,25 +11,25 @@ import {
   PlayerService,
   StateService,
 } from './utils';
-import { UserData } from './data/users.interface';
-import { ElectricityData } from './data/electricity.interface';
-import { SmartTableData } from './data/smart-table.interface';
-import { UserActivityData } from './data/user-activity.interface';
-import { OrdersChartData } from './data/orders-chart.interface';
-import { ProfitChartData } from './data/profit-chart.interface';
-import { TrafficListData } from './data/traffic-list.interface';
-import { EarningData } from './data/earning.interface';
-import { OrdersProfitChartData } from './data/orders-profit-chart.interface';
-import { TrafficBarData } from './data/traffic-bar.interface';
-import { ProfitBarAnimationChartData } from './data/profit-bar-animation-chart.interface';
-import { TemperatureHumidityData } from './data/temperature-humidity.interface';
-import { SolarData } from './data/solar.interface';
-import { TrafficChartData } from './data/traffic-chart.interface';
-import { StatsBarData } from './data/stats-bar.interface';
-import { CountryOrderData } from './data/country-order.interface';
-import { StatsProgressBarData } from './data/stats-progress-bar.interface';
-import { VisitorsAnalyticsData } from './data/visitors-analytics.interface';
-import { SecurityCamerasData } from './data/security-cameras.interface';
+import { UserData } from './data/users';
+import { ElectricityData } from './data/electricity';
+import { SmartTableData } from './data/smart-table';
+import { UserActivityData } from './data/user-activity';
+import { OrdersChartData } from './data/orders-chart';
+import { ProfitChartData } from './data/profit-chart';
+import { TrafficListData } from './data/traffic-list';
+import { EarningData } from './data/earning';
+import { OrdersProfitChartData } from './data/orders-profit-chart';
+import { TrafficBarData } from './data/traffic-bar';
+import { ProfitBarAnimationChartData } from './data/profit-bar-animation-chart';
+import { TemperatureHumidityData } from './data/temperature-humidity';
+import { SolarData } from './data/solar';
+import { TrafficChartData } from './data/traffic-chart';
+import { StatsBarData } from './data/stats-bar';
+import { CountryOrderData } from './data/country-order';
+import { StatsProgressBarData } from './data/stats-progress-bar';
+import { VisitorsAnalyticsData } from './data/visitors-analytics';
+import { SecurityCamerasData } from './data/security-cameras';
 
 import { UserService } from './mock/users.service';
 import { ElectricityService } from './mock/electricity.service';

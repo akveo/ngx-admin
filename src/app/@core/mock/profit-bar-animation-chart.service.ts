@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { of as observableOf,  Observable } from 'rxjs';
-import { ProfitBarAnimationChartData } from '../data/profit-bar-animation-chart.interface';
+import { ProfitBarAnimationChartData } from '../data/profit-bar-animation-chart';
 
 @Injectable()
 export class ProfitBarAnimationChartService extends ProfitBarAnimationChartData {

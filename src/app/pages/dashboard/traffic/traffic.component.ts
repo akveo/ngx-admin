@@ -1,7 +1,7 @@
 import { Component, OnDestroy } from '@angular/core';
 import { NbThemeService } from '@nebular/theme';
 import { takeWhile } from 'rxjs/operators';
-import { TrafficChartData } from '../../../@core/data/traffic-chart.interface';
+import { TrafficChartData } from '../../../@core/data/traffic-chart';
 
 @Component({
   selector: 'ngx-traffic',

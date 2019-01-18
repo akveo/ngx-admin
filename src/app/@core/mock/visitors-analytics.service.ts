@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { of as observableOf, Observable } from 'rxjs';
 import { PeriodsService } from './periods.service';
-import { OutlineData, VisitorsAnalyticsData } from '../data/visitors-analytics.interface';
+import { OutlineData, VisitorsAnalyticsData } from '../data/visitors-analytics';
 
 @Injectable()
 export class VisitorsAnalyticsService extends VisitorsAnalyticsData {

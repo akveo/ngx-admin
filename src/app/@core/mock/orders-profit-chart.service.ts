@@ -1,8 +1,8 @@
 import { of as observableOf,  Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
-import { OrdersChart, OrdersChartData } from '../data/orders-chart.interface';
-import { OrderProfitChartSummary, OrdersProfitChartData } from '../data/orders-profit-chart.interface';
-import { ProfitChart, ProfitChartData } from '../data/profit-chart.interface';
+import { OrdersChart, OrdersChartData } from '../data/orders-chart';
+import { OrderProfitChartSummary, OrdersProfitChartData } from '../data/orders-profit-chart';
+import { ProfitChart, ProfitChartData } from '../data/profit-chart';
 
 @Injectable()
 export class OrdersProfitChartService extends OrdersProfitChartData {

@@ -1,5 +1,5 @@
 import { Component, OnDestroy } from '@angular/core';
-import { Camera, SecurityCamerasData } from '../../../@core/data/security-cameras.interface';
+import { Camera, SecurityCamerasData } from '../../../@core/data/security-cameras';
 import { takeWhile } from 'rxjs/operators';
 
 @Component({

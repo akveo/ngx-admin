@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { of as observableOf,  Observable } from 'rxjs';
 import { PeriodsService } from './periods.service';
-import { TrafficList, TrafficListData } from '../data/traffic-list.interface';
+import { TrafficList, TrafficListData } from '../data/traffic-list';
 
 @Injectable()
 export class TrafficListService extends TrafficListData {

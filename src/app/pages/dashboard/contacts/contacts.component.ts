@@ -3,7 +3,7 @@ import { NbThemeService, NbMediaBreakpoint, NbMediaBreakpointsService } from '@n
 import { takeWhile } from 'rxjs/operators';
 import { forkJoin } from 'rxjs';
 
-import { Contacts, RecentUsers, UserData } from '../../../@core/data/users.interface';
+import { Contacts, RecentUsers, UserData } from '../../../@core/data/users';
 
 @Component({
   selector: 'ngx-contacts',

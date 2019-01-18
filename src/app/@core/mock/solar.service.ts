@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { of as observableOf,  Observable } from 'rxjs';
-import { SolarData } from '../data/solar.interface';
+import { SolarData } from '../data/solar';
 
 @Injectable()
 export class SolarService extends SolarData {

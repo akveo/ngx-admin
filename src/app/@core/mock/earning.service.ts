@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { of as observableOf, Observable } from 'rxjs';
-import { LiveUpdateChart, PieChart, EarningData } from '../data/earning.interface';
+import { LiveUpdateChart, PieChart, EarningData } from '../data/earning';
 
 @Injectable()
 export class EarningService extends EarningData {

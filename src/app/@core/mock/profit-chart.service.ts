@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { PeriodsService } from './periods.service';
-import { ProfitChart, ProfitChartData } from '../data/profit-chart.interface';
+import { ProfitChart, ProfitChartData } from '../data/profit-chart';
 
 @Injectable()
 export class ProfitChartService extends ProfitChartData {

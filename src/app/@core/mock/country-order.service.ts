@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { of as observableOf, Observable } from 'rxjs';
-import { CountryOrderData } from '../data/country-order.interface';
+import { CountryOrderData } from '../data/country-order';
 
 @Injectable()
 export class CountryOrderService extends CountryOrderData {
