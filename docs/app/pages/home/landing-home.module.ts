@@ -12,6 +12,7 @@ import { SwiperModule } from 'ngx-swiper-wrapper';
 // modules
 
 // components
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { LandingHomeComponent } from './landing-home.component';
 import { MainInfoSectionComponent } from './main-info-section/main-info-section.component';
 import { DescriptionSectionComponent } from './description-section/description-section.component';
@@ -23,6 +24,8 @@ import { ContactSectionComponent } from './contact-section/contact-section.compo
 import { OurProjectsSectionComponent } from './our-projects-section/our-projects-section.component';
 import { LandingHomeRoutingModule } from './landing-home-routing.module';
 import { NgxLandingSectionsContainerComponent } from './sections-container/ngx-landing-sections-container.component';
+import { BannerComponent } from './banner/banner.component';
+import { BackendBundlesSectionComponent } from './backend-bundles-section/backend-bundles-section.component';
 // components
 
 const COMPONENTS = [
@@ -36,6 +39,8 @@ const COMPONENTS = [
   OurProjectsSectionComponent,
   SocialSectionComponent,
   ContactSectionComponent,
+  BannerComponent,
+  BackendBundlesSectionComponent,
 ];
 
 @NgModule({
@@ -43,6 +48,7 @@ const COMPONENTS = [
     ...COMPONENTS,
   ],
   imports: [
+    NgbModule,
     NgxLandingThemeModule,
     SwiperModule,
     LandingHomeRoutingModule,

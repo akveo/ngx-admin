@@ -1,0 +1,244 @@
+<ngx-landing-section-title>
+  Backend Bundles
+</ngx-landing-section-title>
+
+<div class="section-container">
+  <ul class="features">
+    <li class="features__item">
+      <h3 class="features__title title">Convenient</h3>
+      <p class="features__description">Complete pack of well known Angular based NGX Admin template, integrated with Backend Solution. Finally, you can get fully backend integrated solution out of the box. Flexibility of Ngx Admin, the variety of Nebular features and convenience of integrated Backend in one pack.
+      </p>
+    </li>
+    <li class="features__item">
+      <h3 class="features__title">Functional</h3>
+      <p class="features__description">Functional Backend Solution with Designed and Implemented Services and Data Flow. Deploy it as ready to use solution for a particular case, or give it to your development team to incrementally add functionality for the bigger system. it gives you a significant boost on start and solid development structure.</p>
+    </li>
+    <li class="features__item">
+      <h3 class="features__title">Efficient</h3>
+      <p class="features__description">Save more than $21,000 using Backend Bundle. According to our research usage of a ready Backend Bundle optimizes 300 hours of development time. Taking the average hourly rate of a full stack developer in the US - $70.</p>
+    </li>
+    <li class="features__item">
+      <h3 class="features__title">Ready to use</h3>
+      <p class="features__description">We prepared this backend pack as development basement which lets your team concentrate on business logic and data models. Now .NET and .NET Core are available as frameworks of choice. More are in progress…</p>
+    </li>
+  </ul>
+
+  <div class="package-switcher">
+    <div [(ngModel)]="licenseType" ngbRadioGroup
+         #selectedLicense="ngModel"
+         class="package-switcher__btn-group btn-group btn-group-toggle btn-outline-toggle-group btn-group-full-width btn-toggle-radio-group">
+      <label ngbButtonLabel class="package-switcher__btn btn btn-outline-secondary">
+        <input ngbButton type="radio" value="personal" name="1"> Personal
+      </label>
+      <label ngbButtonLabel class="package-switcher__btn btn btn-outline-secondary">
+        <input ngbButton type="radio" value="commercial" name="2"> Commercial
+      </label>
+    </div>
+  </div>
+
+  <ul class="packages">
+    <li class="packages__item">
+      <nb-flip-card [showToggleButton]="false" [flipped]="firstCardFlipped" (click)="firstCardFlipped = !firstCardFlipped">
+        <nb-card-front class="package-card package-card--front">
+          <nb-card>
+            <nb-card-body>
+              <div class="package-card__header">
+                <span class="package-card__demo-link">Coming soon</span>
+              </div>
+              <div class="package-card__image package-card__image--dot-net"></div>
+              <div class="package-card__price-wrapper">
+                <span class="package-card__price package-card__price--old">${{ licenseType === 'commercial' ? '2000' : '200' }}</span>
+                <span class="package-card__price">${{ licenseType === 'commercial' ? '1500' : '150' }}</span>
+              </div>
+              <h4 class="package-card__title">{{ firstBundleName }} + NGX Admin</h4>
+              <p class="package-card__description">
+                E-commerce Dashboard integrated with REST data services based on .NET Framework, Web API and Entity Framework 6.2
+              </p>
+              <a [href]="firstBundleMail"
+                 target="_blank"
+                 class="package-card__buy-link btn btn-demo"
+                 nbButton
+                 (click)="stopPropagation($event)">
+                 Buy now
+              </a>
+            </nb-card-body>
+          </nb-card>
+        </nb-card-front>
+        <nb-card-back class="package-card package-card--back">
+          <nb-card>
+            <nb-card-body>
+              <h4 class="package-card__type">{{ licenseType === 'commercial' ? 'Commercial' : 'Personal' }}</h4>
+              <ng-container *ngTemplateOutlet="bundleFeaturesList"></ng-container>
+              <a [href]="firstBundleMail"
+                 target="_blank"
+                 class="package-card__buy-link btn btn-demo"
+                 nbButton
+                 (click)="stopPropagation($event)">
+                 Buy now
+              </a>
+            </nb-card-body>
+          </nb-card>
+        </nb-card-back>
+      </nb-flip-card>
+    </li>
+    <li class="packages__item">
+      <nb-flip-card [showToggleButton]="false" [flipped]="secondCardFlipped" (click)="secondCardFlipped = !secondCardFlipped">
+        <nb-card-front class="package-card package-card--front">
+          <nb-card>
+            <nb-card-body>
+              <div class="package-card__header">
+                <span class="package-card__demo-link">Coming soon</span>
+              </div>
+              <div class="package-card__image package-card__image--dot-net"></div>
+              <div class="package-card__price-wrapper">
+                <span class="package-card__price package-card__price--old">${{ licenseType === 'commercial' ? '2000' : '200' }}</span>
+                <span class="package-card__price">${{ licenseType === 'commercial' ? '1500' : '150' }}</span>
+              </div>
+              <h4 class="package-card__title">{{ secondBundleName }} + NGX Admin</h4>
+              <p class="package-card__description">
+                IoT Dashboard integrated with REST data services based on .NET Framework, Web API and Entity Framework 6.2
+              </p>
+              <a [href]="secondBundleMail"
+                 target="_blank"
+                 class="package-card__buy-link btn btn-demo"
+                 nbButton
+                 (click)="stopPropagation($event)">
+                Buy now
+              </a>
+            </nb-card-body>
+          </nb-card>
+        </nb-card-front>
+        <nb-card-back class="package-card package-card--back">
+          <nb-card>
+            <nb-card-body>
+              <h4 class="package-card__type">{{ licenseType === 'commercial' ? 'Commercial' : 'Personal' }}</h4>
+              <ng-container *ngTemplateOutlet="bundleFeaturesList"></ng-container>
+              <a [href]="secondBundleMail"
+                 target="_blank"
+                 class="package-card__buy-link btn btn-demo"
+                 nbButton
+                 (click)="stopPropagation($event)">
+                Buy now
+              </a>
+            </nb-card-body>
+          </nb-card>
+        </nb-card-back>
+      </nb-flip-card>
+    </li>
+    <li class="packages__item">
+      <nb-flip-card [showToggleButton]="false" [flipped]="thirdCardFlipped" (click)="thirdCardFlipped = !thirdCardFlipped">
+        <nb-card-front class="package-card package-card--front">
+          <nb-card>
+            <nb-card-body>
+              <div class="package-card__header">
+                <span class="package-card__demo-link package-card__demo-link--secondary">Coming soon</span>
+              </div>
+              <div class="package-card__image package-card__image--dot-net-core"></div>
+              <div class="package-card__price-wrapper">
+                <span class="package-card__price package-card__price--old">${{ licenseType === 'commercial' ? '1800' : '180' }}</span>
+                <span class="package-card__price">${{ licenseType === 'commercial' ? '1400' : '140' }}</span>
+              </div>
+              <h4 class="package-card__title">{{ thirdBundleName }} + NGX Admin</h4>
+              <p class="package-card__description">
+                E-commerce Dashboard integrated with REST data services based on .NET Core, Web API and Entity Framework 2.2
+              </p>
+              <a [href]="thirdBundleMail"
+                 target="_blank"
+                 class="package-card__buy-link btn btn-demo"
+                 nbButton
+                 (click)="stopPropagation($event)">
+                Buy now
+              </a>
+            </nb-card-body>
+          </nb-card>
+        </nb-card-front>
+        <nb-card-back class="package-card package-card--back">
+          <nb-card>
+            <nb-card-body>
+              <h4 class="package-card__type">{{ licenseType === 'commercial' ? 'Commercial' : 'Personal' }}</h4>
+              <ng-container *ngTemplateOutlet="bundleFeaturesList"></ng-container>
+              <a [href]="thirdBundleMail"
+                 target="_blank"
+                 class="package-card__buy-link btn btn-demo"
+                 nbButton
+                 (click)="stopPropagation($event)">
+                Buy now
+              </a>
+            </nb-card-body>
+          </nb-card>
+        </nb-card-back>
+      </nb-flip-card>
+    </li>
+    <li class="packages__item">
+      <nb-flip-card [showToggleButton]="false" [flipped]="fourthCardFlipped" (click)="fourthCardFlipped = !fourthCardFlipped">
+        <nb-card-front class="package-card package-card--front">
+          <nb-card>
+            <nb-card-body>
+              <div class="package-card__header">
+                <span class="package-card__demo-link package-card__demo-link--secondary">Coming soon</span>
+              </div>
+              <div class="package-card__image package-card__image--dot-net-core"></div>
+              <div class="package-card__price-wrapper">
+                <span class="package-card__price package-card__price--old">${{ licenseType === 'commercial' ? '1800' : '180' }}</span>
+                <span class="package-card__price">${{ licenseType === 'commercial' ? '1400' : '140' }}</span>
+              </div>
+              <h4 class="package-card__title">{{ fourthBundleName }} + NGX Admin</h4>
+              <p class="package-card__description">
+                IoT Dashboard integrated with REST data services based on .NET Core, Web API and Entity Framework 2.2
+              </p>
+              <a [href]="fourthBundleMail"
+                 target="_blank"
+                 class="package-card__buy-link btn btn-demo"
+                 nbButton
+                 (click)="stopPropagation($event)">
+                Buy now
+              </a>
+            </nb-card-body>
+          </nb-card>
+        </nb-card-front>
+        <nb-card-back class="package-card package-card--back">
+          <nb-card>
+            <nb-card-body>
+              <h4 class="package-card__type">{{ licenseType === 'commercial' ? 'Commercial' : 'Personal' }}</h4>
+              <ng-container *ngTemplateOutlet="bundleFeaturesList"></ng-container>
+              <a [href]="fourthBundleMail"
+                 target="_blank"
+                 class="package-card__buy-link btn btn-demo"
+                 nbButton
+                 (click)="stopPropagation($event)">
+                 Buy now
+              </a>
+            </nb-card-body>
+          </nb-card>
+        </nb-card-back>
+      </nb-flip-card>
+    </li>
+  </ul>
+</div>
+<ng-template #bundleFeaturesList>
+  <ul class="included">
+    <li class="included__item">
+      <p class="included__text">NGX Admin admin template with 100+ UI components integrated with Backend</p>
+    </li>
+    <li class="included__item">
+      <p class="included__text">.NET backend Services and Repository layers with data access</p>
+    </li>
+    <li class="included__item">
+      <p class="included__text">JWT Authentication setup for UI and Backend</p>
+    </li>
+    <li class="included__item">
+      <p class="included__text">Running instructions and code documentation</p>
+    </li>
+    <li class="included__item">
+      <p class="included__text">Unit Tests</p>
+    </li>
+    <ng-container *ngIf="isCommercial()">
+      <li class="included__item">
+        <p class="included__text">Commercial Usage</p>
+      </li>
+      <li class="included__item">
+        <p class="included__text">One Year Support and Bug Fixes by Request</p>
+      </li>
+    </ng-container>
+  </ul>
+</ng-template>
