@@ -12,7 +12,7 @@ const HIDE_BANNER_KEY = 'HIDE_PRODUCT_HUNT_BANNER';
         <h2 class="banner-heading">ngx-admin is on Product Hunt today!</h2>
         <p class="cta">Please
           <a class="cta-link"
-             href="https://akveo.github.io/nebular?utm_source=ngx-admin-demo&utm_medium=banner"
+             href="https://www.producthunt.com/posts/ngx-admin"
              target="_blank">
             share
           </a>
