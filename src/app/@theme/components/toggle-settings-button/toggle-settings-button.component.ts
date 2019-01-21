@@ -9,7 +9,9 @@ import { StateService } from '../../../@core/utils';
     <button class="toggle-settings"
             (click)="toggleSettings()"
             [class.expanded]="expanded"
-            [class.sidebarEnd]="sidebarEnd">
+            [class.sidebarEnd]="sidebarEnd"
+            [class.wasExpanded]="wasExpanded"
+    >
       <i class="nb-gear"></i>
     </button>
   `,
@@ -18,6 +20,7 @@ export class ToggleSettingsButtonComponent {
 
   sidebarEnd = false;
   expanded = false;
+  wasExpanded = false;
 
   constructor(private sidebarService: NbSidebarService, protected stateService: StateService) {
     this.stateService.onSidebarState()
@@ -29,5 +32,6 @@ export class ToggleSettingsButtonComponent {
   toggleSettings() {
     this.sidebarService.toggle(false, 'settings-sidebar');
     this.expanded = !this.expanded;
+    this.wasExpanded = true;
   }
 }
