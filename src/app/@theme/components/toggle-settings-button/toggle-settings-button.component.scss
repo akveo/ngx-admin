@@ -1,13 +1,16 @@
 @import '../../styles/themes';
 @import '~bootstrap/scss/mixins/breakpoints';
 @import '~@nebular/theme/styles/global/breakpoints';
+@import '~@nebular/bootstrap/styles/hero-buttons';
 
 @include nb-install-component() {
   .toggle-settings {
     position: fixed;
     top: 50%;
-    height: 8.575rem;
-    width: 8.575rem;
+    height: 3rem;
+    width: 3rem;
+    padding: 0;
+    text-align: center;
     border: none;
     transition: transform 0.3s ease, background-image 0.3s ease;
     transform: translate(0, -50%);
@@ -55,11 +58,7 @@
 
     @include nb-for-theme(cosmic) {
       box-shadow: 0 0 3.4285rem 0 rgba(19, 19, 94, 0.72);
-      background-image: linear-gradient(to right, #a054fe 0%, #7a58ff 100%);
-
-      &.expanded {
-        background-image: linear-gradient(to right, #2f296b 0%, #2f296b 100%);
-      }
+      @include btn-hero-success-gradient();
     }
 
     @include nb-for-theme(default) {
@@ -76,8 +75,10 @@
     }
 
     i {
-      font-size: 6rem;
+      font-size: 2.75rem;
       color: #ffffff;
+      display: block;
+
 
       @include nb-for-theme(default) {
         color: nb-theme(color-danger);
@@ -85,6 +86,26 @@
 
       @include nb-for-theme(corporate) {
         color: nb-theme(color-warning);
+      }
+    }
+
+    &:not(.wasExpanded) i {
+      animation-name: gear-pulse;
+      animation-duration: 1s;
+      animation-iteration-count: infinite;
+    }
+
+    @keyframes gear-pulse {
+      from {
+        transform: scale3d(1, 1, 1);
+      }
+
+      50% {
+        transform: scale3d(1.2, 1.2, 1.2);
+      }
+
+      to {
+        transform: scale3d(1, 1, 1);
       }
     }
   }
