@@ -1,36 +1,34 @@
 import { Component, HostBinding, Inject, OnDestroy, OnInit } from '@angular/core';
-import { NB_WINDOW, NbThemeService } from '@nebular/theme';
-import { takeWhile } from 'rxjs/operators';
+import { NB_WINDOW } from '@nebular/theme';
 
-const HIDE_BANNER_KEY = 'HIDE_RELEASE_2_BANNER';
+const HIDE_BANNER_KEY = 'HIDE_PRODUCT_HUNT_BANNER';
 
 @Component({
   selector: 'ngx-release-banner',
   template: `
     <div class="heading-with-icon">
-      <img class="icon" [src]="getBellPath()" alt="bell">
-      <h1 class="banner-heading">Nebular 3.0 stable <br> with 30+ components is out!</h1>
+      <img class="icon" src="/assets/images/product-hunt-cat.png" alt="Product Hunt">
+      <div class="banner-content">
+        <h2 class="banner-heading">ngx-admin is on Product Hunt today!</h2>
+        <p class="cta">Please
+          <a class="cta-link"
+             href="https://akveo.github.io/nebular?utm_source=ngx-admin-demo&utm_medium=banner"
+             target="_blank">
+            share
+          </a>
+          your feedback :)
+        </p>
+      </div>
       <button class="close-button" aria-label="close" (click)="closeBanner()">
         <span class="nb-close"></span>
       </button>
     </div>
-    <p class="cta">
-      Don't forget to
-      <a class="cta-link"
-         href="https://akveo.github.io/nebular?utm_source=ngx-admin-demo&utm_medium=banner"
-         target="_blank">
-        check out
-      </a>
-      and star our repo :)
-    </p>
   `,
   styleUrls: ['./banner.component.scss'],
 })
 export class BannerComponent implements OnInit, OnDestroy {
 
-  private alive = true;
   storage: Storage;
-  isDarkTheme: boolean;
 
   @HostBinding('attr.hidden')
   isHidden: true | null = null;
@@ -40,7 +38,6 @@ export class BannerComponent implements OnInit, OnDestroy {
 
   constructor(
     @Inject(NB_WINDOW) private window,
-    private themeService: NbThemeService,
   ) {}
 
   ngOnInit() {
@@ -49,11 +46,6 @@ export class BannerComponent implements OnInit, OnDestroy {
     this.isHidden = this.storage && this.storage.getItem(HIDE_BANNER_KEY)
       ? true
       : null;
-
-    this.isDarkTheme = this.themeService.currentTheme === 'cosmic';
-    this.themeService.onThemeChange()
-      .pipe(takeWhile(() => this.alive))
-      .subscribe(({ name }) => this.isDarkTheme = name === 'cosmic');
   }
 
   closeBanner() {
@@ -61,13 +53,5 @@ export class BannerComponent implements OnInit, OnDestroy {
       this.storage.setItem(HIDE_BANNER_KEY, 'true');
     }
     this.isHidden = true;
-  }
-
-  getBellPath() {
-    return `assets/images/bell${this.isDarkTheme ? '' : '-white'}.svg`;
-  }
-
-  ngOnDestroy() {
-    this.alive = false;
   }
 }

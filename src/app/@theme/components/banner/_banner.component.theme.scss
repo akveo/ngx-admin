@@ -2,25 +2,21 @@
 
 @mixin ngx-release-banner-component {
   ngx-release-banner {
-    background-color: nb-theme(release-banner-bg);
-    color: nb-theme(release-banner-fg);
-
-    .heading-with-icon {
-      border-bottom-color: nb-theme(release-banner-separator);
-    }
+    background-color: #dc5425;
+    color: #ffffff;
 
     .banner-heading,
     .close-button {
-      color: nb-theme(release-banner-fg);
+      color: #ffffff;
     }
 
     .cta {
-      color: nb-theme(release-banner-cta);
+      color: #ffffff;
     }
 
     .cta-link {
-      background: nb-theme(release-banner-fg);
-      color: nb-theme(release-banner-bg);
+      background: #ffffff;
+      color: #000000;
     }
   }
 }
