@@ -1,4 +1,4 @@
-import { Component, HostBinding, Inject, OnDestroy, OnInit } from '@angular/core';
+import { Component, HostBinding, Inject, OnInit } from '@angular/core';
 import { NB_WINDOW } from '@nebular/theme';
 
 const HIDE_BANNER_KEY = 'HIDE_PRODUCT_HUNT_BANNER';
@@ -26,7 +26,7 @@ const HIDE_BANNER_KEY = 'HIDE_PRODUCT_HUNT_BANNER';
   `,
   styleUrls: ['./banner.component.scss'],
 })
-export class BannerComponent implements OnInit, OnDestroy {
+export class BannerComponent implements OnInit {
 
   storage: Storage;
 
