@@ -59,11 +59,6 @@
     @include nb-for-theme(cosmic) {
       box-shadow: 0 0 3.4285rem 0 rgba(19, 19, 94, 0.72);
       @include btn-hero-success-gradient();
-      //background-image: linear-gradient(to right, #a054fe 0%, #7a58ff 100%);
-      //
-      //&.expanded {
-      //  background-image: linear-gradient(to right, #2f296b 0%, #2f296b 100%);
-      //}
     }
 
     @include nb-for-theme(default) {
