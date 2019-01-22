@@ -9,8 +9,8 @@ import { StateService } from '../../../@core/utils';
     <button class="toggle-settings"
             (click)="toggleSettings()"
             [class.expanded]="expanded"
-            [class.sidebarEnd]="sidebarEnd"
-            [class.wasExpanded]="wasExpanded"
+            [class.sidebar-end]="sidebarEnd"
+            [class.was-expanded]="wasExpanded"
     >
       <i class="nb-gear"></i>
     </button>
