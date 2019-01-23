@@ -71,7 +71,6 @@
     width: 100%;
     height: auto;
     margin: 2.5rem auto;
-    padding: 0 11px;
 
     &__image {
       width: 100%;
@@ -320,6 +319,10 @@
     .section-container {
       padding-left: 1rem;
       padding-right: 1rem;
+    }
+
+    .bundle-scheme {
+      padding: 0 11px;
     }
 
     .features {
