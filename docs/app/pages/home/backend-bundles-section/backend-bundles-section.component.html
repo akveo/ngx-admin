@@ -6,7 +6,7 @@
   <ul class="features">
     <li class="features__item">
       <h3 class="features__title title">Convenient</h3>
-      <p class="features__description">Complete pack of well known Angular based NGX Admin template, integrated with Backend Solution. Finally, you can get fully backend integrated solution out of the box. Flexibility of Ngx Admin, the variety of Nebular features and convenience of integrated Backend in one pack.
+      <p class="features__description">Complete pack of well known Angular based ngx-admin template, integrated with Backend Solution. Finally, you can get fully backend integrated solution out of the box. Flexibility of Ngx Admin, the variety of Nebular features and convenience of integrated Backend in one pack.
       </p>
     </li>
     <li class="features__item">
@@ -25,13 +25,12 @@
 
   <div class="package-switcher">
     <div [(ngModel)]="licenseType" ngbRadioGroup
-         #selectedLicense="ngModel"
          class="package-switcher__btn-group btn-group btn-group-toggle btn-outline-toggle-group btn-group-full-width btn-toggle-radio-group">
       <label ngbButtonLabel class="package-switcher__btn btn btn-outline-secondary">
-        <input ngbButton type="radio" value="personal" name="1"> Personal
+        <input ngbButton type="radio" value="Personal"> Personal
       </label>
       <label ngbButtonLabel class="package-switcher__btn btn btn-outline-secondary">
-        <input ngbButton type="radio" value="commercial" name="2"> Commercial
+        <input ngbButton type="radio" value="Commercial"> Commercial
       </label>
     </div>
   </div>
@@ -50,7 +49,7 @@
                 <span class="package-card__price package-card__price--old">${{ licenseType === 'commercial' ? '2000' : '200' }}</span>
                 <span class="package-card__price">${{ licenseType === 'commercial' ? '1500' : '150' }}</span>
               </div>
-              <h4 class="package-card__title">{{ firstBundleName }} + NGX Admin</h4>
+              <h4 class="package-card__title">{{ firstBundleName }}</h4>
               <p class="package-card__description">
                 E-commerce Dashboard integrated with REST data services based on .NET Framework, Web API and Entity Framework 6.2
               </p>
@@ -94,7 +93,7 @@
                 <span class="package-card__price package-card__price--old">${{ licenseType === 'commercial' ? '2000' : '200' }}</span>
                 <span class="package-card__price">${{ licenseType === 'commercial' ? '1500' : '150' }}</span>
               </div>
-              <h4 class="package-card__title">{{ secondBundleName }} + NGX Admin</h4>
+              <h4 class="package-card__title">{{ secondBundleName }}</h4>
               <p class="package-card__description">
                 IoT Dashboard integrated with REST data services based on .NET Framework, Web API and Entity Framework 6.2
               </p>
@@ -138,7 +137,7 @@
                 <span class="package-card__price package-card__price--old">${{ licenseType === 'commercial' ? '1800' : '180' }}</span>
                 <span class="package-card__price">${{ licenseType === 'commercial' ? '1400' : '140' }}</span>
               </div>
-              <h4 class="package-card__title">{{ thirdBundleName }} + NGX Admin</h4>
+              <h4 class="package-card__title">{{ thirdBundleName }}</h4>
               <p class="package-card__description">
                 E-commerce Dashboard integrated with REST data services based on .NET Core, Web API and Entity Framework 2.2
               </p>
@@ -182,7 +181,7 @@
                 <span class="package-card__price package-card__price--old">${{ licenseType === 'commercial' ? '1800' : '180' }}</span>
                 <span class="package-card__price">${{ licenseType === 'commercial' ? '1400' : '140' }}</span>
               </div>
-              <h4 class="package-card__title">{{ fourthBundleName }} + NGX Admin</h4>
+              <h4 class="package-card__title">{{ fourthBundleName }}</h4>
               <p class="package-card__description">
                 IoT Dashboard integrated with REST data services based on .NET Core, Web API and Entity Framework 2.2
               </p>
@@ -218,7 +217,7 @@
 <ng-template #bundleFeaturesList>
   <ul class="included">
     <li class="included__item">
-      <p class="included__text">NGX Admin admin template with 100+ UI components integrated with Backend</p>
+      <p class="included__text">ngx-admin template with 100+ UI components integrated with Backend</p>
     </li>
     <li class="included__item">
       <p class="included__text">.NET backend Services and Repository layers with data access</p>

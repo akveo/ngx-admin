@@ -28,14 +28,17 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    padding: 0;
+    padding: 0 11px;
     margin-top: 5rem;
     margin-left: -11px;
     margin-right: -11px;
+    width: 100%;
+    width: calc(100% + 22px);
 
     &__item {
       flex: 0 0 25%;
       width: 25%;
+      max-width: 25%;
       display: flex;
       flex-direction: column;
       text-align: center;
@@ -68,6 +71,15 @@
 
     &__btn-group {
       box-shadow: 0 8px 20px 0 rgba(218, 224, 235, 0.5);
+      border-radius: 1.5rem;
+      &:not(.btn-divided-group) > .package-switcher__btn:not(.dropdown-toggle):first-child {
+        border-top-left-radius: 1.5rem;
+        border-bottom-left-radius: 1.5rem;
+      }
+      &:not(.btn-divided-group) > .package-switcher__btn:not(.dropdown-toggle):last-child {
+        border-top-right-radius: 1.5rem;
+        border-bottom-right-radius: 1.5rem;
+      }
     }
 
     &__btn {
@@ -76,6 +88,7 @@
       border-color: #e6e8eb;
       text-transform: none;
       cursor: pointer;
+
       &:active {
         color: #ffffff;
       }
@@ -94,15 +107,19 @@
     margin-left: -11px;
     margin-right: -11px;
     margin-bottom: 4rem;
+    width: 100%;
+    width: calc(100% + 22px);
 
     &__item {
       flex: 0 0 25%;
       width: 25%;
+      max-width: 25%;
       display: flex;
       flex-direction: column;
       list-style: none;
       padding-left: 11px;
       padding-right: 11px;
+      margin-bottom: 22px;
     }
   }
 
@@ -187,10 +204,10 @@
       background-position: center center;
       background-size: auto 100%;
       &--dot-net {
-        background-image: url('/assets/img/bundle-dot-net.png');
+        background-image: url('assets/img/bundle-dot-net.png');
       }
       &--dot-net-core {
-        background-image: url('/assets/img/bundle-dot-net-core.png');
+        background-image: url('assets/img/bundle-dot-net-core.png');
       }
     }
     &__price-wrapper {
@@ -284,26 +301,31 @@
   }
 
   @include media-breakpoint-down(xl) {
-
-    .features {
-      width: 100%;
+    .section-container {
       padding-left: 1rem;
       padding-right: 1rem;
+    }
+
+    .features {
+      padding-left: 11px;
+      padding-right: 11px;
 
       &__item {
         flex-basis: 50%;
         width: 50%;
+        max-width: 50%;
       }
     }
 
     .packages {
-      width: 100%;
-      padding-left: 1rem;
-      padding-right: 1rem;
+      padding-left: 11px;
+      padding-right: 11px;
 
       &__item {
         flex-basis: 50%;
         width: 50%;
+        max-width: 50%;
+        margin-bottom: 1.625rem;
       }
     }
   }
@@ -313,6 +335,7 @@
     .packages__item {
       flex-basis: 100%;
       width: 100%;
+      max-width: 100%;
     }
   }
 
@@ -321,6 +344,10 @@
     .features__item {
       flex-basis: 100%;
       width: 100%;
+      max-width: 100%;
+    }
+    .package-switcher__btn {
+      min-width: 8rem;
     }
   }
 }

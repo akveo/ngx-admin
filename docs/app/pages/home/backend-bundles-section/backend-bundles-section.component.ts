@@ -14,40 +14,28 @@ import { Component} from '@angular/core';
 
 export class BackendBundlesSectionComponent {
 
-  licenseType = 'commercial';
+  licenseType = 'Personal';
 
-  firstBundleName = 'E-commerce: .NET';
-  secondBundleName = 'IoT: .NET';
-  thirdBundleName = 'E-commerce: .NET Core';
-  fourthBundleName = 'IoT: .NET Core';
+  firstBundleName = '.NET + ngx-admin E-commerce';
+  secondBundleName = '.NET + ngx-admin IoT';
+  thirdBundleName = '.NET Core + ngx-admin E-commerce';
+  fourthBundleName = '.NET Core + ngx-admin IoT';
 
-  firstBundleMail: string = 'mailto:support@akveo.com' +
-    '?subject=.NET E-commerce Bundle' +
-    '&body=Dear Akveo, %0D%0A%0D%0A' +
-    'I would like to purchase .NET E-commerce Bundle. ' +
-    'Please give me details how I can proceed with that. %0D%0A%0D%0A' +
-    'Thanks and regards';
+  get firstBundleMail(): string {
+    return this.getMailToText('.NET E-commerce');
+  }
 
-  secondBundleMail: string = 'mailto:support@akveo.com' +
-    '?subject=.NET IoT Bundle' +
-    '&body=Dear Akveo, %0D%0A%0D%0A' +
-    'I would like to purchase .NET IoT Bundle. ' +
-    'Please give me details how I can proceed with that. %0D%0A%0D%0A' +
-    'Thanks and regards';
+  get secondBundleMail(): string {
+    return this.getMailToText('.NET IoT');
+  }
 
-  thirdBundleMail: string = 'mailto:support@akveo.com' +
-    '?subject=.NET Core E-commerce Bundle' +
-    '&body=Dear Akveo, %0D%0A%0D%0A' +
-    'I would like to purchase .NET Core E-commerce Bundle. ' +
-    'Please give me details how I can proceed with that. %0D%0A%0D%0A' +
-    'Thanks and regards';
+  get thirdBundleMail(): string {
+    return this.getMailToText('.NET Core E-commerce');
+  }
 
-  fourthBundleMail: string = 'mailto:support@akveo.com' +
-    '?subject=.NET Core IoT Bundle' +
-    '&body=Dear Akveo, %0D%0A%0D%0A' +
-    'I would like to purchase .NET Core IoT Bundle. ' +
-    'Please give me details how I can proceed with that. %0D%0A%0D%0A' +
-    'Thanks and regards';
+  get fourthBundleMail(): string {
+    return this.getMailToText('.NET Core IoT');
+  }
 
   firstCardFlipped: boolean = false;
   secondCardFlipped: boolean = false;
@@ -62,6 +50,15 @@ export class BackendBundlesSectionComponent {
   }
 
   isCommercial() {
-    return this.licenseType === 'commercial';
+    return this.licenseType === 'Commercial';
+  }
+
+  private getMailToText(bundleName: string) {
+    return 'mailto:support@akveo.com' +
+      `?subject=${this.licenseType} ${bundleName} Bundle` +
+      '&body=Dear Akveo, %0D%0A%0D%0A' +
+      `I would like to purchase ${this.licenseType} ${bundleName} Bundle. ` +
+      'Please give me details how I can proceed with that. %0D%0A%0D%0A' +
+      'Thanks and regards';
   }
 }
