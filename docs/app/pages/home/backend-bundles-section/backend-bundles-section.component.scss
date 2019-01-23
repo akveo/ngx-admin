@@ -66,6 +66,22 @@
     }
   }
 
+  .bundle-scheme {
+    display: none;
+    width: 100%;
+    height: auto;
+    margin: 2.5rem auto;
+    padding: 0 11px;
+
+    &__image {
+      width: 100%;
+    }
+
+    @include media-breakpoint-up(md) {
+      display: block;
+    }
+  }
+
   .package-switcher {
     margin: 2.375rem 0 5rem;
 
