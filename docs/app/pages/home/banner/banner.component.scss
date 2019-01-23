@@ -4,13 +4,13 @@
  * Licensed under the MIT License. See License.txt in the project root for license information.
  */
 
-@import '../../styles/themes';
+@import '../../../@theme/styles/themes';
 
 :host {
   position: fixed;
-  @include nb-ltr(right, 1.5rem);
-  @include nb-rtl(left, 1.5rem);
-  top: 20vh;
+  @include nb-ltr(right, 10px);
+  @include nb-rtl(left, 10px);
+  top: 80px;
   border-radius: 5px;
   background-color: #dc5425;
   box-shadow: 0 2px 4px 0 rgba(189, 93, 60, 0.54);
@@ -70,6 +70,10 @@
     font-weight: 700;
     background: #ffffff;
     color: #000000;
+  }
+
+  @media screen and (max-width: 991px) {
+    top: 20px;
   }
 
   @media screen and (max-width: 767px) {
