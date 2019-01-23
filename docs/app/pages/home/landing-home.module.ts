@@ -23,7 +23,7 @@ import { ContactSectionComponent } from './contact-section/contact-section.compo
 import { OurProjectsSectionComponent } from './our-projects-section/our-projects-section.component';
 import { LandingHomeRoutingModule } from './landing-home-routing.module';
 import { NgxLandingSectionsContainerComponent } from './sections-container/ngx-landing-sections-container.component';
-import { RibbonComponent } from './ribbon/ribbon.component';
+import { BannerComponent } from './banner/banner.component';
 // components
 
 const COMPONENTS = [
@@ -37,7 +37,7 @@ const COMPONENTS = [
   OurProjectsSectionComponent,
   SocialSectionComponent,
   ContactSectionComponent,
-  RibbonComponent,
+  BannerComponent,
 ];
 
 @NgModule({
