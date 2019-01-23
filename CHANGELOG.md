@@ -1,3 +1,24 @@
+<a name="3.1.0"></a>
+# [3.1.0](https://github.com/akveo/ngx-admin/compare/v3.0.0...v3.1.0) (2019-01-23)
+
+
+### Bug Fixes
+
+* **datepicker:** fix datepicker arrow style ([#1925](https://github.com/akveo/ngx-admin/issues/1925)) ([a878197](https://github.com/akveo/ngx-admin/commit/a878197))
+* **toggle-settings-button:** position while search open ([#1993](https://github.com/akveo/ngx-admin/issues/1993)) ([f17aa32](https://github.com/akveo/ngx-admin/commit/f17aa32))
+
+
+### Features
+
+* **animation:** add fade in animation by route change ([#1958](https://github.com/akveo/ngx-admin/issues/1958)) ([773c14e](https://github.com/akveo/ngx-admin/commit/773c14e))
+* **data:** update data module, add new mock data ([#1960](https://github.com/akveo/ngx-admin/issues/1960)) ([47d232b](https://github.com/akveo/ngx-admin/commit/47d232b))
+* **layout config:** reduce gear button size ([#2002](https://github.com/akveo/ngx-admin/issues/2002)) ([1f56f2a](https://github.com/akveo/ngx-admin/commit/1f56f2a))
+* **settings:** redesign setting sidebar ([#1982](https://github.com/akveo/ngx-admin/issues/1982)) ([a73662f](https://github.com/akveo/ngx-admin/commit/a73662f))
+* **sidebar:** remove label new from sidebar ([#1921](https://github.com/akveo/ngx-admin/issues/1921)) ([d80c8da](https://github.com/akveo/ngx-admin/commit/d80c8da))
+* update Nebular to 3.1.0 ([33db902](https://github.com/akveo/ngx-admin/commit/33db902))
+
+
+
 <a name="3.0.0"></a>
 # [3.0.0](https://github.com/akveo/ngx-admin/compare/v2.3.0...v3.0.0) (2018-11-19)
 
