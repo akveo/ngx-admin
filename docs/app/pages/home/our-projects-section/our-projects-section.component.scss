@@ -28,6 +28,9 @@
         visibility: visible;
         opacity: 1;
       }
+      &.ng-failed-lazyloaded {
+        height: 100%;
+      }
     }
   }
 
