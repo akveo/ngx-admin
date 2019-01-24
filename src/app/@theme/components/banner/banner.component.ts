@@ -13,7 +13,7 @@ const HIDE_BANNER_KEY = 'HIDE_PRODUCT_HUNT_BANNER';
   selector: 'ngx-release-banner',
   template: `
     <div class="heading-with-icon">
-      <img class="icon" src="/assets/images/product-hunt-cat.png" alt="Product Hunt">
+      <img class="icon" src="assets/images/product-hunt-cat.png" alt="Product Hunt">
       <div class="banner-content">
         <h2 class="banner-heading">ngx-admin is on Product Hunt today!</h2>
         <p class="cta">Please
