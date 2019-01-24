@@ -29,13 +29,13 @@
   </picture>
 
   <div class="package-switcher">
-    <div [(ngModel)]="licenseType" ngbRadioGroup
+    <div [(ngModel)]="selectedLicenseType" ngbRadioGroup
          class="package-switcher__btn-group btn-group btn-group-toggle btn-outline-toggle-group btn-group-full-width btn-toggle-radio-group">
       <label ngbButtonLabel class="package-switcher__btn btn btn-outline-secondary">
-        <input ngbButton type="radio" value="Personal"> Personal
+        <input ngbButton type="radio" [value]="personalLicense"> {{ personalLicense }}
       </label>
       <label ngbButtonLabel class="package-switcher__btn btn btn-outline-secondary">
-        <input ngbButton type="radio" value="Commercial"> Commercial
+        <input ngbButton type="radio" [value]="commercialLicense"> {{ commercialLicense }}
       </label>
     </div>
   </div>
@@ -51,8 +51,8 @@
               </div>
               <div class="package-card__image package-card__image--dot-net"></div>
               <div class="package-card__price-wrapper">
-                <span class="package-card__price package-card__price--old">${{ licenseType === 'Commercial' ? '2000' : '200' }}</span>
-                <span class="package-card__price">${{ licenseType === 'Commercial' ? '1500' : '150' }}</span>
+                <span class="package-card__price package-card__price--old">${{ isCommercial() ? '2000' : '200' }}</span>
+                <span class="package-card__price">${{ isCommercial() ? '1500' : '150' }}</span>
               </div>
               <h4 class="package-card__title">{{ firstBundleName }}</h4>
               <p class="package-card__description">
@@ -71,7 +71,7 @@
         <nb-card-back class="package-card package-card--back">
           <nb-card>
             <nb-card-body>
-              <h4 class="package-card__type">{{ licenseType === 'Commercial' ? 'Commercial' : 'Personal' }}</h4>
+              <h4 class="package-card__type">{{ selectedLicenseType }}</h4>
               <ng-container *ngTemplateOutlet="bundleFeaturesList"></ng-container>
               <a [href]="firstBundleMail"
                  target="_blank"
@@ -95,8 +95,8 @@
               </div>
               <div class="package-card__image package-card__image--dot-net"></div>
               <div class="package-card__price-wrapper">
-                <span class="package-card__price package-card__price--old">${{ licenseType === 'Commercial' ? '2000' : '200' }}</span>
-                <span class="package-card__price">${{ licenseType === 'Commercial' ? '1500' : '150' }}</span>
+                <span class="package-card__price package-card__price--old">${{ isCommercial() ? '2000' : '200' }}</span>
+                <span class="package-card__price">${{ isCommercial() ? '1500' : '150' }}</span>
               </div>
               <h4 class="package-card__title">{{ secondBundleName }}</h4>
               <p class="package-card__description">
@@ -115,7 +115,7 @@
         <nb-card-back class="package-card package-card--back">
           <nb-card>
             <nb-card-body>
-              <h4 class="package-card__type">{{ licenseType === 'Commercial' ? 'Commercial' : 'Personal' }}</h4>
+              <h4 class="package-card__type">{{ selectedLicenseType }}</h4>
               <ng-container *ngTemplateOutlet="bundleFeaturesList"></ng-container>
               <a [href]="secondBundleMail"
                  target="_blank"
@@ -139,8 +139,8 @@
               </div>
               <div class="package-card__image package-card__image--dot-net-core"></div>
               <div class="package-card__price-wrapper">
-                <span class="package-card__price package-card__price--old">${{ licenseType === 'Commercial' ? '1800' : '180' }}</span>
-                <span class="package-card__price">${{ licenseType === 'Commercial' ? '1400' : '140' }}</span>
+                <span class="package-card__price package-card__price--old">${{ isCommercial() ? '1800' : '180' }}</span>
+                <span class="package-card__price">${{ isCommercial() ? '1400' : '140' }}</span>
               </div>
               <h4 class="package-card__title">{{ thirdBundleName }}</h4>
               <p class="package-card__description">
@@ -159,7 +159,7 @@
         <nb-card-back class="package-card package-card--back">
           <nb-card>
             <nb-card-body>
-              <h4 class="package-card__type">{{ licenseType === 'Commercial' ? 'Commercial' : 'Personal' }}</h4>
+              <h4 class="package-card__type">{{ selectedLicenseType }}</h4>
               <ng-container *ngTemplateOutlet="bundleFeaturesList"></ng-container>
               <a [href]="thirdBundleMail"
                  target="_blank"
@@ -183,8 +183,8 @@
               </div>
               <div class="package-card__image package-card__image--dot-net-core"></div>
               <div class="package-card__price-wrapper">
-                <span class="package-card__price package-card__price--old">${{ licenseType === 'Commercial' ? '1800' : '180' }}</span>
-                <span class="package-card__price">${{ licenseType === 'Commercial' ? '1400' : '140' }}</span>
+                <span class="package-card__price package-card__price--old">${{ isCommercial() ? '1800' : '180' }}</span>
+                <span class="package-card__price">${{ isCommercial() ? '1400' : '140' }}</span>
               </div>
               <h4 class="package-card__title">{{ fourthBundleName }}</h4>
               <p class="package-card__description">
@@ -203,7 +203,7 @@
         <nb-card-back class="package-card package-card--back">
           <nb-card>
             <nb-card-body>
-              <h4 class="package-card__type">{{ licenseType === 'Commercial' ? 'Commercial' : 'Personal' }}</h4>
+              <h4 class="package-card__type">{{ selectedLicenseType }}</h4>
               <ng-container *ngTemplateOutlet="bundleFeaturesList"></ng-container>
               <a [href]="fourthBundleMail"
                  target="_blank"

@@ -14,7 +14,9 @@ import { Component} from '@angular/core';
 
 export class BackendBundlesSectionComponent {
 
-  licenseType = 'Personal';
+  selectedLicenseType = 'Personal';
+  personalLicense = 'Personal';
+  commercialLicense = 'Commercial';
 
   firstBundleName = '.NET + ngx-admin E-commerce';
   secondBundleName = '.NET + ngx-admin IoT';
@@ -50,14 +52,14 @@ export class BackendBundlesSectionComponent {
   }
 
   isCommercial() {
-    return this.licenseType === 'Commercial';
+    return this.selectedLicenseType === 'Commercial';
   }
 
   private getMailToText(bundleName: string) {
     return 'mailto:support@akveo.com' +
-      `?subject=${this.licenseType} ${bundleName} Bundle` +
+      `?subject=${this.selectedLicenseType} ${bundleName} Bundle` +
       '&body=Dear Akveo, %0D%0A%0D%0A' +
-      `I would like to purchase ${this.licenseType} ${bundleName} Bundle. ` +
+      `I would like to purchase ${this.selectedLicenseType} ${bundleName} Bundle. ` +
       'Please give me details how I can proceed with that. %0D%0A%0D%0A' +
       'Thanks and regards';
   }
