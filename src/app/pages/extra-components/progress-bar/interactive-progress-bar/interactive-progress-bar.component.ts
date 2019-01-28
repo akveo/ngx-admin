@@ -13,7 +13,7 @@ export class InteractiveProgressBarComponent {
     this.value = Math.min(Math.max(newValue, 0), 100);
   }
 
-  get status(){
+  get status() {
     if (this.value <= 25) {
       return 'danger';
     } else if (this.value <= 50) {
