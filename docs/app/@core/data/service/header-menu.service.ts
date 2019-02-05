@@ -12,6 +12,11 @@ export class HeaderMenuService {
       link: '/',
     },
     {
+      title: 'Backend Bundles',
+      link: '/',
+      fragment: 'backend-bundles',
+    },
+    {
       title: 'Docs',
       link: '/docs',
     },
