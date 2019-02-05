@@ -4,7 +4,9 @@
 
 <div class="section-container">
 
-  <p class="features__description">Akveo new product created after a number of community and clients requests. We did all backend integration in ngx-admin for you! Now you can buy a complete UI + backend solution based on the backend framework of choice to use it as a template for your solution implementation.
+  <p class="features__description">
+    Looking for a way to integrate Angular ngx-admin with .NET, Ruby, Python or PHP? We are here to save your time on painful setup, configuration and routing tasks.
+    Choose starter kit bundle based on a technology of your choice below.
   </p>
 
   <div class="package-switcher">
@@ -25,9 +27,6 @@
         <nb-card-front class="package-card package-card--front">
           <nb-card>
             <nb-card-body>
-              <div class="package-card__header">
-                <span class="package-card__demo-link">Coming soon</span>
-              </div>
               <div class="package-card__image package-card__image--dot-net"></div>
               <h4 class="package-card__title">{{ ecomName }}</h4>
               <h4 class="package-card__title">{{ netName }}</h4>
@@ -39,10 +38,8 @@
                 <span class="package-card__price">${{ isCommercial() ? '1500' : '150' }}</span>
               </div>
               <a [href]="firstBundleMail"
-                 target="_blank"
                  class="package-card__buy-link btn btn-demo"
-                 nbButton
-                 (click)="stopPropagation($event)">
+                 nbButton>
                  Buy now
               </a>
             </nb-card-body>
@@ -52,12 +49,10 @@
           <nb-card>
             <nb-card-body>
               <h4 class="package-card__type">{{ selectedLicenseType }}</h4>
-              <ng-container *ngTemplateOutlet="bundleFeaturesList"></ng-container>
               <a [href]="firstBundleMail"
                  target="_blank"
                  class="package-card__buy-link btn btn-demo"
-                 nbButton
-                 (click)="stopPropagation($event)">
+                 nbButton>
                  Buy now
               </a>
             </nb-card-body>
@@ -70,9 +65,6 @@
         <nb-card-front class="package-card package-card--front">
           <nb-card>
             <nb-card-body>
-              <div class="package-card__header">
-                <span class="package-card__demo-link">Coming soon</span>
-              </div>
               <div class="package-card__image package-card__image--dot-net"></div>
               <h4 class="package-card__title">{{ iotName }}</h4>
               <h4 class="package-card__title">{{ netName }}</h4>
@@ -84,7 +76,6 @@
                 <span class="package-card__price">${{ isCommercial() ? '1500' : '150' }}</span>
               </div>
               <a [href]="secondBundleMail"
-                 target="_blank"
                  class="package-card__buy-link btn btn-demo"
                  nbButton
                  (click)="stopPropagation($event)">
@@ -97,12 +88,9 @@
           <nb-card>
             <nb-card-body>
               <h4 class="package-card__type">{{ selectedLicenseType }}</h4>
-              <ng-container *ngTemplateOutlet="bundleFeaturesList"></ng-container>
               <a [href]="secondBundleMail"
-                 target="_blank"
                  class="package-card__buy-link btn btn-demo"
-                 nbButton
-                 (click)="stopPropagation($event)">
+                 nbButton>
                 Buy now
               </a>
             </nb-card-body>
@@ -115,9 +103,6 @@
         <nb-card-front class="package-card package-card--front">
           <nb-card>
             <nb-card-body>
-              <div class="package-card__header">
-                <span class="package-card__demo-link package-card__demo-link--secondary">Coming soon</span>
-              </div>
               <div class="package-card__image package-card__image--dot-net-core"></div>
               <h4 class="package-card__title">{{ ecomName }}</h4>
               <h4 class="package-card__title">{{ netCoreName }}</h4>
@@ -129,10 +114,8 @@
                 <span class="package-card__price">${{ isCommercial() ? '1400' : '140' }}</span>
               </div>
               <a [href]="thirdBundleMail"
-                 target="_blank"
                  class="package-card__buy-link btn btn-demo"
-                 nbButton
-                 (click)="stopPropagation($event)">
+                 nbButton>
                 Buy now
               </a>
             </nb-card-body>
@@ -142,7 +125,6 @@
           <nb-card>
             <nb-card-body>
               <h4 class="package-card__type">{{ selectedLicenseType }}</h4>
-              <ng-container *ngTemplateOutlet="bundleFeaturesList"></ng-container>
               <a [href]="thirdBundleMail"
                  target="_blank"
                  class="package-card__buy-link btn btn-demo"
@@ -160,9 +142,6 @@
         <nb-card-front class="package-card package-card--front">
           <nb-card>
             <nb-card-body>
-              <div class="package-card__header">
-                <span class="package-card__demo-link package-card__demo-link--secondary">Coming soon</span>
-              </div>
               <div class="package-card__image package-card__image--dot-net-core"></div>
               <h4 class="package-card__title">{{ iotName }}</h4>
               <h4 class="package-card__title">{{ netCoreName }}</h4>
@@ -174,10 +153,8 @@
                 <span class="package-card__price">${{ isCommercial() ? '1400' : '140' }}</span>
               </div>
               <a [href]="fourthBundleMail"
-                 target="_blank"
                  class="package-card__buy-link btn btn-demo"
-                 nbButton
-                 (click)="stopPropagation($event)">
+                 nbButton>
                 Buy now
               </a>
             </nb-card-body>
@@ -187,12 +164,9 @@
           <nb-card>
             <nb-card-body>
               <h4 class="package-card__type">{{ selectedLicenseType }}</h4>
-              <ng-container *ngTemplateOutlet="bundleFeaturesList"></ng-container>
               <a [href]="fourthBundleMail"
-                 target="_blank"
                  class="package-card__buy-link btn btn-demo"
-                 nbButton
-                 (click)="stopPropagation($event)">
+                 nbButton>
                  Buy now
               </a>
             </nb-card-body>
@@ -209,7 +183,7 @@
       <th>COMMERCIAL</th>
     </tr>
     <tr>
-      <td class="left">NGX Admin template with 100+ UI components integrated with Backend</td>
+      <td class="left">ngx-admin template with 100+ UI components integrated with Backend Services</td>
       <td>
         <ul class="included">
           <li class="included__item"></li>
@@ -222,7 +196,7 @@
       </td>
     </tr>
     <tr>
-      <td class="left">.NET backend Services and Repository layers with data access</td>
+      <td class="left">Backend Services and Repository layers with data access</td>
       <td>
         <ul class="included">
           <li class="included__item"></li>
@@ -288,19 +262,31 @@
     </tr>
   </table>
 
-  <ngx-landing-description-section *ngIf="descriptions" [descriptions]="descriptions" ></ngx-landing-description-section>
+  <div class="request-code-section">
+    <a href="mailto:support@akveo.com?subject=Bundle code sample request" class="package-card__buy-link btn btn-demo" nbButton>
+      REQUEST CODE SAMPLE
+    </a>
+  </div>
 
+  <ngx-landing-description-section *ngIf="descriptions" [descriptions]="descriptions" ></ngx-landing-description-section>
 
   <ngx-landing-section-title>
     Architecture Design
   </ngx-landing-section-title>
 
-  <p class="features__description">The schema describes the idea of how backend part of the .NET solution is organized.
-  </p>
+  <p class="features__description">The schema describes high-level solution architecture.</p>
 
   <picture class="bundle-scheme">
     <source type="image/webp" srcset="/assets/img/bundle-scheme@1x.webp 1x, /assets/img/bundle-scheme@2x.webp 2x">
     <img class="bundle-scheme__image" src="/assets/img/bundle-scheme@1x.png" srcset="/assets/img/bundle-scheme@2x.png 2x" alt="Backend bundles">
   </picture>
+
+  <p class="features__description">Need more details or have a question?</p>
+
+  <div class="request-code-section">
+    <a href="mailto:support@akveo.com?subject=Custom bundle request" class="package-card__buy-link btn btn-demo" nbButton>
+      CONTACT US
+    </a>
+  </div>
 
 </div>

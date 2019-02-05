@@ -71,7 +71,7 @@
     display: none;
     width: 100%;
     height: auto;
-    margin: 2.5rem auto;
+    margin: 2.5rem auto 5rem;
 
     &__image {
       width: 100%;
@@ -184,7 +184,6 @@
     justify-content: flex-start;
     align-content: stretch;
     align-items: stretch;
-    cursor: pointer;
 
     &--front {
       text-align: center;
@@ -310,7 +309,6 @@
         border: solid #00db92;
         border-width: 0 2px 2px 0;
         transform: rotate(45deg);
-        // ff3d71
       }
     }
 
@@ -351,6 +349,10 @@
     &__text {
       margin: 0 0 0 1.5rem;
     }
+  }
+
+  .request-code-section {
+    margin-bottom: 5rem;
   }
 
   @include media-breakpoint-down(xl) {
@@ -402,11 +404,6 @@
 
     th {
       padding: 1rem;
-    }
-
-    td {
-      font-weight: lighter;
-      font-size: 0.75rem;
     }
 
     td ul {
