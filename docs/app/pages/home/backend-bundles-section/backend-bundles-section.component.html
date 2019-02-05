@@ -1,0 +1,306 @@
+<ngx-landing-section-title>
+  Backend Bundles
+</ngx-landing-section-title>
+
+<div class="section-container">
+
+  <p class="features__description">Akveo new product created after a number of community and clients requests. We did all backend integration in ngx-admin for you! Now you can buy a complete UI + backend solution based on the backend framework of choice to use it as a template for your solution implementation.
+  </p>
+
+  <div class="package-switcher">
+    <div [(ngModel)]="selectedLicenseType" ngbRadioGroup
+         class="package-switcher__btn-group btn-group btn-group-toggle btn-outline-toggle-group btn-group-full-width btn-toggle-radio-group">
+      <label ngbButtonLabel class="package-switcher__btn btn btn-outline-secondary">
+        <input ngbButton type="radio" [value]="personalLicense"> {{ personalLicense }}
+      </label>
+      <label ngbButtonLabel class="package-switcher__btn btn btn-outline-secondary">
+        <input ngbButton type="radio" [value]="commercialLicense"> {{ commercialLicense }}
+      </label>
+    </div>
+  </div>
+
+  <ul class="packages">
+    <li class="packages__item">
+      <nb-flip-card [showToggleButton]="false" [flipped]="firstCardFlipped">
+        <nb-card-front class="package-card package-card--front">
+          <nb-card>
+            <nb-card-body>
+              <div class="package-card__header">
+                <span class="package-card__demo-link">Coming soon</span>
+              </div>
+              <div class="package-card__image package-card__image--dot-net"></div>
+              <h4 class="package-card__title">{{ ecomName }}</h4>
+              <h4 class="package-card__title">{{ netName }}</h4>
+              <p class="package-card__description">
+                E-Commerce Dashboard integrated with REST data services based on .NET Framework, Web API and Entity Framework 6.2
+              </p>
+              <div class="package-card__price-wrapper">
+                <span class="package-card__price package-card__price--old">${{ isCommercial() ? '2000' : '200' }}</span>
+                <span class="package-card__price">${{ isCommercial() ? '1500' : '150' }}</span>
+              </div>
+              <a [href]="firstBundleMail"
+                 target="_blank"
+                 class="package-card__buy-link btn btn-demo"
+                 nbButton
+                 (click)="stopPropagation($event)">
+                 Buy now
+              </a>
+            </nb-card-body>
+          </nb-card>
+        </nb-card-front>
+        <nb-card-back class="package-card package-card--back">
+          <nb-card>
+            <nb-card-body>
+              <h4 class="package-card__type">{{ selectedLicenseType }}</h4>
+              <ng-container *ngTemplateOutlet="bundleFeaturesList"></ng-container>
+              <a [href]="firstBundleMail"
+                 target="_blank"
+                 class="package-card__buy-link btn btn-demo"
+                 nbButton
+                 (click)="stopPropagation($event)">
+                 Buy now
+              </a>
+            </nb-card-body>
+          </nb-card>
+        </nb-card-back>
+      </nb-flip-card>
+    </li>
+    <li class="packages__item">
+      <nb-flip-card [showToggleButton]="false" [flipped]="secondCardFlipped">
+        <nb-card-front class="package-card package-card--front">
+          <nb-card>
+            <nb-card-body>
+              <div class="package-card__header">
+                <span class="package-card__demo-link">Coming soon</span>
+              </div>
+              <div class="package-card__image package-card__image--dot-net"></div>
+              <h4 class="package-card__title">{{ iotName }}</h4>
+              <h4 class="package-card__title">{{ netName }}</h4>
+              <p class="package-card__description">
+                IoT Dashboard integrated with REST data services based on .NET Framework, Web API and Entity Framework 6.2
+              </p>
+              <div class="package-card__price-wrapper">
+                <span class="package-card__price package-card__price--old">${{ isCommercial() ? '2000' : '200' }}</span>
+                <span class="package-card__price">${{ isCommercial() ? '1500' : '150' }}</span>
+              </div>
+              <a [href]="secondBundleMail"
+                 target="_blank"
+                 class="package-card__buy-link btn btn-demo"
+                 nbButton
+                 (click)="stopPropagation($event)">
+                Buy now
+              </a>
+            </nb-card-body>
+          </nb-card>
+        </nb-card-front>
+        <nb-card-back class="package-card package-card--back">
+          <nb-card>
+            <nb-card-body>
+              <h4 class="package-card__type">{{ selectedLicenseType }}</h4>
+              <ng-container *ngTemplateOutlet="bundleFeaturesList"></ng-container>
+              <a [href]="secondBundleMail"
+                 target="_blank"
+                 class="package-card__buy-link btn btn-demo"
+                 nbButton
+                 (click)="stopPropagation($event)">
+                Buy now
+              </a>
+            </nb-card-body>
+          </nb-card>
+        </nb-card-back>
+      </nb-flip-card>
+    </li>
+    <li class="packages__item">
+      <nb-flip-card [showToggleButton]="false" [flipped]="thirdCardFlipped">
+        <nb-card-front class="package-card package-card--front">
+          <nb-card>
+            <nb-card-body>
+              <div class="package-card__header">
+                <span class="package-card__demo-link package-card__demo-link--secondary">Coming soon</span>
+              </div>
+              <div class="package-card__image package-card__image--dot-net-core"></div>
+              <h4 class="package-card__title">{{ ecomName }}</h4>
+              <h4 class="package-card__title">{{ netCoreName }}</h4>
+              <p class="package-card__description">
+                E-Commerce Dashboard integrated with REST data services based on .NET Core, Web API and Entity Framework 2.2
+              </p>
+              <div class="package-card__price-wrapper">
+                <span class="package-card__price package-card__price--old">${{ isCommercial() ? '1800' : '180' }}</span>
+                <span class="package-card__price">${{ isCommercial() ? '1400' : '140' }}</span>
+              </div>
+              <a [href]="thirdBundleMail"
+                 target="_blank"
+                 class="package-card__buy-link btn btn-demo"
+                 nbButton
+                 (click)="stopPropagation($event)">
+                Buy now
+              </a>
+            </nb-card-body>
+          </nb-card>
+        </nb-card-front>
+        <nb-card-back class="package-card package-card--back">
+          <nb-card>
+            <nb-card-body>
+              <h4 class="package-card__type">{{ selectedLicenseType }}</h4>
+              <ng-container *ngTemplateOutlet="bundleFeaturesList"></ng-container>
+              <a [href]="thirdBundleMail"
+                 target="_blank"
+                 class="package-card__buy-link btn btn-demo"
+                 nbButton
+                 (click)="stopPropagation($event)">
+                Buy now
+              </a>
+            </nb-card-body>
+          </nb-card>
+        </nb-card-back>
+      </nb-flip-card>
+    </li>
+    <li class="packages__item">
+      <nb-flip-card [showToggleButton]="false" [flipped]="fourthCardFlipped">
+        <nb-card-front class="package-card package-card--front">
+          <nb-card>
+            <nb-card-body>
+              <div class="package-card__header">
+                <span class="package-card__demo-link package-card__demo-link--secondary">Coming soon</span>
+              </div>
+              <div class="package-card__image package-card__image--dot-net-core"></div>
+              <h4 class="package-card__title">{{ iotName }}</h4>
+              <h4 class="package-card__title">{{ netCoreName }}</h4>
+              <p class="package-card__description">
+                IoT Dashboard integrated with REST data services based on .NET Core, Web API and Entity Framework 2.2
+              </p>
+              <div class="package-card__price-wrapper">
+                <span class="package-card__price package-card__price--old">${{ isCommercial() ? '1800' : '180' }}</span>
+                <span class="package-card__price">${{ isCommercial() ? '1400' : '140' }}</span>
+              </div>
+              <a [href]="fourthBundleMail"
+                 target="_blank"
+                 class="package-card__buy-link btn btn-demo"
+                 nbButton
+                 (click)="stopPropagation($event)">
+                Buy now
+              </a>
+            </nb-card-body>
+          </nb-card>
+        </nb-card-front>
+        <nb-card-back class="package-card package-card--back">
+          <nb-card>
+            <nb-card-body>
+              <h4 class="package-card__type">{{ selectedLicenseType }}</h4>
+              <ng-container *ngTemplateOutlet="bundleFeaturesList"></ng-container>
+              <a [href]="fourthBundleMail"
+                 target="_blank"
+                 class="package-card__buy-link btn btn-demo"
+                 nbButton
+                 (click)="stopPropagation($event)">
+                 Buy now
+              </a>
+            </nb-card-body>
+          </nb-card>
+        </nb-card-back>
+      </nb-flip-card>
+    </li>
+  </ul>
+
+  <table class="features-table">
+    <tr>
+      <th class="left">FEATURES</th>
+      <th>PERSONAL</th>
+      <th>COMMERCIAL</th>
+    </tr>
+    <tr>
+      <td class="left">NGX Admin template with 100+ UI components integrated with Backend</td>
+      <td>
+        <ul class="included">
+          <li class="included__item"></li>
+        </ul>
+      </td>
+      <td>
+        <ul class="included">
+          <li class="included__item"></li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td class="left">.NET backend Services and Repository layers with data access</td>
+      <td>
+        <ul class="included">
+          <li class="included__item"></li>
+        </ul>
+      </td>
+      <td>
+        <ul class="included">
+          <li class="included__item"></li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td class="left">JWT Authentication setup for UI and Backend</td>
+      <td>
+        <ul class="included">
+          <li class="included__item"></li>
+        </ul>
+      </td>
+      <td>
+        <ul class="included">
+          <li class="included__item"></li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td class="left">Running instructions and code documentation</td>
+      <td>
+        <ul class="included">
+          <li class="included__item"></li>
+        </ul>
+      </td>
+      <td>
+        <ul class="included">
+          <li class="included__item"></li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td class="left">Commercial Usage</td>
+      <td>
+        <ul class="not-included">
+          <li class="not-included__item"></li>
+        </ul>
+      </td>
+      <td>
+        <ul class="included">
+          <li class="included__item"></li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td class="left">One Year Support and Bug Fixes by Request</td>
+      <td>
+        <ul class="not-included">
+          <li class="not-included__item"></li>
+        </ul>
+      </td>
+      <td>
+        <ul class="included">
+          <li class="included__item"></li>
+        </ul>
+      </td>
+    </tr>
+  </table>
+
+  <ngx-landing-description-section *ngIf="descriptions" [descriptions]="descriptions" ></ngx-landing-description-section>
+
+
+  <ngx-landing-section-title>
+    Architecture Design
+  </ngx-landing-section-title>
+
+  <p class="features__description">The schema describes the idea of how backend part of the .NET solution is organized.
+  </p>
+
+  <picture class="bundle-scheme">
+    <source type="image/webp" srcset="/assets/img/bundle-scheme@1x.webp 1x, /assets/img/bundle-scheme@2x.webp 2x">
+    <img class="bundle-scheme__image" src="/assets/img/bundle-scheme@1x.png" srcset="/assets/img/bundle-scheme@2x.png 2x" alt="Backend bundles">
+  </picture>
+
+</div>
