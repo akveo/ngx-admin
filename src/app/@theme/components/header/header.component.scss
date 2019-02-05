@@ -30,6 +30,7 @@
 
     &.email-text {
       display: flex;
+      flex-wrap: nowrap;
 
       a {
         font-size: 1.1428rem;
