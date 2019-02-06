@@ -13,15 +13,15 @@
     transition: transform 0.3s ease;
     width: $sidebar-width;
     overflow: hidden;
-    @include nb-ltr(transform, translateX(100%));
-    @include nb-rtl(transform, translateX(-100%));
+    @include nb-ltr(transform, translate3d(100%, 0, 0));
+    @include nb-rtl(transform, translate3d(-100%, 0, 0));
     &.start {
-      @include nb-ltr(transform, translateX(-100%));
-      @include nb-rtl(transform, translateX(100%));
+      @include nb-ltr(transform, translate3d(-100%, 0, 0));
+      @include nb-rtl(transform, translate3d(100%, 0, 0));
     }
 
     &.expanded, &.expanded.start {
-      transform: translateX(0);
+      transform: translate3d(0, 0, 0);
     }
 
     /deep/ .scrollable {
@@ -32,8 +32,9 @@
     /deep/ .main-container {
       width: $sidebar-width;
       background: nb-theme(color-bg);
-      transition: width 0.3s ease;
+      transition: transform 0.3s ease;
       overflow: hidden;
+      position: relative;
 
       .scrollable {
         width: $sidebar-width;
