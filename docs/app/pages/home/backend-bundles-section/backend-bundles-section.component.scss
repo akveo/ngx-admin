@@ -67,14 +67,18 @@
     }
   }
 
-  .bundle-scheme {
+  .bundles-architecture {
     display: none;
-    width: 100%;
-    height: auto;
-    margin: 2.5rem auto 5rem;
+    margin-bottom: 5rem;
 
-    &__image {
+    .bundle-scheme {
       width: 100%;
+      height: auto;
+      margin: 2.5rem auto;
+
+      &__image {
+        width: 100%;
+      }
     }
 
     @include media-breakpoint-up(md) {
@@ -329,7 +333,6 @@
     background-color: #fafafa;
 
     th, td {
-      //border: 0.5px solid #dae0eb;
       padding: 0.5rem;
       text-align: center;
     }
@@ -359,6 +362,12 @@
       flex-basis: 100%;
       width: 100%;
       max-width: 100%;
+    }
+
+    .features-table {
+      .header {
+        font-size: 0.875rem
+      }
     }
   }
 

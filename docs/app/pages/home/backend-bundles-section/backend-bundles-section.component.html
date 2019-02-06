@@ -174,7 +174,7 @@
   </ul>
 
   <table class="features-table">
-    <tr>
+    <tr class="header">
       <th class="left">FEATURES</th>
       <th>PERSONAL</th>
       <th>COMMERCIAL</th>
@@ -243,16 +243,18 @@
 
   <ngx-landing-description-section *ngIf="descriptions | async" [descriptions]="descriptions | async"></ngx-landing-description-section>
 
-  <ngx-landing-section-title>
-    Architecture Design
-  </ngx-landing-section-title>
+  <div class="bundles-architecture">
+    <ngx-landing-section-title>
+      Architecture Design
+    </ngx-landing-section-title>
 
-  <p class="features__description">The schema describes high-level solution architecture.</p>
+    <p class="features__description">The schema describes high-level solution architecture.</p>
 
-  <picture class="bundle-scheme">
-    <source type="image/webp" srcset="assets/img/bundle-scheme@1x.webp 1x, assets/img/bundle-scheme@2x.webp 2x">
-    <img class="bundle-scheme__image" src="assets/img/bundle-scheme@1x.png" srcset="assets/img/bundle-scheme@2x.png 2x" alt="Backend bundles">
-  </picture>
+    <picture class="bundle-scheme">
+      <source type="image/webp" srcset="assets/img/bundle-scheme@1x.webp 1x, assets/img/bundle-scheme@2x.webp 2x">
+      <img class="bundle-scheme__image" src="assets/img/bundle-scheme@1x.png" srcset="assets/img/bundle-scheme@2x.png 2x" alt="Backend bundles">
+    </picture>
+  </div>
 
   <p class="features__description">Need more details or have a question?</p>
 

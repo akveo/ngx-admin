@@ -19,7 +19,7 @@ import { Descriptions, DescriptionsService } from '../../../@core/data/service/d
 })
 export class BackendBundlesSectionComponent implements AfterViewInit {
 
-  descriptions: Observable<Descriptions[]> = this.descriptionsService.getDescriptions();
+  descriptions: Observable<Descriptions[]> = this.descriptionsService.getBundleDescriptions();
 
   selectedLicenseType = 'Personal';
   personalLicense = 'Personal';
