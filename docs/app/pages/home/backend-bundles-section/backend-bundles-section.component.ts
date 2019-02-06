@@ -4,22 +4,22 @@
  * Licensed under the MIT License. See License.txt in the project root for license information.
  */
 
-import { AfterViewInit, Component, ElementRef, Inject, OnDestroy } from '@angular/core';
-import { Descriptions, DescriptionsService } from '../../../@core/data/service/descriptions.service';
-import { delay, filter, take, takeWhile } from 'rxjs/operators';
+import { AfterViewInit, Component, ElementRef, Inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
+import { delay, filter, take } from 'rxjs/operators';
 import { NB_WINDOW } from '@nebular/theme';
+
+import { Descriptions, DescriptionsService } from '../../../@core/data/service/descriptions.service';
 
 @Component({
   selector: 'ngx-backend-bundles-section',
   templateUrl: 'backend-bundles-section.component.html',
   styleUrls: ['./backend-bundles-section.component.scss'],
 })
+export class BackendBundlesSectionComponent implements AfterViewInit {
 
-export class BackendBundlesSectionComponent implements OnDestroy, AfterViewInit {
-
-  private alive = true;
-  descriptions: Descriptions[];
+  descriptions: Observable<Descriptions[]> = this.descriptionsService.getDescriptions();
 
   selectedLicenseType = 'Personal';
   personalLicense = 'Personal';
@@ -56,9 +56,6 @@ export class BackendBundlesSectionComponent implements OnDestroy, AfterViewInit 
               private activatedRoute: ActivatedRoute,
               private el: ElementRef<HTMLElement>,
               @Inject(NB_WINDOW) private window) {
-    this.descriptionsService.getBundleDescriptions()
-      .pipe(takeWhile(() => this.alive))
-      .subscribe((descriptions) => this.descriptions = descriptions);
   }
 
   isCommercial() {
@@ -75,10 +72,6 @@ export class BackendBundlesSectionComponent implements OnDestroy, AfterViewInit 
       .subscribe((fragment: string) => {
         this.window.scrollTo(0, this.el.nativeElement.offsetTop);
       });
-  }
-
-  ngOnDestroy() {
-    this.alive = false;
   }
 
   private getMailToText(bundleName: string) {

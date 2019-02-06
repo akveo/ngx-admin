@@ -241,7 +241,7 @@
     </a>
   </div>
 
-  <ngx-landing-description-section *ngIf="descriptions" [descriptions]="descriptions" ></ngx-landing-description-section>
+  <ngx-landing-description-section *ngIf="descriptions | async" [descriptions]="descriptions | async"></ngx-landing-description-section>
 
   <ngx-landing-section-title>
     Architecture Design

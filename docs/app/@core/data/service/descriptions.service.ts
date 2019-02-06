@@ -33,13 +33,6 @@ export class DescriptionsService {
       description: 'Continuous updates and fixes from the development team to keep your tech up to date. The friendly and active community support team are ready to guide you through your challenges',
     },
   ];
-  /* tslint:enable:max-line-length */
-
-  getDescriptions(): Observable<Descriptions[]> {
-    return observableOf(this.descriptions);
-  }
-
-  /* tslint:disable:max-line-length */
   private bundleDescriptions: Descriptions[] = [
     {
       icon: 'umbrella-outline',
@@ -62,7 +55,12 @@ export class DescriptionsService {
       description: 'We prepared this Backend pack as development basement which lets your team concentrate on business logic and data models.',
     },
   ];
-  /* tslint:enable:max-line-length */
+
+  /* tslint:disable:max-line-length */
+
+  getDescriptions(): Observable<Descriptions[]> {
+    return observableOf(this.descriptions);
+  }
 
   getBundleDescriptions(): Observable<Descriptions[]> {
     return observableOf(this.bundleDescriptions);
