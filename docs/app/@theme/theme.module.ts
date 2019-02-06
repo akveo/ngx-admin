@@ -19,6 +19,7 @@ import {
   NgxPageTabsComponent,
   NgxLandingHeaderComponent,
   NgxDocsFooterComponent,
+  NgxIconComponent,
 } from './components';
 // components
 
@@ -64,6 +65,7 @@ const COMPONENTS = [
   NgxPageTabsComponent,
   NgxLandingHeaderComponent,
   NgxDocsFooterComponent,
+  NgxIconComponent,
 ];
 
 const PIPES = [

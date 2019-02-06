@@ -11,6 +11,7 @@ import { NgxPageTabsComponent } from './page-tabs/page-tabs.component';
 import { NgxPageTocComponent } from './page-toc/page-toc.component';
 import { NgxFragmentTargetDirective } from './fragment-target/fragment-target.directive';
 import { NgxDocsFooterComponent } from './docs-footer/footer.component';
+import { NgxIconComponent } from './icon.component';
 
 export {
   NgxLandingHeaderComponent,
@@ -20,4 +21,5 @@ export {
   NgxPageTocComponent,
   NgxFragmentTargetDirective,
   NgxDocsFooterComponent,
+  NgxIconComponent,
 };
