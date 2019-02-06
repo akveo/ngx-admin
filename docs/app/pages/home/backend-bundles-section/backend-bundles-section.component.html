@@ -77,8 +77,7 @@
               </div>
               <a [href]="secondBundleMail"
                  class="package-card__buy-link btn btn-demo"
-                 nbButton
-                 (click)="stopPropagation($event)">
+                 nbButton>
                 Buy now
               </a>
             </nb-card-body>
@@ -126,10 +125,8 @@
             <nb-card-body>
               <h4 class="package-card__type">{{ selectedLicenseType }}</h4>
               <a [href]="thirdBundleMail"
-                 target="_blank"
                  class="package-card__buy-link btn btn-demo"
-                 nbButton
-                 (click)="stopPropagation($event)">
+                 nbButton>
                 Buy now
               </a>
             </nb-card-body>
@@ -248,7 +245,7 @@
       </td>
     </tr>
     <tr>
-      <td class="left">One Year Support and Bug Fixes by Request</td>
+      <td class="left">One Year support and bug fixes on request</td>
       <td>
         <ul class="not-included">
           <li class="not-included__item"></li>
@@ -277,8 +274,8 @@
   <p class="features__description">The schema describes high-level solution architecture.</p>
 
   <picture class="bundle-scheme">
-    <source type="image/webp" srcset="/assets/img/bundle-scheme@1x.webp 1x, /assets/img/bundle-scheme@2x.webp 2x">
-    <img class="bundle-scheme__image" src="/assets/img/bundle-scheme@1x.png" srcset="/assets/img/bundle-scheme@2x.png 2x" alt="Backend bundles">
+    <source type="image/webp" srcset="assets/img/bundle-scheme@1x.webp 1x, assets/img/bundle-scheme@2x.webp 2x">
+    <img class="bundle-scheme__image" src="assets/img/bundle-scheme@1x.png" srcset="assets/img/bundle-scheme@2x.png 2x" alt="Backend bundles">
   </picture>
 
   <p class="features__description">Need more details or have a question?</p>

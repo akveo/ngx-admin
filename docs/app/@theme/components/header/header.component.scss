@@ -56,7 +56,7 @@
   }
 
   .backend-bundles {
-    display: flex;
+    display: none;
     align-items: center;
     padding-right: 2rem;
 
@@ -125,6 +125,9 @@
       .version {
         display: inline;
       }
+    }
+    .backend-bundles {
+      display: flex;
     }
   }
 
@@ -197,10 +200,6 @@
   }
 
   &.docs-page {
-
-    .backend-bundles {
-      display: none;
-    }
 
     .section {
       &.left {

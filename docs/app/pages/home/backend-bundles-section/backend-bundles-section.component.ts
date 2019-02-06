@@ -61,10 +61,6 @@ export class BackendBundlesSectionComponent implements OnDestroy, AfterViewInit 
       .subscribe((descriptions) => this.descriptions = descriptions);
   }
 
-  stopPropagation(e) {
-    // e.stopPropagation();
-  }
-
   isCommercial() {
     return this.selectedLicenseType === 'Commercial';
   }
