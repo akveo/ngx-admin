@@ -14,6 +14,10 @@
   display: block;
   padding-top: 5.125rem;
 
+  ngx-landing-description-section {
+    margin-bottom: 5rem;
+  }
+
   .section-container {
     width: calc(#{$content-width} - #{$left-right-offset} * 2);
     max-width: 100%;

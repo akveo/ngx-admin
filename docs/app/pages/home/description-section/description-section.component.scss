@@ -13,9 +13,8 @@
 
   width: calc(#{$content-width} - #{$left-right-offset} * 2);
   display: flex;
-  margin: 0 auto;
+  margin: 2.5rem auto;
   position: relative;
-  margin-bottom: 5rem;
 
   .descriptions {
     flex: 1;

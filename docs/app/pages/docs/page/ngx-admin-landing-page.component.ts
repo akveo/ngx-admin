@@ -63,7 +63,7 @@ export class NgxAdminLandingPageComponent implements OnDestroy, OnInit {
         }),
         filter(item => item),
         tap((item: any) => {
-          this.titleService.setTitle(`Nebular - ${item.name}`);
+          this.titleService.setTitle(`ngx-admin - ${item.name}`);
         }),
         publishReplay(),
         refCount(),
