@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { PagesComponent } from './pages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ECommerceComponent } from './e-commerce/e-commerce.component';
+import { EComOneComponent } from './e-commerce/ecomone.component';
 import { NotFoundComponent } from './miscellaneous/not-found/not-found.component';
 
 const routes: Routes = [{
@@ -12,6 +13,9 @@ const routes: Routes = [{
   children: [{
     path: 'dashboard',
     component: ECommerceComponent,
+  }, {
+    path: 'ecomone',
+    component: EComOneComponent,
   }, {
     path: 'iot-dashboard',
     component: DashboardComponent,
