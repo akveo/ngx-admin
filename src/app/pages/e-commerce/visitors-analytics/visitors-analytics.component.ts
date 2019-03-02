@@ -25,8 +25,6 @@ export class ECommerceVisitorsAnalyticsComponent implements OnDestroy {
         this.setLegendItems(theme.variables.visitorsLegend);
       });
 
-	console.log(`ECommerceVisitorsAnalyticsComponent - forkJoin -start...`);
-
     forkJoin(
       this.visitorsAnalyticsChartService.getInnerLineChartData(),
       this.visitorsAnalyticsChartService.getOutlineLineChartData(),
@@ -39,9 +37,7 @@ export class ECommerceVisitorsAnalyticsComponent implements OnDestroy {
           outerLine: outerLine,
         };
 
-		this.pieChartValue = pieChartValue;
-		
-		console.log(`ECommerceVisitorsAnalyticsComponent - DATA`, this.visitorsAnalyticsData, this.pieChartValue, this);
+        this.pieChartValue = pieChartValue;
       });
   }
 
