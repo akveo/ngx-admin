@@ -8,7 +8,7 @@ import { UserActivityService } from './user-activity.service';
 import { OrdersChartService } from './orders-chart.service';
 import { ProfitChartService } from './profit-chart.service';
 import { TrafficListService } from './traffic-list.service';
-import { PeriodsService } from './periods.service';
+import { PeriodsService } from '../common/periods.service';
 import { EarningService } from './earning.service';
 import { OrdersProfitChartService } from './orders-profit-chart.service';
 import { TrafficBarService } from './traffic-bar.service';

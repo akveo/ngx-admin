@@ -16,8 +16,9 @@
   ],
   "scripts": {
     "ng": "ng",
-    "conventional-changelog": "conventional-changelog",
-    "start": "ng serve",
+	"conventional-changelog": "conventional-changelog",
+	"comment-proxy": "https://github.com/angular/angular-cli/blob/master/docs/documentation/stories/proxy.md",
+	"start": "ng serve --proxy-config proxy.conf.json",
     "build": "ng build",
     "build:prod": "npm run build -- --prod --aot",
     "test": "ng test",
