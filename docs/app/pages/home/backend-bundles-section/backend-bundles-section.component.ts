@@ -4,13 +4,14 @@
  * Licensed under the MIT License. See License.txt in the project root for license information.
  */
 
-import { AfterViewInit, Component, ElementRef, Inject } from '@angular/core';
+import { AfterViewInit, OnInit, Component, ElementRef, Inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { delay, filter, take } from 'rxjs/operators';
 import { NB_WINDOW } from '@nebular/theme';
 
 import { Descriptions, DescriptionsService } from '../../../@core/data/service/descriptions.service';
+import BUNDLES from './bundles';
 
 @Component({
   selector: 'ngx-backend-bundles-section',
@@ -21,36 +22,14 @@ export class BackendBundlesSectionComponent implements AfterViewInit {
 
   descriptions: Observable<Descriptions[]> = this.descriptionsService.getBundleDescriptions();
 
-  selectedLicenseType = 'Personal';
-  personalLicense = 'Personal';
-  commercialLicense = 'Commercial';
+  selectedLicenseType = 'personal';
 
-  ecomName = 'E-Commerce:';
-  iotName = 'IoT:';
+  licenses = [
+    { key: 'personal', label: 'Personal' },
+    { key: 'commercial', label: 'Commercial' },
+  ];
 
-  netName = '.NET + ngx-admin';
-  netCoreName = '.NET Core + ngx-admin';
-
-  get firstBundleMail(): string {
-    return this.getMailToText('.NET E-commerce');
-  }
-
-  get secondBundleMail(): string {
-    return this.getMailToText('.NET IoT');
-  }
-
-  get thirdBundleMail(): string {
-    return this.getMailToText('.NET Core E-commerce');
-  }
-
-  get fourthBundleMail(): string {
-    return this.getMailToText('.NET Core IoT');
-  }
-
-  firstCardFlipped: boolean = false;
-  secondCardFlipped: boolean = false;
-  thirdCardFlipped: boolean = false;
-  fourthCardFlipped: boolean = false;
+  bundles = [...BUNDLES];
 
   constructor(private descriptionsService: DescriptionsService,
               private activatedRoute: ActivatedRoute,
@@ -58,9 +37,7 @@ export class BackendBundlesSectionComponent implements AfterViewInit {
               @Inject(NB_WINDOW) private window) {
   }
 
-  isCommercial() {
-    return this.selectedLicenseType === 'Commercial';
-  }
+
 
   ngAfterViewInit() {
     this.activatedRoute.fragment

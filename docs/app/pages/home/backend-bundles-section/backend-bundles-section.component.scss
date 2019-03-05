@@ -188,10 +188,7 @@
     justify-content: flex-start;
     align-content: stretch;
     align-items: stretch;
-
-    &--front {
-      text-align: center;
-    }
+    text-align: center;
 
     &__header {
       display: flex;
@@ -231,6 +228,7 @@
     }
     &__price-wrapper {
       flex: 0 0 2.5rem;
+      margin-top: auto;
       margin-bottom: 0.5rem;
     }
     &__price {
@@ -248,11 +246,10 @@
       }
     }
     &__title {
-      // min-height: 2rem;
       font-weight: bold;
       font-size: 1.125rem;
       color: rgba(0, 0, 0, 0.87);
-      // margin-bottom: 0.5rem;
+      line-height: 1.5rem;
     }
     &__description {
       margin-top: 0.5rem;
@@ -270,7 +267,7 @@
       background-color: #18cb90;
       box-shadow: 0 5px 29px 0 rgba(0, 219, 146, 0.32);
       border-radius: 3px;
-      margin-top: auto;
+      margin-top: 0.5rem;
       cursor: pointer;
       &:hover {
         box-shadow: 0 0.375rem 2.125rem 0 rgba(0, 219, 146, 0.32);
@@ -366,7 +363,7 @@
 
     .features-table {
       .header {
-        font-size: 0.875rem
+        font-size: 0.875rem;
       }
     }
   }

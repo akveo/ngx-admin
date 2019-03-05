@@ -12,164 +12,32 @@
   <div class="package-switcher">
     <div [(ngModel)]="selectedLicenseType" ngbRadioGroup
          class="package-switcher__btn-group btn-group btn-group-toggle btn-outline-toggle-group btn-group-full-width btn-toggle-radio-group">
-      <label ngbButtonLabel class="package-switcher__btn btn btn-outline-secondary">
-        <input ngbButton type="radio" [value]="personalLicense"> {{ personalLicense }}
-      </label>
-      <label ngbButtonLabel class="package-switcher__btn btn btn-outline-secondary">
-        <input ngbButton type="radio" [value]="commercialLicense"> {{ commercialLicense }}
+      <label ngbButtonLabel class="package-switcher__btn btn btn-outline-secondary" *ngFor="let license of licenses">
+        <input ngbButton type="radio" [value]="license.key"> {{ license.label }}
       </label>
     </div>
   </div>
 
   <ul class="packages">
-    <li class="packages__item">
-      <nb-flip-card [showToggleButton]="false" [flipped]="firstCardFlipped">
-        <nb-card-front class="package-card package-card--front">
-          <nb-card>
-            <nb-card-body>
-              <div class="package-card__image package-card__image--dot-net"></div>
-              <h4 class="package-card__title">{{ ecomName }}</h4>
-              <h4 class="package-card__title">{{ netName }}</h4>
-              <p class="package-card__description">
-                E-Commerce Dashboard integrated with REST data services based on .NET Framework, Web API and Entity Framework 6.2
-              </p>
-              <div class="package-card__price-wrapper">
-                <span class="package-card__price package-card__price--old">${{ isCommercial() ? '2000' : '200' }}</span>
-                <span class="package-card__price">${{ isCommercial() ? '1500' : '150' }}</span>
-              </div>
-              <a [href]="firstBundleMail"
-                 class="package-card__buy-link btn btn-demo"
-                 nbButton>
-                 Buy now
-              </a>
-            </nb-card-body>
-          </nb-card>
-        </nb-card-front>
-        <nb-card-back class="package-card package-card--back">
-          <nb-card>
-            <nb-card-body>
-              <h4 class="package-card__type">{{ selectedLicenseType }}</h4>
-              <a [href]="firstBundleMail"
-                 target="_blank"
-                 class="package-card__buy-link btn btn-demo"
-                 nbButton>
-                 Buy now
-              </a>
-            </nb-card-body>
-          </nb-card>
-        </nb-card-back>
-      </nb-flip-card>
-    </li>
-    <li class="packages__item">
-      <nb-flip-card [showToggleButton]="false" [flipped]="secondCardFlipped">
-        <nb-card-front class="package-card package-card--front">
-          <nb-card>
-            <nb-card-body>
-              <div class="package-card__image package-card__image--dot-net"></div>
-              <h4 class="package-card__title">{{ iotName }}</h4>
-              <h4 class="package-card__title">{{ netName }}</h4>
-              <p class="package-card__description">
-                IoT Dashboard integrated with REST data services based on .NET Framework, Web API and Entity Framework 6.2
-              </p>
-              <div class="package-card__price-wrapper">
-                <span class="package-card__price package-card__price--old">${{ isCommercial() ? '2000' : '200' }}</span>
-                <span class="package-card__price">${{ isCommercial() ? '1500' : '150' }}</span>
-              </div>
-              <a [href]="secondBundleMail"
-                 class="package-card__buy-link btn btn-demo"
-                 nbButton>
-                Buy now
-              </a>
-            </nb-card-body>
-          </nb-card>
-        </nb-card-front>
-        <nb-card-back class="package-card package-card--back">
-          <nb-card>
-            <nb-card-body>
-              <h4 class="package-card__type">{{ selectedLicenseType }}</h4>
-              <a [href]="secondBundleMail"
-                 class="package-card__buy-link btn btn-demo"
-                 nbButton>
-                Buy now
-              </a>
-            </nb-card-body>
-          </nb-card>
-        </nb-card-back>
-      </nb-flip-card>
-    </li>
-    <li class="packages__item">
-      <nb-flip-card [showToggleButton]="false" [flipped]="thirdCardFlipped">
-        <nb-card-front class="package-card package-card--front">
-          <nb-card>
-            <nb-card-body>
-              <div class="package-card__image package-card__image--dot-net-core"></div>
-              <h4 class="package-card__title">{{ ecomName }}</h4>
-              <h4 class="package-card__title">{{ netCoreName }}</h4>
-              <p class="package-card__description">
-                E-Commerce Dashboard integrated with REST data services based on .NET Core, Web API and Entity Framework 2.2
-              </p>
-              <div class="package-card__price-wrapper">
-                <span class="package-card__price package-card__price--old">${{ isCommercial() ? '1800' : '180' }}</span>
-                <span class="package-card__price">${{ isCommercial() ? '1400' : '140' }}</span>
-              </div>
-              <a [href]="thirdBundleMail"
-                 class="package-card__buy-link btn btn-demo"
-                 nbButton>
-                Buy now
-              </a>
-            </nb-card-body>
-          </nb-card>
-        </nb-card-front>
-        <nb-card-back class="package-card package-card--back">
-          <nb-card>
-            <nb-card-body>
-              <h4 class="package-card__type">{{ selectedLicenseType }}</h4>
-              <a [href]="thirdBundleMail"
-                 class="package-card__buy-link btn btn-demo"
-                 nbButton>
-                Buy now
-              </a>
-            </nb-card-body>
-          </nb-card>
-        </nb-card-back>
-      </nb-flip-card>
-    </li>
-    <li class="packages__item">
-      <nb-flip-card [showToggleButton]="false" [flipped]="fourthCardFlipped">
-        <nb-card-front class="package-card package-card--front">
-          <nb-card>
-            <nb-card-body>
-              <div class="package-card__image package-card__image--dot-net-core"></div>
-              <h4 class="package-card__title">{{ iotName }}</h4>
-              <h4 class="package-card__title">{{ netCoreName }}</h4>
-              <p class="package-card__description">
-                IoT Dashboard integrated with REST data services based on .NET Core, Web API and Entity Framework 2.2
-              </p>
-              <div class="package-card__price-wrapper">
-                <span class="package-card__price package-card__price--old">${{ isCommercial() ? '1800' : '180' }}</span>
-                <span class="package-card__price">${{ isCommercial() ? '1400' : '140' }}</span>
-              </div>
-              <a [href]="fourthBundleMail"
-                 class="package-card__buy-link btn btn-demo"
-                 nbButton>
-                Buy now
-              </a>
-            </nb-card-body>
-          </nb-card>
-        </nb-card-front>
-        <nb-card-back class="package-card package-card--back">
-          <nb-card>
-            <nb-card-body>
-              <h4 class="package-card__type">{{ selectedLicenseType }}</h4>
-              <a [href]="fourthBundleMail"
-                 class="package-card__buy-link btn btn-demo"
-                 nbButton>
-                 Buy now
-              </a>
-            </nb-card-body>
-          </nb-card>
-        </nb-card-back>
-      </nb-flip-card>
+    <li class="packages__item" *ngFor="let bundle of bundles">
+      <nb-card class="package-card">
+        <nb-card-body>
+          <div class="package-card__image" [ngClass]="'package-card__image--' + bundle.imageModifier"></div>
+          <h4 class="package-card__title">{{ bundle.type }} <br> {{ bundle.title }}</h4>
+          <p class="package-card__description">
+            {{ bundle.description }}
+          </p>
+          <div class="package-card__price-wrapper">
+            <span class="package-card__price package-card__price--old">${{ bundle.price[selectedLicenseType].old }}</span>
+            <span class="package-card__price">${{ bundle.price[selectedLicenseType].new }}</span>
+          </div>
+          <a [href]="bundle.emailLink"
+             class="package-card__buy-link btn btn-demo"
+             nbButton>
+             Buy now
+          </a>
+        </nb-card-body>
+      </nb-card>
     </li>
   </ul>
 
