@@ -28,6 +28,7 @@ import { ngxLandingServices } from './services';
 
 // pipes
 import { EvaIconsPipe } from './pipes/eva-icons.pipe';
+import { CapitalizePipe } from './pipes/capitalize.pipe';
 // pipes
 
 import {
@@ -39,7 +40,6 @@ import {
   NbSidebarModule,
   NbTabsetModule,
 } from '@nebular/theme';
-import { CapitalizePipe } from './pipes/capitalize.pipe';
 
 const BASE_MODULES = [
   CommonModule,
