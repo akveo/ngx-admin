@@ -39,6 +39,7 @@ import {
   NbSidebarModule,
   NbTabsetModule,
 } from '@nebular/theme';
+import { CapitalizePipe } from './pipes/capitalize.pipe';
 
 const BASE_MODULES = [
   CommonModule,
@@ -68,6 +69,7 @@ const COMPONENTS = [
 
 const PIPES = [
   EvaIconsPipe,
+  CapitalizePipe,
 ];
 
 @NgModule({

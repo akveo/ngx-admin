@@ -6,12 +6,12 @@ const BUNDLES = [
       'Entity Framework 6.2 ',
     price: {
       personal: {
-        old: '200',
-        new: '150',
+        oldPrice: '200',
+        newPrice: '150',
       },
       commercial: {
-        old: '2000',
-        new: '1500',
+        oldPrice: '2000',
+        newPrice: '1500',
       },
     },
     imageModifier: 'dot-net',
@@ -25,12 +25,12 @@ const BUNDLES = [
       'Framework 6.2',
     price: {
       personal: {
-        old: '200',
-        new: '150',
+        oldPrice: '200',
+        newPrice: '150',
       },
       commercial: {
-        old: '2000',
-        new: '1500',
+        oldPrice: '2000',
+        newPrice: '1500',
       },
     },
     imageModifier: 'dot-net',
@@ -44,12 +44,12 @@ const BUNDLES = [
       'Entity Framework 2.2',
     price: {
       personal: {
-        old: '180',
-        new: '140',
+        oldPrice: '180',
+        newPrice: '140',
       },
       commercial: {
-        old: '1800',
-        new: '1400',
+        oldPrice: '1800',
+        newPrice: '1400',
       },
     },
     imageModifier: 'dot-net-core',
@@ -63,12 +63,12 @@ const BUNDLES = [
       'Framework 2.2',
     price: {
       personal: {
-        old: '180',
-        new: '140',
+        oldPrice: '180',
+        newPrice: '140',
       },
       commercial: {
-        old: '1800',
-        new: '1400',
+        oldPrice: '1800',
+        newPrice: '1400',
       },
     },
     imageModifier: 'dot-net-core',

@@ -13,13 +13,13 @@
     <div [(ngModel)]="selectedLicenseType" ngbRadioGroup
          class="package-switcher__btn-group btn-group btn-group-toggle btn-outline-toggle-group btn-group-full-width btn-toggle-radio-group">
       <label ngbButtonLabel class="package-switcher__btn btn btn-outline-secondary" *ngFor="let license of licenses">
-        <input ngbButton type="radio" [value]="license.key"> {{ license.label }}
+        <input ngbButton type="radio" [value]="license"> {{ license | ngxCapitalize }}
       </label>
     </div>
   </div>
 
   <ul class="packages">
-    <li class="packages__item" *ngFor="let bundle of bundles">
+    <li class="packages__item" *ngFor="let bundle of bundles | async">
       <nb-card class="package-card">
         <nb-card-body>
           <div class="package-card__image" [ngClass]="'package-card__image--' + bundle.imageModifier"></div>
@@ -28,10 +28,10 @@
             {{ bundle.description }}
           </p>
           <div class="package-card__price-wrapper">
-            <span class="package-card__price package-card__price--old">${{ bundle.price[selectedLicenseType].old }}</span>
-            <span class="package-card__price">${{ bundle.price[selectedLicenseType].new }}</span>
+            <span class="package-card__price package-card__price--old">${{ bundle.licenses[selectedLicenseType].oldPrice }}</span>
+            <span class="package-card__price">${{ bundle.licenses[selectedLicenseType].newPrice }}</span>
           </div>
-          <a [href]="bundle.emailLink"
+          <a [href]="bundle.licenses[selectedLicenseType].emailLink"
              class="package-card__buy-link btn btn-demo"
              nbButton>
              Buy now

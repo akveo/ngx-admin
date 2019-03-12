@@ -4,14 +4,14 @@
  * Licensed under the MIT License. See License.txt in the project root for license information.
  */
 
-import { AfterViewInit, OnInit, Component, ElementRef, Inject } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, Inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { delay, filter, take } from 'rxjs/operators';
 import { NB_WINDOW } from '@nebular/theme';
 
+import { Bundle, BundlesService, BUNDLE_LICENSE } from '../../../@core/data/service/bundles.service';
 import { Descriptions, DescriptionsService } from '../../../@core/data/service/descriptions.service';
-import BUNDLES from './bundles';
 
 @Component({
   selector: 'ngx-backend-bundles-section',
@@ -20,24 +20,19 @@ import BUNDLES from './bundles';
 })
 export class BackendBundlesSectionComponent implements AfterViewInit {
 
-  descriptions: Observable<Descriptions[]> = this.descriptionsService.getBundleDescriptions();
+  descriptions: Observable<Descriptions[]> = this.descriptionService.getBundleDescriptions();
+  bundles: Observable<Bundle[]> = this.bundlesService.getBundles();
 
-  selectedLicenseType = 'personal';
+  selectedLicenseType = BUNDLE_LICENSE.personal;
 
-  licenses = [
-    { key: 'personal', label: 'Personal' },
-    { key: 'commercial', label: 'Commercial' },
-  ];
+  licenses = Object.values(BUNDLE_LICENSE);
 
-  bundles = [...BUNDLES];
-
-  constructor(private descriptionsService: DescriptionsService,
+  constructor(private descriptionService: DescriptionsService,
+              private bundlesService: BundlesService,
               private activatedRoute: ActivatedRoute,
               private el: ElementRef<HTMLElement>,
               @Inject(NB_WINDOW) private window) {
   }
-
-
 
   ngAfterViewInit() {
     this.activatedRoute.fragment
@@ -49,14 +44,5 @@ export class BackendBundlesSectionComponent implements AfterViewInit {
       .subscribe((fragment: string) => {
         this.window.scrollTo(0, this.el.nativeElement.offsetTop);
       });
-  }
-
-  private getMailToText(bundleName: string) {
-    return 'mailto:support@akveo.com' +
-      `?subject=${this.selectedLicenseType} ${bundleName} Bundle` +
-      '&body=Dear Akveo, %0D%0A%0D%0A' +
-      `I would like to purchase ${this.selectedLicenseType} ${bundleName} Bundle. ` +
-      'Please give me details how I can proceed with that. %0D%0A%0D%0A' +
-      'Thanks and regards';
   }
 }
