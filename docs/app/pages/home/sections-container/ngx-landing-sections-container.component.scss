@@ -25,6 +25,10 @@
     margin: 0 auto;
   }
 
+  ngx-landing-description-section {
+    margin-top: -3rem;
+  }
+
 
   @include media-breakpoint-down(is) {
     ngx-landing-main-info,
