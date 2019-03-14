@@ -47,60 +47,28 @@
       <th>PERSONAL</th>
       <th>COMMERCIAL</th>
     </tr>
-    <tr>
-      <td class="left">ngx-admin template with 100+ UI components integrated with Backend Services</td>
+    <tr *ngFor="let feature of features | async">
+      <td class="left">{{ feature.text }}</td>
       <td>
-        <i [innerHTML]="'checkmark-outline' | eva: { width: 24, height: 24, fill: '#00db92' }"></i>
+        <ng-container *ngTemplateOutlet="availabilityIcon; context: { $implicit: feature.availableInPersonalLicence }">
+        </ng-container>
       </td>
       <td>
-        <i [innerHTML]="'checkmark-outline' | eva: { width: 24, height: 24, fill: '#00db92' }"></i>
-      </td>
-    </tr>
-    <tr>
-      <td class="left">Backend Services and Repository layers with data access</td>
-      <td>
-        <i [innerHTML]="'checkmark-outline' | eva: { width: 24, height: 24, fill: '#00db92' }"></i>
-      </td>
-      <td>
-        <i [innerHTML]="'checkmark-outline' | eva: { width: 24, height: 24, fill: '#00db92' }"></i>
+        <ng-container *ngTemplateOutlet="availabilityIcon; context: { $implicit: feature.availableInCommercialLicence }">
+        </ng-container>
       </td>
     </tr>
-    <tr>
-      <td class="left">JWT Authentication setup for UI and Backend</td>
-      <td>
-        <i [innerHTML]="'checkmark-outline' | eva: { width: 24, height: 24, fill: '#00db92' }"></i>
-      </td>
-      <td>
-        <i [innerHTML]="'checkmark-outline' | eva: { width: 24, height: 24, fill: '#00db92' }"></i>
-      </td>
-    </tr>
-    <tr>
-      <td class="left">Running instructions and code documentation</td>
-      <td>
-        <i [innerHTML]="'checkmark-outline' | eva: { width: 24, height: 24, fill: '#00db92' }"></i>
-      </td>
-      <td>
-        <i [innerHTML]="'checkmark-outline' | eva: { width: 24, height: 24, fill: '#00db92' }"></i>
-      </td>
-    </tr>
-    <tr>
-      <td class="left">Commercial Usage</td>
-      <td>
-        <i [innerHTML]="'close-outline' | eva: { width: 24, height: 24, fill: '#ff8588' }"></i>
-      </td>
-      <td>
-        <i [innerHTML]="'checkmark-outline' | eva: { width: 24, height: 24, fill: '#00db92' }"></i>
-      </td>
-    </tr>
-    <tr>
-      <td class="left">One Year support and bug fixes on request</td>
-      <td>
-        <i [innerHTML]="'close-outline' | eva: { width: 24, height: 24, fill: '#ff8588' }"></i>
-      </td>
-      <td>
-        <i [innerHTML]="'checkmark-outline' | eva: { width: 24, height: 24, fill: '#00db92' }"></i>
-      </td>
-    </tr>
+
+    <ng-template #availabilityIcon let-isAvailable>
+      <i *ngIf="isAvailable; else unavailableIcon"
+         aria-label="available"
+         [innerHTML]="'checkmark-outline' | eva: { width: 24, height: 24, fill: '#00db92' }">
+      </i>
+
+      <ng-template #unavailableIcon>
+        <i aria-label="unavailable" [innerHTML]="'close-outline' | eva: { width: 24, height: 24, fill: '#ff8588' }"></i>
+      </ng-template>
+    </ng-template>
   </table>
 
   <div class="request-code-section">

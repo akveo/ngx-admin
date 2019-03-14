@@ -10,6 +10,12 @@ export class Bundle {
   emailName: string;
 }
 
+export class Feature {
+  text: string;
+  availableInPersonalLicence: boolean;
+  availableInCommercialLicence: boolean;
+}
+
 export const BUNDLE_LICENSE = {
   personal: 'personal',
   commercial: 'commercial',
@@ -98,6 +104,39 @@ export class BundlesService {
     },
   ];
 
+  private features: Feature[] = [
+    {
+      text: 'ngx-admin template with 100+ UI components integrated with Backend Services',
+      availableInPersonalLicence: true,
+      availableInCommercialLicence: true,
+    },
+    {
+      text: 'Backend Services and Repository layers with data access',
+      availableInPersonalLicence: true,
+      availableInCommercialLicence: true,
+    },
+    {
+      text: 'JWT Authentication setup for UI and Backend',
+      availableInPersonalLicence: true,
+      availableInCommercialLicence: true,
+    },
+    {
+      text: 'Running instructions and code documentation',
+      availableInPersonalLicence: true,
+      availableInCommercialLicence: true,
+    },
+    {
+      text: 'Commercial Usage',
+      availableInPersonalLicence: false,
+      availableInCommercialLicence: true,
+    },
+    {
+      text: 'One Year support and bug fixes on request',
+      availableInPersonalLicence: false,
+      availableInCommercialLicence: true,
+    },
+  ];
+
   /* tslint:disable:max-line-length */
 
   constructor() {
@@ -119,5 +158,9 @@ export class BundlesService {
 
   getBundles(): Observable<Bundle[]> {
     return observableOf(this.bundles);
+  }
+
+  getFeatures(): Observable<Feature[]> {
+    return observableOf(this.features);
   }
 }

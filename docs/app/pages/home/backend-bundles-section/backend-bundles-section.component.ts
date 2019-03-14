@@ -10,7 +10,7 @@ import { Observable } from 'rxjs';
 import { delay, filter, take } from 'rxjs/operators';
 import { NB_WINDOW } from '@nebular/theme';
 
-import { Bundle, BundlesService, BUNDLE_LICENSE } from '../../../@core/data/service/bundles.service';
+import { Bundle, BundlesService, BUNDLE_LICENSE, Feature } from '../../../@core/data/service/bundles.service';
 import { Descriptions, DescriptionsService } from '../../../@core/data/service/descriptions.service';
 
 @Component({
@@ -22,6 +22,7 @@ export class BackendBundlesSectionComponent implements AfterViewInit {
 
   descriptions: Observable<Descriptions[]> = this.descriptionService.getBundleDescriptions();
   bundles: Observable<Bundle[]> = this.bundlesService.getBundles();
+  features: Observable<Feature[]> = this.bundlesService.getFeatures();
 
   selectedLicenseType = BUNDLE_LICENSE.personal;
 
