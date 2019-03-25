@@ -76,7 +76,7 @@
     "rxjs": "6.3.0",
     "rxjs-compat": "6.3.0",
     "socicon": "3.0.5",
-    "tinymce": "4.5.7",
+    "tinymce": "^4.8.3",
     "typeface-exo": "0.0.22",
     "web-animations-js": "2.2.5",
     "zone.js": "^0.8.26"
