@@ -5,6 +5,8 @@
  */
 
 import { Component } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Descriptions, DescriptionsService } from '../../../@core/data/service/descriptions.service';
 
 @Component({
   selector: 'ngx-landing-sections-container',
@@ -13,6 +15,7 @@ import { Component } from '@angular/core';
 })
 export class NgxLandingSectionsContainerComponent {
 
-  constructor() {
-  }
+  descriptions: Observable<Descriptions[]> = this.descriptionsService.getDescriptions();
+
+  constructor(private descriptionsService: DescriptionsService) { }
 }

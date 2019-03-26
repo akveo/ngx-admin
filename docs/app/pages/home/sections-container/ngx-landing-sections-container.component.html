@@ -2,7 +2,7 @@
   <ngx-landing-main-info></ngx-landing-main-info>
 </div>
 
-<ngx-landing-description-section></ngx-landing-description-section>
+<ngx-landing-description-section *ngIf="descriptions | async" [descriptions]="descriptions | async" ></ngx-landing-description-section>
 
 <ngx-landing-theme-section></ngx-landing-theme-section>
 
@@ -11,6 +11,8 @@
 
   <ngx-landing-reviews-section></ngx-landing-reviews-section>
 </div>
+
+<ngx-backend-bundles-section id="backend-bundles"></ngx-backend-bundles-section>
 
 <ngx-landing-our-projects-section></ngx-landing-our-projects-section>
 

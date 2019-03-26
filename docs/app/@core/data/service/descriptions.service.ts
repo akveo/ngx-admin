@@ -33,9 +33,36 @@ export class DescriptionsService {
       description: 'Continuous updates and fixes from the development team to keep your tech up to date. The friendly and active community support team are ready to guide you through your challenges',
     },
   ];
-  /* tslint:enable:max-line-length */
+  private bundleDescriptions: Descriptions[] = [
+    {
+      icon: 'umbrella-outline',
+      title: 'Convenient',
+      description: 'Complete pack of well known Angular based ngx-admin template, integrated with Backend Solution of your choice. Finally, you can get fully integrated solution out of the box.',
+    },
+    {
+      icon: 'settings-2-outline',
+      title: 'Functional',
+      description: 'Deploy it as ready to use solution for a particular case, or give it to your development team to incrementally add functionality. It provides a significant boost and solid development structure.',
+    },
+    {
+      icon: 'clock-outline',
+      title: 'Efficient',
+      description: 'Save more than $21,000 using Backend Bundle. According to our research ready Backend Bundle optimizes around 300 hours of development time.',
+    },
+    {
+      icon: 'checkmark-circle-2-outline',
+      title: 'Ready to use',
+      description: 'We prepared this Backend pack as development basement which lets your team concentrate on business logic and data models.',
+    },
+  ];
+
+  /* tslint:disable:max-line-length */
 
   getDescriptions(): Observable<Descriptions[]> {
     return observableOf(this.descriptions);
+  }
+
+  getBundleDescriptions(): Observable<Descriptions[]> {
+    return observableOf(this.bundleDescriptions);
   }
 }
