@@ -14,6 +14,7 @@
   padding-bottom: 5.125rem;
 
   .social-button {
+    width: 19rem;
     display: inline-flex;
     align-items: center;
     box-shadow: nb-theme(shadow-default);
@@ -32,8 +33,13 @@
       box-shadow: nb-theme(shadow-active-btn);
     }
 
+    > i {
+      width: 2.75rem;
+      text-align: center;
+    }
+
     .info {
-      margin-left: 2rem;
+      margin-left: 1.625rem;
       text-align: left;
     }
 
@@ -56,10 +62,7 @@
 
   .github {
     margin-top: 2rem;
-    margin-left: 1.25rem;
-    padding-right: 6.5rem;
-    padding-top: 1.5rem;
-    padding-bottom: 1.5rem;
+    padding: 1.5rem 5rem 1.5rem 1.625rem;
   }
 
   .sub-title {
@@ -83,10 +86,10 @@
   }
 
   .facebook {
-    padding: 1.5rem 6.625rem 1.25rem 1.375rem;
+    padding: 1.5rem 5rem 1.25rem 1.625rem;
 
     .info {
-      margin-left: 1.125rem;
+      margin-left: 1.625rem;
     }
 
     .title {
@@ -95,18 +98,18 @@
   }
 
   .linkedin {
-    padding: 1.5rem 7rem 1.25rem 1.625rem;
+    padding: 1.5rem 5rem 1.25rem 1.625rem;
 
     .info {
-      margin-left: 1.75rem;
+      margin-left: 1.625rem;
     }
   }
 
   .twitter {
-    padding: 1.5rem 8rem 1.25rem 1.625rem;
+    padding: 1.5rem 5rem 1.25rem 1.625rem;
 
     .info {
-      margin-left: 1.75rem;
+      margin-left: 1.625rem;
     }
   }
 
@@ -115,16 +118,27 @@
       width: 80%;
     }
 
+    //.social-button {
+    //  width: auto;
+    //}
+
+    .github {
+      width: auto;
+    }
+
     .facebook {
+      width: 13rem;
       padding-right: 1.5rem;
     }
 
     .linkedin {
+      width: 13rem;
       padding-right: 1.5rem;
     }
 
     .twitter {
-      padding-right: 3rem;
+      width: 13rem;
+      padding-right: 1.5rem;
     }
   }
 
@@ -136,13 +150,15 @@
       font-size: nb-theme(font-size);
     }
 
-    .github {
+    .social-button {
       margin-top: 2rem;
       margin-left: 0;
-      padding-right: 0;
-      padding-top: 1.25rem;
-      padding-bottom: 1.25rem;
+      padding: 1.25rem 0 1.25rem 1.875rem;
       width: 100%;
+
+      .info {
+        margin-left: 1.5rem;
+      }
     }
 
     .sub-title {

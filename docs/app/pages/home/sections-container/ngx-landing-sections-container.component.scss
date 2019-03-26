@@ -19,9 +19,14 @@
   ngx-landing-reviews-section,
   ngx-landing-our-projects-section,
   ngx-landing-social-section,
-  ngx-landing-contact-section {
+  ngx-landing-contact-section,
+  ngx-backend-bundles-section {
     max-width: $content-width;
     margin: 0 auto;
+  }
+
+  ngx-landing-description-section {
+    margin-top: -3rem;
   }
 
 

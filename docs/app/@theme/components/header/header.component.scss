@@ -55,6 +55,16 @@
     }
   }
 
+  .backend-bundles {
+    display: none;
+    align-items: center;
+    padding-right: 2rem;
+
+    i {
+      margin-right: 0.5rem;
+    }
+  }
+
   /deep/ nb-menu {
     flex: 1;
 
@@ -87,6 +97,7 @@
 
   .section.right {
     color: $contacts-fg;
+    display: none;
 
     a {
       font-family: nb-theme(font-main), sans-serif;
@@ -115,6 +126,9 @@
         display: inline;
       }
     }
+    .backend-bundles {
+      display: flex;
+    }
   }
 
   @include media-breakpoint-up(md) {
@@ -141,6 +155,9 @@
         display: list-item;
       }
     }
+    .section.right {
+      display: block;
+    }
   }
 
   @include media-breakpoint-up(xl) {
@@ -154,12 +171,6 @@
     /deep/ nb-menu {
       .menu-items {
         justify-content: flex-end;
-      }
-    }
-
-    .section {
-      &.right {
-        display: none;
       }
     }
   }
@@ -189,6 +200,7 @@
   }
 
   &.docs-page {
+
     .section {
       &.left {
         align-items: center;
@@ -237,14 +249,13 @@
         justify-content: space-between;
       }
 
-      .section.right {
-        display: block;
-      }
-
       .stars {
         width: 7.5rem;
         height: 1.25rem;
         margin-left: auto;
+      }
+      .backend-bundles {
+        display: flex;
       }
     }
 
@@ -258,6 +269,9 @@
         .menu-items li {
           display: list-item;
         }
+      }
+      .section.right {
+        display: block;
       }
     }
 

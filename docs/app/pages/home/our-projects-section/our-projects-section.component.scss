@@ -16,10 +16,10 @@
   .project-img {
     min-width: 39.75rem;
     min-height: 20.375rem;
+    max-height: 20.375rem;
 
     .lazy-load-image {
       width: 100%;
-      height: 100%;
       visibility: hidden;
       transition: opacity 1s;
       opacity: 0;
@@ -27,6 +27,9 @@
       &.ng-lazyloaded {
         visibility: visible;
         opacity: 1;
+      }
+      &.ng-failed-lazyloaded {
+        height: 100%;
       }
     }
   }

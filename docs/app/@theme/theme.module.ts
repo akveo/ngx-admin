@@ -28,6 +28,7 @@ import { ngxLandingServices } from './services';
 
 // pipes
 import { EvaIconsPipe } from './pipes/eva-icons.pipe';
+import { CapitalizePipe } from './pipes/capitalize.pipe';
 // pipes
 
 import {
@@ -68,6 +69,7 @@ const COMPONENTS = [
 
 const PIPES = [
   EvaIconsPipe,
+  CapitalizePipe,
 ];
 
 @NgModule({
