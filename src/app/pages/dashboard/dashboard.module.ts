@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 
 import { NgxEchartsModule } from 'ngx-echarts';
+import { FormsModule} from '@angular/forms';
 
 import { ThemeModule } from '../../@theme/theme.module';
 import { DashboardComponent } from './dashboard.component';
@@ -20,11 +21,14 @@ import { SolarComponent } from './solar/solar.component';
 import { PlayerComponent } from './rooms/player/player.component';
 import { TrafficComponent } from './traffic/traffic.component';
 import { TrafficChartComponent } from './traffic/traffic-chart.component';
+import { CodeareaComponent } from './codearea/codearea.component';
+import { WebsiteListComponent } from './website-list/website-list.component';
 
 @NgModule({
   imports: [
     ThemeModule,
     NgxEchartsModule,
+    FormsModule
   ],
   declarations: [
     DashboardComponent,
@@ -44,6 +48,8 @@ import { TrafficChartComponent } from './traffic/traffic-chart.component';
     SolarComponent,
     TrafficComponent,
     TrafficChartComponent,
+    CodeareaComponent,
+    WebsiteListComponent,
   ],
 })
 export class DashboardModule { }

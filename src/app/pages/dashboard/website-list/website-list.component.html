@@ -1,0 +1,7 @@
+<div class="manageWeb">
+  <input type="text" [(ngModel)]="keyword"> <button (click)="doAdd()">添加</button>
+  <hr>
+  <ul>
+    <li *ngFor="let item of historyList;let key=index;">{{item}}        --<button (click)="doDelete(key)">删除</button></li>
+  </ul>
+</div>
