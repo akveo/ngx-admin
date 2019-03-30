@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { HttpClientModule} from '@angular/common/http';
 
 import { NgxEchartsModule } from 'ngx-echarts';
 import { FormsModule} from '@angular/forms';
@@ -28,7 +29,8 @@ import { WebsiteListComponent } from './website-list/website-list.component';
   imports: [
     ThemeModule,
     NgxEchartsModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule,
   ],
   declarations: [
     DashboardComponent,
@@ -50,6 +52,7 @@ import { WebsiteListComponent } from './website-list/website-list.component';
     TrafficChartComponent,
     CodeareaComponent,
     WebsiteListComponent,
+
   ],
 })
 export class DashboardModule { }

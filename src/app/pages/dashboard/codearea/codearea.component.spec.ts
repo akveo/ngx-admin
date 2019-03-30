@@ -8,7 +8,7 @@ describe('CodeareaComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CodeareaComponent ]
+      declarations: [ CodeareaComponent ],
     })
     .compileComponents();
   }));

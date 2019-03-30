@@ -1,7 +1,8 @@
+<ngx-codearea [keyItem]="keyItem"></ngx-codearea>
 <div class="manageWeb">
   <input type="text" [(ngModel)]="keyword"> <button (click)="doAdd()">添加</button>
   <hr>
   <ul>
-    <li *ngFor="let item of historyList;let key=index;">{{item}}        --<button (click)="doDelete(key)">删除</button></li>
-  </ul>
+    <li *ngFor="let item of historyList;let key=index;"><a href="#"> {{item}}        ----<button (click)="doLogin(item)">使用</button>----<button (click)="doDelete(key)">删除</button></a></li>
+  </ul> <!-- 到时候显示的可能没有title -->
 </div>
