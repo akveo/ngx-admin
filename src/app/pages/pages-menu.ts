@@ -37,6 +37,10 @@ export const MENU_ITEMS: NbMenuItem[] = [
         link: '/pages/extra-components/infinite-list',
       },
       {
+        title: 'Form Inputs',
+        link: '/pages/extra-components/form-inputs',
+      },
+      {
         title: 'Accordion',
         link: '/pages/extra-components/accordion',
       },
