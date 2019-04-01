@@ -1,6 +1,6 @@
 {
   "name": "ngx-admin",
-  "version": "3.1.0",
+  "version": "3.2.0",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -46,10 +46,10 @@
     "@angular/platform-browser-dynamic": "^7.2.11",
     "@angular/router": "^7.2.11",
     "@asymmetrik/ngx-leaflet": "3.0.1",
-    "@nebular/auth": "3.1.0",
-    "@nebular/bootstrap": "3.1.0",
-    "@nebular/security": "3.1.0",
-    "@nebular/theme": "3.1.0",
+    "@nebular/auth": "3.4.2",
+    "@nebular/bootstrap": "3.4.2",
+    "@nebular/security": "3.4.2",
+    "@nebular/theme": "3.4.2",
     "@ng-bootstrap/ng-bootstrap": "^4.0.0",
     "@swimlane/ngx-charts": "^10.0.0",
     "angular-tree-component": "7.2.0",
