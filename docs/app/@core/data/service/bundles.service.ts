@@ -7,7 +7,6 @@ export class Bundle {
   description: string;
   licenses: object;
   imageModifier: string;
-  emailName: string;
 }
 
 export class Feature {
@@ -17,8 +16,8 @@ export class Feature {
 }
 
 export const BUNDLE_LICENSE = {
-  personal: 'personal',
-  commercial: 'commercial',
+  single: 'single',
+  multi: 'multi',
 };
 
 @Injectable()
@@ -27,80 +26,76 @@ export class BundlesService {
   /* tslint:disable:max-line-length */
   private bundles: Bundle[] = [
     {
-      type: 'E-Commerce:',
-      title: '.NET + ngx-admin',
-      description: 'E-Commerce Dashboard integrated with REST data services based on .NET Framework, Web API and Entity Framework 6.2 ',
+      type: 'Starter',
+      title: 'Node.JS + ngx-admin',
+      description: 'Starter Dashboard integrated with REST data services based Express REST API, MongoDB',
       licenses: {
-        personal: {
-          oldPrice: '200',
-          newPrice: '150',
-          emailLink: '',
+        single: {
+          oldPrice: '35',
+          newPrice: '25',
+          buyLink: 'https://store.akveo.com/collections/all/products/nodejs-mongodb-ngx-admin-angular-starter-bundle',
         },
-        commercial: {
-          oldPrice: '2000',
-          newPrice: '1500',
-          emailLink: '',
+        multi: {
+          oldPrice: '150',
+          newPrice: '125',
+          buyLink: 'https://store.akveo.com/collections/all/products/nodejs-mongodb-ngx-admin-angular-starter-bundle?variant=15070372560945',
         },
       },
-      imageModifier: 'dot-net',
-      emailName: '.NET E-commerce',
+      imageModifier: 'node-js',
     },
     {
-      type: 'IoT:',
-      title: '.NET + ngx-admin',
-      description: 'IoT Dashboard integrated with REST data services based on .NET Framework, Web API and Entity Framework 6.2',
-      licenses: {
-        personal: {
-          oldPrice: '200',
-          newPrice: '150',
-          emailLink: '',
-        },
-        commercial: {
-          oldPrice: '2000',
-          newPrice: '1500',
-          emailLink: '',
-        },
-      },
-      imageModifier: 'dot-net',
-      emailName: '.NET IoT',
-    },
-    {
-      type: 'E-Commerce:',
+      type: 'Starter:',
       title: '.NET Core + ngx-admin',
       description: 'E-Commerce Dashboard integrated with REST data services based on .NET Core, Web API and Entity Framework 2.2',
       licenses: {
-        personal: {
+        single: {
           oldPrice: '180',
           newPrice: '140',
-          emailLink: '',
+          buyLink: 'https://store.akveo.com/collections/all/products/net-core-ngx-admin-angular-starter-bundle',
         },
-        commercial: {
+        multi: {
           oldPrice: '1800',
           newPrice: '1400',
-          emailLink: '',
+          buyLink: 'https://store.akveo.com/collections/all/products/net-core-ngx-admin-angular-starter-bundle?variant=14607219753009',
         },
       },
       imageModifier: 'dot-net-core',
-      emailName: '.NET Core E-commerce',
     },
     {
-      type: 'IoT:',
+      type: 'Full E-commerce Bundle',
       title: '.NET Core + ngx-admin',
+      description: 'E-commerce Dashboard integrated with REST data services based on .NET Core, Web API and Entity Framework 6.2',
+      licenses: {
+        single: {
+          oldPrice: '200',
+          newPrice: '150',
+          buyLink: 'https://store.akveo.com/collections/all/products/e-commerce-net-core-ngx-admin',
+        },
+        multi: {
+          oldPrice: '2000',
+          newPrice: '1500',
+          buyLink: 'https://store.akveo.com/collections/all/products/e-commerce-net-core-ngx-admin?variant=14434658779185',
+        },
+      },
+      imageModifier: 'dot-net',
+    },
+    {
+      type: 'Full IoT Bundle',
+      title: '.NET Framework + ngx-admin',
       description: 'IoT Dashboard integrated with REST data services based on .NET Core, Web API and Entity Framework 2.2',
       licenses: {
-        personal: {
+        single: {
           oldPrice: '180',
           newPrice: '140',
-          emailLink: '',
+          buyLink: 'https://store.akveo.com/collections/all/products/iot-net-ngx-admin',
         },
-        commercial: {
+        multi: {
           oldPrice: '1800',
           newPrice: '1400',
-          emailLink: '',
+          buyLink: 'https://store.akveo.com/collections/all/products/iot-net-ngx-admin?variant=14434651471921',
         },
       },
       imageModifier: 'dot-net-core',
-      emailName: '.NET Core IoT',
     },
   ];
 
@@ -126,35 +121,22 @@ export class BundlesService {
       availableInCommercialLicence: true,
     },
     {
-      text: 'Commercial Usage',
+      text: 'Single app',
+      availableInPersonalLicence: true,
+      availableInCommercialLicence: true,
+    },
+    {
+      text: 'Multi app',
       availableInPersonalLicence: false,
       availableInCommercialLicence: true,
     },
     {
-      text: 'One Year support and bug fixes on request',
+      text: '6 months support and bug fixes on request',
       availableInPersonalLicence: false,
       availableInCommercialLicence: true,
     },
   ];
-
   /* tslint:disable:max-line-length */
-
-  constructor() {
-    this.bundles.forEach((bundle) => {
-      Object.entries(bundle.licenses).forEach(([key, license]) => {
-        license.emailLink = this.getMailToText(bundle.emailName, key);
-      });
-    });
-  }
-
-  private getMailToText(bundleName: string, licenseName: string) {
-    return 'mailto:support@akveo.com' +
-      `?subject=${licenseName} ${bundleName} Bundle` +
-      '&body=Dear Akveo, %0D%0A%0D%0A' +
-      `I would like to purchase ${licenseName} ${bundleName} Bundle. ` +
-      'Please give me details how I can proceed with that. %0D%0A%0D%0A' +
-      'Thanks and regards';
-  }
 
   getBundles(): Observable<Bundle[]> {
     return observableOf(this.bundles);

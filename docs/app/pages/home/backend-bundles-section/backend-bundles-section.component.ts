@@ -24,7 +24,7 @@ export class BackendBundlesSectionComponent implements AfterViewInit {
   bundles: Observable<Bundle[]> = this.bundlesService.getBundles();
   features: Observable<Feature[]> = this.bundlesService.getFeatures();
 
-  selectedLicenseType = BUNDLE_LICENSE.personal;
+  selectedLicenseType = BUNDLE_LICENSE.single;
 
   licenses = Object.values(BUNDLE_LICENSE);
 

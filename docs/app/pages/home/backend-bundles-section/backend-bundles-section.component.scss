@@ -225,6 +225,9 @@
       &--dot-net-core {
         background-image: url('assets/img/bundle-dot-net-core.png');
       }
+      &--node-js {
+        background-image: url('assets/img/bundle-node-js.png');
+      }
     }
     &__price-wrapper {
       flex: 0 0 2.5rem;
@@ -286,6 +289,10 @@
 
   .request-code-section {
     margin-bottom: 5rem;
+
+    a:not(:first-child) {
+      margin-left: 2rem;
+    }
   }
 
   @include media-breakpoint-down(xl) {

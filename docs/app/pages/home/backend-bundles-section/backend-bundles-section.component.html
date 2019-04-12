@@ -31,7 +31,7 @@
             <span class="package-card__price package-card__price--old">${{ bundle.licenses[selectedLicenseType].oldPrice }}</span>
             <span class="package-card__price">${{ bundle.licenses[selectedLicenseType].newPrice }}</span>
           </div>
-          <a [href]="bundle.licenses[selectedLicenseType].emailLink"
+          <a href="{{ bundle.licenses[selectedLicenseType].buyLink }}?utm_source=ngx_admin_landing&utm_medium=buy_bundle_{{ selectedLicenseType }}"
              class="package-card__buy-link btn btn-demo"
              nbButton>
              Buy now
@@ -41,11 +41,21 @@
     </li>
   </ul>
 
+  <div class="request-code-section">
+    <a href="https://github.com/akveo/ngx-admin-bundle-support/tree/master/codeSamples" target="_blank" class="package-card__buy-link btn btn-demo" nbButton>
+      CODE SAMPLE
+    </a>
+
+    <a href="https://store.akveo.com/collections/all?utm_source=ngx_admin_landing&utm_medium=more_bundles" target="_blank" class="package-card__buy-link btn btn-demo" nbButton>
+      BROWSE OTHER BUNDLES
+    </a>
+  </div>
+
   <table class="features-table">
     <tr class="header">
       <th class="left">FEATURES</th>
-      <th>PERSONAL</th>
-      <th>COMMERCIAL</th>
+      <th>SINGLE APP</th>
+      <th>MULTI APP</th>
     </tr>
     <tr *ngFor="let feature of features | async">
       <td class="left">{{ feature.text }}</td>
@@ -70,12 +80,6 @@
       </ng-template>
     </ng-template>
   </table>
-
-  <div class="request-code-section">
-    <a href="mailto:support@akveo.com?subject=Bundle code sample request" class="package-card__buy-link btn btn-demo" nbButton>
-      REQUEST CODE SAMPLE
-    </a>
-  </div>
 
   <ngx-landing-description-section *ngIf="descriptions | async" [descriptions]="descriptions | async"></ngx-landing-description-section>
 
