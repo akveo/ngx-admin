@@ -1,0 +1,28 @@
+<nb-card>
+  <nb-card-header>
+    <p class="chart-description">ChatBot That helps you to get infos about your house!</p>
+  </nb-card-header>
+  <nb-card-body>
+   
+      <div class="chat-container col-md-12 col-lg-6 col-xxxl-6">
+        <nb-chat  size="small" status="success">
+          <nb-chat-message *ngFor="let msg of messages"
+                           [type]="msg.type"
+                           [message]="msg.text"
+                           [reply]="msg.reply"
+                           [sender]="msg.user.name"
+                           [date]="msg.date"
+                           [files]="msg.files"
+                           [quote]="msg.quote"
+                           [latitude]="msg.latitude"
+                           [longitude]="msg.longitude"
+                           [avatar]="msg.user.avatar">
+          </nb-chat-message>
+          <nb-chat-form (send)="sendMessage($event)" [dropFiles]="true">
+          </nb-chat-form>
+        </nb-chat>
+      </div>
+     
+    
+  </nb-card-body>
+</nb-card>
