@@ -31,8 +31,8 @@ export class BundlesService {
       description: 'Starter Dashboard integrated with REST data services based Express REST API, MongoDB',
       licenses: {
         single: {
-          oldPrice: '35',
-          newPrice: '25',
+          oldPrice: '39',
+          newPrice: '29',
           buyLink: 'https://store.akveo.com/collections/all/products/nodejs-mongodb-ngx-admin-angular-starter-bundle',
         },
         multi: {
@@ -49,13 +49,13 @@ export class BundlesService {
       description: 'E-Commerce Dashboard integrated with REST data services based on .NET Core, Web API and Entity Framework 2.2',
       licenses: {
         single: {
-          oldPrice: '180',
-          newPrice: '140',
+          oldPrice: '39',
+          newPrice: '129',
           buyLink: 'https://store.akveo.com/collections/all/products/net-core-ngx-admin-angular-starter-bundle',
         },
         multi: {
-          oldPrice: '1800',
-          newPrice: '1400',
+          oldPrice: '150',
+          newPrice: '125',
           buyLink: 'https://store.akveo.com/collections/all/products/net-core-ngx-admin-angular-starter-bundle?variant=14607219753009',
         },
       },
@@ -67,13 +67,13 @@ export class BundlesService {
       description: 'E-commerce Dashboard integrated with REST data services based on .NET Core, Web API and Entity Framework 6.2',
       licenses: {
         single: {
-          oldPrice: '200',
-          newPrice: '150',
+          oldPrice: '180',
+          newPrice: '140',
           buyLink: 'https://store.akveo.com/collections/all/products/e-commerce-net-core-ngx-admin',
         },
         multi: {
-          oldPrice: '2000',
-          newPrice: '1500',
+          oldPrice: '1800',
+          newPrice: '1400',
           buyLink: 'https://store.akveo.com/collections/all/products/e-commerce-net-core-ngx-admin?variant=14434658779185',
         },
       },
