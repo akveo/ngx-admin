@@ -1,0 +1,12 @@
+@import '../../../@theme/styles/themes';
+
+@include nb-install-component() {
+  /deep/ nb-stepper .step-content {
+    text-align: center;
+
+    button {
+      cursor: pointer;
+      margin: 0.5rem;
+    }
+  }
+}

@@ -1,0 +1,135 @@
+@import '../../../../@theme/styles/themes';
+@import '~@nebular/bootstrap/styles/buttons';
+
+@include nb-install-component() {
+
+  nb-card-body {
+    padding-bottom: 0;
+  }
+
+  .none {
+    position: relative;
+    transform: rotate(45deg);
+
+    &::before, &::after {
+      position: absolute;
+      content: '';
+      background: nb-theme(form-control-border-color);
+    }
+
+    &::before {
+      left: 50%;
+      top: 10%;
+      transform: translateX(-50%);
+      width: 1px;
+      height: 80%;
+    }
+
+    &::after {
+      top: 50%;
+      left: 10%;
+      transform: translateY(-50%);
+      height: 1px;
+      width: 80%;
+    }
+  }
+
+  .shadow {
+    box-shadow: nb-theme(btn-hero-shadow);
+  }
+
+  .primary-container {
+    .color {
+      background-color: nb-theme(color-primary);
+    }
+    .gradient {
+      @include btn-hero-primary-gradient();
+    }
+    .glow {
+      box-shadow: btn-hero-primary-glow();
+    }
+    .bevel {
+      box-shadow: btn-hero-primary-bevel();
+    }
+  }
+
+  .warning-container {
+    .color {
+      background-color: nb-theme(color-warning);
+    }
+    .gradient {
+      @include btn-hero-warning-gradient();
+    }
+    .glow {
+      box-shadow: btn-hero-warning-glow();
+    }
+    .bevel {
+      box-shadow: btn-hero-warning-bevel();
+    }
+  }
+
+  .success-container {
+    .color {
+      background-color: nb-theme(color-success);
+    }
+    .gradient {
+      @include btn-hero-success-gradient();
+    }
+    .glow {
+      box-shadow: btn-hero-success-glow();
+    }
+    .bevel {
+      box-shadow: btn-hero-success-bevel();
+    }
+  }
+
+  .info-container {
+    .color {
+      background-color: nb-theme(color-info);
+    }
+    .gradient {
+      @include btn-hero-info-gradient();
+    }
+    .glow {
+      box-shadow: btn-hero-info-glow();
+    }
+    .bevel {
+      box-shadow: btn-hero-info-bevel();
+    }
+  }
+
+  .danger-container {
+    .color {
+      background-color: nb-theme(color-danger);
+    }
+    .gradient {
+      @include btn-hero-danger-gradient();
+    }
+    .glow {
+      box-shadow: btn-hero-danger-glow();
+    }
+    .bevel {
+      box-shadow: btn-hero-danger-bevel();
+    }
+  }
+
+  .secondary-container {
+    .color {
+      background-color: nb-theme(btn-secondary-bg);
+    }
+    .border {
+      color: nb-theme(btn-secondary-color);
+      border: nb-theme(btn-secondary-border-width) solid nb-theme(btn-secondary-border);
+    }
+    .glow {
+      box-shadow: btn-hero-secondary-glow();
+    }
+    .bevel {
+      box-shadow: btn-hero-secondary-bevel();
+    }
+  }
+
+  .example-container {
+    margin-bottom: 1.5rem;
+  }
+}

@@ -1,0 +1,7 @@
+@import '../../../@theme/styles/themes';
+
+@include nb-install-component() {
+  button {
+    margin: 0.5rem;
+  }
+}

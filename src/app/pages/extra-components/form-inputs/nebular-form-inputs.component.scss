@@ -1,0 +1,11 @@
+@import '../../../@theme/styles/themes';
+
+@include nb-install-component() {
+  .inputs-group-margin-bottom {
+    margin-bottom: 2rem;
+
+    &:last-child {
+      margin: 0;
+    }
+  }
+}

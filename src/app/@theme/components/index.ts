@@ -9,3 +9,4 @@ export * from './layout-direction-switcher/layout-direction-switcher.component';
 export * from './theme-switcher/themes-switcher-list/themes-switcher-list.component';
 export * from './language-switcher/language-switcher.component';
 export * from './language-switcher/language-switcher-list/language-switcher-list.component';
+export * from './toggle-settings-button/toggle-settings-button.component';

@@ -1,6 +1,6 @@
 @import '../../styles/themes';
 @import '~bootstrap/scss/mixins/breakpoints';
-@import '~@nebular/theme/styles/global/bootstrap/breakpoints';
+@import '~@nebular/theme/styles/global/breakpoints';
 
 @include nb-install-component() {
   nb-layout-column.small {
@@ -8,30 +8,33 @@
   }
 
   nb-sidebar.settings-sidebar {
-    $sidebar-width: 7.5rem;
+    $sidebar-width: 19rem;
 
-    transition: width 0.3s ease;
+    transition: transform 0.3s ease;
     width: $sidebar-width;
     overflow: hidden;
+    @include nb-ltr(transform, translate3d(100%, 0, 0));
+    @include nb-rtl(transform, translate3d(-100%, 0, 0));
+    &.start {
+      @include nb-ltr(transform, translate3d(-100%, 0, 0));
+      @include nb-rtl(transform, translate3d(100%, 0, 0));
+    }
 
-    &.collapsed {
-      width: 0;
+    &.expanded, &.expanded.start {
+      transform: translate3d(0, 0, 0);
+    }
 
-      /deep/ .main-container {
-        width: 0;
-
-        .scrollable {
-          width: $sidebar-width;
-          padding: 1.25rem;
-        }
-      }
+    /deep/ .scrollable {
+      width: $sidebar-width;
+      padding: 3.4rem 0.25rem;
     }
 
     /deep/ .main-container {
       width: $sidebar-width;
       background: nb-theme(color-bg);
-      transition: width 0.3s ease;
+      transition: transform 0.3s ease;
       overflow: hidden;
+      position: relative;
 
       .scrollable {
         width: $sidebar-width;
@@ -102,6 +105,28 @@
 
       i, span {
         vertical-align: middle;
+      }
+    }
+
+    /deep/ nb-menu {
+      & > .menu-items {
+        & > .menu-item:first-child {
+          .menu-title {
+            &::after {
+              content: 'new';
+              color: nb-theme(color-white);
+              margin-left: 1rem;
+              background: nb-theme(color-danger);
+              padding: 0 0.5rem;
+              border-radius: nb-theme(radius);
+              font-size: nb-theme(font-size-sm);
+            }
+          }
+        }
+      }
+
+      .nb-e-commerce {
+        font-size: 2rem;
       }
     }
 

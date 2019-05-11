@@ -76,23 +76,17 @@ export class EchartsBarAnimationComponent implements AfterViewInit, OnDestroy {
             name: 'bar',
             type: 'bar',
             data: data1,
-            animationDelay: function(idx) {
-              return idx * 10;
-            },
+            animationDelay: idx => idx * 10,
           },
           {
             name: 'bar2',
             type: 'bar',
             data: data2,
-            animationDelay: function(idx) {
-              return idx * 10 + 100;
-            },
+            animationDelay: idx => idx * 10 + 100,
           },
         ],
         animationEasing: 'elasticOut',
-        animationDelayUpdate: function(idx) {
-          return idx * 5;
-        },
+        animationDelayUpdate: idx => idx * 5,
       };
 
       for (let i = 0; i < 100; i++) {

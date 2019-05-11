@@ -1,0 +1,60 @@
+@import '../../../../@theme/styles/themes';
+
+@include nb-install-component() {
+
+  .visitors-value {
+    font-size: 3rem;
+    font-weight: nb-theme(font-weight-light);
+    color: nb-theme(color-fg-heading);
+    line-height: 0.8;
+  }
+
+  .visitors-title {
+    margin-top: 1rem;
+    font-size: 1.25rem;
+    color: nb-theme(color-fg);
+  }
+
+  .visitors-statistics {
+    width: 100%;
+  }
+
+  .statistics-chart {
+    margin-top: 3.5rem;
+    margin-bottom: 1.5rem;
+    width: 100%;
+
+    .echart {
+      display: block;
+      height: 190px;
+      width: 100%;
+    }
+  }
+
+  .chart-values {
+    display: flex;
+  }
+
+  .chart-value {
+    color: nb-theme(color-fg-heading);
+    font-size: 2rem;
+    font-weight: nb-theme(font-weight-bold);
+    margin-bottom: 1rem;
+    flex: 1;
+  }
+
+  // legend start
+  .visitors-statistics-legend {
+    /deep/ .legends {
+      padding: 0;
+      margin-left: 0;
+    }
+
+    /deep/ .legend {
+      flex: 1;
+      margin-left: 0;
+      justify-content: flex-start;
+    }
+  }
+  // legend end
+}

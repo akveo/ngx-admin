@@ -1,0 +1,18 @@
+@import '../@theme/styles/themes';
+
+@include nb-install-component() {
+  /deep/ router-outlet + * {
+    display: block;
+    animation: fade 1s;
+
+    @keyframes fade {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+  }
+}

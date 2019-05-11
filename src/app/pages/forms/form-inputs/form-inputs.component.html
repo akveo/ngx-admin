@@ -4,114 +4,45 @@
       <nb-card-header translate>Default Inputs</nb-card-header>
       <nb-card-body>
         <div class="input-group">
-          <input type="text" placeholder="{{'Project' | translate}}" class="form-control"/>
+          <input type="text" nbInput fullWidth placeholder="{{'Project' | translate}}">
         </div>
         <div class="row full-name-inputs">
           <div class="col-sm-6 input-group">
-            <input type="text" placeholder="{{'Nick' | translate}}" class="form-control"/>
+            <input type="text" nbInput fullWidth placeholder="{{'Nick' | translate}}">
           </div>
           <div class="col-sm-6 input-group">
-            <input type="text" placeholder="{{'Last Name' | translate}}" class="form-control"/>
+            <input type="text" nbInput fullWidth placeholder="{{'Last Name' | translate}}">
           </div>
         </div>
         <div class="input-group">
-          <input type="password" placeholder="{{'Password' | translate}}" class="form-control"/>
+          <input type="password" nbInput fullWidth placeholder="{{'Password' | translate}}">
         </div>
         <div class="input-group has-person-icon">
           <input type="text" placeholder="{{'With Icon' | translate}}" class="form-control"/>
         </div>
-        <div class="input-group input-group-rounded">
-          <input type="text" placeholder="{{'Rounded border' | translate}}" class="form-control"/>
-        </div>
-        <div class="form-group">
-          <input type="text" placeholder="{{'Project' | translate}}" class="form-control"/>
-          <small class="form-text" translate>Small Text
-          </small>
+        <div class="input-group">
+          <input type="text" nbInput fullWidth shape="rectangle" placeholder="Rectangle border">
         </div>
         <div class="input-group">
-          <input type="text" placeholder="{{'Disabled input' | translate}}" class="form-control" disabled/>
+          <input type="text" nbInput fullWidth shape="semi-round" placeholder="Semi-round border">
         </div>
         <div class="input-group">
-          <textarea rows="5" placeholder="{{'Text Area' | translate}}" class="form-control"></textarea>
+          <input type="text" nbInput fullWidth shape="round" placeholder="Rounded border">
+        </div>
+        <div class="input-group">
+          <input type="text" nbInput fullWidth placeholder="Disabled input" disabled/>
+        </div>
+        <div class="input-group">
+          <textarea rows="5" nbInput fullWidth shape="round"  placeholder="Text Area"></textarea>
         </div>
         <div class="input-group input-group-sm">
-          <input type="text" placeholder="{{'Small Input' | translate}}" class="form-control"/>
+          <input type="text" nbInput fullWidth fieldSize="small"  placeholder="Small Input">
         </div>
         <div class="input-group input-group-lg">
-          <input type="text" placeholder="{{'Large Input' | translate}}" class="form-control"/>
+          <input type="text" nbInput fullWidth fieldSize="medium"  placeholder="Medium Input">
         </div>
-      </nb-card-body>
-    </nb-card>
-
-    <nb-card>
-      <nb-card-header translate>Input Groups</nb-card-header>
-      <nb-card-body>
-        <div class="input-group">
-          <span class="input-group-addon success">@</span>
-          <input type="text" class="form-control" placeholder="{{'Username' | translate}}"/>
-        </div>
-
-        <div class="input-group mail-btn-group">
-          <span class="input-group-prepend">
-            <button class="btn btn-primary btn-icon input-group-text">
-              <i class="ion-ios-email-outline"></i>
-            </button>
-          </span>
-          <input type="text" class="form-control" placeholder="{{'Recipient\'s username' | translate}}">
-          <span class="input-group-append">
-            <button class="btn btn-primary input-group-text">
-              @example.com
-            </button>
-          </span>
-        </div>
-        <div class="input-group">
-          <input type="text" class="form-control" placeholder="{{'Search for...' | translate}}">
-          <span class="input-group-append">
-            <button class="btn btn-danger input-group-text" translate>
-              Search
-            </button>
-          </span>
-        </div>
-        <div class="input-group">
-          <div class="dropdown input-group-prepend input-group-btn" ngbDropdown>
-            <button type="button" class="btn btn-success dropdown-toggle" ngbDropdownToggle translate>
-              Action
-            </button>
-            <ul class="dropdown-menu" ngbDropdownMenu>
-              <li class="dropdown-item" translate>Action</li>
-              <li class="dropdown-item" translate>Another action</li>
-              <li class="dropdown-item" translate>Something else here</li>
-              <div role="separator" class="dropdown-divider"></div>
-              <li class="dropdown-item" translate>Separated link</li>
-            </ul>
-          </div>
-          <input type="text" class="form-control">
-        </div>
-      </nb-card-body>
-    </nb-card>
-
-    <nb-card>
-      <nb-card-header translate>Selects</nb-card-header>
-      <nb-card-body>
-        <div class="form-group">
-          <label translate>Simple Select</label>
-          <select class="form-control">
-            <option translate>Minsk</option>
-            <option translate>Gomel</option>
-            <option translate>Brest</option>
-            <option translate>Grodno</option>
-            <option translate>Mogilev</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label translate>Multiple Select</label>
-          <select multiple class="form-control">
-            <option translate>Item 1</option>
-            <option translate>Item 2</option>
-            <option translate>Item 3</option>
-            <option translate>Item 4</option>
-            <option translate>Item 5</option>
-          </select>
+        <div class="input-group input-group-lg">
+          <input type="text" nbInput fullWidth fieldSize="large"  placeholder="Large Input">
         </div>
       </nb-card-body>
     </nb-card>
@@ -119,45 +50,24 @@
 
   <div class="col-lg-6">
     <nb-card>
-      <nb-card-header translate>Input Styles</nb-card-header>
-      <nb-card-body>
-        <div class="input-group input-group-border-only">
-          <input type="text" placeholder="{{'Border Only' | translate}}" class="form-control"/>
-        </div>
-        <div class="input-group">
-          <input type="text" placeholder="{{'Default Input' | translate}}" class="form-control">
-        </div>
-        <div class="input-group input-group-fill-only">
-          <input type="text" placeholder="{{'Fill Only' | translate}}" class="form-control">
-        </div>
-      </nb-card-body>
-    </nb-card>
-
-    <nb-card>
-      <nb-card-header translate>Validation States</nb-card-header>
+      <nb-card-header>Validation States</nb-card-header>
       <nb-card-body>
         <div class="form-group">
-          <input type="text" placeholder="{{'Input with Success' | translate}}" class="form-control form-control-success">
+          <input type="text" nbInput fullWidth status="info"  placeholder="Input with Info">
         </div>
         <div class="form-group">
-          <input type="text" placeholder="{{'Input with Warning' | translate}}" class="form-control form-control-warning">
+          <input type="text" nbInput fullWidth status="success"  placeholder="Input with Warning">
         </div>
         <div class="form-group">
-          <input type="text" placeholder="{{'Input with Danger' | translate}}" class="form-control form-control-danger">
+          <input type="text" nbInput fullWidth status="warning"  placeholder="Input with Danger">
+        </div>
+        <div class="form-group">
+          <input type="text" nbInput fullWidth status="danger" placeholder="Input with Danger">
         </div>
         <div class="form-group validation-checkboxes row">
           <nb-checkbox status="success" class="col-sm-4" translate>Checkbox with Success</nb-checkbox>
           <nb-checkbox status="warning" class="col-sm-4" translate>Checkbox with Warning</nb-checkbox>
           <nb-checkbox status="danger" class="col-sm-4" translate>Checkbox with Danger</nb-checkbox>
-        </div>
-        <div class="form-group has-success">
-          <input type="text" placeholder="{{'Input with Success Icon' | translate}}" class="form-control form-control-success">
-        </div>
-        <div class="form-group has-warning">
-          <input type="text" placeholder="{{'Input with Warning Icon' | translate}}" class="form-control form-control-warning">
-        </div>
-        <div class="form-group has-danger">
-          <input type="text" placeholder="{{'Input with Danger Icon' | translate}}" class="form-control form-control-danger">
         </div>
       </nb-card-body>
     </nb-card>
@@ -167,67 +77,34 @@
       <nb-card-body>
         <div class="row demo-checkboxes-radio">
           <div class="demo-checkboxes col-sm-4">
-            <nb-checkbox translate>Checkbox 1</nb-checkbox>
-            <nb-checkbox [value]="true" translate>Checkbox 2</nb-checkbox>
-
-            <div class="custom-control custom-checkbox">
-              <input type="checkbox" class="custom-control-input" id="b-checkbox">
-              <label class="custom-control-label" for="b-checkbox" translate>Bootstrap Checkbox</label>
-            </div>
+            <nb-checkbox>Checkbox 1</nb-checkbox>
+            <nb-checkbox [value]="true">Checkbox 2</nb-checkbox>
           </div>
           <div class="demo-radio col-sm-4">
-            <label class="custom-control custom-radio">
-              <input type="radio" class="custom-control-input" name="customRadio">
-              <span class="custom-control-indicator"></span>
-              <span class="custom-control-description" translate>Radio 1</span>
-            </label>
-            <label class="custom-control custom-radio">
-              <input type="radio" class="custom-control-input" name="customRadio" checked>
-              <span class="custom-control-indicator"></span>
-              <span class="custom-control-description" translate>Radio 2</span>
-            </label>
-            <label class="custom-control custom-radio">
-              <input type="radio" class="custom-control-input" name="customRadio">
-              <span class="custom-control-indicator"></span>
-              <span class="custom-control-description" translate>Radio 3</span>
-            </label>
+            <nb-radio-group [(value)]="radioGroupValue">
+              <nb-radio
+                [value]="'This is value 1'">
+                Radio 1
+              </nb-radio>
+              <nb-radio
+                [value]="'This is value 2'">
+                Radio 2
+              </nb-radio>
+              <nb-radio
+                [value]="'This is value 3'">
+                Radio 3
+              </nb-radio>
+            </nb-radio-group>
           </div>
           <div class="demo-disabled-checkbox-radio col-sm-4">
-            <nb-checkbox disabled translate>Disabled Checkbox</nb-checkbox>
-            <label class="custom-control custom-radio">
-              <input type="radio" class="custom-control-input" disabled>
-              <span class="custom-control-indicator"></span>
-              <span class="custom-control-description" translate>Disabled Radio</span>
-            </label>
+            <nb-checkbox disabled>Disabled Checkbox</nb-checkbox>
+            <nb-radio-group disabled>
+              <nb-radio
+                [value]="'Disabled Value'">
+                Disabled Radio
+              </nb-radio>
+            </nb-radio-group>
           </div>
-        </div>
-      </nb-card-body>
-    </nb-card>
-
-    <nb-card>
-      <nb-card-body class="demo-rating">
-        <span class="rating-header" translate>Rating</span>
-        <div>
-          <ngb-rating [(rate)]="starRate" max=5>
-            <ng-template let-fill="fill">
-              <span class="star fill" [class.filled]="fill === 100">
-                <i class="ion-android-star" *ngIf="fill === 100"></i>
-                <i class="ion-android-star-outline" *ngIf="fill !== 100"></i>
-              </span>
-            </ng-template>
-          </ngb-rating>
-          <span class="current-rate">{{ starRate }}</span>
-        </div>
-        <div>
-          <ngb-rating [(rate)]="heartRate" max=5>
-            <ng-template let-fill="fill">
-              <span class="star fill" [class.filled]="fill === 100">
-                <i class="ion-ios-heart" *ngIf="fill === 100"></i>
-                <i class="ion-ios-heart-outline" *ngIf="fill !== 100"></i>
-              </span>
-            </ng-template>
-          </ngb-rating>
-          <span class="current-rate">{{ heartRate }}</span>
         </div>
       </nb-card-body>
     </nb-card>
