@@ -63,6 +63,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
       {
         title: 'Tabs',
         link: '/pages/extra-components/tabs',
+        pathMatch: 'prefix',
       },
       {
         title: 'Calendar Kit',
