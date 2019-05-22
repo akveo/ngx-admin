@@ -12,6 +12,7 @@
     padding: 0;
     text-align: center;
     border: none;
+    cursor: pointer;
     transition: transform 0.3s ease, background-image 0.3s ease;
     transform: translate(0, -50%);
     z-index: 998;
