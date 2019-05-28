@@ -11,7 +11,7 @@
     width: 100%;
     height: nb-theme(card-height-medium);
 
-    /deep/ {
+    ::ng-deep {
       .pie-label {
         fill: nb-theme(color-fg-heading);
       }

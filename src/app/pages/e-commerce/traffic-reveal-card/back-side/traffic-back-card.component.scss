@@ -17,7 +17,7 @@
     position: relative;
   }
 
-  /deep/ canvas {
+  ::ng-deep canvas {
     border-bottom-left-radius: nb-theme(card-border-radius);
     border-bottom-right-radius: nb-theme(card-border-radius);
   }

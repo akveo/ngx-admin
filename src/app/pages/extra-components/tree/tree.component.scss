@@ -2,7 +2,7 @@
 
 @include nb-install-component() {
 
-  /deep/ .angular-tree-component {
+  ::ng-deep .angular-tree-component {
     cursor: default;
 
     .node-wrapper {

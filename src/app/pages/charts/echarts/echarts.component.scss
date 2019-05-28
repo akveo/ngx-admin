@@ -13,7 +13,7 @@
     width: 100%;
   }
 
-  /deep/ .echart {
+  ::ng-deep .echart {
     height: 100%;
     width: 100%;
   }

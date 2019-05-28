@@ -57,7 +57,7 @@
     font-size: 1.524rem;
     width: 12rem;
 
-    /deep/ ngx-switcher {
+    ::ng-deep ngx-switcher {
       .switch-label span {
         font-size: 1em;
         font-weight: normal;

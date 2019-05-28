@@ -72,7 +72,7 @@
       @include nb-rtl(border, none);
     }
 
-    .header-container /deep/ ngx-theme-switcher .dropdown-toggle {
+    .header-container ::ng-deep ngx-theme-switcher .dropdown-toggle {
       color: nb-theme(color-white);
       background: transparent;
     }
@@ -94,7 +94,7 @@
     }
   }
 
-  .toggle-settings /deep/ a {
+  .toggle-settings ::ng-deep a {
     display: block;
     text-decoration: none;
     line-height: 1;
@@ -178,7 +178,7 @@
 
   @include media-breakpoint-down(sm) {
 
-    nb-user /deep/ .user-name {
+    nb-user ::ng-deep .user-name {
       display: none;
     }
   }
@@ -205,7 +205,7 @@
   }
 
   @include media-breakpoint-down(xs) {
-    .right /deep/ {
+    .right ::ng-deep {
       display: none;
     }
   }

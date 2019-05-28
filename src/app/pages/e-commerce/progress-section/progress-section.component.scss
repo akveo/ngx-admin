@@ -29,7 +29,7 @@ $shadow-green: #00977e;
     margin-top: 0.5rem;
   }
 
-  /deep/ nb-progress-bar {
+  ::ng-deep nb-progress-bar {
     margin-top: 0.2rem;
 
     .progress-container {

@@ -15,7 +15,7 @@
     cursor: pointer;
   }
 
-  /deep/ .flipped {
+  ::ng-deep .flipped {
     .back-container {
       .nb-arrow-right {
         transform: scaleX(-1);
@@ -35,14 +35,14 @@
     flex: 1;
   }
 
-  /deep/ nb-card-header {
+  ::ng-deep nb-card-header {
     display: flex;
     justify-content: space-between;
     @include nb-rtl(flex-direction, row-reverse);
     padding-left: 1rem;
   }
 
-  /deep/ nb-card-body {
+  ::ng-deep nb-card-body {
     overflow: hidden;
     display: flex;
   }

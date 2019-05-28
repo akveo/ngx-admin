@@ -13,13 +13,13 @@
     padding: nb-theme(padding);
   }
 
-  /deep/ ngx-tab1, /deep/ ngx-tab2 {
+  ::ng-deep ngx-tab1, ::ng-deep ngx-tab2 {
     display: block;
     padding: nb-theme(padding);
   }
 
   @include media-breakpoint-down(xs) {
-    nb-tabset /deep/ul {
+    nb-tabset ::ng-deepul {
       font-size: 1rem;
       padding: 0 0.25rem;
     }

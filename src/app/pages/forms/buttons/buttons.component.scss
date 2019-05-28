@@ -4,7 +4,7 @@
 @import '~@nebular/theme/styles/global/breakpoints';
 
 @include nb-install-component() {
-  /deep/ {
+  ::ng-deep {
     $button-size: 50px;
 
     .container-title {
@@ -70,7 +70,7 @@
   }
 
   @include media-breakpoint-down(is) {
-    ngx-default-buttons /deep/ nb-card-header {
+    ngx-default-buttons ::ng-deep nb-card-header {
       flex-direction: column;
       align-items: left;
 
@@ -82,19 +82,19 @@
 
   @include media-breakpoint-down(xs) {
 
-    /deep/.icon-buttons .icon-button-examples {
+    ::ng-deep.icon-buttons .icon-button-examples {
       button {
         @include nb-ltr(margin-right, 1rem);
         @include nb-rtl(margin-left, 1rem);
       }
     }
 
-    ngx-default-buttons /deep/ nb-card-header {
+    ngx-default-buttons ::ng-deep nb-card-header {
       flex-direction: column;
       margin-bottom: 0.5rem;
     }
 
-    ngx-block-level-buttons /deep/ {
+    ngx-block-level-buttons ::ng-deep {
       .btn-primary {
         padding: 0.75rem 1rem;
       }

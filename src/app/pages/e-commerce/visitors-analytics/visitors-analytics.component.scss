@@ -46,7 +46,7 @@
 
   @include media-breakpoint-down(is) {
     ngx-legend-chart {
-      /deep/ .legends {
+      ::ng-deep .legends {
         padding-left: 0;
         font-size: nb-theme(font-size-sm);
       }

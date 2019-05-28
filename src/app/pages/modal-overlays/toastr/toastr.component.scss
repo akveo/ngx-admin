@@ -14,7 +14,7 @@
   }
 
   /* stylelint-disable */
-  toaster-container /deep/ {
+  toaster-container ::ng-deep {
     #toast-container .toast-close-button {
       right: 0;
     }

@@ -12,7 +12,7 @@
   }
 
   nb-card-back {
-    /deep/ nb-card-header {
+    ::ng-deep nb-card-header {
       border: none;
     }
   }

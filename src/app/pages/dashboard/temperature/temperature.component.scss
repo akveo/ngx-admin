@@ -9,7 +9,7 @@
     flex-direction: column;
     height: 100%;
 
-    /deep/ ul {
+    ::ng-deep ul {
       border: none;
     }
   }
@@ -136,7 +136,7 @@
     ngx-temperature-dragger {
       max-width: 250px;
 
-      /deep/ .power-bg {
+      ::ng-deep .power-bg {
         width: 4rem;
         height: 4rem;
         font-size: 3rem;
@@ -160,7 +160,7 @@
       }
     }
 
-    nb-tabset /deep/ ul {
+    nb-tabset ::ng-deep ul {
       padding: 0 0.5rem;
       a {
         padding: 1.25rem 1rem;

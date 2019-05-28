@@ -33,7 +33,7 @@
     flex-direction: column;
     flex: 1;
 
-    /deep/ .room-selector {
+    ::ng-deep .room-selector {
       display: flex;
       align-items: center;
       justify-items: center;

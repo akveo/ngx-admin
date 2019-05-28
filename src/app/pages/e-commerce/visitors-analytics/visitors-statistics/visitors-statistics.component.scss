@@ -45,12 +45,12 @@
 
   // legend start
   .visitors-statistics-legend {
-    /deep/ .legends {
+    ::ng-deep .legends {
       padding: 0;
       margin-left: 0;
     }
 
-    /deep/ .legend {
+    ::ng-deep .legend {
       flex: 1;
       margin-left: 0;
       justify-content: flex-start;

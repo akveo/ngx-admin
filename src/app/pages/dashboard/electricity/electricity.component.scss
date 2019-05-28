@@ -41,7 +41,7 @@
     }
   }
 
-  nb-tabset /deep/ {
+  nb-tabset ::ng-deep {
     flex: 1;
     overflow: hidden;
     display: flex;
@@ -223,7 +223,7 @@
   }
 
   @include nb-for-theme(cosmic) {
-    nb-tabset /deep/ ul li.active {
+    nb-tabset ::ng-deep ul li.active {
       background-color: nb-theme(color-primary);
       border-radius: nb-theme(radius);
 
@@ -250,7 +250,7 @@
   }
 
   @include nb-for-theme(corporate) {
-    nb-tabset /deep/ ul li.active {
+    nb-tabset ::ng-deep ul li.active {
       &::before {
         display: none;
       }

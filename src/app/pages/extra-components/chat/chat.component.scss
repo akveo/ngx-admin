@@ -4,7 +4,7 @@
 @import '../../../@theme/styles/themes';
 
 @include nb-install-component() {
-  /deep/ nb-layout-column {
+  ::ng-deep nb-layout-column {
     justify-content: center;
     display: flex;
   }

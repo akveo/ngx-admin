@@ -5,7 +5,7 @@
   flex-direction: column;
   flex: 1;
 
-  /deep/ nb-card-header {
+  ::ng-deep nb-card-header {
     display: flex;
     justify-content: space-between;
 
@@ -19,7 +19,7 @@
     }
   }
 
-  /deep/ nb-card-body {
+  ::ng-deep nb-card-body {
     overflow: hidden;
 
     display: flex;
@@ -71,7 +71,7 @@
     position: relative;
   }
 
-  /deep/ canvas {
+  ::ng-deep canvas {
     border-bottom-left-radius: nb-theme(card-border-radius);
     border-bottom-right-radius: nb-theme(card-border-radius);
   }

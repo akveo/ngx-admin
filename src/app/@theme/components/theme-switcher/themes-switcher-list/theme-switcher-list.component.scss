@@ -12,7 +12,7 @@ $icon-top-color-cosmic: #a258fe;
 $icon-top-color-corporate: #e9e8eb;
 
 @include nb-install-component() {
-  /deep/ .themes-switcher-list {
+  ::ng-deep .themes-switcher-list {
     padding: 1rem 2rem 1.25rem 0.5rem;
     margin: 0;
 
@@ -69,7 +69,7 @@ $icon-top-color-corporate: #e9e8eb;
   }
 
   @include media-breakpoint-down(is) {
-    /deep/ .themes-switcher-list {
+    ::ng-deep .themes-switcher-list {
       display: none;
     }
   }

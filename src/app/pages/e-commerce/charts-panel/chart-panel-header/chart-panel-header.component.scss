@@ -22,12 +22,12 @@
     ngx-legend-chart {
       align-self: flex-start;
 
-      /deep/ .legends {
+      ::ng-deep .legends {
         padding-left: 0;
         font-size: nb-theme(font-size-sm);
       }
 
-      /deep/ .legend {
+      ::ng-deep .legend {
         margin-left: 1rem;
       }
     }

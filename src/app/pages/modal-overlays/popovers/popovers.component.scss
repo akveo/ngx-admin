@@ -1,6 +1,6 @@
 @import '~@nebular/theme/styles/core/mixins';
 
-/deep/ nb-card.popover-card {
+::ng-deep nb-card.popover-card {
   margin-bottom: 0;
   width: 300px;
   box-shadow: none;
@@ -12,7 +12,7 @@
     @include nb-rtl(margin, 0 0 2rem 0.75rem);
   }
 
-  /deep/ .btn-outline-secondary {
+  ::ng-deep .btn-outline-secondary {
     @include nb-ltr(margin, 0 0.5rem 0.5rem 0);
     @include nb-rtl(margin, 0 0 0.5rem 0.5rem);
   }
