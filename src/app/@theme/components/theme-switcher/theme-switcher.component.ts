@@ -10,7 +10,7 @@ import { ThemeSwitcherListComponent } from './themes-switcher-list/themes-switch
   styleUrls: ['./theme-switcher.component.scss'],
 })
 export class ThemeSwitcherComponent {
-  @ViewChild(NbPopoverDirective) popover: NbPopoverDirective;
+  @ViewChild(NbPopoverDirective, { static: true }) popover: NbPopoverDirective;
 
   @Input() showTitle: boolean = true;
 

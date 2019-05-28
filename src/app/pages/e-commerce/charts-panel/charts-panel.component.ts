@@ -21,8 +21,8 @@ export class ECommerceChartsPanelComponent implements OnDestroy {
   ordersChartData: OrdersChart;
   profitChartData: ProfitChart;
 
-  @ViewChild('ordersChart') ordersChart: OrdersChartComponent;
-  @ViewChild('profitChart') profitChart: ProfitChartComponent;
+  @ViewChild('ordersChart', { static: true }) ordersChart: OrdersChartComponent;
+  @ViewChild('profitChart', { static: true }) profitChart: ProfitChartComponent;
 
   constructor(private ordersProfitChartService: OrdersProfitChartData) {
     this.ordersProfitChartService.getOrderProfitChartSummary()

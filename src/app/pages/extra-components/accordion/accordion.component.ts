@@ -7,7 +7,7 @@ import { Component, ViewChild } from '@angular/core';
 })
 export class AccordionComponent {
 
-  @ViewChild('item') accordion;
+  @ViewChild('item', { static: true }) accordion;
 
   toggle() {
     this.accordion.toggle();

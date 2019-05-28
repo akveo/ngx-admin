@@ -17,34 +17,44 @@ const routes: Routes = [{
     component: DashboardComponent,
   }, {
     path: 'ui-features',
-    loadChildren: './ui-features/ui-features.module#UiFeaturesModule',
+    loadChildren: () => import('./ui-features/ui-features.module')
+      .then(m => m.UiFeaturesModule),
   }, {
     path: 'modal-overlays',
-    loadChildren: './modal-overlays/modal-overlays.module#ModalOverlaysModule',
+    loadChildren: () => import('./modal-overlays/modal-overlays.module')
+      .then(m => m.ModalOverlaysModule),
   }, {
     path: 'extra-components',
-    loadChildren: './extra-components/extra-components.module#ExtraComponentsModule',
+    loadChildren: () => import('./extra-components/extra-components.module')
+      .then(m => m.ExtraComponentsModule),
   }, {
     path: 'bootstrap',
-    loadChildren: './bootstrap/bootstrap.module#BootstrapModule',
+    loadChildren: () => import('./bootstrap/bootstrap.module')
+      .then(m => m.BootstrapModule),
   }, {
     path: 'maps',
-    loadChildren: './maps/maps.module#MapsModule',
+    loadChildren: () => import('./maps/maps.module')
+      .then(m => m.MapsModule),
   }, {
     path: 'charts',
-    loadChildren: './charts/charts.module#ChartsModule',
+    loadChildren: () => import('./charts/charts.module')
+      .then(m => m.ChartsModule),
   }, {
     path: 'editors',
-    loadChildren: './editors/editors.module#EditorsModule',
+    loadChildren: () => import('./editors/editors.module')
+      .then(m => m.EditorsModule),
   }, {
     path: 'forms',
-    loadChildren: './forms/forms.module#FormsModule',
+    loadChildren: () => import('./forms/forms.module')
+      .then(m => m.FormsModule),
   }, {
     path: 'tables',
-    loadChildren: './tables/tables.module#TablesModule',
+    loadChildren: () => import('./tables/tables.module')
+      .then(m => m.TablesModule),
   }, {
     path: 'miscellaneous',
-    loadChildren: './miscellaneous/miscellaneous.module#MiscellaneousModule',
+    loadChildren: () => import('./miscellaneous/miscellaneous.module')
+      .then(m => m.MiscellaneousModule),
   }, {
     path: '',
     redirectTo: 'dashboard',

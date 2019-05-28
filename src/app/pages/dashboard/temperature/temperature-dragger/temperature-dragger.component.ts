@@ -11,7 +11,7 @@ const VIEW_BOX_SIZE = 300;
 })
 export class TemperatureDraggerComponent implements AfterViewInit, OnChanges {
 
-  @ViewChild('svgRoot') svgRoot: ElementRef;
+  @ViewChild('svgRoot', { static: true }) svgRoot: ElementRef;
 
   @Input() fillColors: string|string[] = '#2ec6ff';
   @Input() disableArcColor = '#999999';
