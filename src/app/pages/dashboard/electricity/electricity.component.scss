@@ -3,7 +3,7 @@
 @import '~@nebular/theme/styles/global/typography/typography';
 @import '~bootstrap/scss/mixins/breakpoints';
 @import '~@nebular/theme/styles/global/breakpoints';
-@import '~@nebular/bootstrap/styles/hero-buttons';
+//@import '~@nebular/bootstrap/styles/hero-buttons';
 
 @include nb-install-component() {
 
@@ -133,7 +133,7 @@
       padding-left: 1rem;
       font-size: 0.75rem;
 
-      color: text-danger();
+      //color: text-danger();
 
       &::before {
         position: absolute;
@@ -143,15 +143,15 @@
 
         border-left: 5px solid transparent;
         border-right: 5px solid transparent;
-        border-bottom: 8px solid text-danger();
+        //border-bottom: 8px solid text-danger();
       }
 
       &.down {
-        color: text-success();
+        //color: text-success();
 
         &::before {
           top: 3px;
-          border-top: 8px solid text-success();
+          //border-top: 8px solid text-success();
           border-bottom: none;
         }
       }
@@ -240,10 +240,10 @@
       &:hover {
         &::before {
           $color-top: nb-theme(btn-success-bg);
-          $color-bottom: btn-hero-success-left-color();
+          //$color-bottom: btn-hero-success-left-color();
 
-          background-image: linear-gradient(to top, $color-top, $color-bottom);
-          box-shadow: 0 0 16px -2px btn-hero-success-middle-color();
+          //background-image: linear-gradient(to top, $color-top, $color-bottom);
+          //box-shadow: 0 0 16px -2px btn-hero-success-middle-color();
         }
       }
     }
@@ -269,10 +269,10 @@
 
       .delta {
         &.down {
-          color: text-primary();
+          //color: text-primary();
 
           &::before {
-            border-top: 8px solid text-primary();
+            //border-top: 8px solid text-primary();
           }
         }
       }

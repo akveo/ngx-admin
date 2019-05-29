@@ -1,5 +1,5 @@
 @import '../../../../@theme/styles/themes';
-@import '~@nebular/bootstrap/styles/hero-buttons';
+//@import '~@nebular/bootstrap/styles/hero-buttons';
 
 @include nb-install-component() {
   position: relative;
@@ -40,7 +40,7 @@
 
     border: 2px solid nb-theme(separator);
     @include nb-for-theme(cosmic) {
-      background-color: lighten(nb-theme(layout-bg), 2%);
+      //background-color: lighten(nb-theme(layout-bg), 2%);
       border: none;
     }
   }
@@ -65,11 +65,11 @@
     border: 2px solid nb-theme(separator);
 
     &:hover {
-      background-color: lighten(nb-theme(card-bg), 5%);
+      //background-color: lighten(nb-theme(card-bg), 5%);
     }
 
     &:active {
-      background-color: darken(nb-theme(card-bg), 5%);
+      //background-color: darken(nb-theme(card-bg), 5%);
       box-shadow: none;
     }
 
