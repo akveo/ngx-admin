@@ -1,0 +1,11 @@
+@import '../../../../@theme/styles/themes';
+
+@include nb-install-component() {
+  input {
+    width: 100%;
+  }
+
+  .btn-success {
+    margin-left: 1rem;
+  }
+}

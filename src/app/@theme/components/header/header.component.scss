@@ -1,6 +1,6 @@
 @import '../../styles/themes';
 @import '~bootstrap/scss/mixins/breakpoints';
-@import '~@nebular/theme/styles/global/bootstrap/breakpoints';
+@import '~@nebular/theme/styles/global/breakpoints';
 
 @include nb-install-component() {
   display: flex;
@@ -21,6 +21,7 @@
   .logo-containter {
     display: flex;
     align-items: center;
+    width: calc(#{nb-theme(sidebar-width)} - #{nb-theme(header-padding)});
   }
 
   .control-item {
@@ -30,10 +31,11 @@
   .header-container {
     display: flex;
     align-items: center;
-    width: 100%;
+    width: auto;
 
     .navigation {
-      padding-right: nb-theme(padding);
+      @include nb-ltr(padding-right, nb-theme(padding));
+      @include nb-rtl(padding-left, nb-theme(padding));
       font-size: 2.5rem;
       text-decoration: none;
 
@@ -47,7 +49,8 @@
       padding: 0 nb-theme(padding);
       font-size: 1.75rem;
       font-weight: nb-theme(font-weight-bolder);
-      border-left: 1px solid nb-theme(separator);
+      @include nb-ltr(border-left, 1px solid nb-theme(separator));
+      @include nb-rtl(border-right, 1px solid nb-theme(separator));
       white-space: nowrap;
 
       span {
@@ -56,7 +59,42 @@
     }
   }
 
-  .toggle-layout /deep/ a {
+  @include nb-for-theme(corporate) {
+    $menu-action-separator-color: #3f4550;
+
+    nb-action {
+      @include nb-ltr(border-left-color, $menu-action-separator-color);
+      @include nb-rtl(border-right-color, $menu-action-separator-color);
+    }
+
+    .header-container .logo {
+      @include nb-ltr(border, none);
+      @include nb-rtl(border, none);
+    }
+
+    .header-container /deep/ ngx-theme-switcher .dropdown-toggle {
+      color: nb-theme(color-white);
+      background: transparent;
+    }
+  }
+
+  ngx-layout-direction-switcher {
+    margin: 0 1.5rem;
+  }
+
+  ngx-theme-switcher {
+    margin: nb-theme(layout-padding);
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  @include media-breakpoint-down(xl) {
+    ngx-layout-direction-switcher {
+      display: none;
+    }
+  }
+
+  .toggle-settings /deep/ a {
     display: block;
     text-decoration: none;
     line-height: 1;
@@ -64,12 +102,60 @@
     i {
       color: nb-theme(color-fg-highlight);
       font-size: 2.25rem;
+      border-radius: 50%;
+      position: relative;
+      animation-name: pulse-light;
+
+      &::after {
+        content: ' ';
+        // hack to be able to set border-radius
+        background-image: url('data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7');
+        border-radius: 50%;
+        pointer-events: none;
+
+        position: absolute;
+        top: 52.3%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 13%;
+        height: 13%;
+
+        animation: 3s linear infinite pulse;
+
+        @include nb-for-theme(default) {
+          animation-name: pulse-light;
+        }
+      }
+    }
+  }
+
+  @include keyframes(pulse) {
+    0% {
+      box-shadow: 0 0 1px 0 rgba(nb-theme(color-fg-highlight), 0);
+    }
+    20% {
+      box-shadow: 0 0 3px 10px rgba(nb-theme(color-fg-highlight), 0.4);
+    }
+    100% {
+      box-shadow: 0 0 5px 20px rgba(nb-theme(color-fg-highlight), 0);
+    }
+  }
+
+  @include keyframes(pulse-light) {
+    0% {
+      box-shadow: 0 0 1px 0 rgba(115, 255, 208, 0);
+    }
+    20% {
+      box-shadow: 0 0 3px 10px rgba(115, 255, 208, 0.4);
+    }
+    100% {
+      box-shadow: 0 0 5px 20px rgba(115, 255, 208, 0);
     }
   }
 
   @include media-breakpoint-down(md) {
 
-    nb-action:not(.toggle-layout) {
+    nb-action:not(.toggle-settings) {
       border: none;
     }
 
@@ -77,8 +163,16 @@
       display: none;
     }
 
-    .toggle-layout {
+    .toggle-settings {
       padding: 0;
+    }
+
+    ngx-layout-direction-switcher {
+      display: none;
+    }
+
+    ngx-theme-switcher {
+      margin: 0 0.5rem;
     }
   }
 
@@ -97,11 +191,15 @@
       }
     }
 
-    .toggle-layout {
+    .toggle-settings {
       display: none;
     }
 
-    nb-action:not(.toggle-layout) {
+    ngx-theme-switcher {
+      display: none;
+    }
+
+    nb-action:not(.toggle-settings) {
       padding: 0;
     }
   }
@@ -112,4 +210,3 @@
     }
   }
 }
-

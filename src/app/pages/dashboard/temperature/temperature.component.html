@@ -5,7 +5,7 @@
 
       <div class="slider-container">
         <ngx-temperature-dragger [(value)]="temperature" (power)="temperatureOff = !$event"
-                                 [min]="12" [max]="30" [disableArcColor]="colors.layoutBg"
+                                 [min]="temperatureData.min" [max]="temperatureData.max" [disableArcColor]="colors.layoutBg"
                                  [fillColors]="colors.temperature">
 
           <div class="slider-value-container"  [ngClass]="{ 'off': temperatureOff }">
@@ -21,17 +21,17 @@
 
       <div [(ngModel)]="temperatureMode" ngbRadioGroup data-toggle="buttons"
            class="btn-group btn-group-toggle btn-divided-group btn-outline-divided-group btn-group-full-width">
-        <label class="btn btn-icon">
-          <input type="radio" value="cool"/><i class="nb-snowy-circled"></i>
+        <label ngbButtonLabel class="btn btn-icon">
+          <input ngbButton type="radio" value="cool"/><i class="nb-snowy-circled"></i>
         </label>
-        <label class="btn btn-icon">
-          <input type="radio" value="warm"/><i class="nb-sunny-circled"></i>
+        <label ngbButtonLabel class="btn btn-icon">
+          <input ngbButton type="radio" value="warm"/><i class="nb-sunny-circled"></i>
         </label>
-        <label class="btn btn-icon">
-          <input type="radio" value="heat"/><i class="nb-flame-circled"></i>
+        <label ngbButtonLabel class="btn btn-icon">
+          <input ngbButton type="radio" value="heat"/><i class="nb-flame-circled"></i>
         </label>
-        <label class="btn btn-icon">
-          <input type="radio" value="fan"/><i class="nb-loop-circled"></i>
+        <label ngbButtonLabel class="btn btn-icon">
+          <input ngbButton type="radio" value="fan"/><i class="nb-loop-circled"></i>
         </label>
       </div>
     </nb-tab>
@@ -40,7 +40,7 @@
 
       <div class="slider-container">
         <ngx-temperature-dragger [(value)]="humidity" (power)="humidityOff = !$event"
-                                 [min]="0" [max]="100" [disableArcColor]="colors.layoutBg"
+                                 [min]="humidityData.min" [max]="humidityData.max" [disableArcColor]="colors.layoutBg"
                                  [fillColors]="colors.temperature">
 
           <div class="slider-value-container"  [ngClass]="{ 'off': humidityOff }">
@@ -53,17 +53,17 @@
 
       <div [(ngModel)]="humidityMode" ngbRadioGroup data-toggle="buttons"
            class="btn-group btn-group-toggle btn-divided-group btn-outline-divided-group btn-group-full-width">
-        <label class="btn btn-icon">
-          <input type="radio" value="cool"/><i class="nb-snowy-circled"></i>
+        <label ngbButtonLabel class="btn btn-icon">
+          <input ngbButton type="radio" value="cool"/><i class="nb-snowy-circled"></i>
         </label>
-        <label class="btn btn-icon">
-          <input type="radio" value="warm"/><i class="nb-sunny-circled"></i>
+        <label ngbButtonLabel class="btn btn-icon">
+          <input ngbButton type="radio" value="warm"/><i class="nb-sunny-circled"></i>
         </label>
-        <label class="btn btn-icon">
-          <input type="radio" value="heat"/><i class="nb-flame-circled"></i>
+        <label ngbButtonLabel class="btn btn-icon">
+          <input ngbButton type="radio" value="heat"/><i class="nb-flame-circled"></i>
         </label>
-        <label class="btn btn-icon">
-          <input type="radio" value="fan"/><i class="nb-loop-circled"></i>
+        <label ngbButtonLabel class="btn btn-icon">
+          <input ngbButton type="radio" value="fan"/><i class="nb-loop-circled"></i>
         </label>
       </div>
     </nb-tab>

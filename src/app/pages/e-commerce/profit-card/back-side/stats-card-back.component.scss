@@ -1,0 +1,84 @@
+@import '../../../../@theme/styles/themes';
+
+@include nb-install-component() {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+
+  /deep/ nb-card-header {
+    display: flex;
+    justify-content: space-between;
+
+    .header-container {
+      display: flex;
+      @include nb-rtl(flex-direction, row-reverse);
+    }
+
+    .title {
+      padding-left: 1rem;
+    }
+  }
+
+  /deep/ nb-card-body {
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+
+    .info {
+      padding: 0.75rem;
+      padding-bottom: 0.5rem;
+      display: flex;
+      @include nb-rtl(flex-direction, row-reverse);
+    }
+
+    .period {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+
+      &.latest {
+        padding-left: 0.75rem;
+      }
+    }
+
+    .time-interval {
+      color: nb-theme(color-fg);
+    }
+
+    .value {
+      font-family: nb-theme(font-secondary), serif;
+      font-size: 1.25rem;
+      font-weight: nb-theme(font-weight-bold);
+      color: nb-theme(card-fg-heading);
+
+      @include nb-for-theme(default) {
+        color: nb-theme(color-success);
+      }
+
+      .currency {
+        color: nb-theme(color-success);
+
+        @include nb-for-theme(corporate) {
+          color: nb-theme(color-primary);
+        }
+      }
+    }
+  }
+
+  ngx-stats-ares-chart {
+    flex: 1;
+    position: relative;
+  }
+
+  /deep/ canvas {
+    border-bottom-left-radius: nb-theme(card-border-radius);
+    border-bottom-right-radius: nb-theme(card-border-radius);
+  }
+
+  .echart {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+  }
+}

@@ -11,7 +11,7 @@
   </div>
 
   <div class="progress-wrap">
-    <input type="range" class="progress" [value]="getProgress()" min="0" max="100" step="0.01"
+    <input dir="ltr" type="range" class="progress" [value]="getProgress()" min="0" max="100" step="0.01"
            (input)="setProgress(duration.value)" #duration>
     <div class="progress-foreground" [style.width.%]="getProgress()"></div>
   </div>

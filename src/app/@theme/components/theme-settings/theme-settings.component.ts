@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { StateService } from '../../../@core/data/state.service';
+import { StateService } from '../../../@core/utils';
 
 @Component({
   selector: 'ngx-theme-settings',
@@ -25,6 +25,11 @@ import { StateService } from '../../../@core/data/state.service';
          (click)="sidebarSelect(sidebar)">
         <i [attr.class]="sidebar.icon"></i>
       </a>
+    </div>
+    <div class="settings-row">
+      <div class="switcher">
+        <ngx-layout-direction-switcher></ngx-layout-direction-switcher>
+      </div>
     </div>
   `,
 })

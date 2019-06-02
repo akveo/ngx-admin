@@ -1,5 +1,5 @@
 @import '../../../@theme/styles/themes';
-@import '~@nebular/theme/styles/global/bootstrap/hero-buttons';
+@import '~@nebular/bootstrap/styles/hero-buttons';
 
 @include nb-install-component() {
   nb-card {
@@ -47,6 +47,26 @@
         @include btn-hero-warning-gradient();
         @include btn-hero-warning-bevel-glow-shadow();
       }
+      &.danger {
+        @include btn-hero-danger-gradient();
+        @include btn-hero-danger-bevel-glow-shadow();
+      }
+      &.secondary {
+        @include btn-hero-secondary-bg();
+        @include btn-hero-secondary-bevel-glow-shadow();
+        color: nb-theme(card-fg);
+      }
+
+      @include nb-for-theme(corporate) {
+        &.primary,
+        &.success,
+        &.info,
+        &.warning,
+        &.danger,
+        &.secondary {
+          box-shadow: none;
+        }
+      }
     }
 
     &:hover {
@@ -65,6 +85,12 @@
         &.warning {
           background-image: btn-hero-warning-light-gradient();
         }
+        &.danger {
+          background-image: btn-hero-danger-light-gradient();
+        }
+        &.secondary {
+          background-image: btn-hero-secondary-light-gradient();
+        }
       }
     }
 
@@ -74,9 +100,13 @@
       .icon {
         color: nb-theme(card-fg);
 
-        &.primary, &.success, &.info, &.warning {
+        &.primary, &.success, &.info, &.warning, &.danger {
           box-shadow: none;
           background-image: linear-gradient(to right, transparent, transparent);
+        }
+
+        &.secondary {
+          background: transparent;
         }
       }
 
@@ -90,7 +120,8 @@
       flex-direction: column;
       justify-content: center;
       height: 100%;
-      padding: 0 0.5rem 0 0.75rem;
+      @include nb-ltr(padding, 0 0.5rem 0 0.75rem);
+      @include nb-rtl(padding, 0 0.75rem 0 0.5rem);
       border-left: 1px solid transparent;
     }
 
@@ -112,7 +143,8 @@
   @include nb-for-theme(cosmic) {
     nb-card {
       &.off .icon-container {
-        border-right: 1px solid nb-theme(separator);
+        @include nb-ltr(border-right, 1px solid nb-theme(separator));
+        @include nb-rtl(border-left, 1px solid nb-theme(separator));
       }
 
       .icon-container {
@@ -120,14 +152,16 @@
       }
 
       .details {
-        padding-left: 1.25rem;
+        @include nb-ltr(padding-left, 1.25rem);
+        @include nb-rtl(padding-right, 1.25rem);
       }
 
       .icon {
         width: 7rem;
         height: 100%;
         font-size: 4.5rem;
-        border-radius: nb-theme(card-border-radius) 0 0 nb-theme(card-border-radius);
+        @include nb-ltr(border-radius, nb-theme(card-border-radius) 0 0 nb-theme(card-border-radius));
+        @include nb-rtl(border-radius, 0 nb-theme(card-border-radius) nb-theme(card-border-radius) 0);
       }
 
       .title {
@@ -136,6 +170,14 @@
 
       .status {
         font-weight: nb-theme(font-weight-light);
+      }
+    }
+  }
+
+  @include nb-for-theme(corporate) {
+    nb-card {
+      .icon-container {
+        height: auto;
       }
     }
   }

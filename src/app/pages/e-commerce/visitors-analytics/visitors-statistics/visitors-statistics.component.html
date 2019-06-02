@@ -1,0 +1,21 @@
+<div class="visitors-statistics">
+  <div class="statistics-header">
+    <div class="visitors-value">1,100</div>
+    <div class="visitors-title">New Visitors</div>
+  </div>
+  <div class="statistics-chart">
+    <div echarts
+         [options]="option"
+         class="echart"
+         (chartInit)="onChartInit($event)"
+    >
+    </div>
+  </div>
+  <div class="statistics-footer">
+    <div class="chart-values">
+      <span class="chart-value">25%</span>
+      <span class="chart-value">75%</span>
+    </div>
+    <ngx-legend-chart class="visitors-statistics-legend" [legendItems]="chartLegend"></ngx-legend-chart>
+  </div>
+</div>

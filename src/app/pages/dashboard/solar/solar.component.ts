@@ -1,3 +1,4 @@
+import { delay } from 'rxjs/operators';
 import { AfterViewInit, Component, Input, OnDestroy } from '@angular/core';
 import { NbThemeService } from '@nebular/theme';
 
@@ -27,6 +28,7 @@ export class SolarComponent implements AfterViewInit, OnDestroy {
   @Input('chartValue')
   set chartValue(value: number) {
     this.value = value;
+
     if (this.option.series) {
       this.option.series[0].data[0].value = value;
       this.option.series[0].data[1].value = 100 - value;
@@ -41,7 +43,7 @@ export class SolarComponent implements AfterViewInit, OnDestroy {
   }
 
   ngAfterViewInit() {
-    this.themeSubscription = this.theme.getJsTheme().delay(1).subscribe(config => {
+    this.themeSubscription = this.theme.getJsTheme().pipe(delay(1)).subscribe(config => {
 
       const solarTheme: any = config.variables.solar;
 

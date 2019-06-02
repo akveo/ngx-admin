@@ -1,0 +1,113 @@
+@import '../../../@theme/styles/themes';
+@import '~bootstrap/scss/mixins/breakpoints';
+@import '~@nebular/theme/styles/global/breakpoints';
+
+@include nb-install-component() {
+  $slide-out-container-width: nb-theme(slide-out-container-width);
+
+  // toggle button
+  .show-hide-toggle {
+    position: absolute;
+    display: block;
+    font-size: 2rem;
+    font-weight: nb-theme(font-weight-bold);
+    top: 1.5rem;
+    right: 1.5rem;
+    cursor: pointer;
+    color: nb-theme(color-fg);
+    background-color: transparent;
+    z-index: 2;
+    @include nb-rtl(right, auto);
+    @include nb-rtl(left, 1.5rem);
+  }
+  // toggle button
+
+  .slide-out-container {
+    position: absolute;
+    padding: 1.5rem;
+    width: $slide-out-container-width;
+  }
+
+  .slide-out-container,
+  .slide-out-container::before {
+    display: block;
+    height: 100%;
+    top: 0;
+    overflow: hidden;
+    transition: all 0.5s ease-out;
+  }
+
+  .slide-out-container::before {
+    content: '';
+    right: 0;
+    @include nb-rtl(right, auto);
+    @include nb-rtl(left, 0);
+    width: 100%;
+    position: absolute;
+    background: nb-theme(slide-out-background);
+    box-shadow: nb-theme(slide-out-shadow-color);
+    @include nb-rtl(box-shadow, nb-theme(slide-out-shadow-color-rtl));
+    filter: blur(3px);
+    opacity: 0.9;
+    z-index: 1;
+  }
+
+  .slide-out-container.collapsed {
+    left: calc(100% - 6rem);
+    @include nb-rtl(left, auto);
+    @include nb-rtl(right, calc(100% - 6rem));
+  }
+
+  .slide-out-container.expanded {
+    left: calc(100% - #{$slide-out-container-width});
+    @include nb-rtl(left, auto);
+    @include nb-rtl(right, calc(100% - #{$slide-out-container-width}));
+  }
+
+  .content-wrapper {
+    z-index: 1;
+    position: relative;
+    width: 100%;
+    margin: 0 6rem;
+    transition: all 0.5s ease-out;
+  }
+
+  .expanded .content-wrapper {
+    margin: 0;
+  }
+
+  @include media-breakpoint-down(md) {
+    $slide-out-container-width: 50%;
+
+    .slide-out-container {
+      width: $slide-out-container-width;
+    }
+
+    .slide-out-container.expanded {
+      left: calc(100% - #{$slide-out-container-width});
+      @include nb-rtl(right, calc(100% - #{$slide-out-container-width}));
+    }
+  }
+
+  @include media-breakpoint-down(is) {
+    $slide-out-container-width: 100%;
+
+    .show-hide-toggle {
+      right: 0.5rem;
+    }
+
+    .slide-out-container {
+      width: $slide-out-container-width;
+    }
+
+    .slide-out-container.collapsed {
+      left: calc(100% - 3rem);
+      @include nb-rtl(right, calc(100% - 3rem));
+    }
+
+    .slide-out-container.expanded {
+      left: calc(100% - #{$slide-out-container-width});
+      @include nb-rtl(right, calc(100% - #{$slide-out-container-width}));
+    }
+  }
+}

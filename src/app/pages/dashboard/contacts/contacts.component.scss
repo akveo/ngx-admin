@@ -1,5 +1,5 @@
 @import '../../../@theme/styles/themes';
-@import '~@nebular/theme/styles/global/bootstrap/hero-buttons';
+@import '~@nebular/bootstrap/styles/hero-buttons';
 
 @include nb-install-component() {
   nb-tabset {
@@ -23,6 +23,10 @@
 
     &:not(:last-child) {
       border-bottom: 1px solid nb-theme(separator);
+
+      @include nb-for-theme(corporate) {
+        border-bottom-color: nb-theme(tabs-separator);
+      }
     }
   }
 
@@ -39,7 +43,8 @@
 
   nb-user /deep/ {
     .info-container {
-      margin-left: 0.875rem;
+      @include nb-ltr(margin-left, 0.875rem);
+      @include nb-rtl(margin-right, 0.875rem);
     }
 
     .user-name {
@@ -60,5 +65,3 @@
     }
   }
 }
-
-

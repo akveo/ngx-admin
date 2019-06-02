@@ -1,5 +1,5 @@
 @import '../../../../@theme/styles/themes';
-@import '~@nebular/theme/styles/global/bootstrap/hero-buttons';
+@import '~@nebular/bootstrap/styles/hero-buttons';
 
 @include nb-install-component() {
   position: relative;
@@ -89,6 +89,16 @@
       border: none;
       box-shadow: nb-theme(card-shadow);
       text-shadow: 0 0 6px rgba(255, 255, 255, 0.5);
+    }
+  }
+
+  @include nb-for-theme(corporate) {
+    .circle {
+      stroke: nb-theme(color-warning);
+    }
+
+    .power-bg {
+      color: nb-theme(separator);
     }
   }
 }

@@ -1,5 +1,9 @@
 import { Component, OnDestroy } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { combineLatest } from 'rxjs';
+import { takeWhile } from 'rxjs/operators';
 import { NbThemeService } from '@nebular/theme';
+import { registerMap } from 'echarts';
 
 @Component({
   selector: 'ngx-bubble-map',
@@ -23,12 +27,20 @@ export class BubbleMapComponent implements OnDestroy {
 
   bubbleTheme: any;
   geoColors: any[];
-  themeSubscription: any;
 
-  constructor(private theme: NbThemeService) {
+  private alive = true;
 
-    this.themeSubscription = this.theme.getJsTheme()
-      .subscribe(config => {
+  constructor(private theme: NbThemeService,
+              private http: HttpClient) {
+
+    combineLatest([
+      this.http.get('assets/map/world.json'),
+      this.theme.getJsTheme(),
+    ])
+      .pipe(takeWhile(() => this.alive))
+      .subscribe(([map, config]: [any, any]) => {
+
+        registerMap('world', map);
 
         const colors = config.variables;
         this.bubbleTheme = config.variables.bubbleMap;
@@ -527,7 +539,7 @@ export class BubbleMapComponent implements OnDestroy {
   }
 
   ngOnDestroy() {
-    this.themeSubscription.unsubscribe();
+    this.alive = false;
   }
 
   private getRandomGeoColor() {

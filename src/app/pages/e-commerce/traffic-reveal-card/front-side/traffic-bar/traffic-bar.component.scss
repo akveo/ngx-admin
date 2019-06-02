@@ -1,0 +1,72 @@
+@import '../../../../../@theme/styles/themes';
+@import '~@nebular/bootstrap/styles/hero-buttons';
+@import '~@nebular/theme/styles/global/typography/typography';
+
+$traffic-bar-background-color: #d0d8e3;
+
+@include nb-install-component() {
+  height: 100%;
+
+  .traffic-bar {
+    display: flex;
+    align-self: stretch;
+    position: relative;
+    height: 100%;
+
+    > * {
+      margin-left: 0.5rem;
+    }
+  }
+
+  .period-from, .period-to {
+    align-self: flex-end;
+    font-size: 1rem;
+    line-height: 0.8;
+  }
+
+  .period-from {
+    position: absolute;
+    right: 100%;
+    @include nb-rtl(right, inherit);
+    @include nb-rtl(left, 100%);
+    bottom: 0;
+    white-space: nowrap;
+  }
+
+  .vertical-progress-bar {
+    height: 100%;
+    width: 0.7rem;
+    transform: rotate(180deg);
+
+    .progress-line {
+      width: 100%;
+      background-color: $traffic-bar-background-color;
+
+      &.success {
+        background-color: text-success();
+
+        @include nb-for-theme(corporate) {
+          background-color: text-primary();
+        }
+      }
+
+      &.failure {
+        background-color: text-danger();
+      }
+    }
+
+    @include nb-for-theme(cosmic) {
+      .progress-line {
+        background: linear-gradient(180deg, #a054fe 0%, #7a58ff 100%);
+
+        &.success {
+          background: linear-gradient(0deg, #00caba 0%, #00d77f 100%);
+        }
+
+        &.failure {
+          background: linear-gradient(180deg, #ff38ab 0%, #ff386c 100%);
+        }
+      }
+    }
+  }
+}

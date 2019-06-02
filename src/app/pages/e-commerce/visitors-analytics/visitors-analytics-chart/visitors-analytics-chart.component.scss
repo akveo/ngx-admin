@@ -1,0 +1,13 @@
+@import '../../../../@theme/styles/themes';
+
+@include nb-install-component() {
+  display: block;
+  height: 290px;
+  width: 100%;
+
+  .echart {
+    display: block;
+    height: 100%;
+    width: 100%;
+  }
+}

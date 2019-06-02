@@ -1,7 +1,7 @@
 @import '../../../../@theme/styles/themes';
 @import '~bootstrap/scss/mixins/breakpoints';
 @import '~@nebular/theme/components/card/card.component.theme';
-@import '~@nebular/theme/styles/global/bootstrap/breakpoints';
+@import '~@nebular/theme/styles/global/breakpoints';
 @import '~@nebular/theme/styles/core/mixins';
 
 @include nb-install-component() {
@@ -60,11 +60,16 @@
       background-color: nb-theme(color-success);
       height: 2px;
       position: absolute;
+      left: 0;
       margin-top: calc(0.75rem - 1px);
       width: 100px;
 
       @include nb-for-theme(cosmic) {
         background-color: nb-theme(link-color);
+      }
+
+      @include nb-for-theme(corporate) {
+        background-color: nb-theme(color-primary);
       }
     }
 
@@ -98,6 +103,12 @@
           background: nb-theme(link-color);
         }
       }
+
+      @include nb-for-theme(corporate) {
+        @include install-thumb() {
+          background: nb-theme(color-primary);
+        }
+      }
     }
   }
 
@@ -107,12 +118,22 @@
     display: flex;
     justify-content: space-between;
     color: nb-theme(color-fg);
+
+    .current {
+      @include nb-ltr(order, 0);
+      @include nb-rtl(order, 1);
+    }
+    .remaining {
+      @include nb-ltr(order, 1);
+      @include nb-rtl(order, 0);
+    }
   }
 
   .controls {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    @include nb-rtl(flex-direction, row-reverse);
     padding: 0.25rem 2rem 1rem;
     max-width: 400px;
     width: 100%;
@@ -171,6 +192,7 @@
       width: 80%;
 
       .progress-foreground {
+        left: auto;
         margin-top: calc(1rem + 1px);
         z-index: 0;
       }

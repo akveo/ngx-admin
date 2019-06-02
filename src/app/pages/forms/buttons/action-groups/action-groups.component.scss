@@ -1,0 +1,77 @@
+@import '../../../../@theme/styles/themes';
+@import '~@nebular/theme/components/card/card.component.theme';
+@import '~bootstrap/scss/mixins/breakpoints';
+@import '~@nebular/theme/styles/global/breakpoints';
+
+@include nb-install-component() {
+
+  nb-card-body {
+    display: flex;
+    align-items: center;
+  }
+
+  .action-groups-header {
+    flex-basis: 20%;
+
+    color: nb-theme(card-header-fg-heading);
+    font-family: nb-theme(card-header-font-family);
+    font-size: nb-theme(card-header-font-size);
+    font-weight: nb-theme(card-header-font-weight);
+  }
+
+  .nb-actions {
+    flex-basis: 80%;
+  }
+
+  @include media-breakpoint-down(sm) {
+    nb-card-body {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 0.75rem;
+
+      .action-groups-header {
+        @include nb-ltr(margin, 0 0 0.5rem 0.25rem);
+        @include nb-rtl(margin, 0 0.25rem 0.5rem 0);
+      }
+    }
+
+    nb-action {
+      padding: 0 0.5rem;
+      /deep/ .control-icon {
+        font-size: 1.75rem;
+      }
+    }
+    nb-user /deep/ {
+      .user-container {
+        font-size: 0.875rem;
+      }
+      .user-picture {
+        height: 1.75rem;
+        width: 1.75rem;
+      }
+    }
+  }
+
+  @include media-breakpoint-down(xs) {
+
+    nb-action {
+      padding: 0 0.375rem;
+      /deep/ .control-icon {
+        font-size: 1.5rem;
+      }
+    }
+    nb-user /deep/ {
+      .user-container {
+        font-size: 0.75rem;
+      }
+      .user-picture {
+        height: 1.5rem;
+        width: 1.5rem;
+      }
+    }
+    nb-card-body {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+}

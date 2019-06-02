@@ -81,8 +81,6 @@ Before you submit your Pull Request (PR) consider the following guidelines:
 * Create your patch, **including appropriate test cases**.
 * Follow our [Coding Rules](#rules).
 * Test your changes with our supported browsers and screen readers.
-* Run `npm run release:validate`, as described in the [developer documentation][dev-doc],
-  and ensure that all tests pass, linter & build has no errors.
 * Commit your changes using a descriptive commit message that follows our
   [commit message conventions](#commit). Adherence to these conventions
   is necessary because release notes are automatically generated from these messages.
@@ -190,7 +188,7 @@ Must be one of the following:
 * **build**: Changes that affect the build system, CI configuration or external dependencies
             (example scopes: gulp, broccoli, npm)
 * **chore**: Other changes that don't modify `src` or `test` files
-* **relese**: Release version commit
+* **release**: Release version commit
 
 ### Scope
 The scope could be anything specifying place of the commit change. For example

@@ -1,6 +1,6 @@
 @import '../../styles/themes';
 @import '~bootstrap/scss/mixins/breakpoints';
-@import '~@nebular/theme/styles/global/bootstrap/breakpoints';
+@import '~@nebular/theme/styles/global/breakpoints';
 
 @include nb-install-component() {
   nb-layout-column.small {
@@ -8,30 +8,33 @@
   }
 
   nb-sidebar.settings-sidebar {
-    $sidebar-width: 7.5rem;
+    $sidebar-width: 19rem;
 
-    transition: width 0.3s ease;
+    transition: transform 0.3s ease;
     width: $sidebar-width;
     overflow: hidden;
+    @include nb-ltr(transform, translate3d(100%, 0, 0));
+    @include nb-rtl(transform, translate3d(-100%, 0, 0));
+    &.start {
+      @include nb-ltr(transform, translate3d(-100%, 0, 0));
+      @include nb-rtl(transform, translate3d(100%, 0, 0));
+    }
 
-    &.collapsed {
-      width: 0;
+    &.expanded, &.expanded.start {
+      transform: translate3d(0, 0, 0);
+    }
 
-      /deep/ .main-container {
-        width: 0;
-
-        .scrollable {
-          width: $sidebar-width;
-          padding: 1.25rem;
-        }
-      }
+    /deep/ .scrollable {
+      width: $sidebar-width;
+      padding: 3.4rem 0.25rem;
     }
 
     /deep/ .main-container {
       width: $sidebar-width;
       background: nb-theme(color-bg);
-      transition: width 0.3s ease;
+      transition: transform 0.3s ease;
       overflow: hidden;
+      position: relative;
 
       .scrollable {
         width: $sidebar-width;
@@ -47,10 +50,31 @@
 
     margin-top: nb-theme(sidebar-header-gap);
 
+    @include nb-for-theme(corporate) {
+      margin-top: 0;
+    }
+
     /deep/ .main-container {
       height:
         calc(#{nb-theme(sidebar-height)} - #{nb-theme(header-height)} - #{nb-theme(sidebar-header-gap)}) !important;
-      border-top-right-radius: nb-theme(radius);
+      @include nb-ltr(border-top-right-radius, nb-theme(radius));
+      @include nb-rtl(border-top-left-radius, nb-theme(radius));
+
+      @include nb-for-theme(corporate) {
+        border: 1px solid nb-theme(separator);
+        height:
+          calc(#{nb-theme(sidebar-height)} - #{nb-theme(header-height)}) !important;
+      }
+    }
+
+    /deep/ .scrollable {
+      @include nb-for-theme(corporate) {
+        padding-top: 0;
+
+        .menu-item:first-child {
+          border-top: none;
+        }
+      }
     }
 
     /deep/ nb-sidebar-header {
@@ -66,16 +90,43 @@
       font-weight: bold;
       transition: padding 0.3s cubic-bezier(0.18, 0.89, 0.32, 1.48);
 
+      @include nb-for-theme(corporate) {
+        border-radius: nb-theme(radius);
+      }
+
       i {
         font-size: 2rem;
         text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
       }
       span {
-        padding-left: 0.25rem;
+        @include nb-ltr(padding-left, 0.25rem);
+        @include nb-rtl(padding-right, 0.25rem);
       }
 
       i, span {
         vertical-align: middle;
+      }
+    }
+
+    /deep/ nb-menu {
+      & > .menu-items {
+        & > .menu-item:first-child {
+          .menu-title {
+            &::after {
+              content: 'new';
+              color: nb-theme(color-white);
+              margin-left: 1rem;
+              background: nb-theme(color-danger);
+              padding: 0 0.5rem;
+              border-radius: nb-theme(radius);
+              font-size: nb-theme(font-size-sm);
+            }
+          }
+        }
+      }
+
+      .nb-e-commerce {
+        font-size: 2rem;
       }
     }
 
@@ -115,7 +166,8 @@
 
       /deep/ .main-container {
         height: calc(#{nb-theme(sidebar-height)} - #{nb-theme(header-height)}) !important;
-        border-top-right-radius: 0;
+        @include nb-ltr(border-top-right-radius, 0);
+        @include nb-rtl(border-top-left-radius, 0);
 
         .scrollable {
           padding-top: 0;
