@@ -7,7 +7,7 @@ import { APP_BASE_HREF } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
-import {HTTP_INTERCEPTORS, HttpClientModule ,HttpClient} from '@angular/common/http';
+import {HttpClientModule , HttpClient} from '@angular/common/http';
 import { CoreModule } from './@core/core.module';
 
 import { AppComponent } from './app.component';
@@ -28,8 +28,8 @@ import {TranslateHttpLoader} from '@ngx-translate/http-loader';
       loader: {
         provide: TranslateLoader,
         useFactory: (HttpLoaderFactory),
-        deps: [HttpClient]
-      }
+        deps: [HttpClient],
+      },
     }),
 
     NgbModule.forRoot(),

@@ -1,6 +1,6 @@
 import { ModuleWithProviders, NgModule, Optional, SkipSelf } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NbAuthModule, NbPasswordAuthStrategy ,NbAuthJWTToken} from '@nebular/auth';
+import { NbAuthModule, NbPasswordAuthStrategy , NbAuthJWTToken} from '@nebular/auth';
 import { NbSecurityModule, NbRoleProvider } from '@nebular/security';
 import { of as observableOf } from 'rxjs';
 
@@ -11,7 +11,6 @@ import {
   PlayerService,
   StateService,
 } from './utils';
-import { UserData } from './data/users';
 import { ElectricityData } from './data/electricity';
 import { SmartTableData } from './data/smart-table';
 import { UserActivityData } from './data/user-activity';
@@ -50,26 +49,25 @@ import { StatsProgressBarService } from './mock/stats-progress-bar.service';
 import { VisitorsAnalyticsService } from './mock/visitors-analytics.service';
 import { SecurityCamerasService } from './mock/security-cameras.service';
 import { MockDataModule } from './mock/mock-data.module';
-import {UserService} from "./services/users.service";
-import {User} from "./models/user.model";
+import {UserService} from './services/users.service';
 
-const socialLinks = [
-  {
-    url: 'https://github.com/akveo/nebular',
-    target: '_blank',
-    icon: 'socicon-github',
-  },
-  {
-    url: 'https://www.facebook.com/akveo/',
-    target: '_blank',
-    icon: 'socicon-facebook',
-  },
-  {
-    url: 'https://twitter.com/akveo_inc',
-    target: '_blank',
-    icon: 'socicon-twitter',
-  },
-];
+// const socialLinks = [
+//   {
+//     url: 'https://github.com/akveo/nebular',
+//     target: '_blank',
+//     icon: 'socicon-github',
+//   },
+//   {
+//     url: 'https://www.facebook.com/akveo/',
+//     target: '_blank',
+//     icon: 'socicon-facebook',
+//   },
+//   {
+//     url: 'https://twitter.com/akveo_inc',
+//     target: '_blank',
+//     icon: 'socicon-twitter',
+//   },
+// ];
 
 const DATA_SERVICES = [
   { provide: ElectricityData, useClass: ElectricityService },
@@ -89,7 +87,7 @@ const DATA_SERVICES = [
   { provide: CountryOrderData, useClass: CountryOrderService },
   { provide: StatsProgressBarData, useClass: StatsProgressBarService },
   { provide: VisitorsAnalyticsData, useClass: VisitorsAnalyticsService },
-  { provide: SecurityCamerasData, useClass: SecurityCamerasService }
+  { provide: SecurityCamerasData, useClass: SecurityCamerasService },
 ];
 
 export class NbSimpleRoleProvider extends NbRoleProvider {
@@ -113,10 +111,10 @@ export const NB_CORE_PROVIDERS = [
         register: {
           endpoint: '/user/register',
         },
-        token:{
-          class:NbAuthJWTToken,
-          key:'token'
-        }
+        token: {
+          class: NbAuthJWTToken,
+          key: 'token',
+        },
       }),
     ],
     forms: {

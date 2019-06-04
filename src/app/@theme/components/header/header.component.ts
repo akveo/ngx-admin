@@ -3,8 +3,8 @@ import { Component, Input, OnInit } from '@angular/core';
 import { NbMenuService, NbSidebarService } from '@nebular/theme';
 import { AnalyticsService } from '../../../@core/utils';
 import { LayoutService } from '../../../@core/utils';
-import {UserService} from "../../../@core/services/users.service";
-import {User} from "../../../@core/models/user.model";
+import {UserService} from '../../../@core/services/users.service';
+import {User} from '../../../@core/models/user.model';
 
 @Component({
   selector: 'ngx-header',
