@@ -9,10 +9,7 @@ import { NotFoundComponent } from './miscellaneous/not-found/not-found.component
 const routes: Routes = [{
   path: '',
   component: PagesComponent,
-  children: [{
-    path: 'dashboard',
-    component: ECommerceComponent,
-  }, {
+  children: [ {
     path: 'iot-dashboard',
     component: DashboardComponent,
   }, {
@@ -47,7 +44,7 @@ const routes: Routes = [{
     loadChildren: './miscellaneous/miscellaneous.module#MiscellaneousModule',
   }, {
     path: '',
-    redirectTo: 'dashboard',
+    redirectTo: 'iot-dashboard',
     pathMatch: 'full',
   }, {
     path: '**',

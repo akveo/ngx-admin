@@ -1,0 +1,90 @@
+{
+  "Application":"FManager",
+  "login":{
+    "title":"Login",
+    "subtitle":"Hello, login with your name",
+    "form":"Login Form",
+    "email":"Email:",
+    "password":"Password",
+    "login":"Login",
+    "rememberme":"Remember me",
+    "forgetpassword":"Forget password ?",
+    "loginbutton":"Log in",
+    "email_placeholder":"Email",
+    "password_placeholder":"Password",
+    "error":{
+      "email":"User name is required",
+      "password":" Password is required!",
+      "passwordLength":"Password should contains from 6 to 20 characters",
+      "username":"User name is required"
+    }
+
+  },
+  "register":{
+    "title":"Register",
+    "fullname":"Full name:",
+    "email":"Email",
+    "email_placeholder":"Email",
+    "password":"Password:",
+    "password_placeholder":"Password",
+    "repeatpassword":"Repeat password:",
+    "button":"Register",
+    "haveaccount":"Already have an account?",
+    "login":"Log in",
+    "error":{
+      "fullnamerequired":"Full name is required",
+      "emailrequired":"Email is required",
+      "passwordrequired":"Password is required",
+      "repeatpasswordrequired":"Password confirmation is required!",
+      "passwordnotmatch":"Password does not match the confirm password."
+    }
+  },
+  "errors":{
+    "register":{
+      "100":"Email Exist in Server."
+    }
+  },
+  "menu":{
+    "titles":{
+      "home":"Home",
+      "profile":"Profile",
+      "article":"Article"
+    }
+
+  },
+  "profile":{
+    "title":"Profile",
+    "rolelabel":"Role:",
+    "roleinput":"Role",
+    "cancelText":"Cancel",
+    "okText":"OK"
+  },
+  "article":{
+    "title":"Article",
+    "typeManage":"Article Type Manage",
+    "publish":"Article Publish",
+    "template":{
+      "name":"Article title",
+      "description":"Article description",
+      "type":"Type"
+    },
+    "articletype":{
+      "tablecolumn":{
+        "id":"ID",
+        "typeName":"Name",
+        "description":"Description"
+      }
+    },
+    "message":{
+      "success":"Success",
+      "failed":"Failed",
+      "empty":"Empty Values"
+    },
+    "button":{
+      "save":"Save",
+      "ok":"OK",
+      "cancel":"Cancel"
+    }
+  }
+
+}
