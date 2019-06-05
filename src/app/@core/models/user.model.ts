@@ -7,3 +7,9 @@ export class User {
   email?: string;
   picture?: string;
 }
+
+
+export class UserCount{
+  totalCount?:number;
+  todaysRegister?:number;
+}
