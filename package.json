@@ -31,7 +31,7 @@
   "dependencies": {
     "@agm/core": "^1.0.0-beta.5",
     "@angular/animations": "^8.0.0",
-    "@angular/cdk": "^8.0.0-rc.2",
+    "@angular/cdk": "^8.0.0",
     "@angular/common": "^8.0.0",
     "@angular/compiler": "^8.0.0",
     "@angular/core": "^8.0.0",
@@ -73,13 +73,13 @@
     "tinymce": "4.5.7",
     "tslib": "^1.9.0",
     "typeface-exo": "0.0.22",
-    "web-animations-js": "2.2.5",
+    "web-animations-js": "github:angular/web-animations-js#release_pr208",
     "zone.js": "~0.9.1"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~0.800.0-rc.4",
+    "@angular-devkit/build-angular": "~0.800.2",
     "@angular/compiler-cli": "^8.0.0",
-    "@angular/cli": "^8.0.0-rc.4",
+    "@angular/cli": "^8.0.2",
     "@angular/language-service": "8.0.0",
     "@compodoc/compodoc": "1.0.1",
     "@fortawesome/fontawesome-free": "^5.2.0",
