@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'ngx-bootstrap',
+  selector: 'ngx-components',
   template: `
     <router-outlet></router-outlet>
   `,
 })
-export class BootstrapComponent {
+export class LayoutComponent {
 }

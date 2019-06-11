@@ -4,11 +4,8 @@
 // framework component themes (styles tied to theme variables)
 @import '~@nebular/theme/styles/globals';
 @import '~@nebular/auth/styles/all';
-//@import '~@nebular/bootstrap/styles/globals';
-// ...
+@import '~@nebular/bootstrap/styles/globals';
 
-// global app font size
-@import './font-size';
 
 // loading progress bar theme
 @import './pace.theme';
@@ -19,7 +16,7 @@
   // framework global styles
   @include nb-theme-global();
   @include nb-auth-global();
-  //@include nb-bootstrap-global();
+  @include nb-bootstrap-global();
 
   // loading progress bar
   @include ngx-pace-theme();
