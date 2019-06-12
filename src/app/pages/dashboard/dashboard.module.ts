@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-
+import { NbActionsModule, NbButtonModule, NbCardModule, NbTabsetModule, NbUserModule } from '@nebular/theme';
 import { NgxEchartsModule } from 'ngx-echarts';
 
 import { ThemeModule } from '../../@theme/theme.module';
@@ -20,10 +20,17 @@ import { SolarComponent } from './solar/solar.component';
 import { PlayerComponent } from './rooms/player/player.component';
 import { TrafficComponent } from './traffic/traffic.component';
 import { TrafficChartComponent } from './traffic/traffic-chart.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
+    FormsModule,
     ThemeModule,
+    NbCardModule,
+    NbUserModule,
+    NbButtonModule,
+    NbTabsetModule,
+    NbActionsModule,
     NgxEchartsModule,
   ],
   declarations: [

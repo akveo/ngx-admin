@@ -45,7 +45,6 @@
     "@nebular/eva-icons": "^4.0.0",
     "@nebular/security": "4.0.0",
     "@nebular/theme": "4.0.0",
-    "@ng-bootstrap/ng-bootstrap": "^4.0.0",
     "@swimlane/ngx-charts": "^10.0.0",
     "angular-tree-component": "7.2.0",
     "angular2-chartjs": "0.4.1",
@@ -79,8 +78,8 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.800.2",
-    "@angular/compiler-cli": "^8.0.0",
     "@angular/cli": "^8.0.2",
+    "@angular/compiler-cli": "^8.0.0",
     "@angular/language-service": "8.0.0",
     "@compodoc/compodoc": "1.0.1",
     "@fortawesome/fontawesome-free": "^5.2.0",
@@ -106,7 +105,7 @@
     "rimraf": "2.6.1",
     "stylelint": "7.13.0",
     "ts-node": "3.2.2",
-    "tslint": "5.7.0",
+    "tslint": "^5.7.0",
     "tslint-language-service": "^0.9.9",
     "typescript": "3.4.5"
   }

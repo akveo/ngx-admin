@@ -38,6 +38,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
       },
       {
         title: 'Tabs',
+        pathMatch: 'prefix',
         link: '/pages/layout/tabs',
       },
     ],
