@@ -2,7 +2,6 @@ import { Component, OnDestroy } from '@angular/core';
 import { NbThemeService } from '@nebular/theme';
 import { takeWhile } from 'rxjs/operators';
 
-// TODO: move layouts into the framework
 @Component({
   selector: 'ngx-three-columns-layout',
   styleUrls: ['./three-columns.layout.scss'],

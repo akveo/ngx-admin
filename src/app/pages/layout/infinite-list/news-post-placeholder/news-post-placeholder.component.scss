@@ -1,6 +1,6 @@
 @import '../../../../@theme/styles/themes';
 
-@include nb-install-component() {
+:host {
   display: block;
 
   .title-placeholder {
@@ -18,8 +18,10 @@
     height: 1.25rem;
     width: 5rem;
   }
+}
 
+@include nb-install-component() {
   [class$='placeholder'] {
-    //background: rgba(nb-theme(layout-bg), 0.6);
+    background: nb-theme(background-basic-color-4);
   }
 }

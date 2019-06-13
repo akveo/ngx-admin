@@ -1,12 +1,8 @@
-@import '../../../@theme/styles/themes';
+:host ::ng-deep nb-stepper .step-content {
+  text-align: center;
 
-@include nb-install-component() {
-  ::ng-deep nb-stepper .step-content {
-    text-align: center;
-
-    button {
-      cursor: pointer;
-      margin: 0.5rem;
-    }
+  button {
+    cursor: pointer;
+    margin: 0.5rem;
   }
 }

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NbMenuService, NbSidebarService, NbThemeService } from '@nebular/theme';
 
 import { UserData } from '../../../@core/data/users';
@@ -10,8 +10,6 @@ import { LayoutService } from '../../../@core/utils';
   templateUrl: './header.component.html',
 })
 export class HeaderComponent implements OnInit {
-
-  @Input() position = 'normal';
 
   user: any;
 

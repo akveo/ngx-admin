@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 
-// TODO: move layouts into the framework
 @Component({
   selector: 'ngx-one-column-layout',
   styleUrls: ['./one-column.layout.scss'],
@@ -11,8 +10,6 @@ import { Component } from '@angular/core';
       </nb-layout-header>
 
       <nb-sidebar class="menu-sidebar" tag="menu-sidebar" responsive>
-        <nb-sidebar-header>
-        </nb-sidebar-header>
         <ng-content select="nb-menu"></ng-content>
       </nb-sidebar>
 
