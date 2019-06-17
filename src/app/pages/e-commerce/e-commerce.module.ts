@@ -7,6 +7,7 @@ import {
   NbUserModule,
   NbIconModule,
   NbSelectModule,
+  NbListModule,
 } from '@nebular/theme';
 import { NgxEchartsModule } from 'ngx-echarts';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
@@ -64,6 +65,7 @@ import { EarningLiveUpdateChartComponent } from './earning-card/front-side/earni
     NbIconModule,
     NbTabsetModule,
     NbSelectModule,
+    NbListModule,
     ChartModule,
     NbProgressBarModule,
     NgxEchartsModule,

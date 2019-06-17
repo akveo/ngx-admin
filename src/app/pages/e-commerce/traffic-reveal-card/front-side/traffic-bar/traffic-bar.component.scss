@@ -1,8 +1,4 @@
 @import '../../../../../@theme/styles/themes';
-//@import '~@nebular/bootstrap/styles/hero-buttons';
-@import '~@nebular/theme/styles/global/typography/typography';
-
-$traffic-bar-background-color: #d0d8e3;
 
 @include nb-install-component() {
   height: 100%;
@@ -26,8 +22,7 @@ $traffic-bar-background-color: #d0d8e3;
 
   .period-from {
     position: absolute;
-    right: 100%;
-    @include nb-rtl(right, inherit);
+    @include nb-ltr(right, 100%);
     @include nb-rtl(left, 100%);
     bottom: 0;
     white-space: nowrap;
@@ -40,32 +35,13 @@ $traffic-bar-background-color: #d0d8e3;
 
     .progress-line {
       width: 100%;
-      background-color: $traffic-bar-background-color;
 
       &.success {
-        background-color: text-success();
-
-        @include nb-for-theme(corporate) {
-          background-color: text-primary();
-        }
+        background-color: nb-theme(color-success-default);
       }
 
       &.failure {
-        background-color: text-danger();
-      }
-    }
-
-    @include nb-for-theme(cosmic) {
-      .progress-line {
-        background: linear-gradient(180deg, #a054fe 0%, #7a58ff 100%);
-
-        &.success {
-          background: linear-gradient(0deg, #00caba 0%, #00d77f 100%);
-        }
-
-        &.failure {
-          background: linear-gradient(180deg, #ff38ab 0%, #ff386c 100%);
-        }
+        background-color: nb-theme(color-danger-default);
       }
     }
   }

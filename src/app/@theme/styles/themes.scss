@@ -47,6 +47,9 @@ $nb-themes: nb-register-theme((
 ), default, default);
 
 $nb-themes: nb-register-theme((
+
+  card-height-tiny: 13.5rem,
+  select-min-width: 6rem,
   // app wise variables for each theme
   //sidebar-header-gap: 2rem,
   //sidebar-header-height: initial,
@@ -83,6 +86,9 @@ $nb-themes: nb-register-theme((
 ), cosmic, cosmic);
 
 $nb-themes: nb-register-theme((
+
+  card-height-tiny: 13.5rem,
+  select-min-width: 6rem,
   // app wise variables for each theme
   //sidebar-header-gap: 2rem,
   //sidebar-header-height: initial,
@@ -117,3 +123,8 @@ $nb-themes: nb-register-theme((
   //
   //progress-bar-background: linear-gradient(90deg, #ff9f6f 0%, #ff8b97 100%),
 ), corporate, corporate);
+
+$nb-themes: nb-register-theme((
+  card-height-tiny: 13.5rem,
+  select-min-width: 6rem,
+), dark, dark);

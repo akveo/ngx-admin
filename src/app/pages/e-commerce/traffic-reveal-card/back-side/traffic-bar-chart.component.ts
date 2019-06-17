@@ -7,7 +7,6 @@ declare const echarts: any;
 
 @Component({
   selector: 'ngx-traffic-bar-chart',
-  styleUrls: ['traffic-back-card.component.scss'],
   template: `
     <div echarts
          [options]="option"
