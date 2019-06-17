@@ -5,15 +5,13 @@
 @include nb-install-component() {
   .legends {
     display: flex;
-    @include nb-rtl(flex-direction, row-reverse);
-    color: nb-theme(color-fg);
     padding: 0 0 0 2.85rem;
   }
 
   .legend {
     display: flex;
     justify-content: space-between;
-    align-items: baseline;
+    align-items: center;
     margin-left: 4rem;
 
     &:first-child {
