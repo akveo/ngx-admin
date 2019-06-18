@@ -6,7 +6,8 @@
   }
 
   nb-tabset {
-    height: 100%;
+    display: flex;
+    flex-direction: column;
 
     ::ng-deep .tab-link {
       padding: 1.25rem 2rem;

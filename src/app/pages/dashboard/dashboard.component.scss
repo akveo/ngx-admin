@@ -14,9 +14,11 @@
     }
   }
 
-  @include media-breakpoint-down(is) {
-    ::ng-deep nb-card.large-card {
-      height: nb-theme(card-height-medium);
+  @include media-breakpoint-up(md) {
+    ngx-contacts ::ng-deep > nb-card {
+      height: calc(#{nb-theme(card-height-medium)} +
+                   #{nb-theme(card-height-tiny)} +
+                   #{nb-theme(card-margin-bottom)});
     }
   }
 }
