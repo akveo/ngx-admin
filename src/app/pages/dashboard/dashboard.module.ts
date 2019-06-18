@@ -1,5 +1,12 @@
 import { NgModule } from '@angular/core';
-import { NbActionsModule, NbButtonModule, NbCardModule, NbTabsetModule, NbUserModule } from '@nebular/theme';
+import {
+  NbActionsModule,
+  NbButtonModule,
+  NbCardModule,
+  NbTabsetModule,
+  NbUserModule,
+  NbRadioModule,
+} from '@nebular/theme';
 import { NgxEchartsModule } from 'ngx-echarts';
 
 import { ThemeModule } from '../../@theme/theme.module';
@@ -31,6 +38,7 @@ import { FormsModule } from '@angular/forms';
     NbButtonModule,
     NbTabsetModule,
     NbActionsModule,
+    NbRadioModule,
     NgxEchartsModule,
   ],
   declarations: [
