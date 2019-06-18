@@ -38,29 +38,16 @@
     align-items: center;
     position: relative;
 
-    &::before {
-      content: '';
-      right: 100%;
-      @include nb-ltr(margin-right, 0.7rem);
-      @include nb-rtl(margin-left, 0.7rem);
-      border-left: 6px solid transparent;
-      border-right: 6px solid transparent;
-    }
-
     &.down {
       color: nb-theme(color-danger-default);
-
-      &::before {
-        border-top: 6px solid nb-theme(color-danger-default);
-      }
     }
 
     &.up {
       color: nb-theme(color-success-default);
+    }
 
-      &::before {
-        border-bottom: 6px solid nb-theme(color-success-default);
-      }
+    nb-icon ::ng-deep svg {
+      vertical-align: top;
     }
   }
 }
