@@ -24,7 +24,7 @@
       transform: translate3d(0, 0, 0);
       -webkit-transform-style: preserve-3d;
       -webkit-backface-visibility: hidden;
-      color: nb-theme(text-alternate-color);
+      color: nb-theme(text-control-color);
 
       @each $status in nb-get-statuses() {
         &.status-#{$status} {
