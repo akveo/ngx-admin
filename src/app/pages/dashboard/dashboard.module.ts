@@ -6,6 +6,9 @@ import {
   NbTabsetModule,
   NbUserModule,
   NbRadioModule,
+  NbSelectModule,
+  NbListModule,
+  NbIconModule,
 } from '@nebular/theme';
 import { NgxEchartsModule } from 'ngx-echarts';
 
@@ -39,6 +42,9 @@ import { FormsModule } from '@angular/forms';
     NbTabsetModule,
     NbActionsModule,
     NbRadioModule,
+    NbSelectModule,
+    NbListModule,
+    NbIconModule,
     NgxEchartsModule,
   ],
   declarations: [
