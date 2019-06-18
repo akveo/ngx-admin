@@ -2,16 +2,17 @@
 
 @include nb-install-component() {
 
+  nb-card {
+    position: relative;
+    overflow: hidden;
+  }
+
   nb-card-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0.675rem 0.5rem 0.5rem 1.25rem;
-  }
-
-  nb-card-body {
-    overflow: hidden;
-    position: relative;
+    padding-top: 0.45rem;
+    padding-bottom: 0.45rem;
   }
 
   ::ng-deep canvas {
@@ -23,9 +24,5 @@
     position: absolute;
     height: 100%;
     width: 100%;
-  }
-
-  .dropdown {
-    min-width: 120px;
   }
 }

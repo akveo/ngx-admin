@@ -1,28 +1,23 @@
 import { Component, OnDestroy } from '@angular/core';
 import { NbThemeService } from '@nebular/theme';
 import { takeWhile } from 'rxjs/operators';
+
 import { TrafficChartData } from '../../../@core/data/traffic-chart';
 
 @Component({
   selector: 'ngx-traffic',
   styleUrls: ['./traffic.component.scss'],
   template: `
-    <nb-card size="xsmall">
+    <nb-card size="tiny">
       <nb-card-header>
         <span>Traffic Consumption</span>
-        <div class="dropdown ghost-dropdown" ngbDropdown>
-          <button type="button" class="btn btn-sm" ngbDropdownToggle
-                  [ngClass]="{ 'btn-success': currentTheme == 'default', 'btn-primary': currentTheme != 'default'}">
-            {{ type }}
-          </button>
-          <ul ngbDropdownMenu class="dropdown-menu">
-            <li class="dropdown-item" *ngFor="let t of types" (click)="type = t">{{ t }}</li>
-          </ul>
-        </div>
+
+        <nb-select [(selected)]="type">
+          <nb-option *ngFor="let t of types" [value]="t">{{ t }}</nb-option>
+        </nb-select>
       </nb-card-header>
-      <nb-card-body class="p-0">
-        <ngx-traffic-chart [points]="trafficChartPoints"></ngx-traffic-chart>
-      </nb-card-body>
+
+      <ngx-traffic-chart [points]="trafficChartPoints"></ngx-traffic-chart>
     </nb-card>
   `,
 })
