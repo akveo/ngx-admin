@@ -11,6 +11,10 @@
 
     ::ng-deep ul {
       border: none;
+
+      .tab-link {
+        padding: 1.25rem 2rem;
+      }
     }
   }
 
