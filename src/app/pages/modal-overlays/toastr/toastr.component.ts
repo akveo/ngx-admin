@@ -26,17 +26,17 @@ export class ToastrComponent {
   hasIcon = true;
   position: NbGlobalPosition = NbGlobalPhysicalPosition.TOP_RIGHT;
   preventDuplicates = false;
-  status: NbComponentStatus = 'success';
+  status: NbComponentStatus = 'primary';
 
   title = 'HI there!';
   content = `I'm cool toaster!`;
 
   types: NbComponentStatus[] = [
+    'primary',
     'success',
     'info',
     'warning',
     'danger',
-    'primary',
   ];
   positions: string[] = [
     NbGlobalPhysicalPosition.TOP_RIGHT,

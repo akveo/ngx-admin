@@ -4,8 +4,10 @@ import {
   NbButtonModule,
   NbCardModule,
   NbCheckboxModule,
-  NbDialogModule, NbInputModule,
+  NbDialogModule,
+  NbInputModule,
   NbPopoverModule,
+  NbSelectModule,
   NbTabsetModule,
   NbWindowModule,
 } from '@nebular/theme';
@@ -66,6 +68,7 @@ const MODULES = [
   NbPopoverModule,
   NbButtonModule,
   NbInputModule,
+  NbSelectModule,
 ];
 
 const SERVICES = [
