@@ -30,11 +30,11 @@ $nb-themes: nb-register-theme((
   //header-button-outline: #42db7d,
   //
   //list-item-border-width: 1px,
-  //
-  slide-out-background: linear-gradient(270deg, #edf1f7 0%, #e4e9f2 100%),
+
+  slide-out-background: linear-gradient(270deg, #e4e9f2 0%, #f7f9fc 100%),
   slide-out-shadow-color: 0 4px 14px 0 #8f9bb3,
   slide-out-shadow-color-rtl: 0 4px 14px 0 #8f9bb3,
-  //
+
   //chart-panel-summary-box-shadow: none,
   //chart-panel-summary-background-color: #ecf2f5,
   //chart-panel-summary-border-color: #ebeff1,
@@ -125,7 +125,7 @@ $nb-themes: nb-register-theme((
   card-height-tiny: 13.5rem,
   select-min-width: 6rem,
 
-  slide-out-background: linear-gradient(270deg, #edf1f7 0%, #e4e9f2 100%),
+  slide-out-background: linear-gradient(270deg, #222b45 0%, #151a30 100%),
   slide-out-shadow-color: 0 4px 14px 0 #8f9bb3,
   slide-out-shadow-color-rtl: 0 4px 14px 0 #8f9bb3,
 ), dark, dark);
