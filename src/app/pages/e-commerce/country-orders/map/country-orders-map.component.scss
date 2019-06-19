@@ -30,6 +30,10 @@
       border-bottom: none;
     }
 
+    .leaflet-disabled {
+      background-color: nb-theme(color-primary-disabled);
+    }
+
     .leaflet-control-zoom-in {
       border-top-left-radius: nb-theme(button-rectangle-border-radius);
       border-top-right-radius: nb-theme(button-rectangle-border-radius);
