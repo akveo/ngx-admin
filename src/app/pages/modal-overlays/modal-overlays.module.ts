@@ -1,4 +1,14 @@
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import {
+  NbButtonModule,
+  NbCardModule,
+  NbCheckboxModule,
+  NbDialogModule, NbInputModule,
+  NbPopoverModule,
+  NbTabsetModule,
+  NbWindowModule,
+} from '@nebular/theme';
 
 // modules
 import { ThemeModule } from '../../@theme/theme.module';
@@ -8,7 +18,6 @@ import { ModalOverlaysRoutingModule } from './modal-overlays-routing.module';
 import { ModalOverlaysComponent } from './modal-overlays.component';
 import { DialogComponent } from './dialog/dialog.component';
 import { ShowcaseDialogComponent } from './dialog/showcase-dialog/showcase-dialog.component';
-import { NbDialogModule, NbWindowModule } from '@nebular/theme';
 import { DialogNamePromptComponent } from './dialog/dialog-name-prompt/dialog-name-prompt.component';
 import { WindowComponent } from './window/window.component';
 import { WindowFormComponent } from './window/window-form/window-form.component';
@@ -46,10 +55,17 @@ const ENTRY_COMPONENTS = [
 ];
 
 const MODULES = [
+  FormsModule,
   ThemeModule,
   ModalOverlaysRoutingModule,
   NbDialogModule.forChild(),
   NbWindowModule.forChild(),
+  NbCardModule,
+  NbCheckboxModule,
+  NbTabsetModule,
+  NbPopoverModule,
+  NbButtonModule,
+  NbInputModule,
 ];
 
 const SERVICES = [
