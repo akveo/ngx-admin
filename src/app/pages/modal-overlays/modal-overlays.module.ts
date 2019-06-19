@@ -9,6 +9,7 @@ import {
   NbPopoverModule,
   NbSelectModule,
   NbTabsetModule,
+  NbTooltipModule,
   NbWindowModule,
 } from '@nebular/theme';
 
@@ -69,6 +70,7 @@ const MODULES = [
   NbButtonModule,
   NbInputModule,
   NbSelectModule,
+  NbTooltipModule,
 ];
 
 const SERVICES = [
