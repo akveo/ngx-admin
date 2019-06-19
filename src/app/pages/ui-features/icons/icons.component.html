@@ -5,11 +5,7 @@
         Eva Icons
       </nb-card-header>
       <nb-card-body>
-        <div class="icon" *ngFor="let icon of evaIcons">
-          <i class="eva-icon-container" [nbPopover]="icon">
-            <i [innerHTML]="icon | eva: { animationType: 'pulse' }"></i>
-          </i>
-        </div>
+        <nb-icon *ngFor="let icon of evaIcons" [icon]="icon" pack="eva"></nb-icon>
       </nb-card-body>
       <nb-card-footer>
         <a href="https://akveo.github.io/eva-icons/" target="_blank">See all Eva Icons</a>
@@ -23,10 +19,7 @@
         Nebular
       </nb-card-header>
       <nb-card-body>
-        <div class="icon"
-             *ngFor="let icon of icons.nebular">
-          <i class="{{ icon }}" [nbPopover]="icon"></i>
-        </div>
+        <nb-icon *ngFor="let icon of icons.nebular" [icon]="icon" pack="nebular"></nb-icon>
       </nb-card-body>
     </nb-card>
 
@@ -35,10 +28,7 @@
         Font awesome icons
       </nb-card-header>
       <nb-card-body>
-        <div class="icon"
-             *ngFor="let icon of icons.fontAwesome">
-          <i class="{{ icon }}" [nbPopover]="icon"></i>
-        </div>
+        <nb-icon *ngFor="let icon of icons.fontAwesome" [icon]="icon" pack="fa"></nb-icon>
       </nb-card-body>
       <nb-card-footer>
         <a href="http://fortawesome.github.io/Font-Awesome/icons/" target="_blank">
@@ -52,9 +42,7 @@
         Ionicons
       </nb-card-header>
       <nb-card-body>
-        <div class="icon" *ngFor="let icon of icons.ionicons">
-          <i class="{{ icon }}" [nbPopover]="icon"></i>
-        </div>
+        <nb-icon *ngFor="let icon of icons.ionicons" [icon]="icon" pack="ion"></nb-icon>
       </nb-card-body>
       <nb-card-footer>
         <a href="http://ionicons.com/" target="_blank">See all ionicons</a>

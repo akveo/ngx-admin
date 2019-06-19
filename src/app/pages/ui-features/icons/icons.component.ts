@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { icons } from 'eva-icons';
+import { NbIconLibraries } from '@nebular/theme';
 
 @Component({
   selector: 'ngx-icons',
@@ -11,55 +11,60 @@ export class IconsComponent {
 
   evaIcons = [];
 
-  constructor() {
-    this.evaIcons = Object.keys(icons).filter(icon => icon.indexOf('outline') === -1);
+  constructor(iconsLibrary: NbIconLibraries) {
+    this.evaIcons = Array.from(iconsLibrary.getPack('eva').icons.keys())
+      .filter(icon => icon.indexOf('outline') === -1);
+
+    iconsLibrary.registerFontPack('fa', { packClass: 'fa', iconClassPrefix: 'fa' });
+    iconsLibrary.registerFontPack('nebular', { iconClassPrefix: 'nb' });
+    iconsLibrary.registerFontPack('ion', { iconClassPrefix: 'ion' });
   }
 
   icons = {
 
-    nebular: ['nb-alert', 'nb-angle-double-left', 'nb-angle-double-right',
-      'nb-arrow-down', 'nb-arrow-dropdown', 'nb-arrow-dropleft',
-      'nb-arrow-dropright', 'nb-arrow-dropup', 'nb-arrow-left', 'nb-arrow-retweet', 'nb-arrow-right',
-      'nb-arrow-thin-down', 'nb-arrow-thin-left', 'nb-arrow-thin-right', 'nb-arrow-thin-up',
-      'nb-arrow-up', 'nb-audio', 'nb-bar-chart', 'nb-checkmark', 'nb-chevron-down',
-      'nb-chevron-down-outline', 'nb-chevron-left', 'nb-chevron-left-outline', 'nb-chevron-right',
-      'nb-chevron-right-outline', 'nb-chevron-up', 'nb-chevron-up-outline', 'nb-close',
-      'nb-close-circled', 'nb-cloudy', 'nb-coffee-maker', 'nb-compose', 'nb-edit', 'nb-email',
-      'nb-flame-circled', 'nb-gear', 'nb-grid-a', 'nb-grid-a-outline', 'nb-grid-b', 'nb-grid-b-outline',
-      'nb-heart', 'nb-home', 'nb-keypad', 'nb-layout-centre', 'nb-layout-default', 'nb-layout-one-column',
-      'nb-layout-sidebar-left', 'nb-layout-sidebar-right', 'nb-layout-two-column', 'nb-lightbulb',
-      'nb-list', 'nb-location', 'nb-locked', 'nb-loop', 'nb-loop-circled', 'nb-menu', 'nb-notifications',
-      'nb-paper-plane', 'nb-partlysunny', 'nb-pause', 'nb-pause-outline', 'nb-person', 'nb-phone',
-      'nb-play', 'nb-play-outline', 'nb-plus', 'nb-plus-circled', 'nb-power', 'nb-power-circled',
-      'nb-rainy', 'nb-roller-shades', 'nb-search', 'nb-shuffle', 'nb-skip-backward',
-      'nb-skip-backward-outline', 'nb-skip-forward', 'nb-skip-forward-outline', 'nb-snowy-circled',
-      'nb-square', 'nb-square-outline', 'nb-star', 'nb-sunny', 'nb-sunny-circled', 'nb-tables', 'nb-title',
-      'nb-trash', 'nb-volume-high', 'nb-volume-mute', 'nb-drop', 'nb-drops', 'nb-info', 'nb-expand', 'nb-collapse',
-      'nb-e-commerce', 'nb-danger', 'nb-checkmark-circle', 'nb-help'],
+    nebular: ['alert', 'angle-double-left', 'angle-double-right',
+      'arrow-down', 'arrow-dropdown', 'arrow-dropleft',
+      'arrow-dropright', 'arrow-dropup', 'arrow-left', 'arrow-retweet', 'arrow-right',
+      'arrow-thin-down', 'arrow-thin-left', 'arrow-thin-right', 'arrow-thin-up',
+      'arrow-up', 'audio', 'bar-chart', 'checkmark', 'chevron-down',
+      'chevron-down-outline', 'chevron-left', 'chevron-left-outline', 'chevron-right',
+      'chevron-right-outline', 'chevron-up', 'chevron-up-outline', 'close',
+      'close-circled', 'cloudy', 'coffee-maker', 'compose', 'edit', 'email',
+      'flame-circled', 'gear', 'grid-a', 'grid-a-outline', 'grid-b', 'grid-b-outline',
+      'heart', 'home', 'keypad', 'layout-centre', 'layout-default', 'layout-one-column',
+      'layout-sidebar-left', 'layout-sidebar-right', 'layout-two-column', 'lightbulb',
+      'list', 'location', 'locked', 'loop', 'loop-circled', 'menu', 'notifications',
+      'paper-plane', 'partlysunny', 'pause', 'pause-outline', 'person', 'phone',
+      'play', 'play-outline', 'plus', 'plus-circled', 'power', 'power-circled',
+      'rainy', 'roller-shades', 'search', 'shuffle', 'skip-backward',
+      'skip-backward-outline', 'skip-forward', 'skip-forward-outline', 'snowy-circled',
+      'square', 'square-outline', 'star', 'sunny', 'sunny-circled', 'tables', 'title',
+      'trash', 'volume-high', 'volume-mute', 'drop', 'drops', 'info', 'expand', 'collapse',
+      'e-commerce', 'danger', 'checkmark-circle', 'help'],
 
     ionicons: [
-      'ion-ionic', 'ion-arrow-right-b', 'ion-arrow-down-b', 'ion-arrow-left-b', 'ion-arrow-up-c', 'ion-arrow-right-c',
-      'ion-arrow-down-c', 'ion-arrow-left-c', 'ion-arrow-return-right', 'ion-arrow-return-left', 'ion-arrow-swap',
-      'ion-arrow-shrink', 'ion-arrow-expand', 'ion-arrow-move', 'ion-arrow-resize', 'ion-chevron-up',
-      'ion-chevron-right', 'ion-chevron-down', 'ion-chevron-left', 'ion-navicon-round', 'ion-navicon',
-      'ion-drag', 'ion-log-in', 'ion-log-out', 'ion-checkmark-round', 'ion-checkmark', 'ion-checkmark-circled',
-      'ion-close-round', 'ion-plus-round', 'ion-minus-round', 'ion-information', 'ion-help',
-      'ion-backspace-outline', 'ion-help-buoy', 'ion-asterisk', 'ion-alert', 'ion-alert-circled',
-      'ion-refresh', 'ion-loop', 'ion-shuffle', 'ion-home', 'ion-search', 'ion-flag', 'ion-star',
-      'ion-heart', 'ion-heart-broken', 'ion-gear-a', 'ion-gear-b', 'ion-toggle-filled', 'ion-toggle',
-      'ion-settings', 'ion-wrench', 'ion-hammer', 'ion-edit', 'ion-trash-a', 'ion-trash-b',
-      'ion-document', 'ion-document-text', 'ion-clipboard', 'ion-scissors', 'ion-funnel',
-      'ion-bookmark', 'ion-email', 'ion-email-unread', 'ion-folder', 'ion-filing', 'ion-archive',
-      'ion-reply', 'ion-reply-all', 'ion-forward',
+      'ionic', 'arrow-right-b', 'arrow-down-b', 'arrow-left-b', 'arrow-up-c', 'arrow-right-c',
+      'arrow-down-c', 'arrow-left-c', 'arrow-return-right', 'arrow-return-left', 'arrow-swap',
+      'arrow-shrink', 'arrow-expand', 'arrow-move', 'arrow-resize', 'chevron-up',
+      'chevron-right', 'chevron-down', 'chevron-left', 'navicon-round', 'navicon',
+      'drag', 'log-in', 'log-out', 'checkmark-round', 'checkmark', 'checkmark-circled',
+      'close-round', 'plus-round', 'minus-round', 'information', 'help',
+      'backspace-outline', 'help-buoy', 'asterisk', 'alert', 'alert-circled',
+      'refresh', 'loop', 'shuffle', 'home', 'search', 'flag', 'star',
+      'heart', 'heart-broken', 'gear-a', 'gear-b', 'toggle-filled', 'toggle',
+      'settings', 'wrench', 'hammer', 'edit', 'trash-a', 'trash-b',
+      'document', 'document-text', 'clipboard', 'scissors', 'funnel',
+      'bookmark', 'email', 'email-unread', 'folder', 'filing', 'archive',
+      'reply', 'reply-all', 'forward',
     ],
 
     fontAwesome: [
-      'fa fa-adjust', 'fa fa-anchor', 'fa fa-archive', 'fa fa-chart-area', 'fa fa-arrows-alt', 'fa fa-arrows-alt-h',
-      'fa fa-arrows-alt-v', 'fa fa-asterisk', 'fa fa-at', 'fa fa-car', 'fa fa-ban', 'fa fa-university',
-      'fa fa-chart-bar', 'far fa-chart-bar', 'fa fa-barcode', 'fa fa-bars', 'fa fa-bed', 'fa fa-beer',
-      'fa fa-bell', 'far fa-bell', 'fa fa-bell-slash', 'far fa-bell-slash', 'fa fa-bicycle', 'fa fa-binoculars',
-      'fa fa-birthday-cake', 'fa fa-bolt', 'fa fa-bomb', 'fa fa-book', 'fa fa-bookmark', 'far fa-bookmark',
-      'fa fa-briefcase', 'fa fa-bug', 'fa fa-building', 'far fa-building', 'fa fa-bullhorn',
+      'adjust', 'anchor', 'archive', 'chart-area', 'arrows-alt', 'arrows-alt-h',
+      'arrows-alt-v', 'asterisk', 'at', 'car', 'ban', 'university',
+      'chart-bar', 'far fa-chart-bar', 'barcode', 'bars', 'bed', 'beer',
+      'bell', 'far fa-bell', 'bell-slash', 'far fa-bell-slash', 'bicycle', 'binoculars',
+      'birthday-cake', 'bolt', 'bomb', 'book', 'bookmark', 'far fa-bookmark',
+      'briefcase', 'bug', 'building', 'far fa-building', 'bullhorn',
     ],
   };
 
