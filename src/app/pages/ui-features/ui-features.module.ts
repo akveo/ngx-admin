@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { NbCardModule, NbIconModule, NbPopoverModule, NbSearchModule } from '@nebular/theme';
 
 import { ThemeModule } from '../../@theme/theme.module';
 import { UiFeaturesRoutingModule } from './ui-features-routing.module';
@@ -18,6 +19,10 @@ const components = [
 
 @NgModule({
   imports: [
+    NbCardModule,
+    NbPopoverModule,
+    NbSearchModule,
+    NbIconModule,
     ThemeModule,
     UiFeaturesRoutingModule,
   ],
