@@ -34,6 +34,7 @@
     transform: rotate(180deg);
 
     .progress-line {
+      background-color: nb-theme(background-basic-color-4);
       width: 100%;
 
       &.success {
