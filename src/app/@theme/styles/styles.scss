@@ -21,3 +21,8 @@
   // loading progress bar
   @include ngx-pace-theme();
 };
+
+// overrides bootstrap svg style
+nb-icon svg {
+  vertical-align: top;
+}
