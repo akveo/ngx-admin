@@ -10,10 +10,8 @@ import { registerMap } from 'echarts';
   styleUrls: ['./bubble-map.component.scss'],
   template: `
     <nb-card>
-    <nb-card-header>Bubble Maps</nb-card-header>
-      <nb-card-body>
-        <div echarts [options]="options" class="echarts"></div>
-      </nb-card-body>
+      <nb-card-header>Bubble Maps</nb-card-header>
+      <div echarts [options]="options" class="echarts"></div>
     </nb-card>
   `,
 })
