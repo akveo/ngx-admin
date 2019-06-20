@@ -28,7 +28,7 @@
     height: 100%;
     top: 0;
     overflow: hidden;
-    transition: all 0.5s ease-out;
+    transition: all 0.2s ease-out;
   }
 
   .slide-out-container::before {
@@ -60,7 +60,7 @@
     position: relative;
     width: 100%;
     margin: 0 6rem;
-    transition: all 0.5s ease-out;
+    transition: all 0.2s ease-out;
   }
 
   .expanded .content-wrapper {
