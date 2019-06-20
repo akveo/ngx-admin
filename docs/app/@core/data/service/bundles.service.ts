@@ -1,18 +1,23 @@
 import { Injectable } from '@angular/core';
 import { of as observableOf,  Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+import { HttpClient } from '@angular/common/http';
 
-export class Bundle {
-  type: string;
+export interface Product {
+  id: string;
+  imageUrl: string;
+  storeUrl: string;
+  tags: string[];
   title: string;
   description: string;
-  licenses: object;
-  imageModifier: string;
+  variants: ProductVariant[];
 }
 
-export class Feature {
-  text: string;
-  availableInPersonalLicence: boolean;
-  availableInCommercialLicence: boolean;
+export interface ProductVariant {
+  available: boolean;
+  compare_at_price: string;
+  price: string;
+  title: string;
 }
 
 export const BUNDLE_LICENSE = {
@@ -20,84 +25,17 @@ export const BUNDLE_LICENSE = {
   multi: 'multi',
 };
 
+export class Feature {
+  text: string;
+  availableInPersonalLicence: boolean;
+  availableInCommercialLicence: boolean;
+}
+
 @Injectable()
 export class BundlesService {
 
-  /* tslint:disable:max-line-length */
-  private bundles: Bundle[] = [
-    {
-      type: 'Starter',
-      title: 'Node.JS + ngx-admin',
-      description: 'Starter Dashboard integrated with REST data services based Express REST API, MongoDB',
-      licenses: {
-        single: {
-          oldPrice: '39',
-          newPrice: '29',
-          buyLink: 'https://store.akveo.com/collections/all/products/nodejs-mongodb-ngx-admin-angular-starter-bundle',
-        },
-        multi: {
-          oldPrice: '150',
-          newPrice: '125',
-          buyLink: 'https://store.akveo.com/collections/all/products/nodejs-mongodb-ngx-admin-angular-starter-bundle?variant=15070372560945',
-        },
-      },
-      imageModifier: 'node-js',
-    },
-    {
-      type: 'Starter:',
-      title: '.NET Core + ngx-admin',
-      description: 'E-Commerce Dashboard integrated with REST data services based on .NET Core, Web API and Entity Framework 2.2',
-      licenses: {
-        single: {
-          oldPrice: '39',
-          newPrice: '129',
-          buyLink: 'https://store.akveo.com/collections/all/products/net-core-ngx-admin-angular-starter-bundle',
-        },
-        multi: {
-          oldPrice: '150',
-          newPrice: '125',
-          buyLink: 'https://store.akveo.com/collections/all/products/net-core-ngx-admin-angular-starter-bundle?variant=14607219753009',
-        },
-      },
-      imageModifier: 'dot-net-core',
-    },
-    {
-      type: 'Full E-commerce Bundle',
-      title: '.NET Core + ngx-admin',
-      description: 'E-commerce Dashboard integrated with REST data services based on .NET Core, Web API and Entity Framework 6.2',
-      licenses: {
-        single: {
-          oldPrice: '180',
-          newPrice: '140',
-          buyLink: 'https://store.akveo.com/collections/all/products/e-commerce-net-core-ngx-admin',
-        },
-        multi: {
-          oldPrice: '1800',
-          newPrice: '1400',
-          buyLink: 'https://store.akveo.com/collections/all/products/e-commerce-net-core-ngx-admin?variant=14434658779185',
-        },
-      },
-      imageModifier: 'dot-net',
-    },
-    {
-      type: 'Full IoT Bundle',
-      title: '.NET Framework + ngx-admin',
-      description: 'IoT Dashboard integrated with REST data services based on .NET Core, Web API and Entity Framework 2.2',
-      licenses: {
-        single: {
-          oldPrice: '180',
-          newPrice: '140',
-          buyLink: 'https://store.akveo.com/collections/all/products/iot-net-ngx-admin',
-        },
-        multi: {
-          oldPrice: '1800',
-          newPrice: '1400',
-          buyLink: 'https://store.akveo.com/collections/all/products/iot-net-ngx-admin?variant=14434651471921',
-        },
-      },
-      imageModifier: 'dot-net-core',
-    },
-  ];
+  private readonly STORE_PRODUCTS: string = 'https://store.akveo.com/collections/frontpage/products.json';
+  private readonly STORE: string = 'https://store.akveo.com/collections/all/products';
 
   private features: Feature[] = [
     {
@@ -121,28 +59,49 @@ export class BundlesService {
       availableInCommercialLicence: true,
     },
     {
-      text: 'Single app',
+      text: 'Commercial Usage',
       availableInPersonalLicence: true,
       availableInCommercialLicence: true,
     },
     {
-      text: 'Multi app',
+      text: 'Create multiple end products using bundle',
       availableInPersonalLicence: false,
       availableInCommercialLicence: true,
     },
     {
-      text: '6 months support and bug fixes on request',
+      text: 'Bug fixes and questions according to license terms',
       availableInPersonalLicence: false,
       availableInCommercialLicence: true,
     },
   ];
-  /* tslint:disable:max-line-length */
 
-  getBundles(): Observable<Bundle[]> {
-    return observableOf(this.bundles);
-  }
+  constructor(private http: HttpClient) {}
 
   getFeatures(): Observable<Feature[]> {
     return observableOf(this.features);
+  }
+
+  getProducts(): Observable<Product[]> {
+    return this.http.get(this.STORE_PRODUCTS)
+      .pipe(map((result: any) => {
+        return result.products.map((item: any) => {
+          return {
+            id: item.id,
+            imageUrl: item.images.length ? item.images[0].src.substring(0, item.images[0].src.indexOf('?')) : undefined,
+            storeUrl: `${this.STORE}/${item.handle}`,
+            tags: item.tags,
+            title: item.title,
+            description: item.body_html,
+            variants: item.variants.map(variant => {
+              return {
+                available: variant.available,
+                compare_at_price: variant.compare_at_price,
+                price: variant.price,
+                title: variant.title,
+              };
+            }),
+          };
+        });
+      }));
   }
 }
