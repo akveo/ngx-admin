@@ -43,16 +43,16 @@ const routes: Routes = [{
       loadChildren: () => import('./extra-components/extra-components.module')
         .then(m => m.ExtraComponentsModule),
     },
-    // {
-    //   path: 'maps',
-    //   loadChildren: () => import('./maps/maps.module')
-    //     .then(m => m.MapsModule),
-    // },
-    // {
-    //   path: 'charts',
-    //   loadChildren: () => import('./charts/charts.module')
-    //     .then(m => m.ChartsModule),
-    // },
+    {
+      path: 'maps',
+      loadChildren: () => import('./maps/maps.module')
+        .then(m => m.MapsModule),
+    },
+    {
+      path: 'charts',
+      loadChildren: () => import('./charts/charts.module')
+        .then(m => m.ChartsModule),
+    },
     // {
     //   path: 'editors',
     //   loadChildren: () => import('./editors/editors.module')
