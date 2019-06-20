@@ -16,6 +16,7 @@ export class IconsComponent {
       .filter(icon => icon.indexOf('outline') === -1);
 
     iconsLibrary.registerFontPack('fa', { packClass: 'fa', iconClassPrefix: 'fa' });
+    iconsLibrary.registerFontPack('far', { packClass: 'far', iconClassPrefix: 'fa' });
     iconsLibrary.registerFontPack('nebular', { iconClassPrefix: 'nb' });
     iconsLibrary.registerFontPack('ion', { iconClassPrefix: 'ion' });
   }
@@ -61,11 +62,13 @@ export class IconsComponent {
     fontAwesome: [
       'adjust', 'anchor', 'archive', 'chart-area', 'arrows-alt', 'arrows-alt-h',
       'arrows-alt-v', 'asterisk', 'at', 'car', 'ban', 'university',
-      'chart-bar', 'far fa-chart-bar', 'barcode', 'bars', 'bed', 'beer',
-      'bell', 'far fa-bell', 'bell-slash', 'far fa-bell-slash', 'bicycle', 'binoculars',
-      'birthday-cake', 'bolt', 'bomb', 'book', 'bookmark', 'far fa-bookmark',
-      'briefcase', 'bug', 'building', 'far fa-building', 'bullhorn',
+      'chart-bar', 'barcode', 'bars', 'bed', 'beer',
+      'bell', 'bell-slash', 'bicycle', 'binoculars',
+      'birthday-cake', 'bolt', 'bomb', 'book', 'bookmark',
+      'briefcase', 'bug', 'building', 'bullhorn',
     ],
+
+    fontAwesomeRegular: [ 'chart-bar', 'bell', 'bell-slash', 'bookmark', 'building' ],
   };
 
 }
