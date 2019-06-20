@@ -1,4 +1,18 @@
 import { NgModule } from '@angular/core';
+import {
+  NbActionsModule,
+  NbAlertModule,
+  NbCalendarKitModule,
+  NbCalendarModule,
+  NbCalendarRangeModule,
+  NbCardModule,
+  NbChatModule,
+  NbProgressBarModule,
+  NbSelectModule,
+  NbSpinnerModule,
+  NbTabsetModule,
+} from '@nebular/theme';
+
 import { ThemeModule } from '../../@theme/theme.module';
 import { ExtraComponentsRoutingModule } from './extra-components-routing.module';
 
@@ -42,6 +56,17 @@ const COMPONENTS = [
 ];
 
 const MODULES = [
+  NbAlertModule,
+  NbActionsModule,
+  NbCalendarModule,
+  NbCalendarKitModule,
+  NbCalendarRangeModule,
+  NbCardModule,
+  NbChatModule,
+  NbProgressBarModule,
+  NbSelectModule,
+  NbSpinnerModule,
+  NbTabsetModule,
   ThemeModule,
   ExtraComponentsRoutingModule,
 ];
