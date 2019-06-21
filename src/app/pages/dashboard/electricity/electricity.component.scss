@@ -46,12 +46,9 @@
   }
 
   nb-tabset {
+    display: flex;
+    flex-direction: column;
     overflow: hidden;
-  }
-
-  nb-tab {
-    height: 29.5rem;
-    overflow-y: auto;
   }
 
   nb-tab {
