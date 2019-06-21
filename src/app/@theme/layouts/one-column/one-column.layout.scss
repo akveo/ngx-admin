@@ -36,10 +36,6 @@
       .scrollable {
         width: $sidebar-width;
       }
-
-      @include nb-for-theme(cosmic) {
-        background: nb-theme(layout-bg);
-      }
     }
   }
 }
