@@ -13,6 +13,7 @@
     justify-content: space-between;
     padding-top: nb-theme(card-header-with-select-padding-top);
     padding-bottom: nb-theme(card-header-with-select-padding-bottom);
+    margin-bottom: -1px;
   }
 
   ngx-traffic-chart {
