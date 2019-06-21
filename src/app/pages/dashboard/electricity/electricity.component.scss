@@ -58,6 +58,10 @@
   nb-list-item {
     display: flex;
     align-items: baseline;
+
+    &:first-child {
+      border-top: none;
+    }
   }
 
   .month {
