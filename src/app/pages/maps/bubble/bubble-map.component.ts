@@ -471,7 +471,7 @@ export class BubbleMapComponent implements OnDestroy {
           title: {
             text: 'World Population (2011)',
             left: 'center',
-            top: 'top',
+            top: '16px',
             textStyle: {
               color: this.bubbleTheme.titleColor,
             },
