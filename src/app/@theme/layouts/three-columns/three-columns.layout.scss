@@ -45,8 +45,8 @@
     ::ng-deep .main-container {
       height:
         calc(#{nb-theme(sidebar-height)} - #{nb-theme(header-height)} - #{nb-theme(sidebar-header-gap)}) !important;
-      @include nb-ltr(border-top-right-radius, nb-theme(radius));
-      @include nb-rtl(border-top-left-radius, nb-theme(radius));
+      @include nb-ltr(border-top-right-radius, nb-theme(border-radius));
+      @include nb-rtl(border-top-left-radius, nb-theme(border-radius));
     }
 
     ::ng-deep nb-sidebar-header {
