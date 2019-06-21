@@ -109,10 +109,10 @@ export const COSMIC_THEME = {
     },
 
     bubbleMap: {
-      titleColor: '#ffffff',
-      areaColor: '#2c2961',
-      areaHoverColor: '#a1a1e5',
-      areaBorderColor: '#654ddb',
+      titleColor: theme.fgText,
+      areaColor: theme.bg4,
+      areaHoverColor: theme.fgHighlight,
+      areaBorderColor: theme.border5,
     },
 
     profitBarAnimationEchart: {

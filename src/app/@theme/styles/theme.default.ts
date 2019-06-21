@@ -109,10 +109,10 @@ export const DEFAULT_THEME = {
     },
 
     bubbleMap: {
-      titleColor: '#484848',
-      areaColor: '#dddddd',
-      areaHoverColor: '#cccccc',
-      areaBorderColor: '#ebeef2',
+      titleColor: theme.fgText,
+      areaColor: theme.bg4,
+      areaHoverColor: theme.fgHighlight,
+      areaBorderColor: theme.border5,
     },
 
     profitBarAnimationEchart: {
