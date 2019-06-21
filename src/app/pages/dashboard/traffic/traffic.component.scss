@@ -15,14 +15,20 @@
     padding-bottom: 0.45rem;
   }
 
-  ::ng-deep canvas {
-    border-bottom-left-radius: nb-theme(card-border-radius);
-    border-bottom-right-radius: nb-theme(card-border-radius);
+  ngx-traffic-chart {
+    flex: 1;
   }
 
-  .echart {
-    position: absolute;
-    height: 100%;
-    width: 100%;
+  ::ng-deep {
+    .echart {
+      display: block;
+      height: 100%;
+      width: 100%;
+    }
+
+    canvas {
+      border-bottom-left-radius: nb-theme(card-border-radius);
+      border-bottom-right-radius: nb-theme(card-border-radius);
+    }
   }
 }

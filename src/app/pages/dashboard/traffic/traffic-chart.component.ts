@@ -5,7 +5,6 @@ import { LayoutService } from '../../../@core/utils';
 
 @Component({
   selector: 'ngx-traffic-chart',
-  styleUrls: ['./traffic.component.scss'],
   template: `
     <div echarts
          [options]="option"
