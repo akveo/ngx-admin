@@ -116,22 +116,22 @@ export const COSMIC_THEME = {
     },
 
     profitBarAnimationEchart: {
-      textColor: '#ffffff',
+      textColor: theme.fgText,
 
-      firstAnimationBarColor: '#0088ff',
-      secondAnimationBarColor: '#7659ff',
+      firstAnimationBarColor: theme.primary,
+      secondAnimationBarColor: theme.success,
 
-      splitLineStyleOpacity: '0.06',
+      splitLineStyleOpacity: '1',
       splitLineStyleWidth: '1',
-      splitLineStyleColor: '#000000',
+      splitLineStyleColor: theme.border2,
 
-      tooltipTextColor: '#ffffff',
+      tooltipTextColor: theme.fgText,
       tooltipFontWeight: 'normal',
       tooltipFontSize: '16',
-      tooltipBg: 'rgba(0, 255, 170, 0.35)',
-      tooltipBorderColor: '#00d977',
-      tooltipBorderWidth: '3',
-      tooltipExtraCss: 'box-shadow: 0px 2px 46px 0 rgba(0, 255, 170, 0.35); border-radius: 10px; padding: 4px 16px;',
+      tooltipBg: theme.bg,
+      tooltipBorderColor: theme.border2,
+      tooltipBorderWidth: '1',
+      tooltipExtraCss: 'border-radius: 10px; padding: 4px 16px;',
     },
 
     trafficBarEchart: {

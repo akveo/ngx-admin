@@ -116,21 +116,21 @@ export const DEFAULT_THEME = {
     },
 
     profitBarAnimationEchart: {
-      textColor: '#484848',
+      textColor: theme.fgText,
 
-      firstAnimationBarColor: '#3edd81',
-      secondAnimationBarColor: '#8d7fff',
+      firstAnimationBarColor: theme.primary,
+      secondAnimationBarColor: theme.success,
 
-      splitLineStyleOpacity: '0.06',
+      splitLineStyleOpacity: '1',
       splitLineStyleWidth: '1',
-      splitLineStyleColor: '#000000',
+      splitLineStyleColor: theme.separator,
 
-      tooltipTextColor: '#2a2a2a',
-      tooltipFontWeight: 'bolder',
+      tooltipTextColor: theme.fgText,
+      tooltipFontWeight: 'normal',
       tooltipFontSize: '16',
-      tooltipBg: '#ffffff',
-      tooltipBorderColor: '#c0c8d1',
-      tooltipBorderWidth: '3',
+      tooltipBg: theme.bg,
+      tooltipBorderColor: theme.border2,
+      tooltipBorderWidth: '1',
       tooltipExtraCss: 'border-radius: 10px; padding: 4px 16px;',
     },
 

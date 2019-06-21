@@ -116,21 +116,21 @@ export const CORPORATE_THEME = {
     },
 
     profitBarAnimationEchart: {
-      textColor: '#b2bac2',
+      textColor: theme.fgText,
 
-      firstAnimationBarColor: '#719efc',
-      secondAnimationBarColor: '#5dcfe3',
+      firstAnimationBarColor: theme.primary,
+      secondAnimationBarColor: theme.success,
 
-      splitLineStyleOpacity: '0.06',
+      splitLineStyleOpacity: '1',
       splitLineStyleWidth: '1',
-      splitLineStyleColor: '#000000',
+      splitLineStyleColor: theme.separator,
 
-      tooltipTextColor: '#2a2a2a',
-      tooltipFontWeight: '400',
+      tooltipTextColor: theme.fgText,
+      tooltipFontWeight: 'normal',
       tooltipFontSize: '16',
-      tooltipBg: '#eef2f5',
-      tooltipBorderColor: '#eef2f5',
-      tooltipBorderWidth: '3',
+      tooltipBg: theme.bg,
+      tooltipBorderColor: theme.border2,
+      tooltipBorderWidth: '1',
       tooltipExtraCss: 'border-radius: 10px; padding: 4px 16px;',
     },
 
