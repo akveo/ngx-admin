@@ -25,7 +25,10 @@ import { OurProjectsSectionComponent } from './our-projects-section/our-projects
 import { LandingHomeRoutingModule } from './landing-home-routing.module';
 import { NgxLandingSectionsContainerComponent } from './sections-container/ngx-landing-sections-container.component';
 import { BackendBundlesSectionComponent } from './backend-bundles-section/backend-bundles-section.component';
+import { LicensePipe } from './backend-bundles-section/license.pipe';
 // components
+
+const PIPES = [LicensePipe];
 
 const COMPONENTS = [
   LandingHomeComponent,
@@ -44,6 +47,7 @@ const COMPONENTS = [
 @NgModule({
   declarations: [
     ...COMPONENTS,
+    ...PIPES,
   ],
   imports: [
     NgbModule,

@@ -1,14 +1,29 @@
 import { Injectable } from '@angular/core';
 import { of as observableOf,  Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+import { HttpClient } from '@angular/common/http';
 
-export class Bundle {
-  type: string;
+export interface Product {
+  id: string;
+  imageUrl: string;
+  storeUrl: string;
+  tags: string[];
   title: string;
   description: string;
-  licenses: object;
-  imageModifier: string;
-  emailName: string;
+  variants: ProductVariant[];
 }
+
+export interface ProductVariant {
+  available: boolean;
+  compare_at_price: string;
+  price: string;
+  title: string;
+}
+
+export const BUNDLE_LICENSE = {
+  single: 'single',
+  multi: 'multi',
+};
 
 export class Feature {
   text: string;
@@ -16,93 +31,11 @@ export class Feature {
   availableInCommercialLicence: boolean;
 }
 
-export const BUNDLE_LICENSE = {
-  personal: 'personal',
-  commercial: 'commercial',
-};
-
 @Injectable()
 export class BundlesService {
 
-  /* tslint:disable:max-line-length */
-  private bundles: Bundle[] = [
-    {
-      type: 'E-Commerce:',
-      title: '.NET + ngx-admin',
-      description: 'E-Commerce Dashboard integrated with REST data services based on .NET Framework, Web API and Entity Framework 6.2 ',
-      licenses: {
-        personal: {
-          oldPrice: '200',
-          newPrice: '150',
-          emailLink: '',
-        },
-        commercial: {
-          oldPrice: '2000',
-          newPrice: '1500',
-          emailLink: '',
-        },
-      },
-      imageModifier: 'dot-net',
-      emailName: '.NET E-commerce',
-    },
-    {
-      type: 'IoT:',
-      title: '.NET + ngx-admin',
-      description: 'IoT Dashboard integrated with REST data services based on .NET Framework, Web API and Entity Framework 6.2',
-      licenses: {
-        personal: {
-          oldPrice: '200',
-          newPrice: '150',
-          emailLink: '',
-        },
-        commercial: {
-          oldPrice: '2000',
-          newPrice: '1500',
-          emailLink: '',
-        },
-      },
-      imageModifier: 'dot-net',
-      emailName: '.NET IoT',
-    },
-    {
-      type: 'E-Commerce:',
-      title: '.NET Core + ngx-admin',
-      description: 'E-Commerce Dashboard integrated with REST data services based on .NET Core, Web API and Entity Framework 2.2',
-      licenses: {
-        personal: {
-          oldPrice: '180',
-          newPrice: '140',
-          emailLink: '',
-        },
-        commercial: {
-          oldPrice: '1800',
-          newPrice: '1400',
-          emailLink: '',
-        },
-      },
-      imageModifier: 'dot-net-core',
-      emailName: '.NET Core E-commerce',
-    },
-    {
-      type: 'IoT:',
-      title: '.NET Core + ngx-admin',
-      description: 'IoT Dashboard integrated with REST data services based on .NET Core, Web API and Entity Framework 2.2',
-      licenses: {
-        personal: {
-          oldPrice: '180',
-          newPrice: '140',
-          emailLink: '',
-        },
-        commercial: {
-          oldPrice: '1800',
-          newPrice: '1400',
-          emailLink: '',
-        },
-      },
-      imageModifier: 'dot-net-core',
-      emailName: '.NET Core IoT',
-    },
-  ];
+  private readonly STORE_PRODUCTS: string = 'https://store.akveo.com/collections/frontpage/products.json';
+  private readonly STORE: string = 'https://store.akveo.com/collections/all/products';
 
   private features: Feature[] = [
     {
@@ -127,40 +60,48 @@ export class BundlesService {
     },
     {
       text: 'Commercial Usage',
+      availableInPersonalLicence: true,
+      availableInCommercialLicence: true,
+    },
+    {
+      text: 'Create multiple end products using bundle',
       availableInPersonalLicence: false,
       availableInCommercialLicence: true,
     },
     {
-      text: 'One Year support and bug fixes on request',
+      text: 'Bug fixes and questions according to license terms',
       availableInPersonalLicence: false,
       availableInCommercialLicence: true,
     },
   ];
 
-  /* tslint:disable:max-line-length */
-
-  constructor() {
-    this.bundles.forEach((bundle) => {
-      Object.entries(bundle.licenses).forEach(([key, license]) => {
-        license.emailLink = this.getMailToText(bundle.emailName, key);
-      });
-    });
-  }
-
-  private getMailToText(bundleName: string, licenseName: string) {
-    return 'mailto:support@akveo.com' +
-      `?subject=${licenseName} ${bundleName} Bundle` +
-      '&body=Dear Akveo, %0D%0A%0D%0A' +
-      `I would like to purchase ${licenseName} ${bundleName} Bundle. ` +
-      'Please give me details how I can proceed with that. %0D%0A%0D%0A' +
-      'Thanks and regards';
-  }
-
-  getBundles(): Observable<Bundle[]> {
-    return observableOf(this.bundles);
-  }
+  constructor(private http: HttpClient) {}
 
   getFeatures(): Observable<Feature[]> {
     return observableOf(this.features);
+  }
+
+  getProducts(): Observable<Product[]> {
+    return this.http.get(this.STORE_PRODUCTS)
+      .pipe(map((result: any) => {
+        return result.products.map((item: any) => {
+          return {
+            id: item.id,
+            imageUrl: item.images.length ? item.images[0].src.substring(0, item.images[0].src.indexOf('?')) : undefined,
+            storeUrl: `${this.STORE}/${item.handle}`,
+            tags: item.tags,
+            title: item.title,
+            description: item.body_html,
+            variants: item.variants.map(variant => {
+              return {
+                available: variant.available,
+                compare_at_price: variant.compare_at_price,
+                price: variant.price,
+                title: variant.title,
+              };
+            }),
+          };
+        });
+      }));
   }
 }
