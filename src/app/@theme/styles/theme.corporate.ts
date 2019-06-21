@@ -172,12 +172,12 @@ export const CORPORATE_THEME = {
     },
 
     echarts: {
-      bg: '#ffffff',
-      textColor: '#484848',
-      axisLineColor: '#bbbbbb',
-      splitLineColor: '#ebeef2',
+      bg: theme.bg,
+      textColor: theme.fgText,
+      axisLineColor: theme.fgText,
+      splitLineColor: theme.separator,
       itemHoverShadowColor: 'rgba(0, 0, 0, 0.5)',
-      tooltipBackgroundColor: '#6a7985',
+      tooltipBackgroundColor: theme.primary,
       areaOpacity: '0.7',
     },
 

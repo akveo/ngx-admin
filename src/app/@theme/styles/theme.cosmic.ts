@@ -172,12 +172,12 @@ export const COSMIC_THEME = {
     },
 
     echarts: {
-      bg: '#3d3780',
-      textColor: '#ffffff',
-      axisLineColor: '#a1a1e5',
-      splitLineColor: '#342e73',
+      bg: theme.bg,
+      textColor: theme.fgText,
+      axisLineColor: theme.fgText,
+      splitLineColor: theme.separator,
       itemHoverShadowColor: 'rgba(0, 0, 0, 0.5)',
-      tooltipBackgroundColor: '#6a7985',
+      tooltipBackgroundColor: theme.primary,
       areaOpacity: '1',
     },
 
