@@ -6,7 +6,7 @@ import { map } from 'rxjs/operators';
   selector: 'ngx-rooms',
   styleUrls: ['./rooms.component.scss'],
   template: `
-    <nb-card [size]="breakpoint.width >= breakpoints.sm ? 'large' : ''">
+    <nb-card [size]="breakpoint.width >= breakpoints.sm ? 'giant' : ''">
       <nb-icon icon="arrow-ios-downward" pack="eva"
                (click)="collapse()"
                class="collapse"
