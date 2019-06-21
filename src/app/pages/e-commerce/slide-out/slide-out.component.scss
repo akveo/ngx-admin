@@ -17,6 +17,7 @@
   }
 
   .slide-out-container {
+    border-radius: nb-theme(card-border-radius);
     position: absolute;
     padding: 1.5rem;
     width: $slide-out-container-width;
