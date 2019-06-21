@@ -114,7 +114,7 @@ export class TrafficBarChartComponent implements AfterViewInit, OnDestroy, OnCha
             position: 'top',
             backgroundColor: trafficTheme.tooltipBg,
             borderColor: trafficTheme.tooltipBorderColor,
-            borderWidth: 3,
+            borderWidth: 1,
             formatter: this.formatter,
             extraCssText: trafficTheme.tooltipExtraCss,
           },

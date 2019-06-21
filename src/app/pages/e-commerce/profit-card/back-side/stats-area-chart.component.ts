@@ -84,7 +84,7 @@ export class StatsAreaChartComponent implements AfterViewInit, OnDestroy {
             position: 'top',
             backgroundColor: trafficTheme.tooltipBg,
             borderColor: trafficTheme.tooltipBorderColor,
-            borderWidth: 3,
+            borderWidth: 1,
             formatter: '$ {c0}',
             extraCssText: trafficTheme.tooltipExtraCss,
           },
