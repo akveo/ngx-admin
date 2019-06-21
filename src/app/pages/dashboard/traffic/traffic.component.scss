@@ -11,8 +11,8 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-top: 0.45rem;
-    padding-bottom: 0.45rem;
+    padding-top: nb-theme(card-header-with-select-padding-top);
+    padding-bottom: nb-theme(card-header-with-select-padding-bottom);
   }
 
   ngx-traffic-chart {
