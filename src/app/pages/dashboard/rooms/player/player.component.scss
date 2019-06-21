@@ -275,7 +275,6 @@
           display: inline-block;
           overflow: hidden;
           text-overflow: ellipsis;
-          max-height: calc(0.75rem * #{nb-theme(line-height)});
         }
       }
     }

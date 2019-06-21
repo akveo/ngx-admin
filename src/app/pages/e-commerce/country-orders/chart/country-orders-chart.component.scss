@@ -8,10 +8,6 @@
   height: 100%;
   flex: 1;
   padding: nb-theme(card-padding);
-  border-left:
-    nb-theme(card-header-border-width)
-    nb-theme(card-header-border-type)
-    nb-theme(card-header-border-color);
 
   .header {
     margin-left: 1rem;
@@ -23,9 +19,5 @@
 
   @include media-breakpoint-down(sm) {
     height: 50%;
-    border-top:
-      nb-theme(card-border-width)
-      nb-theme(card-header-border-type)
-      nb-theme(card-header-border-color);
   }
 }
