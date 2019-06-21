@@ -321,29 +321,29 @@ export const DEFAULT_THEME = {
 
       fontSize: '22',
 
-      firstPieGradientLeft: '#00d77f',
-      firstPieGradientRight: '#00d77f',
+      firstPieGradientLeft: theme.success,
+      firstPieGradientRight: theme.success,
       firstPieShadowColor: 'rgba(0, 0, 0, 0)',
 
-      secondPieGradientLeft: '#7756f7',
-      secondPieGradientRight: '#7756f7',
+      secondPieGradientLeft: theme.primary,
+      secondPieGradientRight: theme.primary,
       secondPieShadowColor: 'rgba(0, 0, 0, 0)',
 
-      thirdPieGradientLeft: '#ffca00',
-      thirdPieGradientRight: '#ffca00',
+      thirdPieGradientLeft: theme.warning,
+      thirdPieGradientRight: theme.warning,
       thirdPieShadowColor: 'rgba(0, 0, 0, 0)',
     },
 
     earningLine: {
-      gradFrom: 'rgba(188, 92, 255, 0.5)',
-      gradTo: 'rgba(188, 92, 255, 0.5)',
+      gradFrom: theme.primary,
+      gradTo: theme.primary,
 
-      tooltipTextColor: '#2a2a2a',
-      tooltipFontWeight: 'bolder',
+      tooltipTextColor: theme.fgText,
+      tooltipFontWeight: 'normal',
       tooltipFontSize: '16',
-      tooltipBg: '#ffffff',
-      tooltipBorderColor: '#c0c8d1',
-      tooltipBorderWidth: '3',
+      tooltipBg: theme.bg,
+      tooltipBorderColor: theme.border2,
+      tooltipBorderWidth: '1',
       tooltipExtraCss: 'border-radius: 10px; padding: 4px 16px;',
     },
   },

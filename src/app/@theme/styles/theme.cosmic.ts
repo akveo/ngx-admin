@@ -321,30 +321,30 @@ export const COSMIC_THEME = {
 
       fontSize: '22',
 
-      firstPieGradientLeft: '#00d77f',
-      firstPieGradientRight: '#00d77f',
+      firstPieGradientLeft: theme.success,
+      firstPieGradientRight: theme.success,
       firstPieShadowColor: 'rgba(0, 0, 0, 0)',
 
-      secondPieGradientLeft: '#7756f7',
-      secondPieGradientRight: '#7756f7',
+      secondPieGradientLeft: theme.primary,
+      secondPieGradientRight: theme.primary,
       secondPieShadowColor: 'rgba(0, 0, 0, 0)',
 
-      thirdPieGradientLeft: '#ffca00',
-      thirdPieGradientRight: '#ffca00',
+      thirdPieGradientLeft: theme.warning,
+      thirdPieGradientRight: theme.warning,
       thirdPieShadowColor: 'rgba(0, 0, 0, 0)',
     },
 
     earningLine: {
-      gradFrom: 'rgba(118, 89, 255, 0.4)',
-      gradTo: 'rgba(164, 84, 255, 0.5)',
+      gradFrom: theme.primary,
+      gradTo: theme.primary,
 
-      tooltipTextColor: '#ffffff',
+      tooltipTextColor: theme.fgText,
       tooltipFontWeight: 'normal',
       tooltipFontSize: '16',
-      tooltipBg: 'rgba(0, 255, 170, 0.35)',
-      tooltipBorderColor: '#00d977',
-      tooltipBorderWidth: '3',
-      tooltipExtraCss: 'box-shadow: 0px 2px 46px 0 rgba(0, 255, 170, 0.35); border-radius: 10px; padding: 4px 16px;',
+      tooltipBg: theme.bg,
+      tooltipBorderColor: theme.border2,
+      tooltipBorderWidth: '1',
+      tooltipExtraCss: 'border-radius: 10px; padding: 4px 16px;',
     },
   },
 } as NbJSThemeOptions;

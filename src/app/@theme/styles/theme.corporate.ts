@@ -321,29 +321,29 @@ export const CORPORATE_THEME = {
 
       fontSize: '22',
 
-      firstPieGradientLeft: '#719efc',
-      firstPieGradientRight: '#719efc',
+      firstPieGradientLeft: theme.success,
+      firstPieGradientRight: theme.success,
       firstPieShadowColor: 'rgba(0, 0, 0, 0)',
 
-      secondPieGradientLeft: '#ff9f6f',
-      secondPieGradientRight: '#ff9f6f',
+      secondPieGradientLeft: theme.primary,
+      secondPieGradientRight: theme.primary,
       secondPieShadowColor: 'rgba(0, 0, 0, 0)',
 
-      thirdPieGradientLeft: '#ff5e83',
-      thirdPieGradientRight: '#ff5e83',
+      thirdPieGradientLeft: theme.warning,
+      thirdPieGradientRight: theme.warning,
       thirdPieShadowColor: 'rgba(0, 0, 0, 0)',
     },
 
     earningLine: {
-      gradFrom: '#e3ecfe',
-      gradTo: '#e3ecfe',
+      gradFrom: theme.primary,
+      gradTo: theme.primary,
 
-      tooltipTextColor: '#2a2a2a',
-      tooltipFontWeight: '400',
+      tooltipTextColor: theme.fgText,
+      tooltipFontWeight: 'normal',
       tooltipFontSize: '16',
-      tooltipBg: '#eef2f5',
-      tooltipBorderColor: '#eef2f5',
-      tooltipBorderWidth: '3',
+      tooltipBg: theme.bg,
+      tooltipBorderColor: theme.border2,
+      tooltipBorderWidth: '1',
       tooltipExtraCss: 'border-radius: 10px; padding: 4px 16px;',
     },
   },
