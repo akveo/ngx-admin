@@ -17,6 +17,10 @@
     align-items: center;
     height: 4.5rem;
 
+    &:first-child {
+      border-top: none;
+    }
+
     > * {
       flex: 2;
     }
