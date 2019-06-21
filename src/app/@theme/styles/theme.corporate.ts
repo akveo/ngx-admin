@@ -135,19 +135,19 @@ export const CORPORATE_THEME = {
     },
 
     trafficBarEchart: {
-      gradientFrom: '#ff8ea0',
-      gradientTo: '#ffa36b',
-      shadow: 'rgba(0, 0, 0, 0)',
+      gradientFrom: theme.warningLight,
+      gradientTo: theme.warning,
+      shadow: theme.warningLight,
       shadowBlur: '0',
 
-      axisTextColor: '#b2bac2',
+      axisTextColor: theme.fgText,
       axisFontSize: '12',
 
-      tooltipBg: '#edf0f4',
-      tooltipBorderColor: '#ebeef2',
+      tooltipBg: theme.bg,
+      tooltipBorderColor: theme.border2,
       tooltipExtraCss: 'border-radius: 10px; padding: 8px 24px;',
-      tooltipTextColor: '#2a2a2a',
-      tooltipFontWeight: 'bolder',
+      tooltipTextColor: theme.fgText,
+      tooltipFontWeight: 'normal',
     },
 
     countryOrders: {
