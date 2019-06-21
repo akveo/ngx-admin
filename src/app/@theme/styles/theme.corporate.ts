@@ -64,12 +64,13 @@ export const CORPORATE_THEME = {
     },
 
     traffic: {
-      colorBlack: theme.bg,
       tooltipBg: theme.bg,
       tooltipBorderColor: theme.border2,
       tooltipExtraCss: 'border-radius: 10px; padding: 4px 16px;',
       tooltipTextColor: theme.fgText,
       tooltipFontWeight: 'normal',
+
+      yAxisSplitLine: theme.separator,
 
       lineBg: theme.primary,
       lineShadowBlur: '0',

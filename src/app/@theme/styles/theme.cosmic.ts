@@ -64,12 +64,13 @@ export const COSMIC_THEME = {
     },
 
     traffic: {
-      colorBlack: '#000000',
       tooltipBg: theme.bg,
       tooltipBorderColor: theme.border2,
       tooltipExtraCss: 'box-shadow: 0px 2px 46px 0 rgba(50, 50, 89); border-radius: 10px; padding: 4px 16px;',
       tooltipTextColor: theme.fgText,
       tooltipFontWeight: 'normal',
+
+      yAxisSplitLine: theme.separator,
 
       lineBg: theme.border2,
       lineShadowBlur: '14',

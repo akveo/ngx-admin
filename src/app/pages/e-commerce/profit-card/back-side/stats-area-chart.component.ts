@@ -66,8 +66,7 @@ export class StatsAreaChartComponent implements AfterViewInit, OnDestroy {
             splitLine: {
               show: true,
               lineStyle: {
-                color: trafficTheme.colorBlack,
-                opacity: 0.06,
+                color: trafficTheme.yAxisSplitLine,
                 width: '1',
               },
             },
