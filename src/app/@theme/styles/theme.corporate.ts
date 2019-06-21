@@ -45,8 +45,9 @@ const theme = {
 
 export const CORPORATE_THEME = {
   name: 'corporate',
-  base: 'default',
   variables: {
+    ...theme,
+
     temperature: {
       arcFill: [ '#ffa36b', '#ffa36b', '#ff9e7a', '#ff9888', '#ff8ea0' ],
       arcEmpty: theme.bg2,

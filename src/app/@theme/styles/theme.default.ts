@@ -45,8 +45,8 @@ const theme = {
 
 export const DEFAULT_THEME = {
   name: 'default',
-  base: null,
   variables: {
+    ...theme,
 
     temperature: {
       arcFill: [ theme.primary, theme.primary, theme.primary, theme.primary, theme.primary ],
