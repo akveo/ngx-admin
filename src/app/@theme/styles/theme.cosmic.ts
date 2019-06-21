@@ -56,9 +56,10 @@ export const COSMIC_THEME = {
     },
 
     solar: {
-      gradientLeft: '#7bff24',
-      gradientRight: '#2ec7fe',
-      shadowColor: '#19977E',
+      gradientLeft: theme.primary,
+      gradientRight: theme.primary,
+      shadowColor: 'rgba(0, 0, 0, 0)',
+      secondSeriesFill: theme.bg2,
       radius: ['70%', '90%'],
     },
 

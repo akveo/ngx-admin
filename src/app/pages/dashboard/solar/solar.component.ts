@@ -112,7 +112,7 @@ export class SolarComponent implements AfterViewInit, OnDestroy {
                 },
                 itemStyle: {
                   normal: {
-                    color: config.variables.layoutBg,
+                    color: solarTheme.secondSeriesFill,
                   },
                 },
               },

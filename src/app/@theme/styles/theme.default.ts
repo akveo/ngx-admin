@@ -56,9 +56,10 @@ export const DEFAULT_THEME = {
     },
 
     solar: {
-      gradientLeft: '#42db7d',
-      gradientRight: '#42db7d',
+      gradientLeft: theme.primary,
+      gradientRight: theme.primary,
       shadowColor: 'rgba(0, 0, 0, 0)',
+      secondSeriesFill: theme.bg2,
       radius: ['80%', '90%'],
     },
 

@@ -56,9 +56,10 @@ export const CORPORATE_THEME = {
     },
 
     solar: {
-      gradientLeft: '#ff8ea0',
-      gradientRight: '#ffa36b',
+      gradientLeft: theme.primary,
+      gradientRight: theme.primary,
       shadowColor: 'rgba(0, 0, 0, 0)',
+      secondSeriesFill: theme.bg2,
       radius: ['80%', '90%'],
     },
 
