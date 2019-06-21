@@ -182,8 +182,8 @@ export const CORPORATE_THEME = {
     },
 
     chartjs: {
-      axisLineColor: '#cccccc',
-      textColor: '#484848',
+      axisLineColor: theme.separator,
+      textColor: theme.fgText,
     },
 
     orders: {

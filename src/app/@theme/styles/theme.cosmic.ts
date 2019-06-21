@@ -182,8 +182,8 @@ export const COSMIC_THEME = {
     },
 
     chartjs: {
-      axisLineColor: '#a1a1e5',
-      textColor: '#ffffff',
+      axisLineColor: theme.separator,
+      textColor: theme.fgText,
     },
 
     orders: {
