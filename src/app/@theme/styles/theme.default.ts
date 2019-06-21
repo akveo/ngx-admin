@@ -65,21 +65,21 @@ export const DEFAULT_THEME = {
 
     traffic: {
       colorBlack: '#000000',
-      tooltipBg: '#ffffff',
-      tooltipBorderColor: '#c0c8d1',
+      tooltipBg: theme.bg,
+      tooltipBorderColor: theme.border2,
       tooltipExtraCss: 'border-radius: 10px; padding: 4px 16px;',
-      tooltipTextColor: '#2a2a2a',
-      tooltipFontWeight: 'bolder',
+      tooltipTextColor: theme.fgText,
+      tooltipFontWeight: 'normal',
 
-      lineBg: '#c0c8d1',
+      lineBg: theme.border4,
       lineShadowBlur: '1',
-      itemColor: '#bcc3cc',
-      itemBorderColor: '#bcc3cc',
-      itemEmphasisBorderColor: '#42db7d',
+      itemColor: theme.border4,
+      itemBorderColor: theme.border4,
+      itemEmphasisBorderColor: theme.primary,
       shadowLineDarkBg: 'rgba(0, 0, 0, 0)',
       shadowLineShadow: 'rgba(0, 0, 0, 0)',
-      gradFrom: '#ebeef2',
-      gradTo: '#ebeef2',
+      gradFrom: theme.bg2,
+      gradTo: theme.bg2,
     },
 
     electricity: {

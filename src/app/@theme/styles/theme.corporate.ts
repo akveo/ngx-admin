@@ -64,22 +64,22 @@ export const CORPORATE_THEME = {
     },
 
     traffic: {
-      colorBlack: '#ffffff',
-      tooltipBg: '#eef2f5',
-      tooltipBorderColor: '#eef2f5',
+      colorBlack: theme.bg,
+      tooltipBg: theme.bg,
+      tooltipBorderColor: theme.border2,
       tooltipExtraCss: 'border-radius: 10px; padding: 4px 16px;',
-      tooltipTextColor: '#2a2a2a',
-      tooltipFontWeight: '400',
+      tooltipTextColor: theme.fgText,
+      tooltipFontWeight: 'normal',
 
-      lineBg: '#cae6f3',
+      lineBg: theme.primary,
       lineShadowBlur: '0',
-      itemColor: '#bcc3cc',
-      itemBorderColor: '#bcc3cc',
-      itemEmphasisBorderColor: '#74a2ff',
+      itemColor: theme.border4,
+      itemBorderColor: theme.border4,
+      itemEmphasisBorderColor: theme.primaryLight,
       shadowLineDarkBg: 'rgba(0, 0, 0, 0)',
       shadowLineShadow: 'rgba(0, 0, 0, 0)',
-      gradFrom: '#ffffff',
-      gradTo: '#ffffff',
+      gradFrom: theme.bg,
+      gradTo: theme.bg,
     },
 
     electricity: {

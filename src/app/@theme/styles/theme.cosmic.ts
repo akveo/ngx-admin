@@ -65,21 +65,21 @@ export const COSMIC_THEME = {
 
     traffic: {
       colorBlack: '#000000',
-      tooltipBg: 'rgba(0, 255, 170, 0.35)',
-      tooltipBorderColor: '#00d977',
-      tooltipExtraCss: 'box-shadow: 0px 2px 46px 0 rgba(0, 255, 170, 0.35); border-radius: 10px; padding: 4px 16px;',
-      tooltipTextColor: '#ffffff',
+      tooltipBg: theme.bg,
+      tooltipBorderColor: theme.border2,
+      tooltipExtraCss: 'box-shadow: 0px 2px 46px 0 rgba(50, 50, 89); border-radius: 10px; padding: 4px 16px;',
+      tooltipTextColor: theme.fgText,
       tooltipFontWeight: 'normal',
 
-      lineBg: '#d1d1ff',
+      lineBg: theme.border2,
       lineShadowBlur: '14',
-      itemColor: '#BEBBFF',
-      itemBorderColor: '#ffffff',
-      itemEmphasisBorderColor: '#ffffff',
-      shadowLineDarkBg: '#655ABD',
-      shadowLineShadow: 'rgba(33, 7, 77, 0.5)',
-      gradFrom: 'rgba(118, 89, 255, 0.4)',
-      gradTo: 'rgba(164, 84, 255, 0.5)',
+      itemColor: theme.border2,
+      itemBorderColor: theme.border2,
+      itemEmphasisBorderColor: theme.primary,
+      shadowLineDarkBg: theme.border3,
+      shadowLineShadow: theme.border3,
+      gradFrom: theme.bg,
+      gradTo: theme.bg2,
     },
 
     electricity: {
