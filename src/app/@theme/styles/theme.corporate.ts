@@ -260,60 +260,59 @@ export const CORPORATE_THEME = {
     },
 
     visitors: {
-      tooltipBg: '#ffffff',
+      tooltipBg: theme.bg,
       tooltipLineColor: 'rgba(0, 0, 0, 0)',
-      tooltipLineWidth: '0',
-      tooltipBorderColor: '#ebeef2',
+      tooltipLineWidth: '1',
+      tooltipBorderColor: theme.border2,
       tooltipExtraCss: 'border-radius: 10px; padding: 8px 24px;',
-      tooltipTextColor: '#2a2a2a',
-      tooltipFontWeight: 'bolder',
+      tooltipTextColor: theme.fgText,
+      tooltipFontWeight: 'normal',
       tooltipFontSize: '20',
 
-      axisLineColor: 'rgba(161, 161 ,229, 0.3)',
+      axisLineColor: theme.border4,
       axisFontSize: '16',
-      axisTextColor: '#b2bac2',
-      yAxisSplitLine: 'rgba(161, 161 ,229, 0.2)',
+      axisTextColor: theme.fg,
+      yAxisSplitLine: theme.separator,
 
-      itemBorderColor: '#73a1ff',
+      itemBorderColor: theme.primary,
       lineStyle: 'dotted',
       lineWidth: '6',
-      lineGradFrom: '#73a1ff',
-      lineGradTo: '#73a1ff',
+      lineGradFrom: '#ffffff',
+      lineGradTo: '#ffffff',
       lineShadow: 'rgba(0, 0, 0, 0)',
 
-      areaGradFrom: 'rgba(146, 181, 252, 1)',
-      areaGradTo: 'rgba(146, 181, 252, 1)',
-      shadowLineDarkBg: '#a695ff',
+      areaGradFrom: theme.primary,
+      areaGradTo: theme.primaryLight,
 
       innerLineStyle: 'solid',
       innerLineWidth: '1',
 
-      innerAreaGradFrom: 'rgba(227, 236, 254, 1)',
-      innerAreaGradTo: 'rgba(227, 236, 254, 1)',
+      innerAreaGradFrom: theme.success,
+      innerAreaGradTo: theme.success,
     },
 
     visitorsLegend: {
-      firstIcon: '#e3ecfe',
-      secondIcon: '#719efc',
+      firstIcon: theme.success,
+      secondIcon: theme.primary,
     },
 
     visitorsPie: {
-      firstPieGradientLeft: '#94e2ed',
-      firstPieGradientRight: '#94e2ed',
+      firstPieGradientLeft: theme.success,
+      firstPieGradientRight: theme.success,
       firstPieShadowColor: 'rgba(0, 0, 0, 0)',
       firstPieRadius: ['65%', '90%'],
 
-      secondPieGradientLeft: '#719efc',
-      secondPieGradientRight: '#719efc',
-      secondPieShadowColor: '#b2cafb',
+      secondPieGradientLeft: theme.warning,
+      secondPieGradientRight: theme.warningLight,
+      secondPieShadowColor: 'rgba(0, 0, 0, 0)',
       secondPieRadius: ['63%', '92%'],
       shadowOffsetX: '-4',
       shadowOffsetY: '-4',
     },
 
     visitorsPieLegend: {
-      firstSection: '#719efc',
-      secondSection: '#99e5ee',
+      firstSection: theme.warning,
+      secondSection: theme.success,
     },
 
     earningPie: {

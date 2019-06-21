@@ -260,59 +260,59 @@ export const COSMIC_THEME = {
     },
 
     visitors: {
-      tooltipBg: 'rgba(0, 255, 170, 0.35)',
-      tooltipLineColor: 'rgba(255, 255, 255, 0.1)',
+      tooltipBg: theme.bg,
+      tooltipLineColor: 'rgba(0, 0, 0, 0)',
       tooltipLineWidth: '1',
-      tooltipBorderColor: '#00d977',
-      tooltipExtraCss: 'box-shadow: 0px 2px 46px 0 rgba(0, 255, 170, 0.35); border-radius: 10px; padding: 8px 24px;',
-      tooltipTextColor: '#ffffff',
+      tooltipBorderColor: theme.border2,
+      tooltipExtraCss: 'border-radius: 10px; padding: 8px 24px;',
+      tooltipTextColor: theme.fgText,
       tooltipFontWeight: 'normal',
+      tooltipFontSize: '20',
 
-      axisLineColor: 'rgba(161, 161 ,229, 0.3)',
+      axisLineColor: theme.border4,
       axisFontSize: '16',
-      axisTextColor: '#a1a1e5',
-      yAxisSplitLine: 'rgba(161, 161 ,229, 0.2)',
+      axisTextColor: theme.fg,
+      yAxisSplitLine: theme.separator,
 
-      itemBorderColor: '#ffffff',
+      itemBorderColor: theme.primary,
       lineStyle: 'dotted',
       lineWidth: '6',
       lineGradFrom: '#ffffff',
       lineGradTo: '#ffffff',
-      lineShadow: 'rgba(14, 16, 48, 0.4)',
+      lineShadow: 'rgba(0, 0, 0, 0)',
 
-      areaGradFrom: 'rgba(188, 92, 255, 1)',
-      areaGradTo: 'rgba(188, 92, 255, 0.5)',
-      shadowLineDarkBg: '#a695ff',
+      areaGradFrom: theme.primary,
+      areaGradTo: theme.primaryLight,
 
       innerLineStyle: 'solid',
       innerLineWidth: '1',
 
-      innerAreaGradFrom: 'rgba(59, 165, 243, 1)',
-      innerAreaGradTo: 'rgba(4, 133, 243 , 1)',
+      innerAreaGradFrom: theme.success,
+      innerAreaGradTo: theme.success,
     },
 
     visitorsLegend: {
-      firstIcon: 'linear-gradient(90deg, #0088ff 0%, #3dafff 100%)',
-      secondIcon: 'linear-gradient(90deg, #a454ff 0%, #7659ff 100%)',
+      firstIcon: theme.success,
+      secondIcon: theme.primary,
     },
 
     visitorsPie: {
-      firstPieGradientLeft: '#7bff24',
-      firstPieGradientRight: '#2ec7fe',
-      firstPieShadowColor: '#19977E',
+      firstPieGradientLeft: theme.success,
+      firstPieGradientRight: theme.successLight,
+      firstPieShadowColor: 'rgba(0, 0, 0, 0)',
       firstPieRadius: ['70%', '90%'],
 
-      secondPieGradientLeft: '#ff894a',
-      secondPieGradientRight: '#ffcc10',
-      secondPieShadowColor: '#cf7c1c',
+      secondPieGradientLeft: theme.warning,
+      secondPieGradientRight: theme.warningLight,
+      secondPieShadowColor: 'rgba(0, 0, 0, 0)',
       secondPieRadius: ['60%', '95%'],
       shadowOffsetX: '0',
       shadowOffsetY: '3',
     },
 
     visitorsPieLegend: {
-      firstSection: 'linear-gradient(90deg, #ffcb17 0%, #ff874c 100%)',
-      secondSection: 'linear-gradient(90deg, #00c7c7 0%, #00d977 100%)',
+      firstSection: theme.warning,
+      secondSection: theme.success,
     },
 
     earningPie: {
