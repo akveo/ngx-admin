@@ -151,24 +151,24 @@ export const CORPORATE_THEME = {
     },
 
     countryOrders: {
-      countryBorderColor: 'rgba(255, 255, 255, 1)',
-      countryFillColor: 'rgba(236, 242, 245, 1)',
+      countryBorderColor: theme.border4,
+      countryFillColor: theme.bg4,
       countryBorderWidth: '1',
-      hoveredCountryBorderColor: 'rgba(113, 158, 252, 1)',
-      hoveredCountryFillColor: 'rgba(199, 216, 247, 1)',
-      hoveredCountryBorderWidth: '3',
+      hoveredCountryBorderColor: theme.primary,
+      hoveredCountryFillColor: theme.primaryLight,
+      hoveredCountryBorderWidth: '1',
 
-      chartAxisLineColor: 'rgba(0, 0, 0, 0)',
-      chartAxisTextColor: '#b2bac2',
+      chartAxisLineColor: theme.border4,
+      chartAxisTextColor: theme.fg,
       chartAxisFontSize: '16',
-      chartGradientTo: 'rgba(113, 158, 252, 1)',
-      chartGradientFrom: 'rgba(113, 158, 252, 1)',
-      chartAxisSplitLine: '#ebeef2',
-      chartShadowLineColor: '#2f296b',
+      chartGradientTo: theme.primary,
+      chartGradientFrom: theme.primaryLight,
+      chartAxisSplitLine: theme.separator,
+      chartShadowLineColor: theme.primaryLight,
 
-      chartLineBottomShadowColor: 'rgba(113, 158, 252, 1)',
+      chartLineBottomShadowColor: theme.primary,
 
-      chartInnerLineColor: '#eceff4',
+      chartInnerLineColor: theme.bg2,
     },
 
     echarts: {

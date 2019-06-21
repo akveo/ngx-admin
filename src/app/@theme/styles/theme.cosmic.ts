@@ -151,24 +151,24 @@ export const COSMIC_THEME = {
     },
 
     countryOrders: {
-      countryBorderColor: '#525dbd',
-      countryFillColor: '#4f41a6',
-      countryBorderWidth: '2',
-      hoveredCountryBorderColor: '#00f9a6',
-      hoveredCountryFillColor: '#377aa7',
-      hoveredCountryBorderWidth: '3',
+      countryBorderColor: theme.border4,
+      countryFillColor: theme.bg3,
+      countryBorderWidth: '1',
+      hoveredCountryBorderColor: theme.primary,
+      hoveredCountryFillColor: theme.primaryLight,
+      hoveredCountryBorderWidth: '1',
 
-      chartAxisLineColor: 'rgba(161, 161 ,229, 0.3)',
-      chartAxisTextColor: '#a1a1e5',
+      chartAxisLineColor: theme.border4,
+      chartAxisTextColor: theme.fg,
       chartAxisFontSize: '16',
-      chartGradientTo: '#00c7c7',
-      chartGradientFrom: '#00d977',
-      chartAxisSplitLine: 'rgba(161, 161 ,229, 0.2)',
-      chartShadowBarColor: '#2f296b',
+      chartGradientTo: theme.primary,
+      chartGradientFrom: theme.primaryLight,
+      chartAxisSplitLine: theme.separator,
+      chartShadowLineColor: theme.primaryLight,
 
-      chartLineBottomShadowColor: '#00977e',
+      chartLineBottomShadowColor: theme.primary,
 
-      chartInnerLineColor: '#2f296b',
+      chartInnerLineColor: theme.bg2,
     },
 
     echarts: {
