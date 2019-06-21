@@ -17,7 +17,14 @@
   }
 
   .slide-out-container {
-    border-radius: nb-theme(card-border-radius);
+    @include nb-ltr {
+      border-top-right-radius: nb-theme(card-border-radius);
+      border-bottom-right-radius: nb-theme(card-border-radius);
+    }
+    @include nb-rtl {
+      border-top-left-radius: nb-theme(card-border-radius);
+      border-bottom-left-radius: nb-theme(card-border-radius);
+    }
     position: absolute;
     padding: 1.5rem;
     width: $slide-out-container-width;
