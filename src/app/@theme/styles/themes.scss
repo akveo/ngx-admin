@@ -14,6 +14,7 @@ $nb-themes: nb-register-theme((
   header-height: 5.45rem,
 
   card-height-tiny: 13.5rem,
+  card-margin-bottom: 1.875rem,
   select-min-width: 6rem,
 
   //
@@ -45,6 +46,7 @@ $nb-themes: nb-register-theme((
 $nb-themes: nb-register-theme((
 
   card-height-tiny: 13.5rem,
+  card-margin-bottom: 1.875rem,
   select-min-width: 6rem,
   // app wise variables for each theme
   //sidebar-header-gap: 2rem,
@@ -83,6 +85,7 @@ $nb-themes: nb-register-theme((
 $nb-themes: nb-register-theme((
 
   card-height-tiny: 13.5rem,
+  card-margin-bottom: 1.875rem,
   select-min-width: 6rem,
   // app wise variables for each theme
   //sidebar-header-gap: 2rem,
@@ -120,6 +123,7 @@ $nb-themes: nb-register-theme((
 
 $nb-themes: nb-register-theme((
   card-height-tiny: 13.5rem,
+  card-margin-bottom: 1.875rem,
   select-min-width: 6rem,
 
   slide-out-background: linear-gradient(270deg, #222b45 0%, #151a30 100%),
