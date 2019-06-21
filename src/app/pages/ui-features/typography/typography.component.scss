@@ -2,17 +2,6 @@
 
 @include nb-install-component() {
 
-  .font-secondary .font-header .name {
-    font-size: 4.5rem;
-    line-height: 4rem;
-    font-weight: nb-theme(font-weight-bold);
-  }
-
-  .font-main .font-header .name {
-    font-size: 3rem;
-    font-weight: nb-theme(font-weight-bold);
-  }
-
   .font-row {
     &:first-child {
       margin-bottom: 2rem;
@@ -28,17 +17,9 @@
   }
 
   .headings-card {
-    nb-card-body {
-      padding: 1rem 1.25rem;
-    }
     .header {
       padding-bottom: 0.675rem;
       margin-bottom: 0.675rem;
-
-      &:last-child {
-        padding-bottom: 0;
-        margin-bottom: 0;
-      }
     }
   }
 
@@ -48,13 +29,10 @@
     align-items: center;
     padding-bottom: 1rem;
     margin-bottom: 1rem;
-    border-bottom: 1px solid nb-theme(separator);
-    color: nb-theme(color-fg-heading);
+    border-bottom: 1px solid nb-theme(divider-color);
 
     &:last-child {
       border-bottom: none;
-      padding: 0;
-      margin: 0;
     }
 
     div:first-child {
@@ -78,7 +56,6 @@
       span {
         padding-right: 1rem;
         padding-left: 1rem;
-        font-size: 1.5rem;
       }
     }
 
@@ -87,7 +64,6 @@
       display: flex;
       justify-content: flex-end;
       align-items: flex-end;
-      color: nb-theme(color-fg);
     }
   }
 
@@ -119,10 +95,10 @@
   }
 
   .text-link {
-    color: nb-theme(link-color);
+    color: nb-theme(link-text-color);
   }
 
   .bg-link {
-    background: nb-theme(link-color);
+    background: nb-theme(link-text-color);
   }
 }
