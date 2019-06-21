@@ -1,3 +1,48 @@
+import { NbJSThemeOptions } from '@nebular/theme';
+
+const palette = {
+  primary: '#a16eff',
+  success: '#00d68f',
+  info: '#0095ff',
+  warning: '#ffaa00',
+  danger: '#ff3d71',
+};
+
+const theme = {
+  fontMain: 'Open Sans, sans-serif',
+  fontSecondary: 'Raleway, sans-serif',
+
+  bg: '#323259',
+  bg2: '#252547',
+  bg3: '#1b1b38',
+  bg4: '#13132b',
+
+  border: '#323259',
+  border2: '#252547',
+  border3: '#1b1b38',
+  border4: '#13132b',
+  border5: '#13132b',
+
+  fg: '#b4b4db',
+  fgHeading: '#ffffff',
+  fgText: '#ffffff',
+  fgHighlight: palette.primary,
+  layoutBg: '#151a30',
+  separator: '#151a30',
+
+  primary: palette.primary,
+  success: palette.success,
+  info: palette.info,
+  warning: palette.warning,
+  danger: palette.danger,
+
+  primaryLight: '#b18aff',
+  successLight: '#2ce69b',
+  infoLight: '#42aaff',
+  warningLight: '#ffc94d',
+  dangerLight: '#ff708d',
+};
+
 export const COSMIC_THEME = {
   name: 'cosmic',
   base: 'default',
@@ -301,4 +346,4 @@ export const COSMIC_THEME = {
       tooltipExtraCss: 'box-shadow: 0px 2px 46px 0 rgba(0, 255, 170, 0.35); border-radius: 10px; padding: 4px 16px;',
     },
   },
-};
+} as NbJSThemeOptions;
