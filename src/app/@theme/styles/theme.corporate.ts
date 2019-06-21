@@ -84,28 +84,28 @@ export const CORPORATE_THEME = {
     },
 
     electricity: {
-      tooltipBg: '#edf0f4',
-      tooltipLineColor: '#bdc4cd',
+      tooltipBg: theme.bg,
+      tooltipLineColor: theme.fgText,
       tooltipLineWidth: '0',
-      tooltipBorderColor: '#ebeef2',
+      tooltipBorderColor: theme.border2,
       tooltipExtraCss: 'border-radius: 10px; padding: 8px 24px;',
-      tooltipTextColor: '#2a2a2a',
-      tooltipFontWeight: 'bolder',
+      tooltipTextColor: theme.fgText,
+      tooltipFontWeight: 'normal',
 
-      axisLineColor: 'rgba(0, 0, 0, 0)',
-      xAxisTextColor: '#2a2a2a',
-      yAxisSplitLine: '#ebeef2',
+      axisLineColor: theme.border3,
+      xAxisTextColor: theme.fg,
+      yAxisSplitLine: theme.separator,
 
-      itemBorderColor: '#73a1ff',
+      itemBorderColor: theme.primary,
       lineStyle: 'solid',
       lineWidth: '4',
-      lineGradFrom: '#bdc4cd',
-      lineGradTo: '#c0c8d1',
+      lineGradFrom: theme.primary,
+      lineGradTo: theme.primary,
       lineShadow: 'rgba(0, 0, 0, 0)',
 
-      areaGradFrom: 'rgba(255, 255, 255, 0)',
-      areaGradTo: 'rgba(255, 255, 255, 0)',
-      shadowLineDarkBg: 'rgba(255, 255, 255, 0)',
+      areaGradFrom: 'rgba(0, 0, 0, 0)',
+      areaGradTo: 'rgba(0, 0, 0, 0)',
+      shadowLineDarkBg: 'rgba(0, 0, 0, 0)',
     },
 
     bubbleMap: {
