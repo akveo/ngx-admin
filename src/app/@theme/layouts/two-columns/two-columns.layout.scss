@@ -40,11 +40,8 @@
 
   nb-sidebar.menu-sidebar {
 
-    margin-top: nb-theme(sidebar-header-gap);
-
     ::ng-deep .main-container {
-      height:
-        calc(#{nb-theme(sidebar-height)} - #{nb-theme(header-height)} - #{nb-theme(sidebar-header-gap)}) !important;
+      height: calc(#{nb-theme(sidebar-height)} - #{nb-theme(header-height)}) !important;
       @include nb-ltr(border-top-right-radius, nb-theme(border-radius));
       @include nb-rtl(border-top-left-radius, nb-theme(border-radius));
     }
