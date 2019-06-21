@@ -187,40 +187,40 @@ export const CORPORATE_THEME = {
     },
 
     orders: {
-      tooltipBg: '#ffffff',
+      tooltipBg: theme.bg,
       tooltipLineColor: 'rgba(0, 0, 0, 0)',
       tooltipLineWidth: '0',
-      tooltipBorderColor: '#ebeef2',
+      tooltipBorderColor: theme.border2,
       tooltipExtraCss: 'border-radius: 10px; padding: 8px 24px;',
-      tooltipTextColor: '#2a2a2a',
-      tooltipFontWeight: 'bolder',
+      tooltipTextColor: theme.fgText,
+      tooltipFontWeight: 'normal',
       tooltipFontSize: '20',
 
-      axisLineColor: 'rgba(161, 161 ,229, 0.3)',
+      axisLineColor: theme.border4,
       axisFontSize: '16',
-      axisTextColor: '#b2bac2',
-      yAxisSplitLine: 'rgba(161, 161 ,229, 0.2)',
+      axisTextColor: theme.fg,
+      yAxisSplitLine: theme.separator,
 
-      itemBorderColor: '#73a1ff',
+      itemBorderColor: theme.primary,
       lineStyle: 'solid',
       lineWidth: '4',
 
       // first line
-      firstAreaGradFrom: 'rgba(227, 236, 254, 0.7)',
-      firstAreaGradTo: 'rgba(227, 236, 254, 0.7)',
+      firstAreaGradFrom: theme.bg3,
+      firstAreaGradTo: theme.bg3,
       firstShadowLineDarkBg: 'rgba(0, 0, 0, 0)',
 
       // second line
-      secondLineGradFrom: 'rgba(93, 207, 227, 1)',
-      secondLineGradTo: 'rgba(93, 207, 227, 1)',
+      secondLineGradFrom: theme.primary,
+      secondLineGradTo: theme.primary,
 
       secondAreaGradFrom: 'rgba(0, 0, 0, 0)',
       secondAreaGradTo: 'rgba(0, 0, 0, 0)',
       secondShadowLineDarkBg: 'rgba(0, 0, 0, 0)',
 
       // third line
-      thirdLineGradFrom: 'rgba(113, 158, 252, 1)',
-      thirdLineGradTo: 'rgba(113, 158, 252, 1)',
+      thirdLineGradFrom: theme.success,
+      thirdLineGradTo: theme.successLight,
 
       thirdAreaGradFrom: 'rgba(0, 0, 0, 0)',
       thirdAreaGradTo: 'rgba(0, 0, 0, 0)',
@@ -228,35 +228,35 @@ export const CORPORATE_THEME = {
     },
 
     profit: {
-      bg: '#ffffff',
-      textColor: '#ffffff',
-      axisLineColor: 'rgba(161, 161 ,229, 0.3)',
-      splitLineColor: 'rgba(161, 161 ,229, 0.2)',
+      bg: theme.bg,
+      textColor: theme.fgText,
+      axisLineColor: theme.border4,
+      splitLineColor: theme.separator,
       areaOpacity: '1',
 
       axisFontSize: '16',
-      axisTextColor: '#b2bac2',
+      axisTextColor: theme.fg,
 
       // first bar
-      firstLineGradFrom: '#719efc',
-      firstLineGradTo: '#719efc',
-      firstLineShadow: 'rgba(14, 16, 48, 0.4)',
+      firstLineGradFrom: theme.bg3,
+      firstLineGradTo: theme.bg3,
+      firstLineShadow: 'rgba(0, 0, 0, 0)',
 
       // second bar
-      secondLineGradFrom: '#5dcfe3',
-      secondLineGradTo: '#5dcfe3',
-      secondLineShadow: 'rgba(14, 16, 48, 0.4)',
+      secondLineGradFrom: theme.primary,
+      secondLineGradTo: theme.primary,
+      secondLineShadow: 'rgba(0, 0, 0, 0)',
 
       // third bar
-      thirdLineGradFrom: '#e3ecfe',
-      thirdLineGradTo: '#e3ecfe',
-      thirdLineShadow: 'rgba(14, 16, 48, 0.4)',
+      thirdLineGradFrom: theme.success,
+      thirdLineGradTo: theme.success,
+      thirdLineShadow: 'rgba(0, 0, 0, 0)',
     },
 
     orderProfitLegend: {
-      firstItem: '#719efc',
-      secondItem: '#5dcfe3',
-      thirdItem: '#e3ecfe',
+      firstItem: theme.success,
+      secondItem: theme.primary,
+      thirdItem: theme.bg3,
     },
 
     visitors: {

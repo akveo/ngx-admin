@@ -187,77 +187,76 @@ export const DEFAULT_THEME = {
     },
 
     orders: {
-      tooltipBg: '#ffffff',
+      tooltipBg: theme.bg,
       tooltipLineColor: 'rgba(0, 0, 0, 0)',
       tooltipLineWidth: '0',
-      tooltipBorderColor: '#ebeef2',
+      tooltipBorderColor: theme.border2,
       tooltipExtraCss: 'border-radius: 10px; padding: 8px 24px;',
-      tooltipTextColor: '#2a2a2a',
-      tooltipFontWeight: 'bolder',
+      tooltipTextColor: theme.fgText,
+      tooltipFontWeight: 'normal',
       tooltipFontSize: '20',
 
-      axisLineColor: 'rgba(161, 161 ,229, 0.3)',
+      axisLineColor: theme.border4,
       axisFontSize: '16',
-      axisTextColor: '#b2bac2',
-      yAxisSplitLine: 'rgba(161, 161 ,229, 0.2)',
+      axisTextColor: theme.fg,
+      yAxisSplitLine: theme.separator,
 
-      itemBorderColor: '#42db7d',
+      itemBorderColor: theme.primary,
       lineStyle: 'solid',
       lineWidth: '4',
 
       // first line
-      firstAreaGradFrom: 'rgba(236, 242, 245, 0.8)',
-      firstAreaGradTo: 'rgba(236, 242, 245, 0.8)',
+      firstAreaGradFrom: theme.bg3,
+      firstAreaGradTo: theme.bg3,
       firstShadowLineDarkBg: 'rgba(0, 0, 0, 0)',
 
       // second line
-      secondLineGradFrom: 'rgba(164, 123, 255, 1)',
-      secondLineGradTo: 'rgba(164, 123, 255, 1)',
+      secondLineGradFrom: theme.primary,
+      secondLineGradTo: theme.primary,
 
-      secondAreaGradFrom: 'rgba(188, 92, 255, 0.2)',
-      secondAreaGradTo: 'rgba(188, 92, 255, 0)',
+      secondAreaGradFrom: 'rgba(51, 102, 255, 0.2)',
+      secondAreaGradTo: 'rgba(51, 102, 255, 0)',
       secondShadowLineDarkBg: 'rgba(0, 0, 0, 0)',
 
       // third line
-      thirdLineGradFrom: 'rgba(55, 220, 136, 1)',
-      thirdLineGradTo: 'rgba(55, 220, 136, 1)',
+      thirdLineGradFrom: theme.success,
+      thirdLineGradTo: theme.successLight,
 
-      thirdAreaGradFrom: 'rgba(31 ,106, 124, 0.2)',
-      thirdAreaGradTo: 'rgba(4, 126, 230, 0)',
+      thirdAreaGradFrom: 'rgba(0, 214, 143, 0.2)',
+      thirdAreaGradTo: 'rgba(0, 214, 143, 0)',
       thirdShadowLineDarkBg: 'rgba(0, 0, 0, 0)',
     },
 
-    // TODO: need design for default theme
     profit: {
-      bg: '#ffffff',
-      textColor: '#ffffff',
-      axisLineColor: 'rgba(161, 161 ,229, 0.3)',
-      splitLineColor: 'rgba(161, 161 ,229, 0.2)',
+      bg: theme.bg,
+      textColor: theme.fgText,
+      axisLineColor: theme.border4,
+      splitLineColor: theme.separator,
       areaOpacity: '1',
 
       axisFontSize: '16',
-      axisTextColor: '#b2bac2',
+      axisTextColor: theme.fg,
 
       // first bar
-      firstLineGradFrom: '#00bece',
-      firstLineGradTo: '#00da78',
-      firstLineShadow: 'rgba(14, 16, 48, 0.4)',
+      firstLineGradFrom: theme.bg3,
+      firstLineGradTo: theme.bg3,
+      firstLineShadow: 'rgba(0, 0, 0, 0)',
 
       // second bar
-      secondLineGradFrom: '#8069ff',
-      secondLineGradTo: '#8357ff',
-      secondLineShadow: 'rgba(14, 16, 48, 0.4)',
+      secondLineGradFrom: theme.primary,
+      secondLineGradTo: theme.primary,
+      secondLineShadow: 'rgba(0, 0, 0, 0)',
 
       // third bar
-      thirdLineGradFrom: 'rgba(236, 242, 245, 0.8)',
-      thirdLineGradTo: 'rgba(236, 242, 245, 0.8)',
-      thirdLineShadow: 'rgba(14, 16, 48, 0.4)',
+      thirdLineGradFrom: theme.success,
+      thirdLineGradTo: theme.successLight,
+      thirdLineShadow: 'rgba(0, 0, 0, 0)',
     },
 
     orderProfitLegend: {
-      firstItem: 'linear-gradient(90deg, #3edd81 0%, #3bddad 100%)',
-      secondItem: 'linear-gradient(90deg, #8d7fff 0%, #b17fff 100%)',
-      thirdItem: 'rgba(236, 242, 245, 0.8)',
+      firstItem: theme.success,
+      secondItem: theme.primary,
+      thirdItem: theme.bg3,
     },
 
     visitors: {
