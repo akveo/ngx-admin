@@ -48,14 +48,12 @@ export const DEFAULT_THEME = {
   base: null,
   variables: {
 
-    // Safari fix
-    temperature: [
-      '#42db7d',
-      '#42db7d',
-      '#42db7d',
-      '#42db7d',
-      '#42db7d',
-    ],
+    temperature: {
+      arcFill: [ theme.primary, theme.primary, theme.primary, theme.primary, theme.primary ],
+      arcEmpty: theme.bg2,
+      thumbBg: theme.bg2,
+      thumbBorder: theme.primary,
+    },
 
     solar: {
       gradientLeft: '#42db7d',

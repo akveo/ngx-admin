@@ -48,13 +48,12 @@ export const COSMIC_THEME = {
   base: 'default',
   variables: {
 
-    temperature: [
-      '#2ec7fe',
-      '#31ffad',
-      '#7bff24',
-      '#fff024',
-      '#f7bd59',
-    ],
+    temperature: {
+      arcFill: [ '#2ec7fe', '#31ffad', '#7bff24', '#fff024', '#f7bd59' ],
+      arcEmpty: theme.bg2,
+      thumbBg: '#ffffff',
+      thumbBorder: '#ffffff',
+    },
 
     solar: {
       gradientLeft: '#7bff24',
