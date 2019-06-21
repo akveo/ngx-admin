@@ -22,10 +22,15 @@
     <li class="packages__item" *ngFor="let product of products | async">
       <nb-card class="package-card">
         <nb-card-body>
-          <div class="package-card__image" [ngStyle]="getBackground(product.imageUrl)"></div>
+          <div class="package-card__image" [ngStyle]="product.imageUrl | backgroundImage"></div>
           <h4 class="package-card__title">{{ product.title }}</h4>
           <p class="package-card__description">
-            {{ product.description }}
+            {{ product.description | slice:0:200 }}...
+            <a class="go-to-button"
+               href="{{ product.storeUrl }}?utm_source=ngx_admin_landing&utm_medium=buy_bundle_{{ selectedLicenseType }}"
+               target="_blank">
+              read more
+            </a>
           </p>
           <div class="package-card__price-wrapper">
             <span class="package-card__price package-card__price--old">${{ (product.variants | license:selectedLicenseType).compare_at_price }}</span>

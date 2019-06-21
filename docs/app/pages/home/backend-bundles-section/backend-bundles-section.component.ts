@@ -7,7 +7,7 @@
 import { AfterViewInit, Component, ElementRef, EventEmitter, Inject, Output } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
-import { delay, filter, take, takeUntil } from 'rxjs/operators';
+import { delay, filter, take } from 'rxjs/operators';
 import { NB_WINDOW } from '@nebular/theme';
 
 import { BUNDLE_LICENSE, BundlesService, Feature, Product } from '../../../@core/data/service/bundles.service';
@@ -27,7 +27,6 @@ export class BackendBundlesSectionComponent implements AfterViewInit {
   licenses = Object.values(BUNDLE_LICENSE);
 
   descriptions: Observable<Descriptions[]> = this.descriptionService.getBundleDescriptions();
-  // bundles: Observable<Bundle[]> = this.bundlesService.getBundles();
   products: Observable<Product[]> = this.bundlesService.getProducts();
   features: Observable<Feature[]> = this.bundlesService.getFeatures();
 
@@ -48,11 +47,5 @@ export class BackendBundlesSectionComponent implements AfterViewInit {
       .subscribe((fragment: string) => {
         this.window.scrollTo(0, this.el.nativeElement.offsetTop);
       });
-  }
-
-  getBackground(url: string) {
-    return {
-      'background-image': `url(\'${url}\')`,
-    };
   }
 }

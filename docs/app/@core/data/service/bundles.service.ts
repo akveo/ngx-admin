@@ -87,7 +87,7 @@ export class BundlesService {
         return result.products.map((item: any) => {
           return {
             id: item.id,
-            imageUrl: item.images.length ? item.images[0].src.substring(0, item.images[0].src.indexOf('?')) : undefined,
+            imageUrl: this.getDefaultImage(item.images),
             storeUrl: `${this.STORE}/${item.handle}`,
             tags: item.tags,
             title: item.title,
@@ -103,5 +103,19 @@ export class BundlesService {
           };
         });
       }));
+  }
+
+  getDefaultImage(images: any[]): any {
+    const defaultImage = images.reduce((value, current) => {
+      if (!value) {
+        value = current;
+      }
+      return value;
+    });
+    return defaultImage ? this.trimImageUrl(defaultImage.src) : undefined;
+  }
+
+  trimImageUrl(url: string): string {
+    return url.substring(0, url.indexOf('?'));
   }
 }

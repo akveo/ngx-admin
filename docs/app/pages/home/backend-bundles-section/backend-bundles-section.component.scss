@@ -213,21 +213,12 @@
       }
     }
     &__image {
-      margin: 0 -1rem;
+      margin: 1rem -1rem;
       display: flex;
       flex: 0 0 14.125rem;
       background-repeat: no-repeat;
       background-position: center center;
       background-size: auto 100%;
-      &--dot-net {
-        background-image: url('assets/img/bundle-dot-net.png');
-      }
-      &--dot-net-core {
-        background-image: url('assets/img/bundle-dot-net-core.png');
-      }
-      &--node-js {
-        background-image: url('assets/img/bundle-node-js.png');
-      }
     }
     &__price-wrapper {
       flex: 0 0 2.5rem;
@@ -285,6 +276,14 @@
       margin-top: 0.25rem;
       margin-bottom: 0.5rem;
     }
+  }
+
+  .go-to-button {
+    font-family: nb-theme(font-main), sans-serif;
+    color: nb-theme(color-active-fg);
+    padding: 0.25rem;
+    cursor: pointer;
+    text-decoration: none;
   }
 
   .request-code-section {

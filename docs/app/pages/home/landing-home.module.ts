@@ -26,9 +26,10 @@ import { LandingHomeRoutingModule } from './landing-home-routing.module';
 import { NgxLandingSectionsContainerComponent } from './sections-container/ngx-landing-sections-container.component';
 import { BackendBundlesSectionComponent } from './backend-bundles-section/backend-bundles-section.component';
 import { LicensePipe } from './backend-bundles-section/license.pipe';
+import { BackgroundImagePipe } from './backend-bundles-section/background-image.pipe';
 // components
 
-const PIPES = [LicensePipe];
+const PIPES = [LicensePipe, BackgroundImagePipe];
 
 const COMPONENTS = [
   LandingHomeComponent,
