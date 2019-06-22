@@ -107,37 +107,21 @@
     justify-content: space-between;
     align-items: center;
     @include nb-rtl(flex-direction, row-reverse);
-    padding: 0.25rem 2rem 1rem;
+    padding: 1rem;
     max-width: 400px;
     width: 100%;
     margin: 0 auto;
+  }
 
-    i {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      cursor: pointer;
+  .control-button {
+    color: nb-theme(text-hint-color);
+
+    &.on {
+      color: nb-theme(color-primary-default);
     }
 
-    .shuffle, .loop {
-      font-size: 1.5rem;
-      color: nb-theme(text-hint-color);
-
-      &.active {
-        color: nb-theme(color-primary-default);
-      }
-    }
-
-    .prev, .next {
-      width: 3.5rem;
-      height: 3.5rem;
-      border: 2px solid nb-theme(divider-color);
-      border-radius: 50%;
-      font-size: 1.75rem;
-    }
-
-    .play {
-      font-size: 2rem;
+    nb-icon {
+      font-size: 1.5em;
     }
   }
 
@@ -148,12 +132,6 @@
     margin: 0 auto;
     position: relative;
     max-width: 400px;
-
-    i {
-      font-size: 1.5rem;
-      margin: 0.25rem;
-      color: nb-theme(text-hint-color);
-    }
 
     .progress-wrap {
       height: 2.25rem;
@@ -183,6 +161,11 @@
         }
       }
     }
+  }
+
+  .volume-icon {
+    font-size: 1em;
+    color: nb-theme(text-hint-color);
   }
 
   &.collapsed {
@@ -277,6 +260,16 @@
           text-overflow: ellipsis;
         }
       }
+    }
+  }
+
+  @include media-breakpoint-between(lg, lg) {
+    .controls {
+      padding: 0.5rem;
+    }
+
+    .control-button.size-medium {
+      padding: nb-theme(button-ghost-small-padding);
     }
   }
 }

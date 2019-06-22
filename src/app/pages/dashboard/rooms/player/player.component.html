@@ -22,23 +22,38 @@
     </div>
 
     <div class="controls">
-      <i class="nb-shuffle shuffle" [class.active]="shuffle" (click)="toggleShuffle()"></i>
-      <i class="nb-skip-backward prev" (click)="prev()"></i>
-      <i class="play" [class.nb-play]="player.paused" [class.nb-pause]="!player.paused" (click)="playPause()"></i>
-      <i class="nb-skip-forward next" (click)="next()"></i>
-      <i class="nb-loop loop" [class.active]="player.loop" (click)="toggleLoop()"></i>
+      <button class="control-button" nbButton ghost size="tiny" (click)="toggleShuffle()" [class.on]="shuffle">
+        <nb-icon icon="shuffle-2-outline" pack="eva"></nb-icon>
+      </button>
+      <button class="control-button" nbButton ghost size="medium" (click)="prev()">
+        <nb-icon class="skip" icon="skip-back-outline" pack="eva"></nb-icon>
+      </button>
+      <button class="control-button" nbButton ghost size="medium" (click)="playPause()">
+        <nb-icon class="play" [icon]="player.paused ? 'play-circle-outline' : 'pause-circle-outline'" pack="eva">
+        </nb-icon>
+      </button>
+      <button class="control-button" nbButton ghost size="medium" (click)="next()">
+        <nb-icon class="skip" icon="skip-forward-outline" pack="eva"></nb-icon>
+      </button>
+      <button class="control-button" nbButton ghost size="tiny" (click)="toggleLoop()" [class.on]="player.loop">
+        <nb-icon icon="repeat-outline" pack="eva"></nb-icon>
+      </button>
     </div>
   </nb-card-body>
 
   <nb-card-footer class="footer">
     <div class="volume">
-      <i class="nb-volume-mute"></i>
+      <button nbButton ghost size="small" (click)="setVolume(0)">
+        <nb-icon class="volume-icon" icon="volume-down-outline" pack="eva"></nb-icon>
+      </button>
       <div class="progress-wrap">
         <input type="range" class="progress" [value]="getVolume()" max="100"
                (input)="setVolume(volume.value)" #volume>
         <div class="progress-foreground" [style.width.%]="getVolume()"></div>
       </div>
-      <i class="nb-volume-high"></i>
+      <button nbButton ghost size="small" (click)="setVolume(100)">
+        <nb-icon class="volume-icon" icon="volume-up-outline" pack="eva"></nb-icon>
+      </button>
     </div>
   </nb-card-footer>
 </nb-card>
