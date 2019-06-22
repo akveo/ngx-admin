@@ -31,6 +31,16 @@
           }
         }
       }
+
+      .total-value,
+      .item-value,
+      .item-percent {
+        line-height: 1.25;
+      }
+
+      .legend-items {
+        overflow-y: hidden;
+      }
     }
   }
 }
