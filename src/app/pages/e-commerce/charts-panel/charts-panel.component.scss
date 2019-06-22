@@ -12,8 +12,9 @@ $legend-canceled-color: #3f4fda;
     flex: 1;
 
     ::ng-deep ul {
-      border-bottom: none;
-
+      // make same size as card header
+      border-color: transparent;
+      padding-bottom: 1px;
       .tab-link {
         padding: 1.25rem 2rem;
       }
