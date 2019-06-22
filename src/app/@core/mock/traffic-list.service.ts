@@ -31,10 +31,8 @@ export class TrafficListService extends TrafficListData {
   private getDataMonth(): TrafficList[] {
     const getFirstDateInPeriod = () => {
       const months = this.period.getMonths();
-      const date = new Date();
-      const prevYear = date.getFullYear() - 1;
 
-      return `${months[months.length - 1]}, ${prevYear}`;
+      return months[months.length - 1];
     };
 
     return this.reduceData(this.period.getMonths(), getFirstDateInPeriod);
