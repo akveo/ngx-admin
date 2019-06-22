@@ -1,14 +1,7 @@
-@import '~bootstrap/scss/mixins/breakpoints';
-@import '~@nebular/theme/styles/global/breakpoints';
+@import '../../../@theme/styles/themes';
 
-.accordion-container {
-  nb-card {
-    margin-bottom: 1rem;
-  }
-}
-
-@include media-breakpoint-down(md) {
-  .accordion-container {
-    margin-bottom: 3rem;
+@include nb-install-component() {
+  .accordion-container:first-child {
+    margin-bottom: nb-theme(card-margin-bottom);
   }
 }
