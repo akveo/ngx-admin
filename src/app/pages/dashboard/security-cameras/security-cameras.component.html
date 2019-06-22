@@ -5,12 +5,14 @@
 
     <button class="single-view-button"
             nbButton
+            size="small"
             [appearance]="isSingleView ? 'filled' : 'outline'"
             (click)="isSingleView = true">
       <i class="nb-square"></i>
     </button>
     <button class="grid-view-button"
             nbButton
+            size="small"
             [appearance]="isSingleView ? 'outline' : 'filled'"
             (click)="isSingleView = false">
       <nb-icon icon="grid" pack="eva"></nb-icon>
