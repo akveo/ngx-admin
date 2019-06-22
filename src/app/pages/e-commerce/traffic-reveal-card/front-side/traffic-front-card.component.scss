@@ -5,29 +5,23 @@
 @include nb-install-component() {
   overflow: auto;
 
-  nb-card-body {
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-  }
-
   .item {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 4.5rem;
+
+    > * {
+      flex: 1;
+    }
 
     &:first-child {
       border-top: none;
     }
+  }
 
-    > * {
-      flex: 2;
-    }
-
-    ngx-traffic-bar {
-      flex: 1;
-    }
+  .value,
+  .delta {
+    text-align: center;
   }
 
   .delta {
@@ -40,10 +34,6 @@
 
     &.up {
       color: nb-theme(color-success-default);
-    }
-
-    nb-icon ::ng-deep svg {
-      vertical-align: top;
     }
   }
 

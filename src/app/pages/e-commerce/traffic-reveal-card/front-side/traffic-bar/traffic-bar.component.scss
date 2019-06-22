@@ -1,49 +1,54 @@
 @import '../../../../../@theme/styles/themes';
 
 @include nb-install-component() {
-  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  height: nb-theme(list-item-line-height);
+  max-width: 7rem;
 
-  .traffic-bar {
-    display: flex;
-    align-self: stretch;
-    position: relative;
+  .value-prev,
+  .value-now {
+    flex: 1;
+  }
+
+  .progress-line-container {
+    flex: 1;
+    margin-bottom: 0.1875rem;
+  }
+
+  .progress-line-prev,
+  .progress-line-now {
     height: 100%;
+    width: 0.7rem;
+  }
 
-    > * {
-      margin-left: 0.5rem;
+  .progress-line-prev {
+    background-color: nb-theme(border-basic-color-3);
+    @include nb-ltr {
+      margin-left: auto;
+      margin-right: 0.25rem;
+    }
+    @include nb-rtl {
+      margin-left: 0.25rem;
+      margin-right: auto;
     }
   }
 
-  .period-from, .period-to {
-    align-self: flex-end;
-    font-size: 1rem;
-    line-height: 0.8;
-  }
+  .progress-line-now {
+    @include nb-ltr {
+      margin-left: 0.25rem;
+      margin-right: auto;
+    }
+    @include nb-rtl {
+      margin-left: auto;
+      margin-right: 0.25rem;
+    }
 
-  .period-from {
-    position: absolute;
-    @include nb-ltr(right, 100%);
-    @include nb-rtl(left, 100%);
-    bottom: 0;
-    white-space: nowrap;
-  }
-
-  .vertical-progress-bar {
-    height: 100%;
-    width: 0.7rem;
-    transform: rotate(180deg);
-
-    .progress-line {
-      background-color: nb-theme(border-basic-color-3);
-      width: 100%;
-
-      &.success {
-        background-color: nb-theme(color-success-default);
-      }
-
-      &.failure {
-        background-color: nb-theme(color-danger-default);
-      }
+    &.success {
+      background-color: nb-theme(color-success-default);
+    }
+    &.failure {
+      background-color: nb-theme(color-danger-default);
     }
   }
 }
