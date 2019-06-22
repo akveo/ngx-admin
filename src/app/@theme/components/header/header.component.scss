@@ -1,20 +1,11 @@
+@import '~bootstrap/scss/mixins/breakpoints';
+@import '~@nebular/theme/styles/global/breakpoints';
 @import '../../styles/themes';
 
 @include nb-install-component() {
   display: flex;
   justify-content: space-between;
   width: 100%;
-
-  .left {
-    display: flex;
-    width: 100%;
-    order: 0;
-    flex-direction: row;
-  }
-  .right {
-    order: 1;
-    flex-direction: row-reverse;
-  }
 
   .logo-container {
     display: flex;
@@ -58,6 +49,22 @@
       @include nb-rtl(border-right, 1px solid nb-theme(divider-color));
       white-space: nowrap;
       text-decoration: none;
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    .control-item {
+      display: none;
+    }
+    .user-action {
+      border: none;
+      padding: 0;
+    }
+  }
+
+  @include media-breakpoint-down(is) {
+    nb-select {
+      display: none;
     }
   }
 }
