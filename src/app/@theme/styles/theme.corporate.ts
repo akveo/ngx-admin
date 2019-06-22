@@ -70,7 +70,7 @@ export const CORPORATE_THEME = {
       tooltipTextColor: theme.fgText,
       tooltipFontWeight: 'normal',
 
-      yAxisSplitLine: theme.separator,
+      yAxisSplitLine: 'rgba(0, 0, 0, 0)',
 
       lineBg: theme.primary,
       lineShadowBlur: '0',
