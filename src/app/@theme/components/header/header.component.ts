@@ -4,7 +4,7 @@ import { NbMediaBreakpointsService, NbMenuService, NbSidebarService, NbThemeServ
 import { UserData } from '../../../@core/data/users';
 import { LayoutService } from '../../../@core/utils';
 import { map, takeUntil } from 'rxjs/operators';
-import { pipe, Subject } from 'rxjs';
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'ngx-header',
