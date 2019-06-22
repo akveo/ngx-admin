@@ -5,7 +5,7 @@
     <div class="track-info">
       <div class="cover" style.background-image="url('{{track.cover}}')"></div>
       <div class="details">
-        <h4>{{ track.name }}</h4>
+        <h4 [class.subtitle]="collapsed">{{ track.name }}</h4>
         <span>{{ track.artist }}</span>
       </div>
     </div>
@@ -28,11 +28,11 @@
       <button class="control-button" nbButton ghost size="medium" (click)="prev()">
         <nb-icon class="skip" icon="skip-back-outline" pack="eva"></nb-icon>
       </button>
-      <button class="control-button" nbButton ghost size="medium" (click)="playPause()">
+      <button class="control-button play-button" nbButton ghost size="medium" (click)="playPause()">
         <nb-icon class="play" [icon]="player.paused ? 'play-circle-outline' : 'pause-circle-outline'" pack="eva">
         </nb-icon>
       </button>
-      <button class="control-button" nbButton ghost size="medium" (click)="next()">
+      <button class="control-button skip-forward-button" nbButton ghost size="medium" (click)="next()">
         <nb-icon class="skip" icon="skip-forward-outline" pack="eva"></nb-icon>
       </button>
       <button class="control-button" nbButton ghost size="tiny" (click)="toggleLoop()" [class.on]="player.loop">

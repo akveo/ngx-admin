@@ -12,6 +12,13 @@
     height: 100%;
   }
 
+  .subtitle {
+    font-family: nb-theme(text-subtitle-font-family);
+    font-size: nb-theme(text-subtitle-font-size);
+    font-weight: nb-theme(text-subtitle-font-weight);
+    line-height: nb-theme(text-subtitle-line-height);
+  }
+
   .body {
     display: flex;
     flex-direction: column;
@@ -233,18 +240,27 @@
       width: inherit;
       margin: 0;
 
-      i {
-        width: inherit;
-        height: inherit;
-      }
-
-      .prev, .shuffle, .loop {
+      button {
+        azaza: ololo;
         display: none;
       }
+      .play-button,
+      .skip-forward-button {
+        display: block;
+        font-size: 1.3rem;
+      }
 
-      .play, .next {
-        font-size: 2rem;
-        border: none;
+      @include media-breakpoint-down(is) {
+        .play-button,
+        .skip-forward-button {
+          padding: 0.5rem;
+        }
+      }
+
+      @include media-breakpoint-down(xs) {
+        .skip-forward-button {
+          display: none;
+        }
       }
     }
 
