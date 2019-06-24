@@ -3,38 +3,7 @@
 @import '~@nebular/theme/styles/global/breakpoints';
 
 @include nb-install-component() {
-  nb-layout-column.small {
-    flex: 0.15 !important;
-  }
-
-  nb-sidebar.settings-sidebar {
-    $sidebar-width: 7.5rem;
-
-    transition: width 0.3s ease;
-    width: $sidebar-width;
-    overflow: hidden;
-
-    &.collapsed {
-      width: 0;
-
-      ::ng-deep .main-container {
-        width: 0;
-
-        .scrollable {
-          width: $sidebar-width;
-          padding: 1.25rem;
-        }
-      }
-    }
-
-    ::ng-deep .main-container {
-      width: $sidebar-width;
-      transition: width 0.3s ease;
-      overflow: hidden;
-
-      .scrollable {
-        width: $sidebar-width;
-      }
-    }
+  .menu-sidebar ::ng-deep .scrollable {
+    padding-top: nb-theme(layout-paddin-top);
   }
 }
