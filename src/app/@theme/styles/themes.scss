@@ -4,6 +4,7 @@
 @import '~@nebular/theme/styles/themes';
 
 $nb-themes: nb-register-theme((
+  font-family-secondary: font-family-primary,
   layout-content-width: 87.5rem,
 
   menu-item-icon-margin: 0 0.5rem 0 0,
@@ -25,6 +26,7 @@ $nb-themes: nb-register-theme((
 ), default, default);
 
 $nb-themes: nb-register-theme((
+  font-family-secondary: font-family-primary,
   layout-content-width: 87.5rem,
 
   menu-item-icon-margin: 0 0.5rem 0 0,
@@ -46,6 +48,7 @@ $nb-themes: nb-register-theme((
 ), cosmic, cosmic);
 
 $nb-themes: nb-register-theme((
+  font-family-secondary: font-family-primary,
   layout-content-width: 87.5rem,
 
   menu-item-icon-margin: 0 0.5rem 0 0,
@@ -67,6 +70,7 @@ $nb-themes: nb-register-theme((
 ), corporate, corporate);
 
 $nb-themes: nb-register-theme((
+  font-family-secondary: font-family-primary,
   layout-content-width: 87.5rem,
 
   menu-item-icon-margin: 0 0.5rem 0 0,
