@@ -17,31 +17,10 @@ export class IconsComponent {
 
     iconsLibrary.registerFontPack('fa', { packClass: 'fa', iconClassPrefix: 'fa' });
     iconsLibrary.registerFontPack('far', { packClass: 'far', iconClassPrefix: 'fa' });
-    iconsLibrary.registerFontPack('nebular', { iconClassPrefix: 'nb' });
     iconsLibrary.registerFontPack('ion', { iconClassPrefix: 'ion' });
   }
 
   icons = {
-
-    nebular: ['alert', 'angle-double-left', 'angle-double-right',
-      'arrow-down', 'arrow-dropdown', 'arrow-dropleft',
-      'arrow-dropright', 'arrow-dropup', 'arrow-left', 'arrow-retweet', 'arrow-right',
-      'arrow-thin-down', 'arrow-thin-left', 'arrow-thin-right', 'arrow-thin-up',
-      'arrow-up', 'audio', 'bar-chart', 'checkmark', 'chevron-down',
-      'chevron-down-outline', 'chevron-left', 'chevron-left-outline', 'chevron-right',
-      'chevron-right-outline', 'chevron-up', 'chevron-up-outline', 'close',
-      'close-circled', 'cloudy', 'coffee-maker', 'compose', 'edit', 'email',
-      'flame-circled', 'gear', 'grid-a', 'grid-a-outline', 'grid-b', 'grid-b-outline',
-      'heart', 'home', 'keypad', 'layout-centre', 'layout-default', 'layout-one-column',
-      'layout-sidebar-left', 'layout-sidebar-right', 'layout-two-column', 'lightbulb',
-      'list', 'location', 'locked', 'loop', 'loop-circled', 'menu', 'notifications',
-      'paper-plane', 'partlysunny', 'pause', 'pause-outline', 'person', 'phone',
-      'play', 'play-outline', 'plus', 'plus-circled', 'power', 'power-circled',
-      'rainy', 'roller-shades', 'search', 'shuffle', 'skip-backward',
-      'skip-backward-outline', 'skip-forward', 'skip-forward-outline', 'snowy-circled',
-      'square', 'square-outline', 'star', 'sunny', 'sunny-circled', 'tables', 'title',
-      'trash', 'volume-high', 'volume-mute', 'drop', 'drops', 'info', 'expand', 'collapse',
-      'e-commerce', 'danger', 'checkmark-circle', 'help'],
 
     ionicons: [
       'ionic', 'arrow-right-b', 'arrow-down-b', 'arrow-left-b', 'arrow-up-c', 'arrow-right-c',
