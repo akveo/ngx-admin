@@ -13,7 +13,7 @@ import { Component, Input } from '@angular/core';
 
       <div class="details">
         <div class="title">{{ title }}</div>
-        <div class="status">{{ on ? 'ON' : 'OFF' }}</div>
+        <div class="status" translate>{{ on ? 'ON' : 'OFF' }}</div>
       </div>
     </nb-card>
   `,

@@ -6,6 +6,7 @@ import { ECommerceModule } from './e-commerce/e-commerce.module';
 import { PagesRoutingModule } from './pages-routing.module';
 import { ThemeModule } from '../@theme/theme.module';
 import { MiscellaneousModule } from './miscellaneous/miscellaneous.module';
+import { TranslateModule } from '@ngx-translate/core';
 
 const PAGES_COMPONENTS = [
   PagesComponent,
@@ -15,6 +16,7 @@ const PAGES_COMPONENTS = [
   imports: [
     PagesRoutingModule,
     ThemeModule,
+    TranslateModule,
     DashboardModule,
     ECommerceModule,
     MiscellaneousModule,

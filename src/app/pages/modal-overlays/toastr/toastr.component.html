@@ -1,5 +1,5 @@
 <nb-card>
-  <nb-card-header>
+  <nb-card-header translate>
     Toaster configuration
   </nb-card-header>
   <nb-card-body>
@@ -7,7 +7,7 @@
     <div class="row">
       <div class="col-md-6 col-sm-12">
         <div class="form-group">
-          <label class="form-control-label">Place to show toast:</label>
+          <label class="form-control-label" translate>Place to show toast:</label>
           <div class="dropdown" ngbDropdown>
             <button class="btn btn-primary" type="button" ngbDropdownToggle>
               {{ position }}
@@ -25,7 +25,7 @@
         </div>
         <form>
           <div class="form-group">
-            <label class="form-control-label">Content:</label>
+            <label class="form-control-label" translate>Content:</label>
             <input class="form-control" [(ngModel)]="content" name="content">
           </div>
         </form>

@@ -5,6 +5,9 @@ import { NbSecurityModule, NbRoleProvider } from '@nebular/security';
 import { of as observableOf } from 'rxjs';
 
 import { throwIfAlreadyLoaded } from './module-import-guard';
+// import { DataModule } from './data/data.module';
+// import { AnalyticsService } from './utils/analytics.service';
+import { I18nService } from './data/i18n.service';
 import {
   AnalyticsService,
   LayoutService,
@@ -138,6 +141,7 @@ export const NB_CORE_PROVIDERS = [
     provide: NbRoleProvider, useClass: NbSimpleRoleProvider,
   },
   AnalyticsService,
+  I18nService,
   LayoutService,
   PlayerService,
   StateService,

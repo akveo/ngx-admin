@@ -5,6 +5,10 @@
  */
 import { Component, OnInit } from '@angular/core';
 import { AnalyticsService } from './@core/utils/analytics.service';
+import { I18nService } from './@core/data/i18n.service';
+import { environment } from '../environments/environment';
+
+
 
 @Component({
   selector: 'ngx-app',
@@ -12,10 +16,17 @@ import { AnalyticsService } from './@core/utils/analytics.service';
 })
 export class AppComponent implements OnInit {
 
-  constructor(private analytics: AnalyticsService) {
+  constructor(
+    private analytics: AnalyticsService,
+    private i18nService: I18nService) {
   }
 
   ngOnInit(): void {
     this.analytics.trackPageViews();
+    // Setup translations
+    this.i18nService.init(environment.defaultLanguage, environment.supportedLanguages);
   }
+
+
+
 }

@@ -10,4 +10,9 @@
 
 export const environment = {
   production: false,
+  defaultLanguage: 'en-US',
+  supportedLanguages: [
+    'en-US',
+    'ar-EG',
+  ],
 };

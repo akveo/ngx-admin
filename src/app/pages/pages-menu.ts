@@ -1,6 +1,6 @@
 import { NbMenuItem } from '@nebular/theme';
 
-export const MENU_ITEMS: NbMenuItem[] = [
+export const MENU_ITEMS_EN: NbMenuItem[] = [
   {
     title: 'E-commerce',
     icon: 'nb-e-commerce',
@@ -260,3 +260,179 @@ export const MENU_ITEMS: NbMenuItem[] = [
     ],
   },
 ];
+
+export const MENU_ITEMS_AR: NbMenuItem[] = [
+  {
+    title: 'لوحة التحكم',
+    icon: 'nb-home',
+    link: '/pages/dashboard',
+    home: true,
+  },
+  {
+    title: 'المميزات',
+    group: true,
+  },
+  {
+    title: 'واجهة المستخدم',
+    icon: 'nb-keypad',
+    link: '/pages/ui-features',
+    children: [
+      {
+        title: 'الزراير',
+        link: '/pages/ui-features/buttons',
+      },
+      {
+        title: 'الجريد',
+        link: '/pages/ui-features/grid',
+      },
+      {
+        title: 'الايقونات',
+        link: '/pages/ui-features/icons',
+      },
+      {
+        title: 'الصفحات القصيرة',
+        link: '/pages/ui-features/modals',
+      },
+      {
+        title: 'بوب آوفر',
+        link: '/pages/ui-features/popovers',
+      },
+      {
+        title: 'التوبوغرافيا والخطوط',
+        link: '/pages/ui-features/typography',
+      },
+      {
+        title: 'البحث الحركي',
+        link: '/pages/ui-features/search-fields',
+      },
+      {
+        title: 'التبويبات',
+        link: '/pages/ui-features/tabs',
+      },
+    ],
+  },
+  {
+    title: 'الاستمارات',
+    icon: 'nb-compose',
+    children: [
+      {
+        title: 'مدخلات الاستمارة',
+        link: '/pages/forms/inputs',
+      },
+      {
+        title: 'اشكال الاستمارة',
+        link: '/pages/forms/layouts',
+      },
+    ],
+  },
+  {
+    title: 'المكونات',
+    icon: 'nb-gear',
+    children: [
+      {
+        title: 'الشجرة',
+        link: '/pages/components/tree',
+      }, {
+        title: 'التنبيهات',
+        link: '/pages/components/notifications',
+      },
+    ],
+  },
+  {
+    title: 'الخرائط',
+    icon: 'nb-location',
+    children: [
+      {
+        title: 'خرائط جوجل',
+        link: '/pages/maps/gmaps',
+      },
+      {
+        title: 'خرائط ورقية',
+        link: '/pages/maps/leaflet',
+      },
+      {
+        title: 'خرائط فقاعية',
+        link: '/pages/maps/bubble',
+      },
+      {
+        title: 'خرائط بحثية',
+        link: '/pages/maps/searchmap',
+      },
+    ],
+  },
+  {
+    title: 'الرسوم البيانية',
+    icon: 'nb-bar-chart',
+    children: [
+      {
+        title: 'الرسوم البيانيه الالكترونية',
+        link: '/pages/charts/echarts',
+      },
+      {
+        title: 'رسوم بيانية chart.js',
+        link: '/pages/charts/chartjs',
+      },
+      {
+        title: 'رسوم بيانيه ثلاثية الابعاد',
+        link: '/pages/charts/d3',
+      },
+    ],
+  },
+  {
+    title: 'المحررات',
+    icon: 'nb-title',
+    children: [
+      {
+        title: 'المحرر الصغير',
+        link: '/pages/editors/tinymce',
+      },
+      {
+        title: 'محرر سيكا',
+        link: '/pages/editors/ckeditor',
+      },
+    ],
+  },
+  {
+    title: 'الجداول',
+    icon: 'nb-tables',
+    children: [
+      {
+        title: 'الجداول الذكية',
+        link: '/pages/tables/smart-table',
+      },
+    ],
+  },
+  {
+    title: 'جوانب',
+    icon: 'nb-shuffle',
+    children: [
+      {
+        title: '404',
+        link: '/pages/miscellaneous/404',
+      },
+    ],
+  },
+  {
+    title: 'التحقق',
+    icon: 'nb-locked',
+    children: [
+      {
+        title: 'تسجيل الدخول',
+        link: '/auth/login',
+      },
+      {
+        title: 'انشاء حساب',
+        link: '/auth/register',
+      },
+      {
+        title: 'تعيين كلمة السر',
+        link: '/auth/request-password',
+      },
+      {
+        title: 'استعادة كلمة السر',
+        link: '/auth/reset-password',
+      },
+    ],
+  },
+];
+
