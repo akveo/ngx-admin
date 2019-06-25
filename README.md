@@ -1,10 +1,8 @@
-[![Build Status](https://travis-ci.org/akveo/ngx-admin.svg?branch=master)](https://travis-ci.org/akveo/ngx-admin)
-[![Join the chat at https://gitter.im/ng2-admin/Lobby](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/ng2-admin/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-[![Dependency Status](https://david-dm.org/akveo/ngx-admin/status.svg)](https://david-dm.org/akveo/ng2-admin)
+# ngx-admin [<img src="https://i.imgur.com/oMcxwZ0.png" alt="Eva Design System" height="20px" />](https://eva.design) [![Build Status](https://travis-ci.org/akveo/ngx-admin.svg?branch=master)](https://travis-ci.org/akveo/ngx-admin) [![Dependency Status](https://david-dm.org/akveo/ngx-admin/status.svg)](https://david-dm.org/akveo/ng2-admin)
 
 [Who uses ngx-admin?](https://github.com/akveo/ngx-admin/issues/1645)| [Documentation](https://akveo.github.io/ngx-admin/?utm_source=github&utm_medium=ngx_admin_readme&utm_campaign=themes) | [Installation Guidelines](https://akveo.github.io/ngx-admin/docs/getting-started/what-is-ngxadmin?utm_source=github&utm_medium=ngx_admin_readme&utm_campaign=themes)
 
-# Admin template based on Angular 7+, Bootstrap 4 and <a href="https://github.com/akveo/nebular">Nebular</a>
+# Admin template based on Angular 8+ and <a href="https://github.com/akveo/nebular">Nebular</a>
 <a target="_blank" href="http://akveo.com/ngx-admin/pages/dashboard?theme=corporate&utm_source=github&utm_medium=ngx_admin_readme&utm_campaign=main_pic"><img src="https://i.imgur.com/IhoaWxa.png"/></a>
 
 ### Backend Integration Bundles
@@ -22,10 +20,6 @@ Easy way to integrate ngx-admin with .NET, Node.js, Java or PHP. [Checkout our S
 
 #### Corporate
 <a target="_blank" href="http://akveo.com/ngx-admin/pages/dashboard?theme=corporate&utm_source=github&utm_medium=ngx_admin_readme&utm_campaign=themes"><img src="https://i.imgur.com/DYtQ2Qc.png"/></a>
-
-#### Light
-
-<a target="_blank" href="http://akveo.com/ngx-admin/pages/dashboard?theme=default&utm_source=github&utm_medium=ngx_admin_readme&utm_campaign=themes"><img src="https://i.imgur.com/mQebQnT.png"/></a>
 
 ### What's included:
 
