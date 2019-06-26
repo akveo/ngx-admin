@@ -34,6 +34,7 @@ import {
   ThreeColumnsLayoutComponent,
   TwoColumnsLayoutComponent,
 } from './layouts';
+import { WindowModeBlockScrollService } from './services/window-mode-block-scroll.service';
 import { DEFAULT_THEME } from './styles/theme.default';
 import { COSMIC_THEME } from './styles/theme.cosmic';
 import { CORPORATE_THEME } from './styles/theme.corporate';
@@ -86,6 +87,7 @@ export class ThemeModule {
           },
           [ DEFAULT_THEME, COSMIC_THEME, CORPORATE_THEME, DARK_THEME ],
         ).providers,
+        WindowModeBlockScrollService,
       ],
     };
   }
