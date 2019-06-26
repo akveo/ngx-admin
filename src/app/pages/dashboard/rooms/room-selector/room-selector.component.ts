@@ -1,15 +1,22 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, HostBinding, OnDestroy, OnInit, Output } from '@angular/core';
 import { Location, LocationStrategy } from '@angular/common';
+import { NbThemeService } from '@nebular/theme';
+import { map, takeUntil } from 'rxjs/operators';
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'ngx-room-selector',
   templateUrl: './room-selector.component.html',
   styleUrls: ['./room-selector.component.scss'],
 })
-export class RoomSelectorComponent {
+export class RoomSelectorComponent implements OnInit, OnDestroy {
+
+  private destroy$ = new Subject<void>();
+  private hideGrid: boolean;
+
   @Output() select: EventEmitter<number> = new EventEmitter();
 
-  selectedRoom: null;
+  selectedRoom = null;
   sortedRooms = [];
   viewBox = '-20 -20 618.88 407.99';
   isIE = !!(navigator.userAgent.match(/Trident/)
@@ -59,11 +66,33 @@ export class RoomSelectorComponent {
     ],
   };
 
+  @HostBinding('style.background')
+  get background(): 'none' | null {
+    return this.hideGrid ? 'none' : null;
+  }
+
   constructor(
     private location: Location,
     private locationStrategy: LocationStrategy,
+    private themeService: NbThemeService,
   ) {
     this.selectRoom('2');
+  }
+
+  ngOnInit() {
+    this.hideGrid = this.themeService.currentTheme === 'corporate';
+
+    this.themeService.onThemeChange()
+      .pipe(
+        map(({ name }) => name === 'corporate'),
+        takeUntil(this.destroy$),
+      )
+      .subscribe((hideGrid: boolean) => this.hideGrid = hideGrid);
+  }
+
+  ngOnDestroy() {
+    this.destroy$.next();
+    this.destroy$.complete();
   }
 
   private sortRooms() {
