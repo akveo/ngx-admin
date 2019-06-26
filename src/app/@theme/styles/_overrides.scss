@@ -18,6 +18,24 @@
     }
   }
 
+  nb-flip-card {
+    .front-container {
+      -webkit-backface-visibility: visible;
+    }
+    .back-container {
+      -webkit-backface-visibility: hidden;
+    }
+
+    .flipped {
+      .front-container {
+        -webkit-backface-visibility: hidden;
+      }
+      .back-container {
+        -webkit-backface-visibility: visible;
+      }
+    }
+  }
+
   nb-layout .layout .layout-container nb-sidebar {
     &,
     .main-container-fixed {
