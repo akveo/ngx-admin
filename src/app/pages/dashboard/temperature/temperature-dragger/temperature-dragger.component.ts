@@ -1,6 +1,15 @@
 import {
-  Component, HostListener, ViewChild, ElementRef, Input, Output, EventEmitter, AfterViewInit, OnChanges,
+  Component,
+  HostListener,
+  ViewChild,
+  ElementRef,
+  Input,
+  Output,
+  EventEmitter,
+  AfterViewInit,
+  OnChanges,
 } from '@angular/core';
+import { Location, LocationStrategy } from '@angular/common';
 
 const VIEW_BOX_SIZE = 300;
 
@@ -77,7 +86,10 @@ export class TemperatureDraggerComponent implements AfterViewInit, OnChanges {
   private isMouseDown = false;
   private init = false;
 
-  constructor() {
+  constructor(
+    private location: Location,
+    private locationStrategy: LocationStrategy,
+  ) {
     this.oldValue = this.value;
   }
 
@@ -114,6 +126,16 @@ export class TemperatureDraggerComponent implements AfterViewInit, OnChanges {
     }
 
     this.invalidatePinPosition();
+  }
+
+  getUrlPath(id: string) {
+    let baseHref = this.locationStrategy.getBaseHref();
+    if (baseHref.endsWith('')) {
+      baseHref = baseHref.slice(0, -1);
+    }
+    const path = this.location.path();
+
+    return `url(${baseHref}${path}${id}${this.svgControlId})`;
   }
 
   private invalidate(): void {

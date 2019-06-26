@@ -73,7 +73,9 @@
       </g>
 
       <g>
-        <path class="stroked-element" [attr.d]="strokedArea.d" *ngFor="let strokedArea of roomSvg.stokedAreas"/>
+        <path class="stroked-element"
+              [attr.fill]="getUrlPath('#New_Pattern_Swatch_1')"
+              [attr.d]="strokedArea.d" *ngFor="let strokedArea of roomSvg.stokedAreas"/>
       </g>
 
       <g [attr.id]="room.id" [class.selected-room]="selectedRoom == room.id" *ngFor="let room of sortedRooms">

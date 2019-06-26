@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
+import { Location, LocationStrategy } from '@angular/common';
 
 @Component({
   selector: 'ngx-room-selector',
@@ -58,7 +59,10 @@ export class RoomSelectorComponent {
     ],
   };
 
-  constructor() {
+  constructor(
+    private location: Location,
+    private locationStrategy: LocationStrategy,
+  ) {
     this.selectRoom('2');
   }
 
@@ -78,5 +82,15 @@ export class RoomSelectorComponent {
     this.select.emit(roomNumber);
     this.selectedRoom = roomNumber;
     this.sortRooms();
+  }
+
+  getUrlPath(id: string) {
+    let baseHref = this.locationStrategy.getBaseHref();
+    if (baseHref.endsWith('')) {
+      baseHref = baseHref.slice(0, -1);
+    }
+    const path = this.location.path();
+
+    return `url(${baseHref}${path}${id})`;
   }
 }
