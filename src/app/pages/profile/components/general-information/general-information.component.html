@@ -1,0 +1,56 @@
+<nb-card>
+  <nb-card-header>General Information</nb-card-header>
+  <nb-card-body>
+    <form class="form-horizontal">
+      <div class="form-group row">
+        <div class="col-sm-6">
+          <div (mouseenter) ="imageHover()" (mouseleave) ="imageLeave()" (click)="file.click()" *ngIf="originalProfilePic; else getNewPic" class="user"
+            [style.background-image]="'url(' + user.picture + ')'">
+          </div>
+          <ng-template #getNewPic>
+            <div class ="get-new-pic-div" (click)="file.click()">
+              <img class="user" (mouseenter) ="imageHover()" (mouseleave) ="imageLeave()" [src]="filePreview" />
+            </div>
+          </ng-template>
+          <div>
+            <div>
+              <input #file type="file" [hidden]="true" accept="image/*" (change)="getFilePath($event)">
+            </div>
+          </div>
+          <div (mouseenter) ="imageHover()" (mouseleave) ="imageLeave()" [class]="class">
+            <p>Change Profile Picture</p>
+          </div>
+        </div>
+      </div>
+      <div class="form-group row">
+        <div class="col-sm-6">
+          <label for="inputEmail3">First Name</label>
+          <input type="text" class="form-control" id="inputEmail3" placeholder="Enter your first name here...">
+        </div>
+        <div class="col-sm-6">
+          <label for="inputEmail3">Department</label>
+          <select class="form-control">
+            <option>Engineering</option>
+            <option>IT</option>
+            <option>Production</option>
+            <option>Human Resources</option>
+          </select> </div>
+      </div>
+      <div class="form-group row">
+        <div class="col-sm-6">
+          <label for="inputPassword3">Last Name</label>
+          <input type="text" class="form-control" id="inputPassword3" placeholder="Enter your last name here...">
+        </div>
+        <div class="col-sm-6">
+          <label for="inputEmail3">Occupation</label>
+          <select class="form-control">
+            <option>Production Manager</option>
+            <option>Shop Floor Assistant</option>
+            <option>Engineer</option>
+            <option>IT Technician</option>
+          </select>
+        </div>
+      </div>
+    </form>
+  </nb-card-body>
+</nb-card>
