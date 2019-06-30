@@ -4,7 +4,9 @@
     background-position: center;
     background-size: cover;
     padding: 0;
-    margin-bottom: 20px;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-bottom: 25px;
     height: 220px;
     width: 220px;
     &::before {

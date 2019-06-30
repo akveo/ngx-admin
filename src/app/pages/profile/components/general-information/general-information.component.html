@@ -3,8 +3,8 @@
   <nb-card-body>
     <form class="form-horizontal">
       <div class="form-group row">
-        <div class="col-sm-6">
-          <div (mouseenter) ="imageHover()" (mouseleave) ="imageLeave()" (click)="file.click()" *ngIf="originalProfilePic; else getNewPic" class="user"
+        <div class="col-sm-12 center">
+          <div (mouseenter) ="imageHover()" (mouseleave) ="imageLeave()" (click)="file.click()" *ngIf="originalProfilePic; else getNewPic" class="user center"
             [style.background-image]="'url(' + user.picture + ')'">
           </div>
           <ng-template #getNewPic>
@@ -25,7 +25,8 @@
       <div class="form-group row">
         <div class="col-sm-6">
           <label for="inputEmail3">First Name</label>
-          <input type="text" class="form-control" id="inputEmail3" placeholder="Enter your first name here...">
+          <input type="text" class="form-control" id="inputEmail3" 
+          placeholder="Enter your first name here..." [value]="firstName">
         </div>
         <div class="col-sm-6">
           <label for="inputEmail3">Department</label>
@@ -39,7 +40,8 @@
       <div class="form-group row">
         <div class="col-sm-6">
           <label for="inputPassword3">Last Name</label>
-          <input type="text" class="form-control" id="inputPassword3" placeholder="Enter your last name here...">
+          <input type="text" class="form-control" id="inputPassword3" 
+          placeholder="Enter your last name here..." [value]="lastName">
         </div>
         <div class="col-sm-6">
           <label for="inputEmail3">Occupation</label>
