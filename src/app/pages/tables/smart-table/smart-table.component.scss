@@ -1,0 +1,55 @@
+@import '../../../@theme/styles/themes';
+
+@include nb-install-component() {
+  nb-card {
+    transform: translate3d(0, 0, 0);
+  }
+
+  ng2-smart-table ::ng-deep {
+    .ng2-smart-action-add-add {
+      background-color: nb-theme(button-filled-primary-background-color);
+      border-color: nb-theme(button-filled-primary-border-color);
+      color: nb-theme(button-filled-primary-text-color);
+
+      &:focus {
+        border-color: nb-theme(button-filled-primary-focus-border-color);
+      }
+
+      &:hover {
+        background-color: nb-theme(button-filled-primary-hover-background-color);
+        border-color: nb-theme(button-filled-primary-hover-border-color);
+      }
+
+      &:active {
+        background-color: nb-theme(button-filled-primary-active-background-color);
+        border-color: nb-theme(button-filled-primary-active-border-color);
+      }
+    }
+
+    nav.ng2-smart-pagination-nav .pagination li {
+      a, > span {
+        background-color: transparent;
+        color: nb-theme(button-outline-primary-text-color);
+
+        &:focus {
+          border-color: nb-theme(button-outline-primary-focus-border-color);
+          color: nb-theme(button-outline-primary-focus-text-color);
+        }
+
+        &:hover {
+          border-color: nb-theme(button-outline-primary-hover-border-color);
+          color: nb-theme(button-outline-primary-hover-text-color);
+        }
+      }
+    }
+
+    .ng2-smart-pagination .page-item.disabled {
+      .page-link,
+      .page-link:focus,
+      .page-link:hover {
+        background-color: transparent;
+        color: nb-theme(button-outline-primary-disabled-text-color);
+      }
+    }
+  }
+}
