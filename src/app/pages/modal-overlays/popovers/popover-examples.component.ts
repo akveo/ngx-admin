@@ -56,6 +56,12 @@ export class NgxPopoverFormComponent {
       </nb-card-body>
     </nb-card>
   `,
+  styles: [`
+    nb-card {
+      margin: 0;
+      max-width: 20rem;
+    }
+  `],
 })
 export class NgxPopoverCardComponent {
 }

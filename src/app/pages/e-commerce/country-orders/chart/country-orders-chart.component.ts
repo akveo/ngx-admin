@@ -9,8 +9,8 @@ import { LayoutService } from '../../../../@core/utils/layout.service';
   styleUrls: ['./country-orders-chart.component.scss'],
   template: `
     <div class="header">
-      <span class="title">Selected Country/Region</span>
-      <h2>{{countryName}}</h2>
+      <span class="caption">Selected Country/Region</span>
+      <h2 class="h4">{{ countryName }}</h2>
     </div>
     <div echarts
          [options]="option"

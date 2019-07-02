@@ -53,6 +53,7 @@ export class DashboardComponent implements OnDestroy {
     default: CardSettings[];
     cosmic: CardSettings[];
     corporate: CardSettings[];
+    dark: CardSettings[];
   } = {
     default: this.commonStatusCardsSet,
     cosmic: this.commonStatusCardsSet,
@@ -71,9 +72,10 @@ export class DashboardComponent implements OnDestroy {
       },
       {
         ...this.coffeeMakerCard,
-        type: 'secondary',
+        type: 'info',
       },
     ],
+    dark: this.commonStatusCardsSet,
   };
 
   constructor(private themeService: NbThemeService,

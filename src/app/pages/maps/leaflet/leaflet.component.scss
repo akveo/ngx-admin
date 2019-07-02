@@ -6,11 +6,11 @@
     padding: 0;
   }
 
-  /deep/ .leaflet-top, /deep/ .leaflet-bottom {
+  ::ng-deep .leaflet-top, ::ng-deep .leaflet-bottom {
     z-index: 997;
   }
 
-  /deep/ .leaflet-container {
+  ::ng-deep .leaflet-container {
     width: 100%;
     height: nb-theme(card-height-large);
   }

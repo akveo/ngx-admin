@@ -1,19 +1,46 @@
+@import '~bootstrap/scss/mixins/breakpoints';
+@import '~@nebular/theme/styles/global/breakpoints';
 @import '../../../@theme/styles/themes';
 
 @include nb-install-component() {
-  .calendars-container {
-    margin-top: 2rem;
-  }
-
-  h2 {
-    font-size: nb-theme(font-size-xlg);
-    text-align: center;
-  }
-
-  .nebular-calendar {
+  .calendars {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 3rem;
+    flex-wrap: wrap;
+    margin: -1rem -0.5rem;
+    justify-content: center;
+  }
+
+  .calendar-container {
+    margin: 1rem 0.5rem;
+  }
+
+  .subtitle {
+    display: block;
+    font-family: nb-theme(text-subtitle-font-family);
+    font-size: nb-theme(text-subtitle-font-size);
+    font-weight: nb-theme(text-subtitle-font-weight);
+    line-height: nb-theme(text-subtitle-line-height);
+    margin-bottom: 0.5rem;
+  }
+
+  @include media-breakpoint-up(md) {
+    .calendars {
+      justify-content: flex-start;
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    .calendars {
+      margin: -1.1rem;
+    }
+    .calendar-container {
+      margin: 1rem;
+    }
+  }
+
+  @include media-breakpoint-up(xxxl) {
+    .calendars {
+      margin: -1rem;
+    }
   }
 }

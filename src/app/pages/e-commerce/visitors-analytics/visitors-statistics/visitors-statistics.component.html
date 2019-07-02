@@ -1,18 +1,15 @@
 <div class="visitors-statistics">
-  <div class="statistics-header">
-    <div class="visitors-value">1,100</div>
-    <div class="visitors-title">New Visitors</div>
-  </div>
+  <h4 class="h1">1,100</h4>
+  <div class="visitors-title">New Visitors</div>
   <div class="statistics-chart">
     <div echarts
          [options]="option"
          class="echart"
-         (chartInit)="onChartInit($event)"
-    >
+         (chartInit)="onChartInit($event)">
     </div>
   </div>
   <div class="statistics-footer">
-    <div class="chart-values">
+    <div class="chart-values h5">
       <span class="chart-value">25%</span>
       <span class="chart-value">75%</span>
     </div>

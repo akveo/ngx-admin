@@ -1,6 +1,10 @@
 @import '../../../@theme/styles/themes';
 
 @include nb-install-component() {
+  nb-card-body {
+    margin: -0.5rem;
+  }
+
   button {
     margin: 0.5rem;
   }

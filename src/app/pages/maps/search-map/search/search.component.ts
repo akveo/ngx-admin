@@ -11,7 +11,7 @@ export class SearchComponent implements OnInit {
 
   @Output() positionChanged = new EventEmitter<Location>();
 
-  @ViewChild('search')
+  @ViewChild('search', { static: true })
   public searchElementRef: ElementRef;
 
   constructor(private mapsAPILoader: MapsAPILoader,

@@ -5,12 +5,10 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0.675rem 4rem 0.5rem 1.25rem;
-    @include nb-rtl(padding-right, 1.25rem);
-    @include nb-rtl(padding-left, 4rem);
-  }
+    padding-top: nb-theme(card-header-with-select-padding-top);
+    padding-bottom: nb-theme(card-header-with-select-padding-bottom);
 
-  .dropdown {
-    min-width: 120px;
+    @include nb-ltr(padding-right, 4rem);
+    @include nb-rtl(padding-left, 4rem);
   }
 }

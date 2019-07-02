@@ -1,7 +1,17 @@
 import {
-  Component, HostListener, ViewChild, ElementRef, Input, Output, EventEmitter, AfterViewInit, OnChanges,
+  Component,
+  HostListener,
+  ViewChild,
+  ElementRef,
+  Input,
+  Output,
+  EventEmitter,
+  AfterViewInit,
+  OnChanges,
 } from '@angular/core';
+import { Location, LocationStrategy } from '@angular/common';
 
+let uniqueId = 0;
 const VIEW_BOX_SIZE = 300;
 
 @Component({
@@ -11,14 +21,16 @@ const VIEW_BOX_SIZE = 300;
 })
 export class TemperatureDraggerComponent implements AfterViewInit, OnChanges {
 
-  @ViewChild('svgRoot') svgRoot: ElementRef;
+  @ViewChild('svgRoot', { static: true }) svgRoot: ElementRef;
 
-  @Input() fillColors: string|string[] = '#2ec6ff';
-  @Input() disableArcColor = '#999999';
+  @Input() fillColors: string|string[];
+  @Input() disableArcColor;
   @Input() bottomAngle = 90;
   @Input() arcThickness = 18; // CSS pixels
   @Input() thumbRadius = 16; // CSS pixels
   @Input() thumbBorder = 3;
+  @Input() thumbBg;
+  @Input() thumbBorderColor;
   @Input() maxLeap = 0.4;
 
   value = 50;
@@ -52,7 +64,7 @@ export class TemperatureDraggerComponent implements AfterViewInit, OnChanges {
   off = false;
   oldValue: number;
 
-  svgControlId = new Date().getTime();
+  svgControlId = uniqueId++;
   scaleFactor = 1;
   bottomAngleRad = 0;
   radius = 100;
@@ -75,7 +87,10 @@ export class TemperatureDraggerComponent implements AfterViewInit, OnChanges {
   private isMouseDown = false;
   private init = false;
 
-  constructor() {
+  constructor(
+    private location: Location,
+    private locationStrategy: LocationStrategy,
+  ) {
     this.oldValue = this.value;
   }
 
@@ -112,6 +127,16 @@ export class TemperatureDraggerComponent implements AfterViewInit, OnChanges {
     }
 
     this.invalidatePinPosition();
+  }
+
+  getUrlPath(id: string) {
+    let baseHref = this.locationStrategy.getBaseHref();
+    if (baseHref.endsWith('')) {
+      baseHref = baseHref.slice(0, -1);
+    }
+    const path = this.location.path();
+
+    return `url(${baseHref}${path}${id}${this.svgControlId})`;
   }
 
   private invalidate(): void {

@@ -8,13 +8,13 @@ declare const echarts: any;
   selector: 'ngx-solar',
   styleUrls: ['./solar.component.scss'],
   template: `
-    <nb-card size="xsmall" class="solar-card">
+    <nb-card size="tiny" class="solar-card">
       <nb-card-header>Solar Energy Consumption</nb-card-header>
       <nb-card-body>
         <div echarts [options]="option" class="echart">
         </div>
         <div class="info">
-          <div class="value">6. 421 kWh</div>
+          <div class="h4 value">6.421 kWh</div>
           <div class="details"><span>out of</span> 8.421 kWh</div>
         </div>
       </nb-card-body>
@@ -112,7 +112,7 @@ export class SolarComponent implements AfterViewInit, OnDestroy {
                 },
                 itemStyle: {
                   normal: {
-                    color: config.variables.layoutBg,
+                    color: solarTheme.secondSeriesFill,
                   },
                 },
               },

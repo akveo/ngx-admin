@@ -1,72 +1,54 @@
 @import '../../../../../@theme/styles/themes';
-@import '~@nebular/bootstrap/styles/hero-buttons';
-@import '~@nebular/theme/styles/global/typography/typography';
-
-$traffic-bar-background-color: #d0d8e3;
 
 @include nb-install-component() {
-  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  height: nb-theme(list-item-line-height);
+  max-width: 7rem;
 
-  .traffic-bar {
-    display: flex;
-    align-self: stretch;
-    position: relative;
-    height: 100%;
-
-    > * {
-      margin-left: 0.5rem;
-    }
+  .value-prev,
+  .value-now {
+    flex: 1;
   }
 
-  .period-from, .period-to {
-    align-self: flex-end;
-    font-size: 1rem;
-    line-height: 0.8;
+  .progress-line-container {
+    flex: 1;
+    margin-bottom: 0.1875rem;
   }
 
-  .period-from {
-    position: absolute;
-    right: 100%;
-    @include nb-rtl(right, inherit);
-    @include nb-rtl(left, 100%);
-    bottom: 0;
-    white-space: nowrap;
-  }
-
-  .vertical-progress-bar {
+  .progress-line-prev,
+  .progress-line-now {
     height: 100%;
     width: 0.7rem;
-    transform: rotate(180deg);
+  }
 
-    .progress-line {
-      width: 100%;
-      background-color: $traffic-bar-background-color;
+  .progress-line-prev {
+    background-color: nb-theme(border-basic-color-3);
+    @include nb-ltr {
+      margin-left: auto;
+      margin-right: 0.25rem;
+    }
+    @include nb-rtl {
+      margin-left: 0.25rem;
+      margin-right: auto;
+    }
+  }
 
-      &.success {
-        background-color: text-success();
-
-        @include nb-for-theme(corporate) {
-          background-color: text-primary();
-        }
-      }
-
-      &.failure {
-        background-color: text-danger();
-      }
+  .progress-line-now {
+    @include nb-ltr {
+      margin-left: 0.25rem;
+      margin-right: auto;
+    }
+    @include nb-rtl {
+      margin-left: auto;
+      margin-right: 0.25rem;
     }
 
-    @include nb-for-theme(cosmic) {
-      .progress-line {
-        background: linear-gradient(180deg, #a054fe 0%, #7a58ff 100%);
-
-        &.success {
-          background: linear-gradient(0deg, #00caba 0%, #00d77f 100%);
-        }
-
-        &.failure {
-          background: linear-gradient(180deg, #ff38ab 0%, #ff386c 100%);
-        }
-      }
+    &.success {
+      background-color: nb-theme(color-success-default);
+    }
+    &.failure {
+      background-color: nb-theme(color-danger-default);
     }
   }
 }

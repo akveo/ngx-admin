@@ -5,44 +5,37 @@
     position: relative;
   }
 
-  .nb-arrow-right {
+  .flip-icon {
     position: absolute;
-    top: 0;
-    right: 0;
+    right: 0.625rem;
+    top: 1rem;
     @include nb-rtl(right, auto);
-    @include nb-rtl(left, 0);
-    padding: 1.5rem;
+    @include nb-rtl(left, 0.625rem);
     cursor: pointer;
   }
 
-  /deep/ .flipped {
+  ::ng-deep .flipped {
     .back-container {
-      .nb-arrow-right {
+      .flip-icon {
         transform: scaleX(-1);
       }
     }
 
     .front-container {
-      .nb-arrow-right {
+      .flip-icon {
         display: none;
       }
     }
   }
 
-  ngx-earning-card-back, ngx-earning-card-front {
+  ngx-earning-card-back,
+  ngx-earning-card-front {
     display: flex;
     flex-direction: column;
     flex: 1;
   }
 
-  /deep/ nb-card-header {
-    display: flex;
-    justify-content: space-between;
-    @include nb-rtl(flex-direction, row-reverse);
-    padding-left: 1rem;
-  }
-
-  /deep/ nb-card-body {
+  ::ng-deep nb-card-body {
     overflow: hidden;
     display: flex;
   }

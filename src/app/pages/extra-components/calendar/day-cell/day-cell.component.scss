@@ -2,9 +2,18 @@
 
 @include nb-install-component() {
   text-align: center;
+  flex-direction: column;
 
-  span {
-    font-size: 75%;
-    opacity: 0.75;
+  .caption {
+    display: block;
+  }
+
+  &.selected .caption,
+  &:hover .caption {
+    color: nb-theme(text-control-color);
+  }
+
+  &.bounding-month .caption {
+    color: inherit;
   }
 }

@@ -1,23 +1,19 @@
-import { Component, OnDestroy } from '@angular/core';
-import { NbThemeService } from '@nebular/theme';
-import { takeWhile } from 'rxjs/operators';
+import { AfterViewInit, Component, Inject, PLATFORM_ID, ViewChild } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import { NbLayoutComponent } from '@nebular/theme';
 
-// TODO: move layouts into the framework
+import { WindowModeBlockScrollService } from '../../services/window-mode-block-scroll.service';
+
 @Component({
   selector: 'ngx-one-column-layout',
   styleUrls: ['./one-column.layout.scss'],
   template: `
-    <nb-layout>
+    <nb-layout windowMode>
       <nb-layout-header fixed>
         <ngx-header></ngx-header>
       </nb-layout-header>
 
       <nb-sidebar class="menu-sidebar" tag="menu-sidebar" responsive>
-        <nb-sidebar-header *ngIf="currentTheme !== 'corporate'">
-          <a href="#" class="btn btn-hero-success main-btn">
-            <i class="ion ion-social-github"></i> <span>Support Us</span>
-          </a>
-        </nb-sidebar-header>
         <ng-content select="nb-menu"></ng-content>
       </nb-sidebar>
 
@@ -31,21 +27,18 @@ import { takeWhile } from 'rxjs/operators';
     </nb-layout>
   `,
 })
-export class OneColumnLayoutComponent implements OnDestroy {
+export class OneColumnLayoutComponent implements AfterViewInit {
 
-  private alive = true;
+  @ViewChild(NbLayoutComponent, { static: false }) layout: NbLayoutComponent;
 
-  currentTheme: string;
+  constructor(
+    @Inject(PLATFORM_ID) private platformId,
+    private windowModeBlockScrollService: WindowModeBlockScrollService,
+  ) {}
 
-  constructor(protected themeService: NbThemeService) {
-    this.themeService.getJsTheme()
-      .pipe(takeWhile(() => this.alive))
-      .subscribe(theme => {
-        this.currentTheme = theme.name;
-    });
-  }
-
-  ngOnDestroy() {
-    this.alive = false;
+  ngAfterViewInit() {
+    if (isPlatformBrowser(this.platformId)) {
+      this.windowModeBlockScrollService.register(this.layout);
+    }
   }
 }

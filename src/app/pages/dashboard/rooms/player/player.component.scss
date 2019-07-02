@@ -1,28 +1,28 @@
 @import '../../../../@theme/styles/themes';
 @import '~bootstrap/scss/mixins/breakpoints';
-@import '~@nebular/theme/components/card/card.component.theme';
 @import '~@nebular/theme/styles/global/breakpoints';
-@import '~@nebular/theme/styles/core/mixins';
 
 @include nb-install-component() {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
   height: 100%;
 
-  .header {
-    @include nb-card-header();
+  nb-card {
+    box-shadow: none;
+    border-width: 0;
+    margin: 0;
+    height: 100%;
+  }
+
+  .subtitle {
+    font-family: nb-theme(text-subtitle-font-family);
+    font-size: nb-theme(text-subtitle-font-size);
+    font-weight: nb-theme(text-subtitle-font-weight);
+    line-height: nb-theme(text-subtitle-line-height);
   }
 
   .body {
     display: flex;
     flex-direction: column;
-    flex: 1;
-  }
-
-  .footer {
-    padding: nb-theme(card-padding);
-    border-top: 1px solid nb-theme(separator);
+    padding: 0;
   }
 
   .track-info {
@@ -32,83 +32,63 @@
     flex-direction: column;
     flex: 1;
     padding: nb-theme(card-padding);
+  }
 
-    .cover {
-      border-radius: nb-theme(radius) / 2;
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      width: 10rem;
-      height: 10rem;
-    }
+  .cover {
+    border-radius: nb-theme(card-border-radius);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 10rem;
+    height: 10rem;
+  }
 
-    .details {
-      text-align: center;
-      padding-top: 1.5rem;
+  .details {
+    text-align: center;
+    padding-top: 1.5rem;
 
-      span {
-        color: nb-theme(color-fg);
-      }
+    span {
+      color: nb-theme(text-hint-color);
     }
   }
 
   .progress-wrap {
     position: relative;
     height: 1rem;
+  }
 
-    .progress-foreground {
-      background-color: nb-theme(color-success);
-      height: 2px;
-      position: absolute;
-      left: 0;
-      margin-top: calc(0.75rem - 1px);
-      width: 100px;
+  .progress-foreground {
+    background-color: nb-theme(color-primary-default);
+    height: 2px;
+    position: absolute;
+    left: 0;
+    margin-top: calc(0.75rem - 1px);
+    width: 100px;
+  }
 
-      @include nb-for-theme(cosmic) {
-        background-color: nb-theme(link-color);
-      }
+  .progress {
+    appearance: none;
+    width: 100%;
+    background: transparent;
+    height: 1.5rem;
+    outline: none;
+    position: absolute;
 
-      @include nb-for-theme(corporate) {
-        background-color: nb-theme(color-primary);
-      }
+    @include install-thumb() {
+      width: 1rem;
+      height: 1rem;
+      border-radius: 50%;
+      background: nb-theme(color-primary-default);
+      cursor: pointer;
+      margin-top: calc(-0.5rem + 1px);
+      border: none;
     }
 
-    .progress {
-      -webkit-appearance: none;
+    @include install-track() {
       width: 100%;
-      background: transparent;
-      height: 1.5rem;
-      outline: none;
-      position: absolute;
-
-      @include install-thumb() {
-        width: 1rem;
-        height: 1rem;
-        border-radius: 50%;
-        background: nb-theme(color-success);
-        cursor: pointer;
-        margin-top: calc(-0.5rem + 1px);
-        border: none;
-      }
-
-      @include install-track() {
-        width: 100%;
-        height: 2px;
-        cursor: pointer;
-        background: nb-theme(separator);
-      }
-
-      @include nb-for-theme(cosmic) {
-        @include install-thumb() {
-          background: nb-theme(link-color);
-        }
-      }
-
-      @include nb-for-theme(corporate) {
-        @include install-thumb() {
-          background: nb-theme(color-primary);
-        }
-      }
+      height: 2px;
+      cursor: pointer;
+      background: nb-theme(border-basic-color-3);
     }
   }
 
@@ -117,7 +97,7 @@
     margin: 0 0.5rem;
     display: flex;
     justify-content: space-between;
-    color: nb-theme(color-fg);
+    color: nb-theme(text-hint-color);
 
     .current {
       @include nb-ltr(order, 0);
@@ -134,41 +114,21 @@
     justify-content: space-between;
     align-items: center;
     @include nb-rtl(flex-direction, row-reverse);
-    padding: 0.25rem 2rem 1rem;
+    padding: 1rem;
     max-width: 400px;
     width: 100%;
     margin: 0 auto;
+  }
 
-    i {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      cursor: pointer;
+  .control-button {
+    color: nb-theme(text-hint-color);
+
+    &.on {
+      color: nb-theme(color-primary-default);
     }
 
-    .shuffle, .loop {
-      font-size: 1.5rem;
-      color: nb-theme(color-fg);
-
-      &.active {
-        color: nb-theme(color-success);
-
-        @include nb-for-theme(cosmic) {
-          color: nb-theme(link-color);
-        }
-      }
-    }
-
-    .prev, .next {
-      width: 3.5rem;
-      height: 3.5rem;
-      border: 2px solid nb-theme(separator);
-      border-radius: 50%;
-      font-size: 1.75rem;
-    }
-
-    .play {
-      font-size: 2rem;
+    nb-icon {
+      font-size: 1.5em;
     }
   }
 
@@ -180,12 +140,6 @@
     position: relative;
     max-width: 400px;
 
-    i {
-      font-size: 1.5rem;
-      margin: 0.25rem;
-      color: nb-theme(color-fg);
-    }
-
     .progress-wrap {
       height: 2.25rem;
       margin: 0;
@@ -195,23 +149,30 @@
         left: auto;
         margin-top: calc(1rem + 1px);
         z-index: 0;
+        max-width: 99.5%;
       }
 
       .progress {
         height: 2.25rem;
+        overflow: visible;
 
         @include install-thumb() {
           width: 1.5rem;
           height: 1.5rem;
-          background-color: nb-theme(color-white);
-          box-shadow: 0 0.125rem 0.5rem 0 rgba(nb-theme(color-fg), 0.4);
-          border: solid 1px rgba(nb-theme(color-fg), 0.4);
-          margin-top: calc(-0.875rem + 1px);
+          background-color: nb-theme(background-basic-color-1);
+          box-shadow: 0 0.125rem 0.5rem 0 nb-theme(border-basic-color-3);
+          border: 1px solid nb-theme(border-basic-color-3);
+          margin-top: -0.75rem;
           position: relative;
           z-index: 10;
         }
       }
     }
+  }
+
+  .volume-icon {
+    font-size: 1em;
+    color: nb-theme(text-hint-color);
   }
 
   &.collapsed {
@@ -230,6 +191,7 @@
       justify-content: space-between;
       align-items: center;
       padding: 0;
+      overflow: visible;
     }
 
     .footer {
@@ -245,7 +207,6 @@
       .cover {
         height: $player-height;
         width: $player-height;
-        border-radius: 0 0 0 nb-theme(radius);
         flex: none;
       }
 
@@ -279,18 +240,26 @@
       width: inherit;
       margin: 0;
 
-      i {
-        width: inherit;
-        height: inherit;
-      }
-
-      .prev, .shuffle, .loop {
+      button {
         display: none;
       }
+      .play-button,
+      .skip-forward-button {
+        display: block;
+        font-size: 1.3rem;
+      }
 
-      .play, .next {
-        font-size: 2rem;
-        border: none;
+      @include media-breakpoint-down(is) {
+        .play-button,
+        .skip-forward-button {
+          padding: 0.5rem;
+        }
+      }
+
+      @include media-breakpoint-down(xs) {
+        .skip-forward-button {
+          display: none;
+        }
       }
     }
 
@@ -299,27 +268,23 @@
     }
 
     .track-info .details {
-      @include media-breakpoint-down(sm) {
-        h4 {
-          font-size: 1.25rem;
-        }
-        span {
-          font-size: 0.875rem;
-        }
-      }
-
       @include media-breakpoint-down(is) {
-        h4 {
-          font-size: 1rem;
-        }
         span {
-          font-size: 0.75rem;
           display: inline-block;
           overflow: hidden;
           text-overflow: ellipsis;
-          max-height: calc(0.75rem * #{nb-theme(line-height)});
         }
       }
+    }
+  }
+
+  @include media-breakpoint-between(lg, lg) {
+    .controls {
+      padding: 0.5rem;
+    }
+
+    .control-button.size-medium {
+      padding: nb-theme(button-ghost-small-padding);
     }
   }
 }

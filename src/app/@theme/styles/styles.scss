@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap');
+
 // themes - our custom or/and out of the box themes
 @import 'themes';
 
@@ -5,13 +7,12 @@
 @import '~@nebular/theme/styles/globals';
 @import '~@nebular/auth/styles/all';
 @import '~@nebular/bootstrap/styles/globals';
-// ...
 
-// global app font size
-@import './font-size';
 
 // loading progress bar theme
 @import './pace.theme';
+
+@import './overrides';
 
 // install the framework and custom global styles
 @include nb-install() {
@@ -23,4 +24,6 @@
 
   // loading progress bar
   @include ngx-pace-theme();
+
+  @include nb-overrides();
 };

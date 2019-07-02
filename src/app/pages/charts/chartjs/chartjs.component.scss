@@ -11,7 +11,7 @@
     height: nb-theme(card-height-medium);
     width: 100%;
 
-    /deep/ chart {
+    ::ng-deep chart {
       display: block;
       height: 100%;
       width: 100%;

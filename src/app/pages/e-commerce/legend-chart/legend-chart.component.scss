@@ -3,21 +3,17 @@
 @import '~@nebular/theme/styles/global/breakpoints';
 
 @include nb-install-component() {
-  .legends {
-    display: flex;
-    @include nb-rtl(flex-direction, row-reverse);
-    color: nb-theme(color-fg);
-    padding: 0 0 0 2.85rem;
-  }
+  display: flex;
+  flex-wrap: wrap;
 
   .legend {
     display: flex;
     justify-content: space-between;
-    align-items: baseline;
-    margin-left: 4rem;
+    align-items: center;
 
-    &:first-child {
-      margin-left: 0;
+    &:not(:last-child) {
+      @include nb-ltr(margin-right, 1rem);
+      @include nb-rtl(margin-left, 1rem);
     }
   }
 
@@ -28,13 +24,8 @@
   }
 
   .legend-title {
-    padding: 0 0.75rem;
+    @include nb-ltr(padding-left, 0.75rem);
+    @include nb-rtl(padding-right, 0.75rem);
     white-space: nowrap;
-  }
-
-  @include media-breakpoint-down(md) {
-    .legend {
-      margin-left: 1.5rem;
-    }
   }
 }

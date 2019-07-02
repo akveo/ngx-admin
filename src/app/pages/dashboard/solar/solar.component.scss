@@ -4,62 +4,31 @@
 
 @include nb-install-component() {
 
-  $padding: 1rem;
-
   nb-card-body {
     overflow: hidden;
-    padding: $padding;
   }
 
   .echart {
     position: absolute;
     left: 1em;
-    height: calc(100% - 2 * #{$padding});
+    height: calc(100% - 2 * 1rem);
     width: 40%;
   }
 
   .info {
     margin-left: 45%;
-    padding-top: 1.5rem;
-    color: nb-theme(color-fg);
+    padding-top: 1rem;
   }
 
   .value {
-    font-family: nb-theme(font-secondary);
-    font-size: 2rem;
-    font-weight: nb-theme(font-weight-bold);
-    color: nb-theme(color-fg-heading);
+    margin: 0;
   }
 
   .details {
-    font-size: 1.25rem;
-    font-weight: nb-theme(font-weight-bolder);
-    line-height: 1;
-    span {
-      font-size: 1rem;
-      font-weight: nb-theme(font-weight-light);
-    }
-  }
-
-  .text-hint {
-    font-size: 1rem;
-  }
-
-  @include nb-for-theme(cosmic) {
-    color: nb-theme(color-fg-heading);
-
-    .value {
-      color: nb-theme(color-fg-highlight);
-    }
-
-    .details span {
-      color: nb-theme(color-fg);
-    }
-  }
-
-  @include media-breakpoint-down(xs) {
-    .value {
-      font-size: 1.75rem;
-    }
+    color: nb-theme(text-hint-color);
+    font-family: nb-theme(text-subtitle-2-font-family);
+    font-size: nb-theme(text-subtitle-2-font-size);
+    font-weight: nb-theme(text-subtitle-2-font-weight);
+    line-height: nb-theme(text-subtitle-2-line-height);
   }
 }

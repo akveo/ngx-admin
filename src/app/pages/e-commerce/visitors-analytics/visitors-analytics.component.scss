@@ -13,15 +13,14 @@
 
   nb-card-header {
     border-bottom: none;
+  }
 
-    .title {
-      font-size: 1.5rem;
-      font-weight: nb-theme(font-weight-bold);
-    }
-
-    .sub-title {
-      color: nb-theme(color-fg);
-    }
+  .sub-title {
+    color: nb-theme(text-hint-color);
+    font-family: nb-theme(text-subtitle-font-family);
+    font-size: nb-theme(text-subtitle-font-size);
+    font-weight: nb-theme(text-subtitle-font-weight);
+    line-height: nb-theme(text-subtitle-line-height);
   }
 
   .container {
@@ -46,9 +45,8 @@
 
   @include media-breakpoint-down(is) {
     ngx-legend-chart {
-      /deep/ .legends {
+      ::ng-deep .legends {
         padding-left: 0;
-        font-size: nb-theme(font-size-sm);
       }
     }
   }

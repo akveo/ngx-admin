@@ -1,5 +1,4 @@
 import { Component, OnDestroy } from '@angular/core';
-import { NbThemeService, NbMediaBreakpoint, NbMediaBreakpointsService } from '@nebular/theme';
 import { takeWhile } from 'rxjs/operators';
 import { forkJoin } from 'rxjs';
 
@@ -16,19 +15,8 @@ export class ContactsComponent implements OnDestroy {
 
   contacts: any[];
   recent: any[];
-  breakpoint: NbMediaBreakpoint;
-  breakpoints: any;
 
-  constructor(private userService: UserData,
-              private themeService: NbThemeService,
-              private breakpointService: NbMediaBreakpointsService) {
-    this.breakpoints = this.breakpointService.getBreakpointsMap();
-    this.themeService.onMediaQueryChange()
-      .pipe(takeWhile(() => this.alive))
-      .subscribe(([oldValue, newValue]) => {
-        this.breakpoint = newValue;
-      });
-
+  constructor(private userService: UserData) {
     forkJoin(
       this.userService.getContacts(),
       this.userService.getRecentUsers(),

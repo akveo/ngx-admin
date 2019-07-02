@@ -1,19 +1,12 @@
 @import '../../../@theme/styles/themes';
 
 @include nb-install-component() {
-  .nb-arrow-up, .nb-arrow-down {
+  .toggle-icon {
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 1rem;
+    right: 1.25rem;
     @include nb-rtl(right, auto);
-    @include nb-rtl(left, 0);
-    padding: 1.5rem;
+    @include nb-rtl(left, 1.25rem);
     cursor: pointer;
-  }
-
-  nb-card-back {
-    /deep/ nb-card-header {
-      border: none;
-    }
   }
 }

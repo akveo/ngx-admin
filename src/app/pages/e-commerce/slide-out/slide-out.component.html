@@ -1,7 +1,8 @@
-<i class="show-hide-toggle"
-   [class.nb-arrow-thin-left]="!showVisitorsStatistics"
-   [class.nb-arrow-thin-right]="showVisitorsStatistics"
-   (click)="toggleStatistics()"></i>
+<nb-icon [icon]="showVisitorsStatistics ? 'arrow-forward-outline' : 'arrow-back-outline'"
+         pack="eva"
+         class="show-hide-toggle"
+         (click)="toggleStatistics()">
+</nb-icon>
 <div class="slide-out-container"
      [class.expanded]="showVisitorsStatistics"
      [class.collapsed]="!showVisitorsStatistics">

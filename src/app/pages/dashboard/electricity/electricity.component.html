@@ -1,57 +1,47 @@
-<nb-card size="large">
-  <div class="consumption-table">
-    <div class="table-header">
-      <div>Electricity</div>
-      <div class="subtitle">Consumption</div>
-    </div>
+<nb-card class="cards-container">
+  <nb-card size="large" class="table-card">
+    <nb-card-header>
+      Electricity Consumption
+    </nb-card-header>
 
     <nb-tabset fullWidth>
       <nb-tab *ngFor="let year of listData" [tabTitle]="year.title" [active]="year.active">
-        <div class="stats-month" *ngFor="let month of year.months">
-          <div>
+        <nb-list>
+          <nb-list-item *ngFor="let month of year.months">
             <span class="month">{{ month.month }}</span>
-            <span class="delta" [ngClass]="{ 'down': month.down }">{{ month.delta }}</span>
-          </div>
-          <div class="results">
-            <b>{{ month.kWatts }}</b> kWh / <b>{{ month.cost }}</b> USD
-          </div>
-        </div>
+            <span>
+              <nb-icon
+                [class.down]="month.down"
+                [class.up]="!month.down"
+                [icon]="month.down ? 'arrow-down' : 'arrow-up'" pack="eva">
+              </nb-icon>
+              {{ month.delta }}
+            </span>
+            <span class="results">
+              {{ month.kWatts }} <span class="caption">kWh</span> / {{ month.cost }} <span class="caption">USD</span>
+            </span>
+          </nb-list-item>
+        </nb-list>
       </nb-tab>
     </nb-tabset>
-  </div>
+  </nb-card>
 
-  <div class="chart-container">
-    <div class="chart-header">
-      <div class="header-stats">
-        <div class="stats-block">
-          <div class="subtitle">Consumed</div>
-          <div>
-            <span class="value">816</span>
-            <span class="unit">kWh</span>
-          </div>
-        </div>
+  <nb-card size="large" class="chart-card">
+    <nb-card-header>
+      <span class="stats">
+        <span class="caption">Consumed</span>
+        <span>816 <span class="caption">kWh</span></span>
+      </span>
+      <span class="stats">
+        <span class="caption">Spent</span>
+        <span>291 <span class="caption">USD</span></span>
+      </span>
 
-        <div class="stats-block currency">
-          <div class="subtitle">Spent</div>
-          <div>
-            <span class="value">291</span>
-            <span class="unit">USD</span>
-          </div>
-        </div>
-      </div>
+      <nb-select [(selected)]="type" class="type-select">
+        <nb-option *ngFor="let t of types" [value]="t">{{ t }}</nb-option>
+      </nb-select>
+    </nb-card-header>
 
-      <div class="dropdown"
-           [ngClass]="{ 'ghost-dropdown': currentTheme === 'corporate' }"
-           ngbDropdown>
-        <button type="button" ngbDropdownToggle class="btn"
-                [ngClass]="{ 'btn-outline-success': currentTheme == 'default', 'btn-primary': currentTheme != 'default'}">
-          {{ type }}
-        </button>
-        <ul class="dropdown-menu" ngbDropdownMenu>
-          <li class="dropdown-item" *ngFor="let t of types" (click)="type = t">{{ t }}</li>
-        </ul>
-      </div>
-    </div>
     <ngx-electricity-chart [data]="chartData"></ngx-electricity-chart>
-  </div>
+  </nb-card>
 </nb-card>

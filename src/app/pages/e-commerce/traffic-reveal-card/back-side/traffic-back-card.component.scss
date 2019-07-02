@@ -15,15 +15,17 @@
   ngx-traffic-bar-chart {
     flex: 1;
     position: relative;
-  }
 
-  /deep/ canvas {
-    border-bottom-left-radius: nb-theme(card-border-radius);
-    border-bottom-right-radius: nb-theme(card-border-radius);
-  }
+    ::ng-deep {
+      canvas {
+        border-bottom-left-radius: nb-theme(card-border-radius);
+        border-bottom-right-radius: nb-theme(card-border-radius);
+      }
 
-  .echart {
-    height: 100%;
-    width: 100%;
+      .echart {
+        height: 100%;
+        width: 100%;
+      }
+    }
   }
 }

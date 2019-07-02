@@ -66,7 +66,7 @@ export class ElectricityChartComponent implements AfterViewInit, OnDestroy {
             position: 'top',
             backgroundColor: eTheme.tooltipBg,
             borderColor: eTheme.tooltipBorderColor,
-            borderWidth: 3,
+            borderWidth: 1,
             formatter: '{c0} kWh',
             extraCssText: eTheme.tooltipExtraCss,
           },
