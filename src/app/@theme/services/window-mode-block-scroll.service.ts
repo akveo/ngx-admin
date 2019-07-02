@@ -45,7 +45,7 @@ export class WindowModeBlockScrollService implements OnDestroy {
 
     this.scrollService.onScrollableChange()
       .pipe(
-        filter(() => layout.windowModeValue),
+        filter(() => layout.withScrollValue),
         map((scrollable: boolean) => !scrollable),
         takeUntil(this.destroy$),
       )
