@@ -47,9 +47,6 @@ This template is using [Nebular](https://github.com/akveo/nebular) modules set, 
 ### Empty starter kit
 Don't need all the pages and modules and just looking for an empty starter kit for your next project? Check out our [starter-kit branch](https://github.com/akveo/ngx-admin/tree/starter-kit).
 
-### AngularJS 1.x version
-Here you can find AngularJS 1.x based version: [Blur Admin](http://akveo.github.io/blur-admin/)
-
 ## BrowserStack
 This project runs its tests on multiple desktop and mobile browsers using [BrowserStack](http://www.browserstack.com).
 
