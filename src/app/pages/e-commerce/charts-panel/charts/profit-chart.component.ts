@@ -182,8 +182,8 @@ export class ProfitChartComponent implements AfterViewInit, OnDestroy, OnChanges
     });
   }
 
-  onChartInit(echarts) {
-    this.echartsIntance = echarts;
+  onChartInit(chart) {
+    this.echartsIntance = chart;
   }
 
   resizeChart() {

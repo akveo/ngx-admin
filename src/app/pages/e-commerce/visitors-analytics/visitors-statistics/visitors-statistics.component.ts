@@ -201,8 +201,8 @@ export class ECommerceVisitorsStatisticsComponent implements AfterViewInit, OnDe
     };
   }
 
-  onChartInit(echarts) {
-    this.echartsIntance = echarts;
+  onChartInit(chart) {
+    this.echartsIntance = chart;
   }
 
   resizeChart() {
