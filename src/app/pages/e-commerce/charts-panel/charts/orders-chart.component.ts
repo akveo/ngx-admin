@@ -4,6 +4,8 @@ import { delay, takeWhile } from 'rxjs/operators';
 
 import { OrdersChart } from '../../../../@core/data/orders-chart';
 import { LayoutService } from '../../../../@core/utils/layout.service';
+import * as echarts from 'echarts/lib/echarts';
+
 
 @Component({
   selector: 'ngx-orders-chart',
@@ -287,8 +289,8 @@ export class OrdersChartComponent implements AfterViewInit, OnDestroy, OnChanges
     };
   }
 
-  onChartInit(echarts) {
-    this.echartsIntance = echarts;
+  onChartInit(inputChart) {
+    this.echartsIntance = inputChart;
   }
 
   resizeChart() {

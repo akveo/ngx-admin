@@ -2,6 +2,8 @@ import { AfterViewInit, Component, Input, OnDestroy } from '@angular/core';
 import { NbThemeService } from '@nebular/theme';
 import { delay, takeWhile } from 'rxjs/operators';
 import { LayoutService } from '../../../../@core/utils/layout.service';
+import * as echarts from 'echarts/lib/echarts';
+
 
 
 @Component({

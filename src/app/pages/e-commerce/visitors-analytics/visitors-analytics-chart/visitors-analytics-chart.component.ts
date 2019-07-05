@@ -3,6 +3,8 @@ import { AfterViewInit, Component, Input, OnDestroy } from '@angular/core';
 import { NbThemeService } from '@nebular/theme';
 import { LayoutService } from '../../../../@core/utils';
 import { OutlineData } from '../../../../@core/data/visitors-analytics';
+import * as echarts from 'echarts/lib/echarts';
+
 
 @Component({
   selector: 'ngx-visitors-analytics-chart',
@@ -218,8 +220,8 @@ export class ECommerceVisitorsAnalyticsChartComponent implements AfterViewInit, 
     };
   }
 
-  onChartInit(echarts) {
-    this.echartsIntance = echarts;
+  onChartInit(inputEcharts) {
+    this.echartsIntance = inputEcharts;
   }
 
   resizeChart() {
