@@ -1,19 +1,10 @@
-import {Component, OnDestroy} from '@angular/core';
-import { NbThemeService } from '@nebular/theme';
-import { takeWhile } from 'rxjs/operators' ;
-import { SolarData } from '../../@core/data/solar';
-
-interface CardSettings {
-  title: string;
-  iconClass: string;
-  type: string;
-}
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'ngx-dashboard',
-  styleUrls: ['./dashboard.component.scss'],
   templateUrl: './dashboard.component.html',
 })
+<<<<<<< HEAD
 export class DashboardComponent implements OnDestroy {
 
   private alive = true;
@@ -96,4 +87,7 @@ export class DashboardComponent implements OnDestroy {
   ngOnDestroy() {
     this.alive = false;
   }
+=======
+export class DashboardComponent {
+>>>>>>> bcb9180f64b860247e98c117a2a22c9f402dfa09
 }

@@ -9,9 +9,23 @@ import {
   NbUserModule,
   NbContextMenuModule,
   NbButtonModule,
+<<<<<<< HEAD
   NbSelectModule,
   NbIconModule,
   NbThemeModule,
+=======
+  NbInputModule,
+  NbAccordionModule,
+  NbDialogModule,
+  NbWindowModule,
+  NbListModule,
+  NbToastrModule,
+  NbAlertModule,
+  NbSpinnerModule,
+  NbRadioModule,
+  NbSelectModule,
+  NbTooltipModule,
+>>>>>>> bcb9180f64b860247e98c117a2a22c9f402dfa09
 } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { NbSecurityModule } from '@nebular/security';
@@ -20,7 +34,16 @@ import {
   FooterComponent,
   HeaderComponent,
   SearchInputComponent,
+<<<<<<< HEAD
   TinyMCEComponent,
+=======
+  ThemeSettingsComponent,
+  SwitcherComponent,
+  LayoutDirectionSwitcherComponent,
+  ThemeSwitcherComponent,
+  ThemeSwitcherListComponent,
+  ToggleSettingsButtonComponent,
+>>>>>>> bcb9180f64b860247e98c117a2a22c9f402dfa09
 } from './components';
 import {
   CapitalizePipe,
@@ -50,15 +73,33 @@ const NB_MODULES = [
   NbContextMenuModule,
   NbSecurityModule,
   NbButtonModule,
+<<<<<<< HEAD
   NbSelectModule,
   NbIconModule,
   NbEvaIconsModule,
+=======
+  NbListModule,
+  NbToastrModule,
+  NbInputModule,
+  NbAccordionModule,
+  NbDialogModule,
+  NbWindowModule,
+  NbAlertModule,
+  NbSpinnerModule,
+  NbRadioModule,
+  NbSelectModule,
+  NbTooltipModule,
+>>>>>>> bcb9180f64b860247e98c117a2a22c9f402dfa09
 ];
 const COMPONENTS = [
   HeaderComponent,
   FooterComponent,
   SearchInputComponent,
+<<<<<<< HEAD
   TinyMCEComponent,
+=======
+  ThemeSettingsComponent,
+>>>>>>> bcb9180f64b860247e98c117a2a22c9f402dfa09
   OneColumnLayoutComponent,
   ThreeColumnsLayoutComponent,
   TwoColumnsLayoutComponent,
@@ -69,6 +110,24 @@ const PIPES = [
   RoundPipe,
   TimingPipe,
   NumberWithCommasPipe,
+<<<<<<< HEAD
+=======
+  EvaIconsPipe,
+];
+
+const NB_THEME_PROVIDERS = [
+  ...NbThemeModule.forRoot(
+    {
+      name: 'cosmic',
+    },
+    [ DEFAULT_THEME, COSMIC_THEME, CORPORATE_THEME ],
+  ).providers,
+  ...NbSidebarModule.forRoot().providers,
+  ...NbMenuModule.forRoot().providers,
+  ...NbDialogModule.forRoot().providers,
+  ...NbWindowModule.forRoot().providers,
+  ...NbToastrModule.forRoot().providers,
+>>>>>>> bcb9180f64b860247e98c117a2a22c9f402dfa09
 ];
 
 @NgModule({

@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+<<<<<<< HEAD
 import {
   NbActionsModule,
   NbButtonModule,
@@ -30,11 +31,18 @@ import { PlayerComponent } from './rooms/player/player.component';
 import { TrafficComponent } from './traffic/traffic.component';
 import { TrafficChartComponent } from './traffic/traffic-chart.component';
 import { FormsModule } from '@angular/forms';
+=======
+
+
+import { ThemeModule } from '../../@theme/theme.module';
+import { DashboardComponent } from './dashboard.component';
+>>>>>>> bcb9180f64b860247e98c117a2a22c9f402dfa09
 
 @NgModule({
   imports: [
     FormsModule,
     ThemeModule,
+<<<<<<< HEAD
     NbCardModule,
     NbUserModule,
     NbButtonModule,
@@ -64,6 +72,11 @@ import { FormsModule } from '@angular/forms';
     SolarComponent,
     TrafficComponent,
     TrafficChartComponent,
+=======
+  ],
+  declarations: [
+    DashboardComponent,
+>>>>>>> bcb9180f64b860247e98c117a2a22c9f402dfa09
   ],
 })
 export class DashboardModule { }

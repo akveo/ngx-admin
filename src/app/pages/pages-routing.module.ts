@@ -3,8 +3,6 @@ import { NgModule } from '@angular/core';
 
 import { PagesComponent } from './pages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { ECommerceComponent } from './e-commerce/e-commerce.component';
-import { NotFoundComponent } from './miscellaneous/not-found/not-found.component';
 
 const routes: Routes = [{
   path: '',
@@ -12,6 +10,7 @@ const routes: Routes = [{
   children: [
     {
       path: 'dashboard',
+<<<<<<< HEAD
       component: ECommerceComponent,
     },
     {
@@ -69,14 +68,22 @@ const routes: Routes = [{
         .then(m => m.MiscellaneousModule),
     },
     {
+=======
+      component: DashboardComponent,
+    },
+    {
+>>>>>>> bcb9180f64b860247e98c117a2a22c9f402dfa09
       path: '',
       redirectTo: 'dashboard',
       pathMatch: 'full',
     },
+<<<<<<< HEAD
     {
       path: '**',
       component: NotFoundComponent,
     },
+=======
+>>>>>>> bcb9180f64b860247e98c117a2a22c9f402dfa09
   ],
 }];
 

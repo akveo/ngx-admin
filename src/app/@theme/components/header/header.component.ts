@@ -2,9 +2,13 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { NbMediaBreakpointsService, NbMenuService, NbSidebarService, NbThemeService } from '@nebular/theme';
 
 import { UserData } from '../../../@core/data/users';
+<<<<<<< HEAD
 import { LayoutService } from '../../../@core/utils';
 import { map, takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
+=======
+import { AnalyticsService } from '../../../@core/utils';
+>>>>>>> bcb9180f64b860247e98c117a2a22c9f402dfa09
 
 @Component({
   selector: 'ngx-header',
@@ -44,8 +48,12 @@ export class HeaderComponent implements OnInit, OnDestroy {
               private menuService: NbMenuService,
               private themeService: NbThemeService,
               private userService: UserData,
+<<<<<<< HEAD
               private layoutService: LayoutService,
               private breakpointService: NbMediaBreakpointsService) {
+=======
+              private analyticsService: AnalyticsService) {
+>>>>>>> bcb9180f64b860247e98c117a2a22c9f402dfa09
   }
 
   ngOnInit() {
@@ -82,7 +90,6 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   toggleSidebar(): boolean {
     this.sidebarService.toggle(true, 'menu-sidebar');
-    this.layoutService.changeLayoutSize();
 
     return false;
   }
