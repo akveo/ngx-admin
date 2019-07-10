@@ -4,7 +4,6 @@ import { NbThemeService } from '@nebular/theme';
 import { OutlineData, VisitorsAnalyticsData } from '../../../@core/data/visitors-analytics';
 import { forkJoin } from 'rxjs';
 
-
 @Component({
   selector: 'ngx-ecommerce-visitors-analytics',
   styleUrls: ['./visitors-analytics.component.scss'],

@@ -2,6 +2,8 @@ import { delay, takeWhile } from 'rxjs/operators';
 import { AfterViewInit, Component, Input, OnChanges, OnDestroy } from '@angular/core';
 import { NbThemeService } from '@nebular/theme';
 import { LayoutService } from '../../../../@core/utils/layout.service';
+import * as echarts from 'echarts/lib/echarts';
+
 
 @Component({
   selector: 'ngx-earning-live-update-chart',

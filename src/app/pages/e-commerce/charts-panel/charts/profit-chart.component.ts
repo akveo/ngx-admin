@@ -4,6 +4,8 @@ import { takeWhile } from 'rxjs/operators';
 
 import { ProfitChart } from '../../../../@core/data/profit-chart';
 import { LayoutService } from '../../../../@core/utils/layout.service';
+import * as echarts from 'echarts/lib/echarts';
+
 
 @Component({
   selector: 'ngx-profit-chart',
@@ -180,8 +182,8 @@ export class ProfitChartComponent implements AfterViewInit, OnDestroy, OnChanges
     });
   }
 
-  onChartInit(echarts) {
-    this.echartsIntance = echarts;
+  onChartInit(chart) {
+    this.echartsIntance = chart;
   }
 
   resizeChart() {

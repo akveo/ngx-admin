@@ -3,6 +3,8 @@ import { AfterViewInit, Component, Input, OnDestroy } from '@angular/core';
 import { NbThemeService } from '@nebular/theme';
 import { LayoutService } from '../../../../@core/utils';
 import { ElectricityChart } from '../../../../@core/data/electricity';
+import * as echarts from 'echarts/lib/echarts';
+
 
 @Component({
   selector: 'ngx-electricity-chart',
@@ -181,8 +183,8 @@ export class ElectricityChartComponent implements AfterViewInit, OnDestroy {
     });
   }
 
-  onChartInit(echarts) {
-    this.echartsIntance = echarts;
+  onChartInit(chart) {
+    this.echartsIntance = chart;
   }
 
   resizeChart() {
