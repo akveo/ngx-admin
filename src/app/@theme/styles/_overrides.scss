@@ -1,0 +1,68 @@
+@import './themes';
+
+@mixin nb-overrides() {
+  // overrides bootstrap svg style
+  nb-icon svg {
+    vertical-align: top;
+  }
+
+  nb-auth-block .links nb-icon {
+    font-size: 2.5rem;
+  }
+
+  nb-select.size-medium button {
+    padding: 0.4375rem 2.2rem 0.4375rem 1.125rem !important;
+
+    nb-icon {
+      right: 0.41rem !important;
+    }
+  }
+
+  nb-flip-card {
+    .front-container {
+      -webkit-backface-visibility: visible;
+    }
+    .back-container {
+      -webkit-backface-visibility: hidden;
+    }
+
+    .flipped {
+      .front-container {
+        -webkit-backface-visibility: hidden;
+      }
+      .back-container {
+        -webkit-backface-visibility: visible;
+      }
+    }
+  }
+
+  nb-layout .layout .layout-container nb-sidebar {
+    &,
+    .main-container-fixed {
+      top: nb-theme(header-height);
+    }
+  }
+
+  @media screen and (min-width: nb-theme(layout-window-mode-max-width) + 20px) {
+    @include f-window-mode(nb-theme(layout-window-mode-padding-top) / 4);
+  }
+
+  @media screen and (min-width: nb-theme(layout-window-mode-max-width) + 150px) {
+    @include f-window-mode(nb-theme(layout-window-mode-padding-top) / 2);
+  }
+
+  @media screen and (min-width: nb-theme(layout-window-mode-max-width) + 300px) {
+    @include f-window-mode(nb-theme(layout-window-mode-padding-top));
+  }
+}
+
+@mixin f-window-mode ($padding-top) {
+  nb-layout.window-mode nb-layout-header.fixed {
+    top: $padding-top;
+  }
+
+  nb-sidebar .main-container-fixed {
+    height: calc(100vh - #{nb-theme(header-height)} - #{$padding-top}) !important;
+    top: calc(#{nb-theme(header-height)} + #{$padding-top}) !important;
+  }
+}

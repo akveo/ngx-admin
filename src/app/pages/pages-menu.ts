@@ -3,7 +3,7 @@ import { NbMenuItem } from '@nebular/theme';
 export const MENU_ITEMS: NbMenuItem[] = [
   {
     title: 'Dashboard',
-    icon: 'nb-home',
+    icon: 'home-outline',
     link: '/pages/dashboard',
     home: true,
   },
@@ -13,7 +13,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
   },
   {
     title: 'Auth',
-    icon: 'nb-locked',
+    icon: 'lock-outline',
     children: [
       {
         title: 'Login',

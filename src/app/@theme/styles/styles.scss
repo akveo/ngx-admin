@@ -5,13 +5,13 @@
 @import '~@nebular/theme/styles/globals';
 @import '~@nebular/auth/styles/all';
 @import '~@nebular/bootstrap/styles/globals';
-// ...
+@import '~nebular-icons/css/nebular-icons.css';
 
-// global app font size
-@import './font-size';
 
 // loading progress bar theme
 @import './pace.theme';
+
+@import './overrides';
 
 // install the framework and custom global styles
 @include nb-install() {
@@ -23,4 +23,7 @@
 
   // loading progress bar
   @include ngx-pace-theme();
+
+  @include nb-overrides();
+
 };

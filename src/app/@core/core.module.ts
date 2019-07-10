@@ -7,6 +7,7 @@ import { of as observableOf } from 'rxjs';
 import { throwIfAlreadyLoaded } from './module-import-guard';
 import {
   AnalyticsService,
+  LayoutService,
   StateService,
 } from './utils';
 import { UserData } from './data/users';
@@ -82,6 +83,7 @@ export const NB_CORE_PROVIDERS = [
   },
   AnalyticsService,
   StateService,
+  LayoutService,
 ];
 
 @NgModule({
