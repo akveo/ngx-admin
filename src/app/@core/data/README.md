@@ -1,1 +1,0 @@
-Application-wise data providers.
