@@ -15,7 +15,7 @@ declare const echarts: any;
         </div>
         <div class="info">
           <div class="h4 value">6.421 kWh</div>
-          <div class="details"><span>out of</span> 8.421 kWh</div>
+          <div class="details subtitle-2"><span>out of</span> 8.421 kWh</div>
         </div>
       </nb-card-body>
     </nb-card>

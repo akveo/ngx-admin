@@ -12,13 +12,6 @@
     height: 100%;
   }
 
-  .subtitle {
-    font-family: nb-theme(text-subtitle-font-family);
-    font-size: nb-theme(text-subtitle-font-size);
-    font-weight: nb-theme(text-subtitle-font-weight);
-    line-height: nb-theme(text-subtitle-line-height);
-  }
-
   .body {
     display: flex;
     flex-direction: column;
