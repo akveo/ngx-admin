@@ -4,9 +4,7 @@
 @import '~@nebular/theme/styles/themes';
 
 $nb-themes: nb-register-theme((
-  font-family-secondary: font-family-primary,
   layout-padding-top: 2.25rem,
-  layout-window-mode-padding-top: 0,
 
   menu-item-icon-margin: 0 0.5rem 0 0,
 
@@ -24,16 +22,10 @@ $nb-themes: nb-register-theme((
   slide-out-background: #f7f9fc,
   slide-out-shadow-color: 0 4px 14px 0 #8f9bb3,
   slide-out-shadow-color-rtl: 0 4px 14px 0 #8f9bb3,
-
-  smart-table-bg-even: background-basic-color-2,
-  smart-table-bg-active: background-basic-color-3,
-  smart-table-paging-hover: transparent,
 ), default, default);
 
 $nb-themes: nb-register-theme((
-  font-family-secondary: font-family-primary,
   layout-padding-top: 2.25rem,
-  layout-window-mode-padding-top: 0,
 
   menu-item-icon-margin: 0 0.5rem 0 0,
 
@@ -51,16 +43,10 @@ $nb-themes: nb-register-theme((
   slide-out-background: #252547,
   slide-out-shadow-color: 2px 0 3px #29157a,
   slide-out-shadow-color-rtl: -2px 0 3px #29157a,
-
-  smart-table-bg-even: background-basic-color-2,
-  smart-table-bg-active: background-basic-color-3,
-  smart-table-paging-hover: transparent,
 ), cosmic, cosmic);
 
 $nb-themes: nb-register-theme((
-  font-family-secondary: font-family-primary,
   layout-padding-top: 2.25rem,
-  layout-window-mode-padding-top: 0,
 
   menu-item-icon-margin: 0 0.5rem 0 0,
 
@@ -78,16 +64,10 @@ $nb-themes: nb-register-theme((
   slide-out-background: linear-gradient(270deg, #edf1f7 0%, #e4e9f2 100%),
   slide-out-shadow-color: 0 4px 14px 0 #8f9bb3,
   slide-out-shadow-color-rtl: 0 4px 14px 0 #8f9bb3,
-
-  smart-table-bg-even: background-basic-color-2,
-  smart-table-bg-active: background-basic-color-3,
-  smart-table-paging-hover: transparent,
 ), corporate, corporate);
 
 $nb-themes: nb-register-theme((
-  font-family-secondary: font-family-primary,
   layout-padding-top: 2.25rem,
-  layout-window-mode-padding-top: 0,
 
   menu-item-icon-margin: 0 0.5rem 0 0,
 
@@ -105,8 +85,4 @@ $nb-themes: nb-register-theme((
   slide-out-background: linear-gradient(270deg, #222b45 0%, #151a30 100%),
   slide-out-shadow-color: 0 4px 14px 0 #8f9bb3,
   slide-out-shadow-color-rtl: 0 4px 14px 0 #8f9bb3,
-
-  smart-table-bg-even: background-basic-color-2,
-  smart-table-bg-active: background-basic-color-3,
-  smart-table-paging-hover: transparent,
 ), dark, dark);
