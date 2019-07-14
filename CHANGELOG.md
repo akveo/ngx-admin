@@ -1,3 +1,13 @@
+<a name="4.0.0"></a>
+# [4.0.0](https://github.com/akveo/ngx-admin/compare/v3.2.0...v4.0.0) (2019-07-14)
+
+
+### Bug Fixes
+
+* update [@angular-devkit](https://github.com/angular-devkit)/build-angular to fix import aliases ([78695cd](https://github.com/akveo/ngx-admin/commit/78695cd))
+
+
+
 <a name="3.2.1"></a>
 ## [3.2.1](https://github.com/akveo/ngx-admin/compare/v3.2.0...v3.2.1) (2019-04-02)
 
