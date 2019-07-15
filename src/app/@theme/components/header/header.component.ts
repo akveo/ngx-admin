@@ -2,7 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { NbMediaBreakpointsService, NbMenuService, NbSidebarService, NbThemeService } from '@nebular/theme';
 
 import { UserData } from '../../../@core/data/users';
-import { LayoutService } from '../../../@core/utils';
+import { AnalyticsService, LayoutService } from '../../../@core/utils';
 import { map, takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
 
@@ -45,8 +45,9 @@ export class HeaderComponent implements OnInit, OnDestroy {
               private themeService: NbThemeService,
               private userService: UserData,
               private layoutService: LayoutService,
-              private breakpointService: NbMediaBreakpointsService) {
-  }
+              private breakpointService: NbMediaBreakpointsService,
+              private analytics: AnalyticsService,
+  ) {}
 
   ngOnInit() {
     this.currentTheme = this.themeService.currentTheme;
@@ -90,5 +91,13 @@ export class HeaderComponent implements OnInit, OnDestroy {
   navigateHome() {
     this.menuService.navigateHome();
     return false;
+  }
+
+  startSearch() {
+    this.analytics.trackEvent('startSearch');
+  }
+
+  trackEmailClick() {
+    this.analytics.trackEvent('clickContactEmail', 'click');
   }
 }

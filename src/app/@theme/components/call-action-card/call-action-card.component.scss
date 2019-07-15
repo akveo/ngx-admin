@@ -1,0 +1,64 @@
+@import '../../../@theme/styles/themes';
+@import '~bootstrap/scss/mixins/breakpoints';
+@import '~@nebular/theme/styles/global/breakpoints';
+
+@include nb-install-component() {
+  nb-card {
+    flex-direction: row;
+    align-items: center;
+    height: 6rem;
+  }
+
+  .icon-container {
+    height: 100%;
+    padding: 0.625rem;
+  }
+
+  .icon {
+    background-color: nb-theme(color-primary-default);
+    border-radius: nb-theme(card-border-radius);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 5.75rem;
+    height: 100%;
+    transition: width 0.4s ease;
+    transform: translate3d(0, 0, 0);
+    -webkit-transform-style: preserve-3d;
+    -webkit-backface-visibility: hidden;
+
+    ::ng-deep svg {
+      fill: nb-theme(text-control-color);
+    }
+  }
+
+  nb-icon {
+    font-size: 2.5rem;
+  }
+
+  .details {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    @include nb-ltr(padding, 0 0.5rem 0 0.625rem);
+    @include nb-rtl(padding, 0 0.625rem 0 0.5rem);
+    border-left: 1px solid transparent;
+  }
+
+  .title {
+    margin: 0;
+  }
+
+  .actions {
+    @include nb-ltr(padding, 0 1.15rem 0 0.5rem);
+    @include nb-rtl(padding, 0 0.5rem 0 1.15rem);
+  }
+
+  @include media-breakpoint-down(md) {
+    .icon-container {
+      display: none;
+    }
+  }
+}

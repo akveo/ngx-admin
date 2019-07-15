@@ -23,8 +23,28 @@
     cursor: pointer;
   }
 
+  .subtitle {
+    font-family: nb-theme(text-subtitle-font-family);
+    font-size: nb-theme(text-subtitle-font-size);
+    font-weight: nb-theme(text-subtitle-font-weight);
+    line-height: nb-theme(text-subtitle-line-height);
+  }
+
+  .downloads-count .number {
+    @include nb-ltr(margin-left, 0.5rem);
+    @include nb-rtl(margin-right, 0.5rem);
+  }
+
   ::ng-deep nb-search button {
     padding: 0!important;
+  }
+
+  .contact-us {
+    padding: 0;
+
+    nb-icon {
+      font-size: 1.25rem;
+    }
   }
 
   .header-container {
@@ -52,18 +72,55 @@
     }
   }
 
-  @include media-breakpoint-down(sm) {
-    .control-item {
+  .github-stars {
+    width: 245px;
+    display: flex;
+
+    iframe {
+      width: 100px;
+      @include nb-ltr(margin-left, 1rem);
+      @include nb-rtl(margin-right, 1rem);
+    }
+  }
+
+  @include media-breakpoint-down(xl) {
+    .control-item.search,
+    .control-item.notifications,
+    .control-item.email,
+    .control-item.github-stars .text {
       display: none;
     }
-    .user-action {
-      border: none;
-      padding: 0;
+
+    .control-item.github-stars {
+      width: auto;
+
+      iframe {
+        margin: 0;
+      }
+    }
+  }
+
+  @include media-breakpoint-down(lg) {
+    .downloads-count {
+      display: none;
+    }
+  }
+
+  @include media-breakpoint-down(md) {
+    .theme-select {
+      display: none;
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    .contact-us {
+      display: none;
     }
   }
 
   @include media-breakpoint-down(is) {
-    nb-select {
+    .github-stars,
+    .user-action {
       display: none;
     }
   }
