@@ -44,6 +44,7 @@
     &.off {
       color: nb-theme(text-hint-color);
 
+      .status,
       .title,
       .icon {
         color: nb-theme(text-hint-color);
@@ -73,10 +74,6 @@
 
     .status {
       text-transform: uppercase;
-      font-family: nb-theme(text-paragraph-2-font-family);
-      font-size: nb-theme(text-paragraph-2-font-size);
-      font-weight: nb-theme(text-paragraph-2-font-weight);
-      line-height: nb-theme(text-paragraph-2-line-height);
     }
   }
 }

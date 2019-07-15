@@ -1,309 +1,267 @@
-import { NbJSThemeOptions } from '@nebular/theme';
+import { NbJSThemeOptions, COSMIC_THEME as baseTheme } from '@nebular/theme';
 
-const palette = {
-  primary: '#a16eff',
-  success: '#00d68f',
-  info: '#0095ff',
-  warning: '#ffaa00',
-  danger: '#ff3d71',
-};
-
-const theme = {
-  fontMain: 'Open Sans, sans-serif',
-  fontSecondary: 'Raleway, sans-serif',
-
-  bg: '#323259',
-  bg2: '#252547',
-  bg3: '#1b1b38',
-  bg4: '#13132b',
-
-  border: '#323259',
-  border2: '#252547',
-  border3: '#1b1b38',
-  border4: '#13132b',
-  border5: '#13132b',
-
-  fg: '#b4b4db',
-  fgHeading: '#ffffff',
-  fgText: '#ffffff',
-  fgHighlight: palette.primary,
-  layoutBg: '#151a30',
-  separator: '#151a30',
-
-  primary: palette.primary,
-  success: palette.success,
-  info: palette.info,
-  warning: palette.warning,
-  danger: palette.danger,
-
-  primaryLight: '#b18aff',
-  successLight: '#2ce69b',
-  infoLight: '#42aaff',
-  warningLight: '#ffc94d',
-  dangerLight: '#ff708d',
-};
+const baseThemeVariables = baseTheme.variables;
 
 export const COSMIC_THEME = {
   name: 'cosmic',
+  base: 'cosmic',
   variables: {
-    ...theme,
-
     temperature: {
       arcFill: [ '#2ec7fe', '#31ffad', '#7bff24', '#fff024', '#f7bd59' ],
-      arcEmpty: theme.bg2,
+      arcEmpty: baseThemeVariables.bg2,
       thumbBg: '#ffffff',
       thumbBorder: '#ffffff',
     },
 
     solar: {
-      gradientLeft: theme.primary,
-      gradientRight: theme.primary,
+      gradientLeft: baseThemeVariables.primary,
+      gradientRight: baseThemeVariables.primary,
       shadowColor: 'rgba(0, 0, 0, 0)',
-      secondSeriesFill: theme.bg2,
+      secondSeriesFill: baseThemeVariables.bg2,
       radius: ['70%', '90%'],
     },
 
     traffic: {
-      tooltipBg: theme.bg,
-      tooltipBorderColor: theme.border2,
+      tooltipBg: baseThemeVariables.bg,
+      tooltipBorderColor: baseThemeVariables.border2,
       tooltipExtraCss: 'box-shadow: 0px 2px 46px 0 rgba(50, 50, 89); border-radius: 10px; padding: 4px 16px;',
-      tooltipTextColor: theme.fgText,
+      tooltipTextColor: baseThemeVariables.fgText,
       tooltipFontWeight: 'normal',
 
-      yAxisSplitLine: theme.separator,
+      yAxisSplitLine: baseThemeVariables.separator,
 
-      lineBg: theme.border2,
+      lineBg: baseThemeVariables.border2,
       lineShadowBlur: '14',
-      itemColor: theme.border2,
-      itemBorderColor: theme.border2,
-      itemEmphasisBorderColor: theme.primary,
-      shadowLineDarkBg: theme.border3,
-      shadowLineShadow: theme.border3,
-      gradFrom: theme.bg,
-      gradTo: theme.bg2,
+      itemColor: baseThemeVariables.border2,
+      itemBorderColor: baseThemeVariables.border2,
+      itemEmphasisBorderColor: baseThemeVariables.primary,
+      shadowLineDarkBg: baseThemeVariables.border3,
+      shadowLineShadow: baseThemeVariables.border3,
+      gradFrom: baseThemeVariables.bg,
+      gradTo: baseThemeVariables.bg2,
     },
 
     electricity: {
-      tooltipBg: theme.bg,
-      tooltipLineColor: theme.fgText,
+      tooltipBg: baseThemeVariables.bg,
+      tooltipLineColor: baseThemeVariables.fgText,
       tooltipLineWidth: '0',
-      tooltipBorderColor: theme.border2,
+      tooltipBorderColor: baseThemeVariables.border2,
       tooltipExtraCss: 'box-shadow: 0px 2px 46px 0 rgba(0, 255, 170, 0.35); border-radius: 10px; padding: 8px 24px;',
-      tooltipTextColor: theme.fgText,
+      tooltipTextColor: baseThemeVariables.fgText,
       tooltipFontWeight: 'normal',
 
-      axisLineColor: theme.border3,
-      xAxisTextColor: theme.fg,
-      yAxisSplitLine: theme.separator,
+      axisLineColor: baseThemeVariables.border3,
+      xAxisTextColor: baseThemeVariables.fg,
+      yAxisSplitLine: baseThemeVariables.separator,
 
-      itemBorderColor: theme.border2,
+      itemBorderColor: baseThemeVariables.border2,
       lineStyle: 'dotted',
       lineWidth: '6',
-      lineGradFrom: theme.success,
-      lineGradTo: theme.warning,
-      lineShadow: theme.bg4,
+      lineGradFrom: baseThemeVariables.success,
+      lineGradTo: baseThemeVariables.warning,
+      lineShadow: baseThemeVariables.bg4,
 
-      areaGradFrom: theme.bg2,
-      areaGradTo: theme.bg3,
-      shadowLineDarkBg: theme.bg3,
+      areaGradFrom: baseThemeVariables.bg2,
+      areaGradTo: baseThemeVariables.bg3,
+      shadowLineDarkBg: baseThemeVariables.bg3,
     },
 
     bubbleMap: {
-      titleColor: theme.fgText,
-      areaColor: theme.bg4,
-      areaHoverColor: theme.fgHighlight,
-      areaBorderColor: theme.border5,
+      titleColor: baseThemeVariables.fgText,
+      areaColor: baseThemeVariables.bg4,
+      areaHoverColor: baseThemeVariables.fgHighlight,
+      areaBorderColor: baseThemeVariables.border5,
     },
 
     profitBarAnimationEchart: {
-      textColor: theme.fgText,
+      textColor: baseThemeVariables.fgText,
 
-      firstAnimationBarColor: theme.primary,
-      secondAnimationBarColor: theme.success,
+      firstAnimationBarColor: baseThemeVariables.primary,
+      secondAnimationBarColor: baseThemeVariables.success,
 
       splitLineStyleOpacity: '1',
       splitLineStyleWidth: '1',
-      splitLineStyleColor: theme.border2,
+      splitLineStyleColor: baseThemeVariables.border2,
 
-      tooltipTextColor: theme.fgText,
+      tooltipTextColor: baseThemeVariables.fgText,
       tooltipFontWeight: 'normal',
       tooltipFontSize: '16',
-      tooltipBg: theme.bg,
-      tooltipBorderColor: theme.border2,
+      tooltipBg: baseThemeVariables.bg,
+      tooltipBorderColor: baseThemeVariables.border2,
       tooltipBorderWidth: '1',
       tooltipExtraCss: 'border-radius: 10px; padding: 4px 16px;',
     },
 
     trafficBarEchart: {
-      gradientFrom: theme.warningLight,
-      gradientTo: theme.warning,
-      shadow: theme.warningLight,
+      gradientFrom: baseThemeVariables.warningLight,
+      gradientTo: baseThemeVariables.warning,
+      shadow: baseThemeVariables.warningLight,
       shadowBlur: '5',
 
-      axisTextColor: theme.fgText,
+      axisTextColor: baseThemeVariables.fgText,
       axisFontSize: '12',
 
-      tooltipBg: theme.bg,
-      tooltipBorderColor: theme.border2,
+      tooltipBg: baseThemeVariables.bg,
+      tooltipBorderColor: baseThemeVariables.border2,
       tooltipExtraCss: 'border-radius: 10px; padding: 4px 16px;',
-      tooltipTextColor: theme.fgText,
+      tooltipTextColor: baseThemeVariables.fgText,
       tooltipFontWeight: 'normal',
     },
 
     countryOrders: {
-      countryBorderColor: theme.border4,
-      countryFillColor: theme.bg3,
+      countryBorderColor: baseThemeVariables.border4,
+      countryFillColor: baseThemeVariables.bg3,
       countryBorderWidth: '1',
-      hoveredCountryBorderColor: theme.primary,
-      hoveredCountryFillColor: theme.primaryLight,
+      hoveredCountryBorderColor: baseThemeVariables.primary,
+      hoveredCountryFillColor: baseThemeVariables.primaryLight,
       hoveredCountryBorderWidth: '1',
 
-      chartAxisLineColor: theme.border4,
-      chartAxisTextColor: theme.fg,
+      chartAxisLineColor: baseThemeVariables.border4,
+      chartAxisTextColor: baseThemeVariables.fg,
       chartAxisFontSize: '16',
-      chartGradientTo: theme.primary,
-      chartGradientFrom: theme.primaryLight,
-      chartAxisSplitLine: theme.separator,
-      chartShadowLineColor: theme.primaryLight,
+      chartGradientTo: baseThemeVariables.primary,
+      chartGradientFrom: baseThemeVariables.primaryLight,
+      chartAxisSplitLine: baseThemeVariables.separator,
+      chartShadowLineColor: baseThemeVariables.primaryLight,
 
-      chartLineBottomShadowColor: theme.primary,
+      chartLineBottomShadowColor: baseThemeVariables.primary,
 
-      chartInnerLineColor: theme.bg2,
+      chartInnerLineColor: baseThemeVariables.bg2,
     },
 
     echarts: {
-      bg: theme.bg,
-      textColor: theme.fgText,
-      axisLineColor: theme.fgText,
-      splitLineColor: theme.separator,
+      bg: baseThemeVariables.bg,
+      textColor: baseThemeVariables.fgText,
+      axisLineColor: baseThemeVariables.fgText,
+      splitLineColor: baseThemeVariables.separator,
       itemHoverShadowColor: 'rgba(0, 0, 0, 0.5)',
-      tooltipBackgroundColor: theme.primary,
+      tooltipBackgroundColor: baseThemeVariables.primary,
       areaOpacity: '1',
     },
 
     chartjs: {
-      axisLineColor: theme.separator,
-      textColor: theme.fgText,
+      axisLineColor: baseThemeVariables.separator,
+      textColor: baseThemeVariables.fgText,
     },
 
     orders: {
-      tooltipBg: theme.bg,
+      tooltipBg: baseThemeVariables.bg,
       tooltipLineColor: 'rgba(0, 0, 0, 0)',
       tooltipLineWidth: '0',
-      tooltipBorderColor: theme.border2,
+      tooltipBorderColor: baseThemeVariables.border2,
       tooltipExtraCss: 'border-radius: 10px; padding: 8px 24px;',
-      tooltipTextColor: theme.fgText,
+      tooltipTextColor: baseThemeVariables.fgText,
       tooltipFontWeight: 'normal',
       tooltipFontSize: '20',
 
-      axisLineColor: theme.border4,
+      axisLineColor: baseThemeVariables.border4,
       axisFontSize: '16',
-      axisTextColor: theme.fg,
-      yAxisSplitLine: theme.separator,
+      axisTextColor: baseThemeVariables.fg,
+      yAxisSplitLine: baseThemeVariables.separator,
 
-      itemBorderColor: theme.primary,
+      itemBorderColor: baseThemeVariables.primary,
       lineStyle: 'solid',
       lineWidth: '4',
 
       // first line
-      firstAreaGradFrom: theme.bg2,
-      firstAreaGradTo: theme.bg2,
-      firstShadowLineDarkBg: theme.bg2,
+      firstAreaGradFrom: baseThemeVariables.bg2,
+      firstAreaGradTo: baseThemeVariables.bg2,
+      firstShadowLineDarkBg: baseThemeVariables.bg2,
 
       // second line
-      secondLineGradFrom: theme.primary,
-      secondLineGradTo: theme.primary,
+      secondLineGradFrom: baseThemeVariables.primary,
+      secondLineGradTo: baseThemeVariables.primary,
 
       secondAreaGradFrom: 'rgba(161, 110, 255, 0.8)',
       secondAreaGradTo: 'rgba(161, 110, 255, 0.5)',
-      secondShadowLineDarkBg: theme.primary,
+      secondShadowLineDarkBg: baseThemeVariables.primary,
 
       // third line
-      thirdLineGradFrom: theme.success,
-      thirdLineGradTo: theme.successLight,
+      thirdLineGradFrom: baseThemeVariables.success,
+      thirdLineGradTo: baseThemeVariables.successLight,
 
       thirdAreaGradFrom: 'rgba(0, 214, 143, 0.7)',
       thirdAreaGradTo: 'rgba(0, 214, 143, 0.4)',
-      thirdShadowLineDarkBg: theme.success,
+      thirdShadowLineDarkBg: baseThemeVariables.success,
     },
 
     profit: {
-      bg: theme.bg,
-      textColor: theme.fgText,
-      axisLineColor: theme.border4,
-      splitLineColor: theme.separator,
+      bg: baseThemeVariables.bg,
+      textColor: baseThemeVariables.fgText,
+      axisLineColor: baseThemeVariables.border4,
+      splitLineColor: baseThemeVariables.separator,
       areaOpacity: '1',
 
       axisFontSize: '16',
-      axisTextColor: theme.fg,
+      axisTextColor: baseThemeVariables.fg,
 
       // first bar
-      firstLineGradFrom: theme.bg2,
-      firstLineGradTo: theme.bg2,
+      firstLineGradFrom: baseThemeVariables.bg2,
+      firstLineGradTo: baseThemeVariables.bg2,
       firstLineShadow: 'rgba(0, 0, 0, 0)',
 
       // second bar
-      secondLineGradFrom: theme.primary,
-      secondLineGradTo: theme.primary,
+      secondLineGradFrom: baseThemeVariables.primary,
+      secondLineGradTo: baseThemeVariables.primary,
       secondLineShadow: 'rgba(0, 0, 0, 0)',
 
       // third bar
-      thirdLineGradFrom: theme.success,
-      thirdLineGradTo: theme.successLight,
+      thirdLineGradFrom: baseThemeVariables.success,
+      thirdLineGradTo: baseThemeVariables.successLight,
       thirdLineShadow: 'rgba(0, 0, 0, 0)',
     },
 
     orderProfitLegend: {
-      firstItem: theme.success,
-      secondItem: theme.primary,
-      thirdItem: theme.bg2,
+      firstItem: baseThemeVariables.success,
+      secondItem: baseThemeVariables.primary,
+      thirdItem: baseThemeVariables.bg2,
     },
 
     visitors: {
-      tooltipBg: theme.bg,
+      tooltipBg: baseThemeVariables.bg,
       tooltipLineColor: 'rgba(0, 0, 0, 0)',
       tooltipLineWidth: '1',
-      tooltipBorderColor: theme.border2,
+      tooltipBorderColor: baseThemeVariables.border2,
       tooltipExtraCss: 'border-radius: 10px; padding: 8px 24px;',
-      tooltipTextColor: theme.fgText,
+      tooltipTextColor: baseThemeVariables.fgText,
       tooltipFontWeight: 'normal',
       tooltipFontSize: '20',
 
-      axisLineColor: theme.border4,
+      axisLineColor: baseThemeVariables.border4,
       axisFontSize: '16',
-      axisTextColor: theme.fg,
-      yAxisSplitLine: theme.separator,
+      axisTextColor: baseThemeVariables.fg,
+      yAxisSplitLine: baseThemeVariables.separator,
 
-      itemBorderColor: theme.primary,
+      itemBorderColor: baseThemeVariables.primary,
       lineStyle: 'dotted',
       lineWidth: '6',
       lineGradFrom: '#ffffff',
       lineGradTo: '#ffffff',
       lineShadow: 'rgba(0, 0, 0, 0)',
 
-      areaGradFrom: theme.primary,
-      areaGradTo: theme.primaryLight,
+      areaGradFrom: baseThemeVariables.primary,
+      areaGradTo: baseThemeVariables.primaryLight,
 
       innerLineStyle: 'solid',
       innerLineWidth: '1',
 
-      innerAreaGradFrom: theme.success,
-      innerAreaGradTo: theme.success,
+      innerAreaGradFrom: baseThemeVariables.success,
+      innerAreaGradTo: baseThemeVariables.success,
     },
 
     visitorsLegend: {
-      firstIcon: theme.success,
-      secondIcon: theme.primary,
+      firstIcon: baseThemeVariables.success,
+      secondIcon: baseThemeVariables.primary,
     },
 
     visitorsPie: {
-      firstPieGradientLeft: theme.success,
-      firstPieGradientRight: theme.successLight,
+      firstPieGradientLeft: baseThemeVariables.success,
+      firstPieGradientRight: baseThemeVariables.successLight,
       firstPieShadowColor: 'rgba(0, 0, 0, 0)',
       firstPieRadius: ['70%', '90%'],
 
-      secondPieGradientLeft: theme.warning,
-      secondPieGradientRight: theme.warningLight,
+      secondPieGradientLeft: baseThemeVariables.warning,
+      secondPieGradientRight: baseThemeVariables.warningLight,
       secondPieShadowColor: 'rgba(0, 0, 0, 0)',
       secondPieRadius: ['60%', '95%'],
       shadowOffsetX: '0',
@@ -311,8 +269,8 @@ export const COSMIC_THEME = {
     },
 
     visitorsPieLegend: {
-      firstSection: theme.warning,
-      secondSection: theme.success,
+      firstSection: baseThemeVariables.warning,
+      secondSection: baseThemeVariables.success,
     },
 
     earningPie: {
@@ -321,28 +279,28 @@ export const COSMIC_THEME = {
 
       fontSize: '22',
 
-      firstPieGradientLeft: theme.success,
-      firstPieGradientRight: theme.success,
+      firstPieGradientLeft: baseThemeVariables.success,
+      firstPieGradientRight: baseThemeVariables.success,
       firstPieShadowColor: 'rgba(0, 0, 0, 0)',
 
-      secondPieGradientLeft: theme.primary,
-      secondPieGradientRight: theme.primary,
+      secondPieGradientLeft: baseThemeVariables.primary,
+      secondPieGradientRight: baseThemeVariables.primary,
       secondPieShadowColor: 'rgba(0, 0, 0, 0)',
 
-      thirdPieGradientLeft: theme.warning,
-      thirdPieGradientRight: theme.warning,
+      thirdPieGradientLeft: baseThemeVariables.warning,
+      thirdPieGradientRight: baseThemeVariables.warning,
       thirdPieShadowColor: 'rgba(0, 0, 0, 0)',
     },
 
     earningLine: {
-      gradFrom: theme.primary,
-      gradTo: theme.primary,
+      gradFrom: baseThemeVariables.primary,
+      gradTo: baseThemeVariables.primary,
 
-      tooltipTextColor: theme.fgText,
+      tooltipTextColor: baseThemeVariables.fgText,
       tooltipFontWeight: 'normal',
       tooltipFontSize: '16',
-      tooltipBg: theme.bg,
-      tooltipBorderColor: theme.border2,
+      tooltipBg: baseThemeVariables.bg,
+      tooltipBorderColor: baseThemeVariables.border2,
       tooltipBorderWidth: '1',
       tooltipExtraCss: 'border-radius: 10px; padding: 4px 16px;',
     },

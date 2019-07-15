@@ -100,10 +100,6 @@
     }
   }
 
-  .text-basic {
-    color: nb-theme(text-basic-color);
-  }
-
   .text-link {
     color: nb-theme(link-text-color);
   }
@@ -124,24 +120,13 @@
     background: nb-theme(text-hint-color);
   }
 
-  .text-hint {
-    color: nb-theme(text-hint-color);
-  }
-
   .bg-link {
     background: nb-theme(link-text-color);
-  }
-
-  .text-link {
-    color: nb-theme(link-text-color);
   }
 
   @each $status in nb-get-statuses() {
     .bg-status-#{$status} {
       background: nb-theme(text-#{$status}-color);
-    }
-    .text-status-#{$status} {
-      color: nb-theme(text-#{$status}-color);
     }
   }
 }
