@@ -44,6 +44,7 @@
     &.off {
       color: nb-theme(text-hint-color);
 
+      .status,
       .title,
       .icon {
         color: nb-theme(text-hint-color);
