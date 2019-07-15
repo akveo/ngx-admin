@@ -1,0 +1,25 @@
+@import '../../styles/themes';
+@import '~bootstrap/scss/mixins/breakpoints';
+@import '~@nebular/theme/styles/global/breakpoints';
+
+@include nb-install-component() {
+  nb-layout-column.small {
+    flex: 0.15 !important;
+  }
+
+  nb-sidebar.settings-sidebar {
+    $sidebar-width: 19rem;
+
+    transition: transform 0.3s ease;
+    @include nb-ltr(transform, translate3d(100%, 0, 0));
+    @include nb-rtl(transform, translate3d(-100%, 0, 0));
+    &.start {
+      @include nb-ltr(transform, translate3d(-100%, 0, 0));
+      @include nb-rtl(transform, translate3d(100%, 0, 0));
+    }
+
+    &.expanded, &.expanded.start {
+      transform: translate3d(0, 0, 0);
+    }
+  }
+}

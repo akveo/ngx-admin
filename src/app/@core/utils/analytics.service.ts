@@ -1,16 +1,17 @@
-import { Injectable } from '@angular/core';
+import { Inject, Injectable } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { filter } from 'rxjs/operators';
-
-declare const ga: any;
+import { NB_WINDOW } from '@nebular/theme';
 
 @Injectable()
 export class AnalyticsService {
-  private enabled: boolean;
+  private enabled = false;
 
-  constructor(private location: Location, private router: Router) {
-    this.enabled = false;
+  constructor(@Inject(NB_WINDOW) private window,
+              private location: Location,
+              private router: Router) {
+    this.enabled = this.window.location.href.indexOf('akveo.com') >= 0;
   }
 
   trackPageViews() {
@@ -19,14 +20,18 @@ export class AnalyticsService {
         filter((event) => event instanceof NavigationEnd),
       )
         .subscribe(() => {
-          ga('send', {hitType: 'pageview', page: this.location.path()});
+          this.gtmPushToDataLayer({event: 'pageView' , path: this.location.path()});
         });
     }
   }
 
-  trackEvent(eventName: string) {
+  trackEvent(eventName: string, eventVal: string = '') {
     if (this.enabled) {
-      ga('send', 'event', eventName);
+      this.gtmPushToDataLayer({ event: eventName, eventValue: eventVal });
     }
+  }
+
+  private gtmPushToDataLayer(params) {
+    this.window.dataLayer.push(params);
   }
 }

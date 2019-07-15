@@ -54,6 +54,7 @@ import { VisitorsAnalyticsService } from './mock/visitors-analytics.service';
 import { SecurityCamerasService } from './mock/security-cameras.service';
 import { RippleService } from './utils/ripple.service';
 import { MockDataModule } from './mock/mock-data.module';
+import { AbService } from './utils/ab.service';
 
 const socialLinks = [
   {
@@ -146,6 +147,7 @@ export const NB_CORE_PROVIDERS = [
   PlayerService,
   SeoService,
   StateService,
+  AbService,
 ];
 
 @NgModule({
