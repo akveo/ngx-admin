@@ -130,11 +130,8 @@ export class TemperatureDraggerComponent implements AfterViewInit, OnChanges {
   }
 
   getUrlPath(id: string) {
-    let baseHref = this.locationStrategy.getBaseHref();
-    if (baseHref.endsWith('')) {
-      baseHref = baseHref.slice(0, -1);
-    }
-    const path = this.location.path();
+    const baseHref = this.locationStrategy.getBaseHref().replace(/\/$/, '');
+    const path = this.location.path().replace(/\/$/, '');
 
     return `url(${baseHref}${path}${id}${this.svgControlId})`;
   }
