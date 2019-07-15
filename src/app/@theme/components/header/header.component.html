@@ -5,19 +5,37 @@
     </a>
     <a class="logo" href="#" (click)="navigateHome()">ngx-<span>admin</span></a>
   </div>
-  <nb-select [selected]="currentTheme" (selectedChange)="changeTheme($event)" status="primary">
-    <nb-option *ngFor="let theme of themes" [value]="theme.value"> {{ theme.name }}</nb-option>
+  <nb-select [selected]="currentTheme" (selectedChange)="changeTheme($event)" status="primary" class="theme-select">
+    <nb-option *ngFor="let theme of themes" [value]="theme.value">{{ theme.name }}</nb-option>
   </nb-select>
 </div>
 
 <div class="header-container">
   <nb-actions size="small">
-
-    <nb-action class="control-item">
-      <nb-search type="rotate-layout"></nb-search>
+    <nb-action class="control-item github-stars">
+      <span class="subtitle text">Support us: </span>
+      <iframe src="https://ghbtns.com/github-btn.html?user=akveo&repo=ngx-admin&type=star&count=true"
+              frameborder="0"
+              scrolling="0"
+              width="170px"
+              height="20px">
+      </iframe>
     </nb-action>
-    <nb-action class="control-item" icon="email-outline"></nb-action>
-    <nb-action class="control-item" icon="bell-outline"></nb-action>
+    <nb-action class="control-item downloads-count">
+      <nb-icon icon="download"></nb-icon>
+      <span class="subtitle number">358.000</span>
+    </nb-action>
+    <nb-action class="control-item contact-us">
+      <a nbButton ghost href="mailto:contact@akveo.com" (click)="trackEmailClick()">
+        <nb-icon icon="email-outline" pack="eva"></nb-icon>
+        <span>contact@akveo.com</span>
+      </a>
+    </nb-action>
+    <nb-action class="control-item search">
+      <nb-search type="rotate-layout" (click)="startSearch()"></nb-search>
+    </nb-action>
+    <nb-action class="control-item email" icon="email-outline"></nb-action>
+    <nb-action class="control-item notifications" icon="bell-outline"></nb-action>
     <nb-action class="user-action" *nbIsGranted="['view', 'user']" >
       <nb-user [nbContextMenu]="userMenu"
                [onlyPicture]="userPictureOnly"

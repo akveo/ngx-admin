@@ -1,0 +1,112 @@
+@import '../../styles/themes';
+@import '~bootstrap/scss/mixins/breakpoints';
+@import '~@nebular/theme/styles/global/breakpoints';
+
+@include nb-install-component() {
+  border-radius: nb-theme(button-rectangle-border-radius);
+  box-shadow: nb-theme(card-shadow);
+  position: fixed;
+  top: 50%;
+  transition: transform 0.3s ease;
+  z-index: 998;
+
+  @include nb-ltr() {
+    &.position-start {
+      left: 0;
+
+      &,
+      .toggle-settings {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+      }
+
+      &.expanded {
+        transform: translateX(nb-theme(sidebar-width));
+      }
+    }
+
+    &.position-end {
+      right: 0;
+
+      &,
+      .toggle-settings {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+
+      &.expanded {
+        transform: translateX(-#{nb-theme(sidebar-width)});
+      }
+    }
+  }
+
+  @include nb-rtl() {
+    &.position-start {
+      right: 0;
+
+      &,
+      .toggle-settings {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+
+      &.expanded {
+        transform: translateX(-#{nb-theme(sidebar-width)});
+      }
+    }
+
+    &.position-end {
+      left: 0;
+
+      &,
+      .toggle-settings {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+      }
+
+      &.expanded {
+        transform: translateX(nb-theme(sidebar-width));
+      }
+    }
+  }
+
+  .toggle-settings {
+    background: nb-theme(color-basic-100);
+    box-shadow: none;
+    border: none;
+    height: 3rem;
+    width: 3rem;
+    padding: 0;
+    text-align: center;
+  }
+
+  .icon {
+    font-size: 1.65rem;
+
+    &.icon-pulse {
+      animation-name: gear-pulse;
+      animation-duration: 1s;
+      animation-iteration-count: infinite;
+    }
+  }
+
+  @keyframes gear-pulse {
+    from {
+      transform: scale3d(1, 1, 1);
+    }
+
+    50% {
+      transform: scale3d(1.2, 1.2, 1.2);
+    }
+
+    to {
+      transform: scale3d(1, 1, 1);
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    .toggle-settings {
+      display: none;
+    }
+  }
+}

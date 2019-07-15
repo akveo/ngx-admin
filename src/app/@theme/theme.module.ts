@@ -12,6 +12,7 @@ import {
   NbSelectModule,
   NbIconModule,
   NbThemeModule,
+  NbCardModule,
 } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { NbSecurityModule } from '@nebular/security';
@@ -21,6 +22,11 @@ import {
   HeaderComponent,
   SearchInputComponent,
   TinyMCEComponent,
+  CallActionCardComponent,
+  ToggleSettingsButtonComponent,
+  LayoutDirectionSwitcherComponent,
+  SwitcherComponent,
+  ThemeSettingsComponent,
 } from './components';
 import {
   CapitalizePipe,
@@ -33,6 +39,7 @@ import {
   OneColumnLayoutComponent,
   ThreeColumnsLayoutComponent,
   TwoColumnsLayoutComponent,
+  SampleLayoutComponent,
 } from './layouts';
 import { DEFAULT_THEME } from './styles/theme.default';
 import { COSMIC_THEME } from './styles/theme.cosmic';
@@ -52,6 +59,7 @@ const NB_MODULES = [
   NbSelectModule,
   NbIconModule,
   NbEvaIconsModule,
+  NbCardModule,
 ];
 const COMPONENTS = [
   HeaderComponent,
@@ -61,6 +69,12 @@ const COMPONENTS = [
   OneColumnLayoutComponent,
   ThreeColumnsLayoutComponent,
   TwoColumnsLayoutComponent,
+  CallActionCardComponent,
+  ToggleSettingsButtonComponent,
+  LayoutDirectionSwitcherComponent,
+  SwitcherComponent,
+  SampleLayoutComponent,
+  ThemeSettingsComponent,
 ];
 const PIPES = [
   CapitalizePipe,

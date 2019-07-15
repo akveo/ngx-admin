@@ -1,0 +1,35 @@
+@import '../../styles/themes';
+
+@include nb-install-component() {
+  .subheader {
+    display: block;
+    font-family: nb-theme(text-subtitle-font-family);
+    font-size: nb-theme(text-subtitle-font-size);
+    font-weight: nb-theme(text-subtitle-font-weight);
+    line-height: nb-theme(text-subtitle-line-height);
+    margin-bottom: 0.875rem;
+    text-align: center;
+  }
+
+  .layout-setting-heading {
+    margin-bottom: 1.2rem;
+  }
+
+  .setting-icon {
+    font-size: 1.5rem;
+  }
+
+  .settings-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 0 0 2.575rem;
+  }
+
+  .switcher {
+    width: 12rem;
+  }
+}

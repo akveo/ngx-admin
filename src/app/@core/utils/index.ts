@@ -1,11 +1,4 @@
-import { LayoutService } from './layout.service';
-import { AnalyticsService } from './analytics.service';
-import { PlayerService } from './player.service';
-import { StateService } from './state.service';
-
-export {
-  LayoutService,
-  AnalyticsService,
-  PlayerService,
-  StateService,
-};
+export { LayoutService } from './layout.service';
+export { AnalyticsService } from './analytics.service';
+export { PlayerService } from './player.service';
+export { StateService } from './state.service';
