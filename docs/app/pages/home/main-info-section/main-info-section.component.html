@@ -1,0 +1,37 @@
+<div class="main-img-container">
+  <a href="http://akveo.com/ngx-admin/?utm_source=ngx_admin_landing&utm_medium=main_section_image"
+     target="_blank"
+     class="hero-image-link">
+    <img *ngIf="breakpoint.width >= breakpoints.md"
+         class="main-img"
+         defaultImage="assets/img/default.png"
+         lazyLoad="assets/img/ngx-admin.png"/>
+  </a>
+</div>
+<div class="main-inf">
+  <h1>ngx-admin</h1>
+  <p class="description">
+    The most popular admin dashboard based on <strong>Angular 8+</strong>, Bootstrap 4+ and
+    <a href="https://akveo.github.io/nebular?utm_source=ngx_admin_landing&utm_medium=main_section" target="_blank">Nebular</a> with
+    <a href="https://eva.design?utm_source=ngx_admin_landing&utm_medium=main_section">Eva Design System</a> support.
+    Free and Open Source for personal and commercial purposes.
+  </p>
+  <div class="mobile-main-img-container">
+    <img *ngIf="breakpoint.width <= breakpoints.sm" class="main-img" lazyLoad="assets/img/corporate-theme.png" alt="Light theme Dashboard"/>
+  </div>
+  <div class="badges">
+    <iframe class="stars"
+            src="https://ghbtns.com/github-btn.html?user=akveo&repo=ngx-admin&type=star&count=true"
+            frameborder="0"
+            width="170px"
+            scrolling="0">
+    </iframe>
+  </div>
+  <div class="buttons">
+    <a class="btn btn-installation-guidelines"
+       [routerLink]="'/docs/getting-started/installation-guidelines'">Installation Docs</a>
+    <a class="btn btn-demo"
+       href="http://akveo.com/ngx-admin?utm_source=ngx_admin_landing&utm_medium=main_section"
+       target="_blank">Demo</a>
+  </div>
+</div>

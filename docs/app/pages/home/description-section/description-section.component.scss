@@ -1,0 +1,108 @@
+/**
+ * @license
+ * Copyright Akveo. All Rights Reserved.
+ * Licensed under the MIT License. See License.txt in the project root for license information.
+ */
+
+@import '../../../@theme/styles/themes';
+@import '~@nebular/theme/styles/global/breakpoints';
+
+@include nb-install-component() {
+  $content-width: nb-theme(content-width);
+  $left-right-offset: 8.125rem;
+
+  width: calc(#{$content-width} - #{$left-right-offset} * 2);
+  display: flex;
+  margin: 0 auto;
+  position: relative;
+  margin-bottom: 5rem;
+
+  .descriptions {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 1.375rem;
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+
+  .icons-block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 6.25rem;
+    height: 6.25rem;
+    border-radius: 50%;
+    background-color: #ffffff;
+    box-shadow: nb-theme(shadow-default);
+  }
+
+  .title {
+    color: #000000;
+    font-size: 1.5rem;
+    margin-top: 2.75rem;
+
+  }
+
+  .description {
+    width: 100%;
+    color: nb-theme(color-fg);
+    font-family: nb-theme(font-secondary), sans-serif;
+    margin-top: 1.25rem;
+    text-align: center;
+    line-height: 1.8;
+  }
+
+  @include media-breakpoint-down(lg) {
+    flex-wrap: wrap;
+    width: 100%;
+
+    .descriptions {
+      margin-left: 0;
+      padding: 0 1rem;
+      flex: auto;
+      width: 50%;
+      margin-bottom: 1rem;
+    }
+  }
+
+  @include media-breakpoint-down(is) {
+    flex-direction: column;
+    top: 0;
+    padding-top: 4.125rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+
+    .descriptions {
+      width: 100%;
+      flex: 1;
+      padding: 0;
+      margin: 1.5rem 0 0;
+
+      &:first-child {
+        margin: 0;
+      }
+    }
+
+    .title {
+      margin-top: 1.5rem;
+    }
+
+    .description {
+      margin-bottom: 0;
+    }
+
+    .icons-block {
+      width: 4rem;
+      height: 4rem;
+    }
+
+    ::ng-deep svg {
+      width: 1.875rem;
+      height: 1.875rem;
+    }
+  }
+}

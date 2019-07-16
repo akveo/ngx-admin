@@ -1,0 +1,182 @@
+/**
+ * @license
+ * Copyright Akveo. All Rights Reserved.
+ * Licensed under the MIT License. See License.txt in the project root for license information.
+ */
+
+@import '../../../@theme/styles/themes';
+@import '~@nebular/theme/styles/global/breakpoints';
+
+@include nb-install-component() {
+  display: block;
+  text-align: center;
+  padding-top: 4.75rem;
+  padding-bottom: 5.125rem;
+
+  .social-button {
+    width: 19rem;
+    display: inline-flex;
+    align-items: center;
+    box-shadow: nb-theme(shadow-default);
+    background-color: nb-theme(color-white);
+    padding-left: 2rem;
+    border-radius: 0.25rem;
+    color: #000000;
+    text-decoration: none;
+    cursor: pointer;
+
+    &:hover {
+      box-shadow: nb-theme(shadow-hover-btn);
+    }
+
+    &:active {
+      box-shadow: nb-theme(shadow-active-btn);
+    }
+
+    > i {
+      width: 2.75rem;
+      text-align: center;
+    }
+
+    .info {
+      margin-left: 1.625rem;
+      text-align: left;
+    }
+
+    .appeal {
+      font-family: nb-theme(font-secondary), sans-serif;
+    }
+
+    .title {
+      font-size: 1.5rem;
+    }
+  }
+
+  p {
+    font-family: nb-theme(font-secondary), sans-serif;
+    font-size: nb-theme(font-size-lg);
+    width: 36%;
+    margin: 1.25rem auto 0;
+    line-height: 1.5;
+  }
+
+  .github {
+    margin-top: 2rem;
+    padding: 1.5rem 5rem 1.5rem 1.625rem;
+  }
+
+  .sub-title {
+    color: #000000;
+    margin-top: 2.5rem;
+    font-size: 1.5rem;
+  }
+
+  .buttons-group {
+    display: flex;
+    justify-content: center;
+    margin-top: 2.5rem;
+
+    .social-button {
+      margin-left: 1.5rem;
+
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+  }
+
+  .facebook {
+    padding: 1.5rem 5rem 1.25rem 1.625rem;
+
+    .info {
+      margin-left: 1.625rem;
+    }
+
+    .title {
+      margin-top: 0.25rem;
+    }
+  }
+
+  .linkedin {
+    padding: 1.5rem 5rem 1.25rem 1.625rem;
+
+    .info {
+      margin-left: 1.625rem;
+    }
+  }
+
+  .twitter {
+    padding: 1.5rem 5rem 1.25rem 1.625rem;
+
+    .info {
+      margin-left: 1.625rem;
+    }
+  }
+
+  @include media-breakpoint-down(md) {
+    p {
+      width: 80%;
+    }
+
+    //.social-button {
+    //  width: auto;
+    //}
+
+    .github {
+      width: auto;
+    }
+
+    .facebook {
+      width: 13rem;
+      padding-right: 1.5rem;
+    }
+
+    .linkedin {
+      width: 13rem;
+      padding-right: 1.5rem;
+    }
+
+    .twitter {
+      width: 13rem;
+      padding-right: 1.5rem;
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    padding: 4.25rem 1rem 2.125rem;
+
+    p {
+      width: 100%;
+      font-size: nb-theme(font-size);
+    }
+
+    .social-button {
+      margin-top: 2rem;
+      margin-left: 0;
+      padding: 1.25rem 0 1.25rem 1.875rem;
+      width: 100%;
+
+      .info {
+        margin-left: 1.5rem;
+      }
+    }
+
+    .sub-title {
+      margin-top: 2.25rem;
+    }
+
+    .buttons-group {
+      margin-top: 1.875rem;
+      flex-direction: column;
+
+      .social-button {
+        margin-top: 1rem;
+        margin-left: 0;
+
+        &:first-child {
+          margin-top: 0;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,43 @@
+<nb-card>
+  <nb-card-body>
+    <h2>{{ vm.themeTitle }} Theme</h2>
+    <p *ngIf="vm.parentTheme">inherited from {{ vm.parentTheme }} theme</p>
+
+    <div class="search-wrapper">
+      <input class="search-control" placeholder="Search for..." [formControl]="searchControl">
+    </div>
+
+    <table class="striped">
+      <thead>
+        <tr>
+          <td>Name</td>
+          <td>Value</td>
+          <td>Parent</td>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let prop of vm.filteredThemeProperties | async"
+            [ngxFragment]="prop.name"
+            [ngxFragmentSync]="false"
+            ngxFragmentClass="highlighted-row">
+          <td>
+            <a [routerLink]="" fragment="{{ prop.name }}">{{ prop.name }}</a>
+          </td>
+
+          <td ngxColorSwatch>{{ prop.value }}</td>
+
+          <td>
+            <a [routerLink]="['/docs/themes', parent.theme]" fragment="{{ parent.prop }}"
+              [class.inheritance-property]="index > 0"
+              *ngFor="let parent of prop.parents; let index = index">
+              <i *ngIf="index > 0" class="inheritance-icon feather-arrow-left"></i>
+              <span>{{ parent.prop }}</span>
+              <span *ngIf="parent.theme !== vm.themeName" class="parent-theme-name">({{ parent.theme }})</span>
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </nb-card-body>
+</nb-card>

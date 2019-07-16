@@ -1,0 +1,184 @@
+/**
+ * @license
+ * Copyright Akveo. All Rights Reserved.
+ * Licensed under the MIT License. See License.txt in the project root for license information.
+ */
+
+@import '../../../@theme/styles/themes';
+@import '~@nebular/theme/styles/global/breakpoints';
+
+@include nb-install-component() {
+  display: block;
+  padding-top: 6rem;
+  padding-bottom: 7.875rem;
+
+  .carousel-container {
+    position: relative;
+  }
+
+  .reviews {
+    max-width: 55.125rem;
+    display: flex;
+    margin: 0 auto;
+    margin-top: 4.625rem;
+  }
+
+  .review-card {
+    background-color: #ffffff;
+    box-shadow: nb-theme(shadow-default);
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    .header-card {
+      display: flex;
+      position: relative;
+      padding-top: 1rem;
+      padding-left: 1rem;
+      padding-right: 3.125rem;
+      overflow: hidden;
+    }
+
+    .social-icon {
+      position: absolute;
+      right: 1.375rem;
+      top: 1.875rem;
+    }
+
+    .avatar {
+      max-width: 3.375rem;
+      height: 3.375rem;
+      border-radius: 50%;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .personal-info {
+      font-family: nb-theme(font-main), sans-serif;
+      margin-left: 1.25rem;
+      margin-top: 0.5rem;
+      color: #000000;
+      word-break: break-all;
+    }
+
+    .body-card {
+      font-family: nb-theme(font-secondary), sans-serif;
+      color: #000000;
+      padding: 0 1rem;
+      margin-top: 1.75rem;
+      line-height: 1.8;
+      height: 10.375rem;
+    }
+
+    .footer-card {
+      border-top: 1px solid #eaeaea;
+    }
+  }
+
+  .go-to-button {
+    display: block;
+    font-family: nb-theme(font-main), sans-serif;
+    color: nb-theme(color-active-fg);
+    padding: 1rem;
+    cursor: pointer;
+    position: relative;
+    text-decoration: none;
+
+    i {
+      position: absolute;
+      right: 1.375rem;
+      top: 1rem;
+    }
+  }
+
+  .swiper-container {
+    position: static;
+  }
+
+  .swiper-button-prev, .swiper-button-next {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: none;
+    height: 5rem;
+    width: 5rem;
+    border-radius: 50%;
+    background-color: #ffffff;
+    box-shadow: nb-theme(shadow-default);
+    top: 9rem;
+
+    &:hover {
+      box-shadow: nb-theme(shadow-hover-btn);
+    }
+
+    &:active {
+      box-shadow: nb-theme(shadow-active-btn);
+    }
+  }
+
+  .swiper-button-prev {
+    left: 8.125rem;
+  }
+
+  .swiper-button-next {
+    right: 8.125rem;
+  }
+
+  .swiper-pagination {
+    top: 110%;
+
+    ::ng-deep span {
+      height: 0.75rem;
+      width: 0.75rem;
+      opacity: 0.08;
+      background-color: #000000;
+
+      &.swiper-pagination-bullet-active {
+        opacity: 1;
+        background: nb-theme(color-active-bg);
+      }
+    }
+  }
+
+  @include media-breakpoint-down(xl) {
+    .swiper-button-prev {
+      left: 5%;
+    }
+
+    .swiper-button-next {
+      right: 5%;
+    }
+  }
+
+  @include media-breakpoint-down(lg) {
+    .swiper-button-prev, .swiper-button-next {
+      display: none;
+    }
+  }
+
+  @include media-breakpoint-down(is) {
+    padding-top: 4rem;
+    padding-bottom: 4.375rem;
+
+    .reviews {
+      margin-top: 2.25rem;
+    }
+
+    .swiper-pagination {
+      top: 108%;
+    }
+
+    .swiper-button-prev, .swiper-button-next {
+      display: none;
+    }
+
+    .swiper-slide {
+      width: 80%;
+    }
+  }
+}

@@ -168,6 +168,125 @@
           }
         }
       }
+    },
+    "docs": {
+      "root": "",
+      "sourceRoot": "docs",
+      "projectType": "application",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "docs/dist",
+            "index": "docs/index.html",
+            "main": "docs/main.ts",
+            "tsConfig": "docs/tsconfig.app.json",
+            "polyfills": "docs/polyfills.ts",
+            "assets": [
+              "docs/assets",
+              "docs/404.html",
+              "docs/favicon.png",
+              "docs/google46533d2e7a851062.html"
+            ],
+            "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.css",
+              "node_modules/nebular-icons/scss/nebular-icons.scss",
+              "node_modules/swiper/dist/css/swiper.min.css",
+              "node_modules/highlight.js/styles/dracula.css",
+              "docs/app/@theme/styles/styles.scss"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "fileReplacements": [
+                {
+                  "replace": "docs/environments/environment.ts",
+                  "with": "docs/environments/environment.prod.ts"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "docs:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "docs:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "docs:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "docs/test.ts",
+            "karmaConfig": "./karma.conf.js",
+            "polyfills": "docs/polyfills.ts",
+            "tsConfig": "docs/tsconfig.spec.json",
+            "scripts": [
+            ],
+            "styles": [
+              "node_modules/nebular-icons/scss/nebular-icons.scss",
+              "docs/app/@theme/styles/styles.scss"
+            ],
+            "assets": [
+              "docs/assets",
+              "docs/favicon.ico",
+              "docs/favicon.png",
+              "docs/google46533d2e7a851062.html"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "docs/tsconfig.spec.json",
+              "docs/tsconfig.app.json"
+            ],
+            "exclude": []
+          }
+        }
+      }
+    },
+    "docs-e2e": {
+      "root": "",
+      "sourceRoot": "",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "./protractor.conf.js",
+            "devServerTarget": "docs:serve"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "e2e/tsconfig.e2e.json"],
+            "exclude": []
+          }
+        }
+      }
     }
   },
   "defaultProject": "ngx-admin-demo",
