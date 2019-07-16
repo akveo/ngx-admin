@@ -1,0 +1,22 @@
+<nb-layout>
+  <nb-layout-header fixed>
+    <div class="content-center">
+      <ngx-landing-header class="docs-header" [sidebarTag]="sidebarTag" [isDocs]="true"></ngx-landing-header>
+    </div>
+  </nb-layout-header>
+  <nb-sidebar class="menu-sidebar" [tag]="sidebarTag" [responsive]="true" [compactedBreakpoints]="[]" [collapsedBreakpoints]="collapsedBreakpoints">
+    <nb-menu [items]="menuItems" tag="leftMenu"></nb-menu>
+  </nb-sidebar>
+  <nb-layout-column>
+    <router-outlet></router-outlet>
+
+    <div class="contact-us">
+      <h2>Need some help or found an issue?</h2>
+      <p>Contact us at <a href="mailto:contact@akveo.com">contact@akveo.com</a></p>
+    </div>
+  </nb-layout-column>
+  <nb-layout-footer>
+    <ngx-docs-footer></ngx-docs-footer>
+  </nb-layout-footer>
+</nb-layout>
+

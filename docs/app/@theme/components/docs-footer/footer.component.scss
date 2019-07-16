@@ -1,0 +1,108 @@
+/**
+ * @license
+ * Copyright Akveo. All Rights Reserved.
+ * Licensed under the MIT License. See License.txt in the project root for license information.
+ */
+
+@import '../../../@theme/styles/themes';
+@import '~@nebular/theme/styles/global/breakpoints';
+
+@include nb-install-component() {
+
+  $text-fg: nb-theme(footer-text-color);
+  $social-fg: nb-theme(text-hint-color);
+  $title-fg: nb-theme(text-basic-color);
+
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  padding-top: 1.25rem;
+  justify-content: space-around;
+
+  > div {
+    display: flex;
+    margin-right: 0;
+    justify-content: center;
+    width: 100%;
+    &:last-child {
+      margin-right: 0;
+    }
+
+    a {
+      color: $text-fg;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    li {
+      display: flex;
+      margin-bottom: 1rem;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    &.logo {
+      display: none;
+    }
+
+    .title {
+      color: $title-fg;
+      font-size: 1.125rem;
+      font-weight: bold;
+      line-height: 1.375rem;
+    }
+
+    .copy {
+      color: $text-fg;
+      display: list-item;
+      font-size: 0.75rem;
+    }
+
+    .social {
+      display: flex;
+      flex-direction: row;
+      a {
+        font-size: 3rem;
+        text-decoration: none;
+        color: $social-fg;
+        margin-right: 1rem;
+      }
+    }
+  }
+
+  > div.logo {
+    display: none;
+  }
+
+  @include media-breakpoint-up(md) {
+    > div {
+      justify-content: flex-start;
+      margin-right: 2rem;
+      width: auto;
+
+      li {
+        justify-content: flex-start;
+        align-items: flex-start;
+        text-align: left;
+      }
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    > div.logo {
+      display: flex;
+      flex-direction: column;
+      margin-top: -2.5rem;
+      text-align: center;
+      justify-content: center;
+
+      img {
+        max-width: 9rem;
+      }
+    }
+  }
+}

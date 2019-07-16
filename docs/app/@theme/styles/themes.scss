@@ -1,0 +1,205 @@
+/**
+ * @license
+ * Copyright Akveo. All Rights Reserved.
+ * Licensed under the MIT License. See License.txt in the project root for license information.
+ */
+
+@import '~@nebular/theme/styles/theming';
+@import '~@nebular/theme/styles/themes/corporate';
+@import '~@nebular/theme/styles/themes/default';
+@import '~@nebular/theme/styles/global/breakpoints';
+
+/*
+We have to overwrite breakpoints because we need to add *macpro* breakpoint.
+But if we add it using *map-merge* function we'll get the warning and *media-breakpoint-down* will stop working.
+*/
+$grid-breakpoints: (
+  xs: 0,
+  is: 400px,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  macpro: 1280px,
+  xxl: 1400px,
+  xxxl: 1600px
+);
+
+$nb-enabled-themes: (ngx-landing, docs-page);
+
+/* stylelint-disable */
+$nb-themes: nb-register-theme((
+  font-family-primary: unquote('-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"'),
+
+  content-width: 1440px,
+  settings-col-width: 16rem,
+  settings-col-margin: 1.875rem,
+
+  color-primary: #3366ff,
+
+  separator: transparent,
+  color-success: #18cb90,
+  color-bg: transparent,
+  color-fg: #405571,
+  color-fg-heading: #546d8d,
+  color-fg-text: #919fb1,
+  color-fg-icon: #c4c8d1,
+  color-gray-bg: #edf0f5,
+  color-fg-heading-light: #405571,
+  color-active-fg: color-success,
+  color-active-bg: color-success,
+
+  shadow: none,
+
+  layout-background-color: transparent,
+  layout-padding: 0,
+  layout-medium-padding: 0,
+  layout-small-padding: 0,
+
+  header-background-color: #fafafa,
+  header-padding: 0 0,
+  header-height: 4.25rem,
+  header-fg: color-fg,
+  header-menu-fg-active: color-active-fg,
+  header-section-border-color: #f5f5f5,
+
+  header-button-border: #dce4f2,
+
+  sidebar-width: 11.25rem,
+
+  menu-bg: transparent,
+  menu-item-padding: 0.675rem 1rem,
+  menu-item-fg: #8992a3,
+  menu-active-fg: color-primary,
+  menu-font-size: 0.95rem,
+  menu-font-weight: font-weight-normal,
+
+  menu-active-bg: transparent,
+
+  footer-height: 18.75rem,
+  footer-padding: 1.25rem 0,
+  footer-fg: #8992a3,
+  footer-fg-highlight: footer-fg,
+  footer-separator: transparent,
+  footer-title-fg: #0d1c2e,
+
+
+  list-icon-item-bg: #ebf1fa,
+  list-icon-item-fg: #0d1c2e,
+
+  switcher-view-bg: #d8e1f0,
+
+  checkbox-size: 1.5rem,
+  checkbox-border-color: form-control-border-color,
+  checkbox-checkmark: transparent,
+
+  checkbox-checked-bg: color-active-fg,
+  checkbox-checked-size: 1.5rem,
+  checkbox-checked-border-color: checkbox-checked-bg,
+  checkbox-checked-checkmark: color-white,
+
+  format-name-fg: #6a7385,
+
+  popover-bg: #0d1c2e,
+  popover-fg: #ffffff,
+  popover-border: #0d1c2e,
+  popover-border-radius: 0.75rem,
+  popover-arrow-size: 6px,
+
+  info-bg: #fff2f2,
+  info-fg: #ff3d71,
+
+  custiom-radius: 0.625rem,
+
+  gray-section-bg: #fafafa,
+
+  shadow-default: 0 0.5rem 1.25rem 0 rgba(218, 224, 235, 0.6),
+  shadow-btn: 0 0.375rem 2.125rem 0 rgba(184, 255, 231, 0.5),
+  shadow-hover-btn: 0 0.5rem 2rem 0 #dae0eb,
+  shadow-active-btn: 0 0.5rem 1.25rem 0 rgba(218, 224, 235, 0.6),
+  shadow-hover-green-btn: 0 0.5rem 2rem 0 rgba(0, 219, 146, 0.25),
+  shadow-active-green-btn: 0 0.375rem 2.125rem 0 rgba(0, 219, 146, 0.32),
+
+  footer-text-highlight-color: text-basic-color,
+  link-text-color: color-success-default,
+  link-text-focus-color: color-success-focus,
+  link-text-hover-color: color-success-hover,
+
+), ngx-landing, corporate);
+
+/* stylelint-enable foo */
+$nb-themes: nb-register-theme((
+  // custom
+  font-family-primary: unquote('-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"'),
+
+  content-width: 1440px,
+  settings-col-width: 16rem,
+  settings-col-margin: 1.875rem,
+  color-gray-light: #ced5dd,
+  color-fg-heading-light: #405571,
+  code-block-bg: linear-gradient(225deg, #333c66 0%, #1d2447 100%),
+  color-info: #5699f0,
+  color-warning: #f09301,
+  header-menu-fg-active: color-fg-highlight,
+
+  radius: 0.25rem,
+  separator: transparent,
+  color-bg: transparent,
+  color-fg: #494949,
+  color-fg-text: #494949,
+  color-fg-heading: rgba(0, 0, 0, 0.88),
+  color-fg-icon: #cdd6e3,
+
+  shadow: 0 8px 20px 0 rgba(218, 224, 235, 0.6),
+
+  layout-bg: #fafafa,
+  layout-padding: 3.25rem 1.25rem 3.25rem 1rem,
+  layout-medium-padding: 0,
+  layout-small-padding: 0,
+
+  header-background-color: #fafafa,
+  sidebar-padding: 2rem,
+  sidebar-shadow: none,
+  color-fg-highlight: #00db92,
+  link-color:	color-fg-highlight,
+  link-color-hover: color-fg-highlight,
+  link-color-visited: color-fg-highlight,
+
+  header-height: 4.25rem,
+  header-padding: 0,
+  header-fg: black,
+
+  menu-fg: black,
+  menu-font-size: 0.95rem,
+  menu-font-weight: font-weight-normal,
+  menu-submenu-fg: color-fg-heading-light,
+  menu-active-fg: menu-fg,
+  menu-submenu-padding: 0,
+  menu-submenu-item-container-padding: 0 1rem,
+  menu-submenu-active-border-color: transparent,
+  menu-submenu-active-fg: color-fg-highlight,
+  menu-active-font-weight: bold,
+
+  card-bg: white,
+  card-header-font-size: 2rem,
+  card-header-font-weight: bold,
+  card-header-fg-heading: black,
+  card-margin: 2.5rem,
+
+  footer-background-color: transparent,
+  footer-height: 18.75rem,
+  footer-padding: 1.25rem 0,
+  footer-shadow: none,
+  footer-fg: color-fg-heading-light,
+  footer-menu-fg: color-fg-text,
+  footer-text-highlight-color: text-basic-color,
+
+  link-text-color: color-success-default,
+  link-text-focus-color: color-success-focus,
+  link-text-hover-color: color-success-hover,
+
+  sidebar-background-color: transparent,
+
+  menu-item-hover-text-color: text-success-hover-color,
+  menu-item-active-text-color: text-success-color,
+), docs-page, default);

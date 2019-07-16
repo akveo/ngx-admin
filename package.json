@@ -26,7 +26,9 @@
     "pree2e": "webdriver-manager update --standalone false --gecko false",
     "e2e": "ng e2e",
     "docs": "compodoc -p src/tsconfig.app.json -d docs",
-    "docs:serve": "compodoc -p src/tsconfig.app.json -d docs -s",
+    "docs:build": "npm run build -- docs --prod --aot --base-href /ngx-admin/",
+    "docs:serve": "npm start -- docs --port 4100",
+    "docs:gh-pages": "npm run docs:build && npm run ngh -- --dir ./docs/dist",
     "prepush": "npm run lint:ci",
     "release:changelog": "npm run conventional-changelog -- -p angular -i CHANGELOG.md -s",
     "postinstall": "ngcc --properties es2015 es5 browser module main --first-only --create-ivy-entry-points --tsconfig \"./src/tsconfig.app.json\""
@@ -46,6 +48,7 @@
     "@angular/router": "^10.0.10",
     "@asymmetrik/ngx-leaflet": "3.0.1",
     "@nebular/auth": "6.0.0",
+    "@nebular/bootstrap": "6.0.0",
     "@nebular/eva-icons": "6.0.0",
     "@nebular/security": "6.0.0",
     "@nebular/theme": "6.0.0",

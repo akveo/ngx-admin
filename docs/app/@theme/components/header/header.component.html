@@ -1,0 +1,29 @@
+<div class="section left">
+  <button *ngIf="sidebarTag" class="sidebar-toggle" (click)="toggleSidebar()">
+    <i class="nb-menu"></i>
+  </button>
+  <div class="logo">
+    <a routerLink="/">ngx-admin</a>
+    <span class="version">v{{ currentVersion }}</span>
+  </div>
+</div>
+<div class="section middle">
+  <nb-menu [items]="headerMenu"></nb-menu>
+  <a routerLink="/" fragment="backend-bundles" class="backend-bundles eva-parent-hover">
+    <i [innerHTML]="'gift-outline' | eva: { width: 24, height: 24, fill: '#ff4d6b', animationType: 'shake' }"></i>
+    <span>Backend Bundles</span>
+  </a>
+</div>
+<div class="section right">
+
+  <ng-container *ngIf="!isDocs">
+    Need some help? Let us know! <a (click)="trackEmailClick()" href="mailto:contact@akveo.com">contact@akveo.com</a>
+  </ng-container>
+
+  <iframe *ngIf="isDocs"
+          class="stars"
+          src="https://ghbtns.com/github-btn.html?user=akveo&repo=ngx-admin&type=star&count=true"
+          frameborder="0"
+          scrolling="0">
+  </iframe>
+</div>

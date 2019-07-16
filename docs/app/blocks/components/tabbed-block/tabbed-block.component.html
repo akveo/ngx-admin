@@ -1,0 +1,21 @@
+<ng-container [ngSwitch]="currentTab?.tab">
+  <ng-container *ngFor="let component of source">
+
+    <ng-container *ngSwitchCase="'overview'">
+      <ngx-overview-block *ngIf="hasOverview(component)" [source]="component"></ngx-overview-block>
+    </ng-container>
+
+    <ng-container *ngSwitchCase="'theme'">
+      <ngx-styles-block *ngIf="hasTheme(component)" [source]="component"></ngx-styles-block>
+    </ng-container>
+
+    <ng-container *ngSwitchCase="'api'">
+      <ngx-api-block *ngIf="hasAPI(component)" [source]="component" ></ngx-api-block>
+    </ng-container>
+
+    <ng-container *ngSwitchCase="'examples'">
+      <ngx-examples-block *ngIf="hasExamples(component)" [source]="component" ></ngx-examples-block>
+    </ng-container>
+
+  </ng-container>
+</ng-container>

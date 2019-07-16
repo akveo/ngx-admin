@@ -1,0 +1,274 @@
+/**
+ * @license
+ * Copyright Akveo. All Rights Reserved.
+ * Licensed under the MIT License. See License.txt in the project root for license information.
+ */
+
+@import '../../../@theme/styles/themes';
+@import '~@nebular/theme/styles/global/breakpoints';
+
+@include nb-install-component() {
+  $color-active: nb-theme(color-active-fg);
+
+  display: flex;
+  padding: 3.375rem 0 0;
+  max-width: 120rem;
+  margin: 0 auto;
+
+  .description {
+    font-size: 1.5rem;
+  }
+
+  .hero-image-link {
+    position: relative;
+    display: block;
+    padding-top: 84%;
+    overflow: hidden;
+
+    &::after {
+      content: ' ';
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(0, #fafafa, transparent);
+      height: 20%;
+    }
+
+    img {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: auto !important;
+    }
+  }
+
+  .main-img-container {
+    min-width: 60.625rem;
+    min-height: 47.875rem;
+
+    .main-img {
+      width: 100%;
+      height: 100%;
+      transition: opacity 1s;
+      opacity: 0;
+
+      &.ng-lazyloaded {
+        opacity: 1;
+      }
+    }
+  }
+
+  .main-inf {
+    width: 44%;
+    margin: 4.625rem 9% 0 6%;
+  }
+
+  h1 {
+    font-family: 'Helvetica Neue Bold', sans-serif;
+    font-size: 4rem;
+    color: $color-active;
+    margin: 0;
+  }
+
+  p {
+    font-family: nb-theme(font-secondary), sans-serif;
+    font-size: nb-theme(font-size-lg);
+    line-height: 1.5;
+    margin-top: 2.25rem;
+    margin-bottom: 0;
+
+    a {
+      text-decoration: none;
+      font-family: nb-theme(font-main), sans-serif;
+      color: nb-theme(color-active-fg);;
+    }
+  }
+
+  .badges {
+    display: flex;
+    margin-top: 2.75rem;
+    flex-direction: row;
+    align-items: center;
+
+    .stars {
+      width: 6.25rem;
+      height: 1.25rem;
+      margin-right: 1rem;
+    }
+  }
+
+  .buttons {
+    margin-top: 1.875rem;
+  }
+
+  .btn {
+    font-family: nb-theme(font-main), sans-serif;
+    border-radius: 3px;
+    border: none;
+    background: #ffffff;
+    color: #000000;
+    padding: 1.125rem 1em;
+    box-shadow: nb-theme(shadow-default);
+    cursor: pointer;
+    text-transform: uppercase;
+
+    &.btn-demo {
+      margin-left: 1em;
+      padding-left: 4rem;
+      padding-right: 4rem;
+      color: #ffffff;
+      background-color: nb-theme(color-active-fg);
+      box-shadow: nb-theme(shadow-btn);
+
+      &:hover {
+        box-shadow: nb-theme(shadow-hover-green-btn);
+      }
+
+      &:active {
+        box-shadow: nb-theme(shadow-active-green-btn);
+      }
+    }
+
+    &:hover {
+      box-shadow: nb-theme(shadow-hover-btn);
+    }
+
+    &:active {
+      box-shadow: nb-theme(shadow-active-btn);
+    }
+  }
+
+  @include media-breakpoint-down(xxl) {
+    .main-img-container {
+      min-width: 50.625rem;
+      min-height: 47.875rem;
+    }
+
+    .main-inf {
+      width: 100%;
+      margin: 4.625rem 5.875rem 0 2.625rem;
+    }
+  }
+
+  @include media-breakpoint-down(xl) {
+    .main-img-container {
+      min-width: 39rem;
+      min-height: 36.25rem;
+    }
+  }
+
+  @include media-breakpoint-down(lg) {
+    padding-bottom: 6.25rem;
+
+    .main-img-container {
+      min-height: 28.75rem;
+      min-width: 31rem;
+    }
+
+    .main-inf {
+      margin-right: 0.75rem;
+      margin-left: 1rem;
+    }
+
+    .btn {
+        &.btn-demo {
+          padding-left: 3.25rem;
+          padding-right: 3.25rem;
+        }
+    }
+  }
+
+  @include media-breakpoint-down(xxl) {
+    .description {
+      font-size: 1.2rem;
+    }
+  }
+
+  @include media-breakpoint-down(md) {
+    .main-img-container {
+      min-height: 21.875rem;
+      min-width: 23rem;
+      width: 75rem;
+    }
+
+    .main-inf {
+      margin-top: 1.25rem;
+    }
+
+    h1 {
+      font-size: 3rem;
+    }
+
+    p {
+      font-size: 1rem;
+      margin-top: 1.25rem;
+    }
+
+    .btn {
+      font-size: 0.7rem;
+      padding-bottom: 1rem;
+      padding-top: 1rem;
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    padding-top: 1.75rem;
+    flex-direction: column;
+
+    .main-inf {
+      margin: 0;
+    }
+
+    .mobile-main-img-container {
+      width: 100%;
+      height: auto;
+
+      img {
+        width: 100%;
+        height: 100%;
+        transition: opacity 1s;
+        opacity: 0;
+
+        &.ng-lazyloaded {
+          opacity: 1;
+        }
+      }
+    }
+
+    h1 {
+      font-size: 3rem;
+      text-align: center;
+    }
+
+    p {
+      font-size: nb-theme(font-size);
+      text-align: justify;
+      margin: 1.75rem 1rem 0;
+    }
+
+    .main-img-container {
+      margin: 1.375rem 0 0;
+      min-width: 0;
+      min-height: 0;
+      width: 0;
+    }
+
+    .badges {
+      margin-top: 2.375rem;
+      justify-content: center;
+    }
+
+    .buttons {
+      a {
+        display: block;
+        margin: 0 1rem;
+
+        &.btn-demo {
+          margin-top: 1rem;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,46 @@
+/**
+ * @license
+ * Copyright Akveo. All Rights Reserved.
+ * Licensed under the MIT License. See License.txt in the project root for license information.
+ */
+
+@import '../../../@theme/styles/themes';
+@import '~@nebular/theme/styles/global/breakpoints';
+
+@include nb-install-component() {
+  $content-width: nb-theme(content-width);
+
+  .gray-section {
+    background-color: nb-theme(gray-section-bg);
+  }
+
+  ngx-landing-description-section,
+  ngx-landing-reason-section,
+  ngx-landing-reviews-section,
+  ngx-landing-our-projects-section,
+  ngx-landing-social-section,
+  ngx-landing-contact-section,
+  ngx-backend-bundles-section {
+    max-width: $content-width;
+    margin: 0 auto;
+  }
+
+  ngx-landing-description-section {
+    margin-top: -3rem;
+  }
+
+
+  @include media-breakpoint-down(is) {
+    ngx-landing-main-info,
+    ngx-landing-description-section,
+    ngx-landing-theme-section,
+    ngx-landing-reason-section,
+    ngx-landing-reviews-section,
+    ngx-landing-our-projects-section,
+    ngx-landing-social-section,
+    ngx-landing-contact-section {
+      max-width: 100%;
+    }
+
+  }
+}
