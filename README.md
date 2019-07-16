@@ -27,7 +27,7 @@ Easy way to integrate ngx-admin with .NET, Node.js, Java or PHP. [Checkout our S
 
 ### What's included:
 
-- Angular 7+ & Typescript
+- Angular 8+ & Typescript
 - Bootstrap 4+ & SCSS
 - Responsive layout
 - RTL support
