@@ -1,0 +1,65 @@
+<ngx-landing-section-title>
+  Multiple theme
+</ngx-landing-section-title>
+
+<div class="carousel-container">
+  <div  class="swiper-container reviews"
+        [swiper]="swiperConfig"
+        [(index)]="sliderIndex">
+    <div class="swiper-wrapper">
+      <a href="http://akveo.com/ngx-admin/pages/dashboard?theme=default&utm_source=ngxsite&utm_medium=slider&utm_campaign=themes" target="_blank" class="image-container swiper-slide">
+        <img *ngIf="breakpoint.width <= breakpoints.sm"
+             data-src="assets/img/light-theme.png"
+             class="swiper-lazy"
+             alt="Light Theme" />
+        <img *ngIf="!(breakpoint.width <= breakpoints.sm)"
+             lazyLoad="assets/img/light-theme.png"
+             defaultImage="assets/img/default.png"
+             alt="Light Theme" />
+      </a>
+      <a href="http://akveo.com/ngx-admin/pages/dashboard?theme=dark&utm_source=ngxsite&utm_medium=slider&utm_campaign=themes" target="_blank" class="image-container swiper-slide">
+        <img *ngIf="breakpoint.width <= breakpoints.sm"
+             data-src="assets/img/dark-theme.png"
+             class="swiper-lazy"
+             alt="Dark Theme" />
+        <img *ngIf="!(breakpoint.width <= breakpoints.sm)"
+             lazyLoad="assets/img/dark-theme.png"
+             defaultImage="assets/img/default.png"
+             alt="Dark Theme" />
+      </a>
+      <a href="http://akveo.com/ngx-admin/pages/dashboard?theme=cosmic&utm_source=ngxsite&utm_medium=slider&utm_campaign=themes" target="_blank" class="image-container swiper-slide">
+        <img *ngIf="breakpoint.width <= breakpoints.sm"
+             data-src="assets/img/cosmic-theme.png"
+             class="swiper-lazy"
+             alt="Cosmic Theme" />
+        <img *ngIf="!(breakpoint.width <= breakpoints.sm)"
+             lazyLoad="assets/img/cosmic-theme.png"
+             defaultImage="assets/img/default.png"
+             alt="Cosmic Theme" />
+      </a>
+      <a href="http://akveo.com/ngx-admin/pages/dashboard?theme=corporate&utm_source=ngxsite&utm_medium=slider&utm_campaign=themes" target="_blank" class="image-container swiper-slide">
+        <img *ngIf="breakpoint.width <= breakpoints.sm"
+             data-src="assets/img/corporate-theme.png"
+             class="swiper-lazy"
+             alt="Corporate Theme" />
+        <img *ngIf="!(breakpoint.width <= breakpoints.sm)"
+             src="assets/img/corporate-theme.png"
+             alt="Corporate Theme"
+             class="ng-lazyloaded"/>
+      </a>
+    </div>
+
+    <div class="swiper-pagination"></div>
+
+    <div class="swiper-button-prev">
+      <i [innerHTML]="'arrow-ios-back' | eva: { width: 36, height: 36, fill: '#00db92' }"></i>
+    </div>
+    <div class="swiper-button-next">
+      <i [innerHTML]="'arrow-ios-forward' | eva: { width: 36, height: 36, fill: '#00db92' }"></i>
+    </div>
+  </div>
+</div>
+
+<a class="btn btn-demo"
+   href="http://akveo.com/ngx-admin?utm_source=ngx_admin_landing&utm_medium=theme_section"
+   target="_blank">View demo</a>

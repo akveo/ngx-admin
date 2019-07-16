@@ -1,0 +1,243 @@
+/**
+ * @license
+ * Copyright Akveo. All Rights Reserved.
+ * Licensed under the MIT License. See License.txt in the project root for license information.
+ */
+
+@import '../../../@theme/styles/themes';
+
+@include nb-install-component() {
+  display: flex;
+
+  $note-fg-info: nb-theme(color-info);
+  $note-bg-info: #f0f6ff;
+  $note-fg-warning: nb-theme(color-warning);
+  $note-bg-warning: #fffae4;
+  $settings-width: nb-theme(settings-col-width);
+  $settings-margin: nb-theme(settings-col-margin);
+  $heading-light: nb-theme(color-fg-heading-light);
+  $code-bg: #f1f2f3;
+  $code-fg: nb-theme(color-info);
+  $code-block-bg: nb-theme(code-block-bg);
+  $table-head-fg: #8994a3;
+  $table-border: 1px solid #f1f2f3;
+  $table-stripe-bg: #f5f6f7;
+
+  .not-found {
+    color: $heading-light;
+    font-size: 1.25rem;
+  }
+
+  .middle-column {
+    flex: 3;
+    min-width: 0;
+
+    ::ng-deep nb-card {
+
+      nb-card-body {
+        padding: 2rem 1rem;
+
+        > *:last-child {
+          margin-bottom: 0!important;
+
+          *:last-child {
+            margin-bottom: 0 !important;
+          }
+        }
+      }
+
+      h1, h2, h3, h4, h5, h6 {
+        line-height: 1.25;
+        margin-bottom: 1.25rem;
+        font-weight: bold;
+      }
+
+      h3 {
+        color: $heading-light;
+      }
+
+      p {
+        font-size: 0.9375rem;
+        line-height: 1.5;
+      }
+
+      img {
+        max-width: 100%;
+      }
+
+      pre {
+        margin-bottom: 2rem;
+      }
+
+      code {
+        background: $code-bg;
+        color: $code-fg;
+        padding: 0.125rem 0.5rem;
+        border-radius: 0.25rem;
+      }
+
+      code.hljs {
+        color: #f8f8f2;
+        padding: 2rem 2.5rem;
+        border-radius: 0.5rem;
+        background: $code-block-bg;
+        font-size: 0.875rem;
+      }
+
+      ::ng-deep {
+        .widget-block {
+          display: block;
+          margin-bottom: 2rem;
+        }
+
+        ngx-styles-table-block table {
+          margin-bottom: 0;
+        }
+      }
+
+      table {
+        font-size: 0.9375rem;
+        width: 100%;
+        margin-bottom: 3rem;
+        thead {
+          color: $table-head-fg;
+          border-bottom: $table-border;
+
+          td {
+            padding: 1rem 0.5rem;
+          }
+        }
+
+        tr {
+          border-bottom: $table-border;
+
+          &:last-child {
+            border: none;
+          }
+          p {
+            margin-bottom: 0;
+          }
+        }
+
+        td {
+          padding: 1rem 0.5rem;
+
+          &:first-child {
+            font-weight: 500;
+          }
+        }
+
+        &.striped {
+          tbody tr:nth-child(odd) {
+            background: $table-stripe-bg;
+          }
+
+          td {
+            padding: 1rem 0.5rem;
+          }
+        }
+      }
+
+      ul {
+        margin-bottom: 1.5rem;
+        ul {
+          padding-left: 2.5rem;
+          list-style-type: none;
+          & > li {
+            list-style: circle;
+            position: relative;
+            margin-bottom: 0;
+          }
+        }
+        li {
+          font-size: 0.9375rem;
+          line-height: 1.5;
+          margin-bottom: 1.5rem;
+        }
+      }
+
+      .note {
+        padding: 1.25rem 3rem 1.5rem 1.25rem;
+        border-radius: 0.25rem;
+        margin-bottom: 3rem;
+
+        .note-title {
+          font-weight: 500;
+          text-transform: uppercase;
+          margin-bottom: 1.5rem;
+        }
+
+        .note-body {
+          font-size: 0.875rem;
+          line-height: 1.5;
+        }
+
+        &.note-info {
+          color: $note-fg-info;
+          background-color: $note-bg-info;
+        }
+
+        &.note-warning {
+          color: $note-fg-warning;
+          background-color: $note-bg-warning;
+        }
+      }
+
+      .color-swatch {
+        display: inline-block;
+        border: 1px solid black;
+        width: 0.875rem;
+        height: 0.875rem;
+        margin-left: 7px;
+        margin-bottom: -2px;
+        border-radius: 2px;
+      }
+    }
+  }
+
+  .horizontal-nav {
+    margin-top: 1rem;
+
+    nb-card-body {
+      background-color: nb-theme(layout-bg);
+      padding: 0;
+      overflow: visible;
+    }
+  }
+  .settings-column {
+    display: none;
+  }
+
+  @include media-breakpoint-up(md) {
+    .middle-column ::ng-deep nb-card nb-card-body {
+      padding: 2rem 3rem 2rem 2rem;
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    .horizontal-nav {
+      margin-top: 0;
+    }
+  }
+
+  @include media-breakpoint-up(macpro) {
+    .horizontal-nav nb-card-body {
+      display: none;
+    }
+
+    .settings-column {
+      display: block;
+      margin-left: $settings-margin;
+      width: $settings-width;
+
+      ngx-page-tabs {
+        margin-bottom: 1.5rem;
+      }
+    }
+
+    .fixed-panel {
+      position: fixed;
+      width: inherit;
+    }
+  }
+}

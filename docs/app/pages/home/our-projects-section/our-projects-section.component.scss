@@ -1,0 +1,150 @@
+/**
+ * @license
+ * Copyright Akveo. All Rights Reserved.
+ * Licensed under the MIT License. See License.txt in the project root for license information.
+ */
+
+@import '../../../@theme/styles/themes';
+@import '~@nebular/theme/styles/global/breakpoints';
+
+@include nb-install-component() {
+  $our-projects-section-offset: 7.125rem;
+
+  display: block;
+  padding-top: 5.125rem;
+
+  .project-img {
+    min-width: 39.75rem;
+    min-height: 20.375rem;
+    max-height: 20.375rem;
+
+    .lazy-load-image {
+      width: 100%;
+      visibility: hidden;
+      transition: opacity 1s;
+      opacity: 0;
+
+      &.ng-lazyloaded {
+        visibility: visible;
+        opacity: 1;
+      }
+      &.ng-failed-lazyloaded {
+        height: 100%;
+      }
+    }
+  }
+
+  ul {
+    width: calc(100% - #{$our-projects-section-offset} * 2);
+    margin: 0 auto;
+    padding: 4rem 0 3.5rem;
+  }
+
+  li {
+    list-style: none;
+    display: flex;
+    margin-top: 5.5rem;
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    & > div {
+      margin-left: 3.75rem;
+      margin-top: 0.125rem;
+    }
+
+    .project-img {
+      margin: 0;
+    }
+  }
+
+  .title {
+    font-family: 'Helvetica Neue Bold', sans-serif;
+    color: #000000;
+    font-size: 3rem;
+  }
+  
+  .description {
+    font-family: nb-theme(font-secondary), sans-serif;
+    font-size: nb-theme(font-size-lg);
+    margin-top: 1.125rem;
+    line-height: 1.5;
+  }
+  
+  .btn {
+    font-family: nb-theme(font-main), sans-serif;
+    background-color: nb-theme(color-active-bg);
+    border-radius: 3px;
+    box-shadow: nb-theme(shadow-btn);
+    color: #ffffff;
+    cursor: pointer;
+    margin-top: 2.625rem;
+    padding: 1rem 0.875rem;
+
+    &:hover {
+      box-shadow: nb-theme(shadow-hover-green-btn);
+    }
+
+    &:active {
+      box-shadow: nb-theme(shadow-active-green-btn);
+    }
+  }
+
+  @include media-breakpoint-down(xl) {
+    ul {
+      width: 100%;
+      margin: 0;
+      padding: 1.375rem 1rem;
+    }
+  }
+
+  @include media-breakpoint-down(lg) {
+    .project-img {
+      min-width: 33rem;
+      min-height: 16.25rem;
+    }
+  }
+
+  @include media-breakpoint-down(md) {
+    .project-img {
+      min-width: 25rem;
+      min-height: auto;
+      max-height: 17rem;
+    }
+  }
+
+
+  @include media-breakpoint-down(sm) {
+    padding-top: 2.5rem;
+
+    .project-img {
+      max-height: 100%;
+      min-width: 100%;
+    }
+
+    li {
+      margin-top: 3.625rem;
+      flex-direction: column;
+
+      & > div {
+        margin-top: 1rem;
+        margin-left: 0;
+      }
+    }
+
+    .title {
+      font-size: 1.5rem;
+    }
+
+    .description {
+      font-size: nb-theme(font-size);
+    }
+
+    .btn {
+      width: 100%;
+      padding: 1rem 0.875rem;
+      margin-top: 2.375rem;
+    }
+  }
+}

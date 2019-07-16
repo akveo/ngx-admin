@@ -1,0 +1,230 @@
+/**
+ * @license
+ * Copyright Akveo. All Rights Reserved.
+ * Licensed under the MIT License. See License.txt in the project root for license information.
+ */
+
+@import '../../../@theme/styles/themes';
+@import '~@nebular/theme/styles/global/breakpoints';
+
+@include nb-install-component() {
+
+  display: block;
+  padding-top: 6.25rem;
+  padding-bottom: 5.125rem;
+  text-align: center;
+
+  .image-container {
+    width: 75.875rem;
+    height: 46.625rem;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .carousel-container {
+    margin-top: 4rem;
+  }
+
+  .swiper-container {
+    position: static;
+  }
+
+  .swiper-wrapper {
+    padding-top: 4.125rem;
+  }
+
+  .swiper-button-prev, .swiper-button-next {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: none;
+    height: 5rem;
+    width: 5rem;
+    border-radius: 50%;
+    background-color: #ffffff;
+    box-shadow: nb-theme(shadow-default);
+    top: 22.625rem;
+
+    &:hover {
+      box-shadow: nb-theme(shadow-hover-btn);
+    }
+
+    &:active {
+      box-shadow: nb-theme(shadow-active-btn);
+    }
+  }
+
+  .swiper-button-prev {
+    left: 18%;
+  }
+
+  .swiper-button-next {
+    right: 18%;
+  }
+
+  .swiper-pagination {
+    display: inline-flex;
+    justify-content: center;
+    left: 1.5rem;
+    top: 0;
+    bottom: auto;
+
+    ::ng-deep .swiper-pagination-bullet {
+      height: 0.25rem;
+      width: auto;
+      border-radius: 0;
+      font-family: nb-theme(font-main), sans-serif;
+      font-size: nb-theme(font-size-lg);
+      color: nb-theme(color-fg);
+      background: transparent;
+      margin: 0;
+      opacity: 0.56;
+
+      &::after {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 100%;
+        background: #eff1f3;
+      }
+
+      span {
+        display: inline-block;
+        padding: 0.75rem 3.5rem;
+        width: 100%;
+      }
+
+      &.swiper-pagination-bullet-active {
+        opacity: 1;
+        color: nb-theme(color-active-fg);
+
+        &::after {
+          border-radius: 0.375rem;
+          background: nb-theme(color-active-bg);
+        }
+      }
+    }
+  }
+
+  .btn {
+    font-family: nb-theme(font-main), sans-serif;
+    border-radius: 3px;
+    border: none;
+    background: #ffffff;
+    color: #000000;
+    box-shadow: nb-theme(shadow-default);
+    cursor: pointer;
+    text-transform: uppercase;
+
+    &.btn-demo {
+      margin-top: 0.375rem;
+      padding: 1.125rem 6.25rem;
+      color: #ffffff;
+      background-color: nb-theme(color-active-fg);
+      box-shadow: nb-theme(shadow-btn);
+    }
+
+    &:hover {
+      box-shadow: nb-theme(shadow-hover-green-btn);
+    }
+
+    &:active {
+      box-shadow: nb-theme(shadow-active-green-btn);
+    }
+  }
+
+  @include media-breakpoint-down(xl) {
+    .swiper-button-prev {
+      left: 10%;
+    }
+
+    .swiper-button-next {
+      right: 10%;
+    }
+  }
+
+  @include media-breakpoint-down(xxl) {
+    .image-container {
+      width: 64.875rem;
+      height: 39.625rem;
+    }
+  }
+
+  @include media-breakpoint-down(lg) {
+    padding-top: 0;
+
+    .image-container {
+      width: 46.875rem;
+      height: 100%;
+    }
+
+    .swiper-button-prev, .swiper-button-next {
+      display: none;
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    img {
+      transition: opacity 1s;
+      opacity: 0;
+
+      &.ng-lazyloaded {
+        opacity: 1;
+      }
+    }
+  }
+
+  @include media-breakpoint-down(is) {
+    padding-top: 2.375rem;
+    padding-bottom: 1.875rem;
+
+    .carousel-container {
+      margin-top: 2.25rem;
+    }
+
+    .swiper-container {
+      margin: 0 1rem;
+    }
+
+    .image-container {
+      max-width: 19.75rem;
+      max-height: 12rem;
+    }
+
+    .swiper-pagination {
+      left: 0;
+      margin: 0;
+      width: 100%;
+
+      ::ng-deep .swiper-pagination-bullet {
+        flex: 1;
+        font-size: nb-theme(font-size-sm);
+
+        span {
+          padding: 0.75rem 0;
+        }
+
+        &.swiper-pagination-bullet-active {
+          opacity: 1;
+          color: nb-theme(color-active-fg);
+
+          &::after {
+            border-radius: 0.375rem;
+            background: nb-theme(color-active-bg);
+          }
+        }
+      }
+    }
+
+    .swiper-button-prev, .swiper-button-next {
+      display: none;
+    }
+
+    .btn-demo {
+      display: none;
+    }
+  }
+}
