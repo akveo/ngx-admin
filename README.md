@@ -15,7 +15,7 @@ Easy way to integrate ngx-admin with backend (.NET, Node.js, Java etc.).
 [Checkout our Store](https://hubs.ly/H0qwC2Q0) for ready to use Backend Bundles.
 
 
-### With 3 stunning visual themes
+### With 4 stunning visual themes
 
 
 
