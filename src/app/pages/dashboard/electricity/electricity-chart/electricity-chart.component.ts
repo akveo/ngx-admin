@@ -2,7 +2,7 @@ import { delay, takeWhile } from 'rxjs/operators';
 import { AfterViewInit, Component, Input, OnDestroy } from '@angular/core';
 import { NbThemeService } from '@nebular/theme';
 import { LayoutService } from '../../../../@core/utils';
-import { ElectricityChart } from '../../../../@core/data/electricity.service';
+import { ElectricityChart } from '../../../../@core/data/electricity';
 
 @Component({
   selector: 'ngx-electricity-chart',
@@ -66,7 +66,7 @@ export class ElectricityChartComponent implements AfterViewInit, OnDestroy {
             position: 'top',
             backgroundColor: eTheme.tooltipBg,
             borderColor: eTheme.tooltipBorderColor,
-            borderWidth: 3,
+            borderWidth: 1,
             formatter: '{c0} kWh',
             extraCssText: eTheme.tooltipExtraCss,
           },

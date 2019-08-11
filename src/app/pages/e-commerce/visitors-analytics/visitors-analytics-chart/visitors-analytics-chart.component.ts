@@ -2,7 +2,7 @@ import { delay, takeWhile } from 'rxjs/operators';
 import { AfterViewInit, Component, Input, OnDestroy } from '@angular/core';
 import { NbThemeService } from '@nebular/theme';
 import { LayoutService } from '../../../../@core/utils';
-import { OutlineData } from '../../../../@core/data/visitors-analytics.service';
+import { OutlineData } from '../../../../@core/data/visitors-analytics';
 
 @Component({
   selector: 'ngx-visitors-analytics-chart',
@@ -75,7 +75,7 @@ export class ECommerceVisitorsAnalyticsChartComponent implements AfterViewInit, 
         position: 'top',
         backgroundColor: eTheme.tooltipBg,
         borderColor: eTheme.tooltipBorderColor,
-        borderWidth: 3,
+        borderWidth: 1,
         formatter: (params) => {
           return Math.round(parseInt(params[0].value, 10));
         },

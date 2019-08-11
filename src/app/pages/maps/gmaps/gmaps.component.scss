@@ -6,7 +6,7 @@
     padding: 0;
   }
 
-  /deep/ agm-map {
+  ::ng-deep agm-map {
     width: 100%;
     height: nb-theme(card-height-large);
   }

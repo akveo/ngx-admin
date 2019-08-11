@@ -4,7 +4,7 @@
 @import '../../../@theme/styles/themes';
 
 @include nb-install-component() {
-  /deep/ nb-layout-column {
+  ::ng-deep nb-layout-column {
     justify-content: center;
     display: flex;
   }
@@ -17,7 +17,6 @@
 
   .chat-container {
     margin-bottom: 2rem;
-    font-size: nb-theme(font-size-xlg);
 
     li {
       padding-top: 1rem;
@@ -25,7 +24,6 @@
   }
 
   .chart-description {
-    font-size: nb-theme(font-size-xlg);
     text-align: center;
     margin: 0 auto;
     width: 52%;

@@ -1,6 +1,6 @@
 import { Component, OnDestroy } from '@angular/core';
 import { NbThemeService } from '@nebular/theme';
-import { Temperature, TemperatureHumidityService } from '../../../@core/data/temperature-humidity.service';
+import { Temperature, TemperatureHumidityData } from '../../../@core/data/temperature-humidity';
 import { takeWhile } from 'rxjs/operators';
 import { forkJoin } from 'rxjs';
 
@@ -23,15 +23,15 @@ export class TemperatureComponent implements OnDestroy {
   humidityOff = false;
   humidityMode = 'heat';
 
-  colors: any;
+  theme: any;
   themeSubscription: any;
 
-  constructor(private theme: NbThemeService,
-              private temperatureHumidityService: TemperatureHumidityService) {
-    this.theme.getJsTheme()
+  constructor(private themeService: NbThemeService,
+              private temperatureHumidityService: TemperatureHumidityData) {
+    this.themeService.getJsTheme()
       .pipe(takeWhile(() => this.alive))
       .subscribe(config => {
-      this.colors = config.variables;
+      this.theme = config.variables.temperature;
     });
 
     forkJoin(

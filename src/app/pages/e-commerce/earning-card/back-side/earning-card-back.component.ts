@@ -1,5 +1,5 @@
 import { Component, OnDestroy } from '@angular/core';
-import { EarningService, PieChart } from '../../../../@core/data/earning.service';
+import { PieChart, EarningData } from '../../../../@core/data/earning';
 import { takeWhile } from 'rxjs/operators';
 
 @Component({
@@ -16,7 +16,7 @@ export class EarningCardBackComponent implements OnDestroy {
   value: number;
   defaultSelectedCurrency: string = 'Bitcoin';
 
-  constructor(private earningService: EarningService ) {
+  constructor(private earningService: EarningData ) {
     this.earningService.getEarningPieChartData()
       .pipe(takeWhile(() => this.alive))
       .subscribe((earningPieChartData) => {

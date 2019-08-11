@@ -1,14 +1,14 @@
 <nb-flip-card [showToggleButton]="false" [flipped]="flipped">
   <nb-card-front>
-    <nb-card size="xsmall">
+    <nb-card size="tiny">
       <ngx-stats-card-front></ngx-stats-card-front>
-      <i class="nb-arrow-right" (click)="toggleView()"></i>
+      <nb-icon icon="chevron-right-outline" pack="eva" class="flip-icon" (click)="toggleView()"></nb-icon>
     </nb-card>
   </nb-card-front>
   <nb-card-back>
-    <nb-card size="xsmall">
+    <nb-card size="tiny">
       <ngx-stats-card-back></ngx-stats-card-back>
-      <i class="nb-arrow-right" (click)="toggleView()"></i>
+      <nb-icon icon="chevron-right-outline" pack="eva" class="flip-icon" (click)="toggleView()"></nb-icon>
     </nb-card>
   </nb-card-back>
 </nb-flip-card>

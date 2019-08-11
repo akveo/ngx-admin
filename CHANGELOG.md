@@ -1,3 +1,81 @@
+<a name="4.0.1"></a>
+## [4.0.1](https://github.com/akveo/ngx-admin/compare/v4.0.0...v4.0.1) (2019-07-16)
+
+
+### Bug Fixes
+
+* **typography:** prevent bootstrap color override ([#2161](https://github.com/akveo/ngx-admin/issues/2161)) ([243390c](https://github.com/akveo/ngx-admin/commit/243390c))
+
+
+### Features
+
+* update Nebular to 4.1.2 ([#5451](https://github.com/akveo/ngx-admin/issues/5451)) ([a2e93f9](https://github.com/akveo/ngx-admin/commit/a2e93f9))
+
+
+
+<a name="4.0.0"></a>
+# [4.0.0](https://github.com/akveo/ngx-admin/compare/v3.2.0...v4.0.0) (2019-07-02)
+
+- Update to Nebular 4 based on Eva Design System
+- New Dark theme
+- Angular 8
+
+### Features
+
+* update to Angular 8, Nebular 4 ([#2114](https://github.com/akveo/ngx-admin/issues/2114)) ([e9600b4](https://github.com/akveo/ngx-admin/commit/e9600b4))
+
+
+
+<a name="3.2.1"></a>
+## [3.2.1](https://github.com/akveo/ngx-admin/compare/v3.2.0...v3.2.1) (2019-04-02)
+
+
+### Bug Fixes
+
+* update [@angular-devkit](https://github.com/angular-devkit)/build-angular to fix import aliases ([78695cd](https://github.com/akveo/ngx-admin/commit/78695cd))
+
+
+
+<a name="3.2.0"></a>
+# [3.2.0](https://github.com/akveo/ngx-admin/compare/v3.1.0...v3.2.0) (2019-04-02)
+
+
+### Bug Fixes
+
+* **dashboard:** update title country->region the orders list component  ([#1987](https://github.com/akveo/ngx-admin/issues/1987)) ([cf1bf4d](https://github.com/akveo/ngx-admin/commit/cf1bf4d))
+* **readme:** fix demo links ([#2028](https://github.com/akveo/ngx-admin/issues/2028)) ([1fb3205](https://github.com/akveo/ngx-admin/commit/1fb3205))
+* **rtl:** remove duplicate of nebular styles ([#1824](https://github.com/akveo/ngx-admin/issues/1824)) ([d8e7092](https://github.com/akveo/ngx-admin/commit/d8e7092))
+* **setting-sidebar:** Ie and firefox position bugs, linter ([#2023](https://github.com/akveo/ngx-admin/issues/2023)) ([8d471ba](https://github.com/akveo/ngx-admin/commit/8d471ba))
+* **sidebar:** Add Form Inputs extra component menu item ([#1966](https://github.com/akveo/ngx-admin/issues/1966)) ([658aa19](https://github.com/akveo/ngx-admin/commit/658aa19)), closes [#1965](https://github.com/akveo/ngx-admin/issues/1965)
+
+
+### Features
+
+* update dependencies (Angular, Nebular) ([#2072](https://github.com/akveo/ngx-admin/issues/2072)) ([db2f451](https://github.com/akveo/ngx-admin/commit/db2f451))
+
+
+
+<a name="3.1.0"></a>
+# [3.1.0](https://github.com/akveo/ngx-admin/compare/v3.0.0...v3.1.0) (2019-01-23)
+
+
+### Bug Fixes
+
+* **datepicker:** fix datepicker arrow style ([#1925](https://github.com/akveo/ngx-admin/issues/1925)) ([a878197](https://github.com/akveo/ngx-admin/commit/a878197))
+* **toggle-settings-button:** position while search open ([#1993](https://github.com/akveo/ngx-admin/issues/1993)) ([f17aa32](https://github.com/akveo/ngx-admin/commit/f17aa32))
+
+
+### Features
+
+* **animation:** add fade in animation by route change ([#1958](https://github.com/akveo/ngx-admin/issues/1958)) ([773c14e](https://github.com/akveo/ngx-admin/commit/773c14e))
+* **data:** update data module, add new mock data ([#1960](https://github.com/akveo/ngx-admin/issues/1960)) ([47d232b](https://github.com/akveo/ngx-admin/commit/47d232b))
+* **layout config:** reduce gear button size ([#2002](https://github.com/akveo/ngx-admin/issues/2002)) ([1f56f2a](https://github.com/akveo/ngx-admin/commit/1f56f2a))
+* **settings:** redesign setting sidebar ([#1982](https://github.com/akveo/ngx-admin/issues/1982)) ([a73662f](https://github.com/akveo/ngx-admin/commit/a73662f))
+* **sidebar:** remove label new from sidebar ([#1921](https://github.com/akveo/ngx-admin/issues/1921)) ([d80c8da](https://github.com/akveo/ngx-admin/commit/d80c8da))
+* update Nebular to 3.1.0 ([33db902](https://github.com/akveo/ngx-admin/commit/33db902))
+
+
+
 <a name="3.0.0"></a>
 # [3.0.0](https://github.com/akveo/ngx-admin/compare/v2.3.0...v3.0.0) (2018-11-19)
 

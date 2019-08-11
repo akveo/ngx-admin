@@ -6,19 +6,24 @@ $legend-canceled-color: #3f4fda;
 
 @include nb-install-component() {
 
-  /deep/ nb-tabset {
+  nb-tabset {
     display: flex;
     flex-direction: column;
     flex: 1;
 
-    ul {
-      border-bottom: none;
+    ::ng-deep ul {
+      // make same size as card header
+      border-color: transparent;
+      padding-bottom: 1px;
+      .tab-link {
+        padding: 1.25rem 2rem;
+      }
     }
   }
 
   nb-tab {
     flex: 1;
-    padding-bottom: 1.25rem;
+    padding: 0 0 1.25rem;
   }
 
   .chart-container {
@@ -29,7 +34,8 @@ $legend-canceled-color: #3f4fda;
     overflow: hidden;
   }
 
-  ngx-chart-panel-header, ngx-profit-chart, ngx-orders-chart {
+  ngx-profit-chart,
+  ngx-orders-chart {
     padding: 0 1.25rem;
   }
 }

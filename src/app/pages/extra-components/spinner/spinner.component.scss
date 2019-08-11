@@ -5,7 +5,7 @@
     margin: 1rem;
   }
 
-  /deep/ nb-spinner {
+  ::ng-deep nb-spinner {
     z-index: 999;
   }
 }

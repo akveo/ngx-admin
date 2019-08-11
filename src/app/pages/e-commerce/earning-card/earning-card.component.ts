@@ -9,7 +9,7 @@ export class EarningCardComponent {
 
   flipped = false;
 
-  toggleFlipView() {
+  toggleView() {
     this.flipped = !this.flipped;
   }
 }

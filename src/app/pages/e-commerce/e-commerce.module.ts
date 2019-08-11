@@ -1,4 +1,14 @@
 import { NgModule } from '@angular/core';
+import {
+  NbButtonModule,
+  NbCardModule,
+  NbProgressBarModule,
+  NbTabsetModule,
+  NbUserModule,
+  NbIconModule,
+  NbSelectModule,
+  NbListModule,
+} from '@nebular/theme';
 import { NgxEchartsModule } from 'ngx-echarts';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 
@@ -49,7 +59,15 @@ import { EarningLiveUpdateChartComponent } from './earning-card/front-side/earni
 @NgModule({
   imports: [
     ThemeModule,
+    NbCardModule,
+    NbUserModule,
+    NbButtonModule,
+    NbIconModule,
+    NbTabsetModule,
+    NbSelectModule,
+    NbListModule,
     ChartModule,
+    NbProgressBarModule,
     NgxEchartsModule,
     NgxChartsModule,
     LeafletModule,

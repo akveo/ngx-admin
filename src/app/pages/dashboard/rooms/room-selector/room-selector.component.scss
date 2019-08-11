@@ -1,7 +1,17 @@
 @import '../../../../@theme/styles/themes';
-@import '~@nebular/theme/components/card/card.component.theme';
 
 @include nb-install-component() {
+
+  nb-card {
+    background-color: transparent;
+    border-width: 0;
+    box-shadow: none;
+    margin: 0;
+  }
+
+  nb-card-header {
+    border-color: transparent;
+  }
 
   svg {
     width: 100%;
@@ -19,7 +29,6 @@
     stroke-width: 4px;
     stroke: #bdc4cd;
     stroke-miterlimit: 10;
-    fill: url('#New_Pattern_Swatch_1');
   }
 
   .room-border {
@@ -30,7 +39,7 @@
   }
 
   .room-bg {
-    fill: nb-theme(card-bg);
+    fill: nb-theme(card-background-color);
     stroke: transparent;
     cursor: pointer;
     stroke-width: 4px;
@@ -46,58 +55,22 @@
     cursor: pointer;
     user-select: none;
     pointer-events: none;
-    fill: nb-theme(color-fg);
+    fill: nb-theme(text-hint-color);
   }
 
   .selected-room {
     z-index: 40;
 
     .room-text {
-      fill: nb-theme(color-fg-heading);
-      font-weight: nb-theme(font-weight-bolder);
+      fill: nb-theme(text-basic-color);
     }
     .room-border {
-      stroke: nb-theme(color-success);
+      stroke: nb-theme(color-primary-default);
     }
   }
 
   .header {
-    @include nb-card-header();
     border-bottom: none;
     padding-bottom: 0;
-  }
-
-  @include nb-for-theme(cosmic) {
-    .stroke-pattern, .stroked-element, .room-border {
-      stroke: #a1a1e5;
-    }
-
-    .room-text {
-      fill: nb-theme(color-fg-heading);
-    }
-
-    .selected-room {
-      .room-text {
-        font-weight: nb-theme(font-weight-normal);
-      }
-      .room-bg {
-        fill: rgba(0, 255, 170, 0.2);
-        filter: url('#f2');
-      }
-      .room-border {
-        stroke: #00f9a6;
-      }
-      .room-border-glow {
-        filter: url('#f2');
-      }
-    }
-  }
-
-  @include nb-for-theme(corporate) {
-    .selected-room {
-      .room-border {
-        stroke: nb-theme(color-primary);
-      }
-    }
   }
 }

@@ -13,10 +13,4 @@
       display: none;
     }
   }
-
-  @include media-breakpoint-down(is) {
-    /deep/ nb-card.large-card {
-      height: nb-theme(card-height-medium);
-    }
-  }
 }

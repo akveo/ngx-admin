@@ -1,7 +1,7 @@
 import { Component, OnDestroy } from '@angular/core';
 import { takeWhile } from 'rxjs/operators';
 import { NbThemeService } from '@nebular/theme';
-import { OutlineData, VisitorsAnalyticsService } from '../../../@core/data/visitors-analytics.service';
+import { OutlineData, VisitorsAnalyticsData } from '../../../@core/data/visitors-analytics';
 import { forkJoin } from 'rxjs';
 
 
@@ -18,7 +18,7 @@ export class ECommerceVisitorsAnalyticsComponent implements OnDestroy {
   visitorsAnalyticsData: { innerLine: number[]; outerLine: OutlineData[]; };
 
   constructor(private themeService: NbThemeService,
-              private visitorsAnalyticsChartService: VisitorsAnalyticsService) {
+              private visitorsAnalyticsChartService: VisitorsAnalyticsData) {
     this.themeService.getJsTheme()
       .pipe(takeWhile(() => this.alive))
       .subscribe(theme => {

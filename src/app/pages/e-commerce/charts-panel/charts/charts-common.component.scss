@@ -1,9 +1,7 @@
 @import '../../../../@theme/styles/themes';
 
 @include nb-install-component() {
-  display: block;
-  height: 100%;
-  width: 100%;
+  flex: 1;
 
   .echart {
     display: block;

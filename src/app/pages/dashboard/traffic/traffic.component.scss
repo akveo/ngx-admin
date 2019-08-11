@@ -2,30 +2,34 @@
 
 @include nb-install-component() {
 
+  nb-card {
+    position: relative;
+    overflow: hidden;
+  }
+
   nb-card-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0.675rem 0.5rem 0.5rem 1.25rem;
+    padding-top: nb-theme(card-header-with-select-padding-top);
+    padding-bottom: nb-theme(card-header-with-select-padding-bottom);
+    margin-bottom: -1px;
   }
 
-  nb-card-body {
-    overflow: hidden;
-    position: relative;
+  ngx-traffic-chart {
+    flex: 1;
   }
 
-  /deep/ canvas {
-    border-bottom-left-radius: nb-theme(card-border-radius);
-    border-bottom-right-radius: nb-theme(card-border-radius);
-  }
+  ::ng-deep {
+    .echart {
+      display: block;
+      height: 100%;
+      width: 100%;
+    }
 
-  .echart {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-  }
-
-  .dropdown {
-    min-width: 120px;
+    canvas {
+      border-bottom-left-radius: nb-theme(card-border-radius);
+      border-bottom-right-radius: nb-theme(card-border-radius);
+    }
   }
 }
