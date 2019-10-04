@@ -8,12 +8,11 @@
 ### Backend Integration Bundles
 Easy way to integrate ngx-admin with backend (.NET, Node.js, Java etc.).
 
-<a target="_blank" href="https://hubs.ly/H0qwC1L0">
-  <img src="https://i.imgur.com/Ywbs8cl.png"/>
+<a target="_blank" href="https://store.akveo.com/collections/all/?utm_source=github&utm_medium=ngx_admin_readme">
+  <img src="https://i.imgur.com/oiQHhop.png"/>
 </a>
 
-[Checkout our Store](https://hubs.ly/H0qwC2Q0) for ready to use Backend Bundles.
-
+[Checkout our Store](https://store.akveo.com/collections/all/?utm_source=github&utm_medium=ngx_admin_readme) for ready to use Backend Bundles.
 
 ### With 4 stunning visual themes
 
