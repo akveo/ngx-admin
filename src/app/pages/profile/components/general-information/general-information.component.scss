@@ -4,8 +4,6 @@
     background-position: center;
     background-size: cover;
     padding: 0;
-    margin-left: auto !important;
-    margin-right: auto !important;
     margin-bottom: 25px;
     height: 220px;
     width: 220px;
@@ -73,3 +71,10 @@
   .get-new-pic-div:hover {
     cursor: pointer;
   }
+
+  @media only screen and (max-device-width: 480px) {
+  .user {
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+ }
