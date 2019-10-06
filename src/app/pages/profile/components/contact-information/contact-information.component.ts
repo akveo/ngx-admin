@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { User } from '../../../../@core/data/users';
 
 @Component({
   selector: 'ngx-contact-information',
@@ -6,4 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./contact-information.component.scss'],
 })
 export class ContactInformationComponent {
+  @Input() user: User;
 }

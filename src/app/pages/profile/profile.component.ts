@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { UserService } from '../../@core/mock/users.service';
+import { User } from '../../@core/data/users';
 
 @Component({
   selector: 'ngx-profile',
@@ -11,7 +12,7 @@ export class ProfileComponent implements OnInit, OnDestroy {
 
   constructor(private userService: UserService) {}
 
-  user: any;
+  user: User;
   subscription: Subscription;
 
   ngOnInit(): void {
