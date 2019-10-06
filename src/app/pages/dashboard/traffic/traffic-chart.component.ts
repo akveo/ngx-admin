@@ -5,7 +5,6 @@ import { LayoutService } from '../../../@core/utils';
 
 @Component({
   selector: 'ngx-traffic-chart',
-  styleUrls: ['./traffic.component.scss'],
   template: `
     <div echarts
          [options]="option"
@@ -69,8 +68,7 @@ export class TrafficChartComponent implements AfterViewInit, OnDestroy {
             splitLine: {
               show: true,
               lineStyle: {
-                color: trafficTheme.colorBlack,
-                opacity: 0.06,
+                color: trafficTheme.yAxisSplitLine,
                 width: '1',
               },
             },
@@ -87,7 +85,7 @@ export class TrafficChartComponent implements AfterViewInit, OnDestroy {
             position: 'top',
             backgroundColor: trafficTheme.tooltipBg,
             borderColor: trafficTheme.tooltipBorderColor,
-            borderWidth: 3,
+            borderWidth: 1,
             formatter: '{c0} MB',
             extraCssText: trafficTheme.tooltipExtraCss,
           },

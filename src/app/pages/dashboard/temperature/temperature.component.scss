@@ -9,8 +9,13 @@
     flex-direction: column;
     height: 100%;
 
-    /deep/ ul {
-      border: none;
+    ::ng-deep ul {
+      // make same size as card header
+      border-color: transparent;
+      padding-bottom: 1px;
+      .tab-link {
+        padding: 1.25rem 2rem;
+      }
     }
   }
 
@@ -32,7 +37,7 @@
 
   ngx-temperature-dragger {
     margin-top: -1.5rem;
-    width: 80%;
+    width: 100%;
     max-width: 300px;
   }
 
@@ -43,37 +48,27 @@
 
     .value {
       position: relative;
-      color: nb-theme(color-fg-heading);
-      font-family: nb-theme(font-secondary);
-      font-size: 4rem;
-      font-weight: nb-theme(font-weight-bolder);
+      margin: 0;
 
       &.temperature::before {
         position: absolute;
         content: '°';
         top: 0;
-        right: -1.25rem;
+        right: -0.85rem;
       }
 
       &.humidity::before {
         position: absolute;
         content: '%';
-        bottom: 0.5rem;
-        right: -2.5rem;
-        color: nb-theme(color-fg);
-        font-size: 2.5rem;
-        font-weight: nb-theme(font-weight-light);
+        top: 3px;
+        right: -1.6rem;
+        font-size: 0.7em;
       }
-    }
-
-    .desc {
-      color: nb-theme(color-fg);
-      font-weight: nb-theme(font-weight-light);
     }
 
     &.off {
       .value {
-        color: nb-theme(color-fg);
+        color: nb-theme(text-hint-color);
         letter-spacing: 0.25rem;
         padding-left: 0.5rem;
 
@@ -88,82 +83,38 @@
     }
   }
 
-  .btn-group {
-    padding: 1.25rem;
-    justify-content: center;
-  }
-
-  .btn-icon {
+  nb-radio-group {
     display: flex;
-    align-items: center;
-    justify-content: center;
-
-    width: 4.5rem;
-    height: 4.5rem;
-    padding: 0;
-    margin-bottom: 0;
-    color: nb-theme(color-fg);
-
-    &.active {
-      border-color: nb-theme(color-fg-highlight);
-      color: nb-theme(color-fg-highlight);
-    }
-
-    i {
-      font-size: 2.25rem;
-      line-height: 1;
-    }
+    justify-content: space-between;
   }
 
-  @include nb-for-theme(cosmic) {
-    .btn-icon.active {
-      color: nb-theme(color-fg-heading);
-      border-color: nb-theme(color-fg-highlight);
-      box-shadow: 0 2px 12px 0 rgba(nb-theme(color-fg-highlight), 0.25);
-      background-color: rgba(nb-theme(color-fg-highlight), 0.25);
-    }
-  }
+  nb-radio {
+    flex: 0 0 auto;
+    width: calc(3.5rem + 2px);
+    height: calc(3.5rem + 2px);
 
-  @include nb-for-theme(corporate) {
-    .btn-icon.active {
-      color: nb-theme(color-primary);
-      border: none;
-      background-color: nb-theme(layout-bg);
-    }
-  }
-
-  @include media-breakpoint-down(is) {
-    ngx-temperature-dragger {
-      max-width: 250px;
-
-      /deep/ .power-bg {
-        width: 4rem;
-        height: 4rem;
-        font-size: 3rem;
+    ::ng-deep {
+      .outer-circle,
+      .inner-circle {
+        display: none;
       }
-    }
 
-    .slider-value-container .value {
-      font-size: 3rem;
-      &.humidity::before {
-        right: -2rem;
-        font-size: 2rem;
+      label {
+        padding: 0;
       }
-    }
-  }
-  @include media-breakpoint-down(xs) {
-    .btn-icon {
-      width: 3.25rem;
-      height: 3.25rem;
-      i {
-        font-size: 1.75rem;
-      }
-    }
 
-    nb-tabset /deep/ ul {
-      padding: 0 0.5rem;
-      a {
-        padding: 1.25rem 1rem;
+      .text {
+        border: 1px solid transparent;
+        font-size: 2.5rem;
+        padding: 0.5rem;
+        margin: 0;
+        color: nb-theme(text-hint-color);
+      }
+
+      input:checked ~ .text {
+        border-color: nb-theme(color-primary-default);
+        border-radius: nb-theme(card-border-radius);
+        color: nb-theme(text-primary-color);
       }
     }
   }

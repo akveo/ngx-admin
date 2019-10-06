@@ -56,17 +56,17 @@ const socialLinks = [
   {
     url: 'https://github.com/akveo/nebular',
     target: '_blank',
-    icon: 'socicon-github',
+    icon: 'github',
   },
   {
     url: 'https://www.facebook.com/akveo/',
     target: '_blank',
-    icon: 'socicon-facebook',
+    icon: 'facebook',
   },
   {
     url: 'https://twitter.com/akveo_inc',
     target: '_blank',
-    icon: 'socicon-twitter',
+    icon: 'twitter',
   },
 ];
 

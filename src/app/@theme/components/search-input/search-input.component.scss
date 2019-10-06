@@ -25,7 +25,7 @@
     }
   }
 
-  /deep/ search-input {
+  ::ng-deep search-input {
     input {
       background: transparent;
     }

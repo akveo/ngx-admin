@@ -44,7 +44,7 @@ export class TrafficRevealCardComponent implements OnDestroy {
 
   getTrafficFrontCardData(period: string) {
     this.trafficListService.getTrafficListData(period)
-      .pipe(takeWhile(() => this.alive ))
+      .pipe(takeWhile(() => this.alive))
       .subscribe(trafficListData => {
         this.trafficListData = trafficListData;
       });

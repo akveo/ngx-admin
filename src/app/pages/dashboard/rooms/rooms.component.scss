@@ -5,17 +5,12 @@
 @include nb-install-component() {
   ngx-room-selector {
     width: 70%;
-    border-right: 2px solid nb-theme(separator);
+    border-right: nb-theme(divider-width) nb-theme(divider-style) nb-theme(divider-color);
     background: url('../../../../assets/images/square_pattern.svg') repeat;
     background-size: 75px;
 
-    @include nb-for-theme(cosmic) {
+    &.dark-background {
       background-image: url('../../../../assets/images/square_pattern_cosmic.svg');
-    }
-
-    @include nb-for-theme(corporate) {
-      background: none;
-      border-right-color: nb-theme(tabs-separator);
     }
   }
 
@@ -33,7 +28,7 @@
     flex-direction: column;
     flex: 1;
 
-    /deep/ .room-selector {
+    ::ng-deep .room-selector {
       display: flex;
       align-items: center;
       justify-items: center;
@@ -62,15 +57,10 @@
       .collapse {
         display: inline-block;
         position: absolute;
-        top: 0.5rem;
+        top: 0.7rem;
         left: 50%;
         transform: translateX(-50%);
-        font-size: 3rem;
-        color: nb-theme(color-fg);
-
-        &:focus {
-          outline: none;
-        }
+        font-size: 2rem;
       }
     }
   }

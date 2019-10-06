@@ -3,7 +3,7 @@
 @include nb-install-component() {
 
   nb-card-body {
-    padding: nb-theme(card-padding) 0 0 0;
+    padding-top: 1.25rem;
   }
 
   .echarts {

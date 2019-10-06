@@ -23,15 +23,15 @@ export class TemperatureComponent implements OnDestroy {
   humidityOff = false;
   humidityMode = 'heat';
 
-  colors: any;
+  theme: any;
   themeSubscription: any;
 
-  constructor(private theme: NbThemeService,
+  constructor(private themeService: NbThemeService,
               private temperatureHumidityService: TemperatureHumidityData) {
-    this.theme.getJsTheme()
+    this.themeService.getJsTheme()
       .pipe(takeWhile(() => this.alive))
       .subscribe(config => {
-      this.colors = config.variables;
+      this.theme = config.variables.temperature;
     });
 
     forkJoin(

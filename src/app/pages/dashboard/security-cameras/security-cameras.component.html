@@ -1,43 +1,60 @@
-<nb-card size="xlarge">
+<nb-card size="giant">
+
   <nb-card-header>
-    <div class="cameras-card-header">
-      <span class="cameras-card-title">Security Cameras</span>
-      <span class="cameras-filter">
-        <a [class.active]="isSingleView" (click)="isSingleView = true">
-          <i class="nb-square"></i>
-        </a>
-        <a [class.active]="!isSingleView" (click)="isSingleView = false">
-          <i class="nb-grid-a"></i>
-        </a>
-      </span>
-    </div>
+    Security Cameras
+
+    <button class="single-view-button"
+            nbButton
+            size="small"
+            [appearance]="isSingleView ? 'filled' : 'outline'"
+            (click)="isSingleView = true">
+      <i class="nb-square"></i>
+    </button>
+    <button class="grid-view-button"
+            nbButton
+            size="small"
+            [appearance]="isSingleView ? 'outline' : 'filled'"
+            (click)="isSingleView = false">
+      <nb-icon icon="grid" pack="eva"></nb-icon>
+    </button>
   </nb-card-header>
-  <nb-card-body>
-    <div class="cameras single-view" *ngIf="isSingleView">
+
+  <div class="grid-container">
+
+    <div class="single-view" *ngIf="isSingleView">
       <div class="camera" [style.background-image]="'url(' + selectedCamera.source + ')'">
-        <span>{{ selectedCamera.title }}</span>
+        <span class="camera-name">{{ selectedCamera.title }}</span>
       </div>
     </div>
-    <div class="cameras" *ngIf="!isSingleView">
-      <div class="camera col-sm-6" *ngFor="let camera of cameras" [style.background-image]="'url(' + camera.source + ')'"
+
+    <div class="grid-view" *ngIf="!isSingleView">
+      <div class="camera"
+           *ngFor="let camera of cameras"
+           [style.background-image]="'url(' + camera.source + ')'"
            (click)="selectCamera(camera)">
-        <span>{{ camera.title }}</span>
+        <span class="camera-name">{{ camera.title }}</span>
       </div>
     </div>
-  </nb-card-body>
+
+  </div>
+
   <nb-card-footer>
-    <nb-actions size="medium" fullWidth>
+    <nb-actions [size]="actionSize" fullWidth>
       <nb-action>
-        <i class="nb-pause-outline"></i><span>Pause</span>
+        <nb-icon icon="pause-circle-outline" pack="eva"></nb-icon>
+        Pause
       </nb-action>
       <nb-action>
-        <i class="nb-list"></i><span>Logs</span>
+        <nb-icon icon="list-outline" pack="eva"></nb-icon>
+        Logs
       </nb-action>
       <nb-action>
-        <i class="nb-search"></i><span>Search</span>
+        <nb-icon icon="search-outline" pack="eva"></nb-icon>
+        Search
       </nb-action>
       <nb-action>
-        <i class="nb-gear"></i><span>Setup</span>
+        <nb-icon icon="settings-2-outline" pack="eva"></nb-icon>
+        Setup
       </nb-action>
     </nb-actions>
   </nb-card-footer>

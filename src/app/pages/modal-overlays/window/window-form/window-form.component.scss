@@ -1,7 +1,7 @@
 @import '../../../../@theme/styles/themes';
 
 @include nb-install-component() {
-  /deep/ .form {
+  ::ng-deep .form {
     display: flex;
     flex-direction: column;
 

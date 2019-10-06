@@ -1,266 +1,273 @@
+import { NbJSThemeOptions, DEFAULT_THEME as baseTheme } from '@nebular/theme';
+
+const baseThemeVariables = baseTheme.variables;
+
 export const DEFAULT_THEME = {
   name: 'default',
-  base: null,
+  base: 'default',
   variables: {
-
-    // Safari fix
-    temperature: [
-      '#42db7d',
-      '#42db7d',
-      '#42db7d',
-      '#42db7d',
-      '#42db7d',
-    ],
+    temperature: {
+      arcFill: [
+        baseThemeVariables.primary,
+        baseThemeVariables.primary,
+        baseThemeVariables.primary,
+        baseThemeVariables.primary,
+        baseThemeVariables.primary,
+      ],
+      arcEmpty: baseThemeVariables.bg2,
+      thumbBg: baseThemeVariables.bg2,
+      thumbBorder: baseThemeVariables.primary,
+    },
 
     solar: {
-      gradientLeft: '#42db7d',
-      gradientRight: '#42db7d',
+      gradientLeft: baseThemeVariables.primary,
+      gradientRight: baseThemeVariables.primary,
       shadowColor: 'rgba(0, 0, 0, 0)',
+      secondSeriesFill: baseThemeVariables.bg2,
       radius: ['80%', '90%'],
     },
 
     traffic: {
-      colorBlack: '#000000',
-      tooltipBg: '#ffffff',
-      tooltipBorderColor: '#c0c8d1',
+      tooltipBg: baseThemeVariables.bg,
+      tooltipBorderColor: baseThemeVariables.border2,
       tooltipExtraCss: 'border-radius: 10px; padding: 4px 16px;',
-      tooltipTextColor: '#2a2a2a',
-      tooltipFontWeight: 'bolder',
+      tooltipTextColor: baseThemeVariables.fgText,
+      tooltipFontWeight: 'normal',
 
-      lineBg: '#c0c8d1',
+      yAxisSplitLine: baseThemeVariables.separator,
+
+      lineBg: baseThemeVariables.border4,
       lineShadowBlur: '1',
-      itemColor: '#bcc3cc',
-      itemBorderColor: '#bcc3cc',
-      itemEmphasisBorderColor: '#42db7d',
+      itemColor: baseThemeVariables.border4,
+      itemBorderColor: baseThemeVariables.border4,
+      itemEmphasisBorderColor: baseThemeVariables.primary,
       shadowLineDarkBg: 'rgba(0, 0, 0, 0)',
       shadowLineShadow: 'rgba(0, 0, 0, 0)',
-      gradFrom: '#ebeef2',
-      gradTo: '#ebeef2',
+      gradFrom: baseThemeVariables.bg2,
+      gradTo: baseThemeVariables.bg2,
     },
 
     electricity: {
-      tooltipBg: '#ffffff',
-      tooltipLineColor: 'rgba(0, 0, 0, 0)',
+      tooltipBg: baseThemeVariables.bg,
+      tooltipLineColor: baseThemeVariables.fgText,
       tooltipLineWidth: '0',
-      tooltipBorderColor: '#ebeef2',
+      tooltipBorderColor: baseThemeVariables.border2,
       tooltipExtraCss: 'border-radius: 10px; padding: 8px 24px;',
-      tooltipTextColor: '#2a2a2a',
-      tooltipFontWeight: 'bolder',
+      tooltipTextColor: baseThemeVariables.fgText,
+      tooltipFontWeight: 'normal',
 
-      axisLineColor: 'rgba(0, 0, 0, 0)',
-      xAxisTextColor: '#2a2a2a',
-      yAxisSplitLine: '#ebeef2',
+      axisLineColor: baseThemeVariables.border3,
+      xAxisTextColor: baseThemeVariables.fg,
+      yAxisSplitLine: baseThemeVariables.separator,
 
-      itemBorderColor: '#42db7d',
+      itemBorderColor: baseThemeVariables.primary,
       lineStyle: 'solid',
       lineWidth: '4',
-      lineGradFrom: '#42db7d',
-      lineGradTo: '#42db7d',
+      lineGradFrom: baseThemeVariables.primary,
+      lineGradTo: baseThemeVariables.primary,
       lineShadow: 'rgba(0, 0, 0, 0)',
 
-      areaGradFrom: 'rgba(235, 238, 242, 0.5)',
-      areaGradTo: 'rgba(235, 238, 242, 0.5)',
+      areaGradFrom: baseThemeVariables.bg2,
+      areaGradTo: baseThemeVariables.bg2,
       shadowLineDarkBg: 'rgba(0, 0, 0, 0)',
     },
 
     bubbleMap: {
-      titleColor: '#484848',
-      areaColor: '#dddddd',
-      areaHoverColor: '#cccccc',
-      areaBorderColor: '#ebeef2',
+      titleColor: baseThemeVariables.fgText,
+      areaColor: baseThemeVariables.bg4,
+      areaHoverColor: baseThemeVariables.fgHighlight,
+      areaBorderColor: baseThemeVariables.border5,
     },
 
     profitBarAnimationEchart: {
-      textColor: '#484848',
+      textColor: baseThemeVariables.fgText,
 
-      firstAnimationBarColor: '#3edd81',
-      secondAnimationBarColor: '#8d7fff',
+      firstAnimationBarColor: baseThemeVariables.primary,
+      secondAnimationBarColor: baseThemeVariables.success,
 
-      splitLineStyleOpacity: '0.06',
+      splitLineStyleOpacity: '1',
       splitLineStyleWidth: '1',
-      splitLineStyleColor: '#000000',
+      splitLineStyleColor: baseThemeVariables.separator,
 
-      tooltipTextColor: '#2a2a2a',
-      tooltipFontWeight: 'bolder',
+      tooltipTextColor: baseThemeVariables.fgText,
+      tooltipFontWeight: 'normal',
       tooltipFontSize: '16',
-      tooltipBg: '#ffffff',
-      tooltipBorderColor: '#c0c8d1',
-      tooltipBorderWidth: '3',
+      tooltipBg: baseThemeVariables.bg,
+      tooltipBorderColor: baseThemeVariables.border2,
+      tooltipBorderWidth: '1',
       tooltipExtraCss: 'border-radius: 10px; padding: 4px 16px;',
     },
 
     trafficBarEchart: {
-      gradientFrom: '#fc0',
-      gradientTo: '#ffa100',
-      shadow: '#ffb600',
+      gradientFrom: baseThemeVariables.warningLight,
+      gradientTo: baseThemeVariables.warning,
+      shadow: baseThemeVariables.warningLight,
       shadowBlur: '0',
 
-      axisTextColor: '#b2bac2',
+      axisTextColor: baseThemeVariables.fgText,
       axisFontSize: '12',
 
-      tooltipBg: '#ffffff',
-      tooltipBorderColor: '#c0c8d1',
+      tooltipBg: baseThemeVariables.bg,
+      tooltipBorderColor: baseThemeVariables.border2,
       tooltipExtraCss: 'border-radius: 10px; padding: 4px 16px;',
-      tooltipTextColor: '#2a2a2a',
-      tooltipFontWeight: 'bolder',
+      tooltipTextColor: baseThemeVariables.fgText,
+      tooltipFontWeight: 'normal',
     },
 
     countryOrders: {
-      countryBorderColor: 'rgba(255, 255, 255, 1)',
-      countryFillColor: 'rgba(236, 242, 245, 1)',
+      countryBorderColor: baseThemeVariables.border4,
+      countryFillColor: baseThemeVariables.bg3,
       countryBorderWidth: '1',
-      hoveredCountryBorderColor: '#40dc7e',
-      hoveredCountryFillColor: '#c7f4d9',
-      hoveredCountryBorderWidth: '3',
+      hoveredCountryBorderColor: baseThemeVariables.primary,
+      hoveredCountryFillColor: baseThemeVariables.primaryLight,
+      hoveredCountryBorderWidth: '1',
 
-      chartAxisLineColor: 'rgba(0, 0, 0, 0)',
-      chartAxisTextColor: '#b2bac2',
+      chartAxisLineColor: baseThemeVariables.border4,
+      chartAxisTextColor: baseThemeVariables.fg,
       chartAxisFontSize: '16',
-      chartGradientTo: '#3edd81',
-      chartGradientFrom: '#3bddaf',
-      chartAxisSplitLine: '#ebeef2',
-      chartShadowLineColor: '#2f296b',
+      chartGradientTo: baseThemeVariables.primary,
+      chartGradientFrom: baseThemeVariables.primaryLight,
+      chartAxisSplitLine: baseThemeVariables.separator,
+      chartShadowLineColor: baseThemeVariables.primaryLight,
 
-      chartLineBottomShadowColor: '#eceff4',
+      chartLineBottomShadowColor: baseThemeVariables.primary,
 
-      chartInnerLineColor: '#eceff4',
+      chartInnerLineColor: baseThemeVariables.bg2,
     },
 
     echarts: {
-      bg: '#ffffff',
-      textColor: '#484848',
-      axisLineColor: '#bbbbbb',
-      splitLineColor: '#ebeef2',
+      bg: baseThemeVariables.bg,
+      textColor: baseThemeVariables.fgText,
+      axisLineColor: baseThemeVariables.fgText,
+      splitLineColor: baseThemeVariables.separator,
       itemHoverShadowColor: 'rgba(0, 0, 0, 0.5)',
-      tooltipBackgroundColor: '#6a7985',
+      tooltipBackgroundColor: baseThemeVariables.primary,
       areaOpacity: '0.7',
     },
 
     chartjs: {
-      axisLineColor: '#cccccc',
-      textColor: '#484848',
+      axisLineColor: baseThemeVariables.separator,
+      textColor: baseThemeVariables.fgText,
     },
 
     orders: {
-      tooltipBg: '#ffffff',
+      tooltipBg: baseThemeVariables.bg,
       tooltipLineColor: 'rgba(0, 0, 0, 0)',
       tooltipLineWidth: '0',
-      tooltipBorderColor: '#ebeef2',
+      tooltipBorderColor: baseThemeVariables.border2,
       tooltipExtraCss: 'border-radius: 10px; padding: 8px 24px;',
-      tooltipTextColor: '#2a2a2a',
-      tooltipFontWeight: 'bolder',
+      tooltipTextColor: baseThemeVariables.fgText,
+      tooltipFontWeight: 'normal',
       tooltipFontSize: '20',
 
-      axisLineColor: 'rgba(161, 161 ,229, 0.3)',
+      axisLineColor: baseThemeVariables.border4,
       axisFontSize: '16',
-      axisTextColor: '#b2bac2',
-      yAxisSplitLine: 'rgba(161, 161 ,229, 0.2)',
+      axisTextColor: baseThemeVariables.fg,
+      yAxisSplitLine: baseThemeVariables.separator,
 
-      itemBorderColor: '#42db7d',
+      itemBorderColor: baseThemeVariables.primary,
       lineStyle: 'solid',
       lineWidth: '4',
 
       // first line
-      firstAreaGradFrom: 'rgba(236, 242, 245, 0.8)',
-      firstAreaGradTo: 'rgba(236, 242, 245, 0.8)',
+      firstAreaGradFrom: baseThemeVariables.bg3,
+      firstAreaGradTo: baseThemeVariables.bg3,
       firstShadowLineDarkBg: 'rgba(0, 0, 0, 0)',
 
       // second line
-      secondLineGradFrom: 'rgba(164, 123, 255, 1)',
-      secondLineGradTo: 'rgba(164, 123, 255, 1)',
+      secondLineGradFrom: baseThemeVariables.primary,
+      secondLineGradTo: baseThemeVariables.primary,
 
-      secondAreaGradFrom: 'rgba(188, 92, 255, 0.2)',
-      secondAreaGradTo: 'rgba(188, 92, 255, 0)',
+      secondAreaGradFrom: 'rgba(51, 102, 255, 0.2)',
+      secondAreaGradTo: 'rgba(51, 102, 255, 0)',
       secondShadowLineDarkBg: 'rgba(0, 0, 0, 0)',
 
       // third line
-      thirdLineGradFrom: 'rgba(55, 220, 136, 1)',
-      thirdLineGradTo: 'rgba(55, 220, 136, 1)',
+      thirdLineGradFrom: baseThemeVariables.success,
+      thirdLineGradTo: baseThemeVariables.successLight,
 
-      thirdAreaGradFrom: 'rgba(31 ,106, 124, 0.2)',
-      thirdAreaGradTo: 'rgba(4, 126, 230, 0)',
+      thirdAreaGradFrom: 'rgba(0, 214, 143, 0.2)',
+      thirdAreaGradTo: 'rgba(0, 214, 143, 0)',
       thirdShadowLineDarkBg: 'rgba(0, 0, 0, 0)',
     },
 
-    // TODO: need design for default theme
     profit: {
-      bg: '#ffffff',
-      textColor: '#ffffff',
-      axisLineColor: 'rgba(161, 161 ,229, 0.3)',
-      splitLineColor: 'rgba(161, 161 ,229, 0.2)',
+      bg: baseThemeVariables.bg,
+      textColor: baseThemeVariables.fgText,
+      axisLineColor: baseThemeVariables.border4,
+      splitLineColor: baseThemeVariables.separator,
       areaOpacity: '1',
 
       axisFontSize: '16',
-      axisTextColor: '#b2bac2',
+      axisTextColor: baseThemeVariables.fg,
 
       // first bar
-      firstLineGradFrom: '#00bece',
-      firstLineGradTo: '#00da78',
-      firstLineShadow: 'rgba(14, 16, 48, 0.4)',
+      firstLineGradFrom: baseThemeVariables.bg3,
+      firstLineGradTo: baseThemeVariables.bg3,
+      firstLineShadow: 'rgba(0, 0, 0, 0)',
 
       // second bar
-      secondLineGradFrom: '#8069ff',
-      secondLineGradTo: '#8357ff',
-      secondLineShadow: 'rgba(14, 16, 48, 0.4)',
+      secondLineGradFrom: baseThemeVariables.primary,
+      secondLineGradTo: baseThemeVariables.primary,
+      secondLineShadow: 'rgba(0, 0, 0, 0)',
 
       // third bar
-      thirdLineGradFrom: 'rgba(236, 242, 245, 0.8)',
-      thirdLineGradTo: 'rgba(236, 242, 245, 0.8)',
-      thirdLineShadow: 'rgba(14, 16, 48, 0.4)',
+      thirdLineGradFrom: baseThemeVariables.success,
+      thirdLineGradTo: baseThemeVariables.successLight,
+      thirdLineShadow: 'rgba(0, 0, 0, 0)',
     },
 
     orderProfitLegend: {
-      firstItem: 'linear-gradient(90deg, #3edd81 0%, #3bddad 100%)',
-      secondItem: 'linear-gradient(90deg, #8d7fff 0%, #b17fff 100%)',
-      thirdItem: 'rgba(236, 242, 245, 0.8)',
+      firstItem: baseThemeVariables.success,
+      secondItem: baseThemeVariables.primary,
+      thirdItem: baseThemeVariables.bg3,
     },
 
     visitors: {
-      tooltipBg: '#ffffff',
+      tooltipBg: baseThemeVariables.bg,
       tooltipLineColor: 'rgba(0, 0, 0, 0)',
-      tooltipLineWidth: '0',
-      tooltipBorderColor: '#ebeef2',
+      tooltipLineWidth: '1',
+      tooltipBorderColor: baseThemeVariables.border2,
       tooltipExtraCss: 'border-radius: 10px; padding: 8px 24px;',
-      tooltipTextColor: '#2a2a2a',
-      tooltipFontWeight: 'bolder',
+      tooltipTextColor: baseThemeVariables.fgText,
+      tooltipFontWeight: 'normal',
       tooltipFontSize: '20',
 
-      axisLineColor: 'rgba(161, 161 ,229, 0.3)',
+      axisLineColor: baseThemeVariables.border4,
       axisFontSize: '16',
-      axisTextColor: '#b2bac2',
-      yAxisSplitLine: 'rgba(161, 161 ,229, 0.2)',
+      axisTextColor: baseThemeVariables.fg,
+      yAxisSplitLine: baseThemeVariables.separator,
 
-      itemBorderColor: '#42db7d',
+      itemBorderColor: baseThemeVariables.primary,
       lineStyle: 'dotted',
       lineWidth: '6',
       lineGradFrom: '#ffffff',
       lineGradTo: '#ffffff',
-      lineShadow: 'rgba(14, 16, 48, 0)',
+      lineShadow: 'rgba(0, 0, 0, 0)',
 
-      areaGradFrom: 'rgba(188, 92, 255, 1)',
-      areaGradTo: 'rgba(188, 92, 255, 0.5)',
-      shadowLineDarkBg: '#a695ff',
+      areaGradFrom: baseThemeVariables.primary,
+      areaGradTo: baseThemeVariables.primaryLight,
 
       innerLineStyle: 'solid',
       innerLineWidth: '1',
 
-      innerAreaGradFrom: 'rgba(60, 221, 156, 1)',
-      innerAreaGradTo: 'rgba(60, 221, 156, 1)',
+      innerAreaGradFrom: baseThemeVariables.success,
+      innerAreaGradTo: baseThemeVariables.success,
     },
 
     visitorsLegend: {
-      firstIcon: 'linear-gradient(90deg, #3edd81 0%, #3bddad 100%)',
-      secondIcon: 'linear-gradient(90deg, #8d7fff 0%, #b17fff 100%)',
+      firstIcon: baseThemeVariables.success,
+      secondIcon: baseThemeVariables.primary,
     },
 
     visitorsPie: {
-      firstPieGradientLeft: '#8defbb',
-      firstPieGradientRight: '#8defbb',
+      firstPieGradientLeft: baseThemeVariables.success,
+      firstPieGradientRight: baseThemeVariables.success,
       firstPieShadowColor: 'rgba(0, 0, 0, 0)',
       firstPieRadius: ['70%', '90%'],
 
-      secondPieGradientLeft: '#ff894a',
-      secondPieGradientRight: '#ffcc10',
+      secondPieGradientLeft: baseThemeVariables.warning,
+      secondPieGradientRight: baseThemeVariables.warningLight,
       secondPieShadowColor: 'rgba(0, 0, 0, 0)',
       secondPieRadius: ['60%', '97%'],
       shadowOffsetX: '0',
@@ -268,8 +275,8 @@ export const DEFAULT_THEME = {
     },
 
     visitorsPieLegend: {
-      firstSection: 'linear-gradient(90deg, #ffcb17 0%, #ff874c 100%)',
-      secondSection: '#8defbb',
+      firstSection: baseThemeVariables.warning,
+      secondSection: baseThemeVariables.success,
     },
 
     earningPie: {
@@ -278,30 +285,30 @@ export const DEFAULT_THEME = {
 
       fontSize: '22',
 
-      firstPieGradientLeft: '#00d77f',
-      firstPieGradientRight: '#00d77f',
+      firstPieGradientLeft: baseThemeVariables.success,
+      firstPieGradientRight: baseThemeVariables.success,
       firstPieShadowColor: 'rgba(0, 0, 0, 0)',
 
-      secondPieGradientLeft: '#7756f7',
-      secondPieGradientRight: '#7756f7',
+      secondPieGradientLeft: baseThemeVariables.primary,
+      secondPieGradientRight: baseThemeVariables.primary,
       secondPieShadowColor: 'rgba(0, 0, 0, 0)',
 
-      thirdPieGradientLeft: '#ffca00',
-      thirdPieGradientRight: '#ffca00',
+      thirdPieGradientLeft: baseThemeVariables.warning,
+      thirdPieGradientRight: baseThemeVariables.warning,
       thirdPieShadowColor: 'rgba(0, 0, 0, 0)',
     },
 
     earningLine: {
-      gradFrom: 'rgba(188, 92, 255, 0.5)',
-      gradTo: 'rgba(188, 92, 255, 0.5)',
+      gradFrom: baseThemeVariables.primary,
+      gradTo: baseThemeVariables.primary,
 
-      tooltipTextColor: '#2a2a2a',
-      tooltipFontWeight: 'bolder',
+      tooltipTextColor: baseThemeVariables.fgText,
+      tooltipFontWeight: 'normal',
       tooltipFontSize: '16',
-      tooltipBg: '#ffffff',
-      tooltipBorderColor: '#c0c8d1',
-      tooltipBorderWidth: '3',
+      tooltipBg: baseThemeVariables.bg,
+      tooltipBorderColor: baseThemeVariables.border2,
+      tooltipBorderWidth: '1',
       tooltipExtraCss: 'border-radius: 10px; padding: 4px 16px;',
     },
   },
-};
+} as NbJSThemeOptions;

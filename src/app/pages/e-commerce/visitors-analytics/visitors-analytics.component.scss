@@ -13,15 +13,10 @@
 
   nb-card-header {
     border-bottom: none;
+  }
 
-    .title {
-      font-size: 1.5rem;
-      font-weight: nb-theme(font-weight-bold);
-    }
-
-    .sub-title {
-      color: nb-theme(color-fg);
-    }
+  .subtitle {
+    color: nb-theme(text-hint-color);
   }
 
   .container {
@@ -46,9 +41,8 @@
 
   @include media-breakpoint-down(is) {
     ngx-legend-chart {
-      /deep/ .legends {
+      ::ng-deep .legends {
         padding-left: 0;
-        font-size: nb-theme(font-size-sm);
       }
     }
   }

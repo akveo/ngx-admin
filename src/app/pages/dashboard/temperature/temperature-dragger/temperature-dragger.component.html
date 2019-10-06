@@ -19,16 +19,21 @@
     </defs>
     <g [attr.transform]="styles.arcTranslateStr">
 
-      <g class="toClip" [attr.clip-path]="'url(#sliderClip' + svgControlId +')'">
-        <g class="toFilter" [attr.filter]="'url(#blurFilter' + svgControlId +')'">
-          <path [attr.d]="arc.d" [attr.fill]="arc.color" *ngFor="let arc of styles.gradArcs"></path>
+      <g class="toClip" [attr.clip-path]="getUrlPath('#sliderClip')">
+        <g class="toFilter" [attr.filter]="getUrlPath('#blurFilter')">
+          <path [attr.d]="arc.d" [attr.fill]="off ? styles.nonSelectedArc.color : arc.color" *ngFor="let arc of styles.gradArcs"></path>
         </g>
         <!-- ngFor is a quirk fix for webkit rendering issues -->
         <path [attr.d]="styles.nonSelectedArc.d" [attr.fill]="styles.nonSelectedArc.color" *ngFor="let number of [0,1,2,3,4,5]"></path>
       </g>
 
-      <circle [attr.cx]="styles.thumbPosition.x" [attr.cy]="styles.thumbPosition.y" [attr.r]="pinRadius"
-              [attr.stroke-width]="thumbBorder / scaleFactor" class="circle"></circle>
+      <circle [attr.cx]="styles.thumbPosition.x"
+              [attr.cy]="styles.thumbPosition.y"
+              [attr.r]="pinRadius"
+              [attr.stroke-width]="thumbBorder / scaleFactor"
+              [attr.fill]="off ? 'none' : thumbBg"
+              [attr.stroke]="off ? 'none' : thumbBorderColor">
+      </circle>
     </g>
   </svg>
 </div>
@@ -37,6 +42,6 @@
   <ng-content></ng-content>
 </div>
 
-<div class="power-bg" [ngClass]="{'off': off}" (click)="switchPower()">
-  <i class="nb-power-circled"></i>
-</div>
+<button nbButton appearance="ghost" class="power-bg" [class.on]="!off" (click)="switchPower()">
+  <nb-icon class="power-icon" icon="power-outline" pack="eva"></nb-icon>
+</button>

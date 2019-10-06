@@ -2,8 +2,13 @@ import { Component } from '@angular/core';
 import { ToasterConfig } from 'angular2-toaster';
 
 import 'style-loader!angular2-toaster/toaster.css';
-import { NbGlobalLogicalPosition, NbGlobalPhysicalPosition, NbGlobalPosition, NbToastrService } from '@nebular/theme';
-import { NbToastStatus } from '@nebular/theme/components/toastr/model';
+import {
+  NbComponentStatus,
+  NbGlobalLogicalPosition,
+  NbGlobalPhysicalPosition,
+  NbGlobalPosition,
+  NbToastrService,
+} from '@nebular/theme';
 
 @Component({
   selector: 'ngx-toastr',
@@ -21,18 +26,17 @@ export class ToastrComponent {
   hasIcon = true;
   position: NbGlobalPosition = NbGlobalPhysicalPosition.TOP_RIGHT;
   preventDuplicates = false;
-  status: NbToastStatus = NbToastStatus.SUCCESS;
+  status: NbComponentStatus = 'primary';
 
   title = 'HI there!';
   content = `I'm cool toaster!`;
 
-  types: NbToastStatus[] = [
-    NbToastStatus.DEFAULT,
-    NbToastStatus.DANGER,
-    NbToastStatus.INFO,
-    NbToastStatus.PRIMARY,
-    NbToastStatus.SUCCESS,
-    NbToastStatus.WARNING,
+  types: NbComponentStatus[] = [
+    'primary',
+    'success',
+    'info',
+    'warning',
+    'danger',
   ];
   positions: string[] = [
     NbGlobalPhysicalPosition.TOP_RIGHT,
@@ -58,13 +62,13 @@ export class ToastrComponent {
   openRandomToast () {
     const typeIndex = Math.floor(Math.random() * this.types.length);
     const quoteIndex = Math.floor(Math.random() * this.quotes.length);
-    const type: NbToastStatus = this.types[typeIndex];
+    const type = this.types[typeIndex];
     const quote = this.quotes[quoteIndex];
 
     this.showToast(type, quote.title, quote.body);
   }
 
-  private showToast(type: NbToastStatus, title: string, body: string) {
+  private showToast(type: NbComponentStatus, title: string, body: string) {
     const config = {
       status: type,
       destroyByClick: this.destroyByClick,

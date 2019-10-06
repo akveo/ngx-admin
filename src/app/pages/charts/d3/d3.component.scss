@@ -11,29 +11,35 @@
     width: 100%;
     height: nb-theme(card-height-medium);
 
-    /deep/ {
+    ::ng-deep {
       .pie-label {
-        fill: nb-theme(color-fg-heading);
-      }
-
-      .grid-line-path {
-        stroke: nb-theme(separator);
+        fill: nb-theme(text-basic-color);
       }
 
       text {
-        fill: nb-theme(color-fg-heading);
+        fill: nb-theme(text-hint-color);
       }
 
       .chart-legend {
         .legend-labels {
-          background: nb-theme(color-bg);
+          background: nb-theme(background-basic-color-2);
         }
         .legend-label {
-          color: nb-theme(color-fg-heading);
+          color: nb-theme(text-hint-color);
           .active .legend-label-text {
-            color: nb-theme(color-fg-heading);
+            color: nb-theme(text-basic-color);
           }
         }
+      }
+
+      .total-value,
+      .item-value,
+      .item-percent {
+        line-height: 1.25;
+      }
+
+      .legend-items {
+        overflow-y: hidden;
       }
     }
   }

@@ -7,7 +7,6 @@ declare const echarts: any;
 
 @Component({
   selector: 'ngx-traffic-bar-chart',
-  styleUrls: ['traffic-back-card.component.scss'],
   template: `
     <div echarts
          [options]="option"
@@ -115,7 +114,7 @@ export class TrafficBarChartComponent implements AfterViewInit, OnDestroy, OnCha
             position: 'top',
             backgroundColor: trafficTheme.tooltipBg,
             borderColor: trafficTheme.tooltipBorderColor,
-            borderWidth: 3,
+            borderWidth: 1,
             formatter: this.formatter,
             extraCssText: trafficTheme.tooltipExtraCss,
           },

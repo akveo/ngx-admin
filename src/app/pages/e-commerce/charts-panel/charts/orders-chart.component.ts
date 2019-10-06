@@ -80,7 +80,7 @@ export class OrdersChartComponent implements AfterViewInit, OnDestroy, OnChanges
         position: 'top',
         backgroundColor: eTheme.tooltipBg,
         borderColor: eTheme.tooltipBorderColor,
-        borderWidth: 3,
+        borderWidth: 1,
         formatter: (params) => {
           return Math.round(parseInt(params.value, 10));
         },
