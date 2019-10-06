@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { ThemeModule } from '../../@theme/theme.module';
 import { ExtraComponentsModule } from '../extra-components/extra-components.module';
 import { NbCardModule } from '@nebular/theme';
-import * as components from './index';
+import * as fromComponents from './index';
 
 @NgModule({
   imports: [
@@ -11,10 +11,7 @@ import * as components from './index';
     NbCardModule,
   ],
   declarations: [
-    components.ProfileComponent,
-    components.GeneralInformationComponent,
-    components.ChangePasswordComponent,
-    components.ContactInformationComponent,
+    ...fromComponents.components,
   ],
 })
 export class ProfileModule { }
