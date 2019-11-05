@@ -11,13 +11,15 @@
     top: 1rem;
     @include nb-rtl(right, auto);
     @include nb-rtl(left, 0.625rem);
+    @include nb-rtl(transform, scaleX(-1));
     cursor: pointer;
   }
 
   ::ng-deep .flipped {
     .back-container {
       .flip-icon {
-        transform: scaleX(-1);
+        @include nb-ltr(transform, scaleX(-1));
+        @include nb-rtl(transform, scaleX(1));
       }
     }
 
