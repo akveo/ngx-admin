@@ -10,8 +10,15 @@ import { Observable } from 'rxjs';
 import { delay, filter, take } from 'rxjs/operators';
 import { NB_WINDOW } from '@nebular/theme';
 
-import { BUNDLE_LICENSE, BundlesService, Feature, Product } from '../../../@core/data/service/bundles.service';
+import {
+  BUNDLE_LICENSE,
+  BundlesService,
+  Feature,
+  Product,
+  ProductVariant,
+} from '../../../@core/data/service/bundles.service';
 import { Descriptions, DescriptionsService } from '../../../@core/data/service/descriptions.service';
+import { LicensePipe } from '../backend-bundles-section/license.pipe';
 
 @Component({
   selector: 'ngx-backend-bundles-section',
@@ -34,7 +41,8 @@ export class BackendBundlesSectionComponent implements AfterViewInit {
               private bundlesService: BundlesService,
               private activatedRoute: ActivatedRoute,
               private el: ElementRef<HTMLElement>,
-              @Inject(NB_WINDOW) private window) {
+              @Inject(NB_WINDOW) private window,
+              private licensePipe: LicensePipe) {
   }
 
   ngAfterViewInit() {
@@ -47,5 +55,11 @@ export class BackendBundlesSectionComponent implements AfterViewInit {
       .subscribe((fragment: string) => {
         this.window.scrollTo(0, this.el.nativeElement.offsetTop);
       });
+  }
+
+  shouldShowOldPrice(variants: ProductVariant[], selectedLicenseType: string): boolean {
+    const product = this.licensePipe.transform(variants, selectedLicenseType);
+
+    return !!parseFloat(product.compare_at_price);
   }
 }

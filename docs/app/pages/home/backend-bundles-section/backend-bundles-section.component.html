@@ -34,7 +34,9 @@
             </a>
           </p>
           <div class="package-card__price-wrapper">
-            <span class="package-card__price package-card__price--old">${{ (product.variants | license:selectedLicenseType).compare_at_price }}</span>
+            <span class="package-card__price package-card__price--old" *ngIf="shouldShowOldPrice(product.variants, selectedLicenseType)">
+              ${{ (product.variants | license:selectedLicenseType).compare_at_price }}
+            </span>
             <span class="package-card__price">${{ (product.variants | license:selectedLicenseType).price }}</span>
           </div>
           <a href="{{ product.storeUrl }}?utm_source=ngx_admin_landing&utm_medium=buy_bundle_{{ selectedLicenseType }}"

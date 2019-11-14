@@ -91,7 +91,7 @@ export class BundlesService {
             storeUrl: `${this.STORE}/${item.handle}`,
             tags: item.tags,
             title: item.title,
-            description: (item.body_html as string).trim().replace(/^<p>/, '').replace(/<\/p>$/, ''),
+            description: (item.body_html as string).trim().replace(/<(?:.|\n)*?>/gm, ' ').replace(/  +/gm, ' '),
             variants: item.variants.map(variant => {
               return {
                 available: variant.available,
