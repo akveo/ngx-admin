@@ -54,6 +54,9 @@ const COMPONENTS = [
     SwiperModule,
     LandingHomeRoutingModule,
   ],
+  providers: [
+    ...PIPES,
+  ],
 })
 export class LandingHomeModule {
 }
