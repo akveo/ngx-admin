@@ -9,7 +9,7 @@
 Easy way to integrate ngx-admin with backend (.NET, Node.js, Java etc.).
 
 <a target="_blank" href="https://store.akveo.com/collections/all/?utm_source=github&utm_medium=ngx_admin_readme">
-  <img src="https://i.imgur.com/7vnznkW.png"/>
+  <img src="https://i.imgur.com/Ywbs8cl.png"/>
 </a>
 
 [Checkout our Store](https://store.akveo.com/collections/all/?utm_source=github&utm_medium=ngx_admin_readme) for ready to use Backend Bundles.
