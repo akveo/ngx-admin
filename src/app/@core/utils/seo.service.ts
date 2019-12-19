@@ -1,18 +1,27 @@
-import { Injectable, Inject } from '@angular/core';
+import { Injectable, Inject, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 import { NavigationEnd, Router } from '@angular/router';
-import { DOCUMENT } from '@angular/common';
+import { NB_DOCUMENT } from '@nebular/theme';
 import { filter } from 'rxjs/operators';
 
 @Injectable()
 export class SeoService {
 
+  private readonly dom: Document;
+  private readonly isBrowser: boolean;
   private linkCanonical: HTMLLinkElement;
 
   constructor(
     private router: Router,
-    @Inject(DOCUMENT) private dom,
-    ) {
-    this.createCanonicalTag();
+    @Inject(NB_DOCUMENT) document,
+    @Inject(PLATFORM_ID) platformId,
+  ) {
+    this.isBrowser = isPlatformBrowser(platformId);
+    this.dom = document;
+
+    if (this.isBrowser) {
+      this.createCanonicalTag();
+    }
   }
 
   createCanonicalTag() {
@@ -23,6 +32,10 @@ export class SeoService {
   }
 
   trackCanonicalChanges() {
+    if (!this.isBrowser) {
+      return;
+    }
+
     this.router.events.pipe(
       filter((event) => event instanceof NavigationEnd),
     )
