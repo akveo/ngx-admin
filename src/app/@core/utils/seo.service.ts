@@ -1,12 +1,14 @@
-import { Injectable, Inject, PLATFORM_ID } from '@angular/core';
+import { Injectable, Inject, PLATFORM_ID, OnDestroy } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { NavigationEnd, Router } from '@angular/router';
 import { NB_DOCUMENT } from '@nebular/theme';
-import { filter } from 'rxjs/operators';
+import { filter, takeUntil } from 'rxjs/operators';
+import { Subject } from 'rxjs';
 
 @Injectable()
-export class SeoService {
+export class SeoService implements OnDestroy {
 
+  private readonly destroy$ = new Subject<void>();
   private readonly dom: Document;
   private readonly isBrowser: boolean;
   private linkCanonical: HTMLLinkElement;
@@ -24,6 +26,11 @@ export class SeoService {
     }
   }
 
+  ngOnDestroy() {
+    this.destroy$.next();
+    this.destroy$.complete();
+  }
+
   createCanonicalTag() {
     this.linkCanonical = this.dom.createElement('link');
     this.linkCanonical.setAttribute('rel', 'canonical');
@@ -38,6 +45,7 @@ export class SeoService {
 
     this.router.events.pipe(
       filter((event) => event instanceof NavigationEnd),
+      takeUntil(this.destroy$),
     )
       .subscribe(() => {
         this.linkCanonical.setAttribute('href', this.getCanonicalUrl());
