@@ -10,6 +10,7 @@ import { NbThemeService } from '@nebular/theme';
 import { AnalyticsService } from './@core/utils/analytics.service';
 import { AbService } from './@core/utils/ab.service';
 import { withLatestFrom, filter } from 'rxjs/operators';
+import { SeoService } from './@core/utils/seo.service';
 
 @Component({
   selector: 'ngx-app',
@@ -22,7 +23,8 @@ export class AppComponent implements OnInit {
   constructor(private analytics: AnalyticsService,
               private activatedRoute: ActivatedRoute,
               private abService: AbService,
-              private themeService: NbThemeService) {
+              private themeService: NbThemeService,
+              private seoService: SeoService) {
 
     this.themeService.onThemeChange()
       .subscribe((theme: any) => {
@@ -58,5 +60,6 @@ export class AppComponent implements OnInit {
           this.themeService.changeTheme(themeName);
         }
       });
+    this.seoService.trackCanonicalChanges();
   }
 }
