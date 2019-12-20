@@ -28,7 +28,7 @@ export class SeoService {
     this.linkCanonical = this.dom.createElement('link');
     this.linkCanonical.setAttribute('rel', 'canonical');
     this.dom.head.appendChild(this.linkCanonical);
-    this.linkCanonical.setAttribute('href', this.dom.URL);
+    this.linkCanonical.setAttribute('href', this.getCanonicalUrl());
   }
 
   trackCanonicalChanges() {
@@ -40,8 +40,11 @@ export class SeoService {
       filter((event) => event instanceof NavigationEnd),
     )
       .subscribe(() => {
-        this.linkCanonical.setAttribute('href', this.dom.URL);
+        this.linkCanonical.setAttribute('href', this.getCanonicalUrl());
       });
   }
 
+  private getCanonicalUrl(): string {
+    return this.dom.location.origin + this.dom.location.pathname;
+  }
 }
