@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,600,700&display=swap');
 
 // themes - our custom or/and out of the box themes
 @import 'themes';
@@ -31,3 +31,86 @@
 
   @include nb-overrides();
 };
+
+@import '~@angular/material/theming';
+// plus imports for other components in your app.
+
+// include the common styles for angular material. we include this here so that you only
+// have to load a single css file for angular material in your app.
+// **be sure that you only ever include this mixin once!**
+@include mat-core();
+
+$purple: (
+  50: #f3e5f5,
+  200: #e8cbfe,
+  300: #ce97fd,
+  400: #ae63f9,
+  500: #903df4,
+  600: #6200ee,
+  700: #4b00cc,
+  800: #3800ab,
+  900: #27008a,
+  a100: #ea80fc,
+  a200: #e040fb,
+  a400: #d500f9,
+  a700: #aa00ff,
+  contrast: (
+    50: $dark-primary-text,
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $light-primary-text,
+    400: $light-primary-text,
+    500: $light-primary-text,
+    600: $light-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    900: $light-primary-text,
+    a100: $dark-primary-text,
+    a200: $light-primary-text,
+    a400: $light-primary-text,
+    a700: $light-primary-text,
+  )
+);
+
+$cyan: (
+  50: #e0f7fa,
+  100: #cafde5,
+  200: #96fbd5,
+  300: #61f4c9,
+  400: #3ae9c6,
+  500: #00dbc4,
+  600: #00bcb9,
+  700: #00919d,
+  800: #00697f,
+  900: #004d69,
+  A100: #84ffff,
+  A200: #18ffff,
+  A400: #00e5ff,
+  A700: #00b8d4,
+  contrast: (
+    50: $dark-primary-text,
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $dark-primary-text,
+    400: $dark-primary-text,
+    500: $light-primary-text,
+    600: $light-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    900: $light-primary-text,
+    A100: $dark-primary-text,
+    A200: $dark-primary-text,
+    A400: $dark-primary-text,
+    A700: $dark-primary-text,
+  )
+);
+
+// Define the default theme (same as the example above).
+$primary: mat-palette($purple);
+$accent: mat-palette($cyan);
+//$candy-app-accent:  mat-palette($mat-pink, A200, A100, A400);
+$material-theme:   mat-light-theme($primary, $accent);
+.nb-theme-material {
+  @include angular-material-theme($material-theme);
+}
+

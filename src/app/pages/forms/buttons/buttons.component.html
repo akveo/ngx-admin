@@ -29,6 +29,30 @@
     </nb-card>
 
     <nb-card>
+      <nb-card-header>Material Buttons</nb-card-header>
+      <nb-card-body>
+        <div class="buttons-row">
+          <button matRipple *ngFor="let status of statuses" nbButton [status]="status">
+            {{ status }}
+          </button>
+        </div>
+      </nb-card-body>
+    </nb-card>
+
+    <nb-card>
+      <nb-card-header>Buttons with Ripple</nb-card-header>
+      <nb-card-body>
+        <div class="buttons-row">
+          <button mat-raised-button>Basic</button>
+          <button mat-raised-button color="primary">Primary</button>
+          <button mat-raised-button color="accent">Accent</button>
+          <button mat-raised-button color="warn">Warn</button>
+          <button mat-raised-button disabled>Disabled</button>
+        </div>
+      </nb-card-body>
+    </nb-card>
+
+    <nb-card>
       <nb-card-header>Outline Buttons</nb-card-header>
       <nb-card-body>
         <div class="buttons-row">

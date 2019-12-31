@@ -6,4 +6,18 @@
   .menu-sidebar ::ng-deep .scrollable {
     padding-top: nb-theme(layout-padding-top);
   }
+
+  .nb-theme-header ::ng-deep nav {
+    color: nb-theme(text-alternate-color);
+    a {
+      color: nb-theme(text-alternate-color);
+    }
+  }
+
+  .purple {
+
+    ::ng-deep nav {
+      background-color: nb-theme(color-primary-500);
+    }
+  }
 }

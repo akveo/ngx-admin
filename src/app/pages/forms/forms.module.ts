@@ -10,6 +10,7 @@ import {
   NbSelectModule,
   NbUserModule,
 } from '@nebular/theme';
+import { MatButtonModule, MatFormFieldModule, MatInputModule } from '@angular/material';
 
 import { ThemeModule } from '../../@theme/theme.module';
 import { FormsRoutingModule } from './forms-routing.module';
@@ -33,6 +34,9 @@ import { ButtonsComponent } from './buttons/buttons.component';
     FormsRoutingModule,
     NbSelectModule,
     NbIconModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule,
   ],
   declarations: [
     FormsComponent,
