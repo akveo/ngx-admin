@@ -47,4 +47,4 @@ And many more!
 This documentation assumes that you are already familiar with JavaScript/TypeScript, Angular, CSS and Bootstrap.
 
 ## Have questions?
-Didn't find something here? Look through the <a href="https://github.com/akveo/ngx-admin/issues" target="_blank">issues</a> or simply drop us a line at <a href="mailto:contact@akveo.com">contact@akveo.com</a>.
+Didn't find something here? Look through the <a href="https://github.com/akveo/ngx-admin/issues" target="_blank">issues</a> or ask on <a href="https://stackoverflow.com/questions/ask" target="_blank">Stack Overflow</a>.
