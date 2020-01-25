@@ -1,3 +1,7 @@
+#WINDOWS 10 USAGE EXAMPLES
+#docker run -v c:/apps/ngx-admin -v /app/node_modules -p 4201:4200 --rm ngx-admin:dev
+#docker build -t ngx-admin:dev .
+
 # base image
 FROM node:12.13.0
 
@@ -15,7 +19,7 @@ ENV PATH /app/node_modules/.bin:$PATH
 # install and cache app dependencies
 COPY package.json /app/package.json
 RUN npm install
-RUN npm install -g @angular/cli@8.3.18 --unsafe
+RUN npm install -g @angular/cli@8.3.21 --unsafe
 
 # add app
 COPY . /app
