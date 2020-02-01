@@ -25,7 +25,7 @@
     "e2e": "ng e2e --port 2222",
     "ng:lint": "ng lint --fix",
     "ci:build": "ng build --prod --aot",
-    "ci:lint": "npm run cleanify",
+    "ci:lint": "npm run lint:ci",
     "ci:test": "ng test --no-watch --code-coverage",
     "ci:e2e": "ng e2e",
 
