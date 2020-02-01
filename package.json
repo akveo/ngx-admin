@@ -1,5 +1,5 @@
 {
-  "name": "ngx-admin",
+  "name": "ooo",
   "version": "4.0.1",
   "license": "MIT",
   "repository": {
@@ -25,7 +25,7 @@
     "e2e": "ng e2e --port 2222",
     "ng:lint": "ng lint --fix",
     "ci:build": "ng build --prod --aot",
-    "ci:lint": "npm run lint:ci",
+    "ci:lint": "ng lint && stylelint ./src/**/*.scss",
     "ci:test": "ng test --no-watch --code-coverage",
     "ci:e2e": "ng e2e",
     "ng": "ng",
@@ -117,7 +117,7 @@
     "karma-jasmine": "1.1.0",
     "karma-jasmine-html-reporter": "0.2.2",
     "npm-run-all": "4.0.2",
-    "protractor": "5.1.2",
+    "protractor": "~5.4.0",
     "rimraf": "2.6.1",
     "stylelint": "7.13.0",
     "ts-node": "3.2.2",
