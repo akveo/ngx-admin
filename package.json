@@ -24,31 +24,24 @@
     "test": "ng test",
     "test:watch": "ng test",
     "test:coverage": "rimraf coverage && npm run test -- --code-coverage",
-
     "e2e": "ng e2e --port 2222",
-
     "lint": "ng lint",
     "lint:fix": "ng lint --fix",
     "lint:ts": "prettier --check ./src/*/**.{js,ts,json}",
     "lint:ts:fix": "prettier --write ./src/*/**.{js,ts,json}",
     "lint:styles": "stylelint ./src/**/*.scss",
     "lint:styles:fix": "stylelint ./src/**/*.scss --fix",
-
     "ci:build": "npm run build:prod",
     "ci:lint": "ng lint && npm run lint:styles && npm run lint",
     "ci:test": "ng test --no-watch --code-coverage",
     "ci:e2e": "npm run e2e",
-
     "husk:cleanify": "npm run lint && npm run lint:styles && npm run lint:ts",
     "husk:testify": "npm run test && npm run e2e",
-
     "build": "ng build",
     "build:prod": "npm run build -- --prod --aot",
-
     "docs": "compodoc -p src/tsconfig.app.json -d docs",
     "docs:serve": "compodoc -p src/tsconfig.app.json -d docs -s",
     "ng": "ng",
-
     "conventional-changelog": "conventional-changelog",
     "pree2e": "webdriver-manager update --standalone false --gecko false",
     "prepush": "npm run lint:ci",
