@@ -22,7 +22,7 @@
   "scripts": {
     "start": "ng serve",
     "test": "ng test",
-    "test:watch": "ng test",
+    "test:no-watch": "ng test --no-watch",
     "test:coverage": "rimraf coverage && npm run test -- --code-coverage",
 
     "e2e": "ng e2e --port 2222",
@@ -36,8 +36,8 @@
 
     "ci:build": "npm run build:prod",
     "ci:lint": "ng lint && npm run lint:styles && npm run lint",
-    "ci:test": "ng test --no-watch",
-    "ci:e2e": "npm run e2e --port 3333",
+    "ci:test": "npm run test:no-watch",
+    "ci:e2e": "npm run e2e",
 
     "husk:cleanify": "npm run lint && npm run lint:styles && npm run lint:ts",
     "husk:testify": "npm run ci:test && npm run ci:e2e",
