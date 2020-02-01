@@ -1,0 +1,40 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [10.x]
+    name: Build and Run Tests
+    steps:
+      - uses: actions/checkout@v1
+      - name: Setup Node ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Install Dependencies
+        run: npm install
+      - name: Build
+        run: npm run ci:build
+      - name: Run Lint
+        run: npm run ci:lint
+      - name: Run Unit Tests
+        run: npm run ci:test
+      - name: Run e2e Tests
+        run: npm run ci:e2e
+
+  deploy:
+    name: Deploy to ???
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+      - name: Say Hi
+        run: echo "hello world"
