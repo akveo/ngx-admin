@@ -10,14 +10,13 @@
     "url": "https://github.com/akveo/ngx-admin/issues"
   },
   "prettier": {
-    "trailingComma": "es5",
     "tabWidth": 2,
     "singleQuote": true
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run cleanify",
-      "pre-push": "npm run testify"
+      "pre-commit": "npm run husky:cleanify",
+      "pre-push": "npm run husky:testify"
     }
   },
   "scripts": {
@@ -30,6 +29,8 @@
 
     "lint": "ng lint",
     "lint:fix": "ng lint --fix",
+    "lint:ts": "prettier --check ./src/*/**.{js,ts,json}",
+    "lint:ts:fix": "prettier --write ./src/*/**.{js,ts,json}",
     "lint:styles": "stylelint ./src/**/*.scss",
     "lint:styles:fix": "stylelint ./src/**/*.scss --fix",
 
@@ -38,7 +39,7 @@
     "ci:test": "ng test --no-watch --code-coverage",
     "ci:e2e": "npm run e2e",
 
-    "husk:cleanify": "npm run lint && npm run lint:styles",
+    "husk:cleanify": "npm run lint && npm run lint:styles && npm run lint:ts",
     "husk:testify": "npm run test && npm run e2e",
 
     "build": "ng build",
