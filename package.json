@@ -37,10 +37,10 @@
     "ci:build": "npm run build:prod",
     "ci:lint": "ng lint && npm run lint:styles && npm run lint",
     "ci:test": "ng test --no-watch",
-    "ci:e2e": "npm run e2e",
+    "ci:e2e": "npm run e2e --port 3333",
 
     "husk:cleanify": "npm run lint && npm run lint:styles && npm run lint:ts",
-    "husk:testify": "npm run test && npm run e2e",
+    "husk:testify": "npm run ci:test && npm run ci:e2e",
 
     "build": "ng build",
     "build:prod": "npm run build -- --prod --aot",
