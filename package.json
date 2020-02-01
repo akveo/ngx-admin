@@ -25,7 +25,7 @@
     "test:no-watch": "ng test --no-watch",
     "test:coverage": "rimraf coverage && npm run test -- --code-coverage",
 
-    "e2e": "ng e2e --port 2222",
+    "e2e": "ng e2e --port 4343",
 
     "lint": "ng lint",
     "lint:fix": "ng lint --fix",
