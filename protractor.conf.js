@@ -9,9 +9,9 @@ exports.config = {
     './e2e/**/*.e2e-spec.ts'
   ],
   capabilities: {
-    'browserName': 'chrome',
-    'chromeOptions': {
-      'args': ['show-fps-counter=true', '--no-sandbox']
+    browserName: 'chrome',
+    chromeOptions: {
+      args: ['show-fps-counter=true', '--no-sandbox','--headless']
     }
   },
   directConnect: true,

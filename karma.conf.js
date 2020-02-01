@@ -27,11 +27,19 @@ module.exports = function (config) {
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
-    browsers: ['Chrome'],
+    browsers: ['ChromeHeadlessNoSandbox'],
     customLaunchers: {
-      Chrome_travis_ci: {
-        base: 'Chrome',
-        flags: ['--no-sandbox']
+      ChromeHeadlessNoSandbox: {
+        base: 'ChromeHeadless',
+        flags: [
+          '--no-sandbox',
+          '--no-watch',
+          '--no-progress',
+          "--no-proxy-server",
+          "--disable-web-security",
+          "--disable-gpu",
+          "--js-flags=--max-old-space-size=8196"
+        ]
       }
     },
     singleRun: false
