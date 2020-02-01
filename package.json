@@ -36,7 +36,7 @@
 
     "ci:build": "npm run build:prod",
     "ci:lint": "ng lint && npm run lint:styles && npm run lint",
-    "ci:test": "ng test --no-watch --code-coverage",
+    "ci:test": "ng test --no-watch",
     "ci:e2e": "npm run e2e",
 
     "husk:cleanify": "npm run lint && npm run lint:styles && npm run lint:ts",
