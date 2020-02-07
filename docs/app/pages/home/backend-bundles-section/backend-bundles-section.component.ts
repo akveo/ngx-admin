@@ -29,7 +29,7 @@ export class BackendBundlesSectionComponent implements AfterViewInit {
 
   @Output() loaded = new EventEmitter();
 
-  selectedLicenseType = BUNDLE_LICENSE.single;
+  selectedLicenseType = BUNDLE_LICENSE.personal;
 
   licenses = Object.values(BUNDLE_LICENSE);
 
