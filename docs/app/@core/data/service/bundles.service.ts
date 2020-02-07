@@ -21,8 +21,8 @@ export interface ProductVariant {
 }
 
 export const BUNDLE_LICENSE = {
-  single: 'single',
-  multi: 'multi',
+  personal: 'personal',
+  developer: 'developer',
 };
 
 export class Feature {

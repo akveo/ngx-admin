@@ -5,7 +5,7 @@ import { ProductVariant } from '../../../@core/data/service/bundles.service';
 export class LicensePipe implements PipeTransform {
   transform(variants: ProductVariant[], license: string): ProductVariant {
     const result = variants
-      .filter(variant => variant.title.toLowerCase().includes(license.toLowerCase()));
-    return result.length ? result[0] : undefined;
+      .find(variant => variant.title.toLowerCase().includes(license.toLowerCase()));
+    return result ? result : variants[0];
   }
 }
