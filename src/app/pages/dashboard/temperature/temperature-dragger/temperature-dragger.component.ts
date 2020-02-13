@@ -80,7 +80,7 @@ export class TemperatureDraggerComponent implements AfterViewInit, OnChanges {
     arcTranslateStr: 'translate(0, 0)',
     clipPathStr: '',
     gradArcs: [],
-    nonSelectedArc:{
+    nonSelectedArc: {
       color: this.disableArcColor,
       d: `M ${this.radius},${this.radius}
        L ${this.radius},${3 * this.radius}
