@@ -1,6 +1,6 @@
 # Theme System
 
-<a href="https://akveo.github.io/nebular/?utm_source=ngx_admin_landing&utm_medium=docs_theme_system" target="_blank">Nebular</a> Theme System is a set of rules we put into how SCSS files and variables are organized to achieve the following goals:
+<a href="https://hubs.ly/H0n5Qgf0" target="_blank">Nebular</a> Theme System is a set of rules we put into how SCSS files and variables are organized to achieve the following goals:
 
 - ability to flexibly change looks & feel of the application by managing variables, without changing SCSS itself;
 - ability to switch between visual themes in a runtime without reloading the page;
@@ -101,7 +101,7 @@ Themes can also be inherited from each other, `cosmic`, for instance, is inherit
 
 ## Magic of multiple themes with hot-reload
 
-As you can see from the [ngx-admin demo](http://akveo.com/ngx-admin?utm_source=nebular_documentation&utm_medium=doc_page), you can switch themes in the runtime without reloading the page.
+As you can see from the [ngx-admin demo](https://hubs.ly/H0n54N00), you can switch themes in the runtime without reloading the page.
 It is useful when you have multiple visual themes per user role or want to provide your user with such a configuration so that he can decide which theme works best for him.
 The only requirement for the feature to work is to wrap all of your component styles into special mixin `nb-install-component` and use `nb-theme` to get the right value:
 

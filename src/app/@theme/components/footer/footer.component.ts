@@ -5,11 +5,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./footer.component.scss'],
   template: `
     <span class="created-by">
-      Created with ♥ by <b><a href="http://akveo.com?utm_source=ngx-admin-demo&utm_medium=footer"
+      Created with ♥ by <b><a href="https://hubs.ly/H0n50Ch0"
                               target="_blank">Akveo</a></b> 2019.
       Made with
       <b>
-        <a href="https://akveo.github.io/nebular/?utm_source=ngx-admin&utm_medium=footer_link" target="_blank">
+        <a href="https://hubs.ly/H0n50_80" target="_blank">
         Nebular.
         </a>
       </b>
