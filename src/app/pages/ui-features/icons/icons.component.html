@@ -1,0 +1,45 @@
+<div class="row">
+  <div class="col-md-12 col-lg-6">
+    <nb-card>
+      <nb-card-header>
+        Eva Icons
+      </nb-card-header>
+      <nb-card-body>
+        <nb-icon *ngFor="let icon of evaIcons" [icon]="icon" pack="eva"></nb-icon>
+      </nb-card-body>
+      <nb-card-footer>
+        <a href="https://hubs.ly/H0n4_1m0" target="_blank">See all Eva Icons</a>
+      </nb-card-footer>
+    </nb-card>
+  </div>
+
+  <div class="col-md-12 col-lg-6">
+    <nb-card>
+      <nb-card-header>
+        Font awesome icons
+      </nb-card-header>
+      <nb-card-body>
+        <nb-icon *ngFor="let icon of icons.fontAwesome" [icon]="icon" pack="fa"></nb-icon>
+        <nb-icon *ngFor="let icon of icons.fontAwesomeRegular" [icon]="icon" pack="far"></nb-icon>
+      </nb-card-body>
+      <nb-card-footer>
+        <a href="http://fortawesome.github.io/Font-Awesome/icons/" target="_blank">
+          See all Font Awesome icons
+        </a>
+      </nb-card-footer>
+    </nb-card>
+
+    <nb-card>
+      <nb-card-header>
+        Ionicons
+      </nb-card-header>
+      <nb-card-body>
+        <nb-icon *ngFor="let icon of icons.ionicons" [icon]="icon" pack="ion"></nb-icon>
+      </nb-card-body>
+      <nb-card-footer>
+        <a href="http://ionicons.com/" target="_blank">See all ionicons</a>
+      </nb-card-footer>
+    </nb-card>
+
+  </div>
+</div>
