@@ -22,6 +22,7 @@
               "src/assets",
               "src/favicon.ico",
               "src/favicon.png",
+              "src/web.config",
               {
                 "glob": "**/*",
                 "input": "node_modules/leaflet/dist/images",
