@@ -11,6 +11,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "aot": true,
             "preserveSymlinks": true,
             "rebaseRootRelativeCssUrls": true,
             "outputPath": "dist",
@@ -55,6 +56,12 @@
           },
           "configurations": {
             "production": {
+              "budgets": [
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb"
+                }
+              ],
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
@@ -172,7 +179,7 @@
   "schematics": {
     "@schematics/angular:component": {
       "prefix": "ngx",
-      "styleext": "scss"
+      "style": "scss"
     },
     "@schematics/angular:directive": {
       "prefix": "ngx"
