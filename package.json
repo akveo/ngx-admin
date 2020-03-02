@@ -30,15 +30,15 @@
   },
   "dependencies": {
     "@agm/core": "^1.0.0-beta.5",
-    "@angular/animations": "^8.0.0",
+    "@angular/animations": "^8.2.14",
     "@angular/cdk": "^8.0.0",
-    "@angular/common": "^8.0.0",
-    "@angular/compiler": "^8.0.0",
-    "@angular/core": "^8.0.0",
-    "@angular/forms": "^8.0.0",
-    "@angular/platform-browser": "^8.0.0",
-    "@angular/platform-browser-dynamic": "^8.0.0",
-    "@angular/router": "^8.0.0",
+    "@angular/common": "^8.2.14",
+    "@angular/compiler": "^8.2.14",
+    "@angular/core": "^8.2.14",
+    "@angular/forms": "^8.2.14",
+    "@angular/platform-browser": "^8.2.14",
+    "@angular/platform-browser-dynamic": "^8.2.14",
+    "@angular/router": "^8.2.14",
     "@asymmetrik/ngx-leaflet": "3.0.1",
     "@nebular/auth": "4.4.0",
     "@nebular/eva-icons": "4.4.0",
@@ -67,7 +67,7 @@
     "normalize.css": "6.0.0",
     "pace-js": "1.0.2",
     "roboto-fontface": "0.8.0",
-    "rxjs": "6.5.2",
+    "rxjs": "6.5.4",
     "rxjs-compat": "6.3.0",
     "socicon": "3.0.5",
     "tinymce": "4.5.7",
@@ -77,10 +77,10 @@
     "zone.js": "~0.9.1"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~0.800.2",
-    "@angular/cli": "^8.0.2",
-    "@angular/compiler-cli": "^8.0.0",
-    "@angular/language-service": "8.0.0",
+    "@angular-devkit/build-angular": "~0.803.25",
+    "@angular/cli": "^8.3.25",
+    "@angular/compiler-cli": "^8.2.14",
+    "@angular/language-service": "8.2.14",
     "@compodoc/compodoc": "1.0.1",
     "@fortawesome/fontawesome-free": "^5.2.0",
     "@types/d3-color": "1.0.5",
@@ -107,6 +107,6 @@
     "ts-node": "3.2.2",
     "tslint": "^5.7.0",
     "tslint-language-service": "^0.9.9",
-    "typescript": "3.4.5"
+    "typescript": "3.5.3"
   }
 }
