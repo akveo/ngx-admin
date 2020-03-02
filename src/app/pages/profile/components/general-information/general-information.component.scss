@@ -1,0 +1,80 @@
+.user {
+    position: relative;
+    border-radius: 5px;
+    background-position: center;
+    background-size: cover;
+    padding: 0;
+    margin-bottom: 25px;
+    height: 220px;
+    width: 220px;
+    &::before {
+        background-color:rgba(255, 255, 255, 0.1);
+        content: '';
+        position: absolute;
+        height: 100%;
+        opacity: 1;
+      }
+
+    &:hover::before {
+        cursor: pointer;
+      }
+  }
+
+  .update {
+      max-width: 300px;
+      margin-bottom:30px;
+    }
+
+  i {
+    font-size: 1.2em;
+  }
+
+  .save {
+    float: right;
+  }
+
+  .show-text {
+    position: absolute;
+    bottom: 20px;
+    width: 220px;
+    padding-left:10px;
+    padding-right:10px;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    background: rgba(7, 7, 7, 0.76);
+    p {
+      font-size: 20px;
+      color: white;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+  }
+
+  .hide-text {
+    opacity: 0;
+    position: absolute;
+    bottom: 20px;
+    width: 220px;
+    padding-left:10px;
+    padding-right: 10px;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    background: rgba(7, 7, 7, 0.76);
+    p {
+      font-size: 20px;
+      color: white;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+  }
+
+  .get-new-pic-div:hover {
+    cursor: pointer;
+  }
+
+  @media only screen and (max-device-width: 480px) {
+  .user {
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+ }
