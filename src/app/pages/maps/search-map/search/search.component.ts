@@ -1,5 +1,7 @@
 import { Component, ElementRef, EventEmitter, NgZone, OnInit, Output, ViewChild } from '@angular/core';
-import { PositionModel } from '../entity/position.model';
+// import { MapsAPILoader } from '@agm/core';
+import { Location } from '../entity/Location';
+
 
 @Component({
   selector: 'ngx-search',
@@ -7,34 +9,36 @@ import { PositionModel } from '../entity/position.model';
 })
 export class SearchComponent implements OnInit {
 
-  @Output()
-  positionChanged: EventEmitter<PositionModel> = new EventEmitter<PositionModel>();
+  @Output() positionChanged = new EventEmitter<Location>();
 
   @ViewChild('search', { static: true })
-  searchElementRef: ElementRef;
+  public searchElementRef: ElementRef;
 
-  constructor(private ngZone: NgZone) {}
+  constructor(// private mapsAPILoader: MapsAPILoader,
+              private ngZone: NgZone) {
+  }
 
   ngOnInit() {
-    const autocomplete = new google.maps.places.Autocomplete(
-      this.searchElementRef.nativeElement, { types: ['address'] },
-    );
+    // load Places Autocomplete
+    // this.mapsAPILoader.load().then(() => {
+    //   const autocomplete = new google.maps.places.Autocomplete(this.searchElementRef.nativeElement, {
+    //     types: ['address'],
+    //   });
+    //   autocomplete.addListener('place_changed', () => {
+    //     this.ngZone.run(() => {
+    //       // get the place result
+    //       const place: google.maps.places.PlaceResult = autocomplete.getPlace();
 
-    autocomplete.addListener('place_changed', () => {
-      this.ngZone.run(() => {
-        // get the place result
-        const place: google.maps.places.PlaceResult = autocomplete.getPlace();
+    //       // verify result
+    //       if (place.geometry === undefined || place.geometry === null) {
+    //         return;
+    //       }
 
-        // verify result
-        if (place.geometry === undefined || place.geometry === null) {
-          return;
-        }
-
-        this.positionChanged.emit(new PositionModel(
-          place.geometry.location.lat(),
-          place.geometry.location.lng(),
-        ));
-      });
-    });
+    //       this.positionChanged.emit(
+    //         new Location(place.geometry.location.lat(),
+    //           place.geometry.location.lng()));
+    //     });
+    //   });
+    // });
   }
 }

@@ -19,9 +19,8 @@ import { NbSecurityModule } from '@nebular/security';
 import {
   FooterComponent,
   HeaderComponent,
-  LayoutDirectionSwitcherComponent,
   SearchInputComponent,
-  SwitcherComponent,
+  TinyMCEComponent,
 } from './components';
 import {
   CapitalizePipe,
@@ -39,8 +38,6 @@ import { DEFAULT_THEME } from './styles/theme.default';
 import { COSMIC_THEME } from './styles/theme.cosmic';
 import { CORPORATE_THEME } from './styles/theme.corporate';
 import { DARK_THEME } from './styles/theme.dark';
-import { MATERIAL_LIGHT_THEME } from './styles/theme.material-light';
-import { MATERIAL_DARK_THEME } from './styles/theme.material-dark';
 
 const NB_MODULES = [
   NbLayoutModule,
@@ -57,11 +54,10 @@ const NB_MODULES = [
   NbEvaIconsModule,
 ];
 const COMPONENTS = [
-  SwitcherComponent,
-  LayoutDirectionSwitcherComponent,
   HeaderComponent,
   FooterComponent,
   SearchInputComponent,
+  TinyMCEComponent,
   OneColumnLayoutComponent,
   ThreeColumnsLayoutComponent,
   TwoColumnsLayoutComponent,
@@ -78,17 +74,25 @@ const PIPES = [
   imports: [CommonModule, ...NB_MODULES],
   exports: [CommonModule, ...PIPES, ...COMPONENTS],
   declarations: [...COMPONENTS, ...PIPES],
+  providers: [
+    ...NbThemeModule.forRoot(
+      {
+        name: 'default',
+      },
+      [ DEFAULT_THEME, COSMIC_THEME, CORPORATE_THEME, DARK_THEME ],
+    ).providers,
+  ]
 })
 export class ThemeModule {
   static forRoot(): ModuleWithProviders<ThemeModule> {
-    return {
+    return <ModuleWithProviders>{
       ngModule: ThemeModule,
       providers: [
         ...NbThemeModule.forRoot(
           {
             name: 'default',
           },
-          [ DEFAULT_THEME, COSMIC_THEME, CORPORATE_THEME, DARK_THEME, MATERIAL_LIGHT_THEME, MATERIAL_DARK_THEME ],
+          [ DEFAULT_THEME, COSMIC_THEME, CORPORATE_THEME, DARK_THEME ],
         ).providers,
       ],
     };
