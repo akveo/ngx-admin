@@ -74,9 +74,17 @@ const PIPES = [
   imports: [CommonModule, ...NB_MODULES],
   exports: [CommonModule, ...PIPES, ...COMPONENTS],
   declarations: [...COMPONENTS, ...PIPES],
+  providers: [
+    ...NbThemeModule.forRoot(
+      {
+        name: 'default',
+      },
+      [ DEFAULT_THEME, COSMIC_THEME, CORPORATE_THEME, DARK_THEME ],
+    ).providers,
+  ]
 })
 export class ThemeModule {
-  static forRoot(): ModuleWithProviders {
+  static forRoot(): ModuleWithProviders<ThemeModule> {
     return <ModuleWithProviders>{
       ngModule: ThemeModule,
       providers: [

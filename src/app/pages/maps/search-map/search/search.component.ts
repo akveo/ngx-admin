@@ -1,5 +1,5 @@
 import { Component, ElementRef, EventEmitter, NgZone, OnInit, Output, ViewChild } from '@angular/core';
-import { MapsAPILoader } from '@agm/core';
+// import { MapsAPILoader } from '@agm/core';
 import { Location } from '../entity/Location';
 
 
@@ -14,31 +14,31 @@ export class SearchComponent implements OnInit {
   @ViewChild('search', { static: true })
   public searchElementRef: ElementRef;
 
-  constructor(private mapsAPILoader: MapsAPILoader,
+  constructor(// private mapsAPILoader: MapsAPILoader,
               private ngZone: NgZone) {
   }
 
   ngOnInit() {
     // load Places Autocomplete
-    this.mapsAPILoader.load().then(() => {
-      const autocomplete = new google.maps.places.Autocomplete(this.searchElementRef.nativeElement, {
-        types: ['address'],
-      });
-      autocomplete.addListener('place_changed', () => {
-        this.ngZone.run(() => {
-          // get the place result
-          const place: google.maps.places.PlaceResult = autocomplete.getPlace();
+    // this.mapsAPILoader.load().then(() => {
+    //   const autocomplete = new google.maps.places.Autocomplete(this.searchElementRef.nativeElement, {
+    //     types: ['address'],
+    //   });
+    //   autocomplete.addListener('place_changed', () => {
+    //     this.ngZone.run(() => {
+    //       // get the place result
+    //       const place: google.maps.places.PlaceResult = autocomplete.getPlace();
 
-          // verify result
-          if (place.geometry === undefined || place.geometry === null) {
-            return;
-          }
+    //       // verify result
+    //       if (place.geometry === undefined || place.geometry === null) {
+    //         return;
+    //       }
 
-          this.positionChanged.emit(
-            new Location(place.geometry.location.lat(),
-              place.geometry.location.lng()));
-        });
-      });
-    });
+    //       this.positionChanged.emit(
+    //         new Location(place.geometry.location.lat(),
+    //           place.geometry.location.lng()));
+    //     });
+    //   });
+    // });
   }
 }

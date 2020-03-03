@@ -30,7 +30,6 @@
     "postinstall": "ngcc --properties es2015 es5 browser module main --first-only --create-ivy-entry-points"
   },
   "dependencies": {
-    "@agm/core": "^1.0.0-beta.5",
     "@angular/animations": "^9.0.4",
     "@angular/cdk": "^8.0.0",
     "@angular/common": "^9.0.4",
@@ -60,8 +59,6 @@
     "leaflet": "1.2.0",
     "nebular-icons": "1.1.0",
     "ng2-ckeditor": "^1.2.2",
-    "ng2-completer": "3.0.3",
-    "ng2-smart-table": "1.5.0",
     "ngx-echarts": "^4.2.2",
     "node-sass": "^4.12.0",
     "normalize.css": "6.0.0",
