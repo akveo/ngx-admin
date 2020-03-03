@@ -153,9 +153,6 @@ export const NB_CORE_PROVIDERS = [
     NbAuthModule,
   ],
   declarations: [],
-  providers: [
-    ...NB_CORE_PROVIDERS
-  ]
 })
 export class CoreModule {
   constructor(@Optional() @SkipSelf() parentModule: CoreModule) {
@@ -163,7 +160,7 @@ export class CoreModule {
   }
 
   static forRoot(): ModuleWithProviders<CoreModule> {
-    return <ModuleWithProviders>{
+    return {
       ngModule: CoreModule,
       providers: [
         ...NB_CORE_PROVIDERS,

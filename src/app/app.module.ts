@@ -37,8 +37,8 @@ import {
     NbChatModule.forRoot({
       messageGoogleMapKey: 'AIzaSyA_wNuCzia92MAmdLRzmqitRGvCF7wCZPY',
     }),
-    CoreModule,
-    ThemeModule,
+    CoreModule.forRoot(),
+    ThemeModule.forRoot(),
   ],
   bootstrap: [AppComponent],
 })
