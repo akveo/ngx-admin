@@ -1,15 +1,14 @@
 import { Component } from '@angular/core';
-import { Location } from './entity/Location';
+import { PositionModel } from './entity/position.model';
 
 @Component({
   selector: 'ngx-search-map',
   templateUrl: './search-map.component.html',
 })
 export class SearchMapComponent {
+  public searchedPosition: PositionModel = new PositionModel();
 
-  searchedLocation: Location = new Location();
-
-  updateLocation(event: Location) {
-    this.searchedLocation = new Location(event.latitude, event.longitude);
+  public setPosition(position: PositionModel): void {
+    this.searchedPosition = position;
   }
 }
