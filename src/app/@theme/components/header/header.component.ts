@@ -5,6 +5,7 @@ import { UserData } from '../../../@core/data/users';
 import { LayoutService } from '../../../@core/utils';
 import { map, takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
+import { RippleService } from '../../../@core/utils/ripple.service';
 
 @Component({
   selector: 'ngx-header',
@@ -53,7 +54,8 @@ export class HeaderComponent implements OnInit, OnDestroy {
               private themeService: NbThemeService,
               private userService: UserData,
               private layoutService: LayoutService,
-              private breakpointService: NbMediaBreakpointsService) {
+              private breakpointService: NbMediaBreakpointsService,
+              private rippleService: RippleService) {
   }
 
   ngOnInit() {
@@ -76,7 +78,10 @@ export class HeaderComponent implements OnInit, OnDestroy {
         map(({ name }) => name),
         takeUntil(this.destroy$),
       )
-      .subscribe(themeName => this.currentTheme = themeName);
+      .subscribe(themeName => {
+        this.currentTheme = themeName;
+        this.rippleService.toggle(themeName?.startsWith('material'));
+      });
   }
 
   ngOnDestroy() {
