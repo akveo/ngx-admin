@@ -2,6 +2,9 @@
 @import '~@nebular/theme/styles/theming';
 // @nebular out of the box themes
 @import '~@nebular/theme/styles/themes';
+// material themes
+@import './material-dark';
+@import './material-light';
 
 $nb-themes: nb-register-theme((
   layout-padding-top: 2.25rem,
