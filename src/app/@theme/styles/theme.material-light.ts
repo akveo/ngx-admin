@@ -27,8 +27,8 @@ export const baseTheme: NbJSThemeOptions = {
     border5: '#b3b3b3',
 
     fg: '#838383',
-    fgHeading: '#1a2138', // ?
-    fgText: '#1a2138', // ?
+    fgHeading: '#1a2138',
+    fgText: '#1a2138',
     fgHighlight: palette.primary,
     layoutBg: '#ebebeb',
     separator: '#ebebeb',
