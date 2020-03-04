@@ -38,6 +38,7 @@
     "@angular/core": "^10.0.10",
     "@angular/forms": "^10.0.10",
     "@angular/google-maps": "^10.1.3",
+    "@angular/material": "^10.1.3",
     "@angular/platform-browser": "^10.0.10",
     "@angular/platform-browser-dynamic": "^10.0.10",
     "@angular/router": "^10.0.10",
