@@ -1,0 +1,49 @@
+@import '../../../@theme/styles/themes';
+@import '~bootstrap/scss/mixins/breakpoints';
+@import '~@nebular/theme/styles/global/breakpoints';
+
+@include nb-install-component() {
+  position: relative;
+  display: block;
+
+  nb-card {
+    position: relative;
+    overflow: hidden;
+  }
+
+  nb-card-header {
+    border-bottom: none;
+  }
+
+  .subtitle {
+    color: nb-theme(text-hint-color);
+  }
+
+  .container {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .chart-container {
+    flex: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .chart-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2.125rem;
+  }
+
+  @include media-breakpoint-down(is) {
+    ngx-legend-chart {
+      ::ng-deep .legends {
+        padding-left: 0;
+      }
+    }
+  }
+}
