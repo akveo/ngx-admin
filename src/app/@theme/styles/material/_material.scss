@@ -1,0 +1,32 @@
+@import './ripple';
+
+@include nb-install() {
+  @include ngx-ripple();
+
+  @include nb-for-themes(material-dark, material-light) {
+    nb-layout-header {
+      box-shadow: nb-theme(header-shadow) !important;
+      background-color: nb-theme(color-primary-default) !important;
+
+      .logo-container, nb-action {
+        a, nb-icon, .user-name {
+          color: nb-theme(text-control-color) !important;
+        }
+      }
+    }
+
+    nb-sidebar {
+      background-color: nb-theme(background-basic-color-2) !important;
+      transition: width 0.3s;
+
+      .main-container {
+        transition: width 0.3s;
+      }
+    }
+
+    nb-card, nb-reveal-card {
+      border: none !important;
+      box-shadow: nb-theme(shadow) !important;
+    }
+  }
+}

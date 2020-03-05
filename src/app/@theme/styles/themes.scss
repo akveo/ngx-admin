@@ -3,8 +3,8 @@
 // @nebular out of the box themes
 @import '~@nebular/theme/styles/themes';
 // material themes
-@import './material-dark';
-@import './material-light';
+@import './material/material-dark';
+@import './material/material-light';
 
 $nb-themes: nb-register-theme((
   layout-padding-top: 2.25rem,
@@ -128,6 +128,6 @@ $nb-themes: nb-register-theme((
   select-min-width: 6rem,
 
   slide-out-background: linear-gradient(270deg, #222b45 0%, #151a30 100%),
-  slide-out-shadow-color: 0 4px 14px 0 #8f9bb3,
+  slide-out-shadow-color: 0 4px 14px 0 #8f9bb3,У
   slide-out-shadow-color-rtl: 0 4px 14px 0 #8f9bb3,
 ), material-dark, material-dark);
