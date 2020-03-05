@@ -1,0 +1,23 @@
+<nb-card-header>
+  <nb-select matRipple [selected]="selectedCurrency" (selectedChange)="changeCurrency($event)">
+    <nb-option matRipple *ngFor="let currency of currencies" [value]="currency">{{ currency }}</nb-option>
+  </nb-select>
+</nb-card-header>
+<nb-card-body>
+  <div class="chart-info">
+    <div>Daily Income</div>
+    <div class="h6">{{ earningLiveUpdateCardData.dailyIncome | ngxNumberWithCommas }}</div>
+    <div class="delta"
+         [class.up]="earningLiveUpdateCardData.delta.up"
+         [class.down]="!earningLiveUpdateCardData.delta.up">
+      <nb-icon [icon]="earningLiveUpdateCardData.delta.up ? 'arrow-up' : 'arrow-down'"
+               pack="eva"
+               class="direction">
+      </nb-icon>
+      {{ earningLiveUpdateCardData.delta.value }}%
+    </div>
+  </div>
+  <ngx-earning-live-update-chart
+    [liveUpdateChartData]="liveUpdateChartData">
+  </ngx-earning-live-update-chart>
+</nb-card-body>

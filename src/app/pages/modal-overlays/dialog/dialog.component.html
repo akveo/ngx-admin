@@ -1,0 +1,70 @@
+<div class="row">
+  <div class="col-md-12 col-lg-6 col-xxxl-3">
+    <nb-card>
+      <nb-card-header>Open Dialog</nb-card-header>
+      <nb-card-body>
+        <button nbButton matRipple (click)="open()">Open Dialog with component</button>
+
+        <button nbButton matRipple (click)="open2(dialog)">Open Dialog with template</button>
+      </nb-card-body>
+    </nb-card>
+  </div>
+
+  <div class="col-md-12 col-lg-6 col-xxxl-3">
+    <nb-card>
+      <nb-card-header>Open Without Backdrop</nb-card-header>
+      <nb-card-body>
+        <button nbButton matRipple (click)="open()">Open Dialog with backdrop</button>
+
+        <button nbButton matRipple (click)="openWithoutBackdrop(dialog)">Open Dialog without backdrop</button>
+      </nb-card-body>
+    </nb-card>
+  </div>
+
+  <div class="col-md-12 col-lg-6 col-xxxl-3">
+    <nb-card>
+      <nb-card-header>Open Without Esc Close</nb-card-header>
+      <nb-card-body>
+        <button nbButton matRipple (click)="open()">Open Dialog with esc close</button>
+
+        <button nbButton matRipple (click)="openWithoutEscClose(dialog)">Open Dialog without esc close</button>
+      </nb-card-body>
+    </nb-card>
+  </div>
+
+  <div class="col-md-12 col-lg-6 col-xxxl-3">
+    <nb-card>
+      <nb-card-header>Open Without Backdrop Click</nb-card-header>
+      <nb-card-body>
+        <button nbButton matRipple (click)="open()">Open Dialog with backdrop click</button>
+
+        <button nbButton matRipple (click)="openWithoutBackdropClick(dialog)">Open without backdrop click</button>
+      </nb-card-body>
+    </nb-card>
+  </div>
+
+  <div class="col-md-12 col-lg-6 col-xxxl-3">
+    <nb-card class="form-input-card">
+      <nb-card-header>Return Result From Dialog</nb-card-header>
+      <nb-card-body class="result-from-dialog">
+        <button nbButton matRipple (click)="open3()">Enter Name</button>
+        <br>
+        <h3 class="title">Names:</h3>
+        <ul>
+          <li *ngFor="let name of names">{{ name }}</li>
+        </ul>
+      </nb-card-body>
+    </nb-card>
+  </div>
+</div>
+
+<ng-template #dialog let-data let-ref="dialogRef">
+  <nb-card>
+    <nb-card-header>Template Dialog</nb-card-header>
+    <nb-card-body>{{ data }}</nb-card-body>
+    <nb-card-footer>
+      <button nbButton matRipple (click)="ref.close()">Close Dialog</button>
+    </nb-card-footer>
+  </nb-card>
+</ng-template>
+

@@ -1,0 +1,59 @@
+<nb-card>
+  <nb-card-header>
+    Toaster configuration
+  </nb-card-header>
+  <nb-card-body>
+
+    <div class="row">
+      <div class="col-md-6 col-sm-12">
+        <div class="form-group">
+          <label class="label">Position:</label>
+          <nb-select [(selected)]="position" matRipple class="position-select">
+            <nb-option *ngFor="let p of positions"  [value]="p" matRipple>{{ p }}</nb-option>
+          </nb-select>
+        </div>
+
+        <div class="form-group">
+          <label class="label">Title:</label>
+          <input nbInput [(ngModel)]="title" name="title">
+        </div>
+
+        <form>
+          <div class="form-group">
+            <label class="label">Content:</label>
+            <input nbInput [(ngModel)]="content" name="content">
+          </div>
+        </form>
+
+        <div class="form-group">
+          <label class="label">Time to hide toast, ms. 0 to persistent toast:</label>
+          <input nbInput type="number" [(ngModel)]="duration" name="timeout">
+        </div>
+      </div>
+
+      <div class="col-md-6 col-sm-12">
+        <div class="form-group">
+          <label class="label">Toast type:</label>
+          <nb-select [(selected)]="status" matRipple>
+            <nb-option *ngFor="let t of types" [value]="t" matRipple>{{ t }}</nb-option>
+          </nb-select>
+        </div>
+
+        <div>
+          <nb-checkbox [(ngModel)]="destroyByClick">Hide on click</nb-checkbox>
+        </div>
+        <div>
+          <nb-checkbox [(ngModel)]="preventDuplicates">Prevent arising of duplicate toast</nb-checkbox>
+        </div>
+        <div>
+          <nb-checkbox [(ngModel)]="hasIcon">Show toast with icon</nb-checkbox>
+        </div>
+      </div>
+    </div>
+  </nb-card-body>
+
+  <nb-card-footer>
+    <button nbButton matRipple (click)="makeToast()">Show toast</button>
+    <button nbButton matRipple status="success" (click)="openRandomToast()">Random toast</button>
+  </nb-card-footer>
+</nb-card>

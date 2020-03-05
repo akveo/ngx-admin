@@ -1,0 +1,65 @@
+@import '../../../../@theme/styles/themes';
+
+@include nb-install-component() {
+  position: relative;
+
+  img {
+    width: 100%;
+    height: auto;
+    visibility: hidden;
+  }
+
+  .svg-container {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+  }
+
+  .temperature-bg {
+    position: absolute;
+    width: 88%;
+    height: 88%;
+    top: 13%;
+    left: 6%;
+    border-radius: 50%;
+    z-index: 1;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    border: nb-theme(divider-width) nb-theme(divider-style) nb-theme(divider-color);
+  }
+
+  .power-bg {
+    position: absolute;
+    width: 5.25rem;
+    height: 5.25rem;
+    background-color: nb-theme(card-background-color) !important;
+    border-radius: 50%;
+    bottom: 2%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    z-index: 2;
+
+    cursor: pointer;
+    border: nb-theme(divider-width) nb-theme(divider-style) nb-theme(divider-color);
+
+    &.on {
+      color: nb-theme(color-primary-default);
+    }
+  }
+
+  .power-icon {
+    position: absolute;
+    top: 50%;
+    margin-top: -0.625rem;
+    left: 50%;
+    margin-left: -0.625rem;
+    font-size: 3rem;
+  }
+}

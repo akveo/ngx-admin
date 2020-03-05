@@ -1,0 +1,61 @@
+<nb-card size="giant">
+
+  <nb-card-header>
+    Security Cameras
+
+    <button class="single-view-button"
+            nbButton
+            size="small"
+            [appearance]="isSingleView ? 'filled' : 'outline'"
+            (click)="isSingleView = true">
+      <i class="nb-square"></i>
+    </button>
+    <button class="grid-view-button"
+            nbButton
+            size="small"
+            [appearance]="isSingleView ? 'outline' : 'filled'"
+            (click)="isSingleView = false">
+      <nb-icon icon="grid" pack="eva"></nb-icon>
+    </button>
+  </nb-card-header>
+
+  <div class="grid-container">
+
+    <div class="single-view" *ngIf="isSingleView">
+      <div class="camera single" [style.background-image]="'url(' + selectedCamera.source + ')'">
+        <span class="camera-name">{{ selectedCamera.title }}</span>
+      </div>
+    </div>
+
+    <div class="grid-view" *ngIf="!isSingleView">
+      <div class="camera"
+           *ngFor="let camera of cameras"
+           [style.background-image]="'url(' + camera.source + ')'"
+           (click)="selectCamera(camera)">
+        <span class="camera-name">{{ camera.title }}</span>
+      </div>
+    </div>
+
+  </div>
+
+  <nb-card-footer>
+    <nb-actions [size]="actionSize" fullWidth>
+      <nb-action matRipple>
+        <nb-icon icon="pause-circle-outline" pack="eva"></nb-icon>
+        Pause
+      </nb-action>
+      <nb-action matRipple>
+        <nb-icon icon="list-outline" pack="eva"></nb-icon>
+        Logs
+      </nb-action>
+      <nb-action matRipple>
+        <nb-icon icon="search-outline" pack="eva"></nb-icon>
+        Search
+      </nb-action>
+      <nb-action matRipple>
+        <nb-icon icon="settings-2-outline" pack="eva"></nb-icon>
+        Setup
+      </nb-action>
+    </nb-actions>
+  </nb-card-footer>
+</nb-card>

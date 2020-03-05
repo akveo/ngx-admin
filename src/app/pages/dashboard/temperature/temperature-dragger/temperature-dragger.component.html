@@ -1,0 +1,47 @@
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsAQMAAABDsxw2AAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAACJJREFUaN7twTEBAAAAwiD7pzbFPmAAAAAAAAAAAAAAAGQOLbQAAU3zwM4AAAAASUVORK5CYII=">
+
+<div class="svg-container">
+  <svg #svgRoot xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
+       [attr.viewBox]="styles.viewBox" preserveAspectRatio="xMinYMin meet" (mousedown)="mouseDown($event)">
+    <defs>
+
+      <filter [attr.id]="'blurFilter' + svgControlId" x="0" y="0" width="100%" height="100%">
+        <feGaussianBlur in="SourceGraphic" [attr.stdDeviation]="styles.blurRadius" />
+        <feComponentTransfer>
+          <feFuncA type="discrete" tableValues="1 1"/>
+        </feComponentTransfer>
+      </filter>
+
+      <clipPath [attr.id]="'sliderClip' + svgControlId">
+        <path [attr.d]="styles.clipPathStr" stroke="black"></path>
+      </clipPath>
+
+    </defs>
+    <g [attr.transform]="styles.arcTranslateStr">
+
+      <g class="toClip" [attr.clip-path]="getUrlPath('#sliderClip')">
+        <g class="toFilter" [attr.filter]="getUrlPath('#blurFilter')">
+          <path [attr.d]="arc.d" [attr.fill]="off ? styles.nonSelectedArc.color : arc.color" *ngFor="let arc of styles.gradArcs"></path>
+        </g>
+        <!-- ngFor is a quirk fix for webkit rendering issues -->
+        <path [attr.d]="styles.nonSelectedArc.d" [attr.fill]="styles.nonSelectedArc.color" *ngFor="let number of [0,1,2,3,4,5]"></path>
+      </g>
+
+      <circle [attr.cx]="styles.thumbPosition.x"
+              [attr.cy]="styles.thumbPosition.y"
+              [attr.r]="pinRadius"
+              [attr.stroke-width]="thumbBorder / scaleFactor"
+              [attr.fill]="off ? 'none' : thumbBg"
+              [attr.stroke]="off ? 'none' : thumbBorderColor">
+      </circle>
+    </g>
+  </svg>
+</div>
+
+<div class="temperature-bg">
+  <ng-content></ng-content>
+</div>
+
+<button nbButton matRipple appearance="ghost" class="power-bg" [class.on]="!off" (click)="switchPower()">
+  <nb-icon class="power-icon" icon="power-outline" pack="eva"></nb-icon>
+</button>

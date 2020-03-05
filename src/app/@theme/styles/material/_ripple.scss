@@ -6,6 +6,10 @@
     &:not(:empty) {
       transform: translateZ(0);
     }
+
+    &.mat-ripple-unbounded{
+      overflow: visible;
+    }
   }
 
   .mat-ripple-element {

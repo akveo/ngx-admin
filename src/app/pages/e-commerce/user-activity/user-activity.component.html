@@ -1,0 +1,33 @@
+<nb-card size="medium">
+
+  <nb-card-header>
+    <span>User Activity</span>
+    <nb-select matRipple [selected]="type" (selectedChange)="getUserActivity($event); type = $event">
+      <nb-option matRipple *ngFor="let t of types" [value]="t">{{ t }}</nb-option>
+    </nb-select>
+  </nb-card-header>
+
+  <nb-list class="user-activity-list">
+    <nb-list-item *ngFor="let item of userActivity">
+
+      <div class="visited-date">
+        {{ item.date }}
+      </div>
+
+      <div class="visited-pages-count">
+        <div class="caption">Pages Visit</div>
+        <div class="value">{{ item.pagesVisitCount }}</div>
+      </div>
+
+      <div class="visited-percentages">
+        <div class="caption">New visits, %</div>
+        <div class="delta value" [class.up]="item.deltaUp" [class.down]="!item.deltaUp">
+          <nb-icon [icon]="item.deltaUp ? 'arrow-up' : 'arrow-down'" pack="eva"></nb-icon>
+          {{ item.newVisits }}%
+        </div>
+      </div>
+
+    </nb-list-item>
+  </nb-list>
+
+</nb-card>

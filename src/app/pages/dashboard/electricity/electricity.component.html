@@ -1,0 +1,47 @@
+<nb-card class="cards-container">
+  <nb-card size="large" class="table-card">
+    <nb-card-header>
+      Electricity Consumption
+    </nb-card-header>
+
+    <nb-tabset fullWidth>
+      <nb-tab *ngFor="let year of listData" [tabTitle]="year.title" [active]="year.active">
+        <nb-list>
+          <nb-list-item *ngFor="let month of year.months">
+            <span class="month">{{ month.month }}</span>
+            <span>
+              <nb-icon
+                [class.down]="month.down"
+                [class.up]="!month.down"
+                [icon]="month.down ? 'arrow-down' : 'arrow-up'" pack="eva">
+              </nb-icon>
+              {{ month.delta }}
+            </span>
+            <span class="results">
+              {{ month.kWatts }} <span class="caption">kWh</span> / {{ month.cost }} <span class="caption">USD</span>
+            </span>
+          </nb-list-item>
+        </nb-list>
+      </nb-tab>
+    </nb-tabset>
+  </nb-card>
+
+  <nb-card size="large" class="chart-card">
+    <nb-card-header>
+      <span class="stats">
+        <span class="caption">Consumed</span>
+        <span>816 <span class="caption">kWh</span></span>
+      </span>
+      <span class="stats">
+        <span class="caption">Spent</span>
+        <span>291 <span class="caption">USD</span></span>
+      </span>
+
+      <nb-select matRipple [(selected)]="type" class="type-select">
+        <nb-option matRipple *ngFor="let t of types" [value]="t">{{ t }}</nb-option>
+      </nb-select>
+    </nb-card-header>
+
+    <ngx-electricity-chart [data]="chartData"></ngx-electricity-chart>
+  </nb-card>
+</nb-card>
