@@ -106,9 +106,9 @@ $nb-themes: nb-register-theme((
 
   select-min-width: 6rem,
 
-  slide-out-background: linear-gradient(270deg, #222b45 0%, #151a30 100%),
-  slide-out-shadow-color: 0 4px 14px 0 #8f9bb3,
-  slide-out-shadow-color-rtl: 0 4px 14px 0 #8f9bb3,
+  slide-out-background: linear-gradient(270deg, #e0e0e0 0%, #ebebeb 100%),
+  slide-out-shadow-color: 0 4px 14px 0 #ebebeb,
+  slide-out-shadow-color-rtl: 0 4px 14px 0 #ebebeb,
 ), material-light, material-light);
 
 $nb-themes: nb-register-theme((
@@ -127,7 +127,7 @@ $nb-themes: nb-register-theme((
 
   select-min-width: 6rem,
 
-  slide-out-background: linear-gradient(270deg, #222b45 0%, #151a30 100%),
-  slide-out-shadow-color: 0 4px 14px 0 #8f9bb3,У
-  slide-out-shadow-color-rtl: 0 4px 14px 0 #8f9bb3,
+  slide-out-background: linear-gradient(270deg, #1f1f1f 0%, #292929 100%),
+  slide-out-shadow-color: 0 4px 14px 0 #292929,
+  slide-out-shadow-color-rtl: 0 4px 14px 0 #292929,
 ), material-dark, material-dark);
