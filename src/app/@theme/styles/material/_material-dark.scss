@@ -4,26 +4,26 @@
  * Licensed under the MIT License. See License.txt in the project root for license information.
  */
 
-@import '~@nebular/theme/styles/core/functions';
-@import '~@nebular/theme/styles/core/mixins';
+ @import '~@nebular/theme/styles/core/functions';
+ @import '~@nebular/theme/styles/core/mixins';
 
 $theme: (
-  color-primary-100: #e8cbfe,
-  color-primary-200: #ce97fd,
-  color-primary-300: #ae63f9,
-  color-primary-400: #903df4,
-  color-primary-500: #6200ee,
-  color-primary-600: #4b00cc,
-  color-primary-700: #3800ab,
-  color-primary-800: #27008a,
-  color-primary-900: #1b0072,
+  color-primary-100: #fff2f7,
+  color-primary-200: #ffd4e3,
+  color-primary-300: #fc9abc,
+  color-primary-400: #f24681,
+  color-primary-500: #e91d63,
+  color-primary-600: #c71451,
+  color-primary-700: #a80d43,
+  color-primary-800: #870935,
+  color-primary-900: #70062a,
 
-  color-primary-transparent-100: rgba(98, 0, 238, 0.08),
-  color-primary-transparent-200: rgba(98, 0, 238, 0.16),
-  color-primary-transparent-300: rgba(98, 0, 238, 0.24),
-  color-primary-transparent-400: rgba(98, 0, 238, 0.32),
-  color-primary-transparent-500: rgba(98, 0, 238, 0.4),
-  color-primary-transparent-600: rgba(98, 0, 238, 0.48),
+  color-primary-transparent-100: rgba(233, 29, 99, 0.08),
+  color-primary-transparent-200: rgba(233, 29, 99, 0.16),
+  color-primary-transparent-300: rgba(233, 29, 99, 0.24),
+  color-primary-transparent-400: rgba(233, 29, 99, 0.32),
+  color-primary-transparent-500: rgba(233, 29, 99, 0.4),
+  color-primary-transparent-600: rgba(233, 29, 99, 0.48),
 
   color-success-100: #edfbd1,
   color-success-200: #d7f7a6,
@@ -95,22 +95,22 @@ $theme: (
 
   color-basic-100: #ffffff,
   color-basic-200: #f5f5f5,
-  color-basic-300: #ebebeb,
-  color-basic-400: #e0e0e0,
+  color-basic-300: #f5f5f5,
+  color-basic-400: #d4d4d4,
   color-basic-500: #b3b3b3,
-  color-basic-600: #838383,
-  color-basic-700: #636363,
-  color-basic-800: #424242,
-  color-basic-900: #242424,
-  color-basic-1000: #1b1b1b,
-  color-basic-1100: #000000,
+  color-basic-600: #808080,
+  color-basic-700: #4a4a4a,
+  color-basic-800: #383838,
+  color-basic-900: #292929,
+  color-basic-1000: #1f1f1f,
+  color-basic-1100: #141414,
 
-  color-basic-transparent-100: rgba(131, 131, 131, 0.08),
-  color-basic-transparent-200: rgba(131, 131, 131, 0.16),
-  color-basic-transparent-300: rgba(131, 131, 131, 0.24),
-  color-basic-transparent-400: rgba(131, 131, 131, 0.32),
-  color-basic-transparent-500: rgba(131, 131, 131, 0.4),
-  color-basic-transparent-600: rgba(131, 131, 131, 0.48),
+  color-basic-transparent-100: rgba(128, 128, 128, 0.08),
+  color-basic-transparent-200: rgba(128, 128, 128, 0.16),
+  color-basic-transparent-300: rgba(128, 128, 128, 0.24),
+  color-basic-transparent-400: rgba(128, 128, 128, 0.32),
+  color-basic-transparent-500: rgba(128, 128, 128, 0.4),
+  color-basic-transparent-600: rgba(128, 128, 128, 0.48),
 
   color-basic-control-transparent-100: rgba(255, 255, 255, 0.08),
   color-basic-control-transparent-200: rgba(255, 255, 255, 0.16),
@@ -273,27 +273,27 @@ $theme: (
   color-control-transparent-active-border: color-basic-100,
   color-control-transparent-disabled-border: color-basic-transparent-300,
 
-  background-basic-color-1: color-basic-100,
-  background-basic-color-2: color-basic-200,
-  background-basic-color-3: color-basic-300,
-  background-basic-color-4: color-basic-400,
+  background-basic-color-1: color-basic-800,
+  background-basic-color-2: color-basic-900,
+  background-basic-color-3: color-basic-800,
+  background-basic-color-4: color-basic-1100,
 
-  background-alternative-color-1: color-basic-800,
-  background-alternative-color-2: color-basic-900,
-  background-alternative-color-3: color-basic-1000,
-  background-alternative-color-4: color-basic-1100,
+  background-alternative-color-1: color-basic-100,
+  background-alternative-color-2: color-basic-200,
+  background-alternative-color-3: color-basic-300,
+  background-alternative-color-4: color-basic-400,
 
-  border-basic-color-1: color-basic-100,
-  border-basic-color-2: color-basic-200,
-  border-basic-color-3: color-basic-300,
-  border-basic-color-4: color-basic-400,
-  border-basic-color-5: color-basic-500,
+  border-basic-color-1: color-basic-800,
+  border-basic-color-2: color-basic-900,
+  border-basic-color-3: color-basic-1000,
+  border-basic-color-4: color-basic-1100,
+  border-basic-color-5: color-basic-1100,
 
-  border-alternative-color-1: color-basic-800,
-  border-alternative-color-2: color-basic-900,
-  border-alternative-color-3: color-basic-1000,
-  border-alternative-color-4: color-basic-1100,
-  border-alternative-color-5: color-basic-1100,
+  border-alternative-color-1: color-basic-100,
+  border-alternative-color-2: color-basic-200,
+  border-alternative-color-3: color-basic-300,
+  border-alternative-color-4: color-basic-400,
+  border-alternative-color-5: color-basic-500,
 
   border-primary-color-1: color-primary-500,
   border-primary-color-2: color-primary-600,
@@ -325,8 +325,8 @@ $theme: (
   border-danger-color-4: color-danger-800,
   border-danger-color-5: color-danger-900,
 
-  text-basic-color: color-basic-800,
-  text-alternate-color: color-basic-100,
+  text-basic-color: color-basic-100,
+  text-alternate-color: color-basic-900,
   text-control-color: color-basic-100,
   text-disabled-color: color-basic-transparent-600,
   text-hint-color: color-basic-600,
@@ -361,10 +361,11 @@ $theme: (
   text-danger-active-color: color-danger-active,
   text-danger-disabled-color: color-danger-400,
 
-  shadow: '0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.2)',
-  outline-color: color-basic-transparent-200,
+  shadow: unquote("0 2px 10px rgba(0, 0, 0, 0.24), 0 0 20px rgba(0, 0, 0, 0.12)"),
+  header-shadow: unquote("0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12)"),
+  outline-color: color-basic-700,
 
   font-family-primary: unquote('Roboto, sans-serif')
 );
 
-$nb-themes: nb-register-theme($theme, material-light, default);
+$nb-themes: nb-register-theme($theme, material-dark, dark);
