@@ -120,7 +120,7 @@
       </nb-card-body>
     </nb-card>
 
-    <nb-card *ngIf="materialThemeActivated">
+    <nb-card *ngIf="materialTheme$ | async">
       <nb-card-body>
         <ngx-material-buttons></ngx-material-buttons>
       </nb-card-body>
