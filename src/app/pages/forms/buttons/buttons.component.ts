@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { NbComponentShape, NbComponentSize, NbComponentStatus, NbThemeService } from '@nebular/theme';
 import { Subscription } from 'rxjs';
 
@@ -7,7 +7,7 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./buttons.component.scss'],
   templateUrl: './buttons.component.html',
 })
-export class ButtonsComponent {
+export class ButtonsComponent implements OnInit, OnDestroy {
   public constructor(private readonly themeService: NbThemeService) {}
 
   private readonly subscription: Subscription = new Subscription();
