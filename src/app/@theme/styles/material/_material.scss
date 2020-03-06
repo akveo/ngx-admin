@@ -1,9 +1,19 @@
-@import './ripple';
+@import '~@angular/material/theming';
 
 @include nb-install() {
-  @include ngx-ripple();
+  @include nb-for-theme(material-dark) {
+    $custom-dark-theme: mat-dark-theme(mat-palette($mat-pink), mat-palette($mat-blue-grey));
+    @include angular-material-theme($custom-dark-theme);
+  }
+
+  @include nb-for-theme(material-light) {
+    $custom-light-theme: mat-light-theme(mat-palette($mat-indigo), mat-palette($mat-pink));
+    @include angular-material-theme($custom-light-theme);
+  }
 
   @include nb-for-themes(material-dark, material-light) {
+    @include mat-core();
+
     nb-layout-header {
       box-shadow: nb-theme(header-shadow) !important;
       background-color: nb-theme(color-primary-default) !important;
