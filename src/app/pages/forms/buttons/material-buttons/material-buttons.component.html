@@ -3,4 +3,7 @@
 <button mat-stroked-button color="primary">Stroked</button>
 <button mat-flat-button color="primary">Flat</button>
 <button mat-fab color="primary">FAB</button>
-<button mat-mini-fab color="primary">mini</button>
+<mat-button-toggle-group>
+  <mat-button-toggle value="left" [checked]="true">Toggle left</mat-button-toggle>
+  <mat-button-toggle value="right">Toggle right</mat-button-toggle>
+</mat-button-toggle-group>
