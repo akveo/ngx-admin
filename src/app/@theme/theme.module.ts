@@ -20,7 +20,6 @@ import {
   FooterComponent,
   HeaderComponent,
   SearchInputComponent,
-  TinyMCEComponent,
 } from './components';
 import {
   CapitalizePipe,
@@ -57,7 +56,6 @@ const COMPONENTS = [
   HeaderComponent,
   FooterComponent,
   SearchInputComponent,
-  TinyMCEComponent,
   OneColumnLayoutComponent,
   ThreeColumnsLayoutComponent,
   TwoColumnsLayoutComponent,
@@ -77,7 +75,7 @@ const PIPES = [
 })
 export class ThemeModule {
   static forRoot(): ModuleWithProviders {
-    return <ModuleWithProviders>{
+    return {
       ngModule: ThemeModule,
       providers: [
         ...NbThemeModule.forRoot(

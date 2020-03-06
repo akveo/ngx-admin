@@ -1,20 +1,11 @@
 import { Component } from '@angular/core';
-
-import './ckeditor.loader';
-import 'ckeditor';
+import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
 @Component({
   selector: 'ngx-ckeditor',
-  template: `
-    <nb-card>
-      <nb-card-header>
-        CKEditor
-      </nb-card-header>
-      <nb-card-body>
-        <ckeditor [config]="{ extraPlugins: 'divarea', height: '320' }"></ckeditor>
-      </nb-card-body>
-    </nb-card>
-  `,
+  templateUrl: './ckeditor.component.html',
+  styleUrls : ['./ckeditor.component.scss'],
 })
 export class CKEditorComponent {
+  public Editor = ClassicEditor;
 }
