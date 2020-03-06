@@ -85,7 +85,7 @@
     </nb-card>
   </div>
 </div>
-<div *ngIf="materialThemeActivated" class="row">
+<div *ngIf="materialTheme$ | async" class="row">
   <div class="col-lg-12">
     <ngx-material-inputs></ngx-material-inputs>
   </div>

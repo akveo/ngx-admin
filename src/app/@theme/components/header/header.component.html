@@ -8,7 +8,7 @@
       [matRippleCentered]="true"
       (click)="toggleSidebar()"
     >
-      <nb-icon icon="menu-2-outline"></nb-icon>
+      <nb-icon [icon]="(materialTheme$ | async) ? 'menu-outline' : 'menu-2-outline'"></nb-icon>
     </a>
     <a class="logo" href="#" (click)="navigateHome()">ngx-<span>admin</span></a>
   </div>
