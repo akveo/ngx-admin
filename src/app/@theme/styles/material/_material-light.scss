@@ -361,8 +361,10 @@ $theme: (
   text-danger-active-color: color-danger-active,
   text-danger-disabled-color: color-danger-400,
 
-  shadow: unquote("0 2px 10px rgba(0, 0, 0, 0.12), 0 0 20px rgba(0, 0, 0, 0.06)"),
-  header-shadow: unquote("0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12)"),
+  shadow: unquote('0 2px 10px rgba(0, 0, 0, 0.12), 0 0 20px rgba(0, 0, 0, 0.06)'),
+  header-shadow: unquote(
+    '0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12)'
+  ),
   outline-color: color-basic-transparent-200,
 
   font-family-primary: unquote('Roboto, sans-serif')
