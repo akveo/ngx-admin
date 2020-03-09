@@ -30,9 +30,24 @@
       }
     }
 
+    ngx-footer .socials {
+      color: nb-theme(color-basic-100) !important;
+    }
+
     nb-card {
+      border-bottom-left-radius: 0.125rem;
+      border-bottom-right-radius: 0.125rem;
+
       nb-card-header, .tabset {
         background-color: nb-theme(card-divider-color);
+      }
+    }
+
+    [nbinput] {
+      font-weight: 400;
+
+      &.status-basic:focus:hover {
+        border-color: nb-theme(color-primary-focus) !important;
       }
     }
   }
