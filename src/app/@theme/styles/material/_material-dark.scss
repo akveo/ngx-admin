@@ -99,9 +99,9 @@ $theme: (
   color-basic-400: #d4d4d4,
   color-basic-500: #b3b3b3,
   color-basic-600: #808080,
-  color-basic-700: #4a4a4a,
-  color-basic-800: #383838,
-  color-basic-900: #292929,
+  color-basic-700: #404040,
+  color-basic-800: #353535,
+  color-basic-900: #303030,
   color-basic-1000: #1f1f1f,
   color-basic-1100: #141414,
 
@@ -273,9 +273,9 @@ $theme: (
   color-control-transparent-active-border: color-basic-100,
   color-control-transparent-disabled-border: color-basic-transparent-300,
 
-  background-basic-color-1: color-basic-800,
-  background-basic-color-2: color-basic-900,
-  background-basic-color-3: color-basic-800,
+  background-basic-color-1: color-basic-1000,
+  background-basic-color-2: color-basic-1000,
+  background-basic-color-3: color-basic-900,
   background-basic-color-4: color-basic-1100,
 
   background-alternative-color-1: color-basic-100,
@@ -361,12 +361,19 @@ $theme: (
   text-danger-active-color: color-danger-active,
   text-danger-disabled-color: color-danger-400,
 
-  shadow: unquote('0 2px 10px rgba(0, 0, 0, 0.24), 0 0 20px rgba(0, 0, 0, 0.12)'),
+  font-family-primary: unquote('Roboto, sans-serif'),
+
+  shadow: unquote('0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12)'),
+  card-shadow: shadow,
   header-shadow: unquote(
     '0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12)'
   ),
 
-  font-family-primary: unquote('Roboto, sans-serif'),
+  header-background-color: color-primary-default,
+  footer-background-color: color-primary-default,
+  footer-text-color: text-basic-color,
+  footer-text-highlight-color: footer-text-color,
+  sidebar-background-color: background-basic-color-2,
 
   menu-text-font-weight: 400,
   menu-text-color: rgba(255, 255, 255, 0.7),
@@ -379,7 +386,12 @@ $theme: (
 
   menu-submenu-item-hover-background-color: rgba(255, 255, 255, 0.04),
   menu-submenu-item-active-hover-background-color: rgba(255, 255, 255, 0.1),
-  menu-submenu-item-active-background-color: rgba(0, 0, 0, 0.25)
+  menu-submenu-item-active-background-color: rgba(0, 0, 0, 0.25),
+
+  card-border-style: none,
+  card-background-color: color-basic-800,
+  card-divider-color: color-basic-700,
+  card-border-radius: .25rem .25rem .125rem .125rem
 );
 
 $nb-themes: nb-register-theme($theme, material-dark, dark);
