@@ -367,7 +367,8 @@ $theme: (
   ),
   outline-color: color-basic-700,
 
-  font-family-primary: unquote('Roboto, sans-serif')
+  font-family-primary: unquote('Roboto, sans-serif'),
+  menu-text-font-weight: 400
 );
 
 $nb-themes: nb-register-theme($theme, material-dark, dark);
