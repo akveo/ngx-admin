@@ -363,8 +363,6 @@ $theme: (
 
   font-family-primary: unquote('Roboto, sans-serif'),
 
-  layout-padding-top: 2.25rem,
-
   shadow: unquote('0 2px 1px -1px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 3px 0 rgba(0,0,0,.12)'),
   card-shadow: shadow,
   header-shadow: unquote(
@@ -377,6 +375,8 @@ $theme: (
   footer-text-color: text-alternate-color,
   footer-text-highlight-color: footer-text-color,
   sidebar-background-color: background-basic-color-2,
+  actions-icon-color: text-alternate-color,
+  actions-text-color: text-alternate-color,
 
   menu-text-font-weight: 400,
   menu-text-color: rgba(0, 0, 0, 0.87),
@@ -386,7 +386,6 @@ $theme: (
 
   menu-item-icon-color: rgba(0, 0, 0, 0.87),
   menu-item-icon-hover-color: rgba(0, 0, 0, 0.87),
-  menu-item-icon-margin: 0 0.5rem 0 0,
 
   menu-submenu-item-hover-background-color: rgba(0, 0, 0, 0.04),
   menu-submenu-item-active-hover-background-color: rgba(0, 0, 0, 0.1),
@@ -394,20 +393,6 @@ $theme: (
 
   card-border-style: none,
   card-divider-color: color-basic-200,
-  card-height-tiny: 13.5rem,
-  card-height-small: 21.1875rem,
-  card-height-medium: 28.875rem,
-  card-height-large: 36.5625rem,
-  card-height-giant: 44.25rem,
-  card-margin-bottom: 1.875rem,
-  card-header-with-select-padding-top: 0.5rem,
-  card-header-with-select-padding-bottom: 0.5rem,
-
-  select-min-width: 6rem,
-
-  slide-out-background: linear-gradient(270deg, #e0e0e0 0%, #ebebeb 100%),
-  slide-out-shadow-color: 0 4px 14px 0 #ebebeb,
-  slide-out-shadow-color-rtl: 0 4px 14px 0 #ebebeb,
 
   input-border-width: 0 0 1px 0,
   input-basic-border-color: rgba(0, 0, 0, 0.42),
