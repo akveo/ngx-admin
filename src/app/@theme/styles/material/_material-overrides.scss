@@ -1,29 +1,16 @@
-@import '~@angular/material/theming';
-
-@include nb-install() {
-  @include nb-for-theme(material-dark) {
-    $custom-dark-theme: mat-dark-theme(mat-palette($mat-pink), mat-palette($mat-blue-grey));
-    @include angular-material-theme($custom-dark-theme);
-  }
-
-  @include nb-for-theme(material-light) {
-    $custom-light-theme: mat-light-theme(mat-palette($mat-indigo), mat-palette($mat-pink));
-    @include angular-material-theme($custom-light-theme);
-  }
-
+@mixin material-overrides() {
   @include nb-for-themes(material-dark, material-light) {
-    @include mat-core();
-
     nb-layout-header {
-      .logo-container nb-icon {
-        color: nb-theme(text-control-color);
+      nb-actions, .logo-container {
+        nb-icon, .user-name {
+          color: nb-theme(color-basic-100) !important;
+        }
       }
-
+  
       .select-button {
         background-color: nb-theme(background-basic-color-3) !important;
       }
     }
-    
 
     nb-sidebar {
       transition: width 0.3s;
