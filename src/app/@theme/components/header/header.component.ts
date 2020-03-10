@@ -4,7 +4,7 @@ import { NbMediaBreakpointsService, NbMenuService, NbSidebarService, NbThemeServ
 import { UserData } from '../../../@core/data/users';
 import { LayoutService } from '../../../@core/utils';
 import { map, takeUntil } from 'rxjs/operators';
-import { Subject, Observable } from 'rxjs';
+import { Subject } from 'rxjs';
 import { RippleService } from '../../../@core/utils/ripple.service';
 
 @Component({
@@ -15,38 +15,14 @@ import { RippleService } from '../../../@core/utils/ripple.service';
 export class HeaderComponent implements OnInit, OnDestroy {
 
   private destroy$: Subject<void> = new Subject<void>();
-  public readonly materialTheme$: Observable<boolean>;
   userPictureOnly: boolean = false;
   user: any;
 
-  themes = [
-    {
-      value: 'default',
-      name: 'Light',
-    },
-    {
-      value: 'dark',
-      name: 'Dark',
-    },
-    {
-      value: 'cosmic',
-      name: 'Cosmic',
-    },
-    {
-      value: 'corporate',
-      name: 'Corporate',
-    },
-    {
-      value: 'material-light',
-      name: 'Material Light',
-    },
-    {
-      value: 'material-dark',
-      name: 'Material Dark',
-    },
+  public currentTheme = 'material-light';
+  public readonly themes = [
+    { value: 'material-light', name: 'Material Light' },
+    { value: 'material-dark', name: 'Material Dark' },
   ];
-
-  currentTheme = 'default';
 
   userMenu = [ { title: 'Profile' }, { title: 'Log out' } ];
 
@@ -58,13 +34,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
     private layoutService: LayoutService,
     private breakpointService: NbMediaBreakpointsService,
     private rippleService: RippleService,
-  ) {
-    this.materialTheme$ = this.themeService.onThemeChange()
-      .pipe(map(theme => {
-        const themeName: string = theme?.name || '';
-        return themeName.startsWith('material');
-      }));
-  }
+  ) {}
 
   ngOnInit() {
     this.currentTheme = this.themeService.currentTheme;
