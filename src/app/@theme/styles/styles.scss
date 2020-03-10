@@ -4,8 +4,6 @@
 // themes - our custom or/and out of the box themes
 @import 'themes';
 
-@import 'angular-material';
-
 // framework component themes (styles tied to theme variables)
 @import '~@nebular/theme/styles/globals';
 @import '~@nebular/auth/styles/all';
@@ -20,19 +18,18 @@
 
 @import './layout';
 @import './overrides';
+@import './material/material';
 
 // install the framework and custom global styles
 @include nb-install() {
 
   // framework global styles
-  @include angular-material();
   @include nb-theme-global();
   @include nb-auth-global();
 
   @include ngx-layout();
   // loading progress bar
   @include ngx-pace-theme();
-
 
   @include nb-overrides();
 };

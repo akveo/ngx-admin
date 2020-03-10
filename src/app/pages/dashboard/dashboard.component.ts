@@ -50,9 +50,34 @@ export class DashboardComponent implements OnDestroy {
   ];
 
   statusCardsByThemes: {
+    default: CardSettings[];
+    cosmic: CardSettings[];
+    corporate: CardSettings[];
+    dark: CardSettings[];
     'material-dark': CardSettings[];
     'material-light': CardSettings[];
   } = {
+    default: this.commonStatusCardsSet,
+    cosmic: this.commonStatusCardsSet,
+    corporate: [
+      {
+        ...this.lightCard,
+        type: 'warning',
+      },
+      {
+        ...this.rollerShadesCard,
+        type: 'primary',
+      },
+      {
+        ...this.wirelessAudioCard,
+        type: 'danger',
+      },
+      {
+        ...this.coffeeMakerCard,
+        type: 'info',
+      },
+    ],
+    dark: this.commonStatusCardsSet,
     'material-dark': this.commonStatusCardsSet,
     'material-light': this.commonStatusCardsSet,
   };

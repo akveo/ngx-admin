@@ -10,6 +10,10 @@
         </div>
         <input type="password" nbInput fullWidth placeholder="Password">
         <input type="text" nbInput fullWidth shape="rectangle" placeholder="Rectangle border">
+        <ng-container *ngIf="!(materialTheme$ | async)">
+          <input type="text" nbInput fullWidth shape="semi-round" placeholder="Semi-round border">
+          <input type="text" nbInput fullWidth shape="round" placeholder="Rounded border">
+        </ng-container>
         <input type="text" nbInput fullWidth placeholder="Disabled input" disabled/>
         <textarea rows="5" nbInput fullWidth shape="round"  placeholder="Text Area"></textarea>
         <input type="text" nbInput fullWidth fieldSize="small"  placeholder="Small Input">
@@ -83,7 +87,7 @@
     </nb-card>
   </div>
 </div>
-<div class="row">
+<div *ngIf="materialTheme$ | async" class="row">
   <div class="col-lg-12">
     <ngx-material-inputs></ngx-material-inputs>
   </div>
