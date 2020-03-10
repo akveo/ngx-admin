@@ -15,12 +15,15 @@
     @include mat-core();
 
     nb-layout-header {
-      .logo-container, nb-action {
-        a, nb-icon, .user-name {
-          color: nb-theme(text-control-color) !important;
-        }
+      .logo-container nb-icon {
+        color: nb-theme(text-control-color);
+      }
+
+      .select-button {
+        background-color: nb-theme(background-basic-color-3) !important;
       }
     }
+    
 
     nb-sidebar {
       transition: width 0.3s;
@@ -28,10 +31,6 @@
       .main-container {
         transition: width 0.3s;
       }
-    }
-
-    ngx-footer .socials {
-      color: nb-theme(color-basic-100) !important;
     }
 
     nb-card {
@@ -49,6 +48,10 @@
       &.status-basic:focus:hover {
         border-color: nb-theme(color-primary-focus) !important;
       }
+    }
+
+    [nbbutton] {
+      box-shadow: none !important;
     }
   }
 }
