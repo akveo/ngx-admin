@@ -40,7 +40,7 @@ export class RoomsComponent implements OnDestroy {
       });
 
     this.themeChangeSubscription = this.themeService.onThemeChange()
-      .pipe(map(({ name }) => name === 'cosmic' || name === 'dark'))
+      .pipe(map(({ name }) => name === 'material-dark'))
       .subscribe((isDark: boolean) => this.isDarkTheme = isDark);
   }
 
