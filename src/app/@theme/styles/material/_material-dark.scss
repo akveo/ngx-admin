@@ -363,7 +363,9 @@ $theme: (
 
   font-family-primary: unquote('Roboto, sans-serif'),
 
-  shadow: unquote('0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12)'),
+  shadow: unquote(
+    '0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12)'
+    ),
   card-shadow: shadow,
   header-shadow: unquote(
     '0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12)'
@@ -476,7 +478,7 @@ $theme: (
   option-list-border-style: none,
   option-list-adjacent-border-style: none,
   option-background-color: color-basic-700,
-  option-hover-background-color: #4A4A4A,
+  option-hover-background-color: #4a4a4a,
   option-focus-background-color: option-hover-background-color,
   option-selected-background-color: #525252,
   option-selected-hover-background-color: option-selected-background-color,
