@@ -13,12 +13,14 @@
 @import '~bootstrap/scss/mixins';
 @import '~bootstrap/scss/grid';
 
+@import './material/angular-material';
+
 // loading progress bar theme
 @import './pace.theme';
 
 @import './layout';
 @import './overrides';
-@import './material/material';
+@import './material/material-overrides';
 
 // install the framework and custom global styles
 @include nb-install() {
@@ -31,5 +33,8 @@
   // loading progress bar
   @include ngx-pace-theme();
 
+  @include angular-material();
+
   @include nb-overrides();
+  @include material-overrides();
 };
