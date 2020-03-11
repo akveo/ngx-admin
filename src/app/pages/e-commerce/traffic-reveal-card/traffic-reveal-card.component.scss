@@ -16,9 +16,4 @@
     @include nb-ltr(padding-right, 4rem);
     @include nb-rtl(padding-left, 4rem);
   }
-
-  nb-card-body {
-    padding-left: 0;
-    padding-right: 0;
-  }
 }
