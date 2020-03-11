@@ -1,0 +1,25 @@
+@import '../../../../@theme/styles/themes';
+
+@include nb-install-component() {
+  display: block;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+
+  ngx-traffic-bar-chart {
+    flex: 1;
+    position: relative;
+
+    ::ng-deep {
+      canvas {
+        border-bottom-left-radius: nb-theme(card-border-radius);
+        border-bottom-right-radius: nb-theme(card-border-radius);
+      }
+
+      .echart {
+        height: 100%;
+        width: 100%;
+      }
+    }
+  }
+}

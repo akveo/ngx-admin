@@ -1,0 +1,19 @@
+@import '../../../@theme/styles/themes';
+
+@include nb-install-component() {
+  .toggle-icon {
+    position: absolute;
+    top: 1rem;
+    right: 1.25rem;
+    @include nb-rtl(right, auto);
+    @include nb-rtl(left, 1.25rem);
+    cursor: pointer;
+  }
+
+  nb-card-header {
+    padding-top: nb-theme(card-header-with-select-padding-top);
+    padding-bottom: nb-theme(card-header-with-select-padding-bottom);
+    @include nb-ltr(padding-right, 4rem);
+    @include nb-rtl(padding-left, 4rem);
+  }
+}
