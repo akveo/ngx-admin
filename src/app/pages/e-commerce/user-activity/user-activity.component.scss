@@ -10,6 +10,11 @@
     padding-bottom: nb-theme(card-header-with-select-padding-bottom);
   }
 
+  nb-card-body {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
   nb-list {
     overflow-x: hidden;
   }
