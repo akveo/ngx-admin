@@ -9,6 +9,7 @@
 </div>
 <div class="section middle">
   <nb-menu [items]="headerMenu"></nb-menu>
+  <ng-content></ng-content>
   <a routerLink="/" fragment="backend-bundles" class="backend-bundles eva-parent-hover">
     <i [innerHTML]="'gift-outline' | eva: { width: 24, height: 24, fill: '#ff4d6b', animationType: 'shake' }"></i>
     <span>Backend Bundles</span>

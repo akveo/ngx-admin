@@ -13,6 +13,7 @@ import { NgxLandingThemeModule } from './@theme/theme.module';
 import { CoreModule } from './@core/core.module';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { LandingSharedModule } from './shared/landing-shared.module';
 
 import { DOCS, STRUCTURE } from './app.options';
 const docs = require('../output.json');
@@ -28,6 +29,7 @@ import { structure  } from '../structure';
     HttpClientModule,
     AppRoutingModule,
 
+    LandingSharedModule,
     NgxLandingThemeModule.forRoot(),
     CoreModule.forRoot(),
   ],

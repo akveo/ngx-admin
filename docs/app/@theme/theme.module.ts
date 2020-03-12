@@ -9,6 +9,17 @@ import { ModuleWithProviders, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
+import {
+  NbLayoutModule,
+  NbThemeModule,
+  NbMenuModule,
+  NbCheckboxModule,
+  NbCardModule,
+  NbSidebarModule,
+  NbTabsetModule,
+} from '@nebular/theme';
+
+import { LandingSharedModule } from '../shared/landing-shared.module';
 
 // components
 import {
@@ -25,21 +36,6 @@ import {
 // services
 import { ngxLandingServices } from './services';
 // services
-
-// pipes
-import { EvaIconsPipe } from './pipes/eva-icons.pipe';
-import { CapitalizePipe } from './pipes/capitalize.pipe';
-// pipes
-
-import {
-  NbLayoutModule,
-  NbThemeModule,
-  NbMenuModule,
-  NbCheckboxModule,
-  NbCardModule,
-  NbSidebarModule,
-  NbTabsetModule,
-} from '@nebular/theme';
 
 const BASE_MODULES = [
   CommonModule,
@@ -67,14 +63,10 @@ const COMPONENTS = [
   NgxDocsFooterComponent,
 ];
 
-const PIPES = [
-  EvaIconsPipe,
-  CapitalizePipe,
-];
-
 @NgModule({
   imports: [
     RouterModule,
+    LandingSharedModule,
 
     ...BASE_MODULES,
 
@@ -82,8 +74,6 @@ const PIPES = [
   ],
   declarations: [
     ...COMPONENTS,
-
-    ...PIPES,
   ],
   exports: [
     RouterModule,
@@ -93,10 +83,6 @@ const PIPES = [
     ...NB_MODULES,
 
     ...COMPONENTS,
-
-    ...PIPES,
-  ],
-  entryComponents: [
   ],
 })
 export class NgxLandingThemeModule {

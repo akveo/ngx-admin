@@ -1,0 +1,22 @@
+:host {
+  display: flex;
+  align-items: center;
+  padding-right: 32px;
+}
+
+a {
+  display: flex;
+  align-items: center;
+}
+
+i {
+  margin-right: 8px;
+}
+
+.material-theme-popover {
+  margin: 0;
+  padding: 1rem 2rem;
+  color: #ff4d6b;
+  font-weight: 600;
+  font-size: 1.1rem;
+}

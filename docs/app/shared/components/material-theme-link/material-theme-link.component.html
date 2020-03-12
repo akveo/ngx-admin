@@ -1,0 +1,15 @@
+<a
+  routerLink="/material"
+  class="eva-parent-hover"
+  [nbPopover]="popoverContent"
+  nbPopoverPlacement="bottom"
+  nbPopoverTrigger="noop"
+>
+  <i [innerHTML]="'color-palette-outline' | eva: { width: 24, height: 24, fill: '#ff4d6b', animationType: 'shake' }"
+  ></i>
+  Material Theme
+</a>
+
+<ng-template #popoverContent>
+  <p class="material-theme-popover" (mouseover)="hidePopover()">New theme is available!</p>
+</ng-template>
