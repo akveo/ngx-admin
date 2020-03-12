@@ -22,8 +22,10 @@ export class ThemeSectionComponent implements OnDestroy {
 
   private alive = true;
   private themes: string[] = [
-    'Light',
-    'Dark',
+    'Material\nLight',
+    'Material\nDark',
+    'Eva\nLight',
+    'Eva\nDark',
     'Cosmic',
     'Corporate',
   ];
@@ -32,6 +34,7 @@ export class ThemeSectionComponent implements OnDestroy {
   breakpoints: any;
   sliderIndex: number = 1;
   initialSwiperConfig: SwiperConfigInterface = {
+    initialSlide: 1,
     direction: 'horizontal',
     spaceBetween: 200,
     slidesPerView: 'auto',
@@ -55,9 +58,7 @@ export class ThemeSectionComponent implements OnDestroy {
       renderBullet: (index, className) => {
         return `
           <span class="${className}">
-            <span>
-              ${this.themes[index]}
-            </span>
+            <span>${this.themes[index]}</span>
           </span>`;
       },
     },
@@ -66,8 +67,10 @@ export class ThemeSectionComponent implements OnDestroy {
     ...this.initialSwiperConfig,
   };
 
-  constructor(private themeService: NbThemeService,
-              private breakpointService: NbMediaBreakpointsService) {
+  constructor(
+    private themeService: NbThemeService,
+    private breakpointService: NbMediaBreakpointsService,
+  ) {
     this.breakpoints = this.breakpointService.getBreakpointsMap();
     this.themeService.onMediaQueryChange()
       .pipe(takeWhile(() => this.alive))

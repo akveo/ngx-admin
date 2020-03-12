@@ -7,25 +7,45 @@
         [swiper]="swiperConfig"
         [(index)]="sliderIndex">
     <div class="swiper-wrapper">
+      <a href="https://hubs.ly/" target="_blank" class="image-container swiper-slide">
+        <img *ngIf="breakpoint.width <= breakpoints.sm"
+            data-src="assets/img/material-light-theme.png"
+            class="swiper-lazy"
+            alt="Material Light Theme" />
+        <img *ngIf="!(breakpoint.width <= breakpoints.sm)"
+            lazyLoad="assets/img/material-light-theme.png"
+            defaultImage="assets/img/default.png"
+            alt="Material Light Theme" />
+      </a>
+      <a href="https://hubs.ly/" target="_blank" class="image-container swiper-slide">
+        <img *ngIf="breakpoint.width <= breakpoints.sm"
+            data-src="assets/img/material-dark-theme.png"
+            class="swiper-lazy"
+            alt="Material Dark Theme" />
+        <img *ngIf="!(breakpoint.width <= breakpoints.sm)"
+            lazyLoad="assets/img/material-dark-theme.png"
+            alt="Material Dark Theme"
+            defaultImage="assets/img/default.png" />
+      </a>
       <a href="https://hubs.ly/H0n54_z0" target="_blank" class="image-container swiper-slide">
         <img *ngIf="breakpoint.width <= breakpoints.sm"
-             data-src="assets/img/light-theme.png"
-             class="swiper-lazy"
-             alt="Light Theme" />
+            data-src="assets/img/light-theme.png"
+            class="swiper-lazy"
+            alt="Eva Light Theme" />
         <img *ngIf="!(breakpoint.width <= breakpoints.sm)"
-             lazyLoad="assets/img/light-theme.png"
-             defaultImage="assets/img/default.png"
-             alt="Light Theme" />
+            lazyLoad="assets/img/light-theme.png"
+            defaultImage="assets/img/default.png"
+            alt="Eva Light Theme" />
       </a>
       <a href="https://hubs.ly/H0n54SN0" target="_blank" class="image-container swiper-slide">
         <img *ngIf="breakpoint.width <= breakpoints.sm"
-             data-src="assets/img/dark-theme.png"
-             class="swiper-lazy"
-             alt="Dark Theme" />
+            data-src="assets/img/dark-theme.png"
+            class="swiper-lazy"
+            alt="Eva Dark Theme" />
         <img *ngIf="!(breakpoint.width <= breakpoints.sm)"
-             lazyLoad="assets/img/dark-theme.png"
-             defaultImage="assets/img/default.png"
-             alt="Dark Theme" />
+            src="assets/img/dark-theme.png"
+            alt="Eva Dark Theme"
+            class="ng-lazyloaded" />
       </a>
       <a href="https://hubs.ly/H0n55cG0" target="_blank" class="image-container swiper-slide">
         <img *ngIf="breakpoint.width <= breakpoints.sm"
@@ -33,9 +53,9 @@
              class="swiper-lazy"
              alt="Cosmic Theme" />
         <img *ngIf="!(breakpoint.width <= breakpoints.sm)"
-             lazyLoad="assets/img/cosmic-theme.png"
-             defaultImage="assets/img/default.png"
-             alt="Cosmic Theme" />
+             src="assets/img/cosmic-theme.png"
+             alt="Cosmic Theme"
+             class="ng-lazyloaded"/>
       </a>
       <a href="https://hubs.ly/H0n55170" target="_blank" class="image-container swiper-slide">
         <img *ngIf="breakpoint.width <= breakpoints.sm"
