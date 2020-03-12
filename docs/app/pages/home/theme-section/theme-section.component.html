@@ -7,11 +7,7 @@
         [swiper]="swiperConfig"
         [(index)]="sliderIndex">
     <div class="swiper-wrapper">
-      <a
-        href="https://www.akveo.com/ngx-admin/pages/dashboard?theme=material-light&utm_campaign=ngx_admin%20-%20demo%20-%20ngx_admin%20docs&utm_source=ngx_admin&utm_medium=referral&utm_content=ngx_admin_landing_themes_material_light"
-        target="_blank"
-        class="image-container swiper-slide"
-      >
+      <a [href]="materialLightDemoUrl" target="_blank" class="image-container swiper-slide">
         <img *ngIf="breakpoint.width <= breakpoints.sm"
             data-src="assets/img/material-light-theme.png"
             class="swiper-lazy"
@@ -21,11 +17,7 @@
             defaultImage="assets/img/default.png"
             alt="Material Light Theme" />
       </a>
-      <a
-        href="https://www.akveo.com/ngx-admin/pages/dashboard?theme=material-dark&utm_campaign=ngx_admin%20-%20demo%20-%20ngx_admin%20docs&utm_source=ngx_admin&utm_medium=referral&utm_content=ngx_admin_landing_themes_material_dark"
-        target="_blank"
-        class="image-container swiper-slide"
-      >
+      <a [href]="materialDarkDemoUrl" target="_blank" class="image-container swiper-slide">
         <img *ngIf="breakpoint.width <= breakpoints.sm"
             data-src="assets/img/material-dark-theme.png"
             class="swiper-lazy" 
@@ -35,11 +27,7 @@
             defaultImage="assets/img/default.png"
             alt="Material Dark Theme" />
       </a>
-      <a
-        href="https://www.akveo.com/ngx-admin/pages/dashboard?theme=default&utm_campaign=ngx_admin%20-%20demo%20-%20ngx_admin%20docs&utm_source=ngx_admin&utm_medium=referral&utm_content=ngx_admin_landing_themes_default"
-        target="_blank"
-        class="image-container swiper-slide"
-      >
+      <a [href]="lightDemoUrl" target="_blank" class="image-container swiper-slide">
         <img *ngIf="breakpoint.width <= breakpoints.sm"
             data-src="assets/img/light-theme.png"
             class="swiper-lazy"
@@ -49,11 +37,7 @@
             defaultImage="assets/img/default.png"
             alt="Eva Light Theme" />
       </a>
-      <a
-        href="https://www.akveo.com/ngx-admin/pages/dashboard?theme=dark&utm_campaign=ngx_admin%20-%20demo%20-%20ngx_admin%20docs&utm_source=ngx_admin&utm_medium=referral&utm_content=ngx_admin_landing_themes_dark"
-        target="_blank"
-        class="image-container swiper-slide"
-      >
+      <a [href]="darkDemoUrl" target="_blank" class="image-container swiper-slide">
         <img *ngIf="breakpoint.width <= breakpoints.sm"
             data-src="assets/img/dark-theme.png"
             class="swiper-lazy"
@@ -63,11 +47,7 @@
             alt="Eva Dark Theme"
             class="ng-lazyloaded" />
       </a>
-      <a
-        href="https://www.akveo.com/ngx-admin/pages/dashboard?theme=cosmic&utm_campaign=ngx_admin%20-%20demo%20-%20ngx_admin%20docs&utm_source=ngx_admin&utm_medium=referral&utm_content=ngx_admin_landing_themes_cosmic"
-        target="_blank"
-        class="image-container swiper-slide"
-      >
+      <a [href]="cosmicDemoUrl" target="_blank" class="image-container swiper-slide">
         <img *ngIf="breakpoint.width <= breakpoints.sm"
              data-src="assets/img/cosmic-theme.png"
              class="swiper-lazy"
@@ -77,11 +57,7 @@
              alt="Cosmic Theme"
              class="ng-lazyloaded"/>
       </a>
-      <a
-        href="https://www.akveo.com/ngx-admin/pages/dashboard?theme=corporate&utm_campaign=ngx_admin%20-%20demo%20-%20ngx_admin%20docs&utm_source=ngx_admin&utm_medium=referral&utm_content=ngx_admin_landing_themes_corporate"
-        target="_blank"
-        class="image-container swiper-slide"
-      >
+      <a [href]="corporateDemoUrl" target="_blank" class="image-container swiper-slide">
         <img *ngIf="breakpoint.width <= breakpoints.sm"
              data-src="assets/img/corporate-theme.png"
              class="swiper-lazy"
@@ -96,10 +72,10 @@
     <div class="swiper-pagination"></div>
 
     <div class="swiper-button-prev">
-      <i [innerHTML]="'arrow-ios-back' | eva: { width: 36, height: 36, fill: '#00db92' }"></i>
+      <i [innerHTML]="'arrow-ios-back' | eva: { width: 36, height: 36, fill: iconColor }"></i>
     </div>
     <div class="swiper-button-next">
-      <i [innerHTML]="'arrow-ios-forward' | eva: { width: 36, height: 36, fill: '#00db92' }"></i>
+      <i [innerHTML]="'arrow-ios-forward' | eva: { width: 36, height: 36, fill: iconColor }"></i>
     </div>
   </div>
 </div>
