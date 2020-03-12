@@ -5,7 +5,7 @@
     <img *ngIf="breakpoint.width >= breakpoints.md"
          class="main-img"
          defaultImage="assets/img/default.png"
-         lazyLoad="assets/img/ngx-admin.png"/>
+         [lazyLoad]="imageUrl"/>
   </a>
 </div>
 <div class="main-inf">
