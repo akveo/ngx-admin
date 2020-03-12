@@ -93,7 +93,7 @@
 
       span {
         display: inline-block;
-        padding: 0.75rem 3.5rem;
+        padding: 0.75rem 1.5rem;
         width: 100%;
       }
 
@@ -205,6 +205,7 @@
 
         span {
           padding: 0.75rem 0;
+          white-space: pre;
         }
 
         &.swiper-pagination-bullet-active {
