@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NbThemeService } from '@nebular/theme';
 
 @Component({
   selector: 'ngx-material-landing',
@@ -8,4 +9,8 @@ import { Component } from '@angular/core';
     '../landing-home.component.scss'
   ]
 })
-export class MaterialLandingComponent {}
+export class MaterialLandingComponent {
+  constructor(private themeService: NbThemeService) {
+    this.themeService.changeTheme('ngx-landing-material');
+  }
+}
