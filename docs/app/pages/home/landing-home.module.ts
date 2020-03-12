@@ -26,12 +26,15 @@ import { NgxLandingSectionsContainerComponent } from './sections-container/ngx-l
 import { BackendBundlesSectionComponent } from './backend-bundles-section/backend-bundles-section.component';
 import { LicensePipe } from './backend-bundles-section/license.pipe';
 import { BackgroundImagePipe } from './backend-bundles-section/background-image.pipe';
+import { MaterialLandingComponent } from './material-landing/material-landing.component';
+import { LandingSharedModule } from '../../shared/landing-shared.module';
 // components
 
 const PIPES = [LicensePipe, BackgroundImagePipe];
 
 const COMPONENTS = [
   LandingHomeComponent,
+  MaterialLandingComponent,
   NgxLandingSectionsContainerComponent,
   MainInfoSectionComponent,
   DescriptionSectionComponent,
@@ -53,6 +56,7 @@ const COMPONENTS = [
     NgxLandingThemeModule,
     SwiperModule,
     LandingHomeRoutingModule,
+    LandingSharedModule,
   ],
   providers: [
     ...PIPES,

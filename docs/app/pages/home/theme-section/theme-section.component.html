@@ -7,7 +7,7 @@
         [swiper]="swiperConfig"
         [(index)]="sliderIndex">
     <div class="swiper-wrapper">
-      <a href="https://hubs.ly/" target="_blank" class="image-container swiper-slide">
+      <a href="https://hubs.ly/todo" target="_blank" class="image-container swiper-slide">
         <img *ngIf="breakpoint.width <= breakpoints.sm"
             data-src="assets/img/material-light-theme.png"
             class="swiper-lazy"
@@ -17,15 +17,15 @@
             defaultImage="assets/img/default.png"
             alt="Material Light Theme" />
       </a>
-      <a href="https://hubs.ly/" target="_blank" class="image-container swiper-slide">
+      <a href="https://hubs.ly/todo" target="_blank" class="image-container swiper-slide">
         <img *ngIf="breakpoint.width <= breakpoints.sm"
             data-src="assets/img/material-dark-theme.png"
             class="swiper-lazy"
             alt="Material Dark Theme" />
         <img *ngIf="!(breakpoint.width <= breakpoints.sm)"
             lazyLoad="assets/img/material-dark-theme.png"
-            alt="Material Dark Theme"
-            defaultImage="assets/img/default.png" />
+            defaultImage="assets/img/default.png"
+            alt="Material Dark Theme" />
       </a>
       <a href="https://hubs.ly/H0n54_z0" target="_blank" class="image-container swiper-slide">
         <img *ngIf="breakpoint.width <= breakpoints.sm"

@@ -1,7 +1,9 @@
 <nb-layout>
   <nb-layout-header fixed>
     <div class="content-center">
-      <ngx-landing-header class="docs-header" [sidebarTag]="sidebarTag" [isDocs]="true"></ngx-landing-header>
+      <ngx-landing-header class="docs-header" [sidebarTag]="sidebarTag" [isDocs]="true">
+        <ngx-material-theme-link></ngx-material-theme-link>
+      </ngx-landing-header>
     </div>
   </nb-layout-header>
   <nb-sidebar class="menu-sidebar" [tag]="sidebarTag" [responsive]="true" [compactedBreakpoints]="[]" [collapsedBreakpoints]="collapsedBreakpoints">
