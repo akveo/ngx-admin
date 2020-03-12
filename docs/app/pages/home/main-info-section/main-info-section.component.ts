@@ -25,9 +25,9 @@ export class MainInfoSectionComponent implements OnDestroy {
   }
 
   private alive = true;
+  private forMaterialTheme: boolean = false;
   public readonly breakpoints: any;
   public breakpoint: NbMediaBreakpoint;
-  public forMaterialTheme: boolean = false;
 
   @Input() public set material(value: any) {
     this.forMaterialTheme = coerceBooleanProperty(value);
