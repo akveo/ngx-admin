@@ -1,0 +1,15 @@
+@import '../../../@theme/styles/themes';
+
+@include nb-install-component() {
+  ::ng-deep {
+    .version {
+      color: nb-theme(color-basic-500) !important;
+    }
+
+    ngx-landing-footer{
+      .h6, .copy {
+        color: #ffffff !important;
+      }
+    }
+  }
+}

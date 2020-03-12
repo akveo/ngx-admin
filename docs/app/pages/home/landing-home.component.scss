@@ -37,7 +37,7 @@
   ::ng-deep nb-layout-header {
     box-shadow: nb-theme(shadow-default);
     background: nb-theme(header-bg);
-    nav {
+    ngx-landing-header {
       max-width: calc(#{$content-width} - 8.125rem * 2);
       margin: 0 auto;
     }
@@ -48,9 +48,9 @@
     background-color: nb-theme(color-white);
     box-shadow: nb-theme(shadow-default);
 
-    nav {
+    ngx-landing-footer {
       max-width: $content-width;
-      width: 100%;
+      justify-content: space-evenly;
       margin: 0 auto;
     }
   }
