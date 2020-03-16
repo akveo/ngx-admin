@@ -47,7 +47,6 @@
     "@nebular/theme": "5.0.0-beta.8",
     "@swimlane/ngx-charts": "^13.0.2",
     "angular2-chartjs": "0.4.1",
-    "angular2-toaster": "^7.0.0",
     "bootstrap": "4.3.1",
     "chart.js": "2.7.1",
     "ckeditor": "4.7.3",
