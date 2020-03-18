@@ -6,7 +6,13 @@
 <a target="_blank" href="http://akveo.com/ngx-admin/pages/dashboard?theme=corporate&utm_source=github&utm_medium=ngx_admin_readme&utm_campaign=main_pic"><img src="https://i.imgur.com/mFdqvgG.png"/></a>
 
 ### Backend Integration Bundles
-Easy way to integrate ngx-admin with .NET, Node.js, Java or PHP. [Checkout our Store](https://store.akveo.com/?utm_source=github&utm_medium=ngx_admin_readme) for ready to use Backend Bundles.
+Easy way to integrate ngx-admin with backend (.NET, Node.js, Java etc.).
+
+<a target="_blank" href="https://hubs.ly/H0nF3wk0">
+  <img src="https://i.imgur.com/Ywbs8cl.png"/>
+</a>
+
+[Checkout our Store](https://hubs.ly/H0nF2Zn0) for ready to use Backend Bundles.
 
 
 ### With 3 stunning visual themes
