@@ -30,7 +30,7 @@ export class MainInfoSectionComponent implements OnDestroy {
   public breakpoint: NbMediaBreakpoint;
 
   @Input() public set material(value: any) {
-    this.forMaterialTheme = coerceBooleanProperty(value);
+    this.forMaterialTheme = (value);
   }
 
   public get imageUrl(): string {

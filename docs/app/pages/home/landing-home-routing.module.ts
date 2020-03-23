@@ -19,6 +19,10 @@ export const routes: Routes = [
     path: 'material',
     component: MaterialLandingComponent,
   },
+  // {
+  //   path: 'overview',
+  //   component: OverviewComponent,
+  // },
 ];
 
 @NgModule({
