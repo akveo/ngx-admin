@@ -28,6 +28,9 @@ import { LicensePipe } from './backend-bundles-section/license.pipe';
 import { BackgroundImagePipe } from './backend-bundles-section/background-image.pipe';
 import { MaterialLandingComponent } from './material-landing/material-landing.component';
 import { LandingSharedModule } from '../../shared/landing-shared.module';
+import {MaterialFeaturesSectionComponent} from './material-features/material-features.component';
+import {DefaultAdminInfoComponent} from './main-info-section/default-admin-main-info/default-info.component';
+import {MaterialAdminInfoComponent} from './main-info-section/material-admin-main-info/material-info.component';
 // components
 
 const PIPES = [LicensePipe, BackgroundImagePipe];
@@ -37,6 +40,8 @@ const COMPONENTS = [
   MaterialLandingComponent,
   NgxLandingSectionsContainerComponent,
   MainInfoSectionComponent,
+  DefaultAdminInfoComponent,
+  MaterialAdminInfoComponent,
   DescriptionSectionComponent,
   ReasonSectionComponent,
   ThemeSectionComponent,
@@ -45,6 +50,7 @@ const COMPONENTS = [
   SocialSectionComponent,
   ContactSectionComponent,
   BackendBundlesSectionComponent,
+  MaterialFeaturesSectionComponent,
 ];
 
 @NgModule({

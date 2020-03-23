@@ -6,8 +6,8 @@ import { NbThemeService } from '@nebular/theme';
   templateUrl: './material-landing.component.html',
   styleUrls: [
     './material-landing.component.scss',
-    '../landing-home.component.scss'
-  ]
+    '../landing-home.component.scss',
+  ],
 })
 export class MaterialLandingComponent {
   constructor(private themeService: NbThemeService) {
