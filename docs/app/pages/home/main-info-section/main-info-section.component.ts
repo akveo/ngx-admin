@@ -4,8 +4,7 @@
  * Licensed under the MIT License. See License.txt in the project root for license information.
  */
 
-import { Component, OnDestroy, Input, OnInit } from '@angular/core';
-import { coerceBooleanProperty } from '@angular/cdk/coercion';
+import { Component, OnDestroy, Input } from '@angular/core';
 import { NbMediaBreakpoint, NbMediaBreakpointsService, NbThemeService } from '@nebular/theme';
 import { takeWhile } from 'rxjs/operators';
 
@@ -34,7 +33,7 @@ export class MainInfoSectionComponent implements OnDestroy {
   }
 
   public get imageUrl(): string {
-    return this.forMaterialTheme
+    return this.forMaterialTheme !== false
       ? 'assets/img/ngx-admin-material.png'
       : '/assets/img/ngx-admin.png';
   }
