@@ -2,6 +2,21 @@
 
 [Who uses ngx-admin?](https://github.com/akveo/ngx-admin/issues/1645)| [Documentation](https://hubs.ly/H0n4Sfq0) | [Installation Guidelines](https://hubs.ly/H0n4Svc0)
 
+# New! Material theme for ngx-admin
+
+### Material admin theme is based on the most popular Angular dashboard template - [ngx-admin](https://hubs.ly/H0nJG1G0)
+### Included: Angular 9+, [Nebular](https://hubs.ly/H0nJG5g0) and [Eva design system](https://hubs.ly/H0nJGdC0). Free for personal and commercial usage.
+### Get material ngx-admin integrated with backend technology of your choice. Check out our store.
+
+## Key features
+
+- The most popular and trusted Angular open source dashboard template is out there. Used by hundreds of thousands developers worldwide and Fortune 500 companies*.
+- Over 40+ Angular Components and 60+ Usage Examples. Kick off your project and save money by using ngx-admin.
+- Already using ngx-admin and willing to switch to material theme? Material theme is backward-compatible. Check out the article describing how to do that.
+- ngx-admin material works perfectly with Angular Material and Nebular. Take the best from both!
+
+
+
 # Admin template based on Angular 8+ and <a href="https://github.com/akveo/nebular">Nebular</a>
 <a target="_blank" href="https://hubs.ly/H0n4Sw20"><img src="https://i.imgur.com/mFdqvgG.png"/></a>
 
