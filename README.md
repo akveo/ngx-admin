@@ -8,6 +8,8 @@
 ### Included: Angular 9+, [Nebular](https://hubs.ly/H0nJG5g0) and [Eva design system](https://hubs.ly/H0nJGdC0). Free for personal and commercial usage.
 ### Get material ngx-admin integrated with backend technology of your choice. Check out our store.
 
+<a target="_blank" href="https://hubs.ly/H0nxM3b0"><img src="https://i.imgur.com/csP0aZ9.png"/></a>
+
 ## Key features
 
 - The most popular and trusted Angular open source dashboard template is out there. Used by hundreds of thousands developers worldwide and Fortune 500 companies*.
@@ -17,7 +19,7 @@
 
 
 
-# Admin template based on Angular 8+ and <a href="https://github.com/akveo/nebular">Nebular</a>
+# Admin template based on Angular 9+ and <a href="https://github.com/akveo/nebular">Nebular</a>
 <a target="_blank" href="https://hubs.ly/H0n4Sw20"><img src="https://i.imgur.com/mFdqvgG.png"/></a>
 
 ### Backend Integration Bundles
