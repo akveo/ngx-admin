@@ -31,9 +31,14 @@ Easy way to integrate ngx-admin with backend (.NET, Node.js, Java etc.).
 
 [Check out our Store](https://hubs.ly/H0n4Zvy0) for ready to use Backend Bundles.
 
-### With 4 stunning visual themes
+### With 6 stunning visual themes
 
 
+#### Material Dark
+<a target="_blank" href="https://hubs.ly/H0nxM3b0"><img src="https://i.imgur.com/csP0aZ9.png"/></a>
+
+#### Material Light
+<a target="_blank" href="https://hubs.ly/H0nxNmv0"><img src="https://i.imgur.com/J5Rmgn4.png"/></a>
 
 #### Default
 <a target="_blank" href="https://hubs.ly/H0n4Tgv0"><img src="https://i.imgur.com/Kn3xDKQ.png"/></a>
@@ -49,7 +54,7 @@ Easy way to integrate ngx-admin with backend (.NET, Node.js, Java etc.).
 
 ### What's included:
 
-- Angular 8+ & Typescript
+- Angular 9+ & Typescript
 - Bootstrap 4+ & SCSS
 - Responsive layout
 - RTL support
