@@ -8,12 +8,18 @@ import {
   NbRequestPasswordComponent,
   NbResetPasswordComponent,
 } from '@nebular/auth';
+import {StarterScreenComponent} from './themes-screen/starter-screen.component';
 
 const routes: Routes = [
   {
     path: 'pages',
     loadChildren: () => import('app/pages/pages.module')
       .then(m => m.PagesModule),
+  },
+  {
+    path: 'themes',
+    loadChildren: () => import('app/themes-screen/starter.module')
+      .then(m => m.StarterModule),
   },
   {
     path: 'auth',

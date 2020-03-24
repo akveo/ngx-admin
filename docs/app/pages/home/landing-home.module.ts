@@ -31,6 +31,8 @@ import { LandingSharedModule } from '../../shared/landing-shared.module';
 import {MaterialFeaturesSectionComponent} from './material-features/material-features.component';
 import {DefaultAdminInfoComponent} from './main-info-section/default-admin-main-info/default-info.component';
 import {MaterialAdminInfoComponent} from './main-info-section/material-admin-main-info/material-info.component';
+import {ContactFormComponent} from './contact-form/contact.component';
+import {NbButtonModule} from '@nebular/theme';
 // components
 
 const PIPES = [LicensePipe, BackgroundImagePipe];
@@ -51,6 +53,7 @@ const COMPONENTS = [
   ContactSectionComponent,
   BackendBundlesSectionComponent,
   MaterialFeaturesSectionComponent,
+  ContactFormComponent,
 ];
 
 @NgModule({
@@ -63,6 +66,7 @@ const COMPONENTS = [
     SwiperModule,
     LandingHomeRoutingModule,
     LandingSharedModule,
+    NbButtonModule,
   ],
   providers: [
     ...PIPES,
