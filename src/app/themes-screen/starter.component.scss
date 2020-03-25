@@ -2,126 +2,176 @@
 @import '~@nebular/theme/styles/global/breakpoints';
 @import '../@theme/styles/themes';
 
-//@include nb-install-component() {
-//  display: flex;
-//  justify-content: space-between;
-//  width: 100%;
-//
-//  .logo-container {
-//    display: flex;
-//    align-items: center;
-//    width: calc(#{nb-theme(sidebar-width)} - #{nb-theme(header-padding)});
-//  }
-//
-//  nb-action {
-//    height: auto;
-//    display: flex;
-//    align-content: center;
-//  }
-//
-//  nb-user {
-//    cursor: pointer;
-//  }
-//
-//  .subtitle {
-//    font-family: nb-theme(text-subtitle-font-family);
-//    font-size: nb-theme(text-subtitle-font-size);
-//    font-weight: nb-theme(text-subtitle-font-weight);
-//    line-height: nb-theme(text-subtitle-line-height);
-//  }
-//
-//  .downloads-count .number {
-//    @include nb-ltr(margin-left, 0.5rem);
-//    @include nb-rtl(margin-right, 0.5rem);
-//  }
-//
-//  ::ng-deep nb-search button {
-//    padding: 0!important;
-//  }
-//
-//  .contact-us {
-//    padding: 0;
-//
-//    nb-icon {
-//      font-size: 1.25rem;
-//    }
-//  }
-//
-//  .header-container {
-//    display: flex;
-//    align-items: center;
-//    width: auto;
-//
-//    .sidebar-toggle {
-//      @include nb-ltr(padding-right, 1.25rem);
-//      @include nb-rtl(padding-left, 1.25rem);
-//      text-decoration: none;
-//      color: nb-theme(text-hint-color);
-//      nb-icon {
-//        font-size: 1.75rem;
-//      }
-//    }
-//
-//    .logo {
-//      padding: 0 1.25rem;
-//      font-size: 1.75rem;
-//      @include nb-ltr(border-left, 1px solid nb-theme(divider-color));
-//      @include nb-rtl(border-right, 1px solid nb-theme(divider-color));
-//      white-space: nowrap;
-//      text-decoration: none;
-//    }
-//  }
-//
-//  .github-stars {
-//    width: 245px;
-//    display: flex;
-//
-//    iframe {
-//      width: 100px;
-//      @include nb-ltr(margin-left, 1rem);
-//      @include nb-rtl(margin-right, 1rem);
-//    }
-//  }
-//
-//  @include media-breakpoint-down(xl) {
-//    .control-item.search,
-//    .control-item.notifications,
-//    .control-item.email,
-//    .control-item.github-stars .text {
-//      display: none;
-//    }
-//
-//    .control-item.github-stars {
-//      width: auto;
-//
-//      iframe {
-//        margin: 0;
-//      }
-//    }
-//  }
-//
-//  @include media-breakpoint-down(lg) {
-//    .downloads-count {
-//      display: none;
-//    }
-//  }
-//
-//  @include media-breakpoint-down(md) {
-//    .theme-select {
-//      display: none;
-//    }
-//  }
-//
-//  @include media-breakpoint-down(sm) {
-//    .contact-us {
-//      display: none;
-//    }
-//  }
-//
-//  @include media-breakpoint-down(is) {
-//    .github-stars,
-//    .user-action {
-//      display: none;
-//    }
-//  }
-//}
+@include nb-install-component() {
+  img {
+    width: 100%;
+    object-fit: contain;
+  }
+
+  h4 {
+    text-align: center;
+    width: 100%;
+    height: 35px;
+    margin-bottom: 36px;
+  }
+
+  nb-layout-column {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  nb-card {
+    overflow: hidden;
+    cursor: pointer;
+    width: 32%;
+  }
+
+  nb-card-body {
+    padding: 0;
+    height: auto;
+  }
+
+  nb-layout-header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    ::ng-deep nav {
+      width: 100%;
+      justify-content: space-between;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      width: calc(#{nb-theme(sidebar-width)} - #{nb-theme(header-padding)});
+    }
+
+    nb-action {
+      height: auto;
+      display: flex;
+      align-content: center;
+    }
+
+    .subtitle {
+      font-family: nb-theme(text-subtitle-font-family);
+      font-size: nb-theme(text-subtitle-font-size);
+      font-weight: nb-theme(text-subtitle-font-weight);
+      line-height: nb-theme(text-subtitle-line-height);
+    }
+
+    .downloads-count .number {
+      @include nb-ltr(margin-left, 0.5rem);
+      @include nb-rtl(margin-right, 0.5rem);
+    }
+
+    ::ng-deep nb-search button {
+      padding: 0 !important;
+    }
+
+    .contact-us {
+      padding: 0;
+
+      nb-icon {
+        font-size: 1.25rem;
+      }
+    }
+
+    .header-container {
+      display: flex;
+      align-items: center;
+      width: auto;
+
+      .logo {
+        padding: 0 1.25rem;
+        font-size: 1.75rem;
+        margin-bottom: 0.5rem;
+        @include nb-rtl(border-right, 1px solid nb-theme(divider-color));
+        white-space: nowrap;
+        text-decoration: none;
+      }
+    }
+
+    .github-stars {
+      width: 245px;
+      display: flex;
+
+      iframe {
+        width: 100px;
+        @include nb-ltr(margin-left, 1rem);
+        @include nb-rtl(margin-right, 1rem);
+      }
+    }
+
+    @include media-breakpoint-down(xl) {
+      .control-item.github-stars .text {
+        display: none;
+      }
+
+      .control-item.github-stars {
+        width: auto;
+
+        iframe {
+          margin: 0;
+        }
+      }
+    }
+
+    @include media-breakpoint-down(lg) {
+      .downloads-count {
+        display: none;
+      }
+    }
+
+    @include media-breakpoint-down(md) {
+    }
+
+    @include media-breakpoint-down(sm) {
+      .contact-us {
+        display: none;
+      }
+    }
+
+    @include media-breakpoint-down(is) {
+      .github-stars{
+        display: none;
+      }
+    }
+  }
+
+  @include media-breakpoint-down(xl) {
+    h4 {
+      margin: 0;
+    }
+  }
+
+  @include media-breakpoint-down(lg) {
+    h4 {
+      margin-bottom: 36px;
+    }
+
+    nb-card-header {
+      padding: 12px 20px;
+    }
+
+    nb-card {
+      width: 48%;
+    }
+  }
+
+  @include media-breakpoint-down(md) {
+  }
+
+  @include media-breakpoint-down(sm) {
+    nb-card-header {
+      padding: 10px 20px;
+    }
+  }
+
+  @include media-breakpoint-down(is) {
+    nb-card {
+      width: 100%;
+    }
+  }
+}
