@@ -6,6 +6,8 @@
   img {
     width: 100%;
     object-fit: contain;
+    height: auto;
+    vertical-align: top;
   }
 
   h4 {
@@ -17,8 +19,10 @@
 
   nb-layout-column {
     display: flex;
+    align-items: flex-start;
     flex-wrap: wrap;
     justify-content: space-between;
+    align-content: flex-start;
   }
 
   nb-card {
@@ -29,7 +33,6 @@
 
   nb-card-body {
     padding: 0;
-    height: auto;
   }
 
   nb-layout-header {
@@ -141,15 +144,9 @@
   }
 
   @include media-breakpoint-down(xl) {
-    h4 {
-      margin: 0;
-    }
   }
 
   @include media-breakpoint-down(lg) {
-    h4 {
-      margin-bottom: 36px;
-    }
 
     nb-card-header {
       padding: 12px 20px;
