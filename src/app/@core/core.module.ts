@@ -53,6 +53,8 @@ import { VisitorsAnalyticsService } from './mock/visitors-analytics.service';
 import { SecurityCamerasService } from './mock/security-cameras.service';
 import { MockDataModule } from './mock/mock-data.module';
 import { AbService } from './utils/ab.service';
+import {CurrentThemeService} from './utils/theme.service';
+import {ThemeGuard} from './guard/theme.guard';
 
 const socialLinks = [
   {
@@ -94,6 +96,10 @@ const DATA_SERVICES = [
   { provide: SecurityCamerasData, useClass: SecurityCamerasService },
 ];
 
+const GUARDS = [
+  ThemeGuard,
+];
+
 export class NbSimpleRoleProvider extends NbRoleProvider {
   getRole() {
     // here you could provide any role based on any auth flow
@@ -104,6 +110,7 @@ export class NbSimpleRoleProvider extends NbRoleProvider {
 export const NB_CORE_PROVIDERS = [
   ...MockDataModule.forRoot().providers,
   ...DATA_SERVICES,
+  ...GUARDS,
   ...NbAuthModule.forRoot({
 
     strategies: [
@@ -145,6 +152,7 @@ export const NB_CORE_PROVIDERS = [
   SeoService,
   StateService,
   AbService,
+  CurrentThemeService,
 ];
 
 @NgModule({
