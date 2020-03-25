@@ -24,7 +24,7 @@ export class MainInfoSectionComponent implements OnDestroy {
   }
 
   private alive = true;
-  private forMaterialTheme: boolean = false;
+  public forMaterialTheme: boolean = false;
   public readonly breakpoints: any;
   public breakpoint: NbMediaBreakpoint;
 
