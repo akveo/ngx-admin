@@ -2,7 +2,7 @@ import {Component, OnDestroy} from '@angular/core';
 import {NbMediaBreakpoint, NbThemeService} from '@nebular/theme';
 import {Router} from '@angular/router';
 import {AnalyticsService} from '../@core/utils';
-import { environment } from '../../environments/environment';
+import {CurrentThemeService} from '../@core/utils/theme.service';
 
 @Component({
   selector: 'ngx-starter',
@@ -41,18 +41,13 @@ export class NgxStarterComponent implements OnDestroy {
   ];
 
   constructor(private router: Router,
-              protected themeService: NbThemeService,
+              private themeService: NbThemeService,
+              private currentThemeService: CurrentThemeService,
               private analytics: AnalyticsService,
               ) {}
 
   navigate(themeName: string) {
-    const currentTheme = {
-      themeName: themeName,
-      expires_in: this.calculateExpiration(environment.currentThemeLife),
-    };
-
-    localStorage.setItem('theme', JSON.stringify(currentTheme));
-
+    this.currentThemeService.setCurrentTheme(themeName);
     this.themeService.changeTheme(themeName);
     this.router.navigate(['/pages/dashboard'], {queryParams: {theme: themeName}});
   }
@@ -62,12 +57,5 @@ export class NgxStarterComponent implements OnDestroy {
   }
 
   ngOnDestroy() {
-  }
-
-  calculateExpiration(iat: number): number {
-    const currentDate = new Date().getTime();
-    const timestamp = iat || Math.floor(Date.now() / 1000);
-
-    return Math.floor(timestamp + currentDate);
   }
 }
