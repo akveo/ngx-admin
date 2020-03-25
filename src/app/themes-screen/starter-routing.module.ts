@@ -1,6 +1,5 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import {StarterScreenComponent} from './starter-screen.component';
 import {NgxStarterComponent} from './starter.component';
 
 const routes: Routes = [{
@@ -9,7 +8,7 @@ const routes: Routes = [{
   children: [
     {
       path: '',
-      component: StarterScreenComponent,
+      component: NgxStarterComponent,
     },
     ],
 }];

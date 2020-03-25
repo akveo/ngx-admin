@@ -1,5 +1,4 @@
 import {NgModule} from '@angular/core';
-import {StarterScreenComponent} from './starter-screen.component';
 import {StarterRoutingModule} from './starter-routing.module';
 import {NgxStarterComponent} from './starter.component';
 import {NbActionsModule, NbButtonModule, NbCardModule, NbIconModule, NbLayoutModule} from '@nebular/theme';
@@ -20,7 +19,7 @@ const NB_MODULES = [
     NbActionsModule,
   ],
   declarations: [
-    StarterScreenComponent,
+    NgxStarterComponent,
     NgxStarterComponent,
   ],
 })
