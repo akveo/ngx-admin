@@ -3,13 +3,11 @@ import {ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot} from '
 import {Observable} from 'rxjs';
 import {map} from 'rxjs/operators';
 import {CurrentThemeService} from '../utils/theme.service';
-import {NbDateService} from '@nebular/theme';
 
 @Injectable()
 export class ThemeGuard implements CanActivate {
   constructor(private router: Router,
-              private currentThemeService: CurrentThemeService,
-              private dateService: NbDateService<number>) {}
+              private currentThemeService: CurrentThemeService) {}
 
   canActivate(
     route: ActivatedRouteSnapshot,

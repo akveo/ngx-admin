@@ -1,6 +1,6 @@
-import {Component, enableProdMode, OnDestroy} from '@angular/core';
+import {Component, OnDestroy} from '@angular/core';
 import {NbMediaBreakpoint, NbThemeService} from '@nebular/theme';
-import {ActivatedRoute, Router} from '@angular/router';
+import {Router} from '@angular/router';
 import {AnalyticsService} from '../@core/utils';
 import { environment } from '../../environments/environment';
 
@@ -12,8 +12,6 @@ import { environment } from '../../environments/environment';
 export class NgxStarterComponent implements OnDestroy {
   breakpoint: NbMediaBreakpoint;
   breakpoints: any;
-
-  private alive = true;
 
   themes = [
     {
@@ -43,7 +41,6 @@ export class NgxStarterComponent implements OnDestroy {
   ];
 
   constructor(private router: Router,
-              private route: ActivatedRoute,
               protected themeService: NbThemeService,
               private analytics: AnalyticsService,
               ) {}
@@ -65,7 +62,6 @@ export class NgxStarterComponent implements OnDestroy {
   }
 
   ngOnDestroy() {
-    this.alive = false;
   }
 
   calculateExpiration(iat: number): number {
