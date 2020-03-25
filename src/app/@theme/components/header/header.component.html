@@ -49,7 +49,10 @@
         470.000
       </span>
     </nb-action>
-    <nb-action class="control-item contact-us">
+    <nb-action class="control-item contact-us"
+               matRipple
+               [matRippleUnbounded]="false"
+               [matRippleCentered]="true">
       <a nbButton ghost href="mailto:contact@akveo.com" (click)="trackEmailClick()">
         <nb-icon icon="email-outline" pack="eva"></nb-icon>
         <span [class.text-control]="materialTheme$ | async">
@@ -83,7 +86,7 @@
       class="user-action"
       *nbIsGranted="['view', 'user']"
       matRipple
-      [matRippleUnbounded]="true"
+      [matRippleUnbounded]="false"
       [matRippleCentered]="true">
       <nb-user [nbContextMenu]="userMenu"
                [onlyPicture]="userPictureOnly"
