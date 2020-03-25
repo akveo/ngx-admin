@@ -10,11 +10,11 @@ import {
 } from '@nebular/auth';
 import {ThemeGuard} from './@core/guard/theme.guard';
 
-const routes: Routes = [
+export const routes: Routes = [
   {
     path: 'pages',
     canActivate: [ThemeGuard],
-    loadChildren: () => import('app/pages/pages.module')
+    loadChildren: () => import('./pages/pages.module')
       .then(m => m.PagesModule),
   },
   {

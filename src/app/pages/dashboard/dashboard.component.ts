@@ -56,6 +56,8 @@ export class DashboardComponent implements OnInit, OnDestroy {
     cosmic: CardSettings[];
     corporate: CardSettings[];
     dark: CardSettings[];
+    'material-dark': CardSettings[];
+    'material-light': CardSettings[];
   } = {
     default: this.commonStatusCardsSet,
     cosmic: this.commonStatusCardsSet,
@@ -78,6 +80,8 @@ export class DashboardComponent implements OnInit, OnDestroy {
       },
     ],
     dark: this.commonStatusCardsSet,
+    'material-dark': this.commonStatusCardsSet,
+    'material-light': this.commonStatusCardsSet,
   };
 
   constructor(private themeService: NbThemeService,
