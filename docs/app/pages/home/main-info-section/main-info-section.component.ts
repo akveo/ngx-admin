@@ -35,7 +35,7 @@ export class MainInfoSectionComponent implements OnDestroy {
   public get imageUrl(): string {
     return this.forMaterialTheme !== false
       ? 'assets/img/ngx-admin-material.png'
-      : '/assets/img/ngx-admin.png';
+      : 'assets/img/ngx-admin.png';
   }
 
   public ngOnDestroy() {
