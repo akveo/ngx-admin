@@ -5,9 +5,11 @@
  */
 
 /* SystemJS module definition */
-declare var module: {
+declare var module: NodeModule;
+interface NodeModule {
   id: string;
-};
-declare var require: any;
+}
+
+declare var require: NodeRequire;
 declare var structure: any;
 declare var docs: any;

@@ -86,8 +86,8 @@ const COMPONENTS = [
   ],
 })
 export class NgxLandingThemeModule {
-  static forRoot(): ModuleWithProviders {
-    return <ModuleWithProviders>{
+  static forRoot(): ModuleWithProviders<NgxLandingThemeModule> {
+    return {
       ngModule: NgxLandingThemeModule,
       providers: [
         ...NbThemeModule.forRoot({ name: 'ngx-landing' }).providers,
