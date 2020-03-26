@@ -55,6 +55,10 @@
     &:active {
       box-shadow: nb-theme(shadow-active-btn);
     }
+
+    &::after {
+      content: '';
+    }
   }
 
   .swiper-button-prev {
