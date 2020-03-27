@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   templateUrl: './gmaps.component.html',
 })
 export class GmapsComponent {
-  public readonly position = { lat: 51.678418, lng: 7.809007 };
+  readonly position = { lat: 51.678418, lng: 7.809007 };
 }

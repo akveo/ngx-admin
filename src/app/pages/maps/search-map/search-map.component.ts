@@ -6,9 +6,9 @@ import { PositionModel } from './entity/position.model';
   templateUrl: './search-map.component.html',
 })
 export class SearchMapComponent {
-  public searchedPosition: PositionModel = new PositionModel();
+  searchedPosition: PositionModel = new PositionModel();
 
-  public setPosition(position: PositionModel): void {
+  setPosition(position: PositionModel) {
     this.searchedPosition = position;
   }
 }

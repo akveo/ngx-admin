@@ -8,12 +8,12 @@ import { PositionModel } from '../entity/position.model';
 export class SearchComponent implements OnInit {
 
   @Output()
-  public readonly positionChanged: EventEmitter<PositionModel> = new EventEmitter<PositionModel>();
+  positionChanged: EventEmitter<PositionModel> = new EventEmitter<PositionModel>();
 
   @ViewChild('search', { static: true })
-  public searchElementRef: ElementRef;
+  searchElementRef: ElementRef;
 
-  constructor(private readonly ngZone: NgZone) {}
+  constructor(private ngZone: NgZone) {}
 
   ngOnInit() {
     const autocomplete = new google.maps.places.Autocomplete(

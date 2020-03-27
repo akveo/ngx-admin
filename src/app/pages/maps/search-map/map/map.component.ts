@@ -7,19 +7,18 @@ import { PositionModel } from '../entity/position.model';
   styleUrls: ['./map.component.scss'],
 })
 export class MapComponent implements OnInit {
-  public position: PositionModel = null;
-  public zoom: number = 1;
+  position: PositionModel = null;
+  zoom: number = 1;
 
   @Input()
   public set searchedPosition(position: PositionModel) {
-    if (!position) return;
-
-    console.dir(position);
-    this.position = position;
-    this.zoom = 12;
+    if (position) {
+      this.position = position;
+      this.zoom = 12;
+    }
   }
 
-  public ngOnInit(): void {
+  ngOnInit() {
     // set up current location
     if ('geolocation' in navigator) {
       navigator.geolocation.getCurrentPosition((position) => {
