@@ -17,7 +17,7 @@
 - Already using ngx-admin and willing to switch to material theme? Material theme is backward-compatible. Check out the article describing how to do that.
 - ngx-admin material works perfectly with Angular Material and Nebular. Take the best from both!
 
-
+### To use material theme checkout `feat/material-theme` branch
 
 # Admin template based on Angular 9+ and <a href="https://github.com/akveo/nebular">Nebular</a>
 <a target="_blank" href="https://hubs.ly/H0n4Sw20"><img src="https://i.imgur.com/mFdqvgG.png"/></a>
