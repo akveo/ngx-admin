@@ -11,6 +11,7 @@ import { NgxLandingThemeModule } from '../../@theme/theme.module';
 import { SwiperModule } from 'ngx-swiper-wrapper';
 import { NgxBlocksModule } from '../../blocks/blocks.module';
 import { LandingDocsRoutingModule } from './landing-docs-routing.module';
+import { LandingSharedModule } from '../../shared/landing-shared.module';
 // modules
 
 // components
@@ -32,6 +33,7 @@ const COMPONENTS = [
   imports: [
     NgxLandingThemeModule,
     SwiperModule,
+    LandingSharedModule,
     LandingDocsRoutingModule,
     NgxBlocksModule,
   ],

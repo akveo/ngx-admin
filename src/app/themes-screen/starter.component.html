@@ -1,0 +1,53 @@
+<nb-layout windowMode>
+  <nb-layout-header fixed>
+    <div class="header-container">
+      <div class="logo-container">
+        <p class="logo">ngx-<span>admin</span></p>
+      </div>
+    </div>
+
+    <div class="header-container">
+      <nb-actions size="small">
+        <nb-action class="control-item github-stars">
+          <span class="subtitle text">Support us: </span>
+          <iframe src="https://ghbtns.com/github-btn.html?user=akveo&repo=ngx-admin&type=star&count=true"
+                  frameborder="0"
+                  scrolling="0"
+                  width="170px"
+                  height="20px">
+          </iframe>
+        </nb-action>
+        <nb-action class="control-item downloads-count">
+          <nb-icon icon="download"></nb-icon>
+          <span class="subtitle number">470.000</span>
+        </nb-action>
+        <nb-action class="control-item contact-us" (click)="trackEmailClick()">
+          <a nbButton ghost href="mailto:contact@akveo.com">
+            <nb-icon icon="email-outline" pack="eva"></nb-icon>
+            <span>contact@akveo.com</span>
+          </a>
+        </nb-action>
+      </nb-actions>
+    </div>
+  </nb-layout-header>
+
+ <nb-layout-column>
+     <h4>Choose theme</h4>
+
+    <ng-container *ngFor="let theme of themes">
+        <nb-card (click)="navigate(theme.value)">
+          <nb-card-header>{{theme.name}}</nb-card-header>
+          <nb-card-body>
+            <img src="../../assets/images/{{theme.value}}-theme.png"
+                 class="theme-preview"
+                 alt="{{theme.name}} Theme"/>
+          </nb-card-body>
+        </nb-card>
+    </ng-container>
+  </nb-layout-column>
+
+  <nb-layout-footer fixed>
+    <ngx-footer></ngx-footer>
+  </nb-layout-footer>
+
+</nb-layout>

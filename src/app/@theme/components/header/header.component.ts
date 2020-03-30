@@ -6,6 +6,7 @@ import { AnalyticsService, LayoutService } from '../../../@core/utils';
 import { map, takeUntil } from 'rxjs/operators';
 import { Subject, Observable } from 'rxjs';
 import { RippleService } from '../../../@core/utils/ripple.service';
+import {CurrentThemeService} from '../../../@core/utils/theme.service';
 
 @Component({
   selector: 'ngx-header',
@@ -57,6 +58,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
               private layoutService: LayoutService,
               private breakpointService: NbMediaBreakpointsService,
               private rippleService: RippleService,
+              private currentThemeService: CurrentThemeService,
               private analytics: AnalyticsService,
   ) {
     this.materialTheme$ = this.themeService.onThemeChange()
@@ -98,6 +100,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   }
 
   changeTheme(themeName: string) {
+    this.currentThemeService.setCurrentTheme(themeName);
     this.themeService.changeTheme(themeName);
   }
 

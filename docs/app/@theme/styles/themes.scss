@@ -25,7 +25,7 @@ $grid-breakpoints: (
   xxxl: 1600px
 );
 
-$nb-enabled-themes: (ngx-landing, docs-page);
+$nb-enabled-themes: (ngx-landing, ngx-landing-material, docs-page);
 
 /* stylelint-disable */
 $nb-themes: nb-register-theme((
@@ -126,6 +126,30 @@ $nb-themes: nb-register-theme((
   link-text-hover-color: color-success-hover,
 
 ), ngx-landing, corporate);
+
+$nb-themes: nb-register-theme((
+  font-family-primary: unquote('Roboto, sans-serif'),
+
+  shadow: unquote('0 2px 1px -1px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 3px 0 rgba(0,0,0,.12)'),
+  header-shadow: unquote(
+    '0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12)'
+  ),
+  shadow-default: shadow,
+  shadow-btn: shadow,
+  shadow-hover-btn: shadow,
+  shadow-active-btn: shadow,
+  shadow-hover-green-btn: shadow,
+  shadow-active-green-btn: shadow,
+
+  color-primary-default: #6200ee,
+  color-active-fg: color-primary-default,
+  color-active-bg: color-primary-default,
+  header-background-color: color-primary-default,
+  header-text-color: #ffffff !important,
+  menu-text-color: #ffffff !important,
+  footer-background-color: color-primary-default,
+  footer-text-color: #ffffff !important
+), ngx-landing-material, ngx-landing);
 
 /* stylelint-enable foo */
 $nb-themes: nb-register-theme((

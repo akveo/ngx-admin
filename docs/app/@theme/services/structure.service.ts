@@ -56,7 +56,8 @@ export class NgxStructureService {
       }
 
       if (item.block === 'markdown') {
-        item.children = this.textService.mdToSectionsHTML(require(`raw-loader!../../../articles/${item.source}`));
+        item.children = this.textService.mdToSectionsHTML(
+          require(`raw-loader!../../../articles/${item.source}`).default);
       }
 
       if (item.children) {

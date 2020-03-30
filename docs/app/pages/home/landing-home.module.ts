@@ -26,14 +26,24 @@ import { NgxLandingSectionsContainerComponent } from './sections-container/ngx-l
 import { BackendBundlesSectionComponent } from './backend-bundles-section/backend-bundles-section.component';
 import { LicensePipe } from './backend-bundles-section/license.pipe';
 import { BackgroundImagePipe } from './backend-bundles-section/background-image.pipe';
+import { MaterialLandingComponent } from './material-landing/material-landing.component';
+import { LandingSharedModule } from '../../shared/landing-shared.module';
+import {MaterialFeaturesSectionComponent} from './material-features/material-features.component';
+import {DefaultAdminInfoComponent} from './main-info-section/default-admin-main-info/default-info.component';
+import {MaterialAdminInfoComponent} from './main-info-section/material-admin-main-info/material-info.component';
+import {ContactFormComponent} from './contact-form/contact.component';
+import {NbButtonModule} from '@nebular/theme';
 // components
 
 const PIPES = [LicensePipe, BackgroundImagePipe];
 
 const COMPONENTS = [
   LandingHomeComponent,
+  MaterialLandingComponent,
   NgxLandingSectionsContainerComponent,
   MainInfoSectionComponent,
+  DefaultAdminInfoComponent,
+  MaterialAdminInfoComponent,
   DescriptionSectionComponent,
   ReasonSectionComponent,
   ThemeSectionComponent,
@@ -42,6 +52,8 @@ const COMPONENTS = [
   SocialSectionComponent,
   ContactSectionComponent,
   BackendBundlesSectionComponent,
+  MaterialFeaturesSectionComponent,
+  ContactFormComponent,
 ];
 
 @NgModule({
@@ -53,6 +65,8 @@ const COMPONENTS = [
     NgxLandingThemeModule,
     SwiperModule,
     LandingHomeRoutingModule,
+    LandingSharedModule,
+    NbButtonModule,
   ],
   providers: [
     ...PIPES,
