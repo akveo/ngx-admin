@@ -1,0 +1,115 @@
+<ngx-landing-section-title>
+  Backend Bundles
+</ngx-landing-section-title>
+
+<div class="section-container">
+
+  <p class="features__description">
+    Looking for a way to integrate Angular ngx-admin with .NET, Node.js, Ruby or PHP? We are here to save your time on painful setup, configuration and routing tasks.
+    Choose starter kit bundle based on a technology of your choice below.
+  </p>
+
+  <div class="package-switcher">
+    <div class="package-switcher__btn-group btn-group btn-group-toggle btn-outline-toggle-group btn-group-full-width btn-toggle-radio-group">
+      <label *ngFor="let license of licenses"
+             class="package-switcher__btn btn btn-outline-secondary"
+             [class.active]="selectedLicenseType === license">
+        <input type="radio" [value]="license" name="licence-type" [(ngModel)]="selectedLicenseType"> {{ license | ngxCapitalize }}
+      </label>
+    </div>
+  </div>
+
+  <ul class="packages">
+    <li class="packages__item" *ngFor="let product of products | async">
+      <nb-card class="package-card">
+        <nb-card-body>
+          <div class="package-card__image" [ngStyle]="product.imageUrl | backgroundImage"></div>
+          <h4 class="package-card__title">{{ product.title }}</h4>
+          <p class="package-card__description">
+            {{ product.description | slice:0:200 }}...
+            <a class="go-to-button"
+               href="{{ product.storeUrl }}?utm_source=ngx_admin&utm_medium=referral&utm_campaign=akveo_store%20-%20specific%20bundle%20-%20ngx_admin%20landing&utm_content=buy_bundle_{{ selectedLicenseType }}"
+               target="_blank">
+              read more
+            </a>
+          </p>
+          <div class="package-card__price-wrapper">
+            <span class="package-card__price package-card__price--old" *ngIf="shouldShowOldPrice(product.variants, selectedLicenseType)">
+              ${{ (product.variants | license:selectedLicenseType).compare_at_price }}
+            </span>
+            <span class="package-card__price">${{ (product.variants | license:selectedLicenseType).price }}</span>
+          </div>
+          <a href="{{ product.storeUrl }}?utm_source=ngx_admin&utm_medium=referral&utm_campaign=akveo_store%20-%20specific%20bundle%20-%20ngx_admin%20landing&utm_content=buy_bundle_{{ selectedLicenseType }}"
+             class="package-card__buy-link btn btn-demo"
+             nbButton>
+             Buy now
+          </a>
+        </nb-card-body>
+      </nb-card>
+    </li>
+  </ul>
+
+  <div class="request-code-section">
+    <a href="https://github.com/akveo/ngx-admin-bundle-support/tree/master/codeSamples" target="_blank" class="package-card__buy-link btn btn-demo" nbButton>
+      CODE SAMPLE
+    </a>
+
+    <a href="https://hubs.ly/H0n5NTk0" target="_blank" class="package-card__buy-link btn btn-demo" nbButton>
+      BROWSE OTHER BUNDLES
+    </a>
+  </div>
+
+  <table class="features-table">
+    <tr class="header">
+      <th class="left">FEATURES</th>
+      <th>PERSONAL APP</th>
+      <th>DEVELOPER APP</th>
+    </tr>
+    <tr *ngFor="let feature of features | async">
+      <td class="left">{{ feature.text }}</td>
+      <td>
+        <ng-container *ngTemplateOutlet="availabilityIcon; context: { $implicit: feature.availableInPersonalLicence }">
+        </ng-container>
+      </td>
+      <td>
+        <ng-container *ngTemplateOutlet="availabilityIcon; context: { $implicit: feature.availableInCommercialLicence }">
+        </ng-container>
+      </td>
+    </tr>
+
+    <ng-template #availabilityIcon let-isAvailable>
+      <i *ngIf="isAvailable; else unavailableIcon"
+         aria-label="available"
+         [innerHTML]="'checkmark-outline' | eva: { width: 24, height: 24, fill: '#00db92' }">
+      </i>
+
+      <ng-template #unavailableIcon>
+        <i aria-label="unavailable" [innerHTML]="'close-outline' | eva: { width: 24, height: 24, fill: '#ff8588' }"></i>
+      </ng-template>
+    </ng-template>
+  </table>
+
+  <ngx-landing-description-section *ngIf="descriptions | async" [descriptions]="descriptions | async"></ngx-landing-description-section>
+
+  <div class="bundles-architecture">
+    <ngx-landing-section-title>
+      Architecture Design
+    </ngx-landing-section-title>
+
+    <p class="features__description">The schema describes high-level solution architecture.</p>
+
+    <picture class="bundle-scheme">
+      <source type="image/webp" srcset="assets/img/bundle-scheme@1x.webp 1x, assets/img/bundle-scheme@2x.webp 2x">
+      <img class="bundle-scheme__image" src="assets/img/bundle-scheme@1x.png" srcset="assets/img/bundle-scheme@2x.png 2x" alt="Backend bundles">
+    </picture>
+  </div>
+
+  <p class="features__description">Need more details or have a question?</p>
+
+  <div class="request-code-section">
+    <a href="mailto:support@akveo.com?subject=Custom bundle request" class="package-card__buy-link btn btn-demo" nbButton>
+      CONTACT US
+    </a>
+  </div>
+
+</div>

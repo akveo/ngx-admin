@@ -1,0 +1,298 @@
+/**
+ * @license
+ * Copyright Akveo. All Rights Reserved.
+ * Licensed under the MIT License. See License.txt in the project root for license information.
+ */
+
+@import '../../../@theme/styles/themes';
+@import '~@nebular/theme/styles/global/breakpoints';
+
+@include nb-install-component() {
+  $left-section-width: nb-theme(sidebar-width);
+  $right-section-width: nb-theme(settings-col-width);
+  $logo-fg: nb-theme(header-text-color);
+  $version-fg: nb-theme(text-hint-color);
+  $menu-item-fg: nb-theme(color-fg-heading-light);
+  $menu-item-fg-active: nb-theme(header-menu-fg-active);
+  $contacts-fg: nb-theme(color-fg-heading-light);
+  $contacts-active-fg: nb-theme(header-menu-fg-active);
+
+  display: flex;
+  flex: 1 0 auto;
+  flex-direction: row;
+  align-items: center;
+
+  .section {
+    display: flex;
+    padding: 0.875rem 0.5rem;
+
+    &.left {
+      width: $left-section-width;
+    }
+
+    &.middle {
+      flex: 1;
+    }
+  }
+
+  .logo {
+    display: flex;
+    flex: 1 0 auto;
+    flex-direction: row;
+
+    a {
+      font-size: 1.275rem;
+      color: $logo-fg;
+      text-decoration: none !important;
+      font-weight: bold;
+    }
+
+    .version {
+      font-size: 0.75rem;
+      font-weight: bold;
+      color: $version-fg;
+    }
+  }
+
+  .backend-bundles {
+    display: none;
+    align-items: center;
+    padding-right: 2rem;
+
+    i {
+      margin-right: 0.5rem;
+    }
+  }
+
+  ::ng-deep nb-menu {
+    flex: 1;
+
+    .menu-items {
+      display: flex;
+      justify-content: flex-start;
+
+      .menu-item {
+        border: none;
+        width: 5.375rem;
+
+        a {
+          padding: 0.675rem 1.375rem;
+          color: $menu-item-fg;
+          display: block;
+
+          &:hover, &.active, &:focus {
+            color: $menu-item-fg-active;
+            outline: none !important;
+          }
+        }
+      }
+
+      li:first-child {
+        display: none;
+      }
+    }
+  }
+
+  .section.right {
+    color: $contacts-fg;
+    display: none;
+
+    a {
+      font-family: nb-theme(font-main), sans-serif;
+      color: $contacts-active-fg;
+      margin-left: 0.375rem;
+    }
+  }
+
+  @include media-breakpoint-up(is) {
+    .section {
+      padding: 0.875rem 0;
+    }
+  }
+
+  @include media-breakpoint-up(sm) {
+    .logo {
+      align-items: baseline;
+      flex: 1 0 auto;
+
+      a {
+        color: #000000;
+        margin-right: 0.5rem;
+      }
+
+      .version {
+        display: inline;
+      }
+    }
+    .backend-bundles {
+      display: flex;
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    .logo {
+      flex: 1 0 auto;
+      flex-direction: column;
+      align-items: flex-start;
+
+      .version {
+        margin-left: 0;
+      }
+    }
+
+    ::ng-deep nb-menu .menu-items li:nth-child(2) {
+      display: list-item;
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    ::ng-deep nb-menu .menu-items {
+      justify-content: flex-start;
+
+      li:not(:first-child) {
+        display: list-item;
+      }
+    }
+    .section.right {
+      display: block;
+    }
+  }
+
+  @include media-breakpoint-up(xl) {
+    .sidebar-toggle {
+      display: none;
+    }
+  }
+
+
+  @include media-breakpoint-down(sm) {
+    ::ng-deep nb-menu {
+      .menu-items {
+        justify-content: flex-end;
+      }
+    }
+  }
+
+  @include media-breakpoint-down(is) {
+    padding: 0 0 0 1rem;
+
+    .section {
+      &.left {
+        width: auto;
+      }
+    }
+
+    .logo {
+      flex: 1 0 auto;
+      flex-direction: column;
+      align-items: flex-start;
+
+      a {
+        color: #000000;
+      }
+
+      .version {
+        margin-left: 0;
+      }
+    }
+  }
+
+  &.docs-page {
+
+    .section {
+      &.left {
+        align-items: center;
+        padding-left: 0;
+        width: auto;
+      }
+
+      &.middle {
+        justify-content: flex-end;
+      }
+
+      &.right {
+        display: none;
+        margin-left: 0;
+        width: auto;
+      }
+    }
+
+    .sidebar-toggle {
+      border: none;
+      background-color: transparent;
+      font-size: 2.5rem;
+      line-height: 1rem;
+      flex: 1 0 auto;
+      padding: 0 0.5rem;
+
+      .nb-menu {
+        vertical-align: middle;
+      }
+    }
+
+    ::ng-deep nb-menu {
+      flex-grow: 0;
+      flex-shrink: 1;
+      flex-basis: auto;
+    }
+
+    @include media-breakpoint-up(is) {
+      ::ng-deep nb-menu .menu-items li:first-child {
+        display: list-item;
+      }
+    }
+
+    @include media-breakpoint-up(sm) {
+      .section.middle {
+        justify-content: space-between;
+      }
+
+      .stars {
+        width: 7.5rem;
+        height: 1.25rem;
+        margin-left: auto;
+      }
+      .backend-bundles {
+        display: flex;
+      }
+    }
+
+    @include media-breakpoint-up(lg) {
+      .section.middle {
+        justify-content: space-around;
+      }
+      ::ng-deep nb-menu {
+        min-width: 28rem;
+
+        .menu-items li {
+          display: list-item;
+        }
+      }
+      .section.right {
+        display: block;
+      }
+    }
+
+    @include media-breakpoint-up(xl) {
+      .section.left {
+        padding-left: 1.125rem;
+        width: nb-theme(sidebar-width);
+      }
+
+      .sidebar-toggle {
+        display: none;
+      }
+
+      ::ng-deep nb-menu {
+        flex: 1;
+      }
+    }
+
+    @include media-breakpoint-up(macpro) {
+      .section.right {
+        margin-left: 1.875rem;
+        width: $right-section-width;
+      }
+    }
+  }
+}

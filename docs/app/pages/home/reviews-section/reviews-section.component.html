@@ -1,0 +1,46 @@
+<ngx-landing-section-title>
+  What ngx-lovers are saying?
+</ngx-landing-section-title>
+
+<div class="carousel-container">
+  <div  class="swiper-container reviews" [swiper]="swiperConfig">
+    <div class="swiper-wrapper">
+      <div *ngFor="let review of reviews" class="review-card swiper-slide">
+        <div class="header-card">
+          <div class="social-icon">
+            <i [innerHTML]="review.socialIcon | eva: { width: 26, height: 26, fill: '#3b5998' }"></i>
+          </div>
+          <div class="avatar">
+            <img alt="Reviewer Avatar"
+                 data-src="{{ review.avatar }}"
+                 class="swiper-lazy"/>
+          </div>
+          <div class="personal-info">
+            <div class="name">{{ review.firstName }}</div>
+            <div class="surname">{{ review.lastName }}</div>
+          </div>
+        </div>
+        <div class="body-card">
+          {{ review.review }}
+        </div>
+        <div class="footer-card">
+          <a class="go-to-button"
+             href="{{ review.link }}"
+             target="_blank">
+              Go to comment
+            <i [innerHTML]="'arrow-ios-forward' | eva: { width: 24, height: 24, fill: '#e5e5e5' }"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="swiper-pagination"></div>
+
+    <div class="swiper-button-prev">
+      <i [innerHTML]="'arrow-ios-back' | eva: { width: 36, height: 36, fill: '#00db92' }"></i>
+    </div>
+    <div class="swiper-button-next">
+      <i [innerHTML]="'arrow-ios-forward' | eva: { width: 36, height: 36, fill: '#00db92' }"></i>
+    </div>
+  </div>
+</div>

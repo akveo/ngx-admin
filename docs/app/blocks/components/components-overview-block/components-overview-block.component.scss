@@ -1,0 +1,81 @@
+@import '../../../@theme/styles/themes';
+@import '~@nebular/theme/styles/global/breakpoints';
+
+@include nb-install-component() {
+
+  .components-list {
+    display: flex;
+    flex-wrap: wrap;
+
+    h2 {
+      flex: 1 1 100%;
+      color: nb-theme(color-fg-heading-light);
+      margin: 1rem 0 2rem;
+      text-align: center;
+    }
+
+    .component-card-wrapper {
+      width: 100%;
+    }
+
+    .component-icon {
+      margin-bottom: 1rem;
+    }
+
+    .component-name {
+      color: nb-theme(color-fg-heading-light);
+      font-weight: nb-theme(font-weight-bolder);
+    }
+
+    .component-navigate-link {
+      text-decoration: none;
+    }
+
+
+    nb-card {
+      box-shadow: 0 4px 27px 0 rgba(230, 234, 240, 0.2);
+      transition: transform 0.25s ease;
+
+      > nb-card-body {
+        height: 12.5rem;
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      &:hover {
+        box-shadow: 0 15px 37px 0 #dbe2eb;
+        transform: translateY(-1rem);
+        .component-name {
+          color: nb-theme(color-fg);
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint-up(is) {
+    .components-list {
+
+      .component-card-wrapper {
+        flex: 1 0 auto;
+        width: 50%;
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    .components-list {
+
+      .component-card-wrapper {
+        flex: 1 0 auto;
+        max-width: 33.3%;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+      }
+    }
+  }
+}

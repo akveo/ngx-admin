@@ -1,0 +1,50 @@
+<ngx-landing-section-title>
+  Stay tuned
+</ngx-landing-section-title>
+
+<p class="description">
+  Subscribe to get notified about new versions of ngx-admin and other cool projects that we are working on
+</p>
+
+<div class="sending-block">
+  <form id="email-form"
+        #contactForm
+        class="email-form"
+        action="https://akveo.us19.list-manage.com/subscribe/post?u=e8ac0871a095839ba14553eff&amp;id=cd45c56765"
+        method="post"
+        target="_blank"
+        novalidate>
+    <label for="email">Your Email</label>
+    <input id="email"
+           #emailInput
+           type="email"
+           name="EMAIL"
+           class="email"
+           [class.invalid]="invalid"
+           placeholder="johndoe@gmail.com"
+           required>
+    <input class="submit-input"
+           type="button"
+           value="Subscribe"
+           name="subscribe"
+           (click)="submitForm()"
+           [attr.disabled]="disabledControl">
+  </form>
+  <div class="agreement-block">
+    <nb-checkbox [(ngModel)]="isAgree" status="success">
+      <p class="agreement">
+          <span class="highlight">I agree</span> to get news on what’s going on around Akveo products and community.<br />
+          The administrator processes data following <a class="active" href="https://www.akveo.com/privacy-policy?utm_source=ngx_admin_landing&utm_medium=contact_section" target="_blank">the Privacy Policy</a>. I understand that I can opt out at any time
+      </p>
+    </nb-checkbox>
+  </div>
+
+  <div class="separator">
+    <div>or</div>
+  </div>
+
+  <div class="contact-us-container">
+    <a class="contact-us"
+       href="https://hubs.ly/H0n5N6R0">Contact Us</a>
+  </div>
+</div>

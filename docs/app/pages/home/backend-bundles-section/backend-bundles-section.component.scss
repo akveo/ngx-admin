@@ -1,0 +1,388 @@
+/**
+ * @license
+ * Copyright Akveo. All Rights Reserved.
+ * Licensed under the MIT License. See License.txt in the project root for license information.
+ */
+
+@import '../../../@theme/styles/themes';
+@import '~@nebular/theme/styles/global/breakpoints';
+
+@include nb-install-component() {
+  $content-width: nb-theme(content-width);
+  $left-right-offset: 8.125rem;
+
+  display: block;
+  padding-top: 5.125rem;
+
+  .section-container {
+    width: calc(#{$content-width} - #{$left-right-offset} * 2);
+    max-width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .features {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 0 11px;
+    margin-top: 5rem;
+    margin-left: -11px;
+    margin-right: -11px;
+    width: 100%;
+    width: calc(100% + 22px);
+
+    &__item {
+      flex: 0 0 25%;
+      width: 25%;
+      max-width: 25%;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      list-style: none;
+      padding-left: 11px;
+      padding-right: 11px;
+      margin-bottom: 1.625rem;
+    }
+    &__title {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 60px;
+      font-weight: bold;
+      font-size: 24px;
+      line-height: 30px;
+      text-align: center;
+      color: rgba(0, 0, 0, 0.87);
+    }
+    &__description {
+      font-family: nb-theme(font-secondary), sans-serif;
+      color: #8994a3;
+      font-size: nb-theme(font-size-lg);
+      line-height: 1.75;
+      text-align: center;
+    }
+  }
+
+  .bundles-architecture {
+    display: none;
+    margin-bottom: 5rem;
+
+    .bundle-scheme {
+      width: 100%;
+      height: auto;
+      margin: 2.5rem auto;
+
+      &__image {
+        width: 100%;
+      }
+    }
+
+    @include media-breakpoint-up(md) {
+      display: block;
+    }
+  }
+
+  .package-switcher {
+    margin: 2.375rem 0 5rem;
+
+    &__btn-group {
+      box-shadow: 0 8px 20px 0 rgba(218, 224, 235, 0.5);
+      border-radius: 1.5rem;
+      &:not(.btn-divided-group) > .package-switcher__btn:not(.dropdown-toggle):first-child {
+        border-top-left-radius: 1.5rem;
+        border-bottom-left-radius: 1.5rem;
+      }
+      &:not(.btn-divided-group) > .package-switcher__btn:not(.dropdown-toggle):last-child {
+        border-top-right-radius: 1.5rem;
+        border-bottom-right-radius: 1.5rem;
+      }
+    }
+
+    &__btn {
+      min-width: 10.625rem;
+      color: #bdc3cb;
+      border-color: #e6e8eb;
+      text-transform: none;
+      cursor: pointer;
+
+      &:active {
+        color: #ffffff;
+      }
+      &.active {
+        color: #000000;
+        background-color: #fafafa;
+      }
+    }
+  }
+
+  .packages {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 0;
+    margin-left: -11px;
+    margin-right: -11px;
+    margin-bottom: 4rem;
+    width: 100%;
+    width: calc(100% + 22px);
+
+    &__item {
+      flex: 0 0 25%;
+      width: 25%;
+      max-width: 25%;
+      display: flex;
+      flex-direction: column;
+      list-style: none;
+      padding-left: 11px;
+      padding-right: 11px;
+      margin-bottom: 22px;
+    }
+  }
+
+  nb-flip-card {
+    display: flex;
+    height: 100%;
+  }
+
+  ::ng-deep .flipcard-body {
+    height: 100%;
+    width: 100%;
+  }
+
+  ::ng-deep .front-container, .back-container {
+    height: 100%;
+  }
+
+  nb-card-front, nb-card-back {
+    display: flex;
+    height: 100%;
+  }
+
+  nb-card {
+    height: 100%;
+    border: 0;
+    background-color: #ffffff;
+    box-shadow: 0 7px 17px 0 rgba(218, 224, 235, 0.5);
+    margin-bottom: 0;
+  }
+
+  nb-card-body {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-content: stretch;
+    align-items: stretch;
+    padding: 1rem;
+  }
+
+  .package-card {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-content: stretch;
+    align-items: stretch;
+    text-align: center;
+
+    &__header {
+      display: flex;
+      flex-direction: column;
+      flex: 0 0 auto;
+      margin-bottom: 0.5625rem;
+    }
+    &__demo-link {
+      align-self: flex-end;
+      color: #ff8588;
+      font-weight: bold;
+      font-size: 0.75rem;
+      line-height: 1rem;
+      text-align: center;
+      text-transform: uppercase;
+      padding: 0.25rem 1rem;
+      border: 1px solid #ff8588;
+      border-radius: 0.75rem;
+      &--secondary {
+        color: #ad7efa;
+        border-color: #ad7efa;
+      }
+    }
+    &__image {
+      margin: 1rem -1rem;
+      display: flex;
+      flex: 0 0 14.125rem;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: auto 100%;
+    }
+    &__price-wrapper {
+      flex: 0 0 2.5rem;
+      margin-top: auto;
+      margin-bottom: 0.5rem;
+    }
+    &__price {
+      font-weight: bold;
+      font-size: 1.75rem;
+      line-height: 2.5rem;
+      color: rgba(0, 0, 0, 0.87);
+      vertical-align: middle;
+      &--old {
+        font-size: 1.5rem;
+        color: #ff4d6b;
+        text-decoration: line-through;
+        vertical-align: middle;
+        margin-right: 1rem;
+      }
+    }
+    &__title {
+      font-weight: bold;
+      font-size: 1.125rem;
+      color: rgba(0, 0, 0, 0.87);
+      line-height: 1.5rem;
+    }
+    &__description {
+      margin-top: 0.5rem;
+      font-family: nb-theme(font-secondary), sans-serif;
+      font-weight: lighter;
+      font-size: 0.875rem;
+      color: rgba(0, 0, 0, 0.87);
+      margin-bottom: 1.675rem;
+    }
+    &__buy-link {
+      font-family: nb-theme(font-secondary), sans-serif;
+      font-size: 0.75rem;
+      color: #ffffff;
+      text-transform: uppercase;
+      background-color: #18cb90;
+      box-shadow: 0 5px 29px 0 rgba(0, 219, 146, 0.32);
+      border-radius: 3px;
+      margin-top: 0.5rem;
+      cursor: pointer;
+      &:hover {
+        box-shadow: 0 0.375rem 2.125rem 0 rgba(0, 219, 146, 0.32);
+      }
+    }
+    &__type {
+      font-weight: bold;
+      font-size: 1rem;
+      line-height: 1.25rem;
+      color: rgba(0, 0, 0, 0.87);
+      text-align: center;
+      margin-top: 0.25rem;
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  .go-to-button {
+    font-family: nb-theme(font-main), sans-serif;
+    color: nb-theme(color-active-fg);
+    padding: 0.25rem;
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  .request-code-section {
+    margin-bottom: 5rem;
+
+    a:not(:first-child) {
+      margin-left: 2rem;
+    }
+  }
+
+  @include media-breakpoint-down(xl) {
+    .section-container {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+
+    .bundle-scheme {
+      padding: 0 11px;
+    }
+
+    .features {
+      padding-left: 11px;
+      padding-right: 11px;
+
+      &__item {
+        flex-basis: 50%;
+        width: 50%;
+        max-width: 50%;
+      }
+    }
+
+    .packages {
+      padding-left: 11px;
+      padding-right: 11px;
+
+      &__item {
+        flex-basis: 50%;
+        width: 50%;
+        max-width: 50%;
+        margin-bottom: 1.625rem;
+      }
+    }
+  }
+
+  .features-table {
+    width: 100%;
+    margin-bottom: 5rem;
+
+    box-shadow: 0 8px 20px 0 rgba(218, 224, 235, 0.5);
+    background-color: #fafafa;
+
+    th, td {
+      padding: 0.5rem;
+      text-align: center;
+    }
+
+    th {
+      padding: 1rem;
+    }
+
+    td ul {
+      display: inline-block;
+      margin: auto;
+    }
+
+    .left {
+      text-align: left;
+      padding-left: 1rem;
+    }
+
+    tr:nth-child(even) {
+      background-color: #ffffff;
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+
+    .packages__item {
+      flex-basis: 100%;
+      width: 100%;
+      max-width: 100%;
+    }
+
+    .features-table {
+      .header {
+        font-size: 0.875rem;
+      }
+    }
+  }
+
+  @include media-breakpoint-down(is) {
+
+    .features__item {
+      flex-basis: 100%;
+      width: 100%;
+      max-width: 100%;
+    }
+    .package-switcher__btn {
+      min-width: 8rem;
+    }
+  }
+}

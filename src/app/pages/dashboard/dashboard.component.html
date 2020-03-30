@@ -1,3 +1,19 @@
+<div class="row" *ngIf="showCallAction">
+  <div class="col-12 col-md-6">
+    <ngx-call-action-card title="Hire us to customize ngx-admin"
+                          type="pantone"
+                          link="https://akveo.page.link/hgRH"
+                          linkTitle="Contact us">
+    </ngx-call-action-card>
+  </div>
+  <div class="col-12 col-md-6">
+    <ngx-call-action-card title="Documentation and customization articles"
+                          type="briefcase"
+                          link="https://hubs.ly/H0n5PPj0"
+                          linkTitle="Learn more">
+    </ngx-call-action-card>
+  </div>
+</div>
 <div class="row">
   <div class="col-xxxl-3 col-md-6" *ngFor="let statusCard of statusCards">
     <ngx-status-card [title]="statusCard.title" [type]="statusCard.type">

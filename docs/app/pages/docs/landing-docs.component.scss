@@ -1,0 +1,80 @@
+/**
+ * @license
+ * Copyright Akveo. All Rights Reserved.
+ * Licensed under the MIT License. See License.txt in the project root for license information.
+ */
+
+@import '../../@theme/styles/themes';
+
+@include nb-install-component() {
+  $content-width: nb-theme(content-width);
+  $settings-width: nb-theme(settings-col-width);
+  $settings-margin: nb-theme(settings-col-margin);
+  $color-heading: nb-theme(color-fg-heading-light);
+
+  .menu-sidebar.fixed {
+    box-shadow: 8px 0 20px 0 rgba(218, 224, 235, 0.6);
+  }
+
+  nb-layout-header {
+    background-color: nb-theme(header-background-color);
+  }
+
+  .content-center {
+    max-width: $content-width;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .contact-us {
+    padding: 5rem 1rem;
+    h2 {
+      color: black;
+    }
+  }
+
+  .collapse-all {
+    position: absolute;
+    right: 1px;
+    top: 0.75rem;
+    font-size: 0.75rem;
+    color: $color-heading;
+    appearance: none;
+    background: none;
+    border: none;
+  }
+
+  ::ng-deep nb-layout .main-container {
+    padding-top: 3rem;
+
+    .scrollable {
+      padding-top: 0;
+    }
+  }
+
+  ::ng-deep nb-layout .layout-container {
+    max-width: $content-width;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  ::ng-deep nb-layout-footer ngx-docs-footer .contact {
+    display: none;
+  }
+
+  @include media-breakpoint-up(xl) {
+    .contact-us {
+      padding: 5rem 0;
+    }
+  }
+
+  @include media-breakpoint-up(macpro) {
+    ::ng-deep nb-layout-footer {
+      margin-right: $settings-width + $settings-margin;
+    }
+  }
+}

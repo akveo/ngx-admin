@@ -1,0 +1,182 @@
+/**
+ * @license
+ * Copyright Akveo. All Rights Reserved.
+ * Licensed under the MIT License. See License.txt in the project root for license information.
+ */
+
+@import '../../../@theme/styles/themes';
+@import '~@nebular/theme/styles/global/breakpoints';
+
+@include nb-install-component() {
+  $text-fg: nb-theme(footer-text-color);
+  $social-fg: nb-theme(text-hint-color);
+  $title-fg: nb-theme(text-basic-color);
+
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  padding-top: 2.75rem;
+  justify-content: flex-start;
+  margin: 0.375rem 10.25rem 0;
+
+  > div {
+    display: flex;
+    margin-right: 0;
+    margin-bottom: 2rem;
+    margin-top: 0.375rem;
+    justify-content: center;
+    width: 100%;
+
+    &:last-child {
+      margin-right: 0;
+      margin-bottom: 0;
+    }
+
+    a {
+      font-size: nb-theme(font-size);
+      color: $text-fg;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    li {
+      font-weight: normal;
+      display: flex;
+      margin-bottom: 1.5rem;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+
+      &:first-child {
+        margin-bottom: 1.75rem;
+      }
+    }
+
+    .copy {
+      $copy-color: #535b6c;
+
+      color: $copy-color;
+      display: list-item;
+      font-size: 0.66rem;
+      line-height: 1.75;
+
+      a {
+        font-size: 0.65rem;
+        color: $copy-color;
+      }
+    }
+
+    .social {
+      display: flex;
+      flex-direction: row;
+
+      a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 2.5rem;
+        height: 2.5rem;
+        background-color: $social-fg;
+        border-radius: 0.375rem;
+        text-decoration: none;
+        margin-right: 1.5rem;
+        line-height: 0.5;
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+
+  > div.logo {
+    margin-bottom: 3.125rem;
+
+    a {
+      width: 10rem;
+      height: 10rem;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    justify-content: space-around;
+    margin-right: 0;
+    margin-left: 0;
+
+    > div.logo {
+      display: none;
+    }
+
+    > div {
+      justify-content: flex-start;
+      margin-right: 0;
+      margin-bottom: 0;
+      width: auto;
+
+      li {
+        justify-content: flex-start;
+        align-items: flex-start;
+        text-align: left;
+      }
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    margin-right: 2rem;
+    margin-left: 2rem;
+
+    > div.logo {
+      display: flex;
+      flex-direction: column;
+      margin-top: 0;
+      margin-bottom: 0;
+      text-align: center;
+    }
+  }
+
+  @include media-breakpoint-up(xxl) {
+    justify-content: flex-start;
+    margin: 0.375rem 10.25rem 0;
+
+    > div.logo {
+      margin-right: 7.875rem;
+    }
+
+    > div {
+      margin-right: 8.375rem;
+    }
+
+    .company-info {
+      margin-right: 12.25rem;
+    }
+
+    .social-container {
+      margin-right: 6.75rem;
+    }
+  }
+
+  @include media-breakpoint-down(md) {
+    padding-left: 1rem;
+    padding-right: 1rem;
+
+    > div {
+      margin-right: 0;
+
+      &.logo {
+        margin-right: 0;
+      }
+    }
+
+    .social-container {
+      margin-right: 0;
+    }
+  }
+}
