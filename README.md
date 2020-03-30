@@ -2,7 +2,24 @@
 
 [Who uses ngx-admin?](https://github.com/akveo/ngx-admin/issues/1645)| [Documentation](https://hubs.ly/H0n4Sfq0) | [Installation Guidelines](https://hubs.ly/H0n4Svc0)
 
-# Admin template based on Angular 8+ and <a href="https://github.com/akveo/nebular">Nebular</a>
+# New! Material theme for ngx-admin
+
+### Material admin theme is based on the most popular Angular dashboard template - [ngx-admin](https://hubs.ly/H0nJG1G0)
+### Included: Angular 9+, [Nebular](https://hubs.ly/H0nJG5g0) and [Eva design system](https://hubs.ly/H0nJGdC0). Free for personal and commercial usage.
+### Get material ngx-admin integrated with backend technology of your choice. Check out our store.
+
+<a target="_blank" href="https://hubs.ly/H0nxM3b0"><img src="https://i.imgur.com/csP0aZ9.png"/></a>
+
+## Key features
+
+- The most popular and trusted Angular open source dashboard template is out there. Used by hundreds of thousands developers worldwide and Fortune 500 companies*.
+- Over 40+ Angular Components and 60+ Usage Examples. Kick off your project and save money by using ngx-admin.
+- Already using ngx-admin and willing to switch to material theme? Material theme is backward-compatible. Check out the article describing how to do that.
+- ngx-admin material works perfectly with Angular Material and Nebular. Take the best from both!
+
+### To use material theme checkout `feat/material-theme` branch
+
+# Admin template based on Angular 9+ and <a href="https://github.com/akveo/nebular">Nebular</a>
 <a target="_blank" href="https://hubs.ly/H0n4Sw20"><img src="https://i.imgur.com/mFdqvgG.png"/></a>
 
 ### Backend Integration Bundles
@@ -14,9 +31,14 @@ Easy way to integrate ngx-admin with backend (.NET, Node.js, Java etc.).
 
 [Check out our Store](https://hubs.ly/H0n4Zvy0) for ready to use Backend Bundles.
 
-### With 4 stunning visual themes
+### With 6 stunning visual themes
 
 
+#### Material Dark
+<a target="_blank" href="https://hubs.ly/H0nxM3b0"><img src="https://i.imgur.com/csP0aZ9.png"/></a>
+
+#### Material Light
+<a target="_blank" href="https://hubs.ly/H0nxNmv0"><img src="https://i.imgur.com/J5Rmgn4.png"/></a>
 
 #### Default
 <a target="_blank" href="https://hubs.ly/H0n4Tgv0"><img src="https://i.imgur.com/Kn3xDKQ.png"/></a>
@@ -32,7 +54,7 @@ Easy way to integrate ngx-admin with backend (.NET, Node.js, Java etc.).
 
 ### What's included:
 
-- Angular 8+ & Typescript
+- Angular 9+ & Typescript
 - Bootstrap 4+ & SCSS
 - Responsive layout
 - RTL support
