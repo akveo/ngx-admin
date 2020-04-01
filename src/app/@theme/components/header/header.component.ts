@@ -61,15 +61,14 @@ export class HeaderComponent implements OnInit, OnDestroy {
               private rippleService: RippleService,
               private analytics: AnalyticsService,
   ) {
-  }
-
-  ngOnInit() {
     this.materialTheme$ = new Observable(subscriber => {
       const themeName: string = this.currentThemeService.getCurrentTheme();
 
       subscriber.next(themeName.startsWith('material'));
     });
+  }
 
+  ngOnInit() {
     this.currentTheme = this.themeService.currentTheme;
 
     this.userService.getUsers()
@@ -103,6 +102,10 @@ export class HeaderComponent implements OnInit, OnDestroy {
   changeTheme(themeName: string) {
     this.currentThemeService.setCurrentTheme(themeName);
     this.themeService.changeTheme(themeName);
+
+    this.materialTheme$ = new Observable(subscriber => {
+      subscriber.next(this.currentThemeService.getCurrentTheme().startsWith('material'));
+    });
   }
 
   toggleSidebar(): boolean {

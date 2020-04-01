@@ -53,8 +53,8 @@ export const routes: Routes = [
       },
     ],
   },
-  { path: '', redirectTo: 'themes', pathMatch: 'full' },
-  { path: '**', redirectTo: 'themes' },
+  { path: '', redirectTo: 'pages/dashboard', pathMatch: 'full' },
+  { path: '**', redirectTo: 'pages/dashboard' },
 ];
 
 const config: ExtraOptions = {
