@@ -10,6 +10,7 @@ import { ElectricityChart } from '../../../../@core/data/electricity';
   template: `
     <div echarts
          [options]="option"
+         [merge]="option"
          class="echart"
          (chartInit)="onChartInit($event)">
     </div>

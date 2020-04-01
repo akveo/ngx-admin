@@ -10,6 +10,7 @@ import { OutlineData } from '../../../../@core/data/visitors-analytics';
   template: `
     <div echarts
          [options]="option"
+         [merge]="option"
          class="echart"
          (chartInit)="onChartInit($event)">
     </div>
