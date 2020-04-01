@@ -3,7 +3,7 @@ import { NbMediaBreakpointsService, NbMenuService, NbSidebarService, NbThemeServ
 
 import { UserData } from '../../../@core/data/users';
 import { AnalyticsService, LayoutService } from '../../../@core/utils';
-import { map, takeUntil } from 'rxjs/operators';
+import {map, takeUntil} from 'rxjs/operators';
 import { Subject, Observable } from 'rxjs';
 import { RippleService } from '../../../@core/utils/ripple.service';
 import {CurrentThemeService} from '../../../@core/utils/theme.service';
@@ -16,7 +16,7 @@ import {CurrentThemeService} from '../../../@core/utils/theme.service';
 export class HeaderComponent implements OnInit, OnDestroy {
 
   private destroy$: Subject<void> = new Subject<void>();
-  public readonly materialTheme$: Observable<boolean>;
+  public  materialTheme$: Observable<boolean>;
   userPictureOnly: boolean = false;
   user: any;
 
@@ -54,21 +54,22 @@ export class HeaderComponent implements OnInit, OnDestroy {
   constructor(private sidebarService: NbSidebarService,
               private menuService: NbMenuService,
               private themeService: NbThemeService,
+              private currentThemeService: CurrentThemeService,
               private userService: UserData,
               private layoutService: LayoutService,
               private breakpointService: NbMediaBreakpointsService,
               private rippleService: RippleService,
-              private currentThemeService: CurrentThemeService,
               private analytics: AnalyticsService,
   ) {
-    this.materialTheme$ = this.themeService.onThemeChange()
-      .pipe(map(theme => {
-        const themeName: string = theme?.name || '';
-        return themeName.startsWith('material');
-      }));
   }
 
   ngOnInit() {
+    this.materialTheme$ = new Observable(subscriber => {
+      const themeName: string = this.currentThemeService.getCurrentTheme();
+
+      subscriber.next(themeName.startsWith('material'));
+    });
+
     this.currentTheme = this.themeService.currentTheme;
 
     this.userService.getUsers()
