@@ -7,6 +7,10 @@
   justify-content: space-between;
   width: 100%;
 
+  .material-text-color {
+    color: nb-theme(color-basic-100)
+  }
+
   .logo-container {
     display: flex;
     align-items: center;

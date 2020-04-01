@@ -24,7 +24,14 @@
 
   .section {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding: 0.875rem 0.5rem;
+
+    .first-section {
+      display: flex;
+      flex-direction: row;
+    }
 
     &.left {
       width: $left-section-width;
@@ -65,7 +72,6 @@
   }
 
   ::ng-deep nb-menu {
-    flex: 1;
 
     .menu-items {
       display: flex;
@@ -200,6 +206,12 @@
   &.docs-page {
 
     .section {
+
+      .first-section {
+        display: flex;
+        flex-direction: row;
+      }
+
       &.left {
         align-items: center;
         padding-left: 0;
@@ -259,11 +271,9 @@
 
     @include media-breakpoint-up(lg) {
       .section.middle {
-        justify-content: space-around;
+        justify-content: space-between;
       }
       ::ng-deep nb-menu {
-        min-width: 28rem;
-
         .menu-items li {
           display: list-item;
         }
