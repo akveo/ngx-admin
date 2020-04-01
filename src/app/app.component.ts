@@ -37,6 +37,7 @@ export class AppComponent implements OnInit {
       .subscribe((params: any) => {
         if (params.theme && this.themes.includes(params.theme)) {
           this.themeService.changeTheme(params.theme);
+          this.currentThemeService.setCurrentTheme(params.theme);
         } else {
           this.themeService.changeTheme(this.currentThemeService.getCurrentTheme());
         }
