@@ -11,6 +11,7 @@ import { LayoutService } from '../../../../@core/utils/layout.service';
   template: `
     <div echarts
          [options]="option"
+         [merge]="option"
          class="echart"
          (chartInit)="onChartInit($event)">
     </div>
