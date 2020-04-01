@@ -10,7 +10,7 @@
 
 ### Features
 
-* upgrade to Angular 9 and Nebular 5 ([#5628](https://github.com/akveo/ngx-admin/issues/5628)) ([fbbf944](https://github.com/akveo/ngx-admin/commit/fbbf944)), closes [/github.com/akveo/ng2-smart-table/pull/1140#issue-392285957](https://github.com//github.com/akveo/ng2-smart-table/pull/1140/issues/issue-392285957)
+* upgrade to Angular 9 and Nebular 5 ([#5628](https://github.com/akveo/ngx-admin/issues/5628)) ([fbbf944](https://github.com/akveo/ngx-admin/commit/fbbf944))
 * **seo:** add canonical tag ([#5578](https://github.com/akveo/ngx-admin/issues/5578)) ([76d31da](https://github.com/akveo/ngx-admin/commit/76d31da))
 * add calendar with week numbers example ([#5515](https://github.com/akveo/ngx-admin/issues/5515)) ([3242257](https://github.com/akveo/ngx-admin/commit/3242257))
 
