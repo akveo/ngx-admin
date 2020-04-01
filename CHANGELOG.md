@@ -1,3 +1,29 @@
+<a name="5.0.0"></a>
+# [5.0.0](https://github.com/akveo/ngx-admin/compare/v4.0.1...v5.0.0) (2020-04-01)
+
+
+### Bug Fixes
+
+* **forms:** add missing forms module import ([#5530](https://github.com/akveo/ngx-admin/issues/5530)) ([1ff2a0d](https://github.com/akveo/ngx-admin/commit/1ff2a0d))
+* **tinymce:** set absolute path for skin url ([#5491](https://github.com/akveo/ngx-admin/issues/5491)) ([90125ab](https://github.com/akveo/ngx-admin/commit/90125ab))
+
+
+### Features
+
+* upgrade to Angular 9 and Nebular 5 ([#5628](https://github.com/akveo/ngx-admin/issues/5628)) ([fbbf944](https://github.com/akveo/ngx-admin/commit/fbbf944))
+* **seo:** add canonical tag ([#5578](https://github.com/akveo/ngx-admin/issues/5578)) ([76d31da](https://github.com/akveo/ngx-admin/commit/76d31da))
+* add calendar with week numbers example ([#5515](https://github.com/akveo/ngx-admin/issues/5515)) ([3242257](https://github.com/akveo/ngx-admin/commit/3242257))
+
+
+### BREAKING CHANGES
+
+- Angular updated to version 9.
+- Nebular updated to version 5.
+- `@agm/core` replaced with `@angular/google-maps`.
+- `ng2-completer` replaced with `@akveo/ng2-completer`, read details [here](https://github.com/akveo/ng2-smart-table/pull/1140#issue-392285957).
+
+
+
 <a name="4.0.1"></a>
 ## [4.0.1](https://github.com/akveo/ngx-admin/compare/v4.0.0...v4.0.1) (2019-07-16)
 
