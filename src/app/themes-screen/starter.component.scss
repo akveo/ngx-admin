@@ -3,6 +3,10 @@
 @import '../@theme/styles/themes';
 
 @include nb-install-component() {
+  .material-text-color {
+    color: nb-theme(color-basic-100);
+  }
+
   img {
     width: 100%;
     object-fit: contain;

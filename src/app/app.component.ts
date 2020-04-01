@@ -18,7 +18,7 @@ import { SeoService } from './@core/utils/seo.service';
 })
 export class AppComponent implements OnInit {
 
-  themes = ['default', 'cosmic', 'corporate', 'dark'];
+  themes = ['default', 'cosmic', 'corporate', 'dark', 'material-dark', 'material-light'];
 
   constructor(private analytics: AnalyticsService,
               private seoService: SeoService,

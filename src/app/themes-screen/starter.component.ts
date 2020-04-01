@@ -1,8 +1,9 @@
 import {Component, OnDestroy} from '@angular/core';
-import {NbMediaBreakpoint, NbThemeService} from '@nebular/theme';
+import {NbMediaBreakpoint} from '@nebular/theme';
 import {Router} from '@angular/router';
 import {AnalyticsService} from '../@core/utils';
 import {CurrentThemeService} from '../@core/utils/theme.service';
+import {Observable} from 'rxjs';
 
 @Component({
   selector: 'ngx-starter',
@@ -13,22 +14,28 @@ export class NgxStarterComponent implements OnDestroy {
   breakpoint: NbMediaBreakpoint;
   breakpoints: any;
 
+  public readonly materialTheme$ = new Observable(subscriber => {
+    const themeName: string = this.currentThemeService.getCurrentTheme();
+
+    subscriber.next(themeName.startsWith('material'));
+  });
+
   themes = [
     {
       value: 'material-light',
       name: 'Material Light',
     },
     {
-      value: 'dark',
-      name: 'Dark',
+      value: 'material-dark',
+      name: 'Material Dark',
     },
     {
       value: 'default',
       name: 'Light',
     },
     {
-      value: 'material-dark',
-      name: 'Material Dark',
+      value: 'dark',
+      name: 'Dark',
     },
     {
       value: 'corporate',
@@ -41,14 +48,12 @@ export class NgxStarterComponent implements OnDestroy {
   ];
 
   constructor(private router: Router,
-              private themeService: NbThemeService,
               private currentThemeService: CurrentThemeService,
               private analytics: AnalyticsService,
               ) {}
 
   navigate(themeName: string) {
     this.currentThemeService.setCurrentTheme(themeName);
-    this.themeService.changeTheme(themeName);
     this.router.navigate(['/pages/dashboard'], {queryParams: {theme: themeName}});
   }
 

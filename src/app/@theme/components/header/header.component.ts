@@ -16,7 +16,7 @@ import {CurrentThemeService} from '../../../@core/utils/theme.service';
 export class HeaderComponent implements OnInit, OnDestroy {
 
   private destroy$: Subject<void> = new Subject<void>();
-  public readonly materialTheme$: Observable<boolean>;
+  public materialTheme$: Observable<boolean>;
   userPictureOnly: boolean = false;
   user: any;
 
@@ -62,14 +62,15 @@ export class HeaderComponent implements OnInit, OnDestroy {
     private analytics: AnalyticsService,
     private currentThemeService: CurrentThemeService,
   ) {
-    this.materialTheme$ = this.themeService.onThemeChange()
-      .pipe(map(theme => {
-        const themeName: string = theme?.name || '';
-        return themeName.startsWith('material');
-      }));
   }
 
   ngOnInit() {
+    this.materialTheme$ = new Observable(subscriber => {
+      const themeName: string = this.currentThemeService.getCurrentTheme();
+
+      subscriber.next(themeName.startsWith('material'));
+    });
+
     this.currentTheme = this.themeService.currentTheme;
 
     this.userService.getUsers()

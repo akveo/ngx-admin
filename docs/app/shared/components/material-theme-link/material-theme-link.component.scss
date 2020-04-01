@@ -5,7 +5,6 @@
 @include nb-install-component() {
   $menu-item-fg: nb-theme(color-fg-heading-light);
   $menu-item-fg-active: nb-theme(header-menu-fg-active);
-  $header-font-weight: nb-theme(header-font-weight);
 
   :host {
     display: flex;
@@ -15,7 +14,7 @@
 
   a {
     text-decoration: none;
-    font-weight: $header-font-weight;
+    font-weight: 600;
     font-size: 13px;
     line-height: 1.5rem;
     padding: 0.675rem 1.375rem;

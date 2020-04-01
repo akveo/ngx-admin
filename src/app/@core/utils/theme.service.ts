@@ -20,6 +20,10 @@ export class CurrentThemeService implements OnDestroy {
     localStorage.setItem('theme', JSON.stringify(currentTheme));
   }
 
+  getCurrentTheme(): string {
+    return JSON.parse(localStorage.theme).themeName;
+  }
+
   calculateExpiration(iat: number): number {
     const currentDate = new Date().getTime();
     const timestamp = iat || Math.floor(Date.now() / 1000);
