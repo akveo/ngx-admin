@@ -21,7 +21,7 @@ export class CurrentThemeService implements OnDestroy {
   }
 
   getCurrentTheme(): string {
-    return JSON.parse(localStorage.theme).themeName;
+    return localStorage.theme ? JSON.parse(localStorage.theme).themeName : 'default';
   }
 
   calculateExpiration(iat: number): number {

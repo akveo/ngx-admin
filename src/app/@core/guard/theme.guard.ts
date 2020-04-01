@@ -15,12 +15,16 @@ export class ThemeGuard implements CanActivate {
   ): Observable<boolean> | Promise<boolean> | boolean {
     return this.currentThemeService.currentTheme$.pipe(
         map(theme => {
-          const currentThemeExpiration = JSON.parse(theme).expires_in;
-          const currentDate = new Date().getTime();
-          if (!theme || currentDate > currentThemeExpiration) {
+          if (!theme || this.hasExpired(theme)) {
             this.router.navigate(['themes']);
           }
           return true;
         }));
+  }
+
+  private hasExpired(theme): boolean {
+    const currentThemeExpiration = JSON.parse(theme).expires_in;
+    const currentDate = new Date().getTime();
+    return currentDate > currentThemeExpiration;
   }
 }
