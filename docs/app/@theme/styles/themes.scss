@@ -31,6 +31,8 @@ $nb-enabled-themes: (ngx-landing, ngx-landing-material, docs-page);
 $nb-themes: nb-register-theme((
   font-family-primary: unquote('-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"'),
 
+  link-text-decoration: none,
+
   content-width: 1440px,
   settings-col-width: 16rem,
   settings-col-margin: 1.875rem,
@@ -62,6 +64,7 @@ $nb-themes: nb-register-theme((
   header-fg: color-fg,
   header-menu-fg-active: color-active-fg,
   header-section-border-color: #f5f5f5,
+  header-font-weight: 600,
 
   header-button-border: #dce4f2,
 
@@ -130,6 +133,8 @@ $nb-themes: nb-register-theme((
 $nb-themes: nb-register-theme((
   font-family-primary: unquote('Roboto, sans-serif'),
 
+  link-text-decoration: none,
+
   shadow: unquote('0 2px 1px -1px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 3px 0 rgba(0,0,0,.12)'),
   header-shadow: unquote(
     '0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12)'
@@ -155,6 +160,8 @@ $nb-themes: nb-register-theme((
 $nb-themes: nb-register-theme((
   // custom
   font-family-primary: unquote('-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"'),
+
+  link-text-decoration: none,
 
   content-width: 1440px,
   settings-col-width: 16rem,

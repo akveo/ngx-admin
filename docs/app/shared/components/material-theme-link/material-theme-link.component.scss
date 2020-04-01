@@ -1,16 +1,32 @@
-:host {
-  display: flex;
-  align-items: center;
-  padding-right: 32px;
-}
 
-a {
-  display: flex;
-  align-items: center;
-}
+@import '../../../@theme/styles/themes';
+@import '~@nebular/theme/styles/global/breakpoints';
 
-i {
-  margin-right: 8px;
+@include nb-install-component() {
+  $menu-item-fg: nb-theme(color-fg-heading-light);
+  $menu-item-fg-active: nb-theme(header-menu-fg-active);
+  $header-font-weight: nb-theme(header-font-weight);
+
+  :host {
+    display: flex;
+    align-items: center;
+    padding-right: 32px;
+  }
+
+  a {
+    text-decoration: none;
+    font-weight: $header-font-weight;
+    font-size: 13px;
+    line-height: 1.5rem;
+    padding: 0.675rem 1.375rem;
+    color: $menu-item-fg;
+    display: block;
+
+    &:hover, &.active, &:focus {
+      color: $menu-item-fg-active;
+      outline: none !important;
+    }
+  }
 }
 
 .material-theme-popover {
