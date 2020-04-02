@@ -6,7 +6,7 @@
 
 ### Material admin theme is based on the most popular Angular dashboard template - [ngx-admin](https://hubs.ly/H0nJG1G0)
 ### Included: Angular 9+, [Nebular](https://hubs.ly/H0nJG5g0) and [Eva design system](https://hubs.ly/H0nJGdC0). Free for personal and commercial usage.
-### Get material ngx-admin integrated with backend technology of your choice. Check out our store.
+### Get material ngx-admin integrated with backend technology of your choice. [Check out our store](https://hubs.ly/H0n4Zvy0).
 
 <a target="_blank" href="https://hubs.ly/H0nxM3b0"><img src="https://i.imgur.com/67YAlhf.png"/></a>
 
