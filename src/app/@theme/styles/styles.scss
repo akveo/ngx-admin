@@ -25,6 +25,8 @@
 // install the framework and custom global styles
 @include nb-install() {
 
+  @include angular-material();
+
   // framework global styles
   @include nb-theme-global();
   @include nb-auth-global();
@@ -32,8 +34,6 @@
   @include ngx-layout();
   // loading progress bar
   @include ngx-pace-theme();
-
-  @include angular-material();
 
   @include nb-overrides();
   @include material-overrides();
