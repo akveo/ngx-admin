@@ -4,18 +4,18 @@
  * Licensed under the MIT License. See License.txt in the project root for license information.
  */
 
-import { Component, OnDestroy } from '@angular/core';
-import { Router } from '@angular/router';
-import { takeWhile, withLatestFrom, map } from 'rxjs/operators';
+import {Component, OnDestroy} from '@angular/core';
+import {Router} from '@angular/router';
+import {map, takeWhile, withLatestFrom} from 'rxjs/operators';
 import {
-  NbThemeService,
+  NbMediaBreakpoint,
   NbMenuItem,
   NbSidebarService,
-  NbMediaBreakpoint,
-} from '@nebular/theme';
+  NbThemeService} from '@nebular/theme';
 
-import { NgxMenuService } from '../../@theme/services/menu.service';
-import { NgxPaginationService } from '../../@theme/services/pagination.service';
+import {NgxMenuService} from '../../@theme/services/menu.service';
+import {NgxPaginationService} from '../../@theme/services/pagination.service';
+import {MetadataService} from '../../../../src/app/@core/utils/metadata.service';
 
 @Component({
   selector: 'ngx-landing-docs',
@@ -34,7 +34,11 @@ export class LandingDocsComponent implements OnDestroy {
     private router: Router,
     private themeService: NbThemeService,
     private sidebarService: NbSidebarService,
-    private paginationService: NgxPaginationService) {
+    private paginationService: NgxPaginationService,
+    private metadataService: MetadataService) {
+
+    this.metadataService.updateDescription('Use ngx-admin to bootstrap the development of your product and' +
+      ' provide an ecosystem for building production-ready apps or prototypes. Free and Open Source!');
 
     this.themeService.changeTheme('docs-page');
     this.paginationService.setPaginationItems('/docs');

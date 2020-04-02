@@ -57,6 +57,7 @@ import { MockDataModule } from './mock/mock-data.module';
 import { AbService } from './utils/ab.service';
 import {CurrentThemeService} from './utils/theme.service';
 import {ThemeGuard} from './guard/theme.guard';
+import {MetadataService} from './utils/metadata.service';
 
 const socialLinks = [
   {
@@ -153,6 +154,7 @@ export const NB_CORE_PROVIDERS = [
   LayoutService,
   PlayerService,
   SeoService,
+  MetadataService,
   StateService,
   AbService,
   CurrentThemeService,
