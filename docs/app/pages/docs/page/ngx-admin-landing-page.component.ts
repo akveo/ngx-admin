@@ -6,7 +6,6 @@
 
 import { Component, Inject, NgZone, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Title } from '@angular/platform-browser';
 import {
   filter,
   map,
@@ -21,6 +20,7 @@ import { fromEvent } from 'rxjs';
 
 import { NgxStructureService } from '../../../@theme/services/structure.service';
 import { NgxTocStateService } from '../../../@theme/services/toc-state.service';
+import {MetadataService} from '../../../../../src/app/@core/utils/metadata.service';
 
 @Component({
   selector: 'ngx-admin-landing-page',
@@ -38,7 +38,7 @@ export class NgxAdminLandingPageComponent implements OnDestroy, OnInit {
               private activatedRoute: ActivatedRoute,
               private structureService: NgxStructureService,
               private tocState: NgxTocStateService,
-              private titleService: Title) {
+              private metaDataService: MetadataService) {
   }
 
   get showSettings() {
@@ -63,7 +63,8 @@ export class NgxAdminLandingPageComponent implements OnDestroy, OnInit {
         }),
         filter(item => item),
         tap((item: any) => {
-          this.titleService.setTitle(`Nebular - ${item.name}`);
+          this.metaDataService.updateTitle(`Nebular - ${item.name}`);
+          this.metaDataService.updateDescription(item.description);
         }),
         publishReplay(),
         refCount(),
