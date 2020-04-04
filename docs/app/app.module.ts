@@ -18,6 +18,7 @@ import { LandingSharedModule } from './shared/landing-shared.module';
 import { DOCS, STRUCTURE } from './app.options';
 const docs = require('../output.json');
 import { structure  } from '../structure';
+import {MetadataService} from '../../src/app/@core/utils/metadata.service';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { structure  } from '../structure';
   bootstrap: [AppComponent],
   providers: [
     Title,
+    MetadataService,
     { provide: STRUCTURE, useValue: structure },
     { provide: DOCS, useValue: docs },
   ],
