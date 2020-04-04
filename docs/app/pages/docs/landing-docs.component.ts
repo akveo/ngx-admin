@@ -37,8 +37,9 @@ export class LandingDocsComponent implements OnDestroy {
     private paginationService: NgxPaginationService,
     private metadataService: MetadataService) {
 
-    this.metadataService.updateDescription('Use ngx-admin to bootstrap the development of your product and' +
-      ' provide an ecosystem for building production-ready apps or prototypes. Free and Open Source!');
+    this.metadataService.updateDescription('Free and Open Source ngx-admin to bootstrap the development of ' +
+      'your product or to learn Angular. Over 40+ Angular Components and 60+ Usage Examples.');
+    this.metadataService.updateTitle('A front-end admin dashboard on Angular 9+, Bootstrap 4+ and Nebular.');
 
     this.themeService.changeTheme('docs-page');
     this.paginationService.setPaginationItems('/docs');

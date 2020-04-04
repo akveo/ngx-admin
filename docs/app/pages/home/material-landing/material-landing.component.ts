@@ -14,7 +14,7 @@ export class MaterialLandingComponent {
   constructor(private themeService: NbThemeService, private metadataService: MetadataService) {
     this.metadataService.updateDescription('Ngx-admin material works perfectly with Angular Material and Nebular.' +
       ' Over 40+ Angular Components and 60+ Usage Examples.Take the best from both!');
-    this.metadataService.updateTitle('New Material theme of ngx-admin dashboard template based on Angular 9+');
+    this.metadataService.updateTitle('Ngx-admin material dashboard template based on Angular 9+ and Bootstrap 4+');
     this.themeService.changeTheme('ngx-landing-material');
   }
 }
