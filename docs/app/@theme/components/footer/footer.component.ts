@@ -12,4 +12,7 @@ import { Component } from '@angular/core';
   templateUrl: './footer.component.html',
 })
 export class NgxLandingFooterComponent {
+  get currentYear() {
+    return new Date().getFullYear();
+  }
 }
