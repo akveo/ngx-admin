@@ -20,6 +20,7 @@
 
   ::ng-deep .row-toggle-button {
     color: nb-theme(text-basic-color);
+    @include nb-rtl(transform, scaleX(-1));
   }
 
   .nb-tree-grid-header-cell,

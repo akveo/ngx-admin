@@ -11,6 +11,7 @@
     top: 1.5rem;
     @include nb-ltr(right, 1.5rem);
     @include nb-rtl(left, 1.5rem);
+    @include nb-rtl(transform, scaleX(-1));
     cursor: pointer;
     background-color: transparent;
     z-index: 2;
