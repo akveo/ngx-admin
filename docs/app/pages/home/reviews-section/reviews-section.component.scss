@@ -5,6 +5,7 @@
  */
 
 @import '../../../@theme/styles/themes';
+@import '../../../@theme/styles/swiper_ngx-admin';
 @import '~@nebular/theme/styles/global/breakpoints';
 
 @include nb-install-component() {
@@ -100,34 +101,11 @@
     position: static;
   }
 
-  .swiper-button-prev, .swiper-button-next {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-image: none;
-    height: 5rem;
-    width: 5rem;
-    border-radius: 50%;
-    background-color: #ffffff;
-    box-shadow: nb-theme(shadow-default);
-    top: 9rem;
-
-    &:hover {
-      box-shadow: nb-theme(shadow-hover-btn);
-    }
-
-    &:active {
-      box-shadow: nb-theme(shadow-active-btn);
-    }
-  }
-
-  .swiper-button-prev {
-    left: 8.125rem;
-  }
-
-  .swiper-button-next {
-    right: 8.125rem;
-  }
+  @include swiper-navigation-arrows((
+    top: 9rem,
+    position: 8.125rem,
+    positionXl: 5%
+  ));
 
   .swiper-pagination {
     top: 110%;
@@ -145,22 +123,6 @@
     }
   }
 
-  @include media-breakpoint-down(xl) {
-    .swiper-button-prev {
-      left: 5%;
-    }
-
-    .swiper-button-next {
-      right: 5%;
-    }
-  }
-
-  @include media-breakpoint-down(lg) {
-    .swiper-button-prev, .swiper-button-next {
-      display: none;
-    }
-  }
-
   @include media-breakpoint-down(is) {
     padding-top: 4rem;
     padding-bottom: 4.375rem;
@@ -171,10 +133,6 @@
 
     .swiper-pagination {
       top: 108%;
-    }
-
-    .swiper-button-prev, .swiper-button-next {
-      display: none;
     }
 
     .swiper-slide {
