@@ -5,6 +5,7 @@
  */
 
 @import '../../../@theme/styles/themes';
+@import '../../../@theme/styles/swiper_ngx-admin';
 @import '~@nebular/theme/styles/global/breakpoints';
 
 @include nb-install-component() {
@@ -36,38 +37,11 @@
     padding-top: 4.125rem;
   }
 
-  .swiper-button-prev, .swiper-button-next {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-image: none;
-    height: 5rem;
-    width: 5rem;
-    border-radius: 50%;
-    background-color: #ffffff;
-    box-shadow: nb-theme(shadow-default);
-    top: 22.625rem;
-
-    &:hover {
-      box-shadow: nb-theme(shadow-hover-btn);
-    }
-
-    &:active {
-      box-shadow: nb-theme(shadow-active-btn);
-    }
-
-    &::after {
-      content: '';
-    }
-  }
-
-  .swiper-button-prev {
-    left: 18%;
-  }
-
-  .swiper-button-next {
-    right: 18%;
-  }
+  @include swiper-navigation-arrows((
+    top: 22.625rem,
+    position: 18%,
+    positionXl: 10%
+  ));
 
   .swiper-pagination {
     display: inline-flex;
@@ -140,16 +114,6 @@
     }
   }
 
-  @include media-breakpoint-down(xl) {
-    .swiper-button-prev {
-      left: 10%;
-    }
-
-    .swiper-button-next {
-      right: 10%;
-    }
-  }
-
   @include media-breakpoint-down(xxl) {
     .image-container {
       width: 64.875rem;
@@ -163,10 +127,6 @@
     .image-container {
       width: 46.875rem;
       height: 100%;
-    }
-
-    .swiper-button-prev, .swiper-button-next {
-      display: none;
     }
   }
 
@@ -222,10 +182,6 @@
           }
         }
       }
-    }
-
-    .swiper-button-prev, .swiper-button-next {
-      display: none;
     }
 
     .btn-demo {
