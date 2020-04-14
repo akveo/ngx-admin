@@ -35,7 +35,7 @@ export class Feature {
 export class BundlesService {
 
   private readonly STORE_PRODUCTS: string = 'https://store.akveo.com/collections/frontpage/products.json';
-  private readonly STORE: string = 'https://store.akveo.com/collections/all/products';
+  private readonly STORE: string = 'https://store.akveo.com/products';
 
   private features: Feature[] = [
     {
