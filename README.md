@@ -2,7 +2,7 @@
 
 [Who uses ngx-admin?](https://github.com/akveo/ngx-admin/issues/1645)| [Documentation](https://akveo.github.io/ngx-admin/?utm_source=github&utm_medium=ngx_admin_readme&utm_campaign=themes) | [Installation Guidelines](https://akveo.github.io/ngx-admin/docs/getting-started/what-is-ngxadmin?utm_source=github&utm_medium=ngx_admin_readme&utm_campaign=themes)
 
-# Admin template based on Angular 8+ and <a href="https://github.com/akveo/nebular">Nebular</a>
+# Admin template based on Angular 9+ and <a href="https://github.com/akveo/nebular">Nebular</a>
 <a target="_blank" href="http://akveo.com/ngx-admin/pages/dashboard?theme=corporate&utm_source=github&utm_medium=ngx_admin_readme&utm_campaign=main_pic"><img src="https://i.imgur.com/mFdqvgG.png"/></a>
 
 ### Backend Integration Bundles
@@ -33,7 +33,7 @@ Easy way to integrate ngx-admin with backend (.NET, Node.js, Java etc.).
 
 ### What's included:
 
-- Angular 8+ & Typescript
+- Angular 9+ & Typescript
 - Bootstrap 4+ & SCSS
 - Responsive layout
 - RTL support
