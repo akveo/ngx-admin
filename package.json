@@ -28,7 +28,7 @@
     "docs": "compodoc -p src/tsconfig.app.json -d docs",
     "docs:build": "npm run build -- docs --prod --aot --base-href /ngx-admin/",
     "docs:serve": "npm start -- docs --port 4100",
-    "docs:gh-pages": "npm run docs:build && npm run ngh -- --dir ./docs/dist",
+    "docs:gh-pages": "ts-node -P ./scripts/docs/tsconfig.json ./scripts/docs/build-docs.ts",
     "prepush": "npm run lint:ci",
     "release:changelog": "npm run conventional-changelog -- -p angular -i CHANGELOG.md -s",
     "postinstall": "ngcc --properties es2015 es5 browser module main --first-only --create-ivy-entry-points"
