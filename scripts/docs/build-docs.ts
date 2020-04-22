@@ -70,7 +70,6 @@ async function buildDocs(versions: Version[]) {
 }
 
 async function prepareVersion(version: Version, distDir: string, ghspaScript: string) {
-  console.log(version);
   const projectDir = join(WORK_DIR, `${version.name}`);
 
   await copyToBuildDir(MASTER_BRANCH_DIR, projectDir);
@@ -111,10 +110,10 @@ async function buildDocsApp(projectDir: string, baseHref: string) {
   if (!baseHref.endsWith('/')) {
     baseHref = baseHref + '/';
   }
-  await runCommand('npm run docs:prepare', { cwd: projectDir });
-  await runCommand(`npm run build -- docs --prod --base-href '${baseHref}'`, { cwd: projectDir });
-  await runCommand('npm run docs:dirs', { cwd: projectDir });
-}
+  await runCommand('npm run build -- docs --prod --aot --base-href /ngx-admin/', { cwd: projectDir });
+//   await runCommand(`npm run build -- docs --prod --base-href '${baseHref}'`, { cwd: projectDir });
+//   await runCommand('npm run docs:dirs', { cwd: projectDir });
+ }
 
 async function deploy(distDir: string) {
   await runCommand(
@@ -122,3 +121,4 @@ async function deploy(distDir: string) {
     { cwd: distDir, showLog: true },
   );
 }
+
