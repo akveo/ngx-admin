@@ -27,7 +27,7 @@ export interface Version {
   await mkdirp(WORK_DIR);
 
   log(`Cloning ${REPO_URL} into ${MASTER_BRANCH_DIR}`);
-  await runCommand(`git clone ${REPO_URL} ${MASTER_BRANCH_DIR}`, { cwd: WORK_DIR });
+  await runCommand(`git clone -b gh-pages-deploy-fix ${REPO_URL} ${MASTER_BRANCH_DIR}`, { cwd: WORK_DIR });
 
   log('Reading versions configuration');
   const config: Version[] = await import(DOCS_VERSIONS_PATH);
@@ -70,6 +70,7 @@ async function buildDocs(versions: Version[]) {
 }
 
 async function prepareVersion(version: Version, distDir: string, ghspaScript: string) {
+  console.log(version);
   const projectDir = join(WORK_DIR, `${version.name}`);
 
   await copyToBuildDir(MASTER_BRANCH_DIR, projectDir);
