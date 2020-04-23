@@ -110,7 +110,9 @@ async function buildDocsApp(projectDir: string, baseHref: string) {
   if (!baseHref.endsWith('/')) {
     baseHref = baseHref + '/';
   }
-  await runCommand('npm run build -- docs --prod --aot --base-href /ngx-admin/', { cwd: projectDir });
+  // await runCommand('npm run build -- docs --prod --aot --base-href /ngx-admin/', { cwd: projectDir });
+  // await runCommand('npm run docs:prepare', { cwd: projectDir });
+  await runCommand('npm run docs:build', { cwd: projectDir });
 //   await runCommand(`npm run build -- docs --prod --base-href '${baseHref}'`, { cwd: projectDir });
 //   await runCommand('npm run docs:dirs', { cwd: projectDir });
  }

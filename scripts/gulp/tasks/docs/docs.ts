@@ -10,7 +10,6 @@ task(
   'docs',
   series(
     'generate-doc-json-and-parse-themes',
-    'find-full-examples',
   ),
 );
 task('create-docs-dirs', (done) => {
@@ -60,6 +59,7 @@ function flatten(root, arr) {
 function createDirsStructure(dirs) {
   const index = readFileSync(join(DOCS_DIST, 'index.html'), 'utf8');
   dirs.forEach((dir: any) => {
+
     const fullPath = join(DOCS_DIST, dir);
     if (!existsSync(fullPath)) {
       mkDirByPathSync(fullPath);
