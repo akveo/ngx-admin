@@ -1,4 +1,3 @@
-
 /**
  *
  *  ____ _ ___ _  _ _  _ ___     ___  ____ ____ ____ ____    ____ ___  ____
@@ -19,23 +18,14 @@
  *
  */
 
-;(function(l) {
+;(function(l, projectPages) {
 
-  var redirectPath;
-  ["/ngx-admin"].forEach(function (path) {
-    if (l.pathname.indexOf(path) === 0) {
-      redirectPath = path;
-    }
-  });
+  var repo = projectPages ? '/' + l.pathname.split('/')[1] : '';
 
-  if (!redirectPath) {
-    return;
-  }
-
-  /* redirect all 404 traffic to index.html */
+  /* redirect all 404 trafic to index.html */
   function redirect() {
-    l.replace(l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') + redirectPath + '/?' +
-      (l.pathname ? 'p=' + l.pathname.replace(/&/g, '~and~').replace(redirectPath, '') : '') +
+    l.replace(l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') + repo + '/?' +
+      (l.pathname ? 'p=' + l.pathname.replace(/&/g, '~and~').replace(repo, '') : '') +
       (l.search ? '&q=' + l.search.slice(1).replace(/&/g, '~and~') : '') +
       (l.hash))
   }
@@ -50,7 +40,7 @@
       });
       if (q.p !== undefined) {
         window.history.replaceState(null, null,
-          redirectPath + (q.p || '') +
+          repo + (q.p || '') +
           (q.q ? ('?' + q.q) : '') +
           l.hash
         )
@@ -61,4 +51,4 @@
   /* if current document is 404 page page, redirect to index.html otherwise resolve */
   document.title === '404' ? redirect() : resolve()
 
-}(window.location));
+}(window.location, window.projectPages || true ));

@@ -1,8 +1,0 @@
-[
-  {
-    "checkoutTarget": "gh-pages-deploy-fix",
-    "name": "demo",
-    "path": "/ngx-admin/",
-    "isCurrent": true
-  }
-]
