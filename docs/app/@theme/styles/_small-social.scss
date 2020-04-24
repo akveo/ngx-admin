@@ -1,12 +1,12 @@
-$small-social-font-path: '/assets/fonts/small-social' !default;
+$small-social-font-path: '/ngx-admin/assets/fonts/small-social' !default;
 @font-face {
   font-family: 'small-social';
   font-display: auto;
-  src:  url('/ngx-admin/#{$small-social-font-path}/small-social.eot?skntni');
-  src:  url('/ngx-admin/#{$small-social-font-path}/small-social.eot?skntni#iefix') format('embedded-opentype'),
-  url('/ngx-admin/#{$small-social-font-path}/small-social.ttf?skntni') format('truetype'),
-  url('/ngx-admin/#{$small-social-font-path}/small-social.woff?skntni') format('woff'),
-  url('/ngx-admin/#{$small-social-font-path}/small-social.svg?skntni#small-social') format('svg');
+  src:  url('#{$small-social-font-path}/small-social.eot?skntni');
+  src:  url('#{$small-social-font-path}/small-social.eot?skntni#iefix') format('embedded-opentype'),
+  url('#{$small-social-font-path}/small-social.ttf?skntni') format('truetype'),
+  url('#{$small-social-font-path}/small-social.woff?skntni') format('woff'),
+  url('#{$small-social-font-path}/small-social.svg?skntni#small-social') format('svg');
   font-weight: normal;
   font-style: normal;
 }
