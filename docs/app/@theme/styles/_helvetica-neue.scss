@@ -9,11 +9,11 @@ $helvetica-neue-font-path: 'assets/fonts/helvetica-neue' !default;
 @font-face {
   font-family: 'Helvetica Neue Bold';
   font-display: swap;
-  src: url('#{$helvetica-neue-font-path}/HelveticaNeue-Bold.eot');
+  src: url('/ngx-admin/#{$helvetica-neue-font-path}/HelveticaNeue-Bold.eot');
   src: local('Helvetica Neue Bold'), local('HelveticaNeue-Bold'),
-  url('#{$helvetica-neue-font-path}/HelveticaNeue-Bold.eot?#iefix') format('embedded-opentype'),
-  url('#{$helvetica-neue-font-path}/HelveticaNeue-Bold.woff') format('woff'),
-  url('#{$helvetica-neue-font-path}/HelveticaNeue-Bold.ttf') format('truetype');
+  url('/ngx-admin/#{$helvetica-neue-font-path}/HelveticaNeue-Bold.eot?#iefix') format('embedded-opentype'),
+  url('/ngx-admin/#{$helvetica-neue-font-path}/HelveticaNeue-Bold.woff') format('woff'),
+  url('/ngx-admin/#{$helvetica-neue-font-path}/HelveticaNeue-Bold.ttf') format('truetype');
   font-weight: bold;
   font-style: normal;
 }
