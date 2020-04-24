@@ -2,16 +2,9 @@ import { task, series } from 'gulp';
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'fs';
 import { isAbsolute, join, resolve, sep } from 'path';
 
-import './example';
 import { structure as DOCS } from '../../../../docs/structure';
 import { DOCS_DIST } from '../config';
 
-task(
-  'docs',
-  series(
-    'generate-doc-json-and-parse-themes',
-  ),
-);
 task('create-docs-dirs', (done) => {
   const docsStructure = flatten('docs', routesTree(DOCS));
   createDirsStructure(docsStructure);
