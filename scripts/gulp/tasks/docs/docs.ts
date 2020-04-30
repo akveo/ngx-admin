@@ -3,11 +3,15 @@ import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'fs';
 import { isAbsolute, join, resolve, sep } from 'path';
 
 import { structure as DOCS } from '../../../../docs/structure';
+import { structure as LANDING } from '../../../../docs/structure-landing';
 import { DOCS_DIST } from '../config';
 
 task('create-docs-dirs', (done) => {
   const docsStructure = flatten('docs', routesTree(DOCS));
   createDirsStructure(docsStructure);
+
+  const landingStructure = flatten('', routesTree(LANDING));
+  createDirsStructure(landingStructure);
 
   done();
 });
