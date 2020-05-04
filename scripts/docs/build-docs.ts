@@ -27,7 +27,7 @@ export interface Version {
   await mkdirp(WORK_DIR);
 
   log(`Cloning ${REPO_URL} into ${MASTER_BRANCH_DIR}`);
-  await runCommand(`git clone -b gh-pages-deploy-fix ${REPO_URL} ${MASTER_BRANCH_DIR}`, { cwd: WORK_DIR });
+  await runCommand(`git clone -b demo ${REPO_URL} ${MASTER_BRANCH_DIR}`, { cwd: WORK_DIR });
 
   log('Reading versions configuration');
   const config: Version[] = await import(DOCS_VERSIONS_PATH);
