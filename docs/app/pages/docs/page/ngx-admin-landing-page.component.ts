@@ -63,6 +63,7 @@ export class NgxAdminLandingPageComponent implements OnDestroy, OnInit {
         }),
         filter(item => item),
         tap((item: any) => {
+          this.metaDataService.updateTitle(`Nebular - ${item.name}`);
           this.metaDataService.updateDescription(item.description);
         }),
         publishReplay(),
