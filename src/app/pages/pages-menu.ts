@@ -13,6 +13,36 @@ export const MENU_ITEMS: NbMenuItem[] = [
     link: '/pages/iot-dashboard',
   },
   {
+    title: 'Backend Integration',
+    icon: 'settings-outline',
+    children: [
+      {
+        title: 'PHP',
+        url: 'https://hubs.ly/H0q96Mc0',
+      },
+      {
+        title: '.NET',
+        url: 'https://hubs.ly/H0q973f0',
+      },
+      {
+        title: '.NET Core',
+        url: 'https://hubs.ly/H0q975F0',
+      },
+      {
+        title: 'Node JS',
+        url: 'https://hubs.ly/H0q976N0',
+      },
+      {
+        title: 'Java',
+        url: 'https://hubs.ly/H0q978N0',
+      },
+      {
+        title: 'Python',
+        url: 'https://hubs.ly/H0q979V0',
+      },
+    ],
+  },
+  {
     title: 'FEATURES',
     group: true,
   },
