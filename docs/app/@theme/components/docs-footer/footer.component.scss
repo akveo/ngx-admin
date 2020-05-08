@@ -65,11 +65,22 @@
     .social {
       display: flex;
       flex-direction: row;
+
       a {
-        font-size: 3rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 2.5rem;
+        height: 2.5rem;
+        background-color: $social-fg;
+        border-radius: 0.375rem;
         text-decoration: none;
-        color: $social-fg;
-        margin-right: 1rem;
+        margin-right: 1.5rem;
+        line-height: 0.5;
+
+        &:last-child {
+          margin-right: 0;
+        }
       }
     }
   }

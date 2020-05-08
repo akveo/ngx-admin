@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "rootDir": ".",
+    "module": "commonjs",
+    "lib": ["es2018"],
+    "target": "es2018",
+    "resolveJsonModule": true
+  },
+  "include": [
+    "build-docs.ts"
+  ]
+}

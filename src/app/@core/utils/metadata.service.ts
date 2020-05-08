@@ -11,11 +11,15 @@ export class MetadataService {
 
   updateTitle(title: string) {
     this.title.setTitle(title);
+    this.meta.updateTag({ property: 'og:title', content: title });
   }
 
   updateDescription(desc: string) {
     this.meta.updateTag({ name: 'description', content: desc });
+    this.meta.updateTag({ property: 'og:description', content: desc });
   }
+
+
 
 
 }
