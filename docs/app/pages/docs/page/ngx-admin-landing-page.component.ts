@@ -63,6 +63,19 @@ export class NgxAdminLandingPageComponent implements OnDestroy, OnInit {
         }),
         filter(item => item),
         tap((item: any) => {
+          switch (item.name) {
+            case 'Installation Guidelines':
+              this.metaDataService.updateTitle(`Ngx-admin - Guideline to install.`);
+              break;
+            case 'Server deployment':
+            case 'Theme System':
+            case 'Change Theme':
+            case 'Backend integration':
+              this.metaDataService.updateTitle(`Ngx-admin - ${item.name}`);
+              break;
+            default:
+              this.metaDataService.updateTitle(item.name);
+          }
           this.metaDataService.updateDescription(item.description);
         }),
         publishReplay(),
