@@ -33,7 +33,7 @@ export class CountryOrdersChartComponent implements AfterViewInit, OnDestroy, On
 
   constructor(private theme: NbThemeService,
               private layoutService: LayoutService) {
-    this.layoutService.onChangeLayoutSize()
+    this.layoutService.onSafeChangeLayoutSize()
       .pipe(
         takeWhile(() => this.alive),
       )

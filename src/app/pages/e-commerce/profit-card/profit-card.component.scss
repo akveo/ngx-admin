@@ -10,16 +10,22 @@
     cursor: pointer;
   }
 
-  ::ng-deep .flipped {
-    .back-container {
-      .flip-icon {
-        transform: scaleX(-1);
-      }
+  ::ng-deep {
+    .front-container {
+      max-width: 100%;
     }
 
-    .front-container {
-      .flip-icon {
-        display: none;
+    .flipped {
+      .back-container {
+        .flip-icon {
+          transform: scaleX(-1);
+        }
+      }
+
+      .front-container {
+        .flip-icon {
+          display: none;
+        }
       }
     }
   }

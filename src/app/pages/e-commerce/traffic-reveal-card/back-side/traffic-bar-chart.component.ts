@@ -28,7 +28,7 @@ export class TrafficBarChartComponent implements AfterViewInit, OnDestroy, OnCha
 
   constructor(private theme: NbThemeService,
               private layoutService: LayoutService) {
-    this.layoutService.onChangeLayoutSize()
+    this.layoutService.onSafeChangeLayoutSize()
       .pipe(
         takeWhile(() => this.alive),
       )

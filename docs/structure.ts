@@ -6,6 +6,7 @@ export const structure = [
       {
         type: 'page',
         name: 'What is ngx-admin?',
+        description: 'Ngx-admin is Angular 9+ Bootstrap 4+ admin dashboard template. Free and Open Source to bootstrap the development of your product or to learn Angular.',
         children: [
           {
             type: 'block',
