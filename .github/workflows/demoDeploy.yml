@@ -20,5 +20,5 @@ jobs:
         with:
           ref: demo
       - run: npm install
-      - run: npm run build:prod
+      - run: npm run build:demo:prod
       - run: rsync -r --delete-after dist/. "${{ secrets.REMOTE_URL }}":"${{ secrets.ADDRESS }}"
