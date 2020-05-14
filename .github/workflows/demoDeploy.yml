@@ -21,4 +21,4 @@ jobs:
           ref: demo
       - run: npm install
       - run: npm run build:prod
-      - run: rsync -r dist/. "${{ secrets.ADDRESS }}":~/views/admin/ngx-demo/dist
+      - run: rsync -r --delete-after dist/. "${{ secrets.REMOTE_URL }}":"${{ secrets.ADDRESS }}"
