@@ -16,5 +16,8 @@ jobs:
     steps:
       - name: Use Node.js 12.x
         uses: actions/setup-node@v1
+      - uses: actions/checkout@v2
+        with:
+          ref: demo
       - run: npm install
       - run: npm run docs:gh-pages
