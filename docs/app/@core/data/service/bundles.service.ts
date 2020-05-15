@@ -25,6 +25,11 @@ export const BUNDLE_LICENSE = {
   developer: 'developer',
 };
 
+export const STORE_PRODUCTS_URL = {
+  base: 'https://store.akveo.com/collections/frontpage/products.json',
+  material: 'https://store.akveo.com/collections/material-bundles/products.json',
+};
+
 export class Feature {
   text: string;
   availableInPersonalLicence: boolean;
@@ -34,7 +39,6 @@ export class Feature {
 @Injectable()
 export class BundlesService {
 
-  private readonly STORE_PRODUCTS: string = 'https://store.akveo.com/collections/frontpage/products.json';
   private readonly STORE: string = 'https://store.akveo.com/products';
 
   private features: Feature[] = [
@@ -81,8 +85,8 @@ export class BundlesService {
     return observableOf(this.features);
   }
 
-  getProducts(): Observable<Product[]> {
-    return this.http.get(this.STORE_PRODUCTS)
+  getProducts(url: string): Observable<Product[]> {
+    return this.http.get(url)
       .pipe(map((result: any) => {
         return result.products.map((item: any) => {
           return {
