@@ -112,6 +112,7 @@
       &:active {
         color: #ffffff;
       }
+
       &.active {
         color: #000000;
         background-color: #fafafa;
@@ -258,13 +259,18 @@
       font-size: 0.75rem;
       color: #ffffff;
       text-transform: uppercase;
-      background-color: #18cb90;
-      box-shadow: 0 5px 29px 0 rgba(0, 219, 146, 0.32);
+      background-color: nb-theme(color-active-fg);
+      box-shadow: nb-theme(shadow-btn);
       border-radius: 3px;
       margin-top: 0.5rem;
       cursor: pointer;
+
       &:hover {
-        box-shadow: 0 0.375rem 2.125rem 0 rgba(0, 219, 146, 0.32);
+        box-shadow: nb-theme(shadow-hover-green-btn);
+      }
+
+      &:active {
+        box-shadow: nb-theme(shadow-active-green-btn);
       }
     }
     &__type {
