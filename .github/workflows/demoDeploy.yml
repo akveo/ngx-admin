@@ -2,6 +2,11 @@
 name: Deploy to demo
 
 on:
+  push:
+    branches:
+      - 'demo'
+    paths:
+      - 'src/**'
   repository_dispatch:
     types: deploy-to-demo
 

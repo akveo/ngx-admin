@@ -1,0 +1,20 @@
+
+name: Deploy docs
+
+on:
+  push:
+    branches:
+      - 'demo'
+    paths:
+      - 'docs/**'
+  repository_dispatch:
+    types: deploy-docs
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Use Node.js 12.x
+        uses: actions/setup-node@v1
+       - run: npm install
+       - run: npm run docs:gh-pages
