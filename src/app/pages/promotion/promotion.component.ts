@@ -1,15 +1,15 @@
-import { Component } from '@angular/core';
-import { LocalDataSource } from 'ng2-smart-table';
-
-import { SmartTableData } from '../../@core/data/smart-table';
+import { Component, OnInit } from '@angular/core';
+import { PromotionList } from '../../@core/data/promotion';
+import { PromotionService } from './promotion.service';
+import { PromotionDetailComponent } from './promotion-detail/promotion-detail.component';
+import { NbWindowService } from '@nebular/theme';
 
 @Component({
   selector: 'ngx-promotion',
   templateUrl: './promotion.component.html',
   styleUrls: ['./promotion.component.scss'],
 })
-export class PromotionComponent {
-
+export class PromotionComponent implements OnInit {
   settings = {
     add: {
       addButtonContent: '<i class="nb-plus"></i>',
@@ -26,34 +26,36 @@ export class PromotionComponent {
       confirmDelete: true,
     },
     columns: {
-      couponCode: {
+      code: {
         title: 'Coupon Code',
         type: 'string',
       },
-      period: {
+      validDay: {
         title: 'Period',
         type: 'string',
       },
-      validStart: {
+      validFrom: {
         title: 'Valid Start',
-        type: 'string',
+        type: 'date',
       },
-      validEnd: {
+      validTo: {
         title: 'Valid End',
-        type: 'string',
-      },
-      action: {
-        title: 'Action',
-        type: 'string',
+        type: 'date',
       },
     },
   };
 
-  source: LocalDataSource = new LocalDataSource();
+  source: PromotionList[] = [];
 
-  constructor(private service: SmartTableData) {
-    const data = this.service.getData();
-    this.source.load(data);
+  constructor(private service: PromotionService, private windowService: NbWindowService) {
+
+  }
+
+  ngOnInit(): void {
+    this.service.getPromotion().subscribe((result) => {
+      this.source = Object.assign([], result);
+      console.log(this.source);
+    });
   }
 
   onDeleteConfirm(event): void {
@@ -62,5 +64,9 @@ export class PromotionComponent {
     } else {
       event.confirm.reject();
     }
+  }
+
+  openWindowForm() {
+    this.windowService.open(PromotionDetailComponent, { title: `Promotion Detail` });
   }
 }
