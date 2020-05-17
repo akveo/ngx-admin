@@ -6,7 +6,7 @@ import {HttpErrorResponse, HttpHeaders} from '@angular/common/http';
 import { PromotionList } from '../../@core/data/promotion';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class PromotionService {
   constructor(private http: HttpClient) {
@@ -14,12 +14,6 @@ export class PromotionService {
 
   getPromotion(): Observable<any> {
     const url = 'http://localhost:8011/api/promotions/all';
-    const headers = new HttpHeaders({
-      'Content-Type': 'application/json',
-      'X-Requested-Url': url,
-      'X-Requested-Method': 'GET',
-    });
-    const options = {headers: headers};
     return this.http.get(url).pipe(
       map(this.extractData),
       catchError(this.handleError),

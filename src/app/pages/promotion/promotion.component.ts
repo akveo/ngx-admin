@@ -54,7 +54,6 @@ export class PromotionComponent implements OnInit {
   ngOnInit(): void {
     this.service.getPromotion().subscribe((result) => {
       this.source = Object.assign([], result);
-      console.log(this.source);
     });
   }
 

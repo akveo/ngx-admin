@@ -4,7 +4,6 @@ import {NgModule} from '@angular/core';
 import {PagesComponent} from './pages.component';
 import {NotFoundComponent} from './miscellaneous/not-found/not-found.component';
 import {PromotionComponent} from './promotion/promotion.component';
-import {ServerExamplesComponent} from './sample/server-examples.component';
 
 const routes: Routes = [{
   path: '',
