@@ -12,7 +12,7 @@
   "scripts": {
     "ng": "ng",
     "conventional-changelog": "conventional-changelog",
-    "start": "ng serve",
+    "start": "node server.js",
     "build": "ng build",
     "build:prod": "npm run build -- --prod --aot",
     "test": "ng test",
@@ -27,9 +27,13 @@
     "docs:serve": "compodoc -p src/tsconfig.app.json -d docs -s",
     "prepush": "npm run lint:ci",
     "release:changelog": "npm run conventional-changelog -- -p angular -i CHANGELOG.md -s",
-    "postinstall": "ngcc --properties es2015 es5 browser module main --first-only --create-ivy-entry-points"
+    "postinstall": "ngcc --properties es2015 es5 browser module main --first-only --create-ivy-entry-points",
+    "heroku-postbuild": "ng build --prod"
   },
   "dependencies": {
+    "@angular/cli": "^9.0.4",
+    "@angular/compiler-cli": "^9.0.4",
+    "typescript": "3.7.5",
     "@akveo/ng2-completer": "^9.0.1",
     "@angular/animations": "^9.0.4",
     "@angular/cdk": "^9.1.2",
@@ -108,5 +112,9 @@
     "tslint": "^5.7.0",
     "tslint-language-service": "^0.9.9",
     "typescript": "3.7.5"
+  }, 
+  "engines": {
+    "node": "10.20.01",
+    "npm": "6.14.4"
   }
 }
