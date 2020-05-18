@@ -19,5 +19,11 @@ jobs:
       - uses: actions/checkout@v2
         with:
           ref: demo
-      - run: npm install
-      - run: npm run docs:gh-pages
+      - name: Deploy
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          npm install --silent
+          git config --global user.email "github-action@akveo.com"
+          git config --global user.name "Github Action"
+          npm run docs:gh-pages
