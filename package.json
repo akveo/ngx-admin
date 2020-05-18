@@ -27,18 +27,16 @@
     "docs:serve": "compodoc -p src/tsconfig.app.json -d docs -s",
     "prepush": "npm run lint:ci",
     "release:changelog": "npm run conventional-changelog -- -p angular -i CHANGELOG.md -s",
-    "postinstall": "ngcc --properties es2015 es5 browser module main --first-only --create-ivy-entry-points",
-    "heroku-postbuild": "ng build --prod"
+    "postinstall": "ng build --aot --prod"
   },
   "dependencies": {
-    "@angular/cli": "^9.0.4",
-    "@angular/compiler-cli": "^9.0.4",
-    "typescript": "3.7.5",
     "@akveo/ng2-completer": "^9.0.1",
     "@angular/animations": "^9.0.4",
     "@angular/cdk": "^9.1.2",
+    "@angular/cli": "^9.0.4",
     "@angular/common": "^9.0.4",
     "@angular/compiler": "^9.0.4",
+    "@angular/compiler-cli": "^9.0.4",
     "@angular/core": "^9.0.4",
     "@angular/forms": "^9.0.4",
     "@angular/google-maps": "^9.1.0",
@@ -59,6 +57,7 @@
     "core-js": "2.5.1",
     "echarts": "^4.0.2",
     "eva-icons": "^1.1.3",
+    "express": "^4.17.1",
     "intl": "1.2.5",
     "ionicons": "2.0.1",
     "leaflet": "1.2.0",
@@ -77,6 +76,7 @@
     "tinymce": "4.5.7",
     "tslib": "^1.10.0",
     "typeface-exo": "0.0.22",
+    "typescript": "3.7.5",
     "web-animations-js": "^2.3.2",
     "zone.js": "~0.10.2"
   },
