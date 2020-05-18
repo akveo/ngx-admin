@@ -112,9 +112,5 @@
     "tslint": "^5.7.0",
     "tslint-language-service": "^0.9.9",
     "typescript": "3.7.5"
-  }, 
-  "engines": {
-    "node": "10.20.01",
-    "npm": "6.14.4"
   }
 }
