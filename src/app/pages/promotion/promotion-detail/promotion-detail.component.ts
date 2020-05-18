@@ -3,7 +3,7 @@ import { NbWindowRef } from '@nebular/theme';
 
 @Component({
   selector: 'ngx-promotion-detail',
-  template: './promotion-detail.component.html',
+  templateUrl: './promotion-detail.component.html',
   styleUrls: ['promotion-detail.component.scss'],
 })
 export class PromotionDetailComponent {
