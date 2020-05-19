@@ -1,0 +1,29 @@
+
+name: Deploy to demo
+
+on:
+  push:
+    branches:
+      - 'demo'
+    paths:
+      - 'src/**'
+  repository_dispatch:
+    types: deploy-to-demo
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install SSH key
+        uses: shimataro/ssh-key-action@v2
+        with:
+          key: ${{ secrets.SSH_KEY }}
+          known_hosts: ${{ secrets.KNOWN_HOSTS }}
+      - name: Use Node.js 12.x
+        uses: actions/setup-node@v1
+      - uses: actions/checkout@v2
+        with:
+          ref: demo
+      - run: npm install
+      - run: npm run build:demo:prod
+      - run: rsync -r --delete-after dist/. "${{ secrets.REMOTE_URL }}":"${{ secrets.ADDRESS }}"
