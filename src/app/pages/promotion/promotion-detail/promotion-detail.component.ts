@@ -12,7 +12,7 @@ export class PromotionDetailComponent {
   data: PromotionList;
 
   constructor(public windowRef: NbWindowRef, @Inject(NB_WINDOW_CONTEXT) context) {
-    if(context != null){
+    if (context != null) {
       this.data = Object.assign({}, context.data);
     }
   }

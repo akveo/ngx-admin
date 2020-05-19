@@ -62,7 +62,6 @@ export class PromotionComponent implements OnInit {
   onCreateConfirm(event): void {
     if (window.confirm('Are you sure you want to save?')) {
       event.confirm.resolve();
-      console.log('hooray ' + event.newData.code);
     } else {
       event.confirm.reject();
     }
