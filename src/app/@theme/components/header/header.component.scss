@@ -52,6 +52,11 @@
     }
   }
 
+  .direction-switcher {
+    @include nb-ltr(margin-left, 2rem);
+    @include nb-rtl(margin-right, 2rem);
+  }
+
   @include media-breakpoint-down(sm) {
     .control-item {
       display: none;
@@ -63,7 +68,8 @@
   }
 
   @include media-breakpoint-down(is) {
-    nb-select {
+    nb-select,
+    .direction-switcher {
       display: none;
     }
   }

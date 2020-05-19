@@ -16,7 +16,7 @@ export class AppComponent implements OnInit {
   constructor(private analytics: AnalyticsService, private seoService: SeoService) {
   }
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.analytics.trackPageViews();
     this.seoService.trackCanonicalChanges();
   }

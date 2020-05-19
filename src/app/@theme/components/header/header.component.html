@@ -8,6 +8,7 @@
   <nb-select [selected]="currentTheme" (selectedChange)="changeTheme($event)" status="primary">
     <nb-option *ngFor="let theme of themes" [value]="theme.value"> {{ theme.name }}</nb-option>
   </nb-select>
+  <ngx-layout-direction-switcher class="direction-switcher"></ngx-layout-direction-switcher>
 </div>
 
 <div class="header-container">
