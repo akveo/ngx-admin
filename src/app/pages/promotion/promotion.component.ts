@@ -16,7 +16,7 @@ export class PromotionComponent implements OnInit {
       addButtonContent: '<i class="nb-plus"></i>',
       createButtonContent: '<i class="nb-checkmark"></i>',
       cancelButtonContent: '<i class="nb-close"></i>',
-      createConfirm: true,
+      confirmCreate: true,
     },
     edit: {
       editButtonContent: '<i class="nb-edit"></i>',
@@ -59,9 +59,10 @@ export class PromotionComponent implements OnInit {
     });
   }
 
-  onCreateConfirm(event): void {
+  onCreateConfirm(event) {
     if (window.confirm('Are you sure you want to save?')) {
-      event.confirm.resolve();
+      this.service.postPromotion(event.newData).subscribe();
+      event.confirm.resolve(event.newData);
     } else {
       event.confirm.reject();
     }

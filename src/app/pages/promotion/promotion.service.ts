@@ -1,8 +1,8 @@
-import {Injectable} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
-import {Observable, throwError} from 'rxjs';
-import {map, catchError} from 'rxjs/operators';
-import {HttpErrorResponse} from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable, throwError } from 'rxjs';
+import { map, catchError } from 'rxjs/operators';
+import { HttpErrorResponse } from '@angular/common/http';
 import { PromotionList } from '../../@core/data/promotion';
 
 @Injectable({
@@ -13,9 +13,22 @@ export class PromotionService {
   }
 
   getPromotion(): Observable<any> {
-    const url = 'http://34.87.6.140:8011/api/promotions/all';
+    const url = 'http://localhost:8011/api/promotions/all';
     return this.http.get(url).pipe(
       map(this.extractData),
+      catchError(this.handleError),
+    );
+  }
+
+  postPromotion(data: PromotionList): Observable<any> {
+    console.log(JSON.stringify(data));
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'X-Requested-Method': 'POST',
+    });
+    let options = { headers: headers };
+    const url = 'http://localhost:8011/api/promotions/add';
+    return this.http.post(url, JSON.stringify(data), options).pipe(
       catchError(this.handleError),
     );
   }
