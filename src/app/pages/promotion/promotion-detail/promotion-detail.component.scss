@@ -1,12 +1,15 @@
-@import '../../../@theme/styles/themes';
+nb-checkbox {
+  margin-bottom: 1rem;
+}
 
-@include nb-install-component() {
-  ::ng-deep .form {
-    display: flex;
-    flex-direction: column;
+.form-inline [fullWidth] {
+  flex: 1;
+}
 
-    .text-label {
-      margin-top: 1.5rem;
-    }
-  }
+.form-inline > * {
+  margin: 0 1.5rem 1.5rem 0;
+}
+
+nb-card.inline-form-card nb-card-body {
+  padding-bottom: 0;
 }

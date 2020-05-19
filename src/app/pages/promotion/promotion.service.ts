@@ -13,7 +13,7 @@ export class PromotionService {
   }
 
   getPromotion(): Observable<any> {
-    const url = 'http://localhost:8011/api/promotions/all';
+    const url = 'http://34.87.6.140:8011/api/promotions/all';
     return this.http.get(url).pipe(
       map(this.extractData),
       catchError(this.handleError),

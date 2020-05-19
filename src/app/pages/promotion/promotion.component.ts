@@ -11,10 +11,12 @@ import { NbWindowService } from '@nebular/theme';
 })
 export class PromotionComponent implements OnInit {
   settings = {
+    mode: 'inline',
     add: {
       addButtonContent: '<i class="nb-plus"></i>',
       createButtonContent: '<i class="nb-checkmark"></i>',
       cancelButtonContent: '<i class="nb-close"></i>',
+      createConfirm: true,
     },
     edit: {
       editButtonContent: '<i class="nb-edit"></i>',
@@ -36,11 +38,11 @@ export class PromotionComponent implements OnInit {
       },
       validFrom: {
         title: 'Valid Start',
-        type: 'date',
+        type: 'string',
       },
       validTo: {
         title: 'Valid End',
-        type: 'date',
+        type: 'string',
       },
     },
   };
@@ -57,6 +59,15 @@ export class PromotionComponent implements OnInit {
     });
   }
 
+  onCreateConfirm(event): void {
+    if (window.confirm('Are you sure you want to save?')) {
+      event.confirm.resolve();
+      console.log('hooray ' + event.newData.code);
+    } else {
+      event.confirm.reject();
+    }
+  }
+
   onDeleteConfirm(event): void {
     if (window.confirm('Are you sure you want to delete?')) {
       event.confirm.resolve();
@@ -65,7 +76,12 @@ export class PromotionComponent implements OnInit {
     }
   }
 
-  openWindowForm() {
-    this.windowService.open(PromotionDetailComponent, { title: `Promotion Detail` });
+  openWindowForm(event) {
+    this.windowService.open(PromotionDetailComponent, {
+      title: 'Promotion Detail',
+      context: {
+        data: event.data,
+      },
+    });
   }
 }

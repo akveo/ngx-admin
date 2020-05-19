@@ -1,7 +1,85 @@
-<form class="form">
-    <label for="subject">Subject:</label>
-    <input nbInput id="subject" type="text">
-
-    <label class="text-label" for="text">Text:</label>
-    <textarea nbInput id="text"></textarea>
-</form>
+<div class="row">
+  <div class="col-md-4">
+    <form>
+      <div class="form-group">
+        <label for="exampleInputEmail1" class="label">Partner Code</label>
+        <input nbInput fullWidth id="exampleInputEmail1" value="{{data.customerID}}">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1" class="label">User Id</label>
+        <input nbInput fullWidth id="exampleInputPassword1" value="{{data.customerID}}">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1" class="label">Promo Type</label>
+        <input nbInput fullWidth id="exampleInputEmail1" value="{{data.promotionType}}">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1" class="label">Periode </label>
+        <input nbInput fullWidth id="exampleInputPassword1" value="{{data.validDay}}">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1" class="label">Coupon Code</label>
+        <input nbInput fullWidth id="exampleInputEmail1" value="{{data.code}}">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1" class="label">Valid Start</label>
+        <input nbInput fullWidth id="exampleInputPassword1" value="{{data.validFrom}}">
+      </div>
+    </form>
+  </div>
+  <div class="col-md-4">
+    <div class="form-group">
+      <label for="exampleInputPassword1" class="label">Valid End</label>
+      <input nbInput fullWidth id="exampleInputPassword1" value="{{data.validTo}}">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1" class="label">Promo</label>
+      <input nbInput fullWidth id="exampleInputPassword1" value="{{data.value}}">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputEmail1" class="label">Max. Promo</label>
+      <input nbInput fullWidth id="exampleInputEmail1" value="{{data.maximumDiscount}}">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputEmail1" class="label">Quota per User</label>
+      <input nbInput fullWidth id="exampleInputEmail1" value="{{data.maximumPerUser}}">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1" class="label">User Type</label>
+      <input nbInput fullWidth id="exampleInputPassword1" value="{{data.customerType}}">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1" class="label">Coverage Pickup</label>
+      <input nbInput fullWidth id="exampleInputPassword1" value="{{data.coverage}}">
+    </div>
+  </div>
+  <div class="col-md-4">
+    <form>
+      <div class="form-group">
+        <label for="exampleInputPassword1" class="label">Product</label>
+        <input nbInput fullWidth id="exampleInputPassword1" value="{{data.product}}">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1" class="label">Promo (IDR)</label>
+        <input nbInput fullWidth id="exampleInputPassword1" value="{{data.value}}">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1" class="label">Promo (%)</label>
+        <input nbInput fullWidth id="exampleInputPassword1" value="{{data.value}}">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1" class="label">Max. Promo</label>
+        <input nbInput fullWidth id="exampleInputPassword1" value="{{data.maximumDiscountValue}}">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1" class="label">Budget</label>
+        <input nbInput fullWidth id="exampleInputPassword1" value="{{data.maximumDiscount}}">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1" class="label">Quota</label>
+        <input nbInput fullWidth id="exampleInputPassword1" value="{{data.quota}}">
+      </div>
+      <button type="submit" nbButton status="primary">Submit</button>
+    </form>
+  </div>
+</div>
