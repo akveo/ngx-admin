@@ -21,12 +21,11 @@ export class PromotionService {
   }
 
   postPromotion(data: PromotionList): Observable<any> {
-    console.log(JSON.stringify(data));
-    let headers = new HttpHeaders({
+    const headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'X-Requested-Method': 'POST',
     });
-    let options = { headers: headers };
+    const options = { headers: headers };
     const url = 'http://localhost:8011/api/promotions/add';
     return this.http.post(url, JSON.stringify(data), options).pipe(
       catchError(this.handleError),
