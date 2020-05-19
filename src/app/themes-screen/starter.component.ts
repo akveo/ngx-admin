@@ -1,16 +1,17 @@
-import {Component, OnDestroy} from '@angular/core';
-import {NbMediaBreakpoint} from '@nebular/theme';
-import {Router} from '@angular/router';
-import {AnalyticsService} from '../@core/utils';
-import {CurrentThemeService} from '../@core/utils/theme.service';
-import {Observable} from 'rxjs';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { NbMediaBreakpoint } from '@nebular/theme';
+import { Router } from '@angular/router';
+import { AnalyticsService } from '../@core/utils';
+import { CurrentThemeService } from '../@core/utils/theme.service';
+import { Observable } from 'rxjs';
+import { MetadataService } from '../@core/utils/metadata.service';
 
 @Component({
   selector: 'ngx-starter',
   templateUrl: './starter.component.html',
   styleUrls: ['./starter.component.scss'],
 })
-export class NgxStarterComponent implements OnDestroy {
+export class NgxStarterComponent implements OnDestroy, OnInit {
   breakpoint: NbMediaBreakpoint;
   breakpoints: any;
 
@@ -50,7 +51,14 @@ export class NgxStarterComponent implements OnDestroy {
   constructor(private router: Router,
               private currentThemeService: CurrentThemeService,
               private analytics: AnalyticsService,
+              private metadataService: MetadataService,
               ) {}
+
+  ngOnInit(): void {
+    this.metadataService.updateTitle('Ngx-admin themes for e-commerce dashboard on Angular 9+ and Nebular');
+    this.metadataService.updateDescription('Choose a theme for ngx-admin e-commerce dashboard: Material, Light and Dark, Cosmic and Corporate.');
+    this.metadataService.updateKeywords('Ngx-admin themes, material theme, ngx-admin cosmic, ngx-admin corporate theme, dark theme ngx-admin');
+  }
 
   navigate(themeName: string) {
     this.currentThemeService.setCurrentTheme(themeName);
