@@ -1,0 +1,29 @@
+
+name: Deploy docs
+
+on:
+  push:
+    branches:
+      - 'demo'
+    paths:
+      - 'docs/**'
+  repository_dispatch:
+    types: deploy-docs
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Use Node.js 12.x
+        uses: actions/setup-node@v1
+      - uses: actions/checkout@v2
+        with:
+          ref: demo
+      - name: Deploy
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        run: |
+          npm install --silent
+          git config --global user.email "github-action@akveo.com"
+          git config --global user.name "Github Action"
+          npm run docs:gh-pages
