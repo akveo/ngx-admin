@@ -1,19 +1,18 @@
 import { Component, Inject, Input } from '@angular/core';
 import { NbWindowRef, NB_WINDOW_CONTEXT } from '@nebular/theme';
 import { PromotionList } from '../../../@core/data/promotion';
-import { PromotionService } from '../promotion.service';
-import { NgForm } from '@angular/forms';
+import { PartnerPriceService } from '../partner-price.service';
 
 @Component({
-  selector: 'ngx-promotion-detail',
-  templateUrl: './promotion-detail.component.html',
-  styleUrls: ['promotion-detail.component.scss'],
+  selector: 'ngx-partner-price-detail',
+  templateUrl: './partner-price-detail.component.html',
+  styleUrls: ['partner-price-detail.component.scss'],
 })
-export class PromotionDetailComponent {
+export class PartnerPriceDetailComponent {
 
   @Input() data: PromotionList;
 
-  constructor(private service: PromotionService, public windowRef: NbWindowRef, @Inject(NB_WINDOW_CONTEXT) context) {
+  constructor(private service: PartnerPriceService, public windowRef: NbWindowRef, @Inject(NB_WINDOW_CONTEXT) context) {
     if (context != null) {
       this.data = Object.assign({}, context.data);
     }

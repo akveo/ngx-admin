@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { PromotionList } from '../../@core/data/promotion';
-import { PromotionService } from './promotion.service';
-import { PromotionDetailComponent } from './promotion-detail/promotion-detail.component';
+import { PartnerPriceService } from './partner-price.service';
+import { PartnerPriceDetailComponent } from './partner-price-detail/partner-price-detail.component';
 import { NbWindowService } from '@nebular/theme';
 
 @Component({
-  selector: 'ngx-promotion',
-  templateUrl: './promotion.component.html',
-  styleUrls: ['./promotion.component.scss'],
+  selector: 'ngx-partner-price',
+  templateUrl: './partner-price.component.html',
+  styleUrls: ['./partner-price.component.scss'],
 })
-export class PromotionComponent implements OnInit {
+export class PartnerPriceComponent implements OnInit {
   settings = {
     mode: 'inline',
     add: {
@@ -22,7 +22,6 @@ export class PromotionComponent implements OnInit {
       editButtonContent: '<i class="nb-edit"></i>',
       saveButtonContent: '<i class="nb-checkmark"></i>',
       cancelButtonContent: '<i class="nb-close"></i>',
-      confirmSave: true,
     },
     delete: {
       deleteButtonContent: '<i class="nb-trash"></i>',
@@ -50,7 +49,7 @@ export class PromotionComponent implements OnInit {
 
   source: PromotionList[] = [];
 
-  constructor(private service: PromotionService, private windowService: NbWindowService) {
+  constructor(private service: PartnerPriceService, private windowService: NbWindowService) {
 
   }
 
@@ -85,7 +84,7 @@ export class PromotionComponent implements OnInit {
   }
 
   openWindowForm(event) {
-    this.windowService.open(PromotionDetailComponent, {
+    this.windowService.open(PartnerPriceDetailComponent, {
       title: 'Promotion Detail',
       context: {
         data: event.data,

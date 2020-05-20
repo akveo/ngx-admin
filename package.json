@@ -59,6 +59,7 @@
     "ionicons": "2.0.1",
     "leaflet": "1.2.0",
     "nebular-icons": "1.1.0",
+    "ng-pick-datetime": "^7.0.0",
     "ng2-ckeditor": "^1.2.2",
     "ng2-smart-table": "^1.6.0",
     "ngx-echarts": "^4.2.2",

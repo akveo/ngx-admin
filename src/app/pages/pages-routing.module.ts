@@ -4,6 +4,7 @@ import {NgModule} from '@angular/core';
 import {PagesComponent} from './pages.component';
 import {NotFoundComponent} from './miscellaneous/not-found/not-found.component';
 import {PromotionComponent} from './promotion/promotion.component';
+import { PartnerPriceComponent } from './partner-price/partner-price.component';
 
 const routes: Routes = [{
   path: '',
@@ -14,7 +15,19 @@ const routes: Routes = [{
       component: PromotionComponent,
     },
     {
-      path: 'tbd',
+      path: 'partner-price',
+      component: PartnerPriceComponent,
+    },
+    {
+      path: 'service-agreement',
+      component: NotFoundComponent,
+    },
+    {
+      path: 'partner-branch',
+      component: NotFoundComponent,
+    },
+    {
+      path: 'billing',
       component: NotFoundComponent,
     },
   ],

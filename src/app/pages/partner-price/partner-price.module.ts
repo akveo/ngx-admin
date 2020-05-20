@@ -6,14 +6,13 @@ import {
   NbTreeGridModule,
   NbButtonModule,
   NbCheckboxModule,
-  NbRadioModule
-} from '@nebular/theme';
+  NbRadioModule} from '@nebular/theme';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
 
 import { ThemeModule } from '../../@theme/theme.module';
-import { PromotionComponent } from './promotion.component';
-import { PromotionService } from './promotion.service';
-import { PromotionDetailComponent } from './promotion-detail/promotion-detail.component';
+import { PartnerPriceComponent } from './partner-price.component';
+import { PartnerPriceService } from './partner-price.service';
+import { PartnerPriceDetailComponent } from './partner-price-detail/partner-price-detail.component';
 import { FormsModule } from '@angular/forms';
 
 @NgModule({
@@ -30,15 +29,15 @@ import { FormsModule } from '@angular/forms';
     FormsModule,
   ],
   declarations: [
-    PromotionComponent,
-    PromotionDetailComponent,
+    PartnerPriceComponent,
+    PartnerPriceDetailComponent,
   ],
   providers: [
-    PromotionService,
-    PromotionDetailComponent,
+    PartnerPriceService,
+    PartnerPriceDetailComponent,
   ],
   entryComponents: [
-    PromotionDetailComponent,
+    PartnerPriceDetailComponent,
   ],
 })
 export class PromotionModule { }

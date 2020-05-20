@@ -4,19 +4,19 @@ export const MENU_ITEMS: NbMenuItem[] = [
   {
     title: 'Service Agreement',
     icon: 'edit-2-outline',
-    link: '/pages/tbd',
+    link: '/pages/service-agreement',
     home: false,
   },
   {
     title: 'Partner Price',
     icon: 'keypad-outline',
-    link: '/pages/tbd',
+    link: '/pages/partner-price',
     home: false,
   },
   {
     title: 'Billing',
     icon: 'shopping-cart-outline',
-    link: '/pages/tbd',
+    link: '/pages/billing',
     home: false,
   },
   {
@@ -28,7 +28,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
   {
     title: 'Partner Branch',
     icon: 'shuffle-2-outline',
-    link: '/pages/tbd',
+    link: '/pages/partner-branch',
     home: false,
   },
 ];
