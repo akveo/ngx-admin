@@ -8,11 +8,11 @@
 ### Backend Integration Bundles
 Easy way to integrate ngx-admin with backend (.NET, Node.js, Java etc.).
 
-<a target="_blank" href="https://hubs.ly/H0nF3wk0">
+<a target="_blank" href="https://hubs.ly/H0qwC1L0">
   <img src="https://i.imgur.com/Ywbs8cl.png"/>
 </a>
 
-[Checkout our Store](https://hubs.ly/H0nF2Zn0) for ready to use Backend Bundles.
+[Checkout our Store](https://hubs.ly/H0qwC2Q0) for ready to use Backend Bundles.
 
 
 ### With 3 stunning visual themes
