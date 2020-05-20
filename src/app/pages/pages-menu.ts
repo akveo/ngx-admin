@@ -18,27 +18,35 @@ export const MENU_ITEMS: NbMenuItem[] = [
     children: [
       {
         title: 'PHP',
-        url: 'https://hubs.ly/H0q96Mc0',
+        url: 'https://hubs.ly/H0qwPw70',
       },
       {
         title: '.NET',
-        url: 'https://hubs.ly/H0q973f0',
+        url: 'https://hubs.ly/H0qwPy20',
       },
       {
         title: '.NET Core',
-        url: 'https://hubs.ly/H0q975F0',
+        url: 'https://hubs.ly/H0qwNC10',
       },
       {
         title: 'Node JS',
-        url: 'https://hubs.ly/H0q976N0',
+        url: 'https://hubs.ly/H0qwPDb0',
       },
       {
         title: 'Java',
-        url: 'https://hubs.ly/H0q978N0',
+        url: 'https://hubs.ly/H0qwPFh0',
       },
       {
         title: 'Python',
-        url: 'https://hubs.ly/H0q979V0',
+        url: 'https://hubs.ly/H0qwPGY0',
+      },
+      {
+        title: 'E-commerce',
+        url: 'https://hubs.ly/H0qwNG80',
+      },
+      {
+        title: 'IoT',
+        url: 'https://hubs.ly/H0qwPLl0',
       },
     ],
   },
