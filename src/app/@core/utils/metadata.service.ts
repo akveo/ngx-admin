@@ -9,17 +9,18 @@ export class MetadataService {
     private meta: Meta,
   ) {}
 
-  updateTitle(title: string) {
+  updateTitle(title: string): void {
     this.title.setTitle(title);
     this.meta.updateTag({ property: 'og:title', content: title });
   }
 
-  updateDescription(desc: string) {
+  updateDescription(desc: string): void {
     this.meta.updateTag({ name: 'description', content: desc });
     this.meta.updateTag({ property: 'og:description', content: desc });
   }
 
-
-
+  updateKeywords(keywords: string): void {
+    this.meta.updateTag({ name: 'keywords', content: keywords });
+  }
 
 }
