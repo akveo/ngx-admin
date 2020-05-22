@@ -147,6 +147,10 @@
             "typeCheck": true,
             "exclude": []
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {}
         }
       }
     },

@@ -4876,8 +4876,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppRoutingModule", function() { return AppRoutingModule; });
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
-/* harmony import */ var _nebular_auth__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @nebular/auth */ "./node_modules/@nebular/auth/__ivy_ngcc__/fesm2015/index.js");
-
 
 
 
@@ -4890,50 +4888,21 @@ const routes = [
     },
     {
         path: 'auth',
-        component: _nebular_auth__WEBPACK_IMPORTED_MODULE_2__["NbAuthComponent"],
-        children: [
-            {
-                path: '',
-                component: _nebular_auth__WEBPACK_IMPORTED_MODULE_2__["NbLoginComponent"],
-            },
-            {
-                path: 'login',
-                component: _nebular_auth__WEBPACK_IMPORTED_MODULE_2__["NbLoginComponent"],
-            },
-            {
-                path: 'register',
-                component: _nebular_auth__WEBPACK_IMPORTED_MODULE_2__["NbRegisterComponent"],
-            },
-            {
-                path: 'logout',
-                component: _nebular_auth__WEBPACK_IMPORTED_MODULE_2__["NbLogoutComponent"],
-            },
-            {
-                path: 'request-password',
-                component: _nebular_auth__WEBPACK_IMPORTED_MODULE_2__["NbRequestPasswordComponent"],
-            },
-            {
-                path: 'reset-password',
-                component: _nebular_auth__WEBPACK_IMPORTED_MODULE_2__["NbResetPasswordComponent"],
-            },
-        ],
+        loadChildren: () => __webpack_require__.e(/*! import() | auth-login-module */ "auth-login-module").then(__webpack_require__.bind(null, /*! ./auth/login.module */ "./src/app/auth/login.module.ts")).then(m => m.AuthModule),
     },
-    { path: '', redirectTo: 'pages', pathMatch: 'full' },
-    { path: '**', redirectTo: 'pages' },
+    { path: '', redirectTo: 'auth', pathMatch: 'full' },
+    { path: '**', redirectTo: 'auth' },
 ];
-const config = {
-    useHash: false,
-};
 class AppRoutingModule {
 }
 AppRoutingModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineNgModule"]({ type: AppRoutingModule });
-AppRoutingModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector"]({ factory: function AppRoutingModule_Factory(t) { return new (t || AppRoutingModule)(); }, imports: [[_angular_router__WEBPACK_IMPORTED_MODULE_0__["RouterModule"].forRoot(routes, config)],
+AppRoutingModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector"]({ factory: function AppRoutingModule_Factory(t) { return new (t || AppRoutingModule)(); }, imports: [[_angular_router__WEBPACK_IMPORTED_MODULE_0__["RouterModule"].forRoot(routes)],
         _angular_router__WEBPACK_IMPORTED_MODULE_0__["RouterModule"]] });
 (function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵsetNgModuleScope"](AppRoutingModule, { imports: [_angular_router__WEBPACK_IMPORTED_MODULE_0__["RouterModule"]], exports: [_angular_router__WEBPACK_IMPORTED_MODULE_0__["RouterModule"]] }); })();
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵsetClassMetadata"](AppRoutingModule, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"],
         args: [{
-                imports: [_angular_router__WEBPACK_IMPORTED_MODULE_0__["RouterModule"].forRoot(routes, config)],
+                imports: [_angular_router__WEBPACK_IMPORTED_MODULE_0__["RouterModule"].forRoot(routes)],
                 exports: [_angular_router__WEBPACK_IMPORTED_MODULE_0__["RouterModule"]],
             }]
     }], null, null); })();
@@ -4952,9 +4921,7 @@ AppRoutingModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineI
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppComponent", function() { return AppComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
-/* harmony import */ var _core_utils_analytics_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./@core/utils/analytics.service */ "./src/app/@core/utils/analytics.service.ts");
-/* harmony import */ var _core_utils_seo_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./@core/utils/seo.service */ "./src/app/@core/utils/seo.service.ts");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
 /**
  * @license
  * Copyright Akveo. All Rights Reserved.
@@ -4963,31 +4930,19 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
-
-
-
 class AppComponent {
-    constructor(analytics, seoService) {
-        this.analytics = analytics;
-        this.seoService = seoService;
-    }
-    ngOnInit() {
-        this.analytics.trackPageViews();
-        this.seoService.trackCanonicalChanges();
-    }
 }
-AppComponent.ɵfac = function AppComponent_Factory(t) { return new (t || AppComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_core_utils_analytics_service__WEBPACK_IMPORTED_MODULE_1__["AnalyticsService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_core_utils_seo_service__WEBPACK_IMPORTED_MODULE_2__["SeoService"])); };
+AppComponent.ɵfac = function AppComponent_Factory(t) { return new (t || AppComponent)(); };
 AppComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: AppComponent, selectors: [["ngx-app"]], decls: 1, vars: 0, template: function AppComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "router-outlet");
-    } }, directives: [_angular_router__WEBPACK_IMPORTED_MODULE_3__["RouterOutlet"]], encapsulation: 2 });
+    } }, directives: [_angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterOutlet"]], encapsulation: 2 });
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](AppComponent, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
         args: [{
                 selector: 'ngx-app',
                 template: '<router-outlet></router-outlet>',
             }]
-    }], function () { return [{ type: _core_utils_analytics_service__WEBPACK_IMPORTED_MODULE_1__["AnalyticsService"] }, { type: _core_utils_seo_service__WEBPACK_IMPORTED_MODULE_2__["SeoService"] }]; }, null); })();
+    }], null, null); })();
 
 
 /***/ }),
@@ -5012,11 +4967,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
 /* harmony import */ var _nebular_theme__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @nebular/theme */ "./node_modules/@nebular/theme/__ivy_ngcc__/fesm2015/index.js");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/__ivy_ngcc__/fesm2015/forms.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js");
+/* harmony import */ var _nebular_auth__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @nebular/auth */ "./node_modules/@nebular/auth/__ivy_ngcc__/fesm2015/index.js");
 /**
  * @license
  * Copyright Akveo. All Rights Reserved.
  * Licensed under the MIT License. See License.txt in the project root for license information.
  */
+
+
+
 
 
 
@@ -5051,12 +5011,32 @@ AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineInjector
             }),
             _core_core_module__WEBPACK_IMPORTED_MODULE_4__["CoreModule"].forRoot(),
             _theme_theme_module__WEBPACK_IMPORTED_MODULE_5__["ThemeModule"].forRoot(),
+            _angular_common__WEBPACK_IMPORTED_MODULE_10__["CommonModule"],
+            _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClientModule"],
+            _nebular_theme__WEBPACK_IMPORTED_MODULE_8__["NbLayoutModule"],
+            _nebular_theme__WEBPACK_IMPORTED_MODULE_8__["NbCardModule"],
+            _nebular_theme__WEBPACK_IMPORTED_MODULE_8__["NbButtonModule"],
+            _app_routing_module__WEBPACK_IMPORTED_MODULE_7__["AppRoutingModule"],
+            _nebular_auth__WEBPACK_IMPORTED_MODULE_11__["NbAuthModule"].forRoot({
+                strategies: [
+                    _nebular_auth__WEBPACK_IMPORTED_MODULE_11__["NbDummyAuthStrategy"].setup({
+                        name: 'email',
+                        alwaysFail: true,
+                        delay: 1000,
+                    }),
+                ],
+            }),
         ]] });
 (function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵsetNgModuleScope"](AppModule, { declarations: [_app_component__WEBPACK_IMPORTED_MODULE_6__["AppComponent"]], imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
         _angular_forms__WEBPACK_IMPORTED_MODULE_9__["FormsModule"],
         _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_1__["BrowserAnimationsModule"],
         _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClientModule"],
-        _app_routing_module__WEBPACK_IMPORTED_MODULE_7__["AppRoutingModule"], _nebular_theme__WEBPACK_IMPORTED_MODULE_8__["NbSidebarModule"], _nebular_theme__WEBPACK_IMPORTED_MODULE_8__["NbMenuModule"], _nebular_theme__WEBPACK_IMPORTED_MODULE_8__["NbDatepickerModule"], _nebular_theme__WEBPACK_IMPORTED_MODULE_8__["NbDialogModule"], _nebular_theme__WEBPACK_IMPORTED_MODULE_8__["NbWindowModule"], _nebular_theme__WEBPACK_IMPORTED_MODULE_8__["NbToastrModule"], _nebular_theme__WEBPACK_IMPORTED_MODULE_8__["NbChatModule"], _core_core_module__WEBPACK_IMPORTED_MODULE_4__["CoreModule"], _theme_theme_module__WEBPACK_IMPORTED_MODULE_5__["ThemeModule"]] }); })();
+        _app_routing_module__WEBPACK_IMPORTED_MODULE_7__["AppRoutingModule"], _nebular_theme__WEBPACK_IMPORTED_MODULE_8__["NbSidebarModule"], _nebular_theme__WEBPACK_IMPORTED_MODULE_8__["NbMenuModule"], _nebular_theme__WEBPACK_IMPORTED_MODULE_8__["NbDatepickerModule"], _nebular_theme__WEBPACK_IMPORTED_MODULE_8__["NbDialogModule"], _nebular_theme__WEBPACK_IMPORTED_MODULE_8__["NbWindowModule"], _nebular_theme__WEBPACK_IMPORTED_MODULE_8__["NbToastrModule"], _nebular_theme__WEBPACK_IMPORTED_MODULE_8__["NbChatModule"], _core_core_module__WEBPACK_IMPORTED_MODULE_4__["CoreModule"], _theme_theme_module__WEBPACK_IMPORTED_MODULE_5__["ThemeModule"], _angular_common__WEBPACK_IMPORTED_MODULE_10__["CommonModule"],
+        _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClientModule"],
+        _nebular_theme__WEBPACK_IMPORTED_MODULE_8__["NbLayoutModule"],
+        _nebular_theme__WEBPACK_IMPORTED_MODULE_8__["NbCardModule"],
+        _nebular_theme__WEBPACK_IMPORTED_MODULE_8__["NbButtonModule"],
+        _app_routing_module__WEBPACK_IMPORTED_MODULE_7__["AppRoutingModule"], _nebular_auth__WEBPACK_IMPORTED_MODULE_11__["NbAuthModule"]] }); })();
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵsetClassMetadata"](AppModule, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_2__["NgModule"],
         args: [{
@@ -5080,6 +5060,21 @@ AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineInjector
                     }),
                     _core_core_module__WEBPACK_IMPORTED_MODULE_4__["CoreModule"].forRoot(),
                     _theme_theme_module__WEBPACK_IMPORTED_MODULE_5__["ThemeModule"].forRoot(),
+                    _angular_common__WEBPACK_IMPORTED_MODULE_10__["CommonModule"],
+                    _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClientModule"],
+                    _nebular_theme__WEBPACK_IMPORTED_MODULE_8__["NbLayoutModule"],
+                    _nebular_theme__WEBPACK_IMPORTED_MODULE_8__["NbCardModule"],
+                    _nebular_theme__WEBPACK_IMPORTED_MODULE_8__["NbButtonModule"],
+                    _app_routing_module__WEBPACK_IMPORTED_MODULE_7__["AppRoutingModule"],
+                    _nebular_auth__WEBPACK_IMPORTED_MODULE_11__["NbAuthModule"].forRoot({
+                        strategies: [
+                            _nebular_auth__WEBPACK_IMPORTED_MODULE_11__["NbDummyAuthStrategy"].setup({
+                                name: 'email',
+                                alwaysFail: true,
+                                delay: 1000,
+                            }),
+                        ],
+                    }),
                 ],
                 bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_6__["AppComponent"]],
             }]
