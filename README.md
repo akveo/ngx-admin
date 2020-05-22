@@ -2,38 +2,42 @@
 
 [Who uses ngx-admin?](https://github.com/akveo/ngx-admin/issues/1645)| [Documentation](https://akveo.github.io/ngx-admin/?utm_source=github&utm_medium=ngx_admin_readme&utm_campaign=themes) | [Installation Guidelines](https://akveo.github.io/ngx-admin/docs/getting-started/what-is-ngxadmin?utm_source=github&utm_medium=ngx_admin_readme&utm_campaign=themes)
 
-# Admin template based on Angular 8+ and <a href="https://github.com/akveo/nebular">Nebular</a>
+# Admin template based on Angular 9+ and <a href="https://github.com/akveo/nebular">Nebular</a>
 <a target="_blank" href="http://akveo.com/ngx-admin/pages/dashboard?theme=corporate&utm_source=github&utm_medium=ngx_admin_readme&utm_campaign=main_pic"><img src="https://i.imgur.com/mFdqvgG.png"/></a>
 
 ### Backend Integration Bundles
 Easy way to integrate ngx-admin with backend (.NET, Node.js, Java etc.).
 
-<a target="_blank" href="https://hubs.ly/H0qwC1L0">
+<a target="_blank" href="https://hubs.ly/H0n4ZxC0">
   <img src="https://i.imgur.com/Ywbs8cl.png"/>
 </a>
 
 [Checkout our Store](https://hubs.ly/H0qwC2Q0) for ready to use Backend Bundles.
 
+### With 6 stunning visual themes
 
-### With 3 stunning visual themes
 
+#### Material Dark
+<a target="_blank" href="https://hubs.ly/H0nxM3b0"><img src="https://i.imgur.com/csP0aZ9.png"/></a>
 
+#### Material Light
+<a target="_blank" href="https://hubs.ly/H0nxNmv0"><img src="https://i.imgur.com/J5Rmgn4.png"/></a>
 
 #### Default
-<a target="_blank" href="http://akveo.com/ngx-admin/pages/dashboard?theme=default&utm_source=github&utm_medium=ngx_admin_readme&utm_campaign=themes"><img src="https://i.imgur.com/Kn3xDKQ.png"/></a>
+<a target="_blank" href="https://hubs.ly/H0n4Tgv0"><img src="https://i.imgur.com/Kn3xDKQ.png"/></a>
 
 #### Dark
-<a target="_blank" href="http://akveo.com/ngx-admin/pages/dashboard?theme=dark&utm_source=github&utm_medium=ngx_admin_readme&utm_campaign=themes"><img src="https://i.imgur.com/FAn5iXY.png"/></a>
+<a target="_blank" href="https://hubs.ly/H0n4Th20"><img src="https://i.imgur.com/FAn5iXY.png"/></a>
 
 #### Cosmic
-<a target="_blank" href="http://akveo.com/ngx-admin/pages/dashboard?theme=cosmic&utm_source=github&utm_medium=ngx_admin_readme&utm_campaign=themes"><img src="https://i.imgur.com/iJu2YDF.png"/></a>
+<a target="_blank" href="https://hubs.ly/H0n4Tj80"><img src="https://i.imgur.com/iJu2YDF.png"/></a>
 
 #### Corporate
-<a target="_blank" href="http://akveo.com/ngx-admin/pages/dashboard?theme=corporate&utm_source=github&utm_medium=ngx_admin_readme&utm_campaign=themes"><img src="https://i.imgur.com/GpUt6NW.png"/></a>
+<a target="_blank" href="https://hubs.ly/H0n4TDQ0"><img src="https://i.imgur.com/GpUt6NW.png"/></a>
 
 ### What's included:
 
-- Angular 8+ & Typescript
+- Angular 9+ & Typescript
 - Bootstrap 4+ & SCSS
 - Responsive layout
 - RTL support
