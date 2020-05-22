@@ -1,11 +1,11 @@
 <nb-card>
   <nb-card-header>
-    Partner Price
+    Partner Price - dev 90%
   </nb-card-header>
 
   <nb-card-body>
     <ng2-smart-table [settings]="settings" [source]="source" (deleteConfirm)="onDeleteConfirm($event)"
-      (createConfirm)="onCreateConfirm($event)" (userRowSelect)="openWindowForm($event)">
+      (createConfirm)="onCreateConfirm($event)" (userRowSelect)="openWindowForm($event)" (create)="openCreateDialog($event)">
     </ng2-smart-table>
   </nb-card-body>
 </nb-card>

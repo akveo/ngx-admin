@@ -19,8 +19,13 @@ import {
   NbSidebarModule,
   NbToastrModule,
   NbWindowModule,
+  NbLayoutModule,
+  NbCardModule,
+  NbButtonModule,
 } from '@nebular/theme';
 import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { NbAuthModule, NbDummyAuthStrategy } from '@nebular/auth';
 
 @NgModule({
   declarations: [

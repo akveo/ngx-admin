@@ -11,13 +11,5 @@ import { SeoService } from './@core/utils/seo.service';
   selector: 'ngx-app',
   template: '<router-outlet></router-outlet>',
 })
-export class AppComponent implements OnInit {
-
-  constructor(private analytics: AnalyticsService, private seoService: SeoService) {
-  }
-
-  ngOnInit(): void {
-    this.analytics.trackPageViews();
-    this.seoService.trackCanonicalChanges();
-  }
+export class AppComponent {
 }

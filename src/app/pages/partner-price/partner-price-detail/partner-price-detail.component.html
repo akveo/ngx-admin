@@ -1,85 +1,37 @@
-<div class="row">
-  <div class="col-md-4">
-    <form>
-      <div class="form-group">
-        <label for="exampleInputEmail1" class="label">Partner Code</label>
-        <input nbInput fullWidth id="exampleInputEmail1" [(ngModel)]="data.customerID">
-      </div>
-      <div class="form-group">
-        <label for="exampleInputPassword1" class="label">User Id</label>
-        <input nbInput fullWidth id="exampleInputPassword1" [(ngModel)]="data.customerID">
-      </div>
-      <div class="form-group">
-        <label for="exampleInputEmail1" class="label">Promo Type</label>
-        <input nbInput fullWidth id="exampleInputEmail1" [(ngModel)]="data.promotionType">
-      </div>
-      <div class="form-group">
-        <label for="exampleInputPassword1" class="label">Periode </label>
-        <input nbInput fullWidth id="exampleInputPassword1" [(ngModel)]="data.validDay">
-      </div>
-      <div class="form-group">
-        <label for="exampleInputEmail1" class="label">Coupon Code</label>
-        <input nbInput fullWidth id="exampleInputEmail1" [(ngModel)]="data.code">
-      </div>
-      <div class="form-group">
-        <label for="exampleInputPassword1" class="label">Valid Start</label>
-        <input nbInput fullWidth id="exampleInputPassword1" [(ngModel)]="data.validFrom">
-      </div>
-    </form>
-  </div>
-  <div class="col-md-4">
-    <div class="form-group">
-      <label for="exampleInputPassword1" class="label">Valid End</label>
-      <input nbInput fullWidth id="exampleInputPassword1" [(ngModel)]="data.validTo">
-    </div>
-    <div class="form-group">
-      <label for="exampleInputPassword1" class="label">Promo</label>
-      <input type="number" nbInput fullWidth id="exampleInputPassword1" [(ngModel)]="data.value">
-    </div>
-    <div class="form-group">
-      <label for="exampleInputEmail1" class="label">Max. Promo</label>
-      <input type="number" nbInput fullWidth id="exampleInputEmail1" [(ngModel)]="data.maximumDiscount">
-    </div>
-    <div class="form-group">
-      <label for="exampleInputEmail1" class="label">Quota per User</label>
-      <input nbInput fullWidth id="exampleInputEmail1" [(ngModel)]="data.maximumPerUser">
-    </div>
-    <div class="form-group">
-      <label for="exampleInputPassword1" class="label">User Type</label>
-      <input nbInput fullWidth id="exampleInputPassword1" [(ngModel)]="data.customerType">
-    </div>
-    <div class="form-group">
-      <label for="exampleInputPassword1" class="label">Coverage Pickup</label>
-      <input nbInput fullWidth id="exampleInputPassword1" [(ngModel)]="data.coverage">
-    </div>
-  </div>
-  <div class="col-md-4">
-    <form>
-      <div class="form-group">
-        <label for="exampleInputPassword1" class="label">Product</label>
-        <input nbInput fullWidth id="exampleInputPassword1" [(ngModel)]="data.product">
-      </div>
-      <div class="form-group">
-        <label for="exampleInputPassword1" class="label">Promo (IDR)</label>
-        <input type="number" nbInput fullWidth id="exampleInputPassword1" [(ngModel)]="data.value">
-      </div>
-      <div class="form-group">
-        <label for="exampleInputPassword1" class="label">Promo (%)</label>
-        <input type="number" nbInput fullWidth id="exampleInputPassword1" [(ngModel)]="data.value">
-      </div>
-      <div class="form-group">
-        <label for="exampleInputPassword1" class="label">Max. Promo</label>
-        <input type="number" nbInput fullWidth id="exampleInputPassword1" [(ngModel)]="data.maximumDiscountValue">
-      </div>
-      <div class="form-group">
-        <label for="exampleInputPassword1" class="label">Budget</label>
-        <input type="number" nbInput fullWidth id="exampleInputPassword1" [(ngModel)]="data.maximumDiscount">
-      </div>
-      <div class="form-group">
-        <label for="exampleInputPassword1" class="label">Quota</label>
-        <input type="number" nbInput fullWidth id="exampleInputPassword1" [(ngModel)]="data.quota">
-      </div>
-      <button (click)="onSubmit()" type="submit" nbButton status="primary">Submit</button>
-    </form>
+<div class="form-group row">
+  <label class="label col-sm-3 col-form-label">Quotation No</label>
+  <div class="col-sm-9">
+    <input type="email" nbInput placeholder="Email">
   </div>
 </div>
+<div class="form-group row">
+  <label class="label col-sm-3 col-form-label">Partner</label>
+  <div class="col-sm-9">
+    <input nbInput placeholder="Password">
+  </div>
+</div>
+<div class="form-group row">
+  <label class="label col-sm-3 col-form-label">Status</label>
+  <div class="col-sm-9">
+    <label>*SDS price is for first 5kg, each additional kg is additional Rp.</label>
+    <input nbInput placeholder="Password">
+    <label>for shipment total up to 10kg</label>
+  </div>
+</div>
+<!-- <div class="form-group row">
+  <div class="offset-sm-3 col-sm-9">
+    <button (click)="onSubmit()" type="submit" nbButton status="primary">Sign in</button>
+  </div>
+</div> -->
+<div class="form-group row">
+  <label class="label col-sm-3 col-form-label">Add</label>
+  <div class="col-sm-9">
+    <input nbInput placeholder="Password">
+    <label>Flow(s)</label>
+    <!-- (click)="onSubmit()" -->
+    <button type="submit" nbButton status="primary">Go</button>  </div>
+</div>
+
+<ng2-smart-table [settings]="settings" [source]="data" (deleteConfirm)="onDeleteConfirm($event)"
+  (createConfirm)="onCreateConfirm($event)" (userRowSelect)="openWindowForm($event)">
+</ng2-smart-table>

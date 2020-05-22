@@ -2,7 +2,6 @@ import { Component, Inject, Input } from '@angular/core';
 import { NbWindowRef, NB_WINDOW_CONTEXT } from '@nebular/theme';
 import { PromotionList } from '../../../@core/data/promotion';
 import { PromotionService } from '../promotion.service';
-import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'ngx-promotion-detail',
@@ -19,7 +18,7 @@ export class PromotionDetailComponent {
     }
   }
 
-  onSubmit(){
+  onSubmit() {
     this.service.postPromotion(this.data).subscribe((value) => {
       this.close();
     });
@@ -28,4 +27,14 @@ export class PromotionDetailComponent {
   close() {
     this.windowRef.close();
   }
+
+  numberOnly(event): boolean {
+    const charCode = (event.which) ? event.which : event.keyCode;
+    if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+      return false;
+    }
+    return true;
+
+  }
+
 }

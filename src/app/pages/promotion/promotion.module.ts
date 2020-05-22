@@ -6,7 +6,9 @@ import {
   NbTreeGridModule,
   NbButtonModule,
   NbCheckboxModule,
-  NbRadioModule
+  NbRadioModule,
+  NbSelectModule,
+  NbDatepickerModule
 } from '@nebular/theme';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
 
@@ -28,6 +30,8 @@ import { FormsModule } from '@angular/forms';
     NbCheckboxModule,
     Ng2SmartTableModule,
     FormsModule,
+    NbSelectModule,
+    NbDatepickerModule,
   ],
   declarations: [
     PromotionComponent,

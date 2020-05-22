@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { PromotionList } from '../../@core/data/promotion';
 import { PartnerPriceService } from './partner-price.service';
 import { PartnerPriceDetailComponent } from './partner-price-detail/partner-price-detail.component';
 import { NbWindowService } from '@nebular/theme';
+import { PartnerPrice } from '../../@core/data/partner-price';
 
 @Component({
   selector: 'ngx-partner-price',
@@ -11,7 +11,7 @@ import { NbWindowService } from '@nebular/theme';
 })
 export class PartnerPriceComponent implements OnInit {
   settings = {
-    mode: 'inline',
+    mode: 'external',
     add: {
       addButtonContent: '<i class="nb-plus"></i>',
       createButtonContent: '<i class="nb-checkmark"></i>',
@@ -28,26 +28,39 @@ export class PartnerPriceComponent implements OnInit {
       confirmDelete: true,
     },
     columns: {
-      code: {
-        title: 'Coupon Code',
+      customerCode: {
+        title: 'Partner Code',
         type: 'string',
       },
-      validDay: {
-        title: 'Period',
+      customerName: {
+        title: 'Partner Name',
         type: 'string',
       },
-      validFrom: {
-        title: 'Valid Start',
+      quotationNo: {
+        title: 'Reference',
         type: 'string',
       },
-      validTo: {
-        title: 'Valid End',
+      modifiedBy: {
+        title: 'Modified by',
+        type: 'string',
+      },
+      modifiedTm: {
+        title: 'Modified Date',
+        type: 'string',
+      },
+      status: {
+        title: 'Status',
         type: 'string',
       },
     },
   };
 
-  source: PromotionList[] = [];
+  filter: any = {
+    start: 0,
+    column: 'customerCode',
+  }
+
+  source: PartnerPrice[] = [];
 
   constructor(private service: PartnerPriceService, private windowService: NbWindowService) {
 
@@ -57,8 +70,8 @@ export class PartnerPriceComponent implements OnInit {
     this.initData();
   }
 
-  initData(){
-    this.service.getPromotion().subscribe((result) => {
+  initData() {
+    this.service.getHeaderPartnerPrice(this.filter).subscribe((result) => {
       this.source = Object.assign([], result);
     });
   }
@@ -66,7 +79,7 @@ export class PartnerPriceComponent implements OnInit {
   onCreateConfirm(event) {
     if (window.confirm('Are you sure you want to save?')) {
       event.newData.status = 1;
-      this.service.postPromotion(event.newData).subscribe((value) => {
+      this.service.getHeaderPartnerPrice(event.newData).subscribe((value) => {
         this.initData();
       });
       event.confirm.resolve(event.newData);
@@ -83,9 +96,14 @@ export class PartnerPriceComponent implements OnInit {
     }
   }
 
+  openCreateDialog(event) {
+
+    //logic
+  }
+
   openWindowForm(event) {
     this.windowService.open(PartnerPriceDetailComponent, {
-      title: 'Promotion Detail',
+      title: 'Partner Price Detail',
       context: {
         data: event.data,
       },

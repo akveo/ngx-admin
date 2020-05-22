@@ -12,8 +12,10 @@ export class PromotionService {
   constructor(private http: HttpClient) {
   }
 
+  // 34.87.6.140
+
   getPromotion(): Observable<any> {
-    const url = 'http://localhost:8011/api/promotions/all';
+    const url = 'http://34.87.6.140:8011/api/promotions/all';
     return this.http.get(url).pipe(
       map(this.extractData),
       catchError(this.handleError),
@@ -26,8 +28,21 @@ export class PromotionService {
       'X-Requested-Method': 'POST',
     });
     const options = { headers: headers };
-    const url = 'http://localhost:8011/api/promotions/add';
+    const url = 'http://34.87.6.140:8011/api/promotions/add';
     return this.http.post(url, JSON.stringify(data), options).pipe(
+      catchError(this.handleError),
+    );
+  }
+
+  deletePromotion(data: PromotionList): Observable<any> {
+    const id = data.id;
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'X-Requested-Method': 'PUT',
+    });
+    const options = { headers: headers };
+    const url = 'http://34.87.6.140:8011/api/promotion/delete';
+    return this.http.put(url, id, options).pipe(
       catchError(this.handleError),
     );
   }

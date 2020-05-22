@@ -58,7 +58,7 @@ export class PromotionComponent implements OnInit {
     this.initData();
   }
 
-  initData(){
+  initData() {
     this.service.getPromotion().subscribe((result) => {
       this.source = Object.assign([], result);
     });
@@ -78,6 +78,9 @@ export class PromotionComponent implements OnInit {
 
   onDeleteConfirm(event): void {
     if (window.confirm('Are you sure you want to delete?')) {
+      this.service.deletePromotion(event.data).subscribe((value) => {
+        this.initData();
+      });
       event.confirm.resolve();
     } else {
       event.confirm.reject();
