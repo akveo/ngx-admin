@@ -5,7 +5,6 @@
  */
 import { Component, OnInit } from '@angular/core';
 import { AnalyticsService } from './@core/utils/analytics.service';
-import { SeoService } from './@core/utils/seo.service';
 
 @Component({
   selector: 'ngx-app',
@@ -13,11 +12,10 @@ import { SeoService } from './@core/utils/seo.service';
 })
 export class AppComponent implements OnInit {
 
-  constructor(private analytics: AnalyticsService, private seoService: SeoService) {
+  constructor(private analytics: AnalyticsService) {
   }
 
   ngOnInit() {
     this.analytics.trackPageViews();
-    this.seoService.trackCanonicalChanges();
   }
 }
