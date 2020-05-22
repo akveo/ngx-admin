@@ -6,6 +6,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { PromotionList } from '../../@core/data/promotion';
 import { PartnerPrice } from '../../@core/data/partner-price';
 import { PartnerPriceDetail } from '../../@core/data/partner-price-detail';
+import { PartnerPriceNew } from '../../@core/data/partner-price-new';
 
 @Injectable({
   providedIn: 'root',
@@ -30,6 +31,14 @@ export class PartnerPriceService {
     );
   }
 
+  getNewPrtnerPriceParam(): Observable<any>{
+    const url = 'http://34.87.6.140:8011/api/lov/getCustomerInput';
+    return this.http.post(url, null).pipe(
+      map(this.extractData),
+      catchError(this.handleError),
+    );
+  }
+
   // postPromotion(data: PromotionList): Observable<any> {
   //   const headers = new HttpHeaders({
   //     'Content-Type': 'application/json',
@@ -47,6 +56,11 @@ export class PartnerPriceService {
   }
 
   private extractDataDetail(body: any): PartnerPriceDetail[] {
+    return Object.assign(body.content);
+  }
+
+  
+  private extractDataParamNew(body: any): PartnerPriceNew[] {
     return Object.assign(body.content);
   }
 

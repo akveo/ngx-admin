@@ -1,0 +1,1 @@
+export interface PartnerPriceNew { lovCode: string, lovName: string }

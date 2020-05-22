@@ -1,0 +1,13 @@
+<div class="form-group row">
+    <label for="inputEmail1" class="label col-sm-3 col-form-label">Partner</label>
+    <nb-select *ngIf="items">
+        <ng-container *ngFor="let item of items">
+            <nb-option>{{ item }}</nb-option>
+        </ng-container>
+    </nb-select>
+</div>
+<div class="form-group row">
+    <div class="offset-sm-3 col-sm-9">
+        <button type="submit" nbButton status="primary">Submit</button>
+    </div>
+</div>

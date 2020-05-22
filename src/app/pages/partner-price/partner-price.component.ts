@@ -3,6 +3,7 @@ import { PartnerPriceService } from './partner-price.service';
 import { PartnerPriceDetailComponent } from './partner-price-detail/partner-price-detail.component';
 import { NbWindowService } from '@nebular/theme';
 import { PartnerPrice } from '../../@core/data/partner-price';
+import { PartnerPriceNewComponent } from './partner-price-new/partner-price-new.component';
 
 @Component({
   selector: 'ngx-partner-price',
@@ -97,8 +98,9 @@ export class PartnerPriceComponent implements OnInit {
   }
 
   openCreateDialog(event) {
-
-    //logic
+    this.windowService.open(PartnerPriceNewComponent, {
+      title: 'Add Partner Price',
+    });
   }
 
   openWindowForm(event) {
