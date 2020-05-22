@@ -48,6 +48,24 @@ import { NbAuthModule, NbDummyAuthStrategy } from '@nebular/auth';
     }),
     CoreModule.forRoot(),
     ThemeModule.forRoot(),
+
+    CommonModule,
+    HttpClientModule,
+    NbLayoutModule,
+    NbCardModule,
+    NbButtonModule,
+    AppRoutingModule,
+
+    NbAuthModule.forRoot({
+      strategies: [
+        NbDummyAuthStrategy.setup({
+          name: 'email',
+
+          alwaysFail: true,
+          delay: 1000,
+        }),
+      ],
+    }),
   ],
   bootstrap: [AppComponent],
 })

@@ -1,4 +1,3 @@
-
 /**
  * @license
  * Copyright Akveo. All Rights Reserved.
@@ -9,35 +8,24 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { NbAuthComponent } from '@nebular/auth';
 
-import { LoginComponent } from './login/login.component';
-import { AuthComponent } from './auth.component';
+import { LoginComponent } from './login.component';
 
 export const routes: Routes = [
-    
   {
     path: '',
-    component: AuthComponent,
+    component: NbAuthComponent,
     children: [
-        {
-          path: 'login',
-          component: LoginComponent,
-        },
-      ],
+      {
+        path: '',
+        component: LoginComponent,
+      },
+    ],
   },
   {
-    path: 'auth',
-    loadChildren: () => import('./auth.module').then(m => m.AuthModule),
+    path: 'pages',
+    loadChildren: () => import('../pages/pages.module')
+      .then(m => m.PagesModule),
   },
-//   {
-//     path: '',
-//     component: NbAuthComponent,
-//     children: [
-//       {
-//         path: 'login',
-//         component: LoginComponent,
-//       },
-//     ],
-//   },
 ];
 
 @NgModule({
