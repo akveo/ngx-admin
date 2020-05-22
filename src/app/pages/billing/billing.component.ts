@@ -1,74 +1,66 @@
 import { Component, OnInit } from '@angular/core';
-import { PromotionList } from '../../@core/data/promotion';
-import { PromotionService } from './promotion.service';
-import { PromotionDetailComponent } from './promotion-detail/promotion-detail.component';
+import { BillingList } from '../../@core/data/billing';
+import { BillingService } from './billing.service';
+import { BillingDetailComponent } from './billing-detail/billing-detail.component';
 import { NbWindowService } from '@nebular/theme';
 
 @Component({
-  selector: 'ngx-promotion',
-  templateUrl: './promotion.component.html',
-  styleUrls: ['./promotion.component.scss'],
+  selector: 'ngx-billing',
+  templateUrl: './billing.component.html',
+  styleUrls: ['./billing.component.scss'],
 })
-export class PromotionComponent implements OnInit {
+export class BillingComponent implements OnInit {
+
   settings = {
     mode: 'inline',
     add: {
       addButtonContent: '<i class="nb-plus"></i>',
       createButtonContent: '<i class="nb-checkmark"></i>',
       cancelButtonContent: '<i class="nb-close"></i>',
-      confirmCreate: true,
     },
     edit: {
       editButtonContent: '<i class="nb-edit"></i>',
       saveButtonContent: '<i class="nb-checkmark"></i>',
       cancelButtonContent: '<i class="nb-close"></i>',
-      confirmSave: true,
     },
     delete: {
       deleteButtonContent: '<i class="nb-trash"></i>',
       confirmDelete: true,
     },
     columns: {
-      code: {
-        title: 'Coupon Code',
+      customerCode: {
+        title: 'Partner Code',
         type: 'string',
       },
-      validDay: {
-        title: 'Period',
+      customerFullname: {
+        title: 'Partner Name',
         type: 'string',
       },
-      validFrom: {
-        title: 'Valid Start',
-        type: 'string',
-      },
-      validTo: {
-        title: 'Valid End',
+      nextBillTimeString: {
+        title: 'Next Billing',
         type: 'string',
       },
     },
   };
 
-  source: PromotionList[] = [];
+  source: BillingList[] = [];
 
-  constructor(private service: PromotionService, private windowService: NbWindowService) {
-
+  constructor(private service: BillingService, private windowService: NbWindowService) {
   }
 
   ngOnInit(): void {
     this.initData();
   }
-
-  initData() {
-    this.service.getPromotion().subscribe((result) => {
+  initData(){
+    this.service.getBilling().subscribe((result) => {
       this.source = Object.assign([], result);
       console.log('test', result);
     });
   }
-
   onCreateConfirm(event) {
     if (window.confirm('Are you sure you want to save?')) {
       event.newData.status = 1;
-      this.service.postPromotion(event.newData).subscribe((value) => {
+      this.service.postBilling(event.newData).subscribe((value) => {
         this.initData();
       });
       event.confirm.resolve(event.newData);
@@ -79,7 +71,7 @@ export class PromotionComponent implements OnInit {
 
   onDeleteConfirm(event): void {
     if (window.confirm('Are you sure you want to delete?')) {
-      this.service.deletePromotion(event.data).subscribe((value) => {
+      this.service.deleteBilling(event.data).subscribe((value) => {
         this.initData();
       });
       event.confirm.resolve();
@@ -87,10 +79,14 @@ export class PromotionComponent implements OnInit {
       event.confirm.reject();
     }
   }
-
+  
   openWindowForm(event) {
-    this.windowService.open(PromotionDetailComponent, {
-      title: 'Promotion Detail',
+    
+    let temp = event.data.billTitle.toString()
+    event.data.billTitle = temp
+    console.log('data kirim', event.data)
+    this.windowService.open(BillingDetailComponent, {
+      title: 'Billing Detail',
       context: {
         data: event.data,
       },

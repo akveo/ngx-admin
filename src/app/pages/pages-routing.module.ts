@@ -5,6 +5,8 @@ import {PagesComponent} from './pages.component';
 import {NotFoundComponent} from './miscellaneous/not-found/not-found.component';
 import {PromotionComponent} from './promotion/promotion.component';
 import { PartnerPriceComponent } from './partner-price/partner-price.component';
+import {BillingComponent} from './billing/billing.component';
+import {ServiceAgreementComponent} from './service-agreement/sa.component';
 
 const routes: Routes = [{
   path: '',
@@ -20,7 +22,7 @@ const routes: Routes = [{
     },
     {
       path: 'service-agreement',
-      component: NotFoundComponent,
+      component: ServiceAgreementComponent,
     },
     {
       path: 'partner-branch',
@@ -28,7 +30,7 @@ const routes: Routes = [{
     },
     {
       path: 'billing',
-      component: NotFoundComponent,
+      component: BillingComponent,
     },
   ],
 }];
