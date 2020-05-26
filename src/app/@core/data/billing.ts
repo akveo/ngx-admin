@@ -1,0 +1,85 @@
+export interface BillingList {
+    ebCustomerId: number;
+    customerCode: string;
+    customerCodeParent: string;
+    customerFullname: string;
+    customerShortname: string;
+    customerCoprName: string;
+    customerCoprAdd: string;
+    customerBusiness: string;
+    reconciliationName: string;
+    reconciliationHp: string;
+    reconciliationTel: string;
+    reconciliationEmail: string;
+    reconciliationAdd: string;
+    startTime: string;
+    endTime: string;
+    billTitle: number;
+    lastBillTm: string;
+    nextBillTm: string;
+    billCode: string;
+    payCycle?: number;
+    modifyTm: string;
+    isActive: number;
+    tax: number;
+    vat: number;
+    tipe: number;
+    price: number;
+    percentage: number;
+    state: string;
+    startTimeString: string;
+    endTimeString: string;
+    nextBillTimeString: string;
+    saNo: string;
+    requestType: string;
+    partnerBillCode: string;
+    itemType: string;
+    itemTypeOthers: string;
+    compName: number;
+    compIdNumber: string;
+    compIndustry: string;
+    compAddress: string;
+    compPhone: string;
+    compNoHp: string;
+    personalName: string;
+    personalJobTitle: string;
+    personalSiupNo: string;
+    personalNpwp: string;
+    personalEmail: string;
+    personalFaxNo: string;
+    personalAddress: string;
+    csName: string;
+    csAddress: string;
+    csContactName: string;
+    csHp: string;
+    csEmail: string;
+    financeName: string;
+    financeAddress: string;
+    financeContactName: string;
+    financeHp: string;
+    financeEmail: string;
+    serviceProfile: string;
+    pickupAddress: string;
+    paymentSurcharge: string;
+    paymentBillingCycle: string;
+    paymentTermOfPayment: string;
+    docCompany: string;
+    docPersonel: string;
+    signSalesName: string;
+    signSalesDate: string;
+    signVpSalesName: string;
+    signVpSalesDate: string;
+    signFinanceName: string;
+    signFinanceDate: string;
+    signVpFinanceName: string;
+    signVpFinanceDate: string;
+    partnerSignDate: string;
+    status: string;
+    ecmUrl: string;
+
+  }
+  
+  export interface RootObject {
+    billingList: BillingList[];
+  }
+  

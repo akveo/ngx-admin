@@ -1,0 +1,87 @@
+<div class="row">
+    <div class="col-md-4">
+      <div class="form-group">
+        <label class="label">Client</label>
+        <input nbInput fullWidth [(ngModel)]="data.customerCode" disabled>
+      </div>
+      <div class="form-group">
+        <label class="label">Partner Code</label>
+        <input nbInput fullWidth [(ngModel)]="data.customerCode" disabled>
+      </div>
+      <div class="form-group">
+        <label class="label">Partner Name</label>
+        <input nbInput fullWidth [(ngModel)]="data.customerFullname">
+      </div>
+      <div class="form-group">
+        <label class="label">Partner Short Name </label>
+        <input nbInput fullWidth [(ngModel)]="data.customerShortname">
+      </div>
+      <div class="form-group">
+            <label class="label">Start Time</label>
+            <input nbInput
+                   placeholder="Select Date"
+                   [nbDatepicker]="formpickerstart"
+                   [(ngModel)]="data.startTime">
+            <nb-datepicker #formpickerstart></nb-datepicker>
+      </div>
+      <div class="form-group">
+        <label class="label">End Time</label>
+            <input nbInput
+                   placeholder="Select Date"
+                   [nbDatepicker]="formpickerend"
+                   [(ngModel)]="data.endTime">
+            <nb-datepicker #formpickerend></nb-datepicker>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="form-group">
+        <label class="label">Bill Title</label>
+        <nb-card-body>
+            <nb-select [(selected)]="data.billTitle">
+              <nb-option value="1">Invoice</nb-option>
+              <nb-option value="2">Debit Note</nb-option>
+              <nb-option value="3">Surat Perintah Penagihan</nb-option>
+            </nb-select>
+          </nb-card-body>
+      </div>
+      <div class="form-group">
+        <label class="label">Bill Code</label>
+        <input nbInput fullWidth [(ngModel)]="data.billCode">
+      </div>
+      <div class="form-group">
+        <label class="label">Next Billing Time</label>
+            <input nbInput
+                   placeholder="Select Date"
+                   [nbDatepicker]="formpickernextbilling"
+                   [(ngModel)]="data.nextBillTm">
+            <nb-datepicker #formpickernextbilling></nb-datepicker>
+      </div>
+      <div class="form-group">
+        <label class="label">Tax</label>
+        <nb-radio-group [(value)]="data.tax">
+            <nb-radio
+              [value]="1">
+              Exclude
+            </nb-radio>
+            <nb-radio
+              [value]="2">
+              Include
+            </nb-radio>
+          </nb-radio-group>
+      </div>
+      <div class="form-group">
+        <label class="label">VAT</label>
+        <input nbInput [(ngModel)]="data.vat"> %
+      </div>
+      <div class="form-group">
+        <label class="label">Insurance</label>
+        Rp.<input nbInput [(ngModel)]="data.price">
+        <input nbInput fullWidth [(ngModel)]="data.percentage">%
+      </div>
+    </div>
+    <div class="form-group row">
+      <div class="col-md-4">
+        <button (click)="onSubmit()" type="submit" nbButton status="primary">Submit</button>
+      </div>
+    </div>
+  </div>
