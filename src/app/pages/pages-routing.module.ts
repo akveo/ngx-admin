@@ -5,6 +5,7 @@ import {PagesComponent} from './pages.component';
 import {NotFoundComponent} from './miscellaneous/not-found/not-found.component';
 import {PromotionComponent} from './promotion/promotion.component';
 import { PartnerPriceComponent } from './partner-price/partner-price.component';
+import { LoginComponent } from './auth/login.component';
 
 const routes: Routes = [{
   path: '',
@@ -29,6 +30,10 @@ const routes: Routes = [{
     {
       path: 'billing',
       component: NotFoundComponent,
+    },
+    {
+      path: 'auth',
+      component: LoginComponent,
     },
   ],
 }];
