@@ -1,14 +1,13 @@
-# ngx-admin [<img src="https://i.imgur.com/oMcxwZ0.png" alt="Eva Design System" height="20px" />](https://hubs.ly/H0n4ZDy0) [![Build Status](https://travis-ci.org/akveo/ngx-admin.svg?branch=master)](https://travis-ci.org/akveo/ngx-admin) [![Dependency Status](https://david-dm.org/akveo/ngx-admin/status.svg)](https://david-dm.org/akveo/ng2-admin)
+# ngx-admin [<img src="https://i.imgur.com/oMcxwZ0.png" alt="Eva Design System" height="20px" />](https://hubs.ly/H0n4ZDy0) [![Build Status](https://travis-ci.org/akveo/ngx-admin.svg?branch=master)](https://travis-ci.org/akveo/ngx-admin)
 
 [Who uses ngx-admin?](https://github.com/akveo/ngx-admin/issues/1645)| [Documentation](https://hubs.ly/H0n4Sfq0) | [Installation Guidelines](https://hubs.ly/H0n4Svc0)
 
 # New! Material theme for ngx-admin
 
-### Material admin theme is based on the most popular Angular dashboard template - [ngx-admin](https://hubs.ly/H0nJG1G0)
-### Included: Angular 9+, [Nebular](https://hubs.ly/H0nJG5g0) and [Eva design system](https://hubs.ly/H0nJGdC0). Free for personal and commercial usage.
-### Get material ngx-admin integrated with backend technology of your choice. [Check out our store](https://hubs.ly/H0qwyl60).
+Material admin theme is based on the most popular Angular dashboard template - [ngx-admin](https://hubs.ly/H0nJG1G0)
+To use material theme checkout `feat/material-theme` branch.
 
-<a target="_blank" href="https://hubs.ly/H0nxM3b0"><img src="https://i.imgur.com/67YAlhf.png"/></a>
+Get material ngx-admin integrated with backend technology of your choice. [Check out our store](https://hubs.ly/H0qwyl60).
 
 ## Key features
 
@@ -23,34 +22,24 @@
 <a target="_blank" href="https://hubs.ly/H0n4Sw20"><img src="https://i.imgur.com/mFdqvgG.png"/></a>
 
 ### Backend Integration Bundles
-Easy way to integrate ngx-admin with backend (.NET, Node.js, Java etc.).
-
-<a target="_blank" href="https://hubs.ly/H0qwyjm0">
-  <img src="https://i.imgur.com/Ywbs8cl.png"/>
-</a>
+Easy way to integrate ngx-admin with any backend (PHP, .Net, .Net Core, Java etc. )
+<a href="https://hubs.ly/H0qwyl60"><img src="https://i.imgur.com/qbtASmP.png"></a>
 
 [Check out our Store](https://hubs.ly/H0qwyl60) for ready to use Backend Bundles.
 
 ### With 6 stunning visual themes
 
+| <a target="_blank" href="https://hubs.ly/H0nxM3b0"><img src="https://i.imgur.com/67YAlhf.png"/></a> | <a target="_blank" href="https://hubs.ly/H0nxNmv0"><img src="https://i.imgur.com/aQzw0hD.png"/></a> |
+| --- | --- |
+|  Material Dark | Material Light |
 
-#### Material Dark
-<a target="_blank" href="https://hubs.ly/H0nxM3b0"><img src="https://i.imgur.com/67YAlhf.png"/></a>
+| <a target="_blank" href="https://hubs.ly/H0n4Th20"><img src="https://i.imgur.com/9UkTGgr.png"/></a> | <a target="_blank" href="https://hubs.ly/H0n4Tgv0"><img src="https://i.imgur.com/Kn3xDKQ.png"/></a> |
+| --- | --- |
+|  Dark| Default |
 
-#### Material Light
-<a target="_blank" href="https://hubs.ly/H0nxNmv0"><img src="https://i.imgur.com/aQzw0hD.png"/></a>
-
-#### Default
-<a target="_blank" href="https://hubs.ly/H0n4Tgv0"><img src="https://i.imgur.com/Kn3xDKQ.png"/></a>
-
-#### Dark
-<a target="_blank" href="https://hubs.ly/H0n4Th20"><img src="https://i.imgur.com/FAn5iXY.png"/></a>
-
-#### Cosmic
-<a target="_blank" href="https://hubs.ly/H0n4Tj80"><img src="https://i.imgur.com/iJu2YDF.png"/></a>
-
-#### Corporate
-<a target="_blank" href="https://hubs.ly/H0n4TDQ0"><img src="https://i.imgur.com/GpUt6NW.png"/></a>
+| <a target="_blank" href="https://hubs.ly/H0n4Tj80"><img src="https://i.imgur.com/iJu2YDF.png"/></a> | <a target="_blank" href="https://hubs.ly/H0n4TDQ0"><img src="https://i.imgur.com/GpUt6NW.png"/></a> |
+| --- | --- |
+| Cosmic  | Corporate |
 
 ### What's included:
 
