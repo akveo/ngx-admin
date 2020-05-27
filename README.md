@@ -5,8 +5,9 @@
 # New! Material theme for ngx-admin
 
 Material admin theme is based on the most popular Angular dashboard template - [ngx-admin](https://hubs.ly/H0nJG1G0)
+To use material theme checkout `feat/material-theme` branch.
+
 Get material ngx-admin integrated with backend technology of your choice. [Check out our store](https://hubs.ly/H0qwyl60).
-To use material theme checkout `feat/material-theme` branch
 
 ## Key features
 
@@ -36,9 +37,9 @@ Easy way to integrate ngx-admin with any backend (PHP, .Net, .Net Core, Java etc
 | --- | --- |
 |  Dark| Default |
 
-| <a target="_blank" href="https://hubs.ly/H0n4TDQ0"><img src="https://i.imgur.com/GpUt6NW.png"/></a> | <a target="_blank" href="https://hubs.ly/H0n4Tj80"><img src="https://i.imgur.com/iJu2YDF.png"/></a> |
+| <a target="_blank" href="https://hubs.ly/H0n4Tj80"><img src="https://i.imgur.com/iJu2YDF.png"/></a> | <a target="_blank" href="https://hubs.ly/H0n4TDQ0"><img src="https://i.imgur.com/GpUt6NW.png"/></a> |
 | --- | --- |
-|  Corporate | Cosmic |
+| Cosmic  | Corporate |
 
 ### What's included:
 
