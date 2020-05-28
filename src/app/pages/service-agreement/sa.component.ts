@@ -69,7 +69,16 @@ export class ServiceAgreementComponent implements OnInit{
     }
   }
     
-  openWindowForm() {
-    this.windowService.open(ServiceAgreementDetailComponent, { title: `Service Agreement Detail` });
+  openWindowForm(event) {
+    
+    // let temp = event.data.billTitle.toString()
+    // event.data.billTitle = temp
+    console.log('data kirim', event.data)
+    this.windowService.open(ServiceAgreementDetailComponent, {
+      title: 'Service Agreement Detail',
+      context: {
+        data: event.data,
+      },
+    });
   }
 }

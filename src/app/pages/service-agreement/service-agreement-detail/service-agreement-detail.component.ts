@@ -1,20 +1,31 @@
-import { Component } from '@angular/core';
-import { NbWindowRef } from '@nebular/theme';
+import { Component, Inject, Input, ChangeDetectorRef } from '@angular/core';
+import { NbWindowRef, NB_WINDOW_CONTEXT } from '@nebular/theme';
+import { ServiceAgreementList } from '../../../@core/data/service-agreement';
+import { ServiceAgreementService } from '../sa.service';
 
 @Component({
-  template: `
-    <form class="form">
-      <label for="subject">Subject:</label>
-      <input nbInput id="subject" type="text">
-
-      <label class="text-label" for="text">Text:</label>
-      <textarea nbInput id="text"></textarea>
-    </form>
-  `,
+  selector: 'ngx-service-agreement-detail',
+  templateUrl: './service-agreement-detail.component.html',
   styleUrls: ['service-agreement-detail.component.scss'],
 })
 export class ServiceAgreementDetailComponent {
-  constructor(public windowRef: NbWindowRef) {}
+  @Input() data: ServiceAgreementList;
+  constructor(private service: ServiceAgreementService, public windowRef: NbWindowRef, @Inject(NB_WINDOW_CONTEXT) context) {
+    if (context != null) {
+      this.data = Object.assign({}, context.data);
+    }
+  }
+  onSubmit(){
+    // console.log('isi json',this.data.billTitle)
+    // let temp = this.data.billTitle
+    // this.data.state = 'updated'
+    // this.data.billTitle = Math.floor(temp)
+    // console.log('after', this.data)
+    this.service.postServiceAgreement(this.data).subscribe((value) => {
+      //this.changeDetectorRefs.detectChanges()
+      this.close();
+    });
+  }
 
   close() {
     this.windowRef.close();

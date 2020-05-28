@@ -1,13 +1,12 @@
-<button type="button" class=".btn" data-toggle="modal" data-target="#myModal">
-  Launch demo modal
-</button>
 <nb-card>
     <nb-card-header>
       Service Agreement
     </nb-card-header>
    
     <nb-card-body>
-      <ng2-smart-table [settings]="settings" [source]="source" (deleteConfirm)="onDeleteConfirm($event)">
+      <ng2-smart-table [settings]="settings" [source]="source" (deleteConfirm)="onDeleteConfirm($event)"
+      (createConfirm)="onCreateConfirm($event)" (editConfirm)="onCreateConfirm($event)"
+      (userRowSelect)="openWindowForm($event)">
       </ng2-smart-table>
     </nb-card-body>
   </nb-card>

@@ -4,14 +4,15 @@ import {Observable, throwError} from 'rxjs';
 import {map, catchError} from 'rxjs/operators';
 import {HttpErrorResponse} from '@angular/common/http';
 import { ServiceAgreementList } from '../../@core/data/service-agreement';
+import { DatePipe } from '@angular/common'
 
 @Injectable({
   providedIn: 'root',
 })
 export class ServiceAgreementService {
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, public datepipe: DatePipe) {
   }
-  url = 'http://localhost:8011/api/customerStatic/pagingSearchParam?start=0&sort=desc&length=20&column=startTime&customerCode=&customerFullname=&customerBusiness=&payCycle=&isActive=';
+  url = 'http://34.87.6.140:8011/api/customerStatic/pagingSearchParam?start=0&sort=desc&length=20&column=startTime&customerCode=&customerFullname=&customerBusiness=&payCycle=&isActive=';
   json;
   getServiceAgreement(): Observable<any> {  
     const headers = new HttpHeaders({
@@ -25,6 +26,29 @@ export class ServiceAgreementService {
     );
     
     
+  }
+
+  postServiceAgreement(data: ServiceAgreementList): Observable<any> {
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'X-Requested-Method': 'POST',
+    });
+    console.log('isiiii', data.ebCustomerId)
+    const id = data.ebCustomerId
+    let nextBill_date =this.datepipe.transform(data.nextBillTm, 'yyyy-MM-dd'+'T'+'HH:mm:ss.SSS');
+    let endTime_date =this.datepipe.transform(data.endTime, 'yyyy-MM-dd'+'T'+'HH:mm:ss.SSS');
+    let startTime_date =this.datepipe.transform(data.startTime, 'yyyy-MM-dd'+'T'+'HH:mm:ss.SSS');
+    let modifyTm_date =this.datepipe.transform(data.modifyTm, 'yyyy-MM-dd'+'T'+'HH:mm:ss.SSS');
+    data.nextBillTm = nextBill_date
+    data.endTime = endTime_date
+    data.startTime = startTime_date
+    data.modifyTm = modifyTm_date
+    console.log('isi tanggal' ,data)
+    const options = { headers: headers };
+    const url = 'http://34.87.6.140:8011/api/customerStatic/insertData';
+    return this.http.post(url, JSON.stringify(data) , options).pipe(
+      catchError(this.handleError),
+    );
   }
 
   private extractData(body: any): ServiceAgreementList[] {

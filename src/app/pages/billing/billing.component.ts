@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { BillingList } from '../../@core/data/billing';
 import { BillingService } from './billing.service';
 import { BillingDetailComponent } from './billing-detail/billing-detail.component';
@@ -10,9 +10,11 @@ import { NbWindowService } from '@nebular/theme';
   styleUrls: ['./billing.component.scss'],
 })
 export class BillingComponent implements OnInit {
-
   settings = {
     mode: 'inline',
+    actions: {
+      add: false,
+    },
     add: {
       addButtonContent: '<i class="nb-plus"></i>',
       createButtonContent: '<i class="nb-checkmark"></i>',
@@ -45,7 +47,9 @@ export class BillingComponent implements OnInit {
 
   source: BillingList[] = [];
 
-  constructor(private service: BillingService, private windowService: NbWindowService) {
+  constructor(private service: BillingService, private windowService: NbWindowService, private changeDetectorRefs: ChangeDetectorRef) {
+    console.log('masuk cons')
+    this.initData();
   }
 
   ngOnInit(): void {
@@ -54,7 +58,8 @@ export class BillingComponent implements OnInit {
   initData(){
     this.service.getBilling().subscribe((result) => {
       this.source = Object.assign([], result);
-      console.log('test', result);
+      console.log('hasil', result);
+      this.changeDetectorRefs.detectChanges();
     });
   }
   onCreateConfirm(event) {
