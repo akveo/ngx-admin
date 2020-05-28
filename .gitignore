@@ -43,3 +43,4 @@ Thumbs.db
 
 #wrapper
 /syfmonia/target/*
+/symfonia/src/main/resources/static/*
