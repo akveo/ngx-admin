@@ -1,165 +1,261 @@
-<div class="row">
-  <div class="col-md-12">
-    <nb-card class="inline-form-card">
-      <nb-card-header>Inline form</nb-card-header>
-      <nb-card-body>
-        <form class="form-inline">
-          <input type="text" nbInput fullWidth placeholder="Jane Doe">
-          <input type="text" nbInput fullWidth placeholder="Email">
-          <nb-checkbox>Remember me</nb-checkbox>
-          <button type="submit" nbButton status="primary">Submit</button>
-        </form>
-      </nb-card-body>
-    </nb-card>
-  </div>
-</div>
+
+
+
 
 <div class="row">
   <div class="col-md-6">
     <nb-card>
-      <nb-card-header>Using the Grid</nb-card-header>
+      <nb-card-header>
+        <form class="form-inline">
+            <nb-radio checked>Telefono</nb-radio>
+            <nb-radio>Calle</nb-radio>
+            <nb-radio>Adicional</nb-radio>
+          </form>
+      </nb-card-header>
+      
       <nb-card-body>
         <form>
           <div class="form-group row">
-            <label for="inputEmail1" class="label col-sm-3 col-form-label">Email</label>
-            <div class="col-sm-9">
-              <input type="email" nbInput fullWidth id="inputEmail1" placeholder="Email">
-            </div>
+            
+              <input type="email" nbInput fullWidth placeholder="Gestor" >
+       
           </div>
+          
           <div class="form-group row">
-            <label for="inputPassword2" class="label col-sm-3 col-form-label">Password</label>
-            <div class="col-sm-9">
-              <input type="password" nbInput fullWidth id="inputPassword2" placeholder="Password">
-            </div>
+            
+            
+          
+              <form class="form-inline" fullWidth>
+                <p style="margin-left: 17px;margin-right: 10px;margin-top: 8px;"> Empresa:</p>
+                <nb-select selected="2">
+                  <nb-option value="1">Rimac</nb-option>
+                  <nb-option value="2">Secrex</nb-option>
+                  <nb-option value="2">Maphree</nb-option>
+                </nb-select>
+            <input nbInput placeholder="Fechas de cartea" [nbDatepicker]="rangepicker" fullWidth style="margin-right: 10px;">
+            <nb-rangepicker #rangepicker></nb-rangepicker>
+           
+            <p style="margin-right: 10px;margin-top: 8px;"> Colas:</p>
+               <nb-select selected="1" fullWidth>
+                <nb-option value="1">Contactados</nb-option>
+                <nb-option value="2">Cola 2</nb-option>
+                <nb-option value="2">Cola 3</nb-option>
+              </nb-select>
+            </form>
           </div>
-          <div class="form-group row">
-            <label class="col-sm-3 label">Radios</label>
-            <div class="col-sm-9">
-              <nb-radio-group>
-                <nb-radio>Option 1</nb-radio>
-                <nb-radio>Option 2</nb-radio>
-                <nb-radio disabled>Disabled Option</nb-radio>
-              </nb-radio-group>
-            </div>
-          </div>
-          <div class="form-group row">
-            <div class="offset-sm-3 col-sm-9">
-              <button type="submit" nbButton status="primary">Sign in</button>
-            </div>
-          </div>
+
+        </form>
+
+
+        <table class="table table-striped">
+          <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col" sortable="name" (sort)="onSort($event)">Country</th>
+            <th scope="col" sortable="area" (sort)="onSort($event)">Area</th>
+            <th scope="col" sortable="population" (sort)="onSort($event)">Population</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let country of countries">
+            <th scope="row">{{ country.id }}</th>
+            <td>
+              <img [src]="'https://upload.wikimedia.org/wikipedia/commons/' + country.flag" class="mr-2" style="width: 20px">
+              {{ country.name }}
+            </td>
+            <td>{{ country.area | number }}</td>
+            <td>{{ country.population | number }}</td>
+          </tr>
+          </tbody>
+        </table>
+       
+      </nb-card-body>
+      <button type="submit" nbButton status="primary" (click)="openWindowForm()"><i class="fas fa-signal"></i><span style="margin-left: 5px;">  Gestionar </span></button>
+    </nb-card>
+
+    
+
+    <nb-card>
+      <nb-card-body>
+    
+        <nb-tabset>
+          <nb-tab tabTitle="Deuda Vencida">
+
+            <table class="table table-striped">
+              <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col" sortable="name" (sort)="onSort($event)">Producto</th>
+                <th scope="col" sortable="area" (sort)="onSort($event)">Monto Capital</th>
+                <th scope="col" sortable="population" (sort)="onSort($event)">Monto deuda</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr *ngFor="let country of countries">
+                <th scope="row">{{ country.id }}</th>
+                <td>
+                  <img [src]="'https://upload.wikimedia.org/wikipedia/commons/' + country.flag" class="mr-2" style="width: 20px">
+                  {{ country.name }}
+                </td>
+                <td>{{ country.area | number }}</td>
+                <td>{{ country.population | number }}</td>
+              </tr>
+              </tbody>
+            </table>
+
+
+         
+          </nb-tab>
+
+          <nb-tab tabTitle="Detalles de deuda">
+
+
+
+            <span>Content #2</span>
+
+
+          </nb-tab>
+
+        </nb-tabset>
+
+      </nb-card-body>
+    </nb-card>
+    
+  </div>
+
+
+
+  <div class="col-md-6">
+    <nb-card style="margin-bottom: 5px;">
+      <nb-card-body >
+        <form class="form-inline">
+         <p> Condicion:</p>
+          <input type="text" nbInput fullWidth placeholder="Recuperable" disabled>
+         <p> Situacion: </p><input type="text" nbInput fullWidth placeholder="Ubicable" disabled>
+         <p> Estado: </p><input type="text" nbInput fullWidth placeholder="Activo" disabled>
         </form>
       </nb-card-body>
     </nb-card>
+
+
+
+
+  <div class="col-md-14">
+    <nb-card>
+      <nb-card-body>
+    
+        <nb-tabset>
+          <nb-tab tabTitle="Telefonos">
+
+            <table class="table table-striped">
+              <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col" sortable="name" (sort)="onSort($event)">Country</th>
+                <th scope="col" sortable="area" (sort)="onSort($event)">Area</th>
+                <th scope="col" sortable="population" (sort)="onSort($event)">Population</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr *ngFor="let country of countries">
+                <th scope="row">{{ country.id }}</th>
+                <td>
+                  <img [src]="'https://upload.wikimedia.org/wikipedia/commons/' + country.flag" class="mr-2" style="width: 20px">
+                  {{ country.name }}
+                </td>
+                <td>{{ country.area | number }}</td>
+                <td>{{ country.population | number }}</td>
+              </tr>
+              </tbody>
+            </table>
+
+          
+          </nb-tab>
+
+          <nb-tab tabTitle="Direcciones">
+
+            <table class="table table-striped">
+              <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col" sortable="name" (sort)="onSort($event)">Country</th>
+                <th scope="col" sortable="area" (sort)="onSort($event)">Area</th>
+                <th scope="col" sortable="population" (sort)="onSort($event)">Population</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr *ngFor="let country of countries">
+                <th scope="row">{{ country.id }}</th>
+                <td>
+                  <img [src]="'https://upload.wikimedia.org/wikipedia/commons/' + country.flag" class="mr-2" style="width: 20px">
+                  {{ country.name }}
+                </td>
+                <td>{{ country.area | number }}</td>
+                <td>{{ country.population | number }}</td>
+              </tr>
+              </tbody>
+            </table>
+  
+
+
+          </nb-tab>
+
+        </nb-tabset>
+
+      </nb-card-body>
+    </nb-card>
+
 
     <nb-card>
       <nb-card-header>Form without labels</nb-card-header>
       <nb-card-body>
         <form>
-          <div class="form-group">
-            <input type="text" nbInput fullWidth placeholder="Recipients">
-          </div>
-          <div class="form-group">
-            <input type="text" nbInput fullWidth placeholder="Subject">
-          </div>
-          <div class="form-group">
-            <textarea nbInput placeholder="Message"></textarea>
-          </div>
-          <button type="submit" nbButton status="success">Send</button>
+          <label class="label">Accion:</label> 
+              <nb-select selected="2" fullWidth>
+                <nb-option value="1">Se evaluo telefonos</nb-option>
+                <nb-option value="2">Se contacto a terceros</nb-option>
+                <nb-option value="3">Se contacto a Familiar</nb-option>
+                <nb-option value="4">Se contacto a titular</nb-option>
+                <nb-option value="5">Se contacto a titular</nb-option>
+              </nb-select>
+           
+
+
+              <label class="label">Reaccion:</label>
+              <nb-select selected="2" fullWidth>
+                <nb-option value="1">Reaccion 1</nb-option>
+                <nb-option value="2">Reaccion 2</nb-option>
+                <nb-option value="3">Reaccion 3</nb-option>
+                <nb-option value="4">Reaccion 4</nb-option>
+                <nb-option value="5">Reaccion 5</nb-option>
+              </nb-select>
+
+
+              <label class="label">Razon:</label>
+              <nb-select selected="2" fullWidth>
+                <nb-option value="1">Razon 1</nb-option>
+                <nb-option value="2">Razon 2</nb-option>
+                <nb-option value="3">Razon 3</nb-option>
+                <nb-option value="4">Razon 4</nb-option>
+                <nb-option value="5">Razon 5</nb-option>
+              </nb-select>
+
+              <label class="label">Observacion:</label>
+              <textarea rows="5" nbInput fullWidth shape="round"  placeholder="Escribe tus observaciones"></textarea>
+             
+              <label class="label">Observacion permanente:</label>
+              <textarea rows="5" nbInput fullWidth shape="round"  placeholder="Escribe tus observaciones"></textarea>
+
         </form>
       </nb-card-body>
     </nb-card>
+    
+
   </div>
-
-  <div class="col-md-6">
-    <nb-card>
-      <nb-card-header>Basic form</nb-card-header>
-      <nb-card-body>
-        <form>
-          <div class="form-group">
-            <label for="exampleInputEmail1" class="label">Email address</label>
-            <input type="email" nbInput fullWidth id="exampleInputEmail1" placeholder="Email">
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1" class="label">Password</label>
-            <input type="password" nbInput fullWidth id="exampleInputPassword1" placeholder="Password">
-          </div>
-          <div class="form-group">
-            <nb-checkbox>Check me out</nb-checkbox>
-          </div>
-          <button type="submit" nbButton status="danger">Submit</button>
-        </form>
-      </nb-card-body>
-    </nb-card>
-
-    <nb-card>
-      <nb-card-header>Block form</nb-card-header>
-      <nb-card-body>
-        <div class="row">
-          <div class="col-sm-6">
-            <div class="form-group">
-              <label for="inputFirstName" class="label">First Name</label>
-              <input type="text" nbInput fullWidth id="inputFirstName" placeholder="First Name">
-            </div>
-          </div>
-          <div class="col-sm-6">
-            <div class="form-group">
-              <label for="inputLastName" class="label">Last Name</label>
-              <input type="text" nbInput fullWidth id="inputLastName" placeholder="Last Name">
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-sm-6">
-            <div class="form-group">
-              <label for="inputEmail" class="label">Email</label>
-              <input type="email" nbInput fullWidth id="inputEmail" placeholder="Email">
-            </div>
-          </div>
-          <div class="col-sm-6">
-            <div class="form-group">
-              <label for="inputWebsite" class="label">Website</label>
-              <input type="text" nbInput fullWidth id="inputWebsite" placeholder="Website">
-            </div>
-          </div>
-        </div>
-        <button type="submit" nbButton>Submit</button>
-      </nb-card-body>
-    </nb-card>
+      <div class=".col-6 .col-sm-4">
+      <button type="submit" nbButton status="primary" ><i class="fas fa-save"></i><span style="margin-left: 5px;">  Guardar </span></button>
+    
   </div>
 </div>
 
-<div class="row">
-  <div class="col-md-6">
-    <nb-card>
-      <nb-card-header>Horizontal form</nb-card-header>
-      <nb-card-body>
-        <form class="form-horizontal">
-          <div class="form-group row">
-            <label for="inputEmail3" class="label col-sm-3 form-control-label">Email</label>
-            <div class="col-sm-9">
-              <input type="email" nbInput fullWidth id="inputEmail3" placeholder="Email">
-            </div>
-          </div>
-          <div class="form-group row">
-            <label for="inputPassword3" class="label col-sm-3 form-control-label">Password</label>
-            <div class="col-sm-9">
-              <input type="password" nbInput fullWidth id="inputPassword3" placeholder="Password">
-            </div>
-          </div>
-          <div class="form-group row">
-            <div class="offset-sm-3 col-sm-9">
-              <div class="checkbox">
-                <nb-checkbox>Remember me</nb-checkbox>
-              </div>
-            </div>
-          </div>
-          <div class="form-group row">
-            <div class="offset-sm-3 col-sm-9">
-              <button type="submit" nbButton status="warning">Sign in</button>
-            </div>
-          </div>
-        </form>
-      </nb-card-body>
-    </nb-card>
-  </div>
-</div>
+

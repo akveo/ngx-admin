@@ -1,7 +1,7 @@
-import { NgModule } from '@angular/core';
-import { NbButtonModule, NbCardModule } from '@nebular/theme';
+import { NgModule, Component, OnInit  } from '@angular/core';
+import { NbButtonModule,NbInputModule, NbCardModule,NbSelectModule,NbIconModule, NbComponentShape, NbComponentSize, NbComponentStatus,NbStepperModule } from '@nebular/theme';
 
-import { ThemeModule } from '../../@theme/theme.module';
+import { ThemeModule,} from '../../@theme/theme.module';
 import { MiscellaneousRoutingModule } from './miscellaneous-routing.module';
 import { MiscellaneousComponent } from './miscellaneous.component';
 import { NotFoundComponent } from './not-found/not-found.component';
@@ -12,6 +12,10 @@ import { NotFoundComponent } from './not-found/not-found.component';
     NbCardModule,
     NbButtonModule,
     MiscellaneousRoutingModule,
+    NbSelectModule,
+    NbIconModule,
+    NbInputModule,
+    NbStepperModule,
   ],
   declarations: [
     MiscellaneousComponent,
@@ -19,3 +23,9 @@ import { NotFoundComponent } from './not-found/not-found.component';
   ],
 })
 export class MiscellaneousModule { }
+
+export class ButtonsComponent {
+  statuses: NbComponentStatus[] = [ 'primary', 'success', 'info', 'warning', 'danger' ];
+  shapes: NbComponentShape[] = [ 'rectangle', 'semi-round', 'round' ];
+  sizes: NbComponentSize[] = [ 'tiny', 'small', 'medium', 'large', 'giant' ];
+}

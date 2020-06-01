@@ -1,6 +1,38 @@
 <nb-card>
+
+  <nb-card-header>Filtros</nb-card-header>
+
+  <nb-card-body>
+    <label class="label">Tipo de usuario: </label>  <label class="label" style="margin-left: 90px;">Estado: </label> <br>
+    <nb-select selected="2">
+      <nb-option value="1">Gestor</nb-option>
+      <nb-option value="2">Supervisor</nb-option>
+      <nb-option value="2">Administrador</nb-option>
+    </nb-select>
+
+    <nb-select selected="2" style="margin-left: 50px;">
+      <nb-option value="1">Estado 1</nb-option>
+      <nb-option value="2">Estado 2</nb-option>
+      <nb-option value="2">Estado 3</nb-option>
+    </nb-select>
+
+    <input type="text" nbInput  placeholder="Codigo" style="margin-left: 50px;">
+    <input type="text" nbInput  placeholder="Apellido" style="margin-left: 50px;">
+    <input type="text" nbInput  placeholder="Nombre" style="margin-left: 50px;">
+
+    <button _ngcontent-lih-c373="" nbbutton="" hero="" _nghost-lih-c96="" ng-reflect-hero="" ng-reflect-status="primary"
+     aria-disabled="false" tabindex="0" class="appearance-hero size-medium status-primary shape-rectangle ng-star-inserted nb-transition" style="margin-left: 150px;"> Filtrar </button>
+
+
+  </nb-card-body>
+
+
+
+</nb-card>
+
+<nb-card>
   <nb-card-header>
-    Smart Table
+    Listado de Usuarios 
   </nb-card-header>
 
   <nb-card-body>

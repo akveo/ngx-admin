@@ -8,7 +8,7 @@ import {
   NbInputModule,
   NbRadioModule,
   NbSelectModule,
-  NbUserModule,
+  NbUserModule,NbTabsetModule,
 } from '@nebular/theme';
 
 import { ThemeModule } from '../../@theme/theme.module';
@@ -22,6 +22,7 @@ import { FormsModule as ngFormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
+    NbTabsetModule,
     ThemeModule,
     NbInputModule,
     NbCardModule,

@@ -2,14 +2,53 @@
   <div class="col-md-12">
     <nb-card>
       <nb-card-body>
-        <div class="flex-centered col-xl-4 col-lg-6 col-md-8 col-sm-12">
-          <h2 class="title">404 Page Not Found</h2>
-          <small class="sub-title">The page you were looking for doesn't exist</small>
-          <button nbButton fullWidth (click)="goToHome()" type="button" class="home-button">
-            Take me home
-          </button>
-        </div>
+        <div class="flex-centered col-xl-8 col-lg-8 col-md-8 col-sm-8">
+
+          <h2 class="title">Cargar Archivos</h2>
+
+           <label class="label" style="margin-left: 90px;">Selecciona empresa: </label>  <label class="label" style="margin-left: 30px;">Estado: </label> <br>
+           
+    <nb-select selected="2" style="margin-left: 90px;">
+      <nb-option value="1">Rimac</nb-option>
+      <nb-option value="2">Secrex</nb-option>
+      <nb-option value="2">Maphree</nb-option>
+    </nb-select>
+
+    <input type="text" nbInput  placeholder=" Archivo... " style="margin-left: 50px;">
+
+    
+    <button _ngcontent-lih-c373="" nbbutton="" hero="" _nghost-lih-c96="" ng-reflect-hero="" ng-reflect-status="primary"
+     aria-disabled="false" tabindex="0" class="appearance-hero size-medium status-primary shape-rectangle ng-star-inserted nb-transition" 
+     style="margin-left: 50px; margin-top: 10px;margin-bottom: 30px;"> Selecciona archivo </button>
+  </div>
+
       </nb-card-body>
+
+
+      <nb-stepper orientation="horizontal">
+        <nb-step [label]="labelOne">
+          <ng-template #labelOne>Seleccion </ng-template>
+          <button nbButton disabled nbStepperNext>prev</button>
+          <button nbButton nbStepperNext>siguiente</button>
+        </nb-step>
+        <nb-step [label]="labelTwo">
+          <ng-template #labelTwo>Carga </ng-template>
+          <button nbButton nbStepperPrevious>atras</button>
+          <button nbButton nbStepperNext>siguiente</button>
+        </nb-step>
+        <nb-step label="Third step">
+          <ng-template #labelthree>Validando </ng-template>
+          <button nbButton nbStepperPrevious>atras</button>
+          <button nbButton nbStepperNext>siguiente</button>
+        </nb-step>
+        <nb-step [label]="labelFour">
+          <ng-template #labelFour>Subiendo a base de datos</ng-template>
+          <button nbButton nbStepperPrevious>prev</button>
+          <button nbButton disabled nbStepperNext>next</button>
+        </nb-step>
+      </nb-stepper> 
+
+
     </nb-card>
   </div>
 </div>

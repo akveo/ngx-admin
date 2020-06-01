@@ -27,28 +27,28 @@ export class SmartTableComponent {
     },
     columns: {
       id: {
-        title: 'ID',
+        title: 'Codigo',
         type: 'number',
       },
       firstName: {
-        title: 'First Name',
+        title: 'Apellido Paterno',
         type: 'string',
       },
       lastName: {
-        title: 'Last Name',
+        title: 'Apellido Materno',
         type: 'string',
       },
       username: {
-        title: 'Username',
+        title: 'Nombres',
         type: 'string',
       },
       email: {
-        title: 'E-mail',
+        title: 'Tipo de usuario',
         type: 'string',
       },
       age: {
-        title: 'Age',
-        type: 'number',
+        title: 'Tipo de Perfil',
+        type: 'string',
       },
     },
   };
@@ -61,7 +61,7 @@ export class SmartTableComponent {
   }
 
   onDeleteConfirm(event): void {
-    if (window.confirm('Are you sure you want to delete?')) {
+    if (window.confirm('Seguro que deseas eliminar?')) {
       event.confirm.resolve();
     } else {
       event.confirm.reject();
