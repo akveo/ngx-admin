@@ -37,7 +37,7 @@
     <div class="form-group">
       <label class="label">Bill Title</label>
       <nb-card-body>
-          <nb-select [(selected)]="data.billTitle">
+          <nb-select>
             <nb-option value="1">Invoice</nb-option>
             <nb-option value="2">Debit Note</nb-option>
             <nb-option value="3">Surat Perintah Penagihan</nb-option>
@@ -71,7 +71,7 @@
     </div>
     <div class="form-group">
       <label class="label">VAT</label>
-      <input nbInput [(ngModel)]="data.vat"> %
+      <input> %
     </div>
     <div class="form-group">
       <label class="label">Insurance</label>

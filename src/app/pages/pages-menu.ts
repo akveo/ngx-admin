@@ -31,10 +31,4 @@ export const MENU_ITEMS: NbMenuItem[] = [
     link: '/pages/partner-branch',
     home: false,
   },
-  {
-    title: 'Login Page',
-    icon: 'keypad-outline',
-    link: '/pages/auth',
-    home: true,
-  },
 ];

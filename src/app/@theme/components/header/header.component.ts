@@ -5,6 +5,9 @@ import { UserData } from '../../../@core/data/users';
 import { LayoutService } from '../../../@core/utils';
 import { map, takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
+import { User } from '../../../@core/data/user';
+import { Router } from '@angular/router';
+import { LoginService } from '../../../auth/login.service';
 
 @Component({
   selector: 'ngx-header',
@@ -15,7 +18,9 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   private destroy$: Subject<void> = new Subject<void>();
   userPictureOnly: boolean = false;
-  user: any;
+  username: any;
+  roles: any;
+  userpicture: any;
 
   themes = [
     {
@@ -38,22 +43,30 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   currentTheme = 'default';
 
-  userMenu = [ { title: 'Profile' }, { title: 'Log out' } ];
+  userMenu = [{ title: 'User Role(s)' }];
 
   constructor(private sidebarService: NbSidebarService,
-              private menuService: NbMenuService,
-              private themeService: NbThemeService,
-              private userService: UserData,
-              private layoutService: LayoutService,
-              private breakpointService: NbMediaBreakpointsService) {
+    private router: Router,
+    private menuService: NbMenuService,
+    private themeService: NbThemeService,
+    private layoutService: LayoutService,
+    private loginService: LoginService,
+    private breakpointService: NbMediaBreakpointsService) {
   }
 
   ngOnInit() {
-    this.currentTheme = this.themeService.currentTheme;
 
-    this.userService.getUsers()
-      .pipe(takeUntil(this.destroy$))
-      .subscribe((users: any) => this.user = users.nick);
+    this.username = localStorage.getItem('username');
+    this.roles = localStorage.getItem('roles');
+    this.userpicture = 'assets/images/eva.png';
+
+    if (this.username == null) {
+      this.router.navigate(['/auth/login']);
+    }
+    
+    this.username = this.username.replace(/['"]+/g, '');
+
+    this.currentTheme = this.themeService.currentTheme;
 
     const { xl } = this.breakpointService.getBreakpointsMap();
     this.themeService.onMediaQueryChange()
@@ -69,6 +82,10 @@ export class HeaderComponent implements OnInit, OnDestroy {
         takeUntil(this.destroy$),
       )
       .subscribe(themeName => this.currentTheme = themeName);
+  }
+
+  logout(){
+    this.loginService.logout();
   }
 
   ngOnDestroy() {

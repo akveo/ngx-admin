@@ -7,7 +7,6 @@ import {PromotionComponent} from './promotion/promotion.component';
 import { PartnerPriceComponent } from './partner-price/partner-price.component';
 import {BillingComponent} from './billing/billing.component';
 import {ServiceAgreementComponent} from './service-agreement/sa.component';
-import { LoginComponent } from './auth/login.component';
 
 const routes: Routes = [{
   path: '',
@@ -32,10 +31,6 @@ const routes: Routes = [{
     {
       path: 'billing',
       component: BillingComponent,
-    },
-    {
-      path: 'auth',
-      component: LoginComponent,
     },
   ],
 }];
