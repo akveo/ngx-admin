@@ -40,7 +40,6 @@ testem.log
 .DS_Store
 Thumbs.db
 
-
 #wrapper
 /syfmonia/target/*
 /symfonia/src/main/resources/static/*
