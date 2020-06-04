@@ -1,82 +1,277 @@
 <div class="row">
   <div class="col-md-4">
     <div class="form-group">
-      <label class="label">Client</label>
-      <input nbInput fullWidth [(ngModel)]="data.customerCode" disabled>
-    </div>
-    <div class="form-group">
       <label class="label">Partner Code</label>
       <input nbInput fullWidth [(ngModel)]="data.customerCode" disabled>
     </div>
     <div class="form-group">
-      <label class="label">Partner Name</label>
-      <input nbInput fullWidth [(ngModel)]="data.customerFullname">
+      <label class="label">SA No</label>
+      <input nbInput fullWidth [(ngModel)]="data.saNo" disabled>
     </div>
     <div class="form-group">
-      <label class="label">Partner Short Name </label>
-      <input nbInput fullWidth [(ngModel)]="data.customerShortname">
-    </div>
-    <div class="form-group">
-          <label class="label">Start Time</label>
-          <input nbInput
-                 placeholder="Select Date"
-                 [nbDatepicker]="formpickerstart"
-                 [(ngModel)]="data.startTime">
-          <nb-datepicker #formpickerstart></nb-datepicker>
-    </div>
-    <div class="form-group">
-      <label class="label">End Time</label>
-          <input nbInput
-                 placeholder="Select Date"
-                 [nbDatepicker]="formpickerend"
-                 [(ngModel)]="data.endTime">
-          <nb-datepicker #formpickerend></nb-datepicker>
-    </div>
-  </div>
-  <div class="col-md-4">
-    <div class="form-group">
-      <label class="label">Bill Title</label>
+      <label class="label">Request Type</label>
       <nb-card-body>
-          <nb-select>
-            <nb-option value="1">Invoice</nb-option>
-            <nb-option value="2">Debit Note</nb-option>
-            <nb-option value="3">Surat Perintah Penagihan</nb-option>
+          <nb-select [(selected)]="data.requestType">
+            <nb-option value="1">New</nb-option>
+            <nb-option value="2">Renewal</nb-option>
           </nb-select>
         </nb-card-body>
     </div>
     <div class="form-group">
-      <label class="label">Bill Code</label>
-      <input nbInput fullWidth [(ngModel)]="data.billCode">
+      <label class="label">Partner Type</label>
+      <nb-card-body>
+          <nb-select [(selected)]="data.requestType">
+            <nb-option value="1">B2B</nb-option>
+            <nb-option value="2">B2C</nb-option>
+            <nb-option value="3">B2B2C</nb-option>
+            <nb-option value="4">Platform</nb-option>
+          </nb-select>
+        </nb-card-body>
     </div>
     <div class="form-group">
-      <label class="label">Next Billing Time</label>
-          <input nbInput
-                 placeholder="Select Date"
-                 [nbDatepicker]="formpickernextbilling"
-                 [(ngModel)]="data.nextBillTm">
-          <nb-datepicker #formpickernextbilling></nb-datepicker>
+      <label class="label">Partner Bill Code</label>
+      <input nbInput fullWidth [(ngModel)]="data.partnerBillCode">
     </div>
     <div class="form-group">
-      <label class="label">Tax</label>
-      <nb-radio-group [(value)]="data.tax">
+      <label class="label">Item Type</label>
+      <nb-card-body>
+
+          <nb-select [(selected)]="data.itemType">
+            <nb-option value="1">Doc</nb-option>
+            <nb-option value="2">Electronoc & Gadget</nb-option>
+            <nb-option value="3">Multiple Categories</nb-option>
+            <nb-option value="4">Others</nb-option>
+          </nb-select>
+        </nb-card-body>
+    </div>
+    <div class="form-group">
+      <label class="label">Item Type Others</label>
+      <input nbInput fullWidth [(ngModel)]="data.itemTypeOthers">
+    </div>
+    <label class="label">Company Information</label>
+    <div class="form-group">
+      <label class="label">Company or Personal Name</label>
+      <input nbInput fullWidth [(ngModel)]="data.compName">
+    </div>
+    <div class="form-group">
+      <label class="label">ID Number</label>
+      <input nbInput fullWidth [(ngModel)]="data.compIdNumber">
+    </div>
+    <div class="form-group">
+      <label class="label">Industri</label>
+      <input nbInput fullWidth [(ngModel)]="data.compIndustry">
+    </div>
+    <div class="form-group">
+      <label class="label">Address</label>
+      <input nbInput fullWidth [(ngModel)]="data.compAddress">
+    </div>
+    <div class="form-group">
+      <label class="label">Phone</label>
+      <input nbInput fullWidth [(ngModel)]="data.compPhone">
+    </div>
+    <div class="form-group">
+      <label class="label">No HP</label>
+      <input nbInput fullWidth [(ngModel)]="data.compNoHp">
+    </div>
+    <label class="label">Personal Information</label>
+    <div class="form-group">
+      <label class="label">Contact Name</label>
+      <input nbInput fullWidth [(ngModel)]="data.personalName">
+    </div>
+    <div class="form-group">
+      <label class="label">Job Title/Dept</label>
+      <input nbInput fullWidth [(ngModel)]="data.personalJobTitle">
+    </div>
+    <div class="form-group">
+      <label class="label">SIUP No</label>
+      <input nbInput fullWidth [(ngModel)]="data.personalSiupNo">
+    </div>
+    <div class="form-group">
+      <label class="label">NPWP No</label>
+      <input nbInput fullWidth [(ngModel)]="data.personalNpwp">
+    </div>
+    <div class="form-group">
+      <label class="label">Email</label>
+      <input nbInput fullWidth [(ngModel)]="data.personalEmail">
+    </div>
+    <div class="form-group">
+      <label class="label">Fax No</label>
+      <input nbInput fullWidth [(ngModel)]="data.personalFaxNo">
+    </div>
+    <div class="form-group">
+      <label class="label">Email Address</label>
+      <input nbInput fullWidth [(ngModel)]="data.personalAddress">
+    </div>
+    <label class="label">CS Information</label>
+    <div class="form-group">
+      <label class="label">Company or Personal Name</label>
+      <input nbInput fullWidth [(ngModel)]="data.csName">
+    </div>
+    <div class="form-group">
+      <label class="label">Address</label>
+      <textarea rows="5" nbInput fullWidth shape="round"  placeholder="Address" [(ngModel)]="data.csAddress"></textarea>
+    </div>
+    <div class="form-group">
+      <label class="label">Contact Name</label>
+      <input nbInput fullWidth [(ngModel)]="data.csContactName">
+    </div>
+    <div class="form-group">
+      <label class="label">No HP</label>
+      <input nbInput fullWidth [(ngModel)]="data.csHp">
+    </div>
+    <div class="form-group">
+      <label class="label">Email</label>
+      <input nbInput fullWidth [(ngModel)]="data.csEmail">
+    </div>
+    <label class="label">Finance Information</label>
+    <div class="form-group">
+      <label class="label">Company or Personal Name</label>
+      <input nbInput fullWidth [(ngModel)]="data.financeName">
+    </div>
+    <div class="form-group">
+      <label class="label">Address</label>
+      <textarea rows="5" nbInput fullWidth shape="round"  placeholder="Address" [(ngModel)]="data.financeAddress"></textarea>
+    </div>
+    <div class="form-group">
+      <label class="label">Contact Name</label>
+      <input nbInput fullWidth [(ngModel)]="data.financeContactName">
+    </div>
+    <div class="form-group">
+      <label class="label">No HP</label>
+      <input nbInput fullWidth [(ngModel)]="data.financeHp">
+    </div>
+    <div class="form-group">
+      <label class="label">Email</label>
+      <input nbInput fullWidth [(ngModel)]="data.financeEmail">
+    </div>
+    <div class="form-group">
+      <label class="label">Service Profile</label>
+      <nb-checkbox>Regular Service</nb-checkbox>
+      <nb-checkbox [value]="true">NextDay Service</nb-checkbox>
+      <nb-checkbox>Doc</nb-checkbox>
+      <nb-checkbox>Project</nb-checkbox>
+    </div>
+    <div class="form-group">
+      <label class="label">Pickup Address</label>
+      <textarea rows="5" nbInput fullWidth shape="round"  placeholder="Pickup Address" [(ngModel)]="data.pickupAddress"></textarea>
+    </div>
+    <label class="label">Payment</label>
+    <div class="form-group">
+      <label class="label">Surcharge</label>
+      <nb-checkbox>Insurance</nb-checkbox>
+      <nb-checkbox [value]="true">Orther</nb-checkbox>
+      <input nbInput fullWidth [(ngModel)]="data.paymentSurcharge">
+    </div>
+    <div class="form-group">
+      <label class="label">Billing Cycle</label>
+      <nb-card-body>
+          <nb-select [(selected)]="data.paymentBillingCycle">
+            <nb-option value="1">Weekly</nb-option>
+            <nb-option value="2">Biweekly</nb-option>
+            <nb-option value="3">Monthly</nb-option>
+            <nb-option value="4">Every 15th and End of the month</nb-option>
+          </nb-select>
+        </nb-card-body>
+    </div>
+    <div class="form-group">
+      <label class="label">Term of Payment</label>
+      <nb-radio-group [(value)]="data.paymentTermOfPayment">
           <nb-radio
             [value]="1">
-            Exclude
+            14 Calendar Days
           </nb-radio>
           <nb-radio
             [value]="2">
-            Include
+            Other
           </nb-radio>
-        </nb-radio-group>
+          <input nbInput fullWidth [(ngModel)]="data.paymentTermOfPayment">
+      </nb-radio-group>
+    </div>
+    <label class="label">Document Requirement</label>
+    <div class="form-group">
+      <label class="label">Company</label>
+      <nb-checkbox>KTP PIC</nb-checkbox>
+      <nb-checkbox>NPWP & SKT</nb-checkbox>
+      <nb-checkbox>DOMICILE</nb-checkbox>
+      <nb-checkbox>SKPD</nb-checkbox>
+      <nb-checkbox>SIUP/PMA</nb-checkbox>
+      <nb-checkbox>NIB</nb-checkbox>
+      <nb-checkbox>SPPKP(for PFT)</nb-checkbox>
     </div>
     <div class="form-group">
-      <label class="label">VAT</label>
-      <input> %
+      <label class="label">Personal</label>
+      <nb-checkbox>KTP/KITAS/Passport</nb-checkbox>
+      <nb-checkbox [value]="true">NPWP</nb-checkbox>
+    </div>
+    <label class="label">Sign</label>
+    <div class="form-group">
+      <label class="label">Sales Name</label>
+      <input nbInput fullWidth [(ngModel)]="data.signSalesName">
     </div>
     <div class="form-group">
-      <label class="label">Insurance</label>
-      Rp.<input nbInput [(ngModel)]="data.price">
-      <input nbInput fullWidth [(ngModel)]="data.percentage">%
+      <label class="label">Sales Date</label>
+      <input nbInput
+             placeholder="Select Date"
+             [nbDatepicker]="formpickerstart"
+             [(ngModel)]="data.signSalesDate">
+      <nb-datepicker #formpickerstart></nb-datepicker>
+    </div>
+    <div class="form-group">
+      <label class="label">VP Sales Name</label>
+      <input nbInput fullWidth [(ngModel)]="data.signVpSalesName" disabled>
+    </div>
+    <div class="form-group">
+      <label class="label">VP Sales Date</label>
+      <input nbInput
+             placeholder="Select Date"
+             [nbDatepicker]="formpickerstart"
+             [(ngModel)]="data.signVpSalesDate">
+      <nb-datepicker #formpickerstart></nb-datepicker>
+    </div>
+    <div class="form-group">
+      <label class="label">Finance Name</label>
+      <input nbInput fullWidth [(ngModel)]="data.signFinanceName" disabled>
+    </div>
+    <div class="form-group">
+      <label class="label">Finance Date</label>
+      <input nbInput
+             placeholder="Select Date"
+             [nbDatepicker]="formpickerstart"
+             [(ngModel)]="data.signFinanceDate">
+      <nb-datepicker #formpickerstart></nb-datepicker>
+    </div>
+    <div class="form-group">
+      <label class="label">VP Finance Name</label>
+      <input nbInput fullWidth [(ngModel)]="data.signVpFinanceName" disabled>
+    </div>
+    <div class="form-group">
+      <label class="label">VP Finance Date</label>
+      <input nbInput
+             placeholder="Select Date"
+             [nbDatepicker]="formpickerstart"
+             [(ngModel)]="data.signVpFinanceDate">
+      <nb-datepicker #formpickerstart></nb-datepicker>
+    </div>
+    <div class="form-group">
+      <label class="label">Partner Sign Date	</label>
+      <input nbInput
+             placeholder="Select Date"
+             [nbDatepicker]="formpickerstart"
+             [(ngModel)]="data.partnerSignDate">
+      <nb-datepicker #formpickerstart></nb-datepicker>
+    </div>
+    <div class="form-group">
+      <label class="label">Status</label>
+      <nb-card-body>
+          <nb-select [(selected)]="data.status">
+            <nb-option value="0">Draft</nb-option>
+            <nb-option value="1">Active</nb-option>
+          </nb-select>
+        </nb-card-body>
+    </div>
+    <div class="form-group">
+      <label class="label">ECM	</label>
+      <input nbInput fullWidth [(ngModel)]="data.ecmUrl">
     </div>
   </div>
   <div class="form-group row">
