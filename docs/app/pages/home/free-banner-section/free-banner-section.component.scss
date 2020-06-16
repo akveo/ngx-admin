@@ -1,0 +1,29 @@
+/**
+ * @license
+ * Copyright Akveo. All Rights Reserved.
+ * Licensed under the MIT License. See License.txt in the project root for license information.
+ */
+
+@import '../../../@theme/styles/themes';
+
+@include nb-install-component() {
+  display: block;
+  padding-top: 5.125rem;
+
+
+  .free-banner-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  img {
+    width: 100%;
+  }
+
+  .link-to-free-bundle {
+    margin-top: 2rem;
+    font-size: 1.2rem;
+    color: nb-theme(color-link);
+  }
+}
