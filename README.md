@@ -27,6 +27,11 @@ Easy way to integrate ngx-admin with any backend (PHP, .Net, .Net Core, Java etc
 
 [Check out our Store](https://hubs.ly/H0qwyl60) for ready to use Backend Bundles.
 
+### Free Bundles
+<a href="https://hubs.ly/H0rvhPL0"><img src="https://i.imgur.com/NzTDxRG.png"></a>
+
+[Download ngx-admin with .net backend for FREE!](https://hubs.ly/H0rvhPL0)
+
 ### With 6 stunning visual themes
 
 | <a target="_blank" href="https://hubs.ly/H0nxM3b0"><img src="https://i.imgur.com/67YAlhf.png"/></a> | <a target="_blank" href="https://hubs.ly/H0nxNmv0"><img src="https://i.imgur.com/aQzw0hD.png"/></a> |
