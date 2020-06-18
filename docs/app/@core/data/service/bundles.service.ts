@@ -39,7 +39,6 @@ export class Feature {
 @Injectable()
 export class BundlesService {
 
-  private readonly STORE: string = 'https://store.akveo.com/products';
   private readonly STORE_COLLECTION: string = 'https://store.akveo.com/collections';
 
   private features: Feature[] = [
