@@ -41,6 +41,7 @@ $nb-themes: nb-register-theme((
 
   separator: transparent,
   color-success: #18cb90,
+  color-link: #18cb90,
   color-bg: transparent,
   color-fg: #405571,
   color-fg-heading: #546d8d,
@@ -146,6 +147,7 @@ $nb-themes: nb-register-theme((
   shadow-hover-green-btn: shadow,
   shadow-active-green-btn: shadow,
 
+  color-link: #6200ee,
   color-primary-default: #6200ee,
   color-active-fg: color-primary-default,
   color-active-bg: color-primary-default,

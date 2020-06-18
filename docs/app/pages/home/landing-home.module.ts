@@ -33,6 +33,7 @@ import {DefaultAdminInfoComponent} from './main-info-section/default-admin-main-
 import {MaterialAdminInfoComponent} from './main-info-section/material-admin-main-info/material-info.component';
 import {ContactFormComponent} from './contact-form/contact.component';
 import {NbButtonModule} from '@nebular/theme';
+import { FreeBannerSectionComponent } from './free-banner-section/free-banner-section.component';
 // components
 
 const PIPES = [LicensePipe, BackgroundImagePipe];
@@ -54,6 +55,7 @@ const COMPONENTS = [
   BackendBundlesSectionComponent,
   MaterialFeaturesSectionComponent,
   ContactFormComponent,
+  FreeBannerSectionComponent,
 ];
 
 @NgModule({
