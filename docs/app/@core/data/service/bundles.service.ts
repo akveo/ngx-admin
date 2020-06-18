@@ -26,8 +26,8 @@ export const BUNDLE_LICENSE = {
 };
 
 export const STORE_PRODUCTS_URL = {
-  base: 'https://store.akveo.com/collections/frontpage/products.json',
-  material: 'https://store.akveo.com/collections/material-bundles/products.json',
+  base: 'https://store.akveo.com/collections/collection-for-ngx-admin-landing/products.json',
+  material: 'https://store.akveo.com/collections/collection-for-ngx-admin-landing/products.json',
 };
 
 export class Feature {
@@ -39,7 +39,7 @@ export class Feature {
 @Injectable()
 export class BundlesService {
 
-  private readonly STORE: string = 'https://store.akveo.com/products';
+  private readonly STORE_COLLECTION: string = 'https://store.akveo.com/collections';
 
   private features: Feature[] = [
     {
@@ -92,7 +92,7 @@ export class BundlesService {
           return {
             id: item.id,
             imageUrl: this.getDefaultImage(item.images),
-            storeUrl: `${this.STORE}/${item.handle}`,
+            storeUrl: `${this.STORE_COLLECTION}/${item.handle}`,
             tags: item.tags,
             title: item.title,
             description: (item.body_html as string).trim().replace(/<(?:.|\n)*?>/gm, ' ').replace(/  +/gm, ' '),
