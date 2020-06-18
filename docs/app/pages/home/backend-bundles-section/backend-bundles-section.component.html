@@ -37,7 +37,7 @@
             <span class="package-card__price package-card__price--old" *ngIf="shouldShowOldPrice(product.variants, selectedLicenseType)">
               ${{ (product.variants | license:selectedLicenseType).compare_at_price }}
             </span>
-            <span class="package-card__price">${{ (product.variants | license:selectedLicenseType).price }}</span>
+            <span class="package-card__price">From ${{ (product.variants | license:selectedLicenseType).price }}</span>
           </div>
           <a href="{{ product.storeUrl }}?utm_source=ngx_admin&utm_medium=referral&utm_campaign=akveo_store%20-%20specific%20bundle%20-%20ngx_admin%20landing&utm_content=buy_bundle_{{ selectedLicenseType }}"
              class="package-card__buy-link btn">
