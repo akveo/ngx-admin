@@ -1,3 +1,9 @@
+/**
+ * @license
+ * Copyright Akveo. All Rights Reserved.
+ * Licensed under the MIT License. See License.txt in the project root for license information.
+ */
+
 import { Component, ViewChild, AfterViewInit, Input } from '@angular/core';
 import { coerceBooleanProperty } from '@angular/cdk/coercion';
 import { NbPopoverDirective } from '@nebular/theme';

@@ -1,0 +1,93 @@
+/**
+ * @license
+ * Copyright Akveo. All Rights Reserved.
+ * Licensed under the MIT License. See License.txt in the project root for license information.
+ */
+
+@import '~@nebular/theme/styles/global/breakpoints';
+
+@import '../../../@theme/styles/themes';
+
+@include nb-install-component() {
+  nb-card-body {
+    position: relative;
+  }
+
+  .close-icon {
+    cursor: pointer;
+    position: absolute;
+    right: 0.1rem;
+    top: 0.1rem;
+  }
+
+  ::ng-deep .custom-form {
+    .modal-header {
+      display: none;
+    }
+
+    .modal-body {
+      padding-bottom: 0;
+    }
+
+    .actions {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    input.hs-input {
+      width: 100%;
+      font-size: nb-theme(font-size-sm);
+      padding: 0.75rem 1rem !important;
+      border: 1px solid #e4e9f2;
+      box-shadow: nb-theme(shadow-default);
+      border-radius: 0.25rem;
+
+      &.invalid {
+        box-shadow: 0 0 1.25rem 0 rgba(210, 45, 45, 0.6);
+      }
+
+      &::placeholder {
+        color: #434a59;
+        opacity: 0.24;
+      }
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    .hs-error-msgs {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .hs-form-required, .hs-error-msg {
+      color: #f2545b;
+    }
+
+    .hs_error_rollup {
+      display: none;
+    }
+
+    .btn {
+      margin-top: 2rem;
+      font-family: nb-theme(font-main), sans-serif;
+      border-radius: 3px;
+      border: none;
+      background-color: nb-theme(color-active-fg);
+      color: #ffffff;
+      padding: 1rem 2rem;
+      box-shadow: nb-theme(shadow-btn);
+      cursor: pointer;
+      text-transform: uppercase;
+
+      &:hover {
+        box-shadow: nb-theme(shadow-hover-green-btn);
+      }
+
+      &:active {
+        box-shadow: nb-theme(shadow-active-green-btn);
+      }
+    }
+  }
+}
