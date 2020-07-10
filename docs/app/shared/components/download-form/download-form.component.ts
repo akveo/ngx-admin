@@ -4,8 +4,8 @@
  * Licensed under the MIT License. See License.txt in the project root for license information.
  */
 
-import { AfterViewInit, Component, Inject } from '@angular/core';
-import { NB_WINDOW, NbDialogRef } from '@nebular/theme';
+import { AfterViewInit, Component } from '@angular/core';
+import { NbDialogRef } from '@nebular/theme';
 
 @Component({
   selector: 'ngx-download-form',
@@ -14,8 +14,7 @@ import { NB_WINDOW, NbDialogRef } from '@nebular/theme';
 })
 export class DownloadFormComponent implements AfterViewInit {
 
-  constructor(@Inject(NB_WINDOW) private window,
-              protected ref: NbDialogRef<DownloadFormComponent>) {
+  constructor(protected ref: NbDialogRef<DownloadFormComponent>) {
   }
 
   ngAfterViewInit() {
