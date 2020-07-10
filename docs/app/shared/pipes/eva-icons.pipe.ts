@@ -25,7 +25,7 @@ export class EvaIconsPipe implements PipeTransform {
             options: {
               height: number;
               width: number;
-              fill: string;
+              fill?: string;
               animationType?: string;
               animationHover?: boolean;
               animationInfinity?: boolean;

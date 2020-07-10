@@ -113,21 +113,28 @@
     margin-top: 1.875rem;
   }
 
+  .buttons-links {
+    display: flex;
+    justify-content: space-between;
+
+    .btn {
+      flex: 1;
+    }
+  }
+
   .btn {
     font-family: nb-theme(font-main), sans-serif;
     border-radius: 3px;
     border: none;
     background: #ffffff;
     color: #000000;
-    padding: 1.125rem 1em;
+    padding: 1.125rem 0;
     box-shadow: nb-theme(shadow-default);
     cursor: pointer;
     text-transform: uppercase;
 
     &.btn-demo {
       margin-left: 1em;
-      padding-left: 4rem;
-      padding-right: 4rem;
       color: #ffffff;
       background-color: nb-theme(color-active-fg);
       box-shadow: nb-theme(shadow-btn);
@@ -180,13 +187,6 @@
     .main-inf {
       margin-right: 0.75rem;
       margin-left: 1rem;
-    }
-
-    .btn {
-        &.btn-demo {
-          padding-left: 3.25rem;
-          padding-right: 3.25rem;
-        }
     }
   }
 
@@ -271,14 +271,21 @@
     }
 
     .buttons {
+      padding-right: 1rem;
+      padding-left: 1rem;
+
       a {
         display: block;
-        margin: 0 1rem;
+        margin: 0;
 
         &.btn-demo {
           margin-top: 1rem;
         }
       }
+    }
+
+    .buttons-links {
+      display: block;
     }
   }
 }

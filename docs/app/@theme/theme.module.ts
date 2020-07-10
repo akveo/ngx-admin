@@ -17,6 +17,7 @@ import {
   NbCardModule,
   NbSidebarModule,
   NbTabsetModule,
+  NbDialogModule,
 } from '@nebular/theme';
 
 import { LandingSharedModule } from '../shared/landing-shared.module';
@@ -93,6 +94,7 @@ export class NgxLandingThemeModule {
         ...NbThemeModule.forRoot({ name: 'ngx-landing' }).providers,
         ...NbMenuModule.forRoot().providers,
         ...NbSidebarModule.forRoot().providers,
+        ...NbDialogModule.forRoot().providers,
 
         ...ngxLandingServices,
       ],
