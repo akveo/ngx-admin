@@ -13,3 +13,4 @@ interface NodeModule {
 declare var require: NodeRequire;
 declare var structure: any;
 declare var docs: any;
+declare var hbspt: any;

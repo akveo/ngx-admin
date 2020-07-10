@@ -14,7 +14,8 @@ import { takeWhile } from 'rxjs/operators';
   styleUrls: ['./main-info-section.component.scss'],
 })
 export class MainInfoSectionComponent implements OnDestroy {
-  constructor(themeService: NbThemeService, breakpointService: NbMediaBreakpointsService) {
+  constructor(themeService: NbThemeService,
+              breakpointService: NbMediaBreakpointsService) {
     this.breakpoints = breakpointService.getBreakpointsMap();
     themeService.onMediaQueryChange()
       .pipe(takeWhile(() => this.alive))
