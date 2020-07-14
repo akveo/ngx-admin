@@ -32,7 +32,7 @@
   "dependencies": {
     "@akveo/ng2-completer": "^9.0.1",
     "@angular/animations": "^10.0.3",
-    "@angular/cdk": "^9.1.2",
+    "@angular/cdk": "^10.0.1",
     "@angular/common": "^10.0.3",
     "@angular/compiler": "^10.0.3",
     "@angular/core": "^10.0.3",
