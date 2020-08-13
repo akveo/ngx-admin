@@ -38,6 +38,7 @@
     "@angular/core": "^9.0.4",
     "@angular/forms": "^9.0.4",
     "@angular/google-maps": "^9.1.0",
+    "@angular/localize": "^9.1.12",
     "@angular/platform-browser": "^9.0.4",
     "@angular/platform-browser-dynamic": "^9.0.4",
     "@angular/router": "^9.0.4",
