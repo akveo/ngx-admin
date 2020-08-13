@@ -26,9 +26,9 @@ export class ECommerceVisitorsAnalyticsComponent implements OnDestroy {
       });
 
     forkJoin(
-      this.visitorsAnalyticsChartService.getInnerLineChartData(),
+      [this.visitorsAnalyticsChartService.getInnerLineChartData(),
       this.visitorsAnalyticsChartService.getOutlineLineChartData(),
-      this.visitorsAnalyticsChartService.getPieChartData(),
+      this.visitorsAnalyticsChartService.getPieChartData()],
     )
       .pipe(takeWhile(() => this.alive))
       .subscribe(([innerLine, outerLine, pieChartValue]: [number[], OutlineData[], number]) => {

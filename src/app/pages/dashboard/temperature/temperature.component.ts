@@ -35,8 +35,8 @@ export class TemperatureComponent implements OnDestroy {
     });
 
     forkJoin(
-      this.temperatureHumidityService.getTemperatureData(),
-      this.temperatureHumidityService.getHumidityData(),
+      [this.temperatureHumidityService.getTemperatureData(),
+      this.temperatureHumidityService.getHumidityData()],
     )
       .subscribe(([temperatureData, humidityData]: [Temperature, Temperature]) => {
         this.temperatureData = temperatureData;

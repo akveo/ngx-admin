@@ -18,8 +18,8 @@ export class ContactsComponent implements OnDestroy {
 
   constructor(private userService: UserData) {
     forkJoin(
-      this.userService.getContacts(),
-      this.userService.getRecentUsers(),
+      [this.userService.getContacts(),
+      this.userService.getRecentUsers()],
     )
       .pipe(takeWhile(() => this.alive))
       .subscribe(([contacts, recent]: [Contacts[], RecentUsers[]]) => {
