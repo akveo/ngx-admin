@@ -18,7 +18,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
     children: [
       {
         title: 'PHP',
-        url: 'https://hubs.ly/H0qwPw70',
+        url: 'https://hubs.ly/H0tCfs60',
       },
       {
         title: '.NET',
