@@ -54,11 +54,13 @@ export class NgxStarterComponent implements OnDestroy, OnInit {
               private metadataService: MetadataService,
               ) {}
 
+  // tslint:disable:max-line-length
   ngOnInit(): void {
     this.metadataService.updateTitle('Ngx-admin themes for e-commerce dashboard on Angular 9+ and Nebular');
     this.metadataService.updateDescription('Choose a theme for ngx-admin e-commerce dashboard: Material, Light and Dark, Cosmic and Corporate.');
     this.metadataService.updateKeywords('Ngx-admin themes, material theme, ngx-admin cosmic, ngx-admin corporate theme, dark theme ngx-admin');
   }
+  // tslint:enable:max-line-length
 
   navigate(themeName: string) {
     this.currentThemeService.setCurrentTheme(themeName);

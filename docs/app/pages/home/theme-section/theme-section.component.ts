@@ -77,6 +77,7 @@ export class ThemeSectionComponent implements OnDestroy {
     return this.forMaterialTheme ? '#6200ee' : '#00db92';
   }
 
+  // tslint:disable:max-line-length
   public get materialLightDemoUrl(): string {
     return this.forMaterialTheme
       ? 'https://www.akveo.com/ngx-admin/pages/dashboard?theme=material-light&utm_campaign=ngx_admin%20-%20demo%20-%20ngx_admin%20docs&utm_source=ngx_admin&utm_medium=referral&utm_content=ngx_admin_material_themes_material_light'
@@ -112,6 +113,7 @@ export class ThemeSectionComponent implements OnDestroy {
       ? 'https://www.akveo.com/ngx-admin/pages/dashboard?theme=corporate&utm_campaign=ngx_admin%20-%20demo%20-%20ngx_admin%20docs&utm_source=ngx_admin&utm_medium=referral&utm_content=ngx_admin_material_themes_corporate'
       : 'https://www.akveo.com/ngx-admin/pages/dashboard?theme=corporate&utm_campaign=ngx_admin%20-%20demo%20-%20ngx_admin%20docs&utm_source=ngx_admin&utm_medium=referral&utm_content=ngx_admin_landing_themes_corporate';
   }
+  // tslint:enable:max-line-length
 
   constructor(
     private themeService: NbThemeService,
