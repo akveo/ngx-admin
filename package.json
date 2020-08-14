@@ -38,17 +38,17 @@
   },
   "dependencies": {
     "@akveo/ng2-completer": "^9.0.1",
-    "@angular/animations": "^9.0.4",
+    "@angular/animations": "^10.0.9",
     "@angular/cdk": "^9.1.2",
-    "@angular/common": "^9.0.4",
-    "@angular/compiler": "^9.0.4",
-    "@angular/core": "^9.0.4",
-    "@angular/forms": "^9.0.4",
+    "@angular/common": "^10.0.9",
+    "@angular/compiler": "^10.0.9",
+    "@angular/core": "^10.0.9",
+    "@angular/forms": "^10.0.9",
     "@angular/google-maps": "^9.1.0",
     "@angular/material": "^9.1.0",
-    "@angular/platform-browser": "^9.0.4",
-    "@angular/platform-browser-dynamic": "^9.0.4",
-    "@angular/router": "^9.0.4",
+    "@angular/platform-browser": "^10.0.9",
+    "@angular/platform-browser-dynamic": "^10.0.9",
+    "@angular/router": "^10.0.9",
     "@asymmetrik/ngx-leaflet": "3.0.1",
     "@nebular/auth": "5.0.0",
     "@nebular/bootstrap": "^5.0.0",
@@ -93,8 +93,8 @@
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.1000.6",
     "@angular/cli": "^10.0.6",
-    "@angular/compiler-cli": "^9.0.4",
-    "@angular/language-service": "9.0.4",
+    "@angular/compiler-cli": "^10.0.9",
+    "@angular/language-service": "10.0.9",
     "@compodoc/compodoc": "1.0.1",
     "@fortawesome/fontawesome-free": "^5.2.0",
     "@types/d3-color": "1.0.5",
@@ -133,6 +133,6 @@
     "ts-node": "3.2.2",
     "tslint": "^5.7.0",
     "tslint-language-service": "^0.9.9",
-    "typescript": "3.7.5"
+    "typescript": "3.9.7"
   }
 }
