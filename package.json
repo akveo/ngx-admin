@@ -91,8 +91,8 @@
     "zone.js": "~0.10.2"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~0.900.4",
-    "@angular/cli": "^9.0.4",
+    "@angular-devkit/build-angular": "~0.1000.6",
+    "@angular/cli": "^10.0.6",
     "@angular/compiler-cli": "^9.0.4",
     "@angular/language-service": "9.0.4",
     "@compodoc/compodoc": "1.0.1",
