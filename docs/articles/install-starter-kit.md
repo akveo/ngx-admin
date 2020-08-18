@@ -9,8 +9,8 @@ The Nebular team doesn't consider providing generic integration layer as a part 
 
 To install ngx-admin on your machine you need to have the following tools installed:
 - Git - <a href="https://git-scm.com" target="_blank">https://git-scm.com</a>
-- Node.js - <a href="https://nodejs.org" target="_blank">https://nodejs.org</a>. Please note the **version** should be **>=8**
-- Npm - Node.js package manager, comes with Node.js. Please make sure npm **version** is **>=5**
+- Node.js - <a href="https://nodejs.org" target="_blank">https://nodejs.org</a>.
+- Npm - Node.js package manager, comes with Node.js.
 - You might also need some specific native packages depending on your operating system like `build-essential` on Ubuntu
 
 <div class="note note-warning">
