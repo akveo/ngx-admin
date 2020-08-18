@@ -77,7 +77,10 @@
                 }
               ]
             }
-          }
+          },
+          "allowedCommonJsDependencies": [
+            "lodash"
+          ]
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
