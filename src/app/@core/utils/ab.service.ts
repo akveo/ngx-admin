@@ -1,9 +1,7 @@
 import { Injectable } from '@angular/core';
 
-import { fromEvent as observableFromEvent } from 'rxjs/observable/fromEvent';
-import { BehaviorSubject } from 'rxjs/BehaviorSubject';
-import { Observable } from 'rxjs/Observable';
-import { filter } from 'rxjs/operators/filter';
+import { Observable, BehaviorSubject, fromEvent as observableFromEvent } from 'rxjs';
+import { filter } from 'rxjs/operators';
 
 @Injectable()
 export class AbService {
