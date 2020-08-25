@@ -18,7 +18,7 @@ Get material ngx-admin integrated with backend technology of your choice. [Check
 
 ### To use material theme checkout `feat/material-theme` branch
 
-# Admin template based on Angular 9+ and <a href="https://github.com/akveo/nebular">Nebular</a>
+# Admin template based on Angular 10+ and <a href="https://github.com/akveo/nebular">Nebular</a>
 <a target="_blank" href="https://hubs.ly/H0n4Sw20"><img src="https://i.imgur.com/mFdqvgG.png"/></a>
 
 ### Backend Integration Bundles
@@ -48,7 +48,7 @@ Easy way to integrate ngx-admin with any backend (PHP, .Net, .Net Core, Java etc
 
 ### What's included:
 
-- Angular 9+ & Typescript
+- Angular 10+ & Typescript
 - Bootstrap 4+ & SCSS
 - Responsive layout
 - RTL support
