@@ -1,6 +1,6 @@
 # What is ngx-admin?
 
-ngx-admin is a front-end admin dashboard template based on Angular 9+, Bootstrap 4+ and <a href="https://hubs.ly/H0n5PMl0" target="_blank">Nebular</a>. That means all the data you can see on graphs, charts and tables is mocked in Javascript so you can use the backend of your choice with no limitations.
+ngx-admin is a front-end admin dashboard template based on Angular 9+, Bootstrap 4+ and <a href="https://akveo.github.io/nebular?utm_campaign=nebular%20-%20home%20-%20ngx_admin%20docs&utm_source=ngx_admin&utm_medium=referral&utm_content=docs_getting_started" target="_blank">Nebular</a>. That means all the data you can see on graphs, charts and tables is mocked in Javascript so you can use the backend of your choice with no limitations.
 <hr>
 
 ## How can it help me?
