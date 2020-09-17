@@ -24,7 +24,7 @@
   align-items: stretch;
   height: 100%;
 
-  & > *:not(router-outlet) {
+  ::ng-deep & > *:last-child {
     height: 100%;
     width: 100%;
   }
@@ -36,16 +36,29 @@
     justify-content: flex-start;
     height: fit-content;
 
-    .diagram-container {
+    .diagram-container, .description-container {
       width: 100%;
       max-width: none;
+      min-width: 0;
       height: fit-content;
       margin: 0 auto;
+    }
 
-      ngx-backend-integration-diagram {
+    .description-container {
+      padding-bottom: 1.5rem;
+    }
+
+    .diagram-container {
+      padding-bottom: 1.5rem;
+      ::ng-deep ngx-backend-integration-diagram {
         font-size: 2vw;
-        height: 60vw;
+        height: fit-content;
         padding-top: 0;
+
+        & > * {
+          height: fit-content;
+          position: static !important;
+        }
       }
     }
   }
