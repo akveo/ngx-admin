@@ -8,7 +8,6 @@
   padding: 1rem 2rem;
   width: 100%;
   height: 100%;
-  box-sizing: border-box;
 
   .header, .header2 {
     font-weight: bold;
@@ -23,7 +22,7 @@
   }
 
   .features-list {
-    list-style-type: none;
+    list-style-type: '-';
     padding-left: 0;
   }
 

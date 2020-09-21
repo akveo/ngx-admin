@@ -1,4 +1,5 @@
 @import '../../@theme/styles/themes';
+@import '~@nebular/theme/styles/global/breakpoints';
 
 :host {
   display: flex !important;
@@ -24,39 +25,40 @@
   align-items: stretch;
   height: 100%;
 
-  ::ng-deep & > *:last-child {
-    height: 100%;
+  ::ng-deep & *:last-child {
     width: 100%;
   }
 }
 
-@media (max-width : 991px) {
+@include media-breakpoint-down(lg) {
   :host {
     flex-direction: column;
     justify-content: flex-start;
+    align-items: center;
     height: fit-content;
 
     .diagram-container, .description-container {
       width: 100%;
       max-width: none;
-      min-width: 0;
-      height: fit-content;
-      margin: 0 auto;
     }
 
     .description-container {
       padding-bottom: 1.5rem;
+
+      ::ng-deep ngx-integration-description .subheader {
+        margin-bottom: 1.5rem;
+      }
     }
 
     .diagram-container {
       padding-bottom: 1.5rem;
+      min-width: 0;
       ::ng-deep ngx-backend-integration-diagram {
         font-size: 2vw;
         height: fit-content;
         padding-top: 0;
 
         & > * {
-          height: fit-content;
           position: static !important;
         }
       }
