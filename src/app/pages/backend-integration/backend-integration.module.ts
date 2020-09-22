@@ -14,7 +14,7 @@ import { JavaIntegrationDescriptionComponent } from './descriptions/java-integra
 import { PythonIntegrationDescriptionComponent } from './descriptions/python-integration-description.component';
 import { EcommerceIntegrationDescriptionComponent } from './descriptions/ecommerce-integration-description.component';
 import { IotIntegrationDescriptionComponent } from './descriptions/iot-integration-description.component';
-import {InlineSVGModule} from "ng-inline-svg";
+import {InlineSVGModule} from 'ng-inline-svg';
 
 @NgModule({
   imports: [
