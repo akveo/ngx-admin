@@ -16,11 +16,11 @@
 .diagram-container {
   flex: 2 1 auto;
   align-items: center;
-  min-width: 35rem;
+  min-width: 30rem;
 }
 
 .description-container {
-  flex: 1 1 auto;
+  flex: 1 2 auto;
   max-width: 45rem;
   align-items: stretch;
   height: 100%;
@@ -35,7 +35,6 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    height: fit-content;
 
     .diagram-container, .description-container {
       width: 100%;
@@ -51,10 +50,8 @@
     }
 
     .diagram-container {
-      padding-bottom: 1.5rem;
       min-width: 0;
       ::ng-deep ngx-backend-integration-diagram {
-        font-size: 2vw;
         height: fit-content;
         padding-top: 0;
 
