@@ -19,6 +19,11 @@ const routes: Routes = [{
       component: DashboardComponent,
     },
     {
+      path: 'backend-integration',
+      loadChildren: () => import('./backend-integration/backend-integration.module')
+        .then(m => m.BackendIntegrationModule),
+    },
+    {
       path: 'layout',
       loadChildren: () => import('./layout/layout.module')
         .then(m => m.LayoutModule),
