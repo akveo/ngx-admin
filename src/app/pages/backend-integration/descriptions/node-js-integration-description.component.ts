@@ -11,7 +11,7 @@ import { Component } from '@angular/core';
 })
 export class NodeJsIntegrationDescriptionComponent {
 
-  buttonText: string = 'Get Backend From 49$';
+  buttonText = 'Get Backend From 49$';
   url = 'https://store.akveo.com/collections/nodejs-bundles?utm_campaign=akveo_store%20-%20all%20bundles%20-%20ngx_admin_demo&utm_source=ngx_admin&utm_medium=referral&utm_content=sidebar_link_nodejs';
 
   features: string[] = [

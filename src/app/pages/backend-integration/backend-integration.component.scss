@@ -26,7 +26,7 @@
   align-items: stretch;
   height: 100%;
 
-  ::ng-deep & *:last-child {
+  ::ng-deep :last-child {
     width: 100%;
   }
 }
@@ -52,13 +52,6 @@
 
     .diagram-container {
       min-width: 0;
-      ::ng-deep ngx-backend-integration-diagram {
-        padding-top: 0;
-
-        & > * {
-          position: static !important;
-        }
-      }
     }
   }
 }

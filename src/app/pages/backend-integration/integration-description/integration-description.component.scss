@@ -23,7 +23,8 @@
   }
 
   a {
-    width: fit-content;
+    width: auto;
+    align-self: flex-start;
     margin-top: 2rem;
   }
 }

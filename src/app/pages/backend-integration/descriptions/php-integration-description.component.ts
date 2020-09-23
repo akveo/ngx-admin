@@ -11,7 +11,7 @@ import { Component } from '@angular/core';
 })
 export class PhpIntegrationDescriptionComponent {
 
-  buttonText: string = 'Get Backend From 49$';
+  buttonText = 'Get Backend From 49$';
   url = 'https://store.akveo.com/products/material-php-starter-bundle?utm_campaign=akveo_store%20-%20all%20bundles%20-%20ngx_admin_demo&utm_source=ngx_admin%20&utm_medium=referral%20&utm_content=sidebar_link_php';
 
   features: string[] = [
