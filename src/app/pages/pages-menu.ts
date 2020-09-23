@@ -18,35 +18,35 @@ export const MENU_ITEMS: NbMenuItem[] = [
     children: [
       {
         title: 'PHP',
-        url: 'https://store.akveo.com/products/material-php-starter-bundle?utm_campaign=akveo_store%20-%20all%20bundles%20-%20ngx_admin_demo&utm_source=ngx_admin%20&utm_medium=referral%20&utm_content=sidebar_link_php',
+        link: '/pages/backend-integration/php',
       },
       {
         title: '.NET',
-        url: 'https://store.akveo.com/collections/net-bundles?utm_campaign=akveo_store%20-%20all%20bundles%20-%20ngx_admin_demo&utm_source=ngx_admin&utm_medium=referral&utm_content=sidebar_link_dotnet',
+        link: '/pages/backend-integration/dot-net',
       },
       {
         title: '.NET Core',
-        url: 'https://store.akveo.com/collections/net-core-bundles?utm_campaign=akveo_store%20-%20all%20bundles%20-%20ngx_admin_demo&utm_source=ngx_admin&utm_medium=referral&utm_content=sidebar_link_dotnetcore',
+        link: '/pages/backend-integration/dot-net-core',
       },
       {
         title: 'Node JS',
-        url: 'https://store.akveo.com/collections/nodejs-bundles?utm_campaign=akveo_store%20-%20all%20bundles%20-%20ngx_admin_demo&utm_source=ngx_admin&utm_medium=referral&utm_content=sidebar_link_nodejs',
+        link: '/pages/backend-integration/node-js',
       },
       {
         title: 'Java',
-        url: 'https://store.akveo.com/collections/java-bundles?utm_campaign=akveo_store%20-%20all%20bundles%20-%20ngx_admin_demo&utm_source=ngx_admin&utm_medium=referral&utm_content=sidebar_link_java',
+        link: '/pages/backend-integration/java',
       },
       {
         title: 'Python',
-        url: 'https://store.akveo.com/collections/python-bundles?utm_campaign=akveo_store%20-%20all%20bundles%20-%20ngx_admin_demo&utm_source=ngx_admin&utm_medium=referral&utm_content=sidebar_link_python',
+        link: '/pages/backend-integration/python',
       },
       {
         title: 'E-commerce',
-        url: 'https://store.akveo.com/collections/e-commerce-bundles?utm_campaign=akveo_store%20-%20all%20bundles%20-%20ngx_admin_demo&utm_source=ngx_admin&utm_medium=referral&utm_content=sidebar_link_e-commerce',
+        link: '/pages/backend-integration/ecommerce',
       },
       {
         title: 'IoT',
-        url: 'https://store.akveo.com/collections/iot-bundles?utm_campaign=akveo_store%20-%20all%20bundles%20-%20ngx_admin_demo&utm_source=ngx_admin&utm_medium=referral&utm_content=sidebar_link_iot',
+        link: '/pages/backend-integration/iot',
       },
     ],
   },
