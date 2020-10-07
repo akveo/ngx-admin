@@ -2,6 +2,8 @@
   <ngx-landing-main-info></ngx-landing-main-info>
 </div>
 
+<ngx-backend-bundles-section id="backend-bundles"></ngx-backend-bundles-section>
+
 <ngx-landing-description-section *ngIf="descriptions | async" [descriptions]="descriptions | async" ></ngx-landing-description-section>
 
 <ngx-landing-theme-section></ngx-landing-theme-section>
@@ -15,8 +17,6 @@
 <ngx-free-banner-section bannerImg="assets/img/free-bundle-banner.png"
                          bundleUrl="https://store.akveo.com/products/net-ngx-admin-angular-starter-bundle?utm_campaign=akveo_store%20-%20specific%20bundle%20-%20ngx_admin%20landing&utm_source=ngx_admin&utm_medium=referral&utm_content=.net_free_dashboard_banner">
 </ngx-free-banner-section>
-
-<ngx-backend-bundles-section id="backend-bundles"></ngx-backend-bundles-section>
 
 <ngx-landing-our-projects-section></ngx-landing-our-projects-section>
 
