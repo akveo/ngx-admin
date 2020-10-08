@@ -17,14 +17,12 @@
   nb-card-header {
     display: flex;
     align-items: center;
+    justify-content: flex-end;
   }
 
   .close-icon {
-    cursor: pointer;
     margin-left: auto;
-    right: 0.1rem;
-    top: 0.1rem;
-    width: fit-content;
+    padding: 0;
   }
 
   ::ng-deep .custom-form {
@@ -43,23 +41,35 @@
 
     input.hs-input {
       width: 100%;
-      font-size: nb-theme(font-size-sm);
-      padding: 0.75rem 1rem !important;
-      border: 1px solid #e4e9f2;
-      box-shadow: nb-theme(shadow-default);
-      border-radius: 0.25rem;
+      color: nb-theme(input-basic-text-color);
+      font-size: nb-theme(input-medium-text-font-size);
+      font-weight: nb-theme(input-medium-text-font-weight);
+      line-height: nb-theme(input-medium-text-line-height);
+      padding: nb-theme(input-medium-padding) !important;
+      border: nb-theme(input-border-width) nb-theme(input-border-style) nb-theme(input-basic-border-color);
+      border-radius: nb-theme(input-rectangle-border-radius);
+      background-color: nb-theme(input-basic-background-color);
+
+      &.hover {
+        background-color: nb-theme(input-basic-hover-background-color);
+        border-color: nb-theme(input-basic-hover-border-color);
+      }
 
       &.invalid {
         box-shadow: 0 0 1.25rem 0 rgba(210, 45, 45, 0.6);
       }
 
       &::placeholder {
-        color: #434a59;
-        opacity: 0.24;
+        color: nb-theme(input-basic-placeholder-text-color);
+        font-size: nb-theme(input-medium-placeholder-text-font-size);
+        font-weight: nb-theme(input-medium-placeholder-text-font-weight);
+        line-height: nb-theme(input-medium-placeholder-text-line-height);
       }
 
       &:focus {
         outline: none;
+        background-color: nb-theme(input-basic-focus-background-color);
+        border-color: nb-theme(input-basic-focus-border-color);
       }
     }
 
@@ -68,7 +78,8 @@
       margin-bottom: 1rem;
       p {
         margin-bottom: 0;
-        text-align: left ! important;
+        text-align: left !important;
+        height: auto;
       }
     }
 
@@ -82,7 +93,8 @@
     }
 
     .hs-form-required, .hs-error-msg {
-      color: #f2545b;
+      margin-top: 0.5rem;
+      color: nb-theme(text-danger-color);
     }
 
     .hs_error_rollup {
@@ -90,7 +102,6 @@
     }
 
     .btn {
-      margin-top: 2rem;
       font-family: nb-theme(font-main), sans-serif;
       border-radius: 3px;
       border: none;

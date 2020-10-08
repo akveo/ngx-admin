@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { NbBadgeModule, NbCardModule, NbDialogModule, NbPopoverModule } from '@nebular/theme';
+import {NbBadgeModule, NbButtonModule, NbCardModule, NbDialogModule, NbPopoverModule} from '@nebular/theme';
 import { MaterialThemeLinkComponent } from './components/material-theme-link/material-theme-link.component';
 import { CapitalizePipe } from './pipes/capitalize.pipe';
 import { EvaIconsPipe } from './pipes/eva-icons.pipe';
@@ -28,14 +28,11 @@ const pipes = [
     NbBadgeModule,
     NbCardModule,
     NbDialogModule.forChild(),
+    NbButtonModule,
   ],
   declarations: [
     ...component,
     ...pipes,
-  ],
-  entryComponents: [
-    DownloadFormComponent,
-    PremiumFormComponent,
   ],
   exports: [
     NbPopoverModule,

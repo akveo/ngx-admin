@@ -9,7 +9,6 @@
 
 @include nb-install-component() {
   .btn {
-    display: block;
     font-family: nb-theme(font-main), sans-serif;
     border-radius: 3px;
     border: none;
