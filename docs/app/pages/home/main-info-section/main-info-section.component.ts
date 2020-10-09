@@ -5,8 +5,11 @@
  */
 
 import { Component, OnDestroy, Input } from '@angular/core';
-import { NbMediaBreakpoint, NbMediaBreakpointsService, NbThemeService } from '@nebular/theme';
+import { NbDialogService, NbMediaBreakpoint, NbMediaBreakpointsService, NbThemeService } from '@nebular/theme';
 import { takeWhile } from 'rxjs/operators';
+
+import { DownloadFormComponent } from '../../../shared/components/download-form/download-form.component';
+import { PremiumFormComponent } from '../../../shared/components/premium-form/premium-form.component';
 
 @Component({
   selector: 'ngx-landing-main-info',
@@ -15,7 +18,8 @@ import { takeWhile } from 'rxjs/operators';
 })
 export class MainInfoSectionComponent implements OnDestroy {
   constructor(themeService: NbThemeService,
-              breakpointService: NbMediaBreakpointsService) {
+              breakpointService: NbMediaBreakpointsService,
+              private dialogService: NbDialogService) {
     this.breakpoints = breakpointService.getBreakpointsMap();
     themeService.onMediaQueryChange()
       .pipe(takeWhile(() => this.alive))
@@ -41,5 +45,13 @@ export class MainInfoSectionComponent implements OnDestroy {
 
   public ngOnDestroy() {
     this.alive = false;
+  }
+
+  openDownloadDialog() {
+    this.dialogService.open(DownloadFormComponent);
+  }
+
+  openDownloadPremiumDialog() {
+    this.dialogService.open(PremiumFormComponent);
   }
 }

@@ -133,8 +133,9 @@
     cursor: pointer;
     text-transform: uppercase;
 
-    &.btn-demo {
-      margin-left: 1em;
+    &.btn-demo,
+    &.btn-download,
+    &.btn-download-premium {
       color: #ffffff;
       background-color: nb-theme(color-active-fg);
       box-shadow: nb-theme(shadow-btn);
@@ -155,6 +156,16 @@
     &:active {
       box-shadow: nb-theme(shadow-active-btn);
     }
+
+    &.btn-demo {
+      margin-left: 1em;
+    }
+  }
+
+  .btn-download,
+  .btn-download-premium {
+    margin-top: 1rem;
+    width: 100%;
   }
 
   @include media-breakpoint-down(xxl) {
