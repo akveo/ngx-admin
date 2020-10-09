@@ -8,19 +8,20 @@ import { AfterViewInit, Component } from '@angular/core';
 import { NbDialogRef } from '@nebular/theme';
 
 @Component({
-  selector: 'ngx-download-form',
-  templateUrl: './download-form.component.html',
-  styleUrls: ['./download-form.component.scss'],
+  selector: 'ngx-premium-form',
+  templateUrl: './premium-form.component.html',
+  styleUrls: ['./premium-form.component.scss'],
 })
-export class DownloadFormComponent implements AfterViewInit {
+export class PremiumFormComponent implements AfterViewInit {
 
-  constructor(protected ref: NbDialogRef<DownloadFormComponent>) {
+
+  constructor(protected ref: NbDialogRef<PremiumFormComponent>) {
   }
 
   ngAfterViewInit() {
     hbspt.forms.create({
       portalId: '2452262',
-      formId: '93007d7b-5f11-4dd8-bcfd-f8b99d31f31e',
+      formId: 'b066428e-c41a-4dce-bbc2-5690cf084a8f',
       target: '#hubspotForm',
       submitButtonClass: 'hs-submit-btn btn',
       css: '',
