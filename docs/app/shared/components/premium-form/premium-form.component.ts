@@ -26,7 +26,6 @@ export class PremiumFormComponent implements AfterViewInit {
       submitButtonClass: 'hs-submit-btn btn',
       css: '',
       cssClass: 'hs-custom-form',
-      redirectUrl: 'https://github.com/akveo/ngx-admin',
     });
   }
 
