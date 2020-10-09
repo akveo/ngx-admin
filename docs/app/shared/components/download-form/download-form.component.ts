@@ -22,9 +22,9 @@ export class DownloadFormComponent implements AfterViewInit {
       portalId: '2452262',
       formId: '93007d7b-5f11-4dd8-bcfd-f8b99d31f31e',
       target: '#hubspotForm',
-      submitButtonClass: 'btn',
+      submitButtonClass: 'hs-submit-btn',
       css: '',
-      cssClass: 'custom-form',
+      cssClass: 'hs-custom-form',
       redirectUrl: 'https://github.com/akveo/ngx-admin',
     });
   }

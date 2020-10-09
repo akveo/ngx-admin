@@ -23,9 +23,9 @@ export class PremiumFormComponent implements AfterViewInit {
       portalId: '2452262',
       formId: 'b066428e-c41a-4dce-bbc2-5690cf084a8f',
       target: '#hubspotForm',
-      submitButtonClass: 'btn',
+      submitButtonClass: 'hs-submit-btn',
       css: '',
-      cssClass: 'custom-form',
+      cssClass: 'hs-custom-form',
       redirectUrl: 'https://github.com/akveo/ngx-admin',
     });
   }
