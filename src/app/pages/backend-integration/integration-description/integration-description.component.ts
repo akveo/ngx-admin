@@ -26,5 +26,5 @@ export class IntegrationDescriptionComponent {
   @Input() features: string[];
   @Input() url: string;
   @Input() buttonText: string;
-  
+
 }
