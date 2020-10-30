@@ -4,11 +4,11 @@
  * Licensed under the MIT License. See License.txt in the project root for license information.
  */
 
-import { Component, HostBinding, Input, OnDestroy } from '@angular/core';
-import { takeWhile } from 'rxjs/operators';
+import { OnInit, Component, HostBinding, Input, OnDestroy } from '@angular/core';
+import { Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
 import { NbSidebarService } from '@nebular/theme';
 
-/*import { NgxAnalytics } from '../../services/analytics.service';*/
 import { NgxVersionService } from '../../services/version.service';
 import { HeaderMenuService } from '../../../@core/data/service/header-menu.service';
 
@@ -17,9 +17,9 @@ import { HeaderMenuService } from '../../../@core/data/service/header-menu.servi
   styleUrls: ['./header.component.scss'],
   templateUrl: './header.component.html',
 })
-export class NgxLandingHeaderComponent implements OnDestroy {
+export class NgxLandingHeaderComponent implements OnInit, OnDestroy {
 
-  private alive = true;
+  private destroy$ = new Subject<void>();
 
   @HostBinding('class.docs-page') @Input() isDocs = false;
 
@@ -28,18 +28,17 @@ export class NgxLandingHeaderComponent implements OnDestroy {
   currentVersion: string;
   headerMenu = [];
 
-  constructor(/*private analytics: NgxAnalytics,*/
-              private sidebarService: NbSidebarService,
+  constructor(private sidebarService: NbSidebarService,
               private versionService: NgxVersionService,
               private headerMenuService: HeaderMenuService) {
+  }
+
+  ngOnInit() {
     this.currentVersion = this.versionService.getNgxVersion();
 
     this.headerMenuService.getHeaderMenu()
-      .pipe(takeWhile(() => this.alive ))
+      .pipe(takeUntil(this.destroy$))
       .subscribe((headerMenu) => this.headerMenu = headerMenu);
-  }
-
-  trackEmailClick() {
   }
 
   toggleSidebar() {
@@ -47,6 +46,7 @@ export class NgxLandingHeaderComponent implements OnDestroy {
   }
 
   ngOnDestroy() {
-    this.alive = false;
+    this.destroy$.next();
+    this.destroy$.complete();
   }
 }

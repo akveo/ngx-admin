@@ -110,6 +110,8 @@
   }
 
   .buttons {
+    display: flex;
+    flex-direction: column;
     margin-top: 1.875rem;
   }
 
@@ -133,9 +135,7 @@
     cursor: pointer;
     text-transform: uppercase;
 
-    &.btn-demo,
-    &.btn-download,
-    &.btn-download-premium {
+    &.btn-green {
       color: #ffffff;
       background-color: nb-theme(color-active-fg);
       box-shadow: nb-theme(shadow-btn);
@@ -157,13 +157,12 @@
       box-shadow: nb-theme(shadow-active-btn);
     }
 
-    &.btn-demo {
+    &.btn-download {
       margin-left: 1em;
     }
   }
 
-  .btn-download,
-  .btn-download-premium {
+  .btn-premium {
     margin-top: 1rem;
     width: 100%;
   }
@@ -284,19 +283,6 @@
     .buttons {
       padding-right: 1rem;
       padding-left: 1rem;
-
-      a {
-        display: block;
-        margin: 0;
-
-        &.btn-demo {
-          margin-top: 1rem;
-        }
-      }
-    }
-
-    .buttons-links {
-      display: block;
     }
   }
 }

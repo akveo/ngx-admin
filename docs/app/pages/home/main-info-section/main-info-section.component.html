@@ -30,22 +30,21 @@
   </div>
   <div class="buttons">
     <div class="buttons-links">
-      <a class="btn btn-installation-guidelines"
-         [routerLink]="'/docs/getting-started/installation-guidelines'">
-        Installation Docs
-      </a>
       <a class="btn btn-demo"
          href="https://www.akveo.com/ngx-admin/pages/dashboard?utm_campaign=ngx_admin%20-%20demo%20-%20ngx_admin%20docs&utm_source=ngx_admin&utm_medium=referral&utm_content=landing_main_section"
          target="_blank">
         Demo
       </a>
+      <button (click)="openDownloadDialog()" class="btn btn-download">
+        Download
+      </button>
     </div>
 
-    <button (click)="openDownloadDialog()" class="btn btn-download">
-      Download
-    </button>
-    <button (click)="openDownloadPremiumDialog()" class="btn btn-download-premium">
-      Get ngx-admin PREMIUM for 89$
-    </button>
+    <a href="https://store.akveo.com/pages/ngx-admin-premium?utm_source=ngx_admin&utm_medium=referral&utm_campaign=ngx-admin_premium"
+       target="_blank"
+       class="btn btn-premium btn-green"
+    >
+      ngx-admin Premium
+    </a>
   </div>
 </div>

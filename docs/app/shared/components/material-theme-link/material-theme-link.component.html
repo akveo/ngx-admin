@@ -1,15 +1,16 @@
 <div style="position: relative;">
   <nb-badge text="New!" status="danger" position="top right"></nb-badge>
-<a
-  routerLink="/material"
-  class="eva-parent-hover"
-  [nbPopover]="popoverContent"
-  nbPopoverPlacement="bottom"
-  nbPopoverTrigger="noop"
-  nbPopoverOffset="0"
->
-  Material Theme
-</a>
+  <a
+    routerLink="/material"
+    class="material-theme-link eva-parent-hover"
+    [nbPopover]="popoverContent"
+    nbPopoverPlacement="bottom"
+    nbPopoverAdjustment="noop"
+    nbPopoverTrigger="noop"
+    nbPopoverOffset="0"
+  >
+    Material Theme
+  </a>
 </div>
 
 <ng-template #popoverContent>
