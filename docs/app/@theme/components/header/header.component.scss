@@ -267,6 +267,16 @@
       flex-basis: auto;
     }
 
+    ::ng-deep ngx-material-theme-link {
+      display: none;
+    }
+
+    @include media-breakpoint-up(is) {
+      ::ng-deep ngx-material-theme-link {
+        display: flex;
+      }
+    }
+
     @include media-breakpoint-up(sm) {
       ::ng-deep nb-menu .menu-items li:first-child {
         display: list-item;
