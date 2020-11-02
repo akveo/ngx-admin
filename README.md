@@ -77,7 +77,7 @@ This project runs its tests on multiple desktop and mobile browsers using [Brows
 
 - [Eva Icons](https://github.com/akveo/eva-icons) - 480+ beautiful Open Source icons
 - [Nebular](https://github.com/akveo/nebular) - Angular Components, Auth and Security
-- [Akveo templates](https://www.akveo.com/templates?utm_campaign=services%20-%20github%20-%20templates&utm_source=readme&utm_medium=ngx_admin&utm_content=templates) - 10+ Ready-to-use apps templates to speed up your apps developments
+- [Akveo templates](https://www.akveo.com/templates?utm_campaign=services%20-%20github%20-%20templates&utm_source=ngx_admin&utm_medium=referral&utm_content=ngx_admin%20github%20readme%20more%20from%20akveo%20link) - 10+ Ready-to-use apps templates to speed up your apps developments
 
 ### How can I support developers?
 - Star our GitHub repo :star:
