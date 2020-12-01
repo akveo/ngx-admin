@@ -19,6 +19,10 @@ const routes: Routes = [{
       component: DashboardComponent,
     },
     {
+      path: "new",
+      loadChildren: ()=>import('./new-dash-board/new-dash-board.module').then(m=>m.NewDashBoardModule)
+    },
+    {
       path: 'layout',
       loadChildren: () => import('./layout/layout.module')
         .then(m => m.LayoutModule),

@@ -1,0 +1,192 @@
+* {
+    font-family: 'Roboto', sans-serif;
+    outline: 0;
+}
+
+header {
+    padding: 10px 0;
+    background-color: #0814fb;
+    color: #fff;
+    a#logo {
+        text-decoration: none;
+        color: #fff; 
+        font-size: 40px;
+        font-weight: bold;       
+    }
+}
+
+input[type=text] {
+    width: 100%;
+    padding: 3px 8px;
+    border: none;
+    margin: 5px 0;
+    font-size: 14px;
+    color: #0814fb;
+    -webkit-box-shadow: 0 2px 6px 0 #525252;
+    box-shadow: 0 2px 6px 0 #525252;
+    background-color: #fff;
+}
+input[type=text]::placeholder {
+    color: #0814fb6c;
+}
+
+a.dashBtn {
+    text-decoration: none;
+    display: inline-block;
+    background-color: #0814fb;
+    color: #fff;
+    font-size: 16px;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+    -webkit-box-shadow: 0 2px 6px 0 #525252;
+    box-shadow: 0 2px 6px 0 #525252;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    i {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        background-color: #fff;
+        margin-left: 20px;
+    }
+}
+
+section {
+    padding: 40px 0;
+    background-color: #c9e9fa;
+    .dashSec {
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.4);
+        -webkit-box-shadow: 0 2px 6px 0 #525252;
+        box-shadow: 0 2px 6px 0 #525252;
+        h2 {
+            text-align: center;
+            color: #0814fb;
+            font-size: 20px;
+            font-weight: 500;
+            border-bottom: #0814fb solid 1px;
+        }
+        aside {
+            padding: 15px 35px;
+            i {
+                width: 80px;
+                height: 80px;
+                background-color: #fff;
+            }
+            ul {
+                width: 180px;
+                padding-left: 0;
+                li {
+                    list-style: none;
+                    display: flex;
+                    justify-content: space-between;
+                    p {
+                        color: #0814fb;
+                        font-size: 14px;
+                        margin: 2px 0;
+                    }
+                    
+                }
+            }
+            form {
+                width: 200px;
+            }
+            .contact { 
+                width: 220px;
+                -webkit-box-shadow: 0 2px 6px 0 #525252;
+                box-shadow: 0 2px 6px 0 #525252;
+                background-color: #fff;
+                padding: 10px;
+                p {
+                    color: #0814fb6c;
+                    font-size: 14px;
+                    margin-bottom: 0;
+                }
+            }
+            a.dashBtn {
+                // width: 150px;
+                i.message {
+                    width: 40px;
+                    height: 40px;
+                    background-color: #fff;
+                }
+            }
+        }
+    }
+    .row {
+        margin-top: 40px;
+        .dashSec {
+            padding: 10px;
+            h2 {
+                font-size: 30px;
+                font-weight: bold;
+                border-bottom: none;
+                small {
+                    font-size: 18px;
+                    font-weight: bold;
+                }
+            }
+            h3 {
+                font-size: 25px;
+                color: #0814fb;
+            }
+            h4 {
+                font-size: 20px;
+                color: #0814fb;
+            }
+            i {
+                width: 20px;
+                height: 20px;
+                display: inline-block;
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: contain;
+            }
+            i.dollar {
+                vertical-align: middle;
+                background-image: url('/assets/icons/dollar.svg');
+            }
+            i.lock {
+                width: 100px;
+                height: 100px;
+                background-color: #fff;
+            }
+            
+            
+            .vault {
+                width: calc(100% - 120px);
+            }
+            
+            P {
+                font-size: 11px;
+                margin-bottom: 0;
+                color: #0814fb;
+            }
+        }
+        aside.dashInner {
+            width: calc((100% - 60px) / 2);
+            li {
+                align-items: center;
+                justify-content: center !important;
+            }
+            i.dollar {
+                width: 15px;
+                height: 15px;
+                margin: 0 5px;
+            }
+            h3 {
+                font-size: 20px;
+                
+            }
+            h4 {
+                font-size: 16px !important;
+                margin-bottom: 0;
+                color: #0814fb8a;
+                margin-left: 5px;
+            }
+            
+        }
+    }
+}
