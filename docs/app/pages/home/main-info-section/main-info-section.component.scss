@@ -167,6 +167,15 @@
     width: 100%;
   }
 
+  .subscribe-to-updates {
+    margin-top: 2rem;
+
+    .description {
+
+    }
+
+  }
+
   @include media-breakpoint-down(xxl) {
     .main-img-container {
       min-width: 50.625rem;
