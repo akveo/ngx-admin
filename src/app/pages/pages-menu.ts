@@ -21,10 +21,6 @@ export const MENU_ITEMS: NbMenuItem[] = [
         link: '/pages/backend-integration/php',
       },
       {
-        title: '.NET',
-        link: '/pages/backend-integration/dot-net',
-      },
-      {
         title: '.NET Core',
         link: '/pages/backend-integration/dot-net-core',
       },
@@ -37,16 +33,8 @@ export const MENU_ITEMS: NbMenuItem[] = [
         link: '/pages/backend-integration/java',
       },
       {
-        title: 'Python',
-        link: '/pages/backend-integration/python',
-      },
-      {
         title: 'E-commerce',
         link: '/pages/backend-integration/ecommerce',
-      },
-      {
-        title: 'IoT',
-        link: '/pages/backend-integration/iot',
       },
     ],
   },
