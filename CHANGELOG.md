@@ -1,3 +1,10 @@
+<a name="7.0.0"></a>
+# [7.0.0](https://github.com/akveo/ngx-admin/compare/v6.0.0...v7.0.0) (2021-01-19)
+
+* feat: update to Angular 11 ([#5826](https://github.com/akveo/ngx-admin/issues/5826)) ([ebe1810](https://github.com/akveo/ngx-admin/commit/ebe1810))
+
+
+
 <a name="6.0.0"></a>
 # [6.0.0](https://github.com/akveo/ngx-admin/compare/v5.0.0...v6.0.0) (2020-08-19)
 
