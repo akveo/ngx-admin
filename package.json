@@ -1,6 +1,6 @@
 {
-  "name": "ngx-admin",
-  "version": "7.0.0",
+  "name": "thingbook-ui",
+  "version": "1.0.0",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -18,7 +18,7 @@
     "test": "ng test",
     "test:coverage": "rimraf coverage && npm run test -- --code-coverage",
     "lint": "ng lint",
-    "lint:fix": "ng lint ngx-admin-demo --fix",
+    "lint:fix": "ng lint thingbook-ui --fix",
     "lint:styles": "stylelint ./src/**/*.scss",
     "lint:ci": "npm run lint && npm run lint:styles",
     "pree2e": "webdriver-manager update --standalone false --gecko false",
