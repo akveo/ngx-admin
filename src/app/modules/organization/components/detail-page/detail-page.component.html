@@ -1,0 +1,19 @@
+<h3>{{org?.name}}</h3>
+<nb-tabset fullWidth="true">
+    <nb-tab tabTitle="Data Sharing Agreements ({{ agreements?.length }})" class="container">
+        <ng-container *ngIf="agreements?.length > 0; else loading">
+            <nb-list class="col-lg-12">
+                <nb-list-item *ngFor="let a of agreements; odd as odd; even as even;"
+                    [ngClass]="{row: true, odd: odd, even: even}">
+                    <org-data-sharing-agreement [agreement]="a"></org-data-sharing-agreement>
+                </nb-list-item>
+            </nb-list>
+        </ng-container>
+        <ng-template #loading>
+            <div>Loading...</div>
+        </ng-template>
+    </nb-tab>
+    <nb-tab tabTitle="Data Sharing Templates">
+        <span>TBD</span>
+    </nb-tab>
+</nb-tabset>

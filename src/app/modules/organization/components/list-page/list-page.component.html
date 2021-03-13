@@ -1,0 +1,17 @@
+<div class="lists row">
+    <div class="col-md-12 col-lg-12 col-xxxl-12">
+        <nb-card class="list-card">
+            <nb-card-header>Organizations</nb-card-header>
+            <nb-card-body>
+                <nb-list>
+                    <nb-list-item *ngFor="let o of orgs">
+                        <span class="col-sm-6">{{o.name}}</span>
+                        <span class="col-sm-3">{{o.domainName}}</span>
+                        <app-verification-icon [value]=o?.verification?.verified></app-verification-icon>
+                        <a [routerLink]="['/pages/org', o._id]"><span class="col-sm-2">Details...</span></a>
+                    </nb-list-item>
+                </nb-list>
+            </nb-card-body>
+        </nb-card>
+    </div>
+</div>

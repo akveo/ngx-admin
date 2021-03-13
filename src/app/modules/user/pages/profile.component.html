@@ -1,0 +1,17 @@
+<nb-card>
+    <nb-card-header>{{user?.email}}</nb-card-header>
+    <nb-card-body>
+        <form>
+            <div class="form-group">
+                <label for="inputFirst" class="label">First name</label>
+                <input nbInput fullWidth id="inputFirst" ngModel [(ngModel)]="first"
+                    placeholder="First name">
+            </div>
+            <div class="form-group">
+                <label for="inputLast" class="label">Last name</label>
+                <input type="text" nbInput fullWidth id="inputLast" placeholder="Last name">
+            </div>
+            <button type="submit" nbButton hero status="primary">Update</button>
+        </form>
+    </nb-card-body>
+</nb-card>

@@ -1,0 +1,34 @@
+<nb-card>
+    <nb-card-header>
+        <span class="col-lg-10">{{agreement?.name}}</span>
+        <span class="col-lg-1">
+            <nb-icon icon="activity" [status]='agreement?.state == "ACTIVE" ? "success" : "danger" '>
+            </nb-icon>
+        </span>
+    </nb-card-header>
+    <nb-card-body>
+        <div>
+            <span>{{agreement?.producer.name}}<nb-icon icon="arrowhead-right"></nb-icon>
+                {{agreement?.consumer.name}}</span>
+        </div>
+        <div>
+            <app-date-calendar [date]="agreement?.commenceDate"></app-date-calendar>
+            <app-date-calendar [date]="agreement?.expirationDate"></app-date-calendar>
+        </div>
+        <div>
+            <nb-accordion>
+                <nb-accordion-item *ngFor="let fragment of agreement.template.template.fragments">
+                    <nb-accordion-item-header>
+                        {{ fragment.name }}
+                        <span style="justify-content: flex-end;">
+                            {{ fragment.type | titlecase}}
+                        </span>
+                    </nb-accordion-item-header>
+                    <nb-accordion-item-body>
+                        {{fragment.text}}
+                    </nb-accordion-item-body>
+                </nb-accordion-item>
+            </nb-accordion>
+        </div>
+    </nb-card-body>
+</nb-card>
