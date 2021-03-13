@@ -49,7 +49,7 @@ import { UserModule } from './modules/user/user.module';
 
   ],
   bootstrap: [AppComponent],
-  providers: []
+  providers: [],
 })
 export class AppModule {
 }
