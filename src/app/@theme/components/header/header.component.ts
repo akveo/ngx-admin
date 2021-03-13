@@ -29,7 +29,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   userMenu = [
     { title: 'Profile', icon: 'person-outline', link: 'pages/user/profile', },
-    { title: 'Log out' }
+    { title: 'Log out' },
   ];
 
   constructor(private sidebarService: NbSidebarService,

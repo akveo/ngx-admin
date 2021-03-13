@@ -10,7 +10,7 @@
       true,
       {
         "multiline": "always",
-        "singleline": "never"
+        "singleline": "ignore"
       }
     ],
     "arrow-return-shorthand": true,
@@ -133,5 +133,5 @@
     "use-pipe-transform-interface": true,
     "component-class-suffix": true,
     "directive-class-suffix": true
-}
+  }
 }
