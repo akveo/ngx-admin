@@ -24,8 +24,8 @@
               "src/favicon.png",
               {
                 "glob": "**/*",
-                "input": "node_modules/leaflet/dist/images",
-                "output": "/assets/img/markers"
+                "input": "./node_modules/leaflet/dist/images",
+                "output": "leaflet/"
               }
             ],
             "styles": [
@@ -189,5 +189,8 @@
     "@schematics/angular:directive": {
       "prefix": "ngx"
     }
+  },
+  "cli": {
+    "analytics": "64da436d-4c24-46a2-a69a-8ef1460a6002"
   }
 }
