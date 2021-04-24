@@ -24,17 +24,17 @@ export class LeafletComponent {
     map.fitBounds(this.route.getBounds(), {
       padding: point(24, 24),
       maxZoom: 12,
-      animate: true
+      animate: true,
     });
   }
   // Define our base layers so we can reference them multiple times
   streetMaps = tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     detectRetina: true,
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
   });
   wMaps = tileLayer('http://maps.wikimedia.org/osm-intl/{z}/{x}/{y}.png', {
     detectRetina: true,
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
   });
 
   // Marker for the top of Mt. Ranier
@@ -43,23 +43,23 @@ export class LeafletComponent {
       iconSize: [ 25, 41 ],
       iconAnchor: [ 13, 41 ],
       iconUrl: 'leaflet/marker-icon.png',
-      shadowUrl: 'leaflet/marker-shadow.png'
-    })
+      shadowUrl: 'leaflet/marker-shadow.png',
+    }),
   });
 
   // Marker for the parking lot at the base of Mt. Ranier trails
-  paradise = marker([ 46.78465227596462,-121.74141269177198 ], {
+  paradise = marker([ 46.78465227596462, -121.74141269177198 ], {
     icon: icon({
       iconSize: [ 25, 41 ],
       iconAnchor: [ 13, 41 ],
       iconUrl: 'leaflet/marker-icon.png',
       iconRetinaUrl: 'leaflet/marker-icon-2x.png',
-      shadowUrl: 'leaflet/marker-shadow.png'
-    })
+      shadowUrl: 'leaflet/marker-shadow.png',
+    }),
   });
 
   // Path from paradise to summit - most points omitted from this example for brevity
-  route = polyline([[ 46.78465227596462,-121.74141269177198 ],
+  route = polyline([[ 46.78465227596462, -121.74141269177198 ],
     [ 46.80047278292477, -121.73470708541572 ],
     [ 46.815471360459924, -121.72521826811135 ],
     [ 46.8360239546746, -121.7323131300509 ],
@@ -79,13 +79,13 @@ export class LeafletComponent {
   layersControl = {
     baseLayers: {
       'Street Maps': this.streetMaps,
-      'Wikimedia Maps': this.wMaps
+      'Wikimedia Maps': this.wMaps,
     },
     overlays: {
       'Mt. Rainier Summit': this.summit,
       'Mt. Rainier Paradise Start': this.paradise,
-      'Mt. Rainier Climb Route': this.route
-    }
+      'Mt. Rainier Climb Route': this.route,
+    },
   };
 
 
@@ -93,7 +93,7 @@ export class LeafletComponent {
   options = {
     layers: [ this.streetMaps, this.route, this.summit, this.paradise ],
     zoom: 7,
-    center: latLng([ 46.879966, -121.726909 ])
+    center: latLng([ 46.879966, -121.726909 ]),
   };
 
 }
