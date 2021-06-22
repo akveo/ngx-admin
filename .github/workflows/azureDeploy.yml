@@ -1,0 +1,29 @@
+name: Ngx-Admin Blob storage CI
+
+on:
+  push:
+    branches:
+      - demo
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:            
+    - uses: actions/checkout@v2
+    - name: Use Node.js 10.x
+      uses: actions/setup-node@v1
+      with:
+        node-version: '10.x'
+    - uses: actions/checkout@v2
+      with:
+        ref: demo
+    - name: npm install, build
+      run: |
+        npm install
+        npm run build:demo:prod
+    - name: 'Deploy to Azure WebApp'
+      uses: tibor19/static-website-deploy@v1
+      with:
+        enabled-static-website: 'true'
+        folder: 'dist'
+        connection-string: ${{ secrets.AZURE_CREDENTIALS }}
