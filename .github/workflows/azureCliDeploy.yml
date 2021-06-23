@@ -32,7 +32,7 @@ jobs:
         with:
           azcliversion: 2.0.72
           inlineScript: |
-            az storage blob upload-batch --account-name ngxadmin -s dist/ -d '$web'.
+            az storage blob upload-batch --account-name ngxadmin -s .dist -d '$web' --debug
 
       # Azure logout
       - name: logout
