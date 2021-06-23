@@ -23,7 +23,6 @@ jobs:
           npm run build:demo:prod
 
       # Azure CLI Upload to storage
-      - uses: actions/checkout@v2
       - uses: azure/login@v1
         with:
           creds: ${{ secrets.AZURE_RBAC_CREDENTIALS }}
