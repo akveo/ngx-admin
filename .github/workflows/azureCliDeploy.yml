@@ -1,0 +1,41 @@
+name: Ngx-Admin Blob storage CI
+
+on:
+  push:
+    branches:
+      - demo
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2l
+      - name: Use Node.js 10.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: '10.x'
+      - uses: actions/checkout@v2ll
+        with:
+          ref: demo
+      - name: npm install, build
+        run: |
+          npm install
+          npm run build:demo:prod
+
+      # Azure CLI Upload to storage
+      - uses: actions/checkout@v2
+      - uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_RBAC_CREDENTIALS }}
+      - name: Upload to blob storage
+        uses: azure/CLI@v1
+        with:
+          azcliversion: 2.0.72
+          inlineScript: |
+            az storage blob upload-batch --account-name ngxadmin -s dist/ -d '$web'.
+
+      # Azure logout
+      - name: logout
+        run: |
+          az logout
+        if: always()
