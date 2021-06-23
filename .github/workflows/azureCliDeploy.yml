@@ -3,7 +3,7 @@ name: Ngx-Admin Blob storage CI
 on:
   push:
     branches:
-      - demo
+      - azureCliDeploy-demo
 
 jobs:
   build:
@@ -16,7 +16,7 @@ jobs:
           node-version: '10.x'
       - uses: actions/checkout@v2ll
         with:
-          ref: demo
+          ref: azureCliDeploy-demo
       - name: npm install, build
         run: |
           npm install
