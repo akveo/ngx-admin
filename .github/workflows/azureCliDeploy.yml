@@ -1,4 +1,4 @@
-name: Ngx-Admin Blob storage CI
+name: Deploy to demo blob (azure storage)
 
 on:
   push:
