@@ -3,7 +3,7 @@ name: Deploy to demo blob (azure storage)
 on:
   push:
     branches:
-      - azureCliDeploy-demo
+      - demo
 
 jobs:
   build:
@@ -16,7 +16,7 @@ jobs:
           node-version: '10.x'
       - uses: actions/checkout@v2
         with:
-          ref: azureCliDeploy-demo
+          ref: demo
       - name: npm install, build
         run: |
           npm install
