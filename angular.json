@@ -55,8 +55,7 @@
               "echarts",
               "lodash",
               "zrender/lib/svg/svg",
-              "zrender/lib/vml/vml",
-              "style-loader!leaflet/dist/leaflet.css"
+              "zrender/lib/vml/vml"
             ],
             "vendorChunk": true,
             "extractLicenses": false,
