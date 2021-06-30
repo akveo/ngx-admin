@@ -19,11 +19,7 @@
 
   img {
     width: 100%;
-  }
-
-  .link-to-free-bundle {
-    margin-top: 2rem;
-    font-size: 1.2rem;
-    color: nb-theme(color-link);
+    max-width: 78.75rem;
+    border-radius: 1.5rem;
   }
 }

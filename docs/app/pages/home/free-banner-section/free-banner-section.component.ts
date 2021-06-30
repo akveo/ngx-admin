@@ -14,6 +14,6 @@ import { Component, Input } from '@angular/core';
 export class FreeBannerSectionComponent {
 
  @Input() bannerImg: string;
- @Input() bundleUrl: string;
+ @Input() url: string;
 
 }
