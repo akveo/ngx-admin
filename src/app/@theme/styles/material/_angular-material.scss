@@ -1,0 +1,19 @@
+@use '~@angular/material' as mat;
+
+@mixin angular-material() {
+  @include mat.core();
+
+  @include nb-for-theme(material-dark) {
+    $custom-dark-theme: mat.define-dark-theme(
+        mat.define-palette(mat.$pink-palette),
+        mat.define-palette(mat.$blue-grey-palette));
+    @include mat.all-component-themes($custom-dark-theme);
+  }
+
+  @include nb-for-theme(material-light) {
+    $custom-light-theme: mat.define-light-theme(
+        mat.define-palette(mat.$indigo-palette),
+        mat.define-palette(mat.$pink-palette));
+    @include mat.all-component-themes($custom-light-theme);
+  }
+}
