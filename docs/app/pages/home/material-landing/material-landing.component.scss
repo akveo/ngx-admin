@@ -1,0 +1,34 @@
+@import '../../../@theme/styles/themes';
+
+@include nb-install-component() {
+
+  $content-width: nb-theme(content-width);
+
+  ::ng-deep {
+    .version {
+      color: nb-theme(color-basic-500) !important;
+    }
+
+    ngx-landing-footer{
+      .h6, .copy {
+        color: #ffffff !important;
+      }
+    }
+  }
+
+  .main-section {
+    background-color: nb-theme(gray-section-bg);
+  }
+
+  ngx-material-features {
+    max-width: $content-width;
+    margin: 0 auto;
+  }
+
+  @include media-breakpoint-down(is) {
+    ngx-material-features {
+      max-width: 100%;
+    }
+
+  }
+}

@@ -1,0 +1,85 @@
+<ngx-landing-section-title>
+  Multiple theme
+</ngx-landing-section-title>
+
+<div class="carousel-container">
+  <div  class="swiper-container reviews"
+        [swiper]="swiperConfig"
+        [(index)]="sliderIndex">
+    <div class="swiper-wrapper">
+      <a [href]="materialLightDemoUrl" target="_blank" class="image-container swiper-slide">
+        <img *ngIf="breakpoint.width <= breakpoints.sm"
+            data-src="assets/img/material-light-theme.png"
+            class="swiper-lazy"
+            alt="Material Light Theme" />
+        <img *ngIf="!(breakpoint.width <= breakpoints.sm)"
+            lazyLoad="assets/img/material-light-theme.png"
+            defaultImage="assets/img/default.png"
+            alt="Material Light Theme" />
+      </a>
+      <a [href]="materialDarkDemoUrl" target="_blank" class="image-container swiper-slide">
+        <img *ngIf="breakpoint.width <= breakpoints.sm"
+            data-src="assets/img/material-dark-theme.png"
+            class="swiper-lazy"
+            alt="Material Dark Theme" />
+        <img *ngIf="!(breakpoint.width <= breakpoints.sm)"
+            lazyLoad="assets/img/material-dark-theme.png"
+            defaultImage="assets/img/default.png"
+            alt="Material Dark Theme" />
+      </a>
+      <a [href]="lightDemoUrl" target="_blank" class="image-container swiper-slide">
+        <img *ngIf="breakpoint.width <= breakpoints.sm"
+            data-src="assets/img/light-theme.png"
+            class="swiper-lazy"
+            alt="Eva Light Theme" />
+        <img *ngIf="!(breakpoint.width <= breakpoints.sm)"
+            lazyLoad="assets/img/light-theme.png"
+            defaultImage="assets/img/default.png"
+            alt="Eva Light Theme" />
+      </a>
+      <a [href]="darkDemoUrl" target="_blank" class="image-container swiper-slide">
+        <img *ngIf="breakpoint.width <= breakpoints.sm"
+            data-src="assets/img/dark-theme.png"
+            class="swiper-lazy"
+            alt="Eva Dark Theme" />
+        <img *ngIf="!(breakpoint.width <= breakpoints.sm)"
+            src="assets/img/dark-theme.png"
+            alt="Eva Dark Theme"
+            class="ng-lazyloaded" />
+      </a>
+      <a [href]="cosmicDemoUrl" target="_blank" class="image-container swiper-slide">
+        <img *ngIf="breakpoint.width <= breakpoints.sm"
+             data-src="assets/img/cosmic-theme.png"
+             class="swiper-lazy"
+             alt="Cosmic Theme" />
+        <img *ngIf="!(breakpoint.width <= breakpoints.sm)"
+             src="assets/img/cosmic-theme.png"
+             alt="Cosmic Theme"
+             class="ng-lazyloaded"/>
+      </a>
+      <a [href]="corporateDemoUrl" target="_blank" class="image-container swiper-slide">
+        <img *ngIf="breakpoint.width <= breakpoints.sm"
+             data-src="assets/img/corporate-theme.png"
+             class="swiper-lazy"
+             alt="Corporate Theme" />
+        <img *ngIf="!(breakpoint.width <= breakpoints.sm)"
+             src="assets/img/corporate-theme.png"
+             alt="Corporate Theme"
+             class="ng-lazyloaded"/>
+      </a>
+    </div>
+
+    <div class="swiper-pagination"></div>
+
+    <div class="swiper-button-prev">
+      <i [innerHTML]="'arrow-ios-back' | eva: { width: 36, height: 36, fill: iconColor }"></i>
+    </div>
+    <div class="swiper-button-next">
+      <i [innerHTML]="'arrow-ios-forward' | eva: { width: 36, height: 36, fill: iconColor }"></i>
+    </div>
+  </div>
+</div>
+
+<a class="btn btn-demo"
+   href="https://www.akveo.com/ngx-admin/pages/dashboard?utm_campaign=ngx_admin%20-%20demo%20-%20ngx_admin%20docs&utm_source=ngx_admin&utm_medium=referral&utm_content=ngx_admin_landing_themes_view_demo"
+   target="_blank">View demo</a>

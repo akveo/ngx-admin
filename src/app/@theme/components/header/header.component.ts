@@ -2,10 +2,11 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { NbMediaBreakpointsService, NbMenuService, NbSidebarService, NbThemeService } from '@nebular/theme';
 
 import { UserData } from '../../../@core/data/users';
-import { LayoutService } from '../../../@core/utils';
+import { AnalyticsService, LayoutService } from '../../../@core/utils';
 import { map, takeUntil } from 'rxjs/operators';
 import { Subject, Observable } from 'rxjs';
 import { RippleService } from '../../../@core/utils/ripple.service';
+import {CurrentThemeService} from '../../../@core/utils/theme.service';
 
 @Component({
   selector: 'ngx-header',
@@ -15,7 +16,7 @@ import { RippleService } from '../../../@core/utils/ripple.service';
 export class HeaderComponent implements OnInit, OnDestroy {
 
   private destroy$: Subject<void> = new Subject<void>();
-  public readonly materialTheme$: Observable<boolean>;
+  public materialTheme$: Observable<boolean>;
   userPictureOnly: boolean = false;
   user: any;
 
@@ -58,12 +59,14 @@ export class HeaderComponent implements OnInit, OnDestroy {
     private layoutService: LayoutService,
     private breakpointService: NbMediaBreakpointsService,
     private rippleService: RippleService,
+    private analytics: AnalyticsService,
+    private currentThemeService: CurrentThemeService,
   ) {
-    this.materialTheme$ = this.themeService.onThemeChange()
-      .pipe(map(theme => {
-        const themeName: string = theme?.name || '';
-        return themeName.startsWith('material');
-      }));
+    this.materialTheme$ = new Observable(subscriber => {
+      const themeName: string = this.currentThemeService.getCurrentTheme();
+
+      subscriber.next(themeName.startsWith('material'));
+    });
   }
 
   ngOnInit() {
@@ -98,7 +101,12 @@ export class HeaderComponent implements OnInit, OnDestroy {
   }
 
   changeTheme(themeName: string) {
+    this.currentThemeService.setCurrentTheme(themeName);
     this.themeService.changeTheme(themeName);
+
+    this.materialTheme$ = new Observable(subscriber => {
+      subscriber.next(this.currentThemeService.getCurrentTheme().startsWith('material'));
+    });
   }
 
   toggleSidebar(): boolean {
@@ -111,5 +119,13 @@ export class HeaderComponent implements OnInit, OnDestroy {
   navigateHome() {
     this.menuService.navigateHome();
     return false;
+  }
+
+  startSearch() {
+    this.analytics.trackEvent('startSearch');
+  }
+
+  trackEmailClick() {
+    this.analytics.trackEvent('clickContactEmail', 'click');
   }
 }

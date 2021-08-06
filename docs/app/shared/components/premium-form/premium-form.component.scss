@@ -1,0 +1,31 @@
+/**
+ * @license
+ * Copyright Akveo. All Rights Reserved.
+ * Licensed under the MIT License. See License.txt in the project root for license information.
+ */
+
+@import '~@nebular/theme/styles/global/breakpoints';
+
+@import '../../../@theme/styles/themes';
+
+@include nb-install-component() {
+
+  nb-card {
+    width: 30rem;
+  }
+
+  nb-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  .close-icon {
+    margin-left: auto;
+    padding: 0;
+  }
+
+  ::ng-deep .hs-custom-form .hs-submit-btn {
+    margin-top: 1rem;
+  }
+}

@@ -1,0 +1,58 @@
+@import '../../@theme/styles/themes';
+@import '~@nebular/theme/styles/global/breakpoints';
+
+:host {
+  display: flex !important;
+  flex-direction: row;
+  justify-content: stretch;
+  align-items: stretch;
+  height: 100%;
+}
+
+.description-container, .diagram-container {
+  display: flex;
+}
+
+.diagram-container {
+  flex: 2 1 auto;
+  align-items: center;
+  min-width: 30rem;
+  width: 70%;
+}
+
+.description-container {
+  flex: 1 2 auto;
+  max-width: 45rem;
+  align-items: stretch;
+  height: 100%;
+  
+  ::ng-deep :last-child {
+    width: 100%;
+  }
+}
+
+@include media-breakpoint-down(lg) {
+  :host {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    .diagram-container, .description-container {
+      width: 100%;
+      max-width: none;
+    }
+
+    .description-container {
+      padding-bottom: 1.5rem;
+
+      ::ng-deep ngx-integration-description .subheader {
+        margin-bottom: 1.5rem;
+      }
+    }
+
+    .diagram-container {
+      min-width: 0;
+    }
+  }
+}
+

@@ -54,6 +54,10 @@ import { VisitorsAnalyticsService } from './mock/visitors-analytics.service';
 import { SecurityCamerasService } from './mock/security-cameras.service';
 import { RippleService } from './utils/ripple.service';
 import { MockDataModule } from './mock/mock-data.module';
+import { AbService } from './utils/ab.service';
+import {CurrentThemeService} from './utils/theme.service';
+import {ThemeGuard} from './guard/theme.guard';
+import {MetadataService} from './utils/metadata.service';
 
 const socialLinks = [
   {
@@ -93,7 +97,11 @@ const DATA_SERVICES = [
   { provide: StatsProgressBarData, useClass: StatsProgressBarService },
   { provide: VisitorsAnalyticsData, useClass: VisitorsAnalyticsService },
   { provide: SecurityCamerasData, useClass: SecurityCamerasService },
-  {provide: MAT_RIPPLE_GLOBAL_OPTIONS, useExisting: RippleService},
+  { provide: MAT_RIPPLE_GLOBAL_OPTIONS, useExisting: RippleService },
+];
+
+const GUARDS = [
+  ThemeGuard,
 ];
 
 export class NbSimpleRoleProvider extends NbRoleProvider {
@@ -106,6 +114,7 @@ export class NbSimpleRoleProvider extends NbRoleProvider {
 export const NB_CORE_PROVIDERS = [
   ...MockDataModule.forRoot().providers,
   ...DATA_SERVICES,
+  ...GUARDS,
   ...NbAuthModule.forRoot({
 
     strategies: [
@@ -145,7 +154,10 @@ export const NB_CORE_PROVIDERS = [
   LayoutService,
   PlayerService,
   SeoService,
+  MetadataService,
   StateService,
+  AbService,
+  CurrentThemeService,
 ];
 
 @NgModule({

@@ -1,0 +1,85 @@
+/**
+ * @license
+ * Copyright Akveo. All Rights Reserved.
+ * Licensed under the MIT License. See License.txt in the project root for license information.
+ */
+
+@import '../../../@theme/styles/themes';
+@import '~@nebular/theme/styles/global/breakpoints';
+
+
+@include nb-install-component() {
+
+  $title-fg: nb-theme(color-fg-heading);
+  $text-fg: nb-theme(color-fg-text);
+  $arrow-fg: nb-theme(color-fg-highlight);
+
+  display: flex;
+  flex-direction: column;
+
+  ::ng-deep nb-card {
+    font-weight: 300;
+    flex: 1;
+
+    &.invisible {
+      visibility: hidden;
+    }
+
+    a {
+      padding: 2rem;
+      text-decoration: none;
+      color: $text-fg;
+      height: 100%;
+    }
+
+    .page-title {
+      display: flex;
+      justify-content: space-between;
+      color: $title-fg;
+      font-weight: 500;
+      font-size: 1.2rem;
+
+      i {
+        color: $arrow-fg;
+        margin-top: 0.3rem;
+        font-weight: bold;
+        font-size: 1.7rem;
+      }
+      span {
+        word-wrap: normal;
+      }
+    }
+
+    .description {
+      display: none;
+    }
+
+    &.left-block {
+      text-align: right;
+    }
+  }
+
+  @include media-breakpoint-up(sm) {
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    ::ng-deep nb-card {
+      margin-left: 1rem;
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      a {
+        padding: 2rem 3rem 2rem 2rem;
+      }
+      .page-title {
+        font-size: 1.5rem;
+        margin-bottom: 0.6rem;
+      }
+      .description {
+        display: block;
+      }
+    }
+  }
+}

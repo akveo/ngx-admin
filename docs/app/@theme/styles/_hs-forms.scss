@@ -1,0 +1,105 @@
+/**
+ * @license
+ * Copyright Akveo. All Rights Reserved.
+ * Licensed under the MIT License. See License.txt in the project root for license information.
+ */
+
+@mixin hs-custom-form() {
+  .hs-custom-form {
+    .modal-header {
+      display: none;
+    }
+
+    .modal-body {
+      padding-bottom: 0;
+    }
+
+    .actions {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    input.hs-input {
+      width: 100%;
+      color: nb-theme(input-basic-text-color);
+      font-size: nb-theme(input-medium-text-font-size);
+      font-weight: nb-theme(input-medium-text-font-weight);
+      line-height: nb-theme(input-medium-text-line-height);
+      padding: nb-theme(input-medium-padding) !important;
+      border: nb-theme(input-border-width) nb-theme(input-border-style) nb-theme(input-basic-border-color);
+      border-radius: nb-theme(input-rectangle-border-radius);
+      background-color: nb-theme(input-basic-background-color);
+
+      &.hover {
+        background-color: nb-theme(input-basic-hover-background-color);
+        border-color: nb-theme(input-basic-hover-border-color);
+      }
+
+      &.invalid {
+        box-shadow: 0 0 1.25rem 0 rgba(210, 45, 45, 0.6);
+      }
+
+      &::placeholder {
+        color: nb-theme(input-basic-placeholder-text-color);
+        font-size: nb-theme(input-medium-placeholder-text-font-size);
+        font-weight: nb-theme(input-medium-placeholder-text-font-weight);
+        line-height: nb-theme(input-medium-placeholder-text-line-height);
+      }
+
+      &:focus {
+        outline: none;
+        background-color: nb-theme(input-basic-focus-background-color);
+        border-color: nb-theme(input-basic-focus-border-color);
+      }
+    }
+
+    .hs-richtext .modal-body {
+      padding: 0;
+      margin-bottom: 1rem;
+
+      p {
+        margin-bottom: 0;
+        text-align: left !important;
+        height: auto;
+      }
+    }
+
+    .hs-recaptcha {
+      margin-top: 1rem;
+    }
+
+    .hs-error-msgs {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .hs-form-required, .hs-error-msg {
+      margin-top: 0.5rem;
+      color: nb-theme(text-danger-color);
+    }
+
+    .hs_error_rollup {
+      display: none;
+    }
+
+    .hs-submit-btn {
+      font-family: nb-theme(font-main);
+      border-radius: 3px;
+      border: none;
+      background-color: nb-theme(color-active-fg);
+      color: #ffffff;
+      padding: 1rem 2rem;
+      box-shadow: nb-theme(shadow-btn);
+      cursor: pointer;
+      text-transform: uppercase;
+
+      &:hover {
+        box-shadow: nb-theme(shadow-hover-green-btn);
+      }
+
+      &:active {
+        box-shadow: nb-theme(shadow-active-green-btn);
+      }
+    }
+  }
+}

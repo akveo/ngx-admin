@@ -1,0 +1,32 @@
+<div class="middle-column">
+
+  <nb-card *ngIf="currentItem?.tabs" class="horizontal-nav">
+    <nb-card-header>
+      {{ currentItem?.name }}
+    </nb-card-header>
+    <nb-card-body>
+      <ngx-page-tabs [tabs]="currentItem?.tabs" horizontal></ngx-page-tabs>
+    </nb-card-body>
+  </nb-card>
+
+  <ng-container *ngFor="let block of currentItem?.children">
+    <ng-container [ngSwitch]="block.block">
+      <ngx-md-block *ngSwitchCase="'markdown'" [source]="block.children"></ngx-md-block>
+      <ngx-component-block *ngSwitchCase="'component'" [source]="block.source"></ngx-component-block>
+      <ngx-tabbed-block *ngSwitchCase="'tabbed'" [source]="block.children" [tabs]="currentItem.tabs"></ngx-tabbed-block>
+      <ngx-theme-block *ngSwitchCase="'theme'" [block]="block"></ngx-theme-block>
+      <ngx-components-overview-block *ngSwitchCase="'components-overview'"></ngx-components-overview-block>
+    </ng-container>
+  </ng-container>
+
+  <p class="not-found" *ngIf="!currentItem">Page does not exist.</p>
+
+  <ngx-pager-block [currentItemSlag]="currentItem?.slag"></ngx-pager-block>
+</div>
+
+<div class="settings-column" *ngIf="showSettings">
+  <div class="fixed-panel">
+    <ngx-page-tabs [tabs]="currentItem?.tabs"></ngx-page-tabs>
+    <ngx-page-toc [toc]="currentItem?.toc"></ngx-page-toc>
+  </div>
+</div>

@@ -1,0 +1,194 @@
+/**
+ * @license
+ * Copyright Akveo. All Rights Reserved.
+ * Licensed under the MIT License. See License.txt in the project root for license information.
+ */
+
+@import '../../../@theme/styles/themes';
+@import '~@nebular/theme/styles/global/breakpoints';
+
+@include nb-install-component() {
+  display: block;
+  padding-top: 5.625rem;
+  padding-bottom: 7.5rem;
+
+  .description {
+    font-family: nb-theme(font-secondary), sans-serif;
+    font-size: nb-theme(font-size-lg);
+    width: 40%;
+    margin: 1.375rem auto 0;
+    text-align: center;
+  }
+
+  .sending-block {
+    max-width: 33.5rem;
+    margin: 3rem auto 0;
+  }
+
+  .email-form {
+    label {
+      display: block;
+      margin-bottom: 0.75rem;
+    }
+
+    .email {
+      width: 75%;
+      font-size: nb-theme(font-size-sm);
+      padding: 1.125rem 0 1rem 1rem;
+      border: none;
+      box-shadow: nb-theme(shadow-default);
+      border-radius: 0.25rem 0 0 0.25rem;
+
+      &.invalid {
+        box-shadow: 0 0 1.25rem 0 rgba(210, 45, 45, 0.6);
+      }
+
+      &::placeholder {
+        color: #434a59;
+        opacity: 0.24;
+      }
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    .submit-input {
+      width: 25%;
+      padding: 1rem 0;
+      border: none;
+      color: #ffffff;
+      text-transform: uppercase;
+      background-color: nb-theme(color-active-bg);
+      border-radius: 0 0.25rem 0.25rem 0;
+      box-shadow: nb-theme(shadow-btn);
+      cursor: pointer;
+
+      &:hover {
+        box-shadow: nb-theme(shadow-hover-green-btn);
+      }
+
+      &:active {
+        box-shadow: nb-theme(shadow-active-green-btn);
+      }
+
+      &:disabled {
+        cursor: not-allowed;
+        opacity: 0.5;
+
+        &:hover {
+          box-shadow: nb-theme(shadow-btn);
+        }
+
+      }
+    }
+  }
+
+  .agreement-block {
+    display: flex;
+    margin-top: 1.25rem;
+
+    ::ng-deep nb-checkbox {
+      .customised-control {
+        padding: 0.125rem 0.125rem 0 0;
+      }
+
+      .customised-control-indicator {
+      }
+    }
+  }
+
+  .agreement {
+    font-family: nb-theme(font-secondary), sans-serif;
+    font-size: nb-theme(font-size-sm);
+
+    .highlight {
+      font-family: nb-theme(font-main), sans-serif;
+    }
+
+    .active {
+      text-decoration: none;
+      font-family: nb-theme(font-main), sans-serif;
+      color: nb-theme(color-active-fg);
+    }
+  }
+
+  .separator {
+    margin-top: 2.875rem;
+    border-top: 0.125rem solid #dde1eb;
+    color: #8994a3;
+    text-transform: uppercase;
+    position: relative;
+    opacity: 0.5;
+
+    div {
+      $width: 1.375rem;
+      $block-or-padding: 1.375rem;
+
+      font-size: nb-theme(font-size-sm);
+      padding: 0 $block-or-padding;
+      position: absolute;
+      left: calc(50% - #{$block-or-padding} - #{$width} / 2);
+      top: -0.625rem;
+      background-color: #ffffff;
+    }
+  }
+
+  .contact-us-container {
+    text-align: center;
+  }
+
+  .contact-us {
+    display: inline-block;
+    font-family: nb-theme(font-main), sans-serif;
+    font-weight: nb-theme(font-weight-bold);
+    margin-top: 3.625rem;
+    color: nb-theme(color-active-bg);
+    cursor: pointer;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+
+  @include media-breakpoint-down(md) {
+    .description {
+      width: 80%;
+    }
+  }
+
+  @include media-breakpoint-down(is) {
+    padding: 2.125rem 1rem;
+
+    .description {
+      width: 100%;
+      font-size: nb-theme(font-size);
+    }
+
+    .sending-block {
+      margin-top: 2.375rem;
+    }
+
+    .email-form {
+      .email {
+        width: 100%;
+      }
+
+      .submit-input {
+        width: 100%;
+        border-radius: 0.25rem;
+        margin-top: 1.5rem;
+      }
+    }
+
+    .agreement-block {
+      margin-top: 1.25rem;
+    }
+
+    .separator {
+      margin-top: 2rem;
+    }
+
+    .contact-us {
+      margin-top: 2rem;
+    }
+  }
+}

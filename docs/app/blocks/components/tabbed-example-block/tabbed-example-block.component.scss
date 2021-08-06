@@ -1,0 +1,84 @@
+@import '../../../@theme/styles/themes';
+@import '~@nebular/theme/styles/global/breakpoints';
+
+@include nb-install-component() {
+
+  $tab-fg: nb-theme(color-fg-heading-light);
+  $tab-active-fg: #ffffff;
+  $tab-active-bg: linear-gradient(225deg, #333c66 0%, #1d2447 100%);
+  $tabs-bb: #ebeff5;
+
+  display: block;
+  position: relative;
+
+  button {
+    background: transparent;
+    color: $tab-fg;
+    text-transform: inherit;
+    padding: 0.45rem 1.5rem;
+    position: absolute;
+    right: 0;
+    top: 0;
+    cursor: pointer;
+    font-weight: normal;
+    font-size: 0.9rem;
+
+    .icon {
+      font-size: 0.95rem;
+    }
+
+    &:focus, &:active, &:hover {
+      cursor: pointer;
+      color: $tab-fg;
+      outline: 0;
+    }
+
+    .text {
+      display: none;
+    }
+  }
+
+  ::ng-deep nb-tabset.tabs-container {
+    border-radius: 0.5rem 0.5rem 0 0;
+
+    > ul {
+      padding: 0;
+      margin-bottom: 0!important; // TODO: check selectors
+      border-radius: 0.5rem 0.5rem 0 0;
+      background-color: $tabs-bb;
+      overflow: hidden;
+
+      li {
+        padding: 0.4rem;
+        width: 20%;
+        margin-bottom: 0!important; // TODO: check selectors
+
+        &:first-child {
+          margin-left: 0;
+        }
+
+        a {
+          color: $tab-fg;
+        }
+
+        &.active {
+          background: $tab-active-bg;
+
+          a {
+            color: $tab-active-fg;
+          }
+        }
+      }
+    }
+    .container {
+      border-radius: 0 0 0.5rem 0.5rem;
+    }
+  }
+
+  @include media-breakpoint-up(is) {
+    button .text {
+      display: inline;
+    }
+  }
+}
+

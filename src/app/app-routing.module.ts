@@ -8,16 +8,24 @@ import {
   NbRequestPasswordComponent,
   NbResetPasswordComponent,
 } from '@nebular/auth';
+import { ThemeGuard } from './@core/guard/theme.guard';
 
 export const routes: Routes = [
   {
     path: 'pages',
+    canActivate: [ThemeGuard],
     loadChildren: () => import('./pages/pages.module')
       .then(m => m.PagesModule),
   },
   {
+    path: 'themes',
+    loadChildren: () => import('app/themes-screen/starter.module')
+      .then(m => m.StarterModule),
+  },
+  {
     path: 'auth',
     component: NbAuthComponent,
+    canActivate: [ThemeGuard],
     children: [
       {
         path: '',
@@ -45,8 +53,8 @@ export const routes: Routes = [
       },
     ],
   },
-  { path: '', redirectTo: 'pages', pathMatch: 'full' },
-  { path: '**', redirectTo: 'pages' },
+  { path: '', redirectTo: 'pages/dashboard', pathMatch: 'full' },
+  { path: '**', redirectTo: 'pages/dashboard' },
 ];
 
 const config: ExtraOptions = {

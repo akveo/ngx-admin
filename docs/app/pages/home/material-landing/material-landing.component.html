@@ -1,0 +1,24 @@
+<nb-layout>
+  <nb-layout-header fixed>
+    <ngx-landing-header>
+      <ngx-material-theme-link></ngx-material-theme-link>
+    </ngx-landing-header>
+  </nb-layout-header>
+
+  <nb-layout-column class="main-section">
+    <ngx-landing-main-info material></ngx-landing-main-info>
+    <ngx-material-features></ngx-material-features>
+    <ngx-landing-theme-section material></ngx-landing-theme-section>
+
+    <ngx-free-banner-section bannerImg="assets/img/bakery-banner.png"
+                             url="https://uibakery.io/?utm_source=github&utm_medium=clicks&utm_campaign=banner">
+    </ngx-free-banner-section>
+
+    <ngx-backend-bundles-section [material]="true"></ngx-backend-bundles-section>
+    <ngx-contact-form></ngx-contact-form>
+  </nb-layout-column>
+
+  <nb-layout-footer class="footer" fixed>
+    <ngx-landing-footer></ngx-landing-footer>
+  </nb-layout-footer>
+</nb-layout>

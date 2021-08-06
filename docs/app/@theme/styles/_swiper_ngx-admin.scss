@@ -1,0 +1,81 @@
+/**
+ * @license
+ * Copyright Akveo. All Rights Reserved.
+ * Licensed under the MIT License. See License.txt in the project root for license information.
+ */
+
+@mixin swiper-navigation-arrows($config) {
+  $position: map-get($config, 'position');
+  $positionXl: map-get($config, 'positionXl');
+
+  .swiper-button-prev, .swiper-button-next {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: none;
+    height: 5rem;
+    width: 5rem;
+    border-radius: 50%;
+    background-color: #ffffff;
+    box-shadow: nb-theme(shadow-default);
+    top: map-get($config, 'top');
+
+    &:hover {
+      box-shadow: nb-theme(shadow-hover-btn);
+    }
+
+    &:active {
+      box-shadow: nb-theme(shadow-active-btn);
+    }
+
+    &::after {
+      content: '';
+    }
+  }
+
+  .swiper-button-prev {
+    @if (type-of($position) == map) {
+      left: map-get($position, 'left');
+    } @else {
+      left: $position;
+    }
+  }
+
+  .swiper-button-next {
+    @if (type-of($position) == map) {
+      right: map-get($position, 'right');
+    } @else {
+      right: $position;
+    }
+  }
+
+  @include media-breakpoint-down(xl) {
+    .swiper-button-prev {
+      @if (type-of($positionXl) == map) {
+        left: map-get($positionXl, 'left');
+      } @else {
+        left: $positionXl;
+      }
+    }
+
+    .swiper-button-next {
+      @if (type-of($positionXl) == map) {
+        right: map-get($positionXl, 'right');
+      } @else {
+        right: $positionXl;
+      }
+    }
+  }
+
+  @include media-breakpoint-down(lg) {
+    .swiper-button-prev, .swiper-button-next {
+      display: none;
+    }
+  }
+
+  @include media-breakpoint-down(is) {
+    .swiper-button-prev, .swiper-button-next {
+      display: none;
+    }
+  }
+}

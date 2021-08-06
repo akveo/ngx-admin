@@ -1,0 +1,332 @@
+/**
+ * @license
+ * Copyright Akveo. All Rights Reserved.
+ * Licensed under the MIT License. See License.txt in the project root for license information.
+ */
+
+@import '../../../@theme/styles/themes';
+@import '~@nebular/theme/styles/global/breakpoints';
+
+@include nb-install-component() {
+  $left-section-width: nb-theme(sidebar-width);
+  $right-section-width: nb-theme(settings-col-width);
+  $logo-fg: nb-theme(header-text-color);
+  $version-fg: nb-theme(text-hint-color);
+  $menu-item-fg: nb-theme(color-fg-heading-light);
+  $menu-item-fg-active: nb-theme(header-menu-fg-active);
+  $contacts-fg: nb-theme(color-fg-heading-light);
+  $contacts-active-fg: nb-theme(header-menu-fg-active);
+  $menu-sm-padding: 0.675rem 0.375rem;
+  $menu-md-padding: 0.675rem 1.375rem;
+
+  display: flex;
+  flex: 1 0 auto;
+  flex-direction: row;
+  align-items: center;
+
+  .section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.875rem 0.5rem;
+
+    .first-section {
+      display: flex;
+      flex-direction: row;
+    }
+
+    &.left {
+      width: $left-section-width;
+    }
+
+    &.middle {
+      flex: 1;
+      justify-content: flex-end;
+    }
+  }
+
+  .logo {
+    display: flex;
+    flex: 1 0 auto;
+    flex-direction: row;
+
+    a {
+      font-size: 1.275rem;
+      color: $logo-fg;
+      text-decoration: none !important;
+      font-weight: bold;
+    }
+
+    .version {
+      font-size: 0.75rem;
+      font-weight: bold;
+      color: $version-fg;
+    }
+  }
+
+  .backend-bundles {
+    display: none;
+    align-items: center;
+    padding-right: 2rem;
+    margin-left: auto;
+
+    i {
+      margin-right: 0.5rem;
+    }
+  }
+
+  ::ng-deep nb-menu {
+
+    .menu-items {
+      display: flex;
+
+      .menu-item {
+        border: none;
+
+        a {
+          padding: $menu-sm-padding;
+          color: $menu-item-fg;
+          display: block;
+
+          &:hover, &.active, &:focus {
+            color: $menu-item-fg-active;
+            outline: none !important;
+          }
+        }
+      }
+
+      li:first-child {
+        display: none;
+      }
+    }
+  }
+
+  .section.right {
+    color: $contacts-fg;
+    display: none;
+
+    a {
+      font-family: nb-theme(font-main), sans-serif;
+      color: $contacts-active-fg;
+      margin-left: 0.375rem;
+    }
+  }
+
+  ::ng-deep ngx-material-theme-link a.material-theme-link {
+    padding: $menu-sm-padding;
+  }
+
+  @include media-breakpoint-up(is) {
+    .section.left,
+    .section.right {
+      padding: 0.875rem 0;
+    }
+
+    .section.middle {
+      justify-content: flex-start;
+    }
+  }
+
+  @include media-breakpoint-up(sm) {
+    .logo {
+      align-items: baseline;
+      flex: 1 0 auto;
+
+      a {
+        color: #000000;
+        margin-right: 0.5rem;
+      }
+
+      .version {
+        display: inline;
+      }
+    }
+
+    ::ng-deep {
+      nb-menu .menu-items .menu-item a,
+      ngx-material-theme-link a.material-theme-link {
+        padding: $menu-md-padding;
+      }
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    .logo {
+      flex: 1 0 auto;
+      flex-direction: column;
+      align-items: flex-start;
+
+      .version {
+        margin-left: 0;
+      }
+    }
+
+    ::ng-deep nb-menu .menu-items li:nth-child(2) {
+      display: list-item;
+    }
+
+    .backend-bundles {
+      display: flex;
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    ::ng-deep nb-menu .menu-items {
+      justify-content: flex-start;
+
+      li:not(:first-child) {
+        display: list-item;
+      }
+    }
+    .section.right {
+      display: block;
+    }
+  }
+
+  @include media-breakpoint-up(xl) {
+    .sidebar-toggle {
+      display: none;
+    }
+  }
+
+
+  @include media-breakpoint-down(sm) {
+    ::ng-deep nb-menu {
+      .menu-items {
+        justify-content: flex-end;
+      }
+    }
+  }
+
+  @include media-breakpoint-down(is) {
+    padding: 0 0 0 1rem;
+
+    .section {
+      &.left {
+        width: auto;
+      }
+    }
+
+    .logo {
+      flex: 1 0 auto;
+      flex-direction: column;
+      align-items: flex-start;
+
+      a {
+        color: #000000;
+      }
+
+      .version {
+        margin-left: 0;
+      }
+    }
+  }
+
+  &.docs-page {
+
+    .section {
+
+      .first-section {
+        display: flex;
+        flex-direction: row;
+      }
+
+      &.left {
+        align-items: center;
+        padding-left: 0;
+        width: auto;
+      }
+
+      &.middle {
+        justify-content: flex-end;
+      }
+
+      &.right {
+        display: none;
+        margin-left: 0;
+        width: auto;
+      }
+    }
+
+    .sidebar-toggle {
+      border: none;
+      background-color: transparent;
+      font-size: 2.5rem;
+      line-height: 1rem;
+      flex: 1 0 auto;
+      padding: 0 0.5rem;
+
+      .nb-menu {
+        vertical-align: middle;
+      }
+    }
+
+    ::ng-deep nb-menu {
+      flex-grow: 0;
+      flex-shrink: 1;
+      flex-basis: auto;
+    }
+
+    ::ng-deep ngx-material-theme-link {
+      display: none;
+    }
+
+    @include media-breakpoint-up(is) {
+      ::ng-deep ngx-material-theme-link {
+        display: flex;
+      }
+    }
+
+    @include media-breakpoint-up(sm) {
+      ::ng-deep nb-menu .menu-items li:first-child {
+        display: list-item;
+      }
+
+      .section.middle {
+        justify-content: space-between;
+      }
+
+      .stars {
+        width: 7.5rem;
+        height: 1.25rem;
+        margin-left: auto;
+      }
+    }
+
+    @include media-breakpoint-up(lg) {
+      .section.middle {
+        justify-content: space-between;
+      }
+      ::ng-deep nb-menu {
+        .menu-items li {
+          display: list-item;
+        }
+      }
+      .section.right {
+        display: block;
+      }
+    }
+
+    @include media-breakpoint-up(xl) {
+      .section.left {
+        padding-left: 1.125rem;
+        width: nb-theme(sidebar-width);
+      }
+
+      .sidebar-toggle {
+        display: none;
+      }
+
+      ::ng-deep nb-menu {
+        flex: 1;
+      }
+    }
+
+    @include media-breakpoint-up(macpro) {
+      .section.right {
+        margin-left: 1.875rem;
+        width: $right-section-width;
+      }
+    }
+  }
+}

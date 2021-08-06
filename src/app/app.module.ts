@@ -20,6 +20,7 @@ import {
   NbToastrModule,
   NbWindowModule,
 } from '@nebular/theme';
+import {InlineSVGModule} from 'ng-inline-svg';
 
 @NgModule({
   declarations: [AppComponent],
@@ -39,6 +40,7 @@ import {
     }),
     CoreModule.forRoot(),
     ThemeModule.forRoot(),
+    InlineSVGModule.forRoot(),
   ],
   bootstrap: [AppComponent],
 })
