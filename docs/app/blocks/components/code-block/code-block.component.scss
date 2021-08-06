@@ -1,0 +1,39 @@
+@import '../../../@theme/styles/themes';
+
+@include nb-install-component() {
+
+  $code-lines-fg: #515877;
+  $code-block-bg: nb-theme(code-block-bg);
+
+  .container {
+    display: flex;
+    padding: 0;
+    font-size: 1rem;
+    border-radius: 0.5rem;
+    background: $code-block-bg;
+    overflow-x: auto;
+
+    .lines {
+      display: flex;
+      flex-direction: column;
+      text-align: end;
+      font-size: 0.875rem;
+      padding: 2rem 0.5rem 0.5rem;
+      border-radius: 0.5rem 0 0 0.5rem;
+      color: $code-lines-fg;
+      user-select: none;
+    }
+
+    pre {
+      margin-bottom: 0;
+      background: transparent;
+      overflow: visible;
+
+      code.hljs {
+        background: transparent;
+        padding-left: 0.5rem;
+        margin-bottom: 0;
+      }
+    }
+  }
+}

@@ -1,7 +1,9 @@
-import {Component, OnDestroy} from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { NbThemeService } from '@nebular/theme';
 import { takeWhile } from 'rxjs/operators' ;
 import { SolarData } from '../../@core/data/solar';
+import { AbService } from '../../@core/utils/ab.service';
+import { MetadataService } from '../../@core/utils/metadata.service';
 
 interface CardSettings {
   title: string;
@@ -14,9 +16,10 @@ interface CardSettings {
   styleUrls: ['./dashboard.component.scss'],
   templateUrl: './dashboard.component.html',
 })
-export class DashboardComponent implements OnDestroy {
+export class DashboardComponent implements OnInit, OnDestroy {
 
   private alive = true;
+  showCallAction = true;
 
   solarValue: number;
   lightCard: CardSettings = {
@@ -83,7 +86,9 @@ export class DashboardComponent implements OnDestroy {
   };
 
   constructor(private themeService: NbThemeService,
-              private solarService: SolarData) {
+              private metaDataService: MetadataService,
+              private solarService: SolarData,
+              private abService: AbService) {
     this.themeService.getJsTheme()
       .pipe(takeWhile(() => this.alive))
       .subscribe(theme => {
@@ -95,6 +100,17 @@ export class DashboardComponent implements OnDestroy {
       .subscribe((data) => {
         this.solarValue = data;
       });
+  }
+
+  ngOnInit() {
+    this.metaDataService.updateTitle('Ngx-admin IoT dashboard on Angular 9+ and Nebular');
+    this.metaDataService.updateDescription('IoT dashboard on Ngx-admin is Angular 9+ Bootstrap 4+ admin' +
+      ' dashboard template. Over 40+ Angular Components and 60+ Usage Examples. Completely FREE and MIT licensed.');
+    this.metaDataService.updateKeywords('ngx admin, ngx admin dashboard, ngx iot dashboard, ngx-admin iot template');
+
+    this.abService.onAbEvent(AbService.VARIANT_HIDE_CALL_ACTION)
+      .pipe(takeWhile(() => this.alive))
+      .subscribe(() => this.showCallAction = false );
   }
 
   ngOnDestroy() {

@@ -1,0 +1,27 @@
+<div class="gray-section">
+  <ngx-landing-main-info></ngx-landing-main-info>
+</div>
+
+<ngx-backend-bundles-section id="backend-bundles"></ngx-backend-bundles-section>
+
+<ngx-landing-description-section *ngIf="descriptions | async" [descriptions]="descriptions | async" ></ngx-landing-description-section>
+
+<ngx-landing-theme-section></ngx-landing-theme-section>
+
+<div class="gray-section">
+  <ngx-landing-reason-section></ngx-landing-reason-section>
+
+  <ngx-landing-reviews-section></ngx-landing-reviews-section>
+</div>
+
+<ngx-free-banner-section bannerImg="assets/img/bakery-banner.png"
+                         url="https://uibakery.io/?utm_source=github&utm_medium=clicks&utm_campaign=banner">
+</ngx-free-banner-section>
+
+<ngx-landing-our-projects-section></ngx-landing-our-projects-section>
+
+<div class="gray-section">
+  <ngx-landing-social-section></ngx-landing-social-section>
+</div>
+
+<ngx-landing-contact-section></ngx-landing-contact-section>

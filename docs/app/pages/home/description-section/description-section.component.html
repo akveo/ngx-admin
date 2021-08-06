@@ -1,0 +1,11 @@
+<div class="descriptions" *ngFor="let item of descriptions">
+  <div class="icons-block">
+    <i [innerHTML]="item.icon | eva: { width: 48, height: 48, fill: '#00db92' }"></i>
+  </div>
+  <div class="title">
+    {{ item.title }}
+  </div>
+  <p class="description">
+    {{ item.description }}
+  </p>
+</div>

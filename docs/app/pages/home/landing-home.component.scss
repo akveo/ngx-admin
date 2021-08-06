@@ -1,0 +1,80 @@
+/**
+ * @license
+ * Copyright Akveo. All Rights Reserved.
+ * Licensed under the MIT License. See License.txt in the project root for license information.
+ */
+
+@import '../../@theme/styles/themes';
+@import '~@nebular/theme/styles/global/breakpoints';
+
+@include nb-install-component() {
+  $content-width: nb-theme(content-width);
+
+  .contact-us {
+    padding: 5rem 1rem;
+
+    h2 {
+      color: black;
+    }
+  }
+
+  nb-layout-header {
+    background-color: nb-theme(header-background-color);
+  }
+
+  ::ng-deep nb-layout .main-container {
+    padding-top: 3rem;
+
+    .scrollable {
+      padding-top: 0;
+    }
+  }
+
+  ::ng-deep nb-layout .layout-container .columns {
+    margin: 0 auto;
+  }
+
+  ::ng-deep nb-layout-header {
+    box-shadow: nb-theme(shadow-default);
+    background: nb-theme(header-bg);
+    ngx-landing-header {
+      max-width: calc(#{$content-width} - 8.125rem * 2);
+      margin: 0 auto;
+    }
+  }
+
+  ::ng-deep .layout .layout-container .content nb-layout-footer.footer {
+    width: 100%;
+    background-color: nb-theme(color-white);
+    box-shadow: nb-theme(shadow-default);
+
+    ngx-landing-footer {
+      max-width: $content-width;
+      justify-content: space-evenly;
+      margin: 0 auto;
+    }
+  }
+
+
+  @include media-breakpoint-down(xl) {
+    nb-layout-header ::ng-deep nav {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    nb-layout-header ::ng-deep nav {
+      padding-right: 0;
+    }
+  }
+
+  @include media-breakpoint-down(is) {
+    nb-layout-header ::ng-deep nav {
+      padding-left: 0;
+      padding-right: 0;
+      height: 3.75rem;
+    }
+  }
+}
+

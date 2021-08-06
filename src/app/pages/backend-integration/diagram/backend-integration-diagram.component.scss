@@ -1,0 +1,29 @@
+@import '../../../@theme/styles/themes';
+
+@include nb-install-component() {
+  width: 100%;
+
+  ::ng-deep svg {
+    path.card-header, path.subcard-header, path.diagram-header {
+      fill: nb-theme(text-basic-color);
+    }
+
+    path.card-subheader, path.subcard-subheader, path.diagram-subheader {
+      fill: nb-theme(text-hint-color);
+    }
+
+    rect.card-background {
+      fill: nb-theme(background-basic-color-2);
+      stroke: nb-theme(border-basic-color-5);
+    }
+
+    rect.subcard-background {
+      fill: nb-theme(background-basic-color-1);
+    }
+
+    path.subcard-border {
+      fill: nb-theme(background-basic-color-2);
+      stroke: nb-theme(border-basic-color-5);
+    }
+  }
+}
