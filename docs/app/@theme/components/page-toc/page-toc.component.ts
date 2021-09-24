@@ -13,7 +13,7 @@ import {
 } from '@angular/core';
 import { takeWhile,  map } from 'rxjs/operators';
 import { ActivatedRoute } from '@angular/router';
-import { of as observableOf,  combineLatest } from 'rxjs';
+import { combineLatest, Observable } from 'rxjs';
 
 @Component({
   selector: 'ngx-page-toc',
@@ -35,11 +35,11 @@ export class NgxPageTocComponent implements OnDestroy {
   items: any[];
 
   @Input()
-  set toc(value) {
-    combineLatest(
-      observableOf(value || []),
+  set toc(value: Observable<any[]>) {
+    combineLatest([
+      value,
       this.activatedRoute.fragment,
-    )
+    ])
       .pipe(
         takeWhile(() => this.alive),
         map(([toc, fragment]) => {
