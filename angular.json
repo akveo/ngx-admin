@@ -195,6 +195,7 @@
             "tsConfig": "docs/tsconfig.app.json",
             "polyfills": "docs/polyfills.ts",
             "assets": [
+              "docs/articles",
               "docs/assets",
               "docs/404.html",
               "docs/favicon.png",

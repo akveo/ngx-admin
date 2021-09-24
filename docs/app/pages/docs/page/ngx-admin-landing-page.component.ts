@@ -9,14 +9,12 @@ import { ActivatedRoute, Router } from '@angular/router';
 import {
   filter,
   map,
-  publishBehavior,
   publishReplay,
   refCount,
   tap,
   takeWhile,
 } from 'rxjs/operators';
 import { NB_WINDOW } from '@nebular/theme';
-import { fromEvent } from 'rxjs';
 
 import { NgxStructureService } from '../../../@theme/services/structure.service';
 import { NgxTocStateService } from '../../../@theme/services/toc-state.service';
@@ -48,7 +46,6 @@ export class NgxAdminLandingPageComponent implements OnDestroy, OnInit {
 
   ngOnInit() {
     this.handlePageNavigation();
-    this.handleTocScroll();
     this.window.history.scrollRestoration = 'manual';
   }
 
@@ -73,30 +70,6 @@ export class NgxAdminLandingPageComponent implements OnDestroy, OnInit {
       .subscribe((item) => {
         this.currentItem = item;
       });
-  }
-
-  handleTocScroll() {
-    this.ngZone.runOutsideAngular(() => {
-      fromEvent(this.window, 'scroll')
-        .pipe(
-          publishBehavior(null),
-          refCount(),
-          takeWhile(() => this.alive),
-          filter(() => this.tocState.list().length > 0),
-        )
-        .subscribe(() => {
-          this.tocState.list().map(item => item.setInView(false));
-
-          const current: any = this.tocState.list().reduce((acc, item) => {
-            return item.y > 0 && item.y < acc.y ? item : acc;
-          }, { y: Number.POSITIVE_INFINITY, fake: true });
-
-          if (current && !current.fake) {
-            current.setInView(true);
-            this.router.navigate([], { fragment: current.fragment, replaceUrl: true });
-          }
-        });
-    });
   }
 
   ngOnDestroy() {

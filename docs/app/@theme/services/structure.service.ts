@@ -5,10 +5,13 @@
  */
 
 import { Inject, Injectable } from '@angular/core';
+import { map } from 'rxjs/operators';
+import { combineLatest, Observable, of } from 'rxjs';
 
 import { NgxTabbedService } from './tabbed.service';
 import { NgxTextService } from './text.service';
 import { DOCS, STRUCTURE } from '../../app.options';
+import { NgxArticleService } from './article.service';
 
 @Injectable()
 export class NgxStructureService {
@@ -17,6 +20,7 @@ export class NgxStructureService {
 
   constructor(private textService: NgxTextService,
               private tabbedService: NgxTabbedService,
+              private articleService: NgxArticleService,
               @Inject(STRUCTURE) structure,
               @Inject(DOCS) docs) {
     this.prepared = this.prepareStructure(structure, docs);
@@ -56,8 +60,9 @@ export class NgxStructureService {
       }
 
       if (item.block === 'markdown') {
-        item.children = this.textService.mdToSectionsHTML(
-          require(`raw-loader!../../../articles/${item.source}`).default);
+        item.sections = this.articleService.getArticle(item.source).pipe(
+          map((article) => this.textService.mdToSectionsHTML(article)),
+        );
       }
 
       if (item.children) {
@@ -113,39 +118,43 @@ export class NgxStructureService {
     };
   }
 
-  protected prepareToc(item: any) {
-    return item.children.reduce((acc: any[], child: any) => {
+  protected prepareToc(item: any): Observable<any[]> {
+    const tocList = item.children.reduce((acc: Observable<any>[], child: any) => {
       if (child.block === 'markdown') {
-        return acc.concat(this.getTocForMd(child));
-      } else if (child.block === 'tabbed') {
-        return acc.concat(this.getTocForTabbed(child));
-      } else if (child.block === 'component') {
-        acc.push(this.getTocForComponent(child));
+        return [...acc, this.getTocForMd(child)];
+      }
+      if (child.block === 'tabbed') {
+        return [...acc, this.getTocForTabbed(child)];
+      }
+      if (child.block === 'component') {
+        return [...acc, this.getTocForComponent(child)];
       }
       return acc;
     }, []);
+
+    return combineLatest([...tocList]).pipe(map((toc) => [].concat(...toc)));
   }
 
-  protected getTocForMd(block: any) {
-    return block.children.map((section: any) => ({
-        title: section.title,
-        fragment: section.fragment,
-      }
-    ));
+  protected getTocForMd(block: any): Observable<any[]> {
+    return (block.sections as Observable<any[]>).pipe(
+      map((item) => item.map((val) => ({
+        title: val.title,
+        fragment: val.fragment,
+      }))),
+    );
   }
 
-  protected getTocForComponent(block: any) {
-    return {
+  protected getTocForComponent(block: any): Observable<any[]> {
+    return of([{
       title: block.source.name,
       fragment: block.source.slag,
-    };
+    }]);
   }
 
-  protected getTocForTabbed(block: any) {
-    return block.children.map((component: any) => ({
-        title: component.name,
-        fragment: this.textService.createSlag(component.name),
-      }
-    ));
+  protected getTocForTabbed(block: any): Observable<any[]> {
+    return of(block.children.map((component: any) => ({
+      title: component.name,
+      fragment: this.textService.createSlag(component.name),
+    })));
   }
 }

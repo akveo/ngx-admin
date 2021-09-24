@@ -17,6 +17,8 @@ import { NgxTocStateService } from './toc-state.service';
 import { NgxCodeLoaderService } from './code-loader.service';
 import { NgxStylesService } from './styles.service';
 import { NgxIframeCommunicatorService } from './iframe-communicator.service';
+import { NgxVisibilityService } from './visibility.service';
+import { NgxArticleService } from './article.service';
 
 
 export const ngxLandingServices = [
@@ -33,4 +35,6 @@ export const ngxLandingServices = [
   NgxCodeLoaderService,
   NgxStylesService,
   NgxIframeCommunicatorService,
+  NgxVisibilityService,
+  NgxArticleService,
 ];

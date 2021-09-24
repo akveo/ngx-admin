@@ -11,7 +11,7 @@
 
   <ng-container *ngFor="let block of currentItem?.children">
     <ng-container [ngSwitch]="block.block">
-      <ngx-md-block *ngSwitchCase="'markdown'" [source]="block.children"></ngx-md-block>
+      <ngx-md-block *ngSwitchCase="'markdown'" [content]="block.sections | async"></ngx-md-block>
       <ngx-component-block *ngSwitchCase="'component'" [source]="block.source"></ngx-component-block>
       <ngx-tabbed-block *ngSwitchCase="'tabbed'" [source]="block.children" [tabs]="currentItem.tabs"></ngx-tabbed-block>
       <ngx-theme-block *ngSwitchCase="'theme'" [block]="block"></ngx-theme-block>
