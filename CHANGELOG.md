@@ -1,3 +1,13 @@
+<a name="8.0.0"></a>
+# [8.0.0](https://github.com/akveo/ngx-admin/compare/v7.0.0...v8.0.0) (2021-10-08)
+
+
+### Features
+
+* update to Angular 12 ([#5868](https://github.com/akveo/ngx-admin/issues/5868)) ([080830a](https://github.com/akveo/ngx-admin/commit/080830a))
+
+
+
 <a name="7.0.0"></a>
 # [7.0.0](https://github.com/akveo/ngx-admin/compare/v6.0.0...v7.0.0) (2021-01-19)
 
