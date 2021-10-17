@@ -3,6 +3,7 @@ import { takeWhile } from 'rxjs/operators';
 import { NbThemeService } from '@nebular/theme';
 import { OutlineData, VisitorsAnalyticsData } from '../../../@core/data/visitors-analytics';
 import { forkJoin } from 'rxjs';
+import { NgxLegendItemColor } from '../legend-chart/enum.legend-item-color';
 
 
 @Component({
@@ -14,7 +15,7 @@ export class ECommerceVisitorsAnalyticsComponent implements OnDestroy {
   private alive = true;
 
   pieChartValue: number;
-  chartLegend: {iconColor: string; title: string}[];
+  chartLegend: {iconColor: NgxLegendItemColor; title: string}[];
   visitorsAnalyticsData: { innerLine: number[]; outerLine: OutlineData[]; };
 
   constructor(private themeService: NbThemeService,

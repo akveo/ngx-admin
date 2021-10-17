@@ -13,7 +13,7 @@ export class TrafficFrontCardComponent implements OnDestroy {
 
   private alive = true;
 
-  @Input() frontCardData: TrafficList;
+  @Input() frontCardData: TrafficList[];
 
   currentTheme: string;
 

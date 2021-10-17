@@ -16,5 +16,5 @@ export interface TrafficList {
 }
 
 export abstract class TrafficListData {
-  abstract getTrafficListData(period: string): Observable<TrafficList>;
+  abstract getTrafficListData(period: string): Observable<TrafficList[]>;
 }

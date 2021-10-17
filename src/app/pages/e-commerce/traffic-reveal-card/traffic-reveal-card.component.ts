@@ -13,7 +13,7 @@ export class TrafficRevealCardComponent implements OnDestroy {
   private alive = true;
 
   trafficBarData: TrafficBar;
-  trafficListData: TrafficList;
+  trafficListData: TrafficList[];
   revealed = false;
   period: string = 'week';
 

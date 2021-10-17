@@ -7,7 +7,7 @@ import { TrafficList, TrafficListData } from '../data/traffic-list';
 export class TrafficListService extends TrafficListData {
 
   private getRandom = (roundTo: number) => Math.round(Math.random() * roundTo);
-  private data = {};
+  private data: Record<string, TrafficList[]> = {};
 
   constructor(private period: PeriodsService) {
     super();
@@ -79,7 +79,7 @@ export class TrafficListService extends TrafficListData {
     }, []);
   }
 
-  getTrafficListData(period: string): Observable<TrafficList> {
+  getTrafficListData(period: string): Observable<TrafficList[]> {
     return observableOf(this.data[period]);
   }
 }
