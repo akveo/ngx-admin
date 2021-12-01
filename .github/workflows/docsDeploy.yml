@@ -16,6 +16,8 @@ jobs:
     steps:
       - name: Use Node.js 12.x
         uses: actions/setup-node@v1
+        with:
+          node-version: '12'
       - uses: actions/checkout@v2
         with:
           ref: demo
