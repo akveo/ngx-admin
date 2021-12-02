@@ -1,4 +1,4 @@
-@import '../../../@theme/styles/themes';
+@use '../../../@theme/styles/themes' as *;
 
 $legend-all-orders-color: #00977e;
 $legend-payment-color: #6935ca;

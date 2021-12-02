@@ -1,3 +1,5 @@
+@use '@nebular/theme/styles/globals' as *;
+
 @mixin ngx-layout() {
   @include media-breakpoint-down(is) {
     .row {

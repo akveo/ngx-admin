@@ -1,6 +1,6 @@
-@import '../../styles/themes';
-@import '~bootstrap/scss/mixins/breakpoints';
-@import '~@nebular/theme/styles/global/breakpoints';
+@use '../../styles/themes' as *;
+@use '@nebular/theme/styles/global/breakpoints' as *;
+@import 'bootstrap/scss/mixins/breakpoints';
 
 @include nb-install-component() {
   .menu-sidebar ::ng-deep .scrollable {

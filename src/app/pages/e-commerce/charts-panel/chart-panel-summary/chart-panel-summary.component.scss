@@ -1,4 +1,4 @@
-@import '../../../../@theme/styles/themes';
+@use '../../../../@theme/styles/themes' as *;
 
 @include nb-install-component() {
   .summary-container {

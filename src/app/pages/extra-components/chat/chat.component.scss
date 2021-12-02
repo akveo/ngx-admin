@@ -1,7 +1,6 @@
-@import '~bootstrap/scss/mixins/breakpoints';
-@import '~@nebular/theme/styles/global/breakpoints';
-
-@import '../../../@theme/styles/themes';
+@use '../../../@theme/styles/themes' as *;
+@use '@nebular/theme/styles/global/breakpoints' as *;
+@import 'bootstrap/scss/mixins/breakpoints';
 
 @include nb-install-component() {
   ::ng-deep nb-layout-column {

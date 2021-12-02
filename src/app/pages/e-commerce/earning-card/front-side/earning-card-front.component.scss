@@ -1,5 +1,4 @@
-@import '../../../../@theme/styles/themes';
-@import '~@nebular/theme/styles/global/typography/typography';
+@use '../../../../@theme/styles/themes' as *;
 
 @include nb-install-component() {
   display: flex;
