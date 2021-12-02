@@ -55,6 +55,30 @@
     }
   }
 
+  .btn {
+    font-family: nb-theme(font-main), sans-serif;
+    border-radius: 3px;
+    border: none;
+    background-color: nb-theme(color-active-fg);
+    color: #ffffff;
+    padding: 1rem;
+    margin-right: 6%!important;
+    box-shadow: nb-theme(shadow-btn);
+    cursor: pointer;
+    text-transform: uppercase;
+
+    &:hover {
+      box-shadow: nb-theme(shadow-hover-green-btn);
+    }
+
+    &:active {
+      box-shadow: nb-theme(shadow-active-green-btn);
+    }
+
+    &.btn-download {
+      margin-left: 1em;
+    }
+  }
 
   @include media-breakpoint-down(xl) {
     nb-layout-header ::ng-deep nav {
@@ -74,6 +98,21 @@
       padding-left: 0;
       padding-right: 0;
       height: 3.75rem;
+    }
+  }
+
+  @include media-breakpoint-down(lg) {
+    .btn {
+      font-size: 0.7rem;
+      padding-bottom: 1rem;
+      padding-top: 1rem;
+      margin: 0!important;
+    }
+  }
+
+  @include media-breakpoint-down(md) {
+    .btn {
+      display: none;
     }
   }
 }
