@@ -184,6 +184,8 @@
   }
 
   @include media-breakpoint-up(xl) {
+    margin-left: 6% !important;
+
     .sidebar-toggle {
       display: none;
     }
