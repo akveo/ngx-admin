@@ -8,6 +8,7 @@
 @import '~@nebular/theme/styles/global/breakpoints';
 
 @include nb-install-component() {
+
   $left-section-width: nb-theme(sidebar-width);
   $right-section-width: nb-theme(settings-col-width);
   $logo-fg: nb-theme(header-text-color);
@@ -171,6 +172,7 @@
   }
 
   @include media-breakpoint-up(lg) {
+
     ::ng-deep nb-menu .menu-items {
       justify-content: flex-start;
 
@@ -184,6 +186,7 @@
   }
 
   @include media-breakpoint-up(xl) {
+    margin-left: 6% !important;
     .sidebar-toggle {
       display: none;
     }

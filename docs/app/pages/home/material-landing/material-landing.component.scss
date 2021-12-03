@@ -25,10 +25,50 @@
     margin: 0 auto;
   }
 
+  .btn {
+    font-family: nb-theme(font-main), sans-serif;
+    border-radius: 3px;
+    border: none;
+    background-color: #ffffff!important;
+    color: nb-theme(color-active-fg) !important;
+    padding: 1rem;
+    margin-right: 6% !important;
+    box-shadow: nb-theme(shadow-btn);
+    cursor: pointer;
+    text-transform: uppercase;
+
+    &:hover {
+      box-shadow: nb-theme(shadow-hover-btn);
+    }
+
+    &:active {
+      box-shadow: nb-theme(shadow-active-btn);
+    }
+
+    &.btn-download {
+      margin-left: 1em;
+    }
+  }
+
   @include media-breakpoint-down(is) {
     ngx-material-features {
       max-width: 100%;
     }
 
+  }
+
+  @include media-breakpoint-down(lg) {
+    .btn {
+      font-size: 0.7rem;
+      padding-bottom: 1rem;
+      padding-top: 1rem;
+      margin: 0!important;
+    }
+  }
+
+  @include media-breakpoint-down(md) {
+    .btn {
+      display: none;
+    }
   }
 }
