@@ -26,21 +26,19 @@
   }
 
   .delta {
-    &.up .direction {
-      color: nb-theme(color-success-default);
-    }
-    &.down .direction {
-      color: nb-theme(color-danger-default);
-    }
-  }
-
-  .delta {
     position: absolute;
     display: inline-block;
     top: 0;
     right: 0;
     @include nb-rtl(left, 0);
     @include nb-rtl(right, auto);
+
+    &.up .direction {
+      color: nb-theme(color-success-default);
+    }
+    &.down .direction {
+      color: nb-theme(color-danger-default);
+    }
   }
 
   ngx-earning-live-update-chart {
