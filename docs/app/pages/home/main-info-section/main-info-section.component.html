@@ -1,11 +1,15 @@
 <div class="main-img-container">
-  <a href="http://www.akveo.com/ngx-admin/?utm_campaign=ngx_admin%20-%20demo%20-%20ngx_admin%20docs&utm_source=ngx_admin&utm_medium=referral&utm_content=landing_main_section_image"
-     target="_blank"
-     class="hero-image-link">
-    <img *ngIf="breakpoint.width >= breakpoints.md"
-         class="main-img"
-         defaultImage="assets/img/default.png"
-         [lazyLoad]="imageUrl"/>
+  <a
+    href="http://www.akveo.com/ngx-admin/?utm_campaign=ngx_admin%20-%20demo%20-%20ngx_admin%20docs&utm_source=ngx_admin&utm_medium=referral&utm_content=landing_main_section_image"
+    target="_blank"
+    class="hero-image-link"
+  >
+    <img
+      *ngIf="breakpoint.width >= breakpoints.md"
+      class="main-img"
+      defaultImage="assets/img/default.png"
+      [lazyLoad]="imageUrl"
+    />
   </a>
 </div>
 <div class="main-inf">
@@ -18,21 +22,30 @@
   </ng-container>
 
   <div class="mobile-main-img-container">
-    <img *ngIf="breakpoint.width <= breakpoints.sm" class="main-img" lazyLoad="assets/img/corporate-theme.png" alt="Light theme Dashboard"/>
+    <img
+      *ngIf="breakpoint.width <= breakpoints.sm"
+      class="main-img"
+      lazyLoad="assets/img/corporate-theme.png"
+      alt="Light theme Dashboard"
+    />
   </div>
   <div class="badges">
-    <iframe class="stars"
-            src="https://ghbtns.com/github-btn.html?user=akveo&repo=ngx-admin&type=star&count=true"
-            frameborder="0"
-            width="170px"
-            scrolling="0">
+    <iframe
+      class="stars"
+      src="https://ghbtns.com/github-btn.html?user=akveo&repo=ngx-admin&type=star&count=true"
+      frameborder="0"
+      width="170px"
+      scrolling="0"
+    >
     </iframe>
   </div>
   <div class="buttons">
     <div class="buttons-links">
-      <a class="btn btn-demo"
-         href="https://www.akveo.com/ngx-admin/pages/dashboard?utm_campaign=ngx_admin%20-%20demo%20-%20ngx_admin%20docs&utm_source=ngx_admin&utm_medium=referral&utm_content=landing_main_section"
-         target="_blank">
+      <a
+        class="btn btn-demo"
+        href="https://www.akveo.com/ngx-admin/pages/dashboard?utm_campaign=ngx_admin%20-%20demo%20-%20ngx_admin%20docs&utm_source=ngx_admin&utm_medium=referral&utm_content=landing_main_section"
+        target="_blank"
+      >
         Demo
       </a>
       <button (click)="openDownloadDialog()" class="btn btn-download">
@@ -40,11 +53,11 @@
       </button>
     </div>
 
-    <a href="https://store.akveo.com/pages/ngx-admin-premium?utm_source=ngx_admin&utm_medium=referral&utm_campaign=ngx-admin_premium"
+    <!-- <a href="https://store.akveo.com/pages/ngx-admin-premium?utm_source=ngx_admin&utm_medium=referral&utm_campaign=ngx-admin_premium"
        target="_blank"
        class="btn btn-premium btn-green"
     >
       ngx-admin Premium
-    </a>
+    </a> -->
   </div>
 </div>
