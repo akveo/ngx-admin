@@ -1,11 +1,10 @@
-@import '../../../@theme/styles/themes';
-@import '~@nebular/theme/styles/global/breakpoints';
+@import "../../../@theme/styles/themes";
+@import "~@nebular/theme/styles/global/breakpoints";
 
 @include nb-install-component() {
   $features-section-offset: 10.625rem;
 
   display: block;
-  padding: 5.25rem 0;
 
   .features {
     width: calc(100% - #{$features-section-offset} * 2);
@@ -30,7 +29,7 @@
     }
 
     .number {
-      font-family: 'Helvetica Neue Bold', sans-serif;
+      font-family: "Helvetica Neue Bold", sans-serif;
       font-size: 8.75rem;
       color: #ffffff;
       text-shadow: 0 0.5rem 1rem #dae0eb;
@@ -39,7 +38,7 @@
 
     .description {
       &::before {
-        content: '';
+        content: "";
         display: block;
         height: 0.25rem;
         width: 3.5rem;
@@ -61,7 +60,6 @@
       text-decoration: none;
       font-family: nb-theme(font-main), sans-serif;
       color: nb-theme(color-active-fg);
-
     }
   }
 
@@ -91,7 +89,6 @@
 
         &:nth-child(2n) {
           padding: 0;
-
         }
       }
 

@@ -2,9 +2,12 @@
   <ngx-landing-main-info></ngx-landing-main-info>
 </div>
 
-<ngx-backend-bundles-section id="backend-bundles"></ngx-backend-bundles-section>
+<!-- <ngx-backend-bundles-section id="backend-bundles"></ngx-backend-bundles-section> -->
 
-<ngx-landing-description-section *ngIf="descriptions | async" [descriptions]="descriptions | async" ></ngx-landing-description-section>
+<ngx-landing-description-section
+  *ngIf="descriptions | async"
+  [descriptions]="descriptions | async"
+></ngx-landing-description-section>
 
 <ngx-landing-theme-section></ngx-landing-theme-section>
 
@@ -14,8 +17,16 @@
   <ngx-landing-reviews-section></ngx-landing-reviews-section>
 </div>
 
-<ngx-free-banner-section bannerImg="assets/img/bakery-banner.png"
-                         url="https://uibakery.io/?utm_source=github&utm_medium=clicks&utm_campaign=banner">
+<ngx-free-banner-section
+  bannerImg="assets/img/fleet-management-banner.jpg"
+  url="https://www.akveo.com/templates/fleet-management-dashboard?utm_campaign=services%20-%20templates%20-%20ngx-admin%20&utm_source=ngx-admin&utm_medium=referral&utm_content=landing_banner"
+>
+</ngx-free-banner-section>
+
+<ngx-free-banner-section
+  bannerImg="assets/img/bakery-banner.png"
+  url="https://uibakery.io/?utm_source=github&utm_medium=clicks&utm_campaign=banner"
+>
 </ngx-free-banner-section>
 
 <ngx-landing-our-projects-section></ngx-landing-our-projects-section>
