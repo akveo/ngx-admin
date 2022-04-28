@@ -31,7 +31,7 @@ jobs:
         uses: azure/CLI@v1
         with:
           inlineScript: |
-            az storage blob delete-batch -s $web --account-name ngxadmin  --debug
+            az storage blob delete-batch -s '$web' --account-name ngxadmin  --debug
       # Upload to storage
       - name: Upload to blob storage
         uses: azure/CLI@v1
