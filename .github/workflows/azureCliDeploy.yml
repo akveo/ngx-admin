@@ -22,12 +22,6 @@ jobs:
           npm install
           npm run build:demo:prod
 
-      # Azure CLI Clear storage
-      - uses: azure/login@v1
-        with:
-          creds: ${{ secrets.AZURE_RBAC_CREDENTIALS }}
-      
-
       # Azure CLI
       - uses: azure/login@v1
         with:
