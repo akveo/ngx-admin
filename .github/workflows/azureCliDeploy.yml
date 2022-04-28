@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - demo
-      - demo-enable-gh-actions-manual-trigger
   workflow_dispatch:
 jobs:
   build:
@@ -17,7 +16,7 @@ jobs:
           node-version: '12'
       - uses: actions/checkout@v2
         with:
-          ref: demo
+          ref: demo-enable-gh-actions-manual-trigger
       - name: npm install, build
         run: |
           npm install
