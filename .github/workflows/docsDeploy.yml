@@ -9,7 +9,7 @@ on:
       - 'docs/**'
   repository_dispatch:
     types: deploy-docs
-
+  workflow_dispatch:
 jobs:
   build:
     runs-on: ubuntu-latest
