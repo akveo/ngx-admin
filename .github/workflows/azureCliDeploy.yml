@@ -16,7 +16,7 @@ jobs:
           node-version: '12'
       - uses: actions/checkout@v2
         with:
-          ref: demo-enable-gh-actions-manual-trigger
+          ref: demo
       - name: npm install, build
         run: |
           npm install
