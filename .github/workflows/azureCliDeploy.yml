@@ -22,10 +22,17 @@ jobs:
           npm install
           npm run build:demo:prod
 
-      # Azure CLI Upload to storage
+      # Azure CLI
       - uses: azure/login@v1
         with:
           creds: ${{ secrets.AZURE_RBAC_CREDENTIALS }}
+      # Clear storage
+      - name: Clear blob storage
+        uses: azure/CLI@v1
+        with:
+          inlineScript: |
+            az storage blob delete-batch -s '$web' --account-name ngxadmin  --debug
+      # Upload to storage
       - name: Upload to blob storage
         uses: azure/CLI@v1
         with:
