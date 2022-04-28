@@ -29,7 +29,6 @@ jobs:
       - name: Upload to blob storage
         uses: azure/CLI@v1
         with:
-          azcliversion: 2.0.72
           inlineScript: |
             az storage blob upload-batch -d '$web' -s dist --account-name ngxadmin  --debug
 
