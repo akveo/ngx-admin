@@ -1,74 +1,92 @@
 {
-  "rules": {
-    "color-hex-case": "lower",
-    "color-no-invalid-hex": true,
-
-    "function-calc-no-unspaced-operator": true,
-    "function-comma-space-after": "always-single-line",
-    "function-comma-space-before": "never",
-    "function-name-case": "lower",
-    "function-url-quotes": "always",
-    "function-whitespace-after": "always",
-
-    "number-leading-zero": "always",
-    "number-no-trailing-zeros": true,
-    "length-zero-no-unit": true,
-
-    "string-no-newline": true,
-    "string-quotes": "single",
-
-    "unit-case": "lower",
-    "unit-no-unknown": true,
-    "unit-whitelist": ["px", "%", "deg", "ms", "em", "vh", "vw", "s", "rem"],
-
-    "value-list-comma-space-after": "always-single-line",
-    "value-list-comma-space-before": "never",
-
-    "shorthand-property-no-redundant-values": true,
-
-    "property-case": "lower",
-
-    "declaration-block-no-duplicate-properties": [ true, {
-      "ignore": ["consecutive-duplicates-with-different-values"]
-    }],
-    "declaration-block-trailing-semicolon": "always",
-    "declaration-block-single-line-max-declarations": 1,
-    "declaration-block-semicolon-space-before": "never",
-    "declaration-block-semicolon-space-after": "always-single-line",
-    "declaration-block-semicolon-newline-before": "never-multi-line",
-    "declaration-block-semicolon-newline-after": "always-multi-line",
-    "declaration-property-value-blacklist": [
-      { "/.*/": ["initial"] },
-      { "message": "The `initial` value is not supported in IE."}
+	"extends": "stylelint-config-standard-scss",
+	"rules": {
+		"alpha-value-notation": "number",
+		"at-rule-empty-line-before": null,
+		"color-hex-case": "lower",
+		"color-no-invalid-hex": true,
+		"declaration-block-no-redundant-longhand-properties": null,
+    "declaration-empty-line-before": null,
+    "no-duplicate-selectors": null,
+		"function-calc-no-unspaced-operator": true,
+		"function-comma-newline-after": null,
+		"function-comma-space-after": "always-single-line",
+		"function-comma-space-before": "never",
+		"function-max-empty-lines": 1,
+		"function-name-case": "lower",
+		"function-parentheses-newline-inside": null,
+		"function-url-quotes": "always",
+		"function-whitespace-after": "always",
+		"indentation": [
+			2,
+			{ "indentInsideParens": "once-at-root-twice-in-block" }
+		],
+		"max-empty-lines": 2,
+		"no-empty-source": null,
+		"number-leading-zero": null,
+		"number-no-trailing-zeros": null,
+		"length-zero-no-unit": true,
+    "property-no-vendor-prefix": null,
+		"rule-empty-line-before": null,
+		"scss/at-mixin-argumentless-call-parentheses": null,
+		"scss/at-import-partial-extension": null,
+		"scss/dollar-variable-empty-line-before": null,
+		"scss/double-slash-comment-empty-line-before": null,
+    "selector-attribute-quotes": "always",
+		"selector-class-pattern": null,
+    "selector-list-comma-newline-after": null,
+    "selector-type-no-unknown": [
+      true,
+      { "ignoreTypes": ["/^nb-/", "/^ngx-/", "router-outlet", "chart", "agm-map", "search-input"  ]}
     ],
-
-    "block-closing-brace-newline-after": [
-      "always",
-      {
-        "ignoreAtRules": ["if", "else"]
-      }
-    ],
-    "block-closing-brace-newline-before": "always-multi-line",
-    "block-opening-brace-newline-after": "always-multi-line",
-    "block-opening-brace-space-before": "always-multi-line",
-
-    "selector-attribute-brackets-space-inside": "never",
-    "selector-attribute-operator-space-after": "never",
-    "selector-attribute-operator-space-before": "never",
-    "selector-combinator-space-after": "always",
-    "selector-combinator-space-before": "always",
-    "selector-pseudo-class-case": "lower",
-    "selector-pseudo-class-parentheses-space-inside": "never",
-    "selector-pseudo-element-case": "lower",
-    "selector-pseudo-element-colon-notation": "double",
-    "selector-pseudo-element-no-unknown": [true, {
-      "ignorePseudoElements": ["ng-deep"]
-    }],
-    "selector-type-case": "lower",
-    "selector-max-id": 0,
-
-    "no-missing-end-of-source-newline": true,
-
-    "max-line-length": 120
-  }
+		"string-no-newline": true,
+		"string-quotes": "single",
+		"unit-case": "lower",
+		"unit-no-unknown": true,
+		"unit-allowed-list": [ "px", "%", "deg", "ms", "em", "vh", "vw", "s", "rem" ],
+		"value-list-comma-space-after": "always-single-line",
+		"value-list-comma-space-before": "never",
+		"value-list-max-empty-lines": 1,
+		"shorthand-property-no-redundant-values": true,
+		"property-case": "lower",
+		"declaration-block-no-duplicate-properties": [
+			true,
+			{ "ignore": [ "consecutive-duplicates-with-different-values" ] }
+		],
+		"declaration-block-trailing-semicolon": "always",
+		"declaration-block-single-line-max-declarations": 1,
+		"declaration-block-semicolon-space-before": "never",
+		"declaration-block-semicolon-space-after": "always-single-line",
+		"declaration-block-semicolon-newline-before": "never-multi-line",
+		"declaration-block-semicolon-newline-after": "always-multi-line",
+		"declaration-property-value-disallowed-list": [
+			{ "/.*/": [ "initial" ] },
+			{ "message": "The `initial` value is not supported in IE." }
+		],
+		"block-closing-brace-newline-after": [
+			"always",
+			{ "ignoreAtRules": [ "if", "else" ] }
+		],
+		"block-closing-brace-newline-before": "always-multi-line",
+		"block-opening-brace-newline-after": "always-multi-line",
+		"block-opening-brace-space-before": "always-multi-line",
+		"selector-attribute-brackets-space-inside": "never",
+		"selector-attribute-operator-space-after": "never",
+		"selector-attribute-operator-space-before": "never",
+		"selector-combinator-space-after": "always",
+		"selector-combinator-space-before": "always",
+		"selector-pseudo-class-case": "lower",
+		"selector-pseudo-class-parentheses-space-inside": "never",
+		"selector-pseudo-element-case": "lower",
+		"selector-pseudo-element-colon-notation": "double",
+		"selector-pseudo-element-no-unknown": [
+			true,
+			{ "ignorePseudoElements": [ "ng-deep" ] }
+		],
+		"selector-type-case": "lower",
+		"selector-max-id": 0,
+		"no-missing-end-of-source-newline": true,
+		"no-eol-whitespace": null,
+		"max-line-length": 120
+	}
 }
