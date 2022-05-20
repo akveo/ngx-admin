@@ -2,7 +2,11 @@
 
 [Who uses ngx-admin?](https://github.com/akveo/ngx-admin/issues/1645)| [Documentation](https://akveo.github.io/ngx-admin?utm_campaign=ngx_admin%20-%20home%20-%20ngx_admin%20github%20readme&utm_source=ngx_admin&utm_medium=referral&utm_content=github_readme_documentation_link) | [Installation Guidelines](https://akveo.github.io/ngx-admin/docs/getting-started/what-is-ngxadmin?utm_campaign=ngx_admin%20-%20home%20-%20ngx_admin%20github%20readme&utm_source=ngx_admin&utm_medium=referral&utm_content=github_readme_installation_guidelines) | [Angular templates](https://www.akveo.com/templates?utm_campaign=services%20-%20github%20-%20templates&utm_source=ngx_admin&utm_medium=referral&utm_content=github%20readme%20top%20angular%20templates%20link)
 
-# New! Material theme for ngx-admin
+# Installation notes
+
+To install ngx-admin you have to use NodeJS version 14.14+ because of [node-sass](https://github.com/sass/node-sass) version utilized in the application.
+
+# Material theme for ngx-admin
 
 Material admin theme is based on the most popular Angular dashboard template - [ngx-admin](https://akveo.github.io/ngx-admin?utm_campaign=ngx_admin%20-%20home%20-%20ngx_admin%20github%20readme&utm_source=ngx_admin_material&utm_medium=referral&utm_content=github_readme)
 To use material theme checkout `feat/material-theme` branch.
@@ -16,7 +20,7 @@ To use material theme checkout `feat/material-theme` branch.
 
 ### To use material theme checkout `feat/material-theme` branch
 
-# Admin template based on Angular 10+ and <a href="https://github.com/akveo/nebular">Nebular</a>
+# Admin template based on Angular 12+ and <a href="https://github.com/akveo/nebular">Nebular</a>
 
 <a target="_blank" href="https://akveo.com/ngx-admin/pages/dashboard?theme=corporate&utm_campaign=ngx_admin%20-%20demo%20-%20ngx_admin%20github%20readme&utm_source=ngx_admin&utm_medium=referral&utm_content=hero_banner_corporate"><img src="https://i.imgur.com/mFdqvgG.png"/></a>
 
@@ -47,7 +51,7 @@ Try low-code internal tool builder for free
 
 ### What's included:
 
-- Angular 10+ & Typescript
+- Angular 12+ & Typescript
 - Bootstrap 4+ & SCSS
 - Responsive layout
 - RTL support
