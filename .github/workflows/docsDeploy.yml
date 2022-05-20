@@ -1,6 +1,4 @@
-
 name: Deploy docs
-
 on:
   push:
     branches:
@@ -9,13 +7,14 @@ on:
       - 'docs/**'
   repository_dispatch:
     types: deploy-docs
-
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - name: Use Node.js 12.x
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v2
+        with:
+          node-version: '12'
       - uses: actions/checkout@v2
         with:
           ref: demo
