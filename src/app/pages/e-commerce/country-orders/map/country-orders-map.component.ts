@@ -19,7 +19,7 @@ export class CountryOrdersMapComponent implements OnDestroy {
 
   @Input() countryId: string;
 
-  @Output() select: EventEmitter<any> = new EventEmitter();
+  @Output() selectEvent: EventEmitter<any> = new EventEmitter();
 
   layers = [];
   currentTheme: any;
@@ -124,7 +124,7 @@ export class CountryOrdersMapComponent implements OnDestroy {
       this.resetHighlight(this.selectedCountry);
       this.highlightFeature(featureLayer);
       this.selectedCountry = featureLayer;
-      this.select.emit(featureLayer.feature.properties.name);
+      this.selectEvent.emit(featureLayer.feature.properties.name);
     }
   }
 
