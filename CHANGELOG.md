@@ -1,3 +1,17 @@
+# Changelog
+
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+### [8.1.1](https://github.com/akveo/ngx-admin/compare/v8.1.0...v8.1.1) (2022-05-10)
+
+## [8.1.0](https://github.com/akveo/ngx-admin/compare/v8.0.0...v8.1.0) (2022-05-10)
+
+
+### Features
+
+* update README.md ([f5015ac](https://github.com/akveo/ngx-admin/commit/f5015ac0d77efe579191f2d440417581eb93c58e))
+* update templates section in README ([570031d](https://github.com/akveo/ngx-admin/commit/570031d2befc5d1de5133401bfc48fe237c88458))
+
 <a name="8.0.0"></a>
 # [8.0.0](https://github.com/akveo/ngx-admin/compare/v7.0.0...v8.0.0) (2021-10-08)
 
@@ -281,6 +295,3 @@ Nebular changelog is available [here](https://github.com/akveo/nebular/blob/mast
 * **bootstrap:** update bootstrap to beta.2, nebular to rc.3 ([b525213](https://github.com/akveo/ngx-admin/commit/b525213))
 * **compodoc:** add compodoc documentation generator ([#1327](https://github.com/akveo/ngx-admin/issues/1327)) ([eebbc12](https://github.com/akveo/ngx-admin/commit/eebbc12))
 * **loader:** add loading progress indicator ([#1319](https://github.com/akveo/ngx-admin/issues/1319)) ([f479715](https://github.com/akveo/ngx-admin/commit/f479715))
-
-
-
