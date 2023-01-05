@@ -1,4 +1,5 @@
 {
     "typescript.tsdk": "./node_modules/typescript/lib",
-    "tslint.enable": false
+    "tslint.enable": false,
+    "angular.enable-strict-mode-prompt": false
 }
