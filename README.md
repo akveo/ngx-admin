@@ -20,7 +20,7 @@ To use material theme checkout `feat/material-theme` branch.
 
 ### To use material theme checkout `feat/material-theme` branch
 
-# Admin template based on Angular 12+ and <a href="https://github.com/akveo/nebular">Nebular</a>
+# Admin template based on Angular 13+ and <a href="https://github.com/akveo/nebular">Nebular</a>
 
 <a target="_blank" href="https://akveo.com/ngx-admin/pages/dashboard?theme=corporate&utm_campaign=ngx_admin%20-%20demo%20-%20ngx_admin%20github%20readme&utm_source=ngx_admin&utm_medium=referral&utm_content=hero_banner_corporate"><img src="https://i.imgur.com/mFdqvgG.png"/></a>
 
@@ -51,7 +51,7 @@ Try low-code internal tool builder for free
 
 ### What's included:
 
-- Angular 12+ & Typescript
+- Angular 13+ & Typescript
 - Bootstrap 4+ & SCSS
 - Responsive layout
 - RTL support
