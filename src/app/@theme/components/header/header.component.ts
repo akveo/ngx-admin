@@ -77,7 +77,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   }
 
   changeTheme(themeName: string) {
-    this.themeService.changeTheme(themeName);
+    this.themeService.changeTheme('Corporate');
   }
 
   toggleSidebar(): boolean {
