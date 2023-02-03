@@ -19,34 +19,34 @@ export class DashboardComponent implements OnDestroy {
   private alive = true;
 
   solarValue: number;
-  lightCard: CardSettings = {
-    title: 'Light',
-    iconClass: 'nb-lightbulb',
-    type: 'primary',
-  };
-  rollerShadesCard: CardSettings = {
-    title: 'Roller Shades',
-    iconClass: 'nb-roller-shades',
+  apiserip: CardSettings = {
+    title: 'SERP API',
+    iconClass: 'nb-play',
     type: 'success',
   };
-  wirelessAudioCard: CardSettings = {
-    title: 'Wireless Audio',
-    iconClass: 'nb-audio',
-    type: 'info',
+  apicrawler: CardSettings = {
+    title: 'Crawler API',
+    iconClass: 'nb-play',
+    type: 'success',
   };
-  coffeeMakerCard: CardSettings = {
-    title: 'Coffee Maker',
-    iconClass: 'nb-coffee-maker',
-    type: 'warning',
+  imagescoring: CardSettings = {
+    title: 'Image Analysis',
+    iconClass: 'nb-play',
+    type: 'success',
+  };
+  keywordscoring: CardSettings = {
+    title: 'Keywords Analysis',
+    iconClass: 'nb-play',
+    type: 'success',
   };
 
   statusCards: string;
 
   commonStatusCardsSet: CardSettings[] = [
-    this.lightCard,
-    this.rollerShadesCard,
-    this.wirelessAudioCard,
-    this.coffeeMakerCard,
+    this.apiserip,
+    this.apicrawler,
+    this.imagescoring,
+    this.keywordscoring,
   ];
 
   statusCardsByThemes: {
@@ -59,20 +59,20 @@ export class DashboardComponent implements OnDestroy {
     cosmic: this.commonStatusCardsSet,
     corporate: [
       {
-        ...this.lightCard,
-        type: 'warning',
-      },
-      {
-        ...this.rollerShadesCard,
+        ...this.apiserip,
         type: 'primary',
       },
       {
-        ...this.wirelessAudioCard,
-        type: 'danger',
+        ...this.apicrawler,
+        type: 'primary',
       },
       {
-        ...this.coffeeMakerCard,
-        type: 'info',
+        ...this.imagescoring,
+        type: 'primary',
+      },
+      {
+        ...this.keywordscoring,
+        type: 'primary',
       },
     ],
     dark: this.commonStatusCardsSet,
