@@ -13,8 +13,19 @@ export const MENU_ITEMS: NbMenuItem[] = [
     link: '/pages/iot-dashboard',
   },
   {
-    title: 'FEATURES',
+    title: 'CONTINUOUS MONITORING',
     group: true,
+  },
+  {
+    title: 'Insights',
+    icon: 'eye-outline',
+    children: [
+      {
+      title: 'Hello Peter Reviews',
+      link: '/pages/insights/hello-peter-reviews',
+      }
+    ]
+
   },
   {
     title: 'Layout',

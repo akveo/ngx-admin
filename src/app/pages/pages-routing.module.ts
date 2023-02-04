@@ -19,12 +19,22 @@ const routes: Routes = [{
       component: DashboardComponent,
     },
     {
+      path: 'insights',
+      loadChildren: () => import('./insights/insights.module')
+        .then(m => m.InsightsModule)
+    },
+    {
       path: 'layout',
       loadChildren: () => import('./layout/layout.module')
         .then(m => m.LayoutModule),
     },
     {
       path: 'forms',
+      loadChildren: () => import('./forms/forms.module')
+        .then(m => m.FormsModule),
+    },
+    {
+      path: 'Insights',
       loadChildren: () => import('./forms/forms.module')
         .then(m => m.FormsModule),
     },
