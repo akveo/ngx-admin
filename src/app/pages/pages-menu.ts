@@ -37,7 +37,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
   {
     title: 'Keywords Dictionary',
     icon: 'book-outline',
-    link: '',
+    link: '/pages/settings/keywordsdictionary',
   },
   {
     title: 'Image Similarity',
