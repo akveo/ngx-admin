@@ -1,9 +1,29 @@
 <nb-card>
+  <nb-card-header>
+    keyword Dictionary Library
+  </nb-card-header>
   <nb-card-body>
 
     <label class="search-label" for="search">Search:</label>
     <input nbInput [nbFilterInput]="dataSource" id="search" class="search-input">
-
+    <nb-card>
+      <nb-card-body>
+        <nb-actions size="medium" fullWidth>
+          <nb-action>
+            <nb-icon class="action-icon" icon="plus-circle-outline" onclick="alert('123')"></nb-icon>
+            <span>Add New Keyword</span>
+          </nb-action>
+          <nb-action>
+            <nb-icon class="action-icon" icon="edit-outline"></nb-icon>
+            <span>Edit Selected Keyword</span>
+          </nb-action>
+          <nb-action>
+            <nb-icon class="action-icon" icon="close-circle-outline"></nb-icon>
+            <span>Deactivate Selected Keyword</span>
+          </nb-action>
+        </nb-actions>
+      </nb-card-body>
+    </nb-card>
     <table [nbTreeGrid]="dataSource" [nbSort]="dataSource" (sort)="updateSort($event)">
 
       <tr nbTreeGridHeaderRow *nbTreeGridHeaderRowDef="allColumns"></tr>

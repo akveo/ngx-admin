@@ -14,7 +14,7 @@
     margin-bottom: 1rem;
   }
 
-  .nb-column-name {
+  .nb-column-Title {
     width: 100%;
   }
 
@@ -28,14 +28,14 @@
   }
 
   @media screen and (min-width: 400px) {
-    .nb-column-name,
+    .nb-column-Title,
     .nb-column-size {
       width: 50%;
     }
   }
 
   @media screen and (min-width: 500px) {
-    .nb-column-name,
+    .nb-column-Title,
     .nb-column-size,
     .nb-column-kind {
       width: 33.333%;
@@ -43,7 +43,7 @@
   }
 
   @media screen and (min-width: 600px) {
-    .nb-column-name {
+    .nb-column-Title {
       width: 31%;
     }
     .nb-column-size,
@@ -52,4 +52,6 @@
       width: 23%;
     }
   }
+
+
 }

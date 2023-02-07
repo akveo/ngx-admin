@@ -42,7 +42,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
   {
     title: 'Image Similarity',
     icon: 'image-outline',
-    link: '/pages/ui-features/icons',
+    link: '/pages/settings/imagesimilarity',
   },
   {
     title: 'SERP',
