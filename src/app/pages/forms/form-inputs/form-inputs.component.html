@@ -10,7 +10,7 @@
         </div>
         <input type="password" nbInput fullWidth placeholder="Password">
         <input type="text" nbInput fullWidth shape="rectangle" placeholder="Rectangle border">
-        <ng-container *ngIf="!(materialTheme$ | async)">
+        <ng-container *ngIf="(materialTheme$ | async) !== true">
           <input type="text" nbInput fullWidth shape="semi-round" placeholder="Semi-round border">
           <input type="text" nbInput fullWidth shape="round" placeholder="Rounded border">
         </ng-container>
