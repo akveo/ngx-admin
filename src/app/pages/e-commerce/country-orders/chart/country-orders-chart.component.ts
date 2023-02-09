@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, Input, OnChanges, OnDestroy, SimpleChanges } from '@angular/core';
+import { Component, Input, OnChanges, OnDestroy, SimpleChanges } from '@angular/core';
 import { NbThemeService } from '@nebular/theme';
 import { takeWhile } from 'rxjs/operators';
 import { LayoutService } from '../../../../@core/utils/layout.service';
@@ -19,7 +19,7 @@ import { LayoutService } from '../../../../@core/utils/layout.service';
     </div>
   `,
 })
-export class CountryOrdersChartComponent implements AfterViewInit, OnDestroy, OnChanges {
+export class CountryOrdersChartComponent implements OnDestroy, OnChanges {
 
   @Input() countryName: string;
   @Input() data: number[];
@@ -58,7 +58,7 @@ export class CountryOrdersChartComponent implements AfterViewInit, OnDestroy, On
     }
   }
 
-  ngAfterViewInit() {
+  initChartOptions() {
     this.theme.getJsTheme()
       .pipe(takeWhile(() => this.alive))
       .subscribe(config => {
@@ -166,6 +166,8 @@ export class CountryOrdersChartComponent implements AfterViewInit, OnDestroy, On
 
   onChartInit(ec) {
     this.echartsInstance = ec;
+
+    this.initChartOptions();
   }
 
   resizeChart() {

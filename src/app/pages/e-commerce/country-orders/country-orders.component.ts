@@ -10,7 +10,7 @@ import { CountryOrderData } from '../../../@core/data/country-order';
     <nb-card [size]="breakpoint.width >= breakpoints.md ? 'medium' : 'giant'">
       <nb-card-header>Country Orders Statistics</nb-card-header>
       <nb-card-body>
-        <ngx-country-orders-map (select)="selectCountryById($event)"
+        <ngx-country-orders-map (selectEvent)="selectCountryById($event)"
                                 countryId="USA">
         </ngx-country-orders-map>
         <ngx-country-orders-chart [countryName]="countryName"
