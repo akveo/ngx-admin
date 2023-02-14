@@ -1,0 +1,7 @@
+<div (mouseenter)="showOverlay = true" (mouseleave)="showOverlay = false">
+  <img src="https://via.placeholder.com/150x150">
+
+  <div [ngClass]="{'overlay': true, 'show': showOverlay }">
+    <img src="https://via.placeholder.com/300x300">
+  </div>
+</div>

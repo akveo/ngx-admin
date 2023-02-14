@@ -4,6 +4,11 @@ import { Routes, RouterModule } from '@angular/router';
 import { SettingsComponent } from './settings.component';
 import { KeywordsDictionaryComponent } from './keywordsdictionary/keywordsdictionary.component';
 import { ImageSimilarityComponent } from './imagesimilarity/imagesimilarity.component';
+import { HoverEnlargeImageComponent } from '../shares/hover-enlarge-image/hover-enlarge-image.component';
+import { CommonModule } from '@angular/common';
+import { LabelScoreComponent } from '../shares/label-score/label-score.component';
+import { CheckboxComponent } from '../shares/checkbox/checkbox.component';
+import { FormsModule } from '@angular/forms';
 
 const routes: Routes = [{
   path: '',
@@ -21,7 +26,12 @@ const routes: Routes = [{
 }];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
+  declarations: [
+    HoverEnlargeImageComponent,
+    LabelScoreComponent,
+    CheckboxComponent
+  ],
+  imports: [RouterModule.forChild(routes), CommonModule, FormsModule],
   exports: [RouterModule],
 })
 export class SettingsRoutingModule { }

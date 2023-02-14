@@ -1,0 +1,12 @@
+<div *ngFor="let image of images" (click)="toggleSelection(image)" [ngClass]="{'selected': image.selected}"
+  class="grid-item">
+
+  <div *ngFor="let labelscore of image.labelscore">
+    <div style="width: max-content;">{{labelscore.label}}</div>
+    <div class="progress-container">
+      <div class="progress-bar" [ngStyle]="{'width': labelscore.score + '%'}"></div>
+      <div class="progress-percentage">{{labelscore.score}}%</div>
+    </div>
+  </div>
+
+</div>
