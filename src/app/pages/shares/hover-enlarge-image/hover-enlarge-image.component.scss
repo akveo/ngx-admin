@@ -1,0 +1,30 @@
+div {
+  position: relative;
+  display: inline-block;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(255, 255, 255, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.5s;
+  width: 300px;
+  height: 300px;
+  z-index: 1;
+}
+
+.show {
+  opacity: 1;
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
