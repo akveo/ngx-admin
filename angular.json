@@ -274,13 +274,12 @@
           }
         },
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@angular-eslint/builder:lint",
           "options": {
-            "tsConfig": [
-              "docs/tsconfig.spec.json",
-              "docs/tsconfig.app.json"
-            ],
-            "exclude": []
+            "lintFilePatterns": [
+              "docs/**/*.ts",
+              "docs/**/*.html"
+            ]
           }
         }
       }
@@ -295,14 +294,6 @@
           "options": {
             "protractorConfig": "./protractor.conf.js",
             "devServerTarget": "docs:serve"
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "e2e/tsconfig.e2e.json"],
-            "exclude": []
           }
         }
       }

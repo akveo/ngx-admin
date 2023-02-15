@@ -37,6 +37,7 @@
     "postinstall": "ngcc --properties es2015 es5 browser module main --first-only --create-ivy-entry-points --tsconfig \"./src/tsconfig.app.json\""
   },
   "dependencies": {
+    "@akveo/ng2-completer": "^9.0.1",
     "@angular/animations": "^15.2.10",
     "@angular/cdk": "^15.2.9",
     "@angular/common": "^15.2.10",
@@ -70,9 +71,9 @@
     "leaflet": "1.2.0",
     "marked": "^0.5.2",
     "nebular-icons": "1.1.0",
-    "ng2-ckeditor": "~1.2.9",
     "ng-inline-svg": "^11.0.0",
     "ng-lazyload-image": "^7.1.0",
+    "ng2-ckeditor": "~1.2.9",
     "ng2-smart-table": "^1.6.0",
     "ngx-echarts": "^4.2.2",
     "ngx-swiper-wrapper": "^9.0.1",
