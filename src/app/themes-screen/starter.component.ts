@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NbMediaBreakpoint } from '@nebular/theme';
 import { Router } from '@angular/router';
 import { AnalyticsService } from '../@core/utils';
@@ -11,7 +11,7 @@ import { MetadataService } from '../@core/utils/metadata.service';
   templateUrl: './starter.component.html',
   styleUrls: ['./starter.component.scss'],
 })
-export class NgxStarterComponent implements OnDestroy, OnInit {
+export class NgxStarterComponent implements OnInit {
   breakpoint: NbMediaBreakpoint;
   breakpoints: any;
 
@@ -69,8 +69,5 @@ export class NgxStarterComponent implements OnDestroy, OnInit {
 
   trackEmailClick() {
     this.analytics.trackEvent('clickContactEmail', 'click');
-  }
-
-  ngOnDestroy() {
   }
 }
