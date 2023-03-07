@@ -1,3 +1,24 @@
+<a name="10.0.0"></a>
+# [10.0.0](https://github.com/akveo/ngx-admin/compare/v9.0.0...v10.0.0) (2023-03-07)
+
+
+### Bug Fixes
+
+* **angular 13:** fix issues after updates to Angular 13 in rooms component and country orders component ([#5965](https://github.com/akveo/ngx-admin/issues/5965)) ([384b841](https://github.com/akveo/ngx-admin/commit/384b841))
+* fix issues after updates to Angular 13 in rooms component and country orders component ([1d78122](https://github.com/akveo/ngx-admin/commit/1d78122))
+
+
+### Features
+
+* update to Angular 14 ([#1](https://github.com/akveo/ngx-admin/issues/1)) ([2f98e08](https://github.com/akveo/ngx-admin/commit/2f98e08)), closes [#5965](https://github.com/akveo/ngx-admin/issues/5965)
+
+### BREAKING CHANGES
+
+- Angular updated to version 13.
+- Nebular updated to version 9.
+- Move from tslint to eslint
+
+
 <a name="9.0.0"></a>
 # [9.0.0](https://github.com/akveo/ngx-admin/compare/v8.0.0...v9.0.0) (2022-12-29)
 
