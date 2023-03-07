@@ -173,7 +173,6 @@
       }
     }
   },
-  "defaultProject": "ngx-admin-demo",
   "schematics": {
     "@schematics/angular:component": {
       "prefix": "ngx",
