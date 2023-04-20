@@ -15,12 +15,12 @@ Example for local deployment:
 First, build the image
 ```bash
 cd /path/to/projectfolder
-docker build -t akveo/ngx-admin:starter-kit-10 .
+docker build -t akveo/ngx-admin .
 ```
 
 And then run the container
 ```bash
-docker run -dt -v /path/to/projectfolder/src:/app/src --name ngx-admin -p 4200:4200 akveo/ngx-admin:starter-kit-10
+docker run -dt -v /path/to/projectfolder/src:/app/src --name ngx-admin -p 4200:4200 akveo/ngx-admin
 ```
 
 Finally, wait for a few seconds to let the container init (you can check with `docker logs -f ngx-admin`) and then you can open your browser on http://localhost:4200/.
