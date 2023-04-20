@@ -1,3 +1,65 @@
+<a name="10.0.0"></a>
+# [10.0.0](https://github.com/akveo/ngx-admin/compare/v9.0.0...v10.0.0) (2023-03-07)
+
+
+### Bug Fixes
+
+* **angular 13:** fix issues after updates to Angular 13 in rooms component and country orders component ([#5965](https://github.com/akveo/ngx-admin/issues/5965)) ([384b841](https://github.com/akveo/ngx-admin/commit/384b841))
+* fix issues after updates to Angular 13 in rooms component and country orders component ([1d78122](https://github.com/akveo/ngx-admin/commit/1d78122))
+
+
+### Features
+
+* update to Angular 14 ([#1](https://github.com/akveo/ngx-admin/issues/1)) ([2f98e08](https://github.com/akveo/ngx-admin/commit/2f98e08)), closes [#5965](https://github.com/akveo/ngx-admin/issues/5965)
+
+### BREAKING CHANGES
+
+- Angular updated to version 13.
+- Nebular updated to version 9.
+- Move from tslint to eslint
+
+
+<a name="9.0.0"></a>
+# [9.0.0](https://github.com/akveo/ngx-admin/compare/v8.0.0...v9.0.0) (2022-12-29)
+
+
+### Bug Fixes
+
+* update dependencies ([#5938](https://github.com/akveo/ngx-admin/issues/5938)) ([f1365e1](https://github.com/akveo/ngx-admin/commit/f1365e1))
+
+
+### Features
+
+* add installation notes ([fd95769](https://github.com/akveo/ngx-admin/commit/fd95769))
+* update dependencies ([#5937](https://github.com/akveo/ngx-admin/issues/5937)) ([237ea6b](https://github.com/akveo/ngx-admin/commit/237ea6b))
+* update README.md ([f5015ac](https://github.com/akveo/ngx-admin/commit/f5015ac))
+* update templates section in README ([570031d](https://github.com/akveo/ngx-admin/commit/570031d))
+* update to Angular 13, move from tslint to eslint ([#5957](https://github.com/akveo/ngx-admin/issues/5957)) ([ec68f5e](https://github.com/akveo/ngx-admin/commit/ec68f5e))
+
+### BREAKING CHANGES
+
+- Angular updated to version 13.
+- Nebular updated to version 9.
+- Move from tslint to eslint
+
+
+<a name="8.0.0"></a>
+# [8.0.0](https://github.com/akveo/ngx-admin/compare/v7.0.0...v8.0.0) (2021-10-08)
+
+
+### Features
+
+* update to Angular 12 ([#5868](https://github.com/akveo/ngx-admin/issues/5868)) ([080830a](https://github.com/akveo/ngx-admin/commit/080830a))
+
+
+
+<a name="7.0.0"></a>
+# [7.0.0](https://github.com/akveo/ngx-admin/compare/v6.0.0...v7.0.0) (2021-01-19)
+
+* feat: update to Angular 11 ([#5826](https://github.com/akveo/ngx-admin/issues/5826)) ([ebe1810](https://github.com/akveo/ngx-admin/commit/ebe1810))
+
+
+
 <a name="6.0.0"></a>
 # [6.0.0](https://github.com/akveo/ngx-admin/compare/v5.0.0...v6.0.0) (2020-08-19)
 
