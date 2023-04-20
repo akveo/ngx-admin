@@ -1,0 +1,91 @@
+@import '../../styles/themes';
+@import 'bootstrap/scss/mixins/breakpoints';
+@import '@nebular/theme/styles/global/breakpoints';
+
+@include nb-install-component() {
+  .switch-label {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    cursor: pointer;
+    margin: 0;
+
+    &.vertical {
+      flex-direction: column;
+      align-items: flex-start;
+
+      .first,
+      .second {
+        padding: 0;
+      }
+
+      .switch {
+        margin-top: 0.5em;
+      }
+    }
+
+    & > span {
+      transition: opacity 0.3s ease;
+      color: nb-theme(text-hint-color);
+
+      &.first {
+        @include nb-ltr(padding-right, 10px);
+        @include nb-rtl(padding-left, 10px);
+      }
+
+      &.second {
+        @include nb-ltr(padding-left, 10px);
+        @include nb-rtl(padding-right, 10px);
+      }
+
+      &.active {
+        color: nb-theme(text-basic-color);
+      }
+
+      &:active {
+        opacity: 0.78;
+      }
+    }
+  }
+
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 3rem;
+    height: 1.5rem;
+    margin: 0;
+
+    input {
+      display: none;
+
+      &:checked + .slider::before {
+        @include nb-ltr(transform, translateX(1.5rem));
+        @include nb-rtl(transform, translateX(-1.5rem));
+      }
+    }
+
+    .slider {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border-radius: 1.75rem;
+      background-color: nb-theme(background-basic-color-2);
+    }
+
+    .slider::before {
+      position: absolute;
+      content: '';
+      height: 1.5rem;
+      width: 1.5rem;
+      border-radius: 50%;
+      background-color: nb-theme(color-primary-default);
+      transition: 0.2s;
+    }
+  }
+
+  @include media-breakpoint-down(xs) {
+    align-items: flex-end;
+  }
+}

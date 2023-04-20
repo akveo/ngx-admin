@@ -1,4 +1,7 @@
 {
-    "typescript.tsdk": "./node_modules/typescript/lib",
-    "tslint.enable": false
+  "typescript.tsdk": "./node_modules/typescript/lib",
+  "tslint.enable": false,
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "editor.detectIndentation": false
 }

@@ -1,9 +1,9 @@
-# compiled output
+# Compiled output
 /dist
 /tmp
 /out-tsc
 
-# dependencies
+# Dependencies
 /node_modules
 
 # IDEs and editors
@@ -22,7 +22,7 @@
 !.vscode/launch.json
 !.vscode/extensions.json
 
-# misc
+# Misc
 /.angular/cache
 /.sass-cache
 /connect.lock
@@ -37,6 +37,6 @@ testem.log
 /e2e/*.js
 /e2e/*.map
 
-# System Files
+# System files
 .DS_Store
 Thumbs.db
