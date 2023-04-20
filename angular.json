@@ -139,11 +139,8 @@
   },
   "schematics": {
     "@schematics/angular:component": {
-      "prefix": "ngx",
       "style": "scss"
     },
-    "@schematics/angular:directive": {
-      "prefix": "ngx"
-    }
+    "@schematics/angular:directive": {}
   }
 }
