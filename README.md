@@ -6,6 +6,25 @@
 
 To install ngx-admin you have to use NodeJS version 14.14+ because of [node-sass](https://github.com/sass/node-sass) version utilized in the application.
 
+### Docker deployment
+
+For deployment using Docker containers, please use the Dockerfile provided.
+
+Example for local deployment:
+
+First, build the image
+```bash
+cd /path/to/projectfolder
+docker build -t akveo/ngx-admin:starter-kit-10 .
+```
+
+And then run the container
+```bash
+docker run -dt -v /path/to/projectfolder/src:/app/src --name ngx-admin -p 4200:4200 akveo/ngx-admin:starter-kit-10
+```
+
+Finally, wait for a few seconds to let the container init (you can check with `docker logs -f ngx-admin`) and then you can open your browser on http://localhost:4200/.
+
 # Material theme for ngx-admin
 
 Material admin theme is based on the most popular Angular dashboard template - [ngx-admin](https://akveo.github.io/ngx-admin?utm_campaign=ngx_admin%20-%20home%20-%20ngx_admin%20github%20readme&utm_source=ngx_admin_material&utm_medium=referral&utm_content=github_readme)
