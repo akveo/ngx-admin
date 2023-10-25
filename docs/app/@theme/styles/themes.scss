@@ -4,10 +4,10 @@
  * Licensed under the MIT License. See License.txt in the project root for license information.
  */
 
-@import '~@nebular/theme/styles/theming';
-@import '~@nebular/theme/styles/themes/corporate';
-@import '~@nebular/theme/styles/themes/default';
-@import '~@nebular/theme/styles/global/breakpoints';
+@import '@nebular/theme/styles/theming';
+@import '@nebular/theme/styles/themes/corporate';
+@import '@nebular/theme/styles/themes/default';
+@import '@nebular/theme/styles/global/breakpoints';
 
 /*
 We have to overwrite breakpoints because we need to add *macpro* breakpoint.

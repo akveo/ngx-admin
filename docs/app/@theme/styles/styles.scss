@@ -7,13 +7,11 @@
 @import 'helvetica-neue';
 @import 'themes';
 
-@import '~@nebular/theme/styles/globals';
-@import '~@nebular/bootstrap/styles/globals';
+@import '@nebular/theme/styles/globals';
 
 @import 'hs-forms';
 
 @include nb-install() {
   @include nb-theme-global();
-  @include nb-bootstrap-global();
   @include hs-custom-form();
 };
