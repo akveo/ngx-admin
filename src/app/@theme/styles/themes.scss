@@ -5,6 +5,7 @@
 // material themes
 @import './material/material-dark';
 @import './material/material-light';
+$nb-enable-css-custom-properties: false; // disable custom css custom properties for material theme
 
 $nb-themes: nb-register-theme((
   layout-padding-top: 2.25rem,
