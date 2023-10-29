@@ -1,3 +1,21 @@
+<a name="11.0.0"></a>
+# [11.0.0](https://github.com/akveo/ngx-admin/compare/v10.0.0...v11.0.0) (2023-10-29)
+
+
+### Bug Fixes
+
+* **package-lock:** update version in package-lock ([#6002](https://github.com/akveo/ngx-admin/issues/6002)) ([e06d9bd](https://github.com/akveo/ngx-admin/commit/e06d9bd))
+
+### Features
+
+* update to Angular 15 ([aa91634](https://github.com/akveo/ngx-admin/commit/aa91634))
+
+### BREAKING CHANGES
+
+- Angular updated to version 14.
+- Nebular updated to version 10.
+
+
 <a name="10.0.0"></a>
 # [10.0.0](https://github.com/akveo/ngx-admin/compare/v9.0.0...v10.0.0) (2023-03-07)
 
