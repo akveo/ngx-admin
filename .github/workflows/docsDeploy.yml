@@ -12,10 +12,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Use Node.js 14.x
+      - name: Use Node.js 16.x
         uses: actions/setup-node@v3
         with:
-          node-version: 14.15.0
+          node-version: 16.13.0
       - uses: actions/checkout@v3
         with:
           ref: demo
