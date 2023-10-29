@@ -7,8 +7,8 @@ export const structure = [
         type: 'page',
         name: 'What is ngx-admin?',
         title: 'Ngx-admin - documentation',
-        description: 'ngx-admin is a front-end admin dashboard template based on Angular 9+, Bootstrap 4+ and Nebular',
-        keywords: 'Ngx-admin features, Angular 9+ typescript, Bootstrap 4+ & SCSS, ngx-admin documentation',
+        description: 'ngx-admin is a front-end admin dashboard template based on Angular 15+, Bootstrap 4+ and Nebular',
+        keywords: 'Ngx-admin features, Angular 15+ typescript, Bootstrap 4+ & SCSS, ngx-admin documentation',
         children: [
           {
             type: 'block',

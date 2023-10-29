@@ -36,7 +36,7 @@ export class PagesComponent implements OnInit, OnDestroy {
       .subscribe((data: { tag: string; item: NbMenuItem }) => {
         if (data.item.title !== 'E-commerce' && data.item.title !== 'IoT Dashboard')
           this.metaDataService.updateTitle(`Ngx-admin dashboard by Akveo | ${data.item.title}`);
-          this.metaDataService.updateDescription('Ngx-admin is Angular 9+ Bootstrap 4+ admin dashboard template.' +
+          this.metaDataService.updateDescription('Ngx-admin is Angular 15+ Bootstrap 4+ admin dashboard template.' +
             ' Over 40+ Angular Components, 60+ Usage Examples and UI features.');
           this.metaDataService.updateKeywords('ngx-admin, ngx admin dashboard features, ngx admin forms,' +
             ' ngx-admin maps, ngx-admin UI features, ngx-admin tables, ngx admin overlays, ngx-admin extra components');

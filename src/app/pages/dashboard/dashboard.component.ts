@@ -103,8 +103,8 @@ export class DashboardComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    this.metaDataService.updateTitle('Ngx-admin IoT dashboard on Angular 9+ and Nebular');
-    this.metaDataService.updateDescription('IoT dashboard on Ngx-admin is Angular 9+ Bootstrap 4+ admin' +
+    this.metaDataService.updateTitle('Ngx-admin IoT dashboard on Angular 15+ and Nebular');
+    this.metaDataService.updateDescription('IoT dashboard on Ngx-admin is Angular 15+ Bootstrap 4+ admin' +
       ' dashboard template. Over 40+ Angular Components and 60+ Usage Examples. Completely FREE and MIT licensed.');
     this.metaDataService.updateKeywords('ngx admin, ngx admin dashboard, ngx iot dashboard, ngx-admin iot template');
 

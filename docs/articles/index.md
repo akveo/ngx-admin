@@ -17,7 +17,7 @@ You can also use ngx-admin for the purpose of learning Angular.
 
 ## List of features
 
-- Angular 9+ & Typescript
+- Angular 15+ & Typescript
 - Bootstrap 4+ & SCSS
 - Responsive layout
 - RTL support
