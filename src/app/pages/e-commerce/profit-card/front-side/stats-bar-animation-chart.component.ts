@@ -27,7 +27,7 @@ export class StatsBarAnimationChartComponent implements AfterViewInit, OnDestroy
 
   constructor(private theme: NbThemeService,
               private layoutService: LayoutService) {
-    this.layoutService.onChangeLayoutSize()
+    this.layoutService.onSafeChangeLayoutSize()
       .pipe(
         takeWhile(() => this.alive),
       )

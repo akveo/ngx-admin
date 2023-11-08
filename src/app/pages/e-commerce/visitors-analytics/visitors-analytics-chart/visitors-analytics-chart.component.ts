@@ -10,6 +10,7 @@ import { OutlineData } from '../../../../@core/data/visitors-analytics';
   template: `
     <div echarts
          [options]="option"
+         [merge]="option"
          class="echart"
          (chartInit)="onChartInit($event)">
     </div>
@@ -30,7 +31,7 @@ export class ECommerceVisitorsAnalyticsChartComponent implements AfterViewInit, 
 
   constructor(private theme: NbThemeService,
               private layoutService: LayoutService) {
-    this.layoutService.onChangeLayoutSize()
+    this.layoutService.onSafeChangeLayoutSize()
       .pipe(
         takeWhile(() => this.alive),
       )

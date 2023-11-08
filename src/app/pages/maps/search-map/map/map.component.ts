@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Location } from '../entity/Location';
+import { PositionModel } from '../entity/position.model';
 
 @Component({
   selector: 'ngx-map',
@@ -7,23 +7,24 @@ import { Location } from '../entity/Location';
   styleUrls: ['./map.component.scss'],
 })
 export class MapComponent implements OnInit {
-  latitude: number;
-  longitude: number;
-  zoom: number;
+  position: PositionModel = null;
+  zoom: number = 1;
 
   @Input()
-  public set searchedLocation(searchedLocation: Location) {
-    this.latitude = searchedLocation.latitude;
-    this.longitude = searchedLocation.longitude;
-    this.zoom = 12;
+  public set searchedPosition(position: PositionModel) {
+    if (position) {
+      this.position = position;
+      this.zoom = 12;
+    }
   }
 
-  ngOnInit(): void {
+  ngOnInit() {
     // set up current location
     if ('geolocation' in navigator) {
       navigator.geolocation.getCurrentPosition((position) => {
-        this.searchedLocation = new Location(
-          position.coords.latitude, position.coords.longitude,
+        this.searchedPosition = new PositionModel(
+          position.coords.latitude,
+          position.coords.longitude,
         );
       });
     }

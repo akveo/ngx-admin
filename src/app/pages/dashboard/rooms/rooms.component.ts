@@ -12,7 +12,7 @@ import { map } from 'rxjs/operators';
                class="collapse"
                [hidden]="isCollapsed()">
       </nb-icon>
-      <ngx-room-selector [class.dark-background]="isDarkTheme" (select)="select($event)"></ngx-room-selector>
+      <ngx-room-selector [class.dark-background]="isDarkTheme" (selectEvent)="select($event)"></ngx-room-selector>
       <ngx-player [collapsed]="isCollapsed() && breakpoint.width <= breakpoints.md"></ngx-player>
     </nb-card>
   `,

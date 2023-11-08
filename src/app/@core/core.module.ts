@@ -9,6 +9,7 @@ import {
   AnalyticsService,
   LayoutService,
   PlayerService,
+  SeoService,
   StateService,
 } from './utils';
 import { UserData } from './data/users';
@@ -140,6 +141,7 @@ export const NB_CORE_PROVIDERS = [
   AnalyticsService,
   LayoutService,
   PlayerService,
+  SeoService,
   StateService,
 ];
 
@@ -157,8 +159,8 @@ export class CoreModule {
     throwIfAlreadyLoaded(parentModule, 'CoreModule');
   }
 
-  static forRoot(): ModuleWithProviders {
-    return <ModuleWithProviders>{
+  static forRoot(): ModuleWithProviders<CoreModule> {
+    return {
       ngModule: CoreModule,
       providers: [
         ...NB_CORE_PROVIDERS,

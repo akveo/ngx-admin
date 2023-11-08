@@ -1,4 +1,4 @@
-import { Component, OnDestroy } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { NbMediaBreakpoint, NbMediaBreakpointsService, NbThemeService } from '@nebular/theme';
 import { takeWhile } from 'rxjs/operators';
 import { CountryOrderData } from '../../../@core/data/country-order';
@@ -10,7 +10,7 @@ import { CountryOrderData } from '../../../@core/data/country-order';
     <nb-card [size]="breakpoint.width >= breakpoints.md ? 'medium' : 'giant'">
       <nb-card-header>Country Orders Statistics</nb-card-header>
       <nb-card-body>
-        <ngx-country-orders-map (select)="selectCountryById($event)"
+        <ngx-country-orders-map (selectEvent)="selectCountryById($event)"
                                 countryId="USA">
         </ngx-country-orders-map>
         <ngx-country-orders-chart [countryName]="countryName"
@@ -22,7 +22,7 @@ import { CountryOrderData } from '../../../@core/data/country-order';
     </nb-card>
   `,
 })
-export class CountryOrdersComponent implements OnDestroy {
+export class CountryOrdersComponent implements OnInit, OnDestroy {
 
   private alive = true;
 
@@ -36,6 +36,9 @@ export class CountryOrdersComponent implements OnDestroy {
               private breakpointService: NbMediaBreakpointsService,
               private countryOrderService: CountryOrderData) {
     this.breakpoints = this.breakpointService.getBreakpointsMap();
+  }
+
+  ngOnInit() {
     this.themeService.onMediaQueryChange()
       .pipe(takeWhile(() => this.alive))
       .subscribe(([oldValue, newValue]) => {

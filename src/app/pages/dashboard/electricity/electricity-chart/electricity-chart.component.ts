@@ -10,6 +10,7 @@ import { ElectricityChart } from '../../../../@core/data/electricity';
   template: `
     <div echarts
          [options]="option"
+         [merge]="option"
          class="echart"
          (chartInit)="onChartInit($event)">
     </div>
@@ -26,7 +27,7 @@ export class ElectricityChartComponent implements AfterViewInit, OnDestroy {
 
   constructor(private theme: NbThemeService,
               private layoutService: LayoutService) {
-    this.layoutService.onChangeLayoutSize()
+    this.layoutService.onSafeChangeLayoutSize()
       .pipe(
         takeWhile(() => this.alive),
       )

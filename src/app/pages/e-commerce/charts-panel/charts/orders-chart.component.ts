@@ -11,6 +11,7 @@ import { LayoutService } from '../../../../@core/utils/layout.service';
   template: `
     <div echarts
          [options]="option"
+         [merge]="option"
          class="echart"
          (chartInit)="onChartInit($event)">
     </div>
@@ -34,7 +35,7 @@ export class OrdersChartComponent implements AfterViewInit, OnDestroy, OnChanges
 
   constructor(private theme: NbThemeService,
               private layoutService: LayoutService) {
-    this.layoutService.onChangeLayoutSize()
+    this.layoutService.onSafeChangeLayoutSize()
       .pipe(
         takeWhile(() => this.alive),
       )

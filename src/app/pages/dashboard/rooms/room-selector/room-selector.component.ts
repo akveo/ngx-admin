@@ -14,7 +14,7 @@ export class RoomSelectorComponent implements OnInit, OnDestroy {
   private destroy$ = new Subject<void>();
   private hideGrid: boolean;
 
-  @Output() select: EventEmitter<number> = new EventEmitter();
+  @Output() selectEvent: EventEmitter<number> = new EventEmitter();
 
   selectedRoom = null;
   sortedRooms = [];
@@ -108,7 +108,7 @@ export class RoomSelectorComponent implements OnInit, OnDestroy {
   }
 
   selectRoom(roomNumber) {
-    this.select.emit(roomNumber);
+    this.selectEvent.emit(roomNumber);
     this.selectedRoom = roomNumber;
     this.sortRooms();
   }
