@@ -156,7 +156,7 @@ export const NB_CORE_PROVIDERS = [
 })
 export class CoreModule {
   constructor(@Optional() @SkipSelf() parentModule: CoreModule) {
-    throwIfAlreadyLoaded(parentModule, 'CoreModule');
+    throwIfAlreadyLoaded(parentModule, CoreModule.name);
   }
 
   static forRoot(): ModuleWithProviders<CoreModule> {
