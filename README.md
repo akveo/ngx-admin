@@ -88,7 +88,7 @@ Need a visual admin dashboard builder? Check out [UI Bakery](https://uibakery.io
 
 - Star our GitHub repo :star:
 - Create pull requests, submit bugs, suggest new features or documentation updates :wrench:
-- Follow us on [Twitter](https://twitter.com/akveo_inc) :feet:
+- Follow us on [Twitter](https://twitter.com/akveo) :feet:
 - Like our page on [Facebook](https://www.facebook.com/akveo/) :thumbsup:
 
 ## Looking for engineering services? 
