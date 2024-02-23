@@ -34,8 +34,8 @@ export class TemperatureDraggerComponent implements AfterViewInit, OnChanges {
   @Input() maxLeap = 0.4;
 
   value = 50;
-  @Output() valueChange = new EventEmitter<Number>();
-  @Input('value') set setValue(value) {
+  @Output() valueChange = new EventEmitter<number>();
+  @Input('value') set setValue(value: number) {
     this.value = value;
   }
 
@@ -72,14 +72,17 @@ export class TemperatureDraggerComponent implements AfterViewInit, OnChanges {
   translateYValue = 0;
   thickness = 6;
   pinRadius = 10;
-  colors: any = [];
+  colors: string[] = [];
 
   styles = {
     viewBox: '0 0 300 300',
     arcTranslateStr: 'translate(0, 0)',
     clipPathStr: '',
     gradArcs: [],
-    nonSelectedArc: {},
+    nonSelectedArc: {
+      color: '',
+      d: '',
+    },
     thumbPosition: { x: 0, y: 0 },
     blurRadius: 15,
   };

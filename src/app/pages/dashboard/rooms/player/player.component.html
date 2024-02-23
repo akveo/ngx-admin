@@ -12,7 +12,7 @@
 
     <div class="progress-wrap">
       <input dir="ltr" type="range" class="progress" [value]="getProgress()" min="0" max="100" step="0.01"
-             (input)="setProgress(duration.value)" #duration>
+             (input)="setProgress(duration.valueAsNumber)" #duration>
       <div class="progress-foreground" [style.width.%]="getProgress()"></div>
     </div>
 
@@ -48,7 +48,7 @@
       </button>
       <div class="progress-wrap">
         <input type="range" class="progress" [value]="getVolume()" max="100"
-               (input)="setVolume(volume.value)" #volume>
+               (input)="setVolume(volume.valueAsNumber)" #volume>
         <div class="progress-foreground" [style.width.%]="getVolume()"></div>
       </div>
       <button nbButton ghost size="small" (click)="setVolume(100)">

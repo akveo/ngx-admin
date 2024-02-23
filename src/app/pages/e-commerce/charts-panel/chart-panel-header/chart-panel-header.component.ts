@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, OnDestroy, Output } from '@angular/core';
 import { NbMediaBreakpoint, NbMediaBreakpointsService, NbThemeService } from '@nebular/theme';
 import { takeWhile } from 'rxjs/operators';
+import { NgxLegendItemColor } from '../../legend-chart/enum.legend-item-color';
 
 
 @Component({
@@ -17,7 +18,7 @@ export class ChartPanelHeaderComponent implements OnDestroy {
   @Input() type: string = 'week';
 
   types: string[] = ['week', 'month', 'year'];
-  chartLegend: {iconColor: string; title: string}[];
+  chartLegend: {iconColor: NgxLegendItemColor; title: string}[];
   breakpoint: NbMediaBreakpoint = { name: '', width: 0 };
   breakpoints: any;
   currentTheme: string;

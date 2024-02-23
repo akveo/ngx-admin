@@ -1,6 +1,13 @@
 {
   "compileOnSave": false,
+  "angularCompilerOptions": {
+    "strictInjectionParameters": true,
+    "strictTemplates": true,
+    "fullTemplateTypeCheck": true
+  },
   "compilerOptions": {
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
     "importHelpers": true,
     "module": "es2020",
     "outDir": "./dist/out-tsc",

@@ -16,7 +16,7 @@ import { CountryOrderData } from '../../../@core/data/country-order';
         <ngx-country-orders-chart [countryName]="countryName"
                                   [data]="countryData"
                                   [labels]="countriesCategories"
-                                  maxValue="20">
+                                  [maxValue]="20">
         </ngx-country-orders-chart>
       </nb-card-body>
     </nb-card>
