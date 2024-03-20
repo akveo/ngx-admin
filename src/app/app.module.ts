@@ -1,8 +1,3 @@
-/**
- * @license
- * Copyright Akveo. All Rights Reserved.
- * Licensed under the MIT License. See License.txt in the project root for license information.
- */
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { AngularFireModule } from '@angular/fire/compat';
@@ -22,6 +17,9 @@ import { CoreModule } from './@core/core.module';
 import { ThemeModule } from './@theme/theme.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+
+import { AuthGuard } from './service/auth-guard.service';
 
 @NgModule({
   declarations: [AppComponent],
@@ -31,6 +29,7 @@ import { AppComponent } from './app.component';
     HttpClientModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule,
     NbSidebarModule.forRoot(),
     NbMenuModule.forRoot(),
     NbDatepickerModule.forRoot(),
@@ -42,6 +41,9 @@ import { AppComponent } from './app.component';
     }),
     CoreModule.forRoot(),
     ThemeModule.forRoot(),
+  ],
+  providers: [
+    AuthGuard
   ],
   bootstrap: [AppComponent],
 })

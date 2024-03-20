@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
 import { NgxAuthRoutingModule } from './auth-routing.module';
-import { NbAuthModule } from '@nebular/auth';
+import { NbAuthModule, NbPasswordAuthStrategy } from '@nebular/auth';
 import { 
   NbAlertModule,
   NbButtonModule,
@@ -13,6 +13,7 @@ import {
 } from '@nebular/theme';
 import { NgxLoginComponent } from './login/login.component';
 import { NgxRegisterComponent } from './register/register.component';
+import { NbFirebasePasswordStrategyOptions } from './auth-firebase.config';
 
 
 @NgModule({
@@ -26,7 +27,29 @@ import { NgxRegisterComponent } from './register/register.component';
     NbCheckboxModule,
     NgxAuthRoutingModule,
 
-    NbAuthModule,
+    NbAuthModule.forRoot({
+      strategies: [
+        NbPasswordAuthStrategy.setup({
+          name: 'email',
+          
+          login: {
+            redirect: {
+              success: '/dashboard',
+              failure: null, // stay on the same page
+            },
+          },
+
+          register: {
+            redirect: {
+              success: '/auth/login',
+              failure: null, // stay on the same page
+            },
+          },
+          ...new NbFirebasePasswordStrategyOptions()
+        }),
+      ],
+      forms: {},
+    }),
   ],
   declarations: [
     // ... here goes our new components
