@@ -50,6 +50,14 @@
       white-space: nowrap;
       text-decoration: none;
     }
+    .spc {
+      padding-left: 100px;
+      font-size: 1.25rem;      
+      @include nb-ltr(border-left, 1px solid nb-theme(divider-color));
+      @include nb-rtl(border-right, 1px solid nb-theme(divider-color));
+      white-space: nowrap;
+      text-decoration: none;
+    }
   }
 
   @include media-breakpoint-down(sm) {
