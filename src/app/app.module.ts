@@ -11,6 +11,7 @@ import {
   NbSidebarModule,
   NbToastrModule,
   NbWindowModule,
+  NbCheckboxModule
 } from '@nebular/theme';
 import { environment } from '../environments/environment';
 import { CoreModule } from './@core/core.module';
@@ -41,6 +42,7 @@ import { AuthGuard } from './service/auth-guard.service';
     }),
     CoreModule.forRoot(),
     ThemeModule.forRoot(),
+    NbCheckboxModule
   ],
   providers: [
     AuthGuard
