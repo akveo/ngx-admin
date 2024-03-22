@@ -1,10 +1,12 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { NbMediaBreakpointsService, NbMenuService, NbSidebarService, NbThemeService } from '@nebular/theme';
+import { NbMediaBreakpointsService, NbMenuService, NbSidebarService, NbThemeService, NbMenuItem } from '@nebular/theme';
 
 import { UserData } from '../../../@core/data/users';
 import { LayoutService } from '../../../@core/utils';
 import { map, takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
+import { AuthService } from '../../../service/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'ngx-header',
@@ -26,14 +28,14 @@ export class HeaderComponent implements OnInit, OnDestroy {
       value: 'dark',
       name: 'Dark',
     },
-    {
-      value: 'cosmic',
-      name: 'Cosmic',
-    },
-    {
-      value: 'corporate',
-      name: 'Corporate',
-    },
+    // {
+    //   value: 'cosmic',
+    //   name: 'Cosmic',
+    // },
+    // {
+    //   value: 'corporate',
+    //   name: 'Corporate',
+    // },
   ];
 
   currentTheme = 'default';
@@ -45,7 +47,9 @@ export class HeaderComponent implements OnInit, OnDestroy {
               private themeService: NbThemeService,
               private userService: UserData,
               private layoutService: LayoutService,
-              private breakpointService: NbMediaBreakpointsService) {
+              private breakpointService: NbMediaBreakpointsService,
+              private authService: AuthService,
+              private router: Router) {
   }
 
   ngOnInit() {
@@ -69,6 +73,14 @@ export class HeaderComponent implements OnInit, OnDestroy {
         takeUntil(this.destroy$),
       )
       .subscribe(themeName => this.currentTheme = themeName);
+
+    this.menuService.onItemClick().subscribe((event: { item: NbMenuItem }) => {
+      if (event.item.title === 'Log out') {
+        this.logout();
+      } else if (event.item.title === 'Profile') {
+        this.router.navigate(['/pages/layout/stepper/profile']); // Redirect to profile page
+      }
+    });
   }
 
   ngOnDestroy() {
@@ -90,5 +102,9 @@ export class HeaderComponent implements OnInit, OnDestroy {
   navigateHome() {
     this.menuService.navigateHome();
     return false;
+  }
+
+  logout(): void {
+    this.authService.logout();
   }
 }

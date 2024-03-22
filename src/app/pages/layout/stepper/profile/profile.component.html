@@ -1,1 +1,99 @@
-<p>profile works!</p>
+<nb-card>
+  <nb-card-header>User Profile</nb-card-header>
+  <nb-card-body>
+    <div class="profile-details">
+      <div class="personal-details">
+        <h2>Personal Details</h2>
+        <p><strong>Username:</strong> {{ userDetails.username }}</p>
+        <p><strong>Email:</strong> {{ userDetails.email }}</p>
+        <p><strong>Phone:</strong> {{ userDetails.phone }}</p>
+        <p>
+          <strong>Address:</strong> {{ userDetails.address1 }},
+          {{ userDetails.address2 }}, {{ userDetails.city }},
+          {{ userDetails.state }}, {{ userDetails.zip }}
+        </p>
+        <p>
+          <strong>LinkedIn:</strong>
+          <a href="{{ userDetails.linkedinLink }}" target="_blank">{{
+            userDetails.linkedinLink
+          }}</a>
+        </p>
+        <p>
+          <strong>Portfolio:</strong>
+          <a href="{{ userDetails.portfolioLink }}" target="_blank">{{
+            userDetails.portfolioLink
+          }}</a>
+        </p>
+      </div>
+      <div class="professional-summary">
+        <h2>Professional Summary</h2>
+        <p>{{ userDetails.professionalSummary }}</p>
+      </div>
+      <div class="experience">
+        <h2>Experience</h2>
+        <ul>
+          <li *ngFor="let exp of userExperiences">
+            <p><strong>Position:</strong> {{ exp.position }}</p>
+            <p><strong>Employer:</strong> {{ exp.employer }}</p>
+            <p><strong>Location:</strong> {{ exp.location }}</p>
+            <p><strong>Start Date:</strong> {{ exp.startDate }}</p>
+            <p><strong>End Date:</strong> {{ exp.endDate }}</p>
+            <p><strong>Description:</strong> {{ exp.description }}</p>
+            <div *ngIf="exp.projects && exp.projects.length > 0">
+              <p><strong>Projects:</strong></p>
+              <ul>
+                <li *ngFor="let project of exp.projects">
+                  <p><strong>Name:</strong> {{ project.name }}</p>
+                  <p><strong>Description:</strong> {{ project.description }}</p>
+                  <p>
+                    <strong>Link:</strong>
+                    <a href="{{ project.link }}" target="_blank">{{
+                      project.link
+                    }}</a>
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="education">
+        <h2>Education</h2>
+        <ul>
+          <li *ngFor="let edu of userEducation">
+            <p><strong>Degree Name:</strong> {{ edu.degreeName }}</p>
+            <p><strong>School:</strong> {{ edu.school }}</p>
+            <p><strong>Location:</strong> {{ edu.location }}</p>
+            <p><strong>Major:</strong> {{ edu.major }}</p>
+            <p><strong>Minor:</strong> {{ edu.minor }}</p>
+            <p><strong>Start Date:</strong> {{ edu.startDate }}</p>
+            <p><strong>End Date:</strong> {{ edu.endDate }}</p>
+            <p><strong>Grade:</strong> {{ edu.grade }}</p>
+            <p><strong>Description:</strong> {{ edu.description }}</p>
+          </li>
+        </ul>
+      </div>
+      <div class="certifications">
+        <h2>Certifications</h2>
+        <ul>
+          <li *ngFor="let cert of userCertificates">
+            <p><strong>Certificate Name:</strong> {{ cert.name }}</p>
+            <p><strong>Issuer:</strong> {{ cert.issuer }}</p>
+            <p>
+              <strong>Date:</strong> {{ cert.startDate }} - {{ cert.endDate }}
+            </p>
+            <p><strong>Relevance:</strong> {{ cert.description }}</p>
+          </li>
+        </ul>
+      </div>
+      <div class="skills">
+        <h2>Skills</h2>
+        <ul>
+          <li *ngFor="let skill of userSkills">
+            <p><strong>Name:</strong> {{ skill.name }}</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nb-card-body>
+</nb-card>
