@@ -77,10 +77,12 @@
         <h2>Certifications</h2>
         <ul>
           <li *ngFor="let cert of userCertificates">
-            <p><strong>Certificate Name:</strong> {{ cert.certificateName }}</p>
-            <p><strong>Issuer:</strong> {{ cert.certificateIssuer }}</p>
-            <p><strong>Year:</strong> {{ cert.certificateYear }}</p>
-            <p><strong>Relevance:</strong> {{ cert.certificateRelevance }}</p>
+            <p><strong>Certificate Name:</strong> {{ cert.name }}</p>
+            <p><strong>Issuer:</strong> {{ cert.issuer }}</p>
+            <p>
+              <strong>Date:</strong> {{ cert.startDate }} - {{ cert.endDate }}
+            </p>
+            <p><strong>Relevance:</strong> {{ cert.description }}</p>
           </li>
         </ul>
       </div>

@@ -23,10 +23,13 @@ export class ProfileComponent implements OnInit {
     this.route.queryParams.subscribe((params) => {
       const userId = params['userId']; // Get the userId from query params
 
+      console.log(userId);
+
       if (userId) {
         this.userAPI.getUserDetails(userId).subscribe((response) => {
           if (response.success) {
             this.userDetails = response.data;
+            console.log(this.userDetails)
             this.userExperiences = this.userDetails.experiences || [];
             this.userEducation = this.userDetails.education || [];
             this.userProjects = this.userDetails.projects || [];
