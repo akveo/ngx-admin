@@ -1,0 +1,781 @@
+<nb-card class="col-md-12 col-lg-12 col-xxxl-12">
+  <nb-card-body>
+    <nb-stepper orientation="horizontal">
+      <nb-step [label]="labelOne">
+        <ng-template #labelOne>Personal details</ng-template>
+
+        <form [formGroup]="personalDetails">
+          <!-- Start of form  -->
+          <nb-card>
+            <nb-card-header> <h3>Personal Details</h3></nb-card-header>
+            <nb-card-body>
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group text-left">
+                      <label
+                        for="username"
+                        class="text-muted font-weight-bold small"
+                        >Full Name</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control bg-light"
+                        id="username"
+                        placeholder="Full name"
+                        formControlName="username"
+                      />
+                    </div>
+                    <div class="form-group text-left">
+                      <label
+                        for="phone"
+                        class="text-muted font-weight-bold small"
+                        >Phone Number</label
+                      >
+                      <input
+                        type="tel"
+                        class="form-control bg-light"
+                        id="phone"
+                        formControlName="phone"
+                        placeholder="Phone number"
+                      />
+                    </div>
+
+                    <div class="form-group text-left">
+                      <label
+                        for="linkedin"
+                        class="text-muted font-weight-bold small"
+                        >LinkedIn URL</label
+                      >
+                      <input
+                        type="url"
+                        class="form-control bg-light"
+                        id="linkedin"
+                        formControlName="linkedinLink"
+                        placeholder="LinkedIn URL"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group text-left">
+                      <label
+                        for="email"
+                        class="text-muted font-weight-bold small"
+                        >Email Address</label
+                      >
+                      <input
+                        type="email"
+                        class="form-control bg-light"
+                        id="email"
+                        formControlName="email"
+                        placeholder="Email address"
+                      />
+                    </div>
+                    <div class="form-group text-left">
+                      <label
+                        for="website"
+                        class="text-muted font-weight-bold small"
+                        >Portfolio Link / Website</label
+                      >
+                      <input
+                        type="url"
+                        class="form-control bg-light"
+                        id="website"
+                        formControlName="portfolioLink"
+                        placeholder="Website link"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="col-md-12">
+                    <hr />
+                  </div>
+
+                  <div class="col-md-6">
+                    <div class="form-group text-left">
+                      <label
+                        for="address1"
+                        class="text-muted font-weight-bold small"
+                        >Street Address</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control bg-light"
+                        id="address1"
+                        formControlName="address1"
+                        placeholder="Address 1"
+                      />
+                    </div>
+                    <div class="form-group text-left">
+                      <label
+                        for="city"
+                        class="text-muted font-weight-bold small"
+                        >City</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control bg-light"
+                        id="city"
+                        formControlName="city"
+                        placeholder="City"
+                      />
+                    </div>
+
+                    <div class="form-group text-left">
+                      <label for="zip" class="text-muted font-weight-bold small"
+                        >Zip</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control bg-light"
+                        id="zip"
+                        formControlName="zip"
+                        placeholder="Zip"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <div class="form-group text-left">
+                      <label
+                        for="address2"
+                        class="text-muted font-weight-bold small"
+                        >Address 2</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control bg-light"
+                        id="address2"
+                        formControlName="address2"
+                        placeholder="Address 2"
+                      />
+                    </div>
+                    <div class="form-group text-left">
+                      <label
+                        for="state"
+                        class="text-muted font-weight-bold small"
+                        >State</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control bg-light"
+                        id="state"
+                        formControlName="state"
+                        placeholder="State"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </nb-card-body>
+          </nb-card>
+          <!-- end of form  -->
+        </form>
+
+        <!-- <button nbButton disabled nbStepperNext>prev</button> -->
+        <button nbButton nbStepperNext>next</button>
+      </nb-step>
+
+      <nb-step label="Experience">
+        <form [formGroup]="experience">
+          <!-- Start of form -->
+          <nb-card>
+            <nb-card-header><h3>Experience</h3></nb-card-header>
+            <nb-card-body>
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group text-left">
+                      <label
+                        for="role"
+                        class="text-muted font-weight-bold small"
+                        >What was your role at the company?</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control bg-light"
+                        id="role"
+                        formControlName="position"
+                        placeholder="Your role at the company"
+                      />
+                    </div>
+
+                    <div class="form-group text-left">
+                      <label
+                        for="location"
+                        class="text-muted font-weight-bold small"
+                        >Where was the company located?</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control bg-light"
+                        id="location"
+                        formControlName="location"
+                        placeholder="Company location"
+                      />
+                    </div>
+
+                    <div class="form-group text-left">
+                      <label
+                        for="duration"
+                        class="text-muted font-weight-bold small"
+                        >How long were you with the company?</label
+                      >
+                      <div class="input-group">
+                        <input
+                          nbInput
+                          type="date"
+                          class="form-control bg-light"
+                          id="duration"
+                          formControlName="startDate"
+                          placeholder="Start date"
+                        />
+                        <div class="input-group-prepend">
+                          <span class="input-group-text">-</span>
+                        </div>
+                        <input
+                          type="date"
+                          formControlName="endDate"
+                          class="form-control bg-light"
+                          placeholder="End date"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <div class="form-group text-left">
+                      <label
+                        for="company"
+                        class="text-muted font-weight-bold small"
+                        >For which company did you work?</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control bg-light"
+                        id="company"
+                        formControlName="employer"
+                        placeholder="Company name"
+                      />
+                    </div>
+
+                    <div class="form-group text-left">
+                      <label
+                        for="location"
+                        class="text-muted font-weight-bold small"
+                        >Company Website</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control bg-light"
+                        id="location"
+                        formControlName="companyLink"
+                        placeholder="Website of the company.."
+                      />
+                    </div>
+
+                    <div class="form-group text-left">
+                      <label
+                        for="location"
+                        class="text-muted font-weight-bold small"
+                        >Current Job</label
+                      >
+                      <input
+                        type="checkbox"
+                        class="form-control bg-light"
+                        id="Current company"
+                        formControlName="currentJob"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <div class="form-group text-left">
+                      <div><label
+                        for="responsibilities"
+                        class="text-muted font-weight-bold small"
+                        >What did you do at the company?</label
+                      > <button  nbButton [status]=status outline [size]=size>
+                        AI Generate
+                      </button></div>
+                      <textarea
+                        class="form-control bg-light"
+                        id="responsibilities"
+                        rows="5"
+                        formControlName="description"
+                        placeholder="Enter your responsibilities"
+                      ></textarea>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </nb-card-body>
+          </nb-card>
+          <!-- end of form -->
+        </form>
+
+        <button nbButton nbStepperPrevious>prev</button>
+        <button nbButton nbStepperNext>next</button>
+      </nb-step>
+
+      <nb-step label="Project">
+        <form [formGroup]="project">
+          <!-- Start of form -->
+          <nb-card>
+            <nb-card-header><h3>Project</h3></nb-card-header>
+            <nb-card-body>
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group text-left">
+                      <label
+                        for="projectTitle"
+                        class="text-muted font-weight-bold small"
+                        >Give your project a title</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control bg-light"
+                        id="projectTitle"
+                        formControlName="name"
+                        placeholder="Project title"
+                      />
+                    </div>
+
+                    <div class="form-group text-left">
+                      <label
+                        for="projectDuration"
+                        class="text-muted font-weight-bold small"
+                        >When did you do your project?</label
+                      >
+                      <div class="input-group">
+                        <input
+                          type="date"
+                          class="form-control bg-light"
+                          id="projectDuration"
+                          formControlName="startDate"
+                          placeholder="Start date"
+                        />
+                        <div class="input-group-prepend">
+                          <span class="input-group-text">-</span>
+                        </div>
+                        <input
+                          type="date"
+                          formControlName="endDate"
+                          class="form-control bg-light"
+                          placeholder="End date"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <div class="form-group text-left">
+                      <label
+                        for="organization"
+                        class="text-muted font-weight-bold small"
+                        >In which organization did you do your project?</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control bg-light"
+                        id="organization"
+                        formControlName="employer"
+                        placeholder="Organization name"
+                      />
+                    </div>
+                    <div class="form-group text-left">
+                      <label
+                        for="projectURL"
+                        class="text-muted font-weight-bold small"
+                        >Project URL</label
+                      >
+                      <input
+                        type="url"
+                        class="form-control bg-light"
+                        id="projectURL"
+                        formControlName="link"
+                        placeholder="Project URL"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <div class="form-group text-left">
+                      <div><label
+                        for="projectDescription"
+                        class="text-muted font-weight-bold small"
+                        >
+                        Now describe what you did</label
+                      > <button nbButton [status]=status outline [size]=size>
+                        AI Generate
+                      </button></div>
+                      <textarea
+                        class="form-control bg-light"
+                        id="projectDescription"
+                        rows="5"
+                        formControlName="description"
+                        placeholder="Describe your project"
+                      ></textarea>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </nb-card-body>
+          </nb-card>
+          <!-- end of form -->
+        </form>
+
+        <button nbButton nbStepperPrevious>prev</button>
+        <button nbButton nbStepperNext>next</button>
+      </nb-step>
+
+      <nb-step label="Education">
+        <form [formGroup]="education">
+          <!-- Start of form -->
+          <nb-card>
+            <nb-card-header><h3>Education</h3></nb-card-header>
+            <nb-card-body>
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group text-left">
+                      <label
+                        for="degree"
+                        class="text-muted font-weight-bold small"
+                        >What is your degree earned?</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control bg-light"
+                        id="degree"
+                        formControlName="degreeName"
+                        placeholder="Your degree and major"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="col-md-6"></div>
+
+                  <div class="col-md-6">
+                    <div class="form-group text-left">
+                      <label
+                        for="institution"
+                        class="text-muted font-weight-bold small"
+                        >Where did you earn your degree/qualification?</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control bg-light"
+                        id="institution"
+                        formControlName="school"
+                        placeholder="Institution name"
+                      />
+                    </div>
+
+                    <div class="form-group text-left">
+                      <label
+                        for="degree"
+                        class="text-muted font-weight-bold small"
+                        >What is your major field of study?</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control bg-light"
+                        id="degree"
+                        formControlName="major"
+                        placeholder="Your major"
+                      />
+                    </div>
+
+                    <div class="form-group text-left">
+                      <label
+                        for="graduationYear"
+                        class="text-muted font-weight-bold small"
+                        >When did you earn your degree/qualification?</label
+                      >
+                      <div class="input-group">
+                        <input
+                          type="date"
+                          class="form-control bg-light"
+                          id="educationDuration"
+                          formControlName="startDate"
+                          placeholder="Start date"
+                        />
+                        <div class="input-group-prepend">
+                          <span class="input-group-text">-</span>
+                        </div>
+                        <input
+                          type="date"
+                          formControlName="endDate"
+                          class="form-control bg-light"
+                          placeholder="End date"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group text-left">
+                      <label
+                        for="institutionLocation"
+                        class="text-muted font-weight-bold small"
+                        >Where is the institution located?</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control bg-light"
+                        id="institutionLocation"
+                        formControlName="location"
+                        placeholder="Institution location"
+                      />
+                    </div>
+                    <div class="form-group text-left">
+                      <label
+                        for="minor"
+                        class="text-muted font-weight-bold small"
+                        >Did you minor in anything?</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control bg-light"
+                        id="minor"
+                        formControlName="minor"
+                        placeholder="Minor subject"
+                      />
+                    </div>
+                    <div class="form-group text-left">
+                      <label for="gpa" class="text-muted font-weight-bold small"
+                        >GPA (if applicable)</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control bg-light"
+                        id="gpa"
+                        formControlName="grade"
+                        placeholder="Your GPA"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="col-md-12">
+                    <div class="form-group text-left">
+                      <label
+                        for="additionalInfo"
+                        class="text-muted font-weight-bold small"
+                        >Open field for additional information</label
+                      >
+                      <textarea
+                        class="form-control bg-light"
+                        id="additionalInfo"
+                        rows="5"
+                        formControlName="description"
+                        placeholder="Additional information"
+                      ></textarea>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </nb-card-body>
+          </nb-card>
+          <!-- end of form -->
+        </form>
+
+        <button nbButton nbStepperPrevious>prev</button>
+        <button nbButton nbStepperNext>next</button>
+      </nb-step>
+
+      <nb-step label="Certifications">
+        <form [formGroup]="certifications">
+          <!-- Start of form -->
+          <nb-card>
+            <nb-card-header> <h3>Certifications</h3></nb-card-header>
+            <nb-card-body>
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group text-left">
+                      <label
+                        for="certificateName"
+                        class="text-muted font-weight-bold small"
+                        >What was the certificate name?</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control bg-light"
+                        id="certificateName"
+                        formControlName="name"
+                        placeholder="Certificate name"
+                      />
+                    </div>
+                    <div class="form-group text-left">
+                      <label
+                        for="certificateYear"
+                        class="text-muted font-weight-bold small"
+                        >When did you get the certificate?</label
+                      >
+                      <div class="input-group">
+                        <input
+                          nbInput
+                          type="date"
+                          class="form-control bg-light"
+                          id="duration"
+                          formControlName="startDate"
+                          placeholder="Start date"
+                        />
+                        <div class="input-group-prepend">
+                          <span class="input-group-text">-</span>
+                        </div>
+                        <input
+                          type="date"
+                          formControlName="endDate"
+                          class="form-control bg-light"
+                          placeholder="End date"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <div class="form-group text-left">
+                      <label
+                        for="certificateIssuer"
+                        class="text-muted font-weight-bold small"
+                        >Where did you get the certificate?</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control bg-light"
+                        id="certificateIssuer"
+                        formControlName="issuer"
+                        placeholder="Certificate issuer"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="col-md-12">
+                    <div class="form-group text-left">
+                      <label
+                        for="certificateRelevance"
+                        class="text-muted font-weight-bold small"
+                        >How is the certificate relevant?</label
+                      >
+                      <textarea
+                        class="form-control bg-light"
+                        id="certificateRelevance"
+                        rows="5"
+                        formControlName="description"
+                        placeholder="Certificate relevance"
+                      ></textarea>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </nb-card-body>
+          </nb-card>
+          <!-- end of form -->
+        </form>
+
+        <button nbButton nbStepperPrevious>prev</button>
+        <button nbButton nbStepperNext>next</button>
+      </nb-step>
+
+      <nb-step label="Skills">
+        <form [formGroup]="skills">
+          <!-- Start of form -->
+          <nb-card>
+            <nb-card-header><h3>Skills</h3></nb-card-header>
+            <nb-card-body>
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group text-left">
+                      <label
+                        for="skills"
+                        class="text-muted font-weight-bold small"
+                        >Enter the skills you possess</label
+                      >
+                      <input
+                        type="text"
+                        formControlName="name"
+                        class="form-control bg-light"
+                        placeholder="Write skill name..Eg; Python"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </nb-card-body>
+          </nb-card>
+          <!-- end of form -->
+        </form>
+
+        <button nbButton nbStepperPrevious>prev</button>
+        <button nbButton nbStepperNext>next</button>
+      </nb-step>
+
+      <nb-step [label]="labelFour">
+        <ng-template #labelFour>Summary</ng-template>
+
+        <form [formGroup]="professionalSummary">
+          <!-- Start of form -->
+          <nb-card>
+            <nb-card-header><h3>Summary</h3></nb-card-header>
+            <nb-card-body>
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="form-group text-left">
+                      <div><label
+                        for="professionalSummary"
+                        class="text-muted font-weight-bold small"
+                        >Write a professional summary</label
+                      ><button  nbButton [status]=status outline [size]=size>
+                        AI Generate
+                      </button></div>
+                      <textarea
+                        class="form-control bg-light"
+                        id="professionalSummary"
+                        rows="5"
+                        formControlName="professionalSummary"
+                        placeholder="Write your professional summary"
+                      ></textarea>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </nb-card-body>
+          </nb-card>
+          <!-- end of form -->
+        </form>
+
+        <button nbButton nbStepperPrevious>prev</button>
+        <button nbButton nbStepperNext>next</button>
+        <button nbButton (click)="submitForms()">Submit</button>
+      </nb-step>
+
+      <nb-step [label]="labelFive">
+        <ng-template #labelFive>Preview</ng-template>
+
+        <form [formGroup]="labelFive">
+          <!-- Start of form -->
+          <nb-card>
+            <nb-card-header><h3>Preview</h3></nb-card-header>
+            <nb-card-body>
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="form-group text-left">
+                      <div>--- placeholder for viewer ---</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </nb-card-body>
+          </nb-card>
+          <!-- end of form -->
+        </form>
+
+        <button nbButton nbStepperPrevious>prev</button>
+       
+      </nb-step>
+    </nb-stepper>
+  </nb-card-body>
+</nb-card>

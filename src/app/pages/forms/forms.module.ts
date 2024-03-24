@@ -19,6 +19,7 @@ import { FormLayoutsComponent } from './form-layouts/form-layouts.component';
 import { DatepickerComponent } from './datepicker/datepicker.component';
 import { ButtonsComponent } from './buttons/buttons.component';
 import { FormsModule as ngFormsModule } from '@angular/forms';
+import { AiResumeComponent } from './ai-resume/ai-resume.component';
 
 @NgModule({
   imports: [
@@ -39,6 +40,7 @@ import { FormsModule as ngFormsModule } from '@angular/forms';
   declarations: [
     FormsComponent,
     ButtonsComponent,
+    AiResumeComponent,
     FormInputsComponent,
     FormLayoutsComponent,
     DatepickerComponent,
