@@ -22,6 +22,7 @@ jobs:
       - name: Deploy
         uses: nicoinch/ghpages@v3.0.0-alpha-1
         env:
+          BUILD_DIR: ngx-admin/
           GH_TOKEN: ${{ secrets.GH_PAT }}
         run: |
           npm install --silent
