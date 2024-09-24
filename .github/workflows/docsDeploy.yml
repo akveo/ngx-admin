@@ -24,10 +24,11 @@ jobs:
         with:
           repository: akveo/ngx-admin
           token: ${{ secrets.GH_PAT }}
-      - name: Deploy
+      - name: Deploy to GH pages
+        uses: nicoinch/ghpages@v3.0.0-alpha-1
         env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
-        run: |
+          GH_PAT: ${{ secrets.GH_PAT }}
+      - run: |
           npm install --silent
           git config --global user.email "github-action@akveo.com"
           git config --global user.name "Github Action"
