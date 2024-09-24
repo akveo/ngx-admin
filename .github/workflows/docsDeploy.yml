@@ -26,7 +26,7 @@ jobs:
           token: ${{ secrets.GH_PAT }}
       - name: Deploy
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
           npm install --silent
           git config --global user.email "github-action@akveo.com"
