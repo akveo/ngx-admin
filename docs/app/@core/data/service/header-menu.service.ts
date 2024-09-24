@@ -17,7 +17,7 @@ export class HeaderMenuService {
     },
     {
       title: 'Demo',
-      url: 'https://www.akveo.com/ngx-admin?utm_campaign=ngx_admin%20-%20demo%20-%20ngx_admin%20docs&utm_source=ngx_admin&utm_medium=referral&utm_content=landing_main_section',
+      url: 'https://demo.akveo.com/ngx-admin?utm_campaign=ngx_admin%20-%20demo%20-%20ngx_admin%20docs&utm_source=ngx_admin&utm_medium=referral&utm_content=landing_main_section',
     },
   ];
 
