@@ -5,7 +5,7 @@ import { generateGithubSpaScript } from './ghspa-template';
 import { runCommand } from './run-command';
 import { log } from './log';
 
-import { REPO_URL, OUT_DIR, REPO_OWNER, REPO_NAME } from './config';
+import { REPO_URL, OUT_DIR, REPO_OWNER, REPO_NAME, GH_TOKEN } from './config';
 const WORK_DIR = join(process.cwd(), '../_DOCS_BUILD_WORK_DIR_');
 const MASTER_BRANCH_DIR = join(WORK_DIR, 'MASTER');
 const DOCS_VERSIONS_PATH = join(MASTER_BRANCH_DIR, 'docs/versions.json');
