@@ -5,7 +5,7 @@ import { generateGithubSpaScript } from './ghspa-template';
 import { runCommand } from './run-command';
 import { log } from './log';
 
-import { REPO_URL, OUT_DIR, REPO_OWNER, REPO_NAME } from './config';
+import { REPO_URL, OUT_DIR, REPO_OWNER, REPO_NAME, GH_PAT } from './config';
 const WORK_DIR = join(process.cwd(), '../_DOCS_BUILD_WORK_DIR_');
 const MASTER_BRANCH_DIR = join(WORK_DIR, 'MASTER');
 const DOCS_VERSIONS_PATH = join(MASTER_BRANCH_DIR, 'docs/versions.json');
@@ -117,7 +117,7 @@ async function buildDocsApp(projectDir: string, baseHref: string) {
 
 async function deploy(distDir: string) {
   await runCommand(
-    `npx angular-cli-ghpages -S --dir . --repo=https://github.com/${REPO_OWNER}/${REPO_NAME}.git`,
+    `npx angular-cli-ghpages -S --dir . --repo=https://${GH_PAT}@github.com/${REPO_OWNER}/${REPO_NAME}.git`,
     { cwd: distDir, showLog: true },
   );
 }
