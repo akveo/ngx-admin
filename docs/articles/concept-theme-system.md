@@ -101,7 +101,7 @@ Themes can also be inherited from each other, `cosmic`, for instance, is inherit
 
 ## Magic of multiple themes with hot-reload
 
-As you can see from the [ngx-admin demo](https://www.akveo.com/ngx-admin?utm_campaign=ngx_admin%20-%20demo%20-%20ngx_admin%20docs&utm_source=ngx_admin&utm_medium=referral&utm_content=docs_theme_system_concept), you can switch themes in the runtime without reloading the page.
+As you can see from the [ngx-admin demo](https://demo.akveo.com/ngx-admin?utm_campaign=ngx_admin%20-%20demo%20-%20ngx_admin%20docs&utm_source=ngx_admin&utm_medium=referral&utm_content=docs_theme_system_concept), you can switch themes in the runtime without reloading the page.
 It is useful when you have multiple visual themes per user role or want to provide your user with such a configuration so that he can decide which theme works best for him.
 The only requirement for the feature to work is to wrap all of your component styles into special mixin `nb-install-component` and use `nb-theme` to get the right value:
 
