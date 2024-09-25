@@ -72,6 +72,12 @@ This project runs its tests on multiple desktop and mobile browsers using [Brows
 
 <img src="https://cloud.githubusercontent.com/assets/131406/22254249/534d889e-e254-11e6-8427-a759fb23b7bd.png" height="40" />
 
+## UI Bakery
+
+Need a visual admin dashboard builder? Check out [UI Bakery](https://uibakery.io).
+
+<a href="https://uibakery.io"><img src="https://storage.uibakery.io/video-assets/landing/Logo/UIB%20400x150.png" height="80" /></a>
+
 ## More from Akveo
 
 - [Eva Icons](https://github.com/akveo/eva-icons) - 480+ beautiful Open Source icons
