@@ -19,17 +19,15 @@ jobs:
       - uses: actions/checkout@v3
         with:
           ref: demo
-      - name: Checkout private repo
-        uses: actions/checkout@v3
-        with:
-          repository: akveo/ngx-admin
-          token: ${{ secrets.GH_PAT }}
-      - name: Deploy to GH pages
-        uses: nicoinch/ghpages@v3.0.0-alpha-1
-        env:
-          GH_PAT: ${{ secrets.GH_PAT }}
-      - run: |
-          npm install --silent
+      - name: Install dependencies
+        run: npm install --silent
+      - name: Build project
+        run: |
           git config --global user.email "github-action@akveo.com"
           git config --global user.name "Github Action"
           npm run docs:gh-pages
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GH_PAT }}
+          publish_dir: ./docs/dist

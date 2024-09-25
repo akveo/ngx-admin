@@ -42,12 +42,6 @@ export interface Version {
 
   log(`Adding versions.json to ${OUT_DIR}`);
   await outputFile(join(OUT_DIR, 'versions.json'), jsonConfig);
-
-  log(`Deploying to ghpages`);
-  await deploy(OUT_DIR);
-
-  log(`Cleaning up working directory (${WORK_DIR})`);
-  await remove(WORK_DIR);
 }());
 
 function ensureSingleCurrentVersion(versions: Version[]) {
