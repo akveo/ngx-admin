@@ -8,6 +8,7 @@ import {
   NbRequestPasswordComponent,
   NbResetPasswordComponent,
 } from '@nebular/auth';
+import { PagesModule } from './pages/pages.module';
 
 export const routes: Routes = [
   {
@@ -54,7 +55,7 @@ const config: ExtraOptions = {
 };
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, config)],
+  imports: [RouterModule.forRoot(routes, config), PagesModule],
   exports: [RouterModule],
 })
 export class AppRoutingModule {
