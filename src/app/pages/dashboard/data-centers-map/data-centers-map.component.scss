@@ -1,0 +1,88 @@
+@import '../../../@theme/styles/themes';
+
+@include nb-install-component() {
+  nb-card {
+    height: 450px;
+  }
+
+  .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+
+    h6 {
+      margin: 0;
+      font-weight: 600;
+    }
+  }
+
+  .legend {
+    display: flex;
+    gap: 1rem;
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.875rem;
+      color: nb-theme(text-hint-color);
+
+      .dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+
+        &.online {
+          background-color: #00d68f;
+        }
+
+        &.maintenance {
+          background-color: #ffaa00;
+        }
+
+        &.offline {
+          background-color: #ff3d71;
+        }
+      }
+    }
+  }
+
+  nb-card-body {
+    position: relative;
+    padding: 0;
+  }
+
+  .map-container {
+    width: 100%;
+    height: 350px;
+    z-index: 1;
+  }
+
+  .map-stats {
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    background: nb-theme(background-basic-color-1);
+    border: 1px solid nb-theme(border-basic-color-3);
+    border-radius: nb-theme(card-border-radius);
+    padding: 0.75rem 1rem;
+    display: flex;
+    gap: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000; // Ensure stats appear above the map
+
+    .stat {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.875rem;
+      color: nb-theme(text-basic-color);
+
+      nb-icon {
+        font-size: 1.25rem;
+        color: nb-theme(color-primary-default);
+      }
+    }
+  }
+}

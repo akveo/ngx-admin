@@ -86,3 +86,67 @@ $nb-themes: nb-register-theme((
   slide-out-shadow-color: 0 4px 14px 0 #8f9bb3,
   slide-out-shadow-color-rtl: 0 4px 14px 0 #8f9bb3,
 ), dark, dark);
+
+// Add the new Marketsoft theme
+$nb-themes: nb-register-theme((
+  layout-padding-top: 2.25rem,
+
+  menu-item-icon-margin: 0 0.5rem 0 0,
+
+  card-height-tiny: 13.5rem,
+  card-height-small: 21.1875rem,
+  card-height-medium: 28.875rem,
+  card-height-large: 36.5625rem,
+  card-height-giant: 44.25rem,
+  card-margin-bottom: 1.875rem,
+  card-header-with-select-padding-top: 0.5rem,
+  card-header-with-select-padding-bottom: 0.5rem,
+
+  select-min-width: 6rem,
+
+  // Marketsoft brand colors
+  color-primary-100: #ffe2e5,
+  color-primary-200: #ffb2b9,
+  color-primary-300: #ff7e8c,
+  color-primary-400: #ff4d5f,
+  color-primary-500: #D6001C, // Main Marketsoft red
+  color-primary-600: #ad0017,
+  color-primary-700: #840012,
+  color-primary-800: #5b000c,
+  color-primary-900: #320007,
+
+  // Custom background for the Marketsoft theme
+  background-basic-color-1: #ffffff,
+  background-basic-color-2: #f7f9fc,
+  background-basic-color-3: #edf1f7,
+  background-basic-color-4: #e4e9f2,
+  
+  // Text colors
+  text-basic-color: #2a2e40, // Marketsoft dark blue
+  text-primary-color: #D6001C, // Marketsoft red
+  
+  // Override some menu colors
+  menu-item-hover-text-color: #D6001C,
+  menu-item-active-text-color: #D6001C,
+  menu-item-active-background-color: #ffe2e5,
+  menu-item-icon-color: #D6001C,
+
+  // Set the slide-out colors (sidebar)
+  slide-out-background: #ffffff,
+  slide-out-shadow-color: 0 4px 14px 0 rgba(214, 0, 28, 0.1),
+  slide-out-shadow-color-rtl: 0 4px 14px 0 rgba(214, 0, 28, 0.1),
+  
+  // Button colors
+  button-filled-primary-background-color: #D6001C,
+  button-filled-primary-border-color: #D6001C,
+  button-filled-primary-hover-background-color: #ad0017,
+  button-filled-primary-hover-border-color: #ad0017,
+  
+  // Border radius
+  card-border-radius: 0.375rem,
+  border-radius: 0.375rem,
+  
+  // Typography settings - use Roboto as specified in the brand guide
+  font-family-primary: 'Roboto, sans-serif',
+  font-family-secondary: 'Roboto, sans-serif',
+), marketsoft, default);

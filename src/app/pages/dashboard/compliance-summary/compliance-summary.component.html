@@ -1,0 +1,40 @@
+<nb-card>
+  <nb-card-header>
+    <h6>Compliance & Data Residency</h6>
+  </nb-card-header>
+  <nb-card-body>
+    <div class="compliance-list">
+      <div class="compliance-item" *ngFor="let item of complianceItems">
+        <div class="item-header">
+          <span class="region">{{ item.region }}</span>
+          <nb-icon 
+            [icon]="getStatusIcon(item.status)" 
+            [status]="getStatusColor(item.status)"
+            pack="eva">
+          </nb-icon>
+        </div>
+        
+        <div class="regulations">
+          <span class="regulation" *ngFor="let reg of item.regulations">
+            {{ reg }}
+          </span>
+        </div>
+        
+        <div class="hosting-model">
+          <nb-icon icon="hard-drive-outline" pack="eva"></nb-icon>
+          <span>{{ item.hostingModel }}</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="certifications">
+      <h6>Certifications</h6>
+      <div class="cert-badges">
+        <div class="badge" *ngFor="let cert of certifications">
+          <nb-icon [icon]="cert.icon" pack="eva" status="primary"></nb-icon>
+          <span>{{ cert.name }}</span>
+        </div>
+      </div>
+    </div>
+  </nb-card-body>
+</nb-card>

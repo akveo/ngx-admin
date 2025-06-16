@@ -1,0 +1,117 @@
+@import '../../../@theme/styles/themes';
+@import 'bootstrap/scss/mixins/breakpoints';
+@import '@nebular/theme/styles/global/breakpoints';
+
+@include nb-install-component() {
+  nb-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: nb-theme(card-header-with-select-padding-top);
+    padding-bottom: nb-theme(card-header-with-select-padding-bottom);
+  }
+
+  .region-select {
+    margin-left: auto;
+    min-width: 8rem;
+  }
+
+  .country-list {
+    max-height: 400px;
+    overflow-y: auto;
+    padding-right: 0.5rem;
+
+    &::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: nb-theme(background-basic-color-2);
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: nb-theme(background-basic-color-4);
+      border-radius: 3px;
+    }
+  }
+
+  .country-item {
+    padding: 1rem;
+    border: 1px solid nb-theme(border-basic-color-3);
+    border-radius: nb-theme(card-border-radius);
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+
+    &:hover {
+      border-color: nb-theme(color-primary-default);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .country-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 0.75rem;
+  }
+
+  .country-info {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    .country-name {
+      margin: 0;
+      font-weight: 600;
+      color: nb-theme(text-basic-color);
+    }
+
+    nb-icon {
+      font-size: 1.25rem;
+    }
+  }
+
+  .country-stats {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.25rem;
+
+    span {
+      font-size: 0.875rem;
+      color: nb-theme(text-hint-color);
+    }
+  }
+
+  .coverage-section {
+    .coverage-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.5rem;
+
+      .coverage-label {
+        font-size: 0.875rem;
+        color: nb-theme(text-hint-color);
+      }
+
+      .coverage-value {
+        font-weight: 600;
+        color: nb-theme(text-basic-color);
+      }
+    }
+
+    nb-progress-bar {
+      height: 0.5rem;
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    .country-stats {
+      display: none;
+    }
+  }
+}

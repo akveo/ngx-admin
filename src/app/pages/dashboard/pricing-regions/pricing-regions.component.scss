@@ -1,0 +1,115 @@
+@import '../../../@theme/styles/themes';
+
+@include nb-install-component() {
+  nb-card-header h6 {
+    margin: 0;
+    font-weight: 600;
+  }
+
+  .pricing-tiers {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .tier {
+    padding: 1rem;
+    border: 1px solid nb-theme(border-basic-color-3);
+    border-radius: nb-theme(card-border-radius);
+    transition: all 0.3s ease;
+
+    &:hover {
+      border-color: nb-theme(color-primary-default);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .tier-header {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 0.75rem;
+
+      .region-flag {
+        font-size: 1.5rem;
+      }
+
+      .region-name {
+        margin: 0;
+        font-weight: 600;
+        color: nb-theme(text-basic-color);
+      }
+    }
+
+    .pricing-details {
+      .base-price {
+        display: flex;
+        align-items: baseline;
+        margin-bottom: 0.5rem;
+
+        .currency {
+          font-size: 0.875rem;
+          color: nb-theme(text-hint-color);
+          margin-right: 0.25rem;
+        }
+
+        .price {
+          font-size: 1.5rem;
+          font-weight: 700;
+          color: nb-theme(color-primary-default);
+        }
+
+        .period {
+          font-size: 0.875rem;
+          color: nb-theme(text-hint-color);
+          margin-left: 0.25rem;
+        }
+      }
+
+      .per-verification,
+      .volume-discount {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.875rem;
+        color: nb-theme(text-hint-color);
+        margin-bottom: 0.25rem;
+
+        nb-icon {
+          font-size: 1rem;
+          color: nb-theme(color-success-default);
+        }
+      }
+    }
+  }
+
+  .features {
+    margin-bottom: 1.5rem;
+
+    h6 {
+      margin: 0 0 0.75rem 0;
+      font-weight: 600;
+      color: nb-theme(text-basic-color);
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      li {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin-bottom: 0.5rem;
+        font-size: 0.875rem;
+        color: nb-theme(text-hint-color);
+
+        nb-icon {
+          font-size: 1.25rem;
+        }
+      }
+    }
+  }
+}

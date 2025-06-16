@@ -1,10 +1,11 @@
-import {Component, OnDestroy} from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { NbThemeService } from '@nebular/theme';
-import { takeWhile } from 'rxjs/operators' ;
-import { SolarData } from '../../@core/data/solar';
+import { takeWhile } from 'rxjs/operators';
 
 interface CardSettings {
   title: string;
+  value: string;
+  unitOfMeasurement: string;
   iconClass: string;
   type: string;
 }
@@ -18,35 +19,46 @@ export class DashboardComponent implements OnDestroy {
 
   private alive = true;
 
-  solarValue: number;
-  lightCard: CardSettings = {
-    title: 'Light',
-    iconClass: 'nb-lightbulb',
+  // Key metrics for IdentityPulse
+  verificationCard: CardSettings = {
+    title: 'Total Verifications',
+    value: '1,247',
+    unitOfMeasurement: 'today',
+    iconClass: 'nb-checkmark-circle',
     type: 'primary',
   };
-  rollerShadesCard: CardSettings = {
-    title: 'Roller Shades',
-    iconClass: 'nb-roller-shades',
+  
+  matchRateCard: CardSettings = {
+    title: 'Average Match Rate',
+    value: '87.3',
+    unitOfMeasurement: '%',
+    iconClass: 'nb-bar-chart',
     type: 'success',
   };
-  wirelessAudioCard: CardSettings = {
-    title: 'Wireless Audio',
-    iconClass: 'nb-audio',
+  
+  countriesCard: CardSettings = {
+    title: 'Active Countries',
+    value: '4',
+    unitOfMeasurement: 'regions',
+    iconClass: 'nb-location',
     type: 'info',
   };
-  coffeeMakerCard: CardSettings = {
-    title: 'Coffee Maker',
-    iconClass: 'nb-coffee-maker',
+  
+  apiResponseCard: CardSettings = {
+    title: 'API Response Time',
+    value: '245',
+    unitOfMeasurement: 'ms',
+    iconClass: 'nb-gear',
     type: 'warning',
   };
 
-  statusCards: string;
+  statusCards: CardSettings[];
 
   commonStatusCardsSet: CardSettings[] = [
-    this.lightCard,
-    this.rollerShadesCard,
-    this.wirelessAudioCard,
-    this.coffeeMakerCard,
+    this.verificationCard,
+    this.matchRateCard,
+    this.countriesCard,
+    this.apiResponseCard,
   ];
 
   statusCardsByThemes: {
@@ -54,42 +66,20 @@ export class DashboardComponent implements OnDestroy {
     cosmic: CardSettings[];
     corporate: CardSettings[];
     dark: CardSettings[];
+    marketsoft: CardSettings[];
   } = {
     default: this.commonStatusCardsSet,
     cosmic: this.commonStatusCardsSet,
-    corporate: [
-      {
-        ...this.lightCard,
-        type: 'warning',
-      },
-      {
-        ...this.rollerShadesCard,
-        type: 'primary',
-      },
-      {
-        ...this.wirelessAudioCard,
-        type: 'danger',
-      },
-      {
-        ...this.coffeeMakerCard,
-        type: 'info',
-      },
-    ],
+    corporate: this.commonStatusCardsSet,
     dark: this.commonStatusCardsSet,
+    marketsoft: this.commonStatusCardsSet,
   };
 
-  constructor(private themeService: NbThemeService,
-              private solarService: SolarData) {
+  constructor(private themeService: NbThemeService) {
     this.themeService.getJsTheme()
       .pipe(takeWhile(() => this.alive))
       .subscribe(theme => {
         this.statusCards = this.statusCardsByThemes[theme.name];
-    });
-
-    this.solarService.getSolarData()
-      .pipe(takeWhile(() => this.alive))
-      .subscribe((data) => {
-        this.solarValue = data;
       });
   }
 

@@ -1,0 +1,47 @@
+<nb-card>
+  <nb-card-header>
+    <h6>Regional Pricing</h6>
+  </nb-card-header>
+  <nb-card-body>
+    <div class="pricing-tiers">
+      <div class="tier" *ngFor="let tier of pricingTiers">
+        <div class="tier-header">
+          <span class="region-flag">{{ tier.flag }}</span>
+          <h6 class="region-name">{{ tier.region }}</h6>
+        </div>
+        
+        <div class="pricing-details">
+          <div class="base-price">
+            <span class="currency">{{ tier.currency }}</span>
+            <span class="price">${{ tier.basePrice }}</span>
+            <span class="period">/month</span>
+          </div>
+          
+          <div class="per-verification">
+            <span class="label">Per verification:</span>
+            <span class="value">${{ tier.perVerification }}</span>
+          </div>
+          
+          <div class="volume-discount">
+            <nb-icon icon="pricetags-outline" pack="eva"></nb-icon>
+            <span>{{ tier.volumeDiscount }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="features">
+      <h6>All plans include:</h6>
+      <ul>
+        <li *ngFor="let feature of features">
+          <nb-icon icon="checkmark-outline" pack="eva" status="success"></nb-icon>
+          {{ feature }}
+        </li>
+      </ul>
+    </div>
+    
+    <button nbButton fullWidth status="primary">
+      Contact Sales
+    </button>
+  </nb-card-body>
+</nb-card>

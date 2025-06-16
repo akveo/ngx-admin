@@ -1,0 +1,258 @@
+<div class="row">
+  <div class="col-12 col-lg-8">
+    <nb-card>
+      <nb-card-header>
+        <h5>Identity Verification - Manual Lookup</h5>
+      </nb-card-header>
+      <nb-card-body>
+        <form [formGroup]="identityForm" (ngSubmit)="onSubmit()">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="firstName" class="label">First Name *</label>
+                <input nbInput 
+                       fullWidth 
+                       id="firstName"
+                       formControlName="firstName" 
+                       placeholder="Enter first name"
+                       status="basic"
+                       [status]="identityForm.get('firstName').invalid && identityForm.get('firstName').touched ? 'danger' : 'basic'">
+                <span class="error-message" *ngIf="identityForm.get('firstName').invalid && identityForm.get('firstName').touched">
+                  First name is required
+                </span>
+              </div>
+            </div>
+            
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="lastName" class="label">Last Name *</label>
+                <input nbInput 
+                       fullWidth 
+                       id="lastName"
+                       formControlName="lastName" 
+                       placeholder="Enter last name"
+                       [status]="identityForm.get('lastName').invalid && identityForm.get('lastName').touched ? 'danger' : 'basic'">
+                <span class="error-message" *ngIf="identityForm.get('lastName').invalid && identityForm.get('lastName').touched">
+                  Last name is required
+                </span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="dateOfBirth" class="label">Date of Birth *</label>
+                <input nbInput 
+                       fullWidth 
+                       id="dateOfBirth"
+                       type="date"
+                       formControlName="dateOfBirth" 
+                       placeholder="YYYY-MM-DD"
+                       [status]="identityForm.get('dateOfBirth').invalid && identityForm.get('dateOfBirth').touched ? 'danger' : 'basic'">
+                <span class="error-message" *ngIf="identityForm.get('dateOfBirth').invalid && identityForm.get('dateOfBirth').touched">
+                  Date of birth is required
+                </span>
+              </div>
+            </div>
+            
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="country" class="label">Country *</label>
+                <nb-select fullWidth 
+                           id="country"
+                           formControlName="country" 
+                           placeholder="Select Country"
+                           [status]="identityForm.get('country').invalid && identityForm.get('country').touched ? 'danger' : 'basic'">
+                  <nb-option value="australia">Australia</nb-option>
+                  <nb-option value="indonesia">Indonesia</nb-option>
+                  <nb-option value="japan">Japan</nb-option>
+                  <nb-option value="malaysia">Malaysia</nb-option>
+                </nb-select>
+                <span class="error-message" *ngIf="identityForm.get('country').invalid && identityForm.get('country').touched">
+                  Please select a country
+                </span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="identificationNumber" class="label">ID Number</label>
+                <input nbInput 
+                       fullWidth 
+                       id="identificationNumber"
+                       formControlName="identificationNumber" 
+                       placeholder="Enter identification number"
+                       status="basic">
+                <span class="hint-text">Optional: National ID, Passport, or Driver's License</span>
+              </div>
+            </div>
+            
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="email" class="label">Email</label>
+                <input nbInput 
+                       fullWidth 
+                       id="email"
+                       type="email"
+                       formControlName="email" 
+                       placeholder="Enter email address"
+                       [status]="identityForm.get('email').invalid && identityForm.get('email').touched ? 'danger' : 'basic'">
+                <span class="error-message" *ngIf="identityForm.get('email').invalid && identityForm.get('email').touched">
+                  Please enter a valid email
+                </span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="phone" class="label">Phone Number</label>
+                <input nbInput 
+                       fullWidth 
+                       id="phone"
+                       formControlName="phone" 
+                       placeholder="Enter phone number"
+                       status="basic">
+              </div>
+            </div>
+            
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="address" class="label">Address</label>
+                <input nbInput 
+                       fullWidth 
+                       id="address"
+                       formControlName="address" 
+                       placeholder="Enter address"
+                       status="basic">
+              </div>
+            </div>
+          </div>
+          
+          <div class="row mt-4">
+            <div class="col-12">
+              <button nbButton 
+                      fullWidth 
+                      status="primary" 
+                      size="large"
+                      [disabled]="identityForm.invalid || isSubmitting"
+                      [nbSpinner]="isSubmitting"
+                      nbSpinnerStatus="primary"
+                      nbSpinnerSize="small">
+                <nb-icon icon="search-outline" *ngIf="!isSubmitting"></nb-icon>
+                {{ isSubmitting ? 'Verifying...' : 'Verify Identity' }}
+              </button>
+            </div>
+          </div>
+        </form>
+      </nb-card-body>
+    </nb-card>
+  </div>
+  
+  <div class="col-12 col-lg-4">
+    <nb-card *ngIf="!result" class="info-card">
+      <nb-card-header>
+        <h6>Verification Tips</h6>
+      </nb-card-header>
+      <nb-card-body>
+        <nb-list>
+          <nb-list-item>
+            <nb-icon icon="checkmark-circle-outline" status="success"></nb-icon>
+            <span>Use full legal names as they appear on official documents</span>
+          </nb-list-item>
+          <nb-list-item>
+            <nb-icon icon="checkmark-circle-outline" status="success"></nb-icon>
+            <span>Ensure date format is YYYY-MM-DD</span>
+          </nb-list-item>
+          <nb-list-item>
+            <nb-icon icon="checkmark-circle-outline" status="success"></nb-icon>
+            <span>Include middle names if available</span>
+          </nb-list-item>
+          <nb-list-item>
+            <nb-icon icon="checkmark-circle-outline" status="success"></nb-icon>
+            <span>Double-check spelling and formatting</span>
+          </nb-list-item>
+        </nb-list>
+      </nb-card-body>
+    </nb-card>
+
+    <nb-card *ngIf="result" class="result-card">
+      <nb-card-header>
+        <h6>Verification Results</h6>
+      </nb-card-header>
+      <nb-card-body>
+        <div class="match-result">
+          <h6>Overall Match Confidence</h6>
+          <nb-progress-bar [value]="result.overallMatch" 
+                          [status]="getMatchStatus(result.overallMatch)" 
+                          [displayValue]="true"
+                          size="large">
+          </nb-progress-bar>
+        </div>
+        
+        <div class="field-matches mt-4">
+          <h6>Field-level Match Breakdown</h6>
+          
+          <div class="field-match-item">
+            <div class="match-header">
+              <span>Name</span>
+              <span class="match-value">{{ result.fieldMatches.name }}%</span>
+            </div>
+            <nb-progress-bar [value]="result.fieldMatches.name" 
+                            size="tiny" 
+                            [status]="getMatchStatus(result.fieldMatches.name)">
+            </nb-progress-bar>
+          </div>
+          
+          <div class="field-match-item">
+            <div class="match-header">
+              <span>Date of Birth</span>
+              <span class="match-value">{{ result.fieldMatches.dateOfBirth }}%</span>
+            </div>
+            <nb-progress-bar [value]="result.fieldMatches.dateOfBirth" 
+                            size="tiny" 
+                            [status]="getMatchStatus(result.fieldMatches.dateOfBirth)">
+            </nb-progress-bar>
+          </div>
+          
+          <div class="field-match-item">
+            <div class="match-header">
+              <span>Address</span>
+              <span class="match-value">{{ result.fieldMatches.address }}%</span>
+            </div>
+            <nb-progress-bar [value]="result.fieldMatches.address" 
+                            size="tiny" 
+                            [status]="getMatchStatus(result.fieldMatches.address)">
+            </nb-progress-bar>
+          </div>
+          
+          <div class="field-match-item">
+            <div class="match-header">
+              <span>Identification</span>
+              <span class="match-value">{{ result.fieldMatches.identification }}%</span>
+            </div>
+            <nb-progress-bar [value]="result.fieldMatches.identification" 
+                            size="tiny" 
+                            [status]="getMatchStatus(result.fieldMatches.identification)">
+            </nb-progress-bar>
+          </div>
+        </div>
+
+        <div class="action-buttons">
+          <button nbButton fullWidth status="info" size="medium">
+            <nb-icon icon="download-outline"></nb-icon>
+            Download Report
+          </button>
+          <button nbButton fullWidth status="basic" size="medium" (click)="resetForm()">
+            <nb-icon icon="refresh-outline"></nb-icon>
+            New Verification
+          </button>
+        </div>
+      </nb-card-body>
+    </nb-card>
+  </div>
+</div>

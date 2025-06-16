@@ -1,0 +1,108 @@
+@import '../../@theme/styles/themes';
+
+@include nb-install-component() {
+  .subtitle {
+    color: nb-theme(text-hint-color);
+    margin: 0;
+  }
+
+  .section-title {
+    margin: 2rem 0 1rem 0;
+    font-weight: 600;
+    color: nb-theme(text-basic-color);
+  }
+
+  .country-card {
+    height: 100%;
+    transition: all 0.3s ease;
+
+    &:hover:not(.coming-soon) {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    }
+
+    &.coming-soon {
+      opacity: 0.8;
+    }
+
+    .country-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .country-title {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+
+        .flag {
+          font-size: 2rem;
+        }
+
+        h6 {
+          margin: 0;
+          font-weight: 600;
+        }
+      }
+    }
+
+    .country-stats {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      padding: 1rem;
+      background: nb-theme(background-basic-color-2);
+      border-radius: nb-theme(card-border-radius);
+
+      .stat {
+        display: flex;
+        flex-direction: column;
+
+        .label {
+          font-size: 0.75rem;
+          color: nb-theme(text-hint-color);
+          margin-bottom: 0.25rem;
+        }
+
+        .value {
+          font-size: 1.25rem;
+          font-weight: 600;
+          color: nb-theme(text-basic-color);
+        }
+      }
+    }
+
+    .features,
+    .regulations {
+      margin-bottom: 1.5rem;
+
+      h6 {
+        font-size: 0.875rem;
+        font-weight: 600;
+        margin: 0 0 0.75rem 0;
+        color: nb-theme(text-basic-color);
+      }
+
+      .feature-tags,
+      .regulation-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+
+        .tag {
+          display: inline-block;
+          padding: 0.25rem 0.75rem;
+          font-size: 0.75rem;
+          background: nb-theme(background-basic-color-3);
+          border-radius: 1rem;
+          color: nb-theme(text-hint-color);
+        }
+      }
+    }
+
+    nb-card-footer {
+      padding: 1rem;
+    }
+  }
+}

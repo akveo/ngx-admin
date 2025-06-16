@@ -1,0 +1,27 @@
+<nb-card>
+  <nb-card-header>
+    <h6>Why IdentityPulse is Different</h6>
+  </nb-card-header>
+  <nb-card-body>
+    <div class="differentiators-grid">
+      <div class="differentiator" *ngFor="let item of differentiators">
+        <div class="icon-wrapper">
+          <nb-icon [icon]="item.icon" pack="eva"></nb-icon>
+        </div>
+        
+        <div class="content">
+          <h6 class="title">{{ item.title }}</h6>
+          <p class="description">{{ item.description }}</p>
+          <span class="metric" *ngIf="item.metric">{{ item.metric }}</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="cta-section">
+      <p class="cta-text">Experience the difference with a live demo</p>
+      <button nbButton status="primary" fullWidth>
+        Schedule Demo
+      </button>
+    </div>
+  </nb-card-body>
+</nb-card>

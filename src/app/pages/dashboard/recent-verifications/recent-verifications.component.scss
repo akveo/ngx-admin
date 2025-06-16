@@ -1,0 +1,101 @@
+@import '../../../@theme/styles/themes';
+
+@include nb-install-component() {
+  nb-card {
+    height: 450px;
+  }
+
+  nb-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h6 {
+      margin: 0;
+      font-weight: 600;
+    }
+  }
+
+  nb-card-body {
+    padding: 0;
+    overflow-y: auto;
+  }
+
+  nb-list {
+    margin: 0;
+  }
+
+  nb-list-item {
+    padding: 0;
+    border: none;
+
+    &:hover {
+      background-color: nb-theme(background-basic-color-2);
+    }
+  }
+
+  .verification-item {
+    padding: 1rem;
+    border-bottom: 1px solid nb-theme(border-basic-color-3);
+  }
+
+  .verification-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+
+    .country-info {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+
+      .country-flag {
+        font-size: 1.25rem;
+      }
+
+      .country-name {
+        font-weight: 600;
+        color: nb-theme(text-basic-color);
+      }
+    }
+
+    .timestamp {
+      font-size: 0.75rem;
+      color: nb-theme(text-hint-color);
+    }
+  }
+
+  .verification-details {
+    .type-and-id {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.5rem;
+
+      .type {
+        font-size: 0.875rem;
+        color: nb-theme(text-hint-color);
+      }
+
+      .id {
+        font-size: 0.75rem;
+        color: nb-theme(text-hint-color);
+        font-family: monospace;
+      }
+    }
+
+    .score-and-status {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+
+      nb-progress-bar {
+        flex: 1;
+      }
+
+      nb-icon {
+        font-size: 1.25rem;
+      }
+    }
+  }
+}

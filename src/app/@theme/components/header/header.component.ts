@@ -34,9 +34,13 @@ export class HeaderComponent implements OnInit, OnDestroy {
       value: 'corporate',
       name: 'Corporate',
     },
+    {
+      value: 'marketsoft',
+      name: 'Marketsoft',
+    },
   ];
 
-  currentTheme = 'default';
+  currentTheme = 'marketsoft';
 
   userMenu = [ { title: 'Profile' }, { title: 'Log out' } ];
 

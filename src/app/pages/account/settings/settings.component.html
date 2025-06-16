@@ -1,0 +1,101 @@
+<div class="row">
+  <div class="col-12">
+    <nb-card>
+      <nb-card-header>
+        <h5>Account Settings</h5>
+      </nb-card-header>
+      <nb-card-body>
+        <form [formGroup]="settingsForm" (ngSubmit)="onSubmit()">
+          <h6 class="section-title">Notifications</h6>
+          <div class="settings-section">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <div class="custom-control custom-switch">
+                    <input type="checkbox" class="custom-control-input" id="emailNotifications" formControlName="emailNotifications">
+                    <label class="custom-control-label" for="emailNotifications">Email Notifications</label>
+                  </div>
+                  <small class="form-text text-muted">Receive verification results and updates via email</small>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <div class="custom-control custom-switch">
+                    <input type="checkbox" class="custom-control-input" id="smsNotifications" formControlName="smsNotifications">
+                    <label class="custom-control-label" for="smsNotifications">SMS Notifications</label>
+                  </div>
+                  <small class="form-text text-muted">Receive verification results and updates via SMS</small>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <h6 class="section-title">Security</h6>
+          <div class="settings-section">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <div class="custom-control custom-switch">
+                    <input type="checkbox" class="custom-control-input" id="twoFactorAuth" formControlName="twoFactorAuth">
+                    <label class="custom-control-label" for="twoFactorAuth">Two-Factor Authentication</label>
+                  </div>
+                  <small class="form-text text-muted">Enable 2FA for additional security</small>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="dataRetention">Data Retention</label>
+                  <select class="form-control" id="dataRetention" formControlName="dataRetention">
+                    <option value="7days">7 Days</option>
+                    <option value="30days">30 Days</option>
+                    <option value="90days">90 Days</option>
+                    <option value="1year">1 Year</option>
+                  </select>
+                  <small class="form-text text-muted">How long to keep your verification results</small>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <h6 class="section-title">Appearance</h6>
+          <div class="settings-section">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="theme">Theme</label>
+                  <select class="form-control" id="theme" formControlName="theme">
+                    <option value="default">Default</option>
+                    <option value="dark">Dark</option>
+                    <option value="cosmic">Cosmic</option>
+                    <option value="corporate">Corporate</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="language">Language</label>
+                  <select class="form-control" id="language" formControlName="language">
+                    <option value="en">English</option>
+                    <option value="es">Spanish</option>
+                    <option value="fr">French</option>
+                    <option value="de">German</option>
+                    <option value="zh">Chinese</option>
+                    <option value="ja">Japanese</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="row mt-4">
+            <div class="col-12 text-center">
+              <button nbButton status="primary">
+                <nb-icon icon="save-outline"></nb-icon> Save Settings
+              </button>
+            </div>
+          </div>
+        </form>
+      </nb-card-body>
+    </nb-card>
+  </div>
+</div>

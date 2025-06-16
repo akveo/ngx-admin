@@ -38,6 +38,7 @@ import { DEFAULT_THEME } from './styles/theme.default';
 import { COSMIC_THEME } from './styles/theme.cosmic';
 import { CORPORATE_THEME } from './styles/theme.corporate';
 import { DARK_THEME } from './styles/theme.dark';
+import { MARKETSOFT_THEME } from './styles/theme.marketsoft'; // Import the new theme
 
 const NB_MODULES = [
   NbLayoutModule,
@@ -82,9 +83,9 @@ export class ThemeModule {
       providers: [
         ...NbThemeModule.forRoot(
           {
-            name: 'default',
+            name: 'marketsoft', // Set marketsoft as the default theme
           },
-          [ DEFAULT_THEME, COSMIC_THEME, CORPORATE_THEME, DARK_THEME ],
+          [ DEFAULT_THEME, COSMIC_THEME, CORPORATE_THEME, DARK_THEME, MARKETSOFT_THEME ], // Add MARKETSOFT_THEME to the themes array
         ).providers,
       ],
     };

@@ -1,0 +1,40 @@
+<nb-card>
+  <nb-card-header>
+    <h5>Verification Results History</h5>
+  </nb-card-header>
+  <nb-card-body>
+    <div class="table-responsive">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Date/Time</th>
+            <th>Country</th>
+            <th>Match Score</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let lookup of recentLookups">
+            <td>{{ lookup.date }}</td>
+            <td>{{ lookup.country }}</td>
+            <td>
+              <nb-progress-bar [value]="lookup.score" size="tiny" [status]="getStatusClass(lookup.status)" [displayValue]="true"></nb-progress-bar>
+            </td>
+            <td>
+              <span class="badge badge-{{ getStatusClass(lookup.status) }}">{{ lookup.status }}</span>
+            </td>
+            <td>
+              <button nbButton ghost size="small" status="info" title="View Details">
+                <nb-icon icon="eye-outline"></nb-icon>
+              </button>
+              <button nbButton ghost size="small" status="primary" title="Download Report">
+                <nb-icon icon="download-outline"></nb-icon>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </nb-card-body>
+</nb-card>

@@ -1,0 +1,44 @@
+<nb-card size="large">
+  <nb-card-header>
+    <span>Country Coverage & Availability</span>
+    <nb-select [(selected)]="selectedRegion" class="region-select">
+      <nb-option value="all">All Regions</nb-option>
+      <nb-option value="apac">APAC</nb-option>
+      <nb-option value="mena">MENA</nb-option>
+      <nb-option value="europe">Europe</nb-option>
+    </nb-select>
+  </nb-card-header>
+  
+  <nb-card-body>
+    <div class="country-list">
+      <div class="country-item" *ngFor="let country of countries">
+        <div class="country-header">
+          <div class="country-info">
+            <h6 class="country-name">{{ country.name }}</h6>
+            <nb-icon 
+              [icon]="getStatusIcon(country.status)" 
+              [status]="getStatusColor(country.status)"
+              pack="eva">
+            </nb-icon>
+          </div>
+          <div class="country-stats">
+            <span class="records">{{ country.records }} records</span>
+            <span class="update-freq">{{ country.updateFrequency }} updates</span>
+          </div>
+        </div>
+        
+        <div class="coverage-section">
+          <div class="coverage-header">
+            <span class="coverage-label">Coverage</span>
+            <span class="coverage-value">{{ country.coverage }}%</span>
+          </div>
+          <nb-progress-bar 
+            [value]="country.coverage" 
+            [status]="getCoverageStatus(country.coverage)"
+            size="tiny">
+          </nb-progress-bar>
+        </div>
+      </div>
+    </div>
+  </nb-card-body>
+</nb-card>

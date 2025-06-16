@@ -1,0 +1,137 @@
+@import '../../../@theme/styles/themes';
+@import 'bootstrap/scss/mixins/breakpoints';
+@import '@nebular/theme/styles/global/breakpoints';
+
+@include nb-install-component() {
+  nb-card {
+    height: 100%;
+  }
+
+  nb-card-header {
+    h6 {
+      margin: 0;
+      font-weight: 600;
+    }
+  }
+
+  .clients-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-bottom: 2rem;
+
+    @include media-breakpoint-down(sm) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .client-card {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    border: 1px solid nb-theme(border-basic-color-3);
+    border-radius: nb-theme(card-border-radius);
+    transition: all 0.3s ease;
+    cursor: pointer;
+
+    &:hover {
+      border-color: nb-theme(color-primary-default);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  .client-logo {
+    flex-shrink: 0;
+    width: 60px;
+    height: 60px;
+    margin-right: 1rem;
+
+    .logo-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: nb-theme(background-basic-color-3);
+      border-radius: nb-theme(card-border-radius);
+      font-size: 0.625rem;
+      font-weight: 600;
+      text-align: center;
+      padding: 0.5rem;
+      color: nb-theme(text-hint-color);
+    }
+  }
+
+  .client-info {
+    flex: 1;
+    min-width: 0;
+
+    .client-name {
+      margin: 0 0 0.25rem 0;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: nb-theme(text-basic-color);
+    }
+
+    .client-industry {
+      display: inline-block;
+      font-size: 0.75rem;
+      color: nb-theme(text-hint-color);
+      margin-bottom: 0.5rem;
+    }
+
+    .client-description {
+      font-size: 0.75rem;
+      color: nb-theme(text-hint-color);
+      margin: 0 0 0.5rem 0;
+      display: none;
+
+      @include media-breakpoint-up(lg) {
+        display: block;
+      }
+    }
+
+    .verification-count {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+      font-size: 0.75rem;
+      color: nb-theme(color-success-default);
+
+      nb-icon {
+        font-size: 1rem;
+      }
+    }
+  }
+
+  .showcase-footer {
+    border-top: 1px solid nb-theme(border-basic-color-3);
+    padding-top: 1.5rem;
+    margin-top: 1rem;
+  }
+
+  .trust-metrics {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    text-align: center;
+
+    .metric {
+      display: flex;
+      flex-direction: column;
+      
+      .metric-value {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: nb-theme(color-primary-default);
+        margin-bottom: 0.25rem;
+      }
+
+      .metric-label {
+        font-size: 0.75rem;
+        color: nb-theme(text-hint-color);
+      }
+    }
+  }
+}

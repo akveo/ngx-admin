@@ -9,6 +9,7 @@ import {
   NbSelectModule,
   NbListModule,
   NbIconModule,
+  NbProgressBarModule,
 } from '@nebular/theme';
 import { NgxEchartsModule } from 'ngx-echarts';
 
@@ -31,6 +32,19 @@ import { TrafficComponent } from './traffic/traffic.component';
 import { TrafficChartComponent } from './traffic/traffic-chart.component';
 import { FormsModule } from '@angular/forms';
 
+// IdentityPulse components
+import { MetricCardComponent } from './metric-card/metric-card.component';
+import { CountryCoverageComponent } from './country-coverage/country-coverage.component';
+import { ClientShowcaseComponent } from './client-showcase/client-showcase.component';
+import { DataCentersMapComponent } from './data-centers-map/data-centers-map.component';
+import { RecentVerificationsComponent } from './recent-verifications/recent-verifications.component';
+import { PricingRegionsComponent } from './pricing-regions/pricing-regions.component';
+import { ComplianceSummaryComponent } from './compliance-summary/compliance-summary.component';
+import { DifferentiatorsComponent } from './differentiators/differentiators.component';
+
+// Note: ECharts is already available globally through ngx-echarts
+// The world map is registered by ngx-admin's theme module
+
 @NgModule({
   imports: [
     FormsModule,
@@ -45,6 +59,7 @@ import { FormsModule } from '@angular/forms';
     NbListModule,
     NbIconModule,
     NbButtonModule,
+    NbProgressBarModule,
     NgxEchartsModule,
   ],
   declarations: [
@@ -64,6 +79,15 @@ import { FormsModule } from '@angular/forms';
     SolarComponent,
     TrafficComponent,
     TrafficChartComponent,
+    // IdentityPulse components
+    MetricCardComponent,
+    CountryCoverageComponent,
+    ClientShowcaseComponent,
+    DataCentersMapComponent,
+    RecentVerificationsComponent,
+    PricingRegionsComponent,
+    ComplianceSummaryComponent,
+    DifferentiatorsComponent,
   ],
 })
 export class DashboardModule { }

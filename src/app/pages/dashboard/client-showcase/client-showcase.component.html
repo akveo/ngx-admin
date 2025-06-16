@@ -1,0 +1,42 @@
+<nb-card>
+  <nb-card-header>
+    <h6>Trusted by Industry Leaders</h6>
+  </nb-card-header>
+  <nb-card-body>
+    <div class="clients-grid">
+      <div class="client-card" *ngFor="let client of clients">
+        <div class="client-logo">
+          <div class="logo-placeholder">
+            {{ client.name }}
+          </div>
+        </div>
+        <div class="client-info">
+          <h6 class="client-name">{{ client.name }}</h6>
+          <span class="client-industry">{{ client.industry }}</span>
+          <p class="client-description">{{ client.description }}</p>
+          <div class="verification-count">
+            <nb-icon icon="checkmark-circle-2-outline" pack="eva"></nb-icon>
+            <span>{{ client.verifications }} verifications</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="showcase-footer">
+      <div class="trust-metrics">
+        <div class="metric">
+          <span class="metric-value">50+</span>
+          <span class="metric-label">Enterprise Clients</span>
+        </div>
+        <div class="metric">
+          <span class="metric-value">15M+</span>
+          <span class="metric-label">Monthly Verifications</span>
+        </div>
+        <div class="metric">
+          <span class="metric-value">99.9%</span>
+          <span class="metric-label">Uptime SLA</span>
+        </div>
+      </div>
+    </div>
+  </nb-card-body>
+</nb-card>

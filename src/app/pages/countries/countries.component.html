@@ -1,0 +1,119 @@
+<div class="row">
+  <div class="col-12">
+    <nb-card>
+      <nb-card-header>
+        <h5>Supported Countries & Regions</h5>
+      </nb-card-header>
+      <nb-card-body>
+        <p class="subtitle">IdentityPulse provides comprehensive identity verification coverage across Asia-Pacific and expanding into the Middle East.</p>
+      </nb-card-body>
+    </nb-card>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-12">
+    <h6 class="section-title">Active Countries</h6>
+  </div>
+  <div class="col-lg-6 col-xl-4" *ngFor="let country of activeCountries">
+    <nb-card class="country-card" [class.active]="country.status === 'active'">
+      <nb-card-header>
+        <div class="country-header">
+          <div class="country-title">
+            <span class="flag">{{ country.flag }}</span>
+            <h6>{{ country.name }}</h6>
+          </div>
+          <nb-badge [text]="country.status" status="success"></nb-badge>
+        </div>
+      </nb-card-header>
+      <nb-card-body>
+        <div class="country-stats">
+          <div class="stat">
+            <span class="label">Coverage</span>
+            <span class="value">{{ country.coverage }}%</span>
+          </div>
+          <div class="stat">
+            <span class="label">Population</span>
+            <span class="value">{{ country.population }}</span>
+          </div>
+          <div class="stat">
+            <span class="label">Databases</span>
+            <span class="value">{{ country.databases }}</span>
+          </div>
+          <div class="stat">
+            <span class="label">Updates</span>
+            <span class="value">{{ country.updateFrequency }}</span>
+          </div>
+        </div>
+        
+        <div class="features">
+          <h6>Available Features</h6>
+          <div class="feature-tags">
+            <span class="tag" *ngFor="let feature of country.features">{{ feature }}</span>
+          </div>
+        </div>
+        
+        <div class="regulations">
+          <h6>Compliance</h6>
+          <div class="regulation-tags">
+            <span class="tag" *ngFor="let reg of country.regulations">{{ reg }}</span>
+          </div>
+        </div>
+      </nb-card-body>
+      <nb-card-footer>
+        <button nbButton fullWidth status="primary" routerLink="/pages/identity/manual-lookup" 
+                [queryParams]="{country: country.name.toLowerCase().replace(' ', '-')}">
+          <nb-icon icon="search-outline"></nb-icon>
+          Verify in {{ country.name }}
+        </button>
+      </nb-card-footer>
+    </nb-card>
+  </div>
+</div>
+
+<div class="row" *ngIf="comingSoonCountries.length > 0">
+  <div class="col-12">
+    <h6 class="section-title">Coming Soon</h6>
+  </div>
+  <div class="col-lg-6 col-xl-4" *ngFor="let country of comingSoonCountries">
+    <nb-card class="country-card coming-soon">
+      <nb-card-header>
+        <div class="country-header">
+          <div class="country-title">
+            <span class="flag">{{ country.flag }}</span>
+            <h6>{{ country.name }}</h6>
+          </div>
+          <nb-badge text="coming soon" status="warning"></nb-badge>
+        </div>
+      </nb-card-header>
+      <nb-card-body>
+        <div class="country-stats">
+          <div class="stat">
+            <span class="label">Population</span>
+            <span class="value">{{ country.population }}</span>
+          </div>
+        </div>
+        
+        <div class="features">
+          <h6>Planned Features</h6>
+          <div class="feature-tags">
+            <span class="tag" *ngFor="let feature of country.features">{{ feature }}</span>
+          </div>
+        </div>
+        
+        <div class="regulations">
+          <h6>Target Compliance</h6>
+          <div class="regulation-tags">
+            <span class="tag" *ngFor="let reg of country.regulations">{{ reg }}</span>
+          </div>
+        </div>
+      </nb-card-body>
+      <nb-card-footer>
+        <button nbButton fullWidth status="basic" disabled>
+          <nb-icon icon="clock-outline"></nb-icon>
+          Coming Soon
+        </button>
+      </nb-card-footer>
+    </nb-card>
+  </div>
+</div>

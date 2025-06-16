@@ -1,0 +1,41 @@
+<nb-card>
+  <nb-card-header>
+    <h6>Recent Verifications</h6>
+    <button nbButton ghost size="tiny" status="primary">View All</button>
+  </nb-card-header>
+  <nb-card-body>
+    <nb-list>
+      <nb-list-item *ngFor="let verification of verifications">
+        <div class="verification-item">
+          <div class="verification-header">
+            <div class="country-info">
+              <span class="country-flag">{{ getCountryFlag(verification.country) }}</span>
+              <span class="country-name">{{ verification.country }}</span>
+            </div>
+            <span class="timestamp">{{ getTimeAgo(verification.timestamp) }}</span>
+          </div>
+          
+          <div class="verification-details">
+            <div class="type-and-id">
+              <span class="type">{{ verification.type }}</span>
+              <span class="id">{{ verification.id }}</span>
+            </div>
+            <div class="score-and-status">
+              <nb-progress-bar 
+                [value]="verification.matchScore" 
+                [status]="getStatusColor(verification.status)"
+                size="tiny"
+                [displayValue]="true">
+              </nb-progress-bar>
+              <nb-icon 
+                [icon]="getStatusIcon(verification.status)" 
+                [status]="getStatusColor(verification.status)"
+                pack="eva">
+              </nb-icon>
+            </div>
+          </div>
+        </div>
+      </nb-list-item>
+    </nb-list>
+  </nb-card-body>
+</nb-card>

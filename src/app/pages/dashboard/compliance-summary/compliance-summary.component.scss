@@ -1,0 +1,92 @@
+@import '../../../@theme/styles/themes';
+
+@include nb-install-component() {
+  nb-card-header h6 {
+    margin: 0;
+    font-weight: 600;
+  }
+
+  .compliance-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .compliance-item {
+    padding: 1rem;
+    border: 1px solid nb-theme(border-basic-color-3);
+    border-radius: nb-theme(card-border-radius);
+
+    .item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.5rem;
+
+      .region {
+        font-weight: 600;
+        color: nb-theme(text-basic-color);
+      }
+
+      nb-icon {
+        font-size: 1.25rem;
+      }
+    }
+
+    .regulations {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 0.75rem;
+
+      .regulation {
+        font-size: 0.75rem;
+        padding: 0.25rem 0.5rem;
+        background: nb-theme(background-basic-color-3);
+        border-radius: nb-theme(border-radius);
+        color: nb-theme(text-hint-color);
+      }
+    }
+
+    .hosting-model {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.875rem;
+      color: nb-theme(text-hint-color);
+
+      nb-icon {
+        font-size: 1rem;
+      }
+    }
+  }
+
+  .certifications {
+    h6 {
+      margin: 0 0 0.75rem 0;
+      font-weight: 600;
+      color: nb-theme(text-basic-color);
+    }
+
+    .cert-badges {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+
+      .badge {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.5rem;
+        background: nb-theme(background-basic-color-2);
+        border-radius: nb-theme(card-border-radius);
+        font-size: 0.875rem;
+
+        nb-icon {
+          font-size: 1.25rem;
+        }
+      }
+    }
+  }
+}

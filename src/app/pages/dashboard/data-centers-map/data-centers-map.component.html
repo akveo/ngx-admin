@@ -1,0 +1,38 @@
+<nb-card>
+  <nb-card-header>
+    <div class="header-container">
+      <h6>Global Identity Verification Coverage</h6>
+      <div class="legend">
+        <span class="legend-item">
+          <span class="dot online"></span>
+          Online
+        </span>
+        <span class="legend-item">
+          <span class="dot maintenance"></span>
+          Maintenance
+        </span>
+        <span class="legend-item">
+          <span class="dot offline"></span>
+          Offline
+        </span>
+      </div>
+    </div>
+  </nb-card-header>
+  <nb-card-body>
+    <div id="map" class="map-container"></div>
+    <div class="map-stats">
+      <div class="stat">
+        <nb-icon icon="globe-2-outline" pack="eva"></nb-icon>
+        <span>{{ getCountryCount() }} Countries</span>
+      </div>
+      <div class="stat">
+        <nb-icon icon="hard-drive-outline" pack="eva"></nb-icon>
+        <span>{{ getTotalDatabases() }} Databases</span>
+      </div>
+      <div class="stat">
+        <nb-icon icon="activity-outline" pack="eva"></nb-icon>
+        <span>{{ getOnlineCount() }} Online</span>
+      </div>
+    </div>
+  </nb-card-body>
+</nb-card>
