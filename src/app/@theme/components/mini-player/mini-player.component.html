@@ -1,0 +1,54 @@
+<div class="mini-player" *ngIf="currentSong" role="region" aria-label="Reproductor de música">
+
+  <!-- Artwork -->
+  <div class="player-art-wrapper">
+    <img [src]="currentSong.artworkUrl100"
+         [alt]="currentSong.trackName"
+         class="player-art"
+         [class.rotating]="isPlaying">
+  </div>
+
+  <!-- Song info -->
+  <div class="player-info">
+    <span class="song-name" [title]="currentSong.trackName">{{ currentSong.trackName }}</span>
+    <span class="artist-name" [title]="currentSong.artistName">{{ currentSong.artistName }}</span>
+  </div>
+
+  <!-- Progress bar (hidden on mobile) -->
+  <div class="player-progress" aria-label="Barra de progreso">
+    <span class="time-label">{{ formatTime(progress) }}</span>
+    <input type="range"
+           class="progress-slider"
+           [min]="0"
+           [max]="duration || 100"
+           [value]="progress"
+           [style.background]="'linear-gradient(to right, var(--color-primary-500) ' + progressPercent + '%, var(--color-basic-400) ' + progressPercent + '%)'"
+           (input)="onSeek($event)"
+           aria-label="Progreso de reproducción">
+    <span class="time-label">{{ formatTime(duration) }}</span>
+  </div>
+
+  <!-- Controls -->
+  <div class="player-controls">
+    <!-- Play / Pause / Loading -->
+    <button nbButton ghost status="primary"
+            (click)="player.toggle(currentSong)"
+            [title]="isPlaying ? 'Pausar' : 'Reproducir'"
+            class="control-btn main-btn"
+            [disabled]="isLoading">
+      <nb-icon [icon]="playIcon" [class.spin]="isLoading"></nb-icon>
+    </button>
+
+    <!-- Stop -->
+    <button nbButton ghost status="basic"
+            (click)="player.stop()"
+            title="Detener"
+            class="control-btn">
+      <nb-icon icon="square-outline"></nb-icon>
+    </button>
+  </div>
+
+  <!-- Preview label -->
+  <span class="preview-label">PREVIEW 30s</span>
+
+</div>

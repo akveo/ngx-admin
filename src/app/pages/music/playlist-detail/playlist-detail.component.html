@@ -1,0 +1,37 @@
+<nb-card *ngIf="playlist">
+  <nb-card-header>
+    <div class="header-row">
+      <a routerLink="/pages/music/playlists" nbButton ghost size="small">
+        <nb-icon icon="arrow-back-outline"></nb-icon>
+      </a>
+      <h5>{{ playlist.name }}</h5>
+      <nb-badge [text]="playlist.songs.length + ' canciones'" status="primary"></nb-badge>
+    </div>
+  </nb-card-header>
+  <nb-card-body>
+    <div *ngIf="playlist.songs.length === 0" class="empty-state">
+      <nb-icon icon="music-outline" class="big-icon"></nb-icon>
+      <p>Esta playlist está vacía.</p>
+      <a routerLink="/pages/music/catalog" nbButton status="primary" ghost>Agregar canciones</a>
+    </div>
+    <div class="songs-list">
+      <div *ngFor="let song of playlist.songs; let i = index; trackBy: trackBySong"
+           class="song-row" [class.playing]="player.currentSongValue?.trackId === song.trackId && (player.isPlaying$ | async)">
+        <span class="track-num">{{ i + 1 }}</span>
+        <img [src]="song.artworkUrl100" [alt]="song.trackName" class="track-art">
+        <div class="track-info">
+          <strong>{{ song.trackName }}</strong>
+          <small>{{ song.artistName }}</small>
+        </div>
+        <div class="track-actions">
+          <button nbButton ghost size="small" status="primary" (click)="player.toggle(song)">
+            <nb-icon [icon]="(player.currentSongValue?.trackId === song.trackId && (player.isPlaying$ | async)) ? 'pause-circle-outline' : 'play-circle-outline'"></nb-icon>
+          </button>
+          <button nbButton ghost size="small" status="danger" (click)="removeSong(song.trackId)">
+            <nb-icon icon="trash-2-outline"></nb-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nb-card-body>
+</nb-card>

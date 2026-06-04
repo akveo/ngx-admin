@@ -1,0 +1,84 @@
+<nb-card>
+  <nb-card-header>
+    <div class="header-row">
+      <div>
+        <h5>Mis Playlists</h5>
+        <p class="subtitle">{{ playlists.length }} playlist(s)</p>
+      </div>
+      <button nbButton status="primary" size="small" (click)="showCreateForm = !showCreateForm">
+        <nb-icon icon="plus-outline"></nb-icon> Nueva Playlist
+      </button>
+    </div>
+  </nb-card-header>
+
+  <nb-card-body>
+    <!-- Create form -->
+    <div *ngIf="showCreateForm" class="create-form">
+      <input nbInput fullWidth
+             [(ngModel)]="newPlaylistName"
+             placeholder="Nombre de la playlist"
+             (keyup.enter)="createPlaylist()">
+      <div class="create-actions">
+        <button nbButton status="primary" size="small" (click)="createPlaylist()"
+                [disabled]="!newPlaylistName.trim()">Crear</button>
+        <button nbButton ghost size="small" (click)="showCreateForm = false">Cancelar</button>
+      </div>
+    </div>
+
+    <!-- Confirm delete dialog -->
+    <div *ngIf="confirmDeleteId" class="modal-backdrop" (click)="cancelDelete()"></div>
+    <nb-card *ngIf="confirmDeleteId" class="confirm-dialog">
+      <nb-card-header>Eliminar playlist</nb-card-header>
+      <nb-card-body>¿Seguro que quieres eliminar esta playlist? Se perderán todas sus canciones.</nb-card-body>
+      <nb-card-footer>
+        <button nbButton status="danger" size="small" (click)="confirmDelete()">Eliminar</button>
+        <button nbButton ghost size="small" (click)="cancelDelete()">Cancelar</button>
+      </nb-card-footer>
+    </nb-card>
+
+    <div *ngIf="playlists.length === 0 && !showCreateForm" class="empty-state">
+      <nb-icon icon="music-outline" class="big-icon"></nb-icon>
+      <p>No tienes playlists aún.</p>
+      <button nbButton status="primary" ghost (click)="showCreateForm = true">Crear mi primera playlist</button>
+    </div>
+
+    <div class="playlists-grid">
+      <nb-card *ngFor="let playlist of playlists; trackBy: trackByPlaylist" class="playlist-card">
+        <nb-card-body>
+          <div class="playlist-icon-wrap">
+            <nb-icon icon="music-outline" status="primary"></nb-icon>
+          </div>
+
+          <!-- Name / Rename inline -->
+          <div class="playlist-meta" *ngIf="renamingId !== playlist.id">
+            <strong class="playlist-name">{{ playlist.name }}</strong>
+            <small>{{ playlist.songs.length }} canción(es) · {{ formatDate(playlist.createdAt) }}</small>
+          </div>
+          <div class="rename-form" *ngIf="renamingId === playlist.id">
+            <input nbInput size="small" [(ngModel)]="renameValue" (keyup.enter)="saveRename()" (keyup.escape)="cancelRename()">
+            <button nbButton ghost size="tiny" status="success" (click)="saveRename()">
+              <nb-icon icon="checkmark-outline"></nb-icon>
+            </button>
+            <button nbButton ghost size="tiny" status="basic" (click)="cancelRename()">
+              <nb-icon icon="close-outline"></nb-icon>
+            </button>
+          </div>
+
+          <div class="playlist-actions">
+            <a nbButton ghost size="small" status="primary"
+               [routerLink]="['/pages/music/playlists', playlist.id]" title="Ver">
+              <nb-icon icon="eye-outline"></nb-icon>
+            </a>
+            <button nbButton ghost size="small" status="basic" (click)="startRename(playlist)" title="Renombrar"
+                    [disabled]="renamingId === playlist.id">
+              <nb-icon icon="edit-2-outline"></nb-icon>
+            </button>
+            <button nbButton ghost size="small" status="danger" (click)="requestDelete(playlist.id)" title="Eliminar">
+              <nb-icon icon="trash-2-outline"></nb-icon>
+            </button>
+          </div>
+        </nb-card-body>
+      </nb-card>
+    </div>
+  </nb-card-body>
+</nb-card>

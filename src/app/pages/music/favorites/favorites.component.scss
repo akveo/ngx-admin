@@ -1,0 +1,20 @@
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+  gap: 1rem;
+  color: nb-theme(text-hint-color);
+}
+
+.big-icon {
+  font-size: 3rem;
+  color: nb-theme(color-danger-400);
+}
+
+.songs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1rem;
+}

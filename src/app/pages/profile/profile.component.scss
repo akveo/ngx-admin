@@ -1,0 +1,85 @@
+.profile-layout {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+
+  @media (max-width: 576px) {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.avatar-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+
+.avatar-wrapper {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.avatar-placeholder {
+  width: 100%;
+  height: 100%;
+  background: nb-theme(color-primary-500);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.avatar-upload-btn {
+  cursor: pointer;
+}
+
+.form-section {
+  flex: 1;
+  min-width: 0;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+}
+
+h6 { margin: 1rem 0 0.75rem; }
+
+.error-msg, .success-msg {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  margin-bottom: 0.75rem;
+}
+
+.error-msg {
+  background: nb-theme(color-danger-100);
+  color: nb-theme(color-danger-600);
+}
+
+.success-msg {
+  background: nb-theme(color-success-100);
+  color: nb-theme(color-success-700);
+}

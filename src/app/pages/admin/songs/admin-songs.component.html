@@ -1,0 +1,90 @@
+<nb-card>
+  <nb-card-header>
+    <h5>Gestión de Canciones</h5>
+    <button nbButton status="primary" size="small" (click)="showAddForm = !showAddForm">
+      <nb-icon icon="plus-outline"></nb-icon> Agregar Canción
+    </button>
+  </nb-card-header>
+
+  <nb-card-body>
+    <!-- Add Form -->
+    <div *ngIf="showAddForm" class="add-form">
+      <h6>Nueva Canción</h6>
+      <div class="form-row">
+        <input nbInput [(ngModel)]="newSong.trackName" placeholder="Título *">
+        <input nbInput [(ngModel)]="newSong.artistName" placeholder="Artista *">
+        <input nbInput [(ngModel)]="newSong.collectionName" placeholder="Álbum">
+        <input nbInput [(ngModel)]="newSong.primaryGenreName" placeholder="Género">
+      </div>
+      <div class="form-actions">
+        <button nbButton status="primary" size="small" (click)="addSong()">Guardar</button>
+        <button nbButton ghost size="small" (click)="showAddForm = false">Cancelar</button>
+      </div>
+    </div>
+
+    <!-- Confirm Delete Dialog -->
+    <nb-card *ngIf="confirmDeleteId !== null" class="confirm-dialog">
+      <nb-card-header>Confirmar eliminación</nb-card-header>
+      <nb-card-body>¿Estás seguro de que quieres eliminar esta canción?</nb-card-body>
+      <nb-card-footer>
+        <button nbButton status="danger" size="small" (click)="confirmDelete()">Eliminar</button>
+        <button nbButton ghost size="small" (click)="cancelDelete()">Cancelar</button>
+      </nb-card-footer>
+    </nb-card>
+
+    <div *ngIf="loading" class="loading-container">
+      <nb-spinner status="primary"></nb-spinner>
+    </div>
+
+    <!-- Songs Table -->
+    <div *ngIf="!loading" class="songs-table">
+      <div class="table-header">
+        <span class="col-art"></span>
+        <span class="col-title">Título</span>
+        <span class="col-artist">Artista</span>
+        <span class="col-genre">Género</span>
+        <span class="col-actions">Acciones</span>
+      </div>
+
+      <div *ngFor="let song of songs; trackBy: trackBySong" class="table-row">
+        <div class="col-art">
+          <img *ngIf="song.artworkUrl100" [src]="song.artworkUrl100" class="song-thumb" [alt]="song.trackName">
+          <div *ngIf="!song.artworkUrl100" class="song-thumb-placeholder">♪</div>
+        </div>
+
+        <div class="col-title">
+          <input *ngIf="song.isEditing" nbInput [(ngModel)]="song.editName" size="small">
+          <span *ngIf="!song.isEditing">{{ song.trackName }}</span>
+        </div>
+
+        <div class="col-artist">
+          <input *ngIf="song.isEditing" nbInput [(ngModel)]="song.editArtist" size="small">
+          <span *ngIf="!song.isEditing">{{ song.artistName }}</span>
+        </div>
+
+        <div class="col-genre">
+          <span>{{ song.primaryGenreName }}</span>
+        </div>
+
+        <div class="col-actions">
+          <ng-container *ngIf="!song.isEditing">
+            <button nbButton ghost size="small" status="primary" (click)="startEdit(song)" title="Editar">
+              <nb-icon icon="edit-outline"></nb-icon>
+            </button>
+            <button nbButton ghost size="small" status="danger" (click)="requestDelete(song.trackId)" title="Eliminar">
+              <nb-icon icon="trash-2-outline"></nb-icon>
+            </button>
+          </ng-container>
+          <ng-container *ngIf="song.isEditing">
+            <button nbButton ghost size="small" status="success" (click)="saveEdit(song)" title="Guardar">
+              <nb-icon icon="checkmark-outline"></nb-icon>
+            </button>
+            <button nbButton ghost size="small" status="basic" (click)="cancelEdit(song)" title="Cancelar">
+              <nb-icon icon="close-outline"></nb-icon>
+            </button>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+  </nb-card-body>
+</nb-card>

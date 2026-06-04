@@ -62,6 +62,10 @@
     }
   }
 
+  .theme-select {
+    margin-left: 2rem;
+  }
+
   @include media-breakpoint-down(is) {
     nb-select {
       display: none;

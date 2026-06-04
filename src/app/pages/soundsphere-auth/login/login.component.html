@@ -1,0 +1,93 @@
+<div class="auth-page">
+  <div class="bg-orb bg-orb-1"></div>
+  <div class="bg-orb bg-orb-2"></div>
+  <div class="bg-orb bg-orb-3"></div>
+
+  <div class="auth-card">
+    <div class="logo-section">
+      <div class="logo-icon">
+        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="24" cy="24" r="24" fill="url(#g1)"/>
+          <path d="M20 32V18l14 7-14 7z" fill="white"/>
+          <circle cx="24" cy="24" r="10" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" fill="none"/>
+          <circle cx="24" cy="24" r="17" stroke="rgba(255,255,255,0.1)" stroke-width="1" fill="none"/>
+          <defs>
+            <linearGradient id="g1" x1="0" y1="0" x2="48" y2="48">
+              <stop offset="0%" stop-color="#8b5cf6"/>
+              <stop offset="100%" stop-color="#3b82f6"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+      <h1 class="logo-text">SoundSphere</h1>
+      <p class="subtitle">Inicia sesión en tu cuenta</p>
+    </div>
+
+    <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
+      <div class="field-group">
+        <label class="field-label">Correo electrónico</label>
+        <div class="input-wrapper">
+          <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+            <polyline points="22,6 12,13 2,6"/>
+          </svg>
+          <input
+            class="custom-input"
+            [(ngModel)]="email"
+            name="email"
+            type="email"
+            placeholder="correo@ejemplo.com"
+            required
+            autocomplete="email">
+        </div>
+      </div>
+
+      <div class="field-group">
+        <label class="field-label">Contraseña</label>
+        <div class="input-wrapper">
+          <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+            <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+          </svg>
+          <input
+            class="custom-input"
+            [(ngModel)]="password"
+            name="password"
+            type="password"
+            placeholder="Tu contraseña"
+            required
+            autocomplete="current-password">
+        </div>
+      </div>
+
+      <div *ngIf="error" class="error-alert">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"/>
+          <line x1="12" y1="8" x2="12" y2="12"/>
+          <circle cx="12" cy="16" r="0.5" fill="currentColor"/>
+        </svg>
+        <span>{{ error }}</span>
+      </div>
+
+      <button class="submit-btn" type="submit" [disabled]="loading">
+        <span *ngIf="!loading">Iniciar sesión</span>
+        <span *ngIf="loading" class="loading-state">
+          <svg class="spin" viewBox="0 0 24 24" fill="none">
+            <circle cx="12" cy="12" r="10" stroke="rgba(255,255,255,0.3)" stroke-width="3"/>
+            <path d="M12 2a10 10 0 0 1 10 10" stroke="white" stroke-width="3" stroke-linecap="round"/>
+          </svg>
+          Iniciando sesión...
+        </span>
+      </button>
+    </form>
+
+    <div class="divider">
+      <span>o</span>
+    </div>
+
+    <p class="footer-link">
+      ¿No tienes cuenta?
+      <a routerLink="/soundsphere/register">Regístrate gratis</a>
+    </p>
+  </div>
+</div>
