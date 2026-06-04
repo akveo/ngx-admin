@@ -1,0 +1,53 @@
+<nb-card>
+  <nb-card-header>
+    <h5>Explorar Canciones</h5>
+    <p class="subtitle">Descubre música nueva</p>
+  </nb-card-header>
+
+  <nb-card-body>
+    <div *ngIf="loading" class="loading-container">
+      <nb-spinner status="primary" size="large"></nb-spinner>
+      <p>Cargando catálogo musical...</p>
+    </div>
+
+    <div *ngIf="error" class="error-container">
+      <nb-icon icon="wifi-off-outline" status="danger" class="big-icon"></nb-icon>
+      <p>No se pudo cargar el catálogo. Verifica tu conexión.</p>
+    </div>
+
+    <div *ngIf="!loading && !error">
+      <div class="songs-grid">
+        <ngx-song-card
+          *ngFor="let song of songs; trackBy: trackBySong"
+          [song]="song"
+          (addToPlaylist)="onAddToPlaylist($event)">
+        </ngx-song-card>
+      </div>
+    </div>
+  </nb-card-body>
+</nb-card>
+
+<!-- Playlist picker modal -->
+<nb-card *ngIf="showPlaylistPicker" class="playlist-picker-overlay">
+  <nb-card-header>
+    <h6>Agregar a playlist</h6>
+    <button nbButton ghost size="small" (click)="cancelPlaylistPicker()">
+      <nb-icon icon="close-outline"></nb-icon>
+    </button>
+  </nb-card-header>
+  <nb-card-body>
+    <p *ngIf="playlistService.getPlaylists().length === 0" class="no-playlists">
+      No tienes playlists aún.
+      <a routerLink="/pages/music/playlists">Crea una</a>
+    </p>
+    <ul class="playlist-list">
+      <li *ngFor="let playlist of playlistService.getPlaylists()"
+          (click)="addToPlaylist(playlist.id)"
+          class="playlist-item">
+        <nb-icon icon="music-outline"></nb-icon>
+        <span>{{ playlist.name }}</span>
+        <small>{{ playlist.songs.length }} canciones</small>
+      </li>
+    </ul>
+  </nb-card-body>
+</nb-card>

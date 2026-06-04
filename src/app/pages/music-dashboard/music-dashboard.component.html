@@ -1,0 +1,70 @@
+<div class="dashboard-header">
+  <h3>Bienvenido, {{ userName }} 🎵</h3>
+  <p>Descubre las tendencias musicales de hoy</p>
+</div>
+
+<div *ngIf="loading" class="loading-container">
+  <nb-spinner status="primary" size="large"></nb-spinner>
+</div>
+
+<div *ngIf="!loading" class="dashboard-grid">
+
+  <!-- Top Songs -->
+  <nb-card class="top-songs-card">
+    <nb-card-header>
+      <nb-icon icon="music-outline" status="primary"></nb-icon>
+      <span>Canciones Populares</span>
+    </nb-card-header>
+    <nb-list>
+      <nb-list-item *ngFor="let song of topSongs; let i = index; trackBy: trackBySong"
+                    class="song-list-item"
+                    [class.playing]="player.currentSongValue?.trackId === song.trackId && (player.isPlaying$ | async)">
+        <span class="rank">{{ i + 1 }}</span>
+        <img [src]="song.artworkUrl100" class="song-art" [alt]="song.trackName">
+        <div class="song-meta">
+          <strong>{{ song.trackName }}</strong>
+          <small>{{ song.artistName }}</small>
+        </div>
+        <button nbButton ghost size="small" status="primary" (click)="player.toggle(song)">
+          <nb-icon [icon]="(player.currentSongValue?.trackId === song.trackId && (player.isPlaying$ | async)) ? 'pause-circle-outline' : 'play-circle-outline'"></nb-icon>
+        </button>
+      </nb-list-item>
+    </nb-list>
+  </nb-card>
+
+  <!-- Trending Artists -->
+  <nb-card class="artists-card">
+    <nb-card-header>
+      <nb-icon icon="star-outline" status="warning"></nb-icon>
+      <span>Artistas Trending</span>
+    </nb-card-header>
+    <nb-card-body>
+      <div *ngFor="let artist of trendingArtists" class="artist-row">
+        <div class="artist-avatar">
+          {{ artist.name.charAt(0).toUpperCase() }}
+        </div>
+        <div class="artist-info">
+          <strong>{{ artist.name }}</strong>
+          <small>{{ artist.genre }}</small>
+        </div>
+        <nb-badge [text]="artist.songs + ' canciones'" status="primary"></nb-badge>
+      </div>
+    </nb-card-body>
+  </nb-card>
+
+  <!-- Genre Stats -->
+  <nb-card class="stats-card">
+    <nb-card-header>
+      <nb-icon icon="pie-chart-outline" status="success"></nb-icon>
+      <span>Géneros Populares</span>
+    </nb-card-header>
+    <nb-card-body>
+      <div *ngFor="let stat of genreStats" class="genre-row">
+        <span class="genre-name">{{ stat.genre }}</span>
+        <nb-progress-bar [value]="stat.percent" status="primary" size="medium"
+                         [displayValue]="true"></nb-progress-bar>
+      </div>
+    </nb-card-body>
+  </nb-card>
+
+</div>

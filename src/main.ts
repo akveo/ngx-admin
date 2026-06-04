@@ -14,4 +14,10 @@ if (environment.production) {
 }
 
 platformBrowserDynamic().bootstrapModule(AppModule)
+  .then(() => {
+    const spinner = document.getElementById('nb-global-spinner');
+    if (spinner) {
+      spinner.style.display = 'none';
+    }
+  })
   .catch(err => console.error(err));

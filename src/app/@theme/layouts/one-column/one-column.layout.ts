@@ -21,6 +21,7 @@ import { Component } from '@angular/core';
         <ngx-footer></ngx-footer>
       </nb-layout-footer>
     </nb-layout>
+    <ngx-mini-player></ngx-mini-player>
   `,
 })
 export class OneColumnLayoutComponent {}

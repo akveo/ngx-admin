@@ -5,11 +5,29 @@ import { PagesComponent } from './pages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ECommerceComponent } from './e-commerce/e-commerce.component';
 import { NotFoundComponent } from './miscellaneous/not-found/not-found.component';
+import { AdminGuard } from '../@core/guards/admin.guard';
 
 const routes: Routes = [{
   path: '',
   component: PagesComponent,
   children: [
+    {
+      path: 'music-dashboard',
+      loadChildren: () => import('./music-dashboard/music-dashboard.module').then(m => m.MusicDashboardModule),
+    },
+    {
+      path: 'music',
+      loadChildren: () => import('./music/music.module').then(m => m.MusicModule),
+    },
+    {
+      path: 'profile',
+      loadChildren: () => import('./profile/profile.module').then(m => m.ProfileModule),
+    },
+    {
+      path: 'admin',
+      canActivate: [AdminGuard],
+      loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule),
+    },
     {
       path: 'dashboard',
       component: ECommerceComponent,
@@ -70,7 +88,7 @@ const routes: Routes = [{
     },
     {
       path: '',
-      redirectTo: 'dashboard',
+      redirectTo: 'music-dashboard',
       pathMatch: 'full',
     },
     {

@@ -1,0 +1,51 @@
+<nb-card>
+  <nb-card-header>
+    <div class="header-row">
+      <div>
+        <h5>Mis Favoritos</h5>
+        <p class="subtitle">{{ favorites.length }} canción(es) guardada(s)</p>
+      </div>
+      <nb-badge *ngIf="favorites.length" [text]="favorites.length.toString()" status="danger"></nb-badge>
+    </div>
+  </nb-card-header>
+  <nb-card-body>
+    <div *ngIf="favorites.length === 0" class="empty-state">
+      <nb-icon icon="heart-outline" class="big-icon"></nb-icon>
+      <p>No tienes canciones favoritas aún.</p>
+      <a routerLink="/pages/music/catalog" nbButton status="primary" ghost>Explorar canciones</a>
+    </div>
+    <div *ngIf="favorites.length > 0" class="songs-grid">
+      <ngx-song-card
+        *ngFor="let song of favorites; trackBy: trackBySong"
+        [song]="song"
+        (addToPlaylist)="onAddToPlaylist($event)">
+      </ngx-song-card>
+    </div>
+  </nb-card-body>
+</nb-card>
+
+<!-- Backdrop + Playlist picker -->
+<div *ngIf="showPlaylistPicker" class="modal-backdrop" (click)="cancelPlaylistPicker()"></div>
+<nb-card *ngIf="showPlaylistPicker" class="playlist-picker-overlay">
+  <nb-card-header>
+    <span>Agregar a playlist</span>
+    <button nbButton ghost size="small" (click)="cancelPlaylistPicker()">
+      <nb-icon icon="close-outline"></nb-icon>
+    </button>
+  </nb-card-header>
+  <nb-card-body>
+    <p *ngIf="playlistService.getPlaylists().length === 0" class="no-playlists">
+      No tienes playlists aún.
+      <a routerLink="/pages/music/playlists">Crea una</a>
+    </p>
+    <ul class="playlist-list">
+      <li *ngFor="let p of playlistService.getPlaylists(); trackBy: trackByPlaylist"
+          (click)="addToPlaylist(p.id)"
+          class="playlist-item">
+        <nb-icon icon="music-outline"></nb-icon>
+        <span>{{ p.name }}</span>
+        <small>{{ p.songs.length }} canción(es)</small>
+      </li>
+    </ul>
+  </nb-card-body>
+</nb-card>
