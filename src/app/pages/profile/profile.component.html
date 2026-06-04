@@ -1,0 +1,66 @@
+<nb-card>
+  <nb-card-header>
+    <h5>Mi Perfil</h5>
+  </nb-card-header>
+  <nb-card-body>
+    <div class="profile-layout">
+      <!-- Avatar -->
+      <div class="avatar-section">
+        <div class="avatar-wrapper">
+          <img *ngIf="avatarPreview" [src]="avatarPreview" class="avatar-img" alt="Avatar">
+          <div *ngIf="!avatarPreview" class="avatar-placeholder">
+            {{ user?.name?.charAt(0)?.toUpperCase() }}
+          </div>
+        </div>
+        <label class="avatar-upload-btn" nbButton status="basic" size="small">
+          <nb-icon icon="camera-outline"></nb-icon> Cambiar foto
+          <input type="file" accept="image/*" (change)="onAvatarChange($event)" hidden>
+        </label>
+      </div>
+
+      <!-- Form -->
+      <div class="form-section">
+        <div class="form-group">
+          <label class="label">Nombre</label>
+          <input nbInput fullWidth [(ngModel)]="name" placeholder="Tu nombre">
+        </div>
+
+        <div class="form-group">
+          <label class="label">Correo electrónico</label>
+          <input nbInput fullWidth [value]="user?.email" disabled>
+        </div>
+
+        <hr>
+        <h6>Cambiar contraseña</h6>
+
+        <div class="form-group">
+          <label class="label">Contraseña actual</label>
+          <input nbInput fullWidth type="password" [(ngModel)]="currentPassword" placeholder="Contraseña actual">
+        </div>
+
+        <div class="form-group">
+          <label class="label">Nueva contraseña</label>
+          <input nbInput fullWidth type="password" [(ngModel)]="newPassword" placeholder="Mínimo 8 caracteres">
+        </div>
+
+        <div class="form-group">
+          <label class="label">Confirmar contraseña</label>
+          <input nbInput fullWidth type="password" [(ngModel)]="confirmPassword" placeholder="Repetir nueva contraseña">
+        </div>
+
+        <div *ngIf="error" class="error-msg">
+          <nb-icon icon="alert-circle-outline" status="danger"></nb-icon>
+          {{ error }}
+        </div>
+        <div *ngIf="success" class="success-msg">
+          <nb-icon icon="checkmark-circle-2-outline" status="success"></nb-icon>
+          {{ success }}
+        </div>
+
+        <button nbButton status="primary" (click)="saveProfile()">
+          Guardar cambios
+        </button>
+      </div>
+    </div>
+  </nb-card-body>
+</nb-card>

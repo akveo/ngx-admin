@@ -1,0 +1,19 @@
+<nb-card>
+  <nb-card-header>
+    <h5>Mis Favoritos</h5>
+    <nb-badge *ngIf="favorites.length" [text]="favorites.length" status="danger" position="top right"></nb-badge>
+  </nb-card-header>
+  <nb-card-body>
+    <div *ngIf="favorites.length === 0" class="empty-state">
+      <nb-icon icon="heart-outline" class="big-icon"></nb-icon>
+      <p>No tienes canciones favoritas aún.</p>
+      <a routerLink="/pages/music/catalog" nbButton status="primary" ghost>Explorar canciones</a>
+    </div>
+    <div *ngIf="favorites.length > 0" class="songs-grid">
+      <ngx-song-card
+        *ngFor="let song of favorites; trackBy: trackBySong"
+        [song]="song">
+      </ngx-song-card>
+    </div>
+  </nb-card-body>
+</nb-card>

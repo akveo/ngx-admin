@@ -1,0 +1,76 @@
+.header-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem;
+  color: nb-theme(text-hint-color);
+  gap: 1rem;
+}
+
+.big-icon {
+  font-size: 3rem;
+}
+
+.songs-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.song-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem;
+  border-radius: 8px;
+  transition: background 0.15s;
+
+  &:hover { background: nb-theme(background-basic-color-2); }
+
+  &.playing {
+    background: nb-theme(color-primary-100);
+  }
+}
+
+.track-num {
+  width: 24px;
+  text-align: center;
+  color: nb-theme(text-hint-color);
+  font-size: 0.875rem;
+}
+
+.track-art {
+  width: 44px;
+  height: 44px;
+  border-radius: 4px;
+  object-fit: cover;
+}
+
+.track-info {
+  flex: 1;
+  min-width: 0;
+
+  strong {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 0.9rem;
+  }
+
+  small {
+    color: nb-theme(text-hint-color);
+    font-size: 0.75rem;
+  }
+}
+
+.track-actions {
+  display: flex;
+  gap: 0.25rem;
+}

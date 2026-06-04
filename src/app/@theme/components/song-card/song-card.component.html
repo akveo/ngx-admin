@@ -1,0 +1,56 @@
+<nb-card class="song-card"
+         [class.is-active]="isThisActive"
+         [class.is-playing]="isThisPlaying"
+         (click)="togglePlay()">
+
+  <div class="artwork-container">
+    <img [src]="song.artworkUrl100"
+         [alt]="song.trackName"
+         class="artwork"
+         loading="lazy"
+         (error)="$any($event.target).src = 'assets/images/default-cover.png'">
+
+    <div class="overlay">
+      <!-- Play/Pause/Loading button -->
+      <button nbButton status="primary" shape="round" class="play-btn"
+              [class.loading]="isLoading"
+              (click)="$event.stopPropagation(); togglePlay()"
+              [title]="isThisPlaying ? 'Pausar' : 'Reproducir preview'">
+        <nb-icon [icon]="playIcon" [class.spin]="isLoading"></nb-icon>
+      </button>
+
+      <!-- No preview available indicator -->
+      <span *ngIf="!song.previewUrl" class="no-preview-badge">Sin preview</span>
+    </div>
+
+    <div class="genre-badge">{{ song.primaryGenreName }}</div>
+
+    <!-- Active equalizer animation -->
+    <div *ngIf="isThisPlaying" class="equalizer">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+
+  <nb-card-body class="card-body" (click)="$event.stopPropagation()">
+    <p class="track-name" [title]="song.trackName">{{ song.trackName }}</p>
+    <p class="artist-name" [title]="song.artistName">{{ song.artistName }}</p>
+    <p class="album-name" [title]="song.collectionName">{{ song.collectionName }}</p>
+
+    <div class="card-actions">
+      <span class="duration">{{ formatDuration(song.trackTimeMillis) }}</span>
+      <div class="action-buttons" *ngIf="isLoggedIn">
+        <button nbButton ghost size="tiny"
+                [status]="isFavorite ? 'danger' : 'basic'"
+                (click)="toggleFavorite($event)"
+                [title]="isFavorite ? 'Quitar de favoritos' : 'Agregar a favoritos'">
+          <nb-icon [icon]="isFavorite ? 'heart' : 'heart-outline'"></nb-icon>
+        </button>
+        <button nbButton ghost size="tiny" status="basic"
+                (click)="onAddToPlaylist($event)"
+                title="Agregar a playlist">
+          <nb-icon icon="plus-circle-outline"></nb-icon>
+        </button>
+      </div>
+    </div>
+  </nb-card-body>
+</nb-card>

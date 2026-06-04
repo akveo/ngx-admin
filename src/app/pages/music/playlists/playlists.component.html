@@ -1,0 +1,50 @@
+<nb-card>
+  <nb-card-header>
+    <h5>Mis Playlists</h5>
+    <button nbButton status="primary" size="small" (click)="showCreateForm = !showCreateForm">
+      <nb-icon icon="plus-outline"></nb-icon> Nueva Playlist
+    </button>
+  </nb-card-header>
+
+  <nb-card-body>
+    <div *ngIf="showCreateForm" class="create-form">
+      <input nbInput fullWidth
+             [(ngModel)]="newPlaylistName"
+             placeholder="Nombre de la playlist"
+             (keyup.enter)="createPlaylist()">
+      <div class="create-actions">
+        <button nbButton status="primary" size="small" (click)="createPlaylist()"
+                [disabled]="!newPlaylistName.trim()">Crear</button>
+        <button nbButton ghost size="small" (click)="showCreateForm = false">Cancelar</button>
+      </div>
+    </div>
+
+    <div *ngIf="playlists.length === 0 && !showCreateForm" class="empty-state">
+      <nb-icon icon="music-outline" class="big-icon"></nb-icon>
+      <p>No tienes playlists aún.</p>
+    </div>
+
+    <div class="playlists-grid">
+      <nb-card *ngFor="let playlist of playlists; trackBy: trackByPlaylist" class="playlist-card">
+        <nb-card-body>
+          <div class="playlist-info">
+            <nb-icon icon="music-outline" status="primary" class="playlist-icon"></nb-icon>
+            <div class="playlist-meta">
+              <strong>{{ playlist.name }}</strong>
+              <small>{{ playlist.songs.length }} canción(es)</small>
+            </div>
+          </div>
+          <div class="playlist-actions">
+            <a nbButton ghost size="small" status="primary"
+               [routerLink]="['/pages/music/playlists', playlist.id]">
+              <nb-icon icon="eye-outline"></nb-icon>
+            </a>
+            <button nbButton ghost size="small" status="danger" (click)="deletePlaylist(playlist.id)">
+              <nb-icon icon="trash-2-outline"></nb-icon>
+            </button>
+          </div>
+        </nb-card-body>
+      </nb-card>
+    </div>
+  </nb-card-body>
+</nb-card>

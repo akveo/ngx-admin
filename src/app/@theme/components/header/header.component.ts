@@ -1,9 +1,11 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { NbMediaBreakpointsService, NbMenuService, NbSidebarService, NbThemeService } from '@nebular/theme';
 
 import { UserData } from '../../../@core/data/users';
 import { LayoutService } from '../../../@core/utils';
-import { map, takeUntil } from 'rxjs/operators';
+import { AuthLocalService } from '../../../@core/services/auth-local.service';
+import { map, takeUntil, filter } from 'rxjs/operators';
 import { Subject } from 'rxjs';
 
 @Component({
@@ -16,37 +18,32 @@ export class HeaderComponent implements OnInit, OnDestroy {
   private destroy$: Subject<void> = new Subject<void>();
   userPictureOnly: boolean = false;
   user: any;
+  currentUser: any;
 
   themes = [
-    {
-      value: 'default',
-      name: 'Light',
-    },
-    {
-      value: 'dark',
-      name: 'Dark',
-    },
-    {
-      value: 'cosmic',
-      name: 'Cosmic',
-    },
-    {
-      value: 'corporate',
-      name: 'Corporate',
-    },
+    { value: 'default', name: 'Light' },
+    { value: 'dark', name: 'Dark' },
+    { value: 'cosmic', name: 'Cosmic' },
+    { value: 'corporate', name: 'Corporate' },
   ];
 
   currentTheme = 'default';
 
-  userMenu = [ { title: 'Profile' }, { title: 'Log out' } ];
+  userMenu = [
+    { title: 'Mi Perfil', link: '/pages/profile' },
+    { title: 'Cerrar sesión' },
+  ];
 
-  constructor(private sidebarService: NbSidebarService,
-              private menuService: NbMenuService,
-              private themeService: NbThemeService,
-              private userService: UserData,
-              private layoutService: LayoutService,
-              private breakpointService: NbMediaBreakpointsService) {
-  }
+  constructor(
+    private sidebarService: NbSidebarService,
+    private menuService: NbMenuService,
+    private themeService: NbThemeService,
+    private userService: UserData,
+    private layoutService: LayoutService,
+    private breakpointService: NbMediaBreakpointsService,
+    private authLocal: AuthLocalService,
+    private router: Router,
+  ) {}
 
   ngOnInit() {
     this.currentTheme = this.themeService.currentTheme;
@@ -54,6 +51,23 @@ export class HeaderComponent implements OnInit, OnDestroy {
     this.userService.getUsers()
       .pipe(takeUntil(this.destroy$))
       .subscribe((users: any) => this.user = users.nick);
+
+    this.authLocal.currentUser$
+      .pipe(takeUntil(this.destroy$))
+      .subscribe(u => this.currentUser = u);
+
+    this.menuService.onItemClick()
+      .pipe(
+        filter(({ tag }) => tag === 'user-context-menu'),
+        map(({ item }) => item.title),
+        takeUntil(this.destroy$),
+      )
+      .subscribe(title => {
+        if (title === 'Cerrar sesión') {
+          this.authLocal.logout();
+          this.router.navigate(['/soundsphere/login']);
+        }
+      });
 
     const { xl } = this.breakpointService.getBreakpointsMap();
     this.themeService.onMediaQueryChange()
@@ -83,7 +97,6 @@ export class HeaderComponent implements OnInit, OnDestroy {
   toggleSidebar(): boolean {
     this.sidebarService.toggle(true, 'menu-sidebar');
     this.layoutService.changeLayoutSize();
-
     return false;
   }
 

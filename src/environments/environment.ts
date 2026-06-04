@@ -10,4 +10,6 @@
 
 export const environment = {
   production: false,
+  itunesApiUrl: 'https://itunes.apple.com/search',
+  itunesLookupUrl: 'https://itunes.apple.com/lookup',
 };

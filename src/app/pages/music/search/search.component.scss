@@ -1,0 +1,153 @@
+.header-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  h5 { margin: 0 0 0.2rem; }
+}
+
+.subtitle {
+  color: nb-theme(text-hint-color);
+  font-size: 0.8rem;
+  margin: 0;
+}
+
+.search-bar {
+  margin-bottom: 1rem;
+}
+
+.filter-tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+  border-bottom: 1px solid nb-theme(border-basic-color-3);
+  padding-bottom: 0.5rem;
+
+  button {
+    position: relative;
+    border-radius: 0 !important;
+    padding-bottom: 0.5rem !important;
+
+    &.active {
+      color: nb-theme(color-primary-500);
+      border-bottom: 2px solid nb-theme(color-primary-500);
+      font-weight: 600;
+    }
+  }
+}
+
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 2.5rem;
+  color: nb-theme(text-hint-color);
+  font-size: 0.875rem;
+}
+
+.no-results {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 3rem 1rem;
+  color: nb-theme(text-hint-color);
+  text-align: center;
+}
+
+.initial-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem 1rem;
+  color: nb-theme(text-hint-color);
+  gap: 0.75rem;
+  text-align: center;
+}
+
+.big-icon {
+  font-size: 3.5rem;
+  opacity: 0.4;
+}
+
+.hint {
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+
+.results-count {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.875rem;
+  color: nb-theme(text-hint-color);
+  margin-bottom: 1rem;
+}
+
+.songs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1rem;
+}
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+.playlist-picker-overlay {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  width: 320px;
+  max-height: 420px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+
+  nb-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  nb-card-body {
+    overflow-y: auto;
+    max-height: 300px;
+  }
+}
+
+.playlist-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.playlist-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.15s;
+
+  &:hover { background: nb-theme(background-basic-color-3); }
+
+  small {
+    margin-left: auto;
+    color: nb-theme(text-hint-color);
+    font-size: 0.75rem;
+  }
+}
+
+.no-playlists {
+  text-align: center;
+  color: nb-theme(text-hint-color);
+  padding: 1rem;
+
+  a { color: nb-theme(color-primary-500); }
+}

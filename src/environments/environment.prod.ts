@@ -5,4 +5,6 @@
  */
 export const environment = {
   production: true,
+  itunesApiUrl: 'https://itunes.apple.com/search',
+  itunesLookupUrl: 'https://itunes.apple.com/lookup',
 };

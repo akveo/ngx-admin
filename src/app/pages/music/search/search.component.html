@@ -1,0 +1,114 @@
+<nb-card>
+  <nb-card-header>
+    <div class="header-row">
+      <div>
+        <h5>Buscar Canciones</h5>
+        <p class="subtitle">Encuentra música por canción o artista</p>
+      </div>
+    </div>
+  </nb-card-header>
+
+  <nb-card-body>
+    <!-- Search bar -->
+    <div class="search-bar">
+      <nb-form-field>
+        <nb-icon nbPrefix icon="search-outline" [status]="loading ? 'primary' : 'basic'"></nb-icon>
+        <input nbInput
+               fullWidth
+               [(ngModel)]="query"
+               (ngModelChange)="onQueryChange()"
+               placeholder="Buscar por canción o artista... (mín. 2 caracteres)"
+               type="search"
+               autocomplete="off">
+        <button *ngIf="query" nbButton nbSuffix ghost (click)="clearSearch()">
+          <nb-icon icon="close-outline"></nb-icon>
+        </button>
+      </nb-form-field>
+    </div>
+
+    <!-- Filter tabs: only visible once results appear -->
+    <div *ngIf="searched && !loading" class="filter-tabs">
+      <button [class.active]="filter === 'all'"
+              (click)="onFilterChange('all')"
+              nbButton ghost size="small">
+        Todos
+        <nb-badge *ngIf="filter === 'all'" [text]="filteredSongs.length" status="primary" position="top right"></nb-badge>
+      </button>
+      <button [class.active]="filter === 'song'"
+              (click)="onFilterChange('song')"
+              nbButton ghost size="small">
+        <nb-icon icon="music-outline"></nb-icon> Por canción
+      </button>
+      <button [class.active]="filter === 'artist'"
+              (click)="onFilterChange('artist')"
+              nbButton ghost size="small">
+        <nb-icon icon="person-outline"></nb-icon> Por artista
+      </button>
+    </div>
+
+    <!-- Loading spinner -->
+    <div *ngIf="loading" class="loading-container">
+      <nb-spinner status="primary" size="medium"></nb-spinner>
+      <p>Buscando en iTunes...</p>
+    </div>
+
+    <!-- No results -->
+    <div *ngIf="!loading && searched && filteredSongs.length === 0" class="no-results">
+      <nb-icon icon="search-outline" class="big-icon"></nb-icon>
+      <p>No se encontraron resultados para <strong>"{{ query }}"</strong></p>
+      <p *ngIf="filter !== 'all'" class="hint">
+        Prueba cambiar el filtro a "Todos"
+      </p>
+      <button nbButton status="primary" ghost size="small" (click)="clearSearch()">
+        Limpiar búsqueda
+      </button>
+    </div>
+
+    <!-- Results -->
+    <div *ngIf="!loading && filteredSongs.length > 0">
+      <p class="results-count">
+        <nb-icon icon="checkmark-circle-outline" status="success"></nb-icon>
+        {{ filteredSongs.length }} resultado(s) para <strong>"{{ query }}"</strong>
+      </p>
+      <div class="songs-grid">
+        <ngx-song-card
+          *ngFor="let song of filteredSongs; trackBy: trackBySong"
+          [song]="song"
+          (addToPlaylist)="onAddToPlaylist($event)">
+        </ngx-song-card>
+      </div>
+    </div>
+
+    <!-- Initial state -->
+    <div *ngIf="!searched && !loading" class="initial-state">
+      <nb-icon icon="headphones-outline" class="big-icon"></nb-icon>
+      <p>Escribe al menos 2 caracteres para buscar</p>
+    </div>
+  </nb-card-body>
+</nb-card>
+
+<!-- Playlist picker modal -->
+<div *ngIf="showPlaylistPicker" class="modal-backdrop" (click)="cancelPlaylistPicker()"></div>
+<nb-card *ngIf="showPlaylistPicker" class="playlist-picker-overlay">
+  <nb-card-header>
+    <span>Agregar a playlist</span>
+    <button nbButton ghost size="small" (click)="cancelPlaylistPicker()">
+      <nb-icon icon="close-outline"></nb-icon>
+    </button>
+  </nb-card-header>
+  <nb-card-body>
+    <p *ngIf="playlistService.getPlaylists().length === 0" class="no-playlists">
+      No tienes playlists aún.
+      <a routerLink="/pages/music/playlists">Crea una</a>
+    </p>
+    <ul class="playlist-list">
+      <li *ngFor="let p of playlistService.getPlaylists()"
+          (click)="addToPlaylist(p.id)"
+          class="playlist-item">
+        <nb-icon icon="music-outline"></nb-icon>
+        <span>{{ p.name }}</span>
+        <small>{{ p.songs.length }} canción(es)</small>
+      </li>
+    </ul>
+  </nb-card-body>
+</nb-card>

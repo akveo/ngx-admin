@@ -1,0 +1,141 @@
+.header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+
+  h5 { margin: 0 0 0.2rem; }
+}
+
+.subtitle {
+  color: nb-theme(text-hint-color);
+  font-size: 0.8rem;
+  margin: 0;
+}
+
+.filters-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.search-field {
+  flex: 1;
+  min-width: 200px;
+}
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem;
+  color: nb-theme(text-hint-color);
+  gap: 0.75rem;
+}
+
+.big-icon {
+  font-size: 3rem;
+  opacity: 0.4;
+}
+
+.add-form {
+  background: nb-theme(background-basic-color-2);
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+
+  h6 { margin-bottom: 0.75rem; }
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.form-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.confirm-dialog {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1001;
+  width: 320px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+
+  nb-card-footer {
+    display: flex;
+    gap: 0.5rem;
+  }
+}
+
+.loading-container {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.songs-table {
+  width: 100%;
+}
+
+.table-header, .table-row {
+  display: grid;
+  grid-template-columns: 50px 1fr 1fr 120px 100px;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 0;
+}
+
+.table-header {
+  font-weight: 700;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  color: nb-theme(text-hint-color);
+  border-bottom: 1px solid nb-theme(border-basic-color-3);
+  padding-bottom: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.table-row {
+  border-bottom: 1px solid nb-theme(border-basic-color-2);
+
+  &:hover { background: nb-theme(background-basic-color-2); }
+}
+
+.song-thumb {
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  object-fit: cover;
+}
+
+.song-thumb-placeholder {
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  background: nb-theme(background-basic-color-3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+.col-actions {
+  display: flex;
+  gap: 0.25rem;
+}

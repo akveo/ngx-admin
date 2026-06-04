@@ -1,5 +1,6 @@
 import { ModuleWithProviders, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 import {
   NbActionsModule,
   NbLayoutModule,
@@ -12,6 +13,12 @@ import {
   NbSelectModule,
   NbIconModule,
   NbThemeModule,
+  NbCardModule,
+  NbBadgeModule,
+  NbProgressBarModule,
+  NbSpinnerModule,
+  NbFormFieldModule,
+  NbInputModule,
 } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { NbSecurityModule } from '@nebular/security';
@@ -38,6 +45,8 @@ import { DEFAULT_THEME } from './styles/theme.default';
 import { COSMIC_THEME } from './styles/theme.cosmic';
 import { CORPORATE_THEME } from './styles/theme.corporate';
 import { DARK_THEME } from './styles/theme.dark';
+import { SongCardComponent } from './components/song-card/song-card.component';
+import { MiniPlayerComponent } from './components/mini-player/mini-player.component';
 
 const NB_MODULES = [
   NbLayoutModule,
@@ -52,6 +61,12 @@ const NB_MODULES = [
   NbSelectModule,
   NbIconModule,
   NbEvaIconsModule,
+  NbCardModule,
+  NbBadgeModule,
+  NbProgressBarModule,
+  NbSpinnerModule,
+  NbFormFieldModule,
+  NbInputModule,
 ];
 const COMPONENTS = [
   HeaderComponent,
@@ -61,6 +76,8 @@ const COMPONENTS = [
   OneColumnLayoutComponent,
   ThreeColumnsLayoutComponent,
   TwoColumnsLayoutComponent,
+  SongCardComponent,
+  MiniPlayerComponent,
 ];
 const PIPES = [
   CapitalizePipe,
@@ -71,8 +88,8 @@ const PIPES = [
 ];
 
 @NgModule({
-  imports: [CommonModule, ...NB_MODULES],
-  exports: [CommonModule, ...PIPES, ...COMPONENTS],
+  imports: [CommonModule, RouterModule, ...NB_MODULES],
+  exports: [CommonModule, RouterModule, ...PIPES, ...COMPONENTS],
   declarations: [...COMPONENTS, ...PIPES],
 })
 export class ThemeModule {
