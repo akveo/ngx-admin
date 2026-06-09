@@ -19,14 +19,18 @@ export class AnalyticsService {
         filter((event) => event instanceof NavigationEnd),
       )
         .subscribe(() => {
-          ga('send', {hitType: 'pageview', page: this.location.path()});
+          if (typeof ga !== 'undefined') {
+            ga('send', {hitType: 'pageview', page: this.location.path()});
+          }
         });
     }
   }
 
   trackEvent(eventName: string) {
     if (this.enabled) {
-      ga('send', 'event', eventName);
+      if (typeof ga !== 'undefined') {
+        ga('send', 'event', eventName);
+      }
     }
   }
 }
