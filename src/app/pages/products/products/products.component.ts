@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductsService } from '../../services/products/products.service';
+import { ProductsService } from '../../../services/products/products.service';
 
 @Component({
-  selector: 'ngx-e-commerce',
-  templateUrl: './e-commerce.component.html'
+  selector: 'ngx-products',
+  templateUrl: './products.component.html',
+  styleUrls: ['./products.component.scss']
 })
-export class ECommerceComponent implements OnInit {
+export class ProductsComponent implements OnInit {
 
   products: any[] = [];
 
@@ -13,7 +14,7 @@ export class ECommerceComponent implements OnInit {
 
   ngOnInit(): void {
     this.productsService.getProducts().subscribe(data => {
-      console.log(data);
+      console.log('Products:', data);
       this.products = data.products;
     });
   }
