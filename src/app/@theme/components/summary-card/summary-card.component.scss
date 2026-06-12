@@ -1,0 +1,50 @@
+:host {
+  display: block;
+}
+
+.summary-card {
+  min-height: 180px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.title {
+  font-weight: 600;
+}
+
+.subtitle {
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 0.95rem;
+}
+
+.entries {
+  display: grid;
+  gap: 1rem;
+}
+
+.entry {
+  align-items: center;
+  display: flex;
+}
+
+.entry-left {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.entry-label {
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 0.9rem;
+}
+
+.entry-value {
+  font-size: 1.15rem;
+  font-weight: 600;
+}

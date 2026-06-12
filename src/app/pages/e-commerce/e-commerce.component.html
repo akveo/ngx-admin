@@ -1,38 +1,99 @@
-<div class="row">
-  <div class="col-xxl-5">
-    <div class="row">
-      <div class="col-md-6">
-        <ngx-profit-card></ngx-profit-card>
-      </div>
-      <div class="col-md-6">
-        <ngx-earning-card></ngx-earning-card>
-      </div>
-    </div>
+<<<<<<< HEAD
+<nb-card>
+  <nb-card-body>
+    <h2>¡Bienvenido al Dashboard!</h2>
+  </nb-card-body>
+</nb-card>
+=======
+<h1>🛍 Product CRUD Playground</h1>
 
-    <ngx-traffic-reveal-card></ngx-traffic-reveal-card>
-  </div>
+<ngx-summary-card
+  title="E-commerce summary"
+  subtitle="Indicadores de la pantalla de productos"
+  [entries]="summaryEntries">
+</ngx-summary-card>
 
-  <div class="col-xxl-7">
-    <ngx-ecommerce-charts></ngx-ecommerce-charts>
-  </div>
-</div>
+<hr>
 
-<div class="row">
-  <div class="col-xxl-9">
-    <ngx-country-orders></ngx-country-orders>
-  </div>
+<h2>Get Product By ID</h2>
 
-  <div class="col-xxl-3">
-    <ngx-progress-section></ngx-progress-section>
-  </div>
-</div>
+<input
+  type="number"
+  [(ngModel)]="selectedId"
+  placeholder="Product ID">
 
-<div class="row">
-  <div class="col-xxl-9">
-    <ngx-ecommerce-visitors-analytics></ngx-ecommerce-visitors-analytics>
-  </div>
+<button (click)="getProductById()">
+  Get Product
+</button>
 
-  <div class="col-xxl-3">
-    <ngx-user-activity></ngx-user-activity>
-  </div>
-</div>
+<hr>
+
+<h2>Create Product</h2>
+
+<input
+  type="text"
+  [(ngModel)]="newProduct.title"
+  placeholder="Title">
+
+<input
+  type="number"
+  [(ngModel)]="newProduct.price"
+  placeholder="Price">
+
+<button (click)="addProduct()">
+  Create Product
+</button>
+
+<hr>
+
+<h2>Update Product</h2>
+
+<input
+  type="number"
+  [(ngModel)]="selectedId"
+  placeholder="Product ID">
+
+<input
+  type="text"
+  [(ngModel)]="updateData.title"
+  placeholder="New Title">
+
+<button (click)="updateProduct()">
+  Update Product
+</button>
+
+<hr>
+
+<h2>Delete Product</h2>
+
+<input
+  type="number"
+  [(ngModel)]="selectedId"
+  placeholder="Product ID">
+
+<button (click)="deleteProduct()">
+  Delete Product
+</button>
+
+<hr>
+
+<h2>All Products</h2>
+
+<button (click)="loadProducts()">
+  Refresh Products
+</button>
+
+<table border="1" cellpadding="10">
+  <tr>
+    <th>ID</th>
+    <th>Title</th>
+    <th>Price</th>
+  </tr>
+
+  <tr *ngFor="let product of products">
+    <td>{{ product.id }}</td>
+    <td>{{ product.title }}</td>
+    <td>${{ product.price }}</td>
+  </tr>
+</table>
+>>>>>>> origin/dev

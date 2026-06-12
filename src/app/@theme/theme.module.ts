@@ -11,6 +11,7 @@ import {
   NbButtonModule,
   NbSelectModule,
   NbIconModule,
+  NbCardModule,
   NbThemeModule,
 } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
@@ -21,6 +22,7 @@ import {
   HeaderComponent,
   SearchInputComponent,
   TinyMCEComponent,
+  SummaryCardComponent,
 } from './components';
 import {
   CapitalizePipe,
@@ -51,6 +53,7 @@ const NB_MODULES = [
   NbButtonModule,
   NbSelectModule,
   NbIconModule,
+  NbCardModule,
   NbEvaIconsModule,
 ];
 const COMPONENTS = [
@@ -58,6 +61,7 @@ const COMPONENTS = [
   FooterComponent,
   SearchInputComponent,
   TinyMCEComponent,
+  SummaryCardComponent,
   OneColumnLayoutComponent,
   ThreeColumnsLayoutComponent,
   TwoColumnsLayoutComponent,

@@ -1,0 +1,31 @@
+.table-custom {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 10px 0;
+  font-family: sans-serif;
+
+  th {
+    background-color: #f8f9fa;
+    color: #222b45;
+    text-align: left;
+    padding: 12px;
+    font-weight: 600;
+    border-bottom: 2px solid #edf1f7;
+  }
+
+  td {
+    padding: 12px;
+    border-bottom: 1px solid #edf1f7;
+    color: #222b45;
+  }
+
+  tr:hover {
+    background-color: #f5f7fa;
+  }
+}
+
+.empty-row {
+  padding: 30px !important;
+  color: #8f9bb3;
+  font-style: italic;
+}

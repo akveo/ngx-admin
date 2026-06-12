@@ -1,0 +1,23 @@
+<nb-card class="summary-card">
+  <nb-card-header *ngIf="title || subtitle">
+    <div class="header">
+      <div class="title">{{ title }}</div>
+      <div class="subtitle" *ngIf="subtitle">{{ subtitle }}</div>
+    </div>
+  </nb-card-header>
+
+  <nb-card-body>
+    <div class="entries">
+      <div class="entry" *ngFor="let entry of entries">
+        <div class="entry-left">
+          <nb-icon *ngIf="entry.icon" [icon]="entry.icon"></nb-icon>
+          <div>
+            <div class="entry-label">{{ entry.label }}</div>
+            <div class="entry-value">{{ entry.value }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <ng-content></ng-content>
+  </nb-card-body>
+</nb-card>
