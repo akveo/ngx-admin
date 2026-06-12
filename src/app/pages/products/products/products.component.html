@@ -1,0 +1,51 @@
+<nb-card class="products-card">
+  <nb-card-header class="card-header-flex">
+    <span>📦 Gestión de Productos</span>
+    <button nbButton status="primary" size="small" (click)="onAddProduct()">
+      ➕ Nuevo Producto
+    </button>
+  </nb-card-header>
+  
+  <nb-card-body>
+    <div class="table-responsive">
+      <table class="modern-table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Título</th>
+            <th>Categoría</th>
+            <th>Precio</th>
+            <th>Stock</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let product of products">
+            <td><span class="id-badge">#{{ product.id }}</span></td>
+            <td class="product-title">{{ product.title }}</td>
+            <td><span class="category-badge">{{ product.category }}</span></td>
+            <td class="price">${{ product.price }}</td>
+            <td>
+              <span class="stock-badge" [class.low-stock]="product.stock < 10">
+                {{ product.stock }}
+              </span>
+            </td>
+            <td class="actions">
+              <button nbButton ghost status="info" size="small">✏️</button>
+              <button nbButton ghost status="danger" size="small">🗑️</button>
+            </td>
+          </tr>
+          
+          <tr *ngIf="products.length === 0">
+            <td colspan="6" class="empty-state">
+              <div class="empty-state-content">
+                <span style="font-size: 2rem;">📭</span>
+                <p>No hay productos cargados en el sistema.</p>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </nb-card-body>
+</nb-card>

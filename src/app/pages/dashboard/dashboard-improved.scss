@@ -1,0 +1,228 @@
+@import '../../@theme/styles/themes';
+
+/* ==========================================================================
+   1. LAYOUT OVERRIDES (Glassmorphism & Barras Flotantes)
+   ========================================================================== */
+nb-layout {
+  background-color: #36a37e !important;
+}
+
+nb-layout-header nav {
+  margin: 1.5rem 2rem;
+  border-radius: 1.5rem;
+  background: rgba(255, 255, 255, 0.85) !important;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  transition: all 0.3s ease;
+}
+
+nb-layout-footer nav {
+  margin: 1.5rem 2rem;
+  border-radius: 1.5rem;
+  background: rgba(255, 255, 255, 0.85) !important;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  transition: all 0.3s ease;
+}
+
+/* Media queries para pantallas pequeñas (móviles) */
+@media (max-width: 768px) {
+  nb-layout-header nav,
+  nb-layout-footer nav {
+    margin: 0;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+  }
+}
+
+/* ==========================================================================
+   2. SCROLLBAR & INPUTS GLOBALES
+   ========================================================================== */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+input.size-medium {
+  border-radius: 0.75rem !important;
+  border: 1px solid rgba(148, 163, 184, 0.3);
+  padding: 0.75rem 1rem;
+  
+  &:focus {
+    border-color: #667eea !important;
+    box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1) !important;
+  }
+}
+
+/* ==========================================================================
+   3. DASHBOARD STYLES (Hero Section)
+   ========================================================================== */
+.dashboard-hero {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+  background-size: 200% 200%;
+  animation: gradient-shift 15s ease infinite;
+  border-radius: 1.75rem;
+  padding: 3rem;
+  color: white;
+  margin-bottom: 2.5rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(102, 126, 234, 0.3);
+}
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.dashboard-hero::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -10%;
+  width: 500px;
+  height: 500px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  filter: blur(40px);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin: 0;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.hero-subtitle {
+  font-size: 1.1rem;
+  margin: 0.75rem 0 0;
+  opacity: 0.95;
+}
+
+/* ==========================================================================
+   4. TARJETAS Y GRID (Status & Charts)
+   ========================================================================== */
+.dashboard-grid {
+  display: grid;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.status-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 100%));
+  gap: 1.5rem;
+}
+
+.status-card {
+  background: linear-gradient(135deg, #ffffff, #f8fafc);
+  border-radius: 1.5rem;
+  padding: 1.75rem;
+  border: 2px solid rgba(148, 163, 184, 0.15);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.status-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.1), transparent);
+  border-radius: 50%;
+}
+
+.status-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 50px rgba(59, 130, 246, 0.15);
+  border-color: rgba(59, 130, 246, 0.3);
+}
+
+.status-card-content {
+  position: relative;
+  z-index: 1;
+}
+
+.status-card-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.status-card-title {
+  font-size: 0.95rem;
+  color: #64748b;
+  margin: 0;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.status-card-value {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0.75rem 0 0;
+  background: linear-gradient(135deg, #3b82f6, #667eea);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.chart-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 100%));
+  gap: 2rem;
+}
+
+.chart-card {
+  background: linear-gradient(135deg, #ffffff, #f8fafc);
+  border-radius: 1.5rem;
+  padding: 1.75rem;
+  border: 2px solid rgba(148, 163, 184, 0.15);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.chart-card:hover {
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+  transform: translateY(-4px);
+}
+
+.chart-card-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 1.5rem;
+}

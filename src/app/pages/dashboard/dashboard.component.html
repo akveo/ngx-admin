@@ -1,42 +1,111 @@
-<div class="row">
-  <div class="col-xxxl-3 col-md-6" *ngFor="let statusCard of statusCards">
-    <ngx-status-card [title]="statusCard.title" [type]="statusCard.type">
-      <i [ngClass]="statusCard.iconClass"></i>
-    </ngx-status-card>
-  </div>
-</div>
-
-<div class="row">
-  <div class="col-xxxl-3 col-xxl-4 col-lg-5 col-md-6">
-    <ngx-temperature></ngx-temperature>
+<div class="dashboard-wrapper">
+  <div class="dashboard-hero">
+    <div class="hero-content">
+      <h1 class="hero-title">📊 Dashboard Interactivo</h1>
+      <p class="hero-subtitle">Visualiza el estado de todos tus sistemas en tiempo real</p>
+    </div>
   </div>
 
-  <div class="col-xxxl-9 col-xxl-8 col-lg-7 col-md-6">
-    <ngx-electricity></ngx-electricity>
-  </div>
-</div>
-
-<div class="row">
-  <div class="col-xxxl-9 col-xl-12">
-    <ngx-rooms></ngx-rooms>
-  </div>
-
-  <div class="col-xxxl-3 col-xxl-4 col-lg-7 col-md-6">
-    <ngx-contacts></ngx-contacts>
+  <div class="row">
+    <div class="col-12">
+      <ngx-summary-card
+        title="Dashboard overview"
+        subtitle="Resumen rápido de los widgets activos"
+        [entries]="dashboardSummaryEntries">
+      </ngx-summary-card>
+    </div>
   </div>
 
-  <div class="col-xxxl-3 col-xxl-4 col-lg-5 col-md-6">
-    <ngx-solar [chartValue]="solarValue"></ngx-solar>
-
-    <ngx-kitten></ngx-kitten>
+  <div class="status-cards-grid">
+    <nb-card class="status-card" *ngFor="let statusCard of statusCards">
+      <nb-card-body class="status-card-content">
+        <div class="status-card-icon" [ngClass]="statusCard.iconClass"></div>
+        <p class="status-card-title">{{ statusCard.title }}</p>
+        <div class="status-card-value">● Active</div>
+      </nb-card-body>
+    </nb-card>
   </div>
 
-  <div class="col-xxxl-3 col-xxl-4 col-md-5">
-    <ngx-traffic></ngx-traffic>
-    <ngx-weather></ngx-weather>
+  <div class="row" style="margin-top: 2rem;">
+    <div class="col-12 col-md-6 col-lg-5">
+      <nb-card class="chart-card">
+        <nb-card-header class="chart-card-title">🌡️ Temperatura</nb-card-header>
+        <nb-card-body>
+          <ngx-temperature></ngx-temperature>
+        </nb-card-body>
+      </nb-card>
+    </div>
+
+    <div class="col-12 col-md-6 col-lg-7">
+      <nb-card class="chart-card">
+        <nb-card-header class="chart-card-title">⚡ Electricidad</nb-card-header>
+        <nb-card-body>
+          <ngx-electricity></ngx-electricity>
+        </nb-card-body>
+      </nb-card>
+    </div>
   </div>
 
-  <div class="col-xxxl-6 col-xxl-12 col-md-7">
-    <ngx-security-cameras></ngx-security-cameras>
+  <div class="row" style="margin-top: 2rem;">
+    <div class="col-12 col-lg-7">
+      <nb-card class="chart-card">
+        <nb-card-header class="chart-card-title">🏠 Habitaciones</nb-card-header>
+        <nb-card-body>
+          <ngx-rooms></ngx-rooms>
+        </nb-card-body>
+      </nb-card>
+    </div>
+
+    <div class="col-12 col-lg-5">
+      <nb-card class="chart-card">
+        <nb-card-header class="chart-card-title">👥 Contactos</nb-card-header>
+        <nb-card-body>
+          <ngx-contacts></ngx-contacts>
+        </nb-card-body>
+      </nb-card>
+    </div>
+  </div>
+
+  <div class="row" style="margin-top: 2rem;">
+    <div class="col-12 col-md-6 col-lg-4">
+      <nb-card class="chart-card">
+        <nb-card-header class="chart-card-title">☀️ Solar</nb-card-header>
+        <nb-card-body>
+          <ngx-solar [chartValue]="solarValue"></ngx-solar>
+        </nb-card-body>
+      </nb-card>
+      
+      <nb-card class="chart-card" style="margin-top: 1.5rem;">
+        <nb-card-header class="chart-card-title">🐱 Kitten</nb-card-header>
+        <nb-card-body>
+          <ngx-kitten></ngx-kitten>
+        </nb-card-body>
+      </nb-card>
+    </div>
+
+    <div class="col-12 col-md-6 col-lg-4">
+      <nb-card class="chart-card">
+        <nb-card-header class="chart-card-title">🚗 Tráfico</nb-card-header>
+        <nb-card-body>
+          <ngx-traffic></ngx-traffic>
+        </nb-card-body>
+      </nb-card>
+      
+      <nb-card class="chart-card" style="margin-top: 1.5rem;">
+        <nb-card-header class="chart-card-title">🌤️ Clima</nb-card-header>
+        <nb-card-body>
+          <ngx-weather></ngx-weather>
+        </nb-card-body>
+      </nb-card>
+    </div>
+
+    <div class="col-12 col-lg-4">
+      <nb-card class="chart-card">
+        <nb-card-header class="chart-card-title">📹 Cámaras de Seguridad</nb-card-header>
+        <nb-card-body>
+          <ngx-security-cameras></ngx-security-cameras>
+        </nb-card-body>
+      </nb-card>
+    </div>
   </div>
 </div>

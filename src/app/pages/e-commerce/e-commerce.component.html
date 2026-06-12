@@ -1,38 +1,70 @@
-<div class="row">
-  <div class="col-xxl-5">
-    <div class="row">
-      <div class="col-md-6">
-        <ngx-profit-card></ngx-profit-card>
-      </div>
-      <div class="col-md-6">
-        <ngx-earning-card></ngx-earning-card>
-      </div>
-    </div>
-
-    <ngx-traffic-reveal-card></ngx-traffic-reveal-card>
-  </div>
-
-  <div class="col-xxl-7">
-    <ngx-ecommerce-charts></ngx-ecommerce-charts>
+<div class="dashboard-hero">
+  <div class="hero-content">
+    <h1 class="hero-title">¡Bienvenido al Dashboard!</h1>
+    <p class="hero-subtitle">Product CRUD Playground</p>
   </div>
 </div>
 
 <div class="row">
-  <div class="col-xxl-9">
-    <ngx-country-orders></ngx-country-orders>
-  </div>
-
-  <div class="col-xxl-3">
-    <ngx-progress-section></ngx-progress-section>
+  <div class="col-12">
+    <ngx-summary-card
+      title="E-commerce summary"
+      subtitle="Indicadores de la pantalla de productos"
+      [entries]="summaryEntries">
+    </ngx-summary-card>
   </div>
 </div>
 
-<div class="row">
-  <div class="col-xxl-9">
-    <ngx-ecommerce-visitors-analytics></ngx-ecommerce-visitors-analytics>
+<div class="row mt-4">
+  
+  <div class="col-md-6 mb-4">
+    <nb-card class="chart-card">
+      <nb-card-header>🔍 Consultar Producto</nb-card-header>
+      <nb-card-body>
+        <div class="d-flex align-items-center" style="gap: 1rem;">
+          <input type="number" nbInput fullWidth [(ngModel)]="searchId" placeholder="Ingresa el ID del producto">
+          <button nbButton status="info" (click)="getProductById()">Buscar</button>
+        </div>
+      </nb-card-body>
+    </nb-card>
   </div>
 
-  <div class="col-xxl-3">
-    <ngx-user-activity></ngx-user-activity>
+  <div class="col-md-6 mb-4">
+    <nb-card class="chart-card">
+      <nb-card-header>🗑️ Eliminar Producto</nb-card-header>
+      <nb-card-body>
+        <div class="d-flex align-items-center" style="gap: 1rem;">
+          <input type="number" nbInput fullWidth [(ngModel)]="deleteId" placeholder="ID a eliminar">
+          <button nbButton status="danger" (click)="deleteProduct()">Eliminar</button>
+        </div>
+      </nb-card-body>
+    </nb-card>
   </div>
+
+  <div class="col-md-6 mb-4">
+    <nb-card class="chart-card">
+      <nb-card-header>➕ Crear Nuevo Producto</nb-card-header>
+      <nb-card-body>
+        <div class="form-group">
+          <input type="text" nbInput fullWidth [(ngModel)]="newProduct.title" placeholder="Nombre del producto" style="margin-bottom: 1rem;">
+          <input type="number" nbInput fullWidth [(ngModel)]="newProduct.price" placeholder="Precio" style="margin-bottom: 1.5rem;">
+          <button nbButton status="success" fullWidth (click)="addProduct()">Crear Producto</button>
+        </div>
+      </nb-card-body>
+    </nb-card>
+  </div>
+
+  <div class="col-md-6 mb-4">
+    <nb-card class="chart-card">
+      <nb-card-header>✏️ Actualizar Producto</nb-card-header>
+      <nb-card-body>
+        <div class="form-group">
+          <input type="number" nbInput fullWidth [(ngModel)]="updateId" placeholder="ID del producto" style="margin-bottom: 1rem;">
+          <input type="text" nbInput fullWidth [(ngModel)]="updateData.title" placeholder="Nuevo Título" style="margin-bottom: 1.5rem;">
+          <button nbButton status="warning" fullWidth (click)="updateProduct()">Actualizar Producto</button>
+        </div>
+      </nb-card-body>
+    </nb-card>
+  </div>
+
 </div>

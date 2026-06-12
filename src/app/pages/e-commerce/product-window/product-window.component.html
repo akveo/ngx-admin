@@ -1,0 +1,63 @@
+<div class="product-window-container" [ngClass]="'action-' + action">
+  <div class="window-header" [style.borderLeftColor]="actionColor">
+    <div class="header-content">
+      <nb-icon [icon]="actionIcon" class="action-icon"></nb-icon>
+      <div class="header-text">
+        <h3>{{ actionTitle }}</h3>
+        <p *ngIf="product?.title">{{ product.title }}</p>
+      </div>
+    </div>
+    <button nbButton ghost status="basic" class="close-btn" (click)="close()">
+      <nb-icon icon="close-outline"></nb-icon>
+    </button>
+  </div>
+
+  <div class="window-body">
+    <div *ngIf="action === 'view' && product" class="product-details">
+      <div class="detail-row">
+        <span class="label">ID:</span>
+        <span class="value">{{ product.id }}</span>
+      </div>
+      <div class="detail-row">
+        <span class="label">Categoría:</span>
+        <span class="value">{{ product.category | titlecase }}</span>
+      </div>
+      <div class="detail-row">
+        <span class="label">Precio:</span>
+        <span class="value highlight-price">${{ product.price }}</span>
+      </div>
+      <div class="detail-row">
+        <span class="label">Stock:</span>
+        <span class="value" [ngClass]="{'stock-low': product.stock < 10}">{{ product.stock }} unidades</span>
+      </div>
+      <div class="detail-row">
+        <span class="label">Rating:</span>
+        <span class="value">⭐ {{ product.rating }}</span>
+      </div>
+      <div class="detail-full">
+        <span class="label">Descripción:</span>
+        <p>{{ product.description }}</p>
+      </div>
+    </div>
+
+    <div *ngIf="action === 'create' && product" class="product-summary">
+      <div class="success-icon">✓</div>
+      <h4>¡Producto Creado Exitosamente!</h4>
+      <div class="summary-info">
+        <p><strong>{{ product.title }}</strong></p>
+        <p class="price">${{ product.price }}</p>
+        <p class="id">ID: #{{ product.id }}</p>
+      </div>
+    </div>
+
+    <div *ngIf="action === 'update' && product" class="product-summary">
+      <div class="success-icon update">✓</div>
+      <h4>¡Producto Actualizado!</h4>
+      <div class="summary-info">
+        <p><strong>{{ product.title }}</strong></p>
+        <p class="price">${{ product.price }}</p>
+        <p class="id">ID: #{{ product.id }}</p>
+      </div>
+    </div>
+  </div>
+</div>

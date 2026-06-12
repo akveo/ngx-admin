@@ -1,0 +1,22 @@
+<div [nbSpinner]="isLoading" nbSpinnerStatus="primary" nbSpinnerSize="large">
+  <table class="table-custom">
+    <thead>
+      <tr>
+        <th *ngFor="let header of headers">{{ header | titlecase }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let row of data">
+        <td *ngFor="let header of headers">
+          {{ row[header.toLowerCase()] || row[header] || '-' }}
+        </td>
+      </tr>
+
+      <tr *ngIf="!isLoading && (!data || data.length === 0)">
+        <td [attr.colspan]="headers.length" class="text-center empty-row">
+          {{ emptyMessage }}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

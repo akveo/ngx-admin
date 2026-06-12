@@ -12,6 +12,7 @@ import {
   SeoService,
   StateService,
 } from './utils';
+import { HttpClientModule } from '@angular/common/http';
 import { UserData } from './data/users';
 import { ElectricityData } from './data/electricity';
 import { SmartTableData } from './data/smart-table';
@@ -148,6 +149,7 @@ export const NB_CORE_PROVIDERS = [
 @NgModule({
   imports: [
     CommonModule,
+    HttpClientModule,
   ],
   exports: [
     NbAuthModule,
