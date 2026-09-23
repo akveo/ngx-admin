@@ -14,7 +14,9 @@ import { Component } from '@angular/core';
       </nb-sidebar>
 
       <nb-layout-column>
-        <ng-content select="router-outlet"></ng-content>
+        <main>
+          <ng-content select="router-outlet"></ng-content>
+        </main>
       </nb-layout-column>
 
       <nb-layout-footer fixed>
